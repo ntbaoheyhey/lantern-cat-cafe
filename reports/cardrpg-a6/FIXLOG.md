@@ -148,3 +148,5 @@ Q22 visual repair2: all16views and keyboard/account/preview checks passed, but S
 Q22 stats-only harness initially counted the intentionally hidden skill buttons as clipped actions. Filter the audit to rendered controls, and read actual dt labels (the shared Stats component uses dt/dd, not spans). Set13px directly on dt/dd; retain earlier keyboard and main preview receipts.
 
 - Q23 offline fixture clock: saved earned state had a newer watermark than the fixed offline cafe clock, so daily readiness correctly appeared locked. resetCafeClock after fixture injection aligned the review clock; login/task/all3weekly public claims pass at both sizes. Test-data repair only; no source/reward change.
+
+Q25 presentation repair1: initial locked-gifts extended8px below the720p sheet; compact gift grid/header restored all six actions. Repair2: final24-view visual inspection found enemy captions touching advice in the embedded active-route view. Bound images inside flexible figure rows with an explicit caption row; eight affected climb views pass11px/13px separation and zero overflow. Gift/control receipts retained; no gameplay changes.

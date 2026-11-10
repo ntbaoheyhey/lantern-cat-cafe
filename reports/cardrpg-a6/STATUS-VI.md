@@ -159,3 +159,6 @@ So sánh/chuyển đồ/chi phí cường hóa nằm gọn ở720p; phần hiệ
 2026-11-10T21:58:25Z: Q24 hoàn tất: demo38,65MB gồm Túi mới và Mallow/Biscuit mới,14ảnh offline đã duyệt; không lỗi/gọi mạng.
 Chuyển đồ bằng bàn phím, trừ đúng chi phí cường hóa và trở lại Workshop đều đạt;30test puppet/typecheck/lint qua.
 Tiếp tục Tháp: đưa quà mốc vào lối truy cập trực tiếp và sửa lời khuyên đang dùng mô tả chiến đấu cũ.
+
+2026-11-10T22:08:51Z: Tháp đã duyệt24ảnh và8ảnh bổ sung; tên địch/lời khuyên tách rõ ở720p, nút trở lại đội hình vừa khung.
+Quà dùng đúng phần giới hạn ngày còn lại và vẫn khóa trong chuyến; giữ6test/typecheck/lint đã đạt. Đang tích hợp Brioche mới và đóng gói demo.

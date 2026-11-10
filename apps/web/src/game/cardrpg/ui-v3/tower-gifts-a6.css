@@ -1,0 +1,67 @@
+/* The thirty-floor cabinet and its earned parcels each get a complete page. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(>.a6-tower) {display:flex;flex-direction:column;overflow:hidden;padding-top:14px!important;padding-bottom:16px!important}
+ .a6-tower {display:flex;flex-direction:column;flex:1;min-height:0;width:100%;margin:0;align-self:stretch}
+ .a6-tower-heading {display:flex;align-items:center;justify-content:space-between;gap:18px;flex:none;margin:0 0 12px;padding-bottom:10px}
+ .a6-tower-heading p {margin:5px 0 0;font-size:14px;color:#6e5739}
+ .a6-tower-sections {display:flex;gap:8px}
+ .a6-tower-sections button {display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 20px;font-size:15px;border-radius:9px}
+ .a6-tower-sections button[aria-pressed=true] {background:#795331;color:#fff0cc;border-color:#795331}
+ .a6-tower-sections span {font-size:13px;border:1px solid #ad8b5b;border-radius:20px;min-width:25px;line-height:23px;text-align:center;background:#f2dfb8;color:#78583b}
+ .a6-tower-sections span[data-ready=true] {background:#8d3d30;color:#fff6d6;border-color:#ffd487}
+ .a6-tower-locked {margin:0 0 10px;font-size:14px;flex:none}
+ .a6-tower-view {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-tower-layout {flex:1;min-height:0;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:20px}
+ .a6-tower-board {min-height:0}
+ .a6-tower-floors {gap:10px 5px}
+ .a6-tower-floors button {min-height:0}
+ .a6-tower-preview {min-height:0;padding:16px;gap:7px}
+ .a6-tower-preview>h2 {font-size:30px}
+ .a6-tower-preview>small {font-size:13px;line-height:1.35;flex:none}
+ .a6-tower-preview>button {min-height:42px;flex:none}
+ .a6-tower-preview .uv-fight {min-height:52px}
+ .a6-tower-preview .a6-tower-counter {font-size:14px;line-height:1.4;margin:6px 0}
+ .a6-tower-enemies {min-height:100px;margin:0;flex:1;align-items:stretch;gap:14px}
+ .a6-tower-enemies figure {display:grid;grid-template-rows:minmax(0,1fr) auto;gap:5px;flex:1;min-width:0;min-height:0}
+ .a6-tower-enemies img {align-self:end;justify-self:center;width:100%;height:100%;max-width:165px;max-height:210px;min-height:0;object-fit:contain}
+ .a6-tower-enemies figcaption {font-size:14px;line-height:1.3;min-height:19px}
+ .a6-tower-gifts {display:flex;flex-direction:column;flex:1;min-height:0;gap:15px}
+ .a6-tower-gifts>header {display:flex;align-items:center;gap:18px;flex:none;padding:10px 20px;border:1px solid #b5945d;border-radius:14px;background:linear-gradient(105deg,#ead6ae,#fff2d1)}
+ .a6-tower-gifts>header img {width:62px;height:76px;object-fit:contain;filter:drop-shadow(0 4px 2px #65422a33)}
+ .a6-tower-gifts>header>div {flex:1}
+ .a6-tower-gifts>header small {font-size:11px;letter-spacing:.08em;color:#805b36}
+ .a6-tower-gifts>header h2 {font:700 26px Georgia,serif;color:#65482d;margin:4px 0}
+ .a6-tower-gifts>header p {font-size:14px;color:#775938;margin:5px 0}
+ .a6-tower-gifts>header button {min-height:42px;font-size:14px}
+ .a6-tower-parcels {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;flex:1;min-height:0}
+ .a6-tower-parcels article {display:grid;grid-template-columns:105px minmax(0,1fr);align-items:center;gap:7px 12px;padding:16px;border:2px solid #b89b6b;border-bottom-width:5px;border-radius:15px;background:radial-gradient(ellipse at 25% 30%,#fff5d9,#ecd8b1);box-shadow:inset 0 0 0 3px #fff5d855}
+ .a6-tower-parcels article[data-ready=true] {border-color:#bd8c42;background:radial-gradient(ellipse at 25% 30%,#fff8d9,#f1d59a)}
+ .a6-tower-parcels article[data-collected=true] {background:linear-gradient(120deg,#e1ddbb,#ece5ca);border-color:#a6a17a}
+ .a6-tower-parcels .a6-gift-art {width:105px;height:100px;filter:drop-shadow(0 5px 2px #78563822)}
+ .a6-tower-parcels article>div {min-width:0}
+ .a6-tower-parcels small {font-size:11px;letter-spacing:.06em;color:#7c613e}
+ .a6-tower-parcels h3 {font:700 27px Georgia,serif;color:#60442c;margin:5px 0 8px}
+ .a6-tower-reward {display:flex;flex-wrap:wrap;gap:5px 12px;color:#72502d;font-size:14px;font-weight:600}
+ .a6-tower-reward span {display:flex;align-items:center;gap:7px}.a6-tower-reward i {font-style:normal;color:#a47129}
+ .a6-tower-parcels p {font-size:13px;color:#755b3a;line-height:1.35;margin:8px 0 0}
+ .a6-tower-parcels button {grid-column:1/-1;align-self:end;min-height:42px;font-size:15px;padding:7px 12px}
+ @media(max-height:780px) {
+  .uv-sheet-content:has(>.a6-tower) {padding-top:10px!important;padding-bottom:12px!important}
+  .a6-tower-heading {margin-bottom:9px;padding-bottom:8px;gap:12px}.a6-tower-heading p {margin:3px 0 0}
+  .a6-tower-sections button {min-height:40px;padding:7px 15px;font-size:14px}
+  .a6-tower-layout {gap:14px}.a6-tower-preview {padding:12px;gap:5px}.a6-tower-preview>h2 {font-size:27px}
+  .a6-tower-enemies img {max-height:132px;max-width:140px}.a6-tower-floors {gap:8px 4px}
+  .a6-tower-gifts {gap:10px}.a6-tower-gifts>header {padding:6px 14px;gap:13px}.a6-tower-gifts>header img {height:62px;width:52px}
+  .a6-tower-gifts>header h2 {font-size:23px;margin:2px 0}.a6-tower-gifts>header p {margin:3px 0}
+  .a6-tower-parcels {gap:10px}.a6-tower-parcels article {padding:10px 12px;gap:5px 10px;grid-template-columns:82px minmax(0,1fr)}
+  .a6-tower-parcels .a6-gift-art {width:82px;height:78px}.a6-tower-parcels h3 {font-size:24px;margin:3px 0 5px}
+  .a6-tower-parcels small {font-size:10px}.a6-tower-parcels p {font-size:13px;margin:5px 0 0}.a6-tower-reward {gap:3px}
+  .a6-tower-parcels button {min-height:38px;font-size:14px}
+ }
+ @media(max-width:1000px) {
+  .uv-sheet-content:has(>.a6-tower) {overflow:auto}.a6-tower {flex:none}
+  .a6-tower-layout {grid-template-columns:1fr}.a6-tower-board {min-height:420px}.a6-tower-preview {min-height:420px}
+  .a6-tower-parcels {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.a6-tower-parcels article {min-height:185px}
+  .a6-tower-heading {flex-wrap:wrap}.a6-tower-gifts>header {flex-wrap:wrap}
+ }
+}

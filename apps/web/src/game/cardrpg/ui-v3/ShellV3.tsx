@@ -18,6 +18,7 @@ import './bond-album-a6.css';
 import './cat-skills-a6.css';
 import './cat-preview-a6.css';
 import './bag-workbench-a6.css';
+import './tower-gifts-a6.css';
 import {CountUpA6} from './CountUpA6';
 import {OpeningA6} from './OpeningA6';
 import {useNewDiscoveries} from './useNewDiscoveries';

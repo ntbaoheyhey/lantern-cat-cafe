@@ -11,7 +11,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Bag / gear / empty | 8.1 | 8.0 | 13: compact cost labels (7.5) | shots/q24-bag/* + q24-details/*; 28 views, stable compare/enhance, transfer/cost/caps/locks/keyboard/workshop pass |
 | Bond Book | 8.1 | 7.9 | 13: compact index metadata (7.5) | shots/q20-bond-album/*; all17entries and primary action fit both sizes; ownership/readiness/profile/team/keyboard pass |
 | Daily | 8.1 | 8.0 | 13: compact reward copy (7.5) | shots/q23-daily/* + q23-daily-cap/*; direct board/gifts sections, all14milestones fit, shared counts/three claims/caps/ribbon/keyboard pass |
-| Tower | 8.0 | 7.8 | 13: compact floor/chest labels (7.5) | shots/q14a/*-tower; primary climb fits720p |
+| Tower | 8.1 | 8.0 | 13: compact floor numbers (7.5) | shots/q25-tower/* + q25-climb-final/*; direct gifts, exact caps and current advice; replay/keyboard/return fit both sizes |
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |

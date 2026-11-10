@@ -1,4 +1,4 @@
-import {cleanup,fireEvent,render,screen} from '@testing-library/react';
+import {act,cleanup,fireEvent,render,screen,within} from '@testing-library/react';
 import {afterEach,expect,it,vi} from 'vitest';
 import {DepthModel} from '../depth/model';
 import {TowerA6} from './TowerA6';
@@ -15,10 +15,12 @@ it('shows thirty fixed floors, the next chest and a clear chapter unlock',()=>{
 it('starts the selected unlocked floor with the existing preparation and claims one milestone',()=>{
  const m=new DepthModel(true,true,true,true);m.state.cleared=[1,2,3];m.state.towerBest=5;
  const {rerender}=render(<TowerA6 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 1'}));
  fireEvent.click(screen.getByRole('button',{name:'Floor 5 Collect'}));
  expect(m.state.challengeClaims).toContain('a6-tower-chest-5');
  rerender(<TowerA6 m={m}/>);
  expect((screen.getByRole('button',{name:'Floor 5 Collected'}) as HTMLButtonElement).disabled).toBe(true);
+ fireEvent.click(screen.getByRole('button',{name:'Climb'}));
  fireEvent.click(screen.getByRole('button',{name:/Climb floor 6/}));
  expect(m.screen).toBe('prepare');expect(m.state.run?.floor).toBe(6);
  expect(m.battle?.initial.gameplayA6).toBe(true);
@@ -34,4 +36,53 @@ it('keeps an active Tower replay on its own floor in the preparation route tab',
  expect(screen.getByRole('button',{name:'Floor 1 cleared'}).getAttribute('aria-pressed')).toBe('true');
  fireEvent.click(screen.getByRole('button',{name:'Return to formation'}));
  expect(back).toHaveBeenCalledOnce();expect(m.screen).toBe('prepare');
+});
+
+function earnedTower() {
+ const m=new DepthModel(true,true,true,true);
+ m.state=R.setGameplayA6(R.createDepthAccount(25,0),true);
+ Object.defineProperty(m,'cafeNow',{get:()=>0});
+ m.state.cleared=[1,2,3];m.state.towerBest=30;
+ return m;
+}
+it('keeps the chosen floor across gift sections and presents the current counter advice',()=>{
+ const m=earnedTower();render(<TowerA6 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Floor 1 cleared'}));
+ expect(screen.getByRole('button',{name:'Climb floor 1 →'})).toBeTruthy();
+ expect(screen.queryByText(/Hush prevents the brace/)).toBeNull();
+ expect(screen.getByText('Shred strips shields; Burn passes through.')).toBeTruthy();
+ const before=R.exportSave(m.state);
+ fireEvent.click(screen.getByRole('button',{name:/Milestone gifts/}));
+ expect(screen.getAllByRole('article')).toHaveLength(6);
+ fireEvent.click(screen.getByRole('button',{name:'Climb'}));
+ expect(screen.getByRole('button',{name:'Floor 1 cleared'}).getAttribute('aria-pressed')).toBe('true');
+ expect(R.exportSave(m.state)).toBe(before);
+});
+it('shows and grants only the available cap remainder, then leaves unclaimed gifts for later',()=>{
+ const m=earnedTower();m.state.account.daily.earned={...R.DEPTH_CAPS_V4,stamps:R.DEPTH_CAPS_V4.stamps-3,threads:R.DEPTH_CAPS_V4.threads-2};
+ const before=structuredClone(m.state.account.currencies);render(<TowerA6 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 6'}));
+ const gift=screen.getByRole('article',{name:'Floor 5 gift'});
+ expect(within(gift).getByText('3 stamps')).toBeTruthy();expect(within(gift).getByText('2 threads')).toBeTruthy();
+ fireEvent.click(within(gift).getByRole('button',{name:'Floor 5 Collect'}));
+ expect(m.state.account.currencies.stamps).toBe(before.stamps+3);expect(m.state.account.currencies.threads).toBe(before.threads+2);
+ expect(m.state.challengeClaims).toEqual(['a6-tower-chest-5']);
+ expect(screen.getByRole('button',{name:'Milestone gifts 0'})).toBeTruthy();
+ const saved=R.exportSave(m.state);
+ for(const button of screen.getAllByRole('button',{name:/^Floor .* (?:Collect|Collected)$/})) {
+  expect((button as HTMLButtonElement).disabled).toBe(true);fireEvent.click(button);
+ }
+ expect(R.exportSave(m.state)).toBe(saved);
+ expect(screen.getByText('Today’s supplies are full. Your gifts can wait.')).toBeTruthy();
+});
+it('keeps every gift disabled during a route and exposes the correct return action',()=>{
+ const m=earnedTower();m.state=R.startTowerFloorA6(m.state,5).state;
+ const back=vi.fn();render(<TowerA6 m={m} onReturn={back}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 0'}));
+ for(const button of screen.getAllByRole('button',{name:/^Floor .* Collect$/})) expect((button as HTMLButtonElement).disabled).toBe(true);
+ expect(screen.getByText('Finish your route to collect your gifts.')).toBeTruthy();
+ fireEvent.click(screen.getByRole('button',{name:'Return to formation'}));expect(back).toHaveBeenCalledOnce();
+ act(()=>{m.state.run=null;m.state.challengeClaims=R.TOWER_CHESTS_A6.map(f=>'a6-tower-chest-'+f);m.notify(false);});
+ expect(screen.getByText('All six gifts are safely with your crew.')).toBeTruthy();
+ expect(screen.getAllByRole('button',{name:/^Floor .* Collected$/})).toHaveLength(6);
 });
