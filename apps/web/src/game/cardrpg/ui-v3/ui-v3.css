@@ -49,3 +49,5 @@
 .uv-mote:nth-child(4){left:48%;top:60%;animation-delay:-2s}.uv-mote:nth-child(5){left:64%;top:44%;animation-delay:-4s}.uv-mote:nth-child(6){left:72%;top:64%;animation-delay:-6s}.uv-mote:nth-child(7){left:84%;top:35%;animation-delay:-8s}.uv-mote:nth-child(8){left:19%;top:65%;animation-delay:-5s}
 @media(prefers-reduced-motion:no-preference){.uv-lantern{animation:uv-lantern-sway 8s ease-in-out infinite}.uv-mote{animation:uv-mote-drift 11s ease-in-out infinite}@keyframes uv-lantern-sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}@keyframes uv-mote-drift{0%,100%{transform:translate(0,0);opacity:.25}50%{transform:translate(12px,-24px);opacity:.6}}}
 .uv-app.dp-reduced-motion .uv-ambient *{animation:none!important}
+
+html[data-look-v2="false"] .uv-home-crew img{transform:scale(1.3)}
