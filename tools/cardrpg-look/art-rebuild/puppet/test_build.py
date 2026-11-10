@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_velvet_whole_staff_ribbon_and_palm_exclude_cape(self):
+        cfg = json.loads((Path(__file__).parent/'configs/velvet.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((849,268),'armR'),((685,1084),'armR'),((736,800),'armR'),((765,650),'armR'),((900,700),'armR'),((725,800),'body'),((747,800),'body'),((251,649),'armL'),((550,380),'head'),((550,415),'body'),((300,1000),'tail'),((600,1080),'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_button_guard_needle_shield_chest_and_boots_keep_semantic_ownership(self):
         cfg = json.loads((Path(__file__).parent/'configs/button-guard.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')

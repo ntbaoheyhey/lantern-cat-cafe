@@ -96,3 +96,6 @@ HEAD matches fetched origin b9b9ec3be338f3a61a6e9bfff1e756ffe4aeba67. P1–P28 c
 
 ## Resume 2026-11-10T22:22:40.785339+00:00
 HEAD matches origin 68a73a4377f5be12804fce9e2ccdca7291164459. P29 complete/published, P30 source audit/plan ready; no Button Guard edits yet. No native runner or B heavy job. Servers50023/5920,92836/5922 retained,140GiB free. Full dirty inventory RESUME-DIRTY-P30.txt; native dirty work and unreviewed GLBs preserved/excluded.
+
+## Resume 2026-11-10T22:39:53.928164+00:00
+HEAD equals fetched origin 7e7f7c9d869787394dbd4cf7e33d9a2cd9e35b89; P1–P30 retained as complete. P31 source1 built and lease released; observed narrow staff/ribbon ghosts remain in body. No native runner; servers50023/5920 and92836/5922 retained,140GiB free. Dirty inventory RESUME-DIRTY-P31.txt; native work and unreviewed GLBs excluded.

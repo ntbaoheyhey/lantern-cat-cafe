@@ -11,8 +11,9 @@ import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-g
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
+import velvetRig from '../../../../../../assets/cardrpg-look/v3-puppets/velvet.rig.json';
 import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT } from './look-puppet-rig';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT, VELVET_STAFF_CONTACT } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
@@ -95,7 +96,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
       }
     }
-    expect(puppetPose('cast',0,.3,false,0,'velvet')).toEqual(puppetPose('cast',0,.3,false));
+    expect(puppetPose('cast',0,.3,false,0,'needle-moth')).toEqual(puppetPose('cast',0,.3,false));
   });
   it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
     const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
@@ -144,7 +145,7 @@ describe('illustrated puppet contract and event motions',()=>{
     const lifted=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
-    expect(puppetPose('cast',3,.38,false,.4,'velvet').tailBend).toBe(0);
+    expect(puppetPose('cast',3,.38,false,.4,'needle-moth').tailBend).toBe(0);
   });
 
   it('leads with Button Guard needle toward foes, braces its shield and plants both boots',()=>{
@@ -330,7 +331,7 @@ describe('illustrated puppet contract and event motions',()=>{
       expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
     }
     expect(puppetPose('cast',0,.38,false,0,'panko').prop).toBeLessThan(0);
-    expect(puppetPose('cast',0,.38,false,0,'velvet').tailBend).toBe(0);
+    expect(puppetPose('cast',0,.38,false,0,'needle-moth').tailBend).toBe(0);
   });
 
   it("reaches Binding Thread's actual knot toward the party and settles with accessible quiet poses",()=>{
@@ -376,6 +377,29 @@ describe('illustrated puppet contract and event motions',()=>{
     }
     for(const t of [0,1])expect(pose(t).bodySquash).toBe(0);
     for(const id of ['binding-thread','sock-skipper','mochi'])expect(puppetPose('attack',0,.18,false,0,id).bodySquash).toBe(0);
+  });
+
+  it('plants Velvet at its painted needle tip and presents the open palm with coherent recovery',()=>{
+    const arm=velvetRig.layers.find(l=>l.part==='armR')!;
+    const rest=[(arm.pivot[0]!-.5)*velvetRig.height*velvetRig.aspect,(1-arm.pivot[1]!)*velvetRig.height];
+    const expectedSource=[(685/1108-arm.pivot[0]!)*velvetRig.height*velvetRig.aspect,(arm.pivot[1]!-1084/1200)*velvetRig.height];
+    expect(VELVET_STAFF_CONTACT[0]).toBeCloseTo(expectedSource[0]!,12);expect(VELVET_STAFF_CONTACT[1]).toBeCloseTo(expectedSource[1]!,12);
+    const target=new Vector3(rest[0]!+VELVET_STAFF_CONTACT[0],rest[1]!+VELVET_STAFF_CONTACT[1],0);
+    expect(velvetRig.sockets.mainHand[0]).toBe('armR');expect(velvetRig.sockets.offHand[0]).toBe('armL');
+    const palm=new Vector3(Number(velvetRig.sockets.offHand[1]),Number(velvetRig.sockets.offHand[2]),0);
+    const held=puppetPose('cast',0,.38,false,0,'velvet');
+    expect(palm.clone().applyMatrix4(new Matrix4().makeRotationZ(held.offhand)).y).toBeGreaterThan(palm.y+.03);
+    for(const motion of ['idle','attack','cast','ultimate'] as const)for(let i=0;i<=60;i++){
+      const p=puppetPose(motion,i/10,i/60,false,.4,'velvet'),scale=[1-p.breathe,1+p.breathe];
+      expect(p.staffPlant).toBe(true);
+      const [x,y]=plantedPuppetPivot(rest,VELVET_STAFF_CONTACT,p.prop,p.lean,scale);
+      const actual=new Vector3(...VELVET_STAFF_CONTACT,0).applyMatrix4(new Matrix4().makeRotationZ(p.prop)).add(new Vector3(x,y,0));
+      actual.applyMatrix4(new Matrix4().makeScale(scale[0]!,scale[1]!,1)).applyMatrix4(new Matrix4().makeRotationZ(p.lean));
+      expect(actual.distanceTo(target)).toBeLessThan(1e-10);expect(Math.hypot(x-rest[0]!,y-rest[1]!)).toBeLessThan(.075);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'velvet');expect(quiet.staffPlant).toBe(false);
+      expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+    }
+    for(const motion of ['attack','cast','ultimate'] as const){const p=puppetPose(motion,0,1,false,0,'velvet');expect(p.prop).toBeCloseTo(0,12);expect(p.offhand).toBeCloseTo(0,12);}
   });
 
   it('anchors Sorrel\'s painted staff tip through breath and casting without a wide shoulder shift',()=>{

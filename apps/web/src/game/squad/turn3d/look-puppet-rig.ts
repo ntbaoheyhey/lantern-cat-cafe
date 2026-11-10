@@ -42,6 +42,10 @@ function authoredGesture(motion:PuppetMotion,t:number) {
 }
 // Individual prop/body gestures use the same action clock and delayed recovery.
 // Unlisted rigs retain their accepted shared motion.
+// Velvet keeps its entire needle planted while its open palm presents the spell.
+const velvetGesture={prop:.042,offhand:-.17,head:.024,lean:.010,tailFollow:.075,clothFollow:0,lag:.075};
+// Painted needle tip (685,1084) in the 1108x1200 source, relative to armR.
+export const VELVET_STAFF_CONTACT=[-.058666666666666666,-.9066666666666667] as const;
 // Needle leads left toward foes; the button shield braces from a planted stance.
 const buttonGuardGesture={prop:-.23,offhand:-.13,head:.015,lean:-.012,tailFollow:0,clothFollow:0,lag:.07};
 // Tall gold pot rises, holds and tips; the free sleeve stays close to its painted overlap.
@@ -87,7 +91,7 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='button-guard'?buttonGuardGesture:id==='marigold'?marigoldGesture:id==='brioche'?briocheGesture:id==='biscuit'?biscuitGesture:id==='mallow'?mallowGesture:id==='panko'?pankoGesture:id==='clover'?cloverGesture:id==='mochi'?mochiGesture:id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:id==='binding-thread'?threadGesture:id==='practice-cushion'?cushionGesture:undefined;
+  const profile=id==='velvet'?velvetGesture:id==='button-guard'?buttonGuardGesture:id==='marigold'?marigoldGesture:id==='brioche'?briocheGesture:id==='biscuit'?biscuitGesture:id==='mallow'?mallowGesture:id==='panko'?pankoGesture:id==='clover'?cloverGesture:id==='mochi'?mochiGesture:id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:id==='binding-thread'?threadGesture:id==='practice-cushion'?cushionGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
   const cloverPour=reduced||!active||id!=='clover'?0:.15*ramp(t,0,.20)-.37*ramp(t,.30,.52)+.255*ramp(t,.54,.80)-.035*ramp(t,.80,1);
   const pankoRoller=reduced||!active||id!=='panko'?0:.12*ramp(t,0,.20)-.30*ramp(t,.27,.52)+.205*ramp(t,.54,.80)-.025*ramp(t,.80,1);
@@ -106,10 +110,10 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
-  return {gesture,breathe,bodySquash,feetPlant:thread||cushion||id==='button-guard'&&active&&!reduced,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,staffPlant:id==='sorrel'&&(active||motion==='idle')&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
+  return {gesture,breathe,bodySquash,feetPlant:thread||cushion||id==='button-guard'&&active&&!reduced,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,staffPlant:(id==='sorrel'||id==='velvet')&&(active||motion==='idle')&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-(cushion?.001:.012)*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
-    tailBend:reduced||!['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit','brioche','marigold'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'||id==='sorrel'||id==='mochi'||id==='clover'?.035:.045),
+    tailBend:reduced||!['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit','brioche','marigold','velvet'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'||id==='sorrel'||id==='mochi'||id==='clover'?.035:.045),
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
     prop:reduced?0:active?id==='marigold'?marigoldPour:id==='mallow'?mallowWhisk:id==='clover'?cloverPour:-(profile?.prop??.20)*gesture-(thread?.045*follow:0):motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
