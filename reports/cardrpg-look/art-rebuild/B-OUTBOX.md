@@ -119,3 +119,6 @@ Only Needle Moth config/rig/atlas rebuilt; same eight layers. Needle/collar/wing
 
 ## P33 — Teacup Healer spoon blessing
 Only Teacup Healer config/rig/atlas rebuilt; same six layers. Whole spoon/brass arms, coherent ceramic bowl/handle/saucer and boots, shoulder pivots corrected. MainHand spoon bowl(145,251), offHand palm(1015,492), source1200×1124. Bounded blessing/open-palm rise, delayed lid and planted feet.38web+11pipeline tests,16views/8x1casts/type/lint/parity pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A65badf4428+B 38,700,642B; headroom 1,299,358B; Bembedded 24,056,180B. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid elbow limit; p33/REVIEW.md.
+
+## P34 — Pollen Scout basket and wings
+Only Pollen Scout config/rig/atlas rebuilt; eight original layers. Whole basket/handle on armR, rear wing visible through loop, leaf coat on body; bounded basket presentation, wing draw and planted boots. MainHand pollen(796,625), offHand fingertips(463,689), source1200×1036.39web+12source tests/type/lint/parity,16views/8casts pass; zero page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A65badf4428+B 38,775,934B; headroom 1,224,066B; Bembedded 24,131,060B. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid wings/tiny neck fringe retained; p34/REVIEW.md.

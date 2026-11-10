@@ -162,3 +162,9 @@ Needle Moth đã duyệt: khép cánh nhẹ rồi đưa cả cây kim về trư�
 
 Teacup Healer đã duyệt: cả thìa nghiêng nhẹ khi chúc phúc, tay kia nâng lòng bàn tay; quai tách/đĩa liền thân và chân giữ sàn.
 38 kiểm tra web,11 kiểm tra cắt lớp,16ảnh/8lượt chiêu/type/lint/parity đạt; bản chung 38,700,642byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Pollen Scout.
+
+Tiếp tục P34 từ đường cắt đã lưu; đã tách áo lá khỏi cánh và giữ khoảng trống trong quai giỏ.
+Đang dựng lại riêng Pollen Scout rồi kiểm tra động tác đưa giỏ, khép cánh nhẹ và chân bám sàn ở hai kích thước.
+
+Pollen Scout đã duyệt: đưa cả giỏ về trước, tay trống đối nhịp, cánh khép nhẹ rồi hồi; áo lá/quai giỏ liền và chân bám sàn.
+39 kiểm tra web,12 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/type/lint/parity đạt; bản chung 38,775,934 byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Crumb Sentinel.
