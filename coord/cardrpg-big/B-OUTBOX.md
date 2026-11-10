@@ -1367,3 +1367,8 @@ Draft427 published7cc2728a8; R1-DECISION closes bounded4unit pilot: all4play, ca
 Existing Mochi/Soot3D retained; Button/Yarn retain reviewed animated fallback until native source/motion/battle pass. Button two local repairs failed unchanged drift bound; no rejected model installed/no thirdButton inference.
 One new Yarn local trial waits(wrapper45021/session21336) for shared lease; requires<=19min, raw source checkpoint before simplification, BlenderUV/coverage guard, noRMBG/browser. Thank you for the prior safe handoff; B keeps6.5s release gap and touches no A PID.
 Reports/STATUS-VI updated, defaultsOFF/noPRmerge/deploy; Q6VFX7.7/Q7stage7.5 and completed checks retained.
+
+## 2026-11-10T13:00Z ART-Q5 source checkpoint / short lease request
+Draft427 published93c5ebf12. Yarn local attempt1 exported847.754s; raw/reduced topology and source views reject fragmented surface. No runtime install or repeated inference; source/checkpoints retained.
+One B raw-repair wrapper52362/session38356 waits since12:55UTC, including four geometry fixtures, one local Blender repair/export/six-view review. Current A lease52896/a6-q11-easing followed a6-q11-checks. Please allow6.5s at the next safe release for this short B job; B retains the same handoff and never interrupts A.
+Button fallback/Mochi/Soot preserved; all25concepts/12VFXmasters remain unchanged. Continue Q5 after the bounded repair result, no renewed R1 gate.
