@@ -86,3 +86,5 @@ U0 in progress. No published Lane U milestone yet.
 
 - U9-G6 / PARTIAL after the single score-improvement pass: native base64 transport reduced CPU4 startup from2,141.1–2,191.3ms to1,358.6–1,358.9ms (~37%). Literal223.3ms gate unchanged. All291assets exact; G1PASS;37UIchecks plus16affected rechecks;axe24clean;offline13.983s. No further packaging attempt this phase.
 - U9-FRESH-EYES / FIXED: Home-only legacy1.3xportraitscale verified in final1280-off-home.webp;16/16affectedchecks, G1,24axe scans,56captures/0errors and offline/assetparity PASS. Final score8.475/10 remains below8.5 and is reported as is.
+
+- SYNC-HISTORY / FIXED tooling: two settled B tips were not ancestors of the per-kind accepted integration SHA despite their content already being integrated. M5 --no-ff merge changes no tree files. Watch now also checks actual HEAD ancestry, preserving every eligible unmerged tip. node --check and bash -n pass; required refresh gates follow.
