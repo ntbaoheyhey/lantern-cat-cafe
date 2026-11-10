@@ -24,3 +24,12 @@ export function enemyGuideA6(id: string): { intent: string; counter: string; pha
       : '',
   };
 }
+
+/** Keep qualitative forecast advice in the same vocabulary as the live encounter. */
+export function forecastAdviceA6(enemies: string[], firstFallen: string | null): string {
+  const enemy = enemies.map(id => R.ENEMY_BY_ID[id]!).find(item => item.tier === 'boss') ?? R.ENEMY_BY_ID[enemies[0]!]!;
+  const guide = enemyGuideA6(enemy.id);
+  return firstFallen
+    ? `${R.CAT_BY_ID[firstFallen]?.name ?? firstFallen} often falls first. ${guide.counter}`
+    : `${enemy.name}: ${guide.intent}`;
+}

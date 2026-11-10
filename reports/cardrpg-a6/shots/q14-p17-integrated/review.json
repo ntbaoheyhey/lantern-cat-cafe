@@ -1,0 +1,80 @@
+{
+  "source": "Current A6 Vite with published B P14/P16/P17; single authored active pose per changed enemy. B detailed motion/parity evidence retained.",
+  "shots": [
+    {
+      "width": 1440,
+      "height": 900,
+      "enemy": "spool-ram",
+      "file": "1440-spool-ram.webp",
+      "faceHp": 0,
+      "bounds": {
+        "width": 1440,
+        "height": 670,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0,
+            "box": {
+              "x": 396.80027748069205,
+              "y": 237.81491897095728,
+              "width": 262.1600725517905,
+              "height": 296.2294807341085
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0,
+            "box": {
+              "x": 209.38717043968575,
+              "y": 253.53914298196577,
+              "width": 275.12544141274077,
+              "height": 315.8134560595461
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0,
+            "box": {
+              "x": 107.80882618731675,
+              "y": 223.78660767018798,
+              "width": 174.5783226690986,
+              "height": 237.9682553635112
+            }
+          },
+          {
+            "id": "foe-0-spool-ram",
+            "side": "enemy",
+            "role": "charger",
+            "yaw": 0,
+            "box": {
+              "x": 730.9778097203073,
+              "y": 266.2142430437832,
+              "width": 381.30783214946837,
+              "height": 256.2450625687844
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "mochi",
+            "soot"
+          ],
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "hud": 3,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

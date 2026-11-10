@@ -67,3 +67,17 @@ it('keeps A6 forecasts qualitative even when a caller requests a percentage', ()
   expect(screen.getByRole('heading', {name: 'Favoured'})).toBeTruthy();
   expect(screen.queryByText(/100%/)).toBeNull();
 });
+
+it('uses current A6 enemy advice without changing the forecast result or legacy prose', () => {
+  const build = {...setup(), enemies: ['teacup-healer'], skillsV5: true, gameplayA6: true};
+  const ui = render(<ForecastV4 setup={build}/>);
+  const worker = mock.workers[0]!;
+  act(() => worker.onmessage!({data: {key: worker.request!.key, result: {band: 'Favoured', risk: 'Every third round restores 65 HP.', samples: 20, wins: 19, firstFallen: null, computeMs: 1}}}));
+  expect(screen.getByText('Teacup Healer: Heals its weakest ally every two rounds.')).toBeTruthy();
+  expect(screen.getByRole('heading', {name: 'Favoured'})).toBeTruthy();
+  expect(screen.queryByText(/Every third round/)).toBeNull();
+  ui.rerender(<ForecastV4 setup={{...setup(), enemies: ['teacup-healer']}}/>);
+  const legacy = mock.workers[1]!;
+  act(() => legacy.onmessage!({data: {key: legacy.request!.key, result: {band: 'Favoured', risk: 'Every third round restores 65 HP.', samples: 20, wins: 19, firstFallen: null, computeMs: 1}}}));
+  expect(screen.getByText('Every third round restores 65 HP.')).toBeTruthy();
+});
