@@ -201,3 +201,7 @@ P13 wrapper repair: delivery-budget needs ART_ARTIFACT as well as receipt. Move 
 P18 preview build repair1: latest fetched A6 snapshot included GuideA6/SettingsA6/style imports; four journal-only files were insufficient. Refreshed all changed A6-owned cardrpg files from pinnede94713b8e into disposable preview. Reuse passed type/lint24tests; rebuild only. No A6-owned B source changed.
 
 P20 A6 disposal report resolved: reproduced expected3/received5, added idempotent lifetimeguard to CardBossAtmosphere. Test counts actual geometry/material/InstancedMesh once after each of two calls, verifies rootdetach. Type/lint4focusedtestsPASS; live drawing unchanged.
+
+2026-11-10T20:45:14.662243+00:00 P21 attempt1 rejected despite26tests/16views/8casts/parityPASS: larger knot reach exposes old arm fragments in body. Master layer inspection shows overlap dilation includes transparent mask area, extending the body behind entire thin limbs; authored polygon also misses inner knot edge. Repair2 uses opaque-owned overlap for BindingThread only and tighter original-part partition; preserve all original/attempt1 masters. No other unit rebuilt.
+
+2026-11-10T20:48:21.705636+00:00 P21 repair2 removed the floating hands but a thin old upper-right arm remains at the52%pose. Pixel-component analysis isolates2292ownedbody pixels atUV(.5854,.3417)-(.6888,.48), belonging to that arm. Repair3 expands only that inner arm partition to include this measured strip; opaque-overlap logic and accepted gesture retained. Reuse before/parity and passing pipeline tests.

@@ -435,3 +435,6 @@ Button Guard, Sock Skipper, Spool Ram, Needle Moth, Teacup Healer, Kettle Knight
 
 ## 2026-11-10 illustrated puppet derivatives — P5 complete
 All13original enemy concepts reused; no model call. Final Binding Thread/Practice Cushion/Pollen Scout/Rain Spool/Crumb Sentinel/Pantry Crown plus Yarn eye metadata authored with existing cut/fill/pack tool. Exact per-unit config and rig source hashes retained; masters ~/art/look-v3/puppets. All13ruleids validated, actual battle/motion/phase evidence p5/. Native-era dirty acceptance notes remain outside this commit.
+
+## 2026-11-10 Binding Thread puppet overlap repair — P21
+Original concept, source pixels and original generation provenance retained; no new image/model generation. Authored arm polygons now include the complete original knots and a measured2292pixel right-arm strip. `tools/cardrpg-look/art-rebuild/puppet/build.py` uses opt-in owned-alpha overlap for this unit to prevent duplicate limb fill; six parts,1024px WebP93 atlas. Current and prior masters/receipts are retained in ~/art/look-v3/puppets and puppets-history. Evidence and build receipt: reports/cardrpg-look/art-rebuild/p21/REVIEW.md and rig-build.json.

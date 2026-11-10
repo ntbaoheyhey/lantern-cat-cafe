@@ -80,3 +80,6 @@ Reproduced expected3/received5. `CardBossAtmosphere.dispose()` now has a lifetim
 
 ## P19 — Sorrel floor-contact staff
 Sorrel pivots the rigid crook around its actual painted floor tip, with an open palm and delayed tail; clean shoulder/hand joins at both sizes. Saved16pairedviews/12casts/25tests/type/lint/parityPASS; tipdrift<1e-15,0socket/faceHP/bounds/page errors. Reduced motion remains still. A6e94713b8e+B38185390B/headroom1814610B; Bassets unchanged. No event/HUD/flag/rig/atlas changes. Evidence p19/REVIEW.md.
+
+## P21 — Binding Thread snare reach and overlap repair
+Knotted hands reach toward cats with delayed counterarm and planted feet. Repaired authored arm partition and opt-in opaque-alpha overlap remove old floating arm fragments; only BindingThread atlas/rig rebuilt.26web+2pipeline tests,16pairedviews/8casts/type/lint/parityPASS;0socket/faceHP/page/bounds errors, p95<=16.8ms. CombinedA6e94713b8e+B38189058B/headroom1810942B; Bembedded23549548B. Existing portraits/source art unchanged; no new draw/HUD/event/flag; P15 helper positions retained. Evidence p21/REVIEW.md.

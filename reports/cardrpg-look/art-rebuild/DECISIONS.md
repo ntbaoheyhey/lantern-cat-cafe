@@ -117,3 +117,5 @@ P18 evidence budget: remove only JSON whitespace from three clean historical rev
 P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [auto] Sorrel uses a small staff tilt around the painted floor tip so its long prop remains grounded; inspect authored source coordinates before writing the constraint. Existing shared rigid parts remain; do not deform the leaf hat/face.
 
 2026-11-10T20:29:00.440293+00:00 Fetched A6 reports a concrete B-owned boss disposal regression. P20 inserted before P19 to fix repeated cleanup before further motion work. P19 prepared plan stays untouched; no accepted unit is re-reviewed.
+
+2026-11-10T20:41:44.434379+00:00 P21 [auto]: after P19 acceptance, Binding Thread is a lowest unrefined motion7.5/overall7.7 row and appears repeatedly in boss encounters. Author a forward knot reach with arm lag and two planted feet, using only its six existing rigid layers. Keep the painted thin arms and metal rims intact; no invented tail/tassels or mesh bend. P15 stable helper positions remain unchanged.
