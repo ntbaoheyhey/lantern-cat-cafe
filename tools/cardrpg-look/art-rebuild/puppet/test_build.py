@@ -34,6 +34,22 @@ class PartOverlapTests(unittest.TestCase):
         self.assertEqual(cfg['sockets']['mainHand'][0], 'armR')
         self.assertEqual(cfg['sockets']['offHand'][0], 'armL')
 
+    def test_biscuit_whole_shield_precedes_head_and_offhand_follows_shield(self):
+        cfg = json.loads((Path(__file__).parent/'configs/biscuit.json').read_text())
+        # Opaque golden rim pixel formerly detached into head; old UV(.674,.393) was transparent.
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        self.assertGreater(source.getpixel((707,480))[3], 200)
+        owners = Image.new('L', (1036, 1200))
+        for i, (_, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            ImageDraw.Draw(owners).polygon([(round(x*1036), round(y*1200)) for x, y in polygon], fill=i+1)
+        for point, expected in [((.72,.39),'armR'),((707/1036,480/1200),'armR'),((.64,.54),'armR'),((.84,.70),'armR'),((.175,.345),'armL'),((.65,.36),'head')]:
+            index = owners.getpixel((round(point[0]*1036),round(point[1]*1200)))-1
+            self.assertGreaterEqual(index, 0)
+            self.assertEqual(cfg['layers'][index][0], expected)
+        self.assertEqual(cfg['sockets']['mainHand'][0], 'armL')
+        self.assertEqual(cfg['sockets']['offHand'][0], 'armR')
+
     def test_joint_overlap_keeps_ink_but_not_the_distant_hand(self):
         alpha = np.zeros((80, 80), np.uint8)
         alpha[20:60, 20:45] = 255  # torso

@@ -216,3 +216,9 @@ P20 A6 disposal report resolved: reproduced expected3/received5, added idempoten
 2026-11-10T21:33:18.585713+00:00 P26 source1 complete whisk/free mitten retained, but owned-alpha audit found detached cuff fragments in body (1293pixels right,543pixels left) and a186pixel mitten fringe. Repair2 expands only those sleeve/mitten borders; source1 and original masters/rig/atlas/config preserved in ~/art/look-v3/p26. No motion accepted yet.
 
 2026-11-10T21:35:58.736528+00:00 P26 source2 cuff repairs are correct and body is connected, but a magnified original-art crop proves the isolated armL fringe is tail fur, not mitten. Repair3 restores it to tail by following the actual transparent gap; original/source1/source2 preserved. Keep the already bounded whisk gesture; reuse saved before captures and passing type/lint/motion tests.
+
+2026-11-10T21:43:05.344906+00:00 P27 source1 complete-rim polygon left993shield-top pixels in the frontmost head. Repair2 changes only source ownership order so armR takes its full shield before head; its polygon does not intersect the actual face. Both source1 arms/body are connected; original/source1 preserved.
+
+2026-11-10T21:46:00.495842+00:00 P27 source2 has full shield except a128pixel top-left metal fringe still in head. Magnified original/ownership crop identifies the straight chord cutting across the curved rim. Repair3 adds only two outer-rim points in the transparent gap; source2 preserved. Keep first bounded motion and reuse before/type/lint/parity.
+
+2026-11-10T21:50:12.119875+00:00 P27 source3 retained unchanged: failed new sentinel UV(.674,.393)=(698,472) has RGBA(0,0,0,0), so it cannot prove shield ownership. Replace sentinel with measured golden fringe pixel(707,480), alpha252, formerly in source2 detached128pixel head component; assert opaque source. Current source3 armR/head/body are each connected (>80pixel audit). Resume at pipeline test then final capture; no fourth art repair.

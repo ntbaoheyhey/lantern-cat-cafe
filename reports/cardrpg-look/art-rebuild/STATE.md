@@ -87,3 +87,6 @@ HEAD matches fetched origin dcb9418e872e53a09acd6fd3d61ede48d9d41146. P1–P24 c
 
 ## Resume 2026-11-10T21:32:49.426551+00:00
 HEAD matches fetched origin fd11fd15f1fd42aba4b518f93935f94511a395bd. P25 published; P26 source1 built and lease released, no runtime gesture yet. No native runner; servers50023/5920 and92836/5922 retained,141GiB free. Dirty inventory RESUME-DIRTY-P26.txt; all earlier native work/GLBs preserved and excluded.
+
+## Resume 2026-11-10T21:49:00.359577+00:00
+HEAD equals fetched origin e1baba87e0ee5b6a73a643e90ae8810eb2dbfaaf. P1–P26 complete; P27 source3 built, ownership-point test failed before capture. No native runner or B lease; servers50023/5920 and92836/5922 retained,141GiB free. Native dirty work and unreviewed GLBs preserved.

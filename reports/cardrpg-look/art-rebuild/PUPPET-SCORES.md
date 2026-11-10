@@ -13,7 +13,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Mallow | 8.6 | 7.7 | 7.8 | 7.8 | p26/evidence/mallow-whisk-flourish.webp; whole whisk forward sweep, coherent scarf/free mitten and tail lag; tiny tail-fringe limit retained at the close source gap |
 | Cinnamon | 8.6 | 7.7 | 7.7 | 7.7 | p18/evidence/cinnamon-follow-through.webp; raised serving tray, restrained cup and delayed tail; gesture remains small |
 | Velvet | 8.6 | 7.5 | 7.9 | 7.9 | p4/batch2-final/velvet-comparison.webp and velvet-motion.webp; ribbon/staff/cape remain clean |
-| Biscuit | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/biscuit-comparison.webp and biscuit-motion.webp; cookie shield and spatula retained |
+| Biscuit | 8.6 | 7.7 | 7.8 | 7.8 | p27/evidence/biscuit-spatula-flourish.webp; whole shield brace and short spatula windup/upward sweep; coherent rim/chin/shoulders, restrained rigid props |
 | Brioche | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/brioche-comparison.webp and brioche-motion.webp; basket/skirt/tail retained |
 | Marigold | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/marigold-comparison.webp and marigold-motion.webp; petal collar and teapot remain readable |
 | Sorrel | 8.6 | 7.7 | 7.7 | 7.7 | p19/evidence/sorrel-follow-through.webp; staff planted at its painted tip, open palm and delayed tail; restrained shoulder amplitude |

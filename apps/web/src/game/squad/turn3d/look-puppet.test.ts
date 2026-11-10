@@ -7,6 +7,7 @@ import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnam
 import threadRig from '../../../../../../assets/cardrpg-look/v3-puppets/binding-thread.rig.json';
 import cloverRig from '../../../../../../assets/cardrpg-look/v3-puppets/clover.rig.json';
 import cushionRig from '../../../../../../assets/cardrpg-look/v3-puppets/practice-cushion.rig.json';
+import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
 import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT } from './look-puppet-rig';
 import { artPipeline } from './look-art';
@@ -141,6 +142,32 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'velvet').tailBend).toBe(0);
+  });
+
+  it('braces Biscuit actual shield and sweeps its wooden spatula forward/up without quiet-mode motion',()=>{
+    const tip=new Vector3((.175-.34)*1.9*1036/1200,(.46-.345)*1.9,0);
+    const [,x,y]=biscuitRig.sockets.offHand;
+    expect(biscuitRig.sockets.offHand[0]).toBe('armR');
+    const held=puppetPose('cast',0,.28,false,0,'biscuit');
+    const shield=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(held.prop));
+    expect(shield.x).toBeGreaterThan(Number(x)+.02);
+    expect(shield.y).toBeGreaterThan(Number(y)+.01);
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const windup=puppetPose(motion,0,.28,false,0,'biscuit'),strike=puppetPose(motion,0,.52,false,0,'biscuit');
+      const start=tip.clone().applyMatrix4(new Matrix4().makeRotationZ(windup.offhand));
+      const end=tip.clone().applyMatrix4(new Matrix4().makeRotationZ(strike.offhand));
+      expect(end.x).toBeGreaterThan(start.x+.04);
+      expect(end.y).toBeGreaterThan(start.y+.055);
+      for(let i=0;i<=60;i++){
+        const p=puppetPose(motion,3,i/60,false,.4,'biscuit'),quiet=puppetPose(motion,3,i/60,true,.4,'biscuit');
+        expect(Math.abs(p.prop)).toBeLessThan(.18);
+        expect(Math.abs(p.offhand)).toBeLessThanOrEqual(.151);
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+      const rest=puppetPose(motion,3,1,false,.4,'biscuit'),idle=puppetPose('idle',3,0,false,.4,'biscuit');
+      expect(rest.offhand).toBeCloseTo(0,12);expect(rest.prop).toBeCloseTo(0,12);
+      expect(rest.tail).toBeCloseTo(idle.tail,12);expect(rest.tailBend).toBeCloseTo(idle.tailBend,12);
+    }
   });
 
   it('sweeps Mallow complete whisk forward from a held windup and returns to a quiet pose',()=>{
