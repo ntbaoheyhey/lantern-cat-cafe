@@ -181,3 +181,6 @@ Tiếp tục Cài đặt: chọn mã lưu trực tiếp, phản hồi rõ và x�
 
 2026-11-10T22:46:55Z: Cài đặt đã duyệt20ảnh ở hai cỡ màn; chọn toàn bộ mã lưu, khôi phục đúng tài khoản/tùy chọn và hủy đặt lại đều đạt.
 Mã sai không đổi tiến trình; bàn phím, âm thanh, tốc độ và xem lại trận hoạt động, không lỗi trình duyệt. Đang đóng gói offline.
+
+2026-11-10T22:49:00Z: Q28 hoàn tất: demo38,84MB,20ảnh nguồn và20ảnh offline đã duyệt; không lỗi hoặc gọi mạng.
+Chuyển mã lưu/đặt lại có xác nhận/hủy và toàn bộ tùy chọn hoạt động ở hai cỡ màn. Tiếp tục phần mô tả địch trên màn Chuẩn bị đang dùng chữ11px.
