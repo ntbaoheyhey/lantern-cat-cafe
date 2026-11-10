@@ -81,6 +81,7 @@ try{
         '--id',row.id,'--seed',String(seed),'--pipeline-type',row.pipelineType,
         '--texture-size',String(row.textureSize),'--source-faces',String(row.sourceFaces??100000),
         '--uv-backend',row.uvBackend??'xatlas','--out',out];
+      command.push('--surface-backend',row.surfaceBackend??'native');
       row.status='WAITING_LEASE_OR_GENERATING';await save(queuePath,queue);
       console.log(JSON.stringify({unit:row.id,attempt:n,seed,status:row.status}));
       const code=await new Promise((done,reject)=>{

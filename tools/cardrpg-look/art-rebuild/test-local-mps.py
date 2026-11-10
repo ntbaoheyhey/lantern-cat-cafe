@@ -16,6 +16,26 @@ spec.loader.exec_module(runner)
 
 
 class LocalMpsGuards(unittest.TestCase):
+    def test_shell_cleanup_is_opt_in_after_immutable_checkpoint(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); script = root/'generate.py'
+            script.write_text('def main():\n    infer_original()\n    if True:\n        if True:\n'
+                '            raw_checkpoint = args.output + ".raw.npz"\n'
+                '            save_original()\n'
+                '            # Simplify before UV unwrap\n'
+                '            simplify_original()\n')
+            first = runner.configure_voxel_shell(root)
+            self.assertEqual(runner.configure_voxel_shell(root), first)
+            body = script.read_text()
+            self.assertEqual(body.count('infer_original()'), 1)
+            self.assertEqual(body.count('simplify_original()'), 1)
+            self.assertLess(body.index('save_original()'), body.index('recover_checkpoint('))
+            self.assertIn("if os.environ.get('LANE_B_SHELL_SCRIPT'):", body)
+            self.assertIn("['surfaceDriftPass']", body)
+            compile(body, str(script), 'exec')
+            script.write_text('unknown upstream\n')
+            with self.assertRaises(ValueError): runner.configure_voxel_shell(root)
+
     def test_raw_checkpoint_precedes_destructive_simplification(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td); script = root/'generate.py'

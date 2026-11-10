@@ -280,7 +280,8 @@
       "sourceFaces": 100000,
       "uvBackend": "blender",
       "sourceReviewPending": true,
-      "reviewReason": "Native attempt1 exported; raw/decoded topology and six-view review pending, not runtime accepted."
+      "reviewReason": "Saved-cell shell2 approved at source; preview in battle has excessive bright material relief. Runtime review/fix in progress; no re-inference.",
+      "surfaceRepairDirectory": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2"
     },
     {
       "id": "clover",
@@ -290,7 +291,9 @@
       "textureSize": 1024,
       "status": "PENDING",
       "attempts": [],
-      "sourceFaces": 100000
+      "sourceFaces": 100000,
+      "uvBackend": "blender",
+      "surfaceBackend": "voxel-shell"
     },
     {
       "id": "panko",

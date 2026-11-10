@@ -224,6 +224,39 @@ def configure_blender_uv(trellis):
             'helper': str(helper), 'helperSha256': sha(helper), 'purpose': 'bounded UV export; no inference changes'}
 
 
+def configure_voxel_shell(trellis):
+    """Opt-in post-decoder cleanup; source checkpoint and model calls unchanged."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: optional coherent shell from saved native cells'
+    anchor = '            # Simplify before UV unwrap'
+    if marker not in body:
+        if body.count(anchor) != 1 or 'raw_checkpoint = args.output' not in body:
+            raise ValueError('Raw export changed; inspect before enabling shell cleanup')
+        addition = marker + '''
+            if os.environ.get('LANE_B_SHELL_SCRIPT'):
+                import importlib.util
+                from pathlib import Path
+                shell_spec = importlib.util.spec_from_file_location('lane_b_shell', os.environ['LANE_B_SHELL_SCRIPT'])
+                shell_module = importlib.util.module_from_spec(shell_spec)
+                shell_spec.loader.exec_module(shell_module)
+                shell_path = shell_module.recover_checkpoint(Path(raw_checkpoint),
+                    Path(args.output + '.shell'), Path(os.environ['LANE_B_BLENDER']))
+                with np.load(shell_path, allow_pickle=False) as repaired:
+                    if not __import__('json').loads(repaired['surface_repair'].item())['surfaceDriftPass']:
+                        raise ValueError('Reject shell exceeding original surface drift bound')
+                    verts, faces = repaired['vertices'], repaired['faces']
+                print(f"  Reviewed-distance shell: {shell_path}; {len(faces):,} faces", flush=True)
+
+'''
+        at = body.index(anchor)
+        path.write_text(body[:at] + addition + body[at:])
+    scripts = ['repair-voxel-shell.py', 'finish-voxel-shell.py', 'surface-distance.py']
+    return {'path': str(path), 'sha256': sha(path),
+            'helpers': {name: sha(Path(__file__).with_name(name)) for name in scripts},
+            'purpose': 'opt-in saved-cell surface cleanup; unchanged inference and .015p95 drift guard'}
+
+
 def local_generate(args):
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
         raise ValueError('Invalid unit id')
@@ -231,6 +264,8 @@ def local_generate(args):
         raise ValueError('Preserve completed Mochi/Soot conversions; only isolated --smoke is allowed')
     if args.seed is None:
         raise ValueError('A fixed --seed is required')
+    if args.surface_backend == 'voxel-shell' and args.uv_backend != 'blender':
+        raise ValueError('Voxel-shell cleanup requires the bounded Blender UV route')
     if (ROOT / 'STOP-B').exists():
         raise InterruptedError('STOP-B requested')
     source = ROOT / f'assets/source/look-v3/concepts/{args.id}.png'
@@ -290,6 +325,10 @@ def local_generate(args):
             receipt['blenderUvPatch'] = configure_blender_uv(trellis)
             receipt['generateSha256'] = sha(trellis / 'generate.py')
         receipt['uvBackend'] = args.uv_backend
+        if args.surface_backend == 'voxel-shell':
+            receipt['voxelShellPatch'] = configure_voxel_shell(trellis)
+            receipt['generateSha256'] = sha(trellis / 'generate.py')
+        receipt['surfaceBackend'] = args.surface_backend
 
         def save(status, **extra):
             receipt.update(status=status, elapsedSeconds=round(time.monotonic() - started, 3), **extra)
@@ -306,9 +345,12 @@ def local_generate(args):
         env['HF_HUB_DISABLE_PROGRESS_BARS'] = '1'
         env.pop('LANE_B_UV_SCRIPT', None)
         env.pop('LANE_B_BLENDER', None)
+        env.pop('LANE_B_SHELL_SCRIPT', None)
         if args.uv_backend == 'blender':
             env['LANE_B_UV_SCRIPT'] = str(Path(__file__).with_name('unwrap-decoded.py'))
             env['LANE_B_BLENDER'] = str(Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
+        if args.surface_backend == 'voxel-shell':
+            env['LANE_B_SHELL_SCRIPT'] = str(Path(__file__).with_name('repair-voxel-shell.py'))
         with (out / 'generation.log').open('w') as log:
             child = subprocess.Popen(command, cwd=trellis, env=env, stdout=log,
                                      stderr=subprocess.STDOUT, start_new_session=True)
@@ -337,6 +379,10 @@ def local_generate(args):
             receipt['orientation'] = json.loads(orientation)
             structure = validate_glb(model)
         model_hash = sha(model)
+        if args.surface_backend == 'voxel-shell':
+            diagnostic = out / f'{args.id}.shell/repaired-surface.json'
+            receipt['surfaceRepair'] = json.loads(diagnostic.read_text())
+            receipt['surfaceRepairReceipt'] = str(diagnostic)
         save('GENERATED_NOT_REVIEWED', model=str(model), modelSha256=model_hash, structure=structure,
              cooldownRecommendedSeconds=120 if time.monotonic() - started > 900 else 0)
         if not args.smoke:
@@ -377,6 +423,8 @@ def main():
     parser.add_argument('--texture-size', type=int, choices=[512, 1024, 2048], default=1024)
     parser.add_argument('--uv-backend', choices=['xatlas', 'blender'], default='xatlas',
                         help='Opt-in reviewed Blender export without changing inference')
+    parser.add_argument('--surface-backend', choices=['native', 'voxel-shell'], default='native',
+                        help='Opt-in cleanup of saved native cells; never changes model sampling')
     parser.add_argument('--source-faces', type=int, choices=[50000, 100000, 200000], default=100000,
                         help='Pre-UV source mesh budget; runtime packing is a separate reviewed step')
     parser.add_argument('--local-root', default=str(Path.home() / 'art/trellis-mac'))

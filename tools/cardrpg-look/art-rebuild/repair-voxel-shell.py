@@ -38,6 +38,24 @@ def extract_shell(coords, origin, voxel_size):
     }
 
 
+def recover_checkpoint(checkpoint, out, blender):
+    """Shared cleanup stage, also usable by a generation already holding a lease."""
+    out.mkdir(parents=True, exist_ok=False)
+    with np.load(checkpoint, allow_pickle=False) as source:
+        vertices, faces, metrics = extract_shell(source['voxel_coords'], source['origin'], source['voxel_size'].item())
+    metrics.update(checkpointSha256=hashlib.sha256(checkpoint.read_bytes()).hexdigest(),
+                   modelRequests=0, runtimeAccepted=False)
+    candidate = out / 'shell.npz'
+    np.savez(candidate, vertices=vertices, faces=faces, metrics=np.asarray(json.dumps(metrics)))
+    surface = out / 'repaired-surface.npz'
+    with (out / 'repair.log').open('w') as log:
+        subprocess.run([str(blender), '-b', '--threads', '4', '--python-exit-code', '1', '--python',
+                        str(Path(__file__).with_name('finish-voxel-shell.py')), '--',
+                        '--checkpoint', str(checkpoint), '--shell', str(candidate), '--out', str(surface)],
+                       stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
+    return surface
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--checkpoint', type=Path, required=True)
@@ -50,20 +68,8 @@ def main():
     lease = json.loads(Path('/tmp/cardrpg-big-locks/timing.lock/owner.json').read_text())
     if lease.get('lane') != 'B-LOOK' or lease.get('pid') != os.getppid():
         raise ValueError('Run through the shared timing lease')
-    args.out.mkdir(parents=True, exist_ok=False)
-    with np.load(args.checkpoint, allow_pickle=False) as source:
-        vertices, faces, metrics = extract_shell(source['voxel_coords'], source['origin'], source['voxel_size'].item())
-    metrics.update(checkpointSha256=hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
-                   modelRequests=0, runtimeAccepted=False)
-    candidate = args.out / 'shell.npz'
-    np.savez(candidate, vertices=vertices, faces=faces, metrics=np.asarray(json.dumps(metrics)))
     blender = str(Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
-    surface = args.out / 'repaired-surface.npz'
-    with (args.out / 'repair.log').open('w') as log:
-        subprocess.run([blender, '-b', '--threads', '4', '--python-exit-code', '1', '--python',
-                        str(Path(__file__).with_name('finish-voxel-shell.py')), '--',
-                        '--checkpoint', str(args.checkpoint), '--shell', str(candidate), '--out', str(surface)],
-                       stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
+    surface = recover_checkpoint(args.checkpoint, args.out, blender)
     # exec preserves the lease parent's identity for export-decoded's guard.
     os.execv(sys.executable, [sys.executable, str(Path(__file__).with_name('export-decoded.py')),
              '--checkpoint', str(args.checkpoint), '--generation-receipt', str(args.generation_receipt),

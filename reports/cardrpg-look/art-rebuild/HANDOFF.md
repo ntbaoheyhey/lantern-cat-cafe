@@ -2,7 +2,7 @@
 
 ACTIVE — continue NON-STOP-RUN/QUEUE; user resumed, no current pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed7cc2728a8; Q3 pilot closed PARTIAL, Q5 roster continues.
+Latest pushed418a4f7ac; Q3 pilot closed PARTIAL, Q5 roster continues.
 Do not redo R0/M5/S6, Q1/Q2/Q3/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time; alpha-only/noRMBG. No browser generation; internal browser for review only.
 External ~/art/trellis-mac d58628f4; Python3.11/Torch2.15/MPS/import/DINO access pass;19weight files cached16.18GB. No setup/smoke repeat.
@@ -15,9 +15,11 @@ CURRENT: Yarn native attempt1 completed847.754s; source108834832B fdee0c83 at ~/
 Source1 front/side/clay REJECTED: fragmented triangles hide eyes. Raw topology has921309nonmanifold edges before simplify; reduced surface adds80276duplicates. Evidence r2/native-yarn/source1. No runtime install.
 RAW repair1 completed: distance PASS but source views still fragmented, REJECTED. Four closest-surface fixtures PASS, unchanged .015bound.
 Local shell repair2 from saved native cells (no inference) restores continuous yarn/eyes/crown; source front/side/clay inspected. Raw-shell2/export/source.glb SHA8fbe4de9; drift.006801/.002699p95,100Ksource.
-Packed-shell2 is1.298MB/61068tri; not yet runtime accepted. Battle verification queued session36525/waiter via /tmp/cardrpg-v5full-yarn-battle-verify.mjs; log /tmp/cardrpg-v5full-yarn-battle2.log. It captures before, installs preview only, builds /tmp/cardrpg-v5full-v3-yarn-shell2.html, then motion/after/faces. Check log before launching more heavy work.
-No model inference running. Wait for/inspect source/motion/battle before accepting. Keep fallback if rejected. Type/lint/5touchedtests and2shellguardsPASS.
-local-roster sourceReviewPending excludes Button and active Yarn from duplicate inference. It also supports per-row uvBackend and hash-verified recovered entries. Intake watcher remains stopped pending usable source.
+Packed-shell2 is1.298MB/61068tri; battle job36525 FINISHED:8poses/0errors,1shot/0UIoverlap,24faces0offenders. Visual review finds pale crease contours from old enemy relief; source and packed Blender views are coherent. Preview file installed locally but NOT accepted.
+Current B-LOCAL-012 material fix skips old relief for generated-v3 foes only; type/lint/5testsPASS. Waiting job7406/owner60368 runs /tmp/cardrpg-v5full-yarn-material-verify.mjs; log /tmp/cardrpg-v5full-yarn-material1.log. Includes same shot/8poses/faces/4casts. No other render waiter.
+Successor session28970 (/tmp/cardrpg-v5full-clover-after-material.mjs) waits for60368 to exit successfully, then runs local-roster limit1: Clover only,512/1024,seed20261113,BlenderUV+voxel-shell. No inference running yet. Do not launch duplicate Clover or repeat completed source.
+No model inference currently; successor may start after material job. Inspect material1/motion before accepting Yarn; fallback if rejected.10nativeguards/2shellguardsPASS.
+local-roster sourceReviewPending excludes Button and active Yarn from duplicate inference. Smoke review saved at ~/art/look-v3/local-generation/smoke/mochi/roster-review.json, trial authorization only. It also supports per-row uvBackend and hash-verified recovered entries. Intake watcher remains stopped pending usable source.
 Q3 bounded close documented in R1-DECISION.md: all4play, appeal/menace7.75>=7.0, pilotweighted7.71<8.5; PARTIAL quality. Q5 roster active; Yarn trial continues there. Known limits do not block queue.
 Q6 all12hero skill/ult/passive and13enemy families wired; audit7.7PARTIAL. Normal/passive similarity and large-motif face clipping remain; bounded3repairs already used.
 Q7 camera/key checkpoint7.5;1440/1024posters/96facesPASS. Full roster coverage pending.
@@ -26,7 +28,7 @@ Q9 DONE: normal/dev FeelLab hygiene verified, shell requests sent viaB-OUTBOX; n
 Q10 integration/films andQ11report queued. Q10 expressly permits new integration merge commits into#420 only; never PRmerge/deploy/forcepush/defaultflags.
 R4 validation retained:1823webtests/type/lint/build,5rulesseeds/85plans exact;168casts max16.8ms,111draws,183595tri;324faces0offenders.
 R5:8touchedtests/type/lint,6nativecasts16.8ms; combinedR4/R5 E2E421PASS. Cold3native+3CPU4 max49.9/183.3ms; traces outsidegit. Do not rerun unchanged checks.
-Full35743045B/lean25223285B; lean same-shot comparison pending. Evidence<120MB/source51MiB; large masters outsidegit.
+Full35743045B/lean25223285B; lean same-shot comparison pending. Evidence97.51MB/source51MiB; large masters outsidegit.
 R4film r4/film/roster-vfx-x1.mp4 exists; contact sheet viewed, continuous internal-browser review pending.
 Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
 Check STOP-B/INBOX between items. Report deadline20Nov12UTC. Commit/push checkpoints and immediately continue; no final reply while queue remains unless hard stop.
