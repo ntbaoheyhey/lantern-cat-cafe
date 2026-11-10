@@ -16,7 +16,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.1 | 8.0 | 13: compact route metadata (7.2) | shots/q13d-final route; q14a/*-map-choice repairs boon text/fold; keyboard settlement passes |
-| Journal | 8.0 | 7.8 | 13: compact ticket text (7.5) | shots/q17-journal/*; 12 inspected views, all five claims fit, keyboard settlement/navigation pass |
+| Journal | 8.1 | 8.0 | 13: compact collection metadata (7.5) | shots/q26-journal/* + q26-keepsakes-final/*;48views, direct pages, eight exact claims/caps/route locks/keyboard, no book overflow |
 | Field guide | 8.0 | 7.8 | 13: optional glossary scrolls (7.5) | shots/q18-guide-current and q18-battle-guide-final; V5/rage/phases and embedded contrast verified |
 | Settings / save | 7.9 | 7.8 | 07: restrained envelope detail (7.5) | shots/q18-guide-settings; actual x3/save transfer/reset cancel pass both sizes |
 | Normal battle | 8.2 | 8.1 | 13/18: small rage text (7.5) | final-screens/*-normal-battle; integrated25puppets, current stage/portraits; inspected |

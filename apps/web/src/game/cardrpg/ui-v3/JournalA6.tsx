@@ -1,7 +1,7 @@
-import {useSyncExternalStore} from 'react';
+import {useId,useState,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
-import {DiscoveriesV4} from '../depth/JourneyV4';
+import {StarBoardV4} from '../depth/JourneyV4';
 import {currencyIconA6} from './CountUpA6';
 import {artPropsA6} from './art-a6';
 
@@ -25,6 +25,8 @@ export function JournalA6({m}:{m:DepthModel}) {
  const journal=R.journalV4(m.state),milestones=R.MILESTONES_V4.map(x=>R.milestonePreviewV4(m.state,x.id));
  const ready=milestones.filter(p=>!p.reason),collected=milestones.filter(p=>p.claimed).length;
  const starGifts=R.STAR_REWARDS_V4.filter(g=>!R.starRewardPreviewV4(m.state,g.id).reason).length;
+ const [section,setSection]=useState<'keepsakes'|'discoveries'|'collection'|'evenings'>('keepsakes'),panelId=useId();
+ const found=m.state.v4?.journey?.found??[],stars=Object.values(m.state.v4?.journey?.stars??{});
  const crew=m.state.team.slice(0,3);
  return <section className="a6-journal" aria-label="Your collection journal">
   <header className="a6-journal-intro">
@@ -33,15 +35,41 @@ export function JournalA6({m}:{m:DepthModel}) {
     <dl className="a6-journal-counts"><div><dt>Companions</dt><dd>{journal.cats.length}<small> / {R.CATS.length}</small></dd></div><div><dt>Gear designs</dt><dd>{journal.gear.length}<small> / {R.GEAR.length}</small></dd></div><div><dt>Full sets</dt><dd>{journal.sets.length}<small> / {R.SETS.length}</small></dd></div><div><dt>Routes home</dt><dd>{journal.rewardedRoutes}</dd></div></dl>
    </div>
   </header>
-  <div className="a6-journal-milestones" aria-label="Collection milestones">{milestones.map(p=><article className="a6-journal-ticket" key={p.id} data-status={p.claimed?'collected':p.reason?'waiting':'ready'}>
+  <nav className="a6-journal-sections" aria-label="Journal pages">
+   <button aria-pressed={section==='keepsakes'} aria-controls={panelId} onClick={()=>setSection('keepsakes')}>Keepsakes <span data-ready={ready.length>0}>{ready.length}</span></button>
+   <button aria-pressed={section==='discoveries'} aria-controls={panelId} onClick={()=>setSection('discoveries')}>Discoveries <span data-ready={starGifts>0}>{starGifts}</span></button>
+   <button aria-pressed={section==='collection'} aria-controls={panelId} onClick={()=>setSection('collection')}>Collection</button>
+   <button aria-pressed={section==='evenings'} aria-controls={panelId} onClick={()=>setSection('evenings')}>Evenings</button>
+  </nav>
+  <div className="a6-journal-view" id={panelId}>
+  {section==='keepsakes'&&<div className="a6-journal-milestones" aria-label="Collection milestones">{milestones.map(p=><article className="a6-journal-ticket" key={p.id} data-status={p.claimed?'collected':p.reason?'waiting':'ready'}>
    <div className="a6-journal-ticket-top"><JournalStamp kind={p.kind}/><span>{p.claimed?'Collected':p.reason?(p.progress>=p.target?'Gift waiting':'A little further'):'Gift ready'}</span></div>
    <h3>{p.name}</h3><label className="a6-journal-progress"><span>{Math.min(p.progress,p.target)} / {p.target}</span><progress aria-label={`${p.name} progress`} value={p.progress} max={p.target}/></label>
    <div className="a6-journal-reward">{p.claimed?<><span aria-hidden="true">✓</span> Moment saved</>:p.ribbon?<><span aria-hidden="true">✦</span> Cafe ribbon</>:<span className="a6-journal-currency">{Object.entries(p.reward).map(([id,count])=><span key={id}><i aria-hidden="true">{currencyIconA6(id)}</i><b>{count} {id==='fish'?'fish':id}</b></span>)}</span>}</div>
    <p className="a6-journal-reason">{p.claimed?'Keep exploring with your crew.':p.reason??'A thank-you for the journey.'}</p>
    <button className={!p.reason?'cr-primary':undefined} aria-label={`Claim ${p.name}`} disabled={!!p.reason} onClick={()=>m.apply(R.claimMilestoneV4(m.state,p.id),`${p.name} collected.`)}>{p.claimed?'Collected':'Collect gift'}</button>
-  </article>)}</div>
-  <details className="a6-journal-pages"><summary>Open your discovery pages <span>{starGifts?`${starGifts} star ${starGifts===1?'gift':'gifts'} ready`:`${m.state.v4?.journey?.found.length??0} discoveries`}</span></summary><DiscoveriesV4 m={m}/></details>
-  <details className="a6-journal-pages"><summary>Browse your collection <span>{journal.cats.length} companions · {journal.gear.length} designs</span></summary><h3>Companions</h3><p>{journal.cats.map(id=>R.CAT_BY_ID[id]?.name).filter(Boolean).join(' · ')||'A new friend is waiting at the recruit counter.'}</p><h3>Gear designs</h3><p>{journal.gear.map(id=>R.GEAR_BY_ID[id]?.name).filter(Boolean).join(' · ')||'Find your first keepsake on Night Patrol.'}</p></details>
-  <details className="a6-journal-pages"><summary>Revisit your evenings <span>Chapter mastery and battle notes</span></summary><div className="a6-journal-chapters">{R.CHAPTERS.map(c=><p key={c.id}><b>{c.name}</b><span>{m.state.masteries.includes(c.id)?'Mastered':m.state.cleared.includes(c.id)?'Cleared':'Still to explore'}</span></p>)}</div><div className="cr-actions"><button onClick={()=>m.go('codex')}>Open field guide</button><button onClick={()=>m.go('save')}>Review last battle</button></div></details>
+  </article>)}</div>}
+  {section==='discoveries'&&<div className="a6-journal-discoveries">
+   <StarBoardV4 m={m}/>
+   <section className="a6-journal-notes" aria-label="Discovery history"><header><small>PAGES ADDED ALONG THE WAY</small><h3>{found.length} discoveries</h3></header>
+    <div className="a6-journal-scroll" tabIndex={0} role="region" aria-label="Discovery notes">
+     {found.length?<ol>{[...found].reverse().map(d=><li key={d.id}><span>{d.text}</span><small>Day {d.day}</small></li>)}</ol>:<div className="a6-journal-empty"><JournalStamp kind="routes"/><p>Your first discoveries are just ahead.</p><small>Crew bonds, matching sets, new ranks and route stars each leave a memory.</small></div>}
+     {stars.length>0&&<details><summary>Your route stars</summary><p>Stars keep your best achievements across visits. They need not come from one encounter.</p><ul>{stars.map(r=><li key={r.key}>{R.CHAPTERS[r.chapter-1]!.name} · Band {r.band} · {r.kind} {r.nodeId}: {r.conditions.filter(Boolean).length}/3</li>)}</ul></details>}
+    </div>
+   </section>
+  </div>}
+  {section==='collection'&&<div className="a6-journal-collection">
+   <section aria-label="Companions in your journal"><header><small>FRIENDS AT THE CAFE</small><h3>{journal.cats.length} companions</h3></header><div className="a6-journal-scroll" tabIndex={0} role="region" aria-label="Companion collection">
+    {journal.cats.length?<div className="a6-journal-companions">{journal.cats.map(id=><figure key={id}><img {...artPropsA6(id)} alt=""/><figcaption>{R.CAT_BY_ID[id]?.name}</figcaption></figure>)}</div>:<div className="a6-journal-empty"><JournalStamp kind="cats"/><p>A new friend is waiting at the recruit counter.</p></div>}
+   </div></section>
+   <section aria-label="Gear designs in your journal"><header><small>KEEPSAKES FOUND TOGETHER</small><h3>{journal.gear.length} gear designs</h3></header><div className="a6-journal-scroll" tabIndex={0} role="region" aria-label="Gear collection">
+    {journal.gear.length?<ul className="a6-journal-gear">{journal.gear.map(id=><li key={id}>{R.GEAR_BY_ID[id]?.name}</li>)}</ul>:<div className="a6-journal-empty"><JournalStamp kind="gear"/><p>Find your first keepsake on Night Patrol.</p></div>}
+   </div></section>
+  </div>}
+  {section==='evenings'&&<section className="a6-journal-evenings" aria-label="Your evenings"><header><small>THE WAY BACK HOME</small><h3>Every route leaves a memory.</h3><p>{journal.rewardedRoutes} routes home · {m.state.masteries.length} chapters mastered</p></header>
+   <div className="a6-journal-chapters">{R.CHAPTERS.map(c=><article key={c.id} data-cleared={m.state.cleared.includes(c.id)}><JournalStamp kind="chapters"/><small>CHAPTER {c.id}</small><h4>{c.name}</h4><p>{m.state.masteries.includes(c.id)?'Mastered':m.state.cleared.includes(c.id)?'Cleared':'Still to explore'}</p></article>)}</div>
+   <footer><p>Take a field note into your next evening, or look back at the last battle.</p><div><button onClick={()=>m.go('codex')}>Open field guide</button><button onClick={()=>m.go('save')}>Review last battle</button></div></footer>
+  </section>}
+  </div>
  </section>;
 }
