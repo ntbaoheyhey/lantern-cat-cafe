@@ -1,9 +1,9 @@
 {
-  "version": 3,
+  "version": 4,
   "style": "Painted night cafe",
   "pathBase": "repository-root",
-  "enabledBy": "lookV2 && lookArt=v3; Lane U adoption only",
-  "status": "SOURCE_REVIEW_REQUIRED; runtime roster identity review pending",
+  "enabledBy": "lookV2 && lookArt=v3; A6 owns UI adoption",
+  "status": "READY_PUPPET_REVIEWED",
   "portraits": {
     "mochi": {
       "id": "mochi",
@@ -81,7 +81,73 @@
             "144": "6cb605d1266da2de45daa2f273b7051e0c27060e9639473b70013b6a15d7004f"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mochi.png",
+          "crop": [
+            168,
+            -20,
+            1007,
+            904
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/mochi-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/mochi.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/mochi.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "soot": {
       "id": "soot",
@@ -159,7 +225,73 @@
             "144": "a56a64c61e27e1addb013ca92b4bfde6996770bbc86b23bdb11ecf931a9e4e80"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/soot.png",
+          "crop": [
+            213,
+            3,
+            1044,
+            916
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/soot-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/soot.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/soot.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "clover": {
       "id": "clover",
@@ -237,7 +369,84 @@
             "144": "89d238a959aeba0a77ddd619f9a01ad59c61041cae108eee62ab06f9a93037ae"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/clover.png",
+          "alphaBounds": [
+            111,
+            111,
+            1135,
+            1493
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/clover.png",
+          "crop": [
+            207,
+            87,
+            1089,
+            1057
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/clover-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/clover.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/clover.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "panko": {
       "id": "panko",
@@ -315,7 +524,73 @@
             "144": "427753bce6fe74adcad694a45ba5068f92e80eb31d2a12cb6bf70e340c3338cf"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/panko.png",
+          "crop": [
+            219,
+            82,
+            1176,
+            1135
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/panko-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/panko.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/panko.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "mallow": {
       "id": "mallow",
@@ -393,7 +668,73 @@
             "144": "dff0834bb199ab3851c5a1956df20f5f81764cbdd633cd2cc202f7547ed3586f"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mallow.png",
+          "crop": [
+            210,
+            81,
+            1192,
+            1161
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/mallow-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/mallow.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/mallow.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "cinnamon": {
       "id": "cinnamon",
@@ -471,7 +812,84 @@
             "144": "e5ab1004700a3f4dab58c5d3ef06ee73e700df7f5d87db8154562e6052017b3b"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/cinnamon.png",
+          "alphaBounds": [
+            104,
+            104,
+            1088,
+            1402
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/cinnamon.png",
+          "crop": [
+            238,
+            81,
+            1073,
+            999
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/cinnamon-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/cinnamon.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/cinnamon.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "velvet": {
       "id": "velvet",
@@ -549,7 +967,73 @@
             "144": "65dc1e671ed3dde13ed2cde0ffb6af68d0c61efe6d7adfb6a49babce8923ef2a"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/velvet.png",
+          "crop": [
+            190,
+            79,
+            1140,
+            1124
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/velvet-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/velvet.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/velvet.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "biscuit": {
       "id": "biscuit",
@@ -627,7 +1111,73 @@
             "144": "94ca78fb1f053fc5c7122d52a9e62e2060e587de8cfd84b64f98f60c0bb574aa"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/biscuit.png",
+          "crop": [
+            242,
+            80,
+            1134,
+            1061
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/biscuit-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/biscuit.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/biscuit.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "brioche": {
       "id": "brioche",
@@ -705,7 +1255,73 @@
             "144": "92ea3e5283efe568bee7dbc78717cc1d3c3a1940ae3eae0fca366e0987506c73"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/brioche.png",
+          "crop": [
+            229,
+            83,
+            1121,
+            1064
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/brioche-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/brioche.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/brioche.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "marigold": {
       "id": "marigold",
@@ -783,7 +1399,73 @@
             "144": "ed7f99bb5304f6c98e0a830f3b3f2c27cff5c9340178112ca54947ae1dff524d"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/marigold.png",
+          "crop": [
+            279,
+            81,
+            1255,
+            1155
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/marigold-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/marigold.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/marigold.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "sorrel": {
       "id": "sorrel",
@@ -861,7 +1543,73 @@
             "144": "18b2c3aab23de958df40d51234007b352f36e73341d91d2c19fd4c19c1d5a355"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sorrel.png",
+          "crop": [
+            221,
+            81,
+            1131,
+            1082
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/sorrel-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/sorrel.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/sorrel.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "inkcap": {
       "id": "inkcap",
@@ -939,7 +1687,73 @@
             "144": "f71350645a79785b9571cd74fb6f703978a656777ccc0073a5fe40fd0e5c0abc"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/inkcap.png",
+          "crop": [
+            234,
+            80,
+            1097,
+            1029
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/inkcap-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/inkcap.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/inkcap.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "button-guard": {
       "id": "button-guard",
@@ -1017,7 +1831,73 @@
             "144": "12c5aadabeba9f0d7b3daba9ef8d5c1bc44f14cd9bc4a0101db3eda412a1769e"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/button-guard.png",
+          "crop": [
+            232,
+            -2,
+            1088,
+            939
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/button-guard-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/button-guard.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/button-guard.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "sock-skipper": {
       "id": "sock-skipper",
@@ -1095,7 +1975,84 @@
             "144": "0ecfdb4d8755c00a5a850fe62e54ad3b635471651db258cdf271560b93576962"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sock-skipper.png",
+          "alphaBounds": [
+            98,
+            98,
+            915,
+            1326
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sock-skipper.png",
+          "crop": [
+            95,
+            77,
+            878,
+            938
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/sock-skipper-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/sock-skipper.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/sock-skipper.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "spool-ram": {
       "id": "spool-ram",
@@ -1173,7 +2130,73 @@
             "144": "8884579a02a64cdb5f371797438aa3df2577c4fa610659e913f8b2721f7da65d"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/spool-ram.png",
+          "crop": [
+            -148,
+            96,
+            1001,
+            1359
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/spool-ram-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/spool-ram.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/spool-ram.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "needle-moth": {
       "id": "needle-moth",
@@ -1251,7 +2274,73 @@
             "144": "0a1eb055b1e3d86c03d91f83d3d5dd3f7ed01edbea60c6a8387a197349e9a004"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/needle-moth.png",
+          "crop": [
+            98,
+            76,
+            1076,
+            1152
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/needle-moth-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/needle-moth.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/needle-moth.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "teacup-healer": {
       "id": "teacup-healer",
@@ -1329,7 +2418,73 @@
             "144": "5c50f131bb24626eee350045f761138c3b063fb9219b13b8a1a69ae1b70325d4"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/teacup-healer.png",
+          "crop": [
+            181,
+            76,
+            1157,
+            1150
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/teacup-healer-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/teacup-healer.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/teacup-healer.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "binding-thread": {
       "id": "binding-thread",
@@ -1407,7 +2562,84 @@
             "144": "5ee441a440e6ec025d059782d10d5ac7205b949fc980fe1e5ad54dcffb5df91b"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/binding-thread.png",
+          "alphaBounds": [
+            114,
+            114,
+            1070,
+            1537
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/binding-thread.png",
+          "crop": [
+            102,
+            89,
+            1011,
+            1088
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/binding-thread-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/binding-thread.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/binding-thread.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "practice-cushion": {
       "id": "practice-cushion",
@@ -1485,7 +2717,73 @@
             "144": "4bb77c1a9ada3e31804ee227eaebcaeff828a69158721a4ef76124420fc93b9f"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/practice-cushion.png",
+          "crop": [
+            181,
+            76,
+            1154,
+            1147
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/practice-cushion-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/practice-cushion.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/practice-cushion.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "pollen-scout": {
       "id": "pollen-scout",
@@ -1563,7 +2861,73 @@
             "144": "32184e6597ecbc417a6f8cf7a7907498352ea8899c27b9a3179fd1c36c470852"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pollen-scout.png",
+          "crop": [
+            264,
+            87,
+            1351,
+            1283
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/pollen-scout-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/pollen-scout.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/pollen-scout.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "crumb-sentinel": {
       "id": "crumb-sentinel",
@@ -1641,7 +3005,73 @@
             "144": "2cb9ff695000df4fee1dd06d567dc7cb168533806d6fe63717aab046054c4a96"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/crumb-sentinel.png",
+          "crop": [
+            147,
+            82,
+            1179,
+            1217
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/crumb-sentinel-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/crumb-sentinel.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "rain-spool": {
       "id": "rain-spool",
@@ -1719,7 +3149,74 @@
             "144": "d30318b74240a7aa0d6d616b87dacc87ecbcc02de1c46277e2d32d3fbafdcad2"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/rain-spool.png",
+          "crop": [
+            -113,
+            94,
+            1016,
+            1336
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/rain-spool-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/rain-spool.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/rain-spool.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "yarn-giant": {
       "id": "yarn-giant",
@@ -1797,7 +3294,74 @@
             "144": "73d82fdeaa6bf7180ef803da33c6209531e0b406cbc074520c8b47bc6726956e"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/yarn-giant.png",
+          "crop": [
+            66,
+            -12,
+            984,
+            998
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/yarn-giant-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/yarn-giant.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/yarn-giant.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "kettle-knight": {
       "id": "kettle-knight",
@@ -1875,7 +3439,74 @@
             "144": "b55e4a4c9f835f155ca3cb8e72e001088bfff9ca627b98e65c831954a44ddc0f"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/kettle-knight.png",
+          "crop": [
+            207,
+            81,
+            1244,
+            1221
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/kettle-knight-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/kettle-knight.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/kettle-knight.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     },
     "pantry-crown": {
       "id": "pantry-crown",
@@ -1953,7 +3584,74 @@
             "144": "e24d5d62f417a7a74d1fe49e57c06cdfc28f468e1f9b7020e57e9e9914d4756f"
           }
         }
-      }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pantry-crown.png",
+          "crop": [
+            193,
+            81,
+            1158,
+            1142
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/pantry-crown-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/pantry-crown.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/pantry-crown.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
     }
   },
   "skills": {
@@ -3112,5 +4810,14 @@
       }
     }
   },
-  "sourcePolicy": "Existing original built-in image_gen masters; no new generation or external images"
+  "sourcePolicy": "All25puppets and matching portraits derive from the same original concepts;60skillicons derive from original VFX masters. No new generation or external art.",
+  "updatedAt": "2026-11-10T18:00:04.066862+00:00",
+  "formats": [
+    "puppet",
+    "cardArt",
+    "headPortrait",
+    "uiPortrait",
+    "faceIcon",
+    "skills"
+  ]
 }

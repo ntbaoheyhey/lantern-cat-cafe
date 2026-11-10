@@ -54,3 +54,6 @@ Full current dirty inventory saved in RESUME-DIRTY-2026-11-10.txt; all changes r
 
 ## Resume 2026-11-10T17:43:05.816261+00:00
 HEAD equals fetched origin at 443edb96d5f50a1be05cf57c03e1d3d389effd28. P1–P5 done; P6 final49+6cast audit and33tests reused, visual review pending. No native runner; current servers50023/5920 and92836/5922. Disk151GiB free. Full dirty inventory RESUME-DIRTY-2026-11-11.txt; no work discarded.
+
+## Resume 2026-11-10T18:07:15.616549+00:00
+HEAD matches origin 494d2041bd66de863788de224596493a9f7ce573. P1–P6 remain complete. P7 baseline6screens/0errors already saved; final job not yet started. P8 export25units/60skills complete. No native runner;150GiB free. Dirty inventory RESUME-DIRTY-P7.txt retained. A6 owns timing.lock; queue B final validation without interrupting A6.

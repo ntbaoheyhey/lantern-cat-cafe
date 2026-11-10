@@ -1,29 +1,20 @@
 # Lane B puppet handoff
-NOW: P6 complete and publishing; P7 stage/light begins next. Research completed and P12/P13 gaps queued.
-Updated: 2026-11-10T17:43:39.995173+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed 443edb96d5f50a1be05cf57c03e1d3d389effd28; draft PR #427 https://github.com/ntbaoheyhey/taskbar-hero/pull/427.
-NEXT 1: Capture P7 baseline in existing A6 preview; integrate prepared original cafe details and restrained lighting.
-NEXT 2: Build P7 preview, inspect paired1440/1280captures and representative x1cast timing; type/lint/touched checks.
-NEXT 3: Publish P7; run prepared P8 portrait exporter, review new formats and unified manifest.
-RUNNING: Verified only Python static servers PID50023 port5920 /tmp and PID92836 port5922 /tmp/cardrpg-v5full-film-review; no native runner or B timing lease.
-DONE this session: onboarding/native runner retired — 9feba11f4.
-DONE this session: P1 pipeline/semantic motions — 8549e7f73.
-DONE this session: P2 pilot3/live/parity — d7c067cb7.
-DONE this session: P3 framing/face separation — 6531e464b66e096038eb92a69a0822555cb26a0f.
-DONE this session: R-9 exact prompt/addendum/memory pushed — f88471bf94f7870406263cc8c7ab42f039ffa0f0.
-DONE this session: P4 batch1 six cats + cheek-sampled lids — 070de072e29a48f14c5c7a39c33cc2194cfc4b82.
-DONE this session: P4 batch2 six cats, corrected Sorrel eye ROI/A6audit,18tests/five-seed parityPASS — 6d85461a121553e537f4d40f2a7ab5de3d2f5c11.
-DONE this session: exact NON-STOP addendum pushed — f49f130baf09e234e69d203d2d14ced4b686f12f.
-DONE this session: P5 batch1 six enemies + Kettle repair — 530bce90a28714263bf60e02665492a8b53e78ba.
-DONE this session: P5 all13enemies + fourbossperformance/19tests/parity — 443edb96d5f50a1be05cf57c03e1d3d389effd28.
-KNOWN ISSUES: Shared motion restrained; Rain Spool broad near Mochi; P12/P13 improvements queued. Scores are self-review.
-KNOWN ISSUES: Native-era dirty files/GLBs listed in STATE preserved/excluded; never commit unreviewed native assets.
-DECISIONS: ALL25roster ids puppet;19tests/parityPASS; combinedA6lean32,956,195B; P1–P5done.
-DECISIONS: Main defaultOFF; lookV2+lookArt=v3 selects puppet; no A6 merge into published B; one agent.
-DECISIONS: Disposable preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2; B source copies only; never push.
-DECISIONS: Heavy nice10 under tools/cardrpg-look/skills-v5/full/run-lock.mjs;19min cap+6.5s fairness; ports5920–5923.
-DECISIONS: Current preview docs/cardrpg-look/v5-p5-preview.html; receipt /tmp/cardrpg-v5-p5-batch2-build.json.
-DECISIONS: Both addenda already exact/pushed; original prefix15,239B, full19,849B. No duplicate or onboarding redo.
-KNOWN ISSUES: Current full dirty inventory RESUME-DIRTY-2026-11-11.txt; previous P6 work retained, native GLBs excluded.
-DECISIONS: Exact attachment PROMPT.txt24774B/SHA in STATE; no repeated onboarding, research, tests or completed roster work.
-DECISIONS: Original layered Button fallback lives in look-readable-enemies.ts; puppet runtime in look-puppet.ts/look-puppet-rig.ts.
-DONE this session: P6 visual acceptance plus parity, VFX8.1; commit being published.
+NOW: P7 final stage build/validation queued; baseline already captured; P8 accepted/publishing, do not repeat export or prior image review.
+Updated: 2026-11-10T18:07:15.616549+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed 494d2041bd66de863788de224596493a9f7ce573; draft PR #427.
+NEXT 1: Acquire timing lease via work/p7-final.sh, inspect after6screens and5cast timing, publish P7.
+NEXT 2: Publish P9 combined demo budget after P7; P8 accepted/publishing now.
+NEXT 3: Select legal A6 replay and capture P10 x1 normal/boss films, compare R0, then P11/P12/P13.
+RUNNING: Static servers port5920 PID50023 /tmp; port5922 PID92836 /tmp/cardrpg-v5full-film-review. Re-read PIDs before control.
+RUNNING: A6-first-session-2 owns shared timing.lock; B validation queues with nice10/run-lock.mjs; log work/p7-final.log; do not touch A6.
+DONE: P1 8549e7f73; P2 d7c067cb7; P3 6531e464b; P4 6d85461a1; P5 443edb96d; P6 494d2041bd66de863788de224596493a9f7ce573.
+DONE: P7 baseline6screens/0errors/0overlaps in p7/before; work/p7-baseline.log released its lease.
+DONE: P8 exporter25units/60skills and formats.webp inspected in prior session; work/p8-export.log; provisional38.25MB all-format reserve.
+KNOWN ISSUES: Shared motion restrained; Rain Spool broad near party; P12/P13 queued. Scores self-review only.
+KNOWN ISSUES: Native-era dirty files/unreviewed Clover/Yarn GLBs retained/excluded; RESUME-DIRTY-P7.txt inventory.
+DECISIONS: One agent, all25units concept puppets; no native roster; defaultOFF, lookV2+lookArt=v3 opts in.
+DECISIONS: Never merge A6 into published B; disposable preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2 only, unpushed.
+DECISIONS: Heavy nice10 using tools/cardrpg-look/skills-v5/full/run-lock.mjs,19min cap+6.5s fairness; ports5920–5923.
+DECISIONS: Saved prompt exactly matches current attachment24774B, hash in STATE; no onboarding/research/accepted gate repeated.
+DECISIONS: Original layered Button fallback look-readable-enemies.ts; runtime look-puppet.ts/look-puppet-rig.ts.
+DECISIONS: P10 scripts tools/cardrpg-look/art-rebuild/puppet/film[-setups].mjs are prepared, not yet executed.
+DONE: P8 saved25unit/60skill formats accepted; source/path/schema checks; p8/REVIEW.md; pending commit.

@@ -51,3 +51,9 @@ Prompt hiện tại được lưu nguyên văn; bổ sung nghiên cứu còn thi
 P6 hoàn tất: điểm phát chiêu theo đạo cụ thật, số sát thương/hồi máu chỉ vẽ một lần trên canvas; vẫn giữ nhãn đọc màn hình.
 Dùng lại49+6chiêu/33test đã đạt, bổ sung parity5seed đạt; điểm VFX tự đánh giá8,1, hiệu ứng lớn còn có thể mạnh hơn.
 Tiếp tục P7 sân quán/ánh sáng; nghiên cứu đã bổ sung, không mở lại P1–P5.
+
+Tiếp tục đúng P7: baseline đã chụp, bản sân mới chưa chạy kiểm tra; không chạy lại P1–P6.
+P8 đã xuất đủ25unit/60icon, giữ nguyên kết quả; P7 xếp hàng chờ khóa A6, đồng thời chuẩn bị replay P10.
+
+P8 hoàn tất từ bản xuất đã lưu:25nhân vật đủ portrait/icon/card,60icon kỹ năng; bốn card đã giữ trọn hình gốc.
+Manifest v4 sẵn cho A6; crop nhỏ và icon cũ giữ nguyên. P7 vẫn chờ khóa đo, chưa đánh dấu hoàn tất.
