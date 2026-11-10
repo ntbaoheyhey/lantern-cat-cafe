@@ -1,0 +1,73 @@
+{
+  "artifact": "docs/cardrpg-look/v5-art-vfx-preview.html",
+  "sha256": "077acf36da70a3eff05237d7618e6a28076bae053dd2ea7b5e830e7fee82a0e6",
+  "bytes": 30879888,
+  "sourceChecks": {
+    "typecheck": {
+      "output": "\n> @taskbar-hero/web@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-b2/apps/web\n> tsc --noEmit\n\n",
+      "sha256": "5b35058b5778a414d51effabd6afc7a7d2d32f74ec7ce77f8ac90a7d3b736479"
+    },
+    "lint": {
+      "output": "\n> @taskbar-hero/web@0.0.0 lint /Users/bao/taskbar-hero-cardrpg-b2/apps/web\n> tsc --noEmit\n\n",
+      "sha256": "21ae89936d313e8e5e68336027af5a6289927a92a0f752ab4170f9f491f6df5d"
+    },
+    "unit": {
+      "output": "\n> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-b2/apps/web\n> vitest run\n\n\n RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/apps/web\n\n\n Test Files  190 passed (190)\n      Tests  1818 passed (1818)\n   Start at  08:35:12\n   Duration  22.52s (environment 48%, tests 39%, import 10%, transform 2%)\n\nEnvironment  jsdom was created 190 times \u00b7 106.57s total, 48% of tracked time\n             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)\n             learn more: https://vitest.dev/guide/improving-performance#test-environments\n\n",
+      "sha256": "8dcd78e2d48de384df197558ce736c27f47f838a5279b4481d57b0af41bed408"
+    }
+  },
+  "casts": {
+    "rows": 36,
+    "nativeMaxMs": 16.80000000000291,
+    "cpu4MaxMs": 16.80000000000291,
+    "draws": 85,
+    "triangles": 121362,
+    "errors": []
+  },
+  "faces": {
+    "samples": 72,
+    "offenders": []
+  },
+  "film": {
+    "method": "Four continuous native x1 gallery cues in the game renderer; actor arrangements change between cues. No injected animation ticks during playback. This is not a natural-battle/performance sample.",
+    "artifact": "/Users/bao/taskbar-hero-cardrpg-b2/docs/cardrpg-look/v5-art-vfx-preview.html",
+    "artifactSha256": "077acf36da70a3eff05237d7618e6a28076bae053dd2ea7b5e830e7fee82a0e6",
+    "file": "/Users/bao/taskbar-hero-cardrpg-b2/reports/cardrpg-look/art-rebuild/r1/vfx-pilot/film-impact/mochi-vfx-gallery.mp4",
+    "sha256": "808a452605a3c3003c15ea6e595cf678b036948f159cdebca8f30379406ffe90",
+    "bytes": 1295709,
+    "frames": 199,
+    "seen": [
+      {
+        "id": "mochi-1",
+        "speed": 1,
+        "duration": 1173
+      },
+      {
+        "id": "mochi-4",
+        "speed": 1,
+        "duration": 1677
+      },
+      {
+        "id": "enemy:sock-skipper",
+        "speed": 1,
+        "duration": 1189
+      },
+      {
+        "id": "enemy:teacup-healer",
+        "speed": 1,
+        "duration": 1182
+      }
+    ],
+    "errors": []
+  },
+  "evidenceBytesBeforeReport": 92582309,
+  "masterBytes": 15141527,
+  "limits": "Pilot only; cold/startup/full E2E/new-roster readiness not validated here. Cost3 allocation miss retained, no post-impact heap resample.",
+  "evidenceBytesAfterLosslessPacking": 74245324,
+  "losslessRepacking": {
+    "files": 60,
+    "beforeBytes": 84935955,
+    "afterBytes": 42535186,
+    "decodedPixelsIdentical": true
+  }
+}

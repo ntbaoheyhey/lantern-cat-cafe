@@ -1,4 +1,6 @@
 import { fullRecipes, fullEnemyRecipes } from './look-full-recipes';
+import { isLookArtV3 } from './look-art';
+import { artEffectRecipes, artLightBeatProgress } from './look-art-effects';
 import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
@@ -18,6 +20,7 @@ import { LOOK_PARTICLE_PRIMITIVES, CARD_EFFECT_PRIMITIVES, createCardPrimitive, 
 
 export const FULL_VFX_CATS:readonly string[]=['soot','velvet','cinnamon','sorrel','inkcap','brioche','panko','mallow','clover','marigold','mochi','biscuit']; // batches enabled after individual review
 const FULL_RECIPES=fullEnemyRecipes(fullRecipes(CARD_EFFECT_RECIPES,FULL_VFX_CATS));
+const ART_RECIPES=artEffectRecipes(FULL_RECIPES);
 export const CARD_EFFECT_BUDGET = { instances: 96, primitiveCalls: 8, lookInstances: 256, lookPrimitiveCalls: 16, perPrimitive: 64, protectedFaces: 12 };
 const vertexShader = `
   attribute float effectAlpha;
@@ -63,10 +66,11 @@ const effectBeatSpans = {
 
 export function cardRecipeFor(frame: EffectFrame | null, actors: TurnActor[]): CardEffectRecipe | undefined {
   if (!frame) return;
-  const skill = (isReadableBattle()?FULL_RECIPES:CARD_EFFECT_RECIPES)[frame.plan.presentationId ?? frame.plan.skillId];
+  const recipes=isReadableBattle()?(isLookArtV3()?ART_RECIPES:FULL_RECIPES):CARD_EFFECT_RECIPES;
+  const skill = recipes[frame.plan.presentationId ?? frame.plan.skillId];
   if (skill) return skill;
   const actor = actors.find(candidate => candidate.id === frame.plan.actorId);
-  return actor?.side === 'enemy' ? (isReadableBattle()?FULL_RECIPES:CARD_EFFECT_RECIPES)[`enemy:${actor.cardRpg?.cardId}`] : undefined;
+  return actor?.side === 'enemy' ? recipes[`enemy:${actor.cardRpg?.cardId}`] : undefined;
 }
 
 interface PrimitivePool {
@@ -110,6 +114,8 @@ export class CardEffects {
   private position = new T.Vector3();
   private lifeColor=new T.Color();
   private caster = new T.Vector3();
+  private propOrigin?: T.Vector3;
+  private emissionOrigin?: T.Vector3;
   private casterVelocity=new T.Vector3();
   private previousCaster=new T.Vector3();
   private previousElapsed=-1;
@@ -134,7 +140,7 @@ export class CardEffects {
   }
 
   constructor(private scene: T.Scene, private atelier = false) {
-    this.recipes=atelier?FULL_RECIPES:CARD_EFFECT_RECIPES;
+    this.recipes=atelier?(isLookArtV3()?ART_RECIPES:FULL_RECIPES):CARD_EFFECT_RECIPES;
     if(atelier){
       // Parse CSS colours once while preparing, never on a warmed cast path.
       for(const recipe of [...Object.values(this.recipes),...Object.values(LAB_EFFECT_RECIPES)]){
@@ -171,6 +177,7 @@ export class CardEffects {
       if (this.disposed) return;
     }
     if(this.atelier) {
+      if(isLookArtV3())await lookWarmQueue.enqueue('geometry:painted-light',()=>this.createPool('painted-light'),()=>this.disposed);
       await Promise.all([...CARD_EFFECT_PRIMITIVES,...LOOK_PARTICLE_PRIMITIVES].map(primitive =>
         lookWarmQueue.enqueue(`geometry:${primitive}`,()=>this.createPool(primitive),()=>this.disposed)));
     } else for(const primitive of CARD_EFFECT_PRIMITIVES) {
@@ -223,6 +230,7 @@ export class CardEffects {
       renderer.setRenderTarget(target);
       const essentials=new Set(Object.values(CARD_STATUS_LOOKS).flatMap(s=>[s.layer.primitive,s.apply.primitive,s.tick.primitive]));
       essentials.add('knock-ring');
+      if(isLookArtV3())essentials.add('painted-light');
       for (const pool of this.poolList) {
         const { mesh, alpha, phase, flash, mark }=pool;
         if(this.atelier&&!essentials.has(mesh.name as CardEffectPrimitive)){
@@ -302,7 +310,8 @@ export class CardEffects {
   render(frame: EffectFrame | null, recipe: CardEffectRecipe | undefined, actors: TurnActor[],
     positions: Map<string, T.Vector3>, camera: T.Camera, quality: Quality, calm: boolean,
     statuses?: Record<string, readonly (string | {id:string;stacks:number})[]>, time = 0,
-    presentation?: StatusPresentation, heights?: ReadonlyMap<string,number>, crowns?: ReadonlyMap<string,number>, playbackSpeed=1) {
+    presentation?: StatusPresentation, heights?: ReadonlyMap<string,number>, crowns?: ReadonlyMap<string,number>, playbackSpeed=1, propOrigin?:T.Vector3) {
+    this.propOrigin=propOrigin;this.emissionOrigin=undefined;
     for (let i=0;i<this.poolList.length;i++) { const mesh=this.poolList[i]!.mesh;mesh.count = 0; mesh.visible = false; }
     this.look?.begin();this.flash = 0;
     this.stats.instances = 0;
@@ -379,7 +388,7 @@ export class CardEffects {
     if (!targetCount) { this.targets[0]=this.caster;this.targetIds[0]=frame.plan.actorId;targetCount=1; }
     this.targets.length=targetCount;this.targetIds.length=targetCount;
     const span = effectBeatSpans[frame.beat.kind];
-    const cueProgress=this.atelier&&recipe.ultimate&&frame.beat.kind==='anticipation'?Math.max(0,1-(frame.beat.duration-frame.elapsed)/200):frame.progress;
+    const cueProgress=this.atelier&&recipe.ultimate&&frame.beat.kind==='anticipation'?Math.max(0,1-(frame.beat.duration-frame.elapsed)/200):isLookArtV3()&&recipe.layers[0]?.primitive==='painted-light'?artLightBeatProgress(frame):frame.progress;
     const progress = span[0] + (span[1] - span[0]) * cueProgress;
     // A brief visual accent fits inside the existing impact beat; no timing change.
     this.flash = !calm && progress > .525 && progress < .558 ? Math.sin((progress - .525) / .033 * Math.PI) : 0;
@@ -533,6 +542,8 @@ export class CardEffects {
         const progress = (localProgress - layer.start) / (layer.end - layer.start);
         if (progress < 0 || progress > 1) continue;
         this.focus.copy(layer.anchor === 'caster' ? this.caster : this.targets[targetIndex]!);
+        this.emissionOrigin=layer.propOrigin?this.propOrigin:undefined;
+        if(layer.anchor==='caster'&&this.emissionOrigin)this.focus.copy(this.emissionOrigin);
         // The envelope is shared by this target's particles, not recomputed per instance.
         const burst = this.atelier && this.presentation?.bursts.includes(this.targetIds[target]!) && layer.primitive === 'lantern';
         const age = this.actionFrame ? this.actionFrame.elapsed-this.actionFrame.plan.beats[2]!.start-delay : 0;
@@ -540,6 +551,7 @@ export class CardEffects {
         this.sizeFactor=burst ? .62 : landing?.scale??1;
         for (let index = 0; index < count; index++) this.place(layer, progress, index, count, camera, calm);
         this.alphaFactor=1;this.sizeFactor=1;
+        this.emissionOrigin=undefined;
       }
     }
   }
@@ -593,8 +605,8 @@ export class CardEffects {
         this.position.z += Math.sin(angle) * radius * (count > 1 ? .4 : 0);
         break;
       case 'projectile':
-        this.position.lerpVectors(this.caster, this.focus, travel);
-        this.position.y += height + Math.sin(phase * Math.PI) * (calm ? .1 : .4);
+        this.position.lerpVectors(this.emissionOrigin??this.caster, this.focus, travel);
+        this.position.y += height*(this.emissionOrigin ? travel : 1) + Math.sin(phase * Math.PI) * (calm ? .1 : this.emissionOrigin ? .12 : .4);
         this.position.z += (offset - .5) * radius;
         spin = phase * layer.turns * Math.PI * 2;
         break;

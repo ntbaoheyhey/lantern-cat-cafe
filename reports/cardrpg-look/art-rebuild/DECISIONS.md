@@ -1,5 +1,11 @@
 # Art decisions
 
+## 2026-11-10 user-approved generation-led art and VFX
+- User prefers prompt -> original character image or skill-effect image/video -> cleanup -> real runtime model/effect, including ultimates. Use the existing generated Mochi source and VFX master; do not restart either.
+- User identified both the right hand/shield area and the enemy side as incongruous. Replace duplicate physical prop cutouts with light emitted from the existing prop, moving to the actual target on the existing action clock.
+- The current pilot uses a built-in-generated RGBA component atlas animated by game code. It is not generated video or a temporal flipbook; a strong source image alone does not establish motion quality.
+- The later VFX corrections resume this bounded pilot after the earlier “khoan” clarification. R0/S6/M5 and source conversion remain completed; no external job is pending or needed for this pilot. No rejected model/rig is accepted by this preference.
+
 ## 2026-11-09 R0
 - Latest Art Rebuild prompt supersedes idle waiting: art proceeds while a local no-model script watches S6.
 - Built-in image generation is available and expressly allowed; use original concepts/painted layers only, no external imagery/API calls.

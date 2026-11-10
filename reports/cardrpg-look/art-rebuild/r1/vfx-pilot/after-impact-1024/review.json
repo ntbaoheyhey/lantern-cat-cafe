@@ -1,0 +1,4878 @@
+{
+  "artifactSha256": "077acf36da70a3eff05237d7618e6a28076bae053dd2ea7b5e830e7fee82a0e6",
+  "shots": [
+    {
+      "id": "mochi-1",
+      "progress": "charge",
+      "file": "mochi-1-charge.webp",
+      "audit": {
+        "frames": 7,
+        "calls": 80,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#efba65",
+          "accent": "#fff1bb",
+          "shape": "slash",
+          "duration": 1173,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "handle",
+              "soundCue": "mochi-1.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 141,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "door",
+              "soundCue": "mochi-1.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 741,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "knock-ring",
+              "soundCue": "mochi-1.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 153,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-1.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 984,
+              "duration": 189,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-1.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Door knock",
+          "motifs": [
+            "handle",
+            "door",
+            "knock-ring",
+            "seam"
+          ],
+          "presentationId": "mochi-1"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "handle",
+          "soundCue": "mochi-1.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.41943734015345263,
+        "elapsed": 491.99999999999994,
+        "color": "#efba65",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 7,
+        "calls": 80,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-1",
+      "progress": "travel",
+      "file": "mochi-1-travel.webp",
+      "audit": {
+        "frames": 11,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#efba65",
+          "accent": "#fff1bb",
+          "shape": "slash",
+          "duration": 1173,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "handle",
+              "soundCue": "mochi-1.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 141,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "door",
+              "soundCue": "mochi-1.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 741,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "knock-ring",
+              "soundCue": "mochi-1.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 153,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-1.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 984,
+              "duration": 189,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-1.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Door knock",
+          "motifs": [
+            "handle",
+            "door",
+            "knock-ring",
+            "seam"
+          ],
+          "presentationId": "mochi-1"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 141,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "door",
+          "soundCue": "mochi-1.travel"
+        },
+        "progress": 0.5499999999999997,
+        "actionProgress": 0.5776214833759591,
+        "elapsed": 677.55,
+        "color": "#efba65",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "step",
+        "intensity": 0.9913818384165964
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 677.55,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 11,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-1",
+      "progress": "impact",
+      "file": "mochi-1-impact.webp",
+      "audit": {
+        "frames": 15,
+        "calls": 78,
+        "triangles": 112114,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 5,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 5,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#efba65",
+          "accent": "#fff1bb",
+          "shape": "slash",
+          "duration": 1173,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "handle",
+              "soundCue": "mochi-1.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 141,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "door",
+              "soundCue": "mochi-1.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 741,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "knock-ring",
+              "soundCue": "mochi-1.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 153,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-1.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 984,
+              "duration": 189,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-1.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Door knock",
+          "motifs": [
+            "handle",
+            "door",
+            "knock-ring",
+            "seam"
+          ],
+          "presentationId": "mochi-1"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 741,
+          "duration": 90,
+          "camera": 0,
+          "shake": 0.5,
+          "flash": 0.025,
+          "clip": "attack",
+          "vfx": "knock-ring",
+          "soundCue": "mochi-1.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.6739130434782609,
+        "elapsed": 790.5,
+        "color": "#efba65",
+        "camera": 0,
+        "shake": 0.5,
+        "flash": 0.025,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 5
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 790.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 651,
+          "y": 259,
+          "width": 60,
+          "height": 22,
+          "top": 259,
+          "right": 711,
+          "bottom": 281,
+          "left": 651
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 15,
+        "calls": 78,
+        "triangles": 112114,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 5,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-1",
+      "progress": "recover",
+      "file": "mochi-1-recover.webp",
+      "audit": {
+        "frames": 19,
+        "calls": 78,
+        "triangles": 112402,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 6,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 6,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#efba65",
+          "accent": "#fff1bb",
+          "shape": "slash",
+          "duration": 1173,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "handle",
+              "soundCue": "mochi-1.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 141,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "door",
+              "soundCue": "mochi-1.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 741,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "knock-ring",
+              "soundCue": "mochi-1.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 153,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-1.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 984,
+              "duration": 189,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-1.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Door knock",
+          "motifs": [
+            "handle",
+            "door",
+            "knock-ring",
+            "seam"
+          ],
+          "presentationId": "mochi-1"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 831,
+          "duration": 153,
+          "camera": 0,
+          "shake": 0.1,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "seam",
+          "soundCue": "mochi-1.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7736572890025576,
+        "elapsed": 907.5,
+        "color": "#efba65",
+        "camera": 0,
+        "shake": 0.05,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 6
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 907.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 665,
+          "y": 258,
+          "width": 60,
+          "height": 22,
+          "top": 258,
+          "right": 725,
+          "bottom": 280,
+          "left": 665
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 19,
+        "calls": 78,
+        "triangles": 112402,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 6,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-2",
+      "progress": "charge",
+      "file": "mochi-2-charge.webp",
+      "audit": {
+        "frames": 23,
+        "calls": 79,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-2",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#ffc777",
+          "accent": "#fff3c6",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "light-pool",
+              "soundCue": "mochi-2.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spark",
+              "soundCue": "mochi-2.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-2.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Warm welcome",
+          "motifs": [
+            "lantern",
+            "lantern",
+            "light-pool",
+            "spark"
+          ],
+          "presentationId": "mochi-2"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "guard",
+          "vfx": "lantern",
+          "soundCue": "mochi-2.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3816912335143522,
+        "elapsed": 491.99999999999994,
+        "color": "#ffc777",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "guard",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 23,
+        "calls": 79,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-2",
+      "progress": "travel",
+      "file": "mochi-2-travel.webp",
+      "audit": {
+        "frames": 27,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-2",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#ffc777",
+          "accent": "#fff3c6",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "light-pool",
+              "soundCue": "mochi-2.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spark",
+              "soundCue": "mochi-2.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-2.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Warm welcome",
+          "motifs": [
+            "lantern",
+            "lantern",
+            "light-pool",
+            "spark"
+          ],
+          "presentationId": "mochi-2"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 175,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "guard",
+          "vfx": "lantern",
+          "soundCue": "mochi-2.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.5401474010861133,
+        "elapsed": 696.25,
+        "color": "#ffc777",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "guard",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 696.25,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 27,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-2",
+      "progress": "impact",
+      "file": "mochi-2-impact.webp",
+      "audit": {
+        "frames": 31,
+        "calls": 78,
+        "triangles": 112114,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 5,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 5,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-2",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#ffc777",
+          "accent": "#fff3c6",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "light-pool",
+              "soundCue": "mochi-2.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spark",
+              "soundCue": "mochi-2.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-2.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Warm welcome",
+          "motifs": [
+            "lantern",
+            "lantern",
+            "light-pool",
+            "spark"
+          ],
+          "presentationId": "mochi-2"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 775,
+          "duration": 90,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "guard",
+          "vfx": "light-pool",
+          "soundCue": "mochi-2.impact"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.6396431342125679,
+        "elapsed": 824.5,
+        "color": "#ffc777",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0.01125,
+        "clip": "guard",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 5
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 824.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 456,
+          "y": 275,
+          "width": 60,
+          "height": 22,
+          "top": 275,
+          "right": 516,
+          "bottom": 297,
+          "left": 456
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 31,
+        "calls": 78,
+        "triangles": 112114,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 5,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-2",
+      "progress": "recover",
+      "file": "mochi-2-recover.webp",
+      "audit": {
+        "frames": 35,
+        "calls": 78,
+        "triangles": 112690,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 7,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-2",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#ffc777",
+          "accent": "#fff3c6",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "lantern",
+              "soundCue": "mochi-2.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "light-pool",
+              "soundCue": "mochi-2.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spark",
+              "soundCue": "mochi-2.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-2.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-2",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Warm welcome",
+          "motifs": [
+            "lantern",
+            "lantern",
+            "light-pool",
+            "spark"
+          ],
+          "presentationId": "mochi-2"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 865,
+          "duration": 190,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "spark",
+          "soundCue": "mochi-2.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7447633824670287,
+        "elapsed": 960,
+        "color": "#ffc777",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 7
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 960,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 456,
+          "y": 277,
+          "width": 60,
+          "height": 22,
+          "top": 277,
+          "right": 516,
+          "bottom": 299,
+          "left": 456
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 35,
+        "calls": 78,
+        "triangles": 112690,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-3",
+      "progress": "charge",
+      "file": "mochi-3-charge.webp",
+      "audit": {
+        "frames": 39,
+        "calls": 79,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-3",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#e6bb8b",
+          "accent": "#ffe8b4",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "seam",
+              "soundCue": "mochi-3.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "apron",
+              "soundCue": "mochi-3.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "bow",
+              "soundCue": "mochi-3.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-3.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-3.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Apron crossing",
+          "motifs": [
+            "seam",
+            "apron",
+            "bow",
+            "seam"
+          ],
+          "presentationId": "mochi-3"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "guard",
+          "vfx": "seam",
+          "soundCue": "mochi-3.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3816912335143522,
+        "elapsed": 491.99999999999994,
+        "color": "#e6bb8b",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "guard",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 39,
+        "calls": 79,
+        "triangles": 111410,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-3",
+      "progress": "travel",
+      "file": "mochi-3-travel.webp",
+      "audit": {
+        "frames": 43,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-3",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#e6bb8b",
+          "accent": "#ffe8b4",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "seam",
+              "soundCue": "mochi-3.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "apron",
+              "soundCue": "mochi-3.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "bow",
+              "soundCue": "mochi-3.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-3.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-3.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Apron crossing",
+          "motifs": [
+            "seam",
+            "apron",
+            "bow",
+            "seam"
+          ],
+          "presentationId": "mochi-3"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 175,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "guard",
+          "vfx": "apron",
+          "soundCue": "mochi-3.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.5401474010861133,
+        "elapsed": 696.25,
+        "color": "#e6bb8b",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "guard",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 696.25,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 43,
+        "calls": 78,
+        "triangles": 110962,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-3",
+      "progress": "impact",
+      "file": "mochi-3-impact.webp",
+      "audit": {
+        "frames": 47,
+        "calls": 78,
+        "triangles": 112690,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 7,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-3",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#e6bb8b",
+          "accent": "#ffe8b4",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "seam",
+              "soundCue": "mochi-3.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "apron",
+              "soundCue": "mochi-3.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "bow",
+              "soundCue": "mochi-3.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-3.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-3.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Apron crossing",
+          "motifs": [
+            "seam",
+            "apron",
+            "bow",
+            "seam"
+          ],
+          "presentationId": "mochi-3"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 775,
+          "duration": 90,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "guard",
+          "vfx": "bow",
+          "soundCue": "mochi-3.impact"
+        },
+        "progress": 0.1,
+        "actionProgress": 0.6396431342125679,
+        "elapsed": 824.5,
+        "color": "#e6bb8b",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0.022500000000000003,
+        "clip": "guard",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 7
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 824.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 456,
+          "y": 276,
+          "width": 60,
+          "height": 22,
+          "top": 276,
+          "right": 516,
+          "bottom": 298,
+          "left": 456
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 47,
+        "calls": 78,
+        "triangles": 112690,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-3",
+      "progress": "recover",
+      "file": "mochi-3-recover.webp",
+      "audit": {
+        "frames": 51,
+        "calls": 78,
+        "triangles": 113266,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 9,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 9,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-3",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#e6bb8b",
+          "accent": "#ffe8b4",
+          "shape": "rally",
+          "duration": 1289,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "seam",
+              "soundCue": "mochi-3.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "guard",
+              "vfx": "apron",
+              "soundCue": "mochi-3.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 775,
+              "duration": 90,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "guard",
+              "vfx": "bow",
+              "soundCue": "mochi-3.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 865,
+              "duration": 190,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "mochi-3.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1055,
+              "duration": 234,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "mochi-3.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-3",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Apron crossing",
+          "motifs": [
+            "seam",
+            "apron",
+            "bow",
+            "seam"
+          ],
+          "presentationId": "mochi-3"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 865,
+          "duration": 190,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "seam",
+          "soundCue": "mochi-3.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7447633824670287,
+        "elapsed": 960,
+        "color": "#e6bb8b",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 9
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 960,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 459,
+          "y": 268,
+          "width": 60,
+          "height": 22,
+          "top": 268,
+          "right": 519,
+          "bottom": 290,
+          "left": 459
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 51,
+        "calls": 78,
+        "triangles": 113266,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 9,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-4",
+      "progress": "charge",
+      "file": "mochi-4-charge.webp",
+      "audit": {
+        "frames": 55,
+        "calls": 85,
+        "triangles": 111730,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover"
+          ],
+          "color": "#f6c46a",
+          "accent": "#fff4cf",
+          "shape": "storm",
+          "duration": 1677,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 650,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "window",
+              "soundCue": "mochi-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 650,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "roof",
+              "soundCue": "mochi-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 900,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "mochi-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1005,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "shield-facet",
+              "soundCue": "mochi-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1397,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "light-pool",
+              "soundCue": "mochi-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Last light shelter",
+          "motifs": [
+            "window",
+            "roof",
+            "lantern",
+            "shield-facet",
+            "light-pool"
+          ],
+          "presentationId": "mochi-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 650,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "window",
+          "soundCue": "mochi-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3178294573643411,
+        "elapsed": 533,
+        "color": "#f6c46a",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 533,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 55,
+        "calls": 85,
+        "triangles": 111730,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-4",
+      "progress": "travel",
+      "file": "mochi-4-travel.webp",
+      "audit": {
+        "frames": 59,
+        "calls": 82,
+        "triangles": 111858,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 3,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover"
+          ],
+          "color": "#f6c46a",
+          "accent": "#fff4cf",
+          "shape": "storm",
+          "duration": 1677,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 650,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "window",
+              "soundCue": "mochi-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 650,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "roof",
+              "soundCue": "mochi-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 900,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "mochi-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1005,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "shield-facet",
+              "soundCue": "mochi-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1397,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "light-pool",
+              "soundCue": "mochi-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Last light shelter",
+          "motifs": [
+            "window",
+            "roof",
+            "lantern",
+            "shield-facet",
+            "light-pool"
+          ],
+          "presentationId": "mochi-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 650,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "roof",
+          "soundCue": "mochi-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.46958855098389984,
+        "elapsed": 787.5,
+        "color": "#f6c46a",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 3
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 787.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 59,
+        "calls": 82,
+        "triangles": 111858,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 3,
+        "estimatedGpuBytes": 7172446,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-4",
+      "progress": "impact",
+      "file": "mochi-4-impact.webp",
+      "audit": {
+        "frames": 63,
+        "calls": 82,
+        "triangles": 119634,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 30,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 30,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover"
+          ],
+          "color": "#f6c46a",
+          "accent": "#fff4cf",
+          "shape": "storm",
+          "duration": 1677,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 650,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "window",
+              "soundCue": "mochi-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 650,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "roof",
+              "soundCue": "mochi-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 900,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "mochi-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1005,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "shield-facet",
+              "soundCue": "mochi-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1397,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "light-pool",
+              "soundCue": "mochi-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Last light shelter",
+          "motifs": [
+            "window",
+            "roof",
+            "lantern",
+            "shield-facet",
+            "light-pool"
+          ],
+          "presentationId": "mochi-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 900,
+          "duration": 105,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "lantern",
+          "soundCue": "mochi-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.5711091234347049,
+        "elapsed": 957.75,
+        "color": "#f6c46a",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 30
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 957.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 459,
+          "y": 272,
+          "width": 60,
+          "height": 22,
+          "top": 272,
+          "right": 519,
+          "bottom": 294,
+          "left": 459
+        },
+        {
+          "name": "soot",
+          "x": 373,
+          "y": 285,
+          "width": 60,
+          "height": 22,
+          "top": 285,
+          "right": 433,
+          "bottom": 307,
+          "left": 373
+        },
+        {
+          "name": "clover",
+          "x": 308,
+          "y": 262,
+          "width": 60,
+          "height": 22,
+          "top": 262,
+          "right": 368,
+          "bottom": 284,
+          "left": 308
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 63,
+        "calls": 82,
+        "triangles": 119634,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 30,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mochi-4",
+      "progress": "recover",
+      "file": "mochi-4-recover.webp",
+      "audit": {
+        "frames": 67,
+        "calls": 82,
+        "triangles": 121362,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 36,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 36,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover"
+          ],
+          "color": "#f6c46a",
+          "accent": "#fff4cf",
+          "shape": "storm",
+          "duration": 1677,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 650,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "window",
+              "soundCue": "mochi-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 650,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "roof",
+              "soundCue": "mochi-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 900,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "mochi-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1005,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "shield-facet",
+              "soundCue": "mochi-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1397,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "light-pool",
+              "soundCue": "mochi-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "targetIds": [
+                "mochi",
+                "soot",
+                "clover"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Last light shelter",
+          "motifs": [
+            "window",
+            "roof",
+            "lantern",
+            "shield-facet",
+            "light-pool"
+          ],
+          "presentationId": "mochi-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1005,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "shield-facet",
+          "soundCue": "mochi-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.716159809183065,
+        "elapsed": 1201,
+        "color": "#f6c46a",
+        "camera": 0.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 36
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 1201,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 458,
+          "y": 273,
+          "width": 60,
+          "height": 22,
+          "top": 273,
+          "right": 518,
+          "bottom": 295,
+          "left": 458
+        },
+        {
+          "name": "soot",
+          "x": 373,
+          "y": 286,
+          "width": 60,
+          "height": 22,
+          "top": 286,
+          "right": 433,
+          "bottom": 308,
+          "left": 373
+        },
+        {
+          "name": "clover",
+          "x": 309,
+          "y": 262,
+          "width": 60,
+          "height": 22,
+          "top": 262,
+          "right": 369,
+          "bottom": 284,
+          "left": 309
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 67,
+        "calls": 82,
+        "triangles": 121362,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 36,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "progress": "charge",
+      "file": "enemy-sock-skipper-charge.webp",
+      "audit": {
+        "frames": 72,
+        "calls": 81,
+        "triangles": 111420,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-sock-skipper",
+          "skillId": "flankerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#df9fba",
+          "accent": "#ffe4ad",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "special",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "bow",
+              "soundCue": "flankerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "special",
+              "vfx": "button",
+              "soundCue": "flankerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "flankerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Pocket skip",
+          "motifs": [
+            "sock",
+            "bow",
+            "button",
+            "sock",
+            "crescent"
+          ],
+          "presentationId": "enemy:sock-skipper"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "sock",
+          "soundCue": "flankerAttack.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.4137931034482758,
+        "elapsed": 491.99999999999994,
+        "color": "#df9fba",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "special",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 72,
+        "calls": 81,
+        "triangles": 111420,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "progress": "travel",
+      "file": "enemy-sock-skipper-travel.webp",
+      "audit": {
+        "frames": 76,
+        "calls": 79,
+        "triangles": 110972,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-sock-skipper",
+          "skillId": "flankerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#df9fba",
+          "accent": "#ffe4ad",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "special",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "bow",
+              "soundCue": "flankerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "special",
+              "vfx": "button",
+              "soundCue": "flankerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "flankerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Pocket skip",
+          "motifs": [
+            "sock",
+            "bow",
+            "button",
+            "sock",
+            "crescent"
+          ],
+          "presentationId": "enemy:sock-skipper"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 146,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "bow",
+          "soundCue": "flankerAttack.travel"
+        },
+        "progress": 0.5499999999999997,
+        "actionProgress": 0.572161480235492,
+        "elapsed": 680.3,
+        "color": "#df9fba",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "step",
+        "intensity": 0.9913818384165964
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 680.3,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 76,
+        "calls": 79,
+        "triangles": 110972,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "progress": "impact",
+      "file": "enemy-sock-skipper-impact.webp",
+      "audit": {
+        "frames": 80,
+        "calls": 80,
+        "triangles": 112896,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 7,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-sock-skipper",
+          "skillId": "flankerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#df9fba",
+          "accent": "#ffe4ad",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "special",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "bow",
+              "soundCue": "flankerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "special",
+              "vfx": "button",
+              "soundCue": "flankerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "flankerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Pocket skip",
+          "motifs": [
+            "sock",
+            "bow",
+            "button",
+            "sock",
+            "crescent"
+          ],
+          "presentationId": "enemy:sock-skipper"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 746,
+          "duration": 85,
+          "camera": 0,
+          "shake": 0.5,
+          "flash": 0.025,
+          "clip": "special",
+          "vfx": "button",
+          "soundCue": "flankerAttack.impact"
+        },
+        "progress": 0.15,
+        "actionProgress": 0.6667367535744323,
+        "elapsed": 792.75,
+        "color": "#df9fba",
+        "camera": 0,
+        "shake": 0.425,
+        "flash": 0.02125,
+        "clip": "special",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 5
+        },
+        {
+          "name": "seam",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 792.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 451,
+          "y": 276,
+          "width": 60,
+          "height": 22,
+          "top": 276,
+          "right": 511,
+          "bottom": 298,
+          "left": 451
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 80,
+        "calls": 80,
+        "triangles": 112896,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "progress": "recover",
+      "file": "enemy-sock-skipper-recover.webp",
+      "audit": {
+        "frames": 84,
+        "calls": 80,
+        "triangles": 113184,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 8,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 8,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-sock-skipper",
+          "skillId": "flankerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#df9fba",
+          "accent": "#ffe4ad",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "special",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "bow",
+              "soundCue": "flankerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0.5,
+              "flash": 0.025,
+              "clip": "special",
+              "vfx": "button",
+              "soundCue": "flankerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0.1,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sock",
+              "soundCue": "flankerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "flankerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-sock-skipper",
+              "skillId": "flankerAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Pocket skip",
+          "motifs": [
+            "sock",
+            "bow",
+            "button",
+            "sock",
+            "crescent"
+          ],
+          "presentationId": "enemy:sock-skipper"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 831,
+          "duration": 175,
+          "camera": 0,
+          "shake": 0.1,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "sock",
+          "soundCue": "flankerAttack.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7724978973927671,
+        "elapsed": 918.5,
+        "color": "#df9fba",
+        "camera": 0,
+        "shake": 0.05,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 6
+        },
+        {
+          "name": "seam",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 918.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 444,
+          "y": 276,
+          "width": 60,
+          "height": 22,
+          "top": 276,
+          "right": 504,
+          "bottom": 298,
+          "left": 444
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 84,
+        "calls": 80,
+        "triangles": 113184,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 8,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "progress": "charge",
+      "file": "enemy-teacup-healer-charge.webp",
+      "audit": {
+        "frames": 89,
+        "calls": 80,
+        "triangles": 111419,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-0-teacup-healer"
+          ],
+          "color": "#9dd3ba",
+          "accent": "#ffedb5",
+          "shape": "mend",
+          "duration": 1182,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "wave",
+              "soundCue": "healerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 168,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "steam",
+              "soundCue": "healerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 999,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "leaf",
+              "soundCue": "healerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Careful refill",
+          "motifs": [
+            "cup",
+            "wave",
+            "cup",
+            "steam",
+            "leaf"
+          ],
+          "presentationId": "enemy:teacup-healer"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "cup",
+          "soundCue": "healerAttack.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.416243654822335,
+        "elapsed": 491.99999999999994,
+        "color": "#9dd3ba",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "cast",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        },
+        {
+          "name": "knock-ring",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 89,
+        "calls": 80,
+        "triangles": 111419,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 2,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "progress": "travel",
+      "file": "enemy-teacup-healer-travel.webp",
+      "audit": {
+        "frames": 93,
+        "calls": 79,
+        "triangles": 110971,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-0-teacup-healer"
+          ],
+          "color": "#9dd3ba",
+          "accent": "#ffedb5",
+          "shape": "mend",
+          "duration": 1182,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "wave",
+              "soundCue": "healerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 168,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "steam",
+              "soundCue": "healerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 999,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "leaf",
+              "soundCue": "healerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Careful refill",
+          "motifs": [
+            "cup",
+            "wave",
+            "cup",
+            "steam",
+            "leaf"
+          ],
+          "presentationId": "enemy:teacup-healer"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 146,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "wave",
+          "soundCue": "healerAttack.travel"
+        },
+        "progress": 0.5499999999999997,
+        "actionProgress": 0.5755499153976311,
+        "elapsed": 680.3,
+        "color": "#9dd3ba",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "cast",
+        "intensity": 0.9913818384165964
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 680.3,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 93,
+        "calls": 79,
+        "triangles": 110971,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 1,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "progress": "impact",
+      "file": "enemy-teacup-healer-impact.webp",
+      "audit": {
+        "frames": 97,
+        "calls": 80,
+        "triangles": 112515,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 7,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-0-teacup-healer"
+          ],
+          "color": "#9dd3ba",
+          "accent": "#ffedb5",
+          "shape": "mend",
+          "duration": 1182,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "wave",
+              "soundCue": "healerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 168,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "steam",
+              "soundCue": "healerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 999,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "leaf",
+              "soundCue": "healerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Careful refill",
+          "motifs": [
+            "cup",
+            "wave",
+            "cup",
+            "steam",
+            "leaf"
+          ],
+          "presentationId": "enemy:teacup-healer"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 746,
+          "duration": 85,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "cast",
+          "vfx": "cup",
+          "soundCue": "healerAttack.impact"
+        },
+        "progress": 0.4115384615384615,
+        "actionProgress": 0.6706852791878173,
+        "elapsed": 792.75,
+        "color": "#9dd3ba",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0.014711538461538463,
+        "clip": "cast",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 5
+        },
+        {
+          "name": "steam",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 792.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-teacup-healer",
+          "x": 636,
+          "y": 285,
+          "width": 60,
+          "height": 22,
+          "top": 285,
+          "right": 696,
+          "bottom": 307,
+          "left": 636
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 13.143807524794996,
+      "overflow": false,
+      "stats": {
+        "frames": 97,
+        "calls": 80,
+        "triangles": 112515,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 7,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "progress": "recover",
+      "file": "enemy-teacup-healer-recover.webp",
+      "audit": {
+        "frames": 101,
+        "calls": 80,
+        "triangles": 112803,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 8,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 8,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-0-teacup-healer"
+          ],
+          "color": "#9dd3ba",
+          "accent": "#ffedb5",
+          "shape": "mend",
+          "duration": 1182,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "cast",
+              "vfx": "wave",
+              "soundCue": "healerAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "cast",
+              "vfx": "cup",
+              "soundCue": "healerAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 168,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "steam",
+              "soundCue": "healerAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 999,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "leaf",
+              "soundCue": "healerAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "foe-0-teacup-healer",
+              "skillId": "healerAttack",
+              "targetIds": [
+                "foe-0-teacup-healer"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Careful refill",
+          "motifs": [
+            "cup",
+            "wave",
+            "cup",
+            "steam",
+            "leaf"
+          ],
+          "presentationId": "enemy:teacup-healer"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 831,
+          "duration": 168,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "steam",
+          "soundCue": "healerAttack.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7741116751269036,
+        "elapsed": 915,
+        "color": "#9dd3ba",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "painted-light",
+          "count": 6
+        },
+        {
+          "name": "steam",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 160,
+        "y": 186,
+        "width": 864,
+        "height": 289,
+        "top": 186,
+        "right": 1024,
+        "bottom": 475,
+        "left": 160
+      },
+      "at": 915,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-teacup-healer",
+          "x": 652,
+          "y": 283,
+          "width": 60,
+          "height": 22,
+          "top": 283,
+          "right": 712,
+          "bottom": 305,
+          "left": 652
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 13.143807524794996,
+      "overflow": false,
+      "stats": {
+        "frames": 101,
+        "calls": 80,
+        "triangles": 112803,
+        "geometries": 523,
+        "textures": 102,
+        "particles": 8,
+        "estimatedGpuBytes": 7006524,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    }
+  ],
+  "errors": []
+}

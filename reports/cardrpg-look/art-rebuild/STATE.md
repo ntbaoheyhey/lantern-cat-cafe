@@ -1,5 +1,5 @@
 # Art rebuild state
-NOW PAUSED by user “khoan…”: preserve completed Mochi pipeline. Fal discovery only; no upload/job submitted. No source rebuild needed.
+NOW R1 VFX pilot resumed by later user visual corrections and generation-led workflow preference. Reuse completed Mochi source/rig; no new inference. Pilot impact-light fix verified; report/preview ready for publication.
 PROMPT.txt is the verbatim 18883-byte user instruction; digest in PROMPT.sha256.
 B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r1-2026-11-09; R0draft#423, base #421 3e95a0121 plus Full Run reporting descendants.
 Preserved pre-existing waiting edit in wip/b-leftover-2026-11-09-art commit047601861; no discarded work.
@@ -28,3 +28,7 @@ LOCAL runtime skeleton-safe clones, disposal, per-rig clip cache and blink morph
 
 BROWSER 2026-11-09T22:53:33.409814+00:00 original PNG -> Generate -> Extract completed; source ~/art/look-v3/image-to3d/mochi/browser-20261109/mochi-source.glb,5369360B,SHAeb84d0f8. No credentials read/purchase/new concept.
 AUTOMATION prepare-mochi.mjs tested new run+resume;5/5hashes exact,626020B output matches reviewed model. Explicit preview-only install; qualityPARTIAL/runtimeAcceptedfalse. Automation report and receipts prepared for draft427.
+
+VFX preference: prompt original image/video -> cleanup -> runtime effect/model, including ultimates. Current pilot uses generated RGBA light components animated in code, not a generated video.
+VFX pilot replaces duplicate Mochi door/cup and Sock/Teacup prop shapes only in v3; shield socket emits the release. Impact light advances during the held actor pose, preserving combat timing.
+VERIFY current source1818webtests/type/lint PASS; fiveBseeds+85plans exact.72face samples across landing/impact/afterglow0offenders; 36castwindows max16.8ms/native+CPU4,85draws/121362tri; film-impact199frames,0errors.

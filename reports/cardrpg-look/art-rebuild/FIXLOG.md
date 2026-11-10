@@ -2,6 +2,14 @@
 
 Inherited Full Run issues remain in ../skills-v5/full/FIXLOG.md. Art-specific issues follow reproduce / measure / hypotheses / smallest fix / verification / result, max three attempts per issue per milestone. No art fix attempted yet.
 
+## B-R1-009 2026-11-10 generated VFX pilot: duplicate props S3
+User identified both Mochi's right-hand/shield area and the enemy side. Existing door/roof/cup/sock/bow/button primitives conjure extra objects detached from the model. Built-in-generated four-component light atlas retained; replace these pilot recipes only under lookArt v3, attach charge/release to existing shield socket. Preserve attack/status clocks and recipe targets.
+Prior local iterations retained in r1/vfx-pilot/{before,before-beats,attempt1,after,after3}; code/type fixes are not separate visual issue resets. Source tests1817PASS, fiveBseeds exact,85plan immutability, sixcue/24face diagnostic at impact has0offenders. Source/film still require publication; full-roster VFX not complete.
+
+## B-R1-010 2026-11-10 impact light delayed by held pose S2
+Repro: after3/mochi-4-impact.webp has9pooled light instances but no visible arch; recovery shows the large arch. sampleActionPlan holds impact pose progress at0, so new layers starting at.52 remain alpha0 through the hit hold. Hypotheses: pose clock reused for light (confirmed), atlas addressing, depth occlusion.
+Attempt1: v3 light progress samples elapsed time inside the unchanged impact beat; pose, plan, rules and v2 remain unchanged. Reuse same master, do not regenerate. Extend regression test to require visible arch before pose release; rerun beat captures, faces through impact/reaction, parity and changed-cue perf. Verification pending.
+
 ## B-R1-001 2026-11-09T22:11Z R1 painted attachment sockets S3
 Repro: bakeoff1/painted-1440-mochi.webp; equipment medallions at feet. Attribute: GearAttachments falls back to model when named sockets are absent.
 Hypotheses: missing sockets (confirmed), body pivot mismatch, geometry offsets. Attempt1: supply arm/body/neck/back/tail sockets at the existing painted layer anchors; preserve equipment data. Verify queued same bakeoff/parity/faces.
@@ -44,3 +52,5 @@ Probe extension: generated-motion.mjs captures rest/anticipation/impact/guard/ca
 No fourth B-R1-008 geometry/weight fix. The exact packed model SHA c035cd84 was reproduced by the new runner; existing packed-motion/film/parity evidence applies to these same bytes.
 Added guards after observing that --install and REVIEW_REQUIRED could be mistaken for production acceptance: renamed --install-preview, always qualityPARTIAL/runtimeAcceptedfalse, hash all stage outputs/sidecars, lock output, atomic manifest, persist spawn failures.
 Verification automation-validation.json:5stages reused with byte-exact outputs; recipe change, output mismatch, concurrent writer and unqualified production install all rejected. No new model request or visual/performance PASS inferred.
+
+B-R1-010 attempt1 verification: matching after-impact1440/1024 shows arch during impact;72face samples0offenders,48fixedshot UI overlaps0,36casts max16.8ms/native+CPU4,85draws/121362tri,1818webtests/type/lint/buildPASS,5seed+85plan parity exact. Film-impact recorded199frames,0pageerrors; reviewed contact sheet. RESOLVED for pilot; full-roster/cold/startup/E2E not inferred.

@@ -1,4 +1,5 @@
 import { isReadableBattle } from './look-b2';
+import { isLookArtV3 } from './look-art';
 /** Original atelier effect materials. All resources are allocated during loading. */
 import * as T from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -9,8 +10,10 @@ import { lookWarmQueue } from './look-warm-queue';
 
 const sources = import.meta.glob('../../../../../../assets/cardrpg-look/flipbooks/{v5-soft,v5-motifs}.webp', {eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const families=['v5-soft','v5-motifs'] as const;
-type Family=typeof families[number];
+const paintedSources=import.meta.glob('../../../../../../assets/cardrpg-look/v3-vfx/mochi-light.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+type Family=typeof families[number]|'mochi-light';
 const familyFor:Partial<Record<CardEffectPrimitive,Family>>={
+ 'painted-light':'mochi-light',
  'soft-particle':'v5-soft','motif-particle':'v5-motifs','ink-stain':'v5-motifs','ink-drop':'v5-motifs',steam:'v5-soft',veil:'v5-soft',flame:'v5-soft',ember:'v5-soft',spark:'v5-soft','spice-star':'v5-soft',seam:'v5-motifs',knot:'v5-motifs',spool:'v5-motifs',spindle:'v5-motifs','crumb-crown':'v5-soft','seed-pod':'v5-motifs',constellation:'v5-soft',comet:'v5-soft',wave:'v5-soft','yarn-fan':'v5-motifs',leaf:'v5-motifs',petal:'v5-motifs',droplet:'v5-motifs','shield-facet':'v5-motifs',
 };
 const rowFor:Partial<Record<CardEffectPrimitive,number>>={'ink-stain':2,'ink-drop':2,steam:1,veil:7,flame:2,ember:3,spark:4,'spice-star':4,'crumb-crown':5,'seed-pod':7,constellation:4,comet:6,wave:6,leaf:1,petal:5,droplet:3,'shield-facet':4};
@@ -78,7 +81,7 @@ function craftedBody(kind: CardEffectPrimitive): T.BufferGeometry | undefined {
 }
 const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash,effectMark,effectTile;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark,tile;
 void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;mark=effectMark;tile=effectTile;texUV=uv;
- vec3 p=position;if(surfaceKind>5.5)p.y=(p.y+.75)*smoothstep(0.,.4,effectPhase)-.75;localPoint=p;if(effectPart>1.5&&effectPart<2.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
+ vec3 p=position;if(surfaceKind>5.5&&surfaceKind<6.5)p.y=(p.y+.75)*smoothstep(0.,.4,effectPhase)-.75;if(surfaceKind>6.5){p.z+=sin(uv.x*6.283+effectPhase*3.)*.055*sin(uv.y*3.14159);p.y+=sin(uv.x*6.283-effectPhase*4.)*.025*sin(uv.y*3.14159);}localPoint=p;if(effectPart>1.5&&effectPart<2.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){p.z+=sin(p.x*4.8+effectPhase*.8)*.11*(.8+.2*cos(p.y*4.));}
  vec3 surfaceNormal=normal;
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){surfaceNormal.x-=cos(p.x*4.8+effectPhase*.8)*.528*(.8+.2*cos(p.y*4.))*normal.z;surfaceNormal.y+=sin(p.x*4.8+effectPhase*.8)*.088*sin(p.y*4.)*normal.z;}
@@ -90,7 +93,12 @@ float distanceAt(vec2 uv){float z=texture2D(sceneDepth,uv).r*2.-1.;return 2.*cli
 void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
  for(int i=0;i<12;i++){if(i>=protectedCount)break;if(mark>1.5&&mark<2.5&&screen.y>protectedHeadTops[i]+.008)continue;vec4 f=protectedFaces[i];vec2 q=(screen-f.xy)/max(f.zw,vec2(.00001));float radius=dot(q,q);if(radius<1.)discard;faceFade*=smoothstep(1.,1.6,radius);}
  float a=opacity*faceFade;vec3 c=effectColor;float additive=0.;
- if(part>3.5){
+ if(surfaceKind>6.5){
+   float cell=clamp(floor(tile+.5),0.,3.);vec2 grid=vec2(mod(cell,2.),1.-floor(cell/2.));
+   vec4 t=texture2D(atlas,(grid+clamp(texUV,vec2(.001),vec2(.999)))/2.);
+   vec3 linear=pow(max(t.rgb,vec3(0.)),vec3(2.2));float energy=dot(linear,vec3(.2126,.7152,.0722));
+   a*=pow(t.a,1.35)*smoothstep(.04,.5,energy);c=effectColor*(.5+energy*1.5)+vec3(1.,.8,.4)*pow(energy,6.)*1.1;additive=.65;
+ }else if(part>3.5){
    if(mark<1.5||mark>2.5)discard;
    float r=length((texUV-.5)*2.);a*=.72*(1.-smoothstep(.65,1.,r));c=vec3(.012,.026,.033);
  }else
@@ -145,8 +153,9 @@ export class LookVfx {
     });
   }
   async prepare(cancelled: () => boolean) {
-    for (const family of families) {
-      const url = Object.entries(sources).find(([path]) => path.endsWith(`/${family}.webp`))?.[1];
+    const active:Family[]=isLookArtV3()?[...families,'mochi-light']:[...families];
+    for (const family of active) {
+      const url = Object.entries(family==='mochi-light'?paintedSources:sources).find(([path]) => path.endsWith(`/${family}.webp`))?.[1];
       if (!url) throw Error(`Missing original ${family} atlas`);
       const bitmap = await new T.ImageBitmapLoader().setOptions({ imageOrientation: 'flipY',
         premultiplyAlpha: 'none', colorSpaceConversion: 'none' }).loadAsync(url);
@@ -159,7 +168,7 @@ export class LookVfx {
     }
   }
   material(kind: CardEffectPrimitive) {
-    const family = familyFor[kind], finish = kind === 'greenhouse' && isReadableBattle() ? 6 : kind === 'lantern' ? 5 : paper.has(kind) ? 1 : glass.has(kind) ? 2 : ceramic.has(kind) ? 3 : metal.has(kind) ? 4 : 0;
+    const family = familyFor[kind], finish = kind==='painted-light'?7:kind === 'greenhouse' && isReadableBattle() ? 6 : kind === 'lantern' ? 5 : paper.has(kind) ? 1 : glass.has(kind) ? 2 : ceramic.has(kind) ? 3 : metal.has(kind) ? 4 : 0;
     const key = `${family ?? 'sculpted'}/${finish}/${rowFor[kind]??0}/${kind==='flame'||kind==='ember'?1:0}`;
     let material = this.materials.get(key);
     if (!material) {
@@ -175,6 +184,7 @@ export class LookVfx {
     return material;
   }
   geometry(base: T.BufferGeometry, kind: CardEffectPrimitive) {
+    if(kind==='painted-light'){base.setAttribute('effectPart',new T.BufferAttribute(new Float32Array(base.attributes.position!.count).fill(1),1));return base;}
     const family = familyFor[kind];
     if(kind==='soft-particle'||kind==='motif-particle'){base.setAttribute('effectPart',new T.BufferAttribute(new Float32Array(base.attributes.position!.count).fill(1),1));return base;}
     let original = base.index ? base.toNonIndexed() : base;

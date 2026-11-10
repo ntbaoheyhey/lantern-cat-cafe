@@ -1,3 +1,15 @@
+# Active VFX pilot continuation — 2026-11-10 UTC
+
+Later user corrections resume the VFX pilot: both Mochi right hand/shield and enemy side looked incongruous; user now explicitly prefers prompt -> generated original image/video -> cleanup -> runtime art, including ultimate effects. Preserve existing Mochi source, rig, source textures and all prior work. No regeneration, new external job or new model connection required.
+
+Latest pilot removes duplicate door/roof/cup/sock/bow/button props, uses one generated RGBA four-component light atlas and anchors Mochi charge/release to the shield socket. It is animated runtime light, not generated video. Found B-R1-010: actor impact hold froze light at alpha0; v3 pilot light now samples unheld elapsed impact time. Pose/action clocks unchanged. New after-impact evidence is authoritative for this patch; after/after3/film/film3 remain retained earlier iterations.
+
+72face samples across landing/impact/afterglow PASS;1818webtests/type/lint PASS; fiveBseeds+85live-plan immutability exact. 36cast windows max16.8ms/native+CPU4,85draws/121362tri; film-impact6.866667s/199frames/0errors. Current receipts are under r1/vfx-pilot/validation.json. Preview is docs/cardrpg-look/v5-art-vfx-preview.html (30,879,888B). User-approved workflow is VFX-WORKFLOW.md. R1 still PARTIAL; no four-unit acceptance or roster rollout. B-R1-008 at3attempt cap remains, no fourth weight-mask edit. Real surface separation is still next for model motion, using the SAME source.
+
+Original R0/S6/M5/housekeeping complete; draft427. Shell owned by U. Default flags OFF, no PR merge/deploy. Historical pause below is superseded only by the later corrections/preference; never treat old text as a reason to restart work.
+
+---
+
 # User pause — 2026-11-10T01:17:50.106927+00:00
 
 User: “khoan, bạn tiếp tục từ phần bạn đã làm cũ tại sao lại làm lại rồi?” Pause art/model actions while explaining the checkpoint. Do not infer permission to restart conversion.

@@ -310,7 +310,7 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
 
 /** Bake once per asset, then let the existing mixer handle playback and blending. */
 export function createCardClips(model: T.Object3D, role: string, asset: string): Promise<T.AnimationClip[]> {
-  const key = `${asset}/${role}/${model.userData.lookV2 === true ? 'atelier' : 'classic'}`;
+  const key = `${asset}/${role}/${model.userData.lookV2 === true ? 'atelier' : 'classic'}/${model.userData.rigVersion ?? 'original'}`;
   const cached = clipCache.get(key);
   if (cached) return cached;
   const result = bakeCardClips(model, role, asset);
