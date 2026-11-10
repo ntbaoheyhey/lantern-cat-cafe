@@ -1305,3 +1305,10 @@ Prototype626020B/21938tri/14joints/2textures;22game clips,11pose sheet and20s na
 R1PARTIAL: high cast/victory deformation persists at3attempt cap B-R1-008; no pipeline accepted or roster rollout. Actual surface separation needed; no fourth mask tweak.
 Automation5/5resume hashes exact; recipe/output/concurrent writer/production-install guards PASS. Local type/lint/unit PASS incl1815webtests;5Bseeds exact/85plan immutability retained. New perf/faces/contrast/collision/startup/E2E NOT VERIFIED.
 Published source/tools/evidence/reports only; rejected renderer/candidate WIP remains local. Reports ART-REPORT.md,AUTOMATION.md,STATUS-VI.md. R0/S6/M5 preserved; no A/U edits, flag flips, PR merge or manual deploy action.
+
+## 2026-11-10T01:44:00Z ART-R1 CHECKPOINT
+Draft427 commit73e680435: generation-led VFX pilot and reproducible opt-in preview; same Mochi source/rig, no new source inference or fal job. User prefers original generated image/video -> cleanup -> runtime art, including ultimates.
+Mochi/Sock/Teacup duplicate prop shapes replaced by light; shield-anchored emission. B-R1-010 fixed alpha0 during held impact without changing pose/action/rules. Model B-R1-008 remains PARTIAL at3attempt cap; no roster acceptance.
+Type/lint/1818webtests/buildPASS;5Bseeds exact across5modes/85plan immutability.72face samples0offenders,48fixedshots1440/1024 overlaps0;36castwindows max16.8ms/native+CPU4,85draws/121362tri.
+Preview docs/cardrpg-look/v5-art-vfx-preview.html30879888B;6.867s x1 gallery film. Prior samples retained;60face images losslessly packed, decoded pixels exact. Evidence74.25MB/source15.14MB;5clips.
+Reports ART-REPORT.md,VFX-WORKFLOW.md,r1/vfx-pilot/REVIEW.md. R1PARTIAL; full roster/cold/startup/E2E not newly accepted; allocation miss retained. No R0/S6/M5 rerun, A/U edit, flag flip, merge or deploy.
