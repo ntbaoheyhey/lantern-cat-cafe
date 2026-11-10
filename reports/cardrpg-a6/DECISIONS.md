@@ -77,3 +77,7 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 - 2026-11-10T18:57:07Z Q14 merged publishedB e83b9e2a1 with merge commitbe31fd412; all25puppets/P6single-source canvas numbers/P7stage/P8faces/P9budget retained. Adopted staged circle-face adapter only; A6 full-body alpha art and shell unchanged.
 
 - 2026-11-10T19:05:24Z Q14 phase mismatch is an A-owned presentation adapter defect, not a new rule: shared displayedBossPhase maps A6 bonus+phase to1/2/3 for HUD/world label/scene input. Current boss visibility remains pending B P13; accepted Q13e design is not reworked.
+
+- 2026-11-10T19:21:42Z: Final gallery adds Journal/Field guide/Settings to LOOK-SCORES. Journal is the lowest A-owned surface at 7.3/7.1; add Q17 after Q16 under the requested continuing quality pass. Prepare an original scrapbook using existing cat art and rule previews off the live app while Q15 measures. No new rewards or mechanics.
+
+2026-11-10T19:35:56Z Q18[auto]: retained720p gallery exposes Field guide/Settings7.3 lows; code inspection finds legacy two-turn ultimate text and Settings[1,2,4] despite A6rage100/[1,2,3]. Add presentation/copy parity polish afterQ17, no rules or new systems; drafts only during frozenQ15.

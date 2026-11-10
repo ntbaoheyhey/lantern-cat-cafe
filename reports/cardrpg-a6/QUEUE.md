@@ -12,6 +12,10 @@
 - [ ] Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once with the sim, full E2E, one real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss fight with ultimates.
 - [ ] Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player gets now, before/after screenshots of home/recruit/map/battle, LOOK-SCORES summary, difficulty numbers, known issues), STATUS-VI.md summary, PR #438 description. Then improve the lowest LOOK-SCORES row until 20 Nov 12:00 UTC.
 
+- [ ] Q17 [auto] Journal keepsake finish, after final report: improve the newly inspected lowest A-owned screen (7.3/7.1) with an original scrapbook composition, large companion art and clear ready/collected milestones. Preserve every claim, cap, discovery, collection and guide/replay action. Draft off the live app during Q15; apply only after the frozen run, verify both sizes and existing claim tests.
+
+- [ ] Q18 [auto] Field guide and Settings clarity, after Q17: improve the next two 720p lows (7.3 each), retain all guide tabs/save/replay/comfort actions, and fix two inspected A6 mismatches: guide still describes two-turn ultimates, Settings offers x4 while the A6 HUD uses x3. Use original illustrated guide notes and a compact save/comfort desk; preserve legacy modes and the reset confirmation. Verify actual x3 selection, save transfer, guide tabs and both-size controls. Draft only until the frozen Q15 run and prior items finish.
+
 Q14 current integration: B P13 merged; two-add view repaired. Three-live-add phase3 overlaps remain B-owned, requested with exact A6 fixture in A6-OUTBOX; continue independent Q15 work while awaiting published repair.
 
 Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earliest loss6.59min and full-health normal wins remain explicit misses (Q13f.md). No fourth numeric tuning loop.

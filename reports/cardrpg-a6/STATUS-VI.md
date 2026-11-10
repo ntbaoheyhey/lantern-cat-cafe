@@ -88,3 +88,10 @@ Giữ lượt500seed cuối đang chạy và mọi thay đổi dở; không ch�
 
 2026-11-10T19:15:22Z: Bộ500seed cuối đã chạy đúng một lần: trận thường27,15giây/boss70,93giây theo timeline; thua đầu trung vị10,37phút, trung bình3,52lần thua và gợi ý thắng47,76% vẫn chưa đạt.
 Giữ nguyên số đo và nêu rõ giới hạn; tiếp tục kiểm tra E2E/lượt chơi thật, không chạy lại seed cuối để làm đẹp kết quả.
+
+2026-11-10T19:20:48Z: E2E ban đầu420/421; đã sửa chờ tải trong ca idle, ca này qua cả3lượt kiểm tra lại. Mã gameplay không đổi.
+Đã đẩy e445093f2 gồm demo/ảnh/500seed; bắt đầu lượt UI thật30phút có ghi hình, giữ app không đổi trong lúc đo.
+
+2026-11-10T19:28:59Z: Tiếp tục đúng lượt UI/video Q15 đang chạy; giữ nguyên app, không chạy lại 500 seed hay bộ ảnh đã đạt.
+Git trùng origin, còn145GiB; toàn bộ sửa đổi dở được giữ. B đã công bố sửa ba/bốn lính phụ, sẽ tích hợp sau lượt đo.
+Đang hoàn thiện bằng chứng trước/sau và bản nháp Nhật ký trong thư mục tạm.

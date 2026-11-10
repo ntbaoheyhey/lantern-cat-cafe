@@ -114,3 +114,5 @@
 - 2026-11-10T19:10:08Z Q14 B P13 improves the two-add view after merge7b23959ad. A6phase3 spawns a third live add; slot%2 places it over another. Confirmed from real automatic fixture, requestedB extension with exact reproducer/evidence. Keep bossvisibility provisional; continue independent Q15checks, no combat-rule workaround.
 
 2026-11-10T19:15:22Z Q15 capture harness: Saved/Suggested summaries require distinct selection; resume keeps prior images. Map focus check used focus() after mouse input and therefore did not establish keyboard modality. Existing CSS has a focus-visible outline; focused verification now uses actual Tab/Shift+Tab and asserts focus before inspecting the ring. App source unchanged; failed receipt retained.
+
+2026-11-10T19:20:48Z Q15 E2E: full suite420/421, idle XP stayed0 after fake-clock jump before app readiness. Minimal test-only wait for visible Catstatus before advancing clock; three concurrent focused repeats pass. Preserve original failure in final-e2e.json. No gameplay changes;420passing cases not repeated.
