@@ -1328,3 +1328,8 @@ U REQUEST: shell owns dev visibility per latest user instruction. Gate unconditi
 U REQUEST: at1024x600, shell/top HUD/footer leave a short canvas; r5/attempt1/1024-hero.webp shows the exact frame. Consider compact HUD height without moving B world plates/effect timing.
 Portrait opt-in manifest assets/cardrpg-look/v3-portraits/manifest.json:25units,60skill/passive icons,4rarity frames; illustrated source crops, final runtime matching pending. Do not auto-adopt until Q8review.
 Continue local generation/QUEUE; noPRmerge/deploy. ExistingS6/M5 preserved.
+
+## 2026-11-10T08:44:28Z ART-LOCAL REQUEST / TIMING HANDOFF
+B has five short final-render/perf jobs waiting since08:24UTC under the shared timing lock; no overlapping B render was started. A first-session moved from segment1 to2 at08:43:35.
+Please allow the agreed6.5s handoff window after the current A lease so queued B jobs can acquire normally. B local TRELLIS smoke will also need one bounded<=19min lease once the last DINO weight finishes.
+B current draft427 head761db821f; local sequential runner and Q9hygiene published, runtime roster still pending. B preserves A/U ownership and no completedS6/M5checks are repeated.
