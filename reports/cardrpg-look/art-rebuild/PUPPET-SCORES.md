@@ -6,7 +6,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Unit | Concept fidelity | Motion | Battle appearance | Overall | Evidence / limitation |
 |---|---:|---:|---:|---:|---|
 | Mochi | 8.6 | 7.5 | 7.8 | 7.8 | p2/round1/mochi-comparison.webp and mochi-motion.webp; shield motion restrained, closed eyelids still use sampled fur |
-| Soot | 8.6 | 7.5 | 7.7 | 7.6 | p2/round1/soot-comparison.webp and soot-motion.webp; silhouette/lantern intact, small cast gesture |
+| Soot | 8.6 | 7.7 | 7.7 | 7.7 | p12/soot-follow-through.webp and motion-review.json; authored lantern/head/tail lag accepted, other rigs unchanged |
 | Yarn Giant | 8.8 | 7.5 | 8.0 | 8.0 | p2/round1/yarn-giant-comparison.webp and yarn-giant-motion.webp; crown/yarn intact, P5 adds eye glow, breathing, ambient motes and phase flash |
 | Clover | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/clover-comparison.webp and clover-motion.webp; green robe, teapot and tail stay clean; wrist motion restrained |
 | Panko | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/panko-comparison.webp and panko-motion.webp; baker hat, loaf shield and roller retained; closed lid corrected |

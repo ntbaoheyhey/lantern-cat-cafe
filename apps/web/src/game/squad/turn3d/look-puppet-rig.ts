@@ -34,26 +34,36 @@ export function puppetMotion(clip:string,acting=false,ultimate=false,boss=false)
 export const puppetPhase = (id:string) => [...id].reduce((n,c)=>(n*31+c.charCodeAt(0))%997,17)/997*Math.PI*2;
 const smooth=(t:number)=>t*t*(3-2*t);
 const ramp=(t:number,a:number,b:number)=>smooth(Math.max(0,Math.min(1,(t-a)/(b-a))));
-export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduced:boolean,phase=0) {
-  const t=Math.max(0,Math.min(1,progress));
-  const active=motion==='attack'||motion==='cast'||motion==='ultimate';
+function authoredGesture(motion:PuppetMotion,t:number) {
   const anticipation=-.38*ramp(t,0,.22);
   const strike=anticipation+1.52*ramp(t,.22,.52)-1.28*ramp(t,.52,.80)+.14*ramp(t,.80,1);
+  const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
+  return motion==='attack'?strike:magic;
+}
+// Soot's lantern leads; head and long tail follow a few frames later. Other
+// accepted rigs retain their existing gestures until their own visual review.
+const sootGesture={prop:.265,offhand:.15,head:.035,lean:.032,tailFollow:.085,clothFollow:.035,lag:.06};
+export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduced:boolean,phase=0,id='') {
+  const t=Math.max(0,Math.min(1,progress));
+  const active=motion==='attack'||motion==='cast'||motion==='ultimate';
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
-  const gesture=reduced?0:active?(motion==='attack'?strike:magic):0;
+  const gesture=reduced?0:active?authoredGesture(motion,t):0;
+  const profile=id==='soot'?sootGesture:undefined;
+  const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
   const hit=motion==='hurt'?Math.sin(t*Math.PI):0;
   const clock=time+phase;
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
   return {gesture,breathe,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
-    head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-.025*gesture:Math.sin(clock*1.15)*.013,
-    tail:reduced?0:Math.sin(clock*1.45)*.065,
+    head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-.012*follow:Math.sin(clock*1.15)*.013,
+    tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
+    cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
-    prop:reduced?0:active?-.20*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
-    offhand:reduced?0:active?.12*gesture:motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
-    lean:reduced?0:motion==='defeat'?-.18:motion==='hurt'?-.045*hit:active?-.025*gesture:Math.sin(clock*.9)*.005,
+    prop:reduced?0:active?-(profile?.prop??.20)*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
+    offhand:reduced?0:active?(profile?.offhand??.12)*gesture:motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
+    lean:reduced?0:motion==='defeat'?-.18:motion==='hurt'?-.045*hit:active?-(profile?.lean??.025)*gesture:Math.sin(clock*.9)*.005,
     eyeOpen:motion==='defeat'?0:blink*(motion==='hurt'?.50:motion==='victory'?.72:1),
     glow:motion==='ultimate'||motion==='cast'?Math.max(0,magic)*.16:motion==='boss-idle'?.035+(reduced?0:.02*Math.sin(clock*2)):0,
     collapse:motion==='defeat'?.12:0};

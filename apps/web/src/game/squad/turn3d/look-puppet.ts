@@ -102,7 +102,7 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
   model.quaternion.copy(relative).multiply(camera.quaternion);
   const data=model.userData.paintedRig as PuppetRig,rig=model.children[0]!;
   const phase=puppetPhase(model.userData.puppetActorId??data.id);
-  const pose=puppetPose(puppetMotion(clip,acting,ultimate,data.boss),time,progress??.5,reduced,phase);
+  const pose=puppetPose(puppetMotion(clip,acting,ultimate,data.boss),time,progress??.5,reduced,phase,data.id);
   rig.scale.set(1-pose.breathe+pose.hit*.025,1+pose.breathe-pose.hit*.035-pose.collapse,1);rig.rotation.set(0,0,pose.lean);
   rig.position.y=(rig.userData.restY as number)-pose.collapse*.3;
   for(const layer of rig.children){
@@ -115,7 +115,7 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
     if(part==='armR'||part==='prop')layer.rotation.z=pose.prop;
     if(part==='armL')layer.rotation.z=pose.offhand;
     if(part==='footL'||part==='footR')layer.rotation.z=pose.gesture*(part==='footL'?.025:-.025);
-    if(part==='cape'||part==='scarf')layer.rotation.z=pose.tail*.3;
+    if(part==='cape'||part==='scarf')layer.rotation.z=pose.cloth;
     for(const mesh of layer.children)if(mesh instanceof T.Mesh){
       const material=mesh.material as T.MeshStandardMaterial;
       if(material.userData.puppetEyeOpen)material.userData.puppetEyeOpen.value=pose.eyeOpen;

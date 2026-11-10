@@ -63,3 +63,6 @@ P7 hoàn tất từ kết quả đã lưu: sân quán ấm hơn, có trăng đê
 
 P9 đã đo trên bản chung A6 hiện tại:38,14MB/40MB, còn1,86MB; phần ảnh/tài nguyên B nhúng là23,55MB.
 Đã công bố manifest và cách tích hợp cho A6; phim P10 đầu chưa có ultimate nên chưa nhận, đang sửa replay và giữ nguyên bản quay cũ.
+
+P12 đã nhận từ kết quả lưu: Soot có đèn dẫn động tác, đầu/đuôi theo sau;21test và12lượt chiêu x1/reduced đạt.
+Phim thường85,5giây/9ultimate giữ nguyên. Phim boss cho thấy một Binding Thread bị che; xử lý P13 rồi quay thêm tới kết quả trận.

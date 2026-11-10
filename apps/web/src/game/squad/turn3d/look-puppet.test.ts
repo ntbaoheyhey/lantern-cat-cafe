@@ -70,4 +70,19 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(puppetPose('hurt',0,.7,false).flash).toBe(0);
     expect(puppetPose('hurt',0,0,true).flash).toBe(0);
   });
+  it('gives Soot delayed tail follow-through with bounded joints and an exact settle',()=>{
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const pose=(t:number,reduced=false)=>puppetPose(motion,0,t,reduced,0,'soot');
+      expect(pose(.04).tail).toBe(0);
+      expect(Math.abs(pose(.52).tail)).toBeGreaterThan(.02);
+      expect([pose(1).tail,pose(1).cloth,pose(1).prop,pose(1).head].every(v=>Math.abs(v)<1e-10)).toBe(true);
+      for(let i=0;i<=100;i++){
+        const p=pose(i/100),quiet=pose(i/100,true);
+        expect(Math.abs(p.prop)).toBeLessThan(.32);
+        expect(Math.abs(p.tail)).toBeLessThan(.1);
+        expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
+      }
+    }
+    expect(puppetPose('cast',0,.3,false,0,'clover')).toEqual(puppetPose('cast',0,.3,false));
+  });
 });

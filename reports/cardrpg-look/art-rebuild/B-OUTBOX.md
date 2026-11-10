@@ -44,3 +44,6 @@ Puppet-only warm cream fill, cool rear rim, night crescent and enemy-side thread
 
 ## P9 actual combined budget — replaces estimates
 Current A6 shell50illustrations plus B P7: **38,140,486B**,40,000,000B limit,1,859,514B headroom. Bembedded assets23,545,868B: current25atlases7,385,800B + cafe1,998,112B + VFX2,046,876B + retained classic/diagnostic12,115,080B. A6embedded5,146,352B; shared7,947,504B; HTML/code1,500,762B. Raw catalog variants are optional and overlap assets already included; import only needed formats and rerun the guard for a changed shell. Evidence p9/budget.json and REVIEW.md; command tool delivery-budget.mjs validates the actual artifact against its receipt and40MB cap. Flags/manifest/number ownership unchanged. P7 pushedc922b783ad1529fc716a677ad96e0e2856f236a1; P10replay correction underway, no user action needed.
+
+## P12 — Soot motion pilot
+Soot alone gains authored lantern/head/tail follow-through in look-puppet-rig.ts; other profiles and all atlases unchanged. Reduced motion remains static. Saved21tests/12x1casts/five-seed parityPASS, warm p95 16.8ms. P13 still in progress: boss films exposed one Binding Thread behind another, so do not infer enemy-face visibility from the existing HP-label audit.

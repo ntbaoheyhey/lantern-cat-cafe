@@ -90,3 +90,8 @@ Filled the missing RESEARCH-PUPPET.md from existing direction plus primary techn
 
 ## 2026-11-10T18:09:14.154961+00:00 P8 while P7 waits
 The P7 GPU/E2E lease is queued behind A6. Per NON-STOP rule4, accept and publish the already exported/reviewed P8 derivatives independently. No P7 acceptance is inferred. P9 budget and P10 films still depend on the final stage artifact.
+
+## 2026-11-10T18:37:13.050170+00:00 Useful work while the film lease waits
+P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot motion pilot while A6 owns GPU timing; the P10 artifact is immutable so film validation does not silently include unaccepted motion. Soot adds bounded prop lift and3–5frame head/tail follow-through without recutting its atlas. No P12 completion claim before naturalx1 visual/overlap/reduced-motion review.
+
+2026-11-10T18:54:16.068996+00:00 P12/P13 now precede final P10/P11 closure: saved Soot pilot can ship immediately; boss film exposed a hidden Binding Thread that label-overlap tests missed. Preserve both85.5sfilms, retain normal acceptance, fix composition then add a complete boss-result film. This extends the missing acceptance evidence rather than repeating completed work.

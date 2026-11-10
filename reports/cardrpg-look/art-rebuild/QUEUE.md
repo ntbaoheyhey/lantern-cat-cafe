@@ -13,12 +13,12 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
 - [x] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
 - [x] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
+- [x] P12 [auto] Individual motion polish after core delivery: improve the lowest motion score with authored tail/cloth lag and a clearer anticipation/settle pilot; compare at x1, retain clean overlap and reduced motion. Extend only accepted improvements to relevant rigs.
+- [ ] P13 [auto] Broad-boss composition: inspect Rain Spool impact proximity to party faces and improve lateral spacing without shrinking accepted cat/boss scale; two viewports, same HUD envelopes.
 - [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
 - [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
 
-- [ ] P12 [auto] Individual motion polish after core delivery: improve the lowest motion score with authored tail/cloth lag and a clearer anticipation/settle pilot; compare at x1, retain clean overlap and reduced motion. Extend only accepted improvements to relevant rigs.
-- [ ] P13 [auto] Broad-boss composition: inspect Rain Spool impact proximity to party faces and improve lateral spacing without shrinking accepted cat/boss scale; two viewports, same HUD envelopes.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -51,3 +51,5 @@ P8 complete 2026-11-10T18:09:14.154961+00:00: accepted saved25unit formats/60ski
 P7 complete 2026-11-10T18:29:55.894769+00:00: saved6current-HUD captures/5casts accepted; warm fill, night crescent, enemy accents;19tests/parityPASS; warmedp95/max16.8ms. Stage8.0 self-review; P9 budget next.
 
 P9 complete 2026-11-10T18:31:20.425804+00:00: current A6+B P7 actual38,140,486B, headroom1,859,514B; Bembedded23,545,868B incl retained assets. Integration manifest/flags/ownership published; P10film correction next.
+
+P12 complete 2026-11-10T18:54:16.068996+00:00: saved controlled Soot pilot accepted; head/lantern/tail delayed follow-through,8paired poses/12x1casts incl reduced,21tests/parityPASS. Reordered prepared P12/P13 before P10/P11: boss film reveals hidden Binding Thread, so close composition and then capture the complete boss outcome; accepted normal film is retained.
