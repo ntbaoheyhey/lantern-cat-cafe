@@ -23,12 +23,12 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Spool Ram | 8.6 | 7.7 | 7.7 | 7.7 | p14/evidence/spool-ram-follow-through.webp; authored horn dip, planted hoof contacts and delayed tail recovery; no independent hoof roll |
 | Needle Moth | 8.6 | 7.7 | 7.8 | 7.8 | p32/evidence/needle-moth-wing-needle.webp; whole needle lead, bounded wing draw/recovery, coherent abdomen and planted boots; rigid wings and tiny edge fringe retained |
 | Teacup Healer | 8.6 | 7.7 | 7.8 | 7.8 | p33/evidence/teacup-healer-spoon-blessing.webp; complete spoon blessing/open-palm rise, quiet lid and planted boots; ceramic bowl/handle/saucer coherent, rigid elbow limit |
-| Kettle Knight | 8.6 | 7.5 | 7.9 | 7.9 | p5/batch1-final/kettle-knight-comparison.webp and kettle-knight-motion.webp; boss showcase scale repaired; original eyes emit |
+| Kettle Knight | 8.6 | 7.7 | 7.9 | 7.9 | p36/evidence/kettle-knight-spout-lift.webp; whole spout lift/release and delayed gauntlet brace, rigid handle/chest and planted boots; bounded shoulder fringe retained, boss eyes/phase intact |
 | Binding Thread | 8.6 | 7.7 | 7.7 | 7.7 | p21/evidence/binding-thread-reach.webp; forward knot reach, arm lag and planted feet; duplicate limb fill removed, rigid-arm limit remains |
 | Practice Cushion | 8.6 | 7.7 | 7.7 | 7.7 | p22/evidence/practice-cushion-spring.webp; small compression/release, mitten jab and planted boots; broad face seam intact, tassels remain rigid |
 | Pollen Scout | 8.6 | 7.7 | 7.8 | 7.8 | p34/evidence/pollen-scout-basket-wing.webp; whole basket presentation, restrained wing draw and hanging-hand countergesture; coherent leaf coat, rigid wings and tiny neck fringe retained |
 | Rain Spool | 8.6 | 7.5 | 8.0 | 8.0 | p13/repair1/rain-spool-spacing.webp; party gap restored and both adds visible; accepted scale and motion unchanged |
-| Crumb Sentinel | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/crumb-sentinel-comparison.webp and crumb-sentinel-motion.webp; ornate armour retained |
+| Crumb Sentinel | 8.6 | 7.7 | 7.8 | 7.8 | p35/evidence/crumb-sentinel-shield-brace.webp; whole shield brace and delayed gauntlet jab, coherent chest/tabard, quiet lid and planted boots; rigid shoulders and tiny alpha fringe retained |
 | Pantry Crown | 8.6 | 7.5 | 8.0 | 8.0 | p5/batch2/pantry-crown-comparison.webp and pantry-crown-motion.webp; crown and pantry door clean; authored eye ROI |
 | Live pilot battle | — | 7.5 | 7.5 | 7.5 | p2/live2/battle-1440.webp + battle-1280.webp; boss dominates cats, Binding Thread is still legacy until P5 |
 

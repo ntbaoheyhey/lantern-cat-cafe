@@ -108,3 +108,9 @@ HEAD matches fetched origin 9a20d42a27f656f123e72d4bc47d77b7dff90e7a; P1–P32 r
 
 ## Resume 2026-11-10T23:19:34.905847+00:00
 HEAD c7c66abe092a7096b64e18729dae2babc0c33274 matches fetched origin. P1–P33 accepted; P34 source1 polygons/audit saved, atlas not rebuilt. No native runner or B heavy job; static servers50023/5920 and92836/5922 retained;139GiB free. Native dirty work and unreviewed GLBs preserved/excluded; inventory RESUME-DIRTY-P34.txt.
+
+## Resume 2026-11-10T23:31:50.966633+00:00
+P34 published 5cab76517 matches origin; P35 source1 config/audit saved but not rebuilt. Before artifact built 38800938B. No native runner/active lease; static servers50023/5920 and92836/5922;139GiB free. Native dirty files/GLBs retained and excluded.
+
+## Resume 2026-11-10T23:44:55.460649+00:00
+P35 2b664ac4e3b20c88aa4f840092bbc5b6ab311f50 matches fetched origin. P36 source3 config/audit and controlled-before build retained; source atlas not rebuilt. No native runner or B heavy job; servers50023/5920 and92836/5922 retained;139GiB free. Native dirty work/GLBs preserved and excluded.

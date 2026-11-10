@@ -9,6 +9,38 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_kettle_handle_chest_spout_fingers_and_boots_keep_their_owners(self):
+        cfg = json.loads((Path(__file__).parent/'configs/kettle-knight.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((620,220),'head'),((600,340),'head'),((560,380),'head'),((500,180),'body'),((930,180),'body'),((926,350),'body'),((580,430),'body'),((580,600),'body'),((540,850),'body'),((300,850),'body'),((124,481),'armL'),((220,650),'armL'),((300,580),'armL'),((402,420),'armL'),((850,430),'armR'),((950,600),'armR'),((920,780),'armR'),((1020,821),'armR'),((1070,800),'armR'),((418,850),'footL'),((400,990),'footL'),((743,852),'footR'),((750,1000),'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armL')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
+
+    def test_crumb_complete_shield_gauntlet_chest_and_boots_have_distinct_owners(self):
+        cfg = json.loads((Path(__file__).parent/'configs/crumb-sentinel.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((550,110),'head'),((450,360),'head'),((700,340),'head'),((500,480),'body'),((300,510),'body'),((580,800),'body'),((288,700),'body'),((200,480),'armL'),((262,558),'armL'),((156,777),'armL'),((820,430),'armR'),((845,540),'armR'),((1000,640),'armR'),((975,494),'armR'),((360,780),'footL'),((320,940),'footL'),((791,793),'footR'),((740,950),'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_pollen_wings_leaf_coat_basket_handle_and_boots_have_distinct_owners(self):
         cfg = json.loads((Path(__file__).parent/'configs/pollen-scout.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')

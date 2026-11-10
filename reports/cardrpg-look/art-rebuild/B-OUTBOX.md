@@ -122,3 +122,9 @@ Only Teacup Healer config/rig/atlas rebuilt; same six layers. Whole spoon/brass 
 
 ## P34 — Pollen Scout basket and wings
 Only Pollen Scout config/rig/atlas rebuilt; eight original layers. Whole basket/handle on armR, rear wing visible through loop, leaf coat on body; bounded basket presentation, wing draw and planted boots. MainHand pollen(796,625), offHand fingertips(463,689), source1200×1036.39web+12source tests/type/lint/parity,16views/8casts pass; zero page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A65badf4428+B 38,775,934B; headroom 1,224,066B; Bembedded 24,131,060B. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid wings/tiny neck fringe retained; p34/REVIEW.md.
+
+## P35 — Crumb Sentinel shield brace
+Only Crumb Sentinel config/rig/atlas rebuilt; six original layers. Complete shield/gauntlet, coherent chest/tabard, quiet lid and planted boots. MainHand shield(1000,640), offHand fist(156,777), source1200×1097.40web+13source tests/type/lint/parity,16views/8casts pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A64299ff326+B 38,870,022B; headroom 1,129,978B; Bembedded 24,199,928B. Both paired artifacts use the same refreshed disposable preview. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid shoulders retained; p35/REVIEW.md.
+
+## P36 — Kettle Knight spout lift
+Only Kettle config/rig/atlas rebuilt; six original layers,1536px atlas. Complete spout lift/release and delayed gauntlet brace; whole handle/chest rigid, quiet lid and planted boots. MainHand spout(124,481), offHand armR glove(1020,821), source1200×1128.41web+14source tests/type/lint/parity,16views/8casts/12boss-phase samples pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A67607e3340+B 38,874,898B; headroom 1,125,102B; Bembedded 24,204,604B. Both pairs share current disposable preview; no DOM/events/flags/portrait changes. Motion7.7/overall7.9; bounded shoulder fringe retained; p36/REVIEW.md.
