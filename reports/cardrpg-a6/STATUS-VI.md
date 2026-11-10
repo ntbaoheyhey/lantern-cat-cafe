@@ -162,3 +162,6 @@ Tiếp tục Tháp: đưa quà mốc vào lối truy cập trực tiếp và s�
 
 2026-11-10T22:08:51Z: Tháp đã duyệt24ảnh và8ảnh bổ sung; tên địch/lời khuyên tách rõ ở720p, nút trở lại đội hình vừa khung.
 Quà dùng đúng phần giới hạn ngày còn lại và vẫn khóa trong chuyến; giữ6test/typecheck/lint đã đạt. Đang tích hợp Brioche mới và đóng gói demo.
+
+2026-11-10T22:12:15Z: Q25 hoàn tất: demo38,73MB có Tháp mới và Brioche;18ảnh offline đã duyệt, cả6mốc quà nhận đúng ở hai kích thước.
+Không lỗi/gọi mạng; giới hạn ngày và khóa trong chuyến giữ nguyên. Tiếp tục trang Sổ: đưa quà sao, bộ sưu tập và lịch sử ra lối truy cập trực tiếp.
