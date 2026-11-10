@@ -10,7 +10,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Prepare | 8.0 | 7.9 | 13: compact three-foe advice (7.5) | shots/q19-formation-final/*-prepare; 128px art, 40px placement, three foes/forecast/Fight fit720p |
 | Bag / gear / empty | 7.9 | 7.8 | 13: small gear metadata (7.5) | shots/q14a/*-inventory; q14a-empty both sizes; primary actions fit |
 | Bond Book | 8.1 | 7.9 | 13: compact index metadata (7.5) | shots/q20-bond-album/*; all17entries and primary action fit both sizes; ownership/readiness/profile/team/keyboard pass |
-| Daily | 7.9 | 7.8 | 14: earned-gift access below fold (7; Q23) | shots/q14a/*-daily; keyboard login claimed; direct milestone access queued Q23 |
+| Daily | 8.1 | 8.0 | 13: compact reward copy (7.5) | shots/q23-daily/* + q23-daily-cap/*; direct board/gifts sections, all14milestones fit, shared counts/three claims/caps/ribbon/keyboard pass |
 | Tower | 8.0 | 7.8 | 13: compact floor/chest labels (7.5) | shots/q14a/*-tower; primary climb fits720p |
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
