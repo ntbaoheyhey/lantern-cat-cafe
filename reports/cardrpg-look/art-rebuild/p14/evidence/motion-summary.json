@@ -1,0 +1,86 @@
+{
+  "method": "Fixed-time paired action poses at both sizes; then natural x1 basic/signature casts with reduced motion. Foot drift is relative to the moving actor, not the stage.",
+  "source": "p14/attempt1/motion-review.json (full local samples retained)",
+  "errors": [],
+  "pairedStills": 16,
+  "casts": 8,
+  "maxFootDriftAfter": 4.695944831791985e-16,
+  "maxSocketError": 0,
+  "boundsFailures": 0,
+  "faceHpOverlap": 0,
+  "playback": [
+    {
+      "version": "before",
+      "id": "enemy:spool-ram:basic",
+      "reduced": false,
+      "seconds": 1.184499999995529,
+      "frames": 71,
+      "p95": 16.700000000000728,
+      "faceHp": 0
+    },
+    {
+      "version": "before",
+      "id": "enemy:spool-ram:basic",
+      "reduced": true,
+      "seconds": 1.1904000000014894,
+      "frames": 71,
+      "p95": 16.700000000000728,
+      "faceHp": 0
+    },
+    {
+      "version": "before",
+      "id": "enemy:spool-ram",
+      "reduced": false,
+      "seconds": 1.1839999999970205,
+      "frames": 71,
+      "p95": 16.799999999999272,
+      "faceHp": 0
+    },
+    {
+      "version": "before",
+      "id": "enemy:spool-ram",
+      "reduced": true,
+      "seconds": 1.1874999999985103,
+      "frames": 71,
+      "p95": 16.799999999999272,
+      "faceHp": 0
+    },
+    {
+      "version": "after",
+      "id": "enemy:spool-ram:basic",
+      "reduced": false,
+      "seconds": 1.1858999999970201,
+      "frames": 71,
+      "p95": 16.700000000000728,
+      "faceHp": 0
+    },
+    {
+      "version": "after",
+      "id": "enemy:spool-ram:basic",
+      "reduced": true,
+      "seconds": 1.1919999999970206,
+      "frames": 71,
+      "p95": 16.799999999999272,
+      "faceHp": 0
+    },
+    {
+      "version": "after",
+      "id": "enemy:spool-ram",
+      "reduced": false,
+      "seconds": 1.1961999999985091,
+      "frames": 71,
+      "p95": 16.700000000000728,
+      "faceHp": 0
+    },
+    {
+      "version": "after",
+      "id": "enemy:spool-ram",
+      "reduced": true,
+      "seconds": 1.1864999999970205,
+      "frames": 71,
+      "p95": 16.700000000000728,
+      "faceHp": 0
+    }
+  ],
+  "reducedRotationMax": 0
+}

@@ -1,38 +1,58 @@
-Đang tiếp tục Q5; đây là báo cáo PARTIAL, chưa kết thúc R8.
-Mochi/Soot giữ nguyên; Button dùng bản chuyển động dự phòng sau khi sửa mesh không đạt.
-Yarn đã có bề mặt và chuyển động 3D; đang kiểm tra sửa ánh sáng trong trận, chưa duyệt bản mới.
-VFX cho 12 mèo/13 nhóm địch và camera đã cải thiện; roster còn thiếu, mục tiêu 8,5 chưa đạt.
-Clover chạy local tiếp theo; không tạo lại concept, không dùng trình duyệt để sinh model, không merge PR/deploy.
+# Illustrated battle art report
 
-# Art Rebuild — active PARTIAL checkpoint
+Taskbar Hero now has 25 original illustrated 2.5D puppets: all 12 cats and 13 enemy IDs, including four boss showcases. Each uses a WebP atlas and a JSON rig cut from the accepted original concept. The existing cafe supplies perspective, contact shadows and lighting. Native 3D sources are preserved as history; the roster uses puppets consistently.
 
-Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427); integration [#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420) remains draft. R0/M5/S6 and completed source conversions are preserved.
+The delivered canvas includes eight semantic motions, closer framing, distinct boss-helper positions through phase three, socket-timed signature VFX, one visible damage/heal number layer, warm cafe lighting and a night window. The portrait manifest links the same art to 25 units and 60 skill icons. Main default remains OFF; the existing `lookV2 + lookArt=v3` flags enable this delivery. A6 owns the DOM screens/HUD and integrates the published B branch. No A6 merge into B, main push, deployment or deletion of original sources occurred.
 
-- Q1/Q2/Q3/Q4/Q9 complete. Q3 bounded pilot score7.71, appeal/menace7.75>=7.0; see R1-DECISION.md. Full25unit roster not accepted. Q5 active; Q6–Q8 have implemented checkpoints, Q10–Q11 queued.
-- All25original concepts and12VFXmasters are complete. Built-in generation, own prompts, provenance; no generated video claimed. Do not regenerate existing sources.
-- Local TRELLIS Apple Silicon setup/DINOv3/cache complete;19weight files16.18GB. One inference at a time, transparent sources, noRMBG. Original1024smoke timeout and512smoke656.7s retained; source appeal6.9 versus preserved Mochi8.2. Per-unit review is mandatory.
-- Button attempts1/2 timed out in xatlas. Saved decoded data recovered through BlenderUV; atlas coverage fixed but source remained shattered. Two bounded local repairs failed unchanged drift guard. PARTIAL: retain reviewed articulated fallback, no third inference.
-- Yarn attempt1 exported847.754s/108834832B. Raw topology and source views rejected; raw-remesh1 also visually rejected despite driftPASS. Saved-cell shell2 passes original.015p95 drift bound (.006801/.002699) and restores continuous source geometry. No repeated image/model generation.
-- Packed Yarn1.298MB/61068tri: eight poses/0errors, one matching1440shot/0UIoverlap,24protected-face samples/0offenders. Actual battle shows pale crease contours. B-LOCAL-012 isolates the old additive enemy relief; material-only fix has type/lint/5touchedtestsPASS, matching shot/poses/faces/4casts pending shared lease. Candidate remains local-preview-only.
-- Native export now offers explicit saved-cell cleanup after immutable raw checkpoint, with unchanged model sampling/drift bound.10nativeguardsPASS; four closest-surface fixtures retained. A new outward-shell regression exposed inward native winding; three shell fixtures and two immutable-winding fixtures nowPASS. Clover/Panko first native sources completed410.598/466.642s. Five-cat runner is sequential; Mallow active at this checkpoint.
-- Local queue preserves nonempty raw/decoded checkpoints on exporter failure, including resume after receipt/queue interruption;2filesystem guardsPASS. R2/BUDGET records37.30MB current full preview and necessary roster packing; earlier lean25.22MB is not a full-roster PASS.
-- B-LOCAL-014: Clover/Yarn source winding and normals corrected without changing positions/UV/images, then packed. Same battle/motion/faces/casts verification remains pending; no acceptance from source tests alone. The builder now creates missing receipt/output parents after a preserved ENOENT; resume starts at build, never at generation.
-- Mochi rigid modules avoid stretching but limit independent hand motion; Soot retains a baked warm forehead. Neither source is replaced. Shell/HUD issues go to U via B-OUTBOX; no shell code edited.
-- Q6 all12hero kits/13enemy families implemented; visual audit7.7PARTIAL. Normal/passive similarity and clipped large motifs remain after3bounded repairs. Full phase1xfilm exists; continuous review pending.
-- Q7 closer camera/warm key: score7.5;1440/1024posters0UIoverlaps and96face samples0offenders. Full-roster size/coverage pending.
-- Q8 assets:25portrait pairs,75small-slot face crops,60icon pairs,4rarity frame pairs. Opt-in manifest delivered; final runtime identity comparison pending.
+## Quality and remaining limits
 
-| Retained check | Result | Scope |
-|---|---|---|
-| R4 casts |168casts,16.8ms max,111draws,183595tri|Before native Yarn candidate|
-| R4 faces/parity |324samples0offenders;5seeds/85plans exact|Unchanged VFX checkpoint|
-| R5 casts |6casts,16.8ms max,86draws,124592tri|Camera/key checkpoint|
-| R4/R5 E2E |421PASS|Completed phase; no unnecessary rerun|
-| Cold3native+3CPU4 |49.9/183.3ms whole-load max|Retained before roster additions|
-| Delivered full/lean |35,743,045/25,223,285B|Lean same-shot comparison pending|
-| Yarn preview full |37,295,111B|Unaccepted material/roster candidate|
-| Evidence/source |97.51MB/51MiB|Raw facePNG archived byte-exact externally|
+These scores are Lane B visual judgments, not user acceptance or an independent commercial-quality benchmark.
 
-R0weighted5.9966; full-roster8.5target not reached. Scores are agent assessments. Startup/heap and inherited misses remain disclosed; no blanket PASS claim.
+| Rubric | Weight | Score | Evidence and limitation |
+| --- | ---: | ---: | --- |
+| Concept match and battle appearance | 35% | 8.2 | Every unit retains its concept. Unit fidelity is 8.6–8.8; battle appearance is 7.7–8.0. |
+| Motion | 20% | 7.5 | Eight semantic motions per unit; shared rigid-part gestures remain restrained. Soot's lantern/tail, Spool Ram's planted horn dip Inkcap's raised lantern and Sock Skipper's hop refinements each score 7.7. |
+| VFX at x1 | 15% | 8.1 | 49+6 cast audit, original motifs and real moving prop sockets. Spectacle (7.5) still trails readability. |
+| Camera, composition and stage | 15% | 8.1 | Closer framing, warm/cool cafe light, Rain Spool spacing and clear three/four-helper phase-three formations. |
+| Roster coverage | 10% | 10.0 | All 25 current rules IDs have a valid original rig and atlas. |
+| Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.18 MB. Cold loading is not included in the timing claim. |
 
-Evidence: r1/rigid1/REVIEW.md; r1/foes-fallback/REVIEW.md; r2/native-yarn/REVIEW.md; r4/REVIEW.md; r5/REVIEW.md; r3/REVIEW.md. Failed evidence remains in git history or hash-verified external archives. Flags default OFF; v3 demo only. Continue QUEUE without stopping at checkpoints.
+The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Spool Ram now has a clearer horn dip, planted hoof contacts and delayed tail recovery (motion 7.7, overall 7.7). Inkcap now raises its lantern with a clearer open offhand (motion 7.7, overall 7.8); Sock Skipper now has a short hop and forward mitten reach (motion 7.7, overall 7.7); Cinnamon is the next unrefined 7.7/7.5 row. Shared gestures, sampled eyelid closure and understated ultimate spectacle remain quality limits. No score is raised merely because a test passed.
+
+R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.7–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
+
+## Films
+
+The accepted normal film is an uninterrupted **85.4911 seconds at x1**, with **9 observed cat ultimates**, zero page errors and zero face/HP-label overlap. It uses the legal level-6 showcase account displayed in the then-current A6 shell. It is an excerpt, not a claim of a complete normal-battle outcome; it was retained without recapture.
+
+The accepted boss film is an uninterrupted **136.933333 seconds at x1**, with **13 observed cat ultimates**, zero page errors and zero face/HP overlap. It shows all four phase-three helpers, then three survivors, and reaches a fully painted **Victory** panel held for **1.8 seconds**. The encoded clock differs from the observed clock by only **0.0743 seconds**. The previous loading-screen candidate is retained as a rejected diagnostic; the capture-only repair waits for the actual visible result rather than trusting the model state.
+
+The initial level-1 clips, the old boss excerpt and the first complete boss film are retained as diagnostics. Reviewing the latter revealed that two late summons shared existing helper positions. P15 corrects that issue with stable actor-ID lanes. The initial pair, surviving helpers, boss scale, cat scale and gameplay slots remain unchanged.
+
+The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.95 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
+
+## Validation and budget
+
+Accepted prior work was reused on resume. The roster has valid rig/atlas coverage, cat/enemy comparisons and motion sheets; boss ambience, phase flash and reduced motion were reviewed. P6 passed typecheck/lint, 33 focused tests and the 49+6-cast VFX audit. P7 passed 19 tests, six current-HUD captures and five cast checks. P8 passed the portrait compatibility checks. P12 passed 21 tests, eight paired poses and 12 natural x1 casts including reduced motion.
+
+P15 adds six focused tests and 12 actual rules-resolved phase-three views: Yarn Giant, Rain Spool and Pantry Crown, with three/four live helpers at both 1440×900 and 1280×720. There are no page errors, missing live labels, out-of-canvas units or face/HP collisions. Manual review confirms the helper and boss faces remain identifiable. Five rules seeds match the retained baseline across six art modes; 102 resolved plans remain unmodified. Static views are not playback/performance evidence, and deliberate melee contact is not treated as a silhouette-separation failure.
+
+The actual combined A6 `15f5653d0711284b45b6495b40e0ab33b5b5029a` + B artifact is **38,177,170 bytes**, below the **40,000,000-byte** limit with **1,822,830 bytes** headroom. B's embedded asset share is **23,545,868 bytes**, including retained classic/diagnostic assets. Optional portrait variants overlap imported assets and are not added to this measured artifact. A6 should rerun the existing size guard when changing its selected imports. Film masters and intermediate captures are outside the game artifact.
+
+P14 adds a manually reviewed 16-pose comparison, eight natural x1 casts including reduced motion, 19 focused tests and exact rules parity. Main-hand socket error is zero; local planted-hoof drift is below 5e-16 world units. The existing atlas and rig remain unchanged. Warmed p95 stays at most 16.8 ms. This improves one unit, without changing the overall motion score.
+
+P16 adds 16 paired Inkcap poses, 12 natural casts including reduced motion, 22 focused tests and exact rules parity. Manual review rejected a lowering gesture despite passing counters; the accepted repair raises the actual lantern socket by 0.06946 local world units. Its tail uses independent material uniforms without editing shared geometry. No shader/page/face-HP errors occurred.
+
+P17 reuses the saved 16 Sock Skipper poses, eight natural x1 casts including reduced motion, 23 focused tests and exact parity. The accepted hop is bounded at 0.11 local units; boot/knit seams remain clean and the glove socket stays aligned. No additional draw call or asset is introduced.
+
+## Integration and provenance
+
+- Runtime: `apps/web/src/game/squad/turn3d/look-puppet.ts`, `look-puppet-rig.ts` and `look-puppet-formation.ts`.
+- Puppet assets: `assets/cardrpg-look/v3-puppets/` (one atlas/rig pair per unit).
+- Shared portrait manifest: `assets/cardrpg-look/v3-portraits/manifest.json`, version 4.
+- Canvas owns visible damage/crit/heal/shield/KO totals; the DOM labels remain accessible. A6 retains its top/bottom HUD envelopes and cut-in overlay.
+- Original provenance: `assets/provenance/look.md`, concept receipts and per-unit puppet receipts. No other game's art, rig or animation was copied or used as a generation reference. This continuation used local scripts and the existing original assets, with no new image generation, paid service or account.
+
+Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
+
+No user-only blocker is known. Motion refinement continues after the core report; completion of this report is not a stop under the user's non-stop instruction.

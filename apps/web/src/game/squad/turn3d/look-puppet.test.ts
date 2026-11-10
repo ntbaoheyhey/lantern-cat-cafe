@@ -1,6 +1,9 @@
 import { afterEach, describe, expect, it } from 'vitest';
+import {Vector3,Matrix4} from 'three';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose } from './look-puppet-rig';
+import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.rig.json';
+import sockRig from '../../../../../../assets/cardrpg-look/v3-puppets/sock-skipper.rig.json';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
@@ -85,4 +88,73 @@ describe('illustrated puppet contract and event motions',()=>{
     }
     expect(puppetPose('cast',0,.3,false,0,'clover')).toEqual(puppetPose('cast',0,.3,false));
   });
+  it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
+    const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
+    expect(pose(.52).head).toBeGreaterThan(.06);
+    expect(pose(.52).lean).toBeGreaterThan(.04);
+    expect(Math.abs(pose(.52).prop)).toBeLessThan(.12);
+    expect(pose(.04).tail).toBe(0);
+    expect(pose(.52).tail).toBeLessThan(-.07);
+    for(let i=0;i<=100;i++){
+      const p=pose(i/100),quiet=pose(i/100,true);
+      expect(Math.max(Math.abs(p.head),Math.abs(p.lean),Math.abs(p.prop),Math.abs(p.offhand),Math.abs(p.tail))).toBeLessThan(.12);
+      expect([quiet.head,quiet.lean,quiet.prop,quiet.offhand,quiet.tail]).toEqual([0,0,0,0,0]);
+    }
+    expect([pose(1).head,pose(1).lean,pose(1).prop,pose(1).tail].every(v=>Math.abs(v)<1e-10)).toBe(true);
+    expect(puppetPose('attack',0,.52,false,0,'button-guard')).toEqual(puppetPose('attack',0,.52,false));
+  });
+
+  it('keeps a foot contact fixed through body lean, breathing and leg rotation',()=>{
+    const rest:[number,number]=[-.8,.7],contact:[number,number]=[.1,-.6];
+    for(const [rotation,lean,sx,sy] of [[-.12,.06,.991,1.009],[.08,-.03,1.009,.991],[0,0,1,1]]){
+      const [x,y]=plantedPuppetPivot(rest,contact,rotation!,lean!,[sx!,sy!]);
+      const point=new Vector3(...contact,0).applyMatrix4(new Matrix4().makeRotationZ(rotation!)).add(new Vector3(x,y,0));
+      point.applyMatrix4(new Matrix4().makeScale(sx!,sy!,1)).applyMatrix4(new Matrix4().makeRotationZ(lean!));
+      expect(point.x).toBeCloseTo(rest[0]+contact[0],10);
+      expect(point.y).toBeCloseTo(rest[1]+contact[1],10);
+    }
+    expect(puppetPose('attack',1,.5,true,0,'spool-ram').plant).toBe(false);
+    expect(puppetPose('idle',1,.5,false,0,'spool-ram').plant).toBe(false);
+    expect(puppetPose('attack',1,.5,false,0,'soot').plant).toBe(false);
+  });
+
+  it('settles Inkcap lantern and tail to idle, with no added motion in reduced mode',()=>{
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const idle=puppetPose('idle',3,0,false,.4,'inkcap');
+      const end=puppetPose(motion,3,1,false,.4,'inkcap');
+      expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
+      expect(end.tail).toBeCloseTo(idle.tail,12);
+      expect(end.prop).toBeCloseTo(0,12);
+      for(const progress of [0,.18,.38,.52,.88,1]){
+        const quiet=puppetPose(motion,3,progress,true,.4,'inkcap');
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+    }
+    const [,x,y]=inkcapRig.sockets.mainHand;
+    const windup=puppetPose('cast',3,.38,false,.4,'inkcap');
+    const lifted=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
+    expect(lifted.y).toBeGreaterThan(Number(y)+.04);
+    expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
+    expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
+  });
+
+  it('gives Sock Skipper a bounded hop, a forward mitten and an exact quiet landing',()=>{
+    const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'sock-skipper');
+    expect(pose(.16).hopSquash).toBeGreaterThan(.03);
+    expect(pose(.42).hopLift).toBeGreaterThan(.10);
+    expect(pose(.70).hopSquash).toBeGreaterThan(.02);
+    for(let i=0;i<=100;i++){
+      const p=pose(i/100),quiet=pose(i/100,true);
+      expect(p.hopLift).toBeGreaterThanOrEqual(0);
+      expect(p.hopLift).toBeLessThanOrEqual(.11);
+      expect(Math.abs(p.hopSquash)).toBeLessThanOrEqual(.035);
+      expect([quiet.hopLift,quiet.hopSquash,quiet.prop,quiet.offhand,quiet.tailBend]).toEqual([0,0,0,0,0]);
+    }
+    for(const t of [0,1])expect([pose(t).hopLift,pose(t).hopSquash]).toEqual([0,0]);
+    const [,x,y]=sockRig.sockets.mainHand;
+    const reach=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(pose(.52).offhand));
+    expect(reach.x).toBeLessThan(Number(x)-.03);
+    for(const id of ['inkcap','soot','spool-ram','clover'])expect(puppetPose('attack',0,.42,false,0,id).hopLift).toBe(0);
+  });
+
 });

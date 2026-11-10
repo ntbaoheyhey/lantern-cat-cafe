@@ -193,3 +193,7 @@ P13 wrapper repair: delivery-budget needs ART_ARTIFACT as well as receipt. Move 
 2026-11-10T19:06:37.950652+00:00 P15 reproduction: full boss film90s shows four Binding Thread HPcards but only two silhouettes, due to P13slot parity reusing positions. Phase3 was outside earlier initial-state capture coverage. Smallest fix: explicit four-slot fan and actual phase3 capture; keep priorfilm as diagnostic.
 
 2026-11-10T19:17:28.571347+00:00 P15 attempt1: four unique bases still leave summons feet15px below canvas and two right faces57px apart. Three/four helpers reproduced for3bosses×2sizes. Repair2 moves only summoned lanes to(.40,1.15)/(1.60,1.35); initial pair/scales unchanged.
+
+2026-11-10T19:55:51.102382+00:00 P10 terminal-view gate: corrected P15 film reached party result135.2838s/13catultimates with0page/HPerrors and distinct4/3helpers, but final frame remained lazy-loading "Lighting the lanterns". Keep it diagnostic; do not accept from model.result alone. Small capture-only fix waits for actual .uv-result-title, loaded result images and1.8s readable hold while the SAME screencast continues. No game/A6 source change. Retry goes to distinct p10/result-boss, accepted normal remains unchanged.
+
+2026-11-10T20:12:29.387312+00:00 P16attempt1 passed22tests/16views/12casts, but visualreview shows the right-hand lantern lowers at windup; shared rotation sign did not match this art. Repair2 reverses Inkcap prop/offhand signs only and asserts authoredsocket lift>.04worldunits. Reuse saved before frames/casts; other units unchanged.
