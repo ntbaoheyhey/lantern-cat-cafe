@@ -251,3 +251,26 @@ SELF-SCORE RUBRIC (target 8.5, honest): units look like the concepts AND like re
 Non-stop: always work the top unfinished QUEUE.md item; never end the turn while unticked items exist, except STOP-B file, the words "dừng"/"stop"/"pause"/"khoan", a true user-only blocker (write NEEDS-USER.md, skip, keep working), or the 20 Nov 12:00 UTC deadline. Check INBOX.md between items.
 Anti-forget: at the start of every item and after any compaction re-read RULES.md, HANDOFF.md, QUEUE.md and this addendum (PROMPT-3D-SWITCH-2026-11-11.txt). Never redo ticked items.
 One agent only (no subagents/helpers/parallel codex; local scripts, Blender, Playwright, TRELLIS-local and image tools are fine). No paid services or new accounts (if you truly need one, write it in NEEDS-USER.md and continue with the free route). Draft PRs only; no PR merge, deploy, main push, force-push or secrets. Never write in /Users/bao/taskbar-hero-cardrpg-a6. Original art only; never use other games' art as input. Keep tool output small. Status for the user in Vietnamese in STATUS-VI.md.
+
+
+ADDENDUM 2026-11-11 — 3D INITIATIVE (pre-approved research and implementation)
+
+LANE B — SHORT FOLLOW-UP: YOUR OWN RESEARCH AND INITIATIVES ARE PRE-APPROVED — written 2026-11-11 02:20 UTC
+(Paste into the RUNNING lane B Codex session, after FOLLOWUP-B-3D-SWITCH-2026-11-11.txt. Save it word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-INITIATIVE-2026-11-11.txt and append it to PROMPT.txt under the 3D SWITCH addendum.)
+
+CONTEXT: The user has decided on real 3D for all cats, enemies and bosses, plus 3D VFX and a size standard (see PROMPT-3D-SWITCH-2026-11-11.txt). The user trusts your judgment. Your research and new ideas are welcome, and the user approves ALL of them in advance.
+
+WHAT THIS ALLOWS:
+1. Research freely, whenever it helps: web search if your tools allow it, otherwise your own knowledge. Topics include stylized 3D character pipelines, Blender automation, retopology, texturing, rigging and animation, three.js rendering and 3D VFX, and how top hero battlers make units and effects look premium. D1 "short research" is a minimum, not a cap. Do more research at any point when you hit a quality problem.
+2. Propose and carry out your own initiatives without asking. You may add, reorder, merge, split or replace queue items. You may change the modeling route, tools, shaders, rig design, animation set, camera, stage, VFX design and targets. You may add new local tools or open-source libraries. You may add polish the queue does not list (new idle animations, entrance moves, ultimate cut-ins in 3D, environment reactions, and so on). Mark new items [auto] in QUEUE.md. For each one, write one line in DECISIONS.md (what and why) and 1 to 2 Vietnamese lines in STATUS-VI.md. Then continue straight away. Do not wait for approval, because the user has already given it.
+3. If your research shows a better way to reach the goal than the 3D-switch follow-up, choose the better way and record the reason.
+
+FIXED, EVEN FOR YOUR OWN INITIATIVES (user decisions and hard limits):
+- Final result: every unit is real 3D, and every skill and ultimate effect is 3D. No flat-puppet unit and no flat-card-only effect in the final demo. The size standard holds; you may refine its numbers, but every cat stays the same height and rarity never changes body size.
+- One agent only: no subagents, helpers or parallel codex runs. Local scripts and tools are fine.
+- No paid services and no new accounts. If one would clearly help, write it in NEEDS-USER.md and continue with the free route.
+- Draft PRs only. No PR merge, deploy, push to main, force-push or secrets. Never write in A6's worktree.
+- Original art only. Never use other games' art as input.
+- Demo stays <= 40 MB together with A6.
+- Deadline: 2026-11-20 12:00 UTC.
+- NON-STOP and ANTI-FORGET rules stay in force.
