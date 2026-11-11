@@ -1,7 +1,7 @@
 import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
-import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
+import { CARDS, type Command, type Slot } from '@taskbar-hero/game-rules/cardrpg';
 import { sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
@@ -16,6 +16,7 @@ export class DepthModel {
   screen: Screen = 'hub';
   cardId = 'mochi';
   itemId = '';
+  inventorySlot: Slot | 'all' = 'all';
   notice = 'Build your team, press Fight, then watch your companions take the lead.';
   error = false;
   teamPresets: Array<TeamPreset | null> = [null, null, null];
@@ -158,9 +159,10 @@ export class DepthModel {
     this.notify();
     return result.ok;
   }
-  go(screen: Screen) {
+  go(screen: Screen, gearSlot: Slot | 'all' = 'all') {
     if (screen === 'map' && this.battle && !this.watching) screen = this.battle.result ? 'result' : 'prepare';
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
+    this.inventorySlot = screen === 'inventory' ? gearSlot : 'all';
     this.screen = screen; this.error = false; this.notify(false); }
   command(command: Command) { this.apply(R.metaCommand(this.state, command)); }
   start(chapter: number, mode: R.Run['mode'] = 'campaign', challengeLevel?: number) {

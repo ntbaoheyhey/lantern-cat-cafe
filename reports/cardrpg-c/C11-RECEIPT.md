@@ -47,3 +47,5 @@ Active format checkpoint: C11-ACTIVE-FORMAT-RECEIPT.md.2baseline browser failure
 Override cue checkpoint: C11-VFX-OVERRIDE-CUE-RECEIPT.md.4baseline misses->192sourcePASS;20focused/types/lint/2offlinesmoke/2controls/4finalviewsPASS. Demo29,226,565bytes; no gameplay/score/performance claim.
 
 Override pool checkpoint: C11-VFX-POOL-RECEIPT.md.4baseline cases/5regressions fixed;24source/96contacts/24gap reuses/16focused/types/lint/2offline/2controls/4finalviewsPASS. Demo29,226,665bytes; no gameplay/score/performance claim.
+
+Gear-slot checkpoint: C11-GEAR-SLOTS-RECEIPT.md.10baseline mismatches->20browser checksPASS;20focused/types/lintPASS;16captures inspected,2retained. Empty slots open the correct shelf; general Bag entry resets. Static demo29,226,665bytes unchanged; evidence119.54MB; score/gameplay unchanged.

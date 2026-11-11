@@ -1,0 +1,15 @@
+/* Reuse the original keepsake drawings; slot selection opens that exact shelf. */
+.uv-app[data-a6=true] .a6-cat-gear {
+ button {min-height:88px;gap:8px;padding:9px;}
+ button[data-filled=false] {border-style:dashed;background:#f5e8c9;}
+ button>span {min-width:0;}
+ .a6-gear-art {width:46px;height:55px;flex:none;}
+ .cr-item-icon {width:30px;flex:none;color:#94713e;}
+ b {display:block;font-size:13px;line-height:1.35;color:#584029;}
+ small {font-size:12px;line-height:1.4;}
+ .a6-cat-gear-action {margin-top:4px;text-transform:none;color:#615d32;}
+}
+@media(max-height:780px){.uv-app[data-a6=true] .a6-cat-gear {
+ button {min-height:76px;padding:7px;gap:6px;}
+ .a6-gear-art {width:36px;height:44px;}
+}}

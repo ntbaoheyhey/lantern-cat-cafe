@@ -15,7 +15,7 @@ const shortName=(name:string)=>name.replace(/^(Common|Rare|Epic|Legendary) /,'')
 
 export function BagA6({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
- const [slot,setSlot]=useState<string>('all'),[page,setPage]=useState<'compare'|'effects'>('compare'),[workshop,setWorkshop]=useState(false);
+ const [slot,setSlot]=useState<string>(m.inventorySlot),[page,setPage]=useState<'compare'|'effects'>('compare'),[workshop,setWorkshop]=useState(false);
  const workshopButton=useRef<HTMLButtonElement>(null),backButton=useRef<HTMLButtonElement>(null),wasWorkshop=useRef(false);
  useEffect(()=>{if(workshop)backButton.current?.focus();else if(wasWorkshop.current)workshopButton.current?.focus();wasWorkshop.current=workshop;},[workshop]);
  const state=m.state,locked=!!state.run&&!state.run.complete;
