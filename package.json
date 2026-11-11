@@ -13,6 +13,7 @@
     "onchain-proof": "node scripts/onchain-proof.mjs",
     "art:generate": "python3 -B tools/art/visual.py && python3 -B tools/art/gameplay.py && python3 -B tools/art/gameplay-items.py && python3 -B tools/art/gameplay-relics.py && node tools/art/gameplay-sheets.mjs && python3 -B tools/art/gameplay2.py && python3 -B tools/art/squad.py",
     "art:check": "python3 -B tools/art/visual.py --check && python3 -B tools/art/gameplay.py --check && python3 -B tools/art/gameplay-items.py --check && python3 -B tools/art/gameplay-relics.py --check && node tools/art/gameplay-sheets.mjs --check && python3 -B tools/art/gameplay2.py --check && python3 -B tools/art/squad.py --check",
-    "art:turn3d": "node tools/art3d/build.mjs"
+    "art:turn3d": "node tools/art3d/build.mjs",
+    "demo:play": "python3 -m http.server 5940 --bind 127.0.0.1 --directory docs/demo-build"
   }
 }
