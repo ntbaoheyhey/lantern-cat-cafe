@@ -134,3 +134,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T00:35:45Z Q37 scope from retained q23-offline-board/1280-weekly-ready and current DailyA6: keep its board/shelves composition, use existing preview.reason for honest availability and reward previews. This repairs a presentational mismatch when completed tasks are blocked and makes exact weekly gifts reviewable. No new system or economic retuning.
 
 - 2026-11-11T00:43:28Z Q38 addresses the lowest self-review category without reopening the closed Q13f numeric loop. Current AdviceV4 has no response timeout and hides fallback upgrade cost. Make existing affordable actions and their consequences reviewable; keep the advisor algorithm and all battle/economy constants fixed. Queue after Q37, no new simulator or final-seed rerun.
+
+2026-11-11T00:52:50Z Q38: bound advice comparison at8s and expose the existing affordable upgrade while it runs. Cost comes from the unchanged public preview; unavailable purchases lead to free formation review. A stale encounter/build/late worker cannot replace current advice. No ranking, seed, reward or combat change.
+
+2026-11-11T01:01:30Z Q39 queued from inspected q29-prepare-final/1280-group-2-yarn-giant and current ForecastV4:12px metadata and unbounded pending worker. Improve the tied-low Prepare8.0 state clarity/readability; keep forecast math/cache and battle rules fixed. Draft only until Q38 delivery.

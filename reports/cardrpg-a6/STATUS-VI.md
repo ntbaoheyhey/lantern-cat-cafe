@@ -241,3 +241,7 @@ Mức cộng2/4/6/8%, khóa chuyến đi, đổi ví/mất kết nối/lỗi/ch�
 2026-11-11T00:50:23Z: Q37 hoàn tất: Daily vừa 720p, chữ 14px/nút 40–44px; 34 ảnh nguồn và 34 ảnh offline đã duyệt.
 Hiện đúng lý do chờ và phần thưởng còn nhận được; chín test/typecheck/lint giữ nguyên đạt, demo 39.108.481 byte, không lỗi/gọi mạng.
 Tiếp tục Q38: chi phí gợi ý sau trận thua và giới hạn thời gian chờ, giữ nguyên luật gợi ý và phần thưởng.
+
+2026-11-11T01:04:28Z: Q38 hoàn tất: gợi ý hiện giá ngay, chờ tối đa 8 giây; thiếu tiền có lối sửa đội hình miễn phí.
+13 test/typecheck/lint qua; 28 ảnh nguồn và 28 ảnh offline đã xem, mua đúng giá/thử lại đúng tầng/không nhận phản hồi cũ; demo 39,108,925 byte, không lỗi/gọi mạng ngoài.
+Tiếp tục Q39: dự báo trước trận cũng cần giới hạn chờ, cùng chữ chỉ số địch dễ đọc hơn ở 720p; giữ nguyên phép dự báo và luật trận.
