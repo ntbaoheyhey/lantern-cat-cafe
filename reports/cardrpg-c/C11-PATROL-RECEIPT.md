@@ -1,0 +1,11 @@
+# C11 patrol gear checkpoint — 11 November 2026
+
+The retained clean account had unused owned gear after changing crew. The existing Cats/Team/Bag action already exposes its free Power gain, but the primary home Night Patrol action starts the route immediately and locks equipment. The inspected home and Prepare views offered no gear reminder on that path.
+
+Add a compact optional owned-gear action beside Patrol, after the first three guided actions and only while home with an actual positive gain. Its preview and explicit click use the existing autoEquipA6 command. The success state shows the applied gain and focuses Patrol; starting Patrol remains a separate action. Active routes, unresolved battles, onboarding and fully equipped crews receive no prompt. No automatic equip, currency spending, combat/rules/timing changes or new art. The existing offline character/VFX demo is unaffected.
+
+Verification: workspace typecheck/lint and 11 existing focused Power/Campaign/Introduction tests pass. `tools/cardrpg-c/patrol-gear-review.mjs` uses a separate fixture copying only the recorded crew/cards/owned gear. At1280×720 and1440×900, 16 checks confirm keyboard/pointer equip, exact +641 gain and equipment map, unchanged currencies/run counter, no route start, correct gear in subsequent uncommitted Prepare, focus on Patrol, all three onboarding guards, active-route lock, fully equipped guard and the option to skip without changing gear. No combat was replayed and this is not recovery evidence.
+
+Fourteen captures inspected through four uncropped contact sheets and full-size720pavailable/900pequipped views. Available, success, preparation, active-route, onboarding, fully-equipped and motion states fit. No overlap with any crew portrait/label, dock or Patrol; no horizontal overflow, broken visible images or browser errors. Raw receipt: `shots/c11-patrol-gear/review.json`; check logs under `checks/c11-patrol-*`. Fixture currency chips are initialization feedback, not equip costs/rewards.
+
+Weighted score remains7.79; historical gameplay misses and the three-round limit are unchanged. Evidence about37MiB (<120MB); demo29.21MB unchanged. Designer inbox still contains README only,0/25final exports. Continue C11 with the lowest actionable VFX/readability issue; C8 remains conditional on arrivals.

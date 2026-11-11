@@ -1,6 +1,6 @@
 import { FirstStepsA6, IntroductionA6 } from './IntroductionA6';
 import type { EIP1193Provider } from 'viem';
-import { PowerA6 } from './PowerA6';
+import { PowerA6, PatrolGearA6 } from './PowerA6';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel,Screen} from '../depth/model';
@@ -53,7 +53,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
   provider?.on?.('accountsChanged',clear);provider?.on?.('chainChanged',clear);provider?.on?.('disconnect',clear);
   return()=>{provider?.removeListener?.('accountsChanged',clear);provider?.removeListener?.('chainChanged',clear);provider?.removeListener?.('disconnect',clear);};
  },[m,walletProvider]);
- const dialog=useRef<HTMLElement>(null),returnFocus=useRef<HTMLElement|null>(null),menuNav=useRef<HTMLElement>(null),menuTrigger=useRef<HTMLButtonElement>(null);
+ const dialog=useRef<HTMLElement>(null),returnFocus=useRef<HTMLElement|null>(null),menuNav=useRef<HTMLElement>(null),menuTrigger=useRef<HTMLButtonElement>(null),patrolButton=useRef<HTMLButtonElement>(null);
  const introduction=R.introductionA6(m.state),introduced=(id:string)=>!R.gameplayA6(m.state)||introduction.features.some(f=>f.id===id&&f.open);
  const sheet=m.screen!=='hub'||events;
  const closeMenu=()=>{setMenu(false);menuTrigger.current?.focus();};
@@ -82,7 +82,8 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
   </header>
   {!sheet&&<><aside className="uv-events" aria-label="Ready to collect">{view.tasks>0&&<button onClick={openEvents}><Icon name="events"/><span>Today’s tasks</span><i className="uv-dot"/></button>}{view.tasks===0&&view.free&&<button onClick={()=>go('gacha')}><Icon name="recruit"/><span>Free recruit</span><i className="uv-dot"/></button>}{view.tasks===0&&!view.free&&view.milestones>0&&<button onClick={()=>go('journal')}><Icon name="cats"/><span>Journal reward</span><i className="uv-dot"/></button>}</aside>
   <footer className="uv-dock"><nav aria-label="Cafe dock">{dock.map(([screen,label,icon])=><button key={screen} data-home-destination={label} disabled={screen==='team'&&!introduced('team')||screen==='inventory'&&!introduced('gear')||screen==='gacha'&&R.gameplayA6(m.state)&&m.state.tutorial<3} title={screen==='team'&&!introduced('team')?'After your first patrol':screen==='inventory'&&!introduced('gear')?'After welcoming your first friend':undefined} onClick={()=>go(screen)}><span><Icon name={icon}/>{((screen==='collection'&&(view.cats||!R.gameplayA6(m.state)&&newItems.cats))||(screen==='inventory'&&(view.gear||!R.gameplayA6(m.state)&&newItems.gear))||(screen==='gacha'&&view.recruit))&&<i className="uv-dot"/>}</span>{label}</button>)}<button data-home-destination="Events" disabled={!introduced('daily')} title={!introduced('daily')?'After your first cat level':undefined} onClick={openEvents}><span><Icon name="events"/>{view.tasks+view.milestones>0&&<i className="uv-dot"/>}</span>Events</button></nav>
-   <div className="uv-patrol-group"><button className="uv-map-button" aria-label="Open route map" onClick={()=>{go('map');setRoute(true);}}>⌁</button><button className="uv-patrol" data-home-destination="Patrol" onClick={patrol}><Icon name="fight"/><span>Night Patrol<small>{view.subline}</small></span><b aria-hidden="true">→</b></button></div></footer></>}
+   {R.gameplayA6(m.state)&&<PatrolGearA6 m={m} onEquipped={()=>patrolButton.current?.focus()}/>}
+   <div className="uv-patrol-group"><button className="uv-map-button" aria-label="Open route map" onClick={()=>{go('map');setRoute(true);}}>⌁</button><button className="uv-patrol" ref={patrolButton} data-home-destination="Patrol" onClick={patrol}><Icon name="fight"/><span>Night Patrol<small>{view.subline}</small></span><b aria-hidden="true">→</b></button></div></footer></>}
   {menu&&<nav className="uv-menu" id="cafe-menu" ref={menuNav} aria-label="Cafe menu">
    {R.gameplayA6(m.state)&&<header className="a6-menu-heading"><Icon name="cats"/><div><small>The Lantern</small><h2>Cafe notes</h2></div><button aria-label="Close menu" onClick={closeMenu}><Icon name="close"/></button></header>}
    {R.gameplayA6(m.state)&&introduced('tower')&&<button className="a6-menu-link" aria-label="Yarn Tower" onClick={()=>go('tower')}><span>Yarn Tower</span><small>Floors &amp; milestone gifts</small></button>}

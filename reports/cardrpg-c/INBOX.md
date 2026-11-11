@@ -10,3 +10,4 @@
 2026-11-11 resume: user handoff identifies 23 focused tests passing but advice returning to checking. Traced automatic discovery acknowledgements cloning the battle; preserved completed accounts and fixed encounter identity with regression/browser evidence.
 2026-11-11 resume: user handoff identifies pushed C11 checkpoint and in-progress free gear preview. Preserved source changes and already completed nine focused tests/typecheck/lint/browser receipts; inspected all ten equipment captures and continued quality work.
 2026-11-11 resume: user handoff identifies removed cafe-window seams, offline p95 16.7–16.8ms and29.2MB demo. Preserved all uncommitted stage work and existing passing checks; inspected final screenshots and completed its receipt before continuing C11.
+2026-11-11 resume: user handoff confirms impact clock checks passed in source/offline. Verified saved bcb713474 receipt, pushed and updated draft439; continue route preparation and upgrade visibility.

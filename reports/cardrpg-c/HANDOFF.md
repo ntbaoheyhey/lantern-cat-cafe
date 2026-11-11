@@ -1,8 +1,8 @@
 # Lane C handoff
-NOW: C11 impact expiry verified in source/offline; record/push, then continue quality work.
+NOW: C11 patrol reminder verified; record/push, then continue VFX readability review.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: inspect route preparation and upgrade visibility from the retained live-session issue.
-NEXT2: fix one demonstrated UX issue without combat tuning, verify screenshots and relevant tests.
+NEXT1: inspect restrained VFX at x1 and choose one demonstrated clarity/impact issue.
+NEXT2: improve within existing sockets/events/pool/painted tokens; verify both sizes and budget.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
 RUNNING: Vite5970 PID59050; no recorder or browser QA active.
 KNOWN: stage painting244296bytes;3parallaxplanes;procedural loading/failure fallback;late/disposed decode safe.
@@ -24,3 +24,4 @@ KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoint
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
 KNOWN: impact clock fix60source+60offlinecases/16views;11tests/types/lint;pause stable,p95 16.7msboth.
+KNOWN: homegear+641exact/16checks/14views/11tests/types/lintPASS;onboarding/routeguards/focus;scoreunchanged.

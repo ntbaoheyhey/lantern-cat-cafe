@@ -1,4 +1,4 @@
-# Tiến độ lane C — 11/11, cập nhật 09:15 UTC
+# Tiến độ lane C — 11/11, cập nhật 09:25 UTC
 
 C0–C7, C9 và C10 đã xong; C11 có checkpoint kiểm tra, tiếp tục cải thiện. Demo offline 29,21 MB có 25 nhân vật / 206 animation, 74 skill / 18 status và hai video trọn trận x1. Designer cuối: 0/25; Mochi 117 layer vẫn là placeholder, nguồn còn PARTIAL.
 
@@ -11,5 +11,7 @@ Auto-equip hiện lợi ích miễn phí trước khi bấm: fixture riêng báo
 Cafe đã đổi sang nền vẽ ấm ba lớp; hết đường nối cửa sổ trong ảnh đã kiểm tra. Load chậm, ảnh lỗi/retry và scene đã dispose đều đạt; 11 test focused/typecheck/lint. Đo offline cuối p95 16,7–16,8 ms, 60 draw, không lỗi mask mặt/HP hay HTTP. Video cũ giữ nguyên và ghi rõ quay trước lần đổi nền. Gameplay không đổi.
 
 VFX: sửa tia impact không hết trong gallery. 60 ca source + 60 ca offline ở x1/x2/x3, hai cỡ và reduced motion đều đạt; Pause giữ nguyên ảnh, Play chạy tiếp. 16 ảnh cuối đã xem, 11 test focused/typecheck/lint đạt sau sửa một guard null. p95 offline cuối 16,7 ms ở cả hai cỡ; điểm giữ 7,79.
+
+Home có nhắc gear miễn phí ngay cạnh Night Patrol trước khi route khóa đồ. Fixture +641 Power khớp click, không trừ currency; đủ 16 check browser và 14 ảnh hai cỡ đã xem. Focus trở lại Patrol; onboarding, route đang chạy và bỏ qua đều đúng. 11 test focused/typecheck/lint đạt; không đổi rules hay điểm 7,79.
 
 Tiếp tục quality pass và kiểm tra inbox designer; không chờ license/tool/version, các mục này đã ghi NEEDS-USER. Draft PR #439, không merge/deploy. Báo cáo chốt 20/11 06:00 UTC; hard stop 20/11 12:00 UTC.

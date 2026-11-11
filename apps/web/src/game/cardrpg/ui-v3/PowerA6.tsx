@@ -42,3 +42,26 @@ export function QuickUpgradeA6({ m }: { m: DepthModel }) {
     {!locked && !equipped.ok && <small>{equipped.error}</small>}
   </section>;
 }
+
+/** Offer owned gear while the crew is still home; starting a route locks equipment. */
+export function PatrolGearA6({ m, onEquipped }: { m: DepthModel; onEquipped: () => void }) {
+  const state = m.state;
+  const eligible = R.gameplayA6(state) && !R.introductionA6(state).guide && !m.battle && (!state.run || state.run.complete);
+  const preview = useMemo(() => eligible ? R.autoEquipA6(state) : null, [state, eligible]);
+  const gain = preview?.ok ? Math.round(R.teamPowerV4(preview.state)) - Math.round(R.teamPowerV4(state)) : 0;
+  const [applied, setApplied] = useState<{ equipment: string; gain: number } | null>(null);
+  const equipment = JSON.stringify([state.team, state.equipment]);
+  const ready = applied?.equipment === equipment ? applied : null;
+  if (!eligible || gain <= 0 && !ready) return null;
+  const equip = () => {
+    const before = Math.round(R.teamPowerV4(m.state)), result = R.autoEquipA6(m.state);
+    if (!m.apply(result, 'Owned gear equipped. Your crew is ready for patrol.')) return;
+    setApplied({ equipment: JSON.stringify([m.state.team, m.state.equipment]), gain: Math.round(R.teamPowerV4(m.state)) - before });
+    onEquipped();
+  };
+  return <aside className="a6-patrol-gear" aria-label="Before your patrol">
+    {gain > 0 ? <button onClick={equip} aria-label={`Equip owned gear · +${gain.toLocaleString('en-US')} Power`}>
+      <small>FREE GEAR UPGRADE</small><strong>+{gain.toLocaleString('en-US')} Power</strong><span>Equip owned gear <span aria-hidden="true">→</span></span>
+    </button> : <div role="status"><small>OWNED GEAR EQUIPPED</small><strong>+{ready!.gain.toLocaleString('en-US')} Power</strong><span>Ready for your patrol</span></div>}
+  </aside>;
+}
