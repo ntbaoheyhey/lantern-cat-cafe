@@ -9,7 +9,8 @@
 8. 3D acceptance:8views+concept,both-size battle,4poses,no defects,yaw-20/0/+20 proof;mean>=7.5/each>=6.5;scale tests,type/lint/touchedtests;parity per batch.
 9. Exact original/addenda in PROMPT.txt; byte count/SHA at STATE top. HANDOFF one section <=30lines, rewrite per item/before long jobs with NOW/NEXT3/RUNNING/DONE+SHA/ISSUES/DECISIONS.
 10. PROGRESS.log UTC/item/result/SHA per finished step; commit/push lane files <=60min. Files override memory; read live paths/PIDs/SHAs/numbers.
-11. Read RULES/QUEUE/HANDOFF/PROMPT-3D-SWITCH-2026-11-11.txt each item/after compaction; before git merge/push/branch and <=2h; new3D addendum overrides 10Nov fixed puppet route.
+11. Read RULES/QUEUE/HANDOFF/PROMPT-3D-SWITCH-2026-11-11.txt each item/after compaction; before git merge/push/branch and <=2h; 3D switch+INITIATIVE addenda override older route/research caps.
+12. Research/initiatives pre-approved11Nov: choose better routes, reorder/add[auto] items, log reason+Vietnamese status; all fixed3D/scale/one-agent/budget/deadline limits remain.
 
 ADDENDUM FROM THE USER (10 Nov): DO NOT STOP UNTIL THE WORK IS DONE. This is not a pause and not a new task. Append it word for word to your RULES.md and to your saved prompt file (TASK.md for A6, PROMPT.txt for B), commit + push, then keep working the current queue item in the same turn.
 

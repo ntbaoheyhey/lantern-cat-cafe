@@ -199,3 +199,10 @@ Pantry Crown đã duyệt: hai bàn tay gỗ thu vào lệch nhịp nhẹ; vươ
 Đã nhận lệnh chuyển sang 3D thật cho nhân vật, quái, boss và hiệu ứng; đặt chuẩn kích thước; bắt đầu D0.
 P40 được chốt thành mốc lưu trữ và đánh dấu đã thay thế; puppet chỉ còn là phương án tạm từng mẫu.
 Đã lưu nguyên văn yêu cầu, thay hàng đợi D0–D11; tiếp tục D1 kiểm tra công cụ và lấp khoảng trống kỹ thuật.
+
+Đã lưu quyền chủ động nghiên cứu và triển khai; các sáng kiến được duyệt trước, vẫn giữ giới hạn 3D thật, kích thước đồng đều, một agent và 40 MB.
+D1 tiếp tục; phép đo kích thước sẽ dùng chung giữa puppet tạm và từng mẫu 3D mới.
+
+## 2026-11-11T02:28:37.408841+00:00 — D1 xong, tiếp tục D2
+Đã kiểm tra và giữ nguyên bổ sung quyền chủ động; Blender, glTF-Transform và meshopt đã sẵn sàng.
+Bắt đầu chuẩn kích thước dùng chung cho mô hình 3D và bản tạm: đo chân–tai, không tính mũ/vũ khí; không thay đổi chiều cao theo độ hiếm.
