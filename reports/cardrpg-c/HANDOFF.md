@@ -1,11 +1,10 @@
 # Lane C handoff
-NOW: C11 framing PASS; next diagnose retained actor lanes vs card order when preview roster changes.
+NOW: C11 roster72f607603 PASS; next inspect pending actor cancellation on preview removal.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: diagnose retained actor lanes/card mismatch after roster changes;framing264a669e4verified.
-NEXT2: review actual roster-change lifecycle; preserve same-battle summon lanes and accepted framing.
+NEXT1: cold pending enemy removed/returned: check vacant lanes and readiness, fix reproduced failures.
+NEXT2: preserve same-battle enemy slots and accepted framing; no new balance round.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
-RUNNING: Vite5970 PID59050 only; tests complete. Demo29225289bytes/evidence105.81MB.
-KNOWN: final offlinep95 16.7–16.8ms/60draws,0faceHPmask/error/HTTP;demo29.21MB/evidence34MB.
+RUNNING: Vite5970 PID59050 only; tests complete. Demo29225393bytes/evidence111.0MB.
 KNOWN: original earnedx1normal36.30s/boss62.34s films preserved/labeled before backdrop update.
 KNOWN: current weighted7.79/10;gameplay5.8 remains weakest;no fourth tuning round.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
@@ -28,3 +27,4 @@ KNOWN:Kettle72actualenemy+888source+888offline/14tests/types/lintPASS;58captures
 KNOWN:cat624combat/120final/24live/576source/576offlinePASS;46finalviews;29finaltests/types/lint;max101draws.
 KNOWN:outcome60combat/576source/576offline+12controls/34views/34tests/types/lintPASS;labelrowsclear;74maxdraws.
 KNOWN:framing240source/144offline/6PausePlay/20views/12tests/types/lintPASS;min4.16px,p9516.8ms/60draws.
+KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
