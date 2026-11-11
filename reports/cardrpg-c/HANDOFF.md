@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 replay verified; continue weakest actionable quality/C8.
+NOW: C8 Clover verified; continue weakest actionable C11/C8 item.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox/PSD publication; inspect remaining result-details/navigation or lowest screenshot issue.
+NEXT1: check designer inbox/PSD publication; inspect next weakest remaining gameplay or pipeline issue.
 NEXT2: retained evidence below120MB; no balance/acceptance seed reruns; representative shots only.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -17,7 +17,7 @@ KNOWN:C11 stage/VFX/intake/cache/HUD/upgrades/Bag/preparation/pantry/route fixes
 KNOWN:VFX forced-redraw4old differences remainPARTIAL;R3 targeted48offline/6PausePlayPASS,p9516.8/16.7ms,101drawsample.
 KNOWN:Tower142browser/20keyboard/47captures;Events78/6/30 plus28notechecks;26tests/types/lintPASS.
 KNOWN:loss50browser/28keyboard/46views;22web+16rules/types/lintPASS;fixedTower advice below foe level.
-KNOWN:demo29,619,392bytes;score7.79;R3:26tests/3negativeguards/48combat/48offline/28viewsPASS;C8-R3-RECEIPT.
+KNOWN:demo30,018,753bytes;score7.79;Clover139layers/33bones/276vertices/156sourcehashes;finaldesigner0/25.
 KNOWN:no main/deploy/live-contract changes. Original C5 misses and final designer acceptance remain open.
 KNOWN:milestones302browser/28keyboard/68finalviews;48Discoveries checks validate whole-card fit;23web+25rules/types/lintPASS.
 KNOWN:daily258browser/74keyboard +120style/18keyboard;44+24views,13web+7rules/types/lintPASS.
@@ -27,4 +27,4 @@ KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF
 KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only Book;C11-BOND-SUMMARY-RECEIPT.
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
 KNOWN:controls98browser/144blocked;leave68browser/48views/27tests;Auto-next68+4browser/40views/33tests/types/lintPASS.
-KNOWN:replay124+24browser/120views/86tests/types/lintPASS;recorded choices and safe return;C11-REPLAY-RECEIPT.
+KNOWN:Clover27placeholder/23runtime+5finalasset/types/lintPASS;84layer/72combat/48offline+6PausePlay,34views;C8-CLOVER-RECEIPT.

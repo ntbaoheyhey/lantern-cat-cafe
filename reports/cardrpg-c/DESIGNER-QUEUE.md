@@ -1,12 +1,12 @@
 # Designer queue
 
-Pilot: Mochi. Wave 1: Soot, Clover, Button Guard, Sock Skipper, Yarn Giant. Wave 2: remaining cats. Wave 3: remaining enemies/bosses. Only the Mochi PSD path is published at this checkpoint; <published-wave> is explicitly pending, not an existing file. Do not wait to animate the pilot. Existing soft-painted original concepts remain the character style.
+Pilot: Mochi. Wave 1: Soot, Clover, Button Guard, Sock Skipper, Yarn Giant. Wave 2: remaining cats. Wave 3: remaining enemies/bosses. Published PSD paths: Mochi, Clover. <published-wave> is explicitly pending, not an existing file. Do not wait to animate the pilot. Existing soft-painted original concepts remain the character style.
 
 | Wave | Unit | Role | Size / height | Original concept | PSD (read-only) | Skills shown |
 |---|---|---|---|---|---|---|
 | Pilot | mochi | guardian | cat / 512 | assets/source/look-v3/concepts/mochi.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-rig-3-4-right.psd | Door knock; Warm welcome; Apron crossing; Last light shelter |
 | 1 | soot | hexer | cat / 512 | assets/source/look-v3/concepts/soot.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/soot-3-4.psd | Cocoa spark; Black cup; Lantern wick; Midnight service |
-| 1 | clover | healer | cat / 512 | assets/source/look-v3/concepts/clover.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/clover-3-4.psd | Leaf tap; Patient steep; Clearleaf rinse; Greenhouse morning |
+| 1 | clover | healer | cat / 512 | assets/source/look-v3/concepts/clover.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/02-meo-cats/clover/clover-rig-3-4-right.psd | Leaf tap; Patient steep; Clearleaf rinse; Greenhouse morning |
 | 2 | panko | guardian | cat / 512 | assets/source/look-v3/concepts/panko.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/panko-3-4.psd | Pan reply; Bread cover; Crust return; Oven door |
 | 2 | mallow | striker | cat / 512 | assets/source/look-v3/concepts/mallow.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/mallow-3-4.psd | Whisk flare; Split ember; Burnt sugar; Closing blaze |
 | 2 | sorrel | controller | cat / 512 | assets/source/look-v3/concepts/sorrel.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/sorrel-3-4.psd | Moon spoon; Cold brew; Decanted moon; Shared pot |

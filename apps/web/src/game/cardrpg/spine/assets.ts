@@ -30,7 +30,10 @@ export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
    if(data.version?.split('.').slice(0,2).join('.')!==SPINE_CONFIG.runtimeVersion)throw Error(`Spine version ${data.version} does not match contract`);
    const skeleton=new S.Skeleton(data);skeleton.updateWorldTransform(S.Physics.update);const bounds=skeleton.getBoundsRect();
    const clips=new Map(data.animations.map(animation=>[animation.name,{duration:animation.duration,cues:animationCues(animation.name as SpineAnimation,animation.duration,animation.timelines.filter(t=>t instanceof S.EventTimeline).flatMap(t=>(t as InstanceType<typeof S.EventTimeline>).events.map(e=>({name:e.data.name,time:e.time}))))}]));
-   return {data,bounds,clips,create:()=>new S.SkeletonMesh({skeletonData:data,twoColorTint:true,materialFactory:parameters=>new T.MeshBasicMaterial({...parameters,depthTest:false,depthWrite:false,toneMapped:false})})};
+   // Spine attachments are flat, including flipped enemies. Keep both sides
+   // visible in one pass. Separate front/back passes can also reorder mixed
+   // region/mesh winding within a batch, hiding foreground props.
+   return {data,bounds,clips,create:()=>new S.SkeletonMesh({skeletonData:data,twoColorTint:true,materialFactory:parameters=>new T.MeshBasicMaterial({...parameters,depthTest:false,depthWrite:false,toneMapped:false,forceSinglePass:true})})};
   }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
  })().catch(error=>{
   // Keep successful data shared, but let a later actor request recover from

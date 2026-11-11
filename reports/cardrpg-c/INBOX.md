@@ -94,3 +94,5 @@
 2026-11-11 resume21:19UTC: user continue; confirmed Auto-next checkpoint040c966a7 pushed and clean, preserved68+4checks/40finalviews. Continue C8/C11 with replay-source and return-path review; designer inbox empty.
 
 2026-11-11T21:31:13.825002+00:00 resume: user continue/handoff identifies replay return-path bug. Preserved unfinished source and passing124+24browser/86tests/types/lint; inspected120finalviews and completed checkpoint without repeating accepted checks.
+
+2026-11-11T21:50:06.257521+00:00 resume: user continue/handoff identifies one-pass layer fix,84reference/72combat passes. Preserved unfinished Clover work and all accepted logs; inspected34finalviews/filmstrip/detail/comparisons, recorded checkpoint without repeating accepted checks. ContinueC8/C11.

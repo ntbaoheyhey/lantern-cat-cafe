@@ -8,7 +8,7 @@ const tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c10';if(!/^[a
 const output=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(output,{recursive:true});
 const report={mode:'Offline gallery and review hub; no progression or frame-timing claim',errors:[],requests:[],shots:[],units:[],clips:0,checks:[]};
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
-const unitsOnly=process.argv.includes('--gallery-only');
+const unitsOnly=process.argv.includes('--gallery-only'),pilot=process.argv.find(a=>a.startsWith('--pilot='))?.slice(8)??'mochi';
 try{
  const page=await browser.newPage({viewport:{width:1280,height:720}});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',e=>{if(e.type()==='error')report.errors.push(e.text());});page.on('request',r=>{if(/^https?:/.test(r.url()))report.requests.push(r.url());});
  async function shot(name,width,height){await page.waitForTimeout(150);const file=`${width}-${name}.webp`;await sharp(await page.screenshot()).webp({quality:85}).toFile(resolve(output,file));const audit=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,broken:[...document.images].filter(i=>i.getClientRects().length&&(!i.complete||!i.naturalWidth)).map(i=>i.src)}));report.shots.push({name,width,height,file,...audit});if(audit.overflow||audit.broken.length)throw Error('Layout '+JSON.stringify(audit));}
@@ -25,9 +25,10 @@ try{
    await page.locator('#lineup').scrollIntoViewIfNeeded();await shot('lineup',width,height);
   }
   await page.goto('file://'+root+'/docs/cardrpg-c/vfx.html?mode=units');await page.waitForFunction(()=>window.unitPlayer?.ready,null,{timeout:90000});
-  await page.evaluate(()=>{window.unitPlayer.playing=false;window.unitPlayer.sample('skill',.5);});await shot('unit-mochi',width,height);
+  await page.locator('#unit-choose').selectOption(pilot);await page.waitForFunction(id=>window.unitPlayer.ready&&window.unitPlayer.actor.unit.id===id,pilot);
+  await page.evaluate(()=>{window.unitPlayer.playing=false;window.unitPlayer.sample('skill',.5);});await shot('unit-'+pilot,width,height);
   await page.locator('#unit-choose').selectOption('yarn-giant');await page.waitForFunction(()=>window.unitPlayer?.ready&&window.unitPlayer.actor.unit.id==='yarn-giant');await page.locator('#clip-choose').selectOption('enrage');await page.evaluate(()=>window.unitPlayer.sample('enrage',.5));await shot('unit-boss',width,height);
-  await page.getByRole('button',{name:'Skill effects',exact:true}).click();await page.waitForFunction(()=>window.vfxGallery?.scene.ready);await page.locator('#choose').selectOption('mochi-4');await page.waitForFunction(()=>window.vfxGallery.scene.ready);await page.waitForTimeout(500);await shot('effects',width,height);
+  await page.getByRole('button',{name:'Skill effects',exact:true}).click();await page.waitForFunction(()=>window.vfxGallery?.scene.ready);await page.locator('#choose').selectOption(pilot+'-4');await page.waitForFunction(()=>window.vfxGallery.scene.ready);await page.waitForTimeout(500);await shot('effects',width,height);
  }
  await page.getByRole('button',{name:'Character animations',exact:true}).click();
  const ids=await page.locator('#unit-choose option').evaluateAll(options=>options.map(o=>o.value));

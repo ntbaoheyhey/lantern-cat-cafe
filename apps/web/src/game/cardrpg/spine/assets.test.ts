@@ -16,6 +16,7 @@ beforeEach(() => {
  fetchAsset.mockReset();decode.mockReset().mockResolvedValue(undefined);
  vi.stubGlobal('fetch',fetchAsset);
  vi.stubGlobal('ImageBitmap',class {});
+ vi.stubGlobal('WebGLRenderingContext',{STATIC_DRAW:0x88e4,DYNAMIC_DRAW:0x88e8});
  vi.stubGlobal('Image',class {width=64;height=128;src='';decode(){return decode();}});
 });
 afterEach(() => {vi.unstubAllGlobals();});
@@ -37,6 +38,11 @@ it.each(['atlas','skeleton'])('retries a failed %s request, then shares data but
  expect(await loadSkeleton(spec)).toBe(recovered);expect(fetchAsset).toHaveBeenCalledTimes(calls);
  const one=recovered.create(),two=recovered.create();
  expect(one.skeleton.data).toBe(two.skeleton.data);expect(one.state).not.toBe(two.state);
+ one.update(0);
+ const materials:T.Material[]=[];
+ one.traverse(child=>{if(child instanceof T.Mesh)materials.push(...(Array.isArray(child.material)?child.material:[child.material]));});
+ expect(materials.length).toBeGreaterThan(0);
+ for(const material of materials){expect(material.side).toBe(T.DoubleSide);expect(material.forceSinglePass).toBe(true);}
  one.state.setAnimation(0,'attack',false);two.state.setAnimation(0,'idle',true);
  expect(two.state.getCurrent(0)?.animation?.name).toBe('idle');one.dispose();two.dispose();
 });

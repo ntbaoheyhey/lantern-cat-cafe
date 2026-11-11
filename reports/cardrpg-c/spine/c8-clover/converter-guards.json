@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "case": "source output protected",
+      "pass": true,
+      "rejection": "Output must be outside the read-only source package"
+    },
+    {
+      "case": "unaccepted artwork",
+      "pass": true,
+      "rejection": "Published artwork gate is not complete"
+    },
+    {
+      "case": "draw-order changed",
+      "pass": true,
+      "rejection": "PSD draw order differs from its portable catalog"
+    },
+    {
+      "case": "placement changed",
+      "pass": true,
+      "rejection": "tail-1: PSD placement or visibility differs"
+    },
+    {
+      "case": "raw pixels changed",
+      "pass": true,
+      "rejection": "tail-1: raw PNG differs from published PSD pixels"
+    },
+    {
+      "case": "mask pixels changed",
+      "pass": true,
+      "rejection": "teapot-tea: aperture differs from its PSD mask"
+    }
+  ],
+  "sourceHashesVerified": 156,
+  "sourceUnchanged": true
+}

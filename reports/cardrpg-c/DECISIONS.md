@@ -144,3 +144,6 @@
 2026-11-11T21:17:32.683862+00:00 C11 Auto-next: move the timer to the visible result, show five seconds/cancel, hold while reading/hidden/discovery, and preserve rewards/forks/rests. Fixes observed involuntary navigation without changing combat or settlement rules.
 
 2026-11-11T21:31:13.825002+00:00 C11 replay: source live encounter choices until settlement, block empty/nested playback, omit unrecorded ranks, and clear finished replay on every navigation exit. Baselines demonstrated empty playback and lingering replay; no gameplay rule change.
+
+2026-11-11T21:50:06.257521+00:00 C8: derive Clover only after exact PSD/catalog comparison; keep all156source hashes and editable masks unchanged. Force one-pass flat double-sided Spine materials to preserve mesh/region stacking and halve draws; independent per-slot reference proves84poses. Keep original failed assertions and scoped repair evidence; final designer0/25.
+2026-11-11T21:50:06.257521+00:00 Evidence: retain ten representative Clover screenshots plus filmstrip/comparisons;24other inspected captures remain in /tmp/cardrpg-c-clover-full-reviewed. Compact JSON values losslessly with preservation manifest to keep reports below120,000,000bytes.

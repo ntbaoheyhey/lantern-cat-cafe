@@ -19,9 +19,64 @@ def smooth(value):
     return value * value * (3. - 2. * value)
 
 
+def manifest_metadata(meta, read, folder, unit_id):
+    """Verify a portable extraction against the authoritative PSD, not its label."""
+    from psd_tools import PSDImage
+
+    if unit_id != 'clover' or meta.get('character', '').lower() != unit_id:
+        raise ValueError('No temporary rig profile for this portable manifest')
+    gates = json.loads(read('quality-checks/final-gates.json'))
+    if any(gates.get(name, {}).get('pass') is not True for name in ['G0','G1','G2','G3','G4','G5','G7']):
+        raise ValueError('Published artwork gate is not complete')
+    read('parts-src/PROVENANCE.md')
+    read(f'{unit_id}-rig-notes.md')
+    read(f'{unit_id}-rig-pivots.json')
+    read(f'{unit_id}-rig-3-4-right.psd')
+    psd = PSDImage.open(folder / f'{unit_id}-rig-3-4-right.psd')
+    raw = [layer for layer in psd.descendants() if not layer.is_group()]
+    leaves = {layer.name:layer for layer in raw}
+    names = [item['name'] for item in meta['layers']]
+    helpers = meta['hidden_reference_layers']
+    if len(leaves) != len(raw) or len(set(names)) != len(names) or set(leaves) != set(names+helpers):
+        raise ValueError('PSD layer names differ from its portable catalog')
+    if list(psd.size) != meta['canvas'] or any(leaves[name].visible for name in helpers):
+        raise ValueError('PSD canvas or hidden reference visibility differs')
+    # psd-tools yields bottom-to-top order, including numbered group stacking.
+    if [layer.name for layer in raw if layer.name not in helpers] != names:
+        raise ValueError('PSD draw order differs from its portable catalog')
+    layers = {}
+    for item in meta['layers']:
+        name = item['name']; layer = leaves[name]
+        filename = 'parts-src/' + item['file']; read(filename)
+        png = Image.open(folder / filename).convert('RGBA')
+        pixels = layer.topil().convert('RGBA')
+        if list(png.size) != item['size'] or png.size != pixels.size or png.tobytes() != pixels.tobytes():
+            raise ValueError(f'{name}: raw PNG differs from published PSD pixels')
+        if [layer.left,layer.top] != item['position'] or layer.visible != item['visible']:
+            raise ValueError(f'{name}: PSD placement or visibility differs')
+        blend = {'normal':b'norm','multiply':b'mul '}.get(item['blend_mode'])
+        if blend is None or layer.blend_mode.value != blend or layer.opacity != 255:
+            raise ValueError(f'{name}: unsupported or mismatched PSD blend')
+        normalized = dict(item, file=filename, psd_pixel_sha256=hashlib.sha256(png.tobytes()).hexdigest())
+        mask = item.get('mask')
+        if bool(mask) != layer.has_mask():
+            raise ValueError(f'{name}: PSD mask differs from its catalog')
+        if mask:
+            filename = 'parts-src/' + mask['file']; read(filename)
+            aperture = Image.open(folder / filename).convert('L')
+            psd_mask = layer.mask.topil().convert('L')
+            if (list(aperture.size) != mask['size'] or aperture.size != psd_mask.size
+                    or aperture.tobytes() != psd_mask.tobytes() or list(layer.mask.bbox[:2]) != mask['position']):
+                raise ValueError(f'{name}: aperture differs from its PSD mask')
+            normalized.update(aperture_mask=filename, aperture_position=mask['position'])
+        layers[name] = normalized
+    return dict(meta, layers=layers, order_bottom_to_top=names)
+
+
 def build(source, out, unit_id):
     source, out = Path(source).resolve(), Path(out).resolve()
-    folder = source.parent
+    portable = source.name == 'manifest.json' and source.parent.name == 'parts-src'
+    folder = source.parent.parent if portable else source.parent
     if out == folder or folder in out.parents:
         raise ValueError('Output must be outside the read-only source package')
     hashes = {}
@@ -34,17 +89,20 @@ def build(source, out, unit_id):
         hashes[name] = hashlib.sha256(data).hexdigest()
         return data
 
-    meta = json.loads(read(source.name))
-    read(f'{unit_id}-rig-notes.md')
-    gates = json.loads(read(f'{unit_id}-rig-gate-results.json'))
-    if not gates.get('overall_pass') or any(not gate.get('pass_gate') for gate in gates.get('gates', {}).values()):
-        raise ValueError('Published artwork gate is not complete')
-    read('source-records.json')
-    read(f'{unit_id}-rig-3-4-right.psd')
-    if hashes[f'{unit_id}-rig-3-4-right.psd'] != meta['psd_sha256']:
-        raise ValueError('PSD hash differs from its extracted layer catalog')
-    if gates.get('psd_sha256') != meta['psd_sha256']:
-        raise ValueError('Artwork gates refer to a different PSD revision')
+    meta = json.loads(read(str(source.relative_to(folder))))
+    if portable:
+        meta = manifest_metadata(meta, read, folder, unit_id)
+    else:
+        read(f'{unit_id}-rig-notes.md')
+        gates = json.loads(read(f'{unit_id}-rig-gate-results.json'))
+        if not gates.get('overall_pass') or any(not gate.get('pass_gate') for gate in gates.get('gates', {}).values()):
+            raise ValueError('Published artwork gate is not complete')
+        read('source-records.json')
+        read(f'{unit_id}-rig-3-4-right.psd')
+        if hashes[f'{unit_id}-rig-3-4-right.psd'] != meta['psd_sha256']:
+            raise ValueError('PSD hash differs from its extracted layer catalog')
+        if gates.get('psd_sha256') != meta['psd_sha256']:
+            raise ValueError('Artwork gates refer to a different PSD revision')
     root = Path(__file__).resolve().parents[3]
     config = json.loads((root / 'assets/cardrpg-look/spine/config.json').read_text())
     unit = next(u for u in json.loads((root / 'assets/cardrpg-look/spine/slots.json').read_text())['units'] if u['id'] == unit_id)
@@ -89,12 +147,13 @@ def build(source, out, unit_id):
         for name, parent in [(f'{side}-arm-upper','torso'), (f'{side}-arm-lower',f'{side}-arm-upper'), (f'{side}-paw',f'{side}-arm-lower'), (f'{side}-thigh','hip'), (f'{side}-leg-lower',f'{side}-thigh'), (f'{side}-foot',f'{side}-leg-lower'), (f'ear-{side}-outer','head')]:
             positions[name] = catalog[name]['pivot']
             parents[name] = parent
-    parents.update({'main-hand':'r-paw','off-hand':'l-paw'})
+    parents.update({'main-hand':'l-paw' if portable else 'r-paw','off-hand':'r-paw' if portable else 'l-paw'})
     for i in range(1, 6):
         name = f'tail-{i}'
         parents[name] = f'tail-{i-1}' if i > 1 else 'hip'
         positions[name] = catalog[name]['pivot']
-    for name, parent, layer in [('cloth','hip','skirt-panel-center'), ('shield','off-hand','shield-wood'), ('lantern','shield','lantern-handle'), ('hair-tip','head','hair-top-curl')]:
+    extras = [('cloth','torso','dress-skirt-2'), ('teapot','main-hand','teapot-body'), ('collar','torso','clover-brooch'), ('pouch','cloth','pouch-string'), ('hair-tip','head','hair-top-curl')] if portable else [('cloth','hip','skirt-panel-center'), ('shield','off-hand','shield-wood'), ('lantern','shield','lantern-handle'), ('hair-tip','head','hair-top-curl')]
+    for name, parent, layer in extras:
         parents[name] = parent
         positions[name] = catalog[layer]['pivot']
 
@@ -113,17 +172,29 @@ def build(source, out, unit_id):
             bones.append(bone)
             added.add(name)
     indices = {b['name']:i for i,b in enumerate(bones)}
-    transform = meta['master_transform']
+    transform = meta.get('master_transform')
 
     def master(point):
         return [(point[i]-transform['offset'][i])/transform['scale'] for i in range(2)]
 
-    read('rig-support/tail-arc-fields.npz')
-    tail_field = np.load(folder / 'rig-support/tail-arc-fields.npz')['arc']
-    tail_ranges = json.loads(read('rig-support/tail-cuts.json'))['ranges']
-    tail_centers = [0.] + [(r[0]+r[1])/2 for r in tail_ranges[1:5]]
+    if not portable:
+        read('rig-support/tail-arc-fields.npz')
+        tail_field = np.load(folder / 'rig-support/tail-arc-fields.npz')['arc']
+        tail_ranges = json.loads(read('rig-support/tail-cuts.json'))['ranges']
+        tail_centers = [0.] + [(r[0]+r[1])/2 for r in tail_ranges[1:5]]
 
     def tail_weights(point):
+        if portable:
+            # One continuous field for every overlapping tail layer/shadow.
+            candidates = []
+            for i in range(1,5):
+                start, end = np.array(positions[f'tail-{i}']), np.array(positions[f'tail-{i+1}'])
+                delta = end-start
+                along = max(0., min(1., float(np.dot(np.array(point)-start,delta)/np.dot(delta,delta))))
+                candidates.append((float(np.linalg.norm(np.array(point)-start-delta*along)),i,along))
+            _, i, along = min(candidates)
+            w = smooth(along)
+            return {f'tail-{i}':1-w, f'tail-{i+1}':w}
         mx, my = master(point)
         x, y = max(0., min(tail_field.shape[1]-1., mx)), max(0., min(tail_field.shape[0]-1., my))
         xi, yi = int(x), int(y)
@@ -137,11 +208,31 @@ def build(source, out, unit_id):
 
     neck = {'neck','neck-shadow','chest-ruff-1','chest-ruff-2','apron-bib','apron-shadow','strap-r','strap-l'}
     cloth = {'side-flap','bow-loop-r','bow-tail-r','bow-tail-l','skirt-panel-r','skirt-panel-center','skirt-panel-l'}
+    if portable:
+        neck = {'neck','chest-ruff-1','chest-ruff-2'}
+        cloth = {p['name'] for p in parts if p['region']=='dress' and not p['name'].startswith(('belt','pouch','dress-strap','dress-bib'))}
+
+    def arm_side(p):
+        if p['region']=='arms':
+            return p['name'][0]
+        if portable and p['name'].startswith(('sleeve-','cuff-')):
+            return p['name'][-1]
+        return None
 
     def bone_for(p):
         name = p['name']
         if name in parents:
             return name
+        if portable:
+            side = arm_side(p)
+            if side:
+                return side+'-paw' if 'paw' in name else side+'-arm-lower' if 'lower' in name or 'cuff' in name or 'shadow' in name else side+'-arm-upper'
+            if p['region']=='teapot':return 'teapot'
+            if name.startswith(('leaf-','collar-ribbon')) or name=='clover-brooch':return 'collar'
+            if name.startswith('pouch-') and name!='pouch-shadow':return 'pouch'
+            if name in cloth:return 'cloth'
+            if name.startswith('belt') or name=='hips':return 'hip'
+            if name.endswith('-leg-shadow'):return name[0]+'-leg-lower'
         if name.startswith('ear-'):
             return name[:5]+'-outer'
         if name.startswith('shield-') or name == 'lantern-hook':
@@ -161,15 +252,15 @@ def build(source, out, unit_id):
     def weights(p, point):
         name = p['name']
         if name in neck:
-            w = smooth((650-master(point)[1])/75)
+            w = smooth((positions['torso'][1]-point[1])/(positions['torso'][1]-positions['head-pivot'][1])) if portable else smooth((650-master(point)[1])/75)
             return {'torso':1-w, 'head-pivot':w}
         if p['region'] == 'tail':
             return tail_weights(point)
         if name in cloth:
-            w = smooth((master(point)[1]-740)/160)
-            return {'hip':1-w,'cloth':w}
-        if p['region'] == 'arms':
-            side = name[0]
+            w = smooth((point[1]-positions['cloth'][1])/700) if portable else smooth((master(point)[1]-740)/160)
+            return {'torso' if portable else 'hip':1-w,'cloth':w}
+        side = arm_side(p)
+        if side:
             shoulder = np.array(positions[side+'-arm-upper'])
             elbow = np.array(positions[side+'-arm-lower'])
             wrist = np.array(positions[side+'-paw'])
@@ -182,10 +273,10 @@ def build(source, out, unit_id):
     # small provisional amplitudes; the designer owns the final meshes/keyframes.
     def attachment(p):
         bone = bone_for(p)
-        if p['name'] not in neck|cloth and p['region'] not in ['arms','tail']:
+        if p['name'] not in neck|cloth and not arm_side(p) and p['region'] != 'tail':
             center, pivot = xy([p['left']+p['width']/2,p['top']+p['height']/2]), xy(positions[bone])
             return {'x':center[0]-pivot[0], 'y':center[1]-pivot[1], 'width':p['width']*scale, 'height':p['height']*scale}
-        cols, rows = 3, 4 if p['name'] in neck or p['region'] == 'tail' else 3
+        cols, rows = (3,3) if portable and (p['name'] in neck or p['region']=='tail') else (2,3) if portable else (3,4 if p['name'] in neck or p['region']=='tail' else 3)
         uvs, vertices, triangles = [], [], []
         for row in range(rows):
             for col in range(cols):
@@ -240,7 +331,7 @@ def build(source, out, unit_id):
             tracks['head-pivot'] = {'rotate':rotate(1.2 if name=='idle' else 2.)}
             for i in range(1,6):tracks[f'tail-{i}'] = {'rotate':rotate(.7 if i%2 else -.5)}
             for side in ['r','l']:tracks[f'ear-{side}-outer'] = {'rotate':rotate(1.5)}
-            for b in ['cloth','hair-tip','lantern']:tracks[b] = {'rotate':rotate(1.2)}
+            for b in (['cloth','hair-tip','collar','pouch'] if portable else ['cloth','hair-tip','lantern']):tracks[b] = {'rotate':rotate(1.2)}
         elif name=='appear':tracks['root']['translate'] = [{'time':0,'x':-80},{'time':t(.7),'x':4},{'time':duration}]
         elif name=='ko':tracks['hip'] = {'rotate':[{'time':0},{'time':t(.8),'value':-68},{'time':duration,'value':-72}],'translate':[{'time':0},{'time':duration,'y':-unit['targetHeight']*.25}]}
         elif name=='hurt':tracks['hip'] = {'rotate':rotate(4),'translate':[{'time':0},{'time':t(.25),'x':-12},{'time':duration}]}
@@ -260,6 +351,8 @@ def build(source, out, unit_id):
                     clip['slots'][n] = {'attachment':[{'time':0,'name':None if closed else n},{'time':t(.67),'name':n if closed else None},{'time':t(.715),'name':None if closed else n},{'time':duration,'name':None if closed else n}]}
         skel['animations'][name] = clip
     skel['laneC'] = {'status':'placeholder','source':str(source),'sourceHashes':hashes,'tool':'layered-to-spine.py','parts':len(parts),'sourceScale':scale,'sourceGate':'V3 artwork G7 round 3 PASS; not a final runtime export','maskPolicy':'Static setup apertures baked into derived atlas only; original eye masks and raw source pixels retained. Blink swaps complete eyelids; no animated gaze.','maskedLayers':mask_names,'weights':'Shared neck/bib field and supplied tail arc; shared skirt field; conservative automatic motion. Designer builds final meshes/keyframes.','meshVertices':mesh_vertices}
+    if portable:
+        skel['laneC'].update(sourceGate='Published G0-G5/G7 round 4 PASS; independently verified all PSD layers/masks/order; not a final runtime export', maskPolicy='All 11 eye/tea masks baked only at setup into derived atlas. Complete blink swaps; no animated gaze or tea slosh. Original PSD/masks unchanged.', weights='Shared neck, arm/sleeve, skirt and polyline tail fields; small provisional rotations. Teapot follows the left holding paw; designer owns final meshes/keyframes.')
     pixels = np.array(texture,dtype=np.uint16)
     pixels[:,:,:3] = (pixels[:,:,:3]*pixels[:,:,3:4]+127)//255
     # Prove no source change occurred before publishing the derived outputs.
