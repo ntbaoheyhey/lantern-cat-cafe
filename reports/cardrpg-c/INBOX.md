@@ -88,3 +88,5 @@
 2026-11-11T20:50:39.878328+00:00 resume: user continue/handoff identified passing preparation layout and pending screenshot receipt. Preserved the patch and37tests/types/lint; inspected104views, then4settled replacements. ContinueC8/C11 without accepted gameplay reruns.
 
 2026-11-11T20:58:55.603129+00:00 resume: user continue/handoff identifies98battle-control checks and menu focus fix. Preserved unfinished patch and18tests/types/lintPASS; inspected both retained captures. ContinueC8/C11 without replaying accepted work.
+
+2026-11-11T21:10:13.016961+00:00 resume: user continue/handoff identifies Auto-next after verified leave-table checkpoint. Confirmed clean pushed c8443676f, preserved68checks/48views. Reused retained timer baseline; continue C8/C11 without accepted work reruns.

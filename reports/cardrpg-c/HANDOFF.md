@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 leave-table quote/confirmation verified; continue Auto-next/result behavior/C8.
+NOW: C11 Auto-next verified; continue weakest actionable quality/C8.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect Auto-next timer during result details, visible cancel and reward/route choices.
+NEXT1: check designer inbox; inspect remaining result/replay/navigation behavior or lowest screenshot issue.
 NEXT2: retained evidence below120MB; no balance/acceptance seed reruns; representative shots only.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -27,4 +27,4 @@ KNOWN:firstlevel18browser/12views;firstcontext64browser/54views/7tests/types/lin
 KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF-before-preparation-health-2026-11-11.md.
 KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only Book;C11-BOND-SUMMARY-RECEIPT.
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
-KNOWN:enemy88+2browser/104views/37tests;controls98browser/144blockedclicks;leave68browser/48views/27tests/types/lintPASS;receipts.
+KNOWN:controls98browser/144blocked;leave68browser/48views/27tests;Auto-next68+4browser/40views/33tests/types/lintPASS.

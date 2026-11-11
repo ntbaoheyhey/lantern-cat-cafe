@@ -50,7 +50,7 @@ it('keeps the chosen floor across gift sections and presents the current counter
  fireEvent.click(screen.getByRole('button',{name:'Floor 1 cleared'}));
  expect(screen.getByRole('button',{name:'Climb floor 1 →'})).toBeTruthy();
  expect(screen.queryByText(/Hush prevents the brace/)).toBeNull();
- expect(screen.getByText('Shred strips shields; Burn passes through.')).toBeTruthy();
+ expect(screen.getByText('Use Shred and direct hits to strip shields, or Burn to bypass them.')).toBeTruthy();
  const before=R.exportSave(m.state);
  fireEvent.click(screen.getByRole('button',{name:/Milestone gifts/}));
  expect(screen.getAllByRole('article')).toHaveLength(6);

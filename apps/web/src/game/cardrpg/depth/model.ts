@@ -232,14 +232,20 @@ export class DepthModel {
     const speeds=this.a6Battle?[1,2,3]:[1,2,4];
     this.state.settings.speed=speeds[(speeds.indexOf(this.state.settings.speed)+1)%speeds.length]!;this.notify();
   }
+  get canAutoContinue() {
+    return this.autoContinue && this.screen==='result' && this.a6Battle && this.battle?.result==='party'
+      && !!this.state.run && !this.state.run.complete && !this.error && !this.tutorialBattle && !this.replay && !this.galleryBattle;
+  }
   continueBattle() {
-    if (!this.autoContinue || !this.a6Battle || this.battle?.result!=='party' || this.tutorialBattle || this.replay) return;
+    if (!this.canAutoContinue || this.state.v4?.journey?.pending.length) return;
     this.finish();
+    if (this.error) return;
     const run=this.state.run;
-    if (!run || run.complete) return;
-    if (run.rewardChoices.length) this.apply(R.chooseReward(this.state,run.rewardChoices[0]!),'Charm collected.');
-    const next=R.availableNodes(this.state.run!).find(n=>n.enemies.length);
-    if (next) {this.enter(next.id);this.fight();}
+    if (!run) return;
+    if (run.complete) { if(run.towerA6)this.go('tower'); return; }
+    if (run.rewardChoices.length) return;
+    const next=R.availableNodes(run);
+    if (next.length===1 && next[0]!.enemies.length) {this.enter(next[0]!.id);if(!this.error)this.fight();}
   }
   skip() {
     if (!this.canSkip) return;

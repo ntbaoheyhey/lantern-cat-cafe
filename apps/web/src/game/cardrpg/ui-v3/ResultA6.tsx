@@ -10,6 +10,7 @@ import {artPropsA6} from './art-a6';
 import {CountUpA6} from './CountUpA6';
 import {resultRewards} from './selectors';
 import {enemyGuideA6} from './guide-a6';
+import {AutoNextA6} from './AutoNextA6';
 import './result-a6.css';
 
 /** Original small medallions for the existing receipt, not new reward types. */
@@ -37,12 +38,12 @@ function ResultDetailsA6({m,onClose,onContinue,continueLabel}:{m:DepthModel;onCl
    {page==='moments'&&<section className="a6-result-moments" aria-label="Key moments"><article><h3>First ultimate</h3><p>{summary.firstUltimate?`Round ${summary.firstUltimate.round} · ${name(summary.firstUltimate.actorId)} used ${R.SKILLS[summary.firstUltimate.skillId]?.name??summary.firstUltimate.skillId}`:'No ultimate was used in this encounter.'}</p></article><article><h3>Biggest hit</h3><p>{summary.biggestHit?`Round ${summary.biggestHit.round} · ${name(summary.biggestHit.actorId)} dealt ${summary.biggestHit.amount} to ${name(summary.biggestHit.targetId)}`:'No damage was recorded in this encounter.'}</p></article><article><h3>Second chances</h3>{summary.saves.length?summary.saves.map((e,i)=><p key={i}>Round {e.round} · {name(e.targetId)} {e.kind==='revive'?'returned to the fight':'survived with Second sprout'}.</p>):<p>No revives or last-chance saves were recorded.</p>}</article><ReactionSummaryV5 battle={battle}/></section>}
    {page==='notes'&&<section className="a6-result-notes" aria-label="Battle notes">{battle.v4&&m.tutorialBattle&&!m.replay&&<PracticePayoffV4 battle={battle}/>} {battle.v4?<OutcomeV4 battle={battle}/>:<p>This recorded encounter has no tactical notes.</p>}</section>}
   </div>
-  <footer>{!m.replay&&<>{!m.tutorialBattle&&m.state.run&&!m.state.run.complete&&<p>Improve team ends this route and keeps your earned rewards.</p>}<button onClick={()=>{onClose();m.replayLast();}}>Watch replay</button><button onClick={()=>{onClose();m.improveTeam();}}>Improve team</button></>}<button className="cr-primary" onClick={onContinue}>{continueLabel} →</button></footer>
+  <footer>{m.canAutoContinue&&<p>Auto-next is paused. Closing this report starts a new 5-second countdown.</p>}{!m.replay&&<>{!m.tutorialBattle&&m.state.run&&!m.state.run.complete&&<p>Improve team ends this route and keeps your earned rewards.</p>}<button onClick={()=>{onClose();m.replayLast();}}>Watch replay</button><button onClick={()=>{onClose();m.improveTeam();}}>Improve team</button></>}<button className="cr-primary" onClick={onContinue}>{continueLabel} →</button></footer>
  </dialog>;
 }
 
 export function ResultA6({m}:{m:DepthModel}) {
- const [details,setDetails]=useState(false),battle=m.battle!,summary=summarizeBattle(battle),mvp=summary.mvp,run=m.state.run,node=run?.nodes.find(n=>n.id===run.current);
+ const [details,setDetails]=useState(false),nextButton=useRef<HTMLButtonElement>(null),battle=m.battle!,summary=summarizeBattle(battle),mvp=summary.mvp,run=m.state.run,node=run?.nodes.find(n=>n.id===run.current);
  const outcome=battle.v4?R.outcomeV4(battle):null,firstFallen=battle.result==='enemy'?outcome?.firstFallen:null;
  const stars=run&&node&&!run.towerA6&&!m.tutorialBattle&&!m.replay?R.combatStarsV4(run,node,battle):null;
  const rewards=!m.tutorialBattle&&!m.replay?resultRewards(m.state):[],loss=battle.result==='enemy'&&!m.tutorialBattle&&!m.replay;
@@ -54,6 +55,6 @@ export function ResultA6({m}:{m:DepthModel}) {
   <header className="a6-result-heading"><div><small>{m.replay?'RECORDED ENCOUNTER':m.tutorialBattle?'PRACTICE COMPLETE':run?.towerA6?`YARN TOWER · FLOOR ${run.floor}`:`CHAPTER ${battle.chapter}`} · {battle.round} ROUNDS</small><h2>{m.replay?'Replay complete':battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Encounter complete'}</h2></div>{stars&&node&&<ul className="a6-result-goals" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{R.nodeStarGoalsV4(node).map((g,i)=><li key={g.id} data-earned={stars.conditions[i]}><span aria-hidden="true" style={{animationDelay:`${i*140}ms`}}>★</span><small>{g.text}</small></li>)}</ul>}</header>
   <aside className="a6-result-companion">{mvp?<><div className="a6-result-portrait"><img {...artPropsA6(mvp.catalogId)} alt={mvp.name}/></div><small>TONIGHT’S STAR</small><h3>{mvp.name}</h3><p>{mvp.damage} damage · {mvp.healing} healing</p></>:<RewardMark id="points"/>}</aside>
   <section className="a6-result-receipt" aria-label="Encounter receipt"><h3>{rewards.length?'From this encounter':'A night to remember'}</h3><div className="uv-result-rewards a6-result-tickets" aria-label="Encounter rewards">{rewards.map(r=><article key={r.id} data-reward-id={r.id}><RewardMark id={r.id}/><div><strong>+<CountUpA6 value={r.amount} from={0} reducedMotion={m.state.settings.reducedMotion}/></strong><span>{r.label}</span></div></article>)}{!rewards.length&&<article className="a6-result-empty"><RewardMark id="points"/><p>{m.tutorialBattle?'A welcome invitation awaits':m.replay?'Your encounter is recorded':'No additional supplies from this encounter.'}</p></article>}</div><p className="a6-result-highlight"><b>{firstFallen?'First setback:':'Battle highlight:'}</b> {why}</p>{loss?<AdviceV4 m={m}/>:<div className="a6-result-next-note"><b>Keep in mind</b><p>{suggestion}</p></div>}</section>
-  <footer className="a6-result-actions"><button onClick={()=>setDetails(true)} aria-haspopup="dialog">Read details</button><button className={loss?undefined:'uv-fight'} onClick={finish}>{continueLabel} <span aria-hidden="true">→</span></button></footer>
+  <footer className="a6-result-actions"><AutoNextA6 m={m} reportOpen={details} onStop={()=>nextButton.current?.focus()}/><button onClick={()=>setDetails(true)} aria-haspopup="dialog">Read details</button><button ref={nextButton} className={loss?undefined:'uv-fight'} onClick={finish}>{continueLabel} <span aria-hidden="true">→</span></button></footer>
  </div>{details&&<ResultDetailsA6 m={m} onClose={()=>setDetails(false)} onContinue={finish} continueLabel={continueLabel}/>}</>;
 }
