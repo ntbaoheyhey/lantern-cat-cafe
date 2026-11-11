@@ -65,7 +65,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P37 [auto] Lowest-motion continuation: Yarn Giant braces its whole yarn fist with delayed opposing hand, quiet crown and planted feet. Repair observed upper-head wedge, shoulder cloth/necklace and arm-owned boot fragments; preserve original six parts/assets. Correct both knuckle sockets. Both sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
 
-- [ ] P38 [auto] Lowest-motion continuation: Rain Spool dips its complete horns/wooden face with all four hooves planted and restrained cape/tail recovery. Repair split front hinges, cloak/tassels, tail and boot rims; preserve original eight parts/assets and accepted boss/helper spacing. Correct face/front-hoof sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
+- [x] P38 [auto] Lowest-motion continuation: Rain Spool dips its complete horns/wooden face with all four hooves planted and restrained cape/tail recovery. Repair split front hinges, cloak/tassels, tail and boot rims; preserve original eight parts/assets and accepted boss/helper spacing. Correct face/front-hoof sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
+
+- [ ] P39 [auto] Lowest-motion continuation: Pantry Crown gathers its complete wood gauntlets with delayed opposing hand, quiet crown/cabinet and planted boots. Repair crown-owned door/pauldron strips, split fingers/forearms and boot-owned cabinet/sash; retain original six parts and boss/helper formation. Correct both knuckle sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -148,3 +150,5 @@ P35 complete 2026-11-10T23:38:10.199985+00:00: source3/motion1,40web+13source te
 P36 complete 2026-11-10T23:50:14.209797+00:00: source3/motion1,41web+14source tests/type/lint/parity,16views/8casts/12boss samplesPASS;38874898B. Whole spout lift/release, delayed gauntlet, rigid handle/chest and planted boots; motion7.7/overall7.9.
 
 P37 complete 2026-11-10T23:56:34.530057+00:00: 42focused web+15source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38902322B. Complete yarn fists lead and follow with slight preparation compression; crown, necklace and shoulder mantle stay coherent, both feet planted. Motion7.7/overall8.0.
+
+P38 complete 2026-11-11T01:30:29.755578+00:00: 43focused web+16source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38902946B. Complete horns and wooden face dip into the strike; all four hooves stay planted while the whole cape and yarn tail recover quietly. Motion7.7/overall8.0.

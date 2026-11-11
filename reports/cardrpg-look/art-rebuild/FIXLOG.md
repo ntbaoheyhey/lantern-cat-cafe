@@ -253,3 +253,5 @@ P35 second new sentinel(791,790) was also transparent; verify every remaining se
 2026-11-10T23:47:53.181015+00:00 P36 type/lint41web tests PASS; first source gate selected transparent handle sentinel(500,150). Inspect all selected source pixels, use opaque handle(500,180); no art/rig/runtime changes. Source test and capture continue; completed web gates retained. Initial wrapper path error occurred before work and was corrected to existing run-lock.mjs.
 
 2026-11-10T23:53:33.769311+00:00 P37 three source repairs reconnect armR lower yarn and foot fringes. A123pixel collar-thread sliver remains on armL after moving its complete hand rim out of body; keep opposing arm bounded0.105rad and judge realx1. No fourth source pass. All test sentinels checked against opaque source before tests.
+
+2026-11-11T00:02:11.305492+00:00 P38 source1 retained2628pixel cape fringe and several boot islands in body. Source2 removes those disconnected fragments; source3 reconnects203pixel upper-right head rim. Three bounded source passes; residual tiny alpha edges will use the restrained real-battle fallback if necessary.
