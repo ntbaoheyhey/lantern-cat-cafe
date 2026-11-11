@@ -18,7 +18,7 @@ import type { DepthModel } from './model';
 import { displayedBossPhase } from './battle-presentation';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
-import { impactLabels } from '../../squad/turn3d/impact-labels';
+import { impactLabels, visibleImpactLabel } from '../../squad/turn3d/impact-labels';
 import { bossCueV4, presentationV4, skillReadinessV4, standingPlanText, type PresentationEventV4 } from '../../squad/turn3d/card-v4-presentation';
 import { project, appearance } from './scene-actors';
 import '../../squad/turn3d/battle-layout.css';
@@ -64,9 +64,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   }
   const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
     id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
-    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
-      ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
-      && (event.amount > 0 || event.type === 'death')),
+    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(visibleImpactLabel),
   })).filter(result => result.labels.length).map(result=>({...result,width:numberLaneWidth(result.labels)})) : [], [m.plan, battle.actors, statusView]);
   // Resolve costume metadata when React receives a battle snapshot. The GPU
   // loop otherwise repeats catalog filters and object copies for every cat.
@@ -203,8 +201,8 @@ export function BattleView({ m }: { m: DepthModel }) {
       </span>)}<small>Actions are automatic</small></div>}
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
-      {readable && m.impactVisible && results.map((result,resultIndex) => <div style={lookV2?{width:result.width}:undefined} data-lane-width={result.width} data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
-        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
+      {readable && m.impactVisible && results.map((result,resultIndex) => <div style={lookV2?{width:result.width}:undefined} data-lane-width={result.width} data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => label.type === 'fizzle' ? label.note : `${label.type} ${label.amount}`).join(', ')}`}>
+        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' || event.type === 'fizzle' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
       </div>)}
       {lookV2 && statusView?.bursts.map((id,index) => {
         const reactionId=statusView.reactions?.find(r=>r.targetId===id)?.id??'crumb-burst';
@@ -259,8 +257,8 @@ export function BattleView({ m }: { m: DepthModel }) {
       {m.impactVisible && results.length ? <div className="dp-result-chips" aria-label="Action results">
         {results.map(result => <span className="dp-result-chip" key={result.id}><b>{result.name}</b>
           {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>
-            {event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
-            {event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
+            {event.type === 'death' ? 'KO' : event.type === 'status_apply' || event.type === 'fizzle' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
+            {event.type !== 'fizzle' && event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
           </span>)}
         </span>)}
       </div> : <span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span>}

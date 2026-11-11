@@ -4,14 +4,15 @@ import {resolve} from 'node:path';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 const root=process.cwd(),require=createRequire(root+'/apps/web/package.json'),{chromium}=require('@playwright/test');
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
-const live=process.argv.includes('--live'),tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??(live?'c11-cat-live':'c11-cat-battle');
+const live=process.argv.includes('--live'),outcomes=process.argv.includes('--outcomes'),tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??(live?'c11-cat-live':outcomes?'c11-outcome-battle':'c11-cat-battle');
 if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid output tag');
 const out=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
 const slots=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8'));
 const selected=['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4','soot-4'];
-const scenarios=[...slots.units.filter(u=>u.side==='party').flatMap(u=>u.skills.map(s=>({id:s.id,variant:'default'}))),
+const scenarios=outcomes?[{id:'marigold-3',variant:'resist'},{id:'inkcap-2',variant:'immune'},{id:'inkcap-4',variant:'both'},
+ {id:'inkcap-4',variant:'boss'},{id:'cinnamon-1',variant:'resist'}]:[...slots.units.filter(u=>u.side==='party').flatMap(u=>u.skills.map(s=>({id:s.id,variant:'default'}))),
  {id:'clover-1',variant:'self'},{id:'marigold-3',variant:'resist'},{id:'cinnamon-4',variant:'team'},{id:'clover-1',variant:'reflect'}];
-const report={method:'Legal A6/V5 cat choices on isolated seed71 fixtures (not progression or balance samples), 3 enemies, both sizes/motion modes/x1-x3. Includes weakest-self, resist, revive/team-heal and reflection.',cases:[],shots:[],errors:[],complete:false};
+const report={method:outcomes?'Real resisted/immune A6/V5 outcomes from isolated seed71 fixtures; 3 enemies or a boss, both sizes/motion modes/x1-x3. Check canvas/DOM words, row reservations, HP/face separation and no false damage. No balance or performance sample.':'Legal A6/V5 cat choices on isolated seed71 fixtures (not progression or balance samples), 3 enemies, both sizes/motion modes/x1-x3. Includes weakest-self, resist, revive/team-heal and reflection.',cases:[],shots:[],errors:[],complete:false};
 if(process.argv.includes('--resume')){const previous=JSON.parse(await readFile(resolve(out,'review.json'),'utf8'));report.cases=previous.cases;report.shots=previous.shots;}
 const key=c=>[c.width,c.scenario.id,c.scenario.variant,c.reduced,c.speed].join(':');
 const completed=new Set(report.cases.map(key));
@@ -27,13 +28,16 @@ try{
    if(live&&(!selected.includes(scenario.id)||speed!==1||scenario.variant!=='default'))continue;
    const setup=await page.evaluate(async({scenario,reduced,speed})=>{
     const R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts'),G=await import('/src/game/cardrpg/depth/feel-lab.ts');
-    const b=R.createBattle({...G.galleryFixture(scenario.id).battle.initial,enemies:['button-guard','binding-thread','needle-moth']});
+    const b=R.createBattle({...G.galleryFixture(scenario.id).battle.initial,enemies:scenario.variant==='boss'?['yarn-giant']:['button-guard','binding-thread','needle-moth']});
     const a=b.actors.find(a=>a.catalogId===scenario.id.split('-')[0]),patient=b.actors.find(x=>x.side===a.side&&x.id!==a.id),enemy=b.actors.find(x=>x.side==='enemy');
     a.skills=R.CAT_BY_ID[a.catalogId].skills.map(s=>s.id);a.charge=100;a.turns=3;a.shield=45;
     for(const x of b.actors.filter(x=>x.side===a.side))x.hp=Math.floor(x.maxHp*(x.id===a.id?.8:.4));
     patient.hp=scenario.id==='cinnamon-4'&&scenario.variant!=='team'?0:Math.floor(patient.maxHp*.15);
     if(scenario.variant==='self')a.hp=Math.floor(a.maxHp*.05);
-    if(scenario.variant==='resist')enemy.effectResist=100000;
+    for(const x of b.actors.filter(x=>x.side==='enemy')){
+     if(['resist','both','boss'].includes(scenario.variant))x.effectResist=100000;
+     if(['immune','both','boss'].includes(scenario.variant))x.bonuses.controlImmuneUntil=b.round;
+    }
     if(scenario.variant==='reflect')enemy.statuses.push({id:'riposte',stacks:1,remaining:2,source:enemy.id,appliedRound:1});
     b.queue=[a.id,...b.queue.filter(id=>id!==a.id)];b.v4.committed=true;
     const choice=R.legalChoices(b).find(c=>c.skillId===scenario.id);if(!choice)throw Error('No legal choice '+scenario.id);
@@ -41,7 +45,9 @@ try{
     m.act(choice);if(!m.plan)throw Error('No plan '+scenario.id);m.impactApplied=true;m.paused=true;m.notify(false);
     const events=m.plan.events.filter(e=>e.actorId===a.id),side=id=>b.actors.find(x=>x.id===id)?.side;
     const recipients=(types,friendly)=>[...new Set(events.filter(e=>types.includes(e.type)).flatMap(e=>e.targetIds).filter(id=>(side(id)===a.side)===friendly))];
-    return{actor:a.id,patient:patient.id,enemy:enemy.id,damage:recipients(['damage'],false),hostile:recipients(['damage','status_apply','status_expire','fizzle'],false),friendly:recipients(['heal','shield','status_apply','status_expire'],true),heal:recipients(['heal'],true),shield:recipients(['shield'],true),anyDamage:m.plan.events.some(e=>e.type==='damage'),events:m.plan.events.map(e=>({type:e.type,actor:e.actorId,targets:e.targetIds,amount:e.amount})),before:JSON.stringify(b)};
+    const failed=b.log.slice(0,b.log.findIndex(e=>e.kind==='action')+1).filter(e=>e.kind==='resist'||e.kind==='immune');
+    const expected=[...new Set(failed.map(e=>e.targetId+':'+(e.kind==='immune'?'Immune':'Resisted')))];
+    return{expected,actor:a.id,patient:patient.id,enemy:enemy.id,damage:recipients(['damage'],false),hostile:recipients(['damage','status_apply','status_expire','fizzle'],false),friendly:recipients(['heal','shield','status_apply','status_expire'],true),heal:recipients(['heal'],true),shield:recipients(['shield'],true),anyDamage:m.plan.events.some(e=>e.type==='damage'),events:m.plan.events.map(e=>({type:e.type,actor:e.actorId,targets:e.targetIds,amount:e.amount})),before:JSON.stringify(b)};
    },{scenario,reduced,speed});
    await page.waitForFunction(()=>{const s=window.__depthScene,m=window.__depthReview;return s?.ready&&s.audit().stage.source==='painted'&&m.battle.actors.every(a=>s.actors.get(a.id)?.asset===a.catalogId);});
    if(live){
@@ -64,13 +70,28 @@ try{
     const check=(x,y,w,h)=>{const data=c.getImageData(x,y,w,h).data;for(let i=3;i<data.length;i+=4)if(data[i])opaque++;};
     for(const a of s.view().actors){const h=s.socket(a.id,'head');if(h&&a.hp>0)check(Math.round(h.x)-2,Math.round(h.y)-2,4,4);}
     for(const b of s.labelAudit.cards)check(Math.round(b.x+1),Math.round(b.y+1),Math.max(1,Math.floor(b.width-2)),Math.max(1,Math.floor(b.height-2)));
-    return{expected,primary,healing,shields,draws,peak,impacts,shake,opaque,overlaps:s.labelAudit.overlaps,active:fx.stats.active,zoom:s.camera.zoom,offsets:s.audit().stage.offsets,last,step,numbers:s.numbers.drawn.map(n=>({id:n.id,text:n.text})),hurt:[...s.actors].filter(([,a])=>a.hurtAt>=3).map(([id])=>id)};
+    const intersects=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+    const numberRows=s.numbers.drawn,lanes=s.anchors.filter(a=>a.textLane).map(a=>({id:a.id,...a.textLane}));
+    const hp=s.anchors.filter(a=>a.visible).map(a=>({x:a.labelX-69,y:a.labelY,width:138,height:52}));
+    const collisions=numberRows.flatMap(n=>[...s.labelAudit.heads,...hp].filter(b=>intersects(n,b)));
+    const escaped=numberRows.filter(n=>{const lane=lanes.find(a=>a.id===n.id);return !lane||n.x<lane.x-2||n.y<lane.y-2||n.x+n.width>lane.x+lane.width+2||n.y+n.height>lane.y+lane.height+2;});
+    m.notify(false);
+    return{expected,primary,healing,shields,draws,peak,impacts,shake,opaque,overlaps:s.labelAudit.overlaps,active:fx.stats.active,zoom:s.camera.zoom,offsets:s.audit().stage.offsets,last,step,collisions:collisions.length,escaped:escaped.length,rows:s.view().cardNumberRows,lanes,numbers:numberRows.map(n=>({id:n.id,text:n.text})),hurt:[...s.actors].filter(([,a])=>a.hurtAt>=3).map(([id])=>id)};
    },{setup,scenario,speed});
    const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
    if(!same(contact.primary,contact.expected)||contact.opaque||contact.overlaps||contact.draws>150||!contact.active||(!setup.damage.length&&contact.impacts)||(setup.damage.length&&!contact.impacts))throw Error('Cat contact '+JSON.stringify({scenario,width,reduced,speed,setup:{...setup,before:undefined},contact}));
    if(setup.hostile.length&&(!same(contact.healing,setup.heal)||!same(contact.shields,setup.shield)))throw Error('Cat support '+JSON.stringify({scenario,setup:{...setup,before:undefined},contact}));
    if((!setup.anyDamage||reduced)&&contact.shake||reduced&&(contact.zoom!==1||contact.offsets.some(v=>v!==0)))throw Error('Motion '+JSON.stringify({scenario,contact}));
    if(scenario.id==='marigold-3'&&(contact.hurt.length||contact.numbers.some(n=>n.text.startsWith('−'))))throw Error('Debuff presented as damage');
+   if(outcomes){
+    const words=contact.numbers.filter(n=>['Resisted','Immune','No effect'].includes(n.text)).map(n=>n.id+':'+n.text);
+    // Resistance is capped: Cinnamon's Burn can still land. Compare the exact
+    // raw outcome, retaining that successful-status control in the sweep.
+    if(scenario.id!=='cinnamon-1'&&!setup.expected.length||!same(words,setup.expected)||contact.collisions||contact.escaped||contact.numbers.some(n=>n.text==='−0'))throw Error('Outcome words '+JSON.stringify({scenario,setup:{...setup,before:undefined},contact}));
+    await page.waitForFunction(count=>document.querySelectorAll('.dp-float-number .dp-number-fizzle').length===count,setup.expected.length);
+    const dom=await page.locator('.dp-float-number .dp-number-fizzle').allTextContents();
+    if(!same(dom,setup.expected.map(value=>value.split(':').at(-1))))throw Error('Accessible result words '+JSON.stringify({dom,expected:setup.expected}));
+   }
    if(speed===1&&(selected.includes(scenario.id)||scenario.variant!=='default')&&(!reduced||scenario.id==='clover-1'&&scenario.variant==='default')){
     const file=`${scenario.id}-${scenario.variant}-${reduced?'calm':'motion'}-${width}.webp`;await sharp(await page.screenshot()).webp({quality:88}).toFile(resolve(out,file));report.shots.push({file,width,height});
    }

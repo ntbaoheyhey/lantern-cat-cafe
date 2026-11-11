@@ -1,4 +1,5 @@
 # User corrections
+2026-11-11 resume11:14UTC: handoff identifies resisted/immune text filtered out. Preserved unfinished patch and failed focused test; target inference also omitted all-fizzle outcomes. Continue repair and both-size verification without rerunning completed cat work.
 2026-11-11 resume10:35UTC: user handoff confirms pushed Kettle fix; verified clean205d1e816/draft439. Continue actual combat utility turns, beginning with Spool Ram charge; preserve all prior completed checks.
 2026-11-11: Original Lane C request saved byte-for-byte in PROMPT.txt. Supersedes old 3D direction. Designer animates existing concept art; Codex owns gameplay, pipeline, stage and all skill VFX. PSD session output is read-only.
 2026-11-11 resume: user handoff confirms C6 sweep completed. Verified clean pushed2c0bc1555; preserved C0–C6 and continued C7.

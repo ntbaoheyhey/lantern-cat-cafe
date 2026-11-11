@@ -4,6 +4,7 @@ import { STATUSES } from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import type { BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EffectPlan } from './effects';
+import { fizzleLabel } from './impact-labels';
 
 export interface StatusBeat { kind:'apply'|'tick'|'trigger'|'expire'|'burst'; statusId:VisualStatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
 export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[]; reactions?:ReactionBeat[]; landings?:LandingBeat[]; tickIds?:Map<number,string>; bitterTargets?:Set<string> }
@@ -58,10 +59,12 @@ export function statusImpactLabels(plan:EffectPlan, targetId:string, presentatio
   const labels:(TurnEvent&{hits:number;dot:boolean;statusId?:string;bitter?:boolean})[]=[];
   for(const e of plan.events) {
     if(!e.targetIds.includes(targetId))continue;
-    const dot=presentation.kinds.get(e.seq)==='dot',numeric=['damage','heal','shield'].includes(e.type);
-    const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&x.statusId===presentation.tickIds?.get(e.seq)&&Math.sign(x.amount)===Math.sign(e.amount)):undefined;
+    const kind=presentation.kinds.get(e.seq),dot=kind==='dot',numeric=['damage','heal','shield'].includes(e.type);
+    const note=e.type==='fizzle'?fizzleLabel(e,kind):(e.type==='status_apply'||e.type==='status_expire')?(statusWords.get(e.note??'')??e.note):e.note;
+    const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&x.statusId===presentation.tickIds?.get(e.seq)&&Math.sign(x.amount)===Math.sign(e.amount))
+      :e.type==='fizzle'?labels.find(x=>x.type==='fizzle'&&x.note===note):undefined;
     if(existing){existing.amount+=e.amount;existing.hits++;existing.critical ||= e.critical;}
-    else labels.push({...e,note:(e.type==='status_apply'||e.type==='status_expire')?(statusWords.get(e.note ?? '')??e.note):e.note,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
+    else labels.push({...e,note,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
   }
   return labels;
 }

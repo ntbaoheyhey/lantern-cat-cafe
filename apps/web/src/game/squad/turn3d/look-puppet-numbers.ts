@@ -1,12 +1,12 @@
 /** Canvas-owned impact text; reuses the resolved events and reserved target lanes. */
 import type { EffectFrame, EffectPlan } from './effects';
-import { impactLabels } from './impact-labels';
+import { impactLabels, visibleImpactLabel } from './impact-labels';
 import { statusImpactLabels, type StatusPresentation } from './card-status-beats';
 import type { Anchor } from './scene';
 export function puppetNumberRows(plan:EffectPlan,presentation?:StatusPresentation){
   return plan.targetIds.map(id=>({id,labels:(presentation?statusImpactLabels(plan,id,presentation):impactLabels(plan.events,id))
-    .filter(e=>['damage','heal','shield','death','status_apply'].includes(e.type)&&(e.amount>0||e.type==='death'))
-    .map(e=>({text:e.type==='death'?'KO':e.type==='status_apply'?e.note??'':`${e.type==='heal'?'+':e.type==='shield'?'◇':'−'}${e.amount}${e.critical?'!':''}${'bitter' in e&&e.bitter?' −50%':''}`,
+    .filter(visibleImpactLabel)
+    .map(e=>({text:e.type==='death'?'KO':e.type==='status_apply'||e.type==='fizzle'?e.note??'':`${e.type==='heal'?'+':e.type==='shield'?'◇':'−'}${e.amount}${e.critical?'!':''}${'bitter' in e&&e.bitter?' −50%':''}`,
       color:e.type==='heal'?'#a9ffd3':e.type==='shield'?'#b6eaff':e.critical?'#ffe38c':'#fff0d6',critical:!!e.critical,type:e.type,amount:e.amount}))})).filter(row=>row.labels.length);
 }
 export class PuppetNumbers {

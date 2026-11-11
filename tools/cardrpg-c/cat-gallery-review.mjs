@@ -1,7 +1,7 @@
 /** Source/offline cat previews share current rules and preserve split recipient paint. */
 import {createRequire} from 'node:module';import {mkdir,readFile,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';
 const root=process.cwd(),require=createRequire(root+'/apps/web/package.json'),{chromium}=require('@playwright/test'),sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
-const offline=process.argv.includes('--offline'),tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c11-cat-'+(offline?'offline':'source');
+const offline=process.argv.includes('--offline'),labels=process.argv.includes('--labels'),tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c11-cat-'+(offline?'offline':'source');
 if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid output tag');
 const out=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
 const slots=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8')),ids=slots.units.filter(u=>u.side==='party').flatMap(u=>u.skills.map(s=>s.id));
@@ -27,13 +27,19 @@ try{
     for(const a of g.view.actors){const h=s.socket(a.id,'head');if(h&&a.hp>0)check(Math.round(h.x)-2,Math.round(h.y)-2,4,4);}
     for(const b of s.labelAudit.cards)check(Math.round(b.x+1),Math.round(b.y+1),Math.max(1,Math.floor(b.width-2)),Math.max(1,Math.floor(b.height-2)));
     const stage=document.querySelector('#stage').getBoundingClientRect();
-    return{before,step,last,shake,impacts,draws,active:fx.stats.active,opaque,overlaps:s.labelAudit.overlaps,damage,healing,shields,heal:recipients('heal'),shield:recipients('shield'),own:own.map(p=>({target:p.target,glyph:p.layer.glyph,group:p.layer.recipients??p.layer.anchor})),numbers:s.numbers.drawn.map(n=>({id:n.id,text:n.text})),hurt:[...s.actors].filter(([,a])=>a.hurtAt>=3).map(([id])=>id),overflow:document.documentElement.scrollWidth>innerWidth,stageVisible:stage.top>=0&&stage.bottom<=innerHeight,legal:g.fixture.battle.choices.length===1&&g.fixture.battle.choices[0].skillId===plan.skillId};
+    const intersects=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+    const hp=s.anchors.filter(a=>a.visible).map(a=>({x:a.labelX-69,y:a.labelY,width:138,height:52}));
+    const numbers=s.numbers.drawn,collisions=numbers.flatMap(n=>[...s.labelAudit.heads,...hp].filter(b=>intersects(n,b)));
+    const escaped=numbers.filter(n=>{const lane=s.anchors.find(a=>a.id===n.id)?.textLane;return !lane||n.x<lane.x-2||n.y<lane.y-2||n.x+n.width>lane.x+lane.width+2||n.y+n.height>lane.y+lane.height+2;});
+    const missing=Object.entries(g.view.cardNumberRows).filter(([id,count])=>numbers.filter(n=>n.id===id).length!==count);
+    return{before,step,last,shake,impacts,draws,active:fx.stats.active,opaque,overlaps:s.labelAudit.overlaps,damage,healing,shields,heal:recipients('heal'),shield:recipients('shield'),own:own.map(p=>({target:p.target,glyph:p.layer.glyph,group:p.layer.recipients??p.layer.anchor})),numbers:numbers.map(n=>({id:n.id,text:n.text})),labels:{collisions:collisions.length,escaped:escaped.length,missing},hurt:[...s.actors].filter(([,a])=>a.hurtAt>=3).map(([id])=>id),overflow:document.documentElement.scrollWidth>innerWidth,stageVisible:stage.top>=0&&stage.bottom<=innerHeight,legal:g.fixture.battle.choices.length===1&&g.fixture.battle.choices[0].skillId===plan.skillId};
    },{speed});
    const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
    if(!contact.active||contact.opaque||contact.overlaps||contact.draws>150||contact.overflow||!contact.stageVisible||!contact.legal)throw Error('Gallery contract '+JSON.stringify({id,width,speed,reduced,contact}));
    if(contact.damage&&(!contact.impacts||!reduced&&!contact.shake)||(!contact.damage||reduced)&&contact.shake||!contact.damage&&contact.impacts)throw Error('Damage semantics '+JSON.stringify({id,contact}));
    if(contact.damage&&(!same(contact.heal,contact.healing)||!same(contact.shield,contact.shields)))throw Error('Mixed support '+JSON.stringify({id,contact}));
    if(id==='marigold-3'&&(contact.hurt.length||!contact.own.some(p=>p.group==='target')||contact.numbers.some(n=>n.text.startsWith('−'))))throw Error('Debuff contact '+JSON.stringify(contact));
+   if(labels&&(contact.labels.collisions||contact.labels.escaped||contact.labels.missing.length))throw Error('Outcome layout '+JSON.stringify({id,width,reduced,speed,labels:contact.labels}));
    if(speed===1&&['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4'].includes(id)&&(!reduced||id==='clover-1')){const file=`${id}-${reduced?'calm':'motion'}-${width}.webp`;await sharp(await page.screenshot()).webp({quality:88}).toFile(resolve(out,file));report.shots.push({file,width,height});}
    const tail=await page.evaluate(contact=>{const g=window.vfxGallery,s=g.scene;for(let at=contact.last+contact.step;at<=g.fixture.plan.duration+2400;at+=contact.step)g.sample(at,3+at/1000);return{late:s.effects.stats.active,drops:s.effects.stats.dropped,hits:s.eventAudit.filter(e=>e.name==='hit').length,unchanged:contact.before===JSON.stringify(g.fixture.battle)};},contact);
    report.cases.push({id,width,height,reduced,speed,contact:{...contact,before:undefined},tail});if(tail.late||tail.drops||tail.hits!==1||!tail.unchanged)throw Error('Gallery cleanup '+JSON.stringify(tail));

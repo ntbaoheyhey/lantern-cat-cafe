@@ -71,3 +71,5 @@ Patrol follow-up: all14c11-patrol-gear captures inspected at both sizes. A compa
 Kettle semantic follow-up:14finalbattle/22source/22offlinecaptures inspected. Damage lands on its victim; opening shield/Warm, low-HP Burn and genuine enemy support remain separate and legible. Face/HP lanes stay clear at both sizes. Correctness fix only; weighted7.79unchanged.
 
 Utility follow-up: inspected14finalbattle+10source+10offlinecaptures. A bobbin core makes winding visible on Spool, the following strike has damage numbers on cats, and support remains friendly. Charge/strike gallery toggle fits both sizes. Weighted7.79unchanged; correctness/readability refinement is not player-study evidence.
+
+Outcome follow-up:34captures inspected; short Resisted/Immune words and stacked damage/status rows remain clear of faces/HP. Pure resisted Marigold has no damage cue. Rightmost enemy/minion clips during ultimate zoom in the retained battle captures; next framing fix. Weighted7.79unchanged. C11-OUTCOME-RECEIPT.md.
