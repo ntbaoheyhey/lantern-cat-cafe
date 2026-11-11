@@ -6,11 +6,11 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { PageTitle } from '../shared';
 import type { DepthModel } from './model';
 import { ScoutingV4 } from './ScoutingV4';
-import { dailySuppliesFullV4 } from './star-plans-v4';
 import { RouteTonic } from './RouteTonic';
 import { RouteCampfire, RouteShop } from './RouteStops';
 import { RouteStory, RouteTreasure } from './RouteEvents';
 import { RouteRewards } from './RouteRewards';
+import { RouteComplete } from './RouteComplete';
 const symbols = { battle: '⚔', elite: '✦', campfire: '♨', shop: '▧', event: '✉', treasure: '◇', boss: '♛' };
 export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode }) {
   const run = m.state.run;
@@ -33,7 +33,7 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
       <span>{symbols[node.kind]}</span><b>{node.kind}</b><small>{run.visited.includes(node.id) ? 'Visited' : node.id === run.current ? 'Here' : available.includes(node.id) ? 'Choose' : 'Ahead'}</small>{run.gameplayA6&&node.enemies.length>0&&<PowerA6 label="Rec." value={nodePower(node)}/>}<NodeStarsV4 m={m} node={node}/>{run.gameplayV4 && R.nodeClueV4(node) && <small>{R.nodeClueV4(node) === 'opening' ? 'Opening clue' : R.nodeClueV4(node) === 'closing' ? 'Closing clue' : 'Reach clue'}</small>}</button>)}</div>)}</section>
   </>;
   const activity = <>
-    {run.complete ? <section className="cr-panel"><h2>{run.won ? 'The lantern stays lit.' : 'Every journey leaves a lesson.'}</h2><p>{R.gameplayV4(m.state) ? (dailySuppliesFullV4(m.state) ? 'Today’s supplies are gathered. Your stars and collected equipment are saved.' : 'Your earned supplies, stars and collected equipment are saved.') : run.won ? 'Chapter rewards and equipment are already in your account.' : (run.gameplayV4 ? 'Your rewards are safe. Bring a fresh plan next time.' : 'Your capped partial rewards and earned gear are already in your account.')}</p>{run.earnedItems.map((id, index) => <p key={index}>{R.GEAR_BY_ID[id]?.name??id}</p>)}<div className="cr-actions"><button className="cr-primary" onClick={() => m.go('inventory')}>{R.gameplayV4(m.state)&&!run.earnedItems.length?'Review equipment':'Equip your rewards'}</button><button onClick={() => m.go('hub')}>Return to cafe</button>{run.mode === 'tower' && run.won && <button onClick={() => m.apply(R.nextTowerFloor(m.state), 'Next Tower floor opened.')}>Climb to floor {run.floor + 1}</button>}</div></section>
+    {run.complete ? <section className="cr-panel"><RouteComplete m={m}/></section>
       : run.rewardChoices.length ? <section className="cr-panel"><RouteRewards m={m}/></section>
       : current && !current.enemies.length && <section className="cr-panel">
         {current.kind === 'event' && <RouteStory m={m}/>}

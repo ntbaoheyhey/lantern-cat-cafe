@@ -55,3 +55,5 @@ Bag enhancement checkpoint: C11-BAG-ENHANCE-RECEIPT.md.12wrongwearerquotes->28br
 Bag bonus checkpoint: C11-BAG-BONUS-RECEIPT.md.42browser/20keyboard equips/31focused/types/lintPASS;42views inspected. Exact recipient/donor set/unique changes visible from Equip; fixture celebration acknowledgement isolated. Demo/score/gameplay unchanged.
 
 Route stops checkpoint: C11-STOPS-RECEIPT.md.38browser/16keyboard/27distincttests/types/lint/22viewsPASS; cap/shortage/HP/rank previews preserve exact transactions and fullHP escape. Initial broad web run had2failures; focused fixes pass, no fullsuite claim. Demo/score unchanged.
+
+Completion checkpoint: C11-COMPLETION-RECEIPT.md.6baseline failures→114browser/86keyboard/19focused/types/lint/36viewsPASS. Grouped template receipts open newest owned matching gear; conversion/empty copy and A6floor30 handled. No reward/schema/balance/demo/score change.
