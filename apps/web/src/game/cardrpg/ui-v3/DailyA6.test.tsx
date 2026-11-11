@@ -106,3 +106,41 @@ it('keeps the cafe ribbon collectible when every currency is capped',()=>{
  expect(m.state.account.currencies).toEqual(before);
  expect(screen.getByRole('button',{name:'Ready gifts 0'})).toBeTruthy();
 });
+
+it('describes completed gifts as waiting while supplies, patrol or the clock block collection',()=>{
+ const m=milestoneGifts();m.state=R.metaCommand(m.state,{type:'level',cardId:'mochi'}).state;
+ m.state.account.daily.earned={...R.depthCaps(m.state)};
+ render(<DailyA6 m={m}/>);
+ const task=screen.getByRole('button',{name:'Collect A little stronger'}),card=task.closest('article')!;
+ expect(within(card).getByText('Gift waiting')).toBeTruthy();
+ expect(within(card).queryByText('Ready to collect')).toBeNull();
+ expect(screen.getByRole('status').textContent).toContain('Today’s supplies are full');
+ let before=R.exportSave(m.state);fireEvent.click(task);expect(R.exportSave(m.state)).toBe(before);
+ act(()=>{m.state.account.daily.earned={fish:0,stamps:0,threads:0,essence:0};m.state.tutorial=4;m.state=R.startRun(m.state,1,11).state;m.notify(false);});
+ expect(screen.getByRole('status').textContent).toBe('Finish your patrol first.');
+ expect(within(card).getByText('Gift waiting')).toBeTruthy();
+ before=R.exportSave(m.state);fireEvent.click(task);expect(R.exportSave(m.state)).toBe(before);
+ act(()=>{m.state.run=null;m.state.v4!.clockWatermark=100;m.notify(false);});
+ expect(screen.getByRole('status').textContent).toBe('Wait for the cafe clock to catch up.');
+ expect((task as HTMLButtonElement).disabled).toBe(true);
+});
+
+it('shows only the exact remaining login and weekly supplies before atomic collection',()=>{
+ const m=milestoneGifts();m.state=R.metaCommand(m.state,{type:'level',cardId:'mochi'}).state;
+ m.state.dailyA6!.weeklyPoints=30;
+ m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-7};
+ const before=m.state.account.currencies.stamps;
+ render(<DailyA6 m={m}/>);
+ const login=screen.getByRole('region',{name:'Seven day welcome gifts'}),current=login.querySelector('[data-current=true]')!;
+ expect(within(current as HTMLElement).getByRole('img',{name:'7 stamps'})).toBeTruthy();
+ expect(within(current as HTMLElement).queryByRole('img',{name:'100 fish'})).toBeNull();
+ const weekly=screen.getByRole('button',{name:'Collect 10-task weekly gift'});
+ expect(within(weekly).getByRole('img',{name:'7 stamps'})).toBeTruthy();
+ expect(within(weekly).queryByRole('img',{name:'10 threads'})).toBeNull();
+ fireEvent.click(weekly);
+ expect(m.state.account.currencies.stamps-before).toBe(7);
+ expect(m.state.dailyA6!.weeklyClaims).toEqual([10]);
+ const settled=R.exportSave(m.state);fireEvent.click(weekly);expect(R.exportSave(m.state)).toBe(settled);
+ expect((screen.getByRole('button',{name:'Collect login gift'}) as HTMLButtonElement).disabled).toBe(true);
+ expect(screen.getByRole('button',{name:'Daily board 0'})).toBeTruthy();
+});

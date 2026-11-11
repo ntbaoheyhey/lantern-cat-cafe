@@ -237,3 +237,7 @@ Mức cộng2/4/6/8%, khóa chuyến đi, đổi ví/mất kết nối/lỗi/ch�
 - Q36 xong: giá nâng, độ hiếm và chủ sở hữu trên Bag rõ hơn; nút40–44px, tên dài và chi phí nâng+12 vừa cả hai kích thước.
 - Đã sửa lỗi giữ vị trí cuộn khi đổi mèo/món/trang;56ảnh nguồn và28ảnh offline đã xem, lệnh trang bị/nâng cấp/khóa giữ đúng. Demo39,108,153byte, không lỗi trình duyệt.
 - Typecheck/lint và2.005test web qua (lệnh lọc test vô tình chạy toàn bộ, đã ghi); tiếp tục Q37 Daily: chữ dễ đọc và lý do chưa nhận được quà.
+
+2026-11-11T00:50:23Z: Q37 hoàn tất: Daily vừa 720p, chữ 14px/nút 40–44px; 34 ảnh nguồn và 34 ảnh offline đã duyệt.
+Hiện đúng lý do chờ và phần thưởng còn nhận được; chín test/typecheck/lint giữ nguyên đạt, demo 39.108.481 byte, không lỗi/gọi mạng.
+Tiếp tục Q38: chi phí gợi ý sau trận thua và giới hạn thời gian chờ, giữ nguyên luật gợi ý và phần thưởng.

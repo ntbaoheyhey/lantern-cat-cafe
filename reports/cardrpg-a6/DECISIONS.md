@@ -132,3 +132,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T00:27:02Z Q35 accepts the original ceramic/gilt mantel with14px text/44px controls and unchanged read-only wallet rules. Q36 addresses the observed tied-low Bag cost/owner/stat labels (12px and36px details tabs); bounded CSS refinement, no new gear or economy system. Existing final difficulty fallback remains explicit.
 
 - 2026-11-11T00:35:45Z Q37 scope from retained q23-offline-board/1280-weekly-ready and current DailyA6: keep its board/shelves composition, use existing preview.reason for honest availability and reward previews. This repairs a presentational mismatch when completed tasks are blocked and makes exact weekly gifts reviewable. No new system or economic retuning.
+
+- 2026-11-11T00:43:28Z Q38 addresses the lowest self-review category without reopening the closed Q13f numeric loop. Current AdviceV4 has no response timeout and hides fallback upgrade cost. Make existing affordable actions and their consequences reviewable; keep the advisor algorithm and all battle/economy constants fixed. Queue after Q37, no new simulator or final-seed rerun.

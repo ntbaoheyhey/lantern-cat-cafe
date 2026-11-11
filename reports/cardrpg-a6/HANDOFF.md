@@ -1,11 +1,11 @@
-# Lane A6 handoff — 2026-11-11T00:36:38Z
-NOW: Q36 complete; commit/push then start Q37 Daily readability and honest blocked states.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed35e8d209f; draft438 updated after commit.
-NEXT: 1. Use existing dailyBoardA6 preview.reason/reward for readable availability and exact receipts.
-NEXT: 2. Preserve all seven login/five task/fourteen milestone cards and public claims; test caps/route/clock/keyboard at both sizes.
-NEXT: 3. Package Q37; integrate any newer published B tip.
-RUNNING: Vite91373/5960 retained; no heavy job/lease. Q36 package log /tmp/cardrpg-a6-q36-package.log complete.
-DONE: Q36 56source+28offlineviews inspected;39108153B/447assets/60chunks;types/lint/2005web tests pass. Exactcosts/ownership/locks/scroll/focus/reducedmotion pass;0errors/network/clipping.
-DONE: Q0–Q35/prior onboarding/Q15 final seeds/run/E2E retained. BP37 current at fetch; TASK exact attachment.
-KNOWN: Target8.5 unmet; earlyloss/recovery/HP/bosstail retained underR-3; no fourth numeric tuning loop. Inadvertent fullweb run logged; use exec vitest run without -- for filters.
-DECISIONS: One agent/draft only/original art/fully auto; no new systems; Q37 presentational reasons/rewards from existing public rules.
+# Lane A6 handoff — 2026-11-11T00:50:23Z
+NOW: Q37 accepted; commit/push/draft438 update, then Q38 defeat advice lifecycle and visible cost.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed54a3e159b; Q37 commit next.
+NEXT 1: Bound the existing advice worker; preserve recommendation candidates, scores and public apply checks.
+NEXT 2: Show exact fallback cost and accurate cafe/Tower return; verify success/no-change/error/timeout/stale/unmount.
+NEXT 3: Inspect both result sizes, integrate any newer published B tip, package offline and continue lowest screen.
+RUNNING: Vite91373/5960. No heavy job/lease; /tmp/cardrpg-a6-q37-offline.log complete.
+DONE: Q37 34 source +34 offline views inspected;39108481B;9 Daily tests/types/lint pass; exact claims/caps/route/clock/keyboard/reduced motion,0errors/network/clipping.
+DONE: Q0–Q36, onboarding and Q15 final seeds/run/E2E retained. B P37 current at last fetch; TASK exact attachment.
+KNOWN: Target8.5 unmet; early loss/recovery/HP/boss tail retained underR-3; no fourth numeric tuning loop. Use exec vitest run without -- for filters.
+DECISIONS: One agent/draft only/original art/fully auto; no new systems. Q38 fixes presentation/lifecycle only.
