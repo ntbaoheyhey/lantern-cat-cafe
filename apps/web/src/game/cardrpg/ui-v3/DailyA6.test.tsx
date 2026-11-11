@@ -144,3 +144,16 @@ it('shows only the exact remaining login and weekly supplies before atomic colle
  expect((screen.getByRole('button',{name:'Collect login gift'}) as HTMLButtonElement).disabled).toBe(true);
  expect(screen.getByRole('button',{name:'Daily board 0'})).toBeTruthy();
 });
+
+it('discloses reduced Tower gifts at the Events collection entry and preserves exact one-time claims',()=>{
+ const m=milestoneGifts();m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-3,threads:R.depthCaps(m.state).threads-2};
+ const before=R.exportSave(m.state),expected=R.claimTowerChestA6(m.state,5);
+ render(<DailyA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:/Ready gifts/}));
+ const button=screen.getByRole('button',{name:'Collect Floor 5 chest'}),gift=within(button.closest('article')!);
+ for(const text of ['60 stamps','15 threads','3 stamps','2 threads'])expect(gift.getByText(text)).toBeTruthy();
+ expect(button.textContent).toBe('Collect reduced gift');
+ const description=button.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');
+ expect(description).toContain('Collecting today uses the whole gift');expect(description).toContain('3 stamps');
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(expected.state);
+ const settled=R.exportSave(m.state);fireEvent.click(button);expect(R.exportSave(m.state)).toBe(settled);
+});

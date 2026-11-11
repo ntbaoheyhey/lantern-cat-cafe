@@ -50,3 +50,7 @@
 2026-11-11T17:06:36.976713+00:00 resume: user says continue; handoff identifies completed story/treasure patch. Preserved56browser/40focused/types/lint passing logs and unfinished files; inspected30captured views without replaying accepted work. Continue C8/C11.
 
 2026-11-11T17:23:04.697406+00:00 resume: user says continue; reward handoff preserved as clean pushed900647e44. No reward checks replayed. Continued route-completion review; designer inbox empty.
+
+2026-11-11T17:29:12.278223+00:00 resume: user says continue; handoff confirms114browser/86keyboard/36views. Verified clean pushed743e4eee2; preserve completed work and continue Tower gift eligibility, caps and navigation. Designer inbox empty.
+
+2026-11-11T17:37:04.038178+00:00 resume: user says continue; inherited Events focus/local-note fixes and passing logs. Preserved all unfinished files, reviewed final captures and finished Tower checkpoint without rerunning accepted checks.

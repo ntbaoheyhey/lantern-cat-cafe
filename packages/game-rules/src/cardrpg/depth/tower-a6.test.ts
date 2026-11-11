@@ -2,6 +2,19 @@ import {expect,it} from 'vitest';
 import {clone} from '../internal';
 import * as R from './index';
 const ready=(seed=3)=>{const s=R.setGameplayA6(R.createDepthAccount(seed,0),true);s.cleared=[1,2,3];for(const c of s.account.cards)c.level=10;return s;};
+it('quotes the whole gift separately from available space without changing partial-claim settlement',()=>{
+ const s=ready();s.towerBest=30;s.account.daily.earned={...R.depthCaps(s),threads:R.depthCaps(s).threads-12};
+ const before=R.exportSave(s);
+ for(const floor of R.TOWER_CHESTS_A6){const p=R.towerChestA6(s,floor);
+  expect(p.requested).toEqual({stamps:50+floor*2,threads:10+floor});expect(p.reward).toEqual({stamps:0,threads:12});expect(p.reason).toBeNull();
+ }
+ expect(R.exportSave(s)).toBe(before);
+ const result=R.claimTowerChestA6(s,5);expect(result.ok).toBe(true);
+ expect(result.state.account.currencies).toEqual({...s.account.currencies,threads:s.account.currencies.threads+12});
+ expect(result.state.challengeClaims).toContain('a6-tower-chest-5');
+ const next=R.metaCommand(R.importSave(R.exportSave(result.state)),{type:'advanceLocalDay'}).state;
+ expect(R.claimTowerChestA6(next,5).ok).toBe(false);expect(R.towerChestA6(next,10).reward).toEqual({stamps:70,threads:20});
+});
 it('has thirty fixed floors, ordered access and six milestone chests',()=>{
  const locked=R.setGameplayA6(R.createDepthAccount(3,0),true);
  expect(R.startTowerFloorA6(locked).ok).toBe(false);

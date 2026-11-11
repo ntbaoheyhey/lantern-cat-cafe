@@ -86,3 +86,50 @@ it('keeps every gift disabled during a route and exposes the correct return acti
  expect(screen.getByText('All six gifts are safely with your crew.')).toBeTruthy();
  expect(screen.getAllByRole('button',{name:/^Floor .* Collected$/})).toHaveLength(6);
 });
+
+it('discloses the full gift and the one-time cost of collecting a reduced amount',()=>{
+ const m=earnedTower();m.state.account.daily.earned={...R.depthCaps(m.state),threads:R.depthCaps(m.state).threads-12};
+ const expected=R.claimTowerChestA6(m.state,5),before=R.exportSave(m.state);
+ render(<TowerA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 6'}));
+ const gift=screen.getByRole('article',{name:'Floor 5 gift'}),button=within(gift).getByRole('button',{name:'Floor 5 Collect'});
+ expect(within(gift).getByText('60 stamps')).toBeTruthy();expect(within(gift).getByText('15 threads')).toBeTruthy();
+ expect(within(gift).getByText('0 stamps')).toBeTruthy();expect(within(gift).getByText('12 threads')).toBeTruthy();
+ expect(button.textContent).toBe('Collect reduced gift');
+ const description=button.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');
+ expect(description).toContain('Collecting today uses the whole gift');expect(description).toContain('12 threads');
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);
+ expect(m.state).toEqual(expected.state);
+});
+
+it('keeps capped rewards visible and restores full collection when a new day has room',()=>{
+ const m=earnedTower();m.state.account.daily.earned={...R.depthCaps(m.state)};
+ render(<TowerA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 0'}));
+ const gift=screen.getByRole('article',{name:'Floor 30 gift'});
+ expect(within(gift).getByText('110 stamps')).toBeTruthy();expect(within(gift).getByText('40 threads')).toBeTruthy();
+ expect(within(gift).getByText('0 stamps')).toBeTruthy();expect(within(gift).getByText('0 threads')).toBeTruthy();
+ const before=R.exportSave(m.state);fireEvent.click(within(gift).getByRole('button'));expect(R.exportSave(m.state)).toBe(before);
+ act(()=>m.apply(R.metaCommand(m.state,{type:'advanceLocalDay'})));
+ expect(screen.getByRole('button',{name:'Milestone gifts 6'})).toBeTruthy();expect(within(gift).queryByText('Today:')).toBeNull();
+ const expected=R.claimTowerChestA6(m.state,30);fireEvent.click(within(gift).getByRole('button'));expect(m.state).toEqual(expected.state);
+});
+
+it('plans only the next playable floor from a future gift, transfers focus and leaves the save alone',()=>{
+ const m=earnedTower();m.state.towerBest=5;render(<TowerA6 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Floor 1 cleared'}));
+ fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 1'}));const before=R.exportSave(m.state);
+ fireEvent.click(screen.getByRole('button',{name:'Plan floor 6 toward floor 30 gift'}));
+ const climb=screen.getByRole('button',{name:'Climb floor 6 →'});
+ expect(document.activeElement).toBe(climb);expect(R.exportSave(m.state)).toBe(before);
+ expect(screen.getByRole('button',{name:'Floor 6'}).getAttribute('aria-pressed')).toBe('true');
+ expect(screen.getByRole('button',{name:'Floor 30 locked'}).getAttribute('aria-pressed')).toBe('false');
+ const expected=R.enterNode(R.startTowerFloorA6(m.state,6).state,'0-0');fireEvent.click(climb);expect(m.state).toEqual(expected.state);
+});
+
+it('describes an active patrol accurately and does not offer future-floor planning',()=>{
+ const m=earnedTower();m.state.tutorial=4;m.state.towerBest=5;m.state=R.startRun(m.state,1,826015).state;
+ render(<TowerA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 0'}));
+ expect(within(screen.getByRole('article',{name:'Floor 5 gift'})).getByText('Finish your route first.')).toBeTruthy();
+ expect(screen.queryByRole('button',{name:/Plan floor/})).toBeNull();
+ const before=R.exportSave(m.state);fireEvent.click(screen.getByRole('button',{name:'Return to your patrol'}));
+ expect(m.screen).toBe('map');expect(R.exportSave(m.state)).toBe(before);
+});
