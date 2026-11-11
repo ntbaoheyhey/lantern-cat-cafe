@@ -9,6 +9,7 @@ import { ScoutingV4 } from './ScoutingV4';
 import { dailySuppliesFullV4 } from './star-plans-v4';
 import { RouteTonic } from './RouteTonic';
 import { RouteCampfire, RouteShop } from './RouteStops';
+import { RouteStory, RouteTreasure } from './RouteEvents';
 const symbols = { battle: '⚔', elite: '✦', campfire: '♨', shop: '▧', event: '✉', treasure: '◇', boss: '♛' };
 export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode }) {
   const run = m.state.run;
@@ -16,7 +17,6 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
   const nodePower = (node: R.RunNode) => R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0);
   const current = run.nodes.find(n => n.id === run.current);
   const available = R.availableNodes(run).map(n => n.id);
-  const event = R.EVENTS.find(e => e.id === current?.eventId);
   const rewardName = (id: string) => id.startsWith('skill:') ? R.SKILLS[id.slice(6)]!.name : R.BOON_BY_ID[id]!.name;
   const heading = <>
     <PageTitle eyebrow={`${run.mode} · floor ${run.floor}${showReviewTools(!!run.gameplayV4) ? ` · seed ${run.seed}` : ""}`} title={R.CHAPTERS[run.chapter - 1]!.name} />
@@ -36,10 +36,10 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
     {run.complete ? <section className="cr-panel"><h2>{run.won ? 'The lantern stays lit.' : 'Every journey leaves a lesson.'}</h2><p>{R.gameplayV4(m.state) ? (dailySuppliesFullV4(m.state) ? 'Today’s supplies are gathered. Your stars and collected equipment are saved.' : 'Your earned supplies, stars and collected equipment are saved.') : run.won ? 'Chapter rewards and equipment are already in your account.' : (run.gameplayV4 ? 'Your rewards are safe. Bring a fresh plan next time.' : 'Your capped partial rewards and earned gear are already in your account.')}</p>{run.earnedItems.map((id, index) => <p key={index}>{R.GEAR_BY_ID[id]?.name??id}</p>)}<div className="cr-actions"><button className="cr-primary" onClick={() => m.go('inventory')}>{R.gameplayV4(m.state)&&!run.earnedItems.length?'Review equipment':'Equip your rewards'}</button><button onClick={() => m.go('hub')}>Return to cafe</button>{run.mode === 'tower' && run.won && <button onClick={() => m.apply(R.nextTowerFloor(m.state), 'Next Tower floor opened.')}>Climb to floor {run.floor + 1}</button>}</div></section>
       : run.rewardChoices.length ? <section className="cr-panel"><h2>Carry one good thing forward.</h2><div className="dp-three">{run.rewardChoices.map(id => <button className="dp-reward" key={id} onClick={() => m.apply(R.chooseReward(m.state, id), 'Choice added for this run. Continue along the map.')}><h3>{rewardName(id)}</h3><p>{id.startsWith('skill:') ? (run.gameplayV4 ? 'Strengthen this skill by 12% tonight. Up to three upgrades.' : 'Increase this skill’s effect power by 12% for this run. Up to three upgrades.') : R.boonForMode(id, !!run.gameplayV4).description}</p><small>{id.startsWith('skill:') ? 'Skill upgrade' : `Night charm · ${R.BOON_BY_ID[id]!.archetype}`}</small></button>)}</div></section>
       : current && !current.enemies.length && <section className="cr-panel">
-        {current.kind === 'event' && event && <><h2>{event.name}</h2><p>{event.story}</p><div className="dp-three">{event.choices.map(choice => <button key={choice.id} disabled={run.points < choice.cost} onClick={() => m.apply(R.resolveNode(m.state, choice.id), 'The cafe will remember that choice.')}><h3>{choice.label}</h3><p>{choice.description}</p></button>)}</div></>}
+        {current.kind === 'event' && <RouteStory m={m}/>}
         {current.kind === 'shop' && <RouteShop m={m}/>}
         {current.kind === 'campfire' && <RouteCampfire m={m}/>}
-        {current.kind === 'treasure' && <><h2>Something tucked behind the cups</h2><div className="cr-actions"><button onClick={() => m.apply(R.resolveNode(m.state, 'points'))}>Take 70 run points</button><button onClick={() => m.apply(R.resolveNode(m.state, 'charm'))}>Take {R.BOON_BY_ID[R.shopStock(run)[0]!]!.name}</button></div></>}
+        {current.kind === 'treasure' && <RouteTreasure m={m}/>}
       </section>}
   </>;
   const pendingActivity = run.complete || run.rewardChoices.length > 0 || !!(current && !current.enemies.length);

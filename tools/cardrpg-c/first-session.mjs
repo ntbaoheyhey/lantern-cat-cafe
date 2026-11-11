@@ -180,7 +180,7 @@ try{
         if (!acted) acted = await click(button(/Heal the team|Heal the crew|Continue at full HP/), 'Rest and heal');
         if (!acted) acted = await click(button('Take 70 run points'), 'Claim treasure');
         if (!acted) acted = await click(button(/Save your points and leave|Keep points and leave/), 'Leave shop');
-        if (!acted && s.route?.kind === 'event') acted = await click(page.locator('.cr-panel .dp-three button:not(:disabled)'), 'Resolve story event');
+        if (!acted && s.route?.kind === 'event') acted = await click(page.locator('.dp-route-story button:not(:disabled), .cr-panel .dp-three button:not(:disabled)'), 'Resolve story event');
         if (!acted) acted = await click(page.locator('.dp-node:not(:disabled)'), 'Enter next node');
         if (!acted) acted = await close();
       } else acted = await close();

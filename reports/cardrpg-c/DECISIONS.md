@@ -90,3 +90,5 @@
 - 2026-11-11 C11 route tonic: preserve100HP/revival and route locks; reject all-full spending, share exact public-command previews in Map/Bag. Title contrast/singular copy repaired from screenshots; no balance retuning.
 
 2026-11-11T16:57:57.350266+00:00 C11: quote tea-cart/campfire choices from resolveNode, keep legacy caps and full-HP continuation; clear costs/recovery improve route decisions without retuning. Harness fallback uses actual legacy shell and centered panel scrolling after hybrid/setup/bounds failures.
+
+2026-11-11T17:06:36.976713+00:00 C11: quote story/treasure from resolveNode; keep fallen cats at0 for HP costs, living one-HP floor and positive revival. Disable capped choices, preserve point gift escape. No fourth tuning round; review post-battle rewards next.

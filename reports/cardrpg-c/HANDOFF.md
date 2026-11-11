@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 tea-cart/campfire verified; continue story-event/treasure decisions and intake.
+NOW: C11 story/treasure verified; continue post-battle rewards and intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review story-event HP/point tradeoffs and treasure reward clarity.
+NEXT1: check designer inbox; review post-battle reward ranks/stacks and exact benefits.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -27,4 +27,4 @@ KNOWN:growth18browser/25focused/types/lint/18viewsPASS;fullcosts/deficits/hints;
 KNOWN:awakening24browser/32focused+13final/types/lint/24viewsPASS;1visualrepair;2shotsretained;demo29226665unchanged.
 KNOWN:bagenhance12wrongquotes->28browser/10focused/types/lint/28viewsPASS;2visualrepairs;demo29226665unchanged.
 KNOWN:bagtransfer36browser/16equip+4totals/9finaltests/types/lint/32viewsPASS;lossless9JSONcompaction;evidence<120MB.
-KNOWN:bagbonus42browser/31tests/42views;savedteams40browser/16keyboard/6tests/36views;preparation50browser+2failure/10tests/32views;pantry64browser/28keyboard/10tests/40views;recipe48browser/16keyboard/19tests/types/lint/38viewsPASS;demo29226665. tonic72browser+20copy/60tests/types/lint/46+16viewsPASS;rejectallfull/preserve100HP+revive. stops38browser/16keyboard/27tests/types/lint/22viewsPASS;legacy/fullHP escape.
+KNOWN:bagbonus42browser/31tests/42views;savedteams40browser/16keyboard/6tests/36views;preparation50browser+2failure/10tests/32views;pantry64browser/28keyboard/10tests/40views;recipe48browser/16keyboard/19tests/types/lint/38viewsPASS;demo29226665. tonic72browser+20copy/60tests/types/lint/46+16viewsPASS;rejectallfull/preserve100HP+revive. stops38browser/16keyboard/27tests/types/lint/22viewsPASS;legacy/fullHP escape. events56browser/26keyboard/40tests/types/lint/30viewsPASS;HPcostkeepsKO,exhaustedtreasureescape.

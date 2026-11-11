@@ -58,6 +58,14 @@ for(const event of EVENTS)for(const option of event.choices)it(`resolves ${event
   if(option.boon)expect(result.state.run!.boons[option.boon]).toBe(1);
   expect(resolveNode(result.state,option.id).ok).toBe(false);
 });
+it.each(EVENTS)('HP costs at $name preserve fallen cats and the living one-HP floor',event=>{
+  const s=startRun(createDepthAccount(),1,2).state,r=s.run!,option=event.choices.find(c=>c.heal<0)!;
+  r.current='1-0';r.nodes.find(n=>n.id==='1-0')!.eventId=event.id;r.hp.mochi=1;r.hp.soot=0;
+  const before=clone(s),result=resolveNode(s,option.id);expect(result.ok).toBe(true);expect(s).toEqual(before);
+  expect(result.state.run!.hp.soot).toBe(0);expect(result.state.run!.hp.mochi).toBe(1);
+  expect(result.state.run!.hp.clover).toBe(Math.round(r.hp.clover!*(1+option.heal/100)));
+  expect(result.state.run!.points).toBe(r.points+option.points);
+});
 it('uses real calendar dates for deterministic daily and weekly challenges',()=>{
   expect(calendarChallenge('2026-11-06')).toEqual(calendarChallenge('2026-11-06'));
   expect(calendarChallenge('2026-11-07').seed).not.toBe(calendarChallenge('2026-11-06').seed);

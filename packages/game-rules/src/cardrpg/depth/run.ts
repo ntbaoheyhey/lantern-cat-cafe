@@ -204,7 +204,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
     const run=s.run;requireRule(run&&!run.battle&&!run.rewardChoices.length&&!run.complete,'NOT_READY','Resolve the current encounter first.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Enter a map node.');
     const cats=battleCats(s);
-    const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):Math.max(1,Math.round(old*(1+percent/100)));}};
+    const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):old===0?0:Math.max(1,Math.round(old*(1+percent/100)));}};
     if(node.kind==='campfire') {
       if(choice==='heal')healTeam(35);
       else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>defaultSkills(s,id).includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an unlocked skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}

@@ -46,3 +46,5 @@
 2026-11-11T16:46:24.782559+00:00 resume: user says continue; crafting checkpoint93bff16d1 preserved with48browser/19tests/38views. Continued route tonic recovery without replaying accepted crafting work.
 
 2026-11-11T16:57:57.350266+00:00 resume: user continue/handoff identified in-progress tea-cart/campfire UI. Preserved unfinished files and baseline cap failures; completed exact-command/keyboard/layout checks without replaying accepted balance or account runs.
+
+2026-11-11T17:06:36.976713+00:00 resume: user says continue; handoff identifies completed story/treasure patch. Preserved56browser/40focused/types/lint passing logs and unfinished files; inspected30captured views without replaying accepted work. Continue C8/C11.

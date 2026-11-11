@@ -17,3 +17,19 @@
 .uv-app[data-a6=true] .dp-route-camp-choices h3{color:#684323}
 .uv-app[data-a6=true] .dp-route-camp-choices li span{color:#62462b}
 .uv-app[data-a6=true] :is(.dp-route-shop,.dp-route-campfire) button:disabled{opacity:.65}
+.dp-route-decisions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.dp-route-treasure .dp-route-decisions{grid-template-columns:repeat(2,minmax(0,1fr))}
+.dp-route-decision{display:flex;flex-direction:column;gap:10px;padding:14px;border:1px solid #b59161;border-radius:10px;min-width:0}
+.dp-route-decision h3{font-size:18px;margin:0}
+.dp-route-decision p{font-size:14px;line-height:1.4;margin:0}
+.dp-route-decision-preview{display:grid;gap:10px;flex:1}
+.dp-route-decision-preview p span{display:block;margin-top:5px}
+.dp-route-decision ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:13px}
+.dp-route-decision li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:3px 8px}
+.dp-route-decision li span{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dp-route-decision>button{align-self:flex-start;margin-top:4px}
+.uv-app[data-a6=true] .dp-route-decision{background:#fff4d4;border-color:#b9935e;color:#483421}
+.uv-app[data-a6=true] :is(.dp-route-story,.dp-route-treasure) p{color:#62462b}
+.uv-app[data-a6=true] .dp-route-decision h3{color:#684323}
+.uv-app[data-a6=true] .dp-route-decision button:disabled{opacity:.65}
+@media(max-height:780px){.dp-route-decisions{gap:10px;margin-top:10px}.dp-route-decision{padding:10px;gap:8px}.dp-route-decision p{font-size:13px}.dp-route-decision-preview{gap:8px}}
