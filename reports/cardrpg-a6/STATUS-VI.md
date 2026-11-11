@@ -321,3 +321,7 @@ Ghi chú3D đã lưu nguyên văn; B D2b đã tích hợp, chưa có mẫu3D đ�
 2026-11-11T03:03:27Z: Q49 hoàn tất:22ảnh nguồn/22ảnh offline đã duyệt; chữ14px, huy hiệu13px, nút44px và lời nhắc khóa đúng.
 Giữ sáu test/typecheck/lint đã đạt; hợp kích cách thanh Fight ít nhất4,34px, demo39.097.437byte, không lỗi/gọi mạng.
 Tiếp tục Q50: dùng callback B D2b để mô tả trạng thái theo đúng luật của trận đang xem, giữ bản phát lại cũ.
+
+2026-11-11T03:10:33Z: Q50 hoàn tất: tám trạng thái V5 có đúng tên/mô tả/giới hạn, chữ14px; giữ đúng luật riêng của bản phát lại cũ.
+23test/typecheck/lint và8ảnh nguồn/8ảnh offline đạt; Tab/Escape/danh sách mở rộng đúng, không lỗi/gọi mạng, demo39.097.481byte.
+Tiếp tục Q51: giữ hiện số dư tem/chỉ bằng0 và làm rõ nhãn trên HUD quán; không đổi tiền hay luật thưởng.

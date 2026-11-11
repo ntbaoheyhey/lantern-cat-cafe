@@ -37,6 +37,34 @@ it('shows full rage as ready and leaves casting entirely automatic',()=>{
  fireEvent.click(screen.getByRole('button',{name:'Change playback speed'}));expect(m.state.settings.speed).toBe(2);
  fireEvent.click(screen.getByRole('button',{name:'Change playback speed'}));expect(m.state.settings.speed).toBe(3);
 });
+it('uses current effects and caps for both visible and overflow battle statuses without changing combat',()=>{
+ const m=readyBattle(),cat=m.battle!.actors.find(a=>a.catalogId==='mochi')!;
+ cat.statuses=(['drowsy','brittle','scald','scent','snag','bitter','steep','cozy'] as const).map(id=>({id,stacks:1,remaining:1,source:cat.id,appliedRound:1}));
+ const before=structuredClone(m.battle);render(<Harness m={m}/>);
+ const badges=screen.getByLabelText('Mochi statuses');
+ fireEvent.focus(within(badges).getByRole('button',{name:/^Daze\. Your next action becomes a half-power basic/}));
+ expect(screen.getByRole('tooltip').textContent).toContain('Bosses only lose a signature. Stacks 1/1. 1 rounds remaining.');
+ fireEvent.focus(within(badges).getByRole('button',{name:/^Shred\. Lose 8% defense and 15 shield per direct hit, per stack/}));
+ expect(screen.getByRole('tooltip').textContent).toContain('Stacks 1/3.');
+ expect(within(badges).getByRole('button',{name:/^Burn\. Lose 12 HP per stack at round end, through shields/})).toBeTruthy();
+ expect(within(badges).getByRole('button',{name:/^Mark\. Take 20% more direct damage/})).toBeTruthy();
+ fireEvent.focus(within(badges).getByRole('button',{name:/^4 more statuses/}));
+ const tip=screen.getByRole('tooltip');
+ for(const text of ['Bleed. Lose 8 HP per stack before your action. Shields absorb it.','Bitter. Receive half as much healing and shielding.','Regen. Heal 18 HP per stack at round end and remove one Burn stack.','Warm. Take 10% less direct damage per stack. Burn ignores Warm.'])expect(tip.textContent).toContain(text);
+ fireEvent.keyDown(within(badges).getByRole('button',{name:/^4 more statuses/}),{key:'Escape'});
+ expect(screen.queryByRole('tooltip')).toBeNull();expect(m.battle).toEqual(before);
+});
+it.each([false,true])('uses saved replay V5=%s instead of current account preferences for status copy',skillsV5=>{
+ const m=readyBattle();m.replay=structuredClone(m.battle!);m.replay.initial.skillsV5=skillsV5;
+ m.replay.initial.gameplayA6=skillsV5;m.state.skillsV5=!skillsV5;
+ const cat=m.replay.actors.find(a=>a.catalogId==='mochi')!;
+ cat.statuses=[{id:'drowsy',stacks:1,remaining:1,source:cat.id,appliedRound:1}];
+ const before=structuredClone(m.replay);render(<Harness m={m}/>);
+ const badge=within(screen.getByLabelText('Mochi statuses')).getByRole('button');
+ fireEvent.focus(badge);
+ expect(screen.getByRole('tooltip').textContent).toContain(skillsV5?'Daze. Your next action becomes a half-power basic. Bosses only lose a signature.':R.STATUS_BY_ID.drowsy.description);
+ expect(m.replay).toEqual(before);
+});
 it('explains either ultimate unlock and keeps a fallen cat from announcing readiness',()=>{
  const m=new DepthModel(true,true,true,true);m.state.tutorial=4;
  m.state.account.cards.find(c=>c.cardId==='soot')!.stars=3;

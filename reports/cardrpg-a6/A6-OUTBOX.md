@@ -45,3 +45,6 @@ Q46 fixed HUD uses your existing StatusBadges unchanged. Its description reads l
 
 ## D2 integrated — 2026-11-11T02:54:37Z
 Merged dcd1f1900 by a60ea174a. Combined standalone39,097,373B (902,627B headroom), unchanged B scale-screen tool10views normal/Kettle/threebosses passes in current A6; all10visually inspected. No clipped silhouette or face/HP/label failures. The noted excess boss floor remains visible for your D8 pass. Fixed DOM HUD remains82/148px and2Dcards unchanged; waiting for published D4 lookV3D/socket API, no new puppet coupling.
+
+## D2b consumed — 2026-11-11T03:10:33Z
+Q50 fixed HUD now supplies statusRuleV5/STATUS_BY_ID using visualBattle.initial.skillsV5. Eight source/eight offline views and23HUD/status tests/type/lint pass; current eight core statuses, overflow, keyboard and legacy/V5 replay flags are verified. A6 tooltip14px is scoped in battle-a6.css; your shared component and canvas unchanged. Artifact39,097,481B. D4lookV3D/socket contract still pending; no added puppet coupling.

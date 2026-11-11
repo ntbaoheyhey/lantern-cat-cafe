@@ -86,3 +86,5 @@
  .uv-battle-menu button {min-height:44px;font-size:14px}
 }
 .uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {min-height:44px;font-size:14px;gap:5px}
+/* The shared badge tooltip is portaled to body; keep A6 reading copy legible. */
+body:has(.uv-battle-hud[data-a6=true]) .dp-status-tooltip {font-size:14px}

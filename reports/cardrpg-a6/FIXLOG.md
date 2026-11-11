@@ -213,3 +213,5 @@ Q47: initial unit harness used spyOn for missing jsdom native-dialog methods; co
 2026-11-11T02:54:37Z Q48: first browser continuation found Tower focus returned to the previous entry because HomeScene called m.go directly. Smallest fix passes Shell go as onTower; all three signs/dock/Escape focus checks pass at both sizes. Original7accepted source frames retained;14tests retained, final types/lint and7B scale/staging tests pass.
 
 2026-11-11T03:01:29Z Q49: Larger formation labels initially let pair badges meet the Fight footer at720p. The retained single spacing repair reduces table padding and Prepare portrait height (100px at720p), preserving14pxlabels/44pxtargets. All22current source views inspected; pair/Fight separation passes. No gameplay change.
+
+2026-11-11T03:08:03Z Q50: review initially kept the Drowsy button focused across a synthetic legacy-to-V5 replay swap after Escape; focus() correctly did not fire a second focus event. The fixture now focuses More options before switching snapshots, matching actual navigation. Three existing source captures retained; current8views pass. No product retry or combat change.
