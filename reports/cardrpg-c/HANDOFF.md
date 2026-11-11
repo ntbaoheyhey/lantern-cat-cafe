@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 selector verified; continue recruitment decisions and intake.
+NOW: C11 recruitment verified; continue onboarding/upgrade guidance and intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review recruitment costs, eligibility and duplicate presentation.
+NEXT1: check designer inbox; review lowest-scored onboarding/upgrade guidance from real screens.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -24,4 +24,5 @@ KNOWN:milestones302browser/28keyboard/68finalviews;48Discoveries checks validate
 KNOWN:daily258browser/74keyboard +120style/18keyboard;44+24views,13web+7rules/types/lintPASS.
 KNOWN:idle92browser/20keyboard +70style/10keyboard;44+28views,5rules/8web/types/lintPASS.
 KNOWN:selector40browser/8keyboard+4shortagechecks,32+4views,29preserved/7finaltests/types/lintPASS.
-ARCHIVE: archive/HANDOFF-before-selector-2026-11-11.md preserves earlier checkpoints.
+KNOWN:recruit136browser/20keyboard+36animated/6keyboard;74views/13tests/types/lintPASS;720pgeargridfixed.
+ARCHIVE: archive/HANDOFF-before-recruit-2026-11-11.md preserves earlier checkpoints.
