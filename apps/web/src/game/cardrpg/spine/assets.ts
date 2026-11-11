@@ -47,6 +47,7 @@ export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,Bone>();readonly clips=new Map<string,ClipData>();
  readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'placeholder'|'sequence'|'puppet'='puppet';
+ private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
  mesh?:SkeletonMesh;puppet?:T.Group;sequence?:SequenceAsset;plane?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  private animation='';private key:unknown;private at=0;private order=0;
  onCue:(cue:SpineCue)=>void=()=>{};
@@ -67,6 +68,13 @@ export class SpineActor {
   this.at=at;this.root.updateMatrixWorld(true);void delta;
  }
  socket(name:SpineSocket,target:T.Vector3){return this.sockets.get(name)!.getWorldPosition(target);}
+ /** Reuse scratch storage; animated hands/wings may extend past setup bounds. */
+ framingBounds(){
+  if(!this.mesh)return this.bounds;
+  this.mesh.skeleton.getBounds(this.boundsOffset,this.boundsSize,this.boundsVertices);
+  const b=this.poseBounds;b.x=this.boundsOffset.x;b.y=this.boundsOffset.y;b.width=this.boundsSize.x;b.height=this.boundsSize.y;
+  return Number.isFinite(b.x+b.y+b.width+b.height)?b:this.bounds;
+ }
  dispose(){this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
 }
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet'):Promise<SpineActor>{

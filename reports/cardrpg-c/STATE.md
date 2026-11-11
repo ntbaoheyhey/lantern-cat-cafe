@@ -4,7 +4,7 @@ Prompt bytes: 19078
 Base A6: ef4aee790 (clean, fetched origin equal; includes Q54 and B d5c34d233).
 Branch: codex/cardrpg-c-2026-11-11
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/439 (draft; base A6)
-Active: C11 failed-outcome labels verified;34tests/types/lint/galleryTS,60combat/576source/576offline,34inspected captures PASS. Demo29,224,721bytes/evidence99.09MB. Next: actual screenshots reveal rightmost enemy/minion cropped during ult zoom; fix framing without size/gameplay changes. Score7.79 unchanged; C8/C11 continuous.
+Active: C11 framing verified:240source/144offline/6PausePlay/20inspected views/12tests/types/lintPASS;min4.16px,offlinep9516.8ms/60draws. Demo29,225,289bytes/evidence105.81MB. Next diagnose retained actor lanes/card order after roster changes. Score7.79unchanged;C8/C11continuous.
 Designer accepted: 0/25 (inbox empty); contract25units /74skills /18statuses.
 All70001–70500 consumed across3rounds. Ledger guards overlap. No fourth round or A6 acceptance reruns.
 Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.

@@ -25,3 +25,5 @@ Kettle follow-up: damaging signature now uses hostile spout/steam paint and actu
 Utility checkpoint: see C11-UTILITY-RECEIPT.md. Actual charge and support now avoid false shake; charged-row/Daze damage preserved.29focusedtests,96battle,16live,48source/48offline,34finalviews allPASS. No gameplay or score change.
 
 Cat outcome checkpoint: C11-CAT-RECEIPT.md.624full combat+120final focused+24live,576source+576offline and six playback controls eachPASS;46final captures inspected. Final29tests/types/lint/galleryTS pass; full-sweep peak101draws. Demo29.22MB/evidence91.03MB; no gameplay/score/new performance claim.
+
+Framing checkpoint: C11-FRAMING-RECEIPT.md. Animated geometry guides ultimate zoom/recentering; reduced motion fixed.240source+144offline/sixPausePlay/12tests/types/lintPASS;20finalcaptures inspected. Clearance4.16px,catspread3.6%,boss51.66%;70maxdrawsource. Offlinep9516.8ms/60draws,0mask/HTTP/errors. Demo29.225MB/evidence105.81MB;score7.79unchanged.

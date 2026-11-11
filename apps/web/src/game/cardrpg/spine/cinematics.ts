@@ -2,6 +2,19 @@ import { intersects, type Rect } from '../../squad/turn3d/label-layout';
 import { PAINT } from './style';
 
 const smooth = (value:number) => {const t=Math.max(0,Math.min(1,value));return t*t*(3-2*t);};
+/** Fit the occupied horizontal span, preserving unit scale and the requested zoom ceiling. */
+export function fitStageCamera(width:number,left:number,right:number,requested:number,margin:number,out:{zoom:number;x:number}) {
+ out.zoom=requested;out.x=0;
+ if(!Number.isFinite(left+right)||right<=left)return out;
+ const span=right-left+margin*2;
+ out.zoom=Math.min(requested,Math.max(1,width/span));
+ const half=width/(2*out.zoom),min=right+margin-half,max=left-margin+half;
+ // A stage too narrow even at x1 retains its center; normal supported sizes fit.
+ // At the fitted zoom min and max coincide; floating-point rounding can invert
+ // them by a fraction of a unit. Check the unzoomed span, not those two limits.
+ if(span<=width)out.x=Math.max(min,Math.min(max,0));
+ return out;
+}
 /** Event times use the presentation clock, so pause and x1/x2/x3 remain coherent. */
 export function ultimateFocus(time:number,start:number,end:number,active:boolean) {
  if(start<0)return 0;

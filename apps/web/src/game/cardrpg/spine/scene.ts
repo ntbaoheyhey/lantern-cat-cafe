@@ -11,7 +11,7 @@ import { stagePosition } from './layout';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
-import { cinematicBox, ultimateFocus } from './cinematics';
+import { cinematicBox, ultimateFocus, fitStageCamera } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 
 interface DisplayActor {actor:SpineActor;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
@@ -31,6 +31,7 @@ export class SpineScene {
  private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;private currentView?:SceneView;private renderTime=0;
  private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
+ private framing={zoom:1,x:0};
  private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
  private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
  private visibility=()=>{this.last=0;this.dirty=true;};
@@ -135,7 +136,19 @@ export class SpineScene {
   }
   const focus=ultimateFocus(time,this.ultStartedAt,this.ultEndedAt,this.ultimate);this.cinematic.focus=focus;
   const maxZoom=Math.min(PAINT.maxZoom,...[...this.actors.values()].filter(e=>e.actor.unit.tier==='boss').map(e=>.55*PAINT.worldHeight/e.actor.bounds.height));
-  this.camera.zoom=view.reducedMotion?1:1+(maxZoom-1)*focus;this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+  this.camera.zoom=1;
+  if(!view.reducedMotion&&focus>0){
+   let left=Infinity,right=-Infinity;
+   for(const {actor} of this.actors.values()){
+    const b=actor.framingBounds(),root=actor.root,x=root.position.x+b.x*root.scale.x,end=x+b.width*root.scale.x;
+    left=Math.min(left,x,end);right=Math.max(right,x,end);
+   }
+   const framing=fitStageCamera(this.worldWidth,left,right,1+(maxZoom-1)*focus,PAINT.framingMargin*focus+PAINT.shake,this.framing);
+   this.camera.zoom=framing.zoom;this.camera.position.x+=framing.x;
+  }
+  // No camera motion in reduced mode. Animated fitting only guides the existing
+  // ultimate push-in; the ordinary stage and identity lanes remain stable.
+  this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
   this.stage.update(this.worldWidth,PAINT.worldHeight,view.reducedMotion?0:20*focus,.18*focus);
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
   const protectedRects=[...this.labelAudit.heads,...this.labelAudit.cards];

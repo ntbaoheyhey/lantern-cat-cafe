@@ -1,8 +1,28 @@
 import {describe,it,expect} from 'vitest';
-import {cinematicBox,ultimateFocus} from './cinematics';
+import {cinematicBox,ultimateFocus,fitStageCamera} from './cinematics';
 import {intersects} from '../../squad/turn3d/label-layout';
 
 describe('Spine cinematic safety',()=>{
+ it('fits an asymmetric full crew and outer enemy within a shared camera without shrinking units',()=>{
+  const out={zoom:1,x:0},width=4800,left=-2000,right=2400,margin=36;
+  expect(fitStageCamera(width,left,right,1.1,margin,out)).toBe(out);
+  expect(out.zoom).toBeGreaterThan(1);expect(out.zoom).toBeLessThan(1.1);
+  const half=width/(2*out.zoom);
+  expect(left-out.x).toBeGreaterThanOrEqual(-half+margin-1e-6);
+  expect(right-out.x).toBeLessThanOrEqual(half-margin+1e-6);
+  expect(out.x).toBeGreaterThan(0);
+ });
+ it('retains the authored center and zoom when the roster already fits',()=>{
+  expect(fitStageCamera(4800,-1800,1900,1.1,36,{zoom:0,x:0})).toEqual({zoom:1.1,x:0});
+  expect(fitStageCamera(4800,Infinity,-Infinity,1,36,{zoom:0,x:5})).toEqual({zoom:1,x:0});
+ });
+ it('keeps the recentering when fractional animated bounds exactly fill the fitted view',()=>{
+  const width=1950*1280/490,left=-1935.673469387755-213.99507289701393,right=2215.836734693877+255.8040482711652;
+  const out=fitStageCamera(width,left,right,1.1,36,{zoom:1,x:0}),half=width/(2*out.zoom);
+  expect(out.x).toBeGreaterThan(150);
+  expect(left-out.x).toBeGreaterThanOrEqual(-half+36-1e-6);
+  expect(right-out.x).toBeLessThanOrEqual(half-36+1e-6);
+ });
  it('opens and releases smoothly on authored events without overshooting',()=>{
   expect(ultimateFocus(2,-100,-100,false)).toBe(0);
   expect(ultimateFocus(2,2,-100,true)).toBe(0);
