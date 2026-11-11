@@ -79,3 +79,5 @@ Ultimate silhouette follow-up:24source/4battle/8offline/2performance views inspe
 Cat gear follow-up:16captures inspected (both Cats panels full size). Existing keepsake art, owned counts and slot-specific shelf navigation make the next action explicit. First roster row and all four slots fit at720p; no overflow or broken images. Correctness/usability refinement only; weighted7.79 retained. C11-GEAR-SLOTS-RECEIPT.md.
 
 Growth follow-up: all18final captures inspected; full costs, exact deficits and short earning hints fit at both sizes, including the complete first roster row at720p. Caps/route locks and exact purchase results remain correct. Weighted7.79 unchanged; no new recovery-rate evidence. C11-GROWTH-RECEIPT.md.
+
+Awakening follow-up: all24final captures inspected after one720p clipping repair. Full costs, level/star prerequisite, deficits and the purchase action fit both sizes; disabled styling is distinct. Six keyboard purchases match the public command across three ranks. Weighted7.79 unchanged. C11-AWAKENING-RECEIPT.md.

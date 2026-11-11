@@ -96,9 +96,20 @@
  .a6-awakening-receipt>div {display:grid;gap:5px;padding:10px 12px;margin:9px 0;background:#fff5d9;border:1px solid #bd9b60;border-radius:7px}
  .a6-awakening-receipt .cr-cost {display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px}
  .a6-awakening-receipt strong {color:#745522;font-size:14px}
- .a6-awakening-receipt>button {min-height:44px;font-size:14px;min-width:128px}
+ .a6-awakening-heading {display:flex;align-items:center;justify-content:space-between;gap:8px}
+ .a6-awakening-heading h3 {margin:0}
+ .a6-awakening-heading>button {min-height:44px;font-size:14px;min-width:100px}
+ .a6-awakening-heading>button:disabled {background:#e6d7b4;color:#6d6047;box-shadow:none;border-color:#b59b71}
+ .a6-awakening-missing {color:#874c30}
+ .a6-awakening-source {color:#655736}
  @media(max-height:760px) {
-  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero {grid-template-columns:100px minmax(0,1fr)}
-  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero>img {width:100px;height:100px}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero {grid-template-columns:80px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero>img {width:80px;height:80px}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero h2 {font-size:26px;margin:1px 0}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero p {margin:0}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-tabs {margin:4px 0}
+  .a6-awakening-receipt>div {gap:4px;padding:8px 10px;margin:6px 0}
+  .a6-awakening-receipt p {margin:4px 0}
+  .a6-awakening-receipt .a6-awakening-reason {margin:0}
  }
 }
