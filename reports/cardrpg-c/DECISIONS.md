@@ -138,3 +138,5 @@
 2026-11-11T20:50:39.878328+00:00 C11: replace stale third-round/signature claims with current rage/action semantics for13enemies. Bound preparation tactics separately to keep forecast/Fight visible; preserve legacy notes and rules. Wait for overflow/hint agreement before retaining screenshots.
 
 2026-11-11T20:56:40.793222+00:00 C11: use native dialog inertness for the battle guide after reproducing speed/resume clicks through its painted overlay. Preserve layout/previous pause and return focus; menu Escape now restores More focus. No combat or progression change.
+
+2026-11-11T21:05:56.862757+00:00 C11: replace immediate Leave table with a native paused quote/confirmation; show capped payouts and daily-gift consumption from existing rules, keep replay/gallery direct.

@@ -5,6 +5,7 @@ import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import type {CSSProperties} from 'react';
 import {HealthMeterA6,RageMeterA6} from './HudMetersA6';
 import BattleLogV3 from './BattleLogV3';
+import BattleLeaveV3 from './BattleLeaveV3';
 import './battle-a6.css';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -23,10 +24,11 @@ const currentStatusRule=(id:R.StatusId)=>R.statusRuleV5(id,R.STATUS_BY_ID[id]);
 export default function BattleHudV3({m}:{m:DepthModel}) {
  const battle=m.visualBattle!,plan=m.plan,banner=useRef<HTMLElement>(null),comboBanner=useRef<HTMLElement>(null),phaseBanner=useRef<HTMLElement>(null),effects=useRef<HTMLDivElement>(null);
  const resolveStatusRule=battle.initial.skillsV5?currentStatusRule:undefined;
- const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false);
+ const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false),[leaving,setLeaving]=useState(false);
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
  const pausedBeforeHelp=useRef(false),helpButton=useRef<HTMLButtonElement>(null),helpDialog=useRef<HTMLDialogElement>(null);
  const pausedBeforeLog=useRef(false),moreButton=useRef<HTMLButtonElement>(null);
+ const pausedBeforeLeave=useRef(false);
  const boss=battle.actors.find(a=>a.side==='enemy'&&['boss','elite'].includes(R.ENEMY_BY_ID[a.catalogId]?.tier??''));
  const bossPhase=boss?displayedBossPhase(battle,boss):1;
  const caster=battle.actors.find(a=>a.id===plan?.actorId);
@@ -66,6 +68,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  useEffect(()=>{if(!help)return;const dialog=helpDialog.current!;dialog.showModal();return()=>dialog.close();},[help]);
  const closeHelp=()=>{helpDialog.current?.close();setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);helpButton.current?.focus();};
  const closeLog=()=>{setLog(false);m.paused=pausedBeforeLog.current;m.notify(false);moreButton.current?.focus();};
+ const closeLeave=()=>{setLeaving(false);m.paused=pausedBeforeLeave.current;m.notify(false);moreButton.current?.focus();};
  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else if(more){setMore(false);moreButton.current?.focus();}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  return <div className="uv-battle-hud" data-a6={m.a6Battle} data-spine={spine} data-reduced={m.state.settings.reducedMotion} style={{'--spine-cream':PAINT.cream,'--spine-ink':PAINT.ink,'--spine-accent':accent,'--spine-rim':PAINT.rim} as CSSProperties} aria-label="Battle controls">
   <header className="uv-battle-top"><div className="uv-battle-round"><small>{m.tutorialBattle?'Practice table':R.CHAPTERS[battle.chapter-1]!.name}</small><b>Wave 1/1 · Round {battle.round}</b></div>
@@ -74,7 +77,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   </header>
   {m.a6Battle&&<section className="uv-enemy-rage" aria-label="Enemy rage">{battle.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=><div key={a.id}><small>{a.name}</small><RageMeterA6 value={a.charge} ready={a.charge>=100} label={`${a.name} rage: ${a.charge}/100`}/></div>)}</section>}
 
-  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{pausedBeforeLog.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false)}}>Read battle log</button><button onClick={()=>m.leave()}>Leave table</button></div>}
+  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{pausedBeforeLog.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false)}}>Read battle log</button><button onClick={()=>{setMore(false);if(m.replay||m.galleryBattle){m.leave();return;}pausedBeforeLeave.current=m.paused;m.paused=true;m.notify(false);setLeaving(true);}}>{m.galleryBattle?'Close preview':m.replay?'Return from replay':'Leave table'}</button></div>}
   <div className="uv-battle-party dp-v5look" aria-label="Crew health and ultimates">{battle.actors.filter(a=>a.side==='party').map(cat=>{
    const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');
    const readiness=ult?(m.a6Battle?(cat.hp<=0?'Fallen':!cat.skills.includes(ult.id)?'Unlocks at level 6 or three stars':cat.charge>=100?'Ready':`${cat.charge}/100 rage`):battle.v4?skillReadinessV4(cat,ult):cat.charge>=100?'Ready':`${cat.charge}/100 charge`):'Unavailable';
@@ -100,5 +103,6 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
    }
   }}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></dialog>}
   {log&&<BattleLogV3 battle={battle} wasPaused={pausedBeforeLog.current} onClose={closeLog}/>}
+  {leaving&&<BattleLeaveV3 state={m.state} practice={!!m.tutorialBattle} wasPaused={pausedBeforeLeave.current} onCancel={closeLeave} onConfirm={()=>{setLeaving(false);m.leave();}}/>}
  </div>;
 }

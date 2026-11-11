@@ -121,3 +121,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T20:50:39.878328+00:00 Enemy tactics follow-up:104finalviews at both sizes,108inspected including four superseded hint captures. Current13enemy notes/read-only handbook/battle/preparation pass88browser+2settled checks.90px minimum body with keyboard access to full text; forecast/Fight stay visible.37tests/types/lintPASS. Weighted7.79unchanged;next inspect remaining battlecontrols.
 
 2026-11-11T20:56:40.793222+00:00 Battlecontrols:30finalviews inspected across both sizes/motion modes;native guide stays readable and blocks background input.98browser checks/18tests/types/lintPASS. Existing7.79weighted score unchanged;next remaining battle-option clarity.
+
+2026-11-11T21:05:56.862757+00:00 Leave-table follow-up:48finalviews in8sheets plus full-size720p/900p;complete text, gift consequences and focus fit both sizes.68browser/27tests/types/lintPASS;weighted7.79retained. C11-BATTLE-LEAVE-RECEIPT.md.
