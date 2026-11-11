@@ -27,7 +27,7 @@ try {
     const first=await page.evaluate(({id,speed})=>{
      const g=window.vfxGallery,s=g.scene,fx=s.effects;s.eventAudit.length=0;
      const step=1000/60*speed,hit=g.fixture.plan.beats[2].start,before=JSON.stringify(g.fixture.battle);let draws=0,peak=0,earlyContact=0,at=0;
-     for(;at<hit;at+=step){g.sample(at,3+at/1000);draws=Math.max(draws,s.stats.calls+fx.stats.draws);peak=Math.max(peak,fx.stats.active);if(['panko-4','enemy:kettle-knight'].includes(id))earlyContact+=fx.pool.filter(p=>p.active&&p.layer.phase==='contact').length;}
+     for(;at<hit;at+=step){g.sample(at,3+at/1000);draws=Math.max(draws,s.stats.calls+fx.stats.draws);peak=Math.max(peak,fx.stats.active);if(id==='panko-4')earlyContact+=fx.pool.filter(p=>p.active&&p.layer.phase==='contact').length;}
      return{step,hit,at,draws,peak,earlyContact,before};
     },{id,speed});
     if(first.earlyContact)throw Error('Self-shield appeared before hit '+id);

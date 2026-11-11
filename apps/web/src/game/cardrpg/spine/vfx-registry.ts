@@ -2,6 +2,7 @@ import { CARD_EFFECT_RECIPES, type CardEffectLayer } from '../../squad/turn3d/ca
 import { STATUS_IDENTITIES } from '../../squad/turn3d/card-status-data';
 import { SPINE_SKILLS, SPINE_UNITS, type SpineSocket } from './config';
 import { PAINT } from './style';
+import type { EffectPlan } from '../../squad/turn3d/effects';
 export type Glyph='spark'|'leaf'|'flame'|'drop'|'ring'|'arc'|'shield'|'lantern'|'door'|'cup'|'thread'|'star'|'crown'|'petal'|'moon'|'bell'|'wave'|'sprout'|'slice'|'spore'|'bread'|'wing'|'button'|'teapot'|'heart'|'ink'|'wind'|'apron'|'needle'|'bow'|'oven'|'whisk';
 export const GLYPHS:Glyph[]=['spark','leaf','flame','drop','ring','arc','shield','lantern','door','cup','thread','star','crown','petal','moon','bell','wave','sprout','slice','spore','bread','wing','button','teapot','heart','ink','wind','apron','needle','bow','oven','whisk'];
 export const FX_COLORS=[PAINT.honey,PAINT.ember,PAINT.rose,PAINT.sage,PAINT.sky,PAINT.iris,PAINT.cream];
@@ -13,7 +14,9 @@ export interface PaintedLayer {glyph:Glyph;motion:CardEffectLayer['motion'];anch
 export interface PaintedRecipe {id:string;name:string;owner:string;color:string;ultimate:boolean;friendly:boolean;origin:SpineSocket;layers:PaintedLayer[];overrideKey:string}
 export const PAINTED_VFX=new Map<string,PaintedRecipe>();
 for(const unit of SPINE_UNITS)for(const skill of unit.skills){
- const old=CARD_EFFECT_RECIPES[skill.id],basic=skill.animation==='attack',ultimate=skill.animation==='ult';
+ // The current Kettle signature is a strike, not the legacy Mirror polish buff.
+ // Reuse its painted spout/steam vocabulary with the longer skill contact life.
+ const old=CARD_EFFECT_RECIPES[skill.id==='enemy:kettle-knight'?'enemy:kettle-knight:basic':skill.id],basic=skill.animation==='attack',ultimate=skill.animation==='ult';
  const layers:PaintedLayer[]=(old?.layers??[]).map(layer=>{
   // A caster anchor says where the paint belongs, not when it appears. Late
   // self-shields and return accents belong to contact, just like target effects.
@@ -25,4 +28,10 @@ for(const unit of SPINE_UNITS)for(const skill of unit.skills){
 }
 export const PAINTED_STATUSES=Object.entries(STATUS_IDENTITIES).map(([id,spec])=>({id,name:spec.name,path:spec.path,color:['scald','cozy','riposte','shelter','crumb'].includes(id)?PAINT.honey:['snag','scent'].includes(id)?PAINT.rose:['steep','sprout'].includes(id)?PAINT.sage:['bitter','drowsy','hush','rattled'].includes(id)?PAINT.iris:PAINT.sky}));
 export const paintedRecipe=(id:string)=>PAINTED_VFX.get(id);
+/** Reuse the caller's buffer: an opening shield or a reflected hit is not a strike target. */
+export function paintedTargets(plan:EffectPlan,friendly:boolean,targets:string[]):void {
+ targets.length=0;
+ if(friendly){for(const id of plan.targetIds)targets.push(id);return;}
+ for(const event of plan.events)if(event.type==='damage'&&event.actorId===plan.actorId)for(const id of event.targetIds)if(!targets.includes(id))targets.push(id);
+}
 export const paintedCoverage=()=>({skills:PAINTED_VFX.size,statuses:PAINTED_STATUSES.length,missing:[...SPINE_SKILLS.keys()].filter(id=>!PAINTED_VFX.has(id))});

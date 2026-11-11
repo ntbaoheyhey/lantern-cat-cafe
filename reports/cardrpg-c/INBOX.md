@@ -13,3 +13,5 @@
 2026-11-11 resume: user handoff confirms impact clock checks passed in source/offline. Verified saved bcb713474 receipt, pushed and updated draft439; continue route preparation and upgrade visibility.
 2026-11-11 resume: user handoff confirms the patrol prompt16checks/14views; verified clean pushed d7a6b4ed9 and receipt. Continue C11 VFX review without repeating those accepted checks.
 2026-11-11 resume: user handoff confirms888source cue checks and six Pause/Play checks,61drawpeak. Verified completed offline/battle/performance receipts, inspected offline22/battle12/performance2captures; preserve all checks and finish timing checkpoint before Kettle Knight semantic correction.
+2026-11-11 resume10:19UTC: re-pasted brief matches saved PROMPT SHA256. Clean pushed88a533b1d preserved; continue Kettle recipe/actual-target correction and open C8/C11 work.
+2026-11-11 resume10:27UTC: user handoff confirms72enemyactionchecks; preserved completed source/offline results and inspected final14battle+22source+22offlinecaptures without rerunning accepted tests.
