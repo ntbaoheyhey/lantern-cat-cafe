@@ -77,3 +77,22 @@ it('evaluates A6 loss advice at the full health offered by the next retry withou
  expect(full).not.toBeNull();expect(worn).toEqual(full);
  expect(s).toEqual(before);expect(encounter).toEqual(input);
 });
+
+it.each(['level','row','cat'] as const)('allows a legal %s change below the fixed Tower enemy level and preserves its retry',kind=>{
+ let s=R.setGameplayA6(fresh(),true);s.cleared=[1];s.towerBest=4;
+ for(const card of s.account.cards)card.level=1;
+ s=R.startTowerFloorA6(s,5).state;s=R.enterNode(s,R.availableNodes(s.run!)[0]!.id).state;
+ s.run!.battle!.result='enemy';
+ const original=clone(s),floor=clone(s.run!),settled=R.resultAdviceStateV4(s);
+ const change:R.BuildChangeV4=kind==='level'?{kind:'level',cardId:s.account.cards[0]!.id}:kind==='row'?{kind:'row',catId:'soot',row:'front'}:{kind:'cat',catId:'mochi',replacementId:'panko'};
+ const expected=R.changeBuildV4(settled.state,change);expect(expected.ok).toBe(true);
+ const advice:R.BuildAdviceV4={change,label:'Controlled Tower recovery change',cost:{},expectedBuild:R.adviceBuildKeyV4(settled.state),before:{wins:0,margin:0},after:{wins:1,margin:.1},samples:10};
+ expect(s.run!.challengeLevel).toBe(2);expect(s.team.some(id=>s.account.cards.find(c=>c.cardId===id)!.level<2)).toBe(true);
+ const applied=R.applyResultAdviceV4(s,advice);expect(applied.ok).toBe(true);expect(applied.state).toEqual(expected.state);expect(s).toEqual(original);
+ const retry=R.startTowerFloorA6(applied.state,floor.floor);expect(retry.ok).toBe(true);
+ expect(retry.state.run!.towerA6).toEqual(floor.towerA6);expect(retry.state.run!.nodes).toEqual(floor.nodes);expect(retry.state.run!.seed).toBe(floor.seed);expect(retry.state.run!.challengeLevel).toBe(floor.challengeLevel);
+ expect(R.battleCats(retry.state).every(cat=>retry.state.run!.hp[cat.id]===cat.stats.hp)).toBe(true);
+ expect(R.applyResultAdviceV4(applied.state,advice).ok).toBe(false);
+ const stale=clone(s);stale.account.currencies.fish++;
+ const rejected=R.applyResultAdviceV4(stale,advice);expect(rejected.ok).toBe(false);expect(rejected.state).toBe(stale);
+});

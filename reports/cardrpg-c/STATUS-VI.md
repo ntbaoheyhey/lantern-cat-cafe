@@ -1,9 +1,9 @@
 # Trạng thái lane C
 
-C0–C7, C9, C10 đã xong; C8/C11 tiếp tục trên draft PR #439. Có 25 placeholder / 206 clip, 74 skill / 18 status; designer cuối 0/25. License và tool/version còn trong NEEDS-USER.
+C0–C7, C9, C10 đã xong; C8/C11 tiếp tục trên draft PR #439. Có25placeholder/206clip,74skill/18status; designer cuối0/25, license/tool/version còn trong NEEDS-USER. MochiV3 đã vào game/demo,115layer/32xương/333vertex; nguồn artwork PASS nhưng rig vẫn tạm,132hash nguồn không đổi.
 
-Mochi V3 đã vào game/demo: 115 layer, 32 xương, 333 mesh vertex, atlas 1024 PMA, cao 512. Nguồn artwork báo PASS; 132 hash không đổi. Rig vẫn tạm: mask mắt bake chỉ ở atlas, blink đầy đủ, chưa có gaze. 26 test, ba guard âm, typecheck/lint, 48 ca combat, 48 ca offline và sáu Pause/Play đạt. Đã xem mọi clip, pose phóng lớn và battle hai cỡ; không che mặt/HP hoặc lỗi browser. Benchmark riêng p95 16,8/16,7 ms, 101 draw; demo 29.619.392 byte. C8-R3-RECEIPT.md ghi rõ phạm vi.
+C11 sau thua: hiện Power/chi phí/điểm retry/fullHP; ưu tiên gear miễn phí khi advisor không có gợi ý. Sửa Tower từ chối crew thấp hơn level địch; campaign vẫn giữ giới hạn. 22testweb+16testrules/typecheck/lint,50kiểm tra browser/28thao tác bàn phím đạt; đã xem46ảnh hai cỡ, không lỗi browser. Không tự mua/equip khi xem. Chi tiết C11-LOSS-RECOVERY-RECEIPT.md.
 
-Giữ kết quả C11 Prepare: HP mang sang trạm, trạng thái gục, giữ mèo còn sống phía trước; 116 browser / 15 test / 28 ảnh đạt. Gameplay đã dùng ba vòng / 500 seed. Click sạch 30 phút: 15 thắng / 4 thua, thua đầu 6,56 phút, thường 54,33 s / boss 170,77 s, hồi phục 2/4 (mẫu nhỏ). Điểm 7,79 giữ nguyên. Hai full E2E 421/421 có trước sửa C11 mới; bốn forced-redraw cũ còn PARTIAL.
+Giữ ba vòng/500seed và click sạch30phút:15thắng/4thua, thua đầu6,56phút, thường54,33s/boss170,77s, hồi phục2/4(mẫu nhỏ). Điểm7,79;demo29.619.392byte. Hai fullE2E421/421 có trước sửa C11 mới; bốn forced-redraw cũ PARTIAL. Không dùng fixture mới làm bằng chứng hồi phục.
 
-Tiếp theo preparation/loss clarity và nhận export cuối. Báo cáo 20/11 06:00 UTC, hard stop 12:00 UTC; không merge/deploy/đổi server.
+Tiếp tục C11 và nhận export cuối. Báo cáo20/11 06:00UTC, hardstop12:00UTC; không merge/deploy/đổi server.

@@ -164,7 +164,9 @@ export function applyResultAdviceV4(state: DepthAccount, advice: BuildAdviceV4):
   const applied = applyAdviceV4(settled.state, advice);
   if (!applied.ok) return { ...applied, state };
   const band = state.run?.challengeLevel;
-  if (band !== undefined && applied.state.team.some(id => applied.state.account.cards.find(card => card.cardId === id)!.level < band))
+  // Fixed A6 Tower levels describe the foes, not an entry requirement. Its
+  // ordinary start command allows a lower-level crew; advice must do the same.
+  if (!state.run?.towerA6 && band !== undefined && applied.state.team.some(id => applied.state.account.cards.find(card => card.cardId === id)!.level < band))
     return { ok: false, state, error: `Choose a companion ready for challenge band ${band}.` };
   return applied;
 }

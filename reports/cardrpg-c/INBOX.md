@@ -70,3 +70,7 @@
 2026-11-11T19:08:07.951286+00:00 resume: user says continue; handoff identifies passing health/row checks. Preserved unfinished patch and116browser/15tests/types/lintPASS; inspected28finalviews without rerunning accepted work. ContinueC8/C11.
 
 2026-11-11 resume19:25UTC: continue from uncommitted Mochi V3 converter and derived r3 assets. Published artwork gates report PASS; preserve source hashes and earlier accepted work. Final designer runtime export remains absent; validate temporary rig before manifest/demo adoption.
+
+2026-11-11 resume19:35UTC: user continue; confirmed MochiV3 commit37729e379 pushed and draft439 current. Designer inbox empty; continue loss-recovery guidance, preserve completed balance rounds and previous evidence.
+
+2026-11-11T19:49:10.113207+00:00 resume: user continue; preserved uncommitted loss patch and accepted50browser/38tests/types/lint. Inspected46views; no repeated balance run. ContinueC8/C11.

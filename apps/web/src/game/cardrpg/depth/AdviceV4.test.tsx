@@ -3,6 +3,7 @@ import {afterEach, beforeEach, expect, it, vi} from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {DepthModel} from './model';
 import {AdviceV4} from './AdviceV4';
+import {QuickUpgradeA6} from '../ui-v3/PowerA6';
 
 const mock = vi.hoisted(() => ({fail: false, workers: [] as Array<{
   onmessage?: (event: {data: unknown}) => void;
@@ -89,7 +90,7 @@ it('labels free recommendations and a Tower retry accurately', () => {
   render(<AdviceV4 m={m}/>); reply(mock.workers[0]!, advice(mock.workers[0]!));
   expect(screen.getByText('No currency needed.')).toBeTruthy();
   expect(screen.getByRole('button', {name:'Apply and retry floor'})).toBeTruthy();
-  expect(region().textContent).toContain('Retry this Tower floor with the change.');
+  expect(region().textContent).toContain('Retry Tower floor 1 with full crew HP.');
   expect(region().textContent).not.toContain('fresh route');
 });
 
@@ -211,4 +212,65 @@ it('keeps a stale Apply click atomic when the crew changes before rerender', () 
   expect(m.screen).toBe('result');
   expect(m.error).toBe(true);
   expect(m.notice).toContain('Your crew changed');
+});
+
+it.each(['no-change', 'timeout', 'unavailable'] as const)('reviews a free owned-gear improvement before paid fallback training after %s', status => {
+  const m = loss();
+  m.state.gear.push(R.makeGear(m.state, 'hearthloom-weapon-epic', 24));
+  const before = R.exportSave(m.state), settled = R.resultAdviceStateV4(m.state);
+  const expected = R.autoEquipA6(settled.state);
+  expect(expected.ok).toBe(true);
+  expect(R.upgradeOptionsA6(settled.state).length).toBeGreaterThan(0);
+  const power = Math.round(R.teamPowerV4(settled.state)), after = Math.round(R.teamPowerV4(expected.state));
+  const ui = render(<AdviceV4 m={m}/>);
+  if(status === 'timeout')act(() => vi.advanceTimersByTime(8_000));
+  else if(status === 'unavailable')act(() => mock.workers[0]!.onerror!());
+  else reply(mock.workers[0]!, null);
+  expect(screen.getByText(`Crew Power ${power.toLocaleString('en-US')} → ${after.toLocaleString('en-US')} (+${(after-power).toLocaleString('en-US')}).`)).toBeTruthy();
+  const review = screen.getByRole('button', {name:'Review owned gear'});
+  expect(review.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ')).toContain('No currency needed.');
+  expect(R.exportSave(m.state)).toBe(before);
+  fireEvent.click(review);
+  expect(m.screen).toBe('team');
+  expect(m.state).toEqual(settled.state);
+  ui.unmount(); render(<QuickUpgradeA6 m={m}/>);
+  fireEvent.click(screen.getByRole('button', {name:'Auto-equip best gear'}));
+  expect(m.state).toEqual(expected.state);
+  expect(m.state.account.currencies).toEqual(settled.state.account.currencies);
+});
+
+it('keeps the completed recommendation ahead of the free fallback and quotes its exact paid result', () => {
+  const m = loss(); m.state.gear.push(R.makeGear(m.state, 'hearthloom-weapon-epic', 24));
+  render(<AdviceV4 m={m}/>);
+  const worker=mock.workers[0]!, recommendation=advice(worker, true), expected=R.applyAdviceV4(worker.request!.state, recommendation);
+  const before=Math.round(R.teamPowerV4(worker.request!.state)), after=Math.round(R.teamPowerV4(expected.state));
+  reply(worker, recommendation);
+  expect(screen.queryByRole('button', {name:'Review owned gear'})).toBeNull();
+  expect(screen.getByText(`Crew Power ${before.toLocaleString('en-US')} → ${after.toLocaleString('en-US')} (+${(after-before).toLocaleString('en-US')}).`)).toBeTruthy();
+  const apply=screen.getByRole('button', {name:'Apply and retry route'});
+  const description=apply.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');
+  expect(description).toContain('Restart chapter 1 at its first stop with full crew HP.');
+  expect(description).toContain('Cost:');
+  fireEvent.click(apply);
+  expect(m.state.account).toEqual(expected.state.account);
+  expect(m.battle!.actors.filter(a=>a.side==='party').every(a=>a.hp===a.maxHp)).toBe(true);
+});
+
+it('describes a free tactical change without inventing a Power gain', () => {
+  const m=loss(); render(<AdviceV4 m={m}/>); reply(mock.workers[0]!,advice(mock.workers[0]!));
+  expect(screen.getByText(`Crew Power stays ${Math.round(R.teamPowerV4(m.state)).toLocaleString('en-US')}.`)).toBeTruthy();
+});
+
+it('applies Tower advice for an under-level crew and prepares that same fixed floor', () => {
+  const m=loss();m.state.run=null;m.state.cleared=[1];m.state.towerBest=4;
+  m.state=R.startTowerFloorA6(m.state,5).state;
+  m.state=R.enterNode(m.state,R.availableNodes(m.state.run!)[0]!.id).state;
+  m.state.run!.battle!.result='enemy';
+  const floor=structuredClone(m.state.run!);
+  render(<AdviceV4 m={m}/>);reply(mock.workers[0]!,advice(mock.workers[0]!,true));
+  fireEvent.click(screen.getByRole('button',{name:'Apply and retry floor'}));
+  expect(m.error).toBe(false);expect(m.screen).toBe('prepare');
+  expect(m.state.run!.floor).toBe(5);expect(m.state.run!.seed).toBe(floor.seed);
+  expect(m.state.run!.towerA6).toEqual(floor.towerA6);
+  expect(m.battle!.actors.filter(a=>a.side==='party').every(a=>a.hp===a.maxHp)).toBe(true);
 });

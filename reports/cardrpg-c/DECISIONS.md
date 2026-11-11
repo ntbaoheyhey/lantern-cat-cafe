@@ -118,3 +118,9 @@
 2026-11-11T19:08:07.951286+00:00 C11: read preparation HP from current actors and protect the last living front, preserving public row commands. Compact guided preparation and move bond lines above names; respect reduced motion. No combat changes.
 
 - 2026-11-11T19:33:01.991715+00:00 C8: consume published MochiV3 artwork as a separately derived r3 placeholder; shared weighted seams and static eye apertures preserve editable sources. Artwork PASS does not accept designer-final runtime. Select manifest only after visual/skill checks; refresh offline demo, preserve recordings.
+
+2026-11-11 C11 loss guidance: keep advisor choices and three balance rounds unchanged; show free owned gear before paid fallback, exact Power and full-HP retry destination. PARTIAL harness: three early sweeps exposed loading/fixture assumptions, not a purchase defect; use one worn piece for enhancement and pre-equip other fallback fixtures. Raw attempts stay outside git.
+
+2026-11-11 C11 test fallback: isolated enhancement fixture still did not yield the intended option; drop enhancement/star expansions from this UI sweep and retain their earlier accepted receipts. Verify only changed loss guidance paths (owned gear, training, formation, advisor changes and retry destination); no claim of new enhancement/star coverage.
+
+2026-11-11T19:49:10.113207+00:00 C11: fixed Tower enemy levels must not act as campaign entry bands for result advice; retain campaign checks and fixed retry identity. Visual checkpoint accepted; score and recovery measurements unchanged.

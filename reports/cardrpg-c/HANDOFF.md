@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C8 MochiV3 temporary rig verified; continue C11 preparation/loss clarity.
+NOW: C11 loss guidance/Tower retry verified; continue lowest actionable quality review.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect remaining preparation/loss decisions.
+NEXT1: check designer inbox; review remaining low-score screens without repeating accepted work.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -17,7 +17,7 @@ KNOWN:C11 stage/VFX/intake/cache/HUD/upgrades/Bag/preparation/pantry/route fixes
 KNOWN:VFX forced-redraw4old differences remainPARTIAL;R3 targeted48offline/6PausePlayPASS,p9516.8/16.7ms,101drawsample.
 KNOWN:reward54browser/26keyboard/77tests/types/lint/28viewsPASS;20%copy/exhaustedpooladvance.
 KNOWN:Tower142browser/20keyboard/47captures;Events78/6/30 plus28notechecks;26tests/types/lintPASS.
-KNOWN:completion opens newest owned matching template (save lacks dropIDs);conversions readable;A6floor30cap/legacy31PASS.
+KNOWN:loss50browser/28keyboard/46views;22web+16rules/types/lintPASS;fixedTower advice below foe level.
 KNOWN:demo29,619,392bytes;score7.79;R3:26tests/3negativeguards/48combat/48offline/28viewsPASS;C8-R3-RECEIPT.
 KNOWN:no main/deploy/live-contract changes. Original C5 misses and final designer acceptance remain open.
 KNOWN:milestones302browser/28keyboard/68finalviews;48Discoveries checks validate whole-card fit;23web+25rules/types/lintPASS.
