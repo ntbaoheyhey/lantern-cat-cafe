@@ -216,3 +216,7 @@ D2a [auto]: Dùng một hệ số đổi đơn vị chung cho sân khấu cũ: m
 2026-11-11T02:49:24.532703+00:00 A6 gửi lỗi tooltip dùng mô tả trạng thái cũ; thêm D2b sửa nội dung theo skillsV5, giữ nguyên chế độ legacy và tiếp tục pilot3D.
 
 2026-11-11T02:51:41.609212+00:00 D2b xong: tooltip có thể nhận tên/mô tả/giới hạn từ ruleset đang chạy, kể cả bảng +N; chế độ cũ giữ nguyên. Tiếp tục dựng Mochi3D.
+
+2026-11-11T02:57:07.467588+00:00 — Tiếp tục D3 từ bản nhiều góc Mochi đã lưu; D2 và sửa tooltip D2b đã đẩy lên, không làm lại. Bắt đầu lưới sạch có khung xương và prop gắn đúng tay; chưa nghiệm thu mẫu 3D nào.
+
+2026-11-11T03:48:34.847842+00:00 — Pilot Mochi đã có lưới sạch 11.898 tam giác, 8 clip, 3 vật liệu và GLB nén 248 KB; chiều cao đo đúng 1,00 sau giải mã khung xương. Chưa nghiệm thu: còn sửa màu tai, xem các tư thế và kiểm tra trong A6.
