@@ -153,3 +153,5 @@
 2026-11-11T22:09:15.736339+00:00 C11: describe recorded source/recipient, actual HP/shield and accumulated status totals in the event book; preserve historical notes and distinguish tick detail. No rules/save changes; earlier JSON whitespace compacted losslessly with hashes/backups for120MB cap.
 
 2026-11-11T22:15:28.839123+00:00 Count reaction-damage as HP loss in both result reducers, matching combat/presentation and avoiding missing Rupture contribution; only recorded damage changes the totals.
+
+2026-11-11T22:20:14.425944+00:00 Use actual A6 crew cast receipts, excluding enemy casts; keep explicit cancelled-choice filtering for legacy records and positive-HP-only biggest hit. This corrects report claims without changing battle rules.

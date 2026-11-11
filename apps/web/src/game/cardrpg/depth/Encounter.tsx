@@ -89,7 +89,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
     <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><CompanionCard id={summary.mvp!.catalogId} m={m} /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + ¼ shields.</small></div></section>
     <div className="dp-three">{summary.cats.map(cat => <section className="cr-panel dp-cat-result" key={cat.id}><h2>{cat.name}</h2>{(['damage', 'healing', 'taken'] as const).map(metric => <label key={metric}><span>{labels[metric]} <b>{cat[metric]}</b></span><progress aria-label={`${cat.name} ${labels[metric]}`} value={cat[metric]} max={maxima[metric]} /></label>)}</section>)}</div>
     <ReactionSummaryV5 battle={battle}/>
-    <section className="cr-panel"><h2>Key moments</h2>{summary.firstUltimate && <p>First ultimate · round {summary.firstUltimate.round} · {name(summary.firstUltimate.actorId)} used {R.SKILLS[summary.firstUltimate.skillId]!.name}</p>}
+    <section className="cr-panel"><h2>Key moments</h2>{summary.firstUltimate && <p>First crew ultimate · round {summary.firstUltimate.round} · {name(summary.firstUltimate.actorId)} used {summary.firstUltimate.displayName}</p>}
       {summary.biggestHit && <p>Biggest hit · round {summary.biggestHit.round} · {name(summary.biggestHit.actorId)} dealt {summary.biggestHit.amount} to {name(summary.biggestHit.targetId)}</p>}
       {summary.saves.map((event, index) => <p key={index}>Saved · round {event.round} · {name(event.targetId)} {event.kind === 'revive' ? 'returned to the fight' : 'survived with Second sprout'}</p>)}
     </section>

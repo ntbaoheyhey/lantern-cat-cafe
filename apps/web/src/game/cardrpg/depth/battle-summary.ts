@@ -19,8 +19,15 @@ export function summarizeBattle(battle: Battle) {
   }
   const contribution = (cat: typeof cats[number]) => cat.damage + cat.healing + cat.shielding * .25;
   const mvp = [...cats].sort((a, b) => contribution(b) - contribution(a))[0];
-  const firstUltimate = battle.log.find(event => event.kind === 'action' && SKILLS[event.skillId]?.type === 'ultimate');
-  const biggestHit = battle.log.filter(event => damageKinds.has(event.kind)).sort((a, b) => b.amount - a.amount)[0];
+  // A selected ultimate can be cancelled by Bleed before it is cast. A6 records actual casts separately.
+  const cast = battle.initial.gameplayA6 ? battle.v4?.events.find(event => event.kind === 'ultimate.cast'
+    && cats.some(cat => cat.id === event.actorId)) : undefined;
+  const legacyCast = !battle.initial.gameplayA6 ? battle.log.find(event => event.kind === 'action'
+    && event.text !== 'Bleed prevented the action' && SKILLS[event.skillId]?.type === 'ultimate') : undefined;
+  const firstUltimate = cast?.kind === 'ultimate.cast' && cast.actorId
+    ? { round: cast.round, actorId: cast.actorId, skillId: cast.skillId, displayName: cast.displayName }
+    : legacyCast ? { ...legacyCast, displayName: SKILLS[legacyCast.skillId]!.name } : undefined;
+  const biggestHit = battle.log.filter(event => damageKinds.has(event.kind) && event.amount > 0).sort((a, b) => b.amount - a.amount)[0];
   const saves = battle.log.filter(event => event.kind === 'survive' || event.kind === 'revive');
   return { cats, mvp, firstUltimate, biggestHit, saves };
 }
