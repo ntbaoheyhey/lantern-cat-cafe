@@ -158,7 +158,8 @@
 .dp-v4-crews small{color:#4f4552}
 .dp-v4-prepare small{color:inherit}
 .dp-v4-outcome li{margin:8px 0;overflow-wrap:anywhere}
-.dp-v4-outcome details{max-height:300px;overflow:auto}
+/* Let the report/page own scrolling so the final note cannot hide below a second viewport. */
+.dp-v4-outcome summary{scroll-margin-block:8px}
 .dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article{background:#21332e;color:#f5ebdc;border-color:#8baa97}
 .dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article[data-active=true]{background:#345044}
 

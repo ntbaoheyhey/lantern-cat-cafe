@@ -102,3 +102,5 @@
 2026-11-11T22:09:15.736339+00:00 resume: user continue/handoff identifies event-book copy. Preserved unfinished patch and passing2325web/27focused/types/lint/16+4browser cases; inspected32finalviews without repeating accepted work. Continue C8/C11.
 
 2026-11-11T22:15:28.839123+00:00 resume: user continue/handoff identifies Rupture missing from result totals. Verified clean pushed1f44e91b8; preserved completed work, reproduced four HP-based failures and completed the reporting repair.
+
+2026-11-11T22:24:04.299793+00:00 resume: user continue/handoff confirms completed Key moments checkpoint. Verified clean pushed30e996a6c; preserved17tests/28browser/10views. Long-note baseline reproduced nested-scroll clipping at both sizes; continue C8/C11 with empty designer inbox.

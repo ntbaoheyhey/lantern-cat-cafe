@@ -131,3 +131,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T22:09:15.736339+00:00 Log copy:32finalviews inspected fullsize at both sizes/motion modes; names/effect totals/oldestentry/focus fit. Weighted7.79 unchanged. C11-BATTLE-LOG-COPY-RECEIPT.md.
 
 2026-11-11T22:20:14.425944+00:00 Result follow-up:10final moments captures inspected at full size and prior16totals captures in sheets/two full-size. Exact actual-cast and HP copy fits both sizes. Weighted7.79 retained; reporting fixtures do not imply stronger gameplay results.
+
+2026-11-11T22:27:28.180258+00:00 Long-note follow-up:26finalviews inspected in eight sheets and two full-size images; final entries, focus outlines and practice panels fit both sizes.20browser/20tests/types/lintPASS;weighted7.79 retained. C11-RESULT-NOTES-RECEIPT.md.

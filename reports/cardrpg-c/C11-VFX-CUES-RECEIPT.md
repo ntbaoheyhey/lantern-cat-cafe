@@ -11,3 +11,5 @@ Isolated offline p95:16.8ms at1280×720 and16.7ms at1440×900,240frames each,60d
 Visual follow-up: Kettle Knight's current damaging signature still inherits the legacy friendly Mirror polish self-shield recipe. Its timeline is now correct but its meaning is wrong; repair next in the Spine registry and verify against current rules. Designer inbox remains README-only and Mochi's published pilot is unchanged. Score7.79 and all gameplay misses remain unchanged.
 
 Evidence: checks/c11-vfx-cues-*.log; shots/c11-vfx-cues{,-offline,-battle,-performance}/; tools/cardrpg-c/vfx-cue-review.mjs and vfx-cue-battle-review.mjs.
+
+Raw source/offline review JSONs are preserved byte-for-byte in checks/archive/vfx-cue-reviews.tar.gz; see EVIDENCE-ARCHIVE.md and the adjacent hash manifest. Screenshots and all reported results remain unchanged.

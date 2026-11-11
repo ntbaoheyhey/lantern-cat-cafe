@@ -155,3 +155,5 @@
 2026-11-11T22:15:28.839123+00:00 Count reaction-damage as HP loss in both result reducers, matching combat/presentation and avoiding missing Rupture contribution; only recorded damage changes the totals.
 
 2026-11-11T22:20:14.425944+00:00 Use actual A6 crew cast receipts, excluding enemy casts; keep explicit cancelled-choice filtering for legacy records and positive-HP-only biggest hit. This corrects report claims without changing battle rules.
+
+2026-11-11T22:27:28.180258+00:00 C11: remove nested tactical-note scrolling after End hid final entries at both sizes; preserve one native report/page scroller and all event records. Archive two old VFX JSONs byte-for-byte with hash manifest to free2.3MB evidence.
