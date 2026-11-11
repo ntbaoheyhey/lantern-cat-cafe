@@ -1,5 +1,7 @@
 - TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
 
+- Resume audit 2026-11-11T00:32:54Z: Q36 46source views/3Bag tests/types/lint retained;0ahead0behind35e8d209f;138GiB;Vite91373/5960, no stale heavy job. Continue scroll-reset repair and visual acceptance.
+
 - Resume audit 2026-11-11T00:22:24Z: Q35 source/28captures retained;0ahead0behind04ebb291d;138GiB;Vite91373/5960; no stale heavy job. TASK matches attachment exactly. Prior onboarding/final checks retained.
 
 - Resume audit 2026-11-11T00:11:14Z: Q34 controls/38captures retained; one reproduced reward-feedback expiry fix pending verification. Git0ahead0behind0aa53d05f;138GiB;Vite91373/5960; no lease.

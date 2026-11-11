@@ -130,3 +130,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T00:14:21Z Q35 queued from retained q14a/1280-relics inspection: next tied-low screen, simple cup material,12px labels/38px actions. Recompose the same four keepsakes and equipped slot with original vector refinements; preserve wallet/bonus rules. Off-app draft while Q34 package runs.
 
 2026-11-11T00:27:02Z Q35 accepts the original ceramic/gilt mantel with14px text/44px controls and unchanged read-only wallet rules. Q36 addresses the observed tied-low Bag cost/owner/stat labels (12px and36px details tabs); bounded CSS refinement, no new gear or economy system. Existing final difficulty fallback remains explicit.
+
+- 2026-11-11T00:35:45Z Q37 scope from retained q23-offline-board/1280-weekly-ready and current DailyA6: keep its board/shelves composition, use existing preview.reason for honest availability and reward previews. This repairs a presentational mismatch when completed tasks are blocked and makes exact weekly gifts reviewable. No new system or economic retuning.

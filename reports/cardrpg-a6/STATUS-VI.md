@@ -233,3 +233,7 @@ Nhận thưởng một lần/xem lại/hướng dẫn/Tháp/bàn phím đạt; h
 
 2026-11-11T00:27:02Z: Q35 hoàn tất: tủ Relic mới, chữ từ14px/nút44px;36ảnh nguồn và36ảnh offline đã duyệt.
 Mức cộng2/4/6/8%, khóa chuyến đi, đổi ví/mất kết nối/lỗi/chờ8giây đều đúng;5test/type/lint qua, demo39.108.037byte, không lỗi/gọi mạng ngoài. Tiếp tục chữ chi phí/chủ sở hữu trên màn Bag.
+
+- Q36 xong: giá nâng, độ hiếm và chủ sở hữu trên Bag rõ hơn; nút40–44px, tên dài và chi phí nâng+12 vừa cả hai kích thước.
+- Đã sửa lỗi giữ vị trí cuộn khi đổi mèo/món/trang;56ảnh nguồn và28ảnh offline đã xem, lệnh trang bị/nâng cấp/khóa giữ đúng. Demo39,108,153byte, không lỗi trình duyệt.
+- Typecheck/lint và2.005test web qua (lệnh lọc test vô tình chạy toàn bộ, đã ghi); tiếp tục Q37 Daily: chữ dễ đọc và lý do chưa nhận được quà.
