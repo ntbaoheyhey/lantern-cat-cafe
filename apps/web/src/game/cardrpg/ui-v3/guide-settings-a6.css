@@ -186,3 +186,9 @@
  .a6-guide-chapters>button,.a6-guide-finder input,.a6-guide-index>button,.a6-guide-no-match button,.uv-battle-guide:has(>.a6-field-guide)>button {min-height:44px;font-size:14px}
  .a6-guide-writing:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
 }
+
+/* Readable save ownership and comfort state. */
+.uv-app[data-a6=true] {
+ .a6-save-state,.a6-code-caption small,.a6-save-footer>span,.a6-comfort-motion small,.a6-settings-replay>small,.a6-reset-page>.a6-reset-account {font-size:14px;line-height:1.4}
+ .a6-save-actions>button,.a6-save-footer>button,.a6-sound-row>button,.a6-comfort-options select,.a6-settings-replay>button,.a6-reset-page button {min-height:44px;font-size:14px}
+}

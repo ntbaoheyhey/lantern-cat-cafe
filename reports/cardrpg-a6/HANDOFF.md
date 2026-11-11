@@ -1,11 +1,11 @@
-# Lane A6 handoff — 2026-11-11T01:51:52Z
-NOW: Q42 accepted; publish then Q43 Settings status/comfort readability.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed 811d66431; BP38 included; draft438 pending Q42 update.
-NEXT 1: Commit/push Q42 and refresh draft438.
-NEXT 2: Merge published BP39 with a merge commit, then apply retained q43-readability.css.
-NEXT 3: Run q43-checks.mjs under shared lease; inspect both sizes before packaging; Q44 draft stays off app.
-RUNNING: Vite91373/5960 retained; no A6 heavy job/lease; Q42offline log complete;137GiB free.
-DONE: Q42 36source+36offlineviews inspected;10guide/HUD tests/types/lint pass,39108249B;75entries/search/keyboard/pause/account preserved.
-DONE: Q41 811d66431 pushed; prior final seeds/run/E2E retained.
+# Lane A6 handoff — 2026-11-11T01:56:03Z
+NOW: Q43 accepted; publish then Q44 companion ownership/training readability.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed11c5aeee3; local BP39 merge15c183f27; draft438 pending Q43 update.
+NEXT 1: Commit/push Q43 and refresh draft438.
+NEXT 2: Apply retained /tmp/cardrpg-a6-q44-readability.css after acceptance; run focused Cat/Growth/Power checks.
+NEXT 3: Verify all12cats/fourpages/exact commands/locks and both sizes; package after source acceptance.
+RUNNING: Vite91373/5960 retained; Q43offline released;137GiB free; no A6 heavy job.
+DONE: Q43 20source+20offline+6PantryCrownviews inspected;47tests/types/lint pass,39090549B.
+DONE: Q42 11c5aeee3 pushed; BP39 merge15c183f27; prior final seeds/run/E2E retained.
 KNOWN: Target8.5 unmet; early loss/recovery/HP/boss tail retained underR-3; no fourth numeric tuning loop.
-DECISIONS: One agent/draft only/original art/fully auto; no new systems; all uncommitted work preserved.
+DECISIONS: One agent/draft only/original art/fully auto; no new systems. Report consolidated to retain the two-page intent; detailed receipts unchanged.

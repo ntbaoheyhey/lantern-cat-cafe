@@ -271,3 +271,7 @@ Tiếp tục Q42: chữ và vùng bấm Field guide.
 2026-11-11T01:51:52Z: Tiếp tục từ36ảnh offline Q42 đã lưu, giữ toàn bộ phần đã hoàn tất.
 Field guide đã duyệt36ảnh nguồn/36ảnh offline: chữ14px, nút44px;75mục/tìm kiếm/bàn phím/trạng thái trận đúng,10test/type/lint qua. Demo39.108.249byte.
 Tiếp tục Q43 Settings và tích hợp Pantry Crown P39 trước bản đóng gói kế tiếp.
+
+2026-11-11T01:56:03Z: Q43 Settings hoàn tất: chữ14px/nút44px;20ảnh nguồn/20ảnh offline đã duyệt,47test/type/lint qua.
+Xuất/nhập khôi phục đúng dữ liệu, reset hai bước và tùy chọn chơi giữ đúng. Pantry Crown P39 tích hợp,6ảnh rõ; demo39.090.549byte.
+Tiếp tục Q44: thông tin sở hữu, chi phí và nút huấn luyện mèo dễ đọc hơn.

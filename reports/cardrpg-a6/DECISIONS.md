@@ -152,3 +152,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T01:44:22Z Q42 applies the retained Field guide typography/action draft after Q41 acceptance. Reuse its lookup/keyboard probe but remove unrelated Button Guard framing; P38 already has current accepted framing. No catalogue or rule changes.
 
 - 2026-11-11T01:47:45Z Q44 follows the existing research readability guidance: inspected retained Cats growth/Inkcap skills720p expose9–11px metadata and36px actions. Improve existing costs/readiness/controls after Q43; keep art, commands and progression unchanged. Off-app draft /tmp/cardrpg-a6-q44-readability.css.
+
+- 2026-11-11T01:52:55Z Q43 applies the retained Settings typography/action draft after Q42 acceptance. Published BP39 merged at15c183f27; existing save/preferences/reset logic stays unchanged. Verify Settings and current puppet tests before the next package.
