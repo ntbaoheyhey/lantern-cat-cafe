@@ -51,3 +51,25 @@ it('keeps unaffordable, capped and active-route actions inert without altering p
  for(const name of ['Equip','Enhance +1']) {const button=screen.getByRole('button',{name});expect((button as HTMLButtonElement).disabled).toBe(true);fireEvent.click(button);}
  expect(screen.getByText('Finish this route to change gear.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(locked);
 });
+it('quotes enhancement on the wearer while comparing equipment for a different cat',()=>{
+ const {m,id}=model();m.state.account.cards.find(c=>c.cardId==='mochi')!.level=20;m.cardId='soot';
+ const item=m.state.gear.find(g=>g.id===id)!;item.enhancement=11;
+ Object.assign(m.state.account.currencies,{fish:6000,threads:100});
+ const expected=R.enhancementPreview(item,m.state,'mochi'),selected=R.enhancementPreview(item,m.state,'soot'),before=R.exportSave(m.state);
+ expect(expected.before).not.toBe(selected.before);render(<BagA6 m={m}/>);
+ const quote=screen.getByLabelText('Enhancement quote');
+ expect(quote.textContent).toContain('Worn by Mochi');expect(quote.textContent).toContain(`Attack ${expected.before} → ${expected.after}`);
+ expect(screen.getByText('Move from Mochi to Soot')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+ const result=R.enhanceGear(m.state,id);expect(result.ok).toBe(true);fireEvent.click(screen.getByRole('button',{name:'Enhance +12'}));
+ expect(m.state.gear).toEqual(result.state.gear);expect(m.state.equipment).toEqual(result.state.equipment);expect(m.state.account.currencies).toEqual(result.state.account.currencies);
+ expect(within(quote).getByText('Maximum enhancement')).toBeTruthy();expect(quote.textContent).not.toContain('5070');
+});
+it('names every shortage and explains bag-only and zero-gain enhancements without spending',()=>{
+ const {m,id}=model();m.state.equipment={};Object.assign(m.state.gear.find(g=>g.id===id)!,R.makeGear(m.state,'mossbrew-charm-common',25),{id});m.cardId='soot';
+ Object.assign(m.state.account.currencies,{fish:5,threads:1});const before=R.exportSave(m.state);render(<BagA6 m={m}/>);
+ const quote=screen.getByLabelText('Enhancement quote'),button=screen.getByRole('button',{name:'Need materials'});
+ expect(quote.textContent).toContain('For Soot · Equip to use');expect(quote.textContent).toContain('No main-stat gain at +1.');
+ expect(quote.textContent).toContain('30 fish points');expect(quote.textContent).toContain('3 threads');
+ expect(quote.textContent).toContain('25 more fish · 2 more threads');expect(quote.textContent).toContain('Patrol gives fish and threads.');
+ expect(button.getAttribute('aria-describedby')).toBe(quote.id);fireEvent.click(button);expect(R.exportSave(m.state)).toBe(before);
+});

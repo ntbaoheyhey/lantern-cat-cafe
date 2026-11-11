@@ -1,4 +1,4 @@
-import {lazy, Suspense, useEffect, useRef, useState, useSyncExternalStore} from 'react';
+import {lazy, Suspense, useEffect, useId, useRef, useState, useSyncExternalStore} from 'react';
 import {EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
@@ -16,6 +16,7 @@ const shortName=(name:string)=>name.replace(/^(Common|Rare|Epic|Legendary) /,'')
 export function BagA6({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [slot,setSlot]=useState<string>(m.inventorySlot),[page,setPage]=useState<'compare'|'effects'>('compare'),[workshop,setWorkshop]=useState(false);
+ const enhanceDescription=useId();
  const workshopButton=useRef<HTMLButtonElement>(null),backButton=useRef<HTMLButtonElement>(null),wasWorkshop=useRef(false);
  useEffect(()=>{if(workshop)backButton.current?.focus();else if(wasWorkshop.current)workshopButton.current?.focus();wasWorkshop.current=workshop;},[workshop]);
  const state=m.state,locked=!!state.run&&!state.run.complete;
@@ -26,10 +27,16 @@ export function BagA6({m}:{m:DepthModel}) {
  const ownerOf=(id:string)=>Object.entries(state.equipment).find(([,slots])=>Object.values(slots).includes(id))?.[0];
  const owner=item?ownerOf(item.id):undefined,equipped=owner===cardId;
  const preview=item?R.enhancementPreview(item,state,cardId):undefined;
+ // Equipping compares the chosen cat; enhancing changes the piece on its actual wearer.
+ const enhancePreview=item?R.enhancementPreview(item,state,owner??cardId):undefined;
  // The read-only comparison can show a future fit while the real actions remain route-locked.
  const compare=item?gearComparison(locked?{...state,run:null}:state,cardId,item.id):null,utility=item?R.comparisonV4(state,cardId,item.id):null;
  const current=R.depthStats(state,cardId),canAfford=!!preview&&state.account.currencies.fish>=preview.cost.fish&&state.account.currencies.threads>=preview.cost.threads;
  const maxed=!!item&&item.enhancement>=12;
+ const missing=preview?(['fish','threads'] as const).flatMap(id=>{
+  const amount=preview.cost[id]-state.account.currencies[id];
+  return amount>0?[`${amount} more ${id==='threads'&&amount===1?'thread':id}`]:[];
+ }):[];
  const select=(id:string)=>{m.itemId=id;setPage('compare');m.notify(false);};
  if(workshop)return <section className="a6-inventory-workshop" aria-label="Gear workshop"><header><button ref={backButton} onClick={()=>setWorkshop(false)}>Back to gear</button><p>Craft, reforge and manage your full collection.</p></header><div><Suspense fallback={<p>Opening the workshop…</p>}><Workshop m={m}/></Suspense></div></section>;
  return <section className="a6-inventory" aria-label="Gear workbench">
@@ -41,7 +48,7 @@ export function BagA6({m}:{m:DepthModel}) {
      {!gear.length&&<div className="a6-empty-state"><img {...artPropsA6('panko')} alt=""/><h2>{state.gear.length?'This shelf is waiting':'A shelf for your treasures'}</h2><p>{state.gear.length?'No '+slotNames[slot as keyof typeof slotNames].toLowerCase()+' yet. Try another shelf.':'Find your first gear on Night Patrol.'}</p><button onClick={()=>state.gear.length?setSlot('all'):m.go('hub')}>{state.gear.length?'Show all gear':'Back to the cafe'}</button></div>}
     </div>
    </section>
-   {item&&spec&&preview?<aside className="a6-inventory-detail" aria-label="Selected gear" data-selected-gear={item.id}>
+   {item&&spec&&preview&&enhancePreview?<aside className="a6-inventory-detail" aria-label="Selected gear" data-selected-gear={item.id}>
     <header className="a6-inventory-hero" data-rarity={spec.rarity} style={rarityStyle(spec.rarity)}><GearArtA6 slot={spec.slot} setId={spec.setId}/><div><small>{spec.rarity} · {spec.slot} · +{item.enhancement}</small><h2>{shortName(spec.name)}</h2><p><b>{statName(spec.main)} {preview.before}</b> on {cat.name}</p><span>{owner?'Worn by '+R.CAT_BY_ID[owner]!.name:'Ready to equip'}</span></div><img {...artPropsA6(cardId)} alt=""/></header>
     <nav className="a6-inventory-pages" aria-label="Gear details"><button aria-pressed={page==='compare'} onClick={()=>setPage('compare')}>Compare on {cat.name}</button><button aria-pressed={page==='effects'} onClick={()=>setPage('effects')}>Set & affixes</button></nav>
     <div className="a6-inventory-reading" key={item.id+':'+cardId+':'+page}>{page==='compare'?<>
@@ -51,7 +58,11 @@ export function BagA6({m}:{m:DepthModel}) {
      {!locked&&compare?.error&&<p role="status">{compare.error}</p>}
     </>:<>{setInfo&&<section className="a6-inventory-set" aria-label="Gear set"><h3>{setInfo.name}</h3><p>{R.equipmentEffects(state,cardId).counts[setInfo.id]??0}/4 pieces worn by {cat.name}</p><p><b>2 pieces</b> · {setInfo.two}</p><p><b>4 pieces</b> · {setInfo.four}</p></section>}{spec.unique&&<p><b>Unique effect</b> · {R.gearStoryV4(spec.id)}</p>}{item.affixes.length?<section aria-label="Item affixes">{item.affixes.map(id=>{const a=R.AFFIX_BY_ID[id]!;return <p key={id}><b>{a.name} · {statValue(a.stat,R.gearAffixRoll(item,id))}</b><br/>{R.AFFIX_TEXT_V4[a.stat]??a.description}</p>;})}</section>:<p>No affixes on this piece.</p>}<UtilityComparison state={state} cardId={cardId} instanceId={item.id}/></>}
     </div>
-    <footer className="a6-inventory-actions"><div><small>{equipped?'A perfect fit':locked?'Crew set for this route':'For '+cat.name}</small><button className="cr-primary" disabled={locked||equipped||!!compare?.error} onClick={()=>{const result=R.equipGear(m.state,cardId,item.id);if(result.ok)result.state.tutorial=Math.max(4,result.state.tutorial);m.apply(result,spec.name+' equipped.');}}>{equipped?'Equipped':'Equip'}</button></div><div><div className="a6-inventory-cost">{maxed?<span>Maximum enhancement</span>:<><span>{statName(spec.main)} {preview.before} → {preview.after}</span><CostView cost={preview.cost}/></>}</div><button disabled={locked||maxed||!canAfford} title={!canAfford&&!maxed?'Not enough fish or threads':undefined} onClick={()=>m.apply(R.enhanceGear(m.state,item.id),spec.name+' enhanced to +'+(item.enhancement+1)+'.')}>{maxed?'Max +12':!canAfford?'Need materials':'Enhance +'+(item.enhancement+1)}</button></div></footer>
+    <footer className="a6-inventory-actions"><div><small>{locked?'Crew set for this route':equipped?'Already on '+cat.name:owner?'Move from '+R.CAT_BY_ID[owner]!.name+' to '+cat.name:'Equip for '+cat.name+' · Free'}</small><button className={!locked&&!equipped&&!compare?.error?'cr-primary':undefined} disabled={locked||equipped||!!compare?.error} onClick={()=>{const result=R.equipGear(m.state,cardId,item.id);if(result.ok)result.state.tutorial=Math.max(4,result.state.tutorial);m.apply(result,spec.name+' equipped.');}}>{equipped?'Equipped':'Equip'}</button></div><div><div id={enhanceDescription} className="a6-inventory-enhance" aria-label="Enhancement quote">
+     <small>{owner?'Worn by '+R.CAT_BY_ID[owner]!.name:'For '+cat.name+' · Equip to use'}{!maxed&&enhancePreview.before===enhancePreview.after&&<> · No main-stat gain at +{item.enhancement+1}.</>}</small>
+     <div className="a6-inventory-cost">{maxed?<span>Maximum enhancement</span>:<><span>{statName(spec.main)} {enhancePreview.before} → {enhancePreview.after}</span><CostView cost={enhancePreview.cost}/></>}</div>
+     {locked?<small>Finish this route to enhance gear.</small>:!maxed&&missing.length>0&&<small className="a6-inventory-missing">Need {missing.join(' · ')}. Patrol gives fish and threads.</small>}
+    </div><button aria-describedby={enhanceDescription} disabled={locked||maxed||!canAfford} onClick={()=>m.apply(R.enhanceGear(m.state,item.id),spec.name+' enhanced to +'+(item.enhancement+1)+'.')}>{maxed?'Max +12':!canAfford?'Need materials':'Enhance +'+(item.enhancement+1)}</button></div></footer>
    </aside>:<aside className="a6-inventory-welcome"><img {...artPropsA6(cardId)} alt=""/><h2>A little care before the next patrol</h2><p>Choose a piece to compare it on {cat.name}.</p></aside>}
   </div>
  </section>;
