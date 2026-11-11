@@ -188,7 +188,7 @@ it('reads exactly the last100 events newest first, including fallback text, with
  expect(within(log).getByText('Latest 100 of 125 events · Newest first')).toBeTruthy();
  const events=[...log.querySelectorAll('[data-event-index]')];
  expect(events.map(e=>e.getAttribute('data-event-index'))).toEqual(Array.from({length:100},(_,i)=>String(124-i)));
- expect(events[0]!.textContent).toContain('damage 124');
+ expect(events[0]!.textContent).toContain('124 HP damage');
  expect(within(log).queryByText('Event 24')).toBeNull();
  expect(within(log).getByRole('heading',{name:'Round 18'})).toBeTruthy();
  expect(m.battle).toEqual(before);

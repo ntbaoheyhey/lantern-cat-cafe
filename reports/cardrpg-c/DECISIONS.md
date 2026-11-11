@@ -149,3 +149,5 @@
 2026-11-11T21:50:06.257521+00:00 Evidence: retain ten representative Clover screenshots plus filmstrip/comparisons;24other inspected captures remain in /tmp/cardrpg-c-clover-full-reviewed. Compact JSON values losslessly with preservation manifest to keep reports below120,000,000bytes.
 
 2026-11-11T21:59:14.449226+00:00 C11: contain log keyboard bubbling without preventing native scrolling after Space reproduced40→44events behind modal. Preserve outer shortcut and previous pause. Compact one old JSON losslessly to respect120MB; backup/hash/equality retained.
+
+2026-11-11T22:09:15.736339+00:00 C11: describe recorded source/recipient, actual HP/shield and accumulated status totals in the event book; preserve historical notes and distinguish tick detail. No rules/save changes; earlier JSON whitespace compacted losslessly with hashes/backups for120MB cap.
