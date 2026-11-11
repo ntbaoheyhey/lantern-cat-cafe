@@ -30,10 +30,10 @@ export class PaintedVfx {
   particle.active=true;particle.born=time+layer.delay;particle.life=layer.life*Math.max(1,speed*.65);particle.source=source;particle.target=target;particle.layer=layer;particle.recipe=recipe;particle.index=index;particle.total=total;particle.stamp=this.stamps.get(layer.glyph,layer.accent?PAINT.cream:recipe.color)??null;particle.captured=false;particle.impact=impact;
  }
  cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number){
-  const recipe=paintedRecipe(frame.plan.presentationId??frame.plan.skillId);if(!recipe)return;
+  const recipe=paintedRecipe(frame.plan.presentationId??frame.plan.skillId,frame.plan);if(!recipe)return;
   if(this.plan!==frame.plan){this.plan=frame.plan;this.hitAt=-Infinity;this.prepared=false;paintedTargets(frame.plan,recipe.friendly,this.targets);}
   this.stats.cues++;
-  if(this.overrides.effects.has(recipe.id)){this.overrides.emit(recipe.id,cue.name,cue.name==='cast'?frame.plan.actorId:this.targets,time);return;}
+  if(recipe.overrideKey&&this.overrides.effects.has(recipe.id)){this.overrides.emit(recipe.id,cue.name,cue.name==='cast'?frame.plan.actorId:this.targets,time);return;}
   if(cue.name==='cast'||cue.name==='ult-start'){
    if(!this.prepared){for(const layer of recipe.layers)if(layer.phase==='windup')for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,frame.plan.actorId,time,i,layer.count,speed);this.prepared=true;}
    if(cue.name==='cast')for(const layer of recipe.layers)if(layer.anchor!=='caster'&&['projectile','pour','converge'].includes(layer.motion))for(const target of this.targets)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed);
@@ -81,7 +81,7 @@ export class PaintedVfx {
   // redraw holds its flash; advancing gallery samples must still let it expire.
   const sinceHit=time-this.hitAt;
   if(sinceHit>=0&&sinceHit<PAINT.impactSeconds-1e-6&&view.frame&&view.frame.plan===this.plan){
-   const recipe=paintedRecipe(view.frame.plan.presentationId??view.frame.plan.skillId);
+   const recipe=paintedRecipe(view.frame.plan.presentationId??view.frame.plan.skillId,view.frame.plan);
    if(recipe&&!recipe.friendly){
     const stamp=this.stamps.get('spark',PAINT.cream)!;
     for(const id of this.targets){

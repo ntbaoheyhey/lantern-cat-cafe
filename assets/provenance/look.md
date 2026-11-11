@@ -472,3 +472,6 @@ Tools: Playwright screenshots/video of the original-art local game and gallery, 
 ## Lane C C11 original cafe painting — 2026-11-11
 
 Built-in image_gen, illustration-story, text-only original empty cafe; no input/reference images and no characters. Exact prompt and hashes: `reports/cardrpg-c/ref/c11-stage-imagegen.json`. Generated1774x887PNG stays outside git; runtime `assets/cardrpg-look/stage/painted-cafe-c11-v1.webp` is244296bytes, cwebp1.6.0 quality88. Runtime creates three parallax planes from the same artwork with glass/floor mattes; original procedural stage remains the loading/failure fallback. Palette-derived saturation/contrast/brightness controls stay in `spine/style.ts`. This is a backdrop placeholder, not designer character art.
+
+## Lane C Spool preparation cue — 2026-11-11
+Tool: hand-authored TypeScript Canvas Path2D in spine/vfx-stamps.ts; source: original bobbin silhouette with three winding gaps, no image/reference input. Existing shared painted tokens, pooled threads and contracting foot ring. Purpose: a visible caster-only preparation cue from the real charge event; not final character art.

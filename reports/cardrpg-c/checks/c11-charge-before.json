@@ -1,0 +1,121 @@
+[
+  {
+    "charged": false,
+    "plan": {
+      "id": "enemy:spool-ram:basic",
+      "name": "Bobbin nudge",
+      "targets": [
+        "mochi"
+      ],
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 1,
+          "actionId": 2,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-0-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0
+        }
+      ]
+    },
+    "log": [
+      {
+        "round": 1,
+        "actorId": "foe-0-spool-ram",
+        "targetId": "foe-0-spool-ram",
+        "skillId": "",
+        "kind": "charge",
+        "amount": 1,
+        "text": "Charging a row strike"
+      },
+      {
+        "round": 1,
+        "actorId": "foe-0-spool-ram",
+        "targetId": "mochi",
+        "skillId": "enemy:spool-ram:basic",
+        "kind": "enemy-action",
+        "amount": 0,
+        "text": "Charging for next turn"
+      }
+    ]
+  },
+  {
+    "charged": true,
+    "plan": {
+      "id": "enemy:spool-ram",
+      "name": "Spring-loaded sweep",
+      "targets": [
+        "mochi"
+      ],
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 1,
+          "actionId": 3,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-0-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 3,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-0-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 39,
+          "note": ""
+        }
+      ]
+    },
+    "log": [
+      {
+        "round": 1,
+        "actorId": "foe-0-spool-ram",
+        "targetId": "mochi",
+        "skillId": "spool-ram",
+        "kind": "multi-hit",
+        "amount": 0,
+        "text": "row"
+      },
+      {
+        "round": 1,
+        "actorId": "foe-0-spool-ram",
+        "targetId": "mochi",
+        "skillId": "",
+        "kind": "damage",
+        "amount": 39,
+        "text": ""
+      },
+      {
+        "round": 1,
+        "actorId": "foe-0-spool-ram",
+        "targetId": "mochi",
+        "skillId": "enemy:spool-ram",
+        "kind": "enemy-action",
+        "amount": 0,
+        "text": "Charging for next turn"
+      }
+    ]
+  }
+]

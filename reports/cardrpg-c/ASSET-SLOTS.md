@@ -35,3 +35,5 @@ Each unit folder is assets/cardrpg-look/spine/<id>/. Deliver <id>.json OR <id>.s
 Shared required bones: root, hip, head, hp-anchor, vfx-origin, main-hand, off-hand. Sockets: hpAnchor ← hp-anchor; head ← head; vfxOrigin ← vfx-origin; mainHand ← main-hand; offHand ← off-hand; feet ← root; chest ← hip.
 
 Every skill launches from main-hand or vfx-origin, impacts the target vfx-origin and places rings at root. Cast/impact/cut-in event fractions, optional designer VFX folders, budgets and exact clip lists are in slots.json. The runtime flips enemies; art always faces right. Boss width is at most 1126.4 Spine units. See DESIGNER-SPEC for delivery, validation and acceptance.
+
+Spool Ram preparation: the rules charge event (not an extra required Spine event) selects the existing `skill` clip for either basic/signature ID. Its `cast`/`hit` cues wind the caster bobbin; hit is a contact marker, not guaranteed damage. The following actual strike keeps the usual attack/skill mapping. Standard designer VFX slots override strikes only; the cached painted preparation variant stays distinct.

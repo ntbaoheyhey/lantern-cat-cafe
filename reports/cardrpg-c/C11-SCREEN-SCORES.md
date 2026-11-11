@@ -69,3 +69,5 @@ Painted cafe follow-up: the new warm painted windows, walls and floor match the 
 Patrol follow-up: all14c11-patrol-gear captures inspected at both sizes. A compact sage/gold owned-gear action fills the free dock space beside Patrol; crew art/labels and navigation remain clear. Exact +641 preview/application, success/focus and guards verified in16browserchecks. Home scores and weighted7.79remain unchanged; improved visibility is not proof of gameplay recovery.
 
 Kettle semantic follow-up:14finalbattle/22source/22offlinecaptures inspected. Damage lands on its victim; opening shield/Warm, low-HP Burn and genuine enemy support remain separate and legible. Face/HP lanes stay clear at both sizes. Correctness fix only; weighted7.79unchanged.
+
+Utility follow-up: inspected14finalbattle+10source+10offlinecaptures. A bobbin core makes winding visible on Spool, the following strike has damage numbers on cats, and support remains friendly. Charge/strike gallery toggle fits both sizes. Weighted7.79unchanged; correctness/readability refinement is not player-study evidence.

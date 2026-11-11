@@ -12,6 +12,7 @@ import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
 import { cinematicBox, ultimateFocus } from './cinematics';
+import { chargeEvent } from '../depth/card-action-plan';
 
 interface DisplayActor {actor:SpineActor;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
@@ -78,8 +79,11 @@ export class SpineScene {
   if(cue.name==='ult-end'){this.ultimate=false;this.ultEndedAt=this.renderTime;}
   if(cue.name==='cast')this.castAt=this.renderTime;
   if(cue.name==='hit'){
-   this.firstHit=true;this.hitAt=this.renderTime;
-   if(!view.reducedMotion&&view.fixedTime===undefined&&frame.plan.events.some(e=>e.type==='damage'))this.hitstopUntil=performance.now()+PAINT.hitstopMs;
+   this.firstHit=true;
+   if(frame.plan.events.some(e=>e.type==='damage')){
+    this.hitAt=this.renderTime;
+    if(!view.reducedMotion&&view.fixedTime===undefined)this.hitstopUntil=performance.now()+PAINT.hitstopMs;
+   }
    for(const id of frame.plan.targetIds){const target=this.actors.get(id);if(target&&frame.plan.events.some(e=>e.targetIds.includes(id)&&e.type==='damage'))target.hurtAt=this.renderTime;}
   }
  }
@@ -113,7 +117,7 @@ export class SpineScene {
    let name='idle',key:unknown='idle',at=time%actor.duration('idle');
    if(view.model){name=({ultimate:'ult',cast:'skill',hit:'hurt',KO:'ko'} as Record<string,string>)[view.model.clip]??view.model.clip;at=(view.modelProgress??0)*actor.duration(name);key=name;}
    else if(frame&&unit.id===frame.plan.actorId){
-    name=SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
+    name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
     at=retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
    }else if(unit.hp<=0){if(entry.koAt<0)entry.koAt=time;name='ko';key=entry.koAt;at=time-entry.koAt;}
