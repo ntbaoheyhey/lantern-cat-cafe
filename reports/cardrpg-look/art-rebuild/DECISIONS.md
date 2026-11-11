@@ -189,3 +189,5 @@ P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [aut
 2026-11-11T02:32:36.055757+00:00 Consolidated 02:40 user addendum saved verbatim; section8 tool receipts added. Keep completed D0/D1; continue D2.
 
 D2a [auto] Retain one uniform model-to-cafe conversion (1 model unit = 2 legacy stage units) so normalized GLBs/puppets share a measurable scale without breaking existing stage/VFX coordinates; all targets and tier ranges convert together, never per rarity/slot.
+
+2026-11-11T02:49:24.532703+00:00 D2b A6outbox02:32 requests explicit skillsV5 status copy support in shared badges; small compatible presentation-only correction before D3.

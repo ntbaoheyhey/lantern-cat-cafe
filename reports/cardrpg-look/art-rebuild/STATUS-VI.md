@@ -212,3 +212,7 @@ Bắt đầu chuẩn kích thước dùng chung cho mô hình 3D và bản tạm
 D2a [auto]: Dùng một hệ số đổi đơn vị chung cho sân khấu cũ: mô hình cao 1 đơn vị tương ứng 2 đơn vị sân khấu. Tất cả mèo giữ cùng chiều cao; không tăng/giảm riêng theo ô hay độ hiếm.
 
 2026-11-11T02:47:09.824630+00:00 — D2 xong: 25 đơn vị/50 ảnh hai cỡ, không lỗi tỉ lệ/cắt mép/che mặt và HP; mèo cùng chiều cao, boss49–50% canvas. Demo38.90MB. Chưa có mẫu3D được duyệt; bắt đầu D3 dựng base Mochi, Button Guard và Yarn Giant.
+
+2026-11-11T02:49:24.532703+00:00 A6 gửi lỗi tooltip dùng mô tả trạng thái cũ; thêm D2b sửa nội dung theo skillsV5, giữ nguyên chế độ legacy và tiếp tục pilot3D.
+
+2026-11-11T02:51:41.609212+00:00 D2b xong: tooltip có thể nhận tên/mô tả/giới hạn từ ruleset đang chạy, kể cả bảng +N; chế độ cũ giữ nguyên. Tiếp tục dựng Mochi3D.

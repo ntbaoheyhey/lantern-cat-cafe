@@ -1,7 +1,7 @@
 # Lane B real3D handoff
 NOW: D2/D2a complete; D3 clean-base pilot active. Updated 2026-11-11T02:47:09.824630+00:00.
-BRANCH: codex/cardrpg-art-r1-2026-11-09; last pushed 7aa21583eb794b5453dbac64152f485976e14155; draft #427.
-NEXT 1: Publish D2 selected evidence/code + consolidated02:40/tools addendum; preserve native dirty files/GLBs.
+BRANCH: codex/cardrpg-art-r1-2026-11-09; last pushed dcd1f1900b7495840f9900837165ffe6326d01d6; draft #427.
+NEXT 1: D2 published; model Mochi clean authored cage from new original turnaround; preserve native dirty files/GLBs.
 NEXT 2: D3 Mochi turnaround generated at /Users/bao/art/look-v3/real3d/mochi/turnaround-v1.png; model continuous clean cage/skin, original outfit and props in Blender.
 NEXT 3: Export/compress pilot, render8views, fourposes and both-sizeA6/yawproof; then ButtonGuard/Yarn bases. No raw mesh or coarse blob acceptance.
 RUNNING: No B heavy job/lease; final D2 gates done work/d2/final-gates.log. Static5920/5922 servers retained.
