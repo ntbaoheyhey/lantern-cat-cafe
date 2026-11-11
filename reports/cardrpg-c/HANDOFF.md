@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 VFX sizing verified; continue quality/intake.
+NOW: C11 missing-cast override fallback verified; continue quality/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect override cue availability against active clips.
+NEXT1: check designer inbox; inspect effect pooling under repeated contacts.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -28,3 +28,4 @@ KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lin
 KNOWN:pnggate2corruptfalsePASS->FIX;41tests/15finalPASS;VFXcontract6falsePASS->FIX/49tests/types/lint/4retainedviewsPASS.
 KNOWN:eventfallback120source/30testsPASS;VFXscale192source+64zoom/18tests/types/lint/2offline/2controls/6viewsPASS.
 KNOWN:activeformat2misses->10sourcePASS;32focused/types/lint/2offlinesmoke/2controls/4viewsPASS;demo29226105.
+KNOWN:overridecast4misses->192sourcePASS;20focused/types/lint/2offlinesmoke/2controls/4finalviewsPASS;demo29226565.

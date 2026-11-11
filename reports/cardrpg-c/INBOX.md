@@ -1,4 +1,5 @@
 # User corrections
+2026-11-11 resume12:54UTC: handoff confirms192size/64zoom checks and empty inbox. Verified clean pushed d3a82eb4d and retained all completed checks; continue C11 override cue availability without replaying accepted work.
 2026-11-11 resume12:03UTC: handoff confirms144source/144battle/144offline/two playback checks and p9516.7–16.8ms. Preserved unfinished code and all passing logs; inspected final38views, completed receipt/push/PR checkpoint before continuing C11.
 2026-11-11 resume11:54UTC: handoff reports loading-clock checks pending final review. Verified clean pushed84333eef1 already contains inspected8views, offline build/smoke and56tests/types/lintPASS. Preserve checkpoint; continue C11 ultimate visual readability from retained captures.
 2026-11-11 resume11:27UTC: user handoff describes animated-bounds camera fitting. Preserved uncommitted patch and passing11tests/types/lint; first pilot still clipped34px. Diagnostic found floating-point equality skipping recentering at the fitted zoom. Continue focused repair and both-size review; no accepted work rerun.

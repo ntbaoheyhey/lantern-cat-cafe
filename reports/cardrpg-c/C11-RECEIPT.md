@@ -43,3 +43,5 @@ PNG intake checkpoint: C11-PNG-GATE-RECEIPT.md.2falsePASS corrupt PNGs ->FIX;41t
 Event fallback checkpoint: C11-EVENT-FALLBACK-RECEIPT.md.4baseline misses ->120sourcePASS;30focused/types/lint,2offline smoke/10changes/2controls/4inspectedviewsPASS. Demo29,226,081bytes;large diagnostics outside git. No gameplay/score/performance claim.
 
 Active format checkpoint: C11-ACTIVE-FORMAT-RECEIPT.md.2baseline browser failures->10sourcePASS;32focused tests across runs/types/lint/2offlinesmoke/2controls/4viewsPASS. Demo29,226,105bytes;large diagnostics outside git; no gameplay/score/performance claim.
+
+Override cue checkpoint: C11-VFX-OVERRIDE-CUE-RECEIPT.md.4baseline misses->192sourcePASS;20focused/types/lint/2offlinesmoke/2controls/4finalviewsPASS. Demo29,226,565bytes; no gameplay/score/performance claim.

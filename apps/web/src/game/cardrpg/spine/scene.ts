@@ -94,8 +94,8 @@ export class SpineScene {
   this.ready=this.pending.size===0&&this.failed.size===0;
  }
  private onCue(actorId:string,cue:SpineCue){
-  const view=this.currentView??this.view(),frame=view.frame;if(!frame||actorId!==frame.plan.actorId)return;
-  this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors);
+  const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
+  this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
   this.eventAudit.push({actorId,name:cue.name,fallback:cue.fallback,skillId:frame.plan.skillId,elapsed:frame.elapsed});if(this.eventAudit.length>240)this.eventAudit.shift();
   if(cue.name==='ult-start'){this.ultimate=true;this.ultStartedAt=this.renderTime;this.ultEndedAt=-100;this.cinematic.actorId=actorId;}
   if(cue.name==='ult-end'){this.ultimate=false;this.ultEndedAt=this.renderTime;}

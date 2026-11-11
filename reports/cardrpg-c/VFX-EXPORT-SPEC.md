@@ -4,6 +4,8 @@ Lane C supplies all skill effects. A designer may replace one effect by deliveri
 
 The descriptor's `cue` is `cast` or `hit`. Cast attaches to the acting unit; hit attaches to the actual friendly/hostile recipients selected by the current combat outcome. Supported `socket` values: `feet`, `vfxOrigin`, `mainHand`, `offHand`, `head`, `chest`. Secondary heal/shield paint in mixed actions remains separate. Spool Ram preparation retains its distinct painted cue; its standard override replaces the subsequent strike.
 
+Basic attacks require only `hit`. If the active character clip has no `cast`, a cast override plays once at its first `hit`, attached to the caster, and records a runtime warning. An authored `cast` always takes precedence, including one after contact. Hit overrides play at every valid hit on the current recipients. This also applies to PNG character sequences and placeholder clips; no extra required character event is introduced.
+
 `width` and `height` describe unscaled world units, centered on the attachment socket. `scale` must be finite and positive; each scaled dimension is at most2048units. A cat is512units high. Camera zoom and the small stage depth scale apply; target species/height and animated head positions do not change the export's dimensions. Preserve clear faces, HP bars and readable painted silhouettes. Timing is measured at×1 and follows the presentation clock at×2/×3.
 
 ## PNG frames

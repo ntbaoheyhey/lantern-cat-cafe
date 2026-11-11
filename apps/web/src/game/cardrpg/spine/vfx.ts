@@ -19,7 +19,7 @@ export class PaintedVfx {
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
- private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
+ private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private fallbackCast=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
  constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.ready=this.overrides.prepare();
@@ -30,15 +30,18 @@ export class PaintedVfx {
   particle.active=true;particle.born=time+layer.delay;particle.life=layer.life*Math.max(1,speed*.65);particle.source=source;particle.target=target;particle.layer=layer;particle.recipe=recipe;particle.index=index;particle.total=total;particle.stamp=this.stamps.get((layer.core?'core:':'')+layer.glyph,layer.accent?PAINT.cream:recipe.color)??null;particle.captured=false;particle.impact=impact;
  }
  private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
- cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors']){
+ cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors'],cues:readonly SpineCue[]){
   const recipe=paintedRecipe(frame.plan.presentationId??frame.plan.skillId,frame.plan);if(!recipe)return;
-  if(this.plan!==frame.plan){this.plan=frame.plan;this.hitAt=-Infinity;this.prepared=false;
+  if(this.plan!==frame.plan){this.plan=frame.plan;this.hitAt=-Infinity;this.prepared=false;this.fallbackCast=false;
    paintedTargets(frame.plan,recipe.friendly?'friendly':'hostile',actors,this.targets);
    paintedTargets(frame.plan,'damage',actors,this.damageTargets);paintedTargets(frame.plan,'heal',actors,this.healTargets);paintedTargets(frame.plan,'shield',actors,this.shieldTargets);
   }
   this.stats.cues++;
-  const overridden=!!recipe.overrideKey&&this.overrides.effects.has(recipe.id);
-  if(overridden)this.overrides.emit(recipe.id,cue.name,cue.name==='cast'?frame.plan.actorId:this.targets,time);
+  const override=recipe.overrideKey?this.overrides.effects.get(recipe.id):undefined,overrideCue=override?this.overrides.cueFor(recipe.id,cues):undefined,overridden=!!overrideCue;
+  if(override&&cue.name===overrideCue){
+   const fallback=override.spec.cue!==overrideCue;
+   if(!fallback||!this.fallbackCast){this.overrides.emit(recipe.id,override.spec.cue,override.spec.cue==='cast'?frame.plan.actorId:this.targets,time);if(fallback)this.fallbackCast=true;}
+  }
   if(!overridden&&(cue.name==='cast'||cue.name==='ult-start')){
    if(!this.prepared){for(const layer of recipe.layers)if(layer.phase==='windup')for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,frame.plan.actorId,time,i,layer.count,speed);this.prepared=true;}
    if(cue.name==='cast')for(const layer of recipe.layers)if(!layer.recipients&&layer.anchor!=='caster'&&['projectile','pour','converge'].includes(layer.motion))for(const target of this.targets)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed);

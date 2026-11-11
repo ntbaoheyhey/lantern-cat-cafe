@@ -1,0 +1,13 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'animation')
+    at eval (eval at evaluate (:370:30), <anonymous>:2:165)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /Users/bao/taskbar-hero-cardrpg-a6/tools/cardrpg-c/vfx-override-cue-review.mjs:25:29 {
+  log: []
+}
+
+Node.js v24.22.2

@@ -1,0 +1,184 @@
+{
+  "method": "C2 parser fixture served at unused published URLs, selected as a temporary sequence/Spine override. Real scene clip events and presentation clocks, both sizes/x1-x3/motion modes; no registry, source or combat writes.",
+  "baseline": [
+    {
+      "width": 1280,
+      "height": 720,
+      "id": "mochi-1",
+      "format": "sequence",
+      "requested": "cast",
+      "reduced": false,
+      "speed": 1,
+      "name": "attack",
+      "cues": [
+        {
+          "name": "hit",
+          "time": 0.36000001430511475,
+          "fallback": false
+        }
+      ],
+      "events": [
+        {
+          "name": "hit",
+          "at": 749.9999999999997
+        }
+      ],
+      "expectedEvent": {
+        "name": "hit",
+        "at": 749.9999999999997
+      },
+      "seen": [],
+      "expectedTargets": [
+        "mochi"
+      ],
+      "expired": true,
+      "peak": 0,
+      "overlaps": 0,
+      "unchanged": true,
+      "warnings": [],
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "id": "enemy:needle-moth:basic",
+      "format": "sequence",
+      "requested": "cast",
+      "reduced": false,
+      "speed": 1,
+      "name": "attack",
+      "cues": [
+        {
+          "name": "hit",
+          "time": 0.36000001430511475,
+          "fallback": false
+        }
+      ],
+      "events": [
+        {
+          "name": "hit",
+          "at": 749.9999999999997
+        }
+      ],
+      "expectedEvent": {
+        "name": "hit",
+        "at": 749.9999999999997
+      },
+      "seen": [],
+      "expectedTargets": [
+        "foe-0-needle-moth"
+      ],
+      "expired": true,
+      "peak": 0,
+      "overlaps": 0,
+      "unchanged": true,
+      "warnings": [],
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "mochi-1",
+      "format": "sequence",
+      "requested": "cast",
+      "reduced": false,
+      "speed": 1,
+      "name": "attack",
+      "cues": [
+        {
+          "name": "hit",
+          "time": 0.36000001430511475,
+          "fallback": false
+        }
+      ],
+      "events": [
+        {
+          "name": "hit",
+          "at": 749.9999999999997
+        }
+      ],
+      "expectedEvent": {
+        "name": "hit",
+        "at": 749.9999999999997
+      },
+      "seen": [],
+      "expectedTargets": [
+        "mochi"
+      ],
+      "expired": true,
+      "peak": 0,
+      "overlaps": 0,
+      "unchanged": true,
+      "warnings": [],
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "enemy:needle-moth:basic",
+      "format": "sequence",
+      "requested": "cast",
+      "reduced": false,
+      "speed": 1,
+      "name": "attack",
+      "cues": [
+        {
+          "name": "hit",
+          "time": 0.36000001430511475,
+          "fallback": false
+        }
+      ],
+      "events": [
+        {
+          "name": "hit",
+          "at": 749.9999999999997
+        }
+      ],
+      "expectedEvent": {
+        "name": "hit",
+        "at": 749.9999999999997
+      },
+      "seen": [],
+      "expectedTargets": [
+        "foe-0-needle-moth"
+      ],
+      "expired": true,
+      "peak": 0,
+      "overlaps": 0,
+      "unchanged": true,
+      "warnings": [],
+      "pass": false
+    }
+  ],
+  "final": {
+    "cases": 192,
+    "failed": 0,
+    "formats": [
+      "sequence",
+      "spine"
+    ],
+    "skills": [
+      "enemy:needle-moth:basic",
+      "mochi-1",
+      "mochi-4",
+      "soot-2"
+    ],
+    "maxActive": 3,
+    "complete": true,
+    "errors": [],
+    "shotsInspected": [
+      {
+        "file": "cue-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "cue-1440.webp",
+        "width": 1440,
+        "height": 900
+      }
+    ]
+  },
+  "diagnostics": "/tmp/cardrpg-c-vfx-override-cue-{before,after}/review.json",
+  "note": "Two baseline and two source captures inspected; source-only C2 fixture, no installed designer VFX."
+}

@@ -57,7 +57,7 @@ export class SpineActor {
  onCue:(cue:SpineCue)=>void=()=>{};
  constructor(readonly unit:SpineUnit){for(const name of Object.keys(SPINE_CONFIG.sockets) as SpineSocket[]){const socket=new T.Object3D();socket.name=name;this.sockets.set(name,socket);this.root.add(socket);}}
  duration(name:string){return this.clips.get(name)?.duration??1;}
- cues(name:string){return this.clips.get(name)?.cues??[];}
+ cues(name=this.animation){return this.clips.get(name)?.cues??[];}
  setOrder(order:number){this.order=order;this.root.traverse(child=>{child.renderOrder=order;child.frustumCulled=false;});}
  /** A stable action key resets a clip only once, including consecutive casts of the same skill. */
  sample(name:string,key:unknown,time:number,delta:number,camera:T.Camera,reduced:boolean){
