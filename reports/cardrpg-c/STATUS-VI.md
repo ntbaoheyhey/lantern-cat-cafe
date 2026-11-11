@@ -1,4 +1,6 @@
 # Trạng thái lane C
+C11 battle log: Space cuộn đúng và giữ trận tạm dừng; đóng trả pause/focus trước đó.120ca browser hai cỡ/hai motion/ba speed/hai pause,29test/typecheck/lint đạt; xem8ảnh. Giữ điểm7,79; tiếp tục đọc hiểu event.
+
 C8 Clover: rig tạm từ 139 layer PSD, 33 xương/276 vertex/atlas PMA 1024/cao 512; 156 hash nguồn không đổi. Sửa render hai lượt làm váy che belt/pouch: một lượt giữ đúng thứ tự và giảm một nửa draw nhân vật, khớp tham chiếu từng layer ở 84 ca gồm lật hướng. 27 test placeholder, sáu guard âm, 23 test runtime và năm test asset cuối/typecheck/lint đạt; broad run ban đầu có hai lỗi môi trường test nên không nhận full suite xanh. 72 ca combat tối đa136 draw; 48 offline và sáu Pause/Play đạt. Đã xem34ảnh cuối hai cỡ, tám clip×sáu mẫu, sáu pose lớn và hai bảng so sánh. Benchmark riêng p95 16,7/16,8ms,75draw; demo30.018.753byte (<40MB), giữ video ×1 cũ có ghi rõ. Designer cuối0/25; nguồn artwork PASS không phải rig cuối. Giữ điểm7,79, ba vòng seed và hai account cũ. Chi tiết C8-CLOVER-RECEIPT.md.
 
 C0–C7/C9/C10 đã hoàn thành; C8/C11 tiếp tục trên draft PR #439. 25 placeholder/206 clip,74 skill/18 status. Mochi V3 và Clover dùng PSD đã công bố; license/tool/version và export cuối còn chờ.

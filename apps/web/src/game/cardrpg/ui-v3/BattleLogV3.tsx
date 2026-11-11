@@ -17,7 +17,9 @@ export default function BattleLogV3({battle,wasPaused,onClose}:{battle:Battle;wa
  const close=()=>{dialog.current?.close();onClose();};
  return <dialog ref={dialog} className="uv-battle-log" aria-labelledby="battle-log-title" aria-describedby="battle-log-return"
   onCancel={e=>{e.preventDefault();close();}} onKeyDown={e=>{
-   if(e.key==='Escape')e.stopPropagation();
+   // Space scrolls the focused events page. It must not reach the battle's
+   // global pause shortcut and resume combat behind this modal.
+   e.stopPropagation();
    if(e.key==='Tab'){
     const controls=[...e.currentTarget.querySelectorAll<HTMLElement>('button,[tabindex="0"]')];
     const first=controls[0],last=controls.at(-1);

@@ -151,6 +151,28 @@ it.each([false,true])('opens a native battle guide and restores prior pause=%s o
  expect(screen.queryByRole('dialog')).toBeNull();expect(m.paused).toBe(wasPaused);expect(guide.open).toBe(false);
  expect(document.activeElement).toBe(trigger);expect(m.battle).toEqual(before);expect(m.state.account).toEqual(account);
 });
+it.each([false,true])('keeps scrolling keys inside the log and restores prior pause=%s',wasPaused=>{
+ const m=readyBattle();m.paused=wasPaused;
+ m.battle!.log=[{round:1,actorId:'mochi',targetId:'foe',skillId:'mochi-1',kind:'damage',amount:20,text:'Mochi deals 20 damage.'}];
+ const before=structuredClone(m.battle),account=structuredClone(m.state.account);
+ render(<Harness m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'More battle options'}));fireEvent.click(screen.getByRole('button',{name:'Read battle log'}));
+ const log=screen.getByRole('dialog',{name:'Battle log'}),events=within(log).getByRole('region',{name:'Battle events, newest first'});
+ const shortcut=vi.fn((event:KeyboardEvent)=>{if(event.code==='Space')m.paused=!m.paused;});
+ window.addEventListener('keydown',shortcut);
+ try{
+  events.focus();
+  for(const key of [' ','PageDown','End','Home','ArrowDown']){
+   const event=new KeyboardEvent('keydown',{key,code:key===' '?'Space':key,bubbles:true,cancelable:true});
+   fireEvent(events,event);
+   expect(event.defaultPrevented).toBe(false); // Native region scrolling still works.
+   expect(shortcut).not.toHaveBeenCalled();expect(m.paused).toBe(true);
+  }
+  const clock=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(clock);
+  fireEvent(log,new Event('cancel',{cancelable:true}));
+  expect(m.paused).toBe(wasPaused);expect(m.battle).toEqual(before);expect(m.state.account).toEqual(account);
+ }finally{window.removeEventListener('keydown',shortcut);}
+});
 it('returns focus from an escaped battle option to its menu trigger',()=>{
  const m=readyBattle(),before=structuredClone(m.state);m.paused=true;render(<Harness m={m}/>);
  const more=screen.getByRole('button',{name:'More battle options'});fireEvent.click(more);

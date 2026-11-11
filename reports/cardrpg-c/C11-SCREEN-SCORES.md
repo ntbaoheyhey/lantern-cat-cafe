@@ -125,3 +125,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T21:05:56.862757+00:00 Leave-table follow-up:48finalviews in8sheets plus full-size720p/900p;complete text, gift consequences and focus fit both sizes.68browser/27tests/types/lintPASS;weighted7.79retained. C11-BATTLE-LEAVE-RECEIPT.md.
 
 2026-11-11T21:17:32.683862+00:00 Auto-next:44captures inspected,40final after four settled Tower replacements; visible countdown/cancel and report note fit both sizes.68+4browser/33focused/types/lintPASS. Weighted7.79retained; C11-AUTO-NEXT-RECEIPT.md.
+
+2026-11-11T21:59:14.449226+00:00 Log keyboard:8finalviews inspected fullsize;book/returncopy/focus/oldestentry fit both sizes.120browser/29tests/types/lintPASS;score7.79 retained. Bare damage/status rows remain next readability item.

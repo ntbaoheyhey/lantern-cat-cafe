@@ -147,3 +147,5 @@
 
 2026-11-11T21:50:06.257521+00:00 C8: derive Clover only after exact PSD/catalog comparison; keep all156source hashes and editable masks unchanged. Force one-pass flat double-sided Spine materials to preserve mesh/region stacking and halve draws; independent per-slot reference proves84poses. Keep original failed assertions and scoped repair evidence; final designer0/25.
 2026-11-11T21:50:06.257521+00:00 Evidence: retain ten representative Clover screenshots plus filmstrip/comparisons;24other inspected captures remain in /tmp/cardrpg-c-clover-full-reviewed. Compact JSON values losslessly with preservation manifest to keep reports below120,000,000bytes.
+
+2026-11-11T21:59:14.449226+00:00 C11: contain log keyboard bubbling without preventing native scrolling after Space reproduced40→44events behind modal. Preserve outer shortcut and previous pause. Compact one old JSON losslessly to respect120MB; backup/hash/equality retained.
