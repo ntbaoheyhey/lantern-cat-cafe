@@ -82,3 +82,5 @@
 - 2026-11-11 C11 saved teams: use the exact loadout command to disclose Power, gear and donor/recipient bonuses; disable missing saved gear before use. Prepare keeps existing gear by design and now says so. Preserve failed-command context, route locks and encounter seed/enemies.
 
 - 2026-11-11 C11 preparation: disclose the packed carrier and prevent crews that drop it; retain rejected-command context. Preserve exact rules/seed/foes/inventory. One stacked-notice portrait-spacing repair after visual review; no gameplay tuning.
+
+- 2026-11-11 C11 pantry: use the public pack command for eligibility and exact milk healing, preserve zero-stock reassignment and existing reservations. Keep the decision together in two columns; no rules or combat changes.

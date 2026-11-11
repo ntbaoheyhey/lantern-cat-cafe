@@ -24,3 +24,22 @@
  select {font-size:15px;min-height:42px;background:#fff5db;color:#493325}
 }
 .uv-app[data-a6=true] .a6-supplies:not([data-inventory-category=Equipment]) .cr-page-title small {color:#715234;font-size:13px;letter-spacing:.06em}
+
+/* Keep the immediate supply decision together beside the between-patrol recipes. */
+.uv-app[data-a6=true] .a6-supplies .dp-v4-pantry {
+ display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;
+ >div {min-width:0}
+ h2,h3 {margin:0 0 10px;color:#493325;font-size:22px;line-height:1.2}
+ p {margin:8px 0}
+ .cr-filter {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0}
+ label {display:flex;flex-direction:column;gap:5px;min-width:0}
+ select {width:100%;min-width:0}
+ .dp-v4-supply-preview {padding:9px 12px;background:#fff4db;border-left:3px solid #aa8148;border-radius:5px;margin:10px 0}
+ .dp-v4-supply-preview p {margin:0;font-size:14px;line-height:1.4}
+ .dp-v4-supply-preview p+p {margin-top:4px}
+ .dp-v4-supply-preview small {display:block;font-size:13px;color:#765a38;margin-top:4px}
+ .dp-v4-pantry-actions {display:flex;flex-wrap:wrap;gap:8px}
+ .dp-v4-pantry-craft {padding-left:24px;border-left:1px solid #bca175}
+ .dp-v4-pantry-craft .cr-cost {margin-top:12px}
+ @media(max-width:900px) {grid-template-columns:1fr;.dp-v4-pantry-craft {padding:16px 0 0;border-left:0;border-top:1px solid #bca175}}
+}
