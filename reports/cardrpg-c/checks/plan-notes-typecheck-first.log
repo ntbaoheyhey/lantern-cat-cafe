@@ -1,0 +1,24 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-a6
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+supabase/tests typecheck: Done
+packages/game-rules typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: src/game/cardrpg/depth/OutcomeV4.test.tsx(34,56): error TS2352: Conversion of type '{ focus: "future"; care: "steady" | "protect"; }' to type 'StandingPlan' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+apps/web typecheck:   Types of property 'focus' are incompatible.
+apps/web typecheck:     Type '"future"' is not comparable to type '"support" | "finish" | "leader"'.
+apps/web typecheck: Failed
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

@@ -4,12 +4,14 @@ import {access,mkdir,writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 const root=process.cwd(),{chromium,expect}=createRequire(root+'/apps/web/package.json')('@playwright/test');
 const output=process.argv.find(a=>a.startsWith('--output='))?.slice(9)??'/tmp/cardrpg-c-result-notes';
+const scenarios=process.argv.find(a=>a.startsWith('--scenarios='))?.slice(12).split(',')??['long','loss','practice','replay','legacy'];
+const motions=process.argv.includes('--reduced-only')?[true]:[false,true];
 await mkdir(output,{recursive:true});
 const report={cases:[],shots:[],errors:[],complete:false},browser=await chromium.launch({channel:'chromium',headless:true});
-try{for(const[width,height]of[[1280,720],[1440,900]])for(const reduced of[false,true]){
+try{for(const[width,height]of[[1280,720],[1440,900]])for(const reduced of motions){
  const page=await browser.newPage({viewport:{width,height}});page.on('pageerror',e=>report.errors.push(e.message));
  await page.goto('http://127.0.0.1:5970/?demo=1&squad=1&cardrpg2=1&a6=1&lookSpine=1');await page.getByRole('button',{name:'Cats',exact:true}).waitFor();
- for(const scenario of['long','loss','practice','replay','legacy']){
+ for(const scenario of scenarios){
   if(await access(root+'/reports/cardrpg-c/STOP-C').then(()=>true,()=>false))throw Error('STOP-C');
   const fixture=await page.evaluate(async({root,reduced,scenario})=>{
    const R=await import('/@fs'+root+'/packages/game-rules/src/cardrpg/depth/index.ts'),m=window.__depthReview;
@@ -22,7 +24,8 @@ try{for(const[width,height]of[[1280,720],[1440,900]])for(const reduced of[false,
    const b=R.playBattle(R.createBattle(setup),'auto');m.state.run.battle=b;
    if(scenario==='practice')m.tutorialBattle=b;if(scenario==='replay')m.replay=b;
    R.observeDiscoveriesV4(m.state);m.state.v4.journey.pending=[];m.go('result');
-   return{rounds:b.round,result:b.result,notes:b.v4.events.map(event=>`Round ${event.round} · ${event.text}`)};
+   const targets={finish:'Weak foes',support:'Their support',leader:'Their leader'},care={steady:'Steady',protect:'Protect'};
+   return{rounds:b.round,result:b.result,notes:b.v4.events.map(event=>`Round ${event.round} · ${event.kind==='plan-target'&&event.reason?`${targets[event.plan.focus]} · ${care[event.plan.care]}: ${event.reason}`:event.text}`)};
   },{root,reduced,scenario});
   await page.getByRole('button',{name:'Read details'}).waitFor();await page.evaluate(()=>document.fonts.ready);
   const snapshot=()=>page.evaluate(()=>JSON.stringify({state:window.__depthReview.state,replay:window.__depthReview.replay,tutorial:window.__depthReview.tutorialBattle}));

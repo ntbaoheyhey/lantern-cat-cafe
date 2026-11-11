@@ -72,14 +72,22 @@ export function PreparationV4({ m }: { m: DepthModel }) {
   </>;
 }
 
+const recordedFocus = { finish: 'Weak foes', support: 'Their support', leader: 'Their leader' };
+const recordedCare = { steady: 'Steady', protect: 'Protect' };
+function recordedDecision(event: R.GameplayEventV4): string {
+  // Use the receipt's plan and reason, never the player's current settings or a guessed action.
+  if (event.kind !== 'plan-target' || !R.validPlan(event.plan) || !event.reason?.trim()) return event.text;
+  return `${recordedFocus[event.plan.focus]} · ${recordedCare[event.plan.care]}: ${event.reason}`;
+}
+
 export function OutcomeV4({ battle }: { battle: R.Battle }) {
-  const outcome = R.outcomeV4(battle);
+  const outcome = R.outcomeV4(battle), plan = battle.v4!.plan;
   return <section className="cr-panel dp-v4-outcome"><h2>Your crew’s turning points</h2>
     <ul>{outcome.causes.map(cause => <li key={cause.id}>{cause.text}</li>)}</ul>
     <p>Back row took {outcome.rearShare}% of the damage.</p>
     {outcome.firstFallen && <p>{outcome.firstFallen.name} fell first, in round {outcome.firstFallen.round}.</p>}
-    <details><summary>Round-by-round notes</summary><p>Plan: {battle.v4!.plan.focus} / {battle.v4!.plan.care}.</p>
-      <ol>{battle.v4!.events.map(event => <li key={event.sequence}>Round {event.round} · {event.text}</li>)}</ol>
+    <details><summary>Round-by-round notes</summary><p>Recorded plan · Target: {recordedFocus[plan.focus]}. Care: {recordedCare[plan.care]} — prefer support below {plan.care === 'protect' ? 65 : 45}% HP.</p>
+      <ol>{battle.v4!.events.map(event => <li key={event.sequence}>Round {event.round} · {recordedDecision(event)}</li>)}</ol>
     </details>
   </section>;
 }
