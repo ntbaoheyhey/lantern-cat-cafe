@@ -4,7 +4,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 
 | Screen | 1440×900 | 1280×720 | Lowest applicable row | Evidence / next fix |
 |---|---:|---:|---|---|
-| Cafe / top HUD / dock | 8.2 | 8.1 | 13: compact secondary HUD labels (7.5) | shots/q48-source + q48-offline;20source/20offline views,14px hanging signs/44px targets, all six notice/unlock states, unchanged commands, focus return and reachable entries |
+| Cafe / top HUD / dock | 8.2 | 8.1 | 07/13: compact cafe menu (7.5) | shots/q51-source + q51-offline + q51-notices-source/offline;36source/36offline inspected, stable three balances/14pxlabels/13pxlevel, exact spend/claim, no HUD or title-bar notice overlap; prior signs and commands retained |
 | Cats / Growth / Skills / Bonds / Gear | 8.2 | 8.1 | 13: compact collection-card metadata (7.5) | shots/q44-current.json + q44-offline;52source/52offline views,12px card tags/14px costs and readiness/44px training controls; all12cats, exact public commands/locks/keyboard, bounded roster and long skills; Q45 adds exact awakening cost/gain/readiness and32source/32offline inspected views, 14px receipt/44px action |
 | Team | 8.2 | 8.1 | 07: restrained table decoration (7.5) | shots/q49-source + q49-offline;22source/22offline Team/Prepare views,14px row/role/pair labels,13px badges,44px controls; exact row/last-front/saved/suggested/lock/focus behavior retained |
 | Prepare | 8.2 | 8.1 | 07: restrained table decoration (7.5) | shots/q49-source + q49-offline; larger formation labels/44pxcontrols and honest lock scope; pair/Fight clearance>=4.34px at both sizes; previous forecast/foe acceptance retained |

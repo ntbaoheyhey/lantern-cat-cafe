@@ -53,3 +53,5 @@ Recheck 2026-11-11T01:52:55Z, after Q40–Q42: Tower/Journal/Field guide metadat
 Recheck 2026-11-11T02:28:26Z, after Q43–Q45: save/training/awakening now retain readable cost and state in the720p action zone. Q46 follows existing fixed HUD envelopes and concise readiness, correcting the missing three-star unlock. No new mechanics or repeated genre research.
 
 Recheck after Q46–Q48, 11Nov: fixed HUD and event notebook preserve the action zones; cafe notices leave every entry reachable. Remaining observed Team/Prepare gap is small metadata plus a lock hint contradicting disabled row controls. Q49 follows existing readable-state guidance; no new mechanics or genre research.
+
+Recheck 2026-11-11T03:55:35Z after Q49–Q51 source: team/status/currency labels now preserve readable fixed state, and title-bar notices avoid large balances. The tied-low home menu still uses small generic controls and does not take focus on opening; Q52 follows the retained44px/readable-state and warm-material guidelines. Retain Q13f three-repair fallback and final seeds; no fourth numeric loop or repeated research.

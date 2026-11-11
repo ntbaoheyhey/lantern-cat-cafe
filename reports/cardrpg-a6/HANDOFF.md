@@ -1,10 +1,10 @@
-# Lane A6 handoff — 2026-11-11T03:10:33Z
-NOW: Q50 complete; commit/push/draft438 then Q51 Cafe HUD balances.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed16936ccd9; draft438 throughQ49.
-NEXT1: Commit/push Q50; update draft438; B D2b remains current published tip.
-NEXT2: Keep all3A6balances visible and enlarge header labels; preserve exact numbers/count-up and legacy filtering.
-NEXT3: Zero/spend/claim/large/Relic/menu/notice coverage2sizes; types/lint/existing relevant tests then package.
-RUNNING: Vite91373/5960; no heavy job/lease;135GiB.
-DONE: Q49 16936ccd9; Q50 8source/8offline inspected,23tests/types/lint,39097481B.
-KNOWN: Self-score8.5 unmet; retained difficulty/recovery/boss-tail misses. B real3Daccepted0/25; public socket/lookV3D plannedD4.
-DECISIONS: Status resolver follows displayed battle, not account; B component/renderer unchanged. Q51 tied-low Home readability, no economy/rules change.
+# Lane A6 handoff — 2026-11-11T04:03:20Z
+NOW: Q51 complete;36source/36offline views inspected, all retained checks pass; preparing commit/push.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed8c005db7a; local B D3 merge5c6c3a64d. Draft438 throughQ50 until update.
+NEXT1: Commit/push Q51 and refresh draft438.
+NEXT2: Q52 warm cafe menu/44px controls/open-close keyboard focus; no source change yet.
+NEXT3: Validate source, package and inspect both-size menu views; then choose lowest remaining score gap.
+RUNNING: Vite91373/5960;135GiB; no heavy job or A6 lease. Q51 offline resume log /tmp/cardrpg-a6-q51-offline-resume.log.
+DONE: Q51 exact zero/spend/claim/large/Relic/menu/legacy/reduced/all eight notices pass2sizes,39097749B.
+KNOWN: Self-score8.5 unmet; prior difficulty/recovery/boss-tail misses retained. B accepted3D0/25; public lookV3D/sockets pendingD4.
+DECISIONS: Preserve accepted source/tests/package; continue from saved completed offline probe. No economy/intro/combat changes.

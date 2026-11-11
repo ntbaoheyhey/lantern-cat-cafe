@@ -160,3 +160,7 @@ M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
 
 ## Q13d — 2026-11-10T17:04:29Z
 - Complete; original scenic route, existing graph/reward rules retained. Types/lint/4 tests + both-size real-click controls pass; visual8.1/8.0. Q13e next.
+
+- Resume audit 2026-11-11T03:48:28Z: Q51 source edits preserved; eight tests/types/lint already pass. Git0ahead0behind8c005db7a;135GiB;Vite91373/5960 retained. No stale A6 heavy jobs/lease. B D2b current; continue browser checks.
+
+- Resume audit 2026-11-11T04:02:39Z: Q51 offline20HUD+16notices complete; source/checks retained. Git2ahead0behind5c6c3a64d;135GiB;Vite91373/5960 retained. B D3 current,0accepted3D; no new socket API.

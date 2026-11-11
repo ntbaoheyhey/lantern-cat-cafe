@@ -325,3 +325,10 @@ Tiếp tục Q50: dùng callback B D2b để mô tả trạng thái theo đúng 
 2026-11-11T03:10:33Z: Q50 hoàn tất: tám trạng thái V5 có đúng tên/mô tả/giới hạn, chữ14px; giữ đúng luật riêng của bản phát lại cũ.
 23test/typecheck/lint và8ảnh nguồn/8ảnh offline đạt; Tab/Escape/danh sách mở rộng đúng, không lỗi/gọi mạng, demo39.097.481byte.
 Tiếp tục Q51: giữ hiện số dư tem/chỉ bằng0 và làm rõ nhãn trên HUD quán; không đổi tiền hay luật thưởng.
+
+2026-11-11T03:56:47Z: HUD đã duyệt36ảnh: cả ba số dư luôn hiện, nhãn14px/cấp13px; tiêu hết60tem và nhận đúng93cá/13chỉ/21tem đạt.
+Thông báo nằm trong tiêu đề trang, không che tiền lớn hay nút;8test/type/lint và5test mô hình nén đạt. Đang đóng gói với mốc D3 của B, chưa có mẫu3D được nghiệm thu.
+
+2026-11-11T04:03:20Z: Q51 hoàn tất: 36 ảnh nguồn/36 ảnh offline đã duyệt; số dư bằng0 vẫn hiện, thông báo không che tiền hay nút.
+8test/type/lint và5test mô hình nén đạt; demo39.097.749byte, không lỗi/gọi mạng. B D3 đã tích hợp, chưa có mẫu3D được nghiệm thu.
+Tiếp tục Q52: menu quán rõ chữ, nút44px và đưa bàn phím vào đúng lựa chọn.
