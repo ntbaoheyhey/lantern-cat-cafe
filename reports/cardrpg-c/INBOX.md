@@ -78,3 +78,5 @@
 2026-11-11T20:00:24.712714+00:00 resume: user continue/handoff describes720p bond note sizing. Preserved unfinished patch and28browser/4tests/types/lintPASS;inspected48finalviews without repeating accepted work. ContinueC8/C11.
 
 2026-11-11T20:11:24.040432+00:00 resume: user continue/handoff identifies passing save restore and720p panel repair. Preserved unfinished source and7tests/types/lint/30browserPASS;inspected46views and replaced four transition captures without repeating accepted gameplay. ContinueC8/C11.
+
+2026-11-11T20:21:24.468360+00:00 resume: user continue/handoff identified Field Guide keyboard review. Preserved unfinished source and4tests/types/lint/122browserPASS; inspected72views, repaired focus rings and battle empty-search text, verified126checks/72finalviews. No accepted gameplay rerun.

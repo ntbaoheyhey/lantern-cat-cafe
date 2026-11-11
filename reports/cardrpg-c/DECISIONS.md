@@ -127,3 +127,6 @@
 
 2026-11-11 C11: selected-cat Bonds previously showed names/readiness without effects or trigger. Explain exact existing pair effect, missing partners, round-three/alive requirement and bench collection bonus. Keep account/formation rules and general Bond Book navigation; bounded notes preserve720p controls.
 2026-11-11 C11: Save import previously replaced the account before showing the saved identity. Validate on explicit Import, preview current/saved level/cats/supplies/crew/route, then restore through the existing command or return without mutation. Keep pasted code, error feedback and keyboard focus; fix the inherited column layout on reduced-motion control. No save format or progression change.
+
+2026-11-11 C11: Field Guide omitted seven live skill-specific statuses and reduced reaction notes to crew hints. Derive all15canonical statuses from current rules, keep historical aliases searchable, and state real reaction triggers/consumption/one-per-foe guard. Retain combat, old catalogue mode and original status icons.
+2026-11-11T20:21:24.468360+00:00 C11: screenshot review caught faint empty-search battle hint and clipped index focus rings. Set explicit paper-ink text and8px scroll padding; require whole focus ring visibility after transitions. No rules change.

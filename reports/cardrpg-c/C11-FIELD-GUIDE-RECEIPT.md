@@ -1,0 +1,9 @@
+# C11 — Complete and readable Field Guide
+
+The current-skills catalogue now includes all 15 distinct live statuses, including the seven skill-specific statuses previously omitted. Historical names remain searchable without duplicate entries. Four reaction notes explain actual triggers, stack consumption, target/round limits and the non-chaining guard; crew membership is not required. Historical skills-disabled mode and status icons remain intact. No combat or save rules changed.
+
+Preserved four focused component tests and workspace typecheck/lint PASS. The inherited browser sweep completed122checks/72views. Inspection found pale battle empty-search helper text and some clipped index focus rings. Explicit paper-ink text and8px padding/scroll-padding repair both. The final harness waits for finite guide transitions and requires the complete focus ring inside the index.
+
+Final126browserchecks PASS in cafe sheet and paused battle dialog at1280x720/1440x900: all19notes, aliases, empty/reset search, chapter navigation, keyboard note focus/Home/End, complete panel bounds, focus trap/Escape/return and unchanged account/battle. Every captured focus ring fits; no page errors. Inspected all72finalviews through12contact sheets. Current notes fit without internal overflow at these sizes; Home/End checks do not imply a long overflowing note was tested. Index scrolling was exercised throughout.
+
+Evidence: checks/field-guide-final.json and field-guide-{tests,types,lint}.log; two representative shots/c11-field-guide images. Reproduce with tools/cardrpg-c/field-guide-review.mjs. All144before/final raw captures and diagnostics remain in /tmp/cardrpg-c-field-guide-r{1,2}. Demo29,619,392bytes/score7.79 unchanged. No new balance/recovery/performance/full-E2E claim. Designer final0/25; inbox empty. Continue C8/C11.

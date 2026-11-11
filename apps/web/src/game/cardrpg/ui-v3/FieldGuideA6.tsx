@@ -1,18 +1,22 @@
 import {useId,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {artPropsA6} from './art-a6';
-import {enemyGuideA6,guideTermsA6} from './guide-a6';
+import {enemyGuideA6,guideTermsA6,reactionGuideA6} from './guide-a6';
 import {statusIdentity} from '../../squad/turn3d/card-status-data';
 
 type Chapter='keywords'|'companions'|'enemies'|'charms'|'sets';
-type Note={id:string;name:string;detail:string;paragraphs:string[];art?:string;kind?:string};
+type Note={id:string;name:string;detail:string;paragraphs:string[];art?:string;kind?:string;aliases?:string};
 const chapters:Chapter[]=['keywords','companions','enemies','charms','sets'];
 function notesFor(chapter:Chapter,v4:boolean,skillsV5:boolean):Note[] {
  const wording=guideTermsA6;
- if(chapter==='keywords')return [
-  ...(skillsV5?R.CORE_STATUS_RULES_V5:R.STATUSES).map(status=>({id:status.id,name:status.name,kind:status.kind,detail:`${status.kind} · up to ${status.cap} stack${status.cap===1?'':'s'} · ${status.duration} round${status.duration===1?'':'s'} · ${status.dispellable?'Can be dispelled':'Protected from dispel'}`,paragraphs:[skillsV5?status.description:v4?R.statusDescriptionV4(status.id):status.description]})),
-  ...(skillsV5?Object.entries(R.REACTION_NAMES_V5).map(([id,name])=>({id,name,kind:'reaction',detail:'Crew reaction',paragraphs:[R.CREWS_V5.filter(c=>c.reaction===id).flatMap(c=>R.crewHintsV5([...c.cats])).join(' ')||'Defeat a Marked foe to carry half of each debuff stack to its nearest neighbour.']})):[]),
- ];
+ if(chapter==='keywords'){
+  const core=new Set(R.CORE_STATUS_RULES_V5.map(status=>status.id));
+  const statuses=skillsV5?[...R.CORE_STATUS_RULES_V5,...R.STATUSES.filter(status=>R.statusIdV5(status.id)===status.id&&!core.has(status.id))]:R.STATUSES;
+  return [
+   ...statuses.map(status=>({id:status.id,name:status.name,kind:status.kind,aliases:skillsV5?R.STATUSES.filter(old=>R.statusIdV5(old.id)===status.id).map(old=>old.name).join(' '):'',detail:`${status.kind} · up to ${status.cap} stack${status.cap===1?'':'s'} · ${status.duration} round${status.duration===1?'':'s'} · ${status.dispellable?status.kind==='debuff'?'Can be cleansed':'Can be dispelled':'Protected from dispel'}`,paragraphs:[skillsV5?wording(status.description):v4?R.statusDescriptionV4(status.id):status.description]})),
+   ...(skillsV5?(Object.keys(R.REACTION_NAMES_V5) as R.ReactionIdV5[]).map(id=>({id,name:R.REACTION_NAMES_V5[id],kind:'reaction',detail:'Battle reaction · one per foe each round',paragraphs:[...reactionGuideA6[id],'Reactions do not trigger other reactions. Any crew can create them with the right effects.']})):[]),
+  ];
+ }
  if(chapter==='companions')return R.CATS.map(cat=>({id:cat.id,name:cat.name,detail:`${cat.role} · ${cat.flavour}`,art:cat.id,paragraphs:[`${cat.passive.name} · ${wording(v4?R.passiveDescriptionV4(cat.id):cat.passive.description)}`]}));
  if(chapter==='enemies')return R.ENEMIES.map(enemy=>{const guide=enemyGuideA6(enemy.id);return {id:enemy.id,name:enemy.name,detail:`${enemy.tier} · ${enemy.flavour} · ${enemy.row}`,art:enemy.id,paragraphs:[guide.intent,guide.counter,...(guide.phases?[guide.phases]:[])]};});
  if(chapter==='charms')return R.BOONS.map(boon=>({id:boon.id,name:boon.name,detail:`${boon.archetype} · stack cap ${boon.cap}`,paragraphs:[wording(R.boonForMode(boon.id,v4).description)]}));
@@ -31,7 +35,7 @@ export function FieldGuideA6({v4,skillsV5}:{v4:boolean;skillsV5:boolean}) {
  const [chapter,setChapter]=useState<Chapter>('keywords'),[selected,setSelected]=useState<Partial<Record<Chapter,string>>>({}),[query,setQuery]=useState('');
  const search=useRef<HTMLInputElement>(null),list=useRef<HTMLElement>(null),pageId=useId();
  const notes=notesFor(chapter,v4,skillsV5),needle=query.trim().toLocaleLowerCase();
- const visible=notes.filter(note=>[note.name,note.detail,...note.paragraphs].join(' ').toLocaleLowerCase().includes(needle));
+ const visible=notes.filter(note=>[note.name,note.aliases,note.detail,...note.paragraphs].join(' ').toLocaleLowerCase().includes(needle));
  const current=visible.find(note=>note.id===selected[chapter])??visible[0];
  return <section className="a6-field-guide" aria-label="Cafe field guide">
   <header className="a6-guide-intro"><img {...artPropsA6('biscuit')} alt=""/><div><small>NOTES BEFORE NIGHT PATROL</small><h2>A little field wisdom.</h2><p>Choose your crew before the fight. Every cat has an ultimate. It casts automatically at 100 rage, when the cat can act.</p></div></header>

@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 save preview/restore verified; continue remaining low-score screens and C8.
+NOW: C11 Field Guide verified; continue cat skill clarity and C8.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review remaining cat skill/Field Guide clarity without repeating accepted work.
+NEXT1: check designer inbox; review remaining cat skill clarity without repeating accepted work.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -23,8 +23,8 @@ KNOWN:milestones302browser/28keyboard/68finalviews;48Discoveries checks validate
 KNOWN:daily258browser/74keyboard +120style/18keyboard;44+24views,13web+7rules/types/lintPASS.
 KNOWN:selector40browser/8keyboard+4shortagechecks,32+4views,29preserved/7finaltests/types/lintPASS.
 KNOWN:recruit136browser/20keyboard+36animated/6keyboard;74views/13tests/types/lintPASS;720pgeargridfixed.
-KNOWN:firstlevel18browser/12viewsPASS;2244webtests/types/lint preserved;guided row/focus/hand fixed.
-KNOWN:firstcontext64browser/54views/7tests/types/lintPASS;route/supply/owned guidance and hands corrected.
+KNOWN:firstlevel18browser/12views;firstcontext64browser/54views/7tests/types/lintPASS;2244webtests preserved.
 KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF-before-preparation-health-2026-11-11.md.
 KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only Book;C11-BOND-SUMMARY-RECEIPT.
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
+KNOWN:guide15statuses/4reactions/aliases;126browser/72finalviews/4tests/types/lintPASS;focus/emptyhint repaired.

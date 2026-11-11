@@ -79,7 +79,7 @@
  .a6-guide-finder>label {margin:0;font-size:14px;color:#705234}
  .a6-guide-finder input {margin-top:8px;min-height:42px;font-size:14px;background:#fff9e7;color:#624a31;border-color:#b89b6b}
  .a6-guide-finder>p {margin:9px 0;font-size:12px;color:#866641}
- .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:3px 8px 5px 3px;scrollbar-gutter:stable;overscroll-behavior:contain}
+ .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:8px;scroll-padding:8px;scrollbar-gutter:stable;overscroll-behavior:contain}
  .a6-guide-index>button {display:flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:8px 11px;text-align:left;font-size:14px;line-height:1.3;box-shadow:0 2px 0 #af8b5755;background:#f6e6c3;color:#654a2f;border-color:#c4a779}
  .a6-guide-index>button[aria-pressed=true] {background:#fff7db;border-color:#946b3f;box-shadow:inset 4px 0 #aa743b,0 2px 0 #a8845455;font-weight:700}
  .a6-guide-index img {width:35px;height:42px;object-fit:contain;flex:none}
@@ -96,6 +96,7 @@
  .a6-guide-writing header>p {font-size:13px;line-height:1.5;color:#896641;margin:0}
  .a6-guide-writing>p {font-size:16px;line-height:1.6;margin:12px 0;color:#6f5234}
  .a6-guide-no-match {grid-column:1/-1;text-align:center;color:#765638;font-size:15px}
+ .a6-guide-no-match>p {color:#765638}
  .a6-guide-no-match>.a6-note-seal {height:120px}.a6-guide-no-match button {min-height:42px;font-size:14px}
  .a6-guide-footnote {flex:none;font-size:13px;line-height:1.4;color:#7c603d;margin:14px 0 0}
  .uv-battle-guide:has(>.a6-field-guide) {inset:64px 5% 24px;padding:18px;display:flex;flex-direction:column;overflow:hidden}

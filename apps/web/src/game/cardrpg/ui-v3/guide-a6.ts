@@ -1,5 +1,25 @@
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 
+/** Player-facing triggers from skills-v5/reactions.ts; crew membership is not a requirement. */
+export const reactionGuideA6: Record<R.ReactionIdV5, string[]> = {
+  'crumb-burst': [
+    'Use a Crumb detonation skill on a living foe carrying Crumb. A normal hit alone cannot trigger it.',
+    'Consume all of that foe’s Crumb and Burn stacks for damage through shields. The skill and route bonuses set the damage.',
+  ],
+  wildfire: [
+    'Hit a foe carrying at least 3 Burn with a Splash, Row or All attack.',
+    'Apply 1 Burn to each adjacent foe. Burn on the original target remains. Rupture takes priority if the target survives with Bleed and Shred.',
+  ],
+  rupture: [
+    'A direct hit must leave the foe alive with both Bleed and Shred.',
+    'Consume all of its Bleed and deal 12 HP damage per consumed stack, through shields. Shred remains.',
+  ],
+  spread: [
+    'Defeat a foe carrying Mark while it has an adjacent living ally.',
+    'Copy half of every debuff stack, rounded up, to the nearest adjacent foe. Each copied debuff can be resisted.',
+  ],
+};
+
 /** Translate historical catalogue prose into the vocabulary shown by A6 battles. */
 export function guideTermsA6(text: string): string {
   const names: Record<string, string> = {
