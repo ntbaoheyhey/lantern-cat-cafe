@@ -139,7 +139,7 @@ for (const row of showcase.files) hashes[row.path] = row.sourceSha256;
 const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
   [path, createHash('sha256').update(asset.bytes).digest('hex')]));
 const inputPaths = [...sourceRoots, ...Object.keys(assetHashes), ...showcase.files.map(row => row.path)];
-const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
+const runtimeDirty = !!execFileSync('git', ['diff', '--name-only', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { gallery: { bytes: gallery.bytes, files: gallery.files }, lean, leanChanges, date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
   compression: { format: 'gzip', level: 9, memLevels: [8, 9], selection: 'smallest stream per payload; decoded bytes unchanged' },

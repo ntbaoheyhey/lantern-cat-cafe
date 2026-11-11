@@ -29,7 +29,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Pollen Scout | 8.6 | 7.7 | 7.8 | 7.8 | p34/evidence/pollen-scout-basket-wing.webp; whole basket presentation, restrained wing draw and hanging-hand countergesture; coherent leaf coat, rigid wings and tiny neck fringe retained |
 | Rain Spool | 8.6 | 7.7 | 8.0 | 8.0 | p38/evidence/rain-spool-horn-dip.webp; Complete horns and wooden face dip into the strike; all four hooves stay planted while the whole cape and yarn tail recover quietly. Rigid wooden legs and restrained whole-cape rotation remain; no independent hoof roll. |
 | Crumb Sentinel | 8.6 | 7.7 | 7.8 | 7.8 | p35/evidence/crumb-sentinel-shield-brace.webp; whole shield brace and delayed gauntlet jab, coherent chest/tabard, quiet lid and planted boots; rigid shoulders and tiny alpha fringe retained |
-| Pantry Crown | 8.6 | 7.5 | 8.0 | 8.0 | p5/batch2/pantry-crown-comparison.webp and pantry-crown-motion.webp; crown and pantry door clean; authored eye ROI |
+| Pantry Crown | 8.6 | 7.7 | 8.0 | 8.0 | p39/evidence/pantry-crown-gauntlet-gather.webp; Complete wooden gauntlets gather inward with a delayed opposing hand; crown, cabinet doors and sash stay coherent, both boots planted. Rigid elbows and a26pixel thumb fringe on the body remain; no cabinet squash. |
 | Live pilot battle | — | 7.5 | 7.5 | 7.5 | p2/live2/battle-1440.webp + battle-1280.webp; boss dominates cats, Binding Thread is still legacy until P5 |
 
 All12cats accepted in P4; all13enemies accepted in P5. No scores inferred from successful generation.

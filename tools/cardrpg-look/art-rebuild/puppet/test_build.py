@@ -25,6 +25,22 @@ class PartOverlapTests(unittest.TestCase):
         self.assertEqual(cfg['socketSources']['mainHand'][0], 'head')
         self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
 
+    def test_pantry_gauntlets_crown_cabinet_and_boots_keep_semantic_ownership(self):
+        cfg = json.loads((Path(__file__).parent/'configs/pantry-crown.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((550, 180), 'head'), ((550, 343), 'head'), ((760, 340), 'head'), ((200, 470), 'armL'), ((185, 610), 'armL'), ((190, 740), 'armL'), ((187, 940), 'armL'), ((280, 846), 'armL'), ((790, 490), 'armR'), ((768, 590), 'armR'), ((900, 720), 'armR'), ((955, 942), 'armR'), ((865, 969), 'armR'), ((310, 798), 'body'), ((550, 450), 'body'), ((550, 700), 'body'), ((675, 805), 'body'), ((760, 985), 'body'), ((500, 998), 'body'), ((350, 1090), 'footL'), ((700, 1095), 'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_yarn_whole_crown_knuckles_necklace_and_feet_keep_their_owners(self):
         cfg = json.loads((Path(__file__).parent/'configs/yarn-giant.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')

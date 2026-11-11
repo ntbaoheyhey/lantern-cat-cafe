@@ -255,3 +255,7 @@ P35 second new sentinel(791,790) was also transparent; verify every remaining se
 2026-11-10T23:53:33.769311+00:00 P37 three source repairs reconnect armR lower yarn and foot fringes. A123pixel collar-thread sliver remains on armL after moving its complete hand rim out of body; keep opposing arm bounded0.105rad and judge realx1. No fourth source pass. All test sentinels checked against opaque source before tests.
 
 2026-11-11T00:02:11.305492+00:00 P38 source1 retained2628pixel cape fringe and several boot islands in body. Source2 removes those disconnected fragments; source3 reconnects203pixel upper-right head rim. Three bounded source passes; residual tiny alpha edges will use the restrained real-battle fallback if necessary.
+
+2026-11-11T01:43:24.042277+00:00 P39 source3 reconnects the 215px right-arm wedge and removes the 122px cabinet-belt island from armL. A 26px thumb fringe now remains on body at the close thumb/belt gap; keep bounded gather gesture and judge x1, no fourth source attempt. Original/source1/source2/source3 retained.
+
+2026-11-11T01:45:02.678034+00:00 P39 first wrapper stopped before source build: refreshed preview full git diff exceeded execFileSync 1MiB (ENOBUFS) in build receipt. Dirty check only needs changed paths; switch to git diff --name-only in B builder and disposable preview. Before HTML exists but receipt missing; rerun that incomplete build then continue source/motion gates.
