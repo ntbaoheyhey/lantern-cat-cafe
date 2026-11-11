@@ -1,6 +1,7 @@
 /** Lane assignment through delayed loads, replaced enemies and fallen cats. */
 import{createRequire}from'node:module';import{writeFile}from'node:fs/promises';import{resolve}from'node:path';
 const root=process.cwd(),{chromium}=createRequire(root+'/apps/web/package.json')('@playwright/test');
+const tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c11-roster-lifecycle';if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid tag');
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const report={method:'Controlled renderer lifecycle and public preview actions; delay only Mochi PNG in an isolated context. No gameplay progression or timing benchmark.',cases:[],errors:[],complete:false};
 try{
@@ -35,4 +36,4 @@ try{
   await page.close();
  }
  if(report.errors.length)throw Error(JSON.stringify(report.errors));report.complete=true;console.log(JSON.stringify(report));
-}catch(error){report.failure=String(error);throw error;}finally{await writeFile(resolve(root,'reports/cardrpg-c/checks/c11-roster-lifecycle.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
+}catch(error){report.failure=String(error);throw error;}finally{await writeFile(resolve(root,'reports/cardrpg-c/checks',tag+'.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
