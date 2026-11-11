@@ -260,3 +260,10 @@ Tiếp tục Q40: số tầng, trạng thái quà và nút nhận quà Tower rõ
 
 2026-11-11T01:32:56Z: Q40 hoàn tất: 26 ảnh nguồn và 26 ảnh offline đã duyệt, chữ Tower 14px/nút 44px; 6 test/type/lint qua.
 Demo 39.109.325 byte, không lỗi/gọi mạng ngoài; chọn tầng/nhận quà/giới hạn/bàn phím giữ đúng. Tiếp tục Journal và tích hợp Rain Spool P38 trước bản đóng gói kế tiếp.
+
+2026-11-11T01:39:53Z: Journal đã vừa cả hai cỡ màn: chữ14px, nút44px, cả tám quà vẫn nằm trong sổ;40ảnh nguồn đã xem.
+47test/type/lint qua; nhận quà/giới hạn/lịch sử60mục/bàn phím giữ đúng. Đang đóng gói offline cùng Rain Spool P38.
+
+2026-11-11T01:43:49Z: Đã tiếp tục từ bản Q41 đang đóng gói, giữ toàn bộ kết quả trước.
+Journal đã duyệt40ảnh nguồn/40ảnh offline: chữ14px, nút44px; tám quà, giới hạn và60bản ghi đúng. Rain Spool P38 đã tích hợp,6ảnh khung hình rõ; bản offline39.108.177byte.
+Tiếp tục Q42: chữ và vùng bấm Field guide.

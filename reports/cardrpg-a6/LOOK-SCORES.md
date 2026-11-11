@@ -16,7 +16,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Result / defeat | 8.2 | 8.1 | 13: compact chapter labels (7.5) | shots/q38-advice + q38-advice-offline;28source/28offline views, exact fallback costs, bounded8s comparison, stale/late guards, free review and correct campaign/Tower retry; prior receipt/report/settlement acceptance retained |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.2 | 8.1 | 13: secondary route labels (7.5) | shots/q32-map-final + q32-offline;30source/34offlineviews,13–15pxlabels/40pxtonic,threechapters/allchoices/exactcappedclaims/keyboard/reducedmotion; no overlap |
-| Journal | 8.1 | 8.0 | 13: compact collection metadata (7.5) | shots/q26-journal/* + q26-keepsakes-final/*;48views, direct pages, eight exact claims/caps/route locks/keyboard, no book overflow |
+| Journal | 8.2 | 8.1 | 07: restrained keepsake illustration (7.5) | shots/q41-journal + q41-offline;40source/40offline views,14px counts/dates/gifts and44px actions; exacteightclaims/caps/route/60notes/keyboard, no clipping |
 | Field guide | 8.1 | 8.0 | 13: compact index metadata (7.5) | shots/q27-guide + q27-guide-final;64views, all75entries/search/keyboard/pause/focus/current prose,15–16px body |
 | Settings / save | 8.1 | 8.0 | 13: secondary account/status labels (7.5) | shots/q28-settings;20views, exact save roundtrip/select/invalid/reset-cancel/focus/comfort/replay, controls inside both sizes |
 | Normal battle | 8.2 | 8.1 | 13/18: small rage text (7.5) | final-screens/*-normal-battle; integrated25puppets, current stage/portraits; inspected |

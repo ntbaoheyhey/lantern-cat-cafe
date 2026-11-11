@@ -144,3 +144,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T01:24:16Z Q40: reuse the inspected Q25 cabinet/gift layout and preserved CSS draft. Raise floor numbers/markers to18–19/12px, status/body to14px and claims/returns to44px. Keep all art, floor/reward commands and six-parcel layout; no new system.
 
 2026-11-11T01:27:29Z Q41 queued from retained Q26 screenshots, not a repeat of accepted page/claim work: collection summary labels10px and discovery dates12px are still the lowest Journal row; existing40px page/claim targets can improve. Draft only during Q40; preserve every data/claim command.
+
+- 2026-11-11T01:33:46Z Q41: retained Q26 scrapbook/pages and public claims; raise collection counts/dates/reasons to14px and actions44px. Required published BP38 merge is isolated to B-owned art/canvas; verify integrated framing in the offline package. No new rewards/records or numerical tuning.
+
+- 2026-11-11T01:35:15Z Q42/Q43 queued from inspected retained720p Field Guide/Settings views (both8.0 lows): practical metadata remains12–13px and controls40–42px. Apply existing readability/action-zone guidance; no new system or repeated research. Prepare off-app while Q41 verifies.

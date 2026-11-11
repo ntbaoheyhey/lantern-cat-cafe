@@ -191,3 +191,9 @@ Q39 presentation repair1: unavailable forecast text widened the first auto grid 
 Q39 presentation repair2: all1440 worker/Fight controls passed. At720 Rain Spool ready note ended1.63px into the footer; compact only note whitespace while retaining15px body/14px metadata and all art. Pending/unavailable has no probability claim, so show its explicit state/instruction without the result-only disclaimer. Retain completed controls; recapture affected layout and verify longest Pantry Crown note with all worker states.
 
 2026-11-11T01:26:59Z Q40 presentation repair1: all13large views and public controls pass;720 locked gifts extend their44px buttons roughly6px through the parcel bottom. Compact only the gift-banner decorative eyebrow/portrait at720 (52px), retaining its23px title/14px copy, all parcel text and44px actions. Gains about20px for the two parcel rows; retain1440 checks and six Tower tests/types/lint.
+
+- Q41 browser probe correction: the reused Q26 script expected40gear from a fixture explicitly installing36designs. Current public claims award no gear. Exact eight-claim deltas had already passed; correct the probe to36 and resume after the accepted1440collection view. No application fix or repeated unit run needed.
+
+- Q41 presentation repair1: fourteen-pixel labels and44px actions make the720p partial-cap keepsake tickets overhang the book inner edge by3.453px. Trim seven pixels of header/page-divider spacing; retain all copy and action sizes. Recheck the affected720p page/state matrix only; accepted1440views and47tests retained.
+
+- Q41 visual repair2: inspection caught capped720p star parcels exceeding their inner board even though buttons stayed onscreen. Widen the existing reward column and tighten only card/header spacing; raise inherited tiny CostView text to14px too. Extend geometry audit to the parcel edge and inspect the affected discovery states at both sizes. Public claim/history checks are retained.

@@ -128,3 +128,25 @@
   .a6-journal-evenings footer {flex-wrap:wrap}
  }
 }
+
+
+/* Readable keepsake counts, dated discoveries and gifts. */
+.uv-app[data-a6=true] {
+ .a6-journal-title>p,.a6-journal-counts dt,.a6-journal-counts dd>small {font-size:14px;line-height:1.35}
+ .a6-journal-progress>span,.a6-journal-ticket-top>span,.a6-journal-scroll li>small,.a6-journal-empty small {font-size:14px;line-height:1.35}
+ .a6-journal-discoveries .dp-v4-meta-grid article>small,.a6-journal-discoveries .cr-cost {font-size:14px;line-height:1.35}
+ .a6-journal-ticket>button,.a6-journal-sections button,.a6-journal-discoveries .dp-v4-meta-grid article>button,.a6-journal-evenings footer button {min-height:44px;font-size:14px}
+ .a6-journal-sections span {font-size:14px}
+ .a6-journal-scroll:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+ @media(max-height:760px) {
+  .a6-journal-intro {margin-bottom:6px}
+  .a6-journal-sections {margin-bottom:7px;padding-bottom:7px}
+  .a6-journal-discoveries {grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+  .a6-journal-discoveries>.dp-v4-star-board {padding:8px 10px}
+  .a6-journal-discoveries .dp-v4-star-board>p {margin-bottom:7px;line-height:1.3}
+  .a6-journal-discoveries .dp-v4-meta-grid article {gap:4px;padding:7px}
+  .a6-journal-discoveries .dp-v4-meta-grid article>b {min-height:40px}
+
+ }
+
+}

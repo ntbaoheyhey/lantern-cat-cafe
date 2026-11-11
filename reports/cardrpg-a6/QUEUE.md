@@ -64,7 +64,7 @@ Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earlies
 
 - [x] Q40 [auto] Tower climb and gift readability: inspected Q25 720p shows 16px floor numbers/9px markers, 10px gift status, 13px reason text and 38px claims. Enlarge existing floor numbers/markers, make gift and preview copy readable and claims at least44px while retaining the original thirty-floor cabinet and six visible parcels. Preserve every selection/start/replay/return, fixed seed, capped atomic claim, unlock and keyboard command. Verify locked/fresh/boss/late floors/partial cap/route/all-collected states and both sizes. No new reward or progression rules; apply after Q39 package acceptance.
 
-- [ ] Q41 [auto] Journal counts, dates and gift readability: inspected Q26 720p uses10px collection count labels,12px intro/date text and40px page/claim actions. Raise the existing counts, discovery dates and gift reasons/rewards to readable sizes, retain the scrapbook art and direct four-page access, and keep actions at44px without moving earned gifts below the fold. Preserve five milestones/three star claims, caps, route locks, discovery order, collection ownership, guide/replay and keyboard commands. Verify fresh/earned/partial-cap/full-cap/route/long-history and both sizes. No new records or rewards; draft off app until Q40 acceptance.
+- [x] Q41 [auto] Journal counts, dates and gift readability: inspected Q26 720p uses10px collection count labels,12px intro/date text and40px page/claim actions. Raise the existing counts, discovery dates and gift reasons/rewards to readable sizes, retain the scrapbook art and direct four-page access, and keep actions at44px without moving earned gifts below the fold. Preserve five milestones/three star claims, caps, route locks, discovery order, collection ownership, guide/replay and keyboard commands. Verify fresh/earned/partial-cap/full-cap/route/long-history and both sizes. No new records or rewards; draft off app until Q40 acceptance.
 
 ## Research refinements (2026-11-10; accepted rows stay complete)
 
@@ -77,6 +77,10 @@ Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earlies
 Follow TASK.md R-1–R-9 and the verbatim NON-STOP addendum; only its four end conditions apply. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
 Check INBOX and STOP-A6 between items. Typecheck, lint, touched tests and inspected screenshots per item.
 Heavy work holds timing.lock for <=20 minutes. Ports 5960–5963; temporary files /tmp/cardrpg-a6-*.
+
+- [ ] Q42 [auto] Field guide metadata and controls: inspected Q27 720p has12px search counts/footnote,13px selected mechanics metadata and40px category/index actions. Raise practical copy to14px and existing controls to44px while keeping the original illustrated notebook, bounded index and selected reading pane. Preserve all75entries, search/reset/selection, current rules, legacy mode and paused battle/focus return. Verify all five categories, long notes, empty search, keyboard/reduced motion and both full-sheet/battle sizes; no new notes or rules. Draft off app until Q41 package acceptance.
+
+- [ ] Q43 [auto] Settings status and comfort readability: inspected Q28 720p has12px local/manual-save/account/replay/motion status and40–42px controls. Make these existing labels14px and controls44px, retain the illustrated save/comfort desk and keep reset explanation/confirmation inside the card. Preserve exact save roundtrip, invalid-code handling, select/export feedback, all preferences, reset cancel and replay; verify both sizes/keyboard. No storage or gameplay changes; draft only until Q42 acceptance.
 
 ## Completed history
 
