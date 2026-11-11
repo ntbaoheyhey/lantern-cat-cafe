@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now opens four keepsake pages directly, with star gifts beside the notes and all claims/caps retained.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,098,733-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,099,213-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -13,7 +13,7 @@ Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../.
 | Map | [Before / after](comparisons/map.webp) | Winding lantern street, landmarks and star chests |
 | Battle | [Before / after](comparisons/battle.webp) | Illustrated puppets, closer staging, HP/rage cards |
 
-These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.17/10** across eighteen screens at both sizes (1440×900 and1280×720), range **8.1–8.3**. All applicable rows meet7. Recent improvements include readable direct cat skills/previews, indexed Bond Book/Field guide, stable gear and gift actions, direct Journal pages, a contained save/reset desk, and selectable15px enemy tactics above Fight. Prepare scores **8.2/8.1**, Team and Bond Book **8.2/8.1**. P15 resolves the three-helper occlusion; B motion/scale through D2 remains integrated. Scores are agent judgement, not player testing.
+These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.17/10** across eighteen screens at both sizes (1440×900 and1280×720), range **8.1–8.3**. All applicable rows meet7. Q53 adds original illustrated loading at cafe/sheet/battle boundaries, verified in30source/30offline views; an observed oversized legacy heading is queuedQ54. Recent improvements include readable direct cat skills/previews, indexed Bond Book/Field guide, stable gear and gift actions, direct Journal pages, a contained save/reset desk, and selectable15px enemy tactics above Fight. Prepare scores **8.2/8.1**, Team and Bond Book **8.2/8.1**. P15 resolves the three-helper occlusion; B motion/scale through D2 remains integrated. Scores are agent judgement, not player testing.
 
 ## Measurements and limits
 

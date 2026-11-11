@@ -184,3 +184,5 @@ Q49: After Q48, continue the tied-low Team/Prepare reading row. Existing state a
 2026-11-11T04:06:03Z Q52 uses the existing menu destinations in a paper cafe-note panel; accessible names and legacy shell retained. A6 opening focuses its first link, Tab stays within navigation, Escape/Close returns to trigger and outside clicks dismiss. No new system/art dependency or canvas change.
 
 Q53 queued from Q52 source loading captures: plain page Suspense bypasses the illustrated Shell fallback. Existing OpeningA6 is the smallest consistent correction to LOOK-CHECKLIST row12; no new assets/system, no numerical tuning or repeated research.
+
+- 2026-11-11T04:21:38Z Q53: reuse OpeningA6 with its CSS eagerly imported at outer boundaries; status copy only, static illustration supports reduced motion. Actual legacy screenshots expose an older ungated heading-art defect; queueQ54 as next bounded compatibility repair rather than accepting DOM-visible-but-clipped controls.

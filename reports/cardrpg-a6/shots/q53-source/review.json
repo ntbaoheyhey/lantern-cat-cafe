@@ -1,0 +1,596 @@
+{
+  "date": "2026-11-11T04:18:36.142Z",
+  "fixture": "External probe holds existing lazy-module resolution. No production test hooks, new loader, or granted progression.",
+  "shots": [
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cafe-held",
+      "file": "1440-cafe-held.webp",
+      "opening": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening the cafe\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cafe-ready",
+      "file": "1440-cafe-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "save-held",
+      "file": "1440-save-held.webp",
+      "opening": true,
+      "box": {
+        "x": 82.59375,
+        "y": 186.9375,
+        "width": 1274.8125,
+        "height": 272.75
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening your save desk\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "save-ready",
+      "file": "1440-save-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cancel-held",
+      "file": "1440-cancel-held.webp",
+      "opening": true,
+      "box": {
+        "x": 82.59375,
+        "y": 186.9375,
+        "width": 1274.8125,
+        "height": 272.75
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening your save desk\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cancel-released-on-cafe",
+      "file": "1440-cancel-released-on-cafe.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-menu-button"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cancel-reopened-ready",
+      "file": "1440-cancel-reopened-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "guide-held",
+      "file": "1440-guide-held.webp",
+      "opening": true,
+      "box": {
+        "x": 82.59375,
+        "y": 186.9375,
+        "width": 1274.8125,
+        "height": 272.75
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening the field guide\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "guide-ready",
+      "file": "1440-guide-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cats-held",
+      "file": "1440-cats-held.webp",
+      "opening": true,
+      "box": {
+        "x": 82.59375,
+        "y": 241.6875,
+        "width": 1274.8125,
+        "height": 272.75
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Lighting the lanterns\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "cats-ready",
+      "file": "1440-cats-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "battle-held",
+      "file": "1440-battle-held.webp",
+      "opening": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Preparing the battle\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "battle-ready",
+      "file": "1440-battle-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "legacy-held",
+      "file": "1440-legacy-held.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "legacy-ready",
+      "file": "1440-legacy-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cafe-held",
+      "file": "1280-cafe-held.webp",
+      "opening": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening the cafe\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cafe-ready",
+      "file": "1280-cafe-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "save-held",
+      "file": "1280-save-held.webp",
+      "opening": true,
+      "box": {
+        "x": 72.1875,
+        "y": 159.296875,
+        "width": 1135.625,
+        "height": 271.296875
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening your save desk\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "save-ready",
+      "file": "1280-save-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cancel-held",
+      "file": "1280-cancel-held.webp",
+      "opening": true,
+      "box": {
+        "x": 72.1875,
+        "y": 159.296875,
+        "width": 1135.625,
+        "height": 271.296875
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening your save desk\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cancel-released-on-cafe",
+      "file": "1280-cancel-released-on-cafe.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-menu-button"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cancel-reopened-ready",
+      "file": "1280-cancel-reopened-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "guide-held",
+      "file": "1280-guide-held.webp",
+      "opening": true,
+      "box": {
+        "x": 72.1875,
+        "y": 159.296875,
+        "width": 1135.625,
+        "height": 271.296875
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Opening the field guide\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "guide-ready",
+      "file": "1280-guide-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cats-held",
+      "file": "1280-cats-held.webp",
+      "opening": true,
+      "box": {
+        "x": 72.1875,
+        "y": 206.59375,
+        "width": 1135.625,
+        "height": 271.296875
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Lighting the lanterns\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "cats-ready",
+      "file": "1280-cats-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "battle-held",
+      "file": "1280-battle-held.webp",
+      "opening": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "copy": "\u2726 \u00b7 \u2726 \u00b7 \u2726Preparing the battle\u2026",
+      "imageReady": true,
+      "font": "20px",
+      "background": "radial-gradient(at 50% 25%, rgb(255, 246, 223), rgb(241, 223, 182) 80%)",
+      "animation": "none",
+      "overflow": false,
+      "outside": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "battle-ready",
+      "file": "1280-battle-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "cardrpg-entry"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "legacy-held",
+      "file": "1280-legacy-held.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "legacy-ready",
+      "file": "1280-legacy-ready.webp",
+      "opening": false,
+      "font": null,
+      "background": null,
+      "animation": null,
+      "overflow": false,
+      "focus": "uv-sheet"
+    }
+  ],
+  "controls": [
+    {
+      "width": 1440,
+      "target": "shell",
+      "held": true,
+      "released": true
+    },
+    {
+      "width": 1440,
+      "target": "save",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": false
+    },
+    {
+      "width": 1440,
+      "target": "cancel",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": false
+    },
+    {
+      "width": 1440,
+      "target": "guide",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": false
+    },
+    {
+      "width": 1440,
+      "target": "cats",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": false
+    },
+    {
+      "width": 1440,
+      "target": "battle",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": false,
+      "reducedMotion": false
+    },
+    {
+      "width": 1440,
+      "target": "legacy",
+      "oldTextPreserved": true,
+      "released": true
+    },
+    {
+      "width": 1280,
+      "target": "shell",
+      "held": true,
+      "released": true
+    },
+    {
+      "width": 1280,
+      "target": "save",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1280,
+      "target": "cancel",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1280,
+      "target": "guide",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1280,
+      "target": "cats",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 1280,
+      "target": "battle",
+      "held": true,
+      "released": true,
+      "accountUnchanged": true,
+      "keyboardCancelAndReturn": false,
+      "reducedMotion": true
+    },
+    {
+      "width": 1280,
+      "target": "legacy",
+      "oldTextPreserved": true,
+      "released": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "layoutFailures": [],
+  "knownObservations": [
+    "Actual legacy settings resolves its module but ungated A6 header art hides content; existing defect queued Q54. A6 loading layout checks pass."
+  ]
+}
