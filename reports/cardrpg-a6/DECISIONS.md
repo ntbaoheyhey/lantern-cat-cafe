@@ -140,3 +140,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T01:01:30Z Q39 queued from inspected q29-prepare-final/1280-group-2-yarn-giant and current ForecastV4:12px metadata and unbounded pending worker. Improve the tied-low Prepare8.0 state clarity/readability; keep forecast math/cache and battle rules fixed. Draft only until Q38 delivery.
 
 2026-11-11T01:16:45Z Q40 scoped from inspected q25-climb-final/1280-boss and q25-tower/1280-ready-gifts: Tower remains8.1/8.0 with small metadata and38px claims. Preserve cabinet/parcel composition and all public rules; improve existing text/targets under the established readable-action research. Draft off app until Q39 delivery.
+
+2026-11-11T01:24:16Z Q40: reuse the inspected Q25 cabinet/gift layout and preserved CSS draft. Raise floor numbers/markers to18–19/12px, status/body to14px and claims/returns to44px. Keep all art, floor/reward commands and six-parcel layout; no new system.
+
+2026-11-11T01:27:29Z Q41 queued from retained Q26 screenshots, not a repeat of accepted page/claim work: collection summary labels10px and discovery dates12px are still the lowest Journal row; existing40px page/claim targets can improve. Draft only during Q40; preserve every data/claim command.

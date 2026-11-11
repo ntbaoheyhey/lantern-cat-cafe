@@ -65,3 +65,22 @@
   .a6-tower-heading {flex-wrap:wrap}.a6-tower-gifts>header {flex-wrap:wrap}
  }
 }
+
+/* Readable floor markers and exact milestone gifts. */
+.uv-app[data-a6=true] {
+ .a6-tower-floors button b {font-size:19px;line-height:1.1}
+ .a6-tower-floors button span {font-size:12px;line-height:1.1}
+ .a6-tower-preview>small {font-size:14px;line-height:1.35;letter-spacing:.02em}
+ .a6-tower-preview>.a6-power {font-size:14px}
+ .a6-tower-sections span,.a6-tower-parcels small,.a6-tower-parcels p {font-size:14px;line-height:1.35}
+ .a6-tower-parcels small {letter-spacing:.02em}
+ .a6-tower-parcels button,.a6-tower-sections button,.a6-tower-gifts>header button,.a6-tower-preview>button {min-height:44px;font-size:14px}
+ .a6-tower-parcels button:focus-visible,.a6-tower-floors button:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+ @media(max-height:780px) {
+  .a6-tower-floors button b {font-size:18px}
+  .a6-tower-parcels article {padding-block:9px}
+  .a6-tower-gifts>header small {display:none}
+  .a6-tower-gifts>header img {height:52px}
+  .a6-tower-gifts>header p {line-height:1.35}
+ }
+}

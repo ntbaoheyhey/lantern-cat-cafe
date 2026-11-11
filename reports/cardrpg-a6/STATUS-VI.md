@@ -252,3 +252,11 @@ Bộ nhớ đệm/đổi đội/bàn phím/Fight đạt ở hai cỡ màn;9test/
 2026-11-11T01:22:50Z: Q39 hoàn tất: dự báo chờ tối đa 8 giây, chữ địch/pha 14px; tên dài vẫn vừa ở 720p.
 9 test/type/lint qua; 52 ảnh nguồn và 56 ảnh offline đã duyệt, demo 39.109.129 byte, không lỗi/gọi mạng ngoài.
 Tiếp tục Q40: số tầng, trạng thái quà và nút nhận quà Tower rõ hơn; giữ nguyên luật và phần thưởng.
+
+2026-11-11T01:28:13Z: Tower đã vừa cả hai cỡ màn: số tầng18–19px, chữ14px, nút44px;26ảnh nguồn đã xem.
+6test/type/lint qua, nhận quà/giới hạn/chọn tầng/quay lại/bàn phím giữ đúng. Đang đóng gói offline; sau đó tiếp tục Journal.
+
+2026-11-11T01:29:32Z: Người dùng nhắc “tiếp tục công việc”; tiếp tục Q40 offline rồi Q41 Journal trong cùng lượt, giữ nguyên toàn bộ phạm vi và phần đã hoàn tất.
+
+2026-11-11T01:32:56Z: Q40 hoàn tất: 26 ảnh nguồn và 26 ảnh offline đã duyệt, chữ Tower 14px/nút 44px; 6 test/type/lint qua.
+Demo 39.109.325 byte, không lỗi/gọi mạng ngoài; chọn tầng/nhận quà/giới hạn/bàn phím giữ đúng. Tiếp tục Journal và tích hợp Rain Spool P38 trước bản đóng gói kế tiếp.
