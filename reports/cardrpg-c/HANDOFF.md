@@ -1,8 +1,8 @@
 # Lane C handoff
-NOW: C11 checkpoint verified; prepare commit/push/PR439, then continue quality pass.
+NOW: C11 free gear preview verified; checkpoint then inspect weakest remaining stage/VFX presentation.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: complete checkpoint commit/push and Vietnamese PR update.
-NEXT2: recheck designer inbox; inspect lowest remaining battle/stage and gear-preparation screens.
+NEXT1: commit/push free gear receipt and update draft PR439.
+NEXT2: inspect actual battle/stage screenshots and choose one bounded visual improvement.
 NEXT3: improve one observed issue, verify both sizes, retain C5 three-round limits; C12 Nov20.
 RUNNING: Vite5970 PID59050; no recorder or browser QA active.
 KNOWN: clean 1800.25s account complete; firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
@@ -21,3 +21,4 @@ KNOWN:88%1â€“3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74â€
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
+KNOWN:free gear preview+641 matches six public-command clicks, currencies unchanged;10views/9tests/types/lintPASS.
