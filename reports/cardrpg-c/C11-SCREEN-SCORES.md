@@ -77,3 +77,5 @@ Outcome follow-up:34captures inspected; short Resisted/Immune words and stacked 
 Ultimate silhouette follow-up:24source/4battle/8offline/2performance views inspected. Larger translucent cafe motifs remain distinct while faces/HP/status rows stay readable. Body animation and glyph-based effects are still provisional. Retain weighted7.79; details and benchmark scope in C11-ULTIMATE-PAINT-RECEIPT.md.
 
 Cat gear follow-up:16captures inspected (both Cats panels full size). Existing keepsake art, owned counts and slot-specific shelf navigation make the next action explicit. First roster row and all four slots fit at720p; no overflow or broken images. Correctness/usability refinement only; weighted7.79 retained. C11-GEAR-SLOTS-RECEIPT.md.
+
+Growth follow-up: all18final captures inspected; full costs, exact deficits and short earning hints fit at both sizes, including the complete first roster row at720p. Caps/route locks and exact purchase results remain correct. Weighted7.79 unchanged; no new recovery-rate evidence. C11-GROWTH-RECEIPT.md.

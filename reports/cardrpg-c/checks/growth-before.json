@@ -1,0 +1,490 @@
+{
+  "method": "Isolated UI fixtures with exact public-command comparisons; no combat/seed cohort.",
+  "baseline": true,
+  "checks": [
+    {
+      "width": 1280,
+      "kind": "both-short",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 250 fish.",
+          "described": "Need 250 fish."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "fish-short",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 250 fish.",
+          "described": "Need 250 fish."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "thread-short",
+      "enabled": {
+        "level": false,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 2 threads.",
+          "described": "Need 2 threads."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "shard-short",
+      "enabled": {
+        "level": true,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+9 Health · +2 Attack",
+          "described": "Mochi → level 11250 fish points2 threads+9 Health · +2 Attack"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "ready",
+      "enabled": {
+        "level": true,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": true,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+9 Health · +2 Attack",
+          "described": "Mochi → level 11250 fish points2 threads+9 Health · +2 Attack"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "level-cap",
+      "enabled": {
+        "level": false,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upCat reached its rarity level cap.",
+          "described": "Cat reached its rarity level cap."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+19 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+19 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "star-cap",
+      "enabled": {
+        "level": true,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+10 Health",
+          "described": "Mochi → level 11250 fish points2 threads+10 Health"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedCat reached five stars.",
+          "described": "Cat reached five stars."
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "kind": "route",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upFinish this route before training your companions.",
+          "described": "Finish this route before training your companions."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedFinish this route before training your companions.",
+          "described": "Finish this route before training your companions."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "both-short",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 250 fish.",
+          "described": "Need 250 fish."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "fish-short",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 250 fish.",
+          "described": "Need 250 fish."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "thread-short",
+      "enabled": {
+        "level": false,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upNeed 2 threads.",
+          "described": "Need 2 threads."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "shard-short",
+      "enabled": {
+        "level": true,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+9 Health · +2 Attack",
+          "described": "Mochi → level 11250 fish points2 threads+9 Health · +2 Attack"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star7 matching shards ownedNeed 20 matching shards.",
+          "described": "Need 20 matching shards."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "ready",
+      "enabled": {
+        "level": true,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": true,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+9 Health · +2 Attack",
+          "described": "Mochi → level 11250 fish points2 threads+9 Health · +2 Attack"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+20 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "level-cap",
+      "enabled": {
+        "level": false,
+        "ascend": true
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upCat reached its rarity level cap.",
+          "described": "Cat reached its rarity level cap."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+19 Health · +2 Attack",
+          "described": "20 matching shards ownedMochi → 3 stars300 fish points20 matching shards+19 Health · +2 Attack"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "star-cap",
+      "enabled": {
+        "level": true,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upMochi → level 11250 fish points2 threads+10 Health",
+          "described": "Mochi → level 11250 fish points2 threads+10 Health"
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedCat reached five stars.",
+          "described": "Cat reached five stars."
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "kind": "route",
+      "enabled": {
+        "level": false,
+        "ascend": false
+      },
+      "unchanged": true,
+      "fullCosts": false,
+      "fullDeficits": false,
+      "observed": [
+        {
+          "kind": "level",
+          "text": "Level upFinish this route before training your companions.",
+          "described": "Finish this route before training your companions."
+        },
+        {
+          "kind": "ascend",
+          "text": "Add a star20 matching shards ownedFinish this route before training your companions.",
+          "described": "Finish this route before training your companions."
+        }
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-both-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-fish-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-thread-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-shard-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-ready.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-level-cap.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-star-cap.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-route.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-both-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-fish-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-thread-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-shard-short.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-ready.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-level-cap.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-star-cap.webp",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-route.webp",
+      "overflow": false,
+      "broken": 0
+    }
+  ],
+  "errors": [],
+  "complete": true
+}

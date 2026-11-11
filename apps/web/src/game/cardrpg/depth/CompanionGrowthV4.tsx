@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import { CARD_BY_ID, CARD_RPG_CONFIG as C, type Cost } from '@taskbar-hero/game-rules/cardrpg';
 import { CostView } from '../shared';
 import type { DepthModel } from './model';
 
@@ -14,6 +15,27 @@ export function CompanionGrowthV4({ m, catId, kind }: {
   const preview = R.metaCommand(m.state, command);
   const action = kind === 'level' ? 'Level up' : 'Add a star';
   const locked = !!m.state.run && !m.state.run.complete;
+  if (!preview.ok && R.gameplayA6(m.state) && !locked && !m.state.account.pendingRun) {
+    const capped = kind === 'level' ? card.level >= CARD_BY_ID[catId]!.levelCap : card.stars >= C.level.maxStars;
+    const cost: Cost = kind === 'level' ? { fish: C.level.fishBase * card.level, threads: C.level.threads } : { fish: C.level.ascendFish * card.stars };
+    const shards = kind === 'ascend' ? C.level.shardsBase * card.stars : 0;
+    const currencyNeeds = Object.entries(cost).flatMap(([id, amount]) => {
+      const missing = amount - m.state.account.currencies[id as keyof Cost];
+      return missing > 0 ? [`${missing} more ${id === 'threads' && missing === 1 ? 'thread' : id}`] : [];
+    });
+    const missingShards = Math.max(0, shards - card.shards);
+    const needs = [...currencyNeeds, ...(missingShards ? [`${missingShards} more matching shard${missingShards === 1 ? '' : 's'}`] : [])];
+    if (!capped && needs.length) return <div className="dp-v4-growth a6-growth-shortfall" data-growth={kind}>
+      <button disabled aria-describedby={descriptionId}>{action}</button>
+      <div id={descriptionId}>
+        <b>{R.CAT_BY_ID[catId]!.name} → {kind === 'level' ? `level ${card.level + 1}` : `${card.stars + 1} stars`}</b>
+        <CostView cost={cost}/>
+        {shards > 0 && <small>{card.shards} / {shards} matching shards</small>}
+        <small className="a6-growth-missing">Need {needs.join(' · ')}.</small>
+        <small className="a6-growth-source">{currencyNeeds.length > 0 && (kind === 'level' ? 'Patrol gives fish and threads.' : 'Patrol gives fish.')}{currencyNeeds.length > 0 && shards > card.shards && ' '}{shards > card.shards && `Extra ${R.CAT_BY_ID[catId]!.name} recruits give shards.`}</small>
+      </div>
+    </div>;
+  }
   if (!preview.ok) return <div className="dp-v4-growth" data-growth={kind}>
     <button disabled aria-describedby={descriptionId}>{action}</button>
     {kind === 'ascend' && R.gameplayA6(m.state) && <small>{card.shards} matching shards owned</small>}

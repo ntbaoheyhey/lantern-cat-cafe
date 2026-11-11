@@ -27,3 +27,5 @@
 2026-11-11 resume11:40UTC: handoff reports8roster mismatches fixed,20casesPASS. Preserved all source/offline/framing/test logs; finish delayed-load/replacement harness and inspect captures. Initial harness held Vite PNG module imports, not just images; record its timeout separately.
 2026-11-11 resume12:23UTC: handoff confirms pushed PNG gate0ab542fe8. Preserved unfinished event tests/harness and existing4browser/5unit failures; completed focused fallback repair without repeating PNG acceptance checks.
 2026-11-11 resume12:40UTC: handoff identifies six VFX false PASS exports and incomplete descriptor instructions. Preserved unfinished patch and49passing tests/types/lint, reviewed before/after diagnostics and four retained views; finish checkpoint without rerunning accepted work.
+
+2026-11-11T13:23:51.571939+00:00 resume: user handoff identifies the full-cost Growth change. Preserved uncommitted patch and completed18browser/25focused/types/lint checks; inspected18final screenshots without replaying accepted work. Continue C8/C11.

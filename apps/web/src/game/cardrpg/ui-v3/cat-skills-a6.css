@@ -1,3 +1,8 @@
+/* Full costs stay readable when the next upgrade is not affordable yet. */
+.uv-app[data-a6=true] .a6-growth-shortfall {
+ .a6-growth-missing {color:#874c30;line-height:1.35;}
+ .a6-growth-source {color:#655736;line-height:1.35;}
+}
 /* Four illustrated ability tabs keep the current effect readable at desktop sizes. */
 .uv-app[data-a6=true] {
  .a6-cat-skillbook {display:flex;flex-direction:column;gap:10px;}

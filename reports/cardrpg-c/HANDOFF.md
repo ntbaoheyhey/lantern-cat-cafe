@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 gear-slot navigation verified; continue Growth guidance/intake.
+NOW: C11 Growth costs verified; continue next actionable upgrade guidance/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review unavailable upgrades in Cat Growth.
+NEXT1: check designer inbox; review Awakening and owned upgrade guidance.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -15,7 +15,6 @@ KNOWN:88%1â€“3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74â€
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
-KNOWN:cat624combat/120final/24live/576source/576offlinePASS;46finalviews;29finaltests/types/lint;max101draws.
 KNOWN:outcome60combat/576source/576offline+12controls/34views/34tests/types/lintPASS;labelrowsclear;74maxdraws.
 KNOWN:framing240source/144offline/6PausePlay/20views/12tests/types/lintPASS;min4.16px,p9516.8ms/60draws.
 KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
@@ -28,3 +27,4 @@ KNOWN:activeformat2misses->10sourcePASS;32focused/types/lint/2offlinesmoke/2cont
 KNOWN:overridecast4misses->192sourcePASS;20focused/types/lint/2offlinesmoke/2controls/4finalviewsPASS;demo29226565.
 KNOWN:overridepool4browser/5regressionsfixed;24source/96contacts/24gaps/16tests/types/lint/2offline/2controls/4viewsPASS;demo29226665.
 KNOWN:gearslots10baseline->20browser/20tests/types/lint/16viewsPASS;2shotsretained;staticdemo29226665unchanged.
+KNOWN:growth18browser/25focused/types/lint/18viewsPASS;fullcosts/deficits/hints;2shotsretained;demo29226665unchanged.
