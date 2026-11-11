@@ -1,5 +1,7 @@
-import{createRequire}from'node:module';import{resolve}from'node:path';import{writeFile}from'node:fs/promises';
+import{createRequire}from'node:module';import{resolve}from'node:path';import{mkdir,writeFile}from'node:fs/promises';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
+const tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c6';if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid evidence tag');
+const output=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(output,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),report={errors:[],http:[],shots:[],performance:[]};
 try{
 const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',e=>{if(e.type()==='error')report.errors.push(e.text());});page.on('request',r=>{if(/^https?:/.test(r.url()))report.http.push(r.url());});
@@ -9,8 +11,8 @@ for(const[width,height]of[[1280,720],[1440,900]]){
  const perf=await page.evaluate(async()=>{const g=window.vfxGallery,times=[];let previous=0,draws=0;await new Promise(resolve=>{function frame(now){if(previous)times.push(now-previous);previous=now;draws=Math.max(draws,g.scene.stats.calls+g.scene.effects.stats.draws);if(times.length<240)requestAnimationFrame(frame);else resolve();}requestAnimationFrame(frame);});times.sort((a,b)=>a-b);g.manual(true);return{p95:times[Math.floor(times.length*.95)],draws,samples:times.length};});report.performance.push({width,...perf});
  await page.evaluate(()=>window.vfxGallery.select('mochi-4'));await page.waitForFunction(()=>window.vfxGallery.scene.ready&&window.vfxGallery.view.actors.every(a=>window.vfxGallery.scene.actors.has(a.id)));
  const mask=await page.evaluate(()=>{const g=window.vfxGallery;g.sample(0,3);const hit=g.fixture.plan.beats[2].start;g.sample(hit+1,3.02);g.sample(hit+100,3.12);const fx=g.scene.effects,ctx=fx.canvas.getContext('2d');let opaque=0,points=0;for(const actor of g.view.actors){const p=g.scene.socket(actor.id,'head');if(p){const alpha=ctx.getImageData(Math.round(p.x)-2,Math.round(p.y)-2,4,4).data;for(let i=3;i<alpha.length;i+=4){points++;if(alpha[i])opaque++;}}}for(const b of g.scene.labelAudit.cards){const alpha=ctx.getImageData(Math.round(b.x+1),Math.round(b.y+1),Math.max(1,Math.floor(b.width-2)),Math.max(1,Math.floor(b.height-2))).data;for(let i=3;i<alpha.length;i+=4){points++;if(alpha[i])opaque++;}}return{points,opaque,stats:fx.stats};});if(mask.opaque)throw Error('Face or HP mask is painted');
- await sharp(await page.screenshot()).webp({quality:88}).toFile(resolve(root,`reports/cardrpg-c/shots/c6/offline-${width}.webp`));report.shots.push({width,height,mask});
+ await sharp(await page.screenshot()).webp({quality:88}).toFile(resolve(output,`offline-${width}.webp`));report.shots.push({width,height,mask,stage:await page.evaluate(()=>window.vfxGallery.scene.audit().stage)});
 }
 if(report.performance.some(p=>p.p95>33||p.draws>150))throw Error('Frame/draw budget');
 if(report.errors.length||report.http.length)throw Error(JSON.stringify(report));console.log(JSON.stringify(report));
-}finally{await writeFile(resolve(root,'reports/cardrpg-c/shots/c6/offline.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
+}finally{await writeFile(resolve(output,'offline.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}

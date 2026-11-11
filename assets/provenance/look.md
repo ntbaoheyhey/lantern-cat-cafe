@@ -1,6 +1,6 @@
 # Lantern atelier authoring provenance
 
-Original procedural art only; seed20261107. No generative model calls, reference-game art, external model, texture, brush or HDRI. Parameters and per-asset hashes will be recorded alongside each export. Targets in LOOK-BIBLE are not proof of execution.
+Historical L0 baseline: original procedural art only, seed20261107, with no generative model calls or imported references in that baseline. Later approved original assets and their sources are recorded in the dated entries below. No reference-game art. Targets in LOOK-BIBLE are not proof of execution.
 
 ## L0 inventory
 
@@ -468,3 +468,7 @@ Original procedural Canvas2D geometry in spine/stage.ts adds cups, plants, books
 
 ## Lane C C10 — offline review media (2026-11-11)
 Tools: Playwright screenshots/video of the original-art local game and gallery, ffmpeg x1 clip-boundary trim/H.264 encoding, Sharp/WebP contact lineup. Sources: existing Lane C stage/portraits/placeholder atlases. No generated art, external references, or character changes. Recorded chapter-one victories are earned in reports/cardrpg-c/first-session.json; complete demo manifest is docs/cardrpg-c/build.json.
+
+## Lane C C11 original cafe painting — 2026-11-11
+
+Built-in image_gen, illustration-story, text-only original empty cafe; no input/reference images and no characters. Exact prompt and hashes: `reports/cardrpg-c/ref/c11-stage-imagegen.json`. Generated1774x887PNG stays outside git; runtime `assets/cardrpg-look/stage/painted-cafe-c11-v1.webp` is244296bytes, cwebp1.6.0 quality88. Runtime creates three parallax planes from the same artwork with glass/floor mattes; original procedural stage remains the loading/failure fallback. Palette-derived saturation/contrast/brightness controls stay in `spine/style.ts`. This is a backdrop placeholder, not designer character art.

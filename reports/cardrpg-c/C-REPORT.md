@@ -1,8 +1,8 @@
 # Báo cáo lane C — bản đang cập nhật ngày 11/11/2026
 
-Đã hoàn thành C0–C7, C9 và C10. Demo offline 28,82 MB; cả hai lần full E2E đều 421/421. Pipeline, sân 2D và VFX đã có bằng chứng chạy được, nhưng gameplay chưa đạt các mục tiêu về thua đầu, độ căng trận thường và độ dài boss trong tài khoản click thật. C11 đã có lượt 30 phút sạch và điểm tự chấm 7,75/10; bản này chưa phải báo cáo chốt ngày 20/11.
+Đã hoàn thành C0–C7, C9 và C10. Demo offline 29,21 MB; cả hai lần full E2E đều 421/421. Pipeline, sân 2D và VFX đã có bằng chứng chạy được, nhưng gameplay chưa đạt các mục tiêu về thua đầu, độ căng trận thường và độ dài boss trong tài khoản click thật. C11 đã có lượt 30 phút sạch và điểm tự chấm mới nhất 7,79/10; bản này chưa phải báo cáo chốt ngày 20/11.
 
-Nền A6 `ef4aee790` (gồm Q54 và B `d5c34d233`) được giữ. Nhánh `codex/cardrpg-c-2026-11-11`, [draft PR #439](https://github.com/ntbaoheyhey/taskbar-hero/pull/439), commit C10 `8423c409d`. Không merge/deploy hoặc đổi contract/Supabase. Bản 3D vẫn được giữ sau cờ OFF. Fuji Relic chỉ đọc, cap +8% không đổi.
+Nền A6 `ef4aee790` (gồm Q54 và B `d5c34d233`) được giữ. Nhánh `codex/cardrpg-c-2026-11-11`, [draft PR #439](https://github.com/ntbaoheyhey/taskbar-hero/pull/439), checkpoint C10 `8423c409d`, C11 tiếp tục trên cùng nhánh. Không merge/deploy hoặc đổi contract/Supabase. Bản 3D vẫn được giữ sau cờ OFF. Fuji Relic chỉ đọc, cap +8% không đổi.
 
 ## Thay đổi có thể xem
 
@@ -46,7 +46,7 @@ C11 tiếp tục làm rõ auto-equip: hiện lợi ích **Free · +641 Power · 
 
 ## Hình ảnh, hiệu ứng, pipeline và kích thước
 
-Đã xem baseline 31 màn × 2 cỡ (62 ảnh), 12 ảnh Recruit sửa, 2 ảnh Field Guide và 4 ảnh battle; điểm từng màn ở `C11-SCREEN-SCORES.md`. Các điểm này là tự đánh giá từ ảnh, không phải nghiên cứu người chơi. Điểm có trọng số **7,745/10, làm tròn 7,75**, chưa đạt 8,5. Gameplay 5,8 (20%), mười phút đầu 8,0 (15%), battle 8,1 (15%), VFX 7,9 (15%), pipeline 8,7 (15%), hình thức 7,9 (10%), ổn định/hiệu năng/dung lượng 8,9 (10%). Điểm thấp nhất vẫn là gameplay; giữ đúng giới hạn ba vòng tuning.
+Đã xem baseline 31 màn × 2 cỡ (62 ảnh), 12 ảnh Recruit sửa, 2 ảnh Field Guide và 4 ảnh battle; điểm từng màn ở `C11-SCREEN-SCORES.md`. Các điểm này là tự đánh giá từ ảnh, không phải nghiên cứu người chơi. Điểm checkpoint đầu **7,745/10, làm tròn 7,75**; sau nền cafe vẽ mới là **7,79/10**, chưa đạt 8,5. Gameplay 5,8 (20%), mười phút đầu 8,0 (15%), battle 8,2 (15%), VFX 7,9 (15%), pipeline 8,7 (15%), hình thức 8,2 (10%), ổn định/hiệu năng/dung lượng 8,9 (10%). Điểm thấp nhất vẫn là gameplay; giữ đúng giới hạn ba vòng tuning.
 
 Cat có chiều cao bằng nhau bất kể rarity: 512 unit, on-screen 26,26–27,20% canvas, chênh 3,6%; boss 47,28% canvas, không đè party/HP. Small 461, standard/elite 614, boss 922 unit. C6 kiểm tra 552 ca hiệu ứng ở x1/x2/x3 và hai cỡ; không thiếu hiệu ứng, rơi pool hoặc đè nhãn. Pool 256, impact 2 frame, hitstop 60 ms chỉ ở presentation. C9 kiểm tra 72 ultimate / 12 phase / 4 entrance, 44 ảnh đã xem.
 
@@ -58,6 +58,8 @@ Lần đo offline độc lập C6: ultimate nhiều draw nhất (Marigold 4), Ch
 
 Hai lần full E2E trước C10 và trước C12: **421/421**, không skip/fail/flaky; receipts trong `checks/e2e-before-c10.json` và `checks/e2e-before-c12.json`. Workspace typecheck/lint và test liên quan từng mục đạt; C11 mới nhất có 26 test focused đạt (16 advisor, 5 Recruit, 5 guide/settings). Hai full E2E trước đó bao gồm sửa Recruit/Field Guide nhưng đi trước sửa pending-action của advisor; không coi chúng là lần chạy trên mọi thay đổi C11 mới nhất. Một lệnh C9 đã chạy rộng 2.068 test: 2.066 đạt, hai kỳ vọng level 6 cũ được sửa theo C5 rồi chạy focused đạt; không che lần thất bại đó.
 
-Demo **28.816.495 byte**, mở trực tiếp từ file. Offline QA: 25 unit / 206 clip, 12 ảnh tại 1280×720 và 1440×900, không overflow/ảnh lỗi/browser error/HTTP; hai video decode và phát x1. `CHAY-DEMO.md` có 8 dòng và lệnh `pnpm` chạy game cục bộ. Raw video dài nằm ngoài git; evidence trong repo vẫn dưới 120 MB.
+Demo hiện tại **29,21 MB** (gồm manifest; bộ media29.206.736byte), mở trực tiếp từ file. Offline QA: 25 unit / 206 clip, 12 ảnh tại 1280×720 và 1440×900, không overflow/ảnh lỗi/browser error/HTTP; hai video decode và phát x1. `CHAY-DEMO.md` có 8 dòng và lệnh `pnpm` chạy game cục bộ. Raw video dài nằm ngoài git; evidence trong repo vẫn dưới 120 MB.
 
 Phần còn làm: checkpoint C11 đã kiểm tra 6 ảnh advisor tại hai cỡ, tiếp tục sửa điểm thấp từ ảnh; tiếp nhận designer khi có file, làm filmstrip/ảnh battle/PASS-FIX và retime VFX; cập nhật báo cáo 20/11 06:00 UTC rồi cải thiện tiếp tới hard stop 20/11 12:00 UTC.
+
+C11 nền cafe: dùng một tranh gốc không nhân vật, ba lớp parallax, giữ fallback procedural khi đang tải/ảnh lỗi. Kiểm tra decode chậm/retry/dispose, reduced motion và ảnh hai cỡ đều đạt; 11 test focused/typecheck/lint. Đã xem capture cuối, đường nối kính không còn thấy. Offline mới p95 16,8/16,7 ms, tối đa60draw, mask mặt/HP không bị vẽ đè; không lỗi browser/HTTP. Hai video chiến đấu gốc giữ nguyên và được ghi rõ quay trước cập nhật nền. Chi tiết `C11-STAGE-RECEIPT.md`; không coi là cải thiện gameplay hay full E2E mới.

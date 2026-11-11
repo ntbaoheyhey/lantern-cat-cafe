@@ -1,5 +1,6 @@
 import * as T from 'three';
 import { PAINT } from './style';
+import { cafePainting, cafeLayers } from './stage-painting';
 
 const P=PAINT.stage;
 function ellipse(c:CanvasRenderingContext2D,x:number,y:number,rx:number,ry:number,color:string,rotation=0){
@@ -22,7 +23,9 @@ export class PaintedStage {
  readonly root=new T.Group();
  private layers:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>[]=[];
  private textures:T.Texture[]=[];
- constructor(){
+ private disposed=false;
+ private source:'loading'|'painted'|'procedural'='loading';
+ constructor(private onChange:()=>void=()=>{}){
   for(let layer=0;layer<3;layer++){
    const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
    const c=canvas.getContext('2d')!;c.scale(2,2);
@@ -73,7 +76,14 @@ export class PaintedStage {
    const texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;this.textures.push(texture);
    const mesh=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:texture,transparent:true,depthWrite:false,depthTest:false,toneMapped:false}));mesh.renderOrder=-100+layer;this.root.add(mesh);this.layers.push(mesh);
   }
+  void cafePainting().then(image=>{
+   if(this.disposed)return;
+   const textures=cafeLayers(image).map(canvas=>{const texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;return texture;});
+   this.layers.forEach((mesh,i)=>{mesh.material.map=textures[i]!;mesh.material.needsUpdate=true;});
+   this.textures.forEach(texture=>texture.dispose());this.textures=textures;this.source='painted';this.onChange();
+  }).catch(()=>{if(!this.disposed){this.source='procedural';this.onChange();}});
  }
  update(width:number,height:number,shift:number,dim:number){this.layers.forEach((mesh,i)=>{mesh.scale.set(width*1.04,height*1.04,1);mesh.position.set(shift*(i+1)*.13,height/2,-30+i);mesh.material.color.setScalar(1-dim);});}
- dispose(){for(const layer of this.layers){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());}
+ audit(){return{source:this.source,layers:this.layers.length,textureSize:[2048,1024],offsets:this.layers.map(layer=>layer.position.x)};}
+ dispose(){this.disposed=true;for(const layer of this.layers){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());}
 }

@@ -24,7 +24,7 @@ export class SpineScene {
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
  readonly anchors:Anchor[]=[];
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
- private stage=new PaintedStage();private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
+ private stage=new PaintedStage(()=>this.invalidate());private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
  private disposed=false;private pending=new Set<string>();private failed=new Set<string>();private lanes=new Map<string,{side:string;lane:number}>();private raf=0;private last=0;private time=0;private dirty=true;
  private width=1;private height=1;private worldWidth=1;private scratch=new T.Vector3();
  private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;private currentView?:SceneView;private renderTime=0;
@@ -167,7 +167,7 @@ export class SpineScene {
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].map(([id,entry])=>{const box=this.bounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
- audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
+ audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
  dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }
