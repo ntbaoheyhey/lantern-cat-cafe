@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 Bag enhancement quotes verified; continue equipment transfer impact/intake.
+NOW: C11 gear transfer impact verified; continue set-bonus visibility/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect team impact and sets when transferring gear.
+NEXT1: check designer inbox; show gained/lost gear effects before Equip.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -15,7 +15,6 @@ KNOWN:88%1â€“3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74â€
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
-KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
 KNOWN:pending6cold/10lifecycle/526offlinePASS;VFXlifecycle4browser/13tests/types/lint/2offline/2controls/4viewsPASS.
 KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS;no balance change.
 KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lintPASS;99draws;p9516.8/16.7ms.
@@ -28,3 +27,4 @@ KNOWN:gearslots10baseline->20browser/20tests/types/lint/16viewsPASS;2shotsretain
 KNOWN:growth18browser/25focused/types/lint/18viewsPASS;fullcosts/deficits/hints;2shotsretained;demo29226665unchanged.
 KNOWN:awakening24browser/32focused+13final/types/lint/24viewsPASS;1visualrepair;2shotsretained;demo29226665unchanged.
 KNOWN:bagenhance12wrongquotes->28browser/10focused/types/lint/28viewsPASS;2visualrepairs;demo29226665unchanged.
+KNOWN:bagtransfer36browser/16equip+4totals/9finaltests/types/lint/32viewsPASS;lossless9JSONcompaction;evidence<120MB.

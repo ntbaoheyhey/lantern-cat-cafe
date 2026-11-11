@@ -83,3 +83,5 @@ Growth follow-up: all18final captures inspected; full costs, exact deficits and 
 Awakening follow-up: all24final captures inspected after one720p clipping repair. Full costs, level/star prerequisite, deficits and the purchase action fit both sizes; disabled styling is distinct. Six keyboard purchases match the public command across three ranks. Weighted7.79 unchanged. C11-AWAKENING-RECEIPT.md.
 
 Bag enhancement follow-up:28finalcaptures inspected; all comparison stats, full shortages and actions visible at both sizes after two720p spacing repairs. Wearer-specific quotes and zero-main-gain wording match public purchases. Weighted7.79 retained; no recovery evidence.
+
+Bag transfer follow-up:28final captures and four settled-result views inspected; crew gain/loss/zero, transfer names, stats and both actions fit both sizes. Total follows exact public equip. Set losses remain below the initial effects view and are next. Score7.79 unchanged. C11-BAG-TRANSFER-RECEIPT.md.

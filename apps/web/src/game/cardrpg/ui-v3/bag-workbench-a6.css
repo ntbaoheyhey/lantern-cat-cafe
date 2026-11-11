@@ -61,6 +61,10 @@
  .a6-inventory-enhance {display:flex;flex-direction:column;gap:3px}
  .a6-inventory-enhance small {font-size:14px;line-height:1.25}
  .a6-inventory-enhance .a6-inventory-missing {color:#84412d}
+ .a6-inventory-equip {display:flex;flex-direction:column;gap:3px}
+ .a6-inventory-equip small {font-size:14px;line-height:1.25}
+ .a6-inventory-crew {display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap}
+ .a6-inventory-crew [data-change="1"] {color:#4b6b35}.a6-inventory-crew [data-change="-1"] {color:#a34a36}
  .a6-inventory :is(button,select,summary):focus-visible {outline:3px solid #8966b5;outline-offset:2px}
  .a6-inventory-welcome {display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f3dfb8;border:1px dashed #b18c58;border-radius:14px;padding:20px;color:#694b30}
  .a6-inventory-welcome img {width:170px;height:195px;object-fit:contain}.a6-inventory-welcome h2 {font:24px Georgia,serif;max-width:310px;margin:12px 0}

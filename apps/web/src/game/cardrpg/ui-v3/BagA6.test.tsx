@@ -73,3 +73,14 @@ it('names every shortage and explains bag-only and zero-gain enhancements withou
  expect(quote.textContent).toContain('25 more fish · 2 more threads');expect(quote.textContent).toContain('Patrol gives fish and threads.');
  expect(button.getAttribute('aria-describedby')).toBe(quote.id);fireEvent.click(button);expect(R.exportSave(m.state)).toBe(before);
 });
+it('discloses a crew loss beside Equip even when the receiving cat gains Power',()=>{
+ const {m,id}=model();m.state.account.cards.find(c=>c.cardId==='mochi')!.level=20;m.cardId='soot';
+ const comparison=R.comparisonV4(m.state,'soot',id)!,before=R.exportSave(m.state);
+ expect(comparison.after.total).toBeGreaterThan(comparison.before.total);expect(comparison.teamAfter).toBeLessThan(comparison.teamBefore);
+ render(<BagA6 m={m}/>);const button=screen.getByRole('button',{name:'Equip'});
+ const quote=document.getElementById(button.getAttribute('aria-describedby')!)!;
+ const delta=Math.round(comparison.teamAfter)-Math.round(comparison.teamBefore);
+ expect(quote.textContent).toContain('Move from Mochi to Soot');expect(quote.textContent).toContain('Crew Power');expect(quote.textContent).toContain('−'+Math.abs(delta));
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(Math.round(R.teamPowerV4(m.state))).toBe(Math.round(comparison.teamAfter));
+ expect(screen.queryByText('Crew Power')).toBeNull();expect(m.state.equipment.mochi?.weapon).toBeUndefined();expect(m.state.equipment.soot?.weapon).toBe(id);
+});
