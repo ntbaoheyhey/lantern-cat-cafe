@@ -89,3 +89,5 @@ Bag transfer follow-up:28final captures and four settled-result views inspected;
 Bag bonus follow-up:42final captures inspected, including two full-size dense cases. Bonus warnings and actions remain visible; exact lost/gained details scroll independently. Keyboard focus and20public-command equips verified. Weighted7.79unchanged; no recovery claim. C11-BAG-BONUS-RECEIPT.md.
 
 Saved-team follow-up:36final captures inspected; exact Power/gear/bonus review and missing-piece guidance fit both sizes. The list scrolls while actions stay visible; Prepare clearly keeps current gear.40browser checks including16keyboard applications verified;weighted7.79 unchanged. C11-SAVED-TEAM-RECEIPT.md.
+
+Preparation follow-up:30final+2error captures inspected at both sizes; supply/carrier notices and rejection reasons are readable. One 900p outline-spacing repair keeps stacked notices and all suggestion actions inside the dialog.50browser/20keyboard applications plus2failure cases pass. Weighted7.79 unchanged. C11-PREPARATION-RECEIPT.md.

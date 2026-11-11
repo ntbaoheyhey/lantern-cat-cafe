@@ -107,3 +107,50 @@ it('prepares a saved crew with current gear even when its old saved piece is gon
  fireEvent.click(screen.getByRole('button',{name:'Use saved campaign team'}));
  expect(m.state.equipment).toEqual(gear);expect(m.battle!.seed).toBe(seed);expect(m.battle!.initial.enemies).toEqual(foes);expect(m.error).toBe(false);
 });
+
+function suppliedModel(){
+ const m=model();m.shortcut('unlock');m.state.run=null;
+ m.state=R.saveLoadoutV4(m.state,0,'Without Panko').state;
+ m.state=R.configureTeam(m.state,['panko','soot','clover'],{...m.state.rows,panko:'front',soot:'rear',clover:'rear'},m.state.skills).state;
+ m.start(1,'campaign',1);m.state.account.inventory.stacks['shield-biscuit']=1;
+ m.state=R.packSupplyV4(m.state,'shield-biscuit','panko').state;m.enter(R.availableNodes(m.state.run!)[0]!.id);
+ return m;
+}
+it('explains the packed carrier and blocks a saved crew that would leave it behind',()=>{
+ const m=suppliedModel(),before=R.exportSave(m.state);render(<FormationA6 m={m} preparing/>);openSaved();
+ expect(screen.getByText(/Panko carries Shield Biscuit/)).toBeTruthy();
+ const use=screen.getByRole('button',{name:'Use saved campaign team'});
+ expect((use as HTMLButtonElement).disabled).toBe(true);fireEvent.click(use);
+ expect(screen.getByRole('dialog',{name:'Saved teams'})).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+});
+it('offers only suggested crews that keep the packed carrier and applies a legal choice exactly',()=>{
+ const m=suppliedModel(),suggestions=suggestedTeamsA6(m.state,1),before=R.exportSave(m.state);
+ render(<FormationA6 m={m} preparing/>);openSuggested();
+ expect(suggestions.some(s=>!s.team.includes('panko'))).toBe(true);
+ for(const [i,s]of suggestions.entries())expect((screen.getByRole('button',{name:`Use suggested team ${i+1}: ${s.name}`}) as HTMLButtonElement).disabled).toBe(!s.team.includes('panko'));
+ expect(R.exportSave(m.state)).toBe(before);
+ const i=suggestions.findIndex(s=>s.team.includes('panko')),s=suggestions[i]!,expected=R.configurePreparation(m.state,s.team,{...m.state.rows,...s.rows},s.plan);
+ fireEvent.click(screen.getByRole('button',{name:`Use suggested team ${i+1}: ${s.name}`}));
+ expect(m.state.run).toEqual(expected.state.run);expect(m.state.equipment).toEqual(expected.state.equipment);expect(m.state.account.inventory).toEqual(expected.state.account.inventory);
+ expect(m.error).toBe(false);expect(screen.queryByRole('dialog')).toBeNull();
+});
+it('protects the carrier from replacement while allowing another seat, rows and the plan',()=>{
+ const m=suppliedModel(),initial=structuredClone(m.battle!.initial);render(<FormationA6 m={m} preparing/>);
+ fireEvent.click(screen.getByRole('button',{name:'Replace Panko or change the plan'}));
+ expect((screen.getByRole('button',{name:'Replace Panko with Mochi'}) as HTMLButtonElement).disabled).toBe(true);
+ fireEvent.change(screen.getByLabelText('Formation care'),{target:{value:'protect'}});expect(m.battle!.v4!.plan.care).toBe('protect');closeTool();
+ fireEvent.click(screen.getByRole('button',{name:'Select Soot for placement'}));fireEvent.click(screen.getByRole('button',{name:'Place Soot front'}));
+ fireEvent.click(screen.getByRole('button',{name:'Select Panko for placement'}));fireEvent.click(screen.getByRole('button',{name:'Place Panko rear'}));
+ expect(m.state.rows.panko).toBe('rear');
+ fireEvent.click(screen.getByRole('button',{name:'Select Soot for placement'}));fireEvent.click(screen.getByRole('button',{name:'Replace Soot or change the plan'}));
+ const expected=R.configurePreparation(m.state,['panko','mochi','clover'],{...m.state.rows,mochi:'front'},m.state.v4!.plan);
+ fireEvent.click(screen.getByRole('button',{name:'Replace Soot with Mochi'}));
+ expect(m.state.run).toEqual(expected.state.run);expect(m.battle!.initial.packedSupply).toEqual(initial.packedSupply);expect(m.battle!.seed).toBe(initial.seed);expect(m.battle!.initial.enemies).toEqual(initial.enemies);expect(m.error).toBe(false);
+});
+it('keeps a rejected preparation choice open with the rules explanation',()=>{
+ const m=model();m.start(1,'campaign',1);m.enter(R.availableNodes(m.state.run!)[0]!.id);m.state.run!.hp.mochi=0;
+ const before=structuredClone(m.state);render(<FormationA6 m={m} preparing/>);openSuggested();
+ fireEvent.click(screen.getByRole('button',{name:'Use suggested team 1: Steady friends'}));
+ expect(screen.getByRole('dialog',{name:'Suggested teams'})).toBeTruthy();
+ expect(screen.getByRole('alert').textContent).toBe('Keep at least one living companion in front.');expect(m.state).toEqual(before);
+});

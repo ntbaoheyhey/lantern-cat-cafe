@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 saved-team review verified; continue preparation screens/intake.
+NOW: C11 preparation supply guards verified; continue packing controls/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review remaining preparation screens and controls.
+NEXT1: check designer inbox; review SuppliesV4 packing and recovery guidance.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -27,4 +27,4 @@ KNOWN:growth18browser/25focused/types/lint/18viewsPASS;fullcosts/deficits/hints;
 KNOWN:awakening24browser/32focused+13final/types/lint/24viewsPASS;1visualrepair;2shotsretained;demo29226665unchanged.
 KNOWN:bagenhance12wrongquotes->28browser/10focused/types/lint/28viewsPASS;2visualrepairs;demo29226665unchanged.
 KNOWN:bagtransfer36browser/16equip+4totals/9finaltests/types/lint/32viewsPASS;lossless9JSONcompaction;evidence<120MB.
-KNOWN:bagbonus42browser/31focused/42viewsPASS;savedteams40browser/16keyboard/6focused/types/lint/36viewsPASS;demo29226665unchanged.
+KNOWN:bagbonus42browser/31tests/42views;savedteams40browser/16keyboard/6tests/36views;preparation50browser+2failure/10tests/types/lint/32viewsPASS;demo29226665.

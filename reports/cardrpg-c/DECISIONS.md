@@ -80,3 +80,5 @@
 - 2026-11-11 C11 bonus visibility: expose recipient/donor set and unique losses beside Equip, with a keyboard-focused exact list. Keep the current public command; clear pending celebration acknowledgements only in the isolated review fixture, preserving failed harness logs outside git.
 
 - 2026-11-11 C11 saved teams: use the exact loadout command to disclose Power, gear and donor/recipient bonuses; disable missing saved gear before use. Prepare keeps existing gear by design and now says so. Preserve failed-command context, route locks and encounter seed/enemies.
+
+- 2026-11-11 C11 preparation: disclose the packed carrier and prevent crews that drop it; retain rejected-command context. Preserve exact rules/seed/foes/inventory. One stacked-notice portrait-spacing repair after visual review; no gameplay tuning.
