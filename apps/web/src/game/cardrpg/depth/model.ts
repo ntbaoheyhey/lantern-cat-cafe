@@ -346,7 +346,7 @@ export class DepthModel {
       this.tutorialBattle = null;
       this.sceneStarted = false;
       this.state.tutorial = 3;
-      this.notice = 'A welcome invitation is ready. Then equip your first piece.';
+      this.notice = R.gameplayA6(this.state) ? 'Welcome a free friend. Then level up a cat in Cats.' : 'A welcome invitation is ready. Then equip your first piece.';
       this.go('gacha'); this.notify(); return;
     }
     if (this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one unlocked skill.')) this.go('map');

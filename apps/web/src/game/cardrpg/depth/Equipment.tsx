@@ -25,6 +25,8 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
   const [affix, setAffix] = useState('');
   const [feedback, setFeedback] = useState(0);
   const state = m.state;
+  const supplyPage = R.gameplayA6(state) && category !== 'Equipment';
+  const supplyTitles = { Materials: 'Small finds, useful upgrades.', Consumables: 'Pack a little help.', Collectibles: 'Keepsakes of your progress.', Currencies: 'Your cafe earnings.', Equipment: 'Give your plan a shape.' };
   const v4=R.gameplayV4(state);
   const sets=R.SETS.map(set=>R.setTextV4(set,v4));
   const locked = !!state.run && !state.run.complete;
@@ -53,8 +55,8 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
   const effects = R.equipmentEffects(state, cardId);
   const comparison = item ? gearComparison(state, cardId, item.id) : null;
   const fitted = R.equippedItems(state, cardId);
-  return <>
-    <PageTitle eyebrow={`${state.gear.length}${v4?' / 240':''} pieces · ${R.GEAR.length} templates`} title="Give your plan a shape." />
+  return <div className={R.gameplayA6(state) ? 'a6-supplies' : undefined} data-inventory-category={category}>
+    <PageTitle eyebrow={supplyPage ? `Bag · ${category}` : `${state.gear.length}${v4?' / 240':''} pieces · ${R.GEAR.length} templates`} title={supplyPage ? supplyTitles[category] : 'Give your plan a shape.'} />
     <div className="cr-tabs" aria-label="Inventory types">{categories.map(value => <button key={value}
       aria-pressed={category === value} onClick={() => setCategory(value)}>{value}</button>)}</div>
     {category === 'Equipment' && <>
@@ -182,5 +184,5 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
       <p>{({ fish: 'Level companions, enhance and tailor equipment.', threads: 'Enhance, tailor and reforge equipment.', stamps: 'Invite companions with earned stamps.', essence: 'Ascend and awaken companions.' } as Record<string, string>)[id]}</p>
       <small>Earn from routes, quests and cafe service · Account-bound</small>
     </article>)}</div>}
-  </>;
+  </div>;
 }

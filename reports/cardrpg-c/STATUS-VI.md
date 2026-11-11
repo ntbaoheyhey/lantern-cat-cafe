@@ -1,7 +1,7 @@
-# Tiến độ Lane C
+# Tiến độ lane C
 
-Đã xong C0–C6. Toàn bộ74skill và18status có VFX2D bám socket/event Spine, dùng pool256hạt, chừa vùng mặt/HP. Có gallery offline x1/x2/x3, khoảng14,99MB; đã xem ảnh ở1280×720 và1440×900.552ca hiệu ứng có hình, không rơi hạt/đè nhãn; ultimate nặng nhất p95≈16,8ms,60lệnh vẽ trong lần đo offline.13test intake,8test web và typecheck/lint đạt. Designer có thể thay hiệu ứng qua manifest, không sửa code.
+Đã xong C0–C7. Bag cũ không còn ảnh mèo tràn cột; bốn trang vật tư dùng nền giấy và chữ rõ. Ba bước đầu có thứ tự, phần thưởng và chỉ dẫn đúng nút. Click thật ở hai cỡ đã đi qua trận tập, nhận bạn miễn phí và lên cấp đúng chi phí. 32 test liên quan, typecheck/lint đạt; đã xem 38 ảnh.
 
-C5 đã dùng đủ500seed mới đúng3vòng: vòng cuối250tài khoản thường34,50giây, boss69,16/p9082,16giây,88%có1–3lần thua, hồi phục83,67%. Chưa đạt thua đầu11,61phút và máu còn94%; ultimate chưa đều mọi trận. Chưa thay số này bằng số30phút click thật.
+C6: 74 skill / 18 status, pool256, chừa mặt/HP; 552ca không rơi hạt/đè nhãn. Ultimate offline x1 p95≈16,8ms; gallery14,99MB. C5: trận thường34,50s, boss69,16s/p90 82,16s,88% có1–3thua, hồi phục83,67%. Chưa đạt: thua đầu11,61phút, HP cuối thường94%, ultimate chưa đều. Không chạy lại seed.
 
-25nhân vật vẫn là bản tạm; Mochi từ68layerPSD, chưa có export animation cuối từ designer. Tiếp tục C7 sửa Bag và mười phút đầu; C9 tăng điểm nhấn ultimate. Chưa deploy/merge.
+25nhân vật vẫn là placeholder; chưa có export designer cuối. Tiếp tục kiểm tra intake và C9 nhấn ultimate/sân khấu. Run30phút, demo≤40MB và báo cáo tổng còn phía trước. Chưa deploy/merge.

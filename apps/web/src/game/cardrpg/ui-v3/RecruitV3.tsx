@@ -45,7 +45,7 @@ export default function RecruitV3({m}:{m:DepthModel}){
   if(revealing)return;
   const seed=m.state.account.seed+pity.totalPulls*101+39,previous=m.state.account.history.length;
   const result=welcome?firstInvitation(m.state,4):R.metaCommand(m.state,{type:'pull',bannerId,count,seed});
-  if(!m.apply(result,'Your invitations are here. Find them in your history.'))return;
+  if(!m.apply(result,a6&&welcome?'Your free friend is here. Next, level up a cat in Cats.':'Your invitations are here. Find them in your history.'))return;
   setPreviousPulls(previous);setResults(m.state.account.history.slice(-count));setIndex(0);setBeat(reduced?'summary':'letter');
  }
  const revealStage=<section className="uv-recruit-stage" aria-label="Invitation reveal" role={splash?"dialog":undefined} aria-modal={splash||undefined} onKeyDown={event=>{if(!splash)return;if(event.key==='Escape'){event.preventDefault();event.stopPropagation();setBeat('summary');}if(event.key==='Tab'){event.preventDefault();event.stopPropagation();}}} data-beat={beat} data-splash={splash||undefined} data-rarity={active?.rarity} style={{'--reveal-color':a6?`var(--a6-${active?.rarity??'common'})`:colors[active?.rarity??'common']} as CSSProperties}>

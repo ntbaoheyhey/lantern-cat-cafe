@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { DepthModel } from '../depth/model';
-import { IntroductionA6 } from './IntroductionA6';
+import { FirstStepsA6, IntroductionA6 } from './IntroductionA6';
 afterEach(() => { cleanup(); vi.useRealTimers(); });
 it('announces each newly opened feature separately and keeps the next goal short', () => {
   vi.useFakeTimers();
@@ -38,4 +38,23 @@ it('keeps unlocks queued while an existing discovery celebration is visible', ()
   while (m.state.v4!.journey!.pending.length) m.state = R.acknowledgeDiscoveryV4(m.state, m.state.v4!.journey!.pending[0]!.sequence).state;
   view.rerender(<IntroductionA6 m={m}/>);
   expect(screen.getByRole('status').textContent).toContain('Cafe gifts');
+});
+
+it('follows the saved first three actions and shows guidance only on the matching sheet', () => {
+  const m = new DepthModel(true, true, true, true);
+  m.screen = 'prepare';
+  const view = render(<><IntroductionA6 m={m}/><FirstStepsA6 m={m}/></>);
+  expect(screen.getByLabelText('Your next action').textContent).toContain('Tap Fight');
+  m.state.tutorial = 3; m.screen = 'gacha';
+  view.rerender(<><IntroductionA6 m={m}/><FirstStepsA6 m={m}/></>);
+  expect(screen.getByLabelText('Your next action').textContent).toContain('costs no stamps');
+  m.state.freeInvite = true; m.screen = 'collection';
+  view.rerender(<><IntroductionA6 m={m}/><FirstStepsA6 m={m}/></>);
+  expect(screen.getByLabelText('Your next action').textContent).toContain('3 / 3');
+  m.screen = 'inventory';
+  view.rerender(<><IntroductionA6 m={m}/><FirstStepsA6 m={m}/></>);
+  expect(screen.queryByLabelText('Your next action')).toBeNull();
+  m.state.account.cards[0]!.level = 2; m.screen = 'collection';
+  view.rerender(<><IntroductionA6 m={m}/><FirstStepsA6 m={m}/></>);
+  expect(screen.queryByLabelText('Your next action')).toBeNull();
 });

@@ -1,4 +1,4 @@
-import { IntroductionA6 } from './IntroductionA6';
+import { FirstStepsA6, IntroductionA6 } from './IntroductionA6';
 import type { EIP1193Provider } from 'viem';
 import { PowerA6 } from './PowerA6';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
@@ -21,6 +21,8 @@ import './bag-workbench-a6.css';
 import './tower-gifts-a6.css';
 import './home-signs-a6.css';
 import './cafe-menu-a6.css';
+import './first-steps-c.css';
+import './supplies-c.css';
 import {CountUpA6} from './CountUpA6';
 import {OpeningA6} from './OpeningA6';
 import {useNewDiscoveries} from './useNewDiscoveries';
@@ -94,7 +96,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
    {m.screen==='prepare'&&<nav className="uv-tabs" aria-label="Patrol tabs"><button aria-current={!route?'page':undefined} onClick={()=>setRoute(false)}>Prepare</button><button aria-current={route?'page':undefined} onClick={()=>setRoute(true)}>Route</button><button onClick={()=>go('codex')} aria-label="Read Field guide">?</button></nav>}
    {['collection','journal','bonds'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Cats tabs"><button aria-current={m.screen==='collection'?'page':undefined} onClick={()=>go('collection')}>My cats</button><button aria-current={m.screen==='journal'?'page':undefined} onClick={()=>go('journal')}>Journal</button>{R.gameplayA6(m.state)&&introduced('bonds')&&<button className="a6-bond-tab" aria-current={m.screen==='bonds'?'page':undefined} onClick={()=>go('bonds')}>Bond Book</button>}</nav>}
    {['inventory','relics'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Bag tabs"><button aria-current={m.screen==='inventory'&&bagTab==='gear'?'page':undefined} onClick={()=>{setBagTab('gear');go('inventory')}}>Gear</button><button aria-current={m.screen==='inventory'&&bagTab==='materials'?'page':undefined} onClick={()=>{setBagTab('materials');go('inventory')}}>Materials</button>{introduced('relic')&&<button onClick={()=>go('relics')} aria-current={m.screen==='relics'?'page':undefined}>Relics</button>}</nav>}
-   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}><Suspense fallback={R.gameplayA6(m.state)?<OpeningA6/>:<p role="status">Opening the table…</p>}>{events?<EventsSheet m={m}/>:m.screen==='tower'&&R.gameplayA6(m.state)?<Tower m={m}/>:m.screen==='bonds'&&R.gameplayA6(m.state)?<BondBook m={m}/>:m.screen==='prepare'&&route?<RouteMap m={m} onReturn={()=>setRoute(false)}/>:m.screen==='prepare'?<Prepare m={m}/>:m.screen==='result'?<Result m={m}/>:m.screen==='map'?<RouteMap m={m}/>:m.screen==='gacha'?<Recruit m={m}/>:m.screen==='collection'?<CatsSheet m={m}/>:m.screen==='team'?<TeamSheet m={m}/>:m.screen==='inventory'?<BagSheet key={bagTab} m={m} materials={bagTab==='materials'}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
+   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}>{!events&&<FirstStepsA6 m={m}/>}<Suspense fallback={R.gameplayA6(m.state)?<OpeningA6/>:<p role="status">Opening the table…</p>}>{events?<EventsSheet m={m}/>:m.screen==='tower'&&R.gameplayA6(m.state)?<Tower m={m}/>:m.screen==='bonds'&&R.gameplayA6(m.state)?<BondBook m={m}/>:m.screen==='prepare'&&route?<RouteMap m={m} onReturn={()=>setRoute(false)}/>:m.screen==='prepare'?<Prepare m={m}/>:m.screen==='result'?<Result m={m}/>:m.screen==='map'?<RouteMap m={m}/>:m.screen==='gacha'?<Recruit m={m}/>:m.screen==='collection'?<CatsSheet m={m}/>:m.screen==='team'?<TeamSheet m={m}/>:m.screen==='inventory'?<BagSheet key={bagTab} m={m} materials={bagTab==='materials'}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
   </section></>}
   <div className={`uv-notice ${m.error?'uv-error':''}`} role={m.error?'alert':'status'}>{m.error?m.notice:''}</div>
  </div>;

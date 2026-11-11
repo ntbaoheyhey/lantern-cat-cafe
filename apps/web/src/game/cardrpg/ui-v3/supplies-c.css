@@ -1,0 +1,26 @@
+/* Keep the original portrait bounded in both legacy Bag states. */
+.uv-gear-empty {grid-column:1/-1;min-height:170px;overflow:auto}
+.uv-app .uv-gear-grid .uv-gear-empty button {display:inline-flex;min-height:44px;padding:8px 16px}
+.uv-detail>.uv-feature-portrait {max-width:100%;max-height:110px}
+
+/* Paper item cards share the A6 workbench palette, including the workshop tabs. */
+.uv-app[data-a6=true] .a6-supplies:not([data-inventory-category=Equipment]) {
+ .cr-page-title {margin:0 0 12px}
+ .cr-page-title h1 {font-size:26px}
+ .cr-tabs {gap:8px;flex-wrap:wrap;margin-bottom:18px}
+ .cr-tabs button {min-height:42px;font-size:15px;background:#f3dfb9;color:#543922}
+ .cr-tabs [aria-pressed=true] {background:#715035;color:#fff0d4;border-color:#715035}
+ .cr-stack-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+ :is(.cr-stack-grid>article,.dp-design-grid>article) {min-width:0;background:linear-gradient(135deg,#fff5dc,#ead5b1);color:#493325;border:1px solid #b99360;border-top:4px solid var(--rarity,#b99360);border-radius:12px;padding:16px;box-shadow:inset 0 0 0 3px #fff5dc80,0 3px 5px #68482b15}
+ :is(.cr-stack-grid,.dp-design-grid) :is(h2,h3) {font-size:23px;color:#493325;margin:0 0 9px;line-height:1.2;overflow-wrap:anywhere}
+ :is(.cr-stack-grid,.dp-design-grid) p {font-size:15px;line-height:1.5;color:#574131;margin:8px 0}
+ :is(.cr-stack-grid,.dp-design-grid) small {display:block;font-size:14px;line-height:1.5;color:#685039}
+ :is(.dp-v4-pantry,.dp-v4-editions) {background:#f5e6c8;color:#493325;border-color:#b99360;box-shadow:none}
+ :is(.dp-v4-pantry,.dp-v4-editions) :is(p,label,.cr-cost,summary) {font-size:15px;line-height:1.5;color:#574131}
+ :is(.dp-v4-pantry,.dp-v4-editions) h2 {color:#493325}
+ button {min-height:42px;font-size:14px;background:#795638;color:#fff3db;border-color:#795638}
+ button:disabled {opacity:1;background:#e6d5b8;color:#705e46;border-color:#b7a282}
+ .cr-filter label {font-size:14px}
+ select {font-size:15px;min-height:42px;background:#fff5db;color:#493325}
+}
+.uv-app[data-a6=true] .a6-supplies:not([data-inventory-category=Equipment]) .cr-page-title small {color:#715234;font-size:13px;letter-spacing:.06em}
