@@ -58,7 +58,8 @@ it('leaves practice without granting its completion reward',()=>{
  expect(m.tutorialBattle).toBeNull();expect(m.state.tutorial).toBe(3);expect(m.state.account).toEqual(account);expect(m.screen).toBe('hub');
 });
 it('returns from a replay directly without ending the active patrol',()=>{
- const m=setup(),before=structuredClone(m.state);m.replayLast();render(<Surface m={m}/>);
+ const m=setup();R.playBattle(m.battle!,'auto');m.watching=false;m.go('result');
+ const before=structuredClone(m.state);m.replayLast();render(<Surface m={m}/>);
  fireEvent.click(screen.getByRole('button',{name:'More battle options'}));fireEvent.click(screen.getByRole('button',{name:'Return from replay'}));
  expect(m.replay).toBeNull();expect(screen.queryByRole('dialog')).toBeNull();expect(m.state).toEqual(before);
 });

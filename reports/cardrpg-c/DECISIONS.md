@@ -142,3 +142,5 @@
 2026-11-11T21:05:56.862757+00:00 C11: replace immediate Leave table with a native paused quote/confirmation; show capped payouts and daily-gift consumption from existing rules, keep replay/gallery direct.
 
 2026-11-11T21:17:32.683862+00:00 C11 Auto-next: move the timer to the visible result, show five seconds/cancel, hold while reading/hidden/discovery, and preserve rewards/forks/rests. Fixes observed involuntary navigation without changing combat or settlement rules.
+
+2026-11-11T21:31:13.825002+00:00 C11 replay: source live encounter choices until settlement, block empty/nested playback, omit unrecorded ranks, and clear finished replay on every navigation exit. Baselines demonstrated empty playback and lingering replay; no gameplay rule change.

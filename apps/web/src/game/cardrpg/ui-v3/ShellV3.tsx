@@ -58,7 +58,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  const sheet=m.screen!=='hub'||events;
  const closeMenu=()=>{setMenu(false);menuTrigger.current?.focus();};
  const headerCat=events?'brioche':({team:'mochi',inventory:'panko',relics:'sorrel',tower:'yarn-giant',bonds:'clover',gacha:'marigold',prepare:'mochi',result:'mochi'} as Partial<Record<Screen,string>>)[m.screen]??m.cardId;
- const close=()=>{setEvents(false);setMenu(false);m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
+ const close=()=>{setEvents(false);setMenu(false);if(m.replay){m.finish();return;}m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
  const go=(screen:Screen)=>{const origin=document.activeElement as HTMLElement;if(!dialog.current?.contains(origin))returnFocus.current=origin;setEvents(false);setMenu(false);setRoute(false);m.go(screen);};
  const openEvents=()=>{returnFocus.current=document.activeElement as HTMLElement;m.go('hub');setEvents(true);setMenu(false);};
  useEffect(()=>{if(m.screen!=='hub')setEvents(false);if(m.screen==='prepare'&&R.gameplayA6(m.state))setRoute(false);},[m.screen,m.battle?.initial.seed]);

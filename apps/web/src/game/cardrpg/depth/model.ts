@@ -160,6 +160,7 @@ export class DepthModel {
     return result.ok;
   }
   go(screen: Screen, gearSlot: Slot | 'all' = 'all') {
+    if (this.replay && !this.watching && screen !== 'result') this.clearReplay();
     if (screen === 'map' && this.battle && !this.watching) screen = this.battle.result ? 'result' : 'prepare';
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
     this.inventorySlot = screen === 'inventory' ? gearSlot : 'all';
@@ -349,7 +350,7 @@ export class DepthModel {
     this.act(R.currentActor(this.battle)?.side === 'party' ? R.chooseAction(this.battle, policy) : undefined);
   }
   finish() {
-    if (this.replay) { this.replay = null; this.plan = null; this.watching = false; this.go(this.replayReturn); return; }
+    if (this.replay) { this.clearReplay(); this.go(this.replayReturn); return; }
     if (this.tutorialBattle?.result) {
       this.tutorialBattle = null;
       this.sceneStarted = false;
@@ -388,13 +389,26 @@ export class DepthModel {
     const seed = this.state.account.seed + this.state.account.history.length * 101 + 39;
     this.apply(free ? firstInvitation(this.state, 4) : R.metaCommand(this.state, { type: 'pull', bannerId: 'standard', seed }), 'Your invitation is open. Every companion has their own kit.');
   }
+  private get replayRecording() {
+    // A live encounter owns its choices until settlement, including when the
+    // player opens Settings from its result. lastChoices is still empty then.
+    const encounter = this.tutorialBattle ?? this.state.run?.battle;
+    if (encounter) return encounter.result || encounter.choices.length
+      ? { setup: encounter.initial, choices: encounter.choices } : null;
+    return this.state.lastBattle && this.state.lastChoices.length
+      ? { setup: this.state.lastBattle, choices: this.state.lastChoices } : null;
+  }
+  get canReplay() { return !this.replay && !this.galleryBattle && !this.watching && !!this.replayRecording; }
+  private clearReplay() {
+    this.replay = null; this.plan = null; this.watching = false; this.paused = false;
+    if (!this.battle) this.sceneStarted = false;
+  }
   replayLast() {
-    const completed = this.screen === 'result' ? this.battle : null;
-    const setup = completed?.initial ?? this.state.lastBattle;
-    if (!setup) return;
+    if (!this.canReplay) return;
+    const recording = this.replayRecording!;
     this.replayReturn = this.screen;
-    this.replayChoices = [...(completed?.choices ?? this.state.lastChoices)];
-    this.replay = R.createBattle(setup);
+    this.replayChoices = [...recording.choices];
+    this.replay = R.createBattle(recording.setup);
     this.replayIndex = 0;
     this.sceneStarted = true; this.watching = true; this.paused = false; this.plan = null; this.go('map');
   }
