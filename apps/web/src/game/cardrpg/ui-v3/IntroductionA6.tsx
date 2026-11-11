@@ -8,12 +8,34 @@ const firstSteps = [
   { id: 'upgrade', title: 'First level', action: 'Open Cats and level up one friend.', reward: 'First level → Cafe gifts open', screen: 'collection', detail: 'Choose Level up in Growth. Review the cost and stronger stats before you spend.' },
 ] as const;
 
+/** Keep the saved milestone, but point to an action available on this account. */
+export function firstStepViewA6(m: DepthModel) {
+  const guide = R.introductionA6(m.state).guide, index = firstSteps.findIndex(step => step.id === guide);
+  const step = firstSteps[index];
+  if (!step) return null;
+  let action: string = step.action, detail: string = step.detail, target: typeof step.id = step.id;
+  if (step.id !== 'patrol' && m.state.run && !m.state.run.complete) {
+    target = 'patrol';
+    action = step.id === 'recruit' ? 'Continue Night Patrol. Your free friend will wait until this route ends.' : 'Continue Night Patrol, then return to Cats for your first level.';
+    detail = step.id === 'recruit' ? 'Finish this route first. Your free invitation will be waiting here.' : 'Finish this route first, then return to Growth to level up.';
+  } else if (step.id === 'upgrade') {
+    const trainable = m.state.account.cards.some(card => R.metaCommand(m.state, { type: 'level', cardId: card.id }).ok);
+    if (!trainable) {
+      target = 'patrol';
+      action = 'Night Patrol brings fish and threads. Then level up a friend in Cats.';
+      detail = 'Review the missing supplies in Growth. Night Patrol gives fish and threads.';
+    }
+    if (!m.state.account.cards.some(card => card.cardId === m.cardId))
+      detail = trainable ? 'Choose a cat you own in the roster, then open Growth to level up.' : 'Choose a cat you own to see needed supplies. Patrol gives fish and threads.';
+  }
+  return { ...step, index, action, detail, target };
+}
+
 /** Presentation only: completion and unlocks remain owned by the existing account rules. */
 export function FirstStepsA6({ m }: { m: DepthModel }) {
-  const intro = R.introductionA6(m.state), index = firstSteps.findIndex(step => step.id === intro.guide);
-  const step = firstSteps[index];
+  const step = firstStepViewA6(m);
   if (!R.gameplayA6(m.state) || !step || m.screen !== step.screen) return null;
-  return <aside className="a6-first-step" aria-label="Your next action"><strong>{index + 1} / 3 · {step.title}</strong><span>{step.detail}</span><small>{step.reward}</small></aside>;
+  return <aside className="a6-first-step" aria-label="Your next action"><strong>{step.index + 1} / 3 · {step.title}</strong><span>{step.detail}</span><small>{step.reward}</small></aside>;
 }
 
 const seenByModel = new WeakMap<DepthModel, Set<string>>();
@@ -34,7 +56,7 @@ export function IntroductionA6({ m }: { m: DepthModel }) {
   }, [m, opened]);
   useEffect(() => { if (!celebration) return; m.audio.ui(); const timer = setTimeout(() => setPending(queue => queue.slice(1)), 5000); return () => clearTimeout(timer); }, [m, celebration]);
   if (!R.gameplayA6(m.state)) return null;
-  const stepIndex = firstSteps.findIndex(step => step.id === intro.guide), step = firstSteps[stepIndex];
+  const step = firstStepViewA6(m), stepIndex = step?.index ?? -1;
   return <>{m.screen === 'hub' && <aside className="a6-next-goal" aria-label="Your next goal"><small>{step ? 'YOUR FIRST EVENING' : 'NEXT LITTLE ADVENTURE'}</small>
     {step && <ol className="a6-first-path" aria-label="First three steps">{firstSteps.map((item, index) => <li key={item.id} aria-current={index === stepIndex ? 'step' : undefined} data-done={index < stepIndex}><span aria-hidden="true">{index < stepIndex ? '✓' : index + 1}</span>{item.title}</li>)}</ol>}
     <p>{step?.action ?? intro.goal}</p>{step && <strong className="a6-first-reward">{step.reward}</strong>}

@@ -42,5 +42,6 @@
   .uv-cat-grid .cr-portrait {height:105px}
  }
 }
-/* The hand sits above the purchase, so its fingertip points down into that button. */
-.uv-app[data-a6=true] .uv-shell[data-a6-guide=upgrade] .dp-v4-growth[data-growth=level]>button:not(:disabled)::after {rotate:180deg}
+/* Guide hands sit above their actions; keep Patrol's hand clear of the map button. */
+.uv-app[data-a6=true] .uv-shell[data-a6-guide] :is([data-home-destination],.uv-fight,.dp-v4-growth[data-growth=level]>button:not(:disabled))::after {rotate:180deg}
+.uv-app[data-a6=true] .uv-shell[data-a6-guide=patrol] [data-home-destination=Patrol]::after {right:76px;top:-36px}

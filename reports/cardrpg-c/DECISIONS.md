@@ -112,3 +112,5 @@
 2026-11-11T18:37:31.360432+00:00 C11: quote recruitment eligibility from existing commands, reread current pity on click, distinguish duplicate cat shards from extra gear. Retain existing keepsake art and cap720p gear portrait height so ten results fit. No draw/balance changes.
 
 2026-11-11T18:45:25.764282+00:00 C11: compact only the first-level guide at720p, reserve keyboard scroll padding and orient its hand toward Level up; preserve current purchase and account rules.
+
+2026-11-11T18:51:57.616490+00:00 C11: derive first-step copy/hand target from actual route and purchase availability while retaining saved milestones; guide unowned selections and keep Patrol pointer clear of the map.
