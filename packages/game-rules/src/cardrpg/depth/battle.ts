@@ -10,6 +10,7 @@ import { DEFAULT_PLAN, crewThresholds, enemyGuideV4, openingCrewBonus, validPlan
 import { GEAR_BY_ID, SETS } from './equipment';
 import { emitGameplayEvent } from './events-v4';
 import { boonValue } from './boons';
+import { ROUTE_SKILL_POWER_PER_RANK } from './route-upgrades';
 import { challengeStatsV4, phaseBossV4, finishBossV4 } from './pacing-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
@@ -363,7 +364,7 @@ function cleanseUniqueV4(b:Battle,actor:Actor,target:Actor){
   if(hasEffect(actor,'unique:gardenkey')&&actor.bonuses.gardenTurn!==actor.turns){actor.bonuses.gardenTurn=actor.turns;gearGrant(b,actor,target,'unique:gardenkey','heal',8);}
 }
 function executeEffect(b: Battle, actor: Actor, target: Actor, effect: EffectV5, skill: Skill) {
-  const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0))*(b.initial.skillsV5?1+(effect.burnScaling??0)*stacks(target,'scald'):1));
+  const power=Math.round((effect.power??0)*(1+ROUTE_SKILL_POWER_PER_RANK*(b.initial.upgrades?.[skill.id]??0))*(b.initial.skillsV5?1+(effect.burnScaling??0)*stacks(target,'scald'):1));
   switch (effect.kind) {
     case 'hit': damage(b,actor,target,power,skill.breakPower,false,shapeV5(skill)); break;
     case 'shield': shield(b,actor,target,power+(actor.bonuses.shieldFlat??0));if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;

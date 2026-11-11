@@ -2,7 +2,7 @@ import { expect, it } from 'vitest';
 import { clone } from '../internal';
 import { BOONS, boonValue } from './boons';
 import { createDepthAccount, configureTeam, availableSkills, battleCats, defaultSkills } from './state';
-import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
+import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, finishEncounter, generateMap, resolveNode, startRun } from './run';
 import { playRun } from './run-bot';
 
 it('generates nine connected nodes and seven-node routes with guaranteed shop and campfire',()=>{
@@ -50,6 +50,17 @@ it('rejects a reward selected twice and overflowing a charm cap',()=>{
   const s=startRun(createDepthAccount(),1,1).state,r=s.run!;r.current='0-0';r.rewardChoices=['shelter-1'];r.boons['shelter-1']=2;
   expect(chooseReward(s,'shelter-1').ok).toBe(false);r.boons['shelter-1']=1;
   const result=chooseReward(s,'shelter-1');expect(result.ok).toBe(true);expect(chooseReward(result.state,'shelter-1').ok).toBe(false);
+});
+it('opens the next path after a victory when every route reward is capped',()=>{
+  const s=enterNode(startRun(createDepthAccount(),1,19).state,'0-0').state,r=s.run!;
+  for(const boon of BOONS)r.boons[boon.id]=boon.cap;
+  for(const id of s.team.flatMap(id=>defaultSkills(s,id)))r.upgrades[id]=3;
+  r.battle!.result='party';const before=clone(s),result=finishEncounter(s);
+  expect(result.ok).toBe(true);expect(s).toEqual(before);expect(result.state.run!.rewardChoices).toEqual([]);
+  expect(result.state.run!.current).toBeNull();expect(result.state.run!.visited).toEqual(['0-0']);
+  expect(result.state.run!.points).toBe(r.points+35);expect(availableNodes(result.state.run!).length).toBeGreaterThan(0);
+  expect(result.state.run!.boons).toEqual(r.boons);expect(result.state.run!.upgrades).toEqual(r.upgrades);
+  expect(finishEncounter(result.state).ok).toBe(false);
 });
 for(const event of EVENTS)for(const option of event.choices)it(`resolves ${event.name} / ${option.label} with exact tradeoffs`,()=>{
   const s=startRun(createDepthAccount(),1,2).state,r=s.run!;r.current='1-0';r.nodes.find(n=>n.id==='1-0')!.eventId=event.id;r.points=100;

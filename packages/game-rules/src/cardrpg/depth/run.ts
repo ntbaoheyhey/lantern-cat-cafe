@@ -189,6 +189,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
     if(drop)run.earnedItems.push(drop);
     if(node.kind==='boss'||run.towerA6){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
+    if(!run.rewardChoices.length)finishNode(run);
   });
 }
 export function chooseReward(state: DepthAccount,id: string): RuleResult<DepthAccount> {

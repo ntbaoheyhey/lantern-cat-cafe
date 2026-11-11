@@ -92,3 +92,5 @@
 2026-11-11T16:57:57.350266+00:00 C11: quote tea-cart/campfire choices from resolveNode, keep legacy caps and full-HP continuation; clear costs/recovery improve route decisions without retuning. Harness fallback uses actual legacy shell and centered panel scrolling after hybrid/setup/bounds failures.
 
 2026-11-11T17:06:36.976713+00:00 C11: quote story/treasure from resolveNode; keep fallen cats at0 for HP costs, living one-HP floor and positive revival. Disable capped choices, preserve point gift escape. No fourth tuning round; review post-battle rewards next.
+
+2026-11-11T17:13:19.530762+00:00 C11: align reward/campfire display with unchanged0.2 battle multiplier; show ranks/stacks/caps, preserve power-free legacy choice. Finish won nodes when reward pool is empty. Band19 fixture failure fixed to1; zero-shield baseline not evidence.

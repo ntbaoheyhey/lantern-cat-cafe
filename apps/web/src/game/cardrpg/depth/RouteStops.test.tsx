@@ -49,7 +49,7 @@ it('previews a chosen skill rank and keeps HP unchanged when strengthening it',(
  const m=model('campfire'),skill=R.defaultSkills(m.state,'soot')[0]!;m.state.run!.upgrades[skill]=1;m.state.run!.hp.mochi!-=43;
  const before=R.exportSave(m.state),expected=R.resolveNode(m.state,'upgrade',skill);render(<RouteCampfire m={m}/>);
  fireEvent.change(screen.getByRole('combobox',{name:'Campfire skill'}),{target:{value:skill}});
- expect(screen.getByText('Rank 1 → 2/3 · effect power +12% → +24% for this route.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+ expect(screen.getByText('Rank 1 → 2/3 · effect power +20% → +40% for this route.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
  fireEvent.click(button('Strengthen skill'));expect(m.state).toEqual(expected.state);
 });
 it('disables a capped skill and keeps full-HP continuation when every skill is capped',()=>{

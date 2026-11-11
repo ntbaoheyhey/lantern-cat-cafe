@@ -51,7 +51,7 @@ export function RouteCampfire({m}:{m:DepthModel}){
    </section>
    <section id={skillDescription} aria-label="Campfire skill upgrade" aria-live="polite">
     <h3>Strengthen one skill</h3><label>Route skill<select aria-label="Campfire skill" value={skill} onChange={e=>setChosen(e.target.value)}>{skills.map(s=><option key={s.skill} value={s.skill}>{R.CAT_BY_ID[s.cat]!.name} · {R.SKILLS[s.skill]!.name} · Rank {run.upgrades[s.skill]??0}/3</option>)}</select></label>
-    {upgrade.ok?<p>Rank {rank} → {rank+1}/3 · effect power +{rank*12}% → +{(rank+1)*12}% for this route.</p>:<p>{rank>=3?'This skill already has all 3 route upgrades.':upgrade.error}</p>}
+    {upgrade.ok?<p>Rank {rank} → {rank+1}/3 · effect power +{R.routeSkillPowerBonusPercent(rank)}% → +{R.routeSkillPowerBonusPercent(rank+1)}% for this route.</p>:<p>{rank>=3?'This skill already has all 3 route upgrades.':upgrade.error}</p>}
     <button aria-describedby={skillDescription} disabled={!upgrade.ok} onClick={()=>m.apply(R.resolveNode(m.state,'upgrade',skill),'Skill strengthened for this route.')}>Strengthen skill</button>
    </section>
   </div>

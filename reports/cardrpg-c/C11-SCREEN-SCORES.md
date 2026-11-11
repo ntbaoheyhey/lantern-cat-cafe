@@ -91,3 +91,7 @@ Bag bonus follow-up:42final captures inspected, including two full-size dense ca
 Saved-team follow-up:36final captures inspected; exact Power/gear/bonus review and missing-piece guidance fit both sizes. The list scrolls while actions stay visible; Prepare clearly keeps current gear.40browser checks including16keyboard applications verified;weighted7.79 unchanged. C11-SAVED-TEAM-RECEIPT.md.
 
 Preparation follow-up:30final+2error captures inspected at both sizes; supply/carrier notices and rejection reasons are readable. One 900p outline-spacing repair keeps stacked notices and all suggestion actions inside the dialog.50browser/20keyboard applications plus2failure cases pass. Weighted7.79 unchanged. C11-PREPARATION-RECEIPT.md.
+
+Story/treasure follow-up:30finalviews inspected at both sizes; points, per-catHP, caps and exhausted-treasure escape remain readable. Weighted7.79 unchanged. C11-EVENTS-RECEIPT.md.
+
+Reward follow-up:26reward+2campfire views inspected; rank/stack changes and20%power increments visible in modern/legacy layouts. Capped choices remain distinct and the exhausted pool opens the route. Weighted7.79 unchanged. C11-REWARDS-RECEIPT.md.

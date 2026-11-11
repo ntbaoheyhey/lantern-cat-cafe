@@ -176,7 +176,7 @@ try{
         else acted = await close();
       } else if (s.screen === 'map') {
         await capture('map');
-        if (s.route?.rewards) acted = await click(page.locator('.dp-reward'), 'Choose earned boon');
+        if (s.route?.rewards) acted = await click(page.locator('.dp-reward:not(:disabled)'), 'Choose earned boon');
         if (!acted) acted = await click(button(/Heal the team|Heal the crew|Continue at full HP/), 'Rest and heal');
         if (!acted) acted = await click(button('Take 70 run points'), 'Claim treasure');
         if (!acted) acted = await click(button(/Save your points and leave|Keep points and leave/), 'Leave shop');

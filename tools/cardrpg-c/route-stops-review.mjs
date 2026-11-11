@@ -39,7 +39,7 @@ try{for(const [width,height] of [[1280,720],[1440,900]]){
   }else{
    const rows=JSON.parse(expected.before).run.hp;
    for(const [id,before] of Object.entries(rows)){const after=expected.heal.state.run.hp[id];await expect(page.getByRole('region',{name:'Campfire recovery'})).toContainText(`${before} → ${after} HP (+${after-before})`);}
-   if(kind==='camp-upgrade')await expect(panel).toContainText('Rank 1 → 2/3 · effect power +12% → +24%');
+   if(kind==='camp-upgrade')await expect(panel).toContainText('Rank 1 → 2/3 · effect power +20% → +40%');
    if(kind==='camp-capped')await expect(page.getByRole('button',{name:'Strengthen skill',exact:true})).toBeDisabled();
   }
   expect(await page.evaluate(()=>JSON.stringify(window.__depthReview.state))).toBe(expected.before);
