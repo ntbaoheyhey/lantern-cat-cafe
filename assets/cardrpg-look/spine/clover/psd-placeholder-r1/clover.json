@@ -1,0 +1,7247 @@
+{
+  "skeleton": {
+    "spine": "4.2.00",
+    "x": -190.4990523076923,
+    "y": 0,
+    "width": 412.35692307692307,
+    "height": 512
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "hip",
+      "parent": "root",
+      "x": 5.841920000000033,
+      "y": 125.60068923076919
+    },
+    {
+      "name": "torso",
+      "parent": "hip",
+      "x": 12.101119999999959,
+      "y": 160.6520123076923
+    },
+    {
+      "name": "head-pivot",
+      "parent": "torso",
+      "x": 7.093760000000028,
+      "y": 67.59896615384616
+    },
+    {
+      "name": "head",
+      "parent": "head-pivot",
+      "x": 12.935483076923049,
+      "y": 45.44315076923078
+    },
+    {
+      "name": "hp-anchor",
+      "parent": "head",
+      "x": -14.187323076923043,
+      "y": 126.8927015384615
+    },
+    {
+      "name": "vfx-origin",
+      "parent": "torso",
+      "x": -4.172799999999967,
+      "y": -63.84364307692303
+    },
+    {
+      "name": "r-arm-upper",
+      "parent": "torso",
+      "x": -52.159803076923055,
+      "y": 12.5182030769231
+    },
+    {
+      "name": "r-arm-lower",
+      "parent": "r-arm-upper",
+      "x": -34.63404307692307,
+      "y": -36.303163076923056
+    },
+    {
+      "name": "r-paw",
+      "parent": "r-arm-lower",
+      "x": -29.626683076923072,
+      "y": -31.29580307692308
+    },
+    {
+      "name": "r-thigh",
+      "parent": "hip",
+      "x": -45.4833230769231,
+      "y": 25.0366030769231
+    },
+    {
+      "name": "r-leg-lower",
+      "parent": "r-thigh",
+      "x": -10.431999999999988,
+      "y": -75.11000615384617
+    },
+    {
+      "name": "r-foot",
+      "parent": "r-leg-lower",
+      "x": -4.172603076923089,
+      "y": -50.073403076923086
+    },
+    {
+      "name": "ear-r-outer",
+      "parent": "head",
+      "x": -82.82958769230768,
+      "y": 16.313895384615364
+    },
+    {
+      "name": "l-arm-upper",
+      "parent": "torso",
+      "x": 45.900603076923105,
+      "y": 12.935483076923106
+    },
+    {
+      "name": "l-arm-lower",
+      "parent": "l-arm-upper",
+      "x": 26.70572307692308,
+      "y": -26.70572307692305
+    },
+    {
+      "name": "l-paw",
+      "parent": "l-arm-lower",
+      "x": 27.540283076923046,
+      "y": 31.713083076923056
+    },
+    {
+      "name": "l-thigh",
+      "parent": "hip",
+      "x": 31.713083076923052,
+      "y": 25.0366030769231
+    },
+    {
+      "name": "l-leg-lower",
+      "parent": "l-thigh",
+      "x": 8.345600000000026,
+      "y": -75.11000615384617
+    },
+    {
+      "name": "l-foot",
+      "parent": "l-leg-lower",
+      "x": 9.180159999999987,
+      "y": -50.073403076923086
+    },
+    {
+      "name": "ear-l-outer",
+      "parent": "head",
+      "x": 36.92918153846157,
+      "y": 24.280615384615373
+    },
+    {
+      "name": "main-hand",
+      "parent": "l-paw",
+      "x": 13.352959999999996,
+      "y": 12.518400000000042
+    },
+    {
+      "name": "off-hand",
+      "parent": "r-paw",
+      "x": -22.53312000000001,
+      "y": -17.525563076923078
+    },
+    {
+      "name": "tail-1",
+      "parent": "hip",
+      "x": -7.9283200000000384,
+      "y": 10.43200000000003
+    },
+    {
+      "name": "tail-2",
+      "parent": "tail-1",
+      "x": -56.33240615384613,
+      "y": -20.86400000000002
+    },
+    {
+      "name": "tail-3",
+      "parent": "tail-2",
+      "x": -47.98700307692309,
+      "y": -18.777403076923036
+    },
+    {
+      "name": "tail-4",
+      "parent": "tail-3",
+      "x": -50.07340307692306,
+      "y": 8.345403076923063
+    },
+    {
+      "name": "tail-5",
+      "parent": "tail-4",
+      "x": -12.518400000000014,
+      "y": 37.5550030769231
+    },
+    {
+      "name": "cloth",
+      "parent": "torso",
+      "x": -4.590079999999995,
+      "y": -46.735163076923044
+    },
+    {
+      "name": "teapot",
+      "parent": "main-hand",
+      "x": 0.0,
+      "y": 1.2518399999999588
+    },
+    {
+      "name": "collar",
+      "parent": "torso",
+      "x": 20.029243076923077,
+      "y": 29.20940307692308
+    },
+    {
+      "name": "pouch",
+      "parent": "cloth",
+      "x": -10.849279999999965,
+      "y": -20.029440000000022
+    },
+    {
+      "name": "hair-tip",
+      "parent": "head",
+      "x": -26.70572307692308,
+      "y": 63.88361846153845
+    }
+  ],
+  "slots": [
+    {
+      "name": "tail-1",
+      "bone": "tail-1",
+      "attachment": "tail-1"
+    },
+    {
+      "name": "tail-shadow",
+      "bone": "tail-1",
+      "attachment": "tail-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "tail-2",
+      "bone": "tail-2",
+      "attachment": "tail-2"
+    },
+    {
+      "name": "tail-3",
+      "bone": "tail-3",
+      "attachment": "tail-3"
+    },
+    {
+      "name": "tail-4",
+      "bone": "tail-4",
+      "attachment": "tail-4"
+    },
+    {
+      "name": "tail-5",
+      "bone": "tail-5",
+      "attachment": "tail-5"
+    },
+    {
+      "name": "tail-tip-fluff",
+      "bone": "tail-5",
+      "attachment": "tail-tip-fluff"
+    },
+    {
+      "name": "hips",
+      "bone": "hip",
+      "attachment": "hips"
+    },
+    {
+      "name": "belly",
+      "bone": "torso",
+      "attachment": "belly"
+    },
+    {
+      "name": "torso",
+      "bone": "torso",
+      "attachment": "torso"
+    },
+    {
+      "name": "neck",
+      "bone": "torso",
+      "attachment": "neck"
+    },
+    {
+      "name": "chest-ruff-1",
+      "bone": "torso",
+      "attachment": "chest-ruff-1"
+    },
+    {
+      "name": "chest-ruff-2",
+      "bone": "torso",
+      "attachment": "chest-ruff-2"
+    },
+    {
+      "name": "l-thigh",
+      "bone": "l-thigh",
+      "attachment": "l-thigh"
+    },
+    {
+      "name": "l-leg-lower",
+      "bone": "l-leg-lower",
+      "attachment": "l-leg-lower"
+    },
+    {
+      "name": "l-leg-shadow",
+      "bone": "l-leg-lower",
+      "attachment": "l-leg-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "l-foot",
+      "bone": "l-foot",
+      "attachment": "l-foot"
+    },
+    {
+      "name": "r-thigh",
+      "bone": "r-thigh",
+      "attachment": "r-thigh"
+    },
+    {
+      "name": "r-leg-lower",
+      "bone": "r-leg-lower",
+      "attachment": "r-leg-lower"
+    },
+    {
+      "name": "r-leg-shadow",
+      "bone": "r-leg-lower",
+      "attachment": "r-leg-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "r-foot",
+      "bone": "r-foot",
+      "attachment": "r-foot"
+    },
+    {
+      "name": "underskirt-back",
+      "bone": "cloth",
+      "attachment": "underskirt-back"
+    },
+    {
+      "name": "underskirt-front-1",
+      "bone": "cloth",
+      "attachment": "underskirt-front-1"
+    },
+    {
+      "name": "dress-shadow",
+      "bone": "cloth",
+      "attachment": "dress-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "underskirt-hem",
+      "bone": "cloth",
+      "attachment": "underskirt-hem"
+    },
+    {
+      "name": "underskirt-front-2",
+      "bone": "cloth",
+      "attachment": "underskirt-front-2"
+    },
+    {
+      "name": "underskirt-shadow",
+      "bone": "cloth",
+      "attachment": "underskirt-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "underskirt-hem-2",
+      "bone": "cloth",
+      "attachment": "underskirt-hem-2"
+    },
+    {
+      "name": "underskirt-front-3",
+      "bone": "cloth",
+      "attachment": "underskirt-front-3"
+    },
+    {
+      "name": "underskirt-hem-3",
+      "bone": "cloth",
+      "attachment": "underskirt-hem-3"
+    },
+    {
+      "name": "teapot-handle-spout",
+      "bone": "teapot",
+      "attachment": "teapot-handle-spout"
+    },
+    {
+      "name": "cuff-back-l",
+      "bone": "l-arm-lower",
+      "attachment": "cuff-back-l"
+    },
+    {
+      "name": "l-arm-upper",
+      "bone": "l-arm-upper",
+      "attachment": "l-arm-upper"
+    },
+    {
+      "name": "l-arm-lower",
+      "bone": "l-arm-lower",
+      "attachment": "l-arm-lower"
+    },
+    {
+      "name": "l-arm-shadow",
+      "bone": "l-arm-lower",
+      "attachment": "l-arm-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "l-paw",
+      "bone": "l-paw",
+      "attachment": "l-paw"
+    },
+    {
+      "name": "teapot-shadow",
+      "bone": "teapot",
+      "attachment": "teapot-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "cuff-back-r",
+      "bone": "r-arm-lower",
+      "attachment": "cuff-back-r"
+    },
+    {
+      "name": "r-arm-upper",
+      "bone": "r-arm-upper",
+      "attachment": "r-arm-upper"
+    },
+    {
+      "name": "r-arm-lower",
+      "bone": "r-arm-lower",
+      "attachment": "r-arm-lower"
+    },
+    {
+      "name": "r-arm-shadow",
+      "bone": "r-arm-lower",
+      "attachment": "r-arm-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "r-paw",
+      "bone": "r-paw",
+      "attachment": "r-paw"
+    },
+    {
+      "name": "sleeve-upper-l",
+      "bone": "l-arm-upper",
+      "attachment": "sleeve-upper-l"
+    },
+    {
+      "name": "sleeve-lower-l",
+      "bone": "l-arm-lower",
+      "attachment": "sleeve-lower-l"
+    },
+    {
+      "name": "cuff-l",
+      "bone": "l-arm-lower",
+      "attachment": "cuff-l"
+    },
+    {
+      "name": "blouse-torso",
+      "bone": "torso",
+      "attachment": "blouse-torso"
+    },
+    {
+      "name": "blouse-shadow",
+      "bone": "torso",
+      "attachment": "blouse-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "collar-shadow",
+      "bone": "torso",
+      "attachment": "collar-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "sleeve-upper-r",
+      "bone": "r-arm-upper",
+      "attachment": "sleeve-upper-r"
+    },
+    {
+      "name": "sleeve-lower-r",
+      "bone": "r-arm-lower",
+      "attachment": "sleeve-lower-r"
+    },
+    {
+      "name": "cuff-r",
+      "bone": "r-arm-lower",
+      "attachment": "cuff-r"
+    },
+    {
+      "name": "dress-back-panel",
+      "bone": "cloth",
+      "attachment": "dress-back-panel"
+    },
+    {
+      "name": "dress-skirt-1",
+      "bone": "cloth",
+      "attachment": "dress-skirt-1"
+    },
+    {
+      "name": "pouch-shadow",
+      "bone": "torso",
+      "attachment": "pouch-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "dress-skirt-2",
+      "bone": "cloth",
+      "attachment": "dress-skirt-2"
+    },
+    {
+      "name": "dress-skirt-3",
+      "bone": "cloth",
+      "attachment": "dress-skirt-3"
+    },
+    {
+      "name": "dress-side-tie",
+      "bone": "cloth",
+      "attachment": "dress-side-tie"
+    },
+    {
+      "name": "dress-pocket",
+      "bone": "cloth",
+      "attachment": "dress-pocket"
+    },
+    {
+      "name": "dress-strap-r",
+      "bone": "torso",
+      "attachment": "dress-strap-r"
+    },
+    {
+      "name": "dress-strap-l",
+      "bone": "torso",
+      "attachment": "dress-strap-l"
+    },
+    {
+      "name": "dress-bib",
+      "bone": "torso",
+      "attachment": "dress-bib"
+    },
+    {
+      "name": "belt",
+      "bone": "hip",
+      "attachment": "belt"
+    },
+    {
+      "name": "belt-ring",
+      "bone": "hip",
+      "attachment": "belt-ring"
+    },
+    {
+      "name": "belt-loop",
+      "bone": "hip",
+      "attachment": "belt-loop"
+    },
+    {
+      "name": "belt-buckle",
+      "bone": "hip",
+      "attachment": "belt-buckle"
+    },
+    {
+      "name": "pouch-bag",
+      "bone": "pouch",
+      "attachment": "pouch-bag"
+    },
+    {
+      "name": "pouch-string",
+      "bone": "pouch",
+      "attachment": "pouch-string"
+    },
+    {
+      "name": "pouch-sprig",
+      "bone": "pouch",
+      "attachment": "pouch-sprig"
+    },
+    {
+      "name": "collar-ribbon-tail-r",
+      "bone": "collar",
+      "attachment": "collar-ribbon-tail-r"
+    },
+    {
+      "name": "collar-ribbon-tail-l",
+      "bone": "collar",
+      "attachment": "collar-ribbon-tail-l"
+    },
+    {
+      "name": "leaf-4",
+      "bone": "collar",
+      "attachment": "leaf-4"
+    },
+    {
+      "name": "leaf-2",
+      "bone": "collar",
+      "attachment": "leaf-2"
+    },
+    {
+      "name": "leaf-5",
+      "bone": "collar",
+      "attachment": "leaf-5"
+    },
+    {
+      "name": "leaf-8",
+      "bone": "collar",
+      "attachment": "leaf-8"
+    },
+    {
+      "name": "leaf-3",
+      "bone": "collar",
+      "attachment": "leaf-3"
+    },
+    {
+      "name": "leaf-7",
+      "bone": "collar",
+      "attachment": "leaf-7"
+    },
+    {
+      "name": "leaf-1",
+      "bone": "collar",
+      "attachment": "leaf-1"
+    },
+    {
+      "name": "leaf-6",
+      "bone": "collar",
+      "attachment": "leaf-6"
+    },
+    {
+      "name": "clover-brooch",
+      "bone": "collar",
+      "attachment": "clover-brooch"
+    },
+    {
+      "name": "teapot-body",
+      "bone": "teapot",
+      "attachment": "teapot-body"
+    },
+    {
+      "name": "teapot-tea",
+      "bone": "teapot",
+      "attachment": "teapot-tea"
+    },
+    {
+      "name": "teapot-glint",
+      "bone": "teapot",
+      "attachment": "teapot-glint"
+    },
+    {
+      "name": "teapot-lid",
+      "bone": "teapot",
+      "attachment": "teapot-lid"
+    },
+    {
+      "name": "ear-r-outer",
+      "bone": "ear-r-outer",
+      "attachment": "ear-r-outer"
+    },
+    {
+      "name": "ear-r-inner",
+      "bone": "ear-r-outer",
+      "attachment": "ear-r-inner"
+    },
+    {
+      "name": "ear-r-shadow",
+      "bone": "ear-r-outer",
+      "attachment": "ear-r-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "ear-r-floof",
+      "bone": "ear-r-outer",
+      "attachment": "ear-r-floof"
+    },
+    {
+      "name": "ear-l-outer",
+      "bone": "ear-l-outer",
+      "attachment": "ear-l-outer"
+    },
+    {
+      "name": "ear-l-inner",
+      "bone": "ear-l-outer",
+      "attachment": "ear-l-inner"
+    },
+    {
+      "name": "ear-l-shadow",
+      "bone": "ear-l-outer",
+      "attachment": "ear-l-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "ear-l-floof",
+      "bone": "ear-l-outer",
+      "attachment": "ear-l-floof"
+    },
+    {
+      "name": "hair-back",
+      "bone": "head",
+      "attachment": "hair-back"
+    },
+    {
+      "name": "head-base",
+      "bone": "head",
+      "attachment": "head-base"
+    },
+    {
+      "name": "head-shadow",
+      "bone": "head",
+      "attachment": "head-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "bangs-shadow",
+      "bone": "head",
+      "attachment": "bangs-shadow",
+      "blend": "multiply"
+    },
+    {
+      "name": "hair-top-curl",
+      "bone": "hair-tip",
+      "attachment": "hair-top-curl"
+    },
+    {
+      "name": "hair-bang-1",
+      "bone": "head",
+      "attachment": "hair-bang-1"
+    },
+    {
+      "name": "hair-bang-2",
+      "bone": "head",
+      "attachment": "hair-bang-2"
+    },
+    {
+      "name": "hair-bang-3",
+      "bone": "head",
+      "attachment": "hair-bang-3"
+    },
+    {
+      "name": "hair-bang-4",
+      "bone": "head",
+      "attachment": "hair-bang-4"
+    },
+    {
+      "name": "hair-side-r",
+      "bone": "head",
+      "attachment": "hair-side-r"
+    },
+    {
+      "name": "hair-side-l",
+      "bone": "head",
+      "attachment": "hair-side-l"
+    },
+    {
+      "name": "cheek-fluff-r-1",
+      "bone": "head",
+      "attachment": "cheek-fluff-r-1"
+    },
+    {
+      "name": "cheek-fluff-r-2",
+      "bone": "head",
+      "attachment": "cheek-fluff-r-2"
+    },
+    {
+      "name": "cheek-fluff-l-1",
+      "bone": "head",
+      "attachment": "cheek-fluff-l-1"
+    },
+    {
+      "name": "cheek-fluff-l-2",
+      "bone": "head",
+      "attachment": "cheek-fluff-l-2"
+    },
+    {
+      "name": "eye-r-eyelid-open",
+      "bone": "head",
+      "attachment": "eye-r-eyelid-open"
+    },
+    {
+      "name": "eye-l-eyelid-open",
+      "bone": "head",
+      "attachment": "eye-l-eyelid-open"
+    },
+    {
+      "name": "eye-r-white",
+      "bone": "head",
+      "attachment": "eye-r-white"
+    },
+    {
+      "name": "eye-l-white",
+      "bone": "head",
+      "attachment": "eye-l-white"
+    },
+    {
+      "name": "eye-r-iris",
+      "bone": "head",
+      "attachment": "eye-r-iris"
+    },
+    {
+      "name": "eye-l-iris",
+      "bone": "head",
+      "attachment": "eye-l-iris"
+    },
+    {
+      "name": "eye-r-pupil",
+      "bone": "head",
+      "attachment": "eye-r-pupil"
+    },
+    {
+      "name": "eye-l-pupil",
+      "bone": "head",
+      "attachment": "eye-l-pupil"
+    },
+    {
+      "name": "eye-r-sparkle-1",
+      "bone": "head",
+      "attachment": "eye-r-sparkle-1"
+    },
+    {
+      "name": "eye-l-sparkle-1",
+      "bone": "head",
+      "attachment": "eye-l-sparkle-1"
+    },
+    {
+      "name": "eye-r-sparkle-2",
+      "bone": "head",
+      "attachment": "eye-r-sparkle-2"
+    },
+    {
+      "name": "eye-l-sparkle-2",
+      "bone": "head",
+      "attachment": "eye-l-sparkle-2"
+    },
+    {
+      "name": "eye-r-sparkle-3",
+      "bone": "head",
+      "attachment": "eye-r-sparkle-3"
+    },
+    {
+      "name": "eye-l-sparkle-3",
+      "bone": "head",
+      "attachment": "eye-l-sparkle-3"
+    },
+    {
+      "name": "eye-r-lashline-bottom",
+      "bone": "head",
+      "attachment": "eye-r-lashline-bottom"
+    },
+    {
+      "name": "eye-l-lashline-bottom",
+      "bone": "head",
+      "attachment": "eye-l-lashline-bottom"
+    },
+    {
+      "name": "eye-r-lashline-top",
+      "bone": "head",
+      "attachment": "eye-r-lashline-top"
+    },
+    {
+      "name": "eye-l-lashline-top",
+      "bone": "head",
+      "attachment": "eye-l-lashline-top"
+    },
+    {
+      "name": "eye-r-eyelid",
+      "bone": "head"
+    },
+    {
+      "name": "eye-l-eyelid",
+      "bone": "head"
+    },
+    {
+      "name": "brow-r",
+      "bone": "head",
+      "attachment": "brow-r"
+    },
+    {
+      "name": "brow-l",
+      "bone": "head",
+      "attachment": "brow-l"
+    },
+    {
+      "name": "nose",
+      "bone": "head",
+      "attachment": "nose"
+    },
+    {
+      "name": "mouth-closed",
+      "bone": "head",
+      "attachment": "mouth-closed"
+    },
+    {
+      "name": "blush-r",
+      "bone": "head"
+    },
+    {
+      "name": "blush-l",
+      "bone": "head"
+    },
+    {
+      "name": "eye-r-closed",
+      "bone": "head"
+    },
+    {
+      "name": "eye-l-closed",
+      "bone": "head"
+    },
+    {
+      "name": "mouth-smile",
+      "bone": "head"
+    },
+    {
+      "name": "mouth-inner",
+      "bone": "head"
+    },
+    {
+      "name": "mouth-tongue",
+      "bone": "head"
+    },
+    {
+      "name": "whiskers-r",
+      "bone": "head",
+      "attachment": "whiskers-r"
+    },
+    {
+      "name": "whiskers-l",
+      "bone": "head",
+      "attachment": "whiskers-l"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "tail-1": {
+          "tail-1": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              2,
+              24,
+              -27.120246153846153,
+              29.766695384615403,
+              0.8091675554845569,
+              25,
+              20.866756923076935,
+              48.54409846153844,
+              0.19083244451544315,
+              2,
+              23,
+              -35.79726769230767,
+              8.902695384615384,
+              0.48899507898559613,
+              24,
+              20.53513846153846,
+              29.766695384615403,
+              0.5110049210144039,
+              1,
+              23,
+              11.858116923076942,
+              8.902695384615384,
+              1.0,
+              2,
+              24,
+              -27.120246153846153,
+              2.689772307692337,
+              0.5433128985069181,
+              25,
+              20.866756923076935,
+              21.467175384615373,
+              0.4566871014930819,
+              2,
+              23,
+              -35.79726769230767,
+              -18.17422769230768,
+              0.2629732302399409,
+              24,
+              20.53513846153846,
+              2.689772307692337,
+              0.7370267697600591,
+              1,
+              23,
+              11.858116923076942,
+              -18.17422769230768,
+              1.0,
+              2,
+              24,
+              -27.120246153846153,
+              -24.387150769230743,
+              0.26474021559670624,
+              25,
+              20.866756923076935,
+              -5.609747692307707,
+              0.7352597844032938,
+              2,
+              23,
+              -35.79726769230767,
+              -45.25115076923076,
+              0.08514957000318246,
+              24,
+              20.53513846153846,
+              -24.387150769230743,
+              0.9148504299968175,
+              2,
+              23,
+              11.858116923076942,
+              -45.25115076923076,
+              0.9833313260335492,
+              24,
+              68.19052307692307,
+              -24.387150769230743,
+              0.016668673966450807
+            ],
+            "hull": 0,
+            "width": 95.31076923076922,
+            "height": 54.15384615384615
+          }
+        },
+        "tail-shadow": {
+          "tail-shadow": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              2,
+              24,
+              -18.061784615384624,
+              27.99438769230771,
+              0.9547429777466937,
+              25,
+              29.925218461538464,
+              46.77179076923075,
+              0.04525702225330635,
+              2,
+              23,
+              -32.54803692307691,
+              7.130387692307693,
+              0.5496338422254757,
+              24,
+              23.784369230769222,
+              27.99438769230771,
+              0.45036615777452427,
+              1,
+              23,
+              9.298116923076943,
+              7.130387692307693,
+              1.0,
+              2,
+              24,
+              -18.061784615384624,
+              9.286695384615413,
+              0.8314984060280216,
+              25,
+              29.925218461538464,
+              28.06409846153845,
+              0.16850159397197836,
+              2,
+              23,
+              -32.54803692307691,
+              -11.577304615384605,
+              0.3883086472221392,
+              24,
+              23.784369230769222,
+              9.286695384615413,
+              0.6116913527778608,
+              1,
+              23,
+              9.298116923076943,
+              -11.577304615384605,
+              1.0,
+              2,
+              24,
+              -18.061784615384624,
+              -9.420996923076899,
+              0.6580052593880776,
+              25,
+              29.925218461538464,
+              9.356406153846137,
+              0.34199474061192237,
+              2,
+              23,
+              -32.54803692307691,
+              -30.284996923076918,
+              0.2375158687438218,
+              24,
+              23.784369230769222,
+              -9.420996923076899,
+              0.7624841312561782,
+              2,
+              23,
+              9.298116923076943,
+              -30.284996923076918,
+              0.9973626304543823,
+              24,
+              65.63052307692307,
+              -9.420996923076899,
+              0.002637369545617617
+            ],
+            "hull": 0,
+            "width": 83.6923076923077,
+            "height": 37.41538461538462
+          }
+        },
+        "tail-2": {
+          "tail-2": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              2,
+              26,
+              10.484775384615375,
+              36.851003076923064,
+              0.10460348029896771,
+              27,
+              23.00317538461539,
+              -0.7040000000000362,
+              0.8953965197010323,
+              2,
+              24,
+              -25.544861538461547,
+              26.41900307692309,
+              0.8149341999127535,
+              25,
+              22.44214153846154,
+              45.19640615384613,
+              0.18506580008724655,
+              2,
+              23,
+              -19.84649846153844,
+              5.555003076923072,
+              0.8114856426355522,
+              24,
+              36.48590769230769,
+              26.41900307692309,
+              0.18851435736444777,
+              2,
+              25,
+              -39.58862769230768,
+              7.78102153846153,
+              0.10938986402730233,
+              26,
+              10.484775384615375,
+              -0.5643815384615323,
+              0.8906101359726977,
+              2,
+              24,
+              -25.544861538461547,
+              -10.996381538461506,
+              0.4410152270462252,
+              25,
+              22.44214153846154,
+              7.78102153846153,
+              0.5589847729537748,
+              2,
+              23,
+              -19.84649846153844,
+              -31.860381538461525,
+              0.5089726981455982,
+              24,
+              36.48590769230769,
+              -10.996381538461506,
+              0.4910273018544018,
+              2,
+              25,
+              -39.58862769230768,
+              -29.634363076923094,
+              0.25049101786541084,
+              26,
+              10.484775384615375,
+              -37.97976615384616,
+              0.7495089821345892,
+              2,
+              24,
+              -25.544861538461547,
+              -48.41176615384613,
+              0.1001986995731492,
+              25,
+              22.44214153846154,
+              -29.634363076923094,
+              0.8998013004268508,
+              2,
+              23,
+              -19.84649846153844,
+              -69.27576615384615,
+              0.20310051649405536,
+              24,
+              36.48590769230769,
+              -48.41176615384613,
+              0.7968994835059446
+            ],
+            "hull": 0,
+            "width": 124.06153846153846,
+            "height": 74.83076923076923
+          }
+        },
+        "tail-3": {
+          "tail-3": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              1,
+              27,
+              -21.304516923076932,
+              0.08369230769227443,
+              1.0,
+              2,
+              26,
+              27.02631384615384,
+              37.638695384615374,
+              0.2337275934641343,
+              27,
+              39.544713846153854,
+              0.08369230769227443,
+              0.7662724065358657,
+              1,
+              24,
+              -10.184861538461547,
+              27.2066953846154,
+              1.0,
+              2,
+              26,
+              -33.822916923076946,
+              -0.17053538461537698,
+              0.8252554828242831,
+              27,
+              -21.304516923076932,
+              -37.72553846153848,
+              0.17474451717571687,
+              2,
+              25,
+              -23.047089230769217,
+              8.174867692307686,
+              0.5385150575720428,
+              26,
+              27.02631384615384,
+              -0.17053538461537698,
+              0.4614849424279572,
+              2,
+              24,
+              -10.184861538461547,
+              -10.60253538461535,
+              0.8334636978495088,
+              25,
+              37.80214153846154,
+              8.174867692307686,
+              0.16653630215049123,
+              1,
+              26,
+              -33.822916923076946,
+              -37.97976615384616,
+              1.0,
+              2,
+              25,
+              -23.047089230769217,
+              -29.634363076923094,
+              0.7157105091483623,
+              26,
+              27.02631384615384,
+              -37.97976615384616,
+              0.2842894908516377,
+              2,
+              24,
+              -10.184861538461547,
+              -48.41176615384613,
+              0.460428068264635,
+              25,
+              37.80214153846154,
+              -29.634363076923094,
+              0.539571931735365
+            ],
+            "hull": 0,
+            "width": 121.69846153846154,
+            "height": 75.61846153846153
+          }
+        },
+        "tail-4": {
+          "tail-4": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              1,
+              27,
+              -21.501440000000002,
+              35.52984615384614,
+              1.0,
+              1,
+              27,
+              14.43702153846155,
+              35.52984615384614,
+              1.0,
+              1,
+              27,
+              50.375483076923075,
+              35.52984615384614,
+              1.0,
+              2,
+              26,
+              -34.019840000000016,
+              19.226387692307696,
+              0.17636468659208415,
+              27,
+              -21.501440000000002,
+              -18.328615384615404,
+              0.8236353134079158,
+              2,
+              26,
+              1.9186215384615366,
+              19.226387692307696,
+              0.5815293274739062,
+              27,
+              14.43702153846155,
+              -18.328615384615404,
+              0.4184706725260938,
+              2,
+              25,
+              -12.216319999999996,
+              27.57179076923076,
+              0.7495880665222856,
+              26,
+              37.85708307692306,
+              19.226387692307696,
+              0.25041193347771434,
+              1,
+              26,
+              -34.019840000000016,
+              -34.632073846153844,
+              1.0,
+              2,
+              25,
+              -48.15478153846152,
+              -26.28667076923078,
+              0.060317797107252935,
+              26,
+              1.9186215384615366,
+              -34.632073846153844,
+              0.9396822028927471,
+              2,
+              25,
+              -12.216319999999996,
+              -26.28667076923078,
+              0.9375202738463666,
+              26,
+              37.85708307692306,
+              -34.632073846153844,
+              0.062479726153633355
+            ],
+            "hull": 0,
+            "width": 71.87692307692308,
+            "height": 107.71692307692308
+          }
+        },
+        "tail-5": {
+          "tail-5": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              1,
+              27,
+              -21.501440000000002,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              16.701636923076933,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              54.90471384615384,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              -21.501440000000002,
+              1.462153846153825,
+              1.0,
+              2,
+              26,
+              4.183236923076919,
+              39.017156923076925,
+              0.027130285654926145,
+              27,
+              16.701636923076933,
+              1.462153846153825,
+              0.9728697143450739,
+              2,
+              25,
+              -7.687089230769232,
+              47.36255999999999,
+              0.7805288120216226,
+              26,
+              42.386313846153826,
+              39.017156923076925,
+              0.21947118797837736,
+              2,
+              26,
+              -34.019840000000016,
+              4.161772307692303,
+              0.6885099955946412,
+              27,
+              -21.501440000000002,
+              -33.3932307692308,
+              0.31149000440535884,
+              2,
+              25,
+              -45.89016615384614,
+              12.507175384615365,
+              0.013169722780579374,
+              26,
+              4.183236923076919,
+              4.161772307692303,
+              0.9868302772194206,
+              2,
+              25,
+              -7.687089230769232,
+              12.507175384615365,
+              0.9055370180879394,
+              26,
+              42.386313846153826,
+              4.161772307692303,
+              0.09446298191206065
+            ],
+            "hull": 0,
+            "width": 76.40615384615384,
+            "height": 69.71076923076923
+          }
+        },
+        "tail-tip-fluff": {
+          "tail-tip-fluff": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              1,
+              27,
+              -4.1722092307692265,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              30.289329230769226,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              64.7508676923077,
+              36.31753846153845,
+              1.0,
+              1,
+              27,
+              -4.1722092307692265,
+              9.831384615384593,
+              1.0,
+              2,
+              26,
+              17.770929230769212,
+              47.38638769230769,
+              0.00012058219525601377,
+              27,
+              30.289329230769226,
+              9.831384615384593,
+              0.999879417804744,
+              2,
+              24,
+              -45.827938461538466,
+              36.95438769230772,
+              0.40029108017034176,
+              25,
+              2.1590646153846222,
+              55.731790769230756,
+              0.5997089198296582,
+              2,
+              26,
+              -16.69060923076924,
+              20.900233846153853,
+              0.3035333590188366,
+              27,
+              -4.1722092307692265,
+              -16.654769230769247,
+              0.6964666409811634,
+              2,
+              26,
+              17.770929230769212,
+              20.900233846153853,
+              0.706016953456946,
+              27,
+              30.289329230769226,
+              -16.654769230769247,
+              0.2939830465430539,
+              2,
+              24,
+              -45.827938461538466,
+              10.468233846153879,
+              0.15158544007843222,
+              25,
+              2.1590646153846222,
+              29.245636923076916,
+              0.8484145599215678
+            ],
+            "hull": 0,
+            "width": 68.92307692307692,
+            "height": 52.972307692307695
+          }
+        },
+        "hips": {
+          "hips": {
+            "x": 7.868258461538443,
+            "y": 46.11623384615389,
+            "width": 120.51692307692308,
+            "height": 109.48923076923077
+          }
+        },
+        "belly": {
+          "belly": {
+            "x": -1.9682461538461329,
+            "y": -66.88039384615382,
+            "width": 102.59692307692308,
+            "height": 130.75692307692307
+          }
+        },
+        "torso": {
+          "torso": {
+            "x": -0.39286153846151706,
+            "y": -8.295778461538418,
+            "width": 111.26153846153846,
+            "height": 134.8923076923077
+          }
+        },
+        "neck": {
+          "neck": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              1,
+              3,
+              -26.292775384615393,
+              42.94833230769234,
+              1.0,
+              1,
+              3,
+              1.7687630769230687,
+              42.94833230769234,
+              1.0,
+              1,
+              3,
+              29.830301538461534,
+              42.94833230769234,
+              1.0,
+              2,
+              2,
+              -19.199015384615365,
+              57.87037538461544,
+              0.05617411837644848,
+              3,
+              -26.292775384615393,
+              -9.72859076923072,
+              0.9438258816235515,
+              2,
+              2,
+              8.862523076923097,
+              57.87037538461544,
+              0.05617411837644848,
+              3,
+              1.7687630769230687,
+              -9.72859076923072,
+              0.9438258816235515,
+              2,
+              2,
+              36.92406153846156,
+              57.87037538461544,
+              0.05617411837644848,
+              3,
+              29.830301538461534,
+              -9.72859076923072,
+              0.9438258816235515,
+              2,
+              2,
+              -19.199015384615365,
+              5.193452307692326,
+              0.9831995946849031,
+              3,
+              -26.292775384615393,
+              -62.40551384615384,
+              0.01680040531509688,
+              2,
+              2,
+              8.862523076923097,
+              5.193452307692326,
+              0.9831995946849031,
+              3,
+              1.7687630769230687,
+              -62.40551384615384,
+              0.01680040531509688,
+              2,
+              2,
+              36.92406153846156,
+              5.193452307692326,
+              0.9831995946849031,
+              3,
+              29.830301538461534,
+              -62.40551384615384,
+              0.01680040531509688
+            ],
+            "hull": 0,
+            "width": 56.12307692307692,
+            "height": 105.35384615384615
+          }
+        },
+        "chest-ruff-1": {
+          "chest-ruff-1": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              2,
+              2,
+              -32.78670769230767,
+              44.57806769230774,
+              0.26893421610334534,
+              3,
+              -39.8804676923077,
+              -23.020898461538422,
+              0.7310657838966547,
+              2,
+              2,
+              -13.094399999999979,
+              44.57806769230774,
+              0.26893421610334534,
+              3,
+              -20.188160000000007,
+              -23.020898461538422,
+              0.7310657838966547,
+              2,
+              2,
+              6.5979076923077145,
+              44.57806769230774,
+              0.26893421610334534,
+              3,
+              -0.4958523076923136,
+              -23.020898461538422,
+              0.7310657838966547,
+              2,
+              2,
+              -32.78670769230767,
+              20.750375384615438,
+              0.7751692296171457,
+              3,
+              -39.8804676923077,
+              -46.848590769230725,
+              0.22483077038285423,
+              2,
+              2,
+              -13.094399999999979,
+              20.750375384615438,
+              0.7751692296171457,
+              3,
+              -20.188160000000007,
+              -46.848590769230725,
+              0.22483077038285423,
+              2,
+              2,
+              6.5979076923077145,
+              20.750375384615438,
+              0.7751692296171457,
+              3,
+              -0.4958523076923136,
+              -46.848590769230725,
+              0.22483077038285423,
+              1,
+              2,
+              -32.78670769230767,
+              -3.0773169230769213,
+              1.0,
+              1,
+              2,
+              -13.094399999999979,
+              -3.0773169230769213,
+              1.0,
+              1,
+              2,
+              6.5979076923077145,
+              -3.0773169230769213,
+              1.0
+            ],
+            "hull": 0,
+            "width": 39.38461538461539,
+            "height": 47.65538461538461
+          }
+        },
+        "chest-ruff-2": {
+          "chest-ruff-2": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              3,
+              1,
+              1,
+              3,
+              4,
+              1,
+              4,
+              2,
+              2,
+              4,
+              5,
+              3,
+              6,
+              4,
+              4,
+              6,
+              7,
+              4,
+              7,
+              5,
+              5,
+              7,
+              8
+            ],
+            "vertices": [
+              2,
+              2,
+              1.8717538461538687,
+              44.38114461538464,
+              0.2728675704922261,
+              3,
+              -5.222006153846159,
+              -23.21782153846152,
+              0.7271324295077739,
+              2,
+              2,
+              21.662523076923097,
+              44.38114461538464,
+              0.2728675704922261,
+              3,
+              14.56876307692307,
+              -23.21782153846152,
+              0.7271324295077739,
+              2,
+              2,
+              41.45329230769232,
+              44.38114461538464,
+              0.2728675704922261,
+              3,
+              34.3595323076923,
+              -23.21782153846152,
+              0.7271324295077739,
+              2,
+              2,
+              1.8717538461538687,
+              20.258067692307748,
+              0.7844028998033052,
+              3,
+              -5.222006153846159,
+              -47.340898461538416,
+              0.2155971001966947,
+              2,
+              2,
+              21.662523076923097,
+              20.258067692307748,
+              0.7844028998033052,
+              3,
+              14.56876307692307,
+              -47.340898461538416,
+              0.2155971001966947,
+              2,
+              2,
+              41.45329230769232,
+              20.258067692307748,
+              0.7844028998033052,
+              3,
+              34.3595323076923,
+              -47.340898461538416,
+              0.2155971001966947,
+              1,
+              2,
+              1.8717538461538687,
+              -3.8650092307692034,
+              1.0,
+              1,
+              2,
+              21.662523076923097,
+              -3.8650092307692034,
+              1.0,
+              1,
+              2,
+              41.45329230769232,
+              -3.8650092307692034,
+              1.0
+            ],
+            "hull": 0,
+            "width": 39.581538461538464,
+            "height": 48.246153846153845
+          }
+        },
+        "l-thigh": {
+          "l-thigh": {
+            "x": -1.2971323076923014,
+            "y": -33.46806153846153,
+            "width": 62.424615384615386,
+            "height": 115.39692307692307
+          }
+        },
+        "l-leg-lower": {
+          "l-leg-lower": {
+            "x": 4.437267692307671,
+            "y": -19.601132307692275,
+            "width": 54.744615384615386,
+            "height": 85.07076923076923
+          }
+        },
+        "l-leg-shadow": {
+          "l-leg-shadow": {
+            "x": -0.9781169230769464,
+            "y": -13.594978461538425,
+            "width": 40.76307692307692,
+            "height": 49.42769230769231
+          }
+        },
+        "l-foot": {
+          "l-foot": {
+            "x": 3.0355692307692266,
+            "y": 0.14611692307696345,
+            "width": 52.184615384615384,
+            "height": 49.62461538461538
+          }
+        },
+        "r-thigh": {
+          "r-thigh": {
+            "x": -1.5899569230769188,
+            "y": -33.46806153846153,
+            "width": 67.34769230769231,
+            "height": 115.39692307692307
+          }
+        },
+        "r-leg-lower": {
+          "r-leg-lower": {
+            "x": -2.1856492307692363,
+            "y": -19.99497846153843,
+            "width": 50.01846153846154,
+            "height": 85.85846153846154
+          }
+        },
+        "r-leg-shadow": {
+          "r-leg-shadow": {
+            "x": -2.973341538461547,
+            "y": -13.594978461538425,
+            "width": 40.566153846153846,
+            "height": 49.42769230769231
+          }
+        },
+        "r-foot": {
+          "r-foot": {
+            "x": -5.003815384615379,
+            "y": -0.24772923076919184,
+            "width": 48.64,
+            "height": 50.41230769230769
+          }
+        },
+        "underskirt-back": {
+          "underskirt-back": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -114.5097846153846,
+              -29.465009230769226,
+              1.0,
+              1,
+              2,
+              107.4225230769231,
+              -29.465009230769226,
+              1.0,
+              2,
+              2,
+              -114.5097846153846,
+              -109.61270153846152,
+              0.5656170003323615,
+              28,
+              -109.9197046153846,
+              -62.87753846153848,
+              0.43438299966763844,
+              2,
+              2,
+              107.4225230769231,
+              -109.61270153846152,
+              0.5656170003323615,
+              28,
+              112.0126030769231,
+              -62.87753846153848,
+              0.43438299966763844,
+              1,
+              28,
+              -109.9197046153846,
+              -143.02523076923077,
+              1.0,
+              1,
+              28,
+              112.0126030769231,
+              -143.02523076923077,
+              1.0
+            ],
+            "hull": 0,
+            "width": 221.9323076923077,
+            "height": 160.29538461538462
+          }
+        },
+        "underskirt-front-1": {
+          "underskirt-front-1": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -129.8697846153846,
+              -29.465009230769226,
+              1.0,
+              1,
+              2,
+              -7.974399999999978,
+              -29.465009230769226,
+              1.0,
+              2,
+              2,
+              -129.8697846153846,
+              -130.5850092307692,
+              0.3401109009446066,
+              28,
+              -125.2797046153846,
+              -83.84984615384616,
+              0.6598890990553934,
+              2,
+              2,
+              -7.974399999999978,
+              -130.5850092307692,
+              0.3401109009446066,
+              28,
+              -3.384319999999983,
+              -83.84984615384616,
+              0.6598890990553934,
+              1,
+              28,
+              -125.2797046153846,
+              -184.96984615384616,
+              1.0,
+              1,
+              28,
+              -3.384319999999983,
+              -184.96984615384616,
+              1.0
+            ],
+            "hull": 0,
+            "width": 121.89538461538461,
+            "height": 202.24
+          }
+        },
+        "dress-shadow": {
+          "dress-shadow": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              2,
+              -112.93439999999998,
+              -145.4527015384615,
+              0.19598112359766773,
+              28,
+              -108.34431999999998,
+              -98.71753846153845,
+              0.8040188764023323,
+              2,
+              2,
+              -24.122092307692284,
+              -145.4527015384615,
+              0.19598112359766773,
+              28,
+              -19.53201230769229,
+              -98.71753846153845,
+              0.8040188764023323,
+              2,
+              2,
+              -112.93439999999998,
+              -178.33885538461536,
+              0.00596664423906712,
+              28,
+              -108.34431999999998,
+              -131.6036923076923,
+              0.9940333557609329,
+              2,
+              2,
+              -24.122092307692284,
+              -178.33885538461536,
+              0.00596664423906712,
+              28,
+              -19.53201230769229,
+              -131.6036923076923,
+              0.9940333557609329,
+              1,
+              28,
+              -108.34431999999998,
+              -164.48984615384614,
+              1.0,
+              1,
+              28,
+              -19.53201230769229,
+              -164.48984615384614,
+              1.0
+            ],
+            "hull": 0,
+            "width": 88.8123076923077,
+            "height": 65.77230769230769
+          }
+        },
+        "underskirt-hem": {
+          "underskirt-hem": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              28,
+              -125.2797046153846,
+              -140.85907692307694,
+              1.0,
+              1,
+              28,
+              -18.153550769230755,
+              -140.85907692307694,
+              1.0,
+              1,
+              28,
+              -125.2797046153846,
+              -162.91446153846152,
+              1.0,
+              1,
+              28,
+              -18.153550769230755,
+              -162.91446153846152,
+              1.0,
+              1,
+              28,
+              -125.2797046153846,
+              -184.96984615384616,
+              1.0,
+              1,
+              28,
+              -18.153550769230755,
+              -184.96984615384616,
+              1.0
+            ],
+            "hull": 0,
+            "width": 107.12615384615384,
+            "height": 44.11076923076923
+          }
+        },
+        "underskirt-front-2": {
+          "underskirt-front-2": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -60.35593846153844,
+              -29.465009230769226,
+              1.0,
+              1,
+              2,
+              51.299446153846176,
+              -29.465009230769226,
+              1.0,
+              2,
+              2,
+              -60.35593846153844,
+              -131.47116307692303,
+              0.33094770627988346,
+              28,
+              -55.76585846153844,
+              -84.73599999999999,
+              0.6690522937201165,
+              2,
+              2,
+              51.299446153846176,
+              -131.47116307692303,
+              0.33094770627988346,
+              28,
+              55.88952615384618,
+              -84.73599999999999,
+              0.6690522937201165,
+              1,
+              28,
+              -55.76585846153844,
+              -186.74215384615385,
+              1.0,
+              1,
+              28,
+              55.88952615384618,
+              -186.74215384615385,
+              1.0
+            ],
+            "hull": 0,
+            "width": 111.65538461538462,
+            "height": 204.0123076923077
+          }
+        },
+        "underskirt-shadow": {
+          "underskirt-shadow": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              2,
+              -57.59901538461537,
+              -112.76347076923074,
+              0.5314814780000001,
+              28,
+              -53.00893538461537,
+              -66.02830769230769,
+              0.4685185219999999,
+              2,
+              2,
+              45.19483076923079,
+              -112.76347076923074,
+              0.5314814780000001,
+              28,
+              49.784910769230784,
+              -66.02830769230769,
+              0.4685185219999999,
+              2,
+              2,
+              -57.59901538461537,
+              -157.4650092307692,
+              0.10086521788338199,
+              28,
+              -53.00893538461537,
+              -110.72984615384615,
+              0.899134782116618,
+              2,
+              2,
+              45.19483076923079,
+              -157.4650092307692,
+              0.10086521788338199,
+              28,
+              49.784910769230784,
+              -110.72984615384615,
+              0.899134782116618,
+              1,
+              28,
+              -53.00893538461537,
+              -155.43138461538462,
+              1.0,
+              1,
+              28,
+              49.784910769230784,
+              -155.43138461538462,
+              1.0
+            ],
+            "hull": 0,
+            "width": 102.79384615384615,
+            "height": 89.40307692307692
+          }
+        },
+        "underskirt-hem-2": {
+          "underskirt-hem-2": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              28,
+              -55.76585846153844,
+              -155.82523076923076,
+              1.0,
+              1,
+              28,
+              55.88952615384618,
+              -155.82523076923076,
+              1.0,
+              1,
+              28,
+              -55.76585846153844,
+              -171.28369230769232,
+              1.0,
+              1,
+              28,
+              55.88952615384618,
+              -171.28369230769232,
+              1.0,
+              1,
+              28,
+              -55.76585846153844,
+              -186.74215384615385,
+              1.0,
+              1,
+              28,
+              55.88952615384618,
+              -186.74215384615385,
+              1.0
+            ],
+            "hull": 0,
+            "width": 111.65538461538462,
+            "height": 30.916923076923077
+          }
+        },
+        "underskirt-front-3": {
+          "underskirt-front-3": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              0.0994461538461735,
+              -29.858855384615367,
+              1.0,
+              1,
+              2,
+              121.20713846153848,
+              -29.858855384615367,
+              1.0,
+              2,
+              2,
+              0.0994461538461735,
+              -131.17577846153844,
+              0.3339959409446065,
+              28,
+              4.6895261538461686,
+              -84.4406153846154,
+              0.6660040590553935,
+              2,
+              2,
+              121.20713846153848,
+              -131.17577846153844,
+              0.3339959409446065,
+              28,
+              125.79721846153848,
+              -84.4406153846154,
+              0.6660040590553935,
+              1,
+              28,
+              4.6895261538461686,
+              -185.75753846153847,
+              1.0,
+              1,
+              28,
+              125.79721846153848,
+              -185.75753846153847,
+              1.0
+            ],
+            "hull": 0,
+            "width": 121.1076923076923,
+            "height": 202.63384615384615
+          }
+        },
+        "underskirt-hem-3": {
+          "underskirt-hem-3": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              2,
+              8.764061538461558,
+              -184.44347076923074,
+              2.9979999999207863e-06,
+              28,
+              13.354141538461553,
+              -137.7083076923077,
+              0.9999970020000001,
+              2,
+              2,
+              121.20713846153848,
+              -184.44347076923074,
+              2.9979999999207863e-06,
+              28,
+              125.79721846153848,
+              -137.7083076923077,
+              0.9999970020000001,
+              1,
+              28,
+              13.354141538461553,
+              -161.7329230769231,
+              1.0,
+              1,
+              28,
+              125.79721846153848,
+              -161.7329230769231,
+              1.0,
+              1,
+              28,
+              13.354141538461553,
+              -185.75753846153847,
+              1.0,
+              1,
+              28,
+              125.79721846153848,
+              -185.75753846153847,
+              1.0
+            ],
+            "hull": 0,
+            "width": 112.44307692307693,
+            "height": 48.04923076923077
+          }
+        },
+        "teapot-handle-spout": {
+          "teapot-handle-spout": {
+            "x": 43.252184615384635,
+            "y": 8.926523076923047,
+            "width": 94.32615384615384,
+            "height": 50.41230769230769
+          }
+        },
+        "cuff-back-l": {
+          "cuff-back-l": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              24.10653538461537,
+              9.981046153846137,
+              0.4770391646405798,
+              15,
+              -2.5991876923077086,
+              36.68676923076919,
+              0.5229608353594202,
+              1,
+              15,
+              35.40696615384614,
+              36.68676923076919,
+              1.0,
+              2,
+              14,
+              24.10653538461537,
+              -15.717415384615379,
+              0.5461767505803294,
+              15,
+              -2.5991876923077086,
+              10.988307692307671,
+              0.4538232494196705,
+              1,
+              15,
+              35.40696615384614,
+              10.988307692307671,
+              1.0,
+              2,
+              14,
+              24.10653538461537,
+              -41.415876923076894,
+              0.6145270452958229,
+              15,
+              -2.5991876923077086,
+              -14.710153846153844,
+              0.3854729547041771,
+              1,
+              15,
+              35.40696615384614,
+              -14.710153846153844,
+              1.0
+            ],
+            "hull": 0,
+            "width": 38.00615384615384,
+            "height": 51.39692307692307
+          }
+        },
+        "l-arm-upper": {
+          "l-arm-upper": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              14,
+              -35.36423384615385,
+              25.34104615384615,
+              1.0,
+              1,
+              15,
+              24.18235076923075,
+              52.0467692307692,
+              1.0,
+              1,
+              14,
+              -35.36423384615385,
+              -11.975876923076896,
+              1.0,
+              2,
+              14,
+              50.88807384615383,
+              -11.975876923076896,
+              3.1501445075354795e-05,
+              15,
+              24.18235076923075,
+              14.729846153846154,
+              0.9999684985549246,
+              1,
+              14,
+              -35.36423384615385,
+              -49.2928,
+              1.0,
+              2,
+              14,
+              50.88807384615383,
+              -49.2928,
+              0.014107004412640678,
+              15,
+              24.18235076923075,
+              -22.58707692307695,
+              0.9858929955873593
+            ],
+            "hull": 0,
+            "width": 86.2523076923077,
+            "height": 74.63384615384615
+          }
+        },
+        "l-arm-lower": {
+          "l-arm-lower": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              9.534227692307681,
+              22.190276923076908,
+              0.8394303589454608,
+              15,
+              -17.171495384615397,
+              48.89599999999996,
+              0.16056964105453916,
+              1,
+              15,
+              37.77004307692307,
+              48.89599999999996,
+              1.0,
+              2,
+              14,
+              9.534227692307681,
+              -10.498953846153825,
+              0.9006280598045194,
+              15,
+              -17.171495384615397,
+              16.206769230769225,
+              0.09937194019548055,
+              1,
+              15,
+              37.77004307692307,
+              16.206769230769225,
+              1.0,
+              2,
+              14,
+              9.534227692307681,
+              -43.188184615384614,
+              0.9492261751356053,
+              15,
+              -17.171495384615397,
+              -16.482461538461564,
+              0.050773824864394766,
+              1,
+              15,
+              37.77004307692307,
+              -16.482461538461564,
+              1.0
+            ],
+            "hull": 0,
+            "width": 54.941538461538464,
+            "height": 65.37846153846154
+          }
+        },
+        "l-arm-shadow": {
+          "l-arm-shadow": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              9.731150769230766,
+              21.796430769230767,
+              0.8358673335530714,
+              15,
+              -16.974572307692313,
+              48.50215384615382,
+              0.1641326664469286,
+              1,
+              15,
+              37.573119999999975,
+              48.50215384615382,
+              1.0,
+              2,
+              14,
+              9.731150769230766,
+              -10.597415384615374,
+              0.8971612699194664,
+              15,
+              -16.974572307692313,
+              16.108307692307676,
+              0.10283873008053357,
+              1,
+              15,
+              37.573119999999975,
+              16.108307692307676,
+              1.0,
+              2,
+              14,
+              9.731150769230766,
+              -42.991261538461515,
+              0.9462305560043637,
+              15,
+              -16.974572307692313,
+              -16.285538461538465,
+              0.053769443995636344,
+              1,
+              15,
+              37.573119999999975,
+              -16.285538461538465,
+              1.0
+            ],
+            "hull": 0,
+            "width": 54.54769230769231,
+            "height": 64.78769230769231
+          }
+        },
+        "l-paw": {
+          "l-paw": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              37.89115076923076,
+              36.76258461538464,
+              0.075622861041578,
+              15,
+              11.185427692307684,
+              63.46830769230769,
+              0.924377138958422,
+              1,
+              15,
+              53.7208123076923,
+              63.46830769230769,
+              1.0,
+              2,
+              14,
+              37.89115076923076,
+              11.654892307692307,
+              0.11737581344680803,
+              15,
+              11.185427692307684,
+              38.36061538461536,
+              0.882624186553192,
+              1,
+              15,
+              53.7208123076923,
+              38.36061538461536,
+              1.0,
+              2,
+              14,
+              37.89115076923076,
+              -13.452800000000025,
+              0.16611168985149416,
+              15,
+              11.185427692307684,
+              13.252923076923025,
+              0.8338883101485058,
+              1,
+              15,
+              53.7208123076923,
+              13.252923076923025,
+              1.0
+            ],
+            "hull": 0,
+            "width": 42.535384615384615,
+            "height": 50.215384615384615
+          }
+        },
+        "teapot-shadow": {
+          "teapot-shadow": {
+            "x": 1.504492307692317,
+            "y": 1.6403692307692381,
+            "width": 11.224615384615385,
+            "height": 20.48
+          }
+        },
+        "cuff-back-r": {
+          "cuff-back-r": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              8,
+              -42.879015384615386,
+              2.196873846153835,
+              1.0,
+              2,
+              7,
+              -29.26690461538461,
+              -34.10628923076922,
+              0.6527778360560287,
+              8,
+              5.36713846153846,
+              2.196873846153835,
+              0.3472221639439713,
+              1,
+              8,
+              -42.879015384615386,
+              -22.418510769230778,
+              1.0,
+              2,
+              7,
+              -29.26690461538461,
+              -58.721673846153834,
+              0.16176699514630022,
+              8,
+              5.36713846153846,
+              -22.418510769230778,
+              0.8382330048536998,
+              1,
+              8,
+              -42.879015384615386,
+              -47.03389538461539,
+              1.0,
+              1,
+              8,
+              5.36713846153846,
+              -47.03389538461539,
+              1.0
+            ],
+            "hull": 0,
+            "width": 48.246153846153845,
+            "height": 49.23076923076923
+          }
+        },
+        "r-arm-upper": {
+          "r-arm-upper": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              7,
+              -56.63921230769231,
+              24.970633846153873,
+              1.0,
+              1,
+              7,
+              23.11463384615385,
+              24.970633846153873,
+              1.0,
+              2,
+              7,
+              -56.63921230769231,
+              -16.186289230769205,
+              0.48298171075888097,
+              8,
+              -22.00516923076924,
+              20.11687384615385,
+              0.517018289241119,
+              1,
+              7,
+              23.11463384615385,
+              -16.186289230769205,
+              1.0,
+              1,
+              8,
+              -22.00516923076924,
+              -21.040049230769256,
+              1.0,
+              2,
+              7,
+              23.11463384615385,
+              -57.34321230769231,
+              0.9987286017812377,
+              8,
+              57.74867692307692,
+              -21.040049230769256,
+              0.0012713982187623621
+            ],
+            "hull": 0,
+            "width": 79.75384615384615,
+            "height": 82.31384615384616
+          }
+        },
+        "r-arm-lower": {
+          "r-arm-lower": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              7,
+              -85.19305846153847,
+              -11.460135384615398,
+              0.07798949893728269,
+              8,
+              -50.55901538461539,
+              24.843027692307658,
+              0.9220105010627173,
+              1,
+              7,
+              -10.756135384615384,
+              -11.460135384615398,
+              1.0,
+              1,
+              8,
+              -50.55901538461539,
+              -13.85235692307694,
+              1.0,
+              2,
+              7,
+              -10.756135384615384,
+              -50.155519999999996,
+              0.683913702865496,
+              8,
+              23.877907692307687,
+              -13.85235692307694,
+              0.31608629713450404,
+              1,
+              8,
+              -50.55901538461539,
+              -52.547741538461565,
+              1.0,
+              2,
+              7,
+              -10.756135384615384,
+              -88.85090461538462,
+              0.017072374548410707,
+              8,
+              23.877907692307687,
+              -52.547741538461565,
+              0.9829276254515893
+            ],
+            "hull": 0,
+            "width": 74.43692307692308,
+            "height": 77.39076923076924
+          }
+        },
+        "r-arm-shadow": {
+          "r-arm-shadow": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              7,
+              -84.99613538461537,
+              -11.65705846153844,
+              0.07787227863290358,
+              8,
+              -50.36209230769231,
+              24.646104615384615,
+              0.9221277213670964,
+              1,
+              7,
+              -10.953058461538461,
+              -11.65705846153844,
+              1.0,
+              1,
+              8,
+              -50.36209230769231,
+              -13.85235692307694,
+              1.0,
+              2,
+              7,
+              -10.953058461538461,
+              -50.155519999999996,
+              0.6801828906312188,
+              8,
+              23.68098461538461,
+              -13.85235692307694,
+              0.3198171093687812,
+              1,
+              8,
+              -50.36209230769231,
+              -52.350818461538466,
+              1.0,
+              2,
+              7,
+              -10.953058461538461,
+              -88.65398153846152,
+              0.017131448524629667,
+              8,
+              23.68098461538461,
+              -52.350818461538466,
+              0.9828685514753703
+            ],
+            "hull": 0,
+            "width": 74.04307692307692,
+            "height": 76.99692307692308
+          }
+        },
+        "r-paw": {
+          "r-paw": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              8,
+              -76.15901538461539,
+              -6.073895384615412,
+              1.0,
+              2,
+              7,
+              -41.67305846153845,
+              -42.37705846153847,
+              0.24074687792423133,
+              8,
+              -7.039015384615382,
+              -6.073895384615412,
+              0.7592531220757687,
+              1,
+              8,
+              -76.15901538461539,
+              -37.68004923076924,
+              1.0,
+              1,
+              8,
+              -7.039015384615382,
+              -37.68004923076924,
+              1.0,
+              1,
+              8,
+              -76.15901538461539,
+              -69.2862030769231,
+              1.0,
+              1,
+              8,
+              -7.039015384615382,
+              -69.2862030769231,
+              1.0
+            ],
+            "hull": 0,
+            "width": 69.12,
+            "height": 63.21230769230769
+          }
+        },
+        "sleeve-upper-l": {
+          "sleeve-upper-l": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              14,
+              -19.80731076923078,
+              26.719507692307673,
+              1.0,
+              2,
+              14,
+              32.3773046153846,
+              26.719507692307673,
+              0.20821394258214565,
+              15,
+              5.671581538461524,
+              53.42523076923072,
+              0.7917860574178543,
+              1,
+              14,
+              -19.80731076923078,
+              -2.129723076923085,
+              1.0,
+              2,
+              14,
+              32.3773046153846,
+              -2.129723076923085,
+              0.2757282496953982,
+              15,
+              5.671581538461524,
+              24.575999999999965,
+              0.7242717503046018,
+              1,
+              14,
+              -19.80731076923078,
+              -30.978953846153843,
+              1.0,
+              2,
+              14,
+              32.3773046153846,
+              -30.978953846153843,
+              0.3482133240702646,
+              15,
+              5.671581538461524,
+              -4.273230769230793,
+              0.6517866759297354
+            ],
+            "hull": 0,
+            "width": 52.184615384615384,
+            "height": 57.69846153846154
+          }
+        },
+        "sleeve-lower-l": {
+          "sleeve-lower-l": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              6.580381538461523,
+              7.8148923076923325,
+              0.9226473650290814,
+              15,
+              -20.125341538461555,
+              34.52061538461538,
+              0.0773526349709186,
+              1,
+              15,
+              28.9085046153846,
+              34.52061538461538,
+              1.0,
+              2,
+              14,
+              6.580381538461523,
+              -19.163569230769212,
+              0.9588953873196489,
+              15,
+              -20.125341538461555,
+              7.5421538461538375,
+              0.041104612680351156,
+              1,
+              15,
+              28.9085046153846,
+              7.5421538461538375,
+              1.0,
+              2,
+              14,
+              6.580381538461523,
+              -46.14203076923076,
+              0.9845065352032769,
+              15,
+              -20.125341538461555,
+              -19.436307692307707,
+              0.01549346479672313,
+              1,
+              15,
+              28.9085046153846,
+              -19.436307692307707,
+              1.0
+            ],
+            "hull": 0,
+            "width": 49.033846153846156,
+            "height": 53.956923076923076
+          }
+        },
+        "cuff-l": {
+          "cuff-l": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              14,
+              24.10653538461537,
+              9.981046153846137,
+              0.4770391646405798,
+              15,
+              -2.5991876923077086,
+              36.68676923076919,
+              0.5229608353594202,
+              1,
+              15,
+              35.40696615384614,
+              36.68676923076919,
+              1.0,
+              2,
+              14,
+              24.10653538461537,
+              -15.717415384615379,
+              0.5461767505803294,
+              15,
+              -2.5991876923077086,
+              10.988307692307671,
+              0.4538232494196705,
+              1,
+              15,
+              35.40696615384614,
+              10.988307692307671,
+              1.0,
+              2,
+              14,
+              24.10653538461537,
+              -41.415876923076894,
+              0.6145270452958229,
+              15,
+              -2.5991876923077086,
+              -14.710153846153844,
+              0.3854729547041771,
+              1,
+              15,
+              35.40696615384614,
+              -14.710153846153844,
+              1.0
+            ],
+            "hull": 0,
+            "width": 38.00615384615384,
+            "height": 51.39692307692307
+          }
+        },
+        "blouse-torso": {
+          "blouse-torso": {
+            "x": -6.300553846153825,
+            "y": -9.575778461538448,
+            "width": 92.75076923076924,
+            "height": 116.9723076923077
+          }
+        },
+        "blouse-shadow": {
+          "blouse-shadow": {
+            "x": -5.808246153846133,
+            "y": -15.581932307692284,
+            "width": 88.61538461538461,
+            "height": 53.76
+          }
+        },
+        "collar-shadow": {
+          "collar-shadow": {
+            "x": -7.28516923076921,
+            "y": 14.251913846153855,
+            "width": 89.20615384615384,
+            "height": 49.23076923076923
+          }
+        },
+        "sleeve-upper-r": {
+          "sleeve-upper-r": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              7,
+              -71.80228923076922,
+              28.515249230769257,
+              0.980655387943709,
+              8,
+              -37.168246153846155,
+              64.81841230769231,
+              0.019344612056291025,
+              1,
+              7,
+              14.253095384615388,
+              28.515249230769257,
+              1.0,
+              2,
+              7,
+              -71.80228923076922,
+              -9.983212307692327,
+              0.31277829219824116,
+              8,
+              -37.168246153846155,
+              26.31995076923073,
+              0.6872217078017588,
+              1,
+              7,
+              14.253095384615388,
+              -9.983212307692327,
+              1.0,
+              1,
+              8,
+              -37.168246153846155,
+              -12.178510769230797,
+              1.0,
+              2,
+              7,
+              14.253095384615388,
+              -48.48167384615385,
+              0.9993723058971883,
+              8,
+              48.887138461538456,
+              -12.178510769230797,
+              0.0006276941028117523
+            ],
+            "hull": 0,
+            "width": 86.05538461538461,
+            "height": 76.99692307692308
+          }
+        },
+        "sleeve-lower-r": {
+          "sleeve-lower-r": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              7,
+              -71.80228923076922,
+              -17.564750769230784,
+              0.17356552245442292,
+              8,
+              -37.168246153846155,
+              18.738412307692272,
+              0.8264344775455771,
+              1,
+              7,
+              -12.92228923076923,
+              -17.564750769230784,
+              1.0,
+              1,
+              8,
+              -37.168246153846155,
+              -10.898510769230796,
+              1.0,
+              2,
+              7,
+              -12.92228923076923,
+              -47.20167384615385,
+              0.7015944807305734,
+              8,
+              21.71175384615384,
+              -10.898510769230796,
+              0.2984055192694266,
+              1,
+              8,
+              -37.168246153846155,
+              -40.535433846153865,
+              1.0,
+              2,
+              7,
+              -12.92228923076923,
+              -76.83859692307692,
+              0.1222182995262181,
+              8,
+              21.71175384615384,
+              -40.535433846153865,
+              0.8777817004737819
+            ],
+            "hull": 0,
+            "width": 58.88,
+            "height": 59.27384615384615
+          }
+        },
+        "cuff-r": {
+          "cuff-r": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              8,
+              -42.682092307692315,
+              2.196873846153835,
+              1.0,
+              2,
+              7,
+              -29.26690461538461,
+              -34.10628923076922,
+              0.6527778360560287,
+              8,
+              5.36713846153846,
+              2.196873846153835,
+              0.3472221639439713,
+              1,
+              8,
+              -42.682092307692315,
+              -22.418510769230778,
+              1.0,
+              2,
+              7,
+              -29.26690461538461,
+              -58.721673846153834,
+              0.16176699514630022,
+              8,
+              5.36713846153846,
+              -22.418510769230778,
+              0.8382330048536998,
+              1,
+              8,
+              -42.682092307692315,
+              -47.03389538461539,
+              1.0,
+              1,
+              8,
+              5.36713846153846,
+              -47.03389538461539,
+              1.0
+            ],
+            "hull": 0,
+            "width": 48.04923076923077,
+            "height": 49.23076923076923
+          }
+        },
+        "dress-back-panel": {
+          "dress-back-panel": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -125.73439999999998,
+              -37.538855384615346,
+              1.0,
+              1,
+              2,
+              -10.140553846153825,
+              -37.538855384615346,
+              1.0,
+              2,
+              2,
+              -125.73439999999998,
+              -109.21885538461535,
+              0.5698675464548106,
+              28,
+              -121.14431999999998,
+              -62.48369230769231,
+              0.4301324535451894,
+              2,
+              2,
+              -10.140553846153825,
+              -109.21885538461535,
+              0.5698675464548106,
+              28,
+              -5.55047384615383,
+              -62.48369230769231,
+              0.4301324535451894,
+              2,
+              2,
+              -125.73439999999998,
+              -180.89885538461536,
+              0.0021028297201166612,
+              28,
+              -121.14431999999998,
+              -134.16369230769232,
+              0.9978971702798833,
+              2,
+              2,
+              -10.140553846153825,
+              -180.89885538461536,
+              0.0021028297201166612,
+              28,
+              -5.55047384615383,
+              -134.16369230769232,
+              0.9978971702798833
+            ],
+            "hull": 0,
+            "width": 115.59384615384616,
+            "height": 143.36
+          }
+        },
+        "dress-skirt-1": {
+          "dress-skirt-1": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -107.42055384615382,
+              -35.96347076923075,
+              1.0,
+              1,
+              2,
+              -2.2636307692307476,
+              -35.96347076923075,
+              1.0,
+              2,
+              2,
+              -107.42055384615382,
+              -114.4373169230769,
+              0.5132843246180758,
+              28,
+              -102.83047384615382,
+              -67.70215384615386,
+              0.4867156753819241,
+              2,
+              2,
+              -2.2636307692307476,
+              -114.4373169230769,
+              0.5132843246180758,
+              28,
+              2.3264492307692475,
+              -67.70215384615386,
+              0.4867156753819241,
+              1,
+              28,
+              -102.83047384615382,
+              -146.176,
+              1.0,
+              1,
+              28,
+              2.3264492307692475,
+              -146.176,
+              1.0
+            ],
+            "hull": 0,
+            "width": 105.15692307692308,
+            "height": 156.9476923076923
+          }
+        },
+        "pouch-shadow": {
+          "pouch-shadow": {
+            "x": -38.39901538461537,
+            "y": -100.75116307692304,
+            "width": 51.79076923076923,
+            "height": 68.13538461538461
+          }
+        },
+        "dress-skirt-2": {
+          "dress-skirt-2": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -62.325169230769205,
+              -33.20654769230765,
+              1.0,
+              1,
+              2,
+              48.936369230769245,
+              -33.20654769230765,
+              1.0,
+              2,
+              2,
+              -62.325169230769205,
+              -117.39116307692305,
+              0.481146830740525,
+              28,
+              -57.73508923076921,
+              -70.656,
+              0.518853169259475,
+              2,
+              2,
+              48.936369230769245,
+              -117.39116307692305,
+              0.481146830740525,
+              28,
+              53.526449230769245,
+              -70.656,
+              0.518853169259475,
+              1,
+              28,
+              -57.73508923076921,
+              -154.84061538461538,
+              1.0,
+              1,
+              28,
+              53.526449230769245,
+              -154.84061538461538,
+              1.0
+            ],
+            "hull": 0,
+            "width": 111.26153846153846,
+            "height": 168.36923076923077
+          }
+        },
+        "dress-skirt-3": {
+          "dress-skirt-3": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              6.5979076923077145,
+              -34.38808615384613,
+              1.0,
+              1,
+              2,
+              119.63175384615386,
+              -34.38808615384613,
+              1.0,
+              2,
+              2,
+              6.5979076923077145,
+              -116.60347076923074,
+              0.4897149305655977,
+              28,
+              11.18798769230771,
+              -69.8683076923077,
+              0.5102850694344023,
+              2,
+              2,
+              119.63175384615386,
+              -116.60347076923074,
+              0.4897149305655977,
+              28,
+              124.22183384615386,
+              -69.8683076923077,
+              0.5102850694344023,
+              1,
+              28,
+              11.18798769230771,
+              -152.08369230769233,
+              1.0,
+              1,
+              28,
+              124.22183384615386,
+              -152.08369230769233,
+              1.0
+            ],
+            "hull": 0,
+            "width": 113.03384615384616,
+            "height": 164.43076923076924
+          }
+        },
+        "dress-side-tie": {
+          "dress-side-tie": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              1,
+              2,
+              -64.68824615384614,
+              -29.465009230769226,
+              1.0,
+              1,
+              2,
+              -28.848246153846134,
+              -29.465009230769226,
+              1.0,
+              2,
+              2,
+              -64.68824615384614,
+              -49.551163076923046,
+              0.9987650711778425,
+              28,
+              -60.09816615384614,
+              -2.8160000000000025,
+              0.0012349288221574263,
+              2,
+              2,
+              -28.848246153846134,
+              -49.551163076923046,
+              0.9987650711778425,
+              28,
+              -24.258166153846137,
+              -2.8160000000000025,
+              0.0012349288221574263,
+              2,
+              2,
+              -64.68824615384614,
+              -69.6373169230769,
+              0.9263618848221575,
+              28,
+              -60.09816615384614,
+              -22.90215384615385,
+              0.0736381151778425,
+              2,
+              2,
+              -28.848246153846134,
+              -69.6373169230769,
+              0.9263618848221575,
+              28,
+              -24.258166153846137,
+              -22.90215384615385,
+              0.0736381151778425
+            ],
+            "hull": 0,
+            "width": 35.84,
+            "height": 40.17230769230769
+          }
+        },
+        "dress-pocket": {
+          "dress-pocket": {
+            "type": "mesh",
+            "uvs": [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "triangles": [
+              0,
+              2,
+              1,
+              1,
+              2,
+              3,
+              2,
+              4,
+              3,
+              3,
+              4,
+              5
+            ],
+            "vertices": [
+              2,
+              2,
+              -78.6697846153846,
+              -84.60347076923074,
+              0.815060425463557,
+              28,
+              -74.0797046153846,
+              -37.868307692307695,
+              0.18493957453644302,
+              2,
+              2,
+              108.60406153846155,
+              -84.60347076923074,
+              0.815060425463557,
+              28,
+              113.19414153846155,
+              -37.868307692307695,
+              0.18493957453644302,
+              2,
+              2,
+              -78.6697846153846,
+              -143.6803938461538,
+              0.21187302604664737,
+              28,
+              -74.0797046153846,
+              -96.94523076923076,
+              0.7881269739533526,
+              2,
+              2,
+              108.60406153846155,
+              -143.6803938461538,
+              0.21187302604664737,
+              28,
+              113.19414153846155,
+              -96.94523076923076,
+              0.7881269739533526,
+              1,
+              28,
+              -74.0797046153846,
+              -156.02215384615386,
+              1.0,
+              1,
+              28,
+              113.19414153846155,
+              -156.02215384615386,
+              1.0
+            ],
+            "hull": 0,
+            "width": 187.27384615384616,
+            "height": 118.15384615384616
+          }
+        },
+        "dress-strap-r": {
+          "dress-strap-r": {
+            "x": -7.088246153846132,
+            "y": -9.575778461538448,
+            "width": 27.372307692307693,
+            "height": 46.86769230769231
+          }
+        },
+        "dress-strap-l": {
+          "dress-strap-l": {
+            "x": 36.33329230769233,
+            "y": -9.575778461538448,
+            "width": 15.36,
+            "height": 47.65538461538461
+          }
+        },
+        "dress-bib": {
+          "dress-bib": {
+            "x": 3.5456000000000216,
+            "y": -30.64654769230765,
+            "width": 84.48,
+            "height": 42.92923076923077
+          }
+        },
+        "belt": {
+          "belt": {
+            "x": 26.280566153846134,
+            "y": 106.47315692307696,
+            "width": 107.71692307692308,
+            "height": 38.793846153846154
+          }
+        },
+        "belt-ring": {
+          "belt-ring": {
+            "x": -2.470203076923096,
+            "y": 100.95931076923081,
+            "width": 21.858461538461537,
+            "height": 17.526153846153846
+          }
+        },
+        "belt-loop": {
+          "belt-loop": {
+            "x": -5.522510769230788,
+            "y": 110.9039261538462,
+            "width": 16.147692307692306,
+            "height": 23.630769230769232
+          }
+        },
+        "belt-buckle": {
+          "belt-buckle": {
+            "x": 39.96671999999998,
+            "y": 108.3439261538462,
+            "width": 25.6,
+            "height": 23.236923076923077
+          }
+        },
+        "pouch-bag": {
+          "pouch-bag": {
+            "x": -19.907347692307713,
+            "y": -29.654252307692275,
+            "width": 39.778461538461535,
+            "height": 56.713846153846156
+          }
+        },
+        "pouch-string": {
+          "pouch-string": {
+            "x": -10.258116923076942,
+            "y": -20.005021538461506,
+            "width": 61.04615384615385,
+            "height": 76.8
+          }
+        },
+        "pouch-sprig": {
+          "pouch-sprig": {
+            "x": -16.95350153846156,
+            "y": 5.791901538461559,
+            "width": 38.20307692307692,
+            "height": 27.56923076923077
+          }
+        },
+        "collar-ribbon-tail-r": {
+          "collar-ribbon-tail-r": {
+            "x": -7.2282584615384415,
+            "y": -26.182104615384617,
+            "width": 19.889230769230767,
+            "height": 37.02153846153846
+          }
+        },
+        "collar-ribbon-tail-l": {
+          "collar-ribbon-tail-l": {
+            "x": 8.427126153846174,
+            "y": -32.089796923076904,
+            "width": 29.53846153846154,
+            "height": 50.41230769230769
+          }
+        },
+        "leaf-4": {
+          "leaf-4": {
+            "x": -57.24671999999998,
+            "y": -12.102104615384576,
+            "width": 129.7723076923077,
+            "height": 42.73230769230769
+          }
+        },
+        "leaf-2": {
+          "leaf-2": {
+            "x": -48.582104615384594,
+            "y": 19.208664615384635,
+            "width": 98.65846153846154,
+            "height": 27.766153846153845
+          }
+        },
+        "leaf-5": {
+          "leaf-5": {
+            "x": 14.137895384615405,
+            "y": 16.45174153846159,
+            "width": 37.02153846153846,
+            "height": 30.523076923076925
+          }
+        },
+        "leaf-8": {
+          "leaf-8": {
+            "x": 30.088664615384637,
+            "y": -8.36056615384615,
+            "width": 43.716923076923074,
+            "height": 25.403076923076924
+          }
+        },
+        "leaf-3": {
+          "leaf-3": {
+            "x": -24.65595076923075,
+            "y": -17.41902769230768,
+            "width": 48.83692307692308,
+            "height": 44.30769230769231
+          }
+        },
+        "leaf-7": {
+          "leaf-7": {
+            "x": 17.190203076923098,
+            "y": -13.677489230769197,
+            "width": 36.036923076923074,
+            "height": 33.673846153846156
+          }
+        },
+        "leaf-1": {
+          "leaf-1": {
+            "x": -53.997489230769204,
+            "y": 2.7655876923076903,
+            "width": 108.3076923076923,
+            "height": 32.68923076923077
+          }
+        },
+        "leaf-6": {
+          "leaf-6": {
+            "x": 24.279433846153864,
+            "y": 4.833280000000002,
+            "width": 50.215384615384615,
+            "height": 20.283076923076923
+          }
+        },
+        "clover-brooch": {
+          "clover-brooch": {
+            "x": 0.7471261538461746,
+            "y": -1.3697969230768763,
+            "width": 29.53846153846154,
+            "height": 27.56923076923077
+          }
+        },
+        "teapot-body": {
+          "teapot-body": {
+            "x": 40.98756923076925,
+            "y": 2.920369230769211,
+            "width": 59.47076923076923,
+            "height": 56.91076923076923
+          }
+        },
+        "teapot-tea": {
+          "teapot-tea": {
+            "x": 40.98756923076925,
+            "y": -4.858092307692289,
+            "width": 50.41230769230769,
+            "height": 27.56923076923077
+          }
+        },
+        "teapot-glint": {
+          "teapot-glint": {
+            "x": 35.37526153846156,
+            "y": 14.538830769230742,
+            "width": 18.313846153846153,
+            "height": 16.73846153846154
+          }
+        },
+        "teapot-lid": {
+          "teapot-lid": {
+            "x": 40.49526153846156,
+            "y": 38.26806153846155,
+            "width": 43.52,
+            "height": 28.75076923076923
+          }
+        },
+        "ear-r-outer": {
+          "ear-r-outer": {
+            "x": -5.432516923076918,
+            "y": 40.26820923076923,
+            "width": 77.19384615384615,
+            "height": 109.88307692307693
+          }
+        },
+        "ear-r-inner": {
+          "ear-r-inner": {
+            "x": -9.764824615384612,
+            "y": 41.84359384615385,
+            "width": 55.926153846153845,
+            "height": 97.67384615384616
+          }
+        },
+        "ear-r-shadow": {
+          "ear-r-shadow": {
+            "x": -3.1679015384615354,
+            "y": 21.560516923076932,
+            "width": 36.43076923076923,
+            "height": 55.13846153846154
+          }
+        },
+        "ear-r-floof": {
+          "ear-r-floof": {
+            "x": -3.660209230769226,
+            "y": 42.04051692307695,
+            "width": 43.323076923076925,
+            "height": 35.05230769230769
+          }
+        },
+        "ear-l-outer": {
+          "ear-l-outer": {
+            "x": 1.62717538461537,
+            "y": 33.6799507692308,
+            "width": 66.95384615384616,
+            "height": 109.48923076923077
+          }
+        },
+        "ear-l-inner": {
+          "ear-l-inner": {
+            "x": -0.6374400000000122,
+            "y": 36.436873846153844,
+            "width": 61.24307692307692,
+            "height": 97.67384615384616
+          }
+        },
+        "ear-l-shadow": {
+          "ear-l-shadow": {
+            "x": 4.581021538461528,
+            "y": 15.858412307692333,
+            "width": 36.23384615384615,
+            "height": 53.76
+          }
+        },
+        "ear-l-floof": {
+          "ear-l-floof": {
+            "x": 11.079483076923069,
+            "y": 31.119950769230798,
+            "width": 36.62769230769231,
+            "height": 50.41230769230769
+          }
+        },
+        "hair-back": {
+          "hair-back": {
+            "x": -18.551335384615363,
+            "y": 29.800566153846148,
+            "width": 177.23076923076923,
+            "height": 81.52615384615385
+          }
+        },
+        "head-base": {
+          "head-base": {
+            "x": -19.535950769230748,
+            "y": 10.40364307692306,
+            "width": 224.4923076923077,
+            "height": 127.40923076923077
+          }
+        },
+        "head-shadow": {
+          "head-shadow": {
+            "x": -19.43748923076921,
+            "y": -38.728664615384616,
+            "width": 177.4276923076923,
+            "height": 28.75076923076923
+          }
+        },
+        "bangs-shadow": {
+          "bangs-shadow": {
+            "x": -3.3882584615384417,
+            "y": 41.51748923076923,
+            "width": 95.70461538461538,
+            "height": 23.827692307692306
+          }
+        },
+        "hair-top-curl": {
+          "hair-top-curl": {
+            "x": 1.557464615384637,
+            "y": 14.655409230769237,
+            "width": 60.45538461538462,
+            "height": 52.184615384615384
+          }
+        },
+        "hair-bang-1": {
+          "hair-bang-1": {
+            "x": -60.59441230769229,
+            "y": 42.00979692307692,
+            "width": 80.14769230769231,
+            "height": 42.92923076923077
+          }
+        },
+        "hair-bang-2": {
+          "hair-bang-2": {
+            "x": -24.45902769230767,
+            "y": 53.62825846153845,
+            "width": 50.80615384615385,
+            "height": 37.41538461538462
+          }
+        },
+        "hair-bang-3": {
+          "hair-bang-3": {
+            "x": -1.32056615384613,
+            "y": 62.29287384615384,
+            "width": 44.70153846153846,
+            "height": 29.53846153846154
+          }
+        },
+        "hair-bang-4": {
+          "hair-bang-4": {
+            "x": 26.051741538461563,
+            "y": 49.099027692307686,
+            "width": 47.45846153846154,
+            "height": 38.20307692307692
+          }
+        },
+        "hair-side-r": {
+          "hair-side-r": {
+            "x": -103.52364307692307,
+            "y": 18.674412307692307,
+            "width": 60.84923076923077,
+            "height": 53.76
+          }
+        },
+        "hair-side-l": {
+          "hair-side-l": {
+            "x": 67.6025107692308,
+            "y": 14.342104615384642,
+            "width": 45.88307692307692,
+            "height": 63.21230769230769
+          }
+        },
+        "cheek-fluff-r-1": {
+          "cheek-fluff-r-1": {
+            "x": -99.48671999999998,
+            "y": -14.408664615384623,
+            "width": 54.35076923076923,
+            "height": 34.855384615384615
+          }
+        },
+        "cheek-fluff-r-2": {
+          "cheek-fluff-r-2": {
+            "x": -90.72364307692305,
+            "y": -33.70712615384616,
+            "width": 57.69846153846154,
+            "height": 35.24923076923077
+          }
+        },
+        "cheek-fluff-l-1": {
+          "cheek-fluff-l-1": {
+            "x": 73.31328000000002,
+            "y": -17.756356923076908,
+            "width": 30.916923076923077,
+            "height": 36.43076923076923
+          }
+        },
+        "cheek-fluff-l-2": {
+          "cheek-fluff-l-2": {
+            "x": 57.26404923076925,
+            "y": -34.49481846153844,
+            "width": 40.17230769230769,
+            "height": 32.49230769230769
+          }
+        },
+        "eye-r-eyelid-open": {
+          "eye-r-eyelid-open": {
+            "x": -41.98518153846152,
+            "y": 10.40364307692306,
+            "width": 80.73846153846154,
+            "height": 53.76
+          }
+        },
+        "eye-l-eyelid-open": {
+          "eye-l-eyelid-open": {
+            "x": 40.13174153846156,
+            "y": 12.27441230769233,
+            "width": 45.68615384615384,
+            "height": 50.41230769230769
+          }
+        },
+        "eye-r-white": {
+          "eye-r-white": {
+            "x": -33.02518153846152,
+            "y": 8.729796923076947,
+            "width": 50.60923076923077,
+            "height": 37.809230769230766
+          }
+        },
+        "eye-l-white": {
+          "eye-l-white": {
+            "x": 35.70097230769233,
+            "y": 11.78210461538464,
+            "width": 25.796923076923076,
+            "height": 36.036923076923074
+          }
+        },
+        "eye-r-iris": {
+          "eye-r-iris": {
+            "x": -35.683643076923055,
+            "y": 9.222104615384637,
+            "width": 33.08307692307692,
+            "height": 36.824615384615385
+          }
+        },
+        "eye-l-iris": {
+          "eye-l-iris": {
+            "x": 32.35328000000002,
+            "y": 12.569796923076922,
+            "width": 17.92,
+            "height": 34.46153846153846
+          }
+        },
+        "eye-r-pupil": {
+          "eye-r-pupil": {
+            "x": -36.66825846153844,
+            "y": 6.465181538461536,
+            "width": 13.39076923076923,
+            "height": 19.889230769230767
+          }
+        },
+        "eye-l-pupil": {
+          "eye-l-pupil": {
+            "x": 28.316356923076945,
+            "y": 8.828258461538496,
+            "width": 10.24,
+            "height": 18.70769230769231
+          }
+        },
+        "eye-r-sparkle-1": {
+          "eye-r-sparkle-1": {
+            "x": -38.24364307692306,
+            "y": 16.212873846153855,
+            "width": 5.12,
+            "height": 5.12
+          }
+        },
+        "eye-l-sparkle-1": {
+          "eye-l-sparkle-1": {
+            "x": 29.891741538461567,
+            "y": 17.099027692307686,
+            "width": 3.9384615384615387,
+            "height": 4.529230769230769
+          }
+        },
+        "eye-r-sparkle-2": {
+          "eye-r-sparkle-2": {
+            "x": -42.674412307692286,
+            "y": 12.668258461538471,
+            "width": 4.529230769230769,
+            "height": 4.332307692307692
+          }
+        },
+        "eye-l-sparkle-2": {
+          "eye-l-sparkle-2": {
+            "x": 27.4302030769231,
+            "y": 13.259027692307711,
+            "width": 2.56,
+            "height": 3.5446153846153847
+          }
+        },
+        "eye-r-sparkle-3": {
+          "eye-r-sparkle-3": {
+            "x": -35.48671999999998,
+            "y": -5.153279999999995,
+            "width": 1.9692307692307693,
+            "height": 2.953846153846154
+          }
+        },
+        "eye-l-sparkle-3": {
+          "eye-l-sparkle-3": {
+            "x": 31.467126153846174,
+            "y": -0.42712615384613173,
+            "width": 1.5753846153846154,
+            "height": 1.7723076923076924
+          }
+        },
+        "eye-r-lashline-bottom": {
+          "eye-r-lashline-bottom": {
+            "x": -37.25902769230767,
+            "y": 7.942104615384608,
+            "width": 41.353846153846156,
+            "height": 33.47692307692308
+          }
+        },
+        "eye-l-lashline-bottom": {
+          "eye-l-lashline-bottom": {
+            "x": 35.8978953846154,
+            "y": 11.1913353846154,
+            "width": 24.615384615384617,
+            "height": 30.523076923076925
+          }
+        },
+        "eye-r-lashline-top": {
+          "eye-r-lashline-top": {
+            "x": -40.409796923076904,
+            "y": 11.68364307692309,
+            "width": 63.40923076923077,
+            "height": 31.50769230769231
+          }
+        },
+        "eye-l-lashline-top": {
+          "eye-l-lashline-top": {
+            "x": 38.753280000000025,
+            "y": 19.757489230769238,
+            "width": 30.326153846153847,
+            "height": 21.661538461538463
+          }
+        },
+        "eye-r-eyelid": {
+          "eye-r-eyelid": {
+            "x": -41.98518153846152,
+            "y": 10.40364307692306,
+            "width": 78.76923076923077,
+            "height": 51.79076923076923
+          }
+        },
+        "eye-l-eyelid": {
+          "eye-l-eyelid": {
+            "x": 40.13174153846156,
+            "y": 12.37287384615388,
+            "width": 43.716923076923074,
+            "height": 48.64
+          }
+        },
+        "brow-r": {
+          "brow-r": {
+            "x": -36.471335384615365,
+            "y": 43.58518153846154,
+            "width": 27.56923076923077,
+            "height": 10.24
+          }
+        },
+        "brow-l": {
+          "brow-l": {
+            "x": 32.64866461538464,
+            "y": 43.88056615384613,
+            "width": 20.48,
+            "height": 10.830769230769231
+          }
+        },
+        "nose": {
+          "nose": {
+            "x": 17.879433846153866,
+            "y": -9.78097230769231,
+            "width": 16.54153846153846,
+            "height": 13.784615384615385
+          }
+        },
+        "mouth-closed": {
+          "mouth-closed": {
+            "x": 11.676356923076945,
+            "y": -17.756356923076908,
+            "width": 32.098461538461535,
+            "height": 10.436923076923076
+          }
+        },
+        "blush-r": {
+          "blush-r": {
+            "x": -64.82825846153844,
+            "y": -12.045587692307663,
+            "width": 30.72,
+            "height": 20.283076923076923
+          }
+        },
+        "blush-l": {
+          "blush-l": {
+            "x": 57.85481846153848,
+            "y": -9.48558769230766,
+            "width": 21.661538461538463,
+            "height": 19.495384615384616
+          }
+        },
+        "eye-r-closed": {
+          "eye-r-closed": {
+            "x": -39.720566153846136,
+            "y": 2.231335384615363,
+            "width": 59.667692307692306,
+            "height": 14.572307692307692
+          }
+        },
+        "eye-l-closed": {
+          "eye-l-closed": {
+            "x": 39.442510769230786,
+            "y": 3.019027692307702,
+            "width": 30.523076923076925,
+            "height": 13.39076923076923
+          }
+        },
+        "mouth-smile": {
+          "mouth-smile": {
+            "x": 14.53174153846156,
+            "y": -17.362510769230767,
+            "width": 37.02153846153846,
+            "height": 10.043076923076923
+          }
+        },
+        "mouth-inner": {
+          "mouth-inner": {
+            "x": 12.56251076923079,
+            "y": -20.8086646153846,
+            "width": 31.50769230769231,
+            "height": 7.0892307692307694
+          }
+        },
+        "mouth-tongue": {
+          "mouth-tongue": {
+            "x": 17.091741538461562,
+            "y": -22.777895384615363,
+            "width": 7.483076923076923,
+            "height": 2.363076923076923
+          }
+        },
+        "whiskers-r": {
+          "whiskers-r": {
+            "x": -65.51748923076921,
+            "y": -27.996356923076917,
+            "width": 78.96615384615384,
+            "height": 33.28
+          }
+        },
+        "whiskers-l": {
+          "whiskers-l": {
+            "x": 63.56558769230771,
+            "y": -20.41481846153846,
+            "width": 48.44307692307692,
+            "height": 22.44923076923077
+          }
+        }
+      }
+    }
+  ],
+  "events": {
+    "hit": {},
+    "cast": {},
+    "ult-start": {},
+    "ult-end": {}
+  },
+  "animations": {
+    "idle": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 2.5
+            }
+          ]
+        },
+        "torso": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 1.25,
+              "x": 0.998,
+              "y": 1.006
+            },
+            {
+              "time": 2.5,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "head-pivot": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.2
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "tail-1": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 0.7
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "tail-2": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": -0.5
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "tail-3": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 0.7
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "tail-4": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": -0.5
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "tail-5": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 0.7
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "ear-r-outer": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.5
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "ear-l-outer": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.5
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "cloth": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.2
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "hair-tip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.2
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "collar": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.2
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        },
+        "pouch": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.2
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "slots": {
+        "eye-r-eyelid-open": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-eyelid-open"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-eyelid-open"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-eyelid-open"
+            }
+          ]
+        },
+        "eye-l-eyelid-open": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-eyelid-open"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-eyelid-open"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-eyelid-open"
+            }
+          ]
+        },
+        "eye-r-white": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-white"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-white"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-white"
+            }
+          ]
+        },
+        "eye-l-white": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-white"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-white"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-white"
+            }
+          ]
+        },
+        "eye-r-iris": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-iris"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-iris"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-iris"
+            }
+          ]
+        },
+        "eye-l-iris": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-iris"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-iris"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-iris"
+            }
+          ]
+        },
+        "eye-r-pupil": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-pupil"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-pupil"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-pupil"
+            }
+          ]
+        },
+        "eye-l-pupil": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-pupil"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-pupil"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-pupil"
+            }
+          ]
+        },
+        "eye-r-sparkle-1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-1"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-sparkle-1"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-sparkle-1"
+            }
+          ]
+        },
+        "eye-l-sparkle-1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-1"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-sparkle-1"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-sparkle-1"
+            }
+          ]
+        },
+        "eye-r-sparkle-2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-2"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-sparkle-2"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-sparkle-2"
+            }
+          ]
+        },
+        "eye-l-sparkle-2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-2"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-sparkle-2"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-sparkle-2"
+            }
+          ]
+        },
+        "eye-r-sparkle-3": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-3"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-sparkle-3"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-sparkle-3"
+            }
+          ]
+        },
+        "eye-l-sparkle-3": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-3"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-sparkle-3"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-sparkle-3"
+            }
+          ]
+        },
+        "eye-r-lashline-bottom": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-lashline-bottom"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-lashline-bottom"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-lashline-bottom"
+            }
+          ]
+        },
+        "eye-l-lashline-bottom": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-lashline-bottom"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-lashline-bottom"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-lashline-bottom"
+            }
+          ]
+        },
+        "eye-r-lashline-top": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-lashline-top"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-r-lashline-top"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-r-lashline-top"
+            }
+          ]
+        },
+        "eye-l-lashline-top": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-lashline-top"
+            },
+            {
+              "time": 1.675,
+              "name": null
+            },
+            {
+              "time": 1.7875,
+              "name": "eye-l-lashline-top"
+            },
+            {
+              "time": 2.5,
+              "name": "eye-l-lashline-top"
+            }
+          ]
+        },
+        "eye-r-eyelid": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.675,
+              "name": "eye-r-eyelid"
+            },
+            {
+              "time": 1.7875,
+              "name": null
+            },
+            {
+              "time": 2.5,
+              "name": null
+            }
+          ]
+        },
+        "eye-l-eyelid": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.675,
+              "name": "eye-l-eyelid"
+            },
+            {
+              "time": 1.7875,
+              "name": null
+            },
+            {
+              "time": 2.5,
+              "name": null
+            }
+          ]
+        },
+        "eye-r-closed": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.675,
+              "name": "eye-r-closed"
+            },
+            {
+              "time": 1.7875,
+              "name": null
+            },
+            {
+              "time": 2.5,
+              "name": null
+            }
+          ]
+        },
+        "eye-l-closed": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.675,
+              "name": "eye-l-closed"
+            },
+            {
+              "time": 1.7875,
+              "name": null
+            },
+            {
+              "time": 2.5,
+              "name": null
+            }
+          ]
+        }
+      }
+    },
+    "appear": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": -80
+            },
+            {
+              "time": 0.455,
+              "x": 4
+            },
+            {
+              "time": 0.65
+            }
+          ]
+        }
+      }
+    },
+    "attack": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.1875,
+              "x": -15
+            },
+            {
+              "time": 0.36,
+              "x": 24
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.18,
+              "value": 2
+            },
+            {
+              "time": 0.4125,
+              "value": -2
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        },
+        "r-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.1875,
+              "value": -5
+            },
+            {
+              "time": 0.4125,
+              "value": 5
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        },
+        "l-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.1875,
+              "value": 3
+            },
+            {
+              "time": 0.4125,
+              "value": -4
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "hit",
+          "time": 0.36
+        }
+      ]
+    },
+    "skill": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1.0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.24,
+              "value": 2
+            },
+            {
+              "time": 0.55,
+              "value": -2
+            },
+            {
+              "time": 1.0
+            }
+          ]
+        },
+        "r-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.25,
+              "value": -5
+            },
+            {
+              "time": 0.55,
+              "value": 5
+            },
+            {
+              "time": 1.0
+            }
+          ]
+        },
+        "l-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.25,
+              "value": 3
+            },
+            {
+              "time": 0.55,
+              "value": -4
+            },
+            {
+              "time": 1.0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "cast",
+          "time": 0.25
+        },
+        {
+          "name": "hit",
+          "time": 0.55
+        }
+      ]
+    },
+    "ult": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 2.0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.48,
+              "value": 2
+            },
+            {
+              "time": 1.1,
+              "value": -2
+            },
+            {
+              "time": 2.0
+            }
+          ]
+        },
+        "r-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.5,
+              "value": -5
+            },
+            {
+              "time": 1.1,
+              "value": 5
+            },
+            {
+              "time": 2.0
+            }
+          ]
+        },
+        "l-arm-upper": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.5,
+              "value": 3
+            },
+            {
+              "time": 1.1,
+              "value": -4
+            },
+            {
+              "time": 2.0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "ult-start",
+          "time": 0.08
+        },
+        {
+          "name": "cast",
+          "time": 0.5
+        },
+        {
+          "name": "hit",
+          "time": 1.1
+        },
+        {
+          "name": "ult-end",
+          "time": 1.88
+        }
+      ]
+    },
+    "hurt": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.35
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.175,
+              "value": 4
+            },
+            {
+              "time": 0.35,
+              "value": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.0875,
+              "x": -12
+            },
+            {
+              "time": 0.35
+            }
+          ]
+        }
+      }
+    },
+    "ko": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1.0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.8,
+              "value": -68
+            },
+            {
+              "time": 1.0,
+              "value": -72
+            }
+          ],
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1.0,
+              "y": -128.0
+            }
+          ]
+        }
+      }
+    },
+    "victory": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1.75
+            }
+          ]
+        },
+        "torso": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 0.875,
+              "x": 0.998,
+              "y": 1.006
+            },
+            {
+              "time": 1.75,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "head-pivot": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 2.0
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "tail-1": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 0.7
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "tail-2": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": -0.5
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "tail-3": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 0.7
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "tail-4": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": -0.5
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "tail-5": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 0.7
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "ear-r-outer": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.5
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "ear-l-outer": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.5
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "cloth": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.2
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "hair-tip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.2
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "collar": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.2
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        },
+        "pouch": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 1.2
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "slots": {
+        "eye-r-eyelid-open": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-eyelid-open"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-eyelid-open"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-eyelid-open"
+            }
+          ]
+        },
+        "eye-l-eyelid-open": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-eyelid-open"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-eyelid-open"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-eyelid-open"
+            }
+          ]
+        },
+        "eye-r-white": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-white"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-white"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-white"
+            }
+          ]
+        },
+        "eye-l-white": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-white"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-white"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-white"
+            }
+          ]
+        },
+        "eye-r-iris": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-iris"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-iris"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-iris"
+            }
+          ]
+        },
+        "eye-l-iris": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-iris"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-iris"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-iris"
+            }
+          ]
+        },
+        "eye-r-pupil": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-pupil"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-pupil"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-pupil"
+            }
+          ]
+        },
+        "eye-l-pupil": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-pupil"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-pupil"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-pupil"
+            }
+          ]
+        },
+        "eye-r-sparkle-1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-1"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-sparkle-1"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-sparkle-1"
+            }
+          ]
+        },
+        "eye-l-sparkle-1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-1"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-sparkle-1"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-sparkle-1"
+            }
+          ]
+        },
+        "eye-r-sparkle-2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-2"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-sparkle-2"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-sparkle-2"
+            }
+          ]
+        },
+        "eye-l-sparkle-2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-2"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-sparkle-2"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-sparkle-2"
+            }
+          ]
+        },
+        "eye-r-sparkle-3": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-sparkle-3"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-sparkle-3"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-sparkle-3"
+            }
+          ]
+        },
+        "eye-l-sparkle-3": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-sparkle-3"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-sparkle-3"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-sparkle-3"
+            }
+          ]
+        },
+        "eye-r-lashline-bottom": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-lashline-bottom"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-lashline-bottom"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-lashline-bottom"
+            }
+          ]
+        },
+        "eye-l-lashline-bottom": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-lashline-bottom"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-lashline-bottom"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-lashline-bottom"
+            }
+          ]
+        },
+        "eye-r-lashline-top": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-r-lashline-top"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-r-lashline-top"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-r-lashline-top"
+            }
+          ]
+        },
+        "eye-l-lashline-top": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "eye-l-lashline-top"
+            },
+            {
+              "time": 1.1725,
+              "name": null
+            },
+            {
+              "time": 1.2512,
+              "name": "eye-l-lashline-top"
+            },
+            {
+              "time": 1.75,
+              "name": "eye-l-lashline-top"
+            }
+          ]
+        },
+        "eye-r-eyelid": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.1725,
+              "name": "eye-r-eyelid"
+            },
+            {
+              "time": 1.2512,
+              "name": null
+            },
+            {
+              "time": 1.75,
+              "name": null
+            }
+          ]
+        },
+        "eye-l-eyelid": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.1725,
+              "name": "eye-l-eyelid"
+            },
+            {
+              "time": 1.2512,
+              "name": null
+            },
+            {
+              "time": 1.75,
+              "name": null
+            }
+          ]
+        },
+        "eye-r-closed": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.1725,
+              "name": "eye-r-closed"
+            },
+            {
+              "time": 1.2512,
+              "name": null
+            },
+            {
+              "time": 1.75,
+              "name": null
+            }
+          ]
+        },
+        "eye-l-closed": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": null
+            },
+            {
+              "time": 1.1725,
+              "name": "eye-l-closed"
+            },
+            {
+              "time": 1.2512,
+              "name": null
+            },
+            {
+              "time": 1.75,
+              "name": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "laneC": {
+    "status": "placeholder",
+    "source": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/02-meo-cats/clover/parts-src/manifest.json",
+    "sourceHashes": {
+      "parts-src/manifest.json": "5d3ea2f69230ca564a2f71af7c9ab410c5b297026050b5b38fafcaadd6574369",
+      "quality-checks/final-gates.json": "c7045f554d588c6dd6ba6aad1eac20f7d763eb77c9989d50cae6f570d505f2e9",
+      "parts-src/PROVENANCE.md": "6bc08bc0972f7273e312ac624a461413eb13da2a0459e991c1454cb4454c1c49",
+      "clover-rig-notes.md": "5dc538c6fca1ed398ce646397042040dceaf9d2a38200c0e3d5e7a5fea1a6d5f",
+      "clover-rig-pivots.json": "53b06b068b66bf5952f4a9395c7f472acf1090bc3e9fcca4eebb2960d466d6a8",
+      "clover-rig-3-4-right.psd": "8b51d59a016835d9d4ab5f652a70f80cbcbd8f6d885d779fa0939f78d9414f4c",
+      "parts-src/layers/tail-1.png": "b8ab9b2039c6de70f3aedb81236a0bd557d46627b0d0b622a6ae1d6610e70cb9",
+      "parts-src/layers/tail-shadow.png": "de1eda2a3cf4de2ed307864303a00246fead53d728e40e19d846cbbe5c3fc9a1",
+      "parts-src/layers/tail-2.png": "21583e362c0887a2889543d91229293df0d80889a5df39a2d24818f80f243228",
+      "parts-src/layers/tail-3.png": "83e6490a7f8fa17cf9846a131b8974002fa73c31d3d3f58d83fe4506aa896c3d",
+      "parts-src/layers/tail-4.png": "605f638d93243922680cda6f340129cf7850979dd8d1f407c283710456b4d745",
+      "parts-src/layers/tail-5.png": "af12c984e90434876889755b108b630b31ba3c142842272e302930528ad342ec",
+      "parts-src/layers/tail-tip-fluff.png": "9d1341bf82316d9c2977693986d506efdf1356746d79732df5010c944625cf0f",
+      "parts-src/layers/hips.png": "5047c649e22fda69d25f1a45c62ccd1c5ba34165ac85b7ce801c5ff27a1acbb8",
+      "parts-src/layers/belly.png": "962ab7663914fd165c77dab9d113f163beee716303b45d673c094120897689ea",
+      "parts-src/layers/torso.png": "e9d64e9bc74d40d5b1d277b959ae6ab8786ac499db386f25edae479065c00530",
+      "parts-src/layers/neck.png": "da7f4e79bec282669d5f0dc48afe48e5682240492656e913406bc05e1673aede",
+      "parts-src/layers/chest-ruff-1.png": "e37c65b737b3ef94f2bf092ca021636cd7124163710421bd0a243dc465beee2b",
+      "parts-src/layers/chest-ruff-2.png": "62aa1ac0b5256c13e7383cb6b8eee898f236ecae42ad67622a204e1ec8f52680",
+      "parts-src/layers/l-thigh.png": "11ce5166d6124d7a152c9efb6896f1f892da2dc4d62eb626954951925c781aa4",
+      "parts-src/layers/l-leg-lower.png": "b37f71edb4f51f7461df8a0fd26d7d51c4e0de6db9a11c01c32f44547b5248ba",
+      "parts-src/layers/l-leg-shadow.png": "b11b194b4ef50ebc0d6d2496c035fc7758f7bae97e5d0902814fa54022d6c313",
+      "parts-src/layers/l-foot.png": "21dab97c87f14b952a1b7748f2579dba1815a8bab5394b94bd9ce4dc2d506638",
+      "parts-src/layers/r-thigh.png": "4fde8746b587ad72a60116b6b3efab62412f9418f47293c74d65dcc6bd5d73aa",
+      "parts-src/layers/r-leg-lower.png": "c5ea8902337d69742fccbb9ed7da9684b36bbe669193ddb93f717f7c92baefa5",
+      "parts-src/layers/r-leg-shadow.png": "1fb1c5afdfbf1514cb39ae18a0303a3bc594bceedc62ff0d291ef5ba2f8114cc",
+      "parts-src/layers/r-foot.png": "1d278b0a08e88581a2d534964bdd006b1eee18bdacfe19f9eb5f43f69ff76428",
+      "parts-src/layers/underskirt-back.png": "f44298a515a657e2cd561739aa6902d811a9e269e7af386aeca261ab8f76303d",
+      "parts-src/layers/underskirt-front-1.png": "ad5f8b3adf5ec074bdbd4aef9acc05b76716564433ffe7f013f9c1d30b4c2b98",
+      "parts-src/layers/dress-shadow.png": "d99adbf2063e5fb16f5dbde6d42cc851648265eb33b42261c8505cf2dd0d5f18",
+      "parts-src/layers/underskirt-hem.png": "e012938f399455dce8cb69b9252ffce39d24d2ccb450b619628f2f29c2ae4c95",
+      "parts-src/layers/underskirt-front-2.png": "e6b2e486f0cb614641c7e67463bcce9becdf4ea1839de9422e3c587b1c219ee6",
+      "parts-src/layers/underskirt-shadow.png": "a7515773db1577b48c0566d61fbb31cde57c395d3605aa9117a208ddf004f38c",
+      "parts-src/layers/underskirt-hem-2.png": "448ea6f0384689b81116ff1c2e669fb443603282c26d45266df48e6922fe55a1",
+      "parts-src/layers/underskirt-front-3.png": "b14b9a3d9d6998d20426ba2f9178f824d57fcd2c830cf4446a07890c41d8ff2f",
+      "parts-src/layers/underskirt-hem-3.png": "5b7af5a55024a6e65497aee37ae46d708c7e8fdb462e3af2bb6709141c5279a1",
+      "parts-src/layers/teapot-handle-spout.png": "ac461e5b6509e9a4f3bd0a6e0e79a0e4b3f6e363aedb11fc9fd18ebe05cb74c1",
+      "parts-src/layers/cuff-back-l.png": "11e240e5b195df19d1ce4cdb1a6396bfb5a6b1d4dd87b839bf96c1825df94915",
+      "parts-src/layers/l-arm-upper.png": "0c809bf7cad8352d2f167489baa7ebaacd2d400f1894045d6c40d6b44db67c08",
+      "parts-src/layers/l-arm-lower.png": "c2aa0bbdea1bb740e1a717692c0d73fa705fb0d638b88fa8c85f34e382015e3d",
+      "parts-src/layers/l-arm-shadow.png": "170a3373e5ff71f743b5942a88b1d4f6e18195259b7720de83644da72e10ff11",
+      "parts-src/layers/l-paw.png": "07eee199c958edac501bea27bdd258b78445f1469c7de1e21e21545c7d406b60",
+      "parts-src/layers/teapot-shadow.png": "91a93a6e3e9991bfb874072b40b30db280c811e2845bd217ad66c04840d3453d",
+      "parts-src/layers/cuff-back-r.png": "a17e501dbb4222462e87fc5970855cfd78de6b3afc2e201e60159b817b9531e0",
+      "parts-src/layers/r-arm-upper.png": "2c77f5466296938f40f724c93fa1770e5fb46652ff68669032bd6b5453965540",
+      "parts-src/layers/r-arm-lower.png": "1cbe5497bc2685f31c42bd07219328389defcb88a169273fd3aa1406f3bc2c63",
+      "parts-src/layers/r-arm-shadow.png": "146b7780b995d18fd55a4bd710627271a0468e14398b07277879f1c6ee143322",
+      "parts-src/layers/r-paw.png": "5431dbb48d67c24be99309401c2e6938ff611b9db76cd2ea9bb99d1320b8af31",
+      "parts-src/layers/sleeve-upper-l.png": "7d88d4410ad3ff23f07779c72ba0d1e976164f186466aeef7eadfb9081dde4ac",
+      "parts-src/layers/sleeve-lower-l.png": "6d6d603d1ae51d9670d848f6227d6c5589d46939b35a7457cab668881d2ca880",
+      "parts-src/layers/cuff-l.png": "5ed6fa7f2c209e82edea3723c1d0107cfe91dd02a2dbdaf939335d24276ccc6f",
+      "parts-src/layers/blouse-torso.png": "508dcc678176a36f1072ae05a2f04b5240aa4c342e233d6ecdf0aea68866572d",
+      "parts-src/layers/blouse-shadow.png": "e76570846ae9f45d254066afb5a549871ac6f1553a051a37c52f8cc874d9b9b2",
+      "parts-src/layers/collar-shadow.png": "7e00d8680eb25464670b7272629eab319b4cb06e97e7ce434fea612ad1ee8e4f",
+      "parts-src/layers/sleeve-upper-r.png": "2f4b3e853b334055c239b37b64f06a78ce30cff3ad14af985f9c59719a21fe31",
+      "parts-src/layers/sleeve-lower-r.png": "2e098f382dda59764050b9adcfcda4c29a0c5763de6116821ff07a2c47c53034",
+      "parts-src/layers/cuff-r.png": "090632ce2e9dd7fd27507abcdd3cde184e66f64de7f13cc5e655467055ee2b39",
+      "parts-src/layers/dress-back-panel.png": "fd5e80759c1aa602376abc2a545ae38914f5bb1844a615bb4a49281f8204bb96",
+      "parts-src/layers/dress-skirt-1.png": "3ad3c2203bd35034a1d8462ab4f550561e1f239232973e916ee0aee753777b73",
+      "parts-src/layers/pouch-shadow.png": "40028547e97d935cd35674ccae7ed6d38a0242727425e8fed8cb6ca5799674f7",
+      "parts-src/layers/dress-skirt-2.png": "3efaf21a1daa40dbd8ad9c0dab720fbf9e261a9ca47f13889fe2d81246077c4b",
+      "parts-src/layers/dress-skirt-3.png": "ed954783a8a4bcd42f446039187d9bd1c48f7a51ac2e7f25dcf1afbd9a8a3f39",
+      "parts-src/layers/dress-side-tie.png": "13e8af8382bd01ba8485940284c848c596d88c1300dcf20b9e7530b44c221a23",
+      "parts-src/layers/dress-pocket.png": "4acdceca67b9b37a5fc55d71cfef70c312d99160c34ed643bc510988fe26f8e7",
+      "parts-src/layers/dress-strap-r.png": "4fa4f9a62c9dd7eadca95f90e7ed809c4421c460e858ccb1ae20169011d412eb",
+      "parts-src/layers/dress-strap-l.png": "0c2c61e7cabf2a2a5291cad0898a724abf34bf41cb3a590501a0a77d5478b35b",
+      "parts-src/layers/dress-bib.png": "f506c62491d0361dee4b7dabff909cd31f9ab4c4f80543ddeebc55c043c41d2d",
+      "parts-src/layers/belt.png": "bf193986f6ba613b7242ed7b24e0ac5dfe95ff1aaf2dece01bd6c1e671719e8c",
+      "parts-src/layers/belt-ring.png": "61978e0467ddf84d5e6f9907f64999ee9839afd1b82a196e3da3f54712ae19a6",
+      "parts-src/layers/belt-loop.png": "46ae38cd8973ca246f126996a530b80214ac24dece658966af5f44894f917017",
+      "parts-src/layers/belt-buckle.png": "04334942d0e9813401664acb91381ba459134f475482a6cd5d164771ece4291a",
+      "parts-src/layers/pouch-bag.png": "4e70daf144fa0edbd069d7370da9a01527e562104ee94066248d23f0b03920c2",
+      "parts-src/layers/pouch-string.png": "08d60413e39dffcd0d86fd5fdc43ceefbc81cfe580e10ad5875fd0d3767a608e",
+      "parts-src/layers/pouch-sprig.png": "b1667189dd257aa3ec6bb3df00426a72b0208ed4c95e08874a65698857f09950",
+      "parts-src/layers/collar-ribbon-tail-r.png": "0fa036f1fb8d359c27b28479dd0ddb432bc58df09d289a9f34a3ecdc0ed912db",
+      "parts-src/layers/collar-ribbon-tail-l.png": "45422f5a9c264fd50dc681e7f42889bacd21cca5ffdb32ed6f2b36014f8d1f16",
+      "parts-src/layers/leaf-4.png": "52a50eb06a6c281ebfbdb45e0d12938f6d05b35b25e28d4a6703bc3f16fa1334",
+      "parts-src/layers/leaf-2.png": "bc7b08fcf9fa407bf1dd5b9b426ecd1f18d74fdca28055a53edc20edf5fde9d1",
+      "parts-src/layers/leaf-5.png": "d0d38ff25380ebaa484490a768c065285ec879de5bed78d87cf0b747ac84176b",
+      "parts-src/layers/leaf-8.png": "a343f9f51d6e6713eebba4fbc3b8af88f5c26c1c593ff3e99fbf6aa5e7694683",
+      "parts-src/layers/leaf-3.png": "174dfa7c9b670567ab2796db56f5da49d3f3ec376d176f0ebebd64980ff5327e",
+      "parts-src/layers/leaf-7.png": "91b737be371389bde3f3941416cef7fdf9eff25a48f0d657c344c21feabd360d",
+      "parts-src/layers/leaf-1.png": "cb7ac8f122ff0efa6401247c129efa839dc6f71fa8b0fc6a656a1377458e1c6f",
+      "parts-src/layers/leaf-6.png": "694979d7ea38e17d8cd34908c8901b7353a5443d613a7d787f94509255c05716",
+      "parts-src/layers/clover-brooch.png": "ec80f9656e10b50ffeac2190ac9a747320652d934adff84e26e4aac7315876e9",
+      "parts-src/layers/teapot-body.png": "c8f01688c73e823f32cf8fd830e99823db9916b6823350f9af84d28b7d29e9e6",
+      "parts-src/layers/teapot-tea.png": "e1abadd15cbe270e3619cadc92ba3d7af9d9aa539ffa95e88f7c1356488cd4eb",
+      "parts-src/masks/teapot-tea-mask.png": "55141317a12edd2ba232536cb6caeb51ebe1e511442e12726333cb418552fbd8",
+      "parts-src/layers/teapot-glint.png": "1d25171758088a62eb314154272fdec0f84a152dcacc714dc2ce4e55745d5b02",
+      "parts-src/layers/teapot-lid.png": "2e369ff81b26d29a9faf41ebaab2c4d5bd67d3e6c43dc60f9959b934d2a8b9ef",
+      "parts-src/layers/ear-r-outer.png": "98d7233ca83335aab588ac9411a3416674967907aeb2ca38a38388f89daeec15",
+      "parts-src/layers/ear-r-inner.png": "b0e5663412a112a95ec6789fb5edf596ab6b044393823e6141bc9145b4a18af8",
+      "parts-src/layers/ear-r-shadow.png": "4a4422e2bcf1d0dfef6433e48f80457c410c1d8e72189904a13721fd903cb647",
+      "parts-src/layers/ear-r-floof.png": "9fb943da5a404e932c391dd8381fc8d32932488afa18e2db4a23c453764d9127",
+      "parts-src/layers/ear-l-outer.png": "c4178d77ea7c4bd63268f25602dd9484478085a3e4c13bf7b4eaf1b0e3021152",
+      "parts-src/layers/ear-l-inner.png": "fbb3c0ffe3e61b8be8865cb861379ecd7cffa89aea0ad02016f8af0dd6c43628",
+      "parts-src/layers/ear-l-shadow.png": "6b8af6736051bbe4dfc65d48d7bae12a1a70a158ed4ed6c141684473490ae4a6",
+      "parts-src/layers/ear-l-floof.png": "4a79e0464c498f8c699f4de493979facffb812c8c474e166def93613f528bf24",
+      "parts-src/layers/hair-back.png": "5b2930bd8d5885ec4d4a41aa821e3c8ee6791a804306323356926477b9f1c1fa",
+      "parts-src/layers/head-base.png": "538fedc018b0c3f043d0d97a46bffebb9d7cb9dd9e46af3691a9261ec5e70b13",
+      "parts-src/layers/head-shadow.png": "e39be8da280a0064fe5a2a75a9f81e92048de7b694f5bed0b9e89e2196fb764f",
+      "parts-src/layers/bangs-shadow.png": "5f16acbb08e1f0279e361acd0cf4014a6242265f01096928666b1740700891dd",
+      "parts-src/layers/hair-top-curl.png": "b164099f764b3779ad088aa153b7220e83a778ebd87ec43cfa14cb765aeda19a",
+      "parts-src/layers/hair-bang-1.png": "3597cdb04e04afeb767d4f31fa37e5fec27ced1a2fe8cf78bf9fdd31264766c0",
+      "parts-src/layers/hair-bang-2.png": "8c3e3a973b1cd5374eaa115f8f07dbbac9bd18e59ea5734c32f271800bdd89bd",
+      "parts-src/layers/hair-bang-3.png": "d5cd1b9af82bae4929be6166e8f2df82e0317820db9df98833944240f38e1c68",
+      "parts-src/layers/hair-bang-4.png": "d8445cabfbe4a4b987a0ed4e6fe86287c54b0a38e89a39d949b26490bf3982ad",
+      "parts-src/layers/hair-side-r.png": "4ba72f2389ef9c0dceaa916aaa85677c501c443119958f4285ee0e31c66999c9",
+      "parts-src/layers/hair-side-l.png": "22709ab13dc56f58d3626454d521e7c326e9c0a9ecba58a3b3e857b4998e6c7b",
+      "parts-src/layers/cheek-fluff-r-1.png": "01c81476007bc57708959162af3e9301942c049849e1f61156c0f1b1025b89e8",
+      "parts-src/layers/cheek-fluff-r-2.png": "90725bd88761f248cb6514eb4765328460b1029f1b0ef5366677525f4b051360",
+      "parts-src/layers/cheek-fluff-l-1.png": "9822ae6ca2eeebee232dfe53c68f7c0306cbbd3b53f114b09b4bfa0a9e571dfa",
+      "parts-src/layers/cheek-fluff-l-2.png": "7556d838990b15576c0a659d39d71a3037ca5fca50766ff83409483658f218ad",
+      "parts-src/layers/eye-r-eyelid-open.png": "6502907e756959ad861350c1922e92a7d3c2b325fd3d881e81663368921a26c1",
+      "parts-src/layers/eye-l-eyelid-open.png": "84bb13c7b753cb796967ebf4e66586749a3f4a61c0c0cdffad5cb62c113e1b2a",
+      "parts-src/layers/eye-r-white.png": "8f72f0b6037797b27a41f32052905a2bd6d8251435d211f4f1769bb9bebf57b9",
+      "parts-src/layers/eye-l-white.png": "0525f288cc58c7607894c96143791d51dc81756265bf08af898c9ba2381c91f2",
+      "parts-src/layers/eye-r-iris.png": "8c4e9137daf952a5902d2b5e90f2df4231b5175bfb5686f902359e7f78ab1157",
+      "parts-src/masks/eye-r-iris-mask.png": "d42fecedee6ed85a50e4281b2c9e288ff040a92285174e87e4361f1891e11276",
+      "parts-src/layers/eye-l-iris.png": "2f2044023e1f4c22c414aef6fc59370aa53f5da8e6bf183c4b33e33f5392772f",
+      "parts-src/masks/eye-l-iris-mask.png": "5ea6109e22d4fb3bce0e3931bfb1c20055ea82ce253a9bd13e88145b80a775ed",
+      "parts-src/layers/eye-r-pupil.png": "c695a976f692a60e202b277eb950c0ef1db9ef9ceb74bcebef064dc25e3e01ac",
+      "parts-src/masks/eye-r-pupil-mask.png": "d42fecedee6ed85a50e4281b2c9e288ff040a92285174e87e4361f1891e11276",
+      "parts-src/layers/eye-l-pupil.png": "375409a0995461e19048f141d7f9cfff84726957068393a663c661130f53ec56",
+      "parts-src/masks/eye-l-pupil-mask.png": "5ea6109e22d4fb3bce0e3931bfb1c20055ea82ce253a9bd13e88145b80a775ed",
+      "parts-src/layers/eye-r-sparkle-1.png": "2966fb64c923e9c360c6225822110861b6bd5bfd97020d7919b47afa0f688a83",
+      "parts-src/masks/eye-r-sparkle-1-mask.png": "d42fecedee6ed85a50e4281b2c9e288ff040a92285174e87e4361f1891e11276",
+      "parts-src/layers/eye-l-sparkle-1.png": "140124aee803d0abb6dd9ef6c58a367302f6402e12934d57bc8e303951d87fdd",
+      "parts-src/masks/eye-l-sparkle-1-mask.png": "5ea6109e22d4fb3bce0e3931bfb1c20055ea82ce253a9bd13e88145b80a775ed",
+      "parts-src/layers/eye-r-sparkle-2.png": "2cca2a38c22c626099a5da81bc2f287f9a0664728375de6a2acec05ff93ee42e",
+      "parts-src/masks/eye-r-sparkle-2-mask.png": "d42fecedee6ed85a50e4281b2c9e288ff040a92285174e87e4361f1891e11276",
+      "parts-src/layers/eye-l-sparkle-2.png": "054be0ca8d17d7c7a4cf13dfc28e825a9af197dd5a9a2cf1e020078f56add2bc",
+      "parts-src/masks/eye-l-sparkle-2-mask.png": "5ea6109e22d4fb3bce0e3931bfb1c20055ea82ce253a9bd13e88145b80a775ed",
+      "parts-src/layers/eye-r-sparkle-3.png": "524bc685bc8f857d616885214b0a2359f6ab6347dc2f834037e7b86877f17e99",
+      "parts-src/masks/eye-r-sparkle-3-mask.png": "d42fecedee6ed85a50e4281b2c9e288ff040a92285174e87e4361f1891e11276",
+      "parts-src/layers/eye-l-sparkle-3.png": "7d472daaf93cfe7d8420e631e9879b00da55801348464f7b5bb9462fa3f9d4ce",
+      "parts-src/masks/eye-l-sparkle-3-mask.png": "5ea6109e22d4fb3bce0e3931bfb1c20055ea82ce253a9bd13e88145b80a775ed",
+      "parts-src/layers/eye-r-lashline-bottom.png": "74e466b2c19865502493b3cd7d30ec89a7e44d1d087161271cb571a4fdaeba60",
+      "parts-src/layers/eye-l-lashline-bottom.png": "3cf122dd67fca9ff87f5855ef6ff81a7c1d8bfaf99dabb901a5f4a6ed4e24775",
+      "parts-src/layers/eye-r-lashline-top.png": "dd93c0ade9b927a100ac6cf2c5cb5edac9feb0887544e1555f9a5c222cc87a7f",
+      "parts-src/layers/eye-l-lashline-top.png": "2488e5edee71a33fa31edabce6a107550700052cf7e9bee1a937a22b50b92d19",
+      "parts-src/layers/eye-r-eyelid.png": "ce8234d7b2d6bda69f63ff653e495805a16bdf61b3bc70304af1456880c955e9",
+      "parts-src/layers/eye-l-eyelid.png": "150e16e53cf95defa48a43d30a16da1872521645226296d849ae9d6361e4b56e",
+      "parts-src/layers/brow-r.png": "b66e79ff52a151d5fbea7862f1bd235b8019956be1ba4e9d35385833a19070b5",
+      "parts-src/layers/brow-l.png": "47de785f919970a6b7f324b1038f280a3845f5dd25aa7dbc5b5c85a250bcb866",
+      "parts-src/layers/nose.png": "30a6c2e534e4ef9a697855a0ecb83a3d263a475a6bde917826d4fc74bd02a79a",
+      "parts-src/layers/mouth-closed.png": "dedb12c4c8e98f60ba24a6d7a4fee93d5305ae6ed1b89a206d514f6bb0ce390a",
+      "parts-src/layers/blush-r.png": "7434c1f2bf230a211b74a6423f62e2afd842ce088383a90c81ff4c57da530dcd",
+      "parts-src/layers/blush-l.png": "ac8b74e768f6983845c9c3a70d8579909af9a16597f6f990e56e5e2c49a0a3c4",
+      "parts-src/layers/eye-r-closed.png": "827f6f17cf71d335a3edd0c2cffa09c8f0ffbcd6fb3218005ea150589a0a5d3d",
+      "parts-src/layers/eye-l-closed.png": "33a18b203a3603c46328a697453cb61ec5682afb03c7c3c6449d4cdea2d8f364",
+      "parts-src/layers/mouth-smile.png": "4bd1e9e60668d6d2b73ae1b03f02313f9b54de824a82134073d919ce8b80c649",
+      "parts-src/layers/mouth-inner.png": "9f1b636a60e349b645823583fbe962076f536a1122726e618e75442313dc27c8",
+      "parts-src/layers/mouth-tongue.png": "bba9da4f2228ce9cfa2f43626676cd7688bfb7360fad75a988076faba1b522cb",
+      "parts-src/layers/whiskers-r.png": "d90b3adda0323d7436226762ccd7d77718c956081bd274d44962b36928d4f29f",
+      "parts-src/layers/whiskers-l.png": "b200d1a33185e21ea42753119682522cdc0e4f5b231f7adb42d2bb7799235295"
+    },
+    "tool": "layered-to-spine.py",
+    "parts": 139,
+    "sourceScale": 0.19692307692307692,
+    "sourceGate": "Published G0-G5/G7 round 4 PASS; independently verified all PSD layers/masks/order; not a final runtime export",
+    "maskPolicy": "All 11 eye/tea masks baked only at setup into derived atlas. Complete blink swaps; no animated gaze or tea slosh. Original PSD/masks unchanged.",
+    "maskedLayers": [
+      "teapot-tea",
+      "eye-r-iris",
+      "eye-l-iris",
+      "eye-r-pupil",
+      "eye-l-pupil",
+      "eye-r-sparkle-1",
+      "eye-l-sparkle-1",
+      "eye-r-sparkle-2",
+      "eye-l-sparkle-2",
+      "eye-r-sparkle-3",
+      "eye-l-sparkle-3"
+    ],
+    "weights": "Shared neck, arm/sleeve, skirt and polyline tail fields; small provisional rotations. Teapot follows the left holding paw; designer owns final meshes/keyframes.",
+    "meshVertices": 276
+  }
+}

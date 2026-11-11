@@ -54,6 +54,8 @@ import { cardEntrancePose } from './card-entrance';
 import { earnedRevealV4 } from './card-v4-presentation';
 
 export interface SceneView {
+  /** Stable identity of one battle, including snapshots of its action timeline. */
+  battleKey?: unknown;
   earnedReveal?: unknown;
   playbackSpeed?: number;
   decorateStage?: (stage: T.Group, cancelled?: () => boolean) => void | Promise<void>;

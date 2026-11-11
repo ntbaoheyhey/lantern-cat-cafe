@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect,useId } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from './model';
 import { CostView } from '../shared';
+import {GiftAmountsA6,giftReducedA6,REDUCED_GIFT_NOTE_A6} from '../ui-v3/GiftAmountsA6';
 
 export function NodeStarsV4({ m, node, goals = false }: { m: DepthModel; node: R.RunNode; goals?: boolean }) {
   const run = m.state.run;
@@ -13,15 +14,15 @@ export function NodeStarsV4({ m, node, goals = false }: { m: DepthModel; node: R
     {goals && <span className="dp-v4-star-goals">{R.nodeStarGoalsV4(node).map((g,i)=><span key={g.id}>{conditions[i] ? '✓ ' : '○ '}{g.text}</span>)}</span>}
   </span>;
 }
-export function StarBoardV4({ m }: { m: DepthModel }) {
-  const stars = R.starCountV4(m.state);
+export function StarBoardV4({ m,reducedNoteId }: { m: DepthModel;reducedNoteId?:string }) {
+  const stars = R.starCountV4(m.state),a6=R.gameplayA6(m.state),panelId=useId();
   return <section className="dp-v4-star-board" aria-label="Route star board"><h3>{stars} route stars</h3>
-    <p>Each stop has three goals. Earn missing stars on a later visit.</p>
+    <p>Three goals per stop. Revisit to earn missing stars.</p>
     <div className="dp-v4-meta-grid">{R.STAR_REWARDS_V4.map(goal=>{
-      const p=R.starRewardPreviewV4(m.state,goal.id);
-      return <article key={goal.id}><b>{goal.name}</b><p>{Math.min(stars,goal.target)}/{goal.target} stars · <CostView cost={p.reward}/></p>
-        <button disabled={!!p.reason} onClick={()=>m.apply(R.claimStarRewardV4(m.state,goal.id),'A little thank-you for your route stars.')}>
-          {p.claimed?'Collected':`Collect ${goal.target}-star reward`}</button>{p.reason&&!p.claimed&&<small>{p.reason}</small>}</article>;
+      const p=R.starRewardPreviewV4(m.state,goal.id),partial=a6&&!p.reason&&giftReducedA6(p.requested,p.reward),detailId=panelId+'-'+p.id;
+      return <article key={goal.id}><b>{goal.name}</b><p>{Math.min(stars,goal.target)}/{goal.target} stars{!a6&&<> · <CostView cost={p.reward}/></>}</p>{a6&&!p.claimed&&<div id={detailId}><GiftAmountsA6 requested={p.requested} reward={p.reward}/>{partial&&<p className={reducedNoteId?"a6-gift-short-note":"a6-gift-cap-note"}>{reducedNoteId?'Uses the whole gift.':REDUCED_GIFT_NOTE_A6}</p>}</div>}
+        <button aria-label={p.claimed?'Collected':`Collect ${goal.target}-star reward`} aria-describedby={a6&&!p.claimed?detailId+(partial&&reducedNoteId?' '+reducedNoteId:''):undefined} disabled={!!p.reason} onClick={()=>m.apply(R.claimStarRewardV4(m.state,goal.id),'A little thank-you for your route stars.')}>
+          {p.claimed?'Collected':partial?'Collect reduced gift':`Collect ${goal.target}-star reward`}</button>{p.reason&&!p.claimed&&<small>{p.reason}</small>}</article>;
     })}</div>
   </section>;
 }

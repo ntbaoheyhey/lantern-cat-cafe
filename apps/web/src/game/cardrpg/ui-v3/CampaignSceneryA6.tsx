@@ -4,6 +4,7 @@ import type {DepthModel} from '../depth/model';
 import {NodeStarsV4} from '../depth/JourneyV4';
 import {artPropsA6} from './art-a6';
 import {Icon} from './Icon';
+import {giftReducedA6,REDUCED_GIFT_NOTE_A6} from './GiftAmountsA6';
 import './campaign-a6.css';
 
 // Presentation coordinates only. Connections and availability come from the run graph.
@@ -73,9 +74,10 @@ export function CampaignSceneryA6({m}:{m:DepthModel}){
    </button>;
   })}
   <div className="a6-map-milestones" aria-label="Star chests">{R.STAR_REWARDS_V4.map((chest,i)=>{
-   const p=R.starRewardPreviewV4(m.state,chest.id);
-   return <button key={chest.id} className="a6-map-chest" data-ready={!p.reason} data-claimed={p.claimed} style={{left:`${[35,57,90][i]}%`,top:`${i===0?12:89}%`}} disabled={!!p.reason} title={p.reason??chest.name} onClick={()=>m.apply(R.claimStarRewardV4(m.state,chest.id),'Star chest collected.')}>
-    <Icon name="chest"/><span><b>{p.claimed?'Collected':`${chest.target} stars`}</b><small>{p.claimed?'Thank you!':`${Math.min(stars,chest.target)}/${chest.target} · ${Object.entries(p.reward).map(([id,n])=>`${n} ${id}`).join(' · ')}`}</small></span>
+   const p=R.starRewardPreviewV4(m.state,chest.id),reduced=!p.claimed&&giftReducedA6(p.requested,p.reward);
+   const amounts=(cost:typeof p.reward)=>Object.entries(cost).map(([id,n])=>`${n} ${id}`).join(' · ');
+   return <button key={chest.id} className="a6-map-chest" data-ready={!p.reason} data-claimed={p.claimed} data-reduced={reduced} style={{left:`${[35,57,90][i]}%`,top:`${i===0?16:85}%`}} disabled={!!p.reason} title={p.reason??(reduced?REDUCED_GIFT_NOTE_A6:chest.name)} onClick={()=>m.apply(R.claimStarRewardV4(m.state,chest.id),'Star chest collected.')}>
+    <Icon name="chest"/><span><b>{p.claimed?'Collected':`${chest.target} stars`}</b>{p.claimed?<small>Thank you!</small>:<><small>{Math.min(stars,chest.target)}/{chest.target} · Full gift: {amounts(p.requested)}</small>{reduced&&<small>Today: {amounts(p.reward)}</small>}{!p.reason&&reduced&&<small>Uses the whole gift.</small>}</>}</span>
    </button>;
   })}</div>
  </section>;

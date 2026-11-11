@@ -6,6 +6,14 @@
  .uv-recruit-counter>strong {font-size:25px;color:#95601f}
  .uv-recruit-buttons button {min-height:44px;font-size:14px}
  .uv-recruit-buttons .cr-primary {font-size:17px}
+ .a6-recruit-purchases button {width:100%}
+ .a6-recruit-purchases .a6-recruit-quote p {margin:5px 0 0;font-size:12px;line-height:1.35;color:#59452f}
+ .a6-recruit-quote ul {margin:4px 0;padding-left:16px;font-size:12px;line-height:1.35;color:#82452e}
+ .uv-recruit-counter .a6-recruit-limits {font-size:12px;line-height:1.45;color:#664b2e}
+ .a6-recruit-purchases button:disabled {opacity:1;color:#79664a!important;background:#deceb0!important;border-color:#baa07a!important;box-shadow:none;text-shadow:none}
+ .uv-recruit-portrait>.a6-gear-art {width:100%;height:100%;object-fit:contain}
+ .uv-recruit-welcome>.a6-gear-art {width:300px;height:330px;filter:drop-shadow(0 12px 14px #17111e)}
+ .a6-recruit-highlight .uv-recruit-portrait>.a6-gear-art {width:350px;height:350px}
  .uv-pity {color:#79509c;border-color:#ba995e}
  .uv-odds>p {color:#60472e}
  .uv-odds table {font-size:11px}
@@ -73,6 +81,9 @@
   .uv-odds th,.uv-odds td {padding:2px}
   .uv-odds>p {font-size:11px}
   .uv-recruit-welcome img {height:255px;width:250px}
+  .uv-recruit-welcome>.a6-gear-art {height:255px;width:250px}
+  .a6-recruit-highlight .uv-recruit-portrait>.a6-gear-art {height:240px;width:240px}
+  .uv-recruit-summary article[data-kind=gear] .uv-recruit-portrait {height:65px}
   .a6-recruit-batch {min-height:350px;padding:0}
   .a6-recruit-batch>p {margin:4px 0 12px;font-size:18px}
   .a6-recruit-back {height:126px}

@@ -5,7 +5,7 @@ import { syncCalendarDay } from './bridge';
 import { gameplayA6 } from './gameplay-a6';
 import { cappedPreviewV4 } from './meta-v4';
 import { grantDepth, requireHome, transactDepth } from './state';
-import { dailyProgressA6, type DailyTaskA6 } from './daily-state-a6';
+import { dailyProgressA6, WEEKLY_POINTS_CAP_A6, type DailyTaskA6 } from './daily-state-a6';
 
 export const DAILY_TASKS_A6: { id: DailyTaskA6; name: string; detail: string; reward: Cost }[] = [
   { id: 'patrol', name: 'A safe walk home', detail: 'Win one patrol or Tower floor.', reward: { stamps: 20, fish: 30 } },
@@ -31,8 +31,8 @@ export function dailyBoardA6(s: DepthAccount, now: number) {
   const rewardState = (requested: Cost, eligible: boolean, claimed: boolean) => {
     const reward = cappedPreviewV4(state, requested);
     const reason = blocked ?? (claimed ? 'Already collected.' : !eligible ? 'Keep playing to unlock this gift.'
-      : !Object.values(reward).some(n => n > 0) ? 'Today’s supplies are full. This gift can wait.' : null);
-    return { reward, reason, claimed };
+      : !Object.values(reward).some(n => n > 0) ? 'Today’s supplies are full.' : null);
+    return { requested, reward, reason, claimed };
   };
   const tasks = DAILY_TASKS_A6.map(t => ({ ...t, complete: progress.completed.includes(t.id),
     ...rewardState(t.reward, progress.completed.includes(t.id), progress.claimed.includes(t.id)) }));
@@ -40,7 +40,8 @@ export function dailyBoardA6(s: DepthAccount, now: number) {
     ...rewardState({ stamps: points * 4, threads: points }, progress.weeklyPoints >= points, progress.weeklyClaims.includes(points)) }));
   const login = { gift: progress.loginGifts + 1,
     ...rewardState(LOGIN_GIFTS_A6[progress.loginGifts] ?? {}, progress.loginGifts < 7, progress.loginDay >= state.account.day || progress.loginGifts >= 7) };
-  return { state, progress, tasks, weekly, login, rollback };
+  return { state, progress, tasks, weekly, login, rollback, weekDaysLeft: 7 - (state.account.day - 1) % 7,
+    taskWeeklyPointGain: Math.max(0, Math.min(1, WEEKLY_POINTS_CAP_A6 - progress.weeklyPoints)) };
 }
 
 export function claimDailyA6(state: DepthAccount, now: number, kind: 'task' | 'weekly' | 'login', id?: string | number) {
@@ -54,7 +55,7 @@ export function claimDailyA6(state: DepthAccount, now: number, kind: 'task' | 'w
     Object.assign(s, board.state);
     grantDepth(s, selected.reward);
     const p = dailyProgressA6(s);
-    if (kind === 'task') { p.claimed.push(id as DailyTaskA6); p.weeklyPoints = Math.min(35, p.weeklyPoints + 1); }
+    if (kind === 'task') { p.claimed.push(id as DailyTaskA6); p.weeklyPoints = Math.min(WEEKLY_POINTS_CAP_A6, p.weeklyPoints + 1); }
     if (kind === 'weekly') p.weeklyClaims.push(id as number);
     if (kind === 'login') { p.loginDay = s.account.day; p.loginGifts++; }
     s.dailyA6 = p;

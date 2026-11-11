@@ -2,7 +2,7 @@ import { expect, it } from 'vitest';
 import { clone } from '../internal';
 import { BOONS, boonValue } from './boons';
 import { createDepthAccount, configureTeam, availableSkills, battleCats, defaultSkills } from './state';
-import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, generateMap, resolveNode, startRun } from './run';
+import { abandonRun, availableNodes, calendarChallenge, CHAPTERS, chooseReward, enterNode, EVENTS, finishEncounter, generateMap, resolveNode, startRun } from './run';
 import { playRun } from './run-bot';
 
 it('generates nine connected nodes and seven-node routes with guaranteed shop and campfire',()=>{
@@ -51,12 +51,31 @@ it('rejects a reward selected twice and overflowing a charm cap',()=>{
   expect(chooseReward(s,'shelter-1').ok).toBe(false);r.boons['shelter-1']=1;
   const result=chooseReward(s,'shelter-1');expect(result.ok).toBe(true);expect(chooseReward(result.state,'shelter-1').ok).toBe(false);
 });
+it('opens the next path after a victory when every route reward is capped',()=>{
+  const s=enterNode(startRun(createDepthAccount(),1,19).state,'0-0').state,r=s.run!;
+  for(const boon of BOONS)r.boons[boon.id]=boon.cap;
+  for(const id of s.team.flatMap(id=>defaultSkills(s,id)))r.upgrades[id]=3;
+  r.battle!.result='party';const before=clone(s),result=finishEncounter(s);
+  expect(result.ok).toBe(true);expect(s).toEqual(before);expect(result.state.run!.rewardChoices).toEqual([]);
+  expect(result.state.run!.current).toBeNull();expect(result.state.run!.visited).toEqual(['0-0']);
+  expect(result.state.run!.points).toBe(r.points+35);expect(availableNodes(result.state.run!).length).toBeGreaterThan(0);
+  expect(result.state.run!.boons).toEqual(r.boons);expect(result.state.run!.upgrades).toEqual(r.upgrades);
+  expect(finishEncounter(result.state).ok).toBe(false);
+});
 for(const event of EVENTS)for(const option of event.choices)it(`resolves ${event.name} / ${option.label} with exact tradeoffs`,()=>{
   const s=startRun(createDepthAccount(),1,2).state,r=s.run!;r.current='1-0';r.nodes.find(n=>n.id==='1-0')!.eventId=event.id;r.points=100;
   const hp=clone(r.hp),result=resolveNode(s,option.id);expect(result.ok).toBe(true);expect(result.state.run!.points).toBe(100-option.cost+option.points);
   if(option.heal<0)for(const id of s.team)expect(result.state.run!.hp[id]).toBeLessThan(hp[id]!);
   if(option.boon)expect(result.state.run!.boons[option.boon]).toBe(1);
   expect(resolveNode(result.state,option.id).ok).toBe(false);
+});
+it.each(EVENTS)('HP costs at $name preserve fallen cats and the living one-HP floor',event=>{
+  const s=startRun(createDepthAccount(),1,2).state,r=s.run!,option=event.choices.find(c=>c.heal<0)!;
+  r.current='1-0';r.nodes.find(n=>n.id==='1-0')!.eventId=event.id;r.hp.mochi=1;r.hp.soot=0;
+  const before=clone(s),result=resolveNode(s,option.id);expect(result.ok).toBe(true);expect(s).toEqual(before);
+  expect(result.state.run!.hp.soot).toBe(0);expect(result.state.run!.hp.mochi).toBe(1);
+  expect(result.state.run!.hp.clover).toBe(Math.round(r.hp.clover!*(1+option.heal/100)));
+  expect(result.state.run!.points).toBe(r.points+option.points);
 });
 it('uses real calendar dates for deterministic daily and weekly challenges',()=>{
   expect(calendarChallenge('2026-11-06')).toEqual(calendarChallenge('2026-11-06'));

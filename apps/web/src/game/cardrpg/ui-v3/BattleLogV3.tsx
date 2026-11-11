@@ -1,6 +1,7 @@
 import {useEffect,useRef} from 'react';
 import type {Battle,BattleEvent} from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {artPropsA6} from './art-a6';
+import {battleLogCopy} from './battle-log-copy';
 import './battle-log.css';
 
 /** Reads the existing event log; the parent owns the playback pause and return. */
@@ -17,7 +18,9 @@ export default function BattleLogV3({battle,wasPaused,onClose}:{battle:Battle;wa
  const close=()=>{dialog.current?.close();onClose();};
  return <dialog ref={dialog} className="uv-battle-log" aria-labelledby="battle-log-title" aria-describedby="battle-log-return"
   onCancel={e=>{e.preventDefault();close();}} onKeyDown={e=>{
-   if(e.key==='Escape')e.stopPropagation();
+   // Space scrolls the focused events page. It must not reach the battle's
+   // global pause shortcut and resume combat behind this modal.
+   e.stopPropagation();
    if(e.key==='Tab'){
     const controls=[...e.currentTarget.querySelectorAll<HTMLElement>('button,[tabindex="0"]')];
     const first=controls[0],last=controls.at(-1);
@@ -31,7 +34,10 @@ export default function BattleLogV3({battle,wasPaused,onClose}:{battle:Battle;wa
    <section className="a6-log-page" aria-label="Recorded events">
     <div className="a6-log-count">{entries.length?`${entries.length===battle.log.length?entries.length:`Latest ${entries.length} of ${battle.log.length}`} events · Newest first`:'A fresh page'}</div>
     {entries.length?<div className="a6-log-events" role="region" aria-label="Battle events, newest first" tabIndex={0}>
-     {rounds.map((group,i)=><section className="a6-log-round" key={i}><h3>Round {group.round}</h3><ol>{group.entries.map(({event,index})=><li key={index} data-event-index={index}><span aria-hidden="true">✧</span><p>{event.text||`${event.kind} ${event.amount}`}</p></li>)}</ol></section>)}
+     {rounds.map((group,i)=><section className="a6-log-round" key={i}><h3>Round {group.round}</h3><ol>{group.entries.map(({event,index})=>{
+      const copy=battleLogCopy(battle,event);
+      return <li key={index} data-event-index={index}><span aria-hidden="true">✧</span><div><b className="a6-log-context">{copy.context}</b><p>{copy.summary}</p></div></li>;
+     })}</ol></section>)}
     </div>:<div className="a6-log-empty"><span aria-hidden="true">✧</span><h3>The first page is waiting</h3><p>Attacks, heals and other battle moments will appear here once the crew begins.</p><p>Close the log to return to the table.</p></div>}
    </section>
   </div>

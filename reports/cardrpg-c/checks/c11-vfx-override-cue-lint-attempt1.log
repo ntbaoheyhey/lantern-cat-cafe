@@ -1,0 +1,23 @@
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-cardrpg-a6
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+supabase/tests lint: Done
+packages/game-rules lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: src/game/cardrpg/spine/vfx-cues.test.ts(11,69): error TS2345: Argument of type 'CanvasRenderingContext2D' is not assignable to parameter of type 'GPUCanvasContext'.
+apps/web lint:   Type 'CanvasRenderingContext2D' is missing the following properties from type 'GPUCanvasContext': __brand, configure, unconfigure, getConfiguration, getCurrentTexture
+apps/web lint: Failed
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 lint: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

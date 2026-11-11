@@ -1,6 +1,7 @@
 import type { Battle, Row } from './contract';
 import { GEAR_BY_ID, SETS } from './equipment';
 import { SKILLS } from './catalog';
+import { validPlan } from './gameplay-v4';
 
 export interface OutcomeCauseV4 {
   id: string;
@@ -11,8 +12,9 @@ export interface OutcomeCauseV4 {
   text: string;
   templateId?: string;
 }
-const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect']);
-const planNames = { finish: 'Finish weak foes', support: 'Stop their support', leader: 'Focus the boss' };
+const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect', 'reaction-damage']);
+const planNames = { finish: 'Weak foes', support: 'Their support', leader: 'Their leader' };
+const careNames = { steady: 'Steady', protect: 'Protect' };
 
 /** Observed effects, not a counterfactual claim that a single contribution caused victory. */
 export function outcomeV4(battle: Battle) {
@@ -78,12 +80,17 @@ export function outcomeV4(battle: Battle) {
   // Reserve one place for measured equipment evidence; never invent an item contribution.
   const top = (gear.length ? [gear[0]!, ...ranked] : ranked).slice(0, 3);
   if (top.length < 3 && battle.v4) {
-    const actor = party.find(actor => battle.v4!.events.some(event => event.kind === 'plan-target' && event.actorId === actor.id));
-    if (actor) {
-      const amount = battle.v4.events.filter(event => event.kind === 'plan-target' && event.actorId === actor.id).length;
-      top.push({ id: `plan:${actor.id}`, actorId: actor.id, kind: 'plan', amount, unit: 'actions',
-        text: `${actor.name} followed “${planNames[battle.v4.plan.focus]}” for ${amount} actions.` });
+    // A plan-target receipt also accompanies manual choices; it proves selection, not success.
+    const plans = new Map<string, OutcomeCauseV4>();
+    for (const event of battle.v4.events) {
+      if (event.kind !== 'plan-target' || !event.actorId || !partyIds.has(event.actorId) || !validPlan(event.plan)) continue;
+      const id = `plan:${event.actorId}:${event.plan.focus}:${event.plan.care}`;
+      const amount = (plans.get(id)?.amount ?? 0) + 1;
+      plans.set(id, { id, actorId: event.actorId, kind: 'plan', amount, unit: 'actions',
+        text: `${name(event.actorId)} took ${amount} action${amount === 1 ? '' : 's'} with “${planNames[event.plan.focus]} · ${careNames[event.plan.care]}” selected.` });
     }
+    const most = [...plans.values()].sort((a, b) => b.amount - a.amount || a.id.localeCompare(b.id))[0];
+    if (most) top.push(most);
   }
   const totalTaken = damageByRow.front + damageByRow.rear;
   const firstFall = battle.log.find(event => event.kind === 'defeat' && partyIds.has(event.targetId));

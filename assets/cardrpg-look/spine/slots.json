@@ -1,0 +1,3446 @@
+{
+  "schemaVersion": 1,
+  "config": "config.json",
+  "units": [
+    {
+      "id": "mochi",
+      "name": "Mochi",
+      "side": "party",
+      "role": "guardian",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/mochi/",
+      "files": {
+        "json": "mochi.json",
+        "binary": "mochi.skel",
+        "atlas": "mochi.atlas",
+        "png": "mochi.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "mochi-1",
+          "name": "Door knock",
+          "animation": "attack",
+          "shape": "splash",
+          "effects": [
+            "hit",
+            "shield"
+          ],
+          "vfx": {
+            "registryId": "mochi-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mochi-1/"
+        },
+        {
+          "id": "mochi-2",
+          "name": "Warm welcome",
+          "animation": "skill",
+          "shape": "weakest",
+          "effects": [
+            "shield",
+            "cozy"
+          ],
+          "vfx": {
+            "registryId": "mochi-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mochi-2/"
+        },
+        {
+          "id": "mochi-3",
+          "name": "Apron crossing",
+          "animation": "skill",
+          "shape": "ally-row",
+          "effects": [
+            "swap",
+            "shield",
+            "link",
+            "shelter"
+          ],
+          "vfx": {
+            "registryId": "mochi-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mochi-3/"
+        },
+        {
+          "id": "mochi-4",
+          "name": "Last light shelter",
+          "animation": "ult",
+          "shape": "team",
+          "effects": [
+            "cleanse",
+            "shield",
+            "cozy"
+          ],
+          "vfx": {
+            "registryId": "mochi-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mochi-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/mochi.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-rig-3-4-right.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/mochi/psd-placeholder-r3/mochi.json",
+        "atlas": "assets/cardrpg-look/spine/mochi/psd-placeholder-r3/mochi.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/mochi/sequence/sequence.json"
+    },
+    {
+      "id": "soot",
+      "name": "Soot",
+      "side": "party",
+      "role": "hexer",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/soot/",
+      "files": {
+        "json": "soot.json",
+        "binary": "soot.skel",
+        "atlas": "soot.atlas",
+        "png": "soot.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "soot-1",
+          "name": "Cocoa spark",
+          "animation": "attack",
+          "shape": "pierce",
+          "effects": [
+            "hit",
+            "crumb"
+          ],
+          "vfx": {
+            "registryId": "soot-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/soot-1/"
+        },
+        {
+          "id": "soot-2",
+          "name": "Black cup",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "scent"
+          ],
+          "vfx": {
+            "registryId": "soot-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/soot-2/"
+        },
+        {
+          "id": "soot-3",
+          "name": "Lantern wick",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "detonate"
+          ],
+          "vfx": {
+            "registryId": "soot-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/soot-3/"
+        },
+        {
+          "id": "soot-4",
+          "name": "Midnight service",
+          "animation": "ult",
+          "shape": "all",
+          "effects": [
+            "hit",
+            "detonate",
+            "drowsy"
+          ],
+          "vfx": {
+            "registryId": "soot-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/soot-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/soot.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/soot-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+        "atlas": "assets/cardrpg-look/spine/soot/placeholder/soot.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/soot/sequence/sequence.json"
+    },
+    {
+      "id": "clover",
+      "name": "Clover",
+      "side": "party",
+      "role": "healer",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/clover/",
+      "files": {
+        "json": "clover.json",
+        "binary": "clover.skel",
+        "atlas": "clover.atlas",
+        "png": "clover.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "clover-1",
+          "name": "Leaf tap",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "heal"
+          ],
+          "vfx": {
+            "registryId": "clover-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/clover-1/"
+        },
+        {
+          "id": "clover-2",
+          "name": "Patient steep",
+          "animation": "skill",
+          "shape": "ally-row",
+          "effects": [
+            "heal",
+            "steep"
+          ],
+          "vfx": {
+            "registryId": "clover-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/clover-2/"
+        },
+        {
+          "id": "clover-3",
+          "name": "Clearleaf rinse",
+          "animation": "skill",
+          "shape": "team",
+          "effects": [
+            "cleanse",
+            "heal"
+          ],
+          "vfx": {
+            "registryId": "clover-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/clover-3/"
+        },
+        {
+          "id": "clover-4",
+          "name": "Greenhouse morning",
+          "animation": "ult",
+          "shape": "team",
+          "effects": [
+            "heal",
+            "sprout"
+          ],
+          "vfx": {
+            "registryId": "clover-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/clover-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/clover.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/02-meo-cats/clover/clover-rig-3-4-right.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/clover/psd-placeholder-r1/clover.json",
+        "atlas": "assets/cardrpg-look/spine/clover/psd-placeholder-r1/clover.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/clover/sequence/sequence.json"
+    },
+    {
+      "id": "panko",
+      "name": "Panko",
+      "side": "party",
+      "role": "guardian",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/panko/",
+      "files": {
+        "json": "panko.json",
+        "binary": "panko.skel",
+        "atlas": "panko.atlas",
+        "png": "panko.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "panko-1",
+          "name": "Pan reply",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "riposte",
+            "brittle"
+          ],
+          "vfx": {
+            "registryId": "panko-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/panko-1/"
+        },
+        {
+          "id": "panko-2",
+          "name": "Bread cover",
+          "animation": "skill",
+          "shape": "ally-row",
+          "effects": [
+            "shield",
+            "shelter"
+          ],
+          "vfx": {
+            "registryId": "panko-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/panko-2/"
+        },
+        {
+          "id": "panko-3",
+          "name": "Crust return",
+          "animation": "skill",
+          "shape": "team",
+          "effects": [
+            "riposte",
+            "shield"
+          ],
+          "vfx": {
+            "registryId": "panko-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/panko-3/"
+        },
+        {
+          "id": "panko-4",
+          "name": "Oven door",
+          "animation": "ult",
+          "shape": "self",
+          "effects": [
+            "shield",
+            "riposte",
+            "shelter"
+          ],
+          "vfx": {
+            "registryId": "panko-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/panko-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/panko.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/panko-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/panko/placeholder/panko.json",
+        "atlas": "assets/cardrpg-look/spine/panko/placeholder/panko.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/panko/sequence/sequence.json"
+    },
+    {
+      "id": "mallow",
+      "name": "Mallow",
+      "side": "party",
+      "role": "striker",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/mallow/",
+      "files": {
+        "json": "mallow.json",
+        "binary": "mallow.skel",
+        "atlas": "mallow.atlas",
+        "png": "mallow.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "mallow-1",
+          "name": "Whisk flare",
+          "animation": "attack",
+          "shape": "splash",
+          "effects": [
+            "hit",
+            "scald"
+          ],
+          "vfx": {
+            "registryId": "mallow-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mallow-1/"
+        },
+        {
+          "id": "mallow-2",
+          "name": "Split ember",
+          "animation": "skill",
+          "shape": "row",
+          "effects": [
+            "hit",
+            "scald"
+          ],
+          "vfx": {
+            "registryId": "mallow-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mallow-2/"
+        },
+        {
+          "id": "mallow-3",
+          "name": "Burnt sugar",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "mallow-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mallow-3/"
+        },
+        {
+          "id": "mallow-4",
+          "name": "Closing blaze",
+          "animation": "ult",
+          "shape": "all",
+          "effects": [
+            "hit",
+            "scald"
+          ],
+          "vfx": {
+            "registryId": "mallow-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/mallow-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/mallow.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/mallow-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/mallow/placeholder/mallow.json",
+        "atlas": "assets/cardrpg-look/spine/mallow/placeholder/mallow.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/mallow/sequence/sequence.json"
+    },
+    {
+      "id": "sorrel",
+      "name": "Sorrel",
+      "side": "party",
+      "role": "controller",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/sorrel/",
+      "files": {
+        "json": "sorrel.json",
+        "binary": "sorrel.skel",
+        "atlas": "sorrel.atlas",
+        "png": "sorrel.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "sorrel-1",
+          "name": "Moon spoon",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "bitter"
+          ],
+          "vfx": {
+            "registryId": "sorrel-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/sorrel-1/"
+        },
+        {
+          "id": "sorrel-2",
+          "name": "Cold brew",
+          "animation": "skill",
+          "shape": "pierce",
+          "effects": [
+            "hit",
+            "drowsy"
+          ],
+          "vfx": {
+            "registryId": "sorrel-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/sorrel-2/"
+        },
+        {
+          "id": "sorrel-3",
+          "name": "Decanted moon",
+          "animation": "skill",
+          "shape": "ally-row",
+          "effects": [
+            "transfer",
+            "shield",
+            "glaze"
+          ],
+          "vfx": {
+            "registryId": "sorrel-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/sorrel-3/"
+        },
+        {
+          "id": "sorrel-4",
+          "name": "Shared pot",
+          "animation": "ult",
+          "shape": "team",
+          "effects": [
+            "heal",
+            "glaze"
+          ],
+          "vfx": {
+            "registryId": "sorrel-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/sorrel-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/sorrel.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/sorrel-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/sorrel/placeholder/sorrel.json",
+        "atlas": "assets/cardrpg-look/spine/sorrel/placeholder/sorrel.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/sorrel/sequence/sequence.json"
+    },
+    {
+      "id": "biscuit",
+      "name": "Biscuit",
+      "side": "party",
+      "role": "striker",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/biscuit/",
+      "files": {
+        "json": "biscuit.json",
+        "binary": "biscuit.skel",
+        "atlas": "biscuit.atlas",
+        "png": "biscuit.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "biscuit-1",
+          "name": "Rolling pin",
+          "animation": "attack",
+          "shape": "multi-hit",
+          "effects": [
+            "hit",
+            "snag"
+          ],
+          "vfx": {
+            "registryId": "biscuit-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/biscuit-1/"
+        },
+        {
+          "id": "biscuit-2",
+          "name": "Sideboard step",
+          "animation": "skill",
+          "shape": "one",
+          "effects": [
+            "swap",
+            "shield",
+            "cozy"
+          ],
+          "vfx": {
+            "registryId": "biscuit-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/biscuit-2/"
+        },
+        {
+          "id": "biscuit-3",
+          "name": "Last crumb",
+          "animation": "skill",
+          "shape": "pierce",
+          "effects": [
+            "execute"
+          ],
+          "vfx": {
+            "registryId": "biscuit-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/biscuit-3/"
+        },
+        {
+          "id": "biscuit-4",
+          "name": "Bakers procession",
+          "animation": "ult",
+          "shape": "bounce",
+          "effects": [
+            "hit",
+            "brittle"
+          ],
+          "vfx": {
+            "registryId": "biscuit-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/biscuit-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/biscuit.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/biscuit-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/biscuit/placeholder/biscuit.json",
+        "atlas": "assets/cardrpg-look/spine/biscuit/placeholder/biscuit.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/biscuit/sequence/sequence.json"
+    },
+    {
+      "id": "inkcap",
+      "name": "Inkcap",
+      "side": "party",
+      "role": "controller",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/inkcap/",
+      "files": {
+        "json": "inkcap.json",
+        "binary": "inkcap.skel",
+        "atlas": "inkcap.atlas",
+        "png": "inkcap.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "inkcap-1",
+          "name": "Ink thread",
+          "animation": "attack",
+          "shape": "pierce",
+          "effects": [
+            "hit",
+            "brittle"
+          ],
+          "vfx": {
+            "registryId": "inkcap-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/inkcap-1/"
+        },
+        {
+          "id": "inkcap-2",
+          "name": "Quiet spores",
+          "animation": "skill",
+          "shape": "pierce",
+          "effects": [
+            "hit",
+            "drowsy"
+          ],
+          "vfx": {
+            "registryId": "inkcap-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/inkcap-2/"
+        },
+        {
+          "id": "inkcap-3",
+          "name": "Paper decoy",
+          "animation": "skill",
+          "shape": "one",
+          "effects": [
+            "decoy",
+            "shelter"
+          ],
+          "vfx": {
+            "registryId": "inkcap-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/inkcap-3/"
+        },
+        {
+          "id": "inkcap-4",
+          "name": "Dreaming canopy",
+          "animation": "ult",
+          "shape": "all",
+          "effects": [
+            "hit",
+            "drowsy",
+            "brittle"
+          ],
+          "vfx": {
+            "registryId": "inkcap-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/inkcap-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/inkcap.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/inkcap-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/inkcap/placeholder/inkcap.json",
+        "atlas": "assets/cardrpg-look/spine/inkcap/placeholder/inkcap.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/inkcap/sequence/sequence.json"
+    },
+    {
+      "id": "cinnamon",
+      "name": "Cinnamon",
+      "side": "party",
+      "role": "healer",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/cinnamon/",
+      "files": {
+        "json": "cinnamon.json",
+        "binary": "cinnamon.skel",
+        "atlas": "cinnamon.atlas",
+        "png": "cinnamon.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "cinnamon-1",
+          "name": "Spice pinch",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "drain",
+            "scald"
+          ],
+          "vfx": {
+            "registryId": "cinnamon-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/cinnamon-1/"
+        },
+        {
+          "id": "cinnamon-2",
+          "name": "Comfort cup",
+          "animation": "skill",
+          "shape": "ally-splash",
+          "effects": [
+            "heal",
+            "cozy"
+          ],
+          "vfx": {
+            "registryId": "cinnamon-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/cinnamon-2/"
+        },
+        {
+          "id": "cinnamon-3",
+          "name": "Clean apron",
+          "animation": "skill",
+          "shape": "one",
+          "effects": [
+            "cleanse",
+            "shield",
+            "steep"
+          ],
+          "vfx": {
+            "registryId": "cinnamon-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/cinnamon-3/"
+        },
+        {
+          "id": "cinnamon-4",
+          "name": "Second serving",
+          "animation": "ult",
+          "shape": "fallen",
+          "effects": [
+            "revive"
+          ],
+          "vfx": {
+            "registryId": "cinnamon-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/cinnamon-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/cinnamon.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/cinnamon-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/cinnamon/placeholder/cinnamon.json",
+        "atlas": "assets/cardrpg-look/spine/cinnamon/placeholder/cinnamon.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/cinnamon/sequence/sequence.json"
+    },
+    {
+      "id": "brioche",
+      "name": "Brioche",
+      "side": "party",
+      "role": "guardian",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/brioche/",
+      "files": {
+        "json": "brioche.json",
+        "binary": "brioche.skel",
+        "atlas": "brioche.atlas",
+        "png": "brioche.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "brioche-1",
+          "name": "Bell patrol",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "glaze"
+          ],
+          "vfx": {
+            "registryId": "brioche-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/brioche-1/"
+        },
+        {
+          "id": "brioche-2",
+          "name": "Borrowed blanket",
+          "animation": "skill",
+          "shape": "one",
+          "effects": [
+            "transfer",
+            "heal"
+          ],
+          "vfx": {
+            "registryId": "brioche-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/brioche-2/"
+        },
+        {
+          "id": "brioche-3",
+          "name": "Starched collar",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "dispel",
+            "brittle",
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "brioche-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/brioche-3/"
+        },
+        {
+          "id": "brioche-4",
+          "name": "Constellation apron",
+          "animation": "ult",
+          "shape": "team",
+          "effects": [
+            "shield",
+            "link",
+            "glaze"
+          ],
+          "vfx": {
+            "registryId": "brioche-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/brioche-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/brioche.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/brioche-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/brioche/placeholder/brioche.json",
+        "atlas": "assets/cardrpg-look/spine/brioche/placeholder/brioche.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/brioche/sequence/sequence.json"
+    },
+    {
+      "id": "velvet",
+      "name": "Velvet",
+      "side": "party",
+      "role": "witch",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/velvet/",
+      "files": {
+        "json": "velvet.json",
+        "binary": "velvet.skel",
+        "atlas": "velvet.atlas",
+        "png": "velvet.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "velvet-1",
+          "name": "Silk nick",
+          "animation": "attack",
+          "shape": "pierce",
+          "effects": [
+            "hit",
+            "scent",
+            "snag"
+          ],
+          "vfx": {
+            "registryId": "velvet-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/velvet-1/"
+        },
+        {
+          "id": "velvet-2",
+          "name": "Candle bounce",
+          "animation": "skill",
+          "shape": "bounce",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "velvet-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/velvet-2/"
+        },
+        {
+          "id": "velvet-3",
+          "name": "Stolen flame",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "dispel",
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "velvet-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/velvet-3/"
+        },
+        {
+          "id": "velvet-4",
+          "name": "Velvet curtain",
+          "animation": "ult",
+          "shape": "single",
+          "effects": [
+            "execute",
+            "decoy"
+          ],
+          "vfx": {
+            "registryId": "velvet-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/velvet-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/velvet.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/velvet-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/velvet/placeholder/velvet.json",
+        "atlas": "assets/cardrpg-look/spine/velvet/placeholder/velvet.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/velvet/sequence/sequence.json"
+    },
+    {
+      "id": "marigold",
+      "name": "Marigold",
+      "side": "party",
+      "role": "healer",
+      "tier": "cat",
+      "combatTier": "cat",
+      "targetHeight": 512,
+      "heightRange": [
+        512,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": false,
+      "folder": "assets/cardrpg-look/spine/marigold/",
+      "files": {
+        "json": "marigold.json",
+        "binary": "marigold.skel",
+        "atlas": "marigold.atlas",
+        "png": "marigold.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "marigold-1",
+          "name": "Seed stitch",
+          "animation": "attack",
+          "shape": "single",
+          "effects": [
+            "hit",
+            "steep"
+          ],
+          "vfx": {
+            "registryId": "marigold-1",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/marigold-1/"
+        },
+        {
+          "id": "marigold-2",
+          "name": "Garden bell",
+          "animation": "skill",
+          "shape": "team",
+          "effects": [
+            "heal",
+            "steep"
+          ],
+          "vfx": {
+            "registryId": "marigold-2",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/marigold-2/"
+        },
+        {
+          "id": "marigold-3",
+          "name": "Spring pruning",
+          "animation": "skill",
+          "shape": "single",
+          "effects": [
+            "dispel",
+            "scald",
+            "crumb"
+          ],
+          "vfx": {
+            "registryId": "marigold-3",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/marigold-3/"
+        },
+        {
+          "id": "marigold-4",
+          "name": "First tea blossom",
+          "animation": "ult",
+          "shape": "team",
+          "effects": [
+            "cleanse",
+            "heal",
+            "energy"
+          ],
+          "vfx": {
+            "registryId": "marigold-4",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/marigold-4/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/marigold.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/marigold-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/marigold/placeholder/marigold.json",
+        "atlas": "assets/cardrpg-look/spine/marigold/placeholder/marigold.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/marigold/sequence/sequence.json"
+    },
+    {
+      "id": "button-guard",
+      "name": "Button Guard",
+      "side": "enemy",
+      "role": "guard",
+      "tier": "standard",
+      "combatTier": "regular",
+      "targetHeight": 614,
+      "heightRange": [
+        563,
+        666
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/button-guard/",
+      "files": {
+        "json": "button-guard.json",
+        "binary": "button-guard.skel",
+        "atlas": "button-guard.atlas",
+        "png": "button-guard.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:button-guard:basic",
+          "name": "Button Guard basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:button-guard:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-button-guard-basic/"
+        },
+        {
+          "id": "enemy:button-guard",
+          "name": "Shields and Warms its whole row.",
+          "animation": "skill",
+          "effects": [
+            "shield"
+          ],
+          "vfx": {
+            "registryId": "enemy:button-guard",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-button-guard/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/button-guard.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/button-guard-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/button-guard/placeholder/button-guard.json",
+        "atlas": "assets/cardrpg-look/spine/button-guard/placeholder/button-guard.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/button-guard/sequence/sequence.json"
+    },
+    {
+      "id": "sock-skipper",
+      "name": "Sock Skipper",
+      "side": "enemy",
+      "role": "flanker",
+      "tier": "small",
+      "combatTier": "regular",
+      "targetHeight": 461,
+      "heightRange": [
+        410,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/sock-skipper/",
+      "files": {
+        "json": "sock-skipper.json",
+        "binary": "sock-skipper.skel",
+        "atlas": "sock-skipper.atlas",
+        "png": "sock-skipper.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:sock-skipper:basic",
+          "name": "Sock Skipper basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:sock-skipper:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-sock-skipper-basic/"
+        },
+        {
+          "id": "enemy:sock-skipper",
+          "name": "Targets rear cats and applies Bleed.",
+          "animation": "skill",
+          "effects": [
+            "steal"
+          ],
+          "vfx": {
+            "registryId": "enemy:sock-skipper",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-sock-skipper/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/sock-skipper.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/sock-skipper-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/sock-skipper/placeholder/sock-skipper.json",
+        "atlas": "assets/cardrpg-look/spine/sock-skipper/placeholder/sock-skipper.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/sock-skipper/sequence/sequence.json"
+    },
+    {
+      "id": "spool-ram",
+      "name": "Spool Ram",
+      "side": "enemy",
+      "role": "charger",
+      "tier": "standard",
+      "combatTier": "elite",
+      "targetHeight": 614,
+      "heightRange": [
+        563,
+        666
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/spool-ram/",
+      "files": {
+        "json": "spool-ram.json",
+        "binary": "spool-ram.skel",
+        "atlas": "spool-ram.atlas",
+        "png": "spool-ram.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:spool-ram:basic",
+          "name": "Spool Ram basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:spool-ram:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-spool-ram-basic/"
+        },
+        {
+          "id": "enemy:spool-ram",
+          "name": "Charges for one turn, then hits a row.",
+          "animation": "skill",
+          "effects": [
+            "charge"
+          ],
+          "vfx": {
+            "registryId": "enemy:spool-ram",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-spool-ram/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/spool-ram.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/spool-ram-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/spool-ram/placeholder/spool-ram.json",
+        "atlas": "assets/cardrpg-look/spine/spool-ram/placeholder/spool-ram.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/spool-ram/sequence/sequence.json"
+    },
+    {
+      "id": "needle-moth",
+      "name": "Needle Moth",
+      "side": "enemy",
+      "role": "ranger",
+      "tier": "small",
+      "combatTier": "regular",
+      "targetHeight": 461,
+      "heightRange": [
+        410,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/needle-moth/",
+      "files": {
+        "json": "needle-moth.json",
+        "binary": "needle-moth.skel",
+        "atlas": "needle-moth.atlas",
+        "png": "needle-moth.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:needle-moth:basic",
+          "name": "Needle Moth basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:needle-moth:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-needle-moth-basic/"
+        },
+        {
+          "id": "enemy:needle-moth",
+          "name": "Three seeded hits on random cats.",
+          "animation": "skill",
+          "effects": [
+            "dot",
+            "scald"
+          ],
+          "vfx": {
+            "registryId": "enemy:needle-moth",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-needle-moth/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/needle-moth.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/needle-moth-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/needle-moth/placeholder/needle-moth.json",
+        "atlas": "assets/cardrpg-look/spine/needle-moth/placeholder/needle-moth.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/needle-moth/sequence/sequence.json"
+    },
+    {
+      "id": "teacup-healer",
+      "name": "Teacup Healer",
+      "side": "enemy",
+      "role": "healer",
+      "tier": "standard",
+      "combatTier": "regular",
+      "targetHeight": 614,
+      "heightRange": [
+        563,
+        666
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/teacup-healer/",
+      "files": {
+        "json": "teacup-healer.json",
+        "binary": "teacup-healer.skel",
+        "atlas": "teacup-healer.atlas",
+        "png": "teacup-healer.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:teacup-healer:basic",
+          "name": "Teacup Healer basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:teacup-healer:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-teacup-healer-basic/"
+        },
+        {
+          "id": "enemy:teacup-healer",
+          "name": "Heals its weakest ally every two rounds.",
+          "animation": "skill",
+          "effects": [
+            "heal"
+          ],
+          "vfx": {
+            "registryId": "enemy:teacup-healer",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-teacup-healer/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/teacup-healer.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/teacup-healer-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/teacup-healer/placeholder/teacup-healer.json",
+        "atlas": "assets/cardrpg-look/spine/teacup-healer/placeholder/teacup-healer.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/teacup-healer/sequence/sequence.json"
+    },
+    {
+      "id": "kettle-knight",
+      "name": "Kettle Knight",
+      "side": "enemy",
+      "role": "elite",
+      "tier": "standard",
+      "combatTier": "elite",
+      "targetHeight": 614,
+      "heightRange": [
+        563,
+        666
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/kettle-knight/",
+      "files": {
+        "json": "kettle-knight.json",
+        "binary": "kettle-knight.skel",
+        "atlas": "kettle-knight.atlas",
+        "png": "kettle-knight.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:kettle-knight:basic",
+          "name": "Kettle Knight basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:kettle-knight:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-kettle-knight-basic/"
+        },
+        {
+          "id": "enemy:kettle-knight",
+          "name": "Below half HP, basics Burn the front row.",
+          "animation": "skill",
+          "effects": [
+            "reflect"
+          ],
+          "vfx": {
+            "registryId": "enemy:kettle-knight",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-kettle-knight/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/kettle-knight.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/kettle-knight-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/kettle-knight/placeholder/kettle-knight.json",
+        "atlas": "assets/cardrpg-look/spine/kettle-knight/placeholder/kettle-knight.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/kettle-knight/sequence/sequence.json"
+    },
+    {
+      "id": "yarn-giant",
+      "name": "Yarn Giant",
+      "side": "enemy",
+      "role": "yarn",
+      "tier": "boss",
+      "combatTier": "boss",
+      "targetHeight": 922,
+      "heightRange": [
+        870,
+        998
+      ],
+      "maxWidth": 1126.4,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/yarn-giant/",
+      "files": {
+        "json": "yarn-giant.json",
+        "binary": "yarn-giant.skel",
+        "atlas": "yarn-giant.atlas",
+        "png": "yarn-giant.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory",
+        "idle-phase2",
+        "enrage"
+      ],
+      "budgets": {
+        "bones": 80,
+        "meshVertices": 800,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:yarn-giant:basic",
+          "name": "Yarn Giant basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:yarn-giant:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-yarn-giant-basic/"
+        },
+        {
+          "id": "enemy:yarn-giant",
+          "name": "Row + Shred signatures; closing phase All + Bitter.",
+          "animation": "ult",
+          "effects": [
+            "bind",
+            "tangle"
+          ],
+          "vfx": {
+            "registryId": "enemy:yarn-giant",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-yarn-giant/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/yarn-giant.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/yarn-giant-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/yarn-giant/placeholder/yarn-giant.json",
+        "atlas": "assets/cardrpg-look/spine/yarn-giant/placeholder/yarn-giant.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/yarn-giant/sequence/sequence.json"
+    },
+    {
+      "id": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "tier": "small",
+      "combatTier": "regular",
+      "targetHeight": 461,
+      "heightRange": [
+        410,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/binding-thread/",
+      "files": {
+        "json": "binding-thread.json",
+        "binary": "binding-thread.skel",
+        "atlas": "binding-thread.atlas",
+        "png": "binding-thread.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:binding-thread:basic",
+          "name": "Binding Thread basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:binding-thread:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-binding-thread-basic/"
+        },
+        {
+          "id": "enemy:binding-thread",
+          "name": "Knots apply Shred; every third turn Dazes the weakest cat.",
+          "animation": "skill",
+          "effects": [
+            "snare",
+            "tangle"
+          ],
+          "vfx": {
+            "registryId": "enemy:binding-thread",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-binding-thread/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/binding-thread.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/binding-thread-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/binding-thread/placeholder/binding-thread.json",
+        "atlas": "assets/cardrpg-look/spine/binding-thread/placeholder/binding-thread.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/binding-thread/sequence/sequence.json"
+    },
+    {
+      "id": "practice-cushion",
+      "name": "Practice Cushion",
+      "side": "enemy",
+      "role": "dummy",
+      "tier": "small",
+      "combatTier": "regular",
+      "targetHeight": 461,
+      "heightRange": [
+        410,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/practice-cushion/",
+      "files": {
+        "json": "practice-cushion.json",
+        "binary": "practice-cushion.skel",
+        "atlas": "practice-cushion.atlas",
+        "png": "practice-cushion.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:practice-cushion:basic",
+          "name": "Practice Cushion basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:practice-cushion:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-practice-cushion-basic/"
+        },
+        {
+          "id": "enemy:practice-cushion",
+          "name": "A gentle third-round bump teaches a break interrupt.",
+          "animation": "skill",
+          "effects": [
+            "lesson"
+          ],
+          "vfx": {
+            "registryId": "enemy:practice-cushion",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-practice-cushion/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/practice-cushion.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/practice-cushion-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/practice-cushion/placeholder/practice-cushion.json",
+        "atlas": "assets/cardrpg-look/spine/practice-cushion/placeholder/practice-cushion.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/practice-cushion/sequence/sequence.json"
+    },
+    {
+      "id": "pollen-scout",
+      "name": "Pollen Scout",
+      "side": "enemy",
+      "role": "ranger",
+      "tier": "small",
+      "combatTier": "elite",
+      "targetHeight": 461,
+      "heightRange": [
+        410,
+        512
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/pollen-scout/",
+      "files": {
+        "json": "pollen-scout.json",
+        "binary": "pollen-scout.skel",
+        "atlas": "pollen-scout.atlas",
+        "png": "pollen-scout.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:pollen-scout:basic",
+          "name": "Pollen Scout basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:pollen-scout:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-pollen-scout-basic/"
+        },
+        {
+          "id": "enemy:pollen-scout",
+          "name": "Every third round plants a Binding Thread, up to two.",
+          "animation": "skill",
+          "effects": [
+            "summon"
+          ],
+          "vfx": {
+            "registryId": "enemy:pollen-scout",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-pollen-scout/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/pollen-scout.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/pollen-scout-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/pollen-scout/placeholder/pollen-scout.json",
+        "atlas": "assets/cardrpg-look/spine/pollen-scout/placeholder/pollen-scout.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/pollen-scout/sequence/sequence.json"
+    },
+    {
+      "id": "rain-spool",
+      "name": "Rain Spool",
+      "side": "enemy",
+      "role": "charger",
+      "tier": "boss",
+      "combatTier": "boss",
+      "targetHeight": 922,
+      "heightRange": [
+        870,
+        998
+      ],
+      "maxWidth": 1126.4,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/rain-spool/",
+      "files": {
+        "json": "rain-spool.json",
+        "binary": "rain-spool.skel",
+        "atlas": "rain-spool.atlas",
+        "png": "rain-spool.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory",
+        "idle-phase2",
+        "enrage"
+      ],
+      "budgets": {
+        "bones": 80,
+        "meshVertices": 800,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:rain-spool:basic",
+          "name": "Rain Spool basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:rain-spool:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-rain-spool-basic/"
+        },
+        {
+          "id": "enemy:rain-spool",
+          "name": "Every third round Cloudburst washes shields away before a row hit.",
+          "animation": "ult",
+          "effects": [
+            "storm",
+            "rattled"
+          ],
+          "vfx": {
+            "registryId": "enemy:rain-spool",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-rain-spool/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/rain-spool.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/rain-spool-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/rain-spool/placeholder/rain-spool.json",
+        "atlas": "assets/cardrpg-look/spine/rain-spool/placeholder/rain-spool.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/rain-spool/sequence/sequence.json"
+    },
+    {
+      "id": "crumb-sentinel",
+      "name": "Crumb Sentinel",
+      "side": "enemy",
+      "role": "guard",
+      "tier": "standard",
+      "combatTier": "elite",
+      "targetHeight": 614,
+      "heightRange": [
+        563,
+        666
+      ],
+      "maxWidth": null,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/crumb-sentinel/",
+      "files": {
+        "json": "crumb-sentinel.json",
+        "binary": "crumb-sentinel.skel",
+        "atlas": "crumb-sentinel.atlas",
+        "png": "crumb-sentinel.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory"
+      ],
+      "budgets": {
+        "bones": 40,
+        "meshVertices": 400,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:crumb-sentinel:basic",
+          "name": "Crumb Sentinel basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:crumb-sentinel:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-crumb-sentinel-basic/"
+        },
+        {
+          "id": "enemy:crumb-sentinel",
+          "name": "Every third round Sugar burst detonates Crumb trails on cats.",
+          "animation": "skill",
+          "effects": [
+            "bomb",
+            "crumb"
+          ],
+          "vfx": {
+            "registryId": "enemy:crumb-sentinel",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "cast": 0.25,
+              "hit": 0.55
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-crumb-sentinel/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/crumb-sentinel.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/crumb-sentinel-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/crumb-sentinel/placeholder/crumb-sentinel.json",
+        "atlas": "assets/cardrpg-look/spine/crumb-sentinel/placeholder/crumb-sentinel.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/crumb-sentinel/sequence/sequence.json"
+    },
+    {
+      "id": "pantry-crown",
+      "name": "Pantry Crown",
+      "side": "enemy",
+      "role": "yarn",
+      "tier": "boss",
+      "combatTier": "boss",
+      "targetHeight": 922,
+      "heightRange": [
+        870,
+        998
+      ],
+      "maxWidth": 1126.4,
+      "facing": "right",
+      "flipInGame": true,
+      "folder": "assets/cardrpg-look/spine/pantry-crown/",
+      "files": {
+        "json": "pantry-crown.json",
+        "binary": "pantry-crown.skel",
+        "atlas": "pantry-crown.atlas",
+        "png": "pantry-crown.png"
+      },
+      "requiredBones": [
+        "root",
+        "hip",
+        "head",
+        "hp-anchor",
+        "vfx-origin",
+        "main-hand",
+        "off-hand"
+      ],
+      "sockets": {
+        "hpAnchor": "hp-anchor",
+        "head": "head",
+        "vfxOrigin": "vfx-origin",
+        "mainHand": "main-hand",
+        "offHand": "off-hand",
+        "feet": "root",
+        "chest": "hip"
+      },
+      "animations": [
+        "idle",
+        "appear",
+        "attack",
+        "skill",
+        "ult",
+        "hurt",
+        "ko",
+        "victory",
+        "idle-phase2",
+        "enrage"
+      ],
+      "budgets": {
+        "bones": 80,
+        "meshVertices": 800,
+        "clipping": 1,
+        "atlasPage": 2048
+      },
+      "skills": [
+        {
+          "id": "enemy:pantry-crown:basic",
+          "name": "Pantry Crown basic",
+          "animation": "attack",
+          "effects": [
+            "hit"
+          ],
+          "vfx": {
+            "registryId": "enemy:pantry-crown:basic",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "hit": 0.48
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-pantry-crown-basic/"
+        },
+        {
+          "id": "enemy:pantry-crown",
+          "name": "Every third round Empty banquet drains energy and silences the table.",
+          "animation": "ult",
+          "effects": [
+            "banquet",
+            "hush"
+          ],
+          "vfx": {
+            "registryId": "enemy:pantry-crown",
+            "origin": "main-hand",
+            "cast": "vfx-origin",
+            "impact": "vfx-origin",
+            "ground": "root",
+            "events": {
+              "ult-start": 0.04,
+              "cast": 0.25,
+              "hit": 0.55,
+              "ult-end": 0.94
+            }
+          },
+          "designerVfx": "assets/cardrpg-look/vfx-designer/enemy-pantry-crown/"
+        }
+      ],
+      "concept": "assets/source/look-v3/concepts/pantry-crown.png",
+      "psd": "/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/pantry-crown-3-4.psd",
+      "placeholder": {
+        "skeleton": "assets/cardrpg-look/spine/pantry-crown/placeholder/pantry-crown.json",
+        "atlas": "assets/cardrpg-look/spine/pantry-crown/placeholder/pantry-crown.atlas",
+        "scale": 1
+      },
+      "designer": null,
+      "sequence": null,
+      "sequencePath": "assets/cardrpg-look/spine/pantry-crown/sequence/sequence.json"
+    }
+  ],
+  "statuses": [
+    {
+      "id": "cozy",
+      "name": "Warm",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "scald",
+      "name": "Burn",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "tangle",
+      "name": "Tangle",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "steep",
+      "name": "Regen",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "crumb",
+      "name": "Crumb trail",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "scent",
+      "name": "Mark",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "rattled",
+      "name": "Rattled",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "drowsy",
+      "name": "Daze",
+      "kind": "debuff",
+      "socket": "head"
+    },
+    {
+      "id": "glaze",
+      "name": "Glaze",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "shelter",
+      "name": "Shelter",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "riposte",
+      "name": "Saucer riposte",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "hush",
+      "name": "Hush",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "brittle",
+      "name": "Shred",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "link",
+      "name": "Apron link",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "sprout",
+      "name": "Second sprout",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "decoy",
+      "name": "Yarn decoy",
+      "kind": "buff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "snag",
+      "name": "Bleed",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    },
+    {
+      "id": "bitter",
+      "name": "Bitter",
+      "kind": "debuff",
+      "socket": "vfx-origin"
+    }
+  ]
+}

@@ -46,3 +46,12 @@ it('leaves the flag-OFF service cap and state unchanged', () => {
   expect(R.idlePreview(s,20*HOUR).capHours).toBe(8);
   expect(R.exportSave(s)).toBe(before);
 });
+
+it('previews full and limited supplies while preserving the different saved-time and fast-use costs',()=>{
+ const s=state();s.account.daily.earned={...R.depthCaps(s),fish:R.depthCaps(s).fish-3};
+ const before=R.exportSave(s),tips=R.idleChestA6(s,HOUR),fast=R.idleChestA6(s,HOUR,true);
+ expect(tips.requested).toEqual({fish:60,threads:9,stamps:15});expect(tips.reward).toEqual({fish:3,threads:0,stamps:0});expect(fast.requested).toEqual(tips.requested);expect(R.exportSave(s)).toBe(before);
+ const regular=R.claimIdleA6(s,HOUR),quick=R.claimIdleA6(s,HOUR,true);expect(regular.ok&&quick.ok).toBe(true);
+ expect(regular.state.idle.lastAt).toBe(HOUR);expect(quick.state.idle.lastAt).toBe(0);expect(quick.state.idle.a6?.fastClaims).toBe(1);
+ expect(R.idleChestA6(s,DAY+HOUR).reward.fish).toBeGreaterThan(3);expect(R.exportSave(s)).toBe(before);
+});

@@ -1,0 +1,11 @@
+# C11 — recover unusable authored event timing
+
+Saved baseline evidence reproduced four missing-contact previews (Mochi/Soot, both sizes) and five failed event tests. An authored hit beyond the clip suppressed the required fallback; negative/non-finite timestamps could also block or mis-time the cursor. Preserved these failures without rerunning them.
+
+The shared cue builder now retains only finite timestamps within the clip before filling missing required event names. Valid repeated hits remain authored and fire once each. Intake still accepts timing mistakes as WARN, explicitly identifies ignored events and reports the required fallback. Neither designer bytes nor deterministic combat outcomes change.
+
+Verification: 13 event/asset tests, four scene-loading tests and 13 intake tests pass (30 total); workspace typecheck/lint and whitespace pass. The initial focused command named a nonexistent scene.test.ts filter, so its two actual files/13 tests were supplemented by the correct scene-loading file/four tests. The intake regression accepts out-of-range/null sequence hit timestamps with actionable WARN while preserving the delivered manifest bytes.
+
+120 isolated browser cases pass: two ultimates × five timing variants × two sizes × two motion settings × three speeds. Late/negative/NaN/infinite hits receive exactly one timed default at the gameplay contact; valid repeated hits remain two, with no extra fallback. No stuck ultimate/particles, label overlaps, dropped effects or browser errors; combat snapshots unchanged. Peak39draws in this diagnostic, no frame-time claim. Two source captures at1280×720/1440×900 inspected: shield/Warm outcomes readable above clear faces.
+
+Rebuilt offline demo29,226,081bytes. Two smoke cases/ten public effect changes/two real Pause–Play controls pass without HTTP/errors/overflow/ghost actors. Both offline captures inspected; characters and damage/status rows remain clear. Four final views total, large screenshots kept in /tmp/cardrpg-c-event-fallback-*; compact proof and logs in checks/c11-event-fallback*. Evidence remains below120MB; score7.79/gameplay limits unchanged. Designer inbox still empty; continue C8/C11 with the next intake/runtime consistency review.

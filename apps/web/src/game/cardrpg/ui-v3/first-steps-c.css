@@ -1,0 +1,47 @@
+.uv-app[data-a6=true] {
+ .a6-next-goal {width:244px;max-width:244px;padding:15px 17px;background:linear-gradient(140deg,#473337ef,#2e252aef);border:1px solid #d4af73;box-shadow:0 5px 22px #261e2450}
+ .a6-next-goal>small {font-size:11px;color:#ffe1a0;letter-spacing:.1em}
+ .a6-next-goal p {font-size:16px;line-height:1.4;margin:10px 0}
+ .a6-first-path {display:grid;gap:7px;list-style:none;padding:0;margin:13px 0;color:#d9c9ae;font-size:14px}
+ .a6-first-path li {display:flex;align-items:center;gap:9px}
+ .a6-first-path li>span {display:grid;place-items:center;width:24px;height:24px;flex:none;border:1px solid #b9a07c;border-radius:50%;font-weight:700}
+ .a6-first-path [aria-current=step] {color:#ffe1a0;font-weight:700}
+ .a6-first-path [aria-current=step]>span {background:#ffda8f;color:#493126;border-color:#ffda8f}
+ .a6-first-path [data-done=true] {color:#c5dda8}
+ .a6-first-reward {display:block;border-top:1px solid #c79f6955;padding-top:9px;color:#f1d8ae;font-size:13px;line-height:1.5;font-weight:400}
+ .a6-first-step {display:grid;grid-template-columns:auto 1fr;align-items:center;gap:3px 18px;flex:none;background:#f5e6bf;border:1px solid #bd965d;border-left:4px solid #a76e32;border-radius:9px;padding:10px 15px;margin-bottom:12px;color:#503622}
+ .a6-first-step strong {grid-row:1/3;font-size:17px;white-space:nowrap}
+ .a6-first-step span {font-size:14px;line-height:1.4}
+ .a6-first-step small {color:#705132;font-size:13px}
+ .uv-shell[data-a6-guide=patrol] .uv-fight-bar .uv-fight {position:relative;overflow:visible}
+ .uv-shell[data-a6-guide=patrol] .uv-fight-bar .uv-fight::after {content:'☝';position:absolute;right:15px;top:-38px;font-size:36px;color:#ffd17d;text-shadow:0 2px 3px #41281f;animation:a6-hand-point 1.1s ease-in-out infinite;pointer-events:none}
+ &.dp-reduced-motion .uv-shell[data-a6-guide] :is([data-home-destination],.uv-fight,.dp-v4-growth>button)::after {animation:none!important}
+}
+@media(max-height:780px) {
+ .uv-app[data-a6=true] .a6-next-goal {top:29%;width:232px;padding:12px 14px}
+ .uv-app[data-a6=true] .a6-first-step {padding:7px 12px;margin-bottom:8px}
+}
+@media(prefers-reduced-motion:reduce) {.uv-shell[data-a6-guide] .uv-fight-bar .uv-fight::after {animation:none!important}}
+/* The existing Cats grid reserves row one for the context strip during training. */
+.uv-app[data-a6=true] .uv-sheet-content:has(>.a6-first-step):has(.a6-cats-workspace) {
+ grid-template-rows:auto auto auto minmax(0,1fr);
+ >.a6-first-step {grid-column:1/-1;grid-row:1;margin:0}
+ >.uv-section-tools {grid-column:1;grid-row:2}
+ >.a6-quick-upgrade {grid-column:1;grid-row:3}
+ .a6-cats-workspace>.uv-cat-grid {grid-column:1;grid-row:4;scroll-padding-block:8px}
+ .a6-cats-workspace>.a6-cat-detail {grid-column:2;grid-row:2/5}
+ .a6-cat-hero {grid-template-columns:105px minmax(0,1fr)}
+ .a6-cat-hero>img {height:110px;width:105px}
+}
+/* Keep every first-row name and Power visible while the first-level guide is open. */
+@media(max-height:780px) {
+ .uv-app[data-a6=true] .uv-sheet-content:has(>.a6-first-step):has(.a6-cats-workspace) {
+  >.a6-first-step {grid-template-columns:auto minmax(0,1fr) auto;gap:12px}
+  >.a6-first-step strong {grid-row:auto}
+  >.a6-first-step small {white-space:nowrap}
+  .uv-cat-grid .cr-portrait {height:105px}
+ }
+}
+/* Guide hands sit above their actions; keep Patrol's hand clear of the map button. */
+.uv-app[data-a6=true] .uv-shell[data-a6-guide] :is([data-home-destination],.uv-fight,.dp-v4-growth[data-growth=level]>button:not(:disabled))::after {rotate:180deg}
+.uv-app[data-a6=true] .uv-shell[data-a6-guide=patrol] [data-home-destination=Patrol]::after {right:76px;top:-36px}

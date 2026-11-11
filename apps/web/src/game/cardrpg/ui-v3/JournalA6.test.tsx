@@ -17,7 +17,9 @@ it('discloses the capped milestone amount and settles only once through its visi
  render(<JournalA6 m={m}/>);
  const button=screen.getByRole('button',{name:'Claim Ten evenings of effort'});
  const ticket=button.closest('article')!;
- expect(within(ticket).getByText('10 stamps')).toBeTruthy();
+ expect(within(ticket).getByText('10 stamps')).toBeTruthy();expect(within(ticket).getByText('60 stamps')).toBeTruthy();
+ expect(button.textContent).toBe('Collect reduced gift');expect(within(ticket).getByText('Uses the whole gift.')).toBeTruthy();
+ const description=button.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');expect(description).toContain('Collecting today uses the whole gift');
  fireEvent.click(button);
  expect(m.state.account.currencies.stamps-before).toBe(10);
  expect(R.journalV4(m.state).claims.filter(id=>id==='ten-routes')).toHaveLength(1);
@@ -48,4 +50,15 @@ it('retains the route lock for completed milestones without consuming the gift',
  expect(within(button.closest('article')!).getByText('Finish your route first.')).toBeTruthy();
  fireEvent.click(button);
  expect(R.exportSave(m.state)).toBe(before);
+});
+
+it('keeps the full route-star gift and the irreversible reduced claim together in Discoveries',()=>{
+ const m=readyJournal();m.state.v4!.journey!.stars={'1/0/0-0/battle':{key:'1/0/0-0/battle',chapter:1,band:0,nodeId:'0-0',kind:'battle',conditions:[true,true,true]}};
+ m.state.account.daily.earned.stamps=R.depthCaps(m.state).stamps-3;
+ const before=R.exportSave(m.state),command=R.claimStarRewardV4(m.state,'stars-3');render(<JournalA6 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Discoveries 1'}));
+ const button=screen.getByRole('button',{name:'Collect 3-star reward'}),card=within(button.closest('article')!);
+ for(const text of ['30 stamps','3 stamps'])expect(card.getByText(text)).toBeTruthy();expect(button.textContent).toBe('Collect reduced gift');
+ const description=button.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');expect(description).toContain('uses the whole gift');
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(command.state);
 });

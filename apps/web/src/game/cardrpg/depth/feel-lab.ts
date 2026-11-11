@@ -3,6 +3,7 @@ import { CARDS } from '@taskbar-hero/game-rules/cardrpg';
 import { createCardActionPlan } from './card-action-plan';
 import { CARD_EFFECT_RECIPES } from '../../squad/turn3d/card-effect-data';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
+import {snapshotBattle,splitPresentation} from './battle-presentation';
 
 /** Isolated presentation fixtures. Previewing never grants items or alters the account. */
 export const GALLERY_ACTIONS = [
@@ -21,7 +22,7 @@ export const GALLERY_ACTIONS = [
   })),
 ];
 
-export function galleryFixture(id: string) {
+export function galleryFixture(id: string, preparation = false) {
   const action = GALLERY_ACTIONS.find(item => item.id === id);
   if (!action) throw new Error(`Unknown gallery action ${id}`);
   const account = R.createDepthAccount(71);
@@ -42,6 +43,38 @@ export function galleryFixture(id: string) {
   const targetIds = (skill?.target === 'self' ? [caster] : ['allies', 'foes', 'row'].includes(skill?.target ?? '') ? targets : targets.slice(0, 1)).map(actor => actor.id);
   const skillId = action.enemy ? `${enemy!.role}Attack` : id;
   const start: TurnEvent = { version: 3, seq: 0, turn: 1, round: 1, actionId: 1, beat: 0, type: 'action_start', actorId: caster.id, skillId, targetIds, amount: 0 };
+  if (!action.enemy && !passive) {
+    // Current cat rules own mixed outcomes and situational targets. A synthetic
+    // damage/heal event hid debuff-only skills and painted Clover's heal on self.
+    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:true});
+    const cat = actual.actors.find(actor => actor.catalogId === action.owner)!;
+    cat.skills = R.CAT_BY_ID[action.owner]!.skills.map(skill => skill.id);
+    cat.charge = 100; cat.turns = 3; cat.shield = 45;
+    for (const ally of actual.actors.filter(actor => actor.side === cat.side)) ally.hp = Math.floor(ally.maxHp * (ally.id === cat.id ? .8 : .4));
+    const patient = actual.actors.find(actor => actor.side === cat.side && actor.id !== cat.id)!;
+    patient.hp = id === 'cinnamon-4' ? 0 : Math.floor(patient.maxHp * .15);
+    actual.queue = [cat.id,...actual.queue.filter(actorId => actorId !== cat.id)]; actual.v4!.committed = true;
+    const choice = R.legalChoices(actual).find(choice => choice.skillId === id);
+    if (!choice) throw new Error(`No legal gallery action ${id}`);
+    const before = snapshotBattle(actual);
+    if (!R.act(actual,choice)) throw new Error(`Gallery action rejected ${id}`);
+    const resolved = splitPresentation(before,actual,id);
+    const targets = [...new Set(resolved.events.flatMap(event => event.targetIds))];
+    if (!targets.length) targets.push(choice.targetId);
+    return {battle:resolved.impact,plan:createCardActionPlan([{...start,targetIds:targets},...resolved.events],id),action};
+  }
+  if (preparation && action.owner === 'spool-ram') {
+    // The charge variant is resolved by current combat rules, not a fabricated hit.
+    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:true});
+    const ram = actual.actors.find(actor => actor.catalogId === 'spool-ram')!;
+    ram.turns = 2; ram.charge = id.endsWith(':basic') ? 0 : 100;
+    actual.queue = [ram.id,...actual.queue.filter(actorId => actorId !== ram.id)]; actual.v4!.committed = true;
+    const before = snapshotBattle(actual);
+    R.enemyAct(actual);
+    const resolved = splitPresentation(before,actual,skillId);
+    const targets = [...new Set(resolved.events.flatMap(event => event.targetIds))];
+    return {battle:resolved.impact,plan:createCardActionPlan([{...start,actorId:ram.id,targetIds:targets},...resolved.events],id),action};
+  }
   const healing = enemySupport && enemy?.mechanic === 'heal' || passive && action.owner === 'clover' || skill?.effects.some(item => item.kind === 'heal');
   const effect = healing ? 'heal' : friendly ? 'shield' : 'damage';
   const plan = createCardActionPlan([start, { ...start, seq: 1, beat: 2, type: effect, amount: 42 }], id);

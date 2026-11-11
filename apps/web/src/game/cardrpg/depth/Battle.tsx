@@ -10,13 +10,15 @@ import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/lo
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
+import { SpineScene } from '../spine/scene';
+import { lookSpineEnabled } from '../spine/config';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { MODEL_IDS, portrait, skillIcon } from './assets';
 import type { DepthModel } from './model';
 import { displayedBossPhase } from './battle-presentation';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
-import { impactLabels } from '../../squad/turn3d/impact-labels';
+import { impactLabels, visibleImpactLabel } from '../../squad/turn3d/impact-labels';
 import { bossCueV4, presentationV4, skillReadinessV4, standingPlanText, type PresentationEventV4 } from '../../squad/turn3d/card-v4-presentation';
 import { project, appearance } from './scene-actors';
 import '../../squad/turn3d/battle-layout.css';
@@ -32,7 +34,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const readable = useSyncExternalStore(subscribeReadableBattle, isReadableBattle);
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const host = useRef<HTMLDivElement>(null);
-  const scene = useRef<TurnScene | null>(null);
+  const scene = useRef<TurnScene | SpineScene | null>(null);
   const skillBanner = useRef<HTMLDivElement>(null);
   const bossCue = useRef<HTMLDivElement>(null);
   const cueHistory = useRef<{ initial: unknown; plan: DepthModel['plan']; sequence: number; events: PresentationEventV4[] }>({ initial: null, plan: null, sequence: -1, events: [] });
@@ -62,15 +64,13 @@ export function BattleView({ m }: { m: DepthModel }) {
   }
   const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
     id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
-    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
-      ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
-      && (event.amount > 0 || event.type === 'death')),
+    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(visibleImpactLabel),
   })).filter(result => result.labels.length).map(result=>({...result,width:numberLaneWidth(result.labels)})) : [], [m.plan, battle.actors, statusView]);
   // Resolve costume metadata when React receives a battle snapshot. The GPU
   // loop otherwise repeats catalog filters and object copies for every cat.
   const actors = project(battle);
   const appearances = new Map(actors.map(actor => [actor.id, appearance(actor)]));
-  view.current = { actors, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
+  view.current = { actors, battleKey:battle.initial, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
@@ -87,7 +87,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
   useEffect(() => {
-    let animation = 0, last = 0, ready = false;
+    let animation = 0, last = 0;
     m.sceneReady = false;
     const currentAudio = m.audio;
     try {
@@ -119,12 +119,15 @@ export function BattleView({ m }: { m: DepthModel }) {
           if (!readable || plate.style.transform !== transform) plate.style.transform = transform;
         }
       };
-      scene.current = new TurnScene(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
+      const Renderer = lookSpineEnabled(location.search,lookV2) ? SpineScene : TurnScene;
+      scene.current = new Renderer(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
         m.sceneError = message; m.notify(false);
       });
       window.__depthScene = scene.current;
-    } catch (error) { m.sceneError = `3D preview unavailable. ${String(error)}`; m.notify(false); }
+    } catch (error) { m.sceneError = `Battle preview unavailable. ${String(error)}`; m.notify(false); }
     const tick = (now: number) => {
+      const ready = scene.current?.ready ?? false;
+      if (m.sceneReady !== ready) { m.sceneReady = ready; m.notify(false); }
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
       if (skillBanner.current) {
         skillBanner.current.hidden = !m.plan || m.animationAt >= 600 || m.galleryEffectOnly;
@@ -157,7 +160,6 @@ export function BattleView({ m }: { m: DepthModel }) {
         loadingProgress.current.max = loading.total;
         loadingProgress.current.value = loading.completed;
       }
-      if (scene.current?.ready && !ready) { ready = true; m.sceneReady = true; m.notify(false); }
       currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
         m.paused || !m.showBattle, R.CHAPTERS[(m.battle?.chapter ?? 1) - 1]!.ambience / 174);
       animation = requestAnimationFrame(tick);
@@ -165,7 +167,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     animation = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
   }, [m, lookV2, readable]);
-  useEffect(() => { scene.current?.invalidate(); });
+  useEffect(() => {
+    if (scene.current instanceof SpineScene) scene.current.prepare();
+    else scene.current?.invalidate();
+  });
   useEffect(() => {
     if (!m.canAct) return;
     const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 80 / m.state.settings.speed);
@@ -200,8 +205,8 @@ export function BattleView({ m }: { m: DepthModel }) {
       </span>)}<small>Actions are automatic</small></div>}
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
-      {readable && m.impactVisible && results.map((result,resultIndex) => <div style={lookV2?{width:result.width}:undefined} data-lane-width={result.width} data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
-        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
+      {readable && m.impactVisible && results.map((result,resultIndex) => <div style={lookV2?{width:result.width}:undefined} data-lane-width={result.width} data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => label.type === 'fizzle' ? label.note : `${label.type} ${label.amount}`).join(', ')}`}>
+        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' || event.type === 'fizzle' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
       </div>)}
       {lookV2 && statusView?.bursts.map((id,index) => {
         const reactionId=statusView.reactions?.find(r=>r.targetId===id)?.id??'crumb-burst';
@@ -256,8 +261,8 @@ export function BattleView({ m }: { m: DepthModel }) {
       {m.impactVisible && results.length ? <div className="dp-result-chips" aria-label="Action results">
         {results.map(result => <span className="dp-result-chip" key={result.id}><b>{result.name}</b>
           {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>
-            {event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
-            {event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
+            {event.type === 'death' ? 'KO' : event.type === 'status_apply' || event.type === 'fizzle' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
+            {event.type !== 'fizzle' && event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
           </span>)}
         </span>)}
       </div> : <span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span>}
@@ -266,4 +271,4 @@ export function BattleView({ m }: { m: DepthModel }) {
     {logOpen && <aside className="dp-log" aria-label="Battle log"><button onClick={() => setLogOpen(false)}>Close log</button>{battle.log.slice(-100).reverse().map((event, index) => <p key={index}>R{event.round} · {event.text || `${battle.actors.find(candidate => candidate.id === event.actorId)?.name} → ${battle.actors.find(candidate => candidate.id === event.targetId)?.name} · ${event.kind} ${event.amount || ''}`}</p>)}</aside>}
   </section>;
 }
-declare global { interface Window { __depthScene?: TurnScene } }
+declare global { interface Window { __depthScene?: TurnScene | SpineScene } }

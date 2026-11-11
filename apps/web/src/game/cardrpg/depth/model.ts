@@ -1,7 +1,7 @@
 import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
-import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
+import { CARDS, type Command, type Slot } from '@taskbar-hero/game-rules/cardrpg';
 import { sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
@@ -16,6 +16,7 @@ export class DepthModel {
   screen: Screen = 'hub';
   cardId = 'mochi';
   itemId = '';
+  inventorySlot: Slot | 'all' = 'all';
   notice = 'Build your team, press Fight, then watch your companions take the lead.';
   error = false;
   teamPresets: Array<TeamPreset | null> = [null, null, null];
@@ -112,6 +113,14 @@ export class DepthModel {
   }
   snapshot = () => this.revision;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
+  async toggleSound() {
+    if (this.audio.pending) return;
+    const task = this.audio.toggle();
+    this.notify(false);
+    await task;
+    this.state.settings.sound = this.audio.enabled;
+    this.notify();
+  }
   notify(save = true) {
     if (save && !this.offline && !this.storageFailed) {
       try { localStorage.setItem(R.SAVE_KEY, R.exportSave(this.state)); }
@@ -158,9 +167,11 @@ export class DepthModel {
     this.notify();
     return result.ok;
   }
-  go(screen: Screen) {
+  go(screen: Screen, gearSlot: Slot | 'all' = 'all') {
+    if (this.replay && !this.watching && screen !== 'result') this.clearReplay();
     if (screen === 'map' && this.battle && !this.watching) screen = this.battle.result ? 'result' : 'prepare';
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
+    this.inventorySlot = screen === 'inventory' ? gearSlot : 'all';
     this.screen = screen; this.error = false; this.notify(false); }
   command(command: Command) { this.apply(R.metaCommand(this.state, command)); }
   start(chapter: number, mode: R.Run['mode'] = 'campaign', challengeLevel?: number) {
@@ -230,14 +241,20 @@ export class DepthModel {
     const speeds=this.a6Battle?[1,2,3]:[1,2,4];
     this.state.settings.speed=speeds[(speeds.indexOf(this.state.settings.speed)+1)%speeds.length]!;this.notify();
   }
+  get canAutoContinue() {
+    return this.autoContinue && this.screen==='result' && this.a6Battle && this.battle?.result==='party'
+      && !!this.state.run && !this.state.run.complete && !this.error && !this.tutorialBattle && !this.replay && !this.galleryBattle;
+  }
   continueBattle() {
-    if (!this.autoContinue || !this.a6Battle || this.battle?.result!=='party' || this.tutorialBattle || this.replay) return;
+    if (!this.canAutoContinue || this.state.v4?.journey?.pending.length) return;
     this.finish();
+    if (this.error) return;
     const run=this.state.run;
-    if (!run || run.complete) return;
-    if (run.rewardChoices.length) this.apply(R.chooseReward(this.state,run.rewardChoices[0]!),'Charm collected.');
-    const next=R.availableNodes(this.state.run!).find(n=>n.enemies.length);
-    if (next) {this.enter(next.id);this.fight();}
+    if (!run) return;
+    if (run.complete) { if(run.towerA6)this.go('tower'); return; }
+    if (run.rewardChoices.length) return;
+    const next=R.availableNodes(run);
+    if (next.length===1 && next[0]!.enemies.length) {this.enter(next[0]!.id);if(!this.error)this.fight();}
   }
   skip() {
     if (!this.canSkip) return;
@@ -281,7 +298,7 @@ export class DepthModel {
     this.roundPlan = presentation.roundPlan;
     this.impactApplied = false;
     const identity = actor.side === 'enemy'
-      ? `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
+      ? battle.log.slice(before).find(event=>event.kind==='enemy-action')?.skillId || `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
     const savingHeal = events.find(event => event.type === 'heal' && event.amount > 0
       && snapshot.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp <= .25)
       && presentation.impact.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp > .25));
@@ -310,7 +327,7 @@ export class DepthModel {
   tick(milliseconds: number, now = performance.now()) {
     const previousFrame = this.playbackFrameAt;
     this.playbackFrameAt = now;
-    if (this.paused || !this.showBattle) return;
+    if (this.paused || !this.showBattle || (!this.sceneReady && !this.sceneError)) return;
     // The shared canvas caps its delta at 100 ms. Keep opted-in playback at
     // wall-clock speed on slow frames, without catching up an inactive tab.
     const elapsed = this.a6Battle && !this.galleryBattle && previousFrame !== undefined
@@ -341,12 +358,12 @@ export class DepthModel {
     this.act(R.currentActor(this.battle)?.side === 'party' ? R.chooseAction(this.battle, policy) : undefined);
   }
   finish() {
-    if (this.replay) { this.replay = null; this.plan = null; this.watching = false; this.go(this.replayReturn); return; }
+    if (this.replay) { this.clearReplay(); this.go(this.replayReturn); return; }
     if (this.tutorialBattle?.result) {
       this.tutorialBattle = null;
       this.sceneStarted = false;
       this.state.tutorial = 3;
-      this.notice = 'A welcome invitation is ready. Then equip your first piece.';
+      this.notice = R.gameplayA6(this.state) ? 'Welcome a free friend. Then level up a cat in Cats.' : 'A welcome invitation is ready. Then equip your first piece.';
       this.go('gacha'); this.notify(); return;
     }
     if (this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one unlocked skill.')) this.go('map');
@@ -380,13 +397,26 @@ export class DepthModel {
     const seed = this.state.account.seed + this.state.account.history.length * 101 + 39;
     this.apply(free ? firstInvitation(this.state, 4) : R.metaCommand(this.state, { type: 'pull', bannerId: 'standard', seed }), 'Your invitation is open. Every companion has their own kit.');
   }
+  private get replayRecording() {
+    // A live encounter owns its choices until settlement, including when the
+    // player opens Settings from its result. lastChoices is still empty then.
+    const encounter = this.tutorialBattle ?? this.state.run?.battle;
+    if (encounter) return encounter.result || encounter.choices.length
+      ? { setup: encounter.initial, choices: encounter.choices } : null;
+    return this.state.lastBattle && this.state.lastChoices.length
+      ? { setup: this.state.lastBattle, choices: this.state.lastChoices } : null;
+  }
+  get canReplay() { return !this.replay && !this.galleryBattle && !this.watching && !!this.replayRecording; }
+  private clearReplay() {
+    this.replay = null; this.plan = null; this.watching = false; this.paused = false;
+    if (!this.battle) this.sceneStarted = false;
+  }
   replayLast() {
-    const completed = this.screen === 'result' ? this.battle : null;
-    const setup = completed?.initial ?? this.state.lastBattle;
-    if (!setup) return;
+    if (!this.canReplay) return;
+    const recording = this.replayRecording!;
     this.replayReturn = this.screen;
-    this.replayChoices = [...(completed?.choices ?? this.state.lastChoices)];
-    this.replay = R.createBattle(setup);
+    this.replayChoices = [...recording.choices];
+    this.replay = R.createBattle(recording.setup);
     this.replayIndex = 0;
     this.sceneStarted = true; this.watching = true; this.paused = false; this.plan = null; this.go('map');
   }

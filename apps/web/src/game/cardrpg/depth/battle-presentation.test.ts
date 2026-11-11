@@ -24,6 +24,57 @@ it('presents all three A6 boss phases from the real thresholds while retaining t
   expect(displayedBossPhase(battle, boss)).toBe(2);
 });
 
+it.each([2, 3])('holds Burn-triggered phase %s and its helpers until the round beat', phase => {
+  const battle = R.createBattle({ ...galleryFixture('mochi-1').battle.initial, enemies: ['yarn-giant'], gameplayV4: true, skillsV5: true, gameplayA6: true });
+  const cat = battle.actors.find(actor => actor.catalogId === 'mochi')!;
+  const boss = battle.actors.find(actor => actor.catalogId === 'yarn-giant')!;
+  boss.hp = Math.ceil(boss.maxHp * (phase === 2 ? .66 : .33)) + 5;
+  boss.shield = 0;
+  if (phase === 3) boss.bonuses.a6FirstPhase = 1;
+  boss.statuses = [{id: 'scald', stacks: 1, remaining: 3, source: cat.id, appliedRound: battle.round}];
+  battle.queue = [cat.id]; battle.acted = battle.actors.filter(actor => actor !== cat).map(actor => actor.id);
+  battle.v4!.committed = true;
+  const before = snapshotBattle(battle);
+  expect(R.act(battle, {actorId: cat.id, skillId: 'defend', targetId: cat.id})).toBe(true);
+  expect(displayedBossPhase(battle, boss)).toBe(phase);
+  const resolved = JSON.stringify(battle), {impact, roundPlan} = splitPresentation(before, battle, 'defend');
+  const shown = impact.actors.find(actor => actor.id === boss.id)!;
+  expect(shown.hp).toBe(before.actors.find(actor => actor.id === boss.id)!.hp);
+  expect(displayedBossPhase(impact, shown)).toBe(phase - 1);
+  expect(impact.actors.map(actor => actor.id)).toEqual(before.actors.map(actor => actor.id));
+  expect(roundPlan?.events.some(event => event.type === 'damage' && event.targetIds.includes(boss.id))).toBe(true);
+  expect(JSON.stringify(battle)).toBe(resolved);
+});
+
+it.each([2, 3])('keeps direct-hit phase %s and its helpers on the action impact', phase => {
+  const battle = R.createBattle({ ...galleryFixture('mochi-1').battle.initial, enemies: ['yarn-giant'], gameplayV4: true, skillsV5: true, gameplayA6: true });
+  const cat = battle.actors.find(actor => actor.catalogId === 'mochi')!;
+  const boss = battle.actors.find(actor => actor.catalogId === 'yarn-giant')!;
+  boss.hp = Math.ceil(boss.maxHp * (phase === 2 ? .66 : .33)) + 5; boss.shield = 0;
+  if (phase === 3) boss.bonuses.a6FirstPhase = 1;
+  battle.queue = [cat.id, ...battle.queue.filter(id => id !== cat.id)]; battle.v4!.committed = true;
+  const before = snapshotBattle(battle);
+  expect(R.act(battle, {actorId: cat.id, skillId: 'mochi-1', targetId: boss.id})).toBe(true);
+  const {impact} = splitPresentation(before, battle, 'mochi-1');
+  expect(displayedBossPhase(impact, impact.actors.find(actor => actor.id === boss.id)!)).toBe(phase);
+  expect(impact.actors.map(actor => actor.id)).toEqual(battle.actors.map(actor => actor.id));
+});
+
+it('preserves an action phase when its following round tick reaches the next phase', () => {
+  const before = R.createBattle({ ...galleryFixture('mochi-1').battle.initial, enemies: ['yarn-giant'], gameplayV4: true, skillsV5: true, gameplayA6: true });
+  const after = snapshotBattle(before), boss = after.actors.find(actor => actor.catalogId === 'yarn-giant')!, cat = after.actors[0]!;
+  after.procRounds = {...after.procRounds, v5ActionSequence: 1};
+  const log = (kind: string, amount: number) => after.log.push({round: after.round, actorId: cat.id, targetId: boss.id, skillId: 'mochi-1', kind, amount, text: ''});
+  const contactHP = Math.floor(boss.maxHp * .5);
+  log('damage', boss.hp - contactHP); boss.hp = contactHP; R.phaseBossA6(after, boss); log('action', 0);
+  after.procRounds.v5RoundEnd = 1;
+  const roundHP = Math.floor(boss.maxHp * .32);
+  log('dot', boss.hp - roundHP); boss.hp = roundHP; R.phaseBossA6(after, boss); after.round++;
+  const {impact} = splitPresentation(before, after, 'mochi-1'), shown = impact.actors.find(actor => actor.id === boss.id)!;
+  expect(shown.hp).toBe(contactHP); expect(displayedBossPhase(impact, shown)).toBe(2);
+  expect(displayedBossPhase(after, boss)).toBe(3);
+});
+
 it('holds HP, KO, round and order until their presentation beat while rules resolve once', () => {
   const model = encounter();
   const before = snapshotBattle(model.battle!);

@@ -41,9 +41,9 @@ it('ramps early campaign pressure without a first-clear difficulty jump and pres
     return R.enterNode(started, R.availableNodes(started.run!)[0]!.id).state;
   };
   const first = enter(s), replay = enter({ ...s, cleared: [1] }), higher = enter(s, 4);
-  expect(R.patrolPressureA6(first)).toBe(.72);
-  expect(R.patrolPressureA6(replay)).toBe(.72);
-  expect(R.patrolPressureA6(higher)).toBe(.72);
+  expect(R.patrolPressureA6(first)).toBe(1.36);
+  expect(R.patrolPressureA6(replay)).toBe(1.36);
+  expect(R.patrolPressureA6(higher)).toBe(1.36);
   const foe = first.run!.battle!.initial.enemies[0]!;
   expect(first.run!.battle!.initial.enemyStats![foe]!.attack).toBe(replay.run!.battle!.initial.enemyStats![foe]!.attack);
   const prepared = R.configurePreparation(first, first.team, first.rows, first.v4!.plan).state;
@@ -59,7 +59,7 @@ it('keeps fixed early/late/boss power near the expected new crew and upgrades ne
   for (const chapter of [1, 2, 3]) {
     const run = R.startRun(s, chapter, 7).state.run!;
     const expected = [7500, 7900, 8200][chapter - 1]!;
-    for (const [id, ratio] of [['0-0', .72], ['5-0', .98], ['6-0', chapter===3?1.2:1.15]] as const) {
+    for (const [id, ratio] of [['0-0', 1.36], ['5-0', 1.52], ['6-0', chapter===3?1.51:chapter===2?1.18:1.08]] as const) {
       const node = run.nodes.find(n => n.id === id)!;
       const stats = R.campaignEnemyStatsA6(run, node);
       const battle = R.createBattle({seed: 7, chapter, cats: [], enemies: node.enemies,
@@ -67,8 +67,9 @@ it('keeps fixed early/late/boss power near the expected new crew and upgrades ne
       const power = battle.actors.reduce((n, a) => n + R.powerScoreA6(a), 0);
       // Later bosses retain their harder mechanics with a lower strike budget.
       // Validate the authored pressure range, not an exact score at any cost.
-      expect(power / expected).toBeGreaterThan(node.kind === 'boss' && chapter > 1 ? .9 : ratio - .025);
-      expect(power / expected).toBeLessThan(ratio + .025);
+      // Integer attack is rounded before and after the chapter multiplier.
+      expect(power / expected).toBeGreaterThan(node.kind === 'boss' && chapter > 1 ? .9 : ratio - .035);
+      expect(power / expected).toBeLessThan(ratio + .035);
       const trained = clone(s); trained.account.cards.forEach(c => c.level = 6);
       const sameBand = R.startRun(trained, chapter, 7, 'campaign', '2026-11-10', 1).state.run!;
       expect(R.campaignEnemyStatsA6(sameBand, node)).toEqual(stats);

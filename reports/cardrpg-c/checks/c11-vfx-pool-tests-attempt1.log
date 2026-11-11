@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/vfx-cues.test.ts (3 tests | 1 failed) 38ms
+   × plays a cast override once at first contact if the attack has no cast, keeping it on the caster 33ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/vfx-cues.test.ts > plays a cast override once at first contact if the attack has no cast, keeping it on the caster
+AssertionError: expected [ { active: true, at: +0, …(2) } ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ src/game/cardrpg/spine/vfx-cues.test.ts:27:45
+     25|  expect(vfx.overrides.warnings).toHaveLength(1);expect(vfx.overrides.w…
+     26|  const replay=galleryFixture('mochi-1');vfx.cue(cues[0]!,sampleActionP…
+     27|  expect(effect.players.filter(p=>p.active)).toHaveLength(2);expect(vfx…
+       |                                             ^
+     28| });
+     29|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 15 passed (16)
+   Start at  20:04:44
+   Duration  1.05s (environment 69%, transform 15%, import 12%, tests 3%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/spine/vfx-overrides.test.ts src/game/cardrpg/spine/vfx-cues.test.ts src/game/cardrpg/spine/vfx-registry.test.ts

@@ -54,6 +54,19 @@ describe('A6 opted-in automatic combat', () => {
       expect(R.enemyAct(b)).toBe(true);
       expect(b.v4!.events.some(e => e.kind === 'ultimate.cast' && e.actorId === boss.id)).toBe(!dazed);
       expect(boss.charge === 100).toBe(dazed);
+      expect([...b.log].reverse().find(e=>e.kind==='enemy-action')!.skillId).toBe(`enemy:yarn-giant${dazed?':basic':''}`);
     }
   });
+});
+
+it('gives every owned A6 cat its automatic ultimate from the first patrol, preserving legacy unlocks', () => {
+  const s=state();
+  for(const cat of R.CATS){
+    if(!s.account.cards.some(c=>c.cardId===cat.id))s.account.cards.push({id:cat.id,cardId:cat.id,level:1,stars:1,shards:0,soulbound:true});
+    expect(R.availableSkills(s,cat.id).map(k=>k.id)).toContain(cat.skills[3]!.id);
+    expect(R.availableSkills(R.setGameplayA6(s,false),cat.id).map(k=>k.id)).not.toContain(cat.skills[3]!.id);
+  }
+  expect(R.availableSkills(s,'missing')).toEqual([]);
+  const b=R.playBattle(fixture(7,['button-guard','teacup-healer']), 'auto');
+  expect(b.v4!.events.some(e=>e.kind==='ultimate.cast'&&b.actors.some(a=>a.id===e.actorId&&a.side==='party'))).toBe(true);
 });

@@ -52,10 +52,10 @@ export function startTowerFloorA6(state: DepthAccount, floor = Math.min(TOWER_FL
 export function towerChestA6(s: DepthAccount, floor: number) {
   requireRule(TOWER_CHESTS_A6.includes(floor as typeof TOWER_CHESTS_A6[number]),'UNKNOWN_ID','Choose a Tower milestone.');
   const id = `a6-tower-chest-${floor}`, claimed=s.challengeClaims.includes(id);
-  const reward=cappedPreviewV4(s,{stamps:50+floor*2,threads:10+floor});
-  const reason=!gameplayA6(s)?'Open A6 first.':s.run&&!s.run.complete?'Finish this floor first.':claimed?'Already collected.'
+  const requested={stamps:50+floor*2,threads:10+floor},reward=cappedPreviewV4(s,requested);
+  const reason=!gameplayA6(s)?'Open A6 first.':s.run&&!s.run.complete?(s.run.towerA6?'Finish this floor first.':'Finish your route first.'):claimed?'Already collected.'
     :s.towerBest<floor?`Clear floor ${floor}.`:!Object.values(reward).some(n=>n>0)?'Today’s supplies are full. This chest can wait.':null;
-  return {id,floor,claimed,reward,reason};
+  return {id,floor,claimed,requested,reward,reason};
 }
 export function claimTowerChestA6(state: DepthAccount, floor: number) {
   return transactDepth(state,s=>{requireHome(s);const p=towerChestA6(s,floor);requireRule(!p.reason,'NOT_READY',p.reason??'');grantDepth(s,p.reward);s.challengeClaims.push(p.id);});

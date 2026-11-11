@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { CARDS, CARD_RPG_CONFIG } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from './model';
+import { SelectorA6 } from '../ui-v3/SelectorA6';
 export function SelectorV4({m}:{m:DepthModel}) {
+ return R.gameplayA6(m.state)?<SelectorA6 m={m}/>:<LegacySelectorV4 m={m}/>;
+}
+function LegacySelectorV4({m}:{m:DepthModel}) {
  const [kind,setKind]=useState<'cat'|'gear'>('cat'),[chosen,setChosen]=useState('');
  const options=kind==='cat'?CARDS:R.GEAR,selected=options.find(o=>o.id===chosen),marks=R.selectorMarksV4(m.state);
  const reason=selected?R.selectorEligibilityV4(m.state,kind,selected.id):'Choose your reward.';

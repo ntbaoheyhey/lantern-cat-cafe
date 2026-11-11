@@ -1,0 +1,20 @@
+.uv-app .uv-leave-table {
+ position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(650px,calc(100vw - 48px));height:fit-content;max-height:calc(100dvh - 48px);max-width:none;padding:0;overflow:auto;pointer-events:auto;border:2px solid #c7a366;border-radius:18px;background:#fbefd3;color:#543925;box-shadow:0 18px 70px #1c132bb3;
+ &::backdrop {background:#171420b3;backdrop-filter:blur(3px)}
+ header {display:flex;align-items:center;gap:20px;padding:18px 26px;border-bottom:1px solid #bb9159;background:linear-gradient(105deg,#5e3d32,#352536);color:#ffedca}
+ header img {width:70px;height:90px;object-fit:contain;filter:drop-shadow(0 4px 4px #21192766)}
+ header small {color:#f1ca8c;font-size:13px;letter-spacing:.04em}
+ h2 {margin:7px 0 0;font:700 30px/1.2 Georgia,serif;color:#ffedca}
+ .uv-leave-copy {padding:15px 26px 4px}
+ p {margin:0 0 12px;font-size:15px;line-height:1.5;color:#543925}
+ .uv-leave-gift {padding:14px 17px;margin:14px 0;border:1px solid #c7a366;border-radius:10px;background:#f0dfb8}
+ .uv-leave-gift b {font:700 19px Georgia,serif;color:#62412a}
+ .uv-leave-gift p {margin:7px 0}
+ .uv-leave-gift small {display:block;font-size:13px;line-height:1.5;color:#67492f}
+ .uv-leave-gift .uv-leave-challenge {border-top:1px solid #bba078;padding-top:9px;margin-bottom:0;font-weight:700}
+ .uv-leave-return {font-size:13px;color:#705138;margin-bottom:5px}
+ footer {display:flex;justify-content:flex-end;gap:14px;padding:16px 26px 24px}
+ button {min-height:46px;padding:10px 20px;border:1px solid #9b733f;border-radius:9px;color:#4e3425;background:linear-gradient(#ffefcb,#e4c68b);box-shadow:0 3px 0 #a38050;font-size:15px;font-weight:700}
+ .uv-leave-confirm {background:#674640;color:#fff0cf;border-color:#674640;box-shadow:0 3px 0 #352536}
+ :focus-visible {outline:3px solid #be812d;outline-offset:3px}
+}

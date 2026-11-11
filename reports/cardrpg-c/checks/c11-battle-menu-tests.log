@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run -- src/game/cardrpg/ui-v3/BattleHudA6.test.tsx src/game/cardrpg/ui-v3/SoundControlA6.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+
+ Test Files  260 passed (260)
+      Tests  2367 passed (2367)
+   Start at  06:13:39
+   Duration  27.63s (environment 48%, tests 33%, import 13%, transform 5%)
+
+Environment  jsdom was created 260 times · 131.98s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

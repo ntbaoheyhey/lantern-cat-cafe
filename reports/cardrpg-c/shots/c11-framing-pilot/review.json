@@ -1,0 +1,53 @@
+{
+  "method": "Isolated seed71 real A6/V5 ultimates; animated skeleton bounds sampled at30fps, both sizes/motion modes. No progression or timing benchmark.",
+  "cases": [
+    {
+      "width": 1280,
+      "height": 720,
+      "id": "inkcap-4",
+      "enemies": [
+        "button-guard",
+        "binding-thread",
+        "needle-moth"
+      ],
+      "reduced": false,
+      "min": -34.08729809788565,
+      "worst": {
+        "at": 1066.666666666667,
+        "unit": "foe-2-needle-moth",
+        "asset": "needle-moth",
+        "box": {
+          "x": 1182.7021072526313,
+          "y": 230.20928285871506,
+          "width": 131.38519084525433,
+          "height": 128.08115642428496
+        },
+        "zoom": 1.0853487801487014,
+        "stage": {
+          "width": 1280,
+          "height": 490
+        }
+      },
+      "maxZoom": 1.0936073938937079,
+      "minCat": 0.262564104743605,
+      "maxCat": 0.2974791557062602,
+      "maxBoss": 0,
+      "maxCameraX": 163.42774234319177,
+      "maxCatSpread": 1.0359999850948312,
+      "overlaps": 0,
+      "draws": 63,
+      "unchanged": true,
+      "hits": 1
+    }
+  ],
+  "shots": [
+    {
+      "file": "button-guard-1280.webp",
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "errors": [],
+  "complete": false,
+  "failure": "Error: Framing gate {\"width\":1280,\"height\":720,\"id\":\"inkcap-4\",\"enemies\":[\"button-guard\",\"binding-thread\",\"needle-moth\"],\"reduced\":false,\"min\":-34.08729809788565,\"worst\":{\"at\":1066.666666666667,\"unit\":\"foe-2-needle-moth\",\"asset\":\"needle-moth\",\"box\":{\"x\":1182.7021072526313,\"y\":230.20928285871506,\"width\":131.38519084525433,\"height\":128.08115642428496},\"zoom\":1.0853487801487014,\"stage\":{\"width\":1280,\"height\":490}},\"maxZoom\":1.0936073938937079,\"minCat\":0.262564104743605,\"maxCat\":0.2974791557062602,\"maxBoss\":0,\"maxCameraX\":163.42774234319177,\"maxCatSpread\":1.0359999850948312,\"overlaps\":0,\"draws\":63,\"unchanged\":true,\"hits\":1}"
+}

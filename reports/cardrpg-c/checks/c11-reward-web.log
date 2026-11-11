@@ -1,0 +1,76 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/depth/RouteRewards.test.tsx (11 tests | 6 failed) 104ms
+   × shows the exact skill rank bonus and purchase (modern=true, rank=0) 5ms
+   × shows the exact skill rank bonus and purchase (modern=true, rank=1) 1ms
+   × shows the exact skill rank bonus and purchase (modern=true, rank=2) 0ms
+   × shows charm stack progress and the correct mode effect (modern=true) 1ms
+   × disables a capped skill and charm while retaining another offered choice 1ms
+   × revalidates a stale reward against the current offered choices 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > shows the exact skill rank bonus and purchase (modern=true, rank=0)
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > shows the exact skill rank bonus and purchase (modern=true, rank=1)
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > shows the exact skill rank bonus and purchase (modern=true, rank=2)
+TypeError: Cannot set properties of null (setting 'current')
+ ❯ model src/game/cardrpg/depth/RouteRewards.test.tsx:9:29
+      7| function model(modern=true){
+      8|  const m=new DepthModel(true,modern,modern,modern);m.start(1,'campaign…
+      9|  const run=m.state.run!;run.current='0-0';run.rewardChoices=['shelter-…
+       |                             ^
+     10| }
+     11| for(const modern of [true,false])for(const rank of [0,1,2])it(`shows t…
+ ❯ src/game/cardrpg/depth/RouteRewards.test.tsx:12:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > shows charm stack progress and the correct mode effect (modern=true)
+TypeError: Cannot set properties of null (setting 'current')
+ ❯ model src/game/cardrpg/depth/RouteRewards.test.tsx:9:29
+      7| function model(modern=true){
+      8|  const m=new DepthModel(true,modern,modern,modern);m.start(1,'campaign…
+      9|  const run=m.state.run!;run.current='0-0';run.rewardChoices=['shelter-…
+       |                             ^
+     10| }
+     11| for(const modern of [true,false])for(const rank of [0,1,2])it(`shows t…
+ ❯ src/game/cardrpg/depth/RouteRewards.test.tsx:20:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > disables a capped skill and charm while retaining another offered choice
+TypeError: Cannot set properties of null (setting 'current')
+ ❯ model src/game/cardrpg/depth/RouteRewards.test.tsx:9:29
+      7| function model(modern=true){
+      8|  const m=new DepthModel(true,modern,modern,modern);m.start(1,'campaign…
+      9|  const run=m.state.run!;run.current='0-0';run.rewardChoices=['shelter-…
+       |                             ^
+     10| }
+     11| for(const modern of [true,false])for(const rank of [0,1,2])it(`shows t…
+ ❯ src/game/cardrpg/depth/RouteRewards.test.tsx:26:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/game/cardrpg/depth/RouteRewards.test.tsx > revalidates a stale reward against the current offered choices
+TypeError: Cannot set properties of null (setting 'current')
+ ❯ model src/game/cardrpg/depth/RouteRewards.test.tsx:9:29
+      7| function model(modern=true){
+      8|  const m=new DepthModel(true,modern,modern,modern);m.start(1,'campaign…
+      9|  const run=m.state.run!;run.current='0-0';run.rewardChoices=['shelter-…
+       |                             ^
+     10| }
+     11| for(const modern of [true,false])for(const rank of [0,1,2])it(`shows t…
+ ❯ src/game/cardrpg/depth/RouteRewards.test.tsx:32:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  6 failed | 18 passed (24)
+   Start at  00:10:09
+   Duration  1.24s (environment 50%, transform 20%, import 16%, tests 14%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/depth/RouteRewards.test.tsx src/game/cardrpg/depth/RouteStops.test.tsx

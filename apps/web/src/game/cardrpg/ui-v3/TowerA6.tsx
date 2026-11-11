@@ -1,11 +1,11 @@
-import {useId,useMemo,useState,useSyncExternalStore} from 'react';
+import {useEffect,useId,useMemo,useRef,useState,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
 import {artPropsA6 as portraitProps} from './art-a6';
 import {PowerA6} from './PowerA6';
 import {TowerSceneryA6} from './TowerSceneryA6';
 import {GiftArtA6} from './KeepsakeArtA6';
-import {currencyIconA6} from './CountUpA6';
+import {GiftAmountsA6,giftReducedA6,REDUCED_GIFT_NOTE_A6} from './GiftAmountsA6';
 import {badgesA6} from './badges-a6';
 import {enemyGuideA6} from './guide-a6';
 
@@ -13,16 +13,20 @@ export function TowerA6({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [selected,setSelected]=useState(m.state.run?.towerA6&&!m.state.run.complete?m.state.run.floor:Math.min(30,m.state.towerBest+1));
  const [section,setSection]=useState<'climb'|'gifts'>('climb'),panelId=useId();
+ const climbButton=useRef<HTMLButtonElement>(null),focusClimb=useRef(false);
+ useEffect(()=>{if(section==='climb'&&focusClimb.current){focusClimb.current=false;climbButton.current?.focus();}},[section]);
  const spec=R.towerFloorA6(selected),active=!!m.state.run&&!m.state.run.complete;
  const locked=!m.state.cleared.includes(1),next=R.TOWER_CHESTS_A6.find(f=>!m.state.challengeClaims.includes(`a6-tower-chest-${f}`));
  const chests=R.TOWER_CHESTS_A6.map(f=>R.towerChestA6(m.state,f)),ready=badgesA6(m.state,m.cafeNow).tower;
  const waiting=chests.some(p=>m.state.towerBest>=p.floor&&!p.claimed&&!!p.reason);
+ const reduced=chests.some(p=>!p.reason&&giftReducedA6(p.requested,p.reward));
  const foes=useMemo(()=>R.createBattle({seed:spec.seed,chapter:spec.chapter,cats:[],enemies:spec.enemies,
   enemyStats:spec.enemyStats,challengeLevel:spec.level,gameplayV4:true,skillsV5:true,gameplayA6:true}).actors,[selected]);
  const start=()=>{if(m.apply(R.startTowerFloorA6(m.state,selected),`Yarn Tower · floor ${selected}`))m.enter('0-0');};
+ const planNext=()=>{setSelected(Math.min(R.TOWER_FLOORS_A6,m.state.towerBest+1));focusClimb.current=true;setSection('climb');};
  const returnToRun=()=>onReturn?onReturn():m.go(m.battle?(m.battle.result?'result':'prepare'):'map');
  return <div className="a6-tower">
-  <header className="a6-tower-heading"><div><small>ABOVE THE LANTERNS</small><h2>Yarn Tower</h2><p>{Math.min(30,m.state.towerBest)}/30 floors cleared · {next?`Next chest: floor ${next}`:'Every milestone collected'}</p></div>
+  <header className="a6-tower-heading"><div><small>ABOVE THE LANTERNS</small><h2>Yarn Tower</h2><p>{Math.min(30,m.state.towerBest)}/30 floors cleared · {next?`${m.state.towerBest>=next?'Uncollected chest':'Next chest'}: floor ${next}`:'Every milestone collected'}</p></div>
    <nav className="a6-tower-sections" aria-label="Tower sections"><button aria-pressed={section==='climb'} aria-controls={panelId} onClick={()=>setSection('climb')}>Climb</button><button aria-pressed={section==='gifts'} aria-controls={panelId} onClick={()=>setSection('gifts')}>Milestone gifts <span data-ready={ready.length>0}>{ready.length}</span></button></nav>
   </header>
   {locked?<p className="a6-tower-locked">Clear Tangled Cafe to open the tower. Your crew will climb together.</p>:null}
@@ -31,16 +35,17 @@ export function TowerA6({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
    <aside className="a6-tower-preview"><small>{spec.boss?'MILESTONE GUARDIAN':selected<=m.state.towerBest?'A FAMILIAR CLIMB':'YOUR NEXT CLIMB'}</small><h2>Floor {selected}</h2><PowerA6 label="Your Power" value={R.teamPowerV4(m.state)}/><PowerA6 label="Recommended Power" value={foes.reduce((n,a)=>n+R.powerScoreA6(a),0)}/>
     <div className="a6-tower-enemies">{foes.map(a=><figure key={a.id}><img {...portraitProps(a.catalogId)} alt=""/><figcaption>{a.name}</figcaption></figure>)}</div>
     <p className="a6-tower-counter">{enemyGuideA6(spec.enemies[0]!).counter}</p><small>One automatic battle. Your crew starts each floor at full health.</small>
-    <button className="uv-fight" disabled={locked||active||selected>m.state.towerBest+1} onClick={start}>Climb floor {selected} →</button>
+    <button ref={climbButton} className="uv-fight" disabled={locked||active||selected>m.state.towerBest+1} onClick={start}>Climb floor {selected} →</button>
     {active&&<button onClick={returnToRun}>{m.state.run?.towerA6?'Return to formation':'Return to your patrol'}</button>}
    </aside></div>:<section className="a6-tower-gifts" aria-label="Tower milestone chests">
-    <header><img {...portraitProps('brioche')} alt=""/><div><small>A PARCEL EVERY FIVE FLOORS</small><h2>{next?'Treasures from the climb':'Every milestone, a memory'}</h2><p>{ready.length?`${ready.length} ${ready.length===1?'gift is':'gifts are'} ready for your crew.`:waiting?active?'Finish your route to collect your gifts.':'Today’s supplies are full. Your gifts can wait.':next?'Your first clear of each milestone earns a gift.':'All six gifts are safely with your crew.'}</p></div>{active&&<button onClick={returnToRun}>{m.state.run?.towerA6?'Return to formation':'Return to your patrol'}</button>}</header>
-    <div className="a6-tower-parcels">{chests.map((p,i)=>{const earned=m.state.towerBest>=p.floor,available=ready.some(f=>f===p.floor);return <article key={p.id} data-ready={available} data-collected={p.claimed} aria-label={`Floor ${p.floor} gift`}>
+    <header><img {...portraitProps('brioche')} alt=""/><div><small>A PARCEL EVERY FIVE FLOORS</small><h2>{next?'Treasures from the climb':'Every milestone, a memory'}</h2><p role="status">{ready.length?`${ready.length} ${ready.length===1?'gift is':'gifts are'} ready for your crew.`:waiting?active?'Finish your route to collect your gifts.':'Today’s supplies are full. Your gifts can wait.':next?'Your first clear of each milestone earns a gift.':'All six gifts are safely with your crew.'}</p>{reduced&&<p className="a6-gift-cap-note" id={panelId+'-cap'}>{REDUCED_GIFT_NOTE_A6}</p>}</div>{active&&<button onClick={returnToRun}>{m.state.run?.towerA6?'Return to formation':'Return to your patrol'}</button>}</header>
+    <div className="a6-tower-parcels" tabIndex={0} role="region" aria-label="All six Tower gifts">{chests.map((p,i)=>{const earned=m.state.towerBest>=p.floor,available=ready.some(f=>f===p.floor),partial=available&&giftReducedA6(p.requested,p.reward),canPlan=!earned&&!locked&&!active,detailId=panelId+'-'+p.id;return <article key={p.id} data-ready={available} data-collected={p.claimed} aria-label={`Floor ${p.floor} gift`}>
      <GiftArtA6 variant={i}/><div><small>{p.claimed?'COLLECTED':earned?'A MILESTONE EARNED':'ALONG YOUR CLIMB'}</small><h3>Floor {p.floor}</h3>
-      {!p.claimed&&<div className="a6-tower-reward" aria-label="Available reward">{Object.entries(p.reward).filter(([,n])=>n>0).map(([id,n])=><span key={id}><i aria-hidden="true">{currencyIconA6(id)}</i>{n} {id}</span>)}</div>}
-      <p>{p.claimed?'A little care for your crew.':available?'Ready to collect':earned?p.reason:`${Math.min(p.floor,m.state.towerBest)}/${p.floor} floors cleared`}</p></div>
-     <button className={available?'cr-primary':undefined} aria-label={`Floor ${p.floor} ${p.claimed?'Collected':earned?'Collect':`${m.state.towerBest}/${p.floor}`}`} disabled={!!p.reason} title={p.reason??'Collect milestone reward'} onClick={()=>m.apply(R.claimTowerChestA6(m.state,p.floor),`Floor ${p.floor} chest collected.`)}>{p.claimed?'Collected':available?'Collect gift':earned?active?'After this route':'Supplies full':`Clear floor ${p.floor}`}</button>
+      <div id={detailId}>{!p.claimed&&<GiftAmountsA6 requested={p.requested} reward={p.reward}/>}
+      <p>{p.claimed?'A little care for your crew.':available?partial?'Reduced by today’s limit':'Ready to collect':earned?p.reason:`${Math.min(p.floor,m.state.towerBest)}/${p.floor} floors cleared`}</p></div></div>
+     {canPlan?<button aria-label={`Plan floor ${m.state.towerBest+1} toward floor ${p.floor} gift`} aria-describedby={detailId} onClick={planNext}>Plan floor {m.state.towerBest+1} →</button>:<button className={available?'cr-primary':undefined} aria-label={`Floor ${p.floor} ${p.claimed?'Collected':earned?'Collect':`${m.state.towerBest}/${p.floor}`}`} aria-describedby={detailId+(partial?' '+panelId+'-cap':'')} disabled={!!p.reason} title={p.reason??'Collect milestone reward'} onClick={()=>m.apply(R.claimTowerChestA6(m.state,p.floor),`Floor ${p.floor} chest collected.`)}>{p.claimed?'Collected':available?partial?'Collect reduced gift':'Collect gift':earned?active?'After this route':'Supplies full':`Clear floor ${p.floor}`}</button>}
     </article>;})}</div>
+    <small className="a6-tower-scroll-hint">Six one-time gifts · scroll to review every floor</small>
    </section>}
   </div>
  </div>;

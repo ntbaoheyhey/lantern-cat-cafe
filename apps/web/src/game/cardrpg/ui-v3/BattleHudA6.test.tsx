@@ -65,7 +65,7 @@ it.each([false,true])('uses saved replay V5=%s instead of current account prefer
  expect(screen.getByRole('tooltip').textContent).toContain(skillsV5?'Daze. Your next action becomes a half-power basic. Bosses only lose a signature.':R.STATUS_BY_ID.drowsy.description);
  expect(m.replay).toEqual(before);
 });
-it('explains either ultimate unlock and keeps a fallen cat from announcing readiness',()=>{
+it('keeps all A6 starter ultimates available and a fallen cat from announcing readiness',()=>{
  const m=new DepthModel(true,true,true,true);m.state.tutorial=4;
  m.state.account.cards.find(c=>c.cardId==='soot')!.stars=3;
  m.state.account.cards.find(c=>c.cardId==='clover')!.level=6;
@@ -73,15 +73,15 @@ it('explains either ultimate unlock and keeps a fallen cat from announcing readi
  m.start(1);m.enter('0-0');m.sceneReady=true;
  m.battle!.actors.filter(a=>a.side==='party').forEach(a=>a.charge=100);
  const before=structuredClone(m.battle),view=render(<Harness m={m}/>);
- expect(screen.getByText('Ult · Lv. 6 or 3★')).toBeTruthy();
- expect(screen.getByLabelText('Mochi ultimate: Unlocks at level 6 or three stars')).toBeTruthy();
- expect(screen.getAllByText('Ultimate ready')).toHaveLength(2);
+ expect(screen.queryByText('Ult · Lv. 6 or 3★')).toBeNull();
+ expect(screen.getByLabelText('Mochi ultimate: Ready')).toBeTruthy();
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(3);
  expect(m.battle).toEqual(before);
  act(()=>{m.battle!.actors.find(a=>a.catalogId==='soot')!.hp=0;m.notify(false)});
  expect(screen.getByText('Fallen')).toBeTruthy();
  expect(screen.getByLabelText('Soot ultimate: Fallen')).toBeTruthy();
  expect(view.container.querySelector('[data-fallen="true"]')!.getAttribute('data-ready')).toBe('false');
- expect(screen.getAllByText('Ultimate ready')).toHaveLength(1);
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(2);
  expect(screen.queryByRole('button',{name:/cast|ultimate/i})).toBeNull();
 });
 it('an earned skip resolves the battle and removes the current cut-in without issuing another cast',()=>{
@@ -135,6 +135,51 @@ it.each([false,true])('restores prior pause=%s after reading an empty battle log
  expect(document.activeElement).toBe(more);
  expect(m.battle).toEqual(battle);expect(m.state.account).toEqual(account);
 });
+it.each([false,true])('opens a native battle guide and restores prior pause=%s on return',async wasPaused=>{
+ const m=readyBattle();m.paused=wasPaused;
+ const before=structuredClone(m.battle),account=structuredClone(m.state.account);
+ const show=vi.spyOn(HTMLDialogElement.prototype,'showModal');
+ render(<Harness m={m}/>);
+ const trigger=screen.getByRole('button',{name:'Read battle guide'});
+ fireEvent.click(trigger);
+ const guide=screen.getByRole('dialog',{name:'Battle guide'}) as HTMLDialogElement;
+ expect(guide.tagName).toBe('DIALOG');expect(show).toHaveBeenCalledOnce();expect(guide.open).toBe(true);
+ await within(guide).findByRole('region',{name:'Cafe field guide'});
+ const at=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(at);expect(m.paused).toBe(true);
+ if(wasPaused)fireEvent(guide,new Event('cancel',{cancelable:true}));
+ else fireEvent.keyDown(within(guide).getByRole('button',{name:'Close guide'}),{key:'Escape'});
+ expect(screen.queryByRole('dialog')).toBeNull();expect(m.paused).toBe(wasPaused);expect(guide.open).toBe(false);
+ expect(document.activeElement).toBe(trigger);expect(m.battle).toEqual(before);expect(m.state.account).toEqual(account);
+});
+it.each([false,true])('keeps scrolling keys inside the log and restores prior pause=%s',wasPaused=>{
+ const m=readyBattle();m.paused=wasPaused;
+ m.battle!.log=[{round:1,actorId:'mochi',targetId:'foe',skillId:'mochi-1',kind:'damage',amount:20,text:'Mochi deals 20 damage.'}];
+ const before=structuredClone(m.battle),account=structuredClone(m.state.account);
+ render(<Harness m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'More battle options'}));fireEvent.click(screen.getByRole('button',{name:'Read battle log'}));
+ const log=screen.getByRole('dialog',{name:'Battle log'}),events=within(log).getByRole('region',{name:'Battle events, newest first'});
+ const shortcut=vi.fn((event:KeyboardEvent)=>{if(event.code==='Space')m.paused=!m.paused;});
+ window.addEventListener('keydown',shortcut);
+ try{
+  events.focus();
+  for(const key of [' ','PageDown','End','Home','ArrowDown']){
+   const event=new KeyboardEvent('keydown',{key,code:key===' '?'Space':key,bubbles:true,cancelable:true});
+   fireEvent(events,event);
+   expect(event.defaultPrevented).toBe(false); // Native region scrolling still works.
+   expect(shortcut).not.toHaveBeenCalled();expect(m.paused).toBe(true);
+  }
+  const clock=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(clock);
+  fireEvent(log,new Event('cancel',{cancelable:true}));
+  expect(m.paused).toBe(wasPaused);expect(m.battle).toEqual(before);expect(m.state.account).toEqual(account);
+ }finally{window.removeEventListener('keydown',shortcut);}
+});
+it('returns focus from an escaped battle option to its menu trigger',()=>{
+ const m=readyBattle(),before=structuredClone(m.state);m.paused=true;render(<Harness m={m}/>);
+ const more=screen.getByRole('button',{name:'More battle options'});fireEvent.click(more);
+ const option=screen.getByRole('button',{name:/Turn banners/});option.focus();fireEvent.keyDown(option,{key:'Escape'});
+ expect(more.getAttribute('aria-expanded')).toBe('false');expect(document.activeElement).toBe(more);
+ expect(m.paused).toBe(true);expect(m.state).toEqual(before);
+});
 it('reads exactly the last100 events newest first, including fallback text, without changing the log',()=>{
  const m=readyBattle();m.battle!.log=Array.from({length:125},(_,i)=>({round:Math.floor(i/7)+1,actorId:'',targetId:'',skillId:'',kind:'damage',amount:i,text:i===124?'':`Event ${i}`}));
  const before=structuredClone(m.battle);
@@ -143,8 +188,22 @@ it('reads exactly the last100 events newest first, including fallback text, with
  expect(within(log).getByText('Latest 100 of 125 events · Newest first')).toBeTruthy();
  const events=[...log.querySelectorAll('[data-event-index]')];
  expect(events.map(e=>e.getAttribute('data-event-index'))).toEqual(Array.from({length:100},(_,i)=>String(124-i)));
- expect(events[0]!.textContent).toContain('damage 124');
+ expect(events[0]!.textContent).toContain('124 HP damage');
  expect(within(log).queryByText('Event 24')).toBeNull();
  expect(within(log).getByRole('heading',{name:'Round 18'})).toBeTruthy();
  expect(m.battle).toEqual(before);
+});
+
+it('waits for the Spine cue and hides the portrait again before impact without changing combat',()=>{
+ const m=readyBattle();m.inspect('mochi-4',0);m.ultimateBannerUntil=800;
+ window.__LOOK_V2__=true;
+ const cinematic={ultimateVisible:false,actorId:m.plan!.actorId,box:{x:24,y:62,width:480,height:120},phaseVisible:false,phaseText:'',phaseBox:null};
+ window.__depthScene={cinematic} as unknown as NonNullable<Window['__depthScene']>;
+ let paint:FrameRequestCallback=()=>{};vi.spyOn(window,'requestAnimationFrame').mockImplementation(callback=>{paint=callback;return 1});
+ const before=structuredClone(m.battle),view=render(<Harness m={m}/>),banner=view.container.querySelector<HTMLElement>('.spine-ultimate-cutin')!;
+ expect(banner.hidden).toBe(true);
+ act(()=>{cinematic.ultimateVisible=true;paint(16)});expect(banner.hidden).toBe(false);
+ expect(banner.dataset.unit).toBe('mochi');expect(banner.textContent).toContain(m.plan!.name);
+ act(()=>{cinematic.ultimateVisible=false;paint(32)});expect(banner.hidden).toBe(true);
+ expect(m.battle).toEqual(before);delete window.__depthScene;delete window.__LOOK_V2__;
 });

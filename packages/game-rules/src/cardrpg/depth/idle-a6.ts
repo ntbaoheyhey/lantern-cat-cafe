@@ -25,11 +25,12 @@ export function idleChestA6(s: DepthAccount, now: number, fast = false) {
   const day = Math.floor(effective / DAY), used = state.idle.a6?.fastDay === day ? state.idle.a6.fastClaims : 0;
   const elapsed = Math.min(IDLE_CAP_HOURS_A6 * 3600, Math.max(0, Math.floor((effective - s.idle.lastAt) / 1000)));
   const minutes = fast ? 60 : Math.floor(elapsed / 60), stage = idleStageA6(s);
-  const reward = cappedPreviewV4(state, {
+  const requested = {
     fish: Math.floor(minutes * (1 + stage * .08)),
     threads: Math.floor(minutes * (.15 + stage * .01)),
     stamps: Math.floor(minutes * (.25 + stage * .015)),
-  });
+  };
+  const reward = cappedPreviewV4(state, requested);
   const remaining = Math.max(0, FAST_REWARDS_A6 - used);
   const reason = !gameplayA6(s) ? 'Open A6 first.' : rollback ? 'Wait for the cafe clock to catch up.'
     : s.run && !s.run.complete ? 'Finish your patrol first.'
@@ -37,7 +38,7 @@ export function idleChestA6(s: DepthAccount, now: number, fast = false) {
     : !fast && minutes < 10 ? 'Tips are ready every ten minutes.'
     : !Object.values(reward).some(n => n > 0) ? 'Today’s supplies are full. Your tips can wait.' : null;
   return { elapsed, effectiveMinutes: minutes, claims: reason ? 0 : 1, capHours: IDLE_CAP_HOURS_A6,
-    remaining, reward, rollback, now: effective, readyAt: Math.max(effective, s.idle.lastAt + 10 * MINUTE), stage, reason };
+    remaining, requested, reward, rollback, now: effective, readyAt: Math.max(effective, s.idle.lastAt + 10 * MINUTE), stage, reason };
 }
 
 export function claimIdleA6(state: DepthAccount, now: number, fast = false) {

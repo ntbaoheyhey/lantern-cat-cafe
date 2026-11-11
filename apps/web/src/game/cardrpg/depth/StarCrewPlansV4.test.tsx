@@ -71,6 +71,6 @@ it('preserves legacy completion copy when switching off after a V4 route',()=>{
  expect(m.state.run!.gameplayV4).toBe(true);
  render(<RunMap m={m}/>);
  expect(screen.getByText('Chapter rewards and equipment are already in your account.')).toBeTruthy();
- expect(screen.getByRole('button',{name:'Equip your rewards'})).toBeTruthy();
+ expect(screen.getByRole('button',{name:'Review equipment'})).toBeTruthy();
  expect(screen.queryByText('Your earned supplies, stars and collected equipment are saved.')).toBeNull();
 });

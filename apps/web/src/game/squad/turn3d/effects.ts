@@ -64,7 +64,7 @@ export function createActionPlan(events:readonly TurnEvent[],override?:EffectRec
   let at=0;const beats=kinds.map((kind,i):EffectBeat=>{const duration=Math.max(i===0&&events.some(e=>e.type==='action_start')?600:0,Math.round(data.duration[i]!*(i===3&&(data.ultimate||events.some(e=>e.type==='death'))?1.4:1)*(!data.ultimate&&i!==2?.73:1)));const beat={kind,start:at,duration,camera:data.ultimate?(i===0?1.2:i<3?.8:.2):i===0?.12:0,
     shake:kind==='impact'?data.shake:kind==='reaction'?data.shake*.2:0,flash:kind==='impact'?(data.ultimate?.055:.025):0,
     clip:data.clip==='down'||data.clip==='victory'?data.clip:i===0?data.clip:i===1&&['slash','bash','charge'].includes(data.shape)?'step':i>=3?'idle':data.clip,vfx:data.motifs[i]??'glow',soundCue:`${key}.${kind}`};at+=duration;return beat;});
-  const targetIds=[...new Set((events.find(e=>e.type==='action_start')?.targetIds??events.flatMap(e=>['damage','heal','shield','status_apply','passive','death'].includes(e.type)?e.targetIds:[])))];
+  const targetIds=[...new Set((events.find(e=>e.type==='action_start')?.targetIds??events.flatMap(e=>['damage','heal','shield','status_apply','passive','death','fizzle'].includes(e.type)?e.targetIds:[])))];
   return {id:events[0]?.actionId??0,actorId:(first?.type==='death'?first.targetIds[0]:first?.actorId)||first?.actors?.find(a=>a.side==='party'&&a.hp>0)?.id||'guardian',skillId:key,targetIds,color:data.color,accent:data.accent,shape:data.shape,duration:at,ultimate:data.ultimate,beats,events:[...events],name:data.name,motifs:data.motifs};
 }
 export function sampleActionPlan(plan:EffectPlan,elapsed:number,reducedMotion=false):EffectFrame {

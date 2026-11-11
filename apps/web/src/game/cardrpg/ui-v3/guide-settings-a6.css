@@ -79,7 +79,7 @@
  .a6-guide-finder>label {margin:0;font-size:14px;color:#705234}
  .a6-guide-finder input {margin-top:8px;min-height:42px;font-size:14px;background:#fff9e7;color:#624a31;border-color:#b89b6b}
  .a6-guide-finder>p {margin:9px 0;font-size:12px;color:#866641}
- .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:3px 8px 5px 3px;scrollbar-gutter:stable;overscroll-behavior:contain}
+ .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:8px;scroll-padding:8px;scrollbar-gutter:stable;overscroll-behavior:contain}
  .a6-guide-index>button {display:flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:8px 11px;text-align:left;font-size:14px;line-height:1.3;box-shadow:0 2px 0 #af8b5755;background:#f6e6c3;color:#654a2f;border-color:#c4a779}
  .a6-guide-index>button[aria-pressed=true] {background:#fff7db;border-color:#946b3f;box-shadow:inset 4px 0 #aa743b,0 2px 0 #a8845455;font-weight:700}
  .a6-guide-index img {width:35px;height:42px;object-fit:contain;flex:none}
@@ -96,6 +96,7 @@
  .a6-guide-writing header>p {font-size:13px;line-height:1.5;color:#896641;margin:0}
  .a6-guide-writing>p {font-size:16px;line-height:1.6;margin:12px 0;color:#6f5234}
  .a6-guide-no-match {grid-column:1/-1;text-align:center;color:#765638;font-size:15px}
+ .a6-guide-no-match>p {color:#765638}
  .a6-guide-no-match>.a6-note-seal {height:120px}.a6-guide-no-match button {min-height:42px;font-size:14px}
  .a6-guide-footnote {flex:none;font-size:13px;line-height:1.4;color:#7c603d;margin:14px 0 0}
  .uv-battle-guide:has(>.a6-field-guide) {inset:64px 5% 24px;padding:18px;display:flex;flex-direction:column;overflow:hidden}
@@ -150,7 +151,9 @@
  .a6-comfort-desk>header {display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:8px}
  .a6-comfort-desk>header h2 {font-size:33px}.a6-desk-lamp {width:112px;height:122px;flex:none}
  .a6-desk-lamp[data-lit=true] {filter:drop-shadow(0 0 13px #e3b55966)}
- .a6-sound-row {display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px dashed #bd9e6c;padding-bottom:13px;margin-bottom:16px;font-size:14px}
+ .a6-sound-row {display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 12px;border-bottom:1px dashed #bd9e6c;padding-bottom:13px;margin-bottom:16px;font-size:14px}
+ .a6-sound-row>.a6-sound-status {grid-column:1/-1;margin:0;font-size:14px;line-height:1.4;color:#705337}
+ .a6-sound-row>button:disabled {background:#e7dbbd;color:#76654b;border-color:#b9a47c;box-shadow:none;opacity:1;cursor:wait}
  .a6-sound-row>button {min-height:42px;font-size:14px;min-width:112px}
  .a6-comfort-options {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px}
  .a6-comfort-options>label {display:flex;flex-direction:column;gap:8px;font-size:14px}.a6-comfort-options select {min-height:42px;font-size:14px;background:#fff3d5;color:#65482d}
@@ -191,4 +194,33 @@
 .uv-app[data-a6=true] {
  .a6-save-state,.a6-code-caption small,.a6-save-footer>span,.a6-comfort-motion small,.a6-settings-replay>small,.a6-reset-page>.a6-reset-account {font-size:14px;line-height:1.4}
  .a6-save-actions>button,.a6-save-footer>button,.a6-sound-row>button,.a6-comfort-options select,.a6-settings-replay>button,.a6-reset-page button {min-height:44px;font-size:14px}
+ .a6-comfort-motion {flex-direction:row;text-align:left}
+ .a6-comfort-motion input {appearance:auto;padding:0;color-scheme:light}
+ .a6-import-page {border-top:1px dashed #b99a68;padding-top:12px}
+ .a6-import-page h3 {font:700 24px/1.2 Georgia,serif;margin:0 0 10px;color:#63452c}
+ .a6-import-page table {width:100%;border-collapse:collapse;font-size:14px;line-height:1.3;text-align:left}
+ .a6-import-page caption {text-align:left;font-size:14px;color:#705337;margin-bottom:8px}
+ .a6-import-page th,.a6-import-page td {padding:5px 8px;border-bottom:1px solid #b99a6844;color:#634b31}
+ .a6-import-page td,.a6-import-page th:not(:first-child) {text-align:right;font-variant-numeric:tabular-nums}
+ .a6-import-page thead {background:#e9d4a9;color:#5f452d}
+ .a6-import-page tbody th {font-weight:400}
+ .a6-import-page .a6-import-crew {margin:10px 0;font-size:14px}
+ .a6-import-crew small {display:block;font-size:14px;line-height:1.4;color:#705337}
+ .a6-import-page .cr-actions {gap:10px;margin-top:12px}
+ .a6-import-page button {min-height:44px;font-size:14px}
+ .a6-save-actions>button:disabled,.a6-settings-replay>button:disabled {background:#e7dbbd;color:#76654b;border-color:#b9a47c;box-shadow:none;opacity:1;cursor:default}
+ @media(max-height:760px) {
+  .a6-save-letter:has(.a6-import-page) {padding-block:14px}
+  .a6-save-letter:has(.a6-import-page) .a6-save-heading {grid-template-columns:64px minmax(0,1fr);gap:12px;margin-bottom:8px}
+  .a6-save-letter:has(.a6-import-page) .a6-save-heading>img {height:85px}
+  .a6-save-letter:has(.a6-import-page) .a6-save-heading small {display:none}
+  .a6-save-letter:has(.a6-import-page) h2 {font-size:24px;margin:0 0 4px}
+  .a6-save-letter:has(.a6-import-page) .a6-save-heading p {margin:3px 0}
+  .a6-import-page {padding-top:8px}
+  .a6-import-page h3 {font-size:22px;margin-bottom:6px}
+  .a6-import-page caption {margin-bottom:5px}
+  .a6-import-page th,.a6-import-page td {padding:3px 8px}
+  .a6-import-page .a6-import-crew {margin:7px 0}
+  .a6-import-page .cr-actions {margin-top:8px}
+ }
 }

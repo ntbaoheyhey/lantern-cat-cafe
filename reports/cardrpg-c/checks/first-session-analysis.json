@@ -1,0 +1,327 @@
+{
+  "source": "first-session.json",
+  "sourceSha256": "eaaffc652c8ca00126f1d82d6ecb58f057920d430ad2264177bb5b83d7e52404",
+  "startedAt": "2026-11-11T07:19:49.544Z",
+  "endedAt": "2026-11-11T07:49:50.141Z",
+  "summary": {
+    "activeSeconds": 1800.6,
+    "encounters": 16,
+    "wins": 12,
+    "losses": 4,
+    "firstLossSeconds": 608.56,
+    "normalWinHpMedian": 1,
+    "browser": "Chromium with Metal ANGLE, headless, x1 UI clicks; durations begin after sceneReady",
+    "losses10": 0,
+    "losses30": 4,
+    "normal": {
+      "samples": 11,
+      "medianSeconds": 41.49,
+      "p90Seconds": 77.32
+    },
+    "boss": {
+      "samples": 5,
+      "medianSeconds": 198.17,
+      "p90Seconds": 203.9
+    },
+    "frameDelivery": {
+      "samples": 83149,
+      "medianMs": 16.7,
+      "p95Ms": 16.7
+    },
+    "visibleRewards": {
+      "count": 39,
+      "medianGap": 6.74,
+      "maxGap": 247.07,
+      "trailingGap": 67.51
+    },
+    "errors": 1,
+    "stalls": 0
+  },
+  "methods": {
+    "duration": "Existing UI observation: sceneReady until visible result; x1, no paused or crossed-lease encounters. Quantiles use the same upper empirical order statistic as the recorder.",
+    "recovery": "First later encounter at the same chapter/node/boss kind after a visibly followed hint. A win at an earlier route node is not a recovered boss. Later routes use new encounter seeds; this is not an isolated causal estimate. No replay or counterfactual simulation.",
+    "hintKinds": "The captured button and panel text distinguish a completed comparison from the affordable fallback offered while the comparison was still running. These are reported separately.",
+    "ultimates": "Counts observed action plans in completed normal encounters only. The recorder does not retain a complete per-fight roster, so missing IDs are not asserted to be zero.",
+    "limits": "One conservative UI driver account, one training purchase per completed route plus loss advice. Not a population recovery estimate or an isolated renderer benchmark. The original interrupted account remains separately identified."
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "normal": {
+        "samples": 2,
+        "wins": 2,
+        "losses": 0,
+        "medianSeconds": 36.3,
+        "maxSeconds": 36.3
+      },
+      "boss": {
+        "samples": 1,
+        "wins": 1,
+        "losses": 0,
+        "medianSeconds": 62.34,
+        "maxSeconds": 62.34
+      }
+    },
+    {
+      "chapter": 2,
+      "normal": {
+        "samples": 2,
+        "wins": 2,
+        "losses": 0,
+        "medianSeconds": 39.16,
+        "maxSeconds": 39.16
+      },
+      "boss": {
+        "samples": 1,
+        "wins": 1,
+        "losses": 0,
+        "medianSeconds": 68.28,
+        "maxSeconds": 68.28
+      }
+    },
+    {
+      "chapter": 3,
+      "normal": {
+        "samples": 7,
+        "wins": 6,
+        "losses": 1,
+        "medianSeconds": 59.24,
+        "maxSeconds": 104.43
+      },
+      "boss": {
+        "samples": 3,
+        "wins": 0,
+        "losses": 3,
+        "medianSeconds": 200.84,
+        "maxSeconds": 203.9
+      }
+    }
+  ],
+  "retries": [
+    {
+      "chapter": 3,
+      "node": "0-0",
+      "boss": false,
+      "lossSeed": 1205179080,
+      "lossAtSeconds": 608.56,
+      "advice": "Apply and retry route",
+      "description": "One change for your next try\n\nReplace Soot with Sorrel in Back\n\nCost: No currency needed.\n\nApply and retry route\nYour earned rewards stay. A fresh route starts at the first stop.",
+      "hintKind": "completed-comparison",
+      "applied": true,
+      "purchase": null,
+      "retrySeed": 3993276604,
+      "retryResult": "party",
+      "recovered": true
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 2256061393,
+      "lossAtSeconds": 958.32,
+      "advice": "Review Clover training",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nRaise Clover to level 2\n\nCost: 25 fish · 2 threads\n\nReview Clover training\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": true,
+      "purchase": {
+        "at": 959.416,
+        "kind": "level",
+        "applied": true,
+        "cat": "clover"
+      },
+      "retrySeed": 30332408,
+      "retryResult": "enemy",
+      "recovered": false
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 30332408,
+      "lossAtSeconds": 1325.88,
+      "advice": "Review this gear",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nEnhance Common Hearthloom Apron to +1\n\nCost: 30 fish · 3 threads\n\nReview this gear\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": false,
+      "purchase": {
+        "at": 1326.94,
+        "kind": "gear",
+        "applied": false
+      },
+      "retrySeed": 899726880,
+      "retryResult": "enemy",
+      "recovered": null
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 899726880,
+      "lossAtSeconds": 1727.81,
+      "advice": "Review this gear",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nEnhance Common Hearthloom Apron to +1\n\nCost: 30 fish · 3 threads\n\nReview this gear\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": false,
+      "purchase": {
+        "at": 1728.916,
+        "kind": "gear",
+        "applied": false
+      },
+      "retrySeed": null,
+      "retryResult": null,
+      "recovered": null
+    }
+  ],
+  "recovery": {
+    "followed": 2,
+    "observed": 2,
+    "wins": 1,
+    "pending": 0,
+    "rate": 50
+  },
+  "recoveryByHint": {
+    "completed-comparison": {
+      "followed": 1,
+      "observed": 1,
+      "wins": 1,
+      "pending": 0,
+      "rate": 100
+    },
+    "fallback-during-comparison": {
+      "followed": 1,
+      "observed": 1,
+      "wins": 0,
+      "pending": 0,
+      "rate": 0
+    }
+  },
+  "normalCastObservations": [
+    {
+      "seed": 791576452,
+      "chapter": 1,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 2,
+        "soot": 2
+      }
+    },
+    {
+      "seed": 3778700884,
+      "chapter": 1,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 1,
+        "soot": 1
+      }
+    },
+    {
+      "seed": 3307271994,
+      "chapter": 2,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "soot": 2,
+        "clover": 2
+      }
+    },
+    {
+      "seed": 2258202081,
+      "chapter": 2,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 2,
+        "soot": 2
+      }
+    },
+    {
+      "seed": 1205179080,
+      "chapter": 3,
+      "result": "enemy",
+      "observedCasts": {
+        "mochi": 2,
+        "soot": 1
+      }
+    },
+    {
+      "seed": 3993276604,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 2333531385,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 2024383137,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 1133702706,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 4,
+        "sorrel": 4,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 3882441614,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "sorrel": 2,
+        "clover": 2
+      }
+    },
+    {
+      "seed": 3921343890,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 5,
+        "sorrel": 5,
+        "clover": 4
+      }
+    }
+  ],
+  "unfinished": {
+    "at": 1736.346,
+    "seed": 1211488677,
+    "tutorial": false,
+    "boss": false,
+    "chapter": 3,
+    "node": "0-0",
+    "readyAt": 1736.346,
+    "pausedDuring": false,
+    "speed": 1
+  },
+  "errors": [
+    {
+      "at": 1359.839,
+      "error": "TimeoutError: locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Today’s tasks', exact: true }).first()\u001b[22m\n\u001b[2m    - locator resolved to <button>…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n"
+    }
+  ],
+  "stalls": []
+}

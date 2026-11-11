@@ -1,0 +1,70 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run src/game/cardrpg/spine/assets.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/assets.test.ts (4 tests | 4 failed) 30ms
+   × retries a failed atlas request, then shares data but keeps actor states separate 25ms
+   × retries a failed skeleton request, then shares data but keeps actor states separate 2ms
+   × recovers a PNG sequence after a temporary manifest failure without caching the fallback 1ms
+   × recovers a PNG sequence after a temporary image failure without caching the fallback 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/assets.test.ts > retries a failed atlas request, then shares data but keeps actor states separate
+Error: assets/cardrpg-look/spine/soot/placeholder/soot.atlas: HTTP 503
+ ❯ response src/game/cardrpg/spine/assets.ts:12:94
+     10| const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice…
+     11| export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if…
+     12| async function response(path:string){const r=await fetch(spineAssetUrl…
+       |                                                                                              ^
+     13| const image=async(path:string)=>{const img=new Image();img.src=spineAs…
+     14| export interface ClipData {duration:number;cues:SpineCue[]}
+ ❯ src/game/cardrpg/spine/assets.ts:24:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/game/cardrpg/spine/assets.test.ts > retries a failed skeleton request, then shares data but keeps actor states separate
+AssertionError: expected [Function] to throw error including '503' but got 'ImageBitmap is not defined'
+
+Expected: "503"
+Received: "ImageBitmap is not defined"
+
+ ❯ src/game/cardrpg/spine/assets.test.ts:34:47
+     32|  const first=loadSkeleton(spec),concurrent=loadSkeleton(spec);
+     33|  expect(concurrent).toBe(first);
+     34|  await expect(Promise.all([first,concurrent])).rejects.toThrow('503');
+       |                                               ^
+     35|  const recovered=await loadSkeleton(spec),calls=fetchAsset.mock.calls.…
+     36|  expect(await loadSkeleton(spec)).toBe(recovered);expect(fetchAsset).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/game/cardrpg/spine/assets.test.ts > recovers a PNG sequence after a temporary manifest failure without caching the fallback
+ FAIL  src/game/cardrpg/spine/assets.test.ts > recovers a PNG sequence after a temporary image failure without caching the fallback
+AssertionError: expected 'puppet' to be 'sequence' // Object.is equality
+
+Expected: "sequence"
+Received: "puppet"
+
+ ❯ src/game/cardrpg/spine/assets.test.ts:54:85
+     52|  try{
+     53|   const fallback=await loadSpineActor(unit.id,'sequence');expect(fallb…
+     54|   const recovered=await loadSpineActor(unit.id,'sequence');expect(reco…
+       |                                                                                     ^
+     55|   const fetches=fetchAsset.mock.calls.length,decodes=decode.mock.calls…
+     56|   const reused=await loadSpineActor(unit.id,'sequence');expect(reused.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  19:12:14
+   Duration  1.05s (transform 56%, environment 37%, import 4%, tests 3%)
+
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/game/cardrpg/spine/assets.test.ts`
+Exit status 1

@@ -2,7 +2,7 @@ import { beforeEach, expect, it, vi } from 'vitest';
 import type { EIP1193Provider } from 'viem';
 const rpc = vi.hoisted(() => ({ getBlockNumber: vi.fn(), readContract: vi.fn() }));
 vi.mock('viem', async importOriginal => ({ ...await importOriginal<typeof import('viem')>(), createPublicClient: () => rpc }));
-import { readConnectedRelics } from './relic-reader';
+import { readConnectedRelics, RelicReadError } from './relic-reader';
 const address = '0x1111111111111111111111111111111111111111';
 beforeEach(() => { rpc.getBlockNumber.mockResolvedValue(42n); rpc.readContract.mockImplementation(async args => args.functionName === 'balanceOfBatch' ? [1n, 0n, 2n, 0n] : Number(args.args[0]) - 1); });
 it('reads existing Fuji holdings at one pinned block through read-only RPC', async () => {
@@ -25,4 +25,10 @@ it('accepts an empty wallet without reading default rarity values of unminted ID
 it('rejects a wrong chain or a disconnected account', async () => {
   await expect(readConnectedRelics({ request: async ({ method }) => method === 'eth_accounts' ? [address] : '0x1' } as EIP1193Provider)).rejects.toThrow('Fuji');
   await expect(readConnectedRelics({ request: async ({ method }) => method === 'eth_accounts' ? [] : '0xa869' } as EIP1193Provider)).rejects.toThrow('Connect');
+});
+it('distinguishes app recovery instructions from unknown provider diagnostics', async () => {
+  await expect(readConnectedRelics({ request: async ({ method }) => method === 'eth_accounts' ? [] : '0xa869' } as EIP1193Provider)).rejects.toBeInstanceOf(RelicReadError);
+  await expect(readConnectedRelics({ request: async ({ method }) => method === 'eth_accounts' ? [address] : '0x1' } as EIP1193Provider)).rejects.toBeInstanceOf(RelicReadError);
+  const diagnostic = new Error('provider diagnostics');
+  await expect(readConnectedRelics({ request: async () => { throw diagnostic; } } as unknown as EIP1193Provider)).rejects.toBe(diagnostic);
 });

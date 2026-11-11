@@ -6,6 +6,16 @@ import { exportSave } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_EFFECT_RECIPES } from '../../squad/turn3d/card-effect-data';
 afterEach(() => { vi.unstubAllGlobals(); });
+it('presents the resolved A6 rage signature when rage fills after the round intent', () => {
+  const model=new DepthModel(true);
+  model.state=R.setGameplayA6(model.state,true);
+  model.start(1);model.enter('0-0');model.fight();model.sceneReady=true;
+  const battle=model.battle!,enemy=battle.actors.find(a=>a.side==='enemy')!;
+  battle.queue=[enemy.id];enemy.charge=100;
+  expect(battle.intents.find(i=>i.actorId===enemy.id)!.signature).toBe(false);
+  model.act();
+  expect(model.plan!.presentationId).toBe(`enemy:${enemy.catalogId}`);
+});
 it('keeps the offline entry free of storage access and writes', () => {
   const getItem = vi.fn(() => { throw Error('forbidden'); });
   const setItem = vi.fn(() => { throw Error('forbidden'); });

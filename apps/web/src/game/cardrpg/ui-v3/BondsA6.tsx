@@ -6,11 +6,23 @@ import {artPropsA6 as portraitProps} from './art-a6';
 
 export function BondSummaryA6({ m, catId }: { m: DepthModel; catId?: string }) {
   const pairs = catId ? R.PAIR_COMBOS_A6.filter(pair => pair.cats.includes(catId)) : R.activePairCombosA6(m.state.team);
+  const owned = new Set(m.state.account.cards.map(card => card.cardId));
   return <section className="a6-bond-summary" aria-label="Bonds">
-    <b>∞ Collection bonus +{R.collectionBonusA6(m.state) / 100}% HP & attack</b>
-    {pairs.map(pair => <p key={pair.id}><strong>{pair.name}</strong><small>{pair.cats.map(id => R.CAT_BY_ID[id]!.name).join(' + ')} · {pair.cats.every(id => m.state.team.includes(id)) ? 'Combo ready' : 'Place both in your team'}</small></p>)}
-    {!pairs.length && <p>Bring a bonded pair to unlock a combo.</p>}
-    <button onClick={() => m.go('bonds')}>Open Bond Book</button>
+    <header><b>∞ Collection bonus +{R.collectionBonusA6(m.state) / 100}% HP & attack</b><small>Completed collections help all cats, even from the bench.</small></header>
+    <div className="a6-bond-pair-notes" role="region" aria-label="Pair combo details" tabIndex={0}>
+      {pairs.map(pair => {
+        const missing = pair.cats.filter(id => !owned.has(id));
+        const ready = pair.cats.every(id => m.state.team.includes(id));
+        return <article key={pair.id} aria-label={pair.name} data-state={missing.length ? 'missing' : ready ? 'ready' : 'owned'}>
+          <h3>{pair.name}</h3><small>{pair.cats.map(id => R.CAT_BY_ID[id]!.name).join(' + ')}</small>
+          <p>{pair.description}</p>
+          <b>{missing.length ? `Missing: ${missing.map(id => R.CAT_BY_ID[id]!.name).join(', ')}` : ready ? 'Both in your crew' : 'Place both in your team'}</b>
+        </article>;
+      })}
+      {!pairs.length && <p>Bring a bonded pair to unlock a combo.</p>}
+    </div>
+    {pairs.length > 0 && <p className="a6-bond-trigger">Once per battle, from round 3. Both partners must still be standing.</p>}
+    <footer className="a6-bond-summary-footer"><button onClick={() => m.go('bonds')}>Open Bond Book</button>{pairs.length > 1 && <small>{pairs.length} combos · scroll to read</small>}</footer>
   </section>;
 }
 

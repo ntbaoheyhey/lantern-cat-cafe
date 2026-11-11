@@ -1,4 +1,9 @@
 /* A6 DOM owns the HUD only. Keep B's 82px top / 148px bottom canvas envelopes. */
+.uv-app dialog.uv-battle-guide {
+ position:fixed;margin:0;width:auto;height:auto;max-width:none;max-height:none;box-sizing:border-box;
+ box-shadow:0 8px 28px #10212970;
+ &::backdrop {background:#102129a0;pointer-events:auto}
+}
 .uv-battle-hud[data-a6=true] {
  .uv-battle-top {background:linear-gradient(#37262f,#241d29);border-bottom:2px solid #a7804a;box-shadow:0 8px 20px #21172055}
  .uv-battle-round small {letter-spacing:.12em;color:#efc986}
@@ -86,5 +91,40 @@
  .uv-battle-menu button {min-height:44px;font-size:14px}
 }
 .uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {min-height:44px;font-size:14px;gap:5px}
+/* Keep optional controls beside the rage row, above actors, HP and combat cues. */
+.uv-battle-hud[data-spine=true] .uv-battle-menu {
+ left:auto;right:16px;top:84px;width:calc(100% - 576px);padding:8px;gap:6px;grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.uv-battle-hud[data-spine=true] .uv-battle-menu>.a6-sound-status {grid-column:1/-1;grid-row:2;margin:0 2px}
+/* Phase-three helpers fill the rage row even on a tall stage. */
+.uv-battle-hud[data-spine=true]:has(.uv-enemy-rage>div:nth-child(4)) .uv-battle-menu {
+ left:20px;right:auto;top:136px;width:720px;max-width:calc(100% - 40px);padding:6px;gap:4px;
+}
+@media(max-height:760px) {
+ .uv-battle-hud[data-spine=true] .uv-battle-menu {left:20px;right:auto;top:136px;width:720px;max-width:calc(100% - 40px);padding:6px;gap:4px}
+}
 /* The shared badge tooltip is portaled to body; keep A6 reading copy legible. */
 body:has(.uv-battle-hud[data-a6=true]) .dp-status-tooltip {font-size:14px}
+
+/* Lane C reserves an unoccupied section of the wall from projected Spine bounds. */
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin {
+ position:fixed;right:auto;min-height:0;max-height:none;box-sizing:border-box;padding:8px 20px 8px 12px;gap:12px;
+ display:flex;justify-content:flex-start;align-items:center;overflow:hidden;transform:none;text-align:left;
+ color:var(--spine-cream);border:1px solid var(--spine-accent);border-left:5px solid var(--spine-accent);
+ border-radius:7px 34px 34px 7px;background:linear-gradient(110deg,var(--spine-ink),color-mix(in srgb,var(--spine-rim) 92%,transparent));
+ box-shadow:0 5px 18px #30212c45,inset 0 0 0 3px #fff0ca12;isolation:isolate;
+ animation:a6-cutin-enter var(--cutin-enter) ease-out both;
+}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin[hidden],.spine-phase-cue[hidden] {display:none}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin>img {flex:none;width:100px;height:100%;max-width:24%;object-fit:contain;filter:drop-shadow(0 3px 3px #21132355);animation:none}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin>div {min-width:0;max-width:none;text-shadow:none}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin small {display:block;color:var(--spine-accent)!important;font-size:12px;line-height:1.3;letter-spacing:.1em;margin:0 0 8px}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin b {display:block;color:var(--spine-cream);font:700 clamp(20px,2.1vw,29px)/1.15 Georgia,serif}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin .a6-cutin-flourish {font-size:12px;color:var(--spine-accent);letter-spacing:.14em;margin:7px 0 0}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin .a6-cutin-rays {background:repeating-conic-gradient(from 10deg at 16% 50%,transparent 0 20deg,#fff0ca08 20deg 29deg);mask-image:linear-gradient(90deg,#000,transparent 80%)}
+.spine-phase-cue {position:fixed;box-sizing:border-box;display:flex;align-items:center;padding:12px 18px;border:1px solid var(--spine-accent);border-left:5px solid var(--spine-accent);border-radius:6px 24px 24px 6px;background:var(--spine-ink);color:var(--spine-cream);font:700 19px/1.3 Georgia,serif;box-shadow:0 4px 15px #30212c35}
+.uv-battle-hud[data-reduced=true] * {animation:none!important;transition:none!important}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin[data-compact=true] {padding:6px 14px 6px 8px;gap:8px}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin[data-compact=true] small {margin-bottom:4px;font-size:11px}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin[data-compact=true] b {font-size:21px}
+.uv-battle-hud[data-spine=true] .spine-ultimate-cutin[data-compact=true] .a6-cutin-flourish {display:none}

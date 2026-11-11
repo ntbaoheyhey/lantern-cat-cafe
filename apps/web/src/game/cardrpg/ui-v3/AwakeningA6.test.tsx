@@ -46,7 +46,13 @@ it.each(['level','stars','materials','fish','threads','essence','cap','route'] a
  const before=structuredClone(m.state),expected=R.awakenCat(m.state,'mochi');expect(expected.ok).toBe(false);
  open(m);const button=screen.getByRole('button',{name:'Awaken'}) as HTMLButtonElement;
  expect(button.disabled).toBe(true);
- expect(document.getElementById(button.getAttribute('aria-describedby')!)!.textContent).toBe(reason==='route'?'Finish this route before training your companions.':!expected.ok?expected.error:'');
+ const description=document.getElementById(button.getAttribute('aria-describedby')!)!.textContent!;
+ if(reason==='route'||reason==='cap')expect(description).toBe(reason==='route'?'Finish this route before training your companions.':!expected.ok?expected.error:'');
+ else {
+  for(const text of ['300 fish points','40 threads','5 essence','30 mastery materials'])expect(description).toContain(text);
+  if(reason==='level'||reason==='stars')expect(description).toContain('Awakening needs level 10 and two stars.');
+  else expect(description).toContain(`Need ${{materials:'30 more mastery materials',fish:'300 more fish',threads:'40 more threads',essence:'5 more essence'}[reason]}.`);
+ }
  fireEvent.click(button);expect(m.state).toEqual(before);
 });
 
@@ -58,4 +64,19 @@ it('rechecks the current account at purchase and updates readiness when resource
  expect((screen.getByRole('button',{name:'Awaken'}) as HTMLButtonElement).disabled).toBe(true);
  m.state.materials=30;ui.rerender(<AwakeningA6 m={m} catId="mochi"/>);
  expect((screen.getByRole('button',{name:'Awaken'}) as HTMLButtonElement).disabled).toBe(false);
+});
+
+it('reveals all shortages together and only enables after every resource returns',()=>{
+ const m=ready();m.state.materials=10;
+ Object.assign(m.state.account.currencies,{fish:40,threads:5,essence:1});
+ const before=structuredClone(m.state),ui=open(m);
+ expect(screen.getByText('Need 260 more fish · 35 more threads · 4 more essence · 20 more mastery materials.')).toBeTruthy();
+ fireEvent.click(screen.getByRole('button',{name:'Awaken'}));expect(m.state).toEqual(before);
+ m.state.materials=30;ui.rerender(<AwakeningA6 m={m} catId="mochi"/>);
+ expect(screen.getByText('Need 260 more fish · 35 more threads · 4 more essence.')).toBeTruthy();
+ expect((screen.getByRole('button',{name:'Awaken'}) as HTMLButtonElement).disabled).toBe(true);
+ Object.assign(m.state.account.currencies,{fish:300,threads:40,essence:5});
+ ui.rerender(<AwakeningA6 m={m} catId="mochi"/>);
+ const expected=R.awakenCat(m.state,'mochi');expect(expected.ok).toBe(true);
+ fireEvent.click(screen.getByRole('button',{name:'Awaken'}));expect(m.state).toEqual(expected.state);
 });

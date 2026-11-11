@@ -4,6 +4,7 @@ export * from './state';
 export * from './battle';
 export * from './policies';
 export * from './run';
+export * from './route-upgrades';
 export * from './boons';
 export * from './equipment';
 export * from './bridge';

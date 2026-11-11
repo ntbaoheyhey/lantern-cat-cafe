@@ -88,3 +88,33 @@ it('integrates with selected companions and preserves the legacy OFF buttons', (
   expect(screen.getByRole('button', { name: 'Level up' })).toBeTruthy();
   expect(screen.getByRole('button', { name: 'Add a star' })).toBeTruthy();
 });
+
+it('shows both A6 level shortages, then spends the exact public cost only after all funds return', () => {
+  const m = new DepthModel(true,true,true,true); card(m).level = 10;
+  Object.assign(m.state.account.currencies, { fish:40, threads:0 });
+  const before = structuredClone(m.state), ui = render(<CompanionGrowthV4 m={m} catId="mochi" kind="level"/>);
+  const button = screen.getByRole('button', { name:'Level up' }) as HTMLButtonElement;
+  expect(document.getElementById(button.getAttribute('aria-describedby')!)!.textContent).toContain('Need 210 more fish · 2 more threads.');
+  expect(screen.getByText('250 fish points')).toBeTruthy();expect(screen.getByText('2 threads')).toBeTruthy();
+  fireEvent.click(button);expect(m.state).toEqual(before);
+  Object.assign(m.state.account.currencies, { fish:250, threads:1 });
+  ui.rerender(<CompanionGrowthV4 m={m} catId="mochi" kind="level"/>);
+  expect(screen.getByText('Need 1 more thread.')).toBeTruthy();expect(button.disabled).toBe(true);
+  m.state.account.currencies.threads=2;ui.rerender(<CompanionGrowthV4 m={m} catId="mochi" kind="level"/>);
+  const expected=R.metaCommand(m.state,{type:'level',cardId:card(m).id});expect(expected.ok).toBe(true);
+  fireEvent.click(screen.getByRole('button',{name:'Level up'}));expect(m.state).toEqual(expected.state);
+});
+
+it('discloses fish alongside missing A6 shards and allows a star without threads', () => {
+  const m = new DepthModel(true,true,true,true);Object.assign(card(m),{stars:2,shards:7});
+  Object.assign(m.state.account.currencies,{fish:40,threads:0});
+  const before=structuredClone(m.state),ui=render(<CompanionGrowthV4 m={m} catId="mochi" kind="ascend"/>);
+  expect(screen.getByText('300 fish points')).toBeTruthy();expect(screen.getByText('7 / 20 matching shards')).toBeTruthy();
+  expect(screen.getByText('Need 260 more fish · 13 more matching shards.')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'Add a star'}));expect(m.state).toEqual(before);
+  m.state.account.currencies.fish=300;ui.rerender(<CompanionGrowthV4 m={m} catId="mochi" kind="ascend"/>);
+  expect(screen.getByText('Need 13 more matching shards.')).toBeTruthy();
+  card(m).shards=20;ui.rerender(<CompanionGrowthV4 m={m} catId="mochi" kind="ascend"/>);
+  const expected=R.metaCommand(m.state,{type:'ascend',cardId:card(m).id});expect(expected.ok).toBe(true);
+  fireEvent.click(screen.getByRole('button',{name:'Add a star'}));expect(m.state).toEqual(expected.state);expect(m.state.account.currencies.threads).toBe(0);
+});

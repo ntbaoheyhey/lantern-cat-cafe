@@ -1,0 +1,19 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-a6
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+supabase/tests typecheck: Done
+packages/game-rules typecheck: src/cardrpg/depth/outcome-v4.test.ts(22,18): error TS2304: Cannot find name 'structuredClone'.
+packages/game-rules typecheck: src/cardrpg/depth/outcome-v4.test.ts(39,18): error TS2304: Cannot find name 'structuredClone'.
+packages/game-rules typecheck: Failed
+/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

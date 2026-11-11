@@ -1,0 +1,9 @@
+# C11 — Available first-evening actions
+
+The saved milestone remains unchanged while guidance adapts to the current account. An active route keeps Free friend/First level pending and points the home hand at Night Patrol; the sheet says to finish the route. Without supplies for any first level, the real purchase preview selects Patrol for fish/threads. An unowned selection directs the player to an owned cat, including when supplies are also missing. Ready states recover their original instruction and target. No rule, reward, cost or unlock change.
+
+Guide hands now face down toward their actions. Patrol's hand moves left of the route-map button, which it previously overlapped. Existing animated and both reduced-motion settings are preserved.
+
+Verification:44context browser checks,8settled-loading checks and12motion/transition checks PASS at1280×720 and1440×900. Preview snapshots remain byte-identical; keyboard route resumption retains its run and currencies; six actual Level up purchases match the public command and remove the guide. Targets and pointers update after supplies return. Seven existing Introduction/Power tests and final workspace typecheck/lint PASS; whitespace PASS. No new fullE2E, performance, gameplay or recovery-rate claim.
+
+All54captures inspected:40initial views included four lazy-loading panels; these four were explicitly recaptured after Fight/Welcome loaded in the8view settled sweep. Six motion views cover normal animation, application reduced motion and system reduced motion. Initial unowned+shortage case exposed wrong Growth guidance and was fixed before the final sweep. Two representative images and compact receipts retained; raw diagnostics /tmp/cardrpg-c-first-{context,transition}*. Designer inbox0/25; demo29,226,665bytes and score7.79 retained. Continue C8/C11 first-evening and preparation clarity.

@@ -83,10 +83,6 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     content.current?.scrollTo(0, 0);
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
   }, [m.screen]);
-  useEffect(()=>{
-    if(!m.autoContinue||m.screen!=='result'||m.battle?.result!=='party')return;
-    const timer=window.setTimeout(()=>m.continueBattle(),2500);return()=>window.clearTimeout(timer);
-  },[m,m.screen,m.autoContinue]);
   const openingMessage=m.screen==='save'?'Opening your save desk…':m.screen==='codex'?'Opening the field guide…':m.screen==='relics'?'Opening the keepsake cabinet…':'Opening the table…';
   const pageView = <Suspense fallback={a6?<OpeningA6 message={openingMessage}/>:<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
         {m.screen === 'journal' && (activeGameplayA6(m.state)?<JournalA6 m={m}/>:<CollectionJournalV4 m={m}/>)}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}

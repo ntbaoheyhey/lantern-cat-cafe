@@ -1,0 +1,47 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run src/game/cardrpg/spine/assets.test.ts src/game/cardrpg/spine/scene-loading.test.ts src/game/cardrpg/spine/events.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/assets.test.ts (4 tests | 2 failed) 26ms
+   × retries a failed atlas request, then shares data but keeps actor states separate 21ms
+   × retries a failed skeleton request, then shares data but keeps actor states separate 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/assets.test.ts > retries a failed atlas request, then shares data but keeps actor states separate
+ReferenceError: ImageBitmap is not defined
+ ❯ new ThreeJsTexture ../../node_modules/.pnpm/@esotericsoftware+spine-threejs@4.2.120_three@0.180.0/node_modules/@esotericsoftware/spine-threejs/src/ThreeJsTexture.ts:38:24
+ ❯ src/game/cardrpg/spine/assets.ts:27:151
+
+ ❯ src/game/cardrpg/spine/assets.test.ts:35:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/game/cardrpg/spine/assets.test.ts > retries a failed skeleton request, then shares data but keeps actor states separate
+AssertionError: expected [Function] to throw error including '503' but got 'ImageBitmap is not defined'
+
+Expected: "503"
+Received: "ImageBitmap is not defined"
+
+ ❯ src/game/cardrpg/spine/assets.test.ts:34:47
+     32|  const first=loadSkeleton(spec),concurrent=loadSkeleton(spec);
+     33|  expect(concurrent).toBe(first);
+     34|  await expect(Promise.all([first,concurrent])).rejects.toThrow('503');
+       |                                               ^
+     35|  const recovered=await loadSkeleton(spec),calls=fetchAsset.mock.calls.…
+     36|  expect(await loadSkeleton(spec)).toBe(recovered);expect(fetchAsset).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  2 failed | 10 passed (12)
+   Start at  19:12:30
+   Duration  1.24s (transform 43%, environment 36%, tests 17%, import 4%)
+
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/game/cardrpg/spine/assets.test.ts src/game/cardrpg/spine/scene-loading.test.ts src/game/cardrpg/spine/events.test.ts`
+Exit status 1

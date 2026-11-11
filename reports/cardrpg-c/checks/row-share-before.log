@@ -1,0 +1,408 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run src/game/cardrpg/depth/OutcomeV4.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx (14 tests | 6 failed) 46ms
+   × does not show a back-row percentage without incoming HP damage (empty) 3ms
+   × does not show a back-row percentage without incoming HP damage (blocked) 1ms
+   × does not show a back-row percentage without incoming HP damage (outgoing) 1ms
+   × does not show a back-row percentage without incoming HP damage (healing) 1ms
+   × states the back-row share of incoming HP damage only (rear=0) 1ms
+   × states the back-row share of incoming HP damage only (rear=20) 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > does not show a back-row percentage without incoming HP damage (empty)
+TestingLibraryElementError: Unable to find an element with the text: No HP damage to your crew was recorded.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul />[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m0[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol />[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:48:16
+     46|   :[{...base,actorId:'clover',kind:'heal',amount:60}];
+     47|  battle.v4!.events=[];const before=structuredClone(battle);render(<Out…
+     48|  expect(screen.getByText('No HP damage to your crew was recorded.')).t…
+       |                ^
+     49|  expect(screen.queryByText(/Back row took/)).toBeNull();expect(battle)…
+     50| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > does not show a back-row percentage without incoming HP damage (blocked)
+TestingLibraryElementError: Unable to find an element with the text: No HP damage to your crew was recorded.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul>[39m
+        [36m<li>[39m
+          [0mMochi’s shields absorbed 60 damage.[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m0[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol />[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:48:16
+     46|   :[{...base,actorId:'clover',kind:'heal',amount:60}];
+     47|  battle.v4!.events=[];const before=structuredClone(battle);render(<Out…
+     48|  expect(screen.getByText('No HP damage to your crew was recorded.')).t…
+       |                ^
+     49|  expect(screen.queryByText(/Back row took/)).toBeNull();expect(battle)…
+     50| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > does not show a back-row percentage without incoming HP damage (outgoing)
+TestingLibraryElementError: Unable to find an element with the text: No HP damage to your crew was recorded.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul>[39m
+        [36m<li>[39m
+          [0mSoot dealt 60 damage · 100% of your total.[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m0[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol />[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:48:16
+     46|   :[{...base,actorId:'clover',kind:'heal',amount:60}];
+     47|  battle.v4!.events=[];const before=structuredClone(battle);render(<Out…
+     48|  expect(screen.getByText('No HP damage to your crew was recorded.')).t…
+       |                ^
+     49|  expect(screen.queryByText(/Back row took/)).toBeNull();expect(battle)…
+     50| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > does not show a back-row percentage without incoming HP damage (healing)
+TestingLibraryElementError: Unable to find an element with the text: No HP damage to your crew was recorded.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul>[39m
+        [36m<li>[39m
+          [0mClover restored 60 missing HP.[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m0[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol />[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:48:16
+     46|   :[{...base,actorId:'clover',kind:'heal',amount:60}];
+     47|  battle.v4!.events=[];const before=structuredClone(battle);render(<Out…
+     48|  expect(screen.getByText('No HP damage to your crew was recorded.')).t…
+       |                ^
+     49|  expect(screen.queryByText(/Back row took/)).toBeNull();expect(battle)…
+     50| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > states the back-row share of incoming HP damage only (rear=0)
+TestingLibraryElementError: Unable to find an element with the text: Back row took 0% of your crew’s HP damage.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul>[39m
+        [36m<li>[39m
+          [0mSoot dealt 1000 damage · 100% of your total.[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mClover’s shields absorbed 400 damage.[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mMochi took 1 action with “Weak foes · Steady” selected.[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m0[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m0[0m
+            [0m · [0m
+            [0mDoor team: +3% maximum HP.[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m0[0m
+            [0m · [0m
+            [0mKettle team: +4% healing.[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m1[0m
+            [0m · [0m
+            [0mWeak foes · Steady: Mochi focuses the weakest reachable foe, Button Guard (HP 100%) · Door knock[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m1[0m
+            [0m · [0m
+            [0mMochi: Door knock reaches 1 landings.[0m
+          [36m</li>[39m
+        [36m</ol>[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:58:16
+     56|   {...base,targetId:'clover',kind:'absorbed',amount:400},{...base,acto…
+     57|  const before=structuredClone(battle);render(<OutcomeV4 battle={battle…
+     58|  expect(screen.getByText(`Back row took ${rear===0?0:25}% of your crew…
+       |                ^
+     59|  expect(screen.queryByText('No HP damage to your crew was recorded.'))…
+     60| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  src/game/cardrpg/depth/OutcomeV4.test.tsx > states the back-row share of incoming HP damage only (rear=20)
+TestingLibraryElementError: Unable to find an element with the text: Back row took 25% of your crew’s HP damage.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"cr-panel dp-v4-outcome"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mYour crew’s turning points[0m
+      [36m</h2>[39m
+      [36m<ul>[39m
+        [36m<li>[39m
+          [0mSoot dealt 1000 damage · 100% of your total.[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mClover’s shields absorbed 400 damage.[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mMochi took 1 action with “Weak foes · Steady” selected.[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p>[39m
+        [0mBack row took [0m
+        [0m25[0m
+        [0m% of the damage.[0m
+      [36m</p>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [0mRound-by-round notes[0m
+        [36m</summary>[39m
+        [36m<p>[39m
+          [0mRecorded plan · Target: [0m
+          [0mWeak foes[0m
+          [0m. Care: [0m
+          [0mSteady[0m
+          [0m — prefer support below [0m
+          [0m45[0m
+          [0m% HP.[0m
+        [36m</p>[39m
+        [36m<ol>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m0[0m
+            [0m · [0m
+            [0mDoor team: +3% maximum HP.[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m0[0m
+            [0m · [0m
+            [0mKettle team: +4% healing.[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m1[0m
+            [0m · [0m
+            [0mWeak foes · Steady: Mochi focuses the weakest reachable foe, Button Guard (HP 100%) · Door knock[0m
+          [36m</li>[39m
+          [36m<li>[39m
+            [0mRound [0m
+            [0m1[0m
+            [0m · [0m
+            [0mMochi: Door knock reaches 1 landings.[0m
+          [36m</li>[39m
+        [36m</ol>[39m
+      [36m</details>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/OutcomeV4.test.tsx:58:16
+     56|   {...base,targetId:'clover',kind:'absorbed',amount:400},{...base,acto…
+     57|  const before=structuredClone(battle);render(<OutcomeV4 battle={battle…
+     58|  expect(screen.getByText(`Back row took ${rear===0?0:25}% of your crew…
+       |                ^
+     59|  expect(screen.queryByText('No HP damage to your crew was recorded.'))…
+     60| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 8 passed (14)
+   Start at  05:46:16
+   Duration  2.04s (transform 45%, environment 35%, import 17%, tests 2%, worker 1%)
+
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/game/cardrpg/depth/OutcomeV4.test.tsx`
+Exit status 1

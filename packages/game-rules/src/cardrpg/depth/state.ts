@@ -33,7 +33,7 @@ export function transactDepth(state: DepthAccount, fn: (draft: DepthAccount)=>vo
 export function requireHome(state: DepthAccount) {requireRule(!state.run||state.run.complete,'BATTLE_PENDING','Finish or abandon this run before changing its loadout.');}
 export function availableSkills(state: DepthAccount, id: string) {
   const owned=state.account.cards.find(c=>c.cardId===id);
-  return CAT_BY_ID[id]?.skills.filter(s=>owned&&(owned.level>=s.unlockLevel||owned.stars>=s.unlockStars))??[];
+  return CAT_BY_ID[id]?.skills.filter(s=>owned&&(gameplayA6(state)||owned.level>=s.unlockLevel||owned.stars>=s.unlockStars))??[];
 }
 /** New encounters derive their complete kit from progression, including old accounts. */
 export function defaultSkills(state: DepthAccount, id: string): string[] {

@@ -1,0 +1,91 @@
+{
+  "id": "clover",
+  "format": "json",
+  "scale": 1,
+  "issues": [],
+  "metrics": {
+    "x": -190.49906465561,
+    "y": 8.595159073365721e-7,
+    "width": 412.35692280552826,
+    "height": 512.0000011629071,
+    "bones": 33,
+    "meshVertices": 276,
+    "clipping": 0,
+    "pages": 1,
+    "bytes": 971445
+  },
+  "animations": {
+    "idle": {
+      "duration": 2.5,
+      "events": []
+    },
+    "appear": {
+      "duration": 0.6499999761581421,
+      "events": []
+    },
+    "attack": {
+      "duration": 0.75,
+      "events": [
+        {
+          "name": "hit",
+          "time": 0.36000001430511475
+        }
+      ]
+    },
+    "skill": {
+      "duration": 1,
+      "events": [
+        {
+          "name": "cast",
+          "time": 0.25
+        },
+        {
+          "name": "hit",
+          "time": 0.550000011920929
+        }
+      ]
+    },
+    "ult": {
+      "duration": 2,
+      "events": [
+        {
+          "name": "ult-start",
+          "time": 0.07999999821186066
+        },
+        {
+          "name": "cast",
+          "time": 0.5
+        },
+        {
+          "name": "hit",
+          "time": 1.100000023841858
+        },
+        {
+          "name": "ult-end",
+          "time": 1.8799999952316284
+        }
+      ]
+    },
+    "hurt": {
+      "duration": 0.3499999940395355,
+      "events": []
+    },
+    "ko": {
+      "duration": 1,
+      "events": []
+    },
+    "victory": {
+      "duration": 1.75,
+      "events": []
+    }
+  },
+  "files": [
+    "clover.json",
+    "clover.atlas",
+    "clover.png"
+  ],
+  "accepted": true,
+  "verdict": "PASS",
+  "skeletonFile": "clover.json",
+  "atlasFile": "clover.atlas"
+}

@@ -6,10 +6,20 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      pngjs:
+        specifier: 7.0.0
+        version: 7.0.0
 
   apps/web:
     dependencies:
+      '@esotericsoftware/spine-core':
+        specifier: 4.2.120
+        version: 4.2.120
+      '@esotericsoftware/spine-threejs':
+        specifier: 4.2.120
+        version: 4.2.120(three@0.180.0)
       '@tanstack/react-query':
         specifier: ^5.104.5
         version: 5.104.5(@types/react@19.3.0)(react@19.3.1)
@@ -245,6 +255,14 @@ packages:
 
   '@electric-sql/pglite@0.5.11':
     resolution: {integrity: sha512-SWuqsTjA4DDWqgZ05PC1RJaq8e00p5KACxbqaikDFQ8dIGA0SLRzuPniky7IW+q/c5RDNMdEXwv7mFBWIx9Hxw==}
+
+  '@esotericsoftware/spine-core@4.2.120':
+    resolution: {integrity: sha512-X62MPnfiZTWok4Wk5Q5DqaAUBUFypKpb94IVd1W/j4eLHhg0HH3tve4HvIlkgxDpls2NokHaAtzjxX12rJknOA==}
+
+  '@esotericsoftware/spine-threejs@4.2.120':
+    resolution: {integrity: sha512-Bsz6KmMCK0A5D0uPMP5eXPGReQwTHu/JcENj32PM1oEKjwk5X6W2ETfOleA7aRYHgyPjX5GCmjnDvfzNBoy23g==}
+    peerDependencies:
+      three: '>=0.162.0 <0.185.0'
 
   '@ethereumjs/common@3.2.0':
     resolution: {integrity: sha512-pksvzI0VyLgmuEF2FA/JR/4/y6hcPq8OUail3/AvycBaW1d5VSauOZzqGvJ3RTmR4MU35lWE8KseKOsEhrFRBA==}
@@ -2067,6 +2085,10 @@ packages:
     resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
     engines: {node: '>=10.13.0'}
 
+  pngjs@7.0.0:
+    resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
+    engines: {node: '>=14.19.0'}
+
   pony-cause@2.1.11:
     resolution: {integrity: sha512-M7LhCsdNbNgiLYiP4WjsfLUuFmCfnjdF6jKe2R9NKl4WFN+HZPGHJZ9lnLP7f9ZnKe3U9nuWD0szirmj+migUg==}
     engines: {node: '>=12.0.0'}
@@ -2935,6 +2957,13 @@ snapshots:
       '@noble/ciphers': 1.3.0
 
   '@electric-sql/pglite@0.5.11': {}
+
+  '@esotericsoftware/spine-core@4.2.120': {}
+
+  '@esotericsoftware/spine-threejs@4.2.120(three@0.180.0)':
+    dependencies:
+      '@esotericsoftware/spine-core': 4.2.120
+      three: 0.180.0
 
   '@ethereumjs/common@3.2.0':
     dependencies:
@@ -5613,6 +5642,8 @@ snapshots:
       playwright-core: 1.64.1
 
   pngjs@5.0.0: {}
+
+  pngjs@7.0.0: {}
 
   pony-cause@2.1.11: {}
 

@@ -1,4 +1,4 @@
-import { patrolDefaultsA6 } from './onboarding-a6';
+import { patrolDefaultsA6, campaignPressureA6 } from './onboarding-a6';
 import { powerScoreA6 } from './power-a6';
 import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
 import { combatStarsV4, stopStarsV4 } from './stars-v4';
@@ -56,11 +56,11 @@ export function campaignEnemyStatsA6(run: Run, node: RunNode) {
   if (!run.gameplayA6 || run.mode !== 'campaign' || !node.enemies.length) return stats;
   // Later guardians spend more of their fixed budget on endurance, avoiding a burst wall.
   if(node.kind==='boss'&&run.chapter>1)for(const id of node.enemies)
-    if(ENEMY_BY_ID[id]!.tier==='boss')stats[id]!.hp=Math.round(stats[id]!.hp*1.3);
+    if(ENEMY_BY_ID[id]!.tier==='boss')stats[id]!.hp=Math.round(stats[id]!.hp*1.05);
   const enemies = createBattle({seed: 1, chapter: run.chapter, cats: [], enemies: node.enemies,
     gameplayV4: true, skillsV5: true, gameplayA6: true, enemyStats: stats}).actors;
   const expected = [7500, 7900, 8200][run.chapter - 1]!;
-  const ratio = node.kind === 'boss' ? (run.chapter===3?1.2:1.15) : node.kind === 'elite' ? 1.04 : node.depth < 4 ? .72 : .98;
+  const ratio = campaignPressureA6(run.chapter,node.kind,node.depth);
   const target = expected * ratio * (1 + ((run.challengeLevel ?? 1) - 1) * .012);
   const attacks = enemies.reduce((n, actor) => n + actor.attack * 20, 0);
   const other = enemies.reduce((n, actor) => n + powerScoreA6(actor) - actor.attack * 20, 0);
@@ -189,6 +189,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
     if(drop)run.earnedItems.push(drop);
     if(node.kind==='boss'||run.towerA6){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
+    if(!run.rewardChoices.length)finishNode(run);
   });
 }
 export function chooseReward(state: DepthAccount,id: string): RuleResult<DepthAccount> {
@@ -204,7 +205,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
     const run=s.run;requireRule(run&&!run.battle&&!run.rewardChoices.length&&!run.complete,'NOT_READY','Resolve the current encounter first.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Enter a map node.');
     const cats=battleCats(s);
-    const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):Math.max(1,Math.round(old*(1+percent/100)));}};
+    const healTeam=(percent:number)=>{for(const cat of cats){const old=run.hp[cat.id]??cat.stats.hp;run.hp[cat.id]=percent>=0?Math.min(cat.stats.hp,old+Math.round(cat.stats.hp*percent/100)):old===0?0:Math.max(1,Math.round(old*(1+percent/100)));}};
     if(node.kind==='campfire') {
       if(choice==='heal')healTeam(35);
       else {requireRule(choice==='upgrade'&&targetId&&s.team.some(id=>defaultSkills(s,id).includes(targetId))&&(run.upgrades[targetId]??0)<3,'INVALID_AMOUNT','Choose an unlocked skill below rank three.');run.upgrades[targetId]=(run.upgrades[targetId]??0)+1;}
@@ -233,7 +234,16 @@ export function shopStock(run: Run): string[] {
   return stock;
 }
 export function useTonic(state: DepthAccount): RuleResult<DepthAccount> {
-  return transactDepth(state,s=>{const r=s.run;requireRule(r&&!r.battle&&!r.complete&&r.supplies>0,'NOT_READY','Use a packed tonic between encounters.');for(const cat of battleCats(s))r.hp[cat.id]=Math.min(cat.stats.hp,(r.hp[cat.id]??0)+100);r.supplies--;});
+  return transactDepth(state,s=>{
+    const r=s.run;
+    requireRule(r&&!r.complete,'NOT_READY','Start a route before using a route tonic.');
+    requireRule(!r.battle,'NOT_READY','Use route tonics between encounters, before opening Prepare.');
+    requireRule(r.supplies>0,'NOT_READY','No route tonics remain. Buy one at a route tea cart.');
+    const cats=battleCats(s);
+    requireRule(cats.some(cat=>(r.hp[cat.id]??0)<cat.stats.hp),'NOT_READY','Every companion is already at full HP.');
+    for(const cat of cats)r.hp[cat.id]=Math.min(cat.stats.hp,(r.hp[cat.id]??0)+100);
+    r.supplies--;
+  });
 }
 export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state, s => {

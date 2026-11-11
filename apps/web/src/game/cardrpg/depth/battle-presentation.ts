@@ -6,7 +6,8 @@ const damageKinds = new Set(['reaction-damage','damage', 'dot', 'detonate', 'sha
 const eventTypes: Record<string, TurnEventKind> = {
   'reaction-damage':'damage', damage: 'damage', dot: 'damage', detonate: 'damage', shared: 'damage', reflect: 'damage',
   heal: 'heal', revive: 'heal', survive: 'heal', shield: 'shield', defeat: 'death',
-  status: 'status_apply', expire: 'status_expire', phase: 'boss_phase', summon: 'spawn',
+  status: 'status_apply', expire: 'status_expire', dispel: 'status_expire', resist: 'fizzle', immune: 'fizzle',
+  phase: 'boss_phase', summon: 'spawn', charge: 'charge',
 };
 
 /** A6's first threshold is a shield flag; the legacy phase field advances at the final threshold. */
@@ -42,9 +43,26 @@ export function splitPresentation(before: Battle, after: Battle, skillId: string
   impact.intents = structuredClone(before.intents);
   impact.log = [...before.log, ...actionLog];
   if(after.initial.skillsV5&&impact.v4)impact.v4.events=impact.v4.events.filter(e=>e.version===1||e.logIndex<=before.log.length||e.logIndex<=impact.log.length&&e.stage!=='round-end');
+  // Round-end Burn can change a boss phase and summon helpers after the action.
+  // Keep those consequences with the same beat as the HP loss that caused them.
+  const roundSummons = new Set(roundLog.filter(event => event.kind === 'summon').map(event => event.targetId));
+  impact.actors = impact.actors.filter(actor => !roundSummons.has(actor.id) || before.actors.some(previous => previous.id === actor.id));
+  const deferredPhases = (after.v4?.events.slice(before.v4?.events.length ?? 0).filter(event =>
+    event.kind === 'boss-phase' && event.version === 2 && (event.stage === 'round-end' || event.logIndex > impact.log.length)) ?? []).reverse();
   for (const actor of impact.actors) {
     const previous = before.actors.find(candidate => candidate.id === actor.id);
     if (!previous) continue;
+    // Rewind only deferred transitions, preserving any phase reached by the
+    // action itself when one action and its following Burn cross two thresholds.
+    for (const event of deferredPhases) {
+      if (event.kind !== 'boss-phase' || event.actorId !== actor.id) continue;
+      if (after.initial.gameplayA6) {
+        if (event.from > 1) actor.bonuses.a6FirstPhase = 1;
+        else delete actor.bonuses.a6FirstPhase;
+        actor.phase = Math.max(1, event.from - 1);
+      } else actor.phase = event.from;
+    }
+    if (!after.initial.skillsV5 && roundLog.some(event => event.kind === 'phase' && event.targetId === actor.id)) actor.phase = previous.phase;
     actor.hp = previous.hp;
     for (const event of actionLog) {
       if (event.targetId !== actor.id) continue;

@@ -1,0 +1,45 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/cat-presentation.test.ts (9 tests | 2 failed) 33ms
+   ❯ cat outcome presentation from current combat rules (9)
+     × routes Clover recovery to the actual weakest ally 10ms
+     × routes Clover recovery to the actual weakest self 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally
+ FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self
+AssertionError: expected { glyph: 'sprout', …(13) } to match object { anchor: 'target', …(2) }
+(12 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "anchor": "target",
+-   "phase": "contact",
+-   "recipients": "heal",
++   "anchor": "caster",
++   "phase": "windup",
+  }
+
+ ❯ src/game/cardrpg/spine/cat-presentation.test.ts:31:86
+     29|   expect(recipients('damage')).toEqual([enemy.id]);expect(recipients('…
+     30|   expect(recipients('heal')).toEqual([variant==='self'?actor.id:patien…
+     31|   expect(paintedRecipe('clover-1',plan)!.layers.find(layer=>layer.glyp…
+       |                                                                                      ^
+     32|  });
+     33|  it('keeps a shield separate from Mochi damage and Cinnamon drain sepa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed | 7 passed (8)
+      Tests  2 failed | 44 passed (46)
+   Start at  17:54:43
+   Duration  694ms (environment 70%, import 12%, transform 10%, tests 7%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/spine/cat-presentation.test.ts src/game/cardrpg/spine/vfx-registry.test.ts src/game/cardrpg/spine/utility-presentation.test.ts src/game/cardrpg/depth/battle-presentation.test.ts src/game/cardrpg/depth/skills-v5-presentation.test.ts src/game/cardrpg/depth/feel-lab.test.ts src/game/squad/turn3d/card-status-priority.test.ts src/game/squad/turn3d/card-status-v5.test.tsx

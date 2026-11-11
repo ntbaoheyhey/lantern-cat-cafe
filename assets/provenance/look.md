@@ -1,6 +1,6 @@
 # Lantern atelier authoring provenance
 
-Original procedural art only; seed20261107. No generative model calls, reference-game art, external model, texture, brush or HDRI. Parameters and per-asset hashes will be recorded alongside each export. Targets in LOOK-BIBLE are not proof of execution.
+Historical L0 baseline: original procedural art only, seed20261107, with no generative model calls or imported references in that baseline. Later approved original assets and their sources are recorded in the dated entries below. No reference-game art. Targets in LOOK-BIBLE are not proof of execution.
 
 ## L0 inventory
 
@@ -441,3 +441,46 @@ Original concept, source pixels and original generation provenance retained; no 
 
 ## 2026-11-10 Panko whole rolling-pin puppet repair — P25
 Same original concept/pixels/generation prompt retained; no new image or model generation. Authored armL takes both roller handles, barrel and mitten before head; head takes measured disconnected cheek/shoulder strips. Existing owned-alpha hidden fill, OpenCV Telea and Pillow WebP93 in puppet/build.py; seven layers,1024px,275544B. Actual loaf-shield offHand socket corrected. Original/intermediate configs/rigs/atlases/masters are ~/art/look-v3/p25; accepted receipt/evidence reports/cardrpg-look/art-rebuild/p25. Portrait pixels unchanged.
+
+## Lane C parser fixture — 2026-11-11
+- tools/cardrpg-look/spine/fixtures.mjs creates an original solid amber rectangle PNG and simple seven-bone Spine JSON; source is deterministic authored coordinates, no external image/tool input. Validation fixture only, not character art. Failing copies intentionally change version, bones, clip/height.
+
+## Lane C — original Spine placeholders and cafe stage, 2026-11-11
+- tools/cardrpg-look/spine/puppet-to-spine.mjs reuses the accepted original v3-puppets atlas/rig for all25units; no new character art. Converts pixels to PMA, pivots to512-unit cat scale, authors temporary bone animation. Output assets/cardrpg-look/spine/*/placeholder. No external image or prompt input.
+- apps/web/src/game/cardrpg/spine/stage.ts authors three procedural canvas layers (night/window, cafe wall/lamps, wooden floor/vignette) using local coordinates and style.ts tokens. Source: existing Taskbar Hero cafe motifs; no third-party art. Temporary2D backdrop.
+
+## Lane C C4 — published PSD placeholder pilot (2026-11-11)
+- Tool: tools/cardrpg-look/spine/psd-to-spine.py (psd-tools/Pillow/NumPy); no generative model or external reference.
+- Source: read-only /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.{psd,png}, parts.json and rig notes; exact hashes stored in derived mochi.json laneC.sourceHashes. Flat PNG supplies same-character cheek pixels for the flagged blink patch.
+- Output: assets/cardrpg-look/spine/mochi/psd-placeholder/{mochi.json,mochi.atlas,mochi.png};68layers/32bones/1024atlas/512height. Automatic placeholder only. No source edit or final character generation.
+- Instruction: preserve original soft painted split art, share detail bones, add linked tail/ear motion, breathing, blink and cloth sway; align all named sockets to published pivots. Closed-eye lash-only alternates receive a derived feathered fur cover so hidden iris layers cannot expose dark sockets. Designer review remains required.
+
+## 2026-11-11 Lane C painted VFX
+- Tool/source: original hand-authored SVG path data rasterized by Canvas2D in `apps/web/src/game/cardrpg/spine/vfx-stamps.ts`; existing original B skill compositions and status paths remapped by `vfx-registry.ts`. No external/reference-game images and no generated final character art.
+- Direction: soft painted cafe motifs; honey/ember/rose/sage/sky/iris palette, warm rim, gentle brush flecks. All palette/timing tokens in `spine/style.ts`. Pools, socket events, ground motifs, projectile ribbons and masks are runtime code.
+- Gallery uses the already accepted original placeholders, including the read-only-derived Mochi PSD pilot. `tools/cardrpg-c/build-gallery.mjs` encodes original atlas pixels as WebP at quality86/alpha100 for this review artifact; source PNGs/atlases stay unchanged.
+
+## Lane C — Mochi PSD revision 2 placeholder (2026-11-11)
+Source: published original Mochi 3/4 PSD/parts/rig notes under Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi; SHA256 hashes stored in psd-placeholder-r2/mochi.json. Tool: tools/cardrpg-look/spine/psd-to-spine.py (psd-tools/Pillow/NumPy), no new prompt or generated character art. 117 layers,33 bones,1024 PMA atlas,512-unit height. Shading/highlight layers follow their parent bone. Same-source derived cheek cover retained for blink. Source revision explicitly PARTIAL (joint/eye defects); limited motion placeholder only, not designer-final acceptance. Original placeholder and source files preserved.
+
+## Lane C C9 — painted cafe and cinematic accents (2026-11-11)
+Original procedural Canvas2D geometry in spine/stage.ts adds cups, plants, books, linen pennants, window reflections, woven rug, brush grain and warm vignette. Source: existing Taskbar Hero cafe motifs and shared spine/style.ts palette; no external art or model prompt. Entrance/phase effects reuse original C6 stamps and sockets. Ultimate cards reuse existing original unit portraits; no new character art.
+
+## Lane C C10 — offline review media (2026-11-11)
+Tools: Playwright screenshots/video of the original-art local game and gallery, ffmpeg x1 clip-boundary trim/H.264 encoding, Sharp/WebP contact lineup. Sources: existing Lane C stage/portraits/placeholder atlases. No generated art, external references, or character changes. Recorded chapter-one victories are earned in reports/cardrpg-c/first-session.json; complete demo manifest is docs/cardrpg-c/build.json.
+
+## Lane C C11 original cafe painting — 2026-11-11
+
+Built-in image_gen, illustration-story, text-only original empty cafe; no input/reference images and no characters. Exact prompt and hashes: `reports/cardrpg-c/ref/c11-stage-imagegen.json`. Generated1774x887PNG stays outside git; runtime `assets/cardrpg-look/stage/painted-cafe-c11-v1.webp` is244296bytes, cwebp1.6.0 quality88. Runtime creates three parallax planes from the same artwork with glass/floor mattes; original procedural stage remains the loading/failure fallback. Palette-derived saturation/contrast/brightness controls stay in `spine/style.ts`. This is a backdrop placeholder, not designer character art.
+
+## Lane C Spool preparation cue — 2026-11-11
+Tool: hand-authored TypeScript Canvas Path2D in spine/vfx-stamps.ts; source: original bobbin silhouette with three winding gaps, no image/reference input. Existing shared painted tokens, pooled threads and contracting foot ring. Purpose: a visible caster-only preparation cue from the real charge event; not final character art.
+
+## Lane C ultimate silhouette emphasis — 2026-11-11
+Tool: original TypeScript Canvas2D/Path2D from the existing C6 painted motifs; no image/reference/model input. Cached translucent core variants change fill/outline/size for cafe doors, lanterns, oven, teapot, crown, spore, bells, star and wind. Source paths remain original; colors and all paint values live in spine/style.ts. No character art generated or altered.
+
+## Lane C — Mochi V3 layered placeholder (11 Nov 2026)
+Source: read-only published `01-PILOT-mochi/rig-metadata.json`, `mochi-rig-3-4-right.psd`, raw parts, eye masks, supplied tail arc fields and rig notes in Desktop/TaskbarHero-PSD-cho-designer-2026-11-11. Source gate reports PASS; 132 SHA256 values in `spine/mochi/psd-placeholder-r3/mochi.json` bind the source revision and confirm it was not changed. Tool: `tools/cardrpg-look/spine/layered-to-spine.py` (Pillow/NumPy); no generation prompt, no newly generated final character art. 115 layers,32 bones,333 weighted mesh vertices,1024 PMA atlas,512-unit setup height. Shared conservative neck/bib/tail/cloth deformation, blink and prop parenting; setup eye aperture baked into the derived atlas only, no animated gaze. Final meshes/keyframes remain the designer's. Earlier placeholder revisions are retained.
+
+## Lane C — Clover layered placeholder (11 Nov 2026)
+Source: read-only `02-meo-cats/clover/clover-rig-3-4-right.psd`, `parts-src/manifest.json`, raw PNGs/masks, pivots, rig notes, provenance and published G0–G5/G7 gates under Desktop/TaskbarHero-PSD-cho-designer-2026-11-11. Tool: `tools/cardrpg-look/spine/layered-to-spine.py` (psd-tools/Pillow/NumPy), with exact independent comparison of PSD pixels, masks, placement, visibility, blend and layer order. No model prompt or new final character art. Derived `assets/cardrpg-look/spine/clover/psd-placeholder-r1/` stores 156 unchanged source hashes, 139 layers/33 bones/276 weighted vertices/1024 PMA atlas/512 height. Conservative shared limb/neck/skirt/tail fields and complete blink swaps; holding-paw teapot parenting. All 11 setup masks are baked only into the derived atlas; source editable masks and earlier placeholder are retained. No gaze/tea slosh/final animation claimed.

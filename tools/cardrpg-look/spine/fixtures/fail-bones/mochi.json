@@ -1,0 +1,210 @@
+{
+  "skeleton": {
+    "spine": "4.2.00",
+    "width": 256,
+    "height": 512
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "hip",
+      "parent": "root",
+      "y": 256
+    },
+    {
+      "name": "head",
+      "parent": "hip",
+      "y": 160
+    },
+    {
+      "name": "hp-anchor",
+      "parent": "head",
+      "y": 128
+    },
+    {
+      "name": "vfx-origin",
+      "parent": "hip"
+    },
+    {
+      "name": "main-hand",
+      "parent": "hip",
+      "x": 128
+    }
+  ],
+  "slots": [
+    {
+      "name": "body",
+      "bone": "hip",
+      "attachment": "body"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "body": {
+          "body": {
+            "width": 256,
+            "height": 512
+          }
+        }
+      }
+    }
+  ],
+  "events": {
+    "hit": {},
+    "cast": {},
+    "ult-start": {},
+    "ult-end": {}
+  },
+  "animations": {
+    "idle": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 2.5
+            }
+          ]
+        }
+      }
+    },
+    "appear": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.65
+            }
+          ]
+        }
+      }
+    },
+    "attack": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "hit",
+          "time": 0.36
+        }
+      ]
+    },
+    "skill": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "cast",
+          "time": 0.25
+        },
+        {
+          "name": "hit",
+          "time": 0.55
+        }
+      ]
+    },
+    "ult": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 2
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "name": "ult-start",
+          "time": 0.08
+        },
+        {
+          "name": "cast",
+          "time": 0.5
+        },
+        {
+          "name": "hit",
+          "time": 1.1
+        },
+        {
+          "name": "ult-end",
+          "time": 1.88
+        }
+      ]
+    },
+    "hurt": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.35
+            }
+          ]
+        }
+      }
+    },
+    "ko": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1
+            }
+          ]
+        }
+      }
+    },
+    "victory": {
+      "bones": {
+        "hip": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1.75
+            }
+          ]
+        }
+      }
+    }
+  }
+}

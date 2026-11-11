@@ -1,0 +1,391 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/ui-v3/BattleHudA6.test.tsx (16 tests | 1 failed | 15 skipped) 86ms
+   × returns focus from an escaped battle option to its menu trigger 84ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/ui-v3/BattleHudA6.test.tsx > returns focus from an escaped battle option to its menu trigger
+AssertionError: expected <body><div>…(1)</div></body> to be <button …(2)></button> // Object.is equality
+
+- Expected
++ Received
+
++ <body>
++   <div>
++     <div
++       aria-label="Battle controls"
++       class="uv-battle-hud"
++       data-a6="true"
++       data-reduced="false"
++       data-spine="false"
++       style="--spine-cream: #fff0ca; --spine-ink: #49333a; --spine-accent: #efbd73; --spine-rim: #63414a;"
++     >
++       <header
++         class="uv-battle-top"
++       >
++         <div
++           class="uv-battle-round"
++         >
++           <small>
++             Tangled Cafe
++           </small>
++           <b>
++             Wave 1/1 · Round 
++             1
++           </b>
++         </div>
++         <div
++           class="uv-battle-actions"
++         >
++           <label
++             class="uv-auto-continue"
++             title="Auto-continue battles; pause at rest stops"
++           >
++             <input
++               type="checkbox"
++             />
++              Auto-next
++           </label>
+            <button
++             aria-label="Change playback speed"
++           >
++             ×
++             1
++           </button>
++           <button>
++             Resume auto
++           </button>
++           <button
++             disabled=""
++             title="Earn three stars on this stage to skip it."
++           >
++             Skip · 3★ needed
++           </button>
++           <button
++             aria-label="Read battle guide"
++           >
++             ?
++           </button>
++           <button
+              aria-expanded="false"
+              aria-label="More battle options"
+            >
+              ⋯
+            </button>
++         </div>
++       </header>
++       <section
++         aria-label="Enemy rage"
++         class="uv-enemy-rage"
++       >
++         <div>
++           <small>
++             Teacup Healer
++           </small>
++           <div
++             aria-label="Teacup Healer rage: 15/100"
++             aria-valuemax="100"
++             aria-valuemin="0"
++             aria-valuenow="15"
++             class="a6-rage"
++             data-ready="false"
++             role="progressbar"
++           >
++             <i
++               style="width: 15%;"
++             />
++           </div>
++         </div>
++         <div>
++           <small>
++             Sock Skipper
++           </small>
++           <div
++             aria-label="Sock Skipper rage: 15/100"
++             aria-valuemax="100"
++             aria-valuemin="0"
++             aria-valuenow="15"
++             class="a6-rage"
++             data-ready="false"
++             role="progressbar"
++           >
++             <i
++               style="width: 15%;"
++             />
++           </div>
++         </div>
++       </section>
++       <div
++         aria-label="Crew health and ultimates"
++         class="uv-battle-party dp-v5look"
++       >
++         <article
++           class="uv-battle-cat"
++           data-actor="mochi"
++           data-fallen="false"
++           data-rarity="common"
++           data-ready="false"
++         >
++           <div
++             class="a6-hud-portrait"
++           >
++             <img
++               alt=""
++               src="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/mochi-face-72.webp"
++               srcset="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/mochi-face-72.webp 1x, /@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/mochi-face-144.webp 2x"
++             />
++             <span
++               class="a6-hud-level"
++             >
++               Lv. 
++               6
++             </span>
++             <span
++               aria-label="1 stars"
++               class="a6-hud-stars"
++             >
++               ★
++             </span>
++           </div>
++           <div
++             class="a6-hud-vitals"
++           >
++             <b>
++               Mochi
++             </b>
++             <small>
++               756
++               /
++               756
++                HP
++             </small>
++             <div
++               aria-label="Mochi health"
++               aria-valuemax="756"
++               aria-valuemin="0"
++               aria-valuenow="756"
++               class="a6-health"
++               role="progressbar"
++             >
++               <i
++                 class="a6-health-trail"
++                 style="width: 100%;"
++               />
++               <i
++                 class="a6-health-fill"
++                 style="width: 100%;"
++               />
++             </div>
++             <div
++               aria-label="Mochi ultimate: 35/100 rage"
++               aria-valuemax="100"
++               aria-valuemin="0"
++               aria-valuenow="35"
++               class="a6-rage"
++               data-ready="false"
++               role="progressbar"
++             >
++               <i
++                 style="width: 35%;"
++               />
++             </div>
++             <small
++               class="uv-ult-label"
++             >
++               Rage 35/100
++             </small>
++           </div>
++           <div
++             aria-label="Mochi statuses"
++             class="dp-status-badges"
++           />
++         </article>
++         <article
++           class="uv-battle-cat"
++           data-actor="soot"
++           data-fallen="false"
++           data-rarity="common"
++           data-ready="false"
++         >
++           <div
++             class="a6-hud-portrait"
++           >
++             <img
++               alt=""
++               src="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/soot-face-72.webp"
++               srcset="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/soot-face-72.webp 1x, /@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/soot-face-144.webp 2x"
++             />
++             <span
++               class="a6-hud-level"
++             >
++               Lv. 
++               6
++             </span>
++             <span
++               aria-label="1 stars"
++               class="a6-hud-stars"
++             >
++               ★
++             </span>
++           </div>
++           <div
++             class="a6-hud-vitals"
++           >
++             <b>
++               Soot
++             </b>
++             <small>
++               589
++               /
++               589
++                HP
++             </small>
++             <div
++               aria-label="Soot health"
++               aria-valuemax="589"
++               aria-valuemin="0"
++               aria-valuenow="589"
++               class="a6-health"
++               role="progressbar"
++             >
++               <i
++                 class="a6-health-trail"
++                 style="width: 100%;"
++               />
++               <i
++                 class="a6-health-fill"
++                 style="width: 100%;"
++               />
++             </div>
++             <div
++               aria-label="Soot ultimate: 35/100 rage"
++               aria-valuemax="100"
++               aria-valuemin="0"
++               aria-valuenow="35"
++               class="a6-rage"
++               data-ready="false"
++               role="progressbar"
++             >
++               <i
++                 style="width: 35%;"
++               />
++             </div>
++             <small
++               class="uv-ult-label"
++             >
++               Rage 35/100
++             </small>
++           </div>
++           <div
++             aria-label="Soot statuses"
++             class="dp-status-badges"
++           />
++         </article>
++         <article
++           class="uv-battle-cat"
++           data-actor="clover"
++           data-fallen="false"
++           data-rarity="common"
++           data-ready="false"
++         >
++           <div
++             class="a6-hud-portrait"
++           >
++             <img
++               alt=""
++               src="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/clover-face-72.webp"
++               srcset="/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/clover-face-72.webp 1x, /@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/v3-portraits/clover-face-144.webp 2x"
++             />
++             <span
++               class="a6-hud-level"
++             >
++               Lv. 
++               6
++             </span>
++             <span
++               aria-label="1 stars"
++               class="a6-hud-stars"
++             >
++               ★
++             </span>
++           </div>
++           <div
++             class="a6-hud-vitals"
++           >
++             <b>
++               Clover
++             </b>
++             <small>
++               490
++               /
++               490
++                HP
++             </small>
++             <div
++               aria-label="Clover health"
++               aria-valuemax="490"
++               aria-valuemin="0"
++               aria-valuenow="490"
++               class="a6-health"
++               role="progressbar"
++             >
++               <i
++                 class="a6-health-trail"
++                 style="width: 100%;"
++               />
++               <i
++                 class="a6-health-fill"
++                 style="width: 100%;"
++               />
++             </div>
++             <div
++               aria-label="Clover ultimate: 35/100 rage"
++               aria-valuemax="100"
++               aria-valuemin="0"
++               aria-valuenow="35"
++               class="a6-rage"
++               data-ready="false"
++               role="progressbar"
++             >
++               <i
++                 style="width: 35%;"
++               />
++             </div>
++             <small
++               class="uv-ult-label"
++             >
++               Rage 35/100
++             </small>
++           </div>
++           <div
++             aria-label="Clover statuses"
++             class="dp-status-badges"
++           />
++         </article>
++       </div>
++       <div />
++     </div>
++   </div>
++ </body>
+
+ ❯ src/game/cardrpg/ui-v3/BattleHudA6.test.tsx:158:90
+    156|  const more=screen.getByRole('button',{name:'More battle options'});fi…
+    157|  const option=screen.getByRole('button',{name:/Turn banners/});option.…
+    158|  expect(more.getAttribute('aria-expanded')).toBe('false');expect(docum…
+       |                                                                                          ^
+    159|  expect(m.paused).toBe(true);expect(m.state).toEqual(before);
+    160| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 skipped (16)
+   Start at  03:54:12
+   Duration  1.53s (transform 53%, environment 28%, import 14%, tests 6%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/ui-v3/BattleHudA6.test.tsx -t escaped battle option

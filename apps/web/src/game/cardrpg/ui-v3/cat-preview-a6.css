@@ -17,7 +17,7 @@
  .a6-preview-stage .dp-miniature-controls {height:58px;box-sizing:border-box;padding:7px 12px;background:#f5e5c3;color:#6e4b2d;}
  .a6-preview-stage .dp-miniature-controls>button {min-height:36px;font-size:13px;padding:6px 11px;}
  .a6-preview-stage .dp-miniature-controls label {font-size:12px;}
- .a6-preview-copy {flex:none;padding:12px 14px;background:#fff4d9;border:1px solid #c2a36d;border-radius:8px;}
+ .a6-preview-copy {flex:none;min-height:0;max-height:45%;overflow:auto;padding:12px 14px;background:#fff4d9;border:1px solid #c2a36d;border-radius:8px;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2;}
  .a6-preview-copy>header {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
  .a6-preview-copy h3 {font:700 21px Georgia,serif;margin:0;color:#62412b;}
  .a6-preview-copy small {font-size:12px;color:#805e33;}
