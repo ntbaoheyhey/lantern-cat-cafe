@@ -1,0 +1,352 @@
+{
+  "source": "first-session-clean.json",
+  "sourceSha256": "458a044c44edd1795e59776959aeba3f57ffd05e45cc2232827e7c70723257c6",
+  "sourceHead": "cb5abd26a28db4489962730a16c7dec41ead9460",
+  "driverSha256": "53cec75d7ee977f9737296fad0a138f6aeca225b4dce8f92a0b929bb3f51c3d0",
+  "startedAt": "2026-11-11T07:57:39.370Z",
+  "endedAt": "2026-11-11T08:27:39.627Z",
+  "summary": {
+    "activeSeconds": 1800.25,
+    "encounters": 19,
+    "wins": 15,
+    "losses": 4,
+    "firstLossSeconds": 393.61,
+    "normalWinHpMedian": 1,
+    "browser": "Chromium with Metal ANGLE, headless, x1 UI clicks; durations begin after sceneReady",
+    "losses10": 1,
+    "losses30": 4,
+    "normal": {
+      "samples": 13,
+      "medianSeconds": 54.33,
+      "p90Seconds": 69.31
+    },
+    "boss": {
+      "samples": 6,
+      "medianSeconds": 170.77,
+      "p90Seconds": 215.89
+    },
+    "frameDelivery": {
+      "samples": 95870,
+      "medianMs": 16.7,
+      "p95Ms": 16.7
+    },
+    "visibleRewards": {
+      "count": 47,
+      "medianGap": 6.48,
+      "maxGap": 221.17,
+      "trailingGap": 27.34
+    },
+    "errors": 0,
+    "stalls": 0
+  },
+  "methods": {
+    "duration": "Existing UI observation: sceneReady until visible result; x1, no paused or crossed-lease encounters. Quantiles use the same upper empirical order statistic as the recorder.",
+    "recovery": "First later encounter at the same chapter/node/boss kind after a visibly followed hint. A win at an earlier route node is not a recovered boss. Later routes use new encounter seeds; this is not an isolated causal estimate. No replay or counterfactual simulation.",
+    "hintKinds": "The captured button and panel text distinguish a completed comparison from the affordable fallback offered while the comparison was still running. These are reported separately.",
+    "ultimates": "Counts observed action plans in completed normal encounters only. The recorder does not retain a complete per-fight roster, so missing IDs are not asserted to be zero.",
+    "limits": "One conservative UI driver account, one training purchase per completed route plus loss advice. Not a population recovery estimate or an isolated renderer benchmark. The original interrupted account remains separately identified."
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "normal": {
+        "samples": 2,
+        "wins": 2,
+        "losses": 0,
+        "medianSeconds": 36.31,
+        "maxSeconds": 36.31
+      },
+      "boss": {
+        "samples": 1,
+        "wins": 1,
+        "losses": 0,
+        "medianSeconds": 62.28,
+        "maxSeconds": 62.28
+      }
+    },
+    {
+      "chapter": 2,
+      "normal": {
+        "samples": 2,
+        "wins": 2,
+        "losses": 0,
+        "medianSeconds": 37.14,
+        "maxSeconds": 37.14
+      },
+      "boss": {
+        "samples": 1,
+        "wins": 1,
+        "losses": 0,
+        "medianSeconds": 69.31,
+        "maxSeconds": 69.31
+      }
+    },
+    {
+      "chapter": 3,
+      "normal": {
+        "samples": 9,
+        "wins": 8,
+        "losses": 1,
+        "medianSeconds": 66.26,
+        "maxSeconds": 111.45
+      },
+      "boss": {
+        "samples": 4,
+        "wins": 1,
+        "losses": 3,
+        "medianSeconds": 179.76,
+        "maxSeconds": 215.89
+      }
+    }
+  ],
+  "retries": [
+    {
+      "chapter": 3,
+      "node": "0-0",
+      "boss": false,
+      "lossSeed": 1205179080,
+      "lossAtSeconds": 393.61,
+      "advice": "Apply and retry route",
+      "description": "One change for your next try\n\nReplace Soot with Sorrel in Back\n\nCost: No currency needed.\n\nApply and retry route\nYour earned rewards stay. A fresh route starts at the first stop.",
+      "hintKind": "completed-comparison",
+      "applied": true,
+      "purchase": null,
+      "retrySeed": 3993276604,
+      "retryResult": "party",
+      "recovered": true
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 2256061393,
+      "lossAtSeconds": 756.53,
+      "advice": "Review Sorrel training",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nRaise Sorrel to level 2\n\nCost: 25 fish · 2 threads\n\nReview Sorrel training\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": true,
+      "purchase": {
+        "at": 757.633,
+        "kind": "level",
+        "applied": true,
+        "cat": "sorrel"
+      },
+      "retrySeed": 30332408,
+      "retryResult": "enemy",
+      "recovered": false
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 30332408,
+      "lossAtSeconds": 1081.54,
+      "advice": "Review this gear",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nEnhance Common Hearthloom Apron to +1\n\nCost: 30 fish · 3 threads\n\nReview this gear\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": true,
+      "purchase": {
+        "at": 1082.678,
+        "kind": "gear",
+        "clicked": true,
+        "applied": true,
+        "item": "depth-gear-8",
+        "before": 0,
+        "after": 1
+      },
+      "retrySeed": 899726880,
+      "retryResult": "enemy",
+      "recovered": false
+    },
+    {
+      "chapter": 3,
+      "node": "6-0",
+      "boss": true,
+      "lossSeed": 899726880,
+      "lossAtSeconds": 1444.89,
+      "advice": "Review this gear",
+      "description": "One change for your next try\n\nComparing crew changes…\n\nEnhance Common Mossbrew Vest to +1\n\nCost: 30 fish · 3 threads\n\nReview this gear\nReturn to the cafe. Your earned rewards stay; review before buying.",
+      "hintKind": "fallback-during-comparison",
+      "applied": true,
+      "purchase": {
+        "at": 1446.007,
+        "kind": "gear",
+        "clicked": true,
+        "applied": true,
+        "item": "depth-gear-12",
+        "before": 0,
+        "after": 1
+      },
+      "retrySeed": 188593055,
+      "retryResult": "party",
+      "recovered": true
+    }
+  ],
+  "recovery": {
+    "followed": 4,
+    "observed": 4,
+    "wins": 2,
+    "pending": 0,
+    "rate": 50
+  },
+  "recoveryByHint": {
+    "completed-comparison": {
+      "followed": 1,
+      "observed": 1,
+      "wins": 1,
+      "pending": 0,
+      "rate": 100
+    },
+    "fallback-during-comparison": {
+      "followed": 3,
+      "observed": 3,
+      "wins": 1,
+      "pending": 0,
+      "rate": 33.33
+    }
+  },
+  "normalCastObservations": [
+    {
+      "seed": 791576452,
+      "chapter": 1,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 2,
+        "soot": 2
+      }
+    },
+    {
+      "seed": 3778700884,
+      "chapter": 1,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 1,
+        "soot": 1
+      }
+    },
+    {
+      "seed": 3307271994,
+      "chapter": 2,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "soot": 2,
+        "clover": 2
+      }
+    },
+    {
+      "seed": 2258202081,
+      "chapter": 2,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "clover": 2,
+        "soot": 2
+      }
+    },
+    {
+      "seed": 1205179080,
+      "chapter": 3,
+      "result": "enemy",
+      "observedCasts": {
+        "mochi": 2,
+        "soot": 1
+      }
+    },
+    {
+      "seed": 3993276604,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 2333531385,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 2024383137,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 2
+      }
+    },
+    {
+      "seed": 1133702706,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 3882441614,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 2,
+        "sorrel": 2,
+        "clover": 2
+      }
+    },
+    {
+      "seed": 3921343890,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 5,
+        "sorrel": 5,
+        "clover": 5
+      }
+    },
+    {
+      "seed": 1211488677,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 4,
+        "sorrel": 4,
+        "clover": 3
+      }
+    },
+    {
+      "seed": 2503341991,
+      "chapter": 3,
+      "result": "party",
+      "observedCasts": {
+        "mochi": 3,
+        "sorrel": 3,
+        "clover": 3
+      }
+    }
+  ],
+  "unfinished": {
+    "at": 1776.138,
+    "seed": 4010165288,
+    "tutorial": false,
+    "boss": false,
+    "chapter": 1,
+    "node": "0-0",
+    "readyAt": 1776.138,
+    "pausedDuring": false,
+    "speed": 1
+  },
+  "errors": [],
+  "stalls": []
+}

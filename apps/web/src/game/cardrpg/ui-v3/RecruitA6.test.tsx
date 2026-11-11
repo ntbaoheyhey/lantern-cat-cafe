@@ -18,6 +18,7 @@ it('finishes ten committed draws in four batch beats under eight seconds',()=>{
  expect(container.querySelectorAll('.a6-recruit-burst .a6-recruit-cards article')).toHaveLength(10);
  act(()=>vi.advanceTimersByTime(1400));expect(document.querySelector('.a6-recruit-highlight')).toBeTruthy();
  act(()=>vi.advanceTimersByTime(2500));expect(screen.getByRole('heading',{name:'Welcome home'})).toBeTruthy();
+ expect(document.activeElement).toBe(screen.getByRole('heading',{name:'Welcome home'}));
  expect(m.state.account.daily.draws).toBe(10);
 });
 it('skipping after the first beat preserves the exact committed rewards',()=>{
@@ -44,6 +45,7 @@ it('reduced motion shows the same ten rewards without any ceremony timers',()=>{
  expect(screen.getByRole('heading',{name:'Welcome home'})).toBeTruthy();
  expect(container.querySelectorAll('.uv-recruit-summary article')).toHaveLength(10);
  expect(container.querySelector('[data-splash=true]')).toBeNull();
+ expect(document.activeElement).toBe(screen.getByRole('heading',{name:'Welcome home'}));
  const saved=R.exportSave(m.state);act(()=>vi.advanceTimersByTime(10000));
  expect(R.exportSave(m.state)).toBe(saved);
 });

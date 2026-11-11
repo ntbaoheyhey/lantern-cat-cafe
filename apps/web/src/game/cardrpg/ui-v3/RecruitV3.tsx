@@ -1,4 +1,4 @@
-import {useEffect,useState,type CSSProperties} from 'react';
+import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import {createPortal} from 'react-dom';
 import {BANNERS,CARD_RPG_CONFIG,emptyPity,getBannerOdds,getDrawPool,type GachaResult} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -18,6 +18,7 @@ function Reward({r,a6=false,reduced=false}:{r:GachaResult;a6?:boolean;reduced?:b
 function RevealParticles(){return <div className="a6-reveal-particles" aria-hidden="true">{Array.from({length:18},(_,i)=><i key={i} style={{'--spark-angle':`${i*20}deg`,'--spark-radius':`${170+i%4*38}px`,'--spark-delay':`${i%5*90}ms`} as CSSProperties}>✦</i>)}</div>}
 /** The ceremony only reads committed draws. Commands, seeds and odds match Invitations. */
 export default function RecruitV3({m}:{m:DepthModel}){
+ const counter=useRef<HTMLDivElement>(null),summaryTitle=useRef<HTMLHeadingElement>(null);
  const [bannerId,setBannerId]=useState('standard'),[results,setResults]=useState<GachaResult[]>([]),[index,setIndex]=useState(0),[beat,setBeat]=useState<Beat>('summary'),[previousPulls,setPreviousPulls]=useState(0),[systemReduced,setSystemReduced]=useState(false);
  const a6=R.gameplayA6(m.state);
  const banner=m.state.gameplayV4?R.invitationBannerV4(bannerId,m.state):BANNERS.find(b=>b.id===bannerId)!;
@@ -29,6 +30,13 @@ export default function RecruitV3({m}:{m:DepthModel}){
  const splash=a6&&beat==='reveal'&&!!active&&rank[active.rarity]>=2;
  const cost=banner.cost.stamps!,stamps=m.state.account.currencies.stamps,available=CARD_RPG_CONFIG.maxDrawsPerDay-m.state.account.daily.draws;
  const inRun=!!m.state.run&&!m.state.run.complete,shelfRoom=m.state.gameplayV4&&banner.kind==='equipment'?Math.max(0,R.GEAR_CAP_V4-m.state.gear.length):Infinity;
+ useEffect(()=>{
+  if(!a6||beat!=='summary'||!results.length)return;
+  // A portal reveal or an earlier visit can leave this scrollable sheet halfway down.
+  // Return to the complete reward grid and restore keyboard focus after the reveal.
+  counter.current?.closest<HTMLElement>('.uv-sheet-content')?.scrollTo?.({top:0,behavior:'instant'});
+  summaryTitle.current?.focus({preventScroll:true});
+ },[a6,beat,results]);
  useEffect(()=>{const q=matchMedia('(prefers-reduced-motion: reduce)'),update=()=>setSystemReduced(q.matches);update();q.addEventListener('change',update);return()=>q.removeEventListener('change',update)},[]);
  useEffect(()=>{
   if(!revealing)return;if(reduced){setBeat('summary');return;}
@@ -55,9 +63,9 @@ export default function RecruitV3({m}:{m:DepthModel}){
     </article>)}</div></>}
    </div>:<div className={`uv-ceremony uv-beat-${beat}`} key={`${index}-${beat}`}>
     {beat==='reveal'?<Reward r={active}/>:<><div className="uv-envelope" aria-label={beat==='letter'?'Invitation letter':`${active.rarity} seal`}><span>✉</span><i>☕</i></div>{beat==='burst'&&<div className="uv-recruit-burst" aria-hidden="true">✦　✧　✦<br/>✧　✦　✧</div>}<p>{beat==='letter'?'Someone is at the door…':`${active.rarity} invitation`}</p></>}
-   </div>}</>:results.length?<><h2>Welcome home</h2><div className="uv-recruit-summary" aria-label="Invitation results">{[...results].sort((a,b)=>rank[b.rarity]-rank[a.rarity]).map((r,i)=><article key={`${r.index}-${i}`} data-rarity={r.rarity} style={{'--reveal-color':a6?`var(--a6-${r.rarity})`:colors[r.rarity]} as CSSProperties}><Reward r={r} a6={a6} reduced={reduced}/></article>)}</div><button className={a6?"cr-primary":undefined} onClick={()=>m.go(banner.kind==='cat'?'collection':'inventory')}>{banner.kind==='cat'?'Meet your cats':'Open your bag'}</button></>:<div className="uv-recruit-welcome"><img {...portraitProps(banner.featuredCardId??'clover')} alt=""/><h2>Save a seat</h2><p>Your next companion is one invitation away.</p></div>}
+   </div>}</>:results.length?<><h2 ref={summaryTitle} tabIndex={-1}>Welcome home</h2><div className="uv-recruit-summary" aria-label="Invitation results">{[...results].sort((a,b)=>rank[b.rarity]-rank[a.rarity]).map((r,i)=><article key={`${r.index}-${i}`} data-rarity={r.rarity} style={{'--reveal-color':a6?`var(--a6-${r.rarity})`:colors[r.rarity]} as CSSProperties}><Reward r={r} a6={a6} reduced={reduced}/></article>)}</div><button className={a6?"cr-primary":undefined} onClick={()=>m.go(banner.kind==='cat'?'collection':'inventory')}>{banner.kind==='cat'?'Meet your cats':'Open your bag'}</button></>:<div className="uv-recruit-welcome"><img {...portraitProps(banner.featuredCardId??'clover')} alt=""/><h2>Save a seat</h2><p>Your next companion is one invitation away.</p></div>}
   </section>;
- return <div className="uv-recruit" data-a6={a6} data-reduced={reduced} inert={splash||undefined} aria-hidden={splash||undefined}>
+ return <div ref={counter} className="uv-recruit" data-a6={a6} data-reduced={reduced} inert={splash||undefined} aria-hidden={splash||undefined}>
   <nav className="uv-tabs" aria-label="Invitation banners">{BANNERS.map(b=><button key={b.id} aria-pressed={b.id===bannerId} disabled={revealing} onClick={()=>{setBannerId(b.id);setResults([])}}>{b.name}</button>)}</nav>
   <div className="uv-recruit-layout"><aside className="uv-recruit-counter"><small>THE LANTERN · INVITATIONS</small><h2>A knock tonight</h2><p>A new face. A new favorite.</p><strong>{stamps.toLocaleString('en-US')} stamps</strong><p className="uv-pity">Legendary within {Math.max(1,banner.hardPity-pity.sinceLegendary)}<br/><small>{pity.sinceLegendary}/{banner.hardPity} pulls</small></p>
    <div className="uv-recruit-buttons">{bannerId==='standard'&&!m.state.freeInvite&&<button className="uv-fight" disabled={revealing||inRun||available<1} onClick={()=>invite(1,true)}>Welcome a friend</button>}<button disabled={revealing||inRun||stamps<cost||available<1||shelfRoom<1} onClick={()=>invite(1)}>Recruit ×1 · {cost}</button><button className={a6?"cr-primary":undefined} disabled={revealing||inRun||stamps<cost*10||available<10||shelfRoom<10} onClick={()=>invite(10)}>Recruit ×10 · {cost*10}</button></div>

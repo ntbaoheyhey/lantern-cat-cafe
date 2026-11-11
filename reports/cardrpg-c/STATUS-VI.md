@@ -1,11 +1,9 @@
-# Tiến độ lane C
+# Tiến độ lane C — 11/11, cập nhật 08:37 UTC
 
-Đã xong C0–C7. Bag cũ không còn ảnh mèo tràn cột; bốn trang vật tư dùng nền giấy và chữ rõ. Ba bước đầu có thứ tự, phần thưởng và chỉ dẫn đúng nút. Click thật ở hai cỡ đã đi qua trận tập, nhận bạn miễn phí và lên cấp đúng chi phí. 32 test liên quan, typecheck/lint đạt; đã xem 38 ảnh.
+C0–C7, C9 và C10 đã xong; C11 có checkpoint kiểm tra, tiếp tục cải thiện. Demo offline 28,82 MB có 25 nhân vật / 206 animation, 74 skill / 18 status và hai video trọn trận x1. Designer cuối: 0/25; Mochi 117 layer vẫn là placeholder, nguồn còn PARTIAL.
 
-C6: 74 skill / 18 status, pool256, chừa mặt/HP; 552ca không rơi hạt/đè nhãn. Ultimate offline x1 p95≈16,8ms; gallery14,99MB. C5: trận thường34,50s, boss69,16s/p90 82,16s,88% có1–3thua, hồi phục83,67%. Chưa đạt: thua đầu11,61phút, HP cuối thường94%, ultimate chưa đều. Không chạy lại seed.
+Lượt click sạch đã đủ 1.800,25 s: 15 thắng / 4 thua, thua đầu 6,56 phút, trận thường 54,33 s median, boss 170,77 s median, HP cuối thường 100%. Hồi phục tại đúng node 2/4; mẫu nhỏ, không gộp với mô phỏng. Chưa đạt các mục tiêu gameplay; điểm tự chấm 7,75/10. Giữ nguyên hai tài khoản gốc và đúng ba vòng tuning / 500 seed.
 
-25nhân vật vẫn là placeholder; chưa có export designer cuối. Tiếp tục kiểm tra intake và C9 nhấn ultimate/sân khấu. Run30phút, demo≤40MB và báo cáo tổng còn phía trước. Chưa deploy/merge.
+C11 sửa scroll/focus kết quả Recruit, Field Guide, nút fallback bị bấm sớm và advisor tự tính lại khi đóng thông báo discovery. 26 test focused, typecheck/lint và sáu trạng thái browser ở hai cỡ đều đạt; đã xem ảnh. Hai full E2E trước đó 421/421 có trước sửa advisor mới nhất, không tính là full test trên bản cuối. Sửa UI chưa chứng minh tăng tỷ lệ hồi phục.
 
-C8: inbox designer vẫn trống. Mochi PSD mới117layer được dựng placeholder33xương/atlas1024; đã xem8clip và4ảnh battle,36test/typecheck/lint đạt. Bản PSD nguồn tự ghi PARTIAL (khớp/đuôi/mắt chưa đạt); không tính là art designer cuối. Bản cũ được giữ. Đang làm C9.
-
-C9 xong: cut-in dùng chân dung ở vùng trống, có bản gọn khi chật; zoom tối đa1,10, chuyển phase boss và entrance bám socket. 72ca ultimate ở x1/x2/x3,12ca phase,4ca entrance đạt; đã xem44ảnh hai cỡ,không đè mặt/HP,61lệnh vẽ tối đa. 22test liên quan/typecheck/lint đạt. Tiếp full421E2E rồi demo và run30phút.
+Tiếp tục quality pass và kiểm tra inbox designer; không chờ license/tool/version, các mục này đã ghi NEEDS-USER. Draft PR #439, không merge/deploy. Báo cáo chốt 20/11 06:00 UTC; hard stop 20/11 12:00 UTC.

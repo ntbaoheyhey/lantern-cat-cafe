@@ -1,0 +1,63 @@
+# C11 screenshot review — 11 November 2026
+
+Scores are a visual review of the actual captures below, not a user-study result. Final designer art quality is excluded. Baseline: `shots/c11/review.json`, 31 screens at both requested sizes; all 62 captures inspected through uncropped contact sheets. Battle: four retained `shots/c9-stage` captures inspected at full size. C7 first-home captures were also inspected at both sizes. No completed A6/B acceptance run was repeated.
+
+| Screen / filename stem | 1280×720 | 1440×900 | Observation |
+|---|---:|---:|---|
+| home | 8.3 | 8.4 | Crew, next goal and Patrol action separated; warm original portraits. |
+| daily | 8.2 | 8.3 | Claim buttons visible; weekly progress remains secondary. |
+| collection | 8.2 | 8.3 | Quick upgrade stays above the scrolling roster; costs visible. |
+| cats-skills | 8.1 | 8.2 | Skill role and automatic use are clear; compact descriptions. |
+| cats-bonds | 8.0 | 8.1 | Bonus and Bond Book link readable; detail pane sparse. |
+| cats-gear | 8.0 | 8.1 | Four slots legible; empty slots still look plain. |
+| bonds | 8.3 | 8.4 | Pair portraits, earned collection bonus and next action clear. |
+| team | 8.2 | 8.3 | Front/back placement and crew roles clear at both sizes. |
+| inventory | 8.2 | 8.3 | Contained item/portrait art; equip and enhance controls remain visible. |
+| relics | 8.3 | 8.4 | One equipped cup and cap +8% readable; sample holdings labeled. |
+| gacha | 8.2 | 8.3 | Portrait, odds and recruit action have a clear order. |
+| map-choose | 8.1 | 8.2 | Route silhouette readable; recommendations are small at 720p. |
+| map-progress | 8.1 | 8.2 | Cleared stops and next destination distinct. |
+| map-choice | 8.3 | 8.3 | All three boon choices visible; keyboard selection settles correctly. |
+| map-boss | 8.1 | 8.2 | Boss destination obvious; detailed star conditions remain secondary. |
+| tower | 8.2 | 8.3 | Current floor, foes and climb action visible; locked-campaign copy reflects fixture reset. |
+| journal | 8.3 | 8.4 | Earned gift versus future progress readable. |
+| codex | 7.9 → 8.2 | 8.0 → 8.2 | Reused matching status icons and clarified stack/ultimate wording; full-size text remains readable. |
+| save | 8.0 | 8.0 | Save import/export, speed and reduced motion fit; plain but usable. |
+| prepare | 8.2 | 8.3 | Crew/foes separated; forecast and Fight action visible. |
+| result | 8.4 | 8.4 | Reward summary, star conditions and Next action have good hierarchy. |
+| loss | 8.1 | 8.2 | Named change and exact cost visible; raw browser recovery is 2/4 at the same node; pending fallback action guarded after recording. |
+| recruit-welcome | 8.2 | 8.3 | Clear invitation identity and costs. |
+| recruit-letter | 8.1 | 8.1 | Ten sealed cards enter in order; captures include intentional fades. |
+| recruit-seal | 8.2 | 8.2 | Rarity rim/color and names remain readable. |
+| recruit-burst | 8.2 | 8.2 | Reward cards become readable in sequence; final grid evaluated separately. |
+| recruit-highlight | 8.4 | 8.4 | Large original portrait, rarity and new stamp; Skip visible. |
+| recruit-legendary | 8.4 | 8.4 | Warm emphasis without covering the character. |
+| recruit-summary | 8.4 | 5.5 → 8.4 | Fixed retained scroll hiding the heading and top row at 900p. |
+| recruit-reduced | 8.4 | 5.5 → 8.4 | Same fix applies without ceremony; heading gains keyboard focus. |
+| bag-empty | 8.2 | 8.3 | Clear empty shelf and next step; contained placeholder portraits. |
+| normal battle | 8.0 | 8.1 | Faces, target ring, enemy HP and party cards separated; backdrop still simple. |
+| boss battle | 8.0 | 8.1 | Boss stays on the right; minions/HP remain readable; body motion is provisional. |
+
+The lowest actionable layout defect was recruitment at 1440×900. `RecruitV3` now resets the sheet to the top and focuses the completed heading. `shots/c11-recruit-fixed/review.json` deliberately scrolls the sheet 153–203px before completion: four summary/reduced cases return to 0px, show all ten cards and the next-action button, and focus the heading. Five component tests and workspace typecheck/lint pass. All 12 replacement recruitment captures inspected. The early animated frames are transitional; the completed grid is the acceptance gate.
+
+Other exercised controls: daily gift keyboard claim, map boon keyboard choice, inventory equip and Tower action visibility. No broken visible images or horizontal overflow in the 62-screen baseline or the 12-shot focused check. The existing `shots/c11/1440-recruit-summary-before.webp` is retained as before evidence; final recruitment evidence is in `c11-recruit-fixed`.
+
+The next lowest text screen was the field guide. `FieldGuideA6` now reuses the same original status paths as battle badges/VFX, explains stack limits in words, and says every cat has an automatic ultimate at 100 rage. Two full-size `shots/c11-guide` captures inspected; 10 recruit/guide/settings tests and web typecheck/lint pass. Fixture reward chips are transient and do not obscure the note. No new art or combat rules were introduced.
+
+Current limits: simple procedural stage, temporary body animation, and gameplay tension remain below the 8.5 overall target. Gameplay has already used the approved three tuning rounds; retain its measured misses. The full corrected-driver session and its limits are in C11-SESSION-NOTES.md and checks/first-session-clean-analysis.json.
+
+## Weighted checkpoint score
+
+| Area | Weight | Score / 10 | Reason |
+|---|---:|---:|---|
+| Difficulty and upgrade pull | 20 | 5.8 | Clean UI run first loss6.56min, normal54.33s, boss170.77s and100%normal-winHP miss; recovery2/4 is too small to generalize. |
+| First ten minutes | 15 | 8.0 | Three guided actions and earned rewards are clear; the earliest loss is still abrupt. |
+| Battle readability, composition and size | 15 | 8.1 | Equal cats, readable HP/faces and boss on the right at both sizes; provisional body motion. |
+| Skill VFX readability and impact at x1 | 15 | 7.9 | Complete event/socket coverage, clear protected lanes; several effects remain restrained glyphs. |
+| Pipeline correctness | 15 | 8.7 | Official parser, immutable intake/fallbacks and PSD pilot proven; final designer export acceptance still pending. |
+| Overall appearance | 10 | 7.9 | Original portraits and paper panels fit; procedural stage is noticeably flatter than the characters. |
+| Stability, performance and demo size | 10 | 8.9 | Clean session0errors/0stalls, isolatedC6p95~16.8ms,28.82MBdemo; no broad hardware claim. |
+
+Weighted result: **7.745/10 (7.75 rounded)**, below8.5. This is a provisional engineering/visual self-review, not a player-study score. Designer art quality is excluded. Earlier pipeline/performance gates are retained, not rerun to inflate confidence. The pending-action guard is not scored as a demonstrated recovery-rate improvement.
+
+Advice checkpoint: all six `shots/c11-advice/review.json` captures inspected at full size (checking, completed no-change, timeout at both sizes). Exact cost, enabled/disabled state, footer and return-to-cafe navigation are visible. No comparison restarts after automatic discovery receipts.26 focused tests across advice/recruit/guide/settings and workspace typecheck/lint pass. The weighted score is retained; this proves UI behavior, not improved gameplay recovery.

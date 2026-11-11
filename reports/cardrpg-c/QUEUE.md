@@ -11,7 +11,7 @@
 - [ ] C8 Designer intake (continuous; initial checkpoint complete, final exports absent; see C8-RECEIPT): validate, integrate, acceptance sheet, Vietnamese feedback, before/after poster (placeholder vs designer), retime that unit's VFX to its events.
 - [x] C9 VFX pass 2 + stage polish (by 17 Nov 20:00 UTC): ult cut-ins with the unit's portrait, backdrop cleanup, warm tint/vignette, boss phase change presentation, entrance moves.
 - [x] C10 Demo (complete 11 Nov, repeat-update): static docs/cardrpg-c/index.html + CHAY-DEMO.md (Vietnamese, <= 10 lines) + `pnpm` local run note; lineup, each unit's animations, recorded normal and boss fight at x1, placeholder vs designer where available; total demo <= 40 MB.
-- [ ] C11 Quality pass from real screenshots (until report): score every screen and the battle at both sizes; fix the lowest first.
+- [ ] C11 Quality pass from real screenshots (until report; 11 Nov checkpoint verified, see C11-RECEIPT.md): score every screen and the battle at both sizes; fix the lowest first.
 - [ ] C12 Report (20 Nov 06:00 UTC): C-REPORT.md (before/after, numbers, self-score, designer-made vs placeholder units, known limits), STATUS-VI.md; then keep improving the lowest item until 20 Nov 12:00 UTC.
 Missed time box: PARTIAL in DECISIONS.md, finish the current step, move on. Never stop the lane for a miss.
 

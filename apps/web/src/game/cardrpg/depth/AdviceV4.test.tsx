@@ -48,13 +48,21 @@ function reply(worker: typeof mock.workers[number], result: R.BuildAdviceV4 | nu
 }
 const region = () => screen.getByRole('region', {name:'Your next change'});
 
-it('offers an affordable exact-cost review while comparing without settling or spending', () => {
+it('waits for the comparison before enabling a fallback review without settling or spending', () => {
   const m = loss(), before = R.exportSave(m.state);
   render(<AdviceV4 m={m}/>);
+  expect(region().getAttribute('aria-busy')).toBe('true');
+  const pending=screen.getByRole('button',{name:'Finding your next change…'});
+  expect((pending as HTMLButtonElement).disabled).toBe(true);
+  fireEvent.click(pending);
+  expect(m.screen).toBe('result');
+  expect(R.exportSave(m.state)).toBe(before);
+  reply(mock.workers[0]!,null);
+  expect(region().getAttribute('aria-busy')).toBe('false');
   const option = R.upgradeOptionsA6(mock.workers[0]!.request!.state).sort((a,b) => Object.values(a.cost).reduce((n,v) => n+v,0)-Object.values(b.cost).reduce((n,v) => n+v,0))[0]!;
   expect(screen.getByText(option.label)).toBeTruthy();
   for (const [id,n] of Object.entries(option.cost)) expect(region().textContent).toContain(`${n} ${id}`);
-  expect(screen.getByRole('button', {name:/Review .* training|Review this gear/})).toBeTruthy();
+  expect((screen.getByRole('button', {name:/Review .* training|Review this gear/}) as HTMLButtonElement).disabled).toBe(false);
   expect(region().textContent).toContain('review before buying');
   expect(R.exportSave(m.state)).toBe(before);
 });
@@ -147,6 +155,30 @@ it('does not reuse an earlier encounter answer for an identical crew', () => {
   expect(mock.workers[1]!.request!.key).toBe(old.request!.key);
   expect(region().getAttribute('data-advice-state')).toBe('checking');
   expect(screen.queryByRole('button', {name:'Apply and retry route'})).toBeNull();
+});
+
+it.each(['checking', 'ready', 'timeout'] as const)('preserves %s advice when a discovery receipt clones the same encounter', status => {
+  const m = loss(), ui = render(<AdviceV4 m={m}/>), worker = mock.workers[0]!;
+  if (status === 'ready') reply(worker, advice(worker));
+  if (status === 'timeout') act(() => vi.advanceTimersByTime(8_000));
+  if (status === 'checking') act(() => vi.advanceTimersByTime(6_000));
+  const receipt = m.state.v4!.journey!.pending[0]!;
+  expect(receipt).toBeTruthy();
+  const battle = m.battle, build = R.adviceBuildKeyV4(m.state);
+  const acknowledged = R.acknowledgeDiscoveryV4(m.state, receipt.sequence);
+  expect(acknowledged.ok).toBe(true);
+  m.state = acknowledged.state;
+  expect(m.battle).not.toBe(battle);
+  expect(m.battle!.initial).toEqual(battle!.initial);
+  expect(R.adviceBuildKeyV4(m.state)).toBe(build);
+  ui.rerender(<AdviceV4 m={m}/>);
+  expect(mock.workers).toHaveLength(1);
+  expect(region().getAttribute('data-advice-state')).toBe(status);
+  if (status === 'checking') {
+    expect(worker.terminate).not.toHaveBeenCalled();
+    act(() => vi.advanceTimersByTime(2_000));
+    expect(region().getAttribute('data-advice-state')).toBe('timeout');
+  }
 });
 
 it('releases a pending comparison on unmount and skips tutorial and replay advice', () => {

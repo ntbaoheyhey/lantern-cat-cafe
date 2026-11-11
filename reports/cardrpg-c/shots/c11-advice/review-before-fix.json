@@ -1,0 +1,48 @@
+{
+  "fixture": "Controlled finished loss and deliberately held advice worker; no combat replay or recovery estimate.",
+  "shots": [
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-checking.webp",
+      "name": "checking",
+      "overflow": false,
+      "adviceState": "checking",
+      "busy": "true",
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-ready.webp",
+      "name": "ready",
+      "overflow": false,
+      "adviceState": "timeout",
+      "busy": "false",
+      "broken": 0
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "file": "1280-timeout.webp",
+      "name": "timeout",
+      "overflow": false,
+      "adviceState": "timeout",
+      "busy": "false",
+      "broken": 0,
+      "fallbackReviewOpened": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "file": "1440-checking.webp",
+      "name": "checking",
+      "overflow": false,
+      "adviceState": "checking",
+      "busy": "true",
+      "broken": 0
+    }
+  ],
+  "errors": [],
+  "complete": false
+}

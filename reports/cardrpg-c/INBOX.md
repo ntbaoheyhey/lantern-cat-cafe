@@ -6,3 +6,5 @@
 2026-11-11 resume: user handoff confirms421E2E PASS; existing x1 session kept active. C10/C11 continue with no completed-item reruns.
 2026-11-11 resume: user handoff identifies the recruitment sheet retaining scroll at 1440×900. Preserved the active account and all prior work; verified the existing fix with deliberately scrolled animated/reduced reveals at both sizes.
 2026-11-11 resume: user handoff identifies completed focused10tests and ending30minute recorder. Verified original run finished, packaged earned fights, completed offline QA and observed full421E2E PASS. Continue C11 clean account; preserve all earlier results.
+2026-11-11 resume: user handoff identifies chapter3 boss loss215.89s and corrected Mochi117layer PASS/FIX. Preserved active clean account, pending C11 changes and all C0–C10 evidence; no completed work rerun.
+2026-11-11 resume: user handoff identifies 23 focused tests passing but advice returning to checking. Traced automatic discovery acknowledgements cloning the battle; preserved completed accounts and fixed encounter identity with regression/browser evidence.
