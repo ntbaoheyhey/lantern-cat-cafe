@@ -180,3 +180,7 @@ Q49: After Q48, continue the tied-low Team/Prepare reading row. Existing state a
 2026-11-11T03:10:33Z Q50 accepted using published B resolver and14px A6-only tooltip style; no renderer change. Q51 follows the tied-low Home secondary-label row: source confirms11px currency labels/10px level and hides zero stamps/threads. Keep stable explicit balances and readable metadata, preserving exact economy and old-mode filtering. Prior research already supports readable state/stable HUD; no new system.
 
 - 2026-11-11T03:55:35Z Q51: keep three A6 currency counters at zero; sheet notices occupy the title-bar gap instead of competing with large balances. Q52 will improve the same tied-low cafe menu: current small plain buttons and keyboard opening leaves focus outside its links. Preserve all destinations/credits/review visibility and add no feature. B D3 production checkpoint integrated; no accepted runtime3D yet.
+
+2026-11-11T04:06:03Z Q52 uses the existing menu destinations in a paper cafe-note panel; accessible names and legacy shell retained. A6 opening focuses its first link, Tab stays within navigation, Escape/Close returns to trigger and outside clicks dismiss. No new system/art dependency or canvas change.
+
+Q53 queued from Q52 source loading captures: plain page Suspense bypasses the illustrated Shell fallback. Existing OpeningA6 is the smallest consistent correction to LOOK-CHECKLIST row12; no new assets/system, no numerical tuning or repeated research.

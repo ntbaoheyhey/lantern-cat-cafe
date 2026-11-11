@@ -332,3 +332,7 @@ Thông báo nằm trong tiêu đề trang, không che tiền lớn hay nút;8tes
 2026-11-11T04:03:20Z: Q51 hoàn tất: 36 ảnh nguồn/36 ảnh offline đã duyệt; số dư bằng0 vẫn hiện, thông báo không che tiền hay nút.
 8test/type/lint và5test mô hình nén đạt; demo39.097.749byte, không lỗi/gọi mạng. B D3 đã tích hợp, chưa có mẫu3D được nghiệm thu.
 Tiếp tục Q52: menu quán rõ chữ, nút44px và đưa bàn phím vào đúng lựa chọn.
+
+2026-11-11T04:12:58Z: Q52 hoàn tất: menu nền giấy ấm, chữ14–16px/nút44px;22ảnh nguồn/22ảnh offline đã duyệt.
+10test/type/lint đạt; bốn lối vào, khóa Tháp, Tab/Escape/trả bàn phím và chế độ cũ đúng; demo39.098.733byte, không lỗi/gọi mạng.
+Tiếp tục Q53: dùng lại hình tải có sẵn cho các trang đang tải, không đổi hệ thống hay tài nguyên3D.

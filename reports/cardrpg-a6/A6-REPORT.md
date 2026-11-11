@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now opens four keepsake pages directly, with star gifts beside the notes and all claims/caps retained.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,097,749-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,098,733-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -43,7 +43,7 @@ Final E2E was **420/421 initially**; a test-only idle-accrual readiness repair p
 | Lane B art integration | 10% | 8.6 |
 | Stability | 5% | 9.0 |
 
-Weighted self-score: **7.67/10; target 8.5 not met**. Early loss, unreliable advice recovery and long boss tails remain the largest limits. Q14–Q51 delivery is complete through B D3. The latest guide and save-desk updates preserve all 75 notes, battle pause/focus return, exact save roundtrip/reset, comfort preferences and replay. Their 56 source/56 offline views and six Pantry Crown framing views are inspected. Earlier final seed/run/E2E evidence is retained.
+Weighted self-score: **7.67/10; target 8.5 not met**. Early loss, unreliable advice recovery and long boss tails remain the largest limits. Q14–Q52 delivery is complete through B D3. The latest guide and save-desk updates preserve all 75 notes, battle pause/focus return, exact save roundtrip/reset, comfort preferences and replay. Their 56 source/56 offline views and six Pantry Crown framing views are inspected. Earlier final seed/run/E2E evidence is retained.
 
 Detailed receipts: [Q44 Companions](Q44.md), [Q43 Settings](Q43.md), [Q42 Field guide](Q42.md), [Q41 Journal](Q41.md), [Q40 Tower](Q40.md), [Q39 Forecast](Q39.md), [Q38 Advice](Q38.md), [Q15 final check](Q15.md), [complete queue](QUEUE.md). Q44 adds 52 inspected source and 52 offline companion views with readable training costs, bounded roster scrolling and all twelve current skill descriptions. [Q45 Awakening](Q45.md) adds exact cost/gain and blocked-reason preview, with 32 accepted source/32 offline views and six Soot framing views. The user has directed B to real 3D; D0/P40 is integrated as temporary fallback while A6 awaits the published lookV3D contract.
 
@@ -58,3 +58,5 @@ Detailed receipts: [Q44 Companions](Q44.md), [Q43 Settings](Q43.md), [Q42 Field 
 [Q50 Status descriptions](Q50.md) connects B D2b to the displayed battle’s rules, with 14px current-status tooltips and legacy replay compatibility. The shared renderer remains unchanged.
 
 [Q51 Cafe HUD](Q51.md) keeps all three balances visible, enlarges labels and moves sheet notices clear of money and controls;36source/36offline views inspected, eight retained HUD tests/type/lint and five compressed-skin tests pass. B D3 production checkpoint is integrated; accepted real3D remains0/25 and public socket API pendingD4.
+
+[Q52 Cafe menu](Q52.md) adds a warm cafe-note panel,14–16px text/44px actions and first-link focus/Tab/Escape/close/return behavior.22source/22offline views and10tests/type/lint pass; legacy and developer visibility retained.
