@@ -154,3 +154,9 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T01:47:45Z Q44 follows the existing research readability guidance: inspected retained Cats growth/Inkcap skills720p expose9–11px metadata and36px actions. Improve existing costs/readiness/controls after Q43; keep art, commands and progression unchanged. Off-app draft /tmp/cardrpg-a6-q44-readability.css.
 
 - 2026-11-11T01:52:55Z Q43 applies the retained Settings typography/action draft after Q42 acceptance. Published BP39 merged at15c183f27; existing save/preferences/reset logic stays unchanged. Verify Settings and current puppet tests before the next package.
+
+- 2026-11-11T01:58:01Z Q44 applies retained card/growth/skill typography and44px controls after Q43 acceptance. Reuse production rules only as expected public transaction previews; no simulation, new system or numerical tuning.
+
+2026-11-11T02:07:14Z Q45 queued from inspected Q44 fresh Awakening: enabled button rejects level-one cats only after click, with no quoted cost. Apply the existing public-preview pattern used by level/star training; keep underlying commands/economy unchanged. No new mechanics or numerical tuning.
+
+2026-11-11T02:09:47Z USER11Nov real3D direction accepted verbatim in INBOX. Q44/Q45 remain ordered; unchanged2D cards retained. Future Q14 integration reads B lookV3D/socket contract and budgets; no new puppet-internal dependencies. Current publishedP39 remains the fallback until accepted3D tips arrive.

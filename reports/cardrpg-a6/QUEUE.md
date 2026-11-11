@@ -66,6 +66,8 @@ Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earlies
 
 - [x] Q41 [auto] Journal counts, dates and gift readability: inspected Q26 720p uses10px collection count labels,12px intro/date text and40px page/claim actions. Raise the existing counts, discovery dates and gift reasons/rewards to readable sizes, retain the scrapbook art and direct four-page access, and keep actions at44px without moving earned gifts below the fold. Preserve five milestones/three star claims, caps, route locks, discovery order, collection ownership, guide/replay and keyboard commands. Verify fresh/earned/partial-cap/full-cap/route/long-history and both sizes. No new records or rewards; draft off app until Q40 acceptance.
 
+Q14 integration addendum (USER11Nov, order unchanged): accept B lookV3D real3D with per-unit puppet fallback; keep2D portraits, actor/event black-box API and manifest sockets for unit-attached UI. Read published B-OUTBOX/budgets; combined demo≤40MB, B unit target≈16MB. No new puppet-internal coupling; requests go in A6-OUTBOX.
+
 ## Research refinements (2026-11-10; accepted rows stay complete)
 
 - Q13f: preserve the existing seven-depth/nine-node graph; early/late/boss bands express the requested saw-tooth. Enemy content budgets must not follow the current player build. Report real first-loss and retry results separately from Power ratios. After the existing three numeric attempts, select one simple fallback and publish any remaining misses. Do not force healer crews to finish injured solely to meet a metric.
@@ -82,7 +84,9 @@ Heavy work holds timing.lock for <=20 minutes. Ports 5960–5963; temporary file
 
 - [x] Q43 [auto] Settings status and comfort readability: inspected Q28 720p has12px local/manual-save/account/replay/motion status and40–42px controls. Make these existing labels14px and controls44px, retain the illustrated save/comfort desk and keep reset explanation/confirmation inside the card. Preserve exact save roundtrip, invalid-code handling, select/export feedback, all preferences, reset cancel and replay; verify both sizes/keyboard. No storage or gameplay changes; draft only until Q42 acceptance.
 
-- [ ] Q44 [auto] Companion ownership and training readability: inspected Q21/final 720p shows 9px rarity/bond tags, 11px growth/shard metadata and 36px quick-upgrade/detail actions. Raise readable card tags, exact growth costs/reasons, skill readiness and training controls while preserving the large art and existing four detail pages. Verify all12cats, owned/unowned, locked/unlocked, poor/capped/active states, exact level/star/quick-upgrade/equip commands, keyboard and both sizes. No balance, costs, unlock or system changes; draft off app until Q43 acceptance.
+- [x] Q44 [auto] Companion ownership and training readability: inspected Q21/final 720p shows 9px rarity/bond tags, 11px growth/shard metadata and 36px quick-upgrade/detail actions. Raise readable card tags, exact growth costs/reasons, skill readiness and training controls while preserving the large art and existing four detail pages. Verify all12cats, owned/unowned, locked/unlocked, poor/capped/active states, exact level/star/quick-upgrade/equip commands, keyboard and both sizes. No balance, costs, unlock or system changes; draft off app until Q43 acceptance.
+
+- [ ] Q45 [auto] Awakening readiness and exact cost: Q44 inspection shows Awaken enabled for a level-one cat and no purchase cost before the action. Reuse the existing public awakening transaction preview to show its current blocked reason or exact fish/thread/essence/material spend and HP/attack gain; enable only valid purchases. Preserve all level/star/rank/route/economy rules and other detail pages. Verify poor/locked/ready/rank-three/route states, exact atomic purchase and keyboard at both sizes. Draft only until Q44 package acceptance; no new training system.
 
 ## Completed history
 

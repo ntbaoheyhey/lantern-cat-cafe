@@ -1,11 +1,11 @@
-# Lane A6 handoff — 2026-11-11T01:56:03Z
-NOW: Q43 accepted; publish then Q44 companion ownership/training readability.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed11c5aeee3; local BP39 merge15c183f27; draft438 pending Q43 update.
-NEXT 1: Commit/push Q43 and refresh draft438.
-NEXT 2: Apply retained /tmp/cardrpg-a6-q44-readability.css after acceptance; run focused Cat/Growth/Power checks.
-NEXT 3: Verify all12cats/fourpages/exact commands/locks and both sizes; package after source acceptance.
-RUNNING: Vite91373/5960 retained; Q43offline released;137GiB free; no A6 heavy job.
-DONE: Q43 20source+20offline+6PantryCrownviews inspected;47tests/types/lint pass,39090549B.
-DONE: Q42 11c5aeee3 pushed; BP39 merge15c183f27; prior final seeds/run/E2E retained.
-KNOWN: Target8.5 unmet; early loss/recovery/HP/boss tail retained underR-3; no fourth numeric tuning loop.
-DECISIONS: One agent/draft only/original art/fully auto; no new systems. Report consolidated to retain the two-page intent; detailed receipts unchanged.
+# Lane A6 handoff — 2026-11-11T02:14:59Z
+NOW: Q44 accepted; commit/push/update draft438, then Q45 awakening readiness/cost.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed9d0cd2f49; BP39 included.
+NEXT1: Publish Q44 source/evidence/reports and update draft438.
+NEXT2: Q45 uses R.awakenCat copy preview for blocked reason/exact spend/stat gain; no rule changes.
+NEXT3: Verify focused tests and both-size public controls; inspect source, then package offline under timing lease.
+RUNNING: Vite91373/5960 retained; no heavy process/lease;136GiB.
+DONE: Q44 52source+52offline views,11tests/types/lint retained,39091121B; Q43 9d0cd2f49.
+KNOWN: Target8.5 unmet; retained first-loss/recovery/HP/boss-tail misses underR-3; no fourth numeric loop.
+DECISIONS: One agent; draft only; original art; fully auto; no new systems; exact public previews only.
+DECISIONS: USER11Nov real3D/lookV3D saved verbatim inINBOX; keep2D art/socket anchors/no puppet internals. PublishedB P39 unchanged; request contract inA6-OUTBOX.

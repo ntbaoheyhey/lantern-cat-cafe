@@ -23,3 +23,5 @@ NON-STOP RULE (overrides any habit of ending a turn):
 4. While waiting for a long job (render, build, E2E, lock): work on another unblocked item or on the lowest-scored screen/unit; do not idle and do not end the turn.
 5. Before you are about to end a turn, check this list: open QUEUE.md; if any item is unticked and not BLOCKED-USER, do not end the turn, start that item instead.
 6. User messages: answer in 1-3 Vietnamese lines in STATUS-VI.md (and briefly in chat), add any correction to QUEUE.md, then continue working in the same turn.
+
+11. USER11Nov: B transitions to lookV3D real3D with per-unit puppet fallback; A6 treats canvas as actor/event black box, never adds puppet-internal coupling. Unit-attached UI uses B manifest sockets; retain2D portraits/cards, merge published tips, combined<=40MB. Queue order unchanged.

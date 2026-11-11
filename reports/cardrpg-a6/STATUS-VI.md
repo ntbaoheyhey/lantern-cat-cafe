@@ -275,3 +275,13 @@ Tiếp tục Q43 Settings và tích hợp Pantry Crown P39 trước bản đóng
 2026-11-11T01:56:03Z: Q43 Settings hoàn tất: chữ14px/nút44px;20ảnh nguồn/20ảnh offline đã duyệt,47test/type/lint qua.
 Xuất/nhập khôi phục đúng dữ liệu, reset hai bước và tùy chọn chơi giữ đúng. Pantry Crown P39 tích hợp,6ảnh rõ; demo39.090.549byte.
 Tiếp tục Q44: thông tin sở hữu, chi phí và nút huấn luyện mèo dễ đọc hơn.
+
+2026-11-11T02:03:29Z: Tiếp tục Q44 từ52ảnh đã lưu;11test/type/lint và kiểm tra chi phí qua.
+Đang sửa cuộn danh sách làm khuất nút nâng cấp và chiêu dài tràn ở720p; giữ toàn bộ phần đã hoàn tất.
+
+2026-11-11T02:09:47Z: Đã nhận quyết định B chuyển3D thật; giữ nguyên thứ tự Q44/Q45 và tranh thẻ2D.
+A6 dùng API nhân vật/sự kiện và socket của B, không thêm phụ thuộc puppet; tích hợp lookV3D khi B công bố, demo chung≤40MB.
+
+2026-11-11T02:14:59Z: Q44 hoàn tất: 52 ảnh nguồn và 52 ảnh offline đã duyệt; chi phí/điều kiện mở chiêu 14px, nút 44px, danh sách cuộn riêng.
+11 test/typecheck/lint đã đạt được giữ nguyên; demo 39.091.121 byte, không lỗi/gọi mạng. Tiếp tục Q45: hiện đúng điều kiện và giá thức tỉnh trước khi mua.
+Quyết định 3D đã lưu nguyên văn; B hiện công bố P39, chưa có lookV3D để tích hợp.

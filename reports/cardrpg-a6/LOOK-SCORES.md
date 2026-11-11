@@ -5,7 +5,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Screen | 1440×900 | 1280×720 | Lowest applicable row | Evidence / next fix |
 |---|---:|---:|---|---|
 | Cafe / top HUD / dock | 8.1 | 8.1 | 13: compact hotspot labels (7.5) | shots/q33-home-accepted + q33-offline;22source/30offline views, original tip box,13–14px rewards,42–44px fast button, exact claims/caps/clocks/keyboard; discovery toast stays above chest |
-| Cats / Growth / Skills / Bonds / Gear | 8.2 | 8.1 | 13: compact collection-card metadata (7.5) | shots/q21-cat-skills/* + q22-preview/*;16direct-preview views, selected skill/focus/miniature/gear/account preserved; current rule text retained |
+| Cats / Growth / Skills / Bonds / Gear | 8.2 | 8.1 | 13: compact collection-card metadata (7.5) | shots/q44-current.json + q44-offline;52source/52offline views,12px card tags/14px costs and readiness/44px training controls; all12cats, exact public commands/locks/keyboard, bounded roster and long skills; Q45 awakening readiness pending |
 | Team | 8.2 | 8.1 | 13: compact secondary row labels (7.5) | shots/q30-formation + q30-layout-final + q30-offline; bounded tools with15px reasons, all12cats/three modes/exact plans/locks/focus, main art retained |
 | Prepare | 8.2 | 8.1 | 13: secondary crew labels (7.5) | shots/q39-prepare + q39-offline + boundary galleries;14px foe/phase labels,15px tactics, bounded8s forecast, all13foes/cache/error/stale/keyboard/row/Fight pass at both sizes |
 | Bag / gear / empty | 8.2 | 8.1 | 07: restrained gear illustration (7.5) | shots/q36-bag + q36-details + q36-boundaries + q36-scroll + offline counterparts;56source/28offline views,14px costs/owners/rarity,40–44px actions, exact upgrades/transfers/locks and corrected reading resets |

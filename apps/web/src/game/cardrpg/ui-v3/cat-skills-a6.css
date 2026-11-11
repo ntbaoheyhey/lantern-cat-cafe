@@ -38,3 +38,44 @@
   .a6-cat-preview {font-size:13px;}
  }
 }
+
+/* Readable companion ownership, training costs and automatic skill readiness. */
+.uv-app[data-a6=true] {
+ .uv-cat-grid .dp-card-rarity,.uv-cat-grid .a6-bond-icon,.uv-cat-grid .a6-level-badge {font-size:12px}
+ .uv-cat-grid .cr-card-caption p,.a6-cat-hero small,.a6-cat-hero p,.a6-cat-growth small,.a6-cat-growth .cr-cost {font-size:14px;line-height:1.4}
+ .a6-cat-tabs button,.a6-cat-growth .dp-v4-growth>button,.a6-cat-panel>button,.a6-cat-panel details>button,.a6-cat-preview {min-height:44px;font-size:14px}
+ .a6-cat-panel details>summary {min-height:44px;padding-block:10px;font-size:14px;line-height:1.4;box-sizing:border-box}
+ .a6-cat-skillbook .a6-cat-passive>span,.a6-cat-skill-index b,.a6-cat-skill-detail>header>small,.a6-cat-skillbook .a6-cat-skill-unlock {font-size:14px;line-height:1.35}
+ .a6-cat-skill-index small {font-size:12px}
+ .uv-sheet-content:has(.a6-cats-workspace)>.uv-section-tools>button {min-height:44px;font-size:14px}
+ .uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade p,.uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade .cr-cost {font-size:14px;line-height:1.35}
+ .uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade button {min-height:44px;font-size:14px}
+}
+
+/* The roster scrolls independently so training and the selected cat stay in reach. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(.a6-cats-workspace) {grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
+ .a6-cats-workspace>.uv-cat-grid {min-height:0;max-height:100%;overflow:auto;align-content:start;padding:5px;margin:-5px;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2;overscroll-behavior:contain}
+ .a6-cats-workspace>.a6-cat-detail {position:static;min-height:0;max-height:100%;overflow:auto;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2}
+ .a6-cat-detail:has(.a6-cat-skillbook) {display:flex;flex-direction:column;height:100%}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:128px minmax(0,1fr)}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero>img {width:128px;height:128px}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero h2 {font-size:32px;margin:3px 0}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero p {margin:3px 0}
+ .a6-cat-panel:has(.a6-cat-skillbook) {display:flex;flex-direction:column;min-height:0;flex:1}
+ .a6-cat-skillbook {min-height:0;flex:1}
+ .a6-cat-skillbook>:not(.a6-cat-skill-detail) {flex-shrink:0}
+ .a6-cat-skill-detail {min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:90px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero>img {width:90px;height:90px}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero h2 {font-size:26px;margin:1px 0}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero p {margin:0}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-tabs {margin:4px 0}
+  .a6-cat-skillbook {gap:4px}
+  .a6-cat-skillbook .a6-cat-passive {padding-block:4px}
+  .a6-cat-skill-detail {padding-block:6px}
+  .a6-cat-skill-detail>p {margin-top:4px}
+  .a6-cat-skillbook .a6-cat-skill-unlock {margin-top:2px}
+ }
+}
