@@ -1,6 +1,7 @@
 /** Camera-facing, jointed concept art in the existing lit cafe and event clock. */
 import * as T from 'three';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT, VELVET_STAFF_CONTACT, type PuppetRig } from './look-puppet-rig';
+import { fallbackScale } from './look-scale';
 const raw=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'});
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const rigs=new Map(Object.values(raw).map(value=>{const rig=parsePuppetRig(value);return[rig.id,rig] as const;}));
@@ -14,7 +15,9 @@ export async function loadPuppetModel(id:string){
   model.userData={lookV2:true,lookPainted:true,lookPuppet:true,paintedRig:data,puppetId:id};
   rig.name=data.role;rig.userData.lookProps=true;model.add(rig);
   const width=data.height*data.aspect;
-  const bottom=Math.max(...data.layers.map(l=>l.rect[1]+l.rect[3]));
+  const measurement=fallbackScale(data);
+  model.userData.bodyBounds={min:measurement.min,max:measurement.max};
+  const bottom=measurement.feet;
   rig.position.y=-(1-bottom)*data.height;rig.userData.restY=rig.position.y;
   for(const layer of data.layers){
     const [x,y,w,h]=layer.rect,[px,py]=layer.pivot,[ax,ay,aw,ah]=layer.atlasRect;
