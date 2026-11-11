@@ -24,3 +24,5 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Ultimate | 8.3 | 8.2 | 19: restrained burst (8) | final-screens/*-ultimate +1440-ultimate-video; saved video holds readable art/skill name,800ms/x1 |
 
 Q13b rows 01/06/10:8 across screens; 03/04:8 on collectible frames; 05:8 on cat cards/seats; 08:8 on HUD/results (icons and count-up); 09:8 (shared badge selector unchanged); 11:8 (crew image bounds 35–36vh); 12:8 on loading/empty Bag. Remaining applicable rows are 7–8, with the lowest noted above. The rule difficulty and 100% forecast are explicitly Q13f work, not accepted by these visual scores.
+
+Q54 compatibility: compact legacy titles/loading and original opener return verified in48source/48offline views. A6 screen scores retained. Separate A6 Materials subpage has observed low-contrast text (row13:4), queuedQ56; prior Bag score applies to gear only.

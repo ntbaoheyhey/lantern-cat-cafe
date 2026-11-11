@@ -186,3 +186,7 @@ Q49: After Q48, continue the tied-low Team/Prepare reading row. Existing state a
 Q53 queued from Q52 source loading captures: plain page Suspense bypasses the illustrated Shell fallback. Existing OpeningA6 is the smallest consistent correction to LOOK-CHECKLIST row12; no new assets/system, no numerical tuning or repeated research.
 
 - 2026-11-11T04:21:38Z Q53: reuse OpeningA6 with its CSS eagerly imported at outer boundaries; status copy only, static illustration supports reduced motion. Actual legacy screenshots expose an older ungated heading-art defect; queueQ54 as next bounded compatibility repair rather than accepting DOM-visible-but-clipped controls.
+
+- 2026-11-11T04:27:33Z Q54 real Bag/Materials/Escape exposed focus changing to menu because tab navigation overwrote the original opener. Preserve it for navigation originating inside the current dialog. Separate observed legacy Bag body image overflow becomesQ55; header containment remains Q54.
+
+- 2026-11-11T04:31:35Z Q54 final source inspection:48views accepted for header/loading/focus. A6 Materials inherited dark rarity-card backgrounds under brown text; record bounded Q56 after Q55 rather than raising the Bag score while unreadable. Prior research/readability target retained.
