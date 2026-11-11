@@ -174,3 +174,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T02:43:33Z Q48 follows the actual lowest Home8.1 row: retained1280home shows a feature toast over Notice board and small entry signs. Reuse cafe/crew art and existing unlock commands; make signs/notice coexist, no renderer or economy change.
 
 Q49: After Q48, continue the tied-low Team/Prepare reading row. Existing state already distinguishes fully locked from roster-only; correct its misleading hint and raise compact badges/row actions, without changing any guard or transaction. Retained Q30/Q39 evidence is sufficient; no repeated final seed/run.
+
+2026-11-11T03:03:27Z Q49 closes with retained checks and inspected22source/22offline views; scores stay8.2/8.1, no inflated gain for typography. Q50 accepts B D2b public status resolver (already merged) using displayed battle.initial.skillsV5 rather than mutable account preferences, preserving replay vocabulary. This completes the earlier A6-OUTBOX request; no renderer/rule change.

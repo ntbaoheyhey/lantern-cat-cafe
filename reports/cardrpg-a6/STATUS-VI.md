@@ -313,3 +313,11 @@ Tiếp tục Q48: bảng chỉ dẫn trong quán và vị trí thông báo mở 
 2026-11-11T02:54:37Z: Q48 hoàn tất:20ảnh nguồn/20ảnh offline và10ảnh kích thước B đã duyệt; demo39.097.373byte.
 14test giao diện/7test tích hợp/typecheck/lint đạt; nút44px, thông báo không che lối vào, trả bàn phím đúng; không lỗi/gọi mạng.
 Tiếp tục Q49: chữ cấp/hàng/vai trò đội hình và lời nhắc khóa đang nói sai khi đội đã chốt.
+
+2026-11-11T03:01:29Z: Đã tiếp tục đúng Q49: giữ sáu test/typecheck/lint và thao tác đội hình đã đạt, duyệt22ảnh nguồn.
+Bản sửa khoảng cách giữ nhãn hợp kích và nút Fight trong khung720p; lời nhắc phân biệt khóa đội với khóa vị trí/kế hoạch. Đang đóng gói offline.
+Ghi chú3D đã lưu nguyên văn; B D2b đã tích hợp, chưa có mẫu3D được nghiệm thu và chưa có API socket công khaiD4.
+
+2026-11-11T03:03:27Z: Q49 hoàn tất:22ảnh nguồn/22ảnh offline đã duyệt; chữ14px, huy hiệu13px, nút44px và lời nhắc khóa đúng.
+Giữ sáu test/typecheck/lint đã đạt; hợp kích cách thanh Fight ít nhất4,34px, demo39.097.437byte, không lỗi/gọi mạng.
+Tiếp tục Q50: dùng callback B D2b để mô tả trạng thái theo đúng luật của trận đang xem, giữ bản phát lại cũ.

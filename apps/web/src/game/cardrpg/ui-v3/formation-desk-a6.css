@@ -12,18 +12,19 @@
  }
  .a6-formation-row>header {min-height:42px;margin-bottom:10px;gap:8px;}
  .a6-formation-row>header b {color:#ffedc7;font-size:21px;}
- .a6-formation-row>header small {color:#e2d1aa;font-size:12px;}
- .a6-formation-row>header button {min-height:40px;min-width:72px;padding:8px 10px;font-size:12px;border-color:#d2b57c;box-shadow:0 3px 0 #282e23;}
+ .a6-formation-row>header small {color:#e2d1aa;font-size:14px;line-height:1.3;}
+ .a6-formation-row>header button {min-height:44px;min-width:80px;padding:8px 10px;font-size:14px;border-color:#d2b57c;box-shadow:0 3px 0 #282e23;}
  .a6-row-cats {gap:12px;align-items:stretch;justify-content:center;}
  .a6-formation-cat[data-rarity] {max-width:240px;border-radius:36px 36px 10px 10px;isolation:isolate;padding:15px 8px 9px!important;gap:3px;}
  .a6-formation-cat img {width:156px;height:174px;max-width:100%;filter:drop-shadow(0 8px 5px #79582e44);}
  .a6-formation-cat>div {width:100%;padding-top:4px;border-top:1px solid #b58d4c55;}
  .a6-formation-cat b {font-size:23px;}
- .a6-formation-cat .a6-power {font-size:13px;}
- .a6-formation-cat small {font-size:12px;}
+ .a6-formation-cat .a6-power {font-size:14px;}
+ .a6-formation-cat small {font-size:14px;line-height:1.3;}
  .a6-formation-cat[aria-pressed=true] {outline:3px solid #ffd77a!important;outline-offset:3px;}
- .a6-formation-cat[data-rarity] .a6-seat-level {top:12px;left:10px;}
- .a6-formation-cat[data-rarity] .a6-seat-stars {top:12px;right:10px;}
+ .a6-formation-cat[data-rarity] .a6-seat-level {top:12px;left:10px;font-size:13px;line-height:1.25;}
+ .a6-formation-cat[data-rarity] .a6-seat-stars {top:12px;right:10px;font-size:13px;line-height:1.25;letter-spacing:0;}
+ .a6-placement-hint,.a6-ready-pairs>span,.a6-ready-pairs small {font-size:14px;line-height:1.35;}
  .a6-formation .a6-empty-row {align-self:center;text-align:center;max-width:175px;font-size:14px;color:#f5e5bf;padding:30px 12px;}
  .a6-bond-lines {z-index:3;opacity:.9;}
  .a6-bond-lines path {stroke:#f6d994;stroke-width:2;filter:drop-shadow(0 1px 2px #472912);}
@@ -32,11 +33,12 @@
  .a6-formation[data-preparing=true] .a6-formation-stage {gap:12px;padding:12px;}
  .a6-formation[data-preparing=true] .a6-formation-row {padding:10px;}
  .a6-formation[data-preparing=true] .a6-formation-row>header b {font-size:17px;}
- .a6-formation[data-preparing=true] .a6-formation-row>header button {font-size:11px;min-height:38px;padding:7px;min-width:64px;}
+ .a6-formation[data-preparing=true] .a6-formation-row>header button {font-size:14px;min-height:44px;padding:7px;min-width:80px;}
  .a6-formation[data-preparing=true] .a6-row-cats {gap:10px;min-height:0;}
- .a6-formation[data-preparing=true] .a6-formation-cat img {width:142px;height:158px;}
+ .a6-formation[data-preparing=true] .a6-formation-cat img {width:142px;height:146px;}
  .a6-formation[data-preparing=true] .a6-formation-cat b {font-size:21px;}
- .a6-formation[data-preparing=true] .a6-formation-cat small {display:block;font-size:11px;}
+ .a6-formation[data-preparing=true] .a6-formation-cat small {display:block;font-size:14px;}
+ .a6-formation[data-preparing=true] .a6-formation-cat .a6-power {font-size:14px;}
  .a6-foes {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;}
  .a6-foes:has(>article:nth-child(3)) {grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
  .a6-foes>article {max-width:none;min-width:0;padding:9px 10px;border-radius:14px;}
@@ -53,12 +55,12 @@
   .a6-formation[data-preparing=true] .a6-formation-row {padding:8px;}
   .a6-formation[data-preparing=true] .a6-formation-row>header {margin-bottom:7px;}
   .a6-formation[data-preparing=true] .a6-formation-row>header b {font-size:15px;}
-  .a6-formation[data-preparing=true] .a6-formation-row>header button {min-height:40px;min-width:64px;padding:6px;font-size:12px;}
+  .a6-formation[data-preparing=true] .a6-formation-row>header button {min-height:44px;min-width:80px;padding:6px;font-size:14px;}
   .a6-formation[data-preparing=true] .a6-formation-cat {padding:12px 6px 7px!important;}
   .a6-formation[data-preparing=true] .a6-formation-cat img {width:120px;height:128px;}
   .a6-formation[data-preparing=true] .a6-formation-cat b {font-size:18px;}
-  .a6-formation[data-preparing=true] .a6-formation-cat .a6-power {font-size:11px;}
-  .a6-formation[data-preparing=true] .a6-formation-cat small {font-size:10px;}
+  .a6-formation[data-preparing=true] .a6-formation-cat .a6-power {font-size:14px;}
+  .a6-formation[data-preparing=true] .a6-formation-cat small {font-size:14px;}
   .a6-formation[data-preparing=true] .a6-placement-hint {margin:8px 0;}
   .a6-prepare-grid {gap:18px;}
   .a6-prepare-grid>aside {padding-left:16px;}
@@ -112,9 +114,9 @@
  .a6-prepare-grid .dp-v4-forecast[data-compact=true]:not(:has(>p))>small:last-child {grid-column:1/-1}
  @media(max-height:780px) {
   .a6-prepare-grid .uv-prepare-title h2 {display:flex;align-items:baseline;gap:10px}
-  .a6-formation[data-preparing=true] .a6-formation-stage {padding:8px}
-  .a6-formation[data-preparing=true] .a6-formation-row {padding:6px}
-  .a6-formation[data-preparing=true] .a6-formation-cat img {height:112px;width:112px}
+  .a6-formation[data-preparing=true] .a6-formation-stage {padding:6px}
+  .a6-formation[data-preparing=true] .a6-formation-row {padding:5px}
+  .a6-formation[data-preparing=true] .a6-formation-cat img {height:100px;width:112px}
   .a6-formation[data-preparing=true] .a6-placement-hint {margin:5px 0}
   .a6-formation[data-preparing=true] .a6-ready-pairs {margin:4px 0 0}
   .a6-enemy-heading {min-height:28px}.a6-enemy-heading>h2 {font-size:20px}
@@ -129,7 +131,7 @@
 /* Existing crew tools open over the table, without moving the team below the fold. */
 .uv-app[data-a6=true] {
  .a6-formation-tools {display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
- .a6-formation-tools>button {min-height:40px;padding:7px 12px;font-size:14px;font-weight:700;color:#805627;border-color:#bea477;background:linear-gradient(#fff3d7,#ead6ad)}
+ .a6-formation-tools>button {min-height:44px;padding:7px 12px;font-size:14px;font-weight:700;color:#805627;border-color:#bea477;background:linear-gradient(#fff3d7,#ead6ad)}
  .a6-formation-tool {width:min(1040px,calc(100vw - 64px));height:min(610px,calc(100dvh - 56px));max-height:calc(100dvh - 56px);padding:0;border:2px solid #c6a466;border-radius:20px;background:linear-gradient(110deg,#fff4d6,#efdab0);color:#65492f;box-shadow:0 22px 80px #160f0bd9;overflow:hidden}
  .a6-formation-tool[open] {display:grid;grid-template-rows:auto minmax(0,1fr)}
  .a6-formation-tool::backdrop {background:#1a1512b3;backdrop-filter:blur(4px)}
@@ -170,7 +172,7 @@
   .a6-formation[data-preparing=false] .a6-formation-stage {padding:8px}
   .a6-formation[data-preparing=false] .a6-formation-row {padding:8px}
   .a6-formation[data-preparing=false] .a6-placement-hint {margin:5px 0}
-  .a6-formation-tools {margin:5px 0 10px;gap:7px}.a6-formation-tools>button {font-size:13px;padding:7px 10px}
+  .a6-formation-tools {margin:5px 0 6px;gap:7px}.a6-formation-tools>button {font-size:14px;padding:7px 10px}
   .a6-formation-tool {height:min(595px,calc(100dvh - 56px))}.a6-formation-tool>header {padding:8px 18px;gap:12px}.a6-formation-tool>header>img {height:62px;width:54px}.a6-formation-tool h2 {font-size:24px}
   .a6-formation-tool-body {padding:16px 20px;gap:10px}.a6-team-suggestions {gap:12px}.a6-team-suggestions>button {padding:13px;gap:7px}.a6-team-suggestions h3 {font-size:21px}
   .a6-saved-team-desk .a6-formation-trio img {height:130px}

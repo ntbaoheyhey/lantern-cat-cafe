@@ -211,3 +211,5 @@ Q44 presentation repair3: only720p unowned Velvet retains6px of note overflow. T
 Q47: initial unit harness used spyOn for missing jsdom native-dialog methods; corrected test-only bounded polyfill,18tests pass. First browser gate showed native Tab can leave the dialog for browser chrome; explicit first/last wrap added. Background inertness and paused clocks already passed.
 
 2026-11-11T02:54:37Z Q48: first browser continuation found Tower focus returned to the previous entry because HomeScene called m.go directly. Smallest fix passes Shell go as onTower; all three signs/dock/Escape focus checks pass at both sizes. Original7accepted source frames retained;14tests retained, final types/lint and7B scale/staging tests pass.
+
+2026-11-11T03:01:29Z Q49: Larger formation labels initially let pair badges meet the Fight footer at720p. The retained single spacing repair reduces table padding and Prepare portrait height (100px at720p), preserving14pxlabels/44pxtargets. All22current source views inspected; pair/Fight separation passes. No gameplay change.

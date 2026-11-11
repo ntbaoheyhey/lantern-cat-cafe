@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now opens four keepsake pages directly, with star gifts beside the notes and all claims/caps retained.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,097,373-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **39,097,437-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -30,7 +30,7 @@ Q13f used the prescribed three-attempt fallback. Enemy budgets stay fixed, so up
 
 ## Verification and self-review
 
-Final E2E was **420/421 initially**; a test-only idle-accrual readiness repair passed three focused repetitions, not a full-suite rerun. Q48 passes **14 introduction/home and seven scale/staging tests plus final web typecheck/lint**; Q47 retains18 HUD/log/phase tests; Q45 retains 20 awakening/companion/growth and 13 B effects tests; Q43 retains 47 Settings/puppet tests and Q42 ten guide/HUD tests. Earlier changed-area checks and the prior 2,005-test web pass remain recorded in item receipts and [FIXLOG](FIXLOG.md). Recent browser checks verify exact public transactions, caps, locks, bounded forecasts/advice, keyboard, reduced motion and direct-file operation at both sizes, with no observed browser errors or external requests.
+Final E2E was **420/421 initially**; a test-only idle-accrual readiness repair passed three focused repetitions, not a full-suite rerun. Q49 retains **six Formation/Power tests plus typecheck/lint**, with22source/22offline inspected views; Q48 passes14 introduction/home and seven scale/staging tests; Q47 retains18 HUD/log/phase tests; Q45 retains 20 awakening/companion/growth and 13 B effects tests; Q43 retains 47 Settings/puppet tests and Q42 ten guide/HUD tests. Earlier changed-area checks and the prior 2,005-test web pass remain recorded in item receipts and [FIXLOG](FIXLOG.md). Recent browser checks verify exact public transactions, caps, locks, bounded forecasts/advice, keyboard, reduced motion and direct-file operation at both sizes, with no observed browser errors or external requests.
 
 [First session, 85 s](clips/first-session.mp4) is earned UI play. [Boss, 62 s](clips/boss.mp4) is a continuous automatic review fixture, including its 44.59 s battle, setup and Victory screen. Both clips and the final cut-in frame are inspected. These are headless Chromium observations, not human enjoyment testing.
 
@@ -52,3 +52,5 @@ Detailed receipts: [Q44 Companions](Q44.md), [Q43 Settings](Q43.md), [Q42 Field 
 [Q47 Battle log](Q47.md) replaces the blank/scrolling overlay with a readable notebook, pauses playback and restores focus/state;14 source/14 offline views inspected. B D1 docs-only production research is integrated.
 
 [Q48 Cafe signs](Q48.md) adds14px hanging signs/44px targets and six notices that leave every entry reachable;20source/20offline views inspected. B D2 semantic size standard is integrated and10normal/elite/boss views pass; real3D acceptance remains0/25.
+
+[Q49 Formation](Q49.md) adds readable14px row/role/pair labels,13px level/star badges and44px controls, with honest committed/replay guidance. The720p pair badge stays above Fight; all44source/offline views are inspected.
