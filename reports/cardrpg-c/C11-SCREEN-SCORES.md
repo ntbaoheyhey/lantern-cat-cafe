@@ -145,3 +145,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T23:00:45.255381+00:00 Relic follow-up:34final captures inspected, bothsizes. Full grid/status/actions/focus fit; unread/empty/loaded guidance and muted unavailable buttons agree with state. Weighted7.79 retained; C11-RELIC-RECEIPT.md.
 
 2026-11-11T23:08:10.467609+00:00 Sound:40final and8baseline views inspected; Settings feedback/actions fit, menu feedback readable. Existing720p enemyHP overlap when More is open is the next review item. Weighted7.79 retained.
+
+2026-11-11T23:36:50.153776+00:00 Phase timing follow-up: all32finalviews inspected through six sheets and two full-size states. Phase card, faces, HP and contact numbers clear; older top instruction strip overlaps rage in phase3 and remains next. Weighted7.79 unchanged.

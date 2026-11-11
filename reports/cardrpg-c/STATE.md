@@ -4,7 +4,7 @@ Prompt bytes: 19078
 Base A6: ef4aee790 (clean, fetched origin equal; includes Q54 and B d5c34d233).
 Branch: codex/cardrpg-c-2026-11-11
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/439 (draft; base A6)
-Active: C11 ultimate visible before contact;92browser/28views/32tests/types/lintPASS. Next actual boss phase cues;designer0/25.
+Active: C11 phase timing verified;144browser/32views/42tests/types/lintPASS. Next instruction strip;designer0/25.
 Designer accepted: 0/25 (inbox empty); contract25units /74skills /18statuses.
 All70001–70500 consumed across3rounds. Ledger guards overlap. No fourth round or A6 acceptance reruns.
 Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.
@@ -18,3 +18,5 @@ Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.
 2026-11-11T23:00:45.255381+00:00 C11 Relic recovery PASS:15tests/types/lint;88+12browserchecks/34finalviews,0pageerrors. Safe diagnostics, accepted-result copy, accurate collection guidance/disabled styles. Next Sound pending/blocked UI.
 
 2026-11-11T23:08:10.467609+00:00 C11 sound recovery PASS:40tests/types/lint;72browserstates/40views;next720p battle-menu overlap.
+
+2026-11-11T23:36:50.153776+00:00 C11 phase timing verified;144browser/32views/42tests/types/lintPASS. Next boss instruction strip.

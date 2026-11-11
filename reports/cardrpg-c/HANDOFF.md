@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 pre-contact ultimate space verified; continue C8/C11.
+NOW: C11 boss phase timing verified; continue C8/C11.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check inbox/PSD; review actual boss phase cue visibility and contact timing.
+NEXT1: check inbox/PSD; fix old round-status instruction strip overlapping enemy rage.
 NEXT2: retained evidence below120MB; no balance/acceptance seed reruns; representative shots only.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -27,4 +27,4 @@ KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only B
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
 KNOWN:controls98browser/144blocked;leave68browser/48views/27tests;Auto-next68+4browser/40views/33tests/types/lintPASS.
 KNOWN:Clover27placeholder/23runtime+5finalasset/types/lintPASS;84layer/72combat/48offline+6PausePlay,34views;C8-CLOVER-RECEIPT.
-KNOWN:Sound40tests/72browser/40views;menu96browser/24views;cutin92browser/28views/32tests/types/lintPASS.
+KNOWN:phase144browser/32views/42tests/types/lintPASS; menu96/cutin92 preserved; old instruction strip overlap next.
