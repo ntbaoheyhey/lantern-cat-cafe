@@ -177,9 +177,9 @@ try{
       } else if (s.screen === 'map') {
         await capture('map');
         if (s.route?.rewards) acted = await click(page.locator('.dp-reward'), 'Choose earned boon');
-        if (!acted) acted = await click(button(/Heal the team/), 'Rest and heal');
+        if (!acted) acted = await click(button(/Heal the team|Heal the crew|Continue at full HP/), 'Rest and heal');
         if (!acted) acted = await click(button('Take 70 run points'), 'Claim treasure');
-        if (!acted) acted = await click(button('Save your points and leave'), 'Leave shop');
+        if (!acted) acted = await click(button(/Save your points and leave|Keep points and leave/), 'Leave shop');
         if (!acted && s.route?.kind === 'event') acted = await click(page.locator('.cr-panel .dp-three button:not(:disabled)'), 'Resolve story event');
         if (!acted) acted = await click(page.locator('.dp-node:not(:disabled)'), 'Enter next node');
         if (!acted) acted = await close();

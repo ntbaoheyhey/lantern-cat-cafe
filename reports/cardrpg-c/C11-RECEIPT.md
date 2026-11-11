@@ -53,3 +53,5 @@ Gear-slot checkpoint: C11-GEAR-SLOTS-RECEIPT.md.10baseline mismatches->20browser
 Bag enhancement checkpoint: C11-BAG-ENHANCE-RECEIPT.md.12wrongwearerquotes->28browser/8keyboardpurchases/10focused/types/lint/28viewsPASS;2visualrepairs. Exact ownership/costs retained; no balance/score/demo change.
 
 Bag bonus checkpoint: C11-BAG-BONUS-RECEIPT.md.42browser/20keyboard equips/31focused/types/lintPASS;42views inspected. Exact recipient/donor set/unique changes visible from Equip; fixture celebration acknowledgement isolated. Demo/score/gameplay unchanged.
+
+Route stops checkpoint: C11-STOPS-RECEIPT.md.38browser/16keyboard/27distincttests/types/lint/22viewsPASS; cap/shortage/HP/rank previews preserve exact transactions and fullHP escape. Initial broad web run had2failures; focused fixes pass, no fullsuite claim. Demo/score unchanged.

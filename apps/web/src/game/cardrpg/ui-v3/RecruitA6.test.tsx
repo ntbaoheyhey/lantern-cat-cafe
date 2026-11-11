@@ -31,7 +31,8 @@ it('skipping after the first beat preserves the exact committed rewards',()=>{
 it('shows duplicate shard ownership beside the real star-up requirement',()=>{
  const m=ready();const card=m.state.account.cards.find(c=>c.cardId==='clover')!;card.shards=8;
  const view=render(<CompanionGrowthV4 m={m} catId="clover" kind="ascend"/>);
- expect(screen.getByText('8 matching shards owned')).toBeTruthy();
+ expect(screen.getByText('8 / 10 matching shards')).toBeTruthy();
+ expect(screen.getByText('Need 2 more matching shards.')).toBeTruthy();
  expect((screen.getByRole('button',{name:'Add a star'}) as HTMLButtonElement).disabled).toBe(true);
  card.shards=10;view.rerender(<CompanionGrowthV4 m={m} catId="clover" kind="ascend"/>);
  fireEvent.click(screen.getByRole('button',{name:'Add a star'}));
