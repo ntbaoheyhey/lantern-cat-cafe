@@ -39,3 +39,5 @@ Ultimate silhouette checkpoint: C11-ULTIMATE-PAINT-RECEIPT.md.144source/144battl
 Asset recovery checkpoint: C11-ASSET-RETRY-RECEIPT.md.4browser failures ->4PASS;12focused/types/lint;2offline smoke/10changes/2controls;4views inspected. Demo29,226,045bytes/evidence119.21MB;score/gameplay unchanged.
 
 PNG intake checkpoint: C11-PNG-GATE-RECEIPT.md.2falsePASS corrupt PNGs ->FIX;41tests plus15final diagnostic checks/types/lintPASS;25published placeholders retained. No browser/art/demo change;29,226,045bytes/evidence119.19MB. Score/gameplay unchanged.
+
+Event fallback checkpoint: C11-EVENT-FALLBACK-RECEIPT.md.4baseline misses ->120sourcePASS;30focused/types/lint,2offline smoke/10changes/2controls/4inspectedviewsPASS. Demo29,226,081bytes;large diagnostics outside git. No gameplay/score/performance claim.

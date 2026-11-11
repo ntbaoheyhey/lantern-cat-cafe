@@ -41,10 +41,11 @@ function animationGate(result,unit,animations) {
     if (!clip) {issue(result,'FIX','animation',`Missing ${name}`);continue;}
     if (!Number.isFinite(clip.duration)||clip.duration<=0) {issue(result,'FIX','animation',`${name} is empty or non-finite`);continue;}
     if (clip.duration<spec.seconds[0]-.001||clip.duration>spec.seconds[1]+.001) issue(result,'WARN','duration',`${name} duration ${clip.duration}; expected ${spec.seconds.join('–')} seconds.`);
+    const usableEvents=clip.events.filter(event=>Number.isFinite(event.time)&&event.time>=0&&event.time<=clip.duration);
     for (const event of Object.keys(spec.events)) {
-      if (!clip.events.some(e=>e.name===event)) issue(result,'WARN','event',`${name}: missing ${event}; timed fallback at ${spec.events[event]}.`);
+      if (!usableEvents.some(e=>e.name===event)) issue(result,'WARN','event',`${name}: no usable ${event}; timed fallback at ${spec.events[event]}.`);
     }
-    for (const event of clip.events) if (!Number.isFinite(event.time)||event.time<0||event.time>clip.duration) issue(result,'WARN','event-time',`${name}: ${event.name} outside clip.`);
+    for (const event of clip.events) if (!usableEvents.includes(event)) issue(result,'WARN','event-time',`${name}: ${event.name} has non-finite or out-of-clip time; ignored during playback.`);
     if (name==='ult') {
       const start=clip.events.find(e=>e.name==='ult-start'), hit=clip.events.find(e=>e.name==='hit'), end=clip.events.find(e=>e.name==='ult-end');
       if (start&&hit&&end&&!(start.time<hit.time&&hit.time<end.time)) issue(result,'WARN','event-order','ult-start must precede hit and ult-end.');

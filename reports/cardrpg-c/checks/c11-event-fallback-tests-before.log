@@ -1,0 +1,154 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run src/game/cardrpg/spine/events.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/events.test.ts (9 tests | 5 failed) 7ms
+   ❯ Spine contract clock (9)
+     × replaces an unusable authored hit at -0.1 with a timed fallback 3ms
+     × replaces an unusable authored hit at 3 with a timed fallback 0ms
+     × replaces an unusable authored hit at NaN with a timed fallback 0ms
+     × replaces an unusable authored hit at Infinity with a timed fallback 0ms
+     × keeps valid repeated hits while discarding a malformed extra event 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/events.test.ts > Spine contract clock > replaces an unusable authored hit at -0.1 with a timed fallback
+AssertionError: expected { name: 'hit', time: -0.1, …(1) } to deeply equal { name: 'hit', time: 0.55, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "fallback": true,
++   "fallback": false,
+    "name": "hit",
+-   "time": 0.55,
++   "time": -0.1,
+  }
+
+ ❯ src/game/cardrpg/spine/events.test.ts:9:40
+      7|  it.each([-.1,3,NaN,Infinity])('replaces an unusable authored hit at %…
+      8|   const authored=[{name:'hit',time},{name:'cast',time:.3}],cues=animat…
+      9|   expect(cues.find(c=>c.name==='hit')).toEqual({name:'hit',time:.55,fa…
+       |                                        ^
+     10|   expect(cues.find(c=>c.name==='cast')).toEqual({name:'cast',time:.3,f…
+     11|   const cursor=new SpineEventCursor(),seen:string[]=[];cursor.advance(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  src/game/cardrpg/spine/events.test.ts > Spine contract clock > replaces an unusable authored hit at 3 with a timed fallback
+AssertionError: expected { name: 'hit', time: 3, …(1) } to deeply equal { name: 'hit', time: 0.55, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "fallback": true,
++   "fallback": false,
+    "name": "hit",
+-   "time": 0.55,
++   "time": 3,
+  }
+
+ ❯ src/game/cardrpg/spine/events.test.ts:9:40
+      7|  it.each([-.1,3,NaN,Infinity])('replaces an unusable authored hit at %…
+      8|   const authored=[{name:'hit',time},{name:'cast',time:.3}],cues=animat…
+      9|   expect(cues.find(c=>c.name==='hit')).toEqual({name:'hit',time:.55,fa…
+       |                                        ^
+     10|   expect(cues.find(c=>c.name==='cast')).toEqual({name:'cast',time:.3,f…
+     11|   const cursor=new SpineEventCursor(),seen:string[]=[];cursor.advance(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/game/cardrpg/spine/events.test.ts > Spine contract clock > replaces an unusable authored hit at NaN with a timed fallback
+AssertionError: expected { name: 'hit', time: NaN, …(1) } to deeply equal { name: 'hit', time: 0.55, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "fallback": true,
++   "fallback": false,
+    "name": "hit",
+-   "time": 0.55,
++   "time": NaN,
+  }
+
+ ❯ src/game/cardrpg/spine/events.test.ts:9:40
+      7|  it.each([-.1,3,NaN,Infinity])('replaces an unusable authored hit at %…
+      8|   const authored=[{name:'hit',time},{name:'cast',time:.3}],cues=animat…
+      9|   expect(cues.find(c=>c.name==='hit')).toEqual({name:'hit',time:.55,fa…
+       |                                        ^
+     10|   expect(cues.find(c=>c.name==='cast')).toEqual({name:'cast',time:.3,f…
+     11|   const cursor=new SpineEventCursor(),seen:string[]=[];cursor.advance(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/game/cardrpg/spine/events.test.ts > Spine contract clock > replaces an unusable authored hit at Infinity with a timed fallback
+AssertionError: expected { name: 'hit', time: Infinity, …(1) } to deeply equal { name: 'hit', time: 0.55, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "fallback": true,
++   "fallback": false,
+    "name": "hit",
+-   "time": 0.55,
++   "time": Infinity,
+  }
+
+ ❯ src/game/cardrpg/spine/events.test.ts:9:40
+      7|  it.each([-.1,3,NaN,Infinity])('replaces an unusable authored hit at %…
+      8|   const authored=[{name:'hit',time},{name:'cast',time:.3}],cues=animat…
+      9|   expect(cues.find(c=>c.name==='hit')).toEqual({name:'hit',time:.55,fa…
+       |                                        ^
+     10|   expect(cues.find(c=>c.name==='cast')).toEqual({name:'cast',time:.3,f…
+     11|   const cursor=new SpineEventCursor(),seen:string[]=[];cursor.advance(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/game/cardrpg/spine/events.test.ts > Spine contract clock > keeps valid repeated hits while discarding a malformed extra event
+AssertionError: expected [ …(3) ] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,14 @@
+  [
+    {
+      "fallback": false,
+      "name": "hit",
++     "time": NaN,
++   },
++   {
++     "fallback": false,
++     "name": "hit",
+      "time": 0.8,
+    },
+    {
+      "fallback": false,
+      "name": "hit",
+
+ ❯ src/game/cardrpg/spine/events.test.ts:16:42
+     14|  it('keeps valid repeated hits while discarding a malformed extra even…
+     15|   const cues=animationCues('ult',2,[{name:'hit',time:NaN},{name:'hit',…
+     16|   expect(cues.filter(c=>c.name==='hit')).toEqual([{name:'hit',time:.8,…
+       |                                          ^
+     17|   expect(cues.every(c=>Number.isFinite(c.time))).toBe(true);
+     18|  });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 4 passed (9)
+   Start at  19:19:56
+   Duration  545ms (environment 90%, transform 6%, import 2%, tests 2%, worker 1%)
+
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/game/cardrpg/spine/events.test.ts`
+Exit status 1

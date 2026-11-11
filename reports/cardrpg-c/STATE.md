@@ -4,7 +4,7 @@ Prompt bytes: 19078
 Base A6: ef4aee790 (clean, fetched origin equal; includes Q54 and B d5c34d233).
 Branch: codex/cardrpg-c-2026-11-11
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/439 (draft; base A6)
-Active: C11 PNG intake gate verified;2corrupt falsePASS->FIX;41tests/15final/types/lintPASS.25placeholder validity retained. Demo29,226,045bytes/evidence119.19MB unchanged visuals. Next inspect authored event fallbacks;diagnostics outside git. Score7.79unchanged;C8/C11continuous.
+Active: C11 event fallback verified;120source/30tests/types/lint/2offlinesmoke/2controls/4viewsPASS. Demo29,226,081bytes;large diagnostics outside git/evidence<120MB. Next intake/runtime consistency. Score7.79unchanged;C8/C11continuous.
 Designer accepted: 0/25 (inbox empty); contract25units /74skills /18statuses.
 All70001–70500 consumed across3rounds. Ledger guards overlap. No fourth round or A6 acceptance reruns.
 Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.

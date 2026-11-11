@@ -21,7 +21,7 @@ Cats: 512 units regardless of rarity. Small enemies: 410–512 (target461); stan
 | idle-phase2 | 2–3s | bosses only, loop |
 | enrage | 0.8–1.2s | bosses only, cast cue |
 
-Missing events use named timed defaults, recorded as WARN. All event times are seconds from clip start; repeated hit events are supported. Live battle timing remains owned by the deterministic action timeline; animation is retimed to fit it. Each actor owns an AnimationState with0.15s mixes; shared SkeletonData and atlas are cached. No gameplay damage is calculated by the art runtime.
+Missing events use named timed defaults, recorded as WARN. Non-finite, negative or out-of-clip event times are ignored; a required name with no usable timestamp also receives its timed default. Valid repeated hits remain intact. All event times are seconds from clip start; repeated hit events are supported. Live battle timing remains owned by the deterministic action timeline; animation is retimed to fit it. Each actor owns an AnimationState with0.15s mixes; shared SkeletonData and atlas are cached. No gameplay damage is calculated by the art runtime.
 
 Export `<id>.json` OR `<id>.skel`, `<id>.atlas`, `<id>.png` plus extra named PNG pages in the same export folder. Each page<=2048×2048,2–4px gutters, linear filtering, clamp. Prefer premultiplied-alpha PNG + `pma:true`; straight alpha is accepted with WARN and premultiplied once by the loader. Never label straight pixels as PMA. No absolute paths, parent-directory paths or symlinks escaping the export. Cat budget~40bones/~400mesh vertices; boss~80bones/~800vertices;<=1clipping attachment.
 

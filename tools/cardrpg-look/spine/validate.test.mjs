@@ -33,6 +33,22 @@ test('event timing and budgets warn without blocking; manifest scale fixes unit 
 test('parser rejects missing atlas regions, unsafe pages and non-finite transforms',async()=>{
  for(const mutate of [o=>o.source.skins[0].attachments.body.body.path='missing',o=>o.atlasText=o.atlasText.replace('mochi.png','../../outside.png'),o=>o.source.bones[1].x=Infinity]){const o=await input();mutate(o);assert.equal(validateSkeleton(o).accepted,false);}
 });
+test('unreachable sequence contact warns and reports the timed fallback without changing the delivery',async()=>{
+ const temp=await mkdtemp('/tmp/cardrpg-c-event-sequence-test-');
+ try{
+  await cp(resolve(fixtures,'pass/mochi.png'),resolve(temp,'frame.png'));
+  const animations=Object.fromEntries(unit.animations.map(name=>{const spec=CONFIG.animations[name],duration=(spec.seconds[0]+spec.seconds[1])/2;return[name,{fps:20,frames:Array(Math.round(duration*20)).fill('frame.png'),events:Object.entries(spec.events).map(([name,f])=>({name,time:f*duration}))}];}));
+  const sequence={id:'mochi',facing:'right',height:512,width:256,sockets:Object.fromEntries(unit.requiredBones.map(n=>[n,[0,0]])),animations};
+  for(const time of [-.1,3,null]){
+   sequence.animations.skill.events.find(e=>e.name==='hit').time=time;
+   const bytes=JSON.stringify(sequence);await writeFile(resolve(temp,'sequence.json'),bytes);
+   const result=await validateDelivery(temp,unit);assert.equal(result.verdict,'PASS_WITH_WARN',JSON.stringify(result));
+   assert.ok(result.issues.some(i=>i.code==='event-time'&&i.message.includes('ignored during playback')));
+   assert.ok(result.issues.some(i=>i.code==='event'&&i.message.includes('skill: no usable hit; timed fallback')));
+   assert.equal(await readFile(resolve(temp,'sequence.json'),'utf8'),bytes);
+  }
+ }finally{await rm(temp,{recursive:true,force:true});}
+});
 test('independent official AnimationStates share cached data without sharing pose or events',async()=>{
  const o=await input(),atlas=new Spine.TextureAtlas(o.atlasText);for(const p of atlas.pages)p.setTexture(new Spine.FakeTexture({width:64,height:128}));
  const data=new Spine.SkeletonJson(new Spine.AtlasAttachmentLoader(atlas)).readSkeletonData(o.source),s1=new Spine.Skeleton(data),s2=new Spine.Skeleton(data),a1=new Spine.AnimationState(new Spine.AnimationStateData(data)),a2=new Spine.AnimationState(new Spine.AnimationStateData(data));let hits=0;

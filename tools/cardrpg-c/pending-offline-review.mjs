@@ -5,7 +5,7 @@ import {resolve} from 'node:path';
 const root=process.cwd(),{chromium}=createRequire(root+'/apps/web/package.json')('@playwright/test');
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c11-pending-offline',smoke=process.argv.includes('--smoke');if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid tag');
-const out=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
+const out=process.argv.includes('--scratch')?'/tmp/cardrpg-c-'+tag:resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
 const report={method:'Rapid synchronous change events on the public effect dropdown; embedded offline assets, both sizes, real Pause/Play. No progression or frame-time claim.',cases:[],controls:[],shots:[],errors:[],http:[],complete:false};
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 try{

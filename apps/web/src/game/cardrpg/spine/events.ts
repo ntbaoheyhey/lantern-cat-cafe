@@ -1,8 +1,10 @@
 import { SPINE_CONFIG, type SpineAnimation } from './config';
 export interface SpineCue {name:string;time:number;fallback:boolean}
 export function animationCues(name:SpineAnimation,duration:number,authored:readonly {name:string;time:number}[]):SpineCue[]{
- const events:SpineCue[]=authored.map(event=>({...event,fallback:false}));
- for(const [event,fraction] of Object.entries(SPINE_CONFIG.animations[name]?.events??{}))if(!authored.some(e=>e.name===event))events.push({name:event,time:duration*fraction,fallback:true});
+ // Timing is a WARN at intake. Unreachable cues must not suppress defaults or
+ // block later valid cues in the cursor (for example, a NaN before a real hit).
+ const events:SpineCue[]=authored.filter(event=>Number.isFinite(event.time)&&event.time>=0&&event.time<=duration).map(event=>({...event,fallback:false}));
+ for(const [event,fraction] of Object.entries(SPINE_CONFIG.animations[name]?.events??{}))if(!events.some(e=>e.name===event))events.push({name:event,time:duration*fraction,fallback:true});
  return events.sort((a,b)=>a.time-b.time);
 }
 /** The cursor catches every crossing at x3 and emits each event once per action. */
