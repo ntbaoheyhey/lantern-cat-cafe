@@ -10,6 +10,7 @@ import { retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
+import { PaintedVfx } from './vfx';
 
 interface DisplayActor {actor:SpineActor;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
@@ -21,10 +22,11 @@ export class SpineScene {
  readonly labelAudit:{heads:Rect[];cards:Rect[];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
  readonly anchors:Anchor[]=[];
- private stage=new PaintedStage();private numbers:PuppetNumbers;private resize:ResizeObserver;
+ private stage=new PaintedStage();private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
  private disposed=false;private pending=new Set<string>();private failed=new Set<string>();private lanes=new Map<string,{side:string;lane:number}>();private raf=0;private last=0;private time=0;private dirty=true;
  private width=1;private height=1;private worldWidth=1;private scratch=new T.Vector3();
- private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;
+ private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;private currentView?:SceneView;private renderTime=0;
+ private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
  private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
  private visibility=()=>{this.last=0;this.dirty=true;};
@@ -34,16 +36,17 @@ export class SpineScene {
   this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.NoToneMapping;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
-  this.numbers=new PuppetNumbers(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
+  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket));this.numbers=new PuppetNumbers(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
   this.resize=new ResizeObserver(()=>this.invalidate());this.resize.observe(host);document.addEventListener('visibilitychange',this.visibility);
   this.ensureActors(this.view());this.raf=requestAnimationFrame(this.loop);
  }
  invalidate(){this.dirty=true;}
+ prepare(view=this.view()){this.ensureActors(view);this.invalidate();}
  private ensureActors(view:SceneView){
   const ids=new Set(view.actors.map(a=>a.id));
-  for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);this.lanes.delete(id);}
+  for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);this.lanes.delete(id);this.sampled.delete(id);}
   for(const unit of view.actors){
    if(this.actors.has(unit.id)||this.pending.has(unit.id)||this.failed.has(unit.id))continue;
    this.pending.add(unit.id);this.ready=false;this.loading.total=this.actors.size+this.pending.size;
@@ -61,13 +64,15 @@ export class SpineScene {
   }
  }
  private onCue(actorId:string,cue:SpineCue){
-  const frame=this.view().frame;if(!frame||actorId!==frame.plan.actorId)return;
+  const view=this.currentView??this.view(),frame=view.frame;if(!frame||actorId!==frame.plan.actorId)return;
+  this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1);
   this.eventAudit.push({actorId,name:cue.name,fallback:cue.fallback,skillId:frame.plan.skillId,elapsed:frame.elapsed});if(this.eventAudit.length>240)this.eventAudit.shift();
   if(cue.name==='ult-start')this.ultimate=true;if(cue.name==='ult-end')this.ultimate=false;
-  if(cue.name==='cast')this.castAt=this.time;
+  if(cue.name==='cast')this.castAt=this.renderTime;
   if(cue.name==='hit'){
-   this.firstHit=true;this.hitAt=this.time;
-   for(const id of frame.plan.targetIds){const target=this.actors.get(id);if(target&&frame.plan.events.some(e=>e.targetIds.includes(id)&&e.type==='damage'))target.hurtAt=this.time;}
+   this.firstHit=true;this.hitAt=this.renderTime;
+   if(!view.reducedMotion&&view.fixedTime===undefined&&frame.plan.events.some(e=>e.type==='damage'))this.hitstopUntil=performance.now()+PAINT.hitstopMs;
+   for(const id of frame.plan.targetIds){const target=this.actors.get(id);if(target&&frame.plan.events.some(e=>e.targetIds.includes(id)&&e.type==='damage'))target.hurtAt=this.renderTime;}
   }
  }
  private loop=(now:number)=>{
@@ -80,8 +85,8 @@ export class SpineScene {
  render(view:SceneView,delta=0){
   const width=Math.max(1,this.host.clientWidth),height=Math.max(1,this.host.clientHeight);
   if(width!==this.width||height!==this.height){this.width=width;this.height=height;this.renderer.setSize(width,height);this.worldWidth=PAINT.worldHeight*width/height;}
-  const time=view.fixedTime??this.time,frame=view.frame,plan=frame?.plan??null;
-  if(this.plan!==plan){this.plan=plan;this.firstHit=false;this.ultimate=false;this.castAt=-100;this.hitAt=-100;}
+  const time=view.fixedTime??this.time,frame=view.frame,plan=frame?.plan??null;this.currentView=view;this.renderTime=time;
+  if(this.plan!==plan){this.plan=plan;this.firstHit=false;this.ultimate=false;this.castAt=-100;this.hitAt=-100;this.hitstopUntil=0;}
   if(frame&&!this.actors.has(frame.plan.actorId)&&frame.elapsed>=frame.plan.beats[2]!.start)this.firstHit=true;
   const zoom=view.reducedMotion?1:this.ultimate?Math.min(PAINT.maxZoom,...[...this.actors.values()].filter(e=>e.actor.unit.tier==='boss').map(e=>.55*PAINT.worldHeight/e.actor.bounds.height)):1;
   this.camera.left=-this.worldWidth/2;this.camera.right=this.worldWidth/2;this.camera.top=PAINT.worldHeight;this.camera.bottom=0;this.camera.zoom=zoom;this.camera.position.x=0;this.camera.position.y=0;
@@ -105,12 +110,16 @@ export class SpineScene {
    else if(time-entry.phaseAt<actor.duration('enrage')&&actor.clips.has('enrage')){name='enrage';key=entry.phaseAt;at=time-entry.phaseAt;}
    else if(time-entry.entered<actor.duration('appear')&&!view.galleryPreview){name='appear';key=entry.entered;at=time-entry.entered;}
    else if(entry.phase>1&&actor.clips.has('idle-phase2')){name='idle-phase2';key=name;at=time%actor.duration(name);}
+   const previous=this.sampled.get(unit.id),frozen=!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
+   if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
+   if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
    const since=time-this.hitAt,hitActive=this.firstHit&&!!plan?.targetIds.includes(unit.id)&&since>=0&&since<.32;
-   entry.hit.visible=hitActive;if(hitActive){actor.socket('vfxOrigin',entry.hit.position);entry.hit.scale.setScalar((.2+since)*actor.unit.targetHeight);entry.hit.material.opacity=(1-since/.32)*.65;}
+   entry.hit.visible=false;if(hitActive){actor.socket('vfxOrigin',entry.hit.position);entry.hit.scale.setScalar((.2+since)*actor.unit.targetHeight);entry.hit.material.opacity=(1-since/.32)*.65;}
    if(unit.id===plan?.actorId&&time-this.castAt<.4){entry.ring.visible=true;entry.ring.material.opacity=.3+.3*Math.sin((time-this.castAt)/.4*Math.PI);}else entry.ring.material.opacity=.6;
   }
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
+  this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);this.stats.particles=this.effects.stats.active;
   this.renderer.render(this.scene,this.camera);this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
   this.numbers.setAnchors(this.anchors);this.numbers.render(this.firstHit?frame:null,view.cardPresentation,this.width,this.height,view.reducedMotion,true);
  }
@@ -136,7 +145,7 @@ export class SpineScene {
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].map(([id,entry])=>{const box=this.bounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
- audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,units:this.sizeAudit().units};}
+ audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.numbers.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

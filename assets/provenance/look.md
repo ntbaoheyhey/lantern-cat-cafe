@@ -454,3 +454,8 @@ Same original concept/pixels/generation prompt retained; no new image or model g
 - Source: read-only /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.{psd,png}, parts.json and rig notes; exact hashes stored in derived mochi.json laneC.sourceHashes. Flat PNG supplies same-character cheek pixels for the flagged blink patch.
 - Output: assets/cardrpg-look/spine/mochi/psd-placeholder/{mochi.json,mochi.atlas,mochi.png};68layers/32bones/1024atlas/512height. Automatic placeholder only. No source edit or final character generation.
 - Instruction: preserve original soft painted split art, share detail bones, add linked tail/ear motion, breathing, blink and cloth sway; align all named sockets to published pivots. Closed-eye lash-only alternates receive a derived feathered fur cover so hidden iris layers cannot expose dark sockets. Designer review remains required.
+
+## 2026-11-11 Lane C painted VFX
+- Tool/source: original hand-authored SVG path data rasterized by Canvas2D in `apps/web/src/game/cardrpg/spine/vfx-stamps.ts`; existing original B skill compositions and status paths remapped by `vfx-registry.ts`. No external/reference-game images and no generated final character art.
+- Direction: soft painted cafe motifs; honey/ember/rose/sage/sky/iris palette, warm rim, gentle brush flecks. All palette/timing tokens in `spine/style.ts`. Pools, socket events, ground motifs, projectile ribbons and masks are runtime code.
+- Gallery uses the already accepted original placeholders, including the read-only-derived Mochi PSD pilot. `tools/cardrpg-c/build-gallery.mjs` encodes original atlas pixels as WebP at quality86/alpha100 for this review artifact; source PNGs/atlases stay unchanged.

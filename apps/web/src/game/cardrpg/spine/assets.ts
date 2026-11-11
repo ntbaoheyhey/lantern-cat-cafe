@@ -6,18 +6,18 @@ import { loadPuppetModel, animateIllustrated } from '../../squad/turn3d/look-pup
 import { fallbackScale } from '../../squad/turn3d/look-scale';
 import { SPINE_CONFIG, SPINE_UNIT_BY_ID, type SpineUnit, type SpineAnimation, type SpineSocket, type AcceptedSkeleton, type AcceptedSequence } from './config';
 import { animationCues, SpineEventCursor, type SpineCue } from './events';
-const files=import.meta.glob('../../../../../../assets/cardrpg-look/spine/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
-const assetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
-async function response(path:string){const r=await fetch(assetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
-const image=async(path:string)=>{const img=new Image();img.src=assetUrl(path);await img.decode();return img;};
+export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
+async function response(path:string){const r=await fetch(spineAssetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
+const image=async(path:string)=>{const img=new Image();img.src=spineAssetUrl(path);await img.decode();return img;};
 export interface ClipData {duration:number;cues:SpineCue[]}
 type SkeletonAsset={data:SkeletonData;create:()=>SkeletonMesh;clips:Map<string,ClipData>;bounds:{x:number;y:number;width:number;height:number}};
 interface SequenceManifest {id:string;height:number;width:number;scale?:number;fps?:number;sockets:Record<string,[number,number]>;animations:Record<string,{fps?:number;frames:string[];events?:{name:string;time:number}[]}>}
 type SequenceAsset={manifest:SequenceManifest;textures:Map<string,T.Texture>;clips:Map<string,ClipData>};
 const skeletonCache=new Map<string,Promise<SkeletonAsset>>(),sequenceCache=new Map<string,Promise<SequenceAsset>>();
 export const spineCacheStats=()=>({skeletons:skeletonCache.size,sequences:sequenceCache.size});
-function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
+export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
  const key=`${spec.skeleton}:${spec.scale}`;let cached=skeletonCache.get(key);if(cached)return cached;
  cached=(async()=>{
   const S=await import('@esotericsoftware/spine-threejs');
