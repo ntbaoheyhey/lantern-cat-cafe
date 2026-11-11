@@ -1,10 +1,10 @@
 # Lane C handoff
-NOW: C11 pending actor lifecycle PASS; next verify playback waits for newly loading actors.
+NOW: C11 loading clock PASS; continue visual-quality review from retained ultimate captures.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: diagnose gallery/battle clock after initial readiness when a replacement actor is delayed.
-NEXT2: fix only reproduced readiness/playback failures; preserve accepted lanes/framing.
+NEXT1: inspect retained ultimate highlights; diagnose weakest visual before changing VFX.
+NEXT2: preserve verified outcome semantics, loading gates, crew lanes and camera framing.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
-RUNNING: Vite5970 PID59050 only; checks complete. Demo29225553bytes/evidence111.87MB.
+RUNNING: Vite5970 PID59050 only; checks complete. Demo29225557bytes/evidence113.75MB.
 KNOWN: original earnedx1normal36.30s/boss62.34s films preserved/labeled before backdrop update.
 KNOWN: current weighted7.79/10;gameplay5.8 remains weakest;no fourth tuning round.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
@@ -20,7 +20,6 @@ KNOWN:88%1–3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74�
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
-KNOWN: forced-redraw4differences PARTIAL after3attempts; realPausePlayPASS; offlinep9516.7–16.8ms.
 KNOWN: homegear+641exact/16checks/14views/11tests/types/lintPASS;onboarding/routeguards/focus;scoreunchanged.
 KNOWN:Kettle72actualenemy+888source+888offline/14tests/types/lintPASS;58capturesinspected;56/61draws.
 KNOWN:cat624combat/120final/24live/576source/576offlinePASS;46finalviews;29finaltests/types/lint;max101draws.
@@ -28,3 +27,4 @@ KNOWN:outcome60combat/576source/576offline+12controls/34views/34tests/types/lint
 KNOWN:framing240source/144offline/6PausePlay/20views/12tests/types/lintPASS;min4.16px,p9516.8ms/60draws.
 KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
 KNOWN:pending6cold/10lifecycle/526offline switches/2controls/4views/34tests/types/lintPASS.
+KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS;no balance change.

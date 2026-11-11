@@ -31,3 +31,5 @@ Framing checkpoint: C11-FRAMING-RECEIPT.md. Animated geometry guides ultimate zo
 Roster checkpoint: C11-ROSTER-RECEIPT.md. Eight baseline order mismatches fixed; 20 public preview cases and 10 lifecycle cases pass. Preserved 30 focused tests/types/lint; 240 source framing/144 offline/six playback controls pass, 26 final captures inspected. Demo29.225MB/evidence111.0MB; score/gameplay unchanged.
 
 Pending actor checkpoint: C11-PENDING-RECEIPT.md. Six cold-load failures fixed; 6 current +10 retained lifecycle checks, 526 offline switches/six batches/two playback controls, 34 focused tests/types/lint pass. Four final captures inspected. No gameplay/score claim; demo29.226MB/evidence111.87MB.
+
+Loading clock checkpoint: C11-LOADING-CLOCK-RECEIPT.md. Four delayed actor playback failures fixed; four browser/two offline smoke/two controls/56 focused tests/types/lint pass. Eight final views inspected; demo29.226MB/evidence113.75MB. No gameplay/score/performance claim.

@@ -112,7 +112,7 @@ export class SpineScene {
  private loop=(now:number)=>{
   if(this.disposed)return;const delta=this.last?Math.min(.1,(now-this.last)/1000):0;this.last=now;const view=this.view();
   if(document.hidden||view.suspended){this.stats.hiddenFrames++;this.raf=requestAnimationFrame(this.loop);return;}
-  this.ensureActors(view);if(!view.paused)this.time+=delta*(view.playbackSpeed??1);
+  this.ensureActors(view);if(!view.paused&&this.ready)this.time+=delta*(view.playbackSpeed??1);
   if(!view.paused||this.dirty){this.render(view,delta);this.dirty=false;}
   this.raf=requestAnimationFrame(this.loop);
  };

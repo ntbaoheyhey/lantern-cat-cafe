@@ -87,7 +87,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
   useEffect(() => {
-    let animation = 0, last = 0, ready = false;
+    let animation = 0, last = 0;
     m.sceneReady = false;
     const currentAudio = m.audio;
     try {
@@ -126,6 +126,8 @@ export function BattleView({ m }: { m: DepthModel }) {
       window.__depthScene = scene.current;
     } catch (error) { m.sceneError = `Battle preview unavailable. ${String(error)}`; m.notify(false); }
     const tick = (now: number) => {
+      const ready = scene.current?.ready ?? false;
+      if (m.sceneReady !== ready) { m.sceneReady = ready; m.notify(false); }
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
       if (skillBanner.current) {
         skillBanner.current.hidden = !m.plan || m.animationAt >= 600 || m.galleryEffectOnly;
@@ -158,7 +160,6 @@ export function BattleView({ m }: { m: DepthModel }) {
         loadingProgress.current.max = loading.total;
         loadingProgress.current.value = loading.completed;
       }
-      if (scene.current?.ready && !ready) { ready = true; m.sceneReady = true; m.notify(false); }
       currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
         m.paused || !m.showBattle, R.CHAPTERS[(m.battle?.chapter ?? 1) - 1]!.ambience / 174);
       animation = requestAnimationFrame(tick);
@@ -166,7 +167,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     animation = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
   }, [m, lookV2, readable]);
-  useEffect(() => { scene.current?.invalidate(); });
+  useEffect(() => {
+    if (scene.current instanceof SpineScene) scene.current.prepare();
+    else scene.current?.invalidate();
+  });
   useEffect(() => {
     if (!m.canAct) return;
     const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 80 / m.state.settings.speed);
