@@ -1,0 +1,79 @@
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules
+> vitest run src/cardrpg/depth/outcome-v4.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules
+
+ ❯ src/cardrpg/depth/outcome-v4.test.ts (5 tests | 4 failed) 18ms
+   × describes the selected plan without claiming it caused a manual action (legacy=false) 14ms
+   × describes the selected plan without claiming it caused a manual action (legacy=true) 1ms
+   × counts only matching actor, focus and care receipts for the displayed plan 1ms
+   × omits the tactic summary for absent or unfamiliar records 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/outcome-v4.test.ts > describes the selected plan without claiming it caused a manual action (legacy=false)
+ FAIL  src/cardrpg/depth/outcome-v4.test.ts > describes the selected plan without claiming it caused a manual action (legacy=true)
+AssertionError: expected 'Mochi followed “Focus the boss” for 1…' to be 'Mochi took 1 action with “Their suppo…' // Object.is equality
+
+Expected: "Mochi took 1 action with “Their support · Protect” selected."
+Received: "Mochi followed “Focus the boss” for 1 actions."
+
+ ❯ src/cardrpg/depth/outcome-v4.test.ts:24:23
+     22|   const before = structuredClone(battle), cause = R.outcomeV4(battle).…
+     23|   expect(cause?.amount).toBe(1);
+     24|   expect(cause?.text).toBe('Mochi took 1 action with “Their support · …
+       |                       ^
+     25|   expect(battle).toEqual(before);
+     26| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/cardrpg/depth/outcome-v4.test.ts > counts only matching actor, focus and care receipts for the displayed plan
+AssertionError: expected 5 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 5
+
+ ❯ src/cardrpg/depth/outcome-v4.test.ts:40:25
+     38|   ];
+     39|   const before = structuredClone(battle), cause = R.outcomeV4(battle).…
+     40|   expect(cause?.amount).toBe(2);
+       |                         ^
+     41|   expect(cause?.text).toBe('Mochi took 2 actions with “Their support ·…
+     42|   expect(battle).toEqual(before);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/cardrpg/depth/outcome-v4.test.ts > omits the tactic summary for absent or unfamiliar records
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/cardrpg/depth/outcome-v4.test.ts:49:69
+     47|   for (const plan of [null, { focus: 'future', care: 'protect' }, { fo…
+     48|     battle.v4!.events = [{ ...decision, plan: plan as unknown as R.Sta…
+     49|     expect(R.outcomeV4(battle).causes.some(c => c.kind === 'plan')).to…
+       |                                                                     ^
+     50|   }
+     51|   battle.v4!.events = [];
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  05:35:04
+   Duration  180ms (transform 50%, import 30%, tests 18%, worker 2%)
+
+/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run src/cardrpg/depth/outcome-v4.test.ts`
+Exit status 1

@@ -159,3 +159,5 @@
 2026-11-11T22:27:28.180258+00:00 C11: remove nested tactical-note scrolling after End hid final entries at both sizes; preserve one native report/page scroller and all event records. Archive two old VFX JSONs byte-for-byte with hash manifest to free2.3MB evidence.
 
 2026-11-11T22:34:00.297805+00:00 Use readable per-receipt tactical labels and actual reason, with original-text fallback for unknown/incomplete records. Explain support thresholds without changing decisions.
+
+2026-11-11T22:37:52.678788+00:00 Replace inferred tactic success with recorded per-actor/per-plan selection counts; manual choices also emit plan-target, so those receipts cannot prove a plan caused the choice.
