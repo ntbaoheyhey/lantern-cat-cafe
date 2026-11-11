@@ -135,6 +135,29 @@ it.each([false,true])('restores prior pause=%s after reading an empty battle log
  expect(document.activeElement).toBe(more);
  expect(m.battle).toEqual(battle);expect(m.state.account).toEqual(account);
 });
+it.each([false,true])('opens a native battle guide and restores prior pause=%s on return',async wasPaused=>{
+ const m=readyBattle();m.paused=wasPaused;
+ const before=structuredClone(m.battle),account=structuredClone(m.state.account);
+ const show=vi.spyOn(HTMLDialogElement.prototype,'showModal');
+ render(<Harness m={m}/>);
+ const trigger=screen.getByRole('button',{name:'Read battle guide'});
+ fireEvent.click(trigger);
+ const guide=screen.getByRole('dialog',{name:'Battle guide'}) as HTMLDialogElement;
+ expect(guide.tagName).toBe('DIALOG');expect(show).toHaveBeenCalledOnce();expect(guide.open).toBe(true);
+ await within(guide).findByRole('region',{name:'Cafe field guide'});
+ const at=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(at);expect(m.paused).toBe(true);
+ if(wasPaused)fireEvent(guide,new Event('cancel',{cancelable:true}));
+ else fireEvent.keyDown(within(guide).getByRole('button',{name:'Close guide'}),{key:'Escape'});
+ expect(screen.queryByRole('dialog')).toBeNull();expect(m.paused).toBe(wasPaused);expect(guide.open).toBe(false);
+ expect(document.activeElement).toBe(trigger);expect(m.battle).toEqual(before);expect(m.state.account).toEqual(account);
+});
+it('returns focus from an escaped battle option to its menu trigger',()=>{
+ const m=readyBattle(),before=structuredClone(m.state);m.paused=true;render(<Harness m={m}/>);
+ const more=screen.getByRole('button',{name:'More battle options'});fireEvent.click(more);
+ const option=screen.getByRole('button',{name:/Turn banners/});option.focus();fireEvent.keyDown(option,{key:'Escape'});
+ expect(more.getAttribute('aria-expanded')).toBe('false');expect(document.activeElement).toBe(more);
+ expect(m.paused).toBe(true);expect(m.state).toEqual(before);
+});
 it('reads exactly the last100 events newest first, including fallback text, without changing the log',()=>{
  const m=readyBattle();m.battle!.log=Array.from({length:125},(_,i)=>({round:Math.floor(i/7)+1,actorId:'',targetId:'',skillId:'',kind:'damage',amount:i,text:i===124?'':`Event ${i}`}));
  const before=structuredClone(m.battle);

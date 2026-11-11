@@ -86,3 +86,5 @@
 2026-11-11 resume20:38UTC: user continue/handoff describes final skill review. Confirmed pushed b12fd7c7f already contains its reviewed screenshots and receipt. Preserve completed work and lossless pending JSON compaction; continue enemy advice accuracy with empty designer inbox.
 
 2026-11-11T20:50:39.878328+00:00 resume: user continue/handoff identified passing preparation layout and pending screenshot receipt. Preserved the patch and37tests/types/lint; inspected104views, then4settled replacements. ContinueC8/C11 without accepted gameplay reruns.
+
+2026-11-11T20:58:55.603129+00:00 resume: user continue/handoff identifies98battle-control checks and menu focus fix. Preserved unfinished patch and18tests/types/lintPASS; inspected both retained captures. ContinueC8/C11 without replaying accepted work.

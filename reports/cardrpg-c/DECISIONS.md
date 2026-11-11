@@ -136,3 +136,5 @@
 2026-11-11T20:35:31.962693+00:00 Evidence: compact four retained JSON reports without changing any values, records or files; recover 1094332 bytes to stay under120MB. No acceptance run repeated.
 
 2026-11-11T20:50:39.878328+00:00 C11: replace stale third-round/signature claims with current rage/action semantics for13enemies. Bound preparation tactics separately to keep forecast/Fight visible; preserve legacy notes and rules. Wait for overflow/hint agreement before retaining screenshots.
+
+2026-11-11T20:56:40.793222+00:00 C11: use native dialog inertness for the battle guide after reproducing speed/resume clicks through its painted overlay. Preserve layout/previous pause and return focus; menu Escape now restores More focus. No combat or progression change.

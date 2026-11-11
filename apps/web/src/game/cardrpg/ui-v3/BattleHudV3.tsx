@@ -25,7 +25,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  const resolveStatusRule=battle.initial.skillsV5?currentStatusRule:undefined;
  const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false);
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
- const pausedBeforeHelp=useRef(false),helpButton=useRef<HTMLButtonElement>(null);
+ const pausedBeforeHelp=useRef(false),helpButton=useRef<HTMLButtonElement>(null),helpDialog=useRef<HTMLDialogElement>(null);
  const pausedBeforeLog=useRef(false),moreButton=useRef<HTMLButtonElement>(null);
  const boss=battle.actors.find(a=>a.side==='enemy'&&['boss','elite'].includes(R.ENEMY_BY_ID[a.catalogId]?.tier??''));
  const bossPhase=boss?displayedBossPhase(battle,boss):1;
@@ -63,9 +63,10 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
    frame=requestAnimationFrame(paint);
   };paint();return()=>cancelAnimationFrame(frame);
  },[m,plan,spine]);
- const closeHelp=()=>{setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);helpButton.current?.focus();};
+ useEffect(()=>{if(!help)return;const dialog=helpDialog.current!;dialog.showModal();return()=>dialog.close();},[help]);
+ const closeHelp=()=>{helpDialog.current?.close();setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);helpButton.current?.focus();};
  const closeLog=()=>{setLog(false);m.paused=pausedBeforeLog.current;m.notify(false);moreButton.current?.focus();};
- useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else{setMore(false);setLog(false)}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
+ useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else if(more){setMore(false);moreButton.current?.focus();}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  return <div className="uv-battle-hud" data-a6={m.a6Battle} data-spine={spine} data-reduced={m.state.settings.reducedMotion} style={{'--spine-cream':PAINT.cream,'--spine-ink':PAINT.ink,'--spine-accent':accent,'--spine-rim':PAINT.rim} as CSSProperties} aria-label="Battle controls">
   <header className="uv-battle-top"><div className="uv-battle-round"><small>{m.tutorialBattle?'Practice table':R.CHAPTERS[battle.chapter-1]!.name}</small><b>Wave 1/1 · Round {battle.round}</b></div>
    {boss&&<div className="uv-boss" aria-label={`${boss.name} boss health`}><b>{m.a6Battle&&<span aria-hidden="true">♛ </span>}{boss.name}</b>{m.a6Battle?<HealthMeterA6 hp={boss.hp} maxHp={boss.maxHp} name={boss.name} reduced={m.state.settings.reducedMotion}/>:<progress value={boss.hp} max={boss.maxHp}/>}<small>{boss.hp}/{boss.maxHp} · Phase {m.a6Battle?bossPhase:boss.phase}</small>{m.a6Battle&&<span className="a6-boss-phases" aria-label={`Phase ${bossPhase} of 3`}>{[1,2,3].map(p=><i key={p} data-active={p<=bossPhase}>◆</i>)}</span>}</div>}
@@ -88,7 +89,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   {banners&&spine&&<aside ref={phaseBanner} className="spine-phase-cue" role="status" aria-label="Boss phase change" hidden/>}
   {banners&&m.a6Battle&&m.comboBanner&&<aside ref={comboBanner} className="a6-combo-banner" aria-label="Bond combo"><small>Bond combo · together as one</small><b>{m.comboBanner}</b></aside>}
   <div ref={effects}>{reactions.map((r,i)=><div key={`${plan?.id}-${i}`} className="uv-reaction" data-reaction={r.id} data-target={r.targetId} data-at={r.at} data-duration={r.duration} hidden>{REACTION_WORDS[r.id]}</div>)}{numbers.map(n=><div className="uv-float-number" data-number data-target={n.id} data-at={n.at} key={n.id} hidden>{n.labels.map((e,i)=><span key={i} className={`uv-damage-${e.type} ${e.dot?'uv-dot-damage':''} ${e.statusId==='snag'?'uv-bleed-damage':''} ${e.critical?'uv-critical':''}`}>{e.type==='heal'?'+':e.type==='shield'?'◇':'−'}{e.amount}</span>)}</div>)}</div>
-  {help&&<section className="uv-battle-guide" role="dialog" aria-modal="true" aria-label="Battle guide" onKeyDown={e=>{
+  {help&&<dialog ref={helpDialog} className="uv-battle-guide" aria-label="Battle guide" onCancel={e=>{e.preventDefault();closeHelp();}} onKeyDown={e=>{
    e.stopPropagation();
    if(e.key==='Escape'){e.preventDefault();closeHelp();}
    if(e.key==='Tab'){
@@ -97,7 +98,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
     if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
    }
-  }}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></section>}
+  }}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></dialog>}
   {log&&<BattleLogV3 battle={battle} wasPaused={pausedBeforeLog.current} onClose={closeLog}/>}
  </div>;
 }

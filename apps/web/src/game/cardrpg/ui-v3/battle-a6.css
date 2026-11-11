@@ -1,4 +1,9 @@
 /* A6 DOM owns the HUD only. Keep B's 82px top / 148px bottom canvas envelopes. */
+.uv-app dialog.uv-battle-guide {
+ position:fixed;margin:0;width:auto;height:auto;max-width:none;max-height:none;box-sizing:border-box;
+ box-shadow:0 8px 28px #10212970;
+ &::backdrop {background:#102129a0;pointer-events:auto}
+}
 .uv-battle-hud[data-a6=true] {
  .uv-battle-top {background:linear-gradient(#37262f,#241d29);border-bottom:2px solid #a7804a;box-shadow:0 8px 20px #21172055}
  .uv-battle-round small {letter-spacing:.12em;color:#efc986}
