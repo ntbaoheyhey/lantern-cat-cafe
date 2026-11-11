@@ -35,3 +35,5 @@ Pending actor checkpoint: C11-PENDING-RECEIPT.md. Six cold-load failures fixed; 
 Loading clock checkpoint: C11-LOADING-CLOCK-RECEIPT.md. Four delayed actor playback failures fixed; four browser/two offline smoke/two controls/56 focused tests/types/lint pass. Eight final views inspected; demo29.226MB/evidence113.75MB. No gameplay/score/performance claim.
 
 Ultimate silhouette checkpoint: C11-ULTIMATE-PAINT-RECEIPT.md.144source/144battle/144offline/two controls/30focused/types/lint/galleryTS pass;38views inspected. Peak99battle/60gallery draws; offline x1 p9516.8/16.7ms,57sampledraws. Demo29,226,021bytes/evidence118.70MB. No gameplay/score change.
+
+Asset recovery checkpoint: C11-ASSET-RETRY-RECEIPT.md.4browser failures ->4PASS;12focused/types/lint;2offline smoke/10changes/2controls;4views inspected. Demo29,226,045bytes/evidence119.21MB;score/gameplay unchanged.

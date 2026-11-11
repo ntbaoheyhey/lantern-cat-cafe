@@ -32,16 +32,20 @@ export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
    const clips=new Map(data.animations.map(animation=>[animation.name,{duration:animation.duration,cues:animationCues(animation.name as SpineAnimation,animation.duration,animation.timelines.filter(t=>t instanceof S.EventTimeline).flatMap(t=>(t as InstanceType<typeof S.EventTimeline>).events.map(e=>({name:e.data.name,time:e.time}))))}]));
    return {data,bounds,clips,create:()=>new S.SkeletonMesh({skeletonData:data,twoColorTint:true,materialFactory:parameters=>new T.MeshBasicMaterial({...parameters,depthTest:false,depthWrite:false,toneMapped:false})})};
   }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
- })();skeletonCache.set(key,cached);return cached;
+ })().catch(error=>{
+  // Keep successful data shared, but let a later actor request recover from
+  // a temporary fetch/decode failure instead of pinning its fallback forever.
+  if(skeletonCache.get(key)===cached)skeletonCache.delete(key);throw error;
+ });skeletonCache.set(key,cached);return cached;
 }
 function loadSequence(spec:AcceptedSequence):Promise<SequenceAsset>{
- let cached=sequenceCache.get(spec.manifest);if(cached)return cached;
+ const key=spec.manifest;let cached=sequenceCache.get(key);if(cached)return cached;
  cached=(async()=>{const manifest=await (await response(spec.manifest)).json() as SequenceManifest,folder=spec.manifest.slice(0,spec.manifest.lastIndexOf('/')+1),textures=new Map<string,T.Texture>(),clips=new Map<string,ClipData>();
   try{for(const [name,clip] of Object.entries(manifest.animations)){
    for(const frame of clip.frames)if(!textures.has(frame)){const texture=new T.Texture(await image(folder+frame));texture.needsUpdate=true;texture.colorSpace=T.NoColorSpace;textures.set(frame,texture);}
    const duration=clip.frames.length/(clip.fps??manifest.fps??24);clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,clip.events??[])});
   }return {manifest,textures,clips};}catch(error){textures.forEach(t=>t.dispose());throw error;}
- })();sequenceCache.set(spec.manifest,cached);return cached;
+ })().catch(error=>{if(sequenceCache.get(key)===cached)sequenceCache.delete(key);throw error;});sequenceCache.set(key,cached);return cached;
 }
 export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();

@@ -1,10 +1,10 @@
 # Lane C handoff
-NOW: C11 ultimate paint checkpoint verified; continue quality/intake.
+NOW: C11 asset recovery checkpoint verified; continue quality/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer arrivals; review replacement asset contract/fallbacks for a concrete gap.
-NEXT2: keep large diagnostics outside git (evidence118.70MB/120); preserve existing accepted checks.
+NEXT1: check designer inbox; inspect malformed PNG acceptance gate with isolated copies.
+NEXT2: keep large diagnostics outside git (evidence119.21MB/120); preserve existing accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
-RUNNING: Vite5970; no harness or build in progress.
+RUNNING: Vite5970; no harness or build.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
 KNOWN: raw accounts unchanged;same-node recovery2/4(completed1/1,earlyfallback1/3),not population evidence.
 KNOWN: pending advice guard+content encounter key stops discovery receipts restarting worker;26tests/6viewsPASS.
@@ -27,3 +27,4 @@ KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests
 KNOWN:pending6cold/10lifecycle/526offline switches/2controls/4views/34tests/types/lintPASS.
 KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS;no balance change.
 KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lintPASS;99draws;p9516.8/16.7ms.
+KNOWN:assetretry4browser/12tests/types/lint/2offlinesmoke/10changes/2controls/4viewsPASS;no performanceclaim.
