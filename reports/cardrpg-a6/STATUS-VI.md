@@ -285,3 +285,10 @@ A6 dùng API nhân vật/sự kiện và socket của B, không thêm phụ thu�
 2026-11-11T02:14:59Z: Q44 hoàn tất: 52 ảnh nguồn và 52 ảnh offline đã duyệt; chi phí/điều kiện mở chiêu 14px, nút 44px, danh sách cuộn riêng.
 11 test/typecheck/lint đã đạt được giữ nguyên; demo 39.091.121 byte, không lỗi/gọi mạng. Tiếp tục Q45: hiện đúng điều kiện và giá thức tỉnh trước khi mua.
 Quyết định 3D đã lưu nguyên văn; B hiện công bố P39, chưa có lookV3D để tích hợp.
+
+2026-11-11T02:22:09Z: Q45 đã duyệt32ảnh nguồn: hiện đúng giá, tăng chỉ số và lý do chưa thức tỉnh; ba lần mua/khóa/thiếu tài nguyên/bàn phím đạt.
+Đã sửa nút bị khuất ở720p, giữ20test/type/lint; tích hợp mốc D0 của B cùng hiệu ứng Soot tạm. lookV3D chưa được triển khai trong bản công bố này. Đang đóng gói offline.
+
+2026-11-11T02:27:33Z: Q45 hoàn tất: 32 ảnh nguồn và 32 ảnh offline đã duyệt; giá/tăng chỉ số/khóa thức tỉnh đúng, nút 44px vừa720p.
+20test và13test hiệu ứng B/type/lint đạt; sáu ảnh Soot rõ, demo39.092.073byte, không lỗi/gọi mạng.
+Tiếp tục Q46: chữ và nút HUD trận; sửa nhãn mở tuyệt chiêu bằng cấp6 hoặc3sao, giữ API/socket của B.

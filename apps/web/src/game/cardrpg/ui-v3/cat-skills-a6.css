@@ -79,3 +79,21 @@
   .a6-cat-skillbook .a6-cat-skill-unlock {margin-top:2px}
  }
 }
+
+/* An open awakening receipt uses the same training space and a direct return. */
+.uv-app[data-a6=true] {
+ .a6-cat-panel:has(.a6-awakening[open])>.a6-cat-growth {display:none}
+ .a6-awakening .a6-awakening-back,.a6-awakening[open] .a6-awakening-open {display:none}
+ .a6-awakening[open] .a6-awakening-back {display:inline}
+ .a6-awakening-receipt {padding:0 3px 3px;color:#62482d;font-size:14px;line-height:1.4}
+ .a6-awakening-receipt h3 {margin:3px 0 6px;font:700 21px Georgia,serif;color:#513822}
+ .a6-awakening-receipt p {margin:6px 0;font-size:14px;line-height:1.4}
+ .a6-awakening-receipt>div {display:grid;gap:5px;padding:10px 12px;margin:9px 0;background:#fff5d9;border:1px solid #bd9b60;border-radius:7px}
+ .a6-awakening-receipt .cr-cost {display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px}
+ .a6-awakening-receipt strong {color:#745522;font-size:14px}
+ .a6-awakening-receipt>button {min-height:44px;font-size:14px;min-width:128px}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero {grid-template-columns:100px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero>img {width:100px;height:100px}
+ }
+}

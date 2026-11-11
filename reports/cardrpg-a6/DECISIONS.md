@@ -160,3 +160,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T02:07:14Z Q45 queued from inspected Q44 fresh Awakening: enabled button rejects level-one cats only after click, with no quoted cost. Apply the existing public-preview pattern used by level/star training; keep underlying commands/economy unchanged. No new mechanics or numerical tuning.
 
 2026-11-11T02:09:47Z USER11Nov real3D direction accepted verbatim in INBOX. Q44/Q45 remain ordered; unchanged2D cards retained. Future Q14 integration reads B lookV3D/socket contract and budgets; no new puppet-internal dependencies. Current publishedP39 remains the fallback until accepted3D tips arrive.
+
+- 2026-11-11T02:16:49Z Q45: use the existing R.awakenCat transaction on its copy for eligibility, exact currency/material deltas and real stat gains; execute it again against the current state on click. An open awakening receipt occupies the existing Growth area with a direct Level & stars return, keeping the purchase visible at720p. No rule/cost/renderer change.
+
+- 2026-11-11T02:20:51Z Q46 queued behind Q45: personally inspected retained1280 normal/boss screenshots show10px ultimate/phase and11px HP/auto labels; HUD locked text says only level6 although existing rules also allow3stars. Improve this tied8.1low within fixed canvas envelopes; do not couple HUD to pending3D internals or rerun frozen numeric balancing.
