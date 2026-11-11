@@ -9,7 +9,7 @@
 - [x] C6 Skill VFX pass 1 (by 15 Nov 12:00 UTC): 2.5 for every skill/ult/status; VFX gallery page docs/cardrpg-c/vfx.html (each effect looping on a placeholder unit, x1).
 - [x] C7 A6 leftovers + first ten minutes (by 16 Nov 06:00 UTC): A6 Q55 (legacy Bag portrait containment), Q56 (Bag material-card contrast), then 2.6 first-ten-minutes work; HUD on sockets 2.7.
 - [ ] C8 Designer intake (continuous; initial checkpoint complete, final exports absent; see C8-RECEIPT): validate, integrate, acceptance sheet, Vietnamese feedback, before/after poster (placeholder vs designer), retime that unit's VFX to its events.
-- [ ] C9 VFX pass 2 + stage polish (by 17 Nov 20:00 UTC): ult cut-ins with the unit's portrait, backdrop cleanup, warm tint/vignette, boss phase change presentation, entrance moves.
+- [x] C9 VFX pass 2 + stage polish (by 17 Nov 20:00 UTC): ult cut-ins with the unit's portrait, backdrop cleanup, warm tint/vignette, boss phase change presentation, entrance moves.
 - [ ] C10 Demo (by 18 Nov 18:00 UTC, repeat-update): static docs/cardrpg-c/index.html + CHAY-DEMO.md (Vietnamese, <= 10 lines) + `pnpm` local run note; lineup, each unit's animations, recorded normal and boss fight at x1, placeholder vs designer where available; total demo <= 40 MB.
 - [ ] C11 Quality pass from real screenshots (until report): score every screen and the battle at both sizes; fix the lowest first.
 - [ ] C12 Report (20 Nov 06:00 UTC): C-REPORT.md (before/after, numbers, self-score, designer-made vs placeholder units, known limits), STATUS-VI.md; then keep improving the lowest item until 20 Nov 12:00 UTC.

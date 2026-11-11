@@ -10,6 +10,9 @@ import { PAINT } from './style';
 import { DesignerVfx } from './vfx-overrides';
 type Point={x:number;y:number};
 interface Particle {active:boolean;born:number;life:number;source:string;target:string;layer:PaintedLayer|null;recipe:PaintedRecipe|null;index:number;total:number;stamp:HTMLCanvasElement|null;origin:Point;end:Point;captured:boolean;impact:boolean}
+const floorLayer:PaintedLayer={glyph:'ring',motion:'expand',anchor:'caster',socket:'feet',count:1,size:1.3,spread:.1,opacity:.5,accent:false,ground:true,turns:0,delay:0,life:.6};
+const entrance:PaintedRecipe={id:'entrance',name:'Arrival',owner:'',color:PAINT.honey,ultimate:false,friendly:true,origin:'feet',overrideKey:'',layers:[floorLayer,{...floorLayer,glyph:'spark',motion:'rise',count:4,size:.14,spread:.5,ground:false,opacity:.35}]};
+const phase:PaintedRecipe={...entrance,id:'phase',name:'Phase change',color:PAINT.rose,layers:[{...floorLayer,size:1.8,life:1.1},{...floorLayer,glyph:'thread',motion:'rise',count:6,size:.18,spread:.55,ground:false,life:.9}]};
 export type ResolveSocket=(id:string,socket:SpineSocket)=>Point|undefined;
 export class PaintedVfx {
  readonly overrides=new DesignerVfx();readonly ready:Promise<void>;
@@ -42,6 +45,10 @@ export class PaintedVfx {
    if(layer.anchor==='caster'){for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,frame.plan.actorId,time,i,layer.count,speed);continue;}
    for(const target of frame.plan.targetIds){for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed,true);}
   }
+ }
+ accent(id:string,kind:'entrance'|'phase',time:number,speed:number){
+  const recipe=kind==='phase'?phase:entrance;
+  for(const layer of recipe.layers)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,id,id,time,i,layer.count,speed);
  }
  render(view:SceneView,time:number,width:number,height:number,protectedLabels:readonly Rect[]){
   const c=this.ctx,ratio=Math.min(devicePixelRatio||1,2),w=Math.round(width*ratio),h=Math.round(height*ratio);

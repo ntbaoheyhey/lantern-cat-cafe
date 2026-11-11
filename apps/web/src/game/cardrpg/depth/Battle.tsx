@@ -72,7 +72,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   // loop otherwise repeats catalog filters and object copies for every cat.
   const actors = project(battle);
   const appearances = new Map(actors.map(actor => [actor.id, appearance(actor)]));
-  view.current = { actors, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
+  view.current = { actors, battleKey:battle.initial, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,

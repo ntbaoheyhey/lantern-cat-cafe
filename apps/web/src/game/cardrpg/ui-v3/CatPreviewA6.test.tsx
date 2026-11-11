@@ -25,7 +25,8 @@ it('opens the selected skill, previews freely and restores its trigger without c
  const trigger=screen.getByRole('button',{name:'Watch skill previews'});trigger.focus();fireEvent.click(trigger);
  const dialog=screen.getByRole('dialog',{name:'Mochi · skill previews'});
  expect(screen.getByTestId('preview').getAttribute('data-skill')).toBe(last.id);
- expect(within(dialog).getByText('Opens at level 6 or 3 stars')).toBeTruthy();
+ expect(within(dialog).queryByText('Opens at level 6 or 3 stars')).toBeNull();
+ expect(within(dialog).getByText('Automatic at 100 rage')).toBeTruthy();
  for(const skill of cat.skills){
   fireEvent.click(within(dialog).getByRole('button',{name:new RegExp(skill.name)}));
   expect(screen.getByTestId('preview').getAttribute('data-skill')).toBe(skill.id);

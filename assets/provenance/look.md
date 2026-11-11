@@ -462,3 +462,6 @@ Same original concept/pixels/generation prompt retained; no new image or model g
 
 ## Lane C — Mochi PSD revision 2 placeholder (2026-11-11)
 Source: published original Mochi 3/4 PSD/parts/rig notes under Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi; SHA256 hashes stored in psd-placeholder-r2/mochi.json. Tool: tools/cardrpg-look/spine/psd-to-spine.py (psd-tools/Pillow/NumPy), no new prompt or generated character art. 117 layers,33 bones,1024 PMA atlas,512-unit height. Shading/highlight layers follow their parent bone. Same-source derived cheek cover retained for blink. Source revision explicitly PARTIAL (joint/eye defects); limited motion placeholder only, not designer-final acceptance. Original placeholder and source files preserved.
+
+## Lane C C9 — painted cafe and cinematic accents (2026-11-11)
+Original procedural Canvas2D geometry in spine/stage.ts adds cups, plants, books, linen pennants, window reflections, woven rug, brush grain and warm vignette. Source: existing Taskbar Hero cafe motifs and shared spine/style.ts palette; no external art or model prompt. Entrance/phase effects reuse original C6 stamps and sockets. Ultimate cards reuse existing original unit portraits; no new character art.

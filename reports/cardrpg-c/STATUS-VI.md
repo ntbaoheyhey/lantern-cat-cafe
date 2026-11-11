@@ -7,3 +7,5 @@ C6: 74 skill / 18 status, pool256, chừa mặt/HP; 552ca không rơi hạt/đè
 25nhân vật vẫn là placeholder; chưa có export designer cuối. Tiếp tục kiểm tra intake và C9 nhấn ultimate/sân khấu. Run30phút, demo≤40MB và báo cáo tổng còn phía trước. Chưa deploy/merge.
 
 C8: inbox designer vẫn trống. Mochi PSD mới117layer được dựng placeholder33xương/atlas1024; đã xem8clip và4ảnh battle,36test/typecheck/lint đạt. Bản PSD nguồn tự ghi PARTIAL (khớp/đuôi/mắt chưa đạt); không tính là art designer cuối. Bản cũ được giữ. Đang làm C9.
+
+C9 xong: cut-in dùng chân dung ở vùng trống, có bản gọn khi chật; zoom tối đa1,10, chuyển phase boss và entrance bám socket. 72ca ultimate ở x1/x2/x3,12ca phase,4ca entrance đạt; đã xem44ảnh hai cỡ,không đè mặt/HP,61lệnh vẽ tối đa. 22test liên quan/typecheck/lint đạt. Tiếp full421E2E rồi demo và run30phút.

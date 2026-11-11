@@ -65,7 +65,7 @@ it.each([false,true])('uses saved replay V5=%s instead of current account prefer
  expect(screen.getByRole('tooltip').textContent).toContain(skillsV5?'Daze. Your next action becomes a half-power basic. Bosses only lose a signature.':R.STATUS_BY_ID.drowsy.description);
  expect(m.replay).toEqual(before);
 });
-it('explains either ultimate unlock and keeps a fallen cat from announcing readiness',()=>{
+it('keeps all A6 starter ultimates available and a fallen cat from announcing readiness',()=>{
  const m=new DepthModel(true,true,true,true);m.state.tutorial=4;
  m.state.account.cards.find(c=>c.cardId==='soot')!.stars=3;
  m.state.account.cards.find(c=>c.cardId==='clover')!.level=6;
@@ -73,15 +73,15 @@ it('explains either ultimate unlock and keeps a fallen cat from announcing readi
  m.start(1);m.enter('0-0');m.sceneReady=true;
  m.battle!.actors.filter(a=>a.side==='party').forEach(a=>a.charge=100);
  const before=structuredClone(m.battle),view=render(<Harness m={m}/>);
- expect(screen.getByText('Ult · Lv. 6 or 3★')).toBeTruthy();
- expect(screen.getByLabelText('Mochi ultimate: Unlocks at level 6 or three stars')).toBeTruthy();
- expect(screen.getAllByText('Ultimate ready')).toHaveLength(2);
+ expect(screen.queryByText('Ult · Lv. 6 or 3★')).toBeNull();
+ expect(screen.getByLabelText('Mochi ultimate: Ready')).toBeTruthy();
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(3);
  expect(m.battle).toEqual(before);
  act(()=>{m.battle!.actors.find(a=>a.catalogId==='soot')!.hp=0;m.notify(false)});
  expect(screen.getByText('Fallen')).toBeTruthy();
  expect(screen.getByLabelText('Soot ultimate: Fallen')).toBeTruthy();
  expect(view.container.querySelector('[data-fallen="true"]')!.getAttribute('data-ready')).toBe('false');
- expect(screen.getAllByText('Ultimate ready')).toHaveLength(1);
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(2);
  expect(screen.queryByRole('button',{name:/cast|ultimate/i})).toBeNull();
 });
 it('an earned skip resolves the battle and removes the current cut-in without issuing another cast',()=>{
@@ -147,4 +147,18 @@ it('reads exactly the last100 events newest first, including fallback text, with
  expect(within(log).queryByText('Event 24')).toBeNull();
  expect(within(log).getByRole('heading',{name:'Round 18'})).toBeTruthy();
  expect(m.battle).toEqual(before);
+});
+
+it('waits for the Spine cue and hides the portrait again before impact without changing combat',()=>{
+ const m=readyBattle();m.inspect('mochi-4',0);m.ultimateBannerUntil=800;
+ window.__LOOK_V2__=true;
+ const cinematic={ultimateVisible:false,actorId:m.plan!.actorId,box:{x:24,y:62,width:480,height:120},phaseVisible:false,phaseText:'',phaseBox:null};
+ window.__depthScene={cinematic} as unknown as NonNullable<Window['__depthScene']>;
+ let paint:FrameRequestCallback=()=>{};vi.spyOn(window,'requestAnimationFrame').mockImplementation(callback=>{paint=callback;return 1});
+ const before=structuredClone(m.battle),view=render(<Harness m={m}/>),banner=view.container.querySelector<HTMLElement>('.spine-ultimate-cutin')!;
+ expect(banner.hidden).toBe(true);
+ act(()=>{cinematic.ultimateVisible=true;paint(16)});expect(banner.hidden).toBe(false);
+ expect(banner.dataset.unit).toBe('mochi');expect(banner.textContent).toContain(m.plan!.name);
+ act(()=>{cinematic.ultimateVisible=false;paint(32)});expect(banner.hidden).toBe(true);
+ expect(m.battle).toEqual(before);delete window.__depthScene;delete window.__LOOK_V2__;
 });
