@@ -1,0 +1,13 @@
+# C11 impact-clock checkpoint — 11 November 2026
+
+The gallery's externally sampled scene deliberately sets `paused=true` to avoid a second animation loop. The impact flash used a counter that decremented only when that flag was false. Before this fix, Soot basic/ultimate and Yarn Giant each retained one impact draw 1.8 seconds after the whole action ended, with zero active particles, at both sizes. Two friendly controls correctly had no hostile flash. Raw before cases and captures: `shots/c11-impact-before/review.json`.
+
+Impact expiry now follows the existing presentation clock, for two authored 60Hz frames. Repeated redraws at the same time preserve a genuinely paused flash; advancing gallery time expires it. A new plan or clear resets the timestamp, and a stale plan cannot draw over the next action. The shared style token owns the duration; hitstop remains60ms. No combat, sprite, particle-count or designer-override changes.
+
+Verification: 11 focused contract/event/cinematic tests pass. Initial typecheck/lint flagged optional-chain comparison against an unknown plan key; an explicit non-null frame guard resolves it. Failed logs are retained under `checks/c11-impact-*-attempt1.log`; final workspace typecheck/lint and diff whitespace checks pass.
+
+`tools/cardrpg-c/impact-review.mjs` runs five actions × three speeds × motion/reduced motion × two sizes =60cases. Both source and rebuilt offline gallery pass independently. Hostile flashes occupy2sampledframes atx1 and1atx2/x3; friendly actions have0. Frozen redraw pixels stay identical, late effect draws return to0, all expected hit events fire once, and no pool drops/face-HP mask failures/label overlaps occur. Actual Pause/Play buttons freeze and resume the presentation clock at both sizes. Maximum combined sweep draw count61. Sixteen final impact/late-phase motion captures inspected via four uncropped contact sheets and representative full-size images.
+
+Final isolated offline check: p95=16.7ms at both1280×720/1440×900,240frames each, maximum60draws; no heavy PSD process observed at measurement. Both face/HP checks sample21,072pixels with0opaque;0browsererrors/HTTP. Raw: `shots/c11-impact-performance/offline.json`. Demo29,208,188bytes including manifest; the original videos are untouched. Evidence remains below120MB. Earlier full421E2E receipts are historical, not rerun or represented as a current full suite.
+
+This fixes playback correctness; visual self-score remains7.79/10. Gameplay misses and the three-round limit remain unchanged. Designer inbox contains onlyREADME and the published Mochi PSD pilot is unchanged.

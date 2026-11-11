@@ -1,8 +1,8 @@
 # Lane C handoff
-NOW: C11 painted cafe checkpoint verified; record/push then continue screenshot-led quality work.
+NOW: C11 impact expiry verified in source/offline; record/push, then continue quality work.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: inspect restrained VFX against the new stage; choose one demonstrated readability issue.
-NEXT2: improve it, verify both sizes and keep existing pooling/socket/event/face-mask contracts.
+NEXT1: inspect route preparation and upgrade visibility from the retained live-session issue.
+NEXT2: fix one demonstrated UX issue without combat tuning, verify screenshots and relevant tests.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
 RUNNING: Vite5970 PID59050; no recorder or browser QA active.
 KNOWN: stage painting244296bytes;3parallaxplanes;procedural loading/failure fallback;late/disposed decode safe.
@@ -23,3 +23,4 @@ KNOWN:88%1â€“3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74â€
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
+KNOWN: impact clock fix60source+60offlinecases/16views;11tests/types/lint;pause stable,p95 16.7msboth.
