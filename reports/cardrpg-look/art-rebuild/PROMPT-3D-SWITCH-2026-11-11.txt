@@ -1,5 +1,5 @@
-LANE B — FOLLOW-UP: MANDATORY SWITCH TO REAL 3D (characters, monsters, bosses AND effects) — written 2026-11-11 02:30 UTC
-(Paste into the RUNNING lane B Codex session. Self-contained. This is a USER DECISION, not a suggestion.)
+LANE B — ONE FOLLOW-UP: MANDATORY SWITCH TO REAL 3D (characters, monsters, bosses AND effects) + YOUR INITIATIVES PRE-APPROVED + TOOLS ON THIS MAC — written 2026-11-11 02:40 UTC
+(Paste into the RUNNING lane B Codex session. Self-contained, one message. This is a USER DECISION, not a suggestion. Sections 7 and 8 are part of it.)
 REFERENCE: reports/cardrpg-look/art-rebuild/{PROMPT.txt,RULES.md,QUEUE.md,HANDOFF.md,STATE.md,DECISIONS.md,LOCAL-MODELS.md,R1-DECISION.md,PUPPET-SCORES.md,RESEARCH-PUPPET.md,B-OUTBOX.md} ; r2/concepts/ ; p10/r0-vs-puppet-roster.webp ; tools/cardrpg-look/art-rebuild/ ; apps/web/src/game/squad/turn3d/look-puppet*.ts ; draft PR #427
 
 =====================================================================
@@ -21,7 +21,7 @@ Lessons you must not repeat (from your own logs): raw single-image image-to-3D (
 1. FIRST 30 MINUTES (do now, same turn)
 =====================================================================
 a) Finish only the current small step of P40 if it is < 15 min from a commit; otherwise park it. Mark P40 "SUPERSEDED by 3D switch (2D VFX on puppets)" in QUEUE.md. Commit any accepted work; keep all dirty files (never discard, reset or stash away; unreviewed GLBs stay uncommitted).
-b) Save this message word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-SWITCH-2026-11-11.txt and append it to PROMPT.txt under a heading "ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item)". Copy section 0 into INBOX.md as a dated USER entry.
+b) Save this message word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-SWITCH-2026-11-11.txt and append it to PROMPT.txt under a heading "ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item)". Copy section 0 into INBOX.md as a dated USER entry. Save section 8 as reports/cardrpg-look/art-rebuild/TOOLS-3D.md (then add PASS/MISSING results) and link it from RULES.md and HANDOFF.md.
 c) RULES.md: replace the line "ALL units are 2.5D puppets ... no native image-to-3D roster" with: "ALL units are real 3D rigged models + 3D VFX (user 11 Nov); raw generated meshes never ship; puppets = per-unit fallback only; size standard SCALE-STANDARD.md is law." Keep RULES.md <= 30 lines.
 d) QUEUE.md: insert section 3 items (D0-D11) ABOVE the remaining unticked items. Do not untick anything. Move old puppet [auto] ideas to a "Superseded (2.5D)" list.
 e) STATUS-VI.md: 2-3 Vietnamese lines: "Đã nhận lệnh chuyển sang 3D thật cho nhân vật, quái, boss và hiệu ứng; đặt chuẩn kích thước; bắt đầu D0."
@@ -39,7 +39,7 @@ Target look: cute stylized "chibi" 3D like a top mobile hero battler: smooth rou
 - Animation clips authored once per skeleton and shared: idle (breathing, ear/tail life), run-in, basic attack, signature cast, ultimate, hit react, KO, victory. Runtime secondary motion (tail, ears, cloth, capes) with simple spring bones in three.js.
 
 2.2 MODELING (per base, then per unit) — Blender headless Python, local
-- Check tools first: `blender --version` (or /Applications/Blender.app/Contents/MacOS/Blender), gltf-transform, the trellis-mac install in /Users/bao/art/trellis-mac (weights already cached; LOCAL-MODELS.md).
+- Tools already installed on this Mac (do not reinstall; verify only): Blender 4.5.3 at /Users/bao/tools/cardrpg-look/Blender.app/Contents/MacOS/Blender; Python venv /Users/bao/tools/cardrpg-look/venv/bin/python; gltf-transform/meshoptimizer/sharp in /Users/bao/tools/cardrpg-look/npm; local TRELLIS.2 (trellis-mac) in /Users/bao/art/trellis-mac with HF login done and weights cached. Full list in section 8 (save it as TOOLS-3D.md) and LOCAL-MODELS.md.
 - Make a clean TURNAROUND (front / side / back / 3/4) for each base and each unit from OUR concept. Built-in image generation is allowed for this (own prompts, our concept as the only visual input, no other games' art, provenance in assets/provenance/look.md). Use these as modeling references.
 - Build smooth forms: subdivision surface (bake level 2), soft creases, proper edge loops at joints; separate meshes for eyes (glossy iris + highlight), eyelids via shape keys for blink. No faceted low-poly look.
 - TRELLIS (local, already installed) is ALLOWED ONLY as a shape/proportion reference or a shrinkwrap target: generate from the clean turnaround front view, then retopologize onto our clean base (shrinkwrap + smooth + manual cleanup). Never ship its raw mesh or raw UVs.
@@ -109,5 +109,50 @@ SELF-SCORE RUBRIC (target 8.5, honest): units look like the concepts AND like re
 6. RULES REMINDER (unchanged, always)
 =====================================================================
 Non-stop: always work the top unfinished QUEUE.md item; never end the turn while unticked items exist, except STOP-B file, the words "dừng"/"stop"/"pause"/"khoan", a true user-only blocker (write NEEDS-USER.md, skip, keep working), or the 20 Nov 12:00 UTC deadline. Check INBOX.md between items.
-Anti-forget: at the start of every item and after any compaction re-read RULES.md, HANDOFF.md, QUEUE.md and this addendum (PROMPT-3D-SWITCH-2026-11-11.txt). Never redo ticked items.
+Anti-forget: at the start of every item and after any compaction re-read RULES.md, HANDOFF.md, QUEUE.md, TOOLS-3D.md and this addendum (PROMPT-3D-SWITCH-2026-11-11.txt). Never redo ticked items.
 One agent only (no subagents/helpers/parallel codex; local scripts, Blender, Playwright, TRELLIS-local and image tools are fine). No paid services or new accounts (if you truly need one, write it in NEEDS-USER.md and continue with the free route). Draft PRs only; no PR merge, deploy, main push, force-push or secrets. Never write in /Users/bao/taskbar-hero-cardrpg-a6. Original art only; never use other games' art as input. Keep tool output small. Status for the user in Vietnamese in STATUS-VI.md.
+
+=====================================================================
+7. YOUR OWN RESEARCH AND INITIATIVES ARE PRE-APPROVED
+=====================================================================
+CONTEXT: The user has decided on real 3D for all cats, enemies and bosses, plus 3D VFX and a size standard (see PROMPT-3D-SWITCH-2026-11-11.txt). The user trusts your judgment. Your research and new ideas are welcome, and the user approves ALL of them in advance.
+
+WHAT THIS ALLOWS:
+1. Research freely, whenever it helps: web search if your tools allow it, otherwise your own knowledge. Topics include stylized 3D character pipelines, Blender automation, retopology, texturing, rigging and animation, three.js rendering and 3D VFX, and how top hero battlers make units and effects look premium. D1 "short research" is a minimum, not a cap. Do more research at any point when you hit a quality problem.
+2. Propose and carry out your own initiatives without asking. You may add, reorder, merge, split or replace queue items. You may change the modeling route, tools, shaders, rig design, animation set, camera, stage, VFX design and targets. You may add new local tools or open-source libraries. You may add polish the queue does not list (new idle animations, entrance moves, ultimate cut-ins in 3D, environment reactions, and so on). Mark new items [auto] in QUEUE.md. For each one, write one line in DECISIONS.md (what and why) and 1 to 2 Vietnamese lines in STATUS-VI.md. Then continue straight away. Do not wait for approval, because the user has already given it.
+3. If your research shows a better way to reach the goal than the 3D-switch follow-up, choose the better way and record the reason.
+
+FIXED, EVEN FOR YOUR OWN INITIATIVES (user decisions and hard limits):
+- Final result: every unit is real 3D, and every skill and ultimate effect is 3D. No flat-puppet unit and no flat-card-only effect in the final demo. The size standard holds; you may refine its numbers, but every cat stays the same height and rarity never changes body size.
+- One agent only: no subagents, helpers or parallel codex runs. Local scripts and tools are fine.
+- No paid services and no new accounts. If one would clearly help, write it in NEEDS-USER.md and continue with the free route.
+- Draft PRs only. No PR merge, deploy, push to main, force-push or secrets. Never write in A6's worktree.
+- Original art only. Never use other games' art as input.
+- Demo stays <= 40 MB together with A6.
+- Deadline: 2026-11-20 12:00 UTC.
+- NON-STOP and ANTI-FORGET rules stay in force.
+
+=====================================================================
+8. 3D TOOLS ALREADY INSTALLED ON THIS MAC (new Codex account, same Mac) — do this check inside D0/D1
+=====================================================================
+CONTEXT: You run on a new Codex account, but the Mac (MacBook M3 Pro, 36 GB) is the same one earlier lane B sessions used. Earlier sessions already installed and verified the tools below. Their record is reports/cardrpg-look/art-rebuild/LOCAL-MODELS.md and STATE.md, written by lane B on 10 Nov. Do NOT reinstall or re-download anything. First verify each tool with one quick command (about 5 minutes total) and record PASS or MISSING in TOOLS-3D.md. Only if a tool is MISSING, repair it by following LOCAL-MODELS.md.
+
+ALREADY ON THIS MAC (recorded 10 Nov):
+1. Blender 4.5.3 LTS: /Users/bao/tools/cardrpg-look/Blender.app/Contents/MacOS/Blender. Runs headless with `-b --python <script>`. Use it for modeling, retopology/shrinkwrap, UV, texture projection and bake, rigging, animation clips and glTF export.
+   Verify: `<that path> --version | head -1`
+2. Python tool venv (Pillow, OpenCV, NumPy, scikit-image 0.26): /Users/bao/tools/cardrpg-look/venv/bin/python.
+3. glTF-Transform (core/functions/extensions), meshoptimizer and sharp: /Users/bao/tools/cardrpg-look/npm. CLI: /Users/bao/tools/cardrpg-look/npm/node_modules/.bin/gltf-transform. Use it for GLB inspection, bounding boxes for the size tests, meshopt/Draco and WebP/KTX2 compression.
+4. TRELLIS.2 image-to-3D, LOCAL (Apple Silicon MPS port shivampkumar/trellis-mac, commit d58628f4): /Users/bao/art/trellis-mac, with Python 3.11 and Torch on MPS.
+   - Hugging Face login has been done by the user, gated DINOv3 access has been verified, and all 19 weight files (about 16 GB) are cached in the standard HF cache. No new download is needed. Never read, print or copy the HF token.
+   - RMBG-2.0 was NOT downloaded on purpose (non-commercial license). Always feed pre-cut transparent PNGs; image-to-3d.py already patches RMBG out.
+   - Our wrapper: tools/cardrpg-look/art-rebuild/image-to-3d.py --backend local-mps (see LOCAL-MODELS.md for the exact command, seeds and receipts). Known behavior: 512 pipeline about 11 minutes; 1024 pipeline timed out at about 18 minutes; xatlas UV can time out, so use the `--uv-backend blender` route; the KDTree export needed the orient-local-glb.py fix. Run one generation at a time and pause other heavy jobs while it runs.
+   - Exact command already used on this Mac (from LOCAL-MODELS.md; run from the worktree root; replace <unit>, seed and output folder):
+     node tools/cardrpg-look/skills-v5/full/run-lock.mjs LOCAL-MPS-<unit> nice -n 10 /Users/bao/tools/cardrpg-look/venv/bin/python tools/cardrpg-look/art-rebuild/image-to-3d.py --backend local-mps --submit --id <unit> --seed <fixed seed> --pipeline-type 512 --texture-size 1024 --uv-backend blender --out /tmp/trellis-ref/<unit>-attemptN
+     The wrapper calls trellis-mac's own venv (/Users/bao/art/trellis-mac/.venv) through a subprocess; you do not activate it yourself. Input = a transparent PNG (turnaround front view). Successful GLBs are published to /Users/bao/art/look-v3/inbox/<unit>.glb; receipts go to ~/art/look-v3/local-generation/. Max 3 attempts per unit.
+   - Repair helpers already in the repo: orient-local-glb.py, pad-native-texture.py, export-decoded.py, repair-voxel-shell.py, finish-voxel-shell.py, fix-inward-glb.py, inspect-glb.py, prepare-unit.mjs, intake-models.mjs.
+   - USE UNDER THE 3D SWITCH: TRELLIS output is only a shape/proportion reference or a shrinkwrap target for our clean Blender base. Never ship its raw mesh or UVs.
+5. Earlier native outputs to reuse as references (do not regenerate): Mochi and Soot GLBs; local runs for Clover, Yarn Giant, Panko, Mallow, Cinnamon, Velvet and Biscuit in ~/art/look-v3 (inbox/, local-generation/, image-to3d/). Uncommitted clover.glb and yarn-giant.glb are in assets/cardrpg-look/v3-generated/. Concept masters (12 cats + 13 enemies) are in r2/concepts/ and ~/art/look-v3.
+6. Image generation: the Codex built-in image tool is allowed (GEN_IMAGES=ALLOWED, user 9 Nov). Use it for clean turnaround sheets from OUR concepts, with your own prompts. Never use other games' art as input. Record provenance in assets/provenance/look.md. If the new account lacks the image tool, write it in NEEDS-USER.md and continue with Blender projection from the existing concepts.
+7. NOT available, do not use: fal.ai or any paid API (no FAL_KEY; no paid services), the Hugging Face TRELLIS Space in a browser (retired), Hunyuan3D, TripoSR, SF3D and other new model downloads, unless your research finds a free local tool that clearly beats the route above. In that case, install it OUTSIDE the repo under /Users/bao/art or /Users/bao/tools, record it in TOOLS-3D.md and DECISIONS.md, and go ahead (pre-approved).
+
+Large files stay outside git (/Users/bao/art, /Users/bao/tools). Never commit weights, venvs or node_modules.

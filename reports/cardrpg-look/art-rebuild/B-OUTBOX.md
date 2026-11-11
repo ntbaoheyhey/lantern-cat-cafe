@@ -140,3 +140,12 @@ Complete wooden gauntlets gather inward with a delayed opposing hand; crown, cab
 
 ## D0 — USER mandatory real3D switch (11Nov)
 Final delivery changes to real3D rigged models and volumetric effects, shared bases, rules-derived size standard. Existing puppets/P402D VFX are temporary per-unit fallback only. Planned flag lookV3D; do not claim it implemented yet. Same actor/events/socket contract stays. D2 corrects current fallback size first; new models require yaw -20/0/+20 volume proof, strict per-unit review and<=16MB roster/<=40MB combined. Exact instructions PROMPT-3D-SWITCH-2026-11-11.txt; D1 active. No A6 worktree write or rule change.
+
+## D2 scale contract — 11Nov2026
+- Registry: assets/cardrpg-look/v3-real/manifest.json; rules-exact25IDs, explicit boss tiers (Kettle is elite). SCALE-STANDARD.md + ARCHETYPES.md describe the shared1model:2legacy-stage conversion and normalized body ranges. Temporary fallback body bounds now exclude margins/props. Three cats use the same depth; no rarity/slot scale.
+- Current scene.scaleAudit() exposes dev-only projected semantic boxes/heights; this is NOT yet the public bone socket API. Keep existing actor/event inputs. lookV3D enable/subscription/projected-socket API will ship in D4; current isLookV2 and runtime.setLook remain unchanged. Canvas damage numbers remain single-source.
+- Current A6e16dea701+B D2 artifact38,898,538B; B puppet payload8,052,588B, retained B diagnostic/classic12,115,080B embedded. Real3D delivery must replace or omit unused art to meet40MB, not append16MB to current build. Source/masters stay preserved outside final payload.
+- Gates:50views/all25IDs/two sizes; no clipped silhouette, body-ratio, face/HP or label failures. 4GLB tests,51webtests,type/lint/parity PASS. Real3D acceptance remains0/25. D3 active after publish; no A6 worktree writes.
+
+## D2b shared status copy — A6 request02:32
+`StatusBadges` now accepts optional `resolveRule(id): {name,description,cap,duration}|undefined`; `statusDescription(status, resolveRule?)` shares it. Names, descriptions, caps, ring duration and overflow tooltips all use current supplied rules. Omit callback for unchanged legacy behavior. A6 can wire `resolveRule={id => state.skillsV5 ? statusRuleV5(id, STATUS_BY_ID[id]) : undefined}` using its rules imports; its `statusRuleV5` covers new snag/bitter IDs before reading fallback. B does not import unreleased A6 rules or edit fixed HUD. Keyboard focus/overflow/legacy regression and existing focused suite pass.

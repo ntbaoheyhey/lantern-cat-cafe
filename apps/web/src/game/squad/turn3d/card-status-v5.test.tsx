@@ -6,11 +6,22 @@ import { snapshotBattle, splitPresentation, presentationEvents } from '../../car
 import { createCardActionPlan } from '../../cardrpg/depth/card-action-plan';
 import { STATUS_IDENTITIES } from './card-status-data';
 import { CARD_STATUS_LOOKS } from './card-status-looks';
-import { StatusBadges } from './StatusBadges';
+import { StatusBadges, statusDescription } from './StatusBadges';
 import { statusPresentation, statusImpactLabels } from './card-status-beats';
 
 afterEach(cleanup);
 describe('lookV2 status vocabulary',()=>{
+  it('uses caller-supplied current rules in keyboard tooltips and overflow without changing legacy copy',()=>{
+    const statuses=['drowsy','scald','scent','tangle','brittle'].map(id=>({id:id as 'drowsy',stacks:1,remaining:1,source:'s',appliedRound:1}));
+    const resolveRule=(id:string)=>id==='drowsy'?{name:'Daze',description:'Current Daze rule supplied by the active ruleset.',cap:1,duration:1}:id==='brittle'?{name:'Shred',description:'Current Shred rule supplied by the active ruleset.',cap:3,duration:2}:undefined;
+    const {container}=render(<StatusBadges statuses={statuses} name="Mochi" resolveRule={resolveRule}/>);
+    fireEvent.focus(container.querySelector('[data-status="drowsy"]')!);
+    expect(screen.getByRole('tooltip').textContent).toContain('Daze. Current Daze rule');
+    expect(screen.getByRole('tooltip').textContent).not.toContain(R.STATUS_BY_ID.drowsy.description);
+    fireEvent.focus(screen.getByText('+1'));
+    expect(screen.getByRole('tooltip').textContent).toContain('Shred. Current Shred rule');
+    expect(statusDescription(statuses[0]!)).toContain(R.STATUS_BY_ID.drowsy.description);
+  });
   it('requires an original icon, display name and body/apply/tick/expiry cue for every rules status',()=>{
     expect(Object.keys(STATUS_IDENTITIES).sort()).toEqual([...new Set([...STATUSES.map(s=>s.id),'snag','bitter'])].sort());
     expect(Object.keys(CARD_STATUS_LOOKS).sort()).toEqual([...new Set([...STATUSES.map(s=>s.id),'snag','bitter'])].sort());

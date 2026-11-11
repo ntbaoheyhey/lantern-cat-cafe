@@ -1,13 +1,14 @@
 # Lane B real3D handoff
-NOW: D1 research complete; D2 scale manifest + temporary puppet normalization active. Updated 2026-11-11T02:28:37.408841+00:00.
-BRANCH: codex/cardrpg-art-r1-2026-11-09; last pushed 6546a2cf6476775a855cb2b3f7fbcebf7d76c4f0; draft #427.
-NEXT 1: Publish D1/initiative; derive exact 25-unit tiers from rules, record semantic body bounds.
-NEXT 2: Implement shared scale contract, GLB validation (pending stays pending), projection tests and fallback normalization.
-NEXT 3: Capture current A6 shell before/after both sizes + lineup; D2 publish, then D3 clean-base pilots.
-RUNNING: No B heavy job/lease; static servers50023/5920 and92836/5922 retained. Shared lease tools/cardrpg-look/lock.mjs.
-DONE: D0 pushed6546a2cf6; P1-P39 historical only; P40 superseded; D1 research/tool check already written, now accepted as technical plan only.
-KNOWN ISSUES: No new-route3D model accepted; native dirty source/GLBs remain uncommitted and preserved. Combined A6 latest39091121B; replace assets, do not add16MB blindly.
-DECISIONS: Shared clean cat topology +5foe archetypes; skins/clips/toon/3D VFX; raw generated meshes reference-only; puppets temporary per-unit fallback.
-DECISIONS: All cats1.00±3%, small.80–1,standard1.10–1.30,boss1.70–1.95; rules determine boss status; measure body, exclude props/feathers.
-DECISIONS: All initiatives pre-approved; mark[auto], DECISIONS+Vietnamese status; one agent, no paid/new accounts, draft only; deadline20Nov12UTC.
-PREVIEW: /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2 (authorized disposable); no A6 writes/merge into B.
+NOW: D2/D2a complete; D3 clean-base pilot active. Updated 2026-11-11T02:47:09.824630+00:00.
+BRANCH: codex/cardrpg-art-r1-2026-11-09; last pushed dcd1f1900b7495840f9900837165ffe6326d01d6; draft #427.
+NEXT 1: D2 published; model Mochi clean authored cage from new original turnaround; preserve native dirty files/GLBs.
+NEXT 2: D3 Mochi turnaround generated at /Users/bao/art/look-v3/real3d/mochi/turnaround-v1.png; model continuous clean cage/skin, original outfit and props in Blender.
+NEXT 3: Export/compress pilot, render8views, fourposes and both-sizeA6/yawproof; then ButtonGuard/Yarn bases. No raw mesh or coarse blob acceptance.
+RUNNING: No B heavy job/lease; final D2 gates done work/d2/final-gates.log. Static5920/5922 servers retained.
+DONE: D1 pushed7aa21583e; D2 scale registry/GLBtests/screenaudit/same-depth party/boss bounds;25IDs/50views/4GLB+51webtests/type/lint/parityPASS;38898538B.
+KNOWN ISSUES: Real3Daccepted0/25. Temporary boss framing has more floor; D8 improve real3D composition. Legacy dirty native files/GLBs preserved/uncommitted.
+DECISIONS: D2a shared1model:2cafe-unit conversion, exact same cat height/zero per-slot compensation; rules-exact bosses, Kettle elite.
+DECISIONS: All models3Dskins/clips+volumetricVFX; raw outputs reference-only; original art, one agent, no paid/new accounts, draft only; deadline20Nov12UTC.
+PREVIEW: /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2; refreshedA6e16dea701. No A6 writes/merge into B.
+TOOLS: TOOLS-3D.md exactsection8+PASS; Blender4.5.3 /Users/bao/tools/cardrpg-look/Blender.app/Contents/MacOS/Blender; Python /Users/bao/tools/cardrpg-look/venv/bin/python.
+TOOLS: npm /Users/bao/tools/cardrpg-look/npm; sharedlease tools/cardrpg-look/skills-v5/full/run-lock.mjs, nice10, <=19min.

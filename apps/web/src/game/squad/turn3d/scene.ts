@@ -30,6 +30,8 @@ import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import { animateIllustrated } from './look-puppet';
+import { fallbackScale, MODEL_TO_STAGE, UNIT_SCALE } from './look-scale';
+import type { PuppetRig } from './look-puppet-rig';
 import { PuppetNumbers } from './look-puppet-numbers';
 import { PUPPET_BOSS_ADD_LANES, updatePuppetBossAddLanes } from './look-puppet-formation';
 import { animatePainted, installPaintedMaterial } from './look-painted';
@@ -493,9 +495,8 @@ export class TurnScene {
       }
       p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
-        // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.
-        const puppetHeight=(p.model.userData.paintedRig as {height:number}).height;
-        p.root.scale.setScalar((p.model.userData.paintedRig.boss&&(p.asset!=='kettle-knight'||bossFraming)?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
+        const measurement=fallbackScale(p.model.userData.paintedRig as PuppetRig);
+        p.root.scale.set(measurement.scale*measurement.widthScale,measurement.scale,measurement.scale);
       }
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
@@ -618,7 +619,8 @@ export class TurnScene {
     if(illustratedBattle&&!view.model){this.camera.position.y=3.75;this.cameraTarget.y=bossFraming?1.80:1.38;}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     const readableBossFrame=readable&&bossFraming?(illustratedBattle?1.08:1.25):1;
-    this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
+    const scaledFrame=illustratedBattle&&!view.model&&view.boss?Math.max(frameHeight*readableBossFrame,7.0):frameHeight*readableBossFrame;
+    this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(scaledFrame/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
@@ -736,6 +738,31 @@ export class TurnScene {
   audit(){
     const view=this.view();
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
+  }
+  /** Dev capture: project measured rest-body bounds, excluding hats and weapons. */
+  scaleAudit(){
+    const view=this.view(),units=[];
+    for(const actor of view.actors){
+      const p=this.puppets.get(actor.id),standard=p&&UNIT_SCALE[p.asset];
+      if(!p||!standard||actor.hp<=0||!p.model.userData.bodyBounds)continue;
+      const bounds=p.model.userData.bodyBounds as {min:number[];max:number[]};
+      const body=p.model.userData.lookPuppet?p.model.children[0]!:p.model;
+      body.updateWorldMatrix(true,true);
+      let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
+      for(let corner=0;corner<8;corner++){
+        const pt=new T.Vector3(...[0,1,2].map(axis=>(corner&(1<<axis)?bounds.max:bounds.min)[axis]!) as [number,number,number]);
+        pt.applyMatrix4(body.matrixWorld).project(this.camera);
+        const x=(pt.x*.5+.5)*this.width,y=(-pt.y*.5+.5)*this.height;
+        left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);
+      }
+      const scale=body.getWorldScale(new T.Vector3());
+      units.push({id:actor.id,asset:p.asset,side:actor.side,kind:standard.kind,
+        height:(bounds.max[1]!-bounds.min[1]!)*scale.y/MODEL_TO_STAGE,
+        footprint:(bounds.max[0]!-bounds.min[0]!)*scale.x/MODEL_TO_STAGE,
+        box:{x:left,y:top,width:right-left,height:bottom-top},ratio:(bottom-top)/this.height,
+        fallback:!!p.model.userData.lookPuppet});
+    }
+    return {width:this.width,height:this.height,modelToStage:MODEL_TO_STAGE,units};
   }
   private disposePuppet(p:Puppet){p.utensil?.dispose();p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);disposeGeneratedSkeletons(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
   dispose() {

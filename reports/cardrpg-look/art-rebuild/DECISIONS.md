@@ -185,3 +185,9 @@ P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [aut
 2026-11-11T02:11:59.554457+00:00 USER OVERRIDE: mandatory real3D roster+effects after user rejects flat puppets/inconsistent scale. Supersedes 10Nov fixed2.5D route; all prior assets preserved as historical/temp per-unit fallback. Shared clean bases/rigs, authored textures/volume, raw TRELLIS reference-only, scale standard from rules,3D yaw proof and<=40MB are new gates. D0 completed; D1 starts immediately. P40 accepted candidate1 is checkpoint-only; P41 never activated.
 
 2026-11-11T02:18:17.056741+00:00 USER initiative authority saved verbatim: D1 initial research is not a cap; further research/route changes/local libraries/polish pre-approved. Continue gap-first, log[auto]scope and Vietnamese status; mandatory3D/equal cats/one-agent/no paid/draft/budget/deadline unchanged.
+
+2026-11-11T02:32:36.055757+00:00 Consolidated 02:40 user addendum saved verbatim; section8 tool receipts added. Keep completed D0/D1; continue D2.
+
+D2a [auto] Retain one uniform model-to-cafe conversion (1 model unit = 2 legacy stage units) so normalized GLBs/puppets share a measurable scale without breaking existing stage/VFX coordinates; all targets and tier ranges convert together, never per rarity/slot.
+
+2026-11-11T02:49:24.532703+00:00 D2b A6outbox02:32 requests explicit skillsV5 status copy support in shared badges; small compatible presentation-only correction before D3.

@@ -23,9 +23,10 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
       const lane = actor.slot % 3;
       const rear = row === 'rear';
       // Fan the party around the front rug, leaving each face a clear silhouette.
-      const x = actor.side === 'party' ? [1.25, 2.35, 4.0] : [1.4, 3.10, 3.25];
-      const z = actor.side === 'party' ? [-.15, .85, -1.75] : [-.5, .7, -1.25];
-      return { x: side * x[lane]!, y: 0, z: z[lane]! - (rear ? .25 : 0) };
+      const x = actor.side === 'party' ? [.8, 2.45, 4.05] : [1.4, 3.10, 3.25];
+      // One party depth preserves body size; front/rear remains a rules property.
+      const z = actor.side === 'party' ? [0, 0, 0] : [-.5, .7, -1.25];
+      return { x: side * x[lane]!, y: 0, z: z[lane]! - (actor.side==='enemy'&&rear ? .25 : 0) };
     }
     if (actor.role === 'yarn') return { x: 2.15, y: 0, z: -.6 };
     const lane = actor.slot % 3;
@@ -43,7 +44,7 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
 
 export function cardFrameHeight(aspect: number, preset: CardCamera) {
   if (isReadableBattle()) {
-    const widths = artPipeline() === 'puppet' ? { close: 8.8, wide: 9.3, far: 10.8 } : isLookArtV3() ? { close: 9.2, wide: 9.9, far: 11.5 } : { close: 9.6, wide: 10.6, far: 12.0 };
+    const widths = artPipeline() === 'puppet' ? { close: 10.2, wide: 10.9, far: 12.0 } : isLookArtV3() ? { close: 9.2, wide: 9.9, far: 11.5 } : { close: 9.6, wide: 10.6, far: 12.0 };
     return Math.max(artPipeline() === 'puppet' ? 4.25 : 3.8, widths.wide / aspect) * widths[preset] / widths.wide;
   }
   if (isLookV2()) {
