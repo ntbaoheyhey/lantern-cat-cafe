@@ -1,0 +1,90 @@
+/* A6 DOM owns the HUD only. Keep B's 82px top / 148px bottom canvas envelopes. */
+.uv-battle-hud[data-a6=true] {
+ .uv-battle-top {background:linear-gradient(#37262f,#241d29);border-bottom:2px solid #a7804a;box-shadow:0 8px 20px #21172055}
+ .uv-battle-round small {letter-spacing:.12em;color:#efc986}
+ .uv-battle-round b {margin-top:5px;font:700 19px Georgia,serif;color:#f6e8c9}
+ .uv-battle-actions button {background:linear-gradient(#684c38,#3f2c2a);border:1px solid #aa8554;color:#ffedca;min-height:36px}
+ .uv-battle-actions button:first-child {font-size:19px;color:#ffd58b;min-width:52px}
+ .uv-battle-party {background:linear-gradient(#30212fe8,#251d29);border-top:2px solid #ae8650;gap:20px;padding:10px 20px}
+ .uv-battle-cat {--frame:#b8b7ae;width:286px;max-width:30%;height:124px;grid-template-columns:82px minmax(0,1fr);gap:12px;padding:8px 12px;align-items:start;border:2px solid var(--frame);border-radius:13px;background:linear-gradient(125deg,#654635,#352733 70%);box-shadow:inset 0 0 0 3px #201b24,0 4px 0 #17131b}
+ .uv-battle-cat[data-rarity=rare] {--frame:#6fb1d4}
+ .uv-battle-cat[data-rarity=epic] {--frame:#bc88e8}
+ .uv-battle-cat[data-rarity=legendary] {--frame:#edc15f}
+ .uv-battle-cat .a6-hud-portrait {position:relative;display:block;width:82px;height:96px;border-radius:9px;border:1px solid var(--frame);background:radial-gradient(#b18753,#382b38 75%);overflow:hidden}
+ .a6-hud-portrait img {width:100%;height:100%;object-fit:cover;filter:drop-shadow(0 3px 3px #20172399)}
+ .a6-hud-level {position:absolute;top:2px;left:2px;padding:2px 5px;background:#2a2030e8;border:1px solid #f3d59666;border-radius:5px;color:#fff0cc;font-size:10px;font-weight:800}
+ .a6-hud-stars {position:absolute;bottom:0;left:0;right:0;text-align:center;background:#281e2edb;color:#ffdc83;font-size:13px;letter-spacing:1px}
+ .uv-battle-cat .a6-hud-vitals {gap:5px;padding-top:1px}
+ .uv-battle-cat b {font:700 19px Georgia,serif;color:#fff0d0}
+ .uv-battle-cat small {font-size:11px;color:#ecdbc0}
+ .uv-battle-cat .uv-ult-label {font-size:10px;margin-top:1px}
+ .uv-battle-cat[data-ready=true] {border-color:#ffe19a;box-shadow:0 0 18px #f6c15d77,inset 0 0 0 3px #ad7c43}
+ .uv-battle-cat[data-ready=true] .uv-ult-label {color:#ffdf87}
+ .uv-battle-cat>.dp-status-badges {left:108px;bottom:6px;max-width:165px;background:none}
+ .uv-boss {position:relative;width:30%;max-width:370px;gap:3px;padding:0 18px}
+ .uv-boss b {color:#ffe0a7;font:700 19px Georgia,serif}
+ .uv-boss small {font-size:10px;color:#efcba9}
+ .uv-boss .a6-health {height:11px;border-color:#da9672}
+ .uv-boss .a6-health-fill {background:linear-gradient(#f8b290,#c95659)}
+ .a6-boss-phases {position:absolute;bottom:0;right:-14px;display:flex;gap:3px;color:#76564d;font-size:10px}
+ .a6-boss-phases [data-active=true] {color:#ffe4a5;text-shadow:0 0 5px #ffb257}
+ .uv-enemy-rage {gap:7px;left:20px}
+ .uv-enemy-rage>div {border:1px solid #96734e;background:#2a2030e8;border-radius:6px;padding:5px 8px}
+ .uv-enemy-rage small {margin-bottom:4px;color:#f2dcc3}
+ .uv-enemy-rage .a6-rage i {background:linear-gradient(90deg,#ad6f9d,#f2acb2)}
+ .uv-auto-continue {background:#30212fe8;border:1px solid #96734e;border-radius:7px}
+ .a6-ultimate-cutin {left:0;right:0;top:23%;height:40%;min-height:215px;max-height:320px;transform:none;padding:0;text-align:left;display:flex;justify-content:center;align-items:center;gap:32px;overflow:visible;background:linear-gradient(90deg,#3f233600,#402435ed 18%,#7b493be8 65%,#3f233600);border-block:2px solid #f4ce8a;box-shadow:0 15px 50px #21132680;color:#fff0c9;isolation:isolate;animation:a6-cutin-enter var(--cutin-enter) ease-out both}
+ .a6-ultimate-cutin[hidden] {display:none}
+ .a6-ultimate-cutin>img {height:145%;width:35%;max-width:380px;object-fit:contain;align-self:center;filter:drop-shadow(0 10px 8px #21132388);animation:a6-cutin-art var(--cutin-enter) ease-out both}
+ .a6-ultimate-cutin>div {position:relative;max-width:45%;text-shadow:0 3px 2px #3d2033}
+ .a6-ultimate-cutin small {display:block!important;color:#ffda8d!important;letter-spacing:.18em;font-size:13px;margin-bottom:12px}
+ .a6-ultimate-cutin b {font:700 clamp(28px,3.2vw,48px) Georgia,serif;color:#fff0c9;max-width:600px}
+ .a6-cutin-flourish {display:block;color:#efbe73;font-size:23px;margin-top:12px;letter-spacing:.2em}
+ .a6-cutin-rays {position:absolute;inset:0;z-index:-1;overflow:hidden;background:repeating-conic-gradient(from 15deg at 33% 55%,transparent 0 18deg,#efc46e15 18deg 26deg);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 75%,transparent)}
+ .a6-combo-banner {background:linear-gradient(#75613e,#3f4732);border-color:#d7dd9b;box-shadow:0 6px 20px #21172355}
+}
+.a6-health,.a6-rage {position:relative;width:100%;height:10px;overflow:hidden;background:#211b28;border:1px solid #a4855488;border-radius:3px;isolation:isolate}
+.a6-health i,.a6-rage i {position:absolute;inset:0 auto 0 0;display:block;max-width:100%}
+.a6-health-trail {background:#efb964;transition:width 380ms ease-out}
+.a6-health-fill {background:linear-gradient(#d1e6a0,#71a978);transition:width 100ms linear}
+.a6-rage {height:7px;border-color:#ac895888}
+.a6-rage i {background:linear-gradient(90deg,#c48548,#f4cd70);transition:width 230ms ease-out}
+.a6-rage[data-ready=true] {border-color:#fff0ac;box-shadow:0 0 8px #fbd478;animation:a6-rage-glow 900ms ease-in-out infinite alternate}
+@keyframes a6-cutin-enter {from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:none}}
+@keyframes a6-cutin-art {from{transform:translateX(-80px)}to{transform:none}}
+@keyframes a6-rage-glow {to{filter:brightness(1.25)}}
+@media(max-height:760px) {.uv-battle-hud[data-a6=true] .a6-ultimate-cutin {top:24%;height:37%;min-height:200px}.uv-battle-hud[data-a6=true] .a6-ultimate-cutin>img {height:135%}}
+@media(prefers-reduced-motion:reduce) {.uv-battle-hud *{animation:none!important;transition:none!important}}
+.uv-battle-hud[data-a6=true] .uv-battle-cat>.dp-status-badges {bottom:3px;gap:3px;height:20px;min-height:20px}
+.uv-battle-hud[data-a6=true] .uv-battle-cat>.dp-status-badges .dp-status-badge {height:20px;min-height:20px}
+.uv-battle-hud[data-a6=true] .uv-battle-cat .dp-status-badge b {font:900 10px/1 system-ui}
+.uv-battle-hud[data-a6=true] .uv-battle-cat .dp-status-badge svg {height:17px;width:17px}
+.uv-app[data-a6=true] .dp-loading[data-a6=true] {background:radial-gradient(ellipse at center,#73503b,#2c2230 65%);color:#ffe5b0;gap:14px;font:700 24px Georgia,serif}
+.uv-app[data-a6=true] .dp-loading[data-a6=true]>img {width:220px;height:240px;object-fit:contain;filter:drop-shadow(0 10px 15px #21172377)}
+.uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {position:static;display:flex;align-items:center;white-space:nowrap;padding:6px 8px;font-size:11px;margin:0}
+.uv-app[data-a6=true] .uv-result[data-a6-loss=true] .uv-result-mvp img {height:110px;width:110px}
+.uv-app[data-a6=true] .uv-result[data-a6-loss=true] .uv-result-title h2 {font-size:44px}
+.uv-app[data-a6=true] .uv-result[data-a6-loss=true] .uv-result-stars {font-size:26px}
+@media(max-height:760px) {
+ .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .uv-result-mvp img {height:78px;width:78px}
+ .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .uv-result-title h2 {font-size:36px}
+ .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .dp-v4-advice {padding:8px 18px;margin:7px auto}
+ .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .dp-v4-advice p {margin:5px 0}
+}
+
+/* Readable fixed HUD cards inside the existing canvas envelopes. */
+.uv-battle-hud[data-a6=true] {
+ .uv-battle-round small {font-size:13px}
+ .uv-battle-actions button {min-height:44px;min-width:44px;font-size:14px}
+ .a6-hud-level {font-size:12px}
+ .uv-battle-cat .a6-hud-vitals {gap:4px}
+ .uv-battle-cat small,.uv-battle-cat .uv-ult-label {font-size:13px;line-height:1.2}
+ .uv-boss small {font-size:13px}
+ .a6-boss-phases {font-size:12px}
+ .uv-enemy-rage small {font-size:13px;line-height:1.25}
+ .uv-battle-cat .dp-status-badge b {font-size:12px}
+ .uv-battle-menu button {min-height:44px;font-size:14px}
+}
+.uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {min-height:44px;font-size:14px;gap:5px}
+/* The shared badge tooltip is portaled to body; keep A6 reading copy legible. */
+body:has(.uv-battle-hud[data-a6=true]) .dp-status-tooltip {font-size:14px}

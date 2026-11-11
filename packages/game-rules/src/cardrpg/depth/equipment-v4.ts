@@ -1,3 +1,5 @@
+import { gameplayA6 } from './gameplay-a6';
+import { powerScoreA6 } from './power-a6';
 import { computeCardStats } from '../equipment';
 import { EQUIPMENT_SLOTS, RARITY_ORDER, type Stats } from '../contract';
 import { clone } from '../internal';
@@ -32,6 +34,9 @@ export const rawPowerV4=(s:Pick<Stats,'hp'|'attack'|'defense'>)=>s.hp/5+2*s.atta
 export function nakedStatsV4(state:DepthAccount,cardId:string):Stats{
  const card=state.account.cards.find(c=>c.cardId===cardId)!;
  const stats=computeCardStats({...state.account,loadouts:{}},card.id),awakening=state.awakened[cardId]??0;
+ // Early A6 levels should change a rematch; the existing 1.2% curve barely moved team Power.
+ if(gameplayA6(state))for(const key of ['hp','attack','defense'] as const)
+  stats[key]=Math.round(stats[key]*(1+Math.min(9,card.level-1)*.04));
  stats.hp=Math.round(stats.hp*(1+awakening*.03));stats.attack=Math.round(stats.attack*(1+awakening*.03));return stats;
 }
 /** One shared common base across sets; full +12 main remains under 8% naked core. */
@@ -55,6 +60,7 @@ const EFFECT_VALUE:Record<string,number>={
 };
 export function powerV4(state:DepthAccount,cardId:string){
  const stats=crewStats(depthStats(state,cardId),state.team),{bonuses,effects}=equipmentEffects(state,cardId);
+ if(gameplayA6(state)){const total=powerScoreA6(stats);return {core:Math.round(rawPowerV4(stats)*10),utility:total-Math.round(rawPowerV4(stats)*10),total,reference:POWER_REFERENCE_V4};}
  let utility=effects.reduce((n,id)=>n+(EFFECT_VALUE[id]??0),0);
  for(const [key,value] of Object.entries(bonuses)){
   if(['openingShield','openingCharge','cleanseShield','breakShield','shieldFlat','healFlat','ultimateCharge'].includes(key))utility+=value/5;
@@ -82,7 +88,9 @@ export function comparisonV4(state:DepthAccount,cardId:string,instanceId:string)
 export function gearCostV4(id:string){const g=GEAR_BY_ID[id]!;return g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};}
 export function rarityMeaningV4(rarity:string){return ['One main stat; readily replaceable.','One affix refines a role.','Two affixes; plan a targeted source.','Three affixes and one bounded unique behavior.'][RARITY_ORDER.indexOf(rarity as typeof RARITY_ORDER[number])]??'Cosmetic edition; no combat power.';}
 export function itemUtilityV4(state:DepthAccount,cardId:string,item:GearInstance){
- const copy=clone(state);copy.equipment[cardId]={};const bare=powerV4(copy,cardId).total;
+ // A6 previews change only this loadout; avoid copying retained battle logs per item.
+ const copy=gameplayA6(state)?{...state,equipment:{...state.equipment,[cardId]:{}}}:clone(state);
+ copy.equipment[cardId]={};const bare=powerV4(copy,cardId).total;
  copy.equipment[cardId]={[GEAR_BY_ID[item.templateId]!.slot]:item.id};
  return powerV4(copy,cardId).total-bare;
 }

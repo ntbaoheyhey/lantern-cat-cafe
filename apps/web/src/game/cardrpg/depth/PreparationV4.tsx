@@ -19,7 +19,7 @@ export function CrewPanel({ ids }: { ids: string[] }) {
 export function PreparationV4({ m }: { m: DepthModel }) {
   const battle = m.battle!, plan = battle.v4!.plan;
   const locked = battle.v4!.committed || !!m.replay;
-  const rosterLocked = locked || !!m.state.run && (m.state.run.visited.length > 0 || m.state.run.floor > 1);
+  const rosterLocked = locked || !!m.state.run && (m.state.run.visited.length > 0 || m.state.run.floor > 1 && !m.state.run.towerA6);
   const cats = battle.initial.cats;
   const ids = cats.map(cat => cat.id);
   const rows = Object.fromEntries(cats.map(cat => [cat.id, cat.row]));

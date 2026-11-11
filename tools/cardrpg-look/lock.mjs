@@ -1,6 +1,8 @@
 import { mkdir, readFile, writeFile, rm, stat, rename } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 const directory = '/tmp/cardrpg-big-locks/timing.lock';
+const pollMs = Number(process.env.LOOK_LOCK_POLL_MS ?? 2000);
+if (!Number.isInteger(pollMs) || pollMs < 100 || pollMs > 2000) throw Error('LOOK_LOCK_POLL_MS must be 100..2000');
 export async function withTimingLock(task, fn) {
   // A B2 phase may group its short gates/captures into one <20 minute lease.
   // Children can reuse only the still-live, explicitly inherited owner.
@@ -38,7 +40,7 @@ export async function withTimingLock(task, fn) {
           }
         }
       } catch (err) { if (!['ENOENT', 'SyntaxError'].includes(err.code ?? err.name)) throw err; }
-      await delay(2000);
+      await delay(pollMs);
     }
   }
   console.log(JSON.stringify({ lock: 'acquired', ...owner }));

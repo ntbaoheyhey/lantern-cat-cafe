@@ -10,6 +10,9 @@ export function validBattleEventV5(value:unknown,index:number,enabled:boolean):b
   if(e.version===1)return LEGACY_EVENT_KINDS.includes(e.kind);
   if(!enabled||e.version!==2||!integer(e.actionId)||!integer(e.logIndex)||!['setup','action','round-end'].includes(String(e.stage)))return false;
   if(LEGACY_EVENT_KINDS.includes(e.kind))return true;
+  if(e.kind==='rage.full')return typeof e.actorId==='string'&&e.actorId.length>0&&e.amount===100;
+  if(e.kind==='ultimate.cast')return typeof e.actorId==='string'&&typeof e.skillId==='string'&&typeof e.displayName==='string'&&e.displayName.length>0;
+  if(e.kind==='bond.combo')return typeof e.actorId==='string'&&typeof e.comboId==='string'&&e.comboId.length>0&&typeof e.displayName==='string'&&e.displayName.length>0&&strings(e.contributors)&&e.contributors.length===2&&new Set(e.contributors).size===2&&strings(e.targets)&&e.targets.length>0;
   const status=typeof e.statusId==='string'&&Object.prototype.hasOwnProperty.call(STATUS_BY_ID,e.statusId);
   const actor=typeof e.sourceId==='string'&&e.sourceId.length>0&&typeof e.targetId==='string'&&e.targetId.length>0;
   if(e.kind==='status-applied')return !!(actor&&status&&integer(e.stacks)&&Number(e.stacks)>0&&Number(e.stacks)<=5);

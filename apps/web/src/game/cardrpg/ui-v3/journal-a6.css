@@ -1,0 +1,152 @@
+/* Original keepsake book. Claims and collection state remain in the existing rules. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(>.a6-journal) {display:flex;flex-direction:column;overflow:hidden}
+ .a6-journal {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-journal {position:relative;padding:20px 22px 18px;border:1px solid #bc9b66;border-left:11px solid #826043;border-radius:5px 17px 17px 5px;background:repeating-linear-gradient(0deg,transparent 0 31px,#a97d3e0b 31px 32px),linear-gradient(100deg,#efe0bb,#fff2d2 8%,#f1dfb7);box-shadow:inset 5px 0 12px #845e3e20,0 5px 0 #b49464;}
+ .a6-journal-intro {display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px;align-items:center;min-height:150px;margin-bottom:14px;flex:none}
+ .a6-journal-photos {display:flex;justify-content:center;align-items:center;padding:9px 0 13px;}
+ .a6-journal-photos>div {position:relative;flex:0 0 98px;margin:0 -8px;padding:4px 4px 9px;background:#fff6de;border:1px solid #c4a374;box-shadow:0 5px 9px #61462c30;transform:rotate(-9deg);}
+ .a6-journal-photos>div:nth-child(2) {z-index:1;transform:translateY(10px) rotate(3deg);}
+ .a6-journal-photos>div:nth-child(3) {transform:rotate(11deg);}
+ .a6-journal-photos>div::before {content:"";position:absolute;z-index:2;top:-7px;left:28%;width:42%;height:17px;background:#bfa47785;clip-path:polygon(5% 0,95% 5%,100% 92%,0 100%);}
+ .a6-journal-photos img {display:block;width:100%;height:118px;object-fit:contain;background:radial-gradient(ellipse at 50% 70%,#ddd2aa,transparent 68%);}
+ .a6-journal-photos span {display:block;text-align:center;font:700 14px Georgia,serif;color:#6c4c33;}
+ .a6-journal-title>small {font-size:10px;letter-spacing:2px;color:#896b45;}
+ .a6-journal-title h2 {margin:3px 0 7px;font:700 clamp(23px,2.6vw,35px) Georgia,serif;color:#59402c;}
+ .a6-journal-title>p {margin:0 0 13px;font-size:14px;color:#725737;}
+ .a6-journal-counts {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;}
+ .a6-journal-counts>div {padding-left:12px;border-left:2px solid #b28b51;}
+ .a6-journal-counts dt {font-size:11px;color:#81603b;}
+ .a6-journal-counts dd {margin:4px 0 0;font:bold 24px Georgia,serif;color:#74542e;}
+ .a6-journal-counts dd small {font:12px system-ui,sans-serif;color:#96784f;}
+ .a6-journal-milestones {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0;align-items:stretch;flex:1;min-height:0}
+ .a6-journal-ticket {display:flex;flex-direction:column;position:relative;padding:12px;border:1px solid #b6945e;border-radius:8px;background:linear-gradient(135deg,#fff7df,#ecd5aa);box-shadow:0 4px 0 #a5865726;}
+ .a6-journal-ticket[data-status=ready] {border:2px solid #b48a3f;padding:11px;background:radial-gradient(ellipse at 80% 10%,#fffbe6,transparent 60%),linear-gradient(135deg,#fff1c8,#edce8d);box-shadow:0 0 0 3px #ffde8b50,0 5px 0 #a5865733;}
+ .a6-journal-ticket[data-status=collected] {background:linear-gradient(135deg,#edf0d1,#d9ddba);border-color:#8d9b69;}
+ .a6-journal-ticket-top {display:flex;align-items:center;justify-content:space-between;gap:4px;}
+ .a6-journal-stamp {width:49px;height:49px;color:#a27c48;flex:none;}
+ .a6-journal-ticket[data-status=collected] .a6-journal-stamp {color:#637b48;}
+ .a6-journal-ticket-top>span {font-size:12px;color:#80613e;text-align:right;}
+ .a6-journal-ticket h3 {min-height:44px;margin:5px 0 9px;font:700 19px/1.17 Georgia,serif;color:#65492c;}
+ .a6-journal .a6-journal-progress {display:flex;flex-direction:row;align-items:center;gap:8px;margin:0 0 11px;font-size:13px;color:#6d5335;}
+ .a6-journal-progress>span {white-space:nowrap;}
+ .a6-journal-progress progress {width:100%;min-width:0;height:6px;accent-color:#a98a45;}
+ .a6-journal-reward {display:flex;align-items:center;gap:6px;min-height:25px;font-size:14px;font-weight:700;color:#936c31;}
+ .a6-journal-currency,.a6-journal-currency>span {display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:14px;}
+ .a6-journal-currency i {font-style:normal;color:#a17a3b;}
+ .a6-journal-reason {min-height:43px;margin:8px 0 11px;font-size:14px;line-height:1.35;color:#7c603d;}
+ .a6-journal-ticket>button {margin-top:auto;min-height:42px;width:100%;font-size:14px;padding:7px 6px;}
+ .a6-journal-ticket[data-status=collected]>button {color:#52653a;background:#d7dfbd;border-color:#98a67b;opacity:1;box-shadow:none;}
+ .a6-journal-sections {display:flex;gap:8px;flex:none;padding:0 0 12px;border-bottom:1px dashed #b89764;margin:0 0 14px}
+ .a6-journal-sections button {display:flex;align-items:center;gap:9px;min-height:44px;padding:8px 20px;font-size:15px}
+ .a6-journal-sections button[aria-pressed=true] {color:#fff0ce;background:#765133;border-color:#765133}
+ .a6-journal-sections span {min-width:24px;line-height:22px;border:1px solid #b5945d;border-radius:15px;background:#f2dfb8;color:#78583b;font-size:13px}
+ .a6-journal-sections span[data-ready=true] {background:#8d3d30;color:#fff6d6;border-color:#ffd487}
+ .a6-journal-view {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-journal-discoveries,.a6-journal-collection {display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;flex:1;min-height:0}
+ .a6-journal-notes,.a6-journal-collection>section {display:flex;flex-direction:column;min-height:0;padding:15px;border:1px solid #bea06c;border-radius:10px;background:#fff5db66}
+ .a6-journal-view header {flex:none;margin-bottom:12px}
+ .a6-journal-view header>small {font-size:11px;letter-spacing:.1em;color:#896942}
+ .a6-journal-view header>h3 {font:700 25px Georgia,serif;margin:5px 0;color:#65482c}
+ .a6-journal-view header>p {font-size:14px;line-height:1.4;margin:6px 0;color:#7c603d}
+ .a6-journal-scroll {min-height:0;flex:1;overflow:auto;scrollbar-gutter:stable;padding:2px 9px 2px 2px;overscroll-behavior:contain}
+ .a6-journal-scroll ol {list-style:none;padding:0;margin:0}
+ .a6-journal-scroll ol>li {padding:10px 0;border-bottom:1px dashed #bd9d6c;color:#6c5135;font-size:14px;line-height:1.4}
+ .a6-journal-scroll ol>li:first-child {padding-top:0}
+ .a6-journal-scroll li>small {display:block;margin-top:4px;color:#8a6b43;font-size:12px}
+ .a6-journal-scroll details {font-size:14px;color:#6c5135;line-height:1.4;margin-top:14px}
+ .a6-journal-scroll details summary {padding:10px 0;cursor:pointer;font-weight:700}
+ .a6-journal-scroll details li {margin-bottom:8px}
+ .a6-journal-empty {text-align:center;padding:20px 12px;color:#795e3d;font-size:14px;line-height:1.5}
+ .a6-journal-empty .a6-journal-stamp {height:76px;width:76px}
+ .a6-journal-empty small {font-size:13px}
+ .a6-journal-discoveries>.dp-v4-star-board {display:flex;flex-direction:column;min-height:0;margin:0;padding:15px;border:1px solid #b99a64;border-radius:10px;background:#fff0c766}
+ .a6-journal-discoveries .dp-v4-star-board>h3 {font:700 25px Georgia,serif;margin:0 0 6px;color:#65482c}
+ .a6-journal-discoveries .dp-v4-star-board>p {margin:0 0 14px;font-size:14px;line-height:1.4;color:#7c603d}
+ .a6-journal-discoveries .dp-v4-meta-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;flex:1;min-height:0}
+ .a6-journal-discoveries .dp-v4-meta-grid article {display:flex;flex-direction:column;gap:7px;min-width:0;padding:13px 10px;background:linear-gradient(140deg,#fff8df,#ead4a8);border:1px solid #b59a63;border-radius:7px}
+ .a6-journal-discoveries .dp-v4-meta-grid article>b {font:700 18px/1.2 Georgia,serif;color:#65482c;min-height:44px}
+ .a6-journal-discoveries .dp-v4-meta-grid article>p {margin:0;font-size:14px;line-height:1.5;color:#765736}
+ .a6-journal-discoveries .dp-v4-meta-grid article>button {min-height:44px;padding:7px 8px;font-size:14px;line-height:1.3;margin-top:auto}
+ .a6-journal-discoveries .dp-v4-meta-grid article>small {font-size:13px;line-height:1.4;color:#7c603d;min-height:37px}
+ .a6-journal-companions {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+ .a6-journal-companions figure {margin:0;padding:6px;background:#fff7df;border:1px solid #c5a578;box-shadow:0 3px 0 #af905c22}
+ .a6-journal-companions img {display:block;width:100%;height:110px;object-fit:contain}
+ .a6-journal-companions figcaption {text-align:center;font:700 14px Georgia,serif;color:#6c4c33;margin-top:5px}
+ .a6-journal-gear {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:0;margin:0;list-style:none}
+ .a6-journal-gear li {padding:7px 0;border-bottom:1px dashed #bda078;font-size:14px;line-height:1.4;color:#6c5135}
+ .a6-journal-evenings {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-journal-chapters {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;flex:1;min-height:0}
+ .a6-journal-chapters article {display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;border:1px solid #bda06e;border-radius:10px;background:radial-gradient(ellipse at top,#fff7d9,#e9d6b1);text-align:center}
+ .a6-journal-chapters article[data-cleared=true] {background:radial-gradient(ellipse at top,#f6f3cf,#dfdfb7)}
+ .a6-journal-chapters article>small {font-size:11px;letter-spacing:.1em;color:#856340}
+ .a6-journal-chapters h4 {font:700 22px Georgia,serif;color:#63492f;margin:8px 0}
+ .a6-journal-chapters p {font-size:14px;color:#79613d;margin:0}
+ .a6-journal-evenings footer {display:flex;align-items:center;justify-content:space-between;gap:14px;flex:none;padding-top:14px}
+ .a6-journal-evenings footer p {font-size:14px;color:#795e3d;max-width:430px;line-height:1.4;margin:0}
+ .a6-journal-evenings footer>div {display:flex;gap:9px}
+ .a6-journal-evenings footer button {min-height:44px;font-size:14px;padding:8px 16px}
+ @media(max-height:760px) {
+  .a6-journal {padding:12px 16px;}
+  .a6-journal-intro {grid-template-columns:205px minmax(0,1fr);gap:20px;min-height:105px;margin-bottom:8px;}
+  .a6-journal-photos {padding:5px 0;}
+  .a6-journal-photos>div {flex-basis:78px;padding:3px 3px 5px;}
+  .a6-journal-photos img {height:82px;}
+  .a6-journal-photos span {font-size:12px;}
+  .a6-journal-title h2 {font-size:26px;margin-bottom:4px;}
+  .a6-journal-title>p {font-size:12px;margin-bottom:9px;}
+  .a6-journal-counts dd {font-size:21px;margin-top:2px;}
+  .a6-journal-counts dt {font-size:10px;}
+  .a6-journal-milestones {gap:9px;margin-bottom:0;}
+  .a6-journal-ticket {padding:9px;}
+  .a6-journal-ticket[data-status=ready] {padding:8px;}
+  .a6-journal-ticket .a6-journal-stamp {width:30px;height:30px;}
+  .a6-journal-ticket h3 {font-size:17px;min-height:38px;margin:3px 0 5px;}
+  .a6-journal .a6-journal-progress {margin-bottom:6px;}
+  .a6-journal-reward {min-height:23px;}
+  .a6-journal-reason {margin:5px 0 6px;min-height:40px;line-height:1.3;}
+  .a6-journal-ticket>button {min-height:40px;}
+  .a6-journal-sections {padding-bottom:9px;margin-bottom:10px}
+  .a6-journal-sections button {min-height:40px;padding:7px 17px;font-size:14px}
+  .a6-journal-discoveries,.a6-journal-collection {gap:14px}
+  .a6-journal-notes,.a6-journal-collection>section,.a6-journal-discoveries>.dp-v4-star-board {padding:10px 12px}
+  .a6-journal-view header {margin-bottom:8px}.a6-journal-view header>h3 {font-size:22px;margin:3px 0}
+  .a6-journal-discoveries .dp-v4-star-board>h3 {font-size:23px}.a6-journal-discoveries .dp-v4-star-board>p {margin-bottom:10px}
+  .a6-journal-discoveries .dp-v4-meta-grid article {padding:9px 8px;gap:5px}
+  .a6-journal-discoveries .dp-v4-meta-grid article>button {min-height:40px}
+  .a6-journal-companions img {height:85px}.a6-journal-empty {padding:10px}
+  .a6-journal-chapters article {padding:9px}.a6-journal-chapters h4 {font-size:21px;margin:6px 0}
+  .a6-journal-evenings footer {padding-top:9px}.a6-journal-evenings footer button {min-height:40px}
+ }
+ @media(max-width:900px) {
+  .a6-journal-intro {grid-template-columns:1fr;}
+  .a6-journal-photos {display:none;}
+  .a6-journal-milestones {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .uv-sheet-content:has(>.a6-journal) {overflow:auto}.a6-journal {flex:none}
+  .a6-journal-sections {flex-wrap:wrap}.a6-journal-discoveries,.a6-journal-collection {grid-template-columns:1fr}
+  .a6-journal-scroll {max-height:330px}.a6-journal-milestones {min-height:280px}
+  .a6-journal-evenings footer {flex-wrap:wrap}
+ }
+}
+
+
+/* Readable keepsake counts, dated discoveries and gifts. */
+.uv-app[data-a6=true] {
+ .a6-journal-title>p,.a6-journal-counts dt,.a6-journal-counts dd>small {font-size:14px;line-height:1.35}
+ .a6-journal-progress>span,.a6-journal-ticket-top>span,.a6-journal-scroll li>small,.a6-journal-empty small {font-size:14px;line-height:1.35}
+ .a6-journal-discoveries .dp-v4-meta-grid article>small,.a6-journal-discoveries .cr-cost {font-size:14px;line-height:1.35}
+ .a6-journal-ticket>button,.a6-journal-sections button,.a6-journal-discoveries .dp-v4-meta-grid article>button,.a6-journal-evenings footer button {min-height:44px;font-size:14px}
+ .a6-journal-sections span {font-size:14px}
+ .a6-journal-scroll:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+ @media(max-height:760px) {
+  .a6-journal-intro {margin-bottom:6px}
+  .a6-journal-sections {margin-bottom:7px;padding-bottom:7px}
+  .a6-journal-discoveries {grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}
+  .a6-journal-discoveries>.dp-v4-star-board {padding:8px 10px}
+  .a6-journal-discoveries .dp-v4-star-board>p {margin-bottom:7px;line-height:1.3}
+  .a6-journal-discoveries .dp-v4-meta-grid article {gap:4px;padding:7px}
+  .a6-journal-discoveries .dp-v4-meta-grid article>b {min-height:40px}
+
+ }
+
+}

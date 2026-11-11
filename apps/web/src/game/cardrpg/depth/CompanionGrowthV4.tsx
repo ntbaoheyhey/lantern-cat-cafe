@@ -16,6 +16,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
   const locked = !!m.state.run && !m.state.run.complete;
   if (!preview.ok) return <div className="dp-v4-growth" data-growth={kind}>
     <button disabled aria-describedby={descriptionId}>{action}</button>
+    {kind === 'ascend' && R.gameplayA6(m.state) && <small>{card.shards} matching shards owned</small>}
     <small id={descriptionId}>{locked ? 'Finish this route before training your companions.' : preview.error}</small>
   </div>;
   const next = preview.state.account.cards.find(c => c.id === card.id)!;
@@ -31,6 +32,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
     <button className={kind === 'level' ? 'cr-primary' : undefined} aria-describedby={descriptionId}
       onClick={() => m.command(command)}>{action}</button>
     <div id={descriptionId}>
+      {kind === 'ascend' && R.gameplayA6(m.state) && <small>{card.shards} matching shards owned</small>}
       <b>{R.CAT_BY_ID[catId]!.name} → {kind === 'level' ? `level ${next.level}` : `${next.stars} stars`}</b>
       <CostView cost={cost} />
       {card.shards > next.shards && <small>{card.shards - next.shards} matching shards</small>}

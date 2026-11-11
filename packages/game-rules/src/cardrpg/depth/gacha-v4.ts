@@ -13,7 +13,7 @@ import type { DepthAccount } from './contract';
 import type { GameplayEventV4 } from './events-v4';
 
 export const SELECTOR_COST_V4 = 24;
-export const invitationBannerV4 = (id:string) => ({...bannerById(id),softPity:13,hardPity:24,softStepBp:700});
+export const invitationBannerV4 = (id:string,state?:DepthAccount) => ({...bannerById(id),...(state?.gameplayA6?{cost:{stamps:60}}:{}),softPity:13,hardPity:24,softStepBp:700});
 export function invitationOddsV4(id:string,pity:PityState=emptyPity()) {
  const banner=invitationBannerV4(id);
  // Old THC12 counters keep their earned credit: an over-threshold counter guarantees the next draw.
@@ -34,7 +34,7 @@ function recordReveals(s:DepthAccount,results:GachaResult[]):void {
 /** Mutates only the enclosing atomic draft; no animation controls acquisition. */
 export function drawInvitationsV4(s:DepthAccount,bannerId:string,seed:number,count=1):GachaResult[] {
  requireHome(s);requireRule(gameplayV4(s)&&!!s.v4,'NOT_READY','Enable Gameplay v4 first.');
- const b=invitationBannerV4(bannerId);const results:GachaResult[]=[];
+ const b=invitationBannerV4(bannerId,s);const results:GachaResult[]=[];
  requireRule(integer(count,1,C.maxBatch)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Choose 1–10 invitations and an unsigned seed.');
  requireRule(s.account.daily.draws+count<=C.maxDrawsPerDay,'DAILY_CAP','Daily invitation limit reached.');
  safeAdd(selectorMarksV4(s),count);

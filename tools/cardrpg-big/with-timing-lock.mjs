@@ -1,14 +1,30 @@
 import { spawn } from 'node:child_process';
+import { watch } from 'node:fs';
 import { mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
-import { setTimeout as delay } from 'node:timers/promises';
 
 const directory = '/tmp/cardrpg-big-locks/timing.lock';
+// A shorter opt-in poll avoids missing brief handoffs between another lane's jobs.
+const pollMilliseconds = Math.max(100, Math.min(2000, Number(process.env.CARDRPG_TIMING_POLL_MS) || 2000));
 const [task, command, ...args] = process.argv.slice(2);
 if (!task || !command) throw new Error('Provide a task label, command and arguments.');
 const owner = { lane: 'A', pid: process.pid, startedAt: new Date().toISOString(), task };
 let owned = false;
 let stopped = false;
 let child;
+
+function waitForHandoff() {
+  return new Promise(resolve => {
+    let watcher;
+    const done = () => { clearTimeout(timer); watcher?.close(); resolve(); };
+    const timer = setTimeout(done, pollMilliseconds);
+    try {
+      watcher = watch('/tmp/cardrpg-big-locks', { persistent: false }, (_event, file) => {
+        if (!file || String(file) === 'timing.lock') done();
+      });
+      watcher.once('error', done);
+    } catch { /* The bounded polling fallback still wakes this waiter. */ }
+  });
+}
 
 async function stale() {
   const info = await stat(directory);
@@ -51,7 +67,7 @@ async function acquire() {
       if (error.code !== 'ENOENT') throw error;
       continue;
     }
-    await delay(2000);
+    await waitForHandoff();
   }
 }
 

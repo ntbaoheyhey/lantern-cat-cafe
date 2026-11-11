@@ -1,0 +1,194 @@
+/* A6 field notes and the cafe's save desk; existing rules and actions are retained. */
+.uv-app[data-a6=true] {
+ .uv-battle-guide {background:linear-gradient(120deg,#fff4d8,#ecd8ae);color:#63452c;border:2px solid #e0bd7b;}
+ .uv-battle-guide>.cr-page-title {display:none;}
+ .uv-battle-guide>.cr-tabs {position:sticky;top:-22px;z-index:2;padding:9px 0;background:#f8eaca;}
+ .uv-battle-guide>.cr-tabs>button,.uv-battle-guide>button {background:linear-gradient(#fff0d0,#dac095);color:#573c29;border-color:#a8834e;box-shadow:0 3px 0 #8e6d42;}
+ .uv-battle-guide>.cr-tabs>[aria-pressed=true] {background:#b78c4f;color:#fff8e5;}
+ .uv-battle-guide>button {z-index:3;}
+ .uv-battle-guide>p {color:#705337;}
+ .a6-guide-intro {display:grid;grid-template-columns:116px minmax(0,1fr);align-items:center;gap:22px;max-width:850px;margin:0 0 15px;padding:0 5px;}
+ .a6-guide-intro>img {width:116px;height:128px;object-fit:contain;filter:drop-shadow(0 8px 5px #73553424);}
+ .a6-guide-intro small {font-size:10px;letter-spacing:2px;color:#896642;}
+ .a6-guide-intro h2 {margin:5px 0 7px;font:700 29px Georgia,serif;color:#63452c;}
+ .a6-guide-intro p {font-size:14px;line-height:1.5;margin:0;color:#725534;}
+ [data-screen=codex]>.cr-tabs {position:sticky;z-index:2;top:-18px;margin:0 0 15px;padding:8px 0 10px;background:linear-gradient(#f9eccb 90%,#f9eccb00);}
+ [data-screen=codex]>.cr-tabs>button {min-height:42px;}
+ .a6-field-notes {gap:14px;}
+ .a6-field-notes>.cr-panel {margin:0;position:relative;border-radius:3px 11px 11px 3px;border-left:4px solid #b59b6c;padding:17px 18px;background:linear-gradient(115deg,#fff4d8,#efdfb8);box-shadow:0 3px 0 #8a6b3b16;}
+ .a6-field-notes>.cr-panel[data-kind=debuff] {border-left-color:#aa6355;}
+ .a6-field-notes>.cr-panel[data-kind=buff] {border-left-color:#7b9663;}
+ .a6-field-notes h2 {margin:0 0 10px;font-size:22px;line-height:1.2;color:#63452c;}
+ .a6-field-notes p {margin:8px 0;font-size:14px;line-height:1.5;color:#705337;}
+ .a6-field-notes small {font-size:12px;line-height:1.4;color:#8a6d46;}
+ .a6-field-notes .dp-enemy-portrait {float:left;width:112px;height:154px;margin:0 14px 6px 0;object-fit:contain;border:0;background:radial-gradient(ellipse at 50% 70%,#d9c29c55,transparent 70%);}
+ .a6-field-notes[data-page=companions]>.cr-panel {min-height:188px;}
+ .a6-field-notes[data-page=enemies] {grid-template-columns:repeat(2,minmax(0,1fr));}
+ .a6-field-notes[data-page=enemies]>.cr-panel {min-height:210px;}
+ .a6-field-notes[data-page=enemies] .dp-enemy-portrait {width:138px;height:180px;}
+ .a6-settings-layout {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:start;}
+ .a6-settings-layout>.cr-panel {margin:0;padding:24px;border:1px solid #b99861;border-radius:12px;background:linear-gradient(120deg,#fff5dc,#ecd7ae);box-shadow:0 4px 0 #9b784425;}
+ .a6-settings-layout h2 {font-size:27px;line-height:1.18;margin:4px 0 13px;color:#63452d;}
+ .a6-settings-layout p {font-size:14px;line-height:1.5;color:#765734;}
+ .a6-settings-layout label {font-size:13px;color:#7a5c39;}
+ .a6-settings-layout textarea {margin:7px 0 13px;min-height:132px;resize:vertical;line-height:1.5;background:#fffae8;border:1px solid #ba9b68;box-shadow:inset 0 2px 4px #6b4f2a0c;}
+ .a6-settings-layout textarea::placeholder {color:#9b815d;}
+ .a6-settings-layout button,.a6-settings-layout select {min-height:42px;}
+ .a6-settings-layout .cr-actions {gap:9px;}
+ .a6-save-envelope {float:right;width:112px;height:85px;margin:-8px -2px 0 12px;transform:rotate(6deg);}
+ .a6-save-envelope svg {display:block;width:100%;height:100%;}
+ .a6-save-backup>label {display:block;clear:both;}
+ .a6-save-backup .a6-save-note {font-size:12px;margin:12px 0;}
+ .a6-save-reset {border-top:1px dashed #bb9b69;padding-top:12px;margin-top:15px;}
+ .a6-save-reset>summary {font-size:13px;color:#886545;cursor:pointer;}
+ .a6-comfort-panel>small {font-size:10px;letter-spacing:1.7px;color:#987244;}
+ .a6-comfort-panel>.dp-three {grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:20px 0 18px;}
+ .a6-comfort-panel .dp-three>label {display:flex;flex-direction:column;gap:8px;}
+ .a6-comfort-panel .dp-three>label:has(input[type=checkbox]) {grid-column:1/-1;flex-direction:row;align-items:center;min-height:42px;padding:10px 12px;border:1px solid #c1a473;border-radius:7px;background:#fff5dd;}
+ .a6-comfort-panel input[type=checkbox] {width:20px;height:20px;min-height:0;flex:none;margin:0 8px 0 0;accent-color:#967440;}
+ .a6-comfort-panel .a6-replay-button {margin-top:16px;width:100%;}
+ .a6-comfort-panel>.a6-replay-button+small {display:block;margin-top:10px;font:12px/1.4 system-ui,sans-serif;letter-spacing:0;}
+ .a6-settings-layout>.dp-shortcuts {grid-column:1/-1;}
+ @media(max-height:760px) {
+  .a6-guide-intro {grid-template-columns:88px minmax(0,1fr);gap:18px;margin-bottom:9px;}
+  .a6-guide-intro>img {width:88px;height:96px;}
+  .a6-guide-intro h2 {font-size:25px;}
+  .a6-field-notes>.cr-panel {padding:14px 15px;}
+  .a6-settings-layout {gap:17px;}
+  .a6-settings-layout>.cr-panel {padding:20px;}
+  .a6-settings-layout h2 {font-size:25px;}
+  .a6-settings-layout textarea {min-height:112px;}
+  .a6-save-reset {margin-top:10px;padding-top:9px;}
+  .a6-comfort-panel>.dp-three {margin:15px 0;gap:12px;}
+ }
+ @media(max-width:900px) {
+  .a6-settings-layout {grid-template-columns:1fr;}
+  .a6-field-notes[data-page=enemies] {grid-template-columns:1fr;}
+ }
+}
+
+/* Original indexed field notebook; the catalogue and battle rules stay unchanged. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(>.a6-field-guide) {display:flex;flex-direction:column;overflow:hidden}
+ .a6-field-guide {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-guide-chapters {display:flex;gap:8px;flex:none;margin:0 0 14px}
+ .a6-guide-chapters>button {text-transform:capitalize;font-size:15px;min-height:44px;padding:8px 22px}
+ .a6-guide-chapters>button[aria-pressed=true] {background:#765335;color:#fff4d7;border-color:#765335}
+ .a6-guide-book {display:grid;grid-template-columns:280px minmax(0,1fr);flex:1;min-height:0;border:1px solid #b99a65;border-left:8px solid #83603e;border-radius:5px 14px 14px 5px;background:linear-gradient(100deg,#e8d6ad,#fff3d1 32%,#f4e4bc);box-shadow:0 5px 0 #a88a5733}
+ .a6-guide-finder {display:flex;flex-direction:column;min-height:0;padding:18px 14px;border-right:1px dashed #bc9c6c;background:#dcc79833}
+ .a6-guide-finder>label {margin:0;font-size:14px;color:#705234}
+ .a6-guide-finder input {margin-top:8px;min-height:42px;font-size:14px;background:#fff9e7;color:#624a31;border-color:#b89b6b}
+ .a6-guide-finder>p {margin:9px 0;font-size:12px;color:#866641}
+ .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:3px 8px 5px 3px;scrollbar-gutter:stable;overscroll-behavior:contain}
+ .a6-guide-index>button {display:flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:8px 11px;text-align:left;font-size:14px;line-height:1.3;box-shadow:0 2px 0 #af8b5755;background:#f6e6c3;color:#654a2f;border-color:#c4a779}
+ .a6-guide-index>button[aria-pressed=true] {background:#fff7db;border-color:#946b3f;box-shadow:inset 4px 0 #aa743b,0 2px 0 #a8845455;font-weight:700}
+ .a6-guide-index img {width:35px;height:42px;object-fit:contain;flex:none}
+ .a6-guide-page {display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.3fr);gap:24px;min-height:0;padding:25px 28px;color:#705133;align-items:center}
+ .a6-guide-illustration {align-self:stretch;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;text-align:center;background:radial-gradient(ellipse at 50% 60%,#dfc39166,transparent 68%)}
+ .a6-guide-illustration>img {width:100%;height:270px;max-height:calc(100% - 45px);min-height:0;object-fit:contain;filter:drop-shadow(0 10px 5px #7b5c3324)}
+ .a6-guide-illustration>small {font-size:10px;line-height:1.5;letter-spacing:.13em;color:#947140;max-width:170px}
+ .a6-note-seal {width:190px;height:190px;max-width:100%;max-height:65%;color:#a17c43;flex:none}
+ .a6-note-seal[data-kind=debuff] {color:#a2634e}.a6-note-seal[data-kind=buff] {color:#7d8f52}
+ .a6-guide-writing {min-height:0;max-height:100%;overflow:auto;scrollbar-gutter:stable;padding:4px 9px 4px 3px;overscroll-behavior:contain}
+ .a6-guide-writing header {border-bottom:1px dashed #bda16e;padding-bottom:14px;margin-bottom:18px}
+ .a6-guide-writing header>small {text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:#927044}
+ .a6-guide-writing h3,.a6-guide-no-match h3 {font:700 31px/1.15 Georgia,serif;color:#63462b;margin:8px 0 12px}
+ .a6-guide-writing header>p {font-size:13px;line-height:1.5;color:#896641;margin:0}
+ .a6-guide-writing>p {font-size:16px;line-height:1.6;margin:12px 0;color:#6f5234}
+ .a6-guide-no-match {grid-column:1/-1;text-align:center;color:#765638;font-size:15px}
+ .a6-guide-no-match>.a6-note-seal {height:120px}.a6-guide-no-match button {min-height:42px;font-size:14px}
+ .a6-guide-footnote {flex:none;font-size:13px;line-height:1.4;color:#7c603d;margin:14px 0 0}
+ .uv-battle-guide:has(>.a6-field-guide) {inset:64px 5% 24px;padding:18px;display:flex;flex-direction:column;overflow:hidden}
+ .uv-battle-guide:has(>.a6-field-guide)>button {position:absolute;right:18px;top:18px;min-height:42px;font-size:14px}
+ .uv-battle-guide>.a6-field-guide>.a6-guide-intro {padding-right:120px;max-width:none;flex:none}
+ .uv-battle-guide .a6-guide-chapters>button {background:linear-gradient(#fff0d0,#dac095);color:#573c29;border-color:#a8834e}
+ .uv-battle-guide .a6-guide-chapters>button[aria-pressed=true] {background:#765335;color:#fff4d7;border-color:#765335}
+ .uv-battle-guide .a6-guide-book {grid-template-columns:245px minmax(0,1fr)}
+ .uv-battle-guide .a6-guide-page {gap:18px;padding:20px}
+ @media(max-height:760px) {
+  .a6-guide-chapters {margin-bottom:10px}.a6-guide-chapters>button {min-height:40px;font-size:14px;padding:7px 20px}
+  .a6-guide-book {grid-template-columns:245px minmax(0,1fr)}
+  .a6-guide-finder {padding:12px 10px}.a6-guide-finder input {min-height:40px}
+  .a6-guide-index>button {min-height:40px;padding:7px 9px}.a6-guide-index img {height:34px;width:30px}
+  .a6-guide-page {grid-template-columns:minmax(150px,.75fr) minmax(0,1.3fr);gap:18px;padding:18px 22px}
+  .a6-guide-writing h3 {font-size:28px}.a6-guide-writing header {padding-bottom:10px;margin-bottom:12px}
+  .a6-guide-writing>p {font-size:15px;line-height:1.5;margin:10px 0}.a6-guide-writing header>p {font-size:13px}
+  .a6-guide-footnote {font-size:12px;margin-top:10px}
+  .a6-guide-illustration>img {height:220px}.a6-note-seal {width:165px;height:165px}
+  .uv-battle-guide .a6-guide-intro {grid-template-columns:70px minmax(0,1fr);gap:14px;margin-bottom:10px}
+  .uv-battle-guide .a6-guide-intro>img {height:80px;width:70px}.uv-battle-guide .a6-guide-intro h2 {font-size:23px}
+  .uv-battle-guide .a6-guide-intro p {font-size:13px;line-height:1.4}
+ }
+ @media(max-width:900px) {
+  .a6-guide-book,.uv-battle-guide .a6-guide-book {grid-template-columns:200px minmax(0,1fr)}
+  .a6-guide-page {grid-template-columns:1fr}.a6-guide-illustration {display:none}
+  .a6-guide-chapters {flex-wrap:wrap}.a6-guide-chapters>button {padding:7px 12px}
+ }
+}
+
+/* The original keepsake desk holds existing save and comfort actions. */
+.uv-app[data-a6=true] {
+ .a6-settings-desk {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:23px;min-height:0}
+ .a6-save-letter,.a6-comfort-desk {position:relative;min-width:0;padding:25px;border:1px solid #b99861;box-shadow:0 5px 0 #92704733;color:#705337}
+ .a6-save-letter {border-radius:5px 14px 14px 5px;border-left:7px solid #977349;background:repeating-linear-gradient(0deg,#fff7df00 0 25px,#c4a4730a 25px 26px),linear-gradient(115deg,#fff7df,#efdfb8)}
+ .a6-comfort-desk {border-radius:14px;background:linear-gradient(125deg,#e8d1a7,#fbefcf);border-bottom:6px solid #aa8652}
+ .a6-save-heading {display:grid;grid-template-columns:100px minmax(0,1fr);gap:17px;align-items:center;margin-bottom:17px}
+ .a6-save-heading>img {height:142px;width:100%;object-fit:contain;filter:drop-shadow(0 8px 4px #795a3022)}
+ .a6-save-heading small,.a6-comfort-desk header small,.a6-reset-page>small {font-size:10px;letter-spacing:.16em;color:#977347}
+ .a6-settings-desk h2 {font:700 29px/1.2 Georgia,serif;color:#63452c;margin:7px 0 10px}
+ .a6-settings-desk p {font-size:14px;line-height:1.5;margin:8px 0;color:#705337}
+ .a6-save-state {display:inline-block;font-size:12px;line-height:1.35;color:#6b653e;border:1px solid #b4a678;border-radius:5px;background:#f7f0ce;padding:5px 9px;margin-top:3px}
+ .a6-code-caption {display:flex;justify-content:space-between;align-items:center;gap:12px;margin:10px 0 8px}
+ .a6-code-caption label {font-size:14px;color:#705337}.a6-code-caption small {font-size:12px;color:#8a6b46}
+ .a6-save-letter>textarea {display:block;min-height:112px;height:112px;width:100%;resize:none;font:14px/1.45 system-ui,sans-serif;color:#664a30;background:#fffbed;border:1px solid #b99b6a;border-radius:8px;padding:12px;margin:0 0 14px;box-shadow:inset 0 2px 3px #8360390d}
+ .a6-save-letter>textarea::placeholder {color:#997f5b}
+ .a6-save-actions {display:flex;gap:8px}.a6-save-actions>button {min-height:42px;font-size:14px;padding:9px 12px;flex:1}
+ .a6-save-letter>.a6-save-feedback {min-height:42px;font-size:14px;line-height:1.4;margin:12px 0 10px}
+ .a6-save-feedback[data-error=true] {color:#9c4230}
+ .a6-save-footer {display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px dashed #bfa16e;padding-top:10px}
+ .a6-save-footer>span {font-size:12px;color:#8a6b46}.a6-save-footer>button {min-height:40px;font-size:14px;white-space:nowrap;background:transparent;box-shadow:none}
+ .a6-comfort-desk>header {display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:8px}
+ .a6-comfort-desk>header h2 {font-size:33px}.a6-desk-lamp {width:112px;height:122px;flex:none}
+ .a6-desk-lamp[data-lit=true] {filter:drop-shadow(0 0 13px #e3b55966)}
+ .a6-sound-row {display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px dashed #bd9e6c;padding-bottom:13px;margin-bottom:16px;font-size:14px}
+ .a6-sound-row>button {min-height:42px;font-size:14px;min-width:112px}
+ .a6-comfort-options {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px}
+ .a6-comfort-options>label {display:flex;flex-direction:column;gap:8px;font-size:14px}.a6-comfort-options select {min-height:42px;font-size:14px;background:#fff3d5;color:#65482d}
+ .a6-comfort-motion {display:flex;align-items:center;gap:13px;padding:11px 14px;border:1px solid #bea06d;border-radius:8px;background:#fff3d8;font-size:15px;color:#674d31}
+ .a6-comfort-motion input {width:21px;height:21px;min-height:0;flex:none;margin:0;accent-color:#94703e}
+ .a6-comfort-motion small {display:block;font-size:12px;margin-top:4px;color:#8b6a44}
+ .a6-comfort-desk>.a6-playback-note {margin:13px 0;font-size:14px}
+ .a6-settings-replay>button {width:100%;min-height:42px;font-size:14px}.a6-settings-replay>small {display:block;font-size:12px;margin-top:8px;color:#886842}
+ .a6-reset-page {border-top:1px dashed #b99a68;padding-top:20px;max-width:470px}
+ .a6-reset-page h3 {font:700 27px/1.2 Georgia,serif;color:#68472d;margin:10px 0 16px}
+ .a6-reset-page>p {font-size:15px;line-height:1.6}.a6-reset-page>.a6-reset-account {font-size:13px;padding:10px 0;margin:12px 0;border-block:1px solid #bda16e55}
+ .a6-reset-page .cr-actions {margin:18px 0 12px;gap:12px}.a6-reset-page button {font-size:14px;min-height:42px}
+ .a6-reset-confirm {background:#e5c8a1;color:#854f32;border-color:#b98b65}
+ .a6-settings-desk>.dp-shortcuts {grid-column:1/-1}
+ @media(max-height:760px) {
+  .a6-settings-desk {gap:18px}.a6-save-letter,.a6-comfort-desk {padding:18px 20px}
+  .a6-save-heading {grid-template-columns:85px minmax(0,1fr);gap:14px;margin-bottom:12px}.a6-save-heading>img {height:117px}
+  .a6-settings-desk h2 {font-size:26px;margin:5px 0 7px}.a6-save-heading p {margin:5px 0;font-size:14px}.a6-save-state {font-size:12px;padding:4px 8px}
+  .a6-save-letter>textarea {height:96px;min-height:96px;padding:10px;margin-bottom:12px}
+  .a6-save-actions>button {padding:9px 8px}.a6-save-letter>.a6-save-feedback {margin:10px 0 7px;min-height:39px}
+  .a6-save-footer {padding-top:8px}
+  .a6-comfort-desk>header {margin-bottom:4px}.a6-comfort-desk>header h2 {font-size:29px}.a6-desk-lamp {width:90px;height:105px}
+  .a6-sound-row {padding-bottom:10px;margin-bottom:12px}.a6-comfort-options {gap:14px;margin-bottom:13px}.a6-comfort-motion {padding:9px 12px}
+  .a6-comfort-desk>.a6-playback-note {margin:11px 0}.a6-settings-replay>small {margin-top:7px}
+  .a6-reset-page {padding-top:15px}.a6-reset-page h3 {margin:9px 0 12px}
+ }
+ @media(max-width:900px) {.a6-settings-desk {grid-template-columns:1fr}.a6-save-actions {flex-wrap:wrap}}
+}
+
+/* Readable field counts, mechanics and existing actions. */
+.uv-app[data-a6=true] {
+ .a6-guide-finder>p,.a6-guide-writing header>p,.a6-guide-footnote,.uv-battle-guide .a6-guide-intro p {font-size:14px;line-height:1.4}
+ .a6-guide-chapters>button,.a6-guide-finder input,.a6-guide-index>button,.a6-guide-no-match button,.uv-battle-guide:has(>.a6-field-guide)>button {min-height:44px;font-size:14px}
+ .a6-guide-writing:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+}
+
+/* Readable save ownership and comfort state. */
+.uv-app[data-a6=true] {
+ .a6-save-state,.a6-code-caption small,.a6-save-footer>span,.a6-comfort-motion small,.a6-settings-replay>small,.a6-reset-page>.a6-reset-account {font-size:14px;line-height:1.4}
+ .a6-save-actions>button,.a6-save-footer>button,.a6-sound-row>button,.a6-comfort-options select,.a6-settings-replay>button,.a6-reset-page button {min-height:44px;font-size:14px}
+}

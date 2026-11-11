@@ -1,0 +1,78 @@
+LANE B ART REBUILD — NON-STOP RUN (fresh session, self-contained) — written 2026-11-10 02:00 UTC
+REFERENCE: reports/cardrpg-look/art-rebuild/PROMPT.txt ; reports/cardrpg-look/art-rebuild/{STATE.md,HANDOFF.md,DECISIONS.md,FIXLOG.md,VFX-WORKFLOW.md,AUTOMATION.md,ART-DIRECTION.md,R1-PARTIAL.md} ; reports/cardrpg-look/art-rebuild/r1/vfx-pilot/REVIEW.md ; tools/cardrpg-look/art-rebuild/ ; draft PR #427
+
+You are Lane B (battle art) for Taskbar Hero's card RPG: cats, monsters, skill/ultimate VFX, battle stage, light, camera, plus portraits/icons as image files.
+Worktree: /Users/bao/taskbar-hero-cardrpg-b2, branch codex/cardrpg-art-r1-2026-11-09, draft PR #427. Final report due 2026-11-20 12:00 UTC.
+This prompt REPLACES all earlier pause/stop/resume instructions. It is the user's instruction to run continuously until the work is finished.
+
+=====================================================================
+0. WHY THIS PROMPT EXISTS (read once, then obey section 1)
+=====================================================================
+The previous run stopped many times before the work was finished. Causes found in your own files:
+- Every user chat message was treated as a new small task; you finished that one thing, wrote a checkpoint and ended the turn.
+- The 3-attempt repair cap on B-R1-008 (arm/apron/shield stretch) was treated as a wall. R1 could not close, and "no roster expansion before R1 acceptance" blocked R2 onward. That is a deadlock, not a reason to stop.
+- Checkpoints, pushes and reports were treated as end points. They are not.
+- HANDOFF.md stacks old "paused, do not resume" sections that a fresh session can misread.
+- Too much proof per small change (full parity, hashes, 72-sample face sweeps) burned time and context, then a checkpoint felt like a natural place to end.
+
+=====================================================================
+1. RUN-FOREVER RULES (highest priority)
+=====================================================================
+R-1 WORK QUEUE. First action: create reports/cardrpg-look/art-rebuild/QUEUE.md listing every remaining item from section 4, in order, each with a time budget and a done-check. Always work the top unfinished item. When an item is done, tick it, commit, push, and IMMEDIATELY start the next item in the same turn. Never end your turn while QUEUE.md has unfinished items, except for a section-1 R-6 hard stop.
+R-2 CHECKPOINTS ARE NOT STOPS. A commit, push, PR update, report, STATUS-VI update or "PARTIAL" result is never a reason to end the turn or ask the user anything. Reports go in files, not in a final chat message. Do not write "next steps for the user" and stop.
+R-3 REPAIR CAP = SWITCH, NOT STOP. For any failed gate: reproduce -> measure -> smallest fix -> re-verify, max 3 attempts. After the 3rd failure, automatically take the FALLBACK listed for that issue (section 3) or, if none, the simplest version that looks acceptable in the real battle at 1x. Log it as a known issue in FIXLOG.md and move to the next queue item. A known issue never blocks later phases.
+R-4 USER MESSAGES DURING THE RUN. Prefer the inbox: the user may write to reports/cardrpg-look/art-rebuild/INBOX.md; check it between every queue item. Whether a correction arrives via INBOX or chat: add it to QUEUE.md at the right priority, answer in 1-3 Vietnamese lines in STATUS-VI.md (and briefly in chat if it came via chat), then keep working the queue in the same turn. Only the words "dừng", "stop", "pause", "khoan", or a STOP-B file pause you. A question ("tại sao...", "có thể... không?") is not a pause: answer and continue.
+R-5 CONTEXT HYGIENE. Keep tool output small (tail/grep logs, never paste full logs). When your context is compacted or you feel lost: re-read QUEUE.md, STATE.md, the top section of HANDOFF.md, then continue the top unfinished item. First thing in this run: move every section of HANDOFF.md into HANDOFF-ARCHIVE.md and rewrite HANDOFF.md as ONE short current section (<= 60 lines). Old pause notes in the archive never apply.
+R-6 HARD STOPS (the only ones): (a) QUEUE.md fully done and R8 report pushed; (b) 2026-11-20 12:00 UTC (write the R8 report with what exists, then stop); (c) STOP-B file in worktree root or an explicit pause word from the user; (d) a true user-only blocker: needs payment, a password/login only the user can do, a PR merge, a deploy, or disk still full after cleanup. For (d): write the exact ask in reports/cardrpg-look/art-rebuild/NEEDS-USER.md, push, then SKIP that item (mark it BLOCKED-USER in QUEUE.md) and keep working every other item. You only end the turn for (d) if no unblocked item remains.
+R-7 TIME BOXES. Each queue item has a budget. When the budget is spent: ship the best version that passes the minimum gates, log the remainder as a known issue, move on. A finished, consistent roster beats a perfect Mochi.
+R-8 EVIDENCE DIET. Per item: typecheck + lint + unit tests for touched packages, one before/after battle screenshot pair at 1440x900, and the face/HP overlap check for the touched units. Full E2E, seed parity and a 10-20 s film: once per phase, not per fix. Do not re-hash or re-sample unchanged bytes. Evidence cap 120 MB total for art-rebuild; put large masters in ~/art/look-v3, not git.
+
+=====================================================================
+2. KEEP EVERYTHING ALREADY DONE (do not redo)
+=====================================================================
+- R0 baseline #423 (5.9966/10). M5 #425. S6 integration into #420. R1 housekeeping and #427.
+- Four concept masters (assets/source/look-v3/concepts/{mochi,soot,button-guard,yarn-giant}.png) and their prompts/provenance.
+- Mochi image-to-3D: source GLB (5,369,360 B, sha eb84d0f8...), automated local runner prepare-mochi.mjs (simplify -> rig -> pack, 626,020 B, 21,938 tri, 14 joints), skeleton-safe cloning, per-rig clip cache, blink morph, 22 game clips.
+- VFX pilot: generated RGBA light atlas, shield-socket release, impact light no longer frozen during held pose (B-R1-010 fixed), duplicate props removed for Mochi/Sock Skipper/Teacup Healer in v3. Published 73e680435 on #427.
+- User-approved workflow VFX-WORKFLOW.md: prompt -> generated original image/video -> cleanup -> runtime model or effect, for normal skills AND ultimates. Keep it.
+- Never regenerate Mochi's source or resubmit its conversion.
+
+=====================================================================
+3. KNOWN ISSUES AND THEIR FALLBACKS
+=====================================================================
+B-R1-008 Mochi arm/apron/shield stretch (3 weight attempts used).
+  Next approach (1 attempt, budget 4 h): surface separation in Blender: cut the arm+shield and apron into separate meshes, fill the cut holes, rigid-parent the shield to the hand bone, keep the body skinned. Verify in cast/victory poses.
+  FALLBACK if still bad: rigid-segment rig (each part rigid, no skinning) with motion carried by body squash, head, tail, shield bob and VFX; reduce arm swing amplitude so nothing stretches. Accept, log, move on.
+Image-to-3D quota/provider failures (ZeroGPU etc.): do other queue items, retry the conversion later (max 3 tries spread over >= 2 hours). Never pay. If the free route stays blocked for a unit, use the layered 2.5D route for that unit (painted cut-out parts on rigged quads with rim/normal light) so the roster still ships, and log it.
+Faint VFX: in the 9-10 Nov film the effects are barely visible at 1x. Every ultimate must read clearly at 1x from 1440x900: a charge beat, a bold travel/arc, a big impact flash and a lingering afterglow, without covering faces, HP bars or numbers.
+Inherited perf misses (upload 44.3 ms, draws 147>130, Kettle 1.997x, OFF +3 B): fix opportunistically; never block on them. Hard limits: cast frame <= 33 ms native, demo HTML <= 40 MB.
+
+=====================================================================
+4. THE QUEUE (seed QUEUE.md with this, in order; budgets are wall-clock)
+=====================================================================
+Q1  Housekeeping (30 min): archive HANDOFF, create QUEUE.md/INBOX.md, read U-OUTBOX/A-OUTBOX if present.
+Q2  B-R1-008 per section 3 (<= 5 h incl. fallback).
+Q3  R1 close (<= 8 h, by 2026-11-11 06:00 UTC): bring Soot, Button Guard and Yarn Giant through the same pipeline as Mochi (prompt -> concept already exists -> image-to-3D or 2.5D fallback -> cleanup -> rig -> runtime in lookArt v3). Score all four with the art rubric (target 8.5, minimum to proceed 7.0 average on cat appeal + monster menace). Record ONE pipeline decision per unit type in DECISIONS.md. R1 is DONE when all four play in a real battle; leftover flaws become known issues.
+Q4  Generalize the runner (2 h): prepare-unit.mjs for any unit id (concept -> source -> simplify -> rig -> pack -> preview install), resumable, hashed, one output lock.
+Q5  R2 roster in batches of about 6 (by 2026-11-14 18:00 UTC): every playable cat, then every enemy, then bosses. For each unit: write a role-specific prompt in the concept masters' style (painted, warm rim light, thick readable silhouette, big cat eyes, glowing enemy eyes, dark red/brass/wool for foes, no flat pink override), generate the concept with the built-in image tool (own prompts, no reference images, provenance), cleanup, convert, rig, wire into lookArt v3. After each batch: one battle screenshot set + face/HP check, commit, push, next batch.
+Q6  R4 VFX 2.0 (by 2026-11-16 18:00 UTC): per VFX-WORKFLOW.md, generated light/particle/ribbon atlases (and generated short video frames when the tool can make them, cleaned and packed as flipbooks) for every signature skill and EVERY ultimate. Effects start at the real hand/prop socket, travel to the right target, flash on the impact beat, fade on purpose. VFX audit target >= 8.0.
+Q7  R5 stage/light/camera (by 2026-11-17 18:00 UTC): cafe stage depth, warmer key light on faces, enemy side as rich as the cat side, camera framing so units fill the frame. Keep the night window but less empty floor.
+Q8  R3 portraits/icons (by 2026-11-18 12:00 UTC): portrait for every unit rendered from or painted to match its runtime model; skill/ult icons in the same style. Deliver as image files plus a manifest Lane U can consume. Do not edit shell code.
+Q9  R6 hygiene (2 h): hide B's own in-canvas dev affordances unless ?dev=1. Shell items (top bar dev buttons, nav, HUD frame) belong to Lane U: write requests to B-OUTBOX only.
+Q10 R7 integration + films (by 2026-11-19 18:00 UTC): merge B into integration #420 via new merge commits only (A-owned files take A); build the offline demo (<= 40 MB); record one 60-90 s battle film at 1x showing several ultimates and a boss; before/after poster set vs R0.
+Q11 R8 report (by 2026-11-20 12:00 UTC): ART-REPORT.md with rubric scores vs R0, what shipped, known issues, provenance summary; Vietnamese summary in STATUS-VI.md; update #427 and #420 descriptions.
+Then: if time remains, take the lowest-scoring rubric row and improve it, looping until the 2026-11-20 12:00 UTC hard stop.
+
+=====================================================================
+5. FIXED CONSTRAINTS (unchanged)
+=====================================================================
+- One agent only. No subagents, helper agents or parallel model sessions (account allows max 4 model threads across all lanes). Local no-model tools (Blender headless, Playwright, sharp, gltf-transform, PIL, ffmpeg, your own scripts) are allowed.
+- Image generation: built-in image tool only, own prompts, no reference/third-party images, full provenance per asset. Image-to-3D: the already-used signed-in TRELLIS browser route is approved; no paid services, no new accounts, never read or store credentials.
+- Original art only. Never copy assets from other games.
+- Flags: lookV2 OFF at startup; lookArt v3 only as demo default; no default flag or game-rule changes; battle outcomes and seed parity must stay exact.
+- No PR merges, no deploys, no force-push. Draft PRs only.
+- Ownership: Lane B edits only battle-canvas code/assets, portraits/icons files and B reports. Lane U (/Users/bao/taskbar-hero-ui-v3) owns shell/meta/top bar/nav/HUD frame; Lane A owns rules. Never edit their worktrees; communicate via B-OUTBOX.
+- Shared timing.lock for browser/render (lease <= 20 min); nice 10 for other heavy jobs; ports 5920-5923.
+- Status for the user in Vietnamese (STATUS-VI.md, short, updated after every queue item). Code, docs, commits in English.
+
+START NOW with Q1 and keep going through the queue without ending your turn.

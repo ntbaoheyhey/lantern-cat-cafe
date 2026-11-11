@@ -27,7 +27,7 @@ export function Invitations({ m }: { m: DepthModel }) {
   const [results, setResults] = useState<GachaResult[]>([]);
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<RevealPhase>('summary');
-  const banner = m.state.gameplayV4 ? R.invitationBannerV4(bannerId) : BANNERS.find(candidate => candidate.id === bannerId)!;
+  const banner = m.state.gameplayV4 ? R.invitationBannerV4(bannerId,m.state) : BANNERS.find(candidate => candidate.id === bannerId)!;
   const pity = m.state.account.pity[banner.pityGroup] ?? emptyPity();
   const odds = m.state.gameplayV4 ? R.invitationOddsV4(bannerId, pity) : getBannerOdds(banner, pity);
   const untilLegendary = Math.max(1, banner.hardPity - pity.sinceLegendary);

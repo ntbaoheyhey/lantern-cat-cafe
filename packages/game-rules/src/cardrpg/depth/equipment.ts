@@ -1,3 +1,6 @@
+import { relicBonusA6 } from './relic-a6';
+import { gameplayA6 } from './gameplay-a6';
+import { collectionBonusA6 } from './bonds-a6';
 import { Rng, deriveSeed } from '../../rng';
 import { ITEMS as LEGACY_ITEMS } from '../catalog';
 import { CARD_RPG_CONFIG } from '../config';
@@ -79,7 +82,7 @@ export function initializeEquipment(state:DepthAccount) {
     for(const card of state.account.cards)for(const [slot,id] of Object.entries(state.account.loadouts[card.id]??{}))if(id===item.id){state.equipment[card.cardId]??={};state.equipment[card.cardId]![slot as Slot]=g.id;}
   }
 }
-export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
+export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(!gameplayA6(state) && slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
 /** Apply current balance bounds when reading both new and older saved rolls. */
 export function gearAffixRoll(item: GearInstance, id: string): number {
   const [minimum, maximum] = AFFIX_BY_ID[id]!.tiers[item.tier - 1]!;
@@ -98,6 +101,16 @@ export function depthStats(state:DepthAccount,cardId:string):Stats {
   for(const item of items){const template=GEAR_BY_ID[item.templateId]!;stats[template.main]+=v4?gearMainV4(state,cardId,item):Math.round(template.value*(1+item.enhancement*.06));}
   for(const key of Object.keys(stats) as Array<keyof Stats>)stats[key]=Math.min(CARD_RPG_CONFIG.statCaps[key],stats[key]+(bonus[key]??0));
   const awakening=v4?0:state.awakened[cardId]??0;stats.hp=Math.round(stats.hp*(1+awakening*.03));stats.attack=Math.round(stats.attack*(1+awakening*.03));
+  const collection = collectionBonusA6(state);
+  if (collection) {
+    stats.hp = Math.min(CARD_RPG_CONFIG.statCaps.hp, Math.round(stats.hp * (1 + collection / 10000)));
+    stats.attack = Math.min(CARD_RPG_CONFIG.statCaps.attack, Math.round(stats.attack * (1 + collection / 10000)));
+  }
+  const treasure = relicBonusA6(state);
+  if (treasure && state.team.includes(cardId)) {
+    for (const stat of ['hp', 'attack', 'defense'] as const)
+      stats[stat] = Math.min(CARD_RPG_CONFIG.statCaps[stat], Math.floor(stats[stat] * (1 + treasure / 10000)));
+  }
   return stats;
 }
 export function equipGear(state:DepthAccount,cardId:string,instanceId:string|null,slot?:Slot){

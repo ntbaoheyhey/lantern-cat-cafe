@@ -1,6 +1,7 @@
 import * as T from 'three';
 import { isReadableBattle } from './look-b2';
 import { isLookV2 } from './look-v2';
+import { artPipeline, isLookArtV3 } from './look-art';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { Position } from './formation';
 
@@ -17,6 +18,16 @@ export const HEAD_YAW_LIMIT = 35 * Math.PI / 180;
 export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, row = 'front'): Position {
   const side = actor.side === 'party' ? -1 : 1;
   if (isReadableBattle()) {
+    if (artPipeline() === 'puppet') {
+      if (actor.role === 'yarn') return { x: 2.05, y: 0, z: -.35 };
+      const lane = actor.slot % 3;
+      const rear = row === 'rear';
+      // Fan the party around the front rug, leaving each face a clear silhouette.
+      const x = actor.side === 'party' ? [.8, 2.45, 4.05] : [1.4, 3.10, 3.25];
+      // One party depth preserves body size; front/rear remains a rules property.
+      const z = actor.side === 'party' ? [0, 0, 0] : [-.5, .7, -1.25];
+      return { x: side * x[lane]!, y: 0, z: z[lane]! - (actor.side==='enemy'&&rear ? .25 : 0) };
+    }
     if (actor.role === 'yarn') return { x: 2.15, y: 0, z: -.6 };
     const lane = actor.slot % 3;
     const depth = [-.55, .75, -1.4][lane]!;
@@ -33,8 +44,8 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
 
 export function cardFrameHeight(aspect: number, preset: CardCamera) {
   if (isReadableBattle()) {
-    const widths = { close: 9.6, wide: 10.6, far: 12.0 };
-    return Math.max(3.8, widths.wide / aspect) * widths[preset] / widths.wide;
+    const widths = artPipeline() === 'puppet' ? { close: 10.2, wide: 10.9, far: 12.0 } : isLookArtV3() ? { close: 9.2, wide: 9.9, far: 11.5 } : { close: 9.6, wide: 10.6, far: 12.0 };
+    return Math.max(artPipeline() === 'puppet' ? 4.25 : 3.8, widths.wide / aspect) * widths[preset] / widths.wide;
   }
   if (isLookV2()) {
     const medium = Math.max(4.8, CARD_CAMERAS.wide.worldWidth / aspect);

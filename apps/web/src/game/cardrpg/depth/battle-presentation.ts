@@ -1,4 +1,4 @@
-import type { Battle, BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
+import type { Actor, Battle, BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
 import type { TurnEvent, TurnEventKind } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { createActionPlan, EFFECT_REGISTRY } from '../../squad/turn3d/effects';
 
@@ -8,6 +8,11 @@ const eventTypes: Record<string, TurnEventKind> = {
   heal: 'heal', revive: 'heal', survive: 'heal', shield: 'shield', defeat: 'death',
   status: 'status_apply', expire: 'status_expire', phase: 'boss_phase', summon: 'spawn',
 };
+
+/** A6's first threshold is a shield flag; the legacy phase field advances at the final threshold. */
+export function displayedBossPhase(battle: Battle, actor: Actor): number {
+  return battle.initial.gameplayA6 && actor.bonuses.a6FirstPhase ? actor.phase + 1 : actor.phase;
+}
 
 /** Copy only presentation-owned mutable fields. Rules keep their authoritative battle. */
 export function snapshotBattle(battle: Battle): Battle {

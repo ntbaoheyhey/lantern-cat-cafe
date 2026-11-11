@@ -15,11 +15,12 @@ export const CARD_EFFECT_PRIMITIVES = [
   'wing', 'knot', 'yarn-fan', 'cushion', 'shield-facet', 'petal', 'crescent', 'bubble',
 ] as const;
 export const LOOK_PARTICLE_PRIMITIVES=['soft-particle','motif-particle'] as const;
-export type CardEffectPrimitive = typeof CARD_EFFECT_PRIMITIVES[number] | typeof LOOK_PARTICLE_PRIMITIVES[number];
+export type CardEffectPrimitive = typeof CARD_EFFECT_PRIMITIVES[number] | typeof LOOK_PARTICLE_PRIMITIVES[number] | 'painted-light';
 type Point = [number, number, number?];
 
 /** Original cafe silhouettes, authored in local XY with a small physical depth. */
 export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry {
+  if(kind==='painted-light')return new T.PlaneGeometry(1.5,1.5,12,12);
   if ((ROSTER_PRIMITIVES as readonly string[]).includes(kind)) return createRosterPrimitive(kind as RosterPrimitive);
   if ((BATCH2_PRIMITIVES as readonly string[]).includes(kind)) return createBatch2Primitive(kind as Batch2Primitive);
   if ((BATCH3_PRIMITIVES as readonly string[]).includes(kind)) return createBatch3Primitive(kind as Batch3Primitive);
@@ -56,7 +57,7 @@ export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry
     panel(points.map(([px, py]) => [x + (px * Math.cos(angle) - py * Math.sin(angle)) * size,
       y + (px * Math.sin(angle) + py * Math.cos(angle)) * size]));
   };
-  const builders: Record<Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive | Batch3Primitive>, () => void> = {
+  const builders: Record<Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive | Batch3Primitive | 'painted-light'>, () => void> = {
     'soft-particle'() {parts.push(new T.PlaneGeometry(1,1));},
     'motif-particle'() {parts.push(new T.PlaneGeometry(1,1));},
     door() {
@@ -233,7 +234,7 @@ export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry
       path([[-.24, .10], [-.21, .24], [-.08, .31]], .035);
     },
   };
-  builders[kind as Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive | Batch3Primitive>]();
+  builders[kind as keyof typeof builders]();
   const flattened = parts.map(geometry => geometry.index ? geometry.toNonIndexed() : geometry);
   const merged = mergeGeometries(flattened, false);
   for (const geometry of new Set([...parts, ...flattened])) geometry.dispose();

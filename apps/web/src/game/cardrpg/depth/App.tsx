@@ -1,3 +1,5 @@
+import {gameplayA6} from '../gate';
+import {OpeningA6} from '../ui-v3/OpeningA6';
 import {uiV3Enabled} from '../ui-v3/flag';
 import { BattleSkillsV5 } from './SkillsV5';
 import { DiscoveryCelebrationV4 } from './JourneyV4';
@@ -5,9 +7,10 @@ import { showReviewTools } from "./player-mode";
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
+const JournalA6 = lazy(() => import('../ui-v3/JournalA6').then(m => ({default:m.JournalA6})));
 const CollectionJournalV4 = lazy(() => import('./CafeV4').then(m => ({default:m.CollectionJournalV4})));
 import { DepthModel, type Screen } from './model';
-import { gameplayV4 as activeGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import { gameplayV4 as activeGameplayV4, gameplayA6 as activeGameplayA6 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreviewProvider } from './CompanionPreview';
 import { preloadPreviewModels } from './preview-runtime';
 const BattleView = lazy(() => import('./Battle').then(m => ({default:m.BattleView})));
@@ -40,9 +43,10 @@ const navigation: [Screen, string, string][] = [
   ['relics', '◈', 'Fuji Relics'], ['save', '⚙', 'Save & settings'], ['evidence', '↔', 'Before / after'],
 ];
 export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5 = false }: { offline?: boolean; gameplayV4?: boolean; skillsV5?: boolean }) {
-  const uiV3 = uiV3Enabled();
+  const a6 = gameplayA6();
+  const uiV3 = uiV3Enabled() || a6;
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline, gameplayV4, skillsV5));
+  const [m] = useState(() => new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6));
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -65,25 +69,33 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
   }, []);
   useEffect(() => {
     document.body.classList.add('cardrpg-entry');
+    // A6 is an explicit opt-in; its illustrated DOM and B's puppets share one art direction.
+    const previousArt=window.__LOOK_ART__;
+    if(a6){window.__LOOK_ART__='v3';setLookV2(true);}
     if (offline || import.meta.env.DEV) window.__depthReview = m;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       m.state.settings.reducedMotion = true;
       m.notify(false);
     }
-    return () => { document.body.classList.remove('cardrpg-entry'); delete window.__depthReview; m.audio.dispose(); setLookV2(false); };
-  }, [m, offline]);
+    return () => { document.body.classList.remove('cardrpg-entry'); delete window.__depthReview; m.audio.dispose(); if(a6)window.__LOOK_ART__=previousArt; setLookV2(false); };
+  }, [m, offline, a6]);
   useEffect(() => {
     content.current?.scrollTo(0, 0);
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
   }, [m.screen]);
-  const pageView = <Suspense fallback={<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
-        {m.screen === 'journal' && <CollectionJournalV4 m={m} />}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
+  useEffect(()=>{
+    if(!m.autoContinue||m.screen!=='result'||m.battle?.result!=='party')return;
+    const timer=window.setTimeout(()=>m.continueBattle(),2500);return()=>window.clearTimeout(timer);
+  },[m,m.screen,m.autoContinue]);
+  const openingMessage=m.screen==='save'?'Opening your save desk…':m.screen==='codex'?'Opening the field guide…':m.screen==='relics'?'Opening the keepsake cabinet…':'Opening the table…';
+  const pageView = <Suspense fallback={a6?<OpeningA6 message={openingMessage}/>:<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
+        {m.screen === 'journal' && (activeGameplayA6(m.state)?<JournalA6 m={m}/>:<CollectionJournalV4 m={m}/>)}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
-        {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
-  if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>
-    <Suspense fallback={<p role="status">Opening the cafe…</p>}><ShellV3 m={m}>{pageView}</ShellV3></Suspense>
+        {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} a6={activeGameplayA6(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
+  if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-a6={a6} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>
+    <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}><ShellV3 m={m}>{pageView}</ShellV3></Suspense>
     <DiscoveryCelebrationV4 m={m}/>
-    {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
+    {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={a6?<OpeningA6 message="Preparing the battle…"/>:<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
     {m.showBattle && <Suspense fallback={null}><BattleHudV3 m={m}/></Suspense>}
   </div></CompanionPreviewProvider>;
   return <CompanionPreviewProvider m={m}><div ref={app} data-player-v4={activeGameplayV4(m.state) && !reviewTools} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className="dp-cafe">

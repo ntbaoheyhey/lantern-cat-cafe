@@ -17,7 +17,7 @@ const paths = {
   rng: 'packages/game-rules/src/rng.ts',
 };
 export async function loadRules() {
-  const dir = await mkdtemp('/tmp/cardrpg-v5a-rules-');
+  const dir = await mkdtemp(process.env.BIG_RULES_TMP_PREFIX ?? '/tmp/cardrpg-v5a-rules-');
   const { build } = await import(require.resolve('vite'));
   const output = resolve(dir, 'rules.mjs');
   const entry = resolve(dir, 'entry.ts');

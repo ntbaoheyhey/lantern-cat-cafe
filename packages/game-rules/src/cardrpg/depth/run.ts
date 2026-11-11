@@ -1,3 +1,6 @@
+import { patrolDefaultsA6 } from './onboarding-a6';
+import { powerScoreA6 } from './power-a6';
+import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
 import { combatStarsV4, stopStarsV4 } from './stars-v4';
 import { recordNodeStarsV4 } from './journey-v4';
 import { Rng, deriveSeed } from '../../rng';
@@ -8,7 +11,7 @@ import { createBattle } from './battle';
 import { battleCats, defaultSkills, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
 import type { Row } from './contract';
-import { CAT_BY_ID } from './catalog';
+import { CAT_BY_ID, ENEMY_BY_ID } from './catalog';
 import { DEFAULT_PLAN, validPlan, type StandingPlan } from './gameplay-v4';
 import { challengeStatsV4 } from './pacing-v4';
 export const CHAPTERS = [
@@ -45,19 +48,50 @@ export function availableNodes(run: Run) {
   const last=run.nodes.find(n=>n.id===run.visited.at(-1));
   return run.nodes.filter(n=>last?last.next.includes(n.id):n.depth===0);
 }
+/** Authored campaign pressure. No player stats/equipment or completion count enter this budget.
+ * Preserve the existing seven-stop route: early streets, late streets, then the guardian.
+ * Map, preparation and replay all consume this same frozen enemy snapshot. */
+export function campaignEnemyStatsA6(run: Run, node: RunNode) {
+  const stats = challengeStatsV4(run.challengeLevel ?? 1);
+  if (!run.gameplayA6 || run.mode !== 'campaign' || !node.enemies.length) return stats;
+  // Later guardians spend more of their fixed budget on endurance, avoiding a burst wall.
+  if(node.kind==='boss'&&run.chapter>1)for(const id of node.enemies)
+    if(ENEMY_BY_ID[id]!.tier==='boss')stats[id]!.hp=Math.round(stats[id]!.hp*1.3);
+  const enemies = createBattle({seed: 1, chapter: run.chapter, cats: [], enemies: node.enemies,
+    gameplayV4: true, skillsV5: true, gameplayA6: true, enemyStats: stats}).actors;
+  const expected = [7500, 7900, 8200][run.chapter - 1]!;
+  const ratio = node.kind === 'boss' ? (run.chapter===3?1.2:1.15) : node.kind === 'elite' ? 1.04 : node.depth < 4 ? .72 : .98;
+  const target = expected * ratio * (1 + ((run.challengeLevel ?? 1) - 1) * .012);
+  const attacks = enemies.reduce((n, actor) => n + actor.attack * 20, 0);
+  const other = enemies.reduce((n, actor) => n + powerScoreA6(actor) - actor.attack * 20, 0);
+  const multiplier = Math.max(.1, (target - other) / Math.max(1, attacks));
+  for (const value of Object.values(stats)) value.attack = Math.max(1, Math.round(value.attack * multiplier));
+  // Fallback after the three Q13f passes: shield-wash/Hush bosses need a smaller
+  // strike budget than the first guardian. Keep their fixed HP and mechanics;
+  // do not manufacture the requested Power ratio with an unfixable damage wall.
+  if (node.kind === 'boss' && run.chapter > 1) for (const id of node.enemies) {
+    if (ENEMY_BY_ID[id]!.tier === 'boss')
+      stats[id]!.attack = Math.max(1, Math.round(stats[id]!.attack * (run.chapter === 2 ? .78 : .9)));
+  }
+  return stats;
+}
 export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06', challengeLevel?: number): RuleResult<DepthAccount> {
+  if(state.gameplayA6&&mode==='tower')return startTowerFloorA6(state);
   return transactDepth(state,s=>{
     requireHome(s);requireRule(integer(chapter,1,3)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Invalid chapter or seed.');
     requireRule(chapter===1||s.cleared.includes(chapter-1),'LOCKED','Clear the preceding chapter first.');
     requireRule(mode!=='tower'||s.cleared.includes(3),'LOCKED','Clear Midnight Pantry to open the Tower.');
+    const defaultBand=s.gameplayA6&&mode==='campaign'?patrolDefaultsA6(s).band:undefined;
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
+    if(s.gameplayA6&&mode==='campaign')for(const node of s.run.nodes)
+      if(node.kind==='battle'&&node.depth>=4)node.enemies.push('binding-thread');
     if(s.gameplayV4){
       const ceiling=Math.min(...s.team.map(id=>s.account.cards.find(c=>c.cardId===id)!.level));
-      const band=challengeLevel??ceiling;
+      const band=challengeLevel??defaultBand??ceiling;
       requireRule(integer(band,1,ceiling),'LOCKED','Choose a challenge band no higher than your lowest-level crew member.');
-      s.run.gameplayV4=true;s.run.challengeLevel=band;if(s.skillsV5)s.run.skillsV5=true;
+      s.run.gameplayV4=true;s.run.challengeLevel=band;if(s.skillsV5)s.run.skillsV5=true;if(s.gameplayA6)s.run.gameplayA6=true;
     }
   });
 }
@@ -67,7 +101,8 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:challengeStatsV4(run.challengeLevel)}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      if(run.gameplayA6&&run.mode==='campaign')setup.enemyStats=campaignEnemyStatsA6(run,node);
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });
@@ -81,7 +116,7 @@ export function configurePreparation(state: DepthAccount, team: string[], rows: 
     requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three collected companions.');
     requireRule(team.every(id=>['front','rear'].includes(rows[id]!))&&team.some(id=>rows[id]==='front'&&(run.hp[id]??1)>0),'INVALID_TEAM','Keep at least one living companion in front.');
     const changed=team.some((id,i)=>id!==s.team[i]);
-    requireRule(!changed||run.visited.length===0&&run.floor===1,'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
+    requireRule(!changed||run.visited.length===0&&(run.floor===1||!!run.towerA6),'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
     requireRule(!battle.initial.packedSupply||team.includes(battle.initial.packedSupply.catId),'INVALID_TEAM','Keep the companion with the packed supply for this encounter.');
     s.team=[...team]; s.rows={...s.rows,...rows};
     for(const id of team) s.skills[id]??=CAT_BY_ID[id]!.skills.slice(0,3).map(skill=>skill.id);
@@ -119,8 +154,8 @@ export function rewardOptions(run: Run, skillIds: string[]): string[] {
 function settleRun(s: DepthAccount, won: boolean) {
   const run=s.run!;requireRule(!s.claimedRuns.includes(run.id),'ALREADY_CLAIMED','Run already settled.');
   run.complete=true;run.won=won;s.claimedRuns.push(run.id);
-  const challengeId=run.mode==='daily'?`daily-${run.date}`:run.mode==='tower'?`tower-${run.date}`:'';
-  const rewarded=s.account.daily.battles<6&&(!challengeId||!s.challengeClaims.includes(challengeId));
+  const challengeId=run.mode==='daily'?`daily-${run.date}`:run.mode==='tower'?(run.towerA6?`a6-tower-floor-${run.floor}`:`tower-${run.date}`):'';
+  const rewarded=(!run.towerA6||won)&&s.account.daily.battles<6&&(!challengeId||!s.challengeClaims.includes(challengeId));
   if(rewarded){
     if(run.gameplayV4&&s.v4?.journal)s.v4.journal.rewardedRoutes++;
     s.account.daily.battles++;progress(s.account,'battles');
@@ -130,14 +165,14 @@ function settleRun(s: DepthAccount, won: boolean) {
     if(challengeId)s.challengeClaims.push(challengeId);
   }
   if(won){
-    if(rewarded){progress(s.account,'wins');progress(s.account,'bossWins');}
+    if(rewarded){progress(s.account,'wins');if(!run.towerA6||run.floor%5===0)progress(s.account,'bossWins');}
     const sealKey=`depth-seal-${s.account.day}`;
     if(rewarded&&!s.account.inventory.stacks[sealKey]){s.seals++;s.account.inventory.stacks[sealKey]=1;}
     if(run.mode==='campaign'&&!s.cleared.includes(run.chapter)){
       s.cleared.push(run.chapter);s.materials+=60+run.chapter*20;s.account.chapter=Math.max(s.account.chapter,run.chapter+1);
       grantDepth(s,{fish:120,stamps:80,essence:4});
     }
-    if(run.visited.filter(id=>run.nodes.find(n=>n.id===id)?.kind==='elite').length>=2&&!s.masteries.includes(run.chapter))s.masteries.push(run.chapter);
+    if(!run.towerA6&&run.visited.filter(id=>run.nodes.find(n=>n.id===id)?.kind==='elite').length>=2&&!s.masteries.includes(run.chapter))s.masteries.push(run.chapter);
     if(run.mode==='tower')s.towerBest=Math.max(s.towerBest,run.floor);
   }
 }
@@ -145,14 +180,14 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     const run=s.run,b=run?.battle;requireRule(run&&b?.result,'NOT_READY','Finish the encounter.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Encounter node missing.');
-    recordNodeStarsV4(s, combatStarsV4(run, node, b));
+    if(!run.towerA6)recordNodeStarsV4(s, combatStarsV4(run, node, b));
     if(run.gameplayV4)delete run.packedSupply;
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
-    run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
+    if(!run.towerA6)run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
     const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
     if(drop)run.earnedItems.push(drop);
-    if(node.kind==='boss'){finishNode(run);settleRun(s,true);return;}
+    if(node.kind==='boss'||run.towerA6){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
   });
 }
@@ -212,6 +247,11 @@ export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
   });
 }
 export function nextTowerFloor(state: DepthAccount): RuleResult<DepthAccount> {
+  if(state.run?.towerA6){
+    const old=state.run;
+    if(!old.complete||!old.won||old.floor>=TOWER_FLOORS_A6)return {ok:false,state,error:old.floor>=TOWER_FLOORS_A6?'All thirty floors are complete.':'Clear this floor first.'};
+    return startTowerFloorA6(state,old.floor+1);
+  }
   return transactDepth(state,s=>{
     const old=s.run;requireRule(old?.mode==='tower'&&old.complete&&old.won,'NOT_READY','Clear a Tower floor first.');
     const floor=old.floor+1,seed=deriveSeed(old.seed,floor),chapter=(floor-1)%3+1;

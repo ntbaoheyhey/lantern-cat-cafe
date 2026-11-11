@@ -1,0 +1,9 @@
+# Sorrel grounded staff refinement
+
+Accepted attempt 1 from saved paired images at 1440×900 and 1280×720. The long crook now tilts gently about the actual painted floor tip instead of sweeping its base toward the paws. The open palm leads the cast, with a slight head response and delayed tail. Both shoulder/sleeve joins and the hand around the rigid staff remain continuous at anticipation, hold, release and settle. The original leaf hat, face and staff silhouette are retained. Motion self-score 7.5→7.7; battle appearance/overall remain 7.7. This is a restrained improvement, not a whole-roster score increase.
+
+The staff contact comes from the original source alpha, recorded in staff-tip-source.json. It is independent of the layer's rectangular bounds. The renderer counter-transforms the arm/staff group against breathing and body lean. Sixteen paired views and twelve natural x1 basic/signature/ultimate casts including reduced motion have zero page/shader, bounds, face/HP or socket failures. The actual tip drift stays below 1e-15 local world units. Reduced motion removes the added transforms. Saved typecheck/lint, 25 focused tests and five-seed/six-mode/102-plan parity all pass; none was rerun on resume.
+
+Warmed p95 is at most 16.8 ms. The pinned current A6 e94713b8e + B artifact is 38,185,390 bytes, leaving 1,814,610 bytes below 40 MB. No atlas, rig, geometry, draw call, HUD or event contract changes. The source also contains P20's idempotent boss resource cleanup. The contact sheet and compact summary enter Git; full-size pairs and all playback samples remain available locally.
+
+Research recheck: an authored contact constraint benefits a long floor prop, while amplitude must remain within the original shoulder overlap. Binding Thread and Practice Cushion remain the lowest unrefined motion7.5/overall7.7 rows. Their secondary motion should use the existing painted thread/tassel parts without inventing new silhouettes.

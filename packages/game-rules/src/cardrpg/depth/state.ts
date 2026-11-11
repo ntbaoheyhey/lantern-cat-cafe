@@ -1,3 +1,5 @@
+import { gameplayA6 } from './gameplay-a6';
+import { observeDailyA6 } from './daily-state-a6';
 import { observeDiscoveriesV4 } from './journey-v4';
 import { observeCollectionV4, settleBoardV4 } from './meta-v4';
 import { drawInvitationsV4 } from './gacha-v4';
@@ -25,7 +27,7 @@ export function createDepthAccount(seed=11, now=0): DepthAccount {
 }
 export function transactDepth(state: DepthAccount, fn: (draft: DepthAccount)=>void): RuleResult<DepthAccount> {
   const next=clone(state);
-  try {observeCollectionV4(next);observeDiscoveriesV4(next);fn(next);observeCollectionV4(next);observeDiscoveriesV4(next);return {ok:true,state:next};}
+  try {observeCollectionV4(next);observeDiscoveriesV4(next);fn(next);observeDailyA6(state,next);observeCollectionV4(next);observeDiscoveriesV4(next);return {ok:true,state:next};}
   catch(error){if(!(error instanceof RuleFailure))throw error;return {ok:false,state,error:error.message};}
 }
 export function requireHome(state: DepthAccount) {requireRule(!state.run||state.run.complete,'BATTLE_PENDING','Finish or abandon this run before changing its loadout.');}
@@ -85,7 +87,7 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
 export function battleCats(state: DepthAccount) {
   return state.team.map(id=>{
     const {effects,bonuses}=equipmentEffects(state,id);
-    const relic = id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
+    const relic = !gameplayA6(state) && id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
       ? RELIC_EFFECTS.find(r => r.id === state.selectedRelic) : undefined;
     if (relic) bonuses[relic.bonus] = (bonuses[relic.bonus] ?? 0) + relic.value;
     const stats = depthStats(state,id);

@@ -6,6 +6,8 @@ import { GEAR, GEAR_BY_ID, SETS } from './equipment';
 import { gameplayV4 } from './gameplay-v4';
 import { stackCapV4 } from './items-v4';
 import { claimIdleService, idlePreview, syncCalendarDay } from './bridge';
+import { gameplayA6 } from './gameplay-a6';
+import { claimIdleA6, idleChestA6 } from './idle-a6';
 import { DEPTH_CAPS, depthCaps, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount } from './contract';
 export interface CollectionJournalV4 { cats:string[];gear:string[];sets:string[];rewardedRoutes:number;claims:string[] }
@@ -61,6 +63,7 @@ export function settleBoardV4(s:DepthAccount,id:string):void {
  s.account.quests[id]!.claimed=true;
 }
 export function cafeShiftV4(s:DepthAccount,now:number){
+ if(gameplayA6(s))return idleChestA6(s,now);
  const floor=Math.max(s.idle.lastAt,s.v4?.clockWatermark??0,(s.idle.dayKey??0)*86400000),rollback=!Number.isSafeInteger(now)||now<floor;
  const effective=rollback?floor:now;
  const dayKey=Math.floor(effective/86400000),previous=s.idle.dayKey??Math.floor(s.idle.lastAt/86400000);
@@ -76,7 +79,7 @@ export function cafeShiftV4(s:DepthAccount,now:number){
  }
  return {...preview,claims,reward,rollback,remaining:Math.max(0,2-state.account.daily.service),now:effective,readyAt};
 }
-export function claimCafeShiftV4(state:DepthAccount,now:number){return transactDepth(state,s=>{
+export function claimCafeShiftV4(state:DepthAccount,now:number){if(gameplayA6(state))return claimIdleA6(state,now);return transactDepth(state,s=>{
  requireHome(s);requireRule(gameplayV4(s),'NOT_READY','Enable Gameplay v4 first.');
  const preview=cafeShiftV4(s,now);requireRule(!preview.rollback&&preview.claims>0,'NOT_READY','Wait for the next useful cafe service.');
  requireRule(Object.values(preview.reward).some(n=>n>0),'DAILY_CAP','Daily reward space is full. Your service is not consumed.');

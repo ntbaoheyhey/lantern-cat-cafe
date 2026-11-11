@@ -45,7 +45,9 @@ function value(b: Battle): number {
 }
 /** One-action lookahead keeps playback cheap and makes every decision reproducible. */
 function automatic(b: Battle): Choice {
-  const scored = legalChoices(b).map(choice => {
+  const choices = legalChoices(b);
+  const charged = b.initial.gameplayA6 ? choices.filter(choice => skillById(choice.skillId,true)?.type==='ultimate') : [];
+  const scored = (charged.length?charged:choices).map(choice => {
     const preview = previewCopy(b);
     act(preview, choice);
     let score = value(preview) + planPreference(b,choice) + (b.initial.skillsV5?actionBonusV5(b,preview,choice):0);

@@ -1,3 +1,4 @@
+import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
@@ -9,7 +10,7 @@ import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
 import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
-export type Screen = 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
+export type Screen = 'tower' | 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
   state: R.DepthAccount;
   screen: Screen = 'hub';
@@ -37,6 +38,13 @@ export class DepthModel {
   replayReturn: Screen = 'save';
   plan: EffectPlan | null = null;
   animationAt = 0;
+  playbackAt = 0;
+  private playbackFrameAt?: number;
+  ultimateBannerUntil = 0;
+  comboBanner = '';
+  comboBannerUntil = 0;
+  private ultimateBannersAt: number[] = [];
+  autoContinue = false;
   momentNote = '';
   private beforeImpact: R.Battle | null = null;
   private afterImpact: R.Battle | null = null;
@@ -55,7 +63,7 @@ export class DepthModel {
   get cafeNow() { return this.offline ? this.cafeClockBase + Math.max(0, Date.now() - this.cafeClockStart) : Date.now(); }
   private resetCafeClock() { this.cafeClockStart = Date.now(); this.cafeClockBase = Math.max(this.state.idle.lastAt, this.state.v4?.clockWatermark ?? 0, (this.state.idle.dayKey ?? 0) * 86400000); }
 
-  constructor(readonly offline: boolean, readonly gameplayMode = false, readonly skillsMode = false) {
+  constructor(readonly offline: boolean, readonly gameplayMode = false, readonly skillsMode = false, readonly a6Mode = false) {
     this.state = R.createDepthAccount(11, offline ? 0 : Date.now());
     if (!offline) {
       try {
@@ -73,7 +81,7 @@ export class DepthModel {
       this.state.selectedRelic = null;
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
-    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.resetCafeClock();
+    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock();
     this.itemId = this.state.gear[0]?.id ?? '';
     if (!offline) {
       try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
@@ -166,7 +174,7 @@ export class DepthModel {
     }
   }
   tutorial() {
-    this.tutorialBattle = R.createBattle({ ...(R.skillsV5(this.state)?{skillsV5:true}:{}),seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
+    this.tutorialBattle = R.createBattle({ ...(R.gameplayA6(this.state)?{gameplayA6:true}:{}),...(R.skillsV5(this.state)?{skillsV5:true}:{}),seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
       ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan,
         enemyStats: { 'practice-cushion': { hp: 300, attack: 60, defense: 0 } } } : {}) });
     this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
@@ -177,6 +185,7 @@ export class DepthModel {
       if (this.tutorialBattle) this.tutorialBattle.v4!.committed = true;
       else if (!this.apply(R.commitPreparation(this.state), 'Preparation committed. Your crew follows its standing plan.')) return;
     }
+    this.comboBanner = ''; this.comboBannerUntil = 0;
     this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
     this.notify();
   }
@@ -210,7 +219,28 @@ export class DepthModel {
   private showResult() {
     this.watching = false; this.paused = false; this.plan = null; this.screen = 'result'; this.notify();
   }
+  get a6Battle() { return !!this.battle?.initial.gameplayA6; }
+  get canSkip() {
+    if (!this.a6Battle) return !this.galleryBattle;
+    if (this.replay) return true;
+    const run=this.state.run, node=run?.nodes.find(n=>n.id===run.current);
+    return !!(run&&node&&this.state.v4?.journey?.stars[R.nodeStarKeyV4(run,node)]?.conditions.every(Boolean));
+  }
+  cycleSpeed() {
+    const speeds=this.a6Battle?[1,2,3]:[1,2,4];
+    this.state.settings.speed=speeds[(speeds.indexOf(this.state.settings.speed)+1)%speeds.length]!;this.notify();
+  }
+  continueBattle() {
+    if (!this.autoContinue || !this.a6Battle || this.battle?.result!=='party' || this.tutorialBattle || this.replay) return;
+    this.finish();
+    const run=this.state.run;
+    if (!run || run.complete) return;
+    if (run.rewardChoices.length) this.apply(R.chooseReward(this.state,run.rewardChoices[0]!),'Charm collected.');
+    const next=R.availableNodes(this.state.run!).find(n=>n.enemies.length);
+    if (next) {this.enter(next.id);this.fight();}
+  }
   skip() {
+    if (!this.canSkip) return;
     if (!this.battle || this.galleryBattle) return;
     if (this.replay) {
       this.replay = R.replayBattle(this.replay.initial, this.replayChoices);
@@ -259,8 +289,15 @@ export class DepthModel {
       && presentation.impact.actors.filter(target => target.side === 'enemy').every(target => target.hp <= 0);
     this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
     if (savingHeal) savingHeal.note = 'Clutch heal';
-    this.plan = createCardActionPlan(events, identity);
+    this.plan = paceActionA6(createCardActionPlan(events, identity), battle.initial);
+    if(this.a6Battle && this.plan.ultimate && actor.side==='party'){
+      this.ultimateBannersAt=this.ultimateBannersAt.filter(at=>this.playbackAt-at<10000);
+      if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+800/this.state.settings.speed;}
+      else this.ultimateBannerUntil=0;
+    }
     const actionEvents = battle.log.slice(before);
+    const combos = actionEvents.filter(event => event.kind === 'bond.combo');
+    if (combos.length) { this.comboBanner = combos.map(event => event.text).join(' · '); this.comboBannerUntil = this.playbackAt + 1800; }
     const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
       && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
     const sootDetonation = actor.catalogId === 'soot'
@@ -270,10 +307,17 @@ export class DepthModel {
     this.animationAt = 0;
     this.notify();
   }
-  tick(milliseconds: number) {
+  tick(milliseconds: number, now = performance.now()) {
+    const previousFrame = this.playbackFrameAt;
+    this.playbackFrameAt = now;
     if (this.paused || !this.showBattle) return;
+    // The shared canvas caps its delta at 100 ms. Keep opted-in playback at
+    // wall-clock speed on slow frames, without catching up an inactive tab.
+    const elapsed = this.a6Battle && !this.galleryBattle && previousFrame !== undefined
+      ? Math.max(milliseconds, Math.min(250, Math.max(0, now - previousFrame))) : milliseconds;
+    this.playbackAt += elapsed;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
-    this.animationAt += milliseconds * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
+    this.animationAt += elapsed * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
     if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
       this.impactApplied = true;
       this.notify(false);
@@ -312,7 +356,8 @@ export class DepthModel {
     const run = this.state.run;
     if (!run || !this.apply(R.applyResultAdviceV4(this.state, advice), advice.label)) return;
     this.plan = null; this.watching = false; this.paused = false;
-    this.start(run.chapter, run.mode, run.challengeLevel);
+    if(run.towerA6){if(!this.apply(R.startTowerFloorA6(this.state,run.floor),'Try the same Tower floor with your upgrade.'))return;this.go('map');}
+    else this.start(run.chapter, run.mode, run.challengeLevel);
     if (this.state.run && !this.state.run.complete) {
       const first = R.availableNodes(this.state.run)[0];
       if (first) this.enter(first.id);
@@ -358,7 +403,7 @@ export class DepthModel {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now());
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
       this.restoreEncounter();
       this.paused = false;
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
@@ -368,7 +413,7 @@ export class DepthModel {
   reset() {
     this.state = R.setGameplayV4(R.createDepthAccount(11, this.offline ? 0 : Date.now()), this.gameplayMode);
     if(this.skillsMode)this.state=R.setSkillsV5(this.state,true);
-    this.resetCafeClock();
+    this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock();
     this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
     this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';

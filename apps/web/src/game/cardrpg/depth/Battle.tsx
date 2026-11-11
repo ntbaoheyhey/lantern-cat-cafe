@@ -1,3 +1,4 @@
+import {artPropsA6} from '../ui-v3/art-a6';
 import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
 import { numberLaneWidth } from '../../squad/turn3d/card-number-lane';
 import { StatusLegend } from '../../squad/turn3d/StatusLegend';
@@ -12,6 +13,7 @@ import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { MODEL_IDS, portrait, skillIcon } from './assets';
 import type { DepthModel } from './model';
+import { displayedBossPhase } from './battle-presentation';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
 import { impactLabels } from '../../squad/turn3d/impact-labels';
@@ -80,7 +82,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     cardMoment: !!m.plan?.ultimate && battle.actors.find(a=>a.id===m.plan?.actorId)?.side==='party' && !m.galleryEffectOnly,
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera, playbackSpeed: m.state.settings.speed,
-    bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, a.phase])),
+    bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, displayedBossPhase(battle, a)])),
     targetIds: m.plan?.targetIds ?? [], legalIds: [],
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
@@ -147,8 +149,9 @@ export function BattleView({ m }: { m: DepthModel }) {
         }
       }
       const loading = scene.current?.loading;
-      if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
-        loadingText.current.textContent = loading.label;
+      const loadingLabel=m.a6Battle?'Lighting the lanterns…':loading?.label;
+      if (loading && loadingText.current && loadingText.current.textContent !== loadingLabel) {
+        loadingText.current.textContent = loadingLabel??'';
       }
       if (loading && loadingProgress.current && loadingProgress.current.value !== loading.completed) {
         loadingProgress.current.max = loading.total;
@@ -212,16 +215,18 @@ export function BattleView({ m }: { m: DepthModel }) {
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
         <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
-      {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status"><span ref={loadingText}>Preparing the cafe miniatures…</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
+      {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
       {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
+        const phase = displayedBossPhase(battle, enemy);
+        const phaseName = battle.initial.gameplayA6 && phase === 2 ? 'Woolguard shield' : enemy.phase === 1 ? R.ENEMY_BY_ID[enemy.catalogId]?.phases[0] : 'Awakened';
         return <div className="dp-world-plate" key={enemy.id} data-actor={enemy.id} data-hp-plate tabIndex={readable ? 0 : undefined} hidden
           ref={element => { if (element) plates.current.set(enemy.id, element); else plates.current.delete(enemy.id); }}>
           <div><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp}</small></div>
           <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
           <small className="dp-intent" title={intent?.label}>{intent?.interrupted ? 'Interrupted' : intent?.label}</small>
-          {R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {enemy.phase} · {enemy.phase === 1 ? R.ENEMY_BY_ID[enemy.catalogId]!.phases[0] : 'Awakened'}</small>}
+          {R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={battle.initial.gameplayA6 ? phaseName : R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {phase} · {phaseName}</small>}
           <Statuses actor={enemy} look={lookV2} />
         </div>;
       })}

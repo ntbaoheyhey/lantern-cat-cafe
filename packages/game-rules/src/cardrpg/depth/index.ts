@@ -30,3 +30,20 @@ export * from './journey-v4';
 export * from './stars-v4';
 
 export * from './skills-v5';
+
+export * from './gameplay-a6';
+
+export * from './bonds-a6';
+
+export * from './power-a6';
+export * from './upgrades-a6';
+export * from './idle-a6';
+
+export * from './tower-a6';
+
+export * from './daily-state-a6';
+export * from './daily-a6';
+
+export * from './relic-a6';
+
+export * from './onboarding-a6';

@@ -1,3 +1,4 @@
+import type { DailyProgressA6 } from './daily-state-a6';
 import type { PackedSupplyV4 } from './items-v4';
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
 import type { BattleV4State, GameplayV4State, StandingPlan } from './gameplay-v4';
@@ -51,7 +52,7 @@ export interface Battle {
 export interface BattleSetup {
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
-  skillsV5?: boolean; gameplayV4?: boolean; plan?: StandingPlan;
+  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; plan?: StandingPlan;
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
   enemyStats?: Record<string, Pick<Enemy, 'hp' | 'attack' | 'defense'>>;
@@ -60,9 +61,10 @@ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'tre
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
 export interface Boon { id: string; name: string; archetype: string; description: string; cap: number; trigger: string; value: number }
 export interface Run {
+  towerA6?: { enemyStats: NonNullable<BattleSetup['enemyStats']> };
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
-  skillsV5?: boolean; gameplayV4?: boolean;
+  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean;
   id: number; seed: number; chapter: number; mode: 'campaign' | 'daily' | 'tower'; nodes: RunNode[];
   visited: string[]; current: string | null; points: number; boons: Record<string, number>;
   hp: Record<string, number>; upgrades: Record<string, number>; rewardChoices: string[];
@@ -76,12 +78,13 @@ export interface GearTemplate {
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
 export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
-  skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;
+  dailyA6?: DailyProgressA6;
+  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;
   version: typeof CONTRACT_VERSION; account: AccountState; team: string[]; rows: Record<string, Row>; skills: Record<string, string[]>;
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];
   gear: GearInstance[]; equipment: Record<string, Partial<Record<Slot, string>>>; awakened: Record<string, number>;
   materials: number; seals: number; masteries: number[]; challengeClaims: string[]; claimedRuns: number[];
-  idle: { lastAt: number; dayKey?: number; receiptIds: string[] }; tutorial: number; freeInvite: boolean;
+  idle: { lastAt: number; dayKey?: number; receiptIds: string[]; a6?: { fastDay: number; fastClaims: number } }; tutorial: number; freeInvite: boolean;
   settings: { sound: boolean; speed: number; reducedMotion: boolean; quality: 'low' | 'medium' | 'high' };
   relics: number[]; selectedRelic: number | null; designClaims: string[];
 }
