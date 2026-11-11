@@ -35,7 +35,7 @@ export async function intake({id,folder,root=ROOT,install=false,scale}) {
     if (!old.includes(note)) await writeFile(path,old+'\n'+note+'\n');
   }
   await writeFile(resolve(evidence,'validation.json'),JSON.stringify(report,null,2)+'\n');
-  const feedback=`# ${id}: ${report.verdict}\n\n${report.accepted?'PASS — cấu trúc xuất hợp lệ. '+(report.installed?'Đã cài bản runtime, giữ nguyên file gốc.':'Chưa cài; đây là kiểm tra đọc-only.'):'FIX — giữ placeholder hiện tại, cần sửa các mục dưới.'}\n\n`+
+  const feedback=`# ${id}: ${report.verdict}\n\n${report.accepted?'PASS — cấu trúc xuất hợp lệ. '+(report.installed?'Đã cài bản runtime, giữ nguyên file gốc.':'Chưa cài; đây là kiểm tra đọc-only.'):'FIX — giữ bản đã nghiệm thu hoặc placeholder hiện tại; cần sửa các mục dưới.'}\n\n`+
     report.issues.map(i=>`- ${i.severity}: ${i.message}`).join('\n')+`\n\nScale manifest: ${report.scale??1}. Không sửa PSD, .spine hoặc source.\nVisual QA: ${report.installed?'PENDING filmstrip + battle 1280×720/1440×900; chạy acceptance.mjs trước khi duyệt mỹ thuật.':'chưa chạy; chưa xác nhận chất lượng hình ảnh.'}\n`;
   await writeFile(resolve(evidence,'PASS-FIX-VI.md'),feedback);
   return report;

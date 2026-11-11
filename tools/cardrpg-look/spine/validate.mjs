@@ -3,6 +3,7 @@ import { readFile, readdir, realpath } from 'node:fs/promises';
 import { resolve, relative, isAbsolute } from 'node:path';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
+import { PNG } from 'pngjs';
 
 export const ROOT = resolve(import.meta.dirname, '../../..');
 const require = createRequire(resolve(ROOT,'apps/web/package.json'));
@@ -18,10 +19,14 @@ export async function safeRead(folder,name) {
   if (rel.startsWith('..') || isAbsolute(rel)) throw Error(`Asset escapes delivery folder: ${name}`);
   return readFile(path);
 }
-export function pngSize(bytes) {
-  if (bytes.length<33 || !bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])) || bytes.toString('ascii',12,16)!=='IHDR') throw Error('Invalid PNG header');
+export function pngSize(bytes,name='image') {
+  if (bytes.length<33 || !bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])) || bytes.toString('ascii',12,16)!=='IHDR') throw Error(`Invalid PNG header: ${name}`);
   const size=[bytes.readUInt32BE(16),bytes.readUInt32BE(20)];
-  if (size.some(n=>n<1||n>CONFIG.atlasMax)) throw Error(`PNG ${size.join('×')} exceeds ${CONFIG.atlasMax} or is empty`);
+  if (size.some(n=>n<1||n>CONFIG.atlasMax)) throw Error(`PNG ${name}: ${size.join('×')} exceeds ${CONFIG.atlasMax} or is empty`);
+  // A valid header alone also exists in truncated/corrupt deliveries. Decode
+  // bounded pixels and verify chunk CRCs before an immutable revision is accepted.
+  try { PNG.sync.read(bytes,{checkCRC:true}); }
+  catch(error) { throw Error(`Invalid PNG image data (${name}): ${error.message??error}`); }
   return size;
 }
 function heightGate(result,unit,height,width) {
@@ -55,7 +60,7 @@ export function validateSkeleton({unit,source,atlasText,pages,scale=1,format='js
     for (const page of atlas.pages) {
       if (!safeName(page.name)||!page.name.endsWith('.png')) throw Error(`Invalid PNG page name: ${page.name}`);
       const bytes=pages[page.name]; if (!bytes) throw Error(`Missing PNG ${page.name}`);
-      const [width,height]=pngSize(bytes);
+      const [width,height]=pngSize(bytes,page.name);
       if (width!==page.width||height!==page.height) throw Error(`Atlas/PNG size mismatch: ${page.name}`);
       page.setTexture(new Spine.FakeTexture({width,height}));
       if (!page.pma) issue(result,'WARN','alpha',`${page.name} uses straight alpha; loader will premultiply on upload.`);
@@ -104,7 +109,7 @@ export async function validateSequence(folder,unit) {
       result.animations[name]={duration:clip.frames.length/fps,events:clip.events??[]};
       for (const frame of clip.frames) if (!unique.has(frame)) {
         if (!frame.endsWith('.png')) throw Error('Sequence frames must be PNG');
-        const png=await safeRead(folder,frame), size=pngSize(png);
+        const png=await safeRead(folder,frame), size=pngSize(png,frame);
         if (dimensions&&size.some((n,i)=>n!==dimensions[i])) throw Error('Sequence frames require one shared canvas size');
         dimensions=size;unique.add(frame);bytes+=png.length;
       }

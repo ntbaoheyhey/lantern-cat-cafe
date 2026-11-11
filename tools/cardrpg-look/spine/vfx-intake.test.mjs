@@ -11,6 +11,11 @@ test('PNG designer effect installs without touching source; invalid replacement 
  const root=resolve(dir,'repository');await mkdir(resolve(root,'assets/cardrpg-look/vfx-designer'),{recursive:true});const manifest=resolve(root,'assets/cardrpg-look/vfx-designer/registry.json');await writeFile(manifest,'{"version":1,"effects":{}}');
  assert.equal((await intakeVfx({id:'mochi-1',folder:dir,root,install:true})).installed,true);assert.deepEqual(await readFile(resolve(dir,'effect.json')),before);const accepted=await readFile(manifest);
  await writeFile(resolve(dir,'effect.json'),JSON.stringify({...sequence,frames:['missing.png']}));assert.equal((await intakeVfx({id:'mochi-1',folder:dir,root,install:true})).accepted,false);assert.deepEqual(await readFile(manifest),accepted);
+ await writeFile(resolve(dir,'effect.json'),before);
+ const broken=(await readFile(resolve(dir,'mochi.png'))).subarray(0,33);await writeFile(resolve(dir,'mochi.png'),broken);
+ const corrupt=await intakeVfx({id:'mochi-1',folder:dir,root,install:true});assert.equal(corrupt.installed,false);assert.equal(corrupt.accepted,false);
+ assert.ok(corrupt.issues.some(i=>i.severity==='FIX'&&i.message.includes('PNG')));
+ assert.deepEqual(await readFile(manifest),accepted);assert.deepEqual(await readFile(resolve(dir,'mochi.png')),broken);
 }));
 test('official Spine effect parser accepts centered export and rejects version, crop and nonfinite bones',()=>setup(async dir=>{
  const source=JSON.parse(await readFile(resolve(dir,'mochi.json')));source.bones[0].y=-256;source.animations.effect=source.animations.attack;

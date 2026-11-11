@@ -1,0 +1,9 @@
+# C11 — reject broken PNG deliveries before installation
+
+Two isolated copies reproduced a false structural PASS: a PNG containing only its33byte header, and a full-length PNG with corrupt IDAT data. The old gate read dimensions but never decoded the image. Original designer/source files were not touched.
+
+The shared PNG gate now checks its existing2048px limit first, then uses pinned pngjs7.0.0 to decode image data and verify CRCs. Failures include the actual page/frame name and produce FIX. The dependency belongs to Node intake tooling only; browser code, published art and the offline bundle are unchanged. Character atlas, PNG sequence and optional VFX intake all use this gate. Feedback now accurately says that a previous accepted export or placeholder is retained.
+
+Both baseline corrupt files now produce FIX. New regressions reject header-only/truncated/IDAT/CRC damage and prove corrupt atlas/sequence replacements leave the accepted slot manifest and source bytes unchanged. The VFX regression similarly preserves its accepted registry. All41validation/placeholder/VFX tests pass, including every25published placeholder and the PSD pilot; after adding filename diagnostics the affected15tests pass again. Workspace typecheck/lint and whitespace pass. The initial test syntax typo and its failed command remain in logs; the independent baseline reproducer was valid.
+
+Retained recovery source/offline screenshots at1280×720/1440×900 were inspected; no visual code changed in this item, so no new screenshots or demo rebuild. Demo remains29,226,045bytes. Compact proof/logs are in checks/c11-png-gate-*; mutated fixture copies remain outside git at /tmp/cardrpg-c-png-gate-NUI8PZ. Evidence119.19MB, score7.79unchanged. No gameplay/performance measurement, designer export or license resolution claimed. Continue C8/C11; review event fallbacks next.
