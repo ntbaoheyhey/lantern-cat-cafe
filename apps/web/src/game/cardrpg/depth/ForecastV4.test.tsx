@@ -73,7 +73,7 @@ it('uses current A6 enemy advice without changing the forecast result or legacy 
   const ui = render(<ForecastV4 setup={build}/>);
   const worker = mock.workers[0]!;
   act(() => worker.onmessage!({data: {key: worker.request!.key, result: {band: 'Favoured', risk: 'Every third round restores 65 HP.', samples: 20, wins: 19, firstFallen: null, computeMs: 1}}}));
-  expect(screen.getByText('Teacup Healer: Heals its weakest ally every two rounds.')).toBeTruthy();
+  expect(screen.getByText(/Teacup Healer: Heals its weakest ally on even rounds or at full rage/)).toBeTruthy();
   expect(screen.getByRole('heading', {name: 'Favoured'})).toBeTruthy();
   expect(screen.queryByText(/Every third round/)).toBeNull();
   ui.rerender(<ForecastV4 setup={{...setup(), enemies: ['teacup-healer']}}/>);

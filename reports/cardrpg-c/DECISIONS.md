@@ -132,3 +132,7 @@
 2026-11-11T20:21:24.468360+00:00 C11: screenshot review caught faint empty-search battle hint and clipped index focus rings. Set explicit paper-ink text and8px scroll padding; require whole focus ring visibility after transitions. No rules change.
 
 2026-11-11T20:34:32.807818+00:00 C11: disclose kit cooldown and active-route effect-power rank through one shared component. Keep the passive in the focused scroll note and compact only the720p Skills identity to preserve125px note space; no combat changes. Supplement waits for browser scroll endpoints before capture.
+
+2026-11-11T20:35:31.962693+00:00 Evidence: compact four retained JSON reports without changing any values, records or files; recover 1094332 bytes to stay under120MB. No acceptance run repeated.
+
+2026-11-11T20:50:39.878328+00:00 C11: replace stale third-round/signature claims with current rage/action semantics for13enemies. Bound preparation tactics separately to keep forecast/Fight visible; preserve legacy notes and rules. Wait for overflow/hint agreement before retaining screenshots.

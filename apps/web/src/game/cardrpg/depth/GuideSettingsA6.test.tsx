@@ -53,7 +53,7 @@ it('uses current enemy mechanics and phase advice only in the A6 field guide',()
  const view=render(<Codex v4 skillsV5 a6/>);
  fireEvent.click(screen.getByRole('button',{name:'enemies'}));
  fireEvent.click(screen.getByRole('button',{name:'Teacup Healer'}));
- expect(screen.getByText('Heals its weakest ally every two rounds.')).toBeTruthy();
+ expect(screen.getByText(/Heals its weakest ally on even rounds or at full rage/)).toBeTruthy();
  expect(screen.queryByText('Every third round restores 65 HP to the most injured foe.')).toBeNull();
  fireEvent.click(screen.getByRole('button',{name:'Yarn Giant'}));
  expect(screen.getByText(/66% HP: woolguard shield/)).toBeTruthy();
