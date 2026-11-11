@@ -5,16 +5,19 @@ import type { Status } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract
 import { statusIdentity, type VisualStatusId } from './card-status-data';
 
 type VisualStatus = Omit<Status,'id'> & {id:VisualStatusId};
+export type StatusTooltipRule = {name:string;description:string;cap:number;duration:number};
+export type StatusRuleResolver = (id:VisualStatusId) => StatusTooltipRule | undefined;
 // Presentation copies of the two published S4 rules; never used by combat.
 const NEW_RULES = { snag:{name:'Bleed',cap:5,duration:3,description:'Lose 8 HP per stack before your action. Shields absorb it.'}, bitter:{name:'Bitter',cap:1,duration:2,description:'Receive half as much healing and shielding.'} };
 const ruleFor=(id:VisualStatusId)=>id==='snag'||id==='bitter'?NEW_RULES[id]:STATUS_BY_ID[id];
-export function statusDescription(status: VisualStatus) {
-  const look = statusIdentity(status.id), rule = ruleFor(status.id);
-  return `${look?.name ?? status.id} — ${look?.subtitle ?? rule?.name ?? status.id}. ${rule?.description ?? 'Unknown status.'} Stacks ${status.stacks}/${rule?.cap ?? '?'}. ${status.remaining} rounds remaining.`;
+export function statusDescription(status: VisualStatus, resolveRule?:StatusRuleResolver) {
+  const look = statusIdentity(status.id), current=resolveRule?.(status.id), rule = current ?? ruleFor(status.id);
+  const title=current?current.name:`${look?.name ?? status.id} — ${look?.subtitle ?? rule?.name ?? status.id}`;
+  return `${title}. ${rule?.description ?? 'Unknown status.'} Stacks ${status.stacks}/${rule?.cap ?? '?'}. ${status.remaining} rounds remaining.`;
 }
 
 /** Ordinary DOM outside postprocessing. Only mounted by the lookV2 branch. */
-export function StatusBadges({ statuses, name }: { statuses: readonly VisualStatus[]; name: string }) {
+export function StatusBadges({ statuses, name, resolveRule }: { statuses: readonly VisualStatus[]; name: string; resolveRule?:StatusRuleResolver }) {
   const tooltipId = useId();
   const [tip, setTip] = useState<{ key: string; text: string; x: number; y: number; above: boolean } | null>(null);
   const sorted = [...statuses].sort((a,b) => (statusIdentity(a.id)?.order ?? 2) - (statusIdentity(b.id)?.order ?? 2));
@@ -32,7 +35,7 @@ export function StatusBadges({ statuses, name }: { statuses: readonly VisualStat
   });
   return <div className="dp-status-badges" aria-label={`${name} statuses`}>
     {sorted.slice(0,4).map(status => {
-      const look = statusIdentity(status.id), rule = ruleFor(status.id), text = statusDescription(status);
+      const look = statusIdentity(status.id), rule = resolveRule?.(status.id) ?? ruleFor(status.id), text = statusDescription(status,resolveRule);
       return <button type="button" key={status.id} className="dp-status-badge" data-status={status.id} data-status-family={look?.order === 0 ? 'debuff' : look?.order === 1 ? 'buff' : 'signature'}
         style={{ '--status-color':look?.color ?? '#fff0d2' } as CSSProperties}
         aria-label={text} {...events(status.id,text)}>
@@ -43,8 +46,8 @@ export function StatusBadges({ statuses, name }: { statuses: readonly VisualStat
         </svg><b aria-hidden="true">{status.stacks}</b>
       </button>;
     })}
-    {sorted.length > 4 && <button type="button" className="dp-status-more" aria-label={`${sorted.length-4} more statuses. ${sorted.slice(4).map(statusDescription).join(' ')}`}
-      {...events('more', sorted.slice(4).map(statusDescription).join('\n'))}>+{sorted.length-4}</button>}
+    {sorted.length > 4 && <button type="button" className="dp-status-more" aria-label={`${sorted.length-4} more statuses. ${sorted.slice(4).map(s=>statusDescription(s,resolveRule)).join(' ')}`}
+      {...events('more', sorted.slice(4).map(s=>statusDescription(s,resolveRule)).join('\n'))}>+{sorted.length-4}</button>}
     {tip && createPortal(<div id={tooltipId} className="dp-status-tooltip" role="tooltip"
       style={{left:tip.x,maxHeight:Math.max(80,innerHeight-tip.y-8), ...(tip.above ? {bottom:tip.y} : {top:tip.y})}}>{tip.text}</div>,document.body)}
   </div>;

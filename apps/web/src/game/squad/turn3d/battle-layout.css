@@ -284,6 +284,8 @@
 .dp-readable .dp-action-caption{height:21px;min-height:21px;padding:2px 12px;font-size:10px;justify-content:center;gap:16px;box-sizing:border-box}
 .dp-readable .dp-float-number{position:absolute;top:0;left:0;z-index:5;pointer-events:none;display:flex;gap:8px;justify-content:center;width:140px;font:800 22px/1 system-ui;text-shadow:0 2px 2px #14242a,1px 0 #14242a,-1px 0 #14242a;animation:readable-rise .55s ease-out both}
 .dp-readable .dp-float-number .dp-number{font:inherit;color:#ffe2c4;background:#142932;border-radius:5px;padding:2px 5px}.dp-readable .dp-float-number .dp-number-heal{color:#b7ffd8}.dp-readable .dp-float-number .dp-number-shield{color:#b3e8ff}
+/* Canvas owns visible glyphs in puppet mode; the existing DOM labels stay accessible. */
+.dp-readable .dp-canvas[data-puppet-numbers="true"]~.dp-float-number{opacity:0!important;animation:none!important}
 .dp-readable .dp-statuses{display:flex;gap:3px;margin:0}.dp-readable .dp-statuses>span{font-size:8px;line-height:12px;padding:0 3px}
 .dp-readable .dp-world-plate .dp-statuses{position:absolute;top:100%;left:0;background:#172e36;border-radius:4px;pointer-events:none;display:none}.dp-readable .dp-world-plate:is(:hover,:focus-visible) .dp-statuses{display:flex}
 .dp-readable .dp-world-plate{box-sizing:border-box;min-height:32px}.dp-readable .dp-world-plate .dp-intent{display:none!important}

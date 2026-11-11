@@ -11,7 +11,8 @@ import type { Direction } from './effect-direction';
 import type { CardEffectPrimitive } from './card-effect-primitives';
 
 export type CardEffectMotion = 'hold' | 'expand' | 'orbit' | 'projectile' | 'burst'
-  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse' | 'emit' | 'shrink';
+  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse' | 'emit' | 'shrink'
+  | 'crescent' | 'converge';
 export type CardEffectAnchor = 'caster' | 'target' | 'all-targets';
 export interface CardEffectLayer {
   primitive: CardEffectPrimitive;
@@ -30,6 +31,8 @@ export interface CardEffectLayer {
   accent: boolean;
   opacity: number;
   spriteRow?: number;
+  /** Emit from the animated prop socket when the current model provides it. */
+  propOrigin?: boolean;
   emitter?: {mode: 'burst' | 'rate';life: number;velocity: [number,number,number];gravity: number;curl: number;inherit: number};
 }
 export interface CardEffectRecipe {

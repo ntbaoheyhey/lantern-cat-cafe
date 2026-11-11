@@ -1,0 +1,10 @@
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:33:39)
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/repair-decoded.py", line 73, in <module>
+    raise ValueError('Surface drift exceeds source-scale review bound; diagnostics preserved, source rejected')
+ValueError: Surface drift exceeds source-scale review bound; diagnostics preserved, source rejected
+{"sourceCheckpointSha256": "7a595674f1d7680cdf373da1afc64f2e22c309893ef2ae4a85028ab42bfbe0d7", "method": "Blender voxel 0.0015, volume preserved, smooth 0.12 x1, source target100K", "tool": "4.5.3 LTS", "trianglesBefore": 280621, "trianglesAfter": 754242, "beforeToAfterSampledVertexDistance": {"samples": 25119, "p95": 0.02434399798512458, "max": 0.22783610224723816}, "afterToBeforeSampledVertexDistance": {"samples": 20992, "p95": 0.01791013553738595, "max": 0.03924369812011719}, "geometryChanged": true, "runtimeAccepted": false, "modelRequests": 0, "surfaceDriftBound": 0.015, "surfaceDriftPass": false}
+
+Error: script failed, file: '/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/repair-decoded.py', exiting.
+
+Blender quit

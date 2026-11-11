@@ -1,0 +1,47 @@
+{
+  "id": "clover",
+  "createdAt": "2026-11-10T06:30:35.665Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Greenhouse healer magic in sage mint #9CCBB1, emerald #477D64, soft teal #77C9B0, honey #F3BB61. TOP LEFT: a concentrated droplet of mint light with a golden heart and delicate leaf veins. TOP RIGHT: a graceful left-to-right flowing ribbon of translucent mint tea-light, bright tip and tiny luminous leaf particles. BOTTOM LEFT: an open domed canopy traced from two unfurling fern-light fronds, golden dew along the arch and a completely transparent center. BOTTOM RIGHT: an airy blossom of five translucent luminous leaf shapes and drifting golden dew sparks. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/clover-light-master.png",
+  "sourceSha256": "f86d41de0377acb2065cd65bf72dc20d452bf20530dc02a0ac5915370b9ee4c6",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+  "sha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+  "bytes": 247934,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 133665,
+      "transparentPixels": 259464
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 73329,
+      "transparentPixels": 319800
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 124216,
+      "transparentPixels": 268913
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 152782,
+      "transparentPixels": 240347
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Mint and gold leaf light matches the healer; four distinct components, open canopy center. Outer glow near cell boundaries tapered during packing. Charge contains a heart-shaped core as healing light, no physical prop. Runtime pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}

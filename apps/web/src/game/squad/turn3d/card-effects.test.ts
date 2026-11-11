@@ -7,6 +7,36 @@ import { CARD_EFFECT_BUDGET, CardEffects, cardRecipeFor } from './card-effects';
 import { sampleActionPlan } from './effects';
 import { galleryFixture, GALLERY_ACTIONS } from '../../cardrpg/depth/feel-lab';
 
+it.each(['converge','crescent'] as const)('keeps %s in the target footprint and freezes its travel in reduced motion',async motion=>{
+ const effects=new CardEffects(new T.Scene());await effects.ready;
+ const {battle,plan}=galleryFixture('soot-4'),actors=battle.actors as unknown as TurnActor[];
+ const positions=new Map(actors.map((actor,index)=>[actor.id,new T.Vector3(index*2,0,0)]));
+ const target=positions.get(plan.targetIds[0]!)!,camera=new T.PerspectiveCamera();
+ const original=CARD_EFFECT_RECIPES['soot-4']!;
+ const recipe={...original,ultimate:false,layers:[{...original.layers[0]!,primitive:'star' as const,motion,anchor:'target' as const,
+  start:.52,end:.60,count:motion==='converge'?2:1,spread:.85,height:.48,offset:[0,0,0] as [number,number,number],turns:.65}]};
+ const impact=plan.beats.find(b=>b.kind==='impact')!;
+ const sample=(progress:number,calm:boolean)=>{
+  const frame={...sampleActionPlan(plan,impact.start+impact.duration*progress,false),progress};
+  effects.render(frame,recipe,actors,positions,camera,'high',calm);
+  const mesh=effects.root.getObjectByName('star') as T.InstancedMesh;
+  expect(mesh.count).toBe(recipe.layers[0]!.count);expect(effects.stats.truncated).toBe(0);
+  return Array.from({length:mesh.count},(_,i)=>{const matrix=new T.Matrix4();mesh.getMatrixAt(i,matrix);expect(matrix.elements.every(Number.isFinite)).toBe(true);return matrix;});
+ };
+ try{
+  const early=sample(.18,false),late=sample(.85,false);
+  for(let i=0;i<early.length;i++){
+   const start=new T.Vector3().setFromMatrixPosition(early[i]!).sub(target),end=new T.Vector3().setFromMatrixPosition(late[i]!).sub(target);
+   if(motion==='converge'){
+    expect(Math.abs(end.x)).toBeLessThan(Math.abs(start.x)*.3);
+    expect(Math.sign(end.x)).toBe(Math.sign(start.x));expect(end.y).toBeLessThan(start.y);
+   }else{expect(end.x).toBeGreaterThan(start.x);expect(Math.max(Math.abs(start.x),Math.abs(end.x))).toBeLessThan(.85);}
+  }
+  const calmEarly=sample(.18,true),calmLate=sample(.85,true);
+  for(let i=0;i<calmEarly.length;i++)expect(calmEarly[i]!.elements).toEqual(calmLate[i]!.elements);
+ }finally{effects.dispose();}
+});
+
 describe('original starter effect compositions', () => {
   it('builds at least thirty finite reusable geometry primitives', () => {
     expect(CARD_EFFECT_PRIMITIVES.length).toBeGreaterThanOrEqual(30);

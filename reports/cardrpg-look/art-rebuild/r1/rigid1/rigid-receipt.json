@@ -1,0 +1,41 @@
+{
+  "source": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.glb",
+  "sourceSha256": "30ac49158ea973651891a32163fc812af28390ce068a531c5706596b2579a8b5",
+  "sha256": "149aaa0c849a50de2c9cde69f3bae82b74671c9f196a36a9c34f80be7714771e",
+  "parts": [
+    {
+      "name": "body",
+      "triangles": 16441,
+      "vertices": 17291,
+      "rigid": true
+    },
+    {
+      "name": "head",
+      "triangles": 3648,
+      "vertices": 4321,
+      "rigid": true
+    },
+    {
+      "name": "earL",
+      "triangles": 234,
+      "vertices": 323,
+      "rigid": true
+    },
+    {
+      "name": "earR",
+      "triangles": 237,
+      "vertices": 313,
+      "rigid": true
+    },
+    {
+      "name": "tail",
+      "triangles": 1378,
+      "vertices": 1668,
+      "rigid": true
+    }
+  ],
+  "triangles": 21938,
+  "skins": 0,
+  "knownIssue": "Torso, apron, paws and shield move as one rigid module; independent arm reach is intentionally limited.",
+  "acceptance": "REVIEW_REQUIRED"
+}

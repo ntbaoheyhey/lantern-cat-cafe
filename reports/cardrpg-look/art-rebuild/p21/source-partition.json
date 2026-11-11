@@ -1,0 +1,20 @@
+{
+  "bodyOwnedComponents": 1,
+  "largestBodyComponents": [
+    111140
+  ],
+  "reason": "Repair2 body had one disconnected2292pixel strip from the right arm; repair3 assigns it to that arm. No original source edited.",
+  "restComparison": {
+    "originalRig": {
+      "alphaShortfallPixelsAbove7": 641,
+      "maxAlphaShortfall": 17,
+      "meanAbsPremultipliedRgbError": 0.24975094319570643
+    },
+    "repair3": {
+      "alphaShortfallPixelsAbove7": 696,
+      "maxAlphaShortfall": 17,
+      "meanAbsPremultipliedRgbError": 0.2372615555707379
+    },
+    "note": "Master reconstruction diagnostics, not runtime texture fidelity scores. Low-alpha source wisps already differ in the original accepted rig; this repair retains that silhouette and reduces mean premultiplied pixel error."
+  }
+}

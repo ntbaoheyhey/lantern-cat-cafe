@@ -1,0 +1,30 @@
+{
+  "id": "crumb-sentinel",
+  "role": "guard",
+  "height": 1.65,
+  "neck": 0.7,
+  "arms": {
+    "x": 0.28,
+    "bottom": 0.2,
+    "top": 0.63
+  },
+  "feet": 0.12,
+  "rigLimits": {
+    "head": 0.07,
+    "tail": 0,
+    "ear": 0,
+    "arm": 0.08,
+    "foot": 0.035
+  },
+  "material": {
+    "metallic": 0,
+    "roughness": 0.88,
+    "discardGeneratedPBR": true,
+    "toon": true
+  },
+  "ratio": 0.22,
+  "error": 0.006,
+  "textureSize": 1024,
+  "reviewStatus": "DRAFT: role verified from existing unit rig; proportions require source and real battle review",
+  "design": "Preserve original dark-red/brass/wool concept albedo; restrained rigid motion, no skin stretch. Inspect fused contact seams before acceptance."
+}

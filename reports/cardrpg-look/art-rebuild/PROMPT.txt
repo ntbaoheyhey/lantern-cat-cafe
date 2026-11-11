@@ -1,112 +1,438 @@
-TASKBAR HERO - CODEX LANE B "ART REBUILD": MAKE THE CATS, MONSTERS, SKILL EFFECTS AND BATTLE TRULY BEAUTIFUL AND EYE-CATCHING (2026-11-09 13:30 UTC). ONE LONG AUTONOMOUS, SELF-TESTING, SELF-REPAIRING RUN. Paste into the lane B session that is waiting for lane A's S6 (the "Skills V5 Full Run"), or into a fresh session. THIS MESSAGE IS THE USER'S EXPLICIT INSTRUCTION TO RUN NOW, UNATTENDED, UNTIL SECTION 11 SAYS STOP. Do not ask the user anything; decide by this prompt, record decisions in STATE, continue.
+LANE B — FULL PROMPT (fresh session, resumes previous work) — written 2026-11-10 17:45 UTC
 
-ART SOURCE SWITCH (the user may edit this one line before pasting): GEN_IMAGES = ALLOWED
- (ALLOWED = you may use the image-generation tool available to you in this Codex session under section 4 rules. NOT_ALLOWED = Blender/procedural/hand-authored SVG/shader art only.)
+RESUME RULE — READ FIRST (the user's explicit instruction): DO NOT REDO WHAT IS ALREADY DONE.
+Before any work, inspect local state and continue exactly where the previous session stopped:
+- git: `git status --short | head`, `git log --oneline -15`, compare with origin (fetch first). Uncommitted work from the previous session is valuable: inspect it, finish or commit it; never discard, reset or stash it away.
+- Lane files in reports/cardrpg-look/art-rebuild/: RULES.md, HANDOFF.md, QUEUE.md, PROGRESS.log, STATUS-VI.md, INBOX.md, NEEDS-USER.md, DECISIONS.md, FIXLOG.md, RESEARCH-PUPPET.md, PUPPET-SCORES.md, B-OUTBOX.md, PROMPT.txt (any that exist).
+- Running processes and leftovers in /tmp from the previous session (your lane's ports/paths only).
+Anything that is ticked, logged as done, committed, or already written (research file, checklist, rules, handoff) is DONE: do not repeat it, do not re-measure it, do not rewrite it from scratch; only extend or fix it. If a research file already exists, do not redo research; only fill gaps it lists. A half-finished step: continue from its last saved state. Write one line in PROGRESS.log: "<UTC> new session (reasoning change) resumed at <item/step>".
 
-REFERENCE (read first): reports/cardrpg-look/skills-v5/full/{PROMPT.txt,RULES.md,STATE.md,FIXLOG.md,VFX-AUDIT.md,VFX-AUDIT-AFTER.md,M4-REVIEW.md,STATUS-VI.md}; docs/design/cardrpg/LOOK-BIBLE.md; reports/cardrpg-look/b2/B2-REPORT.md; assets/provenance/look.md; look-assets.json; docs/cardrpg-look/v5-live.html (current demo, draft #421) and integration draft #420 (worktree /Users/bao/taskbar-hero-cardrpg-v5live).
+You are a brand-new Codex session with no memory. Earlier sessions (one ran out of tokens; the latest one, started 10 Nov ~16:45 UTC with an earlier version of this prompt, was stopped by the user only to change reasoning level). All its work is on THIS Mac (M3 Pro, 36 GB), in local files and on GitHub. Nothing must be redone.
 
-==================================================================
-0. WHY THIS RUN EXISTS (read twice)
-==================================================================
-The user's verdict on the current demo (9 Nov): "the characters look quite ugly; now we must build truly beautiful images and truly beautiful effects, eye-catching; you may tear down and rebuild the characters; use the best tools; render images". Your own audit agrees: visual 6.233/10, uniqueness MISS. The reviewer looked at m4/dpr2/1440-P16-live-P16 and m4/vfx/peak-sheet and saw:
- - CATS look like chunky toys: blocky primitive bodies, small faces relative to the head, flat shading, no fur or material richness, weak expressions; they do not sell "adorable cat cafe heroes".
- - MONSTERS are washed-out pastel pink plasticine (after the luminance "relief" fix): low saturation, low detail, no menace; they read as candy, not as enemies.
- - SKILL EFFECTS are mostly flat billboard cut-outs (Mochi's ultimate = flat yellow cardboard house outlines + white teacup shapes), little glow, few particles, no depth; most effects are small relative to the frame; in the 60-tile peak sheet most tiles look the same.
- - JUDGE BUILD shows developer buttons in the top bar (Look atelier, Review studio, Mechanics lab, Skills V5 guide, B2: After, Look: Atelier, Frame meter, Feel lab).
-Everything lane B built stays (stack #409 -> #421, integration #420, all probes, readability work, Skills V5 cues). This run raises the ART QUALITY BAR, which is the part judges notice in the first 5 seconds (screening: Technical + Avalanche; final: Creativity 15, UI/UX + Demo 10, Pitch 10). Demo Day 30 Nov; your report deadline 20 Nov 12:00 UTC.
+Project: Taskbar Hero, a cat card RPG (auto battles) for the UniHack Avalanche hackathon, Demo Day 30 Nov 2026. Repo ntbaoheyhey/taskbar-hero (private).
+Your lane: B = battle canvas art: cats, enemies, bosses, their animation, skill/ultimate VFX, camera, cafe stage/light, plus portraits/icons as image files. Lane A6 (another Codex session) owns rules, all game screens and the DOM battle HUD, and will merge your branch into its own.
 
-==================================================================
-1. RULES (inherit, then the differences)
-==================================================================
-Sections 1 (hard rules), 2 (lane split, sync, waiting without model calls, branches), 3 (anti-forget), 6 (gate thresholds unless changed below) and 7 (self-repair loop) of reports/cardrpg-look/skills-v5/full/PROMPT.txt apply VERBATIM. Re-read them now. Differences for this run:
- - Branches: codex/cardrpg-art-r<N>-2026-11-09 (actual UTC date), stacked on #421's branch; one draft PR per milestone; integration refreshes go to the existing #420 worktree/branch as new merge commits.
- - State files: reports/cardrpg-look/art-rebuild/{PROMPT.txt (this prompt verbatim + sha256), STATE.md, FIXLOG.md, DECISIONS.md, STATUS-VI.md}. Same anti-forget behaviour.
- - New art lives behind a B-owned sub-switch `lookArt: 'v2' | 'v3'` inside lookV2 (v3 default in your demos, v2 kept for the dev before/after toggle). lookV2 OFF unchanged as always.
- - Evidence budget for this run: reports/cardrpg-look/art-rebuild/ <= 120 MB (WebP review shots, <= 6 clips of <= 30 s). Source art masters (Blender files, layered PSD/PNG) go under assets/source/look-v3/ only if <= 60 MB total; otherwise keep masters outside git in ~/art/look-v3/ and commit the exporters + provenance.
- - Size: full demo <= 40 MB (was 33), lean demo <= 26 MB; report bytes per class.
- - Perf thresholds unchanged (native cast <= 16.8 ms, 1440 CPU4 cast <= 100 ms, CPU4 cold <= 220 ms, draws target <= 130 with the documented 150 ceiling, tris <= 220k at peak, 0 per-cast allocations target).
+WHERE EVERYTHING IS
+- Your worktree: /Users/bao/taskbar-hero-cardrpg-b2 (if missing, check `git -C /Users/bao/taskbar-hero worktree list`).
+- Your branch: codex/cardrpg-art-r1-2026-11-09 (last pushed tip 456934fba). Draft PR #427. Older integration draft #420.
+- Your lane files: reports/cardrpg-look/art-rebuild/ — QUEUE.md, HANDOFF.md, STATE.md, STATUS-VI.md (Vietnamese), INBOX.md, NEEDS-USER.md, FIXLOG.md, DECISIONS.md, ART-DIRECTION.md, R1-DECISION.md, LOCAL-MODELS.md, NON-STOP-RUN.txt, r0..r7/ evidence. Tools: tools/cardrpg-look/art-rebuild/.
+- Large masters OUTSIDE git: ~/art/look-v3 (concept PNGs, local generation outputs, inbox). Local TRELLIS port: /Users/bao/art/trellis-mac (no longer used for the roster, see below).
+- Main checkout /Users/bao/taskbar-hero: only `fetch` and `worktree add`; never checkout/reset/stash/commit in it.
+- Lane A6 (read only for you): worktree /Users/bao/taskbar-hero-cardrpg-a6, branch codex/cardrpg-a6-q0-2026-11-10, draft #438, files reports/cardrpg-a6/ (A6-OUTBOX.md = requests to you).
+- Done already: R0 baseline, M5, Q1-Q4, Q9 (dev buttons only with ?dev=1), 12 cat + 13 enemy ORIGINAL 2D concepts with provenance (r2/concepts/), VFX masters, Q8 portrait/face crops manifest. Native image-to-3D: Mochi/Soot (earlier), Clover/Yarn/Panko and maybe Mallow (local), Button failed.
 
-==================================================================
-2. FIRST: DUTIES FROM THE FULL RUN (do not drop them)
-==================================================================
- - If lane A posts S6 DONE at any time: pause art work at the next safe point, do the FULL run's M3 refresh + M5 report exactly as specified there (<= 4 h), publish, then resume this run. Use the waiting script in the background (no model calls) and check it between milestones.
- - Open FULL-run issues stay open in their FIXLOG (B-M1-001, B-MX-003, B-M4-004, draws 147 > 130, Kettle 1.997x); fix them when the rebuild touches the same code, otherwise leave them as recorded.
+USER DECISION (10 Nov 16:09 UTC): the roster moves from image-to-3D to ILLUSTRATED 2.5D PUPPETS made from the 2D concepts, for ALL units. PART 2 has the details. So in PART 1 you stop the native 3D roster runner.
 
-==================================================================
-3. ART DIRECTION TARGET ("premium cozy")
-==================================================================
-Write reports/cardrpg-look/art-rebuild/ART-DIRECTION.md (<= 80 lines) first, then follow it. Baseline from LOOK-BIBLE (night cafe, teal/honey, warm lamps) plus:
- - CATS: adorable and premium. Big expressive heads (~40-45% of body height), large glossy eyes with two highlights and coloured irises, readable mouth/brow expressions (idle, attack, hurt, happy), soft fur look (shell fur or fur-card silhouette + painted fur normal/gradient), rich outfit materials (cloth with folds, ceramic, metal buttons, leather), one strong silhouette idea per cat tied to its role and kit (Mochi lantern-guardian with apron and door shield, Soot midnight hexer with crumb lantern, Clover greenhouse healer, ...). The 12 must be distinguishable as silhouettes at 64 px.
- - MONSTERS: "enchanted cafe objects gone wrong": saturated plum/crimson/ink palette with emissive eyes, cracks, stitching, steam, clearly hostile but still cozy-cute (not gore). Bosses huge, with a crown/aura and their own light. Fix the washed-out pink: separate from floor by rim light, value and saturation, not by paling them.
- - SHADING: toon ramp with 3 tones + soft AO + coloured rim (honey for cats, plum for monsters) + subtle subsurface warmth on ears/noses; contact shadows; consistent light direction with the stage lamps.
- - ANIMATION: idle breathing + blink + ear/tail motion, anticipation-lunge-recover attacks, hit flinch + flash, victory pose, defeat slump; squash/stretch tuned per cat.
- - VFX: luminous and layered: HDR-like emissive cores with bloom, soft particles, painted or simulated flipbooks (smoke, steam, flame, sparkle, leaf, ink, crumb), ribbon trails, shockwaves, decals, light flashes; ultimates fill 25-40% of frame height with one signature motif per cat; nothing looks like flat cardboard.
- - COMPOSITION: camera closer; cats >= 18% of viewport height at 1280x720, regulars >= 16%, bosses >= 2x the tallest regular; HUD-safe zones respected.
- - Fundamentals checklist used in every review: silhouette, value grouping, colour harmony (LOOK tokens), focal point, edge control, shape language (round = friend, sharp = foe), consistency across the roster.
+RULES (always)
+One agent only: no subagents, helpers or parallel codex runs. Local scripts/Blender/Playwright/image tools are fine. No paid services, no new accounts. No PR merge, no deploy, no push to main, no force-push, no secrets. Draft PRs only. Never write in other worktrees. Original art only; never feed other games' art to any generator. Keep tool output small.
 
-==================================================================
-4. IMAGE GENERATION RULES (only if GEN_IMAGES = ALLOWED)
-==================================================================
- - Use only the image-generation capability built into this Codex session (it is part of your own agent; do not start other agents, services or paid APIs; no API keys). If no such tool is available, record it in DECISIONS.md and use the NOT_ALLOWED path.
- - Prompts are your own words describing OUR original characters (cat names, roles, outfits, palette from LOOK tokens). Never name, describe or imitate an existing game, studio, franchise, artist or character; never upload or reference external images; inputs may only be our own renders/sketches.
- - Use generation for: concept sheets (front/side/back turnarounds, expression sheets) as modelling guides, painted textures (fur gradients, cloth, ceramic, decals), card/portrait illustrations, painted VFX sprite sheets, UI ornaments. Every output is post-processed by you (palette lock to look-tokens, cleanup, consistent lighting direction, crop/pack) and checked for artefacts (extra limbs/eyes, garbled text, inconsistent outfit) before use.
- - Provenance per asset in assets/provenance/look.md: tool/model name as reported by the tool, full prompt, seed/params if exposed, date, post-processing steps, final file hash. Keep generated masters outside the demo unless used.
+PART 1: ONBOARD NOW (about 30 min), in order
+1. cd /Users/bao/taskbar-hero-cardrpg-b2; `git status --short | head -30`; `git log --oneline -3`; `git fetch origin codex/cardrpg-art-r1-2026-11-09 codex/cardrpg-a6-q0-2026-11-10`. Keep uncommitted work; list it in STATE.md (do not commit unreviewed GLBs).
+2. Leftover processes: `pgrep -fl 'local-roster|generate.py|trellis|blender|cardrpg-v5full' | head`; `lsof -iTCP:5920-5923 -sTCP:LISTEN`. If the sequential native roster runner (local-roster.mjs / generate.py) is still running: let a unit that is mid-inference finish only if it ends within 15 minutes, otherwise stop that runner by its PID (never pkill broadly; never touch lane A6 processes or ports 5960-5963). Release any lock/lease it held as your tools document.
+3. `df -h ~ | tail -1`.
+4. Read, short: reports/cardrpg-look/art-rebuild/HANDOFF.md, QUEUE.md, STATUS-VI.md, INBOX.md, R1-DECISION.md. Look at r2/concepts/cats-concepts.webp, r2/concepts/enemies-concepts.webp, r2/native-yarn/after2/generated-1440-yarn-giant.webp, r2/native-button/export2/three-quarter.webp. Find where the Button Guard "animated layered 2.5D" fallback lives in code (grep) and note the path.
+5. Run typecheck + lint + touched web tests once (filtered).
+6. Move HANDOFF.md content to HANDOFF-ARCHIVE.md; write a new HANDOFF.md (<= 40 lines): new session start time, git state, runner stopped (PID) or finished, test result, location of the 2.5D fallback code. Add 3 Vietnamese lines to STATUS-VI.md. Commit "Lane B: new-session onboarding, stop native roster runner" and push.
+7. Do NOT end your turn. Continue straight into PART 2 below.
+(Steps 1-6: skip any part HANDOFF.md/PROGRESS.log show was already done this evening, except the git/process/disk checks, which are always re-done because they are cheap.)
 
-==================================================================
-5. MILESTONES (in order; each ends with gates + rubric + draft PR + B-OUTBOX CHECKPOINT + STATUS-VI.md; then CONTINUE)
-==================================================================
-R0 SETUP + HONEST BASELINE (<= 2 h): save prompt/state files; capture the "poster set" you will reuse all run: (a) hero lineup of all 12 cats at equal scale on a neutral cafe floor, (b) all 13 opponents lineup, (c) battle hero frame 1440x900 (P16-like), (d) ultimate peak of Mochi, Soot, Clover, Mallow, (e) 10 s battle clip. Score them with the rubric (section 8) as the baseline. Write ART-DIRECTION.md.
-R1 PIPELINE BAKE-OFF (<= 10 h): build Mochi, Soot, Button Guard and Yarn Giant in TWO candidate pipelines, same shots, then choose by rubric score (record in DECISIONS.md; the user can override later):
- - Path 3D+: rebuild meshes in Blender headless (bpy scripts committed under tools/cardrpg-look/blender-v3/): skin-modifier/metaball base -> voxel remesh -> smooth/subdivide, proper head/eye topology, shape keys for 4 expressions, armature compatible with the existing clip set (or retarget), baked textures (painted gradients, fur normal, AO), shell-fur or fur-card silhouette in three.js, new toon/rim material. Guides: generated concept turnarounds if allowed.
- - Path 2.5D: illustrated full-body characters (generated if allowed, otherwise painted procedurally), cut into 5-8 layers (body, head, ears, eyes/mouth sheet, arms, tail, prop) with inpainted overlaps, animated as layered billboards in the existing 3D stage (bone-like transforms, mesh deformation for squash/stretch, blink/mouth swaps, lunge, flinch, victory), with contact shadow, rim-light tint and depth sorting that matches the stage camera presets.
- Keep whichever scores higher overall (ties -> the one with lower production cost to finish 25 units by 18 Nov). You may also choose a hybrid (e.g. 3D bodies + painted faces) if it scores best.
-R2 FULL ROSTER (<= 25 h, batches of 3 units): all 12 cats, then 10 regular opponents, then 3 bosses (Yarn Giant, Kettle Knight, Pantry Crown), in the chosen pipeline. Per batch: concept -> build -> pose/expression sheet -> in-battle shots -> quality loop (5 flaws with regions, fix worst 3, >= 2 rounds) -> lineup consistency check against already finished units -> perf/face/contrast gates. Keep skeleton/clip/event compatibility so Skills V5 cues, status marks, plates and badges still anchor correctly (re-run collide/faces on P-shots per batch).
-R3 PORTRAITS AND CARD ART (<= 6 h): one illustrated portrait per cat (1x/2x WebP) + rarity frame plates + 13 opponent portraits, matching the new art, delivered through look-assets.json (A-owned screens pick them up through the existing adapter; if a screen needs code changes, REQUEST to A with exact suggestions). Earned-cat reveal uses the new portrait.
-R4 VFX 2.0 (<= 15 h): rebuild skill effects for the new art level, worst-first from VFX-AUDIT-AFTER.md: replace every flat cut-out shape with luminous layered effects (section 3 VFX), render/generate flipbooks at good quality (Blender smoke/fire/steam sims or EEVEE renders into atlases, or generated painted sheets), tune bloom/emissive so effects glow without hiding faces, scale ultimates to 25-40% of frame height with a signature motif each, enemy attacks in hostile palette, Skills V5 status marks/reactions restyled to match (keep their readability gates). Gates: MX audit average >= 8.0 (from 6.233), 60-tile uniqueness PASS by eye (no two tiles read the same), all perf gates.
-R5 STAGE, LIGHT, CAMERA, POST (<= 6 h): closer camera presets meeting section 3 coverage; light rig and post (bloom, colour grade LUT from LOOK tokens, light vignette, gentle DOF on background only), contact shadows, ambient life (steam, dust motes, lamp flicker) within budget; monsters' value/saturation fix verified (opponent-floor separation >= 0.18 with the new palette).
-R6 JUDGE BUILD HYGIENE (<= 2 h): every B-owned dev control (Look atelier, Look: Atelier, B2: After, Frame meter, Feel lab, Review studio, Mechanics lab, Skills V5 guide if B-owned) renders only with ?dev=1; for any that live in A-owned files, one REQUEST to A listing them; the judge demo opens straight into the game with no dev chrome.
-R7 INTEGRATION + DEMO + FILMS (<= 6 h, start by 18 Nov 18:00 UTC at the latest): merge into the #420 integration branch (A-owned files take A's version), re-run live coverage/parity/perf deltas, build docs/cardrpg-look/v5-live.html and the lean pack, films: 20 s before (#421) / after, 30 s pitch clip (combo crew, >= 2 reactions, >= 1 ultimate, new art), 20 s ultimate reel, and a 10 s "roster turntable" for the pitch deck.
-R8 REPORT (ALWAYS by 20 Nov 12:00 UTC): reports/cardrpg-look/art-rebuild/ART-REPORT.md (<= 90 lines): 5 Vietnamese lines first; poster set before/after (lineups, hero frame, 4 ultimate peaks); bake-off decision with scores; rubric table; perf/size table; FIXLOG summary; provenance summary (how many assets generated vs authored); misses; what the user should look at. Ledger section in CARDRPG-LOOK-REPORT.md. B-OUTBOX DONE.
+PART 2 (after PART 1, same turn). This prompt replaces every earlier lane B prompt (ART-REBUILD, RESUME, NONSTOP, TRELLIS inbox notes), queue order and pause note. Save this prompt word for word to reports/cardrpg-look/art-rebuild/PROMPT.txt (overwrite; R-9). QUEUE.md: if it already contains the P1+ items from the previous session (ticked items, [auto] items, notes), KEEP it and only add rows from section 4 that are missing; never untick or redo a ticked item. If it does not, write it from section 4 (keep older ticked items as history at the bottom). Then continue the first unfinished item.
 
-==================================================================
-6. TEST AND REVIEW PLAN
-==================================================================
- Per change set: typecheck, lint, unit.
- Per batch/milestone: build; parity (lookV2 ON vs OFF and lookArt v2 vs v3: identical battle logs/digests on the 5 seeds + LIVE-SEEDS); P-shot pack + poster set at 1440 DPR1 and 1024 layout; collide (badges, plates, words, numbers, moment card); faces (protected faces 0 offenders, re-derive masks for new models); contrast; casts (changed units/cues); cold 3+3 at R2 end, R4 end, R7; draws/tris/programs; heap per cast; startup audit lookV2 OFF; bytes per class.
- E2E full at each milestone end (flaky rule from FULL section 6).
- BEAUTY REVIEW at each milestone (mandatory, not a metric): open the poster set and the latest clip; write a blind A/B note for each pair (which is more appealing and why, in art-fundamentals terms); list 5 flaws with regions; fix the worst 3 through the self-repair loop; recapture. If a change does not clearly beat the previous version in the A/B note, revert it.
- LINEUP TEST: after every batch, all finished units side by side at equal scale; inconsistent style/proportion/lighting = S3 issue.
+=====================================================================
+0. WHY THE DIRECTION CHANGED (read once)
+=====================================================================
+The user (Vietnamese, 10 Nov): quality matters, not time; Codex follows our direction, so the direction must be right. Review of your own evidence:
+1. Your 12 cat and 13 enemy ORIGINAL 2D concepts (r2/concepts/) are the best art in the project. They already look like a top idle hero battler.
+2. Native image-to-3D destroys them: Yarn Giant renders as shattered red shards in battle (r2/native-yarn/after2), Button Guard exported as a cracked mesh (r2/native-button/export2), and every native mesh needed repairs (inward shells, fragmented topology, UV collapse). After a full day about 3 of 23 units converted and 0 accepted. Even repaired, the 3D result is a blurrier copy of the concept.
+3. Your battle review screen still runs inside the OLD left-nav shell that the user rejected. The final game shell is lane A6's.
+USER DECISION (10 Nov 16:09 UTC): ALL units (cats, enemies, bosses, including Mochi, Soot and Yarn Giant) become ILLUSTRATED 2.5D PUPPETS made from the concepts. One consistent style. No more native image-to-3D for the roster. Keep every old file, receipt and source; delete nothing.
 
-==================================================================
-7. SELF-REPAIR
-==================================================================
-Use FULL PROMPT.txt section 7 exactly (reproduce -> measure -> hypotheses -> smallest fix -> verify incl. parity and touched gates -> record; max 3 attempts per issue per milestone, then PARTIAL and move on; S1 blocks the PR; extend the probe that missed it). Art-specific additions: a generated asset with artefacts is regenerated or repaired, never shipped; a model that breaks clips/anchors is fixed or reverted to v2 for that unit (record), never shipped broken; if the chosen pipeline cannot finish the roster by 18 Nov 00:00 UTC, finish remaining units at the best achievable level in the same style and record PARTIAL rather than mixing styles.
+=====================================================================
+1. RUN-FOREVER RULES (highest priority)
+=====================================================================
+R-1 QUEUE. Always work the top unfinished item of QUEUE.md. When done: tick, commit, push, update draft #427 description, update STATUS-VI.md (Vietnamese, short), IMMEDIATELY start the next item in the same turn. Never end the turn while unfinished items exist, except an R-6 stop.
+R-2 Checkpoints, pushes, PARTIAL results and self-scores are not stops. Never end with "next steps for the user".
+R-3 Failed gate: reproduce -> measure -> smallest fix -> re-verify, max 3 attempts, then take the simplest version that looks good in the real battle at x1, log it in FIXLOG.md, move on. A known issue on one unit never blocks other units.
+R-4 Check reports/cardrpg-look/art-rebuild/INBOX.md between items. A correction goes into QUEUE.md, gets 1-3 Vietnamese lines in STATUS-VI.md, and you continue. Only "dừng", "stop", "pause", "khoan" or a STOP-B file in the worktree root pause you. A question is not a pause.
+R-5 Context: keep output small (| tail -n 40, grep). See R-9. If lost or compacted: re-read PROMPT.txt section 4, QUEUE.md, HANDOFF.md (one section <= 60 lines, rewrite each item), continue.
+R-6 Hard stops only: (a) queue done and report pushed, then keep improving the lowest-scored unit/screen until (b); (b) 2026-11-20 12:00 UTC: push the report with what exists and stop; (c) STOP-B or pause word; (d) true user-only blocker (payment, a login only the user can do, PR merge, deploy, disk full after cleanup): exact ask in NEEDS-USER.md, mark BLOCKED-USER, skip, keep working everything else.
+R-7 One agent only: no subagents/helpers/parallel codex runs. The built-in Codex image generation stays ALLOWED for original art (user-approved): your own prompts only, never reference images from other games, record tool + prompt + date per asset in the existing provenance files. Local tools fine (Python/PIL, ImageMagick, Blender, three.js, Playwright). No paid services or new accounts. No PR merge, deploy, push to main, force-push, secrets. Draft PRs only. Never write in lane A6's worktree. Ports 5920-5923 only. Heavy renders/E2E use the shared timing.lock lease (<= 20 min) as HANDOFF/STATE describe; nice 10 for heavy tools. Large masters stay in ~/art/look-v3 (outside git); evidence in git <= 120 MB.
+R-8 Evidence diet: per unit one 1440x900 battle screenshot next to its concept, a motion contact sheet, face/HP-bar overlap check; typecheck + lint + touched tests. Full parity/E2E once per batch. No hash ceremonies.
 
-==================================================================
-8. SELF-SCORE RUBRIC (baseline at R0; score at every milestone end; target weighted >= 8.5 by R7)
-==================================================================
-| Criterion | Weight | 10 = | 6 = | <= 4 = |
-| Character beauty and appeal (12 cats) | 25% | each cat adorable, premium, distinct silhouette, rich materials, expressive | cute but toy-like or inconsistent | blocky, flat, ugly |
-| Monster and boss menace + readability | 10% | hostile, saturated, detailed, instantly read, bosses huge | readable but bland | pale/candy-like |
-| Skill VFX beauty (all skills + ultimates + enemy attacks) | 20% | luminous, layered, unique per cat, cinematic ultimates, audit >= 8.5 | audit ~6.5 | flat cut-outs |
-| Animation quality | 10% | idle life, anticipation/impact/recover, expressions | basic tweens | stiff |
-| Stage, light, camera composition | 10% | units dominate frame, cohesive light/post, focal clarity | ok but wide/flat | empty, washed |
-| Readability kept (statuses, combos, plates, numbers) | 10% | all V5 readability gates still PASS | minor regressions | broken |
-| Performance | 10% | all perf gates PASS with new art | one miss <= +25% | visible freeze |
-| Size, startup, compatibility, judge hygiene | 5% | <= 40 MB, lean <= 26 MB, OFF unchanged, no dev chrome | one soft miss | dev chrome visible / OFF broken |
-If the weighted total is < 8.5 at a milestone end, the two weakest lines become the first work of the next milestone.
+R-9 ANTI-FORGET (your context WILL be compacted; the files are your memory; if memory and files disagree, the files win):
+ a) Before PART 2 work: save THIS WHOLE PROMPT word for word to reports/cardrpg-look/art-rebuild/PROMPT.txt (no summary), record `wc -c` + `shasum -a 256` at the top of reports/cardrpg-look/art-rebuild/STATE.md, commit + push.
+ b) Write reports/cardrpg-look/art-rebuild/RULES.md (<= 30 lines): the non-negotiables from this prompt: one agent/no model-calling helpers; draft PRs only, no PR merge/deploy/main push/force-push/secrets; never write in the other lane's worktree; original art only; ALL units are 2.5D puppets from the concepts, no native image-to-3D roster; built-in image generation allowed with provenance, never reference art from other games; you never merge A6 into your published branch; hard stops R-6 only; deadline 2026-11-20 12:00 UTC.
+ c) Keep reports/cardrpg-look/art-rebuild/HANDOFF.md as ONE section (<= 60 lines), rewritten (never appended) after every queue item and before any long job: NOW (item + step, branch, last pushed SHA, PR), NEXT (3 concrete actions), RUNNING (PIDs, ports, log paths, locks held), DONE this session (one line each with SHA), KNOWN ISSUES, DECISIONS (one line each). Add one line per finished step to reports/cardrpg-look/art-rebuild/PROGRESS.log (UTC time, item, result, SHA).
+ d) RE-READ reports/cardrpg-look/art-rebuild/RULES.md, QUEUE.md and HANDOFF.md: at the start of every queue item; right after any compaction/summary or when you feel unsure; before any git merge/push/branch command; and at least every 2 hours. Re-read section 0 and section 4 of reports/cardrpg-look/art-rebuild/PROMPT.txt at the start of each queue item.
+ e) Never rely on remembered paths, PIDs, SHAs or numbers: read them from files or the system. Commit + push lane files at least every 60 minutes, even mid-item, so a crash or account switch loses nothing.
+ f) If a new session starts with no memory: read reports/cardrpg-look/art-rebuild/RULES.md, HANDOFF.md, QUEUE.md, then reports/cardrpg-look/art-rebuild/PROMPT.txt, then continue the top unfinished item. Never redo ticked items.
 
-==================================================================
-9. DECISIONS YOU MAKE YOURSELF (record in DECISIONS.md)
-==================================================================
-Pipeline choice after the bake-off; exact proportions, palettes, materials within ART-DIRECTION.md; which assets to generate vs author; camera presets; quality tiers; which units to rebuild first; regenerating or repairing generated assets. NOT yours: rules, numbers, kits, A-owned screens, merging, deploying, default flags.
+=====================================================================
+2. WHERE THINGS ARE / OWNERSHIP
+=====================================================================
+Worktree /Users/bao/taskbar-hero-cardrpg-b2, branch codex/cardrpg-art-r1-2026-11-09, draft #427. Concepts: reports/cardrpg-look/art-rebuild/r2/concepts/ + masters in ~/art/look-v3. Existing 2.5D layered fallback (Button Guard) code: path recorded in HANDOFF.md during PART 1; build the puppet system on it.
+Lane A6 (read only): /Users/bao/taskbar-hero-cardrpg-a6, branch codex/cardrpg-a6-q0-2026-11-10, draft #438. Read its reports/cardrpg-a6/A6-OUTBOX.md (requests to you) every item via git fetch + git show.
+You own everything drawn in the battle canvas: units, animation, VFX, damage/crit/heal numbers, camera, stage, light; plus portraits/icons/card art as image files + manifest. A6 owns all DOM screens and the DOM battle HUD (portrait cards, HP/rage bars, ultimate cut-in overlay, boss bar). A6 will merge YOUR branch into its own with merge commits; you never merge A6 into your published branch. For review in the real game shell you may build a throwaway local preview: `git worktree add /tmp/cardrpg-b-preview origin/codex/cardrpg-a6-q0-2026-11-10` then `git merge --no-ff --no-commit` your branch there, screenshot, then remove it; never push from it. Write in B-OUTBOX.md (create it) what A6 needs: manifest paths, events, "canvas draws damage numbers", camera changes, known issues.
 
-==================================================================
-10. SCHEDULE GUIDE (UTC; adjust, record changes)
-==================================================================
-R0 9 Nov; R1 by 10 Nov; R2 cats by 13 Nov, opponents/bosses by 15 Nov; R3 by 16 Nov; R4 by 17 Nov; R5+R6 by 18 Nov; R7 18-19 Nov; R8 by 20 Nov 12:00. Lane A S6/M5 duty (section 2) interrupts whenever it arrives.
+=====================================================================
+3. ART TARGET
+=====================================================================
+Every unit must be instantly recognisable as its concept and read clearly at x1 at 1440x900 and 1280x720.
+Puppet build per unit: cut the concept into parts (head, body, front arm, back arm, tail, legs if needed, weapon/prop, cape/hat/scarf where present) with clean alpha and hidden-overlap fill (inpaint the hidden part from the same art; built-in image generation allowed for missing pieces, matching style); pivots at joints; packed into one WebP atlas per unit (<= 1024 px for cats, <= 1536 px for bosses) + JSON rig. Render as textured planes in the existing 3D cafe stage, facing the camera, with soft contact shadow, gentle rim light from stage lights, slight depth offset between layers for parallax.
+Motions per unit: idle (breathing, tail sway, blink, small prop bob), attack (anticipation, lunge, squash on hit, return), cast (raise prop, glow), hurt (white flash, knockback, squint), ultimate pose (hold 0.3 s for A6's cut-in), victory, defeat. Easing with overshoot; nothing linear; slight per-unit timing offset so a team never moves in sync.
+Enemies use the enemy concepts; bosses 1.6-2.2x cat height with an extra boss idle (breathing, glowing eyes, ambient particles) and a phase-change flash.
+Camera/composition: closer camera; units fill about 40-50% of battle height; cats left/front, enemies right; no large empty floor; small push-in on ultimates; light screen shake on crits and ultimates (respect reduced motion).
+VFX: bold and readable at x1: charge glow, projectile/trail, impact flash, afterglow; every ultimate visibly different; big damage/crit/heal numbers in the canvas with pop and float. Keep frame time: cast frame <= 33 ms on this Mac.
+Portraits/icons: crop from the same concept art (head-and-shoulders portrait, full-body card art, round face icon, skill/ult icons) so cards, recruit splash and battle match. Publish one manifest file for A6 and list it in B-OUTBOX.md.
+Scoring: per unit and per battle screenshot score 1-10 for "looks like the concept and like a real commercial game". Not done while below 7.5. Table in reports/cardrpg-look/art-rebuild/PUPPET-SCORES.md (update in place).
 
-==================================================================
-11. STOP CONDITIONS
-==================================================================
-Stop only when R8 is delivered, or 20 Nov 12:00 UTC is reached (deliver R8 with what you have), or an S1 issue you cannot fix or revert (deliver R8 as PARTIAL describing it). Never stop to wait for the user.
+=====================================================================
+4. QUEUE (write into QUEUE.md in this order; budgets are guides, quality wins)
+=====================================================================
+- [ ] P1 Puppet pipeline (6 h): tools/cardrpg-look/art-rebuild/puppet/ — cut/fill/pivot/pack script per unit id (resumable, one command), runtime puppet renderer + motion set in the canvas, behind the existing look flag (default OFF; ON in the demo/look mode). Done: unit tests for rig loading/motion selection, one unit animates in battle.
+- [ ] P2 Pilot 3 units (6 h): Mochi, Soot, Yarn Giant as puppets in a real battle; side-by-side with concepts; all motions; score >= 7.5 each. Fix lowest issue first (max 3 rounds per issue).
+- [ ] P3 Camera + composition (3 h): closer framing, cats/enemies placement, no empty floor, ult push-in, shake. Before/after pair. Tell A6 in B-OUTBOX.
+- [ ] P4 All 12 cats (2 batches of 6; commit/push per batch): Mochi, Soot, Clover, Panko, Mallow, Cinnamon, Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap (check the exact roster ids in the code). Done per batch: battle captures, contact sheets, face/HP check, scores >= 7.5.
+- [ ] P5 All enemies and bosses (batches of 6): all 13 enemy concepts mapped to every enemy/boss id in the rules; bosses with boss idle + phase flash. Done: every enemy id has a puppet or a documented fallback.
+- [ ] P6 VFX pass (6 h): every signature skill and ultimate on the puppets' real sockets/targets/timing; damage numbers; audit score >= 8.0 at x1 (reuse existing VFX masters where they fit).
+- [ ] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
+- [ ] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
+- [ ] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
+- [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
+- [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
+
+=====================================================================
+5. SELF-SCORE (in ART-REPORT.md; target 8.5)
+=====================================================================
+Units match concepts and look like a real game 35; motion quality (anticipation, impact, idle life) 20; VFX readability and wow at x1 15; camera/composition/stage 15; roster coverage (every unit id) 10; performance and size budget 5.
+
+=====================================================================
+6. NON-STOP RULE (overrides any habit of ending a turn)
+=====================================================================
+1. You may end your turn ONLY in these cases:
+   a) Every QUEUE.md item is ticked, the final report is pushed, AND the lowest self-score row has been improved until the deadline 2026-11-20 12:00 UTC.
+   b) The deadline 2026-11-20 12:00 UTC is reached (push the report with what exists, then stop).
+   c) A STOP file exists in your worktree root (STOP-A6 for lane A6, STOP-B for lane B), or the user writes "dừng", "stop", "pause" or "khoan".
+   d) Every remaining item is BLOCKED-USER (needs payment, a login only the user can do, a PR merge, a deploy, or disk still full after cleanup). Each such ask must be written in NEEDS-USER.md and pushed first.
+2. Everything else is NOT a reason to stop: a finished item, a commit, a push, a PR update, a report, a checkpoint, a PARTIAL result, a self-score, a failed test, a slow job, a long wait for a lock, the other lane being behind, or a question in chat. Never end with a summary, "next steps", or a question to the user while unfinished items exist.
+3. A blocker on one item: write it in NEEDS-USER.md (if user-only) or FIXLOG.md (if technical, after max 3 repair attempts take the fallback), mark the item, and IMMEDIATELY start the next unfinished item.
+4. While waiting for a long job (render, build, E2E, lock): work on another unblocked item or on the lowest-scored screen/unit; do not idle and do not end the turn.
+5. Before you are about to end a turn, check this list: open QUEUE.md; if any item is unticked and not BLOCKED-USER, do not end the turn, start that item instead.
+6. User messages: answer in 1-3 Vietnamese lines in STATUS-VI.md (and briefly in chat), add any correction to QUEUE.md, then continue working in the same turn.
+
+=====================================================================
+7. YOUR OWN RESEARCH AND JUDGMENT
+=====================================================================
+CONTEXT (so you understand why): Taskbar Hero is a cat-themed auto-battle hero collector built for the UniHack Avalanche hackathon; Demo Day 30 Nov 2026; judges score creativity, impact, UI/UX + demo. The user works alone and wants the battles to look like a top commercial idle hero battler. Native image-to-3D failed (shattered meshes), so the user chose (10 Nov) ILLUSTRATED 2.5D PUPPETS from our original 2D concepts for every unit, in the existing 3D cafe stage. Lane B (you) owns canvas art, animation, VFX, camera, stage, portraits/icons; lane A6 owns screens, DOM HUD and rules and will merge your branch. The current queue (P1-P11) is a direction written by a reviewer, not a ceiling. You are a strong reasoning model: the user wants you to think and research yourself, and to improve the plan where you see better options.
+
+R1 RESEARCH (skip if RESEARCH-PUPPET.md already exists and is complete; else time box 3 h total, do it before the next queue item):
+- Read your existing ART-DIRECTION.md, VFX-WORKFLOW.md, R1-DECISION.md first; do not redo what they already settle.
+- Research, using web search if your tools allow, otherwise your own knowledge: how top games with 2D/2.5D animated characters get their look (Spine/DragonBones-style cutout rigging as used in AFK Arena, Cookie Run: Kingdom, Idle Heroes, Darkest Dungeon, Hollow Knight style layering): part cutting and overlap painting, pivot placement, mesh deformation vs rigid parts, secondary motion (tail/ear/cloth lag), squash and stretch, anticipation/impact frames, hit-stop, timing in frames at 60 fps; 2D sprites in a 3D scene (billboards, sorting, contact shadows, rim/normal-map lighting for sprites, depth parallax); VFX for auto battlers (charge, trail, impact, afterglow, screen shake, hit numbers, ultimate camera push-in), readability at x1/x2/x3; three.js techniques and performance (atlases, instancing, KTX2/WebP, draw-call budget). Also free/open tools that run locally on this Mac for cutting/inpainting/rigging (no paid services, no new accounts).
+- Write reports/cardrpg-look/art-rebuild/RESEARCH-PUPPET.md (<= 3 pages): per topic the 3-5 techniques that matter most, why, and concrete numbers for OUR pipeline (frame counts, easing curves, hit-stop ms, part list, atlas sizes, light setup). Describe techniques in words only.
+- Then update QUEUE.md: refine P1-P11 done-checks and add new items you judge worth it (mark them [auto], within the 20 Nov deadline). Record each change and the reason in DECISIONS.md.
+
+JUDGMENT AUTHORITY: you may reorder, merge, split or replace queue items and change targets when your research shows a better way to reach "every unit looks like its concept and like a top game". Write why in DECISIONS.md. Keep these fixed: 2.5D puppets for all units (no native image-to-3D roster); one consistent style; one agent, no subagents/helpers/parallel codex; no paid services/new accounts; draft PRs only, no PR merge/deploy/main push/force-push/secrets; never write in lane A6's worktree; demo size <= 40 MB together with A6; deadline 2026-11-20 12:00 UTC; NON-STOP and ANTI-FORGET rules.
+ORIGINAL ONLY: never copy, trace, screenshot into the repo, or feed into any generator another game's art, rigs, effects or animations. Built-in image generation stays allowed for our own original pieces with provenance. Learn techniques; build our own.
+After every batch spend <= 30 min re-checking RESEARCH-PUPPET.md against what you built and log gaps as new [auto] items. Research never replaces shipping: if a research step runs over its time box, write what you have and continue the queue.
+
+
+ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item)
+
+LANE B — FOLLOW-UP: MANDATORY SWITCH TO REAL 3D (characters, monsters, bosses AND effects) — written 2026-11-11 02:30 UTC
+(Paste into the RUNNING lane B Codex session. Self-contained. This is a USER DECISION, not a suggestion.)
+REFERENCE: reports/cardrpg-look/art-rebuild/{PROMPT.txt,RULES.md,QUEUE.md,HANDOFF.md,STATE.md,DECISIONS.md,LOCAL-MODELS.md,R1-DECISION.md,PUPPET-SCORES.md,RESEARCH-PUPPET.md,B-OUTBOX.md} ; r2/concepts/ ; p10/r0-vs-puppet-roster.webp ; tools/cardrpg-look/art-rebuild/ ; apps/web/src/game/squad/turn3d/look-puppet*.ts ; draft PR #427
+
+=====================================================================
+0. WHAT CHANGED AND WHY (read once)
+=====================================================================
+The user watched your current demo (illustrated 2.5D puppets, P1-P39) and finds it ugly. Their words (Vietnamese, 11 Nov 02:03 UTC): it is too ugly; switch to 3D, this is mandatory; watch the size balance of the characters, some are big and some are tiny; effects must be 3D too, mandatory.
+
+Honest review of your own screenshots (p10/r0-vs-puppet-roster.webp, p39/boss-phase/pantry-crown-1280.webp, p40/before-1440/soot-4.webp): the units are flat painted cut-outs on camera-facing planes inside a 3D cafe. They have no volume, no lighting response, rigid paper-doll part motion, and they do not sit in the 3D room. VFX are 2D flipbook cards. Sizes are inconsistent (Clover reads much smaller than Mochi; Pantry Crown towers over the party; Button Guard almost cat-sized).
+
+USER DECISION (11 Nov 2026, overrides the 10 Nov 16:09 UTC "2.5D puppets for all units" decision and the fixed item in PROMPT.txt JUDGMENT AUTHORITY):
+1. Every cat, enemy and boss becomes a REAL 3D model (volumetric mesh, skeleton, animation clips, lit by the stage) in the existing three.js cafe. Zero flat-puppet units in the final demo. Puppets stay in code ONLY as a per-unit fallback behind the flag until that unit's 3D model is accepted.
+2. Every skill / signature / ultimate effect becomes 3D (meshes, trails, rings, decals, 3D particles, light pulses). 2D flipbook textures may be used ON 3D geometry or soft particles, never as the whole effect on a flat camera card.
+3. A written SIZE STANDARD for all units, enforced by tests.
+Everything else in PROMPT.txt stays (non-stop rules, anti-forget, one agent, draft PRs only, original art only, deadline 2026-11-20 12:00 UTC, demo <= 40 MB together with A6, never write in A6's worktree).
+
+Lessons you must not repeat (from your own logs): raw single-image image-to-3D (TRELLIS) shattered the concepts (Yarn Giant shards, Button Guard cracked mesh, inward shells, UV collapse, ~3/23 converted, 0 accepted). The 7 Nov Blender-primitive cats looked blocky/low-poly. So: never ship raw generated meshes, and never ship coarse primitive blobs. The route below fixes both.
+
+=====================================================================
+1. FIRST 30 MINUTES (do now, same turn)
+=====================================================================
+a) Finish only the current small step of P40 if it is < 15 min from a commit; otherwise park it. Mark P40 "SUPERSEDED by 3D switch (2D VFX on puppets)" in QUEUE.md. Commit any accepted work; keep all dirty files (never discard, reset or stash away; unreviewed GLBs stay uncommitted).
+b) Save this message word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-SWITCH-2026-11-11.txt and append it to PROMPT.txt under a heading "ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item)". Copy section 0 into INBOX.md as a dated USER entry.
+c) RULES.md: replace the line "ALL units are 2.5D puppets ... no native image-to-3D roster" with: "ALL units are real 3D rigged models + 3D VFX (user 11 Nov); raw generated meshes never ship; puppets = per-unit fallback only; size standard SCALE-STANDARD.md is law." Keep RULES.md <= 30 lines.
+d) QUEUE.md: insert section 3 items (D0-D11) ABOVE the remaining unticked items. Do not untick anything. Move old puppet [auto] ideas to a "Superseded (2.5D)" list.
+e) STATUS-VI.md: 2-3 Vietnamese lines: "Đã nhận lệnh chuyển sang 3D thật cho nhân vật, quái, boss và hiệu ứng; đặt chuẩn kích thước; bắt đầu D0."
+f) HANDOFF.md: rewrite (<= 30 lines) to point at D0. DECISIONS.md: one entry with the reason.
+Then start D0 immediately. Do not end the turn.
+
+=====================================================================
+2. THE STURDY 3D ROUTE (how to build models that actually look good)
+=====================================================================
+Target look: cute stylized "chibi" 3D like a top mobile hero battler: smooth rounded volumes, big expressive eyes, clean toon/cel shading with soft rim light, thin outline, readable silhouettes, warm cafe palette, faithful to OUR original 2D concepts (r2/concepts/). Original art only.
+
+2.1 SHARED BASES (this is what makes it fast, consistent and correctly sized)
+- ONE cat base mesh + ONE cat skeleton for all 12 cats (same body topology and height). Cats differ by: head/ear/cheek shape keys, fur color/pattern texture, eyes, tail variant, outfit meshes (apron, cloak, hat, scarf, skirt), and props (shield, lantern, teapot, rolling pin, whisk, staff, basket...).
+- 4-5 ENEMY ARCHETYPE bases + skeletons, chosen from the 13 enemy concepts (e.g. biped construct/knight, small hopper/blob, flyer/insect, quadruped, boss giant). Map every enemy and boss id in the rules to one archetype in ARCHETYPES.md.
+- Animation clips authored once per skeleton and shared: idle (breathing, ear/tail life), run-in, basic attack, signature cast, ultimate, hit react, KO, victory. Runtime secondary motion (tail, ears, cloth, capes) with simple spring bones in three.js.
+
+2.2 MODELING (per base, then per unit) — Blender headless Python, local
+- Check tools first: `blender --version` (or /Applications/Blender.app/Contents/MacOS/Blender), gltf-transform, the trellis-mac install in /Users/bao/art/trellis-mac (weights already cached; LOCAL-MODELS.md).
+- Make a clean TURNAROUND (front / side / back / 3/4) for each base and each unit from OUR concept. Built-in image generation is allowed for this (own prompts, our concept as the only visual input, no other games' art, provenance in assets/provenance/look.md). Use these as modeling references.
+- Build smooth forms: subdivision surface (bake level 2), soft creases, proper edge loops at joints; separate meshes for eyes (glossy iris + highlight), eyelids via shape keys for blink. No faceted low-poly look.
+- TRELLIS (local, already installed) is ALLOWED ONLY as a shape/proportion reference or a shrinkwrap target: generate from the clean turnaround front view, then retopologize onto our clean base (shrinkwrap + smooth + manual cleanup). Never ship its raw mesh or raw UVs.
+- Texturing: hand-authored stylized textures. Project the concept's colors/patterns onto the clean UV layout (camera projection from the turnaround views, then clean seams), plus procedural toon materials. One texture atlas per unit (cats 1024 px, bosses up to 2048 source shipped at 1024), WebP/KTX2.
+- Export glTF/GLB with skin + clips; compress (meshopt or Draco, texture WebP/KTX2). Budgets: cats 6k-12k tris, enemies 6k-15k, bosses <= 25k; <= 3 materials per unit; all 3D unit assets together <= ~16 MB so the A6+B demo stays <= 40 MB.
+
+2.3 RUNTIME (three.js)
+- New flag lookV3D (default ON in the demo/look mode once a unit is accepted; per-unit fallback to the puppet if its GLB is missing or not accepted).
+- Toon shading consistent with the cafe: MeshToonMaterial or a small custom toon shader (2-3 bands, soft rim from stage lights, slight warm/cool tint), inverted-hull outline (thin, darker hue of the base color, not pure black), real contact shadows, stage lights actually lighting the models.
+- Keep the same actor/event API and sockets so A6's HUD keeps working: manifest per unit with sockets head, hpAnchor, mainHand, offHand, chest, feet, vfxOrigin (bone-attached). HP bars and labels anchor from the manifest, never from fixed pixel offsets.
+- Cache geometries/materials/clips, AnimationMixer per actor, no per-cast allocation.
+
+2.4 PER-MODEL ACCEPTANCE (strict, from real screenshots you look at yourself)
+For every unit, save a compact evidence pack (WebP, under the existing 120 MB evidence cap):
+- turntable: 8 views at 45 degrees on a neutral background, next to the concept;
+- in battle at 1280x720 and 1440x900 in the current A6 shell preview (your disposable preview worktree as before);
+- 3 key poses: idle, attack impact frame, hit react; plus the ultimate peak frame;
+- defect checklist, every item must be "none": holes, melted/smeared face, broken or stretched limbs, texture seams across the face, floating props, z-fighting, outline breaking, wrong colors vs concept, eyes not reading at 1280x720.
+Score: concept fidelity, appeal/menace, volume and lighting, animation, battle readability (each 0-10). Accept at >= 7.5 overall and no item below 6.5. Max 3 repair rounds per issue, then fix the next issue; if a unit is still below, simplify its shapes (cleaner, bolder forms, stronger painted texture) and accept at >= 7.0 as PARTIAL; continue the roster. NEVER return a unit to the puppet route as the final answer. No score uplift from tests alone.
+3D PROOF TEST: in dev mode, orbit the battle camera yaw -20 / 0 / +20 degrees and capture; every unit and every effect must show real volume (a flat card collapses to a sliver and FAILS).
+
+=====================================================================
+3. SIZE STANDARD (SCALE-STANDARD.md, enforced by tests)
+=====================================================================
+Height = rest-pose bounding box from feet to top of head/ears, excluding raised props and hat feathers. World units:
+- Cats (all 12, every rarity): 1.00 (tolerance +-3%). Rarity is shown by outfit detail, aura, frame and VFX, NEVER by body size. Tank cats may be up to +6% wider, not taller.
+- Small enemies (hoppers, flyers, minions, summoned adds): 0.80-1.00.
+- Standard / elite enemies: 1.10-1.30.
+- Bosses (every id the rules mark as boss): 1.70-1.95, footprint width <= 2.2.
+Map every unit id to a tier in the table inside SCALE-STANDARD.md (from the rules, not guessed).
+On screen (camera + formation): at 1280x720 and 1440x900, all party cats have the same on-screen height within +-8% regardless of slot (fix with formation depth/camera, or a documented per-slot correction <= 1.08); a cat is >= 22% of canvas height; a boss is <= 55% of canvas height and never covers a cat face or HP bar.
+Tests (add them, keep them fast):
+- node test: read the unit manifest + each GLB bounding box (gltf-transform), assert every unit is inside its tier range;
+- Playwright test: project each actor's bounding box to screen in a normal fight and a boss fight at both sizes; assert the on-screen ratios above;
+- a lineup render: all 25 units side by side on a 1.0 grid, saved to reports/cardrpg-look/art-rebuild/3d/lineup.webp and shown in the report.
+Apply the standard to the CURRENT puppets in D2 as a quick win too, so the demo is balanced while the 3D roster is being built.
+
+=====================================================================
+4. 3D VFX RULES
+=====================================================================
+- Every basic, signature and ultimate uses real 3D elements: projectile meshes with emissive + ribbon trails along a 3D path; slash arcs as curved meshes; shockwave rings/domes with noise-dissolve shaders; ground decals projected on the floor; instanced 3D particles with velocity/gravity and soft depth fade; short point-light pulses (max 2 dynamic lights at once); bloom on emissive; hit sparks oriented to the hit direction; ultimate = camera push-in + floor glow + dust/debris + afterglow.
+- Keep one consistent family per keyword (Burn, Bleed, Bitter, Mark, Shred, Daze, Regen, Warm) and per cat, so a judge can read who did what.
+- Reuse existing VFX atlases only as textures on these 3D meshes/particles. No effect may be only a camera-facing quad.
+- Same 3D PROOF TEST (yaw -20/0/+20) for each ultimate. Readable at x1/x2/x3, reduced-motion mode still works, damage numbers stay clear of faces.
+- Budgets: <= 130 draw calls in the heaviest ultimate, p95 frame <= 33 ms at x1 on this Mac, pooled objects, no per-cast texture/geometry allocation.
+
+=====================================================================
+5. QUEUE (insert into QUEUE.md; dates are time boxes, quality wins inside them)
+=====================================================================
+- [ ] D0 Switch-over (30 min): section 1 done; P40 superseded.
+- [ ] D1 Short research (<= 2 h, fill gaps only, RESEARCH-3D.md <= 2 pages): stylized chibi 3D for mobile hero battlers (shared base mesh, toon/cel shading, inverted-hull outlines, painted textures), Blender Python modeling/retopo/shrinkwrap/projection painting, glTF skins/clips, three.js toon + spring bones, 3D VFX techniques and budgets. Tool check results. Words only, no copied assets.
+- [ ] D2 Size standard (by 11 Nov 12:00 UTC): SCALE-STANDARD.md + tier map + both tests + lineup; apply to current puppets now; before/after pair; B-OUTBOX note for A6.
+- [ ] D3 Pilot bake-off (by 12 Nov 06:00 UTC): cat base + Mochi, one enemy base + Button Guard, boss base + Yarn Giant. Try route 1 (Blender-authored base + turnaround projection) and route 2 (TRELLIS shape reference -> retopo onto clean base) where useful; pick per archetype; full acceptance packs; static compare page docs/cardrpg-look/3d-pilot/index.html (puppet vs 3D, turntables, battle shots). Do NOT wait for user approval; continue to D4 with the winner.
+- [ ] D4 Rigs + shared clips (by 12 Nov 20:00 UTC): cat skeleton + enemy archetype skeletons, 8 clips each, spring bones, lookV3D runtime with per-unit fallback, sockets manifest, tests.
+- [ ] D5 12 cats in 2 batches of 6 (by 14 Nov 20:00 UTC): acceptance per unit, commit/push per batch, update #427 and B-OUTBOX.
+- [ ] D6 13 enemies + bosses in batches (by 16 Nov 20:00 UTC): boss idle + phase change visible on the model (emissive/pose), acceptance per unit.
+- [ ] D7 3D VFX for every skill and ultimate (by 18 Nov 06:00 UTC): section 4 rules, yaw proof test, audit score >= 8.0 at x1.
+- [ ] D8 Stage/light/camera for 3D (by 18 Nov 18:00 UTC): toon light rig matching the cafe, shadows, outline tuning, framing with the size standard, ult push-in.
+- [ ] D9 Portraits/icons: keep the existing 2D concept portraits and card art (they are good) unless they now mismatch the 3D model; then re-render from the 3D model with the same frame style.
+- [ ] D10 Publish for A6 (repeat after each batch): push, #427 description, B-OUTBOX.md (flag lookV3D, manifest, sockets, size standard, budgets, known issues), combined demo size <= 40 MB.
+- [ ] D11 Films + report (by 20 Nov 12:00 UTC): one 60-90 s x1 normal fight and one boss fight in 3D, R0 vs puppet vs 3D posters, ART-REPORT.md and STATUS-VI.md updated, then improve the lowest-scored unit until the deadline.
+If a time box is missed: write PARTIAL with what is left in DECISIONS.md, finish the current unit, and move on; never stop the lane.
+
+SELF-SCORE RUBRIC (target 8.5, honest): units look like the concepts AND like real 3D game characters 30; animation 15; 3D VFX readability and wow at x1 20; size balance + camera/composition 15; roster coverage (every unit id in 3D) 10; performance and size 10.
+
+=====================================================================
+6. RULES REMINDER (unchanged, always)
+=====================================================================
+Non-stop: always work the top unfinished QUEUE.md item; never end the turn while unticked items exist, except STOP-B file, the words "dừng"/"stop"/"pause"/"khoan", a true user-only blocker (write NEEDS-USER.md, skip, keep working), or the 20 Nov 12:00 UTC deadline. Check INBOX.md between items.
+Anti-forget: at the start of every item and after any compaction re-read RULES.md, HANDOFF.md, QUEUE.md and this addendum (PROMPT-3D-SWITCH-2026-11-11.txt). Never redo ticked items.
+One agent only (no subagents/helpers/parallel codex; local scripts, Blender, Playwright, TRELLIS-local and image tools are fine). No paid services or new accounts (if you truly need one, write it in NEEDS-USER.md and continue with the free route). Draft PRs only; no PR merge, deploy, main push, force-push or secrets. Never write in /Users/bao/taskbar-hero-cardrpg-a6. Original art only; never use other games' art as input. Keep tool output small. Status for the user in Vietnamese in STATUS-VI.md.
+
+
+ADDENDUM 2026-11-11 — 3D INITIATIVE (pre-approved research and implementation)
+
+LANE B — SHORT FOLLOW-UP: YOUR OWN RESEARCH AND INITIATIVES ARE PRE-APPROVED — written 2026-11-11 02:20 UTC
+(Paste into the RUNNING lane B Codex session, after FOLLOWUP-B-3D-SWITCH-2026-11-11.txt. Save it word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-INITIATIVE-2026-11-11.txt and append it to PROMPT.txt under the 3D SWITCH addendum.)
+
+CONTEXT: The user has decided on real 3D for all cats, enemies and bosses, plus 3D VFX and a size standard (see PROMPT-3D-SWITCH-2026-11-11.txt). The user trusts your judgment. Your research and new ideas are welcome, and the user approves ALL of them in advance.
+
+WHAT THIS ALLOWS:
+1. Research freely, whenever it helps: web search if your tools allow it, otherwise your own knowledge. Topics include stylized 3D character pipelines, Blender automation, retopology, texturing, rigging and animation, three.js rendering and 3D VFX, and how top hero battlers make units and effects look premium. D1 "short research" is a minimum, not a cap. Do more research at any point when you hit a quality problem.
+2. Propose and carry out your own initiatives without asking. You may add, reorder, merge, split or replace queue items. You may change the modeling route, tools, shaders, rig design, animation set, camera, stage, VFX design and targets. You may add new local tools or open-source libraries. You may add polish the queue does not list (new idle animations, entrance moves, ultimate cut-ins in 3D, environment reactions, and so on). Mark new items [auto] in QUEUE.md. For each one, write one line in DECISIONS.md (what and why) and 1 to 2 Vietnamese lines in STATUS-VI.md. Then continue straight away. Do not wait for approval, because the user has already given it.
+3. If your research shows a better way to reach the goal than the 3D-switch follow-up, choose the better way and record the reason.
+
+FIXED, EVEN FOR YOUR OWN INITIATIVES (user decisions and hard limits):
+- Final result: every unit is real 3D, and every skill and ultimate effect is 3D. No flat-puppet unit and no flat-card-only effect in the final demo. The size standard holds; you may refine its numbers, but every cat stays the same height and rarity never changes body size.
+- One agent only: no subagents, helpers or parallel codex runs. Local scripts and tools are fine.
+- No paid services and no new accounts. If one would clearly help, write it in NEEDS-USER.md and continue with the free route.
+- Draft PRs only. No PR merge, deploy, push to main, force-push or secrets. Never write in A6's worktree.
+- Original art only. Never use other games' art as input.
+- Demo stays <= 40 MB together with A6.
+- Deadline: 2026-11-20 12:00 UTC.
+- NON-STOP and ANTI-FORGET rules stay in force.
+
+
+ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item), consolidated 02:40 UTC
+
+LANE B — ONE FOLLOW-UP: MANDATORY SWITCH TO REAL 3D (characters, monsters, bosses AND effects) + YOUR INITIATIVES PRE-APPROVED + TOOLS ON THIS MAC — written 2026-11-11 02:40 UTC
+(Paste into the RUNNING lane B Codex session. Self-contained, one message. This is a USER DECISION, not a suggestion. Sections 7 and 8 are part of it.)
+REFERENCE: reports/cardrpg-look/art-rebuild/{PROMPT.txt,RULES.md,QUEUE.md,HANDOFF.md,STATE.md,DECISIONS.md,LOCAL-MODELS.md,R1-DECISION.md,PUPPET-SCORES.md,RESEARCH-PUPPET.md,B-OUTBOX.md} ; r2/concepts/ ; p10/r0-vs-puppet-roster.webp ; tools/cardrpg-look/art-rebuild/ ; apps/web/src/game/squad/turn3d/look-puppet*.ts ; draft PR #427
+
+=====================================================================
+0. WHAT CHANGED AND WHY (read once)
+=====================================================================
+The user watched your current demo (illustrated 2.5D puppets, P1-P39) and finds it ugly. Their words (Vietnamese, 11 Nov 02:03 UTC): it is too ugly; switch to 3D, this is mandatory; watch the size balance of the characters, some are big and some are tiny; effects must be 3D too, mandatory.
+
+Honest review of your own screenshots (p10/r0-vs-puppet-roster.webp, p39/boss-phase/pantry-crown-1280.webp, p40/before-1440/soot-4.webp): the units are flat painted cut-outs on camera-facing planes inside a 3D cafe. They have no volume, no lighting response, rigid paper-doll part motion, and they do not sit in the 3D room. VFX are 2D flipbook cards. Sizes are inconsistent (Clover reads much smaller than Mochi; Pantry Crown towers over the party; Button Guard almost cat-sized).
+
+USER DECISION (11 Nov 2026, overrides the 10 Nov 16:09 UTC "2.5D puppets for all units" decision and the fixed item in PROMPT.txt JUDGMENT AUTHORITY):
+1. Every cat, enemy and boss becomes a REAL 3D model (volumetric mesh, skeleton, animation clips, lit by the stage) in the existing three.js cafe. Zero flat-puppet units in the final demo. Puppets stay in code ONLY as a per-unit fallback behind the flag until that unit's 3D model is accepted.
+2. Every skill / signature / ultimate effect becomes 3D (meshes, trails, rings, decals, 3D particles, light pulses). 2D flipbook textures may be used ON 3D geometry or soft particles, never as the whole effect on a flat camera card.
+3. A written SIZE STANDARD for all units, enforced by tests.
+Everything else in PROMPT.txt stays (non-stop rules, anti-forget, one agent, draft PRs only, original art only, deadline 2026-11-20 12:00 UTC, demo <= 40 MB together with A6, never write in A6's worktree).
+
+Lessons you must not repeat (from your own logs): raw single-image image-to-3D (TRELLIS) shattered the concepts (Yarn Giant shards, Button Guard cracked mesh, inward shells, UV collapse, ~3/23 converted, 0 accepted). The 7 Nov Blender-primitive cats looked blocky/low-poly. So: never ship raw generated meshes, and never ship coarse primitive blobs. The route below fixes both.
+
+=====================================================================
+1. FIRST 30 MINUTES (do now, same turn)
+=====================================================================
+a) Finish only the current small step of P40 if it is < 15 min from a commit; otherwise park it. Mark P40 "SUPERSEDED by 3D switch (2D VFX on puppets)" in QUEUE.md. Commit any accepted work; keep all dirty files (never discard, reset or stash away; unreviewed GLBs stay uncommitted).
+b) Save this message word for word to reports/cardrpg-look/art-rebuild/PROMPT-3D-SWITCH-2026-11-11.txt and append it to PROMPT.txt under a heading "ADDENDUM 2026-11-11 — 3D SWITCH (overrides the 2.5D fixed item)". Copy section 0 into INBOX.md as a dated USER entry. Save section 8 as reports/cardrpg-look/art-rebuild/TOOLS-3D.md (then add PASS/MISSING results) and link it from RULES.md and HANDOFF.md.
+c) RULES.md: replace the line "ALL units are 2.5D puppets ... no native image-to-3D roster" with: "ALL units are real 3D rigged models + 3D VFX (user 11 Nov); raw generated meshes never ship; puppets = per-unit fallback only; size standard SCALE-STANDARD.md is law." Keep RULES.md <= 30 lines.
+d) QUEUE.md: insert section 3 items (D0-D11) ABOVE the remaining unticked items. Do not untick anything. Move old puppet [auto] ideas to a "Superseded (2.5D)" list.
+e) STATUS-VI.md: 2-3 Vietnamese lines: "Đã nhận lệnh chuyển sang 3D thật cho nhân vật, quái, boss và hiệu ứng; đặt chuẩn kích thước; bắt đầu D0."
+f) HANDOFF.md: rewrite (<= 30 lines) to point at D0. DECISIONS.md: one entry with the reason.
+Then start D0 immediately. Do not end the turn.
+
+=====================================================================
+2. THE STURDY 3D ROUTE (how to build models that actually look good)
+=====================================================================
+Target look: cute stylized "chibi" 3D like a top mobile hero battler: smooth rounded volumes, big expressive eyes, clean toon/cel shading with soft rim light, thin outline, readable silhouettes, warm cafe palette, faithful to OUR original 2D concepts (r2/concepts/). Original art only.
+
+2.1 SHARED BASES (this is what makes it fast, consistent and correctly sized)
+- ONE cat base mesh + ONE cat skeleton for all 12 cats (same body topology and height). Cats differ by: head/ear/cheek shape keys, fur color/pattern texture, eyes, tail variant, outfit meshes (apron, cloak, hat, scarf, skirt), and props (shield, lantern, teapot, rolling pin, whisk, staff, basket...).
+- 4-5 ENEMY ARCHETYPE bases + skeletons, chosen from the 13 enemy concepts (e.g. biped construct/knight, small hopper/blob, flyer/insect, quadruped, boss giant). Map every enemy and boss id in the rules to one archetype in ARCHETYPES.md.
+- Animation clips authored once per skeleton and shared: idle (breathing, ear/tail life), run-in, basic attack, signature cast, ultimate, hit react, KO, victory. Runtime secondary motion (tail, ears, cloth, capes) with simple spring bones in three.js.
+
+2.2 MODELING (per base, then per unit) — Blender headless Python, local
+- Tools already installed on this Mac (do not reinstall; verify only): Blender 4.5.3 at /Users/bao/tools/cardrpg-look/Blender.app/Contents/MacOS/Blender; Python venv /Users/bao/tools/cardrpg-look/venv/bin/python; gltf-transform/meshoptimizer/sharp in /Users/bao/tools/cardrpg-look/npm; local TRELLIS.2 (trellis-mac) in /Users/bao/art/trellis-mac with HF login done and weights cached. Full list in section 8 (save it as TOOLS-3D.md) and LOCAL-MODELS.md.
+- Make a clean TURNAROUND (front / side / back / 3/4) for each base and each unit from OUR concept. Built-in image generation is allowed for this (own prompts, our concept as the only visual input, no other games' art, provenance in assets/provenance/look.md). Use these as modeling references.
+- Build smooth forms: subdivision surface (bake level 2), soft creases, proper edge loops at joints; separate meshes for eyes (glossy iris + highlight), eyelids via shape keys for blink. No faceted low-poly look.
+- TRELLIS (local, already installed) is ALLOWED ONLY as a shape/proportion reference or a shrinkwrap target: generate from the clean turnaround front view, then retopologize onto our clean base (shrinkwrap + smooth + manual cleanup). Never ship its raw mesh or raw UVs.
+- Texturing: hand-authored stylized textures. Project the concept's colors/patterns onto the clean UV layout (camera projection from the turnaround views, then clean seams), plus procedural toon materials. One texture atlas per unit (cats 1024 px, bosses up to 2048 source shipped at 1024), WebP/KTX2.
+- Export glTF/GLB with skin + clips; compress (meshopt or Draco, texture WebP/KTX2). Budgets: cats 6k-12k tris, enemies 6k-15k, bosses <= 25k; <= 3 materials per unit; all 3D unit assets together <= ~16 MB so the A6+B demo stays <= 40 MB.
+
+2.3 RUNTIME (three.js)
+- New flag lookV3D (default ON in the demo/look mode once a unit is accepted; per-unit fallback to the puppet if its GLB is missing or not accepted).
+- Toon shading consistent with the cafe: MeshToonMaterial or a small custom toon shader (2-3 bands, soft rim from stage lights, slight warm/cool tint), inverted-hull outline (thin, darker hue of the base color, not pure black), real contact shadows, stage lights actually lighting the models.
+- Keep the same actor/event API and sockets so A6's HUD keeps working: manifest per unit with sockets head, hpAnchor, mainHand, offHand, chest, feet, vfxOrigin (bone-attached). HP bars and labels anchor from the manifest, never from fixed pixel offsets.
+- Cache geometries/materials/clips, AnimationMixer per actor, no per-cast allocation.
+
+2.4 PER-MODEL ACCEPTANCE (strict, from real screenshots you look at yourself)
+For every unit, save a compact evidence pack (WebP, under the existing 120 MB evidence cap):
+- turntable: 8 views at 45 degrees on a neutral background, next to the concept;
+- in battle at 1280x720 and 1440x900 in the current A6 shell preview (your disposable preview worktree as before);
+- 3 key poses: idle, attack impact frame, hit react; plus the ultimate peak frame;
+- defect checklist, every item must be "none": holes, melted/smeared face, broken or stretched limbs, texture seams across the face, floating props, z-fighting, outline breaking, wrong colors vs concept, eyes not reading at 1280x720.
+Score: concept fidelity, appeal/menace, volume and lighting, animation, battle readability (each 0-10). Accept at >= 7.5 overall and no item below 6.5. Max 3 repair rounds per issue, then fix the next issue; if a unit is still below, simplify its shapes (cleaner, bolder forms, stronger painted texture) and accept at >= 7.0 as PARTIAL; continue the roster. NEVER return a unit to the puppet route as the final answer. No score uplift from tests alone.
+3D PROOF TEST: in dev mode, orbit the battle camera yaw -20 / 0 / +20 degrees and capture; every unit and every effect must show real volume (a flat card collapses to a sliver and FAILS).
+
+=====================================================================
+3. SIZE STANDARD (SCALE-STANDARD.md, enforced by tests)
+=====================================================================
+Height = rest-pose bounding box from feet to top of head/ears, excluding raised props and hat feathers. World units:
+- Cats (all 12, every rarity): 1.00 (tolerance +-3%). Rarity is shown by outfit detail, aura, frame and VFX, NEVER by body size. Tank cats may be up to +6% wider, not taller.
+- Small enemies (hoppers, flyers, minions, summoned adds): 0.80-1.00.
+- Standard / elite enemies: 1.10-1.30.
+- Bosses (every id the rules mark as boss): 1.70-1.95, footprint width <= 2.2.
+Map every unit id to a tier in the table inside SCALE-STANDARD.md (from the rules, not guessed).
+On screen (camera + formation): at 1280x720 and 1440x900, all party cats have the same on-screen height within +-8% regardless of slot (fix with formation depth/camera, or a documented per-slot correction <= 1.08); a cat is >= 22% of canvas height; a boss is <= 55% of canvas height and never covers a cat face or HP bar.
+Tests (add them, keep them fast):
+- node test: read the unit manifest + each GLB bounding box (gltf-transform), assert every unit is inside its tier range;
+- Playwright test: project each actor's bounding box to screen in a normal fight and a boss fight at both sizes; assert the on-screen ratios above;
+- a lineup render: all 25 units side by side on a 1.0 grid, saved to reports/cardrpg-look/art-rebuild/3d/lineup.webp and shown in the report.
+Apply the standard to the CURRENT puppets in D2 as a quick win too, so the demo is balanced while the 3D roster is being built.
+
+=====================================================================
+4. 3D VFX RULES
+=====================================================================
+- Every basic, signature and ultimate uses real 3D elements: projectile meshes with emissive + ribbon trails along a 3D path; slash arcs as curved meshes; shockwave rings/domes with noise-dissolve shaders; ground decals projected on the floor; instanced 3D particles with velocity/gravity and soft depth fade; short point-light pulses (max 2 dynamic lights at once); bloom on emissive; hit sparks oriented to the hit direction; ultimate = camera push-in + floor glow + dust/debris + afterglow.
+- Keep one consistent family per keyword (Burn, Bleed, Bitter, Mark, Shred, Daze, Regen, Warm) and per cat, so a judge can read who did what.
+- Reuse existing VFX atlases only as textures on these 3D meshes/particles. No effect may be only a camera-facing quad.
+- Same 3D PROOF TEST (yaw -20/0/+20) for each ultimate. Readable at x1/x2/x3, reduced-motion mode still works, damage numbers stay clear of faces.
+- Budgets: <= 130 draw calls in the heaviest ultimate, p95 frame <= 33 ms at x1 on this Mac, pooled objects, no per-cast texture/geometry allocation.
+
+=====================================================================
+5. QUEUE (insert into QUEUE.md; dates are time boxes, quality wins inside them)
+=====================================================================
+- [ ] D0 Switch-over (30 min): section 1 done; P40 superseded.
+- [ ] D1 Short research (<= 2 h, fill gaps only, RESEARCH-3D.md <= 2 pages): stylized chibi 3D for mobile hero battlers (shared base mesh, toon/cel shading, inverted-hull outlines, painted textures), Blender Python modeling/retopo/shrinkwrap/projection painting, glTF skins/clips, three.js toon + spring bones, 3D VFX techniques and budgets. Tool check results. Words only, no copied assets.
+- [ ] D2 Size standard (by 11 Nov 12:00 UTC): SCALE-STANDARD.md + tier map + both tests + lineup; apply to current puppets now; before/after pair; B-OUTBOX note for A6.
+- [ ] D3 Pilot bake-off (by 12 Nov 06:00 UTC): cat base + Mochi, one enemy base + Button Guard, boss base + Yarn Giant. Try route 1 (Blender-authored base + turnaround projection) and route 2 (TRELLIS shape reference -> retopo onto clean base) where useful; pick per archetype; full acceptance packs; static compare page docs/cardrpg-look/3d-pilot/index.html (puppet vs 3D, turntables, battle shots). Do NOT wait for user approval; continue to D4 with the winner.
+- [ ] D4 Rigs + shared clips (by 12 Nov 20:00 UTC): cat skeleton + enemy archetype skeletons, 8 clips each, spring bones, lookV3D runtime with per-unit fallback, sockets manifest, tests.
+- [ ] D5 12 cats in 2 batches of 6 (by 14 Nov 20:00 UTC): acceptance per unit, commit/push per batch, update #427 and B-OUTBOX.
+- [ ] D6 13 enemies + bosses in batches (by 16 Nov 20:00 UTC): boss idle + phase change visible on the model (emissive/pose), acceptance per unit.
+- [ ] D7 3D VFX for every skill and ultimate (by 18 Nov 06:00 UTC): section 4 rules, yaw proof test, audit score >= 8.0 at x1.
+- [ ] D8 Stage/light/camera for 3D (by 18 Nov 18:00 UTC): toon light rig matching the cafe, shadows, outline tuning, framing with the size standard, ult push-in.
+- [ ] D9 Portraits/icons: keep the existing 2D concept portraits and card art (they are good) unless they now mismatch the 3D model; then re-render from the 3D model with the same frame style.
+- [ ] D10 Publish for A6 (repeat after each batch): push, #427 description, B-OUTBOX.md (flag lookV3D, manifest, sockets, size standard, budgets, known issues), combined demo size <= 40 MB.
+- [ ] D11 Films + report (by 20 Nov 12:00 UTC): one 60-90 s x1 normal fight and one boss fight in 3D, R0 vs puppet vs 3D posters, ART-REPORT.md and STATUS-VI.md updated, then improve the lowest-scored unit until the deadline.
+If a time box is missed: write PARTIAL with what is left in DECISIONS.md, finish the current unit, and move on; never stop the lane.
+
+SELF-SCORE RUBRIC (target 8.5, honest): units look like the concepts AND like real 3D game characters 30; animation 15; 3D VFX readability and wow at x1 20; size balance + camera/composition 15; roster coverage (every unit id in 3D) 10; performance and size 10.
+
+=====================================================================
+6. RULES REMINDER (unchanged, always)
+=====================================================================
+Non-stop: always work the top unfinished QUEUE.md item; never end the turn while unticked items exist, except STOP-B file, the words "dừng"/"stop"/"pause"/"khoan", a true user-only blocker (write NEEDS-USER.md, skip, keep working), or the 20 Nov 12:00 UTC deadline. Check INBOX.md between items.
+Anti-forget: at the start of every item and after any compaction re-read RULES.md, HANDOFF.md, QUEUE.md, TOOLS-3D.md and this addendum (PROMPT-3D-SWITCH-2026-11-11.txt). Never redo ticked items.
+One agent only (no subagents/helpers/parallel codex; local scripts, Blender, Playwright, TRELLIS-local and image tools are fine). No paid services or new accounts (if you truly need one, write it in NEEDS-USER.md and continue with the free route). Draft PRs only; no PR merge, deploy, main push, force-push or secrets. Never write in /Users/bao/taskbar-hero-cardrpg-a6. Original art only; never use other games' art as input. Keep tool output small. Status for the user in Vietnamese in STATUS-VI.md.
+
+=====================================================================
+7. YOUR OWN RESEARCH AND INITIATIVES ARE PRE-APPROVED
+=====================================================================
+CONTEXT: The user has decided on real 3D for all cats, enemies and bosses, plus 3D VFX and a size standard (see PROMPT-3D-SWITCH-2026-11-11.txt). The user trusts your judgment. Your research and new ideas are welcome, and the user approves ALL of them in advance.
+
+WHAT THIS ALLOWS:
+1. Research freely, whenever it helps: web search if your tools allow it, otherwise your own knowledge. Topics include stylized 3D character pipelines, Blender automation, retopology, texturing, rigging and animation, three.js rendering and 3D VFX, and how top hero battlers make units and effects look premium. D1 "short research" is a minimum, not a cap. Do more research at any point when you hit a quality problem.
+2. Propose and carry out your own initiatives without asking. You may add, reorder, merge, split or replace queue items. You may change the modeling route, tools, shaders, rig design, animation set, camera, stage, VFX design and targets. You may add new local tools or open-source libraries. You may add polish the queue does not list (new idle animations, entrance moves, ultimate cut-ins in 3D, environment reactions, and so on). Mark new items [auto] in QUEUE.md. For each one, write one line in DECISIONS.md (what and why) and 1 to 2 Vietnamese lines in STATUS-VI.md. Then continue straight away. Do not wait for approval, because the user has already given it.
+3. If your research shows a better way to reach the goal than the 3D-switch follow-up, choose the better way and record the reason.
+
+FIXED, EVEN FOR YOUR OWN INITIATIVES (user decisions and hard limits):
+- Final result: every unit is real 3D, and every skill and ultimate effect is 3D. No flat-puppet unit and no flat-card-only effect in the final demo. The size standard holds; you may refine its numbers, but every cat stays the same height and rarity never changes body size.
+- One agent only: no subagents, helpers or parallel codex runs. Local scripts and tools are fine.
+- No paid services and no new accounts. If one would clearly help, write it in NEEDS-USER.md and continue with the free route.
+- Draft PRs only. No PR merge, deploy, push to main, force-push or secrets. Never write in A6's worktree.
+- Original art only. Never use other games' art as input.
+- Demo stays <= 40 MB together with A6.
+- Deadline: 2026-11-20 12:00 UTC.
+- NON-STOP and ANTI-FORGET rules stay in force.
+
+=====================================================================
+8. 3D TOOLS ALREADY INSTALLED ON THIS MAC (new Codex account, same Mac) — do this check inside D0/D1
+=====================================================================
+CONTEXT: You run on a new Codex account, but the Mac (MacBook M3 Pro, 36 GB) is the same one earlier lane B sessions used. Earlier sessions already installed and verified the tools below. Their record is reports/cardrpg-look/art-rebuild/LOCAL-MODELS.md and STATE.md, written by lane B on 10 Nov. Do NOT reinstall or re-download anything. First verify each tool with one quick command (about 5 minutes total) and record PASS or MISSING in TOOLS-3D.md. Only if a tool is MISSING, repair it by following LOCAL-MODELS.md.
+
+ALREADY ON THIS MAC (recorded 10 Nov):
+1. Blender 4.5.3 LTS: /Users/bao/tools/cardrpg-look/Blender.app/Contents/MacOS/Blender. Runs headless with `-b --python <script>`. Use it for modeling, retopology/shrinkwrap, UV, texture projection and bake, rigging, animation clips and glTF export.
+   Verify: `<that path> --version | head -1`
+2. Python tool venv (Pillow, OpenCV, NumPy, scikit-image 0.26): /Users/bao/tools/cardrpg-look/venv/bin/python.
+3. glTF-Transform (core/functions/extensions), meshoptimizer and sharp: /Users/bao/tools/cardrpg-look/npm. CLI: /Users/bao/tools/cardrpg-look/npm/node_modules/.bin/gltf-transform. Use it for GLB inspection, bounding boxes for the size tests, meshopt/Draco and WebP/KTX2 compression.
+4. TRELLIS.2 image-to-3D, LOCAL (Apple Silicon MPS port shivampkumar/trellis-mac, commit d58628f4): /Users/bao/art/trellis-mac, with Python 3.11 and Torch on MPS.
+   - Hugging Face login has been done by the user, gated DINOv3 access has been verified, and all 19 weight files (about 16 GB) are cached in the standard HF cache. No new download is needed. Never read, print or copy the HF token.
+   - RMBG-2.0 was NOT downloaded on purpose (non-commercial license). Always feed pre-cut transparent PNGs; image-to-3d.py already patches RMBG out.
+   - Our wrapper: tools/cardrpg-look/art-rebuild/image-to-3d.py --backend local-mps (see LOCAL-MODELS.md for the exact command, seeds and receipts). Known behavior: 512 pipeline about 11 minutes; 1024 pipeline timed out at about 18 minutes; xatlas UV can time out, so use the `--uv-backend blender` route; the KDTree export needed the orient-local-glb.py fix. Run one generation at a time and pause other heavy jobs while it runs.
+   - Exact command already used on this Mac (from LOCAL-MODELS.md; run from the worktree root; replace <unit>, seed and output folder):
+     node tools/cardrpg-look/skills-v5/full/run-lock.mjs LOCAL-MPS-<unit> nice -n 10 /Users/bao/tools/cardrpg-look/venv/bin/python tools/cardrpg-look/art-rebuild/image-to-3d.py --backend local-mps --submit --id <unit> --seed <fixed seed> --pipeline-type 512 --texture-size 1024 --uv-backend blender --out /tmp/trellis-ref/<unit>-attemptN
+     The wrapper calls trellis-mac's own venv (/Users/bao/art/trellis-mac/.venv) through a subprocess; you do not activate it yourself. Input = a transparent PNG (turnaround front view). Successful GLBs are published to /Users/bao/art/look-v3/inbox/<unit>.glb; receipts go to ~/art/look-v3/local-generation/. Max 3 attempts per unit.
+   - Repair helpers already in the repo: orient-local-glb.py, pad-native-texture.py, export-decoded.py, repair-voxel-shell.py, finish-voxel-shell.py, fix-inward-glb.py, inspect-glb.py, prepare-unit.mjs, intake-models.mjs.
+   - USE UNDER THE 3D SWITCH: TRELLIS output is only a shape/proportion reference or a shrinkwrap target for our clean Blender base. Never ship its raw mesh or UVs.
+5. Earlier native outputs to reuse as references (do not regenerate): Mochi and Soot GLBs; local runs for Clover, Yarn Giant, Panko, Mallow, Cinnamon, Velvet and Biscuit in ~/art/look-v3 (inbox/, local-generation/, image-to3d/). Uncommitted clover.glb and yarn-giant.glb are in assets/cardrpg-look/v3-generated/. Concept masters (12 cats + 13 enemies) are in r2/concepts/ and ~/art/look-v3.
+6. Image generation: the Codex built-in image tool is allowed (GEN_IMAGES=ALLOWED, user 9 Nov). Use it for clean turnaround sheets from OUR concepts, with your own prompts. Never use other games' art as input. Record provenance in assets/provenance/look.md. If the new account lacks the image tool, write it in NEEDS-USER.md and continue with Blender projection from the existing concepts.
+7. NOT available, do not use: fal.ai or any paid API (no FAL_KEY; no paid services), the Hugging Face TRELLIS Space in a browser (retired), Hunyuan3D, TripoSR, SF3D and other new model downloads, unless your research finds a free local tool that clearly beats the route above. In that case, install it OUTSIDE the repo under /Users/bao/art or /Users/bao/tools, record it in TOOLS-3D.md and DECISIONS.md, and go ahead (pre-approved).
+
+Large files stay outside git (/Users/bao/art, /Users/bao/tools). Never commit weights, venvs or node_modules.
