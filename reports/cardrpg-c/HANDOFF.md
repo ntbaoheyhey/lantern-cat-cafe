@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 VFX contract verified; continue quality/intake.
+NOW: C11 VFX lifecycle verified; continue quality/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect designer VFX rendering geometry/lifecycle.
+NEXT1: check designer inbox; inspect designer VFX coordinate sizing.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
@@ -22,7 +22,7 @@ KNOWN:cat624combat/120final/24live/576source/576offlinePASS;46finalviews;29final
 KNOWN:outcome60combat/576source/576offline+12controls/34views/34tests/types/lintPASS;labelrowsclear;74maxdraws.
 KNOWN:framing240source/144offline/6PausePlay/20views/12tests/types/lintPASS;min4.16px,p9516.8ms/60draws.
 KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
-KNOWN:pending6cold/10lifecycle/526offline switches/2controls/4views/34tests/types/lintPASS.
+KNOWN:pending6cold/10lifecycle/526offlinePASS;VFXlifecycle4browser/13tests/types/lint/2offline/2controls/4viewsPASS.
 KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS;no balance change.
 KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lintPASS;99draws;p9516.8/16.7ms.
 KNOWN:pnggate2corruptfalsePASS->FIX;41tests/15finalPASS;VFXcontract6falsePASS->FIX/49tests/types/lint/4retainedviewsPASS.
