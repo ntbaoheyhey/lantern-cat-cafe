@@ -1,0 +1,22 @@
+✔ all 25 units retain exact tiers, sockets, skills, portable VFX folders and fallback paths (0.95025ms)
+✔ official parser accepts the complete fixture and measures its rendered setup bounds (8.076459ms)
+✔ PNG gate decodes pixels and rejects truncated data, corrupt IDAT and invalid CRC (1.384666ms)
+✔ fail-version is blocked with actionable FIX reasons (2.426375ms)
+✔ fail-bones is blocked with actionable FIX reasons (1.826459ms)
+✔ fail-animation-height is blocked with actionable FIX reasons (1.706417ms)
+✔ event timing and budgets warn without blocking; manifest scale fixes unit size without changing source (2.928667ms)
+✔ parser rejects missing atlas regions, unsafe pages and non-finite transforms (2.109792ms)
+✔ unreachable sequence contact warns and reports the timed fallback without changing the delivery (6.422125ms)
+✔ independent official AnimationStates share cached data without sharing pose or events (1.663625ms)
+✔ intake installs immutable accepted revision, preserves designer bytes and keeps it after a failed replacement (13.936584ms)
+✔ corrupt atlas and sequence replacements preserve the accepted revision and source bytes (12.592542ms)
+✔ the latest installed format is active while earlier accepted revisions remain available (20.185958ms)
+✔ Cubism is identified and PNG sequence is validated; symlink escapes are blocked (2.357792ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 173.42075

@@ -1,6 +1,6 @@
 # Asset slots
 
-Generated from the live catalog by tools/cardrpg-look/spine/generate-contract.mjs. The executable contract is assets/cardrpg-look/spine/{config,slots}.json. Accepted export or sequence metadata changes require no TypeScript edits. Runtime identities stay exact; enemy VFX folders replace colon with hyphen.
+Generated from the live catalog by tools/cardrpg-look/spine/generate-contract.mjs. The executable contract is assets/cardrpg-look/spine/{config,slots}.json. Accepted export or sequence metadata changes require no TypeScript edits. Successful intake writes activeSource (designer or sequence); a newer PNG delivery can replace an older skeleton without removing the previous revision. Runtime identities stay exact; enemy VFX folders replace colon with hyphen.
 
 | Unit | Side / role | Size / height | Animations | Skills shown |
 |---|---|---|---|---|

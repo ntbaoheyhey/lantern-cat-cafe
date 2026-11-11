@@ -1,13 +1,12 @@
 # Lane C handoff
-NOW: C11 unusable authored event fallback verified; continue quality/intake.
+NOW: C11 active character format verified; continue quality/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; inspect intake/runtime consistency for sequence/override paths.
+NEXT1: check designer inbox; inspect VFX export/render contract consistency.
 NEXT2: keep large diagnostics outside git (evidence<120MB); preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
 KNOWN: raw accounts unchanged;same-node recovery2/4(completed1/1,earlyfallback1/3),not population evidence.
-KNOWN: pending advice guard+content encounter key stops discovery receipts restarting worker;26tests/6viewsPASS.
 KNOWN: free gear+641 preview matches six public-command clicks/currencies unchanged;10views/9testsPASS.
 KNOWN: recruit scroll/focus+field-guide fixes;62baseline+12recruit+2guide+4battle views inspected.
 KNOWN: full421E2E twicePASS before latest advice/stage work;do not claim fullsuite on current head.
@@ -28,3 +27,4 @@ KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS
 KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lintPASS;99draws;p9516.8/16.7ms.
 KNOWN:pnggate2corruptfalsePASS->FIX;41tests/15final/types/lintPASS;25placeholdersvalid;browserunchanged.
 KNOWN:eventfallback4misses->120sourcePASS;30tests/types/lint/2offlinesmoke/2controls/4viewsPASS;demo29226081.
+KNOWN:activeformat2misses->10sourcePASS;32focused/types/lint/2offlinesmoke/2controls/4viewsPASS;demo29226105.

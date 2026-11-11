@@ -25,6 +25,7 @@ try {
   const previous = await json(`${dir}/slots.json`).catch(() => ({units:[]}));
   const units = [...R.CATS, ...R.ENEMIES].map(unit => {
     const cat = !!unit.skills, size = scale.units.find(row => row.id === unit.id);
+    const accepted = previous.units.find(row=>row.id===unit.id);
     if (!size) throw Error(`Missing size standard ${unit.id}`);
     const tier = cat ? 'cat' : size.kind;
     const range = tier === 'cat' ? [512,512] : tier === 'boss' ? [870,998] : tier === 'small' ? [410,512] : [563,666];
@@ -51,9 +52,10 @@ try {
       budgets:{bones:tier==='boss'?80:40,meshVertices:tier==='boss'?800:400,clipping:1,atlasPage:config.atlasMax},
       skills, concept:`assets/source/look-v3/concepts/${unit.id}.png`,
       psd:unit.id==='mochi'?'/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.psd':`/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/${unit.id}-3-4.psd`,
-      placeholder:previous.units.find(row=>row.id===unit.id)?.placeholder ?? {skeleton:`${folder}/placeholder/${unit.id}.json`,atlas:`${folder}/placeholder/${unit.id}.atlas`,scale:1},
-      designer:previous.units.find(row=>row.id===unit.id)?.designer ?? null,
-      sequence:previous.units.find(row=>row.id===unit.id)?.sequence ?? null,
+      placeholder:accepted?.placeholder ?? {skeleton:`${folder}/placeholder/${unit.id}.json`,atlas:`${folder}/placeholder/${unit.id}.atlas`,scale:1},
+      designer:accepted?.designer ?? null,
+      sequence:accepted?.sequence ?? null,
+      activeSource:accepted?.activeSource,
       sequencePath:`${folder}/sequence/sequence.json`,
     };
   });
@@ -61,7 +63,7 @@ try {
   await writeFile(resolve(root,`${dir}/slots.json`),JSON.stringify({schemaVersion:1,config:'config.json',units,statuses},null,2)+'\n');
   const wave = id => id==='mochi'?'Pilot': ['soot','clover','button-guard','sock-skipper','yarn-giant'].includes(id)?'1':R.CAT_BY_ID[id]?'2':'3';
   for (const unit of units) await mkdir(resolve(root,unit.folder),{recursive:true});
-  await writeFile(resolve(root,'reports/cardrpg-c/ASSET-SLOTS.md'), `# Asset slots\n\nGenerated from the live catalog by tools/cardrpg-look/spine/generate-contract.mjs. The executable contract is assets/cardrpg-look/spine/{config,slots}.json. Accepted export or sequence metadata changes require no TypeScript edits. Runtime identities stay exact; enemy VFX folders replace colon with hyphen.\n\n| Unit | Side / role | Size / height | Animations | Skills shown |\n|---|---|---|---|---|\n`+units.map(u=>`| ${u.id} | ${u.side} / ${u.role} | ${u.tier} / ${u.targetHeight} (${u.heightRange.join('–')}) | ${u.animations.join(', ')} | ${u.skills.map(s=>`${s.id}: ${s.name}`).join('; ')} |`).join('\n')+`\n\nEach unit folder is assets/cardrpg-look/spine/<id>/. Deliver <id>.json OR <id>.skel, <id>.atlas and its named PNG pages; the initial page is <id>.png. Placeholders live in placeholder/. Per-unit sequence/sequence.json is the license/tool fallback.\n\nShared required bones: ${config.requiredBones.join(', ')}. Sockets: ${Object.entries(config.sockets).map(([a,b])=>`${a} ← ${b}`).join('; ')}.\n\nEvery skill launches from main-hand or vfx-origin, impacts the target vfx-origin and places rings at root. Cast/impact/cut-in event fractions, optional designer VFX folders, budgets and exact clip lists are in slots.json. The runtime flips enemies; art always faces right. Boss width is at most 1126.4 Spine units. See DESIGNER-SPEC for delivery, validation and acceptance.\n`);
+  await writeFile(resolve(root,'reports/cardrpg-c/ASSET-SLOTS.md'), `# Asset slots\n\nGenerated from the live catalog by tools/cardrpg-look/spine/generate-contract.mjs. The executable contract is assets/cardrpg-look/spine/{config,slots}.json. Accepted export or sequence metadata changes require no TypeScript edits. Successful intake writes activeSource (designer or sequence); a newer PNG delivery can replace an older skeleton without removing the previous revision. Runtime identities stay exact; enemy VFX folders replace colon with hyphen.\n\n| Unit | Side / role | Size / height | Animations | Skills shown |\n|---|---|---|---|---|\n`+units.map(u=>`| ${u.id} | ${u.side} / ${u.role} | ${u.tier} / ${u.targetHeight} (${u.heightRange.join('–')}) | ${u.animations.join(', ')} | ${u.skills.map(s=>`${s.id}: ${s.name}`).join('; ')} |`).join('\n')+`\n\nEach unit folder is assets/cardrpg-look/spine/<id>/. Deliver <id>.json OR <id>.skel, <id>.atlas and its named PNG pages; the initial page is <id>.png. Placeholders live in placeholder/. Per-unit sequence/sequence.json is the license/tool fallback.\n\nShared required bones: ${config.requiredBones.join(', ')}. Sockets: ${Object.entries(config.sockets).map(([a,b])=>`${a} ← ${b}`).join('; ')}.\n\nEvery skill launches from main-hand or vfx-origin, impacts the target vfx-origin and places rings at root. Cast/impact/cut-in event fractions, optional designer VFX folders, budgets and exact clip lists are in slots.json. The runtime flips enemies; art always faces right. Boss width is at most 1126.4 Spine units. See DESIGNER-SPEC for delivery, validation and acceptance.\n`);
   const table = units.map(u=>`| ${wave(u.id)} | ${u.id} | ${u.role} | ${u.tier} / ${u.targetHeight} | ${u.concept} | ${u.psd} | ${u.skills.map(s=>s.name).join('; ')} |`).join('\n');
   const header = '| Wave | Unit | Role | Size / height | Original concept | PSD (read-only) | Skills shown |\n|---|---|---|---|---|---|---|\n';
   await writeFile(resolve(root,'reports/cardrpg-c/DESIGNER-QUEUE.md'),'# Designer queue\n\nPilot: Mochi. Wave 1: Soot, Clover, Button Guard, Sock Skipper, Yarn Giant. Wave 2: remaining cats. Wave 3: remaining enemies/bosses. Only the Mochi PSD path is published at this checkpoint; <published-wave> is explicitly pending, not an existing file. Do not wait to animate the pilot. Existing soft-painted original concepts remain the character style.\n\n'+header+table+'\n');

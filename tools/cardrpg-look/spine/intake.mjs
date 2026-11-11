@@ -26,6 +26,7 @@ export async function intake({id,folder,root=ROOT,install=false,scale}) {
       const accepted={format:report.format,scale:report.scale??1,revision:report.digest,acceptedAt:new Date().toISOString()};
       if (report.format==='sequence') unit.sequence={...accepted,manifest:`${relative}/sequence.json`};
       else unit.designer={...accepted,skeleton:`${relative}/${report.skeletonFile}`,atlas:`${relative}/${report.atlasFile}`};
+      unit.activeSource=report.format==='sequence'?'sequence':'designer';
       await writeFile(slotsFile+'.tmp',JSON.stringify(slots,null,2)+'\n');await rename(slotsFile+'.tmp',slotsFile);report.installed=true;
     }
   }

@@ -81,6 +81,26 @@ test('corrupt atlas and sequence replacements preserve the accepted revision and
   }
  }finally{await rm(temp,{recursive:true,force:true});}
 });
+test('the latest installed format is active while earlier accepted revisions remain available',async()=>{
+ const temp=await mkdtemp('/tmp/cardrpg-c-format-switch-test-');
+ try{
+  const manifest=resolve(temp,'assets/cardrpg-look/spine/slots.json');await mkdir(resolve(temp,'assets/cardrpg-look/spine'),{recursive:true});await writeFile(manifest,JSON.stringify(slots));
+  const folder=resolve(temp,'designer');await cp(resolve(fixtures,'pass'),folder,{recursive:true});
+  const original=await readFile(resolve(folder,'mochi.json'));
+  const current=async()=>JSON.parse(await readFile(manifest,'utf8')).units.find(u=>u.id==='mochi');
+  assert.equal((await intake({id:'mochi',folder,root:temp,install:true})).installed,true);
+  const spine=await current();assert.equal(spine.activeSource,'designer');
+  const animations=Object.fromEntries(unit.animations.map(name=>{const spec=CONFIG.animations[name],duration=(spec.seconds[0]+spec.seconds[1])/2;return[name,{fps:20,frames:Array(Math.round(duration*20)).fill('mochi.png'),events:Object.entries(spec.events).map(([name,f])=>({name,time:f*duration}))}];}));
+  await writeFile(resolve(folder,'sequence.json'),JSON.stringify({id:'mochi',facing:'right',height:512,width:256,sockets:Object.fromEntries(unit.requiredBones.map(n=>[n,[0,0]])),animations}));
+  const beforeDryRun=await readFile(manifest);await intake({id:'mochi',folder,root:temp});assert.deepEqual(await readFile(manifest),beforeDryRun);
+  assert.equal((await intake({id:'mochi',folder,root:temp,install:true})).installed,true);
+  const sequence=await current();assert.equal(sequence.activeSource,'sequence');assert.deepEqual(sequence.designer,spine.designer);
+  const accepted=await readFile(manifest);await intake({id:'mochi',folder:resolve(fixtures,'fail-bones'),root:temp,install:true});assert.deepEqual(await readFile(manifest),accepted);
+  assert.equal((await intake({id:'mochi',folder:resolve(fixtures,'pass'),root:temp,install:true})).installed,true);
+  const restored=await current();assert.equal(restored.activeSource,'designer');assert.deepEqual(restored.sequence,sequence.sequence);
+  assert.deepEqual(await readFile(resolve(folder,'mochi.json')),original);
+ }finally{await rm(temp,{recursive:true,force:true});}
+});
 test('Cubism is identified and PNG sequence is validated; symlink escapes are blocked',async()=>{
  const temp=await mkdtemp('/tmp/cardrpg-c-sequence-test-');try{
  await writeFile(resolve(temp,'mochi.model3.json'),'{}');let result=await validateDelivery(temp,unit);assert.equal(result.format,'cubism');assert.equal(result.accepted,false);

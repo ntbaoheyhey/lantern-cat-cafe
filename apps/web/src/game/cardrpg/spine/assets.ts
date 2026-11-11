@@ -83,15 +83,17 @@ export class SpineActor {
 }
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet'):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
- const designer=unit.designer as AcceptedSkeleton|null,sequence=unit.sequence as AcceptedSequence|null;
+ const designer=unit.designer,sequence=unit.sequence;
  const noRuntime=typeof location!=='undefined'&&new URLSearchParams(location.search).get('spineRuntime')==='0';
  const candidates:{source:'designer'|'placeholder';spec:AcceptedSkeleton}[]=[];
  if(!noRuntime&&preference!=='puppet'&&preference!=='sequence'){
   if(designer&&preference!=='placeholder')candidates.push({source:'designer',spec:designer});
   if(preference!=='designer')candidates.push({source:'placeholder',spec:unit.placeholder});
  }
- // An explicitly chosen PNG delivery takes precedence over temporary skeleton art.
- if(sequence&&(!designer||noRuntime||preference==='sequence')&&preference!=='puppet'&&preference!=='placeholder'){
+ // A newly installed PNG delivery can replace an older accepted skeleton.
+ // Explicit previews and the runtime-free flag still take precedence.
+ const sequenceFirst=!designer||noRuntime||preference==='sequence'||preference===undefined&&unit.activeSource==='sequence';
+ if(sequence&&sequenceFirst&&preference!=='puppet'&&preference!=='placeholder'){
   try{const data=await loadSequence(sequence);actor.source='sequence';actor.sequence=data;for(const [k,v] of data.clips)actor.clips.set(k,v);const scale=data.manifest.scale??sequence.scale;
    Object.assign(actor.bounds,{x:-data.manifest.width*scale/2,y:0,width:data.manifest.width*scale,height:data.manifest.height*scale});
    actor.plane=new T.Mesh(new T.PlaneGeometry(actor.bounds.width,actor.bounds.height),new T.MeshBasicMaterial({transparent:true,depthWrite:false,depthTest:false,toneMapped:false}));actor.plane.position.y=actor.bounds.height/2;actor.root.add(actor.plane);

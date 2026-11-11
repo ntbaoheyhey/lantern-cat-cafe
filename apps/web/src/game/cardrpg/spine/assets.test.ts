@@ -3,7 +3,7 @@ import * as T from 'three';
 import fixture from '../../../../../../tools/cardrpg-look/spine/fixtures/pass/mochi.json';
 import atlasText from '../../../../../../tools/cardrpg-look/spine/fixtures/pass/mochi.atlas?raw';
 import {loadSkeleton, loadSpineActor, spineAssetUrl} from './assets';
-import {SPINE_UNIT_BY_ID, type AcceptedSequence} from './config';
+import {SPINE_UNIT_BY_ID, type AcceptedSequence, type AcceptedSkeleton} from './config';
 
 vi.mock('../../squad/turn3d/look-puppet', () => ({
  loadPuppetModel: async () => {const scene=new T.Group();scene.userData.paintedRig={aspect:.5};return {scene};},
@@ -58,4 +58,22 @@ it.each(['manifest','image'])('recovers a PNG sequence after a temporary %s fail
   expect(reused.plane).not.toBe(recovered.plane);expect(fetchAsset).toHaveBeenCalledTimes(fetches);expect(decode).toHaveBeenCalledTimes(decodes);
   recovered.dispose();reused.dispose();
  }finally{mutable.sequence=previous;}
+});
+
+it('uses the active accepted format by default, keeping explicit previews and runtime-free playback',async()=>{
+ const unit=SPINE_UNIT_BY_ID.get('cinnamon')!,sequenceUnit=SPINE_UNIT_BY_ID.get('inkcap')!;
+ const mutable=unit as unknown as {designer:AcceptedSkeleton|null;sequence:AcceptedSequence|null;activeSource?:'designer'|'sequence'};
+ const original={designer:mutable.designer,sequence:mutable.sequence,activeSource:mutable.activeSource};
+ mutable.designer=unit.placeholder;mutable.sequence={format:'sequence',manifest:sequenceUnit.placeholder.skeleton,scale:1};mutable.activeSource='sequence';
+ const manifest={id:unit.id,height:512,width:256,fps:20,sockets:Object.fromEntries(unit.requiredBones.map(name=>[name,[0,256]])),animations:Object.fromEntries(unit.animations.map(name=>[name,{frames:Array(40).fill('inkcap.png')}]))};
+ fetchAsset.mockImplementation(async(url:string)=>new Response(url===spineAssetUrl(sequenceUnit.placeholder.skeleton)?JSON.stringify(manifest):url===spineAssetUrl(unit.placeholder.atlas)?atlasText.replaceAll('mochi.png','cinnamon.png'):JSON.stringify(fixture)));
+ async function expectSource(expected:string,preference?:'designer'|'sequence'|'placeholder'){
+  const actor=await loadSpineActor(unit.id,preference);try{expect(actor.source).toBe(expected);expect(actor.bounds.height).toBeCloseTo(512,6);}finally{actor.dispose();}
+ }
+ try{
+  await expectSource('sequence');await expectSource('designer','designer');await expectSource('placeholder','placeholder');
+  mutable.activeSource='designer';await expectSource('designer');await expectSource('sequence','sequence');
+  delete mutable.activeSource;await expectSource('designer');
+  mutable.activeSource='designer';vi.stubGlobal('location',{search:'?spineRuntime=0'});await expectSource('sequence');
+ }finally{Object.assign(mutable,original);}
 });

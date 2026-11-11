@@ -1,10 +1,12 @@
 import config from '../../../../../../assets/cardrpg-look/spine/config.json';
 import registry from '../../../../../../assets/cardrpg-look/spine/slots.json';
 export const SPINE_CONFIG=config;
-export const SPINE_UNITS=registry.units;
+// Intake validates these optional delivery records; their types must not depend
+// on whether this checkout happens to contain a designer export yet.
+export type SpineUnit=Omit<(typeof registry.units)[number],'designer'|'sequence'|'activeSource'>&{designer:AcceptedSkeleton|null;sequence:AcceptedSequence|null;activeSource?:'designer'|'sequence'};
+export const SPINE_UNITS=registry.units as SpineUnit[];
 export const SPINE_UNIT_BY_ID=new Map(SPINE_UNITS.map(unit=>[unit.id,unit]));
 export const SPINE_SKILLS=new Map(SPINE_UNITS.flatMap(unit=>unit.skills.map(skill=>[skill.id,skill] as const)));
-export type SpineUnit=(typeof SPINE_UNITS)[number];
 export type SpineSocket=keyof typeof config.sockets;
 export type SpineAnimation=keyof typeof config.animations;
 export interface AcceptedSkeleton {format?:'json'|'binary';skeleton:string;atlas:string;scale:number;revision?:string}
