@@ -10,6 +10,8 @@ import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/lo
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
+import { SpineScene } from '../spine/scene';
+import { lookSpineEnabled } from '../spine/config';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { MODEL_IDS, portrait, skillIcon } from './assets';
 import type { DepthModel } from './model';
@@ -32,7 +34,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const readable = useSyncExternalStore(subscribeReadableBattle, isReadableBattle);
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const host = useRef<HTMLDivElement>(null);
-  const scene = useRef<TurnScene | null>(null);
+  const scene = useRef<TurnScene | SpineScene | null>(null);
   const skillBanner = useRef<HTMLDivElement>(null);
   const bossCue = useRef<HTMLDivElement>(null);
   const cueHistory = useRef<{ initial: unknown; plan: DepthModel['plan']; sequence: number; events: PresentationEventV4[] }>({ initial: null, plan: null, sequence: -1, events: [] });
@@ -119,11 +121,12 @@ export function BattleView({ m }: { m: DepthModel }) {
           if (!readable || plate.style.transform !== transform) plate.style.transform = transform;
         }
       };
-      scene.current = new TurnScene(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
+      const Renderer = lookSpineEnabled(location.search,lookV2) ? SpineScene : TurnScene;
+      scene.current = new Renderer(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
         m.sceneError = message; m.notify(false);
       });
       window.__depthScene = scene.current;
-    } catch (error) { m.sceneError = `3D preview unavailable. ${String(error)}`; m.notify(false); }
+    } catch (error) { m.sceneError = `Battle preview unavailable. ${String(error)}`; m.notify(false); }
     const tick = (now: number) => {
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
       if (skillBanner.current) {
@@ -266,4 +269,4 @@ export function BattleView({ m }: { m: DepthModel }) {
     {logOpen && <aside className="dp-log" aria-label="Battle log"><button onClick={() => setLogOpen(false)}>Close log</button>{battle.log.slice(-100).reverse().map((event, index) => <p key={index}>R{event.round} · {event.text || `${battle.actors.find(candidate => candidate.id === event.actorId)?.name} → ${battle.actors.find(candidate => candidate.id === event.targetId)?.name} · ${event.kind} ${event.amount || ''}`}</p>)}</aside>}
   </section>;
 }
-declare global { interface Window { __depthScene?: TurnScene } }
+declare global { interface Window { __depthScene?: TurnScene | SpineScene } }

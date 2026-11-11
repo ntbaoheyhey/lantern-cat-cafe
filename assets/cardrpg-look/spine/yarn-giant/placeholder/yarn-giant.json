@@ -1,0 +1,721 @@
+{
+  "skeleton": {
+    "spine": "4.2.00",
+    "x": -507.8813559322034,
+    "y": 0,
+    "width": 1015.7627118644068,
+    "height": 922
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "hip",
+      "parent": "root",
+      "x": -1.7363465160075733,
+      "y": 302.9751035781544
+    },
+    {
+      "name": "head",
+      "parent": "hip",
+      "x": -104.18079096045196,
+      "y": 342.85898305084754
+    },
+    {
+      "name": "foot-r",
+      "parent": "hip",
+      "x": 87.68549905838036,
+      "y": -146.70391713747648
+    },
+    {
+      "name": "foot-l",
+      "parent": "hip",
+      "x": -175.37099811676083,
+      "y": -141.49487758945386
+    },
+    {
+      "name": "arm-l",
+      "parent": "hip",
+      "x": -335.98305084745766,
+      "y": 119.8252730696799
+    },
+    {
+      "name": "arm-r",
+      "parent": "hip",
+      "x": 276.0790960451978,
+      "y": 168.44297551789077
+    },
+    {
+      "name": "hp-anchor",
+      "parent": "head",
+      "x": 105.91713747645953,
+      "y": 324.16591337099806
+    },
+    {
+      "name": "vfx-origin",
+      "parent": "hip",
+      "x": 1.7363465160075733,
+      "y": 176.4648964218456
+    },
+    {
+      "name": "main-hand",
+      "parent": "arm-r",
+      "x": 89.42184557438793,
+      "y": -250.03389830508476
+    },
+    {
+      "name": "off-hand",
+      "parent": "arm-l",
+      "x": -68.58568738229755,
+      "y": -205.75706214689268
+    }
+  ],
+  "slots": [
+    {
+      "name": "body",
+      "bone": "hip",
+      "attachment": "body"
+    },
+    {
+      "name": "foot-r",
+      "bone": "foot-r",
+      "attachment": "foot-r"
+    },
+    {
+      "name": "foot-l",
+      "bone": "foot-l",
+      "attachment": "foot-l"
+    },
+    {
+      "name": "arm-l",
+      "bone": "arm-l",
+      "attachment": "arm-l"
+    },
+    {
+      "name": "arm-r",
+      "bone": "arm-r",
+      "attachment": "arm-r"
+    },
+    {
+      "name": "head",
+      "bone": "head",
+      "attachment": "head"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "body": {
+          "body": {
+            "x": 5.209039548022604,
+            "y": 100.2913747645951,
+            "width": 923.7363465160076,
+            "height": 698.8794726930321
+          }
+        },
+        "foot-r": {
+          "foot-r": {
+            "x": 43.84274952919026,
+            "y": -50.354048964218364,
+            "width": 245.69303201506594,
+            "height": 211.83427495291903
+          }
+        },
+        "foot-l": {
+          "foot-l": {
+            "x": -15.62711864406782,
+            "y": -44.27683615819201,
+            "width": 243.08851224105464,
+            "height": 203.15254237288136
+          }
+        },
+        "arm-l": {
+          "arm-l": {
+            "x": -41.67231638418076,
+            "y": -171.89830508474577,
+            "width": 256.9792843691149,
+            "height": 408.04143126177024
+          }
+        },
+        "arm-r": {
+          "arm-r": {
+            "x": 60.33804143126173,
+            "y": -193.60263653483992,
+            "width": 346.4011299435029,
+            "height": 480.9679849340867
+          }
+        },
+        "head": {
+          "head": {
+            "x": 110.69209039548018,
+            "y": 79.52467043314493,
+            "width": 565.180790960452,
+            "height": 393.28248587570624
+          }
+        }
+      }
+    }
+  ],
+  "events": {
+    "hit": {},
+    "cast": {},
+    "ult-start": {},
+    "ult-end": {}
+  },
+  "animations": {
+    "idle": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 2.5,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 1.25,
+              "x": 0.995,
+              "y": 1.012
+            },
+            {
+              "time": 2.5,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "head": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.4
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        }
+      }
+    },
+    "appear": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": -80,
+              "y": 0
+            },
+            {
+              "time": 0.455,
+              "x": 4,
+              "y": 0
+            },
+            {
+              "time": 0.65,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "attack": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.1875,
+              "x": -15
+            },
+            {
+              "time": 0.36,
+              "x": 24
+            },
+            {
+              "time": 0.75
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.18,
+              "value": 3
+            },
+            {
+              "time": 0.4125,
+              "value": -4
+            },
+            {
+              "time": 0.75,
+              "value": 0
+            }
+          ]
+        },
+        "arm-r": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.1875,
+              "value": -12
+            },
+            {
+              "time": 0.4125,
+              "value": 14
+            },
+            {
+              "time": 0.75,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "time": 0.36,
+          "name": "hit"
+        }
+      ]
+    },
+    "skill": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.24,
+              "value": 3
+            },
+            {
+              "time": 0.55,
+              "value": -4
+            },
+            {
+              "time": 1,
+              "value": 0
+            }
+          ]
+        },
+        "arm-r": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.25,
+              "value": -12
+            },
+            {
+              "time": 0.55,
+              "value": 14
+            },
+            {
+              "time": 1,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "time": 0.25,
+          "name": "cast"
+        },
+        {
+          "time": 0.55,
+          "name": "hit"
+        }
+      ]
+    },
+    "ult": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 2,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.48,
+              "value": 3
+            },
+            {
+              "time": 1.1,
+              "value": -4
+            },
+            {
+              "time": 2,
+              "value": 0
+            }
+          ]
+        },
+        "arm-r": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.5,
+              "value": -12
+            },
+            {
+              "time": 1.1,
+              "value": 14
+            },
+            {
+              "time": 2,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "time": 0.08,
+          "name": "ult-start"
+        },
+        {
+          "time": 0.5,
+          "name": "cast"
+        },
+        {
+          "time": 1.1,
+          "name": "hit"
+        },
+        {
+          "time": 1.88,
+          "name": "ult-end"
+        }
+      ]
+    },
+    "hurt": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.35,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.175,
+              "value": 7
+            },
+            {
+              "time": 0.35,
+              "value": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 0.0875,
+              "x": -18
+            },
+            {
+              "time": 0.35
+            }
+          ]
+        }
+      }
+    },
+    "ko": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.8,
+              "value": -68
+            },
+            {
+              "time": 1,
+              "value": -72
+            }
+          ],
+          "translate": [
+            {
+              "time": 0
+            },
+            {
+              "time": 1,
+              "y": -230.5
+            }
+          ]
+        }
+      }
+    },
+    "victory": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 1.75,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 0.875,
+              "x": 0.995,
+              "y": 1.012
+            },
+            {
+              "time": 1.75,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "head": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.875,
+              "value": 4
+            },
+            {
+              "time": 1.75,
+              "value": 0
+            }
+          ]
+        }
+      }
+    },
+    "idle-phase2": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 2.5,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 1.25,
+              "x": 0.995,
+              "y": 1.012
+            },
+            {
+              "time": 2.5,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "head": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 1.25,
+              "value": 1.4
+            },
+            {
+              "time": 2.5,
+              "value": 0
+            }
+          ]
+        }
+      }
+    },
+    "enrage": {
+      "bones": {
+        "root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "hip": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.24,
+              "value": 3
+            },
+            {
+              "time": 0.55,
+              "value": -4
+            },
+            {
+              "time": 1,
+              "value": 0
+            }
+          ]
+        },
+        "arm-r": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.25,
+              "value": -12
+            },
+            {
+              "time": 0.55,
+              "value": 14
+            },
+            {
+              "time": 1,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "time": 0.4,
+          "name": "cast"
+        }
+      ]
+    }
+  },
+  "laneC": {
+    "status": "placeholder",
+    "source": "assets/cardrpg-look/v3-puppets/yarn-giant.rig.json",
+    "tool": "puppet-to-spine.mjs"
+  }
+}

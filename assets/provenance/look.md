@@ -444,3 +444,7 @@ Same original concept/pixels/generation prompt retained; no new image or model g
 
 ## Lane C parser fixture — 2026-11-11
 - tools/cardrpg-look/spine/fixtures.mjs creates an original solid amber rectangle PNG and simple seven-bone Spine JSON; source is deterministic authored coordinates, no external image/tool input. Validation fixture only, not character art. Failing copies intentionally change version, bones, clip/height.
+
+## Lane C — original Spine placeholders and cafe stage, 2026-11-11
+- tools/cardrpg-look/spine/puppet-to-spine.mjs reuses the accepted original v3-puppets atlas/rig for all25units; no new character art. Converts pixels to PMA, pivots to512-unit cat scale, authors temporary bone animation. Output assets/cardrpg-look/spine/*/placeholder. No external image or prompt input.
+- apps/web/src/game/cardrpg/spine/stage.ts authors three procedural canvas layers (night/window, cafe wall/lamps, wooden floor/vignette) using local coordinates and style.ts tokens. Source: existing Taskbar Hero cafe motifs; no third-party art. Temporary2D backdrop.

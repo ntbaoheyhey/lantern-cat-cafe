@@ -3,7 +3,7 @@
 - [x] C0 Setup + carryover (<= 60 min): section 1.
 - [x] C1 Gap research (<= 60 min, RESEARCH-C.md <= 2 pages, words only): Spine web runtime choice for our renderer; how layered Live2D/Spine characters are integrated in top 2D side-view hero battlers; painted-style 2D skill VFX techniques and budgets; difficulty curves of top idle/hero battlers (first loss timing, retry loops). Skip what A6/B research already covers.
 - [x] C2 Contract + slots + intake (by 12 Nov 06:00 UTC): 2.2 + 2.3, DESIGNER-QUEUE.md + DESIGNER-QUEUE-VI.md (pilot Mochi; wave 1 = other 2 demo cats, 2 common demo enemies, Yarn Giant; wave 2 = remaining cats; wave 3 = remaining monsters/bosses) with concept/PSD paths, role, tier/size, skills shown.
-- [ ] C3 Spine runtime + 2D stage (by 12 Nov 20:00 UTC): 2.1, lookSpine, fallback chain, sockets, event wiring, unit tests + Playwright battle test at both sizes.
+- [x] C3 Spine runtime + 2D stage (by 12 Nov 20:00 UTC): 2.1, lookSpine, fallback chain, sockets, event wiring, unit tests + Playwright battle test at both sizes.
 - [ ] C4 Placeholders 25/25 (by 13 Nov 12:00 UTC): 2.4(a); all pass the validator; lineup.webp on the 512 grid; size tests (node: heights per tier; Playwright: on-screen cats equal +-8%, cat >= 22% of canvas height, boss <= 55%). Then 2.4(b) per character as PSDs appear (repeat item).
 - [ ] C5 Gameplay difficulty + boss tail (by 14 Nov 12:00 UTC): 2.6 numeric targets; up to 3 tuning rounds, then pick the simplest fallback, publish remaining misses honestly.
 - [ ] C6 Skill VFX pass 1 (by 15 Nov 12:00 UTC): 2.5 for every skill/ult/status; VFX gallery page docs/cardrpg-c/vfx.html (each effect looping on a placeholder unit, x1).
