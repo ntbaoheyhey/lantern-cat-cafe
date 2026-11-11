@@ -4,7 +4,8 @@ import {resolve} from 'node:path';
 import {mkdir,writeFile} from 'node:fs/promises';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json'));
 const {chromium}=require('@playwright/test'),sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
-const output=resolve(root,'reports/cardrpg-c/shots/c3');await mkdir(output,{recursive:true});
+const tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c3';
+const output=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(output,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const report={method:'Deterministic presentation fixtures; no gameplay/timing claim.',shots:[],errors:[]};
 try{

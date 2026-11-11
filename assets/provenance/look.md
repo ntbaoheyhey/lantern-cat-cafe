@@ -448,3 +448,9 @@ Same original concept/pixels/generation prompt retained; no new image or model g
 ## Lane C — original Spine placeholders and cafe stage, 2026-11-11
 - tools/cardrpg-look/spine/puppet-to-spine.mjs reuses the accepted original v3-puppets atlas/rig for all25units; no new character art. Converts pixels to PMA, pivots to512-unit cat scale, authors temporary bone animation. Output assets/cardrpg-look/spine/*/placeholder. No external image or prompt input.
 - apps/web/src/game/cardrpg/spine/stage.ts authors three procedural canvas layers (night/window, cafe wall/lamps, wooden floor/vignette) using local coordinates and style.ts tokens. Source: existing Taskbar Hero cafe motifs; no third-party art. Temporary2D backdrop.
+
+## Lane C C4 — published PSD placeholder pilot (2026-11-11)
+- Tool: tools/cardrpg-look/spine/psd-to-spine.py (psd-tools/Pillow/NumPy); no generative model or external reference.
+- Source: read-only /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.{psd,png}, parts.json and rig notes; exact hashes stored in derived mochi.json laneC.sourceHashes. Flat PNG supplies same-character cheek pixels for the flagged blink patch.
+- Output: assets/cardrpg-look/spine/mochi/psd-placeholder/{mochi.json,mochi.atlas,mochi.png};68layers/32bones/1024atlas/512height. Automatic placeholder only. No source edit or final character generation.
+- Instruction: preserve original soft painted split art, share detail bones, add linked tail/ear motion, breathing, blink and cloth sway; align all named sockets to published pivots. Closed-eye lash-only alternates receive a derived feathered fur cover so hidden iris layers cannot expose dark sockets. Designer review remains required.
