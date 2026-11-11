@@ -17,7 +17,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.2 | 8.1 | 13: secondary route labels (7.5) | shots/q32-map-final + q32-offline;30source/34offlineviews,13–15pxlabels/40pxtonic,threechapters/allchoices/exactcappedclaims/keyboard/reducedmotion; no overlap |
 | Journal | 8.2 | 8.1 | 07: restrained keepsake illustration (7.5) | shots/q41-journal + q41-offline;40source/40offline views,14px counts/dates/gifts and44px actions; exacteightclaims/caps/route/60notes/keyboard, no clipping |
-| Field guide | 8.1 | 8.0 | 13: compact index metadata (7.5) | shots/q27-guide + q27-guide-final;64views, all75entries/search/keyboard/pause/focus/current prose,15–16px body |
+| Field guide | 8.2 | 8.1 | 07: restrained note emblems (7.5) | shots/q42-guide + q42-offline;36source/36offline views,14px metadata/44px actions, all75entries/search/keyboard/pause/focus/account/reduced motion pass |
 | Settings / save | 8.1 | 8.0 | 13: secondary account/status labels (7.5) | shots/q28-settings;20views, exact save roundtrip/select/invalid/reset-cancel/focus/comfort/replay, controls inside both sizes |
 | Normal battle | 8.2 | 8.1 | 13/18: small rage text (7.5) | final-screens/*-normal-battle; integrated25puppets, current stage/portraits; inspected |
 | Boss battle | 8.2 | 8.1 | 13: small floating labels (7.5) | shots/q14-p15/*-boss-adds-phase3; three helpers separated at both sizes, phase labels agree |

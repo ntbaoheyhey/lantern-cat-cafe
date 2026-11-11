@@ -148,3 +148,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T01:33:46Z Q41: retained Q26 scrapbook/pages and public claims; raise collection counts/dates/reasons to14px and actions44px. Required published BP38 merge is isolated to B-owned art/canvas; verify integrated framing in the offline package. No new rewards/records or numerical tuning.
 
 - 2026-11-11T01:35:15Z Q42/Q43 queued from inspected retained720p Field Guide/Settings views (both8.0 lows): practical metadata remains12–13px and controls40–42px. Apply existing readability/action-zone guidance; no new system or repeated research. Prepare off-app while Q41 verifies.
+
+- 2026-11-11T01:44:22Z Q42 applies the retained Field guide typography/action draft after Q41 acceptance. Reuse its lookup/keyboard probe but remove unrelated Button Guard framing; P38 already has current accepted framing. No catalogue or rule changes.
+
+- 2026-11-11T01:47:45Z Q44 follows the existing research readability guidance: inspected retained Cats growth/Inkcap skills720p expose9–11px metadata and36px actions. Improve existing costs/readiness/controls after Q43; keep art, commands and progression unchanged. Off-app draft /tmp/cardrpg-a6-q44-readability.css.

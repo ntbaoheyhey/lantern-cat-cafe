@@ -179,3 +179,10 @@
  }
  @media(max-width:900px) {.a6-settings-desk {grid-template-columns:1fr}.a6-save-actions {flex-wrap:wrap}}
 }
+
+/* Readable field counts, mechanics and existing actions. */
+.uv-app[data-a6=true] {
+ .a6-guide-finder>p,.a6-guide-writing header>p,.a6-guide-footnote,.uv-battle-guide .a6-guide-intro p {font-size:14px;line-height:1.4}
+ .a6-guide-chapters>button,.a6-guide-finder input,.a6-guide-index>button,.a6-guide-no-match button,.uv-battle-guide:has(>.a6-field-guide)>button {min-height:44px;font-size:14px}
+ .a6-guide-writing:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+}
