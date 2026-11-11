@@ -193,3 +193,9 @@ Rain Spool đã duyệt: cúi nguyên cặp sừng và mặt gỗ vào nhịp đ
 
 Pantry Crown đã duyệt: hai bàn tay gỗ thu vào lệch nhịp nhẹ; vương miện/cửa tủ/khăn thắt liền, hai giày giữ sàn.
 44 kiểm tra web,17 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/12 mẫu đổi pha/type/lint/parity đạt; bản chung 38,893,706 byte. Chuyển động7,5→7,7, tổng giữ8,0; tiếp tục Soot ultimate spectacle.
+
+2026-11-11T01:58:36.670616+00:00: Đã nhận yêu cầu tiếp tục; Pantry Crown đã đẩy lên nhánh B. Tiếp tục Soot Midnight Service từ kế hoạch đã lưu, giữ nguyên các kiểm tra và phần đã duyệt.
+
+Đã nhận lệnh chuyển sang 3D thật cho nhân vật, quái, boss và hiệu ứng; đặt chuẩn kích thước; bắt đầu D0.
+P40 được chốt thành mốc lưu trữ và đánh dấu đã thay thế; puppet chỉ còn là phương án tạm từng mẫu.
+Đã lưu nguyên văn yêu cầu, thay hàng đợi D0–D11; tiếp tục D1 kiểm tra công cụ và lấp khoảng trống kỹ thuật.

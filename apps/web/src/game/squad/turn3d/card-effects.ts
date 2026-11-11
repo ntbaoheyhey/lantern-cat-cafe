@@ -653,6 +653,20 @@ export class CardEffects {
         this.position.z += (offset - .5) * radius;
         spin = Math.sin(phase * Math.PI) * .2;
         break;
+      case 'crescent':
+        // A bounded sweep leaves the centre open for the target silhouette.
+        this.position.x += calm ? 0 : (travel * 2 - 1) * radius;
+        spin = calm ? 0 : (travel - .5) * layer.turns * Math.PI;
+        break;
+      case 'converge': {
+        // Both strokes end at the hit; they never cross and reopen outward.
+        const side = index % 2 ? 1 : -1, remaining = calm ? 0 : 1 - travel;
+        this.position.x += side * radius * remaining;
+        this.position.y += radius * .55 * remaining;
+        spin = side < 0 ? -Math.PI / 2 : Math.PI;
+        size *= calm ? .6 : .7 + .3 * Math.sin(phase * Math.PI);
+        break;
+      }
     }
     if(persistent && this.mark===1){
       // Alternate shoulders/sides in camera space. No flame is behind the torso;

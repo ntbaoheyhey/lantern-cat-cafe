@@ -2,14 +2,14 @@
 1. One agent; no subagents/model-calling helpers/parallel Codex runs, paid services or new accounts. Local tools allowed.
 2. Draft PRs only; no PR merge, deploy, main push, force-push or secrets; preserve all old sources and unreviewed GLBs.
 3. Never write in other lanes; main checkout fetch/worktree-add only; authorized disposable preview stays unpushed; never merge A6 into published B.
-4. Original concept art only; ALL units illustrated 2.5D puppets, no native image-to-3D roster; built-in imagegen allowed with tool/prompt/date provenance; never use other games' art.
+4. ALL units are real 3D rigged models + 3D VFX (user 11 Nov); raw generated meshes never ship; puppets = per-unit fallback only; size standard SCALE-STANDARD.md is law. Original art/imagegen with provenance only; no other games' art.
 5. Top unfinished QUEUE item; never redo ticked work. Check INBOX/STOP-B/fetched A6-OUTBOX each item; publish batches to draft #427 and continue.
-6. R-6 hard stops only as clarified below; deadline 2026-11-20 12:00 UTC. Max3 repair attempts, then simplest good fallback and FIXLOG.
+6. R-6 hard stops only as clarified below; deadline 2026-11-20 12:00 UTC. Max3 repairs per issue, then simpler real3D PARTIAL>=7.0 and FIXLOG; no puppet final.
 7. Ports5920–5923 only; heavy tools nice10/shared timing.lock <=20min; masters ~/art/look-v3; evidence <=120MB; combined demo <=40MB.
-8. Per unit battle/concept + motion sheet + face/HP check, score>=7.5; type/lint/touched tests; full parity once per batch.
-9. Exact original/addenda in PROMPT.txt; byte count/SHA at STATE top. HANDOFF one section <=60lines, rewrite per item/before long jobs with NOW/NEXT3/RUNNING/DONE+SHA/ISSUES/DECISIONS.
+8. 3D acceptance:8views+concept,both-size battle,4poses,no defects,yaw-20/0/+20 proof;mean>=7.5/each>=6.5;scale tests,type/lint/touchedtests;parity per batch.
+9. Exact original/addenda in PROMPT.txt; byte count/SHA at STATE top. HANDOFF one section <=30lines, rewrite per item/before long jobs with NOW/NEXT3/RUNNING/DONE+SHA/ISSUES/DECISIONS.
 10. PROGRESS.log UTC/item/result/SHA per finished step; commit/push lane files <=60min. Files override memory; read live paths/PIDs/SHAs/numbers.
-11. Read RULES/QUEUE/HANDOFF each item, after compaction/uncertainty, before git merge/push/branch and <=2h; PROMPT0/4 each item; no-memory start RULES/HANDOFF/QUEUE/full PROMPT.
+11. Read RULES/QUEUE/HANDOFF/PROMPT-3D-SWITCH-2026-11-11.txt each item/after compaction; before git merge/push/branch and <=2h; new3D addendum overrides 10Nov fixed puppet route.
 
 ADDENDUM FROM THE USER (10 Nov): DO NOT STOP UNTIL THE WORK IS DONE. This is not a pause and not a new task. Append it word for word to your RULES.md and to your saved prompt file (TASK.md for A6, PROMPT.txt for B), commit + push, then keep working the current queue item in the same turn.
 

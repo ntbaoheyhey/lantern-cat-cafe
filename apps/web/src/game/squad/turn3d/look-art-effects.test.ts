@@ -70,3 +70,19 @@ it('keeps the airborne hit readable at landing instead of saving most scale for 
  expect(impact).toBeGreaterThanOrEqual(.9);
  expect(artImpactScale(.8)/impact).toBeLessThan(1.4);
 });
+
+it('lands Midnight Service with converging strokes and clears its warm centre before the afterglow',()=>{
+ const art=artEffectRecipes(fullRecipes(CARD_EFFECT_RECIPES,[...ART_LIGHT_UNITS]));
+ const layers=art['soot-4']!.layers;
+ const strokes=layers.find(l=>l.motion==='converge')!;
+ const core=layers.find(l=>l.motion==='expand'&&!l.ground)!;
+ const afterglow=layers.find(l=>l.motion==='hold')!;
+ expect(strokes.anchor).toBe('all-targets');expect(strokes.count).toBe(2);
+ expect(strokes.start).toBeLessThan(.52);expect(strokes.end).toBeLessThan(.66);
+ expect(core.start).toBeGreaterThanOrEqual(.52);expect(core.start).toBeLessThan(.55);
+ expect(core.end).toBeLessThan(afterglow.end);expect(core.opacity).toBeGreaterThan(afterglow.opacity*2);
+ expect(layers.some(l=>l.motion==='crescent')).toBe(true);
+ for(const [id,recipe] of Object.entries(art))if(id!=='soot-4'){
+  expect(recipe.layers.some(l=>l.motion==='converge'||l.motion==='crescent'),id).toBe(false);
+ }
+});

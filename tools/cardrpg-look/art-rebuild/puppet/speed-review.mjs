@@ -13,7 +13,7 @@ try{
  await page.waitForFunction(()=>window.__depthReview,null,{timeout:120000});
  await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false);});
  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
- for(const id of ['mochi-4','soot-4','enemy:rain-spool'])for(const [speed,reduced] of [[1,false],[2,false],[3,false],[3,true]]){
+ for(const id of (process.env.ART_UNITS?.split(',')??['mochi-4','soot-4','enemy:rain-spool']))for(const [speed,reduced] of [[1,false],[2,false],[3,false],[3,true]]){
   // Prewarm this actor and set the speed before releasing its action clock.
   await page.evaluate(({id,speed,reduced})=>{const m=window.__depthReview;m.gallerySpeed=speed;m.state.settings.speed=speed;m.state.settings.reducedMotion=reduced;m.inspect(id,0);m.galleryBattle.initial.gameplayA6=true;m.notify(false);},{id,speed,reduced});
   await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthReview.sceneReady,null,{timeout:120000});

@@ -1,0 +1,7 @@
+# P40 — Soot checkpoint, superseded by mandatory3D switch
+
+Candidate1 shows a short original crescent sweep, two converging warm comet strokes, compact landing core and lower-opacity lavender afterglow. Same A6 shell paired at1440×900/1280×720:16frames visually checked; warm centre now peaks at landing, quieter late glow, face/HP/damage lanes clear. No asset generation, new combat events or clock changes. This is Lane B's bounded visual judgment, not user acceptance. The user's new decision rejects the puppet/flat-VFX route; this candidate is preserved only as a temporary fallback and historical checkpoint. No new3D score or final acceptance.
+
+Passed before switch: typecheck/lint,15focused tests including actual convergence transforms/reduced-motion stasis, four before/after x1cast audits,4natural speed casts(x1/x2/x3/x3reduced),5seed/6mode/102plan parity.0page/socket/faceHP/number-UI/duplicate-label/truncation failures. Warmedp95<=16.8ms; impact frames7/4/2/2 across speed cases. Maximum12effect instances in paired samples. Combined A6d5eab0b1f+B 38,894,150B, headroom1,105,850B. This is not a cold-load/all-route claim.
+
+Original raw snapshots/reports under ~/art/look-v3/p40/checkpoint-evidence; all measurements also in evidence/checks.json.gz. Three historic R4 overview display copies compacted to<=1920px with full-resolution originals preserved externally (evidence-budget.json). Unfinished Cinnamon2D idea parked; D0-D11 supersede all pending2D work.
