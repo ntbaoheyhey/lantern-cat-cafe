@@ -175,3 +175,5 @@ Q32 presentation attempt1: initial gallery had no clipping, but larger first sta
 - 2026-11-10T23:50:13Z Q33 saved-image review exposed discovery toast stretched from top86px to legacy bottom130px, covering the tip box after a claim. Clear bottom to auto in the A6 home rule; preserve content/dismissal/timers. Recheck affected current images before acceptance.
 
 - 2026-11-10T23:52:43Z Q33 check invocation used pnpm test -- files, which forwarded a literal -- and unexpectedly ran2000web tests (all pass). Corrected future focused calls to pnpm exec vitest run files. No second full-suite run. Shared origin ref advanced to published BP36 before merge:96531256b includes bothP35/P36; package will inspect both units.
+
+2026-11-11T00:12:32Z Q34: retained variant shots exposed reward flecks persisting after currency decreased before1100ms. Two normal/reduced-motion regressions failed; one-line reset of flecks on a nonpositive delta passes both. Core settlement untouched. Header contrast and nested-dialog keyboard propagation were repaired in retained source checks; probe selector failures were corrected without changing gameplay.

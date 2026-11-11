@@ -1,0 +1,59 @@
+import {useEffect,useRef,useState} from 'react';
+import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import type {DepthModel} from '../depth/model';
+import {summarizeBattle} from '../depth/battle-summary';
+import {AdviceV4} from '../depth/AdviceV4';
+import {OutcomeV4} from '../depth/PreparationV4';
+import {PracticePayoffV4} from '../depth/OpeningV4';
+import {ReactionSummaryV5} from '../depth/SkillsV5';
+import {artPropsA6} from './art-a6';
+import {CountUpA6} from './CountUpA6';
+import {resultRewards} from './selectors';
+import {enemyGuideA6} from './guide-a6';
+import './result-a6.css';
+
+/** Original small medallions for the existing receipt, not new reward types. */
+function RewardMark({id}:{id:string}) {
+ return <svg viewBox="0 0 64 64" aria-hidden="true" className="a6-reward-mark"><circle cx="32" cy="32" r="29" fill="#f8df9b" stroke="#a67532" strokeWidth="2"/><circle cx="32" cy="32" r="25" fill="none" stroke="#d3a65e" strokeDasharray="2 4"/>
+  <g fill="#b17c39" stroke="#69452c" strokeWidth="2" strokeLinejoin="round">
+   {id==='fish'?<><path d="M16 32Q31 12 45 32Q31 52 16 32ZM45 32 53 23V41Z"/><path d="M30 24 26 19M30 40 26 45" fill="none"/><circle cx="24" cy="30" r="2" fill="#fff3c6" stroke="none"/></>:id==='threads'?<><path d="M23 15H41V49H23Z" fill="#e6bb72"/><path d="M18 16H46V22H18ZM18 43H46V49H18Z"/><path d="M23 26 41 31 23 36 41 40M41 29Q53 36 48 46" fill="none"/></>:id==='stamps'?<><path d="M15 21H49V44H15Z" fill="#f2ce87"/><path d="M16 23 32 35 48 23M16 43 25 34M48 43 39 34" fill="none"/><circle cx="43" cy="22" r="7" fill="#bf8d50"/></>:id==='points'?<><path d="M24 22H40L43 45H21ZM27 22V16Q32 10 37 16V22" fill="#dfac55"/><path d="M32 27 37 34 32 40 27 34Z" fill="#fff2af"/><path d="M19 49H45" fill="none"/></>:<><path d="M15 26H49V34H15ZM19 34H45V49H19Z" fill="#e8c486"/><path d="M29 26H35V49H29ZM32 26Q12 25 21 16Q28 13 32 26ZM32 26Q52 25 43 16Q36 13 32 26Z" fill="#b78952"/></>}
+  </g></svg>;
+}
+
+function ResultDetailsA6({m,onClose,onContinue,continueLabel}:{m:DepthModel;onClose:()=>void;onContinue:()=>void;continueLabel:string}) {
+ const dialog=useRef<HTMLDialogElement>(null),body=useRef<HTMLDivElement>(null),[page,setPage]=useState<'crew'|'moments'|'notes'>('crew');
+ const battle=m.battle!,summary=summarizeBattle(battle),name=(id:string)=>battle.actors.find(a=>a.id===id)?.name??id;
+ const metrics=[['damage','Damage'],['healing','Healing'],['shielding','Shields given'],['taken','Damage taken']] as const;
+ useEffect(()=>{const element=dialog.current!,previous=document.activeElement as HTMLElement|null;element.showModal();element.querySelector('button')?.focus();return()=>{element.close();if(previous?.isConnected)previous.focus({preventScroll:true});};},[]);
+ useEffect(()=>{body.current?.scrollTo({top:0});},[page]);
+ return <dialog ref={dialog} className="a6-result-dialog" aria-labelledby="a6-result-details-title" data-reduced={m.state.settings.reducedMotion} onCancel={e=>{e.preventDefault();onClose();}} onKeyDown={e=>{
+  if(e.key==='Escape'){e.preventDefault();e.stopPropagation();onClose();}
+  if(e.key==='Tab'){e.stopPropagation();const controls=Array.from(e.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled),summary,[href],[tabindex="0"]')).filter(n=>n.getClientRects().length);const first=controls[0],last=controls.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
+ }}>
+  <header><div><small>THE PATROL RECORD · {battle.round} ROUNDS</small><h2 id="a6-result-details-title">Battle details</h2></div><button onClick={onClose}>Back to result <span aria-hidden="true">×</span></button></header>
+  <nav aria-label="Battle report pages">{([['crew','Crew totals'],['moments','Key moments'],['notes','Battle notes']] as const).map(([id,label])=><button key={id} aria-pressed={page===id} onClick={()=>setPage(id)}>{label}</button>)}</nav>
+  <div ref={body} className="a6-result-report-body" role="region" aria-label="Battle report content" tabIndex={0}>
+   {page==='crew'&&<section className="a6-result-crew-totals" aria-label="Crew totals">{summary.cats.map(cat=><article key={cat.id}><img {...artPropsA6(cat.catalogId)} alt=""/><h3>{cat.name}</h3><dl>{metrics.map(([metric,label])=><div key={metric}><dt>{label}</dt><dd>{cat[metric].toLocaleString('en-US')}</dd></div>)}</dl>{cat.id===summary.mvp?.id&&<p>Tonight’s star</p>}</article>)}<p className="a6-result-contribution">Star contribution = damage + healing + ¼ shields given.</p></section>}
+   {page==='moments'&&<section className="a6-result-moments" aria-label="Key moments"><article><h3>First ultimate</h3><p>{summary.firstUltimate?`Round ${summary.firstUltimate.round} · ${name(summary.firstUltimate.actorId)} used ${R.SKILLS[summary.firstUltimate.skillId]?.name??summary.firstUltimate.skillId}`:'No ultimate was used in this encounter.'}</p></article><article><h3>Biggest hit</h3><p>{summary.biggestHit?`Round ${summary.biggestHit.round} · ${name(summary.biggestHit.actorId)} dealt ${summary.biggestHit.amount} to ${name(summary.biggestHit.targetId)}`:'No damage was recorded in this encounter.'}</p></article><article><h3>Second chances</h3>{summary.saves.length?summary.saves.map((e,i)=><p key={i}>Round {e.round} · {name(e.targetId)} {e.kind==='revive'?'returned to the fight':'survived with Second sprout'}.</p>):<p>No revives or last-chance saves were recorded.</p>}</article><ReactionSummaryV5 battle={battle}/></section>}
+   {page==='notes'&&<section className="a6-result-notes" aria-label="Battle notes">{battle.v4&&m.tutorialBattle&&!m.replay&&<PracticePayoffV4 battle={battle}/>} {battle.v4?<OutcomeV4 battle={battle}/>:<p>This recorded encounter has no tactical notes.</p>}</section>}
+  </div>
+  <footer>{!m.replay&&<>{!m.tutorialBattle&&m.state.run&&!m.state.run.complete&&<p>Improve team ends this route and keeps your earned rewards.</p>}<button onClick={()=>{onClose();m.replayLast();}}>Watch replay</button><button onClick={()=>{onClose();m.improveTeam();}}>Improve team</button></>}<button className="cr-primary" onClick={onContinue}>{continueLabel} →</button></footer>
+ </dialog>;
+}
+
+export function ResultA6({m}:{m:DepthModel}) {
+ const [details,setDetails]=useState(false),battle=m.battle!,summary=summarizeBattle(battle),mvp=summary.mvp,run=m.state.run,node=run?.nodes.find(n=>n.id===run.current);
+ const outcome=battle.v4?R.outcomeV4(battle):null,firstFallen=battle.result==='enemy'?outcome?.firstFallen:null;
+ const stars=run&&node&&!run.towerA6&&!m.tutorialBattle&&!m.replay?R.combatStarsV4(run,node,battle):null;
+ const rewards=!m.tutorialBattle&&!m.replay?resultRewards(m.state):[],loss=battle.result==='enemy'&&!m.tutorialBattle&&!m.replay;
+ const why=firstFallen?`${firstFallen.name} fell first in round ${firstFallen.round}.`:outcome?.causes[0]?.text??`${battle.round} rounds played.`;
+ const foe=battle.actors.find(a=>a.side==='enemy'),suggestion=foe?enemyGuideA6(foe.catalogId).counter:'Prepare your crew for the next stop.';
+ const continueLabel=m.replay?'Close replay':loss?run?.towerA6?'Back to Tower':'Back to cafe':m.tutorialBattle?'Complete lesson':'Next';
+ const finish=()=>{const returning=!!(m.replay||m.tutorialBattle);setDetails(false);m.finish();if(!m.error&&!returning)m.go(run?.towerA6?'tower':'hub');};
+ return <><div className="uv-result a6-result-story" data-a6-loss={loss||undefined} data-reduced={m.state.settings.reducedMotion}>
+  <header className="a6-result-heading"><div><small>{m.replay?'RECORDED ENCOUNTER':m.tutorialBattle?'PRACTICE COMPLETE':run?.towerA6?`YARN TOWER · FLOOR ${run.floor}`:`CHAPTER ${battle.chapter}`} · {battle.round} ROUNDS</small><h2>{m.replay?'Replay complete':battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Encounter complete'}</h2></div>{stars&&node&&<ul className="a6-result-goals" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{R.nodeStarGoalsV4(node).map((g,i)=><li key={g.id} data-earned={stars.conditions[i]}><span aria-hidden="true" style={{animationDelay:`${i*140}ms`}}>★</span><small>{g.text}</small></li>)}</ul>}</header>
+  <aside className="a6-result-companion">{mvp?<><div className="a6-result-portrait"><img {...artPropsA6(mvp.catalogId)} alt={mvp.name}/></div><small>TONIGHT’S STAR</small><h3>{mvp.name}</h3><p>{mvp.damage} damage · {mvp.healing} healing</p></>:<RewardMark id="points"/>}</aside>
+  <section className="a6-result-receipt" aria-label="Encounter receipt"><h3>{rewards.length?'From this encounter':'A night to remember'}</h3><div className="uv-result-rewards a6-result-tickets" aria-label="Encounter rewards">{rewards.map(r=><article key={r.id} data-reward-id={r.id}><RewardMark id={r.id}/><div><strong>+<CountUpA6 value={r.amount} from={0} reducedMotion={m.state.settings.reducedMotion}/></strong><span>{r.label}</span></div></article>)}{!rewards.length&&<article className="a6-result-empty"><RewardMark id="points"/><p>{m.tutorialBattle?'A welcome invitation awaits':m.replay?'Your encounter is recorded':'No additional supplies from this encounter.'}</p></article>}</div><p className="a6-result-highlight"><b>{firstFallen?'First setback:':'Battle highlight:'}</b> {why}</p>{loss?<AdviceV4 m={m}/>:<div className="a6-result-next-note"><b>Keep in mind</b><p>{suggestion}</p></div>}</section>
+  <footer className="a6-result-actions"><button onClick={()=>setDetails(true)} aria-haspopup="dialog">Read details</button><button className={loss?undefined:'uv-fight'} onClick={finish}>{continueLabel} <span aria-hidden="true">→</span></button></footer>
+ </div>{details&&<ResultDetailsA6 m={m} onClose={()=>setDetails(false)} onContinue={finish} continueLabel={continueLabel}/>}</>;
+}

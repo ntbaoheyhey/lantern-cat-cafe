@@ -10,7 +10,7 @@ export function RewardFly({values,reducedMotion=false}:{values:Record<string,num
   const changed=Object.entries(values).flatMap(([id,value])=>{const amount=value-(previous.current[id]??value),target=document.querySelector<HTMLElement>(`[data-currency="${id}"]`);if(amount<=0||!target)return [];
    const r=target.getBoundingClientRect(),x=origin.current.x||innerWidth*.6,y=origin.current.y||innerHeight*.7;
    return [{id,amount,x,y,dx:r.x+r.width/2-x,dy:r.y+r.height/2-y}];});
-  previous.current={...values};if(!changed.length)return;setFlecks(changed);const timer=setTimeout(()=>setFlecks([]),1100);return()=>clearTimeout(timer);
+  previous.current={...values};setFlecks(changed);if(!changed.length)return;const timer=setTimeout(()=>setFlecks([]),1100);return()=>clearTimeout(timer);
  // A primitive signature catches mutations on the existing state object as well as replacements.
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[key]);

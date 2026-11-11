@@ -1,3 +1,4 @@
+import {ResultA6} from './ResultA6';
 import {TowerA6} from './TowerA6';
 import { PrepareA6 } from './FormationA6';
 import { CampaignA6 } from './CampaignA6';
@@ -35,6 +36,7 @@ export function PrepareV3({m}:{m:DepthModel}) {
 
 export function ResultV3({m}:{m:DepthModel}) {
  const battle=m.battle!,summary=summarizeBattle(battle),[details,setDetails]=useState(false),mvp=summary.mvp;
+ if(battle.initial.gameplayA6)return <ResultA6 m={m}/>;
  const outcome=battle.v4?R.outcomeV4(battle):null,run=m.state.run,node=run?.nodes.find(n=>n.id===run.current);
  const stars=run&&node&&!run.towerA6&&!m.tutorialBattle&&!m.replay?R.combatStarsV4(run,node,battle):null;
  const rewards=!m.tutorialBattle&&!m.replay?resultRewards(m.state):[];
