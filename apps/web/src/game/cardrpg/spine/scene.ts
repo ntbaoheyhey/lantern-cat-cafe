@@ -22,6 +22,7 @@ export class SpineScene {
  readonly loading={completed:0,total:1,label:'Lighting the lanterns…'};ready=false;
  readonly stats={frames:0,calls:0,triangles:0,geometries:0,textures:0,particles:0,estimatedGpuBytes:0,loaded:0,hiddenFrames:0,quality:'high' as 'high'|'medium'|'low'};
  readonly labelAudit:{heads:Rect[];cards:Rect[];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
+ private cinematicRects:Rect[]=[];
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
  readonly anchors:Anchor[]=[];
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
@@ -172,7 +173,7 @@ export class SpineScene {
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
   this.stage.update(this.worldWidth,PAINT.worldHeight,view.reducedMotion?0:20*focus,.18*focus);
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
-  const protectedRects=[...this.labelAudit.heads,...this.labelAudit.cards];
+  const protectedRects=this.cinematicRects;
   this.cinematic.ultimateVisible=this.ultimate&&!this.firstHit&&time-this.ultStartedAt<PAINT.cutinSeconds&&!!plan?.ultimate&&view.actors.some(a=>a.id===plan.actorId&&a.side==='party');
   this.cinematic.box=this.cinematic.ultimateVisible?cinematicBox(width,height,protectedRects):null;
   this.cinematic.ultimateVisible&&=!!this.cinematic.box;
@@ -200,6 +201,9 @@ export class SpineScene {
   const placed=layoutLabels(labels,this.width,this.height,138,bodies),words=layoutLabels(text,this.width,this.height,150,[...bodies,...placed.values()]);
   for(const anchor of this.anchors){const box=placed.get(anchor.id);if(box){anchor.labelX=box.x+69;anchor.labelY=box.y;}else anchor.visible=false;anchor.textLane=words.get(anchor.id);}
   this.labelAudit.heads=bodies;this.labelAudit.cards=[...placed.values(),...words.values()];this.labelAudit.missing=labels.filter(l=>!placed.has(l.id)).map(l=>l.id);
+  // Reserve number lanes for their later contact, but do not let invisible
+  // numbers displace the pre-contact ultimate card. HP and bodies stay protected.
+  this.cinematicRects=[...bodies,...placed.values(),...(this.firstHit?words.values():[])];
   this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,box,i)=>sum+bodies.filter(b=>intersects(box,b,0)).length+this.labelAudit.cards.slice(i+1).filter(b=>intersects(box,b,0)).length,0);
   this.onAnchors(this.anchors);
  }

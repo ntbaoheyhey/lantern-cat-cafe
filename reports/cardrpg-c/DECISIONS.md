@@ -171,3 +171,5 @@
 2026-11-11T23:08:10.467609+00:00 C11: centralize sound controls and bound context resume at4s to make stalled devices recoverable; keep audio synthesis/combat unchanged.
 
 2026-11-11T23:19:01.015765+00:00 C11: compact More controls into one row in the available wall at each supported height; preserve HP, floating labels and available cut-ins. Expanded checks exposed earlier narrow-menu cue collisions. No gameplay change.
+
+2026-11-11T23:25:41.380078+00:00 C11: exclude invisible future text lanes from cinematic placement until contact; retain body/HP protection and give overlapping More priority without altering playback.
