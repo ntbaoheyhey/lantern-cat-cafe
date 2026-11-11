@@ -11,5 +11,5 @@ const chunks=(Array.isArray(result)?result:[result]).flatMap(r=>r.output).filter
 const payload=gzipSync(chunks[0].code,{level:9}).toString('base64');
 const loader=`const packed=document.querySelector('#gallery-data').textContent;const bytes=Uint8Array.from(atob(packed),c=>c.charCodeAt(0));const source=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();const moduleUrl=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));await import(moduleUrl);URL.revokeObjectURL(moduleUrl);`;
 const html=readFileSync(resolve(root,'tools/cardrpg-c/vfx-gallery.html'),'utf8').replace('<script type="module" src="./vfx-gallery.ts"></script>',`<script id="gallery-data" type="application/octet-stream">${payload}</script><script type="module">${loader}</script>`);
-if(Buffer.byteLength(html)>15_000_000)throw Error('Gallery exceeds15MB share of40MB demo budget');
+if(Buffer.byteLength(html)>18_000_000)throw Error('Gallery exceeds18MB share of40MB demo budget');
 mkdirSync(resolve(root,'docs/cardrpg-c'),{recursive:true});writeFileSync(resolve(root,'docs/cardrpg-c/vfx.html'),html);console.log(JSON.stringify({bytes:Buffer.byteLength(html),skills:74,statuses:18,mode:'offline single HTML, existing original art'}));

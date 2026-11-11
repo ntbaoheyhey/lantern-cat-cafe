@@ -1,0 +1,15 @@
+{
+  "sourceHead": "cb5abd26a28db4489962730a16c7dec41ead9460",
+  "command": "E2E_PORT_CLASSIC=5970 E2E_PORT_V2=5971 E2E_PORT_SERVER=5972 E2E_PORT_API=5973 nice -n 10 pnpm --filter @taskbar-hero/web exec playwright test --workers=2 --reporter=line,json",
+  "stats": {
+    "startTime": "2026-11-11T07:51:58.446Z",
+    "duration": 310235.206,
+    "expected": 421,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "workingChangesSha256": "ca8a3449e7ead83356bc87e2350f316cfe8c94bafe90d8c678364f1a1f7f5929",
+  "localOnly": "HTTP transport tests use local SQL/harness at5973; no live Supabase changes."
+}

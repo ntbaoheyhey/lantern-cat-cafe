@@ -465,3 +465,6 @@ Source: published original Mochi 3/4 PSD/parts/rig notes under Desktop/TaskbarHe
 
 ## Lane C C9 — painted cafe and cinematic accents (2026-11-11)
 Original procedural Canvas2D geometry in spine/stage.ts adds cups, plants, books, linen pennants, window reflections, woven rug, brush grain and warm vignette. Source: existing Taskbar Hero cafe motifs and shared spine/style.ts palette; no external art or model prompt. Entrance/phase effects reuse original C6 stamps and sockets. Ultimate cards reuse existing original unit portraits; no new character art.
+
+## Lane C C10 — offline review media (2026-11-11)
+Tools: Playwright screenshots/video of the original-art local game and gallery, ffmpeg x1 clip-boundary trim/H.264 encoding, Sharp/WebP contact lineup. Sources: existing Lane C stage/portraits/placeholder atlases. No generated art, external references, or character changes. Recorded chapter-one victories are earned in reports/cardrpg-c/first-session.json; complete demo manifest is docs/cardrpg-c/build.json.

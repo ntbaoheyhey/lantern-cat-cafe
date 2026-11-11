@@ -3,3 +3,6 @@
 2026-11-11 resume: user handoff confirms C6 sweep completed. Verified clean pushed2c0bc1555; preserved C0–C6 and continued C7.
 2026-11-11 resume: user handoff confirms C7 completed; verified clean pushed827b1b8ac and PR439 receipt. Continue C8/C9 without rerunning accepted work.
 2026-11-11 resume: user handoff identifies in-progress C9 screenshots and recruitment-time ultimate test correction. Preserved uncommitted C9 work; completed the cinematic sweep and remaining stale test expectations.
+2026-11-11 resume: user handoff confirms421E2E PASS; existing x1 session kept active. C10/C11 continue with no completed-item reruns.
+2026-11-11 resume: user handoff identifies the recruitment sheet retaining scroll at 1440×900. Preserved the active account and all prior work; verified the existing fix with deliberately scrolled animated/reduced reveals at both sizes.
+2026-11-11 resume: user handoff identifies completed focused10tests and ending30minute recorder. Verified original run finished, packaged earned fights, completed offline QA and observed full421E2E PASS. Continue C11 clean account; preserve all earlier results.
