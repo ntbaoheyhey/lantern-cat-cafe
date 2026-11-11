@@ -126,3 +126,4 @@
 2026-11-11T19:49:10.113207+00:00 C11: fixed Tower enemy levels must not act as campaign entry bands for result advice; retain campaign checks and fixed retry identity. Visual checkpoint accepted; score and recovery measurements unchanged.
 
 2026-11-11 C11: selected-cat Bonds previously showed names/readiness without effects or trigger. Explain exact existing pair effect, missing partners, round-three/alive requirement and bench collection bonus. Keep account/formation rules and general Bond Book navigation; bounded notes preserve720p controls.
+2026-11-11 C11: Save import previously replaced the account before showing the saved identity. Validate on explicit Import, preview current/saved level/cats/supplies/crew/route, then restore through the existing command or return without mutation. Keep pasted code, error feedback and keyboard focus; fix the inherited column layout on reduced-motion control. No save format or progression change.

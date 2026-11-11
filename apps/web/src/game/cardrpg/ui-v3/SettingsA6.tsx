@@ -18,11 +18,20 @@ function DeskLamp({lit}:{lit:boolean}) {
 export function SettingsA6({m}:{m:DepthModel}) {
  const [code,setCode]=useState(''),[feedback,setFeedback]=useState(''),[failed,setFailed]=useState(false);
  const [resetPage,setResetPage]=useState(false),[confirmReset,setConfirmReset]=useState(false);
+ const [restore,setRestore]=useState<{code:string;state:R.DepthAccount}|null>(null);
  const codeBox=useRef<HTMLTextAreaElement>(null),restart=useRef<HTMLButtonElement>(null),resetTitle=useRef<HTMLHeadingElement>(null);
+ const importButton=useRef<HTMLButtonElement>(null),restoreTitle=useRef<HTMLHeadingElement>(null);
  useEffect(()=>{if(resetPage)resetTitle.current?.focus();},[resetPage]);
+ useEffect(()=>{if(restore)restoreTitle.current?.focus();},[restore]);
  const cancelReset=()=>{setConfirmReset(false);setResetPage(false);requestAnimationFrame(()=>restart.current?.focus());};
+ const closeRestore=()=>{setRestore(null);requestAnimationFrame(()=>importButton.current?.focus());};
  const exportCode=()=>{setCode(R.exportSave(m.state));setFailed(false);setFeedback('Code ready. Select it, then copy it somewhere safe.');};
- const importCode=()=>{m.import(code);setFailed(m.error);setFeedback(m.error?m.notice.replace(/^Error:\s*/,''):'Your saved evening is restored.');};
+ const previewCode=()=>{
+  try {setRestore({code,state:R.importSave(code,m.offline?0:Date.now())});setFailed(false);setFeedback('');}
+  catch {setFailed(true);setFeedback('This save could not be read. Paste the complete code and try again.');}
+ };
+ const importCode=()=>{if(!restore)return;m.import(restore.code);setFailed(m.error);setFeedback(m.error?'This save could not be restored. Your code is still here.':'Your saved evening is restored.');closeRestore();};
+ const routeNote=(state:R.DepthAccount)=>state.run&&!state.run.complete?(state.run.mode==='tower'?`Tower floor ${state.run.floor}`:`Chapter ${state.run.chapter} route`):'At the cafe';
  return <div className="a6-settings-desk">
   <section className="a6-save-letter" aria-label="Save and restore progress">
    <header className="a6-save-heading"><img {...artPropsA6(m.state.team[0]??'mochi')} alt=""/><div><small>A PLACE KEPT FOR YOU</small><h2>Keep this evening.</h2><p>{m.offline?'Export a code to keep this cafe after closing the demo.':'Keep a copy of your cafe, or bring a saved evening here.'}</p><span className="a6-save-state">{m.saveStatus}</span></div></header>
@@ -31,10 +40,20 @@ export function SettingsA6({m}:{m:DepthModel}) {
     <p>{m.offline?'This replaces the progress in this open demo.':'This replaces the progress saved in this browser.'} Keep an exported code if you want to return to this evening.</p>
     <p className="a6-reset-account">Account level {m.state.account.accountLevel} · {m.state.account.cards.length} companions</p>
     <div className="cr-actions"><button className="a6-reset-confirm" onClick={()=>{if(confirmReset)m.reset();else setConfirmReset(true);}}>{confirmReset?'Confirm reset account':'Reset account'}</button><button className="cr-primary" onClick={cancelReset}>Keep this account</button></div>
+   </section>:restore?<section className="a6-import-page" aria-label="Review saved progress">
+    <h3 ref={restoreTitle} tabIndex={-1}>Restore this evening?</h3>
+    <table><caption>Your current cafe and this save code</caption><thead><tr><th scope="col">Progress</th><th scope="col">Current</th><th scope="col">Saved</th></tr></thead><tbody>
+     <tr><th scope="row">Account level</th><td>{m.state.account.accountLevel}</td><td>{restore.state.account.accountLevel}</td></tr>
+     <tr><th scope="row">Cats</th><td>{m.state.account.cards.length} / {R.CATS.length}</td><td>{restore.state.account.cards.length} / {R.CATS.length}</td></tr>
+     {(['fish','stamps','threads','essence'] as const).map(currency=><tr key={currency}><th scope="row">{currency[0]!.toUpperCase()+currency.slice(1)}</th><td>{m.state.account.currencies[currency].toLocaleString()}</td><td>{restore.state.account.currencies[currency].toLocaleString()}</td></tr>)}
+    </tbody></table>
+    <p className="a6-import-crew"><b>Saved crew:</b> {restore.state.team.map(id=>R.CAT_BY_ID[id]!.name).join(' · ')}<small>{routeNote(restore.state)}</small></p>
+    <p id="a6-restore-consequence">Restoring replaces this {m.offline?'open demo’s':'browser’s'} progress and settings with the saved evening.</p>
+    <div className="cr-actions"><button className="cr-primary" aria-describedby="a6-restore-consequence" onClick={importCode}>Restore saved evening</button><button onClick={closeRestore}>Keep this account</button></div>
    </section>:<>
     <div className="a6-code-caption"><label htmlFor="a6-save-code">Save code</label><small>Lv. {m.state.account.accountLevel} · {m.state.account.cards.length}/{R.CATS.length} cats</small></div>
     <textarea id="a6-save-code" ref={codeBox} aria-label="Save code" value={code} placeholder="Export your evening here, or paste a saved code." spellCheck={false} onChange={e=>{setCode(e.target.value);setFeedback('');setFailed(false);}}/>
-    <div className="a6-save-actions"><button className="cr-primary" onClick={exportCode}>Export save code</button><button disabled={!code.trim()} onClick={()=>{codeBox.current?.focus();codeBox.current?.select();setFailed(false);setFeedback('Whole code selected. Use Copy to keep it.');}}>Select save code</button><button disabled={!code.trim()} onClick={importCode}>Import save code</button></div>
+    <div className="a6-save-actions"><button className="cr-primary" onClick={exportCode}>Export save code</button><button disabled={!code.trim()} onClick={()=>{codeBox.current?.focus();codeBox.current?.select();setFailed(false);setFeedback('Whole code selected. Use Copy to keep it.');}}>Select save code</button><button ref={importButton} disabled={!code.trim()} onClick={previewCode}>Import save code</button></div>
     <p className="a6-save-feedback" role="status" data-error={failed}>{feedback||'To continue later, paste your whole code and choose Import.'}</p>
     <footer className="a6-save-footer"><span>Your progress travels with the code.</span><button ref={restart} onClick={()=>{setConfirmReset(false);setResetPage(true);}}>Start again</button></footer>
    </>}
