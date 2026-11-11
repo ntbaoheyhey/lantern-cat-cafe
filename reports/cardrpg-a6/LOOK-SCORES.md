@@ -12,7 +12,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Bond Book | 8.2 | 8.1 | 13: secondary ownership labels (7.5) | shots/q31-bonds + q31-offline;16source/16offline views,40–44px index,14px notes,17entries/exactbonus/ownership/profile/team/keyboard pass |
 | Daily | 8.1 | 8.0 | 13: compact reward copy (7.5) | shots/q23-daily/* + q23-daily-cap/*; direct board/gifts sections, all14milestones fit, shared counts/three claims/caps/ribbon/keyboard pass |
 | Tower | 8.1 | 8.0 | 13: compact floor numbers (7.5) | shots/q25-tower/* + q25-climb-final/*; direct gifts, exact caps and current advice; replay/keyboard/return fit both sizes |
-| Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
+| Relic | 8.2 | 8.1 | 07: restrained drawn ceramic (7.5) | shots/q35-relic + q35-relic-errors + q35-offline + q35-offline-errors;36source/36offline views,14px body/44px controls, four bonuses/cap/gear/route/keyboard/wallet-error guards, no clipping |
 | Result / defeat | 8.2 | 8.1 | 13: compact chapter labels (7.5) | shots/q34-offline + q34-variants-offline + q34-boss-offline; original receipt,14–16px report text, bounded pages/focus, exact-once rewards/replay/tutorial/Tower/advice; reward feedback expires |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.2 | 8.1 | 13: secondary route labels (7.5) | shots/q32-map-final + q32-offline;30source/34offlineviews,13–15pxlabels/40pxtonic,threechapters/allchoices/exactcappedclaims/keyboard/reducedmotion; no overlap |

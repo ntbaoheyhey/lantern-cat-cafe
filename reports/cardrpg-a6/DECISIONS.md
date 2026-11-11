@@ -128,3 +128,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T00:12:32Z Q34: preserve summary/finish/replay/improve-team/advice commands. Use a native bounded dialog with three report pages and an original companion receipt; no new reward types or economy rules. Fix the reproduced visual reward-expiry lifecycle only.
 
 2026-11-11T00:14:21Z Q35 queued from retained q14a/1280-relics inspection: next tied-low screen, simple cup material,12px labels/38px actions. Recompose the same four keepsakes and equipped slot with original vector refinements; preserve wallet/bonus rules. Off-app draft while Q34 package runs.
+
+2026-11-11T00:27:02Z Q35 accepts the original ceramic/gilt mantel with14px text/44px controls and unchanged read-only wallet rules. Q36 addresses the observed tied-low Bag cost/owner/stat labels (12px and36px details tabs); bounded CSS refinement, no new gear or economy system. Existing final difficulty fallback remains explicit.

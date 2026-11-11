@@ -55,14 +55,15 @@ export function GearArtA6({slot,setId}:{slot:string;setId:string}) {
 export function RelicArtA6({rarity=0}:{rarity?:number}) {
  const id=useId(),tone=['#abb4a3','#79b3d0','#ad87cd','#e1af58'][rarity]??'#abb4a3';
  return <svg className="a6-relic-art" viewBox="0 0 180 160" fill="none" aria-hidden="true">
-  <defs><linearGradient id={`${id}-cup`} x1="48" y1="44" x2="128" y2="139" gradientUnits="userSpaceOnUse"><stop stopColor="#fff9dd"/><stop offset=".45" stopColor={tone}/><stop offset="1" stopColor="#71513d"/></linearGradient><radialGradient id={`${id}-glow`}><stop stopColor="#fff4b3" stopOpacity=".8"/><stop offset="1" stopColor={tone} stopOpacity="0"/></radialGradient></defs>
+  <defs><linearGradient id={`${id}-cup`} x1="42" y1="65" x2="130" y2="112" gradientUnits="userSpaceOnUse"><stop stopColor="#fff9dd"/><stop offset=".19" stopColor={tone}/><stop offset=".4" stopColor="#fff4ca"/><stop offset=".66" stopColor={tone}/><stop offset="1" stopColor="#664b3e"/></linearGradient><radialGradient id={`${id}-glow`}><stop stopColor="#fff4b3" stopOpacity=".8"/><stop offset="1" stopColor={tone} stopOpacity="0"/></radialGradient><linearGradient id={`${id}-gilt`} x1="35" y1="60" x2="145" y2="140" gradientUnits="userSpaceOnUse"><stop stopColor="#7e5329"/><stop offset=".28" stopColor="#ffedac"/><stop offset=".52" stopColor="#bc8d45"/><stop offset=".78" stopColor="#ffdfa0"/><stop offset="1" stopColor="#80603a"/></linearGradient><linearGradient id={`${id}-tea`} x1="86" y1="58" x2="86" y2="71" gradientUnits="userSpaceOnUse"><stop stopColor="#593b2a"/><stop offset="1" stopColor="#bf8752"/></linearGradient></defs>
   <ellipse cx="90" cy="75" rx="76" ry="69" fill={`url(#${id}-glow)`}/><ellipse cx="90" cy="141" rx="59" ry="8" fill="#422a25" opacity=".18"/>
   <g stroke="#795738" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round">
-   <path d="M123 65c43-13 37 47 1 43" stroke={tone} strokeWidth="13"/><path d="M125 65c40-11 31 41 1 42" stroke="#ffe4a5" strokeWidth="3"/>
+   <path d="M123 65c43-13 37 47 1 43" stroke={`url(#${id}-gilt)`} strokeWidth="13"/><path d="M125 65c40-11 31 41 1 42" stroke="#ffe4a5" strokeWidth="3"/>
    <path d="M43 62q4 65 38 66h18q30-5 30-66Z" fill={`url(#${id}-cup)`}/>
-   <ellipse cx="86" cy="63" rx="43" ry="11" fill="#ffe8b6"/><ellipse cx="86" cy="64" rx="33" ry="6" fill="#9d6741"/>
-   <path d="M39 134q48 13 96 0l7 5q-55 22-110 0Z" fill={`url(#${id}-cup)`}/>
+   <ellipse cx="86" cy="63" rx="43" ry="11" fill={`url(#${id}-gilt)`}/><ellipse cx="86" cy="64" rx="33" ry="6" fill={`url(#${id}-tea)`}/><path d="M49 61Q85 48 123 61" stroke="#fff3ca" strokeWidth="2"/><path d="M61 65Q74 60 88 63" stroke="#f5dba2" strokeWidth="1.4" opacity=".65"/>
+   <path d="M39 134q48 13 96 0l7 5q-55 22-110 0Z" fill={`url(#${id}-gilt)`}/><path d="M40 138Q87 151 135 138M61 126Q87 135 111 126" stroke="#ffe8a5" strokeWidth="2"/><path d="M51 75Q87 87 122 75M58 111Q87 124 114 111" stroke={`url(#${id}-gilt)`} strokeWidth="4"/>
    <path d="M53 79q3 26 16 35" stroke="#fff8d9" strokeWidth="5" opacity=".7"/>
+   <g stroke="#ffedb6" strokeWidth="1.4" opacity=".85"><path d="M62 88Q55 94 66 103M111 88Q118 94 107 103M59 94 65 92M109 92 115 94"/><circle cx="69" cy="84" r="1"/><circle cx="105" cy="84" r="1"/></g>
    {rarity===0?<path d="m77 93 9 9 12-17" stroke="#fff0c3" strokeWidth="5"/>:rarity===1?<path d="M78 88q-14-13-15 1t23 18q29-18 19-25t-19 6Z" fill="#e6f5d8"/>:rarity===2?<><path d="M75 107h24l-5-9V86q-8-14-15 0v12Z" fill="#ffe3a1"/><circle cx="87" cy="109" r="3" fill="#fff1c2"/></>:<><path d="M74 86h26l-4 26H79Z" fill="#ffdd83"/><path d="M79 86v-6q8-9 16 0v6"/><path d="m87 93 5 7-5 8-4-8Z" fill="#fff9dc" stroke="none"/></>}
   </g>
   <g stroke="#fff0c8" strokeWidth="3" strokeLinecap="round" opacity=".9"><path d="M76 47q-9-10 0-19m18 17q10-11 1-22"/><path d="m135 37 0-10m-5 5h10"/></g>

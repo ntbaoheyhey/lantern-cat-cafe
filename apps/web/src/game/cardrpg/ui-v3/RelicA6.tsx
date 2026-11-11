@@ -4,6 +4,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import { readConnectedRelics } from '../depth/relic-reader';
 import {RelicArtA6} from './KeepsakeArtA6';
+import './relic-cabinet-a6.css';
 
 export function RelicA6({ m }: { m: DepthModel }) {
   useSyncExternalStore(m.subscribe, m.snapshot);
@@ -46,23 +47,26 @@ export function RelicA6({ m }: { m: DepthModel }) {
     } catch (error) { if (id === request.current) setMessage(error instanceof Error ? error.message : 'Unable to read Fuji. Try again later.'); }
     finally { clearTimeout(timeout); if (id === request.current) setReading(false); }
   }
-  return <div className="a6-relic">
+  return <div className="a6-relic a6-relic-cabinet" data-reduced={m.state.settings.reducedMotion}>
     <header><small>ONE KEEPSAKE · EVERY CAT</small><h2>Relic Fuji</h2><p>A little luck from your other adventures.</p></header>
-    <section className="a6-relic-slot" aria-label="Team treasure slot">
+    <section className="a6-relic-slot" aria-label="Team treasure slot" data-empty={!bonus}>
+      <small className="a6-relic-eyebrow">ONE KEEPSAKE · EVERY CAT</small>
       <RelicArtA6 rarity={selected?.rarity??0}/><div><small>{m.offline ? 'Demo wallet · fixture' : 'Avalanche Fuji'}</small><h3>{selected && bonus ? selected.name : 'An open place on the mantel'}</h3>
         <strong>Team bonus +{bonus}%</strong><p>HP, attack and defense · at most +8%</p>
         {!bonus && <p>{m.offline ? 'Load the demo collection and choose a keepsake.' : 'Kết nối ví để dùng Relic Fuji'}</p>}
       </div>
       {bonus > 0 && <button disabled={active || reading} onClick={() => m.apply(R.selectRelic(m.state, null), 'Treasure slot cleared.')}>Unequip treasure</button>}
     </section>
+    <div className="a6-relic-gallery">
     <div className="a6-relic-actions">{m.offline ? <button disabled={active} onClick={() => { m.apply(R.acceptRelicSnapshot(m.state, 43113, R.RELIC_FIXTURE)); setMessage('Demo collection loaded. These are sample holdings.'); }}>Load demo relics</button> : <button disabled={reading || active} onClick={() => void read()}>{reading ? 'Reading Fuji…' : 'Read connected wallet'}</button>}
       <a href={`https://testnet.snowtrace.io/address/${R.FUJI_RELIC_ADDRESS}`} target="_blank" rel="noreferrer">Relic Fuji ↗</a>
     </div>
     <p className="a6-relic-status" role="status">{active ? 'Finish your route to change the keepsake.' : message || (m.offline ? 'A sample wallet is available for this demo.' : 'Read a wallet already connected to Avalanche Fuji.')}</p>
     <div className="a6-relic-collection">{R.RELIC_EFFECTS.map(relic => <article key={relic.id} data-rarity={["common","rare","epic","legendary"][relic.rarity]} data-owned={m.state.relics.includes(relic.id)} data-selected={m.state.selectedRelic === relic.id}>
-      <RelicArtA6 rarity={relic.rarity}/><small>{['Common', 'Rare', 'Epic', 'Legendary'][relic.rarity]}</small><h3>{relic.name}</h3><strong>Team +{(relic.rarity + 1) * 2}%</strong>
+      <RelicArtA6 rarity={relic.rarity}/><div className="a6-relic-card-copy"><small>{['Common', 'Rare', 'Epic', 'Legendary'][relic.rarity]}</small><h3>{relic.name.replace(/^(Common|Rare|Epic|Legendary) /,'')}</h3><strong>Team +{(relic.rarity + 1) * 2}%</strong></div>
       <button disabled={active || reading || !m.state.relics.includes(relic.id) || m.state.selectedRelic === relic.id} onClick={() => m.apply(R.selectRelic(m.state, relic.id), `${relic.name} now supports the whole team.`)}>{m.state.selectedRelic === relic.id ? 'Equipped' : m.state.relics.includes(relic.id) ? `Equip ${relic.name}` : 'Not in your wallet'}</button>
     </article>)}</div>
     <p className="a6-relic-note">One Relic supports your whole team. Extra copies add no power. Cat gear stays equipped.</p>
+    </div>
   </div>;
 }
