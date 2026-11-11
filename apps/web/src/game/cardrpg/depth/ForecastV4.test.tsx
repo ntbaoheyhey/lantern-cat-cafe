@@ -14,7 +14,7 @@ vi.mock('./forecast-worker?worker&inline', () => ({ default: class {
   constructor() { if (mock.fail) throw Error('Worker blocked'); mock.workers.push(this); }
   postMessage(message: { key: string; setup: unknown }) { this.request = message; }
 } }));
-afterEach(() => { cleanup(); mock.workers.length = 0; mock.fail = false; });
+afterEach(() => { cleanup(); vi.useRealTimers(); mock.workers.length = 0; mock.fail = false; });
 let serial = 0;
 function setup() {
   const state = R.setGameplayV4(R.createDepthAccount(11, 0), true);
@@ -80,4 +80,60 @@ it('uses current A6 enemy advice without changing the forecast result or legacy 
   const legacy = mock.workers[1]!;
   act(() => legacy.onmessage!({data: {key: legacy.request!.key, result: {band: 'Favoured', risk: 'Every third round restores 65 HP.', samples: 20, wins: 19, firstFallen: null, computeMs: 1}}}));
   expect(screen.getByText('Every third round restores 65 HP.')).toBeTruthy();
+});
+
+
+it('bounds a silent worker and ignores its late answer without caching it', () => {
+  vi.useFakeTimers();
+  const build = setup(), ui = render(<ForecastV4 setup={build}/>), worker = mock.workers[0]!;
+  act(() => vi.advanceTimersByTime(7_999));
+  expect(screen.getByText('Reading the matchup…')).toBeTruthy();
+  act(() => vi.advanceTimersByTime(1));
+  expect(screen.getByText('Scout their plan')).toBeTruthy();
+  expect(worker.terminate).toHaveBeenCalled();
+  reply(worker, 'Favoured');
+  expect(screen.queryByText('Favoured')).toBeNull();
+  ui.unmount(); render(<ForecastV4 setup={build}/>);
+  expect(mock.workers).toHaveLength(2);
+  expect(screen.getByText('Reading the matchup…')).toBeTruthy();
+});
+
+it('keeps the first completed answer and clears its deadline', () => {
+  vi.useFakeTimers();
+  const build = setup(), ui = render(<ForecastV4 setup={build}/>), worker = mock.workers[0]!;
+  reply(worker, 'Even');
+  act(() => worker.onerror!()); reply(worker, 'Risky');
+  act(() => vi.advanceTimersByTime(20_000));
+  expect(screen.getByText('Even')).toBeTruthy();
+  expect(screen.queryByText('Scout their plan')).toBeNull();
+  ui.unmount(); render(<ForecastV4 setup={build}/>);
+  expect(mock.workers).toHaveLength(1);
+  expect(screen.getByText('Even')).toBeTruthy();
+});
+
+it('keeps an unrelated reply pending and gives a changed build its own full deadline', () => {
+  vi.useFakeTimers();
+  const ui = render(<ForecastV4 setup={setup()}/>), old = mock.workers[0]!;
+  act(() => old.onmessage!({data:{key:'unrelated',result:{band:'Favoured'}}}));
+  expect(old.terminate).not.toHaveBeenCalled();
+  act(() => vi.advanceTimersByTime(7_000));
+  ui.rerender(<ForecastV4 setup={setup()}/>);
+  act(() => vi.advanceTimersByTime(1_000));
+  expect(screen.getByText('Reading the matchup…')).toBeTruthy();
+  reply(old, 'Favoured');
+  expect(screen.queryByText('Favoured')).toBeNull();
+  reply(mock.workers[1]!, 'Risky');
+  expect(screen.getByText('Risky')).toBeTruthy();
+});
+
+it('ends a failed response and releases a pending worker when leaving the screen', () => {
+  vi.useFakeTimers();
+  const ui = render(<ForecastV4 setup={setup()}/>), worker = mock.workers[0]!;
+  act(() => worker.onmessage!({data:{key:worker.request!.key,error:'Unavailable'}}));
+  expect(screen.getByText('Scout their plan')).toBeTruthy();
+  reply(worker, 'Even'); expect(screen.queryByText('Even')).toBeNull();
+  ui.rerender(<ForecastV4 setup={setup()}/>); const pending = mock.workers[1]!;
+  ui.unmount(); expect(pending.terminate).toHaveBeenCalled();
+  reply(pending, 'Favoured'); act(() => vi.advanceTimersByTime(20_000));
+  expect(screen.queryByRole('region')).toBeNull();
 });

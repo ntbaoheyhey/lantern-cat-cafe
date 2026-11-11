@@ -104,6 +104,6 @@ export function PrepareA6({m}:{m:DepthModel}) {
     <aside aria-label="Enemy preview"><header className="a6-enemy-heading"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/></header>
       <div className="uv-enemy-preview a6-foes a6-foe-index" role="group" aria-label="Read an enemy note">{enemies.map(actor=><button key={actor.id} className="a6-foe-choice" aria-label={`Read ${actor.name} tactics`} aria-pressed={actor.id===selected.id} onClick={()=>setChosen(actor.id)}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small></button>)}</div>
       <section className="a6-foe-note" aria-label={`${selected.name} tactics`} aria-live="polite"><h3>{selected.name}</h3><p>{note.intent}</p><p className="a6-foe-counter"><strong>Try</strong> {note.counter}</p>{note.phases&&<small>{note.phases}</small>}</section>
-      <ForecastV4 setup={battle.initial} label="Matchup" compact/>
+      <ForecastV4 setup={battle.initial} label="Matchup" unavailableMessage="Forecast unavailable. Read their plan above." compact/>
     </aside></div></div><footer className="uv-fight-bar"><span>{'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
 }

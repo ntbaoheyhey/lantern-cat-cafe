@@ -245,3 +245,10 @@ Tiếp tục Q38: chi phí gợi ý sau trận thua và giới hạn thời gian
 2026-11-11T01:04:28Z: Q38 hoàn tất: gợi ý hiện giá ngay, chờ tối đa 8 giây; thiếu tiền có lối sửa đội hình miễn phí.
 13 test/typecheck/lint qua; 28 ảnh nguồn và 28 ảnh offline đã xem, mua đúng giá/thử lại đúng tầng/không nhận phản hồi cũ; demo 39,108,925 byte, không lỗi/gọi mạng ngoài.
 Tiếp tục Q39: dự báo trước trận cũng cần giới hạn chờ, cùng chữ chỉ số địch dễ đọc hơn ở 720p; giữ nguyên phép dự báo và luật trận.
+
+2026-11-11T01:16:45Z: Q39 đã duyệt52ảnh nguồn: nhãn địch14px, ghi chú15px; dự báo chờ tối đa8giây và không nhận phản hồi cũ.
+Bộ nhớ đệm/đổi đội/bàn phím/Fight đạt ở hai cỡ màn;9test/type/lint qua. Đang đóng gói offline, giữ nguyên phép dự báo và luật trận.
+
+2026-11-11T01:22:50Z: Q39 hoàn tất: dự báo chờ tối đa 8 giây, chữ địch/pha 14px; tên dài vẫn vừa ở 720p.
+9 test/type/lint qua; 52 ảnh nguồn và 56 ảnh offline đã duyệt, demo 39.109.129 byte, không lỗi/gọi mạng ngoài.
+Tiếp tục Q40: số tầng, trạng thái quà và nút nhận quà Tower rõ hơn; giữ nguyên luật và phần thưởng.
