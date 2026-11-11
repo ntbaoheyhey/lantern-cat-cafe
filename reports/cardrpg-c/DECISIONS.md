@@ -86,3 +86,5 @@
 - 2026-11-11 C11 pantry: use the public pack command for eligibility and exact milk healing, preserve zero-stock reassignment and existing reservations. Keep the decision together in two columns; no rules or combat changes.
 
 - 2026-11-11 C11 recipes: disclose exact output/costs/shortages and use the existing craft command for eligibility; current-state clicks preserve race guards and stack caps. Screenshot review corrected milk guidance to immediate recovery. No price/rule changes.
+
+- 2026-11-11 C11 route tonic: preserve100HP/revival and route locks; reject all-full spending, share exact public-command previews in Map/Bag. Title contrast/singular copy repaired from screenshots; no balance retuning.

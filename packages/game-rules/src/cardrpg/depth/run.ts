@@ -233,7 +233,16 @@ export function shopStock(run: Run): string[] {
   return stock;
 }
 export function useTonic(state: DepthAccount): RuleResult<DepthAccount> {
-  return transactDepth(state,s=>{const r=s.run;requireRule(r&&!r.battle&&!r.complete&&r.supplies>0,'NOT_READY','Use a packed tonic between encounters.');for(const cat of battleCats(s))r.hp[cat.id]=Math.min(cat.stats.hp,(r.hp[cat.id]??0)+100);r.supplies--;});
+  return transactDepth(state,s=>{
+    const r=s.run;
+    requireRule(r&&!r.complete,'NOT_READY','Start a route before using a route tonic.');
+    requireRule(!r.battle,'NOT_READY','Use route tonics between encounters, before opening Prepare.');
+    requireRule(r.supplies>0,'NOT_READY','No route tonics remain. Buy one at a route tea cart.');
+    const cats=battleCats(s);
+    requireRule(cats.some(cat=>(r.hp[cat.id]??0)<cat.stats.hp),'NOT_READY','Every companion is already at full HP.');
+    for(const cat of cats)r.hp[cat.id]=Math.min(cat.stats.hp,(r.hp[cat.id]??0)+100);
+    r.supplies--;
+  });
 }
 export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state, s => {

@@ -11,6 +11,7 @@ import { CompanionPreview } from './CompanionPreview';
 import { CollectibleDesigns } from './CollectibleDesigns';
 import { gearComparison } from './meta-presentation';
 import type { DepthModel } from './model';
+import { RouteTonic } from './RouteTonic';
 
 const categories = ['Equipment', 'Materials', 'Consumables', 'Collectibles', 'Currencies'] as const;
 
@@ -171,11 +172,7 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
       </article>)}
     </div>}
     {category==='Consumables'&&v4&&<PantryV4 m={m}/>}
-    {category === 'Consumables' && <div className="cr-stack-grid"><article><h2>{state.run?.supplies ?? 0} packed milk tonics</h2>
-      <p>Restore up to 100 HP to each companion between encounters. Supplies belong to the current route.</p>
-      <button disabled={!state.run || state.run.complete || !!state.run.battle || !state.run.supplies}
-        onClick={() => act(R.useTonic(state), 'Each companion recovered up to 100 HP.')}>Use packed tonic</button><small>Account-bound</small>
-    </article>{(v4?R.itemCatalogueV4():STACK_ITEMS).filter(stack => stack.kind === 'consumable' && (state.account.inventory.stacks[stack.id] ?? 0) > 0).map(stack => <article key={stack.id}>
+    {category === 'Consumables' && <div className="cr-stack-grid"><RouteTonic m={m}/>{(v4?R.itemCatalogueV4():STACK_ITEMS).filter(stack => stack.kind === 'consumable' && (state.account.inventory.stacks[stack.id] ?? 0) > 0).map(stack => <article key={stack.id}>
       <h2>{state.account.inventory.stacks[stack.id]} {stack.name}</h2><p>{v4?R.SUPPLY_TEXT_V4[stack.id as R.SupplyIdV4]:'Stored in the account pantry.'}</p>{v4&&<small>Cap {R.stackCapV4(stack.id)} · {stack.source}</small>}<small>{stack.rarity} · Account-bound</small>
     </article>)}</div>}
     {category === 'Collectibles' && <CollectibleDesigns m={m} />}

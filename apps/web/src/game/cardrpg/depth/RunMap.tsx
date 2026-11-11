@@ -7,6 +7,7 @@ import { PageTitle } from '../shared';
 import type { DepthModel } from './model';
 import { ScoutingV4 } from './ScoutingV4';
 import { dailySuppliesFullV4 } from './star-plans-v4';
+import { RouteTonic } from './RouteTonic';
 const symbols = { battle: '⚔', elite: '✦', campfire: '♨', shop: '▧', event: '✉', treasure: '◇', boss: '♛' };
 export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode }) {
   const run = m.state.run;
@@ -20,7 +21,7 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
     <PageTitle eyebrow={`${run.mode} · floor ${run.floor}${showReviewTools(!!run.gameplayV4) ? ` · seed ${run.seed}` : ""}`} title={R.CHAPTERS[run.chapter - 1]!.name} />
   </>;
   const stats = <>
-    <div className="dp-run-stats"><span>{run.points} run points</span><span>{run.supplies} milk tonics</span><span>{run.visited.length} stops visited</span>{run.mutator && <span title={R.MUTATORS.find(t => t.id === run.mutator)?.description}>{R.MUTATORS.find(t => t.id === run.mutator)?.name}</span>}<button disabled={!!run.battle || run.complete || !run.supplies} onClick={() => m.apply(R.useTonic(m.state), 'Every cat recovered up to 100 HP.')}>Use tonic</button></div>
+    <div className="dp-run-stats"><span>{run.points} run points</span><span>{run.supplies} route tonic{run.supplies===1?'':'s'}</span><span>{run.visited.length} stops visited</span>{run.mutator && <span title={R.MUTATORS.find(t => t.id === run.mutator)?.description}>{R.MUTATORS.find(t => t.id === run.mutator)?.name}</span>}<RouteTonic m={m} compact/></div>
   </>;
   const context = <>
     <ScoutingV4 run={run} />
