@@ -6,6 +6,7 @@ import {CompanionPreview} from '../depth/CompanionPreview';
 import {skillIcon} from '../depth/assets';
 import {Stats} from '../shared';
 import {artPropsA6} from './art-a6';
+import {SkillContextA6} from './SkillContextA6';
 
 /** A focused view of the existing companion-preview runtime; account state stays untouched. */
 export function CatPreviewA6({m,catId,initialSkillId,onClose}:{m:DepthModel;catId:string;initialSkillId?:string;onClose:()=>void}) {
@@ -30,9 +31,10 @@ export function CatPreviewA6({m,catId,initialSkillId,onClose}:{m:DepthModel;catI
   <header className="a6-preview-header"><img {...artPropsA6(catId)} alt=""/><div><small>THE PRACTICE TABLE</small><h2 id="a6-preview-title">{cat.name} · skill previews</h2></div><button onClick={onClose}>{initialSkillId?'Back to Skills':'Back to cat'} <span aria-hidden="true">×</span></button></header>
   <div className="a6-preview-body">
    <div className="a6-preview-stage"><CompanionPreview m={m} id={catId} skillId={skill?.id}/>
-    <section className="a6-preview-copy" aria-label={skill?.name??`${cat.name} miniature`}>
+    <section key={skill?.id??cat.id} className="a6-preview-copy" aria-label={skill?.name??`${cat.name} miniature`} tabIndex={0}>
      <header><h3>{skill?.name??`Meet ${cat.name}`}</h3><small>{skill?available.has(skill.id)?skill.type==='ultimate'?`Automatic at ${R.RAGE_COST_A6} rage`:'Used automatically':card?`Opens at level ${skill.unlockLevel} or ${skill.unlockStars} stars`:'Recruit to unlock':'Drag the angle slider to look around.'}</small></header>
      <p>{skill?R.kitSkillV5(skill).description:'Choose an ability to watch its repeating preview.'}</p>
+     {skill&&<SkillContextA6 state={m.state} skill={skill}/>}
     </section>
    </div>
    <aside className="a6-preview-notes"><p>Preview freely. Your crew stays unchanged.</p>

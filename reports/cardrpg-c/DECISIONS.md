@@ -130,3 +130,5 @@
 
 2026-11-11 C11: Field Guide omitted seven live skill-specific statuses and reduced reaction notes to crew hints. Derive all15canonical statuses from current rules, keep historical aliases searchable, and state real reaction triggers/consumption/one-per-foe guard. Retain combat, old catalogue mode and original status icons.
 2026-11-11T20:21:24.468360+00:00 C11: screenshot review caught faint empty-search battle hint and clipped index focus rings. Set explicit paper-ink text and8px scroll padding; require whole focus ring visibility after transitions. No rules change.
+
+2026-11-11T20:34:32.807818+00:00 C11: disclose kit cooldown and active-route effect-power rank through one shared component. Keep the passive in the focused scroll note and compact only the720p Skills identity to preserve125px note space; no combat changes. Supplement waits for browser scroll endpoints before capture.

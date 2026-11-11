@@ -32,3 +32,32 @@ it('discloses automatic ultimates from recruitment through growth, and keeps uno
  expect(screen.getByText('Recruit this cat to unlock their skills.')).toBeTruthy();
  fireEvent.click(screen.getByRole('button',{name:'Growth'}));fireEvent.click(screen.getByRole('button',{name:'Recruit'}));expect(m.screen).toBe('gacha');
 });
+
+it('explains the current kit cooldowns without using their historical values',()=>{
+ const m=new DepthModel(true,true,true,true),before=JSON.stringify(m.state);
+ const {rerender}=render(<CatDetailsA6 m={m} catId="soot" onPreview={()=>{}}/>);
+ for(const [catId,skillName,wait] of [['soot','Black cup',2],['inkcap','Ink thread',1],['cinnamon','Second serving',4],['mochi','Door knock',0]] as const){
+  rerender(<CatDetailsA6 key={catId} m={m} catId={catId} onPreview={()=>{}}/>);
+  fireEvent.click(screen.getByRole('button',{name:'Skills'}));
+  fireEvent.click(screen.getByRole('button',{name:new RegExp(skillName)}));
+  const note=screen.getByRole('region',{name:skillName});
+  expect(note.textContent).toContain(wait?`Wait ${wait} round${wait===1?'':'s'} after use.`:'Can be used every round.');
+  expect(note.textContent).toContain('Base effects shown.');
+  expect(note.tabIndex).toBe(0);
+ }
+ expect(JSON.stringify(m.state)).toBe(before);
+});
+
+it('separates base effects from the active patrol bonus and clears completed-route bonuses',()=>{
+ const m=new DepthModel(true,true,true,true),started=R.startRun(m.state,1,826116);
+ expect(started.ok).toBe(true);m.state=started.state;m.state.run!.upgrades['soot-2']=2;
+ const before=JSON.stringify(m.state);
+ const {rerender}=render(<CatDetailsA6 m={m} catId="soot" onPreview={()=>{}}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Skills'}));fireEvent.click(screen.getByRole('button',{name:/Black cup/}));
+ const note=screen.getByRole('region',{name:'Black cup'});
+ expect(note.textContent).toContain('Base effects shown. Your patrol rank 2 adds 40% effect power.');
+ expect(note.textContent).toContain(R.kitSkillV5(R.CAT_BY_ID.soot!.skills[1]!).description);
+ expect(JSON.stringify(m.state)).toBe(before);
+ m.state.run!.complete=true;rerender(<CatDetailsA6 m={m} catId="soot" onPreview={()=>{}}/>);
+ expect(screen.queryByText(/Your patrol rank/)).toBeNull();
+});

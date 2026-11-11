@@ -25,6 +25,10 @@
  .a6-cat-skill-detail>header>small {font-size:11px;color:#7b5b2d;}
  .a6-cat-skill-detail>p {margin:9px 0 0;font-size:15px;line-height:1.45;}
  .a6-cat-skill-unlock {display:block;margin-top:7px;font-size:12px;color:#83522f;}
+ .a6-skill-context {margin-top:8px;padding-top:6px;border-top:1px dashed #c3a572;}
+ .a6-cat-skill-detail .a6-skill-context>p,.a6-preview-copy .a6-skill-context>p {margin:3px 0;font-size:14px;line-height:1.4;color:#765638;}
+ .a6-cat-skill-detail:focus-visible,.a6-preview-copy:focus-visible {outline:2px solid #8966b5;outline-offset:-3px;}
+ .a6-cat-skill-detail .a6-cat-passive {margin-top:10px;}
  .a6-cat-preview {align-self:start;min-height:40px;padding:8px 14px;font-size:14px;}
  @media(max-height:760px) {
   .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:100px minmax(0,1fr);}
@@ -41,6 +45,19 @@
   .a6-cat-skill-detail>header>b {font-size:17px;}
   .a6-cat-skill-detail>p {font-size:14px;line-height:1.4;margin-top:6px;}
   .a6-cat-preview {font-size:13px;}
+ }
+}
+
+/* Share the note's scroll space with the passive so the ability stays readable. */
+@media(max-height:760px) {
+ .uv-app[data-a6=true] .uv-sheet-content:has(.a6-cats-workspace) .a6-cat-detail:has(.a6-cat-skillbook) {
+  .a6-cat-hero {grid-template-columns:72px minmax(0,1fr);gap:10px}
+  .a6-cat-hero>img {width:72px;height:72px}
+  .a6-cat-hero>div {display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center}
+  .a6-cat-hero small,.a6-cat-hero h2 {grid-column:1/-1}
+  .a6-cat-hero h2 {font-size:26px;line-height:1.1;margin:0}
+  .a6-cat-hero p {font-size:13px;line-height:1.4}
+  .a6-cat-skill-index>button {padding-block:4px;min-height:44px}
  }
 }
 

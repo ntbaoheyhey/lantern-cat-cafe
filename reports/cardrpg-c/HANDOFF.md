@@ -1,8 +1,8 @@
 # Lane C handoff
-NOW: C11 Field Guide verified; continue cat skill clarity and C8.
+NOW: C11 Skill context verified; continue enemy advice accuracy and C8.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review remaining cat skill clarity without repeating accepted work.
-NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
+NEXT1: check designer inbox; compare remaining enemy advice with current combat mechanics.
+NEXT2: evidence119.8MB is close to120MB; compact lossless JSON before more retained captures.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
 KNOWN: C0–C7/C9/C10 done; C8 final exports absent; C11 continuous. Receipts contain all earlier evidence.
@@ -27,4 +27,4 @@ KNOWN:firstlevel18browser/12views;firstcontext64browser/54views/7tests/types/lin
 KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF-before-preparation-health-2026-11-11.md.
 KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only Book;C11-BOND-SUMMARY-RECEIPT.
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
-KNOWN:guide15statuses/4reactions/aliases;126browser/72finalviews/4tests/types/lintPASS;focus/emptyhint repaired.
+KNOWN:guide126browser/72views/4tests;skills106+32browser/70finalviews/6tests;types/lintPASS. See receipts.

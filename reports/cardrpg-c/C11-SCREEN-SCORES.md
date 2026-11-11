@@ -115,3 +115,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T20:00:24.712714+00:00 Bond details follow-up:48finalviews inspected in8sheets plus two full-size states. Effects/eligibility/trigger and fixed Book action fit both sizes; full-note bounds and keyboard scroll pass. Weighted7.79 retained; C11-BOND-SUMMARY-RECEIPT.md.
 
 2026-11-11T20:11:24.040432+00:00 Save follow-up:46captures inspected plus four settled restore replacements, two previews full size. Saved route/large values/focus/720p panel fit.30browser+4restorationchecks/7tests/types/lintPASS;weighted7.79 retained; C11-SAVE-RECEIPT.md.
+
+2026-11-11T20:34:32.807818+00:00 Skill context follow-up:44+34views inspected through14sheets, including eight settled rank endpoint replacements. Cooldowns, base effects and active patrol bonus fit with a125px minimum note at both sizes; keyboard scroll and preview return verified. Six focused tests/types/lint and106+32browserchecks PASS. Weighted7.79 retained; C11-SKILL-CONTEXT-RECEIPT.md.
