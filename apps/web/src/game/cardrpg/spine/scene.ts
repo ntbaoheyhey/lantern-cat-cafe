@@ -41,7 +41,7 @@ export class SpineScene {
   this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.NoToneMapping;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
-  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket));this.numbers=new PuppetNumbers(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
+  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
   this.resize=new ResizeObserver(()=>this.invalidate());this.resize.observe(host);document.addEventListener('visibilitychange',this.visibility);
@@ -204,6 +204,7 @@ export class SpineScene {
   this.onAnchors(this.anchors);
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
+ pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].map(([id,entry])=>{const box=this.bounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}

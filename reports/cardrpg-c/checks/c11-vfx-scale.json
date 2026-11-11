@@ -1,0 +1,275 @@
+[
+  {
+    "method": "Same centered256\u00d7512 C2 effect at scale0.5 through PNG and Spine; small/boss encounters, every target, ordinary/lowered head sockets, x1\u2013x3, both sizes. Compare real composite bounds to independently projected world units; no registry or designer-source writes.",
+    "shots": [
+      {
+        "file": "scale-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "scale-1440.webp",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "phase": "before",
+    "cases": 192,
+    "failed": 192,
+    "maxError": 50.938796094050375,
+    "examples": [
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "mochi",
+        "tier": "cat",
+        "actual": [
+          134.9949090836206,
+          317.3279667742029,
+          25.07203322579713,
+          50.14406645159426
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 6.044651497123688,
+        "pass": false
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "needle-moth",
+        "tier": "small",
+        "actual": [
+          799.0119386094242,
+          308.2638772188482,
+          25.576122781151803,
+          51.152245562303605
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 5.036472386414346,
+        "pass": false
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:yarn-giant",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "yarn-giant",
+        "tier": "boss",
+        "actual": [
+          905.6382626475846,
+          296.37652529516936,
+          46.02347470483065,
+          92.0469494096613
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 35.858231460943344,
+        "pass": false
+      }
+    ],
+    "raw": "/tmp/cardrpg-c-vfx-scale-before/review.json"
+  },
+  {
+    "method": "Same centered256\u00d7512 C2 effect at scale0.5 through PNG and Spine; small/boss encounters, every target, ordinary/lowered head sockets, x1\u2013x3, both sizes. Compare real composite bounds to independently projected world units; no registry or designer-source writes.",
+    "shots": [
+      {
+        "file": "scale-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "scale-1440.webp",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "phase": "after",
+    "cases": 192,
+    "failed": 0,
+    "maxError": 5.684341886080802e-14,
+    "examples": [
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "mochi",
+        "tier": "cat",
+        "actual": [
+          133.5223659287131,
+          314.3056410256411,
+          28.094358974358975,
+          56.18871794871795
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 0,
+        "pass": true
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "needle-moth",
+        "tier": "small",
+        "actual": [
+          797.7528205128206,
+          305.7456410256411,
+          28.094358974358975,
+          56.18871794871795
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 0,
+        "pass": true
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:yarn-giant",
+        "format": "sequence",
+        "speed": 1,
+        "headPose": "normal",
+        "target": "yarn-giant",
+        "tier": "boss",
+        "actual": [
+          914.6028205128205,
+          314.3056410256411,
+          28.094358974358975,
+          56.18871794871795
+        ],
+        "expected": {
+          "width": 28.094358974358975,
+          "height": 56.18871794871795
+        },
+        "error": 0,
+        "pass": true
+      }
+    ],
+    "raw": "/tmp/cardrpg-c-vfx-scale-after/review.json"
+  },
+  {
+    "method": "Same centered256\u00d7512 C2 effect at scale0.5 through PNG and Spine; small/boss encounters, every target, ordinary/lowered head sockets, x1\u2013x3, both sizes. Compare real composite bounds to independently projected world units; no registry or designer-source writes.",
+    "shots": [
+      {
+        "file": "scale-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "scale-1440.webp",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "phase": "zoom",
+    "cases": 64,
+    "failed": 0,
+    "maxError": 5.684341886080802e-14,
+    "examples": [
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "zoom": 1.1,
+        "headPose": "normal",
+        "target": "mochi",
+        "tier": "cat",
+        "actual": [
+          85.33212083027355,
+          324.33620512820517,
+          30.903794871794872,
+          61.807589743589745
+        ],
+        "expected": {
+          "width": 30.903794871794876,
+          "height": 61.80758974358975
+        },
+        "error": 7.105427357601002e-15,
+        "pass": true
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:needle-moth",
+        "format": "sequence",
+        "speed": 1,
+        "zoom": 1.1,
+        "headPose": "normal",
+        "target": "needle-moth",
+        "tier": "small",
+        "actual": [
+          816.0281025641026,
+          314.9202051282051,
+          30.903794871794872,
+          61.807589743589745
+        ],
+        "expected": {
+          "width": 30.903794871794883,
+          "height": 61.807589743589766
+        },
+        "error": 5.684341886080802e-14,
+        "pass": true
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "encounter": "enemy:yarn-giant",
+        "format": "sequence",
+        "speed": 1,
+        "zoom": 1.1,
+        "headPose": "normal",
+        "target": "yarn-giant",
+        "tier": "boss",
+        "actual": [
+          944.5631025641026,
+          324.33620512820517,
+          30.903794871794872,
+          61.807589743589745
+        ],
+        "expected": {
+          "width": 30.903794871794876,
+          "height": 61.80758974358975
+        },
+        "error": 7.105427357601002e-15,
+        "pass": true
+      }
+    ],
+    "raw": "/tmp/cardrpg-c-vfx-scale-zoom/review.json"
+  }
+]

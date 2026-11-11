@@ -20,7 +20,7 @@ export class PaintedVfx {
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
  private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
- constructor(private host:HTMLElement,private socket:ResolveSocket){
+ constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.ready=this.overrides.prepare();
  }
@@ -96,7 +96,9 @@ export class PaintedVfx {
     }
    }
   }
-  this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),feet=this.socket(id,'feet'),head=this.socket(id,'head');if(!point||!feet||!head)return;const unit=Math.abs(feet.y-head.y)/.77,extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale/512,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=this.overrides.stats.active;
+  // Export bounds are Spine/world units. Head motion and species proportions
+  // must not rescale the export; only the stage transform and camera do.
+  this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=this.overrides.stats.active;
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
  clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
