@@ -11,4 +11,12 @@ describe('painted effect contract',()=>{
  it('keeps allied support separate from hostile impact flashes',()=>{
   expect(PAINTED_VFX.get('mochi-4')?.friendly).toBe(true);expect(PAINTED_VFX.get('soot-4')?.friendly).toBe(false);expect(PAINTED_VFX.get('soot-4')?.ultimate).toBe(true);
  });
+ it('keeps a self-shield at contact instead of spending its whole effect in windup',()=>{
+  const oven=PAINTED_VFX.get('panko-4')!;
+  expect(oven.layers.filter(layer=>layer.phase==='windup').map(layer=>layer.glyph)).toEqual(['ring']);
+  expect(oven.layers.filter(layer=>layer.phase==='contact').map(layer=>layer.glyph)).toEqual(['oven','ring','flame','ring']);
+  expect(oven.layers.find(layer=>layer.glyph==='oven')?.socket).toBe('vfxOrigin');
+  expect(PAINTED_VFX.get('enemy:kettle-knight')!.layers.find(layer=>layer.glyph==='shield')?.phase).toBe('contact');
+  for(const recipe of PAINTED_VFX.values())expect(recipe.layers.some(layer=>layer.phase==='contact'),recipe.id).toBe(true);
+ });
 });

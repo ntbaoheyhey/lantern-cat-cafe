@@ -4,7 +4,7 @@ import {resolve} from 'node:path';
 import {readFile,access} from 'node:fs/promises';
 const root=resolve(import.meta.dirname,'../..'),sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp'),tag=process.argv[2]??'c11';
 const directory=resolve(root,'reports/cardrpg-c/shots',tag);
-const reportFile=await access(resolve(directory,'review.json')).then(()=>'review.json',()=>'gallery-review.json');
+const reportFile=await access(resolve(directory,'captures.json')).then(()=>'captures.json',()=>access(resolve(directory,'review.json')).then(()=>'review.json',()=>'gallery-review.json'));
 const report=JSON.parse(await readFile(resolve(directory,reportFile),'utf8'));
 for(const width of [1280,1440]){
  const rows=report.shots.filter(s=>s.width===width);

@@ -1,4 +1,4 @@
-# Tiến độ lane C — 11/11, cập nhật 09:25 UTC
+# Tiến độ lane C — 11/11, cập nhật 09:48 UTC
 
 C0–C7, C9 và C10 đã xong; C11 có checkpoint kiểm tra, tiếp tục cải thiện. Demo offline 29,21 MB có 25 nhân vật / 206 animation, 74 skill / 18 status và hai video trọn trận x1. Designer cuối: 0/25; Mochi 117 layer vẫn là placeholder, nguồn còn PARTIAL.
 
@@ -15,3 +15,5 @@ VFX: sửa tia impact không hết trong gallery. 60 ca source + 60 ca offline �
 Home có nhắc gear miễn phí ngay cạnh Night Patrol trước khi route khóa đồ. Fixture +641 Power khớp click, không trừ currency; đủ 16 check browser và 14 ảnh hai cỡ đã xem. Focus trở lại Patrol; onboarding, route đang chạy và bỏ qua đều đúng. 11 test focused/typecheck/lint đạt; không đổi rules hay điểm 7,79.
 
 Tiếp tục quality pass và kiểm tra inbox designer; không chờ license/tool/version, các mục này đã ghi NEEDS-USER. Draft PR #439, không merge/deploy. Báo cáo chốt 20/11 06:00 UTC; hard stop 20/11 12:00 UTC.
+
+C11 sửa VFX tự gắn lên caster bị hết trước lúc chạm: Oven door và các accent muộn xuất hiện đúng hit. 888 ca source + 888 ca offline, 12 ca battle và sáu Pause/Play mỗi gallery đạt; 12 test focused/typecheck/lint đạt. Đã xem 22 ảnh offline, 12 ảnh battle và hai ảnh hiệu năng ở hai cỡ. p95 offline 16,7–16,8 ms/60 draw; sweep tối đa61. Bốn ca forced redraw còn khác ảnh sau ba lần sửa harness: ghi PARTIAL, giữ diagnostic; Pause/Play thực đạt. Demo29,21MB, evidence52,95MB; điểm7,79giữ nguyên. Tiếp theo sửa recipe Kettle Knight đang dùng hiệu ứng phòng thủ cũ cho đòn gây damage.

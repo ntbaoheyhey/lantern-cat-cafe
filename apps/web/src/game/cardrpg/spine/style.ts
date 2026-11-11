@@ -2,7 +2,7 @@
 export const PAINT = {
  cream:'#fff0ca', honey:'#efbd73', ember:'#d87857', rose:'#d98d99', sage:'#a9c49a', sky:'#a1c5cd', iris:'#b4a1cb',
  ink:'#49333a', wood:'#9d684b', wall:'#bd9470', night:'#42545c', rim:'#63414a',
- glow:.28, rimWidth:2, impactSeconds:2/60, hitstopMs:60, maxZoom:1.10, shake:4,
+ glow:.28, rimWidth:2, impactSeconds:2/60, hitstopMs:60, maxZoom:1.10, shake:4, windupStartLimit:.30,
  worldHeight:1950, catHeight:512, fxPool:256,
  cutinSeconds:.8, zoomInSeconds:.18, zoomOutSeconds:.20, phaseSeconds:1.25, entranceStagger:.08,
  stage:{glassTop:'#46555f',glassBottom:'#9a9690',distant:'#4c6263',foliage:'#52665d',leaf:'#8b9c75',

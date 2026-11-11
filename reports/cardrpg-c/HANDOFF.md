@@ -1,10 +1,10 @@
 # Lane C handoff
-NOW: C11 patrol reminder verified; record/push, then continue VFX readability review.
+NOW: C11 VFX contact checkpoint complete; prepare commit/push/draft439 update, then Kettle mismatch.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: inspect restrained VFX at x1 and choose one demonstrated clarity/impact issue.
-NEXT2: improve within existing sockets/events/pool/painted tokens; verify both sizes and budget.
+NEXT1: repair Kettle Knight damaging signature inheriting friendly Mirror polish; inspect current rules.
+NEXT2: verify enemy semantic fix against source/offline/battle at both sizes and update its receipt.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
-RUNNING: Vite5970 PID59050; no recorder or browser QA active.
+RUNNING: Vite5970 PID59050 only; all cue/performance jobs finished. Demo29208328bytes.
 KNOWN: stage painting244296bytes;3parallaxplanes;procedural loading/failure fallback;late/disposed decode safe.
 KNOWN: final glass seams feathered;36final stage/effects/lifecycle/offline views;11tests/types/lintPASS.
 KNOWN: final offlinep95 16.7–16.8ms/60draws,0faceHPmask/error/HTTP;demo29.21MB/evidence34MB.
@@ -23,5 +23,6 @@ KNOWN:88%1–3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74�
 KNOWN:25placeholders;Mochi117layers/33bones/1024PMA/512height;sourcePARTIALjoints/eye.
 KNOWN:designer inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:no main/deploy/live-contract changes;reportNov20 06:00UTC,hardstopNov20 12:00UTC.
-KNOWN: impact clock fix60source+60offlinecases/16views;11tests/types/lint;pause stable,p95 16.7msboth.
+KNOWN:888source/888offline/12battlecasesPASS;6PausePlayeachPASS;61draws/42particles;12tests/types/lintPASS.
+KNOWN: forced-redraw4differences PARTIAL after3attempts; realPausePlayPASS; offlinep9516.7–16.8ms.
 KNOWN: homegear+641exact/16checks/14views/11tests/types/lintPASS;onboarding/routeguards/focus;scoreunchanged.

@@ -1,0 +1,2 @@
+83266       00:02   0.0 /bin/zsh -lc node tools/cardrpg-c/contact-sheets.mjs c11-vfx-cues-offline; ps -Ao pid,etime,pcpu,args | rg 'iopaint|lama|realesrgan|segment.anything|vfx-cue-review' > reports/cardrpg-c/checks/c11-vfx-cues-perf-processes.log; nice -n 10 node tools/cardrpg-c/vfx-final-check.mjs --tag=c11-vfx-cues-performance > reports/cardrpg-c/checks/c11-vfx-cues-performance.log 2>&1; result=$?; tail -3 reports/cardrpg-c/checks/c11-vfx-cues-performance.log; exit $result
+83286       00:00   0.0 rg iopaint|lama|realesrgan|segment.anything|vfx-cue-review
