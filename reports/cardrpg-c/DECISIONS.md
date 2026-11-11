@@ -76,3 +76,5 @@
 - 2026-11-11 C11 Bag enhancement: twelve wearer quotes used the comparison cat. Quote the actual owner, disclose unused/zero-gain ranks and all shortages, preserve public transactions. Two720p spacing repairs keep comparison stats and controls visible; initial invalid template/affix test fixture replaced via makeGear.
 
 - 2026-11-11 C11 gear transfer: show active crew delta beside Equip so an individual gain cannot conceal a crew loss; exact public transfers and bench semantics retained. Selector compile fix and settled Power capture are harness corrections. Compact nine old JSON receipts losslessly to keep evidence under120MB.
+
+- 2026-11-11 C11 bonus visibility: expose recipient/donor set and unique losses beside Equip, with a keyboard-focused exact list. Keep the current public command; clear pending celebration acknowledgements only in the isolated review fixture, preserving failed harness logs outside git.

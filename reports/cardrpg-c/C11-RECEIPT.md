@@ -51,3 +51,5 @@ Override pool checkpoint: C11-VFX-POOL-RECEIPT.md.4baseline cases/5regressions f
 Gear-slot checkpoint: C11-GEAR-SLOTS-RECEIPT.md.10baseline mismatches->20browser checksPASS;20focused/types/lintPASS;16captures inspected,2retained. Empty slots open the correct shelf; general Bag entry resets. Static demo29,226,665bytes unchanged; evidence119.54MB; score/gameplay unchanged.
 
 Bag enhancement checkpoint: C11-BAG-ENHANCE-RECEIPT.md.12wrongwearerquotes->28browser/8keyboardpurchases/10focused/types/lint/28viewsPASS;2visualrepairs. Exact ownership/costs retained; no balance/score/demo change.
+
+Bag bonus checkpoint: C11-BAG-BONUS-RECEIPT.md.42browser/20keyboard equips/31focused/types/lintPASS;42views inspected. Exact recipient/donor set/unique changes visible from Equip; fixture celebration acknowledgement isolated. Demo/score/gameplay unchanged.

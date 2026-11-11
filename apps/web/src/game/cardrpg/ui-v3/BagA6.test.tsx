@@ -1,4 +1,4 @@
-import {act,cleanup,fireEvent,render,screen,within} from '@testing-library/react';
+import {act,cleanup,fireEvent,render,screen,waitFor,within} from '@testing-library/react';
 import {afterEach,expect,it} from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {DepthModel} from '../depth/model';
@@ -83,4 +83,19 @@ it('discloses a crew loss beside Equip even when the receiving cat gains Power',
  expect(quote.textContent).toContain('Move from Mochi to Soot');expect(quote.textContent).toContain('Crew Power');expect(quote.textContent).toContain('−'+Math.abs(delta));
  expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(Math.round(R.teamPowerV4(m.state))).toBe(Math.round(comparison.teamAfter));
  expect(screen.queryByText('Crew Power')).toBeNull();expect(m.state.equipment.mochi?.weapon).toBeUndefined();expect(m.state.equipment.soot?.weapon).toBe(id);
+});
+it('reviews donor losses and recipient gains before equipping without changing the account',async()=>{
+ const {m,id}=model();
+ for(const cat of ['mochi','soot']){
+  const outfit=R.makeGear(m.state,'hearthloom-outfit-epic',26);m.state.gear.push(outfit);m.state=R.equipGear(m.state,cat,outfit.id).state;
+ }
+ m.cardId='soot';const before=R.exportSave(m.state);render(<BagA6 m={m}/>);
+ const review=screen.getByRole('button',{name:'1 bonus lost · Review'});expect(review.getAttribute('aria-expanded')).toBe('false');
+ fireEvent.click(review);const panel=screen.getByRole('region',{name:'Equip bonus changes'});
+ expect(panel.textContent).toContain('Mochi loses Hearthloom · 2 pieces');expect(panel.textContent).toContain('Soot gains Hearthloom · 2 pieces');
+ expect(panel.textContent).toContain('Defend adds 12 shield.');await waitFor(()=>expect(document.activeElement).toBe(panel));
+ expect(review.getAttribute('aria-expanded')).toBe('true');expect(R.exportSave(m.state)).toBe(before);
+ const command=R.equipGear(m.state,'soot',id);fireEvent.click(screen.getByRole('button',{name:'Equip'}));
+ expect(m.state.equipment).toEqual(command.state.equipment);expect(m.state.account.currencies).toEqual(command.state.account.currencies);
+ expect(screen.queryByRole('region',{name:'Equip bonus changes'})).toBeNull();expect(screen.queryByRole('button',{name:/bonus.*Review/})).toBeNull();
 });

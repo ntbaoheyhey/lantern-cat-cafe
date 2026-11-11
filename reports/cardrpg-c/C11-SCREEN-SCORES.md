@@ -85,3 +85,5 @@ Awakening follow-up: all24final captures inspected after one720p clipping repair
 Bag enhancement follow-up:28finalcaptures inspected; all comparison stats, full shortages and actions visible at both sizes after two720p spacing repairs. Wearer-specific quotes and zero-main-gain wording match public purchases. Weighted7.79 retained; no recovery evidence.
 
 Bag transfer follow-up:28final captures and four settled-result views inspected; crew gain/loss/zero, transfer names, stats and both actions fit both sizes. Total follows exact public equip. Set losses remain below the initial effects view and are next. Score7.79 unchanged. C11-BAG-TRANSFER-RECEIPT.md.
+
+Bag bonus follow-up:42final captures inspected, including two full-size dense cases. Bonus warnings and actions remain visible; exact lost/gained details scroll independently. Keyboard focus and20public-command equips verified. Weighted7.79unchanged; no recovery claim. C11-BAG-BONUS-RECEIPT.md.

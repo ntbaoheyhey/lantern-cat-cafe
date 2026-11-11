@@ -75,15 +75,17 @@ export function powerV4(state:DepthAccount,cardId:string){
 export function teamPowerV4(state:DepthAccount){return state.team.reduce((sum,id)=>sum+powerV4(state,id).total,0);}
 export function comparisonV4(state:DepthAccount,cardId:string,instanceId:string){
  const item=state.gear.find(g=>g.id===instanceId);if(!item)return null;
+ const transfer=Object.entries(state.equipment).find(([id,slots])=>id!==cardId&&Object.values(slots).includes(instanceId))?.[0]??null;
  const t=GEAR_BY_ID[item.templateId]!,next=clone(state);
  for(const loadout of Object.values(next.equipment))for(const slot of EQUIPMENT_SLOTS)if(loadout[slot]===instanceId)delete loadout[slot];
  next.equipment[cardId]??={};next.equipment[cardId]![t.slot]=instanceId;
  const before=equipmentEffects(state,cardId),after=equipmentEffects(next,cardId);
+ const donorAfter=transfer?equipmentEffects(next,transfer).effects:[];
  const without=clone(next);delete without.equipment[cardId]![t.slot];
  return {before:powerV4(state,cardId),after:powerV4(next,cardId),teamBefore:teamPowerV4(state),teamAfter:teamPowerV4(next),
   share:Math.max(0,teamPowerV4(next)-teamPowerV4(without))/teamPowerV4(next),
   gained:after.effects.filter(e=>!before.effects.includes(e)),lost:before.effects.filter(e=>!after.effects.includes(e)),
-  transfer:Object.entries(state.equipment).find(([id,slots])=>id!==cardId&&Object.values(slots).includes(instanceId))?.[0]??null};
+  transfer,transferLost:transfer?equipmentEffects(state,transfer).effects.filter(e=>!donorAfter.includes(e)):[]};
 }
 export function gearCostV4(id:string){const g=GEAR_BY_ID[id]!;return g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};}
 export function rarityMeaningV4(rarity:string){return ['One main stat; readily replaceable.','One affix refines a role.','Two affixes; plan a targeted source.','Three affixes and one bounded unique behavior.'][RARITY_ORDER.indexOf(rarity as typeof RARITY_ORDER[number])]??'Cosmetic edition; no combat power.';}

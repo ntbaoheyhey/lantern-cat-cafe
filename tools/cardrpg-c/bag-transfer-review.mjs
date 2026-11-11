@@ -45,9 +45,9 @@ try{
     m.go('inventory');const preview=R.comparisonV4(m.state,m.cardId,m.itemId),command=R.equipGear(m.state,m.cardId,m.itemId);
     return {unchanged:JSON.stringify(m.state),before:Math.round(preview.teamBefore),after:Math.round(preview.teamAfter),delta:Math.round(preview.teamAfter)-Math.round(preview.teamBefore),catGain:preview.after.total-preview.before.total,gained:preview.gained,lost:preview.lost,transfer:preview.transfer,ok:command.ok,command:command.ok?{equipment:command.state.equipment,currencies:command.state.account.currencies,power:Math.round(R.teamPowerV4(command.state))}:null};
    },{fixture,kind});
-   const footer=page.locator('.a6-inventory-actions'),button=footer.locator('button').first();await expect(button).toBeInViewport({ratio:1});
+   const footer=page.locator('.a6-inventory-actions'),button=footer.getByRole('button',{name:/^Equip(ped)?$/});await expect(button).toBeInViewport({ratio:1});
    expect(await button.isEnabled()).toBe(expected.ok&&kind!=='equipped');
-   const observed=await footer.evaluate(el=>({text:el.textContent,impact:el.querySelector('.a6-inventory-crew')?.textContent??null,description:document.getElementById(el.querySelector('button')?.getAttribute('aria-describedby'))?.textContent,delta:Number(el.querySelector('.a6-inventory-crew b')?.getAttribute('data-delta')??NaN)}));
+   const observed=await footer.evaluate(el=>({text:el.textContent,impact:el.querySelector('.a6-inventory-crew')?.textContent??null,description:document.getElementById(el.querySelector('.a6-inventory-equip + button')?.getAttribute('aria-describedby'))?.textContent,delta:Number(el.querySelector('.a6-inventory-crew b')?.getAttribute('data-delta')??NaN)}));
    expect(await page.evaluate(()=>JSON.stringify(window.__depthReview.state))).toBe(expected.unchanged);delete expected.unchanged;
    if(!baseline&&kind!=='equipped')expect(observed.delta).toBe(expected.delta);
    if(kind==='within-crew'){expect(expected.catGain).toBeGreaterThan(0);expect(expected.delta).toBeLessThan(0);}

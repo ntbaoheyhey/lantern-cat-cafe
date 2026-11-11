@@ -29,6 +29,18 @@ describe('v4 equipment safety and compatibility',()=>{
   const preview=R.comparisonV4(s,'soot',piece.id)!;expect(preview.transfer).toBe('mochi');expect(s).toEqual(before);
   expect(preview.teamAfter).toBe(R.teamPowerV4(R.equipGear(s,'soot',piece.id).state));
  });
+ it.each([2,4])('reports the donor bonus actually lost at the %i-piece threshold',count=>{
+  let s=rich();s.gear=[];s.equipment={};
+  for(const slot of EQUIPMENT_SLOTS.slice(0,count)){
+   const item=R.makeGear(s,`hearthloom-${slot}-${slot==='weapon'?'legendary':'epic'}`,71);s.gear.push(item);s=R.equipGear(s,'mochi',item.id).state;
+  }
+  const piece=s.equipment.mochi!.weapon!,before=clone(s),preview=R.comparisonV4(s,'soot',piece)!,applied=R.equipGear(s,'soot',piece);
+  expect(applied.ok).toBe(true);expect(s).toEqual(before);
+  const lost=R.equipmentEffects(s,'mochi').effects.filter(e=>!R.equipmentEffects(applied.state,'mochi').effects.includes(e));
+  expect(preview.transferLost).toEqual(lost);expect(lost).toEqual(['unique:doorstop',count===2?'defend-shield':'defend-link']);
+  expect(preview.gained).toContain('unique:doorstop');expect(preview.teamAfter).toBe(R.teamPowerV4(applied.state));
+  const same=R.comparisonV4(applied.state,'soot',piece)!;expect(same.transferLost).toEqual([]);expect(same.gained).toEqual([]);
+ });
  it('restores a whole preset, transfers each item once, and preserves its plan',()=>{
   let s=fresh();s.v4!.plan={focus:'support',care:'protect'};
   s=R.saveLoadoutV4(s,0,'Quiet evening').state;const saved=clone(s.equipment),piece=R.equippedItems(s,'mochi')[0]!;

@@ -65,6 +65,13 @@
  .a6-inventory-equip small {font-size:14px;line-height:1.25}
  .a6-inventory-crew {display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap}
  .a6-inventory-crew [data-change="1"] {color:#4b6b35}.a6-inventory-crew [data-change="-1"] {color:#a34a36}
+ .a6-inventory-actions .a6-inventory-effect-link {align-self:flex-start;min-height:0;padding:0;border:0;border-radius:2px;background:none;box-shadow:none;font-size:14px;line-height:1.25;color:#4b6b35;text-decoration:underline;text-underline-offset:2px}
+ .a6-inventory-actions .a6-inventory-effect-link[data-loss=true] {color:#a34a36}
+ .a6-inventory-effect-changes {padding:0 0 6px;margin-bottom:8px;border-bottom:1px solid #bfa578}
+ .a6-inventory-effect-changes:focus-visible {outline:2px solid #8966b5;outline-offset:-2px}
+ .a6-inventory-effect-changes h3 {font:700 18px Georgia,serif;margin:0 0 5px;color:#62462d}
+ .a6-inventory-effect-changes p {display:flex;flex-direction:column;gap:2px;margin:5px 0}
+ .a6-inventory-effect-changes [data-change="1"] b {color:#4b6b35}.a6-inventory-effect-changes [data-change="-1"] b {color:#a34a36}
  .a6-inventory :is(button,select,summary):focus-visible {outline:3px solid #8966b5;outline-offset:2px}
  .a6-inventory-welcome {display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f3dfb8;border:1px dashed #b18c58;border-radius:14px;padding:20px;color:#694b30}
  .a6-inventory-welcome img {width:170px;height:195px;object-fit:contain}.a6-inventory-welcome h2 {font:24px Georgia,serif;max-width:310px;margin:12px 0}
