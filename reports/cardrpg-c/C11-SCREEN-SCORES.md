@@ -101,3 +101,5 @@ Route completion follow-up:36final captures inspected, including list ends and k
 C11 milestone continuation: inspected68distinct final views across Events/Journal/Map; full and reduced gifts readable, complete Discoveries cards fit both sizes after geometry repair. Score7.79 retained; this is decision clarity, not new gameplay evidence.
 
 Daily/reset follow-up:44sweep and24replacement views inspected at both sizes; full/reduced amounts, expiry and whole-gift consequence readable. Explicit shortcut scroll repairs the clipped heading; disabled login is visually distinct. Score7.79 retained.
+
+Idle follow-up:44final and28style views inspected at both sizes. Full/reduced supplies, consumption costs and receipts fit the modal. Muted unavailable Fast reward colors fixed after visual inspection; keyboard focus remains contained/restored. Weighted7.79unchanged. C11-IDLE-RECEIPT.md.

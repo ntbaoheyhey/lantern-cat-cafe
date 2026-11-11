@@ -82,7 +82,7 @@ try{
           currencies: m.state.account.currencies, team: m.state.team,
           cards: m.state.account.cards.map(c => ({ id: c.cardId, level: c.level, stars: c.stars })),
           selected: m.cardId, nextRunId: m.state.nextRunId, active: !!r && !r.complete,
-          idleReady: !!document.querySelector('.a6-idle .uv-tips:not(:disabled)'), fastReady: !!document.querySelector('.a6-fast-reward:not(:disabled)'), eventsOpen: !!document.querySelector('[data-screen="events"]'),
+          idleReady: !!document.querySelector('.a6-idle[data-ready=true] .uv-tips'), fastReady: !!document.querySelector('.a6-fast-reward[data-ready=true]'), eventsOpen: !!document.querySelector('[data-screen="events"]'),
           route: r ? { id: r.id, points: r.points, complete: r.complete, current: r.current, visited: r.visited.length, rewards: r.rewardChoices.length, kind: r.nodes.find(n => n.id === r.current)?.kind } : null,
           battle: b ? { seed: b.seed, result: b.result, round: b.round, hpRemaining: b.actors.filter(a => a.side === 'party').reduce((n,a)=>n+a.hp,0)/Math.max(1,b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+a.maxHp,0)), chapter:b.chapter, boss: r?.nodes.find(n => n.id === r.current)?.kind === 'boss', combos: b.v4?.events.filter(e => e.kind === 'bond.combo').length ?? 0 } : null,
           notice: m.notice, error: m.error, cleared: m.state.cleared };
@@ -125,8 +125,13 @@ try{
           acted = await click(page.locator('.a6-daily button:not(:disabled)').filter({hasText:/^Collect/}), 'Collect A6 cafe gift');
           if(!acted) acted = await click(page.getByRole('button',{name:'Collect reward',exact:true}).and(page.locator(':not(:disabled)')), 'Collect daily reward');
           if (!acted) acted = await close();
-        } else if (!s.active && s.idleReady) acted = await click(button(/^Collect Night tips/), 'Collect night tips');
-        else if (!s.active && s.fastReady) acted = await click(button(/^Fast reward/), 'Fast reward');
+        } else if (await page.getByRole('dialog',{name:'Night tips and fast rewards',exact:true}).isVisible().catch(()=>false)) {
+          const rewards=page.getByRole('dialog',{name:'Night tips and fast rewards',exact:true});
+          acted=await click(rewards.locator('[data-reward=tips] button:not(:disabled)'), 'Collect saved night tips');
+          if(!acted)acted=await click(rewards.locator('[data-reward=fast] button:not(:disabled)'), 'Collect fast reward');
+          if(!acted)acted=await click(rewards.getByRole('button',{name:'Back to cafe',exact:true}), 'Close tip rewards');
+        } else if (!s.active && s.idleReady) acted = await click(button('Review Night tips'), 'Review night tips');
+        else if (!s.active && s.fastReady) acted = await click(button('Review Fast reward'), 'Review fast reward');
         else if (!s.active && !(report.dailyCheckedRuns??[]).includes(s.nextRunId) && await page.locator('.uv-events button').filter({hasText:'Today’s tasks'}).count()) {
           report.dailyCheckedRuns??=[];report.dailyCheckedRuns.push(s.nextRunId);
           acted = await click(button('Today’s tasks'), 'Open daily tasks');
