@@ -40,6 +40,11 @@
  .dp-v4-supply-preview small {display:block;font-size:13px;color:#765a38;margin-top:4px}
  .dp-v4-pantry-actions {display:flex;flex-wrap:wrap;gap:8px}
  .dp-v4-pantry-craft {padding-left:24px;border-left:1px solid #bca175}
- .dp-v4-pantry-craft .cr-cost {margin-top:12px}
+ .dp-v4-recipe-preview {padding:9px 12px;background:#fff4db;border-left:3px solid #aa8148;border-radius:5px;margin:10px 0;font-size:14px;line-height:1.4}
+ .dp-v4-recipe-preview p {margin:0 0 4px;font-size:14px;line-height:1.4}
+ .dp-v4-recipe-preview small {display:block;font-size:13px;color:#765a38;line-height:1.4}
+ .dp-v4-recipe-cost {display:flex;gap:4px 8px;flex-wrap:wrap;margin:4px 0}
+ .dp-v4-recipe-cost .cr-cost {margin:0;font-size:inherit}
+ .dp-v4-recipe-missing {color:#80412c}
  @media(max-width:900px) {grid-template-columns:1fr;.dp-v4-pantry-craft {padding:16px 0 0;border-left:0;border-top:1px solid #bca175}}
 }

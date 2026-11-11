@@ -1,8 +1,8 @@
 import { useId, useMemo, useState, useSyncExternalStore } from 'react';
 import { gearComparison } from './meta-presentation';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
-import { RECIPES, STACK_ITEMS } from '@taskbar-hero/game-rules/cardrpg';
-import { CostView } from '../shared';
+import { STACK_ITEMS } from '@taskbar-hero/game-rules/cardrpg';
+import { PantryRecipeV4 } from './PantryRecipeV4';
 import type { DepthModel } from './model';
 
 export function ShiftLoadouts({m}:{m:DepthModel}){
@@ -38,14 +38,13 @@ export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccoun
 const supplyName=(id:string)=>STACK_ITEMS.find(item=>item.id===id)?.name??id;
 export function PantryV4({m}:{m:DepthModel}){
  useSyncExternalStore(m.subscribe,m.snapshot);
- const [catId,setCatId]=useState(m.state.team[0]!),[supply,setSupply]=useState<R.SupplyIdV4>('shield-biscuit'),[recipe,setRecipe]=useState('mend-pantry-key');
+ const [catId,setCatId]=useState(m.state.team[0]!),[supply,setSupply]=useState<R.SupplyIdV4>('shield-biscuit');
  const state=m.state,run=state.run,cat=state.team.includes(catId)?catId:state.team[0]!;
  const description=useId(),crew=useMemo(()=>R.battleCats(state),[state]);
  const preview=useMemo(()=>R.packSupplyV4(state,supply,cat),[state,supply,cat]);
  const cancellation=useMemo(()=>run?.packedSupply?R.packSupplyV4(state,null,cat):null,[state,run,cat]);
  const active=!!run&&!run.complete,hp=run?.hp[cat]??0,maxHp=crew.find(c=>c.id===cat)!.stats.hp;
  const reason=!active?'Start a patrol, then pack a supply before choosing an encounter.':run.battle?'Supplies are locked for this encounter. Pack before opening Prepare.':preview.error;
- const recipes=RECIPES.filter(r=>r.outputStackId),chosen=recipes.find(r=>r.id===recipe)!;
  return <section className="cr-panel dp-v4-pantry"><div className="dp-v4-pantry-pack"><h2>Pantry preparation</h2>
  {run?.packedSupply&&<p role="status">Packed: {supplyName(run.packedSupply.id)} for {R.CAT_BY_ID[run.packedSupply.catId]!.name}. Used when the fight begins.</p>}
  <div className="cr-filter"><label>Supply recipient<select aria-label="Supply recipient" value={cat} onChange={e=>setCatId(e.target.value)}>{state.team.map(id=><option value={id} key={id}>{R.CAT_BY_ID[id]!.name}{active?` · ${run.hp[id]??0}/${crew.find(c=>c.id===id)!.stats.hp} HP`:''}</option>)}</select></label>
@@ -57,8 +56,6 @@ export function PantryV4({m}:{m:DepthModel}){
  </section>
  <div className="dp-v4-pantry-actions"><button aria-describedby={description} disabled={!preview.ok} onClick={()=>m.apply(R.packSupplyV4(m.state,supply,cat),supply==='milk-tonic'?'Milk restored missing HP.':'Supply reserved for the next encounter.')}>{supply==='milk-tonic'?'Use milk tonic':'Confirm packed supply'}</button>
  <button disabled={!cancellation?.ok} onClick={()=>m.apply(R.packSupplyV4(m.state,null,cat),'Unspent supply returned to the pantry.')}>Return packed supply</button></div></div>
- <div className="dp-v4-pantry-craft"><h3>Make a pantry item</h3><label>Pantry recipe<select aria-label="Pantry recipe" value={recipe} onChange={e=>setRecipe(e.target.value)}>{recipes.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select></label>
- <CostView cost={chosen.cost}/><p>{Object.entries(chosen.materials).map(([id,n])=>`${n} ${id}`).join(' · ')||'No extra materials.'} · chapter {chosen.requiredChapter} · stack cap {R.stackCapV4(chosen.outputStackId!)}</p>
- <button disabled={!!run&&!run.complete} onClick={()=>m.apply(R.metaCommand(state,{type:'forge',recipeId:recipe}),'Pantry item crafted.')}>Craft pantry item</button></div>
+ <PantryRecipeV4 m={m}/>
  </section>;
 }
