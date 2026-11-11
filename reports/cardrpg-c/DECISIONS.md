@@ -165,3 +165,5 @@
 2026-11-11T22:44:49.794469+00:00 Require positive measured contribution before naming a star; guard the legacy banner and show shields given so support-only recognition explains itself.
 
 2026-11-11T22:48:51.424922+00:00 Treat an empty incoming-HP denominator explicitly and identify the recorded round rather than claiming partial rounds were played. Presentation-only repair.
+
+2026-11-11T23:00:45.255381+00:00 C11: distinguish app-owned recovery messages from provider diagnostics; show collection readiness instead of inferring unowned before a successful read, preserve Fuji read-only +8% contract.

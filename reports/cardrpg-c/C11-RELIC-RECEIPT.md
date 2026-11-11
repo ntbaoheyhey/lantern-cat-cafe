@@ -1,0 +1,13 @@
+# C11 — Relic connection recovery and collection guidance
+
+A provider diagnostic of 3,171 characters collapsed the collection grid to zero height and pushed controls outside the sheet at both requested sizes. The panel also announced a successful read after the rules rejected its attributes. Short app-owned connection, chain and timeout instructions now remain actionable; unknown provider errors use a concise retry message. Success and empty-collection copy follow the accepted result.
+
+The empty mantel and unavailable cards distinguish unread, reading, accepted empty and loaded collections. Loading demo holdings or completing a read points to selection instead of asking to load/connect again. Muted unavailable controls and a sage Equipped marker are visually distinct. No contract, server, power cap, combat or save schema change.
+
+Two inherited regression tests reproduced the defects. Final 15 reader/component tests, workspace typecheck/lint and diff check PASS. The initial incorrectly forwarded test filter ran the whole web suite: 2,352 other tests passed and only the two expected new failures failed; this is not a current-head full-suite claim. One browser harness selector needed an exact accessible name after the new disabled label shared its prefix.
+
+Final local-wallet sweep: 88 checks at 1280×720/1440×900 with both motion settings; missing/disconnected/wrong-chain/provider-error/invalid/empty, successful retry, all four bonuses, unequip, three wallet events, stale results, timeout/retry, route lock and demo load. Account, gear, team, route, skills and settings stay unchanged except the intended collection/equip state. Fixture RPC uses read-only methods at pinned block42; external requests are blocked. No live wallet/network used.
+
+Twelve additional checks exercise real header/Bag navigation after the unlock, keyboard entry/return, header bonus and wallet invalidation with the sheet closed. Zero page errors. Inspected all 34 final captures (30 in eight sheets plus two full-size; four navigation views full-size) and 30 earlier captures. Three representative before/after images retained in shots/c11-relic; full data in checks/c11-relic.json and /tmp/cardrpg-c-relic-{before,guidance-final,entry}. Sheets used available ImageMagick without font labels after unavailable Pillow/font helpers; screenshot capture itself passed.
+
+Designer inbox remains empty; final exports0/25. Demo30,018,753bytes and weighted7.79 retained. Evidence remains below120MB. No new balance seeds, real-account recovery claim or full E2E. Next: inspect Sound pending/blocked feedback in Settings and battle; CafeAudio already catches startup failures but these UI controls do not surface blocked state. Continue C8/C11.

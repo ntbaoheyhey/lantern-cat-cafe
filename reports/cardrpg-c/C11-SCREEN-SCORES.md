@@ -141,3 +141,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T22:44:49.794469+00:00 Empty/support star:40inspected/24finalviews, bothsizes; shield and large totals fit. Weighted7.79 unchanged.
 
 2026-11-11T22:48:51.424922+00:00 Row-share report:16final views and full-size720p inspected; empty/mixed notes and controls fit. Weighted7.79 unchanged.
+
+2026-11-11T23:00:45.255381+00:00 Relic follow-up:34final captures inspected, bothsizes. Full grid/status/actions/focus fit; unread/empty/loaded guidance and muted unavailable buttons agree with state. Weighted7.79 retained; C11-RELIC-RECEIPT.md.

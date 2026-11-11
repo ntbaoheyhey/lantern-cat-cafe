@@ -3,6 +3,9 @@ import { avalancheFuji } from 'viem/chains';
 import { relicNftAbi } from '@taskbar-hero/chain';
 import { FUJI_RELIC_ADDRESS, RELIC_EFFECTS, type RelicHolding } from '@taskbar-hero/game-rules/src/cardrpg/depth/bridge';
 
+/** Only our own short recovery messages are suitable for the collection UI. */
+export class RelicReadError extends Error {}
+
 /** Reads an already connected wallet. All RPC methods here are read-only. */
 export async function readConnectedRelics(provider: EIP1193Provider) {
   const [accounts, chain] = await Promise.all([
@@ -10,8 +13,8 @@ export async function readConnectedRelics(provider: EIP1193Provider) {
     provider.request({ method: 'eth_chainId' }),
   ]);
   const address = accounts[0];
-  if (!address || !isAddress(address)) throw new Error('Connect a wallet to this app before reading its Relics.');
-  if (Number(chain) !== 43113) throw new Error('Select Avalanche Fuji 43113 in your wallet, then retry.');
+  if (!address || !isAddress(address)) throw new RelicReadError('Connect a wallet to this app before reading its Relics.');
+  if (Number(chain) !== 43113) throw new RelicReadError('Select Avalanche Fuji 43113 in your wallet, then retry.');
   const client = createPublicClient({ chain: avalancheFuji, transport: custom(provider) });
   const blockNumber = await client.getBlockNumber();
   const balances = await client.readContract({

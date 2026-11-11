@@ -20,6 +20,8 @@
  .a6-relic-cabinet .a6-relic-collection .a6-relic-art {width:105px;height:115px;max-width:100%;display:block!important}
  .a6-relic-cabinet .a6-relic-card-copy {min-width:0}.a6-relic-cabinet .a6-relic-card-copy small {font-size:14px;color:#735434}.a6-relic-cabinet .a6-relic-card-copy h3 {font:700 24px/1.1 Georgia,serif;margin:7px 0 9px;color:#523824;max-width:none;text-transform:capitalize}.a6-relic-cabinet .a6-relic-card-copy strong {font-size:18px;color:#8d5a20}
  .a6-relic-cabinet .a6-relic-collection button {grid-column:1/-1;width:100%;min-height:44px;font-size:14px;margin:0;padding:8px}
+ .a6-relic-cabinet button:disabled {background:#ddd5c5;border-color:#b5a78e;color:#655d52;box-shadow:none;opacity:1;cursor:not-allowed;transform:none}
+ .a6-relic-cabinet article[data-selected=true] button:disabled {background:#dde4c7;border-color:#9ca77a;color:#4f5b35}
  .a6-relic-cabinet .a6-relic-note {margin:0;font-size:14px;line-height:1.4;text-align:left;color:#674d34}
  .a6-relic-cabinet :is(button,a):focus-visible {outline:3px solid #8966b5;outline-offset:3px}
  .a6-relic-cabinet[data-reduced=true] *, .a6-relic-cabinet[data-reduced=true] *::after {animation:none!important;transition:none!important}
