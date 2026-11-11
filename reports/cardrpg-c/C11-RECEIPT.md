@@ -23,3 +23,5 @@ VFX timing follow-up: late caster-anchored paint now fires at hit rather than ex
 Kettle follow-up: damaging signature now uses hostile spout/steam paint and actual acting-unit damage recipients; opening self-shield/reflections are excluded.72actual-enemy+888source+888offlinecases/14focusedtests/types/lintPASS;14finalbattle+22source+22offlinecaptures inspected.56drawbattle/61gallery,0mask/drop/error;forced-redraw4differences remainPARTIAL. Demo29.21MB, score7.79unchanged; C11-KETTLE-RECEIPT.md.
 
 Utility checkpoint: see C11-UTILITY-RECEIPT.md. Actual charge and support now avoid false shake; charged-row/Daze damage preserved.29focusedtests,96battle,16live,48source/48offline,34finalviews allPASS. No gameplay or score change.
+
+Cat outcome checkpoint: C11-CAT-RECEIPT.md.624full combat+120final focused+24live,576source+576offline and six playback controls eachPASS;46final captures inspected. Final29tests/types/lint/galleryTS pass; full-sweep peak101draws. Demo29.22MB/evidence91.03MB; no gameplay/score/new performance claim.

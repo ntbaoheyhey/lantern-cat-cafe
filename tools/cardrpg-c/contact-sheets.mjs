@@ -13,7 +13,7 @@ for(const width of [1280,1440]){
   for(const[slot,s]of rows.slice(from,from+6).entries()){
    const top=Math.floor(slot/2)*370,left=slot%2*640;
    const frame=await sharp(resolve(root,'reports/cardrpg-c/shots',tag,s.file)).resize(640,338,{fit:'contain',background:'#322730'}).png().toBuffer();
-   cells.push({input:frame,left,top},{input:Buffer.from(`<svg width="640" height="32"><rect width="640" height="32" fill="#322730"/><text x="12" y="23" font-family="sans-serif" font-size="18" fill="#f8e5c4">${width} · ${s.name}</text></svg>`),left,top:top+338});
+   cells.push({input:frame,left,top},{input:Buffer.from(`<svg width="640" height="32"><rect width="640" height="32" fill="#322730"/><text x="12" y="23" font-family="sans-serif" font-size="18" fill="#f8e5c4">${width} · ${s.name??s.file}</text></svg>`),left,top:top+338});
   }
   await sharp({create:{width:1280,height:Math.ceil(Math.min(6,rows.length-from)/2)*370,channels:4,background:'#322730'}}).composite(cells).webp({quality:88}).toFile(`/tmp/cardrpg-c-${tag}-sheet-${width}-${from}.webp`);
  }

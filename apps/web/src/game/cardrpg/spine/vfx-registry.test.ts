@@ -28,11 +28,11 @@ describe('painted effect contract',()=>{
   expect(PAINTED_VFX.get('enemy:teacup-healer')!.friendly).toBe(true);
  });
  it('routes a mixed opening strike only to damage recipients, excluding its shield and counter damage',()=>{
-  const {plan}=galleryFixture('enemy:kettle-knight'),hit=plan.events[1]!,victim=hit.targetIds[0]!,targets=['stale'];
+  const {plan,battle}=galleryFixture('enemy:kettle-knight'),hit=plan.events[1]!,victim=hit.targetIds[0]!,targets=['stale'];
   plan.targetIds.push(plan.actorId);
   plan.events.push({...hit,type:'shield',targetIds:[plan.actorId]},{...hit,actorId:victim,targetIds:[plan.actorId]},{...hit});
-  paintedTargets(plan,false,targets);expect(targets).toEqual([victim]);
-  paintedTargets(plan,true,targets);expect(targets).toEqual(plan.targetIds);
-  plan.events=plan.events.filter(event=>event.type!=='damage');paintedTargets(plan,false,targets);expect(targets).toEqual([]);
+  paintedTargets(plan,'hostile',battle.actors,targets);expect(targets).toEqual([victim]);
+  paintedTargets(plan,'friendly',battle.actors,targets);expect(targets).toEqual([plan.actorId]);
+  plan.events=plan.events.filter(event=>event.type!=='damage');paintedTargets(plan,'hostile',battle.actors,targets);expect(targets).toEqual([]);
  });
 });

@@ -19,7 +19,7 @@ export class PaintedVfx {
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
- private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private targets:string[]=[];
+ private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
  constructor(private host:HTMLElement,private socket:ResolveSocket){
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.ready=this.overrides.prepare();
@@ -29,21 +29,27 @@ export class PaintedVfx {
   if(!particle){this.stats.dropped++;return;}
   particle.active=true;particle.born=time+layer.delay;particle.life=layer.life*Math.max(1,speed*.65);particle.source=source;particle.target=target;particle.layer=layer;particle.recipe=recipe;particle.index=index;particle.total=total;particle.stamp=this.stamps.get(layer.glyph,layer.accent?PAINT.cream:recipe.color)??null;particle.captured=false;particle.impact=impact;
  }
- cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number){
+ private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
+ cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors']){
   const recipe=paintedRecipe(frame.plan.presentationId??frame.plan.skillId,frame.plan);if(!recipe)return;
-  if(this.plan!==frame.plan){this.plan=frame.plan;this.hitAt=-Infinity;this.prepared=false;paintedTargets(frame.plan,recipe.friendly,this.targets);}
+  if(this.plan!==frame.plan){this.plan=frame.plan;this.hitAt=-Infinity;this.prepared=false;
+   paintedTargets(frame.plan,recipe.friendly?'friendly':'hostile',actors,this.targets);
+   paintedTargets(frame.plan,'damage',actors,this.damageTargets);paintedTargets(frame.plan,'heal',actors,this.healTargets);paintedTargets(frame.plan,'shield',actors,this.shieldTargets);
+  }
   this.stats.cues++;
-  if(recipe.overrideKey&&this.overrides.effects.has(recipe.id)){this.overrides.emit(recipe.id,cue.name,cue.name==='cast'?frame.plan.actorId:this.targets,time);return;}
-  if(cue.name==='cast'||cue.name==='ult-start'){
+  const overridden=!!recipe.overrideKey&&this.overrides.effects.has(recipe.id);
+  if(overridden)this.overrides.emit(recipe.id,cue.name,cue.name==='cast'?frame.plan.actorId:this.targets,time);
+  if(!overridden&&(cue.name==='cast'||cue.name==='ult-start')){
    if(!this.prepared){for(const layer of recipe.layers)if(layer.phase==='windup')for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,frame.plan.actorId,time,i,layer.count,speed);this.prepared=true;}
-   if(cue.name==='cast')for(const layer of recipe.layers)if(layer.anchor!=='caster'&&['projectile','pour','converge'].includes(layer.motion))for(const target of this.targets)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed);
+   if(cue.name==='cast')for(const layer of recipe.layers)if(!layer.recipients&&layer.anchor!=='caster'&&['projectile','pour','converge'].includes(layer.motion))for(const target of this.targets)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed);
   }
   if(cue.name!=='hit')return;
-  this.hitAt=time;
+  if(!overridden)this.hitAt=time;
   for(const layer of recipe.layers){
+   if(overridden&&!layer.recipients)continue;
    if(layer.phase==='windup'&&this.prepared)continue;
    if(layer.anchor==='caster'){for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,frame.plan.actorId,time,i,layer.count,speed,true);continue;}
-   for(const target of this.targets){for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed,true);}
+   for(const target of this.recipients(layer)){for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,frame.plan.actorId,target,time,i,layer.count,speed,true);}
   }
  }
  accent(id:string,kind:'entrance'|'phase',time:number,speed:number){
@@ -84,7 +90,7 @@ export class PaintedVfx {
    const recipe=paintedRecipe(view.frame.plan.presentationId??view.frame.plan.skillId,view.frame.plan);
    if(recipe&&!recipe.friendly){
     const stamp=this.stamps.get('spark',PAINT.cream)!;
-    for(const id of this.targets){
+    for(const id of this.damageTargets){
      const point=this.socket(id,'vfxOrigin'),feet=this.socket(id,'feet'),head=this.socket(id,'head');
      if(point&&feet&&head){const size=Math.abs(feet.y-head.y)*.42;c.globalAlpha=.7;c.drawImage(stamp,point.x-size/2,point.y-size/2,size,size);this.stats.draws++;this.stats.impacts++;}
     }

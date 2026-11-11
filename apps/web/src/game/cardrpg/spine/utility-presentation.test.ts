@@ -45,9 +45,9 @@ describe('actual Spool Ram preparation and damage presentation',()=>{
   expect(actor.bonuses.v5Charge).toBe(1);
  });
  it('shows the next charged action as damage to the actual front row',()=>{
-  const {plan,actor}=resolveRam(true);
+  const {plan,actor,battle}=resolveRam(true);
   expect(chargeEvent(plan)).toBeUndefined();expect(actor.bonuses.v5Charge).toBe(0);
-  const recipe=paintedRecipe(plan.presentationId!,plan)!,targets:string[]=[];paintedTargets(plan,recipe.friendly,targets);
+  const recipe=paintedRecipe(plan.presentationId!,plan)!,targets:string[]=[];paintedTargets(plan,'hostile',battle.actors,targets);
   expect(recipe.friendly).toBe(false);expect(recipe.overrideKey).toBe('enemy-spool-ram');
   expect(targets.sort()).toEqual(['mochi','soot']);
   expect(puppetNumberRows(plan).every(row=>row.labels.some(label=>label.type==='damage'))).toBe(true);

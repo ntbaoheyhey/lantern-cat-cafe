@@ -1,10 +1,10 @@
 # Lane C handoff
-NOW: C11 utility verified; charge/caster winding/damage-only shake, gallery variant; commit/push/draft439 next.
+NOW: C11 cat mixed-outcome checkpoint verified; committing/pushing to draft439. Next review resisted/debuff feedback.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: commit/push utility checkpoint and update draft439; checks complete, do not rerun.
-NEXT2: inspect next lowest actionable actual combat VFX/readability issue; preserve completed checks.
+NEXT1: finish cat checkpoint push/draft update; then investigate silent resisted-status contact.
+NEXT2: fix the lowest actionable issue without another balance round; inspect both sizes.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
-RUNNING: Vite5970 PID59050 only; all utility jobs complete. Demo29218833bytes/evidence74.93MB.
+RUNNING: Vite5970 PID59050 only; cat jobs complete. Demo29224537bytes/evidence91.03MB.
 KNOWN: stage painting244296bytes;3parallaxplanes;procedural loading/failure fallback;late/disposed decode safe.
 KNOWN: final glass seams feathered;36final stage/effects/lifecycle/offline views;11tests/types/lintPASS.
 KNOWN: final offlinep95 16.7–16.8ms/60draws,0faceHPmask/error/HTTP;demo29.21MB/evidence34MB.
@@ -27,4 +27,4 @@ KNOWN:888source/888offline/12battlecasesPASS;6PausePlayeachPASS;61draws/42partic
 KNOWN: forced-redraw4differences PARTIAL after3attempts; realPausePlayPASS; offlinep9516.7–16.8ms.
 KNOWN: homegear+641exact/16checks/14views/11tests/types/lintPASS;onboarding/routeguards/focus;scoreunchanged.
 KNOWN:Kettle72actualenemy+888source+888offline/14tests/types/lintPASS;58capturesinspected;56/61draws.
-KNOWN:utility29tests/types/lint/96battle/16live/48source/48offlinePASS;34finalviews;66draws;no new frame claim.
+KNOWN:cat624combat/120final/24live/576source/576offlinePASS;46finalviews;29finaltests/types/lint;max101draws.

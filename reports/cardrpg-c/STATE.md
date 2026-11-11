@@ -4,7 +4,7 @@ Prompt bytes: 19078
 Base A6: ef4aee790 (clean, fetched origin equal; includes Q54 and B d5c34d233).
 Branch: codex/cardrpg-c-2026-11-11
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/439 (draft; base A6)
-Active: C11 checkpoint verified, clean 1800.25s UI run complete; latest weighted score 7.79/10 after painted cafe review. Impact-clock regression fixed and checked in60source/60offlinecases. Home patrol gear reminder16browserchecks/14views/11focusedtests/types/lintPASS. VFX contact checkpoint888source/888offline/12battlecases,12focusedtests/types/lintPASS; forced-redraw4differencesPARTIAL, actualPausePlayPASS. Kettle semantic/target fix verified72actualenemy/888source/888offlinecases,14focusedtests/types/lintPASS;58captures inspected; no new timing claim. Utility checkpoint29tests/types/lint,96battle/16live/48source/48offlinePASS,34finalviews inspected;demo29.22MB/evidence74.93MB. Continuous quality/intake work remains.
+Active: C11 cat outcome checkpoint verified. Mixed damage/support and debuff-only contact follow real rules; gallery stale reactions reset.624full combat/120final focused/24live/576source/576offline PASS;46final views inspected;29final tests/types/lint/galleryTS PASS. Peak101draws in full sweep; no new frame timing. Demo29.22MB/evidence91.03MB; weighted score7.79 unchanged. Prior gameplay misses and forced-redraw PARTIAL preserved. Continuous quality/intake remains.
 Designer accepted: 0/25 (inbox empty); contract25units /74skills /18statuses.
 All70001–70500 consumed across3rounds. Ledger guards overlap. No fourth round or A6 acceptance reruns.
 Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.

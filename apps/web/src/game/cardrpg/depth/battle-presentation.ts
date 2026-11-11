@@ -6,7 +6,8 @@ const damageKinds = new Set(['reaction-damage','damage', 'dot', 'detonate', 'sha
 const eventTypes: Record<string, TurnEventKind> = {
   'reaction-damage':'damage', damage: 'damage', dot: 'damage', detonate: 'damage', shared: 'damage', reflect: 'damage',
   heal: 'heal', revive: 'heal', survive: 'heal', shield: 'shield', defeat: 'death',
-  status: 'status_apply', expire: 'status_expire', phase: 'boss_phase', summon: 'spawn', charge: 'charge',
+  status: 'status_apply', expire: 'status_expire', dispel: 'status_expire', resist: 'fizzle', immune: 'fizzle',
+  phase: 'boss_phase', summon: 'spawn', charge: 'charge',
 };
 
 /** A6's first threshold is a shield flag; the legacy phase field advances at the final threshold. */
