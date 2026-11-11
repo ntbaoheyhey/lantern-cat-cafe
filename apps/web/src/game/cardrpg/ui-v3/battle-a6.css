@@ -91,6 +91,14 @@
  .uv-battle-menu button {min-height:44px;font-size:14px}
 }
 .uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {min-height:44px;font-size:14px;gap:5px}
+/* Keep optional controls beside the rage row, above actors, HP and combat cues. */
+.uv-battle-hud[data-spine=true] .uv-battle-menu {
+ left:auto;right:16px;top:84px;width:calc(100% - 576px);padding:8px;gap:6px;grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.uv-battle-hud[data-spine=true] .uv-battle-menu>.a6-sound-status {grid-column:1/-1;grid-row:2;margin:0 2px}
+@media(max-height:760px) {
+ .uv-battle-hud[data-spine=true] .uv-battle-menu {left:20px;right:auto;top:136px;width:720px;max-width:calc(100% - 40px);padding:6px;gap:4px}
+}
 /* The shared badge tooltip is portaled to body; keep A6 reading copy legible. */
 body:has(.uv-battle-hud[data-a6=true]) .dp-status-tooltip {font-size:14px}
 

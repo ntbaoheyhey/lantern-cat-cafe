@@ -1,3 +1,5 @@
+C11 menu trận: chuyển bốn nút thành một hàng, đặt theo chiều cao màn hình để không che HP/mặt/nhãn shield và banner hiện có. 96ca browser hai cỡ/hai motion/ba boss đạt; đã xem24ảnh cuối, giữ hai ảnh đại diện. Toàn bộ2367testweb và typecheck/lint đạt, không đổi battle/account. Chưa nhận fullE2E mới; designer0/25, demo30.018.753byte/điểm7,79 giữ nguyên. Tiếp tục lỗi banner Mochi bị bỏ ở boss720p do giữ chỗ nhãn chưa hiện. C11-BATTLE-MENU-RECEIPT.md.
+
 # Trạng thái lane C
 C11 Sound: nút hiện đang mở âm thanh, khóa nhấp lặp và cho thử lại khi lỗi; resume quá4giây tự thoát chờ, kết quả trễ không tự bật. 40test/typecheck/lint và72ca browser hai cỡ/hai motion đạt;40ảnh cuối đã xem, không page error. Dùng thiết bị giả cục bộ, không nhận đã nghe kiểm âm. Giữ account/battle ngoài setting sound; designer0/25, demo30.018.753byte/điểm7,79. C11-SOUND-RECEIPT.md.
 
