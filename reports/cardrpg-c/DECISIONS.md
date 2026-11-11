@@ -78,3 +78,5 @@
 - 2026-11-11 C11 gear transfer: show active crew delta beside Equip so an individual gain cannot conceal a crew loss; exact public transfers and bench semantics retained. Selector compile fix and settled Power capture are harness corrections. Compact nine old JSON receipts losslessly to keep evidence under120MB.
 
 - 2026-11-11 C11 bonus visibility: expose recipient/donor set and unique losses beside Equip, with a keyboard-focused exact list. Keep the current public command; clear pending celebration acknowledgements only in the isolated review fixture, preserving failed harness logs outside git.
+
+- 2026-11-11 C11 saved teams: use the exact loadout command to disclose Power, gear and donor/recipient bonuses; disable missing saved gear before use. Prepare keeps existing gear by design and now says so. Preserve failed-command context, route locks and encounter seed/enemies.

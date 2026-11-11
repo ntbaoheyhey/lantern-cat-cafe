@@ -1,4 +1,29 @@
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import {EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
+
+/** A saved team at home restores equipment as well as its roster, rows and plan. */
+export function savedTeamPreviewA6(state:R.DepthAccount,slot:number) {
+  const result=R.applyLoadoutV4(state,slot),before=Math.round(R.teamPowerV4(state));
+  const gear:string[]=[],bonuses:string[]=[];
+  if(!result.ok)return {ok:false,error:result.error,before,after:before,gear,bonuses};
+  const next=result.state;
+  const pieceName=(id:string|undefined)=>id?R.GEAR_BY_ID[state.gear.find(g=>g.id===id)!.templateId]!.name.replace(/^(Common|Rare|Epic|Legendary) /,''):'Empty';
+  for(const {cardId} of state.account.cards){
+    const name=R.CAT_BY_ID[cardId]!.name;
+    for(const slot of EQUIPMENT_SLOTS){
+      const old=state.equipment[cardId]?.[slot],current=next.equipment[cardId]?.[slot];
+      if(old!==current)gear.push(`${name} · ${slot}: ${pieceName(old)} → ${pieceName(current)}`);
+    }
+    const old=R.equipmentEffects(state,cardId).effects,current=R.equipmentEffects(next,cardId).effects;
+    for(const gain of [false,true])for(const effect of (gain?current:old).filter(e=>!(gain?old:current).includes(e))){
+      const set=R.SETS.find(s=>s.twoEffect===effect||s.fourEffect===effect),text=set?R.setTextV4(set,true):null;
+      const title=set?`${set.name} · ${set.twoEffect===effect?2:4} pieces`:'unique effect';
+      const detail=set?(set.twoEffect===effect?text!.two:text!.four):R.effectTextV4(effect);
+      bonuses.push(`${name}${(gain?next:state).team.includes(cardId)?'':' (bench)'} ${gain?'gains':'loses'} ${title}. ${detail}`);
+    }
+  }
+  return {ok:true,error:'',before,after:Math.round(R.teamPowerV4(next)),gear,bonuses};
+}
 
 export const MODE_TEAMS_A6 = [
   { id: 'campaign', name: 'Campaign', slot: 0 },

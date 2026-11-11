@@ -87,3 +87,5 @@ Bag enhancement follow-up:28finalcaptures inspected; all comparison stats, full 
 Bag transfer follow-up:28final captures and four settled-result views inspected; crew gain/loss/zero, transfer names, stats and both actions fit both sizes. Total follows exact public equip. Set losses remain below the initial effects view and are next. Score7.79 unchanged. C11-BAG-TRANSFER-RECEIPT.md.
 
 Bag bonus follow-up:42final captures inspected, including two full-size dense cases. Bonus warnings and actions remain visible; exact lost/gained details scroll independently. Keyboard focus and20public-command equips verified. Weighted7.79unchanged; no recovery claim. C11-BAG-BONUS-RECEIPT.md.
+
+Saved-team follow-up:36final captures inspected; exact Power/gear/bonus review and missing-piece guidance fit both sizes. The list scrolls while actions stay visible; Prepare clearly keeps current gear.40browser checks including16keyboard applications verified;weighted7.79 unchanged. C11-SAVED-TEAM-RECEIPT.md.

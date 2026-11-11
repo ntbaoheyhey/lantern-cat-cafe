@@ -7,7 +7,7 @@ import { enemyGuideA6 } from './guide-a6';
 import { ForecastV4 } from '../depth/ForecastV4';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { FormationToolA6, FormationTrioA6 } from './FormationToolA6';
-import { MODE_TEAMS_A6, suggestedTeamsA6 } from './formation-a6';
+import { MODE_TEAMS_A6, savedTeamPreviewA6, suggestedTeamsA6 } from './formation-a6';
 
 function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | null>; ids: string[]; rows: Record<string,R.Row> }) {
   const [lines,setLines]=useState<Array<{name:string;d:string}>>([]);
@@ -43,6 +43,7 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
   const suggestions=useMemo(()=>suggestedTeamsA6(state,preparing?state.run?.challengeLevel??1:1),[state,preparing]);
   const modeInfo=MODE_TEAMS_A6.find(item=>item.id===mode)!;
   const saved=state.v4?.loadouts?.[modeInfo.slot];
+  const savedPreview=useMemo(()=>tool==='saved'&&saved&&!preparing?savedTeamPreviewA6(state,modeInfo.slot):null,[tool,saved,preparing,state,modeInfo.slot]);
   const update=(team:string[],nextRows:Record<string,R.Row>,nextPlan=plan)=>{
     if(preparing){m.prepareCrew(team,nextRows,nextPlan);return;}
     let result=R.configureTeam(m.state,team,nextRows,m.state.skills);
@@ -58,11 +59,16 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
     {tool&&<FormationToolA6 title={tool==='saved'?'Saved teams':tool==='suggested'?'Suggested teams':`Replace ${R.CAT_BY_ID[selected]!.name} or change the plan`} catId={selected} onClose={()=>setTool(null)}>
       {(locked||rosterLocked)&&<p className="a6-formation-lock">{locked?'This crew is committed to the current patrol. You can still inspect its plans.':'The patrol has begun. Keep this crew; rows and plans remain editable.'}</p>}
       {tool==='saved'&&<section className="a6-saved-team-desk" aria-label="Saved team">
-        <div className="a6-saved-team-top"><label>Saved for <select aria-label="Team mode" value={mode} onChange={e=>setMode(e.target.value as R.Run['mode'])}>{MODE_TEAMS_A6.map(item=><option key={item.id} value={item.id}>{item.name}</option>)}</select></label><p>{saved?`${modeInfo.name} crew · saved rows and plan`:`No ${modeInfo.name.toLowerCase()} team saved yet. Your current crew is shown.`}</p></div>
+        <div className="a6-saved-team-top"><label>Saved for <select aria-label="Team mode" value={mode} onChange={e=>setMode(e.target.value as R.Run['mode'])}>{MODE_TEAMS_A6.map(item=><option key={item.id} value={item.id}>{item.name}</option>)}</select></label><p>{saved?preparing?'Uses saved cats, rows and plan with their current gear.':`${modeInfo.name} crew · saved gear, rows and plan`:`No ${modeInfo.name.toLowerCase()} team saved yet. Your current crew is shown.`}</p></div>
         <FormationTrioA6 ids={saved?.team??ids} rows={saved?.rows??rows}/>
         {saved&&<p>Target: {saved.plan.focus==='leader'?'Their leader':saved.plan.focus==='support'?'Their support':'Weak foes'} · Care: {saved.plan.care==='protect'?'Protect':'Steady'}</p>}
-        <footer><p>{preparing?'Save a crew from the Team screen between patrols.':'Save your current crew, positions and plan for this mode.'}</p><button disabled={preparing||locked} onClick={()=>m.apply(R.saveLoadoutV4(m.state,modeInfo.slot,`${modeInfo.name} team`),`${modeInfo.name} team saved.`)}>Save team</button>
-          <button disabled={!saved||rosterLocked} onClick={()=>{if(saved&&preparing)update(saved.team,{...rows,...saved.rows},saved.plan);else m.apply(R.applyLoadoutV4(m.state,modeInfo.slot),'Saved team restored.');setTool(null);}}>Use saved {modeInfo.name.toLowerCase()} team</button></footer>
+        {savedPreview&&<section className="a6-saved-team-impact" aria-label="Saved team changes" tabIndex={0} key={mode}>
+          {savedPreview.ok?<><p className="a6-saved-team-power"><b>Crew Power</b><strong data-change={Math.sign(savedPreview.after-savedPreview.before)}>{savedPreview.before.toLocaleString('en-US')} → {savedPreview.after.toLocaleString('en-US')}</strong></p>
+            {savedPreview.gear.length||savedPreview.bonuses.length?<details><summary>{savedPreview.gear.length} gear slots change · Review gear and bonuses</summary>{savedPreview.bonuses.map(text=><p key={text}>{text}</p>)}{savedPreview.gear.map(text=><p key={text}>{text}</p>)}</details>:<p>Gear and bonuses stay the same.</p>}
+          </>:<><p role="status">{savedPreview.error}</p>{!locked&&<p>Save your current team to replace this plan.</p>}</>}
+        </section>}
+        <footer><p>{preparing?'Save a crew from the Team screen between patrols.':'Save your current cats, gear, positions and plan for this mode.'}</p><button disabled={preparing||locked} onClick={()=>m.apply(R.saveLoadoutV4(m.state,modeInfo.slot,`${modeInfo.name} team`),`${modeInfo.name} team saved.`)}>Save team</button>
+          <button disabled={!saved||rosterLocked||!!savedPreview&&!savedPreview.ok} onClick={()=>{if(saved&&preparing){update(saved.team,{...rows,...saved.rows},saved.plan);if(!m.error)setTool(null);}else if(m.apply(R.applyLoadoutV4(m.state,modeInfo.slot),'Saved team and gear restored.'))setTool(null);}}>Use saved {modeInfo.name.toLowerCase()} team</button></footer>
       </section>}
       {tool==='suggested'&&<section className="a6-suggestion-desk" aria-label="Suggested teams">
         <p>Choose a crew and its standing plan. Your cats carry it out automatically.</p>

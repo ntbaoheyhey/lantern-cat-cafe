@@ -70,3 +70,40 @@ it('changes preparation without rerolling foes or the seed, then locks committed
   closeTool();
   expect((screen.getByRole('button',{name:'Select Mochi for placement'}) as HTMLButtonElement).disabled).toBe(true);
 });
+
+function savedGearModel(missing=false){
+ const m=model(),piece=R.makeGear(m.state,'hearthloom-weapon-legendary',819201);
+ m.state.gear.push(piece);m.state=R.equipGear(m.state,'mochi',piece.id).state;
+ m.state=R.saveLoadoutV4(m.state,0,'Campaign team').state;
+ m.state=R.equipGear(m.state,'soot',piece.id).state;
+ if(missing){m.state=R.equipGear(m.state,'soot',null,'weapon').state;m.state=R.salvageGear(m.state,piece.id).state;}
+ return m;
+}
+it('quotes saved gear and donor bonuses before applying the exact saved team',()=>{
+ const m=savedGearModel(),before=R.exportSave(m.state),command=R.applyLoadoutV4(m.state,0);
+ render(<FormationA6 m={m}/>);openSaved();
+ const quote=screen.getByRole('region',{name:'Saved team changes'});
+ expect(quote.textContent).toContain(Math.round(R.teamPowerV4(m.state)).toLocaleString('en-US')+' → '+Math.round(R.teamPowerV4(command.state)).toLocaleString('en-US'));
+ expect(quote.textContent).toContain('Soot loses unique effect');expect(quote.textContent).toContain('Mochi gains unique effect');
+ expect(quote.textContent).toContain('The patient doorstop');expect(R.exportSave(m.state)).toBe(before);
+ fireEvent.click(screen.getByRole('button',{name:'Use saved campaign team'}));
+ expect(m.state.equipment).toEqual(command.state.equipment);expect(m.state.team).toEqual(command.state.team);
+ expect(m.state.rows).toEqual(command.state.rows);expect(m.state.v4!.plan).toEqual(command.state.v4!.plan);
+ expect(m.state.account.currencies).toEqual(command.state.account.currencies);expect(screen.queryByRole('dialog')).toBeNull();
+});
+it('keeps a missing saved piece visible as an unavailable plan without changing progress',()=>{
+ const m=savedGearModel(true),before=R.exportSave(m.state);render(<FormationA6 m={m}/>);openSaved();
+ expect((screen.getByRole('button',{name:'Use saved campaign team'}) as HTMLButtonElement).disabled).toBe(true);
+ expect(screen.getByRole('region',{name:'Saved team changes'}).textContent).toContain('A saved piece is missing');
+ fireEvent.click(screen.getByRole('button',{name:'Use saved campaign team'}));
+ expect(screen.getByRole('dialog',{name:'Saved teams'})).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+});
+it('prepares a saved crew with current gear even when its old saved piece is gone',()=>{
+ const m=savedGearModel(true);m.start(1,'campaign',1);m.enter(R.availableNodes(m.state.run!)[0]!.id);
+ const gear=structuredClone(m.state.equipment),seed=m.battle!.seed,foes=structuredClone(m.battle!.initial.enemies);
+ render(<FormationA6 m={m} preparing/>);openSaved();
+ expect(screen.getByText('Uses saved cats, rows and plan with their current gear.')).toBeTruthy();
+ expect((screen.getByRole('button',{name:'Use saved campaign team'}) as HTMLButtonElement).disabled).toBe(false);
+ fireEvent.click(screen.getByRole('button',{name:'Use saved campaign team'}));
+ expect(m.state.equipment).toEqual(gear);expect(m.battle!.seed).toBe(seed);expect(m.battle!.initial.enemies).toEqual(foes);expect(m.error).toBe(false);
+});
