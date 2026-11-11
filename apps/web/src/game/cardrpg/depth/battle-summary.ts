@@ -1,7 +1,7 @@
 import type { Battle } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
 import { SKILLS } from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 
-const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect']);
+const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect', 'reaction-damage']);
 
 export function summarizeBattle(battle: Battle) {
   const cats = battle.actors.filter(actor => actor.side === 'party').map(actor => ({

@@ -11,7 +11,7 @@ export interface OutcomeCauseV4 {
   text: string;
   templateId?: string;
 }
-const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect']);
+const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect', 'reaction-damage']);
 const planNames = { finish: 'Finish weak foes', support: 'Stop their support', leader: 'Focus the boss' };
 
 /** Observed effects, not a counterfactual claim that a single contribution caused victory. */

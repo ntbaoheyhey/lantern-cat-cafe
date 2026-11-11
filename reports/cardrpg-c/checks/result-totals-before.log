@@ -1,0 +1,60 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/depth/battle-summary.test.ts (5 tests | 4 failed) 11ms
+   × reports actual Rupture HP loss through shields (incoming=false, HP=100) 5ms
+   × reports actual Rupture HP loss through shields (incoming=false, HP=10) 1ms
+   × reports actual Rupture HP loss through shields (incoming=true, HP=100) 1ms
+   × reports actual Rupture HP loss through shields (incoming=true, HP=10) 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/depth/battle-summary.test.ts > reports actual Rupture HP loss through shields (incoming=false, HP=100)
+ FAIL  src/game/cardrpg/depth/battle-summary.test.ts > reports actual Rupture HP loss through shields (incoming=true, HP=100)
+AssertionError: expected +0 to be 36 // Object.is equality
+
+- Expected
++ Received
+
+- 36
++ 0
+
+ ❯ src/game/cardrpg/depth/battle-summary.test.ts:48:111
+     46|   expect(battle.log.some(e => e.kind === 'reaction' && e.skillId === '…
+     47|   const before = JSON.stringify(battle), summary = summarizeBattle(bat…
+     48|   expect(summary.cats.find(c => c.id === (incoming ? target.id : sourc…
+       |                                                                                                               ^
+     49|   expect(summary.biggestHit).toEqual(reaction);
+     50|   if (incoming) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/game/cardrpg/depth/battle-summary.test.ts > reports actual Rupture HP loss through shields (incoming=false, HP=10)
+ FAIL  src/game/cardrpg/depth/battle-summary.test.ts > reports actual Rupture HP loss through shields (incoming=true, HP=10)
+AssertionError: expected +0 to be 10 // Object.is equality
+
+- Expected
++ Received
+
+- 10
++ 0
+
+ ❯ src/game/cardrpg/depth/battle-summary.test.ts:48:111
+     46|   expect(battle.log.some(e => e.kind === 'reaction' && e.skillId === '…
+     47|   const before = JSON.stringify(battle), summary = summarizeBattle(bat…
+     48|   expect(summary.cats.find(c => c.id === (incoming ? target.id : sourc…
+       |                                                                                                               ^
+     49|   expect(summary.biggestHit).toEqual(reaction);
+     50|   if (incoming) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  05:12:51
+   Duration  578ms (environment 81%, transform 10%, import 6%, tests 2%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/depth/battle-summary.test.ts
