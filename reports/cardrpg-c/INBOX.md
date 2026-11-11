@@ -64,3 +64,5 @@
 2026-11-11T18:25:23.360613+00:00 resume: user continue/handoff identifies selector quote. Preserved unfinished patch and29tests/types/lint/40browser checks; inspected32views and exposed shard overflow alongside other shortages, verified7tests/4newchecks/4views. No accepted gameplay rerun.
 
 2026-11-11T18:37:31.360432+00:00 resume: user continue/handoff identifies recruitment checks and ten-gear layout fix. Preserved unfinished source and13tests/types/lint/136+36browser PASS; inspected74views without rerunning accepted checks. Continue C8/C11.
+
+2026-11-11T18:45:25.764282+00:00 resume: user says continue; handoff identified roster focus clipping. Final18browser/12capture receipt already PASS after8px scroll padding; preserved2244webtests/types/lint, inspected all captures and completed checkpoint without replaying accepted work.

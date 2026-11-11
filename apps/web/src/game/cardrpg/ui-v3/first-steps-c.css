@@ -28,8 +28,19 @@
  >.a6-first-step {grid-column:1/-1;grid-row:1;margin:0}
  >.uv-section-tools {grid-column:1;grid-row:2}
  >.a6-quick-upgrade {grid-column:1;grid-row:3}
- .a6-cats-workspace>.uv-cat-grid {grid-column:1;grid-row:4}
+ .a6-cats-workspace>.uv-cat-grid {grid-column:1;grid-row:4;scroll-padding-block:8px}
  .a6-cats-workspace>.a6-cat-detail {grid-column:2;grid-row:2/5}
  .a6-cat-hero {grid-template-columns:105px minmax(0,1fr)}
  .a6-cat-hero>img {height:110px;width:105px}
 }
+/* Keep every first-row name and Power visible while the first-level guide is open. */
+@media(max-height:780px) {
+ .uv-app[data-a6=true] .uv-sheet-content:has(>.a6-first-step):has(.a6-cats-workspace) {
+  >.a6-first-step {grid-template-columns:auto minmax(0,1fr) auto;gap:12px}
+  >.a6-first-step strong {grid-row:auto}
+  >.a6-first-step small {white-space:nowrap}
+  .uv-cat-grid .cr-portrait {height:105px}
+ }
+}
+/* The hand sits above the purchase, so its fingertip points down into that button. */
+.uv-app[data-a6=true] .uv-shell[data-a6-guide=upgrade] .dp-v4-growth[data-growth=level]>button:not(:disabled)::after {rotate:180deg}

@@ -103,3 +103,5 @@ C11 milestone continuation: inspected68distinct final views across Events/Journa
 Daily/reset follow-up:44sweep and24replacement views inspected at both sizes; full/reduced amounts, expiry and whole-gift consequence readable. Explicit shortcut scroll repairs the clipped heading; disabled login is visually distinct. Score7.79 retained.
 
 Idle follow-up:44final and28style views inspected at both sizes. Full/reduced supplies, consumption costs and receipts fit the modal. Muted unavailable Fast reward colors fixed after visual inspection; keyboard focus remains contained/restored. Weighted7.79unchanged. C11-IDLE-RECEIPT.md.
+
+First-level follow-up:12final views inspected at both sizes. Complete first roster row fits720p; fourth-cat focus fits900p after8px scroll padding. Hand points down toward Level up.18browser checks pass;weighted7.79 unchanged. C11-FIRST-LEVEL-RECEIPT.md.
