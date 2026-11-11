@@ -28,3 +28,23 @@ test('malformed frames, timing, IDs and escaping paths are blocked',()=>setup(as
  for(const patch of [{frames:[]},{fps:0},{height:100},{id:'other'},{cue:'nothing'},{frames:['../outside.png']}]){await writeFile(resolve(dir,'effect.json'),JSON.stringify({...sequence,...patch}));assert.equal((await validateVfx(dir,'mochi-1')).accepted,false);}
  await symlink(resolve(fixture,'mochi.png'),resolve(dir,'escape.png'));await writeFile(resolve(dir,'effect.json'),JSON.stringify({...sequence,frames:['escape.png']}));assert.equal((await validateVfx(dir,'mochi-1')).accepted,false);
 }));
+
+for(const kind of ['png-extension','frame-segment','skeleton-extension','atlas-extension','page-extension','duration'])test(`${kind} cannot replace a usable designer effect`,()=>setup(async dir=>{
+ const root=resolve(dir,'repository');await mkdir(resolve(root,'assets/cardrpg-look/vfx-designer'),{recursive:true});
+ const registry=resolve(root,'assets/cardrpg-look/vfx-designer/registry.json');await writeFile(registry,'{"version":1,"effects":{}}');
+ await writeFile(resolve(dir,'effect.json'),JSON.stringify(sequence));assert.equal((await intakeVfx({id:'mochi-1',folder:dir,root,install:true})).installed,true);const accepted=await readFile(registry);
+ let spec={...sequence};
+ if(kind==='png-extension'){await cp(resolve(dir,'mochi.png'),resolve(dir,'frame.bin'));spec.frames=['frame.bin'];}
+ if(kind==='frame-segment'){await mkdir(resolve(dir,'frames'));await cp(resolve(dir,'mochi.png'),resolve(dir,'frames/frame.png'));spec.frames=['frames/./frame.png'];}
+ if(['skeleton-extension','atlas-extension','page-extension','duration'].includes(kind)){
+  const source=JSON.parse(await readFile(resolve(dir,'mochi.json')));source.bones[0].y=-256;source.animations.effect=structuredClone(source.animations.attack);
+  if(kind==='duration')source.animations.effect.bones.hip.translate[1].time='later';
+  await writeFile(resolve(dir,'mochi.json'),JSON.stringify(source));spec={id:'mochi-1',format:'spine',socket:'vfxOrigin',cue:'cast',width:256,height:512,scale:1,skeleton:'mochi.json',atlas:'mochi.atlas',animation:'effect'};
+  if(kind==='skeleton-extension'){await cp(resolve(dir,'mochi.json'),resolve(dir,'skeleton.data'));spec.skeleton='skeleton.data';}
+  if(kind==='atlas-extension'){await cp(resolve(dir,'mochi.atlas'),resolve(dir,'atlas.data'));spec.atlas='atlas.data';}
+  if(kind==='page-extension'){await cp(resolve(dir,'mochi.png'),resolve(dir,'page.data'));await writeFile(resolve(dir,'mochi.atlas'),(await readFile(resolve(dir,'mochi.atlas'),'utf8')).replace('mochi.png','page.data'));}
+ }
+ const bytes=JSON.stringify(spec);await writeFile(resolve(dir,'effect.json'),bytes);
+ const result=await intakeVfx({id:'mochi-1',folder:dir,root,install:true});assert.equal(result.accepted,false,kind);assert.equal(result.installed,false,kind);assert.ok(result.issues.some(i=>i.severity==='FIX'));
+ assert.deepEqual(await readFile(registry),accepted);assert.equal(await readFile(resolve(dir,'effect.json'),'utf8'),bytes);
+}));

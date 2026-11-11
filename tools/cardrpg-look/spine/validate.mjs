@@ -10,11 +10,11 @@ const require = createRequire(resolve(ROOT,'apps/web/package.json'));
 export const Spine = await import(require.resolve('@esotericsoftware/spine-core'));
 export const CONFIG = JSON.parse(await readFile(resolve(ROOT,'assets/cardrpg-look/spine/config.json'),'utf8'));
 export const readSlots = async () => JSON.parse(await readFile(resolve(ROOT,'assets/cardrpg-look/spine/slots.json'),'utf8'));
-const safeName = name => typeof name === 'string' && /^[a-z0-9][a-z0-9._/-]*$/i.test(name) && !name.split('/').includes('..') && !isAbsolute(name);
+const safeName = name => typeof name === 'string' && /^[a-z0-9][a-z0-9._/-]*$/i.test(name) && name.split('/').every(part=>part!=='.'&&part!=='..'&&part!=='') && !isAbsolute(name);
 const issue = (result,severity,code,message) => result.issues.push({severity,code,message});
 const finish = result => ({...result,accepted:!result.issues.some(i=>i.severity==='FIX'),verdict:result.issues.some(i=>i.severity==='FIX')?'FIX':result.issues.length?'PASS_WITH_WARN':'PASS'});
 export async function safeRead(folder,name) {
-  if (!safeName(name)) throw Error(`Unsafe asset filename: ${name}`);
+  if (!safeName(name)) throw Error(`Unsafe or non-canonical asset filename: ${name}`);
   const base = await realpath(folder), path = await realpath(resolve(base,name)), rel = relative(base,path);
   if (rel.startsWith('..') || isAbsolute(rel)) throw Error(`Asset escapes delivery folder: ${name}`);
   return readFile(path);
