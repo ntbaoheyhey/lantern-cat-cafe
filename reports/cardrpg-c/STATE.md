@@ -16,3 +16,5 @@ Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.
 2026-11-11T19:49:10.113207+00:00 C11 loss recovery UI/command checkpoint accepted; no new recovery-rate claim.
 
 2026-11-11T23:00:45.255381+00:00 C11 Relic recovery PASS:15tests/types/lint;88+12browserchecks/34finalviews,0pageerrors. Safe diagnostics, accepted-result copy, accurate collection guidance/disabled styles. Next Sound pending/blocked UI.
+
+2026-11-11T23:08:10.467609+00:00 C11 sound recovery PASS:40tests/types/lint;72browserstates/40views;next720p battle-menu overlap.

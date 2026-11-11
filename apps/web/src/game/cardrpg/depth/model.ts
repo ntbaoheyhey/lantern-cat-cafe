@@ -113,6 +113,14 @@ export class DepthModel {
   }
   snapshot = () => this.revision;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
+  async toggleSound() {
+    if (this.audio.pending) return;
+    const task = this.audio.toggle();
+    this.notify(false);
+    await task;
+    this.state.settings.sound = this.audio.enabled;
+    this.notify();
+  }
   notify(save = true) {
     if (save && !this.offline && !this.storageFailed) {
       try { localStorage.setItem(R.SAVE_KEY, R.exportSave(this.state)); }

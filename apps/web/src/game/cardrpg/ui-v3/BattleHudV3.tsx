@@ -6,6 +6,7 @@ import type {CSSProperties} from 'react';
 import {HealthMeterA6,RageMeterA6} from './HudMetersA6';
 import BattleLogV3 from './BattleLogV3';
 import BattleLeaveV3 from './BattleLeaveV3';
+import {SoundControlA6} from './SoundControlA6';
 import './battle-a6.css';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -77,7 +78,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   </header>
   {m.a6Battle&&<section className="uv-enemy-rage" aria-label="Enemy rage">{battle.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=><div key={a.id}><small>{a.name}</small><RageMeterA6 value={a.charge} ready={a.charge>=100} label={`${a.name} rage: ${a.charge}/100`}/></div>)}</section>}
 
-  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{pausedBeforeLog.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false)}}>Read battle log</button><button onClick={()=>{setMore(false);if(m.replay||m.galleryBattle){m.leave();return;}pausedBeforeLeave.current=m.paused;m.paused=true;m.notify(false);setLeaving(true);}}>{m.galleryBattle?'Close preview':m.replay?'Return from replay':'Leave table'}</button></div>}
+  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><SoundControlA6 m={m} battle/><button onClick={()=>{pausedBeforeLog.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false)}}>Read battle log</button><button onClick={()=>{setMore(false);if(m.replay||m.galleryBattle){m.leave();return;}pausedBeforeLeave.current=m.paused;m.paused=true;m.notify(false);setLeaving(true);}}>{m.galleryBattle?'Close preview':m.replay?'Return from replay':'Leave table'}</button></div>}
   <div className="uv-battle-party dp-v5look" aria-label="Crew health and ultimates">{battle.actors.filter(a=>a.side==='party').map(cat=>{
    const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');
    const readiness=ult?(m.a6Battle?(cat.hp<=0?'Fallen':!cat.skills.includes(ult.id)?'Unlocks at level 6 or three stars':cat.charge>=100?'Ready':`${cat.charge}/100 rage`):battle.v4?skillReadinessV4(cat,ult):cat.charge>=100?'Ready':`${cat.charge}/100 charge`):'Unavailable';

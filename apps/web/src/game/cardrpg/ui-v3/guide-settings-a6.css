@@ -151,7 +151,9 @@
  .a6-comfort-desk>header {display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:8px}
  .a6-comfort-desk>header h2 {font-size:33px}.a6-desk-lamp {width:112px;height:122px;flex:none}
  .a6-desk-lamp[data-lit=true] {filter:drop-shadow(0 0 13px #e3b55966)}
- .a6-sound-row {display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px dashed #bd9e6c;padding-bottom:13px;margin-bottom:16px;font-size:14px}
+ .a6-sound-row {display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 12px;border-bottom:1px dashed #bd9e6c;padding-bottom:13px;margin-bottom:16px;font-size:14px}
+ .a6-sound-row>.a6-sound-status {grid-column:1/-1;margin:0;font-size:14px;line-height:1.4;color:#705337}
+ .a6-sound-row>button:disabled {background:#e7dbbd;color:#76654b;border-color:#b9a47c;box-shadow:none;opacity:1;cursor:wait}
  .a6-sound-row>button {min-height:42px;font-size:14px;min-width:112px}
  .a6-comfort-options {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px}
  .a6-comfort-options>label {display:flex;flex-direction:column;gap:8px;font-size:14px}.a6-comfort-options select {min-height:42px;font-size:14px;background:#fff3d5;color:#65482d}

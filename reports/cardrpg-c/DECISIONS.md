@@ -167,3 +167,5 @@
 2026-11-11T22:48:51.424922+00:00 Treat an empty incoming-HP denominator explicitly and identify the recorded round rather than claiming partial rounds were played. Presentation-only repair.
 
 2026-11-11T23:00:45.255381+00:00 C11: distinguish app-owned recovery messages from provider diagnostics; show collection readiness instead of inferring unowned before a successful read, preserve Fuji read-only +8% contract.
+
+2026-11-11T23:08:10.467609+00:00 C11: centralize sound controls and bound context resume at4s to make stalled devices recoverable; keep audio synthesis/combat unchanged.

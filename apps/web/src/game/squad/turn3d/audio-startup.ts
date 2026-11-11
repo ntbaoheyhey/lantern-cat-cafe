@@ -1,3 +1,19 @@
+/** A blocked device must release the sound control even if resume never settles. */
+export function resumeAudioContext(context: AudioContext, signal: AbortSignal): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (signal.aborted) { reject(new Error('Sound startup cancelled')); return; }
+    const finish = (error?: unknown) => {
+      clearTimeout(timeout); signal.removeEventListener('abort', cancel);
+      if (error) reject(error); else resolve();
+    };
+    const cancel = () => finish(new Error('Sound startup cancelled'));
+    const timeout = setTimeout(() => finish(new Error('Sound output did not start')), 4000);
+    signal.addEventListener('abort', cancel, { once: true });
+    try { void context.resume().then(() => finish(), error => finish(error)); }
+    catch (error) { finish(error); }
+  });
+}
+
 /** Open the output device asynchronously after a real sound gesture. */
 export async function warmAudioDevice(signal: AbortSignal): Promise<() => void> {
   const noop = () => {};

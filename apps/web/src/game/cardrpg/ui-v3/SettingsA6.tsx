@@ -3,6 +3,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
 import {showReviewTools} from '../depth/player-mode';
 import {artPropsA6} from './art-a6';
+import {SoundControlA6} from './SoundControlA6';
 
 function DeskLamp({lit}:{lit:boolean}) {
  return <svg className="a6-desk-lamp" viewBox="0 0 150 160" fill="none" aria-hidden="true" data-lit={lit}>
@@ -60,7 +61,7 @@ export function SettingsA6({m}:{m:DepthModel}) {
   </section>
   <section className="a6-comfort-desk" aria-label="Comfort and playback">
    <header><div><small>MAKE YOURSELF AT HOME</small><h2>Settle in.</h2><p>A softer evening, at your pace.</p></div><DeskLamp lit={m.audio.enabled}/></header>
-   <div className="a6-sound-row"><span>Battle sounds</span><button aria-pressed={m.audio.enabled} onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify();});}}>Sound {m.audio.enabled?'on':'off'}</button></div>
+   <div className="a6-sound-row"><span>Battle sounds</span><SoundControlA6 m={m}/></div>
    <div className="a6-comfort-options"><label>Quality<select value={m.state.settings.quality} onChange={e=>{m.state.settings.quality=e.target.value as R.DepthAccount['settings']['quality'];m.notify();}}>{['low','medium','high'].map(q=><option key={q}>{q}</option>)}</select></label><label>Playback speed<select value={m.state.settings.speed} onChange={e=>{m.state.settings.speed=Number(e.target.value);m.notify();}}>{[1,2,3].map(n=><option key={n} value={n}>{n}×</option>)}</select></label></div>
    <label className="a6-comfort-motion"><input type="checkbox" checked={m.state.settings.reducedMotion} onChange={e=>{m.state.settings.reducedMotion=e.target.checked;m.notify();}}/><span>Reduced motion<small>Keep the action with gentler movement.</small></span></label>
    <p className="a6-playback-note">Your crew fights automatically. Space pauses the battle.</p>

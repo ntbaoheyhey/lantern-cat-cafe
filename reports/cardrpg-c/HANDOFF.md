@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 Relic recovery/guidance checkpoint verified; continue C8/C11.
+NOW: C11 Sound startup/retry checkpoint verified; continue C8/C11.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox/PSD; inspect Sound pending/blocked feedback in Settings and battle.
+NEXT1: check designer inbox/PSD; fix720p battle More-menu overlap with enemy HP plates; inspect bosses too.
 NEXT2: retained evidence below120MB; no balance/acceptance seed reruns; representative shots only.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -15,7 +15,6 @@ KNOWN:MochiV3 active r3:115layers/32bones/333vertices/1024PMA/512height;source a
 KNOWN:designer0/25,inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:C11 stage/VFX/intake/cache/HUD/upgrades/Bag/preparation/pantry/route fixes preserved; see C11-*-RECEIPT.md.
 KNOWN:VFX forced-redraw4old differences remainPARTIAL;R3 targeted48offline/6PausePlayPASS,p9516.8/16.7ms,101drawsample.
-KNOWN:Tower142browser/20keyboard/47captures;Events78/6/30 plus28notechecks;26tests/types/lintPASS.
 KNOWN:loss50browser/28keyboard/46views;22web+16rules/types/lintPASS;fixedTower advice below foe level.
 KNOWN:demo30,018,753bytes;score7.79;Clover139layers/33bones/276vertices/156sourcehashes;finaldesigner0/25.
 KNOWN:Relic15tests/types/lint,88+12browser/34finalviewsPASS;read-only localwallet;C11-RELIC-RECEIPT.
@@ -28,3 +27,4 @@ KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only B
 KNOWN:save30browser+4settled/50views/7tests/types/lintPASS;preview/cancel/local reload;C11-SAVE-RECEIPT.
 KNOWN:controls98browser/144blocked;leave68browser/48views/27tests;Auto-next68+4browser/40views/33tests/types/lintPASS.
 KNOWN:Clover27placeholder/23runtime+5finalasset/types/lintPASS;84layer/72combat/48offline+6PausePlay,34views;C8-CLOVER-RECEIPT.
+KNOWN:Sound40tests/types/lint,72browserstates/40viewsPASS;devicefixtures only;C11-SOUND-RECEIPT.
