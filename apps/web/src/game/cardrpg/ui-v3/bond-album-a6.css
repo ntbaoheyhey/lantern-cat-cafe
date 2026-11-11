@@ -113,3 +113,37 @@
   .a6-bond-album {grid-template-columns:250px minmax(0,1fr);background:#fff0d0}
  }
 }
+
+/* Keep the selected cat's pair effect and eligibility beside the collection bonus. */
+.uv-app[data-a6=true] {
+ .a6-cat-detail:has(.a6-bond-summary) {display:flex;flex-direction:column;height:100%}
+ .a6-cat-panel:has(.a6-bond-summary) {display:flex;flex-direction:column;min-height:0;flex:1}
+ .a6-bond-summary {display:flex;flex-direction:column;gap:9px;min-height:0;flex:1;font-size:14px;line-height:1.4}
+ .a6-bond-summary>header,.a6-bond-summary>.a6-bond-trigger,.a6-bond-summary-footer {flex:none}
+ .a6-bond-summary>header small {font-size:14px;color:#715a39}
+ .a6-bond-pair-notes {min-height:0;overflow:auto;padding:4px;margin:-4px;scroll-padding:4px;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2;overscroll-behavior:contain}
+ .a6-bond-pair-notes article {padding:10px 12px;border:1px solid #bda16e;border-left:3px solid #a48351;border-radius:7px;background:#fff3d6;color:#60472f}
+ .a6-bond-pair-notes article+article {margin-top:8px}
+ .a6-bond-pair-notes article[data-state=ready] {border-left-color:#68774b}
+ .a6-bond-pair-notes h3 {margin:0;font:700 19px/1.2 Georgia,serif;color:#5c412a}
+ .a6-bond-pair-notes small {font-size:14px;line-height:1.35;color:#715a39}
+ .a6-bond-pair-notes p {margin:6px 0;font-size:14px;line-height:1.4}
+ .a6-bond-pair-notes b {font-size:14px;color:#6c5b35}
+ .a6-bond-pair-notes [data-state=missing] b {color:#865035}
+ .a6-bond-summary>.a6-bond-trigger {margin:0;font-size:14px;color:#715a39;line-height:1.4}
+ .a6-bond-summary-footer {display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+ .a6-bond-summary-footer button {min-height:44px;font-size:14px}
+ .a6-bond-summary-footer small {font-size:13px;color:#715a39;margin:0}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero {grid-template-columns:80px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero>img {width:80px;height:80px}
+  .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero h2 {font-size:26px;line-height:1.1;margin:1px 0}
+  .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero p {margin:0}
+  .a6-cat-detail:has(.a6-bond-summary) .a6-cat-tabs {margin:4px 0 8px}
+  .uv-sheet-content:has(>.a6-first-step) .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero {grid-template-columns:80px minmax(0,1fr)}
+  .uv-sheet-content:has(>.a6-first-step) .a6-cat-detail:has(.a6-bond-summary) .a6-cat-hero>img {width:80px;height:80px}
+  .a6-bond-summary {gap:6px}
+  .a6-bond-pair-notes article {padding:8px 10px}
+  .a6-bond-pair-notes p {margin:3px 0}
+ }
+}

@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, expect, it } from 'vitest';
 import { DepthModel } from '../depth/model';
-import { BondBookA6 } from './BondsA6';
+import { BondBookA6, BondSummaryA6 } from './BondsA6';
 import { CompanionCard } from '../depth/CompanionCard';
 
 afterEach(cleanup);
@@ -40,4 +40,22 @@ it('keeps bond affordances absent from flag-OFF companion cards', () => {
   expect(screen.queryByText('∞ Bonds')).toBeNull();
   rerender(<CompanionCard id="mochi" m={new DepthModel(true, true, true, true)}/>);
   expect(screen.getByText('∞ Combo ready')).toBeTruthy();
+});
+
+it('explains the selected cat’s pair effects, missing partners and automatic trigger without changing the crew', () => {
+  const m = new DepthModel(true, true, true, true), before = JSON.stringify(m.state);
+  const {rerender} = render(<BondSummaryA6 m={m} catId="clover"/>);
+  expect(screen.getByRole('article', {name:'Lantern Pledge'}).textContent).toContain('Strike the weakest foe and shield the team.');
+  expect(screen.getByRole('article', {name:'Lantern Pledge'}).textContent).toContain('Both in your crew');
+  expect(screen.getByRole('article', {name:'Garden Afterglow'}).textContent).toContain('Missing: Inkcap');
+  expect(screen.getByText('Completed collections help all cats, even from the bench.')).toBeTruthy();
+  expect(screen.getByText('Once per battle, from round 3. Both partners must still be standing.')).toBeTruthy();
+  expect(JSON.stringify(m.state)).toBe(before);
+  m.shortcut('unlock'); rerender(<BondSummaryA6 m={m} catId="clover"/>);
+  expect(screen.getByRole('article', {name:'Garden Afterglow'}).textContent).toContain('Place both in your team');
+  m.state.team=['mochi','clover','inkcap']; rerender(<BondSummaryA6 m={m} catId="clover"/>);
+  expect(screen.getByRole('article', {name:'Garden Afterglow'}).textContent).toContain('Both in your crew');
+  const equipped = JSON.stringify(m.state);
+  fireEvent.click(screen.getByRole('button', {name:'Open Bond Book'}));
+  expect(m.screen).toBe('bonds');expect(JSON.stringify(m.state)).toBe(equipped);
 });

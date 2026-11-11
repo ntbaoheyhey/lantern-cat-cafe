@@ -1,5 +1,5 @@
 # Lane C handoff
-NOW: C11 loss guidance/Tower retry verified; continue lowest actionable quality review.
+NOW: C11 selected-cat bond details verified; continue Save/Settings quality review.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
 NEXT1: check designer inbox; review remaining low-score screens without repeating accepted work.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
@@ -15,7 +15,6 @@ KNOWN:MochiV3 active r3:115layers/32bones/333vertices/1024PMA/512height;source a
 KNOWN:designer0/25,inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:C11 stage/VFX/intake/cache/HUD/upgrades/Bag/preparation/pantry/route fixes preserved; see C11-*-RECEIPT.md.
 KNOWN:VFX forced-redraw4old differences remainPARTIAL;R3 targeted48offline/6PausePlayPASS,p9516.8/16.7ms,101drawsample.
-KNOWN:reward54browser/26keyboard/77tests/types/lint/28viewsPASS;20%copy/exhaustedpooladvance.
 KNOWN:Tower142browser/20keyboard/47captures;Events78/6/30 plus28notechecks;26tests/types/lintPASS.
 KNOWN:loss50browser/28keyboard/46views;22web+16rules/types/lintPASS;fixedTower advice below foe level.
 KNOWN:demo29,619,392bytes;score7.79;R3:26tests/3negativeguards/48combat/48offline/28viewsPASS;C8-R3-RECEIPT.
@@ -28,3 +27,4 @@ KNOWN:recruit136browser/20keyboard+36animated/6keyboard;74views/13tests/types/li
 KNOWN:firstlevel18browser/12viewsPASS;2244webtests/types/lint preserved;guided row/focus/hand fixed.
 KNOWN:firstcontext64browser/54views/7tests/types/lintPASS;route/supply/owned guidance and hands corrected.
 KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF-before-preparation-health-2026-11-11.md.
+KNOWN:bond28browser/48views/4tests/types/lintPASS;whole-note720p fix;read-only Book;C11-BOND-SUMMARY-RECEIPT.

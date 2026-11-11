@@ -124,3 +124,5 @@
 2026-11-11 C11 test fallback: isolated enhancement fixture still did not yield the intended option; drop enhancement/star expansions from this UI sweep and retain their earlier accepted receipts. Verify only changed loss guidance paths (owned gear, training, formation, advisor changes and retry destination); no claim of new enhancement/star coverage.
 
 2026-11-11T19:49:10.113207+00:00 C11: fixed Tower enemy levels must not act as campaign entry bands for result advice; retain campaign checks and fixed retry identity. Visual checkpoint accepted; score and recovery measurements unchanged.
+
+2026-11-11 C11: selected-cat Bonds previously showed names/readiness without effects or trigger. Explain exact existing pair effect, missing partners, round-three/alive requirement and bench collection bonus. Keep account/formation rules and general Bond Book navigation; bounded notes preserve720p controls.

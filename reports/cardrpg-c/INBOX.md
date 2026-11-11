@@ -74,3 +74,5 @@
 2026-11-11 resume19:35UTC: user continue; confirmed MochiV3 commit37729e379 pushed and draft439 current. Designer inbox empty; continue loss-recovery guidance, preserve completed balance rounds and previous evidence.
 
 2026-11-11T19:49:10.113207+00:00 resume: user continue; preserved uncommitted loss patch and accepted50browser/38tests/types/lint. Inspected46views; no repeated balance run. ContinueC8/C11.
+
+2026-11-11T20:00:24.712714+00:00 resume: user continue/handoff describes720p bond note sizing. Preserved unfinished patch and28browser/4tests/types/lintPASS;inspected48finalviews without repeating accepted work. ContinueC8/C11.

@@ -111,3 +111,5 @@ First-context follow-up:54views inspected including four loading frames replaced
 Preparation health follow-up:28final views inspected in seven sheets plus two full-size checks. Wounded/knocked-out cards, health descriptions, hints and Fight fit both sizes; bond lines clear names.116browser/10keyboard/15tests/types/lintPASS; score7.79retained. C11-PREPARATION-HEALTH-RECEIPT.md.
 
 Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-size reviews. Exact Power, cost, free owned gear and retry destination fit both sizes; keyboard focus remains visible.50browser/28keyboard/38tests/types/lintPASS. FixedTower advice works below foe level; campaign limits retained. Score7.79unchanged; no new recovery evidence. C11-LOSS-RECOVERY-RECEIPT.md.
+
+2026-11-11T20:00:24.712714+00:00 Bond details follow-up:48finalviews inspected in8sheets plus two full-size states. Effects/eligibility/trigger and fixed Book action fit both sizes; full-note bounds and keyboard scroll pass. Weighted7.79 retained; C11-BOND-SUMMARY-RECEIPT.md.
