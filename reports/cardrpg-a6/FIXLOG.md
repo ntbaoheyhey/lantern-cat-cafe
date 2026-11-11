@@ -209,3 +209,5 @@ Q44 presentation repair3: only720p unowned Velvet retains6px of note overflow. T
 2026-11-11T02:32:02Z Q46 probe: corrected a testing-library selector to Playwright getByLabel; retained four existing captures. Manual HP jumps froze hit-flash while paused; four settled captures now advance the public gallery playback briefly before pause, without renderer changes. Original images retained, superseded for visual acceptance.
 
 Q47: initial unit harness used spyOn for missing jsdom native-dialog methods; corrected test-only bounded polyfill,18tests pass. First browser gate showed native Tab can leave the dialog for browser chrome; explicit first/last wrap added. Background inertness and paused clocks already passed.
+
+2026-11-11T02:54:37Z Q48: first browser continuation found Tower focus returned to the previous entry because HomeScene called m.go directly. Smallest fix passes Shell go as onTower; all three signs/dock/Escape focus checks pass at both sizes. Original7accepted source frames retained;14tests retained, final types/lint and7B scale/staging tests pass.

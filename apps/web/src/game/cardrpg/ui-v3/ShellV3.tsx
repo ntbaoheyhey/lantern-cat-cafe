@@ -19,6 +19,7 @@ import './cat-skills-a6.css';
 import './cat-preview-a6.css';
 import './bag-workbench-a6.css';
 import './tower-gifts-a6.css';
+import './home-signs-a6.css';
 import {CountUpA6} from './CountUpA6';
 import {OpeningA6} from './OpeningA6';
 import {useNewDiscoveries} from './useNewDiscoveries';
@@ -63,7 +64,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  if(m.showBattle)return null;
  return <div className="uv-shell" data-ui-v3="true" data-a6-guide={R.gameplayA6(m.state)?introduction.guide:undefined}>
   {R.gameplayA6(m.state)&&<IntroductionA6 m={m}/>}
-  <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents}/>
+  <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents} onTower={()=>go('tower')}/>
   <RewardFly values={m.state.account.currencies} reducedMotion={m.state.settings.reducedMotion}/><header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!,'face')} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>{R.gameplayA6(m.state)?<PowerA6 value={view.power} label="Team Power" reducedMotion={m.state.settings.reducedMotion}/>:<>Team power {view.power}</>}</small></div></div>
    <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} data-currency={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{<CountUpA6 value={m.state.account.currencies[id]} reducedMotion={m.state.settings.reducedMotion}/>}<small>{id}</small></span>)}</div>
    {introduced('relic')&&<button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>{R.gameplayA6(m.state)?`Relic Fuji · +${R.relicBonusA6(m.state)/100}%`:"Relic · Fuji"}</button>}

@@ -306,3 +306,10 @@ Giữ đúng thứ tự/nội dung sự kiện, đồng hồ đứng yên khi đ
 2026-11-11T02:46:13Z: Q47 hoàn tất:14ảnh nguồn và14ảnh offline đã duyệt; nhật ký có trang trống rõ, chữ14–16px/nút44px.
 18test/typecheck/lint qua;100sự kiện/thứ tự/tạm dừng/Tab/Escape/trả focus đúng, demo39.094.209byte, không lỗi/gọi mạng.
 Tiếp tục Q48: bảng chỉ dẫn trong quán và vị trí thông báo mở tính năng; giữ nguyên luật mở khóa và mọi thao tác.
+
+2026-11-11T02:52:18Z: Bảng quán đã duyệt20ảnh: chữ14px, nút44px và sáu thông báo không che lối vào.
+Đã sửa bàn phím trở về nút Tháp; khóa/mở/tầng30/dock/tiếp tục chuyến đạt ở hai cỡ màn. Đang đóng gói với chuẩn kích thước D2 của B; chưa có mẫu3D được nghiệm thu.
+
+2026-11-11T02:54:37Z: Q48 hoàn tất:20ảnh nguồn/20ảnh offline và10ảnh kích thước B đã duyệt; demo39.097.373byte.
+14test giao diện/7test tích hợp/typecheck/lint đạt; nút44px, thông báo không che lối vào, trả bàn phím đúng; không lỗi/gọi mạng.
+Tiếp tục Q49: chữ cấp/hàng/vai trò đội hình và lời nhắc khóa đang nói sai khi đội đã chốt.

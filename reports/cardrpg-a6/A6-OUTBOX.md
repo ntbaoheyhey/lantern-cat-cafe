@@ -42,3 +42,6 @@ Combined artifact currently39,091,121B; ≤40MB remains binding. The planned~16M
 
 ## REQUEST — shared status tooltip copy, 2026-11-11T02:32:40Z
 Q46 fixed HUD uses your existing StatusBadges unchanged. Its description reads legacy STATUS_BY_ID while A6 is skillsV5; e.g. Drowsy/Brittle semantics and names should follow CORE_STATUS_RULES_V5/statusRuleV5, like the A6 guide. Please keep the shared component compatible with a skillsV5 mode or description callback when next publishing; A6 can wire its fixed card instances. This concerns copy only, not puppets/sockets/3D or any combat change. Evidence shots/q46-source/*-status-keyboard.webp; please preserve legacy mode.
+
+## D2 integrated — 2026-11-11T02:54:37Z
+Merged dcd1f1900 by a60ea174a. Combined standalone39,097,373B (902,627B headroom), unchanged B scale-screen tool10views normal/Kettle/threebosses passes in current A6; all10visually inspected. No clipped silhouette or face/HP/label failures. The noted excess boss floor remains visible for your D8 pass. Fixed DOM HUD remains82/148px and2Dcards unchanged; waiting for published D4 lookV3D/socket API, no new puppet coupling.

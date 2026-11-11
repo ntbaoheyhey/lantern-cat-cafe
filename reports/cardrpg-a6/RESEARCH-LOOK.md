@@ -51,3 +51,5 @@ Recheck 2026-11-11T01:16:45Z, after Q37–Q39 source acceptance: Daily reasons a
 Recheck 2026-11-11T01:52:55Z, after Q40–Q42: Tower/Journal/Field guide metadata and actions now meet the retained reading/action-zone guidance. Settings remains the8.0 low with12px save/comfort statuses; Q43 addresses that observed gap. Q44 retains the already observed small collection tags and growth costs. No new system or repeated external research.
 
 Recheck 2026-11-11T02:28:26Z, after Q43–Q45: save/training/awakening now retain readable cost and state in the720p action zone. Q46 follows existing fixed HUD envelopes and concise readiness, correcting the missing three-star unlock. No new mechanics or repeated genre research.
+
+Recheck after Q46–Q48, 11Nov: fixed HUD and event notebook preserve the action zones; cafe notices leave every entry reachable. Remaining observed Team/Prepare gap is small metadata plus a lock hint contradicting disabled row controls. Q49 follows existing readable-state guidance; no new mechanics or genre research.

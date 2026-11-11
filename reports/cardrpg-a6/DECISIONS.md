@@ -172,3 +172,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T02:39:25Z Q47 uses a native modal dialog for background inertness, Escape/Tab and readable existing100events. Parent captures/restores prior playback; original Soot art reused. No log store, event, combat or renderer change. B D1 docs-only merged; accepted package stays valid until Q47.
 
 - 2026-11-11T02:43:33Z Q48 follows the actual lowest Home8.1 row: retained1280home shows a feature toast over Notice board and small entry signs. Reuse cafe/crew art and existing unlock commands; make signs/notice coexist, no renderer or economy change.
+
+Q49: After Q48, continue the tied-low Team/Prepare reading row. Existing state already distinguishes fully locked from roster-only; correct its misleading hint and raise compact badges/row actions, without changing any guard or transaction. Retained Q30/Q39 evidence is sufficient; no repeated final seed/run.
