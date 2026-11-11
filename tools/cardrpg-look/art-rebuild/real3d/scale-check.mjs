@@ -5,16 +5,45 @@ import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const require=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json');
 const {NodeIO}=require('@gltf-transform/core'),{ALL_EXTENSIONS}=require('@gltf-transform/extensions');
-const {getBounds}=require('@gltf-transform/functions'),{MeshoptDecoder}=require('meshoptimizer');
+const {MeshoptDecoder}=require('meshoptimizer');
 export const root=resolve(dirname(fileURLToPath(import.meta.url)),'../../../..');
 export const manifest=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/v3-real/manifest.json'),'utf8'));
 export async function io(){await MeshoptDecoder.ready;return new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder});}
+/** glTF-Transform generic getBounds ignores skinning. Quantized skins carry their
+ * dequantization in inverse bind matrices, so measure posed vertices instead. */
+export function restBounds(node){
+ const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
+ const identity=[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];
+ const point=(p,m)=>[m[0]*p[0]+m[4]*p[1]+m[8]*p[2]+m[12],m[1]*p[0]+m[5]*p[1]+m[9]*p[2]+m[13],m[2]*p[0]+m[6]*p[1]+m[10]*p[2]+m[14]];
+ node.traverse(n=>{
+  const skin=n.getSkin(),joints=skin?.listJoints(),bind=skin?.getInverseBindMatrices();
+  const jointWorld=joints?.map(j=>j.getWorldMatrix()),inverse=joints?.map((_,i)=>bind?bind.getElement(i,[]):identity);
+  for(const p of n.getMesh()?.listPrimitives()??[]){
+   const pos=p.getAttribute('POSITION'),indices=p.getIndices();if(!pos)continue;
+   const sets=[0,1].map(i=>[p.getAttribute('JOINTS_'+i),p.getAttribute('WEIGHTS_'+i)]).filter(([j,w])=>j&&w);
+   if(skin&&!sets.length)throw Error(n.getName()+': missing skin attributes');
+   for(let i=0;i<(indices?.getCount()??pos.getCount());i++){
+    const index=indices?indices.getScalar(i):i,v=pos.getElement(index,[]);let world;
+    if(skin){
+     world=[0,0,0];let total=0;
+     for(const [ja,wa] of sets){const js=ja.getElement(index,[]),ws=wa.getElement(index,[]);
+      for(let k=0;k<4;k++){const w=ws[k];if(!w)continue;if(!inverse[js[k]])throw Error('Invalid skin joint');
+       const q=point(point(v,inverse[js[k]]),jointWorld[js[k]]);for(let axis=0;axis<3;axis++)world[axis]+=q[axis]*w;total+=w;}
+     }
+     if(Math.abs(total-1)>.01)throw Error(n.getName()+': invalid skin weights');
+     for(let axis=0;axis<3;axis++)world[axis]/=total;
+    }else world=point(v,n.getWorldMatrix());
+    for(let axis=0;axis<3;axis++){min[axis]=Math.min(min[axis],world[axis]);max[axis]=Math.max(max[axis],world[axis]);}
+   }
+  }
+ });return{min,max};
+}
 export function measure(document,unit){
  const nodes=document.getRoot().listNodes(),mins=[Infinity,Infinity,Infinity],maxs=[-Infinity,-Infinity,-Infinity];
  if(!unit.bodyNodes?.length)throw Error(unit.id+': no designated body nodes');
  for(const name of unit.bodyNodes){
   const found=nodes.filter(n=>n.getName()===name);if(found.length!==1)throw Error(unit.id+': body node absent/ambiguous: '+name);
-  const b=getBounds(found[0]);for(let axis=0;axis<3;axis++){mins[axis]=Math.min(mins[axis],b.min[axis]);maxs[axis]=Math.max(maxs[axis],b.max[axis]);}
+  const b=restBounds(found[0]);for(let axis=0;axis<3;axis++){mins[axis]=Math.min(mins[axis],b.min[axis]);maxs[axis]=Math.max(maxs[axis],b.max[axis]);}
  }
  const [width,height,depth]=maxs.map((n,i)=>n-mins[i]);
  if(![width,height,depth].every(Number.isFinite))throw Error(unit.id+': invalid body bounds');

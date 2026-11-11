@@ -21,5 +21,16 @@ function fixture({height=1,depth=.3,skin=true,prop=true}={}){
 }
 test('decodes actual GLB body bounds, excluding a raised prop',async()=>{const loader=await io();const decoded=await loader.readBinary(await loader.writeBinary(fixture()));assert.equal(measure(decoded,unit).height,1);});
 test('rejects oversize, flat and unskinned actual GLBs',async()=>{const loader=await io();for(const [opts,error] of [[{height:1.2},/height/],[{depth:.001},/volume/],[{skin:false},/skin/]]){const decoded=await loader.readBinary(await loader.writeBinary(fixture(opts)));assert.throws(()=>measure(decoded,unit),error);}});
-test('applies world transforms and rejects absent body nodes',()=>{const d=fixture();d.getRoot().listNodes().find(n=>n.getName()==='body').setScale([1,1.2,1]);assert.throws(()=>measure(d,unit),/height/);assert.throws(()=>measure(fixture(),{...unit,bodyNodes:['missing']}),/absent/);});
+test('applies world transforms and rejects absent body nodes',()=>{const d=fixture();d.getRoot().listNodes().find(n=>n.getName()==='root').setScale([1,1.2,1]);assert.throws(()=>measure(d,unit),/height/);assert.throws(()=>measure(fixture(),{...unit,bodyNodes:['missing']}),/absent/);});
 test('strict delivery cannot pass while a unit is pending',async()=>{const result=await checkRoster();assert.equal(result.accepted+result.pending.length,25);if(result.pending.length)await assert.rejects(checkRoster({strict:true}),/Unaccepted/);});
+
+test('decoded meshopt skin bounds include inverse bind dequantization',async()=>{
+ const {meshopt}=require('@gltf-transform/functions'),{MeshoptEncoder}=require('meshoptimizer');
+ await MeshoptEncoder.ready;const loader=await io();loader.registerDependencies({'meshopt.encoder':MeshoptEncoder});
+ const d=fixture({prop:false}),body=d.getRoot().listNodes().find(n=>n.getName()==='body'),skin=body.getSkin();
+ const bind=d.createAccessor().setType('MAT4').setArray(new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1])).setBuffer(d.getRoot().listBuffers()[0]);skin.setInverseBindMatrices(bind);
+ const before=measure(d,unit);await d.transform(meshopt({encoder:MeshoptEncoder,level:'medium'}));
+ const decoded=await loader.readBinary(await loader.writeBinary(d)),after=measure(decoded,unit);
+ for(const key of ['height','width','depth'])assert.ok(Math.abs(before[key]-after[key])<.0002,key);
+ decoded.getRoot().listNodes().find(n=>n.getName()==='root').setScale([1,1.2,1]);assert.throws(()=>measure(decoded,unit),/height/);
+});
