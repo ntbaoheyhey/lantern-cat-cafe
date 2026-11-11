@@ -7,7 +7,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 |---|---:|---:|---:|---:|---|
 | Mochi | 8.6 | 7.7 | 7.8 | 7.8 | p23/evidence/mochi-follow-through.webp; forward/up shield raise, head/paw/tail lag; tail partly obscured and lids still use sampled fur |
 | Soot | 8.6 | 7.7 | 7.7 | 7.7 | p12/soot-follow-through.webp and motion-review.json; authored lantern/head/tail lag accepted, other rigs unchanged |
-| Yarn Giant | 8.8 | 7.5 | 8.0 | 8.0 | p2/round1/yarn-giant-comparison.webp and yarn-giant-motion.webp; crown/yarn intact, P5 adds eye glow, breathing, ambient motes and phase flash |
+| Yarn Giant | 8.8 | 7.7 | 8.0 | 8.0 | p37/evidence/yarn-giant-fist-brace.webp; Complete yarn fists lead and follow with slight preparation compression; crown, necklace and shoulder mantle stay coherent, both feet planted. Rigid forearms and a123pixel collar-thread fringe remain; bounded opposing arm. |
 | Clover | 8.6 | 7.7 | 7.8 | 7.8 | p24/evidence/clover-follow-through.webp; lift then tip the teapot at release, head/arm/tail response; tea remains painted in the rigid pot |
 | Panko | 8.6 | 7.7 | 7.8 | 7.8 | p25/evidence/panko-roller-strike.webp; whole roller/mitten windup and down-forward tap, loaf-shield brace; clean chin/shoulder partition, restrained rigid gesture |
 | Mallow | 8.6 | 7.7 | 7.8 | 7.8 | p26/evidence/mallow-whisk-flourish.webp; whole whisk forward sweep, coherent scarf/free mitten and tail lag; tiny tail-fringe limit retained at the close source gap |

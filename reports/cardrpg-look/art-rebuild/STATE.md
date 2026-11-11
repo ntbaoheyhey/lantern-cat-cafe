@@ -114,3 +114,6 @@ P34 published 5cab76517 matches origin; P35 source1 config/audit saved but not r
 
 ## Resume 2026-11-10T23:44:55.460649+00:00
 P35 2b664ac4e3b20c88aa4f840092bbc5b6ab311f50 matches fetched origin. P36 source3 config/audit and controlled-before build retained; source atlas not rebuilt. No native runner or B heavy job; servers50023/5920 and92836/5922 retained;139GiB free. Native dirty work/GLBs preserved and excluded.
+
+## Resume 2026-11-10T23:59:00.115418+00:00
+P37 accepted/staged, publish remains; HEAD36c4cc5482651518a32c8c92cd89f02ec1009de1 matches fetched origin. P38 original source audit/candidate/plan retained. No native runner or B heavy job; static servers50023/5920 and92836/5922 retained,139GiB free. Inventory RESUME-DIRTY-P38.txt; native dirty work/GLBs preserved/excluded.
