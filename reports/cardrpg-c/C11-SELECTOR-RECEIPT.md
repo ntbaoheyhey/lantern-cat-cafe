@@ -1,0 +1,9 @@
+# C11 — Guaranteed reward decisions
+
+The selector now previews the selected companion or keepsake, remaining marks and every unmet requirement. A new cat joins at level1/one star. Duplicate cats disclose actual matching shards and preserve level/stars; duplicate gear creates a separate unequipped item. The receipt opens the chosen cat or exact new gear instance. Stamps and banner pity remain unchanged.
+
+The preview runs the existing atomic claim command on a draft without spending. This fixes a reproduced Ready/claim mismatch at a full shard balance. The click rechecks the current account, including a route started after rendering. Missing marks no longer hide chapter/mastery/shelf/collection conditions; the added cat regression also exposes shard overflow alongside missing marks and collection. Legacy selector presentation and all prices/guards are retained.
+
+Verification: inherited29focused tests, workspace types/lint and40browser checks including8keyboard claims were already PASS and preserved. Reviewed all32captured views via four contact sheets plus720p all-requirements and900p receipt at full size. The additional multi-shortage correction passes7selector tests, refreshed workspace typecheck/lint and4focused browser checks; inspected all4new captures. Both1280×720 and1440×900 keep the complete selector inside the sheet without horizontal overflow. Exact command/state, no-spend preview, shard cap, collection/chapter/mastery/shelf/route locks and exact reward navigation are covered.
+
+Only two representative screenshots and compact results are retained here; raw diagnostics remain under /tmp/cardrpg-c-selector-*. No new full-E2E, balance, recovery or performance claim. Designer inbox remains empty,0/25; staticdemo29,226,665bytes and score7.79 retained. Continue C8/C11 recruitment decisions and intake.

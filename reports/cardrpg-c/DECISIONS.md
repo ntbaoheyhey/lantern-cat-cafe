@@ -106,3 +106,5 @@
 2026-11-11T18:04:10.435860+00:00 C11 daily/reset: use each existing calendar lifetime for gift copy; expose requested amounts/point gain without changing settlement. Explicit heading scroll and scoped disabled styling fix observed720p/900p issues. Next inspect idle/fast-reward cap consequences.
 
 2026-11-11T18:15:33.709417+00:00 C11 idle: disclose saved-time versus daily-use costs and missing capped supplies before collection; preserve exact commands and preview purity. Scoped unavailable Fast styling after screenshot review; no reward/balance change.
+
+2026-11-11T18:25:23.360613+00:00 C11: use the existing atomic selector command for preview/eligibility, enumerate independent unmet conditions and open exact reward; preserve24mark price/pity/stamps and legacy UI.
