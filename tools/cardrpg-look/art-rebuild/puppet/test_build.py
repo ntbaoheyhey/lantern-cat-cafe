@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_rain_whole_horns_cloak_hooves_and_tail_keep_their_owners(self):
+        cfg = json.loads((Path(__file__).parent/'configs/rain-spool.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((350, 280), 'head'), ((322, 495), 'head'), ((135, 360), 'head'), ((505, 390), 'head'), ((370, 594), 'head'), ((482, 290), 'head'), ((500, 170), 'cape'), ((544, 265), 'cape'), ((583, 305), 'cape'), ((800, 280), 'cape'), ((1030, 450), 'cape'), ((420, 223), 'cape'), ((680, 450), 'body'), ((890, 465), 'body'), ((715, 575), 'body'), ((620, 570), 'body'), ((245, 625), 'armL'), ((220, 708), 'armL'), ((286, 648), 'armL'), ((500, 625), 'armR'), ((485, 721), 'armR'), ((550, 610), 'armR'), ((665, 642), 'footL'), ((650, 698), 'footL'), ((785, 617), 'footR'), ((835, 705), 'footR'), ((883, 716), 'footR'), ((873, 615), 'tail'), ((945, 688), 'tail'), ((1049, 677), 'tail')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'head')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
+
     def test_yarn_whole_crown_knuckles_necklace_and_feet_keep_their_owners(self):
         cfg = json.loads((Path(__file__).parent/'configs/yarn-giant.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')

@@ -11,6 +11,7 @@ import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-g
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
+import rainRig from '../../../../../../assets/cardrpg-look/v3-puppets/rain-spool.rig.json';
 import yarnRig from '../../../../../../assets/cardrpg-look/v3-puppets/yarn-giant.rig.json';
 import kettleRig from '../../../../../../assets/cardrpg-look/v3-puppets/kettle-knight.rig.json';
 import crumbRig from '../../../../../../assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json';
@@ -581,5 +582,24 @@ it('braces Yarn Giant fist and delays its opposing hand with a quiet chest and p
     }
     const end=puppetPose(motion,0,1,false,0,'yarn-giant');
     expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean))).toBeLessThan(1e-10);
+  }
+});
+
+
+it('dips Rain Spool horns with four planted hooves and a delayed heavy cape',()=>{
+  expect(rainRig.sockets.mainHand[0]).toBe('head');expect(rainRig.sockets.offHand[0]).toBe('armR');
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const pose=(t:number,reduced=false)=>puppetPose(motion,0,t,reduced,0,'rain-spool');
+    const strike=pose(motion==='attack'?.52:.38);expect(strike.head).toBeGreaterThan(.045);
+    const head=rainRig.layers.find(l=>l.part==='head')!;
+    const horn=new Vector3((130/1200-head.pivot[0]!)*rainRig.height*rainRig.aspect,(head.pivot[1]!-360/841)*rainRig.height,0);
+    expect(horn.clone().applyAxisAngle(new Vector3(0,0,1),strike.head).y-horn.y).toBeLessThan(-.025);
+    expect(pose(.04).tail).toBe(0);expect(pose(.52).tail).toBeLessThan(-.045);
+    for(let i=0;i<=60;i++){
+      const p=pose(i/60),quiet=pose(i/60,true);expect(p.plant).toBe(true);
+      expect(Math.abs(p.head)).toBeLessThan(.075);expect(Math.abs(p.lean)).toBeLessThan(.035);expect(Math.abs(p.cloth)).toBeLessThan(.013);
+      expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean,quiet.tail,quiet.cloth]).toEqual([0,0,0,0,0,0]);expect(quiet.plant).toBe(false);
+    }
+    const end=pose(1);expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean),Math.abs(end.tail),Math.abs(end.cloth))).toBeLessThan(1e-10);
   }
 });
