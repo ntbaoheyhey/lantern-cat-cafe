@@ -2,11 +2,12 @@
 import {createRequire} from 'node:module';import {resolve} from 'node:path';import {mkdir,writeFile,readFile} from 'node:fs/promises';
 const root=process.cwd(),require=createRequire(root+'/apps/web/package.json'),{chromium}=require('@playwright/test'),sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const units=JSON.parse(await readFile('assets/cardrpg-look/spine/slots.json')).units,only=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(','),psd=process.argv.includes('--psd');
-const output=resolve('reports/cardrpg-c/spine'),browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),result=[],lineup=[];
+const output=resolve(process.argv.find(a=>a.startsWith('--out='))?.slice(6)??'reports/cardrpg-c/spine'),revision=process.argv.find(a=>a.startsWith('--placeholder-folder='))?.slice(21)??'psd-placeholder',browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),result=[],lineup=[];
+await mkdir(output,{recursive:true});
 try{
  const page=await browser.newPage({viewport:{width:320,height:470},deviceScaleFactor:1});await page.goto('http://127.0.0.1:5970/@fs/'+root+'/tools/cardrpg-c/unit-review.html');await page.waitForFunction(()=>window.review,null,{timeout:30000});
  for(const unit of units.filter(u=>!only||only.includes(u.id))){
-  const override=psd?{skeleton:`assets/cardrpg-look/spine/${unit.id}/psd-placeholder/${unit.id}.json`,atlas:`assets/cardrpg-look/spine/${unit.id}/psd-placeholder/${unit.id}.atlas`,scale:1}:null;
+  const override=psd?{skeleton:`assets/cardrpg-look/spine/${unit.id}/${revision}/${unit.id}.json`,atlas:`assets/cardrpg-look/spine/${unit.id}/${revision}/${unit.id}.atlas`,scale:1}:null;
   const loaded=await page.evaluate(async({unit,override})=>{document.querySelector('#label').textContent=unit.name+' · '+unit.targetHeight+'u';return await window.review.load(unit.id,override);},{unit,override});
   if(loaded.source!=='placeholder')throw Error(JSON.stringify(loaded));
   if(process.argv.includes('--metadata-only')){result.push(loaded);continue;}

@@ -44,7 +44,7 @@ eyes=[p['pivot'] for p in parts if p['name'].endswith('-white') and p['name'].st
 if eyes:pos['head']=[sum(p[0] for p in eyes)/len(eyes),sum(p[1] for p in eyes)/len(eyes)+20]
 for p in parts:
  n=p['name']
- if n.startswith('tail-') or n in ['r-leg-upper','r-leg-lower','r-foot','l-leg-upper','l-leg-lower','l-foot','r-arm-upper','r-arm-lower','r-paw','l-arm-upper','l-arm-lower','l-paw','ear-r-outer','ear-l-outer','skirt-front-r','skirt-front-l','apron-bib','lantern-handle','hair-tuft-1','hair-tuft-2']:
+ if re.fullmatch(r'tail-\d+',n) or n in ['r-leg-upper','r-leg-lower','r-foot','l-leg-upper','l-leg-lower','l-foot','r-arm-upper','r-arm-lower','r-paw','l-arm-upper','l-arm-lower','l-paw','ear-r-outer','ear-l-outer','skirt-front-r','skirt-front-l','apron-bib','lantern-handle','hair-tuft-1','hair-tuft-2']:
   pos[n]=p['pivot'];parents[n]=('tail-'+str(int(n.split('-')[-1])-1)) if n.startswith('tail-') and n!='tail-1' else p.get('parent','hip')
 # Lantern paint hangs from the shield hand; face paint shares the head bone.
 parents['lantern-handle']='off-hand'
