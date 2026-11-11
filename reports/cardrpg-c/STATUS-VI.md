@@ -1,3 +1,3 @@
-Đã mở lane C từ A6 mới nhất; Q54 đã được commit và đẩy lên, không có thay đổi dang dở.
-Giữ toàn bộ gameplay/UI và art gốc đã hoàn thành. Không tiếp tục 3D; nhân vật hiện tại sẽ là placeholder cho designer.
-Đang lập quy trình Spine 2D, bộ hợp đồng file và danh sách phần việc; chưa có kết quả kiểm định mới.
+Đã hoàn thành C0/C1 và mở draft PR #439. Giữ toàn bộ phần A6/B đã nghiệm thu.
+Chọn Spine Three.js4.2, camera ngang2D; bắt đầu hợp đồng25slot và công cụ nhận file designer.
+Mochi PSD pilot đã xuất hiện; chỉ đọc và sẽ dựng placeholder từ các lớp. Chưa có nhân vật designer được nghiệm thu.
