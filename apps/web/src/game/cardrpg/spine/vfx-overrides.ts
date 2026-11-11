@@ -44,7 +44,25 @@ export class DesignerVfx {
   if(!effect.cueWarnings.has(fallback??'none')){effect.cueWarnings.add(fallback??'none');this.warnings.push(`${id}: active clip has no ${requested}; ${fallback?'using first hit on caster':'keeping painted fallback'}.`);}
   return fallback;
  }
- emit(id:string,cue:string,targets:readonly string[]|string,time:number){const effect=this.effects.get(id);if(!effect||effect.spec.cue!==cue)return false;for(let index=0;index<(typeof targets==='string'?1:targets.length);index++){const target=typeof targets==='string'?targets:targets[index]!;const player=effect.players.find(p=>!p.active);if(!player)continue;player.active=true;player.at=0;player.born=time;player.target=target;if(player.mesh){player.mesh.skeleton.setToSetupPose();player.mesh.state.clearTracks();player.mesh.state.setAnimation(0,effect.spec.animation??'effect',false);}}return true;}
+ emit(id:string,cue:string,targets:readonly string[]|string,time:number){
+  const effect=this.effects.get(id);if(!effect||effect.spec.cue!==cue)return false;
+  for(let index=0;index<(typeof targets==='string'?1:targets.length);index++){
+   const target=typeof targets==='string'?targets:targets[index]!;
+   let available:Player|undefined,matching:Player|undefined,oldest:Player|undefined;
+   for(const player of effect.players){
+    // Cues arrive before render retires old players. Reclaim by timestamp too.
+    if(!player.active||time-player.born>=effect.duration){available=player;break;}
+    if(!oldest||player.born<oldest.born)oldest=player;
+    if(player.target===target&&(!matching||player.born<matching.born))matching=player;
+   }
+   // A long export can span repeated contacts. Prefer refreshing that same
+   // recipient's oldest tail; keep the pool bounded and the new hit visible.
+   const player=available??matching??oldest;if(!player)continue;
+   player.active=true;player.at=0;player.born=time;player.target=target;
+   if(player.mesh){player.mesh.skeleton.setToSetupPose();player.mesh.state.clearTracks();player.mesh.state.setAnimation(0,effect.spec.animation??'effect',false);}
+  }
+  return true;
+ }
  render(time:number,draw:(image:CanvasImageSource,target:string,spec:VfxOverride)=>void){this.stats.draws=0;this.stats.active=0;for(const effect of this.effects.values())for(const p of effect.players){if(!p.active)continue;const age=Math.max(0,time-p.born);if(age>=effect.duration){p.active=false;continue;}this.stats.active++;if(p.mesh&&this.renderer){p.mesh.update(Math.max(0,age-p.at));p.at=age;this.scene.add(p.mesh);const size=Math.max(effect.spec.width,effect.spec.height)*effect.spec.scale;this.camera.left=this.camera.bottom=-size/2;this.camera.right=this.camera.top=size/2;this.camera.updateProjectionMatrix();this.renderer.render(this.scene,this.camera);this.stats.draws+=this.renderer.info.render.calls;draw(this.renderer.domElement,p.target,effect.spec);p.mesh.removeFromParent();}else{const frame=effect.images[Math.min(effect.images.length-1,Math.floor(age*(effect.spec.fps??24)))];if(frame)draw(frame,p.target,effect.spec);}}}
  clear(){for(const effect of this.effects.values())for(const p of effect.players)p.active=false;this.stats.active=0;this.stats.draws=0;}
  dispose(){if(this.disposed)return;this.disposed=true;this.clear();for(const effect of this.effects.values())for(const p of effect.players)p.mesh?.dispose();this.effects.clear();this.stats.ready=0;this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=undefined;}

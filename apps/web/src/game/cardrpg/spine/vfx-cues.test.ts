@@ -24,7 +24,7 @@ it('plays a cast override once at first contact if the attack has no cast, keepi
  expect(effect.players.filter(p=>p.active).map(p=>p.target)).toEqual([fixture.plan.actorId]);
  expect(vfx.overrides.warnings).toHaveLength(1);expect(vfx.overrides.warnings[0]).toMatch(/cast.*hit/);
  const replay=galleryFixture('mochi-1');vfx.cue(cues[0]!,sampleActionPlan(replay.plan,replay.plan.beats[2]!.start,false),2,1,actors,cues);
- expect(effect.players.filter(p=>p.active)).toHaveLength(2);expect(vfx.overrides.warnings).toHaveLength(1);vfx.dispose();
+ expect(effect.players.filter(p=>p.active&&p.born===2).map(p=>p.target)).toEqual([replay.plan.actorId]);expect(vfx.overrides.warnings).toHaveLength(1);vfx.dispose();
 });
 
 it('waits for an authored cast after contact rather than using the missing-cast fallback',async()=>{

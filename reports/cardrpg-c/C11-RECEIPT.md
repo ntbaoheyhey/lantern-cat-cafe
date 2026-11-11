@@ -45,3 +45,5 @@ Event fallback checkpoint: C11-EVENT-FALLBACK-RECEIPT.md.4baseline misses ->120s
 Active format checkpoint: C11-ACTIVE-FORMAT-RECEIPT.md.2baseline browser failures->10sourcePASS;32focused tests across runs/types/lint/2offlinesmoke/2controls/4viewsPASS. Demo29,226,105bytes;large diagnostics outside git; no gameplay/score/performance claim.
 
 Override cue checkpoint: C11-VFX-OVERRIDE-CUE-RECEIPT.md.4baseline misses->192sourcePASS;20focused/types/lint/2offlinesmoke/2controls/4finalviewsPASS. Demo29,226,565bytes; no gameplay/score/performance claim.
+
+Override pool checkpoint: C11-VFX-POOL-RECEIPT.md.4baseline cases/5regressions fixed;24source/96contacts/24gap reuses/16focused/types/lint/2offline/2controls/4finalviewsPASS. Demo29,226,665bytes; no gameplay/score/performance claim.

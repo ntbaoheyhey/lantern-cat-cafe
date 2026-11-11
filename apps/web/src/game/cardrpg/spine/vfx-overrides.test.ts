@@ -51,3 +51,29 @@ it('reuses prepared players, releases a replaced pool and keeps accepted effects
  const renderer=contexts.mock.calls[0]![0];expect(renderer.dispose).toHaveBeenCalledOnce();expect(renderer.forceContextLoss).toHaveBeenCalledOnce();
  expect(fx.effects.size).toBe(0);expect(fx.stats).toEqual({draws:0,active:0,ready:0});
 });
+
+it.each(['sequence','spine'] as const)('keeps every new contact visible when the %s pool is full',async format=>{
+ const fx=new DesignerVfx();await fx.prepare({effect:{...spec,format,frames:['one.png'],fps:1}});
+ const effect=fx.effects.get('effect')!,players=effect.players.slice(),allocations=create.mock.calls.length,targets=['a','b','c'];
+ for(const at of [0,.1,.2,.3]){
+  fx.emit('effect','hit',targets,at);
+  expect(players.filter(p=>p.active&&p.born===at).map(p=>p.target).sort()).toEqual(targets);
+ }
+ expect(effect.players).toHaveLength(8);expect(effect.players.every((p,i)=>p===players[i])).toBe(true);expect(create).toHaveBeenCalledTimes(allocations);
+ fx.render(.4,vi.fn());expect(fx.stats.active).toBeLessThanOrEqual(8);fx.dispose();
+});
+
+it.each(['sequence','spine'] as const)('reclaims expired %s players before the next render',async format=>{
+ const fx=new DesignerVfx();await fx.prepare({effect:{...spec,format,frames:['one.png'],fps:1}});
+ fx.emit('effect','hit',Array(8).fill('old'),0);fx.render(.5,vi.fn());expect(fx.stats.active).toBe(8);
+ fx.emit('effect','hit','new',1.1);const draws:string[]=[];fx.render(1.2,(_,id)=>draws.push(id));
+ expect(draws).toEqual(['new']);expect(fx.effects.get('effect')!.players).toHaveLength(8);fx.dispose();
+});
+
+it('refreshes the oldest effect for the same recipient before truncating another recipient',async()=>{
+ const fx=new DesignerVfx();await fx.prepare({effect:spec});
+ fx.emit('effect','hit',['a','a','a','a','a','a','a','b'],0);fx.emit('effect','hit','b',.1);
+ const active=fx.effects.get('effect')!.players.filter(p=>p.active);
+ expect(active.filter(p=>p.target==='a')).toHaveLength(7);expect(active.find(p=>p.target==='b')!.born).toBe(.1);
+ fx.emit('effect','hit','c',.2);expect(active.filter(p=>p.target==='a')).toHaveLength(6);expect(active.find(p=>p.target==='b')!.born).toBe(.1);expect(active.find(p=>p.target==='c')!.born).toBe(.2);fx.dispose();
+});
