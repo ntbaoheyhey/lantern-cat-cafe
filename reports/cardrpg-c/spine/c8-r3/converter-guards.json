@@ -1,0 +1,17 @@
+[
+  {
+    "case": "unaccepted artwork",
+    "rejected": true,
+    "reason": "Published artwork gate is not complete"
+  },
+  {
+    "case": "gate belongs to another PSD",
+    "rejected": true,
+    "reason": "Artwork gates refer to a different PSD revision"
+  },
+  {
+    "case": "source-folder output",
+    "rejected": true,
+    "reason": "Output must be outside the read-only source package"
+  }
+]

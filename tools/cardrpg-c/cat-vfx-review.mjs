@@ -9,7 +9,9 @@ if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid output tag');
 const out=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
 const slots=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8'));
 const ultimates=process.argv.includes('--ultimates');
-const selected=ultimates?['mochi-4','panko-4']:['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4','soot-4'];
+const only=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',');
+if(only?.some(id=>!slots.units.some(u=>u.side==='party'&&u.skills.some(s=>s.id===id))))throw Error('Unknown cat skill');
+const selected=only??(ultimates?['mochi-4','panko-4']:['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4','soot-4']);
 const scenarios=outcomes?[{id:'marigold-3',variant:'resist'},{id:'inkcap-2',variant:'immune'},{id:'inkcap-4',variant:'both'},
  {id:'inkcap-4',variant:'boss'},{id:'cinnamon-1',variant:'resist'}]:[...slots.units.filter(u=>u.side==='party').flatMap(u=>u.skills.map(s=>({id:s.id,variant:'default'}))),
  {id:'clover-1',variant:'self'},{id:'marigold-3',variant:'resist'},{id:'cinnamon-4',variant:'team'},{id:'clover-1',variant:'reflect'}];
@@ -24,6 +26,7 @@ try{
  for(const [width,height]of [[1280,720],[1440,900]]){
   await page.setViewportSize({width,height});
   for(const scenario of scenarios)for(const reduced of [false,true])for(const speed of [1,2,3]){
+   if(only&&!only.includes(scenario.id))continue;
    if(ultimates&&(!scenario.id.endsWith('-4')||scenario.variant!=='default'))continue;
    if(completed.has(key({width,scenario,reduced,speed})))continue;
    if(process.argv.includes('--focus')&&!selected.includes(scenario.id))continue;

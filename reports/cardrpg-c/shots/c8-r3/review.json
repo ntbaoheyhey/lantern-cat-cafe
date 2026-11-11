@@ -1,0 +1,806 @@
+{
+  "method": "Deterministic presentation fixtures; no gameplay/timing claim.",
+  "shots": [
+    {
+      "name": "normal",
+      "width": 1280,
+      "height": 720,
+      "renderer": "spine-threejs",
+      "orthographic": true,
+      "zoom": 1,
+      "stage": {
+        "source": "painted",
+        "layers": 3,
+        "textureSize": [
+          2048,
+          1024
+        ],
+        "offsets": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cache": {
+        "skeletons": 4,
+        "sequences": 0
+      },
+      "events": [],
+      "labels": {
+        "heads": [
+          {
+            "x": 90.63414981935658,
+            "y": 263.3435888986237,
+            "width": 128.06193316163848,
+            "height": 128.65641152312253
+          },
+          {
+            "x": 268.98435609748213,
+            "y": 278.1777754035132,
+            "width": 114.83128549511247,
+            "height": 130.9722248438776
+          },
+          {
+            "x": 456.2292832754934,
+            "y": 244.01195869391668,
+            "width": 98.74143185942631,
+            "height": 133.2880414328586
+          },
+          {
+            "x": 769.3069231850116,
+            "y": 227.9128193036912,
+            "width": 150.98615889228643,
+            "height": 154.28718060178983
+          }
+        ],
+        "cards": [
+          {
+            "x": 776.2797837136302,
+            "y": 167.36821387794268,
+            "width": 138,
+            "height": 52
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "stats": {
+        "frames": 6,
+        "calls": 60,
+        "triangles": 1110,
+        "geometries": 9,
+        "textures": 8,
+        "particles": 0,
+        "estimatedGpuBytes": 0,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "high"
+      },
+      "vfx": {
+        "active": 0,
+        "peak": 0,
+        "dropped": 0,
+        "draws": 0,
+        "impacts": 0,
+        "cues": 0,
+        "allocated": 256,
+        "maskedFaces": 4,
+        "override": 0
+      },
+      "cinematic": {
+        "ultimateVisible": false,
+        "actorId": "",
+        "box": null,
+        "phaseVisible": false,
+        "phaseText": "",
+        "phaseBox": null,
+        "focus": 0
+      },
+      "units": [
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.0000050409977,
+          "footprint": 509.6342238065206,
+          "box": {
+            "x": 90.63414981935658,
+            "y": 263.3435888986237,
+            "width": 128.06193316163848,
+            "height": 128.65641152312253
+          },
+          "ratio": 0.2625641051492297,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.000001564247,
+          "footprint": 379.2959422541195,
+          "box": {
+            "x": 456.2292832754934,
+            "y": 244.01195869391668,
+            "width": 98.74143185942631,
+            "height": 133.2880414328586
+          },
+          "ratio": 0.2720164110874665,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "side": "party",
+          "kind": "cat",
+          "height": 511.9999968837681,
+          "footprint": 448.9014207839889,
+          "box": {
+            "x": 268.98435609748213,
+            "y": 278.1777754035132,
+            "width": 114.83128549511247,
+            "height": 130.9722248438776
+          },
+          "ratio": 0.26729025478342366,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-0-button-guard",
+          "asset": "button-guard",
+          "side": "enemy",
+          "kind": "standard",
+          "height": 614.0000044356942,
+          "footprint": 600.8632853876704,
+          "box": {
+            "x": 769.3069231850116,
+            "y": 227.9128193036912,
+            "width": 150.98615889228643,
+            "height": 154.28718060178983
+          },
+          "ratio": 0.31487179714650987,
+          "source": "placeholder",
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "name": "boss",
+      "width": 1280,
+      "height": 720,
+      "renderer": "spine-threejs",
+      "orthographic": true,
+      "zoom": 1,
+      "stage": {
+        "source": "painted",
+        "layers": 3,
+        "textureSize": [
+          2048,
+          1024
+        ],
+        "offsets": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cache": {
+        "skeletons": 6,
+        "sequences": 0
+      },
+      "events": [],
+      "labels": {
+        "heads": [
+          {
+            "x": 90.63414981935658,
+            "y": 263.3435888986237,
+            "width": 128.06193316163848,
+            "height": 128.65641152312253
+          },
+          {
+            "x": 268.98435609748213,
+            "y": 278.1777754035132,
+            "width": 114.83128549511247,
+            "height": 130.9722248438776
+          },
+          {
+            "x": 456.2292832754934,
+            "y": 244.01195869391668,
+            "width": 98.74143185942631,
+            "height": 133.2880414328586
+          },
+          {
+            "x": 838.7785276297893,
+            "y": 160.3179460289123,
+            "width": 255.24294457505698,
+            "height": 231.68205215143897
+          },
+          {
+            "x": 1061.8689008820847,
+            "y": 310.4589745406753,
+            "width": 77.86220042351056,
+            "height": 115.841025770812
+          },
+          {
+            "x": 1177.068900882085,
+            "y": 256.55897454067525,
+            "width": 77.86220042351033,
+            "height": 115.84102577081194
+          }
+        ],
+        "cards": [
+          {
+            "x": 898.1966965827575,
+            "y": 99.19441129981436,
+            "width": 138,
+            "height": 52
+          },
+          {
+            "x": 1137,
+            "y": 196.03160162540152,
+            "width": 138,
+            "height": 52
+          },
+          {
+            "x": 1103,
+            "y": 137,
+            "width": 138,
+            "height": 52
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "stats": {
+        "frames": 11,
+        "calls": 66,
+        "triangles": 1162,
+        "geometries": 11,
+        "textures": 10,
+        "particles": 0,
+        "estimatedGpuBytes": 0,
+        "loaded": 6,
+        "hiddenFrames": 0,
+        "quality": "high"
+      },
+      "vfx": {
+        "active": 0,
+        "peak": 0,
+        "dropped": 0,
+        "draws": 0,
+        "impacts": 0,
+        "cues": 0,
+        "allocated": 256,
+        "maskedFaces": 6,
+        "override": 0
+      },
+      "cinematic": {
+        "ultimateVisible": false,
+        "actorId": "",
+        "box": null,
+        "phaseVisible": false,
+        "phaseText": "",
+        "phaseBox": null,
+        "focus": 0
+      },
+      "units": [
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.0000050409977,
+          "footprint": 509.6342238065206,
+          "box": {
+            "x": 90.63414981935658,
+            "y": 263.3435888986237,
+            "width": 128.06193316163848,
+            "height": 128.65641152312253
+          },
+          "ratio": 0.2625641051492297,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.000001564247,
+          "footprint": 379.2959422541195,
+          "box": {
+            "x": 456.2292832754934,
+            "y": 244.01195869391668,
+            "width": 98.74143185942631,
+            "height": 133.2880414328586
+          },
+          "ratio": 0.2720164110874665,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "side": "party",
+          "kind": "cat",
+          "height": 511.9999968837681,
+          "footprint": 448.9014207839889,
+          "box": {
+            "x": 268.98435609748213,
+            "y": 278.1777754035132,
+            "width": 114.83128549511247,
+            "height": 130.9722248438776
+          },
+          "ratio": 0.26729025478342366,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "asset": "binding-thread",
+          "side": "enemy",
+          "kind": "small",
+          "height": 461.0000005164966,
+          "footprint": 309.8597771956028,
+          "box": {
+            "x": 1061.8689008820847,
+            "y": 310.4589745406753,
+            "width": 77.86220042351056,
+            "height": 115.841025770812
+          },
+          "ratio": 0.23641025667512652,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "asset": "binding-thread",
+          "side": "enemy",
+          "kind": "small",
+          "height": 461.0000005164966,
+          "footprint": 309.8597771956028,
+          "box": {
+            "x": 1177.068900882085,
+            "y": 256.55897454067525,
+            "width": 77.86220042351033,
+            "height": 115.84102577081194
+          },
+          "ratio": 0.2364102566751264,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "asset": "yarn-giant",
+          "side": "enemy",
+          "kind": "boss",
+          "height": 922.0000034598079,
+          "footprint": 1015.7627386150228,
+          "box": {
+            "x": 838.7785276297893,
+            "y": 160.3179460289123,
+            "width": 255.24294457505698,
+            "height": 231.68205215143897
+          },
+          "ratio": 0.4728205145947734,
+          "source": "placeholder",
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "name": "normal",
+      "width": 1440,
+      "height": 900,
+      "renderer": "spine-threejs",
+      "orthographic": true,
+      "zoom": 1,
+      "stage": {
+        "source": "painted",
+        "layers": 3,
+        "textureSize": [
+          2048,
+          1024
+        ],
+        "offsets": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cache": {
+        "skeletons": 6,
+        "sequences": 0
+      },
+      "events": [],
+      "labels": {
+        "heads": [
+          {
+            "x": 86.70383750809981,
+            "y": 360.0820501266895,
+            "width": 175.10509228224038,
+            "height": 175.9179504499839
+          },
+          {
+            "x": 288.69289507206736,
+            "y": 380.36552963337516,
+            "width": 157.01420669739872,
+            "height": 179.08447070489382
+          },
+          {
+            "x": 501.29310162159294,
+            "y": 333.6490047447432,
+            "width": 135.01379458329717,
+            "height": 182.2509954286026
+          },
+          {
+            "x": 847.1747725182811,
+            "y": 311.6358957825982,
+            "width": 206.45046215884054,
+            "height": 210.9641040881616
+          }
+        ],
+        "cards": [
+          {
+            "x": 882.0560307921066,
+            "y": 246.4830679555543,
+            "width": 138,
+            "height": 52
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "stats": {
+        "frames": 14,
+        "calls": 60,
+        "triangles": 1110,
+        "geometries": 9,
+        "textures": 10,
+        "particles": 0,
+        "estimatedGpuBytes": 0,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "high"
+      },
+      "vfx": {
+        "active": 0,
+        "peak": 0,
+        "dropped": 0,
+        "draws": 0,
+        "impacts": 0,
+        "cues": 0,
+        "allocated": 256,
+        "maskedFaces": 4,
+        "override": 0
+      },
+      "cinematic": {
+        "ultimateVisible": false,
+        "actorId": "",
+        "box": null,
+        "phaseVisible": false,
+        "phaseText": "",
+        "phaseBox": null,
+        "focus": 0
+      },
+      "units": [
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.0000050409977,
+          "footprint": 509.6342238065206,
+          "box": {
+            "x": 86.70383750809981,
+            "y": 360.0820501266895,
+            "width": 175.10509228224038,
+            "height": 175.9179504499839
+          },
+          "ratio": 0.2625641051492297,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.000001564247,
+          "footprint": 379.2959422541195,
+          "box": {
+            "x": 501.29310162159294,
+            "y": 333.6490047447432,
+            "width": 135.01379458329717,
+            "height": 182.2509954286026
+          },
+          "ratio": 0.2720164110874666,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "side": "party",
+          "kind": "cat",
+          "height": 511.9999968837681,
+          "footprint": 448.9014207839889,
+          "box": {
+            "x": 288.69289507206736,
+            "y": 380.36552963337516,
+            "width": 157.01420669739872,
+            "height": 179.08447070489382
+          },
+          "ratio": 0.2672902547834236,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-0-button-guard",
+          "asset": "button-guard",
+          "side": "enemy",
+          "kind": "standard",
+          "height": 614.0000044356942,
+          "footprint": 600.8632853876704,
+          "box": {
+            "x": 847.1747725182811,
+            "y": 311.6358957825982,
+            "width": 206.45046215884054,
+            "height": 210.9641040881616
+          },
+          "ratio": 0.31487179714650987,
+          "source": "placeholder",
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "name": "boss",
+      "width": 1440,
+      "height": 900,
+      "renderer": "spine-threejs",
+      "orthographic": true,
+      "zoom": 1,
+      "stage": {
+        "source": "painted",
+        "layers": 3,
+        "textureSize": [
+          2048,
+          1024
+        ],
+        "offsets": [
+          0,
+          0,
+          0
+        ]
+      },
+      "cache": {
+        "skeletons": 6,
+        "sequences": 0
+      },
+      "events": [],
+      "labels": {
+        "heads": [
+          {
+            "x": 86.70383750809981,
+            "y": 360.0820501266895,
+            "width": 175.10509228224038,
+            "height": 175.9179504499839
+          },
+          {
+            "x": 288.69289507206736,
+            "y": 380.36552963337516,
+            "width": 157.01420669739872,
+            "height": 179.08447070489382
+          },
+          {
+            "x": 501.29310162159294,
+            "y": 333.6490047447432,
+            "width": 135.01379458329717,
+            "height": 182.2509954286026
+          },
+          {
+            "x": 912.6971704325691,
+            "y": 219.21025273341073,
+            "width": 349.00565890875134,
+            "height": 316.7897447784982
+          },
+          {
+            "x": 1185.1676807979527,
+            "y": 424.5051284535764,
+            "width": 106.4646413954124,
+            "height": 158.39487197233473
+          },
+          {
+            "x": 1314.7676807979528,
+            "y": 350.8051284535764,
+            "width": 106.46464139541217,
+            "height": 158.39487197233467
+          }
+        ],
+        "cards": [
+          {
+            "x": 1019.2893606335665,
+            "y": 153.26582769566454,
+            "width": 138,
+            "height": 52
+          },
+          {
+            "x": 1297,
+            "y": 285.6758634469776,
+            "width": 138,
+            "height": 52
+          },
+          {
+            "x": 1283,
+            "y": 221,
+            "width": 138,
+            "height": 52
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "stats": {
+        "frames": 17,
+        "calls": 66,
+        "triangles": 1162,
+        "geometries": 11,
+        "textures": 10,
+        "particles": 0,
+        "estimatedGpuBytes": 0,
+        "loaded": 6,
+        "hiddenFrames": 0,
+        "quality": "high"
+      },
+      "vfx": {
+        "active": 0,
+        "peak": 0,
+        "dropped": 0,
+        "draws": 0,
+        "impacts": 0,
+        "cues": 0,
+        "allocated": 256,
+        "maskedFaces": 6,
+        "override": 0
+      },
+      "cinematic": {
+        "ultimateVisible": false,
+        "actorId": "",
+        "box": null,
+        "phaseVisible": false,
+        "phaseText": "",
+        "phaseBox": null,
+        "focus": 0
+      },
+      "units": [
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.0000050409977,
+          "footprint": 509.6342238065206,
+          "box": {
+            "x": 86.70383750809981,
+            "y": 360.0820501266895,
+            "width": 175.10509228224038,
+            "height": 175.9179504499839
+          },
+          "ratio": 0.2625641051492297,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "side": "party",
+          "kind": "cat",
+          "height": 512.000001564247,
+          "footprint": 379.2959422541195,
+          "box": {
+            "x": 501.29310162159294,
+            "y": 333.6490047447432,
+            "width": 135.01379458329717,
+            "height": 182.2509954286026
+          },
+          "ratio": 0.2720164110874666,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "side": "party",
+          "kind": "cat",
+          "height": 511.9999968837681,
+          "footprint": 448.9014207839889,
+          "box": {
+            "x": 288.69289507206736,
+            "y": 380.36552963337516,
+            "width": 157.01420669739872,
+            "height": 179.08447070489382
+          },
+          "ratio": 0.2672902547834236,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "asset": "yarn-giant",
+          "side": "enemy",
+          "kind": "boss",
+          "height": 922.0000034598079,
+          "footprint": 1015.7627386150228,
+          "box": {
+            "x": 912.6971704325691,
+            "y": 219.21025273341073,
+            "width": 349.00565890875134,
+            "height": 316.7897447784982
+          },
+          "ratio": 0.4728205145947734,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "asset": "binding-thread",
+          "side": "enemy",
+          "kind": "small",
+          "height": 461.0000005164966,
+          "footprint": 309.8597771956028,
+          "box": {
+            "x": 1185.1676807979527,
+            "y": 424.5051284535764,
+            "width": 106.4646413954124,
+            "height": 158.39487197233473
+          },
+          "ratio": 0.23641025667512647,
+          "source": "placeholder",
+          "fallback": false
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "asset": "binding-thread",
+          "side": "enemy",
+          "kind": "small",
+          "height": 461.0000005164966,
+          "footprint": 309.8597771956028,
+          "box": {
+            "x": 1314.7676807979528,
+            "y": 350.8051284535764,
+            "width": 106.46464139541217,
+            "height": 158.39487197233467
+          },
+          "ratio": 0.23641025667512638,
+          "source": "placeholder",
+          "fallback": false
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "cache": {
+    "sharedData": true,
+    "separateStates": true,
+    "mix": 0.15,
+    "fallback": "puppet"
+  },
+  "events": [
+    {
+      "actorId": "mochi",
+      "name": "hit",
+      "fallback": false,
+      "skillId": "mochi-1",
+      "elapsed": 742
+    }
+  ],
+  "reduced": {
+    "zoom": 1,
+    "x": 0,
+    "y": 0
+  }
+}

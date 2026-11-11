@@ -68,3 +68,5 @@
 2026-11-11T18:45:25.764282+00:00 resume: user says continue; handoff identified roster focus clipping. Final18browser/12capture receipt already PASS after8px scroll padding; preserved2244webtests/types/lint, inspected all captures and completed checkpoint without replaying accepted work.
 
 2026-11-11T19:08:07.951286+00:00 resume: user says continue; handoff identifies passing health/row checks. Preserved unfinished patch and116browser/15tests/types/lintPASS; inspected28finalviews without rerunning accepted work. ContinueC8/C11.
+
+2026-11-11 resume19:25UTC: continue from uncommitted Mochi V3 converter and derived r3 assets. Published artwork gates report PASS; preserve source hashes and earlier accepted work. Final designer runtime export remains absent; validate temporary rig before manifest/demo adoption.

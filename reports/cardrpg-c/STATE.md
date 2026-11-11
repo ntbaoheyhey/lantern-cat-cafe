@@ -4,9 +4,11 @@ Prompt bytes: 19078
 Base A6: ef4aee790 (clean, fetched origin equal; includes Q54 and B d5c34d233).
 Branch: codex/cardrpg-c-2026-11-11
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/439 (draft; base A6)
-Active: C11 preparation health verified;116browser/28views/15tests/types/lintPASS. Next preparation/loss clarity;C8/C11continuous.
+Active: C8 MochiV3 r3 verified;26tests/3guards/48combat/48offline/types/lintPASS. Demo29619392bytes;final designer0/25. Next C11 preparation/loss clarity.
 Designer accepted: 0/25 (inbox empty); contract25units /74skills /18statuses.
 All70001–70500 consumed across3rounds. Ledger guards overlap. No fourth round or A6 acceptance reruns.
 Report:2026-11-20 06:00UTC; hard stop:2026-11-20 12:00UTC.
 
 2026-11-11T19:08:07.951286+00:00 C11 preparation health:116browser/10keyboard/28views/15tests/types/lintPASS. Designer0/25;no accepted work rerun.
+
+2026-11-11T19:33:01.991715+00:00 C8 MochiV3 temporary rig and offline demo accepted;originals unchanged;final designer0/25.

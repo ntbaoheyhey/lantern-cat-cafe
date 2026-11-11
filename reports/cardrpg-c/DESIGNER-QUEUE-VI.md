@@ -4,7 +4,7 @@ Thử trước Mochi. Đợt 1: Soot, Clover, Button Guard, Sock Skipper, Yarn G
 
 | Wave | Unit | Role | Size / height | Original concept | PSD (read-only) | Skills shown |
 |---|---|---|---|---|---|---|
-| Pilot | mochi | guardian | cat / 512 | assets/source/look-v3/concepts/mochi.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.psd | Door knock; Warm welcome; Apron crossing; Last light shelter |
+| Pilot | mochi | guardian | cat / 512 | assets/source/look-v3/concepts/mochi.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-rig-3-4-right.psd | Door knock; Warm welcome; Apron crossing; Last light shelter |
 | 1 | soot | hexer | cat / 512 | assets/source/look-v3/concepts/soot.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/soot-3-4.psd | Cocoa spark; Black cup; Lantern wick; Midnight service |
 | 1 | clover | healer | cat / 512 | assets/source/look-v3/concepts/clover.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/clover-3-4.psd | Leaf tap; Patient steep; Clearleaf rinse; Greenhouse morning |
 | 2 | panko | guardian | cat / 512 | assets/source/look-v3/concepts/panko.png | /Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/panko-3-4.psd | Pan reply; Bread cover; Crust return; Oven door |

@@ -1,0 +1,7069 @@
+{
+  "method": "Legal A6/V5 cat choices on isolated seed71 fixtures (not progression or balance samples), 3 enemies, both sizes/motion modes/x1-x3. Includes weakest-self, resist, revive/team-heal and reflection.",
+  "cases": [
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 118,
+        "peak": 48,
+        "impacts": 2,
+        "shake": 3.2799531562464623,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 616.6666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.87905551709764,
+            "y": 179.25320465246608,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 784.3716012813015,
+            "y": 122.48701507774732,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 967.5481585210091,
+            "y": 185.29863995494736,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 86,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0.9354219405057338,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.58185782348701,
+            "y": 179.2489959806469,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 786.2720851300246,
+            "y": 122.63504174005229,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 969.1805747727658,
+            "y": 185.41607369680793,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 116,
+        "peak": 48,
+        "impacts": 2,
+        "shake": 1.717868986853209,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 48,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.58185782348701,
+            "y": 179.2489959806469,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 785.2331402320735,
+            "y": 122.48701512792599,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 968.4096973758501,
+            "y": 185.29863999474304,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 88,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 616.6666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.87905551709764,
+            "y": 179.25320465246608,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 784.3716012813015,
+            "y": 122.48701507774732,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 967.5481585210091,
+            "y": 185.29863995494736,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 86,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.58185782348701,
+            "y": 179.2489959806469,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 786.2720851300246,
+            "y": 122.63504174005229,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 969.1805747727658,
+            "y": 185.41607369680793,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 86,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.58185782348701,
+            "y": 179.2489959806469,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 785.2331402320735,
+            "y": 122.48701512792599,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 968.4096973758501,
+            "y": 185.29863999474304,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 9,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.25987611104478,
+            "y": 148.83064960441726,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 110,
+        "peak": 41,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 41,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.29137102597184,
+            "y": 148.85993863966706,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.25987611104478,
+            "y": 148.83064960441726,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 9,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.25987611104478,
+            "y": 148.83064960441726,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.29137102597184,
+            "y": 148.85993863966706,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 250.25987611104478,
+            "y": 148.83064960441726,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 6,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.64939767918997,
+            "y": 111.24574383317014,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.01005325116509,
+            "y": 111.24243850043041,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 105,
+        "peak": 37,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 37,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.64939767918997,
+            "y": 111.24574383317014,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 6,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.64939767918997,
+            "y": 111.24574383317014,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 80.01005325116509,
+            "y": 111.24243850043041,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 79.64939767918997,
+            "y": 111.24574383317014,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1.083180242965547,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1116.666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 5.708696305504262,
+            "y": 146.59127863319333,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 189.29272797245574,
+            "y": 150.7825424573859,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 383.58408148285093,
+            "y": 113.49201582153972,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1.0831834633294954,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1100.0000000000002,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 5.788766397079641,
+            "y": 146.5916390473173,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 189.27654601557015,
+            "y": 150.7666379923187,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 383.5719619839575,
+            "y": 113.4750695193786,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 122,
+        "peak": 51,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 51,
+        "zoom": 1.0831834633294954,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1100,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 5.788766397079641,
+            "y": 146.5916390473173,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 189.27654601557015,
+            "y": 150.7666379923187,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 383.5719619839575,
+            "y": 113.4750695193786,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1116.666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 81.07335225485764,
+            "y": 145.24039835238466,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 250.5594861270306,
+            "y": 149.10980406894174,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 429.9306986026767,
+            "y": 114.68291447413927,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1100.0000000000002,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 81.14692485758013,
+            "y": 145.24068280477996,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 250.5436945003558,
+            "y": 149.09506120543256,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 429.9181241756031,
+            "y": 114.66731213482453,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 92,
+        "peak": 21,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 21,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1100,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 81.14692485758013,
+            "y": 145.24068280477996,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 250.5436945003558,
+            "y": 149.09506120543256,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 429.9181241756031,
+            "y": 114.66731213482453,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 88,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 3.2799531562464623,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 616.6666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.5489126458275,
+            "y": 275.2237696268413,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 895.324434405045,
+            "y": 202.01285735120553,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1100.810747365461,
+            "y": 287.89814034656064,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 116,
+        "peak": 48,
+        "impacts": 2,
+        "shake": 0.9354219405057338,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 48,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 100.50988722803328,
+            "y": 275.2180149123131,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 897.9230551777887,
+            "y": 202.21526115476536,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1103.0428267301086,
+            "y": 288.0587130140027,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 116,
+        "peak": 48,
+        "impacts": 2,
+        "shake": 1.717868986853209,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 48,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 100.50988722803328,
+            "y": 275.2180149123131,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 896.5024570520188,
+            "y": 202.01285741981718,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1101.9887698812643,
+            "y": 287.8981404009752,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 88,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 616.6666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.5489126458275,
+            "y": 275.2237696268413,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 895.324434405045,
+            "y": 202.01285735120553,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1100.810747365461,
+            "y": 287.89814034656064,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 86,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 100.50988722803328,
+            "y": 275.2180149123131,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 897.9230551777887,
+            "y": 202.21526115476536,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1103.0428267301086,
+            "y": 288.0587130140027,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-1",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "hostile": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": true,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard",
+              "foe-1-binding-thread",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-0-button-guard"
+            ],
+            "amount": 53
+          },
+          {
+            "type": "damage",
+            "actor": "mochi",
+            "targets": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 23
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 18
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "primary": [
+          "foe-0-button-guard",
+          "foe-1-binding-thread"
+        ],
+        "healing": [],
+        "shields": [
+          "mochi"
+        ],
+        "draws": 86,
+        "peak": 18,
+        "impacts": 2,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 600,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "foe-0-button-guard": 1,
+          "foe-1-binding-thread": 1,
+          "mochi": 1
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 100.50988722803328,
+            "y": 275.2180149123131,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-0-button-guard",
+            "x": 896.5024570520188,
+            "y": 202.01285741981718,
+            "width": 150,
+            "height": 34
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "x": 1101.9887698812643,
+            "y": 287.8981404009752,
+            "width": 150,
+            "height": 34
+          }
+        ],
+        "numbers": [
+          {
+            "id": "foe-0-button-guard",
+            "text": "−53"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "text": "−23"
+          },
+          {
+            "id": "mochi",
+            "text": "◇18"
+          }
+        ],
+        "hurt": [
+          "foe-1-binding-thread",
+          "foe-0-button-guard"
+        ]
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 110,
+        "peak": 41,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 9,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.64105509061216,
+            "y": 246.1153780305297,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.68411956612476,
+            "y": 246.15542630321823,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.64105509061216,
+            "y": 246.1153780305297,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 9,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.64105509061216,
+            "y": 246.1153780305297,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.68411956612476,
+            "y": 246.15542630321823,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-2",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "soot"
+        ],
+        "heal": [],
+        "shield": [
+          "soot"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 70
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "soot"
+        ],
+        "primary": [
+          "soot"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 80,
+        "peak": 11,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 11,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "soot": 2
+        },
+        "lanes": [
+          {
+            "id": "soot",
+            "x": 290.64105509061216,
+            "y": 246.1153780305297,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "soot",
+            "text": "◇70"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 6,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.23489070419859,
+            "y": 207.21356809841632,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.72803199649104,
+            "y": 207.20904856181306,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.23489070419859,
+            "y": 207.21356809841632,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 6,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 699.9999999999998,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.23489070419859,
+            "y": 207.21356809841632,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 666.6666666666667,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.72803199649104,
+            "y": 207.20904856181306,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-3",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 55
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 1
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi"
+        ],
+        "primary": [
+          "mochi"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 75,
+        "peak": 7,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 7,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 700,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 3
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 99.23489070419859,
+            "y": 207.21356809841632,
+            "width": 150,
+            "height": 102
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇55"
+          },
+          {
+            "id": "mochi",
+            "text": "Link"
+          },
+          {
+            "id": "mochi",
+            "text": "Shelter"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 104,
+        "peak": 33,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1.0565046512061458,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1116.666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 32.6390207852411,
+            "y": 242.4610158894131,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 233.23628613289753,
+            "y": 248.0507918929926,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 446.47495879666735,
+            "y": 198.31741797682037,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 104,
+        "peak": 33,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1.0565083748896653,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1100.0000000000002,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 32.745867534165015,
+            "y": 242.46150950226183,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 233.21474312161848,
+            "y": 248.0295965438737,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 446.4588149616766,
+            "y": 198.29480573053257,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": false,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 122,
+        "peak": 51,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 51,
+        "zoom": 1.0565083748896653,
+        "offsets": [
+          2.6,
+          5.2,
+          7.800000000000001
+        ],
+        "last": 1100,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 32.745867534165015,
+            "y": 242.46150950226183,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 233.21474312161848,
+            "y": 248.0295965438737,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 446.4588149616766,
+            "y": 198.29480573053257,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 1,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1116.666666666666,
+        "step": 16.666666666666668,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 101.18193063419315,
+            "y": 241.20625897162796,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 291.0507259287969,
+            "y": 246.49707903304278,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 492.8848327832518,
+            "y": 199.42357693402715,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 2,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 89,
+        "peak": 18,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 18,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1100.0000000000002,
+        "step": 33.333333333333336,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 101.28252990730343,
+            "y": 241.20664791673994,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 291.0291332964049,
+            "y": 246.47692042375473,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 492.86763917888584,
+            "y": 199.4022431231274,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scenario": {
+        "id": "mochi-4",
+        "variant": "default"
+      },
+      "reduced": true,
+      "speed": 3,
+      "setup": {
+        "expected": [],
+        "actor": "mochi",
+        "patient": "soot",
+        "enemy": "foe-0-button-guard",
+        "damage": [],
+        "hostile": [],
+        "friendly": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "heal": [],
+        "shield": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "anyDamage": false,
+        "events": [
+          {
+            "type": "action_start",
+            "actor": "mochi",
+            "targets": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "mochi"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "soot"
+            ],
+            "amount": 2
+          },
+          {
+            "type": "status_expire",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "type": "shield",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 130
+          },
+          {
+            "type": "status_apply",
+            "actor": "mochi",
+            "targets": [
+              "clover"
+            ],
+            "amount": 2
+          }
+        ]
+      },
+      "contact": {
+        "expected": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "primary": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "healing": [],
+        "shields": [],
+        "draws": 92,
+        "peak": 21,
+        "impacts": 0,
+        "shake": 0,
+        "opaque": 0,
+        "overlaps": 0,
+        "active": 21,
+        "zoom": 1,
+        "offsets": [
+          0,
+          0,
+          0
+        ],
+        "last": 1100,
+        "step": 50,
+        "collisions": 0,
+        "escaped": 0,
+        "rows": {
+          "mochi": 2,
+          "soot": 2,
+          "clover": 2
+        },
+        "lanes": [
+          {
+            "id": "mochi",
+            "x": 101.28252990730343,
+            "y": 241.20664791673994,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "soot",
+            "x": 291.0291332964049,
+            "y": 246.47692042375473,
+            "width": 150,
+            "height": 68
+          },
+          {
+            "id": "clover",
+            "x": 492.86763917888584,
+            "y": 199.4022431231274,
+            "width": 150,
+            "height": 68
+          }
+        ],
+        "numbers": [
+          {
+            "id": "mochi",
+            "text": "◇130"
+          },
+          {
+            "id": "mochi",
+            "text": "Warm"
+          },
+          {
+            "id": "soot",
+            "text": "◇130"
+          },
+          {
+            "id": "soot",
+            "text": "Warm"
+          },
+          {
+            "id": "clover",
+            "text": "◇130"
+          },
+          {
+            "id": "clover",
+            "text": "Warm"
+          }
+        ],
+        "hurt": []
+      },
+      "tail": {
+        "dropped": 0,
+        "late": 0,
+        "hits": 1,
+        "unchanged": true
+      }
+    }
+  ],
+  "shots": [
+    {
+      "file": "mochi-1-default-motion-1280.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "mochi-2-default-motion-1280.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "mochi-3-default-motion-1280.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "mochi-4-default-motion-1280.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "mochi-1-default-motion-1440.webp",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "mochi-2-default-motion-1440.webp",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "mochi-3-default-motion-1440.webp",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "mochi-4-default-motion-1440.webp",
+      "width": 1440,
+      "height": 900
+    }
+  ],
+  "errors": [],
+  "complete": true
+}

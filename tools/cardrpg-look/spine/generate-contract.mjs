@@ -51,7 +51,7 @@ try {
       animations:Object.keys(config.animations).filter(name=>!config.animations[name].bossOnly||tier==='boss'),
       budgets:{bones:tier==='boss'?80:40,meshVertices:tier==='boss'?800:400,clipping:1,atlasPage:config.atlasMax},
       skills, concept:`assets/source/look-v3/concepts/${unit.id}.png`,
-      psd:unit.id==='mochi'?'/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-3-4.psd':`/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/${unit.id}-3-4.psd`,
+      psd:unit.id==='mochi'?'/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/01-PILOT-mochi/mochi-rig-3-4-right.psd':`/Users/bao/Desktop/TaskbarHero-PSD-cho-designer-2026-11-11/<published-wave>/${unit.id}-3-4.psd`,
       placeholder:accepted?.placeholder ?? {skeleton:`${folder}/placeholder/${unit.id}.json`,atlas:`${folder}/placeholder/${unit.id}.atlas`,scale:1},
       designer:accepted?.designer ?? null,
       sequence:accepted?.sequence ?? null,

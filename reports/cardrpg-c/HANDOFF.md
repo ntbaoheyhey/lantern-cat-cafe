@@ -1,5 +1,5 @@
 # Lane C handoff
-NOW: C11 preparation health verified; continue preparation/loss clarity and intake.
+NOW: C8 MochiV3 temporary rig verified; continue C11 preparation/loss clarity.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
 NEXT1: check designer inbox; inspect remaining preparation/loss decisions.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
@@ -11,14 +11,14 @@ KNOWN: same-node recovery2/4(completed1/1,earlyfallback1/3);not population evide
 KNOWN: two full421E2E PASS before later C11 work; do not claim fullsuite on current head.
 KNOWN:70001–70500 consumed once/3rounds;normal34.5s,boss69.16/p9082.16;no fourth round.
 KNOWN:88%1–3losses/recovery83.67%;PARTIALfirstloss11.61min/normalHP94%/ult74–96%.
-KNOWN:25placeholders/206clips;74skills/18statuses;Mochi117layers/33bones/1024PMA/512height,sourcePARTIALjoints/eye.
+KNOWN:MochiV3 active r3:115layers/32bones/333vertices/1024PMA/512height;source artworkPASS,final runtime pending.
 KNOWN:designer0/25,inbox empty;license/tool/version unresolved;PNG path ready;sources untouched.
 KNOWN:C11 stage/VFX/intake/cache/HUD/upgrades/Bag/preparation/pantry/route fixes preserved; see C11-*-RECEIPT.md.
-KNOWN:VFX forced-redraw4differences remainPARTIAL;realPausePlayPASS;latest offlinep9516.8/16.7ms,57drawsample.
+KNOWN:VFX forced-redraw4old differences remainPARTIAL;R3 targeted48offline/6PausePlayPASS,p9516.8/16.7ms,101drawsample.
 KNOWN:reward54browser/26keyboard/77tests/types/lint/28viewsPASS;20%copy/exhaustedpooladvance.
 KNOWN:Tower142browser/20keyboard/47captures;Events78/6/30 plus28notechecks;26tests/types/lintPASS.
 KNOWN:completion opens newest owned matching template (save lacks dropIDs);conversions readable;A6floor30cap/legacy31PASS.
-KNOWN:staticdemo29,226,665bytes unchanged;score7.79 retained;no new balance/performance claim.
+KNOWN:demo29,619,392bytes;score7.79;R3:26tests/3negativeguards/48combat/48offline/28viewsPASS;C8-R3-RECEIPT.
 KNOWN:no main/deploy/live-contract changes. Original C5 misses and final designer acceptance remain open.
 KNOWN:milestones302browser/28keyboard/68finalviews;48Discoveries checks validate whole-card fit;23web+25rules/types/lintPASS.
 KNOWN:daily258browser/74keyboard +120style/18keyboard;44+24views,13web+7rules/types/lintPASS.

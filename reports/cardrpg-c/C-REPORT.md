@@ -1,6 +1,6 @@
 # Báo cáo lane C — bản đang cập nhật ngày 11/11/2026
 
-Đã hoàn thành C0–C7, C9 và C10. Demo offline 29,23 MB; hai lần full E2E trước các sửa C11 mới đều 421/421, không phải toàn bộ head hiện tại. Pipeline, sân 2D và VFX đã có bằng chứng chạy được, nhưng gameplay chưa đạt các mục tiêu về thua đầu, độ căng trận thường và độ dài boss trong tài khoản click thật. C11 đã có lượt 30 phút sạch và điểm tự chấm mới nhất 7,79/10; bản này chưa phải báo cáo chốt ngày 20/11.
+Đã hoàn thành C0–C7, C9 và C10. Demo offline 29,62 MB; hai lần full E2E trước các sửa C11 mới đều 421/421, không phải toàn bộ head hiện tại. Pipeline, sân 2D và VFX đã có bằng chứng chạy được, nhưng gameplay chưa đạt các mục tiêu về thua đầu, độ căng trận thường và độ dài boss trong tài khoản click thật. C11 đã có lượt 30 phút sạch và điểm tự chấm mới nhất 7,79/10; bản này chưa phải báo cáo chốt ngày 20/11.
 
 Nền A6 `ef4aee790` (gồm Q54 và B `d5c34d233`) được giữ. Nhánh `codex/cardrpg-c-2026-11-11`, [draft PR #439](https://github.com/ntbaoheyhey/taskbar-hero/pull/439), checkpoint C10 `8423c409d`, C11 tiếp tục trên cùng nhánh. Không merge/deploy hoặc đổi contract/Supabase. Bản 3D vẫn được giữ sau cờ OFF. Fuji Relic chỉ đọc, cap +8% không đổi.
 
@@ -9,7 +9,7 @@ Nền A6 `ef4aee790` (gồm Q54 và B `d5c34d233`) được giữ. Nhánh `codex
 | Trước lane C | Hiện tại | Bằng chứng |
 |---|---|---|
 | Puppet cũ; chưa có contract nhập Spine | Official spine-threejs 4.2.120, cache dữ liệu, state riêng từng actor, mix 0,15 s; designer → placeholder → puppet, thêm PNG fallback | `DESIGNER-SPEC.md`, `ASSET-SLOTS.md`, `assets/cardrpg-look/spine/slots.json` |
-| Chưa có đường nhập layered PSD vào runtime | 25 placeholder / 206 clip; Mochi revision 2 từ 117 layer, 33 xương, atlas PMA 1024, cao 512 | `C4-RECEIPT.md`, `C8-RECEIPT.md`, `spine/c8-r2/` |
+| Chưa có đường nhập layered PSD vào runtime | 25 placeholder / 206 clip; Mochi revision 3 từ 115 layer, 32 xương/333 mesh vertex, atlas PMA 1024, cao 512 | `C4-RECEIPT.md`, `C8-R3-RECEIPT.md`, `spine/c8-r3/` |
 | Sân cũ và hiệu ứng chưa có contract Spine | Cafe 2D ba lớp, bóng mềm, sockets giữ mặt/HP; 74 skill / 18 status; cut-in, dim, zoom tối đa 1,10 và phase boss | `C6-RECEIPT.md`, `C9-RECEIPT.md`, `shots/c9/` |
 | Q55 ảnh Bag tràn; Q56 vật tư khó đọc | Ảnh nằm trong cột, vật tư nền giấy rõ chữ; ba hành động đầu có mục tiêu/phần thưởng/chỉ tay | `C7-RECEIPT.md`, `shots/c7/` |
 | Kết quả Recruit ở 900p giữ scroll, mất hàng đầu | Reset scroll về 0, focus tiêu đề, thấy đủ 10 phần thưởng và nút tiếp tục; Field Guide dùng biểu tượng status và giải thích ultimate đúng | `C11-SCREEN-SCORES.md`, `shots/c11-recruit-fixed/`, `shots/c11-guide/` |
@@ -52,7 +52,7 @@ Cat có chiều cao bằng nhau bất kể rarity: 512 unit, on-screen 26,26–2
 
 Lần đo offline độc lập C6: ultimate nhiều draw nhất (Marigold 4), Chromium/Metal trên máy này, x1 sau warm-up, 240 frame mỗi cỡ; p95 khoảng 16,8 ms, tối đa 61 lệnh vẽ gộp ở sweep. Đạt ngân sách 33 ms / 150. Không suy rộng thành benchmark mobile. Không phát hiện job PSD nặng khi đo. `shots/c6/offline.json` lưu số gốc.
 
-**Nhân vật designer đã nghiệm thu: 0/25. Placeholder: 25/25.** Mochi pilot là bản dẫn xuất PSD, không phải art cuối; 24 nhân vật khác dùng layer nguyên gốc của B. Nguồn Mochi tự báo PARTIAL ở khớp/đuôi/mắt; [PASS/FIX hiện tại](spine/mochi/PASS-FIX-VI.md) giữ rõ giới hạn. Chất lượng art designer được báo riêng, không đưa vào điểm tự chấm. Inbox chưa có Spine/PNG/Cubism cuối; license, tool/version và số lượng bàn giao nằm ở `NEEDS-USER.md`.
+**Nhân vật designer đã nghiệm thu: 0/25. Placeholder: 25/25.** Mochi pilot là bản dẫn xuất PSD, không phải art cuối; 24 nhân vật khác dùng layer nguyên gốc của B. Nguồn Mochi V3 mới báo PASS artwork; rig tạm chỉ dùng chuyển động nhỏ, blink và mask mắt bake, chưa có gaze; [PASS/FIX hiện tại](spine/mochi/PASS-FIX-VI.md) giữ rõ giới hạn. Chất lượng art designer được báo riêng, không đưa vào điểm tự chấm. Inbox chưa có Spine/PNG/Cubism cuối; license, tool/version và số lượng bàn giao nằm ở `NEEDS-USER.md`.
 
 ## Kiểm tra và bàn giao
 
@@ -153,3 +153,5 @@ C11 sửa bước First level: thanh hướng dẫn gọn và portrait thấp h�
 C11 hướng dẫn ba bước theo việc làm được ngay: đang route thì giữ milestone và chỉ về Night Patrol; thiếu vật tư thì hướng kiếm fish/thread; xem mèo chưa có thì chọn mèo đã sở hữu. Khi đủ điều kiện, prompt/hand tự trở lại; mua level thật xóa hướng dẫn. Tay chỉ xuống đúng nút, tránh nút map. 64kiểm tra browser/7testfocused/typecheck/lint đạt, gồm sáu lần mua chính xác ở ba chế độ motion. Đã xem54ảnh hai cỡ, bốn ảnh loading được chụp lại sau khi nội dung sẵn sàng. Không đổi giá/reward/combat/save/demo29.226.665byte/điểm7,79; chi tiết C11-FIRST-CONTEXT-RECEIPT.md.
 
 C11 Prepare hiện HP thực của từng mèo, máu mang sang trạm và trạng thái gục; thao tác xếp hàng giữ ít nhất một mèo còn sống phía trước. Mười lần đổi hàng bằng bàn phím khớp command, giữ HP/seed/địch/currency. Power theo reduced motion; bond line tránh tên và layout720p giữ HP/hướng dẫn/Fight. 116kiểm tra browser gồm28layout,15testFormation/Power,typecheck/lint đạt; đã xem28ảnh hai cỡ, không page error. Hai lỗi tràn practice và lỗi reset fixture đã sửa, raw log giữ ngoài git. Không thêm phép đo gameplay/performance/fullE2E; demo29.226.665byte/điểm7,79 giữ nguyên. Chi tiết C11-PREPARATION-HEALTH-RECEIPT.md.
+
+C8 MochiV3:115layer/32xương/333mesh vertex,PMA1024,cao512;132hash nguồn giữ nguyên. 26test+3guard âm/typecheck/lint,48ca combat+48ca offline và6Pause/Play đạt; đã xem48frame clip,6pose lớn,28ảnh battle/skill/gallery/performance cùng lineup. Offline25nhân vật/206clip không gọi mạng. Benchmark riêng240frame/cỡ,p9516,8/16,7ms,101draw; combat sweep max122draw. Demo29.619.392byte giữ video×1cũ và ghi rõ art tạm trước đó. Không đổi điểm7,79/gameplay/fullE2E; designer cuối0/25. Chi tiết C8-R3-RECEIPT.md.

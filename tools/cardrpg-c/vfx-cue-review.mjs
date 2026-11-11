@@ -7,7 +7,8 @@ const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sha
 const offline=process.argv.includes('--offline'),capturesOnly=process.argv.includes('--captures-only'),tag=process.argv.find(a=>a.startsWith('--tag='))?.slice(6)??'c11-vfx-cues';
 if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid evidence tag');
 const output=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(output,{recursive:true});
-const featured=['panko-4','sorrel-4','velvet-3','enemy:kettle-knight','enemy:pollen-scout','enemy:pantry-crown','soot-4','mochi-4'];
+const only=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',');
+const featured=only??['panko-4','sorrel-4','velvet-3','enemy:kettle-knight','enemy:pollen-scout','enemy:pantry-crown','soot-4','mochi-4'];
 const report={method:'Deterministic authored cues with advancing presentation time; socket/paint/expiry checks. Full review includes x1/x2/x3 and real Pause/Play; captures-only refreshes x1 images. Forced redraw pixel equality is supplemental and PARTIAL; no progression or wall-clock timing claim.',offline,capturesOnly,cases:[],pauseControls:[],shots:[],errors:[],http:[],complete:false};
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 try {
@@ -15,12 +16,14 @@ try {
  await page.goto(offline?'file://'+root+'/docs/cardrpg-c/vfx.html':'http://127.0.0.1:5970/@fs'+root+'/tools/cardrpg-c/vfx-gallery.html');
  await page.waitForFunction(()=>window.vfxGallery?.scene.ready&&window.vfxGallery.scene.audit().stage.source==='painted');await page.evaluate(()=>window.vfxGallery.manual(true));
  const ids=await page.locator('#choose option').evaluateAll(options=>options.map(o=>o.value).filter(id=>!id.startsWith('status:')));
+ if(only?.some(id=>!ids.includes(id)))throw Error('Unknown skill');
  async function shot(id,width,height,phase,reduced){const name=`${id} ${phase} ${reduced?'calm':'motion'}`,file=`${id.replaceAll(':','-')}-${phase}-${reduced?'calm':'motion'}-${width}.webp`;await sharp(await page.screenshot()).webp({quality:88}).toFile(resolve(output,file));report.shots.push({name,id,width,height,phase,reduced,file});}
  for(const[width,height]of[[1280,720],[1440,900]]){
   await page.setViewportSize({width,height});
   for(const reduced of[false,true]){
    await page.locator('#motion').setChecked(reduced);
    for(const id of(capturesOnly?(reduced?['panko-4']:featured):ids))for(const speed of(capturesOnly?[1]:[1,2,3])){
+    if(only&&!only.includes(id))continue;
     if(speed===1&&featured.includes(id))await page.locator('#speed').selectOption('1');
     await page.evaluate(({id,speed})=>{const g=window.vfxGallery;g.select(id);g.setSpeed(speed);},{id,speed});
     await page.waitForFunction(()=>{const g=window.vfxGallery;return g.scene.ready&&g.view.actors.every(a=>g.scene.actors.get(a.id)?.asset===g.view.models[a.id]);});
@@ -58,8 +61,9 @@ try {
   }
   await page.locator('#motion').uncheck();
   for(const speed of(capturesOnly?[]:[1,2,3])){
-   await page.locator('#speed').selectOption(String(speed));await page.evaluate(()=>{const g=window.vfxGallery;g.select('panko-4');g.manual(false);});
-   await page.waitForFunction(()=>{const g=window.vfxGallery;return g.scene.effects.pool.some(p=>p.active&&p.recipe.id==='panko-4'&&p.layer.glyph==='oven'&&p.born<g.view.fixedTime);});
+   const playbackId=only?.[0]??'panko-4';
+   await page.locator('#speed').selectOption(String(speed));await page.evaluate(id=>{const g=window.vfxGallery;g.select(id);g.manual(false);},playbackId);
+   await page.waitForFunction(id=>{const g=window.vfxGallery;return g.scene.effects.pool.some(p=>p.active&&p.recipe.id===id&&p.layer.phase==='contact'&&p.born<g.view.fixedTime);},playbackId);
    await page.locator('#pause').click();
    await page.evaluate(()=>{const g=window.vfxGallery,c=g.scene.effects.canvas;window.cueFrozen={time:g.view.fixedTime,pixels:c.getContext('2d').getImageData(0,0,c.width,c.height).data};});
    await page.waitForTimeout(180);

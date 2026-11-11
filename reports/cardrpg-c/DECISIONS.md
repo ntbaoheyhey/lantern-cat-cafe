@@ -116,3 +116,5 @@
 2026-11-11T18:51:57.616490+00:00 C11: derive first-step copy/hand target from actual route and purchase availability while retaining saved milestones; guide unowned selections and keep Patrol pointer clear of the map.
 
 2026-11-11T19:08:07.951286+00:00 C11: read preparation HP from current actors and protect the last living front, preserving public row commands. Compact guided preparation and move bond lines above names; respect reduced motion. No combat changes.
+
+- 2026-11-11T19:33:01.991715+00:00 C8: consume published MochiV3 artwork as a separately derived r3 placeholder; shared weighted seams and static eye apertures preserve editable sources. Artwork PASS does not accept designer-final runtime. Select manifest only after visual/skill checks; refresh offline demo, preserve recordings.

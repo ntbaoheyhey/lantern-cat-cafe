@@ -478,3 +478,6 @@ Tool: hand-authored TypeScript Canvas Path2D in spine/vfx-stamps.ts; source: ori
 
 ## Lane C ultimate silhouette emphasis — 2026-11-11
 Tool: original TypeScript Canvas2D/Path2D from the existing C6 painted motifs; no image/reference/model input. Cached translucent core variants change fill/outline/size for cafe doors, lanterns, oven, teapot, crown, spore, bells, star and wind. Source paths remain original; colors and all paint values live in spine/style.ts. No character art generated or altered.
+
+## Lane C — Mochi V3 layered placeholder (11 Nov 2026)
+Source: read-only published `01-PILOT-mochi/rig-metadata.json`, `mochi-rig-3-4-right.psd`, raw parts, eye masks, supplied tail arc fields and rig notes in Desktop/TaskbarHero-PSD-cho-designer-2026-11-11. Source gate reports PASS; 132 SHA256 values in `spine/mochi/psd-placeholder-r3/mochi.json` bind the source revision and confirm it was not changed. Tool: `tools/cardrpg-look/spine/layered-to-spine.py` (Pillow/NumPy); no generation prompt, no newly generated final character art. 115 layers,32 bones,333 weighted mesh vertices,1024 PMA atlas,512-unit setup height. Shared conservative neck/bib/tail/cloth deformation, blink and prop parenting; setup eye aperture baked into the derived atlas only, no animated gaze. Final meshes/keyframes remain the designer's. Earlier placeholder revisions are retained.
