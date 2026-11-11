@@ -139,3 +139,5 @@ Loss guidance follow-up:46finalviews inspected in eight sheets plus two full-siz
 2026-11-11T22:37:52.678788+00:00 Plan cause:8final captures/two full-size inspected; accurate selection/count wording fits bothsizes. Weighted7.79 unchanged.
 
 2026-11-11T22:44:49.794469+00:00 Empty/support star:40inspected/24finalviews, bothsizes; shield and large totals fit. Weighted7.79 unchanged.
+
+2026-11-11T22:48:51.424922+00:00 Row-share report:16final views and full-size720p inspected; empty/mixed notes and controls fit. Weighted7.79 unchanged.

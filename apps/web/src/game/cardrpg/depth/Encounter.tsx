@@ -81,7 +81,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
   const name = (id: string) => battle.actors.find(actor => actor.id === id)?.name ?? id;
   const maxima = { damage: Math.max(1, ...summary.cats.map(cat => cat.damage)), healing: Math.max(1, ...summary.cats.map(cat => cat.healing)), taken: Math.max(1, ...summary.cats.map(cat => cat.taken)) };
   const labels = { damage: 'Damage', healing: 'Healing', taken: 'Damage taken' };
-  return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · ${battle.round} rounds${showReviewTools(!!battle.v4) ? ` · seed ${battle.seed}` : ''}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
+  return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · Round ${battle.round}${showReviewTools(!!battle.v4) ? ` · seed ${battle.seed}` : ''}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
     <div className="cr-actions"><button className={liveLoss ? undefined : "cr-primary"} onClick={() => m.finish()}>{m.replay ? 'Close replay' : m.tutorialBattle ? 'Complete lesson' : 'Continue to rewards'}</button>{!m.replay && <><button onClick={() => m.replayLast()}>Watch replay</button><button onClick={() => m.improveTeam()}>Improve team</button></>}</div>
     {battle.v4 && m.tutorialBattle && !m.replay && <PracticePayoffV4 battle={battle} />}
     {liveLoss ? <div className="dp-v4-result-decisions"><AdviceV4 m={m} /><OutcomeV4 battle={battle} /></div> : battle.v4 && <OutcomeV4 battle={battle} />}

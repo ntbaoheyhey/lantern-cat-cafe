@@ -37,3 +37,24 @@ it('formats complete version1 receipts and preserves unfamiliar or incomplete re
  for(const event of battle.v4!.events.filter(event=>event.kind!=='plan-target'||event.sequence>=100))expect(screen.getByText(`Round ${event.round} · ${event.text}`)).toBeTruthy();
  expect(battle).toEqual(before);
 });
+
+it.each(['empty','blocked','outgoing','healing'] as const)('does not show a back-row percentage without incoming HP damage (%s)',scenario=>{
+ const battle=fixture({focus:'finish',care:'steady'}),foe=battle.actors.find(a=>a.side==='enemy')!;
+ const base={round:1,actorId:foe.id,targetId:'mochi',skillId:'',text:''};
+ battle.log=scenario==='empty'?[]:scenario==='blocked'?[{...base,kind:'absorbed',amount:60},{...base,kind:'damage',amount:0}]
+  :scenario==='outgoing'?[{...base,actorId:'soot',targetId:foe.id,kind:'damage',amount:60}]
+  :[{...base,actorId:'clover',kind:'heal',amount:60}];
+ battle.v4!.events=[];const before=structuredClone(battle);render(<OutcomeV4 battle={battle}/>);
+ expect(screen.getByText('No HP damage to your crew was recorded.')).toBeTruthy();
+ expect(screen.queryByText(/Back row took/)).toBeNull();expect(battle).toEqual(before);
+});
+
+it.each([0,20])('states the back-row share of incoming HP damage only (rear=%s)',rear=>{
+ const battle=fixture({focus:'finish',care:'steady'}),foe=battle.actors.find(a=>a.side==='enemy')!;
+ const base={round:1,actorId:foe.id,targetId:'mochi',skillId:'',text:''};
+ battle.log=[{...base,kind:'damage',amount:60},{...base,targetId:'clover',kind:'reaction-damage',amount:rear},
+  {...base,targetId:'clover',kind:'absorbed',amount:400},{...base,actorId:'soot',targetId:foe.id,kind:'damage',amount:1000}];
+ const before=structuredClone(battle);render(<OutcomeV4 battle={battle}/>);
+ expect(screen.getByText(`Back row took ${rear===0?0:25}% of your crew’s HP damage.`)).toBeTruthy();
+ expect(screen.queryByText('No HP damage to your crew was recorded.')).toBeNull();expect(battle).toEqual(before);
+});

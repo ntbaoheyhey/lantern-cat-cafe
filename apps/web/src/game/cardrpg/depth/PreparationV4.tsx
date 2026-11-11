@@ -84,7 +84,9 @@ export function OutcomeV4({ battle }: { battle: R.Battle }) {
   const outcome = R.outcomeV4(battle), plan = battle.v4!.plan;
   return <section className="cr-panel dp-v4-outcome"><h2>Your crew’s turning points</h2>
     <ul>{outcome.causes.map(cause => <li key={cause.id}>{cause.text}</li>)}</ul>
-    <p>Back row took {outcome.rearShare}% of the damage.</p>
+    <p>{outcome.damageByRow.front + outcome.damageByRow.rear > 0
+      ? `Back row took ${outcome.rearShare}% of your crew’s HP damage.`
+      : 'No HP damage to your crew was recorded.'}</p>
     {outcome.firstFallen && <p>{outcome.firstFallen.name} fell first, in round {outcome.firstFallen.round}.</p>}
     <details><summary>Round-by-round notes</summary><p>Recorded plan · Target: {recordedFocus[plan.focus]}. Care: {recordedCare[plan.care]} — prefer support below {plan.care === 'protect' ? 65 : 45}% HP.</p>
       <ol>{battle.v4!.events.map(event => <li key={event.sequence}>Round {event.round} · {recordedDecision(event)}</li>)}</ol>
