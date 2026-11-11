@@ -441,3 +441,6 @@ Original concept, source pixels and original generation provenance retained; no 
 
 ## 2026-11-10 Panko whole rolling-pin puppet repair — P25
 Same original concept/pixels/generation prompt retained; no new image or model generation. Authored armL takes both roller handles, barrel and mitten before head; head takes measured disconnected cheek/shoulder strips. Existing owned-alpha hidden fill, OpenCV Telea and Pillow WebP93 in puppet/build.py; seven layers,1024px,275544B. Actual loaf-shield offHand socket corrected. Original/intermediate configs/rigs/atlases/masters are ~/art/look-v3/p25; accepted receipt/evidence reports/cardrpg-look/art-rebuild/p25. Portrait pixels unchanged.
+
+## Lane C parser fixture — 2026-11-11
+- tools/cardrpg-look/spine/fixtures.mjs creates an original solid amber rectangle PNG and simple seven-bone Spine JSON; source is deterministic authored coordinates, no external image/tool input. Validation fixture only, not character art. Failing copies intentionally change version, bones, clip/height.

@@ -1,3 +1,3 @@
-Đã hoàn thành C0/C1 và mở draft PR #439. Giữ toàn bộ phần A6/B đã nghiệm thu.
-Chọn Spine Three.js4.2, camera ngang2D; bắt đầu hợp đồng25slot và công cụ nhận file designer.
-Mochi PSD pilot đã xuất hiện; chỉ đọc và sẽ dựng placeholder từ các lớp. Chưa có nhân vật designer được nghiệm thu.
+# Tiến độ Lane C
+C0–C2 đã xong: giữ nguyên A6/B; draft PR439; chuẩn giao file cho25nhân vật,74skill,18status. Bộ kiểm tra Spine và nhận file đã chạy10test đạt; typecheck/lint đạt. File sai giữ bản đã nhận/placeholder, không sửa source của designer.
+Đang làm C3: sân2D nhìn ngang, runtime Spine và socket HUD. PSD Mochi đã có, sẽ dựng placeholder nhiều layer ởC4. Chưa nhận export animation của designer; license/công cụ/phiên bản vẫn cần xác nhận, có đường PNG dự phòng.

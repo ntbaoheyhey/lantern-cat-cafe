@@ -1,0 +1,49 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, readFile, mkdir, writeFile, cp, rm, symlink } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { ROOT, CONFIG, Spine, readSlots, validateDelivery, validateSkeleton } from './validate.mjs';
+import { intake } from './intake.mjs';
+const slots=await readSlots(),unit=slots.units.find(u=>u.id==='mochi'),fixtures=resolve(import.meta.dirname,'fixtures');
+const input=async()=>({unit,source:JSON.parse(await readFile(resolve(fixtures,'pass/mochi.json'),'utf8')),atlasText:await readFile(resolve(fixtures,'pass/mochi.atlas'),'utf8'),pages:{'mochi.png':await readFile(resolve(fixtures,'pass/mochi.png'))}});
+test('all 25 units retain exact tiers, sockets, skills, portable VFX folders and fallback paths',()=>{
+ assert.equal(slots.units.length,25);assert.equal(new Set(slots.units.map(u=>u.id)).size,25);
+ assert.equal(slots.units.filter(u=>u.tier==='cat').length,12);
+ for(const u of slots.units){assert.deepEqual(u.requiredBones,CONFIG.requiredBones);assert.ok(u.targetHeight>=u.heightRange[0]&&u.targetHeight<=u.heightRange[1]);assert.ok(u.placeholder.skeleton.endsWith(`${u.id}.json`));assert.equal(u.sockets.feet,'root');for(const skill of u.skills){assert.ok(skill.id);assert.ok(!skill.designerVfx.includes(':'));assert.ok(u.animations.includes(skill.animation));}}
+ assert.equal(slots.units.reduce((n,u)=>n+u.skills.length,0),74);
+});
+test('official parser accepts the complete fixture and measures its rendered setup bounds',async()=>{
+ const report=await validateDelivery(resolve(fixtures,'pass'),unit);assert.equal(report.verdict,'PASS',JSON.stringify(report));assert.ok(Math.abs(report.metrics.height-512)<.01);assert.ok(Math.abs(report.metrics.width-256)<.01);assert.equal(Object.keys(report.animations).length,8);
+});
+for(const [fixture,codes] of [['fail-version',['version']],['fail-bones',['bone']],['fail-animation-height',['animation','height']]])test(`${fixture} is blocked with actionable FIX reasons`,async()=>{
+ const result=await validateDelivery(resolve(fixtures,fixture),unit);assert.equal(result.accepted,false);for(const code of codes)assert.ok(result.issues.some(i=>i.severity==='FIX'&&i.code===code),JSON.stringify(result));
+});
+test('event timing and budgets warn without blocking; manifest scale fixes unit size without changing source',async()=>{
+ const options=await input();delete options.source.animations.attack.events;for(let n=0;n<40;n++)options.source.bones.push({name:`extra-${n}`,parent:'root'});
+ let result=validateSkeleton(options);assert.equal(result.verdict,'PASS_WITH_WARN');assert.ok(result.issues.some(i=>i.code==='event'));assert.ok(result.issues.some(i=>i.code==='budget'));
+ options.source.skins[0].attachments.body.body.height=1024;options.source.skins[0].attachments.body.body.width=512;options.scale=.5;result=validateSkeleton(options);assert.equal(result.accepted,true);assert.ok(Math.abs(result.metrics.height-512)<.01);
+});
+test('parser rejects missing atlas regions, unsafe pages and non-finite transforms',async()=>{
+ for(const mutate of [o=>o.source.skins[0].attachments.body.body.path='missing',o=>o.atlasText=o.atlasText.replace('mochi.png','../../outside.png'),o=>o.source.bones[1].x=Infinity]){const o=await input();mutate(o);assert.equal(validateSkeleton(o).accepted,false);}
+});
+test('independent official AnimationStates share cached data without sharing pose or events',async()=>{
+ const o=await input(),atlas=new Spine.TextureAtlas(o.atlasText);for(const p of atlas.pages)p.setTexture(new Spine.FakeTexture({width:64,height:128}));
+ const data=new Spine.SkeletonJson(new Spine.AtlasAttachmentLoader(atlas)).readSkeletonData(o.source),s1=new Spine.Skeleton(data),s2=new Spine.Skeleton(data),a1=new Spine.AnimationState(new Spine.AnimationStateData(data)),a2=new Spine.AnimationState(new Spine.AnimationStateData(data));let hits=0;
+ a1.addListener({event:(_entry,event)=>{if(event.data.name==='hit')hits++;}});a1.setAnimation(0,'attack',false);a2.setAnimation(0,'idle',true);a1.update(.6);a1.apply(s1);a2.update(.1);a2.apply(s2);assert.equal(hits,1);assert.equal(a2.getCurrent(0).animation.name,'idle');assert.notEqual(s1.bones[0],s2.bones[0]);
+});
+test('intake installs immutable accepted revision, preserves designer bytes and keeps it after a failed replacement',async()=>{
+ const temp=await mkdtemp('/tmp/cardrpg-c-intake-test-');
+ try{await mkdir(resolve(temp,'assets/cardrpg-look/spine'),{recursive:true});await writeFile(resolve(temp,'assets/cardrpg-look/spine/slots.json'),JSON.stringify(slots));const folder=resolve(temp,'designer');await cp(resolve(fixtures,'pass'),folder,{recursive:true});const before=await readFile(resolve(folder,'mochi.json'));
+  const pass=await intake({id:'mochi',folder,root:temp,install:true});assert.equal(pass.installed,true);assert.deepEqual(await readFile(resolve(folder,'mochi.json')),before);const manifest=await readFile(resolve(temp,'assets/cardrpg-look/spine/slots.json'));
+  const fail=await intake({id:'mochi',folder:resolve(fixtures,'fail-bones'),root:temp,install:true});assert.equal(fail.installed,false);assert.deepEqual(await readFile(resolve(temp,'assets/cardrpg-look/spine/slots.json')),manifest);
+ }finally{await rm(temp,{recursive:true,force:true});}
+});
+test('Cubism is identified and PNG sequence is validated; symlink escapes are blocked',async()=>{
+ const temp=await mkdtemp('/tmp/cardrpg-c-sequence-test-');try{
+ await writeFile(resolve(temp,'mochi.model3.json'),'{}');let result=await validateDelivery(temp,unit);assert.equal(result.format,'cubism');assert.equal(result.accepted,false);
+ const png=await readFile(resolve(fixtures,'pass/mochi.png'));await writeFile(resolve(temp,'frame.png'),png);
+ const animations=Object.fromEntries(unit.animations.map(name=>{const spec=CONFIG.animations[name],duration=(spec.seconds[0]+spec.seconds[1])/2;return[name,{fps:20,frames:Array(Math.round(duration*20)).fill('frame.png'),events:Object.entries(spec.events).map(([name,f])=>({name,time:f*duration}))}];}));
+ const sequence={id:'mochi',facing:'right',height:512,width:256,sockets:Object.fromEntries(unit.requiredBones.map(n=>[n,[0,0]])),animations};await writeFile(resolve(temp,'sequence.json'),JSON.stringify(sequence));result=await validateDelivery(temp,unit);assert.equal(result.accepted,true,JSON.stringify(result));assert.equal(result.cubism,true);
+ await rm(resolve(temp,'frame.png'));await symlink(resolve(fixtures,'pass/mochi.png'),resolve(temp,'frame.png'));result=await validateDelivery(temp,unit);assert.equal(result.accepted,false);assert.ok(result.issues.some(i=>i.message.includes('escapes')));
+ }finally{await rm(temp,{recursive:true,force:true});}
+});

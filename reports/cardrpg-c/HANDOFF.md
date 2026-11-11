@@ -1,11 +1,12 @@
 # Lane C handoff
-NOW: C2 contract/slots/intake; C0/C1 complete, draft439.
-BASE: A6 ef4aee790 inclQ54/Bd5c34d233; C0commite135256ef.
-NEXT1: Exact25-unit registry and skill/socket/animation contract; designer queue EN/VI.
-NEXT2: Official4.2parser validator, passing+threefailing fixtures, read-only intake and acceptance harness.
-NEXT3: C3 spine-threejs4.2.120 with orthographic stage; C4puppet and publishedPSD placeholders.
-RUNNING: None. Root types/lint PASS for C0/C1.
+NOW: C3 official Spine runtime + orthographic2Dstage; C0–C2 complete, draft439.
+BASE: A6 ef4aee790 inclQ54/Bd5c34d233; C1commit653102372.
+NEXT1: Separate SpineScene adapter at existing SceneView/Anchor seam; retain legacy TurnScene fallback.
+NEXT2: Bind cached assets, independent states, named events/sockets and acceptance capture at both sizes.
+NEXT3: C4 puppet-to-Spine25/25 then publishedMochi PSD pilot.
+RUNNING: None. C2 root types/lint and10node tests PASS.
+KNOWN: slots25 / skillIDs74 / statuses18; config.json is runtime major.minor source.
 KNOWN: Designer exports absent; Mochi PSD pilot published on Desktop, read-only.
-KNOWN: Official4.2README tint line stale; newer blog/source support it. Test pinned package withThree r180.
+KNOWN: C2 structural PASS distinct from visual acceptance; capture harness lands with C3.
 KNOWN: Spine license/tool/version unresolved in NEEDS-USER; PNG sequence path required.
-KNOWN: Q55/Q56 and gameplay misses remain for C7/C5; no accepted A6/Bwork repeated.
+KNOWN: Q55/Q56 forC7; gameplay misses forC5; seeds70001–70500unused.
