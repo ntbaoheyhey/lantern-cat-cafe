@@ -30,6 +30,25 @@ it('shows full rage as ready and leaves casting entirely automatic',()=>{
  fireEvent.click(screen.getByRole('button',{name:'Change playback speed'}));expect(m.state.settings.speed).toBe(2);
  fireEvent.click(screen.getByRole('button',{name:'Change playback speed'}));expect(m.state.settings.speed).toBe(3);
 });
+it('explains either ultimate unlock and keeps a fallen cat from announcing readiness',()=>{
+ const m=new DepthModel(true,true,true,true);m.state.tutorial=4;
+ m.state.account.cards.find(c=>c.cardId==='soot')!.stars=3;
+ m.state.account.cards.find(c=>c.cardId==='clover')!.level=6;
+ m.state.account.cards.forEach(c=>{m.state.skills[c.cardId]=R.defaultSkills(m.state,c.cardId)});
+ m.start(1);m.enter('0-0');m.sceneReady=true;
+ m.battle!.actors.filter(a=>a.side==='party').forEach(a=>a.charge=100);
+ const before=structuredClone(m.battle),view=render(<Harness m={m}/>);
+ expect(screen.getByText('Ult · Lv. 6 or 3★')).toBeTruthy();
+ expect(screen.getByLabelText('Mochi ultimate: Unlocks at level 6 or three stars')).toBeTruthy();
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(2);
+ expect(m.battle).toEqual(before);
+ act(()=>{m.battle!.actors.find(a=>a.catalogId==='soot')!.hp=0;m.notify(false)});
+ expect(screen.getByText('Fallen')).toBeTruthy();
+ expect(screen.getByLabelText('Soot ultimate: Fallen')).toBeTruthy();
+ expect(view.container.querySelector('[data-fallen="true"]')!.getAttribute('data-ready')).toBe('false');
+ expect(screen.getAllByText('Ultimate ready')).toHaveLength(1);
+ expect(screen.queryByRole('button',{name:/cast|ultimate/i})).toBeNull();
+});
 it('an earned skip resolves the battle and removes the current cut-in without issuing another cast',()=>{
  const m=readyBattle(),run=m.state.run!,node=run.nodes.find(n=>n.id===run.current)!;
  const key=R.nodeStarKeyV4(run,node);m.state.v4!.journey!.stars[key]={key,chapter:run.chapter,band:run.challengeLevel!,nodeId:node.id,kind:node.kind,conditions:[true,true,true]};

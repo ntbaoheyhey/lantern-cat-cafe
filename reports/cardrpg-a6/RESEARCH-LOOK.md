@@ -49,3 +49,5 @@ Recheck 2026-11-11T00:35:45Z, afterQ34–Q36: result details, Relic bonuses and 
 Recheck 2026-11-11T01:16:45Z, after Q37–Q39 source acceptance: Daily reasons and bounded advice/forecast now keep existing actions understandable through pending/error states. The next observed Tower low has10px parcel states and38px claims; Q40 follows the existing readable text/action guidance. No new system, numerical tuning or repeated research.
 
 Recheck 2026-11-11T01:52:55Z, after Q40–Q42: Tower/Journal/Field guide metadata and actions now meet the retained reading/action-zone guidance. Settings remains the8.0 low with12px save/comfort statuses; Q43 addresses that observed gap. Q44 retains the already observed small collection tags and growth costs. No new system or repeated external research.
+
+Recheck 2026-11-11T02:28:26Z, after Q43–Q45: save/training/awakening now retain readable cost and state in the720p action zone. Q46 follows existing fixed HUD envelopes and concise readiness, correcting the missing three-star unlock. No new mechanics or repeated genre research.

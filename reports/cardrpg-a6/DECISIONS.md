@@ -164,3 +164,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-11T02:16:49Z Q45: use the existing R.awakenCat transaction on its copy for eligibility, exact currency/material deltas and real stat gains; execute it again against the current state on click. An open awakening receipt occupies the existing Growth area with a direct Level & stars return, keeping the purchase visible at720p. No rule/cost/renderer change.
 
 - 2026-11-11T02:20:51Z Q46 queued behind Q45: personally inspected retained1280 normal/boss screenshots show10px ultimate/phase and11px HP/auto labels; HUD locked text says only level6 although existing rules also allow3stars. Improve this tied8.1low within fixed canvas envelopes; do not couple HUD to pending3D internals or rerun frozen numeric balancing.
+
+2026-11-11T02:28:26Z Q46: preserve canvas as black box; only fixed DOM cards/actions change. Readiness uses current battle skills, displays both existing unlock routes, and distinguishes fallen. Keep82px top/148px bottom envelopes and existing clock/cast/skip behavior.
+
+2026-11-11T02:32:40Z Q47 added from Q46 visual/control evidence: empty battle log is a blank panel; opening while running does not pause, and closing leaves focus behind. Apply the existing illustrated-empty/readable-modal/return pattern to current100-event history after Q46; no new rules or new logging.

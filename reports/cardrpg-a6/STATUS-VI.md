@@ -292,3 +292,10 @@ Quyết định 3D đã lưu nguyên văn; B hiện công bố P39, chưa có lo
 2026-11-11T02:27:33Z: Q45 hoàn tất: 32 ảnh nguồn và 32 ảnh offline đã duyệt; giá/tăng chỉ số/khóa thức tỉnh đúng, nút 44px vừa720p.
 20test và13test hiệu ứng B/type/lint đạt; sáu ảnh Soot rõ, demo39.092.073byte, không lỗi/gọi mạng.
 Tiếp tục Q46: chữ và nút HUD trận; sửa nhãn mở tuyệt chiêu bằng cấp6 hoặc3sao, giữ API/socket của B.
+
+2026-11-11T02:32:02Z: Q46 đã duyệt22ảnh chính và4ảnh boss sau hiệu ứng; chữ13px/nút44px, giữ khung82/148px.
+15test/type/lint đạt; mở chiêu bằng cấp6 hoặc3sao, trạng thái gục/ba pha boss/tốc độ/dừng/bỏ qua/bàn phím đúng. Đang đóng gói offline.
+
+2026-11-11T02:36:21Z: Q46 hoàn tất: 26 ảnh nguồn và 22 ảnh offline đã duyệt; chữ HP/nộ13px, nút44px, giữ khung82/148px.
+15test/typecheck/lint đã đạt được giữ nguyên; mở chiêu bằng cấp6 hoặc3sao và trạng thái gục đúng, demo39.092.249byte, không lỗi/gọi mạng.
+Tiếp tục Q47: nhật ký trận có trạng thái trống rõ, tạm dừng khi đọc và trả bàn phím về nút mở. B D1 mới là kế hoạch sản xuất3D.

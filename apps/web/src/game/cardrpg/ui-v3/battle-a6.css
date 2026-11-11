@@ -71,3 +71,18 @@
  .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .dp-v4-advice {padding:8px 18px;margin:7px auto}
  .uv-app[data-a6=true] .uv-result[data-a6-loss=true] .dp-v4-advice p {margin:5px 0}
 }
+
+/* Readable fixed HUD cards inside the existing canvas envelopes. */
+.uv-battle-hud[data-a6=true] {
+ .uv-battle-round small {font-size:13px}
+ .uv-battle-actions button {min-height:44px;min-width:44px;font-size:14px}
+ .a6-hud-level {font-size:12px}
+ .uv-battle-cat .a6-hud-vitals {gap:4px}
+ .uv-battle-cat small,.uv-battle-cat .uv-ult-label {font-size:13px;line-height:1.2}
+ .uv-boss small {font-size:13px}
+ .a6-boss-phases {font-size:12px}
+ .uv-enemy-rage small {font-size:13px;line-height:1.25}
+ .uv-battle-cat .dp-status-badge b {font-size:12px}
+ .uv-battle-menu button {min-height:44px;font-size:14px}
+}
+.uv-app .uv-battle-hud[data-a6=true] .uv-auto-continue {min-height:44px;font-size:14px;gap:5px}
