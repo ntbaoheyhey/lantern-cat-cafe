@@ -102,3 +102,5 @@
 2026-11-11 C11 milestone harness PARTIAL: first baseline driver used a nonexistent daily screen, then retained the Events overlay; fresh-account Events remained legitimately locked before the first cat level. Use the already verified isolated practice fixture and close each sheet. These are harness failures, not product defects.
 
 2026-11-11T17:52:19.939514+00:00 C11: disclose full/reduced star and journal gifts at every claim entry; keep exact existing settlement and ribbon replacement. Whole-card geometry supersedes button-only containment after screenshots caught clipped disabled explanations. Compact headings/spacing preserve14px text and44px buttons.
+
+2026-11-11T18:04:10.435860+00:00 C11 daily/reset: use each existing calendar lifetime for gift copy; expose requested amounts/point gain without changing settlement. Explicit heading scroll and scoped disabled styling fix observed720p/900p issues. Next inspect idle/fast-reward cap consequences.

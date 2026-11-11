@@ -55,6 +55,24 @@ it('preserves flag-OFF saves and failed transactions exactly', () => {
   expect(R.exportSave(s)).toBe(before);
 });
 
+it('previews reset timing and full amounts without carrying expired tasks into the next day', () => {
+  let s = ready();
+  s.dailyA6 = { ...R.dailyProgressA6(s), completed: ['train'], weeklyPoints: 30, loginGifts: 2 };
+  s.account.daily.earned = { ...R.depthCaps(s) };
+  const before = R.exportSave(s), now = R.dailyBoardA6(s, 0), next = R.dailyBoardA6(s, 86400000);
+  expect(now.weekDaysLeft).toBe(7); expect(next.weekDaysLeft).toBe(6);
+  expect(now.tasks.find(t => t.id === 'train')).toMatchObject({ complete: true, requested: { stamps: 20, threads: 5 }, reward: { stamps: 0, threads: 0 }, reason: 'Today’s supplies are full.' });
+  expect(next.tasks.every(t => !t.complete && !!t.reason)).toBe(true);
+  expect(next.weekly.every(w => !w.reason)).toBe(true);
+  expect(next.login).toMatchObject({ gift: 3, requested: { fish: 120, threads: 20 }, reward: { fish: 120, threads: 20 }, reason: null });
+  expect(R.exportSave(s)).toBe(before);
+  s = take(R.syncCalendarDay(s, 6 * 86400000));
+  expect(R.dailyBoardA6(s, 6 * 86400000).weekDaysLeft).toBe(1);
+  const nextWeek = R.dailyBoardA6(s, 7 * 86400000);
+  expect(nextWeek.weekDaysLeft).toBe(7); expect(nextWeek.progress.weeklyPoints).toBe(0);
+  expect(nextWeek.weekly.every(w => !!w.reason)).toBe(true); expect(nextWeek.login.gift).toBe(3);
+});
+
 it('records gear enhancement and a completed public patrol as the other two daily activities', async () => {
   const { playRun } = await import('./run-bot');
   let s = ready();

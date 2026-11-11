@@ -1,6 +1,7 @@
 import type { DepthAccount } from './contract';
 
 export type DailyTaskA6 = 'patrol' | 'tips' | 'recruit' | 'train' | 'gear';
+export const WEEKLY_POINTS_CAP_A6 = 35;
 export interface DailyProgressA6 {
   day: number;
   completed: DailyTaskA6[];

@@ -127,24 +127,47 @@ it('describes completed gifts as waiting while supplies, patrol or the clock blo
  expect((task as HTMLButtonElement).disabled).toBe(true);
 });
 
-it('shows only the exact remaining login and weekly supplies before atomic collection',()=>{
+it('shows the full and remaining login and weekly supplies before atomic collection',()=>{
  const m=milestoneGifts();m.state=R.metaCommand(m.state,{type:'level',cardId:'mochi'}).state;
  m.state.dailyA6!.weeklyPoints=30;
  m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-7};
  const before=m.state.account.currencies.stamps;
  render(<DailyA6 m={m}/>);
- const login=screen.getByRole('region',{name:'Seven day welcome gifts'}),current=login.querySelector('[data-current=true]')!;
- expect(within(current as HTMLElement).getByRole('img',{name:'7 stamps'})).toBeTruthy();
- expect(within(current as HTMLElement).queryByRole('img',{name:'100 fish'})).toBeNull();
+ const login=screen.getByRole('region',{name:'Seven day welcome gifts'}),current=login.querySelector('.a6-login-claim')!;
+ for(const text of ['100 fish','40 stamps','0 fish','7 stamps'])expect(within(current as HTMLElement).getByText(text)).toBeTruthy();
+ expect(within(current as HTMLElement).getByText(/uses the whole gift/)).toBeTruthy();
  const weekly=screen.getByRole('button',{name:'Collect 10-task weekly gift'});
- expect(within(weekly).getByRole('img',{name:'7 stamps'})).toBeTruthy();
- expect(within(weekly).queryByRole('img',{name:'10 threads'})).toBeNull();
+ for(const text of ['40 stamps','10 threads','7 stamps','0 threads'])expect(within(weekly.closest('article')!).getByText(text)).toBeTruthy();
+ expect(weekly.textContent).toBe('Collect reduced gift');
+ const description=weekly.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');expect(description).toContain('Weekly gifts reset in 7 days.');expect(description).toContain('uses the whole gift');
  fireEvent.click(weekly);
  expect(m.state.account.currencies.stamps-before).toBe(7);
  expect(m.state.dailyA6!.weeklyClaims).toEqual([10]);
  const settled=R.exportSave(m.state);fireEvent.click(weekly);expect(R.exportSave(m.state)).toBe(settled);
  expect((screen.getByRole('button',{name:'Collect login gift'}) as HTMLButtonElement).disabled).toBe(true);
  expect(screen.getByRole('button',{name:'Daily board 0'})).toBeTruthy();
+});
+
+it('discloses task expiry before a partial claim adds exactly one weekly point',()=>{
+ const m=milestoneGifts();m.state=R.metaCommand(m.state,{type:'level',cardId:'mochi'}).state;
+ m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-3};
+ const before=R.exportSave(m.state),command=R.claimDailyA6(m.state,0,'task','train');render(<DailyA6 m={m}/>);
+ const button=screen.getByRole('button',{name:'Collect A little stronger'}),card=within(button.closest('article')!);
+ for(const text of ['20 stamps','5 threads','3 stamps','0 threads'])expect(card.getByText(text)).toBeTruthy();
+ expect(button.textContent).toBe('Collect reduced gift');
+ const description=button.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');
+ expect(description).toContain('Task gifts reset tomorrow.');expect(description).toContain('Each claim adds 1 weekly point.');expect(description).toContain('uses the whole gift');expect(description).not.toContain('Wait for a new day');
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(command.state);expect(R.dailyProgressA6(m.state).weeklyPoints).toBe(1);
+ const settled=R.exportSave(m.state);fireEvent.click(button);expect(R.exportSave(m.state)).toBe(settled);
+});
+
+it('warns that weekly gifts expire on the last day while login gifts keep their place',()=>{
+ const m=new DepthModel(true,true,true,true);m.state=R.syncCalendarDay(R.setGameplayA6(R.createDepthAccount(11,0),true),6*86400000).state;
+ Object.defineProperty(m,'cafeNow',{get:()=>6*86400000});m.state.dailyA6={...R.dailyProgressA6(m.state),weeklyPoints:30};
+ m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-3};render(<DailyA6 m={m}/>);
+ const weekly=screen.getByRole('region',{name:'Weekly activity'});
+ expect(within(weekly).getByText(/Weekly gifts reset tomorrow/)).toBeTruthy();expect(within(weekly).queryByText(/Wait for a new day/)).toBeNull();
+ const login=screen.getByRole('region',{name:'Seven day welcome gifts'});expect(within(login).getByText(/Wait for a new day for the full amount/)).toBeTruthy();
 });
 
 it('discloses reduced Tower gifts at the Events collection entry and preserves exact one-time claims',()=>{

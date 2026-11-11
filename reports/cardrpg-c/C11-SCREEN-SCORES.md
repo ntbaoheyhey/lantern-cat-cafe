@@ -99,3 +99,5 @@ Reward follow-up:26reward+2campfire views inspected; rank/stack changes and20%po
 Route completion follow-up:36final captures inspected, including list ends and keyboard focus at both sizes. Named gear navigation, readable conversion/missing notes and final-floor copy pass114browser checks. One focus-spacing repair; scroll hint keeps all finds discoverable. Weighted7.79 unchanged. C11-COMPLETION-RECEIPT.md.
 
 C11 milestone continuation: inspected68distinct final views across Events/Journal/Map; full and reduced gifts readable, complete Discoveries cards fit both sizes after geometry repair. Score7.79 retained; this is decision clarity, not new gameplay evidence.
+
+Daily/reset follow-up:44sweep and24replacement views inspected at both sizes; full/reduced amounts, expiry and whole-gift consequence readable. Explicit shortcut scroll repairs the clipped heading; disabled login is visually distinct. Score7.79 retained.

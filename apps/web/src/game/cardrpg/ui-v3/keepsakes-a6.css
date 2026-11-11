@@ -189,6 +189,25 @@
 }
 
 /* Direct access to the existing milestone gifts; readiness comes from badgesA6. */
+.uv-app[data-a6=true] .a6-daily {
+ .a6-login>.cr-primary:disabled {background:#e0d3b7!important;color:#715c43!important;border-color:#af9974!important;box-shadow:none;opacity:1}
+ .a6-login-claim {margin-top:12px;padding-top:8px;border-top:1px dashed #b3996e;font-size:14px}
+ .a6-login-claim>b {font-size:15px;color:#59412c}
+ .a6-daily-gift-note,.a6-weekly-reset,.a6-task-heading p {font-size:14px;line-height:1.4;color:#6c4831;margin:6px 0;min-height:0}
+ .a6-weekly-reset {position:relative;padding-right:0}
+ .a6-weekly>.a6-gift-host {width:76px;height:82px;top:4px;right:10px}
+ .a6-gift-amounts p {min-height:0;margin:4px 0;font-size:14px;line-height:1.4}
+ .a6-weekly-chests {align-items:stretch;margin-top:8px}
+ .a6-weekly-chests article {display:flex;flex-direction:column;align-items:stretch;gap:6px;min-width:0;padding:8px;border:1px solid #bda16d;border-radius:10px;background:#f6e6be}
+ .a6-weekly-chests article>.a6-gift-art {align-self:center;width:44px;height:38px}
+ .a6-weekly-chests article>b {font-size:14px;color:#59412c}
+ .a6-weekly-chests article[data-collected=true] {background:#dde4bf;border-color:#8b9f66}
+ .a6-weekly-chests button {min-height:44px;padding:7px 4px;font-size:14px;line-height:1.3;margin-top:auto;width:100%;gap:0}
+ .a6-task-heading {grid-column:1/-1}
+ .a6-task-heading h2 {margin:0;scroll-margin-top:14px}
+ .a6-task-heading h2:focus-visible {outline:2px solid #8966b5;outline-offset:3px;border-radius:4px}
+ button {scroll-margin-block:8px}
+}
 .uv-app[data-a6=true] {
  .a6-daily-book {display:grid;gap:12px}
  .a6-daily-sections {display:flex;align-items:center;gap:8px}
