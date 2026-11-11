@@ -102,6 +102,35 @@
   .a6-prepare-grid .dp-v4-forecast[data-compact=true] {margin-top:8px;padding:8px 11px}.a6-prepare-grid .dp-v4-forecast[data-compact=true]>h2 {font-size:21px}
  }
 }
+/* Use actual encounter health, including carried wounds and knocked-out cats. */
+.uv-app[data-a6=true] {
+ .a6-seat-identity {display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 5px}
+ .a6-formation-cat .a6-seat-health {display:grid;gap:4px;width:100%;margin-top:3px;color:#425230}
+ .a6-formation-cat .a6-seat-health small {font-size:13px;line-height:1.25;white-space:nowrap}
+ .a6-seat-health progress {appearance:none;display:block;width:100%;height:5px;border:0;border-radius:5px;overflow:hidden;background:#d8c6a4;color:#697d4c}
+ .a6-seat-health progress::-webkit-progress-bar {background:#d8c6a4;border-radius:5px}
+ .a6-seat-health progress::-webkit-progress-value {background:#697d4c;border-radius:5px}
+ .a6-seat-health progress::-moz-progress-bar {background:#697d4c;border-radius:5px}
+ .a6-seat-health[data-condition=low],.a6-seat-health[data-condition=ko] {color:#853e2e}
+ .a6-seat-health[data-condition=low] progress::-webkit-progress-value {background:#a66035}
+ .a6-seat-health[data-condition=low] progress::-moz-progress-bar {background:#a66035}
+ .a6-formation-cat[data-knocked-out=true]>img {filter:saturate(.4) drop-shadow(0 5px 4px #76522e44)}
+ .a6-formation[data-preparing=true] .a6-formation-cat img {height:118px}
+ .a6-formation-notes {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;margin-top:9px}
+ .a6-formation-notes>.a6-placement-hint,.a6-formation-notes>.a6-ready-pairs {margin:0!important}
+ .uv-prepare-main {overflow:auto;scroll-padding-block:8px}
+ .uv-sheet-content:has(.a6-prepare-grid)>.a6-first-step {grid-template-columns:auto minmax(0,1fr) auto;gap:12px}
+ .uv-sheet-content:has(.a6-prepare-grid)>.a6-first-step strong {grid-row:auto}
+ .uv-sheet-content:has(>.a6-first-step) .a6-formation[data-preparing=true] .a6-formation-cat img {height:100px}
+ @media(max-height:780px) {
+  .a6-formation-notes {margin-top:5px}
+  .uv-sheet-content:has(>.a6-first-step) .a6-formation[data-preparing=true] .a6-formation-cat img {height:66px}
+  .uv-sheet-content:has(>.a6-first-step) .a6-formation[data-preparing=true] .a6-formation-cat {padding:8px 6px 5px!important}
+  .uv-sheet-content:has(>.a6-first-step) .a6-formation-cat>div {padding-top:2px}
+  .uv-sheet-content:has(>.a6-first-step) .a6-seat-health {margin-top:1px}
+ }
+}
+
 /* Keep the matchup and boss note above the stable Fight bar. */
 .uv-app[data-a6=true] {
  .a6-enemy-heading {display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:43px}
@@ -116,7 +145,7 @@
   .a6-prepare-grid .uv-prepare-title h2 {display:flex;align-items:baseline;gap:10px}
   .a6-formation[data-preparing=true] .a6-formation-stage {padding:6px}
   .a6-formation[data-preparing=true] .a6-formation-row {padding:5px}
-  .a6-formation[data-preparing=true] .a6-formation-cat img {height:100px;width:112px}
+  .a6-formation[data-preparing=true] .a6-formation-cat img {height:76px;width:112px}
   .a6-formation[data-preparing=true] .a6-placement-hint {margin:5px 0}
   .a6-formation[data-preparing=true] .a6-ready-pairs {margin:4px 0 0}
   .a6-enemy-heading {min-height:28px}.a6-enemy-heading>h2 {font-size:20px}

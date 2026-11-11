@@ -114,3 +114,5 @@
 2026-11-11T18:45:25.764282+00:00 C11: compact only the first-level guide at720p, reserve keyboard scroll padding and orient its hand toward Level up; preserve current purchase and account rules.
 
 2026-11-11T18:51:57.616490+00:00 C11: derive first-step copy/hand target from actual route and purchase availability while retaining saved milestones; guide unowned selections and keep Patrol pointer clear of the map.
+
+2026-11-11T19:08:07.951286+00:00 C11: read preparation HP from current actors and protect the last living front, preserving public row commands. Compact guided preparation and move bond lines above names; respect reduced motion. No combat changes.

@@ -154,3 +154,32 @@ it('keeps a rejected preparation choice open with the rules explanation',()=>{
  expect(screen.getByRole('dialog',{name:'Suggested teams'})).toBeTruthy();
  expect(screen.getByRole('alert').textContent).toBe('Keep at least one living companion in front.');expect(m.state).toEqual(before);
 });
+
+it('shows carried HP and knockout state without changing the encounter',()=>{
+ const m=model();m.start(1,'campaign',1);
+ m.state.run!.hp.mochi=0;m.state.run!.hp.soot=37;
+ m.enter(R.availableNodes(m.state.run!)[0]!.id);
+ const before=R.exportSave(m.state);render(<FormationA6 m={m} preparing/>);
+ for(const cat of m.battle!.actors.filter(actor=>actor.side==='party')){
+  const meter=screen.getByRole('progressbar',{name:`${cat.name} HP`});
+  expect(meter.getAttribute('value')).toBe(String(cat.hp));expect(meter.getAttribute('max')).toBe(String(cat.maxHp));
+ }
+ expect(screen.getByRole('button',{name:'Select Mochi for placement'}).getAttribute('aria-describedby')).toBeTruthy();
+ expect(screen.getByText('Knocked out · 0 HP')).toBeTruthy();
+ expect(R.exportSave(m.state)).toBe(before);
+});
+
+it('keeps a living front cat when another front cat is knocked out, then permits an exact legal move',()=>{
+ const m=model();m.state.rows.soot='front';m.start(1,'campaign',1);
+ m.state.run!.hp.mochi=0;m.state.run!.hp.soot=37;m.enter(R.availableNodes(m.state.run!)[0]!.id);
+ render(<FormationA6 m={m} preparing/>);
+ fireEvent.click(screen.getByRole('button',{name:'Select Soot for placement'}));
+ const move=screen.getByRole('button',{name:'Place Soot rear'}),before=R.exportSave(m.state);
+ expect((move as HTMLButtonElement).disabled).toBe(true);fireEvent.click(move);expect(R.exportSave(m.state)).toBe(before);
+ fireEvent.click(screen.getByRole('button',{name:'Select Clover for placement'}));
+ const expected=R.configurePreparation(m.state,m.state.team,{...m.state.rows,clover:'front'},m.state.v4!.plan);
+ fireEvent.click(screen.getByRole('button',{name:'Place Clover front'}));expect(m.state.run).toEqual(expected.state.run);
+ fireEvent.click(screen.getByRole('button',{name:'Select Soot for placement'}));
+ expect((screen.getByRole('button',{name:'Place Soot rear'}) as HTMLButtonElement).disabled).toBe(false);
+ expect(screen.getByRole('progressbar',{name:'Soot HP'}).getAttribute('value')).toBe('37');
+});

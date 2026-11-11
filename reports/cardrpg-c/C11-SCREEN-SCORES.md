@@ -107,3 +107,5 @@ Idle follow-up:44final and28style views inspected at both sizes. Full/reduced su
 First-level follow-up:12final views inspected at both sizes. Complete first roster row fits720p; fourth-cat focus fits900p after8px scroll padding. Hand points down toward Level up.18browser checks pass;weighted7.79 unchanged. C11-FIRST-LEVEL-RECEIPT.md.
 
 First-context follow-up:54views inspected including four loading frames replaced by settled views. Route/supply/unowned guidance matches available controls; hands face actions and clear the map.64browser/7tests/types/lintPASS. Score7.79 retained; no player-recovery claim. C11-FIRST-CONTEXT-RECEIPT.md.
+
+Preparation health follow-up:28final views inspected in seven sheets plus two full-size checks. Wounded/knocked-out cards, health descriptions, hints and Fight fit both sizes; bond lines clear names.116browser/10keyboard/15tests/types/lintPASS; score7.79retained. C11-PREPARATION-HEALTH-RECEIPT.md.

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type RefObject } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type RefObject } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import {artPropsA6 as portraitProps} from './art-a6';
@@ -17,11 +17,11 @@ function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | nul
     const draw=()=>{
       const bounds=root.getBoundingClientRect();
       setLines(R.activePairCombosA6(ids).flatMap(pair=>{
-        const [left,right]=pair.cats.map(id=>root.querySelector<HTMLElement>(`[data-seat="${id}"]`)?.getBoundingClientRect());
+        const [left,right]=pair.cats.map(id=>root.querySelector<HTMLElement>(`[data-seat="${id}"] img`)?.getBoundingClientRect());
         if(!left||!right)return [];
-        const x1=left.left+left.width/2-bounds.left,y1=left.top+left.height/2-bounds.top;
-        const x2=right.left+right.width/2-bounds.left,y2=right.top+right.height/2-bounds.top;
-        return [{name:pair.name,d:`M ${x1} ${y1} Q ${(x1+x2)/2+30} ${(y1+y2)/2+20} ${x2} ${y2}`}];
+        const x1=left.left+left.width/2-bounds.left,y1=left.bottom-bounds.top-4;
+        const x2=right.left+right.width/2-bounds.left,y2=right.bottom-bounds.top-4;
+        return [{name:pair.name,d:`M ${x1} ${y1} Q ${(x1+x2)/2+30} ${(y1+y2)/2-12} ${x2} ${y2}`}];
       }));
     };draw();const observer=new ResizeObserver(draw);observer.observe(root);return()=>observer.disconnect();
   },[key,host]);
@@ -36,6 +36,10 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
   const plan=battle?.v4?.plan??state.v4!.plan;
   const [picked,setPicked]=useState(ids[0]!),[mode,setMode]=useState<R.Run['mode']>(state.run?.mode??'campaign');
   const selected=ids.includes(picked)?picked:ids[0]!;
+  const healthId=useId();
+  const party=battle?.actors.filter(actor=>actor.side==='party');
+  const living=(id:string)=>!party||party.some(actor=>actor.catalogId===id&&actor.hp>0);
+  const hasLivingFront=ids.some(id=>rows[id]==='front'&&living(id));
   const [tool,setTool]=useState<'saved'|'suggested'|'replace'|null>(null);
   const locked=preparing?!!battle?.v4?.committed||!!m.replay||m.watching:!!state.run&&!state.run.complete;
   const rosterLocked=locked||preparing&&!!state.run&&(state.run.visited.length>0||state.run.floor>1&&!state.run.towerA6);
@@ -77,7 +81,7 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
       {tool==='suggested'&&<section className="a6-suggestion-desk" aria-label="Suggested teams">
         <p>Choose a crew and its standing plan. Your cats carry it out automatically.</p>
         <div className="a6-team-suggestions">{suggestions.map((suggestion,index)=><button key={suggestion.name} disabled={rosterLocked||!keepsSupply(suggestion.team)} aria-label={`Use suggested team ${index+1}: ${suggestion.name}`} onClick={()=>{update(suggestion.team,{...rows,...suggestion.rows},suggestion.plan);if(!m.error)setTool(null);}}>
-          <small>PLAN {index+1}</small><h3>{suggestion.name}</h3><FormationTrioA6 ids={suggestion.team} rows={suggestion.rows}/><PowerA6 value={suggestion.power}/><p>{suggestion.why}</p><strong>{!keepsSupply(suggestion.team)?`Needs ${supplyCat} in this crew`:rosterLocked?'Crew locked for this patrol':'Use this team →'}</strong>
+          <small>PLAN {index+1}</small><h3>{suggestion.name}</h3><FormationTrioA6 ids={suggestion.team} rows={suggestion.rows}/><PowerA6 reducedMotion={m.state.settings.reducedMotion} value={suggestion.power}/><p>{suggestion.why}</p><strong>{!keepsSupply(suggestion.team)?`Needs ${supplyCat} in this crew`:rosterLocked?'Crew locked for this patrol':'Use this team →'}</strong>
         </button>)}</div>
         {!suggestions.length&&<p className="a6-formation-empty">No full crew meets this route’s level requirement. Train three companions before trying a suggested team.</p>}
       </section>}
@@ -89,12 +93,21 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
       </section>}
     </FormationToolA6>}
     <div className="a6-formation-stage" ref={root} style={{'--a6-front-seats':`${Math.max(1,ids.filter(id=>rows[id]==='front').length)}fr`,'--a6-back-seats':`${Math.max(1,ids.filter(id=>rows[id]==='rear').length)}fr`} as CSSProperties}><BondLinesA6 host={root} ids={ids} rows={rows}/>{(['front','rear'] as const).map(row=><section className="a6-formation-row" key={row} aria-label={`${row==='front'?'Front':'Back'} row`}>
-      <header><div><b>{row==='front'?'Front · protect':'Back · support'}</b><small>{row==='front'?'Takes ordinary hits':'Cover while the front holds'}</small></div><button disabled={locked||rows[selected]===row||(row==='rear'&&!ids.some(id=>id!==selected&&rows[id]==='front'))} onClick={()=>update(ids,{...rows,[selected]:row})} aria-label={`Place ${R.CAT_BY_ID[selected]!.name} ${row}`}>Place here</button></header>
-      <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=><button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${R.CAT_BY_ID[id]!.name} for placement`} onClick={()=>setPicked(id)}>
-        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{"★".repeat(state.account.cards.find(c=>c.cardId===id)?.stars??1)}</span><img {...portraitProps(id)} alt=""/><div><b>{R.CAT_BY_ID[id]!.name}</b><PowerA6 value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/><small>{R.CAT_BY_ID[id]!.role}</small></div></button>)}{!ids.some(id=>rows[id]===row)&&<p className="a6-empty-row">Choose a cat, then place it here.</p>}</div>
+      <header><div><b>{row==='front'?'Front · protect':'Back · support'}</b><small>{row==='front'?'Takes ordinary hits':'Cover while the front holds'}</small></div><button disabled={locked||rows[selected]===row||!ids.some(id=>(id===selected?row:rows[id])==='front'&&living(id))} title="Keep at least one living companion in front." onClick={()=>update(ids,{...rows,[selected]:row})} aria-label={`Place ${R.CAT_BY_ID[selected]!.name} ${row}`}>Place here</button></header>
+      <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=>{
+        const actor=party?.find(cat=>cat.catalogId===id),name=R.CAT_BY_ID[id]!.name,description=`${healthId}-${id}`;
+        return <button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} data-knocked-out={actor?.hp===0||undefined} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${name} for placement`} aria-describedby={actor?description:undefined} onClick={()=>setPicked(id)}>
+        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{"★".repeat(state.account.cards.find(c=>c.cardId===id)?.stars??1)}</span><img {...portraitProps(id)} alt=""/><div>{actor?<span className="a6-seat-identity"><b>{name}</b><small>{R.CAT_BY_ID[id]!.role}</small></span>:<b>{name}</b>}<PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/>{!actor&&<small>{R.CAT_BY_ID[id]!.role}</small>}
+          {actor&&<span className="a6-seat-health" data-condition={actor.hp===0?'ko':actor.hp<=actor.maxHp/3?'low':actor.hp<actor.maxHp?'hurt':'full'}>
+            <small id={description}>{actor.hp===0?'Knocked out · 0 HP':`${actor.hp.toLocaleString('en-US')} / ${actor.maxHp.toLocaleString('en-US')} HP`}</small>
+            <progress aria-label={`${name} HP`} value={actor.hp} max={actor.maxHp}/>
+          </span>}
+        </div></button>;
+      })}{!ids.some(id=>rows[id]===row)&&<p className="a6-empty-row">Choose a cat, then place it here.</p>}</div>
     </section>)}</div>
-    <p className="a6-placement-hint" aria-live="polite">{locked?'This crew is committed. Positions and plan are locked.':<>{R.CAT_BY_ID[selected]!.name} selected · choose a row to place.{rosterLocked?' Keep this crew; positions and plan can still change.':''}</>}</p>
+    <div className="a6-formation-notes"><p className="a6-placement-hint" aria-live="polite">{locked?'This crew is committed. Positions and plan are locked.':!hasLivingFront?'Choose a living cat, then place them in front.':<>{R.CAT_BY_ID[selected]!.name} selected · choose a row to place.{rosterLocked?' Keep this crew; positions and plan can still change.':''}</>}</p>
     {R.activePairCombosA6(ids).length>0&&<div className="a6-ready-pairs">{R.activePairCombosA6(ids).map(pair=><span key={pair.id}>∞ {pair.name} <small>{pair.cats.map(id=>R.CAT_BY_ID[id]!.name).join(' + ')}</small></span>)}</div>}
+    </div>
 
   </section>;
 }
@@ -110,10 +123,11 @@ export function PrepareA6({m}:{m:DepthModel}) {
   const [chosen,setChosen]=useState<string|null>(null);
   const selected=enemies.find(actor=>actor.id===chosen)??enemies.find(actor=>R.ENEMY_BY_ID[actor.catalogId]?.tier==='boss')??enemies[0]!;
   const note=enemyGuideA6(selected.catalogId);
-  return <><div className="uv-prepare-main"><div className="uv-prepare-grid a6-prepare-grid"><section aria-label="Your crew"><div className="uv-prepare-title"><h2>Your crew <PowerA6 value={battle.initial.cats.reduce((sum,cat)=>sum+R.powerScoreA6(cat.stats),0)}/></h2></div><FormationA6 m={m} preparing/></section>
-    <aside aria-label="Enemy preview"><header className="a6-enemy-heading"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/></header>
-      <div className="uv-enemy-preview a6-foes a6-foe-index" role="group" aria-label="Read an enemy note">{enemies.map(actor=><button key={actor.id} className="a6-foe-choice" aria-label={`Read ${actor.name} tactics`} aria-pressed={actor.id===selected.id} onClick={()=>setChosen(actor.id)}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small></button>)}</div>
+  const party=battle.actors.filter(actor=>actor.side==='party'),injured=party.some(actor=>actor.hp<actor.maxHp),knockedOut=party.some(actor=>actor.hp===0);
+  return <><div className="uv-prepare-main"><div className="uv-prepare-grid a6-prepare-grid"><section aria-label="Your crew"><div className="uv-prepare-title"><h2>Your crew <PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle.initial.cats.reduce((sum,cat)=>sum+R.powerScoreA6(cat.stats),0)}/></h2></div><FormationA6 m={m} preparing/></section>
+    <aside aria-label="Enemy preview"><header className="a6-enemy-heading"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 reducedMotion={m.state.settings.reducedMotion} label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/></header>
+      <div className="uv-enemy-preview a6-foes a6-foe-index" role="group" aria-label="Read an enemy note">{enemies.map(actor=><button key={actor.id} className="a6-foe-choice" aria-label={`Read ${actor.name} tactics`} aria-pressed={actor.id===selected.id} onClick={()=>setChosen(actor.id)}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 reducedMotion={m.state.settings.reducedMotion} value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small></button>)}</div>
       <section className="a6-foe-note" aria-label={`${selected.name} tactics`} aria-live="polite"><h3>{selected.name}</h3><p>{note.intent}</p><p className="a6-foe-counter"><strong>Try</strong> {note.counter}</p>{note.phases&&<small>{note.phases}</small>}</section>
       <ForecastV4 setup={battle.initial} label="Matchup" unavailableMessage="Forecast unavailable. Read their plan above." compact/>
-    </aside></div></div><footer className="uv-fight-bar"><span>{m.tutorialBattle?'Practice together. Win to welcome a free friend.':'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
+    </aside></div></div><footer className="uv-fight-bar"><span>{m.tutorialBattle?'Practice together. Win to welcome a free friend.':knockedOut?'HP carries over between stops. Knocked-out cats cannot act.':injured?'HP carries over between stops. Your cats fight with the health shown.':'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
 }

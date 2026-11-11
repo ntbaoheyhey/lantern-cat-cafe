@@ -1,0 +1,9 @@
+# C11 — Preparation health and living-front placement
+
+Preparation now shows each companion’s actual encounter HP, including carried wounds and explicit knockout text. Accessible descriptions expose the same values; the footer explains carryover. Health is read from the current battle, with no mutation from opening or inspecting preparation. The ordinary Team screen keeps its existing build view.
+
+Row controls retain at least one living front companion, even when another front companion is knocked out. If the front is already down, the instruction points to moving a living cat forward. Legal keyboard moves match configurePreparation exactly and preserve HP, seed, enemy lineup and currencies. Power respects the application’s reduced-motion preference. Bond lines sit above names; the compact tutorial and preparation spacing retain visible health, placement notes and Fight at720p.
+
+Verification preserved from the completed runs: two initial Formation regressions failed before the fix; final15Formation/Power tests, workspace typecheck and lint PASS. Final browser receipt has116checks including28layout checks and10keyboard moves at1280×720/1440×900, zero page errors. The preceding88check receipt is retained outside git and is not added to that total. All28final captures inspected in seven sheets, with full-size practice720p and moved wounded crew900p review; two representative images retained.
+
+Initial browser checks exposed stage/hint overflow in720p practice; the final compact layout passes. An intermediate harness failed after stale replay state crossed fixtures; isolated fixture reset fixed it. Raw attempts remain /tmp/cardrpg-c-preparation-health*. No new fullE2E, tuning, performance or recovery-rate claim. Designer inbox0/25; demo29,226,665bytes and score7.79 unchanged. Continue C8/C11; C12 remains due20November06:00UTC.

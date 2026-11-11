@@ -1,7 +1,7 @@
 # Lane C handoff
-NOW: C11 first-step context verified; continue preparation clarity and intake.
+NOW: C11 preparation health verified; continue preparation/loss clarity and intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: check designer inbox; review first-patrol/preparation clarity from real screens.
+NEXT1: check designer inbox; inspect remaining preparation/loss decisions.
 NEXT2: keep diagnostics outside git; evidence<120MB; preserve accepted checks.
 NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness/build. No STOP-C at checkpoint.
@@ -27,4 +27,4 @@ KNOWN:selector40browser/8keyboard+4shortagechecks,32+4views,29preserved/7finalte
 KNOWN:recruit136browser/20keyboard+36animated/6keyboard;74views/13tests/types/lintPASS;720pgeargridfixed.
 KNOWN:firstlevel18browser/12viewsPASS;2244webtests/types/lint preserved;guided row/focus/hand fixed.
 KNOWN:firstcontext64browser/54views/7tests/types/lintPASS;route/supply/owned guidance and hands corrected.
-ARCHIVE: archive/HANDOFF-before-first-context-2026-11-11.md preserves earlier checkpoints.
+KNOWN:prepHP116browser/10keyboard/28views/15tests/types/lintPASS;archive/HANDOFF-before-preparation-health-2026-11-11.md.
