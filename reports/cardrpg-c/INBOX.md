@@ -1,4 +1,6 @@
 # User corrections
+2026-11-11 resume12:03UTC: handoff confirms144source/144battle/144offline/two playback checks and p9516.7–16.8ms. Preserved unfinished code and all passing logs; inspected final38views, completed receipt/push/PR checkpoint before continuing C11.
+2026-11-11 resume11:54UTC: handoff reports loading-clock checks pending final review. Verified clean pushed84333eef1 already contains inspected8views, offline build/smoke and56tests/types/lintPASS. Preserve checkpoint; continue C11 ultimate visual readability from retained captures.
 2026-11-11 resume11:27UTC: user handoff describes animated-bounds camera fitting. Preserved uncommitted patch and passing11tests/types/lint; first pilot still clipped34px. Diagnostic found floating-point equality skipping recentering at the fitted zoom. Continue focused repair and both-size review; no accepted work rerun.
 2026-11-11 resume11:14UTC: handoff identifies resisted/immune text filtered out. Preserved unfinished patch and failed focused test; target inference also omitted all-fizzle outcomes. Continue repair and both-size verification without rerunning completed cat work.
 2026-11-11 resume10:35UTC: user handoff confirms pushed Kettle fix; verified clean205d1e816/draft439. Continue actual combat utility turns, beginning with Spool Ram charge; preserve all prior completed checks.

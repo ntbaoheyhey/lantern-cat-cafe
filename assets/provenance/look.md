@@ -475,3 +475,6 @@ Built-in image_gen, illustration-story, text-only original empty cafe; no input/
 
 ## Lane C Spool preparation cue — 2026-11-11
 Tool: hand-authored TypeScript Canvas Path2D in spine/vfx-stamps.ts; source: original bobbin silhouette with three winding gaps, no image/reference input. Existing shared painted tokens, pooled threads and contracting foot ring. Purpose: a visible caster-only preparation cue from the real charge event; not final character art.
+
+## Lane C ultimate silhouette emphasis — 2026-11-11
+Tool: original TypeScript Canvas2D/Path2D from the existing C6 painted motifs; no image/reference/model input. Cached translucent core variants change fill/outline/size for cafe doors, lanterns, oven, teapot, crown, spore, bells, star and wind. Source paths remain original; colors and all paint values live in spine/style.ts. No character art generated or altered.

@@ -27,7 +27,7 @@ export class PaintedVfx {
  private spawn(recipe:PaintedRecipe,layer:PaintedLayer,source:string,target:string,time:number,index:number,total:number,speed:number,impact=false){
   let particle:Particle|undefined;for(let i=0;i<this.pool.length;i++){const candidate=this.pool[this.cursor];this.cursor=(this.cursor+1)%this.pool.length;if(!candidate!.active){particle=candidate;break;}}
   if(!particle){this.stats.dropped++;return;}
-  particle.active=true;particle.born=time+layer.delay;particle.life=layer.life*Math.max(1,speed*.65);particle.source=source;particle.target=target;particle.layer=layer;particle.recipe=recipe;particle.index=index;particle.total=total;particle.stamp=this.stamps.get(layer.glyph,layer.accent?PAINT.cream:recipe.color)??null;particle.captured=false;particle.impact=impact;
+  particle.active=true;particle.born=time+layer.delay;particle.life=layer.life*Math.max(1,speed*.65);particle.source=source;particle.target=target;particle.layer=layer;particle.recipe=recipe;particle.index=index;particle.total=total;particle.stamp=this.stamps.get((layer.core?'core:':'')+layer.glyph,layer.accent?PAINT.cream:recipe.color)??null;particle.captured=false;particle.impact=impact;
  }
  private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
  cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors']){

@@ -73,3 +73,5 @@ Kettle semantic follow-up:14finalbattle/22source/22offlinecaptures inspected. Da
 Utility follow-up: inspected14finalbattle+10source+10offlinecaptures. A bobbin core makes winding visible on Spool, the following strike has damage numbers on cats, and support remains friendly. Charge/strike gallery toggle fits both sizes. Weighted7.79unchanged; correctness/readability refinement is not player-study evidence.
 
 Outcome follow-up:34captures inspected; short Resisted/Immune words and stacked damage/status rows remain clear of faces/HP. Pure resisted Marigold has no damage cue. Rightmost enemy/minion clips during ultimate zoom in the retained battle captures; next framing fix. Weighted7.79unchanged. C11-OUTCOME-RECEIPT.md.
+
+Ultimate silhouette follow-up:24source/4battle/8offline/2performance views inspected. Larger translucent cafe motifs remain distinct while faces/HP/status rows stay readable. Body animation and glyph-based effects are still provisional. Retain weighted7.79; details and benchmark scope in C11-ULTIMATE-PAINT-RECEIPT.md.

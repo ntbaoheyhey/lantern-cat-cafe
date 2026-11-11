@@ -1,12 +1,10 @@
 # Lane C handoff
-NOW: C11 loading clock PASS; continue visual-quality review from retained ultimate captures.
+NOW: C11 ultimate paint checkpoint verified; continue quality/intake.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: inspect retained ultimate highlights; diagnose weakest visual before changing VFX.
-NEXT2: preserve verified outcome semantics, loading gates, crew lanes and camera framing.
-NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
-RUNNING: Vite5970 PID59050 only; checks complete. Demo29225557bytes/evidence113.75MB.
-KNOWN: original earnedx1normal36.30s/boss62.34s films preserved/labeled before backdrop update.
-KNOWN: current weighted7.79/10;gameplay5.8 remains weakest;no fourth tuning round.
+NEXT1: check designer arrivals; review replacement asset contract/fallbacks for a concrete gap.
+NEXT2: keep large diagnostics outside git (evidence118.70MB/120); preserve existing accepted checks.
+NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
+RUNNING: Vite5970; no harness or build in progress.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
 KNOWN: raw accounts unchanged;same-node recovery2/4(completed1/1,earlyfallback1/3),not population evidence.
 KNOWN: pending advice guard+content encounter key stops discovery receipts restarting worker;26tests/6viewsPASS.
@@ -28,3 +26,4 @@ KNOWN:framing240source/144offline/6PausePlay/20views/12tests/types/lintPASS;min4
 KNOWN:roster20public/10lifecycle/240framing/144offline/6controls/26views/30tests/types/lintPASS.
 KNOWN:pending6cold/10lifecycle/526offline switches/2controls/4views/34tests/types/lintPASS.
 KNOWN:loadingclock4browser/2offlinesmoke/2controls/8views/56tests/types/lintPASS;no balance change.
+KNOWN:ultpaint144source/144battle/144offline/2controls/38views/30tests/types/lintPASS;99draws;p9516.8/16.7ms.

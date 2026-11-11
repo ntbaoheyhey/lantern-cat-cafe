@@ -8,7 +8,8 @@ const live=process.argv.includes('--live'),outcomes=process.argv.includes('--out
 if(!/^[a-z0-9-]+$/.test(tag))throw Error('Invalid output tag');
 const out=resolve(root,'reports/cardrpg-c/shots',tag);await mkdir(out,{recursive:true});
 const slots=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8'));
-const selected=['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4','soot-4'];
+const ultimates=process.argv.includes('--ultimates');
+const selected=ultimates?['mochi-4','panko-4']:['mochi-1','clover-1','cinnamon-1','marigold-3','cinnamon-4','soot-4'];
 const scenarios=outcomes?[{id:'marigold-3',variant:'resist'},{id:'inkcap-2',variant:'immune'},{id:'inkcap-4',variant:'both'},
  {id:'inkcap-4',variant:'boss'},{id:'cinnamon-1',variant:'resist'}]:[...slots.units.filter(u=>u.side==='party').flatMap(u=>u.skills.map(s=>({id:s.id,variant:'default'}))),
  {id:'clover-1',variant:'self'},{id:'marigold-3',variant:'resist'},{id:'cinnamon-4',variant:'team'},{id:'clover-1',variant:'reflect'}];
@@ -23,6 +24,7 @@ try{
  for(const [width,height]of [[1280,720],[1440,900]]){
   await page.setViewportSize({width,height});
   for(const scenario of scenarios)for(const reduced of [false,true])for(const speed of [1,2,3]){
+   if(ultimates&&(!scenario.id.endsWith('-4')||scenario.variant!=='default'))continue;
    if(completed.has(key({width,scenario,reduced,speed})))continue;
    if(process.argv.includes('--focus')&&!selected.includes(scenario.id))continue;
    if(live&&(!selected.includes(scenario.id)||speed!==1||scenario.variant!=='default'))continue;
@@ -62,7 +64,11 @@ try{
     window.catTime=3;fx.clear();s.eventAudit.length=0;s.prepare(s.view());
     const recipe=P.paintedRecipe(scenario.id,m.plan),expected=recipe.layers.some(l=>l.phase==='contact'&&l.anchor!=='caster'&&!l.recipients)?(recipe.friendly?setup.friendly:setup.hostile):[];
     let draws=0,peak=0,impacts=0,shake=0,last=0;const hit=m.plan.beats[2].start,step=1000/60*speed;
-    for(let at=0;at<=hit+220;at+=step){m.animationAt=at;window.catTime=3+at/1000;s.render(s.view(),0);last=at;draws=Math.max(draws,s.stats.calls+fx.stats.draws);peak=Math.max(peak,fx.stats.active);impacts=Math.max(impacts,fx.stats.impacts);shake=Math.max(shake,Math.abs(s.camera.position.x));}
+    for(let at=0;at<=hit+220;at+=step){m.animationAt=at;window.catTime=3+at/1000;s.render(s.view(),0);last=at;draws=Math.max(draws,s.stats.calls+fx.stats.draws);peak=Math.max(peak,fx.stats.active);impacts=Math.max(impacts,fx.stats.impacts);
+     // Ultimate framing can pan without damage. Only the residual is shake.
+     const pan=s.cinematic.focus>0&&!s.view().reducedMotion?s.framing.x:0;
+     shake=Math.max(shake,Math.abs(s.camera.position.x-pan));
+    }
     const particles=fx.pool.filter(p=>p.active&&p.born<=window.catTime&&p.recipe?.id===scenario.id&&p.impact);
     const primary=[...new Set(particles.filter(p=>p.layer.anchor!=='caster'&&!p.layer.recipients).map(p=>p.target))];
     const healing=[...new Set(particles.filter(p=>p.layer.recipients==='heal').map(p=>p.target))],shields=[...new Set(particles.filter(p=>p.layer.recipients==='shield').map(p=>p.target))];

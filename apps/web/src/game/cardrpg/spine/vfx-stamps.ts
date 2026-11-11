@@ -1,5 +1,5 @@
 /** Original flat brush silhouettes, rasterized once. No 3D geometry or lighting. */
-import { FX_COLORS, GLYPHS, PAINTED_STATUSES, type Glyph } from './vfx-registry';
+import { FX_COLORS, GLYPHS, PAINTED_STATUSES, PAINTED_VFX, type Glyph } from './vfx-registry';
 import { PAINT } from './style';
 const paths:Record<Glyph,string>={
  bobbin:'M28 12Q50 5 72 12L68 27H63V73H68L72 88Q50 95 28 88L32 73H37V27H32ZM42 33V39H58V33ZM42 46V52H58V46ZM42 59V65H58V59Z',
@@ -38,13 +38,14 @@ const paths:Record<Glyph,string>={
 };
 export class PaintedStamps {
  readonly sprites=new Map<string,HTMLCanvasElement>();
- constructor(){for(const color of FX_COLORS)for(const glyph of GLYPHS)this.make(glyph,color,paths[glyph],false);for(const status of PAINTED_STATUSES)this.make('status:'+status.id,status.color,status.path,true);}
- private make(id:string,color:string,shape:string,status:boolean){
+ constructor(){for(const color of FX_COLORS)for(const glyph of GLYPHS)this.make(glyph,color,paths[glyph],false);for(const status of PAINTED_STATUSES)this.make('status:'+status.id,status.color,status.path,true);for(const recipe of PAINTED_VFX.values())for(const layer of recipe.layers)if(layer.core){const color=layer.accent?PAINT.cream:recipe.color,id='core:'+layer.glyph;if(!this.sprites.has(id+'/'+color))this.make(id,color,paths[layer.glyph],false,true);}}
+ private make(id:string,color:string,shape:string,status:boolean,core=false){
   const canvas=document.createElement('canvas');canvas.width=canvas.height=160;const c=canvas.getContext('2d')!,path=new Path2D(shape);
   c.translate(15,15);c.scale(1.3,1.3);if(status)c.scale(100/24,100/24);
   const scale=status?24/100:1;c.lineJoin=c.lineCap='round';
   c.shadowColor=color;c.shadowBlur=PAINT.glow*14;c.strokeStyle=PAINT.rim;c.lineWidth=PAINT.rimWidth*scale;c.fillStyle=color;
-  if(!['thread','wind','door','needle','bow','whisk'].includes(id)&&!status)c.fill(path,'evenodd');
+  if(core){c.globalAlpha=PAINT.ultimatePaint.fill;c.fill(path,'evenodd');c.globalAlpha=1;c.lineWidth=PAINT.ultimatePaint.rim;c.stroke(path);c.strokeStyle=color;c.lineWidth=PAINT.ultimatePaint.stroke;}
+  else if(!['thread','wind','door','needle','bow','whisk'].includes(id)&&!status)c.fill(path,'evenodd');
   c.stroke(path);c.shadowBlur=0;c.strokeStyle=PAINT.cream;c.globalAlpha=.62;c.lineWidth=.8*scale;c.stroke(path);
   if(!status){c.save();c.clip(path,'evenodd');for(let i=0;i<40;i++){c.globalAlpha=.03+(i%3)*.013;c.fillStyle=i%2?PAINT.cream:PAINT.rim;c.beginPath();c.ellipse((i*37)%100,(i*61)%100,2+i%4,.9,0,0,Math.PI*2);c.fill();}c.restore();}
   this.sprites.set(id+'/'+color,canvas);

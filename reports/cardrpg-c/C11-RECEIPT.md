@@ -33,3 +33,5 @@ Roster checkpoint: C11-ROSTER-RECEIPT.md. Eight baseline order mismatches fixed;
 Pending actor checkpoint: C11-PENDING-RECEIPT.md. Six cold-load failures fixed; 6 current +10 retained lifecycle checks, 526 offline switches/six batches/two playback controls, 34 focused tests/types/lint pass. Four final captures inspected. No gameplay/score claim; demo29.226MB/evidence111.87MB.
 
 Loading clock checkpoint: C11-LOADING-CLOCK-RECEIPT.md. Four delayed actor playback failures fixed; four browser/two offline smoke/two controls/56 focused tests/types/lint pass. Eight final views inspected; demo29.226MB/evidence113.75MB. No gameplay/score/performance claim.
+
+Ultimate silhouette checkpoint: C11-ULTIMATE-PAINT-RECEIPT.md.144source/144battle/144offline/two controls/30focused/types/lint/galleryTS pass;38views inspected. Peak99battle/60gallery draws; offline x1 p9516.8/16.7ms,57sampledraws. Demo29,226,021bytes/evidence118.70MB. No gameplay/score change.
