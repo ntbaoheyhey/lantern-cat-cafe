@@ -1,11 +1,10 @@
 # Lane C handoff
 NOW: C11 framing PASS; next diagnose retained actor lanes vs card order when preview roster changes.
 BASE: A6 ef4aee790 incl.Q54/Bd5c34d233; branch codex/cardrpg-c-2026-11-11, draft#439.
-NEXT1: commit/push framing checkpoint and update draft439, then diagnose roster lane/card mismatch.
+NEXT1: diagnose retained actor lanes/card mismatch after roster changes;framing264a669e4verified.
 NEXT2: review actual roster-change lifecycle; preserve same-battle summon lanes and accepted framing.
 NEXT3: check designer arrivals; continue lowest actionable C11 work; C12 Nov20.
 RUNNING: Vite5970 PID59050 only; tests complete. Demo29225289bytes/evidence105.81MB.
-KNOWN: stage painting244296bytes;3parallaxplanes;procedural loading/failure fallback;late/disposed decode safe.
 KNOWN: final offlinep95 16.7–16.8ms/60draws,0faceHPmask/error/HTTP;demo29.21MB/evidence34MB.
 KNOWN: original earnedx1normal36.30s/boss62.34s films preserved/labeled before backdrop update.
 KNOWN: current weighted7.79/10;gameplay5.8 remains weakest;no fourth tuning round.
