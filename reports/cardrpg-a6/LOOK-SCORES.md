@@ -13,7 +13,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Daily | 8.1 | 8.0 | 13: compact reward copy (7.5) | shots/q23-daily/* + q23-daily-cap/*; direct board/gifts sections, all14milestones fit, shared counts/three claims/caps/ribbon/keyboard pass |
 | Tower | 8.1 | 8.0 | 13: compact floor numbers (7.5) | shots/q25-tower/* + q25-climb-final/*; direct gifts, exact caps and current advice; replay/keyboard/return fit both sizes |
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
-| Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
+| Result / defeat | 8.2 | 8.1 | 13: compact chapter labels (7.5) | shots/q34-offline + q34-variants-offline + q34-boss-offline; original receipt,14–16px report text, bounded pages/focus, exact-once rewards/replay/tutorial/Tower/advice; reward feedback expires |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.2 | 8.1 | 13: secondary route labels (7.5) | shots/q32-map-final + q32-offline;30source/34offlineviews,13–15pxlabels/40pxtonic,threechapters/allchoices/exactcappedclaims/keyboard/reducedmotion; no overlap |
 | Journal | 8.1 | 8.0 | 13: compact collection metadata (7.5) | shots/q26-journal/* + q26-keepsakes-final/*;48views, direct pages, eight exact claims/caps/route locks/keyboard, no book overflow |

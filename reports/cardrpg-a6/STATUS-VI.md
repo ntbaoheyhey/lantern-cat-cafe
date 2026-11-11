@@ -227,3 +227,6 @@ Nhận thưởng/thời gian/giới hạn/bàn phím đều đúng;45test tích 
 
 2026-11-11T00:12:32Z: Màn kết quả đã duyệt38ảnh; phần thưởng/mục tiêu sao/nút thao tác vừa720p, chi tiết mở ba trang trực tiếp.
 Nhận đúng một lần, xem lại/đội hình/hướng dẫn/Tháp/bàn phím đều đạt; sửa hiệu ứng thưởng bị kẹt sau khi tiêu tiền, hai kiểm tra hồi quy qua. Đang tích hợp Yarn Giant và đóng gói offline.
+
+2026-11-11T00:16:58Z: Q34 hoàn tất: demo39.106.321byte,42ảnh offline đã duyệt, có Yarn Giant mới.
+Nhận thưởng một lần/xem lại/hướng dẫn/Tháp/bàn phím đạt; hiệu ứng thưởng hết đúng lúc, không lỗi/gọi mạng. Tiếp tục tủ Relic: vật liệu chiếc cốc, chữ và nút chọn rõ hơn ở720p.

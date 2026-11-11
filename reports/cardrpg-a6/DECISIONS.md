@@ -126,3 +126,5 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 - 2026-11-10T23:54:31Z Q34 follows inspected q14a720p result/loss8.0: small centered art and simple rewards leave a largely blank sheet, while Read details appends the long legacy report below it. Use an original receipt beside large companion art and a focused existing-data report. Preserve finish/advice/replay/team commands; do not reopen numerical difficulty tuning.
 
 2026-11-11T00:12:32Z Q34: preserve summary/finish/replay/improve-team/advice commands. Use a native bounded dialog with three report pages and an original companion receipt; no new reward types or economy rules. Fix the reproduced visual reward-expiry lifecycle only.
+
+2026-11-11T00:14:21Z Q35 queued from retained q14a/1280-relics inspection: next tied-low screen, simple cup material,12px labels/38px actions. Recompose the same four keepsakes and equipped slot with original vector refinements; preserve wallet/bonus rules. Off-app draft while Q34 package runs.
