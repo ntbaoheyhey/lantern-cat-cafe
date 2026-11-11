@@ -79,9 +79,9 @@
  .a6-tower-parcels small {font-size:12px}
  .a6-tower-scroll-hint {flex:none;text-align:right;color:#72573a;font-size:13px}
  .a6-tower-parcels:focus-visible {outline:2px solid #8966b5;outline-offset:-2px}
- .a6-gift-shelf[aria-label='Yarn Tower'] .a6-gift-tickets article {grid-template-columns:32px minmax(0,1fr)}
- .a6-gift-shelf[aria-label='Yarn Tower'] .a6-gift-tickets button {grid-column:1/-1;min-height:44px;scroll-margin-block:8px}
- .a6-gift-shelf[aria-label='Yarn Tower'] .a6-gift-art {width:32px}
+ .a6-gift-shelf .a6-gift-tickets article {grid-template-columns:32px minmax(0,1fr)}
+ .a6-gift-shelf .a6-gift-tickets button {grid-column:1/-1;min-height:44px;scroll-margin-block:8px}
+ .a6-gift-shelf .a6-gift-art {width:32px}
  @media(max-height:780px) {
   .a6-tower-parcels {grid-auto-rows:minmax(208px,1fr);gap:10px}
   .a6-tower-gifts {gap:6px}

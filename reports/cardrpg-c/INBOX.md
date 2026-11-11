@@ -54,3 +54,5 @@
 2026-11-11T17:29:12.278223+00:00 resume: user says continue; handoff confirms114browser/86keyboard/36views. Verified clean pushed743e4eee2; preserve completed work and continue Tower gift eligibility, caps and navigation. Designer inbox empty.
 
 2026-11-11T17:37:04.038178+00:00 resume: user says continue; inherited Events focus/local-note fixes and passing logs. Preserved all unfinished files, reviewed final captures and finished Tower checkpoint without rerunning accepted checks.
+
+2026-11-11T17:52:19.939514+00:00 resume: user says continue; handoff identifies passing transaction checks and short Discoveries note. Preserved unfinished patch and passed logs; reviewed final captures, repaired whole-card overflow, completed milestone checkpoint without replaying accepted gameplay.

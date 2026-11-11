@@ -150,3 +150,17 @@
  }
 
 }
+
+.uv-app[data-a6=true] .a6-journal {
+ .a6-gift-short-note {margin:4px 0 0;color:#6c3824;font-size:14px;line-height:1.35}
+ .a6-journal-reward {font-weight:400}
+ .a6-journal-ticket button,.dp-v4-star-board button {scroll-margin-block:8px}
+ .a6-journal-discoveries .dp-v4-meta-grid article {gap:4px;padding:10px}
+ @media(min-width:901px) and (max-height:760px) {
+  .a6-journal-discoveries>.dp-v4-star-board {display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);column-gap:12px;row-gap:8px}
+  .a6-journal-discoveries .dp-v4-star-board>h3,.a6-journal-discoveries .dp-v4-star-board>p {margin:0;align-self:center}
+  .a6-journal-discoveries .dp-v4-meta-grid {grid-column:1/-1}
+  .a6-journal-discoveries .dp-v4-meta-grid article {gap:2px;padding:6px}
+  .a6-journal-discoveries .dp-v4-meta-grid article>p {line-height:1.3}
+ }
+}

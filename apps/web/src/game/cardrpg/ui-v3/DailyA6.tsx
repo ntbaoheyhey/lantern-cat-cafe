@@ -78,12 +78,12 @@ export function DailyA6({ m }: { m: DepthModel }) {
         <p role="status">{readyCount ? `${readyCount} ready to collect · route stars, Tower & cafe journal` : allCollected ? 'All milestone gifts collected. Your daily board has tonight’s treats.' : waiting ? 'Earned gifts stay here. Finish your route or return when daily supplies have room.' : 'No milestone gifts ready yet. Each step below shows what comes next.'}</p>
       </div></header>
       <div className="a6-gift-shelves">{groups.map((group, index) => <section key={group.id} aria-label={group.name} className="a6-gift-shelf">
-        <header><h3>{group.name}</h3><p>{group.note}</p>{group.gifts.some(g=>g.ready&&'floor' in g&&giftReducedA6(g.requested,g.reward))&&<p className="a6-gift-cap-note" id={panelId+'-tower-cap'}>{REDUCED_GIFT_NOTE_A6}</p>}</header>
+        <header><h3>{group.name}</h3><p>{group.note}</p>{group.gifts.some(g=>g.ready&&giftReducedA6(g.requested,g.reward))&&<p className="a6-gift-cap-note" id={panelId+'-'+group.id+'-cap'}>{REDUCED_GIFT_NOTE_A6}</p>}</header>
         <div className="a6-gift-tickets">{group.gifts.map(g => <article key={g.id} data-ready={g.ready} data-collected={g.claimed}>
           <GiftArtA6 variant={index}/><div id={panelId+'-'+g.id}><h4>{g.name}</h4>
-            {g.claimed ? <span className="a6-gift-note">Collected</span> : 'floor' in g ? <><GiftAmountsA6 requested={g.requested} reward={g.reward}/>{g.ready&&giftReducedA6(g.requested,g.reward)&&<span className="a6-gift-note">Uses the whole gift.</span>}{!g.ready&&<span className="a6-gift-note">{g.earned?g.reason:g.detail}</span>}</> : g.ready ? <>{g.ribbon ? <span className="a6-gift-note">Cafe ribbon</span> : <DailyReward cost={Object.fromEntries(Object.entries(g.reward).filter(([, n]) => n > 0))}/>}</> : <span className="a6-gift-note" title={g.reason ?? undefined}>{g.earned ? 'Saved for later' : g.detail}</span>}
+            {g.claimed ? <span className="a6-gift-note">Collected</span> : <>{g.ribbon?<span className="a6-gift-note">Cafe ribbon</span>:<GiftAmountsA6 requested={g.requested} reward={g.reward}/>}<span className="a6-gift-note">{g.ready?giftReducedA6(g.requested,g.reward)?'Uses the whole gift.':null:g.earned?g.reason:g.detail}</span></>}
           </div>
-          <button aria-label={`Collect ${g.name}`} aria-describedby={'floor' in g?panelId+'-'+g.id+(g.ready&&giftReducedA6(g.requested,g.reward)?' '+panelId+'-tower-cap':''):undefined} disabled={!g.ready} title={g.reason ?? `Collect ${g.name}`} onClick={g.collect}>{g.claimed ? 'Done' : g.ready ? 'floor' in g&&giftReducedA6(g.requested,g.reward)?'Collect reduced gift':'Collect' : 'Later'}</button>
+          <button aria-label={`Collect ${g.name}`} aria-describedby={panelId+'-'+g.id+(g.ready&&giftReducedA6(g.requested,g.reward)?' '+panelId+'-'+group.id+'-cap':'')} disabled={!g.ready} title={g.reason ?? `Collect ${g.name}`} onClick={g.collect}>{g.claimed ? 'Done' : g.ready ? giftReducedA6(g.requested,g.reward)?'Collect reduced gift':'Collect' : 'Later'}</button>
         </article>)}</div>
       </section>)}</div>
     </section>}

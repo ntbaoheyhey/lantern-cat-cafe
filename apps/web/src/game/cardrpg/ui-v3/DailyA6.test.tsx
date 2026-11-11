@@ -75,7 +75,9 @@ it('shows the actual capped gift, keeps blocked milestones pending, and restores
  const m=milestoneGifts();m.state.account.daily.earned={...R.depthCaps(m.state),stamps:R.depthCaps(m.state).stamps-10};
  render(<DailyA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:'Ready gifts 3'}));
  const star=screen.getByRole('button',{name:'Collect 3-star chest'}),before=m.state.account.currencies.stamps;
- expect(within(star.closest('article')!).getByRole('img',{name:'10 stamps'})).toBeTruthy();
+ const card=within(star.closest('article')!);expect(card.getByText('10 stamps')).toBeTruthy();expect(card.getByText('30 stamps')).toBeTruthy();
+ expect(star.textContent).toBe('Collect reduced gift');expect(card.getByText('Uses the whole gift.')).toBeTruthy();
+ const description=star.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');expect(description).toContain('Collecting today uses the whole gift');
  fireEvent.click(star);
  expect(m.state.account.currencies.stamps-before).toBe(10);
  expect(screen.getByRole('button',{name:'Ready gifts 0'})).toBeTruthy();
@@ -157,3 +159,14 @@ it('discloses reduced Tower gifts at the Events collection entry and preserves e
  expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(expected.state);
  const settled=R.exportSave(m.state);fireEvent.click(button);expect(R.exportSave(m.state)).toBe(settled);
 });
+
+ it('discloses journal currency replacement and keeps the ribbon as a separate non-currency gift',()=>{
+  const m=milestoneGifts();m.state.cleared=[1,2,3];m.state.account.inventory.stacks['cafe-ribbon']=1;
+  m.state.account.daily.earned={...R.depthCaps(m.state),threads:R.depthCaps(m.state).threads-2};
+  const before=R.exportSave(m.state),command=R.claimMilestoneV4(m.state,'three-chapters');
+  render(<DailyA6 m={m}/>);fireEvent.click(screen.getByRole('button',{name:/Ready gifts/}));
+  const button=screen.getByRole('button',{name:'Collect Every evening explored'}),card=within(button.closest('article')!);
+  expect(card.getByText('20 threads')).toBeTruthy();expect(card.getByText('2 threads')).toBeTruthy();expect(card.queryByText('Cafe ribbon')).toBeNull();
+  expect(card.getByText('Uses the whole gift.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+  fireEvent.click(button);expect(m.state).toEqual(command.state);expect(m.state.account.inventory.stacks['cafe-ribbon']).toBe(1);
+ });

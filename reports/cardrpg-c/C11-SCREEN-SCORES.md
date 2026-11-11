@@ -97,3 +97,5 @@ Story/treasure follow-up:30finalviews inspected at both sizes; points, per-catHP
 Reward follow-up:26reward+2campfire views inspected; rank/stack changes and20%power increments visible in modern/legacy layouts. Capped choices remain distinct and the exhausted pool opens the route. Weighted7.79 unchanged. C11-REWARDS-RECEIPT.md.
 
 Route completion follow-up:36final captures inspected, including list ends and keyboard focus at both sizes. Named gear navigation, readable conversion/missing notes and final-floor copy pass114browser checks. One focus-spacing repair; scroll hint keeps all finds discoverable. Weighted7.79 unchanged. C11-COMPLETION-RECEIPT.md.
+
+C11 milestone continuation: inspected68distinct final views across Events/Journal/Map; full and reduced gifts readable, complete Discoveries cards fit both sizes after geometry repair. Score7.79 retained; this is decision clarity, not new gameplay evidence.

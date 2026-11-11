@@ -2,7 +2,7 @@ import {useId,useState,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
 import {StarBoardV4} from '../depth/JourneyV4';
-import {currencyIconA6} from './CountUpA6';
+import {GiftAmountsA6,giftReducedA6,REDUCED_GIFT_NOTE_A6} from './GiftAmountsA6';
 import {artPropsA6} from './art-a6';
 
 type MilestoneKind = typeof R.MILESTONES_V4[number]['kind'];
@@ -24,14 +24,15 @@ export function JournalA6({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const journal=R.journalV4(m.state),milestones=R.MILESTONES_V4.map(x=>R.milestonePreviewV4(m.state,x.id));
  const ready=milestones.filter(p=>!p.reason),collected=milestones.filter(p=>p.claimed).length;
- const starGifts=R.STAR_REWARDS_V4.filter(g=>!R.starRewardPreviewV4(m.state,g.id).reason).length;
+ const starPreviews=R.STAR_REWARDS_V4.map(g=>R.starRewardPreviewV4(m.state,g.id)),starGifts=starPreviews.filter(p=>!p.reason).length;
  const [section,setSection]=useState<'keepsakes'|'discoveries'|'collection'|'evenings'>('keepsakes'),panelId=useId();
+ const reduced=(section==='keepsakes'?milestones:section==='discoveries'?starPreviews:[]).some(p=>!p.reason&&giftReducedA6(p.requested,p.reward));
  const found=m.state.v4?.journey?.found??[],stars=Object.values(m.state.v4?.journey?.stars??{});
  const crew=m.state.team.slice(0,3);
  return <section className="a6-journal" aria-label="Your collection journal">
   <header className="a6-journal-intro">
    <div className="a6-journal-photos" aria-hidden="true">{crew.map(id=><div key={id}><img {...artPropsA6(id)} alt=""/><span>{R.CAT_BY_ID[id]?.name}</span></div>)}</div>
-   <div className="a6-journal-title"><small>THE CAFE KEEPSAKE BOOK</small><h2>Little moments, kept forever.</h2><p>{ready.length?`${ready.length} ${ready.length===1?'gift is':'gifts are'} ready for your crew.`:collected===milestones.length?'Every milestone collected. Another evening awaits.':'Every new friend and every walk adds a page.'}</p>
+   <div className="a6-journal-title"><small>THE CAFE KEEPSAKE BOOK</small><h2>Little moments, kept forever.</h2><p id={panelId+'-cap'}>{reduced?REDUCED_GIFT_NOTE_A6:ready.length?`${ready.length} ${ready.length===1?'gift is':'gifts are'} ready for your crew.`:collected===milestones.length?'Every milestone collected. Another evening awaits.':'Every new friend and every walk adds a page.'}</p>
     <dl className="a6-journal-counts"><div><dt>Companions</dt><dd>{journal.cats.length}<small> / {R.CATS.length}</small></dd></div><div><dt>Gear designs</dt><dd>{journal.gear.length}<small> / {R.GEAR.length}</small></dd></div><div><dt>Full sets</dt><dd>{journal.sets.length}<small> / {R.SETS.length}</small></dd></div><div><dt>Routes home</dt><dd>{journal.rewardedRoutes}</dd></div></dl>
    </div>
   </header>
@@ -42,15 +43,15 @@ export function JournalA6({m}:{m:DepthModel}) {
    <button aria-pressed={section==='evenings'} aria-controls={panelId} onClick={()=>setSection('evenings')}>Evenings</button>
   </nav>
   <div className="a6-journal-view" id={panelId}>
-  {section==='keepsakes'&&<div className="a6-journal-milestones" aria-label="Collection milestones">{milestones.map(p=><article className="a6-journal-ticket" key={p.id} data-status={p.claimed?'collected':p.reason?'waiting':'ready'}>
+  {section==='keepsakes'&&<div className="a6-journal-milestones" aria-label="Collection milestones">{milestones.map(p=>{const partial=!p.reason&&giftReducedA6(p.requested,p.reward),detailId=panelId+'-'+p.id;return <article className="a6-journal-ticket" key={p.id} data-status={p.claimed?'collected':p.reason?'waiting':'ready'}>
    <div className="a6-journal-ticket-top"><JournalStamp kind={p.kind}/><span>{p.claimed?'Collected':p.reason?(p.progress>=p.target?'Gift waiting':'A little further'):'Gift ready'}</span></div>
    <h3>{p.name}</h3><label className="a6-journal-progress"><span>{Math.min(p.progress,p.target)} / {p.target}</span><progress aria-label={`${p.name} progress`} value={p.progress} max={p.target}/></label>
-   <div className="a6-journal-reward">{p.claimed?<><span aria-hidden="true">✓</span> Moment saved</>:p.ribbon?<><span aria-hidden="true">✦</span> Cafe ribbon</>:<span className="a6-journal-currency">{Object.entries(p.reward).map(([id,count])=><span key={id}><i aria-hidden="true">{currencyIconA6(id)}</i><b>{count} {id==='fish'?'fish':id}</b></span>)}</span>}</div>
-   <p className="a6-journal-reason">{p.claimed?'Keep exploring with your crew.':p.reason??'A thank-you for the journey.'}</p>
-   <button className={!p.reason?'cr-primary':undefined} aria-label={`Claim ${p.name}`} disabled={!!p.reason} onClick={()=>m.apply(R.claimMilestoneV4(m.state,p.id),`${p.name} collected.`)}>{p.claimed?'Collected':'Collect gift'}</button>
-  </article>)}</div>}
+   <div id={detailId+'-amounts'} className="a6-journal-reward">{p.claimed?<><span aria-hidden="true">✓</span> Moment saved</>:p.ribbon?<><span aria-hidden="true">✦</span> Cafe ribbon</>:<GiftAmountsA6 requested={p.requested} reward={p.reward}/>}</div>
+   <p id={detailId} className="a6-journal-reason">{p.claimed?'Keep exploring with your crew.':p.reason??(partial?'Uses the whole gift.':'A thank-you for the journey.')}</p>
+   <button className={!p.reason?'cr-primary':undefined} aria-label={`Claim ${p.name}`} aria-describedby={detailId+'-amounts '+detailId+(partial?' '+panelId+'-cap':'')} disabled={!!p.reason} onClick={()=>m.apply(R.claimMilestoneV4(m.state,p.id),`${p.name} collected.`)}>{p.claimed?'Collected':partial?'Collect reduced gift':'Collect gift'}</button>
+  </article>;})}</div>}
   {section==='discoveries'&&<div className="a6-journal-discoveries">
-   <StarBoardV4 m={m}/>
+   <StarBoardV4 m={m} reducedNoteId={panelId+'-cap'}/>
    <section className="a6-journal-notes" aria-label="Discovery history"><header><small>PAGES ADDED ALONG THE WAY</small><h3>{found.length} discoveries</h3></header>
     <div className="a6-journal-scroll" tabIndex={0} role="region" aria-label="Discovery notes">
      {found.length?<ol>{[...found].reverse().map(d=><li key={d.id}><span>{d.text}</span><small>Day {d.day}</small></li>)}</ol>:<div className="a6-journal-empty"><JournalStamp kind="routes"/><p>Your first discoveries are just ahead.</p><small>Crew bonds, matching sets, new ranks and route stars each leave a memory.</small></div>}

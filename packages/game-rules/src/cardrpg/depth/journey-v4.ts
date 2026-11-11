@@ -91,7 +91,7 @@ export function starRewardPreviewV4(s: DepthAccount, id: string) {
   const reason = !gameplayV4(s) ? 'Open Gameplay v4 first.' : s.run && !s.run.complete ? 'Finish your route first.'
     : claimed ? 'Already collected.' : progress < target.target ? 'Earn another route star.'
       : !Object.values(reward).some(n => n > 0) ? 'Your daily allowance is full. This reward can wait.' : null;
-  return { ...target, progress, claimed, reward, reason };
+  return { ...target, progress, claimed, requested: target.reward, reward, reason };
 }
 export function claimStarRewardV4(state: DepthAccount, id: string) {
   return transactDepth(state, s => {

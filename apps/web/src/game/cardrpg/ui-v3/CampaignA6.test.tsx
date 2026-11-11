@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { useSyncExternalStore } from 'react';
 import { afterEach, expect, it, vi } from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -56,4 +56,14 @@ it('the scenic route keeps branch availability and earned stars tied to real nod
  expect((screen.getByRole('button',{name:/Chapter guardian/}) as HTMLButtonElement).disabled).toBe(true);
  fireEvent.click(screen.getByRole('button',{name:/A little story/}));
  expect(m.state.run?.current).toBe('1-0');
+});
+
+it('shows the full and reduced star chest before the map consumes its one-time claim',()=>{
+ const m=new DepthModel(true,true,true,true);
+ m.state.v4!.journey!.stars={'1/0/0-0/battle':{key:'1/0/0-0/battle',chapter:1,band:0,nodeId:'0-0',kind:'battle',conditions:[true,true,true]}};
+ m.state.account.daily.earned.stamps=R.depthCaps(m.state).stamps-3;
+ const before=R.exportSave(m.state),command=R.claimStarRewardV4(m.state,'stars-3');render(<CampaignA6 m={m}/>);
+ const button=screen.getByRole('button',{name:/3 stars/});expect(within(button).getByText('3/3 · Full gift: 30 stamps')).toBeTruthy();
+ expect(within(button).getByText('Today: 3 stamps')).toBeTruthy();expect(within(button).getByText('Uses the whole gift.')).toBeTruthy();
+ expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(command.state);
 });
