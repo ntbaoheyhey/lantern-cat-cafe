@@ -117,3 +117,6 @@ P35 2b664ac4e3b20c88aa4f840092bbc5b6ab311f50 matches fetched origin. P36 source3
 
 ## Resume 2026-11-10T23:59:00.115418+00:00
 P37 accepted/staged, publish remains; HEAD36c4cc5482651518a32c8c92cd89f02ec1009de1 matches fetched origin. P38 original source audit/candidate/plan retained. No native runner or B heavy job; static servers50023/5920 and92836/5922 retained,139GiB free. Inventory RESUME-DIRTY-P38.txt; native dirty work/GLBs preserved/excluded.
+
+## Resume 2026-11-11T01:39:50.175243+00:00
+P38 52fa053e0a7750d64b1c46ebea4c5bfb2a029f31 matches fetched origin; P39 source2 candidate and audit already saved in work/ and ~/art/look-v3/p39; atlas not rebuilt. No native runner or B heavy job; servers50023/5920 and92836/5922 retained,137GiB free. Native dirty work/GLBs preserved and excluded.

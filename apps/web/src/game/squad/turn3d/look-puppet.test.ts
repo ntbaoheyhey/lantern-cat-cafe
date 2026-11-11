@@ -12,6 +12,7 @@ import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigo
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
 import rainRig from '../../../../../../assets/cardrpg-look/v3-puppets/rain-spool.rig.json';
+import pantryRig from '../../../../../../assets/cardrpg-look/v3-puppets/pantry-crown.rig.json';
 import yarnRig from '../../../../../../assets/cardrpg-look/v3-puppets/yarn-giant.rig.json';
 import kettleRig from '../../../../../../assets/cardrpg-look/v3-puppets/kettle-knight.rig.json';
 import crumbRig from '../../../../../../assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json';
@@ -601,5 +602,28 @@ it('dips Rain Spool horns with four planted hooves and a delayed heavy cape',()=
       expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean,quiet.tail,quiet.cloth]).toEqual([0,0,0,0,0,0]);expect(quiet.plant).toBe(false);
     }
     const end=pose(1);expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean),Math.abs(end.tail),Math.abs(end.cloth))).toBeLessThan(1e-10);
+  }
+});
+
+
+it('gathers Pantry Crown gauntlets inward with delayed offhand, rigid cabinet and planted feet',()=>{
+  expect(pantryRig.sockets.mainHand[0]).toBe('armR');expect(pantryRig.sockets.offHand[0]).toBe('armL');
+  const right=new Vector3(Number(pantryRig.sockets.mainHand[1]),Number(pantryRig.sockets.mainHand[2]),0);
+  const left=new Vector3(Number(pantryRig.sockets.offHand[1]),Number(pantryRig.sockets.offHand[2]),0);
+  const travel=(point:Vector3,angle:number)=>point.clone().applyAxisAngle(new Vector3(0,0,1),angle).sub(point);
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const lead=puppetPose(motion,0,motion==='attack'?.52:.38,false,0,'pantry-crown');
+    expect(travel(right,lead.prop).x).toBeLessThan(-.06);
+    expect(travel(left,lead.offhand).x).toBeGreaterThan(.05);
+    const early=puppetPose(motion,0,.06,false,0,'pantry-crown');
+    expect(Math.abs(early.offhand)).toBeLessThan(Math.abs(early.prop)*.5);
+    for(let i=0;i<=60;i++){
+      const p=puppetPose(motion,i/10,i/60,false,.4,'pantry-crown');expect(p.feetPlant).toBe(true);expect(p.bodySquash).toBe(0);
+      expect(Math.abs(p.head)).toBeLessThan(.01);expect(Math.abs(p.lean)).toBeLessThan(.003);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'pantry-crown');
+      expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean,quiet.bodySquash]).toEqual([0,0,0,0,0]);expect(quiet.feetPlant).toBe(false);
+    }
+    const end=puppetPose(motion,0,1,false,0,'pantry-crown');
+    expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean))).toBeLessThan(1e-10);
   }
 });

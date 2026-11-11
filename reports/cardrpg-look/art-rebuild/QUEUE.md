@@ -67,7 +67,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P38 [auto] Lowest-motion continuation: Rain Spool dips its complete horns/wooden face with all four hooves planted and restrained cape/tail recovery. Repair split front hinges, cloak/tassels, tail and boot rims; preserve original eight parts/assets and accepted boss/helper spacing. Correct face/front-hoof sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
 
-- [ ] P39 [auto] Lowest-motion continuation: Pantry Crown gathers its complete wood gauntlets with delayed opposing hand, quiet crown/cabinet and planted boots. Repair crown-owned door/pauldron strips, split fingers/forearms and boot-owned cabinet/sash; retain original six parts and boss/helper formation. Correct both knuckle sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
+- [x] P39 [auto] Lowest-motion continuation: Pantry Crown gathers its complete wood gauntlets with delayed opposing hand, quiet crown/cabinet and planted boots. Repair crown-owned door/pauldron strips, split fingers/forearms and boot-owned cabinet/sash; retain original six parts and boss/helper formation. Correct both knuckle sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
+
+- [ ] P40 [auto] Lowest-spectacle continuation: Soot Midnight Service gets a short crescent sweep and compact converging comet strokes with a warm impact centre and lavender afterglow, using its existing original VFX atlas. Preserve socket/targets/clock; same-shell two-size before/after, natural x1/x2/x3/reduced, face-HP/numbers/UI/performance and parity. Max3 repairs, compact evidence<=120MB; no whole-roster score increase from tests alone.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -152,3 +154,5 @@ P36 complete 2026-11-10T23:50:14.209797+00:00: source3/motion1,41web+14source te
 P37 complete 2026-11-10T23:56:34.530057+00:00: 42focused web+15source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38902322B. Complete yarn fists lead and follow with slight preparation compression; crown, necklace and shoulder mantle stay coherent, both feet planted. Motion7.7/overall8.0.
 
 P38 complete 2026-11-11T01:30:29.755578+00:00: 43focused web+16source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38902946B. Complete horns and wooden face dip into the strike; all four hooves stay planted while the whole cape and yarn tail recover quietly. Motion7.7/overall8.0.
+
+P39 complete 2026-11-11T01:48:48.265993+00:00: 44focused web+17source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38893706B. Complete wooden gauntlets gather inward with a delayed opposing hand; crown, cabinet doors and sash stay coherent, both boots planted. Motion7.7/overall8.0.
