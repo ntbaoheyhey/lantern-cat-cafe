@@ -1,3 +1,4 @@
+3D addendum bytes=16561 SHA256=8f21ad4757d3c493e5f7f8d45e09154ae9b42e8bb3939caafa72e528a36901c4; PROMPT.txt bytes=41404 SHA256=8bce2ed69aa7eb817870de0cfee232fde7b90213a31a792413ed18b95b490f5a
 # R-9 prompt integrity receipt — 2026-11-10T17:43:05.816261+00:00
 
 `wc -c reports/cardrpg-look/art-rebuild/PROMPT.txt`: 24774 bytes
@@ -120,3 +121,9 @@ P37 accepted/staged, publish remains; HEAD36c4cc5482651518a32c8c92cd89f02ec1009d
 
 ## Resume 2026-11-11T01:39:50.175243+00:00
 P38 52fa053e0a7750d64b1c46ebea4c5bfb2a029f31 matches fetched origin; P39 source2 candidate and audit already saved in work/ and ~/art/look-v3/p39; atlas not rebuilt. No native runner or B heavy job; servers50023/5920 and92836/5922 retained,137GiB free. Native dirty work/GLBs preserved and excluded.
+
+## Resume 2026-11-11T01:58:36.670616+00:00
+P39 c00ebf9ce45c461e7a7077a728e2ea89b1ce09fc matches fetched origin. P40 saved plan active, no runtime changes yet. Servers50023/5920 and92836/5922 retained;136GiB free. Native dirty work/GLBs preserved/excluded; work/resume-p40-dirty.txt records inventory. A6 holds its own timing lease; no B heavy job.
+
+## D0 switch 2026-11-11T02:11:59.554457+00:00
+User replaces mandatory2.5D with mandatory real3D models+VFX+size standard. Existing native dirty work/GLBs retained/excluded, P40 accepted candidate checkpointed and superseded. No B heavy job; servers50023/5920,92836/5922 retained.

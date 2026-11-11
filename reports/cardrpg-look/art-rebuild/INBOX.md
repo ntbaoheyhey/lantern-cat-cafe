@@ -25,3 +25,22 @@ RUN (roster):
 
 If local setup fails twice: write NEEDS-USER with the exact error and propose the paid fallback fal.ai `fal-ai/trellis-2` (about $0.30 per model, needs FAL_KEY from the user). Do not use any browser site for 3D generation.
 
+
+## USER — 2026-11-11 mandatory real 3D switch
+
+0. WHAT CHANGED AND WHY (read once)
+=====================================================================
+The user watched your current demo (illustrated 2.5D puppets, P1-P39) and finds it ugly. Their words (Vietnamese, 11 Nov 02:03 UTC): it is too ugly; switch to 3D, this is mandatory; watch the size balance of the characters, some are big and some are tiny; effects must be 3D too, mandatory.
+
+Honest review of your own screenshots (p10/r0-vs-puppet-roster.webp, p39/boss-phase/pantry-crown-1280.webp, p40/before-1440/soot-4.webp): the units are flat painted cut-outs on camera-facing planes inside a 3D cafe. They have no volume, no lighting response, rigid paper-doll part motion, and they do not sit in the 3D room. VFX are 2D flipbook cards. Sizes are inconsistent (Clover reads much smaller than Mochi; Pantry Crown towers over the party; Button Guard almost cat-sized).
+
+USER DECISION (11 Nov 2026, overrides the 10 Nov 16:09 UTC "2.5D puppets for all units" decision and the fixed item in PROMPT.txt JUDGMENT AUTHORITY):
+1. Every cat, enemy and boss becomes a REAL 3D model (volumetric mesh, skeleton, animation clips, lit by the stage) in the existing three.js cafe. Zero flat-puppet units in the final demo. Puppets stay in code ONLY as a per-unit fallback behind the flag until that unit's 3D model is accepted.
+2. Every skill / signature / ultimate effect becomes 3D (meshes, trails, rings, decals, 3D particles, light pulses). 2D flipbook textures may be used ON 3D geometry or soft particles, never as the whole effect on a flat camera card.
+3. A written SIZE STANDARD for all units, enforced by tests.
+Everything else in PROMPT.txt stays (non-stop rules, anti-forget, one agent, draft PRs only, original art only, deadline 2026-11-20 12:00 UTC, demo <= 40 MB together with A6, never write in A6's worktree).
+
+Lessons you must not repeat (from your own logs): raw single-image image-to-3D (TRELLIS) shattered the concepts (Yarn Giant shards, Button Guard cracked mesh, inward shells, UV collapse, ~3/23 converted, 0 accepted). The 7 Nov Blender-primitive cats looked blocky/low-poly. So: never ship raw generated meshes, and never ship coarse primitive blobs. The route below fixes both.
+
+=====================================================================
+

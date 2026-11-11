@@ -1,5 +1,7 @@
 # Illustrated battle art report
 
+> **2026-11-11 USER OVERRIDE:** The puppet delivery below is historical and rejected as the final art direction. D0-D11 now require real3D rigged models,3D VFX and enforced scale. No new-route3D unit is accepted yet; the old8.225 score does not apply to the new rubric. P40 is a superseded checkpoint. See PROMPT-3D-SWITCH-2026-11-11.txt and QUEUE.md.
+
 Taskbar Hero now has 25 original illustrated 2.5D puppets: all 12 cats and 13 enemy IDs, including four boss showcases. Each uses a WebP atlas and a JSON rig cut from the accepted original concept. The existing cafe supplies perspective, contact shadows and lighting. Native 3D sources are preserved as history; the roster uses puppets consistently.
 
 The delivered canvas includes eight semantic motions, closer framing, distinct boss-helper positions through phase three, socket-timed signature VFX, one visible damage/heal number layer, warm cafe lighting and a night window. The portrait manifest links the same art to 25 units and 60 skill icons. Main default remains OFF; the existing `lookV2 + lookArt=v3` flags enable this delivery. A6 owns the DOM screens/HUD and integrates the published B branch. No A6 merge into B, main push, deployment or deletion of original sources occurred.

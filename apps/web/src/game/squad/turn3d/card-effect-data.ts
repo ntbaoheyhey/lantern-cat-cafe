@@ -11,7 +11,8 @@ import type { Direction } from './effect-direction';
 import type { CardEffectPrimitive } from './card-effect-primitives';
 
 export type CardEffectMotion = 'hold' | 'expand' | 'orbit' | 'projectile' | 'burst'
-  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse' | 'emit' | 'shrink';
+  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse' | 'emit' | 'shrink'
+  | 'crescent' | 'converge';
 export type CardEffectAnchor = 'caster' | 'target' | 'all-targets';
 export interface CardEffectLayer {
   primitive: CardEffectPrimitive;

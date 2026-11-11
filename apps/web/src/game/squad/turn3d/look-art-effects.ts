@@ -91,6 +91,20 @@ export function artEffectRecipes(base:Record<string,Recipe>):Record<string,Recip
    if(suffix==='2')layers.push(light(first+1,'rise',target,{start:.54,end:.88,count:2,size:.55,spread:.4,height:.2,turns:-profile.turns,opacity:.58}));
    if(suffix==='3')layers.push(light(first+1,'cross',target,{start:.52,end:.82,count:2,size:.72,spread:.55,height:.45,opacity:.7}));
    if(ultimate)layers.push(light(first+1,owner==='velvet'?'cross':'orbit',target,{start:.54,end:.92,count:2,size:.88,spread:.7,height:.24,turns:profile.turns,opacity:.65}));
+   if(owner==='soot'&&ultimate){
+    // Midnight Service: the original crescent sweeps once, two comet tips
+    // converge on the landing, then a quieter lavender arc clears the hit.
+    // Keep the existing socket charge/projectile and the combat clock.
+    layers.splice(2,layers.length-2,
+     light(first+2,'crescent',target,{start:.52,end:.79,size:1.95,height:.53,aspect:[1.07,.9,1],spread:.3,turns:.65,opacity:.88}),
+     light(first+1,'converge',target,{start:.50,end:.63,count:2,size:.92,height:.48,spread:.85,opacity:.9,accent:true}),
+     light(first+3,'expand',target,{start:.525,end:.69,size:1.1,height:.48,aspect:[1.1,.85,1],opacity:.95,accent:true}),
+     light(first,'expand',target,{start:.53,end:.83,size:1.5,height:.035,ground:true,opacity:.18}),
+     light(first+2,'hold',target,{start:.66,end:.92,size:1.65,height:.46,aspect:[1.1,.78,1],opacity:.32}),
+     light(first+3,'emit',target,{start:.55,end:.88,count:6,size:.16,height:.34,spread:.42,opacity:.65,
+      emitter:{mode:'burst',life:.72,velocity:[.5,.65,.35],gravity:-1.2,curl:.14,inherit:0}}),
+    );
+   }
    if(passive){
     layers.splice(1,1);
     // Passive activation is a small paired halo, distinct from a cast projectile.

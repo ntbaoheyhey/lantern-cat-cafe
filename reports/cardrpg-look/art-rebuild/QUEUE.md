@@ -1,8 +1,23 @@
-# Lane B illustrated puppet queue
+# Lane B real3D transition queue
 
-ACTIVE — 2026-11-10. PROMPT.txt supersedes all older native-roster queues and pauses.
-One agent; no native roster inference; preserve all sources. Default OFF; demo/look mode ON.
+ACTIVE — 2026-11-11. Mandatory real3D switch addendum overrides the 10Nov puppet route. D0-D11 are the active queue; P1-P39 remain historical completed work.
+One agent; preserve all sources. Real3D shared bases/skins/clips,3D VFX; generated meshes reference-only. Puppets temporary per-unit fallback; lookV3D enabled per accepted model.
 Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and update draft #427 per completed item.
+
+- [x] D0 Switch-over (30 min): section 1 done; P40 superseded.
+- [ ] D1 Short research (<= 2 h, fill gaps only, RESEARCH-3D.md <= 2 pages): stylized chibi 3D for mobile hero battlers (shared base mesh, toon/cel shading, inverted-hull outlines, painted textures), Blender Python modeling/retopo/shrinkwrap/projection painting, glTF skins/clips, three.js toon + spring bones, 3D VFX techniques and budgets. Tool check results. Words only, no copied assets.
+- [ ] D2 Size standard (by 11 Nov 12:00 UTC): SCALE-STANDARD.md + tier map + both tests + lineup; apply to current puppets now; before/after pair; B-OUTBOX note for A6.
+- [ ] D3 Pilot bake-off (by 12 Nov 06:00 UTC): cat base + Mochi, one enemy base + Button Guard, boss base + Yarn Giant. Try route 1 (Blender-authored base + turnaround projection) and route 2 (TRELLIS shape reference -> retopo onto clean base) where useful; pick per archetype; full acceptance packs; static compare page docs/cardrpg-look/3d-pilot/index.html (puppet vs 3D, turntables, battle shots). Do NOT wait for user approval; continue to D4 with the winner.
+- [ ] D4 Rigs + shared clips (by 12 Nov 20:00 UTC): cat skeleton + enemy archetype skeletons, 8 clips each, spring bones, lookV3D runtime with per-unit fallback, sockets manifest, tests.
+- [ ] D5 12 cats in 2 batches of 6 (by 14 Nov 20:00 UTC): acceptance per unit, commit/push per batch, update #427 and B-OUTBOX.
+- [ ] D6 13 enemies + bosses in batches (by 16 Nov 20:00 UTC): boss idle + phase change visible on the model (emissive/pose), acceptance per unit.
+- [ ] D7 3D VFX for every skill and ultimate (by 18 Nov 06:00 UTC): section 4 rules, yaw proof test, audit score >= 8.0 at x1.
+- [ ] D8 Stage/light/camera for 3D (by 18 Nov 18:00 UTC): toon light rig matching the cafe, shadows, outline tuning, framing with the size standard, ult push-in.
+- [ ] D9 Portraits/icons: keep the existing 2D concept portraits and card art (they are good) unless they now mismatch the 3D model; then re-render from the 3D model with the same frame style.
+- [ ] D10 Publish for A6 (repeat after each batch): push, #427 description, B-OUTBOX.md (flag lookV3D, manifest, sockets, size standard, budgets, known issues), combined demo size <= 40 MB.
+- [ ] D11 Films + report (by 20 Nov 12:00 UTC): one 60-90 s x1 normal fight and one boss fight in 3D, R0 vs puppet vs 3D posters, ART-REPORT.md and STATUS-VI.md updated, then improve the lowest-scored unit until the deadline.
+
+## Completed puppet delivery (historical; not final3D acceptance)
 
 - [x] P1 Puppet pipeline (6 h): tools/cardrpg-look/art-rebuild/puppet/ — cut/fill/pivot/pack script per unit id (resumable, one command), runtime puppet renderer + motion set in the canvas, behind the existing look flag (default OFF; ON in the demo/look mode). Done: unit tests for rig loading/motion selection, one unit animates in battle.
 - [x] P2 Pilot 3 units (6 h): Mochi, Soot, Yarn Giant as puppets in a real battle; side-by-side with concepts; all motions; score >= 7.5 each. Fix lowest issue first (max 3 rounds per issue).
@@ -69,7 +84,12 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P39 [auto] Lowest-motion continuation: Pantry Crown gathers its complete wood gauntlets with delayed opposing hand, quiet crown/cabinet and planted boots. Repair crown-owned door/pauldron strips, split fingers/forearms and boot-owned cabinet/sash; retain original six parts and boss/helper formation. Correct both knuckle sockets. Two sizes/natural x1 basic-signature/reduced/boss phase/socket/faceHP; max3 repairs per issue.
 
-- [ ] P40 [auto] Lowest-spectacle continuation: Soot Midnight Service gets a short crescent sweep and compact converging comet strokes with a warm impact centre and lavender afterglow, using its existing original VFX atlas. Preserve socket/targets/clock; same-shell two-size before/after, natural x1/x2/x3/reduced, face-HP/numbers/UI/performance and parity. Max3 repairs, compact evidence<=120MB; no whole-roster score increase from tests alone.
+
+## Superseded (2.5D)
+
+- [x] P40 SUPERSEDED by 3D switch (2D VFX on puppets). Accepted candidate1 checkpointed; no final3D acceptance. [auto] Lowest-spectacle continuation: Soot Midnight Service gets a short crescent sweep and compact converging comet strokes with a warm impact centre and lavender afterglow, using its existing original VFX atlas. Preserve socket/targets/clock; same-shell two-size before/after, natural x1/x2/x3/reduced, face-HP/numbers/UI/performance and parity. Max3 repairs, compact evidence<=120MB; no whole-roster score increase from tests alone.
+
+P41 Cinnamon2D ultimate idea remains only in work/p41-cinnamon-ultimate-plan.md; never activated; superseded by D7.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -156,3 +176,5 @@ P37 complete 2026-11-10T23:56:34.530057+00:00: 42focused web+15source tests/type
 P38 complete 2026-11-11T01:30:29.755578+00:00: 43focused web+16source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38902946B. Complete horns and wooden face dip into the strike; all four hooves stay planted while the whole cape and yarn tail recover quietly. Motion7.7/overall8.0.
 
 P39 complete 2026-11-11T01:48:48.265993+00:00: 44focused web+17source tests/typecheck/lint PASS;16paired views/8x1 casts/12boss samples and5seed/6mode/102plan parity PASS;38893706B. Complete wooden gauntlets gather inward with a delayed opposing hand; crown, cabinet doors and sash stay coherent, both boots planted. Motion7.7/overall8.0.
+
+D0 complete 2026-11-11T02:11:59.554457+00:00: exact3D addendum saved/appended, section0 inbox, rules/queue/status/handoff/decision switched. P40 accepted small step checkpointed and superseded; no dirty work discarded. D1 active.
