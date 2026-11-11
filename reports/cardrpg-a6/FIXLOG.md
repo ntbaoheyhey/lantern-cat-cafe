@@ -207,3 +207,5 @@ Q44 presentation repair3: only720p unowned Velvet retains6px of note overflow. T
 - 2026-11-11T02:19:34Z Q45 presentation attempt1: ready rank-one receipt clipped Awaken by31px at720p. Keep14px text/44px action, remove repeated eligibility sentence (actual blocked reason remains), reduce only open-receipt header art128→100px. Initial audit also counted closed native-details children; use browser checkVisibility to exclude unpainted controls. Preserve first gallery and public transaction evidence; recheck current views.
 
 2026-11-11T02:32:02Z Q46 probe: corrected a testing-library selector to Playwright getByLabel; retained four existing captures. Manual HP jumps froze hit-flash while paused; four settled captures now advance the public gallery playback briefly before pause, without renderer changes. Original images retained, superseded for visual acceptance.
+
+Q47: initial unit harness used spyOn for missing jsdom native-dialog methods; corrected test-only bounded polyfill,18tests pass. First browser gate showed native Tab can leave the dialog for browser chrome; explicit first/last wrap added. Background inertness and paused clocks already passed.

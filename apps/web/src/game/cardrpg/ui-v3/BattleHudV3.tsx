@@ -1,6 +1,7 @@
 import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import type {CSSProperties} from 'react';
 import {HealthMeterA6,RageMeterA6} from './HudMetersA6';
+import BattleLogV3 from './BattleLogV3';
 import './battle-a6.css';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -20,6 +21,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false);
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
  const pausedBeforeHelp=useRef(false),helpButton=useRef<HTMLButtonElement>(null);
+ const pausedBeforeLog=useRef(false),moreButton=useRef<HTMLButtonElement>(null);
  const boss=battle.actors.find(a=>a.side==='enemy'&&['boss','elite'].includes(R.ENEMY_BY_ID[a.catalogId]?.tier??''));
  const bossPhase=boss?displayedBossPhase(battle,boss):1;
  const caster=battle.actors.find(a=>a.id===plan?.actorId);
@@ -47,15 +49,16 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   };paint();return()=>cancelAnimationFrame(frame);
  },[m,plan]);
  const closeHelp=()=>{setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);helpButton.current?.focus();};
+ const closeLog=()=>{setLog(false);m.paused=pausedBeforeLog.current;m.notify(false);moreButton.current?.focus();};
  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else{setMore(false);setLog(false)}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  return <div className="uv-battle-hud" data-a6={m.a6Battle} aria-label="Battle controls">
   <header className="uv-battle-top"><div className="uv-battle-round"><small>{m.tutorialBattle?'Practice table':R.CHAPTERS[battle.chapter-1]!.name}</small><b>Wave 1/1 · Round {battle.round}</b></div>
    {boss&&<div className="uv-boss" aria-label={`${boss.name} boss health`}><b>{m.a6Battle&&<span aria-hidden="true">♛ </span>}{boss.name}</b>{m.a6Battle?<HealthMeterA6 hp={boss.hp} maxHp={boss.maxHp} name={boss.name} reduced={m.state.settings.reducedMotion}/>:<progress value={boss.hp} max={boss.maxHp}/>}<small>{boss.hp}/{boss.maxHp} · Phase {m.a6Battle?bossPhase:boss.phase}</small>{m.a6Battle&&<span className="a6-boss-phases" aria-label={`Phase ${bossPhase} of 3`}>{[1,2,3].map(p=><i key={p} data-active={p<=bossPhase}>◆</i>)}</span>}</div>}
-   <div className="uv-battle-actions">{m.a6Battle&&<label className="uv-auto-continue" title="Auto-continue battles; pause at rest stops"><input type="checkbox" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false)}}/> Auto-next</label>}<button aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars on this stage to skip it.'} onClick={()=>m.skip()}>{m.a6Battle&&!m.canSkip?'Skip · 3★ needed':'Skip to result'}</button><button ref={helpButton} aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
+   <div className="uv-battle-actions">{m.a6Battle&&<label className="uv-auto-continue" title="Auto-continue battles; pause at rest stops"><input type="checkbox" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false)}}/> Auto-next</label>}<button aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars on this stage to skip it.'} onClick={()=>m.skip()}>{m.a6Battle&&!m.canSkip?'Skip · 3★ needed':'Skip to result'}</button><button ref={helpButton} aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button ref={moreButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
   </header>
   {m.a6Battle&&<section className="uv-enemy-rage" aria-label="Enemy rage">{battle.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=><div key={a.id}><small>{a.name}</small><RageMeterA6 value={a.charge} ready={a.charge>=100} label={`${a.name} rage: ${a.charge}/100`}/></div>)}</section>}
 
-  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{setLog(!log);setMore(false)}}>Read battle log</button><button onClick={()=>m.leave()}>Leave table</button></div>}
+  {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{pausedBeforeLog.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false)}}>Read battle log</button><button onClick={()=>m.leave()}>Leave table</button></div>}
   <div className="uv-battle-party dp-v5look" aria-label="Crew health and ultimates">{battle.actors.filter(a=>a.side==='party').map(cat=>{
    const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');
    const readiness=ult?(m.a6Battle?(cat.hp<=0?'Fallen':!cat.skills.includes(ult.id)?'Unlocks at level 6 or three stars':cat.charge>=100?'Ready':`${cat.charge}/100 rage`):battle.v4?skillReadinessV4(cat,ult):cat.charge>=100?'Ready':`${cat.charge}/100 charge`):'Unavailable';
@@ -79,6 +82,6 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
    }
   }}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></section>}
-  {log&&<section className="uv-battle-guide" role="dialog" aria-label="Battle log"><button onClick={()=>setLog(false)}>Close log</button>{battle.log.slice(-100).reverse().map((e,i)=><p key={i}>Round {e.round} · {e.text||`${e.kind} ${e.amount}`}</p>)}</section>}
+  {log&&<BattleLogV3 battle={battle} wasPaused={pausedBeforeLog.current} onClose={closeLog}/>}
  </div>;
 }

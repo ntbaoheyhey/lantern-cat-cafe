@@ -1,11 +1,18 @@
 import {useSyncExternalStore} from 'react';
-import {act,cleanup,fireEvent,render,screen} from '@testing-library/react';
-import {afterEach,expect,it,vi} from 'vitest';
+import {act,cleanup,fireEvent,render,screen,within} from '@testing-library/react';
+import {afterAll,afterEach,beforeAll,expect,it,vi} from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {DepthModel} from '../depth/model';
 import BattleHudV3 from './BattleHudV3';
 import {HealthMeterA6} from './HudMetersA6';
-afterEach(()=>{cleanup();vi.useRealTimers();});
+const dialogMethods=['showModal','close'] as const;
+const originalDialogMethods=dialogMethods.map(key=>Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype,key));
+beforeAll(()=>{
+ // jsdom has no top layer; browser checks cover native focus trapping/inertness.
+ for(const key of dialogMethods)Object.defineProperty(HTMLDialogElement.prototype,key,{configurable:true,value:function(this:HTMLDialogElement){this.open=key==='showModal';}});
+});
+afterAll(()=>{dialogMethods.forEach((key,i)=>{const original=originalDialogMethods[i];if(original)Object.defineProperty(HTMLDialogElement.prototype,key,original);else Reflect.deleteProperty(HTMLDialogElement.prototype,key);});});
+afterEach(()=>{cleanup();vi.useRealTimers();vi.restoreAllMocks();});
 function Harness({m}:{m:DepthModel}){useSyncExternalStore(m.subscribe,m.snapshot);return <BattleHudV3 m={m}/>;}
 function readyBattle(){
  const m=new DepthModel(true,true,true,true);
@@ -82,4 +89,34 @@ it('shows the boss phase thresholds from real rules without a second DOM damage-
  expect(screen.getByLabelText('Phase 3 of 3')).toBeTruthy();
  expect(view.container.querySelectorAll('.uv-float-number').length).toBe(0);
  delete window.__LOOK_V2__;
+});
+it.each([false,true])('restores prior pause=%s after reading an empty battle log',wasPaused=>{
+ const m=readyBattle();m.paused=wasPaused;m.battle!.log=[];
+ const account=structuredClone(m.state.account),battle=structuredClone(m.battle);
+ render(<Harness m={m}/>);
+ const more=screen.getByRole('button',{name:'More battle options'});
+ fireEvent.click(more);fireEvent.click(screen.getByRole('button',{name:'Read battle log'}));
+ expect(m.paused).toBe(true);
+ const clock=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(clock);
+ const log=screen.getByRole('dialog',{name:'Battle log'});
+ expect(within(log).getByText('The first page is waiting')).toBeTruthy();
+ expect(within(log).getByText(wasPaused?'The table will stay paused when you close this book.':'Close this book to resume the auto battle.')).toBeTruthy();
+ if(wasPaused)fireEvent(log,new Event('cancel',{cancelable:true}));
+ else fireEvent.click(within(log).getByRole('button',{name:'Close log'}));
+ expect(screen.queryByRole('dialog')).toBeNull();expect(m.paused).toBe(wasPaused);
+ expect(document.activeElement).toBe(more);
+ expect(m.battle).toEqual(battle);expect(m.state.account).toEqual(account);
+});
+it('reads exactly the last100 events newest first, including fallback text, without changing the log',()=>{
+ const m=readyBattle();m.battle!.log=Array.from({length:125},(_,i)=>({round:Math.floor(i/7)+1,actorId:'',targetId:'',skillId:'',kind:'damage',amount:i,text:i===124?'':`Event ${i}`}));
+ const before=structuredClone(m.battle);
+ render(<Harness m={m}/>);fireEvent.click(screen.getByRole('button',{name:'More battle options'}));fireEvent.click(screen.getByRole('button',{name:'Read battle log'}));
+ const log=screen.getByRole('dialog',{name:'Battle log'});
+ expect(within(log).getByText('Latest 100 of 125 events · Newest first')).toBeTruthy();
+ const events=[...log.querySelectorAll('[data-event-index]')];
+ expect(events.map(e=>e.getAttribute('data-event-index'))).toEqual(Array.from({length:100},(_,i)=>String(124-i)));
+ expect(events[0]!.textContent).toContain('damage 124');
+ expect(within(log).queryByText('Event 24')).toBeNull();
+ expect(within(log).getByRole('heading',{name:'Round 18'})).toBeTruthy();
+ expect(m.battle).toEqual(before);
 });

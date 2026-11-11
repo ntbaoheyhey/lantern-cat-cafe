@@ -168,3 +168,7 @@ Q31 scope: retained q20/1280-missing-pair and full-last-collection confirm10pxst
 2026-11-11T02:28:26Z Q46: preserve canvas as black box; only fixed DOM cards/actions change. Readiness uses current battle skills, displays both existing unlock routes, and distinguishes fallen. Keep82px top/148px bottom envelopes and existing clock/cast/skip behavior.
 
 2026-11-11T02:32:40Z Q47 added from Q46 visual/control evidence: empty battle log is a blank panel; opening while running does not pause, and closing leaves focus behind. Apply the existing illustrated-empty/readable-modal/return pattern to current100-event history after Q46; no new rules or new logging.
+
+- 2026-11-11T02:39:25Z Q47 uses a native modal dialog for background inertness, Escape/Tab and readable existing100events. Parent captures/restores prior playback; original Soot art reused. No log store, event, combat or renderer change. B D1 docs-only merged; accepted package stays valid until Q47.
+
+- 2026-11-11T02:43:33Z Q48 follows the actual lowest Home8.1 row: retained1280home shows a feature toast over Notice board and small entry signs. Reuse cafe/crew art and existing unlock commands; make signs/notice coexist, no renderer or economy change.

@@ -299,3 +299,10 @@ Tiếp tục Q46: chữ và nút HUD trận; sửa nhãn mở tuyệt chiêu b�
 2026-11-11T02:36:21Z: Q46 hoàn tất: 26 ảnh nguồn và 22 ảnh offline đã duyệt; chữ HP/nộ13px, nút44px, giữ khung82/148px.
 15test/typecheck/lint đã đạt được giữ nguyên; mở chiêu bằng cấp6 hoặc3sao và trạng thái gục đúng, demo39.092.249byte, không lỗi/gọi mạng.
 Tiếp tục Q47: nhật ký trận có trạng thái trống rõ, tạm dừng khi đọc và trả bàn phím về nút mở. B D1 mới là kế hoạch sản xuất3D.
+
+2026-11-11T02:43:33Z: Nhật ký đã duyệt14ảnh nguồn: chữ14–16px, nút đóng44px, danh sách100sự kiện cuộn riêng.
+Giữ đúng thứ tự/nội dung sự kiện, đồng hồ đứng yên khi đọc, Tab/Escape và khôi phục dừng/chạy đúng ở hai cỡ màn. Đang đóng gói offline.
+
+2026-11-11T02:46:13Z: Q47 hoàn tất:14ảnh nguồn và14ảnh offline đã duyệt; nhật ký có trang trống rõ, chữ14–16px/nút44px.
+18test/typecheck/lint qua;100sự kiện/thứ tự/tạm dừng/Tab/Escape/trả focus đúng, demo39.094.209byte, không lỗi/gọi mạng.
+Tiếp tục Q48: bảng chỉ dẫn trong quán và vị trí thông báo mở tính năng; giữ nguyên luật mở khóa và mọi thao tác.
