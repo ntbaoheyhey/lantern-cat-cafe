@@ -106,3 +106,5 @@
 2026-11-11T22:24:04.299793+00:00 resume: user continue/handoff confirms completed Key moments checkpoint. Verified clean pushed30e996a6c; preserved17tests/28browser/10views. Long-note baseline reproduced nested-scroll clipping at both sizes; continue C8/C11 with empty designer inbox.
 
 2026-11-11T22:34:00.297805+00:00 resume: user continue/handoff identifies malformed plan fixture and long-note review. Preserved finished correction and48+2browser/19tests/types/lint logs; inspected12views, no accepted work rerun.
+
+2026-11-11T22:44:49.794469+00:00 resume: user continue/handoff identifies shield-only star copy. Preserved unfinished patch and all passing checks; inspected saved screenshots without rerunning accepted work.

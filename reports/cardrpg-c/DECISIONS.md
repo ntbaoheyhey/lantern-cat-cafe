@@ -161,3 +161,5 @@
 2026-11-11T22:34:00.297805+00:00 Use readable per-receipt tactical labels and actual reason, with original-text fallback for unknown/incomplete records. Explain support thresholds without changing decisions.
 
 2026-11-11T22:37:52.678788+00:00 Replace inferred tactic success with recorded per-actor/per-plan selection counts; manual choices also emit plan-target, so those receipts cannot prove a plan caused the choice.
+
+2026-11-11T22:44:49.794469+00:00 Require positive measured contribution before naming a star; guard the legacy banner and show shields given so support-only recognition explains itself.

@@ -52,6 +52,26 @@ it('leaves biggest hit empty when every recorded strike was fully blocked', () =
   expect(summarizeBattle(battle).biggestHit).toBeUndefined();
 });
 
+it.each(['empty', 'enemy-only', 'blocked'] as const)('leaves the star unassigned without a crew contribution (%s)', scenario => {
+  const battle = R.createBattle({ seed: 917288, chapter: 1, cats: R.battleCats(R.createDepthAccount()), enemies: ['button-guard'] });
+  const base = { round: 1, actorId: 'soot', targetId: 'foe-0-button-guard', skillId: '', text: '' };
+  battle.log = scenario === 'empty' ? [] : scenario === 'enemy-only'
+    ? [{ ...base, actorId: base.targetId, targetId: 'mochi', kind: 'damage', amount: 40 }]
+    : [{ ...base, kind: 'absorbed', amount: 48 }, { ...base, kind: 'damage', amount: 0 }];
+  const before = JSON.stringify(battle), summary = summarizeBattle(battle);
+  expect(summary.mvp).toBeUndefined();
+  expect(summary.cats).toHaveLength(3);
+  expect(summary.cats.every(cat => cat.damage === 0 && cat.healing === 0 && cat.shielding === 0)).toBe(true);
+  if (scenario === 'enemy-only') expect(summary.cats.find(cat => cat.id === 'mochi')!.taken).toBe(40);
+  expect(JSON.stringify(battle)).toBe(before);
+});
+
+it.each(['heal', 'shield'] as const)('keeps a support-only star when recorded %s is positive', kind => {
+  const battle = R.createBattle({ seed: 917288, chapter: 1, cats: R.battleCats(R.createDepthAccount()), enemies: ['button-guard'] });
+  battle.log = [{ round: 1, actorId: 'clover', targetId: 'mochi', skillId: '', text: '', kind, amount: 1 }];
+  expect(summarizeBattle(battle).mvp?.id).toBe('clover');
+});
+
 it('keeps enemy ultimates separate and uses the first actual crew cast after a Daze interruption', () => {
   const state = R.setGameplayA6(R.createDepthAccount(917283), true);
   const battle = R.createBattle({ seed: 917283, chapter: 1, gameplayV4: true, skillsV5: true, gameplayA6: true,

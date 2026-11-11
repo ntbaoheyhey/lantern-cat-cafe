@@ -18,7 +18,7 @@ export function summarizeBattle(battle: Battle) {
     if (source && event.kind === 'shield') source.shielding += event.amount;
   }
   const contribution = (cat: typeof cats[number]) => cat.damage + cat.healing + cat.shielding * .25;
-  const mvp = [...cats].sort((a, b) => contribution(b) - contribution(a))[0];
+  const mvp = cats.filter(cat => contribution(cat) > 0).sort((a, b) => contribution(b) - contribution(a))[0];
   // A selected ultimate can be cancelled by Bleed before it is cast. A6 records actual casts separately.
   const cast = battle.initial.gameplayA6 ? battle.v4?.events.find(event => event.kind === 'ultimate.cast'
     && cats.some(cat => cat.id === event.actorId)) : undefined;
