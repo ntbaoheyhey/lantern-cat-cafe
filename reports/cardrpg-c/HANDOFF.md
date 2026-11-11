@@ -7,7 +7,6 @@ NEXT3: continue lowest actionable C11 work; C12 Nov20 06UTC/hardstop12UTC.
 RUNNING: Vite5970; no harness or build.
 KNOWN: clean1800.25s account,firstloss6.56min,15wins/4losses,normal54.33s/boss170.77s.
 KNOWN: raw accounts unchanged;same-node recovery2/4(completed1/1,earlyfallback1/3),not population evidence.
-KNOWN: free gear+641 preview matches six public-command clicks/currencies unchanged;10views/9testsPASS.
 KNOWN: recruit scroll/focus+field-guide fixes;62baseline+12recruit+2guide+4battle views inspected.
 KNOWN: full421E2E twicePASS before latest advice/stage work;do not claim fullsuite on current head.
 KNOWN:25units/206clips,74skills/18statuses;C9 72ults/12phases/4entrances,44views,0overlap/drop/errors.
