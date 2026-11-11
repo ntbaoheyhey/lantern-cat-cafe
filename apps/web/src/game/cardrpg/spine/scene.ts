@@ -56,16 +56,25 @@ export class SpineScene {
   }
   const ids=new Set(view.actors.map(a=>a.id));
   for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);this.lanes.delete(id);this.sampled.delete(id);}
+  // Crew order is shared with the HP/rage cards. A retained cat must move to
+  // its new slot when the roster changes; enemy identity lanes remain stable.
+  let partyLane=0;
+  for(const unit of view.actors)if(unit.side==='party'){
+   const assigned=this.lanes.get(unit.id),entry=this.actors.get(unit.id);
+   if(assigned)assigned.lane=partyLane;else this.lanes.set(unit.id,{side:'party',lane:partyLane});
+   if(entry)entry.lane=partyLane;partyLane++;
+  }
   for(const unit of view.actors){
    if(this.actors.has(unit.id)||this.pending.has(unit.id)||this.failed.has(unit.id))continue;
    this.pending.add(unit.id);this.ready=false;this.loading.total=this.actors.size+this.pending.size;
-   const occupied=[...this.lanes.values()].filter(a=>a.side===unit.side).map(a=>a.lane);let lane=0;while(occupied.includes(lane))lane++;this.lanes.set(unit.id,{side:unit.side,lane});
+   const occupied=[...this.lanes.values()].filter(a=>a.side===unit.side).map(a=>a.lane);let lane=unit.side==='party'?this.lanes.get(unit.id)!.lane:0;if(unit.side==='enemy')while(occupied.includes(lane))lane++;this.lanes.set(unit.id,{side:unit.side,lane});
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset).then(actor=>{
     if(this.disposed||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const shadow=new T.Mesh(this.geometry,new T.MeshBasicMaterial({map:this.shadowTexture,transparent:true,depthTest:false,depthWrite:false,toneMapped:false}));shadow.renderOrder=-10;
     const ring=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.honey,transparent:true,opacity:.6,depthTest:false,depthWrite:false,toneMapped:false}));ring.renderOrder=-5;
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
+    lane=this.lanes.get(unit.id)?.lane??lane;
     const entry={actor,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
     actor.onCue=cue=>this.onCue(unit.id,cue);this.scene.add(actor.root,shadow,ring,hit);
     this.loading.completed=this.actors.size;this.stats.loaded=this.actors.size;this.invalidate();

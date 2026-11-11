@@ -20,3 +20,4 @@
 2026-11-11 resume10:27UTC: user handoff confirms72enemyactionchecks; preserved completed source/offline results and inspected final14battle+22source+22offlinecaptures without rerunning accepted tests.
 2026-11-11 resume10:49UTC: handoff confirms pushed Spool fix; clean d1011e3b5 and current draft439 preserved. Continue actual cat mixed damage/support review; no accepted checks rerun.
 2026-11-11 resume11:00UTC: user handoff confirms624combat cases and requests continued Clover visibility refinement. Preserved unfinished cat changes/checks; lowered recovery to feet, fixed gallery stale reaction, completed source/offline/live checks.
+2026-11-11 resume11:40UTC: handoff reports8roster mismatches fixed,20casesPASS. Preserved all source/offline/framing/test logs; finish delayed-load/replacement harness and inspect captures. Initial harness held Vite PNG module imports, not just images; record its timeout separately.
