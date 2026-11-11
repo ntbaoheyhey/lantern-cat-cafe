@@ -1,11 +1,15 @@
-import type { DepthAccount } from './contract';
+import type { DepthAccount, NodeKind } from './contract';
+
+export function campaignPressureA6(chapter:number,kind:NodeKind,depth:number):number {
+  return kind==='boss'?(chapter===3?1.51:chapter===2?1.18:1.08):kind==='elite'?1.52:depth<4?1.36:1.52;
+}
 
 /** Early campaign bands teach the route with a gradual pressure ramp, including replays. */
 export function patrolPressureA6(state: DepthAccount): number {
   const run = state.run;
   if (!run?.gameplayA6 || run.mode !== 'campaign') return 1;
   const node = run.nodes.find(n => n.id === run.current);
-  return node?.kind === 'boss' ? (run.chapter===3?1.2:1.15) : node?.kind === 'elite' ? 1.04 : (node?.depth ?? 0) < 4 ? .72 : .98;
+  return campaignPressureA6(run.chapter,node?.kind??'battle',node?.depth??0);
 }
 
 /** Shared Night Patrol defaults. Unfinished first clears keep their starting band. */

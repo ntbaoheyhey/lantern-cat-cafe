@@ -588,7 +588,8 @@ export function enemyAct(b: Battle): boolean {
     }
     if (spec.mechanic==='reflect'&&actor.turns===0) {shield(b,actor,actor,70);applyStatus(b,actor,actor,'cozy');}
   }
-  record(b,actor,target,'enemy-action',0,impaired?(b.v4?'Drowsy intent · softened basic':'Broken intent · softened basic'):intent.label);
+  record(b,actor,target,'enemy-action',0,impaired?(b.v4?'Drowsy intent · softened basic':'Broken intent · softened basic'):intent.label,
+    b.initial.gameplayA6?`enemy:${actor.catalogId}${signature?'':':basic'}`:'');
   actor.break=0;
   finishAction(b,actor);
   return true;

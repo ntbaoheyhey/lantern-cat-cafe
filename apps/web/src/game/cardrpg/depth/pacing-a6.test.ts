@@ -12,14 +12,19 @@ it('shortens ordinary A6 animation while preserving event order and the source p
   expect(paced.beats.at(-1)!.start + paced.beats.at(-1)!.duration).toBe(paced.duration);
   expect(JSON.stringify(plan)).toBe(before);
 });
-it('preserves OFF, boss signatures and ultimate presentation exactly', () => {
+it('preserves OFF and bounds signatures/ultimates with every authored event', () => {
   const normal = createCardActionPlan([marker], 'mochi-1');
   expect(paceActionA6(normal, { enemies: ['button-guard'] })).toBe(normal);
   const signature = createCardActionPlan([{...marker,actorId:'foe',skillId:'enemy-special'}], 'enemy:yarn-giant');
-  expect(paceActionA6(signature, { gameplayA6: true, enemies: ['yarn-giant'] })).toBe(signature);
+  const pacedSignature=paceActionA6(signature, { gameplayA6:true,enemies:['yarn-giant'] });
+  expect(pacedSignature.duration).toBeLessThanOrEqual(1700);
+  expect(pacedSignature.events).toBe(signature.events);
   const ultimate = createCardActionPlan([{ ...marker, skillId: 'mochi-4' }], 'mochi-4');
   expect(ultimate.ultimate).toBe(true);
-  expect(paceActionA6(ultimate, { gameplayA6: true, enemies: ['button-guard'] })).toBe(ultimate);
+  const pacedUltimate=paceActionA6(ultimate, { gameplayA6:true,enemies:['button-guard'] });
+  expect(pacedUltimate.duration).toBeLessThanOrEqual(1700);
+  expect(pacedUltimate.beats.map(b=>b.kind)).toEqual(ultimate.beats.map(b=>b.kind));
+  expect(pacedUltimate.events).toBe(ultimate.events);
 });
 
 it('bounds ordinary boss-fight actions without changing damage events or the source plan', () => {

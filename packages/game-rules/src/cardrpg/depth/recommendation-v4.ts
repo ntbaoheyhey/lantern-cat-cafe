@@ -117,7 +117,8 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
     changes.push({ change: { kind: 'cat', catId, replacementId },
       label: `Replace ${CAT_BY_ID[catId]!.name} with ${CAT_BY_ID[replacementId]!.name} in ${row}` });
   }
-  const before = sample(setupFor(state, encounter)), expectedBuild = adviceBuildKeyV4(state);
+  const retryEncounter = gameplayA6(state) ? { ...encounter, hp: undefined } : encounter;
+  const before = sample(setupFor(state, retryEncounter)), expectedBuild = adviceBuildKeyV4(state);
   const options: BuildAdviceV4[] = [];
   // A6 checks a small range of legal fixes. The legacy advisor remains exact.
   const counts: Record<string, number> = {};
@@ -129,7 +130,7 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
   for (const { change, label } of candidates) {
     const applied = changeBuildV4(state, change);
     if (!applied.ok || adviceBuildKeyV4(applied.state) === expectedBuild) continue;
-    const after = sample(setupFor(applied.state, encounter));
+    const after = sample(setupFor(applied.state, retryEncounter));
     // A little extra overkill alone never qualifies. Equal wins need a material survival margin.
     if (after.wins < before.wins || after.wins === before.wins && after.margin - before.margin < .05) continue;
     const cost = Object.fromEntries(Object.entries(state.account.currencies).flatMap(([id, n]) => {

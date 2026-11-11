@@ -21,7 +21,9 @@ describe('A6 collection bonds and automatic pair combos', () => {
     expect(R.collectionBonusA6(s)).toBe(450);
     const off = R.setGameplayA6(s, false);
     for (const cat of s.account.cards) {
-      const base = R.depthStats(off, cat.cardId), boosted = R.depthStats(s, cat.cardId);
+      // Keep the A6 level curve in both arms; a single owned cat completes no collection.
+      const withoutBonds={...s,account:{...s.account,cards:[cat]}};
+      const base = R.depthStats(withoutBonds, cat.cardId), boosted = R.depthStats(s, cat.cardId);
       expect(boosted.hp).toBe(Math.round(base.hp * 1.045));
       expect(boosted.attack).toBe(Math.round(base.attack * 1.045));
     }

@@ -68,3 +68,12 @@ describe('owned reserve cat advice',()=>{
   expect(retry.state.team[0]).toBe('panko');expect(R.applyResultAdviceV4(applied.state,advice).ok).toBe(false);
  });
 });
+
+it('evaluates A6 loss advice at the full health offered by the next retry without altering the frozen enemy budget',()=>{
+ const s=R.setGameplayA6(fresh(),true);s.account.cards.find(c=>c.cardId==='panko')!.level=50;
+ const encounter:R.BattleSetup={seed:7,chapter:3,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:1,cats:R.battleCats(s),enemies:['pantry-crown']};
+ const before=clone(s),input=clone(encounter),full=R.recommendBuildV4(s,encounter);
+ const worn=R.recommendBuildV4(s,{...encounter,hp:Object.fromEntries(s.team.map(id=>[id,1]))});
+ expect(full).not.toBeNull();expect(worn).toEqual(full);
+ expect(s).toEqual(before);expect(encounter).toEqual(input);
+});

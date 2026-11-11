@@ -281,7 +281,7 @@ export class DepthModel {
     this.roundPlan = presentation.roundPlan;
     this.impactApplied = false;
     const identity = actor.side === 'enemy'
-      ? `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
+      ? battle.log.slice(before).find(event=>event.kind==='enemy-action')?.skillId || `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
     const savingHeal = events.find(event => event.type === 'heal' && event.amount > 0
       && snapshot.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp <= .25)
       && presentation.impact.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp > .25));
