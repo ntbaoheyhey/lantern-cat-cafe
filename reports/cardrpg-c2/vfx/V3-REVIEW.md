@@ -76,3 +76,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | marigold-3 | 8 / 8 / 9 / 8 | Two sage pruning crescents and the bright cream cut read distinctly on the large boss; the low trailing brush clears completely before the next action. | 60.00 |
 | marigold-4 | 8 / 8 / 9 / 8 | Four butter tea blossoms frame the allies below their faces; the two-word cut-in, four green heal numbers and shield value remain separated before the flowers fade. | 60.00 |
 | mallow-passive | 8 / 8 / 9 / 8 | The small warm whisk-loop cue stays on Mallow at chest height, leaves the face legible and clears without a large screen flash. | 60.00 |
+| sorrel-passive | 8 / 8 / 9 / 8 | The teal droplet and cream spoon curl sit low on the actual protected recipient and fade completely before the next action. | 60.00 |
