@@ -1,6 +1,8 @@
 # B4b — drop and recruit audit
 
-Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. The completed 600-account monthly projection and exact READY supply are now published in ECONOMY.md and OUTBOX.md; historical measurements below remain labeled.
+**Current item result: candidate 7 completes the declared independent-fixture checks.** The full 6,144-cell screen retains one −13 pp sample; its independent 1,000-pair result is −7.0 pp. All 49 selected independent fixture point estimates meet 12 pp. The predeclared 10,000-pair follow-up for the one interval crossing the threshold measures 11.14 pp, with paired 95% interval 10.48–11.80 pp. These are finite-fixture results, not a universal or simultaneous bound. See [ITEM7-ITEM-VALIDATION.json](ITEM7-ITEM-VALIDATION.json). Final candidate 7 monthly economy is still running; all earlier measurements remain below in chronological order.
+
+Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. The earlier 600-account monthly projection and exact READY supply remain published in ECONOMY.md and OUTBOX.md until candidate 7 replaces them; historical measurements below remain labeled.
 
 | Source | Item / rarity | Rate or amount before tuning | Pity / cap | Duplicates / overflow |
 |---|---|---|---|---|
@@ -44,7 +46,7 @@ Inherited B3 audit finding: full-shelf automatic drops could award zero threads 
 
 Working C2 candidate: encounter Legendary rates0/0.05/0.15% (ordinary/elite/boss); gear invitation300stamps with unchanged soft13/hard24; Legendary tailoring10seals/200materials plus100fish/300threads/60essence; Epic tailoring20fish/240threads/9essence; Legendary gear selector72marks. All live source Odds read these tables. Full measurement and item-impact repair remain pending; no acceptance claim.
 
-## Final frozen C2 source tables
+## Historical frozen C2 source tables — affix/Riposte cohort
 
 Runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; no further table changes during the final cohorts. Sources not changed below retain the amounts, caps and guarantees in the historical audit above.
 

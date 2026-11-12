@@ -1,6 +1,6 @@
 # B4 — round four
 
-**12 Nov user override:** tuning reopened without a pass cap. Earlier cap/closure statements below record the historical decision; current work continues from pass4. Previous cohorts remain unchanged.
+**Current result: candidate 7 meets all fixed combat targets on five real 30-minute UI runs and 500 model seeds.** See the final candidate 7 section and [ITEM7-BALANCE.json](ITEM7-BALANCE.json). The user removed the tuning-pass cap on 12 November. Earlier limits, closure statements and failed measurements below are chronological history, not current stopping rules.
 
 B3 locked baseline and exact policy parity before tuning. All passes use five real UI seeds 80001–80005 for 1,800s each plus model seeds 80001–80500. Missing losses remain censored. Ordinary HP excludes tutorials, elite encounters and earned skips. See B3.md for the controlled baseline.
 
