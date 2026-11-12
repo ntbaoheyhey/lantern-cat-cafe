@@ -1,5 +1,5 @@
 # CHAIN handoff
-NOW: Independent H4b/H5 follow-up complete and all local gates PASS; packaging source/evidence for PR441.
+NOW: Tested implementation 394cf60613b5b576367e860b7dff8bab60dc84aa; H4b/H5 independent follow-up complete, local gates PASS; source pushed to PR441; evidence update follows.
 NEXT 1: Integrate C2 authoritative campaign/weekly/rank receipts when available; never trust browser saves.
 NEXT 2: Measure voluntary uptake and inventory stock before proposing routine activation; all low-adoption cases fail.
 NEXT 3: User-owned deploy/seed/gas steps are deferred; public timing is separate and unproven.
@@ -14,6 +14,6 @@ KNOWN: Final units web2416/rules1353/SQL628/chain32/auth24/API16/scripts11; Forg
 KNOWN: Three preceding browser runs15.8/13.8/16.3s; typecheck/lint/build PASS. Evidence tests/economy-*.
 KNOWN: C2 OUTBOX still SLOTS/PILOTS only; ordinary campaign authority/live demand open. H4b/H5 score7; H7 gated.
 KNOWN: Public18-receipt Fuji smoke is prior user evidence. This follow-up used disposable local transactions only.
-REMOTE: Prior source CI billing/spending blocked; Vercel rate-limited. No manual deployment attempts.
+REMOTE: Current source CI billing/spending blocked; Vercel rate-limited (REMOTE-CHECKS.json). No manual deployment attempts.
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 (draft, base codex/cardrpg-c-2026-11-11).
 WORKTREE: /Users/bao/taskbar-hero-chain; branch codex/chain-2026-11-12; supabase/.temp untouched/unread.
