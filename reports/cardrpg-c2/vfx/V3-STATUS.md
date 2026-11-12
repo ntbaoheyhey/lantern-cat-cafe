@@ -50,7 +50,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | mallow-2 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/mallow-2-after.mp4 |
 | mallow-3 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/mallow-3-after.mp4 |
 | mallow-4 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/mallow-4-after.mp4 |
-| sorrel-1 | pending | pending | pending |
+| sorrel-1 | animated | pending | pending |
 | sorrel-2 | pending | pending | pending |
 | sorrel-3 | pending | pending | pending |
 | sorrel-4 | pending | pending | pending |
