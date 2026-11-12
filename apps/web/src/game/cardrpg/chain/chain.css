@@ -1,0 +1,5 @@
+.chain-dock{position:fixed;right:16px;bottom:16px;z-index:120;color:#f8eed7;font:14px/1.4 system-ui,sans-serif}
+.chain-launch,.chain-panel button{border:1px solid #9d8250;border-radius:10px;background:#302d24;color:inherit;padding:9px 12px;cursor:pointer}
+.chain-launch{float:right;background:#c5974b;color:#211f19;font-weight:700}
+.chain-panel{clear:both;width:min(380px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:#1d2526;border:1px solid #9d8250;border-radius:16px;padding:16px;box-shadow:0 16px 64px #0008;display:flex;gap:10px;flex-wrap:wrap}
+.chain-panel header{display:flex;justify-content:space-between;align-items:center;width:100%}.chain-panel small,.chain-panel output,.chain-panel details{width:100%}.chain-panel small{color:#dfbb77}.chain-panel button:disabled{opacity:.55;cursor:wait}.chain-panel a{color:#f6cb72}.chain-panel summary{cursor:pointer}.chain-panel p{margin:5px 0}.chain-panel [role=alert]{color:#ffc3aa}.chain-panel button:focus-visible{outline:3px solid #f6cb72;outline-offset:2px}

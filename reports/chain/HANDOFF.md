@@ -1,8 +1,9 @@
 # CHAIN handoff
-NOW: H1 guest UI, transfer adapter, browser tests.
-NEXT 3: finish H1; H2 drip atomic SQL; H3 Anvil harness.
-RUNNING: typecheck in work/chain/h1-typecheck.log.
-KNOWN: H0 96 forge + 2383 web pass; C2 supply missing; no deploy.
+NOW: H2 drip and H3 local-chain harness.
+NEXT 3: finish H2; deterministic Anvil deployment; real guest/market E2E.
+RUNNING: none persistent.
+KNOWN: H1 2386 web + 96 forge + browser login pass. Full move receipts need H3/H6.
+PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441
 WORKTREE: /Users/bao/taskbar-hero-chain
 BRANCH: codex/chain-2026-11-12
 PROMPT: reports/chain/PROMPT.txt

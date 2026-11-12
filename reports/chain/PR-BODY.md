@@ -1,7 +1,7 @@
-Makes the card RPG testable on Avalanche Fuji by guests, with signed Relic minting, an in-game market, researched trading/tokenomics and fixed-supply testnet YARN. Existing Fuji contracts stay in place and all new features default off on the live build.
+Adds a Fuji-only guest wallet to the card RPG behind build flags. Guests keep a browser-local key and sign the existing SIWE flow. Export requires an explicit warning; asset moves cancel escrow, transfer tokens, then sweep gas. Existing Fuji deployments stay unchanged.
 
-Draft status: H0 complete; H1 in progress. No deployment or transaction using real keys.
+Draft progress: H0 and H1 base complete; H2–H9 ongoing. No deployment or real-key broadcast. Complete asset-move receipt coverage follows the Anvil harness and YARN/V2 contracts.
 
-Validation: 96 contract tests and 2,383 web tests pass. Repaired a pre-existing lazy-guide test race by awaiting its actual import. The dedicated Anvil chain E2E is queued for H3.
+Validation: 2,386 web tests, 96 contract tests, typecheck, and a browser test that signs in twice with the same address and checks request bodies for key leakage. Screenshot: reports/chain/shots/H1-guest.png.
 
-Evidence and exact scope: reports/chain/PROMPT.txt, H0-AUDIT.md and HANDOFF.md.
+Scope and handoff: reports/chain/PROMPT.txt and HANDOFF.md.
