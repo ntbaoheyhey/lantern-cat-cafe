@@ -1,19 +1,30 @@
-# CHAIN handoff
-NOW: Tested implementation 394cf60613b5b576367e860b7dff8bab60dc84aa; H4b/H5 independent follow-up complete, local gates PASS; source pushed to PR441; evidence update follows.
-NEXT 1: Integrate C2 authoritative campaign/weekly/rank receipts when available; never trust browser saves.
-NEXT 2: Measure voluntary uptake and inventory stock before proposing routine activation; all low-adoption cases fail.
-NEXT 3: User-owned deploy/seed/gas steps are deferred; public timing is separate and unproven.
-RUNNING: No test processes; last final chain E2E2/2 PASS (17.4s); no deployment/public signing.
-KNOWN: Catalog d9eff615a pushed:128 templates,64 Epic+ Power bounds at levels1/10/30, stable IDs.
-KNOWN: Research27 URLs;4,000 source cohorts;16 main+63 sensitivity+720 multi-seed cases+12 stresses.
-KNOWN: Source supply is conditional, not telemetry. Source hash/rate mismatch and stale cached model/supply/seeds fail closed.
-KNOWN: Rank once/13-week season, next-season claim cap; pending fourth season disclosed. Inventory/demand persist.
-KNOWN: Default claims/burn2.0674/2.2120/2.4054 fails<=2. Smaller3/3 or1.5/1.5 pass only at assumed100% uptake.
-KNOWN: Feature prices/cadence/input costs documented; offline budgets reserve signed/unsigned/unassigned liabilities and grants.
-KNOWN: Final units web2416/rules1353/SQL628/chain32/auth24/API16/scripts11; Forge118; tools23; E2E2/2 PASS.
-KNOWN: Three preceding browser runs15.8/13.8/16.3s; typecheck/lint/build PASS. Evidence tests/economy-*.
-KNOWN: C2 OUTBOX still SLOTS/PILOTS only; ordinary campaign authority/live demand open. H4b/H5 score7; H7 gated.
-KNOWN: Public18-receipt Fuji smoke is prior user evidence. This follow-up used disposable local transactions only.
-REMOTE: Current source CI billing/spending blocked; Vercel rate-limited (REMOTE-CHECKS.json). No manual deployment attempts.
-PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 (draft, base codex/cardrpg-c-2026-11-11).
-WORKTREE: /Users/bao/taskbar-hero-chain; branch codex/chain-2026-11-12; supabase/.temp untouched/unread.
+# CHAIN handoff — PAUSED BY USER
+NOW: User requested “lưu handoff và dừng”. Do not resume until requested.
+WORKTREE: /Users/bao/taskbar-hero-chain; branch codex/chain-2026-11-12.
+HEAD: 4e609bd9a, ahead1 of origin; substantial inherited/new edits remain UNCOMMITTED/UNPUSHED.
+PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 (draft); description/OUTBOX lag current source.
+NEXT 1: Review diff/logs; update stale QUEUE/ACCEPTANCE/CHAIN-REPORT/OUTBOX and deployment guide.
+NEXT 2: Run3 fresh isolated browser gates AFTER build/ABI writes: pnpm chain:test; retain each log.
+NEXT 3: Stage only CHAIN work, commit/push/update existing PR after green gates; leave supabase/.temp untouched.
+RUNNING: None. Final process check found no task-owned build/test/Anvil/Vite process.
+DONE: Optional authoritative server campaign, SIWE/client retry/export/seal/trade and weekly/closed-rank authority exist locally.
+DONE: Default-off campaign quote/claim signer; expired unpaid voucher renews same nonce, amount and original liability.
+PROOF: CAMPAIGN-REWARDS-LOCAL.json:20 real commands ->1.5 claim; expired original/replay rejected;1 renewal window.
+DONE: Campaign activation now forces tester reservations even if CHAIN_TESTER_BUDGET_ENABLED was omitted.
+FILES: chain-rewards.ts, chain-items/index.ts, chain-tester-budget.test.ts; keep tester guard on after a funded-program pause.
+PROOF: TESTER-BUDGET-LOCAL.json/operator-anvil.log:8 controlled wallets,2x20 paid,6 refused; operator captures100% of40.
+DONE: campaign-frontier-study1650+42 stresses;2 selection seeds/3 validation seeds; provenance regenerated.
+RESULT:60/75/100% participation: nominees0.3 boss/week (10% seal) or0.6 (5% trial),9/9 conditional validations each.
+RESULT: No nominee at50/10%; no nominee meets first-season burn/claims>=1. Fast-bot hourly ratio can reach10x.
+DONE:96 exact operator cases;200 aliases: wallet top1%=1%, operator top1%=20.8%. Synthetic ownership, not detection.
+RESEARCH:58 distinct URLs after E47–E49 (Douceur, OWASP API6, Human Passport); FEATURE-BUDGETS updated.
+GATES: Full units web2449/SQL715/rules1353/chain32/auth24/API16/scripts11 PASS; inherited rules skips unchanged.
+GATES: Forge128; tools121; typecheck/lint/build PASS. PostgreSQL17 concurrency/renewal/negative controls PASS.
+GATES: No new3-run browser gate after funding repair yet; earlier browser evidence is retained separately.
+LOGS: reports/chain/tests/continuation-final-*.log, operator-*.log, sybil-*.log, campaign-frontier-study.log.
+KNOWN: Economic acceptance still fails;0 organic people; public campaign/reward activation off. Live grants/fees/C2 stats unchanged.
+KNOWN: Public18-receipt smoke was user-run; hosted2-minute timing and deployments remain user-deferred.
+KNOWN: HANDOFF/STATUS current; other top-level reports still wrongly say local campaign authority is absent.
+KNOWN: git diff --check found trailing blank EOF in DECISIONS.md; fix before staging. No CHAIN test skipped.
+RULES: No agents, deploy, merge, mainnet, real-key use or secret reads. Only this worktree; ports5980–5983.
+STOP: Check STOP-CHAIN on later explicit resume; original hard stop19 Nov12:00UTC.

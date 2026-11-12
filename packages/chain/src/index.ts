@@ -33,3 +33,6 @@ export function getAddresses(chainId: number): Addresses {
   };
 }
 export {readSealPolicy,sealPrice,type SealPricePolicy} from './seal';
+export type {CampaignCommand,CampaignRequest,CampaignView,CampaignResponse} from './campaign';
+
+export type {CampaignRewardKind,CampaignRewardQuote} from './rewards';

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "chainId": 43113,
+  "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+  "mode": "synthetic",
+  "start": 1794484339,
+  "end": 1794484340,
+  "asOf": 1794484340,
+  "provenance": "Disposable Anvil43113: decoded SealPaid logs, matching SQL orders and totalSupply; scripted subjects, not human evidence.",
+  "snapshot": {
+    "block": 29,
+    "hash": "0xa6aafd848b8d1b783509fb274bb8d41b4a9f0ae99efa5a45a44a1aef9983134d"
+  },
+  "subjects": [
+    {
+      "id": "scripted-buyer",
+      "wallets": [
+        "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
+      ],
+      "review": "participant",
+      "joinedAt": 1794484339,
+      "exposedAt": 1794484339,
+      "visits": [
+        1794484339
+      ]
+    },
+    {
+      "id": "scripted-nonbuyer",
+      "wallets": [
+        "0x976EA74026E726554dB657fA54763abd0C3a0aa9"
+      ],
+      "review": "participant",
+      "joinedAt": 1794484339,
+      "exposedAt": 1794484339,
+      "visits": [
+        1794484339
+      ]
+    }
+  ],
+  "purchases": [
+    {
+      "chainId": 43113,
+      "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+      "wallet": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "txHash": "0x7c8f67a27c2edd01e00f028506343bd3d53e88d5623855aad5140ec9163d90bc",
+      "blockHash": "0x193023ca90db671fab3a89d7eb00c6bc24b1f7fa2ecce6a859f32b8b84710488",
+      "block": 26,
+      "logIndex": 1,
+      "receiptStatus": 1,
+      "canonical": true,
+      "timestamp": 1794484339,
+      "orderId": "a4863759-dc9a-4cc7-86a5-90108354963b",
+      "sku": "fern",
+      "amountWei": "4000000000000000000"
+    },
+    {
+      "chainId": 43113,
+      "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+      "wallet": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "txHash": "0x545ade060a6ce1aabf7717379f49857a36e459d25e8d159bd2b022836f5b5443",
+      "blockHash": "0x137354d66bbcac1a78b17423b017fd30f1c9947cf7796109fb59f1c05e65e79d",
+      "block": 27,
+      "logIndex": 1,
+      "receiptStatus": 1,
+      "canonical": true,
+      "timestamp": 1794484339,
+      "orderId": "08cd9195-4a71-4471-b90a-55e2b471850a",
+      "sku": "tide",
+      "amountWei": "4000000000000000000"
+    },
+    {
+      "chainId": 43113,
+      "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+      "wallet": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "txHash": "0x239e85c39fcc86efe72ae3249587cd9f59a6d0aabdee0b4570f8c85c7f5b0631",
+      "blockHash": "0x8e3967ed4023fb19b4110e97e482c02fb30351af5c6b1eb15136f0c5a35515a5",
+      "block": 28,
+      "logIndex": 1,
+      "receiptStatus": 1,
+      "canonical": true,
+      "timestamp": 1794484339,
+      "orderId": "39ffc988-bcec-4450-a458-f7cc1d1650b6",
+      "sku": "ember",
+      "amountWei": "4000000000000000000"
+    }
+  ]
+}

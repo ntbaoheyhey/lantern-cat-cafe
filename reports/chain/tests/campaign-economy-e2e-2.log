@@ -1,0 +1,49 @@
+
+> taskbar-hero@0.0.0 chain:test /Users/bao/taskbar-hero-chain
+> node tools/chain/browser-tests.mjs
+
+[WebServer] (node:99471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:99542) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint (19.4s)
+
+  1 passed (28.6s)
+Isolated chain spec campaign.spec.ts: PASS
+[WebServer] (node:99678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:99728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/chain/chain-guest.spec.ts:34:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real (23.4s)
+
+  1 passed (33.7s)
+Isolated chain spec chain-guest.spec.ts: PASS
+[WebServer] (node:99821) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:99878) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/chain/forge.spec.ts:9:1 › buy two Epic units → irreversible forge → permanent ornament; retry never charges (23.0s)
+
+  1 passed (31.2s)
+Isolated chain spec forge.spec.ts: PASS
+[WebServer] (node:99986) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/chain/guest-wallet.spec.ts:3:1 › guest login twice keeps the same address and does not send the private key (3.0s)
+
+  1 passed (12.6s)
+Isolated chain spec guest-wallet.spec.ts: PASS
+Fresh chain browser scenarios: 4/4; retries0.

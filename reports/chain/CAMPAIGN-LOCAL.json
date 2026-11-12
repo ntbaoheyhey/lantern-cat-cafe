@@ -1,0 +1,183 @@
+{
+  "version": 2,
+  "pass": true,
+  "rulesHash": "1b1a8241b76d25bc499522a1b46c36dfe770523887d73c70a7dd650a7a518e4f",
+  "serverSeed": 43113,
+  "routeWins": 1,
+  "routeLosses": 0,
+  "recordedBossFacts": 1,
+  "stateRevision": 21,
+  "earnedTemplate": "hearthloom-relic-epic",
+  "earnedLevel": 2,
+  "inventoryId": "f4ff0d08-d856-4fbe-972d-4718a9ad6ce6",
+  "actions": [
+    {
+      "revision": 1,
+      "command": {
+        "type": "level",
+        "cat": "mochi"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 2,
+      "command": {
+        "type": "level",
+        "cat": "soot"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 3,
+      "command": {
+        "type": "level",
+        "cat": "clover"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 4,
+      "command": {
+        "type": "start",
+        "chapter": 1
+      },
+      "inventory": null
+    },
+    {
+      "revision": 5,
+      "command": {
+        "type": "enter",
+        "node": "0-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 6,
+      "command": {
+        "type": "fight"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 7,
+      "command": {
+        "type": "reward",
+        "choice": "garden-2"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 8,
+      "command": {
+        "type": "enter",
+        "node": "1-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 9,
+      "command": {
+        "type": "resolve",
+        "choice": "recycle"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 10,
+      "command": {
+        "type": "enter",
+        "node": "2-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 11,
+      "command": {
+        "type": "resolve",
+        "choice": "points"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 12,
+      "command": {
+        "type": "enter",
+        "node": "3-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 13,
+      "command": {
+        "type": "resolve",
+        "choice": "leave"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 14,
+      "command": {
+        "type": "enter",
+        "node": "4-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 15,
+      "command": {
+        "type": "resolve",
+        "choice": "heal"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 16,
+      "command": {
+        "type": "enter",
+        "node": "5-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 17,
+      "command": {
+        "type": "fight"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 18,
+      "command": {
+        "type": "reward",
+        "choice": "trail-3"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 19,
+      "command": {
+        "type": "enter",
+        "node": "6-0"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 20,
+      "command": {
+        "type": "fight"
+      },
+      "inventory": null
+    },
+    {
+      "revision": 21,
+      "command": {
+        "type": "export",
+        "instance": "depth-gear-15",
+        "normalization": "depth-min-roll-v1"
+      },
+      "inventory": "f4ff0d08-d856-4fbe-972d-4718a9ad6ce6"
+    }
+  ],
+  "publicTransactions": 0,
+  "limitations": "One deterministic locally executed starter profile, no injected items/currency. Not population supply, public campaign integration, human telemetry or bot identity."
+}

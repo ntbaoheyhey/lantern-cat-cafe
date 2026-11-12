@@ -1,6 +1,7 @@
 import {ChainRequestError} from './chain-http.ts';
 import { keccak256, toBytes, type Address } from 'viem';
-import { TRADE_BY_ID, sealCost } from '../../../packages/game-rules/src/cardrpg/trade.ts';
+import { TRADE_BY_ID } from '../../../packages/game-rules/src/cardrpg/trade.ts';
+import {readSealPolicy,sealPrice,type SealPricePolicy} from '../../../packages/chain/src/seal.ts';
 import { RARITY_ORDER } from '../../../packages/game-rules/src/cardrpg/contract.ts';
 import type { VoucherSigner } from './relic.ts';
 export interface SealIntent {id:string;inventory_id:string;player_id:string;item_id:string;token_id:number;rarity:number;cost:string;paid:boolean}
@@ -11,18 +12,19 @@ export interface ItemStore {
   finalize(player:string,intent:string):Promise<SealIntent>;
 }
 export const sealIntentHash=(id:string)=>keccak256(toBytes(`taskbar-hero:seal:v1:${id}`));
-export function createItems({store,signer,paid,nonceUsed,now=()=>Date.now()}:{
+export function createItems({store,signer,paid,nonceUsed,now=()=>Date.now(),sealPolicy='standard-v1'}:{
   store:ItemStore;signer:VoucherSigner;paid(wallet:Address,intent:`0x${string}`):Promise<bigint>;
-  nonceUsed(nonce:bigint):Promise<boolean>;now?:()=>number;
+  nonceUsed(nonce:bigint):Promise<boolean>;now?:()=>number;sealPolicy?:SealPricePolicy;
 }) {
+  const policy=readSealPolicy(sealPolicy);
   return async(player:string,wallet:Address,body:{action?:unknown;inventory?:unknown;intent?:unknown})=>{
     const items=await store.inventory(player,wallet.toLowerCase());
-    if(body.action==='inventory')return {items};
+    if(body.action==='inventory')return {items,sealPolicy:policy};
     if(body.action==='reserve'){
       const item=items.find(i=>i.id===body.inventory);if(!item)throw new ChainRequestError('no_item');
       const rule=TRADE_BY_ID[item.item_id];
       if(!rule?.tradable||!rule.tokenId||rule.tokenId<10000)throw new ChainRequestError('bound_item');
-      const intent=await store.reserve(player,wallet.toLowerCase(),item.id,rule.tokenId,RARITY_ORDER.indexOf(rule.rarity),sealCost(rule.id).toString());
+      const intent=await store.reserve(player,wallet.toLowerCase(),item.id,rule.tokenId,RARITY_ORDER.indexOf(rule.rarity),sealPrice(rule.referenceYarn,policy).toString());
       return {intent,hash:sealIntentHash(intent.id)};
     }
     if(body.action==='finalize'){

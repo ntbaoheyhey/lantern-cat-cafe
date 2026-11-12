@@ -7,6 +7,8 @@ function request(body: string | ReadableStream<Uint8Array>, headers: HeadersInit
 afterEach(() => vi.useRealTimers());
 
 it.each([
+  ['chain-cosmetics', {action:'state'}], ['chain-cosmetics', {action:'reserve',sku:'fern'}],
+  ['chain-cosmetics', {action:'equip',sku:'none'}], ['chain-cosmetics', {action:'finalize',intent:'00000000-0000-4000-8000-000000000001'}],
   ['guest-drip', {}], ['chain-judge', {action: 'pass'}], ['chain-judge', {action: 'boss'}],
   ['chain-items', {action: 'inventory'}], ['chain-items', {action: 'reward'}],
   ['chain-items', {action: 'reserve', inventory: '00000000-0000-4000-8000-000000000001'}],
@@ -18,6 +20,8 @@ it.each(['null', '[]', 'true', '"boss"', '{', '', '{"action":{}}'])('refuses mal
   await expect(readChainBody(request(body), 'chain-judge')).rejects.toBeInstanceOf(ChainRequestError);
 });
 it.each([
+  ['chain-cosmetics', {action:'reserve',sku:'fern',cost:'1'}],
+  ['chain-cosmetics', {action:'equip',sku:'fake'}], ['chain-cosmetics', {action:'finalize',intent:'bad'}],
   ['guest-drip', {amount: 1}], ['chain-judge', {action: 'boss', won: true}],
   ['chain-items', {action: 'reward', amount: 1000}], ['chain-items', {action: 'reserve', inventory: []}],
   ['chain-items', {action: 'finalize', intent: 'not-a-uuid'}], ['chain-items', {action: 'unseal'}],

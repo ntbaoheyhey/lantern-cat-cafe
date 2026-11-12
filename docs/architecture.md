@@ -6,14 +6,14 @@
 - `packages/api-contract`: the client/server API types, error codes, HTTP statuses and endpoint names; see `docs/api.md` and `docs/api-v2.md`.
 - `packages/chain`: chain constants and contract addresses (Fuji, 43113).
 - `packages/auth`: wallet sign-in (SIWE) logic used by the auth Edge Functions; see `docs/auth.md`.
-- `contracts`: Foundry project (RelicNFT, RelicMarket).
+- `contracts`: Foundry project (RelicNFT, legacy RelicMarket, YarnToken, RelicMarketV2, SeasonRewards and optional local RelicForge).
 - `supabase`: migrations and Edge Functions.
 
 See [extending](extending.md) and [extending-v2](extending-v2.md) for step-by-step checklists to add content, endpoints, or features.
 
 ## On-chain vs off-chain
-- Off-chain (Supabase, server decides): gold/fish, gear/items, shards/yarn, Boss Keys/Cat Keys, materials, stage progression.
-- On-chain (Avalanche Fuji testnet, Chain ID 43113): Relic NFTs (ERC-1155) minted with a server-signed EIP-712 voucher, and the Relic market. All transactions use free testnet AVAX; there is no real-money cost and no fungible token.
+- Off-chain: legacy v1/v2 connected progression is decided by Supabase. The newer Depth/A6 campaign remains a browser save; it is not mint authority. Soft currencies, including older resources named yarn, are distinct from ERC-20 YARN.
+- On-chain (Avalanche Fuji C-Chain, 43113): RelicNFT voucher minting, the legacy AVAX market, fixed-supply YARN, the AVAX/YARN V2 market and SeasonRewards. Existing public deployments are listed in [contracts](contracts.md). Testnet — no real value.
 
 ## Wallet
 
@@ -33,6 +33,21 @@ the client displays results and replays combat. Browser state and request-suppli
 authoritative. The shared rules module is computation, not a security boundary by itself.
 Without Supabase configuration, mock APIs and browser-local demo saves prove UI behavior only.
 The v2 workshop's gear crafting is off-chain; it is separate from the daily ERC-1155 Relic flow.
+
+The flag-gated CHAIN room adds browser-only guest wallets, ordinary SIWE sessions,
+sponsored test gas, judge vouchers, on-chain inventory and V2 trading. The server
+owns the judge entitlements and seal ledger. Campaign Epic+ classification and C2
+source simulations do not authorize minting from a Depth save. The disabled
+`chain-source` adapter requires a server-owned source/consumption receipt; ordinary
+campaign integration remains open. See [trade rules](design/chain/TRADE-RULES.md).
+
+Optional finite styles burn YARN using a wallet/token/order-bound intent and keep
+ownership in the database. The optional ownerless RelicForge permanently holds two
+canonical Epic units and burns3 YARN per distinct bound design; it has no combat
+effect or withdrawal path. These local additions have separate default-off flags.
+Neither feature's functional tests establish voluntary demand or public deployment.
+Disabled routine-budget registration and tester admission use one transaction lock
+and protected pool snapshot; a budget does not itself authorize a reward claim.
 
 ```mermaid
 sequenceDiagram
@@ -67,10 +82,13 @@ game resource costs or a daily cap; those depend on the trusted server signer. T
 the signer, invalidate a nonce and change metadata. Chain state is authoritative for NFT ownership.
 Receipt reconciliation verifies the event rather than trusting the browser's claimed mint.
 
-Trading goes directly from wallets to the fixed-price escrow contract: `list` requires approval,
+Legacy trading goes directly from wallets to the seller-priced escrow contract: `list` requires approval,
 `buy` requires exact payment and atomically transfers the lot and pays the seller, and `cancel`
-returns escrow to the seller. There is no market owner, platform fee or fungible token. Gas still
-applies to minting, approval, listing, buying and cancellation; ordinary game actions stay gas-free.
+returns escrow to the seller. V1 has no platform fee. V2 accepts AVAX or YARN and
+charges the deployed5% sale fee:40% of the fee is burned/sunk and60% accrues to the
+treasury; seller proceeds use pull payments. AVAX sinks are never counted as YARN
+burns. Both markets permit seller-chosen prices without a floor or ceiling. Gas
+applies to chain transactions; ordinary game actions stay gas-free.
 
 See the [judge integration page](avalanche-integration.md) for deployed addresses, live evidence
 and reproduction, and the [contract](security-contracts.md) / [web](security-web.md) security reviews

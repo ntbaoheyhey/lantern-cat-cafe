@@ -38,15 +38,26 @@ export async function loadModules() {
     const relic = await loader.ssrLoadModule('/supabase/functions/_shared/relic.ts');
     const judge = await loader.ssrLoadModule('/supabase/functions/_shared/chain-judge.ts');
     const items = await loader.ssrLoadModule('/supabase/functions/_shared/chain-items.ts');
+    const cosmeticsModule = await loader.ssrLoadModule('/supabase/functions/_shared/chain-cosmetics.ts');
+    const source = await loader.ssrLoadModule('/supabase/functions/_shared/chain-source.ts');
+    const campaign = await loader.ssrLoadModule('/supabase/functions/_shared/chain-campaign.ts');
+    const campaignService = await loader.ssrLoadModule('/supabase/functions/_shared/chain-campaign-service.ts');
+    const campaignManifest = await loader.ssrLoadModule('/supabase/functions/_shared/chain-campaign-manifest.ts');
+    const campaignRewards = await loader.ssrLoadModule('/supabase/functions/_shared/chain-campaign-rewards.ts');
+    const campaignClaim = await loader.ssrLoadModule('/supabase/functions/_shared/chain-campaign-claim.ts');
+    const routine = await loader.ssrLoadModule('/supabase/functions/_shared/chain-routine.ts');
     const rewards = await loader.ssrLoadModule('/supabase/functions/_shared/chain-rewards.ts');
+    const testerBudget = await loader.ssrLoadModule('/supabase/functions/_shared/chain-tester-budget.ts');
+    const budgetRegister = await loader.ssrLoadModule('/supabase/functions/_shared/chain-budget-register.ts');
     const chainHttp = await loader.ssrLoadModule('/supabase/functions/_shared/chain-http.ts');
     const trade = await loader.ssrLoadModule('/packages/game-rules/src/cardrpg/trade.ts');
     const move = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/move.ts');
     const runtime = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/runtime.ts');
-    return {...db,...auth,...drip,...relic,...judge,...items,...rewards,...chainHttp,...trade,...move,...runtime,close:()=>loader.close()};
+    const forgeClient = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/forge-client.ts');
+    return {...db,...auth,...drip,...relic,...judge,...items,...cosmeticsModule,...source,...campaign,...campaignService,...campaignManifest,...campaignRewards,...campaignClaim,...routine,...rewards,...testerBudget,...budgetRegister,...chainHttp,...trade,...move,...runtime,...forgeClient,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
-export async function startLocal({web = true} = {}) {
+export async function startLocal({web = true, campaignRewards = web} = {}) {
   mkdirSync(resolve(root,'work/chain'),{recursive:true});
   const handles = [];
   const stop = async () => {for(const close of handles.reverse()){try{await close();}catch{}}};
@@ -76,7 +87,8 @@ export async function startLocal({web = true} = {}) {
     const RelicMarketV2=await deploy('RelicMarketV2',[RelicNFT,YarnToken,devAccount(4).address,500n]);
     const stamp=(await client.getBlock()).timestamp,epoch=stamp-(stamp-345600n)%604800n;
     const SeasonRewards=await deploy('SeasonRewards',[YarnToken,deployer.address,signer.address,viem.parseEther('32'),epoch]);
-    const config={chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,YarnToken,RelicMarketV2,SeasonRewards,treasury:devAccount(4).address,startBlock:'0'};
+    const RelicForge=await deploy('RelicForge',[RelicNFT,YarnToken]);
+    const config={RelicForge,chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,YarnToken,RelicMarketV2,SeasonRewards,treasury:devAccount(4).address,startBlock:'0'};
     const modules=await loadModules(); handles.push(()=>modules.close());
     const db=await modules.buildMigratedDb();handles.push(()=>db.close());
     // Seed four real escrow listings using only public Anvil fixture accounts.
@@ -88,6 +100,10 @@ export async function startLocal({web = true} = {}) {
       const r=await client.waitForTransactionReceipt({hash});if(r.status!=='success')throw new Error('Seed reverted');return hash;
     };
     await send(deployWallet,YarnToken,artifact('YarnToken').abi,'transfer',[SeasonRewards,viem.parseEther('10000')]);
+    // Local fixture only: a finite100-gift program, funded from the local pool.
+    // Production migration inserts no budget and cannot enable issuance.
+    await db.query('insert into public.chain_tester_budgets(contract,ceiling,evidence_hash,enabled) values($1,$2,$3,true)',
+      [SeasonRewards.toLowerCase(),viem.parseEther('2000').toString(),'0'.repeat(64)]);
     await send(botWallet,RelicNFT,nftAbi,'setApprovalForAll',[RelicMarket,true]);
     await send(botWallet,RelicNFT,nftAbi,'setApprovalForAll',[RelicMarketV2,true]);
     const expiry=BigInt(Math.floor(Date.now()/1000)+3600);
@@ -101,6 +117,12 @@ export async function startLocal({web = true} = {}) {
     }
     const one=async(sql,args)=>(await db.query(sql,args)).rows[0]?.r;
     const chainOne=async(sql,args)=>{try{return await one(sql,args);}catch(error){throw modules.chainStoreError(error);}};
+    // Explicit local test policy, deterministic server seed, never a production default.
+    await db.query('insert into chain_source_policies(source_id,rules_hash,enabled) values($1,$2,true)',[modules.CAMPAIGN_SOURCE,modules.CAMPAIGN_RULES_HASH]);
+    const campaign=modules.createCampaignService({enabled:true,rulesHash:modules.CAMPAIGN_RULES_HASH,seed:()=>43113,store:{
+      boot:(p,w,r,s)=>chainOne('select chain_campaign_boot($1,$2,$3,$4) r',[p,w,r,JSON.stringify(s)]),
+      receipt:(p,w,i)=>chainOne('select chain_campaign_receipt($1,$2,$3) r',[p,w,i]),
+      commit:c=>chainOne('select chain_campaign_commit($1,$2,$3,$4,$5,$6,$7,$8) r',[c.player,c.wallet,c.rules,c.id,c.requestHash,c.revision,JSON.stringify(c.state),c.exportInstance])}});
     const store={
       reserve:a=>chainOne('select public.chain_drip_reserve($1,$2,$3,$4,$5,$6,$7) r',[a.player,a.wallet,a.ip,a.sponsor,a.nonce,a.gasPrice,a.balance]),
       signed:(wallet,raw,hash)=>chainOne('select public.chain_drip_signed($1,$2,$3) r',[wallet,raw,hash]),
@@ -109,15 +131,44 @@ export async function startLocal({web = true} = {}) {
     const drip=modules.createDrip({key:viem.toHex(sponsor.getHdKey().privateKey),rpcUrl:localRpc,store});
     const judge=modules.createJudge({signer:voucherSigner,nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),store:{reserve:(player,wallet,ip,boss)=>chainOne('select public.chain_judge_reserve($1,$2,$3,$4) r',[player,wallet,ip,boss])}});
     const items=modules.createItems({signer:voucherSigner,
+      sealPolicy:process.env.CHAIN_SEAL_PRICE_TRIAL==='1'?'basket-trial-v1':'standard-v1',
       paid:(wallet,intent)=>client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'sealPayments',args:[wallet,intent]}),
       nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),
       store:{inventory:(player,wallet)=>chainOne('select public.chain_item_inventory($1,$2) r',[player,wallet]),
         reserve:(player,wallet,inventory,token,rarity,cost)=>chainOne('select public.chain_seal_reserve($1,$2,$3,$4,$5,$6) r',[player,wallet,inventory,token,rarity,cost]),
         finalize:(player,intent)=>chainOne('select public.chain_seal_finalize($1,$2) r',[player,intent])}});
-    const reward=modules.createTesterReward({key:signerKey,contract:SeasonRewards,
+    const cosmetics=modules.createCosmetics({enabled:true,token:YarnToken,
+      paid:(wallet,intent)=>client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'sealPayments',args:[wallet,intent]}),
+      store:{state:(p,w)=>chainOne('select public.chain_cosmetic_state($1,$2) r',[p,w]),
+        reserve:(p,w,s,t)=>chainOne('select public.chain_cosmetic_reserve($1,$2,$3,$4) r',[p,w,s,t]),
+        finalize:(p,w,i)=>chainOne('select public.chain_cosmetic_finalize($1,$2,$3) r',[p,w,i]),
+        equip:(p,w,s)=>chainOne('select public.chain_cosmetic_equip($1,$2,$3) r',[p,w,s])}});
+    const reserveTester=modules.createTesterBudgetReservation({contract:SeasonRewards,snapshot:async()=>{
+      const block=await client.getBlock({blockTag:'latest'});
+      const balance=await client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'balanceOf',args:[SeasonRewards],blockNumber:block.number});
+      return {chainId:43113,contract:SeasonRewards,block:block.number,blockHash:block.hash,timestamp:block.timestamp,balance};
+    },reserve:row=>chainOne('select public.chain_tester_reserve($1::jsonb) r',[JSON.stringify(row)])});
+    const reward=modules.createTesterReward({key:signerKey,contract:SeasonRewards,reserve:reserveTester,reservationRequired:true,
       eligible:async(player,wallet)=>!!await one('select exists(select 1 from public.chain_judge_passes where player_id=$1 and wallet=$2) r',[player,wallet]),
       season:()=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'currentSeason'}),
       nonceUsed:nonce=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'usedNonces',args:[nonce]})});
+    if(campaignRewards){
+      const b=await client.getBlock({blockTag:'latest'}),contract=SeasonRewards.toLowerCase();
+      const plan={id:'local-campaign-only',contract,season:0,source_id:modules.CAMPAIGN_SOURCE,rules_hash:modules.CAMPAIGN_RULES_HASH,
+        evidence_hash:'1'.repeat(64),ceiling:viem.parseEther('3000').toString(),boss_max:viem.parseEther('1.5').toString(),
+        rank_max:viem.parseEther('1.5').toString(),weekly_cap:viem.parseEther('12').toString()};
+      await chainOne('select chain_reward_budget_register($1::jsonb) r',[JSON.stringify({budget:plan,
+        pool_balance:(await client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'balanceOf',args:[SeasonRewards],blockNumber:b.number})).toString(),block:b.number.toString(),block_hash:b.hash})]);
+      // Explicit disposable program. No row or enabled setting is migrated publicly.
+      await db.query('insert into chain_campaign_reward_programs values($1,$2,$3,0,0,true)',[contract,Number(epoch),modules.CAMPAIGN_RULES_HASH]);
+      await db.query('update chain_reward_budgets set enabled=true where id=$1',[plan.id]);
+    }
+    const campaignClaim=modules.createCampaignClaim({enabled:campaignRewards,contract:SeasonRewards,token:YarnToken,
+      key:signerKey,rulesHash:modules.CAMPAIGN_RULES_HASH,client,
+      read:(p,w,c,k,t)=>chainOne('select chain_campaign_reward_evidence($1,$2,$3,$4,$5) r',[p,w,c,k,t]),
+      reserve:r=>chainOne('select chain_reward_reserve($1::jsonb) r',[JSON.stringify(r)]),
+      renew:r=>chainOne('select chain_reward_renew($1::jsonb) r',[JSON.stringify(r)]),
+      stored:(source,receipt)=>one('select to_jsonb(r) r from chain_reward_reservations r where source_id=$1 and receipt_id=$2',[source,receipt])});
     const authStore={
       createNonce:nonce=>db.query('select public.create_siwe_nonce($1)',[nonce]),
       consumeNonce:nonce=>one('select public.consume_siwe_nonce($1) r',[nonce]),
@@ -135,7 +186,7 @@ export async function startLocal({web = true} = {}) {
         if(incoming.url==='/health'){outgoing.end('local-chain');return;}
         if(incoming.method!=='POST'){outgoing.writeHead(405).end();return;}
         const name=incoming.url.replace('/functions/v1/','');let input,result;
-        if(['guest-drip','chain-items','chain-judge'].includes(name)){
+        if(['guest-drip','chain-items','chain-judge','chain-cosmetics','chain-campaign','chain-campaign-reward'].includes(name)){
           const abort=new AbortController(),cancel=()=>abort.abort();incoming.once('aborted',cancel);
           try{input=await modules.readChainBody(new Request(localApi+incoming.url,{method:'POST',headers:incoming.headers,body:Readable.toWeb(incoming),duplex:'half',signal:abort.signal}),name);}
           finally{incoming.off('aborted',cancel);}
@@ -150,6 +201,14 @@ export async function startLocal({web = true} = {}) {
           const session=await modules.verifySessionToken(token,{jwtSecret});
           if(name==='guest-drip')result=await drip(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret));
           else if(name==='chain-items')result=input.action==='reward'?await reward(session.sub,viem.getAddress(session.wallet)):await items(session.sub,viem.getAddress(session.wallet),input);
+          else if(name==='chain-cosmetics')result=await cosmetics(session.sub,viem.getAddress(session.wallet),input);
+          else if(name==='chain-campaign-reward'){
+            // Anvil has no background block producer; tick only the local chain.
+            await client.request({method:'evm_mine',params:[]});
+            try{result=await campaignClaim(session.sub,viem.getAddress(session.wallet),input.action,input.kind);}
+            catch(error){throw modules.routineError(error);}
+          }
+          else if(name==='chain-campaign')result=await campaign(session.sub,session.wallet.toLowerCase(),input);
           else if(name==='chain-judge')result=await judge(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret),input.action);
           else {outgoing.writeHead(404).end();return;}
         }
@@ -165,12 +224,12 @@ export async function startLocal({web = true} = {}) {
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){
-      Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_CHAIN_MODE:'local',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
+      Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_CHAIN_MODE:'local',VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',VITE_CHAIN_CAMPAIGN_REWARDS:campaignRewards?'1':'0',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
       const {createServer}=await import(pathToFileURL(webRequire.resolve('vite')));
       const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5980,strictPort:true,hmr:{port:5983}}});
       await vite.listen();handles.push(()=>vite.close());
     }
-    return {config,client,db,modules,drip,judge,items,reward,authDeps,stop};
+    return {config,client,db,modules,drip,judge,items,cosmetics,campaign,campaignClaim,reward,authDeps,stop};
   }catch(error){await stop();throw error;}
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

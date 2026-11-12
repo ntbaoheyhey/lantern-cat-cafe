@@ -1,0 +1,71 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-chain
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (17.00025ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.508958ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3.300625ms)
+✔ output order is stable regardless of file creation order (5.757708ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.753791ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (47.415333ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (37.739459ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (29.56875ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (21.793792ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (29.7435ms)
+✔ auth health fails closed when the transport is unavailable (24.0195ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 315.902583
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  18:55:21
+packages/chain test:    Duration  493ms (tests 46%, import 43%, transform 9%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  18:55:21
+packages/auth test:    Duration  727ms (import 62%, tests 35%, transform 3%)
+packages/auth test: Done
+supabase/tests test:  Test Files  41 passed (41)
+supabase/tests test:       Tests  660 passed (660)
+supabase/tests test:    Start at  18:55:21
+supabase/tests test:    Duration  23.91s (tests 85%, import 14%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  88 passed | 3 skipped (91)
+packages/game-rules test:       Tests  1353 passed | 2 expected fail | 11 skipped (1366)
+packages/game-rules test:    Start at  18:55:21
+packages/game-rules test:    Duration  56.45s (tests 97%, import 2%, transform 1%)
+packages/game-rules test:     Isolate  91 workers spawned · ~81ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~3.62s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  18:56:18
+packages/api-contract test:    Duration  281ms (transform 56%, import 38%, tests 3%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+apps/web test:  Test Files  270 passed (270)
+apps/web test:       Tests  2427 passed (2427)
+apps/web test:    Start at  18:56:18
+apps/web test:    Duration  106.74s (environment 48%, tests 34%, import 14%, transform 4%)
+apps/web test: Environment  jsdom was created 270 times · 90.68s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

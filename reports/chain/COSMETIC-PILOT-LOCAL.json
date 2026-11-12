@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "chainId": 43113,
+  "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+  "mode": "synthetic",
+  "provenance": "Disposable Anvil43113: decoded SealPaid logs, matching SQL orders and totalSupply; scripted subjects, not human evidence.",
+  "window": {
+    "start": 1794484339,
+    "end": 1794484340,
+    "asOf": 1794484340
+  },
+  "subjects": 2,
+  "wallets": 2,
+  "participants": 2,
+  "excludedSubjects": 0,
+  "multiWalletParticipants": 0,
+  "uniquePurchases": 3,
+  "inputPurchases": 3,
+  "purchaseAllEnrolled": {
+    "successes": 1,
+    "total": 2,
+    "estimate": 0.5,
+    "lower": 0.09453120573423074,
+    "upper": 0.9054687942657693
+  },
+  "purchaseWithin7Days": {
+    "successes": 0,
+    "total": 0,
+    "estimate": null,
+    "lower": null,
+    "upper": null
+  },
+  "censoredPurchase7Days": 2,
+  "purchaseAfterPreview": {
+    "successes": 1,
+    "total": 2,
+    "estimate": 0.5,
+    "lower": 0.09453120573423074,
+    "upper": 0.9054687942657693
+  },
+  "day7Return": {
+    "successes": 0,
+    "total": 0,
+    "estimate": null,
+    "lower": null,
+    "upper": null
+  },
+  "censoredDay7": 2,
+  "burnByReview": {
+    "participant": "12",
+    "operator": "0",
+    "automation": "0",
+    "suspected": "0",
+    "unreviewed": "0"
+  },
+  "measurement": "TEST FIXTURE — not player evidence",
+  "activation": false,
+  "budgetEligibleBurn": "0",
+  "limitations": [
+    "Canonical events, order/payment bindings and subject grouping are reviewed input assertions; this analyzer cannot attest their truth.",
+    "Wallets are not people. One reviewed subject may own multiple wallets; unidentified clusters invalidate independent-trial inference.",
+    "Wilson intervals are descriptive under independent comparable participants; no optional stopping, post-hoc exclusion or causal price claim.",
+    "All-enrolled purchase has unequal follow-up; use purchaseWithin7Days for the fixed horizon. Late entrants are censored regardless of an early purchase. Nonviewers remain in every eligible denominator.",
+    "Operators, scripts and suspected identities are reported separately; review criteria must be fixed before inspecting purchase outcomes.",
+    "Free20-YARN grants and permanent three-item content do not establish recurring demand. Synthetic/control purchases never fund routine rewards.",
+    "This feature-only sample is not a complete token ledger, item-supply study, closed13-week economy review or approval to activate rewards."
+  ]
+}
