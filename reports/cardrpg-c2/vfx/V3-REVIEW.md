@@ -24,3 +24,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | panko-passive | 8 / 8 / 9 / 8 | Small bread cushion sits low on the actual protected recipient and fades cleanly. | 119.91 |
 | enemy:button-guard:basic | 8 / 8 / 9 / 8 | Button core is recognizable at impact and leaves the target face visible. | 120.00 |
 | enemy:button-guard | 8 / 8 / 9 / 8 | Golden fan frames the caster; its self-shield number remains unobstructed. | 119.90 |
+| enemy:sock-skipper:basic | 8 / 8 / 9 / 8 | Short cloth flick reads as a compact basic strike and clears below the target face. | 120.00 |
