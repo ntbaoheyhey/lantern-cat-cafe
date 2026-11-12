@@ -1,0 +1,588 @@
+{
+  "version": 1,
+  "id": "soot-4",
+  "name": "Midnight service",
+  "owner": "soot",
+  "duration": 1712,
+  "impact": 930,
+  "friendly": false,
+  "phases": [
+    {
+      "name": "anticipation",
+      "start": 0,
+      "end": 600
+    },
+    {
+      "name": "release",
+      "start": 600,
+      "end": 930
+    },
+    {
+      "name": "impact",
+      "start": 930,
+      "end": 1030
+    },
+    {
+      "name": "dissipate",
+      "start": 1030,
+      "end": 1712
+    }
+  ],
+  "layers": [
+    {
+      "name": "ground-decal",
+      "region": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "feet",
+      "blend": "normal",
+      "start": 890,
+      "end": 1712,
+      "size": 1.4,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 890,
+          "x": 0,
+          "y": 0,
+          "sx": 0.35,
+          "sy": 0.35,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 995,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.55
+        },
+        {
+          "t": 1712,
+          "x": 0,
+          "y": 0,
+          "sx": 1.2,
+          "sy": 1.2,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "charge-glow",
+      "region": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "anchor": "caster",
+      "socket": "mainHand",
+      "blend": "screen",
+      "start": 300,
+      "end": 930,
+      "size": 1.05,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 300,
+          "x": 0,
+          "y": 0,
+          "sx": 0.25,
+          "sy": 0.25,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 600,
+          "x": 0,
+          "y": 0,
+          "sx": 0.7,
+          "sy": 0.7,
+          "rotate": 0,
+          "alpha": 0.65
+        },
+        {
+          "t": 930,
+          "x": 0,
+          "y": 0,
+          "sx": 1.15,
+          "sy": 1.15,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "trail-smear",
+      "region": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "anchor": "flight",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 600,
+      "end": 1080,
+      "size": 1.3,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 600,
+          "x": -0.1,
+          "y": 0.04,
+          "sx": 0.5,
+          "sy": 0.5,
+          "rotate": -0.18,
+          "alpha": 0
+        },
+        {
+          "t": 895,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.8
+        },
+        {
+          "t": 1080,
+          "x": 0.08,
+          "y": -0.04,
+          "sx": 1.25,
+          "sy": 1.1,
+          "rotate": 0.12,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "core-shape",
+      "region": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "anchor": "flight",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 600,
+      "end": 1130,
+      "size": 1.45,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 600,
+          "x": -0.12,
+          "y": 0.1,
+          "sx": 0.55,
+          "sy": 0.55,
+          "rotate": -0.4,
+          "alpha": 0
+        },
+        {
+          "t": 914,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 1
+        },
+        {
+          "t": 1005,
+          "x": 0.08,
+          "y": 0.03,
+          "sx": 1.12,
+          "sy": 1,
+          "rotate": 0.28,
+          "alpha": 0.95
+        },
+        {
+          "t": 1130,
+          "x": 0.14,
+          "y": 0.13,
+          "sx": 1.2,
+          "sy": 0.8,
+          "rotate": 0.55,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "impact-burst",
+      "region": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 930,
+      "end": 1170,
+      "size": 1.12,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 930,
+          "x": 0,
+          "y": 0,
+          "sx": 0.4,
+          "sy": 0.4,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 965,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 1
+        },
+        {
+          "t": 1170,
+          "x": 0.05,
+          "y": 0.03,
+          "sx": 1.18,
+          "sy": 1.1,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "screen-flash",
+      "region": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "screen",
+      "start": 930,
+      "end": 1000,
+      "size": 0.9,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 930,
+          "x": 0,
+          "y": 0,
+          "sx": 0.5,
+          "sy": 0.5,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 946,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.65
+        },
+        {
+          "t": 1000,
+          "x": 0,
+          "y": 0,
+          "sx": 1.1,
+          "sy": 1.1,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ],
+      "flash": true
+    },
+    {
+      "name": "sparks",
+      "region": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 950,
+      "end": 1672,
+      "size": 1.25,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 950,
+          "x": 0,
+          "y": 0,
+          "sx": 0.45,
+          "sy": 0.45,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 995,
+          "x": 0,
+          "y": 0,
+          "sx": 0.8,
+          "sy": 0.8,
+          "rotate": 0,
+          "alpha": 0.9
+        },
+        {
+          "t": 1672,
+          "x": 0.05,
+          "y": -0.12,
+          "sx": 1.1,
+          "sy": 1.1,
+          "rotate": 0.3,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "residue",
+      "region": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 1030,
+      "end": 1712,
+      "size": 1.2,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 1030,
+          "x": 0,
+          "y": 0,
+          "sx": 0.7,
+          "sy": 0.7,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 1110,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.55
+        },
+        {
+          "t": 1712,
+          "x": 0.08,
+          "y": -0.18,
+          "sx": 1.15,
+          "sy": 1.15,
+          "rotate": 0.2,
+          "alpha": 0
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "tier": "ultimate",
+    "duration": 3600,
+    "impact": 3200,
+    "camera": [
+      {
+        "t": 0,
+        "zoom": 1,
+        "x": 0,
+        "y": 0,
+        "tilt": 0
+      },
+      {
+        "t": 650,
+        "zoom": 1.1,
+        "x": 0,
+        "y": 0,
+        "tilt": -0.035
+      },
+      {
+        "t": 950,
+        "zoom": 1,
+        "x": 0,
+        "y": 0,
+        "tilt": 0
+      },
+      {
+        "t": 3200,
+        "zoom": 1,
+        "x": 0,
+        "y": 0,
+        "tilt": 0
+      },
+      {
+        "t": 3600,
+        "zoom": 1,
+        "x": 0,
+        "y": 0,
+        "tilt": 0
+      }
+    ],
+    "time": [
+      {
+        "t": 0,
+        "value": 0.05
+      },
+      {
+        "t": 650,
+        "value": 0.25
+      },
+      {
+        "t": 950,
+        "value": 1
+      },
+      {
+        "t": 3200,
+        "value": 0
+      },
+      {
+        "t": 3300,
+        "value": 1
+      }
+    ],
+    "dim": [
+      {
+        "t": 0,
+        "value": 0.7
+      },
+      {
+        "t": 650,
+        "value": 0.5
+      },
+      {
+        "t": 950,
+        "value": 0
+      },
+      {
+        "t": 3200,
+        "value": 0
+      }
+    ],
+    "cutin": {
+      "start": 150,
+      "end": 650,
+      "portrait": "/units/soot/portrait.webp",
+      "name": "Midnight service"
+    },
+    "casterAnim": [
+      {
+        "t": 0,
+        "name": "ult"
+      },
+      {
+        "t": 550,
+        "event": "ult_release"
+      }
+    ],
+    "targetAnim": [
+      {
+        "t": 3200,
+        "name": "hurt"
+      }
+    ],
+    "vfx": [
+      {
+        "type": "painted-layer",
+        "source": "soot-4",
+        "anchor": "target",
+        "blend": "add"
+      },
+      {
+        "type": "shader",
+        "source": "falling-meteors",
+        "anchor": "caster",
+        "blend": "screen"
+      },
+      {
+        "type": "particles",
+        "source": "arcane-ember",
+        "anchor": "target",
+        "blend": "add"
+      }
+    ],
+    "postfx": [
+      {
+        "t": 0,
+        "bloom": 0.2,
+        "aberration": 0,
+        "vignette": 0.65
+      },
+      {
+        "t": 3200,
+        "bloom": 1,
+        "shockwave": true,
+        "aberration": 0.006,
+        "vignette": 0.4
+      },
+      {
+        "t": 3280,
+        "bloom": 0.2,
+        "aberration": 0,
+        "vignette": 0.3
+      },
+      {
+        "t": 3600,
+        "bloom": 0,
+        "aberration": 0,
+        "vignette": 0.2
+      }
+    ],
+    "audio": [
+      {
+        "t": 0,
+        "cue": "ult.soot.charge"
+      },
+      {
+        "t": 150,
+        "cue": "voice.soot.ult"
+      },
+      {
+        "t": 950,
+        "cue": "ult.soot.release"
+      },
+      {
+        "t": 3200,
+        "cue": "ult.soot.impact"
+      },
+      {
+        "t": 3400,
+        "cue": "ult.soot.tail"
+      }
+    ],
+    "damage": [
+      {
+        "t": 3200,
+        "target": "resolved-targets",
+        "split": 1
+      }
+    ],
+    "plate": {
+      "id": "soot-ult",
+      "start": 950,
+      "end": 3200
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import {pilotFixture} from '../vfx-layered/fixture';
+import {prepareBattleSequence} from '../battle-v3/controls';
 import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
@@ -149,12 +151,13 @@ export class DepthModel {
   get canAct() { return !this.galleryBattle && this.showBattle && !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
   get frame() { return this.plan ? sampleActionPlan(this.plan, this.animationAt, this.state.settings.reducedMotion) : null; }
   inspect(id: string, progress = 0, play = false) {
-    const fixture = galleryFixture(id);
+    const owner=id.replace(/^enemy:/,'').replace(/:basic$/,'').replace(/-(?:[1-4]|passive)$/,'');
+    const fixture = this.state.formationC2 && (R.CAT_BY_ID[owner] || R.ENEMY_BY_ID[owner]) ? pilotFixture(id) : galleryFixture(id);
     if (!this.galleryBattle) this.galleryReturn = { plan: this.plan, animationAt: this.animationAt, paused: this.paused };
     this.galleryId = id;
     this.galleryBattle = fixture.battle;
-    this.plan = progress < 0 ? null : fixture.plan;
-    this.animationAt = fixture.plan.duration * Math.max(0, Math.min(1, progress));
+    this.plan = progress < 0 ? null : prepareBattleSequence(this, fixture.plan);
+    this.animationAt = (this.plan?.duration ?? fixture.plan.duration) * Math.max(0, Math.min(1, progress));
     this.paused = !play;
     this.sceneStarted = true;
     this.notify(false);
@@ -312,7 +315,7 @@ export class DepthModel {
       && presentation.impact.actors.filter(target => target.side === 'enemy').every(target => target.hp <= 0);
     this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
     if (savingHeal) savingHeal.note = 'Clutch heal';
-    this.plan = paceActionA6(createCardActionPlan(events, identity), battle.initial);
+    this.plan = prepareBattleSequence(this, paceActionA6(createCardActionPlan(events, identity), battle.initial));
     if(this.a6Battle && this.plan.ultimate && actor.side==='party'){
       this.ultimateBannersAt=this.ultimateBannersAt.filter(at=>this.playbackAt-at<10000);
       if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+800/this.state.settings.speed;}

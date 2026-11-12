@@ -1,12 +1,10 @@
 # Session A handoff
-NOW: A1 committed/pushed 196dd82cd. A2 complete. Start A3 sequence engine/compositor/pilots.
-NEXT 1: A3 one postprocessing composer, SkillSequence extension, fixed-clock clips and 3 pilots.
-NEXT 2: A3 pilots/compositor, A4 all skills, A5 rigs, A6 integration.
-NEXT 3: Read INBOX and STOP-V3A after each card. Pilots auto-approved.
-LAST GOOD COMMIT: See latest V3A A1 commit on codex/v3-battle-2026-11-13.
-OPEN: No Spine runtime in browser. Designer only mochi/soot/clover. Fonts owned by B.
-PIDS: Vite node 38461 on 5990 (inherited from this task's previous run).
+NOW: A3 completed and auto-approved. A4 field VFX and 49 sequences implemented; browser review running.
+NEXT 1: Finish A4 lab, local checks/contact sheets, commit/push.
+NEXT 2: A5 shared cut-out template, pilots and all-unit QA; preserve Mochi/Soot/Clover art.
+NEXT 3: A6 available Session B sync, local full suite, audible demo, draft PR and reports.
+LAST GOOD COMMIT: A3 checkpoint (git log).
+OPEN: Session B currently B6. No Spine runtime. INBOX empty.
+PIDS: Vite node 38461 on 5990 inherited from this task. Browser scripts close their own processes.
 SOURCE: /Users/bao/.codex/attachments/a3bf736a-eb43-4258-b4d6-7061215edd13/Pasted text.txt
-
-DIAGNOSIS: New BodyFx disposal required updating the constructor-free lifecycle fixture. Phone portrait aspect enlarged units beyond capacity.
-FIX: Add the resource mock; letterbox a 16:9 field on phone. Keep body effects separate from legacy foot stamps.
+EVIDENCE: A3/browser-review.json; A3/recording-budget.json; A3/SELF-REVIEW.md.

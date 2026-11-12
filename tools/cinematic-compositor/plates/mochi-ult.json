@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "id": "mochi-ult",
+  "unit": "mochi",
+  "title": "Warm shelter",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frames": 68,
+  "signature": {
+    "element": {
+      "palette": [
+        "#ffe9a7",
+        "#e7ab52",
+        "#28243d"
+      ],
+      "grade": "lantern-gold"
+    },
+    "camera": "push_in",
+    "motif": "shield-dome",
+    "target": "all-allies",
+    "soundKit": "lantern-brass"
+  },
+  "layers": [
+    {
+      "type": "background",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "speed-lines",
+      "start": 0,
+      "end": 68,
+      "mode": "radial"
+    },
+    {
+      "type": "caster",
+      "start": 0,
+      "end": 58,
+      "source": "/units/mochi/runtime.webp"
+    },
+    {
+      "type": "painted-layer",
+      "start": 12,
+      "end": 68,
+      "source": "/assets/cardrpg-look/vfx-layered/mochi-4.webp",
+      "region": [
+        256,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "type": "motif",
+      "start": 8,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 48
+    },
+    {
+      "type": "impact-frame",
+      "start": 51,
+      "end": 52
+    },
+    {
+      "type": "flash",
+      "start": 64,
+      "end": 68
+    },
+    {
+      "type": "grade",
+      "start": 0,
+      "end": 68
+    }
+  ]
+}

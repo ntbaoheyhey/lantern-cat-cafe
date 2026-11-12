@@ -22,3 +22,10 @@
 - Baloo 2 5.3.0 OFL dependency temporarily supplies the same display token while B global typography is pending.
 - Manual ultimate queues wait for the actual actor turn. Default Auto preserves a seeded full battle byte-for-byte.
 - Phone uses a letterboxed 16:9 field to preserve formation; desktop remains primary. Auto-next moved into More, retaining the original behavior.
+
+### A3 implementation — 13 November 2026
+- Battle-only edits in `depth/model.ts` apply sequence timing after A6 pacing; this is presentation ownership, with no changes to rule values or action selection. B's non-battle screens remain untouched.
+- Compositor uses original Canvas2D motifs over a Three shader plus seeded three.quarks particles. Both libraries resolve through the same app module and quarks shader registration is explicit; Vite's optimizer otherwise loses the registration side effect.
+- Pre-rendered plates contain no downloaded reference art. Each pilot WebM is below 400 KB at 1280×720/30 fps; MP4 fallback and posters are generated from the same fixed frames.
+- A3 pilots: auto-approved after deterministic export, size checks, local timing/reduced-motion tests and browser inspection. Review media is copied to the Desktop folder; any later INBOX corrections still apply.
+- The file:// lab previews a short CC0 Kenney release sample extracted from B's existing pack. Its licence/source is documented beside the sample; B's audio engine remains untouched.

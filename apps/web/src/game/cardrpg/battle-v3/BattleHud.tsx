@@ -7,7 +7,7 @@ import {ELEMENT_COLORS} from '../stage/core';
 import BattleLogV3 from '../ui-v3/BattleLogV3';
 import BattleLeaveV3 from '../ui-v3/BattleLeaveV3';
 import {SoundControlA6} from '../ui-v3/SoundControlA6';
-import {battleControls,type CinematicMode} from './controls';
+import {battleControls,skipPlate,type CinematicMode} from './controls';
 import {STATUS_BODY,STATUS_COLOR,STATUS_PATH} from './status';
 import '@fontsource/baloo-2/800.css';
 import './battle.css';
@@ -34,6 +34,7 @@ export default function BattleHud({m}:{m:DepthModel}){
  const battle=m.visualBattle!,controls=battleControls(m),world=useRef(new Map<string,HTMLDivElement>()),total=useRef<HTMLOutputElement>(null);
  const [more,setMore]=useState(false),[help,setHelp]=useState(false),[log,setLog]=useState(false),[leaving,setLeaving]=useState(false);
  const menuButton=useRef<HTMLButtonElement>(null),helpButton=useRef<HTMLButtonElement>(null),dialog=useRef<HTMLDialogElement>(null),paused=useRef(false);
+ const skipButton=useRef<HTMLButtonElement>(null);
  const totalState=useRef<{plan:unknown;until:number;amount:number}>({plan:null,until:0,amount:0});
  useEffect(()=>{
   document.body.classList.add('battle-v3-active');
@@ -44,11 +45,13 @@ export default function BattleHud({m}:{m:DepthModel}){
     const node=world.current.get(anchor.id);if(!node)continue;node.hidden=!anchor.visible;
     node.style.left=`${canvas.left+anchor.labelX}px`;node.style.top=`${canvas.top+anchor.labelY}px`;
    }
+   document.body.classList.toggle('b3-cinema-occludes',!!scene?.cinema&&(scene.cinema.audit.plate||scene.cinema.audit.cutin));
+   if(skipButton.current)skipButton.current.hidden=!scene?.cinema?.audit.plate;
    const plan=m.plan,state=totalState.current,now=performance.now();
    if(plan?.ultimate&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
    if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}
    raf=requestAnimationFrame(paint);
-  };paint();return()=>{cancelAnimationFrame(raf);document.body.classList.remove('battle-v3-active');};
+  };paint();return()=>{cancelAnimationFrame(raf);document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
  },[m]);
  useEffect(()=>{if(help)dialog.current?.showModal();},[help]);
  const closeHelp=()=>{dialog.current?.close();setHelp(false);m.paused=paused.current;m.notify(false);helpButton.current?.focus();};
@@ -80,9 +83,10 @@ export default function BattleHud({m}:{m:DepthModel}){
    <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>{controls.auto=!controls.auto;m.notify(false);}}>AUTO {controls.auto?'ON':'OFF'}</button>
     <button aria-label="Skip to result" disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars to skip this battle'} onClick={()=>m.skip()}>SKIP ›</button></div>
   </footer>
+  <button ref={skipButton} hidden className="b3-skip-plate" onClick={()=>skipPlate(m)}>Skip cinematic ›</button>
   <output className="b3-total" ref={total} aria-label="Total ultimate damage" hidden><i>TOTAL</i><b>0</b></output>
   {more&&<div className="b3-menu">{m.a6Battle&&!m.replay&&<label className="b3-autonext"><input type="checkbox" aria-label="Auto-next" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false);}}/>Auto-next battle</label>}<label>Ultimate cinematics<select value={controls.cinematics} onChange={e=>{controls.cinematics=e.target.value as CinematicMode;m.notify(false);}}><option value="full">Full</option><option value="short">Short</option><option value="off">Off</option></select></label>
-   <SoundControlA6 m={m} battle/><button onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false);}}>Read battle log</button>
+   <label>Effects quality<select value={m.state.settings.quality} onChange={e=>{m.state.settings.quality=e.target.value as typeof m.state.settings.quality;m.notify(false);}}><option value="high">High</option><option value="low">Low</option></select></label><SoundControlA6 m={m} battle/><button onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false);}}>Read battle log</button>
    <button onClick={()=>{setMore(false);if(m.replay||m.galleryBattle){m.leave();return;}paused.current=m.paused;m.paused=true;m.notify(false);setLeaving(true);}}>Leave table</button></div>}
   {help&&<dialog ref={dialog} className="b3-help" aria-label="Battle guide" onCancel={e=>{e.preventDefault();closeHelp();}}><button autoFocus onClick={closeHelp}>Close guide</button><h2>Keep the café glowing</h2><p>Green bars are ally HP; red bars are enemy HP. Gold bars are rage. A gold portrait means its ultimate is ready.</p><p>Auto casts ultimates on legal turns. Turn Auto off and tap a glowing portrait to queue it. Status symbols show stacks; hover or focus for their effects.</p><p>Burn: fire. Bitter: green bubbles. Bleed: red drips. Daze: orbiting stars. Shield: a pale bubble. Arrows show other buffs and debuffs.</p></dialog>}
   {log&&<BattleLogV3 battle={battle} wasPaused={paused.current} onClose={()=>{setLog(false);m.paused=paused.current;m.notify(false);menuButton.current?.focus();}}/>}

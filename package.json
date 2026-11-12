@@ -16,7 +16,9 @@
     "art:turn3d": "node tools/art3d/build.mjs",
     "chain:local": "node tools/chain/local.mjs",
     "chain:test": "pnpm --filter @taskbar-hero/web exec playwright test --config playwright.chain.config.ts",
-    "demo:play": "node tools/demo-play.mjs"
+    "demo:play": "node tools/demo-play.mjs",
+    "cine:render": "node tools/cinematic-compositor/render.mjs",
+    "art:signatures": "node scripts/art/signature-check.mjs"
   },
   "devDependencies": {
     "pngjs": "7.0.0",

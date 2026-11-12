@@ -1,6 +1,6 @@
 export interface PaintKey { t:number; x:number; y:number; sx:number; sy:number; rotate:number; alpha:number }
 export interface PaintLayer { name:string; region:[number,number,number,number]; anchor:'caster'|'target'|'flight'; socket:'feet'|'vfxOrigin'|'mainHand'; blend:'normal'|'screen'|'add'; start:number; end:number; size:number; ease:'linear'|'out'|'inOut'; keys:PaintKey[]; flash?:boolean; flipbook?:{fps:number;regions:[number,number,number,number][]} }
-export interface PaintTimeline { version:1; id:string; name:string; owner:string; duration:number; impact:number; friendly:boolean; phases:{name:string;start:number;end:number}[]; layers:PaintLayer[] }
+export interface PaintTimeline { version:1; id:string; name:string; owner:string; duration:number; impact:number; friendly:boolean; phases:{name:string;start:number;end:number}[]; layers:PaintLayer[]; sequence?:import('../battle-v3/sequence').SkillSequence }
 
 const ease=(t:number,kind:PaintLayer['ease'])=>kind==='out'?1-(1-t)**3:kind==='inOut'?t*t*(3-2*t):t;
 /** Absolute sampling makes replay, speed changes, pausing and backwards scrubbing deterministic. */

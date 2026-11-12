@@ -381,3 +381,25 @@ Kept newest build: `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist-v2/e2e-5971
 Free before: 100 GiB. No eligible prunable worktrees.
 - Deleted /Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite: 36525180 bytes.
 Free after: 99.9 GiB.
+
+## Resumed A3 — 13 November 2026
+Before: 100 GiB available (df).
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite`: 6,701 bytes.
+- No listed worktrees were prunable; all retained.
+- Retained newest build folder: /Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist-v2/e2e-5971.
+- After: 99.46 GiB available; normal disk mode.
+
+## Resume cleanup
+
+{
+  "date": "2026-11-13 06:45:52",
+  "before_GiB": 99.11,
+  "after_GiB": 99.15,
+  "removed": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite",
+      "bytes": 38687846
+    }
+  ],
+  "worktrees": "No listed worktree is prunable; none removed."
+}

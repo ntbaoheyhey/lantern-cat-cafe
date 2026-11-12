@@ -40,3 +40,15 @@
  .battle-v3-active .uv-app .dp-battle>.dp-arena{top:calc(44px + (100% - 154px - 56.25vw)/2)!important;bottom:auto!important;height:56.25vw!important}
  .b3-world,.b3-world .b3-hp,.b3-world .b3-rage{width:42px}.b3-world-name{font-size:7px;line-height:8px}.b3-world .b3-hp{height:5px}.b3-statuses{gap:1px;margin-bottom:1px}.b3-statuses span{width:14px;height:14px}.b3-statuses svg{width:12px;height:12px}
 }
+/* Cinematics sit above the field and below the persistent portrait HUD. */
+.b3-cinema{position:absolute;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.b3-cinema [hidden]{display:none!important}
+.b3-cinema-dim,.b3-cinema-flash{position:absolute;inset:0;background:#090719}
+.b3-cinema-flash{background:white;z-index:4}
+.b3-plate{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#151125}
+.b3-cutin{position:absolute;left:-2%;top:18%;width:96%;height:52%;display:flex;align-items:center;gap:4%;padding:0 10%;box-sizing:border-box;background:repeating-linear-gradient(-12deg,transparent 0 15px,#ffffff18 16px 17px),linear-gradient(105deg,#151125 8%,var(--element),#151125 92%);border-block:3px solid #fff3be;clip-path:polygon(5% 0,100% 0,94% 100%,0 100%);box-shadow:0 0 70px var(--element)}
+.b3-cutin img{height:150%;max-width:44%;object-fit:contain;transform:rotate(-7deg);filter:drop-shadow(0 0 22px #ffedb9)}
+.b3-cutin strong{font-family:var(--font-display);font-size:clamp(28px,4.6vw,68px);line-height:1.05;color:#fff1c5;text-transform:uppercase;font-style:italic;max-width:55%;text-shadow:3px 4px #302137,-2px -2px #302137,0 0 20px #fff2;transform:rotate(-4deg)}
+.b3-skip-plate{position:fixed;right:24px;bottom:132px;z-index:95;border:1px solid #edc77f;background:#241d32e8;color:#fff0c2;padding:8px 18px;border-radius:8px;font-family:var(--font-display)}
+
+.b3-cinema-occludes .b3-world-layer{visibility:hidden}

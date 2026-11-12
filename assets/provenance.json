@@ -21,6 +21,25 @@
       "prompt": "Frame the existing painted cafe floor with original counter end, stacked cups and plant pot.",
       "date": "2026-11-13",
       "source": "assets/cardrpg-look/stage/painted-cafe-c11-v1.webp"
+    },
+    {
+      "asset": "apps/web/public/cinematics/*",
+      "tool": "tools/cinematic-compositor/compositor.ts + Playwright + ffmpeg VP9/H.264",
+      "prompt": "Original lantern shield dome, arcane meteors and garden petal storm. Composite only approved original cat and painted VFX art with authored geometric motifs, fixed 30 fps and seeded particles.",
+      "date": "2026-11-13",
+      "source": [
+        "apps/web/public/units/*/runtime.webp",
+        "assets/cardrpg-look/vfx-layered/*",
+        "tools/cinematic-compositor/plates/*"
+      ]
+    },
+    {
+      "asset": "docs/vfx-lab/audio/release.mp3",
+      "tool": "ffmpeg 9.0.2",
+      "prompt": "Extract one local CC0 release cue from Session B audio sprite for the static review lab.",
+      "date": "2026-11-13",
+      "source": "/Users/bao/taskbar-hero-chain/apps/web/public/audio/rpg.mp3",
+      "license": "CC0-1.0; Kenney RPG Audio"
     }
   ]
 }
