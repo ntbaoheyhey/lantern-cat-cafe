@@ -35,3 +35,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:kettle-knight:basic | 8 / 8 / 9 / 8 | Spacing-repaired kettle core stays complete; steam tail lands low and clears cleanly. | 120.10 |
 | enemy:kettle-knight | 8 / 8 / 9 / 8 | Cream-tipped flame fan is distinct from the kettle basic; target face and damage stay clear. | 120.00 |
 | enemy:binding-thread:basic | 8 / 8 / 9 / 8 | Compact rose bow arrives below the target face; the status cue and fade remain clear. | 120.00 |
+| enemy:binding-thread | 8 / 8 / 9 / 8 | Twin rose loops read distinctly from the basic bow and settle below the target face. | 120.00 |
