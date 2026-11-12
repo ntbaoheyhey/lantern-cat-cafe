@@ -29,3 +29,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:spool-ram:basic | 8 / 8 / 9 / 8 | Heavy spool rings land on both front allies with separated hit numbers. | 119.99 |
 | enemy:spool-ram | 8 / 8 / 9 / 8 | Broad ribbon shockwave is distinct from the basic rings and preserves front-slot faces. | 120.00 |
 | enemy:needle-moth:basic | 8 / 8 / 9 / 8 | Narrow sage needle remains visible at quarter scale and resolves at the damage event. | 119.91 |
+| enemy:needle-moth | 8 / 8 / 9 / 8 | Feather fan reads on both rear recipients; separate damage numbers remain visible. | 119.99 |
