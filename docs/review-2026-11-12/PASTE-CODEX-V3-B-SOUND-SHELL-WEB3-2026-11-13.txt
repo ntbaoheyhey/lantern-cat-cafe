@@ -1,6 +1,14 @@
 PASTE-CODEX-V3-B-SOUND-SHELL-WEB3-2026-11-13  (Session B of 2: audio, fonts, icons, web3 landing + home, tutorial, economy v3)
 =================================================================================================================
 
+
+USER DECISIONS (final, 13 Nov 2026; these override anything below)
+- Audio: FREE sources only (CC0/OFL/Pixabay/Kenney/Sonniss + the cat-speak synth). No ElevenLabs, no Suno, no paid tool. Ignore any "DUYET AUDIO TRA PHI" rule below.
+- Economy v3: implement the planner recommendations as written (Deed only gates withdrawing, Spool 25% withdraw fee, rarer gacha with pity, 4-week seasons, Bells-only randomness).
+- Pilot reviews are auto-approved by the user; never wait for a review.
+- CI: local runs only (GitHub Actions is blocked). Every gate means a local run.
+- Deploy is done by the user on 20 Nov from USER-DEPLOY-VI.md; keep that file accurate and step-by-step in Vietnamese.
+
 HOW TO USE THIS PROMPT
 - Paste this whole file into a NEW Codex session. If the session dies, is cut, or says "context too long", open a new session and paste THIS SAME FILE again. It resumes from disk. Never ask the user to "continue"; never wait for a reply.
 - You are Codex. Work alone. Do NOT start subagents, helper agents, or parallel `codex exec` (max 4 model-request threads on the account; session A uses one). Local scripts that make no model requests are fine.
@@ -123,7 +131,7 @@ B7 SYNC, POLISH, REPORT  (16 Nov 12:00 UTC, 18 Nov 12:00 UTC, freeze 19 Nov 12:0
 6. SELF-SCORE per card (1-10, honest; target >= 8): looks like a polished game (30%), clarity for a new player (20%), web3 visibility and correctness (20%), economy soundness backed by sim (15%), stability/tests (10%), disk/asset budget (5%).
 
 7. USER-ONLY ITEMS (NEEDS-USER.md; never wait on them)
-  - Approve paid audio tools by writing "DUYET AUDIO TRA PHI" in INBOX.md (ElevenLabs Starter ~US$5-6/month for voices/SFX; Suno Pro ~US$10/month for music), or keep free-only.
+  - (Decided 13 Nov: free audio only.)
   - Deploy to Vercel when quota allows; redeploy Supabase functions; top up the Fuji drip sponsor 0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000 with ~2.5 test AVAX; fix GitHub billing for CI (optional).
   - Decisions in the planner doc that the user may override (Deed free-to-play, Spool 25% fee, rarer gacha, 4-week seasons).
 

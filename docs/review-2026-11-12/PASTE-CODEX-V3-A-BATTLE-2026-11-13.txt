@@ -1,6 +1,14 @@
 PASTE-CODEX-V3-A-BATTLE-2026-11-13  (Session A of 2: battle look, skill cinematics, status FX, character animation)
 =====================================================================================================
 
+
+USER DECISIONS (final, 13 Nov 2026; these override anything below)
+- Audio: FREE sources only (CC0/OFL/Pixabay/Kenney/Sonniss + the cat-speak synth). No paid tools.
+- Spine: the user has NO Spine licence. Do not ship the Spine runtime. Use the fallback cut-out runtime (apps/web/src/game/rig/*) for EVERY unit with the same rig contract. If the designer hands over Spine JSON from their own editor, convert it with an importer script into the cut-out runtime format; never bundle spine-threejs in the demo path.
+- Designer animates only 3 cats by hand: mochi, soot, clover. Every other unit (including marigold) uses the shared template rig.
+- Pilot reviews are AUTO-APPROVED by the user. Do not wait at A3 or A5: run your own self-score and gates, record "auto-approved" in DECISIONS.md, copy the clips to /Users/bao/Desktop/TaskbarHero-REVIEW/, and continue immediately. Still apply any notes the user writes in INBOX.md later.
+- CI: local runs only (GitHub Actions is blocked). Every gate means a local run.
+
 HOW TO USE THIS PROMPT
 - Paste this whole file into a NEW Codex session. If the session dies, is cut, or says "context too long", open a new session and paste THIS SAME FILE again. It resumes from disk. Never ask the user to "continue"; never wait for a reply.
 - You are Codex. Work alone. Do NOT start subagents, helper agents, or parallel `codex exec` (the account allows max 4 model-request threads; the other session uses one). Local scripts and tools that make no model requests are fine.
@@ -108,7 +116,7 @@ A4 ALL ULTIMATES + ACTIVES + BASICS  (days 3-5)
   - Gates: G1 signature-check passes for all. G2 a contact sheet of all ultimates (one frame per beat) in reports/v3-battle/A4/ shows no two look alike. G3 total cinematics folder <= 12 MB. G4 tests pass.
 
 A5 CHARACTER ANIMATION: SHARED RIG TEMPLATE FOR NON-DESIGNER UNITS  (days 4-6)
-  - Designer animates 4 cats by hand (mochi, soot, clover + one more the user names in INBOX; default marigold). Codex makes every other unit move well using ONE shared template.
+  - Designer animates 3 cats by hand (mochi, soot, clover only; decided 13 Nov). Codex makes every other unit move well using ONE shared template.
   - Template contract (art/rig-templates/cat.template.json): bones root -> hip -> torso -> neck -> head -> (ear_l, ear_r, eye/mouth slots); torso -> shoulder_l/r -> arm_upper -> arm_lower -> hand -> weapon; hip -> leg_l, leg_r; hip -> tail_1 -> tail_2 -> tail_3. Parts (fixed names): head, ear_l, ear_r, hair_tuft, brow_l, brow_r, eye_l, eye_r, eye_l_closed, eye_r_closed, mouth_neutral, mouth_open, mouth_shout, torso, cloth, arm_upper_l, arm_lower_l, hand_l, arm_upper_r, arm_lower_r, hand_r, leg_l, leg_r, tail_1, tail_2, tail_3, weapon, accessory_1. Enemies: 3 templates (biped, floating/insect, blob/heavy).
   - Process per unit (each step has a gate):
     1) Master: 3/4 view, rig-ready stance (arms slightly away from body, tail visible, mouth closed), same core size rule, from the unit's existing approved concept (/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/concepts/<id>.png when present). Redraw with Codex image generation from YOUR OWN concept art only; 2600 px canvas.
@@ -131,9 +139,7 @@ A6 INTEGRATION, SYNC WITH SESSION B, DEMO CAPTURE  (sync points 16 Nov 12:00 UTC
   Visual impact vs the measured reference (30%), readability (20%), distinctness between skills (20%), performance (10%), stability/tests (10%), disk/asset budget (10%).
 
 7. USER-ONLY ITEMS (write in NEEDS-USER.md, never wait on them)
-  - Confirm Spine Editor licence (Essential or Professional) for runtime use, or accept the fallback cut-out runtime.
-  - Review pilots (A3, A5) via INBOX.md.
-  - Name the 4th designer cat (default marigold).
+  - (Decided 13 Nov: no Spine licence -> cut-out runtime; pilots auto-approved; designer does 3 cats only.)
   - Merge/deploy decisions.
 
 END OF PROMPT. Start with section 0, then section 1.
