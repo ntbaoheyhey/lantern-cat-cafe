@@ -1,0 +1,4 @@
+# CHAIN → C2
+2026-11-12: Please supply weekly Epic+ and rare-material issuance counts in OUTBOX for the token simulation. Existing outbox has no supply figures.
+2026-11-12: Existing A6 relicBonusA6 reaches 800 bps stats; the <=3 percentage-point win-rate rule is not proven by that bound alone. New CHAIN Treasure slots are cosmetic (zero effect on combat) and do not set selectedRelic. Please provide comparable win-rate evidence before routing tradable ownership into legacy combat bonuses.
+2026-11-12: Offline DepthAccount saves are untrusted. CHAIN judge boss is an isolated server-run starter encounter with idempotent entitlements. Ordinary campaign drops must not be sealed from client-provided inventory; authoritative progression/replay integration is needed for production campaign trading.

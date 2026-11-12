@@ -35,7 +35,8 @@ export async function loadModules() {
     const auth = await loader.ssrLoadModule('/packages/auth/src/index.ts');
     const drip = await loader.ssrLoadModule('/supabase/functions/_shared/guest-drip.ts');
     const relic = await loader.ssrLoadModule('/supabase/functions/_shared/relic.ts');
-    return {...db,...auth,...drip,...relic,close:()=>loader.close()};
+    const judge = await loader.ssrLoadModule('/supabase/functions/_shared/chain-judge.ts');
+    return {...db,...auth,...drip,...relic,...judge,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
 export async function startLocal({web = true} = {}) {
@@ -85,6 +86,7 @@ export async function startLocal({web = true} = {}) {
       result:(wallet,hash,success)=>one('select public.chain_drip_result($1,$2,$3) r',[wallet,hash,success]),
     };
     const drip=modules.createDrip({key:viem.toHex(sponsor.getHdKey().privateKey),rpcUrl:localRpc,store});
+    const judge=modules.createJudge({signer:voucherSigner,nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),store:{reserve:(player,wallet,ip,boss)=>one('select public.chain_judge_reserve($1,$2,$3,$4) r',[player,wallet,ip,boss])}});
     const authStore={
       createNonce:nonce=>db.query('select public.create_siwe_nonce($1)',[nonce]),
       consumeNonce:nonce=>one('select public.consume_siwe_nonce($1) r',[nonce]),
@@ -110,6 +112,7 @@ export async function startLocal({web = true} = {}) {
           const token=(incoming.headers.authorization||'').replace(/^Bearer\s+/i,'');
           const session=await modules.verifySessionToken(token,{jwtSecret});
           if(name==='guest-drip')result=await drip(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret));
+          else if(name==='chain-judge')result=await judge(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret),input.action);
           else {outgoing.writeHead(404).end();return;}
         }
         outgoing.setHeader('content-type','application/json');outgoing.end(stringify(result));
