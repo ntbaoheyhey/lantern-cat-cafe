@@ -36,8 +36,11 @@ it('fails closed on unavailable/corrupt storage without replacing a key', () => 
   expect(() => guestAccount()).toThrow('recovery'); expect(localStorage.getItem(GUEST_KEY)).toBe('broken');
 });
 it('defaults every chain feature off and enables the demo build', () => {
-  expect(Object.values(chainFlags({}))).toEqual([false, false, false, false]);
-  expect(Object.values(chainFlags({ VITE_CHAIN_DEMO: '1' }))).toEqual([true, true, true, true]);
+  expect(Object.values(chainFlags({}))).toEqual([false, false, false, false, false, false, false, false]);
+  expect(Object.values(chainFlags({ VITE_CHAIN_DEMO: '1' }))).toEqual([true, true, true, true, false, false, false, false]);
+  expect(chainFlags({VITE_CHAIN_CAMPAIGN:'1'}).campaign).toBe(true);
+  expect(chainFlags({VITE_CHAIN_CAMPAIGN_REWARDS:'1'}).campaignRewards).toBe(true);
+  expect(chainFlags({ VITE_YARN_COSMETICS:'1' }).yarnCosmetics).toBe(true);
 });
 it('does not create a replacement transaction signer after browser storage is cleared', () => {
   expect(() => guestClient('http://127.0.0.1:5981')).toThrow('recovery');

@@ -1,0 +1,23 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Stale calibration inputs; rerun the study
++ actual - expected
+
++ '3f65519766ee3a566cb3620d6a19dd6117cf9c39da7cd3d2448f6db8d5c3af83'
+- '3f0b9f3108e5dc41ab1b9989ae5fb798a80c90219aadb6104dd0399bdf80076b'
+
+    at file:///Users/bao/taskbar-hero-chain/tools/chain/calibration-study.mjs:26:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '3f65519766ee3a566cb3620d6a19dd6117cf9c39da7cd3d2448f6db8d5c3af83',
+  expected: '3f0b9f3108e5dc41ab1b9989ae5fb798a80c90219aadb6104dd0399bdf80076b',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

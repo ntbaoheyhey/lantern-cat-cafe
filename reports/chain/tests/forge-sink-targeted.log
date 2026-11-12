@@ -1,0 +1,32 @@
+Compiling 66 files with Solc 0.8.24
+Solc 0.8.24 finished in 975.12ms
+Compiler run successful!
+
+Ran 9 tests for test/RelicForge.t.sol:RelicForgeTest
+[PASS] testFuzz_catalogAndFiniteThreeDesigns(uint256,uint8) (runs: 256, μ: 597032, ~: 597177)
+[PASS] test_atomicCustodyAndActualBurn() (gas: 760770)
+[PASS] test_constructorAndDesignGuards() (gas: 6904)
+[PASS] test_failedPaymentRollsBackBothItems() (gas: 656596)
+[PASS] test_missingApprovalOrOwnershipNeverCharges() (gas: 795876)
+[PASS] test_noWithdrawalOrApprovalRoute() (gas: 663123)
+[PASS] test_rejectsNonEpicAndUnknownInputs() (gas: 612706)
+[PASS] test_sameIdConsumesExactlyTwo() (gas: 668136)
+[PASS] test_unpromptedTransfersAndFakeHooksRejected() (gas: 544487)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 46.43ms (70.34ms CPU time)
+
+Ran 1 test for test/RelicForge.t.sol:ForgeInvariantTest
+[PASS] invariant_itemsAndTokensConserveWithoutExit() (runs: 256, calls: 128000, reverts: 0)
+
+╭--------------+------------------------+-------+---------+----------╮
+| Contract     | Selector               | Calls | Reverts | Discards |
++====================================================================+
+| ForgeHandler | craft                  | 42694 | 0       | 0        |
+|--------------+------------------------+-------+---------+----------|
+| ForgeHandler | onERC1155BatchReceived | 42767 | 0       | 0        |
+|--------------+------------------------+-------+---------+----------|
+| ForgeHandler | onERC1155Received      | 42539 | 0       | 0        |
+╰--------------+------------------------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 22.63s (22.61s CPU time)
+
+Ran 2 test suites in 22.64s (22.67s CPU time): 10 tests passed, 0 failed, 0 skipped (10 total tests)

@@ -2,7 +2,13 @@ No files changed, compilation skipped
 
 Ran 1 test for test/DeployChainV2.t.sol:DeployChainV2Test
 [PASS] test_scriptKeepsExistingNFTAndConfiguresNewContracts() (gas: 16063329)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 15.38ms (7.65ms CPU time)
+Logs:
+  YarnToken 0x255140a39F635d22113200019852C1430c8Ae9A6
+  RelicMarketV2 0xb948b10769C1584eadfb2aF7CBb8F71809349C26
+  SeasonRewards 0xeEeC3Ee4c40b5eb9cD265f1b1EEF490ba9526521
+  Epoch 1799625600
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 15.31ms (7.65ms CPU time)
 
 Ran 7 tests for test/VoucherReplay.t.sol:VoucherReplayTest
 [PASS] test_expiredVoucherReverts() (gas: 55915)
@@ -12,7 +18,11 @@ Ran 7 tests for test/VoucherReplay.t.sol:VoucherReplayTest
 [PASS] test_playerASentByPlayerBReverts() (gas: 55271)
 [PASS] test_sameNonceWithAnotherSignedRelicIdReverts() (gas: 207391)
 [PASS] test_validVoucherMintsOnce() (gas: 169188)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 18.13ms (6.52ms CPU time)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 14.21ms (10.56ms CPU time)
+
+Ran 1 test for test/Deploy.t.sol:DeployTest
+[PASS] test_deployScript_wiresContractsAndWritesAddresses() (gas: 11216982)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 20.19ms (12.50ms CPU time)
 
 Ran 19 tests for test/RelicEdges.t.sol:RelicEdgesTest
 [PASS] test_approvedOperatorCannotPushRelicIntoMarket() (gas: 302759)
@@ -34,14 +44,10 @@ Ran 19 tests for test/RelicEdges.t.sol:RelicEdgesTest
 [PASS] test_supportsErc1155Interface() (gas: 19004)
 [PASS] test_voucherExpiredLongAgoReverts() (gas: 73516)
 [PASS] test_wrongPriceKeepsListingAndEscrow() (gas: 660023)
-Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 23.22ms (11.97ms CPU time)
-
-Ran 1 test for test/Deploy.t.sol:DeployTest
-[PASS] test_deployScript_wiresContractsAndWritesAddresses() (gas: 11216982)
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 24.51ms (16.81ms CPU time)
+Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 27.65ms (16.28ms CPU time)
 
 Ran 26 tests for test/RelicNFT.t.sol:RelicNFTTest
-[PASS] testFuzz_nonSignerVoucherNeverMints(uint256,address,uint256,uint8,uint256,uint256) (runs: 256, μ: 75962, ~: 75708)
+[PASS] testFuzz_nonSignerVoucherNeverMints(uint256,address,uint256,uint8,uint256,uint256) (runs: 256, μ: 76015, ~: 75744)
 [PASS] test_cancelUsedNonceReverts() (gas: 263477)
 [PASS] test_cannotSetZeroSigner() (gas: 35185)
 [PASS] test_compactSignatureRejected() (gas: 55309)
@@ -67,26 +73,48 @@ Ran 26 tests for test/RelicNFT.t.sol:RelicNFTTest
 [PASS] test_validVoucherMints() (gas: 205265)
 [PASS] test_voucherForXSentByYReverts() (gas: 51536)
 [PASS] test_wrongSignerReverts() (gas: 64746)
-Suite result: ok. 26 passed; 0 failed; 0 skipped; finished in 84.29ms (72.99ms CPU time)
+Suite result: ok. 26 passed; 0 failed; 0 skipped; finished in 186.44ms (180.04ms CPU time)
 
 Ran 13 tests for test/ChainV2.t.sol:ChainV2Test
-[PASS] testFuzz_claimCap(uint128) (runs: 256, μ: 212098, ~: 212522)
-[PASS] testFuzz_feeMathAndNoFloor(uint256,uint16) (runs: 256, μ: 16491, ~: 15874)
+[PASS] testFuzz_claimCap(uint128) (runs: 256, μ: 210618, ~: 212510)
+[PASS] testFuzz_feeMathAndNoFloor(uint256,uint16) (runs: 256, μ: 16622, ~: 15874)
 [PASS] test_anyPriceFreeGiftCooldownAndPagination() (gas: 1434718)
 [PASS] test_claimBadSignaturesRecipientExpirySeasonAndRotation() (gas: 649927)
 [PASS] test_claimCapReplayAndMondayReset() (gas: 530154)
 [PASS] test_claimSeasonTransitionAndDomain() (gas: 436110)
 [PASS] test_genesisBurnAndSeal() (gas: 276298)
 [PASS] test_invalidInputsAndEscrowProtection() (gas: 11649)
-[PASS] test_nativePullRejectingRecipientAndNoYarnBurn() (gas: 967116)
+[PASS] test_nativePullRejectingRecipientAndNoYarnBurn() (gas: 967128)
 [PASS] test_permitReplayAndDomain() (gas: 191782)
 [PASS] test_receiverCannotReenterBuy() (gas: 1208007)
 [PASS] test_rewardConfigurationAndPoolFailureAreAtomic() (gas: 13039)
 [PASS] test_yarnFeeWithdrawalAndConservation() (gas: 964743)
-Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 118.75ms (108.85ms CPU time)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 349.79ms (338.12ms CPU time)
+
+Ran 9 tests for test/RelicForge.t.sol:RelicForgeTest
+[PASS] testFuzz_catalogAndFiniteThreeDesigns(uint256,uint8) (runs: 256, μ: 597068, ~: 597512)
+[PASS] test_atomicCustodyAndActualBurn() (gas: 760770)
+[PASS] test_constructorAndDesignGuards() (gas: 6904)
+[PASS] test_failedPaymentRollsBackBothItems() (gas: 656596)
+[PASS] test_missingApprovalOrOwnershipNeverCharges() (gas: 795876)
+[PASS] test_noWithdrawalOrApprovalRoute() (gas: 663123)
+[PASS] test_rejectsNonEpicAndUnknownInputs() (gas: 612706)
+[PASS] test_sameIdConsumesExactlyTwo() (gas: 668136)
+[PASS] test_unpromptedTransfersAndFakeHooksRejected() (gas: 544487)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 603.35ms (594.30ms CPU time)
+
+Ran 7 tests for test/SeasonPolicy.t.sol:SeasonPolicyTest
+[PASS] testFuzz_lowDemandBudgetIsEnforcedForAnySignedAmount(uint96,uint96) (runs: 256, μ: 599884, ~: 647720)
+[PASS] test_burnHistoryIncludesSealBurnFromAndDirectBurnButNotTransfers() (gas: 526077)
+[PASS] test_closedSeasonAccountingExcludesLateBurnAndIncludesTesterEmission() (gas: 1062124)
+[PASS] test_healthyBoundaryDoesNotReduceAndEmptySeasonsDoNotIncreaseBudget() (gas: 1209571)
+[PASS] test_insufficientPoolRollsBackTesterAndRoutineAccounting() (gas: 445020)
+[PASS] test_testerAndRoutineHaveSeparateSignaturesLifetimeAndWeeklyLimits() (gas: 727349)
+[PASS] test_zeroDemandStopsRoutineRewardsAutomaticallyButNotNewTesterGrant() (gas: 933880)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 909.89ms (935.44ms CPU time)
 
 Ran 27 tests for test/RelicMarket.t.sol:RelicMarketTest
-[PASS] testFuzz_priceExactPaymentOnly(uint256,uint8) (runs: 256, μ: 792936, ~: 754238)
+[PASS] testFuzz_priceExactPaymentOnly(uint256,uint8) (runs: 256, μ: 802466, ~: 754298)
 [PASS] test_buyAlreadyBoughtReverts() (gas: 605240)
 [PASS] test_buyCancelledReverts() (gas: 589678)
 [PASS] test_buyNonexistentListingReverts() (gas: 53257)
@@ -106,45 +134,35 @@ Ran 27 tests for test/RelicMarket.t.sol:RelicMarketTest
 [PASS] test_listZeroAmountReverts() (gas: 261508)
 [PASS] test_listZeroPriceReverts() (gas: 261492)
 [PASS] test_listingIdsIncrement() (gas: 1214647)
-[PASS] test_maliciousBuyerReentryIsBlocked() (gas: 1911816)
-[PASS] test_maliciousSellerBubblingReentryRevertsWholeBuy() (gas: 2092082)
-[PASS] test_maliciousSellerReentryIsBlocked() (gas: 2080670)
+[PASS] test_maliciousBuyerReentryIsBlocked() (gas: 1911828)
+[PASS] test_maliciousSellerBubblingReentryRevertsWholeBuy() (gas: 2092070)
+[PASS] test_maliciousSellerReentryIsBlocked() (gas: 2080658)
 [PASS] test_marketRejectsPlainAvax() (gas: 38177)
 [PASS] test_onlySellerCanCancel() (gas: 548738)
 [PASS] test_sellerThatRejectsAvaxCannotBeBought() (gas: 1503494)
 [PASS] test_transferFromOtherErc1155Reverts() (gas: 224848)
-Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 264.91ms (263.18ms CPU time)
-
-Ran 7 tests for test/SeasonPolicy.t.sol:SeasonPolicyTest
-[PASS] testFuzz_lowDemandBudgetIsEnforcedForAnySignedAmount(uint96,uint96) (runs: 256, μ: 604923, ~: 647720)
-[PASS] test_burnHistoryIncludesSealBurnFromAndDirectBurnButNotTransfers() (gas: 526077)
-[PASS] test_closedSeasonAccountingExcludesLateBurnAndIncludesTesterEmission() (gas: 1062124)
-[PASS] test_healthyBoundaryDoesNotReduceAndEmptySeasonsDoNotIncreaseBudget() (gas: 1209571)
-[PASS] test_insufficientPoolRollsBackTesterAndRoutineAccounting() (gas: 445020)
-[PASS] test_testerAndRoutineHaveSeparateSignaturesLifetimeAndWeeklyLimits() (gas: 727349)
-[PASS] test_zeroDemandStopsRoutineRewardsAutomaticallyButNotNewTesterGrant() (gas: 933880)
-Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 783.84ms (785.79ms CPU time)
-
-Ran 10 tests for test/RelicMarketFuzz.t.sol:RelicMarketFuzzTest
-[PASS] testFuzz_cancelledAndNonexistentListingsKeepBuyerFunds(uint256,uint256,uint256) (runs: 256, μ: 1527747, ~: 1550181)
-[PASS] testFuzz_cancelledNonceCannotMint(uint256,uint256) (runs: 256, μ: 128860, ~: 128606)
-[PASS] testFuzz_expiredVoucherDoesNotConsumeNonce(uint256,uint256) (runs: 256, μ: 75895, ~: 76383)
-[PASS] testFuzz_nonReceiverBuyerRollsBack(uint256) (runs: 256, μ: 633061, ~: 632554)
-[PASS] testFuzz_rejectedSellerPaymentRollsBackAndCanRetry(uint256,uint256) (runs: 256, μ: 2285838, ~: 2292459)
-[PASS] testFuzz_replayedVoucherCannotMintAgain(uint256,uint256) (runs: 256, μ: 208492, ~: 208215)
-[PASS] testFuzz_revokedApprovalAndEmptySellerBalanceCannotInvalidateEscrow(uint256,uint256) (runs: 256, μ: 1627490, ~: 1633880)
-[PASS] testFuzz_voucherValidAtExpiryButNotOneSecondLater(uint256,uint256) (runs: 256, μ: 214429, ~: 214147)
-[PASS] testFuzz_wrongPaymentsRollbackThenExactPaymentSettlesOnce(uint256,uint256,uint256) (runs: 256, μ: 2328514, ~: 2352853)
-[PASS] test_exactPaymentAtUint256Max() (gas: 592063)
-Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 796.88ms (3.32s CPU time)
+Suite result: ok. 27 passed; 0 failed; 0 skipped; finished in 927.75ms (1.01s CPU time)
 
 Ran 5 tests for test/Fuzz.t.sol:RelicFuzzTest
-[PASS] testFuzz_eachVoucherFieldIsSigned(address,uint256,uint8,uint256,uint256,uint8) (runs: 256, μ: 80212, ~: 80064)
-[PASS] testFuzz_listBuyCancel(uint256,uint8,uint256,uint256,bool) (runs: 256, μ: 1191610, ~: 1209827)
-[PASS] testFuzz_voucherValidation(address,uint256,uint8,uint256,uint256) (runs: 256, μ: 166974, ~: 210454)
-[PASS] testFuzz_wrongPlayerAndSigner(address,uint256,uint8,uint256,uint256,uint256) (runs: 256, μ: 273130, ~: 275854)
-[PASS] testFuzz_zeroListingInputs(uint256,uint256) (runs: 256, μ: 79274, ~: 79235)
-Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 803.86ms (1.04s CPU time)
+[PASS] testFuzz_eachVoucherFieldIsSigned(address,uint256,uint8,uint256,uint256,uint8) (runs: 256, μ: 80193, ~: 79927)
+[PASS] testFuzz_listBuyCancel(uint256,uint8,uint256,uint256,bool) (runs: 256, μ: 1186700, ~: 1207911)
+[PASS] testFuzz_voucherValidation(address,uint256,uint8,uint256,uint256) (runs: 256, μ: 165113, ~: 219384)
+[PASS] testFuzz_wrongPlayerAndSigner(address,uint256,uint8,uint256,uint256,uint256) (runs: 256, μ: 272740, ~: 275541)
+[PASS] testFuzz_zeroListingInputs(uint256,uint256) (runs: 256, μ: 79304, ~: 79295)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 2.35s (2.97s CPU time)
+
+Ran 10 tests for test/RelicMarketFuzz.t.sol:RelicMarketFuzzTest
+[PASS] testFuzz_cancelledAndNonexistentListingsKeepBuyerFunds(uint256,uint256,uint256) (runs: 256, μ: 1522943, ~: 1550145)
+[PASS] testFuzz_cancelledNonceCannotMint(uint256,uint256) (runs: 256, μ: 128786, ~: 128570)
+[PASS] testFuzz_expiredVoucherDoesNotConsumeNonce(uint256,uint256) (runs: 256, μ: 75967, ~: 76395)
+[PASS] testFuzz_nonReceiverBuyerRollsBack(uint256) (runs: 256, μ: 633015, ~: 632542)
+[PASS] testFuzz_rejectedSellerPaymentRollsBackAndCanRetry(uint256,uint256) (runs: 256, μ: 2278939, ~: 2292405)
+[PASS] testFuzz_replayedVoucherCannotMintAgain(uint256,uint256) (runs: 256, μ: 208420, ~: 208143)
+[PASS] testFuzz_revokedApprovalAndEmptySellerBalanceCannotInvalidateEscrow(uint256,uint256) (runs: 256, μ: 1620829, ~: 1633826)
+[PASS] testFuzz_voucherValidAtExpiryButNotOneSecondLater(uint256,uint256) (runs: 256, μ: 214371, ~: 214081)
+[PASS] testFuzz_wrongPaymentsRollbackThenExactPaymentSettlesOnce(uint256,uint256,uint256) (runs: 256, μ: 2323619, ~: 2348629)
+[PASS] test_exactPaymentAtUint256Max() (gas: 592063)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 2.40s (7.66s CPU time)
 
 Ran 1 test for test/Invariants.t.sol:RelicInvariantsTest
 [PASS]
@@ -157,22 +175,22 @@ RelicInvariantsTest invariants:
 ╭-----------------------+---------------------------+-------+---------+----------╮
 | Contract              | Selector                  | Calls | Reverts | Discards |
 +================================================================================+
-| RelicInvariantHandler | buy                       | 224   | 0       | 0        |
+| RelicInvariantHandler | buy                       | 212   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
-| RelicInvariantHandler | cancel                    | 199   | 0       | 0        |
+| RelicInvariantHandler | cancel                    | 229   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
-| RelicInvariantHandler | cancelNonce               | 236   | 0       | 0        |
+| RelicInvariantHandler | cancelNonce               | 233   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
-| RelicInvariantHandler | list                      | 241   | 0       | 0        |
+| RelicInvariantHandler | list                      | 236   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
-| RelicInvariantHandler | mint                      | 209   | 0       | 0        |
+| RelicInvariantHandler | mint                      | 224   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
-| RelicInvariantHandler | mintSameOrDifferentRarity | 213   | 0       | 0        |
+| RelicInvariantHandler | mintSameOrDifferentRarity | 188   | 0       | 0        |
 |-----------------------+---------------------------+-------+---------+----------|
 | RelicInvariantHandler | replay                    | 214   | 0       | 0        |
 ╰-----------------------+---------------------------+-------+---------+----------╯
 
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.50s (2.48s CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 8.74s (8.72s CPU time)
 
 Ran 1 test for test/ChainV2.t.sol:ChainV2Invariant
 [PASS]
@@ -187,13 +205,24 @@ ChainV2Invariant invariants:
 ╭----------------+----------+-------+---------+----------╮
 | Contract       | Selector | Calls | Reverts | Discards |
 +========================================================+
-| ChainV2Handler | claim    | 1356  | 0       | 0        |
+| ChainV2Handler | claim    | 1348  | 0       | 0        |
 |----------------+----------+-------+---------+----------|
-| ChainV2Handler | seal     | 1357  | 0       | 0        |
+| ChainV2Handler | seal     | 1385  | 0       | 0        |
 |----------------+----------+-------+---------+----------|
-| ChainV2Handler | trade    | 1383  | 0       | 0        |
+| ChainV2Handler | trade    | 1363  | 0       | 0        |
 ╰----------------+----------+-------+---------+----------╯
 
-Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 5.13s (5.12s CPU time)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 15.29s (15.27s CPU time)
 
-Ran 12 test suites in 5.14s (10.57s CPU time): 118 tests passed, 0 failed, 0 skipped (118 total tests)
+Ran 1 test for test/RelicForge.t.sol:ForgeInvariantTest
+[PASS] invariant_itemsAndTokensConserveWithoutExit() (runs: 256, calls: 128000, reverts: 0)
+
+╭--------------+----------+--------+---------+----------╮
+| Contract     | Selector | Calls  | Reverts | Discards |
++=======================================================+
+| ForgeHandler | craft    | 128000 | 0       | 0        |
+╰--------------+----------+--------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 49.74s (49.72s CPU time)
+
+Ran 14 test suites in 49.75s (81.57s CPU time): 128 tests passed, 0 failed, 0 skipped (128 total tests)

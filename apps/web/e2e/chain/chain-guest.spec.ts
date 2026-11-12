@@ -6,6 +6,8 @@ import { relicMarketAbi, relicNftAbi, relicMarketV2Abi, yarnTokenAbi } from '../
 const route='/?demo=1&squad=1&cardrpg2=1&a6=1';
 const client=createPublicClient({chain:avalancheFuji,transport:http('http://127.0.0.1:5981')});
 const config=()=>JSON.parse(readFileSync('public/chain-local.json','utf8')) as {RelicNFT:Address;RelicMarket:Address;RelicMarketV2:Address;YarnToken:Address;treasury:Address};
+const threadFee=process.env.CHAIN_SEAL_PRICE_TRIAL==='1'?'1':'2';
+const afterSeal=process.env.CHAIN_SEAL_PRICE_TRIAL==='1'?'19':'18';
 const holding=(who:Address,id:bigint)=>client.readContract({address:config().RelicNFT,abi:relicNftAbi,functionName:'balanceOf',args:[who,id]});
 async function login(page:Page){
   await page.goto(route);
@@ -84,13 +86,29 @@ test('guest → drip → scripted boss → mint → list → second guest buy �
     await tab(room,'Judge');await room.getByRole('button',{name:'🧶 Claim',exact:true}).click();await receipt(room);
     await expect(room.getByTestId('yarn-balance')).toHaveText('🧶 20');
     const supplyBefore=await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'});
-    await tab(room,'Seal');await room.getByTestId('drop-star-thread').getByRole('button',{name:'✦ Seal to Fuji'}).click();
+    await tab(room,'Seal');
+    const drop=room.getByTestId('drop-star-thread');
+    await expect(drop.locator('output')).toHaveText(`🧶 ${threadFee}`);
+    // A changed API price must never become a burner-wallet debit.
+    await page.route('**/functions/v1/chain-items',async route=>{
+      if(route.request().postDataJSON()?.action!=='reserve')return route.continue();
+      const response=await route.fetch(),json=await response.json();
+      json.intent.cost='4000000000000000000';
+      await route.fulfill({response,json});
+    });
+    await drop.getByRole('button',{name:'✦ Seal to Fuji'}).click();
+    await expect(room.locator('p[role=status]')).toHaveText('Quote changed. Retry.');
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[seller.who]})).toBe(parseEther('20'));
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(supplyBefore);
+    await page.unroute('**/functions/v1/chain-items');
+    await expect(drop.locator('output')).toHaveText(`🧶 ${threadFee}`);
+    await drop.getByRole('button',{name:'↻ Recover'}).click();
     const sealMintHash=await receipt(room);expect(await holding(seller.who,10001n)).toBe(1n);
-    await expect(room.getByTestId('yarn-balance')).toHaveText('🧶 18');
-    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(supplyBefore-parseEther('2'));
+    await expect(room.getByTestId('yarn-balance')).toHaveText(`🧶 ${afterSeal}`);
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(supplyBefore-parseEther(threadFee));
     // Recovery uses the old nonce and never charges/mints twice.
     await room.getByRole('button',{name:'↻ Recover'}).click();await expect(room.locator('p[role=status]')).toHaveText('');
-    expect(await holding(seller.who,10001n)).toBe(1n);await expect(room.getByTestId('yarn-balance')).toHaveText('🧶 18');
+    expect(await holding(seller.who,10001n)).toBe(1n);await expect(room.getByTestId('yarn-balance')).toHaveText(`🧶 ${afterSeal}`);
     await tab(room,'Bag');await room.getByLabel('Market version').selectOption('v2');await room.getByLabel('Currency').selectOption('1');
     await room.getByTestId('holding-10001').getByRole('button',{name:'↑ List'}).click();
     const yarnPrice=parseEther('1.234567891234567891');await room.getByRole('textbox',{name:'Price in YARN'}).fill('1.234567891234567891');
@@ -112,12 +130,55 @@ test('guest → drip → scripted boss → mint → list → second guest buy �
     expect(await holding(buyer.who,10001n)).toBe(1n);expect(await holding(seller.who,10001n)).toBe(0n);
     expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[buyer.who]})).toBe(parseEther('20')-yarnPrice);
     expect(await client.readContract({address:config().RelicMarketV2,abi:relicMarketV2Abi,functionName:'proceeds',args:[config().treasury,1]})).toBe(fee-burn);
-    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(supplyBefore-parseEther('2')-burn);
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(supplyBefore-parseEther(threadFee)-burn);
     await tab(room,'Market');await room.getByRole('button',{name:'☐ Mine'}).click();
     await room.getByRole('button',{name:'Withdraw YARN'}).click();await receipt(room);
-    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[seller.who]})).toBe(parseEther('18')+yarnPrice-fee);
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[seller.who]})).toBe(parseEther(afterSeal)+yarnPrice-fee);
     await tab(buyer.room,'Bag');await expect(buyer.room.getByTestId('holding-10001')).toBeVisible();await artReady(buyer.room);
     await buyerPage.setViewportSize({width:390,height:844});await buyerPage.screenshot({path:'../../reports/chain/shots/H6-mobile.png'});
+    // Optional finite cosmetic: real burn, backend outage recovery, account ownership.
+    const styleBalance=await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[buyer.who]});
+    const styleSupply=await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'});
+    let failedFinalize=false,badQuote=true;
+    await buyerPage.route('**/functions/v1/chain-cosmetics',async route=>{
+      if(route.request().postDataJSON().action==='reserve'&&badQuote){
+        const response=await route.fetch(),body=await response.json();
+        await route.fulfill({response,json:{...body,order:{...body.order,cost:'4000000000000000001'}}});
+      }
+      else if(route.request().postDataJSON().action==='finalize'&&!failedFinalize){failedFinalize=true;await route.fulfill({status:503,json:{error:'unavailable'}});}
+      else await route.continue();
+    });
+    await tab(buyer.room,'Style');
+    await expect(buyer.room.getByRole('button',{name:'🔥 Burn 4'})).toBeEnabled();
+    await buyer.room.getByRole('button',{name:'Tide',exact:true}).click();
+    await expect(buyer.room.getByLabel('Tide preview')).toBeVisible();
+    // Preview does not spend tokens.
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[buyer.who]})).toBe(styleBalance);
+    // A backend quote cannot authorize a different amount than the displayed4.
+    await buyer.room.getByRole('button',{name:'🔥 Burn 4'}).click();
+    await expect(buyer.room.locator('p[role=status]')).toHaveText('Quote changed. Retry.');
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(styleSupply);
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[buyer.who]})).toBe(styleBalance);
+    badQuote=false;
+    await buyer.room.getByRole('button',{name:'🔥 Burn 4'}).click();
+    await expect(buyer.room.locator('p[role=status]')).toHaveText('Unavailable. Retry.');
+    await buyer.room.getByRole('button',{name:'Refresh chain'}).click();
+    await expect(buyer.room.getByRole('button',{name:'↻ Recover'})).toBeEnabled();
+    await buyer.room.getByRole('button',{name:'↻ Recover'}).click();
+    await expect(buyer.room.getByRole('button',{name:'✓ Equipped'})).toBeVisible();
+    await expect(buyer.room.getByRole('region',{name:'Fuji game'})).toHaveAttribute('data-style','tide');
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'balanceOf',args:[buyer.who]})).toBe(styleBalance-parseEther('4'));
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(styleSupply-parseEther('4'));
+    await artReady(buyer.room);await buyerPage.screenshot({path:'../../reports/chain/shots/H5-style-mobile.png'});
+    await buyerPage.reload();
+    await buyerPage.getByRole('button',{name:'◈ Market',exact:true}).click();
+    await tab(buyer.room,'Style');await buyer.room.getByRole('button',{name:'Tide',exact:true}).click();
+    await expect(buyer.room.getByRole('button',{name:'✓ Equipped'})).toBeVisible();
+    await buyer.room.getByRole('button',{name:'↩ Reset'}).click();
+    await expect(buyer.room.getByRole('button',{name:'◇ Equip'})).toBeVisible();
+    expect(await client.readContract({address:config().YarnToken,abi:yarnTokenAbi,functionName:'totalSupply'})).toBe(styleSupply-parseEther('4'));
+    await tab(room,'Style');await room.getByRole('button',{name:'Tide',exact:true}).click();
+    await expect(room.getByRole('button',{name:'🔥 Burn 4'})).toBeEnabled();
     test.info().annotations.push({type:'v2-transactions',description:JSON.stringify({sealMintHash,v2BuyHash,elapsedMs:Date.now()-began})});
     test.info().annotations.push({type:'transactions',description:JSON.stringify({mintHash,listHash,buyHash,cancelHash,elapsedMs:Date.now()-began})});
   }finally{await second.close();}

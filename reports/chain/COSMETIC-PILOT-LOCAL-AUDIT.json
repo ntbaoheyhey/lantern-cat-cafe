@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "mode": "read-only order/receipt cross-check",
+  "analysis": {
+    "version": 1,
+    "chainId": 43113,
+    "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "mode": "synthetic",
+    "provenance": "Disposable Anvil43113: decoded SealPaid logs, matching SQL orders and totalSupply; scripted subjects, not human evidence.",
+    "window": {
+      "start": 1794484339,
+      "end": 1794484340,
+      "asOf": 1794484340
+    },
+    "subjects": 2,
+    "wallets": 2,
+    "participants": 2,
+    "excludedSubjects": 0,
+    "multiWalletParticipants": 0,
+    "uniquePurchases": 3,
+    "inputPurchases": 3,
+    "purchaseAllEnrolled": {
+      "successes": 1,
+      "total": 2,
+      "estimate": 0.5,
+      "lower": 0.09453120573423074,
+      "upper": 0.9054687942657693
+    },
+    "purchaseWithin7Days": {
+      "successes": 0,
+      "total": 0,
+      "estimate": null,
+      "lower": null,
+      "upper": null
+    },
+    "censoredPurchase7Days": 2,
+    "purchaseAfterPreview": {
+      "successes": 1,
+      "total": 2,
+      "estimate": 0.5,
+      "lower": 0.09453120573423074,
+      "upper": 0.9054687942657693
+    },
+    "day7Return": {
+      "successes": 0,
+      "total": 0,
+      "estimate": null,
+      "lower": null,
+      "upper": null
+    },
+    "censoredDay7": 2,
+    "burnByReview": {
+      "participant": "12",
+      "operator": "0",
+      "automation": "0",
+      "suspected": "0",
+      "unreviewed": "0"
+    },
+    "measurement": "TEST FIXTURE — not player evidence",
+    "activation": false,
+    "budgetEligibleBurn": "0",
+    "limitations": [
+      "Canonical events, order/payment bindings and subject grouping are reviewed input assertions; this analyzer cannot attest their truth.",
+      "Wallets are not people. One reviewed subject may own multiple wallets; unidentified clusters invalidate independent-trial inference.",
+      "Wilson intervals are descriptive under independent comparable participants; no optional stopping, post-hoc exclusion or causal price claim.",
+      "All-enrolled purchase has unequal follow-up; use purchaseWithin7Days for the fixed horizon. Late entrants are censored regardless of an early purchase. Nonviewers remain in every eligible denominator.",
+      "Operators, scripts and suspected identities are reported separately; review criteria must be fixed before inspecting purchase outcomes.",
+      "Free20-YARN grants and permanent three-item content do not establish recurring demand. Synthetic/control purchases never fund routine rewards.",
+      "This feature-only sample is not a complete token ledger, item-supply study, closed13-week economy review or approval to activate rewards."
+    ]
+  },
+  "snapshot": {
+    "block": 29,
+    "hash": "0xa6aafd848b8d1b783509fb274bb8d41b4a9f0ae99efa5a45a44a1aef9983134d",
+    "timestamp": 1794484340
+  },
+  "ranges": [
+    {
+      "from": 24,
+      "to": 29,
+      "events": 3
+    }
+  ],
+  "orders": 3,
+  "unmatchedCohortPayments": 0,
+  "recoveredPendingOrders": 0,
+  "evidenceHash": "a4d342af72578804407db3fd2bb6f0066527d5c64a8ba94c81614f29df82da78",
+  "input": {
+    "version": 1,
+    "chainId": 43113,
+    "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "mode": "synthetic",
+    "start": 1794484339,
+    "end": 1794484340,
+    "asOf": 1794484340,
+    "provenance": "Disposable Anvil43113: decoded SealPaid logs, matching SQL orders and totalSupply; scripted subjects, not human evidence.",
+    "snapshot": {
+      "block": 29,
+      "hash": "0xa6aafd848b8d1b783509fb274bb8d41b4a9f0ae99efa5a45a44a1aef9983134d"
+    },
+    "subjects": [
+      {
+        "id": "scripted-buyer",
+        "wallets": [
+          "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
+        ],
+        "review": "participant",
+        "joinedAt": 1794484339,
+        "exposedAt": 1794484339,
+        "visits": [
+          1794484339
+        ]
+      },
+      {
+        "id": "scripted-nonbuyer",
+        "wallets": [
+          "0x976EA74026E726554dB657fA54763abd0C3a0aa9"
+        ],
+        "review": "participant",
+        "joinedAt": 1794484339,
+        "exposedAt": 1794484339,
+        "visits": [
+          1794484339
+        ]
+      }
+    ],
+    "purchases": [
+      {
+        "chainId": 43113,
+        "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+        "wallet": "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+        "txHash": "0x7c8f67a27c2edd01e00f028506343bd3d53e88d5623855aad5140ec9163d90bc",
+        "blockHash": "0x193023ca90db671fab3a89d7eb00c6bc24b1f7fa2ecce6a859f32b8b84710488",
+        "block": 26,
+        "logIndex": 1,
+        "receiptStatus": 1,
+        "canonical": true,
+        "timestamp": 1794484339,
+        "orderId": "a4863759-dc9a-4cc7-86a5-90108354963b",
+        "sku": "fern",
+        "amountWei": "4000000000000000000"
+      },
+      {
+        "chainId": 43113,
+        "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+        "wallet": "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+        "txHash": "0x545ade060a6ce1aabf7717379f49857a36e459d25e8d159bd2b022836f5b5443",
+        "blockHash": "0x137354d66bbcac1a78b17423b017fd30f1c9947cf7796109fb59f1c05e65e79d",
+        "block": 27,
+        "logIndex": 1,
+        "receiptStatus": 1,
+        "canonical": true,
+        "timestamp": 1794484339,
+        "orderId": "08cd9195-4a71-4471-b90a-55e2b471850a",
+        "sku": "tide",
+        "amountWei": "4000000000000000000"
+      },
+      {
+        "chainId": 43113,
+        "token": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+        "wallet": "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+        "txHash": "0x239e85c39fcc86efe72ae3249587cd9f59a6d0aabdee0b4570f8c85c7f5b0631",
+        "blockHash": "0x8e3967ed4023fb19b4110e97e482c02fb30351af5c6b1eb15136f0c5a35515a5",
+        "block": 28,
+        "logIndex": 1,
+        "receiptStatus": 1,
+        "canonical": true,
+        "timestamp": 1794484339,
+        "orderId": "39ffc988-bcec-4450-a458-f7cc1d1650b6",
+        "sku": "ember",
+        "amountWei": "4000000000000000000"
+      }
+    ]
+  },
+  "activation": false,
+  "budgetEligibleBurn": "0",
+  "limits": "Reviewed enrollment, visits, bot labels and complete order export are external assertions. Unmatched SealPaid may be item seals or omitted orders and need classification. One RPC is not independent attestation; testnet purchases are not real-money demand. No routine issuer is enabled."
+}

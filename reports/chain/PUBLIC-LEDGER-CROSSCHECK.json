@@ -1,0 +1,253 @@
+{
+  "observedAt": "2026-11-12T10:25:01.503Z",
+  "mode": "read-only public Fuji receipts",
+  "provider": "https://avalanche-fuji-c-chain-rpc.publicnode.com",
+  "snapshotBlock": 60940929,
+  "snapshotHash": "0xff0d1e5c7e1507d3de94e1152c21ea2c9903026673f9c240107ed78cc253d3a3",
+  "confirmationPolicy": "Snapshot12 blocks behind observed head; each receipt block checked against canonical block hash. Not a cross-provider attestation.",
+  "scope": "All token logs from verified deployment to pinned snapshot, plus18 smoke receipts. Current/open observation, not a complete closed season or a human-user count.",
+  "ranges": [
+    {
+      "from": 60931271,
+      "to": 60932270,
+      "logs": 2
+    },
+    {
+      "from": 60932271,
+      "to": 60933270,
+      "logs": 0
+    },
+    {
+      "from": 60933271,
+      "to": 60934270,
+      "logs": 0
+    },
+    {
+      "from": 60934271,
+      "to": 60935270,
+      "logs": 8
+    },
+    {
+      "from": 60935271,
+      "to": 60936270,
+      "logs": 0
+    },
+    {
+      "from": 60936271,
+      "to": 60937270,
+      "logs": 0
+    },
+    {
+      "from": 60937271,
+      "to": 60938270,
+      "logs": 0
+    },
+    {
+      "from": 60938271,
+      "to": 60939270,
+      "logs": 0
+    },
+    {
+      "from": 60939271,
+      "to": 60940270,
+      "logs": 0
+    },
+    {
+      "from": 60940271,
+      "to": 60940929,
+      "logs": 0
+    }
+  ],
+  "reconciliation": {
+    "transferCount": 8,
+    "inputCount": 8,
+    "minted": "1000000000",
+    "burned": "2.024691357824691357",
+    "supply": "999999997.975308642175308643",
+    "balances": {
+      "0x29d4f1b9d4577bf2ba5c6bdb849ca5fdc9bd6c11": "9960",
+      "0x39732360425f8f488048eeeb57ff046ce8ac794e": "18.765432108765432109",
+      "0x4628ea0f3f9f6b146fffa9aaa0f636b24dbd1134": "19.172839496672839497",
+      "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4": "0.037037036737037037",
+      "0x91d3fbe33d83bfc4104405ed0afc243a3ef7d203": "999990000"
+    },
+    "reconciled": true
+  },
+  "receipts": [
+    {
+      "hash": "0xed62b66c271a28dc68d1b4a4bab9a0294ed277e2a3fbbf30a553cdbf2f25c259",
+      "block": 60933819,
+      "status": 1
+    },
+    {
+      "hash": "0xb600401857f9a0981b73f31dc4bb80c6b6dc4fa79cb5a0e6c8271d70ecada5fb",
+      "block": 60933827,
+      "status": 1
+    },
+    {
+      "hash": "0xa23579b4b9f46e5153c6e05a6825044f3f6fef052be5eb88371d36e197087388",
+      "block": 60934441,
+      "status": 1
+    },
+    {
+      "hash": "0xf02a2b684eadf672a107e0815b9a82815d7b20ce57369161d058544a5138a7c9",
+      "block": 60934443,
+      "status": 1
+    },
+    {
+      "hash": "0x1cd4a1fb0fbe78a95893608b0435b9b720e9191c5287137f64696a519c9261b8",
+      "block": 60934447,
+      "status": 1
+    },
+    {
+      "hash": "0x3d47f25b488d2e631db86ad683bd530c6e4a1e4dd15a5d51ef4c257558d1e6d5",
+      "block": 60934452,
+      "status": 1
+    },
+    {
+      "hash": "0x899ed5c516b2909764f34143b6568711a8f94e61cccd1b6b551e0878e3b83636",
+      "block": 60934457,
+      "status": 1
+    },
+    {
+      "hash": "0x9662228f168bd5080907f49bd3a01d735f91b620d5468c7778a362b74ec7fddd",
+      "block": 60934461,
+      "status": 1
+    },
+    {
+      "hash": "0x08d34c5add3ff44397c5d3e6bed1022cfee0ab2a3154b08b085d4326c347e696",
+      "block": 60934466,
+      "status": 1
+    },
+    {
+      "hash": "0x6dc410b49c348952ed03296f562399a259efe5c0899f995b3b0993ea72fe2858",
+      "block": 60934470,
+      "status": 1
+    },
+    {
+      "hash": "0xf2bb4d6da152e2e2d721f6ef47bdee984965678fa4714f6d53685e96eebc43e3",
+      "block": 60934474,
+      "status": 1
+    },
+    {
+      "hash": "0x127897d763da206b8d9c85ac6be6a2cd81674c1540ff8061db05cc1072800386",
+      "block": 60934477,
+      "status": 1
+    },
+    {
+      "hash": "0xdcd5ced176a2e9fa7febf08046d9c6681fb99c9f38a5681a9e6113b04d80e53f",
+      "block": 60934486,
+      "status": 1
+    },
+    {
+      "hash": "0xbb309ebd920f028ece51afbae49df15050db7e27b21c840eddc48d475d12a766",
+      "block": 60934491,
+      "status": 1
+    },
+    {
+      "hash": "0xa190f008959f5d3a5ede8c197e10d616a7a85d631b6876fd92f132eb584e460f",
+      "block": 60934496,
+      "status": 1
+    },
+    {
+      "hash": "0x6a2c49a6a46d1aae0aefdea67be729a694887b7ab9cc59fd5973703961220f12",
+      "block": 60934500,
+      "status": 1
+    },
+    {
+      "hash": "0xb0240565a3912c17eefc441bb9787f633fa28105064618400fc71c800120b273",
+      "block": 60934503,
+      "status": 1
+    },
+    {
+      "hash": "0x8eb9bc7314e29847295d7f341f259375f454e93c96e4a8198337bb0c2750d51c",
+      "block": 60934505,
+      "status": 1
+    },
+    {
+      "hash": "0x42cdaae9a91984232225e6b9a57ce22447cae526703ad17eadc6e0ce8bc3a049",
+      "block": 60931271,
+      "status": 1
+    },
+    {
+      "hash": "0xa47048d43301503148e8b0babf1f5794692cd2d06d9487358d86c6e951642fae",
+      "block": 60931514,
+      "status": 1
+    }
+  ],
+  "claims": [
+    {
+      "transactionHash": "0xa23579b4b9f46e5153c6e05a6825044f3f6fef052be5eb88371d36e197087388",
+      "player": "0x4628EA0f3F9F6B146fFFA9AaA0f636B24DBD1134",
+      "amount": "20"
+    },
+    {
+      "transactionHash": "0xf02a2b684eadf672a107e0815b9a82815d7b20ce57369161d058544a5138a7c9",
+      "player": "0x39732360425f8f488048EEEB57fF046CE8AC794E",
+      "amount": "20"
+    }
+  ],
+  "nativeAvaxSink": "0.00002",
+  "yarnMarketFee": "0.061728394561728394",
+  "accounting": {
+    "chainId": 43113,
+    "token": "0x3ae1b898c1ded263b30d968d26fe65211f102d6b",
+    "fromBlock": 60931271,
+    "toBlock": 60940929,
+    "completeClosedPeriod": false,
+    "eventCount": 2,
+    "inputCount": 2,
+    "digest": "4d3827dc9ec53386f8461b74854e2e9c81ad8e8e9a1da382fd21313587ce966c",
+    "totals": {
+      "gross": "2.024691357824691357",
+      "organic": "0",
+      "demo": "2.024691357824691357",
+      "operator": "0",
+      "suspected": "0",
+      "unreviewed": "0"
+    },
+    "rows": [
+      {
+        "chainId": 43113,
+        "token": "0x3ae1b898c1ded263b30d968d26fe65211f102d6b",
+        "transactionHash": "0xdcd5ced176a2e9fa7febf08046d9c6681fb99c9f38a5681a9e6113b04d80e53f",
+        "blockHash": "0x68e601d97d8d807e85a78054ed396da8ac9924436285e3e1f9c689ba97b9f72b",
+        "logIndex": 2,
+        "blockNumber": 60934486,
+        "from": "0x4628ea0f3f9f6b146fffa9aaa0f636b24dbd1134",
+        "receiptStatus": 1,
+        "canonical": true,
+        "category": "seal",
+        "amount": "2",
+        "eventId": "0xdcd5ced176a2e9fa7febf08046d9c6681fb99c9f38a5681a9e6113b04d80e53f:2",
+        "verdict": "demo",
+        "evidence": [
+          "reports/chain/FUJI-SMOKE.md: user-executed scripted18-receipt integration test"
+        ]
+      },
+      {
+        "chainId": 43113,
+        "token": "0x3ae1b898c1ded263b30d968d26fe65211f102d6b",
+        "transactionHash": "0xb0240565a3912c17eefc441bb9787f633fa28105064618400fc71c800120b273",
+        "blockHash": "0x072e3beb5e8fb04a27a52c5514ea0d366bba6c0ea26bab4cca787363ff7366c5",
+        "logIndex": 1,
+        "blockNumber": 60934503,
+        "from": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+        "receiptStatus": 1,
+        "canonical": true,
+        "category": "market",
+        "amount": "0.024691357824691357",
+        "eventId": "0xb0240565a3912c17eefc441bb9787f633fa28105064618400fc71c800120b273:1",
+        "verdict": "demo",
+        "evidence": [
+          "reports/chain/FUJI-SMOKE.md: user-executed scripted18-receipt integration test"
+        ]
+      }
+    ],
+    "budgetEligibleBurn": "0",
+    "demandEvidence": "unmeasured",
+    "activation": false,
+    "note": "Reviews are caller assertions, not identity or authority proofs. Incomplete receipt samples never fund a period. No volume rewards, signer, or reservation is enabled."
+  },
+  "conclusion": "Recorded smoke burns are demo activity. Other burns stay unreviewed. No observed burn is certified voluntary repeat demand or eligible to fund a closed-period routine budget."
+}

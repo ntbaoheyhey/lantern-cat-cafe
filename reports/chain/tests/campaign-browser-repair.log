@@ -1,0 +1,41 @@
+[WebServer] (node:66165) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:66237) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint (19.9s)
+
+
+  1) e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 999999989969135802719135803n
+    Received: 999999989975308642175308643n
+
+      76 |   const beforeSale=await supply(),fee=price*500n/10000n;
+      77 |   await lot.getByRole('button',{name:'↓ Buy'}).click();await receipt(buyer.room);
+    > 78 |   expect(await holding(buyer.who)).toBe(1n);expect(await holding(seller.who)).toBe(0n);expect(await supply()).toBe(beforeSale-fee/2n);
+         |                                                                                                               ^
+      79 |   expect(await client.readContract({address:c.RelicMarketV2!,abi:relicMarketV2Abi,functionName:'proceeds',args:[seller.who,1]})).toBe(price-fee);
+      80 |  }finally{await other.close();}
+      81 | });
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/chain/campaign.spec.ts:78:111
+
+    Error Context: test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint 
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.chain.config.ts campaign.spec.ts

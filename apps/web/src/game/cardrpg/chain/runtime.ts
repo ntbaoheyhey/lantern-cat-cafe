@@ -5,7 +5,7 @@ import { requireFuji } from './guest';
 
 export interface ChainConfig {
   chainId: 43113; rpcUrl: string; RelicNFT: Address; RelicMarket: Address;
-  YarnToken?: Address; RelicMarketV2?: Address; SeasonRewards?: Address; startBlock?: string;
+  RelicForge?: Address; YarnToken?: Address; RelicMarketV2?: Address; SeasonRewards?: Address; startBlock?: string;
 }
 export async function loadChainConfig(): Promise<ChainConfig> {
   if (import.meta.env.VITE_CHAIN_MODE === 'local') {
@@ -25,6 +25,7 @@ export async function loadChainConfig(): Promise<ChainConfig> {
     RelicNFT: addresses.RelicNFT!, RelicMarket: addresses.RelicMarket!,
     YarnToken: optional(import.meta.env.VITE_YARN_ADDRESS), RelicMarketV2: optional(import.meta.env.VITE_MARKET_V2_ADDRESS),
     SeasonRewards: optional(import.meta.env.VITE_SEASON_REWARDS_ADDRESS),
+    RelicForge: optional(import.meta.env.VITE_RELIC_FORGE_ADDRESS),
   };
 }
 export function publicChain(config: ChainConfig) {

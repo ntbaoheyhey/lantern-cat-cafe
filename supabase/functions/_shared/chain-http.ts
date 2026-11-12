@@ -4,7 +4,14 @@ const statuses = {
   unauthenticated: 401, daily_limit: 429, ip_limit: 429,
   no_item: 404, no_intent: 404, bound_item: 409, level_or_inventory: 409,
   seal_unpaid: 409, no_judge_pass: 409, invalid_action: 400,
+  cosmetic_unpaid:409, cosmetic_locked:409,
   sponsor_low: 503, gas_unavailable: 503,
+  tester_budget_unavailable:503, tester_budget_exhausted:503, tester_pool_low:503,
+  campaign_disabled:503,campaign_rules_changed:409,campaign_stale:409,campaign_conflict:409,
+  campaign_daily_starts:429,campaign_choice:409,campaign_equipped:409,campaign_source:409,
+  campaign_level:409,campaign_in_run:409,
+  routine_disabled:503,routine_unearned:409,routine_zero_award:409,routine_unfinalized:409,
+  routine_period:409,routine_cap:409,routine_budget:503,routine_expired:409,routine_pool:503,
 } as const;
 export type ChainErrorCode = keyof typeof statuses;
 export class ChainRequestError extends Error {
@@ -13,6 +20,11 @@ export class ChainRequestError extends Error {
 const sqlCodes = new Set<string>([
   'unauthenticated', 'daily_limit', 'ip_limit', 'no_item', 'no_intent',
   'level_or_inventory', 'sponsor_low', 'gas_unavailable',
+  'cosmetic_locked', 'invalid_request',
+  'tester_budget_unavailable', 'tester_budget_exhausted', 'tester_pool_low',
+  'campaign_disabled','campaign_rules_changed','campaign_stale','campaign_conflict','campaign_source',
+  'routine_disabled','routine_unearned','routine_zero_award','routine_unfinalized','routine_period',
+  'routine_cap','routine_budget','routine_expired','routine_pool',
 ]);
 export function chainStoreError(error: unknown): Error {
   if (error instanceof ChainRequestError) return error;
@@ -24,6 +36,11 @@ export function chainStoreError(error: unknown): Error {
   }
   return new Error('chain_dependency_unavailable');
 }
+const routineCodes=new Set(['routine_disabled','routine_unearned','routine_zero_award','routine_unfinalized',
+  'routine_period','routine_cap','routine_budget','routine_expired','routine_pool']);
+export function routineError(error:unknown):unknown {
+  return error instanceof Error&&routineCodes.has(error.message)?new ChainRequestError(error.message as ChainErrorCode):error;
+}
 export function chainFailure(error: unknown, fallback: string) {
   return error instanceof ChainRequestError
     ? {status: statuses[error.code], body: {error: error.code}}
@@ -32,7 +49,7 @@ export function chainFailure(error: unknown, fallback: string) {
 
 export const CHAIN_BODY_BYTES = 1024;
 export const CHAIN_BODY_TIMEOUT_MS = 10_000;
-export type ChainEndpoint = 'guest-drip' | 'chain-judge' | 'chain-items';
+export type ChainEndpoint = 'guest-drip' | 'chain-judge' | 'chain-items' | 'chain-cosmetics' | 'chain-campaign' | 'chain-campaign-reward';
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /** Validate action/IDs before any RPC, inventory query or signature is created. */
@@ -41,8 +58,27 @@ function validateBody(endpoint: ChainEndpoint, body: unknown): Record<string, un
   const value = body as Record<string, unknown>;
   let fields: string[];
   if (endpoint === 'guest-drip') fields = [];
+  else if(endpoint==='chain-campaign-reward'&&(value.action==='quote'||value.action==='claim')){
+    if(!['weekly-boss','season-rank'].includes(String(value.kind)))throw new ChainRequestError('invalid_request');
+    fields=['action','kind'];
+  }
+  else if(endpoint==='chain-campaign'&&value.action==='state')fields=['action'];
+  else if(endpoint==='chain-campaign'&&value.action==='command'){
+    if(typeof value.id!=='string'||!uuid.test(value.id)||!Number.isSafeInteger(value.revision)||Number(value.revision)<0||!value.command||typeof value.command!=='object'||Array.isArray(value.command))throw new ChainRequestError('invalid_request');
+    fields=['action','id','revision','command'];
+  }
   else if (endpoint === 'chain-judge' && (value.action === 'pass' || value.action === 'boss')) fields = ['action'];
   else if (endpoint === 'chain-items' && (value.action === 'inventory' || value.action === 'reward')) fields = ['action'];
+  else if (endpoint === 'chain-cosmetics' && value.action === 'state') fields = ['action'];
+  else if (endpoint === 'chain-cosmetics' && (value.action === 'reserve' || value.action === 'equip')) {
+    if(typeof value.sku!=='string'||!['fern','tide','ember',...(value.action==='equip'?['none']:[])].includes(value.sku))
+      throw new ChainRequestError('invalid_request');
+    fields=['action','sku'];
+  }
+  else if(endpoint==='chain-cosmetics'&&value.action==='finalize') {
+    if(typeof value.intent!=='string'||!uuid.test(value.intent))throw new ChainRequestError('invalid_request');
+    fields=['action','intent'];
+  }
   else if (endpoint === 'chain-items' && (value.action === 'reserve' || value.action === 'finalize')) {
     const id = value.action === 'reserve' ? 'inventory' : 'intent';
     if (typeof value[id] !== 'string' || !uuid.test(value[id])) throw new ChainRequestError('invalid_request');

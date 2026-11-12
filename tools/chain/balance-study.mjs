@@ -8,9 +8,11 @@ import {loadSourceSupply} from './supply-snapshot.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 const supply=validateSupply(loadSourceSupply());
 const seeds=Array.from({length:20},(_,i)=>43113+i*7919);
-const modelHash=createHash('sha256').update(readFileSync(resolve(root,'tools/chain/token-sim.mjs'))).digest('hex');
+const hash=createHash('sha256');
+for(const file of ['token-sim.mjs','season-budget.mjs','grant-headroom.mjs','forge-preparation.mjs','allocation-envelope.mjs','feature-plan.mjs','supply-snapshot.mjs','../../packages/chain/src/cosmetics.ts','../../packages/chain/src/forge.ts','balance-study.mjs'])hash.update(readFileSync(resolve(root,'tools/chain',file)));
+const modelHash=hash.digest('hex');
 const cached=process.argv.includes('--render-only')?JSON.parse(readFileSync(resolve(root,'docs/chain/balance-study.json'),'utf8')):null;
-if(cached&&cached.modelVersion!==5)throw Error('Render-only requires model version5');
+if(cached&&cached.modelVersion!==6)throw Error('Render-only requires model version6');
 if(cached){
   assert.equal(cached.modelHash,modelHash,'Cached model changed; rerun without --render-only.');
   assert.deepEqual(cached.supply,supply,'Cached supply changed; rerun without --render-only.');
@@ -51,7 +53,7 @@ const stress=cached?.stress??[
   {name:'old-weekly-rank-stress',mix:mixes[2],options:{demand:.5,rewardSchedule:'legacy-weekly'}},
   {name:'repeated-opportunity-optimism',mix:mixes[2],options:{demand:.1,participation:'opportunities',sealStockTarget:1000}},
 ].map(({name,mix,options})=>({name,...summarize(simulate(mix,{supply,...options})),...options}));
-const data={modelVersion:5,modelHash,supply,seeds,runs:rows.length,source:supply.source,
+const data={modelVersion:6,modelHash,supply,seeds,runs:rows.length,source:supply.source,
   interpretation:'Conditional source and assumed behavior. A flow pass is not calibrated demand or production readiness.20 seeds describe Monte Carlo variation, not uncertainty in behavior. No reward or fee setting deployed.',
   assumptions:{cohort:1000,weeks:52,grant:20,weeklyBossMax:6,closedSeasonRankMax:6,seasonWeeks:13,rankTiers:'top1/10/25/50%=6/4/2/1, rest0',
     source:'per-type conditional source-study; no recurring rare material; funded invitation/craft sources excluded',

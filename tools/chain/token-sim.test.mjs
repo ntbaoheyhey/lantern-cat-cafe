@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {UNIT, nextMultiplier, routineBudget, simulate, summarize, mixes, validateSupply, rewardSensitivity,rankEntitlement} from './token-sim.mjs';
+import {loadSourceSupply} from './supply-snapshot.mjs';
 
 test('policy reproduces deployed Solidity fixtures including grant denominator and zero lock', () => {
   assert.equal(nextMultiplier(UNIT, 32n * UNIT, 16n * UNIT), 625n * UNIT / 1000n);
@@ -103,4 +104,16 @@ test('abundant drops cannot force endless seal burns after collection and seller
   const zero=simulate(mixes[2],{supply,sealStockTarget:0,collectionTarget:0});
   assert(zero.rows.every(r=>r.burn===0&&r.sealed===0));
   for(const sealStockTarget of [-1,.5,1001,NaN])assert.throws(()=>simulate(mixes[0],{sealStockTarget}));
+});
+
+test('five-year horizon preserves the first year and exposes quiet seasons without manufacturing a pass',()=>{
+  const options={supply:loadSourceSupply(),rewardPolicy:'closed-burn'};
+  const short=simulate(mixes[2],options),long=simulate(mixes[2],{...options,weeks:260});
+  assert.deepEqual(long.rows.slice(0,52),short.rows,'Changing horizon cannot change past outcomes');
+  assert.equal(long.seasons.length,20);
+  assert.equal(long.rows[53].currentDemand,1,'No accidental week54 shock from the old sentinel');
+  assert(long.seasons.slice(-4).every(s=>!s.healthTargetMet),'Zero/zero seasons are not healthy activity');
+  assert(long.rows.every(r=>r.totalSupply<=1e9&&r.reserved>=0));
+  assert.equal(short.affordability[0].features[10].reachByWeek[26],0);
+  assert.equal(short.affordability[0].features[10].reachByWeek[104],undefined,'No look-ahead reach estimate');
 });

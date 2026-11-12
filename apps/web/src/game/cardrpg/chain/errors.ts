@@ -18,5 +18,6 @@ export function friendlyError(error: unknown): string {
   if (text === 'Sign in again.') return text;
   if (text === 'Wallet changed. Sign in again.' || text === 'Guest key needs recovery.' || text === 'Allow browser storage.') return text;
   if (text === 'Invalid price.') return text;
+  if (text === 'Quote changed. Retry.' || text === 'Forge changed. Retry.' || text === 'Select two Epics.') return text;
   return 'Unavailable. Retry.';
 }

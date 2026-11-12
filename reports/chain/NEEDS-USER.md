@@ -16,6 +16,11 @@ User asked to defer these operations while independent engineering/research cont
 6. Trusted proxy/IP assurance remains an operational requirement from the original deployment guide; successful transactions alone do not establish that trust boundary.
 
 ## Engineering dependencies, no wallet action needed
-- C2 OUTBOX still has no reviewed weekly rare/Epic supply or authoritative ordinary campaign/weekly/rank earning ledger. CHAIN has independently measured4,000 conditional source cohorts and implemented source-freshness checks; this does not authenticate inventory or establish live demand. Details in REQUESTS-TO-C2.md. Never import offline saves as mint authority.
+- C2 B4b supply is received and integrated:600 simulated accounts ×30 days, all64 eligible Epic+ templates, profile hours and partial week5 reconciled. Ordinary campaign/weekly/rank earning authority is still absent; source adapters and atomic reservations are implemented locally and disabled. Neither the C2 simulation nor the earlier4,000 conditional source cohorts authenticate browser inventory or establish live demand. See REQUESTS-TO-C2.md.
 - Automatic season reduction is already deployed; routine issuance is not enabled. Model integrity passes, implemented-sink economic acceptance fails. Do not turn on routine rewards based on a roadmap-sink simulation.
 - H7 stays gated. No mainnet, public deployment or real-key broadcast was done by Codex.
+
+## Deferred optional features — no action requested now
+- Finite styles and three-design forge are implemented and locally tested. Optional migration/function/flag/vault instructions are appended to USER-DEPLOY-VI.md. No new public address or deployment is assumed.
+- No verified ordinary campaign authority or voluntary participant cohort exists. Source/routine adapter, race-proof reservations and read-only pilot evidence tooling are prepared; no browser save import, automatic reward issuer or invented organic data.
+- Grant-inclusive planner now refuses an incomplete cumulative claim ledger; it preserves unpaid promises and planned tester grants before proposing any new routine budget.

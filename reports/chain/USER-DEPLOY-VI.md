@@ -98,3 +98,26 @@ supabase functions deploy chain-items --project-ref qoalewtxflagoprrxrgh --no-ve
 ```
 
 `--no-verify-jwt` chỉ bỏ kiểm tra JWT của gateway; mỗi hàm vẫn bắt buộc xác minh phiên SIWE riêng như bản trước. Không gửi khóa lên chat.
+
+## Phần tùy chọn đã chuẩn bị sau đợt nghiên cứu — chưa cần bạn thao tác
+
+Các bước dưới không chặn nghiên cứu và kiểm thử local. Đừng chạy lại deploy YARN/Market/Rewards đã hoàn tất.
+
+**Style:** ba lựa chọn vĩnh viễn,4 YARN/mẫu, tổng tối đa12. Khi muốn thử công khai, áp dụng migration `20261112060000_chain_cosmetics.sql`, deploy function `chain-cosmetics`, đặt server `CHAIN_COSMETICS_ENABLED=1` và frontend `VITE_YARN_COSMETICS=1` cùng cờ YARN. Không cần hợp đồng mới. Migration040000/050000 chỉ chuẩn bị source/budget, mặc định tắt; không nhập save trình duyệt làm bằng chứng.
+
+**Forge:** ba ornament vĩnh viễn, mỗi mẫu3 YARN +2 Epic đã seal. Kho giữ vật phẩm không có đường rút; cần nguồn Epic hợp lệ trước khi cho người chơi dùng. Mô phỏng kiểm thử dùng fixture, không phải vật phẩm campaign đã xác thực. Người vận hành tự nạp `CHAIN_FORGE_DEPLOYER_PRIVATE_KEY` từ kho bí mật vào môi trường (không dán vào chat/Git); sau đó xem mô phỏng trước khi tự broadcast:
+
+```sh
+cd /Users/bao/taskbar-hero-chain/contracts
+set +x
+forge script script/DeployRelicForge.s.sol:DeployRelicForge --rpc-url "$FUJI_RPC_URL"
+forge script script/DeployRelicForge.s.sol:DeployRelicForge --rpc-url "$FUJI_RPC_URL" --broadcast
+```
+
+Script chốt Fuji43113 và hai địa chỉ NFT/YARN hiện hữu. Ghi địa chỉ công khai trả về vào INBOX, kiểm tra receipt/pins rồi mới đặt frontend `VITE_RELIC_FORGE_ADDRESS` và `VITE_RELIC_FORGE=1`. Cờ demo chung không tự bật Forge/Style. Nếu giao dịch đã gửi nhưng bị mất phản hồi, kiểm tra receipt trước khi chạy lại để tránh tạo hai kho. Không có thưởng YARN hay Power cho ornament; quyền ornament gắn với ví gốc, Style gắn với tài khoản gốc.
+
+Thưởng boss/rank định kỳ tiếp tục tắt. Bộ tính ngân sách mới đòi lịch sử phát/đốt đầy đủ tại cùng block với quỹ; dữ liệu thiếu hoặc chưa có authority thì ngân sách đề xuất bằng0. Chạy test hoặc có số dư quỹ không tự bật issuer.
+
+### Tùy chọn thử giá seal — chưa bật công khai
+
+Mã đã hỗ trợ CHAIN_SEAL_PRICE_TRIAL=1 cho giá seal5%; mặc định bỏ trống/0 vẫn10%. Không cần hợp đồng mới cho tùy chọn này. Giao dịch đã reserve giữ giá cũ, kể cả rollback. Chỉ dùng với cohort thử nghiệm được chốt riêng sau khi cập nhật chain-items/frontend; chưa tự bật, chưa phải mức cân bằng được xác nhận. Các bước deploy/ví của bạn vẫn được hoãn theo yêu cầu hiện tại. Bằng chứng local và giới hạn: docs/design/chain/SEAL-PRICE-TRIAL.md.

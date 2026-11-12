@@ -3,21 +3,21 @@
 > pnpm -r build
 
 Scope: 6 of 7 workspace projects
-packages/chain build$ tsc --noEmit
+packages/auth build$ tsc --noEmit
 packages/game-rules build$ tsc --noEmit
 supabase/tests build$ tsc --noEmit
-packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
 packages/chain build: Done
 packages/auth build: Done
-supabase/tests build: Done
 packages/game-rules build: Done
+supabase/tests build: Done
 packages/api-contract build$ tsc --noEmit
 packages/api-contract build: Done
 apps/web build$ tsc --noEmit && vite build
 apps/web build: vite v8.3.5 building client environment for production...
 apps/web build: transforming...
 apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-chain/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
-apps/web build: ✓ 2917 modules transformed.
+apps/web build: ✓ 2925 modules transformed.
 apps/web build: rendering chunks...
 apps/web build: computing gzip size...
 apps/web build: dist/index.html                                             1.98 kB │ gzip:   0.73 kB
@@ -413,10 +413,10 @@ apps/web build: dist/assets/SheetsV3-BIAPvCGg.css                           0.84
 apps/web build: dist/assets/RouteTonic-C5GLw35W.css                         1.75 kB │ gzip:   0.73 kB
 apps/web build: dist/assets/FeelLab-BRfFjXsP.css                            2.65 kB │ gzip:   0.93 kB
 apps/web build: dist/assets/FeatureSamples-BG4xVUCy.css                     2.75 kB │ gzip:   0.86 kB
-apps/web build: dist/assets/ChainRoot-CThU6ERG.css                          4.00 kB │ gzip:   1.31 kB
 apps/web build: dist/assets/SelectorV4-DD_Dvot-.css                         4.04 kB │ gzip:   1.03 kB
 apps/web build: dist/assets/RunMap-Q_HmGra8.css                             4.61 kB │ gzip:   1.17 kB
 apps/web build: dist/assets/OriginalCatalog-BqG91EfA.css                    5.04 kB │ gzip:   1.28 kB
+apps/web build: dist/assets/ChainRoot-_TVKMxNt.css                          5.40 kB │ gzip:   1.65 kB
 apps/web build: dist/assets/Utility-1R8r5Fwm.css                            5.78 kB │ gzip:   1.38 kB
 apps/web build: dist/assets/Invitations-CGE1bmM8.css                        8.01 kB │ gzip:   2.37 kB
 apps/web build: dist/assets/squad-BkwI8O9K.css                             12.79 kB │ gzip:   3.27 kB
@@ -430,95 +430,94 @@ apps/web build: dist/assets/battle-layout-DafSuDpI.css                     26.97
 apps/web build: dist/assets/entry-C3LVe-Jg.css                             54.41 kB │ gzip:  11.98 kB
 apps/web build: dist/assets/legacy-entry-DlaB5hnQ.css                     194.17 kB │ gzip:  32.81 kB
 apps/web build: dist/assets/ShellV3-BOBVj6fY.css                          268.70 kB │ gzip:  44.93 kB
-apps/web build: dist/assets/TeamCollection-D4LlWzWX.js                      0.05 kB │ gzip:   0.07 kB
-apps/web build: dist/assets/Pages-CvOXA5K8.js                               0.11 kB │ gzip:   0.11 kB
-apps/web build: dist/assets/entry-DHJoh_w5.js                               0.31 kB │ gzip:   0.24 kB
+apps/web build: dist/assets/TeamCollection-D4t1oepX.js                      0.05 kB │ gzip:   0.07 kB
+apps/web build: dist/assets/Pages-BHqdQGTK.js                               0.11 kB │ gzip:   0.11 kB
+apps/web build: dist/assets/entry-CEtwPuDQ.js                               0.31 kB │ gzip:   0.24 kB
+apps/web build: dist/assets/onboarding-BhP9xkZh.js                          0.53 kB │ gzip:   0.37 kB
 apps/web build: dist/assets/rng-Cfw1Pt4b.js                                 0.55 kB │ gzip:   0.33 kB
-apps/web build: dist/assets/onboarding-BEmJcZIw.js                          0.56 kB │ gzip:   0.39 kB
-apps/web build: dist/assets/ScoutingV4-Bs81dkzW.js                          0.64 kB │ gzip:   0.39 kB
+apps/web build: dist/assets/ScoutingV4-BxWUCBPr.js                          0.64 kB │ gzip:   0.39 kB
 apps/web build: dist/assets/GiftAmountsA6-Du209-Em.js                       0.66 kB │ gzip:   0.36 kB
 apps/web build: dist/assets/SoundControlA6-C_pmGYa-.js                      0.68 kB │ gzip:   0.45 kB
 apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js                    0.72 kB │ gzip:   0.42 kB
 apps/web build: dist/assets/managedGame-B-Ra4VQQ.js                         0.75 kB │ gzip:   0.40 kB
-apps/web build: dist/assets/badges-a6-CNRO6qFI.js                           0.97 kB │ gzip:   0.58 kB
-apps/web build: dist/assets/star-plans-v4-CfuY9nvl.js                       1.04 kB │ gzip:   0.58 kB
-apps/web build: dist/assets/Art2Preview-D0pwFw7M.js                         1.35 kB │ gzip:   0.62 kB
-apps/web build: dist/assets/RouteTonic-CD483SWh.js                          1.55 kB │ gzip:   0.79 kB
+apps/web build: dist/assets/badges-a6-DO4P-Edq.js                           1.01 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/star-plans-v4-QprbwWdw.js                       1.07 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/Art2Preview-B4uAlgdn.js                         1.35 kB │ gzip:   0.62 kB
+apps/web build: dist/assets/RouteTonic-DRLso4i7.js                          1.55 kB │ gzip:   0.79 kB
 apps/web build: dist/assets/FrameOverlay-DXqfrWqa.js                        1.65 kB │ gzip:   0.91 kB
-apps/web build: dist/assets/siwe-CYCx-2sN.js                                2.15 kB │ gzip:   1.17 kB
-apps/web build: dist/assets/CompanionCard-tFV2rs17.js                       2.18 kB │ gzip:   1.02 kB
-apps/web build: dist/assets/meta-presentation-B_otmY9Y.js                   2.19 kB │ gzip:   1.12 kB
-apps/web build: dist/assets/OpeningV4-BP-tH8zg.js                           2.56 kB │ gzip:   1.20 kB
-apps/web build: dist/assets/SkillsV5-sguTr35L.js                            3.23 kB │ gzip:   1.28 kB
-apps/web build: dist/assets/CompanionGrowthV4-BsuiB2XR.js                   3.26 kB │ gzip:   1.33 kB
-apps/web build: dist/assets/assets-W2QF5WVG.js                              3.36 kB │ gzip:   1.63 kB
-apps/web build: dist/assets/PowerA6-j49gKEfR.js                             3.75 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/CompanionCard-CYJfBcYc.js                       2.14 kB │ gzip:   1.01 kB
+apps/web build: dist/assets/siwe-Cm2MpWps.js                                2.15 kB │ gzip:   1.17 kB
+apps/web build: dist/assets/meta-presentation-Bh39KP57.js                   2.23 kB │ gzip:   1.13 kB
+apps/web build: dist/assets/OpeningV4-J4Ca9-Px.js                           2.60 kB │ gzip:   1.22 kB
+apps/web build: dist/assets/CompanionGrowthV4-D_nP-63N.js                   3.22 kB │ gzip:   1.33 kB
+apps/web build: dist/assets/SkillsV5-DQQGnsor.js                            3.26 kB │ gzip:   1.29 kB
+apps/web build: dist/assets/assets-BODNLuOx.js                              3.36 kB │ gzip:   1.63 kB
+apps/web build: dist/assets/PowerA6-BYhUtP0s.js                             3.75 kB │ gzip:   1.58 kB
 apps/web build: dist/assets/battle-presentation-IT6jFeDh.js                 3.76 kB │ gzip:   1.68 kB
-apps/web build: dist/assets/JourneyV4-CisxzUdM.js                           4.08 kB │ gzip:   1.71 kB
-apps/web build: dist/assets/guide-a6-kVLjN-Ay.js                            4.25 kB │ gzip:   1.89 kB
-apps/web build: dist/assets/runtime-BKHt6WQF.js                             4.70 kB │ gzip:   2.05 kB
-apps/web build: dist/assets/BondsA6-7nliaxhO.js                             5.55 kB │ gzip:   1.97 kB
-apps/web build: dist/assets/PreparationV4-BhQtZRtt.js                       6.11 kB │ gzip:   2.35 kB
-apps/web build: dist/assets/FeatureSamples-C5t4KHoN.js                      6.29 kB │ gzip:   2.10 kB
+apps/web build: dist/assets/JourneyV4-BmvXWjfo.js                           4.08 kB │ gzip:   1.71 kB
+apps/web build: dist/assets/guide-a6-EH0y9pHS.js                            4.28 kB │ gzip:   1.91 kB
+apps/web build: dist/assets/BondsA6-majahvli.js                             5.52 kB │ gzip:   1.96 kB
+apps/web build: dist/assets/PreparationV4-CkNEZyiV.js                       6.15 kB │ gzip:   2.36 kB
+apps/web build: dist/assets/FeatureSamples-UX8xjmj4.js                      6.29 kB │ gzip:   2.10 kB
 apps/web build: dist/assets/OriginalArt-CLk2B0-R.js                         6.67 kB │ gzip:   1.08 kB
-apps/web build: dist/assets/ChainRoot-Cy6YIy94.js                           6.84 kB │ gzip:   2.75 kB
-apps/web build: dist/assets/SelectorV4-Lf3wBkUX.js                          6.84 kB │ gzip:   2.48 kB
-apps/web build: dist/assets/CafeV4-DqPm9ffS.js                              6.94 kB │ gzip:   2.43 kB
-apps/web build: dist/assets/CollectibleDesigns-CAExQBKD.js                  7.09 kB │ gzip:   2.56 kB
-apps/web build: dist/assets/scene-actors-B8mbBeVc.js                        7.27 kB │ gzip:   3.43 kB
+apps/web build: dist/assets/runtime-CxmDNwKV.js                             6.76 kB │ gzip:   2.82 kB
+apps/web build: dist/assets/SelectorV4-CJ4we5Zj.js                          6.81 kB │ gzip:   2.47 kB
+apps/web build: dist/assets/CafeV4-lTe4HdPe.js                              6.90 kB │ gzip:   2.42 kB
+apps/web build: dist/assets/CollectibleDesigns-ONb9rqXH.js                  7.09 kB │ gzip:   2.56 kB
+apps/web build: dist/assets/scene-actors-CEoazvfr.js                        7.23 kB │ gzip:   3.41 kB
+apps/web build: dist/assets/ChainRoot-Bavk0dog.js                           7.54 kB │ gzip:   2.98 kB
 apps/web build: dist/assets/createGame-CYG5tCgZ.js                          8.45 kB │ gzip:   3.48 kB
-apps/web build: dist/assets/FeelLab-CyaXszGi.js                             8.79 kB │ gzip:   3.20 kB
-apps/web build: dist/assets/Encounter-DqaYQQ9c.js                           8.87 kB │ gzip:   3.15 kB
-apps/web build: dist/assets/OriginalCatalog-BphfZr7S.js                     8.93 kB │ gzip:   2.73 kB
+apps/web build: dist/assets/FeelLab-KGkvtFub.js                             8.79 kB │ gzip:   3.20 kB
+apps/web build: dist/assets/Encounter-pzgMFdhn.js                           8.87 kB │ gzip:   3.16 kB
+apps/web build: dist/assets/OriginalCatalog-CgpXthaa.js                     8.93 kB │ gzip:   2.73 kB
 apps/web build: dist/assets/KeepsakeArtA6-BGiAyFyd.js                       9.21 kB │ gzip:   2.84 kB
-apps/web build: dist/assets/EquipmentV4-DzLT_dYT.js                         9.29 kB │ gzip:   3.35 kB
-apps/web build: dist/assets/ArenaScene-BYMv-ZUw.js                          9.39 kB │ gzip:   3.45 kB
-apps/web build: dist/assets/CompanionPreview-BoMU-jp3.js                    9.48 kB │ gzip:   3.81 kB
-apps/web build: dist/assets/TowerA6-D_vjLCzz.js                             9.62 kB │ gzip:   3.74 kB
-apps/web build: dist/assets/JournalA6-B4PI_l8-.js                          10.36 kB │ gzip:   3.24 kB
-apps/web build: dist/assets/Invitations-ClUNZsu1.js                        13.50 kB │ gzip:   4.58 kB
-apps/web build: dist/assets/RecruitV3-X2LtNfGW.js                          14.61 kB │ gzip:   5.24 kB
-apps/web build: dist/assets/ChainRoom-iK--OruS.js                          14.66 kB │ gzip:   5.26 kB
-apps/web build: dist/assets/catalog-B3JXJ7Iq.js                            15.07 kB │ gzip:   5.69 kB
-apps/web build: dist/assets/RunMap-vqBrajlh.js                             16.22 kB │ gzip:   5.12 kB
-apps/web build: dist/assets/SquadScene-CwFoBJQ-.js                         16.87 kB │ gzip:   6.15 kB
-apps/web build: dist/assets/StageScene-DvI7rsA6.js                         17.25 kB │ gzip:   6.26 kB
-apps/web build: dist/assets/Equipment-VpQqiJHH.js                          18.12 kB │ gzip:   5.90 kB
-apps/web build: dist/assets/FormationA6-C-f2jt6G.js                        18.86 kB │ gzip:   6.55 kB
-apps/web build: dist/assets/catalog-CVmQnDVo.js                            21.61 kB │ gzip:   7.09 kB
-apps/web build: dist/assets/Utility-My_TFmeP.js                            22.61 kB │ gzip:   7.05 kB
-apps/web build: dist/assets/BattleHudV3-DBOFsg0j.js                        23.60 kB │ gzip:   8.09 kB
-apps/web build: dist/assets/CafeAdventure-0-lOi7sA.js                      27.80 kB │ gzip:   8.70 kB
-apps/web build: dist/assets/cardrpg-CYSQrDSv.js                            27.93 kB │ gzip:  10.32 kB
-apps/web build: dist/assets/index-B8D8nZpC.js                              28.80 kB │ gzip:  11.28 kB
-apps/web build: dist/assets/entry-CAfg_YZp.js                              32.83 kB │ gzip:  10.98 kB
-apps/web build: dist/assets/EncounterV3-vdPbdfIs.js                        33.60 kB │ gzip:  10.73 kB
-apps/web build: dist/assets/assets-DhROTPVc.js                             33.74 kB │ gzip:   4.19 kB
-apps/web build: dist/assets/ShellV3-BMhcTh5e.js                            35.56 kB │ gzip:  11.71 kB
-apps/web build: dist/assets/src-lHg0uWas.js                                36.70 kB │ gzip:   3.50 kB
-apps/web build: dist/assets/engine-COWuUFa7.js                             37.76 kB │ gzip:  13.39 kB
-apps/web build: dist/assets/SheetsV3-x1RZ7nZd.js                           43.44 kB │ gzip:  12.29 kB
-apps/web build: dist/assets/src-DizDewg-.js                                46.96 kB │ gzip:  15.66 kB
+apps/web build: dist/assets/EquipmentV4-DFWM5Re9.js                         9.25 kB │ gzip:   3.35 kB
+apps/web build: dist/assets/ArenaScene-BjcdwKch.js                          9.39 kB │ gzip:   3.45 kB
+apps/web build: dist/assets/CompanionPreview-Cu5LmchY.js                    9.46 kB │ gzip:   3.81 kB
+apps/web build: dist/assets/TowerA6-C2KmKA4K.js                             9.66 kB │ gzip:   3.75 kB
+apps/web build: dist/assets/JournalA6-BaRtIasx.js                          10.40 kB │ gzip:   3.25 kB
+apps/web build: dist/assets/Invitations-B9ua-ZjE.js                        13.46 kB │ gzip:   4.57 kB
+apps/web build: dist/assets/RecruitV3-BOQR2hYN.js                          14.58 kB │ gzip:   5.22 kB
+apps/web build: dist/assets/RunMap-B-jE8QsG.js                             16.21 kB │ gzip:   5.11 kB
+apps/web build: dist/assets/SquadScene-CzEwvWby.js                         16.87 kB │ gzip:   6.14 kB
+apps/web build: dist/assets/StageScene-DbfBrJlf.js                         17.25 kB │ gzip:   6.26 kB
+apps/web build: dist/assets/Equipment-BYC1L8R-.js                          18.07 kB │ gzip:   5.88 kB
+apps/web build: dist/assets/FormationA6-BJrdUIZK.js                        18.82 kB │ gzip:   6.54 kB
+apps/web build: dist/assets/Utility-DyFkBeoA.js                            22.59 kB │ gzip:   7.05 kB
+apps/web build: dist/assets/BattleHudV3-9z4Em-BC.js                        23.53 kB │ gzip:   8.07 kB
+apps/web build: dist/assets/ChainRoom-DclcQ9gy.js                          25.17 kB │ gzip:   8.65 kB
+apps/web build: dist/assets/CafeAdventure-1xSqGBq3.js                      27.80 kB │ gzip:   8.70 kB
+apps/web build: dist/assets/index-BYimesnW.js                              28.76 kB │ gzip:  11.27 kB
+apps/web build: dist/assets/entry-1fw4CGN6.js                              32.83 kB │ gzip:  10.98 kB
+apps/web build: dist/assets/EncounterV3-ckfv8sr-.js                        33.59 kB │ gzip:  10.72 kB
+apps/web build: dist/assets/assets-R4wZeC41.js                             33.74 kB │ gzip:   4.20 kB
+apps/web build: dist/assets/ShellV3-w3DHGF91.js                            35.47 kB │ gzip:  11.67 kB
+apps/web build: dist/assets/catalog-CC2bxZzL.js                            36.63 kB │ gzip:  12.35 kB
+apps/web build: dist/assets/engine-msbR_Msi.js                             37.76 kB │ gzip:  13.39 kB
+apps/web build: dist/assets/src-DLLsA2ml.js                                39.92 kB │ gzip:   3.73 kB
+apps/web build: dist/assets/SheetsV3-oaEViq8v.js                           43.36 kB │ gzip:  12.21 kB
+apps/web build: dist/assets/src-CA3C8HNo.js                                46.96 kB │ gzip:  15.66 kB
 apps/web build: dist/assets/card-effect-data-veOOXVXe.js                   50.40 kB │ gzip:  11.25 kB
-apps/web build: dist/assets/TurnApp-CerZQ7i6.js                            52.03 kB │ gzip:  16.48 kB
-apps/web build: dist/assets/entry-BCv4xaGf.js                              60.38 kB │ gzip:  13.30 kB
-apps/web build: dist/assets/entry-CjBEPIlQ.js                              60.38 kB │ gzip:  18.62 kB
-apps/web build: dist/assets/vfx-registry-f6Srr7t5.js                       65.93 kB │ gzip:  11.76 kB
-apps/web build: dist/assets/Battle-DB1IIVM9.js                             97.34 kB │ gzip:  32.53 kB
-apps/web build: dist/assets/ForecastV4-CR3V54R6.js                        115.56 kB │ gzip:  37.54 kB
-apps/web build: dist/assets/AdviceV4-BsptKgUG.js                          156.21 kB │ gzip:  50.94 kB
-apps/web build: dist/assets/depth-C2g_3JQn.js                             164.40 kB │ gzip:  55.20 kB
+apps/web build: dist/assets/TurnApp-dAPOXhx3.js                            52.03 kB │ gzip:  16.47 kB
+apps/web build: dist/assets/entry-CGYH0YQ_.js                              60.27 kB │ gzip:  18.57 kB
+apps/web build: dist/assets/entry-aB2XSJgW.js                              60.42 kB │ gzip:  13.29 kB
+apps/web build: dist/assets/vfx-registry-Bs7jcmLI.js                       65.93 kB │ gzip:  11.76 kB
+apps/web build: dist/assets/depth-DX1AIZnP.js                              81.34 kB │ gzip:  27.75 kB
+apps/web build: dist/assets/Battle-DWHdpB6t.js                             97.34 kB │ gzip:  32.54 kB
+apps/web build: dist/assets/cardrpg-DBJRig7U.js                           111.75 kB │ gzip:  38.25 kB
+apps/web build: dist/assets/ForecastV4-BV3KPmLA.js                        115.56 kB │ gzip:  37.54 kB
+apps/web build: dist/assets/AdviceV4-DyghdAve.js                          156.25 kB │ gzip:  50.95 kB
 apps/web build: dist/assets/dist-BD4wejWL.js                              172.84 kB │ gzip:  47.14 kB
 apps/web build: dist/assets/react-W5ZNnHZt.js                             218.75 kB │ gzip:  68.26 kB
-apps/web build: dist/assets/art-a6-BT0VIM_n.js                            223.84 kB │ gzip:  84.22 kB
+apps/web build: dist/assets/art-a6-Bt15ggnA.js                            223.84 kB │ gzip:  84.22 kB
 apps/web build: dist/assets/velvet-1x-C2n3_9B9.js                         256.54 kB │ gzip:  68.94 kB
 apps/web build: dist/assets/three.core-BOeYmdNw.js                        260.58 kB │ gzip:  72.30 kB
-apps/web build: dist/assets/EffectEvidence-Cb2usPqz.js                    294.37 kB │ gzip:  65.91 kB
-apps/web build: dist/assets/web3-BT6TzKGs.js                              387.10 kB │ gzip: 115.33 kB
-apps/web build: dist/assets/audio-DZ8iGhLB.js                           1,008.48 kB │ gzip: 386.20 kB
+apps/web build: dist/assets/EffectEvidence-CmsPqSj8.js                    294.37 kB │ gzip:  65.91 kB
+apps/web build: dist/assets/web3-D2dK3MsK.js                              387.12 kB │ gzip: 115.34 kB
+apps/web build: dist/assets/audio-lDTQ6tDN.js                           1,008.46 kB │ gzip: 386.18 kB
 apps/web build: dist/assets/phaser-CS_hOpYn.js                          1,194.43 kB │ gzip: 318.49 kB
-apps/web build: dist/assets/legacy-entry-Chsaiv5v.js                    1,240.37 kB │ gzip: 174.94 kB
+apps/web build: dist/assets/legacy-entry-thRGx-Gy.js                    1,240.37 kB │ gzip: 174.95 kB
+apps/web build: ✓ built in 1.50s
 apps/web build: [33m[INEFFECTIVE_DYNAMIC_IMPORT] [0msrc/game/cardrpg/depth/TeamCollection.tsx is dynamically imported by src/game/cardrpg/depth/App.tsx, src/game/cardrpg/ui-v3/SheetsV3.tsx but also statically imported by src/game/cardrpg/depth/Pages.tsx, dynamic import will not move module into another chunk.
 apps/web build: [33m[INEFFECTIVE_DYNAMIC_IMPORT] [0msrc/game/cardrpg/depth/Pages.tsx is dynamically imported by src/game/cardrpg/depth/App.tsx, src/game/cardrpg/ui-v3/BattleHudV3.tsx but also statically imported by src/game/cardrpg/depth/App.tsx, dynamic import will not move module into another chunk.
-apps/web build: ✓ built in 1.97s
 apps/web build: Done

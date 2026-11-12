@@ -3,8 +3,10 @@ import anvil from '../deployments/31337.json';
 
 import { ANVIL_CHAIN_ID, FUJI_CHAIN_ID } from './constants';
 
-export { relicMarketAbi, relicNftAbi, yarnTokenAbi, relicMarketV2Abi, seasonRewardsAbi } from './abi';
+export { relicForgeAbi, relicMarketAbi, relicNftAbi, yarnTokenAbi, relicMarketV2Abi, seasonRewardsAbi } from './abi';
 export * from './constants';
+export * from './cosmetics';
+export * from './forge';
 
 export type Address = `0x${string}`;
 
@@ -30,3 +32,7 @@ export function getAddresses(chainId: number): Addresses {
     RelicMarket: d ? asAddress(d.RelicMarket) : undefined,
   };
 }
+export {readSealPolicy,sealPrice,type SealPricePolicy} from './seal';
+export type {CampaignCommand,CampaignRequest,CampaignView,CampaignResponse} from './campaign';
+
+export type {CampaignRewardKind,CampaignRewardQuote} from './rewards';
