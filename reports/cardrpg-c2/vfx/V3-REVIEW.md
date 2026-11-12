@@ -82,3 +82,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | cinnamon-passive | 8 / 8 / 9 / 8 | Terracotta spice seed and cream swirl stay below the rear caster face; the brief pulse clears cleanly. | 60.00 |
 | brioche-passive | 8 / 8 / 9 / 8 | Golden bell silhouette is distinct from the other protective motifs; the front recipient face remains visible throughout the pulse. | 60.00 |
 | velvet-passive | 8 / 8 / 9 / 8 | Rose ribbon flame stays compact around the rear caster torso; its warm core and fading ribbon remain readable. | 60.00 |
+| marigold-passive | 8 / 8 / 9 / 8 | Sage leaf cup pulses below the rear caster face and clears before the next action; leaf silhouette remains readable at quarter scale. | 60.00 |

@@ -85,7 +85,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | cinnamon-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/cinnamon-passive-after.mp4 |
 | brioche-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/brioche-passive-after.mp4 |
 | velvet-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/velvet-passive-after.mp4 |
-| marigold-passive | animated | pending | pending |
+| marigold-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/marigold-passive-after.mp4 |
 | enemy:pollen-scout:basic | animated | pending | pending |
 | enemy:crumb-sentinel:basic | pending | pending | pending |
 | enemy:pollen-scout | pending | pending | pending |
