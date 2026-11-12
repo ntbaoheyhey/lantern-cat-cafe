@@ -48,3 +48,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | mallow-3 | 8 / 8 / 9 / 8 | Compact caramel vortex has a strong opaque center and a sharper crest than the twin-lobe skill; the impact number and boss face remain clear through the short fading curl. | 60.00 |
 | mallow-4 | 8 / 8 / 9 / 8 | The oven arch and tall terracotta flame distinguish the ultimate from the compact skills; the existing portrait cut-in is readable and all enemy damage numbers remain separated. | 60.00 |
 | sorrel-1 | 8 / 8 / 9 / 8 | Teal spoon crescent is recognizable against the rose boss at quarter scale; its opaque cream edge leads the strike and the small residue leaves the damage number unobstructed. | 60.00 |
+| sorrel-2 | 8 / 8 / 9 / 8 | The teal teapot and long cream pour read distinctly from the spoon strike; the water ribbon stays below the boss face and clears around the damage number. | 60.00 |
