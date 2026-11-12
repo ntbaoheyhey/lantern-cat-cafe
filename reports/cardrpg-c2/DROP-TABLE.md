@@ -1,6 +1,6 @@
 # B4b — drop and recruit audit
 
-Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. Full monthly supply is published only after all 600 accounts finish.
+Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. The completed 600-account monthly projection and exact READY supply are now published in ECONOMY.md and OUTBOX.md; historical measurements below remain labeled.
 
 | Source | Item / rarity | Rate or amount before tuning | Pity / cap | Duplicates / overflow |
 |---|---|---|---|---|
@@ -172,3 +172,8 @@ All four failures from the completed candidate catalog screen were measured on e
 | crumbweave-weapon-legendary | 13pp | 11pp | [7.988122544689808, 14.011877455310193]pp |
 
 All cells use Soot/fourth equipment slot/level6/chapter3/node6-0. These sample estimates and approximate intervals do not establish a universal item-effect bound. Earlier screens and the27-cell holdout remain separate. Raw evidence: session9 work/c2/item-affix-catalog-holdout.json.
+
+
+## Completed monthly acceptance
+
+All600accounts×30days on frozen4e68bb59 completed and exported on 2026-11-12T12:56:18.145352+00:00. See [ECONOMY.md](ECONOMY.md) for rarity, bag and all currency ratios, and [OUTBOX.md](OUTBOX.md) for every Epic+/material weekly rate. Final source tables and all item-impact samples above are unchanged. Self-score7 remains due to the four13pp screen cells and unresolved Crumbweave interval; the once-returned item repair was fully remeasured, not treated as universal acceptance.
