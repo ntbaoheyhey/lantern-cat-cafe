@@ -122,3 +122,15 @@ The predeclared union of15 previous and12 current failed cells contains27 distin
 | bellsteel-charm-legendary / panko / fourth L6 C3 6-0 | 9.3 | 6.39–12.21 |
 
 Raw candidate holdout: `/Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/item-affix-holdout.json`. New600-account monthly projection and500model/fiveUI progression cohorts use the same runtime. The superseded monthly cohorts remain partial diagnostics: loot-set416accounts and loot-link329accounts at resume; completed accounts/runtime files retained, processes terminated to free CPU.
+
+
+## Affix/Riposte candidate — complete catalog screen
+
+Frozen runtime 4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1. All128 templates and6,144 cells completed100 paired seeds95001–95100. Four point-estimate misses remain at13pp; the screen is not a pass. Preserve the27-cell independent union holdout separately (maximum9.3pp). The predeclared follow-up measures every newly failed cell on exactly1,000 independent seeds100001–101000, without early stopping or table changes.
+
+| Item | Wearer/context | Screen impact |
+|---|---|---|
+| mossbrew-weapon-common | soot / fourth L6 C3 6-0 | 13pp |
+| mossbrew-weapon-rare | soot / fourth L6 C3 6-0 | 13pp |
+| mossbrew-weapon-epic | soot / fourth L6 C3 6-0 | 13pp |
+| crumbweave-weapon-legendary | soot / fourth L6 C3 6-0 | 13pp |
