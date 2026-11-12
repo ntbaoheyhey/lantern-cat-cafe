@@ -1,5 +1,20 @@
 # CHAIN queue
 
+## Current checkpoint (2026-11-12)
+- H0–H4: implemented/local judge proof; original campaign authority remains a separate integration gap recorded in ACCEPTANCE.md.
+- H4b: seal/V2 UI/catalog implementation verified locally; requeue #1 (score7) for authoritative ordinary campaign gear source integration.
+- H5: 22-source research and 52-week model ready; requeue #1 (score7) for real C2 weekly supply and automatic routine-reward issuer wiring.
+- H6: contracts/coverage/UI/user deployment handoff ready; three fresh expanded browser runs passed.
+- H7: stretch condition not yet met because H4b/H5 integration/calibration remains open.
+- H8/H8b: smoke dry mode, static architecture/tokenomics docs and L1 design ready; public deployment/smoke is user-only.
+- H9: final report, evidence, self-scores and tested implementation SHA recorded; no claim that every requirement is finished.
+
+
+## Requeue #1 disposition (2026-11-12)
+- H4b score7: rechecked C2 OUTBOX and the server inventory boundary. Safe source remains the authenticated starter boss. No authoritative ordinary campaign receipts exist to consume; do not import browser saves or change C2 stats/drop tables. REQUESTS-TO-C2.md specifies the interface needed. Retain open, not silently waived.
+- H5 score7: rechecked C2 OUTBOX; only SLOTS/PILOTS readiness, no weekly counts. The --supply JSON override and conservation checks are ready. Auto-reduction is simulated; routine weekly/rank signing still needs authoritative entitlement wiring and an automatic season policy source. Retain open, not marked calibrated or enforced.
+- H7 is gated on H1–H6 green; the unresolved required cards keep the stretch out of this checkpoint.
+- The final review repaired cause-specific error messages and seal pagination; it does not close either C2 dependency.
 
 =====================================================================
 H0 AUDIT (short). Map: wallet connect code, SIWE flow, voucher signing function, how cardrpg Forge/Gacha/Journal fake Relics today, CI, forge tests. Write reports/chain/H0-AUDIT.md (<=60 lines). Run `forge test` and the web unit tests once as baseline.

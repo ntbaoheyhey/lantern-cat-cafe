@@ -8,3 +8,8 @@
 7. Confirm the hosted gateway appends a trustworthy final x-forwarded-for hop; if that guarantee is absent, keep drip disabled until a trusted gateway is configured. Shared/absent IPs share the three-per-day bucket.
 8. Apply 20261112020000_chain_judge.sql and deploy chain-judge; enable CHAIN_JUDGE_ENABLED=1 only for the testnet demo. It reuses VOUCHER_SIGNER_PRIVATE_KEY and the fixed existing Fuji NFT address. Validate trusted gateway IP handling as for the drip.
 9. Ordinary offline campaign saves cannot authorize mintable drops. The chain demo uses a server-run, fixed starter boss; extending live campaign issuance requires an authoritative campaign save/replay protocol with C2.
+
+10. H6 source, local tests and deployment guide are ready. Use CHAIN_DEPLOYER_PRIVATE_KEY for the V2 script (not the legacy DEPLOYER_PRIVATE_KEY). Deploy only yourself, then record the three public addresses and epoch. Fund the rewards pool with fund-rewards.mjs; it starts empty.
+11. Apply 20261112030000_chain_items.sql and deploy chain-items yourself; configure YARN_TOKEN_ADDRESS, SEASON_REWARDS_ADDRESS and CHAIN_ITEMS_ENABLED/CHAIN_YARN_ENABLED only after deployment. Follow USER-DEPLOY-VI.md for exact steps.
+12. Remote GitHub Actions is blocked before tests start by account billing/spending limits (reconfirmed on check130978962411). The account owner must resolve that limit to obtain remote green checks; local tests remain available. An earlier Vercel taskbarhero build also hit a rate limit; Codex will not trigger a deployment.
+13. Provide C2 weekly rare-material/Epic+ issuance inputs when available; current simulation is explicitly provisional. Ordinary campaign sealing/rank rewards require the C2 authoritative save protocol, not client save imports.
