@@ -1,5 +1,5 @@
 /** Record the actual rendered canvases without navigation frames or recorder startup. */
-import {createRequire} from 'node:module';import {resolve} from 'node:path';import {writeFile,mkdir,readFile} from 'node:fs/promises';import {execFileSync} from 'node:child_process';
+import {createRequire} from 'node:module';import {resolve} from 'node:path';import {writeFile,mkdir,readFile,rename} from 'node:fs/promises';import {execFileSync} from 'node:child_process';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out='/Users/bao/art/vfx-2026-11-12/review';
 const ids=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',')??['mochi-1','mochi-4','enemy:yarn-giant'];
 await mkdir(out,{recursive:true});
@@ -8,17 +8,15 @@ page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto((process.env.C2_URL??'http://127.0.0.1:5970')+'/@fs'+resolve(root,'tools/vfx/preview.html'));await page.waitForFunction(()=>window.vfxPreview?.scene.ready);
  for(const id of ids)for(const before of [true,false]){
+  let metadata;
   await page.evaluate(async({id,before})=>{const g=window.vfxPreview;g.setManual(true);g.choose(id);g.setBefore(before);await g.scene.effects.ready;g.sample(0);},{id,before});await page.waitForFunction(()=>window.vfxPreview.scene.ready);
   if(!before){
    const slug=id.replaceAll(':','-');
-   const metadata=await page.evaluate(id=>{const g=window.vfxPreview;g.sample(0);return {id,previewOnly:g.fixture.previewOnly,duration:g.fixture.plan.duration,impact:g.fixture.plan.beats[2].start,targets:g.fixture.plan.targetIds,events:g.fixture.plan.events,actorId:g.fixture.plan.actorId,presentationCues:g.fixture.plan.presentationCues,presentationCueTargets:g.fixture.plan.presentationCueTargets,actors:g.view.actors.map(a=>({id:a.id,side:a.side})),anchors:Object.fromEntries(g.view.actors.map(a=>[a.id,Object.fromEntries(['feet','head','vfxOrigin','mainHand'].map(socket=>[socket,g.scene.socket(a.id,socket)]))]))};},id);
+   metadata=await page.evaluate(id=>{const g=window.vfxPreview;g.sample(0);return {id,previewOnly:g.fixture.previewOnly,duration:g.fixture.plan.duration,impact:g.fixture.plan.beats[2].start,targets:g.fixture.plan.targetIds,events:g.fixture.plan.events,actorId:g.fixture.plan.actorId,presentationCues:g.fixture.plan.presentationCues,presentationCueTargets:g.fixture.plan.presentationCueTargets,actors:g.view.actors.map(a=>({id:a.id,side:a.side})),anchors:Object.fromEntries(g.view.actors.map(a=>[a.id,Object.fromEntries(['feet','head','vfxOrigin','mainHand'].map(socket=>[socket,g.scene.socket(a.id,socket)]))]))};},id);
    await page.locator('#stage').screenshot({path:resolve(out,slug+'-backdrop.png')});
    for(const offset of [-140,35,140,350]){await page.evaluate(at=>window.vfxPreview.sample(at),Math.max(0,metadata.impact+offset));await page.locator('#stage').screenshot({path:resolve(out,slug+'-'+offset+'.png')});}
    await page.evaluate(()=>{const g=window.vfxPreview;g.setReduced(true);g.sample(g.fixture.plan.beats[2].start+35);});await page.locator('#stage').screenshot({path:resolve(out,slug+'-reduced.png')});
    await page.evaluate(()=>{const g=window.vfxPreview;g.setReduced(false);g.scene.effects.clear();g.sample(0);});
-   const file=resolve(out,'capture.json'),previous=await readFile(file,'utf8').then(JSON.parse,()=>({results:[],errors:[]}));
-   previous.results=[...previous.results.filter(r=>r.id!==id),metadata];previous.errors=errors;
-   await writeFile(file,JSON.stringify(previous,null,2));
   }
   const bytes=await page.evaluate(async id=>{
    const g=window.vfxPreview,host=document.querySelector('#stage'),canvas=document.createElement('canvas');canvas.width=host.clientWidth;canvas.height=host.clientHeight;
@@ -34,6 +32,11 @@ try{
   const stem=resolve(out,id.replaceAll(':','-')+'-'+(before?'before':'after')),raw=stem+'-canvas.webm';await writeFile(raw,Buffer.from(bytes));
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',raw,'-vf','scale=960:408','-an','-c:v','libx264','-preset','fast','-crf','23','-pix_fmt','yuv420p','-movflags','+faststart',stem+'.mp4']);
   if(!before)execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',stem+'.mp4','-vf','fps=8,scale=320:136,tile=4x3','-frames:v','1',resolve(out,id.replaceAll(':','-')+'-film.png')]);
+  if(!before){
+   const file=resolve(out,'capture.json'),previous=await readFile(file,'utf8').then(JSON.parse,()=>({results:[],errors:[]}));
+   previous.results=[...previous.results.filter(r=>r.id!==id),metadata];previous.errors=errors;
+   await writeFile(file+'.tmp',JSON.stringify(previous,null,2));await rename(file+'.tmp',file);
+  }
   console.log(id,before?'before':'after',bytes.length);
  }
  if(errors.length)throw Error(errors.join('\n'));
