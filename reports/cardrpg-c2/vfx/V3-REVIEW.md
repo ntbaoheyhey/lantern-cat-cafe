@@ -43,3 +43,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:rain-spool | 8 / 8 / 9 / 8 | Broad cloud-and-water fans read on both front recipients, distinct from the basic bobbin; both hit numbers and faces stay clear through the fade. | 119.99 |
 | enemy:pantry-crown:basic | 8 / 8 / 9 / 8 | Rose crown-cup silhouette stays distinct from the other bosses; the ivory rim lands at torso level and clears beneath the unobstructed damage number. | 120.00 |
 | enemy:pantry-crown | 8 / 8 / 9 / 8 | Rose banquet spirals frame both front recipients below their faces; separate damage numbers land at impact, and the residue clears before the next action. | 120.00 |
+| mallow-1 | 8 / 8 / 9 / 8 | Cream-tipped whisk silhouette reaches the boss and rear target cleanly; both damage numbers remain separate, and the broad low residue clears before the following action. | 119.98 |
