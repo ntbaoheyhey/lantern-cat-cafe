@@ -13,3 +13,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | soot-4 | 8 / 8 / 9 / 8 | Three lanterns read across the enemy formation; two-word cut-in and all hit numbers stay legible. | 120.00 |
 | soot-passive | 8 / 8 / 9 / 8 | Crescent cue stays low on Soot and follows the actual shield trigger. | 119.98 |
 | clover-1 | 8 / 8 / 9 / 8 | Full leaf silhouette survives quarter-scale playback; heal and damage numbers do not collide. | 120.00 |
+| clover-2 | 8 / 8 / 9 / 8 | Paired front-row leaves frame the recipients without covering their faces. | 120.00 |
