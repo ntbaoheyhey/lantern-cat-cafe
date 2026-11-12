@@ -80,3 +80,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | biscuit-passive | 8 / 8 / 9 / 8 | Rose bakery knot frames the protected front recipient below the face; petals clear after its short pulse. | 60.00 |
 | inkcap-passive | 8 / 8 / 9 / 8 | Violet spore cradle stays low on the rear caster; the cream cushion and fade remain distinct at quarter scale. | 60.00 |
 | cinnamon-passive | 8 / 8 / 9 / 8 | Terracotta spice seed and cream swirl stay below the rear caster face; the brief pulse clears cleanly. | 60.00 |
+| brioche-passive | 8 / 8 / 9 / 8 | Golden bell silhouette is distinct from the other protective motifs; the front recipient face remains visible throughout the pulse. | 60.00 |
