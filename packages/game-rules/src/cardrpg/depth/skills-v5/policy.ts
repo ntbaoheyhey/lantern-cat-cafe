@@ -1,5 +1,6 @@
 import type {Actor,Battle,Choice} from '../contract';
 import {ENEMY_BY_ID} from '../catalog';
+import {linkShareBps} from '../battle';
 const count=(a:Actor,id:string)=>a.statuses.find(s=>s.id===id)?.stacks??0;
 /** Expected near-term status value, summed for every target by the existing evaluator. */
 export function actorValueV5(b:Battle,a:Actor):number {
@@ -11,7 +12,8 @@ export function actorValueV5(b:Battle,a:Actor):number {
   const bitter=count(a,'bitter')>0,regen=18*count(a,'steep')*(bitter?.5:1);
   const buffs=Math.min(a.maxHp-a.hp+threat*.4,regen*2)+count(a,'cozy')*threat*.08+count(a,'decoy')*Math.max(25,due*.85)+count(a,'sprout')*30+count(a,'glaze')*9+count(a,'riposte')*(a.row==='front'?14:5);
   const protector=a.statuses.find(s=>s.id==='link'),guard=protector&&allies.find(x=>x.id===protector.source&&x.id!==a.id);
-  const cover=guard?Math.min(due*.3,Math.max(0,guard.hp-guard.maxHp*.4)+guard.shield)*Math.max(0,1-a.hp/a.maxHp):0;
+  const share=guard&&b.initial.formationC2?linkShareBps(b,guard,protector!)/10000:.3;
+  const cover=guard?Math.min(due*share,Math.max(0,guard.hp-guard.maxHp*.4)+guard.shield)*Math.max(0,1-a.hp/a.maxHp):0;
   const healer=allies.some(x=>['clover','sorrel','cinnamon','marigold','teacup-healer'].includes(x.catalogId));
   const intent=b.intents.find(i=>i.actorId===a.id),boss=ENEMY_BY_ID[a.catalogId]?.tier==='boss';
   const debuffs=count(a,'scald')*24+Math.max(0,count(a,'snag')*16-a.shield*.3)+count(a,'crumb')*18

@@ -36,7 +36,7 @@ export function dispel(b: Battle, source: Actor, target: Actor, kind: 'buff' | '
   target.statuses = target.statuses.filter(s => STATUS_BY_ID[s.id].kind !== kind || !STATUS_BY_ID[s.id].dispellable);
   record(b, source, target, 'dispel', before - target.statuses.length, `Removed ${kind}s`);
 }
-function linkShareBps(b: Battle, protector: Actor, status: Status) {
+export function linkShareBps(b: Battle, protector: Actor, status: Status) {
   // Missing provenance retains the former snapshot behavior. New C2 links
   // carry their own strength; equipping a set cannot weaken a native skill.
   return b.initial.formationC2 && status.linkShareBp !== undefined ? status.linkShareBp

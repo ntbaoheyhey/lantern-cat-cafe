@@ -1,6 +1,7 @@
 import {expect,it} from 'vitest';
 import * as R from './index';
 import {clone} from '../internal';
+import {actorValueV5} from './skills-v5/policy';
 
 function fixture(c2=true){
  const state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71,0),true));
@@ -46,4 +47,14 @@ it('does not overwrite a living stronger skill link when Defend grants a gear li
 it('preserves the legacy equipped-caster link behavior outside C2',()=>{
  const f=fixture(false);R.applyStatus(f.battle,f.mochi,f.panko,'link');
  const damage=hit(f);expect(damage.shared).toBe(Math.floor(damage.total*.15));
+});
+it('values a weak gear link below a native skill link during auto-play',()=>{
+ const f=fixture();defend(f);
+ f.battle.acted=[];f.panko.hp=200;f.panko.shield=0;f.enemy.attack=200;
+ Object.assign(f.battle.intents.find(i=>i.actorId===f.enemy.id)!,{targetId:f.panko.id,power:100});
+ const without=clone(f.panko);without.statuses=without.statuses.filter(s=>s.id!=='link');
+ const baseline=actorValueV5(f.battle,without),gear=actorValueV5(f.battle,f.panko)-baseline;
+ R.applyStatus(f.battle,f.mochi,f.panko,'link');
+ const native=actorValueV5(f.battle,f.panko)-baseline;
+ expect(gear).toBeGreaterThan(0);expect(native).toBeGreaterThan(gear*4);
 });

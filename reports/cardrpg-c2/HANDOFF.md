@@ -1,7 +1,7 @@
 # C2 handoff
-NOW: V3 accepted enemy:pantry-crown:basic; B4b final cohorts still running.
+NOW: V3 41accepted; B4b link source+automatic-policy fixes pass23 regressions/typecheck; freeze holdout next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
-LAST GOOD COMMIT: d2e100e52 (all suites/typecheck); V3 clips accepted through Binding Thread at34c0d71f2.
+LAST GOOD COMMIT:2ffd88102 (link source,1374rules); policy correction and full workspace checks pending.
 NEXT 1: Run link-corrected holdout15×1000 (97001–98000); then freeze fresh complete item/economy/UI/model cohorts.
 NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
 NEXT 3: Continue V3 at enemy:pantry-crown; preserve all accepted work.
