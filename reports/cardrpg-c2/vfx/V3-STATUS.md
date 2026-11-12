@@ -62,7 +62,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | inkcap-2 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/inkcap-2-after.mp4 |
 | inkcap-3 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/inkcap-3-after.mp4 |
 | inkcap-4 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/inkcap-4-after.mp4 |
-| cinnamon-1 | pending | pending | pending |
+| cinnamon-1 | animated | pending | pending |
 | cinnamon-2 | pending | pending | pending |
 | cinnamon-3 | pending | pending | pending |
 | cinnamon-4 | pending | pending | pending |
