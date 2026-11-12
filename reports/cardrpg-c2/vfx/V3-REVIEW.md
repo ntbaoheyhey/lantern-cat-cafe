@@ -53,3 +53,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | sorrel-4 | 8 / 8 / 9 / 8 | Four rounded teal teapots make the shared-heal ultimate legible across the formation; the two-word portrait cut-in and all four green heal values stay clear of the painted bodies. | 60.00 |
 | biscuit-1 | 8 / 8 / 9 / 8 | Rose rolling-pin stroke reads as a solid horizontal hit across the boss and rear enemy; cream flour accents separate it from the backdrop and both damage numbers remain visible. | 60.00 |
 | biscuit-2 | 8 / 8 / 9 / 8 | Folded rose cloth forms a low sheltering arc on the ally; its cream trim stays readable below the face and the shield value remains separate at impact. | 60.00 |
+| biscuit-3 | 8 / 8 / 9 / 8 | The narrow rose dough blade and cream crumb fan make a sharper strike than the rolling pin; the boss face and damage number stay clear, and the short ground residue dissipates fully. | 60.00 |

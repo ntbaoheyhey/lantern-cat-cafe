@@ -1,14 +1,14 @@
 # C2 handoff
-NOW: V3 biscuit-3 exported; capture/review next.
+NOW: V3 accepted biscuit-3; B4b final cohorts still running.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT:4433ae228; corrected link source/policy; full workspace units passed.
 NEXT 1: Aggregate corrected full cohorts; monthly slowest. Frozen source/policy runtime c7b8656e.
 NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
-NEXT 3: Capture/review biscuit-3, then continue first nonaccepted V3 skill.
+NEXT 3: Continue V3 at biscuit-4; preserve all accepted work.
 RUNNING: corrected item17065/month60017066/UI5x30min17088; model500 complete on5971; pre-fix month86148 SIGSTOP; holdout watcher23856.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
 B4b: config unchanged; corrected native/gear link strengths;15x100 and15x1000 pass (worst6/6.4pp). Full cohorts pending.
-V3:86IDs;52accepted;53exported=3,537,605bytes. Review server on5973; restart after new exports.
+V3:86IDs;53accepted;53exported=3,537,605bytes. Review server5973.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
 CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
