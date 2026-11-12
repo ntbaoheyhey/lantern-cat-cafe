@@ -101,3 +101,5 @@ Validation is predeclared before candidate results: measure the union of all15 e
 
 
 2026-11-12T12:56:18.145352+00:00 B4b full600-account export accepted as measurement, not universal item-power acceptance. Casual firstEpic day1, firstLegendary day11; publish all currency/progress ratios and all69 Epic+/material weekly rows with partial week5 identified. Exact READY394cf606 trade hash verified; eligible supply stays separate from authoritative issuance0. Four original13pp item cells and independent intervals remain disclosed after the return pass.
+
+2026-11-12T13:04:13.318862+00:00 Report merge reconciliation: source C2 aaa790ccf into integration85c775eba has three checkpoint-only conflicts. Preserve both PROGRESS/HISTORY additions, archive both prior handoffs and write one current integration handoff. Final reports/economy already agree; gameplay tables, code and accepted assets remain unchanged. Latest CHAIN READY is still394cf606; future15/17Nov syncs are not claimed complete. GitHub annotations reconfirm billing/spending prevents Actions from starting; Vercel preview statuses report build-rate limits.
