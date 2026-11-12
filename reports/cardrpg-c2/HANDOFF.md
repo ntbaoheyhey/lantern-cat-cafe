@@ -1,19 +1,18 @@
 # C2 integration continuation
-NOW: Candidate7 B4 accepted; item catalog/monthly and full browser checks continue.
+NOW: Candidate7 B4 accepted; final item/economy and live demo verification.
 BRANCH: codex/cardrpg-integrate-2026-11-12.
-NEXT 1: Finish full6144screen; retain49panel and10000pair follow-up11.14pp.
-NEXT 2: Newscreenmisses105001–106000;monthly600/28dates;scale monthly after catalog.
-NEXT 3: Full browser/Anvil/word budgets; refresh reports and both draftPRs.
-RUNNING: browser56622;monthly50652/catalog51653/followup53169 paused by browser;demo58128waiting.
-ITEM7: runtime007ce084d8e4;500modelallpass;49holdout allpoints<=12;uncertainCI resolved10k.
-ITEM6: bothholdouts49total complete;47panel1miss,additional2pass;screen6misses.
-VERIFY: package4517+Node61+Foundry118;TS/lint/buildpass;browserpending.
-DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2;preserveallcohorts.
-LAST GOOD COMMIT:765ffa057;source733976ac7 retained.
-VFX:86accepted,86clipsverified;5,783,929bytes;preserveallart.
-CHAIN:READY394cf606integrated;authority0;latestoutbox/requestsread.
-OPEN:finalitem/combat/economyacceptance;trustedauthority;designerSpine.
-USER:Nopass/return/compactioncaps;headless;noagents/mainmerge/deploy/secrets.
-STOPabsent;freeze19Nov12UTC;sync15/17Nov12UTC;reports18Nov18UTC.
-PARITY: ITEM7-PARITY.json pairs bosses and guards live tails; original failure retained.
-SOURCE SYNC: after final reports, backport C2-only496b9c68a/51ba4d069 + tool/report changes, merge source back.
+NEXT 1: Finish128-template screen; complete any new105001–106000 holdout.
+NEXT 2: Complete600 monthly accounts/28dates; verify ledgers/supply/targets.
+NEXT 3: Refresh demo/report/screens; sync C2 source; update draftPR440/442.
+RUNNING: monthly50652/catalog51653/panel53169; demo retry next.
+VERIFY: package4517; Foundry118; typecheck/lint/build pass; E2E435+Anvil2pass.
+ITEM7: runtime007ce084d8e4;49holdout points<=12;10k independent Bellsteel11.14pp.
+B4:5real1800s+500model all targets; paired parity pass; original failure retained.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2; preserve all cohorts.
+LAST GOOD COMMIT:1849dea77.
+VFX:86 accepted;5,783,929bytes;preserve all originals and clips.
+CHAIN:READY394cf606 integrated;authority0;outbox/requests reread14:49UTC.
+OPEN:finalitem/economy;trustedauthority;designerSpine;remoteCI billing.
+USER:no pass/return/compaction caps;headless;no agents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC.
+SOURCE SYNC:backport C2-only496b9c68a/51ba4d069 + tool/report changes;merge source back.
