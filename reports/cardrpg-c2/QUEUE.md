@@ -6,8 +6,8 @@
 - [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
 - [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
 - [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
-- [x] B4 — three config passes measured; retain pass3; timing/HP misses disclosed in BALANCE.md; tuning closed.
-- [x] B4b — nine-source research, source Odds, complete600-account economy and per-item supply; item-impact acceptance remains partial (score7 after return pass).
+- [ ] B4 — REOPENED by user, no pass cap: fix first-loss/HP misses; preserve prior measurements; validate five UI +500 fixed seeds.
+- [ ] B4b — REOPENED by user, no return cap: resolve item-power gaps; rerun affected catalog/holdout and economy evidence after final runtime changes.
 - [x] V3 — 86 accepted artworks/timelines: 78 rules-event effects and 8 passive-stat previews; 435/435 E2E; VFX-REPORT.md.
 - [x] B5 — exact READY merged; full verification, visual review and demo complete; draft PR #442; future syncs 15/17 Nov remain.
-- [x] B6 / V4 — final reports, visual proof and per-card scores published; B4 cap exhausted and B4b return pass measured; residual misses explicit.
+- [ ] B6 / V4 — Prior reports retained; refresh final reports after reopened balance work; VFX acceptance stays complete.

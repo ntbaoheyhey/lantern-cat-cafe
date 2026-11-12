@@ -12,7 +12,8 @@
 - One evidence document per card; no micro-fix receipts.
 - Review actual screenshots/video before accepting visual work.
 - Failure → cause in PROGRESS.log → repair → rerun failure; full suite once per card.
-- Tune only config; B4 permits at most three passes. Report misses honestly.
+- Tune only config; user removed B4 pass and B4b return caps on 12 Nov. Continue until acceptance or an actual blocker; report misses honestly.
+- Compaction count alone does not stop work. Preserve checkpoints, accepted work and resumability.
 - Read CHAIN REQUESTS-TO-C2.md and OUTBOX.md at sync points.
 - Publish slot SHA, pilot SHA and weekly tradable supply through OUTBOX.md.
 - Update HANDOFF.md before any pause; obey local STOP-C2.
