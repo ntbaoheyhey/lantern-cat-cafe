@@ -64,12 +64,36 @@ export function compareRuns(bot,sim,tolerance=.15){
  add('wins',a.wins,s.wins);add('losses',a.losses,s.losses);
  add('firstLossSeconds',a.firstLossSeconds,s.firstLossSeconds);
  add('normalWinHpMedian',a.normalWinHpMedian,s.normalWinHpMedian);
- add('bossMedianSeconds',a.boss.medianSeconds,s.boss.medianSeconds);
- add('bossP90Seconds',a.boss.p90Seconds,s.boss.p90Seconds);
+ // A fixed wall-clock horizon can censor one last boss in only one run. With
+ // few bosses, adding that encounter can move the median between different
+ // enemies even when every shared encounter has identical playback timing.
+ // Compare timing on identical encounters; keep full-horizon balance intact.
+ const matchedKeys=new Set(matches.map(m=>m.key));
+ const pairedReal=summarize(observed.filter(e=>matchedKeys.has(key(e))),a.activeSeconds);
+ const pairedSim=summarize(predicted.filter(e=>matchedKeys.has(key(e))),s.activeSeconds);
+ const bossTiming={paired:{real:pairedReal.boss,simulated:pairedSim.boss},
+  fullHorizon:{real:a.boss,simulated:s.boss},censoredTails:[]};
+ for(const [completedSide,encounters,other] of [['real',observed,sim],['simulated',predicted,bot]]){
+  for(const e of encounters.filter(e=>e.boss&&!e.skipped&&!matchedKeys.has(key(e)))){
+   const live=other.live,horizon=other.secondsRequested??other.summary.activeSeconds;
+   if(!live||key(live)!==key(e)||!live.boss||live.skipped||!isDeepStrictEqual(live.initial,e.initial)||
+    !Number.isFinite(live.readyAt)||live.readyAt<0||live.readyAt>horizon){
+    issues.push(`Unmatched boss without an identical live horizon trace: ${key(e)}`);continue;
+   }
+   const elapsed=horizon-live.readyAt;
+   const minimumPlaybackError=elapsed<=e.playbackSeconds?0:completedSide==='simulated'
+    ?error(elapsed,e.playbackSeconds):error(e.playbackSeconds,elapsed);
+   if(minimumPlaybackError>tolerance)issues.push(`Censored boss already exceeds playback tolerance: ${key(e)}`);
+   bossTiming.censoredTails.push({key:key(e),completedSide,completedSeconds:e.playbackSeconds,
+    liveStartedAt:live.readyAt,horizon,liveElapsedSeconds:elapsed,minimumPlaybackError});
+  }
+ }
+ add('pairedBossMedianSeconds',pairedReal.boss.medianSeconds,pairedSim.boss.medianSeconds);
+ add('pairedBossP90Seconds',pairedReal.boss.p90Seconds,pairedSim.boss.p90Seconds);
  return {seed:bot.seed,pass:issues.length===0,tolerance,issues,metrics,matchedEncounters:matches.length,
   observedEncounters:observed.length,predictedEncounters:predicted.length,actionPrefix,commonActions:actionCount,
   curvePrefix,commonCurves:curves,maxCurrencyError,maxXpError,firstLossCensored:a.firstLossSeconds===null&&s.firstLossSeconds===null,
-  playbackMedianError:quantile(matches.map(x=>x.playbackError).filter(x=>x!==null),.5),matches};
+  playbackMedianError:quantile(matches.map(x=>x.playbackError).filter(x=>x!==null),.5),bossTiming,matches};
 }
 
 export function cohort(reports){

@@ -70,3 +70,33 @@ test('balance requires uncensored median, no early loss, both HP statistics and 
  assert.equal(balanceTargets(good,5).pass,true);
  for(const change of [{completeSeeds:4},{minimumHorizonSeconds:60},{firstLossMedianSeconds:null},{earlyLossSeeds:1},{bossP90Seconds:111},{normalWinHpMean:.81}])assert.equal(balanceTargets({...good,...change},5).pass,false);
 });
+
+function horizonBossRuns(){
+ const actual=run(),predicted=run(),base=actual.encounters[0];
+ actual.encounters=Array.from({length:10},(_,i)=>({...base,seed:123+i}));
+ actual.encounters.push(...[20,25,90,92].map((seconds,i)=>({...base,boss:true,node:'6-0',seed:201+i,playbackSeconds:seconds,endedAt:500+i*100})));
+ predicted.encounters=structuredClone(actual.encounters);
+ const tail={...base,boss:true,node:'6-0',seed:299,at:1750,readyAt:1750,endedAt:1795,playbackSeconds:45};
+ predicted.encounters.push(tail);
+ actual.live={...tail,at:1760,readyAt:1760};delete actual.live.endedAt;delete actual.live.playbackSeconds;
+ return {actual,predicted};
+}
+test('boss timing pairs identical encounters and discloses a verified live tail at the fixed horizon',()=>{
+ const {actual,predicted}=horizonBossRuns(),result=compareRuns(actual,predicted);
+ assert.equal(result.pass,true);
+ assert.equal(result.bossTiming.fullHorizon.real.medianSeconds,90);
+ assert.equal(result.bossTiming.fullHorizon.simulated.medianSeconds,45);
+ assert.equal(result.bossTiming.paired.real.count,4);
+ assert.equal(result.bossTiming.paired.simulated.count,4);
+ assert.equal(result.bossTiming.censoredTails.length,1);
+ assert.equal(compareRuns(predicted,actual).pass,true);
+ assert.equal(cohort([predicted]).bossCount,5);
+ predicted.encounters[10].playbackSeconds=24;
+ assert.equal(compareRuns(actual,predicted).pass,false);
+});
+test('a missing, changed or overlong boss tail cannot be excused as horizon censoring',()=>{
+ const {actual,predicted}=horizonBossRuns(),live=structuredClone(actual.live);
+ actual.live=null;assert.equal(compareRuns(actual,predicted).pass,false);
+ actual.live={...live,initial:{cats:['panko']}};assert.equal(compareRuns(actual,predicted).pass,false);
+ actual.live={...live,at:1600,readyAt:1600};assert.equal(compareRuns(actual,predicted).pass,false);
+});
