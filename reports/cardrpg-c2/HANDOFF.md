@@ -1,18 +1,18 @@
 # C2 handoff
-NOW: V3 accepted cinnamon-1; B4b final cohorts still running.
+NOW: V3 59/86 accepted through cinnamon-1. Complete item screen/holdout leaves5 measured impact misses.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
-LAST GOOD COMMIT: 7ca18a1b0; 4420 package +33 root unit passes; all browser checks headless.
-NEXT 1: Finish corrected item full screen/declared holdout and 600-account economy; publish results.
+LAST GOOD COMMIT: aee68d0dc; runtime c7b8656e full units/E2E pass.
+NEXT 1: Diagnose5 Crumbweave/Bellsteel impact misses via frozen-runtime ablation; full economy still running.
 NEXT 2: Aggregate complete economy/catalog evidence; publish supply to CHAIN and close B4b with disclosed misses.
 NEXT 3: Continue V3 at cinnamon-2; preserve all accepted work.
-RUNNING: E2E finished; item17065/month17066/watcher23856 resumed; inspect full-e2e-link.exit/json. Restart review5973 before capture.
+RUNNING: corrected month17066 (600accounts); pre-fix month86148 SIGSTOP; review33920 on5973. Catalog/holdout done.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
-B4b: config unchanged; corrected native/gear link strengths;15x100 and15x1000 pass (worst6/6.4pp). Full cohorts pending.
+B4b: full6144cell screen12misses (max18pp); independent12x1000 holdout5misses (max16.1pp); no config changes yet.
 V3:86IDs;59accepted;59exported=3,945,140bytes. Review server5973.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
 CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
-OPEN PROBLEMS: B4 disclosed misses; new Hearthloom/Panko item13–15pp screen cells (holdout scheduled); full economy; remaining V3; integration.
+OPEN PROBLEMS: B4 timing/HPmedian misses;5 item impact misses; full economy; remaining27VFX; integration.
 STOP-C2 absent at resume; check before each heavy step. No agents/main merges/deployments/secrets.
 REPORTS18Nov18UTC; freeze19Nov12UTC. CHAIN sync15Nov12UTC/17Nov12UTC.
 CHECKS: fresh corrected full units4453pass; E2E435/435pass (0skips/flaky); word budget33/33. All headless.

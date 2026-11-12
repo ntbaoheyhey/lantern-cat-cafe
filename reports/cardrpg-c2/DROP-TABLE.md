@@ -67,3 +67,19 @@ Corrected runtime `c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafdff3f
 | bellsteel-weapon-epic / panko | 2.5 | 0.88–4.12 |
 
 Prospective final cohorts use this exact runtime: every128 templates ×48 cells ×100 paired seeds95001–95100;30days ×3 profiles ×200 account seeds90001–90200; model80001–80500 and real UI80001–80005 at1,800seconds. No configuration values change during these cohorts. Prior balance measurements stay labeled pre-link-fix.
+
+## Complete corrected catalog screen
+
+All128 templates ×48 crew/context cells ×100 paired seeds95001–95100 completed on frozen c7b8656e runtime:6,144 cells,12 exceed the12pp absolute-impact threshold, maximum18pp. Saturated cells:4,608 before/4,524 after; these do not establish balance by themselves. All12 failed cells are being independently remeasured on the predeclared1,000 seeds98001–99000. Keep the full screen separate from the holdout; no acceptance claim from the first few holdout cells.
+
+The predeclared independent holdout is complete (all12 cells ×1,000 seeds98001–99000). Seven Hearthloom cells measure2.4–5.8pp. Five Crumbweave/Bellsteel cells still miss12pp; worst16.1pp. No item-impact acceptance.
+
+| Item / wearer (fourth piece, L6, chapter3 boss) | Original100 paired seeds | Independent1,000 | Paired normal95% interval |
+|---|---|---|---|
+| crumbweave-weapon-legendary / soot | 14.0pp | 13.0pp | 9.50–16.50pp |
+| bellsteel-outfit-epic / panko | 14.0pp | 14.0pp | 10.67–17.33pp |
+| bellsteel-charm-epic / panko | 16.0pp | 15.9pp | 12.55–19.25pp |
+| bellsteel-outfit-legendary / panko | 15.0pp | 15.0pp | 11.69–18.31pp |
+| bellsteel-charm-legendary / panko | 18.0pp | 16.1pp | 12.74–19.46pp |
+
+Intervals are diagnostic paired normal approximations. They do not establish universal bounds or replace the original sample. Before any further table changes, isolate the contribution from stats versus set/unique effects in these five remaining cells. Keep the frozen600-account economy cohort running as evidence for this measured candidate.
