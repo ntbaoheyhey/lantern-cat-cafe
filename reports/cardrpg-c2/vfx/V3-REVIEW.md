@@ -65,3 +65,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | cinnamon-4 | 8 / 8 / 9 / 8 | Serving bell opens into a cream steam blossom below the recipient face; the Second serving cut-in stays at two words, heal number appears at impact and the painted core clears cleanly. | 60.00 |
 | brioche-1 | 8 / 8 / 9 / 8 | Swinging golden cafe bell reads clearly against the boss body, lands below its face, and clears after the separate damage number. | 60.00 |
 | brioche-2 | 8 / 8 / 9 / 8 | Honey blanket forms a low shelter canopy around the rear ally; shield and heal numbers remain separated above the face and the warm tail fades cleanly. | 60.00 |
+| brioche-3 | 8 / 8 / 9 / 8 | Repaired transparent golden collar crescent stays complete and readable over the boss body; warm cream leading tip and damage number align at impact, then the tail clears. | 60.00 |
