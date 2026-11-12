@@ -43,3 +43,27 @@ Measurement running: 30 days × 200 seeds × three play profiles; per-item weekl
 Inherited B3 audit finding: full-shelf automatic drops could award zero threads at the earned cap. The current C2 candidate now recovers the same useful rarity salvage amount as manual salvage; the regression passes. The table above preserves the pre-tuning audit at B2 3126240bf.
 
 Working C2 candidate: encounter Legendary rates0/0.05/0.15% (ordinary/elite/boss); gear invitation300stamps with unchanged soft13/hard24; Legendary tailoring10seals/200materials plus100fish/300threads/60essence; Epic tailoring20fish/240threads/9essence; Legendary gear selector72marks. All live source Odds read these tables. Full measurement and item-impact repair remain pending; no acceptance claim.
+
+## Link source and policy repair — frozen validation
+
+Corrected runtime `c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafdff3f366`. All15 previously failed cells pass on the original100 paired seeds95001–95100 (maximum absolute movement6pp) and on the predeclared independent1,000-seed holdout97001–98000 (maximum6.4pp). This is targeted evidence, not the full-catalog acceptance. Keep all earlier failed samples and incomplete pre-fix economy output.
+
+| Item / wearer | Holdout change (pp) | Paired 95% interval (pp) |
+|---|---|---|
+| hearthloom-outfit-common / mochi | 2.0 | 0.59–3.41 |
+| hearthloom-charm-common / mochi | 1.1 | 0.01–2.19 |
+| hearthloom-relic-common / mochi | 3.4 | 1.90–4.90 |
+| hearthloom-relic-common / soot | -0.6 | -1.38–0.18 |
+| hearthloom-relic-rare / mochi | 4.8 | 3.19–6.41 |
+| hearthloom-relic-rare / soot | -0.5 | -1.31–0.31 |
+| hearthloom-outfit-epic / mochi | 5.2 | 3.37–7.03 |
+| hearthloom-charm-epic / mochi | 5.1 | 3.30–6.90 |
+| hearthloom-relic-epic / mochi | 4.7 | 2.77–6.63 |
+| hearthloom-weapon-legendary / mochi | 3.6 | 1.29–5.91 |
+| hearthloom-outfit-legendary / mochi | 6.0 | 3.92–8.08 |
+| hearthloom-charm-legendary / mochi | 6.4 | 4.36–8.44 |
+| bellsteel-weapon-common / panko | 2.0 | 0.34–3.66 |
+| bellsteel-weapon-rare / panko | 2.2 | 0.57–3.83 |
+| bellsteel-weapon-epic / panko | 2.5 | 0.88–4.12 |
+
+Prospective final cohorts use this exact runtime: every128 templates ×48 cells ×100 paired seeds95001–95100;30days ×3 profiles ×200 account seeds90001–90200; model80001–80500 and real UI80001–80005 at1,800seconds. No configuration values change during these cohorts. Prior balance measurements stay labeled pre-link-fix.
