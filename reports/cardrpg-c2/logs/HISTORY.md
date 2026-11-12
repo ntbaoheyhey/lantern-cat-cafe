@@ -260,3 +260,5 @@ DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
 2026-11-12T14:49:48.300328+00:00 Resume verified1849dea77; B4 done; browser435+Anvil2 pass. Demo driver stopped on preserved original parity failure; explicit repaired-parity rerun gates retry. Monthly~210/600/catalog~96/128 active.
 
 2026-11-12T14:54:37.557775+00:00 B5 candidate7 validation and visual review complete; original parity failure retained with verified repaired rerun. Monthly/catalog continue.
+
+2026-11-12T14:56:31.902489+00:00 Candidate7 item measurement complete;original1miss screen retained;independent49fixture panel and10k follow-up meet declared12pp target. Monthly remains open.

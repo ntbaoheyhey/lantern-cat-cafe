@@ -204,3 +204,10 @@ Soft Collar mechanism diagnostics reproduce the full failed control exactly. On 
 2026-11-12T14:27:27.958623+00:00 Candidate6 additional disjoint2-cell panel103001–104000 completed with−3.8/−3.6pp; together with47panel covers all selected49fixtures. Candidate7 independent49-fixture panel104001–105000 completed:49point passes, maximum12.0pp, one marginal interval crosses12pp. See ITEM6-NEW-HOLDOUT.json and ITEM7-HOLDOUT.json. A predeclared separate10000-pair follow-up120001–130000 now addresses the sole uncertain Bellsteel outfit; catalog and600-account projections remain in flight.
 
 2026-11-12T14:30:55.862192+00:00 Candidate7 predeclared Bellsteel uncertainty panel completed all10000 independent pairs120001–130000:11.14pp,paired95%[10.4753,11.8047]pp. Original49panel12.0pp/interval retained; no pooled estimates or post-result sample additions. This selected fixture now meets the12pp target in both point and marginal interval; catalog/economy/UI gates still pending.
+
+
+## Candidate7 completed item evidence
+
+2026-11-12T14:56:31.902489+00:00. All128 templates/6144cells completed100paired seeds95001–95100. The original screen retains one−13pp cell: Common Bellsteel weapon, Panko, fourth slot, L6/C3/ordinary; it is not relabeled a passing screen. Its predeclared independent1000-pair panel gives−7.0pp, marginal95%[−9.158,−4.842]pp. All49 selected fixtures meet12pp on104001–105000; the sole crossing interval belongs to the Bellsteel Legendary outfit and is addressed by the separately predeclared10000-pair follow-up11.14pp,[10.4753,11.8047]pp. The complete catalog introduces no fixture outside those49, so no105001 panel is needed.
+
+Every saved pair/statistic across6144screen cells and both independent panels was recomputed and checked against frozen runtime007ce084. See [ITEM7-ITEM-SCREEN.json](ITEM7-ITEM-SCREEN.json) and [ITEM7-ITEM-VALIDATION.json](ITEM7-ITEM-VALIDATION.json). These are finite-fixture measurements with marginal intervals, not a universal or simultaneous bound; original screens and holdouts remain separate. Final monthly economy is still in progress.
