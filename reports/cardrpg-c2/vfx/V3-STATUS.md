@@ -43,7 +43,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | enemy:yarn-giant:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-yarn-giant-basic-after.mp4 |
 | enemy:yarn-giant | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/enemy-yarn-giant-after.mp4 |
 | enemy:rain-spool:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-rain-spool-basic-after.mp4 |
-| enemy:rain-spool | pending | pending | pending |
+| enemy:rain-spool | animated | pending | pending |
 | enemy:pantry-crown:basic | pending | pending | pending |
 | enemy:pantry-crown | pending | pending | pending |
 | mallow-1 | pending | pending | pending |
