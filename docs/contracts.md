@@ -232,3 +232,50 @@ Listing ids, prices and amounts are `uint256`, so pass and expect `bigint`.
   implies the Relic was minted.
 - Seller and buyer may be the same address (harmless; no fees).
 - A listing always sells as a whole lot; partial fills are not supported.
+
+
+## Fuji YARN, Market V2 and season claims
+
+**Testnet — no real value.** These are new, undeployed contracts; the existing Fuji NFT and V1 market above are unchanged. The user deploys them with [USER-DEPLOY-VI](../reports/chain/USER-DEPLOY-VI.md). No contract deployment was performed by Codex.
+
+| Contract | Construction / authority | Main behavior |
+| --- | --- | --- |
+| `YarnToken` | Fuji-only; genesis distributor; no owner | ERC-20, OpenZeppelin v5 burnable + EIP-2612 permit; exactly 1,000,000,000 × 10^18 genesis units; no later mint |
+| `RelicMarketV2` | Existing NFT, YARN, treasury, immutable fee <=1000 bps | ERC-1155 escrow, AVAX (`currency=0`) or YARN (`1`), arbitrary uint256 price including free gifts; pull proceeds |
+| `SeasonRewards` | YARN, owner, rotatable signer, weekly cap and UTC-Monday season epoch | Prefunded EIP-712 claims; current 13-week season, global nonce replay guard, recipient binding and UTC-Monday weekly cap; renounce disabled |
+
+The recommended V2 fee is 500 bps (5%). `quote(price)` uses full-precision floor division: 40% of the fee burns YARN (or goes to the native AVAX zero-address sink), 60% credits the treasury, and the rest credits the seller. `withdraw(currency, recipient)` claims only the caller's proceeds; failed payouts restore the balance. Native sinks never count as YARN burns. No fee admin, enforced market price bands, or listing deposit. `list`, `buy`, `cancel`, and `withdraw` are nonreentrant; only solicited single ERC-1155 transfers from the configured NFT are accepted. An item bought in V2 cannot be relisted by that buyer in V2 for ten minutes. V1 and direct transfers bypass V2 fees and cooldowns.
+
+`getListings(offset, limit)` returns active IDs and `{seller,relicId,amount,price,currency}`. Its order can change after a removal; read all pages at one block. `proceeds(owner,currency)`, `feeBps`, `relistAfter` and `getListing(id)` are public reads. `Listed`, `Bought` (including fee/burn), `Cancelled` and `Withdrawn` support indexers. Wallet migration cancels V1/V2 escrow, withdraws both currencies, transfers all known NFT IDs and YARN, then sweeps remaining AVAX.
+
+### Sealing with the existing NFT
+
+Reserved IDs: 1–4 existing Relics; 10000–19999 materials (10001 Star Thread); 20000–29999 equipment. The first NFT mint still fixes each ID's rarity. The [trade policy](design/chain/TRADE-RULES.md) lists every catalog item and reference fee.
+
+`YarnToken.seal(bytes32 intent, uint256 amount)` burns the caller's funds once and records `sealPayments(player,intent)`. The key is `keccak256(UTF8("taskbar-hero:seal:v1:" + intentUuid))`. This receipt does **not** authorize a mint by itself: the authenticated Edge Function checks a server-reserved inventory row, exact payment amount, and wallet; it consumes the source row and signs an ordinary RelicNFT voucher. Retrying or renewing uses that same hash as the uint256 mint nonce. No unsealing or new NFT contract. Offline/imported browser inventory is never authoritative. Campaign Epic+ issuance requires C2 authority; the fixed judge boss currently supplies Star Thread.
+
+### Reward typed data
+
+Domain: `{name:"TaskbarHeroSeasonRewards", version:"1", chainId:43113, verifyingContract:SeasonRewards}`. Exact type:
+
+```text
+Claim(address player,uint256 amount,uint256 season,uint256 nonce,uint256 expiry)
+```
+
+Claims enforce caller, nonzero amount, expiry (inclusive), current season, signer and globally unused nonce. Each player's aggregate claims are capped per UTC Monday week regardless of nonce or season; the deploy script chooses 32 YARN. The one-time judge grant is 20 YARN. Transferring pool funds is part of the same transaction as nonce/cap updates, so insufficient pool funding rolls everything back. `setSigner` is owner-only; there is no discretionary pool withdrawal or mint authority. The genesis distributor does not enforce allocation vesting.
+
+`DeployChainV2.s.sol` requires chain 43113, code at the fixed existing NFT address and its matching signer. It reads `CHAIN_DEPLOYER_PRIVATE_KEY`, `CHAIN_VOUCHER_SIGNER_ADDRESS`, `YARN_DISTRIBUTOR_ADDRESS`, `YARN_TREASURY_ADDRESS`, and optional `MARKET_FEE_BPS=500`. It prints only public addresses and epoch. It never redeploys the existing NFT/market. The user must fund SeasonRewards and supply the new public addresses before enabling the frontend/server flags.
+
+### Local verification
+
+```sh
+pnpm chain:local                    # Anvil chain 43113, ports 5980–5983, disposable keys
+pnpm chain:test                     # authenticated guest, real mint/trade/seal and balances
+node tools/chain/check-drip.mjs      # idempotent sponsor transfer
+node tools/chain/check-move.mjs      # V1/V2 cancellation, withdrawal and asset sweep
+node tools/chain/fuji-smoke.mjs --dry-run
+forge test --root contracts
+forge coverage --root contracts
+```
+
+Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](../reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and pending public verification.
