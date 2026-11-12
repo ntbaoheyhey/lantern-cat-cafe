@@ -83,3 +83,42 @@ The predeclared independent holdout is complete (all12 cells ×1,000 seeds98001�
 | bellsteel-charm-legendary / panko | 18.0pp | 16.1pp | 12.74–19.46pp |
 
 Intervals are diagnostic paired normal approximations. They do not establish universal bounds or replace the original sample. Before any further table changes, isolate the contribution from stats versus set/unique effects in these five remaining cells. Keep the frozen600-account economy cohort running as evidence for this measured candidate.
+
+
+## Affix and equipment Riposte candidate — independent union holdout
+
+Frozen runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`. Halved C2 affixScale0.5→0.25 and capped equipment Bellsteel Riposte at the first Defend per encounter. Native Panko Riposte, legacy replay behavior, main-stat budgets and B4 enemy tables stay unchanged. Mechanism ablation and every earlier screen remain preserved.
+
+The predeclared union of15 previous and12 current failed cells contains27 distinct cells. All27 completed exactly1,000 paired seeds99001–100000 with no early stopping:0 point-estimate misses, maximum absolute movement9.3pp. This targeted holdout does not replace the full6,144-cell screen, which remains running. Confidence intervals are diagnostic paired normal approximations; a point estimate below12pp is not proof of a universal effect bound.
+
+| Item / wearer / context | Change (pp) | Paired95% interval (pp) |
+|---|---|---|
+| hearthloom-outfit-common / mochi / fourth L6 C3 6-0 | 1.6 | 0.16–3.04 |
+| hearthloom-charm-common / mochi / fourth L6 C3 6-0 | 1.3 | 0.18–2.42 |
+| hearthloom-relic-common / mochi / fourth L6 C3 6-0 | 1.7 | 0.28–3.12 |
+| hearthloom-relic-common / soot / fourth L6 C3 5-0 | -0.7 | -1.60–0.20 |
+| hearthloom-relic-rare / mochi / fourth L6 C3 6-0 | 2.3 | 0.75–3.85 |
+| hearthloom-relic-rare / soot / fourth L6 C3 5-0 | -0.9 | -1.84–0.04 |
+| hearthloom-outfit-epic / mochi / fourth L6 C3 6-0 | 3.4 | 1.66–5.14 |
+| hearthloom-charm-epic / mochi / fourth L6 C3 6-0 | 4.1 | 2.47–5.73 |
+| hearthloom-relic-epic / mochi / fourth L6 C3 6-0 | 2.6 | 0.90–4.30 |
+| hearthloom-weapon-legendary / mochi / fourth L6 C3 6-0 | 0.5 | -1.47–2.47 |
+| hearthloom-outfit-legendary / mochi / fourth L6 C3 6-0 | 3.8 | 2.02–5.58 |
+| hearthloom-charm-legendary / mochi / fourth L6 C3 6-0 | 4.0 | 2.31–5.69 |
+| bellsteel-weapon-common / panko / fourth L6 C3 5-0 | 2.9 | 1.08–4.72 |
+| bellsteel-weapon-rare / panko / fourth L6 C3 5-0 | 3.1 | 1.30–4.90 |
+| bellsteel-weapon-epic / panko / fourth L6 C3 5-0 | 3.4 | 1.62–5.18 |
+| hearthloom-charm-rare / panko / fourth L6 C3 6-0 | 2.2 | 0.17–4.23 |
+| hearthloom-outfit-epic / panko / fourth L6 C3 6-0 | 2.8 | 0.66–4.94 |
+| hearthloom-charm-epic / panko / fourth L6 C3 6-0 | 3.2 | 1.04–5.36 |
+| hearthloom-relic-epic / panko / fourth L6 C3 6-0 | 2.1 | -0.05–4.25 |
+| hearthloom-outfit-legendary / panko / fourth L6 C3 6-0 | 3.4 | 1.24–5.56 |
+| hearthloom-charm-legendary / panko / fourth L6 C3 6-0 | 3.4 | 1.24–5.56 |
+| hearthloom-relic-legendary / panko / fourth L6 C3 6-0 | 2.4 | 0.24–4.56 |
+| crumbweave-weapon-legendary / soot / fourth L6 C3 6-0 | 7.9 | 4.86–10.94 |
+| bellsteel-outfit-epic / panko / fourth L6 C3 6-0 | 6.0 | 3.22–8.78 |
+| bellsteel-charm-epic / panko / fourth L6 C3 6-0 | 6.9 | 4.13–9.67 |
+| bellsteel-outfit-legendary / panko / fourth L6 C3 6-0 | 6.2 | 3.40–9.00 |
+| bellsteel-charm-legendary / panko / fourth L6 C3 6-0 | 9.3 | 6.39–12.21 |
+
+Raw candidate holdout: `/Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/item-affix-holdout.json`. New600-account monthly projection and500model/fiveUI progression cohorts use the same runtime. The superseded monthly cohorts remain partial diagnostics: loot-set416accounts and loot-link329accounts at resume; completed accounts/runtime files retained, processes terminated to free CPU.

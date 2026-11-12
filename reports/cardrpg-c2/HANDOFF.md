@@ -2,7 +2,7 @@
 NOW: V3 brioche-2 exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
 LAST GOOD COMMIT: 09a73d736; previous runtime c7b8656e full units/E2E pass.
-NEXT 1: Freeze candidate; union27-before-dedup holdout1000newseeds99001–100000; full6144cell screen and economy.
+NEXT 1: Union27x1000 holdout complete0misses(max9.3pp); await full6144cell screen and600-account economy.
 NEXT 2: Rebuild immutable5971;500model+five30min UI; full units/E2E/word budgets. Publish all misses and supply.
 NEXT 3: Capture/review brioche-2, then continue first nonaccepted V3 skill.
 RUNNING: b4b-affix-build PID40338, b4b-affix-server PID40360, item-impact-affix PID40385, loot-affix PID40386, b4b-affix-sim PID40387, item-affix-holdout PID40388, b4b-affix-real PID40404; registry work/c2/affix-cohorts.json.
