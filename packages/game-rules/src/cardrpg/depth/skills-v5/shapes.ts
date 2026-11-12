@@ -1,3 +1,4 @@
+import { FORMATION_C2 } from '../formation-c2';
 import {emitGameplayEvent} from '../events-v4';
 import type { Actor, Battle, Effect, Skill } from '../contract';
 
@@ -31,9 +32,9 @@ export function landingsV5(b: Battle, actor: Actor, main: Actor, shape: ShapeV5,
     case 'ally-splash': {const patient=weakestV5(allies);return patient?[...one(patient),...adjacentV5(b,patient).map(target=>({target,multiplier:.4}))]:[];}
     case 'team': return allies.map(target => ({target, multiplier:1}));
     case 'ally-row': return allies.filter(t => t.row === main.row).map(target => ({target, multiplier:1}));
-    case 'row': return foes.filter(t => t.row === main.row).map(target => ({target, multiplier:.6}));
-    case 'all': return foes.map(target => ({target, multiplier:.6}));
-    case 'splash': return [...one(main), ...adjacentV5(b, main).map(target => ({target, multiplier:.4}))];
+    case 'row': return foes.filter(t => t.row === main.row).map(target => ({target, multiplier:b.initial.formationC2?FORMATION_C2.rowMultiplier:.6}));
+    case 'all': return foes.map(target => ({target, multiplier:b.initial.formationC2?FORMATION_C2.areaMultiplier:.6}));
+    case 'splash': return [...one(main), ...adjacentV5(b, main).map(target => ({target, multiplier:b.initial.formationC2?FORMATION_C2.splashMultiplier:.4}))];
     case 'bounce': return [main, ...foes.filter(t => t.id !== main.id)].slice(0, 3).map((target, i) => ({target, multiplier:[1,.7,.5][i]!}));
     case 'multi-hit': return foes.length ? Array.from({length:3}, () => ({target:foes[roll(foes.length)]!,multiplier:.4})) : [];
     default: return one(main);

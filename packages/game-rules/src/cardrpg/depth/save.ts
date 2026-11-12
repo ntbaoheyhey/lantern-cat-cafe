@@ -1,3 +1,5 @@
+import { partySize, setFormationC2, validRowsC2 } from './formation-c2';
+import { setGameplayA6 } from './gameplay-a6';
 import {validBattleEventV5} from './skills-v5/events';
 import { initializeJourneyV4, validateJourneyV4 } from './journey-v4';
 import { validateJournalV4, LESSONS_V4 } from './meta-v4';
@@ -98,18 +100,28 @@ function validateEnemySnapshot(value: unknown): void {
   }
   if(value.challengeLevel!==undefined&&(!Number.isSafeInteger(value.challengeLevel)||Number(value.challengeLevel)<1||Number(value.challengeLevel)>50))fail();
   validateSupply(value.packedSupply);
+  if (value.formationC2 !== undefined && typeof value.formationC2 !== 'boolean') fail();
+  if (value.formationC2) {
+    if (!value.gameplayA6 || !Array.isArray(value.cats) || value.cats.some(c => !record(c))) fail();
+    const cats = value.cats as BattleSetup['cats'];
+    if (!validRowsC2(cats.map(c => c.id), Object.fromEntries(cats.map(c => [c.id, c.row])))) fail();
+  }
+
   if(value.gameplayA6!==undefined&&(typeof value.gameplayA6!=='boolean'||value.gameplayA6&&(!value.skillsV5||!value.gameplayV4)))fail();
   if(value.skillsV5!==undefined&&(typeof value.skillsV5!=='boolean'||value.skillsV5&&!value.gameplayV4))fail();
   if(value.gameplayV4!==undefined&&typeof value.gameplayV4!=='boolean') fail();
   if(value.gameplayV4&&!validPlan(value.plan)) fail();
 }
-export function validateDepth(value: unknown): asserts value is DepthAccount {
+export function validateDepth(value: unknown, legacyFormation = false): asserts value is DepthAccount {
   safeTree(value);
   const example = createDepthAccount();
   // Equipment is a dynamic map. Valid unequips and transfers remove starter keys.
   example.equipment = {};
   shape(value, example);
   const state = value as DepthAccount;
+  if(state.formationC2!==undefined&&(typeof state.formationC2!=='boolean'||state.formationC2&&!state.gameplayA6))fail();
+  if(state.formationNoticeC2!==undefined&&!['four','bench'].includes(state.formationNoticeC2))fail();
+  const validSize=(length:number)=>legacyFormation&&!state.formationC2?[3,4,5,6].includes(length):length===partySize(state);
   const dailyA6 = state.dailyA6;
   if(dailyA6!==undefined){
     if(!record(dailyA6)||!Number.isSafeInteger(dailyA6.day)||dailyA6.day<1||dailyA6.day>state.account.day
@@ -132,9 +144,10 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     for(const preset of state.v4.loadouts){
       if(preset===null)continue;
       if(!record(preset)||typeof preset.name!=='string'||!preset.name.trim()||preset.name.length>40
-        ||!Array.isArray(preset.team)||preset.team.length!==3||new Set(preset.team).size!==3
+        ||!Array.isArray(preset.team)||!validSize(preset.team.length)||new Set(preset.team).size!==preset.team.length
         ||!record(preset.rows)||!record(preset.equipment)||!validPlan(preset.plan))fail();
       if(preset.team.some(id=>!CAT_BY_ID[id]||!['front','rear'].includes(preset.rows[id]!))||!preset.team.some(id=>preset.rows[id]==='front'))fail();
+      if(state.formationC2&&!validRowsC2(preset.team,preset.rows))fail();
       const refs=new Set<string>();
       for(const [id,slots] of Object.entries(preset.equipment)){
         if(!preset.team.includes(id)||!record(slots))fail();
@@ -161,13 +174,14 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     if(v.lessons!==undefined&&(!Array.isArray(v.lessons)||new Set(v.lessons).size!==v.lessons.length||v.lessons.some(id=>!LESSONS_V4.some(l=>l.id===id))))fail();
   }
   validateAccount(state.account);
-  if (state.version !== CONTRACT_VERSION || state.team.length !== 3 || new Set(state.team).size !== 3) fail();
+  if (state.version !== CONTRACT_VERSION || !validSize(state.team.length) || new Set(state.team).size !== state.team.length) fail();
   for (const id of state.team) {
     if (!state.account.cards.some(c => c.cardId === id) || !['front', 'rear'].includes(state.rows[id]!)) fail();
     const skills = state.skills[id];
     if (!Array.isArray(skills) || skills.length !== 3 || new Set(skills).size !== 3 || skills.some(s => SKILLS[s]?.catId !== id)) fail();
   }
   if (!state.team.some(id => state.rows[id] === 'front')) fail();
+  if(state.formationC2&&!validRowsC2(state.team,state.rows))fail();
   if(new Set(state.gear.map(g=>g.id)).size!==state.gear.length)fail();
   for (const gear of state.gear) {
     if (!GEAR_BY_ID[gear.templateId] || !Number.isInteger(gear.enhancement) || gear.enhancement < 0
@@ -216,7 +230,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${(state.skillsV5||state.run?.skillsV5||state.lastBattle?.skillsV5) ? '15' : state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${state.formationC2 ? '16' : (state.skillsV5||state.run?.skillsV5||state.lastBattle?.skillsV5) ? '15' : state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -229,22 +243,24 @@ function migrateDepth(value: unknown): unknown {
   }
   return next;
 }
-export function importSave(code: string, now = 0): DepthAccount {
+export function importSave(code: string, now = 0, formationC2 = false): DepthAccount {
   const trimmed = code.trim();
   if (trimmed.length > 8_000_000) throw new Error('Save code exceeds the supported size.');
   if (trimmed.startsWith('{')) {
     const legacy: unknown = JSON.parse(trimmed);
     safeTree(legacy);
     validateAccount(legacy);
-    return migrateAccount(legacy, now);
+    const migrated=migrateAccount(legacy, now);
+    return formationC2?setFormationC2(setGameplayA6(migrated,true)):migrated;
   }
-  const match = /^THC(5|6|7|8|9|10|11|12|13|14|15)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC(5|6|7|8|9|10|11|12|13|14|15|16)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8','9','10','11','12','13','14','15'].includes(match[1]!) ? parsed : migrateDepth(parsed);
-  validateDepth(state);
-  if (!['13','14','15'].includes(match[1]!)) initializeJourneyV4(state);
-  validateDepth(state);
-  return state;
+  const state = ['7','8','9','10','11','12','13','14','15','16'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  validateDepth(state,formationC2);
+  if (!['13','14','15','16'].includes(match[1]!)) initializeJourneyV4(state);
+  const migrated=formationC2?setFormationC2(setGameplayA6(state,true)):state;
+  validateDepth(migrated);
+  return migrated;
 }

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "coordinates": "normalized stage; x left-to-right, y top-to-bottom at feet; enemy x mirrors party",
+  "unitHeight": 0.31,
+  "rowStep": 0.34,
+  "slots": [
+    {
+      "id": "FRONT-UP",
+      "row": "front",
+      "x": 0.36,
+      "y": 0.62,
+      "icon": "shield"
+    },
+    {
+      "id": "FRONT-DOWN",
+      "row": "front",
+      "x": 0.36,
+      "y": 0.96,
+      "icon": "shield"
+    },
+    {
+      "id": "BACK-UP",
+      "row": "rear",
+      "x": 0.115,
+      "y": 0.45,
+      "icon": "bow"
+    },
+    {
+      "id": "BACK-DOWN",
+      "row": "rear",
+      "x": 0.115,
+      "y": 0.79,
+      "icon": "bow"
+    }
+  ],
+  "boss": {
+    "x": 0.65,
+    "y": 0.96,
+    "minRatio": 1.7,
+    "maxRatio": 1.95
+  },
+  "bossHelpers": [
+    {
+      "x": 0.915,
+      "y": 0.4
+    },
+    {
+      "x": 0.915,
+      "y": 0.78
+    }
+  ]
+}

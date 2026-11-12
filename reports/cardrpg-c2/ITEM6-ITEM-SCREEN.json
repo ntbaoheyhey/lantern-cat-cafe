@@ -1,0 +1,166 @@
+{
+  "runtimeSha256": "c649df33b9eb33a419084d9292f204387d7932da194aa4dc601d6e8e48e152c4",
+  "seedRange": [
+    95001,
+    95100
+  ],
+  "templates": 128,
+  "cells": 6144,
+  "method": "Actual C2 auto combat. Same seeded enemies before/after adding one +12, maximum-authored-roll piece. Bare crew and fourth set slot; levels/chapter 1/1, 6/2, 6/3; late ordinary and boss. Equal stars and full starting HP. Every template and active crew placement included. No player-scaled or synthetic enemy pressure. Intervals are paired normal approximations; sample bounds do not establish universal item effects.",
+  "tradeTreasure": "CHAIN Treasure remains cosmetic; this tool does not enable legacy relic bonuses.",
+  "worstGainPp": 15,
+  "worstAbsoluteImpactPp": 15,
+  "saturatedBefore": 4668,
+  "saturatedAfter": 4635,
+  "completeCatalog": true,
+  "minimumSamplesPerCell": 100,
+  "pass": false,
+  "misses": [
+    {
+      "template": "bellsteel-weapon-common",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 87,
+      "afterWins": 73,
+      "changedToWin": 0,
+      "changedToLoss": 14,
+      "gainPp": -14.000000000000002,
+      "pairedNormal95Pp": [
+        -20.835207725187633,
+        -7.164792274812372
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    },
+    {
+      "template": "bellsteel-outfit-common",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 85,
+      "afterWins": 72,
+      "changedToWin": 0,
+      "changedToLoss": 13,
+      "gainPp": -13,
+      "pairedNormal95Pp": [
+        -19.62475431219677,
+        -6.37524568780323
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    },
+    {
+      "template": "bellsteel-weapon-rare",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 87,
+      "afterWins": 74,
+      "changedToWin": 1,
+      "changedToLoss": 14,
+      "gainPp": -13,
+      "pairedNormal95Pp": [
+        -20.186666666666667,
+        -5.813333333333334
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    },
+    {
+      "template": "bellsteel-weapon-epic",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 87,
+      "afterWins": 74,
+      "changedToWin": 1,
+      "changedToLoss": 14,
+      "gainPp": -13,
+      "pairedNormal95Pp": [
+        -20.186666666666667,
+        -5.813333333333334
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    },
+    {
+      "template": "bellsteel-weapon-legendary",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 87,
+      "afterWins": 74,
+      "changedToWin": 1,
+      "changedToLoss": 14,
+      "gainPp": -13,
+      "pairedNormal95Pp": [
+        -20.186666666666667,
+        -5.813333333333334
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    },
+    {
+      "template": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "mode": "bare",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 100,
+      "beforeWins": 32,
+      "afterWins": 47,
+      "changedToWin": 16,
+      "changedToLoss": 1,
+      "gainPp": 15,
+      "pairedNormal95Pp": [
+        7.434554897697056,
+        22.565445102302945
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": false
+    }
+  ],
+  "selection": {
+    "at": "2026-11-12T14:16:34.008610+00:00",
+    "screenSha256": "0c34f54c109024dbc836062fd32d7baaea6b2a9a5dcbff656b18244b7366e042",
+    "historicalSha256": "2f9697bd7eb96d4f6990165362a86cbee24d94595ca7795d4e2bbfc4a2e4a0fd",
+    "runtimeSha256": "c649df33b9eb33a419084d9292f204387d7932da194aa4dc601d6e8e48e152c4",
+    "historicalCells": 47,
+    "screenMisses": 6,
+    "newCells": 2,
+    "unionCells": 49,
+    "disjoint": true,
+    "coversScreen": true,
+    "item6NewSeeds": [
+      103001,
+      104000
+    ],
+    "item7UnionSeeds": [
+      104001,
+      105000
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import { validRowsC2 } from './formation-c2';
 import { clone, integer, requireRule } from '../internal';
 import type { BattleSetup, DepthAccount, RunNode } from './contract';
 import { gameplayA6 } from './gameplay-a6';
@@ -41,8 +42,9 @@ export function startTowerFloorA6(state: DepthAccount, floor = Math.min(TOWER_FL
     requireRule(s.cleared.includes(1), 'LOCKED', 'Clear Tangled Cafe to open Yarn Tower.');
     const f = towerFloorA6(floor);
     requireRule(floor <= s.towerBest + 1, 'LOCKED', 'Clear the preceding floor first.');
+    requireRule(!s.formationC2||validRowsC2(s.team,s.rows),'INVALID_TEAM','Place two cats in each row.');
     const cats = battleCats(s);
-    s.run = {id:s.nextRunId++,seed:f.seed,chapter:f.chapter,mode:'tower',floor,
+    s.run = {...(s.formationC2?{formationC2:true}:{}),id:s.nextRunId++,seed:f.seed,chapter:f.chapter,mode:'tower',floor,
       gameplayA6:true,skillsV5:true,gameplayV4:true,challengeLevel:f.level,towerA6:{enemyStats:clone(f.enemyStats)},
       nodes:[clone(f.node)],visited:[],current:null,points:0,boons:{},upgrades:{},rewardChoices:[],
       hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),battle:null,complete:false,won:false,

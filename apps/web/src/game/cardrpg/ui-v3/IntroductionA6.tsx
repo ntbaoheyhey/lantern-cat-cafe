@@ -1,3 +1,4 @@
+import {HelpC2} from './TextDietC2';
 import { useEffect, useRef, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
@@ -57,10 +58,10 @@ export function IntroductionA6({ m }: { m: DepthModel }) {
   useEffect(() => { if (!celebration) return; m.audio.ui(); const timer = setTimeout(() => setPending(queue => queue.slice(1)), 5000); return () => clearTimeout(timer); }, [m, celebration]);
   if (!R.gameplayA6(m.state)) return null;
   const step = firstStepViewA6(m), stepIndex = step?.index ?? -1;
-  return <>{m.screen === 'hub' && <aside className="a6-next-goal" aria-label="Your next goal"><small>{step ? 'YOUR FIRST EVENING' : 'NEXT LITTLE ADVENTURE'}</small>
+  return <>{m.state.formationC2&&m.screen==='hub'&&<div className="c2-home-help"><HelpC2 label="Your next goal"><p>{step?.action??intro.goal}</p>{step&&<p>{step.reward}</p>}</HelpC2></div>}{!m.state.formationC2&&m.screen === 'hub' && <aside className="a6-next-goal" aria-label="Your next goal"><small>{step ? 'YOUR FIRST EVENING' : 'NEXT LITTLE ADVENTURE'}</small>
     {step && <ol className="a6-first-path" aria-label="First three steps">{firstSteps.map((item, index) => <li key={item.id} aria-current={index === stepIndex ? 'step' : undefined} data-done={index < stepIndex}><span aria-hidden="true">{index < stepIndex ? '✓' : index + 1}</span>{item.title}</li>)}</ol>}
     <p>{step?.action ?? intro.goal}</p>{step && <strong className="a6-first-reward">{step.reward}</strong>}
   </aside>}
-    {celebration && <aside className="a6-unlock-toast" role="status"><span aria-hidden="true">✦</span><div><small>NOW OPEN</small><strong>{celebration.name}</strong><p>{celebration.hint}</p></div><button aria-label="Dismiss celebration" onClick={dismiss}>×</button></aside>}
+    {celebration && <aside className="a6-unlock-toast" role="status"><span aria-hidden="true">✦</span><div><small>NOW OPEN</small><strong>{celebration.name}</strong>{!m.state.formationC2&&<p>{celebration.hint}</p>}</div><button aria-label="Dismiss celebration" onClick={dismiss}>×</button></aside>}
   </>;
 }

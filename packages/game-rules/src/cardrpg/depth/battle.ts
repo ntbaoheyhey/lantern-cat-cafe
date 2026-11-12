@@ -1,3 +1,5 @@
+import { FORMATION_C2, validRowsC2 } from './formation-c2';
+import { ECONOMY_C2 } from './economy-c2';
 import { triggerPairCombosA6 } from './bonds-a6';
 import { gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
 import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
@@ -14,7 +16,7 @@ import { ROUTE_SKILL_POWER_PER_RANK } from './route-upgrades';
 import { challengeStatsV4, phaseBossV4, finishBossV4 } from './pacing-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
-import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Intent, type Skill, type StatusId } from './contract';
+import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Intent, type Skill, type Status, type StatusId } from './contract';
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
 const hasEffect = (actor: Actor, id: string) => actor.setEffects.includes(id);
@@ -34,7 +36,14 @@ export function dispel(b: Battle, source: Actor, target: Actor, kind: 'buff' | '
   target.statuses = target.statuses.filter(s => STATUS_BY_ID[s.id].kind !== kind || !STATUS_BY_ID[s.id].dispellable);
   record(b, source, target, 'dispel', before - target.statuses.length, `Removed ${kind}s`);
 }
-export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusId, count = 1) {
+export function linkShareBps(b: Battle, protector: Actor, status: Status) {
+  // Missing provenance retains the former snapshot behavior. New C2 links
+  // carry their own strength; equipping a set cannot weaken a native skill.
+  return b.initial.formationC2 && status.linkShareBp !== undefined ? status.linkShareBp
+    : b.v4 && hasEffect(protector,'defend-link') ? (b.initial.formationC2 ? ECONOMY_C2.sets.hearthloomShareBp : 1500)
+    : STATUS_BY_ID.link.strength * 100;
+}
+export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusId, count = 1, linkStrengthBp?: number) {
   if(b.initial.skillsV5)id=statusIdV5(id);
   const rule = b.initial.skillsV5?statusRuleV5(id,STATUS_BY_ID[id]):STATUS_BY_ID[id];
   if (target.hp <= 0) return false;
@@ -49,6 +58,11 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   }
   if(b.v4&&rule.kind==='debuff'&&target.bonuses.pantryCleanse){target.bonuses.pantryCleanse=0;record(b,target,target,'cleanse',1,'Clearleaf Tea cleared the first debuff');return false;}
   let status = target.statuses.find(s => s.id === id);
+  if (b.initial.formationC2 && id === 'link' && status) {
+    const previousSource = status.source;
+    const protector = b.actors.find(a => a.id === previousSource && a.hp > 0 && a.id !== target.id);
+    if (protector && linkShareBps(b,protector,status) > (linkStrengthBp ?? rule.strength * 100)) return false;
+  }
   if (!status) {
     status = { id, stacks: 0, remaining: 0, source: source.id, appliedRound: b.round };
     target.statuses.push(status);
@@ -60,6 +74,7 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   if (control && ENEMY_BY_ID[target.catalogId]?.tier === 'boss') status.remaining = 1;
   status.source = source.id;
   status.appliedRound = b.round;
+  if (b.initial.formationC2 && id === 'link') status.linkShareBp = linkStrengthBp ?? rule.strength * 100;
   if (control&&!b.initial.skillsV5) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
   if(b.initial.skillsV5)emitGameplayEvent(b,{kind:'status-applied',statusId:id,stacks:status.stacks,sourceId:source.id,actorId:source.id,targetId:target.id,text:`${target.name}: ${rule.name} ×${status.stacks}.`});
@@ -160,7 +175,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const tangled = b.v4 ? 1-stacks(source,'tangle')*.04 : 1;
   let amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance * critical * tangled));
   if (b.v4 && cover && target.row==='rear' && living(b,target.side).some(a=>a.row==='front')) {
-    const prevented = amount - Math.max(1,Math.round(amount*.9)); amount -= prevented;
+    const prevented = amount - Math.max(1,Math.round(amount*(b.initial.formationC2?FORMATION_C2.rearCoverMultiplier:.9))); amount -= prevented;
     if (prevented) emitGameplayEvent(b,{kind:'formation-cover',actorId:source.id,targetId:target.id,amount:prevented,text:`Front cover prevented ${prevented} damage to ${target.name}.`});
   }
   target.shield = Math.max(0, target.shield - stacks(target, 'brittle') * 15);
@@ -171,7 +186,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const link = target.statuses.find(s => s.id === 'link');
   const protector = link && b.actors.find(a => a.id === link.source && a.hp > 0 && a.id !== target.id);
   if (protector) {
-    const shared = Math.floor(hpDamage * (b.v4 && hasEffect(protector,'defend-link') ? .15 : .3));
+    const shared = Math.floor(hpDamage * linkShareBps(b,protector,link) / 10000);
     hpDamage -= shared;
     loseHp(b, source, protector, shared, 'shared');
   }
@@ -226,6 +241,7 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
+  if(setup.formationC2&&(!setup.gameplayA6||!validRowsC2(setup.cats.map(c=>c.id),Object.fromEntries(setup.cats.map(c=>[c.id,c.row])))))throw Error('C2 requires four cats, two in each row, and Gameplay A6');
   if(setup.gameplayA6&&(!setup.skillsV5||!setup.gameplayV4))throw Error('Gameplay A6 requires Skills V5');
   if(setup.skillsV5&&!setup.gameplayV4)throw Error('Skills V5 requires automatic Gameplay V4');
   const initial = clone(setup);
@@ -243,6 +259,7 @@ export function createBattle(setup: BattleSetup): Battle {
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
+  if(setup.formationC2){const count={front:0,rear:0};for(const foe of actors.filter(a=>a.side==='enemy')){if(count[foe.row]>=2)foe.row=foe.row==='front'?'rear':'front';count[foe.row]++;}}
   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
   if (setup.gameplayV4) {
     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};
@@ -266,7 +283,7 @@ export function createBattle(setup: BattleSetup): Battle {
     if(b.v4) { openingCrewBonus(setup.cats.map(c=>c.id),actor); actor.shield+=actor.bonuses.openingCharge??0; }
     else actor.charge = Math.min(100,actor.charge+boonValue(b,'openingCharge')+(actor.bonuses.openingCharge??0));
     if(hasEffect(actor,'opening-decoy')) { if(b.v4) actor.shield+=12; else applyStatus(b,actor,actor,'decoy'); }
-    if(hasEffect(actor,'unique:softcollar')) { if(b.v4) actor.shield+=15; else applyStatus(b,actor,actor,'sprout'); }
+    if(hasEffect(actor,'unique:softcollar')) { if(b.v4) actor.shield+=setup.formationC2?ECONOMY_C2.uniques.softcollarShield:15; else applyStatus(b,actor,actor,'sprout'); }
     if (boonValue(b,'openingSteep')) applyStatus(b,actor,actor,'steep',boonValue(b,'openingSteep'));
     if (combos.some(c => c.id==='warm-table')) actor.shield += 20;
     if (combos.some(c => c.id==='night-garden')) actor.charge += 10;
@@ -296,7 +313,7 @@ function setIntents(b: Battle) {
     const rear = party.filter(p => p.row==='rear');
     const front=party.filter(p=>p.row==='front');
     const reachable=b.v4&&front.length?front:party;
-    const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
+    const target = spec.mechanic==='steal' && (!b.initial.formationC2||signature) && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
     const intent:Intent={actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
     return b.initial.skillsV5?enemyIntentV5(b,a,intent):intent;
   });
@@ -417,7 +434,21 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: EffectV5,
       } else {b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);}
       break;
     }
-    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));if(hasEffect(actor,'unique:rainbell')){if(b.v4){const debuff=actor.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);if(debuff)actor.statuses=actor.statuses.filter(s=>s!==debuff);}else dispel(b,actor,actor,'debuff');}break; }
+    case 'swap': {
+      const row=actor.row;actor.row=target.row;target.row=row;
+      shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));
+      shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));
+      if(hasEffect(actor,'unique:rainbell')){
+        if(b.v4){
+          const debuff=actor.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);
+          if(debuff){
+            if(b.initial.formationC2)debuff.stacks=Math.max(0,debuff.stacks-ECONOMY_C2.uniques.rainbellCleanseStacks);
+            if(!b.initial.formationC2||debuff.stacks===0)actor.statuses=actor.statuses.filter(s=>s!==debuff);
+          }
+        }else dispel(b,actor,actor,'debuff');
+      }
+      break;
+    }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }
     case 'break': if(b.v4){applyStatus(b,actor,target,'rattled',1);break;}target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
@@ -487,8 +518,17 @@ export function act(b: Battle, choice: Choice): boolean {
   if (actor.catalogId==='panko'&&skill.id==='defend') applyStatus(b,actor,actor,'riposte');
   if(skill.id==='defend'){
     if(hasEffect(actor,'defend-shield'))gearGrant(b,actor,actor,'defend-shield','shield',b.v4?12:25);
-    if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link');}
-    if(hasEffect(actor,'defend-riposte')){applyStatus(b,actor,actor,'shelter');applyStatus(b,actor,actor,'riposte');}
+    if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link',1,ECONOMY_C2.sets.hearthloomShareBp);}
+    if(hasEffect(actor,'defend-riposte')){
+      if(!b.initial.formationC2||(actor.bonuses.bellsteelShelters??0)<ECONOMY_C2.sets.bellsteelSheltersPerBattle){
+        applyStatus(b,actor,actor,'shelter');
+        if(b.initial.formationC2)actor.bonuses.bellsteelShelters=(actor.bonuses.bellsteelShelters??0)+1;
+      }
+      if(!b.initial.formationC2||(actor.bonuses.bellsteelRipostes??0)<ECONOMY_C2.sets.bellsteelRipostesPerBattle){
+        applyStatus(b,actor,actor,'riposte');
+        if(b.initial.formationC2)actor.bonuses.bellsteelRipostes=(actor.bonuses.bellsteelRipostes??0)+1;
+      }
+    }
     if(hasEffect(actor,'unique:panlid'))applyStatus(b,actor,actor,'riposte',b.v4?1:2);
     if(hasEffect(actor,'unique:doorstop'))gearGrant(b,actor,actor,'unique:doorstop','heal',b.v4?8:25);
   }
@@ -536,9 +576,9 @@ export function enemyAct(b: Battle): boolean {
   const intent=b.intents.find(i=>i.actorId===actor.id)!;
   const spec=ENEMY_BY_ID[actor.catalogId]!;
   const party=living(b,'party');
-  const shelter=party.find(a=>stacks(a,'shelter'));
+  const shelter=party.find(a=>stacks(a,'shelter')&&(!b.initial.formationC2||a.row==='front'||!party.some(p=>p.row==='front')));
   const front=party.filter(a=>a.row==='front');
-  const reachable=b.v4&&front.length&&spec.mechanic!=='steal'?front:party;
+  const reachable=b.v4&&front.length&&(spec.mechanic!=='steal'||b.initial.formationC2&&!intent.signature)?front:party;
   const target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
   if (!target) {checkResult(b);return false;}
   shield(b,actor,actor,stacks(actor,'glaze')*20);

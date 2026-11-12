@@ -5,9 +5,22 @@ let source: Promise<HTMLImageElement> | undefined;
 /** Decode once across battle scenes; a failed request may retry on a later scene. */
 export function cafePainting() {
  return source ??= (() => {
-  const image = new Image(); image.src = cafeUrl;
-  return image.decode().then(() => image).catch((error: unknown) => { source = undefined; throw error; });
+  const image = new Image();
+  const loaded = typeof image.decode==='function'
+   ? (image.src=cafeUrl,image.decode())
+   : new Promise<void>((resolve,reject)=>{image.onload=()=>resolve();image.onerror=()=>reject(new Error('Cafe painting unavailable'));image.src=cafeUrl;});
+  return loaded.then(() => image).catch((error: unknown) => { source = undefined; throw error; });
  })();
+}
+
+/** Extend the existing painted floor for the two raised formation seats. No new character art. */
+export function formationPaintingC2(image: HTMLImageElement) {
+ const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
+ const c=canvas.getContext('2d')!,cut=Math.round(image.naturalHeight*.70),horizon=340;
+ c.filter=`saturate(${PAINT.stage.paintingSaturation}) contrast(${PAINT.stage.paintingContrast}) brightness(${PAINT.stage.paintingBrightness})`;
+ c.drawImage(image,0,0,image.naturalWidth,cut,0,0,2048,horizon);
+ c.drawImage(image,0,cut,image.naturalWidth,image.naturalHeight-cut,0,horizon,2048,1024-horizon);
+ return canvas;
 }
 
 /** Runtime mattes separate distant panes, cafe wall and floor from one original painting. */

@@ -11,9 +11,11 @@ import { CAT_BY_ID } from './catalog';
 import { requireHome, transactDepth } from './state';
 import type { DepthAccount } from './contract';
 import type { GameplayEventV4 } from './events-v4';
+import { ECONOMY_C2 } from './economy-c2';
 
 export const SELECTOR_COST_V4 = 24;
-export const invitationBannerV4 = (id:string,state?:DepthAccount) => ({...bannerById(id),...(state?.gameplayA6?{cost:{stamps:60}}:{}),softPity:13,hardPity:24,softStepBp:700});
+export const invitationBannerV4 = (id:string,state?:DepthAccount) => ({...bannerById(id),...(state?.gameplayA6?{cost:{stamps:state.formationC2&&id==='equipment'?ECONOMY_C2.equipmentInvitation.stamps:60}}:{}),softPity:13,hardPity:24,softStepBp:700});
+export const selectorCostV4 = (s:DepthAccount,kind:'cat'|'gear',id:string) => s.formationC2&&kind==='gear'&&GEAR_BY_ID[id]?.rarity==='legendary'?ECONOMY_C2.legendary.selectorMarks:SELECTOR_COST_V4;
 export function invitationOddsV4(id:string,pity:PityState=emptyPity()) {
  const banner=invitationBannerV4(id);
  // Old THC12 counters keep their earned credit: an over-threshold counter guarantees the next draw.
@@ -79,7 +81,8 @@ export function getDrawPoolV4(s:DepthAccount,bannerId:string){
 export function selectorEligibilityV4(s:DepthAccount,kind:'cat'|'gear',id:string):string|null {
  if(!gameplayV4(s)||!s.v4)return 'Enable Gameplay v4 first.';
  if(s.run&&!s.run.complete)return 'Finish the current route.';
- if(selectorMarksV4(s)<SELECTOR_COST_V4)return `Earn ${SELECTOR_COST_V4-selectorMarksV4(s)} more selector marks.`;
+ const cost=selectorCostV4(s,kind,id);
+ if(selectorMarksV4(s)<cost)return `Earn ${cost-selectorMarksV4(s)} more selector marks.`;
  if(kind==='cat'){
   if(!CARDS.some(c=>c.id===id))return 'Choose a companion.';
   if(s.account.cards.some(c=>c.cardId===id)&&!CARDS.every(c=>s.account.cards.some(o=>o.cardId===c.id)))return 'Choose an uncollected companion first.';
@@ -99,5 +102,5 @@ export function chooseSelectorV4(state:DepthAccount,kind:'cat'|'gear',id:string)
   if(owned)owned.shards=safeAdd(owned.shards,C.rarity[cat.rarity].shards);
   else{s.account.cards.push({id,cardId:id,level:1,stars:1,shards:0,soulbound:true});s.account.loadouts[id]={};s.rows[id]=CAT_BY_ID[id]!.row;s.skills[id]=CAT_BY_ID[id]!.skills.slice(0,3).map(k=>k.id);}
  }else s.gear.push(makeGear(s,id,deriveSeed(s.account.seed,s.account.nextId)));
- s.v4!.selectorMarks=selectorMarksV4(s)-SELECTOR_COST_V4;
+ s.v4!.selectorMarks=selectorMarksV4(s)-selectorCostV4(s,kind,id);
 });}

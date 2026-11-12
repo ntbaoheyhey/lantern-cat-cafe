@@ -8,6 +8,7 @@ import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
+import { passivePresentation } from './passive-presentation';
 import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
 export type Screen = 'tower' | 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
@@ -64,13 +65,13 @@ export class DepthModel {
   get cafeNow() { return this.offline ? this.cafeClockBase + Math.max(0, Date.now() - this.cafeClockStart) : Date.now(); }
   private resetCafeClock() { this.cafeClockStart = Date.now(); this.cafeClockBase = Math.max(this.state.idle.lastAt, this.state.v4?.clockWatermark ?? 0, (this.state.idle.dayKey ?? 0) * 86400000); }
 
-  constructor(readonly offline: boolean, readonly gameplayMode = false, readonly skillsMode = false, readonly a6Mode = false) {
+  constructor(readonly offline: boolean, readonly gameplayMode = false, readonly skillsMode = false, readonly a6Mode = false, readonly c2Mode = false) {
     this.state = R.createDepthAccount(11, offline ? 0 : Date.now());
     if (!offline) {
       try {
         const saved = localStorage.getItem(R.SAVE_KEY);
         if (saved) {
-          this.state = R.importSave(saved, Date.now());
+          this.state = R.importSave(saved, Date.now(), this.c2Mode);
           this.notice = 'Welcome back. Your progress is restored.';
         }
       } catch (error) {
@@ -82,12 +83,19 @@ export class DepthModel {
       this.state.selectedRelic = null;
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
-    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock();
+    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock();
     this.itemId = this.state.gear[0]?.id ?? '';
     if (!offline) {
       try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
     }
     this.restoreEncounter();
+    this.consumeFormationNotice();
+  }
+  private consumeFormationNotice() {
+    const notice=this.state.formationNoticeC2;if(!notice)return;
+    delete this.state.formationNoticeC2;
+    this.notice=notice==='bench'?'Strongest four ready. Others benched.':'Four companions ready.';
+    this.notify();
   }
   saveTeamPreset(index: number) {
     if (!Number.isInteger(index) || index < 0 || index >= 3) return;
@@ -185,7 +193,7 @@ export class DepthModel {
     }
   }
   tutorial() {
-    this.tutorialBattle = R.createBattle({ ...(R.gameplayA6(this.state)?{gameplayA6:true}:{}),...(R.skillsV5(this.state)?{skillsV5:true}:{}),seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
+    this.tutorialBattle = R.createBattle({ ...(this.state.formationC2?{formationC2:true}:{}),...(R.gameplayA6(this.state)?{gameplayA6:true}:{}),...(R.skillsV5(this.state)?{skillsV5:true}:{}),seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
       ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan,
         enemyStats: { 'practice-cushion': { hp: 300, attack: 60, defense: 0 } } } : {}) });
     this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
@@ -272,8 +280,6 @@ export class DepthModel {
     if (!actor) return;
     const snapshot = snapshotBattle(battle);
     const before = battle.log.length;
-    const passiveBefore = actor.passiveUsed;
-    const shieldBefore = actor.shield;
     const intent = battle.intents.find(candidate => candidate.actorId === actor.id);
     const softened = intent?.interrupted || actor.statuses.some(status => status.id === 'drowsy');
     const utility = !battle.v4 && ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
@@ -315,12 +321,8 @@ export class DepthModel {
     const actionEvents = battle.log.slice(before);
     const combos = actionEvents.filter(event => event.kind === 'bond.combo');
     if (combos.length) { this.comboBanner = combos.map(event => event.text).join(' · '); this.comboBannerUntil = this.playbackAt + 1800; }
-    const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
-      && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
-    const sootDetonation = actor.catalogId === 'soot'
-      && actionEvents.some(event => event.kind === 'detonate' && event.amount > 0);
-    const cloverCleanse = actor.catalogId === 'clover' && !passiveBefore && actor.passiveUsed;
-    if (mochiShield || sootDetonation || cloverCleanse) this.plan.presentationCues = [`${actor.catalogId}-passive`];
+    Object.assign(this.plan, passivePresentation(snapshot, presentation.impact));
+    if (this.roundPlan) Object.assign(this.roundPlan, passivePresentation(presentation.impact, battle));
     this.animationAt = 0;
     this.notify();
   }
@@ -431,23 +433,23 @@ export class DepthModel {
   }
   import(code: string) {
     try {
-      const next = R.importSave(code, this.offline ? 0 : Date.now());
+      const next = R.importSave(code, this.offline ? 0 : Date.now(), this.c2Mode);
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
       this.restoreEncounter();
       this.paused = false;
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
-      this.storageFailed = false; this.notice = 'Save imported and checksum verified.'; this.error = false; this.notify();
+      this.storageFailed = false; this.notice = 'Save imported and checksum verified.'; this.error = false; this.consumeFormationNotice(); this.notify();
     } catch (error) { this.error = true; this.notice = String(error); this.notify(false); }
   }
   reset() {
     this.state = R.setGameplayV4(R.createDepthAccount(11, this.offline ? 0 : Date.now()), this.gameplayMode);
     if(this.skillsMode)this.state=R.setSkillsV5(this.state,true);
-    this.state=R.setGameplayA6(this.state,this.a6Mode); this.resetCafeClock();
+    this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock();
     this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
     this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';
-    this.storageFailed = false; this.notice = 'A fresh cafe is ready.'; this.go('hub'); this.notify();
+    this.storageFailed = false; this.notice = 'A fresh cafe is ready.'; this.consumeFormationNotice(); this.go('hub'); this.notify();
   }
   shortcut(kind: 'unlock' | 'stamps' | 'chapter') {
     if (!this.offline) return;

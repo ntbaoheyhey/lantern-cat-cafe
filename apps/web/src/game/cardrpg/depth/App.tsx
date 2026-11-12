@@ -46,7 +46,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
   const a6 = gameplayA6();
   const uiV3 = uiV3Enabled() || a6;
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6));
+  const [m] = useState(() => new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6, a6));
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -72,7 +72,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     // A6 is an explicit opt-in; its illustrated DOM and B's puppets share one art direction.
     const previousArt=window.__LOOK_ART__;
     if(a6){window.__LOOK_ART__='v3';setLookV2(true);}
-    if (offline || import.meta.env.DEV) window.__depthReview = m;
+    if (offline || import.meta.env.DEV || new URLSearchParams(location.search).get('demo') === '1' && new URLSearchParams(location.search).get('dev') === '1') window.__depthReview = m;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       m.state.settings.reducedMotion = true;
       m.notify(false);

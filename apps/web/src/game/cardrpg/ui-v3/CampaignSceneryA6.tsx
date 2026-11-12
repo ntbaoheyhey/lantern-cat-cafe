@@ -56,7 +56,7 @@ export function CampaignSceneryA6({m}:{m:DepthModel}){
  const run=m.state.run,nodes=run?.nodes??R.generateMap(1,1),available=run?R.availableNodes(run).map(n=>n.id):[],stars=R.starCountV4(m.state);
  return <section className="a6-scenic" aria-label="Branching chapter route" data-reduced={m.state.settings.reducedMotion}>
   <NightStreet/>
-  <div className="a6-map-caption"><span>✦</span> {run?`Chapter ${run.chapter} · ${R.CHAPTERS[run.chapter-1]!.name}`:'A little adventure after closing'}<small>{run?'Follow the glowing lanterns':'Choose a chapter above to begin'}</small></div>
+  <div className="a6-map-caption"><span>✦</span> {m.state.formationC2?'☾':run?`Chapter ${run.chapter} · ${R.CHAPTERS[run.chapter-1]!.name}`:'A little adventure after closing'}{!m.state.formationC2&&<small>{run?'Follow the glowing lanterns':'Choose a chapter above to begin'}</small>}</div>
   <svg className="a6-route-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">{nodes.flatMap(node=>node.next.map(next=>{
    const target=nodes.find(n=>n.id===next);if(!target)return null;
    const [x,y]=position(node),[tx,ty]=position(target),d=`M${x} ${y}C${(x+tx)/2} ${y},${(x+tx)/2} ${ty},${tx} ${ty}`;
@@ -66,18 +66,18 @@ export function CampaignSceneryA6({m}:{m:DepthModel}){
   {nodes.map(node=>{
    const [x,y]=position(node),visited=run?.visited.includes(node.id),current=run?.current===node.id,open=available.includes(node.id),art=node.enemies[0];
    const recommended=run&&node.enemies.length?R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,enemyStats:R.campaignEnemyStatsA6(run,node),mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0):undefined;
-   return <button key={node.id} className="dp-node a6-scenic-stop" data-kind={node.kind} data-visited={visited} data-current={current} data-open={open} style={{'--stop-x':`${x/12}%`,'--stop-y':`${y/5}%`} as CSSProperties} aria-current={current?'step':undefined} disabled={!open} onClick={()=>m.enter(node.id)} title={node.enemies.map(id=>R.ENEMY_BY_ID[id]!.name).join(' · ')||labels[node.kind]}>
+   return <button key={node.id} className="dp-node a6-scenic-stop" data-kind={node.kind} data-visited={visited} data-current={current} data-open={open} style={{'--stop-x':`${x/12}%`,'--stop-y':`${y/5}%`} as CSSProperties} aria-label={`${labels[node.kind]} ${node.depth+1}${open?' · Go here':''}`} aria-current={current?'step':undefined} disabled={!open} onClick={()=>m.enter(node.id)} title={node.enemies.map(id=>R.ENEMY_BY_ID[id]!.name).join(' · ')||labels[node.kind]}>
     <span className="a6-stop-medallion">{art?<img {...artPropsA6(art)} alt=""/>:<span aria-hidden="true">{symbols[node.kind]}</span>}</span>
-    <b>{labels[node.kind]}</b><small>{open?'Go here':current?'You are here':visited?'Cleared':`Stop ${node.depth+1}`}</small>
+    <b>{m.state.formationC2?symbols[node.kind]:labels[node.kind]}</b><small>{m.state.formationC2?(visited?'✓':node.depth+1):open?'Go here':current?'You are here':visited?'Cleared':`Stop ${node.depth+1}`}</small>
     {run&&<NodeStarsV4 m={m} node={node}/>}
-    {recommended!==undefined&&<span className="a6-stop-power">Rec. {recommended.toLocaleString('en-US')}</span>}
+    {recommended!==undefined&&<span className="a6-stop-power">{m.state.formationC2?'⚡':'Rec.'} {recommended.toLocaleString('en-US')}</span>}
    </button>;
   })}
   <div className="a6-map-milestones" aria-label="Star chests">{R.STAR_REWARDS_V4.map((chest,i)=>{
    const p=R.starRewardPreviewV4(m.state,chest.id),reduced=!p.claimed&&giftReducedA6(p.requested,p.reward);
    const amounts=(cost:typeof p.reward)=>Object.entries(cost).map(([id,n])=>`${n} ${id}`).join(' · ');
    return <button key={chest.id} className="a6-map-chest" data-ready={!p.reason} data-claimed={p.claimed} data-reduced={reduced} style={{left:`${[35,57,90][i]}%`,top:`${i===0?16:85}%`}} disabled={!!p.reason} title={p.reason??(reduced?REDUCED_GIFT_NOTE_A6:chest.name)} onClick={()=>m.apply(R.claimStarRewardV4(m.state,chest.id),'Star chest collected.')}>
-    <Icon name="chest"/><span><b>{p.claimed?'Collected':`${chest.target} stars`}</b>{p.claimed?<small>Thank you!</small>:<><small>{Math.min(stars,chest.target)}/{chest.target} · Full gift: {amounts(p.requested)}</small>{reduced&&<small>Today: {amounts(p.reward)}</small>}{!p.reason&&reduced&&<small>Uses the whole gift.</small>}</>}</span>
+    <Icon name="chest"/><span><b>{m.state.formationC2?(p.claimed?'✓':`★ ${chest.target}`):p.claimed?'Collected':`${chest.target} stars`}</b>{m.state.formationC2?<small>{Math.min(stars,chest.target)}/{chest.target}{reduced?' ⚠':''}</small>:p.claimed?<small>Thank you!</small>:<><small>{Math.min(stars,chest.target)}/{chest.target} · Full gift: {amounts(p.requested)}</small>{reduced&&<small>Today: {amounts(p.reward)}</small>}{!p.reason&&reduced&&<small>Uses the whole gift.</small>}</>}</span>
    </button>;
   })}</div>
  </section>;

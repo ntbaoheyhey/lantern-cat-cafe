@@ -1,3 +1,5 @@
+import { partySize, validRowsC2 } from './formation-c2';
+import { BALANCE_C2 } from './balance-c2';
 import { patrolDefaultsA6, campaignPressureA6 } from './onboarding-a6';
 import { powerScoreA6 } from './power-a6';
 import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
@@ -73,6 +75,11 @@ export function campaignEnemyStatsA6(run: Run, node: RunNode) {
     if (ENEMY_BY_ID[id]!.tier === 'boss')
       stats[id]!.attack = Math.max(1, Math.round(stats[id]!.attack * (run.chapter === 2 ? .78 : .9)));
   }
+  if (run.formationC2) for (const [id, value] of Object.entries(stats)) {
+    const budget = ENEMY_BY_ID[id]?.tier === 'boss' ? BALANCE_C2.campaign.boss : BALANCE_C2.campaign.ordinary;
+    value.hp = Math.max(1, Math.round(value.hp * budget.hp[run.chapter - 1]!));
+    value.attack = Math.max(1, Math.round(value.attack * budget.attack[run.chapter - 1]!));
+  }
   return stats;
 }
 export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06', challengeLevel?: number): RuleResult<DepthAccount> {
@@ -83,8 +90,10 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
     requireRule(mode!=='tower'||s.cleared.includes(3),'LOCKED','Clear Midnight Pantry to open the Tower.');
     const defaultBand=s.gameplayA6&&mode==='campaign'?patrolDefaultsA6(s).band:undefined;
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
+    requireRule(!s.formationC2||validRowsC2(s.team,s.rows),'INVALID_TEAM','Place two cats in each row.');
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
+    if(s.formationC2)s.run.formationC2=true;
     if(s.gameplayA6&&mode==='campaign')for(const node of s.run.nodes)
       if(node.kind==='battle'&&node.depth>=4)node.enemies.push('binding-thread');
     if(s.gameplayV4){
@@ -101,7 +110,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      const setup={...(run.formationC2?{formationC2:true}:{}),...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
       if(run.gameplayA6&&run.mode==='campaign')setup.enemyStats=campaignEnemyStatsA6(run,node);
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
@@ -113,9 +122,10 @@ export function configurePreparation(state: DepthAccount, team: string[], rows: 
     const run=s.run,battle=run?.battle;
     requireRule(run&&battle?.v4&&!run.complete&&!battle.result&&!battle.v4.committed&&battle.choices.length===0&&battle.actors.every(a=>a.turns===0),'NOT_READY','Preparation is locked after Fight.');
     requireRule(validPlan(plan),'INVALID_AMOUNT','Choose a valid standing plan.');
-    requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three collected companions.');
+    requireRule(team.length===partySize(s)&&new Set(team).size===partySize(s)&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM',`Choose ${partySize(s)} collected companions.`);
     requireRule(team.every(id=>['front','rear'].includes(rows[id]!))&&team.some(id=>rows[id]==='front'&&(run.hp[id]??1)>0),'INVALID_TEAM','Keep at least one living companion in front.');
-    const changed=team.some((id,i)=>id!==s.team[i]);
+    requireRule(!s.formationC2||validRowsC2(team,rows,run.hp),'INVALID_TEAM','Two per row; keep a living cat in front.');
+    const changed=s.formationC2?team.some(id=>!s.team.includes(id)):team.some((id,i)=>id!==s.team[i]);
     requireRule(!changed||run.visited.length===0&&(run.floor===1||!!run.towerA6),'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
     requireRule(!battle.initial.packedSupply||team.includes(battle.initial.packedSupply.catId),'INVALID_TEAM','Keep the companion with the packed supply for this encounter.');
     s.team=[...team]; s.rows={...s.rows,...rows};
@@ -124,7 +134,7 @@ export function configurePreparation(state: DepthAccount, team: string[], rows: 
     s.v4.plan={...plan};
     const cats=battleCats(s);
     for(const cat of cats) run.hp[cat.id]=Math.min(run.hp[cat.id]??cat.stats.hp,cat.stats.hp);
-    run.battle=createBattle({...battle.initial,cats,hp:clone(run.hp),plan:{...plan}});
+    run.battle=createBattle({...battle.initial,...(s.formationC2?{formationC2:true}:{}),cats,hp:clone(run.hp),plan:{...plan}});
     s.lastBattle=clone(run.battle.initial); s.lastChoices=[];
   });
 }
@@ -132,6 +142,7 @@ export function commitPreparation(state: DepthAccount): RuleResult<DepthAccount>
   return transactDepth(state,s=>{
     const battle=s.run?.battle;
     requireRule(battle?.v4&&!battle.result,'NOT_READY','Open an automatic preparation first.');
+    requireRule(!battle.initial.formationC2||validRowsC2(battle.actors.filter(a=>a.side==='party').map(a=>a.id),Object.fromEntries(battle.actors.map(a=>[a.id,a.row])),Object.fromEntries(battle.actors.map(a=>[a.id,a.hp]))),'INVALID_TEAM','Keep a living cat in front.');
     battle.v4.committed=true;
     delete s.run!.packedSupply;
   });

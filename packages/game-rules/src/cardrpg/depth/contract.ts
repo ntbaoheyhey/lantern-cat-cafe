@@ -15,7 +15,7 @@ export interface StatusRule {
   id: StatusId; name: string; description: string; kind: 'buff' | 'debuff'; cap: number;
   duration: number; dispellable: boolean; tick: 'damage' | 'heal' | 'none'; strength: number;
 }
-export interface Status { id: StatusId; stacks: number; remaining: number; source: string; appliedRound: number }
+export interface Status { id: StatusId; stacks: number; remaining: number; source: string; appliedRound: number; linkShareBp?: number }
 export type Mechanic = 'hit' | 'shield' | 'heal' | 'cleanse' | 'dispel' | 'detonate' | 'transfer' | 'revive' | 'execute' | 'chain' | 'energy' | 'swap' | 'drain' | 'consume' | 'break' | 'rally';
 export interface Effect { kind: Mechanic; power?: number; status?: StatusId; stacks?: number; self?: boolean }
 export interface Skill {
@@ -52,7 +52,7 @@ export interface Battle {
 export interface BattleSetup {
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
-  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; plan?: StandingPlan;
+  formationC2?: boolean; gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; plan?: StandingPlan;
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
   enemyStats?: Record<string, Pick<Enemy, 'hp' | 'attack' | 'defense'>>;
@@ -64,7 +64,7 @@ export interface Run {
   towerA6?: { enemyStats: NonNullable<BattleSetup['enemyStats']> };
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
-  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean;
+  formationC2?: boolean; gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean;
   id: number; seed: number; chapter: number; mode: 'campaign' | 'daily' | 'tower'; nodes: RunNode[];
   visited: string[]; current: string | null; points: number; boons: Record<string, number>;
   hp: Record<string, number>; upgrades: Record<string, number>; rewardChoices: string[];
@@ -78,8 +78,9 @@ export interface GearTemplate {
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
 export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
+  formationNoticeC2?: 'four' | 'bench';
   dailyA6?: DailyProgressA6;
-  gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;
+  formationC2?: boolean; gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;
   version: typeof CONTRACT_VERSION; account: AccountState; team: string[]; rows: Record<string, Row>; skills: Record<string, string[]>;
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];
   gear: GearInstance[]; equipment: Record<string, Partial<Record<Slot, string>>>; awakened: Record<string, number>;

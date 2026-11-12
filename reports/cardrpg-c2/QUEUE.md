@@ -1,0 +1,13 @@
+# C2 queue
+- [x] B0 — 4387 unit passes; 421/421 E2E; inherited research exclusions disclosed.
+- [x] B1 — four-unit staggered formation, migration, targeting, slot contract, visual sheet.
+- [x] V0 — skill/event/timing audit and before clips.
+- [x] V1 — style, painted layered source pipeline, runtime, preview.
+- [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
+- [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
+- [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
+- [x] B4 — Candidate7: all targets pass on five real30-minute UI runs and500 fixed seeds; exact paired combat/policy parity; earlier failures retained.
+- [x] B4b — Candidate7: 600 accounts/30 days/28 start dates validated; all economy targets pass; 128-template screen and 49 independent fixtures plus predeclared10k follow-up retained with finite-fixture scope; source Odds and69 weekly rows complete.
+- [x] V3 — 86 accepted artworks/timelines: 78 rules-event effects and 8 passive-stat previews; 435/435 E2E; VFX-REPORT.md.
+- [x] B5 — exact READY merged; full verification, visual review and demo complete; draft PR #442; future syncs 15/17 Nov remain.
+- [x] B6 / V4 — Final C2 report and reviewed rarity chart published;86 accepted VFX remain complete; current numbers, screenshots, validation and external gates disclosed.

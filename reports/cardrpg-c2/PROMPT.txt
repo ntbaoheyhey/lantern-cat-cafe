@@ -1,0 +1,106 @@
+USER OVERRIDE 2026-11-12: Remove all self-imposed tuning-pass, return-count and compaction-count stops. Continue from current HANDOFF/QUEUE to the unchanged acceptance targets. The historical prompt below is retained; its conflicting caps are superseded. See RULES.md and DECISIONS.md. STOP-C2, code freeze, no agents, draft-only/no deployment/secrets remain in force.
+
+PASTE INTO A FRESH CODEX SESSION — LANE C2: BATTLE FORMATION 4-STAGGERED + TEXT DIET + PAINTED LAYERED SKILL VFX + REAL-PLAY BALANCE + INTEGRATION — written 2026-11-12 01:00 UTC
+(One session, non-stop to the deadline. Self-contained. If pasting this whole text fails, paste only this line:
+ "Read /Users/bao/art/codex-prompts/PASTE-CODEX-LANE-C2-BATTLE-VFX-2026-11-12.txt completely and follow it from start to end.")
+Replaces the Lane C session (branch codex/cardrpg-c-2026-11-11, draft #439). Lane C's work is DONE work: keep it, never redo it.
+REFERENCE: /Users/bao/taskbar-hero-cardrpg-a6/reports/cardrpg-c/{C-REPORT,HANDOFF,QUEUE,DECISIONS,ASSET-SLOTS,NEEDS-USER}.md ; apps/web/src/game/cardrpg/ui-v3/FormationA6.tsx ; apps/web/src/game/cardrpg/depth/{PreparationV4,chapter-stage}.ts* ; tools/cardrpg-a6/sim.mjs ; docs/design/cardrpg/GAMEPLAY-V4.md ; coordinator plan https://claude.ai/artifact/NxW5sC7fBsynH4NtUCEpyh
+
+=====================================================================
+0. WHY (coordinator review, 12 Nov 00:10 UTC)
+=====================================================================
+- Lane C finished C0-C10, then spent many hours on C11 micro-polish (25+ tiny commits, ~80 receipt files). That stops now: no more receipt files, no micro-polish.
+- Gameplay targets are still missed: real 30-min click session first loss at 6.56 min (target 12-20), boss 170.77 s (target p90 <=110 s), sim normal win ends at 94% HP (target 55-80%). Sim and real play disagree; real play is the truth.
+- Look: battle art is good, but units are small and overlap, the HUD reads like web buttons, and there is too much text ("AI slop"). The user wants fewer words.
+- The user's direction (12 Nov): battle has 2 clear rows, FRONT and BACK. Team of 4 (coordinator choice; 6 later), placed STAGGERED up/down so the art does not overlap.
+- The user can run only 2 Codex sessions. The other one is CHAIN (/Users/bao/taskbar-hero-chain, branch codex/chain-2026-11-12). YOU own battle + skill VFX (cards V0-V4 below, originally a separate lane) and you are the integrator.
+
+SKILL VFX GOAL (user, 12 Nov):The user wants skill effects made the way their designer friend makes animation: DRAW the skill, SPLIT it into layers, then ANIMATE the layers. Beauty is mandatory, not optional. Current skill VFX are code shapes/particles; they look generic. Rebuild them as painted, layered, timed effects that match the game's soft painted storybook cafe look (warm, readable bold core shapes, soft glow, thin dark-warm rim only for contrast; never neon sci-fi, never photo-real).
+Characters stay the designer's job (never generate final character art). VFX art is yours.
+Battle is 2D side view, party left, enemies right, 4 units in 2 staggered rows (lane C2 owns layout and publishes slot coordinates).
+
+
+
+=====================================================================
+1. FIRST TURN
+=====================================================================
+a) If the old Lane C session may still run, create /Users/bao/taskbar-hero-cardrpg-a6/STOP-C and wait until `git status` is clean or 10 minutes pass. Commit any finished uncommitted work on codex/cardrpg-c-2026-11-11 after its tests pass; otherwise commit it to codex/cardrpg-c-wip-2026-11-12. Never discard or reset.
+b) In /Users/bao/taskbar-hero-cardrpg-a6: create branch codex/cardrpg-c2-2026-11-12 from the newest Lane C tip (e55b8c0 or later). Ports 5970-5973.
+c) ONE draft PR, base codex/cardrpg-c-2026-11-11, title "Lane C2: 4-unit staggered formation, text diet, painted skill VFX, real-play balance, integration". Update description after each card.
+d) reports/cardrpg-c2/: PROMPT.txt (verbatim), RULES.md (<=30 lines), QUEUE.md, INBOX.md, HANDOFF.md (<=30 lines), DECISIONS.md, NEEDS-USER.md, STATUS-VI.md (short Vietnamese), PROGRESS.log, C2-REPORT.md. ONE file per card for proof, never per micro-fix.
+e) Start B0 in the same turn. Never end the turn to ask; write to NEEDS-USER.md, pick the safest default, continue.
+
+=====================================================================
+2. QUEUE — ORDER: B0, B1, V0, V1, V2 (pilots + user gate), B2, B3, B4, B4b, V3 (only after approval), B5, V4 inside B6
+=====================================================================
+B0 BASELINE (<=1 h). Full unit + full Playwright E2E once on the tip; record pass/fail counts. Fix real failures only.
+
+B1 FORMATION: 4 UNITS, 2 ROWS, STAGGERED.
+- Rules: party size 4 in every mode (story, tower, daily, boss). Rows FRONT and BACK, at most 2 per row, at least 1 living FRONT. Ordinary enemy attacks hit FRONT while any FRONT lives; BACK is hit only by pierce/area/backline skills. Skills keep their row bonuses; update numbers in game-rules config with notes in DECISIONS.md. Migrate old saves with 5-6 units: keep the 4 strongest by Power, rest to bench, show one short toast.
+- Stage layout (2D side view, party left facing right, enemies mirrored right). Four slots: FRONT-UP, FRONT-DOWN, BACK-UP, BACK-DOWN. BACK slots sit further from center and are shifted up by half a slot height relative to FRONT, so each back unit stands in the gap between front units. Unit height >= 30% of stage height at 1280x720 (bosses per size standard 1.7-1.95x cat). Draw order: lower on screen = in front.
+- Overlap test (unit): for every pair of unit bounding boxes (incl. bosses vs nearest party unit), intersection area <= 15% of the smaller box, at 1280x720, 1440x900, 1024x600. Screenshot sheet docs/cardrpg-c2/formation.html (static, self-contained) with all chapters' first waves + boss.
+- Formation screen: same 4-slot picture as the battle (what you see = what you get), drag or tap to place, row label as an icon (shield = front, bow = back), no paragraphs.
+- Export slot coordinates as a small JSON (apps/web/src/game/cardrpg/stage/slots.json) for the VFX lane; write "SLOTS READY <sha>" in reports/cardrpg-c2/OUTBOX.md as soon as stable (target 13 Nov 06:00 UTC).
+
+B2 TEXT DIET + HUD.
+- Rules: each screen <=25 visible words outside numbers/names; buttons 1-2 words + icon; any explanation behind a "?" popover; remove the top helper bar; numbers instead of sentences; no "receipt"-style text in the player UI.
+- Script tools/cardrpg-c2/word-budget.mjs: Playwright visits every screen in demo mode, counts visible words (excluding numbers and unit/cat names), fails over budget; prints a table. Add it to the E2E set.
+- Battle HUD: HP/rage bars on units, ult button = cat portrait with ring, speed + auto as icons; no web-style rectangular buttons in battle. Keyboard and screen reader labels stay (aria-label may keep full words).
+- Before/after screenshots for 8 main screens in docs/cardrpg-c2/text-diet.html.
+
+B3 REAL-PLAY MEASURE (fix the sim vs real gap first).
+- Bot player tools/cardrpg-c2/realplay-bot.mjs: drives the real UI with Playwright like a new player for 30 minutes (follows the first-time path, picks recommended upgrades, sometimes skips, human-like delays from a fixed seed). Logs: time of first loss, every boss fight duration, end HP %, gold/xp curve. 5 seeds.
+- Find why sim and real differ (e.g. sim skips idle gains, different team, auto-upgrades, timing). Fix the sim so its numbers are within 15% of the bot on the same seeds. Write the cause in DECISIONS.md.
+
+B4 BALANCE ROUND 4 (a 4th round is unlocked; up to 3 more tuning passes inside this card).
+- Targets on the bot (5 seeds) AND the fixed sim (seeds 80001-80500): first loss minute 12-20 (median), boss p90 <=110 s and median 60-90 s, normal win end HP 55-80%, no seed with first loss < 8 min.
+- Tune via config tables only (enemy HP/ATK curve, boss phases, upgrade costs, rewards); log each pass in reports/cardrpg-c2/BALANCE.md (table: pass, change, bot numbers, sim numbers).
+- If still missing after 3 passes, stop tuning, report the gap and the best pass.
+
+B4b RARITY, DROP RATES AND ITEM ECONOMY BALANCE (user: "balance" also means rarity and drop rates of items).
+- Audit every drop/recruit source (stage drops, boss chests, daily, tower, recruit/gacha, forge, salvage): write reports/cardrpg-c2/DROP-TABLE.md (source, item, rarity, rate, pity, duplicates handling).
+- Research first (>=8 cited sources: published gacha odds of large mobile games, pity norms, Japan/China/Korea odds-disclosure rules, papers on loot box fairness). Then set targets in DECISIONS.md; starting targets from coordinator: casual 30 min/day gets first Epic gear day 1-2, first Legendary gear day 10-16, heavy player <= 3x casual progress per hour, no single item > 12 pp win-rate impact, recruit pity hard cap visible, duplicates always convert to something useful.
+- Simulate 30 days x 3 player types x 200 seeds (tools/cardrpg-c2/loot-sim.mjs): time-to-rarity curves, bag size, soft-currency in/out (sink ratio 0.8-1.1), Epic+ gear and rare/limited materials created per week (TRADABLE supply for lane CHAIN; write weekly numbers per item to OUTBOX.md).
+- Tune only via config tables. In game: one "Odds" popover per source (numbers only), required for transparency.
+- Coordinate: lane CHAIN owns packages/game-rules/src/cardrpg/trade.ts (what is tradable); you own drop tables and item stats. Read /Users/bao/taskbar-hero-chain/reports/chain/REQUESTS-TO-C2.md each sync point.
+
+VFX CARDS (art sources under /Users/bao/art/vfx-2026-11-12/, keep big files out of git; log every generated image in reports/cardrpg-c2/vfx/ASSET-LOG.md)
+V0 AUDIT. List every skill/ult/boss attack with its owner, target type (single, row, all, self, ally), current VFX code, current timing and the battle events it hooks (hit, cast, ult-start, ult-end, Spine events). Write reports/cardrpg-c2/vfx/V0-SKILLS.md as a table. Capture current look as 1 short clip per skill (Playwright video) for before/after.
+
+V1 PIPELINE (designer-style).
+1. Paint: for each skill, 1 key frame at 2048 px on transparent background, style from a STYLE SHEET you write first (docs/design/vfx/STYLE.md: palette per element/cat, shape language, edge softness, glow rules, max 3 hues per skill, readable at 25% scale). Use your image tool or hand-painted procedural layers; original only; never feed other games' art as reference; log in ASSET-LOG.md.
+2. Split into 6-10 named layers like a designer PSD: charge-glow, core-shape, trail/smear, impact-burst, sparks/particles, ground-decal, screen-flash, residue. Each layer is a complete clean piece (no cut-off edges, alpha clean), saved as PSD + PNG.
+3. Animate: a timeline JSON per skill (layer, start, end, transform keys, ease, blend mode, flipbook frames if any) in 4 phases: anticipation -> release -> impact -> dissipate, total 0.6-1.2 s (ult 1.4-2.2 s with cut-in using the cat portrait). Add hit-stop 40-80 ms, small camera shake on impact, number pop sync with impact frame.
+4. Runtime: a small player (apps/web/src/game/cardrpg/vfx-layered/) that plays timeline JSON with additive/screen/normal blend, anchored to caster/target slots from the B1 slots.json (until it exists, use current positions and an adapter). Texture atlas per skill, total VFX download <= 6 MB, 60 fps at 1280x720 on the Mac (profile it). Reduced-motion mode: no shake/flash, shorter effects.
+5. Tool: tools/vfx/preview.html — pick a skill, scrub the timeline, toggle layers, see it over the real battle backdrop.
+
+V2 PILOTS (3 skills) + USER GATE. Pilots ready by 13 Nov 18:00 UTC (deadline is 21 Nov UTC+7).
+- Mochi main skill, Mochi ult, Yarn Giant heavy attack.
+- Review page docs/vfx/index.html (static, self-contained): for each pilot the key painting, the layer sheet (exploded view like a designer parts sheet), the timeline, and an MP4/GIF of it in battle; before vs after side by side.
+- Self-check: score 1-10 on readability, beauty, style match, timing feel; must be >= 8 each before showing. Write "PILOTS READY <sha>" in OUTBOX.md and the review path in STATUS-VI.md.
+- GATE: continue to V3 only when /Users/bao/taskbar-hero-cardrpg-a6/APPROVED-VFX exists or INBOX.md has user approval. While waiting, improve the pipeline/tool and the pilots from INBOX notes; never start other skills' final art. If the user says AI paintings are not beautiful enough: switch to "designer paints key frames into /Users/bao/art/designer-inbox/vfx/<skill>/, you only split + animate", and prepare a 1-page Vietnamese brief for the designer (docs/design/vfx/BRIEF-DESIGNER-VI.md).
+
+V3 ALL SKILLS. Do every skill from V0 with the approved process, in order: demo team's skills, demo enemies, bosses, then the rest. Each finished skill = commit + clip in docs/vfx/index.html. When the designer's Spine files land, retime to their Spine events.
+
+V4 REPORT. reports/cardrpg-c2/vfx/VFX-REPORT.md: list of skills with self-scores, perf numbers, size, open items. Due 18 Nov 18:00 UTC.
+
+
+B5 INTEGRATION (sync points 15 Nov 12:00 UTC and 17 Nov 12:00 UTC).
+- Read /Users/bao/taskbar-hero-chain/reports/chain/OUTBOX.md (read-only). Fetch the READY sha and merge with merge commits into codex/cardrpg-integrate-2026-11-12 (branch from your tip). Resolve conflicts keeping both lanes' intent; log in DECISIONS.md. Never write in other lanes' worktrees; send requests by writing reports/cardrpg-c2/REQUESTS-TO-<LANE>.md in YOUR worktree and pushing.
+- Full unit + full E2E + chain E2E (Anvil) + word-budget on the integrated branch. Fix integration bugs on the integrate branch.
+- Demo: `pnpm demo:play` (port 5940) runs the integrated game in guest mode on local Anvil or Fuji (env switch). Static walkthrough docs/demo-build/ refreshed; Vietnamese guide docs/demo-build/CHAY-DEMO.md updated.
+- Draft PR for the integrate branch, base codex/cardrpg-c2-2026-11-12.
+
+B6 REPORT. reports/cardrpg-c2/C2-REPORT.md: numbers vs targets, screenshots (formation, HUD, boss), E2E counts, open risks, self-score per card (<8 goes back once). Due 18 Nov 18:00 UTC.
+
+=====================================================================
+3. RULES
+=====================================================================
+- No subagents/helper agents/parallel codex exec (4 request threads total on the account). Local scripts are fine.
+- Never merge PRs into main, never deploy, never touch secrets. Draft PRs only.
+- VFX: no words in effects except damage numbers and the ult name (<=2 words). Beauty is judged on rendered video, not tests.
+- Look at real screenshots yourself before marking any visual card done; tests alone are not proof.
+- Designer art: never generate final character art with AI. Keep the Spine/placeholder slots from Lane C; the designer's files drop in later.
+- Self-repair loop: failure -> cause in PROGRESS.log -> fix -> re-run what failed -> full set once per card. Never skip or disable tests.
+- Keep going without stopping; update HANDOFF.md before any pause. Stop file: /Users/bao/taskbar-hero-cardrpg-a6/STOP-C2.
+- Hard stop 19 Nov 12:00 UTC (code freeze). Submission deadline is 21 Nov 23:59 UTC+7 (= 21 Nov 16:59 UTC); 19-21 Nov is reserved for the user's deploy, Fuji test, video and slides.

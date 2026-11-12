@@ -1,3 +1,4 @@
+import { FormationC2, PrepareC2 } from '../stage/FormationC2';
 import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type RefObject } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
@@ -28,7 +29,9 @@ function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | nul
   return <svg className="a6-bond-lines" aria-label="Active bond links" role="img">{lines.map(line=><path key={line.name} d={line.d}><title>{line.name}</title></path>)}</svg>;
 }
 
-export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}) {
+export function FormationA6(props:{m:DepthModel;preparing?:boolean}) { return props.m.state.formationC2 ? <FormationC2 {...props}/> : <LegacyFormationA6 {...props}/>; }
+
+function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}) {
   useSyncExternalStore(m.subscribe,m.snapshot);
   const state=m.state,battle=preparing?m.battle:null;
   const ids=battle?battle.initial.cats.map(c=>c.id):state.team;
@@ -130,7 +133,9 @@ function EnemyNoteA6({id,name}:{id:string;name:string}) {
   </section>;
 }
 
-export function PrepareA6({m}:{m:DepthModel}) {
+export function PrepareA6({m}:{m:DepthModel}) { return m.battle?.initial.formationC2 ? <PrepareC2 m={m}/> : <LegacyPrepareA6 m={m}/>; }
+
+function LegacyPrepareA6({m}:{m:DepthModel}) {
   useSyncExternalStore(m.subscribe,m.snapshot);
   const battle=m.battle!,enemies=battle.actors.filter(a=>a.side==='enemy');
   const [chosen,setChosen]=useState<string|null>(null);

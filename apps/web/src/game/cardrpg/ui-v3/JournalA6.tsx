@@ -1,6 +1,8 @@
+import {HelpC2} from './TextDietC2';
 import {useId,useState,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
+import {GearArtA6} from './KeepsakeArtA6';
 import {StarBoardV4} from '../depth/JourneyV4';
 import {GiftAmountsA6,giftReducedA6,REDUCED_GIFT_NOTE_A6} from './GiftAmountsA6';
 import {artPropsA6} from './art-a6';
@@ -29,6 +31,12 @@ export function JournalA6({m}:{m:DepthModel}) {
  const reduced=(section==='keepsakes'?milestones:section==='discoveries'?starPreviews:[]).some(p=>!p.reason&&giftReducedA6(p.requested,p.reward));
  const found=m.state.v4?.journey?.found??[],stars=Object.values(m.state.v4?.journey?.stars??{});
  const crew=m.state.team.slice(0,3);
+ if(m.state.formationC2)return <section className="a6-journal c2-journal" aria-label="Your collection journal"><nav className="a6-journal-sections" aria-label="Journal pages">{(['keepsakes','discoveries','collection','evenings'] as const).map((id,i)=><button key={id} aria-pressed={section===id} onClick={()=>setSection(id)}>{['◇ Keepsakes','★ Discoveries','♟ Collection','☾ Evenings'][i]}</button>)}</nav><div className="c2-journal-counts" aria-label="Collection counts">♟ {journal.cats.length}/{R.CATS.length} · ◇ {journal.gear.length}/{R.GEAR.length} · ∞ {journal.sets.length}/{R.SETS.length} · ☾ {journal.rewardedRoutes}</div>
+  {section==='keepsakes'&&<div className="a6-journal-milestones" aria-label="Collection milestones">{milestones.map(p=><article className="a6-journal-ticket" key={p.id} data-status={p.claimed?'collected':p.reason?'waiting':'ready'}><JournalStamp kind={p.kind}/><b aria-label={p.name}>{Math.min(p.progress,p.target)}/{p.target}</b><progress aria-label={p.name+' progress'} value={p.progress} max={p.target}/>{!p.claimed&&(p.ribbon?<span>✦</span>:<GiftAmountsA6 requested={p.requested} reward={p.reward}/>)}<HelpC2 label={p.name}><p>{p.reason??'Ready to collect.'}</p>{giftReducedA6(p.requested,p.reward)&&<p>{REDUCED_GIFT_NOTE_A6}</p>}</HelpC2><button aria-label={'Claim '+p.name} disabled={!!p.reason} onClick={()=>m.apply(R.claimMilestoneV4(m.state,p.id),p.name+' collected.')}>{p.claimed?'✓':p.reason?'🔒':'↓'}</button></article>)}</div>}
+  {section==='discoveries'&&<><div className="c2-reward-grid">{starPreviews.map(p=><article key={p.id}><JournalStamp kind="chapters"/><b>★ {p.progress}/{p.target}</b><GiftAmountsA6 requested={p.requested} reward={p.reward}/><HelpC2 label={p.id}><p>{p.reason??'Ready to collect.'}</p><p>{REDUCED_GIFT_NOTE_A6}</p></HelpC2><button aria-label={'Collect '+p.target+'-star chest'} disabled={!!p.reason} onClick={()=>m.apply(R.claimStarRewardV4(m.state,p.id),'Star chest collected.')}>{p.claimed?'✓':p.reason?'🔒':'↓'}</button></article>)}</div><HelpC2 label="Discovery history"><ol>{[...found].reverse().map(d=><li key={d.id}>{d.text} · {d.day}</li>)}</ol></HelpC2></>}
+  {section==='collection'&&<div className="a6-journal-collection"><div className="a6-journal-companions">{journal.cats.map(id=><figure key={id}><img {...artPropsA6(id)} alt=""/><figcaption>{R.CAT_BY_ID[id]?.name}</figcaption></figure>)}</div><div className="c2-reward-grid">{journal.gear.map(id=>{const g=R.GEAR_BY_ID[id]!;return <div key={id}><GearArtA6 slot={g.slot} setId={g.setId}/><HelpC2 label={g.name}><p>{g.story}</p></HelpC2></div>;})}</div></div>}
+  {section==='evenings'&&<><div className="a6-journal-chapters">{R.CHAPTERS.map(c=><article key={c.id} data-cleared={m.state.cleared.includes(c.id)}><JournalStamp kind="chapters"/><h4>{c.name}</h4><b>{m.state.masteries.includes(c.id)?'★★★':m.state.cleared.includes(c.id)?'✓':'🔒'}</b></article>)}</div><button onClick={()=>m.go('codex')}>? Guide</button><button onClick={()=>m.go('save')}>▶ Replay</button></>}
+ </section>;
  return <section className="a6-journal" aria-label="Your collection journal">
   <header className="a6-journal-intro">
    <div className="a6-journal-photos" aria-hidden="true">{crew.map(id=><div key={id}><img {...artPropsA6(id)} alt=""/><span>{R.CAT_BY_ID[id]?.name}</span></div>)}</div>

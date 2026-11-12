@@ -1,3 +1,4 @@
+import {useTextDiet} from './ui-v3/TextDietC2';
 import {CARD_RPG_CONFIG,CARD_BY_ID,ITEM_BY_ID,type Card,type CardInstance,type Cost,type Rarity,type Stats,type AccountState,type Preview} from '@taskbar-hero/game-rules/cardrpg';
 import type {CardRpgModel} from './model';
 export const rarityStyle=(rarity:Rarity)=>({'--rarity':CARD_RPG_CONFIG.rarity[rarity].color} as React.CSSProperties);
@@ -6,7 +7,7 @@ export const portrait=(card:Card)=>window.__CARDRPG_PORTRAITS__?.[card.id]??rend
 declare global{interface Window{__CARDRPG_PORTRAITS__?:Record<string,string>}}
 export const statName=(key:string)=>({hp:'Health',attack:'Attack',defense:'Defense',critBp:'Critical chance',critDamageBp:'Critical bonus',effectHitBp:'Effect accuracy',effectResistBp:'Effect resistance',healingBp:'Healing bonus',shieldBp:'Shield bonus',initiative:'Round order'}[key]??key);
 export const statValue=(key:string,value:number)=>key.endsWith('Bp')?`${(value/100).toFixed(value%100?1:0)}%`:value;
-export function CostView({cost}:{cost:Cost}){return <span className="cr-cost">{Object.entries(cost).map(([id,n])=><span key={id}>{n} {id==='fish'?'fish points':id}</span>)}</span>}
+export function CostView({cost}:{cost:Cost}){const compact=useTextDiet();return <span className="cr-cost">{Object.entries(cost).map(([id,n])=><span key={id} aria-label={`${n} ${id}`}><span aria-hidden="true">{compact?({fish:'◈',stamps:'✉',threads:'⌁',points:'◆'}[id]??'✦'):''}</span> {n} {!compact&&(id==='fish'?'fish points':id)}</span>)}</span>}
 export function PageTitle({eyebrow,title,children}:{eyebrow:string;title:string;children?:React.ReactNode}){return <header className="cr-page-title"><div><small>{eyebrow}</small><h1 tabIndex={-1}>{title}</h1></div>{children}</header>}
 export function Rarity({value}:{value:Rarity}){return <span className="cr-rarity" style={rarityStyle(value)}>{value}</span>}
 export function Stats({stats,delta}:{stats:Stats;delta?:Stats}){return <dl className="cr-stats">{Object.entries(stats).map(([key,value])=><div key={key}><dt>{statName(key)}</dt><dd>{statValue(key,value)}{delta&&delta[key as keyof Stats]!==0&&<em className={delta[key as keyof Stats]>0?'up':'down'}> {delta[key as keyof Stats]>0?'+':''}{statValue(key,delta[key as keyof Stats])}</em>}</dd></div>)}</dl>}

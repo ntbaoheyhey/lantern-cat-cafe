@@ -1,3 +1,4 @@
+import { partySize, validRowsC2 } from './formation-c2';
 import { gameplayA6 } from './gameplay-a6';
 import { observeDailyA6 } from './daily-state-a6';
 import { observeDiscoveriesV4 } from './journey-v4';
@@ -9,7 +10,7 @@ import { RECIPES } from '../catalog';
 import { GEAR_CAP_V4 } from './equipment-v4';
 import { stackCapV4 } from './items-v4';
 import { applyCommand } from '../commands';
-import { depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
+import { craftGear, depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
 import { clone, grant, requireRule, RuleFailure } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
@@ -42,8 +43,9 @@ export function defaultSkills(state: DepthAccount, id: string): string[] {
 export function configureTeam(state: DepthAccount, team: string[], rows: Record<string,Row>, skills: Record<string,string[]>): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     requireHome(s);
-    requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three different collected cats.');
+    requireRule(team.length===partySize(s)&&new Set(team).size===partySize(s)&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM',`Choose ${partySize(s)} different collected cats.`);
     requireRule(team.some(id=>rows[id]==='front')&&team.every(id=>['front','rear'].includes(rows[id]!)),'INVALID_TEAM','Keep at least one cat in the front row.');
+    requireRule(!s.formationC2||validRowsC2(team,rows),'INVALID_TEAM','Place two cats in each row.');
     if(!gameplayV4(s)) for(const id of team){const chosen=skills[id]??[],unlocked=availableSkills(s,id);requireRule(chosen.length===3&&new Set(chosen).size===3&&chosen.every(skill=>unlocked.some(u=>u.id===skill)&&SKILLS[skill]!.catId===id),'INVALID_TEAM','Equip three different unlocked skills per cat.');}
     s.team=[...team];s.rows={...s.rows,...rows};s.skills={...s.skills,...clone(skills)};
   });
@@ -61,6 +63,11 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
       requireRule(!['equip','unequip','enhance','reforge','salvage','lock','selectTeam'].includes(command.type),'NOT_READY','Use the equipment workbench or crew screen for Gameplay v4.');
       const recipe=command.type==='forge'?RECIPES.find(r=>r.id===command.recipeId):undefined;
       requireRule(!recipe?.scarcityId,'NOT_READY','Use the local edition ledger to reserve a design.');
+      if(s.formationC2&&recipe?.outputItemId){
+        requireRule(s.account.chapter>=recipe.requiredChapter,'LOCKED','Reach the recipe source chapter first.');
+        const crafted=craftGear(s,recipe.outputItemId);
+        requireRule(crafted.ok,'NOT_READY',crafted.error??'The recipe cannot be crafted.');Object.assign(s,crafted.state);return;
+      }
       const slots=recipe?.outputItemId?1:0;
       requireRule(s.gear.length+slots<=GEAR_CAP_V4||slots===0,'MAX_LEVEL','Equipment shelf is full (240). Make room for the entire reward before spending.');
       for(const [id,count] of Object.entries((recipe?.outputStackId?{[recipe.outputStackId]:1}:{}))){

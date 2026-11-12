@@ -1,6 +1,6 @@
 import * as T from 'three';
 import { PAINT } from './style';
-import { cafePainting, cafeLayers } from './stage-painting';
+import { cafePainting, cafeLayers, formationPaintingC2 } from './stage-painting';
 
 const P=PAINT.stage;
 function ellipse(c:CanvasRenderingContext2D,x:number,y:number,rx:number,ry:number,color:string,rotation=0){
@@ -25,6 +25,7 @@ export class PaintedStage {
  private textures:T.Texture[]=[];
  private disposed=false;
  private source:'loading'|'painted'|'procedural'='loading';
+ private formation?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  constructor(private onChange:()=>void=()=>{}){
   for(let layer=0;layer<3;layer++){
    const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
@@ -81,9 +82,11 @@ export class PaintedStage {
    const textures=cafeLayers(image).map(canvas=>{const texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;return texture;});
    this.layers.forEach((mesh,i)=>{mesh.material.map=textures[i]!;mesh.material.needsUpdate=true;});
    this.textures.forEach(texture=>texture.dispose());this.textures=textures;this.source='painted';this.onChange();
+   const texture=new T.CanvasTexture(formationPaintingC2(image));texture.colorSpace=T.SRGBColorSpace;this.textures.push(texture);
+   this.formation=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:texture,depthWrite:false,depthTest:false,toneMapped:false}));this.formation.renderOrder=-99;this.formation.visible=false;this.root.add(this.formation);this.onChange();
   }).catch(()=>{if(!this.disposed){this.source='procedural';this.onChange();}});
  }
- update(width:number,height:number,shift:number,dim:number){this.layers.forEach((mesh,i)=>{mesh.scale.set(width*1.04,height*1.04,1);mesh.position.set(shift*(i+1)*.13,height/2,-30+i);mesh.material.color.setScalar(1-dim);});}
+ update(width:number,height:number,shift:number,dim:number,formationC2=false){this.layers.forEach((mesh,i)=>{mesh.visible=!formationC2||!this.formation;mesh.scale.set(width*1.04,height*1.04,1);mesh.position.set(shift*(i+1)*.13,height/2,-30+i);mesh.material.color.setScalar(1-dim);});if(this.formation){this.formation.visible=formationC2;this.formation.scale.set(width,height,1);this.formation.position.set(0,height/2,-28);this.formation.material.color.setScalar(1-dim);}}
  audit(){return{source:this.source,layers:this.layers.length,textureSize:[2048,1024],offsets:this.layers.map(layer=>layer.position.x)};}
- dispose(){this.disposed=true;for(const layer of this.layers){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());}
+ dispose(){this.disposed=true;for(const layer of [...this.layers,...(this.formation?[this.formation]:[])]){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());}
 }
