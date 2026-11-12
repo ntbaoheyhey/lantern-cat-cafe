@@ -1,19 +1,21 @@
 # CHAIN outbox
 
-READY 609871a0b2b6c0a8b54846ade7ef0c609154ee2d
+READY e5d1732576df3738f6ced508f5f2e5166074bebe
 
-Tested implementation for C2 integration. This checkpoint covers the Fuji judge/token/market loop; ordinary campaign authority and economic acceptance remain open. Evidence-only commits may follow this SHA.
+Tested implementation for C2 integration. This checkpoint covers the Fuji judge/token/market loop and economic sensitivity; ordinary campaign authority and economic acceptance remain open. Evidence-only commits may follow this SHA.
 
-- User-run public Fuji smoke PASS: 18 confirmed receipts. Deployed V2 runtimes/configuration match the local artifacts; no contract redeployment is required.
-- Guest SIWE, gas drip, starter boss, Relic mint, arbitrary-price AVAX/YARN listing/buy/cancel, paid Star Thread sealing/recovery and asset migration. New features remain behind flags.
-- Separate lifetime-once TesterClaim signatures; deployed automatic season reduction includes tester emissions and actual YARN burns. Routine reward issuance is not enabled.
-- Fixed the smoke client's local signing account and stale-head History/listings. Locked Anvil accounts prevent RPC signing from hiding regressions. Existing locale/worker fixes keep full tests stable.
-- Final units PASS: web2395, rules1352, SQL597, chain32, auth24, API16, scripts11; 8 diagnostic/model checks PASS. Forge118; new-contract line coverage100%/100%/95.95%; type/lint/production and demo builds PASS.
-- Three fresh browser runs2/2 each (21.8s/17.8s/23.3s full loops), Anvil smoke18 receipts, drip/move checks and retry-safe3-listing seed dry-run PASS. No CHAIN test skips. Local times do not prove public two-minute acceptance.
-- Corrected16-scenario token model: monetary conservation PASS, implemented-sink economic gate FAIL (2.39–2.78 emission/burn). Future forge/cosmetic sinks are separate; no forced pass or fee/allocation change.
-- C2 still needs authoritative campaign/weekly/rank receipts and measured weekly rare/Epic supply. Read REQUESTS-TO-C2.md; CHAIN changes no C2 battle stats or drop tables. H4b/H5 requeued once; H7 gated.
-- User operations: deploy prepared frontend to existing host, seed V2 from existing smoke buyer, replenish sponsor and measure public route. FRONTEND-READINESS-VI.md groups the commands. Public keys/signing/deployments remain user-owned.
-- Source pushed. Remote CI check131051679521 is blocked by billing/spending; both Vercel integrations report deployment rate limited, retry in24h. Read REMOTE-CHECKS.json. Readiness is local-green, not remote-green.
+- User-run public Fuji smoke PASS: 18 confirmed receipts. Deployed V2 runtimes/configuration match local artifacts; no contract redeployment required.
+- Guest SIWE, drip, starter boss, Relic mint, arbitrary-price AVAX/YARN trade, paid material sealing/recovery and asset migration. Features remain gated.
+- Guest signing verifies wallet identity, cleared keys cannot silently regenerate during writes, gas refresh is independent of drip, and expired vouchers retain their nonce on renewal.
+- Authenticated CHAIN requests have a 1,024-byte/10-second boundary, strict schemas and fixed recovery messages. No migration or secret change; backend updates remain user-run.
+- Deployed season reduction includes tester emissions and YARN burns. The routine issuer remains disabled pending authoritative earning receipts.
+- Full units PASS: web 2416, SQL 628, rules 1352, chain 32, auth 24, API 16, scripts 11; diagnostic/model 10; Forge 118. Prior source typecheck/lint/build/Deno checks PASS, unchanged by the simulation extension.
+- Three fresh HTTP/recovery browser runs (19.6s/21.1s/16.6s), then budget-card browser 2/2 (loop 19.5s), PASS. Anvil smoke 18 receipts, full asset migration and idempotent seed checks PASS. No new test skips; public timing remains unmeasured.
+- Default 16-scenario economics: exact conservation PASS, implemented-sink gate NOT MET (2.39–2.78 claims/burn). 63 additional sensitivity runs do not change default weekly outputs or deployed parameters.
+- Largest tested maximum passing all mixes: 3 YARN/week at full assumed demand, 0.6 at half, none at 10%. Finite-grid results are not recommended budgets or measured demand.
+- C2 still needs authoritative campaign/weekly/rank receipts and measured rare/Epic supply. REQUESTS-TO-C2.md defines the inputs; no battle stats/drop tables changed. H4b/H5 requeued once; H7 gated.
+- User operations: update frontend/Edge Functions, seed V2, replenish sponsor, measure the public route. Commands are in FRONTEND-READINESS-VI.md and USER-DEPLOY-VI.md.
+- Source pushed. Remote evidence is in REMOTE-CHECKS.json. GitHub billing/spending prevents CI execution; Vercel has reported rate limits. Local passes do not establish remote-green status.
 
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441
-Report: CHAIN-REPORT.md; full matrix: ACCEPTANCE.md; user operations: FRONTEND-READINESS-VI.md.
+Report: CHAIN-REPORT.md; full matrix: ACCEPTANCE.md.

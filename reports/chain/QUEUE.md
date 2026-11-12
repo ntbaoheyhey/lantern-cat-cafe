@@ -3,7 +3,7 @@
 ## Current checkpoint (2026-11-12)
 - H0–H4: implemented/local judge proof; original campaign authority remains a separate integration gap recorded in ACCEPTANCE.md.
 - H4b: seal/V2 UI/catalog implementation verified locally; requeue #1 (score7) for authoritative ordinary campaign gear source integration.
-- H5: 22-source research and corrected16-scenario52-week model ready (economic gate NOT MET); requeue #1 (score7) for real C2 weekly supply, demand validation and authoritative routine-reward issuer wiring.
+- H5: 22-source research and corrected16-scenario52-week model plus63 reward/demand runs ready (economic gate NOT MET); requeue #1 (score7) for real C2 weekly supply, demand validation and authoritative routine-reward issuer wiring.
 - H6: contracts/coverage/UI/user deployment handoff ready; three fresh expanded browser runs passed.
 - H7: stretch condition not yet met because H4b/H5 integration/calibration remains open.
 - H8/H8b: smoke dry mode, static architecture/tokenomics docs and L1 design ready; user deployment and18-receipt public smoke complete; frontend/bot/timing pending.

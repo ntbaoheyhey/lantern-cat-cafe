@@ -1,16 +1,16 @@
 # CHAIN handoff
-NOW: H1/H4 recovery pushed5c5f3b482; H2/H4 HTTP boundary full gates complete; source checkpoint follows.
-NEXT 1: Commit/push HTTP boundary and update PR441; retain local-green/remote-blocked distinction.
-NEXT 2: Extend reward-budget sensitivity; preserve default failing economic gate and deployed policy.
-NEXT 3: Update evidence/OUTBOX and recheck C2 input; do not fabricate campaign entitlements.
-RUNNING: No test processes; HTTP full units2416web/628SQL, lint/build/typecheck/Deno3/Forge118 pass; E2E19.6/21.1/16.6s.
-KNOWN: Guest flag now respected independently; signing checks wallet identity twice; cleared keys never silently regenerate for transactions.
-KNOWN: Gas balance reads even if sponsor fails, refreshes on confirmed transactions, clears stale RPC balances; mint renews expired vouchers using same nonce.
-KNOWN: Focused31 tests: two initial test-selector failures repaired, failed-file4/4 rerun passed. Web typecheck and Forge118 passed. Baseline web2395 passed.
-KNOWN: Public18-receipt smoke and deployed contracts are prior user evidence. This continuation signs only disposable local Anvil transactions.
-KNOWN: C2 OUTBOX still SLOTS/PILOTS only; no weekly supply or authoritative ordinary campaign/weekly/rank source. H4b/H5 remain open; H7 gated.
-KNOWN: Implemented-sink model fails<=2 gate (2.39–2.78); no fee/allocation/controller changes. No fabricated campaign entitlements.
-USER OPERATIONS: Frontend deploy, seed V2 listings, top up sponsor, then public browser timing. Grouped commands in FRONTEND-READINESS-VI.md.
-REMOTE: Latest PR tip CI cannot start (billing/spending); both Vercel projects rate-limited. Do not retry public deployment or weaken checks.
+NOW: Tested source e5d1732576df3738f6ced508f5f2e5166074bebe pushed; reward/demand comparison complete, default economic gate NOT MET.
+NEXT 1: Integrate verified C2 weekly supply and server-owned campaign/weekly/rank earning receipts when available.
+NEXT 2: User updates frontend/three Edge Functions, seeds V2 listings and tops up sponsor; commands in FRONTEND-READINESS-VI.md and USER-DEPLOY-VI.md.
+NEXT 3: After those operations, verify public assets/listings and measure the real Fuji two-minute browser loop.
+RUNNING: No local test processes or listeners on5980–5983; no deployment or public signing by Codex.
+KNOWN: Budget card full units PASS: web2416, SQL628, rules1352, chain32, auth24, API16, scripts11; Forge118; diagnostic/model10.
+KNOWN: Prior HTTP source typecheck/lint/build and Deno3 entrypoints PASS; three fresh browser runs19.6/21.1/16.6s. Budget card browser2/2 PASS, loop19.5s.
+KNOWN: Anvil smoke18 receipts, escrow/proceeds/NFT/YARN/AVAX migration and idempotent3-listing seed all pass again; see tests/continuation-*.
+KNOWN: 63 fixed-seed reward/demand cases; largest tested all-mix maximum3 YARN/week at full assumed demand,0.6 at half, none at10%.
+KNOWN: Baseline weekly model outputs unchanged; default claims/burn2.39–2.78 fails<=2; strict gate exits1. No deployed parameters changed.
+KNOWN: C2 OUTBOX still SLOTS/PILOTS only; no authoritative campaign source or weekly supply. H4b/H5 remain open after requeue; H7 gated.
+KNOWN: Public18-receipt smoke/deployments are prior user evidence; current work used only disposable local transactions.
+REMOTE: Source pushed; latest CI status recorded in OUTBOX.md/REMOTE-CHECKS.json. CI billing/spending blocked; Vercel hosting remains unverified. No manual deployment retries.
 PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 (draft, base codex/cardrpg-c-2026-11-11).
 WORKTREE: /Users/bao/taskbar-hero-chain; branch codex/chain-2026-11-12. Pre-existing supabase/.temp remains untouched/unread.

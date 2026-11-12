@@ -1,9 +1,9 @@
 # Trạng thái CHAIN — 12/11/2026
 
-Đã tiếp tục đúng worktree/PR441, giữ nguyên kết quả18 giao dịch Fuji do bạn chạy. Vừa sửa cờ guest bật nhầm, kiểm tra ví trước khi ký, số dư gas bị cũ và khôi phục voucher hết hạn.
+Đã hoàn tất thêm 63 kịch bản mức thưởng/nhu cầu, giữ kết quả 18 giao dịch Fuji do bạn chạy. Bộ test mới nhất đạt: web 2.416, SQL 628, Forge 118, kiểm tra model/công cụ 10; luồng trình duyệt local đạt 19,5 giây. Ba lượt liên tiếp trước đó cũng đạt. Chưa đo được thời gian trên Fuji công khai.
 
-Ba lượt trình duyệt Anvil liên tiếp đã đạt; cả luồng mất16,2 /18,6 /16,7 giây. Đây là thời gian local, chưa phải đo trên Fuji công khai. Bộ test đầy đủ đã đạt: web2416, SQL628, Forge118; typecheck và build đạt. Backend đã giới hạn JSON/thời gian tải và báo lỗi quota/khôi phục rõ hơn; Deno3 hàm, HTTP local và3 lượt E2E đạt. Đang phân tích mức thưởng/nhu cầu.
+Mức tối đa được thử và đạt cả ba nhóm là 3 YARN/tuần khi giữ nguyên nhu cầu giả định, 0,6 khi nhu cầu giảm một nửa. Ở 10% nhu cầu, dừng thưởng định kỳ vẫn chưa đạt. Đây là thí nghiệm, không phải mức thưởng được đề xuất hoặc đã bật. Mô hình mặc định vẫn CHƯA ĐẠT; không đổi phí, phân bổ hay hợp đồng.
 
-H4b/H5 vẫn thiếu dữ liệu nguồn vật phẩm và thưởng có thẩm quyền từ C2. Mô hình kinh tế hiện vẫn vượt ngưỡng phát hành/đốt; chưa bật thưởng định kỳ. Không tự tạo dữ liệu để đánh dấu hoàn tất.
+Đã sửa khôi phục ví/gas/voucher và giới hạn HTTP. H4b/H5 còn thiếu nguồn vật phẩm, thưởng có thẩm quyền và dữ liệu cung từ C2; H7 chưa đủ điều kiện. SHA đã kiểm tra nằm ở OUTBOX.md, hướng dẫn tiếp tục ở HANDOFF.md.
 
-Việc bạn làm sau: deploy frontend, seed hàng V2, nạp sponsor rồi đo luồng public. Lệnh đã gom ở FRONTEND-READINESS-VI.md. CI đang bị billing/spending, Vercel bị giới hạn deploy; không thay đổi hợp đồng, không đọc khóa hay tự deploy.
+Việc bạn làm sau: cập nhật frontend và ba Edge Functions, seed hàng V2, nạp sponsor rồi đo luồng public. Lệnh ở FRONTEND-READINESS-VI.md và USER-DEPLOY-VI.md. CI đang bị billing/spending; Vercel đã báo giới hạn deploy. Codex không đọc khóa, ký giao dịch công khai, deploy hoặc merge.

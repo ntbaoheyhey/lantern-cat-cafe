@@ -1,6 +1,6 @@
 # Anvil dry-run — NOT public Fuji
 
-PASS · 2026-11-12T07:38:07.487Z · chain 43113 · Testnet — no real value.
+PASS · 2026-11-12T08:32:38.804Z · chain 43113 · Testnet — no real value.
 
 All hashes below belong to disposable localhost state; they are not Snowtrace evidence.
 
@@ -8,21 +8,21 @@ Last stage: RelicMarketV2.withdraw.
 
 | Step | Transaction |
 |---|---|
-| guest-drip | `0x78b1553aec61d190ba5a7f4d8858c91a38ef536af22d6f36eceb70cc7bb2e438` |
-| guest-drip | `0xdf29258212fbca83ec93ef902ff9298663e6bfbccabef02751d41f3181326d26` |
-| SeasonRewards.claimTester | `0xd013ea4942329f86c27727ad094ea98ac323b5e815eb8f52e4a4ca7f672b7775` |
-| SeasonRewards.claimTester | `0x9752b5b80195062fc47e97bb305abca36e1b88d5e013fa9f9c62087d008aaf7a` |
-| RelicNFT.mint | `0x082bd70c3273b7a8cb1ee34cf8d1fba2dd1aa1d6fbc72b9ea406ecdc67047b8e` |
-| RelicNFT.setApprovalForAll | `0xd54241896a139c1df2863529da96f6a851934ff2c59212cc77ef748bcd28c9a2` |
-| RelicMarketV2.list | `0xd3700120d9e4896c65db27dfb0ba500ff73d2e2ddb1b2263991c6975b0d97650` |
-| RelicMarketV2.buy | `0xe19fe62d8396d955c0bcf185c6430d5b524e1d14865e5d0ee3b96aba992de99a` |
-| RelicMarketV2.withdraw | `0x5a9a1572a84fe9cf50d57242451d6cd2ee32aa495531c5a6ccdff440df7b99bb` |
-| RelicNFT.mint | `0x0ba4cd8a4684da378e1c42c8d2dfc00e85472fa4b6240ce939368d6463d12ce6` |
-| RelicMarketV2.list | `0xba3409905a890ec9f951c4786b01b1316c4eb125a2fbe6face48f3d8455c6d20` |
-| RelicMarketV2.cancel | `0xce33c9e3f43be62c7c6e6d2fa88a6704ca7e40e3457a754d783dc380c8c9dd63` |
-| YarnToken.seal | `0xa6f0e38e518e96cb460cd15870235f8f7bbbd1cf665a81ee9c6e7247f87fef5a` |
-| RelicNFT.mint | `0xd91f9ee7d81cc83594a162ddeafb03ca13bcd3c8eba8662b698a9b99cafe0d66` |
-| RelicMarketV2.list | `0x04bec5fe150f52bb83fe854b75794ff0e792eadf9f90fb605754b31ba89aa9f4` |
-| YarnToken.approve | `0xad3ee7021757aa833b749e38f56be3248166c32088d51c47a8805a2c01bdd201` |
-| RelicMarketV2.buy | `0x7bd1080a43ab89e1bd4db0ba27cb8bf3df33ca7f8118e2215c4106a9bc287338` |
-| RelicMarketV2.withdraw | `0xde53b48c17680fd6e0738c4768b2c234395ec7542eebc4cd6768f1978fcd5182` |
+| guest-drip | `0xd07edeff228e559b09a54500b36a9c14856e6d201e34511faa15268518c3ce46` |
+| guest-drip | `0x2c1a10bf0964d2e8c16c3ccad71ea6278ce6108425cdea2a7f0dd757335319e7` |
+| SeasonRewards.claimTester | `0x6e64282e8f240ff12ee82bbe7ede536ab0418ab7634c29fc354d3f57c9c5b8b5` |
+| SeasonRewards.claimTester | `0xf873966ec285ae757e0595c8fe9b9a85fccd3800125f9fec1a0afc78ece2bd58` |
+| RelicNFT.mint | `0xe5d1a1eb837981066ae54bc8846d2ca5a394ceb4336bb4ef8f3cb62c6c633ab9` |
+| RelicNFT.setApprovalForAll | `0x951e6408fd09f9ef9d988ef1c7f8f9ef65ed8f7ee799971c281eff01fc06c0e1` |
+| RelicMarketV2.list | `0x24486bfcd32b2b99e2d8bea1a9cde44c1fcda89ede435de2e85584d7e868de8f` |
+| RelicMarketV2.buy | `0x2fe85f320822da51844efc762a439a6413e8fdbbd38653a18646d22f98384de6` |
+| RelicMarketV2.withdraw | `0xa508ccb27924b95921df12a34e3f24f99223d30e69d21973c414367b87dc7e20` |
+| RelicNFT.mint | `0xdd6b9ebee2b5875880c6b2bfadcc59efa2f6f0d4261975d0b130108150d7943e` |
+| RelicMarketV2.list | `0x2dd2450963bdf43d19f2d5a30028dea7cf8b94429475600611a20f44d8322df2` |
+| RelicMarketV2.cancel | `0x3210c63c91f91e06f9959dba8dc720191585b91dd1269a3df32527a46c53b883` |
+| YarnToken.seal | `0xc522aeede9581579c3bee1807e93924e75cacecac1755fbe48ed953458d0de13` |
+| RelicNFT.mint | `0x60274b06e044556d0de8b3eeccaa10af400bd84dba271a9f714afcf4635d23ca` |
+| RelicMarketV2.list | `0x09f10d27f633c0bd7333f6144e2c5989393b66c9290e83dcee8838534c1c875c` |
+| YarnToken.approve | `0x27971f13b1c745ed91efa564ff9c151eccac6797a4b7167be02309252045585d` |
+| RelicMarketV2.buy | `0x3634c6dd17c8f0fb6928f3e656ae8be5a585bd91c1e7cefa71503c2cbf01383e` |
+| RelicMarketV2.withdraw | `0x1231a7cb6c2a837f94cc02e3c2462add350060d4eee612847ce437c026c272c6` |
