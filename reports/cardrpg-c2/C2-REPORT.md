@@ -1,8 +1,8 @@
 # C2 — battle, painted VFX, balance and integration report
 
-**The requested implementation, measurements and local integration are complete; balance acceptance is partial.** Final report: 2026-11-12T12:56:54.424020+00:00. Draft [C2 PR440](https://github.com/ntbaoheyhey/taskbar-hero/pull/440) and [integration PR442](https://github.com/ntbaoheyhey/taskbar-hero/pull/442) remain unmerged. The original Lane C baseline is preserved. No public deployment or main merge was performed.
+**Balance work is reopened and running under the user’s unlimited-pass instruction.** Status updated 2026-11-12T14:05:19.080337+00:00. The measurements below are the preserved earlier report; final runtime acceptance will replace them after the new item, UI and calendar cohorts finish. Draft [C2 PR440](https://github.com/ntbaoheyhey/taskbar-hero/pull/440) and [integration PR442](https://github.com/ntbaoheyhey/taskbar-hero/pull/442) remain unmerged. The original Lane C baseline is preserved. No public deployment or main merge was performed.
 
-The integrated guest demo passes 4,514 package tests, 56 Node script tests, 118 Foundry tests, 435 browser tests and both Anvil browser flows, plus typecheck/lint/build. All 600 monthly accounts completed. Casual first Epic is day 1 and first Legendary day 11. Model first-loss timing and normal-win HP medians still miss their combat targets; four original item-screen cells remain above 12pp. These are retained findings, not passed gates.
+The previously verified integrated guest demo passed 4,514 package tests, 56 Node script tests, 118 Foundry tests, 435 browser tests and both Anvil browser flows, plus typecheck/lint/build. All 600 monthly accounts completed. Casual first Epic is day 1 and first Legendary day 11. Those earlier combat/item gaps remain in the historical tables below. The reopened pass5 now meets every combat target in both full cohorts, and candidate6 meets all500 model targets; fresh candidate6 item acceptance is still running. See the current BALANCE.md, DROP-TABLE.md and HANDOFF.md.
 
 ## Cards and self-scores
 
@@ -15,15 +15,15 @@ The integrated guest demo passes 4,514 package tests, 56 Node script tests, 118 
 | V2 | User approved · 8 | All three pilots approved on 12 November; [V2.md](vfx/V2.md) |
 | B2 | Complete · 8 | Compact HUD and 33 screen budgets; final integrated audits both max25; [B2.md](B2.md) |
 | B3 | Complete · 9 | Actual 30-minute browser cohorts and exact policy/combat parity; [B3.md](B3.md) |
-| B4 | Measured miss · 7 | Three allowed tuning passes exhausted; best pass3 retained; [BALANCE.md](BALANCE.md) |
-| B4b | Measured, partial acceptance · 7 | Nine cited sources, all drop sources/Odds, 600-account economy, 128-template impact screen and independent holdouts; [ECONOMY.md](ECONOMY.md), [DROP-TABLE.md](DROP-TABLE.md) |
+| B4 | Reopened · final acceptance pending | Pass5 UI/model targets pass; candidate6 model passes; final item/runtime cohort pending; [BALANCE.md](BALANCE.md) |
+| B4b | Reopened · final acceptance pending | Nine cited sources, all drop sources/Odds, 600-account economy, 128-template impact screen and independent holdouts; [ECONOMY.md](ECONOMY.md), [DROP-TABLE.md](DROP-TABLE.md) |
 | V3 | Complete · 8 | 86 accepted sources/timelines: 78 event effects plus eight labeled passive-stat previews; [V3-STATUS.md](vfx/V3-STATUS.md) |
 | B5 | Local integration complete · 8 | Exact READY merge, full checks, guest demo and visual review; [B5.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-integrate-2026-11-12/reports/cardrpg-c2/B5.md) |
 | B6 / V4 | Report complete · 8 | This report, screenshots, limitations and [VFX-REPORT.md](vfx/VFX-REPORT.md) |
 
-Cards below 8 received their required return work. B4 used all three permitted configuration passes; a fourth is prohibited by the supplied instructions. B4b's failed item screens triggered source/policy repair, then the affix/Riposte table correction, a complete repeat screen and predeclared independent holdouts, followed by new UI/model/monthly cohorts. The residual misses remain score 7; they were not hidden by another sample or relabeled as passes.
+The user removed the B4 tuning-pass and B4b return-count caps on12November. Work continues until acceptance or an actual blocker, preserving every earlier failed sample. The remainder of this report is the earlier baseline, not current final acceptance.
 
-## Combat against targets
+## Historical baseline — combat against targets
 
 Final frozen gameplay runtime: `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; B4 pass3 enemy configuration. UI seeds 80001–80005; model seeds 80001–80500. All seeds reached the full 30-minute horizon; no browser errors.
 

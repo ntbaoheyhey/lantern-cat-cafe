@@ -283,7 +283,7 @@ export function createBattle(setup: BattleSetup): Battle {
     if(b.v4) { openingCrewBonus(setup.cats.map(c=>c.id),actor); actor.shield+=actor.bonuses.openingCharge??0; }
     else actor.charge = Math.min(100,actor.charge+boonValue(b,'openingCharge')+(actor.bonuses.openingCharge??0));
     if(hasEffect(actor,'opening-decoy')) { if(b.v4) actor.shield+=12; else applyStatus(b,actor,actor,'decoy'); }
-    if(hasEffect(actor,'unique:softcollar')) { if(b.v4) actor.shield+=15; else applyStatus(b,actor,actor,'sprout'); }
+    if(hasEffect(actor,'unique:softcollar')) { if(b.v4) actor.shield+=setup.formationC2?ECONOMY_C2.uniques.softcollarShield:15; else applyStatus(b,actor,actor,'sprout'); }
     if (boonValue(b,'openingSteep')) applyStatus(b,actor,actor,'steep',boonValue(b,'openingSteep'));
     if (combos.some(c => c.id==='warm-table')) actor.shield += 20;
     if (combos.some(c => c.id==='night-garden')) actor.charge += 10;

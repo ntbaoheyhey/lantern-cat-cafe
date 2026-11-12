@@ -44,6 +44,21 @@ it('quotes the C2 Rain Bell stack limit and Bellsteel trigger without changing l
  expect(R.setTextV4(set,true,true).four).toBe('Defend: Riposte 1× per battle.');
  expect(R.setTextV4(set,true,false).four).toContain('Shelter');
 });
+it('bounds Soft Collar opening shielding in C2 without changing legacy shielding or other cats',()=>{
+ for(const c2 of [true,false]){
+  const state=fresh(),cats=R.battleCats(state),before=clone(cats);
+  const setup={seed:71,chapter:1,cats,enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2};
+  const plain=R.createBattle(setup),collar=R.createBattle({...setup,cats:cats.map(c=>c.id==='mochi'?{...c,effects:[...c.effects,'unique:softcollar']}:c)});
+  for(const actor of collar.actors){
+   const original=plain.actors.find(a=>a.id===actor.id)!;
+   expect(actor.shield-original.shield).toBe(actor.id==='mochi'?(c2?8:15):0);
+  }
+  expect(cats).toEqual(before);
+ }
+ expect(R.gearStoryV4('bellsteel-outfit-legendary',true)).toBe('Start with 8 shield.');
+ expect(R.effectTextV4('unique:softcollar',true)).toBe('Start with 8 shield.');
+ expect(R.gearStoryV4('bellsteel-outfit-legendary')).toBe('Start with 15 shield.');
+});
 it('discloses normalized live source odds, including exhausted daily drops and exact templates',()=>{
  const s=fresh();
  for(const kind of ['battle','elite','boss'] as const)for(const chapter of [1,2,3]){

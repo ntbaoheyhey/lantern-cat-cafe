@@ -192,3 +192,9 @@ Candidate6 is prospective: C2 HP main-stat weight0.4; Bellsteel grants its first
 ## Completed pass5 disjoint panel
 
 2026-11-12T14:00:49.013733+00:00. All17 new failed fixtures completed1,000 paired seeds101001–102000; all17 exceed12pp (13.4–23.6pp). Together with historical30 panel,20/47 misses. Runtime matches exactly; panels are disjoint and cover all18 screen misses plus all30 historical fixtures. Evidence: PASS5-NEW-HOLDOUT.json. Candidate6 reused100-pair diagnostic has4/47 misses (one+15pp, three−13/−14pp), retained as diagnostics. Continue the declared full6,144-cell screen and fresh47-fixture holdout before any acceptance.
+
+## Candidate6 complete union and candidate7 selection
+
+2026-11-12T14:09:15.675613+00:00. Candidate6 independent47-fixture panel102001–103000 completed:46pass, one miss. Bellsteel Legendary outfit/Mochi/bare/L6/C3/ordinary gives+15.6pp, paired95%[13.23,17.97]pp. Original100-pair Bellsteel weapon negative effects shrink to−5.7…−6.4pp on the fresh1000 pairs; they remain separately recorded. Evidence: ITEM6-HOLDOUT.json. Full candidate6 catalog continues unchanged.
+
+Soft Collar mechanism diagnostics reproduce the full failed control exactly. On those observed1000 pairs,15/8/4 opening shield atHPweight0.4 gives Bellsteel15.6/13/11.3pp and Mossbrew11.1/7.7/6.7pp. Shield8 plusHPweight0.5 gives11.1/6.6pp; shield8 plusHPweight0.6 gives10.4/5.9pp. These are selection diagnostics, never independent acceptance. Candidate7 selects the last combination, preserving more unique shielding while reducing HP main-stat contribution. All numeric changes are in ECONOMY_C2; legacy Soft Collar retains15 shield.49 focused rules tests/typecheck pass, with the new shielding regression failing before repair.

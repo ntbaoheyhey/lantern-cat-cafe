@@ -40,6 +40,7 @@ export function setTextV4<T extends {id:string;two:string;four:string}>(set:T,en
  return text;
 }
 export function uniqueTextV4(id:string,c2=false):string{
+ if(c2&&id==='softcollar')return `Start with ${ECONOMY_C2.uniques.softcollarShield} shield.`;
  if(c2&&id==='rainbell')return `Swapping clears ${ECONOMY_C2.uniques.rainbellCleanseStacks} debuff stack.`;
  return UNIQUE_TEXT_V4[id]??id;
 }

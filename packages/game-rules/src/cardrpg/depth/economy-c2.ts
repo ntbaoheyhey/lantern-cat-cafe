@@ -4,11 +4,11 @@
 export const ECONOMY_C2 = {
   // One item must not decide a late-boss result. These are prospective B4b
   // budgets, measured with paired battles; Power alone is not the acceptance.
-  equipment: { commonPower: 0.008, maximumPower: 0.02, minimumMain: 1, affixScale: 0.25, defenseWeight: 3, hpWeight: 0.4 },
+  equipment: { commonPower: 0.008, maximumPower: 0.02, minimumMain: 1, affixScale: 0.25, defenseWeight: 3, hpWeight: 0.6 },
   // Flat defense persists over every hit. Set completion must not create an
   // unlimited taunt loop or overload a protector with shared damage.
   sets: { hearthloomShareBp: 500, bellsteelSheltersPerBattle: 0, bellsteelRipostesPerBattle: 1 },
-  uniques: { rainbellCleanseStacks: 1 },
+  uniques: { rainbellCleanseStacks: 1, softcollarShield: 8 },
   dropsPerDay: 6,
   // Basis points, in the shared Common/Rare/Epic/Legendary order.
   drops: {
