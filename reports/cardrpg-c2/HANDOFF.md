@@ -1,11 +1,11 @@
 # C2 handoff
-NOW: V3 accepted biscuit-4; B4b final cohorts still running.
+NOW: V3 54/86 accepted through biscuit-4; corrected progression/unit checks complete.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
-LAST GOOD COMMIT:4433ae228; corrected link source/policy; full workspace units passed.
-NEXT 1: Aggregate corrected full cohorts; monthly slowest. Frozen source/policy runtime c7b8656e.
-NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
-NEXT 3: Continue V3 at inkcap-1; preserve all accepted work.
-RUNNING: corrected item17065/month60017066/UI5x30min17088; model500 complete on5971; pre-fix month86148 SIGSTOP; holdout watcher23856.
+LAST GOOD COMMIT: 7ca18a1b0; 4420 package +33 root unit passes; all browser checks headless.
+NEXT 1: Finish corrected item full screen/declared holdout and 600-account economy; publish results.
+NEXT 2: Run full E2E on5970–5973 after word budget; then restore review5973.
+NEXT 3: V3 inkcap-1; generate while full E2E occupies review port, then capture and inspect.
+RUNNING: item17065; month17066; holdout watcher23856. UI/model complete; pre-fix month86148 SIGSTOP.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
 B4b: config unchanged; corrected native/gear link strengths;15x100 and15x1000 pass (worst6/6.4pp). Full cohorts pending.
 V3:86IDs;54accepted;54exported=3,594,366bytes. Review server5973.
@@ -15,6 +15,6 @@ CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-pas
 OPEN PROBLEMS: B4 disclosed misses; new Hearthloom/Panko item13–15pp screen cells (holdout scheduled); full economy; remaining V3; integration.
 STOP-C2 absent at resume; check before each heavy step. No agents/main merges/deployments/secrets.
 REPORTS18Nov18UTC; freeze19Nov12UTC. CHAIN sync15Nov12UTC/17Nov12UTC.
-CHECKS: inherited full log4415 package passes predates link fixes; focused rules23 passed; fresh full unit/E2E queued after UI cohort.
+CHECKS: corrected full units4453pass; focused retry10pass; 5UI/500model complete with exact parity; E2E next.
 B4b RUNTIME: c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafdff3f366; new immutable build dist-v2/c2-b4b-link on5971.
 USER: All browser checks must run headless; do not open Chrome windows on the desktop.

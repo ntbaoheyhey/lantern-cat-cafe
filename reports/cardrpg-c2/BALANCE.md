@@ -15,9 +15,9 @@ No target is claimed until both cohorts finish. Stop tuning after pass 3 if any 
 
 Final pass3 exact parity:126 common encounters and1,272 common decisions match; currency/XP errors0; per-seed median playback error0.63–0.96%. Retain pass3 as the best measured candidate: it eliminates the early-loss seeds, meets both boss targets, and reduces ordinary-win HP. It does not meet all requested balance targets. B4 enemy tuning is closed. The B4b item-stat change is separately measured and will not be reported as a fourth B4 tuning pass.
 
-## B4b final item/set configuration remeasurement
+## B4b pre-link-fix item/set configuration remeasurement
 
-Enemy budgets remain B4 pass3. Item/set runtime SHA256 `aee2911161a54d0724c74b692d5072edec1aee400a02ca5ff5d0ca653e79e262`. Fresh immutable build, five browser seeds80001–80005 for1800s and fixed model seeds80001–80500. This measures the final B4b item changes; it is not a fourth B4 tuning pass.
+Enemy budgets remain B4 pass3. Item/set runtime SHA256 `aee2911161a54d0724c74b692d5072edec1aee400a02ca5ff5d0ca653e79e262`. Fresh immutable build, five browser seeds80001–80005 for1800s and fixed model seeds80001–80500. This measures the pre-link-fix B4b item changes; it is not a fourth B4 tuning pass.
 
 | Cohort | First-loss median | Earliest loss | Seeds below8m | Boss median/p90 | Normal-win HP mean/median |
 |---|---|---|---|---|---|
@@ -27,3 +27,16 @@ Enemy budgets remain B4 pass3. Item/set runtime SHA256 `aee2911161a54d0724c74b69
 All cohorts completed with zero browser/driver errors. Exact parity holds for132 encounters and1355 decisions; per-seed median playback error0.75–1.10%. Boss timing, mean normal HP and the no-loss-before-eight-minutes condition pass in both cohorts. Browser first-loss median passes; model median is12.49s early. Normal-win HP medians remain10.61pp/browser and9.39pp/model above the80% ceiling. Keep these misses visible; no further enemy tuning is authorized.
 
 Evidence: projectless session9 `work/c2/b4b-set-targets-complete.json`, `b4b-set-parity.json` and the frozen per-seed real/sim directories.
+
+## B4b corrected source/policy remeasurement
+
+Frozen runtime SHA256 `c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafdff3f366`; enemy/item configuration unchanged. Both cohorts completed; browser errors0.
+
+| Cohort | First-loss median | Earliest loss | Seeds below8m | Boss median/p90 | Normal-win HP mean/median |
+|---|---|---|---|---|---|
+| real (5 seeds) | 12.232m | 9.441m | 0 | 71.91/93.76s | 78.14/90.61% |
+| sim (500 seeds) | 11.792m | 9.056m | 0 | 74.96/94.91s | 78.06/89.42% |
+
+Exact parity:133 common encounters,1,358 decisions; currency/XP errors0; per-seed median playback error0.84–0.94%. Boss timing and mean normal-win HP meet targets; no seed loses before8min. UI loss median meets12–20min; model median is12.49s early. Normal-win HP medians exceed the80% ceiling by10.61pp/UI and9.42pp/model. No additional enemy tuning.
+
+Evidence: session9 `work/c2/b4b-link-balance.json`, `b4b-link-parity.json` and frozen real/sim directories.
