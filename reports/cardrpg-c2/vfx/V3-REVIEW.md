@@ -17,3 +17,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | clover-3 | 8 / 8 / 9 / 8 | Pale cleansing curls reach all four allies and preserve separated heal numbers. | 120.02 |
 | clover-4 | 8 / 8 / 9 / 8 | Greenhouse motif reads across the team; flowers sit below faces and the two-word cut-in clears. | 120.00 |
 | clover-passive | 8 / 8 / 9 / 8 | Seedling cue targets the actual front-row recipient and stays below the face. | 119.83 |
+| panko-1 | 8 / 8 / 9 / 8 | Golden pan rim has a clear leading edge and resolves into a short floor-level tail. | 120.00 |
