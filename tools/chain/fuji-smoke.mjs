@@ -5,13 +5,14 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import {root,startLocal,devAccount,localApi,localOrigin,artifact} from './local.mjs';
+import {safeFailure} from './diagnose-rewards.mjs';
 const req=createRequire(resolve(root,'apps/web/package.json')),load=n=>import(pathToFileURL(req.resolve(n).replace('/_cjs/','/_esm/')));
 const {createPublicClient,createWalletClient,http,parseEther,getAddress}=await load('viem');
 const {privateKeyToAccount}=await load('viem/accounts');const {avalancheFuji}=await load('viem/chains');
 const {createSiweMessage}=await load('viem/siwe');
 const dry=process.argv.includes('--dry-run');
 if(!dry&&!process.argv.includes('--fuji')){console.log('Usage: node tools/chain/fuji-smoke.mjs --dry-run | --fuji. Public mode needs two test wallets in env, public contract addresses, SUPABASE_URL and WEB_ORIGIN.');process.exit(0);}
-let local,stage='configuration',passed=false;const receipts=[];let config;
+let local,stage='configuration',passed=false,failure;const receipts=[];let config;
 try{
  if(dry)local=await startLocal({web:false});
  config=dry?local.config:{...JSON.parse(readFileSync(resolve(root,'packages/chain/deployments/43113.json'),'utf8')),rpcUrl:process.env.FUJI_RPC_URL||avalancheFuji.rpcUrls.default.http[0],YarnToken:getAddress(process.env.YARN_TOKEN_ADDRESS||''),RelicMarketV2:getAddress(process.env.MARKET_V2_ADDRESS||''),SeasonRewards:getAddress(process.env.SEASON_REWARDS_ADDRESS||'')};
@@ -22,7 +23,14 @@ try{
  const read=(name,address,fn,args=[])=>client.readContract({address,abi:abi(name),functionName:fn,args});
  const post=async(name,body={},token)=>{const response=await fetch(`${api}/functions/v1/${name}`,{method:'POST',headers:{'content-type':'application/json',...(token?{authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});assert.equal(response.status,200,`HTTP ${name}`);return response.json();};
  const record=async(label,hash)=>{assert.equal((await client.waitForTransactionReceipt({hash,timeout:60000})).status,'success');receipts.push({label,hash});return hash;};
- const send=async(account,address,name,fn,args,value)=>{stage=`${name}.${fn}`;const wallet=createWalletClient({chain:avalancheFuji,account,transport:http(config.rpcUrl)});const simulation=await client.simulateContract({account:account.address,address,abi:abi(name),functionName:fn,args,...(value===undefined?{}:{value})});return record(stage,await wallet.writeContract(simulation.request));};
+ const send=async(account,address,name,fn,args,value)=>{
+   stage=`${name}.${fn}`;
+   const wallet=createWalletClient({chain:avalancheFuji,account,transport:http(config.rpcUrl)});
+   const simulation=await client.simulateContract({account:account.address,address,abi:abi(name),functionName:fn,args,...(value===undefined?{}:{value})});
+   // Simulation carries an address-only account. Restore the local signer so
+   // public RPCs receive a signed transaction instead of a request to sign it.
+   return record(stage,await wallet.writeContract({...simulation.request,account}));
+ };
  const login=async(account)=>{
    stage='SIWE';const {nonce}=await post('auth-nonce');const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
    const session=await post('auth-verify',{message,signature:await account.signMessage({message})});
@@ -34,7 +42,7 @@ try{
  stage='judge pass';await post('chain-judge',{action:'pass'},s);await post('chain-judge',{action:'pass'},b);
  stage='authoritative boss';const pass=await post('chain-judge',{action:'boss'},s);assert.equal(pass.battle.won,true);
  const mint=async(account,v)=>{assert.equal(v.used,false);return send(account,config.RelicNFT,'RelicNFT','mint',[{player:v.player,relicId:BigInt(v.relicId),rarity:v.rarity,nonce:BigInt(v.nonce),expiry:BigInt(v.expiry)},v.signature]);};
- const claim=async(account,token)=>{stage='tester grant';const r=await post('chain-items',{action:'reward'},token);assert.equal(r.used,false);const c=r.claim;await send(account,config.SeasonRewards,'SeasonRewards','claim',[{...c,amount:BigInt(c.amount),season:BigInt(c.season),nonce:BigInt(c.nonce),expiry:BigInt(c.expiry)},r.signature]);};
+ const claim=async(account,token)=>{stage='tester grant';const r=await post('chain-items',{action:'reward'},token);assert.equal(r.used,false);const c=r.claim;await send(account,config.SeasonRewards,'SeasonRewards','claimTester',[{...c,amount:BigInt(c.amount),season:BigInt(c.season),nonce:BigInt(c.nonce),expiry:BigInt(c.expiry)},r.signature]);};
  await claim(seller,s);await claim(buyer,b);
  await mint(seller,pass.vouchers.find(v=>v.relicId==='3'));
  await send(seller,config.RelicNFT,'RelicNFT','setApprovalForAll',[config.RelicMarketV2,true]);
@@ -66,9 +74,9 @@ try{
  const owing=await read('RelicMarketV2',config.RelicMarketV2,'proceeds',[treasury,1]);assert(owing>=fee-burn);
  await send(seller,config.RelicMarketV2,'RelicMarketV2','withdraw',[1,seller.address]);
  passed=true;console.log(`PASS: ${dry?'Anvil dry-run':'public Fuji'} judge loop, ${receipts.length} confirmed transactions.`);
-}catch{console.error(`FAIL at ${stage}. Check deployment, session limits, unused test wallets and funding. No secret values logged.`);process.exitCode=1;}
+}catch(error){failure=safeFailure(error);console.error(`FAIL at ${stage}. ${JSON.stringify(failure)} No secret values logged.`);process.exitCode=1;}
 finally{
  const path=resolve(root,`reports/chain/FUJI-SMOKE${dry?'-DRY-RUN':''}.md`);
- writeFileSync(path,`# ${dry?'Anvil dry-run — NOT public Fuji':'Public Fuji smoke'}\n\n${passed?'PASS':'FAIL'} · ${new Date().toISOString()} · chain 43113 · Testnet — no real value.\n\n${dry?'All hashes below belong to disposable localhost state; they are not Snowtrace evidence.':'All links below are public Fuji receipts.'}\n\nLast stage: ${stage}.\n\n| Step | Transaction |\n|---|---|\n${receipts.map(r=>`| ${r.label} | ${dry?'`'+r.hash+'`':`[${r.hash}](https://testnet.snowtrace.io/tx/${r.hash})`} |`).join('\n')}\n`);
+ writeFileSync(path,`# ${dry?'Anvil dry-run — NOT public Fuji':'Public Fuji smoke'}\n\n${passed?'PASS':'FAIL'} · ${new Date().toISOString()} · chain 43113 · Testnet — no real value.\n\n${dry?'All hashes below belong to disposable localhost state; they are not Snowtrace evidence.':'All links below are public Fuji receipts.'}\n\nLast stage: ${stage}.\n${failure?`\nFailure: ${JSON.stringify(failure)}\n`:''}\n| Step | Transaction |\n|---|---|\n${receipts.map(r=>`| ${r.label} | ${dry?'`'+r.hash+'`':`[${r.hash}](https://testnet.snowtrace.io/tx/${r.hash})`} |`).join('\n')}\n`);
  await local?.stop();
 }

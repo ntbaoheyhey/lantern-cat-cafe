@@ -130,6 +130,8 @@ jobs:
       - run: node tools/chain/check-drip.mjs
       - run: node tools/chain/check-move.mjs
       - run: node tools/chain/fuji-smoke.mjs --dry-run
+      - run: node tools/chain/seed-market.mjs --dry-run
+      - run: node --test tools/chain/*.test.mjs
       - run: node tools/chain/token-sim.mjs
       - name: Three consecutive fresh Fuji-ID Anvil runs
         run: |

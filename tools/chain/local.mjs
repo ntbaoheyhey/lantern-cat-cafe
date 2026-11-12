@@ -52,10 +52,14 @@ export async function startLocal({web = true} = {}) {
     // Fail if a listener already exists; never reuse an unknown chain.
     const probe = await fetch(localRpc,{method:'POST',headers:{'content-type':'application/json'},body:'{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'}).catch(()=>null);
     if(probe)throw new Error('Port 5981 already in use; stop its owner first.');
-    const anvil = spawn('anvil',['--host','127.0.0.1','--port','5981','--chain-id','43113','--silent'],{cwd:root,stdio:'ignore'});
+    // Public RPCs do not unlock operator wallets. Keep fixtures locked so tests
+    // cannot accidentally pass by delegating transaction signing to Anvil.
+    const anvil = spawn('anvil',['--host','127.0.0.1','--port','5981','--chain-id','43113','--accounts','0','--silent'],{cwd:root,stdio:'ignore'});
     handles.push(async()=>{anvil.kill('SIGTERM');await new Promise(r=>anvil.exitCode!==null?r():anvil.once('exit',r));});
     const client=localClient();
     for(let i=0;;i++){try{if(await client.getChainId()===43113)break;}catch{}if(i>=50)throw new Error('Anvil unavailable');await new Promise(r=>setTimeout(r,100));}
+    if((await client.request({method:'eth_accounts'})).length)throw new Error('Local RPC must not expose unlocked wallets.');
+    for(let i=0;i<10;i++)await client.request({method:'anvil_setBalance',params:[devAccount(i).address,viem.toHex(viem.parseEther('10000'))]});
     execFileSync('forge',['build','--root','contracts'],{cwd:root,stdio:'pipe'});
     const deployer=devAccount(0), signer=devAccount(2), bot=devAccount(1), sponsor=devAccount(3);
     const deployWallet=walletFor(deployer);

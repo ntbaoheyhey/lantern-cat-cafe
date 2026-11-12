@@ -9,6 +9,7 @@ import { chainFlags } from './flags';
 import { friendlyError } from './errors';
 import { existingGuestAddress, guestClient, TESTNET_NOTICE } from './guest';
 import { chainRuntime, loadChainConfig, txLink, type ChainConfig, type ChainListing } from './runtime';
+import { readChainHistory, type HistoryRow } from './history';
 export const RELIC_IDS = [1n,2n,3n,4n];
 export const RELIC_NAMES = ['Paw Charm','Star Bell','Moon Collar','Golden Maneki'];
 type Tab='Judge'|'Market'|'Bag'|'Seal'|'History';
@@ -16,7 +17,6 @@ interface Voucher {player:Address;relicId:string;rarity:number;nonce:string;expi
 interface Pass {vouchers:Voucher[];battle?:{won:boolean;rounds:number;log:unknown[]}}
 interface Inventory {id:string;item_id:string;state:string;seal:{id:string;cost:string}|null}
 interface Reward {claim:{player:Address;amount:string;season:string;nonce:string;expiry:string};signature:Hex;used:boolean}
-interface HistoryRow {hash:Hash;block:bigint;label:string}
 const nameOf=(id:bigint|string)=>TRADE_BY_TOKEN[Number(id)]?.name??`#${id}`;
 const artOf=(id:bigint|string|number)=>Number(id)<10000?`/relics/${id}.svg`:Number(id)<20000?'/chain/star-thread.svg':'/chain/sealed-gear.svg';
 const localTreasures=(address:string)=>`taskbar-hero.fuji-treasure.v1:${address.toLowerCase()}`;
@@ -91,7 +91,7 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   };
   const claim=async()=>{
     const result=await chainPost<Reward>('chain-items',session!.token,{action:'reward'});
-    if(!result.used){const c=result.claim;const hash=await runtime!.write({address:config!.SeasonRewards!,abi:seasonRewardsAbi,functionName:'claim',args:[{...c,amount:BigInt(c.amount),season:BigInt(c.season),nonce:BigInt(c.nonce),expiry:BigInt(c.expiry)},result.signature]});setSuccess({hash});}
+    if(!result.used){const c=result.claim;const hash=await runtime!.write({address:config!.SeasonRewards!,abi:seasonRewardsAbi,functionName:'claimTester',args:[{...c,amount:BigInt(c.amount),season:BigInt(c.season),nonce:BigInt(c.nonce),expiry:BigInt(c.expiry)},result.signature]});setSuccess({hash});}
     setClaimed(true);
   };
   const seal=async(item:Inventory)=>{
@@ -115,14 +115,8 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const cancel=async(l:ChainListing)=>{setSuccess({hash:await runtime!.write({address:market!,abi:marketAbi,functionName:'cancel',args:[l.id]})});};
   const withdraw=async(c:number)=>{setSuccess({hash:await runtime!.write({address:market!,abi:relicMarketV2Abi,functionName:'withdraw',args:[c,session!.wallet]})});};
   const historyPage=async()=>{
-    const client=runtime!.client,latest=await client.getBlockNumber();let to=latest;const found=new Map<Hash,HistoryRow>();const start=BigInt(config!.startBlock??'0');
     const addresses=[config!.RelicNFT,config!.RelicMarket,...(yarnOn?[config!.YarnToken!,config!.SeasonRewards!]:[]),...(config!.RelicMarketV2&&yarnOn?[config!.RelicMarketV2]:[])];
-    for(let windows=0;windows<12&&to>=start&&found.size<20;windows++){
-      const from=to-start>9999n?to-9999n:start;const logs=await client.getLogs({address:addresses,fromBlock:from,toBlock:to});
-      for(const log of logs)if(log.transactionHash&&log.blockNumber!==null)found.set(log.transactionHash,{hash:log.transactionHash,block:log.blockNumber,label:'↗'});
-      if(from===start)break;to=from-1n;
-    }
-    setHistory([...found.values()].sort((a,b)=>a.block>b.block?-1:1).slice(0,20));
+    setHistory(await readChainHistory(runtime!.client,addresses,BigInt(config!.startBlock??'0')));
   };
   const disabled=busy||!runtime||offline;
   const mine=(l:ChainListing)=>l.seller.toLowerCase()===session?.wallet.toLowerCase();
@@ -170,9 +164,9 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
         {owned.length>2&&pages(owned.length,'holdings')}
       </>}
       {tab==='Seal'&&<><div className="chain-grid">{sealable.slice(page*2,page*2+2).map(item=><article key={item.id} data-testid={`drop-${item.item_id}`}><img src={artOf(TRADE_BY_ID[item.item_id]?.tokenId??10001)} alt={TRADE_BY_ID[item.item_id]?.name}/><strong>{TRADE_BY_ID[item.item_id]?.name}</strong><output>🧶 {formatEther(sealCost(item.item_id))}</output><button disabled={disabled} onClick={()=>void run(()=>seal(item))}>{item.state==='available'?'✦ Seal to Fuji':'↻ Recover'}</button></article>)}</div>{sealable.length>2&&pages(sealable.length,'seal items')}</>}
-      {tab==='History'&&<ol className="chain-history">{history.map(h=><li key={h.hash}><a href={txLink(h.hash)} target="_blank" rel="noreferrer" title={h.hash}>{h.label} {h.hash.slice(0,10)}…</a></li>)}</ol>}
+      {tab==='History'&&<ol className="chain-history">{history.map(h=><li key={h.hash}><a href={txLink(h.hash)} target="_blank" rel="noreferrer" title={h.hash}>↗ {h.hash.slice(0,10)}…</a></li>)}</ol>}
     </>}
-    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Seal')await loadInventory();})}>↻</button><details><summary>?</summary><p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
+    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Seal')await loadInventory();if(tab==='History'&&runtime)await historyPage();})}>↻</button><details><summary>?</summary><p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
     {success&&<div className="chain-success" role="dialog" aria-label="Transaction confirmed" aria-modal="true"><button aria-label="Close receipt" onClick={()=>setSuccess(undefined)}>×</button><b>✓ Confirmed</b><small>{TESTNET_NOTICE}</small>{success.id&&<img src={artOf(success.id)} alt={nameOf(success.id)}/>}<code>{success.hash}</code><a href={txLink(success.hash)} target="_blank" rel="noreferrer" onClick={()=>setChecks(c=>({...c,Snowtrace:true}))}>↗ Snowtrace</a></div>}
   </section>;
 }

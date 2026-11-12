@@ -236,7 +236,13 @@ Listing ids, prices and amounts are `uint256`, so pass and expect `bigint`.
 
 ## Fuji YARN, Market V2 and season claims
 
-**Testnet — no real value.** These are new, undeployed contracts; the existing Fuji NFT and V1 market above are unchanged. The user deploys them with [USER-DEPLOY-VI](../reports/chain/USER-DEPLOY-VI.md). No contract deployment was performed by Codex.
+**Testnet — no real value.** The user deployed the three new contracts on 2026-11-12. The existing Fuji NFT and V1 market are unchanged. All three new runtimes match local artifacts in the [read-only audit](../reports/chain/FUJI-READONLY-AUDIT.json); the [public smoke](../reports/chain/FUJI-SMOKE.md) has 18 confirmed receipts. No contract deployment was performed by Codex.
+
+| Contract | Deployed address |
+|---|---|
+| YarnToken | `0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b` |
+| RelicMarketV2 | `0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4` |
+| SeasonRewards | `0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11` |
 
 | Contract | Construction / authority | Main behavior |
 | --- | --- | --- |
@@ -260,11 +266,12 @@ Domain: `{name:"TaskbarHeroSeasonRewards", version:"1", chainId:43113, verifying
 
 ```text
 Claim(address player,uint256 amount,uint256 season,uint256 nonce,uint256 expiry)
+TesterClaim(address player,uint256 amount,uint256 season,uint256 nonce,uint256 expiry)
 ```
 
-Claims enforce caller, nonzero amount, expiry (inclusive), current season, signer and globally unused nonce. Each player's aggregate claims are capped per UTC Monday week regardless of nonce or season; the deploy script chooses 32 YARN. The one-time judge grant is 20 YARN. Transferring pool funds is part of the same transaction as nonce/cap updates, so insufficient pool funding rolls everything back. `setSigner` is owner-only; there is no discretionary pool withdrawal or mint authority. The genesis distributor does not enforce allocation vesting.
+Claims enforce caller, nonzero amount, expiry (inclusive), current season, signer and globally unused nonce. Each player's aggregate claims are capped per UTC Monday week regardless of nonce or season; the deploy script chooses 32 YARN. The one-time judge grant is 20 YARN via `claimTester`, signed with `TesterClaim`; a routine `Claim` signature cannot substitute. `testerClaimed(wallet)` is a lifetime guard. Routine `claim` additionally enforces a 12-YARN initial weekly cap that can only fall. `YarnToken.burnedInWeek` tracks all true burns. `SeasonRewards` includes tester grants in `emittedInSeason`, aggregates 13 closed weeks, and rolls its automatic burn/emission reduction on every claim or permissionless `rollSeasons()`. `currentRoutineBudget()` previews the same result. Below0.8 health, multiply the prior cap by min(0.8, health/0.8); zero is absorbing. Late burns do not repair a closed season. All-holder burns count, so this is not an organic-demand oracle. The deployed issuer currently signs tester grants only. Transferring pool funds is part of the same transaction as nonce/cap updates, so insufficient pool funding rolls everything back. `setSigner` is owner-only; there is no discretionary pool withdrawal or mint authority. The genesis distributor does not enforce allocation vesting.
 
-`DeployChainV2.s.sol` requires chain 43113, code at the fixed existing NFT address and its matching signer. It reads `CHAIN_DEPLOYER_PRIVATE_KEY`, `CHAIN_VOUCHER_SIGNER_ADDRESS`, `YARN_DISTRIBUTOR_ADDRESS`, `YARN_TREASURY_ADDRESS`, and optional `MARKET_FEE_BPS=500`. It prints only public addresses and epoch. It never redeploys the existing NFT/market. The user must fund SeasonRewards and supply the new public addresses before enabling the frontend/server flags.
+`DeployChainV2.s.sol` requires chain 43113, code at the fixed existing NFT address and its matching signer. It reads `CHAIN_DEPLOYER_PRIVATE_KEY`, `CHAIN_VOUCHER_SIGNER_ADDRESS`, `YARN_DISTRIBUTOR_ADDRESS`, `YARN_TREASURY_ADDRESS`, and optional `MARKET_FEE_BPS=500`. It prints only public addresses and epoch. It never redeploys the existing NFT/market. The user funded 10,000 test YARN; the audited balance after two tester claims is 9,960. Frontend deployment and bot inventory remain outstanding; do not rerun deployment or full smoke with the already-consumed tester wallets.
 
 ### Local verification
 
@@ -278,4 +285,4 @@ forge test --root contracts
 forge coverage --root contracts
 ```
 
-Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](../reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and pending public verification.
+Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](../reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and public on-chain verification versus pending frontend/timing work.

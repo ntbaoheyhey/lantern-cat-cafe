@@ -8,6 +8,8 @@ import {ERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20P
 contract YarnToken is ERC20, ERC20Burnable, ERC20Permit {
     uint256 public constant GENESIS_SUPPLY = 1_000_000_000 ether;
     mapping(address => mapping(bytes32 => uint256)) public sealPayments;
+    /// @notice Actual ERC-20 supply destroyed in each UTC Monday week, including seal and sale burns.
+    mapping(uint256 => uint256) public burnedInWeek;
     event SealPaid(address indexed player, bytes32 indexed intent, uint256 amount);
     error FujiOnly();
     error InvalidSeal();
@@ -24,5 +26,12 @@ contract YarnToken is ERC20, ERC20Burnable, ERC20Permit {
         sealPayments[msg.sender][intent] = amount;
         _burn(msg.sender, amount);
         emit SealPaid(msg.sender, intent, amount);
+    }
+
+    function _update(address from, address to, uint256 value) internal override {
+        super._update(from, to, value);
+        if (to == address(0) && value != 0) {
+            burnedInWeek[(block.timestamp - 4 days) / 1 weeks] += value;
+        }
     }
 }

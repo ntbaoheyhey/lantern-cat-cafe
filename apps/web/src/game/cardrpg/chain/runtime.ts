@@ -54,7 +54,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     if(!market)return [];
     const abi=version==='v2'?relicMarketV2Abi:relicMarketAbi;
     // One block snapshot keeps pagination coherent if another player trades mid-refresh.
-    const blockNumber=await client.getBlockNumber();
+    const blockNumber=await client.getBlockNumber({cacheTime:0});
     const count=await client.readContract({address:market,abi,functionName:'activeListingCount',blockNumber});
     const rows:ChainListing[]=[];
     for(let offset=0n;offset<count;offset+=100n){

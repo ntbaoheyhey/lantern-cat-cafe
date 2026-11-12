@@ -19,5 +19,11 @@ export default defineConfig({
       },
     },
   },
-  test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.test.{ts,tsx}'],
+    // Bound jsdom workers so concurrent suites do not starve DOM assertions
+    // and cold lazy imports of CPU time on shared development machines.
+    maxWorkers: 2,
+  },
 });

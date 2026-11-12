@@ -4,7 +4,7 @@ import {getAddress,recoverTypedDataAddress,type Address} from 'viem';
 import {generatePrivateKey,privateKeyToAccount} from 'viem/accounts';
 import {as,migratedDb} from './game-db';
 import {createItems,sealIntentHash,type ItemStore,type ChainInventory,type SealIntent} from '../../functions/_shared/chain-items';
-import {createTesterReward,claimDomain,CLAIM_TYPES} from '../../functions/_shared/chain-rewards';
+import {createTesterReward,claimDomain,TESTER_CLAIM_TYPES} from '../../functions/_shared/chain-rewards';
 import {voucherSigner,voucherDomain,VOUCHER_TYPES} from '../../functions/_shared/relic';
 let db:PGlite;let player:string;let other:string;
 const wallet=getAddress('0x'+'1'.repeat(40)),otherWallet=getAddress('0x'+'2'.repeat(40)),nft=getAddress('0x'+'3'.repeat(40));
@@ -67,7 +67,7 @@ it('tester grant needs a judge pass, fixes amount, binds wallet/domain and never
   const reward=createTesterReward({key,contract:nft,eligible:async()=>eligible,season:async()=>season,nonceUsed:async()=>used});
   await expect(reward(player,wallet)).rejects.toThrow('no_judge_pass');eligible=true;
   const first=await reward(player,wallet);expect(first.claim.amount).toBe(20n*10n**18n);
-  expect(await recoverTypedDataAddress({domain:claimDomain(nft),types:CLAIM_TYPES,primaryType:'Claim',message:first.claim,signature:first.signature as `0x${string}`})).toBe(privateKeyToAccount(key).address);
+  expect(await recoverTypedDataAddress({domain:claimDomain(nft),types:TESTER_CLAIM_TYPES,primaryType:'TesterClaim',message:first.claim,signature:first.signature as `0x${string}`})).toBe(privateKeyToAccount(key).address);
   season=1n;expect((await reward(player,wallet)).claim.nonce).toBe(first.claim.nonce);
   used=true;expect((await reward(player,wallet)).signature).toBe('0x');
 });

@@ -276,12 +276,12 @@ contract ChainV2Test is Test {
     }
 
     function test_claimCapReplayAndMondayReset() public {
-        SeasonRewards.Claim memory c = claimData(32 ether, 100);
+        SeasonRewards.Claim memory c = claimData(12 ether, 100);
         bytes memory sig = signature(c);
         vm.prank(alice);
         rewards.claim(c, sig);
-        assertEq(yarn.balanceOf(alice), 32 ether);
-        assertEq(rewards.claimedInWeek(alice, rewards.currentWeek()), 32 ether);
+        assertEq(yarn.balanceOf(alice), 12 ether);
+        assertEq(rewards.claimedInWeek(alice, rewards.currentWeek()), 12 ether);
         vm.prank(alice);
         vm.expectRevert(SeasonRewards.NonceUsed.selector);
         rewards.claim(c, sig);
@@ -291,11 +291,11 @@ contract ChainV2Test is Test {
         vm.expectRevert(SeasonRewards.WeeklyCap.selector);
         rewards.claim(c, sig);
         vm.warp((rewards.currentWeek() + 1) * 1 weeks + 4 days);
-        c = claimData(32 ether, 102);
+        c = claimData(12 ether, 102);
         sig = signature(c);
         vm.prank(alice);
         rewards.claim(c, sig);
-        assertEq(yarn.balanceOf(alice), 64 ether);
+        assertEq(yarn.balanceOf(alice), 24 ether);
     }
 
     function test_claimBadSignaturesRecipientExpirySeasonAndRotation() public {
@@ -393,13 +393,13 @@ contract ChainV2Test is Test {
     }
 
     function testFuzz_claimCap(uint128 rawAmount) public {
-        uint256 amount = bound(rawAmount, 1, 33 ether);
+        uint256 amount = bound(rawAmount, 1, 13 ether);
         SeasonRewards.Claim memory c = claimData(amount, 1);
         bytes memory sig = signature(c);
         vm.prank(alice);
-        if (amount > 32 ether) vm.expectRevert(SeasonRewards.WeeklyCap.selector);
+        if (amount > 12 ether) vm.expectRevert(SeasonRewards.WeeklyCap.selector);
         rewards.claim(c, sig);
-        assertLe(rewards.claimedInWeek(alice, rewards.currentWeek()), 32 ether);
+        assertLe(rewards.routineClaimedInWeek(alice, rewards.currentWeek()), 12 ether);
     }
 }
 
@@ -416,6 +416,7 @@ contract ChainV2Handler is Test, ERC1155Holder {
     address public seller = address(0xBEEF);
     address public treasury = address(0xCAFE);
     uint256[] public weeksTouched;
+    mapping(uint256 => uint256) public routineBudgetAtWeek;
 
     constructor() {
         vm.chainId(43113);
@@ -461,19 +462,24 @@ contract ChainV2Handler is Test, ERC1155Holder {
     function claim(uint96 amount, bool nextWeek) external {
         if (nextWeek) vm.warp(block.timestamp + 1 weeks);
         uint256 week = rewards.currentWeek();
-        uint256 cap = rewards.weeklyCap() - rewards.claimedInWeek(address(this), week);
+        uint256 budget = rewards.currentRoutineBudget();
+        uint256 cap = budget - rewards.routineClaimedInWeek(address(this), week);
         if (cap == 0) return;
         uint256 a = bound(amount, 1, cap);
         SeasonRewards.Claim memory c =
             SeasonRewards.Claim(address(this), a, rewards.currentSeason(), ++n, block.timestamp + 1 hours);
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(signerKey, rewards.hashClaim(c));
         rewards.claim(c, abi.encodePacked(r, s, v));
+        routineBudgetAtWeek[week] = budget;
         weeksTouched.push(week);
     }
 
     function capInvariant() external view returns (bool) {
         for (uint256 i; i < weeksTouched.length; i++) {
             if (rewards.claimedInWeek(address(this), weeksTouched[i]) > 32 ether) return false;
+            if (rewards.routineClaimedInWeek(address(this), weeksTouched[i]) > routineBudgetAtWeek[weeksTouched[i]]) {
+                return false;
+            }
         }
         return true;
     }
@@ -507,5 +513,22 @@ contract ChainV2Invariant is StdInvariant, Test {
 
     function invariant_weeklyCapsHold() public view {
         assertTrue(handler.capInvariant());
+    }
+
+    function invariant_routineBudgetNeverIncreases() public view {
+        SeasonRewards rewards = handler.rewards();
+        assertLe(rewards.currentRoutineBudget(), rewards.BASE_ROUTINE_CAP());
+        for (uint256 season = 1; season <= rewards.lastPolicySeason(); season++) {
+            assertLe(rewards.policyMultiplier(season), rewards.policyMultiplier(season - 1));
+        }
+    }
+
+    function invariant_weeklyBurnRecordsMatchSupplyDestroyed() public view {
+        SeasonRewards rewards = handler.rewards();
+        uint256 burned;
+        for (uint256 week = (rewards.seasonEpoch() - 4 days) / 1 weeks; week <= rewards.currentWeek(); week++) {
+            burned += handler.yarn().burnedInWeek(week);
+        }
+        assertEq(burned, handler.burned());
     }
 }
