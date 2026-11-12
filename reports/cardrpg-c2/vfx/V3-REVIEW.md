@@ -50,3 +50,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | sorrel-1 | 8 / 8 / 9 / 8 | Teal spoon crescent is recognizable against the rose boss at quarter scale; its opaque cream edge leads the strike and the small residue leaves the damage number unobstructed. | 60.00 |
 | sorrel-2 | 8 / 8 / 9 / 8 | The teal teapot and long cream pour read distinctly from the spoon strike; the water ribbon stays below the boss face and clears around the damage number. | 60.00 |
 | sorrel-3 | 8 / 8 / 9 / 8 | Paired moon basins shelter both front allies with intact silhouettes; faces remain visible above the bowls and the two shield values stay separated before the soft water fade. | 60.00 |
+| sorrel-4 | 8 / 8 / 9 / 8 | Four rounded teal teapots make the shared-heal ultimate legible across the formation; the two-word portrait cut-in and all four green heal values stay clear of the painted bodies. | 60.00 |
