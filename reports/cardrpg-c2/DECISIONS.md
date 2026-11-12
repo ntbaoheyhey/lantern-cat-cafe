@@ -98,3 +98,6 @@ Validation is predeclared before candidate results: measure the union of all15 e
 2026-11-12T12:30:54.424563+00:00 B5 wallet integration repair: menu → Wallet opens the embedded panel; standalone wallet behavior retained. Closed wallet cannot cover Fight or add ambient text. Focus enters the panel and Escape returns to the menu. Focused3/3 unit tests,33/33 live-demo budgets(max25), signed-in guest/Judge/battle click smoke pass. Preserve failed word run and prior full435+2 passes; checkpoint before full repaired-build verification.
 
 2026-11-12T12:33:11.377543+00:00 B5 shutdown repair verified: fresh demo starts followed bySIGTERM andSIGINT both release5940/5971/5972. Anvil is signaled before asynchronous cleanup; repeated stop calls share one cleanup promise, and signal termination counts as exit. Full repaired-build check begins next; no public endpoints used.
+
+
+2026-11-12T12:56:18.145352+00:00 B4b full600-account export accepted as measurement, not universal item-power acceptance. Casual firstEpic day1, firstLegendary day11; publish all currency/progress ratios and all69 Epic+/material weekly rows with partial week5 identified. Exact READY394cf606 trade hash verified; eligible supply stays separate from authoritative issuance0. Four original13pp item cells and independent intervals remain disclosed after the return pass.

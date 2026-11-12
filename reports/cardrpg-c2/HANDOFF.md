@@ -1,19 +1,20 @@
-# C2 integration handoff
-NOW: B5 final verification complete; reviewed game/mobile/walkthrough captures; draft PR next.
-BRANCH: codex/cardrpg-integrate-2026-11-12; C2 base b0448628f; PR440 remains draft.
-LAST GOOD COMMIT: e9f2bdc5845b34223d848e125bfb07343a24179b (full runtime verification); report checkpoint follows.
-NEXT 1: Push this B5 evidence commit and create integration draft PR based on C2.
-NEXT 2: Finish frozen600-account monthly; inspect exporter output; publish B4b report/supply.
-NEXT 3: Port the dedicated B4b report commit to C2, merge back, finish B6 and PR summaries.
-RUNNING: monthly73297; exporter90642; demo7963 on5940/5971/5972; all verification drivers done.
-FROZEN: runtime4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
-ECONOMY: session9 work/c2/loot-affix; casual200/regular200 complete; heavy152 at12:45UTC.
-B4:3passes exhausted; model first loss12.593s early; normalHP medians remain above80%.
-B4b:6144-cell screen4misses(max13pp); separate4x1000 holdout4.6–11pp; preserve all samples.
-V3/V4:86accepted;78rules-event effects/8stat previews;5,783,929bytes; report published.
-CHECKS:4514package+56Node+118Foundry pass;435/435E2E+2/2Anvil;typecheck/lint/build pass.
-VISUALS:21formation captures;33/33words signed-out+guest,max25;real desktop/mobile inspected.
-DEMO:pnpm demo:play default Anvil; explicit DEMO_CHAIN=fuji; docs/demo-build refreshed.
-CHAIN:READY394cf606 merged; trusted campaign receipts/routine reward economics still open.
-USER:Headless browsers; no agents/main merges/public deployments/secrets.
-STOP-C2 absent; freeze19Nov12UTC; future sync15/17Nov12UTC not yet performed.
+# C2 final handoff
+NOW: B4b600-account export and B6 complete; port economy report commit to C2, then merge back.
+BRANCH: codex/cardrpg-integrate-2026-11-12; draft PR442; C2 draft PR440.
+LAST GOOD COMMIT: bc6757c15 (complete B4b report); full tested runtime e9f2bdc58.
+NEXT 1: Cherry-pick dedicated B4b report onto C2 and push; merge C2 back with a merge commit.
+NEXT 2: Update PR440/442 descriptions with final report and economy metrics.
+NEXT 3: Sync CHAIN READY/requests15Nov12UTC and17Nov12UTC; retime only when Spine lands.
+RUNNING: None.600accounts/export complete; verification/demo stopped; ports released.
+FROZEN:4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
+ECONOMY:casual/regular/heavy200each×30days;casualEpic1/Legendary11;12sinks within0.8–1.1.
+B4:3passes exhausted;model loss12.593s early;HP medians90.28%UI/89.51%model.
+B4b:6144-cell screen4misses at13pp;4x1000holdout4.6–11pp;Crumbweave interval crosses12.
+V3/V4:86accepted;78event effects/8stat previews;5,783,929bytes;designer retiming pending.
+CHECKS:4514package+56Node+118Foundry;435/435browser+2/2Anvil;typecheck/lint/build pass.
+VISUALS:21formation;33/33words signed-out+guest,max25;actual desktop/mobile inspected.
+DEMO:pnpm demo:play;5940/RPC5971/API5972;explicit DEMO_CHAIN=fuji;Vietnamese guide ready.
+CHAIN:READY394cf606 integrated;per-item supply published;authoritative campaign issuance0.
+REPORTS:C2-REPORT.md,ECONOMY.md,B5.md,vfx/VFX-REPORT.md;all measured misses retained.
+USER:Headless;no agents/main merges/public deployments/secrets;STOP-C2 absent.
+FREEZE:19Nov12UTC;report deadline18Nov18UTC;submission21Nov16:59UTC.
