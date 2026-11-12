@@ -78,3 +78,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | mallow-passive | 8 / 8 / 9 / 8 | The small warm whisk-loop cue stays on Mallow at chest height, leaves the face legible and clears without a large screen flash. | 60.00 |
 | sorrel-passive | 8 / 8 / 9 / 8 | The teal droplet and cream spoon curl sit low on the actual protected recipient and fade completely before the next action. | 60.00 |
 | biscuit-passive | 8 / 8 / 9 / 8 | Rose bakery knot frames the protected front recipient below the face; petals clear after its short pulse. | 60.00 |
+| inkcap-passive | 8 / 8 / 9 / 8 | Violet spore cradle stays low on the rear caster; the cream cushion and fade remain distinct at quarter scale. | 60.00 |
