@@ -36,7 +36,8 @@ export interface SuggestedTeamA6 {
 }
 export function suggestedTeamsA6(state: R.DepthAccount, minimumLevel = 1): SuggestedTeamA6[] {
   const owned = state.account.cards.filter(c => c.level >= minimumLevel).map(c => c.cardId).sort();
-  const teams = owned.flatMap((a,i)=>owned.slice(i+1).flatMap((b,j)=>owned.slice(i+j+2).map(c=>[a,b,c])));
+  const teams:string[][]=[];
+  const choose=(start:number,team:string[])=>{if(team.length===R.partySize(state)){teams.push(team);return;}for(let i=start;i<owned.length;i++)choose(i+1,[...team,owned[i]!]);};choose(0,[]);
   if(!teams.length)return [];
   const data=teams.map(team=>({team,power:Math.round(R.teamPowerV4({...state,team})),
     pairs:R.activePairCombosA6(team).length, guardian:team.some(id=>R.CAT_BY_ID[id]!.role==='guardian'),
@@ -52,6 +53,6 @@ export function suggestedTeamsA6(state: R.DepthAccount, minimumLevel = 1): Sugge
     const picked=ranked.find(t=>!used.has(t.team.join()))??ranked[0]!;used.add(picked.team.join());
     const front=[...picked.team].sort((a,b)=>Number(R.CAT_BY_ID[b]!.role==='guardian')-Number(R.CAT_BY_ID[a]!.role==='guardian')||(R.depthStats(state,b).hp+R.depthStats(state,b).defense*5)-(R.depthStats(state,a).hp+R.depthStats(state,a).defense*5)||a.localeCompare(b))[0]!;
     const team=[front,...picked.team.filter(id=>id!==front)];
-    return {name:recipe.name,why:recipe.why,team,rows:Object.fromEntries(team.map(id=>[id,id===front?'front':'rear'])) as Record<string,R.Row>,plan:recipe.plan,power:picked.power};
+    return {name:recipe.name,why:recipe.why,team,rows:state.formationC2?R.balancedRowsC2(team,{[front]:'front'}):Object.fromEntries(team.map(id=>[id,id===front?'front':'rear'])) as Record<string,R.Row>,plan:recipe.plan,power:picked.power};
   });
 }

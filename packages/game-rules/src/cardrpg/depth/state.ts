@@ -1,3 +1,4 @@
+import { partySize, validRowsC2 } from './formation-c2';
 import { gameplayA6 } from './gameplay-a6';
 import { observeDailyA6 } from './daily-state-a6';
 import { observeDiscoveriesV4 } from './journey-v4';
@@ -42,8 +43,9 @@ export function defaultSkills(state: DepthAccount, id: string): string[] {
 export function configureTeam(state: DepthAccount, team: string[], rows: Record<string,Row>, skills: Record<string,string[]>): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     requireHome(s);
-    requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three different collected cats.');
+    requireRule(team.length===partySize(s)&&new Set(team).size===partySize(s)&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM',`Choose ${partySize(s)} different collected cats.`);
     requireRule(team.some(id=>rows[id]==='front')&&team.every(id=>['front','rear'].includes(rows[id]!)),'INVALID_TEAM','Keep at least one cat in the front row.');
+    requireRule(!s.formationC2||validRowsC2(team,rows),'INVALID_TEAM','Place two cats in each row.');
     if(!gameplayV4(s)) for(const id of team){const chosen=skills[id]??[],unlocked=availableSkills(s,id);requireRule(chosen.length===3&&new Set(chosen).size===3&&chosen.every(skill=>unlocked.some(u=>u.id===skill)&&SKILLS[skill]!.catId===id),'INVALID_TEAM','Equip three different unlocked skills per cat.');}
     s.team=[...team];s.rows={...s.rows,...rows};s.skills={...s.skills,...clone(skills)};
   });

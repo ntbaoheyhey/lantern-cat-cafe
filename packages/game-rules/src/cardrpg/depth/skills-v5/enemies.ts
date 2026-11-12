@@ -60,6 +60,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       if(intent.signature)for(const ally of foes().filter(a=>a.row===actor.row))io.shield(b,actor,ally,45);else hit(target);
       break;
     case 'sock-skipper':{
+      if(b.initial.formationC2&&!intent.signature){hit(target);break;}
       const rear=party().filter(a=>a.row==='rear'),victim=party().find(a=>a.statuses.some(s=>s.id==='shelter'))??weakestV5(rear.length?rear:party());
       if(victim){hit(victim);io.apply(b,actor,victim,'snag');}break;
     }
@@ -68,6 +69,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       else{actor.bonuses.v5Charge=0;for(const landing of landingsV5(b,actor,target,'row',n=>io.roll(b,n)))hit(landing.target,175*landing.multiplier,'row');}
       break;
     case 'needle-moth':
+      if(b.initial.formationC2&&!intent.signature){hit(target);break;}
       for(let i=0;i<3&&actor.hp>0;i++){const living=party();if(!living.length)break;const victim=living[io.roll(b,living.length)]!;targets.push(victim.id);resolvedShape='multi-hit';io.record(b,actor,victim,'multi-hit',i,'multi-hit',actor.catalogId);io.damage(b,actor,victim,40,0,false,'multi-hit');}
       break;
     case 'teacup-healer':

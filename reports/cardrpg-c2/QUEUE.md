@@ -1,6 +1,6 @@
 # C2 queue
 - [x] B0 — 4387 unit passes; 421/421 E2E; inherited research exclusions disclosed.
-- [ ] B1 — four-unit staggered formation, migration, targeting, slot contract, visual sheet.
+- [x] B1 — four-unit staggered formation, migration, targeting, slot contract, visual sheet.
 - [ ] V0 — skill/event/timing audit and before clips.
 - [ ] V1 — style, painted layered source pipeline, runtime, preview.
 - [ ] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.

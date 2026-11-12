@@ -1,3 +1,4 @@
+import { partySize, validRowsC2 } from './formation-c2';
 import { clone, integer, requireRule } from '../internal';
 import { EQUIPMENT_SLOTS, type Slot } from '../contract';
 import type { DepthAccount, Row } from './contract';
@@ -15,7 +16,7 @@ export function saveLoadoutV4(state:DepthAccount,slot:number,name:string){return
 export function applyLoadoutV4(state:DepthAccount,slot:number){return transactDepth(state,s=>{
  requireHome(s);requireRule(gameplayV4(s)&&s.v4&&integer(slot,0,2),'NOT_READY','Choose an available shift.');
  const saved=s.v4.loadouts?.[slot];requireRule(saved,'NOT_READY','Save a shift here first.');
- requireRule(saved.team.length===3&&new Set(saved.team).size===3&&saved.team.every(id=>s.account.cards.some(c=>c.cardId===id)&&['front','rear'].includes(saved.rows[id]!))&&saved.team.some(id=>saved.rows[id]==='front')&&validPlan(saved.plan),'INVALID_TEAM','This saved formation is not available.');
+ requireRule(saved.team.length===partySize(s)&&new Set(saved.team).size===partySize(s)&&(!s.formationC2||validRowsC2(saved.team,saved.rows))&&saved.team.every(id=>s.account.cards.some(c=>c.cardId===id)&&['front','rear'].includes(saved.rows[id]!))&&saved.team.some(id=>saved.rows[id]==='front')&&validPlan(saved.plan),'INVALID_TEAM','This saved formation is not available.');
  const wanted:string[]=[];
  for(const id of saved.team)for(const [slot,instanceId] of Object.entries(saved.equipment[id]??{})){
   const gear=s.gear.find(g=>g.id===instanceId);

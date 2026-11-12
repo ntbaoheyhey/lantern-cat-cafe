@@ -54,6 +54,7 @@ import { cardEntrancePose } from './card-entrance';
 import { earnedRevealV4 } from './card-v4-presentation';
 
 export interface SceneView {
+  formationC2?: boolean;
   /** Stable identity of one battle, including snapshots of its action timeline. */
   battleKey?: unknown;
   earnedReveal?: unknown;

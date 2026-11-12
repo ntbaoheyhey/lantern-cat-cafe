@@ -70,7 +70,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   // loop otherwise repeats catalog filters and object copies for every cat.
   const actors = project(battle);
   const appearances = new Map(actors.map(actor => [actor.id, appearance(actor)]));
-  view.current = { actors, battleKey:battle.initial, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
+  view.current = { actors, formationC2: battle.initial.formationC2, battleKey:battle.initial, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
@@ -119,7 +119,7 @@ export function BattleView({ m }: { m: DepthModel }) {
           if (!readable || plate.style.transform !== transform) plate.style.transform = transform;
         }
       };
-      const Renderer = lookSpineEnabled(location.search,lookV2) ? SpineScene : TurnScene;
+      const Renderer = m.battle?.initial.formationC2 || lookSpineEnabled(location.search,lookV2) ? SpineScene : TurnScene;
       scene.current = new Renderer(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
         m.sceneError = message; m.notify(false);
       });

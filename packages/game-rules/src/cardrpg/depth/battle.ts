@@ -1,3 +1,4 @@
+import { FORMATION_C2, validRowsC2 } from './formation-c2';
 import { triggerPairCombosA6 } from './bonds-a6';
 import { gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
 import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
@@ -160,7 +161,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const tangled = b.v4 ? 1-stacks(source,'tangle')*.04 : 1;
   let amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance * critical * tangled));
   if (b.v4 && cover && target.row==='rear' && living(b,target.side).some(a=>a.row==='front')) {
-    const prevented = amount - Math.max(1,Math.round(amount*.9)); amount -= prevented;
+    const prevented = amount - Math.max(1,Math.round(amount*(b.initial.formationC2?FORMATION_C2.rearCoverMultiplier:.9))); amount -= prevented;
     if (prevented) emitGameplayEvent(b,{kind:'formation-cover',actorId:source.id,targetId:target.id,amount:prevented,text:`Front cover prevented ${prevented} damage to ${target.name}.`});
   }
   target.shield = Math.max(0, target.shield - stacks(target, 'brittle') * 15);
@@ -226,6 +227,7 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
+  if(setup.formationC2&&(!setup.gameplayA6||!validRowsC2(setup.cats.map(c=>c.id),Object.fromEntries(setup.cats.map(c=>[c.id,c.row])))))throw Error('C2 requires four cats, two in each row, and Gameplay A6');
   if(setup.gameplayA6&&(!setup.skillsV5||!setup.gameplayV4))throw Error('Gameplay A6 requires Skills V5');
   if(setup.skillsV5&&!setup.gameplayV4)throw Error('Skills V5 requires automatic Gameplay V4');
   const initial = clone(setup);
@@ -243,6 +245,7 @@ export function createBattle(setup: BattleSetup): Battle {
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
+  if(setup.formationC2){const count={front:0,rear:0};for(const foe of actors.filter(a=>a.side==='enemy')){if(count[foe.row]>=2)foe.row=foe.row==='front'?'rear':'front';count[foe.row]++;}}
   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
   if (setup.gameplayV4) {
     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};
@@ -296,7 +299,7 @@ function setIntents(b: Battle) {
     const rear = party.filter(p => p.row==='rear');
     const front=party.filter(p=>p.row==='front');
     const reachable=b.v4&&front.length?front:party;
-    const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
+    const target = spec.mechanic==='steal' && (!b.initial.formationC2||signature) && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
     const intent:Intent={actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
     return b.initial.skillsV5?enemyIntentV5(b,a,intent):intent;
   });
@@ -536,9 +539,9 @@ export function enemyAct(b: Battle): boolean {
   const intent=b.intents.find(i=>i.actorId===actor.id)!;
   const spec=ENEMY_BY_ID[actor.catalogId]!;
   const party=living(b,'party');
-  const shelter=party.find(a=>stacks(a,'shelter'));
+  const shelter=party.find(a=>stacks(a,'shelter')&&(!b.initial.formationC2||a.row==='front'||!party.some(p=>p.row==='front')));
   const front=party.filter(a=>a.row==='front');
-  const reachable=b.v4&&front.length&&spec.mechanic!=='steal'?front:party;
+  const reachable=b.v4&&front.length&&(spec.mechanic!=='steal'||b.initial.formationC2&&!intent.signature)?front:party;
   const target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
   if (!target) {checkResult(b);return false;}
   shield(b,actor,actor,stacks(actor,'glaze')*20);
