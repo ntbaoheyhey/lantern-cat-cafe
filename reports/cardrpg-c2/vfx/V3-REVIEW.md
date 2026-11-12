@@ -84,3 +84,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | velvet-passive | 8 / 8 / 9 / 8 | Rose ribbon flame stays compact around the rear caster torso; its warm core and fading ribbon remain readable. | 60.00 |
 | marigold-passive | 8 / 8 / 9 / 8 | Sage leaf cup pulses below the rear caster face and clears before the next action; leaf silhouette remains readable at quarter scale. | 60.00 |
 | enemy:pollen-scout:basic | 8 / 8 / 9 / 8 | Sage pod reaches the front recipient before the impact number; its small seed burst and tail clear below the face. | 60.00 |
+| enemy:crumb-sentinel:basic | 8 / 8 / 9 / 8 | Golden crumb crescent has a clear leading edge; impact sits below the target face and the damage number remains separated. | 60.00 |
