@@ -15,3 +15,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | clover-1 | 8 / 8 / 9 / 8 | Full leaf silhouette survives quarter-scale playback; heal and damage numbers do not collide. | 120.00 |
 | clover-2 | 8 / 8 / 9 / 8 | Paired front-row leaves frame the recipients without covering their faces. | 120.00 |
 | clover-3 | 8 / 8 / 9 / 8 | Pale cleansing curls reach all four allies and preserve separated heal numbers. | 120.02 |
+| clover-4 | 8 / 8 / 9 / 8 | Greenhouse motif reads across the team; flowers sit below faces and the two-word cut-in clears. | 120.00 |
