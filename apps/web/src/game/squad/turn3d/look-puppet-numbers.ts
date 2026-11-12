@@ -23,7 +23,7 @@ export class PuppetNumbers {
     const ctx=this.canvas.getContext('2d');if(!ctx)throw Error('Impact text canvas unavailable');this.ctx=ctx;host.appendChild(this.canvas);
   }
   setAnchors(anchors:readonly Anchor[]){this.anchors=anchors;}
-  render(frame:EffectFrame|null,presentation:StatusPresentation|undefined,width:number,height:number,reduced:boolean,enabled:boolean){
+  render(frame:EffectFrame|null,presentation:StatusPresentation|undefined,width:number,height:number,reduced:boolean,enabled:boolean,numbersOnly=false){
     this.canvas.hidden=!enabled;this.canvas.style.display=enabled?'block':'none';this.canvas.dataset.puppetNumbers=String(enabled);
     this.host.dataset.puppetNumbers=String(enabled);this.drawn.length=0;
     if(!enabled)return;
@@ -42,7 +42,7 @@ export class PuppetNumbers {
       const pop=reduced?1:1+.12*Math.sin(Math.min(1,elapsed/160)*Math.PI);
       const rise=reduced?0:2*Math.pow(1-t,2),word=presentation?.bursts.includes(row.id)?34:0;
       c.globalAlpha=reduced?1:1-Math.max(0,(t-.7)/.3);
-      row.labels.forEach((label,i)=>{
+      row.labels.filter(label=>!numbersOnly||['damage','heal','shield'].includes(label.type)).forEach((label,i)=>{
         const x=lane.x+lane.width/2,y=lane.y+word+17+i*34+rise;
         c.save();c.translate(x,y);c.font=`900 ${label.critical?28:25}px system-ui`;
         const measured=c.measureText(label.text).width,fit=Math.min(pop,(lane.width-6)/Math.max(1,measured+4));c.scale(fit,1);

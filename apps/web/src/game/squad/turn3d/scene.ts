@@ -55,6 +55,8 @@ import { earnedRevealV4 } from './card-v4-presentation';
 
 export interface SceneView {
   formationC2?: boolean;
+  /** Review can compare the inherited renderer on identical four-slot fixtures. */
+  layeredVfx?: boolean;
   /** Stable identity of one battle, including snapshots of its action timeline. */
   battleKey?: unknown;
   earnedReveal?: unknown;

@@ -8,7 +8,7 @@ import {sampleActionPlan} from '../../squad/turn3d/effects';
 vi.mock('./assets',()=>({spineAssetUrl:(path:string)=>path}));
 vi.mock('./vfx-stamps',()=>({PaintedStamps:class {get(){return document.createElement('canvas');}dispose(){}}}));
 beforeEach(()=>{
- vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue({} as ReturnType<HTMLCanvasElement['getContext']>);
+ vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue({save:vi.fn(),restore:vi.fn(),drawImage:vi.fn(),clearRect:vi.fn()} as unknown as ReturnType<HTMLCanvasElement['getContext']>);
  vi.stubGlobal('Image',class {src='';decode(){return Promise.resolve();}});
 });
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();});

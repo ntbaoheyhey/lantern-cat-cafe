@@ -11,3 +11,9 @@
 - A6 defaults to four slots; encounter snapshots retain a formation version for deterministic legacy replay. All new modes enable C2.
 - Front/rear capacity is two each. Existing row bonuses remain at rear cover 0.90, row/area damage 0.60, splash 0.40 in FORMATION_C2; no unmeasured balance tuning in B1.
 - PNG/PSD source art stays outside git. Only review derivatives and compact runtime atlases belong in the repository.
+
+## V0–V2
+- Map authored clip time to existing rules contact; do not alter gameplay for VFX.
+- Prewarm texture atlas and mask faces/health once per frame.
+- Original tool output resolution is disclosed; 2048px keys are archival resamples.
+- Ship only three pilots before approval; 86 other presentation identities are audited, not all painted.

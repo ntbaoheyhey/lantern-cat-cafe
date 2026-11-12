@@ -1,9 +1,9 @@
 # C2 queue
 - [x] B0 — 4387 unit passes; 421/421 E2E; inherited research exclusions disclosed.
 - [x] B1 — four-unit staggered formation, migration, targeting, slot contract, visual sheet.
-- [ ] V0 — skill/event/timing audit and before clips.
-- [ ] V1 — style, painted layered source pipeline, runtime, preview.
-- [ ] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
+- [x] V0 — skill/event/timing audit and before clips.
+- [x] V1 — style, painted layered source pipeline, runtime, preview.
+- [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
 - [ ] B2 — text budgets, HUD, eight-screen comparison.
 - [ ] B3 — five real 30-minute UI runs; reconcile sim within 15%.
 - [ ] B4 — up to three config tuning passes; bot and 500-seed targets.

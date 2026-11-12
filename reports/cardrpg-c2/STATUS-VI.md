@@ -1,2 +1,2 @@
 # C2 — trạng thái
-B0 đạt: 4.387 unit test pass, 421/421 Playwright pass, không lỗi ngoài dự kiến. Có 11 test nghiên cứu chỉ chạy khi bật cờ và 2 lỗi kỳ vọng từ trước, đã ghi rõ. PR nháp #440. Đang làm B1: đội 4 mèo, hai hàng so le, giữ save/replay cũ. Chưa có VFX để duyệt; V3 vẫn khóa.
+B0/B1 đã xong. Ba VFX thử nghiệm sẵn sàng duyệt tại docs/vfx/index.html: có tranh, từng lớp, thanh thời gian và video trước/sau. V3 vẫn chờ duyệt. 2.384 web test, 2.012 test gói khác, typecheck web và 427/427 E2E đạt. Đang làm B2 giảm chữ và HUD. CHAIN chưa có READY.
