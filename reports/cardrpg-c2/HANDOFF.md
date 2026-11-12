@@ -1,14 +1,14 @@
 # C2 handoff
-NOW: V3 accepted mallow-2; B4b final cohorts still running.
+NOW: V3 mallow-3 exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT:4433ae228; corrected link source/policy; full workspace units passed.
 NEXT 1: Aggregate corrected full cohorts; monthly slowest. Frozen source/policy runtime c7b8656e.
 NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
-NEXT 3: Continue V3 at mallow-3; preserve all accepted work.
+NEXT 3: Capture/review mallow-3, then continue first nonaccepted V3 skill.
 RUNNING: corrected item17065/month60017066/model50017067/UI5x30min17088 on5971; pre-fix month86148 SIGSTOP (preserved).
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
 B4b: config unchanged; corrected native/gear link strengths;15x100 and15x1000 pass (worst6/6.4pp). Full cohorts pending.
-V3:86IDs;44accepted;45exported=2,723,420bytes. Review server5973.
+V3:86IDs;44accepted;45exported=2,723,420bytes. Review server on5973; restart after new exports.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
 CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
