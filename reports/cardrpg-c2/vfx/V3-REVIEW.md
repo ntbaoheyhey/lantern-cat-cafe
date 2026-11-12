@@ -6,3 +6,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 |---|---|---|---|
 | mochi-2 | 8 / 8 / 9 / 8 | Saucer shelter stays below the rear ally face; shield number appears on impact. | 119.30 |
 | mochi-3 | 8 / 8 / 9 / 8 | Apron bow reads on both front slots; the two shield numbers remain separated. | 120.00 |
+| mochi-passive | 8 / 8 / 9 / 8 | Small lantern cradle stays at the recipient torso and clears before the next action. | 119.39 |
