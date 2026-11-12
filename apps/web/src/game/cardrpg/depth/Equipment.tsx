@@ -1,3 +1,4 @@
+import {CraftOddsC2,RewardOddsC2,DropOddsC2} from '../ui-v3/OddsC2';
 import { EquipmentForecastV4 } from "./EquipmentForecastV4";
 import { EquipmentFiltersV4 } from "./EquipmentFiltersV4";
 import { FirstEquipmentV4 } from './OpeningV4';
@@ -29,7 +30,7 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
   const supplyPage = R.gameplayA6(state) && category !== 'Equipment';
   const supplyTitles = { Materials: 'Small finds, useful upgrades.', Consumables: 'Pack a little help.', Collectibles: 'Keepsakes of your progress.', Currencies: 'Your cafe earnings.', Equipment: 'Give your plan a shape.' };
   const v4=R.gameplayV4(state);
-  const sets=R.SETS.map(set=>R.setTextV4(set,v4));
+  const sets=R.SETS.map(set=>R.setTextV4(set,v4,state.formationC2));
   const locked = !!state.run && !state.run.complete;
   const cardId = state.account.cards.some(card => card.cardId === m.cardId) ? m.cardId : state.team[0]!;
   const act = (result: R.RuleResult<R.DepthAccount>, message: string) => {
@@ -62,7 +63,7 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
       aria-pressed={category === value} onClick={() => setCategory(value)}>{value}</button>)}</div>
     {category === 'Equipment' && <>
       <FirstEquipmentV4 m={m} reveal={() => { setSlot('all'); setRarity('all'); setSetId('all'); setOwnership('all'); }} />
-      {v4&&<><details className="cr-panel dp-v4-saved-shifts"><summary>Saved crews and gear</summary><ShiftLoadouts m={m}/></details><p>Choose a cat, compare a piece, then make it theirs.</p><details><summary>Odds and rules</summary><p>Equipment stays with your account. Your shelf holds 240 pieces.</p><p>At capacity, route drops become threads within today’s cap. Leave room before buying a basket.</p>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
+      {v4&&<><details className="cr-panel dp-v4-saved-shifts"><summary>Saved crews and gear</summary><ShiftLoadouts m={m}/></details><p>Choose a cat, compare a piece, then make it theirs.</p>{state.formationC2?<DropOddsC2 state={state}/>:<details><summary>Odds and rules</summary><p>Equipment stays with your account. Your shelf holds 240 pieces.</p><p>At capacity, route drops become threads within today’s cap. Leave room before buying a basket.</p>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details>}</>}
       {v4 ? <EquipmentFiltersV4 state={state} cardId={cardId} slot={slot} rarity={rarity} setId={setId} ownership={ownership} sort={sort}
         chooseCat={id => { m.cardId=id; m.notify(false); }} chooseSlot={setSlot} chooseRarity={setRarity}
         chooseSet={setSetId} chooseOwnership={setOwnership} chooseSort={setSort} /> : <>
@@ -146,21 +147,21 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
               <button disabled={locked || item.enhancement >= 12} onClick={() => act(R.enhanceGear(state, item.id), `${template.name} enhanced to +${item.enhancement + 1}.`)}>Enhance equipment</button>
               <button disabled={locked || !state.equipment[cardId]?.[template.slot]} onClick={() => act(R.equipGear(state, cardId, null, template.slot), `${template.slot} returned to the shelf.`)}>Unequip slot</button>
               <button disabled={locked || Object.values(state.equipment).some(loadout => Object.values(loadout).includes(item.id))}
-                onClick={() => act(R.salvageGear(state, item.id), `${template.name} salvaged for ${CARD_RPG_CONFIG.rarity[template.rarity].salvage} threads.`)}>Salvage</button>
+                onClick={() => act(R.salvageGear(state, item.id), `${template.name} salvaged for ${CARD_RPG_CONFIG.rarity[template.rarity].salvage} threads.`)}>Salvage</button>{state.formationC2&&<RewardOddsC2 source="Salvage" reward={{threads:CARD_RPG_CONFIG.rarity[template.rarity].salvage}}/>}
             </div>
-            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {v4?(R.AFFIX_TEXT_V4[R.AFFIX_BY_ID[id]!.stat]??R.AFFIX_BY_ID[id]!.description):R.AFFIX_BY_ID[id]!.description}</p>)}
+            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id, state)} · {v4?(R.AFFIX_TEXT_V4[R.AFFIX_BY_ID[id]!.stat]??R.AFFIX_BY_ID[id]!.description):R.AFFIX_BY_ID[id]!.description}</p>)}
             {item.affixes.length > 0 && <div className="cr-actions"><label>Replace first affix
               <select aria-label="Replace first affix" value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
                 {compatible.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.name} · {candidate.tiers[item.tier - 1]!.join('–')}</option>)}
               </select></label><button disabled={locked || !chosenAffix}
-                onClick={() => { if (chosenAffix) act(R.reforgeGear(state, item.id, 0, chosenAffix), 'The selected affix has been stitched into this piece.'); }}>Reforge · 90 fish / 15 threads</button></div>}
+                onClick={() => { if (chosenAffix) act(R.reforgeGear(state, item.id, 0, chosenAffix), 'The selected affix has been stitched into this piece.'); }}>Reforge · 90 fish / 15 threads</button>{state.formationC2&&chosenAffix&&<RewardOddsC2 source="Reforge" reward={{[chosenAffix]:R.AFFIX_BY_ID[chosenAffix]!.tiers[item.tier-1]![0]}}/>}</div>}
           </section>}
         </div>
       </div>
       <section className="cr-panel"><h2>Choose a tailoring project</h2><label>Template
         <select aria-label="Template" value={craftId} onChange={event => setCraftId(event.target.value)}>
           {R.GEAR.map(spec => <option key={spec.id} value={spec.id}>{spec.name} · {spec.rarity} · chapter {spec.chapter}</option>)}
-        </select></label><p>{v4?R.gearStoryV4(craftId):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId)}/><p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?'Also requires Pantry clear, 20 mastery materials and 1 boss seal.':'Reach the source chapter before tailoring.'}</p></>}
+        </select></label><p>{v4?R.gearStoryV4(craftId):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId,state)}/>{state.formationC2&&<CraftOddsC2 state={state} id={craftId}/>}<p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?`Also requires Pantry clear, ${R.legendaryTailoringRequirements(state).materials} mastery materials and ${R.legendaryTailoringRequirements(state).seals} boss seals.`:'Reach the source chapter before tailoring.'}</p></>}
         <button disabled={locked} onClick={() => act(R.craftGear(state, craftId), 'Chosen piece crafted. Look for it in your equipment.')}>Craft chosen piece</button>
       </section>
     </>}

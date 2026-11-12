@@ -10,7 +10,7 @@ import { RECIPES } from '../catalog';
 import { GEAR_CAP_V4 } from './equipment-v4';
 import { stackCapV4 } from './items-v4';
 import { applyCommand } from '../commands';
-import { depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
+import { craftGear, depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
 import { clone, grant, requireRule, RuleFailure } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
@@ -63,6 +63,11 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
       requireRule(!['equip','unequip','enhance','reforge','salvage','lock','selectTeam'].includes(command.type),'NOT_READY','Use the equipment workbench or crew screen for Gameplay v4.');
       const recipe=command.type==='forge'?RECIPES.find(r=>r.id===command.recipeId):undefined;
       requireRule(!recipe?.scarcityId,'NOT_READY','Use the local edition ledger to reserve a design.');
+      if(s.formationC2&&recipe?.outputItemId){
+        requireRule(s.account.chapter>=recipe.requiredChapter,'LOCKED','Reach the recipe source chapter first.');
+        const crafted=craftGear(s,recipe.outputItemId);
+        requireRule(crafted.ok,'NOT_READY',crafted.error??'The recipe cannot be crafted.');Object.assign(s,crafted.state);return;
+      }
       const slots=recipe?.outputItemId?1:0;
       requireRule(s.gear.length+slots<=GEAR_CAP_V4||slots===0,'MAX_LEVEL','Equipment shelf is full (240). Make room for the entire reward before spending.');
       for(const [id,count] of Object.entries((recipe?.outputStackId?{[recipe.outputStackId]:1}:{}))){

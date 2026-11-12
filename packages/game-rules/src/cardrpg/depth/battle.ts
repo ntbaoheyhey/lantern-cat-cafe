@@ -1,4 +1,5 @@
 import { FORMATION_C2, validRowsC2 } from './formation-c2';
+import { ECONOMY_C2 } from './economy-c2';
 import { triggerPairCombosA6 } from './bonds-a6';
 import { gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
 import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
@@ -172,7 +173,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const link = target.statuses.find(s => s.id === 'link');
   const protector = link && b.actors.find(a => a.id === link.source && a.hp > 0 && a.id !== target.id);
   if (protector) {
-    const shared = Math.floor(hpDamage * (b.v4 && hasEffect(protector,'defend-link') ? .15 : .3));
+    const shared = Math.floor(hpDamage * (b.v4 && hasEffect(protector,'defend-link') ? (b.initial.formationC2?ECONOMY_C2.sets.hearthloomShareBp/10000:.15) : .3));
     hpDamage -= shared;
     loseHp(b, source, protector, shared, 'shared');
   }
@@ -491,7 +492,13 @@ export function act(b: Battle, choice: Choice): boolean {
   if(skill.id==='defend'){
     if(hasEffect(actor,'defend-shield'))gearGrant(b,actor,actor,'defend-shield','shield',b.v4?12:25);
     if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link');}
-    if(hasEffect(actor,'defend-riposte')){applyStatus(b,actor,actor,'shelter');applyStatus(b,actor,actor,'riposte');}
+    if(hasEffect(actor,'defend-riposte')){
+      if(!b.initial.formationC2||(actor.bonuses.bellsteelShelters??0)<ECONOMY_C2.sets.bellsteelSheltersPerBattle){
+        applyStatus(b,actor,actor,'shelter');
+        if(b.initial.formationC2)actor.bonuses.bellsteelShelters=(actor.bonuses.bellsteelShelters??0)+1;
+      }
+      applyStatus(b,actor,actor,'riposte');
+    }
     if(hasEffect(actor,'unique:panlid'))applyStatus(b,actor,actor,'riposte',b.v4?1:2);
     if(hasEffect(actor,'unique:doorstop'))gearGrant(b,actor,actor,'unique:doorstop','heal',b.v4?8:25);
   }

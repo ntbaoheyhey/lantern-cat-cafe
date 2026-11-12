@@ -14,13 +14,20 @@ const arg = (key, fallback) => process.argv.find(a => a.startsWith(`--${key}=`))
 const out = resolve(arg('out', resolve(root, 'work/cardrpg-c2/loot')));
 const days = Number(arg('days', '30')), count = Number(arg('count', '200')), first = Number(arg('first-seed', '90001'));
 const profiles = [{ id: 'casual', minutes: 30, upgrades: 1 }, { id: 'regular', minutes: 60, upgrades: 2 }, { id: 'heavy', minutes: 180, upgrades: 3 }].filter(p => !arg('profile') || p.id === arg('profile'));
+const resume = process.argv.includes('--resume');
 if (!profiles.length || ![days, count, first].every(n => Number.isSafeInteger(n) && n > 0)) throw Error('Invalid simulation parameters');
 await mkdir(out, { recursive: true });
 const runtimeFile = resolve(out, 'runtime/runtime.mjs');
-const { R, DepthModel } = isMainThread ? await loadRuntime(resolve(out, 'runtime')) : await import(pathToFileURL(workerData.runtimeFile).href);
+if(isMainThread&&resume){
+ const expected=arg('runtime-sha');
+ if(!expected||createHash('sha256').update(await readFile(runtimeFile)).digest('hex')!==expected)throw Error('Resume requires the recorded --runtime-sha of this frozen projection');
+ if(await access(resolve(out,'index.json')).then(()=>true,()=>false))throw Error('Projection already complete');
+}
+const { R, DepthModel } = isMainThread && !resume ? await loadRuntime(resolve(out, 'runtime')) : await import(pathToFileURL(isMainThread ? runtimeFile : workerData.runtimeFile).href);
 const source = !isMainThread ? null : { head: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
  runtimeSha256: createHash('sha256').update(await readFile(resolve(out, 'runtime/runtime.mjs'))).digest('hex'),
- driverSha256: createHash('sha256').update(await readFile(new URL(import.meta.url))).digest('hex'), date: new Date().toISOString() };
+ driverSha256: createHash('sha256').update(await readFile(new URL(import.meta.url))).digest('hex'), date: new Date().toISOString(),
+ calendar: { firstDay: '2026-11-12', dailyRouteSeeds: 'shared across accounts by calendar date', independentDailySamples: false } };
 const DAY = 86400000, frame = 1000 / 60;
 const epoch = Date.UTC(2026, 10, 12);
 const rank = { common: 0, rare: 1, epic: 2, legendary: 3 };
@@ -81,14 +88,34 @@ function project(seed, profile) {
   if (selected) return { result: R.chooseSelectorV4(s, 'gear', selected.id), source: 'selector' };
   if (once('tailor')) {
    tried('tailor');
-   const rarity = ledger.report.firstLegendaryDay === null ? 'legendary' : ledger.report.firstEpicDay === null ? 'epic' : null;
-   if (rarity) for (const t of templates.filter(t => t.rarity === rarity)) {
-    const craft = available(R.craftGear(s, t.id), 'tailor'); if (craft) return craft;
+   // Save for the first Legendary, then fill actual loadout gaps. A craft must
+   // improve an active cat's public Power preview; no spending for its own sake.
+   const rarities = ledger.report.firstLegendaryDay === null ? ['legendary'] : ['legendary', 'epic'];
+   const before = R.teamPowerV4(s);
+   for (const rarity of rarities) for (const t of templates.filter(t => t.rarity === rarity)) {
+    const result = R.craftGear(s, t.id); if (!result.ok) continue;
+    const actual = result.state.gear.at(-1);
+    // Select from the published mean roll, never the future seeded roll.
+    const item = { ...actual, rolls: Object.fromEntries(actual.affixes.map(id => {
+     const [lo, hi] = R.AFFIX_BY_ID[id].tiers[actual.tier - 1]; return [id, Math.floor((lo + hi) / 2)];
+    })) };
+    const forecast = { ...result.state, gear: [...s.gear, item] };
+    const useful = s.team.some(cardId => R.teamPowerV4({ ...forecast,
+     equipment: { ...s.equipment, [cardId]: { ...s.equipment[cardId], [t.slot]: item.id } } }) > before);
+    if (useful) return { result, source: 'tailor' };
    }
   }
   if (once('forge') && fraction(seed, `forge:${day}`) < .35) {
    tried('forge');
    const craft = available(R.metaCommand(s, { type: 'forge', recipeId: 'mend-pantry-key' }), 'forge'); if (craft) return craft;
+  }
+  if (once('awaken')) {
+   tried('awaken');
+   // Ascended level-ten cats have a useful published essence sink. Keep the
+   // first Legendary saving goal; later awaken the least-awakened active cat.
+   if (ledger.report.firstLegendaryDay !== null) for (const id of [...s.team].sort((a,b)=>(s.awakened[a]??0)-(s.awakened[b]??0))) {
+    const next = available(R.awakenCat(s,id),'awaken'); if (next) return next;
+   }
   }
   if (attempts.upgrades < profile.upgrades) {
    const option = R.upgradeOptionsA6(s)[0];
@@ -182,12 +209,25 @@ if (!isMainThread) {
 } else {
  const workers = Number(arg('workers', '1'));
  if (!Number.isInteger(workers) || workers < 1 || workers > 12) throw Error('Choose 1–12 local CPU workers');
- const jobs = profiles.flatMap(profile => Array.from({ length: count }, (_, i) => ({ seed: first + i, profile })));
- for (const job of jobs) {
+ const allJobs = profiles.flatMap(profile => Array.from({ length: count }, (_, i) => ({ seed: first + i, profile })));
+ const jobs = [], reports = [], pool = [], verifiedProfiles = new Set();
+ for (const job of allJobs) {
   const file = resolve(out, `${job.profile.id}-${job.seed}.json`);
-  if (await access(file).then(() => true, () => false)) throw Error('Preserve earlier projection: ' + file);
+  if (await access(file).then(() => true, () => false)) {
+   if(!resume)throw Error('Preserve earlier projection: ' + file);
+   const saved=JSON.parse(await readFile(file));
+   if(saved.seed!==job.seed||saved.days!==days||saved.daily.length!==days||JSON.stringify(saved.profile)!==JSON.stringify(job.profile))throw Error('Mismatched saved account: '+file);
+   // Verify deterministic policy equivalence before retaining an old cohort.
+   // This also catches changes to imported policy/ledger utilities between runs.
+   if(!verifiedProfiles.has(job.profile.id)){
+    if(JSON.stringify(project(job.seed,job.profile))!==JSON.stringify(saved))throw Error('Current policy differs from frozen saved projection: '+file);
+    verifiedProfiles.add(job.profile.id);
+   }
+   reports.push({seed:job.seed,profile:job.profile.id});
+  } else jobs.push(job);
  }
- const reports = [], pool = [];
+ if(resume)source.resumeVerification={preservedAccounts:reports.length,exactPolicyProfiles:[...verifiedProfiles]};
+ console.log(JSON.stringify({preservedAccounts:reports.length,pendingAccounts:jobs.length,workers,runtimeSha256:source.runtimeSha256}));
  const stopped = () => access(resolve(root, 'STOP-C2')).then(() => true, () => false);
  const save = async report => {
   reports.push({ seed: report.seed, profile: report.profile.id });

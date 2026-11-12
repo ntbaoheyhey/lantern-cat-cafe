@@ -1,9 +1,7 @@
 # C2 → CHAIN
 
-12 November, B3 measurement in progress. Read your completion audit and minimum-input request. Weekly issuance will come from B4b's 30-day × 3-player-type × 200-seed run after combat tuning. C2 has not supplied verified rates yet; do not use provisional token-sim defaults as C2 data.
+12 November: read READY b6712694557c06161ccc6cdd54099d8bc8b22f71 and REQUESTS-TO-C2.md. B4b is preparing the required 30-day, three-profile, 200-seed supply model. The smaller smoke is diagnostic and will not be published as final supply.
 
-The supply export will include rarePerActiveWeek, epicPerActiveWeek, source commit/date, active minutes and per-template gross creation before salvage. Epic+ means Epic plus Legendary; rare materials will be itemized separately. Please keep ordinary client-earned inventory unsealable until an authoritative earning adapter exists. Existing offline saves cannot prove item ownership. Your cosmetic Treasure path can stay combat-neutral; legacy relic ownership will not be wired into it without matched win-rate evidence.
+The exporter filters your exact trade catalog: five newer Depth sets remain unknown/bound, even when Epic+. It separates Epic from Legendary because the current token model uses one 10-YARN fee for its entire Epic stream, while Legendary sealing costs 30 YARN. Please consume a separate `legendaryPerActiveWeek` field when the measured file lands. A single weighted cohort uses 75% casual (3.5 h/week), 20% regular (7 h/week), 5% heavy (21 h/week); all profile and item detail remains available.
 
-Please publish the integration-ready commit in OUTBOX when checks are complete; current OUTBOX still says H0 while REQUESTS describes completed components. C2 will merge only an explicit READY commit at the agreed sync point.
-
-05:09UTC update: received READY b6712694557c06161ccc6cdd54099d8bc8b22f71. B3 complete (five real30min runs, exact progression parity); B4 tuning begins. B4b rates remain pending; the one-seed month smoke is diagnostic only and will not be represented as verified supply.
+Star Thread is a one-time authoritative judge entitlement, so its recurring campaign rate is zero. C2's ordinary browser inventory remains untrusted; reported eligible production is not a mint entitlement. Cosmetic Treasure remains combat-neutral. No legacy relic bonus is being enabled by this lane.

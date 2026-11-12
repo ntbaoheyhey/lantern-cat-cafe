@@ -8,7 +8,15 @@ export function chooseAction(R,s,v,memory){
  const intro=R.introductionA6(s).guide;
  const action=(type,extra={})=>({type,...extra});
  if(v.watching)return v.canSkip&&fraction(seed,`skip:${run?.id}:${run?.current}`)<.2?action('skip'):null;
- if(v.screen==='prepare')return action('fight');
+ if(v.screen==='prepare'){
+  const battle=run?.battle;
+  if(s.formationC2&&battle&&!battle.actors.some(a=>a.side==='party'&&a.row==='front'&&a.hp>0)){
+   const living=battle.actors.find(a=>a.side==='party'&&a.hp>0);
+   const seats=R.formationSeatsC2(s.team,s.rows);
+   if(living)return action('front',{catId:living.catalogId,swapId:seats[0],slot:0});
+  }
+  return action('fight');
+ }
  if(v.screen==='result')return action('finish');
  if(v.screen==='gacha')return !s.freeInvite?action('welcome'):v.revealDone?action('meet'):null;
  if(v.tipsOpen){
@@ -85,6 +93,7 @@ export function executeModelAction(R,m,v,a){
    if(!m.battle)m.go('map');break;
   }
   case 'fight':m.fight();break;
+  case 'front':{const next=R.placeInSlotC2(m.state.team,m.state.rows,a.catId,a.slot);if(!next)throw Error('No legal front-row swap');m.prepareCrew(next.team,next.rows);break;}
   case 'skip':m.skip();break;
   case 'finish':{const tutorial=!!m.tutorialBattle;m.finish();if(!tutorial)m.go('hub');break;}
   case 'welcome':m.invite(true);v.revealDone=true;break;

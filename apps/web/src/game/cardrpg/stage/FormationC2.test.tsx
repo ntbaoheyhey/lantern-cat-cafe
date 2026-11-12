@@ -22,3 +22,16 @@ it('retains HP and enemy seed during preparation and locks after committing',()=
   const buttons=screen.getAllByRole('button',{name:/Select for placement/});fireEvent.click(buttons[0]!);fireEvent.click(buttons[2]!);
   expect(m.battle!.seed).toBe(seed);expect(m.state.run!.hp).toEqual(hp);expect(m.error).toBe(false);
 });
+it('lets a surviving back cat take a fallen front seat before the next fight',()=>{
+  const m=new DepthModel(true,true,true,true,true);m.start(1,'campaign',1);
+  const seats=R.formationSeatsC2(m.state.team,m.state.rows);
+  for(const id of seats.slice(0,2))m.state.run!.hp[id!]=0;
+  m.enter('0-0');const original=structuredClone(m.battle!.initial);
+  m.fight();expect(m.error).toBe(true);expect(m.watching).toBe(false);
+  render(<FormationC2 m={m} preparing/>);
+  const button=(id:string)=>screen.getByRole('button',{name:new RegExp(`^${R.CAT_BY_ID[id]!.name},`)});
+  fireEvent.click(button(seats[2]!));fireEvent.click(button(seats[0]!));
+  expect(m.error).toBe(false);expect(m.battle!.initial.hp).toEqual(original.hp);
+  expect(m.battle!.initial.enemyStats).toEqual(original.enemyStats);
+  expect(m.battle!.seed).toBe(original.seed);m.fight();expect(m.watching).toBe(true);
+});

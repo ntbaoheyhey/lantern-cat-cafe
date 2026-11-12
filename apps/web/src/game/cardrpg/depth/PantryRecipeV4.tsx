@@ -1,3 +1,4 @@
+import {RewardOddsC2} from '../ui-v3/OddsC2';
 import {useId,useMemo,useState,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {RECIPES,STACK_ITEMS,type CurrencyId} from '@taskbar-hero/game-rules/cardrpg';
@@ -28,7 +29,7 @@ export function PantryRecipeV4({m}:{m:DepthModel}) {
   :state.account.chapter<chosen.requiredChapter?`Reach chapter ${chosen.requiredChapter} to unlock this recipe.`
   :needs.length?null:preview.error;
  const missingKey=(chosen.materials['pantry-key']??0)>(state.account.inventory.stacks['pantry-key']??0);
- return <div className="dp-v4-pantry-craft"><h3>Make a pantry item</h3>
+ return <div className="dp-v4-pantry-craft"><h3>Make a pantry item</h3>{state.formationC2&&<RewardOddsC2 source="Forge" reward={{[id]:1}}/>}
   <label>Pantry recipe<select aria-label="Pantry recipe" value={recipe} onChange={e=>setRecipe(e.target.value)}>
    {recipes.map(r=><option key={r.id} value={r.id}>{r.id.startsWith('pantry-')?`Make ${itemName(r.outputStackId!)}`:r.name}</option>)}
   </select></label>

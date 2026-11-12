@@ -4,6 +4,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import { artPropsA6 } from './art-a6';
 import { GearArtA6 } from './KeepsakeArtA6';
+import {OddsC2} from './OddsC2';
 import './selector-a6.css';
 
 type Kind = 'cat' | 'gear';
@@ -15,7 +16,7 @@ export function SelectorA6({m}:{m:DepthModel}) {
  const [kind,setKind]=useState<Kind>('cat'),[chosen,setChosen]=useState(''),[receipt,setReceipt]=useState<Receipt|null>(null),description=useId();
  const state=m.state,options=kind==='cat'?CARDS:R.GEAR,selected=options.find(o=>o.id===chosen);
  const quote=useMemo(()=>selected?R.chooseSelectorV4(state,kind,chosen):null,[state,kind,chosen,selected]);
- const marks=R.selectorMarksV4(state),cost=R.SELECTOR_COST_V4,owned=kind==='cat'?state.account.cards.find(c=>c.cardId===chosen):undefined;
+ const marks=R.selectorMarksV4(state),cost=R.selectorCostV4(state,kind,chosen),owned=kind==='cat'?state.account.cards.find(c=>c.cardId===chosen):undefined;
  const template=kind==='gear'?R.GEAR_BY_ID[chosen]:undefined,gearCount=state.gear.filter(g=>g.templateId===chosen).length;
  const shardGain=selected&&owned?CARD_RPG_CONFIG.rarity[selected.rarity].shards:0,shardsFit=!owned||Number.isSafeInteger(owned.shards+shardGain);
  const collected=CARDS.filter(c=>state.account.cards.some(o=>o.cardId===c.id)).length;
@@ -48,6 +49,7 @@ export function SelectorA6({m}:{m:DepthModel}) {
    <label>Chosen reward<select aria-label="Chosen reward" value={chosen} onChange={e=>{setChosen(e.target.value);setReceipt(null);}}><option value="">Choose a reward</option>{options.map(o=><option key={o.id} value={o.id}>{o.name} · {o.rarity}</option>)}</select></label>
    <p>One mark per stamp invitation. The free welcome adds none. Marks never expire.</p>
    <button disabled={!quote?.ok} aria-describedby={description} onClick={choose}>Choose reward · {cost} marks</button>
+   {state.formationC2&&selected&&<OddsC2 source="Selector"><b aria-label="Chosen reward probability">100%</b><dl><div><dt aria-label="Selector marks cost">✦</dt><dd>{cost}</dd></div><div><dt aria-label="Reward quantity">◇</dt><dd>{owned?shardGain:1}</dd></div></dl></OddsC2>}
   </div><section id={description} className="a6-selector-preview" aria-label="Chosen reward preview">
    {selected?<><div className="a6-selector-reward">{template?<GearArtA6 slot={template.slot} setId={template.setId}/>:<img {...artPropsA6(chosen,'face')} alt=""/>}<div><small>{selected.rarity} {template?'keepsake':'companion'}</small><h3>{selected.name}</h3>
     <p>{template?`${gearCount} → ${gearCount+1} owned · one new piece in your bag`:owned?shardsFit?`${owned.shards} → ${owned.shards+shardGain} matching shards (+${shardGain})`:'Matching shard balance is full.':'Level 1 · 1 star · new companion'}</p>

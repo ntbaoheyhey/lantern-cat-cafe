@@ -10,7 +10,8 @@ import { requireRule, spend } from '../internal';
 import { grantDepth, requireHome, transactDepth } from './state';
 import { spendSealProofsV4 } from './editions-v4';
 import { gameplayV4 } from './gameplay-v4';
-import { gearMainV4, nakedStatsV4, GEAR_CAP_V4 } from './equipment-v4';
+import { gearMainV4, nakedStatsV4, GEAR_CAP_V4, gearCostV4, legendaryTailoringRequirements } from './equipment-v4';
+import { ECONOMY_C2 } from './economy-c2';
 import type { AffixRule, DepthAccount, GearInstance, GearTemplate } from './contract';
 
 export const SETS = [
@@ -84,13 +85,14 @@ export function initializeEquipment(state:DepthAccount) {
 }
 export function equippedItems(state:DepthAccount,cardId:string){return Object.entries(state.equipment[cardId]??{}).filter(([slot]) => !(!gameplayA6(state) && slot === 'relic' && cardId === state.team[0] && state.relics.includes(state.selectedRelic ?? 0))).map(([,id])=>state.gear.find(g=>g.id===id)).filter((g):g is GearInstance=>!!g);}
 /** Apply current balance bounds when reading both new and older saved rolls. */
-export function gearAffixRoll(item: GearInstance, id: string): number {
+export function gearAffixRoll(item: GearInstance, id: string, state?: DepthAccount): number {
   const [minimum, maximum] = AFFIX_BY_ID[id]!.tiers[item.tier - 1]!;
-  return Math.min(maximum, Math.max(minimum, item.rolls[id] ?? minimum));
+  const roll = Math.min(maximum, Math.max(minimum, item.rolls[id] ?? minimum));
+  return state?.formationC2 ? Math.max(1, Math.round(roll * ECONOMY_C2.equipment.affixScale)) : roll;
 }
 export function equipmentEffects(state:DepthAccount,cardId:string) {
   const items=equippedItems(state,cardId),counts:Record<string,number>={},effects:string[]=[],bonuses:Record<string,number>={};
-  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+gearAffixRoll(item,id);}}
+  for(const item of items){const template=GEAR_BY_ID[item.templateId]!;counts[template.setId]=(counts[template.setId]??0)+1;if(template.unique)effects.push('unique:'+template.unique);for(const id of item.affixes){const a=AFFIX_BY_ID[id]!;bonuses[a.stat]=(bonuses[a.stat]??0)+gearAffixRoll(item,id,state);}}
   for(const set of SETS){if((counts[set.id]??0)>=2)effects.push(set.twoEffect);if((counts[set.id]??0)>=4)effects.push(set.fourEffect);}
   return {effects:[...new Set(effects)],bonuses,counts};
 }
@@ -127,19 +129,51 @@ export function enhanceGear(state:DepthAccount,id:string){return transactDepth(s
 function progressEnhance(s:DepthAccount){const p=s.account.quests.mender;if(p)p.progress=Math.min(6,p.progress+1);}
 export function reforgeGear(state:DepthAccount,id:string,index:number,affixId:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id),affix=AFFIX_BY_ID[affixId];requireRule(item&&Number.isInteger(index)&&index>=0&&index<item.affixes.length&&affix,'INVALID_AMOUNT','Choose an existing affix to replace.');requireRule(affix.slots.includes(GEAR_BY_ID[item.templateId]!.slot)&&!item.affixes.includes(affixId),'WRONG_SLOT','Choose a compatible different affix.');spend(s.account,{fish:90,threads:15});delete item.rolls[item.affixes[index]!];item.affixes[index]=affixId;item.rolls[affixId]=affix.tiers[item.tier-1]![0];});}
 export function salvageGear(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id);requireRule(item,'UNKNOWN_ID','Equipment is missing.');requireRule(!Object.values(s.equipment).some(l=>Object.values(l).includes(id)),'EQUIPPED','Unequip before salvaging.');s.gear=s.gear.filter(g=>g.id!==id);s.account.currencies.threads+=CARD_RPG_CONFIG.rarity[GEAR_BY_ID[item.templateId]!.rarity].salvage;});}
-export function craftGear(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const g=GEAR_BY_ID[id];requireRule(g,'UNKNOWN_ID','Choose a template.');requireRule(!gameplayV4(s)||s.gear.length<GEAR_CAP_V4,'MAX_LEVEL','Equipment shelf is full (240). Salvage a piece before tailoring.');requireRule(s.account.chapter>=g.chapter,'LOCKED','Reach the item source chapter first.');const cost=g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};if(g.rarity==='legendary'){requireRule(s.cleared.includes(3)&&s.materials>=20&&s.seals>=1,'LOCKED','Legendary tailoring needs a Pantry clear, 20 materials and one boss seal.');spendSealProofsV4(s,1);s.materials-=20;s.seals--;}spend(s.account,cost);s.gear.push(makeGear(s,id,deriveSeed(s.account.seed,s.account.nextId)));});}
+export function craftGear(state:DepthAccount,id:string){return transactDepth(state,s=>{
+  requireHome(s);const g=GEAR_BY_ID[id];requireRule(g,'UNKNOWN_ID','Choose a template.');
+  requireRule(!gameplayV4(s)||s.gear.length<GEAR_CAP_V4,'MAX_LEVEL','Equipment shelf is full (240). Salvage a piece before tailoring.');
+  requireRule(s.account.chapter>=g.chapter,'LOCKED','Reach the item source chapter first.');
+  if(g.rarity==='legendary'){
+    const {materials,seals}=legendaryTailoringRequirements(s);
+    requireRule(s.cleared.includes(3)&&s.materials>=materials&&s.seals>=seals,'LOCKED',`Legendary tailoring needs a Pantry clear, ${materials} materials and ${seals} boss seal${seals===1?'':'s'}.`);
+    spendSealProofsV4(s,seals);s.materials-=materials;s.seals-=seals;
+  }
+  spend(s.account,gearCostV4(id,s));s.gear.push(makeGear(s,id,deriveSeed(s.account.seed,s.account.nextId)));
+});}
 /** The next rank's cost is visible even before its requirements are met. */
 export function awakeningCost(rank:number){return {materials:30*(rank+1),currencies:{fish:300*(rank+1),threads:40*(rank+1),essence:5*(rank+1)}};}
 export function awakenCat(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const c=s.account.cards.find(c=>c.cardId===id),rank=s.awakened[id]??0;requireRule(c&&c.level>=10&&c.stars>=2,'LOCKED','Awakening needs level 10 and two stars.');requireRule(rank<3,'MAX_LEVEL','Awakening is capped at three.');const {materials,currencies}=awakeningCost(rank);requireRule(s.materials>=materials,'INSUFFICIENT_FUNDS',`Need ${materials} mastery materials.`);spend(s.account,currencies);s.materials-=materials;s.awakened[id]=rank+1;});}
+const LEGACY_DROP_ODDS = {
+  battle:{common:6500,rare:3000,epic:500,legendary:0},
+  elite:{common:0,rare:7000,epic:2700,legendary:300},
+  boss:{common:0,rare:2000,epic:7000,legendary:1000},
+} as const;
+export function gearDropPreview(state:DepthAccount,kind:'battle'|'elite'|'boss',chapter:number){
+  const cap=state.formationC2?ECONOMY_C2.dropsPerDay:6;
+  const remaining=Math.max(0,cap-(state.account.inventory.stacks[`depth-drops-${state.account.day}`]??0));
+  const base=state.formationC2?ECONOMY_C2.drops[kind]:LEGACY_DROP_ODDS[kind];
+  const odds=Object.fromEntries(RARITY_ORDER.map(r=>[r,remaining?base[r]:0])) as Record<typeof RARITY_ORDER[number],number>;
+  const pool=GEAR.filter(g=>g.chapter<=chapter);
+  return {cap,remaining,base,odds,pool:pool.map(g=>({id:g.id,rarity:g.rarity,probability:odds[g.rarity]/10000/pool.filter(p=>p.rarity===g.rarity).length}))};
+}
 export function dropGear(state:DepthAccount,kind:'battle'|'elite'|'boss',seed:number,chapter:number):string|null {
   const dayKey=`depth-drops-${state.account.day}`,count=state.account.inventory.stacks[dayKey]??0;
-  if(count>=6)return null;
-  const rng=new Rng(seed),roll=rng.int(0,9999),rarity=kind==='boss'?(roll<1000?'legendary':roll<8000?'epic':'rare'):kind==='elite'?(roll<300?'legendary':roll<3000?'epic':'rare'):(roll<500?'epic':roll<3500?'rare':'common');
+  const {remaining,base}=gearDropPreview(state,kind,chapter);if(!remaining)return null;
+  // Preserve the original roll ordering and random draw count for old replays.
+  const rng=new Rng(seed),roll=rng.int(0,9999),rarity=roll<base.legendary?'legendary':roll<base.legendary+base.epic?'epic':roll<base.legendary+base.epic+base.rare?'rare':'common';
   const pool=GEAR.filter(g=>g.chapter<=chapter&&g.rarity===rarity),template=pool[rng.int(0,pool.length-1)]!;
   state.account.inventory.stacks[dayKey]=count+1;
   if(gameplayV4(state)&&state.gear.length>=GEAR_CAP_V4){
-    const threads=grantDepth(state,{threads:CARD_RPG_CONFIG.rarity[rarity].salvage}).currencies.threads??0;
-    state.run?.earnedItems.push(`Full shelf: ${template.name} converted to ${threads} threads (daily reward cap applies).`);return null;
+    const amount=CARD_RPG_CONFIG.rarity[rarity].salvage;
+    if(state.formationC2){
+      requireRule(Number.isSafeInteger(state.account.currencies.threads+amount),'MAX_LEVEL','Thread balance is full.');
+      state.account.currencies.threads+=amount;
+      state.run?.earnedItems.push(`Full shelf: ${template.name} → ${amount} threads.`);
+    }else{
+      const threads=grantDepth(state,{threads:amount}).currencies.threads??0;
+      state.run?.earnedItems.push(`Full shelf: ${template.name} converted to ${threads} threads (daily reward cap applies).`);
+    }
+    return null;
   }
   state.gear.push(makeGear(state,template.id,deriveSeed(seed,7)));return template.id;
 }

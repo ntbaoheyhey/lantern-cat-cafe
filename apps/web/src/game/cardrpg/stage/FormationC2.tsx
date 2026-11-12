@@ -8,6 +8,7 @@ import { stageLayoutC2, SLOTS_C2 } from './layout-c2';
 import cafeUrl from '../../../../../../assets/cardrpg-look/stage/painted-cafe-c11-v1.webp?url';
 import { cafePainting, formationPaintingC2 } from '../spine/stage-painting';
 import './formation-c2.css';
+import {DropOddsC2} from '../ui-v3/OddsC2';
 
 export function FormationC2({ m, preparing = false }: { m: DepthModel; preparing?: boolean }) {
   useSyncExternalStore(m.subscribe, m.snapshot);
@@ -63,5 +64,6 @@ export function FormationC2({ m, preparing = false }: { m: DepthModel; preparing
 
 export function PrepareC2({m}:{m:DepthModel}) {
   useSyncExternalStore(m.subscribe,m.snapshot);
-  return <><div className="uv-prepare-main c2-prepare"><FormationC2 m={m} preparing/></div><footer className="uv-fight-bar"><button className="uv-fight" onClick={()=>m.fight()}>Fight →</button></footer></>;
+  const kind=m.state.run?.nodes.find(n=>n.id===m.state.run?.current)?.kind;
+  return <><div className="uv-prepare-main c2-prepare"><FormationC2 m={m} preparing/></div><footer className="uv-fight-bar"><DropOddsC2 state={m.state} kind={kind==='boss'||kind==='elite'?kind:'battle'}/><button className="uv-fight" onClick={()=>m.fight()}>Fight →</button></footer></>;
 }

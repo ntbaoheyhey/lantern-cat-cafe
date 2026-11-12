@@ -29,10 +29,10 @@ export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccoun
  {result.transfer&&<p>Transfers from {R.CAT_BY_ID[result.transfer]!.name}; that companion loses this piece.</p>}
  {result.gained.map(effect => {
    const set=R.SETS.find(s=>s.twoEffect===effect||s.fourEffect===effect);
-   return <p key={effect}>{set&&<b>Set bonus: activates {set.fourEffect===effect?'4':'2'}-piece {set.name}. </b>}{R.effectTextV4(effect)}</p>;
+   return <p key={effect}>{set&&<b>Set bonus: activates {set.fourEffect===effect?'4':'2'}-piece {set.name}. </b>}{R.effectTextV4(effect,state.formationC2)}</p>;
  })}
  {!result.gained.length&&<p>No new set bonus.</p>}
- {!!result.lost.length&&<p>Loses: {result.lost.map(R.effectTextV4).join(' ')}</p>}
+ {!!result.lost.length&&<p>Loses: {result.lost.map(effect=>R.effectTextV4(effect,state.formationC2)).join(' ')}</p>}
  <details><summary>How the estimate works</summary><p>Crew score: {result.teamBefore.toFixed(1)} → {result.teamAfter.toFixed(1)}. Piece share: {(result.share*100).toFixed(1)}%.</p><p>Core {result.after.core.toFixed(1)} + utility {result.after.utility.toFixed(1)}.</p><p>HP ÷ 5 + 2 × attack + 1.5 × defense, plus shield, healing and conditional effects in a three-round reference. Shield and healing use 0.2 per point; conditional damage 0.36; counter damage 0.3; extended status 2; rear reach 5. This is an approximate build estimate, not a win probability. Matchup calibration is still pending.</p></details></div>;
 }
 const supplyName=(id:string)=>STACK_ITEMS.find(item=>item.id===id)?.name??id;

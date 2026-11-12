@@ -15,7 +15,9 @@ export function samplePaint(layer:PaintLayer,time:number):PaintKey|null {
 /** Preserve rules contact exactly, independently of authored clip length. Calm mode shortens the tail. */
 export function paintTime(timeline:PaintTimeline,elapsed:number,planDuration:number,planImpact:number,reduced=false):number {
  const before=elapsed<=planImpact;
- let time=before?elapsed/Math.max(1,planImpact)*timeline.impact:timeline.impact+(elapsed-planImpact)/Math.max(1,planDuration-planImpact)*(timeline.duration-timeline.impact);
+ // A longer rules recovery must not stretch a 1.2s painting beyond its budget.
+ const tail=Math.min(planDuration-planImpact,timeline.duration-timeline.impact);
+ let time=before?elapsed/Math.max(1,planImpact)*timeline.impact:timeline.impact+(elapsed-planImpact)/Math.max(1,tail)*(timeline.duration-timeline.impact);
  if(reduced&&time>timeline.impact)time=timeline.impact+(time-timeline.impact)*2;
  return Math.max(0,time);
 }

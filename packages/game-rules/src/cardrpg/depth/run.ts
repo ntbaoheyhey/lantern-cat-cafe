@@ -1,4 +1,5 @@
 import { partySize, validRowsC2 } from './formation-c2';
+import { BALANCE_C2 } from './balance-c2';
 import { patrolDefaultsA6, campaignPressureA6 } from './onboarding-a6';
 import { powerScoreA6 } from './power-a6';
 import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
@@ -73,6 +74,11 @@ export function campaignEnemyStatsA6(run: Run, node: RunNode) {
   if (node.kind === 'boss' && run.chapter > 1) for (const id of node.enemies) {
     if (ENEMY_BY_ID[id]!.tier === 'boss')
       stats[id]!.attack = Math.max(1, Math.round(stats[id]!.attack * (run.chapter === 2 ? .78 : .9)));
+  }
+  if (run.formationC2) for (const [id, value] of Object.entries(stats)) {
+    const budget = ENEMY_BY_ID[id]?.tier === 'boss' ? BALANCE_C2.campaign.boss : BALANCE_C2.campaign.ordinary;
+    value.hp = Math.max(1, Math.round(value.hp * budget.hp[run.chapter - 1]!));
+    value.attack = Math.max(1, Math.round(value.attack * budget.attack[run.chapter - 1]!));
   }
   return stats;
 }

@@ -5,12 +5,12 @@ import {pilotFixture} from './fixture';
 
 describe('painted contact timing',()=>{
  it('keeps every pilot aligned to actual four-unit rules contacts at all playback speeds',()=>{
-  expect(PAINT_TIMELINES.size).toBe(3);
+  expect(PAINT_TIMELINES.size).toBeGreaterThanOrEqual(3);
   for(const timeline of PAINT_TIMELINES.values()){
    const fixture=pilotFixture(timeline.id),plan=fixture.plan,contact=plan.beats[2]!.start;
    expect(fixture.battle.initial.formationC2).toBe(true);
    expect(fixture.battle.actors.filter(a=>a.side==='party')).toHaveLength(4);
-   expect(plan.events.some(e=>['damage','shield'].includes(e.type))).toBe(true);
+   expect(plan.events.some(e=>['damage','shield','heal','status_apply','status_expire','charge'].includes(e.type))).toBe(true);
    for(const reduced of [false,true])for(const speed of [1,2,3]){
     expect(paintTime(timeline,contact/speed*speed,plan.duration,contact,reduced)).toBe(timeline.impact);
     const time=paintTime(timeline,(contact+25)/speed*speed,plan.duration,contact,reduced);
@@ -27,6 +27,10 @@ describe('painted contact timing',()=>{
  it('can scrub backwards with the same result as a fresh sample',()=>{
   const l=PAINT_TIMELINES.get('mochi-1')!.layers.find(l=>l.name==='core-shape')!;
   const first=samplePaint(l,760);samplePaint(l,900);expect(samplePaint(l,760)).toEqual(first);
+ });
+ it('does not stretch painted tails when combat has a longer recovery',()=>{
+  const t={...PAINT_TIMELINES.get('mochi-2')!,duration:1200,impact:775};
+  expect(paintTime(t,1200,1600,775)).toBe(t.duration);
  });
  it('rejects malformed intervals and unordered keys before playback',()=>{
   const t=structuredClone(PAINT_TIMELINES.get('mochi-1')!);t.layers[0]!.keys[1]!.t=-1;expect(()=>validatePaint(t)).toThrow();

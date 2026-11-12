@@ -5,6 +5,7 @@
  */
 import {mkdir,writeFile,access,readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {root,require,loadRuntime,freshAccount,decisionDelay,summarize,fraction} from './runtime.mjs';
@@ -14,7 +15,10 @@ const out=resolve(arg('out',resolve(root,'work/cardrpg-c2/realplay'))),seeds=arg
 if(seeds.some(s=>!Number.isSafeInteger(s)||s<1)||!Number.isFinite(duration)||duration<1)throw Error('Invalid seeds/duration');
 await mkdir(out,{recursive:true});
 for(const seed of seeds)if(await access(resolve(out,`${seed}.json`)).then(()=>true,()=>false))throw Error(`Keep prior measurements: ${seed}.json exists; use another output directory.`);
-const {R}=await loadRuntime(resolve(out,'runtime')),{chromium}=require('@playwright/test');
+const frozenRuntime=arg('runtime'),runtimePath=resolve(frozenRuntime??resolve(out,'runtime/runtime.mjs'));
+const {R}=frozenRuntime?await import(pathToFileURL(runtimePath).href):await loadRuntime(resolve(out,'runtime'));
+const runtimeSha256=createHash('sha256').update(await readFile(runtimePath)).digest('hex');
+const {chromium}=require('@playwright/test');
 const head=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 const sourceDiffSha256=createHash('sha256').update(execFileSync('git',['diff','HEAD'],{cwd:root})).digest('hex');
 const hashes=Object.fromEntries(await Promise.all(['realplay-bot.mjs','policy.mjs','runtime.mjs'].map(async f=>[f,createHash('sha256').update(await readFile(resolve(import.meta.dirname,f))).digest('hex')])));
@@ -23,7 +27,7 @@ const stopped=()=>access(resolve(root,'STOP-C2')).then(()=>true,()=>false);
 async function play(seed){
  const context=await browser.newContext({viewport:{width:1280,height:720}}),page=await context.newPage();
  page.setDefaultTimeout(10000);
- const epoch=Date.now(),initial=freshAccount(R,seed,epoch),memory={},report={seed,epoch,sourceHead:head,sourceDiffSha256,hashes,secondsRequested:duration,concurrentSessions:seeds.length,method:'Fresh public seed; UI-only actions; real wall time; x1; eligible skips recorded.',actions:[],curve:[],errors:[],stalls:[],encounters:[],initial};
+ const epoch=Date.now(),initial=freshAccount(R,seed,epoch),memory={},report={seed,epoch,sourceHead:head,sourceDiffSha256,runtimePath,runtimeSha256,hashes,secondsRequested:duration,concurrentSessions:seeds.length,method:'Fresh public seed; UI-only actions; real wall time; x1; eligible skips recorded.',actions:[],curve:[],errors:[],stalls:[],encounters:[],initial};
  await context.addInitScript(({key,save})=>{if(location.protocol==='http:'&&!localStorage.getItem(key))localStorage.setItem(key,save);},{key:R.SAVE_KEY,save:R.exportSave(initial)});
  const started=Date.now(),seconds=()=> (Date.now()-started)/1000;
  page.on('pageerror',e=>report.errors.push({at:seconds(),message:e.message}));
@@ -32,6 +36,11 @@ async function play(seed){
  // Choose the transaction control, never its explanatory dialog trigger.
  const button=name=>page.getByRole('button',{name,exact:typeof name==='string'}).and(page.locator('button:not(.c2-help-trigger)'));
  async function click(a){
+  if(a.type==='front'){
+   await page.locator(`.c2-seat[data-seat="${a.catId}"]`).click();
+   await page.locator(`.c2-seat[data-seat="${a.swapId}"]`).click();
+   return;
+  }
   const names={patrol:/^Night Patrol/,fight:/^Fight/,skip:'Skip to result',finish:/^(Next|Complete lesson|Back to cafe|Back to Tower)$/,welcome:'✉ Welcome',meet:'Meet your cats','open-recruit':'Recruit','open-cats':'Cats','open-team':'Team','first-level':'Level up',equip:'Auto-equip best gear',upgrade:'Quick upgrade','open-tips':'Review Fast reward','close-tips':'Back to cafe',fast:'Collect fast reward',tips:'Collect saved tips','open-events':'Events',login:'Collect login gift',task:a.label,weekly:`Collect ${a.points}-task weekly gift`,reward:a.label,resolve:a.label,tab:new RegExp(a.tab??'^$','i'),close:'Close','close-events':'Close'};
   const target=a.type==='enter'?page.locator(".dp-node:not(:disabled)"):button(names[a.type]);
   await target.first().click();
@@ -96,6 +105,6 @@ async function play(seed){
 try{
  const results=await Promise.allSettled(seeds.map(play));
  const reports=results.filter(r=>r.status==='fulfilled').map(r=>r.value);
- await writeFile(resolve(out,'summary.json'),JSON.stringify({head,hashes,seeds,duration,reports:reports.map(r=>({seed:r.seed,completed:r.completed,errors:r.errors,summary:r.summary})),rejected:results.filter(r=>r.status==='rejected').map(r=>String(r.reason))},null,2));
+ await writeFile(resolve(out,'summary.json'),JSON.stringify({head,runtimePath,runtimeSha256,hashes,seeds,duration,reports:reports.map(r=>({seed:r.seed,completed:r.completed,errors:r.errors,summary:r.summary})),rejected:results.filter(r=>r.status==='rejected').map(r=>String(r.reason))},null,2));
  if(reports.some(r=>!r.completed||r.errors.length)||results.some(r=>r.status==='rejected'))process.exitCode=1;
 }finally{await browser.close();}

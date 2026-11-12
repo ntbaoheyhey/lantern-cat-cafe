@@ -8,6 +8,7 @@ import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
 import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
+import { passivePresentation } from './passive-presentation';
 import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
 export type Screen = 'tower' | 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
@@ -279,8 +280,6 @@ export class DepthModel {
     if (!actor) return;
     const snapshot = snapshotBattle(battle);
     const before = battle.log.length;
-    const passiveBefore = actor.passiveUsed;
-    const shieldBefore = actor.shield;
     const intent = battle.intents.find(candidate => candidate.actorId === actor.id);
     const softened = intent?.interrupted || actor.statuses.some(status => status.id === 'drowsy');
     const utility = !battle.v4 && ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
@@ -322,12 +321,8 @@ export class DepthModel {
     const actionEvents = battle.log.slice(before);
     const combos = actionEvents.filter(event => event.kind === 'bond.combo');
     if (combos.length) { this.comboBanner = combos.map(event => event.text).join(' · '); this.comboBannerUntil = this.playbackAt + 1800; }
-    const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
-      && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
-    const sootDetonation = actor.catalogId === 'soot'
-      && actionEvents.some(event => event.kind === 'detonate' && event.amount > 0);
-    const cloverCleanse = actor.catalogId === 'clover' && !passiveBefore && actor.passiveUsed;
-    if (mochiShield || sootDetonation || cloverCleanse) this.plan.presentationCues = [`${actor.catalogId}-passive`];
+    Object.assign(this.plan, passivePresentation(snapshot, presentation.impact));
+    if (this.roundPlan) Object.assign(this.roundPlan, passivePresentation(presentation.impact, battle));
     this.animationAt = 0;
     this.notify();
   }

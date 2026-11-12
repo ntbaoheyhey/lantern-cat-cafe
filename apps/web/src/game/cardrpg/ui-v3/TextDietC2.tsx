@@ -4,7 +4,7 @@ export const TextDietContext=createContext(false);
 export const useTextDiet=()=>useContext(TextDietContext);
 
 /** Keep explanations one keyboard-accessible action away from the visual surface. */
-export function HelpC2({children,label='Help',symbol='?'}:{children:ReactNode;label?:string;symbol?:string}) {
+export function HelpC2({children,label='Help',symbol='?',title}:{children:ReactNode;label?:string;symbol?:string;title?:string}) {
  const compact=useTextDiet(),[open,setOpen]=useState(false),dialog=useRef<HTMLDialogElement>(null),trigger=useRef<HTMLButtonElement>(null);
  useEffect(()=>{if(open){dialog.current?.showModal();dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();}},[open]);
  if(!compact)return <>{children}</>;
@@ -18,7 +18,7 @@ export function HelpC2({children,label='Help',symbol='?'}:{children:ReactNode;la
    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
   }
- }}><header><h2>{label}</h2><button onClick={close} aria-label="Close help">×</button></header><div className="c2-help-body">{children}</div></dialog>}</>;
+ }}><header><h2>{title??label}</h2><button onClick={close} aria-label="Close help">×</button></header><div className="c2-help-body">{children}</div></dialog>}</>;
 }
 
 export function CopyC2({short,children}:{short:ReactNode;children:ReactNode}){return <>{useTextDiet()?short:children}</>;}

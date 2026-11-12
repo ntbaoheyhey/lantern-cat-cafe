@@ -1,16 +1,24 @@
 /** Split the approved-to-review original sheets; never synthesize replacement art. */
-import {readFileSync,writeFileSync,mkdirSync,statSync,existsSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,statSync,existsSync,readdirSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 const root=process.cwd(),require=createRequire(resolve(root,'package.json')),{PNG}=require('pngjs');
-const source=process.env.VFX_SOURCE??'/Users/bao/art/vfx-2026-11-12',out=resolve(root,'assets/cardrpg-look/vfx-layered');
+const source=process.env.VFX_SOURCE??'/Users/bao/art/vfx-2026-11-12',out=resolve(process.env.VFX_OUT??resolve(root,'assets/cardrpg-look/vfx-layered'));
 mkdirSync(out,{recursive:true});
 const names=['charge-glow','core-shape','trail-smear','impact-burst','sparks','ground-decal','screen-flash','residue'];
-const pilots=[{id:'mochi-1',owner:'mochi',name:'Door knock',duration:1173,impact:741},
+const defaults=[{id:'mochi-1',owner:'mochi',name:'Door knock',duration:1173,impact:741},
  {id:'mochi-4',owner:'mochi',name:'Warm shelter',duration:1677,impact:900,friendly:true},
  {id:'enemy:yarn-giant',owner:'yarn-giant',name:'Yarn crash',duration:1164,impact:746}];
+const arg=name=>process.argv.find(a=>a.startsWith(`--${name}=`))?.slice(name.length+3);
+const manifest=arg('manifest'),selected=arg('ids')?.split(',');
+const specs=manifest?JSON.parse(readFileSync(resolve(manifest),'utf8')):defaults;
+if(!Array.isArray(specs)||!specs.length||new Set(specs.map(p=>p.id)).size!==specs.length)throw Error('Choose a nonempty manifest with unique skill IDs');
+for(const p of specs)if(!/^[a-z0-9-]+(?::[a-z0-9-]+)*$/.test(p.id)||!p.owner||!p.name||!Number.isFinite(p.duration)||!Number.isFinite(p.impact)||p.impact<650||p.duration<p.impact+240||p.duration>2200)throw Error('Invalid painted-skill specification: '+p.id);
+if(selected?.some(id=>!specs.some(p=>p.id===id)))throw Error('Selected skill is missing from the manifest');
+const pilots=selected?specs.filter(p=>selected.includes(p.id)):specs;
+if(pilots.some(p=>!defaults.some(d=>d.id===p.id))&&!existsSync(resolve(root,'APPROVED-VFX'))&&!/USER VFX APPROVAL/.test(readFileSync(resolve(root,'reports/cardrpg-c2/INBOX.md'),'utf8')))throw Error('Final skill export requires the recorded VFX approval');
 const magick=(args)=>execFileSync('magick',args,{stdio:'pipe',maxBuffer:20_000_000});
 const key=(t,alpha=1,sx=1,sy=sx,x=0,y=0,rotate=0)=>({t,x,y,sx,sy,rotate,alpha});
 function timeline(p){
@@ -64,5 +72,10 @@ for(const p of pilots){
  report.push({id:p.id,source:input,sha256:createHash('sha256').update(bytes).digest('hex'),native:[sheet.width,sheet.height],keyExport:[2048,2048],runtimeBytes:statSync(resolve(out,slug+'.webp')).size+statSync(resolve(out,slug+'.json')).size,alpha,psd:resolve(dir,slug+'.psd'),psdInfo});
  console.log(slug,report.at(-1).runtimeBytes,'bytes; eight clean PNG layers; nine-image PSD verified');
 }
-writeFileSync(resolve(source,'export-audit.json'),JSON.stringify(report,null,2)+'\n');
-if(report.reduce((n,p)=>n+p.runtimeBytes,0)>6_000_000)throw Error('VFX exceeds six MB download budget');
+// Incremental exports retain previous audits and count every runtime asset.
+const auditPath=resolve(source,'export-audit.json');
+const previous=existsSync(auditPath)?JSON.parse(readFileSync(auditPath,'utf8')):[];
+writeFileSync(auditPath,JSON.stringify([...previous.filter(p=>!report.some(r=>r.id===p.id)),...report],null,2)+'\n');
+const totalBytes=readdirSync(out).filter(f=>/\.(json|webp)$/.test(f)).reduce((n,f)=>n+statSync(resolve(out,f)).size,0);
+if(totalBytes>6_000_000)throw Error(`VFX exceeds six MB download budget: ${totalBytes}`);
+console.log('All exported VFX:',totalBytes,'bytes');

@@ -1,6 +1,27 @@
 import type { SpineScene } from '../src/game/cardrpg/spine/scene';
 import { expect, test } from '@playwright/test';
 
+test('C2 recovers a fallen frontline through the two visible placement taps', async ({page}) => {
+  await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+  await page.waitForFunction(()=>!!window.__depthReview);
+  const before=await page.evaluate(()=>{
+    const m=window.__depthReview!;m.state.tutorial=4;m.state.freeInvite=true;
+    m.start(1,'campaign',1);
+    const front=m.state.team.filter(id=>m.state.rows[id]==='front');
+    const back=m.state.team.find(id=>m.state.rows[id]==='rear')!;
+    for(const id of front)m.state.run!.hp[id]=0;
+    m.enter('0-0');
+    return {front:front[0]!,back,hp:m.battle!.initial.hp,enemyStats:m.battle!.initial.enemyStats,seed:m.battle!.seed};
+  });
+  await page.locator(`.c2-seat[data-seat="${before.back}"]`).click();
+  await page.locator(`.c2-seat[data-seat="${before.front}"]`).click();
+  const after=await page.evaluate(()=>{const b=window.__depthReview!.battle!;return {hp:b.initial.hp,enemyStats:b.initial.enemyStats,seed:b.seed};});
+  expect(after).toEqual({hp:before.hp,enemyStats:before.enemyStats,seed:before.seed});
+  await page.getByRole('button',{name:/^Fight/}).click();
+  await page.waitForFunction(()=>window.__depthReview!.showBattle);
+  expect(await page.evaluate(()=>window.__depthReview!.error)).toBe(false);
+});
+
 for (const viewport of [{width:1280,height:720},{width:1440,height:900},{width:1024,height:600}]) {
   test(`C2 four slots, tap swap and battle bounds at ${viewport.width}×${viewport.height}`, async ({page}) => {
     await page.setViewportSize(viewport);

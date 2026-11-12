@@ -1,9 +1,10 @@
-import {createRequire} from 'node:module';import {resolve} from 'node:path';import {writeFile} from 'node:fs/promises';
+import {createRequire} from 'node:module';import {resolve} from 'node:path';import {writeFile,readFile} from 'node:fs/promises';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
 const hardware=process.env.VFX_GPU==='1',browser=await chromium.launch(hardware?{headless:false,args:['--use-angle=metal']}:{headless:true}),page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),rows=[];
 try{
  await page.goto((process.env.C2_URL??'http://127.0.0.1:5970')+'/@fs'+resolve(root,'tools/vfx/preview.html'));await page.waitForFunction(()=>window.vfxPreview?.scene.ready);
- for(const id of ['mochi-1','mochi-4','enemy:yarn-giant']){
+ const ids=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',')??['mochi-1','mochi-4','enemy:yarn-giant'];
+ for(const id of ids){
   await page.evaluate(async({id,before})=>{const g=window.vfxPreview;g.setManual(true);g.choose(id);g.setBefore(before);await g.scene.effects.ready;},{id,before:process.env.VFX_BEFORE==='1'});await page.waitForFunction(()=>window.vfxPreview.scene.ready);
   rows.push(await page.evaluate(async id=>{
    const g=window.vfxPreview,intervals=[],renders=[];let begin=0,last=0;
@@ -12,5 +13,7 @@ try{
   },id));console.log(rows.at(-1));
  }
  const renderer=await page.evaluate(()=>{const gl=document.querySelector('canvas[data-look-spine]').getContext('webgl2'),ext=gl.getExtension('WEBGL_debug_renderer_info');return ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);});
- await writeFile('/Users/bao/art/vfx-2026-11-12/review/'+(process.env.VFX_BEFORE==='1'?'profile-before':'profile')+(hardware?'-gpu':'')+'.json',JSON.stringify({renderer,hardware,recording:false,rows},null,2));
+ const file='/Users/bao/art/vfx-2026-11-12/review/'+(process.env.VFX_BEFORE==='1'?'profile-before':'profile')+(hardware?'-gpu':'')+'.json';
+ const previous=await readFile(file,'utf8').then(JSON.parse,()=>({rows:[]}));
+ await writeFile(file,JSON.stringify({renderer,hardware,recording:false,rows:[...previous.rows.filter(r=>!rows.some(n=>n.id===r.id)),...rows]},null,2));
 }finally{await browser.close();}

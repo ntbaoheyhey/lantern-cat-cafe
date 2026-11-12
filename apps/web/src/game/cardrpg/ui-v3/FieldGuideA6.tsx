@@ -8,7 +8,7 @@ import {statusIdentity} from '../../squad/turn3d/card-status-data';
 type Chapter='keywords'|'companions'|'enemies'|'charms'|'sets';
 type Note={id:string;name:string;detail:string;paragraphs:string[];art?:string;kind?:string;aliases?:string};
 const chapters:Chapter[]=['keywords','companions','enemies','charms','sets'];
-function notesFor(chapter:Chapter,v4:boolean,skillsV5:boolean):Note[] {
+function notesFor(chapter:Chapter,v4:boolean,skillsV5:boolean,c2=false):Note[] {
  const wording=guideTermsA6;
  if(chapter==='keywords'){
   const core=new Set(R.CORE_STATUS_RULES_V5.map(status=>status.id));
@@ -21,7 +21,7 @@ function notesFor(chapter:Chapter,v4:boolean,skillsV5:boolean):Note[] {
  if(chapter==='companions')return R.CATS.map(cat=>({id:cat.id,name:cat.name,detail:`${cat.role} · ${cat.flavour}`,art:cat.id,paragraphs:[`${cat.passive.name} · ${wording(v4?R.passiveDescriptionV4(cat.id):cat.passive.description)}`]}));
  if(chapter==='enemies')return R.ENEMIES.map(enemy=>{const guide=enemyGuideA6(enemy.id);return {id:enemy.id,name:enemy.name,detail:`${enemy.tier} · ${enemy.flavour} · ${enemy.row}`,art:enemy.id,paragraphs:[guide.intent,guide.counter,...(guide.phases?[guide.phases]:[])]};});
  if(chapter==='charms')return R.BOONS.map(boon=>({id:boon.id,name:boon.name,detail:`${boon.archetype} · stack cap ${boon.cap}`,paragraphs:[wording(R.boonForMode(boon.id,v4).description)]}));
- return R.SETS.map(original=>{const set=R.setTextV4(original,v4);return {id:set.id,name:set.name,detail:'Equipment set',paragraphs:[`2 pieces · ${wording(set.two)}`,`4 pieces · ${wording(set.four)}`]};});
+ return R.SETS.map(original=>{const set=R.setTextV4(original,v4,c2);return {id:set.id,name:set.name,detail:'Equipment set',paragraphs:[`2 pieces · ${wording(set.two)}`,`4 pieces · ${wording(set.four)}`]};});
 }
 function NoteSeal({chapter,kind,id}:{chapter:Chapter;kind?:string;id?:string}) {
  const identity=chapter==='keywords'?statusIdentity(id??''):undefined;
@@ -36,7 +36,7 @@ export function FieldGuideA6({v4,skillsV5}:{v4:boolean;skillsV5:boolean}) {
  const compact=useTextDiet();
  const [chapter,setChapter]=useState<Chapter>('keywords'),[selected,setSelected]=useState<Partial<Record<Chapter,string>>>({}),[query,setQuery]=useState('');
  const search=useRef<HTMLInputElement>(null),list=useRef<HTMLElement>(null),pageId=useId();
- const notes=notesFor(chapter,v4,skillsV5),needle=query.trim().toLocaleLowerCase();
+ const notes=notesFor(chapter,v4,skillsV5,compact),needle=query.trim().toLocaleLowerCase();
  const visible=notes.filter(note=>[note.name,note.aliases,note.detail,...note.paragraphs].join(' ').toLocaleLowerCase().includes(needle));
  const current=visible.find(note=>note.id===selected[chapter])??visible[0];
  if(compact)return <section className="a6-field-guide c2-field-guide" aria-label="Cafe field guide"><nav className="a6-guide-chapters" aria-label="Field guide chapters">{chapters.map(id=><button key={id} aria-pressed={chapter===id} onClick={()=>{setChapter(id);setQuery('');}}>{id}</button>)}</nav><select aria-label="Field note" value={current?.id??''} onChange={e=>setSelected(p=>({...p,[chapter]:e.target.value}))}>{notes.map(n=><option key={n.id} value={n.id}>{n.name}</option>)}</select>{current&&<article className="a6-guide-page"><div className="a6-guide-illustration">{current.art?<img {...artPropsA6(current.art)} alt={current.name}/>:<NoteSeal chapter={chapter} kind={current.kind} id={current.id}/>}</div><HelpC2 label={current.name}><p>{current.detail}</p>{current.paragraphs.map((text,i)=><p key={i}>{text}</p>)}</HelpC2></article>}</section>;
