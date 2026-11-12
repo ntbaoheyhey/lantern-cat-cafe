@@ -15,7 +15,7 @@ export interface StatusRule {
   id: StatusId; name: string; description: string; kind: 'buff' | 'debuff'; cap: number;
   duration: number; dispellable: boolean; tick: 'damage' | 'heal' | 'none'; strength: number;
 }
-export interface Status { id: StatusId; stacks: number; remaining: number; source: string; appliedRound: number }
+export interface Status { id: StatusId; stacks: number; remaining: number; source: string; appliedRound: number; linkShareBp?: number }
 export type Mechanic = 'hit' | 'shield' | 'heal' | 'cleanse' | 'dispel' | 'detonate' | 'transfer' | 'revive' | 'execute' | 'chain' | 'energy' | 'swap' | 'drain' | 'consume' | 'break' | 'rally';
 export interface Effect { kind: Mechanic; power?: number; status?: StatusId; stacks?: number; self?: boolean }
 export interface Skill {

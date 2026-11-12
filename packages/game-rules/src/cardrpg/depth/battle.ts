@@ -16,7 +16,7 @@ import { ROUTE_SKILL_POWER_PER_RANK } from './route-upgrades';
 import { challengeStatsV4, phaseBossV4, finishBossV4 } from './pacing-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
-import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Intent, type Skill, type StatusId } from './contract';
+import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Intent, type Skill, type Status, type StatusId } from './contract';
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
 const hasEffect = (actor: Actor, id: string) => actor.setEffects.includes(id);
@@ -36,7 +36,14 @@ export function dispel(b: Battle, source: Actor, target: Actor, kind: 'buff' | '
   target.statuses = target.statuses.filter(s => STATUS_BY_ID[s.id].kind !== kind || !STATUS_BY_ID[s.id].dispellable);
   record(b, source, target, 'dispel', before - target.statuses.length, `Removed ${kind}s`);
 }
-export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusId, count = 1) {
+function linkShareBps(b: Battle, protector: Actor, status: Status) {
+  // Missing provenance retains the former snapshot behavior. New C2 links
+  // carry their own strength; equipping a set cannot weaken a native skill.
+  return b.initial.formationC2 && status.linkShareBp !== undefined ? status.linkShareBp
+    : b.v4 && hasEffect(protector,'defend-link') ? (b.initial.formationC2 ? ECONOMY_C2.sets.hearthloomShareBp : 1500)
+    : STATUS_BY_ID.link.strength * 100;
+}
+export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusId, count = 1, linkStrengthBp?: number) {
   if(b.initial.skillsV5)id=statusIdV5(id);
   const rule = b.initial.skillsV5?statusRuleV5(id,STATUS_BY_ID[id]):STATUS_BY_ID[id];
   if (target.hp <= 0) return false;
@@ -51,6 +58,11 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   }
   if(b.v4&&rule.kind==='debuff'&&target.bonuses.pantryCleanse){target.bonuses.pantryCleanse=0;record(b,target,target,'cleanse',1,'Clearleaf Tea cleared the first debuff');return false;}
   let status = target.statuses.find(s => s.id === id);
+  if (b.initial.formationC2 && id === 'link' && status) {
+    const previousSource = status.source;
+    const protector = b.actors.find(a => a.id === previousSource && a.hp > 0 && a.id !== target.id);
+    if (protector && linkShareBps(b,protector,status) > (linkStrengthBp ?? rule.strength * 100)) return false;
+  }
   if (!status) {
     status = { id, stacks: 0, remaining: 0, source: source.id, appliedRound: b.round };
     target.statuses.push(status);
@@ -62,6 +74,7 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   if (control && ENEMY_BY_ID[target.catalogId]?.tier === 'boss') status.remaining = 1;
   status.source = source.id;
   status.appliedRound = b.round;
+  if (b.initial.formationC2 && id === 'link') status.linkShareBp = linkStrengthBp ?? rule.strength * 100;
   if (control&&!b.initial.skillsV5) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
   if(b.initial.skillsV5)emitGameplayEvent(b,{kind:'status-applied',statusId:id,stacks:status.stacks,sourceId:source.id,actorId:source.id,targetId:target.id,text:`${target.name}: ${rule.name} ×${status.stacks}.`});
@@ -173,7 +186,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const link = target.statuses.find(s => s.id === 'link');
   const protector = link && b.actors.find(a => a.id === link.source && a.hp > 0 && a.id !== target.id);
   if (protector) {
-    const shared = Math.floor(hpDamage * (b.v4 && hasEffect(protector,'defend-link') ? (b.initial.formationC2?ECONOMY_C2.sets.hearthloomShareBp/10000:.15) : .3));
+    const shared = Math.floor(hpDamage * linkShareBps(b,protector,link) / 10000);
     hpDamage -= shared;
     loseHp(b, source, protector, shared, 'shared');
   }
@@ -491,7 +504,7 @@ export function act(b: Battle, choice: Choice): boolean {
   if (actor.catalogId==='panko'&&skill.id==='defend') applyStatus(b,actor,actor,'riposte');
   if(skill.id==='defend'){
     if(hasEffect(actor,'defend-shield'))gearGrant(b,actor,actor,'defend-shield','shield',b.v4?12:25);
-    if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link');}
+    if(hasEffect(actor,'defend-link')){const ally=weakest(living(b,'party').filter(a=>a.id!==actor.id));if(ally)applyStatus(b,actor,ally,'link',1,ECONOMY_C2.sets.hearthloomShareBp);}
     if(hasEffect(actor,'defend-riposte')){
       if(!b.initial.formationC2||(actor.bonuses.bellsteelShelters??0)<ECONOMY_C2.sets.bellsteelSheltersPerBattle){
         applyStatus(b,actor,actor,'shelter');

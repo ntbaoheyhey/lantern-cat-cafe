@@ -1,13 +1,13 @@
 # C2 handoff
-NOW: V3 accepted enemy:rain-spool; B4b final cohorts still running.
+NOW: B4b Hearthloom link-source bug repaired; regressions pass; validate and freeze fresh runtime. V3 40accepted.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT: d2e100e52 (all suites/typecheck); V3 clips accepted through Binding Thread at34c0d71f2.
 NEXT 1: Complete frozen B4b cohorts and report exact target gaps/supply; all tests and workspace typecheck pass.
 NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
 NEXT 3: Continue V3 at enemy:pantry-crown:basic; preserve all accepted work.
-RUNNING: item128×48×100 PID86147; monthly600 PID86148. UI1800s/model500 and E2E complete; reports next.
+RUNNING: pre-fix monthly600 PID86148; item128×48×100 complete (15misses,max16pp); fresh link-source cohorts next.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
-B4b: final main budget0.8–2%, half affixes; latest Bellsteel/Hearthloom config requires fresh acceptance runtime.
+B4b: config unchanged; native30% links now retain strength with Hearthloom gear. Pre-fix cohorts preserved; remeasurement required.
 V3:86IDs;40accepted;40exported=2,394,606bytes. Review server5973.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
