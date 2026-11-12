@@ -1,3 +1,4 @@
+import {HelpC2} from './TextDietC2';
 import {useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {CARD_BY_ID,EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
@@ -23,6 +24,12 @@ export function CatDetailsA6({m,catId,onPreview}:{m:DepthModel;catId:string;onPr
  const availableSkills=new Set(R.availableSkills(m.state,catId).map(skill=>skill.id));
  const gear=R.equippedItems(m.state,catId);
  const tabs=[['growth','Growth'],['skills','Skills'],['bonds','Bonds'],['gear','Gear']] as const;
+ if(m.state.formationC2)return <aside className="uv-detail a6-cat-detail c2-cat-detail" aria-label="Cat details"><header className="a6-cat-hero"><img {...portraitProps(catId)} alt={cat.name}/><div><h2>{cat.name}</h2>{card&&<><PowerA6 value={R.powerV4(m.state,catId).total}/><p>↑ {card.level} · {'★'.repeat(card.stars)}</p></>}</div></header><nav className="a6-cat-tabs" aria-label="Companion details">{tabs.map(([id,label])=><button key={id} aria-pressed={tab===id} onClick={()=>setTab(id)}>{label}</button>)}</nav><section className="a6-cat-panel" aria-label={tabs.find(t=>t[0]===tab)![1]}>
+   {tab==='growth'&&(card?<><div className="a6-cat-growth"><CompanionGrowthV4 m={m} catId={catId} kind="level"/><CompanionGrowthV4 m={m} catId={catId} kind="ascend"/></div><HelpC2 symbol="★" label="Awakening"><AwakeningA6 m={m} catId={catId}/></HelpC2></>:<button onClick={()=>m.go('gacha')}>✉ Recruit</button>)}
+   {tab==='skills'&&<><nav className="c2-skill-icons" aria-label={`${cat.name} skills`}>{cat.skills.map(skill=><button key={skill.id} aria-label={skill.name} aria-pressed={selectedSkill.id===skill.id} onClick={()=>setSkillId(skill.id)}><img src={skillIcon(skill.id)} alt=""/>{skill.type==='ultimate'?'★':availableSkills.has(skill.id)?'':'🔒'}</button>)}</nav><h3>{selectedSkill.name}</h3><HelpC2 label={selectedSkill.name}><p>{R.kitSkillV5(selectedSkill).description}</p><SkillContextA6 state={m.state} skill={selectedSkill}/><p>{guideTermsA6(R.passiveDescriptionV4(catId))}</p></HelpC2><button onClick={()=>onPreview(selectedSkill.id)} aria-label="Watch skill previews">▶ Preview</button></>}
+   {tab==='bonds'&&<><span aria-label="Collection bonus">∞ +{R.collectionBonusA6(m.state)/100}%</span><HelpC2 label="Bonds"><BondSummaryA6 m={m} catId={catId}/></HelpC2></>}
+   {tab==='gear'&&<div className="a6-cat-gear">{EQUIPMENT_SLOTS.map(slot=>{const item=gear.find(g=>R.GEAR_BY_ID[g.templateId]!.slot===slot),spec=item?R.GEAR_BY_ID[item.templateId]:null;return <button key={slot} disabled={!card} aria-label={`${slot}: ${spec?.name??'Empty slot'}`} onClick={()=>{m.cardId=catId;m.itemId=item?.id??'';m.go('inventory',slot);}}>{spec?<GearArtA6 slot={slot} setId={spec.setId}/>:<ItemIcon slot={slot}/>}<b>{item?'+'+item.enhancement:'+'}</b></button>;})}</div>}
+  </section></aside>;
  return <aside className="uv-detail a6-cat-detail" aria-label="Cat details">
   <header className="a6-cat-hero"><img {...portraitProps(catId)} alt={cat.name}/><div><small>{CARD_BY_ID[catId]!.rarity} · {cat.role}</small><h2>{cat.name}</h2>{card&&<PowerA6 value={R.powerV4(m.state,catId).total} reducedMotion={m.state.settings.reducedMotion}/>}<p>{card?`Level ${card.level} · ${card.stars} stars`:'A new friend to meet'}</p></div></header>
   <nav className="a6-cat-tabs" aria-label="Companion details">{tabs.map(([id,label])=><button key={id} aria-pressed={tab===id} onClick={()=>setTab(id)}>{label}</button>)}</nav>

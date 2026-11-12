@@ -1,4 +1,6 @@
 import {GearArtA6} from './KeepsakeArtA6';
+import {SuppliesC2} from './SuppliesC2';
+import {HelpC2} from './TextDietC2';
 import {BagA6} from './BagA6';
 import {CatDetailsA6} from './CatDetailsA6';
 import {CatPreviewA6} from './CatPreviewA6';
@@ -28,7 +30,7 @@ export function CatsSheet({m}:{m:DepthModel}) {
  const [preview,setPreview]=useState<{catId:string;skillId?:string}|null>(null);
  const cat=R.CAT_BY_ID[m.cardId]??R.CATS[0]!,owned=m.state.account.cards.find(c=>c.cardId===cat.id),locked=!!m.state.run&&!m.state.run.complete;
  const cats=R.CATS.filter(c=>filter==='all'||m.state.account.cards.some(o=>o.cardId===c.id));
- return <><div className="uv-section-tools"><span data-cat-count={m.state.account.cards.length}>{m.state.account.cards.length} / {R.CATS.length} cats</span><button aria-pressed={filter==='owned'} onClick={()=>setFilter('owned')}>Show my cats</button><button aria-pressed={filter==='all'} onClick={()=>setFilter('all')}>Discover all</button></div>
+ return <><div className="uv-section-tools"><span data-cat-count={m.state.account.cards.length}>{m.state.account.cards.length} / {R.CATS.length}{!m.state.formationC2&&' cats'}</span><button aria-pressed={filter==='owned'} onClick={()=>setFilter('owned')} aria-label="Show my cats">{m.state.formationC2?'Owned':'Show my cats'}</button><button aria-pressed={filter==='all'} onClick={()=>setFilter('all')} aria-label="Discover all">{m.state.formationC2?'All':'Discover all'}</button></div>
   {R.gameplayA6(m.state)&&<QuickUpgradeA6 m={m}/>}<div className={`uv-card-workspace ${R.gameplayA6(m.state)?'a6-cats-workspace':''}`}><div className="uv-cat-grid">{cats.map(c=><CompanionCard key={c.id} id={c.id} m={m} selected={cat.id===c.id} onSelect={()=>{m.cardId=c.id;setAdvanced(false);m.notify(false);}}/>)}</div>
    {R.gameplayA6(m.state)?<CatDetailsA6 key={cat.id} m={m} catId={cat.id} onPreview={skillId=>setPreview({catId:cat.id,skillId})}/>:<aside className="uv-detail" aria-label="Cat details"><img className="uv-feature-portrait" {...portraitProps(cat.id)} alt=""/><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role}</small><h2>{cat.name}</h2>
     {owned&&R.gameplayA6(m.state)&&<PowerA6 value={R.powerV4(m.state,cat.id).total} reducedMotion={m.state.settings.reducedMotion}/>}<p>{owned?`Level ${owned.level} · ${owned.stars} stars`:'A new friend to meet'}</p>{R.skillsV5(m.state)&&<CatKitV5 catId={cat.id}/>}
@@ -59,7 +61,7 @@ export function BagSheet({m,materials=false}:{m:DepthModel;materials?:boolean}) 
  const cardId=state.account.cards.some(c=>c.cardId===m.cardId)?m.cardId:state.team[0]!;
  const item=state.gear.find(i=>i.id===m.itemId)??state.gear[0],spec=item?R.GEAR_BY_ID[item.templateId]:undefined;
  const comparison=item?gearComparison(state,cardId,item.id):null,preview=item?R.enhancementPreview(item,state,cardId):undefined;
- if(materials)return <Suspense fallback={<p>Opening…</p>}><FullInventory m={m} initialCategory="Materials"/></Suspense>;
+ if(materials)return state.formationC2?<SuppliesC2 m={m}/>:<Suspense fallback={<p>Opening…</p>}><FullInventory m={m} initialCategory="Materials"/></Suspense>;
  if(R.gameplayA6(state))return <BagA6 m={m}/>;
  return <><div className={`uv-section-tools ${R.gameplayA6(state)?'a6-bag-tools':''}`}><span data-gear-count={state.gear.length}>{state.gear.length} pieces</span><label>Equip for <select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{state.account.cards.map(c=><option value={c.cardId} key={c.id}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select></label><button onClick={()=>setAdvanced(!advanced)} aria-expanded={advanced}>Open workshop</button></div>
  {R.gameplayA6(state)&&<QuickUpgradeA6 m={m}/>}<div className={`uv-card-workspace ${R.gameplayA6(state)?'a6-bag-workspace':''}`}><div className="uv-gear-grid">{state.gear.map(g=>{const s=R.GEAR_BY_ID[g.templateId]!;return <button key={g.id} data-rarity={s.rarity} style={rarityStyle(s.rarity)} aria-pressed={item?.id===g.id} onClick={()=>{m.itemId=g.id;m.notify(false);}}>{R.gameplayA6(state)?<GearArtA6 slot={s.slot} setId={s.setId}/>:<ItemIcon slot={s.slot}/>}<b>{s.name}</b><small>{s.rarity} · +{g.enhancement}</small></button>})}{!state.gear.length&&<div className="uv-detail uv-gear-empty"><img className="uv-feature-portrait" {...portraitProps('panko')} alt=""/><h2>A shelf for your treasures</h2><p>Find your first gear on Night Patrol.</p><button className="cr-primary" onClick={()=>m.go('hub')}>Back to the cafe</button></div>}</div>
@@ -71,6 +73,6 @@ export function BagSheet({m,materials=false}:{m:DepthModel;materials?:boolean}) 
 
 export function EventsSheet({m}:{m:DepthModel}) {
  const [more,setMore]=useState(false),active=!!m.state.run&&!m.state.run.complete;
- if(R.gameplayA6(m.state))return <><DailyA6 m={m}/><details><summary>More cafe rewards</summary><Suspense fallback={<p>Opening…</p>}><FullBoard m={m}/></Suspense></details></>;
+ if(R.gameplayA6(m.state))return <><DailyA6 m={m}/>{m.state.formationC2?<HelpC2 label="More cafe rewards"><Suspense fallback={null}><FullBoard m={m}/></Suspense></HelpC2>:<details><summary>More cafe rewards</summary><Suspense fallback={<p>Opening…</p>}><FullBoard m={m}/></Suspense></details>}</>;
  return <>{R.MILESTONES_V4.some(x=>!R.milestonePreviewV4(m.state,x.id).reason)&&<button onClick={()=>m.go('journal')}>Collect journal rewards</button>}<div className="uv-task-grid">{QUESTS.map(q=>{const p=R.boardPreviewV4(m.state,q.id);return <article className="uv-detail" key={q.id}><small>{q.cadence}</small><h2>{q.name}</h2><p>{q.description}</p><progress aria-label={`${q.name} progress`} value={p.progress.progress} max={q.target}/><p>{p.progress.progress}/{q.target}</p><CostView cost={p.reward}/><button disabled={active||!!p.reason} onClick={()=>m.command({type:'claimQuest',questId:q.id})}>{p.progress.claimed?'Collected':'Collect reward'}</button></article>})}</div><button onClick={()=>setMore(!more)} aria-expanded={more}>Read cafe news</button>{more&&<Suspense fallback={<p>Opening…</p>}><FullBoard m={m}/></Suspense>}</>;
 }

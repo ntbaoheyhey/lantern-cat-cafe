@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import {RouteC2} from '../ui-v3/RouteC2';
 import { PowerA6 } from '../ui-v3/PowerA6';
 import { NodeStarsV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
@@ -47,5 +48,6 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
   const charms = <>
     <section className="cr-panel"><h2>Your charms of the night</h2><div className="dp-combos">{Object.entries(run.boons).map(([id, count]) => <span className="active" title={R.boonForMode(id, !!run.gameplayV4).description} key={id}>{R.BOON_BY_ID[id]!.name} ×{count}</span>)}</div><p>{Object.keys(run.boons).length ? 'Charms last through this run. Their effects apply when the next encounter begins.' : 'Choose charms after encounters to build a plan for the boss.'}</p></section>
   </>;
+  if(m.state.formationC2)return <RouteC2 m={m} map={map}/>;
   return <>{!scenicMap&&heading}{stats}{R.gameplayV4(m.state) && run.gameplayV4 ? <>{scenicMap?scenicStage:<>{activity}{map}</>}{scenicMap?<details className="a6-route-notes"><summary>Boss clues & route goals</summary>{context}</details>:context}</> : <>{context}{map}{activity}</>}{scenicMap?<details className="a6-route-notes"><summary>Your charms of the night</summary>{charms}</details>:charms}</>;
 }

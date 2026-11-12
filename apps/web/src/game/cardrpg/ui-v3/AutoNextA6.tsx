@@ -22,5 +22,5 @@ export function AutoNextA6({m,reportOpen,onStop}:{m:DepthModel;reportOpen:boolea
   return()=>window.clearInterval(timer);
  },[m,eligible,waiting,encounter]);
  if(!eligible)return null;
- return <div className="a6-auto-next"><div role="status" aria-label="Auto-next status" aria-live="off"><b>Auto-next · {waiting?'Paused':`Continue in ${seconds}s`}</b><small>Stops for rewards, route choices and rest stops.</small></div><button onClick={()=>{m.autoContinue=false;m.notify(false);onStop();}}>Stop Auto-next</button></div>;
+ return <div className="a6-auto-next"><div role="status" aria-label="Auto-next status" aria-live="off"><b>{m.state.formationC2?`↻ ${waiting?'Ⅱ':seconds+'s'}`:<>Auto-next · {waiting?'Paused':`Continue in ${seconds}s`}</>}</b>{!m.state.formationC2&&<small>Stops for rewards, route choices and rest stops.</small>}</div><button aria-label="Stop Auto-next" onClick={()=>{m.autoContinue=false;m.notify(false);onStop();}}>{m.state.formationC2?'■':'Stop Auto-next'}</button></div>;
 }

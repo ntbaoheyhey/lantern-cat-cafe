@@ -1,2 +1,2 @@
 # C2 — trạng thái
-B0/B1 đã xong. Ba VFX thử nghiệm sẵn sàng duyệt tại docs/vfx/index.html: có tranh, từng lớp, thanh thời gian và video trước/sau. V3 vẫn chờ duyệt. 2.384 web test, 2.012 test gói khác, typecheck web và 427/427 E2E đạt. Đang làm B2 giảm chữ và HUD. CHAIN chưa có READY.
+B0/B1/B2 và V0–V2 đã xong. Ba VFX đã được duyệt, V3 được phép tiếp tục sau các bước cân bằng. 33 trạng thái màn hình đều ≤25 từ (cao nhất 24); ảnh trước/sau ở docs/cardrpg-c2/text-diet.html. 4.396 test gói + 11 test Node, typecheck/lint web và 429/429 E2E đạt. Đang làm B3: bot chơi thật 5 seed × 30 phút và sửa sai lệch mô phỏng. CHAIN chưa có READY.

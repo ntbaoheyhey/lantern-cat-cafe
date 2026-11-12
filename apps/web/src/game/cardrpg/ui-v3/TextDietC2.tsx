@@ -1,0 +1,24 @@
+import {createContext,useContext,useEffect,useRef,useState,type ReactNode} from 'react';
+
+export const TextDietContext=createContext(false);
+export const useTextDiet=()=>useContext(TextDietContext);
+
+/** Keep explanations one keyboard-accessible action away from the visual surface. */
+export function HelpC2({children,label='Help',symbol='?'}:{children:ReactNode;label?:string;symbol?:string}) {
+ const compact=useTextDiet(),[open,setOpen]=useState(false),dialog=useRef<HTMLDialogElement>(null),trigger=useRef<HTMLButtonElement>(null);
+ useEffect(()=>{if(open){dialog.current?.showModal();dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();}},[open]);
+ if(!compact)return <>{children}</>;
+ const close=()=>{dialog.current?.close();setOpen(false);trigger.current?.focus();};
+ return <><button ref={trigger} type="button" className="c2-help-trigger" aria-label={label} aria-haspopup="dialog" onClick={()=>setOpen(true)}>{symbol}</button>{open&&<dialog ref={dialog} className="c2-help" data-c2-help aria-label={label} onCancel={e=>{e.preventDefault();close();}} onKeyDown={e=>{
+  e.stopPropagation();
+  if(e.key==='Escape'){e.preventDefault();close();}
+  if(e.key==='Tab'){
+   const nodes=Array.from(e.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),summary,[tabindex="0"]')).filter(n=>n.checkVisibility());
+   const first=nodes[0],last=nodes.at(-1);
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
+  }
+ }}><header><h2>{label}</h2><button onClick={close} aria-label="Close help">×</button></header><div className="c2-help-body">{children}</div></dialog>}</>;
+}
+
+export function CopyC2({short,children}:{short:ReactNode;children:ReactNode}){return <>{useTextDiet()?short:children}</>;}

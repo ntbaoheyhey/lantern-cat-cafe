@@ -213,13 +213,13 @@ export class SpineScene {
   this.anchors.length=0;const labels:LabelInput[]=[],text:LabelInput[]=[],bodies:Rect[]=[];
   for(const unit of view.actors){const entry=this.actors.get(unit.id);if(!entry)continue;
    const actor=entry.actor,hp=this.screen(actor.socket('hpAnchor',this.scratch)),face=this.screen(actor.socket('head',this.scratch)),foot=this.screen(actor.socket('feet',this.scratch)),body=this.bounds(entry);
-   const anchor:Anchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,visible:unit.hp>0&&unit.side==='enemy'};this.anchors.push(anchor);
+   const anchor:Anchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
    if(unit.hp>0)bodies.push(body);
-   if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:52,head:body});
+   if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:view.formationC2?40:52,head:body});
    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});
   }
-  const placed=layoutLabels(labels,this.width,this.height,138,bodies),words=layoutLabels(text,this.width,this.height,150,[...bodies,...placed.values()]);
-  for(const anchor of this.anchors){const box=placed.get(anchor.id);if(box){anchor.labelX=box.x+69;anchor.labelY=box.y;}else anchor.visible=false;anchor.textLane=words.get(anchor.id);}
+  const labelWidth=view.formationC2?110:138,placed=layoutLabels(labels,this.width,this.height,labelWidth,bodies),words=layoutLabels(text,this.width,this.height,150,[...bodies,...placed.values()]);
+  for(const anchor of this.anchors){const box=placed.get(anchor.id);if(box){anchor.labelX=box.x+labelWidth/2;anchor.labelY=box.y;}else anchor.visible=false;anchor.textLane=words.get(anchor.id);}
   this.labelAudit.heads=bodies;this.labelAudit.cards=[...placed.values(),...words.values()];this.labelAudit.missing=labels.filter(l=>!placed.has(l.id)).map(l=>l.id);
   // Reserve number lanes for their later contact, but do not let invisible
   // numbers displace the pre-contact ultimate card. HP and bodies stay protected.

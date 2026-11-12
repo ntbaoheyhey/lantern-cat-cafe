@@ -1,9 +1,11 @@
+import {useTextDiet,HelpC2} from './TextDietC2';
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import { CostView } from '../shared';
 
 export function PowerA6({ value, label = 'Power', reducedMotion = false }: { value: number; label?: string; reducedMotion?: boolean }) {
+  const compact=useTextDiet();
   const [shown, setShown] = useState(value), [gain, setGain] = useState(0);
   const previous = useRef(value), visual = useRef(value);
   useEffect(() => {
@@ -23,7 +25,7 @@ export function PowerA6({ value, label = 'Power', reducedMotion = false }: { val
     const clear = setTimeout(() => setGain(0), 1600);
     return () => { cancelAnimationFrame(frame); clearTimeout(clear); };
   }, [value, reducedMotion]);
-  return <span className="a6-power" data-gain={gain > 0} aria-label={`${label} ${value}`}><span aria-hidden="true">{label} <b>{shown.toLocaleString('en-US')}</b>{gain > 0 && <em key={value}>+{gain.toLocaleString('en-US')}</em>}</span></span>;
+  return <span className="a6-power" data-gain={gain > 0} aria-label={`${label} ${value}`}><span aria-hidden="true">{compact?'⚡':label} <b>{shown.toLocaleString('en-US')}</b>{gain > 0 && <em key={value}>+{gain.toLocaleString('en-US')}</em>}</span></span>;
 }
 
 export function QuickUpgradeA6({ m }: { m: DepthModel }) {
@@ -33,6 +35,7 @@ export function QuickUpgradeA6({ m }: { m: DepthModel }) {
   const best = options[0], locked = !!state.run && !state.run.complete;
   const gearNote = useId(), power = Math.round(R.teamPowerV4(state));
   const gearGain = equipped.ok ? Math.round(R.teamPowerV4(equipped.state)) - power : 0;
+  if(state.formationC2)return <section className="c2-upgrades" aria-label="Quick upgrades"><PowerA6 value={power} label="Team Power"/><span>{best&&<><b>+{best.after-best.before} ⚡</b><CostView cost={best.cost}/></>}</span><button className="cr-primary" disabled={!best} onClick={()=>{if(best)m.apply(R.applyUpgradeA6(m.state,best.change,best.expectedBuild),best.label);}} aria-label="Quick upgrade">↑ Upgrade</button><button disabled={!equipped.ok} onClick={()=>m.apply(R.autoEquipA6(m.state),'Gear equipped.')} aria-label="Auto-equip best gear">◇ Equip</button><HelpC2 label="Upgrade details"><p>{best?.label??(locked?'Finish this route to train.':'Patrol for materials.')}</p><p>{equipped.ok?`Equipping owned gear adds ${gearGain} Power for free.`:equipped.error}</p></HelpC2></section>;
   return <section className="a6-quick-upgrade" aria-label="Quick upgrades">
     <div><h2>One tap, stronger team</h2><PowerA6 value={power} label="Team Power" reducedMotion={state.settings.reducedMotion}/></div>
     {best ? <div><p>{best.label} · <b>+{best.after - best.before} Power</b></p><CostView cost={best.cost}/></div> : <p>{locked ? 'Finish this route to train your crew.' : 'Your next patrol brings more upgrade materials.'}</p>}
@@ -61,7 +64,7 @@ export function PatrolGearA6({ m, onEquipped }: { m: DepthModel; onEquipped: () 
   };
   return <aside className="a6-patrol-gear" aria-label="Before your patrol">
     {gain > 0 ? <button onClick={equip} aria-label={`Equip owned gear · +${gain.toLocaleString('en-US')} Power`}>
-      <small>FREE GEAR UPGRADE</small><strong>+{gain.toLocaleString('en-US')} Power</strong><span>Equip owned gear <span aria-hidden="true">→</span></span>
-    </button> : <div role="status"><small>OWNED GEAR EQUIPPED</small><strong>+{ready!.gain.toLocaleString('en-US')} Power</strong><span>Ready for your patrol</span></div>}
+      {state.formationC2?<><strong>⚡ +{gain.toLocaleString('en-US')}</strong><span>◇ Equip</span></>:<><small>FREE GEAR UPGRADE</small><strong>+{gain.toLocaleString('en-US')} Power</strong><span>Equip owned gear <span aria-hidden="true">→</span></span></>}
+    </button> : <div role="status">{state.formationC2?<><strong>⚡ +{ready!.gain.toLocaleString('en-US')}</strong><span>✓</span></>:<><small>OWNED GEAR EQUIPPED</small><strong>+{ready!.gain.toLocaleString('en-US')} Power</strong><span>Ready for your patrol</span></>}</div>}
   </aside>;
 }

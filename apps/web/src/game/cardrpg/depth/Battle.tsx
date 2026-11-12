@@ -222,17 +222,17 @@ export function BattleView({ m }: { m: DepthModel }) {
       </aside>}
       {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
-      {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
+      {battle.actors.filter(candidate => (candidate.side === 'enemy'||m.state.formationC2) && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
         const phase = displayedBossPhase(battle, enemy);
         const phaseName = battle.initial.gameplayA6 && phase === 2 ? 'Woolguard shield' : enemy.phase === 1 ? R.ENEMY_BY_ID[enemy.catalogId]?.phases[0] : 'Awakened';
-        return <div className="dp-world-plate" key={enemy.id} data-actor={enemy.id} data-hp-plate tabIndex={readable ? 0 : undefined} hidden
+        return <div className="dp-world-plate" data-c2={m.state.formationC2||undefined} key={enemy.id} data-actor={enemy.id} data-hp-plate tabIndex={readable ? 0 : undefined} hidden
           ref={element => { if (element) plates.current.set(enemy.id, element); else plates.current.delete(enemy.id); }}>
           <div><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp}</small></div>
           <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
-          <small className="dp-intent" title={intent?.label}>{intent?.interrupted ? 'Interrupted' : intent?.label}</small>
-          {R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={battle.initial.gameplayA6 ? phaseName : R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {phase} · {phaseName}</small>}
-          <Statuses actor={enemy} look={lookV2} />
+          <small className="dp-intent" title={intent?.label}>{m.state.formationC2?(intent?intent.interrupted?'×':'⚔':null):intent?.interrupted ? 'Interrupted' : intent?.label}</small>
+          {!m.state.formationC2&&R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={battle.initial.gameplayA6 ? phaseName : R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {phase} · {phaseName}</small>}
+          {m.state.formationC2&&<progress className="c2-world-rage" value={enemy.charge} max={100} aria-label={`${enemy.name} rage ${enemy.charge}/100`}/>}<Statuses actor={enemy} look={lookV2} />
         </div>;
       })}
     </div>

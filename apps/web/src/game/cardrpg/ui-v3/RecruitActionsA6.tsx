@@ -1,3 +1,4 @@
+import {HelpC2} from './TextDietC2';
 import {useId,useMemo,useSyncExternalStore} from 'react';
 import {CARD_RPG_CONFIG,emptyPity} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -23,7 +24,7 @@ export function RecruitActionsA6({m,bannerId,revealing,onInvite}:{m:DepthModel;b
   });
  },[state,bannerId]);
  return <><div className="uv-recruit-buttons a6-recruit-purchases">{quotes.map(q=>{const key=q.welcome?'welcome':String(q.count),description=`${id}-${key}`;return <div key={key} role="group" aria-label={q.welcome?'Free welcome':`${q.count} invitation purchase`}>
-  <button className={q.welcome?'uv-fight':q.count===10?'cr-primary':undefined} aria-describedby={description} disabled={revealing||!q.ok} onClick={()=>onInvite(q.count,q.welcome)}>{q.welcome?'Welcome a friend':`Recruit ×${q.count} · ${q.cost}`}</button>
-  <div id={description} className="a6-recruit-quote"><p>{q.after}</p>{q.needs.length>0&&<ul>{q.needs.map(need=><li key={need}>{need}</li>)}</ul>}</div>
- </div>;})}</div><p className="a6-recruit-limits">{quotes[0]!.remaining} invitation{quotes[0]!.remaining===1?'':'s'} left today · resets daily.<br/>{quotes[0]!.marks} marks saved · {R.SELECTOR_COST_V4} choose one reward.<br/>Earned stamps only · from patrols and tasks.</p></>;
+  <button className={q.welcome?'uv-fight':q.count===10?'cr-primary':undefined} aria-describedby={description} disabled={revealing||!q.ok} onClick={()=>onInvite(q.count,q.welcome)}>{q.welcome?(state.formationC2?'✉ Welcome':'Welcome a friend'):`Recruit ×${q.count} · ${q.cost}`}</button>
+  <div id={description} className="a6-recruit-quote"><HelpC2 label="Invitation cost"><p>{q.after}</p>{q.needs.length>0&&<ul>{q.needs.map(need=><li key={need}>{need}</li>)}</ul>}</HelpC2></div>
+ </div>;})}</div><p className="a6-recruit-limits">{state.formationC2?<span aria-label="Daily invitations left and saved marks">✉ {quotes[0]!.remaining}/30 · ✦ {quotes[0]!.marks}/{R.SELECTOR_COST_V4}</span>:<>{quotes[0]!.remaining} invitation{quotes[0]!.remaining===1?'':'s'} left today · resets daily.<br/>{quotes[0]!.marks} marks saved · {R.SELECTOR_COST_V4} choose one reward.<br/>Earned stamps only · from patrols and tasks.</>}</p></>;
 }

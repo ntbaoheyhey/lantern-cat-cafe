@@ -3,6 +3,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import { currencyIconA6 } from './CountUpA6';
 import { giftReducedA6 } from './GiftAmountsA6';
+import {HelpC2,useTextDiet} from './TextDietC2';
 import './idle-a6.css';
 
 /** Original wooden cafe tip box, with a brass lantern clasp. */
@@ -34,23 +35,25 @@ export function IdleChestA6({m}:{m:DepthModel}) {
  return <><div className={`a6-idle a6-tip-corner ${collected?'a6-idle-collected':''}`} data-reduced={m.state.settings.reducedMotion} data-ready={!!p.claims}>
   <button className="uv-tips" onClick={()=>open('tips')} aria-label="Review Night tips" title="Review saved tips and today’s limits">
    <TipBox/>
-   <span className="a6-tip-sign"><b>Night tips</b><small>{(p.elapsed/3600).toFixed(1)} / 12 h saved</small><progress aria-label="Night tips fill" max={43200} value={p.elapsed}/>
-    <span className="a6-tip-amounts"><span>{currencyIconA6('fish')} {p.reward.fish??0} fish</span><span>{currencyIconA6('threads')} {p.reward.threads??0} threads</span><span>{currencyIconA6('stamps')} {p.reward.stamps??0} stamps</span></span>
-    <span className="a6-tip-status">{status}</span>
+   <span className="a6-tip-sign"><b>Night tips</b><small>{(p.elapsed/3600).toFixed(1)} / 12 h{!m.state.formationC2&&' saved'}</small><progress aria-label="Night tips fill" max={43200} value={p.elapsed}/>
+    <span className="a6-tip-amounts"><span>{currencyIconA6('fish')} {p.reward.fish??0}{!m.state.formationC2&&' fish'}</span><span>{currencyIconA6('threads')} {p.reward.threads??0}{!m.state.formationC2&&' threads'}</span><span>{currencyIconA6('stamps')} {p.reward.stamps??0}{!m.state.formationC2&&' stamps'}</span></span>
+    <span className="a6-tip-status" aria-label={status}>{m.state.formationC2?(p.claims?'✓':'◷'):status}</span>
    </span>
   </button>
-  <button className="a6-fast-reward" data-ready={!fast.reason} onClick={()=>open('fast')} aria-label="Review Fast reward" title="Review one hour of rewards; saved tips stay in the chest"><b>Fast reward · 1 h</b><small>{fast.remaining}/2 free today</small></button>
+  <button className="a6-fast-reward" data-ready={!fast.reason} onClick={()=>open('fast')} aria-label="Review Fast reward" title="Review one hour of rewards; saved tips stay in the chest"><b>{m.state.formationC2?'⚡ 1 h':'Fast reward · 1 h'}</b><small>{fast.remaining}/2{!m.state.formationC2&&' free today'}</small></button>
   {collected&&!review&&<span className="a6-idle-feedback" role="status">Tips collected!</span>}
  </div>{review&&<IdleRewardSheet p={p} fast={fast} selected={review} receipt={receipt} onCollect={collect} onClose={()=>setReview(null)}/>}</>;
 }
 
 function IdleRewardSheet({p,fast,selected,receipt,onCollect,onClose}:{p:ReturnType<typeof R.idleChestA6>;fast:ReturnType<typeof R.idleChestA6>;selected:'tips'|'fast';receipt:string;onCollect:(fast:boolean)=>void;onClose:()=>void}) {
+ const compact=useTextDiet();
  const dialog=useRef<HTMLDialogElement>(null),id=useId();
  useEffect(()=>{const element=dialog.current!,previous=document.activeElement as HTMLElement|null;element.showModal();element.querySelector('button')?.focus();return()=>{element.close();if(previous?.isConnected)previous.focus({preventScroll:true});};},[]);
- return <dialog ref={dialog} className="a6-tip-review" aria-labelledby={id+'-title'} onCancel={event=>{event.preventDefault();onClose();}} onKeyDown={event=>{
+ return <dialog ref={dialog} className={`a6-tip-review ${compact?'c2-tip-review':''}`} aria-labelledby={id+'-title'} onCancel={event=>{event.preventDefault();onClose();}} onKeyDown={event=>{
   if(event.key==='Escape'){event.preventDefault();event.stopPropagation();onClose();}
   if(event.key==='Tab'){event.stopPropagation();const controls=Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')).filter(b=>b.getClientRects().length),first=controls[0],last=controls.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}}
  }}>
+  {compact?<><header><TipBox/><h2 id={id+'-title'}>Night tips</h2><button aria-label="Back to cafe" onClick={onClose}>×</button></header><div className="a6-tip-review-cards">{[{kind:'tips',preview:p},{kind:'fast',preview:fast}].map(({kind,preview})=>{const quick=kind==='fast',reduced=giftReducedA6(preview.requested,preview.reward);return <article key={kind} data-reward={kind} data-selected={selected===kind}><h3>{quick?'Fast reward':'Saved tips'}</h3><b>{quick?`⚡ 1 h · ${fast.remaining}/2`:`◷ ${(p.elapsed/3600).toFixed(1)}/${p.capHours} h`}</b><div className="c2-gift-amounts">{(['fish','threads','stamps']as const).map(currency=><span key={currency} aria-label={`${currency}: ${preview.reward[currency]??0} of ${preview.requested[currency]}`}>{currencyIconA6(currency)} {reduced&&<s>{preview.requested[currency]}</s>} {preview.reward[currency]??0}</span>)}</div><HelpC2 label={quick?'Fast reward details':'Saved tip details'}><p>{quick?'Uses one free reward; saved tips stay in the chest.':'Collecting empties saved tips and restarts the timer.'}</p>{reduced&&<p>Today’s limits reduce this reward. The missing supplies are lost if you collect now.</p>}<p>{preview.reason}</p></HelpC2><button disabled={!!preview.reason} aria-label={quick?'Collect fast reward':'Collect saved tips'} onClick={()=>onCollect(quick)}>{reduced?'Collect less':'Collect'}</button></article>;})}</div><p role="status" aria-label={receipt}>{receipt?'✓':''}</p></>:<>
   <header><TipBox/><div><small>THE CAFE TIP BOX</small><h2 id={id+'-title'}>Night tips and fast rewards</h2><p>Review your supplies before collecting.</p></div><button onClick={onClose}>Back to cafe</button></header>
   <div className="a6-tip-review-cards">{[{kind:'tips',preview:p},{kind:'fast',preview:fast}].map(({kind,preview})=>{const quick=kind==='fast',reduced=giftReducedA6(preview.requested,preview.reward),detailId=id+'-'+kind;return <article key={kind} data-reward={kind} data-selected={selected===kind}>
    <h3>{quick?'Fast reward':'Saved Night tips'}</h3><p>{quick?`1 hour of tips · ${fast.remaining}/2 free today`:`${(p.elapsed/3600).toFixed(1)} / ${p.capHours} h saved`}</p>
@@ -63,5 +66,6 @@ function IdleRewardSheet({p,fast,selected,receipt,onCollect,onClose}:{p:ReturnTy
    <button disabled={!!preview.reason} aria-describedby={detailId} onClick={()=>onCollect(quick)}>{quick?reduced?'Collect reduced fast reward':'Collect fast reward':reduced?'Collect reduced tips':'Collect saved tips'}</button>
   </article>;})}</div>
   <p className="a6-tip-receipt" role="status">{receipt||'Choose which reward to collect.'}</p>
+  </>}
  </dialog>;
 }

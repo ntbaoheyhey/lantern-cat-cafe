@@ -4,10 +4,10 @@
 - [x] V0 — skill/event/timing audit and before clips.
 - [x] V1 — style, painted layered source pipeline, runtime, preview.
 - [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
-- [ ] B2 — text budgets, HUD, eight-screen comparison.
+- [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
 - [ ] B3 — five real 30-minute UI runs; reconcile sim within 15%.
 - [ ] B4 — up to three config tuning passes; bot and 500-seed targets.
 - [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
-- [ ] V3 — all skills; blocked until explicit pilot approval.
+- [ ] V3 — all skills; authorized: all three pilots approved by user 12 Nov.
 - [ ] B5 — merge READY CHAIN into integration branch; complete integration checks/demo.
 - [ ] B6 / V4 — final report and VFX report; inspect/repair scores below 8 once.

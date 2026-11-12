@@ -1,3 +1,4 @@
+import {HelpC2} from '../ui-v3/TextDietC2';
 import { useId } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_BY_ID, CARD_RPG_CONFIG as C, type Cost } from '@taskbar-hero/game-rules/cardrpg';
@@ -15,6 +16,12 @@ export function CompanionGrowthV4({ m, catId, kind }: {
   const preview = R.metaCommand(m.state, command);
   const action = kind === 'level' ? 'Level up' : 'Add a star';
   const locked = !!m.state.run && !m.state.run.complete;
+  if(m.state.formationC2){
+    const next=preview.ok?preview.state.account.cards.find(c=>c.id===card.id)!:card;
+    const cost:Cost=kind==='level'?{fish:C.level.fishBase*card.level,threads:C.level.threads}:{fish:C.level.ascendFish*card.stars};
+    const before=R.depthStats(m.state,catId),after=preview.ok?R.depthStats(preview.state,catId):before;
+    return <div className="dp-v4-growth c2-growth" data-growth={kind}><button className={kind==='level'?'cr-primary':undefined} disabled={!preview.ok} aria-label={action} aria-describedby={descriptionId} onClick={()=>m.command(command)}>{kind==='level'?'↑ Level up':'★ Star'}</button><div id={descriptionId}><b>{kind==='level'?`↑ ${card.level} → ${preview.ok?next.level:card.level+1}`:`★ ${card.stars} → ${preview.ok?next.stars:card.stars+1}`}</b><CostView cost={cost}/>{kind==='ascend'&&<small aria-label="Matching shards">✦ {card.shards}/{C.level.shardsBase*card.stars}</small>}<small aria-label="Stat gains">♥ +{after.hp-before.hp} · ⚔ +{after.attack-before.attack} · 🛡 +{after.defense-before.defense}</small></div><HelpC2 label={action}><p>{preview.ok?'Costs are shown before you spend. The stat gains apply to this cat.':locked?'Finish this route before training.':preview.error}</p><p>Patrol gives fish and threads. Extra recruits give matching shards.</p></HelpC2></div>;
+  }
   if (!preview.ok && R.gameplayA6(m.state) && !locked && !m.state.account.pendingRun) {
     const capped = kind === 'level' ? card.level >= CARD_BY_ID[catId]!.levelCap : card.stars >= C.level.maxStars;
     const cost: Cost = kind === 'level' ? { fish: C.level.fishBase * card.level, threads: C.level.threads } : { fish: C.level.ascendFish * card.stars };

@@ -1,4 +1,5 @@
 import {useId,useRef,useState} from 'react';
+import {HelpC2,useTextDiet} from './TextDietC2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {artPropsA6} from './art-a6';
 import {enemyGuideA6,guideTermsA6,reactionGuideA6} from './guide-a6';
@@ -32,11 +33,13 @@ function NoteSeal({chapter,kind,id}:{chapter:Chapter;kind?:string;id?:string}) {
  </svg>;
 }
 export function FieldGuideA6({v4,skillsV5}:{v4:boolean;skillsV5:boolean}) {
+ const compact=useTextDiet();
  const [chapter,setChapter]=useState<Chapter>('keywords'),[selected,setSelected]=useState<Partial<Record<Chapter,string>>>({}),[query,setQuery]=useState('');
  const search=useRef<HTMLInputElement>(null),list=useRef<HTMLElement>(null),pageId=useId();
  const notes=notesFor(chapter,v4,skillsV5),needle=query.trim().toLocaleLowerCase();
  const visible=notes.filter(note=>[note.name,note.aliases,note.detail,...note.paragraphs].join(' ').toLocaleLowerCase().includes(needle));
  const current=visible.find(note=>note.id===selected[chapter])??visible[0];
+ if(compact)return <section className="a6-field-guide c2-field-guide" aria-label="Cafe field guide"><nav className="a6-guide-chapters" aria-label="Field guide chapters">{chapters.map(id=><button key={id} aria-pressed={chapter===id} onClick={()=>{setChapter(id);setQuery('');}}>{id}</button>)}</nav><select aria-label="Field note" value={current?.id??''} onChange={e=>setSelected(p=>({...p,[chapter]:e.target.value}))}>{notes.map(n=><option key={n.id} value={n.id}>{n.name}</option>)}</select>{current&&<article className="a6-guide-page"><div className="a6-guide-illustration">{current.art?<img {...artPropsA6(current.art)} alt={current.name}/>:<NoteSeal chapter={chapter} kind={current.kind} id={current.id}/>}</div><HelpC2 label={current.name}><p>{current.detail}</p>{current.paragraphs.map((text,i)=><p key={i}>{text}</p>)}</HelpC2></article>}</section>;
  return <section className="a6-field-guide" aria-label="Cafe field guide">
   <header className="a6-guide-intro"><img {...artPropsA6('biscuit')} alt=""/><div><small>NOTES BEFORE NIGHT PATROL</small><h2>A little field wisdom.</h2><p>Choose your crew before the fight. Every cat has an ultimate. It casts automatically at 100 rage, when the cat can act.</p></div></header>
   <nav className="a6-guide-chapters" aria-label="Field guide chapters">{chapters.map(id=><button key={id} aria-pressed={chapter===id} onClick={()=>{setChapter(id);setQuery('');if(list.current)list.current.scrollTop=0;}}>{id}</button>)}</nav>

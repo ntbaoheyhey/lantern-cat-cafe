@@ -1,3 +1,4 @@
+import {HelpC2} from './TextDietC2';
 import {useState} from 'react';
 import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -42,6 +43,7 @@ export function BondBookA6({m}:{m:DepthModel}) {
     description:pair.description,
   }));
   const selected=entries.find(entry=>entry.id===selection[section])??entries[0]!;
+  if(m.state.formationC2)return <div className="a6-bond-book c2-bonds"><header className="a6-bond-overview"><nav className="a6-bond-sections" aria-label="Bond Book sections"><button aria-pressed={section==='collections'} onClick={()=>setSection('collections')}>◇ Collections {bonds.length}</button><button aria-pressed={section==='pairs'} onClick={()=>setSection('pairs')}>∞ Pairs {R.PAIR_COMBOS_A6.length}</button></nav><b aria-label="Collection bonus">♥ ⚔ +{R.collectionBonusA6(m.state)/100}%</b></header><div className="a6-bond-album"><nav className="a6-bond-index" aria-label={section==='collections'?'Collection bonds index':'Pair combos index'}>{entries.map((entry,i)=><button key={entry.id} aria-label={entry.name+': '+entry.status} aria-pressed={entry.id===selected.id} data-active={entry.active} onClick={()=>setSelection(p=>({...p,[section]:entry.id}))}><i>{i+1}</i><span>{entry.cats.map(id=><img key={id} {...portraitProps(id,'face')} alt=""/>)}</span><small>{entry.active?'✓':entry.cats.filter(id=>owned.has(id)).length+'/'+entry.cats.length}</small></button>)}</nav><section className="a6-bond-page" aria-label={selected.name}><header><h3>{selected.name}</h3><b>{selected.active?'✓':'○'}</b></header><div className="a6-bond-cast">{selected.cats.map(id=>{const card=m.state.account.cards.find(c=>c.cardId===id);return <button key={id} data-owned={!!card} aria-label={R.CAT_BY_ID[id]!.name+': '+(card?'owned':'missing')} onClick={()=>{m.cardId=id;m.go('collection');}}><img {...portraitProps(id)} alt=""/><strong>{R.CAT_BY_ID[id]!.name}</strong><small>{card?'↑ '+card.level+' · '+'★'.repeat(card.stars):'🔒'}</small></button>;})}</div><footer><HelpC2 label={selected.name}><p>{selected.description}</p><p>{section==='collections'?'Every cat in this set gives +0.5% HP and attack, including the bench.':'Both partners must be standing. Triggers once per battle from round three.'}</p></HelpC2><button className="cr-primary" onClick={()=>m.go('team')}>♟ Team</button></footer></section></div></div>;
   return <div className="a6-bond-book">
     <header className="a6-bond-overview">
       <nav className="a6-bond-sections" aria-label="Bond Book sections">
