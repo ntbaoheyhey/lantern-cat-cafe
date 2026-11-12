@@ -1,6 +1,6 @@
 # B4b — drop and recruit audit
 
-Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. Final values and measured supply will replace the pending column after B4b.
+Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. Full monthly supply is published only after all 600 accounts finish.
 
 | Source | Item / rarity | Rate or amount before tuning | Pity / cap | Duplicates / overflow |
 |---|---|---|---|---|
@@ -43,6 +43,30 @@ Measurement running: 30 days × 200 seeds × three play profiles; per-item weekl
 Inherited B3 audit finding: full-shelf automatic drops could award zero threads at the earned cap. The current C2 candidate now recovers the same useful rarity salvage amount as manual salvage; the regression passes. The table above preserves the pre-tuning audit at B2 3126240bf.
 
 Working C2 candidate: encounter Legendary rates0/0.05/0.15% (ordinary/elite/boss); gear invitation300stamps with unchanged soft13/hard24; Legendary tailoring10seals/200materials plus100fish/300threads/60essence; Epic tailoring20fish/240threads/9essence; Legendary gear selector72marks. All live source Odds read these tables. Full measurement and item-impact repair remain pending; no acceptance claim.
+
+## Final frozen C2 source tables
+
+Runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; no further table changes during the final cohorts. Sources not changed below retain the amounts, caps and guarantees in the historical audit above.
+
+| Source | Final Common / Rare / Epic / Legendary odds or cost | Guarantee / duplicate treatment |
+|---|---|---|
+| Ordinary encounter | 65 / 30 / 5 / 0% | Shared first six eligible wins/day; after the cap all drop chances are zero |
+| Elite encounter | 0 / 72 / 27.95 / 0.05% | Same cap; uniform eligible template within rarity |
+| Boss encounter | 0 / 29.85 / 70 / 0.15% | Same cap; daily and Tower encounters use their actual node kind |
+| Gear invitation | Base 55 / 34 / 10 / 1%; 300 stamps | Soft pity starts at 13; hard Legendary cap 24; current odds read the saved counter; missing templates preferred |
+| Standard / featured companion invitation | Base 60 / 30 / 9 / 1%; 60 stamps | Same 13/24 rarity pity; featured 50%, then 100% after featured miss; duplicates yield 2/5/12/25 shards |
+| Legendary gear selector | 72 marks | 100% chosen eligible template; chapter/mastery requirements retained |
+| Other selectors | 24 marks | Existing chosen-item rules and useful duplicate conversions retained |
+| Common / Rare tailoring | 180 fish + 30 threads | 100% chosen template; published uniform integer affix ranges |
+| Epic tailoring | 20 fish + 240 threads + 9 essence | 100% chosen template; source chapter and shelf space required |
+| Legendary tailoring | 100 fish + 300 threads + 60 essence + 200 mastery materials + 10 distinct boss seals | Pantry clear, legal template and shelf space; receipts consumed once |
+| Legacy gear forge | Same corresponding C2 tailoring price | Cannot bypass the C2 cost table |
+| Full-shelf automatic drop conversion | 2 / 5 / 12 / 25 threads | Uses normal rarity salvage even when capped earned-thread income is full; gross gear creation remains counted |
+| Manual salvage | 2 / 5 / 12 / 25 threads | Consumes one unequipped instance; no extra gear created |
+
+Every source's Odds popover is driven by live public preview functions or deterministic reward amounts. Displayed content uses numbers/symbols with descriptive accessibility labels; exact template probabilities, exhausted caps and the current hard-pity remainder remain inspectable. Unit/E2E checks passed on the final candidate; the 33 screen budgets still pass.
+
+The latest CHAIN READY `394cf60613b5b576367e860b7dff8bab60dc84aa` expands catalog coverage to all 128 Depth templates, including 64 Epic/Legendary tradable template IDs. Final supply will use that exact catalog, replacing the older three-set policy only for eligibility classification. Normal campaign saves remain untrusted; eligible creation never authorizes a mint. Routine rare/limited materials remain bound unless explicitly listed; one-time Star Thread stays separate.
 
 ## Link source and policy repair — frozen validation
 

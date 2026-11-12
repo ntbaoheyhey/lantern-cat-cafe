@@ -1,8 +1,8 @@
 # C2 handoff
 NOW: V3/V4 complete; B4b final frozen monthly simulation running.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
-LAST GOOD COMMIT: 1578895a9; frozen gameplay runtime unchanged.
-NEXT 1: Finish all600 monthly accounts; summarize and publish per-item weekly supply.
+LAST GOOD COMMIT: bb0024cfa; V3/V4 report pushed; frozen gameplay unchanged.
+NEXT 1: Finish600 accounts; run loot-summary, weekly-supply, economy-report; inspect charts.
 NEXT 2: B5 merge READY394cf60613b5b576367e860b7dff8bab60dc84aa on integration branch.
 NEXT 3: Full integrated checks, Anvil demo:play and B6 report.
 RUNNING: monthly PID73297, eight local workers; session11 work/c2/loot-resume.log.

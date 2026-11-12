@@ -30,3 +30,5 @@ DEADLINE: reports18Nov18UTC; freeze19Nov12UTC. No agents,main merges,deployment,
 
 
 2026-11-12T12:04:53.697290+00:00 — V3/V4 complete at final86 build. All sources/clips verified; 4453 unit/script,435 E2E,33 word screens pass;8 stat previews explicitly distinguished. Economy PID73297 resumed; integration preview clean.
+
+2026-11-12T12:09:22.259343+00:00 — Final source-odds audit prepared; completed-cohort report generator added. Monthly source stays frozen; CDF export waits for complete600-account index.
