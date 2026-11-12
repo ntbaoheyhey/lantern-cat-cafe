@@ -1,15 +1,15 @@
 # C2 handoff
-NOW: V3 biscuit-passive exported; capture/review next.
+NOW: V3 accepted marigold-4; B4b final cohorts still running.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
 LAST GOOD COMMIT: eab180661; candidate units/E2E pass.
 NEXT 1: Complete catalog4misses/6144; run predeclared4x1000 holdout100001–101000; finish600-account economy.
 NEXT 2: Candidate full units4453pass/E2E435pass; record word-budget results next.
-NEXT 3: Capture/review biscuit-passive, then continue first nonaccepted V3 skill.
+NEXT 3: Continue V3 at mallow-passive; preserve all accepted work.
 RUNNING: month40386; holdout/word-budget launch after this checkpoint. All browsers headless.
 B4: all three passes consumed; enemy tables unchanged. Timing/HP misses disclosed in BALANCE.md.
 B4b: prior full128template screen12misses; independent12x1000 holdout5misses; frozen ablation reproduces all pairs.
 CANDIDATE: affixScale0.5→0.25; equipment BellsteelRiposte only on first Defend; main0.8%/2%, nativePanko/legacy unchanged.
-V3:86IDs;73accepted;77exported=5,168,337bytes. Review server on5973; restart after new exports.
+V3:86IDs;74accepted;77exported=5,168,337bytes. Review server5973.
 ART: /Users/bao/art/vfx-2026-11-12; sources outside git; exact prompts in vfx/ASSET-LOG.md.
 LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
 OPEN PROBLEMS: B4 target misses; candidate fullcatalog/economy;15VFX; integration and reports.

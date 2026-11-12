@@ -74,3 +74,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | marigold-1 | 8 / 8 / 9 / 8 | Sage seed-pod needle has a distinct complete flower head and sharp leading point; the butterfly-like paint accents stay restrained and the damage number stays above the strike. | 60.00 |
 | marigold-2 | 8 / 8 / 9 / 8 | Garden bells and three butter petals frame all four recipients below their faces; separate green heal numbers remain readable and the petals clear after impact. | 60.00 |
 | marigold-3 | 8 / 8 / 9 / 8 | Two sage pruning crescents and the bright cream cut read distinctly on the large boss; the low trailing brush clears completely before the next action. | 60.00 |
+| marigold-4 | 8 / 8 / 9 / 8 | Four butter tea blossoms frame the allies below their faces; the two-word cut-in, four green heal numbers and shield value remain separated before the flowers fade. | 60.00 |
