@@ -1,0 +1,13 @@
+# C2 queue
+- [ ] B0 — full unit and full Playwright baseline (running).
+- [ ] B1 — four-unit staggered formation, migration, targeting, slot contract, visual sheet.
+- [ ] V0 — skill/event/timing audit and before clips.
+- [ ] V1 — style, painted layered source pipeline, runtime, preview.
+- [ ] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
+- [ ] B2 — text budgets, HUD, eight-screen comparison.
+- [ ] B3 — five real 30-minute UI runs; reconcile sim within 15%.
+- [ ] B4 — up to three config tuning passes; bot and 500-seed targets.
+- [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
+- [ ] V3 — all skills; blocked until explicit pilot approval.
+- [ ] B5 — merge READY CHAIN into integration branch; complete integration checks/demo.
+- [ ] B6 / V4 — final report and VFX report; inspect/repair scores below 8 once.

@@ -1,0 +1,19 @@
+# Lane C2 rules
+- Follow PROMPT.txt; preserve all Lane C work.
+- Work alone. No subagents or parallel Codex exec.
+- Branch codex/cardrpg-c2-2026-11-12; base e55b8c085.
+- One draft C2 PR against codex/cardrpg-c-2026-11-11.
+- Never merge to main, deploy, read secrets, or write another lane's worktree.
+- Ports 5970–5973; integration demo 5940.
+- Card order: B0, B1, V0, V1, V2, B2, B3, B4, B4b, V3, B5, B6/V4.
+- V3 requires APPROVED-VFX or explicit user approval in INBOX.md.
+- Never generate final character art. VFX must be original and painted.
+- Preserve designer sources; large art belongs in /Users/bao/art/vfx-2026-11-12/.
+- One evidence document per card; no micro-fix receipts.
+- Review actual screenshots/video before accepting visual work.
+- Failure → cause in PROGRESS.log → repair → rerun failure; full suite once per card.
+- Tune only config; B4 permits at most three passes. Report misses honestly.
+- Read CHAIN REQUESTS-TO-C2.md and OUTBOX.md at sync points.
+- Publish slot SHA, pilot SHA and weekly tradable supply through OUTBOX.md.
+- Update HANDOFF.md before any pause; obey local STOP-C2.
+- Reports due 18 Nov 18:00 UTC; code freeze 19 Nov 12:00 UTC.
