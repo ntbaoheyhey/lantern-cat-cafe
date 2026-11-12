@@ -1,8 +1,9 @@
 import { expect, it } from 'vitest';
 import * as R from './index';
+import { clone } from '../internal';
 const fresh = () => R.setFormationC2(R.setGameplayA6(R.createDepthAccount(80001, 0), true));
 it('keeps a fixed C2 encounter budget when the crew upgrades or earns better gear', () => {
-  const s = fresh(), trained = structuredClone(s);
+  const s = fresh(), trained = clone(s);
   trained.account.cards.forEach(c => { c.level = 10; c.stars = 3; });
   trained.gear.forEach(g => { g.enhancement = 12; });
   const encounter = (state: R.DepthAccount) => {
@@ -30,7 +31,7 @@ it('changes only opted-in C2 campaign budgets, with different boss endurance per
 });
 it('retains committed enemy stats through preparation, save import and replay', () => {
   const s = R.enterNode(R.startRun(fresh(), 1, 80001).state, '0-0').state;
-  const enemyStats = structuredClone(s.run!.battle!.initial.enemyStats);
+  const enemyStats = clone(s.run!.battle!.initial.enemyStats);
   const prepared = R.configurePreparation(s, s.team, s.rows, s.v4!.plan).state;
   expect(prepared.run!.battle!.initial.enemyStats).toEqual(enemyStats);
   expect(R.importSave(R.exportSave(prepared)).run!.battle!.initial.enemyStats).toEqual(enemyStats);

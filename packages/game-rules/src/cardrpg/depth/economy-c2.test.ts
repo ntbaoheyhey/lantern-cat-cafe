@@ -3,6 +3,7 @@ import * as R from './index';
 import {RECIPES} from '../catalog';
 import {CARD_RPG_CONFIG} from '../config';
 import {Rng} from '../../rng';
+import {clone} from '../internal';
 
 const fresh=()=>R.setFormationC2(R.setGameplayA6(R.setGameplayV4(R.createDepthAccount(90001,0),true),true));
 it('caps equipment taunts per encounter while preserving Riposte and legacy replay behavior',()=>{
@@ -24,7 +25,7 @@ it('discloses normalized live source odds, including exhausted daily drops and e
  const s=fresh();
  for(const kind of ['battle','elite','boss'] as const)for(const chapter of [1,2,3]){
   const q=R.gearDropPreview(s,kind,chapter);
-  expect(Object.values(q.base).reduce((n,x)=>n+x,0)).toBe(10000);
+  expect(Object.values(q.base).reduce<number>((n,x)=>n+x,0)).toBe(10000);
   expect(q.pool.reduce((n,x)=>n+x.probability,0)).toBeCloseTo(1,12);
   expect(q.pool.every(p=>R.GEAR_BY_ID[p.id]!.chapter<=chapter)).toBe(true);
  }
@@ -56,7 +57,7 @@ it('uses the same advertised tailoring cost through the legacy recipe entry poin
  const s=fresh();s.account.chapter=3;s.account.currencies={fish:10000,threads:10000,stamps:10000,essence:1000};
  const recipe=RECIPES.find(r=>r.outputItemId&&R.GEAR_BY_ID[r.outputItemId]?.rarity==='epic')!;
  expect(recipe).toBeDefined();
- const before=structuredClone(s),direct=R.craftGear(s,recipe.outputItemId!),oldEntry=R.metaCommand(s,{type:'forge',recipeId:recipe.id});
+ const before=clone(s),direct=R.craftGear(s,recipe.outputItemId!),oldEntry=R.metaCommand(s,{type:'forge',recipeId:recipe.id});
  expect(oldEntry.ok).toBe(true);expect(oldEntry.state).toEqual(direct.state);expect(s).toEqual(before);
  for(const [key,n] of Object.entries(R.gearCostV4(recipe.outputItemId!,s)))expect(s.account.currencies[key as keyof typeof s.account.currencies]-direct.state.account.currencies[key as keyof typeof s.account.currencies]).toBe(n);
 });
@@ -66,7 +67,7 @@ it('consumes ten distinct seals atomically, without accepting a forged balance a
  for(let day=1;day<=9;day++)s.account.inventory.stacks[`depth-seal-${day}`]=1;
  const id='hearthloom-weapon-legendary';expect(R.craftGear(s,id).state).toBe(s);
  s.account.inventory.stacks['depth-seal-10']=1;
- const before=structuredClone(s),q=R.craftGear(s,id);
+ const before=clone(s),q=R.craftGear(s,id);
  expect(q.ok).toBe(true);expect(q.state.v4!.spentEffortIds).toHaveLength(10);
  expect(new Set(q.state.v4!.spentEffortIds).size).toBe(10);expect(q.state.seals).toBe(0);expect(q.state.materials).toBe(0);expect(s).toEqual(before);
  s.account.currencies.essence=0;expect(R.craftGear(s,id).state).toBe(s);
