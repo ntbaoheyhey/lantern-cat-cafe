@@ -29,3 +29,10 @@
 - Pre-rendered plates contain no downloaded reference art. Each pilot WebM is below 400 KB at 1280×720/30 fps; MP4 fallback and posters are generated from the same fixed frames.
 - A3 pilots: auto-approved after deterministic export, size checks, local timing/reduced-motion tests and browser inspection. Review media is copied to the Desktop folder; any later INBOX corrections still apply.
 - The file:// lab previews a short CC0 Kenney release sample extracted from B's existing pack. Its licence/source is documented beside the sample; B's audio engine remains untouched.
+
+### A4 complete — 13 November 2026
+- All 13 full plates ship; no cut line used. Twenty-four active and twelve basic tracks consume approved paintings with deterministic geometric paths and particles on the existing VFX canvas.
+- Visual review caught Panko/Mochi similarity despite different signature strings. Panko now uses an oven-door rush with horizontal streaks. Fixed-clock export passed again.
+- Static lab now plays/scrubs all 36 field sequences from generated runtime data, with before/after and quarter speed under file://. Its OFL font is self-contained.
+- Added boss portrait and hit/status/death/voice cue crossings through the shared audio bridge. No second audio engine.
+- Local evidence: 49 browser sequences, 74 relevant unit tests, 10 cardrpg E2E, typecheck. Cinematic media totals 5,999,616 bytes.
