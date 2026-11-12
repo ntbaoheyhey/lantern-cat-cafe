@@ -88,5 +88,5 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | marigold-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/marigold-passive-after.mp4 |
 | enemy:pollen-scout:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-pollen-scout-basic-after.mp4 |
 | enemy:crumb-sentinel:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-crumb-sentinel-basic-after.mp4 |
-| enemy:pollen-scout | animated | pending | pending |
+| enemy:pollen-scout | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-pollen-scout-after.mp4 |
 | enemy:crumb-sentinel | pending | pending | pending |
