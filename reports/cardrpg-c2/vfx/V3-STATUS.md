@@ -13,7 +13,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | soot-2 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/soot-2-after.mp4 |
 | soot-3 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/soot-3-after.mp4 |
 | soot-4 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/soot-4-after.mp4 |
-| soot-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-passive-after.mp4 |
+| soot-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/soot-passive-after.mp4 |
 | clover-1 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-1-after.mp4 |
 | clover-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-2-after.mp4 |
 | clover-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-3-after.mp4 |
