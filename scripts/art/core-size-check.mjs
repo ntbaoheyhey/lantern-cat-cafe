@@ -1,0 +1,15 @@
+import sharp from 'sharp';import {readFile,writeFile,mkdir} from 'node:fs/promises';import {resolve} from 'node:path';import {createHash} from 'node:crypto';
+const root=resolve(import.meta.dirname,'../..');const units=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'))).units;
+const tops={mochi:239,soot:246,clover:238,panko:272,mallow:243,sorrel:254,biscuit:270,inkcap:268,cinnamon:254,brioche:244,velvet:245,marigold:248,'button-guard':242,'sock-skipper':215,'spool-ram':225,'needle-moth':270,'teacup-healer':244,'kettle-knight':250,'yarn-giant':240,'binding-thread':255,'practice-cushion':221,'pollen-scout':267,'rain-spool':275,'crumb-sentinel':253,'pantry-crown':258};
+const widths={'spool-ram':[80,480],'needle-moth':[275,110],'pollen-scout':[280,100],'yarn-giant':[110,420],'rain-spool':[150,350],'kettle-knight':[175,300],'crumb-sentinel':[150,330],'pantry-crown':[160,310]};
+const results=[];for(const unit of units){const dir=resolve(root,'art/units',unit.id),file=resolve(dir,'core.json'),source=`apps/web/public/units/${unit.id}/runtime.webp`;let core;
+ if(process.argv.includes('--init')){const [x,width]=widths[unit.id]??[205,230];core={version:1,id:unit.id,source,region:{x,y:tops[unit.id],width,height:605-tops[unit.id]},method:'Manually reviewed semantic head-top-to-feet crop; excludes ears/hats/weapon/tail/wings. Alpha threshold 16.',capture:{width:640,height:640,worldTop:750,worldHeight:800,actorScale:512/unit.targetHeight},ratio:unit.tier==='boss'?1.8:unit.combatTier==='elite'?1.15:1};}
+ else core=JSON.parse(await readFile(file));
+ const bytes=await readFile(resolve(root,source)),{data,info}=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),r=core.region;let top=Infinity,bottom=-Infinity,left=Infinity,right=-Infinity;
+ for(let y=r.y;y<r.y+r.height;y++)for(let x=r.x;x<r.x+r.width;x++)if(data[(y*info.width+x)*4+3]>=16){top=Math.min(top,y);bottom=Math.max(bottom,y);left=Math.min(left,x);right=Math.max(right,x);}
+ if(!Number.isFinite(top)||bottom<=top)throw Error('Empty core '+unit.id);
+ const height=(bottom-top+1)/.8/core.capture.actorScale;
+ if(process.argv.includes('--init')){core.measurement={x:left,y:top,width:right-left+1,height:bottom-top+1};core.world={x:(left/.8-400)/core.capture.actorScale,y:(750-(bottom+1)/.8)/core.capture.actorScale,width:(right-left+1)/.8/core.capture.actorScale,height};core.scale=512/height;core.sha256=createHash('sha256').update(bytes).digest('hex');await mkdir(dir,{recursive:true});await writeFile(file,JSON.stringify(core,null,2)+'\n');}
+ const normalized=height*core.scale,delta=Math.abs(normalized-512)/512;results.push({id:unit.id,measured:height,normalized,delta,ratio:core.ratio});if(delta>.02)throw Error(`${unit.id}: core differs ${(delta*100).toFixed(2)}%, maximum 2%`);
+}
+await writeFile(resolve(root,'reports/v3-battle/A1/core-size.json'),JSON.stringify(results,null,2)+'\n');console.log(`PASS ${results.length} cores, max deviation ${(Math.max(...results.map(r=>r.delta))*100).toFixed(3)}%; canonical core=512, rear perspective=0.94, elite=1.15, boss=1.8`);

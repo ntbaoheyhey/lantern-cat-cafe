@@ -16,11 +16,20 @@ export function cafePainting() {
 /** Extend the existing painted floor for the two raised formation seats. No new character art. */
 export function formationPaintingC2(image: HTMLImageElement) {
  const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
- const c=canvas.getContext('2d')!,cut=Math.round(image.naturalHeight*.70),horizon=340;
+ const c=canvas.getContext('2d')!,cut=Math.round(image.naturalHeight*.70),horizon=300;
  c.filter=`saturate(${PAINT.stage.paintingSaturation}) contrast(${PAINT.stage.paintingContrast}) brightness(${PAINT.stage.paintingBrightness})`;
  c.drawImage(image,0,0,image.naturalWidth,cut,0,0,2048,horizon);
  c.drawImage(image,0,cut,image.naturalWidth,image.naturalHeight-cut,0,horizon,2048,1024-horizon);
- return canvas;
+ // Original canvas props: a counter edge and cups left; a low leafy pot right.
+ c.filter='none';c.save();c.scale(2,2);
+ const wood=c.createLinearGradient(0,360,0,512);wood.addColorStop(0,'#83513a');wood.addColorStop(1,'#382b29');
+ c.fillStyle=wood;c.beginPath();c.moveTo(0,370);c.lineTo(38,388);c.lineTo(67,512);c.lineTo(0,512);c.closePath();c.fill();
+ c.strokeStyle='#d5a064';c.lineWidth=4;c.beginPath();c.moveTo(0,370);c.lineTo(38,388);c.lineTo(66,510);c.stroke();
+ for(let i=0;i<3;i++){const x=8+i*7,y=370+i*4;c.fillStyle='#ead8ad';c.beginPath();c.roundRect(x-7,y-17,14,14,4);c.fill();c.fillStyle='#67432e';c.beginPath();c.ellipse(x,y-17,7,2,0,0,7);c.fill();}
+ c.fillStyle='#46392c';c.beginPath();c.ellipse(1011,498,42,10,0,0,7);c.fill();c.fillStyle='#b47b56';c.beginPath();c.moveTo(978,455);c.lineTo(1040,455);c.lineTo(1030,496);c.lineTo(988,496);c.closePath();c.fill();
+ c.strokeStyle='#516644';c.lineWidth=4;
+ for(let i=0;i<11;i++){const x=985+(i*17)%55,y=403+(i*23)%46;c.beginPath();c.moveTo(1010,463);c.quadraticCurveTo(1004,430,x,y);c.stroke();c.fillStyle=i%2?'#82935c':'#536e46';c.beginPath();c.ellipse(x,y,7,18,(i-5)*.24,0,7);c.fill();}
+ c.restore();return canvas;
 }
 
 /** Runtime mattes separate distant panes, cafe wall and floor from one original painting. */

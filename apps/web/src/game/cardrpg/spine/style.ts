@@ -4,7 +4,7 @@ export const PAINT = {
  ink:'#49333a', wood:'#9d684b', wall:'#bd9470', night:'#42545c', rim:'#63414a',
  glow:.28, rimWidth:2, impactSeconds:2/60, hitstopMs:60, maxZoom:1.10, shake:4, windupStartLimit:.30,
  ultimatePaint:{coreScale:1.8,minCore:1.4,maxCore:1.8,groundScale:1.24,opacity:.88,life:.70,fill:.20,rim:3.5,stroke:2.4},
- worldHeight:1950, catHeight:512, fxPool:256, framingMargin:32,
+ worldHeight:1950, catHeight:512, fxPool:256, framingMargin:16,
  cutinSeconds:.8, zoomInSeconds:.18, zoomOutSeconds:.20, phaseSeconds:1.25, entranceStagger:.08,
  stage:{glassTop:'#46555f',glassBottom:'#9a9690',distant:'#4c6263',foliage:'#52665d',leaf:'#8b9c75',
   plasterTop:'#d0ae82',plasterBottom:'#af866a',frame:'#755144',trim:'#d9ae76',sill:'#735042',

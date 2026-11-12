@@ -1,0 +1,5 @@
+import * as T from '../../apps/web/node_modules/three';
+import {loadSpineActor,type SpineActor} from '../../apps/web/src/game/cardrpg/spine/assets';
+const renderer=new T.WebGLRenderer({alpha:true,antialias:true,preserveDrawingBuffer:true});renderer.setSize(640,640);renderer.setPixelRatio(1);renderer.setClearColor(0,0);renderer.outputColorSpace=T.SRGBColorSpace;document.body.appendChild(renderer.domElement);
+const scene=new T.Scene(),camera=new T.OrthographicCamera(-400,400,750,-50,.1,1000);camera.position.z=100;let actor:SpineActor;
+Object.assign(window,{units:{async load(id:string){actor?.dispose();actor=await loadSpineActor(id);scene.add(actor.root);actor.setOrder(1);const h=actor.unit.targetHeight,scale=512/h;actor.root.scale.setScalar(scale);actor.sample('idle',id,0,0,camera,true);renderer.render(scene,camera);return{bounds:actor.bounds,source:actor.source,targetHeight:h,scale};},pose(name:string,at:number){actor.sample(name,name,at,0,camera,false);renderer.render(scene,camera);},get actor(){return actor;},renderer,scene,camera}});

@@ -1,0 +1,2 @@
+import {defineConfig} from '../../apps/web/node_modules/@playwright/test';
+export default defineConfig({testDir:'../../apps/web/e2e',testMatch:['formation-c2.spec.ts','vfx-layered-c2.spec.ts','text-diet-c2.spec.ts'],outputDir:'../../work/v3-battle-e2e',workers:1,timeout:60000,use:{baseURL:'http://127.0.0.1:5990',viewport:{width:1280,height:720},launchOptions:{args:['--use-angle=metal']},trace:'off',screenshot:'only-on-failure'},reporter:'line'});

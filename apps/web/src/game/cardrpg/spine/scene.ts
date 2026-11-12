@@ -9,6 +9,7 @@ import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { stageLayoutC2 } from '../stage/layout-c2';
+import {unitCore,ELEMENT_COLORS} from '../stage/core';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
@@ -141,17 +142,19 @@ export class SpineScene {
   const layout=view.formationC2?stageLayoutC2(view.actors.flatMap(unit=>{
    const entry=this.actors.get(unit.id);
    return entry&&(unit.side==='party'||unit.hp>0)?[{id:unit.id,side:unit.side,row:view.rows?.[unit.id]==='rear'?'rear' as const:'front' as const,
-    boss:entry.actor.unit.tier==='boss',aspect:entry.actor.bounds.width/entry.actor.bounds.height,bossRatio:entry.actor.unit.targetHeight/PAINT.catHeight,seat:unit.side==='enemy'?this.c2Seats.get(unit.id):undefined}]:[];
+    boss:entry.actor.unit.tier==='boss',aspect:entry.actor.bounds.width/entry.actor.bounds.height,coreHeight:unitCore(entry.asset,entry.actor.bounds).world.height/entry.actor.bounds.height,coreRatio:unitCore(entry.asset,entry.actor.bounds).ratio,bossRatio:unitCore(entry.asset,entry.actor.bounds).ratio,seat:unit.side==='enemy'?this.c2Seats.get(unit.id):undefined}]:[];
   }),this.worldWidth,PAINT.worldHeight):null;
   const ordered=[...view.actors].sort((a,b)=>Number(b.id===plan?.actorId)-Number(a.id===plan?.actorId));
   for(const unit of ordered){
    const entry=this.actors.get(unit.id);if(!entry)continue;const actor=entry.actor,boss=actor.unit.tier==='boss',position=stagePosition(unit.side,entry.lane,boss,view.boss,this.worldWidth);
-   const box=layout?.get(unit.id);
+   const box=layout?.get(unit.id),core=unitCore(entry.asset,actor.bounds);
+   const rear=view.rows?.[unit.id]==='rear';
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setScalar(rear?.92:1);}});
    actor.root.visible=!(view.formationC2&&unit.side==='enemy'&&unit.hp<=0);
-   if(box){position.scale=box.height/actor.bounds.height;const facing=unit.side==='enemy'?-1:1;position.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*position.scale*facing;position.y=PAINT.worldHeight-box.footY-actor.bounds.y*position.scale;}
+   if(box){position.scale=box.coreHeight/core.world.height;const facing=unit.side==='enemy'?-1:1;position.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*position.scale*facing;position.y=PAINT.worldHeight-box.footY-core.world.y*position.scale;}
    actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(box?box.order:10+Math.round((1-position.y/PAINT.worldHeight)*30));
-   entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,actor.unit.targetHeight*.13,1);
-   entry.ring.visible=unit.hp>0&&(view.currentId===unit.id||view.targetIds.includes(unit.id));entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(actor.unit.targetHeight*.38,actor.unit.targetHeight*.095,1);entry.ring.material.color.set(view.currentId===unit.id?PAINT.honey:PAINT.rose);
+   entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
+   entry.ring.visible=unit.hp>0;entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(core.world.height*position.scale*.38,core.world.height*position.scale*.095,1);entry.ring.material.color.set(ELEMENT_COLORS[entry.asset]??PAINT.rose);
    const phase=view.bossPhases?.[unit.id]??1;
    if(phase>entry.phase){entry.phase=phase;entry.phaseAt=time;this.phaseNoticeAt=time;this.cinematic.phaseText=`${unit.name} · Phase ${phase}`;this.effects.accent(unit.id,'phase',time,view.playbackSpeed??1);}
    if(!entry.entranceDone&&(view.galleryPreview||time-entry.entered>=actor.duration('appear')*.8)){
@@ -174,7 +177,7 @@ export class SpineScene {
    if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
    const since=time-this.hitAt,hitActive=this.firstHit&&!!plan?.targetIds.includes(unit.id)&&since>=0&&since<.32;
    entry.hit.visible=false;if(hitActive){actor.socket('vfxOrigin',entry.hit.position);entry.hit.scale.setScalar((.2+since)*actor.unit.targetHeight);entry.hit.material.opacity=(1-since/.32)*.65;}
-   if(unit.id===plan?.actorId&&time-this.castAt<.4){entry.ring.visible=true;entry.ring.material.opacity=.3+.3*Math.sin((time-this.castAt)/.4*Math.PI);}else entry.ring.material.opacity=.6;
+   if(unit.id===plan?.actorId&&time-this.castAt<.4){entry.ring.visible=true;entry.ring.material.opacity=.3+.3*Math.sin((time-this.castAt)/.4*Math.PI);}else entry.ring.material.opacity=.3;
   }
   const focus=ultimateFocus(time,this.ultStartedAt,this.ultEndedAt,this.ultimate);this.cinematic.focus=focus;
   const maxZoom=view.formationC2?1:Math.min(PAINT.maxZoom,...[...this.actors.values()].filter(e=>e.actor.unit.tier==='boss').map(e=>.55*PAINT.worldHeight/e.actor.bounds.height));
@@ -219,7 +222,11 @@ export class SpineScene {
    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});
   }
   const labelWidth=view.formationC2?110:138,placed=layoutLabels(labels,this.width,this.height,labelWidth,bodies),words=layoutLabels(text,this.width,this.height,150,[...bodies,...placed.values()]);
-  for(const anchor of this.anchors){const box=placed.get(anchor.id);if(box){anchor.labelX=box.x+labelWidth/2;anchor.labelY=box.y;}else anchor.visible=false;anchor.textLane=words.get(anchor.id);}
+  for(const anchor of this.anchors){const box=placed.get(anchor.id);if(box){anchor.labelX=box.x+labelWidth/2;anchor.labelY=box.y;}else anchor.visible=false;anchor.textLane=words.get(anchor.id);
+   // Dense formations can exhaust empty floor lanes. Keep contact feedback on
+   // the target's lower body, safely below its face, instead of dropping it.
+   if(!anchor.textLane&&text.some(t=>t.id===anchor.id)){const h=text.find(t=>t.id===anchor.id)!.height;anchor.textLane={x:Math.max(4,Math.min(this.width-154,anchor.x-75)),y:Math.max(4,Math.min(this.height-h-4,anchor.footY-h-12)),width:150,height:h};}
+  }
   this.labelAudit.heads=bodies;this.labelAudit.cards=[...placed.values(),...words.values()];this.labelAudit.missing=labels.filter(l=>!placed.has(l.id)).map(l=>l.id);
   // Reserve number lanes for their later contact, but do not let invisible
   // numbers displace the pre-contact ultimate card. HP and bodies stay protected.
@@ -230,7 +237,7 @@ export class SpineScene {
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
- audit(){return{renderer:'spine-threejs',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
+ audit(){return{renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
  dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

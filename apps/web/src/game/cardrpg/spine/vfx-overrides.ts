@@ -1,12 +1,12 @@
 /** Validated designer exports are preloaded once, with independent reusable Spine states. */
 import * as T from 'three';
-import type { SkeletonMesh } from '@esotericsoftware/spine-threejs';
+import type { CutoutMesh } from '../../rig/cutout';
 import registry from '../../../../../../assets/cardrpg-look/vfx-designer/registry.json';
 import { loadSkeleton, spineAssetUrl } from './assets';
 import type { SpineSocket } from './config';
 import type { SpineCue } from './events';
 export interface VfxOverride {format:'sequence'|'spine';frames?:string[];fps?:number;skeleton?:string;atlas?:string;animation?:string;scale:number;width:number;height:number;socket:SpineSocket;cue:'hit'|'cast';revision?:string}
-interface Player {active:boolean;at:number;born:number;target:string;mesh?:SkeletonMesh}
+interface Player {active:boolean;at:number;born:number;target:string;mesh?:CutoutMesh}
 interface ReadyEffect {spec:VfxOverride;duration:number;images:HTMLImageElement[];players:Player[];cueWarnings:Set<string>}
 export class DesignerVfx {
  readonly effects=new Map<string,ReadyEffect>();readonly warnings:string[]=[];
