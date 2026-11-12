@@ -1,2 +1,2 @@
 # C2 — trạng thái
-Đã giữ nguyên Lane C tại e55b8c085 và tạo nhánh C2. Đang chạy toàn bộ unit test và Playwright cho B0. Tiếp theo: đội 4 mèo, hai hàng so le. Chưa có bản VFX để duyệt; chưa bắt đầu V3.
+B0 đạt: 4.387 unit test pass, 421/421 Playwright pass, không lỗi ngoài dự kiến. Có 11 test nghiên cứu chỉ chạy khi bật cờ và 2 lỗi kỳ vọng từ trước, đã ghi rõ. PR nháp #440. Đang làm B1: đội 4 mèo, hai hàng so le, giữ save/replay cũ. Chưa có VFX để duyệt; V3 vẫn khóa.

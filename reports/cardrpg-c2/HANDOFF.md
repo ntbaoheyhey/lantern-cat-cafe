@@ -1,11 +1,11 @@
 # C2 handoff
-NOW: B0 baseline; clean Lane C e55b8c085 preserved.
+NOW: B1; B0 passed on Lane C e55b8c085.
 BRANCH: codex/cardrpg-c2-2026-11-12.
-PR: draft creation follows initial report commit; base Lane C.
+PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/440 (draft; base Lane C).
 STOP: STOP-C created; STOP-C2 absent at start.
-NEXT: finish B0 → B1 → V0/V1/V2 → B2/B3/B4/B4b.
+NEXT: B1 rules/layout/migration → V0/V1/V2 → B2/B3/B4/B4b.
 GATE: V3 requires APPROVED-VFX or explicit user approval in INBOX.
-BASELINE: full unit/E2E not yet measured on this tip.
+BASELINE: 4387 unit passed/0 unexpected fail; 2 expected fail/11 inherited runIf skips; E2E 421/421.
 KNOWN: old real play first loss 6.56m, boss 170.77s; old sim normal HP 94%.
 KNOWN: final designer character exports 0/25; preserve current placeholders/Spine.
 CHAIN: reports absent at initial read; do not write in CHAIN worktree.

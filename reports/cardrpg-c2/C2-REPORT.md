@@ -1,10 +1,10 @@
 # Lane C2 report
 
-Status: in progress. Baseline is Lane C e55b8c085; no C2 acceptance claims yet.
+Status: in progress. Baseline is Lane C e55b8c085. B0 passed; gameplay/visual cards pending.
 
 | Card | Status | Evidence / limitation |
 |---|---|---|
-| B0 | Running | Full unit and Playwright baseline |
+| B0 | PASS | 4387 unit passes, 0 unexpected failures; 421/421 E2E, no flakes/skips. Two expected failures and 11 inherited unit research exclusions disclosed in B0.md. |
 | B1–B4b | Queued | Formation, text, real UI balance and economy |
 | V0–V2 | Queued | Painted pilots must be reviewed before expansion |
 | V3 | Approval gate | No user approval yet |
