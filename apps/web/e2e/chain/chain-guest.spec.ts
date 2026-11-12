@@ -8,7 +8,10 @@ const client=createPublicClient({chain:avalancheFuji,transport:http('http://127.
 const config=()=>JSON.parse(readFileSync('public/chain-local.json','utf8')) as {RelicNFT:Address;RelicMarket:Address;RelicMarketV2:Address;YarnToken:Address;treasury:Address};
 const holding=(who:Address,id:bigint)=>client.readContract({address:config().RelicNFT,abi:relicNftAbi,functionName:'balanceOf',args:[who,id]});
 async function login(page:Page){
-  await page.goto(route);await page.getByRole('button',{name:'▶ Play as guest'}).click();
+  await page.goto(route);
+  await page.getByRole('button',{name:'Open menu',exact:true}).click();
+  await page.getByRole('button',{name:'Open Fuji wallet',exact:true}).click();
+  await page.getByRole('button',{name:'▶ Play as guest'}).click();
   await expect(page.getByTestId('chain-gas')).toHaveText('▲ 0.0500');
   const who=getAddress((await page.getByTestId('chain-address').getAttribute('title'))!);
   expect(await client.getBalance({address:who})).toBe(parseEther('0.05'));

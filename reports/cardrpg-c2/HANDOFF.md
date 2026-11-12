@@ -1,11 +1,11 @@
 # C2 integration handoff
-NOW: B5 full retry browser435 running; units/contracts118/typecheck/lint/build pass.
+NOW: B5 wallet overlap repaired; focused3/3,live words33/33,max25,guest/Judge/Fight pass.
 BRANCH: codex/cardrpg-integrate-2026-11-12; base C2 b0448628f; PR440 remains C2 draft.
 LAST GOOD COMMIT: bb0024cfa (C2 full); integrated3163a4789 browser checks running.
-NEXT 1: Run full integrated units, E2E, Anvil chain E2E, word budgets and visuals.
+NEXT 1: Run work/c2/verify-integration-final.py; final headless visuals/PR after checks.
 NEXT 2: Finish600-account monthly; export summary/supply/charts on a dedicated report commit.
 NEXT 3: Cherry-pick that B4b report commit onto C2, merge C2 back; draft integration PR/B6.
-RUNNING: monthly73297 temporarily paused by93039; checks91467; exporter90642; session11 logs.
+RUNNING: monthly73297 active; exporter90642 waits600; prior full checks complete; final next.
 FROZEN: runtime4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
 ECONOMY: session9 work/c2/loot-affix; complete casual200/regular200; heavy in progress.
 B4: three passes consumed; model first loss12.593s early; median winHP above80%.

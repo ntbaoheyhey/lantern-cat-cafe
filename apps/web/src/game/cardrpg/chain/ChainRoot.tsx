@@ -16,15 +16,24 @@ import type { Tab } from './ChainRoom';
 const ChainRoom = lazy(()=>import('./ChainRoom').then(m=>({default:m.ChainRoom})));
 
 
-export function ChainDock() {
+export function ChainDock({embedded=false}:{embedded?:boolean}) {
   const {api, store} = useAuthContext(), session = useSession();
   const flags = chainFlags(), actionLock = useRef(false);
   const external = useAccount(), {data: externalWallet} = useWalletClient();
   const {connectAsync, connectors} = useConnect(), {signMessageAsync} = useSignMessage();
-  const [open, setOpen] = useState(true), [busy, setBusy] = useState(false), [message, setMessage] = useState('');
+  const [open, setOpen] = useState(!embedded), [busy, setBusy] = useState(false), [message, setMessage] = useState('');
   const [warning, setWarning] = useState(false), [copied, setCopied] = useState(false), [moving, setMoving] = useState(false);
   const [lastHash, setLastHash] = useState('');
   const [room,setRoom]=useState<Tab>();
+  const panel=useRef<HTMLElement>(null),walletTrigger=useRef<HTMLElement|null>(null);
+  const closeWallet=()=>{setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();};
+  useEffect(()=>{
+    if(!embedded)return;
+    const openWallet=()=>{walletTrigger.current=document.activeElement as HTMLElement;setOpen(true);};
+    window.addEventListener('chain:wallet',openWallet);
+    return()=>window.removeEventListener('chain:wallet',openWallet);
+  },[embedded]);
+  useEffect(()=>{if(embedded&&open)panel.current?.focus();},[embedded,open]);
   useEffect(()=>{
     if (!flags.chainLoop) return;
     const open=(event:Event)=>{const tab=(event as CustomEvent<unknown>).detail;setRoom(['Judge','Market','Bag','Seal','History'].includes(String(tab))?tab as Tab:'Judge');};
@@ -51,9 +60,9 @@ export function ChainDock() {
     store.set({...result, expiresAt: expiryFromToken(result.token)});
   };
   return <><aside className="chain-dock" aria-label="Fuji wallet">
-    <button className="chain-launch" onClick={() => setOpen(!open)}>◈ Fuji</button>
-    {open && <section className="chain-panel" aria-label="Fuji panel">
-      <header><strong>◈ Fuji</strong><button aria-label="Close Fuji" onClick={() => setOpen(false)}>×</button></header>
+    {!embedded&&<button className="chain-launch" onClick={() => setOpen(!open)}>◈ Fuji</button>}
+    {open && <section ref={panel} tabIndex={-1} className="chain-panel" aria-label="Fuji panel" onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
+      <header><strong>◈ Fuji</strong><button aria-label="Close Fuji" onClick={closeWallet}>×</button></header>
       <small>{TESTNET_NOTICE}</small>
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
@@ -78,6 +87,6 @@ export function ChainDock() {
     </section>}
   </aside>{room&&flags.chainLoop&&<div className="chain-overlay" role="dialog" aria-label="Fuji market" aria-modal="true"><Suspense fallback={<p>Opening…</p>}><ChainRoom key={room} initialTab={room} onClose={()=>setRoom(undefined)}/></Suspense></div>}</>;
 }
-export default function ChainRoot({children}: {children: ReactNode}) {
-  return <WalletProvider>{children}<ChainDock /></WalletProvider>;
+export default function ChainRoot({children,embedded=false}: {children: ReactNode;embedded?:boolean}) {
+  return <WalletProvider>{children}<ChainDock embedded={embedded}/></WalletProvider>;
 }

@@ -13,7 +13,7 @@ pnpm demo:play
 
 Mở [game cục bộ](http://127.0.0.1:5940/?demo=1&squad=1&cardrpg2=1&a6=1&lookSpine=1). Lệnh chạy game ở cổng 5940, RPC Anvil ở 5971 và API cục bộ ở 5972. Máy chủ chỉ nghe trên loopback; không tự mở cửa sổ Chrome. Ctrl-C dừng cả ba dịch vụ. Không chạy đồng thời bộ E2E dùng các cổng này.
 
-Chọn **Play as guest**, đợi số dư gas xuất hiện, rồi chơi tuyến chiến đấu. Mở **Market** để thử Judge pass → Fight boss → Mint → Bag → List. Một phiên trình duyệt riêng có thể đóng vai người mua. Các giao dịch ở chế độ này là giao dịch Anvil thật; liên kết Snowtrace trỏ tới explorer Fuji nên không tra được hash Anvil.
+Mở menu **☰ → Wallet → Play as guest**, đợi số dư gas xuất hiện. Đóng bảng ví bằng **×** hoặc **Escape** để chơi tuyến chiến đấu. Mở lại **Wallet → Market** để thử Judge pass → Fight boss → Mint → Bag → List. Một phiên trình duyệt riêng có thể đóng vai người mua. Các giao dịch ở chế độ này là giao dịch Anvil thật; liên kết Snowtrace trỏ tới explorer Fuji nên không tra được hash Anvil.
 
 Dữ liệu chain cục bộ được tạo lại mỗi lần khởi động. Dùng hồ sơ trình duyệt riêng cho Anvil; giữ hồ sơ Fuji tách biệt. Không cần nhập ví cá nhân hoặc khóa ký của dự án. Lệnh không đọc tệp `.env` và không tự deploy lên mạng công khai.
 
