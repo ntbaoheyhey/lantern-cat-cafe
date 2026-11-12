@@ -13,7 +13,7 @@
   background: transparent;
   padding: 0;
   overflow: hidden;
-  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  
 }
 
 .boss-gate-scroll {
@@ -50,7 +50,7 @@
 .boss-gate-boss-name {
   margin: 0;
   font-size: var(--fs-lg, 1.25rem);
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--chapter-theme-color, var(--accent, #ffb86b));
@@ -60,7 +60,7 @@
 .boss-gate-chapter-sub {
   margin: 0;
   font-size: var(--fs-sm, .875rem);
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   color: var(--muted, #c3aed0);
   line-height: 1.4;
 }
@@ -118,7 +118,7 @@
 
 .boss-portrait-fallback::after {
   content: '?';
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xl, 1.5rem);
   font-weight: bold;
   color: var(--muted, #c3aed0);
@@ -145,7 +145,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-1, 4px);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   background: var(--surface, #2a1f36);
@@ -174,7 +174,7 @@
 }
 
 .boss-power-label {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-weight: 700;
   color: var(--text, #fff3e0);
   text-transform: uppercase;
@@ -182,7 +182,7 @@
 }
 
 .boss-power-numbers {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-weight: 700;
 }
 
@@ -213,7 +213,7 @@
 }
 
 .boss-bar-name {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: 12px;
   color: var(--muted, #c3aed0);
 }
@@ -248,7 +248,7 @@
 }
 
 .boss-chapter-btn {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -289,7 +289,7 @@
   padding: var(--sp-2, 8px) var(--sp-4, 16px);
   min-height: 44px !important;
   height: auto;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-md, 1rem);
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -344,7 +344,7 @@
 /* Specific status styling hooks - cooldown text in --font-num */
 .boss-gate-panel[data-status='cooldown'] .boss-gate-status-text {
   color: var(--focus, #ffd75e);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-weight: 700;
 }
 
@@ -402,7 +402,7 @@
 }
 
 .boss-key-hint-count {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-weight: 700;
   color: var(--key, #ff8fb1);
 }

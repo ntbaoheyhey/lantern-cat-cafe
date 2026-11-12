@@ -76,7 +76,7 @@
 
 .forge-chances-table th {
   text-align: left;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.07em;
@@ -166,7 +166,7 @@
 }
 
 .forge-panel-title {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-lg, 1.25rem);
   color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
@@ -176,7 +176,7 @@
 
 .forge-panel-desc {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   color: var(--muted, #c3aed0);
   line-height: 1.4;
@@ -206,7 +206,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-sm, .875rem);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -256,7 +256,7 @@
 
 .forge-section-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-md, 1rem);
   color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
@@ -264,7 +264,7 @@
 
 .forge-section-desc {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   color: var(--muted, #c3aed0);
   line-height: 1.4;
@@ -279,7 +279,7 @@
 }
 
 .forge-selector-label {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   color: var(--muted, #c3aed0);
@@ -331,7 +331,7 @@
 }
 
 .forge-option-name {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   text-align: center;
@@ -391,7 +391,7 @@
 
 .forge-preview-name {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-md, 1rem);
   color: var(--gold, #ffb86b);
   overflow-wrap: anywhere;
@@ -399,7 +399,7 @@
 
 .forge-preview-meta {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-xs, .75rem);
   color: var(--muted, #c3aed0);
 }
@@ -414,7 +414,7 @@
 
 .forge-cost-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   color: var(--text, #fff3e0);
@@ -439,7 +439,7 @@
   background: var(--surface, #2a1f36);
   border: 1px solid var(--border, #5b4572);
   font-size: var(--fs-sm, .875rem);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   min-width: 0;
 }
 
@@ -451,7 +451,7 @@
 }
 
 .forge-cost-item-name {
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-xs, .75rem);
   color: var(--text, #fff3e0);
   overflow-wrap: anywhere;
@@ -485,7 +485,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-sm, .875rem);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -548,7 +548,7 @@
 
 .forge-note {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-xs, .75rem);
   line-height: 1.35;
   color: var(--muted, #c3aed0);
@@ -574,7 +574,7 @@
 
 .forge-confirm-text {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   color: var(--text, #fff3e0);
   text-align: center;
@@ -589,7 +589,7 @@
   justify-content: center;
   align-items: center;
   font-size: var(--fs-sm, .875rem);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   color: var(--gold, #ffb86b);
 }
 
@@ -638,7 +638,7 @@
 }
 
 .forge-salvage-yield-lead {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   color: var(--gold, #ffb86b);
@@ -656,7 +656,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-1, 4px);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-weight: 700;
   font-size: var(--fs-xs, .75rem);
   color: var(--good, #6be08a);
@@ -669,7 +669,7 @@
 }
 
 .forge-mini-btn {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -774,7 +774,7 @@
 }
 
 .forge-item-name {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-sm, .875rem);
   font-weight: 700;
   color: var(--text, #fff3e0);
@@ -783,7 +783,7 @@
 
 .forge-item-meta {
   font-size: var(--fs-xs, .75rem);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   color: var(--muted, #c3aed0);
   display: flex;
   flex-wrap: wrap;
@@ -791,13 +791,13 @@
 }
 
 .forge-item-salvage-preview {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   color: var(--good, #6be08a);
 }
 
 .forge-item-status-tag {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   padding: 2px 6px;
@@ -845,7 +845,7 @@
 
 .forge-empty-note {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   color: var(--muted, #c3aed0);
 }
@@ -911,7 +911,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-2, 8px);
   font-size: var(--fs-xs, .75rem);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   min-width: 0;
 }
 
@@ -944,7 +944,7 @@
 
 .forge-tag {
   display: inline-block;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   font-weight: 700;
   padding: 2px 6px;

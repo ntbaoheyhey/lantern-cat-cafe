@@ -31,7 +31,7 @@
 .app-shell[data-has-rail=true] .home-hero-card__meta h2 { font-size:24px; }
 .app-shell[data-has-rail=true] .home-hero-card__power { color:var(--v-gold); font-size:12px; }
 .app-shell[data-has-rail=true] .home-hero-stat-row { padding-block:3px; }
-.app-shell[data-has-rail=true] .home-card__subtitle { color:var(--v-mist); font-family:var(--font-body); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+.app-shell[data-has-rail=true] .home-card__subtitle { color:var(--v-mist);  font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
 .app-shell[data-has-rail=true] .home-stage-wrap { border-color:var(--v-woodLight); background:var(--v-night); box-shadow:inset 0 0 0 3px var(--v-coffee),0 12px 26px #12152270; }
 .app-shell .v2-stage-art { isolation:isolate; }
 .app-shell .stage-progress { z-index:4; inset:10px 12px auto; }
@@ -141,7 +141,7 @@
 .app-shell .boss-arena { display:grid; gap:12px; }
 .app-shell .boss-arena p { margin:0; font-size:13px; color:var(--v-common); }
 .app-shell .boss-arena p[role=status] { color:var(--v-cream); }
-.app-shell .boss-arena button { background:var(--v-dusk); color:var(--v-paper); border:1px solid var(--v-slate); font-family:var(--font-display); }
+.app-shell .boss-arena button { background:var(--v-dusk); color:var(--v-paper); border:1px solid var(--v-slate);  }
 
 @media(min-width:1280px) { .app-shell .boss-arena-stage { width:768px; height:288px; aspect-ratio:auto; margin-inline:auto; } }
 @media(min-width:1920px) { .app-shell .boss-arena { max-width:1060px; } .app-shell .boss-arena-stage { width:1024px; height:384px; } }

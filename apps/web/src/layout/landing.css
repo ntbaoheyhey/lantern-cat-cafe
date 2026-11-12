@@ -72,7 +72,7 @@
   border: 1px solid var(--border, #72578d);
   padding: 4px 12px;
   border-radius: 0;
-  font-family: var(--font-num, monospace);
+  
   font-size: 11px;
   font-weight: 700;
   color: var(--muted, #c3aed0);
@@ -91,7 +91,7 @@
 /* Title */
 .landing__title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: clamp(42px, 5vw, 64px);
   line-height: 1.05;
   color: var(--accent, #ffb86b);
@@ -102,7 +102,7 @@
 /* Promise */
 .landing__promise {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: 16px;
   line-height: 1.5;
   color: var(--text, #fff3e0);
@@ -128,7 +128,7 @@
   width: 200px;
   flex: 0 0 200px;
   text-align: left;
-  font-family: var(--font-display, 'Pixelify Sans', monospace) !important;
+  
   font-size: 15px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
@@ -182,7 +182,7 @@
 
 .landing__wallet-btn-wrap .wallet-btn {
   min-width: 240px;
-  font-family: var(--font-display, 'Pixelify Sans', monospace) !important;
+  
   font-size: 14px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
@@ -215,7 +215,7 @@
 }
 
 .landing__wallet-btn-wrap .wallet-badge {
-  font-family: var(--font-num, monospace);
+  
   font-size: 13px;
   color: var(--good, #6be08a);
   background: var(--surface-2, #2a1f36);
@@ -226,7 +226,7 @@
 
 .landing__footnote {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: 13px;
   color: var(--muted, #c3aed0);
   max-width: 460px;
@@ -282,7 +282,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-num, monospace);
+  
 }
 
 .landing__proof-item--help {

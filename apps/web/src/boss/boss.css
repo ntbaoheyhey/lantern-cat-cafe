@@ -13,7 +13,7 @@
 .tabpanel .boss-error { color: var(--bad); }
 .boss-arena { display: grid; gap: 12px; }
 .hp-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; margin-bottom: 4px; font-size: 0.8rem; color: var(--text); font-variant-numeric: tabular-nums; }
-.hp-label > span:last-child { font-family: var(--font-num); color: var(--muted); }
+.hp-label > span:last-child {  color: var(--muted); }
 .hp-track { position: relative; height: 12px; background: var(--bg); border: var(--pixel-border); overflow: hidden; }
 .hp-fill { height: 100%; transition: width 250ms ease-out; }
 .hp-hero .hp-fill { background: var(--good); }

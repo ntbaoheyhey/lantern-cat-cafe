@@ -18,7 +18,7 @@
 .market-table td { padding:var(--sp-2,8px); border-bottom:1px solid var(--border); vertical-align:middle; }
 .market-table th:first-child { width:32px; }
 .market-sort,.market-select { border:0; padding:0; color:inherit; background:transparent; font:inherit; text-align:left; cursor:pointer; }
-.market-sort { font-family:var(--font-display); font-weight:700; }
+.market-sort {  font-weight:700; }
 .market-sort:hover,.market-select:hover { color:var(--accent); }
 .market-table tr.selected { background:var(--surface-2); outline:1px solid var(--accent); outline-offset:-1px; }
 .market-table .market-select { font-weight:700; }
@@ -37,7 +37,7 @@
 .market-facts { display:grid; gap:2px; padding:var(--sp-1,4px) 0; margin:var(--sp-1,4px) 0; border-block:1px dashed var(--border); font-size:var(--fs-xs,.75rem); }
 .market-facts > div { display:grid; grid-template-columns:auto minmax(0,1fr); gap:var(--sp-2,8px); }
 .market-facts dt { color:var(--muted); }
-.market-facts dd { margin:0; text-align:right; overflow-wrap:anywhere; font-family:var(--font-num); }
+.market-facts dd { margin:0; text-align:right; overflow-wrap:anywhere;  }
 .market-contract-links { display:grid; gap:2px; font-size:var(--fs-xs,.75rem); }
 .market-contract-links a { color:var(--accent); text-underline-offset:3px; }
 .market-your-listings { flex:1; min-height:72px; }

@@ -12,7 +12,7 @@
   background: var(--surface, #2a1f36);
   border: 2px solid var(--border, #5b4572);
   color: var(--text, #fff3e0);
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
 }
 
 .hud-bar__layout {
@@ -46,7 +46,7 @@
   white-space: nowrap;
 }
 .hud-level-badge, .hud-power-value, .hud-progress-text, .hud-stack-amount, .hud-xp-text {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-variant-numeric: tabular-nums;
 }
 .hud-xp-track {
