@@ -9,10 +9,21 @@ it.each(['full','short','off'] as CinematicMode[])('keeps resolved events and ex
  for(const id of SEQUENCES.keys()){
   const original=pilotFixture(id).plan,events=JSON.stringify(original.events),plan=configureSequence(original,mode),impact=plan.beats[2]!.start;
   expect(plan.sequence!.impact).toBe(impact);expect(JSON.stringify(plan.events)).toBe(events);expect(plan.events).toBe(original.events);
-  expect(sequenceAt(plan,impact-1)!.flash).toBe(0);expect(sequenceAt(plan,impact)!.flash).toBe(.35);
+  expect(sequenceAt(plan,impact-1)!.flash).toBe(0);expect(sequenceAt(plan,impact)!.flash).toBe(plan.ultimate?.35:0);
   expect(sequenceAt(plan,impact,true)!.flash).toBe(0);expect(sequenceAt(plan,impact,true)!.shake).toBe(sequenceAt(plan,impact)!.shake/2);
   expect(sequenceAt(plan,impact)!.plate).toBe(false);
  }
+});
+it('covers every cat with two different actives and a basic from four archetypes',()=>{
+ const basics=new Set<string>();
+ for(const id of R.CATS.map(c=>c.id)){
+  const sequences=[1,2,3,4].map(n=>SEQUENCES.get(`${id}-${n}`)!.sequence!);
+  expect(sequences.map(s=>s.tier)).toEqual(['basic','active','active','ultimate']);
+  basics.add(sequences[0]!.vfx.find(v=>v.type==='shader')!.source);
+  expect(sequences[1]!.vfx.find(v=>v.type==='shader')!.source).not.toBe(sequences[2]!.vfx.find(v=>v.type==='shader')!.source);
+  for(const s of sequences){expect(s.damage[0]!.t).toBe(s.impact);expect(s.audio.some(a=>a.t===s.impact)).toBe(true);}
+ }
+ expect(basics.size).toBe(4);
 });
 it('shortens only after three full presentations and skips without a second resolution',()=>{
  const m={state:R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),true)),animationAt:1000,notify:()=>{}} as unknown as DepthModel;

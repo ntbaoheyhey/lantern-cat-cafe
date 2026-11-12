@@ -1,4 +1,5 @@
 import {BattlePostFx} from '../battle-v3/post-fx';
+import {BattleAudio} from '../battle-v3/battle-audio';
 import {CinematicPlayer} from '../battle-v3/cinematic-player';
 import {sequenceAt,sequenceWorldTime} from '../battle-v3/sequence';
 import * as T from 'three';
@@ -24,6 +25,7 @@ import { chargeEvent } from '../depth/card-action-plan';
 interface DisplayActor {actor:SpineActor;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
 export class SpineScene {
+ private audio=new BattleAudio();
  readonly scene=new T.Scene();readonly camera=new T.OrthographicCamera(-1,1,1,0,.1,1000);
  readonly renderer:T.WebGLRenderer;readonly actors=new Map<string,DisplayActor>();
  readonly loading={completed:0,total:1,label:'Lighting the lanterns…'};ready=false;
@@ -171,6 +173,8 @@ export class SpineScene {
    if(view.model){name=({ultimate:'ult',cast:'skill',hit:'hurt',KO:'ko'} as Record<string,string>)[view.model.clip]??view.model.clip;at=(view.modelProgress??0)*actor.duration(name);key=name;}
    else if(frame&&unit.id===frame.plan.actorId){
     name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
+    const authored=sequence?.seq.casterAnim.filter(k=>k.t<=frame.elapsed&&k.name).at(-1)?.name;
+    if(authored&&!chargeEvent(frame.plan))name=authored;
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
     at=retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
    }else if(unit.hp<=0){if(entry.koAt<0)entry.koAt=time;name='ko';key=entry.koAt;at=time-entry.koAt;}
@@ -223,6 +227,7 @@ export class SpineScene {
   this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
   this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined);
+  this.audio.render(view);
   this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
   this.numbers.setAnchors(this.anchors);this.numbers.render(this.firstHit?frame:null,view.cardPresentation,this.width,this.height,view.reducedMotion,true);
  }

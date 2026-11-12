@@ -18,8 +18,9 @@ export interface SkillSequence {
 }
 export interface Signature {element:{palette:string[];grade:string};camera:string;motif:string;target:string;soundKit:string}
 const files=import.meta.glob('../../../../../../skills/*/sequence.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
+const fields=import.meta.glob('../../../../../../skills/*/field.json',{eager:true,import:'default'}) as Record<string,PaintTimeline[]>;
 const signatures=import.meta.glob('../../../../../../skills/*/signature.json',{eager:true,import:'default'}) as Record<string,Signature>;
-export const SEQUENCES=new Map(Object.values(files).filter(t=>t.sequence).map(t=>[t.id,t]));
+export const SEQUENCES=new Map([...Object.values(files),...Object.values(fields).flat()].filter(t=>t.sequence).map(t=>[t.id,t]));
 export const SIGNATURES=new Map(Object.entries(signatures).map(([path,s])=>[path.split('/').at(-2)!,s]));
 export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode};
 
@@ -57,10 +58,11 @@ export function sampleKeys<T extends {t:number}>(keys:readonly T[],at:number):T 
 export function sequenceAt(plan:EffectPlan,elapsed:number,reduced=false){
  const seq=(plan as SequencePlan).sequence;if(!seq)return null;
  const at=Math.max(0,elapsed),since=at-seq.impact,impact=since>=0&&since<300;
+ const strength=seq.tier==='ultimate'?12:seq.tier==='active'?5:plan.events.some(e=>e.critical)?3:0;
  return {seq,at,camera:sampleKeys(seq.camera,at),timeScale:sampleKeys(seq.time,at).value,dim:sampleKeys(seq.dim,at).value,
   post:sampleKeys(seq.postfx,at),plate:!!seq.plate&&at>=seq.plate.start&&at<seq.plate.end,
   cutin:!!seq.cutin&&at>=seq.cutin.start&&at<seq.cutin.end,
-  shake:impact?12*(1-since/300)*(reduced?.5:1):0,flash:!reduced&&since>=0&&since<1000/30?.35:0};
+  shake:impact?strength*(1-since/300)*(reduced?.5:1):0,flash:seq.tier==='ultimate'&&!reduced&&since>=0&&since<1000/30?.35:0};
 }
 
 /** Analytic integral keeps world slow-motion stable during arbitrary seeking. */

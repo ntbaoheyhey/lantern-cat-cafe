@@ -23,7 +23,13 @@ function motif(frame:number,p:number){
  const motif=plate.signature.motif,[bright,color]=plate.signature.element.palette;
  const build=smooth((frame-8)/28),burst=smooth((frame-43)/10),cx=850,cy=375;
  c.save();c.strokeStyle=bright;c.fillStyle=color;c.lineWidth=5;c.shadowColor=color;c.shadowBlur=18;c.globalAlpha=build;
- if(motif==='shield-dome'||motif==='shield-bash'){
+ if(motif==='shield-bash'){
+  c.save();c.translate(cx-200*(1-build)+burst*90,cy);c.rotate(-.12);c.fillStyle=color+'dd';c.lineWidth=12;
+  c.beginPath();c.roundRect(-145,-210,290,400,32);c.fill();c.stroke();c.lineWidth=5;c.strokeRect(-110,-165,220,310);
+  for(let j=0;j<5;j++){c.beginPath();c.moveTo(-80,-110+j*48);c.lineTo(80,-110+j*48);c.stroke();}
+  c.fillStyle=bright;star(0,65,46,5);c.restore();
+  for(let j=0;j<11;j++){const y=80+j*55;c.strokeStyle=j%2?bright:color;c.lineWidth=6+j%3*4;c.beginPath();c.moveTo(430-burst*130,y);c.lineTo(650-build*80,y);c.stroke();}
+ }else if(motif==='shield-dome'){
   const r=170+burst*80;c.lineWidth=7;ellipse(cx,cy,r,r*1.08);c.lineWidth=2;ellipse(cx,cy,r+22,r*1.08+24);ellipse(cx,cy+150,r*1.2,38);
   c.fillStyle=color+'36';c.beginPath();c.arc(cx,cy,r,0,Math.PI*2);c.fill();
   for(let j=0;j<12;j++){const a=j*Math.PI/6+frame*.008,x=cx+Math.cos(a)*(r+25),y=cy+Math.sin(a)*(r+25);c.fillStyle=bright;star(x,y,9,4);}

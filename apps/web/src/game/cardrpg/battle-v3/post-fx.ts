@@ -43,7 +43,7 @@ export class BattlePostFx {
   this.aberration.offset.setScalar(high&&!reduced?(state?.post.aberration??0):0);
   this.vignette.darkness=state?.post.vignette??.2;
   this.shock.amplitude=reduced?.0125:.025;
-  if(state&&plan&&elapsed>=state.seq.impact&&this.impactPlan!==plan){if(impact)this.shock.position.copy(impact);this.shock.explode();this.impactPlan=plan;}
+  if(state&&plan&&state.seq.tier==='ultimate'&&elapsed>=state.seq.impact&&this.impactPlan!==plan){if(impact)this.shock.position.copy(impact);this.shock.explode();this.impactPlan=plan;}
   const owner=plan?(plan.presentationId??plan.skillId).replace(/^enemy:/,'').replace(/-[1-4]$/,''):'';
   const signature=SIGNATURES.get(owner);this.lut.blendMode.opacity.value=signature&&state?.seq.tier==='ultimate'?1:0;
   if(signature)this.lut.lut=this.grade(signature);

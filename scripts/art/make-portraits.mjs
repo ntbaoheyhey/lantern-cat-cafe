@@ -2,10 +2,10 @@ import sharp from 'sharp';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 const root=resolve(import.meta.dirname,'../..');
-const ids=['mochi','soot','clover','panko','mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold'];
-const palette=['#bd9859','#725a9d','#689970','#a08867','#c77757','#719578','#ad8951','#796b96','#b26f51','#b67a8f','#6f8eae','#b2a054'];
+const ids=['mochi','soot','clover','panko','mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold','yarn-giant'];
+const palette=['#bd9859','#725a9d','#689970','#a08867','#c77757','#719578','#ad8951','#796b96','#b26f51','#b67a8f','#6f8eae','#b2a054','#97496e'];
 // Eyes measured in the 640px runtime capture. Crop puts that line at 40%.
-const eyes={mochi:[328,305,232],soot:[334,299,216],clover:[322,292,176],panko:[329,309,216],mallow:[322,294,184],sorrel:[330,299,191],biscuit:[329,310,202],inkcap:[326,315,198],cinnamon:[330,311,192],brioche:[330,307,208],velvet:[318,294,192],marigold:[325,304,204]};
+const eyes={mochi:[328,305,232],soot:[334,299,216],clover:[322,292,176],panko:[329,309,216],mallow:[322,294,184],sorrel:[330,299,191],biscuit:[329,310,202],inkcap:[326,315,198],cinnamon:[330,311,192],brioche:[330,307,208],velvet:[318,294,192],marigold:[325,304,204],'yarn-giant':[273,312,210]};
 const tiles=[];
 for(const [i,id] of ids.entries()){
  const dir=resolve(root,'art/units',id),file=resolve(dir,'portrait.json');
@@ -22,5 +22,5 @@ for(const [i,id] of ids.entries()){
  await sharp(svg).composite([{input:bust}]).webp({quality:92}).toFile(path);
  tiles.push({input:await sharp(path).resize(192,192).toBuffer(),left:(i%6)*192,top:Math.floor(i/6)*192});
 }
-await sharp({create:{width:1152,height:384,channels:3,background:'#1e1826'}}).composite(tiles).png().toFile(resolve(root,'reports/v3-battle/A2/portraits.png'));
-console.log('PASS 12 portraits, 256px masters, crop metadata saved');
+await sharp({create:{width:1152,height:576,channels:3,background:'#1e1826'}}).composite(tiles).png().toFile(resolve(root,'reports/v3-battle/A2/portraits.png'));
+console.log('PASS 13 portraits, 256px masters, crop metadata saved');
