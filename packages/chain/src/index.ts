@@ -3,7 +3,7 @@ import anvil from '../deployments/31337.json';
 
 import { ANVIL_CHAIN_ID, FUJI_CHAIN_ID } from './constants';
 
-export { relicMarketAbi, relicNftAbi } from './abi';
+export { relicMarketAbi, relicNftAbi, yarnTokenAbi, relicMarketV2Abi, seasonRewardsAbi } from './abi';
 export * from './constants';
 
 export type Address = `0x${string}`;
