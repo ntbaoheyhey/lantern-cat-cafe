@@ -1,19 +1,19 @@
 # C2 final publication
-NOW: Final 600-account reports validated; ready to synchronize source.
-BRANCH: codex/cardrpg-integrate-2026-11-12.
-NEXT 1: Push final reports; copy C2 reports/chart to source, preserving history.
-NEXT 2: Merge source report commit back; update draft PR #440/#442 bodies.
-NEXT 3: Read final remote statuses; verify clean heads; deliver Vietnamese result.
-RUNNING: None; monthly cohort and finalizer completed successfully.
-ECONOMY: 600 accounts × 30 days / 28 dates; Epic day 1 / Legendary day 11.
-SUPPLY: 69 rows; eligible Rare/Epic/Legendary 0 / 14.519866667 / 0.659808333 weekly.
-ITEM: Original −13 pp screen sample retained; independent −7 pp; 49 panel + 10k follow-up.
+NOW: Final source reports merged; local B4/B4b/V3/B5/B6/V4 work complete.
+BRANCH: codex/cardrpg-integrate-2026-11-12; draft PR #442.
+NEXT 1: Push this merge; update existing draft PR #440/#442 descriptions.
+NEXT 2: Record hosted checks on published heads; verify clean remote refs.
+NEXT 3: Deliver Vietnamese result; future READY syncs remain dated work.
+RUNNING: None; all fixed cohorts complete and raw evidence preserved.
+LAST GOOD COMMIT: efe80df3f integration; e90a78ea6 source.
+B4: Real loss 13.352 min; boss 71.79/90.62 s; UI/model targets pass.
+B4b: 600 × 30 days / 28 dates; Epic day 1 / Legendary day 11; 12 ratios pass.
+ITEM: Original −13 pp screen sample retained; independent −7 pp; finite scope explicit.
+VFX: 86 accepted keys/layers/timelines/clips; 5,783,929 runtime bytes.
 VERIFY: 4,517 package + 64 Node + 118 Forge; 435 E2E + 2 Anvil; TS/lint/build pass.
-SOURCE: ad01f8185; all 11 C2 code paths match; only CHAIN initializer differs.
-LAST GOOD COMMIT: 344ebe45e integration; ad01f8185 source (pre-publication).
-VISUAL: Rarity chart and final demo reviewed; 86 VFX accepted and preserved.
-DATA: /Users/bao/Documents/Codex/2026-11-12/x/work/c2; no raw-data reruns needed.
-CHAIN: READY 394cf606 integrated; requests unchanged; final supply in own OUTBOX.
+SOURCE: All 11 C2 code paths match; runtime difference is CHAIN initializer only.
+SUPPLY: 69 rows; eligible Rare/Epic/Legendary 0 / 14.519866667 / 0.659808333 weekly.
+CHAIN: READY 394cf606 integrated; ordinary campaign authority zero.
 OPEN: Trusted campaign authority; CHAIN economics; hosted limits; designer Spine.
 USER: No tuning/return/compaction caps; headless; no agents/main merge/deploy/secrets.
 STOP absent; freeze 19 Nov 12 UTC; future syncs 15/17 Nov 12 UTC.
