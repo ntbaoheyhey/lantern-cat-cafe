@@ -30,7 +30,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | enemy:sock-skipper | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-sock-skipper-after.mp4 |
 | enemy:spool-ram:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-spool-ram-basic-after.mp4 |
 | enemy:spool-ram | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-spool-ram-after.mp4 |
-| enemy:needle-moth:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-needle-moth-basic-after.mp4 |
+| enemy:needle-moth:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-needle-moth-basic-after.mp4 |
 | enemy:needle-moth | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-needle-moth-after.mp4 |
 | enemy:teacup-healer:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-teacup-healer-basic-after.mp4 |
 | enemy:teacup-healer | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-teacup-healer-after.mp4 |
