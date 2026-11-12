@@ -20,3 +20,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | panko-1 | 8 / 8 / 9 / 8 | Golden pan rim has a clear leading edge and resolves into a short floor-level tail. | 120.00 |
 | panko-2 | 8 / 8 / 9 / 8 | Bread cushion silhouettes remain distinct at both front slots and clear after shield numbers. | 120.09 |
 | panko-3 | 8 / 8 / 9 / 8 | Paired crust arcs frame all four recipients; faces and shield numbers remain readable. | 120.00 |
+| panko-4 | 8 / 8 / 9 / 8 | Oven-door arch reads on Panko with a clear two-word cut-in and synchronized shield number. | 120.00 |
