@@ -10,9 +10,11 @@ import { pathToFileURL } from 'node:url';
 import { loadRuntime, root, freshAccount, fraction, decisionDelay } from './runtime.mjs';
 import { chooseAction, executeModelAction, remember } from './policy.mjs';
 import { createEconomyLedger } from './economy-ledger.mjs';
+import { calendarPlan, accountCalendar } from './calendar.mjs';
 const arg = (key, fallback) => process.argv.find(a => a.startsWith(`--${key}=`))?.slice(key.length + 3) ?? fallback;
 const out = resolve(arg('out', resolve(root, 'work/cardrpg-c2/loot')));
 const days = Number(arg('days', '30')), count = Number(arg('count', '200')), first = Number(arg('first-seed', '90001'));
+const calendar = calendarPlan(arg('start-date', '2026-11-12'), Number(arg('calendar-span', '1')), first);
 const profiles = [{ id: 'casual', minutes: 30, upgrades: 1 }, { id: 'regular', minutes: 60, upgrades: 2 }, { id: 'heavy', minutes: 180, upgrades: 3 }].filter(p => !arg('profile') || p.id === arg('profile'));
 const resume = process.argv.includes('--resume');
 if (!profiles.length || ![days, count, first].every(n => Number.isSafeInteger(n) && n > 0)) throw Error('Invalid simulation parameters');
@@ -27,12 +29,12 @@ const { R, DepthModel } = isMainThread && !resume ? await loadRuntime(resolve(ou
 const source = !isMainThread ? null : { head: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
  runtimeSha256: createHash('sha256').update(await readFile(resolve(out, 'runtime/runtime.mjs'))).digest('hex'),
  driverSha256: createHash('sha256').update(await readFile(new URL(import.meta.url))).digest('hex'), date: new Date().toISOString(),
- calendar: { firstDay: '2026-11-12', dailyRouteSeeds: 'shared across accounts by calendar date', independentDailySamples: false } };
+ calendar, cohort: { firstSeed: first, count, days } };
 const DAY = 86400000, frame = 1000 / 60;
-const epoch = Date.UTC(2026, 10, 12);
 const rank = { common: 0, rare: 1, epic: 2, legendary: 3 };
 
 function project(seed, profile) {
+ const start = accountCalendar(calendar, seed), epoch = start.epoch;
  const m = new DepthModel(true, true, true, true, true); m.state = freshAccount(R, seed, epoch);
  const ledger = createEconomyLedger(m.state, R.GEAR_BY_ID), memory = {}, economy = { homes: {}, attempted: {}, seenGear: '', failedRoutes: 0 };
  const view = { eventsOpen: false, tipsOpen: false, eventTab: 'login', revealDone: false };
@@ -197,7 +199,7 @@ function project(seed, profile) {
    power: R.teamPowerV4(m.state), cleared: [...m.state.cleared], towerBest: m.state.towerBest,
    firstEpicDay: ledger.report.firstEpicDay, firstLegendaryDay: ledger.report.firstLegendaryDay });
  }
- return { seed, profile, days, combat, ...ledger.finish(m.state) };
+ return { seed, profile, days, calendar: start, combat, ...ledger.finish(m.state) };
 }
 
 // Local CPU workers run frozen rule code only; no agent/model delegation.
@@ -216,7 +218,7 @@ if (!isMainThread) {
   if (await access(file).then(() => true, () => false)) {
    if(!resume)throw Error('Preserve earlier projection: ' + file);
    const saved=JSON.parse(await readFile(file));
-   if(saved.seed!==job.seed||saved.days!==days||saved.daily.length!==days||JSON.stringify(saved.profile)!==JSON.stringify(job.profile))throw Error('Mismatched saved account: '+file);
+   if(saved.seed!==job.seed||saved.days!==days||saved.daily.length!==days||JSON.stringify(saved.profile)!==JSON.stringify(job.profile)||JSON.stringify(saved.calendar)!==JSON.stringify(accountCalendar(calendar,job.seed)))throw Error('Mismatched saved account/calendar: '+file);
    // Verify deterministic policy equivalence before retaining an old cohort.
    // This also catches changes to imported policy/ledger utilities between runs.
    if(!verifiedProfiles.has(job.profile.id)){
