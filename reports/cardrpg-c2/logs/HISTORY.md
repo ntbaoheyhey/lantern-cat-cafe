@@ -251,3 +251,4 @@ OPEN: Combat/item gaps; calendar correlation; trusted campaign authority; Spine 
 LIMITS: Service quotas external; STOP-C2 and code freeze19Nov12UTC retained.
 USER: Work continuously, headless, no agents/main merges/public deploy/secrets.
 DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
+2026-11-12T14:29:10.634489+00:00 Supply-report correction: weekly-supply correlation text was fixed to12Nov despite new28-date metadata. Derive the date/span from frozen source metadata;3/3 targeted tests pass, including shared-date and28-date cases. No runtime,policy or active cohort change.

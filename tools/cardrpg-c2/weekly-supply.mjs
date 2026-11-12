@@ -7,6 +7,7 @@ import { root, require } from './runtime.mjs';
 
 export function weeklySupply(summary, tradeRules, mix = { casual: .75, regular: .2, heavy: .05 }) {
  const profiles = Object.keys(mix);
+ const calendar = summary.source?.calendar ?? { firstDay: '2026-11-12', startSpanDays: 1 };
  if (profiles.some(id => !summary.profiles[id] || !Number.isFinite(mix[id]) || mix[id] < 0)
   || Math.abs(Object.values(mix).reduce((n, x) => n + x, 0) - 1) > 1e-9) throw Error('Invalid active-account mix');
  const rules = new Map(tradeRules.map(r => [r.id, r]));
@@ -27,7 +28,9 @@ export function weeklySupply(summary, tradeRules, mix = { casual: .75, regular: 
   legendaryPerActiveWeek: total(r => r.rarity === 'legendary'), items,
   specialOneTimeRewards: { 'star-thread': { maximumPerAccount: 1, recurringPerWeek: 0, authority: 'CHAIN judge fixture; excluded from ordinary campaign model' } },
   authority: 'Eligible template creation only. Ordinary campaign issuance stays zero until trusted earning, inventory and consumed/sealed receipts are integrated.',
-  correlation: 'Daily routes use a shared calendar seed. These account-seed cohorts are conditional on the same 2026-11-12 start date, not independent daily loot rolls; calendar variation and between-date uncertainty are not measured.',
+  correlation: calendar.startSpanDays === 1
+   ? `Daily routes use a shared calendar seed. These account-seed cohorts are conditional on the same ${calendar.firstDay} start date, not independent daily loot rolls; calendar variation and between-date uncertainty are not measured.`
+   : `Accounts cycle through ${calendar.startSpanDays} consecutive start dates from ${calendar.firstDay}, matched across player profiles. Daily-route seeds remain shared by calendar date; account count is not independent date count. Variation is measured across this declared start-date window only.`,
   feeModel: 'Rare material, Epic and Legendary are distinct rates. Do not price Legendary seals as Epic seals.' };
 }
 
