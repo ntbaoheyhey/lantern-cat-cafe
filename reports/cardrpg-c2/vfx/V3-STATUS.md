@@ -78,7 +78,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | marigold-2 | animated | pending | pending |
 | marigold-3 | animated | pending | pending |
 | marigold-4 | animated | pending | pending |
-| mallow-passive | pending | pending | pending |
+| mallow-passive | animated | pending | pending |
 | sorrel-passive | pending | pending | pending |
 | biscuit-passive | pending | pending | pending |
 | inkcap-passive | pending | pending | pending |
