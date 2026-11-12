@@ -1,3 +1,4 @@
+import {Coach} from '../shell/Coach';
 import {chainFlags} from '../chain/flags';
 const ChainRoom=lazy(()=>import('../chain/ChainRoom').then(m=>({default:m.ChainRoom})));
 import {gameplayA6} from '../gate';
@@ -48,7 +49,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
   const a6 = gameplayA6();
   const uiV3 = uiV3Enabled() || a6;
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6, a6));
+  const [m] = useState(() => (()=>{const model=new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6, a6);model.state.economyV3=chainFlags().economyV3;return model;})());
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -92,7 +93,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} a6={activeGameplayA6(m.state)} />}{m.screen === 'relics' && (chainFlags().chainLoop ? <ChainRoom/> : <Relics m={m} />)}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
   if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-a6={a6} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>
     <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}><ShellV3 m={m}>{pageView}</ShellV3></Suspense>
-    <DiscoveryCelebrationV4 m={m}/>
+    <Coach m={m}/><DiscoveryCelebrationV4 m={m}/>
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={a6?<OpeningA6 message="Preparing the battle…"/>:<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
     {m.showBattle && <Suspense fallback={null}><BattleHudV3 m={m}/></Suspense>}
   </div></CompanionPreviewProvider>;

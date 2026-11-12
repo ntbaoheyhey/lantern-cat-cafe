@@ -4,7 +4,7 @@
 - [x] B2 done — Vietnamese fonts and typography tokens
 - [ ] B3 partial — Original icons and rarity tiles
 - [ ] B4 partial — Landing, sign-in and café hub
-- [ ] B5 todo — Guided battle and first-visit tutorials
+- [x] B5 done — Guided battle and first-visit tutorials
 - [ ] B6 todo — Economy v3 and chain proofs
 - [ ] B7 todo — Sync, reports and Vietnamese deployment guide
 
@@ -21,3 +21,6 @@ G1: shots/b3-icon-sheet.png, original 16 painted item icons at 24/48/96 on light
 
 ## B4 — implemented; icon/polish revisit pending, score 7/10
 G1: 18 desktop screenshots at 1280x720 / 1440x900, shots/b4-*.png. New landing, seven-button dock, dark panels, self-hosted fonts; inherited glyphs and two legacy panel contrasts remain for B3 revisit. G2: tests/b4-anvil.json real guest and injected wallet SIWE on Anvil 8546, plus mock guest screenshot flow and 18 focused tests (one assertion-library repair, then pass). G3: verified supply read or explicit Offline; no save-based chain counts. G4: typecheck and typography lint pass. Muted ten-second gameplay trailer recorded locally. New economy/season pages read published v3 policy; backend feature actions are B6.
+
+## B5 — done, score 8/10
+G1: tests/b5-flow.json walks a new guest through the practice battle, all 26 steps and 14 guide pages; zero browser errors. G2: roles, rows, turn order, enemy intent/targeting, rage, statuses, supplies, speed/auto, equipment/sets, enhancement/Blessing, fusion, rates/pity/featured, seasons/edition, Spool/Deed/sealing/market all covered in lessons.ts and FieldGuide. G3: four focused tests enforce 12-word instructions, skip/replay and pause restoration. Workspace typecheck passes. Evidence: shots/b5-battle-coach.png and b5-guide.png. Coaching describes the actual auto-plan battle controls; Session A owns any future manual ultimate control.
