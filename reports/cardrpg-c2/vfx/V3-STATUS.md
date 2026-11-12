@@ -83,7 +83,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | biscuit-passive | animated | pending | pending |
 | inkcap-passive | animated | pending | pending |
 | cinnamon-passive | animated | pending | pending |
-| brioche-passive | pending | pending | pending |
+| brioche-passive | animated | pending | pending |
 | velvet-passive | pending | pending | pending |
 | marigold-passive | pending | pending | pending |
 | enemy:pollen-scout:basic | pending | pending | pending |
