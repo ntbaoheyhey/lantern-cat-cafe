@@ -44,4 +44,13 @@ Evidence: session9 `work/c2/b4b-link-balance.json`, `b4b-link-parity.json` and f
 
 ## B4b affix/Riposte candidate remeasurement
 
-Frozen runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; same B4pass3 enemy tables. All500 model seeds80001–80500 completed1800seconds. First-loss median707.407s (11.790m),12.593s earlier than target;0 seeds below8min. Boss median74.78s/p9094.90s; normal-win HP mean78.14%/median89.51%. Boss timing and mean HP pass; median HP remains9.51pp above ceiling. No further enemy tuning. The five real UI runs remain in progress; model results do not substitute for those runs.
+Frozen runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; same B4pass3 enemy tables. Both cohorts completed with zero browser errors.
+
+| Cohort | First-loss median | Earliest loss | Seeds below8m | Boss median/p90 | Normal-win HP mean/median |
+|---|---|---|---|---|---|
+| real (5 seeds) | 12.373m | 9.489m | 0 | 71.86/94.05s | 77.92/90.28% |
+| sim (500 seeds) | 11.790m | 9.056m | 0 | 74.78/94.90s | 78.14/89.51% |
+
+Exact parity for133 common encounters and1365 decisions; currency/XP errors0; per-seed median playback error0.75–0.92%. Boss timing, mean normal HP and no loss before8min meet targets. UI first-loss median12.373m passes; model first loss is12.593s early. Normal-win HP medians remain10.28pp/UI and9.51pp/model above the80% ceiling. No additional enemy tuning.
+
+Evidence: session9 `work/c2/b4b-affix-balance.json`, `b4b-affix-parity.json` and the frozen real/sim directories.
