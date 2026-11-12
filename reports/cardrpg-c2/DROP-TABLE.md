@@ -134,3 +134,17 @@ Frozen runtime 4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
 | mossbrew-weapon-rare | soot / fourth L6 C3 6-0 | 13pp |
 | mossbrew-weapon-epic | soot / fourth L6 C3 6-0 | 13pp |
 | crumbweave-weapon-legendary | soot / fourth L6 C3 6-0 | 13pp |
+
+
+## Candidate full-catalog follow-up — independent holdout
+
+All four failures from the completed candidate catalog screen were measured on exactly1,000 independent paired seeds100001–101000 using the same frozen runtime. No early stopping or table changes. All four follow-up point estimates meet12pp; the original100-seed screen retains four13pp misses and is not relabeled as a pass.
+
+| Item | Screen impact | Holdout impact | Paired95% interval |
+|---|---|---|---|
+| mossbrew-weapon-common | 13pp | 4.7pp | [2.598994221502168, 6.8010057784978315]pp |
+| mossbrew-weapon-rare | 13pp | 4.8pp | [2.6907284284467865, 6.909271571553213]pp |
+| mossbrew-weapon-epic | 13pp | 4.6pp | [2.507311038139903, 6.692688961860097]pp |
+| crumbweave-weapon-legendary | 13pp | 11pp | [7.988122544689808, 14.011877455310193]pp |
+
+All cells use Soot/fourth equipment slot/level6/chapter3/node6-0. These sample estimates and approximate intervals do not establish a universal item-effect bound. Earlier screens and the27-cell holdout remain separate. Raw evidence: session9 work/c2/item-affix-catalog-holdout.json.

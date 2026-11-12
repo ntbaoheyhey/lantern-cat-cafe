@@ -1,18 +1,20 @@
 # C2 handoff
-NOW: V3 inkcap-passive exported; capture/review next.
+NOW: B4b independent follow-up/word budgets complete; V3 at biscuit-passive review.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
-LAST GOOD COMMIT: eab180661; candidate units/E2E pass.
-NEXT 1: Complete catalog4misses/6144; run predeclared4x1000 holdout100001–101000; finish600-account economy.
-NEXT 2: Candidate full units4453pass/E2E435pass; record word-budget results next.
-NEXT 3: Capture/review inkcap-passive, then continue first nonaccepted V3 skill.
-RUNNING: month40386; holdout/word-budget launch after this checkpoint. All browsers headless.
-B4: all three passes consumed; enemy tables unchanged. Timing/HP misses disclosed in BALANCE.md.
-B4b: prior full128template screen12misses; independent12x1000 holdout5misses; frozen ablation reproduces all pairs.
-CANDIDATE: affixScale0.5→0.25; equipment BellsteelRiposte only on first Defend; main0.8%/2%, nativePanko/legacy unchanged.
-V3:86IDs;76accepted;78exported=5,228,882bytes. Review server on5973; restart after new exports.
+LAST GOOD COMMIT: 1e6ff710c; candidate units/E2E/word budgets pass.
+NEXT 1: Finish frozen600-account economy; publish weekly supply per item to OUTBOX.
+NEXT 2: Capture/review biscuit-passive and inkcap-passive, then paint cinnamon-passive.
+NEXT 3: Finish remaining V3; integrate CHAIN READY and write B6/V4 reports.
+RUNNING: monthly simulation PID40386; outputs in work/c2/loot-affix; review server5973.
+B4: all three passes consumed; enemy tables unchanged; timing/HP misses disclosed.
+B4b: full128-template/6144-cell screen4misses(max13pp); preserve original results.
+HOLDOUT: all4 failures x1000 seeds100001–101000 complete;4.6–11pp,0point-estimate misses.
+UNION HOLDOUT: prior27cells x1000 complete,max9.3pp; all source cohorts preserved.
+CANDIDATE: affixScale0.25; gear BellsteelRiposte first Defend; main0.8%/2%; native/legacy preserved.
+V3:86IDs;76accepted;78exported=5,228,882bytes; first nonaccepted biscuit-passive.
 ART: /Users/bao/art/vfx-2026-11-12; sources outside git; exact prompts in vfx/ASSET-LOG.md.
 LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
-OPEN PROBLEMS: B4 target misses; candidate fullcatalog/economy;15VFX; integration and reports.
-CHECKS: candidate units4453pass,11inherited skips/2expected failures; E2E435/435pass,0skip/flaky.
-USER: Browser checks headless only; do not open visible Chrome windows.
-STOP-C2 absent; check before every heavy step. Reports18Nov18UTC; freeze19Nov12UTC; CHAINsync15Nov12UTC/17Nov12UTC.
+OPEN PROBLEMS: B4 target misses; final economy;10VFX; integration and reports.
+CHECKS: units4453pass,11inherited skips/2expected failures; E2E435/435pass,0skip/flaky; word33/33,max24.
+USER: Browser checks headless only; never open visible Chrome windows.
+STOP-C2 absent at checkpoint. Check before heavy work; freeze19Nov12UTC; sync15/17Nov12UTC.
