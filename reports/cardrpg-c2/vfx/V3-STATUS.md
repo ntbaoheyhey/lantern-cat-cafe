@@ -1,0 +1,92 @@
+# V3 resumable status
+
+State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means rendered review completed; inherited clips without recorded review remain in-game. Pilot approval is recorded in INBOX. Large sources stay outside git.
+
+| Skill ID | State | Self-score | Clip path |
+|---|---|---|---|
+| mochi-1 | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/mochi-1-after.mp4 |
+| mochi-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-2-after.mp4 |
+| mochi-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-3-after.mp4 |
+| mochi-4 | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/mochi-4-after.mp4 |
+| mochi-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-passive-after.mp4 |
+| soot-1 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-1-after.mp4 |
+| soot-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-2-after.mp4 |
+| soot-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-3-after.mp4 |
+| soot-4 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-4-after.mp4 |
+| soot-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/soot-passive-after.mp4 |
+| clover-1 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-1-after.mp4 |
+| clover-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-2-after.mp4 |
+| clover-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-3-after.mp4 |
+| clover-4 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-4-after.mp4 |
+| clover-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/clover-passive-after.mp4 |
+| panko-1 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/panko-1-after.mp4 |
+| panko-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/panko-2-after.mp4 |
+| panko-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/panko-3-after.mp4 |
+| panko-4 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/panko-4-after.mp4 |
+| panko-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/panko-passive-after.mp4 |
+| enemy:button-guard:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-button-guard-basic-after.mp4 |
+| enemy:button-guard | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-button-guard-after.mp4 |
+| enemy:sock-skipper:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-sock-skipper-basic-after.mp4 |
+| enemy:sock-skipper | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-sock-skipper-after.mp4 |
+| enemy:spool-ram:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-spool-ram-basic-after.mp4 |
+| enemy:spool-ram | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-spool-ram-after.mp4 |
+| enemy:needle-moth:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-needle-moth-basic-after.mp4 |
+| enemy:needle-moth | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-needle-moth-after.mp4 |
+| enemy:teacup-healer:basic | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-teacup-healer-basic-after.mp4 |
+| enemy:teacup-healer | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/enemy-teacup-healer-after.mp4 |
+| enemy:kettle-knight:basic | painted | pending | pending |
+| enemy:kettle-knight | pending | pending | pending |
+| enemy:binding-thread:basic | pending | pending | pending |
+| enemy:binding-thread | pending | pending | pending |
+| enemy:practice-cushion:basic | pending | pending | pending |
+| enemy:practice-cushion | pending | pending | pending |
+| enemy:yarn-giant:basic | pending | pending | pending |
+| enemy:yarn-giant | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/enemy-yarn-giant-after.mp4 |
+| enemy:rain-spool:basic | pending | pending | pending |
+| enemy:rain-spool | pending | pending | pending |
+| enemy:pantry-crown:basic | pending | pending | pending |
+| enemy:pantry-crown | pending | pending | pending |
+| mallow-1 | pending | pending | pending |
+| mallow-2 | pending | pending | pending |
+| mallow-3 | pending | pending | pending |
+| mallow-4 | pending | pending | pending |
+| sorrel-1 | pending | pending | pending |
+| sorrel-2 | pending | pending | pending |
+| sorrel-3 | pending | pending | pending |
+| sorrel-4 | pending | pending | pending |
+| biscuit-1 | pending | pending | pending |
+| biscuit-2 | pending | pending | pending |
+| biscuit-3 | pending | pending | pending |
+| biscuit-4 | pending | pending | pending |
+| inkcap-1 | pending | pending | pending |
+| inkcap-2 | pending | pending | pending |
+| inkcap-3 | pending | pending | pending |
+| inkcap-4 | pending | pending | pending |
+| cinnamon-1 | pending | pending | pending |
+| cinnamon-2 | pending | pending | pending |
+| cinnamon-3 | pending | pending | pending |
+| cinnamon-4 | pending | pending | pending |
+| brioche-1 | pending | pending | pending |
+| brioche-2 | pending | pending | pending |
+| brioche-3 | pending | pending | pending |
+| brioche-4 | pending | pending | pending |
+| velvet-1 | pending | pending | pending |
+| velvet-2 | pending | pending | pending |
+| velvet-3 | pending | pending | pending |
+| velvet-4 | pending | pending | pending |
+| marigold-1 | pending | pending | pending |
+| marigold-2 | pending | pending | pending |
+| marigold-3 | pending | pending | pending |
+| marigold-4 | pending | pending | pending |
+| mallow-passive | pending | pending | pending |
+| sorrel-passive | pending | pending | pending |
+| biscuit-passive | pending | pending | pending |
+| inkcap-passive | pending | pending | pending |
+| cinnamon-passive | pending | pending | pending |
+| brioche-passive | pending | pending | pending |
+| velvet-passive | pending | pending | pending |
+| marigold-passive | pending | pending | pending |
+| enemy:pollen-scout:basic | pending | pending | pending |
+| enemy:crumb-sentinel:basic | pending | pending | pending |
+| enemy:pollen-scout | pending | pending | pending |
+| enemy:crumb-sentinel | pending | pending | pending |

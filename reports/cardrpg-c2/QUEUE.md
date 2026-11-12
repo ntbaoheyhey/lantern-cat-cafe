@@ -6,7 +6,7 @@
 - [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
 - [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
 - [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
-- [ ] B4 — up to three config tuning passes; bot and 500-seed targets.
+- [x] B4 — three config passes measured; retain pass3; timing/HP misses disclosed in BALANCE.md; tuning closed.
 - [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
 - [ ] V3 — all skills; authorized: all three pilots approved by user 12 Nov.
 - [ ] B5 — merge READY CHAIN into integration branch; complete integration checks/demo.
