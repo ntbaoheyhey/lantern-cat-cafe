@@ -75,7 +75,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | velvet-3 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/velvet-3-after.mp4 |
 | velvet-4 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/velvet-4-after.mp4 |
 | marigold-1 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/marigold-1-after.mp4 |
-| marigold-2 | pending | pending | pending |
+| marigold-2 | animated | pending | pending |
 | marigold-3 | pending | pending | pending |
 | marigold-4 | pending | pending | pending |
 | mallow-passive | pending | pending | pending |
