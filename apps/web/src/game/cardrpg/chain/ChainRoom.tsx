@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { formatEther, parseEther, type Address, type Hash, type Hex } from 'viem';
 import { useWalletClient } from 'wagmi';
 import { relicMarketAbi, relicNftAbi, relicMarketV2Abi, yarnTokenAbi, seasonRewardsAbi } from '@taskbar-hero/chain';
-import { CHAIN_ITEM_IDS, TRADE_BY_TOKEN, TRADE_BY_ID, sealedEquipment, sealCost } from '@taskbar-hero/game-rules/cardrpg';
+import { CHAIN_ITEM_IDS, TRADE_BY_TOKEN, TRADE_BY_ID, sealedDepthEquipment, sealCost } from '@taskbar-hero/game-rules/cardrpg';
 import { useSession } from '../../../wallet/WalletProvider';
 import { chainPost } from './api';
 import { chainFlags } from './flags';
@@ -134,7 +134,7 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const sealable=inventory.filter(i=>TRADE_BY_ID[i.item_id]?.tradable);
   const tabs:Tab[]=['Judge','Market','Bag',...(flags.itemTrading&&yarnOn?['Seal' as const]:[]),'History'];
   const pages=(length:number,label:string)=><div className="chain-pagination"><button aria-label={`Previous ${label}`} disabled={page===0} onClick={()=>setPage(p=>p-1)}>←</button><button aria-label={`Next ${label}`} disabled={(page+1)*2>=length} onClick={()=>setPage(p=>p+1)}>→</button></div>;
-  const stats=(id:bigint)=>{const item=sealedEquipment(Number(id));return item?<small title={item.description}>{item.main.stat} +{item.main.value}</small>:null;};
+  const stats=(id:bigint)=>{const item=sealedDepthEquipment(Number(id));return item?<small title="Template main stat scales with companion level. Unenhanced; minimum affix rolls. Chain ownership currently has no combat effect.">{item.main} ×{item.rarity==='legendary'?1.75:1.5}</small>:null;};
   return <section className="chain-room" aria-label="Fuji game">
     <header><h2>◈ Fuji</h2><small>{TESTNET_NOTICE}</small>{yarnOn&&<output data-testid="yarn-balance">🧶 {formatEther(yarn)}</output>}{onClose&&<button aria-label="Close market" onClick={onClose}>×</button>}</header>
     <nav aria-label="Chain screens">{tabs.map(t=><button key={t} aria-pressed={tab===t} onClick={()=>{setTab(t);if(t==='History'&&runtime)void run(historyPage);if(t==='Seal')void run(loadInventory);}}>{t}</button>)}</nav>
