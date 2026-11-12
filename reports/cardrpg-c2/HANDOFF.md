@@ -1,5 +1,5 @@
 # C2 handoff
-NOW: V3 accepted enemy:teacup-healer:basic; B4b final cohorts still running.
+NOW: V3 accepted enemy:teacup-healer; B4b final cohorts still running.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT: afe7c2bf0 (B4 measured closure); B4b numerical acceptance still pending.
 NEXT 1: Complete frozen B4b cohorts and report exact target gaps/supply; all tests and workspace typecheck pass.
