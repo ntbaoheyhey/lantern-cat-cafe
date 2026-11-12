@@ -28,7 +28,7 @@ it('bounds the Rain Bell to one debuff stack per swap and preserves the legacy f
   const s=fresh();s.account.cards.forEach(c=>{c.level=6;c.stars=1;});
   const b=R.createBattle({seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2});
   const actor=b.actors.find(a=>a.id==='mochi')!,source=b.actors.find(a=>a.side==='enemy')!;
-  actor.setEffects=['unique:rainbell'];actor.statuses=[{id:'scald',stacks:3,remaining:3,source:source.id},{id:'scent',stacks:1,remaining:2,source:source.id}];
+  actor.setEffects=['unique:rainbell'];actor.statuses=[{id:'scald',stacks:3,remaining:3,source:source.id,appliedRound:b.round},{id:'scent',stacks:1,remaining:2,source:source.id,appliedRound:b.round}];
   b.queue=[actor.id];b.energy=10;actor.cooldowns={};
   const choice=R.legalChoices(b).find(c=>c.skillId==='mochi-3'&&c.targetId!==actor.id);
   expect(choice).toBeDefined();expect(R.act(b,choice!)).toBe(true);
