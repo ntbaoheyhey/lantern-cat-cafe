@@ -70,3 +70,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | velvet-1 | 8 / 8 / 9 / 8 | Long dusty-rose silk blade contrasts with the broad earlier motifs; the cream tip lands low on the boss and damage text remains above the motion. | 60.00 |
 | velvet-2 | 8 / 8 / 9 / 8 | Two rose flame droplets and their cream connecting arc read across all three enemies; staggered damage numbers stay separate and every tail clears before the next action. | 60.00 |
 | velvet-3 | 8 / 8 / 9 / 8 | Rose candle cup is distinct from the thin silk strike and twin flames; its opaque flame and cup remain readable below the boss face while the damage number stays clear. | 60.00 |
+| velvet-4 | 8 / 8 / 9 / 8 | Broad rose theatre curtain rolls below the boss face with a clear cream edge; the two-word Velvet curtain cut-in and impact damage number remain readable through the fade. | 60.00 |
