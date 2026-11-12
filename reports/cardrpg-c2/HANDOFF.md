@@ -1,11 +1,11 @@
 # C2 handoff
 NOW: V3 marigold-passive exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
-LAST GOOD COMMIT: d8bb209da; candidate units/E2E/word budgets pass.
+LAST GOOD COMMIT: 27aeee053; frozen economy runtime unchanged.
 NEXT 1: Finish frozen600-account economy; publish weekly supply per item to OUTBOX.
 NEXT 2: Capture/review biscuit-passive and inkcap-passive, then paint cinnamon-passive.
 NEXT 3: Capture/review marigold-passive, then continue first nonaccepted V3 skill.
-RUNNING: monthly PID40386; casual200/regular200/heavy6 completed; review server5973.
+RUNNING: monthly resuming8CPU; 424/600 preserved; launch/PID in session11 work/c2.
 B4: all three passes consumed; enemy tables unchanged; timing/HP misses disclosed.
 B4b: full128-template/6144-cell screen4misses(max13pp); preserve original results.
 HOLDOUT: all4 failures x1000 seeds100001–101000 complete;4.6–11pp,0point-estimate misses.
