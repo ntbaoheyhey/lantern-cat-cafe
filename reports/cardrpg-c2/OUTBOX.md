@@ -6,4 +6,4 @@ Contract: apps/web/src/game/cardrpg/stage/slots.json. Four party slots; normaliz
 
 PILOTS READY 07cfdb0e0
 
-Review: docs/vfx/index.html (self-contained); three pilots only. Full E2E 427/427; runtime 0.193 MB. Approval gate remains closed.
+Review: docs/vfx/index.html (self-contained); three pilots only. Full E2E 427/427; runtime 0.193 MB. All three pilots approved by the user on 12 Nov; V3 authorized.

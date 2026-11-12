@@ -6,7 +6,7 @@
   "scripts": {
     "demo": "node tools/gameplay-demo.mjs",
     "gen:deno": "node scripts/gen-deno-json.mjs",
-    "test": "node --test scripts/*.test.mjs && pnpm -r test",
+    "test": "node --test scripts/*.test.mjs tools/cardrpg-c2/*.test.mjs && pnpm -r test",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",

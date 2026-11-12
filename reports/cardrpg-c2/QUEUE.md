@@ -5,7 +5,7 @@
 - [x] V1 — style, painted layered source pipeline, runtime, preview.
 - [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
 - [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
-- [ ] B3 — five real 30-minute UI runs; reconcile sim within 15%.
+- [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
 - [ ] B4 — up to three config tuning passes; bot and 500-seed targets.
 - [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
 - [ ] V3 — all skills; authorized: all three pilots approved by user 12 Nov.
