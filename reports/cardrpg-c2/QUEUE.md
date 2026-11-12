@@ -9,5 +9,5 @@
 - [x] B4 — three config passes measured; retain pass3; timing/HP misses disclosed in BALANCE.md; tuning closed.
 - [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
 - [x] V3 — 86 accepted artworks/timelines: 78 rules-event effects and 8 passive-stat previews; 435/435 E2E; VFX-REPORT.md.
-- [ ] B5 — merge READY CHAIN into integration branch; complete integration checks/demo.
+- [ ] B5 — exact READY merged; full verification and visual/demo review complete (B5.md); draft PR next; future syncs 15/17 Nov remain.
 - [ ] B6 / V4 — final report and VFX report; inspect/repair scores below 8 once.
