@@ -1,0 +1,113 @@
+{
+  "integrity": "PASS",
+  "economicAcceptance": "NOT MET",
+  "standard": [
+    {
+      "mix": "casual-heavy",
+      "profile": "implemented-sinks",
+      "demand": 1,
+      "paidMarketShare": 1,
+      "emissionBurn": 2.3904237643939843,
+      "routineEmissionBurn": 2.136805905638842,
+      "farmerCasual": 0.1461341829085814,
+      "top1": 0.01397576375092236,
+      "botShare": 0,
+      "sealedStock": 22433,
+      "finalWeeklyCap": 2.0816861464420766,
+      "flowPass": false,
+      "farmingPass": true
+    },
+    {
+      "mix": "balanced",
+      "profile": "implemented-sinks",
+      "demand": 1,
+      "paidMarketShare": 1,
+      "emissionBurn": 2.5331777329440133,
+      "routineEmissionBurn": 2.2796331800951863,
+      "farmerCasual": 0.14918683848592923,
+      "top1": 0.01265794657049644,
+      "botShare": 0,
+      "sealedStock": 22624,
+      "finalWeeklyCap": 1.8764023602310411,
+      "flowPass": false,
+      "farmingPass": true
+    },
+    {
+      "mix": "farmer-heavy",
+      "profile": "implemented-sinks",
+      "demand": 1,
+      "paidMarketShare": 1,
+      "emissionBurn": 2.7796665322039,
+      "routineEmissionBurn": 2.5207775800310452,
+      "farmerCasual": 0.15028982195278742,
+      "top1": 0.011691058262683279,
+      "botShare": 0.21289675938529398,
+      "sealedStock": 22389,
+      "finalWeeklyCap": 1.9647016811339413,
+      "flowPass": false,
+      "farmingPass": true
+    }
+  ],
+  "stress": [
+    {
+      "mix": "low-demand",
+      "profile": "implemented-sinks",
+      "demand": 0.1,
+      "paidMarketShare": 1,
+      "emissionBurn": 19.233003721038312,
+      "routineEmissionBurn": 16.704302967485486,
+      "farmerCasual": 0.19154076744808846,
+      "top1": 0.012034065415676622,
+      "botShare": 0.21867852681491487,
+      "sealedStock": 2268,
+      "finalWeeklyCap": 0.18480112075596086,
+      "flowPass": false,
+      "farmingPass": true
+    },
+    {
+      "mix": "zero-demand",
+      "profile": "implemented-sinks",
+      "demand": 0,
+      "paidMarketShare": 1,
+      "emissionBurn": null,
+      "routineEmissionBurn": null,
+      "farmerCasual": 0.20006169097398838,
+      "top1": 0.012086583891880014,
+      "botShare": 0.2195637841995385,
+      "sealedStock": 0,
+      "finalWeeklyCap": 0,
+      "flowPass": false,
+      "farmingPass": true
+    },
+    {
+      "mix": "half-bots",
+      "profile": "implemented-sinks",
+      "demand": 1,
+      "paidMarketShare": 1,
+      "emissionBurn": 2.902985547798349,
+      "routineEmissionBurn": 2.6276142095487196,
+      "farmerCasual": 0.1520743533998658,
+      "top1": 0.011718093473654222,
+      "botShare": 0.5324234717175684,
+      "sealedStock": 21872,
+      "finalWeeklyCap": 1.5854113004877515,
+      "flowPass": false,
+      "farmingPass": true
+    },
+    {
+      "mix": "fee-bypass",
+      "profile": "implemented-sinks",
+      "demand": 1,
+      "paidMarketShare": 0.2,
+      "emissionBurn": 2.8562314127128916,
+      "routineEmissionBurn": 2.5870219731531026,
+      "farmerCasual": 0.15122778685935373,
+      "top1": 0.01170104844195367,
+      "botShare": 0.2130651549788481,
+      "sealedStock": 22384,
+      "finalWeeklyCap": 1.8923881990990001,
+      "flowPass": false,
+      "farmingPass": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Triển khai CHAIN — chỉ Fuji 43113, không có giá trị thật
 
-Codex chưa triển khai gì. Giữ nguyên RelicNFT `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D` và RelicMarket `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`. Không chạy script Deploy.s.sol cũ. Tất cả khóa chỉ được nạp từ môi trường/kho bí mật của bạn; không dán vào chat, INBOX hay Git.
+**Cập nhật12/11:** Bạn đã hoàn tất deploy hợp đồng, cấp quỹ, migration/function và smoke18 giao dịch. Không chạy lại bước2–5 hoặc smoke bằng hai ví đã dùng. Phần còn lại ở [FRONTEND-READINESS-VI](FRONTEND-READINESS-VI.md). Các bước dưới là tài liệu tham chiếu cho lần triển khai ban đầu. Codex không thực hiện public deploy. Giữ nguyên RelicNFT `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D` và RelicMarket `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`. Không chạy script Deploy.s.sol cũ. Tất cả khóa chỉ được nạp từ môi trường/kho bí mật của bạn; không dán vào chat, INBOX hay Git.
 
 1. Lấy nhánh đã kiểm thử, cài công cụ, chạy kiểm tra tại máy của bạn:
 

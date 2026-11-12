@@ -1,6 +1,9 @@
-# Trạng thái CHAIN
-Đã push mã đã kiểm thử: b67126945 — PR nháp441. Luồng khách → gas → boss → mint → mua/bán/hủy, niêm phong Star Thread, YARN và phí V2 chạy thật trên Anvil. Ba lượt mới đều đạt:24,4 /22,2 /24,9 giây cho toàn bộ giao dịch. 111 kiểm thử hợp đồng, toàn bộ unit/typecheck/lint/build đạt; coverage YARN/Season100%, V2 95,95%. Checkpoint này hoàn tất báo cáo và chứng cứ, không đổi mã triển khai.
+# Trạng thái CHAIN — 12/11/2026
 
-Tokenomics có22 nguồn, mô hình52 tuần và biểu đồ; đạt theo giả định, chưa có số nguồn cung tuần từ C2. Giao dịch trang bị chiến dịch thường và bộ phát thưởng định kỳ/điều chỉnh ngân sách tự động còn chưa hoàn tất. H4b/H5 đã quay lại hàng đợi một lần; H7 chưa đủ điều kiện.
+Cốt lõi blockchain đã chạy thật: 18 giao dịch Fuji thành công, ba hợp đồng khớp source. Không cần deploy lại hợp đồng. Đã sửa lỗi ký giao dịch trong smoke và History bỏ sót giao dịch vừa xác nhận. Bản source kiểm thử: `609871a0b`.
 
-Chưa deploy hay phát giao dịch bằng khóa thật. Bạn tự triển khai theo USER-DEPLOY-VI.md rồi chạy smoke Fuji công khai. GitHub CI bị chặn bởi hạn mức thanh toán; kiểm tra tại máy không có nghĩa CI xanh. Chi tiết và bằng chứng: CHAIN-REPORT.md, ACCEPTANCE.md, OUTBOX.md.
+Kiểm tra cuối đạt: 2.395 test web, 118 test hợp đồng, các bộ test còn lại, typecheck/lint/build và 3 lượt trình duyệt liên tiếp. Script tạo 3 món giá 1 YARN đã thử trên Anvil; chạy lại không tạo thêm hàng hay nhận lại thưởng tester.
+
+Demo công khai còn cần bạn: cập nhật frontend lên Vercel, chạy script tạo hàng bằng ví mua cũ và nạp thêm 2,5 AVAX test cho ví cấp gas. Số dư lúc kiểm tra là 1,10 AVAX, chỉ đủ khoảng 1 khách mới sau dự trữ và phí. Lệnh đã gom ở [FRONTEND-READINESS-VI.md](FRONTEND-READINESS-VI.md); không cần tạo ví hoặc gửi khóa vào chat.
+
+Kinh tế dài hạn chưa đạt: phát hành/đốt 2,39–2,78 lần, vượt mục tiêu 2. Tự giảm trần thưởng đã có trên chain; thưởng định kỳ chưa bật, còn thiếu nguồn dữ liệu gameplay có thẩm quyền và số liệu từ C2. Chưa thể gọi mô hình này là bền vững. GitHub Actions bị chặn bởi billing/spending; Vercel hiện báo hết lượt deploy, yêu cầu thử lại sau 24 giờ. Chờ quota mở lại trước khi chạy lệnh deploy.

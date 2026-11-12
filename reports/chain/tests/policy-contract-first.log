@@ -1,0 +1,43 @@
+Compiling 4 files with Solc 0.8.24
+Solc 0.8.24 finished in 1.09s
+Compiler run successful!
+
+Ran 13 tests for test/ChainV2.t.sol:ChainV2Test
+[PASS] testFuzz_claimCap(uint128) (runs: 256, μ: 211140, ~: 212522)
+[PASS] testFuzz_feeMathAndNoFloor(uint256,uint16) (runs: 256, μ: 16574, ~: 15874)
+[PASS] test_anyPriceFreeGiftCooldownAndPagination() (gas: 1434718)
+[PASS] test_claimBadSignaturesRecipientExpirySeasonAndRotation() (gas: 649927)
+[PASS] test_claimCapReplayAndMondayReset() (gas: 530154)
+[PASS] test_claimSeasonTransitionAndDomain() (gas: 436110)
+[PASS] test_genesisBurnAndSeal() (gas: 276298)
+[PASS] test_invalidInputsAndEscrowProtection() (gas: 11649)
+[PASS] test_nativePullRejectingRecipientAndNoYarnBurn() (gas: 967128)
+[PASS] test_permitReplayAndDomain() (gas: 191782)
+[PASS] test_receiverCannotReenterBuy() (gas: 1208007)
+[PASS] test_rewardConfigurationAndPoolFailureAreAtomic() (gas: 13039)
+[PASS] test_yarnFeeWithdrawalAndConservation() (gas: 964743)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 28.46ms (87.92ms CPU time)
+
+Ran 1 test for test/ChainV2.t.sol:ChainV2Invariant
+[PASS]
+ChainV2Invariant invariants:
+[PASS] invariant_marketLiabilitiesFullyFunded
+[PASS] invariant_routineBudgetNeverIncreases
+[PASS] invariant_totalSupplyOnlyFallsByBurns
+[PASS] invariant_weeklyBurnRecordsMatchSupplyDestroyed
+[PASS] invariant_weeklyCapsHold
+ ChainV2Invariant invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭----------------+----------+-------+---------+----------╮
+| Contract       | Selector | Calls | Reverts | Discards |
++========================================================+
+| ChainV2Handler | claim    | 1429  | 0       | 0        |
+|----------------+----------+-------+---------+----------|
+| ChainV2Handler | seal     | 1350  | 0       | 0        |
+|----------------+----------+-------+---------+----------|
+| ChainV2Handler | trade    | 1317  | 0       | 0        |
+╰----------------+----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.94s (1.93s CPU time)
+
+Ran 2 test suites in 1.95s (1.97s CPU time): 14 tests passed, 0 failed, 0 skipped (14 total tests)

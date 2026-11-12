@@ -1,15 +1,18 @@
-# User actions (no secrets in this file)
-1. DONE: user chose real YARN on Fuji, testnet only, no value.
-2. DONE: funded Fuji wallet and Supabase secret exist. User deploys guest-drip when ready.
-3. Deploy V2 using USER-DEPLOY-VI.md; paste public addresses into INBOX.md.
-4. Run bot-seller and fuji-smoke after deployment; share FUJI-SMOKE.md.
-5. C2 OUTBOX currently has no weekly Epic+/rare-material supply. Simulation will label provisional inputs until supplied.
-6. Before enabling drip, apply 20261112010000_guest_drip.sql and deploy guest-drip yourself. Set GUEST_DRIP_ENABLED=1. Existing VOUCHER_SIGNER_PRIVATE_KEY is the default sponsor; SPONSOR_PRIVATE_KEY is an optional dedicated override. Never paste either key into chat or reports.
-7. Confirm the hosted gateway appends a trustworthy final x-forwarded-for hop; if that guarantee is absent, keep drip disabled until a trusted gateway is configured. Shared/absent IPs share the three-per-day bucket.
-8. Apply 20261112020000_chain_judge.sql and deploy chain-judge; enable CHAIN_JUDGE_ENABLED=1 only for the testnet demo. It reuses VOUCHER_SIGNER_PRIVATE_KEY and the fixed existing Fuji NFT address. Validate trusted gateway IP handling as for the drip.
-9. Ordinary offline campaign saves cannot authorize mintable drops. The chain demo uses a server-run, fixed starter boss; extending live campaign issuance requires an authoritative campaign save/replay protocol with C2.
+# User actions — current, 2026-11-12
 
-10. H6 source, local tests and deployment guide are ready. Use CHAIN_DEPLOYER_PRIVATE_KEY for the V2 script (not the legacy DEPLOYER_PRIVATE_KEY). Deploy only yourself, then record the three public addresses and epoch. Fund the rewards pool with fund-rewards.mjs; it starts empty.
-11. Apply 20261112030000_chain_items.sql and deploy chain-items yourself; configure YARN_TOKEN_ADDRESS, SEASON_REWARDS_ADDRESS and CHAIN_ITEMS_ENABLED/CHAIN_YARN_ENABLED only after deployment. Follow USER-DEPLOY-VI.md for exact steps.
-12. Remote GitHub Actions is blocked before tests start by account billing/spending limits (reconfirmed on check130978962411). The account owner must resolve that limit to obtain remote green checks; local tests remain available. An earlier Vercel taskbarhero build also hit a rate limit; Codex will not trigger a deployment.
-13. Provide C2 weekly rare-material/Epic+ issuance inputs when available; current simulation is explicitly provisional. Ordinary campaign sealing/rank rewards require the C2 authoritative save protocol, not client save imports.
+## Completed by the user
+- Fuji token form confirmed; three V2 contracts deployed and addresses recorded in INBOX and registry.
+- Rewards funded10,000 test YARN; migrations/functions deployed and flags enabled.
+- Public Fuji smoke PASS,18 receipts; both smoke wallets have consumed their one-time tester claims.
+
+## Remaining user-owned operations
+1. Once Vercel deployment quota resets (current status says retry in24h), deploy the prepared frontend to the existing taskbarhero-eight.vercel.app project with CHAIN demo flags. Production currently returns404 for Star Thread metadata/art; the NFT URI uses that host. Dashboard verified project taskbarhero, scope ntbaoheyheys-projects, root apps/web/Vite. FRONTEND-READINESS-VI.md contains pinned CLI link/build/prebuilt-deploy commands.
+2. Run seed-market.mjs using the existing smoke buyer: it mints two unused pass vouchers and lists3 Relics at1 test YARN, with a no-op retry. Then measure the public browser judge route. V2 getListings is currently empty. Use user-held keys only in their Terminal; no key is requested in chat. Do not rerun contract deployment or the full smoke with consumed wallets.
+3. Top up the observed drip sponsor 0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000 with2.5 test AVAX on Fuji. Current1.09999999999328 balance allows only roughly one further new guest after reserve/fees. Source: both public drip transaction senders; DEMO-READINESS.json.
+4. For remote green CI, resolve GitHub account billing/spending limits. Latest source check131051679521 was rejected before tests start. Both Vercel integrations now report deployment rate limited, retry in24h; earlier preview was Canceled despite SUCCESS. See REMOTE-CHECKS.json.
+5. Trusted proxy/IP assurance remains an operational requirement from the original deployment guide; successful transactions alone do not establish that trust boundary.
+
+## Engineering dependencies, no wallet action needed
+- C2 OUTBOX still has no verified weekly rare/Epic supply or authoritative ordinary campaign/weekly/rank earning ledger. Details in REQUESTS-TO-C2.md. Never import offline saves as mint authority.
+- Automatic season reduction is already deployed; routine issuance is not enabled. Model integrity passes, implemented-sink economic acceptance fails. Do not turn on routine rewards based on a roadmap-sink simulation.
+- H7 stays gated. No mainnet, public deployment or real-key broadcast was done by Codex.
