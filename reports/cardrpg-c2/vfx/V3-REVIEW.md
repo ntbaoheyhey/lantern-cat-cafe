@@ -38,3 +38,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:binding-thread | 8 / 8 / 9 / 8 | Twin rose loops read distinctly from the basic bow and settle below the target face. | 120.00 |
 | enemy:practice-cushion:basic | 8 / 8 / 9 / 8 | Round cushion core remains compact; the cream puff and damage number align without covering the face. | 120.00 |
 | enemy:practice-cushion | 8 / 8 / 9 / 8 | Three cream lobes distinguish the stronger puff from the basic; the low fade preserves the hit number. | 120.00 |
+| enemy:yarn-giant:basic | 8 / 8 / 9 / 8 | Braided rose crescent lands low on the front defender; the damage number remains separate and the yarn tail clears cleanly. | 120.00 |
