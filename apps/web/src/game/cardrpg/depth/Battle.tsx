@@ -1,3 +1,4 @@
+import {battleStep} from '../battle-v3/controls';
 import {artPropsA6} from '../ui-v3/art-a6';
 import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
 import { numberLaneWidth } from '../../squad/turn3d/card-number-lane';
@@ -173,7 +174,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   });
   useEffect(() => {
     if (!m.canAct) return;
-    const timer = setTimeout(() => m.replay ? m.replayStep() : m.step(), 80 / m.state.settings.speed);
+    const timer = setTimeout(() => m.replay ? m.replayStep() : battleStep(m), 80 / m.state.settings.speed);
     return () => clearTimeout(timer);
   });
   useEffect(() => {

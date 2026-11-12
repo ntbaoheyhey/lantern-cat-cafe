@@ -1,3 +1,4 @@
+import BattleHud from '../battle-v3/BattleHud';
 import {lookSpineEnabled} from '../spine/config';
 import {PAINT} from '../spine/style';
 import {paintedRecipe} from '../spine/vfx-registry';
@@ -24,7 +25,7 @@ const Guide=lazy(()=>import('../depth/Pages').then(m=>({default:m.Codex})));
 const currentStatusRule=(id:R.StatusId)=>R.statusRuleV5(id,R.STATUS_BY_ID[id]);
 
 /** Presentation only: the existing model remains the sole combat clock. */
-export default function BattleHudV3({m}:{m:DepthModel}) {
+function LegacyBattleHudV3({m}:{m:DepthModel}) {
  const battle=m.visualBattle!,plan=m.plan,banner=useRef<HTMLElement>(null),comboBanner=useRef<HTMLElement>(null),phaseBanner=useRef<HTMLElement>(null),effects=useRef<HTMLDivElement>(null);
  const resolveStatusRule=battle.initial.skillsV5?currentStatusRule:undefined;
  const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false),[leaving,setLeaving]=useState(false);
@@ -113,3 +114,5 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   {leaving&&<BattleLeaveV3 state={m.state} practice={!!m.tutorialBattle} wasPaused={pausedBeforeLeave.current} onCancel={closeLeave} onConfirm={()=>{setLeaving(false);m.leave();}}/>}
  </div>;
 }
+
+export default function BattleHudV3({m}:{m:DepthModel}) {return m.state.formationC2?<BattleHud m={m}/>:<LegacyBattleHudV3 m={m}/>;}

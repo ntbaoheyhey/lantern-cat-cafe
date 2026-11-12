@@ -1,0 +1,56 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/scene-loading.test.ts (4 tests | 4 failed) 320ms
+   × releases an obsolete load gate and enemy lane before its image arrives 113ms
+   × does not let a late first request replace or complete the same actor requested again 104ms
+   × ignores an obsolete failure while preserving failures for the current roster 101ms
+   × disposes late actors without changing or reporting to a destroyed scene 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/scene-loading.test.ts > releases an obsolete load gate and enemy lane before its image arrives
+TypeError: Cannot read properties of undefined (reading 'dispose')
+ ❯ SpineScene.dispose src/game/cardrpg/spine/scene.ts:249:662
+
+ ❯ src/game/cardrpg/spine/scene-loading.test.ts:46:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/game/cardrpg/spine/scene-loading.test.ts > does not let a late first request replace or complete the same actor requested again
+TypeError: Cannot read properties of undefined (reading 'dispose')
+ ❯ SpineScene.dispose src/game/cardrpg/spine/scene.ts:249:662
+
+ ❯ src/game/cardrpg/spine/scene-loading.test.ts:58:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/game/cardrpg/spine/scene-loading.test.ts > ignores an obsolete failure while preserving failures for the current roster
+TypeError: Cannot read properties of undefined (reading 'dispose')
+ ❯ SpineScene.dispose src/game/cardrpg/spine/scene.ts:249:662
+
+ ❯ src/game/cardrpg/spine/scene-loading.test.ts:71:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/game/cardrpg/spine/scene-loading.test.ts > disposes late actors without changing or reporting to a destroyed scene
+TypeError: Cannot read properties of undefined (reading 'dispose')
+ ❯ SpineScene.dispose src/game/cardrpg/spine/scene.ts:249:662
+
+ ❯ src/game/cardrpg/spine/scene-loading.test.ts:76:70
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 13 passed (14)
+      Tests  4 failed | 92 passed (96)
+   Start at  06:21:40
+   Duration  7.62s (environment 38%, transform 30%, tests 17%, import 14%)
+
+Environment  jsdom was created 14 times · 5.25s total, 38% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/spine src/game/cardrpg/ui-v3/BattleHudA6.test.tsx src/game/cardrpg/ui-v3/BattleCinematicsV3.test.tsx src/game/cardrpg/depth/replay.test.tsx

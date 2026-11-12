@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "asset": "apps/web/public/units/*/runtime.webp",
+      "tool": "tools/cinematic-compositor/capture-units.mjs (Playwright/three.js cut-out renderer)",
+      "prompt": "Capture the approved original unit at its setup pose on transparent 640px canvas; no external reference art.",
+      "date": "2026-11-13",
+      "source": "assets/cardrpg-look/spine/*"
+    },
+    {
+      "asset": "apps/web/public/units/*/portrait.webp",
+      "tool": "scripts/art/make-portraits.mjs (sharp 0.34.5)",
+      "prompt": "Crop the same original runtime art: eye line 40%, head width 65%; add element gradient.",
+      "date": "2026-11-13",
+      "source": "art/units/*/portrait.json"
+    },
+    {
+      "asset": "apps/web/src/game/cardrpg/spine/stage-painting.ts",
+      "tool": "original Canvas2D drawing code",
+      "prompt": "Frame the existing painted cafe floor with original counter end, stacked cups and plant pot.",
+      "date": "2026-11-13",
+      "source": "assets/cardrpg-look/stage/painted-cafe-c11-v1.webp"
+    }
+  ]
+}

@@ -3,7 +3,9 @@ import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { SceneView, Anchor } from '../../squad/turn3d/scene';
 import type { EffectPlan } from '../../squad/turn3d/effects';
 import { layoutLabels, intersects, type Rect, type LabelInput } from '../../squad/turn3d/label-layout';
-import { PuppetNumbers } from '../../squad/turn3d/look-puppet-numbers';
+import {BattleNumbers as PuppetNumbers} from '../battle-v3/numbers';
+import {BodyFx} from '../battle-v3/body-fx';
+import {bodyStatuses} from '../battle-v3/status';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
@@ -36,7 +38,7 @@ export class SpineScene {
  private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private framing={zoom:1,x:0};
- private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
+ private bodyFx:BodyFx;private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
  private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
  private visibility=()=>{this.last=0;this.dirty=true;};
  private pick=(event:PointerEvent)=>{const box=this.renderer.domElement.getBoundingClientRect(),x=event.clientX-box.left,y=event.clientY-box.top;for(const unit of this.sizeAudit().units){if(x>=unit.box.x&&x<=unit.box.x+unit.box.width&&y>=unit.box.y&&y<=unit.box.y+unit.box.height){this.onTarget(unit.id);break;}}};
@@ -45,7 +47,7 @@ export class SpineScene {
   this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.NoToneMapping;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
-  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
+  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
   this.resize=new ResizeObserver(()=>this.invalidate());this.resize.observe(host);document.addEventListener('visibilitychange',this.visibility);
@@ -149,7 +151,7 @@ export class SpineScene {
    const entry=this.actors.get(unit.id);if(!entry)continue;const actor=entry.actor,boss=actor.unit.tier==='boss',position=stagePosition(unit.side,entry.lane,boss,view.boss,this.worldWidth);
    const box=layout?.get(unit.id),core=unitCore(entry.asset,actor.bounds);
    const rear=view.rows?.[unit.id]==='rear';
-   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setScalar(rear?.92:1);}});
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;const kinds=bodyStatuses(view.cardStatuses?.[unit.id],unit.shield);material.color.set(kinds.includes('freeze')?'#9ddcff':kinds.includes('poison')?'#c5efaa':kinds.includes('burn')&&Math.sin(time*Math.PI*2/.6)>0?'#ffcb9e':'#ffffff');material.color.multiplyScalar(rear?.92:1);}});
    actor.root.visible=!(view.formationC2&&unit.side==='enemy'&&unit.hp<=0);
    if(box){position.scale=box.coreHeight/core.world.height;const facing=unit.side==='enemy'?-1:1;position.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*position.scale*facing;position.y=PAINT.worldHeight-box.footY-core.world.y*position.scale;}
    actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(box?box.order:10+Math.round((1-position.y/PAINT.worldHeight)*30));
@@ -171,7 +173,7 @@ export class SpineScene {
    else if(time-entry.phaseAt<actor.duration('enrage')&&actor.clips.has('enrage')){name='enrage';key=entry.phaseAt;at=time-entry.phaseAt;}
    else if(time-entry.entered<actor.duration('appear')&&!view.galleryPreview&&!view.reducedMotion){name='appear';key=entry.entered;at=Math.max(0,time-entry.entered);}
    else if(entry.phase>1&&actor.clips.has('idle-phase2')){name='idle-phase2';key=name;at=time%actor.duration(name);}
-   const previous=this.sampled.get(unit.id),frozen=!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
+   const previous=this.sampled.get(unit.id),iced=bodyStatuses(view.cardStatuses?.[unit.id]).includes('freeze'),frozen=iced||!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
    if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
@@ -204,8 +206,8 @@ export class SpineScene {
   this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,true):null;
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
   this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);this.stats.particles=this.effects.stats.active;
-  this.renderer.render(this.scene,this.camera);this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
-  this.numbers.setAnchors(this.anchors);this.numbers.render(this.firstHit?frame:null,view.cardPresentation,this.width,this.height,view.reducedMotion,true,!!view.formationC2);
+  this.renderer.render(this.scene,this.camera);this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
+  this.numbers.setAnchors(this.anchors);this.numbers.render(this.firstHit?frame:null,view.cardPresentation,this.width,this.height,view.reducedMotion,true);
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
  private bounds(entry:DisplayActor):Rect{
@@ -232,6 +234,11 @@ export class SpineScene {
   // numbers displace the pre-contact ultimate card. HP and bodies stay protected.
   this.cinematicRects=[...bodies,...placed.values(),...(this.firstHit?words.values():[])];
   this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,box,i)=>sum+bodies.filter(b=>intersects(box,b,0)).length+this.labelAudit.cards.slice(i+1).filter(b=>intersects(box,b,0)).length,0);
+  if(view.formationC2)for(const anchor of this.anchors){
+   const entry=this.actors.get(anchor.id);if(!entry)continue;
+   const b=this.bounds(entry);anchor.labelX=Math.max(36,Math.min(this.width-36,anchor.x));
+   anchor.labelY=Math.max(46,b.y+14);anchor.visible=view.actors.some(u=>u.id===anchor.id&&u.hp>0);
+  }
   this.onAnchors(this.anchors);
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
@@ -239,5 +246,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

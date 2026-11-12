@@ -91,7 +91,7 @@ export class PaintedVfx {
    const extent=size*layer.size*scale;c.globalAlpha=alpha*layer.opacity;c.save();c.translate(x,y);c.rotate(rotation);c.scale(1,layer.ground?.24:1);c.drawImage(p.stamp,-extent/2,-extent/2,extent,extent);c.restore();this.stats.active++;this.stats.draws++;
   }
   // Persistent status keywords sit beside the foot, below faces and labels.
-  for(const actor of view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??[];let index=0;
+  for(const actor of view.formationC2?[]:view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??[];let index=0;
    for(const entry of statuses){const id=typeof entry==='string'?entry:entry.id,spec=PAINTED_STATUSES.find(s=>s.id===id);if(!spec)continue;const stamp=this.stamps.get('status:'+id,spec.color);if(!stamp)continue;const n=statuses.length,extent=size*.19,x=feet.x+(index-(n-1)/2)*size*.17,y=feet.y-size*.09+(view.reducedMotion?0:Math.sin(time*2+index)*size*.012);c.globalAlpha=.85;c.drawImage(stamp,x-extent/2,y-extent/2,extent,extent);index++;this.stats.draws++;}
   }
   // Two authored 60Hz frames, measured on the same clock as particles. A paused

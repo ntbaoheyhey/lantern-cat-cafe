@@ -24,7 +24,7 @@ function fixture() {
     loading: {completed: 0, total: 0}, stats: {loaded: 0}, time: 0, disposed: false, ready: false,
     geometry: new T.PlaneGeometry(), ringGeometry: new T.RingGeometry(), shadowTexture: new T.Texture(),
     onFailure: vi.fn(), view: () => view,
-    resize: {disconnect: vi.fn()}, stage: {dispose: vi.fn()}, effects: {dispose: vi.fn()}, numbers: {dispose: vi.fn()},
+    resize: {disconnect: vi.fn()}, stage: {dispose: vi.fn()}, effects: {dispose: vi.fn()}, bodyFx: {dispose: vi.fn()}, numbers: {dispose: vi.fn()},
     renderer: {domElement: document.createElement('canvas'), dispose: vi.fn(), forceContextLoss: vi.fn()},
   });
   const switchTo = (...ids: string[]) => {

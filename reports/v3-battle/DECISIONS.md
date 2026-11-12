@@ -16,3 +16,9 @@
 - Updated obsolete 15% empty-box overlap assertion to the V3 dense contract. Actual alpha occlusion is captured separately; 387 battle tests and 10 browser tests pass.
 - Full-body exclusion could suppress numbers; lower-body fallback lanes retain contact feedback below faces.
 - Postprocessing 6.39.6 / quarks 0.16.0 installed for next cards.
+
+## A2 completion
+- Scoped battle-v3 HUD; only integration imports in Battle.tsx and BattleHudV3.tsx. These are battle-only files and required to activate A-owned UI. B non-battle files untouched.
+- Baloo 2 5.3.0 OFL dependency temporarily supplies the same display token while B global typography is pending.
+- Manual ultimate queues wait for the actual actor turn. Default Auto preserves a seeded full battle byte-for-byte.
+- Phone uses a letterboxed 16:9 field to preserve formation; desktop remains primary. Auto-next moved into More, retaining the original behavior.
