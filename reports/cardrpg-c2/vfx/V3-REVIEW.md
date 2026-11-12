@@ -16,3 +16,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | clover-2 | 8 / 8 / 9 / 8 | Paired front-row leaves frame the recipients without covering their faces. | 120.00 |
 | clover-3 | 8 / 8 / 9 / 8 | Pale cleansing curls reach all four allies and preserve separated heal numbers. | 120.02 |
 | clover-4 | 8 / 8 / 9 / 8 | Greenhouse motif reads across the team; flowers sit below faces and the two-word cut-in clears. | 120.00 |
+| clover-passive | 8 / 8 / 9 / 8 | Seedling cue targets the actual front-row recipient and stays below the face. | 119.83 |
