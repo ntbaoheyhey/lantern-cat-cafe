@@ -21,3 +21,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | panko-2 | 8 / 8 / 9 / 8 | Bread cushion silhouettes remain distinct at both front slots and clear after shield numbers. | 120.09 |
 | panko-3 | 8 / 8 / 9 / 8 | Paired crust arcs frame all four recipients; faces and shield numbers remain readable. | 120.00 |
 | panko-4 | 8 / 8 / 9 / 8 | Oven-door arch reads on Panko with a clear two-word cut-in and synchronized shield number. | 120.00 |
+| panko-passive | 8 / 8 / 9 / 8 | Small bread cushion sits low on the actual protected recipient and fades cleanly. | 119.91 |
