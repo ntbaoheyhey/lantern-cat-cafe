@@ -1,11 +1,11 @@
 # C2 handoff
-NOW: V3 accepted enemy:crumb-sentinel; B4b final cohorts still running.
+NOW: All86 VFX visually accepted; full-card verification retry after crew-advice5s timeout.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
 LAST GOOD COMMIT: 27aeee053; frozen economy runtime unchanged.
 NEXT 1: Finish frozen600-account economy; publish weekly supply per item to OUTBOX.
-NEXT 2: Capture/review biscuit-passive and inkcap-passive, then paint cinnamon-passive.
+NEXT 2: Complete V3 checks/report and finish frozen economy, then B5 integration.
 NEXT 3: Continue V3 at final review; preserve all accepted work.
-RUNNING: V3 full checks next via session11 work/c2/verify-v3.py; monthly PID73297 pauses during checks.
+RUNNING: session11 verify-v3-retry.py; monthly73297 paused only during checks.
 B4: all three passes consumed; enemy tables unchanged; timing/HP misses disclosed.
 B4b: full128-template/6144-cell screen4misses(max13pp); preserve original results.
 HOLDOUT: all4 failures x1000 seeds100001–101000 complete;4.6–11pp,0point-estimate misses.
