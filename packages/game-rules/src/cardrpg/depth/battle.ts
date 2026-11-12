@@ -434,7 +434,21 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: EffectV5,
       } else {b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);}
       break;
     }
-    case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));if(hasEffect(actor,'unique:rainbell')){if(b.v4){const debuff=actor.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);if(debuff)actor.statuses=actor.statuses.filter(s=>s!==debuff);}else dispel(b,actor,actor,'debuff');}break; }
+    case 'swap': {
+      const row=actor.row;actor.row=target.row;target.row=row;
+      shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));
+      shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));
+      if(hasEffect(actor,'unique:rainbell')){
+        if(b.v4){
+          const debuff=actor.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);
+          if(debuff){
+            if(b.initial.formationC2)debuff.stacks=Math.max(0,debuff.stacks-ECONOMY_C2.uniques.rainbellCleanseStacks);
+            if(!b.initial.formationC2||debuff.stacks===0)actor.statuses=actor.statuses.filter(s=>s!==debuff);
+          }
+        }else dispel(b,actor,actor,'debuff');
+      }
+      break;
+    }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }
     case 'break': if(b.v4){applyStatus(b,actor,target,'rattled',1);break;}target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
