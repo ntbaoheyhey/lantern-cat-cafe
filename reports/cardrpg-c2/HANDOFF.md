@@ -17,3 +17,4 @@ STOP-C2 absent at resume; check before each heavy step. No agents/main merges/de
 REPORTS18Nov18UTC; freeze19Nov12UTC. CHAIN sync15Nov12UTC/17Nov12UTC.
 CHECKS:4415 package unit passes;33Node;24focused web;11focused rules;435 E2E expected/0unexpected/0flaky. Inherited exclusions unchanged.
 B4b RUNTIME: c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafdff3f366; new immutable build dist-v2/c2-b4b-link on5971.
+USER: All browser checks must run headless; do not open Chrome windows on the desktop.

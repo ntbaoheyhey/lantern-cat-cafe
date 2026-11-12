@@ -1,6 +1,7 @@
 import {createRequire} from 'node:module';import {resolve} from 'node:path';import {writeFile,readFile,rename} from 'node:fs/promises';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
-const hardware=process.env.VFX_GPU==='1',browser=await chromium.launch(hardware?{headless:false,args:['--use-angle=metal']}:{headless:true}),page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),rows=[];
+// Review must stay off the user's desktop, including Metal performance runs.
+const hardware=process.env.VFX_GPU==='1',browser=await chromium.launch({headless:true,...(hardware?{args:['--use-angle=metal']}:{})}),page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),rows=[];
 try{
  await page.goto((process.env.C2_URL??'http://127.0.0.1:5970')+'/@fs'+resolve(root,'tools/vfx/preview.html'));await page.waitForFunction(()=>window.vfxPreview?.scene.ready);
  const ids=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',')??['mochi-1','mochi-4','enemy:yarn-giant'];
@@ -15,5 +16,6 @@ try{
  const renderer=await page.evaluate(()=>{const gl=document.querySelector('canvas[data-look-spine]').getContext('webgl2'),ext=gl.getExtension('WEBGL_debug_renderer_info');return ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);});
  const file='/Users/bao/art/vfx-2026-11-12/review/'+(process.env.VFX_BEFORE==='1'?'profile-before':'profile')+(hardware?'-gpu':'')+'.json';
  const previous=await readFile(file,'utf8').then(JSON.parse,()=>({rows:[]}));
- await writeFile(file+'.tmp',JSON.stringify({renderer,hardware,recording:false,rows:[...previous.rows.filter(r=>!rows.some(n=>n.id===r.id)),...rows]},null,2));await rename(file+'.tmp',file);
+ const retained=previous.rows.filter(r=>!rows.some(n=>n.id===r.id)).map(r=>({...r,headless:r.headless??!previous.hardware,renderer:r.renderer??previous.renderer}));
+ await writeFile(file+'.tmp',JSON.stringify({renderer,hardware,headless:true,recording:false,rows:[...retained,...rows.map(r=>({...r,headless:true,renderer}))]},null,2));await rename(file+'.tmp',file);
 }finally{await browser.close();}

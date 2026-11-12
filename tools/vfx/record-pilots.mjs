@@ -3,7 +3,7 @@ import {createRequire} from 'node:module';import {resolve} from 'node:path';impo
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out='/Users/bao/art/vfx-2026-11-12/review';
 const ids=process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',')??['mochi-1','mochi-4','enemy:yarn-giant'];
 await mkdir(out,{recursive:true});
-const browser=await chromium.launch({args:['--use-angle=metal']}),page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),errors=[];
+const browser=await chromium.launch({headless:true,args:['--use-angle=metal']}),page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),errors=[];
 page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto((process.env.C2_URL??'http://127.0.0.1:5970')+'/@fs'+resolve(root,'tools/vfx/preview.html'));await page.waitForFunction(()=>window.vfxPreview?.scene.ready);
