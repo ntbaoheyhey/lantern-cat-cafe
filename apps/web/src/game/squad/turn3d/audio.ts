@@ -1,3 +1,4 @@
+import {playFrame} from '../../../audio/events';
 /** Original WebAudio synthesis. Context only opens after an explicit sound click. */
 import { EFFECT_REGISTRY } from './effects';
 import type { EffectFrame } from './effects';
@@ -80,11 +81,13 @@ export class CafeAudio {
     if (this.persist) try { localStorage.setItem(PREFERENCE_KEY, JSON.stringify({ version: 1, volume: this.volume, muted: !this.enabled })); } catch { /* Current controls remain usable. */ }
   }
   setVolume(volume: number) {
+    window.__thAudio?.setBus('master',volume);
     if (!Number.isFinite(volume)) return; this.volume = Math.max(0, Math.min(1, volume));
     if (this.ctx && this.master) this.master.gain.setTargetAtTime(this.enabled ? AUDIO_SETTINGS.master * this.volume : 0, this.ctx.currentTime, .025);
     this.remember();
   }
   async toggle() {
+    if(window.__thAudio){await window.__thAudio.unlock();this.enabled=!this.enabled;window.__thAudio.mute(!this.enabled);return;}
     if (this.starting) return this.starting;
     if (this.enabled) { this.enabled = false; this.master?.gain.setTargetAtTime(0, this.ctx!.currentTime, .04); this.remember(); return; }
     const controller = new AbortController(); this.startup = controller; this.blocked = false;
@@ -111,8 +114,9 @@ export class CafeAudio {
     } catch { if (!signal.aborted) { this.blocked = true; this.enabled = false; } }
     finally { release(); }
   }
-  ui() { if (this.enabled && this.ctx && this.master) synthCue(this.ctx, this.master, 'chime', 0, this.ctx.currentTime, 4); }
+  ui() { if(window.__thAudio){window.__thAudio.play('ui.click');return;} if (this.enabled && this.ctx && this.master) synthCue(this.ctx, this.master, 'chime', 0, this.ctx.currentTime, 4); }
   update(frame: EffectFrame | null, round: number, actor: string | null, quiet: boolean, ambienceScale = 1) {
+    if(window.__thAudio){const audio=window.__thAudio;const key=frame?`${frame.plan.id}/${frame.beat.kind}`:'';if(key&&key!==this.key){this.key=key;playFrame(audio,frame!);}return;}
     if (!this.enabled || !this.ctx || !this.master || this.ctx.state !== 'running') return;
     const now = this.ctx.currentTime, id = frame?.plan.presentationId || frame?.plan.skillId || '';
     const key = frame ? `${frame.plan.id}/${id}/${frame.beat.kind}` : '';

@@ -329,6 +329,8 @@ export class DepthModel {
   tick(milliseconds: number, now = performance.now()) {
     const previousFrame = this.playbackFrameAt;
     this.playbackFrameAt = now;
+    window.__thAudio?.speed(this.state.settings.speed);
+    window.__thAudio?.pause(this.paused);
     if (this.paused || !this.showBattle || (!this.sceneReady && !this.sceneError)) return;
     // The shared canvas caps its delta at 100 ms. Keep opted-in playback at
     // wall-clock speed on slow frames, without catching up an inactive tab.

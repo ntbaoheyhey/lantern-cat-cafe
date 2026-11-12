@@ -1,0 +1,4784 @@
+{
+  "version": 3,
+  "packs": {
+    "impact": {
+      "webm": "/audio/impact.webm",
+      "mp3": "/audio/impact.mp3"
+    },
+    "interface": {
+      "webm": "/audio/interface.webm",
+      "mp3": "/audio/interface.mp3"
+    },
+    "rpg": {
+      "webm": "/audio/rpg.webm",
+      "mp3": "/audio/rpg.mp3"
+    },
+    "jingles": {
+      "webm": "/audio/jingles.webm",
+      "mp3": "/audio/jingles.mp3"
+    },
+    "voice": {
+      "webm": "/audio/voice.webm",
+      "mp3": "/audio/voice.mp3"
+    },
+    "landing": {
+      "webm": "/audio/landing.webm",
+      "mp3": "/audio/landing.mp3"
+    },
+    "home": {
+      "webm": "/audio/home.webm",
+      "mp3": "/audio/home.mp3"
+    },
+    "battle": {
+      "webm": "/audio/battle.webm",
+      "mp3": "/audio/battle.mp3"
+    },
+    "boss": {
+      "webm": "/audio/boss.webm",
+      "mp3": "/audio/boss.mp3"
+    },
+    "ambience": {
+      "webm": "/audio/ambience.webm",
+      "mp3": "/audio/ambience.mp3"
+    }
+  },
+  "cues": {
+    "hit.blunt": [
+      {
+        "pack": "impact",
+        "start": 0,
+        "duration": 0.3101360544217687,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 0.39013605442176874,
+        "duration": 0.3101360544217687,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 0.7802721088435375,
+        "duration": 0.3101360544217687,
+        "bus": "sfx"
+      }
+    ],
+    "hit.heavy": [
+      {
+        "pack": "impact",
+        "start": 1.1704081632653063,
+        "duration": 0.16476190476190475,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 1.415170068027211,
+        "duration": 0.3563718820861678,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 1.851541950113379,
+        "duration": 0.11439909297052155,
+        "bus": "sfx"
+      }
+    ],
+    "hit.magic": [
+      {
+        "pack": "impact",
+        "start": 2.0459410430839005,
+        "duration": 0.2383219954648526,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 2.3642630385487533,
+        "duration": 0.42900226757369614,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 2.8732653061224496,
+        "duration": 0.24426303854875284,
+        "bus": "sfx"
+      }
+    ],
+    "hit.slash": [
+      {
+        "pack": "impact",
+        "start": 3.1975283446712024,
+        "duration": 0.7790022675736962,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 4.056530612244899,
+        "duration": 0.7790022675736962,
+        "bus": "sfx"
+      },
+      {
+        "pack": "impact",
+        "start": 4.915532879818595,
+        "duration": 0.7790022675736962,
+        "bus": "sfx"
+      }
+    ],
+    "ui.click": [
+      {
+        "pack": "interface",
+        "start": 0,
+        "duration": 0.09712018140589569,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.1771201814058957,
+        "duration": 0.011609977324263039,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.2687301587301587,
+        "duration": 0.007120181405895692,
+        "bus": "ui"
+      }
+    ],
+    "ui.hover": [
+      {
+        "pack": "interface",
+        "start": 0.35585034013605443,
+        "duration": 0.04038548752834467,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.47623582766439915,
+        "duration": 0.04038548752834467,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.5966213151927438,
+        "duration": 0.3798639455782313,
+        "bus": "ui"
+      }
+    ],
+    "ui.open": [
+      {
+        "pack": "interface",
+        "start": 1.0564852607709752,
+        "duration": 0.14777777777777779,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 1.284263038548753,
+        "duration": 0.31378684807256235,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 1.6780498866213154,
+        "duration": 0.31378684807256235,
+        "bus": "ui"
+      }
+    ],
+    "ui.close": [
+      {
+        "pack": "interface",
+        "start": 2.0718367346938775,
+        "duration": 0.14777777777777779,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 2.2996145124716554,
+        "duration": 0.31378684807256235,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 2.6934013605442177,
+        "duration": 0.31378684807256235,
+        "bus": "ui"
+      }
+    ],
+    "ui.tab": [
+      {
+        "pack": "interface",
+        "start": 3.08718820861678,
+        "duration": 0.6147619047619047,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 3.781950113378685,
+        "duration": 0.6080498866213152,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 4.47,
+        "duration": 0.5,
+        "bus": "ui"
+      }
+    ],
+    "ui.reward": [
+      {
+        "pack": "interface",
+        "start": 5.05,
+        "duration": 0.28984126984126984,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 5.41984126984127,
+        "duration": 0.5390022675736962,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 6.038843537414967,
+        "duration": 0.3220181405895692,
+        "bus": "ui"
+      }
+    ],
+    "ui.coin": [
+      {
+        "pack": "interface",
+        "start": 6.440861678004536,
+        "duration": 0.11993197278911565,
+        "bus": "ui"
+      }
+    ],
+    "ui.turn": [
+      {
+        "pack": "interface",
+        "start": 6.640793650793651,
+        "duration": 0.04498866213151927,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 6.765782312925171,
+        "duration": 0.020317460317460317,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 6.866099773242631,
+        "duration": 0.05514739229024943,
+        "bus": "ui"
+      }
+    ],
+    "ui.heal": [
+      {
+        "pack": "interface",
+        "start": 7.00124716553288,
+        "duration": 0.25839002267573696,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 7.339637188208617,
+        "duration": 0.2582766439909297,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 7.677913832199547,
+        "duration": 0.211859410430839,
+        "bus": "ui"
+      }
+    ],
+    "ui.crit": [
+      {
+        "pack": "interface",
+        "start": 5.05,
+        "duration": 0.28984126984126984,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 5.41984126984127,
+        "duration": 0.5390022675736962,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 6.038843537414967,
+        "duration": 0.3220181405895692,
+        "bus": "ui"
+      }
+    ],
+    "ui.block": [
+      {
+        "pack": "interface",
+        "start": 7.969773242630386,
+        "duration": 0.16165532879818595,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 8.211428571428572,
+        "duration": 0.1654421768707483,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 8.45687074829932,
+        "duration": 0.533469387755102,
+        "bus": "ui"
+      }
+    ],
+    "ui.death": [
+      {
+        "pack": "interface",
+        "start": 9.070340136054421,
+        "duration": 0.25839002267573696,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 9.408730158730158,
+        "duration": 0.2582766439909297,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 9.747006802721089,
+        "duration": 0.211859410430839,
+        "bus": "ui"
+      }
+    ],
+    "ui.fail": [
+      {
+        "pack": "interface",
+        "start": 7.969773242630386,
+        "duration": 0.16165532879818595,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 8.211428571428572,
+        "duration": 0.1654421768707483,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 8.45687074829932,
+        "duration": 0.533469387755102,
+        "bus": "ui"
+      }
+    ],
+    "ui.level-up": [
+      {
+        "pack": "interface",
+        "start": 5.05,
+        "duration": 0.28984126984126984,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 5.41984126984127,
+        "duration": 0.5390022675736962,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 6.038843537414967,
+        "duration": 0.3220181405895692,
+        "bus": "ui"
+      }
+    ],
+    "ui.reward-fly": [
+      {
+        "pack": "interface",
+        "start": 0.35585034013605443,
+        "duration": 0.04038548752834467,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.47623582766439915,
+        "duration": 0.04038548752834467,
+        "bus": "ui"
+      },
+      {
+        "pack": "interface",
+        "start": 0.5966213151927438,
+        "duration": 0.3798639455782313,
+        "bus": "ui"
+      }
+    ],
+    "kit.magic.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.slash.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.heavy.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.fire.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ice.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.nature.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.lightning.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.hearth.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.moon.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.garden.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.tide.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ember.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.magic.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.slash.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.heavy.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.fire.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ice.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.nature.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.lightning.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.hearth.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.moon.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.garden.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.tide.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ember.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "kit.magic.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.slash.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.heavy.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.fire.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ice.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.nature.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.lightning.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.hearth.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.moon.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.garden.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.tide.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ember.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "kit.magic.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.slash.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.heavy.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.fire.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ice.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.nature.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.lightning.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.hearth.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.moon.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.garden.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.tide.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "kit.ember.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.burn.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.burn.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.burn.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.freeze.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.freeze.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.freeze.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.poison.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.poison.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.poison.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.bleed.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.bleed.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.bleed.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.stun.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.stun.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.stun.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.shield.on": [
+      {
+        "pack": "rpg",
+        "start": 5.314081632653062,
+        "duration": 1.4604761904761905,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 6.8545578231292525,
+        "duration": 0.9377777777777778,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 7.87233560090703,
+        "duration": 0.9070068027210885,
+        "bus": "sfx"
+      }
+    ],
+    "status.shield.off": [
+      {
+        "pack": "rpg",
+        "start": 5.314081632653062,
+        "duration": 1.4604761904761905,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 6.8545578231292525,
+        "duration": 0.9377777777777778,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 7.87233560090703,
+        "duration": 0.9070068027210885,
+        "bus": "sfx"
+      }
+    ],
+    "status.shield.tick": [
+      {
+        "pack": "rpg",
+        "start": 5.314081632653062,
+        "duration": 1.4604761904761905,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 6.8545578231292525,
+        "duration": 0.9377777777777778,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 7.87233560090703,
+        "duration": 0.9070068027210885,
+        "bus": "sfx"
+      }
+    ],
+    "status.scald.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.scald.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.scald.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.cozy.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.cozy.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.cozy.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.tangle.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.tangle.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.tangle.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.steep.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.steep.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.steep.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.crumb.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.crumb.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.crumb.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.scent.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.scent.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.scent.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.rattled.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.rattled.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.rattled.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.drowsy.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.drowsy.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.drowsy.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.glaze.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.glaze.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.glaze.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.shelter.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.shelter.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.shelter.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.riposte.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.riposte.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.riposte.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.hush.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.hush.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.hush.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.brittle.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.brittle.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.brittle.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.link.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.link.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.link.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.sprout.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.sprout.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.sprout.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.decoy.on": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "status.decoy.off": [
+      {
+        "pack": "rpg",
+        "start": 5.003469387755103,
+        "duration": 0.23061224489795917,
+        "bus": "sfx"
+      }
+    ],
+    "status.decoy.tick": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ui.reveal.common": [
+      {
+        "pack": "jingles",
+        "start": 0,
+        "duration": 0.5060544217687075,
+        "bus": "sfx"
+      }
+    ],
+    "ui.reveal.rare": [
+      {
+        "pack": "jingles",
+        "start": 0.5860544217687075,
+        "duration": 0.5237868480725624,
+        "bus": "sfx"
+      }
+    ],
+    "ui.reveal.epic": [
+      {
+        "pack": "jingles",
+        "start": 1.18984126984127,
+        "duration": 0.7457369614512471,
+        "bus": "sfx"
+      }
+    ],
+    "ui.reveal.legendary": [
+      {
+        "pack": "jingles",
+        "start": 2.0155782312925172,
+        "duration": 0.6392290249433107,
+        "bus": "sfx"
+      }
+    ],
+    "ui.reveal.mythic": [
+      {
+        "pack": "jingles",
+        "start": 2.734807256235828,
+        "duration": 0.6125850340136054,
+        "bus": "sfx"
+      }
+    ],
+    "music.victory": [
+      {
+        "pack": "jingles",
+        "start": 3.4273922902494336,
+        "duration": 0.3906349206349206,
+        "bus": "music"
+      }
+    ],
+    "music.defeat": [
+      {
+        "pack": "jingles",
+        "start": 3.8980272108843543,
+        "duration": 0.408390022675737,
+        "bus": "music"
+      }
+    ],
+    "music.reveal": [
+      {
+        "pack": "jingles",
+        "start": 4.386417233560091,
+        "duration": 0.7457596371882086,
+        "bus": "music"
+      }
+    ],
+    "ui.forge.success": [
+      {
+        "pack": "jingles",
+        "start": 5.2121768707483,
+        "duration": 0.7457596371882086,
+        "bus": "sfx"
+      }
+    ],
+    "ui.forge.fail": [
+      {
+        "pack": "rpg",
+        "start": 5.314081632653062,
+        "duration": 1.4604761904761905,
+        "bus": "sfx"
+      }
+    ],
+    "voice.meow": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "music.landing": [
+      {
+        "pack": "landing",
+        "start": 0,
+        "duration": 32,
+        "bus": "music",
+        "loop": true
+      }
+    ],
+    "music.home": [
+      {
+        "pack": "home",
+        "start": 0,
+        "duration": 31.99501133786848,
+        "bus": "music",
+        "loop": true
+      }
+    ],
+    "music.battle": [
+      {
+        "pack": "battle",
+        "start": 0,
+        "duration": 32.00072562358277,
+        "bus": "music",
+        "loop": true
+      }
+    ],
+    "music.boss": [
+      {
+        "pack": "boss",
+        "start": 0,
+        "duration": 32,
+        "bus": "music",
+        "loop": true
+      }
+    ],
+    "ambience.cafe": [
+      {
+        "pack": "ambience",
+        "start": 0,
+        "duration": 8,
+        "bus": "ambience",
+        "loop": true
+      }
+    ],
+    "voice.mochi.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mochi.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.mochi.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mochi.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mochi.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mochi.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mochi.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.soot.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.soot.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.soot.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.soot.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.soot.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.soot.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.soot.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.clover.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.clover.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.clover.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.clover.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.clover.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.clover.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.clover.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.panko.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.panko.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.panko.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.panko.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.panko.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.panko.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.panko.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.mallow.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.mallow.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.mallow.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mallow.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mallow.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.mallow.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.mallow.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.sorrel.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.sorrel.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.sorrel.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.sorrel.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.sorrel.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.sorrel.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.sorrel.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.biscuit.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.biscuit.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.biscuit.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.biscuit.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.biscuit.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.biscuit.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.biscuit.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.inkcap.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.inkcap.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.inkcap.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.inkcap.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.inkcap.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.inkcap.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.inkcap.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.cinnamon.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.cinnamon.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.cinnamon.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.cinnamon.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.cinnamon.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.cinnamon.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.cinnamon.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.brioche.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.brioche.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.brioche.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.brioche.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.brioche.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.brioche.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.brioche.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.velvet.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.velvet.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.velvet.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.velvet.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.velvet.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.velvet.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.velvet.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "voice.marigold.select": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.attack": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.skill": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.ult": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.hit": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.death": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "voice.marigold.victory": [
+      {
+        "pack": "voice",
+        "start": 0,
+        "duration": 2.730612244897959,
+        "bus": "voice"
+      }
+    ],
+    "ult.marigold.charge": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "ult.marigold.release": [
+      {
+        "pack": "rpg",
+        "start": 1.562154195011338,
+        "duration": 0.5995464852607709,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 2.241700680272109,
+        "duration": 0.568798185941043,
+        "bus": "sfx"
+      }
+    ],
+    "ult.marigold.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "ult.marigold.tail": [
+      {
+        "pack": "rpg",
+        "start": 3.2107709750566897,
+        "duration": 0.6610430839002267,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 3.9518140589569164,
+        "duration": 0.4150793650793651,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 4.446893424036282,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.1.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.1.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.2.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.2.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.3.cast": [
+      {
+        "pack": "rpg",
+        "start": 0,
+        "duration": 0.39972789115646257,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 0.4797278911564626,
+        "duration": 0.4458503401360544,
+        "bus": "sfx"
+      },
+      {
+        "pack": "rpg",
+        "start": 1.005578231292517,
+        "duration": 0.4765759637188209,
+        "bus": "sfx"
+      }
+    ],
+    "skill.marigold.3.impact": [
+      {
+        "pack": "rpg",
+        "start": 2.8904988662131523,
+        "duration": 0.24027210884353742,
+        "bus": "sfx"
+      }
+    ]
+  }
+}
