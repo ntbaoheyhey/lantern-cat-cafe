@@ -6,7 +6,7 @@ import {Rng} from '../../rng';
 import {clone} from '../internal';
 
 const fresh=()=>R.setFormationC2(R.setGameplayA6(R.setGameplayV4(R.createDepthAccount(90001,0),true),true));
-it('caps equipment Shelter and Riposte per encounter while preserving native Panko and legacy replay behavior',()=>{
+it('keeps Bellsteel Riposte bounded without adding a gear taunt, preserving native Panko and legacy replays',()=>{
  for(const c2 of [true,false])for(const cardId of ['mochi','panko']){
   const s=fresh(),setup={seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2};
   const battle=R.createBattle(setup),mochi=battle.actors.find(a=>a.id===cardId)!;
@@ -14,7 +14,7 @@ it('caps equipment Shelter and Riposte per encounter while preserving native Pan
   for(let turn=0;turn<2;turn++){
    battle.queue=[mochi.id];mochi.cooldowns={};mochi.statuses=[];
    expect(R.act(battle,{actorId:mochi.id,skillId:'defend',targetId:mochi.id})).toBe(true);
-   expect(mochi.statuses.some(s=>s.id==='shelter')).toBe(!c2||turn===0);
+   expect(mochi.statuses.some(s=>s.id==='shelter')).toBe(!c2);
    const native=cardId==='panko'?1:0,equipment=!c2||turn===0?1:0;
    expect(mochi.statuses.find(s=>s.id==='riposte')?.stacks??0).toBe(native+equipment);
   }
@@ -22,6 +22,42 @@ it('caps equipment Shelter and Riposte per encounter while preserving native Pan
   expect(next.bonuses.bellsteelShelters).toBeUndefined();
   expect(next.bonuses.bellsteelRipostes).toBeUndefined();
  }
+});
+it('bounds the Rain Bell to one debuff stack per swap and preserves the legacy full-status cleanse',()=>{
+ for(const c2 of [true,false]){
+  const s=fresh();s.account.cards.forEach(c=>{c.level=6;c.stars=1;});
+  const b=R.createBattle({seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2});
+  const actor=b.actors.find(a=>a.id==='mochi')!,source=b.actors.find(a=>a.side==='enemy')!;
+  actor.setEffects=['unique:rainbell'];actor.statuses=[{id:'scald',stacks:3,remaining:3,source:source.id,appliedRound:b.round},{id:'scent',stacks:1,remaining:2,source:source.id,appliedRound:b.round}];
+  b.queue=[actor.id];b.energy=10;actor.cooldowns={};
+  const choice=R.legalChoices(b).find(c=>c.skillId==='mochi-3'&&c.targetId!==actor.id);
+  expect(choice).toBeDefined();expect(R.act(b,choice!)).toBe(true);
+  expect(actor.statuses.find(s=>s.id==='scald')?.stacks??0).toBe(c2?2:0);
+  expect(actor.statuses.find(s=>s.id==='scent')?.stacks).toBe(1);
+ }
+});
+it('quotes the C2 Rain Bell stack limit and Bellsteel trigger without changing legacy item text',()=>{
+ expect(R.gearStoryV4('hearthloom-relic-legendary',true)).toBe('Swapping clears 1 debuff stack.');
+ expect(R.effectTextV4('unique:rainbell',true)).toBe(R.gearStoryV4('hearthloom-relic-legendary',true));
+ expect(R.gearStoryV4('hearthloom-relic-legendary')).toBe('Swapping clears one of your debuffs.');
+ const set=R.SETS.find(s=>s.id==='bellsteel')!;
+ expect(R.setTextV4(set,true,true).four).toBe('Defend: Riposte 1× per battle.');
+ expect(R.setTextV4(set,true,false).four).toContain('Shelter');
+});
+it('bounds Soft Collar opening shielding in C2 without changing legacy shielding or other cats',()=>{
+ for(const c2 of [true,false]){
+  const state=fresh(),cats=R.battleCats(state),before=clone(cats);
+  const setup={seed:71,chapter:1,cats,enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2};
+  const plain=R.createBattle(setup),collar=R.createBattle({...setup,cats:cats.map(c=>c.id==='mochi'?{...c,effects:[...c.effects,'unique:softcollar']}:c)});
+  for(const actor of collar.actors){
+   const original=plain.actors.find(a=>a.id===actor.id)!;
+   expect(actor.shield-original.shield).toBe(actor.id==='mochi'?(c2?8:15):0);
+  }
+  expect(cats).toEqual(before);
+ }
+ expect(R.gearStoryV4('bellsteel-outfit-legendary',true)).toBe('Start with 8 shield.');
+ expect(R.effectTextV4('unique:softcollar',true)).toBe('Start with 8 shield.');
+ expect(R.gearStoryV4('bellsteel-outfit-legendary')).toBe('Start with 15 shield.');
 });
 it('discloses normalized live source odds, including exhausted daily drops and exact templates',()=>{
  const s=fresh();

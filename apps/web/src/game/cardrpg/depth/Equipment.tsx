@@ -128,7 +128,7 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
           })}</div>
           {!gear.length && <p>No equipment matches these filters.</p>}
           {item && template && preview && <section className="cr-panel dp-gear-detail" style={rarityStyle(template.rarity)} key={`${item.id}-${feedback}`}>
-            <h2>{template.name}</h2><p>{template.rarity} · item level {template.level} · Account-bound</p><p>{template.source}</p><p>{v4?R.gearStoryV4(template.id):template.story}</p>
+            <h2>{template.name}</h2><p>{template.rarity} · item level {template.level} · Account-bound</p><p>{template.source}</p><p>{v4?R.gearStoryV4(template.id,state.formationC2):template.story}</p>
             <h3>Compare on {R.CAT_BY_ID[cardId]!.name}</h3>
             <div className="dp-compare" title="Current stats with the change from equipping this piece. Green raises a stat, red lowers it.">
               <dl className="cr-stats">{Object.entries(R.depthStats(state, cardId)).map(([key, before]) => {
@@ -161,7 +161,7 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
       <section className="cr-panel"><h2>Choose a tailoring project</h2><label>Template
         <select aria-label="Template" value={craftId} onChange={event => setCraftId(event.target.value)}>
           {R.GEAR.map(spec => <option key={spec.id} value={spec.id}>{spec.name} · {spec.rarity} · chapter {spec.chapter}</option>)}
-        </select></label><p>{v4?R.gearStoryV4(craftId):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId,state)}/>{state.formationC2&&<CraftOddsC2 state={state} id={craftId}/>}<p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?`Also requires Pantry clear, ${R.legendaryTailoringRequirements(state).materials} mastery materials and ${R.legendaryTailoringRequirements(state).seals} boss seals.`:'Reach the source chapter before tailoring.'}</p></>}
+        </select></label><p>{v4?R.gearStoryV4(craftId,state.formationC2):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId,state)}/>{state.formationC2&&<CraftOddsC2 state={state} id={craftId}/>}<p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?`Also requires Pantry clear, ${R.legendaryTailoringRequirements(state).materials} mastery materials and ${R.legendaryTailoringRequirements(state).seals} boss seals.`:'Reach the source chapter before tailoring.'}</p></>}
         <button disabled={locked} onClick={() => act(R.craftGear(state, craftId), 'Chosen piece crafted. Look for it in your equipment.')}>Craft chosen piece</button>
       </section>
     </>}

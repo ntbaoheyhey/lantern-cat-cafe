@@ -1,15 +1,16 @@
-# C2 continuation handoff
-NOW: B4 pass5 full500 diagnostic passes; freeze production table and validate realUI/item/economy.
-BRANCH: codex/cardrpg-c2-2026-11-12; existing integration codex/cardrpg-integrate-2026-11-12 retained.
-NEXT 1: Compile/freeze pass5,500model/five30minUI; full128-template screen and600-account/28-date economy.
-NEXT 2: Finish historical30-cell holdout(session x/work/c2/pass5-historical-holdout.json); test every new full-screen miss on101001–102000, excluding already measured cells.
-NEXT 3: Merge source into integration; full checks, refreshed reports and draft PR descriptions.
-RUNNING: pass5-server PID27330, pass5-real PID27345, pass5-item PID27346, pass5-economy PID27347;model session18117;registry session x/work/c2/pass5-jobs.json.
-LAST GOOD COMMIT:061b79b6e source pushed; integration a7b5c873e retained.
-BASELINE: model loss11.790m; UI/model HP medians90.28/89.51%; bosses and no early loss pass.
-VFX:86 accepted,5,783,929bytes; do not regenerate accepted work.
-PR:440 source;442 integration; drafts only.
-OPEN: Combat/item gaps; calendar correlation; trusted campaign authority; Spine retiming.
-LIMITS: Service quotas external; STOP-C2 and code freeze19Nov12UTC retained.
-USER: Work continuously, headless, no agents/main merges/public deploy/secrets.
-DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
+# C2 source synchronization
+NOW: Backport exact candidate7 C2 runtime/tools and complete evidence from integration.
+BRANCH: codex/cardrpg-c2-2026-11-12.
+NEXT 1: Commit/push source;merge into integration.
+NEXT 2: Complete monthly75321;validate/export600accounts.
+NEXT 3: Finish600 monthlyaccounts, validate/export reports and both drafts.
+RUNNING: monthly75321 at12local workers;253completed accounts retained before resume.
+SOURCE:before 733976ac764159dfc876e1f63ee9d0bb2a686a7c; integration 4357db76e0bba11f19ec6e0c3dd22ea98518a93a.
+ITEM:6144screen1miss;49independentfixture pass;Bellsteel10kpairs11.14pp.
+B4:5real+500model alltargets pass;144exactcommon combats;1493decisions.
+B5:integration435E2E+2Anvil+4517package+64Node+118Forge pass;demo reviewed.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX:86accepted;allclips present;5,783,929runtime bytes.
+STOP absent;freeze19Nov12UTC;noagents/mainmerge/deploy/secrets;headless.
+OPEN:finalmonthly;trustedcampaignauthority;CHAINeconomicgate;designerSpine.
+VERIFY:source41Node+11focusedrules+workspaceTS pass;source/integration runtime parity exact.

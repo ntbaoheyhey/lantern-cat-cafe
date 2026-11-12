@@ -177,3 +177,37 @@ All cells use Soot/fourth equipment slot/level6/chapter3/node6-0. These sample e
 ## Completed monthly acceptance
 
 All600accounts×30days on frozen4e68bb59 completed and exported on 2026-11-12T12:56:18.145352+00:00. See [ECONOMY.md](ECONOMY.md) for rarity, bag and all currency ratios, and [OUTBOX.md](OUTBOX.md) for every Epic+/material weekly rate. Final source tables and all item-impact samples above are unchanged. Self-score7 remains due to the four13pp screen cells and unresolved Crumbweave interval; the once-returned item repair was fully remeasured, not treated as universal acceptance.
+
+
+## Reopened pass5 — independent historical fixture panel
+
+Runtime `c9f7f596a2c0ab3dd3d5b08cfe47e772b1c2b1c5c87b7472403ddb2bcbad2585`; all 30 previously failed fixtures measured on the predeclared 1,000 paired seeds 101001–102000. The completed panel has three misses: Bellsteel Epic charm/Panko/fourth slot +14.1pp, Legendary charm +14.2pp, Legendary outfit +12.8pp, all chapter3/level6/boss. Their marginal paired 95% intervals are 11.28–16.92, 11.36–17.04 and 10.02–15.58pp. Compact evidence: [PASS5-HISTORICAL-HOLDOUT.json](PASS5-HISTORICAL-HOLDOUT.json).
+
+The full 128-template screen remains in progress. After completion, every new failed fixture outside this panel receives the same fixed seed range in a disjoint panel. These samples are not pooled. Diagnose all misses before selecting another prospective table candidate; a diagnostic on these observed seeds is not fresh acceptance evidence.
+
+The complete pass5 screen now contains all128 templates/6,144 cells with100 pairs each:18 original sample misses, maximum24pp. The historical30-cell panel overlaps exactly one screen miss; the declared additional17-cell panel on101001–102000 is running. Their47-cell union covers every historical/current failed fixture without pooling outcomes. See [PASS5-ITEM-SCREEN.json](PASS5-ITEM-SCREEN.json).
+
+Candidate6 is prospective: C2 HP main-stat weight0.4; Bellsteel grants its first Riposte without equipment Shelter; Rain Bell removes one debuff stack per swap. Numeric limits and live text share the same C2 tables; legacy rules retain their previous behavior. Reused-screen diagnostics do not replace the predeclared fresh47-cell panel on102001–103000 or the next complete catalog screen.
+
+## Completed pass5 disjoint panel
+
+2026-11-12T14:00:49.013733+00:00. All17 new failed fixtures completed1,000 paired seeds101001–102000; all17 exceed12pp (13.4–23.6pp). Together with historical30 panel,20/47 misses. Runtime matches exactly; panels are disjoint and cover all18 screen misses plus all30 historical fixtures. Evidence: PASS5-NEW-HOLDOUT.json. Candidate6 reused100-pair diagnostic has4/47 misses (one+15pp, three−13/−14pp), retained as diagnostics. Continue the declared full6,144-cell screen and fresh47-fixture holdout before any acceptance.
+
+## Candidate6 complete union and candidate7 selection
+
+2026-11-12T14:09:15.675613+00:00. Candidate6 independent47-fixture panel102001–103000 completed:46pass, one miss. Bellsteel Legendary outfit/Mochi/bare/L6/C3/ordinary gives+15.6pp, paired95%[13.23,17.97]pp. Original100-pair Bellsteel weapon negative effects shrink to−5.7…−6.4pp on the fresh1000 pairs; they remain separately recorded. Evidence: ITEM6-HOLDOUT.json. Full candidate6 catalog continues unchanged.
+
+Soft Collar mechanism diagnostics reproduce the full failed control exactly. On those observed1000 pairs,15/8/4 opening shield atHPweight0.4 gives Bellsteel15.6/13/11.3pp and Mossbrew11.1/7.7/6.7pp. Shield8 plusHPweight0.5 gives11.1/6.6pp; shield8 plusHPweight0.6 gives10.4/5.9pp. These are selection diagnostics, never independent acceptance. Candidate7 selects the last combination, preserving more unique shielding while reducing HP main-stat contribution. All numeric changes are in ECONOMY_C2; legacy Soft Collar retains15 shield.49 focused rules tests/typecheck pass, with the new shielding regression failing before repair.
+
+2026-11-12T14:17:24.380925+00:00. Candidate6 full128-template/6144-cell screen completed:6misses (Bellsteel bare Legendary outfit+15pp and five Panko fourth-piece ordinary effects−13…−14pp). Two newly selected negative fixtures lie outside the existing47 and receive1000fresh pairs103001–104000. Candidate7 prospective union therefore contains49 fixtures; use the declared104001–105000 range. ITEM6-ITEM-SCREEN.json preserves complete catalog metadata and all six misses; raw full rows remain immutable.
+
+2026-11-12T14:27:27.958623+00:00 Candidate6 additional disjoint2-cell panel103001–104000 completed with−3.8/−3.6pp; together with47panel covers all selected49fixtures. Candidate7 independent49-fixture panel104001–105000 completed:49point passes, maximum12.0pp, one marginal interval crosses12pp. See ITEM6-NEW-HOLDOUT.json and ITEM7-HOLDOUT.json. A predeclared separate10000-pair follow-up120001–130000 now addresses the sole uncertain Bellsteel outfit; catalog and600-account projections remain in flight.
+
+2026-11-12T14:30:55.862192+00:00 Candidate7 predeclared Bellsteel uncertainty panel completed all10000 independent pairs120001–130000:11.14pp,paired95%[10.4753,11.8047]pp. Original49panel12.0pp/interval retained; no pooled estimates or post-result sample additions. This selected fixture now meets the12pp target in both point and marginal interval; catalog/economy/UI gates still pending.
+
+
+## Candidate7 completed item evidence
+
+2026-11-12T14:56:31.902489+00:00. All128 templates/6144cells completed100paired seeds95001–95100. The original screen retains one−13pp cell: Common Bellsteel weapon, Panko, fourth slot, L6/C3/ordinary; it is not relabeled a passing screen. Its predeclared independent1000-pair panel gives−7.0pp, marginal95%[−9.158,−4.842]pp. All49 selected fixtures meet12pp on104001–105000; the sole crossing interval belongs to the Bellsteel Legendary outfit and is addressed by the separately predeclared10000-pair follow-up11.14pp,[10.4753,11.8047]pp. The complete catalog introduces no fixture outside those49, so no105001 panel is needed.
+
+Every saved pair/statistic across6144screen cells and both independent panels was recomputed and checked against frozen runtime007ce084. See [ITEM7-ITEM-SCREEN.json](ITEM7-ITEM-SCREEN.json) and [ITEM7-ITEM-VALIDATION.json](ITEM7-ITEM-VALIDATION.json). These are finite-fixture measurements with marginal intervals, not a universal or simultaneous bound; original screens and holdouts remain separate. Final monthly economy is still in progress.

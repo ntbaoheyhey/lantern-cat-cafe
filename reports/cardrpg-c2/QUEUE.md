@@ -6,7 +6,7 @@
 - [x] V2 — Mochi skill/ult and Yarn Giant pilots; publish user review gate.
 - [x] B2 — 33 budgets ≤25, compact HUD, eight-screen comparison; 429/429 E2E.
 - [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
-- [ ] B4 — REOPENED by user, no pass cap: fix first-loss/HP misses; preserve prior measurements; validate five UI +500 fixed seeds.
+- [x] B4 — Candidate7: all targets pass on five real30-minute UI runs and500 fixed seeds; exact paired combat/policy parity; earlier failures retained.
 - [ ] B4b — REOPENED by user, no return cap: resolve item-power gaps; rerun affected catalog/holdout and economy evidence after final runtime changes.
 - [x] V3 — 86 accepted artworks/timelines: 78 rules-event effects and 8 passive-stat previews; 435/435 E2E; VFX-REPORT.md.
 - [x] B5 — exact READY merged; full verification, visual review and demo complete; draft PR #442; future syncs 15/17 Nov remain.

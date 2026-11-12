@@ -24,3 +24,13 @@ test('active account mixes weight created items, preserving per-profile exposure
  assert.equal(r.epicPerActiveWeek, 3.5); assert.equal(r.activeHoursPerWeek.heavy, 21);
  assert.throws(() => weeklySupply(summary, rules, { casual: .75, heavy: .5 }), /mix/);
 });
+test('calendar-stratified supply discloses its actual window without claiming independent daily draws', () => {
+ const profiles = { casual: { minutesPerDay: 30, perItem: {} } };
+ const result = weeklySupply({ profiles, source: { calendar: { firstDay: '2026-12-01', startSpanDays: 28 } } }, [], { casual: 1 });
+ assert.match(result.correlation, /28 consecutive start dates from 2026-12-01/);
+ assert.match(result.correlation, /account count is not independent date count/);
+ assert.doesNotMatch(result.correlation, /2026-11-12|between-date uncertainty are not measured/);
+ const single = weeklySupply({ profiles, source: { calendar: { firstDay: '2026-12-03', startSpanDays: 1 } } }, [], { casual: 1 });
+ assert.match(single.correlation, /same 2026-12-03 start date/);
+ assert.match(single.correlation, /between-date uncertainty are not measured/);
+});

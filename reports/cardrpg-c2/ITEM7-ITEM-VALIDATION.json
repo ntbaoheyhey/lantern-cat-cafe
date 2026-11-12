@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-12T14:56:31.857Z",
+  "runtimeSha256": "007ce084d8e4573ec2d3d275390a0181719f88bbeff585cafeb7e66185d97efc",
+  "screen": {
+    "templates": 128,
+    "cells": 6144,
+    "pairsPerCell": 100,
+    "seedRange": [
+      95001,
+      95100
+    ],
+    "pointPass": false,
+    "misses": [
+      {
+        "template": "bellsteel-weapon-common",
+        "cardId": "panko",
+        "mode": "fourth",
+        "level": 6,
+        "chapter": 3,
+        "node": "5-0",
+        "n": 100,
+        "beforeWins": 86,
+        "afterWins": 73,
+        "changedToWin": 0,
+        "changedToLoss": 13,
+        "gainPp": -13,
+        "pairedNormal95Pp": [
+          -19.62475431219677,
+          -6.37524568780323
+        ],
+        "saturatedBefore": false,
+        "saturatedAfter": false,
+        "pass": false
+      }
+    ]
+  },
+  "independentPanel": {
+    "cells": 49,
+    "pairsPerCell": 1000,
+    "seedRange": [
+      104001,
+      105000
+    ],
+    "allPointPass": true,
+    "maximumAbsoluteImpactPp": 12,
+    "originalMarginalIntervalsCrossing12": [
+      {
+        "template": "bellsteel-outfit-legendary",
+        "cardId": "mochi",
+        "mode": "bare",
+        "level": 6,
+        "chapter": 3,
+        "node": "5-0",
+        "n": 1000,
+        "beforeWins": 407,
+        "afterWins": 527,
+        "changedToWin": 126,
+        "changedToLoss": 6,
+        "gainPp": 12,
+        "pairedNormal95Pp": [
+          9.873443195246399,
+          14.126556804753601
+        ],
+        "saturatedBefore": false,
+        "saturatedAfter": false,
+        "pass": true
+      }
+    ]
+  },
+  "predeclaredIndependentUncertaintyFollowup": {
+    "seedRange": [
+      120001,
+      130000
+    ],
+    "pairsPerCell": 10000,
+    "rows": [
+      {
+        "template": "bellsteel-outfit-legendary",
+        "cardId": "mochi",
+        "mode": "bare",
+        "level": 6,
+        "chapter": 3,
+        "node": "5-0",
+        "n": 10000,
+        "beforeWins": 4057,
+        "afterWins": 5171,
+        "changedToWin": 1194,
+        "changedToLoss": 80,
+        "gainPp": 11.14,
+        "pairedNormal95Pp": [
+          10.475327210835538,
+          11.804672789164462
+        ],
+        "saturatedBefore": false,
+        "saturatedAfter": false,
+        "pass": true
+      }
+    ]
+  },
+  "screenMissFollowups": [
+    {
+      "template": "bellsteel-weapon-common",
+      "cardId": "panko",
+      "mode": "fourth",
+      "level": 6,
+      "chapter": 3,
+      "node": "5-0",
+      "n": 1000,
+      "beforeWins": 827,
+      "afterWins": 757,
+      "changedToWin": 28,
+      "changedToLoss": 98,
+      "gainPp": -7.000000000000001,
+      "pairedNormal95Pp": [
+        -9.157969979965994,
+        -4.842030020034007
+      ],
+      "saturatedBefore": false,
+      "saturatedAfter": false,
+      "pass": true
+    }
+  ],
+  "selection": {
+    "at": "2026-11-12T14:55:14.270085+00:00",
+    "screenSha256": "c4cdae280b14203d45ae56d03bc5b5bc6d7c451f8a5570efa00aa0e79f07d132",
+    "historicalSha256": "b0bfbfd1ad69fa142bc542815d02efe7275523a7125fdddae7feeedefd3ce4c9",
+    "runtimeSha256": "007ce084d8e4573ec2d3d275390a0181719f88bbeff585cafeb7e66185d97efc",
+    "historicalCells": 49,
+    "screenMisses": 1,
+    "newCells": 0,
+    "unionCells": 49,
+    "disjoint": true,
+    "coversScreen": true,
+    "item7NewSeeds": [
+      105001,
+      106000
+    ],
+    "possibleNextUnionSeeds": [
+      106001,
+      107000
+    ]
+  },
+  "passForDeclaredIndependentFixtures": true,
+  "scope": "All selected fixture point estimates meet12pp; marginal intervals either lie within12pp or have the separately predeclared10000-pair follow-up. Original100-pair screen retains its miss. This is finite-fixture evidence with marginal intervals, not a universal or simultaneous confidence bound. Samples are never pooled.",
+  "hashes": {
+    "screen": "c4cdae280b14203d45ae56d03bc5b5bc6d7c451f8a5570efa00aa0e79f07d132",
+    "holdout": "b0bfbfd1ad69fa142bc542815d02efe7275523a7125fdddae7feeedefd3ce4c9",
+    "uncertainty": "d50dce6726f88e7c0b513daad4491ab5434f1910eabb3973762d6282d30f8f3c"
+  }
+}

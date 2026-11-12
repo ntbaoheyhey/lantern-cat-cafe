@@ -32,10 +32,19 @@ export const AFFIX_TEXT_V4:Record<string,string>={openingCharge:'Opening shield'
 export function setTextV4<T extends {id:string;two:string;four:string}>(set:T,enabled:boolean,c2=false):T{
  const text=enabled?{...set,...SET_TEXT_V4[set.id]}:set;
  if(c2&&enabled&&set.id==='hearthloom')return {...text,four:`Defend links a weak ally; ${ECONOMY_C2.sets.hearthloomShareBp/100}% of HP damage is shared.`};
- if(c2&&enabled&&set.id==='bellsteel')return {...text,four:`Defend: Riposte ${ECONOMY_C2.sets.bellsteelRipostesPerBattle}×, Shelter ${ECONOMY_C2.sets.bellsteelSheltersPerBattle}× per battle.`};
+ if(c2&&enabled&&set.id==='bellsteel'){
+  const triggers=([['Riposte',ECONOMY_C2.sets.bellsteelRipostesPerBattle],['Shelter',ECONOMY_C2.sets.bellsteelSheltersPerBattle]] as const)
+   .filter(([,count])=>count>0).map(([name,count])=>`${name} ${count}×`).join(', ');
+  return {...text,four:`Defend: ${triggers} per battle.`};
+ }
  return text;
 }
-export function gearStoryV4(id:string):string{const t=GEAR_BY_ID[id]!;return t.unique?UNIQUE_TEXT_V4[t.unique]!:SET_TEXT_V4[t.setId]!.two;}
+export function uniqueTextV4(id:string,c2=false):string{
+ if(c2&&id==='softcollar')return `Start with ${ECONOMY_C2.uniques.softcollarShield} shield.`;
+ if(c2&&id==='rainbell')return `Swapping clears ${ECONOMY_C2.uniques.rainbellCleanseStacks} debuff stack.`;
+ return UNIQUE_TEXT_V4[id]??id;
+}
+export function gearStoryV4(id:string,c2=false):string{const t=GEAR_BY_ID[id]!;return t.unique?uniqueTextV4(t.unique,c2):SET_TEXT_V4[t.setId]!.two;}
 export const rawPowerV4=(s:Pick<Stats,'hp'|'attack'|'defense'>)=>s.hp/5+2*s.attack+1.5*s.defense;
 export function nakedStatsV4(state:DepthAccount,cardId:string):Stats{
  const card=state.account.cards.find(c=>c.cardId===cardId)!;
@@ -48,7 +57,7 @@ export function nakedStatsV4(state:DepthAccount,cardId:string):Stats{
 /** One shared common base across sets; full +12 main remains under 8% naked core. */
 export function gearMainV4(state:DepthAccount,cardId:string,item:GearInstance):number{
  const t=GEAR_BY_ID[item.templateId]!,core=rawPowerV4(nakedStatsV4(state,cardId));
- const weight=t.main==='attack'?2:t.main==='defense'?(state.formationC2?ECONOMY_C2.equipment.defenseWeight:1.5):.2;
+ const weight=t.main==='attack'?2:t.main==='defense'?(state.formationC2?ECONOMY_C2.equipment.defenseWeight:1.5):(state.formationC2?ECONOMY_C2.equipment.hpWeight:.2);
  const budget=state.formationC2?ECONOMY_C2.equipment:{commonPower:.026,maximumPower:.08,minimumMain:4};
  const common=Math.max(budget.minimumMain,Math.ceil(core*budget.commonPower/weight));
  return Math.floor(Math.min(core*budget.maximumPower/weight,common*RARITY_MULTIPLIERS_V4[t.rarity]*(1+.06*item.enhancement)));
@@ -106,6 +115,6 @@ export function itemUtilityV4(state:DepthAccount,cardId:string,item:GearInstance
 }
 
 export function effectTextV4(effect:string,c2=false):string {
- if(effect.startsWith('unique:'))return UNIQUE_TEXT_V4[effect.slice(7)]??effect;
+ if(effect.startsWith('unique:'))return uniqueTextV4(effect.slice(7),c2);
  const set=SETS.find(s=>s.twoEffect===effect||s.fourEffect===effect);return set?`${set.name}: ${setTextV4(set,true,c2)[set.twoEffect===effect?'two':'four']}`:effect;
 }

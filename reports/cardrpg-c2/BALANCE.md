@@ -84,3 +84,17 @@ Pass4 complete500 model: first-loss median12.664m,earliest3.224m,3 early seeds;b
 2026-11-12T13:27:02.079561+00:00. Ordinary HP3.2/3.7/1;ATK1.1/0.95/2.65;boss tables unchanged. Full500 diagnostic on the frozen baseline plus this exact in-memory table meets every target: loss median12.553m,earliest10.157m,early0;boss77.84/96.94s;normalHP71.24/77.17%. Keep the known failed pass4 seeds80061/80155/80194; all survive beyond8min now. Build the production source with this table, verify the frozen runtime/cohort identity and run five fresh realUI30min sessions. Acceptance remains pending UI and production-runtime parity.
 
 Production-runtime verification 2026-11-12T13:31:30.299753+00:00: all500 seed reports exactly equal the selected diagnostic (entire trace/final account, not just aggregates). Frozen runtime c9f7f596a2c0ab3dd3d5b08cfe47e772b1c2b1c5c87b7472403ddb2bcbad2585. All model targets pass. RealUI5×30min remains in progress; full acceptance pending.
+
+## Completed pass5 and candidate6 model
+
+2026-11-12T14:00:49.013733+00:00. Pass5 five actual30-minute UI runs and500 model seeds both meet every target; browser errors0. UI loss13.292m, earliest10.525m, boss72.03/96.36s, normalHP69.62/69.72% mean/median. Model loss12.553m, earliest10.157m, boss77.84/96.94s, normalHP71.24/77.17%. Parity:146 shared encounters,1,506 common decisions, no combat/policy/currency/XP differences; median per-seed playback error0.32–0.61%. Evidence: PASS5-COMPLETE-BALANCE.json.
+
+Candidate6 model500/500 also passes: first-loss12.518m, earliest10.128m, early0, boss79.49/97.25s, normalHP71.35/78.21%. Evidence: ITEM6-MODEL.json. Candidate6 full item screen and47-cell fresh holdout run next; realUI/monthly acceptance awaits final item tables. Pass5 completed UI remains separate and is not relabeled candidate6 evidence.
+
+2026-11-12T14:15:06.158425+00:00. Candidate7 frozenruntime007ce084d8e4 completes500/500: loss12.507m, earliest10.128m, early0; boss80.11/97.30s; normalHP71.07/78.34%. Every target passes. New realUI5×30min is running on the identical frozen source; previous pass5 UI is not reused as candidate7 acceptance.
+
+## Accepted candidate7 — final combat tables
+
+2026-11-12T14:45:35.561014+00:00 B4 candidate7 complete: UI5×1800s andmodel500×1800s pass all targets. UI loss13.352m,earliest11.821m,boss71.794/90.615s,HP68.715/77.626%;model12.507m,earliest10.128m,boss80.11/97.30s,HP71.068/78.338%. No early loss or browser errors. Exact144common encounters/1493decisions;currency/XPerror0;median timing0.465–0.865%,worst1.558%.
+
+The original parity report failed one unpaired boss-median comparison: seed80005 has four completed browser bosses versus five simulated bosses. The extra modeled boss ends at1799.685s; the browser contains the identical live encounter started at1760.366s and remains in progress at1800s. Full-horizon medians89.912/45.197s describe different samples. Timing now pairs identical completed encounters and explicitly verifies every unmatched boss against the other run’s live trace, rejecting missing/different traces or an already excessive elapsed time. All per-encounter15% bounds, encounter/policy/progression checks and fixed1800s balance cohorts remain unchanged. No outcome or seed was excluded from balance. The regression failed before repair;14 comparator tests pass. Original failure and full-horizon statistics remain preserved. Evidence: [ITEM7-BALANCE.json](ITEM7-BALANCE.json), [ITEM7-PARITY.json](ITEM7-PARITY.json).
