@@ -1,11 +1,11 @@
 # C2 integration handoff
-NOW: B5 full retry PID91467 running; Deno focused4/4 passed; monthly frozen.
+NOW: B5 full retry browser435 running; units/contracts118/typecheck/lint/build pass.
 BRANCH: codex/cardrpg-integrate-2026-11-12; base C2 b0448628f; PR440 remains C2 draft.
-LAST GOOD COMMIT: bb0024cfa (C2 full checks); integrated3632b94c1 plus Deno repair awaits full checks.
+LAST GOOD COMMIT: bb0024cfa (C2 full); integrated3163a4789 browser checks running.
 NEXT 1: Run full integrated units, E2E, Anvil chain E2E, word budgets and visuals.
 NEXT 2: Finish600-account monthly; export summary/supply/charts on a dedicated report commit.
 NEXT 3: Cherry-pick that B4b report commit onto C2, merge C2 back; draft integration PR/B6.
-RUNNING: monthly73297; checks91467; economy exporter90642; session11 work/c2 logs.
+RUNNING: monthly73297 temporarily paused by93039; checks91467; exporter90642; session11 logs.
 FROZEN: runtime4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
 ECONOMY: session9 work/c2/loot-affix; complete casual200/regular200; heavy in progress.
 B4: three passes consumed; model first loss12.593s early; median winHP above80%.
