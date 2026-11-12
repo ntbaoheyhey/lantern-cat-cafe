@@ -1,6 +1,6 @@
 import { createPublicClient, http, isAddress, type Abi, type Address, type Hash, type WalletClient } from 'viem';
 import { avalancheFuji } from 'viem/chains';
-import { getAddresses, relicNftAbi, relicMarketAbi } from '@taskbar-hero/chain';
+import { getAddresses, relicNftAbi, relicMarketAbi, relicMarketV2Abi } from '@taskbar-hero/chain';
 import { requireFuji } from './guest';
 
 export interface ChainConfig {
@@ -35,6 +35,7 @@ export const erc20Abi = [
   {type:'function',name:'transfer',stateMutability:'nonpayable',inputs:[{name:'to',type:'address'},{name:'amount',type:'uint256'}],outputs:[{type:'bool'}]},
   {type:'function',name:'approve',stateMutability:'nonpayable',inputs:[{name:'spender',type:'address'},{name:'amount',type:'uint256'}],outputs:[{type:'bool'}]},
 ] as const;
+export interface ChainListing {id:bigint;seller:Address;relicId:bigint;amount:bigint;price:bigint;currency:number;version:'v1'|'v2'}
 export function chainRuntime(config: ChainConfig, wallet: WalletClient, address: Address) {
   const client = publicChain(config);
   const guard = async () => { requireFuji(await client.getChainId()); requireFuji(await wallet.getChainId()); };
@@ -48,12 +49,17 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     const simulation = await client.simulateContract({ ...request, account: address });
     return receipt(await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji }));
   }
-  const listings = async () => {
-    const count = await client.readContract({ address: config.RelicMarket, abi: relicMarketAbi, functionName: 'activeListingCount' });
-    const rows = [];
-    for (let offset = 0n; offset < count; offset += 100n) {
-      const [ids, items] = await client.readContract({ address: config.RelicMarket, abi: relicMarketAbi, functionName: 'getListings', args: [offset, 100n] });
-      rows.push(...items.map((item, i) => ({ ...item, id: ids[i]! })));
+  const listings = async (version:'v1'|'v2'='v1'):Promise<ChainListing[]> => {
+    const market=version==='v2'?config.RelicMarketV2:config.RelicMarket;
+    if(!market)return [];
+    const abi=version==='v2'?relicMarketV2Abi:relicMarketAbi;
+    // One block snapshot keeps pagination coherent if another player trades mid-refresh.
+    const blockNumber=await client.getBlockNumber();
+    const count=await client.readContract({address:market,abi,functionName:'activeListingCount',blockNumber});
+    const rows:ChainListing[]=[];
+    for(let offset=0n;offset<count;offset+=100n){
+      const [ids,items]=await client.readContract({address:market,abi,functionName:'getListings',args:[offset,100n],blockNumber});
+      rows.push(...items.map((item,i)=>({...item,id:ids[i]!,currency:'currency' in item?item.currency:0,version})));
     }
     return rows;
   };
@@ -66,8 +72,8 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     async moveAdapter(ids: bigint[]) {
       return {
         address, chainId: async () => { await guard(); return 43113; },
-        cancelListings: async () => { for (const l of await listings()) if (l.seller.toLowerCase() === address.toLowerCase()) await write({address: config.RelicMarket, abi: relicMarketAbi, functionName: 'cancel', args: [l.id]}); },
-        withdrawProceeds: async () => {}, // V1 pushes proceeds; V2 adapter adds pull withdrawals.
+        cancelListings: async () => { for (const version of ['v1','v2'] as const) for(const l of await listings(version)) if(l.seller.toLowerCase()===address.toLowerCase()) await write({address:version==='v2'?config.RelicMarketV2!:config.RelicMarket,abi:version==='v2'?relicMarketV2Abi:relicMarketAbi,functionName:'cancel',args:[l.id]}); },
+        withdrawProceeds: async () => {if(!config.RelicMarketV2)return;for(const currency of [0,1]){const amount=await client.readContract({address:config.RelicMarketV2,abi:relicMarketV2Abi,functionName:'proceeds',args:[address,currency]});if(amount>0n)await write({address:config.RelicMarketV2,abi:relicMarketV2Abi,functionName:'withdraw',args:[currency,address]});}},
         relics: () => holdings(ids),
         moveRelics: (to: Address, tokenIds: bigint[], amounts: bigint[]) => write({address: config.RelicNFT, abi: relicNftAbi, functionName: 'safeBatchTransferFrom', args: [address, to, tokenIds, amounts, '0x']}),
         yarnBalance: () => config.YarnToken ? client.readContract({address: config.YarnToken, abi: erc20Abi, functionName: 'balanceOf', args: [address]}) : Promise.resolve(0n),

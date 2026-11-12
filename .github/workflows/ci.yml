@@ -128,6 +128,9 @@ jobs:
       - run: pnpm exec playwright install --with-deps chromium
         working-directory: apps/web
       - run: node tools/chain/check-drip.mjs
+      - run: node tools/chain/check-move.mjs
+      - run: node tools/chain/fuji-smoke.mjs --dry-run
+      - run: node tools/chain/token-sim.mjs
       - name: Three consecutive fresh Fuji-ID Anvil runs
         run: |
           for attempt in 1 2 3; do

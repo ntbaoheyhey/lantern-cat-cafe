@@ -21,12 +21,12 @@ export const devAccount = i => accounts.mnemonicToAccount(mnemonic,{addressIndex
 export const stringify = value => JSON.stringify(value,(_,v)=>typeof v === 'bigint'?v.toString():v);
 const chain = {id:43113,name:'Local Fuji',nativeCurrency:{name:'AVAX',symbol:'AVAX',decimals:18},rpcUrls:{default:{http:[localRpc]}}};
 export const localClient = () => viem.createPublicClient({chain,transport:viem.http(localRpc),pollingInterval:50});
-const walletFor = account => viem.createWalletClient({chain,account,transport:viem.http(localRpc)});
-const artifact = name => JSON.parse(readFileSync(resolve(root,`contracts/out/${name}.sol/${name}.json`),'utf8'));
+export const walletFor = account => viem.createWalletClient({chain,account,transport:viem.http(localRpc)});
+export const artifact = name => JSON.parse(readFileSync(resolve(root,`contracts/out/${name}.sol/${name}.json`),'utf8'));
 
 export async function loadModules() {
   const {createServer} = await import(pathToFileURL(webRequire.resolve('vite')));
-  const loader = await createServer({root,configFile:false,envDir:false,optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true,hmr:false,watch:null},
+  const loader = await createServer({root,configFile:false,envDir:false,optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true,hmr:false,ws:false,watch:null},
     resolve:{alias:[...['game-rules','api-contract','chain'].map(name=>({find:`@taskbar-hero/${name}`,replacement:resolve(root,`packages/${name}/src/index.ts`)})),
       ...['viem','viem/accounts','viem/siwe'].map(name=>({find:new RegExp(`^${name}$`),replacement:esm(testsRequire.resolve(name))}))]},
     ssr:{noExternal:['@taskbar-hero/game-rules','@taskbar-hero/api-contract','@taskbar-hero/chain']}});
@@ -36,7 +36,12 @@ export async function loadModules() {
     const drip = await loader.ssrLoadModule('/supabase/functions/_shared/guest-drip.ts');
     const relic = await loader.ssrLoadModule('/supabase/functions/_shared/relic.ts');
     const judge = await loader.ssrLoadModule('/supabase/functions/_shared/chain-judge.ts');
-    return {...db,...auth,...drip,...relic,...judge,close:()=>loader.close()};
+    const items = await loader.ssrLoadModule('/supabase/functions/_shared/chain-items.ts');
+    const rewards = await loader.ssrLoadModule('/supabase/functions/_shared/chain-rewards.ts');
+    const trade = await loader.ssrLoadModule('/packages/game-rules/src/cardrpg/trade.ts');
+    const move = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/move.ts');
+    const runtime = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/runtime.ts');
+    return {...db,...auth,...drip,...relic,...judge,...items,...rewards,...trade,...move,...runtime,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
 export async function startLocal({web = true} = {}) {
@@ -61,7 +66,11 @@ export async function startLocal({web = true} = {}) {
     };
     const RelicNFT=await deploy('RelicNFT',[deployer.address,signer.address,'http://127.0.0.1:5980/relics/{id}.json']);
     const RelicMarket=await deploy('RelicMarket',[RelicNFT]);
-    const config={chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,startBlock:'0'};
+    const YarnToken=await deploy('YarnToken',[deployer.address]);
+    const RelicMarketV2=await deploy('RelicMarketV2',[RelicNFT,YarnToken,devAccount(4).address,500n]);
+    const stamp=(await client.getBlock()).timestamp,epoch=stamp-(stamp-345600n)%604800n;
+    const SeasonRewards=await deploy('SeasonRewards',[YarnToken,deployer.address,signer.address,viem.parseEther('32'),epoch]);
+    const config={chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,YarnToken,RelicMarketV2,SeasonRewards,treasury:devAccount(4).address,startBlock:'0'};
     const modules=await loadModules(); handles.push(()=>modules.close());
     const db=await modules.buildMigratedDb();handles.push(()=>db.close());
     // Seed four real escrow listings using only public Anvil fixture accounts.
@@ -72,12 +81,17 @@ export async function startLocal({web = true} = {}) {
       const hash=await w.writeContract({address,abi,functionName,args,...(value===undefined?{}:{value})});
       const r=await client.waitForTransactionReceipt({hash});if(r.status!=='success')throw new Error('Seed reverted');return hash;
     };
+    await send(deployWallet,YarnToken,artifact('YarnToken').abi,'transfer',[SeasonRewards,viem.parseEther('10000')]);
     await send(botWallet,RelicNFT,nftAbi,'setApprovalForAll',[RelicMarket,true]);
+    await send(botWallet,RelicNFT,nftAbi,'setApprovalForAll',[RelicMarketV2,true]);
     const expiry=BigInt(Math.floor(Date.now()/1000)+3600);
     for(let id=1;id<=4;id++){
       const voucher={player:bot.address,relicId:BigInt(id),rarity:id-1,nonce:BigInt(id),expiry};
       await send(botWallet,RelicNFT,nftAbi,'mint',[voucher,await voucherSigner.sign(voucher)]);
       await send(botWallet,RelicMarket,marketAbi,'list',[BigInt(id),1n,viem.parseEther('0.001')]);
+      const v2={...voucher,nonce:BigInt(id+10)};
+      await send(botWallet,RelicNFT,nftAbi,'mint',[v2,await voucherSigner.sign(v2)]);
+      await send(botWallet,RelicMarketV2,artifact('RelicMarketV2').abi,'list',[BigInt(id),1n,id%2?viem.parseEther('0.001'):viem.parseEther('1'),id%2?0:1]);
     }
     const one=async(sql,args)=>(await db.query(sql,args)).rows[0]?.r;
     const store={
@@ -87,6 +101,16 @@ export async function startLocal({web = true} = {}) {
     };
     const drip=modules.createDrip({key:viem.toHex(sponsor.getHdKey().privateKey),rpcUrl:localRpc,store});
     const judge=modules.createJudge({signer:voucherSigner,nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),store:{reserve:(player,wallet,ip,boss)=>one('select public.chain_judge_reserve($1,$2,$3,$4) r',[player,wallet,ip,boss])}});
+    const items=modules.createItems({signer:voucherSigner,
+      paid:(wallet,intent)=>client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'sealPayments',args:[wallet,intent]}),
+      nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),
+      store:{inventory:(player,wallet)=>one('select public.chain_item_inventory($1,$2) r',[player,wallet]),
+        reserve:(player,wallet,inventory,token,rarity,cost)=>one('select public.chain_seal_reserve($1,$2,$3,$4,$5,$6) r',[player,wallet,inventory,token,rarity,cost]),
+        finalize:(player,intent)=>one('select public.chain_seal_finalize($1,$2) r',[player,intent])}});
+    const reward=modules.createTesterReward({key:signerKey,contract:SeasonRewards,
+      eligible:async(player,wallet)=>!!await one('select exists(select 1 from public.chain_judge_passes where player_id=$1 and wallet=$2) r',[player,wallet]),
+      season:()=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'currentSeason'}),
+      nonceUsed:nonce=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'usedNonces',args:[nonce]})});
     const authStore={
       createNonce:nonce=>db.query('select public.create_siwe_nonce($1)',[nonce]),
       consumeNonce:nonce=>one('select public.consume_siwe_nonce($1) r',[nonce]),
@@ -112,6 +136,7 @@ export async function startLocal({web = true} = {}) {
           const token=(incoming.headers.authorization||'').replace(/^Bearer\s+/i,'');
           const session=await modules.verifySessionToken(token,{jwtSecret});
           if(name==='guest-drip')result=await drip(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret));
+          else if(name==='chain-items')result=input.action==='reward'?await reward(session.sub,viem.getAddress(session.wallet)):await items(session.sub,viem.getAddress(session.wallet),input);
           else if(name==='chain-judge')result=await judge(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret),input.action);
           else {outgoing.writeHead(404).end();return;}
         }
@@ -125,10 +150,10 @@ export async function startLocal({web = true} = {}) {
     if(web){
       Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_CHAIN_MODE:'local',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
       const {createServer}=await import(pathToFileURL(webRequire.resolve('vite')));
-      const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5980,strictPort:true}});
+      const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5980,strictPort:true,hmr:{port:5983}}});
       await vite.listen();handles.push(()=>vite.close());
     }
-    return {config,client,db,modules,drip,authDeps,stop};
+    return {config,client,db,modules,drip,judge,items,reward,authDeps,stop};
   }catch(error){await stop();throw error;}
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

@@ -8,7 +8,9 @@ import { chainRuntime, loadChainConfig, txLink } from './runtime';
 import { moveGuestAssets } from './move';
 import './chain.css';
 import { chainFlags } from './flags';
+import { CHAIN_ITEM_IDS } from '@taskbar-hero/game-rules/cardrpg';
 import { GasBalance } from './GasBalance';
+import { YarnBalance } from './YarnBalance';
 const ChainRoom = lazy(()=>import('./ChainRoom').then(m=>({default:m.ChainRoom})));
 
 
@@ -47,6 +49,7 @@ export function ChainDock() {
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
         {guest && chainFlags().chainLoop && <GasBalance />}
+        {chainFlags().yarnToken&&<YarnBalance/>}
         {chainFlags().chainLoop&&<button disabled={busy} onClick={()=>setRoom(true)}>◈ Market</button>}
         <button disabled={busy} onClick={() => store.clear()}>↪ Sign out</button>
         {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}>⇧ Export key</button>
@@ -56,7 +59,7 @@ export function ChainDock() {
             requireFuji(external.chainId ?? 0);
             const config = await loadChainConfig();
             const runtime = chainRuntime(config, guestClient(config.rpcUrl), session.wallet as `0x${string}`);
-            await moveGuestAssets(await runtime.moveAdapter([1n,2n,3n,4n]), external.address!, setLastHash); setMoving(false);
+            await moveGuestAssets(await runtime.moveAdapter(CHAIN_ITEM_IDS), external.address!, setLastHash); setMoving(false);
           })}>Confirm move</button></div>}
         </>}
       </> : <><button disabled={busy} onClick={() => void run(() => guestSignIn(api, store))}>▶ Play as guest</button><button disabled={busy} onClick={() => void run(walletLogin)}>◉ {external.address ? 'Sign in' : 'Connect'}</button></>}

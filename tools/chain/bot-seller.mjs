@@ -10,10 +10,10 @@ const {createPublicClient,createWalletClient,http,parseEther}=await load('viem')
 const {privateKeyToAccount}=await load('viem/accounts');
 const {avalancheFuji}=await load('viem/chains');
 const abi=name=>JSON.parse(readFileSync(resolve(root,`contracts/out/${name}.sol/${name}.json`),'utf8')).abi;
-export async function keepListings({client,wallet,nft,market,price=parseEther('0.001'),target=4}) {
+export async function keepListings({client,wallet,nft,market,price=parseEther('0.001'),target=4,version='v1',currency=0}) {
   if(await client.getChainId()!==43113||await wallet.getChainId()!==43113)throw new Error('Fuji required');
   if(target<3||target>6||price<=0n)throw new Error('Invalid bot settings');
-  const marketAbi=abi('RelicMarket'),nftAbi=abi('RelicNFT'),owner=wallet.account.address;
+  const marketAbi=abi(version==='v2'?'RelicMarketV2':'RelicMarket'),nftAbi=abi('RelicNFT'),owner=wallet.account.address;
   const count=await client.readContract({address:market,abi:marketAbi,functionName:'activeListingCount'});
   let own=0;
   for(let offset=0n;offset<count;offset+=100n){
@@ -32,7 +32,7 @@ export async function keepListings({client,wallet,nft,market,price=parseEther('0
     const approved=await client.readContract({address:nft,abi:nftAbi,functionName:'isApprovedForAll',args:[owner,market]});
     if(!approved)await send(nft,nftAbi,'setApprovalForAll',[market,true]);
     for(let amount=0n;amount<balance&&own+added<target;amount++){
-      await send(market,marketAbi,'list',[id,1n,price]);added++;
+      await send(market,marketAbi,'list',version==='v2'?[id,1n,price,currency]:[id,1n,price]);added++;
     }
     if(own+added>=target)break;
   }
@@ -50,7 +50,8 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
     const wallet=createWalletClient({chain:avalancheFuji,account:privateKeyToAccount(key),transport:http(rpc)});
     const addresses=JSON.parse(readFileSync(resolve(root,'packages/chain/deployments/43113.json'),'utf8'));
     do{
-      const result=await keepListings({client,wallet,nft:addresses.RelicNFT,market:addresses.RelicMarket,price:parseEther(process.env.BOT_PRICE_AVAX||'0.001')});
+      const v2=process.argv.includes('--v2');
+      const result=await keepListings({client,wallet,nft:addresses.RelicNFT,market:v2?process.env.MARKET_V2_ADDRESS:addresses.RelicMarket,version:v2?'v2':'v1',currency:v2?1:0,price:parseEther(v2?(process.env.BOT_PRICE_YARN||'1'):(process.env.BOT_PRICE_AVAX||'0.001'))});
       console.log(`${result.active} active listings; ${result.added} replenished.${result.active<3?' Add owned Relics to the bot wallet.':''}`);
       if(process.argv.includes('--once'))break;
       await new Promise(r=>setTimeout(r,30000));
