@@ -1,0 +1,4 @@
+2026-11-12 H0 START: full prompt read, worktree isolated; no secrets read.
+2026-11-12 H0 baseline: forge 96/96 pass. Web 2372 pass, 2 guide-import wait failures before CHAIN edits. Rerunning affected file to diagnose cold lazy-module load.
+2026-11-12 H0 diagnosis: the two failures pass alone (18/18). Cold concurrent transformation leaves React lazy guide pending beyond testing-library's 1s polling timeout. Test now awaits vi.dynamicImportSettled inside act before asserting the real guide; no tests skipped or game logic changed.
+2026-11-12 H0 DONE: 96 forge and 2383 web tests pass. Chain browser harness does not exist at H0; required acceptance starts H3. H1 core implementation in progress.

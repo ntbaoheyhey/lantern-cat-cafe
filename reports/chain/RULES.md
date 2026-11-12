@@ -1,0 +1,18 @@
+# CHAIN rules
+- Work only in /Users/bao/taskbar-hero-chain; branch codex/chain-2026-11-12.
+- One draft PR to codex/cardrpg-c-2026-11-11; never merge.
+- Fuji 43113 only; preserve deployed RelicNFT/RelicMarket.
+- No deploy, no real-key broadcast, no secret reads/logs/commits.
+- No subagents or parallel Codex sessions.
+- Features behind flags; flag-off behavior unchanged.
+- Testnet — no real value on token/NFT UI.
+- New chain code isolated from C2 battle/stat/drop ownership.
+- Never accept local saves as authoritative issuance evidence.
+- One commit per finished substep; test before push after each card.
+- Record failures/repairs; update Vietnamese status and draft PR each card.
+- Unknowns go to NEEDS-USER.md; use safe defaults and continue.
+- Check STOP-CHAIN before each card; finish current commit then stop.
+- H6 + deployment guide due 2026-11-15 12:00 UTC.
+- H8 dry run due 2026-11-16 12:00 UTC.
+- Report due 2026-11-18 18:00 UTC; hard stop 2026-11-19 12:00 UTC.
+- Submission 2026-11-21 23:59 UTC+7.
