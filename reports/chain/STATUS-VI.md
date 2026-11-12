@@ -2,7 +2,7 @@
 
 Đã tiếp tục đúng worktree/PR441, giữ nguyên kết quả18 giao dịch Fuji do bạn chạy. Vừa sửa cờ guest bật nhầm, kiểm tra ví trước khi ký, số dư gas bị cũ và khôi phục voucher hết hạn.
 
-Ba lượt trình duyệt Anvil liên tiếp đã đạt; cả luồng mất16,2 /18,6 /16,7 giây. Đây là thời gian local, chưa phải đo trên Fuji công khai. Bộ test đầy đủ đã đạt: web2405, Forge118; typecheck và build đạt. Đang lưu checkpoint rồi tiếp tục kiểm tra backend và mô hình kinh tế.
+Ba lượt trình duyệt Anvil liên tiếp đã đạt; cả luồng mất16,2 /18,6 /16,7 giây. Đây là thời gian local, chưa phải đo trên Fuji công khai. Bộ test đầy đủ đã đạt: web2416, SQL628, Forge118; typecheck và build đạt. Backend đã giới hạn JSON/thời gian tải và báo lỗi quota/khôi phục rõ hơn; Deno3 hàm, HTTP local và3 lượt E2E đạt. Đang phân tích mức thưởng/nhu cầu.
 
 H4b/H5 vẫn thiếu dữ liệu nguồn vật phẩm và thưởng có thẩm quyền từ C2. Mô hình kinh tế hiện vẫn vượt ngưỡng phát hành/đốt; chưa bật thưởng định kỳ. Không tự tạo dữ liệu để đánh dấu hoàn tất.
 

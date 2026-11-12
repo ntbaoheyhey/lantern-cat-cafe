@@ -1,9 +1,9 @@
 # CHAIN handoff
-NOW: Resumed existing lane; H1/H4 recovery complete; full units/build, Forge118 and three fresh E2E gates passed.
-NEXT 1: Commit/push recovery and update PR441; retain local-green/remote-blocked distinction.
-NEXT 2: Bound CHAIN Edge request bodies and surface safe quota/recovery failures; local code/tests only.
-NEXT 3: Extend reward-budget sensitivity without presenting provisional C2 supply as measurements.
-RUNNING: No inherited test processes; three fresh recovery E2E runs passed (16.2s/18.6s/16.7s full loops).
+NOW: H1/H4 recovery pushed5c5f3b482; H2/H4 HTTP boundary full gates complete; source checkpoint follows.
+NEXT 1: Commit/push HTTP boundary and update PR441; retain local-green/remote-blocked distinction.
+NEXT 2: Extend reward-budget sensitivity; preserve default failing economic gate and deployed policy.
+NEXT 3: Update evidence/OUTBOX and recheck C2 input; do not fabricate campaign entitlements.
+RUNNING: No test processes; HTTP full units2416web/628SQL, lint/build/typecheck/Deno3/Forge118 pass; E2E19.6/21.1/16.6s.
 KNOWN: Guest flag now respected independently; signing checks wallet identity twice; cleared keys never silently regenerate for transactions.
 KNOWN: Gas balance reads even if sponsor fails, refreshes on confirmed transactions, clears stale RPC balances; mint renews expired vouchers using same nonce.
 KNOWN: Focused31 tests: two initial test-selector failures repaired, failed-file4/4 rerun passed. Web typecheck and Forge118 passed. Baseline web2395 passed.

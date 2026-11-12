@@ -1,3 +1,4 @@
+import {ChainRequestError} from './chain-http.ts';
 import { keccak256, toBytes, type Address, type Hex } from 'viem';
 import { battleCats, createDepthAccount } from '../../../packages/game-rules/src/cardrpg/depth/state.ts';
 import { createBattle } from '../../../packages/game-rules/src/cardrpg/depth/battle.ts';
@@ -24,7 +25,7 @@ export function createJudge({store,signer,nonceUsed,now = () => Date.now()}: {
   store: JudgeStore; signer: VoucherSigner; nonceUsed(nonce: bigint): Promise<boolean>; now?: () => number;
 }) {
   return async (player: string, wallet: Address, ip: string, action: unknown) => {
-    if (action !== 'pass' && action !== 'boss') throw new Error('invalid_action');
+    if (action !== 'pass' && action !== 'boss') throw new ChainRequestError('invalid_action');
     const battle = action === 'boss' ? judgeBoss() : undefined;
     if (battle && !battle.won) throw new Error('boss_not_won');
     const entitlements = await store.reserve(player,wallet.toLowerCase(),ip,!!battle?.won);

@@ -1,3 +1,4 @@
+import {readChainBody, chainFailure, chainStoreError} from '../_shared/chain-http.ts';
 import { createClient } from '@supabase/supabase-js';
 import { getAddress, type Hex } from 'viem';
 import { verifySessionToken } from '../../../packages/auth/src/index.ts';
@@ -13,13 +14,14 @@ Deno.serve(async req => {
   try {session = await verifySessionToken((req.headers.get('authorization') || '').replace(/^Bearer\s+/i,''), {jwtSecret:secret});}
   catch {return json(req, {error:'unauthenticated'}, 401);}
   try {
+    await readChainBody(req,'guest-drip');
     // Reuse the documented existing secret; a dedicated sponsor can override it.
     const key = Deno.env.get('SPONSOR_PRIVATE_KEY') || Deno.env.get('VOUCHER_SIGNER_PRIVATE_KEY');
     if(!key || !/^0x[0-9a-fA-F]{64}$/.test(key)) return json(req,{error:'unavailable'},503);
     const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, {auth:{persistSession:false}});
     const call = async (name: string, args: Record<string, unknown>) => {
       const {data,error} = await db.rpc(name,args);
-      if(error) throw new Error('drip_unavailable');
+      if(error) throw chainStoreError(error);
       return data;
     };
     const store: DripStore = {
@@ -30,5 +32,5 @@ Deno.serve(async req => {
     const drip = createDrip({key:key as Hex, rpcUrl:Deno.env.get('FUJI_RPC_URL') || 'https://api.avax-test.network/ext/bc/C/rpc', store});
     const response = await drip(session.sub, getAddress(session.wallet), await dripIpHash(req.headers.get('x-forwarded-for'), secret));
     return json(req,response, response.status === 'pending' ? 202 : 200);
-  } catch {return json(req,{error:'drip_unavailable'},503);}
+  } catch(error){const failure=chainFailure(error,'drip_unavailable');return json(req,failure.body,failure.status);}
 });

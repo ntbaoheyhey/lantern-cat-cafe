@@ -1,3 +1,4 @@
+import {readChainBody, chainFailure, chainStoreError} from '../_shared/chain-http.ts';
 import {createClient} from '@supabase/supabase-js';
 import {createPublicClient,http,getAddress,type Hex} from 'viem';
 import {verifySessionToken} from '../../../packages/auth/src/index.ts';
@@ -14,14 +15,14 @@ Deno.serve(async req=>{
   try{session=await verifySessionToken((req.headers.get('authorization')||'').replace(/^Bearer\s+/i,''),{jwtSecret:secret});}
   catch{return json(req,{error:'unauthenticated'},401);}
   try{
-    const body=await req.json();
+    const body=await readChainBody(req,'chain-items');
     if(Deno.env.get(body.action==='reward'?'CHAIN_YARN_ENABLED':'CHAIN_ITEMS_ENABLED')!=='1')return json(req,{error:'unavailable'},503);
     const client=createPublicClient({transport:http(Deno.env.get('FUJI_RPC_URL')||'https://api.avax-test.network/ext/bc/C/rpc')});
     if(await client.getChainId()!==43113)throw new Error('wrong_chain');
     const nft=getAddress(fuji.RelicNFT),token=getAddress(Deno.env.get('YARN_TOKEN_ADDRESS')||'');
     const key=(Deno.env.get('VOUCHER_SIGNER_PRIVATE_KEY')||'') as Hex;
     const db=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false}});
-    const rpc=async(name:string,args:Record<string,unknown>)=>{const {data,error}=await db.rpc(name,args);if(error)throw new Error('inventory_unavailable');return data;};
+    const rpc=async(name:string,args:Record<string,unknown>)=>{const {data,error}=await db.rpc(name,args);if(error)throw chainStoreError(error);return data;};
     let result;
     if(body.action==='reward'){
       const contract=getAddress(Deno.env.get('SEASON_REWARDS_ADDRESS')||'');
@@ -40,5 +41,5 @@ Deno.serve(async req=>{
       result=await items(session.sub,getAddress(session.wallet),body);
     }
     return json(req,JSON.parse(JSON.stringify(result,(_,v)=>typeof v==='bigint'?v.toString():v)));
-  }catch{return json(req,{error:'chain_items_unavailable'},503);}
+  }catch(error){const failure=chainFailure(error,'chain_items_unavailable');return json(req,failure.body,failure.status);}
 });

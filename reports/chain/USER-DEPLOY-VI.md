@@ -85,3 +85,16 @@ node tools/chain/fuji-smoke.mjs --fuji
 Gửi đường dẫn `reports/chain/FUJI-SMOKE.md`, địa chỉ hợp đồng và URL demo vào INBOX. Không gửi khóa. `FUJI-SMOKE-DRY-RUN.md` chỉ là chứng cứ Anvil, không phải giao dịch Fuji công khai. Nếu triển khai/thử nghiệm dừng giữa chừng, dùng giao diện Recover để tiếp tục seal cùng nonce; smoke tự động yêu cầu ví mới cho một lượt đầy đủ.
 
 9. Tắt demo khi không sử dụng bằng bốn server flags về 0. YARN/NFT không mang giá trị thật; không mainnet, không đổi ra tiền. Giao dịch game tại Việt Nam còn vấn đề pháp lý cụ thể được nêu trong TOKENOMICS-RESEARCH.md; chưa có quyết định triển khai thương mại.
+
+## Cập nhật xử lý yêu cầu CHAIN (12/11, sau checkpoint recovery)
+
+Bản mới giới hạn JSON ở1.024 byte, thời gian tải10 giây và báo rõ giới hạn/nguyên liệu chưa thanh toán. Chưa được Codex deploy. Sau khi lấy tip xanh của nhánh CHAIN, bạn chạy cùng một khối Terminal; giữ nguyên secret/cờ đang dùng, không chạy lại migration hay deploy hợp đồng:
+
+```sh
+cd /Users/bao/taskbar-hero-chain
+supabase functions deploy guest-drip --project-ref qoalewtxflagoprrxrgh --no-verify-jwt
+supabase functions deploy chain-judge --project-ref qoalewtxflagoprrxrgh --no-verify-jwt
+supabase functions deploy chain-items --project-ref qoalewtxflagoprrxrgh --no-verify-jwt
+```
+
+`--no-verify-jwt` chỉ bỏ kiểm tra JWT của gateway; mỗi hàm vẫn bắt buộc xác minh phiên SIWE riêng như bản trước. Không gửi khóa lên chat.

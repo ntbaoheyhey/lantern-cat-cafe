@@ -5,6 +5,7 @@ import {fileURLToPath,pathToFileURL} from 'node:url';
 import {dirname,resolve} from 'node:path';
 import {spawn,execFileSync} from 'node:child_process';
 import {createServer as httpServer} from 'node:http';
+import {Readable} from 'node:stream';
 import {randomBytes} from 'node:crypto';
 export const root = resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const webRequire = createRequire(resolve(root,'apps/web/package.json'));
@@ -38,10 +39,11 @@ export async function loadModules() {
     const judge = await loader.ssrLoadModule('/supabase/functions/_shared/chain-judge.ts');
     const items = await loader.ssrLoadModule('/supabase/functions/_shared/chain-items.ts');
     const rewards = await loader.ssrLoadModule('/supabase/functions/_shared/chain-rewards.ts');
+    const chainHttp = await loader.ssrLoadModule('/supabase/functions/_shared/chain-http.ts');
     const trade = await loader.ssrLoadModule('/packages/game-rules/src/cardrpg/trade.ts');
     const move = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/move.ts');
     const runtime = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/runtime.ts');
-    return {...db,...auth,...drip,...relic,...judge,...items,...rewards,...trade,...move,...runtime,close:()=>loader.close()};
+    return {...db,...auth,...drip,...relic,...judge,...items,...rewards,...chainHttp,...trade,...move,...runtime,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
 export async function startLocal({web = true} = {}) {
@@ -98,19 +100,20 @@ export async function startLocal({web = true} = {}) {
       await send(botWallet,RelicMarketV2,artifact('RelicMarketV2').abi,'list',[BigInt(id),1n,id%2?viem.parseEther('0.001'):viem.parseEther('1'),id%2?0:1]);
     }
     const one=async(sql,args)=>(await db.query(sql,args)).rows[0]?.r;
+    const chainOne=async(sql,args)=>{try{return await one(sql,args);}catch(error){throw modules.chainStoreError(error);}};
     const store={
-      reserve:a=>one('select public.chain_drip_reserve($1,$2,$3,$4,$5,$6,$7) r',[a.player,a.wallet,a.ip,a.sponsor,a.nonce,a.gasPrice,a.balance]),
-      signed:(wallet,raw,hash)=>one('select public.chain_drip_signed($1,$2,$3) r',[wallet,raw,hash]),
-      result:(wallet,hash,success)=>one('select public.chain_drip_result($1,$2,$3) r',[wallet,hash,success]),
+      reserve:a=>chainOne('select public.chain_drip_reserve($1,$2,$3,$4,$5,$6,$7) r',[a.player,a.wallet,a.ip,a.sponsor,a.nonce,a.gasPrice,a.balance]),
+      signed:(wallet,raw,hash)=>chainOne('select public.chain_drip_signed($1,$2,$3) r',[wallet,raw,hash]),
+      result:(wallet,hash,success)=>chainOne('select public.chain_drip_result($1,$2,$3) r',[wallet,hash,success]),
     };
     const drip=modules.createDrip({key:viem.toHex(sponsor.getHdKey().privateKey),rpcUrl:localRpc,store});
-    const judge=modules.createJudge({signer:voucherSigner,nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),store:{reserve:(player,wallet,ip,boss)=>one('select public.chain_judge_reserve($1,$2,$3,$4) r',[player,wallet,ip,boss])}});
+    const judge=modules.createJudge({signer:voucherSigner,nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),store:{reserve:(player,wallet,ip,boss)=>chainOne('select public.chain_judge_reserve($1,$2,$3,$4) r',[player,wallet,ip,boss])}});
     const items=modules.createItems({signer:voucherSigner,
       paid:(wallet,intent)=>client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'sealPayments',args:[wallet,intent]}),
       nonceUsed:nonce=>client.readContract({address:RelicNFT,abi:nftAbi,functionName:'usedNonces',args:[nonce]}),
-      store:{inventory:(player,wallet)=>one('select public.chain_item_inventory($1,$2) r',[player,wallet]),
-        reserve:(player,wallet,inventory,token,rarity,cost)=>one('select public.chain_seal_reserve($1,$2,$3,$4,$5,$6) r',[player,wallet,inventory,token,rarity,cost]),
-        finalize:(player,intent)=>one('select public.chain_seal_finalize($1,$2) r',[player,intent])}});
+      store:{inventory:(player,wallet)=>chainOne('select public.chain_item_inventory($1,$2) r',[player,wallet]),
+        reserve:(player,wallet,inventory,token,rarity,cost)=>chainOne('select public.chain_seal_reserve($1,$2,$3,$4,$5,$6) r',[player,wallet,inventory,token,rarity,cost]),
+        finalize:(player,intent)=>chainOne('select public.chain_seal_finalize($1,$2) r',[player,intent])}});
     const reward=modules.createTesterReward({key:signerKey,contract:SeasonRewards,
       eligible:async(player,wallet)=>!!await one('select exists(select 1 from public.chain_judge_passes where player_id=$1 and wallet=$2) r',[player,wallet]),
       season:()=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'currentSeason'}),
@@ -131,9 +134,15 @@ export async function startLocal({web = true} = {}) {
         if(incoming.method==='OPTIONS'){outgoing.writeHead(204).end();return;}
         if(incoming.url==='/health'){outgoing.end('local-chain');return;}
         if(incoming.method!=='POST'){outgoing.writeHead(405).end();return;}
-        const chunks=[];let size=0;for await(const chunk of incoming){size+=chunk.length;if(size>8192){outgoing.writeHead(413).end();return;}chunks.push(chunk);}
-        const input=JSON.parse(Buffer.concat(chunks).toString()||'{}');
-        const name=incoming.url.replace('/functions/v1/','');let result;
+        const name=incoming.url.replace('/functions/v1/','');let input,result;
+        if(['guest-drip','chain-items','chain-judge'].includes(name)){
+          const abort=new AbortController(),cancel=()=>abort.abort();incoming.once('aborted',cancel);
+          try{input=await modules.readChainBody(new Request(localApi+incoming.url,{method:'POST',headers:incoming.headers,body:Readable.toWeb(incoming),duplex:'half',signal:abort.signal}),name);}
+          finally{incoming.off('aborted',cancel);}
+        }else{
+          const chunks=[];let size=0;for await(const chunk of incoming){size+=chunk.length;if(size>8192){outgoing.writeHead(413).end();return;}chunks.push(chunk);}
+          input=JSON.parse(Buffer.concat(chunks).toString()||'{}');
+        }
         if(name==='auth-nonce')result=await modules.issueNonce(authDeps);
         else if(name==='auth-verify')result=await modules.verifySignIn(authDeps,input);
         else {
@@ -145,7 +154,11 @@ export async function startLocal({web = true} = {}) {
           else {outgoing.writeHead(404).end();return;}
         }
         outgoing.setHeader('content-type','application/json');outgoing.end(stringify(result));
-      }catch(error){outgoing.writeHead(error?.name==='AuthError'?401:503).end(stringify({error:'local_request_failed'}));}
+      }catch(error){
+        const failure=modules.chainFailure(error,'local_request_failed');
+        outgoing.setHeader('content-type','application/json');
+        outgoing.writeHead(error?.name==='AuthError'?401:failure.status).end(stringify(failure.body));
+      }
     });
     await new Promise((r,j)=>{server.once('error',j);server.listen(5982,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
     mkdirSync(resolve(root,'apps/web/public'),{recursive:true});

@@ -1,5 +1,7 @@
+import { ChainApiError } from './api';
 /** Viem's context names the chain even when the failure is gas, RPC or a revert. */
 export function friendlyError(error: unknown): string {
+  if (error instanceof ChainApiError) return error.message;
   const causes: Error[] = [];
   let cause = error;
   while (cause instanceof Error && !causes.includes(cause)) {
