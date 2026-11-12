@@ -76,3 +76,5 @@ Each diagnostic below uses50 complete model seeds80001–80050 ×1800s from froz
 | d12 | [3.2, 3.7, 1.0] / [1.2, 1.1, 2.65] | 12.794 / 0 | 74.95/95.76 | 71.35/77.53 |
 
 Candidate d12 is the prospective pass4: ordinary HP3.2/3.7/1 and ATK1.2/1.1/2.65; boss values unchanged. Its first five model seeds also meet all metric ranges; this does not replace the real UI cohort. Freeze source, run existing fixed-budget/replay tests, then measure500 model seeds80001–80500 and five real UI seeds80001–80005 for1800s. No acceptance before both finish.
+
+Pass4 complete500 model: first-loss median12.664m,earliest3.224m,3 early seeds;boss77.86/96.72s;HP71.11/77.08%. **Rejected** for early losses. The five realUI traces and partial catalog screen are stopped early once the model rejection is established; retained as partial diagnostics, never labeled completed acceptance. UI frame delivery at150s was16.67ms/frame with0%>50ms and no errors. Pass5 diagnostic reduces chapter1/2 ATK back to1.1/0.95 while retaining the new HP curve.
