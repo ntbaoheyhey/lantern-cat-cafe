@@ -6,19 +6,21 @@ import {Rng} from '../../rng';
 import {clone} from '../internal';
 
 const fresh=()=>R.setFormationC2(R.setGameplayA6(R.setGameplayV4(R.createDepthAccount(90001,0),true),true));
-it('caps equipment taunts per encounter while preserving Riposte and legacy replay behavior',()=>{
- for(const c2 of [true,false]){
+it('caps equipment Shelter and Riposte per encounter while preserving native Panko and legacy replay behavior',()=>{
+ for(const c2 of [true,false])for(const cardId of ['mochi','panko']){
   const s=fresh(),setup={seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2};
-  const battle=R.createBattle(setup),mochi=battle.actors.find(a=>a.id==='mochi')!;
+  const battle=R.createBattle(setup),mochi=battle.actors.find(a=>a.id===cardId)!;
   mochi.setEffects=['defend-riposte'];
   for(let turn=0;turn<2;turn++){
    battle.queue=[mochi.id];mochi.cooldowns={};mochi.statuses=[];
    expect(R.act(battle,{actorId:mochi.id,skillId:'defend',targetId:mochi.id})).toBe(true);
    expect(mochi.statuses.some(s=>s.id==='shelter')).toBe(!c2||turn===0);
-   expect(mochi.statuses.some(s=>s.id==='riposte')).toBe(true);
+   const native=cardId==='panko'?1:0,equipment=!c2||turn===0?1:0;
+   expect(mochi.statuses.find(s=>s.id==='riposte')?.stacks??0).toBe(native+equipment);
   }
-  const next=R.createBattle(setup).actors.find(a=>a.id==='mochi')!;
+  const next=R.createBattle(setup).actors.find(a=>a.id===cardId)!;
   expect(next.bonuses.bellsteelShelters).toBeUndefined();
+  expect(next.bonuses.bellsteelRipostes).toBeUndefined();
  }
 });
 it('discloses normalized live source odds, including exhausted daily drops and exact templates',()=>{

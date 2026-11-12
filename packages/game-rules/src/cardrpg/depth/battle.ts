@@ -510,7 +510,10 @@ export function act(b: Battle, choice: Choice): boolean {
         applyStatus(b,actor,actor,'shelter');
         if(b.initial.formationC2)actor.bonuses.bellsteelShelters=(actor.bonuses.bellsteelShelters??0)+1;
       }
-      applyStatus(b,actor,actor,'riposte');
+      if(!b.initial.formationC2||(actor.bonuses.bellsteelRipostes??0)<ECONOMY_C2.sets.bellsteelRipostesPerBattle){
+        applyStatus(b,actor,actor,'riposte');
+        if(b.initial.formationC2)actor.bonuses.bellsteelRipostes=(actor.bonuses.bellsteelRipostes??0)+1;
+      }
     }
     if(hasEffect(actor,'unique:panlid'))applyStatus(b,actor,actor,'riposte',b.v4?1:2);
     if(hasEffect(actor,'unique:doorstop'))gearGrant(b,actor,actor,'unique:doorstop','heal',b.v4?8:25);

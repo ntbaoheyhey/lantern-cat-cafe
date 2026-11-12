@@ -32,7 +32,7 @@ export const AFFIX_TEXT_V4:Record<string,string>={openingCharge:'Opening shield'
 export function setTextV4<T extends {id:string;two:string;four:string}>(set:T,enabled:boolean,c2=false):T{
  const text=enabled?{...set,...SET_TEXT_V4[set.id]}:set;
  if(c2&&enabled&&set.id==='hearthloom')return {...text,four:`Defend links a weak ally; ${ECONOMY_C2.sets.hearthloomShareBp/100}% of HP damage is shared.`};
- if(c2&&enabled&&set.id==='bellsteel')return {...text,four:`Defend grants one Riposte; Shelter on the first ${ECONOMY_C2.sets.bellsteelSheltersPerBattle} Defend per battle.`};
+ if(c2&&enabled&&set.id==='bellsteel')return {...text,four:`Defend: Riposte ${ECONOMY_C2.sets.bellsteelRipostesPerBattle}×, Shelter ${ECONOMY_C2.sets.bellsteelSheltersPerBattle}× per battle.`};
  return text;
 }
 export function gearStoryV4(id:string):string{const t=GEAR_BY_ID[id]!;return t.unique?UNIQUE_TEXT_V4[t.unique]!:SET_TEXT_V4[t.setId]!.two;}
