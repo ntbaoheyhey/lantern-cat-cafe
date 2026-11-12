@@ -1,0 +1,216 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+
+ ❯ src/game/cardrpg/chain/GasBalance.test.tsx (4 tests | 2 failed) 2087ms
+   × offers the faucet when a previously confirmed grant has been spent 1011ms
+   × clears stale funds on an RPC failure 1011ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/chain/GasBalance.test.tsx > offers the faucet when a previously confirmed grant has been spent
+TestingLibraryElementError: Found multiple elements with the role "status"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<output[39m
+  [33mdata-testid[39m=[32m"chain-gas"[39m
+[36m>[39m
+  [0m▲ 0.0000[0m
+[36m</output>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mrole[39m=[32m"status"[39m
+[36m>[39m
+  [0mNo gas. Open faucet.[0m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"chain-gas"[39m
+    [36m>[39m
+      [36m<output[39m
+        [33mdata-testid[39m=[32m"chain-gas"[39m
+      [36m>[39m
+        [0m▲ 0.0000[0m
+      [36m</output>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mNo gas. Open faucet.[0m
+      [36m</p>[39m
+      [36m<button>[39m
+        [0m↻ Retry[0m
+      [36m</button>[39m
+      [36m<a[39m
+        [33mhref[39m=[32m"https://build.avax.network/console/primary-network/faucet"[39m
+        [33mrel[39m=[32m"noreferrer"[39m
+        [33mtarget[39m=[32m"_blank"[39m
+      [36m>[39m
+        [0m↗ Faucet[0m
+      [36m</a>[39m
+      [36m<button>[39m
+        [0m▣ Copy address[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"chain-gas"[39m
+      [36m>[39m
+        [36m<output[39m
+          [33mdata-testid[39m=[32m"chain-gas"[39m
+        [36m>[39m
+          [0m▲ 0.0000[0m
+        [36m</output>[39m
+        [36m<p[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [0mNo gas. Open faucet.[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0m↻ Retry[0m
+        [36m</button>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"https://build.avax.network/console/primary-network/faucet"[39m
+          [33mrel[39m=[32m"noreferrer"[39m
+          [33mtarget[39m=[32m"_blank"[39m
+        [36m>[39m
+          [0m↗ Faucet[0m
+        [36m</a>[39m
+        [36m<button>[39m
+          [0m▣ Copy address[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ src/game/cardrpg/chain/GasBalance.test.tsx:34:9
+     32| it('offers the faucet when a previously confirmed grant has been spent…
+     33|   balance.mockResolvedValue(0n); render(<GasBalance/>);
+     34|   await waitFor(() => expect(screen.getByRole('status').textContent).t…
+       |         ^
+     35|   expect(screen.getByRole('link', {name: '↗ Faucet'})).toBeTruthy();
+     36| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/game/cardrpg/chain/GasBalance.test.tsx > clears stale funds on an RPC failure
+TestingLibraryElementError: Found multiple elements with the role "status"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<output[39m
+  [33mdata-testid[39m=[32m"chain-gas"[39m
+[36m/>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mrole[39m=[32m"status"[39m
+[36m>[39m
+  [0mGas unavailable.[0m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"chain-gas"[39m
+    [36m>[39m
+      [36m<output[39m
+        [33mdata-testid[39m=[32m"chain-gas"[39m
+      [36m/>[39m
+      [36m<p[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0mGas unavailable.[0m
+      [36m</p>[39m
+      [36m<button>[39m
+        [0m↻ Retry[0m
+      [36m</button>[39m
+      [36m<a[39m
+        [33mhref[39m=[32m"https://build.avax.network/console/primary-network/faucet"[39m
+        [33mrel[39m=[32m"noreferrer"[39m
+        [33mtarget[39m=[32m"_blank"[39m
+      [36m>[39m
+        [0m↗ Faucet[0m
+      [36m</a>[39m
+      [36m<button>[39m
+        [0m▣ Copy address[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"chain-gas"[39m
+      [36m>[39m
+        [36m<output[39m
+          [33mdata-testid[39m=[32m"chain-gas"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [0mGas unavailable.[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0m↻ Retry[0m
+        [36m</button>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"https://build.avax.network/console/primary-network/faucet"[39m
+          [33mrel[39m=[32m"noreferrer"[39m
+          [33mtarget[39m=[32m"_blank"[39m
+        [36m>[39m
+          [0m↗ Faucet[0m
+        [36m</a>[39m
+        [36m<button>[39m
+          [0m▣ Copy address[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ Proxy.waitForWrapper ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ src/game/cardrpg/chain/GasBalance.test.tsx:42:9
+     40|   balance.mockRejectedValue(new Error('RPC unavailable'));
+     41|   act(() => window.dispatchEvent(new Event('chain:changed')));
+     42|   await waitFor(() => expect(screen.getByRole('status').textContent).t…
+       |         ^
+     43|   expect(screen.getByTestId('chain-gas').textContent).toBe('');
+     44| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  2 failed | 29 passed (31)
+   Start at  15:11:00
+   Duration  8.53s (import 40%, environment 40%, tests 16%, transform 3%)
+
+Environment  jsdom was created 7 times · 6.20s total, 40% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/chain

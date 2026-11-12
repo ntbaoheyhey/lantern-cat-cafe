@@ -1,6 +1,7 @@
 import type { PGlite } from "@electric-sql/pglite";
 import { ENDPOINTS, ERROR_CODES, HTTP_STATUS } from "@taskbar-hero/api-contract";
 import { CONFIG, relicIdFor } from "@taskbar-hero/game-rules";
+import { CHAIN_ITEM_IDS } from "../../../packages/game-rules/src/cardrpg/trade.ts";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -90,8 +91,9 @@ describe("R1 consistency: 1. SQL CHECK rarity/slot lists == CONFIG", () => {
       order by table_name, column_name
     `);
 
-    // Expected tables with rarity: gear, items (v2), relic_forges, relic_vouchers; slot: gear, items (v2)
+    // Sealed ERC-1155 items store the numeric on-chain rarity, checked separately below.
     expect(colRes.rows).toEqual([
+      { table_name: "chain_seals", column_name: "rarity" },
       { table_name: "gear", column_name: "rarity" },
       { table_name: "gear", column_name: "slot" },
       { table_name: "items", column_name: "rarity" },
@@ -99,6 +101,9 @@ describe("R1 consistency: 1. SQL CHECK rarity/slot lists == CONFIG", () => {
       { table_name: "relic_forges", column_name: "rarity" },
       { table_name: "relic_vouchers", column_name: "rarity" },
     ]);
+    const seals = await db.query<{ def: string }>(`select pg_get_constraintdef(oid) as def
+      from pg_constraint where conrelid='chain_seals'::regclass and conname='chain_seals_rarity_check'`);
+    expect(seals.rows).toEqual([{ def: "CHECK (((rarity >= 0) AND (rarity <= 3)))" }]);
   });
 
   it("rejects invalid rarity or slot on insertion / allows all valid CONFIG rarities and slots", async () => {
@@ -233,9 +238,9 @@ describe("R1 consistency: 2. SQL level bounds == gear.maxLevel/boss.maxLevel", (
 });
 
 describe("R1 consistency: 3. public/relics/{id}.json + 64-hex copies exist and match", () => {
-  const relicIds = CONFIG.rarities.map((r) => relicIdFor(r));
+  const relicIds = [...new Set([...CONFIG.rarities.map((r) => relicIdFor(r)), ...CHAIN_ITEM_IDS.map(Number)])];
 
-  it("every relic id from CONFIG rarities has decimal and 64-hex json metadata files that match exactly", () => {
+  it("every Relic and sealed-item id has matching decimal and 64-hex metadata", () => {
     expect(relicIds.length).toBeGreaterThan(0);
 
     for (const id of relicIds) {

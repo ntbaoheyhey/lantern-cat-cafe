@@ -65,7 +65,7 @@ export default defineConfig({
     },
     {
       name: 'classic',
-      testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**', 'server/**'],
+      testIgnore: ['layout/**', 'v2/**', 'ui/**', 'qa/**', 'server/**', 'chain/**'],
       use: { baseURL: classicURL, viewport: desktopViewport, launchOptions },
     },
     {

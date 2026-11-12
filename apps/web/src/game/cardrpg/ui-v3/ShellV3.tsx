@@ -1,4 +1,5 @@
 import {TextDietContext,HelpC2} from './TextDietC2';
+import {chainFlags} from '../chain/flags';
 import './text-diet-c2.css';
 import { FirstStepsA6, IntroductionA6, firstStepViewA6 } from './IntroductionA6';
 import type { EIP1193Provider } from 'viem';
@@ -90,6 +91,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
    {R.gameplayA6(m.state)&&<header className="a6-menu-heading"><Icon name="cats"/><div><small>The Lantern</small><h2>Cafe notes</h2></div><button aria-label="Close menu" onClick={closeMenu}><Icon name="close"/></button></header>}
    {R.gameplayA6(m.state)&&introduced('tower')&&<button className="a6-menu-link" aria-label="Yarn Tower" onClick={()=>go('tower')}><span>Yarn Tower</span><small>Floors &amp; milestone gifts</small></button>}
    <button className="a6-menu-link" aria-label="Open settings" onClick={()=>go('save')}><span>{m.state.formationC2?'⚙ Settings':'Open settings'}</span>{R.gameplayA6(m.state)&&<small>Sound, speed &amp; comfort</small>}</button>
+   {Object.values(chainFlags()).some(Boolean)&&<button className="a6-menu-link" aria-label="Open Fuji wallet" onClick={()=>{closeMenu();window.dispatchEvent(new Event('chain:wallet'));}}><span>◈ Wallet</span></button>}
    <button className="a6-menu-link" aria-label="Export / import" onClick={()=>go('save')}><span>{m.state.formationC2?'▣ Saves':'Export / import'}</span>{R.gameplayA6(m.state)&&<small>Keep or restore your save</small>}</button>
    <button className="a6-menu-link" aria-label="Read Field guide" onClick={()=>go('codex')}><span>{m.state.formationC2?'? Guide':'Read Field guide'}</span>{R.gameplayA6(m.state)&&<small>Cats, foes &amp; battle notes</small>}</button>
    <details><summary>Read credits</summary><p>The Lantern · original cats, music and cafe. Built for Taskbar Hero.</p></details>{showReviewTools(true)&&<><button onClick={()=>go('evidence')}>Before / after</button><Suspense fallback={null}><FeelLab m={m} home/></Suspense><div className="uv-demo-tools"/></>}
