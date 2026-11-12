@@ -40,3 +40,17 @@ The main profiles accumulate roughly22,000 sealed items with no deployed item si
 - No user key, secret, public signing or public deployment was needed for this research.
 
 Evidence: `tests/economy-unit.log`, `tests/economy-simulation.log`, `tests/economy-strict.log`; `tools/chain/token-sim.test.mjs`, `contracts/test/SeasonPolicy.t.sol`; generated `docs/chain/tokenomics.json`,16 CSVs, HTML/SVG and Vietnamese pitch.
+
+## Signed reward-budget sensitivity
+
+The63 additional52-week runs change only hypothetical signed entitlements (6 casual/12 other YARN scaled by100%,75%,50%,25%,10%,5%,0%) and demand (100%,50%,10%). Every run retains the20-YARN tester grant, deployed12-YARN routine ceiling/controller, fees and provisional supply. Default scenarios and the failing strict acceptance gate remain unchanged.
+
+| Demand relative to the current assumption | Largest tested nonzero maximum passing all three mixes | Interpretation |
+|---|---:|---|
+| 100% | 3 YARN/week; casual1.5 | Claims/burn1.5317 /1.7533 /1.9781; little margin in farmer-heavy case |
+| 50% | 0.6 YARN/week; casual0.3 | A3-YARN maximum fails all mixes; even1.2 misses farmer-heavy |
+| 10% | None | Zero routine payouts still give grant/burn3.0320 /3.0356 /2.8792 |
+
+This finite grid cannot identify an optimal budget or validate demand. Lowering signatures cannot make initial grants disappear or create buyers. E1/E10 support testing conservative issuance; neither supplies our coefficients. No fees, allocations, deployed contracts or reward issuer settings changed. Corrected wording makes explicit that the contract reverts oversized claims; a future authoritative issuer must construct a voucher within the current remaining cap, as assumed in the model.
+
+Evidence: tools/chain/token-sim.test.mjs; tests/budget-tools.log and budget-simulation.log; docs/chain/token-reward-sensitivity.csv and tokenomics.json/html. H5 remains open for C2 supply/authority and real demand.

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {UNIT, nextMultiplier, routineBudget, simulate, summarize, mixes, validateSupply} from './token-sim.mjs';
+import {UNIT, nextMultiplier, routineBudget, simulate, summarize, mixes, validateSupply, rewardSensitivity} from './token-sim.mjs';
 
 test('policy reproduces deployed Solidity fixtures including grant denominator and zero lock', () => {
   assert.equal(nextMultiplier(UNIT, 32n * UNIT, 16n * UNIT), 625n * UNIT / 1000n);
@@ -41,4 +41,24 @@ test('custom supply must include valid rates and provenance', () => {
   assert.throws(() => validateSupply({rarePerActiveWeek: -1, epicPerActiveWeek: 0, source: 'test'}));
   assert.throws(() => validateSupply({rarePerActiveWeek: 0, epicPerActiveWeek: 0}));
   assert.throws(() => validateSupply({rarePerActiveWeek: Infinity, epicPerActiveWeek: 0, source: 'test'}));
+});
+
+test('smaller entitlements leave tester grants and the deployed first-season cap unchanged', () => {
+  const original = simulate(mixes[2]), small = simulate(mixes[2], {entitlementBps: 2500});
+  assert.equal(small.rows[0].testerEmission, 20000);
+  assert(small.rows.slice(0, 13).every(r => r.routineBudget === 12));
+  assert.equal(small.rows[12].cumulativeEmission, original.rows[12].cumulativeEmission / 4);
+  const stopped = simulate(mixes[2], {entitlementBps: 0});
+  assert(stopped.rows.every(r => r.emission === 0 && r.inclusiveEmission === 20000));
+  for (const entitlementBps of [-1, 10001, .5, NaN, Infinity]) assert.throws(() => simulate(mixes[0], {entitlementBps}));
+});
+
+test('sensitivity cannot replace the failing default or promise safety at weak demand', () => {
+  const sensitivity = rewardSensitivity();
+  assert.equal(sensitivity.rows.length, 63);
+  assert.equal(sensitivity.envelopes[0].largestTestedMaxEntitlement, 3);
+  assert.equal(sensitivity.envelopes[1].largestTestedMaxEntitlement, .6);
+  assert.equal(sensitivity.envelopes[2].largestTestedMaxEntitlement, null);
+  assert(sensitivity.rows.filter(r => r.demand === .1 && r.entitlementBps === 0).every(r => !r.flowPass));
+  assert(mixes.every(m => !summarize(simulate(m)).flowPass));
 });

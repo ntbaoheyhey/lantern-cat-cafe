@@ -41,16 +41,18 @@ export const routineBudget = multiplier => 12n * UNIT * multiplier / UNIT;
 
 export function simulate(mix, {
   profile = 'implemented-sinks', controlled = true, demand = 1, paidMarketShare = 1,
-  supply = provisionalSupply,
+  supply = provisionalSupply, entitlementBps = 10000,
 } = {}) {
   validateSupply(supply);
+  assert(Number.isInteger(entitlementBps) && entitlementBps >= 0 && entitlementBps <= 10000, 'Invalid entitlement scale');
   assert(['demo', 'implemented-sinks', 'roadmap'].includes(profile), 'Invalid profile');
   assert(demand >= 0 && demand <= 1 && paidMarketShare >= 0 && paidMarketShare <= 1, 'Invalid demand');
   assert.equal(mix.shares.length, 4);
   assert(Math.abs(mix.shares.reduce((a, b) => a + b, 0) - 1) < 1e-9);
   const random = rng(mix.seed);
   const players = mix.shares.flatMap((share, type) => Array.from({length: Math.round(share * 1000)}, () => ({
-    type: TYPES[type], hours: [3, 10, 30, 70][type], requested: BigInt([6, 12, 12, 12][type]) * UNIT,
+    type: TYPES[type], hours: [3, 10, 30, 70][type],
+    requested: BigInt([6, 12, 12, 12][type]) * UNIT * BigInt(entitlementBps) / 10000n,
     balance: 20n * UNIT, rewards: 20n * UNIT, routine: 0n, h: 0, stock: 0,
     // Demo cohort assumes all signed up and completed the fixed boss: 2 pass Relics + 1 boss Relic.
     relics: profile === 'demo' ? 3 : 0, material: profile === 'demo' ? 1 : 0,
@@ -65,7 +67,9 @@ export function simulate(mix, {
     for (const p of players) {
       if (random() > .9) continue;
       p.h += p.hours;
-      // The contract caps claims. It does not multiply every requested entitlement by the policy.
+      // Assume an authoritative issuer signs only the lesser of the entitlement
+      // and remaining cap. The contract reverts an oversized voucher; it never
+      // partially pays one. There is no deployed routine issuer yet.
       const reward = profile === 'demo' ? 0n : min(p.requested, routineBudget(multiplier));
       p.balance += reward; p.rewards += reward; p.routine += reward; emitted += reward; weekE += reward;
       const spend = (amount, kind) => {
@@ -140,17 +144,32 @@ export function simulate(mix, {
       seasonE = 0n; seasonB = 0n;
     }
   }
-  return {name: mix.name, profile, controlled, demand, paidMarketShare, rows};
+  return {name: mix.name, profile, controlled, demand, paidMarketShare, entitlementBps, rows};
 }
 
 export function summarize(s) {
   const r = s.rows.at(-1);
   return {mix: s.name, profile: s.profile, demand: s.demand, paidMarketShare: s.paidMarketShare,
+    entitlementBps: s.entitlementBps, maxEntitlement: 12 * s.entitlementBps / 10000,
     emissionBurn: ratio(r.inclusiveEmission, r.cumulativeBurn), routineEmissionBurn: ratio(r.cumulativeEmission, r.cumulativeBurn),
     farmerCasual: ratio(r.farmerPerHour, r.casualPerHour), top1: r.topOnePercent, botShare: r.botRewardShare,
     sealedStock: r.sealedStock, finalWeeklyCap: r.routineBudget,
     flowPass: r.inclusiveEmission <= 2 * r.cumulativeBurn,
     farmingPass: r.farmerPerHour <= 3 * r.casualPerHour};
+}
+
+/** Smaller hypothetical signed entitlements, not a change to the contract cap,
+ * tester grant, fees, allocation, supply or default acceptance scenario. */
+export function rewardSensitivity(supply = provisionalSupply) {
+  const scales = [10000, 7500, 5000, 2500, 1000, 500, 0], demands = [1, .5, .1];
+  const rows = demands.flatMap(demand => scales.flatMap(entitlementBps =>
+    mixes.map(mix => summarize(simulate(mix, {supply, demand, entitlementBps})))));
+  const envelopes = demands.map(demand => {
+    const candidates = scales.filter(bps => bps > 0 && rows.filter(r => r.demand === demand && r.entitlementBps === bps)
+      .every(r => r.flowPass && r.farmingPass));
+    return {demand, largestTestedMaxEntitlement: candidates.length ? 12 * Math.max(...candidates) / 10000 : null};
+  });
+  return {rows, envelopes};
 }
 
 const escape = text => String(text).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -176,21 +195,26 @@ function main() {
     simulate({...mixes[2], name: 'fee-bypass'}, {supply, paidMarketShare: .2}),
   ];
   const all = [...scenarios, ...demo, ...roadmap, ...uncontrolled, ...stress];
+  const sensitivity = rewardSensitivity(supply);
   const summary = all.map(summarize);
   const acceptance = scenarios.every(s => {const r = summarize(s); return r.flowPass && r.farmingPass;});
-  const data = {modelVersion: 2, supply, assumptions: {
+  const data = {modelVersion: 3, supply, assumptions: {
     cohort: '1000 pre-enrolled accounts; one 20-YARN tester grant each; no growth or attrition',
     demo: 'One Star Thread and three free Relics after fixed boss/pass, no routine reward or future sinks',
     implementedSinks: 'Counterfactual recurring C2 supply/routine issuer; only existing seal and YARN sale burns',
     roadmap: 'Counterfactual plus unshipped forge and cosmetic sinks; not acceptance evidence',
     demand: '90% weekly activity; seal uptake rate*demand; 20% trade chance*demand; price 20 YARN; non-bot buyers only',
-    policy: 'SeasonRewards integer arithmetic; all claims incl tester grants; routine min(entitlement, weekly cap)',
+    policy: 'SeasonRewards integer arithmetic; all claims incl tester grants; hypothetical issuer signs min(entitlement, remaining cap). Contract rejects oversized claims.',
+    rewardSensitivity: '63 additional fixed-seed runs vary signed entitlements only; contract caps/20-YARN grants/fees unchanged. No calibrated setting or default replacement.',
     unlocks: 'Maximum hypothetical external unlocks, not deployed vesting or observed circulation',
     funding: 'Allocation envelope, not the live 9960-YARN reward pool; demo cohort alone needs 20000 YARN',
     scarcity: '21 seals/week approximates 3/day; does not simulate daily scheduling or stock valuation',
     adversary: 'Bots are wallets, not verified humans; correlated wallet ownership is unmeasured',
   }, acceptance: {standardImplementedSinksPass: acceptance, economicStatus: acceptance ? 'PASS UNDER ASSUMPTIONS ONLY' : 'NOT MET', integrity: 'PASS'},
-  summary, scenarios, demo, roadmap, uncontrolled, stress};
+  summary, scenarios, demo, roadmap, uncontrolled, stress, sensitivity};
+  const sensitivityKeys = Object.keys(sensitivity.rows[0]);
+  writeFileSync(resolve(out, 'token-reward-sensitivity.csv'), sensitivityKeys.join(',') + '\n'
+    + sensitivity.rows.map(row => sensitivityKeys.map(key => row[key] === null ? '' : row[key]).join(',')).join('\n') + '\n');
   for (const s of all) {
     const keys = Object.keys(s.rows[0]);
     const name = `${s.name}-${s.profile}-${s.controlled ? 'controlled' : 'uncontrolled'}`;
@@ -199,11 +223,15 @@ function main() {
   writeFileSync(resolve(out, 'tokenomics.json'), JSON.stringify(data, null, 2) + '\n');
   const table = list => `<div class="table"><table><thead><tr><th>Mix</th><th>Emission / burn¹</th><th>Farmer / casual per hour²</th><th>Bot reward share</th><th>Flow gate</th></tr></thead><tbody>${list.map(s => {const r = summarize(s); return `<tr><td>${escape(s.name)}</td><td>${fmt(r.emissionBurn, '×')}</td><td>${fmt(r.farmerCasual, '×')}</td><td>${fmt(r.botShare * 100, '%')}</td><td>${r.flowPass ? 'PASS assumptions' : 'NOT MET'}</td></tr>`;}).join('')}</tbody></table></div>`;
   const legend = `<p>${mixes.map((s, i) => `<span style="color:${colors[i]}">● ${s.name}</span>`).join(' &nbsp; ')}</p>`;
+  const budgetTable = `<section><h2>5. Reward budget sensitivity</h2><p>63 additional 52-week runs vary hypothetical signed entitlements. The 20-YARN grant, deployed routine ceiling, fees, allocation and provisional supply stay fixed. Casual entitlements are half the displayed maximum. These are experiments, not deployed rewards or calibrated recommendations.</p><div class="table"><table><thead><tr><th>Assumed demand</th><th>Maximum YARN / week</th><th>Casual-heavy claims / burn</th><th>Balanced</th><th>Farmer-heavy</th><th>All flow gates</th></tr></thead><tbody>${sensitivity.rows.filter(r => r.mix === mixes[0].name).map(first => {
+    const group = sensitivity.rows.filter(r => r.demand === first.demand && r.entitlementBps === first.entitlementBps);
+    return `<tr><td>${first.demand * 100}%</td><td>${fmt(first.maxEntitlement)}${first.entitlementBps === 0 ? ' (no routine)' : ''}</td>${group.map(r => `<td>${fmt(r.emissionBurn, '×')}</td>`).join('')}<td>${group.every(r => r.flowPass) ? 'PASS assumptions' : 'NOT MET'}</td></tr>`;
+  }).join('')}</tbody></table></div><p>Largest tested nonzero maximum passing both gates in every mix: ${sensitivity.envelopes.map(e => `${e.demand * 100}% demand: ${e.largestTestedMaxEntitlement === null ? 'none' : e.largestTestedMaxEntitlement + ' YARN/week'}`).join('; ')}. This is a finite grid, not an optimized threshold. At 10% demand even zero routine rewards cannot absorb the initial grant sufficiently.</p><p>Neither a smaller signed entitlement nor the season controller creates buyers. E1/E10 motivate this sensitivity; they do not establish its supply or demand coefficients. Default economic acceptance above remains unchanged. <a href="token-reward-sensitivity.csv">Download the complete sensitivity table</a>.</p></section>`;
   const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>YARN · evidence and 52-week stress tests</title><style>body{background:#101b2b;color:#eef4ff;font:16px/1.6 system-ui;max-width:1080px;margin:40px auto;padding:0 24px}h1{font-size:clamp(28px,5vw,44px);line-height:1.2}h2{line-height:1.3}table{border-collapse:collapse;width:100%;min-width:650px}td,th{padding:10px;border-bottom:1px solid #34435b;text-align:left}.table{overflow:auto}svg{width:100%;height:auto}a{color:#75dbd0}section{border:1px solid #34435b;border-radius:16px;padding:20px;margin:20px 0}small{color:#bac6d6}.status{color:#ffd29a;font-weight:700}</style><p>FUJI 43113 · Testnet — no real value</p><h1>The demo works. Sustainable demand is unproven.</h1><p class="status">Current-sink economic acceptance: ${data.acceptance.economicStatus}. Model accounting checks: PASS.</p><p>52 weeks · 1,000 pre-enrolled accounts · fixed seeds · no growth. Routine issuance and C2 campaign supply are not shipped. This cohort needs 20,000 YARN for tester grants alone; it is not a forecast for the live reward pool.</p><section><h2>1. Current judge demo only</h2><p>One 20-YARN grant, one Star Thread and three free Relics per account after the starter pass/boss. No recurring reward, Epic issuance, forge or cosmetic burn. Repeated sales still assume buyers; no measured retention or liquidity.</p>${table(demo)}</section><section><h2>2. Proposed routine rewards, implemented sinks</h2><p>Only sealing and YARN market fees burn. Campaign supply is provisional: ${supply.rarePerActiveWeek} rare + ${supply.epicPerActiveWeek} Epic per active account/week. Provenance: ${escape(supply.source)}. A 20-YARN sale price and uptake are hypotheses; players can use any price or a fee-free venue.</p>${table(scenarios)}</section><small>¹ All reward claims, including initial grants; not gross token minting. Zero burn is undefined, never a hidden pass. ² Routine reward/hour. Top 1% in CSV/JSON is account reward share including grants, not human ownership concentration.</small>${legend}${chart(scenarios, 'burnEmission', 'Implemented sinks: cumulative burn / all claims', .5)}${chart(scenarios, 'routineBudget', 'Deployed policy: maximum routine YARN per account/week')}${chart(scenarios, 'sealedStock', 'Sealed inventory: no deployed item sink')}${chart(scenarios, 'circulatingScenario', 'Hypothetical maximum unlocks, not measured circulation')}<section><h2>3. Unshipped roadmap sensitivity</h2><p>Add optional forge (3 YARN + one sealed item) and cosmetics (2 YARN). These burns must not be counted as current demand. Passing this table would not close the implementation or calibration gap.</p>${table(roadmap)}</section><section><h2>4. Failure and abuse cases</h2><p>Low demand is 10% of assumed uptake; half-bots has 50% bot wallets; fee-bypass routes 80% of trades away from V2 fees. Bots can earn/hoard but are not invented cosmetic buyers. Zero-demand stops routine rewards after week 13, while new tester grants remain possible in the actual contract. Wallet caps do not cap rewards per human.</p>${table(stress)}<p>Without policy reductions, routine emission/burn: ${uncontrolled.map(s => `${s.name}: ${fmt(summarize(s).routineEmissionBurn, '×')}`).join('; ')}.</p></section><p>Integer wei accounting matches the deployed reduction formula; the first season includes tester grants. The policy can reduce rewards but cannot create buyers. Distributor burns count on chain, so burn ratios alone do not prove organic demand. Budget reaches zero permanently unless contracts change; a 0.8 healthy boundary does not guarantee the 1.0 target.</p><p><a href="tokenomics.json">All weekly data and assumptions</a> · <a href="../design/chain/TOKENOMICS.md">Design</a> · <a href="../design/chain/TOKENOMICS-RESEARCH.md">Research</a> · <a href="../../reports/chain/TOKENOMICS-AUDIT.md">Audit and decisions</a></p></html>`;
-  writeFileSync(resolve(out, 'tokenomics.html'), html);
+  writeFileSync(resolve(out, 'tokenomics.html'), html.replace('<p>Integer wei accounting', budgetTable + '<p>Integer wei accounting'));
   writeFileSync(resolve(out, 'tokenomics.svg'), chart(scenarios, 'burnEmission', 'Implemented sinks: burn / all claims', .5).match(/<svg[\s\S]*<\/svg>/)[0].replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" style="background:#101b2b" '));
   writeFileSync(resolve(root, 'docs/design/chain/TOKENOMICS-VI.md'), `# YARN — Fuji, không có giá trị thật\n\n1 tỷ YARN tạo một lần; tiền mềm nằm ngoài blockchain.\n\n| Phân bổ | % |\n|---|---:|\n| Người chơi / đội ngũ | 35 / 15 |\n| Kho bạc / nhà đầu tư | 12 / 12 |\n| Hệ sinh thái / thử nghiệm sớm | 10 / 6 |\n| Thanh khoản / cố vấn / dự phòng | 5 / 3 / 2 |\n\nDemo đã chạy trên Fuji: tặng 20 YARN một lần; chưa phát thưởng chiến dịch định kỳ.\nPhí seal 10% giá tham chiếu, đốt toàn bộ; Star Thread tốn 2 YARN.\nPhí bán 5%: 2% giá bán đốt, 3% kho bạc. AVAX không tính là đốt YARN.\nGiá bán tự chọn, không sàn/trần. V1/chuyển trực tiếp có thể bỏ qua phí V2.\nHợp đồng tự giảm trần thưởng mùa sau nếu đốt/phát hành dưới 0,8; tính cả trợ cấp.\nTrần ban đầu 12 YARN định kỳ/tuần, tổng 32 gồm trợ cấp; chưa có nguồn ký thưởng định kỳ.\nVesting là lịch dự kiến, chưa được khóa bởi hợp đồng phân phối.\n\n![Đốt/phát hành với nguồn đốt đã có](../../chain/tokenomics.svg)\n\nBa nhóm 1.000 ví, 52 tuần; nhóm nhiều người farm có 20% bot.\nChỉ nguồn đốt đã có: phát hành/đốt ${scenarios.map(s => fmt(summarize(s).emissionBurn)).join(' / ')}; ngưỡng <=2: ${acceptance ? 'đạt theo giả định' : 'CHƯA ĐẠT'}.\nForge/mỹ phẩm chưa triển khai được tách sang kịch bản riêng.\nNguồn C2 ${supply.rarePerActiveWeek}/${supply.epicPerActiveWeek} và nhu cầu là giả định; chưa hiệu chỉnh từ người chơi.\nÍt người mua, 50% bot và bỏ qua phí đều được kiểm tra; không có cam kết thu nhập.\n1.000 trợ cấp cần 20.000 YARN, không phải dự báo cho quỹ demo hiện có.\n[CSV, biểu đồ và giới hạn](../../chain/tokenomics.html) · [Nguồn nghiên cứu](TOKENOMICS-RESEARCH.md).\n`);
-  console.log(JSON.stringify({integrity: 'PASS', economicAcceptance: data.acceptance.economicStatus, standard: scenarios.map(summarize), stress: stress.map(summarize)}, null, 2));
+  console.log(JSON.stringify({integrity: 'PASS', economicAcceptance: data.acceptance.economicStatus, standard: scenarios.map(summarize), stress: stress.map(summarize), rewardSensitivity: sensitivity.envelopes}, null, 2));
   if (process.argv.includes('--require-sustainability') && !acceptance) process.exitCode = 1;
 }
 
