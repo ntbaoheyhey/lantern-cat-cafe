@@ -57,3 +57,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | biscuit-4 | 8 / 8 / 9 / 8 | Three pastry crowns and their cream ribbon remain recognizable across all enemy slots; the two-word portrait cut-in is readable and all three damage values stay separate from the paint. | 60.00 |
 | inkcap-1 | 8 / 8 / 9 / 8 | Opaque cream drop reads clearly at the boss torso; its violet flight curl and low residue clear without hiding the hit number. | 60.00 |
 | inkcap-2 | 8 / 8 / 9 / 8 | Rounded violet cap and three cream spore puffs remain distinct from the single-drop basic; the target face and damage number stay unobstructed. | 60.00 |
+| inkcap-3 | 8 / 8 / 9 / 8 | Leaf canopy and cream curl wrap the ally below the face, keeping a recognizable protective silhouette throughout the short fade. | 60.00 |
