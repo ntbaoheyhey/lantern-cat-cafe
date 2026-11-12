@@ -177,3 +177,10 @@ All cells use Soot/fourth equipment slot/level6/chapter3/node6-0. These sample e
 ## Completed monthly acceptance
 
 All600accounts×30days on frozen4e68bb59 completed and exported on 2026-11-12T12:56:18.145352+00:00. See [ECONOMY.md](ECONOMY.md) for rarity, bag and all currency ratios, and [OUTBOX.md](OUTBOX.md) for every Epic+/material weekly rate. Final source tables and all item-impact samples above are unchanged. Self-score7 remains due to the four13pp screen cells and unresolved Crumbweave interval; the once-returned item repair was fully remeasured, not treated as universal acceptance.
+
+
+## Reopened pass5 — independent historical fixture panel
+
+Runtime `c9f7f596a2c0ab3dd3d5b08cfe47e772b1c2b1c5c87b7472403ddb2bcbad2585`; all 30 previously failed fixtures measured on the predeclared 1,000 paired seeds 101001–102000. The completed panel has three misses: Bellsteel Epic charm/Panko/fourth slot +14.1pp, Legendary charm +14.2pp, Legendary outfit +12.8pp, all chapter3/level6/boss. Their marginal paired 95% intervals are 11.28–16.92, 11.36–17.04 and 10.02–15.58pp. Compact evidence: [PASS5-HISTORICAL-HOLDOUT.json](PASS5-HISTORICAL-HOLDOUT.json).
+
+The full 128-template screen remains in progress. After completion, every new failed fixture outside this panel receives the same fixed seed range in a disjoint panel. These samples are not pooled. Diagnose all misses before selecting another prospective table candidate; a diagnostic on these observed seeds is not fresh acceptance evidence.
