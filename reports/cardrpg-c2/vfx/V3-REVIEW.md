@@ -41,3 +41,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:yarn-giant:basic | 8 / 8 / 9 / 8 | Braided rose crescent lands low on the front defender; the damage number remains separate and the yarn tail clears cleanly. | 120.00 |
 | enemy:rain-spool:basic | 8 / 8 / 9 / 8 | Teal bobbin core stays readable on the front defender; the cream rain trail leads into the damage number and fades below the face. | 120.00 |
 | enemy:rain-spool | 8 / 8 / 9 / 8 | Broad cloud-and-water fans read on both front recipients, distinct from the basic bobbin; both hit numbers and faces stay clear through the fade. | 119.99 |
+| enemy:pantry-crown:basic | 8 / 8 / 9 / 8 | Rose crown-cup silhouette stays distinct from the other bosses; the ivory rim lands at torso level and clears beneath the unobstructed damage number. | 120.00 |
