@@ -262,3 +262,47 @@ DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
 2026-11-12T14:54:37.557775+00:00 B5 candidate7 validation and visual review complete; original parity failure retained with verified repaired rerun. Monthly/catalog continue.
 
 2026-11-12T14:56:31.902489+00:00 Candidate7 item measurement complete;original1miss screen retained;independent49fixture panel and10k follow-up meet declared12pp target. Monthly remains open.
+
+2026-11-12T15:00:40.635296+00:00 Source backport verified;no CHAIN source copied;runtime parity evidence ITEM7-SOURCE-PARITY.json. Push source then merge into integration.
+
+2026-11-12T15:01:47.991522+00:00 Source/integration merge: both chronological histories preserved; source is a strict extension of integrated history. Archived handoffs:
+
+```text
+# C2 integration continuation
+NOW: Candidate7 B4 accepted; final item/economy acceptance; fresh demo visually verified.
+BRANCH: codex/cardrpg-integrate-2026-11-12.
+NEXT 1: Resume monthly at12local workers, preserving completed accounts/runtime.
+NEXT 2: Complete600 monthly/28dates; verify ledgers/supply/targets; publish reports.
+NEXT 3: Refresh demo/report/screens; sync C2 source; update draftPR440/442.
+RUNNING: monthly50652;catalog/panel/demo complete;ports released.
+VERIFY: package4517+Node64;Foundry118; typecheck/lint/build pass; E2E435+Anvil2pass.
+ITEM7: runtime007ce084d8e4;6144screen1miss;49holdout<=12;10kBellsteel11.14pp;no newfixtures.
+B4:5real1800s+500model all targets; paired parity pass; original failure retained.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2; preserve all cohorts.
+LAST GOOD COMMIT:1849dea77.
+VFX:86 accepted;5,783,929bytes;preserve all originals and clips.
+CHAIN:READY394cf606 integrated;authority0;outbox/requests reread14:49UTC.
+OPEN:finalitem/economy;trustedauthority;designerSpine;remoteCI billing.
+USER:no pass/return/compaction caps;headless;no agents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC.
+SOURCE SYNC:backport C2-only496b9c68a/51ba4d069 + tool/report changes;merge source back.
+```
+
+```text
+# C2 source synchronization
+NOW: Backport exact candidate7 C2 runtime/tools and complete evidence from integration.
+BRANCH: codex/cardrpg-c2-2026-11-12.
+NEXT 1: Commit/push source;merge into integration.
+NEXT 2: Complete monthly75321;validate/export600accounts.
+NEXT 3: Finish600 monthlyaccounts, validate/export reports and both drafts.
+RUNNING: monthly75321 at12local workers;253completed accounts retained before resume.
+SOURCE:before 733976ac764159dfc876e1f63ee9d0bb2a686a7c; integration 4357db76e0bba11f19ec6e0c3dd22ea98518a93a.
+ITEM:6144screen1miss;49independentfixture pass;Bellsteel10kpairs11.14pp.
+B4:5real+500model alltargets pass;144exactcommon combats;1493decisions.
+B5:integration435E2E+2Anvil+4517package+64Node+118Forge pass;demo reviewed.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX:86accepted;allclips present;5,783,929runtime bytes.
+STOP absent;freeze19Nov12UTC;noagents/mainmerge/deploy/secrets;headless.
+OPEN:finalmonthly;trustedcampaignauthority;CHAINeconomicgate;designerSpine.
+VERIFY:source41Node+11focusedrules+workspaceTS pass;source/integration runtime parity exact.
+```

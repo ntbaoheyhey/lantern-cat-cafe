@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-12T15:00:04.086718+00:00",
+  "sourceRuntimeSha256": "7c19d3acc0c3f5afcbcfd14171a6387732e303110b798a0893c5aec08f2ae511",
+  "integratedRuntimeSha256": "007ce084d8e4573ec2d3d275390a0181719f88bbeff585cafeb7e66185d97efc",
+  "sourceBefore": "733976ac764159dfc876e1f63ee9d0bb2a686a7c",
+  "codePaths": [
+    "apps/web/src/game/cardrpg/depth/Equipment.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/BagA6.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/SheetsV3.tsx",
+    "packages/game-rules/src/cardrpg/depth/battle.ts",
+    "packages/game-rules/src/cardrpg/depth/economy-c2.test.ts",
+    "packages/game-rules/src/cardrpg/depth/economy-c2.ts",
+    "packages/game-rules/src/cardrpg/depth/equipment-v4.ts",
+    "tools/cardrpg-c2/compare.mjs",
+    "tools/cardrpg-c2/compare.test.mjs",
+    "tools/cardrpg-c2/weekly-supply.mjs",
+    "tools/cardrpg-c2/weekly-supply.test.mjs"
+  ],
+  "difference": {
+    "kind": "integration-only CHAIN catalog initializer",
+    "integratedLineStart": 13501,
+    "lineCount": 114,
+    "sha256": "e6876d0dad1f93128058426fdc0732622b73c8a9c41d00402ed1ca78bdf01986",
+    "sourceFile": "packages/game-rules/src/cardrpg/trade.ts"
+  },
+  "allOtherRuntimeBytesIdentical": true,
+  "scope": "The inserted module derives catalog metadata and lookup arrays without changing battle/drop state. Removing exactly that insertion gives the byte-identical source bundle. CHAIN code stays exclusively on the integration branch.",
+  "checks": {
+    "node": 41,
+    "focusedRules": 11,
+    "typecheck": "pass"
+  }
+}
