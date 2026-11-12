@@ -1,0 +1,48 @@
+✔ current23-YARN forge cannot consume a20 grant through unfinished inputs (0.635792ms)
+✔ 5% trial can complete one forge while preserving two YARN and finite outputs (0.143792ms)
+✔ a cheaper seal cannot create source inventory or a renewed cosmetic catalog (0.507625ms)
+✔ all grid baskets conserve wei and hold the requested reserve (0.9145ms)
+✔ weak adoption cannot be repaired by a smaller fee even with perfectly willing active buyers (0.376542ms)
+✔ zero budget, zero spend and invalid scenarios cannot manufacture a pass (0.657709ms)
+✔ complete recipe arithmetic counts only missing inputs and preserves wei boundaries (0.907459ms)
+✔ burning the whole grant into unfinished inputs is not cosmetic completion (209.762333ms)
+✔ saving for completion does not manufacture inputs, rewards, or more than three designs (359.345917ms)
+✔ completion reservation is opt-in and leaves the historical controls numerically intact (215.581292ms)
+✔ a competing market purchase cannot spend the last recipe reserve (115.300875ms)
+✔ demand collapse retains the original completion cohort and its past outcomes (95.846584ms)
+✔ fee sensitivity keeps the historical10% default and rejects invalid prices (208.796666ms)
+✔ lower fee changes completed recipes with a conserved20 grant, no reward or buyer inflow (425.726416ms)
+✖ fee experiment measures priority displacement without inventing repeat styles (220.118958ms)
+✔ a cheaper quote cannot fabricate source authority, adopters, bot cosmetic use or departed participants (267.119709ms)
+✔ completion timing counts distinct people and retains non-completers in its denominator (28.021417ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 16
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1336.043083
+
+✖ failing tests:
+
+test at tools/chain/seal-fee.test.mjs:24:1
+✖ fee experiment measures priority displacement without inventing repeat styles (220.118958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 4000
+  
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-chain/tools/chain/seal-fee.test.mjs:28:54)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 4000,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

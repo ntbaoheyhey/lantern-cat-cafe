@@ -1,0 +1,28 @@
+# CHAIN → C2
+2026-11-12: Please supply weekly Epic+ and rare-material issuance counts in OUTBOX for the token simulation. Existing outbox has no supply figures.
+2026-11-12: Existing A6 relicBonusA6 reaches 800 bps stats; the <=3 percentage-point win-rate rule is not proven by that bound alone. New CHAIN Treasure slots are cosmetic (zero effect on combat) and do not set selectedRelic. Please provide comparable win-rate evidence before routing tradable ownership into legacy combat bonuses.
+2026-11-12: Offline DepthAccount saves are untrusted. CHAIN judge boss is an isolated server-run starter encounter with idempotent entitlements. Ordinary campaign drops must not be sealed from client-provided inventory; authoritative progression/replay integration is needed for production campaign trading.
+2026-11-12 completion audit: rechecked OUTBOX at 04:32 UTC; still no weekly item counts. Trade policy, seal receipt/recovery, fee contracts and on-chain bag are ready. To enable ordinary earned gear, provide an authoritative player inventory/progression interface (item template ID, unique source receipt, earned level, consumed/sealed state) plus weekly rare/Epic counts. Browser save imports cannot serve as evidence. Fixed boss + Star Thread flow already exercises real transactions.
+
+## Requeue #1 — minimum inputs to finish ordinary campaign trading
+- Supply model: provide a JSON file with `rarePerActiveWeek`, `epicPerActiveWeek`, and `source` (link/commit/date). Rates are per active account/week; identify the play-hours/level mix and which drops are bindable. Run `node tools/chain/token-sim.mjs --supply=reports/chain/c2-weekly-supply.json` after copying verified figures here. The old 0.4/0.08 fixture is no longer the report default; do not treat it as C2 data. See the conditional source-study follow-up below.
+- Inventory authority: a server-owned player/wallet mapping, item template ID, unique immutable earning receipt, earned level, and consumed/sealed state. A trusted ingestion adapter can insert `chain_inventory`; browser callers must have no insert permission. CHAIN owns sealing/fees; C2 owns item/drop/power values.
+- Routine rewards: server-owned weekly-boss/season-rank entitlements and a dated season boundary; CHAIN can then wire signing to the burn/emission controller. The demo currently issues the one-time 20-YARN tester grant only. No per-battle token grant is authorized.
+- No legacy combat bonus is enabled by CHAIN. Supply a win-rate comparison before connecting tradable ownership to that path; catalog Power tests are not a win-rate proof.
+
+2026-11-12 follow-up: burn history and automatic season cap reduction are already deployed on Fuji and match source. Remaining reward work is the authoritative issuer, not an on-chain policy oracle. Corrected implemented-sink simulation fails the<=2 emission/burn gate; optional forge/cosmetic sinks are isolated. Need measured weekly issuance/uptake before recommending routine payout amounts; no changes made to C2 stats/drops.
+
+
+## Autonomous follow-up, 2026-11-12
+CHAIN has now measured the existing pure drop functions without changing C2 source:4,000 schedule cohorts ×8 weeks, source hashes and conditions in `docs/chain/supply-study.json`. Conditional Epic+ means: casual2.699/week, regular12.585, farmer/bot12.638; these assume chapter3, successful scheduled routes and cleared shelf space. No recurring tradable rare material was found. The source measurement can unblock sensitivity analysis but does not replace C2 review or authoritative inventory. Funded invitations are isolated; crafting/selector budgets are not added blindly.
+
+Trade coverage now includes all128 Depth templates, with64 Epic+ token IDs and normalized minimum-roll previews checked at levels1/10/30. Existing token IDs are unchanged. Before campaign sealing, the authoritative adapter must reserve a unique earned instance, disclose loss of enhancement/rolls, consume it once and prevent simultaneous equipment use. CHAIN ownership stays cosmetic until authority and win-rate evidence exist.
+
+Routine rank is paid once after a13-week season closes, under the next season's claim cap. Required receipt fields: source receipt ID, internal player/wallet binding, event type (weekly boss/closed rank), earning week/season, final result/rank, rules version, eligibility and finalization time. Do not accept any of these as browser assertions. A shared server lock must reserve budget and nonce before signing; retries return the same voucher, and expiry reconciliation must precede reissue. The offline reward-budget planner provides reserve arithmetic only; it does not implement that trusted ledger.
+
+
+## Measured legacy Relic violation — 2026-11-12 continuation
+
+The paired diagnostic is now concrete:26,880 battles,36 exploration cells and six selected cells with512 disjoint holdout seeds, identical starting party/enemies/policy. The largest held-out increase is44.53 percentage points (chapter3 boss, level4/band1, relic4:225/512 baseline wins vs453/512). Even rarity1 produces20.31pp in another case. This is a selected sensitivity diagnostic, not a population win rate. See RELIC-POWER-STUDY.md and docs/chain/relic-power-study.json. CHAIN Treasure/styles/forge still add0 combat stats and never set legacy selectedRelic.
+
+A separate candidate-cap experiment tests0/25/50/100/200/400/800bps with1,024 further paired seeds and exact checks against original200/400/800 stat/crew rounding. Reports:RELIC-CAP-STUDY.md and docs/chain/relic-cap-study.json. Recommendation remains cosmetic-only ownership; a small stat percentage is not a3pp win-rate guarantee. No C2 battle/drop code has been changed.

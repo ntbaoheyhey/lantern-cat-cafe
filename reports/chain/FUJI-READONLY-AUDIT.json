@@ -1,0 +1,49 @@
+{
+  "mode": "public-read-only",
+  "checkedAt": "2026-11-12T07:22:50.364Z",
+  "chainId": 43113,
+  "blockNumber": "60934939",
+  "blockTime": "2026-11-12T07:22:48.000Z",
+  "contracts": {
+    "YarnToken": {
+      "address": "0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b",
+      "codeBytes": 8352,
+      "runtimeMatchesLocalArtifactExceptImmutables": true,
+      "values": {
+        "totalSupply": "999999997975308642175308643",
+        "GENESIS_SUPPLY": "1000000000000000000000000000"
+      }
+    },
+    "RelicMarketV2": {
+      "address": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+      "codeBytes": 11477,
+      "runtimeMatchesLocalArtifactExceptImmutables": true,
+      "values": {
+        "feeBps": "500",
+        "treasury": "0x2Bba9a48F7F79d99154108A28d32f1a21d17055c"
+      }
+    },
+    "SeasonRewards": {
+      "address": "0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11",
+      "codeBytes": 10585,
+      "runtimeMatchesLocalArtifactExceptImmutables": true,
+      "values": {
+        "yarn": "0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b",
+        "signer": "0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000",
+        "seasonEpoch": "1794182400",
+        "currentSeason": "0",
+        "currentWeek": "2966",
+        "weeklyCap": "32000000000000000000",
+        "BASE_ROUTINE_CAP": "12000000000000000000",
+        "TESTER_GRANT": "20000000000000000000",
+        "currentRoutineBudget": "12000000000000000000",
+        "lastPolicySeason": "0",
+        "emittedInSeason(0)": "40000000000000000000",
+        "burnedInSeason(0)": "2024691357824691357",
+        "testerClaimed(0x4628EA0f3F9F6B146fFFA9AaA0f636B24DBD1134)": "true",
+        "testerClaimed(0x39732360425f8f488048EEEB57fF046CE8AC794E)": "true"
+      }
+    }
+  },
+  "rewardPoolYarn": "9960"
+}

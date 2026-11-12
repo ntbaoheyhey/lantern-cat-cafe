@@ -1,0 +1,15 @@
+Compiling 65 files with Solc 0.8.24
+Solc 0.8.24 finished in 1.08s
+Compiler run successful!
+
+Ran 7 tests for test/SeasonPolicy.t.sol:SeasonPolicyTest
+[PASS] testFuzz_lowDemandBudgetIsEnforcedForAnySignedAmount(uint96,uint96) (runs: 256, μ: 596053, ~: 598573)
+[PASS] test_burnHistoryIncludesSealBurnFromAndDirectBurnButNotTransfers() (gas: 526077)
+[PASS] test_closedSeasonAccountingExcludesLateBurnAndIncludesTesterEmission() (gas: 1062124)
+[PASS] test_healthyBoundaryDoesNotReduceAndEmptySeasonsDoNotIncreaseBudget() (gas: 1209571)
+[PASS] test_insufficientPoolRollsBackTesterAndRoutineAccounting() (gas: 445020)
+[PASS] test_testerAndRoutineHaveSeparateSignaturesLifetimeAndWeeklyLimits() (gas: 727349)
+[PASS] test_zeroDemandStopsRoutineRewardsAutomaticallyButNotNewTesterGrant() (gas: 933880)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 84.15ms (158.62ms CPU time)
+
+Ran 1 test suite in 90.83ms (84.15ms CPU time): 7 tests passed, 0 failed, 0 skipped (7 total tests)

@@ -1,0 +1,52 @@
+
+> taskbar-hero@0.0.0 chain:test /Users/bao/taskbar-hero-chain
+> pnpm --filter @taskbar-hero/web exec playwright test --config playwright.chain.config.ts
+
+[WebServer] (node:87114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:87202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e/chain/chain-guest.spec.ts:32:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real (37.6s)
+(node:87598) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 e2e/chain/forge.spec.ts:9:1 › buy two Epic units → irreversible forge → permanent ornament; retry never charges (26.9s)
+  ✓  3 e2e/chain/guest-wallet.spec.ts:3:1 › guest login twice keeps the same address and does not send the private key (2.2s)
+
+
+  1) e2e/chain/chain-guest.spec.ts:32:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real 
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog', { name: 'Fuji market', exact: true }).getByRole('navigation', { name: 'Chain screens' }).getByRole('button', { name: 'Style', exact: true })
+
+
+      23 |   await result.getByRole('button',{name:'Close receipt'}).click();return hash;
+      24 | }
+    > 25 | async function tab(room:Locator,name:string){await room.getByRole('navigation',{name:'Chain screens'}).getByRole('button',{name,exact:true}).click();}
+         |                                                                                                                                              ^
+      26 | async function artReady(room:Locator){await room.locator('img').evaluateAll(async imgs=>{await Promise.all(imgs.map(i=>(i as HTMLImageElement).decode()));});}
+      27 | async function findListing(room:Locator,id:bigint){
+      28 |   const row=room.getByTestId(`listing-${id}`);
+        at tab (/Users/bao/taskbar-hero-chain/apps/web/e2e/chain/chain-guest.spec.ts:25:142)
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/chain/chain-guest.spec.ts:154:11
+
+    Error Context: test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e/chain/chain-guest.spec.ts:32:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real 
+  2 passed (1.4m)
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.chain.config.ts
+ ELIFECYCLE  Command failed with exit code 1.

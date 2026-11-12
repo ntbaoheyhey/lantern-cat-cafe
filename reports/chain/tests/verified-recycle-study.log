@@ -1,0 +1,215 @@
+completed fixed1.5/1
+completed fixed1.5/0.5
+completed fixed1.5/0.25
+completed fixed1.5/0.1
+completed closed-burn50/1
+completed closed-burn50/0.5
+completed closed-burn50/0.25
+completed closed-burn50/0.1
+completed recycle50/1
+completed recycle50/0.5
+completed recycle50/0.25
+completed recycle50/0.1
+completed recycle100/1
+completed recycle100/0.5
+completed recycle100/0.25
+completed recycle100/0.1
+{
+  "runs": 144,
+  "stressRuns": 24,
+  "activation": false,
+  "groups": [
+    {
+      "policy": "fixed1.5",
+      "demand": 1,
+      "runs": 9,
+      "yearPass": 9,
+      "fiveYearPass": 9,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 1.2171961744527142,
+      "maxFreshRoutine": 120965.9294738643,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.5,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 2.473125819699295,
+      "maxFreshRoutine": 71565.24579167896,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.25,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 4.630257289989215,
+      "maxFreshRoutine": 45866.70874926986,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.1,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 11.779969867036248,
+      "maxFreshRoutine": 31702.9060041181,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "closed-burn50",
+      "demand": 1,
+      "runs": 9,
+      "yearPass": 9,
+      "fiveYearPass": 9,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 1.2022130028855613,
+      "maxFreshRoutine": 8382.497561538461,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "closed-burn50",
+      "demand": 0.5,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 2.2813719065122955,
+      "maxFreshRoutine": 3739.427396153846,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "closed-burn50",
+      "demand": 0.25,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 4.483321979387355,
+      "maxFreshRoutine": 1840.2534384615385,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "closed-burn50",
+      "demand": 0.1,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 10.650947581284694,
+      "maxFreshRoutine": 771.6196923076923,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "recycle50",
+      "demand": 1,
+      "runs": 9,
+      "yearPass": 9,
+      "fiveYearPass": 9,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 1.0071982127033992,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 5.37378
+    },
+    {
+      "policy": "recycle50",
+      "demand": 0.5,
+      "runs": 9,
+      "yearPass": 3,
+      "fiveYearPass": 3,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 2.0586416918706476,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 1.463215384615381
+    },
+    {
+      "policy": "recycle50",
+      "demand": 0.25,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 4.149377593360996,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 0.627092307692305
+    },
+    {
+      "policy": "recycle50",
+      "demand": 0.1,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 10.309278350515465,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 0
+    },
+    {
+      "policy": "recycle100",
+      "demand": 1,
+      "runs": 9,
+      "yearPass": 9,
+      "fiveYearPass": 9,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 1.0074687630900596,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 10.74756
+    },
+    {
+      "policy": "recycle100",
+      "demand": 0.5,
+      "runs": 9,
+      "yearPass": 3,
+      "fiveYearPass": 3,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 2.058738363361699,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 2.926430769230762
+    },
+    {
+      "policy": "recycle100",
+      "demand": 0.25,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 4.149377593360996,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 1.25418461538461
+    },
+    {
+      "policy": "recycle100",
+      "demand": 0.1,
+      "runs": 9,
+      "yearPass": 0,
+      "fiveYearPass": 0,
+      "activeTail": 0,
+      "healthyTail": 0,
+      "worstYearRatio": 10.309278350515465,
+      "maxFreshRoutine": 0,
+      "maxRecycled": 0
+    }
+  ]
+}

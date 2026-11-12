@@ -1,0 +1,26 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/supabase/tests
+
+ ❯ src/chain-campaign-service.test.ts (6 tests | 6 skipped) 331ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/chain-campaign-service.test.ts [ src/chain-campaign-service.test.ts ]
+error: INSERT has more expressions than target columns
+ ❯ pe.Oe ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:442:11
+ ❯ pe.tt ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:220:16
+ ❯ pe.parse ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pg-protocol/src/parser.ts:104:21
+ ❯ D.Ne ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:763:26
+ ❯ ../../node_modules/.pnpm/@electric-sql+pglite@0.5.11/node_modules/@electric-sql/pglite/src/pglite.ts:716:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  48 passed | 6 skipped (54)
+   Start at  21:43:20
+   Duration  3.97s (tests 78%, transform 12%, import 9%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-chain/supabase/tests:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/chain-campaign.test.ts src/chain-campaign-service.test.ts src/chain-http.test.ts

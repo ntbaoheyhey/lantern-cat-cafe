@@ -1,0 +1,18 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-chain
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/auth typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: src/chain-routine.test.ts(124,131): error TS2339: Property 'n' does not exist on type '{}'.
+supabase/tests typecheck: Failed
+/Users/bao/taskbar-hero-chain/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

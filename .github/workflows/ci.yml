@@ -109,3 +109,52 @@ jobs:
       # Both must match what is committed.
       - run: node ../packages/chain/scripts/gen-abi.mjs
       - run: git diff --exit-code -- ../packages/chain
+  chain-e2e:
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+        working-directory: apps/web
+      - run: node tools/chain/check-drip.mjs
+      - run: node tools/chain/check-move.mjs
+      - run: node tools/chain/check-cosmetics.mjs
+      - run: node tools/chain/check-source.mjs
+      - run: node tools/chain/campaign-manifest.mjs --check
+      - run: node tools/chain/check-campaign.mjs
+      - run: node tools/chain/check-campaign-rewards.mjs
+      - run: node tools/chain/check-forge.mjs
+      - run: node tools/chain/check-seal-trial.mjs
+      - run: node tools/chain/check-routine.mjs
+      - run: node tools/chain/check-tester-budget.mjs
+      - run: node tools/chain/check-reservations-postgres.mjs
+      - run: node tools/chain/fuji-smoke.mjs --dry-run
+      - run: node tools/chain/seed-market.mjs --dry-run
+      - run: node --test tools/chain/*.test.mjs
+      - run: node tools/chain/token-sim.mjs
+      - name: Three consecutive fresh Fuji-ID Anvil runs
+        run: |
+          for attempt in 1 2 3; do
+            pnpm chain:test || exit 1
+          done
+      - name: Optional price trial on fresh Anvil
+        run: CHAIN_SEAL_PRICE_TRIAL=1 pnpm chain:test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chain-evidence
+          path: |
+            apps/web/test-results/chain/
+            reports/chain/shots/
+          retention-days: 7
