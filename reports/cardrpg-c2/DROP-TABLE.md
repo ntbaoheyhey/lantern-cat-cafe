@@ -1,6 +1,8 @@
 # B4b — drop and recruit audit
 
-Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. The completed 600-account monthly projection and exact READY supply are now published in ECONOMY.md and OUTBOX.md; historical measurements below remain labeled.
+**Current item result: candidate 7 completes the declared independent-fixture checks.** The full 6,144-cell screen retains one −13 pp sample; its independent 1,000-pair result is −7.0 pp. All 49 selected independent fixture point estimates meet 12 pp. The predeclared 10,000-pair follow-up for the one interval crossing the threshold measures 11.14 pp, with paired 95% interval 10.48–11.80 pp. These are finite-fixture results, not a universal or simultaneous bound. See [ITEM7-ITEM-VALIDATION.json](ITEM7-ITEM-VALIDATION.json). The final candidate 7 monthly cohort now completes all 600 accounts across 28 matched start dates and meets every declared economy target; see [ECONOMY.md](ECONOMY.md). All earlier measurements remain below in chronological order.
+
+Pre-tuning audit, 12 November 2026. All rates below describe the inherited C2/A6 rules before economy tuning. Counts are gross creation; salvaging does not erase issuance. Random rewards use seeded public rules, with no paid currency. The historical audit is preserved below; final frozen values are listed separately. The current candidate 7 monthly projection and exact READY supply are published in ECONOMY.md and OUTBOX.md; the earlier cohorts remain in Git history and the labeled measurements below.
 
 | Source | Item / rarity | Rate or amount before tuning | Pity / cap | Duplicates / overflow |
 |---|---|---|---|---|
@@ -44,7 +46,7 @@ Inherited B3 audit finding: full-shelf automatic drops could award zero threads 
 
 Working C2 candidate: encounter Legendary rates0/0.05/0.15% (ordinary/elite/boss); gear invitation300stamps with unchanged soft13/hard24; Legendary tailoring10seals/200materials plus100fish/300threads/60essence; Epic tailoring20fish/240threads/9essence; Legendary gear selector72marks. All live source Odds read these tables. Full measurement and item-impact repair remain pending; no acceptance claim.
 
-## Final frozen C2 source tables
+## Historical frozen C2 source tables — affix/Riposte cohort
 
 Runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; no further table changes during the final cohorts. Sources not changed below retain the amounts, caps and guarantees in the historical audit above.
 
@@ -211,3 +213,8 @@ Soft Collar mechanism diagnostics reproduce the full failed control exactly. On 
 2026-11-12T14:56:31.902489+00:00. All128 templates/6144cells completed100paired seeds95001–95100. The original screen retains one−13pp cell: Common Bellsteel weapon, Panko, fourth slot, L6/C3/ordinary; it is not relabeled a passing screen. Its predeclared independent1000-pair panel gives−7.0pp, marginal95%[−9.158,−4.842]pp. All49 selected fixtures meet12pp on104001–105000; the sole crossing interval belongs to the Bellsteel Legendary outfit and is addressed by the separately predeclared10000-pair follow-up11.14pp,[10.4753,11.8047]pp. The complete catalog introduces no fixture outside those49, so no105001 panel is needed.
 
 Every saved pair/statistic across6144screen cells and both independent panels was recomputed and checked against frozen runtime007ce084. See [ITEM7-ITEM-SCREEN.json](ITEM7-ITEM-SCREEN.json) and [ITEM7-ITEM-VALIDATION.json](ITEM7-ITEM-VALIDATION.json). These are finite-fixture measurements with marginal intervals, not a universal or simultaneous bound; original screens and holdouts remain separate. Final monthly economy is still in progress.
+
+
+## Candidate 7 monthly closure — 2026-11-12T15:55:09.486873+00:00
+
+All 600 accounts × 30 days across 28 matched start dates are complete. Casual Epic/Legendary medians are day 1/day 11; all 12 profile-level currency ratios meet 0.8–1.1, and all three heavy/casual progress-per-hour proxies meet the 3× target. [ECONOMY.md](ECONOMY.md) and [ITEM7-ECONOMY-VALIDATION.json](ITEM7-ECONOMY-VALIDATION.json) retain the full method and integrity checks. OUTBOX.md publishes all 64 Epic+ equipment templates plus five material rows against exact CHAIN READY. Ordinary campaign authoritative issuance remains zero. Item acceptance retains the finite-fixture scope and original screen miss described above. Self-score: **8/10**.

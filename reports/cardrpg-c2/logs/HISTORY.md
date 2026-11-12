@@ -264,3 +264,155 @@ DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
 2026-11-12T14:56:31.902489+00:00 Candidate7 item measurement complete;original1miss screen retained;independent49fixture panel and10k follow-up meet declared12pp target. Monthly remains open.
 
 2026-11-12T15:00:40.635296+00:00 Source backport verified;no CHAIN source copied;runtime parity evidence ITEM7-SOURCE-PARITY.json. Push source then merge into integration.
+
+2026-11-12T15:01:47.991522+00:00 Source/integration merge: both chronological histories preserved; source is a strict extension of integrated history. Archived handoffs:
+
+```text
+# C2 integration continuation
+NOW: Candidate7 B4 accepted; final item/economy acceptance; fresh demo visually verified.
+BRANCH: codex/cardrpg-integrate-2026-11-12.
+NEXT 1: Resume monthly at12local workers, preserving completed accounts/runtime.
+NEXT 2: Complete600 monthly/28dates; verify ledgers/supply/targets; publish reports.
+NEXT 3: Refresh demo/report/screens; sync C2 source; update draftPR440/442.
+RUNNING: monthly50652;catalog/panel/demo complete;ports released.
+VERIFY: package4517+Node64;Foundry118; typecheck/lint/build pass; E2E435+Anvil2pass.
+ITEM7: runtime007ce084d8e4;6144screen1miss;49holdout<=12;10kBellsteel11.14pp;no newfixtures.
+B4:5real1800s+500model all targets; paired parity pass; original failure retained.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2; preserve all cohorts.
+LAST GOOD COMMIT:1849dea77.
+VFX:86 accepted;5,783,929bytes;preserve all originals and clips.
+CHAIN:READY394cf606 integrated;authority0;outbox/requests reread14:49UTC.
+OPEN:finalitem/economy;trustedauthority;designerSpine;remoteCI billing.
+USER:no pass/return/compaction caps;headless;no agents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC.
+SOURCE SYNC:backport C2-only496b9c68a/51ba4d069 + tool/report changes;merge source back.
+```
+
+```text
+# C2 source synchronization
+NOW: Backport exact candidate7 C2 runtime/tools and complete evidence from integration.
+BRANCH: codex/cardrpg-c2-2026-11-12.
+NEXT 1: Commit/push source;merge into integration.
+NEXT 2: Complete monthly75321;validate/export600accounts.
+NEXT 3: Finish600 monthlyaccounts, validate/export reports and both drafts.
+RUNNING: monthly75321 at12local workers;253completed accounts retained before resume.
+SOURCE:before 733976ac764159dfc876e1f63ee9d0bb2a686a7c; integration 4357db76e0bba11f19ec6e0c3dd22ea98518a93a.
+ITEM:6144screen1miss;49independentfixture pass;Bellsteel10kpairs11.14pp.
+B4:5real+500model alltargets pass;144exactcommon combats;1493decisions.
+B5:integration435E2E+2Anvil+4517package+64Node+118Forge pass;demo reviewed.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX:86accepted;allclips present;5,783,929runtime bytes.
+STOP absent;freeze19Nov12UTC;noagents/mainmerge/deploy/secrets;headless.
+OPEN:finalmonthly;trustedcampaignauthority;CHAINeconomicgate;designerSpine.
+VERIFY:source41Node+11focusedrules+workspaceTS pass;source/integration runtime parity exact.
+```
+
+
+## Resume 2026-11-12T15:12:09.428940+00:00
+# C2 integration continuation
+NOW:Candidate7 battle/item/demo complete; final600-account economy running.
+BRANCH:codex/cardrpg-integrate-2026-11-12.
+NEXT 1:Wait monthly75321;verify600accounts/28dates/ledgers/rarity/supply.
+NEXT 2:RefreshECONOMY/OUTBOX/B6,curves;review figures;sync reports to source.
+NEXT 3:Update draftPR440/442;final clean push and delivery.
+RUNNING:monthly75321,12localworkers;253accounts retained before exact resume.
+DONE:B4 alltargets5real+500model;item6144screen/49holdout/10kfollowup.
+SCREEN:one−13pp sample retained;fresh1000pair−7.0pp;no newfixtures.
+VERIFY:integration4517package+64Node+118Forge;435E2E+2Anvil;TS/lint/build pass.
+SOURCE:ad01f8185 verified41Node+11focusedrules+TS;only114-line catalog bundle difference.
+LAST GOOD COMMIT:4357db76e integration;ad01f8185 source.
+B5:fresh screenshots reviewed;demo/word33+33/formation21 pass;ports released.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX:86accepted/clips present;5,783,929bytes;all art preserved.
+CHAIN:READY394cf606 integrated;authority0;latestoutbox/requests read.
+OPEN:finalmonthly;trustedcampaignauthority;CHAINeconomics;remoteCI billing;designerSpine.
+USER:no pass/return/compaction caps;headless;noagents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC;reports18Nov18UTC.
+
+
+## Final-report preparation 2026-11-12T15:23:42.517949+00:00
+# C2 integration continuation
+NOW: Candidate7 final monthly economy and report publication.
+BRANCH: codex/cardrpg-integrate-2026-11-12.
+NEXT 1: Wait monthly75321/finalizer86497; verify all600 accounts and targets.
+NEXT 2: Publish economy/supply/curves and final C2 report; inspect chart.
+NEXT 3: Synchronize reports to source; update draft PR440/442; clean push.
+RUNNING: monthly75321,12 local workers;400 complete at resume (200casual/200regular).
+DONE: B4 5real+500model; item6144screen/49holdout/10kfollowup; full local checks.
+SCREEN: One−13pp screen sample retained; independent1000pair−7.0pp.
+VERIFY: 4517package+64Node+118Forge;435E2E+2Anvil;TS/lint/build pass.
+SOURCE: ad01f8185;41Node+11focused+TS;only114-line CHAIN initializer differs.
+LAST GOOD COMMIT: 323104b04 integration;ad01f8185 source.
+B5: Fresh captures reviewed;33+33 word budgets;21formation;ports released.
+DATA: /Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX: 86accepted/clips verified;5,783,929bytes;art preserved.
+CHAIN: READY394cf606 integrated;authority0;latest outbox/requests read.
+OPEN: Final monthly;trusted campaign authority;CHAIN economics;remote billing;Spine.
+USER: No pass/return/compaction caps;headless;noagents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC;reports18Nov18UTC.
+
+
+## Final economy complete 2026-11-12T15:55:09.486873+00:00
+# C2 final monthly continuation
+NOW: Candidate7 B4/item/demo pass; wait final heavy monthly accounts.
+BRANCH: codex/cardrpg-integrate-2026-11-12.
+NEXT 1: Run work/c2/status-item7.py; finalizer4695 validates after600 accounts.
+NEXT 2: Publish/inspect/report using work/c2/NEXT.md; only then mark B4b/B6 done.
+NEXT 3: Sync C2 reports to source; update draftPR440/442; clean push/delivery.
+RUNNING: monthly75321,12 local workers;532complete at checkpoint(200/200/132).
+FINALIZER: PID4695 finish-item7-economy.py waits index; summary/supply/validation automated.
+TEMPLATES: publish-item7-economy.py,write-item7-final-report.py,prepare-item7-delivery.py ready.
+DONE: 5real+500model B4;6144screen/49holdout/10kfollowup;full local verification.
+SCREEN: One−13pp sample retained;independent1000pair−7.0pp;finite fixture scope.
+VERIFY: 4517package+64Node+118Forge;435E2E+2Anvil;TS/lint/build pass.
+SOURCE: ad01f8185;41Node+11focused+TS;all11code paths match integrated source.
+LAST GOOD COMMIT: 65aced73e integration;ad01f8185 source.
+B5: All captures reviewed;33+33 word budgets;21formation;ports released.
+DATA: /Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX: 86accepted clips/PSDs/original+2048keys verified;5,783,929bytes.
+CHAIN: READY394cf606 unchanged/integrated;authority0;outbox/requests read.
+OPEN: Finalmonthly;trusted authority;CHAIN economics;remote billing;designerSpine.
+USER: No pass/return/compaction caps;headless;noagents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC;reports18Nov18UTC.
+
+## 2026-11-12T15:59:08.123144+00:00 — final publication resume
+
+# C2 final publication
+NOW: Final600 monthly accounts validated;B4/B4b/V3/B5/B6/V4 complete locally.
+BRANCH: codex/cardrpg-integrate-2026-11-12.
+NEXT 1: Commit+push final reports/economy/chart;sync C2-only reports to source.
+NEXT 2: Merge source report commit back;update existing draftPR440/442 bodies.
+NEXT 3: Capture final remote statuses;clean push;Vietnamese delivery in outputs.
+RUNNING: None;monthly75321/finalizer4695 completed successfully.
+ECONOMY: 600accounts×30days×28dates;Epic1/Legendary11;12sink ratios pass.
+SUPPLY: Rare0/Epic14.519866667/Legendary0.659808333 per active week;69rows;authority0.
+ITEM: 6144screen retains1−13pp miss;independent−7;49panel+10k followup pass scoped.
+VERIFY: 4517package+64Node+118Forge;435E2E+2Anvil;TS/lint/build pass.
+SOURCE: ad01f8185;all11C2code paths match;only114-line CHAIN initializer differs.
+LAST GOOD COMMIT: 344ebe45e integration;ad01f8185 source.
+VISUAL: New rarity chart personally reviewed;prior final demo/86VFX accepted.
+DATA: /Users/bao/Documents/Codex/2026-11-12/x/work/c2;NEXT.md has publication scripts.
+PR BODIES: work/c2/pr440-body.md andpr442-body.md already generated from final data.
+CHAIN: READY394cf606 integrated;outbox/requests unchanged;new supply in own OUTBOX.
+OPEN: Trusted campaign authority;CHAIN economics;remote billing;designerSpine.
+USER: No pass/return/compaction caps;headless;noagents/mainmerge/deploy/secrets.
+STOP absent;freeze19Nov12UTC;future sync15/17Nov12UTC;reports18Nov18UTC.
+
+## 2026-11-12T16:00:01.521915+00:00 — source report synchronization
+
+# C2 source synchronization
+NOW: Backport exact candidate7 C2 runtime/tools and complete evidence from integration.
+BRANCH: codex/cardrpg-c2-2026-11-12.
+NEXT 1: Commit/push source;merge into integration.
+NEXT 2: Complete monthly75321;validate/export600accounts.
+NEXT 3: Finish600 monthlyaccounts, validate/export reports and both drafts.
+RUNNING: monthly75321 at12local workers;253completed accounts retained before resume.
+SOURCE:before 733976ac764159dfc876e1f63ee9d0bb2a686a7c; integration 4357db76e0bba11f19ec6e0c3dd22ea98518a93a.
+ITEM:6144screen1miss;49independentfixture pass;Bellsteel10kpairs11.14pp.
+B4:5real+500model alltargets pass;144exactcommon combats;1493decisions.
+B5:integration435E2E+2Anvil+4517package+64Node+118Forge pass;demo reviewed.
+DATA:/Users/bao/Documents/Codex/2026-11-12/x/work/c2.
+VFX:86accepted;allclips present;5,783,929runtime bytes.
+STOP absent;freeze19Nov12UTC;noagents/mainmerge/deploy/secrets;headless.
+OPEN:finalmonthly;trustedcampaignauthority;CHAINeconomicgate;designerSpine.
+VERIFY:source41Node+11focusedrules+workspaceTS pass;source/integration runtime parity exact.

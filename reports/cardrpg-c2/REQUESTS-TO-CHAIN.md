@@ -18,3 +18,10 @@ Aggregate eligible rates for the declared 75/20/5 mix: Rare 0.000000000, Epic14.
 Production campaign sealing remains disabled: the measured browser-rule inventory is not an immutable earning receipt, player/wallet authority or consumed/sealed ledger. Routine weekly/rank entitlements remain server-authority work. C2 does not enable a legacy Relic combat path; the measured 44.53 pp CHAIN legacy diagnostic supports keeping Treasure cosmetic. No issuer/deployment change or grant authorization is implied.
 
 Future syncs remain 15/17 November 12:00 UTC. The integration local demo and full tests pass; public Fuji testing stays in the owner's reserved 19–21 November window.
+
+
+## Candidate 7 calendar-stratified supply — 2026-11-12T15:54:08.263280+00:00
+
+The replacement full 600-account projection is in [OUTBOX.md](OUTBOX.md) and [WEEKLY-SUPPLY.json](WEEKLY-SUPPLY.json), with 28 matched start dates, immutable runtime `007ce084d8e4573ec2d3d275390a0181719f88bbeff585cafeb7e66185d97efc` and exact READY `394cf60613b5b576367e860b7dff8bab60dc84aa`. Eligible Rare/Epic/Legendary rates are 0.000000000/14.519866667/0.659808333 per active account/week for the declared 75/20/5 mix. Use the separate profile and item rates when adapting your policy mix and keep Legendary fees distinct. This supersedes the earlier single-start-date supply estimate; old evidence is retained.
+
+All campaign authoritative issuance remains zero pending trusted earning/inventory/consumption receipts; no server issuer, wallet path, reward grant, legacy combat bonus or public deployment has been enabled by this handoff.
