@@ -47,3 +47,9 @@ Additional attempted references: Steam FAQ returned an image-only page; Milky Wa
 - Three seals/account/UTC day; authoritative level >=2; acquired-in-V2 item type waits 10 minutes before relisting in V2. This limits bursts, not Sybils. Direct ERC-1155 transfers/other venues bypass market-only cooldowns; do not overclaim enforcement.
 - Ordinary materials, XP, soft currencies and common/rare gear stay bound. Epic+ gear trades without extra stats. Existing boss-proof stays bound because it represents earned achievement; a separate **Star Thread** test fixture is the tradable rare material. It does not change C2 drops or counterfeit campaign progress.
 - No volume rebates, trading achievements that pay YARN, transferable XP, or token-funded combat upgrades. Flag round trips, repeated counterparties and reused entitlement attempts for review; faucet funding alone is insufficient evidence.
+
+## Implementation cross-check, 2026-11-12
+
+The follow-up [audit](../../../reports/chain/TOKENOMICS-AUDIT.md) uses primary read-only Fuji evidence at block60934939, plus deployed Solidity policy and deterministic sensitivity tests. It is additional engineering evidence, not an extra independent economic source. E1/E2/E10 motivate no-growth/weak-demand tests; T6/T7/T8 motivate Sybil/fee-bypass scenarios. They do not establish the assumed0.4/0.08 weekly supply,20-YARN sale price or adoption probabilities. C2 has supplied none of those weekly issuance rates.
+
+After removing future sinks from the implemented-sink case and matching grant-inclusive on-chain policy, emissions/burn are2.3904 /2.5332 /2.7797, so the requested2× gate fails. This supersedes any earlier summary that treated optional forge/cosmetic demand as adequate proof. Fifty-percent bot wallets capture53.24% of claims under that scenario; wallet fairness is not human fairness. No allocation or fee change is justified by these uncalibrated outputs alone.
