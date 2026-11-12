@@ -45,3 +45,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | enemy:pantry-crown | 8 / 8 / 9 / 8 | Rose banquet spirals frame both front recipients below their faces; separate damage numbers land at impact, and the residue clears before the next action. | 120.00 |
 | mallow-1 | 8 / 8 / 9 / 8 | Cream-tipped whisk silhouette reaches the boss and rear target cleanly; both damage numbers remain separate, and the broad low residue clears before the following action. | 119.98 |
 | mallow-2 | 8 / 8 / 9 / 8 | Two separated cream-tipped flame lobes remain legible on the boss torso, distinct from the whisk strike; the impact number stays above the paint and the smoke-like tail clears promptly. | 60.00 |
+| mallow-3 | 8 / 8 / 9 / 8 | Compact caramel vortex has a strong opaque center and a sharper crest than the twin-lobe skill; the impact number and boss face remain clear through the short fading curl. | 60.00 |
