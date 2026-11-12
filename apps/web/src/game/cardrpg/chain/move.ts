@@ -1,4 +1,4 @@
-import { getAddress, isAddressEqual, type Address, type Hash } from 'viem';
+import { getAddress, isAddressEqual, zeroAddress, type Address, type Hash } from 'viem';
 import { requireFuji } from './guest';
 
 /** The adapter uses receipt-confirmed transactions. Each retry reads remaining
@@ -17,7 +17,7 @@ export interface MoveAdapter {
 }
 export async function moveGuestAssets(adapter: MoveAdapter, destination: string, onReceipt: (hash: Hash) => void) {
   const to = getAddress(destination);
-  if (isAddressEqual(to, adapter.address)) throw new Error('Choose another wallet.');
+  if (isAddressEqual(to, adapter.address) || isAddressEqual(to, zeroAddress)) throw new Error('Choose another wallet.');
   const guard = async () => requireFuji(await adapter.chainId());
   await guard(); await adapter.cancelListings();
   await guard(); await adapter.withdrawProceeds();

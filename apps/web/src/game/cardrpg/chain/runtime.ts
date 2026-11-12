@@ -1,4 +1,4 @@
-import { createPublicClient, http, isAddress, type Abi, type Address, type Hash, type WalletClient } from 'viem';
+import { createPublicClient, http, isAddress, isAddressEqual, type Abi, type Address, type Hash, type WalletClient } from 'viem';
 import { avalancheFuji } from 'viem/chains';
 import { getAddresses, relicNftAbi, relicMarketAbi, relicMarketV2Abi } from '@taskbar-hero/chain';
 import { requireFuji } from './guest';
@@ -36,9 +36,16 @@ export const erc20Abi = [
   {type:'function',name:'approve',stateMutability:'nonpayable',inputs:[{name:'spender',type:'address'},{name:'amount',type:'uint256'}],outputs:[{type:'bool'}]},
 ] as const;
 export interface ChainListing {id:bigint;seller:Address;relicId:bigint;amount:bigint;price:bigint;currency:number;version:'v1'|'v2'}
+export async function requireWallet(wallet: Pick<WalletClient, 'getChainId' | 'getAddresses' | 'account'>, address: Address) {
+  requireFuji(await wallet.getChainId());
+  const [connected] = await wallet.getAddresses();
+  if (!connected || !isAddressEqual(connected, address) || (wallet.account && !isAddressEqual(wallet.account.address, address))) {
+    throw new Error('Wallet changed. Sign in again.');
+  }
+}
 export function chainRuntime(config: ChainConfig, wallet: WalletClient, address: Address) {
   const client = publicChain(config);
-  const guard = async () => { requireFuji(await client.getChainId()); requireFuji(await wallet.getChainId()); };
+  const guard = async () => { requireFuji(await client.getChainId()); await requireWallet(wallet, address); };
   const receipt = async (hash: Hash) => {
     const r = await client.waitForTransactionReceipt({ hash, timeout: 60_000 });
     if (r.status !== 'success') throw new Error('Transaction failed.');
@@ -47,6 +54,8 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
   async function write(request: {address: Address; abi: Abi; functionName: string; args?: readonly unknown[]; value?: bigint}) {
     await guard();
     const simulation = await client.simulateContract({ ...request, account: address });
+    // A wallet can change accounts/networks while the RPC simulation is running.
+    await guard();
     return receipt(await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji }));
   }
   const listings = async (version:'v1'|'v2'='v1'):Promise<ChainListing[]> => {

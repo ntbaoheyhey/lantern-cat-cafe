@@ -30,6 +30,16 @@ async function findListing(room:Locator,id:bigint){
   await expect(row).toBeVisible();return row;
 }
 test('guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real',async({page,browser})=>{
+  let renewedPasses = 0;
+  await page.route('**/functions/v1/chain-judge', async route => {
+    const response = await route.fetch();
+    const body = await response.json();
+    if (route.request().postDataJSON().action === 'boss') {
+      // A stale voucher must renew its original nonce before the wallet signs.
+      for (const voucher of body.vouchers) voucher.expiry = '1';
+    } else renewedPasses++;
+    await route.fulfill({response, json: body});
+  });
   const began=Date.now(),seller=await login(page),room=seller.room;
   await room.getByRole('button',{name:'🎟 Judge pass'}).click();
   await expect(room.locator('[data-testid^="voucher-"]')).toHaveCount(2);
@@ -37,6 +47,7 @@ test('guest → drip → scripted boss → mint → list → second guest buy �
   await room.getByRole('button',{name:'Next vouchers'}).click();
   await room.getByTestId('voucher-3').getByRole('button',{name:'✦ Mint to Fuji'}).click();
   const mintHash=await receipt(room);expect(await holding(seller.who,3n)).toBe(1n);
+  expect(renewedPasses).toBe(2);
   await tab(room,'Bag');await room.getByLabel('Market version').selectOption('v1');await expect(room.getByTestId('holding-3')).toBeVisible();
   await room.getByTestId('holding-3').getByRole('button',{name:'◇ Treasure'}).click();
   await expect(room.getByAltText('Mochi Treasure')).toBeVisible();

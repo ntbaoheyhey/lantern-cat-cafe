@@ -45,6 +45,9 @@ export async function guestSignIn(api: AuthApi, store: SessionStore, storage: St
 }
 
 export function guestClient(rpcUrl: string, storage: Storage = localStorage) {
+  // Only sign-in creates a key. A cleared browser must not silently replace the
+  // signer of an existing authenticated session while moving or minting assets.
+  if (!existingGuestAddress(storage)) throw new Error('Guest key needs recovery.');
   return createWalletClient({ account: guestAccount(storage), chain: avalancheFuji, transport: http(rpcUrl) });
 }
 

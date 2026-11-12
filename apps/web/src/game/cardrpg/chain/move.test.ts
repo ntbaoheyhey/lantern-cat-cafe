@@ -22,5 +22,6 @@ it('stops at a failed token receipt, preserving gas for retry', async () => {
 });
 it('refuses self-transfer and a network change before any asset movement', async () => {
   const {a,order} = adapter(); await expect(moveGuestAssets(a, from, vi.fn())).rejects.toThrow('another');
+  await expect(moveGuestAssets(a, '0x0000000000000000000000000000000000000000', vi.fn())).rejects.toThrow('another');
   a.chainId = async () => 43114; await expect(moveGuestAssets(a, to, vi.fn())).rejects.toThrow('Fuji'); expect(order).toEqual([]);
 });

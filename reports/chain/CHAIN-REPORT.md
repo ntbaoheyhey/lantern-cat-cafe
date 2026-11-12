@@ -2,7 +2,7 @@
 
 The user-run judge demo passed on public Fuji43113 with18 confirmed transactions at2026-11-12T07:11:11.843Z. Contracts and local tests work; the public frontend is still missing the CHAIN assets, V2 has no active listings, and economic acceptance is NOT MET. This report does not claim ordinary campaign trading or the public two-minute target is complete.
 
-Follow-up includes the deployed season-policy source, local-signing smoke fix, updated public contract registry and corrected economics. The latest tested revision is recorded in OUTBOX.md. Public runtime/config evidence: FUJI-READONLY-AUDIT.json. No contract was redeployed by this review.
+Follow-up includes guest flag/signer/storage guards, independent gas refresh, expired-voucher renewal (H1-H4-RECOVERY.md), the deployed season-policy source, local-signing smoke fix, updated public contract registry and corrected economics. The latest tested revision is recorded in OUTBOX.md. Public runtime/config evidence: FUJI-READONLY-AUDIT.json. No contract was redeployed by this review.
 
 Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 — base `codex/cardrpg-c-2026-11-11`. Worktree: `/Users/bao/taskbar-hero-chain`. Existing Fuji NFT/market addresses are unchanged. Every new feature remains gated; live defaults stay off.
 
@@ -23,11 +23,11 @@ Draft PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/441 — base `codex/c
 
 ## Validation
 
-- Full `pnpm test`: 11 script tests; web2395, game-rules1352, SQL597, chain32, auth24, API16 pass. Two expected failures and11 skips are inherited unchanged from the base; CHAIN added no skips. Typecheck, lint and production build pass. Build retains existing chunk/dynamic-import warnings.
+- Full `pnpm test`: 11 script tests; web2405, game-rules1352, SQL597, chain32, auth24, API16 pass. Two expected failures and11 skips are inherited unchanged from the base; CHAIN added no skips. Typecheck, lint and production build pass. Build retains existing chunk/dynamic-import warnings.
 - `forge test --root contracts`: 118 passed, zero failed/skipped. Unit, fuzz and invariants cover fixed supply, burn accounting, market liabilities, fee math over arbitrary prices, reentrancy, ERC-1155 receiver checks, weekly caps, signature/domain/replay/expiry/season behavior and deployment configuration.
 - `forge coverage`: new-contract line coverage YARN100%, SeasonRewards100%, RelicMarketV2 95.95%. This is line coverage, not a security-audit claim. Full repository coverage includes legacy/tests and is lower.
 - `pnpm chain:test`: `chain-guest.spec.ts` proves SIWE → gas → boss → mint → V1 list/buy/cancel → YARN grants → paid seal → recovery → arbitrary-price V2 sale → correct burn/treasury/payout/ownership, under120 seconds locally. `guest-wallet.spec.ts` proves repeat login retains the address and no private key is sent. Three independent starts, retries0.
-- The repaired locked-account harness passed three consecutive fresh runs (21.8s /17.8s /23.3s for the full loop), recorded in tests/review-e2e-{1,2,3}.log. All runs start a fresh chain with retries disabled. Local timings do not prove public Fuji meets the two-minute goal.
+- The latest recovery harness passed three consecutive fresh runs (16.2s /18.6s /16.7s for the full loop), recorded in tests/recovery-e2e-{1,2,3}.log, including stale-voucher renewal. All runs start a fresh chain with retries disabled. Local timings do not prove public Fuji meets the two-minute goal.
 - Anvil smoke18 confirmed receipts, drip recovery and complete asset migration passed. Local hashes in `FUJI-SMOKE-DRY-RUN.md` do not exist on Snowtrace. `FUJI-SMOKE.md` now records18 successful public Fuji receipts, including two tester claims; do not reuse those wallets for a new full smoke.
 - Corrected simulation: implemented-sink all-claim/burn ratios2.3904 /2.5332 /2.7797 exceed the2× limit. Low demand19.2330; 50% bot wallets capture53.24% of rewards. Future forge/cosmetic sinks are isolated. Model integrity passes, economic acceptance fails; the strict CLI exits1. C2 supply0.4/0.08 and demand remain provisional. See TOKENOMICS-AUDIT.md; no false sustainable-economy claim.
 

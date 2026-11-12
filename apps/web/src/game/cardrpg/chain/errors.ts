@@ -14,6 +14,7 @@ export function friendlyError(error: unknown): string {
   if (named('UserRejectedRequestError') || /user (rejected|denied)/i.test(text)) return 'Cancelled. Retry.';
   if (/revert|Transaction failed/i.test(text)) return 'Transaction failed. Retry.';
   if (text === 'Sign in again.') return text;
+  if (text === 'Wallet changed. Sign in again.' || text === 'Guest key needs recovery.' || text === 'Allow browser storage.') return text;
   if (text === 'Invalid price.') return text;
   return 'Unavailable. Retry.';
 }

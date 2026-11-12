@@ -3,7 +3,7 @@ import { recoverMessageAddress } from 'viem';
 import { parseSiweMessage } from 'viem/siwe';
 import { createSessionStore } from '../../../wallet/session';
 import { chainFlags } from './flags';
-import { GUEST_KEY, guestAccount, guestSignIn, requireFuji } from './guest';
+import { GUEST_KEY, guestAccount, guestClient, guestSignIn, requireFuji } from './guest';
 
 afterEach(() => { localStorage.clear(); sessionStorage.clear(); vi.unstubAllGlobals(); });
 it('keeps the same address across sessions and sends only real SIWE proof', async () => {
@@ -38,4 +38,13 @@ it('fails closed on unavailable/corrupt storage without replacing a key', () => 
 it('defaults every chain feature off and enables the demo build', () => {
   expect(Object.values(chainFlags({}))).toEqual([false, false, false, false]);
   expect(Object.values(chainFlags({ VITE_CHAIN_DEMO: '1' }))).toEqual([true, true, true, true]);
+});
+it('does not create a replacement transaction signer after browser storage is cleared', () => {
+  expect(() => guestClient('http://127.0.0.1:5981')).toThrow('recovery');
+  expect(localStorage.getItem(GUEST_KEY)).toBeNull();
+  const account = guestAccount();
+  expect(guestClient('http://127.0.0.1:5981').account.address).toBe(account.address);
+  localStorage.clear();
+  expect(() => guestClient('http://127.0.0.1:5981')).toThrow('recovery');
+  expect(localStorage.getItem(GUEST_KEY)).toBeNull();
 });

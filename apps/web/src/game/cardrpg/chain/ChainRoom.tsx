@@ -12,7 +12,7 @@ import { chainRuntime, loadChainConfig, txLink, type ChainConfig, type ChainList
 import { readChainHistory, type HistoryRow } from './history';
 export const RELIC_IDS = [1n,2n,3n,4n];
 export const RELIC_NAMES = ['Paw Charm','Star Bell','Moon Collar','Golden Maneki'];
-type Tab='Judge'|'Market'|'Bag'|'Seal'|'History';
+export type Tab='Judge'|'Market'|'Bag'|'Seal'|'History';
 interface Voucher {player:Address;relicId:string;rarity:number;nonce:string;expiry:string;signature:Hex;used:boolean;source:string}
 interface Pass {vouchers:Voucher[];battle?:{won:boolean;rounds:number;log:unknown[]}}
 interface Inventory {id:string;item_id:string;state:string;seal:{id:string;cost:string}|null}
@@ -84,6 +84,14 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const grant=async(action:'pass'|'boss')=>{setPass(await chainPost<Pass>('chain-judge',session!.token,{action}));};
   const mint=async(v:Voucher)=>{
     if(v.used)return;
+    if (v.source !== 'sealed-item' && BigInt(v.expiry) <= BigInt(Math.floor(Date.now()/1000) + 30)) {
+      const renewed = await chainPost<Pass>('chain-judge',session!.token,{action:'pass'});
+      setPass(previous=>({...renewed,battle:previous?.battle??renewed.battle}));
+      const current = renewed.vouchers.find(row=>row.nonce===v.nonce);
+      if (!current) throw new Error('Voucher unavailable. Retry.');
+      if (current.used) return;
+      v = current;
+    }
     const fields={player:v.player,relicId:BigInt(v.relicId),rarity:v.rarity,nonce:BigInt(v.nonce),expiry:BigInt(v.expiry)};
     const hash=await runtime!.write({address:config!.RelicNFT,abi:relicNftAbi,functionName:'mint',args:[fields,v.signature]});
     setSuccess({hash,id:fields.relicId});setChecks(c=>({...c,Mint:true}));
@@ -166,7 +174,7 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
       {tab==='Seal'&&<><div className="chain-grid">{sealable.slice(page*2,page*2+2).map(item=><article key={item.id} data-testid={`drop-${item.item_id}`}><img src={artOf(TRADE_BY_ID[item.item_id]?.tokenId??10001)} alt={TRADE_BY_ID[item.item_id]?.name}/><strong>{TRADE_BY_ID[item.item_id]?.name}</strong><output>🧶 {formatEther(sealCost(item.item_id))}</output><button disabled={disabled} onClick={()=>void run(()=>seal(item))}>{item.state==='available'?'✦ Seal to Fuji':'↻ Recover'}</button></article>)}</div>{sealable.length>2&&pages(sealable.length,'seal items')}</>}
       {tab==='History'&&<ol className="chain-history">{history.map(h=><li key={h.hash}><a href={txLink(h.hash)} target="_blank" rel="noreferrer" title={h.hash}>↗ {h.hash.slice(0,10)}…</a></li>)}</ol>}
     </>}
-    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Seal')await loadInventory();if(tab==='History'&&runtime)await historyPage();})}>↻</button><details><summary>?</summary><p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
+    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Judge'&&pass)await grant('pass');if(tab==='Seal')await loadInventory();if(tab==='History'&&runtime)await historyPage();})}>↻</button><details><summary>?</summary><p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
     {success&&<div className="chain-success" role="dialog" aria-label="Transaction confirmed" aria-modal="true"><button aria-label="Close receipt" onClick={()=>setSuccess(undefined)}>×</button><b>✓ Confirmed</b><small>{TESTNET_NOTICE}</small>{success.id&&<img src={artOf(success.id)} alt={nameOf(success.id)}/>}<code>{success.hash}</code><a href={txLink(success.hash)} target="_blank" rel="noreferrer" onClick={()=>setChecks(c=>({...c,Snowtrace:true}))}>↗ Snowtrace</a></div>}
   </section>;
 }
