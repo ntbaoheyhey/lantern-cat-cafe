@@ -12,3 +12,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | soot-3 | 8 / 8 / 9 / 8 | Narrow wick flame remains distinct from the wider pour; impact and fade are legible. | 119.99 |
 | soot-4 | 8 / 8 / 9 / 8 | Three lanterns read across the enemy formation; two-word cut-in and all hit numbers stay legible. | 120.00 |
 | soot-passive | 8 / 8 / 9 / 8 | Crescent cue stays low on Soot and follows the actual shield trigger. | 119.98 |
+| clover-1 | 8 / 8 / 9 / 8 | Full leaf silhouette survives quarter-scale playback; heal and damage numbers do not collide. | 120.00 |
