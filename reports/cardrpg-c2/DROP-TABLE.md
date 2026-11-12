@@ -188,3 +188,7 @@ The full 128-template screen remains in progress. After completion, every new fa
 The complete pass5 screen now contains all128 templates/6,144 cells with100 pairs each:18 original sample misses, maximum24pp. The historical30-cell panel overlaps exactly one screen miss; the declared additional17-cell panel on101001–102000 is running. Their47-cell union covers every historical/current failed fixture without pooling outcomes. See [PASS5-ITEM-SCREEN.json](PASS5-ITEM-SCREEN.json).
 
 Candidate6 is prospective: C2 HP main-stat weight0.4; Bellsteel grants its first Riposte without equipment Shelter; Rain Bell removes one debuff stack per swap. Numeric limits and live text share the same C2 tables; legacy rules retain their previous behavior. Reused-screen diagnostics do not replace the predeclared fresh47-cell panel on102001–103000 or the next complete catalog screen.
+
+## Completed pass5 disjoint panel
+
+2026-11-12T14:00:49.013733+00:00. All17 new failed fixtures completed1,000 paired seeds101001–102000; all17 exceed12pp (13.4–23.6pp). Together with historical30 panel,20/47 misses. Runtime matches exactly; panels are disjoint and cover all18 screen misses plus all30 historical fixtures. Evidence: PASS5-NEW-HOLDOUT.json. Candidate6 reused100-pair diagnostic has4/47 misses (one+15pp, three−13/−14pp), retained as diagnostics. Continue the declared full6,144-cell screen and fresh47-fixture holdout before any acceptance.

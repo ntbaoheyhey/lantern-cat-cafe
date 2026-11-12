@@ -1,0 +1,82 @@
+{
+  "sim": {
+    "summary": {
+      "seeds": 500,
+      "completeSeeds": 500,
+      "censoredSeeds": 0,
+      "minimumHorizonSeconds": 1800,
+      "firstLossMedianSeconds": 751.0580000000003,
+      "earliestLossSeconds": 607.6876666666666,
+      "earlyLossSeeds": 0,
+      "bossCount": 1799,
+      "bossMedianSeconds": 79.49333333333331,
+      "bossP90Seconds": 97.25333333333316,
+      "normalWinCount": 6061,
+      "normalWinHpMean": 0.7134634468309786,
+      "normalWinHpMedian": 0.7821489001692047
+    },
+    "targets": {
+      "pass": true,
+      "rows": [
+        {
+          "metric": "completedSeeds",
+          "value": 500,
+          "min": 500,
+          "max": 500,
+          "pass": true
+        },
+        {
+          "metric": "minimumHorizonSeconds",
+          "value": 1800,
+          "min": 1800,
+          "max": null,
+          "pass": true
+        },
+        {
+          "metric": "firstLossMedianSeconds",
+          "value": 751.0580000000003,
+          "min": 720,
+          "max": 1200,
+          "pass": true
+        },
+        {
+          "metric": "earlyLossSeeds",
+          "value": 0,
+          "min": 0,
+          "max": 0,
+          "pass": true
+        },
+        {
+          "metric": "bossMedianSeconds",
+          "value": 79.49333333333331,
+          "min": 60,
+          "max": 90,
+          "pass": true
+        },
+        {
+          "metric": "bossP90Seconds",
+          "value": 97.25333333333316,
+          "min": 0,
+          "max": 110,
+          "pass": true
+        },
+        {
+          "metric": "normalWinHpMean",
+          "value": 0.7134634468309786,
+          "min": 0.55,
+          "max": 0.8,
+          "pass": true
+        },
+        {
+          "metric": "normalWinHpMedian",
+          "value": 0.7821489001692047,
+          "min": 0.55,
+          "max": 0.8,
+          "pass": true
+        }
+      ]
+    },
+    "errors": [],
+    "pass": true
+  }
+}

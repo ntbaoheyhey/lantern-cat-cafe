@@ -84,3 +84,9 @@ Pass4 complete500 model: first-loss median12.664m,earliest3.224m,3 early seeds;b
 2026-11-12T13:27:02.079561+00:00. Ordinary HP3.2/3.7/1;ATK1.1/0.95/2.65;boss tables unchanged. Full500 diagnostic on the frozen baseline plus this exact in-memory table meets every target: loss median12.553m,earliest10.157m,early0;boss77.84/96.94s;normalHP71.24/77.17%. Keep the known failed pass4 seeds80061/80155/80194; all survive beyond8min now. Build the production source with this table, verify the frozen runtime/cohort identity and run five fresh realUI30min sessions. Acceptance remains pending UI and production-runtime parity.
 
 Production-runtime verification 2026-11-12T13:31:30.299753+00:00: all500 seed reports exactly equal the selected diagnostic (entire trace/final account, not just aggregates). Frozen runtime c9f7f596a2c0ab3dd3d5b08cfe47e772b1c2b1c5c87b7472403ddb2bcbad2585. All model targets pass. RealUI5×30min remains in progress; full acceptance pending.
+
+## Completed pass5 and candidate6 model
+
+2026-11-12T14:00:49.013733+00:00. Pass5 five actual30-minute UI runs and500 model seeds both meet every target; browser errors0. UI loss13.292m, earliest10.525m, boss72.03/96.36s, normalHP69.62/69.72% mean/median. Model loss12.553m, earliest10.157m, boss77.84/96.94s, normalHP71.24/77.17%. Parity:146 shared encounters,1,506 common decisions, no combat/policy/currency/XP differences; median per-seed playback error0.32–0.61%. Evidence: PASS5-COMPLETE-BALANCE.json.
+
+Candidate6 model500/500 also passes: first-loss12.518m, earliest10.128m, early0, boss79.49/97.25s, normalHP71.35/78.21%. Evidence: ITEM6-MODEL.json. Candidate6 full item screen and47-cell fresh holdout run next; realUI/monthly acceptance awaits final item tables. Pass5 completed UI remains separate and is not relabeled candidate6 evidence.
