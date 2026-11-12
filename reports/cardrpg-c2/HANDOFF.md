@@ -1,17 +1,17 @@
 # C2 handoff
-NOW: V3 marigold-passive exported; capture/review next.
+NOW: V3 enemy:pollen-scout:basic exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
 LAST GOOD COMMIT: 27aeee053; frozen economy runtime unchanged.
 NEXT 1: Finish frozen600-account economy; publish weekly supply per item to OUTBOX.
 NEXT 2: Capture/review biscuit-passive and inkcap-passive, then paint cinnamon-passive.
-NEXT 3: Capture/review marigold-passive, then continue first nonaccepted V3 skill.
+NEXT 3: Capture/review enemy:pollen-scout:basic, then continue first nonaccepted V3 skill.
 RUNNING: monthly resuming8CPU; 424/600 preserved; launch/PID in session11 work/c2.
 B4: all three passes consumed; enemy tables unchanged; timing/HP misses disclosed.
 B4b: full128-template/6144-cell screen4misses(max13pp); preserve original results.
 HOLDOUT: all4 failures x1000 seeds100001–101000 complete;4.6–11pp,0point-estimate misses.
 UNION HOLDOUT: prior27cells x1000 complete,max9.3pp; all source cohorts preserved.
 CANDIDATE: affixScale0.25; gear BellsteelRiposte first Defend; main0.8%/2%; native/legacy preserved.
-V3:86IDs;80accepted;82exported=5,496,077bytes. Review server on5973; restart after new exports.
+V3:86IDs;80accepted;83exported=5,554,037bytes. Review server on5973; restart after new exports.
 ART: /Users/bao/art/vfx-2026-11-12; sources outside git; exact prompts in vfx/ASSET-LOG.md.
 LOGS: session11 work/c2; inherited sim data in session9 work/c2.
 OPEN PROBLEMS: B4 target misses; final economy;10VFX; integration and reports.
