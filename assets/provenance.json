@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "assets": [
+    {
+      "type": "audio",
+      "tool": "ffmpeg / original cat-speak grain synthesis",
+      "source": "assets/audio-sources/SOURCES.json",
+      "license": "CC0-1.0",
+      "prompt": "No model-generated audio; licensed samples normalized, arranged and encoded."
+    },
+    {
+      "type": "fonts",
+      "tool": "Fontsource official npm packages",
+      "source": [
+        "https://www.npmjs.com/package/@fontsource/baloo-2",
+        "https://www.npmjs.com/package/@fontsource/barlow-condensed"
+      ],
+      "license": "SIL OFL 1.1",
+      "files": "apps/web/public/fonts/*.woff2",
+      "date": "2026-11-13",
+      "prompt": "No generation; Latin and Vietnamese subsets of Baloo 2 800 and Barlow Condensed 500/700."
+    },
+    {
+      "type": "item-icons",
+      "tool": "built-in image_gen",
+      "date": "2026-11-13",
+      "license": "Original generated output; OpenAI Terms of Use. No third-party input.",
+      "source": "assets/v3-shell/item-atlas.png",
+      "files": "apps/web/public/icons/*-{128,64}.webp",
+      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Caf\u00e9. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/caf\u00e9 deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
+      "processing": "Grid crop, preserve alpha, Lanczos export 128/64 WebP."
+    },
+    {
+      "type": "nav-status-frames",
+      "tool": "Original SVG paths authored by Codex",
+      "date": "2026-11-13",
+      "license": "Project-original; no third-party inputs",
+      "files": "apps/web/public/icons/*.svg",
+      "prompt": "Chunky painted gold/nav and category-coloured status silhouettes, plum outline, top-left highlight; six separate rarity frames."
+    },
+    {
+      "type": "landing-key-art",
+      "tool": "built-in image_gen",
+      "date": "2026-11-13",
+      "license": "Original generated output; OpenAI Terms of Use. No third-party inputs.",
+      "files": [
+        "apps/web/public/art/v3-shell/landing.webp"
+      ],
+      "prompt": "Original 16:9 painted Lantern Cat Caf\u00e9 at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
+    }
+  ]
+}
