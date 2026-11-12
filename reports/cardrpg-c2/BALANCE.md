@@ -1,4 +1,6 @@
-# B4 — round four, at most three config passes
+# B4 — round four
+
+**12 Nov user override:** tuning reopened without a pass cap. Earlier cap/closure statements below record the historical decision; current work continues from pass4. Previous cohorts remain unchanged.
 
 B3 locked baseline and exact policy parity before tuning. All passes use five real UI seeds 80001–80005 for 1,800s each plus model seeds 80001–80500. Missing losses remain censored. Ordinary HP excludes tutorials, elite encounters and earned skips. See B3.md for the controlled baseline.
 
@@ -54,3 +56,23 @@ Frozen runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1
 Exact parity for133 common encounters and1365 decisions; currency/XP errors0; per-seed median playback error0.75–0.92%. Boss timing, mean normal HP and no loss before8min meet targets. UI first-loss median12.373m passes; model first loss is12.593s early. Normal-win HP medians remain10.28pp/UI and9.51pp/model above the80% ceiling. No additional enemy tuning.
 
 Evidence: session9 `work/c2/b4b-affix-balance.json`, `b4b-affix-parity.json` and the frozen real/sim directories.
+
+## Reopened pass4 — preliminary model diagnostics
+
+2026-11-12T13:18:20.910461+00:00. User removed the pass and return caps. Baseline trace analysis: chapter1/2 ordinary-win HP medians are100%; chapter3 ordinary medians66.66%/82.30%. Raising endurance alone prolongs heal cycles and selects only easy victories. Pass4 keeps early endurance, moderates the chapter3 HP wall and increases its strike pressure. Only BALANCE_C2 table values change. Boss tables, seeds, policy, thresholds and all prior evidence are preserved.
+
+Each diagnostic below uses50 complete model seeds80001–80050 ×1800s from frozen baseline runtime4e68bb59 with only the listed candidate table applied in memory. These are preliminary model measurements, not five real UI runs or500-seed acceptance. Raw traces/configs: projectless session x/work/c2.
+
+| Diagnostic | Ordinary HP / ATK by chapter | Loss median min / early seeds | Boss median/p90 s | Normal HP mean/median % |
+|---|---|---|---|---|
+| pass4-diagnostic | [2.6, 3, 1.25] / [1.4, 1.35, 2.25] | 12.446 / 1 | 68.57/94.38 | 79.07/90.08 |
+| d5 | [3.2, 3.7, 1.35] / [1.1, 0.95, 2.5] | 12.689 / 0 | 82.90/96.72 | 77.94/91.95 |
+| d6 | [3.2, 3.7, 1.5] / [1.1, 0.95, 2.35] | 13.016 / 0 | 83.40/96.57 | 81.21/94.08 |
+| d7 | [2.6, 3, 1.4] / [1.2, 1.1, 2.4] | 11.742 / 0 | 79.38/95.31 | 80.29/94.06 |
+| d8 | [3.2, 3.7, 1.2] / [1.2, 1.1, 2.6] | 12.734 / 0 | 82.99/96.49 | 75.53/87.64 |
+| d9 | [3.2, 3.7, 0.9] / [1.2, 1.1, 3] | 12.580 / 0 | 85.84/96.87 | 70.03/80.30 |
+| d10 | [3.2, 3.7, 0.7] / [1.2, 1.1, 3.5] | 12.465 / 0 | 88.85/97.30 | 65.18/60.05 |
+| d11 | [3.5, 4.2, 1.0] / [1.2, 1.1, 2.8] | 13.484 / 0 | 83.40/96.87 | 72.65/85.11 |
+| d12 | [3.2, 3.7, 1.0] / [1.2, 1.1, 2.65] | 12.794 / 0 | 74.95/95.76 | 71.35/77.53 |
+
+Candidate d12 is the prospective pass4: ordinary HP3.2/3.7/1 and ATK1.2/1.1/2.65; boss values unchanged. Its first five model seeds also meet all metric ranges; this does not replace the real UI cohort. Freeze source, run existing fixed-budget/replay tests, then measure500 model seeds80001–80500 and five real UI seeds80001–80005 for1800s. No acceptance before both finish.
