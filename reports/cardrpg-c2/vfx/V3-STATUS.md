@@ -40,7 +40,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | enemy:binding-thread | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-binding-thread-after.mp4 |
 | enemy:practice-cushion:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-practice-cushion-basic-after.mp4 |
 | enemy:practice-cushion | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-practice-cushion-after.mp4 |
-| enemy:yarn-giant:basic | pending | pending | pending |
+| enemy:yarn-giant:basic | animated | pending | pending |
 | enemy:yarn-giant | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/enemy-yarn-giant-after.mp4 |
 | enemy:rain-spool:basic | pending | pending | pending |
 | enemy:rain-spool | pending | pending | pending |
