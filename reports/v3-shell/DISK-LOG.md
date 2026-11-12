@@ -10,3 +10,5 @@ Removed regenerable artifacts in this worktree only:
 - contracts/cache
 - contracts/out
 Protected other worktrees, art, tools, designer folders and zaic.
+
+Resume: before 100.80 GiB; after 100.84 GiB. Removed only regenerable paths: apps/web/node_modules/.vite.
