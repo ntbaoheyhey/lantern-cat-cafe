@@ -68,3 +68,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | brioche-3 | 8 / 8 / 9 / 8 | Repaired transparent golden collar crescent stays complete and readable over the boss body; warm cream leading tip and damage number align at impact, then the tail clears. | 60.00 |
 | brioche-4 | 8 / 8 / 9 / 8 | Four cream aprons with distinct golden star accents protect the crew below their faces; separate shield numbers and the two-word Constellation apron cut-in remain readable through the complete fade. | 60.00 |
 | velvet-1 | 8 / 8 / 9 / 8 | Long dusty-rose silk blade contrasts with the broad earlier motifs; the cream tip lands low on the boss and damage text remains above the motion. | 60.00 |
+| velvet-2 | 8 / 8 / 9 / 8 | Two rose flame droplets and their cream connecting arc read across all three enemies; staggered damage numbers stay separate and every tail clears before the next action. | 60.00 |

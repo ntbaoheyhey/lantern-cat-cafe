@@ -40,3 +40,8 @@ Frozen runtime SHA256 `c7b8656e3c02f9ec14af1152a137efccd1202faa04943828aef43eafd
 Exact parity:133 common encounters,1,358 decisions; currency/XP errors0; per-seed median playback error0.84–0.94%. Boss timing and mean normal-win HP meet targets; no seed loses before8min. UI loss median meets12–20min; model median is12.49s early. Normal-win HP medians exceed the80% ceiling by10.61pp/UI and9.42pp/model. No additional enemy tuning.
 
 Evidence: session9 `work/c2/b4b-link-balance.json`, `b4b-link-parity.json` and frozen real/sim directories.
+
+
+## B4b affix/Riposte candidate remeasurement
+
+Frozen runtime `4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1`; same B4pass3 enemy tables. All500 model seeds80001–80500 completed1800seconds. First-loss median707.407s (11.790m),12.593s earlier than target;0 seeds below8min. Boss median74.78s/p9094.90s; normal-win HP mean78.14%/median89.51%. Boss timing and mean HP pass; median HP remains9.51pp above ceiling. No further enemy tuning. The five real UI runs remain in progress; model results do not substitute for those runs.
