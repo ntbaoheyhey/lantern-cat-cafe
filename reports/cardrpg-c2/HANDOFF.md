@@ -1,7 +1,7 @@
 # C2 integration handoff
-NOW: B5 demo/check preparation on clean READY merge; B4b frozen monthly continues.
+NOW: B5 Deno graph repaired; focused4/4 pass; full integrated retry next.
 BRANCH: codex/cardrpg-integrate-2026-11-12; base C2 b0448628f; PR440 remains C2 draft.
-LAST GOOD COMMIT: bb0024cfa (final C2 V3 checks); merge707d4359e awaiting integration checks.
+LAST GOOD COMMIT: bb0024cfa (C2 full checks); integrated3632b94c1 plus Deno repair awaits full checks.
 NEXT 1: Run full integrated units, E2E, Anvil chain E2E, word budgets and visuals.
 NEXT 2: Finish600-account monthly; export summary/supply/charts on a dedicated report commit.
 NEXT 3: Cherry-pick that B4b report commit onto C2, merge C2 back; draft integration PR/B6.

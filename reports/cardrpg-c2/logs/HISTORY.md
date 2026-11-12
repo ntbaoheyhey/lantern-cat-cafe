@@ -34,3 +34,5 @@ DEADLINE: reports18Nov18UTC; freeze19Nov12UTC. No agents,main merges,deployment,
 2026-11-12T12:09:22.259343+00:00 — Final source-odds audit prepared; completed-cohort report generator added. Monthly source stays frozen; CDF export waits for complete600-account index.
 
 2026-11-12T12:12:27.183317+00:00 — Integration merge707d4359e clean; demo wrapper and local-port adapter ready for full checks. Monthly runtime frozen; report publication back to C2 pending.
+
+2026-11-12T12:15:44.796887+00:00 — B5 first full units exposed missing Deno import mappings; focused4/4 passed after canonical generation. Full retry follows without assertion changes.

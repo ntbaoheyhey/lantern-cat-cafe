@@ -92,3 +92,5 @@ Validation is predeclared before candidate results: measure the union of all15 e
 
 
 2026-11-12T12:12:27.183317+00:00 B5 preparation: merged exact CHAIN READY394cf60613b5b576367e860b7dff8bab60dc84aa into codex/cardrpg-integrate-2026-11-12 with merge commit707d4359e; no conflicts. The immutable B4b cohort continues concurrently; publish its completed report/supply commit back to C2 before final integration handoff. Demo uses5940 plus local RPC5971/API5972 through explicit loopback port settings. Default CHAIN test ports remain5980/5981/5982. Fuji is an explicit env switch using public endpoints; no public deployment/signing or campaign-mint authority is added.
+
+2026-11-12T12:15:44.796887+00:00 B5 integration repair: CHAIN’s new Edge Function dependency graph reaches C2 formation/economy modules. Existing Deno maps lacked14 reachable import resolutions. Ran the repository generator, adding three canonical mappings to19 generated function maps; focused4/4 graph regressions pass. No import exemption, skipped test or gameplay change.
