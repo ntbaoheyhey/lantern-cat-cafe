@@ -60,3 +60,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | inkcap-3 | 8 / 8 / 9 / 8 | Leaf canopy and cream curl wrap the ally below the face, keeping a recognizable protective silhouette throughout the short fade. | 60.00 |
 | inkcap-4 | 8 / 8 / 9 / 8 | Layered violet canopies and cream hanging ribbons read across the three enemy slots; the portrait cut-in and damage values remain separate, and each canopy clears fully. | 60.00 |
 | cinnamon-1 | 8 / 8 / 9 / 8 | Terracotta spoon and its cream spice puff travel as one readable stroke; the boss face stays clear and the small warm trail fades below the damage number. | 60.00 |
+| cinnamon-2 | 8 / 8 / 9 / 8 | Warm pouring cups frame three healing recipients below their faces; the long cream ribbons stay separate from the green heal values and fade cleanly. | 60.00 |
