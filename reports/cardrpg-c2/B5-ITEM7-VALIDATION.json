@@ -1,0 +1,157 @@
+{
+  "at": "2026-11-12T14:54:37.557775+00:00",
+  "captureSource": "1582e12d762989047de3088a70ce92a5b2b5b413",
+  "runtimeSha256": "007ce084d8e4573ec2d3d275390a0181719f88bbeff585cafeb7e66185d97efc",
+  "chainReady": "394cf60613b5b576367e860b7dff8bab60dc84aa",
+  "packagePasses": 4517,
+  "packageExpectedFailures": 2,
+  "inheritedResearchSkips": 11,
+  "nodePasses": 64,
+  "foundryPasses": 118,
+  "typecheckLintBuild": "pass",
+  "e2e": {
+    "startTime": "2026-11-12T14:41:08.637Z",
+    "duration": 357899.522,
+    "expected": 435,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "chainE2e": {
+    "startTime": "2026-11-12T14:47:07.045Z",
+    "duration": 31841.483,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "wordBudgets": {
+    "item7-words": {
+      "screens": 33,
+      "maximum": 25,
+      "misses": 0
+    },
+    "item7-guest-words": {
+      "screens": 33,
+      "maximum": 25,
+      "misses": 0
+    }
+  },
+  "formation": {
+    "screens": 21,
+    "maxOverlap": 0,
+    "pageErrors": 0
+  },
+  "demo": {
+    "head": "1582e12d762989047de3088a70ce92a5b2b5b413",
+    "date": "2026-11-12T14:52:37.913Z",
+    "headless": true,
+    "origin": "http://127.0.0.1:5940",
+    "rpc": "http://127.0.0.1:5971",
+    "api": "http://127.0.0.1:5972",
+    "formation": {
+      "c2": true,
+      "team": 4
+    },
+    "guestGas": "0.0500",
+    "judgeVictory": true,
+    "battleButtonClickable": true,
+    "pageErrors": 0
+  },
+  "layout": {
+    "headless": true,
+    "checks": [
+      {
+        "id": "desktop",
+        "images": 4,
+        "broken": 0,
+        "overflow": false
+      },
+      {
+        "id": "mobile",
+        "images": 4,
+        "broken": 0,
+        "overflow": false
+      }
+    ],
+    "pageErrors": 0
+  },
+  "originalParity": {
+    "exit": 1,
+    "retained": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-parity-final.json",
+    "cause": "30-minute horizon includes an unfinished identical live boss only in the model distribution"
+  },
+  "repairedParity": {
+    "pass": true,
+    "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-parity-demo-gate.json",
+    "committedRepair": "1849dea77"
+  },
+  "visualReview": {
+    "at": "2026-11-12T14:54:37.557775+00:00",
+    "personallyInspected": [
+      "preparation",
+      "battle HUD",
+      "Pantry boss",
+      "Judge desktop/mobile",
+      "market/history desktop/mobile",
+      "walkthrough desktop/mobile"
+    ],
+    "notes": "Staggered four-unit formation and boss phase/HP labels are unobstructed; wallet close/tab controls fit mobile; walkthrough has no horizontal overflow.",
+    "previews": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/review"
+  },
+  "logs": {
+    "item7-verification.json": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-verification.json",
+      "sha256": "ef38275ed8e9fec5b433d0d059d465c05650e946edf1866386203a4af5b31a9e"
+    },
+    "item7-browser-verification.json": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-browser-verification.json",
+      "sha256": "b956edb516f0407a68d34f19cff88170b03643a8ff98c57efd044ce4e9c7ef62"
+    },
+    "item7-demo-verification-retry.json": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-demo-verification-retry.json",
+      "sha256": "ba45bfded60fa31af77eac03525c563f4980efa4786566f3ee6be58c3374af93"
+    },
+    "item7-parity-final.json": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-parity-final.json",
+      "sha256": "96e28a9d236b75050c3ff5dd6aabcef69be17c034b2c41107f31d87e126e437a"
+    },
+    "item7-parity-demo-gate.json": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-parity-demo-gate.json",
+      "sha256": "df71426077ea1f180b4f6c89be350b2de3593015f3b9336a7782b6419006da3b"
+    },
+    "item7-final-node.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-final-node.log",
+      "sha256": "e5d08bc676aeca497b7ecb2e9212b0c816d320121de3134dd41be81c8cb5a6ba"
+    },
+    "item7-full-unit.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-unit.log",
+      "sha256": "3a3f6c60172593efc9fa5eab8c6b63809dcb03abdd291cd0547322f61db4b01a"
+    },
+    "item7-full-forge.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-forge.log",
+      "sha256": "a07b8c0964f6e012f3f436fedae640e1a26f14c66e7467960251edb6fcc0cef8"
+    },
+    "item7-full-typecheck.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-typecheck.log",
+      "sha256": "9e6c5a286dbb58bccf5fd87ff79b9c2439160c477b128e563f838c4dd46a9900"
+    },
+    "item7-full-lint.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-lint.log",
+      "sha256": "57fcf58241c3ac3f54ec955a597419298607b0b552a649043a9da8780b6ab002"
+    },
+    "item7-full-build.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-build.log",
+      "sha256": "0ab02bcd57c5d50f4a3a3b14f4aa19a8771249fefd74b8636ed942dcdcbfcde3"
+    },
+    "item7-full-e2e.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-full-e2e.log",
+      "sha256": "33c686a5709263975621c7249cc5faac5e2296240f7c527b69b74be6fe4fb562"
+    },
+    "item7-chain-e2e.log": {
+      "path": "/Users/bao/Documents/Codex/2026-11-12/x/work/c2/item7-chain-e2e.log",
+      "sha256": "3eb950fd6ebd81682c7693b63a420ae84bf2301deb0625eb15eff85dad3028c3"
+    }
+  },
+  "pass": true
+}

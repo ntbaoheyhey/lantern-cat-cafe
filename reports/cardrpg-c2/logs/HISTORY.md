@@ -258,3 +258,5 @@ DATES: Sync15/17Nov12UTC;reports18Nov18UTC;freeze19Nov12UTC.
 2026-11-12T14:45:35.561014+00:00 Parity harness repair: compare identical completed bosses; validate unmatched boss against live trace and elapsed-time bound. Original failed aggregate retained; regression failed before,14focused checks pass after. Gameplay unchanged.
 
 2026-11-12T14:49:48.300328+00:00 Resume verified1849dea77; B4 done; browser435+Anvil2 pass. Demo driver stopped on preserved original parity failure; explicit repaired-parity rerun gates retry. Monthly~210/600/catalog~96/128 active.
+
+2026-11-12T14:54:37.557775+00:00 B5 candidate7 validation and visual review complete; original parity failure retained with verified repaired rerun. Monthly/catalog continue.
