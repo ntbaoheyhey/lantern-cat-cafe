@@ -1,6 +1,6 @@
 # V3 resumable status
 
-State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means rendered review completed; inherited clips without recorded review remain in-game. Pilot approval is recorded in INBOX. Large sources stay outside git.
+State verified from disk on 2026-11-12T12:04:38.047141+00:00. All 86 entries have preserved sources, layers, timelines and reviewed clips. Eight stat passives are art previews only; see VFX-REPORT.md for event coverage and validation.
 
 | Skill ID | State | Self-score | Clip path |
 |---|---|---|---|

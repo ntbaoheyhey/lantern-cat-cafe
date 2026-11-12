@@ -28,3 +28,5 @@ CHAIN limits: client campaign saves not mint authority; Treasure stays cosmetic.
 LOGS:/Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/.
 DEADLINE: reports18Nov18UTC; freeze19Nov12UTC. No agents,main merges,deployment,secrets.
 
+
+2026-11-12T12:04:53.697290+00:00 — V3/V4 complete at final86 build. All sources/clips verified; 4453 unit/script,435 E2E,33 word screens pass;8 stat previews explicitly distinguished. Economy PID73297 resumed; integration preview clean.

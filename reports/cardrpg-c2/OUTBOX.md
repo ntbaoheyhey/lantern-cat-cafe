@@ -7,3 +7,5 @@ Contract: apps/web/src/game/cardrpg/stage/slots.json. Four party slots; normaliz
 PILOTS READY 07cfdb0e0
 
 Review: docs/vfx/index.html (self-contained); three pilots only. Full E2E 427/427; runtime 0.193 MB. All three pilots approved by the user on 12 Nov; V3 authorized.
+
+V3 READY — 86 accepted artworks/timelines; 78 combat-event effects, eight explicitly labeled passive-stat previews. Runtime assets 5,783,929 bytes. Full verification: 4,453 unit/script passes; 435/435 E2E, zero skips/flakes; 33/33 word budgets, max24. Reports: vfx/VFX-REPORT.md; gallery: docs/vfx/index.html. No new character art.

@@ -8,6 +8,6 @@
 - [x] B3 — five real 30-minute runs; exact policy/combat parity, worst timing error 3.04%; 430/430 E2E.
 - [x] B4 — three config passes measured; retain pass3; timing/HP misses disclosed in BALANCE.md; tuning closed.
 - [ ] B4b — eight-source research, economy audit, 30-day simulation, odds.
-- [ ] V3 — all skills; authorized: all three pilots approved by user 12 Nov.
+- [x] V3 — 86 accepted artworks/timelines: 78 rules-event effects and 8 passive-stat previews; 435/435 E2E; VFX-REPORT.md.
 - [ ] B5 — merge READY CHAIN into integration branch; complete integration checks/demo.
 - [ ] B6 / V4 — final report and VFX report; inspect/repair scores below 8 once.

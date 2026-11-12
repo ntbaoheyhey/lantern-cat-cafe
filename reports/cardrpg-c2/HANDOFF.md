@@ -1,20 +1,20 @@
 # C2 handoff
-NOW: All86 VFX visually accepted; full-card verification retry after crew-advice5s timeout.
+NOW: V3/V4 complete; B4b final frozen monthly simulation running.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440. No agents/main merges/deployments/secrets.
-LAST GOOD COMMIT: 27aeee053; frozen economy runtime unchanged.
-NEXT 1: Finish frozen600-account economy; publish weekly supply per item to OUTBOX.
-NEXT 2: Complete V3 checks/report and finish frozen economy, then B5 integration.
-NEXT 3: Continue V3 at final review; preserve all accepted work.
-RUNNING: session11 verify-v3-retry.py; monthly73297 paused only during checks.
-B4: all three passes consumed; enemy tables unchanged; timing/HP misses disclosed.
-B4b: full128-template/6144-cell screen4misses(max13pp); preserve original results.
-HOLDOUT: all4 failures x1000 seeds100001–101000 complete;4.6–11pp,0point-estimate misses.
-UNION HOLDOUT: prior27cells x1000 complete,max9.3pp; all source cohorts preserved.
-CANDIDATE: affixScale0.25; gear BellsteelRiposte first Defend; main0.8%/2%; native/legacy preserved.
-V3:86IDs;86accepted;86exported=5,783,929bytes. Review server5973.
-ART: /Users/bao/art/vfx-2026-11-12; sources outside git; exact prompts in vfx/ASSET-LOG.md.
-LOGS: session11 work/c2; inherited sim data in session9 work/c2.
-OPEN PROBLEMS: B4 target misses; final economy;10VFX; integration and reports.
-CHECKS: units4453pass,11inherited skips/2expected failures; E2E435/435pass,0skip/flaky; word33/33,max24.
+LAST GOOD COMMIT: 1578895a9; frozen gameplay runtime unchanged.
+NEXT 1: Finish all600 monthly accounts; summarize and publish per-item weekly supply.
+NEXT 2: B5 merge READY394cf60613b5b576367e860b7dff8bab60dc84aa on integration branch.
+NEXT 3: Full integrated checks, Anvil demo:play and B6 report.
+RUNNING: monthly PID73297, eight local workers; session11 work/c2/loot-resume.log.
+B4: three passes consumed; final model first loss12.593s early; median winHP above80%.
+B4b: final6144-cell screen4misses(max13pp); separate4x1000 holdout4.6–11pp.
+HOLDOUT: prior27-cell union x1000 max9.3pp; all earlier cohorts preserved.
+FROZEN: runtime4e68bb5977dfd04657aada154793a2bc1513811b3b48ecd183af9d8dd57f69a1.
+ECONOMY: session9 work/c2/loot-affix; final candidate; sources/calendar correlation disclosed.
+V3:86accepted;78rules-event effects/8stat previews;5,783,929bytes; VFX-REPORT published.
+ART: /Users/bao/art/vfx-2026-11-12; large sources outside git; approved work preserved.
+CHECKS:4420package+33Node pass;2expected fail/11inherited skips;E2E435/435,0skip/flaky.
+VISUAL:21formation captures; real screenshots inspected;word33/33,max24;typecheck/lint pass.
+CHAIN: latest READY394cf606; merge-tree preview clean; authority/reward economics remain open.
 USER: Browser checks headless only; never open visible Chrome windows.
-STOP-C2 absent at checkpoint. Check before heavy work; freeze19Nov12UTC; sync15/17Nov12UTC.
+STOP-C2 absent; freeze19Nov12UTC; future sync15/17Nov12UTC.
