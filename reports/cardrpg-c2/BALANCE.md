@@ -14,3 +14,16 @@ Pass 1 uses authored enemy HP/ATK config only. More ordinary pressure addresses 
 No target is claimed until both cohorts finish. Stop tuning after pass 3 if any target remains missed, retain the best measured pass, and report the gap.
 
 Final pass3 exact parity:126 common encounters and1,272 common decisions match; currency/XP errors0; per-seed median playback error0.63–0.96%. Retain pass3 as the best measured candidate: it eliminates the early-loss seeds, meets both boss targets, and reduces ordinary-win HP. It does not meet all requested balance targets. B4 enemy tuning is closed. The B4b item-stat change is separately measured and will not be reported as a fourth B4 tuning pass.
+
+## B4b final item/set configuration remeasurement
+
+Enemy budgets remain B4 pass3. Item/set runtime SHA256 `aee2911161a54d0724c74b692d5072edec1aee400a02ca5ff5d0ca653e79e262`. Fresh immutable build, five browser seeds80001–80005 for1800s and fixed model seeds80001–80500. This measures the final B4b item changes; it is not a fourth B4 tuning pass.
+
+| Cohort | First-loss median | Earliest loss | Seeds below8m | Boss median/p90 | Normal-win HP mean/median |
+|---|---|---|---|---|---|
+| real (5 seeds) | 12.260m | 9.468m | 0 | 71.82/93.93s | 78.14/90.61% |
+| sim (500 seeds) | 11.792m | 9.056m | 0 | 74.97/94.91s | 78.04/89.39% |
+
+All cohorts completed with zero browser/driver errors. Exact parity holds for132 encounters and1355 decisions; per-seed median playback error0.75–1.10%. Boss timing, mean normal HP and the no-loss-before-eight-minutes condition pass in both cohorts. Browser first-loss median passes; model median is12.49s early. Normal-win HP medians remain10.61pp/browser and9.39pp/model above the80% ceiling. Keep these misses visible; no further enemy tuning is authorized.
+
+Evidence: projectless session9 `work/c2/b4b-set-targets-complete.json`, `b4b-set-parity.json` and the frozen per-seed real/sim directories.
