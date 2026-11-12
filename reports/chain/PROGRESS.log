@@ -4,3 +4,6 @@
 2026-11-12 H0 DONE: 96 forge and 2383 web tests pass. Chain browser harness does not exist at H0; required acceptance starts H3. H1 core implementation in progress.
 2026-11-12 H1 typecheck repair: generic contract write helper must use viem Abi, not readonly unknown[]. Corrected typing; rerunning typecheck then guest browser flow.
 2026-11-12 H1 base DONE: 2386 web, 96 forge, guest browser login pass; typecheck pass. Safe sequential move adapter included; expanded token/market V2 receipt test follows H6.
+2026-11-12 H2 harness repair: HTTP SIWE fixture omitted mandatory expirationTime; production verifier correctly rejected it. Added canonical expiration, no auth relaxation.
+2026-11-12 H2 full-suite repair: schema inventory and manual deployment function inventory did not yet include chain_guest_drips/guest-drip. Added both; RLS and deployment coverage remain exact.
+2026-11-12 H2 DONE: full pnpm test PASS (web 2386, SQL 587, game-rules 1349; base retains 2 expected-fail/11 skipped, none newly skipped); typecheck PASS; forge 96 PASS; real drip transaction check PASS; browser 1/1 PASS. Full mint/market browser flow begins H3.

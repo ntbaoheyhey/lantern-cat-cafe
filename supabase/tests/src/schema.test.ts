@@ -41,7 +41,7 @@ const playerTables = ["idle_state", "gear", "boss_attempts", "boss_keys", "relic
 // relic_forges (B5) is covered in forge.test.ts.
 // V8 adds the six v2 tables (covered in ../v2/schema.test.ts).
 const v2Tables = ["cat_state", "items", "player_stacks", "boss_clears", "boss_fights", "founder_grants"];
-const allTables = ["v2_action_results", "players", ...playerTables, "relic_forges", "siwe_nonces", ...v2Tables];
+const allTables = ["chain_guest_drips", "v2_action_results", "players", ...playerTables, "relic_forges", "siwe_nonces", ...v2Tables];
 
 describe("migrations", () => {
   it("applied: all tables exist with RLS enabled", async () => {

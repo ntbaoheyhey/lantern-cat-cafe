@@ -7,6 +7,8 @@ import { copyGuestKey, existingGuestAddress, guestClient, guestSignIn, requireFu
 import { chainRuntime, loadChainConfig, txLink } from './runtime';
 import { moveGuestAssets } from './move';
 import './chain.css';
+import { chainFlags } from './flags';
+import { GasBalance } from './GasBalance';
 
 export function ChainDock() {
   const {api, store} = useAuthContext(), session = useSession();
@@ -40,6 +42,7 @@ export function ChainDock() {
       <small>{TESTNET_NOTICE}</small>
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
+        {guest && chainFlags().chainLoop && <GasBalance />}
         <button disabled={busy} onClick={() => store.clear()}>↪ Sign out</button>
         {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}>⇧ Export key</button>
           {warning && <div role="alert"><p>Anyone with this key controls your guest assets. Keep it private.</p><button disabled={copied} onClick={() => void run(async () => {await copyGuestKey(localStorage, navigator.clipboard);setCopied(true);})}>{copied ? '✓ Copied' : 'Copy once'}</button></div>}
