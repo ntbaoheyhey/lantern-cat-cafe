@@ -1,14 +1,14 @@
 # C2 handoff
-NOW: V3 41accepted; B4b link source+automatic-policy fixes pass23 regressions/typecheck; freeze holdout next.
+NOW: V3 enemy:pantry-crown exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT:2ffd88102 (link source,1374rules); policy correction and full workspace checks pending.
 NEXT 1: Run link-corrected holdout15×1000 (97001–98000); then freeze fresh complete item/economy/UI/model cohorts.
 NEXT 2: Finish B4/B4b reports, required tests, full E2E; tick measured cards with disclosed misses.
-NEXT 3: Continue V3 at enemy:pantry-crown; preserve all accepted work.
-RUNNING: pre-fix monthly600 PID86148; item128×48×100 complete (15misses,max16pp); fresh link-source cohorts next.
+NEXT 3: Capture/review enemy:pantry-crown, then continue first nonaccepted V3 skill.
+RUNNING: link source+policy diagnostics/holdout PID13126; pre-fix monthly600 PID86148; full workspace unit run.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
 B4b: config unchanged; native30% links now retain strength with Hearthloom gear. Pre-fix cohorts preserved; remeasurement required.
-V3:86IDs;41accepted;41exported=2,464,266bytes. Review server5973.
+V3:86IDs;41accepted;42exported=2,532,458bytes. Review server on5973; restart after new exports.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
 CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/

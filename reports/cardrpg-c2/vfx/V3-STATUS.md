@@ -45,7 +45,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | enemy:rain-spool:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-rain-spool-basic-after.mp4 |
 | enemy:rain-spool | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-rain-spool-after.mp4 |
 | enemy:pantry-crown:basic | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/enemy-pantry-crown-basic-after.mp4 |
-| enemy:pantry-crown | pending | pending | pending |
+| enemy:pantry-crown | animated | pending | pending |
 | mallow-1 | pending | pending | pending |
 | mallow-2 | pending | pending | pending |
 | mallow-3 | pending | pending | pending |
