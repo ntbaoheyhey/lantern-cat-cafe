@@ -5,7 +5,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | Skill ID | State | Self-score | Clip path |
 |---|---|---|---|
 | mochi-1 | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/mochi-1-after.mp4 |
-| mochi-2 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-2-after.mp4 |
+| mochi-2 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/mochi-2-after.mp4 |
 | mochi-3 | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-3-after.mp4 |
 | mochi-4 | accepted | 8 (pilot) | /Users/bao/art/vfx-2026-11-12/review/mochi-4-after.mp4 |
 | mochi-passive | in-game | pending | /Users/bao/art/vfx-2026-11-12/review/mochi-passive-after.mp4 |
