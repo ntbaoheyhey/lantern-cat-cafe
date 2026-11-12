@@ -19,3 +19,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | clover-passive | 8 / 8 / 9 / 8 | Seedling cue targets the actual front-row recipient and stays below the face. | 119.83 |
 | panko-1 | 8 / 8 / 9 / 8 | Golden pan rim has a clear leading edge and resolves into a short floor-level tail. | 120.00 |
 | panko-2 | 8 / 8 / 9 / 8 | Bread cushion silhouettes remain distinct at both front slots and clear after shield numbers. | 120.09 |
+| panko-3 | 8 / 8 / 9 / 8 | Paired crust arcs frame all four recipients; faces and shield numbers remain readable. | 120.00 |
