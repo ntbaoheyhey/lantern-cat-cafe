@@ -52,4 +52,35 @@ Additional attempted references: Steam FAQ returned an image-only page; Milky Wa
 
 The follow-up [audit](../../../reports/chain/TOKENOMICS-AUDIT.md) uses primary read-only Fuji evidence at block60934939, plus deployed Solidity policy and deterministic sensitivity tests. It is additional engineering evidence, not an extra independent economic source. E1/E2/E10 motivate no-growth/weak-demand tests; T6/T7/T8 motivate Sybil/fee-bypass scenarios. They do not establish the assumed0.4/0.08 weekly supply,20-YARN sale price or adoption probabilities. C2 has supplied none of those weekly issuance rates.
 
-After removing future sinks from the implemented-sink case and matching grant-inclusive on-chain policy, emissions/burn are2.3904 /2.5332 /2.7797, so the requested2× gate fails. This supersedes any earlier summary that treated optional forge/cosmetic demand as adequate proof. Fifty-percent bot wallets capture53.24% of claims under that scenario; wallet fairness is not human fairness. No allocation or fee change is justified by these uncalibrated outputs alone.
+Historical checkpoint (superseded by model v5 below): after removing future sinks from the implemented-sink case and matching grant-inclusive on-chain policy, emissions/burn are2.3904 /2.5332 /2.7797, so the requested2× gate fails. This supersedes any earlier summary that treated optional forge/cosmetic demand as adequate proof. Fifty-percent bot wallets capture53.24% of claims under that scenario; wallet fairness is not human fairness. No allocation or fee change is justified by these uncalibrated outputs alone.
+
+
+## Follow-up: cadence, demand and item stock — read 2026-11-12
+
+These five additional primary pages were opened and read during the autonomous follow-up. They extend the earlier22 distinct sources; no fee or adoption coefficient is copied from another game.
+
+| ID | Source (date read:2026-11-12) | Evidence and decision |
+|---|---|---|
+| E14 | [Sky Mavis: Origins Arena Mode](https://support.axieinfinity.com/hc/en-us/articles/7997700973595-Origins-Arena-Mode) | Distinguishes first-time progression rewards and rewards at the end of an era/season. The support page was updated in2025; use it for cadence, not current token payouts. Correct YARN rank to one closed-season entitlement, never6 every week. |
+| E15 | [Axie: Origins S18, July8 2026](https://blog.axieinfinity.com/p/origins-s18-is-live) | Publisher says season rewards use nontransferable bAXS and holds era rewards for integrity review. Thus historicalAXS examples are not current transferable issuance. YARN remains the user's Fuji ERC20 choice; require final rank/anti-abuse receipts before signing, and separate earning season from claim season. No purchased-power qualification. |
+| E16 | [Pixels: Feed the Deep/update, October23 2026](https://pixelspost.substack.com/p/new-event-feed-the-deep) | Update describes task quantities/rewards retuned and recipes consuming surplus items. Its event items expire; copying that into immutable NFTs would be misleading. Our forge roadmap needs explicit irreversible item custody, separate from the ERC20 fee burn; no promised demand from more emissions. |
+| E17 | [EVE: October2026 Monthly Economic Report, November9](https://www.eveonline.com/news/view/monthly-economic-report-october-2026) | Production, destruction and active currency changes are reported separately, with raw downloadable data. Track YARN issuance/burn, off-chain acquisition, sealed stock and item sinks as distinct series; a token fee cannot by itself remove equipment. No EVE magnitudes transferred to YARN. |
+| E18 | [CCP: A Deal is a Deal,2006](https://www.eveonline.com/fr/news/view/a-deal-is-a-deal...) | Historical developer explanation distinguishes transfers between players from faucets/sinks and treats supply/demand as separate variables. The cited concepts motivate conservation and persistent non-adopter stress; it is not a contemporary economic estimate or an optimum-price formula. |
+
+Re-read E1 in full relevant sections: the published2022 adjustment cut repeatable rewards while proposed sinks were still unshipped. This reinforces the distinction between a proposed feature budget and actual demand. Albion's original Black Market announcement returned403 and is **not counted** as read; no trash-rate numbers were used.
+
+### Source-backed corrections and original design hypotheses
+
+- **Cadence correction, not a contract change:** boss up to6 YARN/week and rank0/1/2/4/6 once per13-week season; a closed season is settled under the next season's current cap. Initial12 routine/32 total ceilings and20 tester grant remain deployed facts. Rank tiers are our test design, not a benchmark optimum.
+- **Supply measured from source:**4000 schedule cohorts ×8 weeks use actual drop/pity functions, source hashes and stated successful-route assumptions. No recurring tradable rare material exists. Do not treat0.4/0.08 placeholders as C2 data; do not treat conditional12.6 Epic+/week as observed player supply.
+- **Demand sensitivity:**720 52-week runs use20 seeds, persistent10/25/50/100% adopters, three reward budgets, stock/cap limits and no cosmetic utility buying by bots. Twenty seeds measure simulation variation, not the uncertainty of the adoption hypothesis. Common sponsor funding still does not prove common ownership.
+- **Original pilot envelope:**1.5 weekly-boss, rank≤1.5 per season, rename2, small decor4, cosmetic forge3 plus2 already-sealed items, optional cosmetic season pass12. These are disabled design candidates grounded in affordability relative to the reduced reward envelope and E1/E14–E18 mechanisms. No citation establishes these exact amounts; demand tests and authority remain required before activation.
+
+
+### Saturation and funding review — 2026-11-12
+
+Reopened E1, E14 and E17 and read the relevant publisher sections. E1 explicitly described proposed sinks alongside reward cuts; E14 distinguishes era/season completion rewards; E17 publishes production, destruction and currency changes separately. These support keeping observed behavior separate from hypothetical future features. The six-item voluntary sealing target, four-item buying target,1.5-YARN pilot and50% organic-burn budget factor are our sensitivity choices, **not figures established by these sources**.
+
+Model v5 adds stock saturation, switches the CLI default to the conditional source study and reruns720 cases. The original6 weekly/6 seasonal ceiling fails all60 full-adoption mix/seed cases; smaller3/3 and1.5/1.5 pass at full adoption only. All scales fail at50%,25%,10%. Removing saturation recreates an optimistic~1.02 claims/burn ratio by assuming people keep sealing unsold goods. That result is not evidence of utility. See [validation](../../../reports/chain/ECONOMY-VALIDATION.md).
+
+Fee break-even and reserve calculations in [feature budgets](FEATURE-BUDGETS.md) are transparent arithmetic, not valuation research. Recovering a30-YARN seal at a5% sale fee requires at least31.579 gross even with certain sale, before gas. No price floor is added. The cosmetic forge's3 token fee also requires two real input items; self-sealing two Epics raises total preparation cost to23. Neither listing references nor hypothetical cosmetic demand justify issuing the full allocation envelope.

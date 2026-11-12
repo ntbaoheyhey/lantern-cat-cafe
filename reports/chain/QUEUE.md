@@ -3,7 +3,7 @@
 ## Current checkpoint (2026-11-12)
 - H0–H4: implemented/local judge proof; original campaign authority remains a separate integration gap recorded in ACCEPTANCE.md.
 - H4b: seal/V2 UI/catalog implementation verified locally; requeue #1 (score7) for authoritative ordinary campaign gear source integration.
-- H5: 22-source research and corrected16-scenario52-week model plus63 reward/demand runs ready (economic gate NOT MET); requeue #1 (score7) for real C2 weekly supply, demand validation and authoritative routine-reward issuer wiring.
+- H5: 27-source research, full feature budgets, conditional4,000-cohort supply, corrected seasonal-rank16-scenario model plus63 sensitivity and720 multi-seed runs ready (economic gate NOT MET); requeue #1 (score7) for real C2 weekly supply, demand validation and authoritative routine-reward issuer wiring.
 - H6: contracts/coverage/UI/user deployment handoff ready; three fresh expanded browser runs passed.
 - H7: stretch condition not yet met because H4b/H5 integration/calibration remains open.
 - H8/H8b: smoke dry mode, static architecture/tokenomics docs and L1 design ready; user deployment and18-receipt public smoke complete; frontend/bot/timing pending.
@@ -11,8 +11,8 @@
 
 
 ## Requeue #1 disposition (2026-11-12)
-- H4b score7: rechecked C2 OUTBOX and the server inventory boundary. Safe source remains the authenticated starter boss. No authoritative ordinary campaign receipts exist to consume; do not import browser saves or change C2 stats/drop tables. REQUESTS-TO-C2.md specifies the interface needed. Retain open, not silently waived.
-- H5 score7: rechecked C2 OUTBOX; only SLOTS/PILOTS readiness, no weekly counts. The --supply JSON override and conservation checks are ready. Auto-reduction is deployed and independently verified; routine weekly/rank signing still needs authoritative entitlement wiring. Implemented-sink model fails<=2 acceptance; future forge/cosmetic assumptions are separated. Retain open, not marked calibrated or enforced.
+- H4b score7: rechecked C2 OUTBOX and the server inventory boundary. All128 Depth templates are classified and64 Epic+ templates have Power guards. Safe mint source remains the authenticated starter boss. No authoritative ordinary campaign receipts exist to consume; do not import browser saves or change C2 stats/drop tables. REQUESTS-TO-C2.md specifies the interface needed. Retain open, not silently waived.
+- H5 score7: rechecked C2 OUTBOX; only SLOTS/PILOTS readiness, no weekly counts. The --supply JSON override and conservation checks are ready. Independent conditional source measurement now replaces unsupported defaults, but is not telemetry or server authority; stale source snapshots are rejected. Auto-reduction is deployed and independently verified; routine weekly/rank signing still needs authoritative entitlement wiring. Implemented-sink model fails<=2 acceptance; future forge/cosmetic assumptions are separated. Retain open, not marked calibrated or enforced.
 - H7 is gated on H1–H6 green; the unresolved required cards keep the stretch out of this checkpoint.
 - The final review repaired cause-specific error messages and seal pagination; it does not close either C2 dependency.
 

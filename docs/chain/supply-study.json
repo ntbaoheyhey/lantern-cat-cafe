@@ -1,0 +1,338 @@
+{
+  "snapshotVersion": 1,
+  "supply": {
+    "rarePerActiveWeek": 0,
+    "epicPerActiveWeek": 11.20825,
+    "legendaryPerActiveWeek": 1.376875,
+    "byType": {
+      "casual": {
+        "rarePerActiveWeek": 0,
+        "epicPerActiveWeek": 2.408375,
+        "legendaryPerActiveWeek": 0.291
+      },
+      "regular": {
+        "rarePerActiveWeek": 0,
+        "epicPerActiveWeek": 11.20825,
+        "legendaryPerActiveWeek": 1.376875
+      },
+      "farmer": {
+        "rarePerActiveWeek": 0,
+        "epicPerActiveWeek": 11.316875,
+        "legendaryPerActiveWeek": 1.32075
+      },
+      "bot": {
+        "rarePerActiveWeek": 0,
+        "epicPerActiveWeek": 11.316875,
+        "legendaryPerActiveWeek": 1.32075
+      }
+    },
+    "source": "CHAIN conditional source study, 2026-11-12; tools/chain/supply-study.mjs; hashes in docs/chain/supply-study.json; not C2 telemetry"
+  },
+  "source": "CHAIN conditional source study, 2026-11-12; tools/chain/supply-study.mjs; hashes in docs/chain/supply-study.json; not C2 telemetry",
+  "count": 1000,
+  "weeks": 8,
+  "assumptions": "1000 independent seed cohorts per schedule, 8 weeks each, chapter3 unlocked, every scheduled encounter won, room cleared daily, no gear crafting/selector in drop totals. Days/routes are hypotheses; no combat outcomes or hours measured. Local day and seed are not secure server entitlements.",
+  "rows": [
+    {
+      "type": "casual",
+      "activeDays": 3,
+      "routes": 1,
+      "elite": false,
+      "seeds": 1000,
+      "weeks": 8,
+      "weekly": {
+        "common": {
+          "mean": 3.894125,
+          "p05": 3.125,
+          "p50": 3.875,
+          "p95": 4.625
+        },
+        "rare": {
+          "mean": 2.4065,
+          "p05": 1.75,
+          "p50": 2.375,
+          "p95": 3.125
+        },
+        "epic": {
+          "mean": 2.408375,
+          "p05": 1.875,
+          "p50": 2.375,
+          "p95": 3
+        },
+        "legendary": {
+          "mean": 0.291,
+          "p05": 0,
+          "p50": 0.25,
+          "p95": 0.625
+        },
+        "attempts": {
+          "mean": 9,
+          "p05": 9,
+          "p50": 9,
+          "p95": 9
+        },
+        "capped": {
+          "mean": 0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        }
+      },
+      "epicPlus": {
+        "mean": 2.699375,
+        "p05": 2.125,
+        "p50": 2.75,
+        "p95": 3.25
+      },
+      "rareTradableMaterials": 0
+    },
+    {
+      "type": "regular",
+      "activeDays": 7,
+      "routes": 2,
+      "elite": false,
+      "seeds": 1000,
+      "weeks": 8,
+      "weekly": {
+        "common": {
+          "mean": 18.19675,
+          "p05": 16.75,
+          "p50": 18.125,
+          "p95": 19.625
+        },
+        "rare": {
+          "mean": 11.218125,
+          "p05": 9.625,
+          "p50": 11.25,
+          "p95": 13
+        },
+        "epic": {
+          "mean": 11.20825,
+          "p05": 10,
+          "p50": 11.25,
+          "p95": 12.375
+        },
+        "legendary": {
+          "mean": 1.376875,
+          "p05": 0.75,
+          "p50": 1.375,
+          "p95": 2
+        },
+        "attempts": {
+          "mean": 42,
+          "p05": 42,
+          "p50": 42,
+          "p95": 42
+        },
+        "capped": {
+          "mean": 0,
+          "p05": 0,
+          "p50": 0,
+          "p95": 0
+        }
+      },
+      "epicPlus": {
+        "mean": 12.585125,
+        "p05": 11.5,
+        "p50": 12.625,
+        "p95": 13.625
+      },
+      "rareTradableMaterials": 0
+    },
+    {
+      "type": "farmer",
+      "activeDays": 7,
+      "routes": 6,
+      "elite": true,
+      "seeds": 1000,
+      "weeks": 8,
+      "weekly": {
+        "common": {
+          "mean": 9.11125,
+          "p05": 8.125,
+          "p50": 9.125,
+          "p95": 10.125
+        },
+        "rare": {
+          "mean": 20.251125,
+          "p05": 18.625,
+          "p50": 20.25,
+          "p95": 21.875
+        },
+        "epic": {
+          "mean": 11.316875,
+          "p05": 9.875,
+          "p50": 11.375,
+          "p95": 12.75
+        },
+        "legendary": {
+          "mean": 1.32075,
+          "p05": 0.75,
+          "p50": 1.25,
+          "p95": 2
+        },
+        "attempts": {
+          "mean": 168,
+          "p05": 168,
+          "p50": 168,
+          "p95": 168
+        },
+        "capped": {
+          "mean": 126,
+          "p05": 126,
+          "p50": 126,
+          "p95": 126
+        }
+      },
+      "epicPlus": {
+        "mean": 12.637625,
+        "p05": 11.125,
+        "p50": 12.625,
+        "p95": 14
+      },
+      "rareTradableMaterials": 0
+    },
+    {
+      "type": "bot",
+      "activeDays": 7,
+      "routes": 20,
+      "elite": true,
+      "seeds": 1000,
+      "weeks": 8,
+      "weekly": {
+        "common": {
+          "mean": 9.11125,
+          "p05": 8.125,
+          "p50": 9.125,
+          "p95": 10.125
+        },
+        "rare": {
+          "mean": 20.251125,
+          "p05": 18.625,
+          "p50": 20.25,
+          "p95": 21.875
+        },
+        "epic": {
+          "mean": 11.316875,
+          "p05": 9.875,
+          "p50": 11.375,
+          "p95": 12.75
+        },
+        "legendary": {
+          "mean": 1.32075,
+          "p05": 0.75,
+          "p50": 1.25,
+          "p95": 2
+        },
+        "attempts": {
+          "mean": 560,
+          "p05": 560,
+          "p50": 560,
+          "p95": 560
+        },
+        "capped": {
+          "mean": 518,
+          "p05": 518,
+          "p50": 518,
+          "p95": 518
+        }
+      },
+      "epicPlus": {
+        "mean": 12.637625,
+        "p05": 11.125,
+        "p50": 12.625,
+        "p95": 14
+      },
+      "rareTradableMaterials": 0
+    }
+  ],
+  "invitations": {
+    "draws": 42,
+    "stamps": 2520,
+    "condition": "All 7 days at the 360-stamp daily earning ceiling, all spent on 60-stamp equipment draws; no other stamp use. Selector redemptions excluded.",
+    "weekly": {
+      "epic": {
+        "mean": 3.948,
+        "p05": 1,
+        "p50": 4,
+        "p95": 7
+      },
+      "legendary": {
+        "mean": 2.327,
+        "p05": 2,
+        "p50": 2,
+        "p95": 3
+      }
+    }
+  },
+  "fullShelf": "240 slots => zero new sellable gear; six attempted drops consume daily quota",
+  "sourceHashes": {
+    "packages/game-rules/src/cardrpg/battle.ts": "cf2b02d5cf0d193d7395be8f736e2e4b8dd9cbed6264e37a5d46f2306da393a5",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/commands.ts": "cb8320136dc7663ced7f2b29b6e107cb1087188e00ef38228d71314d27ca3f7c",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/cardrpg/contract.ts": "40ffcc72d23ac5ddbf2bf7c3babf48339afcfd7ccf04c0f4c7fed5e3b68d36f0",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/index.ts": "2524db42d4c481b87340d9c0470f99f72b8d418db38a24e5344c0edca35653eb",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts": "0fc20f25d2e4523d761700081bd4556cbbe8350ea276e4cf6186e84586a94ee9",
+    "packages/game-rules/src/cardrpg/depth/battle.ts": "d50f30f7892a72f69601f6f872a344cf92d9f95592367f87860e78f041af0dad",
+    "packages/game-rules/src/cardrpg/depth/bonds-a6.ts": "7cff8d30693caf91f89743c3061bb6fd21b11753640847e615ed679364ece750",
+    "packages/game-rules/src/cardrpg/depth/boons.ts": "0edbee3debfc189081a89b9d6e3a502a42f8b12b0cd5fcab3219cbe491c5943e",
+    "packages/game-rules/src/cardrpg/depth/bridge.ts": "c3ae46cae953c2421a550a4d2ca370618b7d73b13a0eee8bce644c09d78dcaf4",
+    "packages/game-rules/src/cardrpg/depth/catalog.ts": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c",
+    "packages/game-rules/src/cardrpg/depth/contract.ts": "098679edd4a3cdc2f43b721272ce57be4b56d11c6bd8d74c05a4d7974140152b",
+    "packages/game-rules/src/cardrpg/depth/daily-a6.ts": "0dd498f886ad4a15f2a85a846947911221035eb26c84f93972efb1637ce9a2b5",
+    "packages/game-rules/src/cardrpg/depth/daily-state-a6.ts": "e71e11b75d7a3e6cf1d5ce2f28b36a66a5bb15755decf98767edf229592580de",
+    "packages/game-rules/src/cardrpg/depth/editions-v4.ts": "dde57882b2d3752b341fa6512ed2909405c80688ba5ba9c95eb05689f9ec4eba",
+    "packages/game-rules/src/cardrpg/depth/equipment-v4.ts": "d85d239d32adab5ddbeb9c19b861da13df32430de4a27dd16e791ef813d13f5c",
+    "packages/game-rules/src/cardrpg/depth/equipment.ts": "58e94451a718158bb5ba29a0b771812544953a5b5fd0b178e87bdb45692fb11a",
+    "packages/game-rules/src/cardrpg/depth/events-v4.ts": "666fc88677014a146fdbb71b6a7a03f16710a55f5813ea99b2147062a5d381b5",
+    "packages/game-rules/src/cardrpg/depth/forecast-key-v4.ts": "371eb851fc09a205e4d28912b1db5892c0d1c67b78ece9d6e83636665dc42f68",
+    "packages/game-rules/src/cardrpg/depth/forecast-v4.ts": "dc9f96becc2191d01fd2802d183e55f2b36496a2ea62b77d971d964c7a56a25e",
+    "packages/game-rules/src/cardrpg/depth/gacha-v4.ts": "baa728605328a925cfd7a7f153c38b2e96cf17e4587c549b01c5e096c89abac1",
+    "packages/game-rules/src/cardrpg/depth/gameplay-a6.ts": "592b54e44c48ad512312c53fefe496e69c1e68c6aeb0ce86e64e671493d2a26d",
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "5ed0a46b1d3bde886ee0546818892141b2a3f2871c5197de803eaa4b89fecafa",
+    "packages/game-rules/src/cardrpg/depth/idle-a6.ts": "61b02f6065a9eaf89720c3913a18124ac0153f99b3351087dd565e5422dee605",
+    "packages/game-rules/src/cardrpg/depth/index.ts": "41d2f45ffcaffce39bd40e50ef526b94187039fba4204ecb9f947ba36757e942",
+    "packages/game-rules/src/cardrpg/depth/items-v4.ts": "26b811082f641a212be65167e9396ddaf4bfe3e10bc25037e3e3cb1fadfaf822",
+    "packages/game-rules/src/cardrpg/depth/journey-v4.ts": "6e26e86eef8cb3bfe90a31712b1066a060aeb60f07504b854293e2a4ef840481",
+    "packages/game-rules/src/cardrpg/depth/loadouts-v4.ts": "23b13eaecf5c93ae9950618927484ac06c5e5f3c06c98284567586bc9754c47d",
+    "packages/game-rules/src/cardrpg/depth/meta-v4.ts": "c2e599c043265e124d6e16ba4106e615dd2eb6236e5f8f11f033a961263e1f15",
+    "packages/game-rules/src/cardrpg/depth/onboarding-a6.ts": "5c71676eaf558f595135b1164cdf927fd42eadf05668be24773d17bc78896ca6",
+    "packages/game-rules/src/cardrpg/depth/onboarding.ts": "1e8b7334c532b5a0ba306bd8652744a57e81f9b055d445f0ed16560ce40817b5",
+    "packages/game-rules/src/cardrpg/depth/outcome-v4.ts": "339058d1d46155eadab777df9f4d6da5b3401e949760a71c2b6378770b880e1b",
+    "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "96b99f838a8bbcd255a00917d480584797811d8c00cbd8593c824a17f3d04ec3",
+    "packages/game-rules/src/cardrpg/depth/policies.ts": "735ad0dac7dd4fa8a60116d3c1dc7b16dff2ed818944bf526bf7f83bc3e2941c",
+    "packages/game-rules/src/cardrpg/depth/power-a6.ts": "5fc12403d0634970b7358c826282e1d46756898b91a65f627d57ee4a6d015c09",
+    "packages/game-rules/src/cardrpg/depth/recommendation-v4.ts": "e47dc9e87b15f0c11c14615fdda83a49902fd6debbdad2a7cd3605d709c14266",
+    "packages/game-rules/src/cardrpg/depth/relic-a6.ts": "bdfa7ad377dfa42ddae141043a2ca68046c846dea8693d75eb4a90c380c1ad13",
+    "packages/game-rules/src/cardrpg/depth/route-upgrades.ts": "890641a7436b22c7df13ceb1b926f592f29f6b54ef298629e5957a286b792156",
+    "packages/game-rules/src/cardrpg/depth/run-bot.ts": "a6ae62c38c318f36b5043e23b96ccce4cf97789c173579b96e87b95bf61a9753",
+    "packages/game-rules/src/cardrpg/depth/run.ts": "408e01252e392b14a351c5f90ec2e8aac5de13b3624f7a882589953b2d7c28df",
+    "packages/game-rules/src/cardrpg/depth/save.ts": "bb2084dcc71a624fd7f4ff85e50057cf837049f3fb52611db0ef33aaaefacc0b",
+    "packages/game-rules/src/cardrpg/depth/scarcity.ts": "f13fbea286d49d6cff2eb69b7c501bc4284fa0dc07b633a2f99975380db5e461",
+    "packages/game-rules/src/cardrpg/depth/scouting-v4.ts": "86220991f828ca1046a5f4ce348849e51f1875152b56364ded06fbe39f9f79d3",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts": "4c5dc586e7819f518199028b54c7db6919acbef0ff71c21a30425116f802417c",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/events.ts": "abb3102e7ebacac36e4f5614c30d4a3e4ae83392f72b90db9fce1d49aa3de1bf",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/index.ts": "8ebd7a92d9902faa8bc671243598eb092f64f9155e2a9bf35a7657a616391fe6",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/policy.ts": "584e124b0482afec9f6b690c50a67e6353b0aa268880e199768b0e38883defa3",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/reactions.ts": "dd76e1f8601c40185030235a10cc7a33849e357004df7ee611f23f7832f7f335",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/shapes.ts": "03a97c6e83f7cd71048fdb14af11ab0b5d59bb3ec3ce92a429b8de220776500b",
+    "packages/game-rules/src/cardrpg/depth/skills-v5/statuses.ts": "09252f56f683db86e11ee1440a044de8d2cd1c313c9ffe87835ff5f6948786b7",
+    "packages/game-rules/src/cardrpg/depth/stars-v4.ts": "5738c85159ed38eabb77239b1bb50cc9c9f6265bd5168c42b3c0f5212957d610",
+    "packages/game-rules/src/cardrpg/depth/state.ts": "d2e19c7013c9e7b07990278fcd0528ab35630e8131a4d853d76c52a63f3402bb",
+    "packages/game-rules/src/cardrpg/depth/tower-a6.ts": "6a9ed3e01a974a12c472172372c41af2a99c2449eb4e89abdf6720acd9ba73c1",
+    "packages/game-rules/src/cardrpg/depth/upgrades-a6.ts": "0c9bd42bf8a5c27320a262a3277a22405e8f8ecbdb3d7b30f0274aa0c55169da",
+    "packages/game-rules/src/cardrpg/equipment.ts": "c72b84c5961ea3073eea7ed1fc061f6171329a0982834883e5f34e8a0786f597",
+    "packages/game-rules/src/cardrpg/fixtures/index.ts": "0627a3f89483eee71ff5ccedc2df355cd6530f38ffa0b8e1682720698dc29390",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/index.ts": "6333947573509b325212fbba459fa4b3c0c575e0e518dc03adfa0f920c5dcf52",
+    "packages/game-rules/src/cardrpg/internal.ts": "a881bd313e3a1b0401ec08929a92025fc5de54bfe7c5f05c86a150b6e0f23704",
+    "packages/game-rules/src/cardrpg/progression.ts": "dd2afa830bc2ef3328d6dc2e94f21cabc89c1cfc36ae1bec64b9753de485118e",
+    "packages/game-rules/src/cardrpg/state.ts": "09da5dd6df7a88da66a0e2ba842dc3f66b1c5d708bc38cd585085bbfea45d0ea",
+    "packages/game-rules/src/cardrpg/trade.ts": "a496eb9b47a6f960c300a0eb2b08b66ddf0e39b6ac5f81860464a387c1f95fe0",
+    "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270",
+    "tools/cardrpg-sim/load.mjs": "bfebf7ff424ecb61ebd8d7a406656267c050cf863dab5d123c4a5fbbda41ce25",
+    "tools/chain/supply-study.mjs": "c69245bbfbb0c959fc92e745d54c30e320c5396a4b0bf4242c13c26a3afd7425"
+  }
+}

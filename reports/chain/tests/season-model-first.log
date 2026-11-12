@@ -1,0 +1,38 @@
+✔ policy reproduces deployed Solidity fixtures including grant denominator and zero lock (0.645417ms)
+✔ zero demand includes all tester grants in first-season health and stops future routine claims (157.430125ms)
+✔ demo cannot manufacture routine rewards, recurring boss materials or unshipped item sinks (111.257417ms)
+✔ implemented sinks conserve unsunk items, exclude cosmetics, and respect fee bypass (333.964291ms)
+✔ custom supply must include valid rates and provenance (0.970916ms)
+✔ smaller entitlements leave tester grants and the deployed first-season cap unchanged (440.161042ms)
+✖ sensitivity cannot replace the failing default or promise safety at weak demand (5041.921666ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6192.02225
+
+✖ failing tests:
+
+test at tools/chain/token-sim.test.mjs:56:1
+✖ sensitivity cannot replace the failing default or promise safety at weak demand (5041.921666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  9 !== 3
+
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-chain/tools/chain/token-sim.test.mjs:59:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 9,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

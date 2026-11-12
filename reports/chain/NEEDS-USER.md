@@ -1,4 +1,6 @@
-# User actions — current, 2026-11-12
+# User actions — recorded state, 2026-11-12
+
+User asked to defer these operations while independent engineering/research continues. They are not prerequisites for the source study, simulations or offline budget tools. Public balances/readiness below are last recorded observations, not live checks.
 
 ## Completed by the user
 - Fuji token form confirmed; three V2 contracts deployed and addresses recorded in INBOX and registry.
@@ -14,6 +16,6 @@
 6. Trusted proxy/IP assurance remains an operational requirement from the original deployment guide; successful transactions alone do not establish that trust boundary.
 
 ## Engineering dependencies, no wallet action needed
-- C2 OUTBOX still has no verified weekly rare/Epic supply or authoritative ordinary campaign/weekly/rank earning ledger. Details in REQUESTS-TO-C2.md. Never import offline saves as mint authority.
+- C2 OUTBOX still has no reviewed weekly rare/Epic supply or authoritative ordinary campaign/weekly/rank earning ledger. CHAIN has independently measured4,000 conditional source cohorts and implemented source-freshness checks; this does not authenticate inventory or establish live demand. Details in REQUESTS-TO-C2.md. Never import offline saves as mint authority.
 - Automatic season reduction is already deployed; routine issuance is not enabled. Model integrity passes, implemented-sink economic acceptance fails. Do not turn on routine rewards based on a roadmap-sink simulation.
 - H7 stays gated. No mainnet, public deployment or real-key broadcast was done by Codex.
