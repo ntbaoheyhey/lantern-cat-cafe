@@ -79,3 +79,4 @@ Scores are readability / beauty / style / timing. Review uses phase frames extra
 | sorrel-passive | 8 / 8 / 9 / 8 | The teal droplet and cream spoon curl sit low on the actual protected recipient and fade completely before the next action. | 60.00 |
 | biscuit-passive | 8 / 8 / 9 / 8 | Rose bakery knot frames the protected front recipient below the face; petals clear after its short pulse. | 60.00 |
 | inkcap-passive | 8 / 8 / 9 / 8 | Violet spore cradle stays low on the rear caster; the cream cushion and fade remain distinct at quarter scale. | 60.00 |
+| cinnamon-passive | 8 / 8 / 9 / 8 | Terracotta spice seed and cream swirl stay below the rear caster face; the brief pulse clears cleanly. | 60.00 |

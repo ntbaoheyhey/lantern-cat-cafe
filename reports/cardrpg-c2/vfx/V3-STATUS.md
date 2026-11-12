@@ -82,7 +82,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | sorrel-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/sorrel-passive-after.mp4 |
 | biscuit-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/biscuit-passive-after.mp4 |
 | inkcap-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/inkcap-passive-after.mp4 |
-| cinnamon-passive | animated | pending | pending |
+| cinnamon-passive | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/cinnamon-passive-after.mp4 |
 | brioche-passive | animated | pending | pending |
 | velvet-passive | animated | pending | pending |
 | marigold-passive | pending | pending | pending |
