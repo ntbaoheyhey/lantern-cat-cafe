@@ -53,7 +53,7 @@ State verified from disk on 2026-11-12T07:36:09.709437+00:00. Accepted means ren
 | sorrel-1 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/sorrel-1-after.mp4 |
 | sorrel-2 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/sorrel-2-after.mp4 |
 | sorrel-3 | accepted | 8 (8/8/9/8) | /Users/bao/art/vfx-2026-11-12/review/sorrel-3-after.mp4 |
-| sorrel-4 | pending | pending | pending |
+| sorrel-4 | animated | pending | pending |
 | biscuit-1 | pending | pending | pending |
 | biscuit-2 | pending | pending | pending |
 | biscuit-3 | pending | pending | pending |
