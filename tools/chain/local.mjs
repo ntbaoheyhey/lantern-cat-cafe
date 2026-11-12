@@ -13,9 +13,16 @@ const testsRequire = createRequire(resolve(root,'supabase/tests/package.json'));
 const esm = path => path.replace('/_cjs/','/_esm/');
 const viem = await import(pathToFileURL(esm(webRequire.resolve('viem'))));
 const accounts = await import(pathToFileURL(esm(webRequire.resolve('viem/accounts'))));
-export const localRpc = 'http://127.0.0.1:5981';
-export const localApi = 'http://127.0.0.1:5982';
-export const localOrigin = 'http://127.0.0.1:5980';
+const localPort = (name, fallback) => {
+  const text = process.env[name] ?? String(fallback), value = Number(text);
+  if (!/^\d+$/.test(text) || !Number.isSafeInteger(value) || value < 1024 || value > 65535) throw new Error(`${name} must be a port from 1024 to 65535.`);
+  return value;
+};
+const ports = {web: localPort('CHAIN_LOCAL_WEB_PORT', 5980), rpc: localPort('CHAIN_LOCAL_RPC_PORT', 5981), api: localPort('CHAIN_LOCAL_API_PORT', 5982)};
+if (new Set(Object.values(ports)).size !== 3) throw new Error('Local web, RPC and API ports must differ.');
+export const localRpc = `http://127.0.0.1:${ports.rpc}`;
+export const localApi = `http://127.0.0.1:${ports.api}`;
+export const localOrigin = `http://127.0.0.1:${ports.web}`;
 // Public Anvil fixture, explicitly not a production credential.
 const mnemonic = 'test test test test test test test test test test test junk';
 export const devAccount = i => accounts.mnemonicToAccount(mnemonic,{addressIndex:i});
@@ -53,10 +60,10 @@ export async function startLocal({web = true} = {}) {
   try {
     // Fail if a listener already exists; never reuse an unknown chain.
     const probe = await fetch(localRpc,{method:'POST',headers:{'content-type':'application/json'},body:'{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'}).catch(()=>null);
-    if(probe)throw new Error('Port 5981 already in use; stop its owner first.');
+    if(probe)throw new Error(`${localRpc} already in use; stop its owner first.`);
     // Public RPCs do not unlock operator wallets. Keep fixtures locked so tests
     // cannot accidentally pass by delegating transaction signing to Anvil.
-    const anvil = spawn('anvil',['--host','127.0.0.1','--port','5981','--chain-id','43113','--accounts','0','--silent'],{cwd:root,stdio:'ignore'});
+    const anvil = spawn('anvil',['--host','127.0.0.1','--port',String(ports.rpc),'--chain-id','43113','--accounts','0','--silent'],{cwd:root,stdio:'ignore'});
     handles.push(async()=>{anvil.kill('SIGTERM');await new Promise(r=>anvil.exitCode!==null?r():anvil.once('exit',r));});
     const client=localClient();
     for(let i=0;;i++){try{if(await client.getChainId()===43113)break;}catch{}if(i>=50)throw new Error('Anvil unavailable');await new Promise(r=>setTimeout(r,100));}
@@ -70,7 +77,7 @@ export async function startLocal({web = true} = {}) {
       const receipt=await client.waitForTransactionReceipt({hash});
       if(receipt.status!=='success'||!receipt.contractAddress)throw new Error('Local deployment failed');return receipt.contractAddress;
     };
-    const RelicNFT=await deploy('RelicNFT',[deployer.address,signer.address,'http://127.0.0.1:5980/relics/{id}.json']);
+    const RelicNFT=await deploy('RelicNFT',[deployer.address,signer.address,`${localOrigin}/relics/{id}.json`]);
     const RelicMarket=await deploy('RelicMarket',[RelicNFT]);
     const YarnToken=await deploy('YarnToken',[deployer.address]);
     const RelicMarketV2=await deploy('RelicMarketV2',[RelicNFT,YarnToken,devAccount(4).address,500n]);
@@ -124,11 +131,11 @@ export async function startLocal({web = true} = {}) {
       upsertPlayerByWallet:async wallet=>({id:await one('select public.upsert_player_by_wallet($1) r',[wallet])}),
     };
     const jwtSecret=randomBytes(32).toString('hex');
-    const authDeps={store:authStore,config:{jwtSecret,domain:'127.0.0.1:5980'}};
+    const authDeps={store:authStore,config:{jwtSecret,domain:new URL(localOrigin).host}};
     const server=httpServer(async(incoming,outgoing)=>{
       try{
         const origin=incoming.headers.origin;
-        if(!['127.0.0.1','::ffff:127.0.0.1'].includes(incoming.socket.remoteAddress)||incoming.headers.host!=='127.0.0.1:5982'||(origin&&origin!==localOrigin)){outgoing.writeHead(403).end();return;}
+        if(!['127.0.0.1','::ffff:127.0.0.1'].includes(incoming.socket.remoteAddress)||incoming.headers.host!==new URL(localApi).host||(origin&&origin!==localOrigin)){outgoing.writeHead(403).end();return;}
         outgoing.setHeader('access-control-allow-origin',localOrigin);
         outgoing.setHeader('access-control-allow-headers','content-type,authorization');outgoing.setHeader('access-control-allow-methods','POST,OPTIONS');outgoing.setHeader('cache-control','no-store');
         if(incoming.method==='OPTIONS'){outgoing.writeHead(204).end();return;}
@@ -160,14 +167,14 @@ export async function startLocal({web = true} = {}) {
         outgoing.writeHead(error?.name==='AuthError'?401:failure.status).end(stringify(failure.body));
       }
     });
-    await new Promise((r,j)=>{server.once('error',j);server.listen(5982,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
+    await new Promise((r,j)=>{server.once('error',j);server.listen(ports.api,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
     mkdirSync(resolve(root,'apps/web/public'),{recursive:true});
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){
       Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_CHAIN_MODE:'local',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
       const {createServer}=await import(pathToFileURL(webRequire.resolve('vite')));
-      const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:5980,strictPort:true,hmr:{port:5983}}});
+      const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:ports.web,strictPort:true}});
       await vite.listen();handles.push(()=>vite.close());
     }
     return {config,client,db,modules,drip,judge,items,reward,authDeps,stop};
