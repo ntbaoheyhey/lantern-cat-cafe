@@ -1,14 +1,14 @@
 # C2 handoff
-NOW: V3 54/86 accepted through biscuit-4; corrected progression/unit checks complete.
+NOW: V3 inkcap-1 exported; capture/review next.
 BRANCH: codex/cardrpg-c2-2026-11-12; draft PR440; WIP snapshot f646a8c29 pushed on both C2 and codex/cardrpg-c2-wip-20261112T073338Z.
 LAST GOOD COMMIT: 7ca18a1b0; 4420 package +33 root unit passes; all browser checks headless.
 NEXT 1: Finish corrected item full screen/declared holdout and 600-account economy; publish results.
 NEXT 2: Run full E2E on5970–5973 after word budget; then restore review5973.
-NEXT 3: V3 inkcap-1; generate while full E2E occupies review port, then capture and inspect.
-RUNNING: item17065; month17066; holdout watcher23856. UI/model complete; pre-fix month86148 SIGSTOP.
+NEXT 3: Capture/review inkcap-1, then continue first nonaccepted V3 skill.
+RUNNING: Full E2E driver32092 on5970–5973; item17065/month17066/watcher23856 temporarily SIGSTOP; pre-fix86148 paused.
 B4: all three passes consumed; no further enemy tuning. Pass3 best, timing/HP target misses disclosed in BALANCE.md.
 B4b: config unchanged; corrected native/gear link strengths;15x100 and15x1000 pass (worst6/6.4pp). Full cohorts pending.
-V3:86IDs;54accepted;54exported=3,594,366bytes. Review server5973.
+V3:86IDs;54accepted;55exported=3,668,957bytes. Review server on5973; restart after new exports.
 ART: /Users/bao/art/vfx-2026-11-12; source prompts in vfx/ASSET-LOG.md.
 PRIOR LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-7/work/c2/
 CURRENT LOGS: /Users/bao/Documents/Codex/2026-11-12/files-pasted-by-the-user-paste-9/work/c2/
