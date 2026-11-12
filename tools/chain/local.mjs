@@ -56,15 +56,21 @@ export async function loadModules() {
 export async function startLocal({web = true} = {}) {
   mkdirSync(resolve(root,'work/chain'),{recursive:true});
   const handles = [];
-  const stop = async () => {for(const close of handles.reverse()){try{await close();}catch{}}};
+  let anvil, stopping;
+  const stop = () => {
+    // Vite also handles process signals and can exit while async cleanup waits.
+    // Terminate our child synchronously before closing either HTTP server.
+    anvil?.kill('SIGTERM');
+    return stopping ??= (async()=>{for(const close of [...handles].reverse()){try{await close();}catch{}}})();
+  };
   try {
     // Fail if a listener already exists; never reuse an unknown chain.
     const probe = await fetch(localRpc,{method:'POST',headers:{'content-type':'application/json'},body:'{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'}).catch(()=>null);
     if(probe)throw new Error(`${localRpc} already in use; stop its owner first.`);
     // Public RPCs do not unlock operator wallets. Keep fixtures locked so tests
     // cannot accidentally pass by delegating transaction signing to Anvil.
-    const anvil = spawn('anvil',['--host','127.0.0.1','--port',String(ports.rpc),'--chain-id','43113','--accounts','0','--silent'],{cwd:root,stdio:'ignore'});
-    handles.push(async()=>{anvil.kill('SIGTERM');await new Promise(r=>anvil.exitCode!==null?r():anvil.once('exit',r));});
+    anvil = spawn('anvil',['--host','127.0.0.1','--port',String(ports.rpc),'--chain-id','43113','--accounts','0','--silent'],{cwd:root,stdio:'ignore'});
+    handles.push(()=>new Promise(r=>anvil.exitCode!==null||anvil.signalCode!==null?r():anvil.once('exit',r)));
     const client=localClient();
     for(let i=0;;i++){try{if(await client.getChainId()===43113)break;}catch{}if(i>=50)throw new Error('Anvil unavailable');await new Promise(r=>setTimeout(r,100));}
     if((await client.request({method:'eth_accounts'})).length)throw new Error('Local RPC must not expose unlocked wallets.');
