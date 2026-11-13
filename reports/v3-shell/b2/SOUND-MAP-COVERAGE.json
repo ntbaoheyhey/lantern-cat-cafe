@@ -1,20 +1,24 @@
 {
-  "existingCueCount": 473,
+  "existingCueCount": 526,
   "missingExisting": [],
-  "callsiteCount": 30,
+  "callsiteCount": 33,
   "unresolved": [],
   "cuesSource": {
     "path": "apps/web/src/audio/cues.ts",
-    "sha256": "29875dd57185e13ccb11afa1eba82f8e755156d91ff51bf9ed1a2faf07419428"
+    "sha256": "15d9a2bd0549f7163c73297a59c5289d15a830895fc31ed6a6fb6740c92526a7"
   },
   "sources": [
     {
+      "path": "apps/web/src/audio/chatter.ts",
+      "sha256": "2b7d9002f1ce2b349157e35c73446d7851d98e14cd919cbe841e9e7a5003245a"
+    },
+    {
       "path": "apps/web/src/audio/engine.ts",
-      "sha256": "a301bdff1053fe8ceebb3c60c608ade48920532b68f57cb21bc8cc60686ebf8a"
+      "sha256": "04a5ab1c00698b9c2d1702fc5e09c4827f8b8f727fca388d901926acb75afd94"
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "sha256": "ca829ef634f90a0b38c01958b9e0313338ad77f680bc19abf7f05956461fde9f"
+      "sha256": "bab10bc81c732b0c712904f021ff05fe9bb31c2dbeede4b931e4b9292988b41e"
     },
     {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
@@ -22,11 +26,11 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
-      "sha256": "2716b9b753a5dad4719457753228ccb6d608fe382a686157ed1cf835ff94e5dd"
+      "sha256": "35d996d3d7d3ef3bccfd511b08d700fdb6d0d20e79229f82fd9d5e1f6599c943"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "sha256": "5fc3b022437f0239dd803202afad8c6cfdab3e935e3268f7634256e706bd8f1d"
+      "sha256": "fa6da437524c007a8b4cf134e859e334b3541591b65cf224cb68d2a08d277627"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
@@ -35,10 +39,6 @@
     {
       "path": "apps/web/src/game/cardrpg/shell/Entrance.tsx",
       "sha256": "20b5091ef37345052e06551614b537c29f8cf5571df43d3f1e0949264a05f8de"
-    },
-    {
-      "path": "apps/web/src/game/cardrpg/shell/HomeExtras.tsx",
-      "sha256": "145028e80b9d9f15d2ac3a2d0b91fbe61bc24d91235ecf7899d54e2bd39c67cf"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
@@ -53,23 +53,37 @@
       "sha256": "7378edcc8969ec9c8347fcbb4036c83cda2564ab71da1d40205f1a6363cdd6ff"
     },
     {
+      "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
+      "sha256": "7058a7ba7bff2ff7c27bfced1486067fc2cee036cdb44adcb515d441a5aa4f40"
+    },
+    {
       "path": "apps/web/src/game/squad/turn3d/audio.ts",
       "sha256": "2242e0fce8b397aac99084e328ccd642452c45a79ac9838f975ac297368ed902"
     }
   ],
   "mapSource": {
     "path": "apps/web/src/audio/sound-map.ts",
-    "sha256": "063d1f7d6ed0e8259d4e8c12d4548166bb46eb2e94054b5272724fb996f5d6ae"
+    "sha256": "2ed315bf79cb357a59a0ab1210b122b42b2726ab115544f073e5e1674acaf9b5"
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "f17559d062db0cabeedfa97809b21c829033e1d43e4085550cbb3f074a0b4f5d"
+    "sha256": "d71f3c6aad684c18a7c0e7ca3581ec6c2494621ba0ea9a0bb7bbbd20d142806d"
   },
-  "scannedSourceCount": 506,
+  "scannedSourceCount": 508,
   "calls": [
     {
+      "path": "apps/web/src/audio/chatter.ts",
+      "line": 11,
+      "column": 24,
+      "expression": "'voice.guide.idle'",
+      "ids": [
+        "voice.guide.idle"
+      ],
+      "delegation": false
+    },
+    {
       "path": "apps/web/src/audio/engine.ts",
-      "line": 198,
+      "line": 209,
       "column": 96,
       "expression": "'ui.click'",
       "ids": [
@@ -79,7 +93,7 @@
     },
     {
       "path": "apps/web/src/audio/engine.ts",
-      "line": 199,
+      "line": 210,
       "column": 178,
       "expression": "'ui.hover'",
       "ids": [
@@ -350,8 +364,8 @@
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "line": 20,
-      "column": 50,
+      "line": 24,
+      "column": 3,
       "expression": "eventCue(event)",
       "ids": [
         "ui.turn",
@@ -478,7 +492,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
-      "line": 23,
+      "line": 24,
       "column": 93,
       "expression": "id",
       "ids": [
@@ -578,6 +592,8 @@
         "ui.quantity",
         "ui.use",
         "ui.batch",
+        "voice.mochi.gear",
+        "voice.mochi.forge",
         "ui.forge.hammer",
         "ui.forge.success",
         "ui.forge.fail",
@@ -1352,7 +1368,51 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 31,
+      "line": 28,
+      "column": 23,
+      "expression": "event==='select'?'voice.mochi.gear':'voice.mochi.forge'",
+      "ids": [
+        "voice.mochi.gear",
+        "voice.mochi.forge"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 29,
+      "column": 8,
+      "expression": "`voice.${cardId}.${event}`",
+      "ids": [
+        "voice.mochi.select",
+        "voice.mochi.victory",
+        "voice.soot.select",
+        "voice.soot.victory",
+        "voice.clover.select",
+        "voice.clover.victory",
+        "voice.panko.select",
+        "voice.panko.victory",
+        "voice.mallow.select",
+        "voice.mallow.victory",
+        "voice.sorrel.select",
+        "voice.sorrel.victory",
+        "voice.biscuit.select",
+        "voice.biscuit.victory",
+        "voice.inkcap.select",
+        "voice.inkcap.victory",
+        "voice.cinnamon.select",
+        "voice.cinnamon.victory",
+        "voice.brioche.select",
+        "voice.brioche.victory",
+        "voice.velvet.select",
+        "voice.velvet.victory",
+        "voice.marigold.select",
+        "voice.marigold.victory"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 37,
       "column": 18,
       "expression": "'ui.fail'",
       "ids": [
@@ -1362,7 +1422,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 33,
+      "line": 39,
       "column": 71,
       "expression": "'ui.forge.hammer'",
       "ids": [
@@ -1372,8 +1432,8 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 35,
-      "column": 42,
+      "line": 41,
+      "column": 43,
       "expression": "success?'ui.forge.success':'ui.forge.fail'",
       "ids": [
         "ui.forge.success",
@@ -1408,26 +1468,6 @@
       "expression": "'landing'",
       "ids": [
         "music.landing"
-      ],
-      "delegation": false
-    },
-    {
-      "path": "apps/web/src/game/cardrpg/shell/HomeExtras.tsx",
-      "line": 29,
-      "column": 234,
-      "expression": "'home'",
-      "ids": [
-        "music.home"
-      ],
-      "delegation": false
-    },
-    {
-      "path": "apps/web/src/game/cardrpg/shell/HomeExtras.tsx",
-      "line": 29,
-      "column": 260,
-      "expression": "'ambience.cafe'",
-      "ids": [
-        "ambience.cafe"
       ],
       "delegation": false
     },
@@ -1550,6 +1590,39 @@
         "currency.motes.gain",
         "currency.shards.gain",
         "currency.xp.gain"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
+      "line": 58,
+      "column": 17,
+      "expression": "musicScene",
+      "ids": [
+        "music.home",
+        "music.map",
+        "music.battle",
+        "music.boss"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
+      "line": 59,
+      "column": 17,
+      "expression": "ambientScene",
+      "ids": [
+        "ambience.home",
+        "ambience.bag",
+        "ambience.invitations",
+        "ambience.cats",
+        "ambience.settings",
+        "ambience.chapter-map",
+        "ambience.battle-prep",
+        "ambience.field-guide",
+        "ambience.reward",
+        "ambience.boss",
+        "ambience.battle"
       ],
       "delegation": false
     },
@@ -2030,6 +2103,58 @@
     "voice.pantry-crown.skill.enemy:pantry-crown",
     "voice.pantry-crown.ult.charge",
     "voice.pantry-crown.ult.release",
+    "ambience.market-buy",
+    "ambience.bag",
+    "ambience.invitations",
+    "ambience.cats",
+    "ambience.team",
+    "ambience.my-listings",
+    "ambience.battle-prep",
+    "ambience.home",
+    "ambience.economy",
+    "ambience.victory",
+    "ambience.market-item",
+    "ambience.reward",
+    "ambience.spool",
+    "ambience.coach",
+    "ambience.level-up",
+    "ambience.hero-level",
+    "ambience.season-supply",
+    "ambience.market-list",
+    "ambience.market",
+    "ambience.item-detail",
+    "ambience.wallet",
+    "ambience.stage-select",
+    "ambience.error",
+    "ambience.field-guide",
+    "ambience.landing",
+    "ambience.chain-fusion",
+    "ambience.settings",
+    "ambience.history",
+    "ambience.hero-gear",
+    "ambience.sign-in",
+    "ambience.forge-fusion",
+    "ambience.season",
+    "ambience.withdraw",
+    "ambience.boss",
+    "ambience.events",
+    "ambience.gacha-rates",
+    "ambience.battle",
+    "ambience.batch-use",
+    "ambience.deed",
+    "ambience.hero-info",
+    "ambience.defeat",
+    "ambience.hero-star",
+    "ambience.quests",
+    "ambience.forge-enhance",
+    "ambience.gacha-results",
+    "ambience.gacha-reveal",
+    "ambience.offline",
+    "ambience.seal",
+    "ambience.chapter-map",
+    "voice.guide.idle",
+    "voice.mochi.gear",
+    "voice.mochi.forge",
     "status.snag.on",
     "status.snag.off",
     "status.snag.tick",
@@ -2037,7 +2162,8 @@
     "status.bitter.off",
     "status.bitter.tick",
     "ui.forge-success",
-    "ui.forge-fail"
+    "ui.forge-fail",
+    "music.map"
   ],
   "adapters": {
     "events": "playFrame unit IDs from live cat/enemy catalogues; four effect phases; eventCue outputs expanded over live statuses and known event types.",

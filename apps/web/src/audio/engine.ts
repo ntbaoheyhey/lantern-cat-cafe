@@ -19,7 +19,7 @@ export class AudioEngine implements AudioBridge {
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
  private voiceRequest=0; private pendingVoicePriority=0; private voicePriority=0;
  private lastVoiceRequested=-Infinity; private calloutRequests=new Map<string,number>();
- private musicToken=0; private musicId=''; private paused=false; private rate=1;
+ private bedTokens={music:0,ambience:0}; private bedIds={music:'',ambience:''}; private paused=false; private rate=1;
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
  constructor(private random:()=>number=Math.random){
@@ -34,9 +34,12 @@ export class AudioEngine implements AudioBridge {
  async unlock(){
   this.ctx??=new AudioContext();
   if(!this.buses.size){
-   const limiter=this.ctx.createDynamicsCompressor();limiter.threshold.value=-3;limiter.ratio.value=16;limiter.attack.value=.003;limiter.release.value=.15;limiter.connect(this.ctx.destination);
+   const limiter=this.ctx.createDynamicsCompressor();limiter.threshold.value=-4;limiter.knee.value=6;limiter.ratio.value=20;limiter.attack.value=.002;limiter.release.value=.15;
+   const headroom=this.ctx.createGain();headroom.gain.value=dbGain(-2);limiter.connect(headroom).connect(this.ctx.destination);
+   // Calibrate the authored mix without changing the user's saved bus levels.
+   const trim=this.ctx.createGain();trim.gain.value=dbGain(6);trim.connect(limiter);
    for(const name of BUS_NAMES){const gain=this.ctx.createGain();gain.gain.value=name==='master'&&this.muted?0:this.preferences[name];this.buses.set(name,gain);}
-   this.buses.get('master')!.connect(limiter);this.duck=this.ctx.createGain();this.duck.connect(this.buses.get('master')!);
+   this.buses.get('master')!.connect(trim);this.duck=this.ctx.createGain();this.duck.connect(this.buses.get('master')!);
    for(const name of BUS_NAMES.slice(1))this.buses.get(name)!.connect(name==='music'?this.duck:this.buses.get('master')!);
   }
   await this.ctx.resume();this.paused=false;this.remember();
@@ -51,7 +54,7 @@ export class AudioEngine implements AudioBridge {
  }
  async preload(screen:'home'|'battle'|'landing'){
   if(!this.ctx)return;
-  try{const m=await this.loadManifest();const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui','voice','battle']:['b2-ui',screen];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
+  try{const m=await this.loadManifest();const musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui',...(musicPack?[musicPack]:[])]:['b2-ui',...(musicPack?[musicPack]:[])];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
  }
  private record(id:string,result:string,layers?:LayerPlayed[]){
   this.hits.push({id,result,at:Date.now(),...(layers?{layers,sfx:this.count('sfx'),voice:this.count('voice'),duckDb:this.count('voice')||id.startsWith('ult.')?-8:0}:{})});
@@ -111,7 +114,7 @@ export class AudioEngine implements AudioBridge {
    const count=design?.baked?1:design?.layers.length??1;
    if(!this.admit(bus,count,priority)){this.record(id,'limit');return;}
    if(bus==='voice'){this.stopBus('voice');this.voicePriority=priority;this.last.set('voice-cadence',now);}
-   if(bus==='ambience'){if([...this.active].some(p=>p.id===id))return;this.stopBus('ambience');}
+   if(bus==='ambience'){this.ambience(id);return;}
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
    const volume=Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1;
@@ -169,6 +172,7 @@ export class AudioEngine implements AudioBridge {
    source.start(now,s.start,s.duration);
   }
   if(s.bus==='voice'||id.startsWith('ult.'))this.duckMusic();
+  return p;
  }
  private end(p:Playing,stop:boolean){
   if(p.ended)return;p.ended=true;if(stop)p.source.stop();p.source.disconnect();p.gain.disconnect();p.filter?.disconnect();this.active.delete(p);
@@ -176,19 +180,26 @@ export class AudioEngine implements AudioBridge {
  }
  private stopBus(bus:Bus){for(const p of this.active)if(p.bus===bus)this.end(p,true);}
  stop(id?:string){
-  if(id)this.stopped.set(id,(this.stopped.get(id)??0)+1);else{this.epoch++;this.voiceRequest++;this.pendingVoicePriority=0;this.musicToken++;}
+  if(id)this.stopped.set(id,(this.stopped.get(id)??0)+1);else{this.epoch++;this.voiceRequest++;this.pendingVoicePriority=0;}
   for(const p of this.active)if(!id||p.id===id)this.end(p,true);
-  if(!id||id===this.musicId){this.musicId='';this.musicToken++;}this.releaseDuck();
+  for(const bus of ['music','ambience'] as const)if(!id||id===this.bedIds[bus]){this.bedIds[bus]='';this.bedTokens[bus]++;}this.releaseDuck();
  }
- music(id:string){
-  const cue=id.startsWith('music.')?id:`music.${id}`;if(cue===this.musicId)return;this.musicId=cue;
-  const token=++this.musicToken;
+ music(id:string){this.bed('music',id);}
+ ambience(id:string){this.bed('ambience',id);}
+ private bed(bus:'music'|'ambience',id:string){
+  const cue=id.startsWith(`${bus}.`)?id:`${bus}.${id}`;if(cue===this.bedIds[bus])return;this.bedIds[bus]=cue;
+  const token=++this.bedTokens[bus];
   void(async()=>{try{
-   const m=await this.loadManifest(),s=resolveCue(cue,m)?.[0];if(!s||!this.ctx){this.musicId='';return;}
-   const b=await this.buffer(s.pack,m);if(token!==this.musicToken)return;
-   for(const p of this.active)if(p.bus==='music'){p.gain.gain.cancelScheduledValues(this.ctx.currentTime);p.gain.gain.setValueAtTime(p.gain.gain.value,this.ctx.currentTime);p.gain.gain.linearRampToValueAtTime(0,this.ctx.currentTime+.8);p.source.stop(this.ctx.currentTime+.82);}
-   this.start(cue,b,s,0,1,1,0,'flat',++this.group);this.record(cue,'played');
-  }catch{if(token===this.musicToken)this.musicId='';this.record(cue,'unavailable');}})();
+   const m=await this.loadManifest(),s=resolveCue(cue,m)?.[0];if(!s||!this.ctx){if(token===this.bedTokens[bus])this.bedIds[bus]='';return;}
+   const b=await this.buffer(s.pack,m);if(token!==this.bedTokens[bus])return;
+   // Keep the outgoing bed until the incoming audio has decoded. Both sides
+   // then crossfade for 800 ms, including when a rapid tab switch supersedes a load.
+   const now=this.ctx.currentTime;
+   for(const p of this.active)if(p.bus===bus){p.gain.gain.cancelScheduledValues(now);p.gain.gain.setValueAtTime(p.gain.gain.value,now);p.gain.gain.linearRampToValueAtTime(0,now+.8);p.source.stop(now+.82);}
+   const level=dbGain(['music.battle','music.boss'].includes(cue)?3:0);
+   const incoming=this.start(cue,b,s,0,1,level,0,'flat',++this.group);
+   incoming.gain.gain.setValueAtTime(0,now);incoming.gain.gain.linearRampToValueAtTime(level,now+.8);this.record(cue,'played');
+  }catch{if(token===this.bedTokens[bus])this.bedIds[bus]='';this.record(cue,'unavailable');}})();
  }
 }
 export const audioEngine=new AudioEngine();

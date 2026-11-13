@@ -1,5 +1,7 @@
 import {GameIcon} from '../../../ui/GameIcon';
 import {HomeExtras,WalletChip,openPage} from '../shell/HomeExtras';
+import {audioEngine} from '../../../audio/engine';
+import {soundScene,ambienceScene} from '../../../audio/scene';
 import '../shell/shell.css';
 import {TextDietContext,HelpC2} from './TextDietC2';
 import {chainFlags} from '../chain/flags';
@@ -51,6 +53,10 @@ const FeelLab=lazy(()=>import('../depth/FeelLab').then(m=>({default:m.FeelLab}))
 const labels:Partial<Record<Screen,string>>={tower:'Yarn Tower',bonds:'Bond Book',collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
 const dock:[Screen,string,IconName][]=[['team','Team','team'],['collection','Cats','cats'],['inventory','Bag','bag']];
 export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
+ const isBoss=m.battle?.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')??false;
+ const musicScene=soundScene(m.screen,m.showBattle,isBoss),ambientScene=ambienceScene(m.screen,m.showBattle,isBoss);
+ useEffect(()=>{audioEngine.music(musicScene);},[musicScene]);
+ useEffect(()=>{audioEngine.ambience(ambientScene);},[ambientScene]);
  const [eventPage,setEventPage]=useState<'login'|'weekly'>('login');
  const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
  const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state,m.snapshot()]);

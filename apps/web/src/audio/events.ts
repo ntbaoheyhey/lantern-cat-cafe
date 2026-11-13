@@ -17,5 +17,10 @@ export function playFrame(audio:Pick<AudioBridge,'play'>,frame:EffectFrame){
  }
  // The engine supplies the callout until A requests it explicitly. Sending a
  // generic skill/ult bark here would suppress that more specific fallback.
- if(phase==='impact')for(const event of p.events)audio.play(eventCue(event),{element});
+ if(phase==='impact')for(const event of p.events){
+  // A plan retains its whole event history. Cast and travel already sounded
+  // at their animation beats; replaying them here creates a second attack.
+  if(unit&&(slot||p.ultimate)&&['action_start','travel'].includes(event.type))continue;
+  audio.play(eventCue(event),{element});
+ }
 }

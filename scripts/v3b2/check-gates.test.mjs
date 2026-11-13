@@ -93,6 +93,15 @@ test('hash mismatches invalidate evidence logs',t=>{
   const f=fixture(t),log=f.put('types.log','passed 2');f.report('GATE-TESTS.json',{exitCode:0,passed:2,log});
   assert.equal(f.gate('G0.tests').status,'PASS');f.put('types.log','modified');assert.equal(f.gate('G0.tests').status,'FAIL');
 });
+test('audio measurements must use the current analyser on both sides and cannot be isolated diagnostic stems',t=>{
+ const f=fixture(t),algorithm=f.put('scripts/audio/analyse.py','measurement code');
+ f.report('REFERENCE-AUDIO.json',{algorithmSha256:algorithm.sha256});
+ const renders=['battle','boss','home','bag','gacha','forge'].map(name=>({name,algorithmSha256:algorithm.sha256}));
+ f.report('OUR-AUDIO.json',{renders});assert.equal(f.gate('S5.algorithm').status,'PASS');
+ renders[0].diagnostic=true;f.report('OUR-AUDIO.json',{renders});assert.equal(f.gate('S5.algorithm').status,'FAIL');
+ delete renders[0].diagnostic;f.report('OUR-AUDIO.json',{renders});f.put('scripts/audio/analyse.py','changed measurement code');
+ assert.equal(f.gate('S5.algorithm').status,'FAIL');
+});
 test('full-demand burn gate rejects a deflationary 1.61, accepts the exact 1.60 limit',t=>{
   const f=fixture(t),report=n=>f.report('econ/FINAL.json',{scenarios:[{demand:1,quantiles:{median:{burnClaims:n}}}]});
   report(1.61);assert.equal(f.gate('E3.T-a').status,'FAIL');report(1.60);assert.equal(f.gate('E3.T-a').status,'PASS');

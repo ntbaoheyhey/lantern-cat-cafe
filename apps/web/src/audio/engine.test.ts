@@ -12,7 +12,7 @@ class Context {
  constructor(){Context.latest=this;}
  createGain(){return new Gain();}createBufferSource(){const s=new Source();this.sources.push(s);return s;}
  createBiquadFilter(){const f=new Filter();this.filters.push(f);return f;}
- createDynamicsCompressor(){return Object.assign(new Node(),{threshold:new Param(),ratio:new Param(),attack:new Param(),release:new Param()});}
+ createDynamicsCompressor(){return Object.assign(new Node(),{threshold:new Param(),knee:new Param(),ratio:new Param(),attack:new Param(),release:new Param()});}
  async resume(){this.state='running';}async suspend(){this.state='suspended';}async decodeAudioData(){return {duration:20};}
 }
 const samples=(bus:Sample['bus']='sfx')=>Array.from({length:6},(_,i)=>({pack:'test',start:i,duration:.4,bus,variantId:String(i)}));
@@ -92,5 +92,20 @@ describe('layered playback admission and variants',()=>{
  it('persists and clamps each bus separately without overwriting the others',async()=>{
   const e=new AudioEngine();await e.unlock();e.setBus('voice',.25);e.setBus('music',2);e.setBus('sfx',-1);e.mute(true);
   const restored=new AudioEngine();expect(restored.settings).toMatchObject({voice:.25,music:1,sfx:0,ui:.6});expect(restored.muted).toBe(true);
+ });
+ it('keeps the current music playing during decode and rejects a superseded scene load',async()=>{
+  let finish:()=>void=()=>{};const pending=new Promise<void>(r=>{finish=r;});
+  const m:AudioManifest={...fixture,packs:{...fixture.packs,slow:{webm:'/slow.webm',mp3:'/slow.mp3'}},cues:{...fixture.cues,
+   'music.home':[{pack:'test',start:0,duration:10,bus:'music',loop:true}],
+   'music.battle':[{pack:'slow',start:0,duration:10,bus:'music',loop:true}],
+   'ambience.bag':[{pack:'test',start:0,duration:10,bus:'ambience',loop:true}]}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>{if(url==='/slow.webm')await pending;return new ArrayBuffer(8);}}));
+  const e=new AudioEngine();await e.unlock();e.music('home');await flush();
+  const original=Context.latest.sources[0]!;expect(original.onended).toBeTypeOf('function');
+  const stopped=vi.spyOn(original,'stop');e.music('battle');await flush();expect(stopped).not.toHaveBeenCalled();
+  e.music('home');e.ambience('bag');await flush();finish();await flush();
+  expect(e.hits.filter(h=>h.id==='music.battle'&&h.result==='played')).toHaveLength(0);
+  expect(e.hits.some(h=>h.id==='ambience.bag'&&h.result==='played')).toBe(true);
+  e.stop();expect(e.diagnostics.active).toBe(0);
  });
 });

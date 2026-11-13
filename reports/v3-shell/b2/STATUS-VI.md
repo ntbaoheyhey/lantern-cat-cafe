@@ -1,20 +1,19 @@
 # Trạng thái B2
 
-- Đã hoàn tất G0, R, S1–S4, U1–U2.
-- V: PARTIAL, chỉ còn ngưỡng nhận dạng lời sau 9 vòng xử lý; không coi là hoàn tất.
-- U3: PARTIAL, 32/54 trạng thái đạt toàn bộ tiêu chí màn hình.
-- 54/54 đạt giới hạn 25 từ; đủ ảnh trước/sau ở 1280×720 và 1440×900.
-- Còn 22 trạng thái cần cải thiện hình ảnh; mỗi trạng thái đã ghi 2 vòng thiết kế.
-- Chuẩn bị chiến đấu còn 4 nút chữ trong tệp của A; đã gửi yêu cầu cụ thể.
-- Các luồng menu và Anvil cục bộ chạy được; không giao dịch mạng thật.
-- Kiểm thử: 2.508 web + 724 server đạt; typecheck đạt.
-- Game rules: 1.388 đạt, 2 expected-fail và 11 skip có sẵn được giữ nguyên.
-- Đang làm U4: chuyển cảnh, phản hồi thao tác, video có âm thanh.
-- S5–S7, E1–E5, T1, C1, E6 và polish chưa hoàn tất.
-- Chưa chứng minh kinh tế đạt mục tiêu mới hoặc bộ đếm Fuji trực tiếp.
-- Lịch đồng bộ: 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
-- Không triển khai, không merge main. Người dùng triển khai ngày 20-11 theo USER-DEPLOY-VI.md.
-
-U4 đạt: video menu 62 giây có âm thanh (6,7 MiB); trung vị 60 fps; dịch chuyển bố cục lớn nhất 0,0304.
-Đã kiểm tra giảm chuyển động theo hệ thống và cài đặt game (16 mục). Toàn bộ 2.514 test web và 724 test server đạt.
-Tiếp theo: đo và chỉnh bản phối âm thanh S5, rồi hoàn thiện kinh tế. Chưa triển khai môi trường thật.
+- Đã đạt G0, R, S1–S4, U1–U2 và U4.
+- V: PARTIAL sau 9 vòng; còn ngưỡng nhận dạng lời.
+- U3: PARTIAL; 32/54 trạng thái đạt đầy đủ, 54/54 đạt giới hạn 25 từ.
+- Còn 22 trạng thái cần chỉnh hình ảnh; mỗi trạng thái đã có 2 vòng thiết kế.
+- U4: video menu 62 giây có âm thanh; trung vị 60 fps; CLS tối đa 0,0304.
+- S5: PARTIAL sau 11 vòng phối âm; đủ 6 bản thu thật và reel 90 giây.
+- Cả 6 cảnh đạt âm lượng, đỉnh âm, nền nhạc, nhịp khởi âm và giới hạn im lặng.
+- Mật độ tiếng ngắn và đường nét giọng nói còn trượt; không tuyên bố hoàn tất.
+- 48/75 lời trong trận thường, 16/35 lời trong trận boss bị lời sau cắt ngang.
+- Đã ghi yêu cầu nhịp chuyển chiêu cho A; lỗi đo giọng/menu vẫn thuộc B.
+- Gói âm thanh hiện 15,42 MB, dưới giới hạn 16 MB; nguồn và giấy phép được giữ.
+- Typecheck đạt; 2.521 test web, 724 server đạt.
+- Rules: 1.388 đạt, 2 expected-fail, 11 skip có sẵn.
+- Đang làm S6; S7, E1–E5, T1, C1, E6 và polish chưa hoàn tất.
+- Kinh tế mới và bộ đếm Fuji trực tiếp chưa có kết quả đạt.
+- Đồng bộ 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
+- Không triển khai hoặc merge main; người dùng triển khai ngày 20-11.

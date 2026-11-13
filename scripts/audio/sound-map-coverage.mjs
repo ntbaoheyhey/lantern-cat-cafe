@@ -48,9 +48,9 @@ export function collectAudioCalls(source,path,{domains={},eventCues=[],forwarded
       const named=ts.isIdentifier(exp)&&cueNames.has(exp.text);
       const property=ts.isPropertyAccessExpression(exp);
       const receiver=property?exp.expression.getText(sf):'';
-      const bridge=property&&['play','music'].includes(exp.name.text)&&(engineNames.has(receiver)||receiver.includes('__thAudio'));
+      const bridge=property&&['play','music','ambience'].includes(exp.name.text)&&(engineNames.has(receiver)||receiver.includes('__thAudio'));
       if(named||bridge){
-        const ids=values(node.arguments[0]).map(id=>property&&exp.name.text==='music'&&!id.startsWith('music.')?'music.'+id:id);
+        const ids=values(node.arguments[0]).map(id=>property&&['music','ambience'].includes(exp.name.text)&&!id.startsWith(exp.name.text+'.')?exp.name.text+'.'+id:id);
         const {line,character}=sf.getLineAndCharacterOfPosition(node.getStart(sf));
         calls.push({path,line:line+1,column:character+1,expression:node.arguments[0]?.getText(sf)??'',ids:unique(ids),delegation:forwardedIds.length>0});
       }
@@ -81,6 +81,8 @@ export async function writeSoundMap(){
     const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},bindings:slots,eventCues}:
       path==='apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx'?{domains:{'active.rarity':M.SOUND_RARITIES}}:
       path==='apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx'?{domains:{currency:M.SOUND_CURRENCIES}}:
+      path==='apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx'?{domains:{musicScene:['home','map','battle','boss'],ambientScene:['home','bag','invitations','cats','settings','chapter-map','battle-prep','field-guide','reward','boss','battle']}}:
+      path==='apps/web/src/game/cardrpg/shell/BagB2.tsx'?{domains:{cardId:M.CATS,event:['select','victory']}}:
       path==='apps/web/src/game/cardrpg/contracts/audio-cues.ts'?{forwardedIds:[...M.SOUND_CUES.keys()]}:{};
     const found=collectAudioCalls(source,path,adapters);
     if(found.length){calls.push(...found);inspected.push(signed(path));}

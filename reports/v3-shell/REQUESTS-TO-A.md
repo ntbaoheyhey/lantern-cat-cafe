@@ -33,3 +33,11 @@ The source roster was compared read-only with A commit `3c0bc9cb9b67d163b8ec3789
 ## B2 U3 battle-prep controls — 13 November
 
 B rebuilt the owned preparation frame, title and tabs. `stage/FormationC2.tsx` remains yours. Its `Crew`, `Saved`, help and Fight controls leave four plain buttons and Unicode marks in the 1280/1440 audit. Please replace their marks with the ready `GameIcon` (`team`, `history`, `guide`, `fight`, `arrow`) or `PaintedAction` from `shell/PaintedKit.tsx`, retaining accessible labels and handlers. Keep the main Fight action orange; move secondary help/preset controls to icon buttons. The exact evidence is `reports/v3-shell/b2/shots/ui-after-1280/battle-prep.png`. No battle code has been edited by B and no merge is requested.
+
+## S5-A-VOICE-WINDOW — speech interrupted by battle phase timing
+
+Full production-output captures (`mix/11-room-tails-*-runtime.json.gz`) show 48/75 normal-battle and 16/35 boss-battle voice starts interrupted by the next voice. `b2/VOICE-INTERRUPTIONS.json` matches each selected sprite duration to the next logged voice start; these are inferred source interruptions under the engine's one-voice policy, not speech recognition. Charge-to-release gaps are approximately 0.53–0.63 seconds while the selected charge clips last 0.78–1.32 seconds. Mochi/Soot release lines can also lose their end to the next unit's charge.
+
+Please reserve each charge/release voice's `durationMs` from `apps/web/src/audio/voice-callouts.json` before starting the next required voice, including consecutive ultimates. Keep existing damage timing and the release sync point consistent with the animation; a recover/hold beat may accommodate the remaining spoken tail. Do not layer voices or issue an extra generic bark. B can shorten a specific line after you publish a fixed timing budget, but accelerating all speech would worsen the already reported recognition misses. This timing request concerns A-owned cinematic/phase scheduling; no A-owned file has been edited and no merge is requested.
+
+S5 is permitted PARTIAL after eleven measured mix iterations. Other misses (transient density and menu contour proxies) remain B-owned tuning work, explicitly shown in OUR-AUDIO.json/GATES.md; they are not attributed to A. All six scenes meet loudness, peak and bed coverage limits in the current full captures.

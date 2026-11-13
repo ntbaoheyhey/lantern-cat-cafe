@@ -24,11 +24,21 @@ def pcm(row,role):
  key=(row['path'],role)
  if key in cache:return cache[key]
  duration={'transient':.12,'body':.52,'tail':.85,'sweetener':.20,'foley':.34}.get(role,.25)
- filt={'transient':'highpass=f=650','body':'lowpass=f=1800','tail':'lowpass=f=4200,aecho=0.7:0.5:42|79:0.18|0.1','sweetener':'highpass=f=1800','foley':'highpass=f=80'}[role]
+ filt={'transient':'highpass=f=650','body':'lowpass=f=1800','tail':'lowpass=f=6500','sweetener':'highpass=f=1800','foley':'highpass=f=80'}[role]
  # A useful attack must remain even for an 11 ms UI source.
  b=subprocess.check_output(['ffmpeg','-v','error','-i',str(ROOT/row['path']),'-t',str(duration),'-af',filt,'-ac','1','-ar',str(RATE),'-f','f32le','pipe:1'])
  x=np.frombuffer(b,dtype='<f4').copy(); peak=float(np.max(np.abs(x)))
  if peak>0:x*=min(2,.45/peak)
+ if role=='tail':
+  # A small diffuse room, rather than two separated echo taps. The response is
+  # deterministic original DSP; it adds no external recording or extra source.
+  rng=np.random.default_rng(int(sha(row['id'].encode())[:8],16))
+  t=np.arange(round(.28*RATE))/RATE
+  impulse=rng.normal(size=len(t))*np.exp(-t/.055)*np.minimum(1,t/.008)
+  impulse/=max(float(np.sqrt(np.sum(impulse**2))),1e-12)
+  n=1<<int(np.ceil(np.log2(len(x)+len(impulse)-1)))
+  room=np.fft.irfft(np.fft.rfft(x,n)*np.fft.rfft(impulse,n),n)[:len(x)+len(impulse)-1]
+  dry=np.pad(x,(0,len(room)-len(x)));x=(dry+.42*room).astype(np.float32)
  fade=min(96,len(x)//4)
  if fade:x[:fade]*=np.linspace(0,1,fade);x[-fade:]*=np.linspace(1,0,fade)
  cache[key]=x
@@ -128,7 +138,7 @@ for pack,items in chunks.items():
  for fmt,codec in [('webm','libopus'),('mp3','libmp3lame')]:
   path=OUT/f'{pack}.{fmt}';subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar',str(RATE),'-ac','1','-i','pipe:0','-c:a',codec,'-b:a','72k',str(path)],input=data,check=True)
   rel=str(path.relative_to(ROOT));licences['files']=[r for r in licences['files'] if r['path']!=rel]
-  rows=list(members[pack].values());licences['files'].append({'path':rel,'file':path.name,'sha256':sha(path.read_bytes()),'sourceUrl':'https://kenney.nl/assets','licenseUrl':'https://creativecommons.org/publicdomain/zero/1.0/','license':'CC0-1.0','author':'Kenney','date':'2026-11-13','sourceFiles':[{'path':r['path'],'sha256':r['sha256'],'sourceUrl':r['sourceUrl']} for r in rows],'processing':'Original layered arrangement; filtered source cuts; 48 kHz mono sprite with 80 ms guards; Opus/MP3. No reference audio.'})
+  rows=list(members[pack].values());licences['files'].append({'path':rel,'file':path.name,'sha256':sha(path.read_bytes()),'sourceUrl':'https://kenney.nl/assets','licenseUrl':'https://creativecommons.org/publicdomain/zero/1.0/','license':'CC0-1.0','author':'Kenney; original layered arrangement and room DSP by Taskbar Hero','date':'2026-11-13','sourceFiles':[{'path':r['path'],'sha256':r['sha256'],'sourceUrl':r['sourceUrl']} for r in rows],'processing':'Original layered arrangement; filtered source cuts and deterministic 280ms diffuse room tails; 48 kHz mono sprite with 80 ms guards; Opus/MP3. No reference audio.'})
  manifest['packs'][pack]={'webm':f'/audio/{pack}.webm','mp3':f'/audio/{pack}.mp3'}
 manifest.update(version=4,designs=designs,bindings=bindings)
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

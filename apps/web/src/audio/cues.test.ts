@@ -29,6 +29,12 @@ describe('sample cue coverage',()=>{
   expect(ids.filter(id=>id==='hit.blunt')).toHaveLength(1);
   expect(ids).toContain('kit.slash.release');
  });
+ it('does not replay retained cast and travel events at the impact beat',()=>{
+  const ids:string[]=[];const audio={play:(id:string)=>ids.push(id)};
+  const plan={actorId:'mochi',skillId:'mochi-1',shape:'bash',ultimate:false,events:[{type:'action_start'},{type:'travel'},{type:'damage'},{type:'status_apply',status:'burn'}]};
+  for(const kind of ['anticipation','travel','impact'])playFrame(audio,{plan,beat:{kind}} as never);
+  expect(ids).toEqual(['skill.mochi.1.cast','kit.slash.release','skill.mochi.1.impact','hit.blunt','status.burn.on']);
+ });
  it('uses the real skill slot and enemy catalogue ID, with no cast for a round tick',()=>{
   const ids:string[]=[];const audio={play:(id:string)=>ids.push(id)};
   for(const [actorId,skillId] of [['soot','soot-3'],['foe-2-yarn-giant','enemy:yarn-giant'],['','']]){

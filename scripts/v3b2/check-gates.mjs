@@ -128,10 +128,12 @@ export function checkGates({root = DEFAULT_ROOT, now = new Date()} = {}) {
   checkTest('U4.reducedMotion',motion?.reducedMotion);
 
   const ours=ev('OUR-AUDIO.json');
+  const analyserHash=digest('scripts/audio/analyse.py');
+  every('S5.algorithm','same current measurement algorithm for references and all six non-diagnostic renders',ours?.renders,r=>ours.renders.length===6&&new Set(ours.renders.map(v=>v.name)).size===6&&!!analyserHash&&reference?.algorithmSha256===analyserHash&&r.algorithmSha256===analyserHash&&!r.diagnostic);
   for(const name of ['battle','boss','home','bag','gacha','forge']) {
     const r=ours?.renders?.find(r=>r.name===name), ref=reference?.targets?.[name==='boss'?'battle':name], isBattle=['battle','boss'].includes(name);
     const seconds=name==='battle'?T.battleSeconds:name==='boss'?T.bossSeconds:T.menuSeconds;
-    record(`S5.${name}.render`,`>= ${seconds}s measured Opus render`,r?.durationSeconds,r?.durationSeconds>=seconds&&signedFile(r));
+    record(`S5.${name}.render`,`>= ${seconds}s measured Opus render`,r?.durationSeconds,r?.durationSeconds>=seconds&&signedFile(r)&&signedFile(r?.runtime)&&r?.errors?.length===0&&!r?.diagnostic);
     const relativeMetric=(metric,tolerance)=>num(`S5.${name}.${metric}`,`reference +/- ${tolerance*100}% (reference ${ref?.[metric]??'missing'})`,r?.[metric],n=>finite(ref?.[metric])&&Math.abs(n-ref[metric])<=Math.abs(ref[metric])*tolerance);
     relativeMetric('onsetsPerSecond',T.onsetRelativeTolerance);
     num(`S5.${name}.layers`, `>= reference median - ${T.layerMedianAllowance}`,r?.layersPerOnset,n=>finite(ref?.layersPerOnset)&&n>=ref.layersPerOnset-T.layerMedianAllowance);

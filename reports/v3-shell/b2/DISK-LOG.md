@@ -50,3 +50,9 @@ Resume 2026-11-13T07:23:34.774204+00:00: 286.74 GiB before; 286.80 GiB after. Re
 Resume 2026-11-13T07:39:32.266022+00:00: 278.39 GiB before; 278.45 GiB after. Removed rebuildable worktree paths: contracts/cache, contracts/out, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite, apps/web/node_modules/.vite. Source audio, other worktrees and protected folders retained.
 
 Resume 2026-11-13T07:55:24.671095+00:00: 271.34 GiB before; 271.38 GiB after. Removed rebuildable worktree paths: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite, contracts/cache, contracts/out. No current source audio or protected trees removed.
+
+Resume 2026-11-13T08:13:34.469177+00:00: 272.97 GiB before; 273.01 GiB after. Removed rebuildable worktree paths: contracts/cache, contracts/out, apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. Sources, committed evidence and protected trees retained.
+
+- Resume 2026-11-13 08:43 UTC: before 290 GiB free; removed rebuildable outputs apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite; after: /dev/disk3s1   926Gi   596Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data. No reference WAVs written; current S5 captures retained.
+
+Resume 2026-11-13T09:04:14.550441+00:00: 289.57 GiB before; 289.57 GiB after. Removed rebuildable paths: apps/web/node_modules/.vite, supabase/tests/node_modules/.vite-temp, packages/game-rules/node_modules/.vite-temp, apps/web/node_modules/.vite-temp. Current S5 renders and source audio retained.

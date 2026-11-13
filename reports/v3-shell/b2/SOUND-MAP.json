@@ -15447,7 +15447,7 @@
       "layers": [
         {
           "role": "music",
-          "pool": "music.map/music",
+          "pool": "music.home/music",
           "variants": 1,
           "offsetMs": 0,
           "eq": "flat"
@@ -15865,7 +15865,7 @@
       "layers": [
         {
           "role": "music",
-          "pool": "music.map/music",
+          "pool": "music.home/music",
           "variants": 1,
           "offsetMs": 0,
           "eq": "flat"
@@ -16283,7 +16283,7 @@
       "layers": [
         {
           "role": "music",
-          "pool": "music.map/music",
+          "pool": "music.home/music",
           "variants": 1,
           "offsetMs": 0,
           "eq": "flat"
@@ -23466,6 +23466,171 @@
       "cooldownMs": 30,
       "priority": 20,
       "ducking": null,
+      "loop": false,
+      "owner": "B"
+    },
+    {
+      "screen": "bag",
+      "event": "gear-comment",
+      "cueId": "voice.mochi.gear",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.mochi.gear/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.mochi.gear/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.mochi.gear/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.mochi.gear/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 40,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "B"
+    },
+    {
+      "screen": "item-detail",
+      "event": "gear-comment",
+      "cueId": "voice.mochi.gear",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.mochi.gear/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.mochi.gear/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.mochi.gear/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.mochi.gear/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 40,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "B"
+    },
+    {
+      "screen": "forge-enhance",
+      "event": "forge-comment",
+      "cueId": "voice.mochi.forge",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.mochi.forge/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.mochi.forge/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.mochi.forge/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.mochi.forge/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 40,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
       "loop": false,
       "owner": "B"
     },

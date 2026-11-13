@@ -14,6 +14,7 @@ import numpy as np
 
 RATE = 22050
 FFT = 1024
+FLUX_FFT = 4096  # resolve sustained chord partials instead of counting phase beating
 HOP = 220  # 9.98 ms
 
 
@@ -41,20 +42,36 @@ def measure(samples, rate=RATE):
     freqs = np.fft.rfftfreq(FFT, 1/rate)
     rms = np.sqrt(np.mean(frames**2, axis=1))
     db = 20*np.log10(np.maximum(rms, 1e-12))
-    # Half-wave spectral flux, whitened by the recent frequency-bin median.
-    # Square-root compression reduces sensitivity to the video's master gain.
-    compressed = np.sqrt(magnitude)
-    flux = np.r_[0, np.maximum(np.diff(compressed, axis=0), 0).mean(axis=1)]
+    # A short FFT + square-root magnitude treated phase leakage in a steady
+    # sine as 7-9 attacks/s. Resolve partials with a separate long window and
+    # normalize positive L1 flux by magnitude. The 1.5% novelty floor rejects
+    # numerical/phase ripple at any master gain. Band rises and voice metrics
+    # retain their original 46 ms windows and 10 ms hop.
+    padded=np.pad(x,(FLUX_FFT//2,FLUX_FFT//2))
+    long_frames=np.lib.stride_tricks.sliding_window_view(padded,FLUX_FFT)[::HOP][:len(frames)]
+    resolved=np.abs(np.fft.rfft(long_frames*np.hanning(FLUX_FFT),axis=1))
+    level=resolved.sum(axis=1)
+    local_peak=np.max(np.lib.stride_tricks.sliding_window_view(np.pad(level,(10,10),mode='edge'),21),axis=1)
+    flux=np.r_[0,np.maximum(np.diff(resolved,axis=0),0).sum(axis=1)/np.maximum(local_peak[1:],1e-12)]
     local = rolling_median(flux, 101)
     mad = rolling_median(np.abs(flux-local), 101)
-    threshold = local + np.maximum(1.5*mad, np.max(flux)*0.015)
-    peaks = np.flatnonzero((flux > threshold) & (flux >= np.r_[0, flux[:-1]]) & (flux > np.r_[flux[1:], 0]) & (db > -50))
+    threshold = np.maximum(local+1.5*mad,0.015)
+    peaks = np.flatnonzero((flux > threshold) & (flux >= np.r_[0, flux[:-1]]) & (flux > np.r_[flux[1:], 0]))
     onsets = []
     for p in peaks:
         if not onsets or (p-onsets[-1])*HOP/rate >= 0.075:
             onsets.append(int(p))
         elif flux[p] > flux[onsets[-1]]:
             onsets[-1] = int(p)
+    # A centered Hann-window flux peak leads a sharp attack by approximately
+    # one quarter-window. Align it with the short-window band-rise measurement.
+    onsets=[min(len(frames)-1,p+round(FLUX_FFT/(4*HOP))) for p in onsets]
+    onsets=[p for p in onsets if np.max(db[max(0,p-3):min(len(db),p+4)])>-50]
+    # Locate each accepted attack with the original short-window novelty. Long
+    # windows decide whether an attack exists; short windows preserve timing
+    # and the required 30 ms band-rise resolution for sub-40 ms transients.
+    short_flux=np.r_[0,np.maximum(np.diff(np.sqrt(magnitude),axis=0),0).mean(axis=1)]
+    onsets=sorted(set(max(0,p-5)+int(np.argmax(short_flux[max(0,p-5):min(len(frames),p+3)])) for p in onsets))
     bands = [(0,120),(120,800),(800,5000),(5000,rate/2+1)]
     energies = np.stack([power[:,(freqs >= lo)&(freqs < hi)].sum(axis=1) for lo,hi in bands], axis=1)
     layer_counts = []
@@ -111,7 +128,7 @@ def measure(samples, rate=RATE):
         'tickTransientsPerSecond':len(ticks)/duration,
         'silenceFraction':float(np.mean(db < -50)),
         'onsetCount':len(onsets),'onsetBandCounts':layer_counts,
-        'onsetTimes':[round(p*HOP/rate,3) for p in onsets],
+        'onsetTimes':[round((p*HOP+FFT/2)/rate,3) for p in onsets],
         'voiceContourEvents':voice_events,'tickCount':len(ticks),
         'bandEnergyFractions':(energies.sum(axis=0)/max(float(energies.sum()),1e-18)).tolist(),
     }

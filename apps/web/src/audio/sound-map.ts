@@ -90,6 +90,8 @@ events(['hero-level','level-up'],{'level-confirm':'ui.level-up','xp-transfer':'u
 events(['hero-star'],{'star-node':'ui.star-node','star-up':'ui.star-up','shards-consumed':'ui.consume'});
 for(const slot of SOUND_SLOTS)events(['hero-gear','team'],{[`equip-${slot}`]:`ui.equip.${slot}`,[`unequip-${slot}`]:`ui.unequip.${slot}`});
 events(['bag','item-detail','batch-use'],{'item-select':'ui.select','quantity-step':'ui.quantity','use-item':'ui.use','batch-confirm':'ui.batch','item-discard':'ui.consume'});
+events(['bag','item-detail'],{'gear-comment':'voice.mochi.gear'});
+events(['forge-enhance'],{'forge-comment':'voice.mochi.forge'});
 events(['forge-enhance'],{'enhance-hammer':'ui.forge.hammer','enhance-success':'ui.forge.success','enhance-fail':'ui.forge.fail','blessing-gain':'ui.blessing','cost-paid':'ui.consume'});
 events(['forge-fusion','chain-fusion'],{'input-slot':'ui.slot','inputs-consumed':'fusion.consume','fusion-charge':'fusion.charge','fusion-reveal':'fusion.reveal','fusion-success-legacy':'ui.forge-success'});
 events(['invitations','gacha-reveal','gacha-results'],{'draw-charge':'gacha.charge','card-flip':'gacha.flip','pity-milestone':'gacha.pity','pull-confirm':'ui.confirm','skip-reveal':'ui.close'});

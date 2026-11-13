@@ -2,8 +2,8 @@
 
 Generated from typed sound-map.ts. This is the production plan; assets, screen wiring and playback measurements are separately gated by S2–S7.
 
-2549 event/screen assignments; 49 screens; 865 distinct cues.
-473 legacy/current cue IDs inspected; 0 missing. 30 call sites in 506 production source files; 0 unresolved.
+2552 event/screen assignments; 49 screens; 867 distinct cues.
+526 legacy/current cue IDs inspected; 0 missing. 33 call sites in 508 production source files; 0 unresolved.
 
 Pitch values are playback-rate ratios. Random gain is in dB. Every layer pool is a production role, not a claim that the asset exists. Hits reserve four variants per layer; UI reserves three. High-priority ultimate/voice requests duck music −8 dB with 120 ms attack / 400 ms release.
 
@@ -269,6 +269,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | use-item | ui.use | ui | ui.use/transient / 3 / 0 / flat; ui.use/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | batch-confirm | ui.batch | ui | ui.batch/transient / 3 / 0 / flat; ui.batch/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | item-discard | ui.consume | ui | ui.consume/transient / 3 / 0 / flat; ui.consume/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
+| gear-comment | voice.mochi.gear | voice | voice.mochi.gear/consonant / 3 / 0 / flat; voice.mochi.gear/voice-grain / 3 / 0 / flat; voice.mochi.gear/foley / 3 / 0 / high-pass-80; voice.mochi.gear/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | B |
 | item-land-common | item.land.common | sfx | item.land.common/transient / 4 / 0 / flat; item.land.common/body / 4 / 7 / low-shelf-180; item.land.common/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | item-land-rare | item.land.rare | sfx | item.land.rare/transient / 4 / 0 / flat; item.land.rare/body / 4 / 7 / low-shelf-180; item.land.rare/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | item-land-epic | item.land.epic | sfx | item.land.epic/transient / 4 / 0 / flat; item.land.epic/body / 4 / 7 / low-shelf-180; item.land.epic/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
@@ -296,6 +297,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | use-item | ui.use | ui | ui.use/transient / 3 / 0 / flat; ui.use/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | batch-confirm | ui.batch | ui | ui.batch/transient / 3 / 0 / flat; ui.batch/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | item-discard | ui.consume | ui | ui.consume/transient / 3 / 0 / flat; ui.consume/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
+| gear-comment | voice.mochi.gear | voice | voice.mochi.gear/consonant / 3 / 0 / flat; voice.mochi.gear/voice-grain / 3 / 0 / flat; voice.mochi.gear/foley / 3 / 0 / high-pass-80; voice.mochi.gear/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | B |
 
 ## batch-use
 
@@ -337,6 +339,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.forge-enhance | ambience | ambience.forge-enhance/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | music-enter | music.home | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| forge-comment | voice.mochi.forge | voice | voice.mochi.forge/consonant / 3 / 0 / flat; voice.mochi.forge/voice-grain / 3 / 0 / flat; voice.mochi.forge/foley / 3 / 0 / high-pass-80; voice.mochi.forge/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | B |
 | enhance-hammer | ui.forge.hammer | ui | ui.forge.hammer/transient / 3 / 0 / flat; ui.forge.hammer/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | enhance-success | ui.forge.success | ui | ui.forge.success/transient / 3 / 0 / flat; ui.forge.success/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | enhance-fail | ui.forge.fail | ui | ui.forge.fail/transient / 3 / 0 / flat; ui.forge.fail/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
@@ -992,7 +995,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.chapter-map | ambience | ambience.chapter-map/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.map | music | music.map/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.map | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | chapter-open | map.unfold | sfx | map.unfold/transient / 4 / 0 / flat; map.unfold/body / 4 / 7 / low-shelf-180; map.unfold/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | node-select | map.node | sfx | map.node/transient / 4 / 0 / flat; map.node/body / 4 / 7 / low-shelf-180; map.node/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | stage-unlock | ui.reward | ui | ui.reward/transient / 3 / 0 / flat; ui.reward/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
@@ -1015,7 +1018,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.stage-select | ambience | ambience.stage-select/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.map | music | music.map/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.map | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | chapter-open | map.unfold | sfx | map.unfold/transient / 4 / 0 / flat; map.unfold/body / 4 / 7 / low-shelf-180; map.unfold/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | node-select | map.node | sfx | map.node/transient / 4 / 0 / flat; map.node/body / 4 / 7 / low-shelf-180; map.node/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | stage-unlock | ui.reward | ui | ui.reward/transient / 3 / 0 / flat; ui.reward/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
@@ -1038,7 +1041,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.battle-prep | ambience | ambience.battle-prep/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.map | music | music.map/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.map | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | toggle | ui.toggle | ui | ui.toggle/transient / 3 / 0 / flat; ui.toggle/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | slider-step | ui.slider | ui | ui.slider/transient / 3 / 0 / flat; ui.slider/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 80 | 20 | none | B |
 | chapter-open | map.unfold | sfx | map.unfold/transient / 4 / 0 / flat; map.unfold/body / 4 / 7 / low-shelf-180; map.unfold/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |

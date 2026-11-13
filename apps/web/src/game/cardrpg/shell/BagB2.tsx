@@ -22,6 +22,12 @@ export function BagB2({m}:{m:DepthModel}) {
  const [slot,setSlot]=useState(m.inventorySlot),[forge,setForge]=useState(false),[detailTab,setDetailTab]=useState<'set'|'affixes'>('set');
  const [feedback,setFeedback]=useState<{id:number;result:'success'|'fail'}>();
  const feedbackTimers=useRef<ReturnType<typeof setTimeout>[]>([]);
+ const lastComment=useRef(-Infinity);
+ const comment=(event:'select'|'victory')=>{
+  if(Date.now()-lastComment.current<22000)return;lastComment.current=Date.now();
+  if(cardId==='mochi')playCue(event==='select'?'voice.mochi.gear':'voice.mochi.forge',{priority:25});
+  else playCue(`voice.${cardId}.${event}`,{priority:25});
+ };
  useEffect(()=>()=>feedbackTimers.current.forEach(clearTimeout),[]);
  const enhance=()=>{
   if(!item)return;
@@ -32,7 +38,7 @@ export function BagB2({m}:{m:DepthModel}) {
   const success=(result.state.gear.find(g=>g.id===item.id)?.enhancement??before)>before;
   setFeedback({id:performance.now(),result:success?'success':'fail'});playCue('ui.forge.hammer');
   const delay=reducedMotionB2()?0:260;
-  feedbackTimers.current=[setTimeout(()=>playCue(success?'ui.forge.success':'ui.forge.fail'),delay),setTimeout(()=>setFeedback(undefined),950)];
+  feedbackTimers.current=[setTimeout(()=>{playCue(success?'ui.forge.success':'ui.forge.fail');if(success)comment('victory');},delay),setTimeout(()=>setFeedback(undefined),950)];
  };
  const s=m.state,locked=!!s.run&&!s.run.complete,cardId=s.account.cards.some(c=>c.cardId===m.cardId)?m.cardId:s.team[0]!,cat=R.CAT_BY_ID[cardId]!;
  const gear=s.gear.filter(g=>slot==='all'||R.GEAR_BY_ID[g.templateId]!.slot===slot),item=gear.find(g=>g.id===m.itemId)??gear[0],spec=item?R.GEAR_BY_ID[item.templateId]:undefined;
@@ -44,7 +50,7 @@ export function BagB2({m}:{m:DepthModel}) {
  return <section className="b2-bag" aria-label="Gear workbench">
   <header className="b2-tools"><b className="b2-number"><GameIcon name="bag"/>{s.gear.length}/{R.GEAR_CAP_V4}</b><select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{s.account.cards.map(c=><option key={c.id} value={c.cardId}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select><DropOddsC2 state={s}/><HelpC2 label="Gear workshop" title="Fusion" symbol={<GameIcon name="forge"/>}><BoundFusion m={m}/></HelpC2></header>
   <div className="b2-bag-desk"><section className="b2-bag-shelf" aria-label="Gear shelf"><nav>{(['all',...EQUIPMENT_SLOTS] as const).map(id=><button key={id} aria-label={slots[id]} aria-pressed={slot===id} onClick={()=>setSlot(id)}><GameIcon name={id==='all'?'bag':id} size={30}/></button>)}</nav>
-   <div className="b2-bag-grid">{gear.map(g=>{const t=R.GEAR_BY_ID[g.templateId]!;return <PaintedTile key={g.id} rarity={t.rarity} tag={ownerOf(g.id)?'equipped':undefined} label={`${t.name} +${g.enhancement}${ownerOf(g.id)?' · Worn by '+R.CAT_BY_ID[ownerOf(g.id)!]!.name:''}`} selected={g.id===item?.id} onClick={()=>{m.itemId=g.id;m.notify(false);}}><GearArtA6 slot={t.slot} setId={t.setId}/><b className="b2-tile-count">+{g.enhancement}</b></PaintedTile>;})}</div>
+   <div className="b2-bag-grid">{gear.map(g=>{const t=R.GEAR_BY_ID[g.templateId]!;return <PaintedTile key={g.id} rarity={t.rarity} tag={ownerOf(g.id)?'equipped':undefined} label={`${t.name} +${g.enhancement}${ownerOf(g.id)?' · Worn by '+R.CAT_BY_ID[ownerOf(g.id)!]!.name:''}`} selected={g.id===item?.id} onClick={()=>{m.itemId=g.id;m.notify(false);comment('select');}}><GearArtA6 slot={t.slot} setId={t.setId}/><b className="b2-tile-count">+{g.enhancement}</b></PaintedTile>;})}</div>
    {!gear.length&&<div className="b2-empty"><GuideMascot pose="comfort"/><button onClick={()=>setSlot('all')}><GameIcon name="bag"/>All gear</button></div>}
   </section>
   {item&&spec&&quote&&comparison&&stats?<aside className="b2-gear-detail" aria-label="Selected gear" data-selected-gear={item.id}>
