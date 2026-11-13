@@ -1,0 +1,18 @@
+PASS F2.freshness: measured=e502656bd0c3a703bee3dd9158411dade777cbab; required=evidence >= e502656bd0c3a703bee3dd9158411dade777cbab
+PASS F2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS F2.alpha[wave1]: measured=1; required=min 0.97
+PASS F2.alpha[wave3]: measured=1; required=min 0.97
+PASS F2.alpha[boss]: measured=1; required=min 0.97
+PASS F2.persistent-bubbles[wave1]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[wave3]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[boss]: measured=0; required=eq 0
+PASS F2.contrast[wave1]: measured=42.590909221323315; required=min 18
+PASS F2.contrast[wave3]: measured=42.590909221323315; required=min 18
+PASS F2.contrast[boss]: measured=42.590909221323315; required=min 18
+PASS F2.comparisons: measured=3; required=min 3
+PASS F2.typecheck: measured=0; required=eq 0
+PASS F2.unit: measured=0; required=eq 0
+FAIL F2.e2e: measured=1; required=eq 0
+PASS F2.parity: measured=0; required=eq 0
+PASS F2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 16 PASS / 1 FAIL / 17 gates

@@ -18,3 +18,11 @@ Before: 93 GiB free. Removed regenerable worktree outputs: none; encoded baselin
 Before: 92 GiB free. Removed regenerable worktree outputs: apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite. Current R reference decode retained until evidence review.
 After: /dev/disk3s1   926Gi   798Gi    91Gi    90%    5.4M  949M    1%   /System/Volumes/Data
 Low-disk mode: off.
+
+F1 end: deleted 160.5 MiB of decoded reference images/WAV. F2 freshly decoded only three annotated field frames; source videos untouched.
+
+## Resume 2026-11-13T04:59:19.094693+00:00
+Before: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /System/Volumes/Data
+After: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /System/Volumes/Data
+Removed local rebuildable output: apps/web/node_modules/.vite.
+Retained reference comparison frames for current F2 card. Normal disk mode (90 GiB free).

@@ -25,3 +25,7 @@ The prior checker used active voice >= 0.5. The request requires 100%; changed i
 - The floor metric excludes walls and edge props. The actual painting horizon moved to160/1024; no threshold changed. The crowded 1440×900 scene has only a1.1 percentage-point floor margin.
 - Shared shell Night tips still blocks G0/R/F1 completion. They remain in progress, not done or approved PARTIAL. Continue authorized battle cards while B owns the fix; never merge before scheduled dates.
 - F2 investigation: atlases carry encoded sRGB pixels but were treated as linear. Decode after undoing PMA and before linear tint; GPU test round-trips six samples with0/255 channel error. This is a colour-space correction, not recolouring original art.
+
+## F2 closeout / M1 method — 2026-11-13
+Measured clarity from isolated rendered actors against the same painted stage; histograms and all 900-frame timelines remain in F2/metrics.json. The material alpha audit excludes original transparent atlas pixels and effect overlays. Pixelwise contrast passes; Panko/Mochi average luminance is still close to the floor (not hidden in the review).
+M1 uses analytic, seekable root transforms around each unit's foot, driven by the existing plan impact time. Six styles, independent idle phase, three pooled after-images, and damage-event reactions leave all rule events untouched. Ranged root travel uses the already documented 8.8%-viewport step to meet the stricter every-action >6% gate. No target or gate changes.

@@ -7,8 +7,8 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | G0 | Gate checker and deterministic capture | in progress | G0/metrics.json; FAIL G0.e2e measured=1 required=0; 9/10 browser cases pass; old shell tips selector requested from B |
 | R | Measured reference research | in progress | R/metrics.json; 40 PASS / 1 FAIL; FAIL R.e2e measured=1 required=0 (shared hidden Night tips); 12 windows, 44 bodies, 33 glyphs, 3 pilots complete |
 | F1 | Viewport scale and staggered formation | in progress | F1/gates.log: 38 PASS / 1 FAIL; scale 0.19689–0.20946; occlusion 0; clipping 0; floor min0.51068; FAIL F1.e2e measured=1 required=0 (shared Night tips) |
-| F2 | Field clarity | in progress | Fix atlas sRGB/PMA decoding, shield lifetime and bounded tint; GPU colour round trip PASS (0/255 error) |
-| M1 | Attack choreography | todo | pending |
+| F2 | Field clarity | in progress | F2/gates.log: 16 PASS / 1 FAIL; alpha 1.00, persistent bubble frames 0, contrast min42.59/18; FAIL F2.e2e exit1. Full-suite source e502656bd; card remains open |
+| M1 | Attack choreography | in progress | Pure six-archetype sampler and hit response tests pass; renderer integration next |
 | M2 | Separate parts and face animation | todo | pending |
 | V1 | Full-screen distinct ultimate plates | todo | pending |
 | V2 | Field skills and damage numbers | todo | pending |

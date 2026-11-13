@@ -1,8 +1,8 @@
-# V3-A2 — Trạng thái
-- Nghiên cứu đã đo 12 đoạn tham chiếu, 44 thân nhân vật, 33 số sát thương.
-- Mục tiêu chiều cao thân: 20,9% khung nhìn; số sát thương: 34,7–57,8 px ở 720p.
-- Typecheck, unit và parity đều đạt; 1 ca E2E bị lỗi nút Night tips thuộc phần B.
-- Chưa đánh dấu G0/R hoàn thành; không bỏ qua ca lỗi.
-- Đang kiểm tra F1: thu nhỏ nhân vật, 6 vị trí địch riêng, bỏ tên trên sân.
-- Vẫn còn cần sửa chuyển động, hiệu ứng, âm thanh và rig; chưa có demo cuối.
-- Không merge sớm: đồng bộ 16/18-11; đóng băng 19-11 lúc 12:00 UTC.
+# Trạng thái V3-A2
+- F1: tỉ lệ nhân vật, đội hình, che mặt và diện tích sàn đạt yêu cầu; kiểm thử Night tips của giao diện B còn lỗi.
+- F2: màu gốc đã đúng; độ mờ nhân vật 1.00; bong bóng khiên tối đa 0,6 giây.
+- Độ tương phản thấp nhất 42,59, yêu cầu 18; ba trận mẫu 30 giây đều giữ nguyên kết quả chiến đấu.
+- Typecheck, unit và parity đạt. E2E còn lỗi nên F2 chưa đánh dấu hoàn tất.
+- Đang làm M1: sáu kiểu di chuyển tấn công, đẩy lùi khi trúng đòn và ảnh dư.
+- Chưa đến lịch đồng bộ 16/11, 18/11; chưa có demo cuối cùng.
+- Không triển khai, không gộp vào main. Chưa cần người dùng thao tác.
