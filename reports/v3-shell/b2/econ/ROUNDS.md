@@ -341,3 +341,153 @@ With 40 native seeds, the best candidate passes T-a/b/c/d/f/g and puts Thread at
 | heavy-heavy-d1-b0.1 | 1.243 | 1.028 | 12 / 9 | 0.917 |
 | heavy-heavy-d1-b0.2 | 1.270 | 1.033 | 12 / 8.25 | 0.923 |
 | heavy-heavy-d1-b0.35 | 1.279 | 1.041 | 12 / 8 | 0.918 |
+
+## Round 9 — Completed 200-seed native bank
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.6594.
+
+The best of 40 configs on the verified 200-seed native bank still misses: burn/claims 0.9642-1.5165, Star source/sink 1.0481-1.1094, bot/human active-hour efficiency 0.8998-0.9467. Casual Legendary remains day 13 and heavy 8.5-9. Lower the high rank bonus and skin/fusion prices while exploring a small Thread buffer; do not invent a bot-only reward multiplier.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 2.35 | 1 |
+| policy.rewards.chapterSpool | 2 | 1 |
+| policy.rewards.seasonRankMax | 4 | 6 |
+| policy.spool.skinCost | 2 | 9 |
+| policy.spool.weeklyNetCap | 10 | 4 |
+| policy.fusion.legendary.yarn | 4 | 14 |
+| policy.seal.feeBp | 1200 | 1500 |
+| sinks.decor.yarn | 3 | 2 |
+| sinks.display.yarn | 3 | 1 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 0.964 | 1.084 | 13 / 9 | 0.928 |
+| casual-heavy-d0.5-b0.2 | 1.042 | 1.093 | 13 / 9 | 0.943 |
+| casual-heavy-d0.5-b0.35 | 1.127 | 1.109 | 13 / 8.5 | 0.900 |
+| casual-heavy-d1-b0.1 | 1.299 | 1.072 | 13 / 9 | 0.923 |
+| casual-heavy-d1-b0.2 | 1.414 | 1.079 | 13 / 9 | 0.947 |
+| casual-heavy-d1-b0.35 | 1.485 | 1.087 | 13 / 8.5 | 0.914 |
+| balanced-d0.5-b0.1 | 0.978 | 1.063 | 13 / 9 | 0.911 |
+| balanced-d0.5-b0.2 | 1.040 | 1.071 | 13 / 9 | 0.917 |
+| balanced-d0.5-b0.35 | 1.148 | 1.085 | 13 / 9 | 0.917 |
+| balanced-d1-b0.1 | 1.284 | 1.059 | 13 / 9 | 0.927 |
+| balanced-d1-b0.2 | 1.439 | 1.064 | 13 / 9 | 0.929 |
+| balanced-d1-b0.35 | 1.517 | 1.074 | 13 / 9 | 0.919 |
+| heavy-heavy-d0.5-b0.1 | 0.988 | 1.048 | 13 / 9 | 0.934 |
+| heavy-heavy-d0.5-b0.2 | 1.046 | 1.056 | 13 / 9 | 0.928 |
+| heavy-heavy-d0.5-b0.35 | 1.126 | 1.068 | 13 / 9 | 0.923 |
+| heavy-heavy-d1-b0.1 | 1.231 | 1.049 | 13 / 9 | 0.923 |
+| heavy-heavy-d1-b0.2 | 1.451 | 1.054 | 13 / 9 | 0.919 |
+| heavy-heavy-d1-b0.35 | 1.516 | 1.064 | 13 / 9 | 0.923 |
+
+## Round 10 — Balance low-Star source caps and affordable sinks
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.8654.
+
+The 200-seed native bank preserves casual day 13 and heavy day 9 progression. This round tests reduced weekly grants, one-to-three Star bank caps, and cheaper repeatable sinks across 17 levers; bot hourly efficiency still needs a structural earning rule and no E3 acceptance is claimed.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1 | 1.2 |
+| policy.rewards.chapterSpool | 1 | 0 |
+| policy.rewards.seasonRankMax | 6 | 3 |
+| policy.spool.skinCost | 9 | 6 |
+| policy.fusion.legendary.yarn | 14 | 4 |
+| policy.seal.feeBp | 1500 | 800 |
+| sinks.polish.yarn.1 | 2 | 5 |
+| sinks.decor.yarn | 2 | 1 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.039 | 1.093 | 13 / 9 | 0.949 |
+| casual-heavy-d0.5-b0.2 | 1.131 | 1.104 | 13 / 9 | 0.936 |
+| casual-heavy-d0.5-b0.35 | 1.209 | 1.119 | 13 / 8.5 | 0.915 |
+| casual-heavy-d1-b0.1 | 1.273 | 1.078 | 13 / 9 | 0.959 |
+| casual-heavy-d1-b0.2 | 1.363 | 1.084 | 13 / 9 | 0.955 |
+| casual-heavy-d1-b0.35 | 1.443 | 1.093 | 13 / 8.5 | 0.926 |
+| balanced-d0.5-b0.1 | 1.044 | 1.074 | 13 / 9 | 0.939 |
+| balanced-d0.5-b0.2 | 1.129 | 1.082 | 13 / 9 | 0.939 |
+| balanced-d0.5-b0.35 | 1.224 | 1.097 | 13 / 9 | 0.929 |
+| balanced-d1-b0.1 | 1.266 | 1.063 | 13 / 9 | 0.934 |
+| balanced-d1-b0.2 | 1.389 | 1.068 | 13 / 9 | 0.942 |
+| balanced-d1-b0.35 | 1.466 | 1.078 | 13 / 9 | 0.925 |
+| heavy-heavy-d0.5-b0.1 | 1.049 | 1.059 | 13 / 9 | 0.930 |
+| heavy-heavy-d0.5-b0.2 | 1.103 | 1.066 | 13 / 9 | 0.951 |
+| heavy-heavy-d0.5-b0.35 | 1.205 | 1.079 | 13 / 9 | 0.930 |
+| heavy-heavy-d1-b0.1 | 1.278 | 1.050 | 13 / 9 | 0.953 |
+| heavy-heavy-d1-b0.2 | 1.391 | 1.055 | 13 / 9 | 0.946 |
+| heavy-heavy-d1-b0.35 | 1.487 | 1.064 | 13 / 9 | 0.941 |
+
+## Round 11 — Withdrawal cap and affordable recurring sinks
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.8939.
+
+Narrowing weekly claim caps, rank grants, and recurring sink prices slightly worsened the worst-case score versus round 10 (5.8939 vs 5.8654). Bot efficiency remains structurally too close to human efficiency; price-only tuning cannot close T-e. Preserve both candidate sets for final Pareto confirmation.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.2 | 1.05 |
+| policy.rewards.seasonRankMax | 3 | 4 |
+| policy.spool.weeklyNetCap | 4 | 3 |
+| policy.fusion.legendary.yarn | 4 | 10 |
+| policy.seal.feeBp | 800 | 900 |
+| sinks.polish.yarn.0 | 2 | 3 |
+| sinks.polish.yarn.1 | 5 | 3 |
+| sinks.display.yarn | 1 | 3 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.029 | 1.101 | 13 / 9 | 0.932 |
+| casual-heavy-d0.5-b0.2 | 1.138 | 1.112 | 13 / 9 | 0.949 |
+| casual-heavy-d0.5-b0.35 | 1.248 | 1.128 | 13 / 8.5 | 0.911 |
+| casual-heavy-d1-b0.1 | 1.298 | 1.082 | 13 / 9 | 0.937 |
+| casual-heavy-d1-b0.2 | 1.424 | 1.089 | 13 / 9 | 0.956 |
+| casual-heavy-d1-b0.35 | 1.500 | 1.098 | 13 / 8.5 | 0.923 |
+| balanced-d0.5-b0.1 | 1.032 | 1.076 | 13 / 9 | 0.931 |
+| balanced-d0.5-b0.2 | 1.133 | 1.087 | 13 / 9 | 0.932 |
+| balanced-d0.5-b0.35 | 1.207 | 1.101 | 13 / 9 | 0.921 |
+| balanced-d1-b0.1 | 1.290 | 1.065 | 13 / 9 | 0.932 |
+| balanced-d1-b0.2 | 1.431 | 1.071 | 13 / 9 | 0.935 |
+| balanced-d1-b0.35 | 1.524 | 1.083 | 13 / 9 | 0.926 |
+| heavy-heavy-d0.5-b0.1 | 1.023 | 1.059 | 13 / 9 | 0.924 |
+| heavy-heavy-d0.5-b0.2 | 1.108 | 1.066 | 13 / 9 | 0.939 |
+| heavy-heavy-d0.5-b0.35 | 1.219 | 1.082 | 13 / 9 | 0.937 |
+| heavy-heavy-d1-b0.1 | 1.270 | 1.054 | 13 / 9 | 0.930 |
+| heavy-heavy-d1-b0.2 | 1.439 | 1.059 | 13 / 9 | 0.933 |
+| heavy-heavy-d1-b0.35 | 1.549 | 1.070 | 13 / 9 | 0.933 |
+
+## Round 12 — Bound Star accumulation and make low-cost sinks reachable
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.6515.
+
+The low bank cap plus cheaper Star-consuming upgrades brings all 18 median Star ratios to 1.039-1.097 while burn/claims stays 1.034-1.521. Bot/human hourly earnings remains 0.916-0.961; a structural participation change is still required. This is 40-seed evidence, not final confirmation.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.2 | 1.05 |
+| policy.fusion.legendary.yarn | 4 | 5 |
+| sinks.polish.yarn.0 | 2 | 1 |
+| sinks.polish.yarn.1 | 5 | 1 |
+| sinks.decor.yarn | 1 | 2 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.034 | 1.072 | 13 / 9 | 0.919 |
+| casual-heavy-d0.5-b0.2 | 1.145 | 1.081 | 13 / 9 | 0.950 |
+| casual-heavy-d0.5-b0.35 | 1.223 | 1.097 | 13 / 8.5 | 0.919 |
+| casual-heavy-d1-b0.1 | 1.278 | 1.059 | 13 / 9 | 0.943 |
+| casual-heavy-d1-b0.2 | 1.399 | 1.064 | 13 / 9 | 0.961 |
+| casual-heavy-d1-b0.35 | 1.483 | 1.073 | 13 / 8.5 | 0.921 |
+| balanced-d0.5-b0.1 | 1.047 | 1.054 | 13 / 9 | 0.934 |
+| balanced-d0.5-b0.2 | 1.123 | 1.061 | 13 / 9 | 0.934 |
+| balanced-d0.5-b0.35 | 1.210 | 1.075 | 13 / 9 | 0.922 |
+| balanced-d1-b0.1 | 1.280 | 1.047 | 13 / 9 | 0.930 |
+| balanced-d1-b0.2 | 1.416 | 1.052 | 13 / 9 | 0.929 |
+| balanced-d1-b0.35 | 1.509 | 1.061 | 13 / 9 | 0.916 |
+| heavy-heavy-d0.5-b0.1 | 1.054 | 1.041 | 13 / 9 | 0.925 |
+| heavy-heavy-d0.5-b0.2 | 1.126 | 1.047 | 13 / 9 | 0.930 |
+| heavy-heavy-d0.5-b0.35 | 1.213 | 1.059 | 13 / 9 | 0.923 |
+| heavy-heavy-d1-b0.1 | 1.272 | 1.039 | 13 / 9 | 0.925 |
+| heavy-heavy-d1-b0.2 | 1.423 | 1.043 | 13 / 9 | 0.930 |
+| heavy-heavy-d1-b0.35 | 1.521 | 1.051 | 13 / 9 | 0.924 |
