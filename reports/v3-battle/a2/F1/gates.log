@@ -1,0 +1,40 @@
+PASS F1.freshness: measured=c55e4ed0dbf287eee865f69236a22ae160d5f14d; required=evidence >= c55e4ed0dbf287eee865f69236a22ae160d5f14d
+PASS F1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS F1.unit-height[wave1@1280x720]: measured=0.20945999999999987; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1280x720]: measured=0.20946000000000006; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1280x720]: measured=0.19689240000000005; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave1@1440x900]: measured=0.2094599999999999; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1440x900]: measured=0.2094600000000002; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1440x900]: measured=0.19689240000000008; required=band [0.157095,0.26182500000000003]
+PASS F1.face-occlusion[wave1@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave3@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[boss@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave1@1440x900]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave3@1440x900]: measured=0; required=max 0.1
+PASS F1.face-occlusion[boss@1440x900]: measured=0; required=max 0.1
+PASS F1.clipping[wave1@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[wave3@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[boss@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[wave1@1440x900]: measured=0; required=eq 0
+PASS F1.clipping[wave3@1440x900]: measured=0; required=eq 0
+PASS F1.clipping[boss@1440x900]: measured=0; required=eq 0
+PASS F1.floor[wave1@1280x720]: measured=0.6374801136363636; required=min 0.5
+PASS F1.floor[wave3@1280x720]: measured=0.5198451704545455; required=min 0.5
+PASS F1.floor[boss@1280x720]: measured=0.5875596590909091; required=min 0.5
+PASS F1.floor[wave1@1440x900]: measured=0.6296851217656012; required=min 0.5
+PASS F1.floor[wave3@1440x900]: measured=0.5106792237442922; required=min 0.5
+PASS F1.floor[boss@1440x900]: measured=0.578119292237443; required=min 0.5
+PASS F1.field-names[wave1@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[wave3@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[boss@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[wave1@1440x900]: measured=0; required=eq 0
+PASS F1.field-names[wave3@1440x900]: measured=0; required=eq 0
+PASS F1.field-names[boss@1440x900]: measured=0; required=eq 0
+PASS F1.core-size: measured=0; required=eq 0
+PASS F1.comparisons: measured=3; required=min 3
+PASS F1.typecheck: measured=0; required=eq 0
+PASS F1.unit: measured=0; required=eq 0
+FAIL F1.e2e: measured=1; required=eq 0
+PASS F1.parity: measured=0; required=eq 0
+PASS F1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 38 PASS / 1 FAIL / 39 gates

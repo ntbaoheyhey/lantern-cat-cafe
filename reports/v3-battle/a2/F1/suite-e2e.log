@@ -1,0 +1,7 @@
+COMMAND: pnpm --filter @taskbar-hero/web exec playwright test --config ../../tools/cinematic-compositor/playwright.config.ts
+TypeError: Module "file:///Users/bao/taskbar-hero-cardrpg-a6/scripts/v3a2/targets.json" needs an import attribute of "type: json"
+    at eval (<anonymous>:1:1)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config ../../tools/cinematic-compositor/playwright.config.ts

@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T04:52:39.161Z",
+    "sourceCommit": "c55e4ed0dbf287eee865f69236a22ae160d5f14d"
+  },
+  "typecheckExit": 0,
+  "parityExit": 0,
+  "unitExit": 0,
+  "e2eExit": 1,
+  "rechecks": [
+    {
+      "check": "full workspace typecheck",
+      "log": "typecheck-recheck.log",
+      "exit": 0
+    },
+    {
+      "check": "web typecheck after ESM import attribute",
+      "log": "typecheck-final.log",
+      "exit": 0
+    },
+    {
+      "check": "exact unchanged browser subset after ESM import repair",
+      "log": "e2e-recheck.log",
+      "exit": 1,
+      "passed": 9,
+      "failed": 1,
+      "reason": "B-owned hidden Review Night tips action"
+    }
+  ]
+}

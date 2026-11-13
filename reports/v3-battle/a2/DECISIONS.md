@@ -19,3 +19,9 @@ The prior checker used active voice >= 0.5. The request requires 100%; changed i
 - V2 contains x3 PvP, not a verified boss. V1 early campaign and late mode thumbnails reviewed; boss sampling remains a disclosed source limitation.
 - Atlas alpha replaces a contaminated warm-pixel baseline number estimator: real median ink 21.58 px, not rectangle height 33 px.
 - Ranged 20px description conflicts with the stricter every-action >6% width gate; preserve the gate with 80–96px cast steps plus 20px recoil.
+
+## F1 measured layout and F2 diagnosis
+- F1 geometry passes all six desktop fixtures: median core .19689–.20946, face alpha overlap0, clipping0, floor min.51068, names0. Three calm annotated reference comparisons replace impact-frame comparisons.
+- The floor metric excludes walls and edge props. The actual painting horizon moved to160/1024; no threshold changed. The crowded 1440×900 scene has only a1.1 percentage-point floor margin.
+- Shared shell Night tips still blocks G0/R/F1 completion. They remain in progress, not done or approved PARTIAL. Continue authorized battle cards while B owns the fix; never merge before scheduled dates.
+- F2 investigation: atlases carry encoded sRGB pixels but were treated as linear. Decode after undoing PMA and before linear tint; GPU test round-trips six samples with0/255 channel error. This is a colour-space correction, not recolouring original art.
