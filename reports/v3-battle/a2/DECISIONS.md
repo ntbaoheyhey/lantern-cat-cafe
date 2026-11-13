@@ -78,3 +78,6 @@ The existing B icon set supplies clock, fight, boss seal, menu and refresh. Batt
 
 ## P1 motion repair — 13 November
 Retain bounded action-follow cameras for both teams, animated painted skill builds and complete-composition plate camera beats. Wave1 improves10.128→15.343 but remains below15.796. After four camera/shape pilots, switch to the authorized P4/P5 environmental/ensemble method; do not crank arbitrary shake. Clear stale cinema audit time after hide. Bound the actual number ink plus crit tags/tilt. Original art only; thirteen encoded plates total18,418,223bytes. P1/M1 remain unfinished.
+
+## P3 verification repairs
+The inherited phase layer used Yarn’s portrait for every boss. Later bosses now reuse their existing full painted runtime images without adding media. The four lifecycle tests bypass constructors and needed a bossPhase dispose stub. Initial full suite passed 2508 other web tests; the four repaired tests pass in loading-repair.log. The browser audit also checks stationary reduced-motion aura, reset clearing, and both later boss assets. The shared Night tips shell test still fails and is not waived.

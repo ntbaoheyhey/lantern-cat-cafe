@@ -68,3 +68,9 @@ Before: 275 GiB free.
 Removed only regenerable worktree output: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp; reports/v3-battle/a2/ref
 After: /dev/disk3s1   926Gi   604Gi   277Gi    69%    5.4M  2.9G    0%   /System/Volumes/Data
 Normal disk mode. Encoded evidence retained.
+
+## Resume 2026-11-13T08:11:37.938217+00:00
+Before: /dev/disk3s1   926Gi   605Gi   276Gi    69%    5.4M  2.9G    0%   /System/Volumes/Data
+After: /dev/disk3s1   926Gi   605Gi   276Gi    69%    5.4M  2.9G    0%   /System/Volumes/Data
+Removed regenerable paths: apps/web/node_modules/.vite, reports/v3-battle/a2/ref
+No low-disk restriction. Encoded evidence retained.

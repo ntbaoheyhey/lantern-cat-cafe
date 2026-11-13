@@ -23,7 +23,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 ## Polish items (each needs a separate commit and comparison evidence)
 - [ ] P1: Revisit every PARTIAL with a new method
 - [x] P2: Second ultimate camera for all12 cats (covers the six most-used): P2/metrics.json;12 browser original/alternate/reduced checks PASS;12 comparison sheets; source770aab169.
-- [ ] P3: Boss phase cinematic and enrage aura
+- [x] P3: Boss phase cinematic and enrage aura; P3/metrics.json: 2.5s, phases II/III, all 3 boss paintings, static reduced aura, battle reset and unchanged rules PASS; source25de0255a. Shared suite E2E remains 9/10.
 - [ ] P4: Element weather by chapter
 - [ ] P5: Crowd reactions
 - [ ] P6: Cat victory poses, confetti and stars
