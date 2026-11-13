@@ -21,6 +21,8 @@ for specpath in sorted((root/'tools/cinematic-compositor/plates').glob('*.json')
  assert log['encoded']['webm']['sha256']==sha(video/(id+'.webm')),id+' stale WebM'
  assert log['encoded']['mp4']['sha256']==sha(video/(id+'.mp4')),id+' stale MP4'
  assert not log['errors'] and log['deterministic']
+ assert abs(log['frames'][54]['casterClip']['time']-log['frames'][54]['casterClip']['release'])<1e-6,id+' caster release is off beat'
+ assert abs(log['frames'][-1]['casterClip']['time']-log['frames'][-1]['casterClip']['duration'])<1e-6,id+' caster recovery truncated'
  cap=cv2.VideoCapture(str(video/(id+'.webm')));frames=[]
  while True:
   ok,im=cap.read()

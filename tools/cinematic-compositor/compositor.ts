@@ -1,5 +1,6 @@
 import {T} from '../../apps/web/src/game/cardrpg/battle-v3/compositor-deps';
 import {loadSpineActor,type SpineActor} from '../../apps/web/src/game/cardrpg/spine/assets';
+import {retimedClipTime} from '../../apps/web/src/game/cardrpg/spine/events';
 import {summonMotions,summonVertex} from './summon-motion.mjs';
 import '../../apps/web/node_modules/@fontsource/baloo-2/800.css';
 /** Offline deterministic director. Every logged layer comes from a real draw call. */
@@ -16,7 +17,7 @@ const summonScene=new T.Scene(),summonGeometry=new T.PlaneGeometry(1,1,48,40);
 const summonMaterial=new T.MeshBasicMaterial({transparent:true,side:T.DoubleSide,depthTest:false});
 const summonMesh=new T.Mesh(summonGeometry,summonMaterial);summonMesh.frustumCulled=false;summonScene.add(summonMesh);
 let plate:any,actor:SpineActor,summon:HTMLImageElement,paint:HTMLImageElement,core:any;
-let audit:{layers:Record<string,number>;particles:number;motifCoverage:number|null;casterCorePixels:number;camera:string;summonMotion:{kind:string;peakLocalPixels:number}};
+let audit:{layers:Record<string,number>;particles:number;motifCoverage:number|null;casterCorePixels:number;camera:string;summonMotion:{kind:string;peakLocalPixels:number};casterClip?:{name:string;duration:number;release:number;time:number}};
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const smooth=(v:number)=>{const t=clamp(v);return t*t*(3-2*t);};
 const ease=(v:number)=>1-(1-clamp(v))**3;
@@ -82,7 +83,12 @@ function paintedSummon(frame:number){const comp=plate.composition,build=ease((fr
 function cast(frame:number){const comp=plate.composition,arrival=ease(frame/17),climax=smooth((frame-39)/18),m=move(frame);const height=comp.casterHeight*(.92+.08*arrival+climax*.06),scale=height/core.world.height;
  actor.root.scale.setScalar(scale);actor.root.position.set(comp.casterX-640+(1-arrival)*comp.casterEnter+m.x*.35,720-comp.casterFoot+Math.sin(frame/20)*12+m.y*.25,0);actor.root.rotation.z=comp.casterTilt*(1-climax);
  if(actor.mesh)actor.mesh.proceduralTime=frame/30;
- const name=actor.clips.has('ultimate')?'ultimate':'ult';actor.sample(name,plate.id,.05+frame/67*Math.min(1.1,actor.duration(name)*.8),0,camera,false);renderer.render(scene,camera);
+ const name=actor.clips.has('ultimate')?'ultimate':'ult',duration=actor.duration(name),cues=actor.cues(name);
+ // Play the full authored pose. Previously template cats released about13
+ // frames early while the longer designer rigs barely reached their strike.
+ const release=cues.find(q=>q.name==='ult_release'&&!q.fallback)?.time??cues.find(q=>q.name==='hit'&&!q.fallback)?.time??duration*.55;
+ const time=retimedClipTime(frame/(plate.frames-1),duration,release,54/(plate.frames-1));
+ actor.sample(name,plate.id,time,0,camera,false);renderer.render(scene,camera);audit.casterClip={name,duration,release,time};
  layer('caster',()=>{c.globalAlpha=1;c.shadowColor=plate.signature.element.palette[1];c.shadowBlur=25;c.drawImage(renderer.domElement,0,0);});audit.casterCorePixels=height;
 }
 function ground(frame:number){const [bright,color]=plate.signature.element.palette,comp=plate.composition,build=smooth((frame-10)/26);layer('ground-glyph',()=>{c.globalAlpha=build*.64;c.strokeStyle=bright;c.lineWidth=7;for(let j=0;j<4;j++)ellipse(c,comp.focus[0],640,160+j*95+Math.sin(frame/10)*20,20+j*16,-.03);c.strokeStyle=color;c.lineWidth=18;ellipse(c,comp.focus[0],642,590,85);});}
