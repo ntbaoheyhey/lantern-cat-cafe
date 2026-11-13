@@ -5,8 +5,8 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | Card | Work | State | Evidence / checker lines |
 |---|---|---|---|
 | G0 | Gate checker and deterministic capture | in progress | G0/metrics.json; FAIL G0.e2e measured=1 required=0; 9/10 browser cases pass; old shell tips selector requested from B |
-| R | Measured reference research | in progress | 12 windows decoded; manual annotations and Biscuit method pilots underway |
-| F1 | Viewport scale and staggered formation | todo | pending |
+| R | Measured reference research | in progress | R/metrics.json; 40 PASS / 1 FAIL; FAIL R.e2e measured=1 required=0 (shared hidden Night tips); 12 windows, 44 bodies, 33 glyphs, 3 pilots complete |
+| F1 | Viewport scale and staggered formation | in progress | Desktop alpha-mask measurements underway; source uncommitted |
 | F2 | Field clarity | todo | pending |
 | M1 | Attack choreography | todo | pending |
 | M2 | Separate parts and face animation | todo | pending |

@@ -13,3 +13,8 @@ Low-disk mode: off. Current-card reference decode retained until R is complete.
 
 ## Resume 2026-11-13T02:27:27.820168+00:00
 Before: 93 GiB free. Removed regenerable worktree outputs: none; encoded baseline PNGs. Current R reference decode retained. Low disk mode off.
+
+## Resume 2026-11-13T04:39:06.658831+00:00
+Before: 92 GiB free. Removed regenerable worktree outputs: apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite. Current R reference decode retained until evidence review.
+After: /dev/disk3s1   926Gi   798Gi    91Gi    90%    5.4M  949M    1%   /System/Volumes/Data
+Low-disk mode: off.

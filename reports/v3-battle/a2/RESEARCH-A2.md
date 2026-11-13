@@ -1,4 +1,5 @@
 # V3-A2 measured battle research — 13 November 2026
+Evidence recomputed 2026-11-13T02:40:53.844321+00:00 at ae12e046f.
 Reference use: measurement and private comparison only. No reference pixels entered an asset generator. Reproduce with scripts/v3a2/ref-metrics.mjs and baseline-metrics.py. See REF-METRICS.json, OURS-BASELINE.json and R/baseline-review.jpg.
 
 | Metric | Reference median / observation | Ours now | Target |
