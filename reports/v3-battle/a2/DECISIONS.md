@@ -146,3 +146,5 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 - 2026-11-13T17:44:48.516348+00:00: Q5 Clover charge wording changed to "Watch the flowers bloom!" after four unsuccessful treatments of "Let it bloom!" for take 2 (0.667 recognition). Prior report and authored version remain in git; B will measure both new takes. No timing, combat or threshold change.
 
 2026-11-13 Q5: candidate28 mild speech shelf still loses Cinnamon charge and Biscuit release. Author clear two-word alternatives, Stay back! and Charge together!, for measured B synthesis. No combat logic or timing changes; runtime uses measured B duration metadata.
+
+2026-11-13 Q5: complete scene28 guard also found Cinnamon Take a sip! ambiguous after codec/shelf. Add Drink up! as the A-owned skill phrase; B must retain recognition, identity and timing checks.

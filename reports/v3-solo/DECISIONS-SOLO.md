@@ -89,3 +89,5 @@ Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped fa
 2026-11-13T19:10:18.359092+00:00 Q5 candidate27 rejected as final: strongest scene shelf damages recognizer clarity in11/55 measured lines so far. Source V remains intact, but passing unfiltered files is insufficient to accept unclear runtime speech. Forge60s passes all numeric bands. Second home line has0 contour; first revised greeting works. Four codec delivery attempts for original second phrase fail; next method rewrites it as one original greeting (Tea is ready). Gentler speech shelf plus room-send diagnostics retain full cue timing.
 
 2026-11-13 Q5: candidate28 mild speech shelf still loses Cinnamon charge and Biscuit release. Author clear two-word alternatives, Stay back! and Charge together!, for measured B synthesis. No combat logic or timing changes; runtime uses measured B duration metadata.
+
+2026-11-13 Q5: complete scene28 guard also found Cinnamon Take a sip! ambiguous after codec/shelf. Add Drink up! as the A-owned skill phrase; B must retain recognition, identity and timing checks.
