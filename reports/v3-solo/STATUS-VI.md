@@ -1,10 +1,10 @@
-# Tiến độ V3 SOLO
-- Q0 đã lưu và đẩy hai nhánh.
-- Q1 hoàn tất: A và B đều435/435 ca trình duyệt đạt;33/33 màn hình tối đa25 từ.
-- Chín thẻ A đạt230/230 điều kiện; kiểm tra luật chiến đấu không thay đổi.
-- A:2544 kiểm thử web đạt; B:2537 kiểm thử web đạt; kiểm tra kiểu dữ liệu đạt.
-- V2 đo lại60.01–60.05FPS, đã tạm dừng mô phỏng kinh tế khi đo.
-- Tiếp theo Q2: đo tiếng gọi chiêu thực tế trên cùng bản chiến đấu.
-- Kinh tế đã ghi13 vòng/520 cấu hình; vòng14 đang chạy. Chưa đạt điều kiện bot.
-- M1 chuyển động và độ sáng/động tác tranh chiêu còn mở.
-- Chưa gộp sớm, chưa triển khai; lịch đồng bộ16/18-11, đóng băng19-11.
+# Tiến độ SOLO V3
+- Q0 và Q1 hoàn tất; A/B đều đạt 435/435 ca trình duyệt, 33 màn hình tối đa 25 từ.
+- Chín thẻ A đóng với 230/230 điều kiện đo.
+- Q2 hoàn tất 59/59 điều kiện: không cắt 62 pha chiêu cuối hoặc 17 câu kỹ năng ở 9 tổ hợp.
+- Trận đạt 4,66 và trùm 3,49 lần giọng/phút; kết quả chiến đấu không đổi.
+- Kiểm thử cuối A/B đều đạt; độ rõ lời và các phần phối âm khác tiếp tục ở Q5.
+- Tiếp theo Q3: chuyển động toàn bộ diễn viên và kiểm tra riêng mọi hành động địch.
+- Kinh tế đang chạy nền: 16 vòng/640 cấu hình, top 10 xác nhận 200 seed; Star Thread/bot còn lỗi.
+- Q4–Q9 còn mở; chưa gộp sớm, chưa triển khai.
+- Đồng bộ 16/18-11 lúc 12:00 UTC; đóng băng 19-11 lúc 12:00 UTC.

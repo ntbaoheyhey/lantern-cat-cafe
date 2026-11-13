@@ -1,11 +1,10 @@
-# Trạng thái V3-A2
-- HUD T1: tối đa3/8 từ trên90 khung hình; không dùng font hệ thống.
-- Đã kiểm tra1280×720,1440×900 và điện thoại390×844.
-- Typecheck, unit test và tính xác định của trận đấu đều đạt.
-- E2E đạt9/10; ca Night tips thuộc màn hình B vẫn lỗi, đã ghi yêu cầu sửa.
-- M1 sau sửa thoại đạt13,681/15,796; đang đo chuyển động hồi chiêu mới.
-- Atlas:86 ảnh gộp25 trang, sai lệch màu bằng0; Low CPU4x đạt50,76–53,01 FPS.
-- Thoại:130/130 câu,0 chồng lấn ở9 ca thử×1/×2/×3; kết quả trận không đổi.
-- Không hạ ngưỡng, không đánh dấu các thẻ còn lỗi là hoàn tất.
-- Tiếp tục10 mục polish; chưa đến lịch đồng bộ16 và18/11,12:00UTC.
-- Không deploy hoặc merge main.
+# Tiến độ SOLO V3
+- Q0 và Q1 hoàn tất; A/B đều đạt 435/435 ca trình duyệt, 33 màn hình tối đa 25 từ.
+- Chín thẻ A đóng với 230/230 điều kiện đo.
+- Q2 hoàn tất 59/59 điều kiện: không cắt 62 pha chiêu cuối hoặc 17 câu kỹ năng ở 9 tổ hợp.
+- Trận đạt 4,66 và trùm 3,49 lần giọng/phút; kết quả chiến đấu không đổi.
+- Kiểm thử cuối A/B đều đạt; độ rõ lời và các phần phối âm khác tiếp tục ở Q5.
+- Tiếp theo Q3: chuyển động toàn bộ diễn viên và kiểm tra riêng mọi hành động địch.
+- Kinh tế đang chạy nền: 16 vòng/640 cấu hình, top 10 xác nhận 200 seed; Star Thread/bot còn lỗi.
+- Q4–Q9 còn mở; chưa gộp sớm, chưa triển khai.
+- Đồng bộ 16/18-11 lúc 12:00 UTC; đóng băng 19-11 lúc 12:00 UTC.
