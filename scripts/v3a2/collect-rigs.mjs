@@ -1,0 +1,15 @@
+import {readFile,writeFile,readdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {root,evidenceMeta} from './check-gates.mjs';
+const out=resolve(root,'reports/v3-battle/a2/M2');
+const ids=Object.keys(JSON.parse(await readFile(resolve(out,'face-annotations.json'),'utf8')));
+const reports=await Promise.all(ids.map(async id=>JSON.parse(await readFile(resolve(out,`rig-${id}.json`),'utf8'))));
+const overlap=JSON.parse(await readFile(resolve(out,'joint-overlap.json'),'utf8'));
+const suite=JSON.parse(await readFile(resolve(out,'suite.json'),'utf8'));
+const core=spawnSync(process.execPath,['scripts/art/core-size-check.mjs'],{cwd:root,encoding:'utf8'});
+await writeFile(resolve(out,'core-size.log'),core.stdout+core.stderr);
+const maxHoles=reports.map(r=>Math.max(...r.extremes.map(p=>p.pixels)));
+const metrics={_meta:evidenceMeta(),rigs:{inspected:reports.length,separateEyeMouthWeapon:reports.filter(r=>r.separate).length,visibleBlinkAndMouth:reports.filter(r=>r.blinkVisible&&r.mouthVisible).length,zeroHoles:maxHoles.filter(n=>n===0).length,maxRemainingHoles:Math.max(...maxHoles),minPoses:Math.min(...reports.map(r=>r.extremes.length)),minJointOverlap:overlap.minOverlap},units:reports.map((r,i)=>({id:r.id,separate:r.separate,blinkVisible:r.blinkVisible,mouthVisible:r.mouthVisible,maxHoles:maxHoles[i],overlap:overlap.units.find(u=>u.id===r.id)?.minOverlap})),coreSizeExit:core.status,suite};
+await writeFile(resolve(out,'metrics.json'),JSON.stringify(metrics,null,2)+'\n');
+console.log(JSON.stringify(metrics.rigs));

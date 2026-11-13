@@ -1,7 +1,9 @@
 {
   "head": {
     "source": "head",
-    "embedded": false
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/head.png",
+    "bone": "head"
   },
   "ear_l": {
     "source": "head",
@@ -24,32 +26,46 @@
     "embedded": true
   },
   "eye_l": {
-    "source": "head",
-    "embedded": true
+    "source": "eye_l",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/eye_l.png",
+    "bone": "head"
   },
   "eye_r": {
-    "source": "head",
-    "embedded": true
+    "source": "eye_r",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/eye_r.png",
+    "bone": "head"
   },
   "eye_l_closed": {
-    "source": "head",
-    "embedded": true
+    "source": "eye_l_closed",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/eye_l_closed.png",
+    "bone": "head"
   },
   "eye_r_closed": {
-    "source": "head",
-    "embedded": true
+    "source": "eye_r_closed",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/eye_r_closed.png",
+    "bone": "head"
   },
   "mouth_neutral": {
-    "source": "head",
-    "embedded": true
+    "source": "mouth_neutral",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/mouth_neutral.png",
+    "bone": "head"
   },
   "mouth_open": {
-    "source": "head",
-    "embedded": true
+    "source": "mouth_open",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/mouth_open.png",
+    "bone": "head"
   },
   "mouth_shout": {
-    "source": "head",
-    "embedded": true
+    "source": "mouth_shout",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/mouth_shout.png",
+    "bone": "head"
   },
   "torso": {
     "source": "body",
@@ -110,5 +126,53 @@
   "accessory_1": {
     "source": "head",
     "embedded": true
+  },
+  "foot-l": {
+    "source": "foot-l",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/foot-l.png",
+    "bone": "foot-l"
+  },
+  "body": {
+    "source": "body",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/body.png",
+    "bone": "body"
+  },
+  "arm-r": {
+    "source": "arm-r",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/arm-r.png",
+    "bone": "arm-r"
+  },
+  "arm-l": {
+    "source": "arm-l",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/arm-l.png",
+    "bone": "arm-l"
+  },
+  "foot-r": {
+    "source": "foot-r",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/foot-r.png",
+    "bone": "foot-r"
+  },
+  "hidden-body": {
+    "source": "hidden-body",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/hidden-body.png",
+    "bone": "torso"
+  },
+  "hidden-arm-r": {
+    "source": "hidden-arm-r",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/hidden-arm-r.png",
+    "bone": "arm_upper_r"
+  },
+  "hidden-arm-l": {
+    "source": "hidden-arm-l",
+    "embedded": false,
+    "file": "depth-parts//Users/bao/taskbar-hero-cardrpg-a6/art/units/binding-thread/depth-parts/hidden-arm-l.png",
+    "bone": "arm_upper_l"
   }
 }

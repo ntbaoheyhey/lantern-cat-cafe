@@ -1,6 +1,7 @@
 /** Native cut-out compiler. The historical command name does not imply a Spine runtime. */
 import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';import {resolve,dirname} from 'node:path';import sharp from 'sharp';
 import {importSkeleton} from './import-spine.mjs';import {templateClips} from './template-motion.mjs';
+import {applyDepthParts} from './build-depth-parts.mjs';
 const root=resolve(import.meta.dirname,'../..'),contract=JSON.parse(await readFile(resolve(root,'art/rig-templates/cat.template.json'),'utf8'));
 const enemyTemplates=JSON.parse(await readFile(resolve(root,'art/rig-templates/enemy.templates.json'),'utf8'));
 const units=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8')).units,designer=new Set(['mochi','soot','clover']);
@@ -72,8 +73,9 @@ async function make(unit){
  }
  data.pages=data.pages.map((p,i)=>({...p,name:pageNames[i]}));
  data.contract={version:1,template:style.template,designerPreserved:designer.has(unit.id),parts:bindings,embeddedFacialSlots:!old.parts.some(p=>/closed|eyelid/.test(p.name)),fps:30};
- await writeFile(resolve(dir,'style.json'),JSON.stringify(style,null,2)+'\n');await writeFile(resolve(dir,'pivots.json'),JSON.stringify(pivots,null,2)+'\n');await writeFile(resolve(dir,'parts.json'),JSON.stringify(bindings,null,2)+'\n');await writeFile(resolve(out,'rig.json'),JSON.stringify(data)+'\n');
+ await writeFile(resolve(dir,'style.json'),JSON.stringify(style,null,2)+'\n');await writeFile(resolve(dir,'pivots.json'),JSON.stringify(pivots,null,2)+'\n');await writeFile(resolve(dir,'parts.json'),JSON.stringify(bindings,null,2)+'\n');
+ data=await applyDepthParts(data,dir,out);await writeFile(resolve(out,'rig.json'),JSON.stringify(data)+'\n');
  return{id:unit.id,template:style.template,nodes:data.nodes.length,parts:data.parts.length,vertices:data.parts.reduce((n,p)=>n+p.vertices.length,0),embeddedFacialSlots:data.contract.embeddedFacialSlots,designerPreserved:designer.has(unit.id)};
 }
 const requested=process.argv.slice(2),selected=requested.includes('--all')?units:units.filter(u=>requested.includes(u.id));if(!selected.length)throw Error('Usage: node scripts/art/build-spine.mjs <unitId> | --all');
-const result=[];for(const u of selected)result.push(await make(u));await mkdir(resolve(root,'reports/v3-battle/A5'),{recursive:true});await writeFile(resolve(root,'reports/v3-battle/A5/build.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+const result=[];for(const u of selected)result.push(await make(u));await mkdir(resolve(root,'reports/v3-battle/a2/M2'),{recursive:true});await writeFile(resolve(root,'reports/v3-battle/a2/M2/build-summary.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

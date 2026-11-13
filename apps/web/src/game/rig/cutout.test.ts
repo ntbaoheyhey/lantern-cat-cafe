@@ -1,7 +1,7 @@
 import {expect,it} from 'vitest';
 import * as T from 'three';
 import nativeJson from '../../../public/units/marigold/rig.json?raw';
-import {CutoutMesh,blinkAt,type CutoutData} from './cutout';
+import {CutoutMesh,blinkAt,faceAt,type CutoutData} from './cutout';
 import {withRigContract} from './contract';
 const native=JSON.parse(nativeJson) as CutoutData;
 
@@ -21,6 +21,15 @@ it('keeps blink timing deterministic and independent of the clip loop',()=>{
  expect(peaks.length).toBeGreaterThan(8);
  for(let i=1;i<peaks.length;i++){expect(peaks[i]!-peaks[i-1]!).toBeGreaterThanOrEqual(2.48);expect(peaks[i]!-peaks[i-1]!).toBeLessThanOrEqual(5.02);}
  const time=peaks[0]!+.03;expect(blinkAt(time,23)).toBe(blinkAt(time,23));expect(blinkAt(time,23)).not.toBe(blinkAt(time+1.8,23));
+});
+
+it('swaps painted eyelids independently of speaking and restores the neutral mouth',()=>{
+ let clock=0;while(blinkAt(clock,23)<.5)clock+=1/120;
+ expect(faceAt('cast',.3,1,clock,23)).toEqual({closed:true,mouth:'mouth_open'});
+ expect(faceAt('ultimate',.5,2,clock,23).mouth).toBe('mouth_shout');
+ expect(faceAt('cast',1,1,0,23)).toEqual({closed:false,mouth:'mouth_neutral'});
+ expect(faceAt('death',.4,1,0,23).closed).toBe(true);
+ expect(faceAt('idle',.8,1.8,clock,23)).toEqual(faceAt('idle',.8,1.8,clock,23));
 });
 
 it('adapts legacy designer names without rewriting their geometry or motion',()=>{

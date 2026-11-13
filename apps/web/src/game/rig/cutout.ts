@@ -6,13 +6,19 @@ interface CutoutNode {name:string;parent:number;x:number;y:number;rotation:numbe
 interface Weight {bone:number;x:number;y:number;weight:number}
 interface Part {name:string;slot:string;visible:boolean;page:number;vertices:Weight[][];uv:number[];triangles:number[]}
 interface Clip {duration:number;tracks:{node:number;property:string;keys:CutoutKey[]}[];visibility:{slot:string;keys:CutoutKey[]}[];events:{name:string;time:number}[]}
-export interface CutoutData {format:'taskbar-cutout-v1';nodes:CutoutNode[];parts:Part[];pages:{name:string;width:number;height:number;pma:boolean}[];clips:Record<string,Clip>;bounds:{x:number;y:number;width:number;height:number};blink?:{part:string;bone:number;seed:number;eyes:{x:number;y:number;rx:number;ry:number}[]}}
+export interface CutoutData {format:'taskbar-cutout-v1';nodes:CutoutNode[];parts:Part[];pages:{name:string;width:number;height:number;pma:boolean}[];clips:Record<string,Clip>;bounds:{x:number;y:number;width:number;height:number};face?:{seed:number};blink?:{part:string;bone:number;seed:number;eyes:{x:number;y:number;rx:number;ry:number}[]}}
 export interface CutoutBone {worldX:number;worldY:number;a:number;b:number;c:number;d:number}
 /** Seekable independent blink clock; seeded intervals stay within 2.5–5 seconds. */
 export function blinkAt(time:number,seed:number){
  const intervals=Array.from({length:16},(_,i)=>2.5+(((Math.imul(seed+i,1664525)+1013904223)>>>0)%2500)/1000);
  let at=Math.max(0,time)%intervals.reduce((a,b)=>a+b,0);
  for(const duration of intervals){if(at<duration)return at>duration-.1?Math.sin((at-duration+.1)/.1*Math.PI):0;at-=duration;}return 0;
+}
+/** Separate painted attachments, using only the simulation clock and clip phase. */
+export function faceAt(name:string,at:number,duration:number,clock:number,seed:number){
+ const speaking=at>.02&&at<duration*.88;
+ return {closed:(name==='death'||name==='ko')&&at>.2||blinkAt(clock,seed)>.15,
+  mouth:speaking&&/^(ultimate|ult|enrage)$/.test(name)?'mouth_shout':speaking&&/^(attack|cast|skill|hit|hurt)$/.test(name)?'mouth_open':'mouth_neutral'};
 }
 /** Monotonic cubic solve for exported normalized Bezier timing. */
 function curve(t:number,c:CutoutKey['curve']){
@@ -61,6 +67,10 @@ export class CutoutMesh extends T.Group {
    else Object.assign(b,{worldX:p[0],worldY:p[1],a,b:bb,c,d});
   }
   const attachments=new Map<string,string|null>();for(const v of clip?.visibility??[]){let key:CutoutKey|undefined;for(const k of v.keys)if((k.time??0)<=at)key=k;else break;if(key)attachments.set(v.slot,key.name??null);}
+  if(this.data.face){const face=faceAt(name,at,clip?.duration??1,this.proceduralTime,this.data.face.seed);
+   for(const side of ['l','r'])attachments.set('eye_'+side,'eye_'+side+(face.closed?'_closed':''));
+   attachments.set('mouth',face.mouth);
+  }
   const blink=this.data.blink,amount=blink?blinkAt(this.proceduralTime,blink.seed):0;
   for(const batch of this.batches){for(const {part,offset} of batch.parts){const visible=attachments.has(part.slot)?attachments.get(part.slot)===part.name:part.visible;
    for(let i=0;i<part.vertices.length;i++){let x=0,y=0;if(visible)for(const w of part.vertices[i]!){const b=this.bones[w.bone]!;x+=(b.a*w.x+b.b*w.y+b.worldX)*w.weight;y+=(b.c*w.x+b.d*w.y+b.worldY)*w.weight;}

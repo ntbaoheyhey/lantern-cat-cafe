@@ -80,7 +80,7 @@
       "license": "Original generated output; OpenAI Terms of Use. No third-party input.",
       "source": "assets/v3-shell/item-atlas.png",
       "files": "apps/web/public/icons/*-{128,64}.webp",
-      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Café. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/café deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
+      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Caf\u00e9. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/caf\u00e9 deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
       "processing": "Grid crop, preserve alpha, Lanczos export 128/64 WebP."
     },
     {
@@ -99,7 +99,7 @@
       "files": [
         "apps/web/public/art/v3-shell/landing.webp"
       ],
-      "prompt": "Original 16:9 painted Lantern Cat Café at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
+      "prompt": "Original 16:9 painted Lantern Cat Caf\u00e9 at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
     },
     {
       "type": "gameplay-trailer",
@@ -152,6 +152,33 @@
       "date": "2026-11-13",
       "source": "Our approved Biscuit concept: assets/source/look-v3/concepts/biscuit.png in cardrpg-b2; supplied only as local concept preview",
       "purpose": "R-c method 1 rig-ready master pilot; not yet shipping"
+    },
+    {
+      "asset": "art/units/*/depth-parts/",
+      "tool": "Local Pillow raster painting + OpenCV Navier\u2013Stokes substrate fill + native cut-out compiler",
+      "prompt": "Separate the eyes, mouth and held objects of our own approved cats and enemies; paint eyelids, speaking mouths, hidden handles and narrow joint substrate in each original palette. Inputs are exclusively our own source atlases. No reference game art used.",
+      "date": "2026-11-13",
+      "source": "reports/v3-battle/a2/M2/source-map.json; face-annotations.json; scripts/v3a2/weapon-annotations.json",
+      "method": "scripts/v3a2/paint-faces.py; prepare-depth-parts.py; paint-hidden-joints.py; scripts/art/build-depth-parts.mjs"
+    },
+    {
+      "id": "v3a2-hidden-sleeves-and-overlap",
+      "tool": "Pillow, OpenCV; authored source-color sleeve paint and hidden material extension",
+      "prompt": "Paint the missing sleeves behind Panko and Biscuit shields from their approved original palette. Extend hidden joint paint into existing material and verify at least 12 pixels actual overlap. No third-party visual input.",
+      "date": "2026-11-13T05:43:14.178634+00:00",
+      "sources": [
+        "art/units/panko/depth-parts",
+        "art/units/biscuit/depth-parts",
+        "art/units/rain-spool/depth-parts"
+      ],
+      "outputs": [
+        "apps/web/public/units/*/rig-depth.png"
+      ],
+      "scripts": [
+        "scripts/v3a2/paint-hidden-arms.py",
+        "scripts/v3a2/paint-hidden-joints.py"
+      ],
+      "referenceInput": false
     }
   ]
 }
