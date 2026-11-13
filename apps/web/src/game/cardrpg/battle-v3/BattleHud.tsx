@@ -64,8 +64,8 @@ export default function BattleHud({m}:{m:DepthModel}){
    <button ref={helpButton} aria-label="Read battle guide" onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setHelp(true);}}>?</button>
    <button ref={menuButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button>
   </header>
-  <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-side={a.side} data-actor={a.id} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
-   <Badges actor={a}/><span className="b3-world-name">{a.name}</span><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
+  <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
+   <Badges actor={a}/><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
   </div>)}</div>
   <footer className="b3-bottom">
    <button className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>

@@ -16,7 +16,7 @@ export function cafePainting() {
 /** Extend the existing painted floor for the two raised formation seats. No new character art. */
 export function formationPaintingC2(image: HTMLImageElement) {
  const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
- const c=canvas.getContext('2d')!,cut=Math.round(image.naturalHeight*.70),horizon=300;
+ const c=canvas.getContext('2d')!,cut=Math.round(image.naturalHeight*.74),horizon=160;
  c.filter=`saturate(${PAINT.stage.paintingSaturation}) contrast(${PAINT.stage.paintingContrast}) brightness(${PAINT.stage.paintingBrightness})`;
  c.drawImage(image,0,0,image.naturalWidth,cut,0,0,2048,horizon);
  c.drawImage(image,0,cut,image.naturalWidth,image.naturalHeight-cut,0,horizon,2048,1024-horizon);

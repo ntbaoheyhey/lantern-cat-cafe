@@ -1,55 +1,87 @@
 {
-  "version": 3,
-  "coordinates": "normalized stage; x left-to-right, y top-to-bottom at feet; enemy x mirrors party",
-  "unitHeight": 0.42,
-  "rowStep": 0.36,
+  "version": 4,
+  "coordinates": "stage-normalized feet; unitHeight is semantic core / whole desktop viewport height",
+  "unitHeight": 0.20946,
+  "rowStep": 0.37,
   "slots": [
     {
       "id": "FRONT-UP",
       "row": "front",
-      "x": 0.36,
-      "y": 0.58,
+      "x": 0.375,
+      "y": 0.565,
       "icon": "shield"
     },
     {
       "id": "FRONT-DOWN",
       "row": "front",
-      "x": 0.39,
-      "y": 0.95,
+      "x": 0.4,
+      "y": 0.935,
       "icon": "shield"
     },
     {
       "id": "BACK-UP",
       "row": "rear",
-      "x": 0.16,
-      "y": 0.49,
+      "x": 0.225,
+      "y": 0.38,
       "icon": "bow"
     },
     {
       "id": "BACK-DOWN",
       "row": "rear",
-      "x": 0.19,
-      "y": 0.86,
+      "x": 0.25,
+      "y": 0.75,
       "icon": "bow"
     }
   ],
   "boss": {
-    "x": 0.66,
-    "y": 0.94,
+    "x": 0.65,
+    "y": 0.88,
     "minRatio": 1.7,
     "maxRatio": 1.95
   },
   "bossHelpers": [
     {
-      "x": 0.86,
-      "y": 0.49
+      "x": 0.88,
+      "y": 0.39
     },
     {
-      "x": 0.89,
-      "y": 0.92
+      "x": 0.91,
+      "y": 0.87
     }
   ],
   "rearScale": 0.94,
-  "rearDim": 0.08,
-  "rowStagger": 0.09
+  "rearDim": 0.06,
+  "rowStagger": 0.185,
+  "enemySix": [
+    {
+      "id": "ENEMY-FRONT-UP",
+      "x": 0.625,
+      "y": 0.565
+    },
+    {
+      "id": "ENEMY-FRONT-DOWN",
+      "x": 0.6,
+      "y": 0.935
+    },
+    {
+      "id": "ENEMY-MID-UP",
+      "x": 0.76,
+      "y": 0.38
+    },
+    {
+      "id": "ENEMY-MID-DOWN",
+      "x": 0.735,
+      "y": 0.75
+    },
+    {
+      "id": "ENEMY-REAR-UP",
+      "x": 0.9,
+      "y": 0.52
+    },
+    {
+      "id": "ENEMY-REAR-DOWN",
+      "x": 0.875,
+      "y": 0.89
+    }
+  ]
 }

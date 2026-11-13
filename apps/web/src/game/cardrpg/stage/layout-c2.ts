@@ -3,27 +3,34 @@ import contract from './slots.json';
 export const SLOTS_C2 = contract;
 export interface StageUnitC2 { id: string; side: 'party' | 'enemy'; row: 'front' | 'rear'; boss?: boolean; aspect: number; bossRatio?: number; seat?: number; coreHeight?: number; coreRatio?: number; topExtent?: number }
 export interface StageBoxC2 { x: number; y: number; width: number; height: number; coreHeight:number; footX: number; footY: number; order: number; slot: string }
-/** One layout for battle, preparation, bounds checks and VFX anchors. Never packs living units around a KO. */
-export function stageLayoutC2(units: readonly StageUnitC2[], width: number, height: number): Map<string, StageBoxC2> {
+/** Whole viewport height and stage height are deliberately separate coordinate measures.
+ * A persistent six-seat capacity prevents living enemies from shifting when a foe falls. */
+export function stageLayoutC2(units: readonly StageUnitC2[], width: number, height: number, viewportHeight=height, enemyCapacity=units.filter(u=>u.side==='enemy').length): Map<string, StageBoxC2> {
   const hasBoss = units.some(u => u.side === 'enemy' && u.boss);
   const counts = { 'party-front': 0, 'party-rear': 0, 'enemy-front': 0, 'enemy-rear': 0 };
+  const occupied = new Set<number>();
   let helper = 0;
   return new Map(units.map(unit => {
     const lane = counts[`${unit.side}-${unit.row}`]++;
-    const seat = contract.slots[unit.seat ?? ((unit.row === 'front' ? 0 : 2) + lane % 2)]!;
-    const helperSeat = unit.side === 'enemy' && hasBoss && !unit.boss ? contract.bossHelpers[unit.seat!==undefined?unit.seat%2:helper++ % 2]! : null;
-    const ratio = unit.boss ? Math.max(contract.boss.minRatio, Math.min(contract.boss.maxRatio, unit.bossRatio ?? 1.8)) : unit.coreRatio??1;
-    const coreHeight = height * contract.unitHeight * ratio * (unit.row==='rear'&&!unit.boss?contract.rearScale:1), h=coreHeight/(unit.coreHeight??1), w = h * unit.aspect;
-    // A boss occupies the front column; summoned helpers keep their own back seats.
-    const requestedX = width * (unit.boss ? contract.boss.x : helperSeat?.x ?? (unit.side === 'party' ? seat.x : 1 - seat.x));
-    const footX = Math.max(w/2+width*.005,Math.min(width-w/2-width*.005,requestedX));
-    const footY = Math.max(h+height*.015, Math.min(height*.97, height * (unit.boss ? contract.boss.y : helperSeat?.y ?? seat.y)));
-    return [unit.id, { x: footX - w / 2, y: footY - h, width: w, height: h, coreHeight, footX, footY,
-      order: Math.round(footY * 100), slot: unit.boss ? 'BOSS' : helperSeat ? `HELPER-${helper}` : seat.id }];
+    let seatIndex=unit.seat ?? ((unit.row==='front'?0:2)+lane%2);
+    if(unit.side==='enemy'&&!unit.boss){
+      if(unit.seat===undefined){const choices=unit.row==='front'?[0,1,4,5,2,3]:[2,3,4,5,0,1];seatIndex=choices.find(i=>!occupied.has(i))??0;}
+      occupied.add(seatIndex);
+    }
+    const seat=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss?contract.enemySix[seatIndex]!:contract.slots[seatIndex%4]!;
+    const helperSeat=unit.side==='enemy'&&hasBoss&&!unit.boss?contract.bossHelpers[unit.seat!==undefined?unit.seat%2:helper++%2]!:null;
+    const ratio=unit.boss?Math.max(contract.boss.minRatio,Math.min(contract.boss.maxRatio,unit.bossRatio??1.8)):unit.coreRatio??1;
+    const coreHeight=viewportHeight*contract.unitHeight*ratio*(unit.row==='rear'&&!unit.boss?contract.rearScale:1);
+    const h=coreHeight/(unit.coreHeight??1),w=h*unit.aspect;
+    const seatX=unit.side==='party'||enemyCapacity>4?seat.x:1-seat.x;
+    const requestedX=width*(unit.boss?contract.boss.x:helperSeat?.x??seatX);
+    const footX=Math.max(w/2+width*.005,Math.min(width-w/2-width*.005,requestedX));
+    // Leave room for health/status marks above the complete silhouette.
+    const footY=Math.max(h+height*.07,Math.min(height*.97,height*(unit.boss?contract.boss.y:helperSeat?.y??seat.y)));
+    return [unit.id,{x:footX-w/2,y:footY-h,width:w,height:h,coreHeight,footX,footY,order:Math.round(footY*100),slot:unit.boss?'BOSS':helperSeat?`HELPER-${unit.seat??helper}`:seat.id}];
   }));
 }
 export function overlapShareC2(a: StageBoxC2, b: StageBoxC2): number {
-  const area = Math.max(0, Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x))
-    * Math.max(0, Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y));
-  return area / Math.min(a.width*a.height,b.width*b.height);
+  const area=Math.max(0,Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y));
+  return area/Math.min(a.width*a.height,b.width*b.height);
 }
