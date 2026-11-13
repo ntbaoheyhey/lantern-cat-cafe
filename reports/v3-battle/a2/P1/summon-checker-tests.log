@@ -1,0 +1,23 @@
+✔ every active requires one voice; half coverage must never pass (0.53125ms)
+✔ min: fake PASS and fake FAIL, NaN, absent target (0.079208ms)
+✔ max: fake PASS and fake FAIL, NaN, absent target (0.048291ms)
+✔ eq: fake PASS and fake FAIL, NaN, absent target (0.046541ms)
+✔ band: fake PASS and fake FAIL, NaN, absent target (0.053958ms)
+✔ every declared numeric gate rejects a failing value, including zero limits (0.195042ms)
+✔ absent evidence cannot pass using files or a past scheduled date (3.164417ms)
+✔ files: counts real nonempty files, rejects missing and empty artifacts (0.837417ms)
+✔ freshness: evidence from before the last source commit fails (135.401666ms)
+✔ date gate: real future sync cannot pass before its exact UTC time (0.364792ms)
+✔ fresh aggregate metadata cannot disguise an old raw motion capture (463.883417ms)
+✔ fixture matrix fails any missing fixture/resolution (0.475208ms)
+✔ all summon meshes preserve winding through entrance, charge and release (494.476875ms)
+✔ wing and tail articulation moves relative to the head; rigid lantern stays bounded (0.593167ms)
+✔ all thirteen motifs have articulation independent of whole-image motion (1.225583ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 672.1455

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T06:37:00.004Z",
-    "sourceCommit": "059b00b7089ee92fee13eb3dd5c19850f8cee951"
+    "generatedAt": "2026-11-13T07:59:03.575Z",
+    "sourceCommit": "4f2ed6734e7578b5b1ecf93b7cf12e8e702c9961"
   },
   "method": "Coverage counts actual painted canvas pixels with alpha >=64 after face/HUD masks, divided by full viewport pixels; no bounding-box proxy.",
   "rows": [
@@ -13,7 +13,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.012415364583333333,
+          "coverage": 0.007649739583333333,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -41,7 +41,7 @@
         },
         {
           "t": 363,
-          "coverage": 0.10684244791666667,
+          "coverage": 0.10511827256944445,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -71,9 +71,9 @@
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−40",
-              "x": 803.0073664268634,
-              "y": 70.92370013734752,
-              "width": 127.7455732142857,
+              "x": 807.9993832606042,
+              "y": 47.961181937749856,
+              "width": 127.74557321428573,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -83,7 +83,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10968532986111111,
+          "coverage": 0.1349782986111111,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -115,8 +115,8 @@
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−40",
-              "x": 807.704438748292,
-              "y": 63.3187369020534,
+              "x": 812.6964555820327,
+              "y": 40.356218702455735,
               "width": 118.35142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -127,20 +127,20 @@
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−30",
-              "x": 1110.5428356029684,
-              "y": 16.279963235294115,
-              "width": 116.30216964285715,
-              "height": 47.581250000000004,
-              "glyphHeight": 47.581250000000004,
+              "x": 958.7273303571428,
+              "y": 42.22757352941176,
+              "width": 114.5453392857143,
+              "height": 46.862500000000004,
+              "glyphHeight": 46.862500000000004,
               "kind": "damage",
-              "born": 10425
+              "born": 10400
             },
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇18",
-              "x": 548.1226141852773,
-              "y": 150.42209358263491,
+              "x": 532.6310730752358,
+              "y": 128.98450352012017,
               "width": 109.833625,
               "height": 46.2875,
               "glyphHeight": 46.2875,
@@ -150,7 +150,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.10968532986111111
+      "peakCoverage": 0.1349782986111111
     },
     {
       "id": "soot-2",
@@ -160,12 +160,13 @@
       "frames": [
         {
           "t": 520,
-          "coverage": 0.11788628472222222,
+          "coverage": 0.12426649305555555,
           "field": {
             "skill": "soot-2",
             "tier": "active",
             "particles": 72,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -178,12 +179,13 @@
         },
         {
           "t": 683,
-          "coverage": 0.2747526041666667,
+          "coverage": 0.2948687065972222,
           "field": {
             "skill": "soot-2",
             "tier": "active",
             "particles": 72,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -197,9 +199,9 @@
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 819.9418108989933,
-              "y": 32.105173179155045,
-              "width": 106.46646607142856,
+              "x": 832.7059740934739,
+              "y": 19.310845588235292,
+              "width": 106.46646607142858,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -209,13 +211,14 @@
         },
         {
           "t": 850,
-          "coverage": 0.30961263020833335,
+          "coverage": 0.33840386284722224,
           "field": {
             "skill": "soot-2",
             "tier": "active",
             "particles": 72,
             "layers": [
               "lingering-ground",
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -229,8 +232,8 @@
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 823.8564725061361,
-              "y": 24.500209943860924,
+              "x": 836.6206357006167,
+              "y": 11.705882352941174,
               "width": 98.63714285714286,
               "height": 46,
               "glyphHeight": 46,
@@ -241,7 +244,7 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 809.6241909292742,
+              "x": 821.4480334986295,
               "y": 14.806617647058825,
               "width": 99.87010714285714,
               "height": 46.574999999999996,
@@ -252,7 +255,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.30961263020833335
+      "peakCoverage": 0.33840386284722224
     },
     {
       "id": "clover-2",
@@ -262,12 +265,13 @@
       "frames": [
         {
           "t": 520,
-          "coverage": 0.1022439236111111,
+          "coverage": 0.13399631076388888,
           "field": {
             "skill": "clover-2",
             "tier": "active",
             "particles": 144,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -285,12 +289,13 @@
         },
         {
           "t": 683,
-          "coverage": 0.2654275173611111,
+          "coverage": 0.30510633680555554,
           "field": {
             "skill": "clover-2",
             "tier": "active",
             "particles": 144,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -309,7 +314,7 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+36",
-              "x": 408.860851663829,
+              "x": 559.67373125,
               "y": 19.310845588235292,
               "width": 120.6525375,
               "height": 49.65125,
@@ -321,7 +326,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.29904188368055556,
+          "coverage": 0.3547601996527778,
           "field": {
             "skill": "clover-2",
             "tier": "active",
@@ -329,6 +334,7 @@
             "layers": [
               "lingering-ground",
               "lingering-ground",
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -347,7 +353,7 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+36",
-              "x": 413.297120413829,
+              "x": 564.11,
               "y": 11.705882352941174,
               "width": 111.78,
               "height": 46,
@@ -359,18 +365,18 @@
               "key": "1:panko:0:0",
               "id": "panko",
               "text": "+36",
-              "x": 670.18878125,
-              "y": 19.279963235294115,
-              "width": 115.62243749999999,
-              "height": 47.581250000000004,
-              "glyphHeight": 47.581250000000004,
+              "x": 149.0620625,
+              "y": 246.22757352941179,
+              "width": 113.87587500000001,
+              "height": 46.862500000000004,
+              "glyphHeight": 46.862500000000004,
               "kind": "heal",
-              "born": 10745
+              "born": 10720
             }
           ]
         }
       ],
-      "peakCoverage": 0.29904188368055556
+      "peakCoverage": 0.3547601996527778
     },
     {
       "id": "panko-3",
@@ -380,12 +386,13 @@
       "frames": [
         {
           "t": 670,
-          "coverage": 0.11953776041666667,
+          "coverage": 0.145361328125,
           "field": {
             "skill": "panko-3",
             "tier": "active",
             "particles": 288,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -413,12 +420,13 @@
         },
         {
           "t": 833,
-          "coverage": 0.37695638020833333,
+          "coverage": 0.4091069878472222,
           "field": {
             "skill": "panko-3",
             "tier": "active",
             "particles": 288,
             "layers": [
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -449,9 +457,9 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇35",
-              "x": 53.90047232142858,
-              "y": 70.3108455882353,
-              "width": 124.19905535714284,
+              "x": 395.90047232142854,
+              "y": 322.3108455882353,
+              "width": 124.19905535714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "shield",
@@ -461,7 +469,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.4011371527777778,
+          "coverage": 0.4194650607638889,
           "field": {
             "skill": "panko-3",
             "tier": "active",
@@ -471,6 +479,7 @@
               "lingering-ground",
               "lingering-ground",
               "lingering-ground",
+              "element-field-motion",
               "painted-core",
               "painted-sweep",
               "element-aura",
@@ -499,8 +508,8 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇35",
-              "x": 58.46714285714286,
-              "y": 62.705882352941174,
+              "x": 400.46714285714285,
+              "y": 314.70588235294116,
               "width": 115.06571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -511,30 +520,30 @@
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "◇35",
-              "x": 56.489450892857135,
-              "y": 16.279963235294115,
-              "width": 119.02109821428573,
-              "height": 47.581250000000004,
-              "glyphHeight": 47.581250000000004,
+              "x": 21.38840178571428,
+              "y": 42.22757352941176,
+              "width": 117.22319642857144,
+              "height": 46.862500000000004,
+              "glyphHeight": 46.862500000000004,
               "kind": "shield",
-              "born": 10895
+              "born": 10870
             },
             {
               "key": "1:clover:0:0",
               "id": "clover",
               "text": "◇35",
-              "x": 53.073437500000004,
-              "y": 119.27904411764706,
-              "width": 125.85312499999999,
-              "height": 50.3125,
-              "glyphHeight": 50.3125,
+              "x": 18.871339285714285,
+              "y": 117.17426470588236,
+              "width": 122.25732142857143,
+              "height": 48.875,
+              "glyphHeight": 48.875,
               "kind": "shield",
-              "born": 10990
+              "born": 10940
             }
           ]
         }
       ],
-      "peakCoverage": 0.4011371527777778
+      "peakCoverage": 0.4194650607638889
     }
   ],
   "performance": {},

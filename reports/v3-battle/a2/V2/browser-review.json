@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T07:01:04.629Z",
-    "sourceCommit": "1af92d4d36554f09b78a4ae8bba2ef748f580ed5"
+    "generatedAt": "2026-11-13T10:20:32.654Z",
+    "sourceCommit": "70b42d8c4126c1e832f92f77b184ee56bdabc615"
   },
   "method": "Coverage counts actual painted canvas pixels with alpha >=64 after face/HUD masks, divided by full viewport pixels; no bounding-box proxy.",
   "rows": [
@@ -13,7 +13,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.019573567708333333,
+          "coverage": 0.01616644965277778,
           "field": {
             "skill": "biscuit-1",
             "tier": "basic",
@@ -30,13 +30,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.07681640625,
+          "coverage": 0.08313693576388889,
           "field": {
             "skill": "biscuit-1",
             "tier": "basic",
@@ -46,23 +48,29 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−43",
-              "x": 666.9644276785714,
+              "x": 594.9644276785714,
               "y": 19.310845588235292,
-              "width": 122.07114464285713,
+              "width": 122.07114464285715,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -72,7 +80,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.08577582465277778,
+          "coverage": 0.10669270833333333,
           "field": {
             "skill": "biscuit-1",
             "tier": "basic",
@@ -84,21 +92,27 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−43",
-              "x": 671.4528571428572,
+              "x": 599.4528571428572,
               "y": 11.705882352941174,
               "width": 113.09428571428572,
               "height": 46,
@@ -110,7 +124,7 @@
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−17",
-              "x": 549.948125,
+              "x": 459.948125,
               "y": 105.17426470588236,
               "width": 104.10374999999999,
               "height": 48.875,
@@ -121,17 +135,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.08577582465277778
+      "peakCoverage": 0.10669270833333333
     },
     {
       "id": "biscuit-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1580,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.10326497395833334,
+          "coverage": 0.09228298611111112,
           "field": {
             "skill": "biscuit-2",
             "tier": "active",
@@ -144,13 +158,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.194921875,
+          "coverage": 0.18258138020833334,
           "field": {
             "skill": "biscuit-2",
             "tier": "active",
@@ -161,16 +177,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:biscuit:0:0",
               "id": "biscuit",
               "text": "◇68",
-              "x": 537.4179098214286,
+              "x": 483.41790982142857,
               "y": 19.310845588235292,
               "width": 129.16418035714284,
               "height": 49.65125,
@@ -182,7 +202,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.2198415798611111,
+          "coverage": 0.23100911458333334,
           "field": {
             "skill": "biscuit-2",
             "tier": "active",
@@ -194,16 +214,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:biscuit:0:0",
               "id": "biscuit",
               "text": "◇68",
-              "x": 542.1671428571428,
+              "x": 488.16714285714284,
               "y": 11.705882352941174,
               "width": 119.66571428571427,
               "height": 46,
@@ -214,17 +238,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.2198415798611111
+      "peakCoverage": 0.23100911458333334
     },
     {
       "id": "biscuit-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1503,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.09305555555555556,
+          "coverage": 0.08907986111111112,
           "field": {
             "skill": "biscuit-3",
             "tier": "active",
@@ -237,13 +261,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.2049924045138889,
+          "coverage": 0.20183051215277778,
           "field": {
             "skill": "biscuit-3",
             "tier": "active",
@@ -254,17 +280,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 818.8949997147766,
-              "y": 65.74556608630526,
+              "x": 781.9244736327063,
+              "y": 20.45198985566881,
               "width": 117.81532321428571,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -275,7 +305,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.2453049045138889,
+          "coverage": 0.29069661458333335,
           "field": {
             "skill": "biscuit-3",
             "tier": "active",
@@ -287,17 +317,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 72
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 823.2269470362052,
-              "y": 58.14060285101114,
+              "x": 786.2564209541348,
+              "y": 12.847026620374692,
               "width": 109.15142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -308,7 +342,7 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 807.7793282524705,
+              "x": 760.9737365778313,
               "y": 14.806617647058825,
               "width": 110.51582142857143,
               "height": 46.574999999999996,
@@ -319,7 +353,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.2453049045138889
+      "peakCoverage": 0.29069661458333335
     },
     {
       "id": "brioche-1",
@@ -329,7 +363,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.020455729166666665,
+          "coverage": 0.01760959201388889,
           "field": {
             "skill": "brioche-1",
             "tier": "basic",
@@ -346,13 +380,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.08056315104166667,
+          "coverage": 0.09074652777777778,
           "field": {
             "skill": "brioche-1",
             "tier": "basic",
@@ -362,22 +398,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−35",
-              "x": 809.0364467840063,
-              "y": 70.92370013734752,
+              "x": 798.631555718472,
+              "y": 26.28215227085172,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -388,7 +430,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10470269097222222,
+          "coverage": 0.13798719618055555,
           "field": {
             "skill": "brioche-1",
             "tier": "basic",
@@ -400,22 +442,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−35",
-              "x": 813.2901530340063,
-              "y": 63.3187369020534,
+              "x": 802.8852619684719,
+              "y": 18.677189035557603,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -425,17 +473,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.10470269097222222
+      "peakCoverage": 0.13798719618055555
     },
     {
       "id": "brioche-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1717,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.153583984375,
+          "coverage": 0.139794921875,
           "field": {
             "skill": "brioche-2",
             "tier": "active",
@@ -448,13 +496,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.26633138020833336,
+          "coverage": 0.2789767795138889,
           "field": {
             "skill": "brioche-2",
             "tier": "active",
@@ -465,16 +515,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:brioche:0:0",
               "id": "brioche",
               "text": "◇45",
-              "x": 697.9294496445328,
+              "x": 464.70860625,
               "y": 19.310845588235292,
               "width": 130.5827875,
               "height": 49.65125,
@@ -486,7 +540,7 @@
               "key": "1:brioche:1:0",
               "id": "brioche",
               "text": "+30",
-              "x": 701.1213157159614,
+              "x": 467.9004723214286,
               "y": 19.310845588235292,
               "width": 124.19905535714285,
               "height": 49.65125,
@@ -498,7 +552,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.2789431423611111,
+          "coverage": 0.30670572916666666,
           "field": {
             "skill": "brioche-2",
             "tier": "active",
@@ -510,16 +564,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:brioche:0:0",
               "id": "brioche",
               "text": "◇45",
-              "x": 702.7308433945328,
+              "x": 469.51,
               "y": 11.705882352941174,
               "width": 120.97999999999999,
               "height": 46,
@@ -531,7 +589,7 @@
               "key": "1:brioche:1:0",
               "id": "brioche",
               "text": "+30",
-              "x": 705.6879862516757,
+              "x": 472.46714285714285,
               "y": 11.705882352941174,
               "width": 115.06571428571428,
               "height": 46,
@@ -542,17 +600,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.2789431423611111
+      "peakCoverage": 0.30670572916666666
     },
     {
       "id": "brioche-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1708,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.1490256076388889,
+          "coverage": 0.1569118923611111,
           "field": {
             "skill": "brioche-3",
             "tier": "active",
@@ -565,13 +623,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.2552734375,
+          "coverage": 0.2621950954861111,
           "field": {
             "skill": "brioche-3",
             "tier": "active",
@@ -582,17 +642,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−25",
-              "x": 819.9589550719195,
-              "y": 31.745566086305256,
+              "x": 789.6176241795192,
+              "y": 19.310845588235292,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -603,7 +667,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.2576714409722222,
+          "coverage": 0.28822265625,
           "field": {
             "skill": "brioche-3",
             "tier": "active",
@@ -615,17 +679,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 144
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−25",
-              "x": 824.2126613219194,
-              "y": 24.14060285101114,
+              "x": 793.8713304295192,
+              "y": 11.705882352941174,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -636,9 +704,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−25",
-              "x": 808.7773639667562,
+              "x": 637.740125,
               "y": 14.806617647058825,
-              "width": 108.51974999999999,
+              "width": 108.51975000000002,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -647,7 +715,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.2576714409722222
+      "peakCoverage": 0.28822265625
     },
     {
       "id": "cinnamon-1",
@@ -657,7 +725,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.0214453125,
+          "coverage": 0.016167534722222224,
           "field": {
             "skill": "cinnamon-1",
             "tier": "basic",
@@ -674,13 +742,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.07471137152777778,
+          "coverage": 0.07508029513888889,
           "field": {
             "skill": "cinnamon-1",
             "tier": "basic",
@@ -690,22 +760,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−23",
-              "x": 809.0364467840063,
-              "y": 36.923700137347524,
+              "x": 652.15629375,
+              "y": 19.310845588235292,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -716,7 +792,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.07094292534722223,
+          "coverage": 0.08335503472222222,
           "field": {
             "skill": "cinnamon-1",
             "tier": "basic",
@@ -728,22 +804,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−23",
-              "x": 813.2901530340063,
-              "y": 29.318736902053402,
+              "x": 656.41,
+              "y": 11.705882352941174,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -754,9 +836,9 @@
               "key": "1:cinnamon:0:0",
               "id": "cinnamon",
               "text": "+17",
-              "x": 460.75250892857144,
+              "x": 406.7525089285714,
               "y": 15.22757352941176,
-              "width": 102.49498214285715,
+              "width": 102.49498214285717,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "heal",
@@ -765,7 +847,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.07471137152777778
+      "peakCoverage": 0.08335503472222222
     },
     {
       "id": "cinnamon-2",
@@ -775,7 +857,7 @@
       "frames": [
         {
           "t": 520,
-          "coverage": 0.11269097222222223,
+          "coverage": 0.11298719618055555,
           "field": {
             "skill": "cinnamon-2",
             "tier": "active",
@@ -798,13 +880,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.34126519097222224,
+          "coverage": 0.2946647135416667,
           "field": {
             "skill": "cinnamon-2",
             "tier": "active",
@@ -815,28 +899,36 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:cinnamon:0:0",
               "id": "cinnamon",
               "text": "+86",
-              "x": 432.2551241071429,
-              "y": 19.310845588235292,
+              "x": 144.25512410714288,
+              "y": 442.3108455882353,
               "width": 123.48975178571428,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -847,7 +939,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.36177734375,
+          "coverage": 0.3436447482638889,
           "field": {
             "skill": "cinnamon-2",
             "tier": "active",
@@ -861,27 +953,35 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 3
+            "groundCount": 3,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:cinnamon:0:0",
               "id": "cinnamon",
               "text": "+86",
-              "x": 436.79571428571427,
-              "y": 11.705882352941174,
+              "x": 148.79571428571427,
+              "y": 434.70588235294116,
               "width": 114.40857142857143,
               "height": 46,
               "glyphHeight": 46,
@@ -892,8 +992,8 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+35",
-              "x": 600.0662589285714,
-              "y": 42.22757352941176,
+              "x": 341.44534961719467,
+              "y": 21.491421755707552,
               "width": 111.86748214285716,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
@@ -904,8 +1004,8 @@
               "key": "1:clover:0:0",
               "id": "clover",
               "text": "+35",
-              "x": 133.11611516697099,
-              "y": 143.11360288166787,
+              "x": 129.66419642857142,
+              "y": 441.17426470588236,
               "width": 116.67160714285714,
               "height": 48.875,
               "glyphHeight": 48.875,
@@ -915,17 +1015,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.36177734375
+      "peakCoverage": 0.3436447482638889
     },
     {
       "id": "cinnamon-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1700,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.115615234375,
+          "coverage": 0.09542209201388889,
           "field": {
             "skill": "cinnamon-3",
             "tier": "active",
@@ -938,13 +1038,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.23724717881944443,
+          "coverage": 0.2300054253472222,
           "field": {
             "skill": "cinnamon-3",
             "tier": "active",
@@ -955,17 +1057,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇89",
-              "x": 433.04359801048764,
-              "y": 19.310845588235292,
+              "x": 141.06325803571428,
+              "y": 442.3108455882353,
               "width": 129.87348392857143,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -976,7 +1082,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.2698697916666667,
+          "coverage": 0.30108289930555554,
           "field": {
             "skill": "cinnamon-3",
             "tier": "active",
@@ -988,17 +1094,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 216
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇89",
-              "x": 437.81891140334477,
-              "y": 11.705882352941174,
+              "x": 145.83857142857144,
+              "y": 434.70588235294116,
               "width": 120.32285714285713,
               "height": 46,
               "glyphHeight": 46,
@@ -1008,7 +1118,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.2698697916666667
+      "peakCoverage": 0.30108289930555554
     },
     {
       "id": "clover-1",
@@ -1018,7 +1128,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.03216254340277778,
+          "coverage": 0.026480034722222223,
           "field": {
             "skill": "clover-1",
             "tier": "basic",
@@ -1035,13 +1145,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.09947591145833333,
+          "coverage": 0.09604600694444444,
           "field": {
             "skill": "clover-1",
             "tier": "basic",
@@ -1051,22 +1163,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−25",
-              "x": 809.0364467840063,
-              "y": 70.92370013734752,
+              "x": 792.6588743301274,
+              "y": 19.310845588235292,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -1077,7 +1195,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10438802083333333,
+          "coverage": 0.11883680555555555,
           "field": {
             "skill": "clover-1",
             "tier": "basic",
@@ -1089,22 +1207,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−25",
-              "x": 813.2901530340063,
-              "y": 63.3187369020534,
+              "x": 796.9125805801274,
+              "y": 11.705882352941174,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -1115,9 +1239,9 @@
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "+19",
-              "x": 235.01031983771077,
+              "x": 441.0788482142857,
               "y": 15.22757352941176,
-              "width": 105.84230357142857,
+              "width": 105.8423035714286,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "heal",
@@ -1126,17 +1250,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.10438802083333333
+      "peakCoverage": 0.11883680555555555
     },
     {
       "id": "clover-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1408,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.14156358506944444,
+          "coverage": 0.12536675347222223,
           "field": {
             "skill": "clover-2",
             "tier": "active",
@@ -1154,13 +1278,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.2948904079861111,
+          "coverage": 0.3097504340277778,
           "field": {
             "skill": "clover-2",
             "tier": "active",
@@ -1171,21 +1297,27 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+36",
-              "x": 408.860851663829,
+              "x": 559.67373125,
               "y": 19.310845588235292,
               "width": 120.6525375,
               "height": 49.65125,
@@ -1197,7 +1329,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.3126681857638889,
+          "coverage": 0.3729416232638889,
           "field": {
             "skill": "clover-2",
             "tier": "active",
@@ -1210,21 +1342,27 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+36",
-              "x": 413.297120413829,
+              "x": 564.11,
               "y": 11.705882352941174,
               "width": 111.78,
               "height": 46,
@@ -1236,8 +1374,8 @@
               "key": "1:panko:0:0",
               "id": "panko",
               "text": "+36",
-              "x": 671.0620625,
-              "y": 18.22757352941176,
+              "x": 41.062062499999996,
+              "y": 282.2275735294118,
               "width": 113.87587500000001,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
@@ -1247,17 +1385,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.3126681857638889
+      "peakCoverage": 0.3729416232638889
     },
     {
       "id": "clover-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1642,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.15906792534722222,
+          "coverage": 0.15275282118055555,
           "field": {
             "skill": "clover-3",
             "tier": "active",
@@ -1285,13 +1423,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.3750857204861111,
+          "coverage": 0.3364485677083333,
           "field": {
             "skill": "clover-3",
             "tier": "active",
@@ -1302,34 +1442,44 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+47",
-              "x": 501.88081229620195,
-              "y": 32.134185125057186,
+              "x": 449.90047232142854,
+              "y": 46.310845588235296,
               "width": 124.19905535714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -1340,7 +1490,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.406201171875,
+          "coverage": 0.3416243489583333,
           "field": {
             "skill": "clover-3",
             "tier": "active",
@@ -1355,32 +1505,42 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 4
+            "groundCount": 4,
+            "groundCapacity": 24,
+            "pooledParticles": 288
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+47",
-              "x": 506.44748283191626,
-              "y": 24.529221889763065,
+              "x": 454.46714285714285,
+              "y": 38.705882352941174,
               "width": 115.06571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -1391,7 +1551,7 @@
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "+47",
-              "x": 57.38840178571428,
+              "x": 381.3884017857143,
               "y": 15.22757352941176,
               "width": 117.22319642857144,
               "height": 46.862500000000004,
@@ -1403,8 +1563,8 @@
               "key": "1:clover:0:0",
               "id": "clover",
               "text": "+47",
-              "x": 180.87133928571427,
-              "y": 261.17426470588236,
+              "x": 36.871339285714285,
+              "y": 285.17426470588236,
               "width": 122.25732142857143,
               "height": 48.875,
               "glyphHeight": 48.875,
@@ -1414,7 +1574,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.406201171875
+      "peakCoverage": 0.3416243489583333
     },
     {
       "id": "inkcap-1",
@@ -1424,7 +1584,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.02892578125,
+          "coverage": 0.027845052083333332,
           "field": {
             "skill": "inkcap-1",
             "tier": "basic",
@@ -1436,13 +1596,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.055096571180555554,
+          "coverage": 0.049883897569444446,
           "field": {
             "skill": "inkcap-1",
             "tier": "basic",
@@ -1452,17 +1614,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 807.9724914268635,
-              "y": 36.923700137347524,
+              "x": 791.5949189729846,
+              "y": 19.310845588235292,
               "width": 117.81532321428571,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -1473,7 +1639,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.07181857638888889,
+          "coverage": 0.07351996527777778,
           "field": {
             "skill": "inkcap-1",
             "tier": "basic",
@@ -1484,17 +1650,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 812.304438748292,
-              "y": 29.318736902053402,
+              "x": 795.9268662944131,
+              "y": 11.705882352941174,
               "width": 109.15142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -1504,17 +1674,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.07181857638888889
+      "peakCoverage": 0.07351996527777778
     },
     {
       "id": "inkcap-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1368,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.1359450954861111,
+          "coverage": 0.12888020833333333,
           "field": {
             "skill": "inkcap-2",
             "tier": "active",
@@ -1527,13 +1697,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.26062717013888886,
+          "coverage": 0.2553200954861111,
           "field": {
             "skill": "inkcap-2",
             "tier": "active",
@@ -1544,18 +1716,22 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−12",
-              "x": 819.9418108989933,
-              "y": 32.105173179155045,
-              "width": 106.46646607142856,
+              "x": 789.467471615393,
+              "y": 19.310845588235292,
+              "width": 106.46646607142858,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -1565,7 +1741,7 @@
               "key": "1:foe-0-yarn-giant:1:0",
               "id": "foe-0-yarn-giant",
               "text": "×",
-              "x": 861.3790171489933,
+              "x": 830.9046778653931,
               "y": 11.945845588235294,
               "width": 23.592053571428572,
               "height": 32.38125,
@@ -1577,7 +1753,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.30839192708333335,
+          "coverage": 0.3259722222222222,
           "field": {
             "skill": "inkcap-2",
             "tier": "active",
@@ -1589,17 +1765,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−12",
-              "x": 823.8564725061361,
-              "y": 24.500209943860924,
+              "x": 793.3821332225359,
+              "y": 11.705882352941174,
               "width": 98.63714285714286,
               "height": 46,
               "glyphHeight": 46,
@@ -1610,8 +1790,8 @@
               "key": "1:foe-0-yarn-giant:1:0",
               "id": "foe-0-yarn-giant",
               "text": "×",
-              "x": 862.2464725061361,
-              "y": 3.7058823529411775,
+              "x": 831.7721332225359,
+              "y": 4,
               "width": 21.857142857142858,
               "height": 30,
               "glyphHeight": 30,
@@ -1622,9 +1802,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−11",
-              "x": 813.9490123578456,
+              "x": 783.6483264836093,
               "y": 14.806617647058825,
-              "width": 91.22046428571427,
+              "width": 91.22046428571429,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -1633,7 +1813,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.30839192708333335
+      "peakCoverage": 0.3259722222222222
     },
     {
       "id": "inkcap-3",
@@ -1643,7 +1823,7 @@
       "frames": [
         {
           "t": 670,
-          "coverage": 0.11329210069444444,
+          "coverage": 0.09986219618055556,
           "field": {
             "skill": "inkcap-3",
             "tier": "active",
@@ -1656,13 +1836,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.24957899305555556,
+          "coverage": 0.2532497829861111,
           "field": {
             "skill": "inkcap-3",
             "tier": "active",
@@ -1673,15 +1855,19 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": []
         },
         {
           "t": 1000,
-          "coverage": 0.29784830729166667,
+          "coverage": 0.32359266493055555,
           "field": {
             "skill": "inkcap-3",
             "tier": "active",
@@ -1693,14 +1879,18 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 360
           },
           "numbers": []
         }
       ],
-      "peakCoverage": 0.29784830729166667
+      "peakCoverage": 0.32359266493055555
     },
     {
       "id": "mallow-1",
@@ -1710,7 +1900,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.03339084201388889,
+          "coverage": 0.02626736111111111,
           "field": {
             "skill": "mallow-1",
             "tier": "basic",
@@ -1727,13 +1917,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.10285807291666667,
+          "coverage": 0.09120008680555555,
           "field": {
             "skill": "mallow-1",
             "tier": "basic",
@@ -1743,22 +1935,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−55",
-              "x": 809.0364467840063,
-              "y": 36.923700137347524,
+              "x": 652.15629375,
+              "y": 19.310845588235292,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -1769,7 +1967,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10962782118055556,
+          "coverage": 0.09675347222222222,
           "field": {
             "skill": "mallow-1",
             "tier": "basic",
@@ -1781,22 +1979,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−55",
-              "x": 813.2901530340063,
-              "y": 29.318736902053402,
+              "x": 656.41,
+              "y": 11.705882352941174,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -1807,7 +2011,7 @@
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−42",
-              "x": 1111.0865186386827,
+              "x": 832.3925982142857,
               "y": 15.22757352941176,
               "width": 115.21480357142858,
               "height": 46.862500000000004,
@@ -1818,17 +2022,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.10962782118055556
+      "peakCoverage": 0.09675347222222222
     },
     {
       "id": "mallow-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1584,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.11939887152777778,
+          "coverage": 0.10538519965277778,
           "field": {
             "skill": "mallow-2",
             "tier": "active",
@@ -1841,13 +2045,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.2710373263888889,
+          "coverage": 0.2803548177083333,
           "field": {
             "skill": "mallow-2",
             "tier": "active",
@@ -1858,18 +2064,22 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−19",
-              "x": 818.5232037561361,
-              "y": 32.105173179155045,
-              "width": 109.30368035714284,
+              "x": 637.3481598214286,
+              "y": 19.310845588235292,
+              "width": 109.30368035714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -1879,7 +2089,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.2904611545138889,
+          "coverage": 0.3274392361111111,
           "field": {
             "skill": "mallow-2",
             "tier": "active",
@@ -1891,17 +2101,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−19",
-              "x": 822.5421867918504,
-              "y": 24.500209943860924,
+              "x": 641.3671428571429,
+              "y": 11.705882352941174,
               "width": 101.26571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -1912,9 +2126,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−19",
-              "x": 808.29347664356,
+              "x": 761.9988040575963,
               "y": 14.806617647058825,
-              "width": 102.5315357142857,
+              "width": 102.53153571428572,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -1923,17 +2137,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.2904611545138889
+      "peakCoverage": 0.3274392361111111
     },
     {
       "id": "mallow-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1623,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.1318967013888889,
+          "coverage": 0.12216688368055556,
           "field": {
             "skill": "mallow-3",
             "tier": "active",
@@ -1946,13 +2160,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.2735286458333333,
+          "coverage": 0.2795648871527778,
           "field": {
             "skill": "mallow-3",
             "tier": "active",
@@ -1963,17 +2179,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−33",
-              "x": 819.9589550719195,
-              "y": 65.74556608630526,
+              "x": 782.9884289898491,
+              "y": 20.45198985566881,
               "width": 115.6874125,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -1984,7 +2204,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.2963726128472222,
+          "coverage": 0.3358018663194444,
           "field": {
             "skill": "mallow-3",
             "tier": "active",
@@ -1996,17 +2216,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 432
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−33",
-              "x": 824.2126613219194,
-              "y": 58.14060285101114,
+              "x": 787.2421352398491,
+              "y": 12.847026620374692,
               "width": 107.17999999999998,
               "height": 46,
               "glyphHeight": 46,
@@ -2017,9 +2241,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−32",
-              "x": 808.7773639667562,
+              "x": 760.0837913568307,
               "y": 14.806617647058825,
-              "width": 108.51974999999999,
+              "width": 108.51975000000002,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -2028,7 +2252,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.2963726128472222
+      "peakCoverage": 0.3358018663194444
     },
     {
       "id": "marigold-1",
@@ -2038,7 +2262,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.030205078125,
+          "coverage": 0.026728515625,
           "field": {
             "skill": "marigold-1",
             "tier": "basic",
@@ -2055,13 +2279,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.08830295138888888,
+          "coverage": 0.08263563368055556,
           "field": {
             "skill": "marigold-1",
             "tier": "basic",
@@ -2071,22 +2297,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−20",
-              "x": 806.199232498292,
-              "y": 70.92370013734752,
+              "x": 789.8216600444131,
+              "y": 19.95361027015812,
               "width": 121.36184107142857,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -2097,7 +2329,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.09470377604166667,
+          "coverage": 0.10294921875,
           "field": {
             "skill": "marigold-1",
             "tier": "basic",
@@ -2109,22 +2341,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−20",
-              "x": 810.6615816054349,
-              "y": 63.3187369020534,
+              "x": 794.284009151556,
+              "y": 12.348647034864001,
               "width": 112.43714285714285,
               "height": 46,
               "glyphHeight": 46,
@@ -2134,17 +2372,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.09470377604166667
+      "peakCoverage": 0.10294921875
     },
     {
       "id": "marigold-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1467,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.180322265625,
+          "coverage": 0.1708279079861111,
           "field": {
             "skill": "marigold-2",
             "tier": "active",
@@ -2172,13 +2410,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.3967686631944444,
+          "coverage": 0.37313585069444444,
           "field": {
             "skill": "marigold-2",
             "tier": "active",
@@ -2189,34 +2429,44 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+27",
-              "x": 615.0923383928572,
-              "y": 19.310845588235292,
+              "x": 319.0405323286925,
+              "y": 247.28360943730524,
               "width": 117.81532321428571,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -2227,7 +2477,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.40150390625,
+          "coverage": 0.3880783420138889,
           "field": {
             "skill": "marigold-2",
             "tier": "active",
@@ -2242,32 +2492,42 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 4
+            "groundCount": 4,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "+27",
-              "x": 619.4242857142857,
-              "y": 11.705882352941174,
+              "x": 323.3724796501211,
+              "y": 239.67864620201112,
               "width": 109.15142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -2278,7 +2538,7 @@
               "key": "1:marigold:0:0",
               "id": "marigold",
               "text": "+27",
-              "x": 456.40099107142856,
+              "x": 600.4009910714285,
               "y": 15.22757352941176,
               "width": 111.19801785714287,
               "height": 46.862500000000004,
@@ -2290,8 +2550,8 @@
               "key": "1:clover:0:0",
               "id": "clover",
               "text": "+27",
-              "x": 133.46522230982814,
-              "y": 109.11360288166787,
+              "x": 112.01330357142857,
+              "y": 441.17426470588236,
               "width": 115.97339285714287,
               "height": 48.875,
               "glyphHeight": 48.875,
@@ -2301,17 +2561,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.40150390625
+      "peakCoverage": 0.3880783420138889
     },
     {
       "id": "marigold-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1641,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.19333116319444443,
+          "coverage": 0.18238715277777778,
           "field": {
             "skill": "marigold-3",
             "tier": "active",
@@ -2324,13 +2584,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.2914236111111111,
+          "coverage": 0.29700303819444446,
           "field": {
             "skill": "marigold-3",
             "tier": "active",
@@ -2341,15 +2603,19 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": []
         },
         {
           "t": 1000,
-          "coverage": 0.3004014756944444,
+          "coverage": 0.3409255642361111,
           "field": {
             "skill": "marigold-3",
             "tier": "active",
@@ -2361,14 +2627,18 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 504
           },
           "numbers": []
         }
       ],
-      "peakCoverage": 0.3004014756944444
+      "peakCoverage": 0.3409255642361111
     },
     {
       "id": "mochi-1",
@@ -2378,7 +2648,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.012452256944444445,
+          "coverage": 0.007147352430555556,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -2400,13 +2670,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.10676649305555555,
+          "coverage": 0.10627387152777777,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -2416,29 +2688,37 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−40",
-              "x": 803.0073664268634,
-              "y": 70.92370013734752,
-              "width": 127.7455732142857,
+              "x": 786.6297939729845,
+              "y": 19.310845588235292,
+              "width": 127.74557321428573,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -2448,7 +2728,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10968532986111111,
+          "coverage": 0.13522786458333333,
           "field": {
             "skill": "mochi-1",
             "tier": "basic",
@@ -2461,27 +2741,35 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 3
+            "groundCount": 3,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−40",
-              "x": 807.704438748292,
-              "y": 63.3187369020534,
+              "x": 791.3268662944131,
+              "y": 11.705882352941174,
               "width": 118.35142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -2492,9 +2780,9 @@
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−30",
-              "x": 1111.4212507815398,
+              "x": 832.7273303571428,
               "y": 15.22757352941176,
-              "width": 114.54533928571429,
+              "width": 114.5453392857143,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "damage",
@@ -2504,8 +2792,8 @@
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇18",
-              "x": 548.1226141852773,
-              "y": 150.42209358263491,
+              "x": 494.27717013747963,
+              "y": 103.72268259161076,
               "width": 109.833625,
               "height": 46.2875,
               "glyphHeight": 46.2875,
@@ -2515,17 +2803,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.10968532986111111
+      "peakCoverage": 0.13522786458333333
     },
     {
       "id": "mochi-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1537,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.16717013888888888,
+          "coverage": 0.149287109375,
           "field": {
             "skill": "mochi-2",
             "tier": "active",
@@ -2538,13 +2826,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.2701291232638889,
+          "coverage": 0.24729817708333332,
           "field": {
             "skill": "mochi-2",
             "tier": "active",
@@ -2555,17 +2845,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "◇70",
-              "x": 51.417909821428566,
-              "y": 46.310845588235296,
+              "x": 87.41790982142857,
+              "y": 442.3108455882353,
               "width": 129.16418035714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -2576,7 +2870,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.2275368923611111,
+          "coverage": 0.20528754340277777,
           "field": {
             "skill": "mochi-2",
             "tier": "active",
@@ -2588,17 +2882,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "◇70",
-              "x": 56.16714285714286,
-              "y": 38.705882352941174,
+              "x": 92.16714285714286,
+              "y": 434.70588235294116,
               "width": 119.66571428571427,
               "height": 46,
               "glyphHeight": 46,
@@ -2608,17 +2906,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.2701291232638889
+      "peakCoverage": 0.24729817708333332
     },
     {
       "id": "mochi-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1760,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.21032660590277777,
+          "coverage": 0.20692491319444445,
           "field": {
             "skill": "mochi-3",
             "tier": "active",
@@ -2636,13 +2934,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.3003960503472222,
+          "coverage": 0.30010633680555554,
           "field": {
             "skill": "mochi-3",
             "tier": "active",
@@ -2653,23 +2953,29 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇55",
-              "x": 521.9004723214285,
-              "y": 22.310845588235292,
-              "width": 124.19905535714284,
+              "x": 431.90047232142854,
+              "y": 46.310845588235296,
+              "width": 124.19905535714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "shield",
@@ -2679,7 +2985,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.24304796006944446,
+          "coverage": 0.30277669270833335,
           "field": {
             "skill": "mochi-3",
             "tier": "active",
@@ -2692,22 +2998,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 576
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇55",
-              "x": 526.4671428571429,
-              "y": 14.705882352941174,
+              "x": 436.46714285714285,
+              "y": 38.705882352941174,
               "width": 115.06571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -2718,9 +3030,9 @@
               "key": "1:panko:0:0",
               "id": "panko",
               "text": "◇55",
-              "x": 651.3884017857143,
-              "y": 18.22757352941176,
-              "width": 117.22319642857143,
+              "x": 561.3884017857142,
+              "y": 30.22757352941176,
+              "width": 117.22319642857144,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "shield",
@@ -2729,7 +3041,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.3003960503472222
+      "peakCoverage": 0.30277669270833335
     },
     {
       "id": "panko-1",
@@ -2739,7 +3051,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.014680989583333333,
+          "coverage": 0.009991319444444445,
           "field": {
             "skill": "panko-1",
             "tier": "basic",
@@ -2756,13 +3068,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.08725694444444444,
+          "coverage": 0.09279622395833333,
           "field": {
             "skill": "panko-1",
             "tier": "basic",
@@ -2772,22 +3086,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 807.9724914268635,
-              "y": 36.923700137347524,
+              "x": 363.09233839285713,
+              "y": 322.3108455882353,
               "width": 117.81532321428571,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -2798,7 +3118,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.10037326388888888,
+          "coverage": 0.13073893229166667,
           "field": {
             "skill": "panko-1",
             "tier": "basic",
@@ -2810,22 +3130,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−36",
-              "x": 812.304438748292,
-              "y": 29.318736902053402,
+              "x": 367.4242857142857,
+              "y": 314.70588235294116,
               "width": 109.15142857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -2835,17 +3161,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.10037326388888888
+      "peakCoverage": 0.13073893229166667
     },
     {
       "id": "panko-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1378,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.1323415798611111,
+          "coverage": 0.12890190972222224,
           "field": {
             "skill": "panko-2",
             "tier": "active",
@@ -2863,13 +3189,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.3090321180555556,
+          "coverage": 0.2979817708333333,
           "field": {
             "skill": "panko-2",
             "tier": "active",
@@ -2880,22 +3208,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇65",
-              "x": 406.02363737811476,
-              "y": 32.56281302908239,
+              "x": 352.1971387570438,
+              "y": 19.310845588235292,
               "width": 126.32696607142854,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -2906,7 +3240,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.3240473090277778,
+          "coverage": 0.3204318576388889,
           "field": {
             "skill": "panko-2",
             "tier": "active",
@@ -2919,22 +3253,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇65",
-              "x": 410.6685489852576,
-              "y": 24.95784979378827,
+              "x": 356.8420503641866,
+              "y": 11.705882352941174,
               "width": 117.03714285714284,
               "height": 46,
               "glyphHeight": 46,
@@ -2945,7 +3285,7 @@
               "key": "1:panko:0:0",
               "id": "panko",
               "text": "◇65",
-              "x": 515.6305521633564,
+              "x": 578.3842053571428,
               "y": 15.22757352941176,
               "width": 119.23158928571429,
               "height": 46.862500000000004,
@@ -2956,17 +3296,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.3240473090277778
+      "peakCoverage": 0.3204318576388889
     },
     {
       "id": "panko-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1621,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.1601584201388889,
+          "coverage": 0.15167100694444444,
           "field": {
             "skill": "panko-3",
             "tier": "active",
@@ -2994,13 +3334,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.414697265625,
+          "coverage": 0.3664019097222222,
           "field": {
             "skill": "panko-3",
             "tier": "active",
@@ -3011,35 +3353,45 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇35",
-              "x": 53.90047232142858,
-              "y": 70.3108455882353,
-              "width": 124.19905535714284,
+              "x": 269.90047232142854,
+              "y": 382.3108455882353,
+              "width": 124.19905535714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "shield",
@@ -3049,7 +3401,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.41828342013888886,
+          "coverage": 0.37904947916666665,
           "field": {
             "skill": "panko-3",
             "tier": "active",
@@ -3064,32 +3416,42 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 4
+            "groundCount": 4,
+            "groundCapacity": 24,
+            "pooledParticles": 648
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇35",
-              "x": 58.46714285714286,
-              "y": 62.705882352941174,
+              "x": 274.46714285714285,
+              "y": 374.70588235294116,
               "width": 115.06571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -3100,9 +3462,9 @@
               "key": "1:soot:0:0",
               "id": "soot",
               "text": "◇35",
-              "x": 57.38840178571429,
+              "x": 579.3884017857142,
               "y": 15.22757352941176,
-              "width": 117.22319642857143,
+              "width": 117.22319642857144,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "shield",
@@ -3112,8 +3474,8 @@
               "key": "1:clover:0:0",
               "id": "clover",
               "text": "◇35",
-              "x": 54.871339285714285,
-              "y": 117.17426470588236,
+              "x": 108.87133928571428,
+              "y": 441.17426470588236,
               "width": 122.25732142857143,
               "height": 48.875,
               "glyphHeight": 48.875,
@@ -3123,7 +3485,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.41828342013888886
+      "peakCoverage": 0.37904947916666665
     },
     {
       "id": "soot-1",
@@ -3133,7 +3495,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.03056423611111111,
+          "coverage": 0.029190538194444445,
           "field": {
             "skill": "soot-1",
             "tier": "basic",
@@ -3145,13 +3507,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.06380967881944444,
+          "coverage": 0.05580946180555556,
           "field": {
             "skill": "soot-1",
             "tier": "basic",
@@ -3161,18 +3525,22 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−46",
-              "x": 804.7806253554348,
-              "y": 36.923700137347524,
-              "width": 124.19905535714285,
+              "x": 647.9004723214285,
+              "y": 19.310845588235292,
+              "width": 124.19905535714287,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -3182,7 +3550,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.08181206597222222,
+          "coverage": 0.08852864583333334,
           "field": {
             "skill": "soot-1",
             "tier": "basic",
@@ -3193,17 +3561,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−46",
-              "x": 809.3472958911492,
-              "y": 29.318736902053402,
+              "x": 652.4671428571429,
+              "y": 11.705882352941174,
               "width": 115.06571428571428,
               "height": 46,
               "glyphHeight": 46,
@@ -3213,17 +3585,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.08181206597222222
+      "peakCoverage": 0.08852864583333334
     },
     {
       "id": "soot-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1308,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.13180230034722223,
+          "coverage": 0.12332573784722223,
           "field": {
             "skill": "soot-2",
             "tier": "active",
@@ -3236,13 +3608,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.29999131944444446,
+          "coverage": 0.2912109375,
           "field": {
             "skill": "soot-2",
             "tier": "active",
@@ -3253,18 +3627,22 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 819.9418108989933,
-              "y": 32.105173179155045,
-              "width": 106.46646607142856,
+              "x": 638.7667669642857,
+              "y": 19.310845588235292,
+              "width": 106.46646607142858,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -3274,7 +3652,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.32558485243055557,
+          "coverage": 0.34821831597222225,
           "field": {
             "skill": "soot-2",
             "tier": "active",
@@ -3286,17 +3664,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 823.8564725061361,
-              "y": 24.500209943860924,
+              "x": 642.6814285714286,
+              "y": 11.705882352941174,
               "width": 98.63714285714286,
               "height": 46,
               "glyphHeight": 46,
@@ -3307,7 +3689,7 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−15",
-              "x": 809.6241909292742,
+              "x": 767.3345759443212,
               "y": 14.806617647058825,
               "width": 99.87010714285714,
               "height": 46.574999999999996,
@@ -3318,7 +3700,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.32558485243055557
+      "peakCoverage": 0.34821831597222225
     },
     {
       "id": "soot-3",
@@ -3328,7 +3710,7 @@
       "frames": [
         {
           "t": 670,
-          "coverage": 0.14874348958333333,
+          "coverage": 0.1323806423611111,
           "field": {
             "skill": "soot-3",
             "tier": "active",
@@ -3341,13 +3723,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.30160590277777777,
+          "coverage": 0.29443684895833333,
           "field": {
             "skill": "soot-3",
             "tier": "active",
@@ -3358,17 +3742,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−28",
-              "x": 818.5403479290624,
-              "y": 65.74556608630526,
+              "x": 781.0850996983455,
+              "y": 19.310845588235292,
               "width": 118.52462678571428,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -3379,7 +3767,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.3242144097222222,
+          "coverage": 0.351064453125,
           "field": {
             "skill": "soot-3",
             "tier": "active",
@@ -3391,17 +3779,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 720
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−28",
-              "x": 822.8983756076337,
-              "y": 58.14060285101114,
+              "x": 785.4431273769169,
+              "y": 11.705882352941174,
               "width": 109.80857142857141,
               "height": 46,
               "glyphHeight": 46,
@@ -3412,9 +3804,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−28",
-              "x": 807.4466496810419,
+              "x": 760.7022259195171,
               "y": 14.806617647058825,
-              "width": 111.18117857142856,
+              "width": 111.18117857142857,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -3423,7 +3815,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.3242144097222222
+      "peakCoverage": 0.351064453125
     },
     {
       "id": "sorrel-1",
@@ -3433,7 +3825,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.02582248263888889,
+          "coverage": 0.025672743055555555,
           "field": {
             "skill": "sorrel-1",
             "tier": "basic",
@@ -3445,13 +3837,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.04952582465277778,
+          "coverage": 0.047305772569444446,
           "field": {
             "skill": "sorrel-1",
             "tier": "basic",
@@ -3461,17 +3855,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−21",
-              "x": 813.646919998292,
-              "y": 36.923700137347524,
+              "x": 656.7667669642857,
+              "y": 19.310845588235292,
               "width": 106.46646607142857,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -3482,7 +3880,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.06421766493055556,
+          "coverage": 0.06597113715277778,
           "field": {
             "skill": "sorrel-1",
             "tier": "basic",
@@ -3493,17 +3891,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−21",
-              "x": 817.5615816054349,
-              "y": 29.318736902053402,
+              "x": 660.6814285714286,
+              "y": 11.705882352941174,
               "width": 98.63714285714285,
               "height": 46,
               "glyphHeight": 46,
@@ -3513,17 +3915,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.06421766493055556
+      "peakCoverage": 0.06597113715277778
     },
     {
       "id": "sorrel-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1482,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.15763454861111112,
+          "coverage": 0.1449359809027778,
           "field": {
             "skill": "sorrel-2",
             "tier": "active",
@@ -3536,13 +3938,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.28181749131944445,
+          "coverage": 0.300400390625,
           "field": {
             "skill": "sorrel-2",
             "tier": "active",
@@ -3553,17 +3957,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−8",
-              "x": 833.9682890239933,
-              "y": 32.105173179155045,
+              "x": 652.7932450892857,
+              "y": 19.310845588235292,
               "width": 78.41350982142856,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -3574,7 +3982,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.277578125,
+          "coverage": 0.323916015625,
           "field": {
             "skill": "sorrel-2",
             "tier": "active",
@@ -3586,17 +3994,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−8",
-              "x": 836.8514725061361,
-              "y": 24.500209943860924,
+              "x": 655.6764285714286,
+              "y": 11.705882352941174,
               "width": 72.64714285714285,
               "height": 46,
               "glyphHeight": 46,
@@ -3607,9 +4019,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−7",
-              "x": 824.445021286417,
+              "x": 779.1442731527985,
               "y": 14.806617647058825,
-              "width": 70.22844642857142,
+              "width": 70.22844642857143,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -3618,17 +4030,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.28181749131944445
+      "peakCoverage": 0.323916015625
     },
     {
       "id": "sorrel-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1829,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.16808268229166667,
+          "coverage": 0.15730360243055555,
           "field": {
             "skill": "sorrel-3",
             "tier": "active",
@@ -3646,13 +4058,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.318828125,
+          "coverage": 0.33063151041666666,
           "field": {
             "skill": "sorrel-3",
             "tier": "active",
@@ -3663,22 +4077,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇90",
-              "x": 467.6249908676306,
-              "y": 19.310845588235292,
+              "x": 139.64465089285716,
+              "y": 442.3108455882353,
               "width": 132.7106982142857,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -3689,7 +4109,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.33925672743055557,
+          "coverage": 0.3579275173611111,
           "field": {
             "skill": "sorrel-3",
             "tier": "active",
@@ -3702,22 +4122,28 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 2
+            "groundCount": 2,
+            "groundCapacity": 24,
+            "pooledParticles": 792
           },
           "numbers": [
             {
               "key": "1:mochi:0:0",
               "id": "mochi",
               "text": "◇90",
-              "x": 472.50462568905914,
-              "y": 11.705882352941174,
+              "x": 144.52428571428572,
+              "y": 434.70588235294116,
               "width": 122.95142857142856,
               "height": 46,
               "glyphHeight": 46,
@@ -3728,9 +4154,9 @@
               "key": "1:panko:0:0",
               "id": "panko",
               "text": "◇45",
-              "x": 612.3758125,
-              "y": 18.22757352941176,
-              "width": 123.248375,
+              "x": 162.3758125,
+              "y": 438.2275735294118,
+              "width": 123.24837500000001,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
               "kind": "shield",
@@ -3739,7 +4165,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.33925672743055557
+      "peakCoverage": 0.3579275173611111
     },
     {
       "id": "velvet-1",
@@ -3749,7 +4175,7 @@
       "frames": [
         {
           "t": 200,
-          "coverage": 0.026165364583333333,
+          "coverage": 0.024721137152777777,
           "field": {
             "skill": "velvet-1",
             "tier": "basic",
@@ -3761,13 +4187,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": []
         },
         {
           "t": 363,
-          "coverage": 0.06937174479166666,
+          "coverage": 0.06463541666666667,
           "field": {
             "skill": "velvet-1",
             "tier": "basic",
@@ -3777,16 +4205,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−50",
-              "x": 806.199232498292,
+              "x": 145.31907946428572,
               "y": 19.310845588235292,
               "width": 121.36184107142857,
               "height": 49.65125,
@@ -3798,7 +4230,7 @@
         },
         {
           "t": 530,
-          "coverage": 0.07762912326388889,
+          "coverage": 0.10263671875,
           "field": {
             "skill": "velvet-1",
             "tier": "basic",
@@ -3809,16 +4241,20 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−50",
-              "x": 810.6615816054349,
+              "x": 149.7814285714286,
               "y": 11.705882352941174,
               "width": 112.43714285714285,
               "height": 46,
@@ -3829,17 +4265,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.07762912326388889
+      "peakCoverage": 0.10263671875
     },
     {
       "id": "velvet-2",
       "impact": 650,
-      "duration": 1300,
+      "duration": 1584,
       "tier": "active",
       "frames": [
         {
           "t": 520,
-          "coverage": 0.13510416666666666,
+          "coverage": 0.13015950520833333,
           "field": {
             "skill": "velvet-2",
             "tier": "active",
@@ -3862,13 +4298,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": []
         },
         {
           "t": 683,
-          "coverage": 0.25799587673611113,
+          "coverage": 0.25604275173611113,
           "field": {
             "skill": "velvet-2",
             "tier": "active",
@@ -3879,29 +4317,37 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "travel-ribbon",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−17",
-              "x": 808.2964626847075,
-              "y": 66.10517317915505,
-              "width": 105.75716249999999,
+              "x": 757.3450341699497,
+              "y": 19.310845588235292,
+              "width": 105.7571625,
               "height": 49.65125,
               "glyphHeight": 49.65125,
               "kind": "damage",
@@ -3911,7 +4357,7 @@
         },
         {
           "t": 850,
-          "coverage": 0.2633365885416667,
+          "coverage": 0.29766493055555554,
           "field": {
             "skill": "velvet-2",
             "tier": "active",
@@ -3925,27 +4371,35 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
+              "painted-impact-strokes",
               "element-particles",
+              "painted-impact-wake",
               "painted-core",
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 3
+            "groundCount": 3,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−17",
-              "x": 812.1850439347076,
-              "y": 58.50020994386092,
+              "x": 761.2336154199497,
+              "y": 11.705882352941174,
               "width": 97.97999999999999,
               "height": 46,
               "glyphHeight": 46,
@@ -3956,9 +4410,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−17",
-              "x": 809.9568695007029,
+              "x": 667.0463736402776,
               "y": 14.806617647058825,
-              "width": 99.20474999999999,
+              "width": 99.20475,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -3968,8 +4422,8 @@
               "key": "1:foe-1-binding-thread:0:0",
               "id": "foe-1-binding-thread",
               "text": "−23",
-              "x": 961.4051875,
-              "y": 42.22757352941176,
+              "x": 817.4051875,
+              "y": 15.22757352941176,
               "width": 109.189625,
               "height": 46.862500000000004,
               "glyphHeight": 46.862500000000004,
@@ -3980,9 +4434,9 @@
               "key": "1:foe-1-binding-thread:0:1",
               "id": "foe-1-binding-thread",
               "text": "−23",
-              "x": 959.3955625,
+              "x": 815.3955625,
               "y": 17.753308823529412,
-              "width": 113.20887499999998,
+              "width": 113.20887499999999,
               "height": 48.5875,
               "glyphHeight": 48.5875,
               "kind": "damage",
@@ -3992,8 +4446,8 @@
               "key": "1:foe-2-binding-thread:0:0",
               "id": "foe-2-binding-thread",
               "text": "−11",
-              "x": 968.1374107142857,
-              "y": 117.17426470588236,
+              "x": 1152.1374107142858,
+              "y": 230.31023397316022,
               "width": 95.72517857142857,
               "height": 48.875,
               "glyphHeight": 48.875,
@@ -4004,8 +4458,8 @@
               "key": "1:foe-2-binding-thread:0:1",
               "id": "foe-2-binding-thread",
               "text": "−11",
-              "x": 966.4481428571429,
-              "y": 69.7,
+              "x": 1150.4481428571428,
+              "y": 182.83596926727785,
               "width": 99.10371428571429,
               "height": 50.6,
               "glyphHeight": 50.6,
@@ -4015,17 +4469,17 @@
           ]
         }
       ],
-      "peakCoverage": 0.2633365885416667
+      "peakCoverage": 0.29766493055555554
     },
     {
       "id": "velvet-3",
       "impact": 800,
-      "duration": 1500,
+      "duration": 1572,
       "tier": "active",
       "frames": [
         {
           "t": 670,
-          "coverage": 0.11966362847222223,
+          "coverage": 0.12153428819444445,
           "field": {
             "skill": "velvet-3",
             "tier": "active",
@@ -4038,13 +4492,15 @@
               "travel-ribbon",
               "element-particles"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": []
         },
         {
           "t": 833,
-          "coverage": 0.2051171875,
+          "coverage": 0.20017144097222223,
           "field": {
             "skill": "velvet-3",
             "tier": "active",
@@ -4055,17 +4511,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 0
+            "groundCount": 0,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−24",
-              "x": 816.7670890004908,
-              "y": 65.74556608630526,
+              "x": 781.811601080034,
+              "y": 19.310845588235292,
               "width": 122.07114464285715,
               "height": 49.65125,
               "glyphHeight": 49.65125,
@@ -4076,7 +4536,7 @@
         },
         {
           "t": 1000,
-          "coverage": 0.21612738715277777,
+          "coverage": 0.2837413194444444,
           "field": {
             "skill": "velvet-3",
             "tier": "active",
@@ -4088,17 +4548,21 @@
               "painted-sweep",
               "element-aura",
               "twelve-frame-spark",
-              "element-particles"
+              "painted-impact-strokes",
+              "element-particles",
+              "painted-impact-wake"
             ],
-            "groundCount": 1
+            "groundCount": 1,
+            "groundCapacity": 24,
+            "pooledParticles": 864
           },
           "numbers": [
             {
               "key": "1:foe-0-yarn-giant:0:0",
               "id": "foe-0-yarn-giant",
               "text": "−24",
-              "x": 821.2555184647766,
-              "y": 58.14060285101114,
+              "x": 786.3000305443198,
+              "y": 11.705882352941174,
               "width": 113.0942857142857,
               "height": 46,
               "glyphHeight": 46,
@@ -4109,9 +4573,9 @@
               "key": "1:foe-0-yarn-giant:0:1",
               "id": "foe-0-yarn-giant",
               "text": "−24",
-              "x": 805.783256823899,
+              "x": 760.1403770764243,
               "y": 14.806617647058825,
-              "width": 114.50796428571428,
+              "width": 114.5079642857143,
               "height": 46.574999999999996,
               "glyphHeight": 46.574999999999996,
               "kind": "damage",
@@ -4120,7 +4584,7 @@
           ]
         }
       ],
-      "peakCoverage": 0.21612738715277777
+      "peakCoverage": 0.2837413194444444
     }
   ],
   "performance": {

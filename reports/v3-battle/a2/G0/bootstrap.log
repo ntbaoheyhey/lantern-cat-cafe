@@ -1,4 +1,5 @@
-FAIL G0.freshness: measured=missing; required=evidence >= df506d321ab40b3e86f48ddd69a2a754444c2a99
+SYNTHETIC EMPTY EVIDENCE BASELINE, current checker
+FAIL G0.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL G0.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL G0.bootstrap-all-fail: measured=missing; required=eq UNMEASURED TARGET
 FAIL G0.bootstrap-gate-count: measured=missing; required=min 100
@@ -56,7 +57,7 @@ FAIL R.unit: measured=missing; required=eq 0
 FAIL R.e2e: measured=missing; required=eq 0
 FAIL R.parity: measured=missing; required=eq 0
 FAIL R.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL F1.freshness: measured=missing; required=evidence >= 4d3c27e1ce8144b0d9d0c21f563f71bb1e9f36b7
+FAIL F1.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL F1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL F1.unit-height[wave1@1280x720]: measured=missing; required=band [0.157095,0.26182500000000003]
 FAIL F1.unit-height[wave3@1280x720]: measured=missing; required=band [0.157095,0.26182500000000003]
@@ -95,7 +96,7 @@ FAIL F1.unit: measured=missing; required=eq 0
 FAIL F1.e2e: measured=missing; required=eq 0
 FAIL F1.parity: measured=missing; required=eq 0
 FAIL F1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL F2.freshness: measured=missing; required=evidence >= 954414a69700909362cd44736ca4a850c61f03b4
+FAIL F2.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL F2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL F2.alpha[wave1]: measured=missing; required=min 0.97
 FAIL F2.alpha[wave3]: measured=missing; required=min 0.97
@@ -112,7 +113,7 @@ FAIL F2.unit: measured=missing; required=eq 0
 FAIL F2.e2e: measured=missing; required=eq 0
 FAIL F2.parity: measured=missing; required=eq 0
 FAIL F2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL M1.freshness: measured=missing; required=evidence >= 954414a69700909362cd44736ca4a850c61f03b4
+FAIL M1.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL M1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL M1.seconds[wave1]: measured=missing; required=min 30
 FAIL M1.seconds[wave3]: measured=missing; required=min 30
@@ -155,7 +156,7 @@ FAIL M2.unit: measured=missing; required=eq 0
 FAIL M2.e2e: measured=missing; required=eq 0
 FAIL M2.parity: measured=missing; required=eq 0
 FAIL M2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V1.freshness: measured=missing; required=evidence >= 770aab1697ced0b12588980cdf73a850e88f5dc4
+FAIL V1.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL V1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V1.plate-count: measured=missing; required=eq 13
 FAIL V1.coverage: measured=missing; required=min 0.6120624999999998
@@ -176,7 +177,7 @@ FAIL V1.unit: measured=missing; required=eq 0
 FAIL V1.e2e: measured=missing; required=eq 0
 FAIL V1.parity: measured=missing; required=eq 0
 FAIL V1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V2.freshness: measured=missing; required=evidence >= 7d251b672fde5a9f40e1cbc541eaf02383c23b78
+FAIL V2.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL V2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V2.number-height[wave1]: measured=missing; required=band [34.66216216216216,57.770270270270274]
 FAIL V2.number-height[wave3]: measured=missing; required=band [34.66216216216216,57.770270270270274]
@@ -203,7 +204,7 @@ FAIL V2.unit: measured=missing; required=eq 0
 FAIL V2.e2e: measured=missing; required=eq 0
 FAIL V2.parity: measured=missing; required=eq 0
 FAIL V2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V3.freshness: measured=missing; required=evidence >= 770aab1697ced0b12588980cdf73a850e88f5dc4
+FAIL V3.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
 FAIL V3.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V3.cue-density[wave1]: measured=missing; required=min 4.775700934579438
 FAIL V3.cue-density[wave3]: measured=missing; required=min 4.775700934579438
@@ -227,7 +228,7 @@ FAIL V3.unit: measured=missing; required=eq 0
 FAIL V3.e2e: measured=missing; required=eq 0
 FAIL V3.parity: measured=missing; required=eq 0
 FAIL V3.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL T1.freshness: measured=missing; required=evidence >= 4d3c27e1ce8144b0d9d0c21f563f71bb1e9f36b7
+FAIL T1.freshness: measured=missing; required=evidence >= a94248fd6f594b0ea9c7b4f235fa8e2c679f37e7
 FAIL T1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL T1.word-samples[wave1]: measured=missing; required=min 30
 FAIL T1.word-samples[wave3]: measured=missing; required=min 30
@@ -247,7 +248,7 @@ FAIL T1.parity: measured=missing; required=eq 0
 FAIL T1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
 FAIL SY1.freshness: measured=missing; required=evidence >= source revision
 FAIL SY1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY1.date: measured=2026-11-13T09:13:40.963Z; required=>= 2026-11-16T12:00:00Z and evidence after that time
+FAIL SY1.date: measured=2026-11-13T10:44:47.134Z; required=>= 2026-11-16T12:00:00Z and evidence after that time
 FAIL SY1.report: measured=0; required=min 1
 FAIL SY1.commit-ids: measured=missing; required=eq 2
 FAIL SY1.lint: measured=missing; required=eq 0
@@ -261,7 +262,7 @@ FAIL SY1.parity: measured=missing; required=eq 0
 FAIL SY1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
 FAIL SY2.freshness: measured=missing; required=evidence >= source revision
 FAIL SY2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY2.date: measured=2026-11-13T09:13:40.963Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
+FAIL SY2.date: measured=2026-11-13T10:44:47.135Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
 FAIL SY2.report: measured=0; required=min 1
 FAIL SY2.commit-ids: measured=missing; required=eq 2
 FAIL SY2.lint: measured=missing; required=eq 0
@@ -275,7 +276,7 @@ FAIL SY2.parity: measured=missing; required=eq 0
 FAIL SY2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
 FAIL D1.freshness: measured=missing; required=evidence >= 4ab25a4690db7254e039d8db87698f6147eaeec8
 FAIL D1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL D1.date: measured=2026-11-13T09:13:40.964Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
+FAIL D1.date: measured=2026-11-13T10:44:47.135Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
 FAIL D1.after-sync: measured=missing; required=eq 1
 FAIL D1.duration: measured=missing; required=eq 90
 FAIL D1.battle-time: measured=missing; required=min 55
@@ -304,7 +305,7 @@ FAIL D1.parity: measured=missing; required=eq 0
 FAIL D1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
 FAIL SY3.freshness: measured=missing; required=evidence >= source revision
 FAIL SY3.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY3.date: measured=2026-11-13T09:13:41.011Z; required=>= 2026-11-19T12:00:00Z and evidence after that time
+FAIL SY3.date: measured=2026-11-13T10:44:47.186Z; required=>= 2026-11-19T12:00:00Z and evidence after that time
 FAIL SY3.report: measured=0; required=min 1
 FAIL SY3.status: measured=0; required=min 1
 FAIL SY3.status-lines: measured=missing; required=max 30

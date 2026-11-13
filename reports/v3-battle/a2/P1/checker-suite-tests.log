@@ -1,0 +1,20 @@
+✔ every active requires one voice; half coverage must never pass (0.557667ms)
+✔ min: fake PASS and fake FAIL, NaN, absent target (0.084917ms)
+✔ max: fake PASS and fake FAIL, NaN, absent target (0.050041ms)
+✔ eq: fake PASS and fake FAIL, NaN, absent target (0.045792ms)
+✔ band: fake PASS and fake FAIL, NaN, absent target (0.049833ms)
+✔ every declared numeric gate rejects a failing value, including zero limits (0.187792ms)
+✔ absent evidence cannot pass using files or a past scheduled date (3.091417ms)
+✔ files: counts real nonempty files, rejects missing and empty artifacts (0.741125ms)
+✔ freshness: evidence from before the last source commit fails (184.094083ms)
+✔ date gate: real future sync cannot pass before its exact UTC time (0.374583ms)
+✔ fresh aggregate metadata cannot disguise an old raw motion capture (875.525333ms)
+✔ fixture matrix fails any missing fixture/resolution (16.545417ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1206.20425

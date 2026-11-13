@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T07:23:04.786Z",
-    "sourceCommit": "d2def5b5e311fa9946a020b25f758a46c931de06"
+    "generatedAt": "2026-11-13T11:20:22.629Z",
+    "sourceCommit": "b55fef878076ed880504f74a8719dc1f33839c72"
   },
   "plans": [
     {
@@ -2304,77 +2304,6 @@
       ],
       "ultimate": true,
       "tier": "ultimate"
-    },
-    {
-      "id": 194,
-      "skill": "panko-4",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 4,
-          "round": 4,
-          "actionId": 194,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "panko",
-          "skillId": "panko-4",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 2,
-          "turn": 0,
-          "round": 4,
-          "actionId": 194,
-          "beat": 2,
-          "type": "shield",
-          "actorId": "panko",
-          "skillId": "panko-4",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 180,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 4,
-          "actionId": 194,
-          "beat": 2,
-          "type": "status_apply",
-          "actorId": "panko",
-          "skillId": "panko-4",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 2,
-          "note": "Saucer riposte"
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 4,
-          "actionId": 194,
-          "beat": 2,
-          "type": "status_apply",
-          "actorId": "panko",
-          "skillId": "panko-4",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 1,
-          "note": "Shelter"
-        }
-      ],
-      "ultimate": true,
-      "tier": "ultimate"
     }
   ],
   "sink": [
@@ -2827,17 +2756,17 @@
       }
     },
     {
-      "cue": "kit.holy.charge",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
       "cue": "voice.mochi.select",
       "options": {
         "volume": 0.65,
         "priority": 40
+      }
+    },
+    {
+      "cue": "kit.holy.charge",
+      "options": {
+        "speed": 1,
+        "element": "holy"
       }
     },
     {
@@ -3247,17 +3176,17 @@
       }
     },
     {
-      "cue": "kit.holy.charge",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
       "cue": "voice.soot.attack",
       "options": {
         "volume": 0.65,
         "priority": 40
+      }
+    },
+    {
+      "cue": "kit.holy.charge",
+      "options": {
+        "speed": 1,
+        "element": "holy"
       }
     },
     {
@@ -3603,6 +3532,13 @@
       }
     },
     {
+      "cue": "voice.clover.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "move.thread.whoosh",
       "options": {
         "speed": 1,
@@ -3704,13 +3640,6 @@
     {
       "cue": "status.stun.on",
       "options": {}
-    },
-    {
-      "cue": "voice.clover.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
     },
     {
       "cue": "kit.ember.charge",
@@ -3876,6 +3805,13 @@
       }
     },
     {
+      "cue": "voice.panko.attack",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "kit.garden.charge",
       "options": {
         "speed": 1,
@@ -3935,109 +3871,6 @@
       "options": {
         "speed": 1,
         "element": "garden",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.heavy.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "voice.panko.ult.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "priority": 100
-      }
-    },
-    {
-      "cue": "ult.panko.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "voice.panko.attack",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
-      "cue": "move.guardian.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "battle.cut",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.heavy.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.guardian.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.heavy.release",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "voice.panko.ult.release",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "priority": 100
-      }
-    },
-    {
-      "cue": "ult.panko.release",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.holy.impact",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "ult.panko.tail",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.guardian.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
         "volume": 0.7
       }
     }
@@ -4306,7 +4139,7 @@
       "role": "movement"
     },
     {
-      "at": 3.6,
+      "at": 3.7,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4316,7 +4149,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 3.6,
+      "at": 3.7,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4326,7 +4159,7 @@
       "targetId": "panko"
     },
     {
-      "at": 3.6,
+      "at": 3.7,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4335,7 +4168,7 @@
       "role": "charge"
     },
     {
-      "at": 3.633333333333332,
+      "at": 3.733333333333334,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4345,7 +4178,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 3.633333333333332,
+      "at": 3.733333333333334,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4355,7 +4188,7 @@
       "targetId": "panko"
     },
     {
-      "at": 3.733333333333334,
+      "at": 3.833333333333334,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4365,7 +4198,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 3.733333333333334,
+      "at": 3.833333333333334,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4374,7 +4207,7 @@
       "role": "charge"
     },
     {
-      "at": 3.766666666666666,
+      "at": 3.866666666666668,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4383,73 +4216,13 @@
       "role": "movement"
     },
     {
-      "at": 4.233333333333334,
+      "at": 4.333333333333332,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
       "actorId": "panko",
       "cue": "kit.heavy.release",
       "role": "release"
-    },
-    {
-      "at": 4.366666666666668,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "mochi"
-    },
-    {
-      "at": 4.4,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.buff.on",
-      "role": "status",
-      "targetId": "mochi"
-    },
-    {
-      "at": 4.4,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.shield.on",
-      "role": "status",
-      "targetId": "soot"
-    },
-    {
-      "at": 4.4,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.shield.on",
-      "role": "status",
-      "targetId": "clover"
-    },
-    {
-      "at": 4.4,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.buff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 4.433333333333334,
-      "planId": 30,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "soot"
     },
     {
       "at": 4.466666666666666,
@@ -4459,10 +4232,70 @@
       "actorId": "panko",
       "cue": "kit.holy.impact",
       "role": "impact",
+      "targetId": "mochi"
+    },
+    {
+      "at": 4.5,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.buff.on",
+      "role": "status",
+      "targetId": "mochi"
+    },
+    {
+      "at": 4.5,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.shield.on",
+      "role": "status",
+      "targetId": "soot"
+    },
+    {
+      "at": 4.5,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.shield.on",
+      "role": "status",
       "targetId": "clover"
     },
     {
       "at": 4.5,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.buff.on",
+      "role": "status",
+      "targetId": "panko"
+    },
+    {
+      "at": 4.533333333333334,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "kit.holy.impact",
+      "role": "impact",
+      "targetId": "soot"
+    },
+    {
+      "at": 4.566666666666666,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "kit.holy.impact",
+      "role": "impact",
+      "targetId": "clover"
+    },
+    {
+      "at": 4.6,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4472,7 +4305,7 @@
       "targetId": "panko"
     },
     {
-      "at": 4.566666666666666,
+      "at": 4.666666666666668,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4481,7 +4314,7 @@
       "role": "tail"
     },
     {
-      "at": 4.633333333333332,
+      "at": 4.733333333333334,
       "planId": 30,
       "skillId": "panko-3",
       "tier": "active",
@@ -4490,7 +4323,7 @@
       "role": "movement"
     },
     {
-      "at": 5.133333333333332,
+      "at": 5.333333333333332,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4499,7 +4332,7 @@
       "role": "charge"
     },
     {
-      "at": 5.466666666666666,
+      "at": 5.666666666666668,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4508,7 +4341,7 @@
       "role": "movement"
     },
     {
-      "at": 5.466666666666666,
+      "at": 5.666666666666668,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4517,7 +4350,7 @@
       "role": "release"
     },
     {
-      "at": 5.533333333333334,
+      "at": 5.733333333333334,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4527,7 +4360,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 5.733333333333334,
+      "at": 5.933333333333334,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4536,7 +4369,7 @@
       "role": "tail"
     },
     {
-      "at": 5.733333333333334,
+      "at": 5.933333333333334,
       "planId": 35,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -4545,7 +4378,7 @@
       "role": "movement"
     },
     {
-      "at": 5.8,
+      "at": 6,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4555,7 +4388,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 5.8,
+      "at": 6,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4564,7 +4397,7 @@
       "role": "charge"
     },
     {
-      "at": 5.833333333333332,
+      "at": 6.033333333333332,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4574,7 +4407,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 6.100000000000001,
+      "at": 6.3,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4583,7 +4416,7 @@
       "role": "movement"
     },
     {
-      "at": 6.100000000000001,
+      "at": 6.3,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4592,7 +4425,7 @@
       "role": "release"
     },
     {
-      "at": 6.2,
+      "at": 6.4,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4602,7 +4435,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 6.233333333333334,
+      "at": 6.433333333333332,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4612,7 +4445,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 6.4,
+      "at": 6.6,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4621,7 +4454,7 @@
       "role": "tail"
     },
     {
-      "at": 6.4,
+      "at": 6.6,
       "planId": 41,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4630,7 +4463,7 @@
       "role": "movement"
     },
     {
-      "at": 6.466666666666668,
+      "at": 6.666666666666668,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4639,7 +4472,7 @@
       "role": "charge"
     },
     {
-      "at": 6.766666666666664,
+      "at": 6.966666666666668,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4648,7 +4481,7 @@
       "role": "movement"
     },
     {
-      "at": 6.766666666666664,
+      "at": 6.966666666666668,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4657,7 +4490,7 @@
       "role": "release"
     },
     {
-      "at": 6.866666666666668,
+      "at": 7.066666666666668,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4667,7 +4500,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 7.066666666666668,
+      "at": 7.266666666666664,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4676,7 +4509,7 @@
       "role": "tail"
     },
     {
-      "at": 7.066666666666668,
+      "at": 7.266666666666664,
       "planId": 51,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -4685,7 +4518,16 @@
       "role": "movement"
     },
     {
-      "at": 7.433333333333332,
+      "at": 7.5,
+      "planId": 51,
+      "skillId": "round-status",
+      "tier": "basic",
+      "actorId": "mochi",
+      "cue": "voice.mochi.select",
+      "role": "bark"
+    },
+    {
+      "at": 7.633333333333332,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4694,16 +4536,7 @@
       "role": "charge"
     },
     {
-      "at": 7.5,
-      "planId": 57,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "voice.mochi.select",
-      "role": "bark"
-    },
-    {
-      "at": 7.566666666666668,
+      "at": 7.766666666666664,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4712,7 +4545,7 @@
       "role": "movement"
     },
     {
-      "at": 7.6,
+      "at": 7.8,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4721,7 +4554,7 @@
       "role": "release"
     },
     {
-      "at": 7.733333333333336,
+      "at": 7.933333333333332,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4731,7 +4564,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 7.766666666666664,
+      "at": 7.966666666666668,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4741,7 +4574,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 7.833333333333332,
+      "at": 8.033333333333331,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4751,7 +4584,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 7.933333333333332,
+      "at": 8.133333333333333,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4760,7 +4593,7 @@
       "role": "tail"
     },
     {
-      "at": 8,
+      "at": 8.2,
       "planId": 57,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -4769,7 +4602,7 @@
       "role": "movement"
     },
     {
-      "at": 8.133333333333333,
+      "at": 8.333333333333336,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4778,7 +4611,7 @@
       "role": "charge"
     },
     {
-      "at": 8.266666666666664,
+      "at": 8.466666666666669,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4787,7 +4620,7 @@
       "role": "movement"
     },
     {
-      "at": 8.3,
+      "at": 8.5,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4796,7 +4629,7 @@
       "role": "release"
     },
     {
-      "at": 8.433333333333332,
+      "at": 8.633333333333333,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4806,7 +4639,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 8.633333333333333,
+      "at": 8.833333333333336,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4815,7 +4648,7 @@
       "role": "tail"
     },
     {
-      "at": 8.7,
+      "at": 8.9,
       "planId": 61,
       "skillId": "soot-1",
       "tier": "basic",
@@ -4824,7 +4657,7 @@
       "role": "movement"
     },
     {
-      "at": 8.833333333333336,
+      "at": 9.033333333333331,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4833,7 +4666,7 @@
       "role": "charge"
     },
     {
-      "at": 8.966666666666669,
+      "at": 9.166666666666664,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4843,7 +4676,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 8.966666666666669,
+      "at": 9.166666666666664,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4852,7 +4685,7 @@
       "role": "charge"
     },
     {
-      "at": 9,
+      "at": 9.2,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4861,7 +4694,7 @@
       "role": "movement"
     },
     {
-      "at": 9.3,
+      "at": 9.5,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4870,7 +4703,7 @@
       "role": "release"
     },
     {
-      "at": 9.466666666666669,
+      "at": 9.666666666666664,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4879,7 +4712,7 @@
       "role": "impact"
     },
     {
-      "at": 9.5,
+      "at": 9.7,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4889,7 +4722,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 9.666666666666664,
+      "at": 9.866666666666667,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4898,7 +4731,7 @@
       "role": "tail"
     },
     {
-      "at": 9.7,
+      "at": 9.9,
       "planId": 68,
       "skillId": "clover-2",
       "tier": "active",
@@ -4907,7 +4740,7 @@
       "role": "movement"
     },
     {
-      "at": 10.166666666666664,
+      "at": 10.466666666666669,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4917,7 +4750,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 10.166666666666664,
+      "at": 10.466666666666669,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4926,7 +4759,7 @@
       "role": "charge"
     },
     {
-      "at": 10.2,
+      "at": 10.5,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4936,7 +4769,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 10.3,
+      "at": 10.6,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4945,7 +4778,7 @@
       "role": "movement"
     },
     {
-      "at": 10.333333333333336,
+      "at": 10.633333333333333,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4954,7 +4787,7 @@
       "role": "release"
     },
     {
-      "at": 10.466666666666669,
+      "at": 10.766666666666664,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4964,7 +4797,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 10.5,
+      "at": 10.8,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4974,7 +4807,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 10.666666666666664,
+      "at": 10.966666666666669,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4983,7 +4816,7 @@
       "role": "tail"
     },
     {
-      "at": 10.733333333333336,
+      "at": 11.033333333333331,
       "planId": 73,
       "skillId": "panko-1",
       "tier": "basic",
@@ -4992,7 +4825,7 @@
       "role": "movement"
     },
     {
-      "at": 10.866666666666667,
+      "at": 11.166666666666664,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5001,7 +4834,7 @@
       "role": "charge"
     },
     {
-      "at": 11.2,
+      "at": 11.5,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5010,7 +4843,7 @@
       "role": "movement"
     },
     {
-      "at": 11.2,
+      "at": 11.5,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5019,7 +4852,7 @@
       "role": "release"
     },
     {
-      "at": 11.266666666666664,
+      "at": 11.566666666666668,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5029,7 +4862,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 11.466666666666669,
+      "at": 11.766666666666664,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5038,7 +4871,7 @@
       "role": "tail"
     },
     {
-      "at": 11.466666666666669,
+      "at": 11.766666666666664,
       "planId": 78,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5047,7 +4880,7 @@
       "role": "movement"
     },
     {
-      "at": 11.533333333333331,
+      "at": 11.833333333333336,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5057,7 +4890,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 11.533333333333331,
+      "at": 11.833333333333336,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5066,7 +4899,7 @@
       "role": "charge"
     },
     {
-      "at": 11.566666666666668,
+      "at": 11.866666666666667,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5076,7 +4909,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 11.833333333333336,
+      "at": 12.133333333333333,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5085,7 +4918,7 @@
       "role": "movement"
     },
     {
-      "at": 11.833333333333336,
+      "at": 12.133333333333333,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5094,7 +4927,7 @@
       "role": "release"
     },
     {
-      "at": 11.933333333333332,
+      "at": 12.233333333333336,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5104,7 +4937,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 11.966666666666669,
+      "at": 12.266666666666664,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5114,7 +4947,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 12.133333333333333,
+      "at": 12.433333333333332,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5123,7 +4956,7 @@
       "role": "tail"
     },
     {
-      "at": 12.133333333333333,
+      "at": 12.433333333333332,
       "planId": 84,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5132,7 +4965,7 @@
       "role": "movement"
     },
     {
-      "at": 12.2,
+      "at": 12.5,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5141,7 +4974,7 @@
       "role": "charge"
     },
     {
-      "at": 12.5,
+      "at": 12.8,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5150,7 +4983,7 @@
       "role": "movement"
     },
     {
-      "at": 12.5,
+      "at": 12.8,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5159,7 +4992,7 @@
       "role": "release"
     },
     {
-      "at": 12.6,
+      "at": 12.9,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5169,7 +5002,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 12.633333333333333,
+      "at": 12.933333333333332,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5179,7 +5012,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 12.633333333333333,
+      "at": 12.933333333333332,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5189,7 +5022,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 12.8,
+      "at": 13.1,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5198,7 +5031,7 @@
       "role": "tail"
     },
     {
-      "at": 12.8,
+      "at": 13.1,
       "planId": 100,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5207,7 +5040,7 @@
       "role": "movement"
     },
     {
-      "at": 13.166666666666664,
+      "at": 13.466666666666669,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5216,7 +5049,7 @@
       "role": "charge"
     },
     {
-      "at": 13.2,
+      "at": 13.5,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5226,7 +5059,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 13.2,
+      "at": 13.5,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5235,7 +5068,7 @@
       "role": "charge"
     },
     {
-      "at": 13.8,
+      "at": 14.1,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5244,22 +5077,13 @@
       "role": "movement"
     },
     {
-      "at": 14.1,
+      "at": 14.4,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
       "actorId": "mochi",
       "cue": "battle.cut",
       "role": "cut"
-    },
-    {
-      "at": 14.766666666666664,
-      "planId": 123,
-      "skillId": "mochi-4",
-      "tier": "ultimate",
-      "actorId": "mochi",
-      "cue": "kit.holy.charge",
-      "role": "charge"
     },
     {
       "at": 15,
@@ -5271,7 +5095,16 @@
       "role": "bark"
     },
     {
-      "at": 15.933333333333332,
+      "at": 15.066666666666668,
+      "planId": 123,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "mochi",
+      "cue": "kit.holy.charge",
+      "role": "charge"
+    },
+    {
+      "at": 16.233333333333334,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5280,7 +5113,7 @@
       "role": "movement"
     },
     {
-      "at": 16.2,
+      "at": 16.5,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5289,7 +5122,7 @@
       "role": "release"
     },
     {
-      "at": 16.3,
+      "at": 16.6,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5299,7 +5132,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 16.3,
+      "at": 16.6,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5308,7 +5141,7 @@
       "role": "release"
     },
     {
-      "at": 16.333333333333332,
+      "at": 16.633333333333333,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5318,7 +5151,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 16.366666666666667,
+      "at": 16.666666666666668,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5328,7 +5161,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 16.366666666666667,
+      "at": 16.666666666666668,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5338,7 +5171,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 16.4,
+      "at": 16.7,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5348,7 +5181,7 @@
       "targetId": "soot"
     },
     {
-      "at": 16.433333333333334,
+      "at": 16.733333333333334,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5358,7 +5191,7 @@
       "targetId": "clover"
     },
     {
-      "at": 16.466666666666665,
+      "at": 16.766666666666666,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5368,7 +5201,7 @@
       "targetId": "panko"
     },
     {
-      "at": 16.5,
+      "at": 16.8,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5378,7 +5211,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 16.533333333333335,
+      "at": 16.833333333333332,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5387,7 +5220,7 @@
       "role": "tail"
     },
     {
-      "at": 16.6,
+      "at": 16.9,
       "planId": 123,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -5396,7 +5229,7 @@
       "role": "movement"
     },
     {
-      "at": 16.766666666666666,
+      "at": 18.166666666666668,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5405,7 +5238,7 @@
       "role": "charge"
     },
     {
-      "at": 16.9,
+      "at": 18.3,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5415,7 +5248,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 16.9,
+      "at": 18.3,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5424,7 +5257,7 @@
       "role": "charge"
     },
     {
-      "at": 16.933333333333334,
+      "at": 18.333333333333332,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5433,7 +5266,7 @@
       "role": "movement"
     },
     {
-      "at": 17.233333333333334,
+      "at": 18.633333333333333,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5442,7 +5275,7 @@
       "role": "release"
     },
     {
-      "at": 17.4,
+      "at": 18.8,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5452,7 +5285,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 17.6,
+      "at": 19,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5461,7 +5294,7 @@
       "role": "tail"
     },
     {
-      "at": 17.633333333333333,
+      "at": 19.033333333333335,
       "planId": 127,
       "skillId": "soot-2",
       "tier": "active",
@@ -5470,7 +5303,7 @@
       "role": "movement"
     },
     {
-      "at": 18.1,
+      "at": 19.5,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5479,7 +5312,7 @@
       "role": "charge"
     },
     {
-      "at": 18.233333333333334,
+      "at": 19.633333333333333,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5488,7 +5321,7 @@
       "role": "movement"
     },
     {
-      "at": 18.266666666666666,
+      "at": 19.666666666666668,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5497,7 +5330,7 @@
       "role": "release"
     },
     {
-      "at": 18.4,
+      "at": 19.8,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5507,7 +5340,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 18.6,
+      "at": 20,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5516,7 +5349,7 @@
       "role": "tail"
     },
     {
-      "at": 18.666666666666668,
+      "at": 20.066666666666666,
       "planId": 131,
       "skillId": "clover-1",
       "tier": "basic",
@@ -5525,7 +5358,7 @@
       "role": "movement"
     },
     {
-      "at": 18.8,
+      "at": 20.2,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5534,7 +5367,7 @@
       "role": "charge"
     },
     {
-      "at": 18.933333333333334,
+      "at": 20.333333333333332,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5543,7 +5376,7 @@
       "role": "movement"
     },
     {
-      "at": 18.966666666666665,
+      "at": 20.366666666666667,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5552,7 +5385,7 @@
       "role": "release"
     },
     {
-      "at": 19.1,
+      "at": 20.5,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5562,7 +5395,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 19.3,
+      "at": 20.7,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5571,7 +5404,7 @@
       "role": "tail"
     },
     {
-      "at": 19.366666666666667,
+      "at": 20.766666666666666,
       "planId": 136,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5580,7 +5413,7 @@
       "role": "movement"
     },
     {
-      "at": 19.5,
+      "at": 20.9,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5589,7 +5422,7 @@
       "role": "charge"
     },
     {
-      "at": 19.833333333333332,
+      "at": 21.233333333333334,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5598,7 +5431,7 @@
       "role": "movement"
     },
     {
-      "at": 19.833333333333332,
+      "at": 21.233333333333334,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5607,7 +5440,7 @@
       "role": "release"
     },
     {
-      "at": 19.9,
+      "at": 21.3,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5616,7 +5449,7 @@
       "role": "impact"
     },
     {
-      "at": 20.1,
+      "at": 21.5,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5625,7 +5458,7 @@
       "role": "tail"
     },
     {
-      "at": 20.1,
+      "at": 21.5,
       "planId": 140,
       "skillId": "enemy:yarn-giant:basic",
       "tier": "basic",
@@ -5634,7 +5467,7 @@
       "role": "movement"
     },
     {
-      "at": 20.166666666666668,
+      "at": 21.566666666666666,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5644,7 +5477,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 20.166666666666668,
+      "at": 21.566666666666666,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5653,7 +5486,7 @@
       "role": "charge"
     },
     {
-      "at": 20.2,
+      "at": 21.6,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5663,7 +5496,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 20.466666666666665,
+      "at": 21.866666666666667,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5672,7 +5505,7 @@
       "role": "movement"
     },
     {
-      "at": 20.466666666666665,
+      "at": 21.866666666666667,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5681,7 +5514,7 @@
       "role": "release"
     },
     {
-      "at": 20.566666666666666,
+      "at": 21.966666666666665,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5690,7 +5523,7 @@
       "role": "impact"
     },
     {
-      "at": 20.6,
+      "at": 22,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5700,7 +5533,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 20.766666666666666,
+      "at": 22.16666666666667,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5709,7 +5542,7 @@
       "role": "tail"
     },
     {
-      "at": 20.766666666666666,
+      "at": 22.16666666666667,
       "planId": 145,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5718,7 +5551,7 @@
       "role": "movement"
     },
     {
-      "at": 20.833333333333332,
+      "at": 22.233333333333334,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5727,7 +5560,16 @@
       "role": "charge"
     },
     {
-      "at": 21.133333333333333,
+      "at": 22.5,
+      "planId": 160,
+      "skillId": "enemy:binding-thread:basic",
+      "tier": "basic",
+      "actorId": "clover",
+      "cue": "voice.clover.select",
+      "role": "bark"
+    },
+    {
+      "at": 22.53333333333333,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5736,7 +5578,7 @@
       "role": "movement"
     },
     {
-      "at": 21.133333333333333,
+      "at": 22.53333333333333,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5745,7 +5587,7 @@
       "role": "release"
     },
     {
-      "at": 21.233333333333334,
+      "at": 22.633333333333333,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5754,7 +5596,7 @@
       "role": "impact"
     },
     {
-      "at": 21.433333333333334,
+      "at": 22.83333333333333,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5763,7 +5605,7 @@
       "role": "tail"
     },
     {
-      "at": 21.433333333333334,
+      "at": 22.83333333333333,
       "planId": 160,
       "skillId": "enemy:binding-thread:basic",
       "tier": "basic",
@@ -5772,7 +5614,7 @@
       "role": "movement"
     },
     {
-      "at": 21.8,
+      "at": 23.2,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5781,7 +5623,7 @@
       "role": "charge"
     },
     {
-      "at": 21.933333333333334,
+      "at": 23.33333333333333,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5790,7 +5632,7 @@
       "role": "movement"
     },
     {
-      "at": 21.966666666666665,
+      "at": 23.366666666666664,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5799,7 +5641,7 @@
       "role": "release"
     },
     {
-      "at": 22.1,
+      "at": 23.5,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5809,7 +5651,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 22.133333333333333,
+      "at": 23.533333333333328,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5819,7 +5661,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 22.200000000000003,
+      "at": 23.6,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5829,7 +5671,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 22.299999999999997,
+      "at": 23.7,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5838,7 +5680,7 @@
       "role": "tail"
     },
     {
-      "at": 22.366666666666667,
+      "at": 23.766666666666666,
       "planId": 166,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5847,7 +5689,7 @@
       "role": "movement"
     },
     {
-      "at": 22.5,
+      "at": 23.9,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5857,7 +5699,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 22.5,
+      "at": 23.9,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5867,16 +5709,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 22.5,
-      "planId": 176,
-      "skillId": "soot-4",
-      "tier": "ultimate",
-      "actorId": "clover",
-      "cue": "voice.clover.select",
-      "role": "bark"
-    },
-    {
-      "at": 22.5,
+      "at": 23.9,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5885,7 +5718,7 @@
       "role": "charge"
     },
     {
-      "at": 22.53333333333333,
+      "at": 23.933333333333337,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5895,7 +5728,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 22.53333333333333,
+      "at": 23.933333333333337,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5905,7 +5738,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 22.53333333333333,
+      "at": 23.933333333333337,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5915,7 +5748,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 22.53333333333333,
+      "at": 23.933333333333337,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5924,7 +5757,7 @@
       "role": "charge"
     },
     {
-      "at": 23.133333333333336,
+      "at": 24.533333333333328,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5933,7 +5766,7 @@
       "role": "movement"
     },
     {
-      "at": 23.433333333333337,
+      "at": 24.83333333333333,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5942,7 +5775,7 @@
       "role": "cut"
     },
     {
-      "at": 24.1,
+      "at": 25.5,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5951,7 +5784,7 @@
       "role": "charge"
     },
     {
-      "at": 25.266666666666666,
+      "at": 26.66666666666667,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5960,7 +5793,7 @@
       "role": "movement"
     },
     {
-      "at": 25.533333333333328,
+      "at": 26.933333333333337,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5969,7 +5802,7 @@
       "role": "release"
     },
     {
-      "at": 25.633333333333336,
+      "at": 27.033333333333328,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5979,7 +5812,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 25.633333333333336,
+      "at": 27.033333333333328,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5988,7 +5821,7 @@
       "role": "release"
     },
     {
-      "at": 25.66666666666667,
+      "at": 27.066666666666663,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -5998,7 +5831,7 @@
       "targetId": "foe-0-yarn-giant"
     },
     {
-      "at": 25.7,
+      "at": 27.1,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6008,7 +5841,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 25.7,
+      "at": 27.1,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6018,7 +5851,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 25.733333333333334,
+      "at": 27.133333333333336,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6028,7 +5861,7 @@
       "targetId": "foe-1-binding-thread"
     },
     {
-      "at": 25.766666666666666,
+      "at": 27.16666666666667,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6038,7 +5871,7 @@
       "targetId": "foe-2-binding-thread"
     },
     {
-      "at": 25.866666666666664,
+      "at": 27.266666666666666,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6047,7 +5880,7 @@
       "role": "tail"
     },
     {
-      "at": 25.933333333333337,
+      "at": 27.33333333333333,
       "planId": 176,
       "skillId": "soot-4",
       "tier": "ultimate",
@@ -6056,7 +5889,7 @@
       "role": "movement"
     },
     {
-      "at": 26.1,
+      "at": 28.4,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6065,7 +5898,7 @@
       "role": "charge"
     },
     {
-      "at": 26.133333333333336,
+      "at": 28.433333333333337,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6075,7 +5908,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 26.133333333333336,
+      "at": 28.433333333333337,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6084,7 +5917,7 @@
       "role": "charge"
     },
     {
-      "at": 26.733333333333334,
+      "at": 29.033333333333328,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6093,7 +5926,7 @@
       "role": "movement"
     },
     {
-      "at": 27.033333333333328,
+      "at": 29.33333333333333,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6102,7 +5935,16 @@
       "role": "cut"
     },
     {
-      "at": 27.7,
+      "at": 30,
+      "planId": 189,
+      "skillId": "clover-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "voice.panko.attack",
+      "role": "bark"
+    },
+    {
+      "at": 30,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6111,7 +5953,7 @@
       "role": "charge"
     },
     {
-      "at": 28.866666666666664,
+      "at": 31.16666666666667,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6120,7 +5962,7 @@
       "role": "movement"
     },
     {
-      "at": 29.133333333333336,
+      "at": 31.433333333333337,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6129,7 +5971,7 @@
       "role": "release"
     },
     {
-      "at": 29.233333333333334,
+      "at": 31.533333333333328,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6139,7 +5981,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 29.233333333333334,
+      "at": 31.533333333333328,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6148,7 +5990,7 @@
       "role": "release"
     },
     {
-      "at": 29.266666666666666,
+      "at": 31.566666666666663,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6157,7 +5999,7 @@
       "role": "impact"
     },
     {
-      "at": 29.3,
+      "at": 31.6,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6167,7 +6009,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 29.466666666666672,
+      "at": 31.766666666666666,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
@@ -6176,141 +6018,12 @@
       "role": "tail"
     },
     {
-      "at": 29.533333333333328,
+      "at": 31.83333333333333,
       "planId": 189,
       "skillId": "clover-4",
       "tier": "ultimate",
       "actorId": "clover",
       "cue": "move.healer.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.7,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "kit.heavy.charge",
-      "role": "charge"
-    },
-    {
-      "at": 29.733333333333334,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "voice.panko.ult.charge",
-      "role": "voice",
-      "voicePhase": "charge"
-    },
-    {
-      "at": 29.733333333333334,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "ult.panko.charge",
-      "role": "charge"
-    },
-    {
-      "at": 30,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "voice.panko.attack",
-      "role": "bark"
-    },
-    {
-      "at": 30.33333333333333,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "move.guardian.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 30.633333333333336,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "battle.cut",
-      "role": "cut"
-    },
-    {
-      "at": 31.3,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "kit.heavy.charge",
-      "role": "charge"
-    },
-    {
-      "at": 32.46666666666667,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "move.guardian.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 32.733333333333334,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "kit.heavy.release",
-      "role": "release"
-    },
-    {
-      "at": 32.833333333333336,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "voice.panko.ult.release",
-      "role": "voice",
-      "voicePhase": "release"
-    },
-    {
-      "at": 32.833333333333336,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "ult.panko.release",
-      "role": "release"
-    },
-    {
-      "at": 32.86666666666667,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "panko"
-    },
-    {
-      "at": 33.06666666666667,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "ult.panko.tail",
-      "role": "tail"
-    },
-    {
-      "at": 33.13333333333333,
-      "planId": 194,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "move.guardian.whoosh",
       "role": "movement"
     }
   ],

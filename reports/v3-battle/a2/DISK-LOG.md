@@ -118,3 +118,8 @@ Current encoded evidence retained. No low-disk restriction.
 ## Resume 2026-11-13T11:05:53.134082+00:00
 Before 289.89 GiB; after 289.89 GiB. Removed 0 already encoded temporary PNGs and []. Running preview cache will be cleaned after stopping its documented PIDs; no other worktree touched.
 Stopped documented preview63874/63866; cleared its .vite and .vite-temp caches before restarting on5990.
+Resume cleanup also removed312 flat frame-*.png files next to their completed battle.webm, reclaiming0.31GiB.
+Removed18 cached original-plate comparison PNGs after encoding; summon-review.mjs can re-extract the exact baseline from git a40eb3bea. Exploratory pilot directories remain local/ignored, with numeric summaries and comparisons retained.
+
+## Resume 2026-11-13T11:27:15.763387+00:00
+Before 289.71 GiB; after 290.01 GiB. Removed 304 encoded temporary frames and ['reports/v3-battle/a2/ref']. Active Vite cache retained until documented server shutdown; no other worktree touched.

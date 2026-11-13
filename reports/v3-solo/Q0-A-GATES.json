@@ -1,0 +1,1579 @@
+{
+  "utc": "2026-11-13T12:28:57.167Z",
+  "cards": {
+    "G0": [
+      {
+        "id": "G0.freshness",
+        "pass": false,
+        "measured": "7d251b672fde5a9f40e1cbc541eaf02383c23b78",
+        "required": "evidence >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f"
+      },
+      {
+        "id": "G0.suite-freshness",
+        "pass": false,
+        "measured": "506a79d750f772bc0b96776bc2cef8b9b3ff3f3c",
+        "required": "suite >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f"
+      },
+      {
+        "id": "G0.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "G0.bootstrap-all-fail",
+        "pass": true,
+        "measured": 330,
+        "required": "eq 330"
+      },
+      {
+        "id": "G0.bootstrap-gate-count",
+        "pass": true,
+        "measured": 330,
+        "required": "min 100"
+      },
+      {
+        "id": "G0.tests",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "G0.fixtures",
+        "pass": true,
+        "measured": 3,
+        "required": "eq 3"
+      },
+      {
+        "id": "G0.fps",
+        "pass": true,
+        "measured": 30,
+        "required": "eq 30"
+      },
+      {
+        "id": "G0.fixture-captures",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "G0.checker-test-log",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "G0.bootstrap-log",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "G0.compare-tool",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "G0.capture-tool",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "G0.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "G0.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "G0.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "G0.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "G0.artifact-freshness",
+        "pass": false,
+        "measured": 5,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "R": [
+      {
+        "id": "R.freshness",
+        "pass": true,
+        "measured": "ae12e046fd36daf7633838a26a3579a116d9324e",
+        "required": "evidence >= ae12e046fd36daf7633838a26a3579a116d9324e"
+      },
+      {
+        "id": "R.suite-freshness",
+        "pass": false,
+        "measured": "3c0bc9cb9b67d163b8ec3789f67158148bd9e77e",
+        "required": "suite >= ae12e046fd36daf7633838a26a3579a116d9324e"
+      },
+      {
+        "id": "R.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "R.windows",
+        "pass": true,
+        "measured": 12,
+        "required": "min 12"
+      },
+      {
+        "id": "R.window-seconds",
+        "pass": true,
+        "measured": 10,
+        "required": "min 10"
+      },
+      {
+        "id": "R.ultimate-windows",
+        "pass": true,
+        "measured": 6,
+        "required": "min 6"
+      },
+      {
+        "id": "R.unit-boxes",
+        "pass": true,
+        "measured": 44,
+        "required": "min 40"
+      },
+      {
+        "id": "R.unit-frames",
+        "pass": true,
+        "measured": 11,
+        "required": "min 10"
+      },
+      {
+        "id": "R.number-boxes",
+        "pass": true,
+        "measured": 33,
+        "required": "min 30"
+      },
+      {
+        "id": "R.text-frames",
+        "pass": true,
+        "measured": 10,
+        "required": "min 10"
+      },
+      {
+        "id": "R.displacement-windows",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "R.scale.median",
+        "pass": true,
+        "measured": 0.20946,
+        "required": "min 0"
+      },
+      {
+        "id": "R.scale.p10",
+        "pass": true,
+        "measured": 0.16723,
+        "required": "min 0"
+      },
+      {
+        "id": "R.scale.p90",
+        "pass": true,
+        "measured": 0.22247,
+        "required": "min 0"
+      },
+      {
+        "id": "R.motion.meanEnergy",
+        "pass": true,
+        "measured": 22.565131092745876,
+        "required": "min 0"
+      },
+      {
+        "id": "R.motion.displacementPer10s",
+        "pass": true,
+        "measured": 0.6666666666666666,
+        "required": "min 0"
+      },
+      {
+        "id": "R.ultimate.coverageMedian",
+        "pass": true,
+        "measured": 0.8743749999999999,
+        "required": "min 0"
+      },
+      {
+        "id": "R.ultimate.peakLuminance",
+        "pass": true,
+        "measured": 255,
+        "required": "min 0"
+      },
+      {
+        "id": "R.ultimate.whiteoutFraction",
+        "pass": true,
+        "measured": 0.05936355311355311,
+        "required": "min 0"
+      },
+      {
+        "id": "R.ultimate.dominantHues",
+        "pass": true,
+        "measured": 3,
+        "required": "min 0"
+      },
+      {
+        "id": "R.ultimate.durationMedian",
+        "pass": true,
+        "measured": 2.599999999999997,
+        "required": "min 0"
+      },
+      {
+        "id": "R.numbers.medianHeight720",
+        "pass": true,
+        "measured": 46.21621621621622,
+        "required": "min 0"
+      },
+      {
+        "id": "R.numbers.maxSimultaneous",
+        "pass": true,
+        "measured": 9,
+        "required": "min 0"
+      },
+      {
+        "id": "R.numbers.impactPerSecond",
+        "pass": true,
+        "measured": 4.28571428571429,
+        "required": "min 0"
+      },
+      {
+        "id": "R.text.medianWords",
+        "pass": true,
+        "measured": 13,
+        "required": "min 0"
+      },
+      {
+        "id": "R.audio.normalOnsetsPerSecond",
+        "pass": true,
+        "measured": 5.544373284537969,
+        "required": "min 0"
+      },
+      {
+        "id": "R.audio.ultimateOnsetsPerSecond",
+        "pass": true,
+        "measured": 6.822429906542055,
+        "required": "min 0"
+      },
+      {
+        "id": "R.audio.voiceLikePerMinute",
+        "pass": true,
+        "measured": 2,
+        "required": "min 0"
+      },
+      {
+        "id": "R.reference-json",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "R.baseline-json",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "R.research-table",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "R.table-rows",
+        "pass": true,
+        "measured": 22,
+        "required": "min 20"
+      },
+      {
+        "id": "R.articles",
+        "pass": true,
+        "measured": 4,
+        "required": "min 3"
+      },
+      {
+        "id": "R.motion-rules",
+        "pass": true,
+        "measured": 12,
+        "required": "min 12"
+      },
+      {
+        "id": "R.split-pilots",
+        "pass": true,
+        "measured": 3,
+        "required": "eq 3"
+      },
+      {
+        "id": "R.layer-types",
+        "pass": true,
+        "measured": 20,
+        "required": "min 15"
+      },
+      {
+        "id": "R.targets-measured",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "R.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "R.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "R.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "R.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "R.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "F1": [
+      {
+        "id": "F1.freshness",
+        "pass": true,
+        "measured": "ec01ea423ca3928db42e5eacc7e42aef76254c57",
+        "required": "evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57"
+      },
+      {
+        "id": "F1.suite-freshness",
+        "pass": false,
+        "measured": "c55e4ed0dbf287eee865f69236a22ae160d5f14d",
+        "required": "suite >= ec01ea423ca3928db42e5eacc7e42aef76254c57"
+      },
+      {
+        "id": "F1.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "F1.unit-height[wave1@1280x720]",
+        "pass": true,
+        "measured": 0.2080669501050842,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.unit-height[wave3@1280x720]",
+        "pass": true,
+        "measured": 0.21747252706566694,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.unit-height[boss@1280x720]",
+        "pass": true,
+        "measured": 0.20228747426319904,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.unit-height[wave1@1440x900]",
+        "pass": true,
+        "measured": 0.2080669501050843,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.unit-height[wave3@1440x900]",
+        "pass": true,
+        "measured": 0.21747252706566694,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.unit-height[boss@1440x900]",
+        "pass": true,
+        "measured": 0.20228747426319899,
+        "required": "band [0.157095,0.26182500000000003]"
+      },
+      {
+        "id": "F1.face-occlusion[wave1@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.face-occlusion[wave3@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.face-occlusion[boss@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.face-occlusion[wave1@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.face-occlusion[wave3@1440x900]",
+        "pass": true,
+        "measured": 0.0018061181589966798,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.face-occlusion[boss@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "max 0.1"
+      },
+      {
+        "id": "F1.clipping[wave1@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.clipping[wave3@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.clipping[boss@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.clipping[wave1@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.clipping[wave3@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.clipping[boss@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.floor[wave1@1280x720]",
+        "pass": true,
+        "measured": 0.6295568181818182,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.floor[wave3@1280x720]",
+        "pass": true,
+        "measured": 0.5163139204545455,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.floor[boss@1280x720]",
+        "pass": true,
+        "measured": 0.5814076704545454,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.floor[wave1@1440x900]",
+        "pass": true,
+        "measured": 0.6211691400304414,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.floor[wave3@1440x900]",
+        "pass": true,
+        "measured": 0.5052768264840183,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.floor[boss@1440x900]",
+        "pass": true,
+        "measured": 0.5707267884322679,
+        "required": "min 0.5"
+      },
+      {
+        "id": "F1.field-names[wave1@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.field-names[wave3@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.field-names[boss@1280x720]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.field-names[wave1@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.field-names[wave3@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.field-names[boss@1440x900]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.core-size",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.comparisons",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "F1.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F1.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "F2": [
+      {
+        "id": "F2.freshness",
+        "pass": true,
+        "measured": "ec01ea423ca3928db42e5eacc7e42aef76254c57",
+        "required": "evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57"
+      },
+      {
+        "id": "F2.suite-freshness",
+        "pass": false,
+        "measured": "e502656bd0c3a703bee3dd9158411dade777cbab",
+        "required": "suite >= ec01ea423ca3928db42e5eacc7e42aef76254c57"
+      },
+      {
+        "id": "F2.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "F2.alpha[wave1]",
+        "pass": true,
+        "measured": 1,
+        "required": "min 0.97"
+      },
+      {
+        "id": "F2.alpha[wave3]",
+        "pass": true,
+        "measured": 1,
+        "required": "min 0.97"
+      },
+      {
+        "id": "F2.alpha[boss]",
+        "pass": true,
+        "measured": 1,
+        "required": "min 0.97"
+      },
+      {
+        "id": "F2.persistent-bubbles[wave1]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.persistent-bubbles[wave3]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.persistent-bubbles[boss]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.contrast[wave1]",
+        "pass": true,
+        "measured": 39.69182659063967,
+        "required": "min 18"
+      },
+      {
+        "id": "F2.contrast[wave3]",
+        "pass": true,
+        "measured": 39.69182659063967,
+        "required": "min 18"
+      },
+      {
+        "id": "F2.contrast[boss]",
+        "pass": true,
+        "measured": 39.69182659063967,
+        "required": "min 18"
+      },
+      {
+        "id": "F2.comparisons",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "F2.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "F2.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "M1": [
+      {
+        "id": "M1.freshness",
+        "pass": false,
+        "measured": "1f8261375afaed7a42197d9df55e16994c461873",
+        "required": "evidence >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046"
+      },
+      {
+        "id": "M1.suite-freshness",
+        "pass": false,
+        "measured": "1f8261375afaed7a42197d9df55e16994c461873",
+        "required": "suite >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046"
+      },
+      {
+        "id": "M1.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "M1.input-freshness",
+        "pass": false,
+        "measured": 3,
+        "required": "eq 0 missing or stale raw captures/reviews"
+      },
+      {
+        "id": "M1.seconds[wave1]",
+        "pass": true,
+        "measured": 31,
+        "required": "min 30"
+      },
+      {
+        "id": "M1.seconds[wave3]",
+        "pass": true,
+        "measured": 30.366666666666667,
+        "required": "min 30"
+      },
+      {
+        "id": "M1.seconds[boss]",
+        "pass": true,
+        "measured": 33.3,
+        "required": "min 30"
+      },
+      {
+        "id": "M1.displacements[wave1]",
+        "pass": true,
+        "measured": 18.709677419354836,
+        "required": "min 2"
+      },
+      {
+        "id": "M1.displacements[wave3]",
+        "pass": true,
+        "measured": 20.08781558726674,
+        "required": "min 2"
+      },
+      {
+        "id": "M1.displacements[boss]",
+        "pass": true,
+        "measured": 16.816816816816818,
+        "required": "min 2"
+      },
+      {
+        "id": "M1.motion-energy[wave1]",
+        "pass": false,
+        "measured": 8.052015373429048,
+        "required": "min 15.795591764922111"
+      },
+      {
+        "id": "M1.motion-energy[wave3]",
+        "pass": false,
+        "measured": 8.964323986088088,
+        "required": "min 15.795591764922111"
+      },
+      {
+        "id": "M1.motion-energy[boss]",
+        "pass": false,
+        "measured": 9.484081449278866,
+        "required": "min 15.795591764922111"
+      },
+      {
+        "id": "M1.every-action-moves[wave1]",
+        "pass": true,
+        "measured": 0.08795395679706272,
+        "required": "min 0.06"
+      },
+      {
+        "id": "M1.every-action-moves[wave3]",
+        "pass": true,
+        "measured": 0.08795395679706272,
+        "required": "min 0.06"
+      },
+      {
+        "id": "M1.every-action-moves[boss]",
+        "pass": true,
+        "measured": 0.08795395679706272,
+        "required": "min 0.06"
+      },
+      {
+        "id": "M1.hit-knockback[wave1]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "M1.hit-knockback[wave3]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "M1.hit-knockback[boss]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "M1.high-fps[wave1]",
+        "pass": true,
+        "measured": 59.878247563258306,
+        "required": "min 50"
+      },
+      {
+        "id": "M1.high-fps[wave3]",
+        "pass": true,
+        "measured": 60.00083218907336,
+        "required": "min 50"
+      },
+      {
+        "id": "M1.high-fps[boss]",
+        "pass": true,
+        "measured": 60.02181097709672,
+        "required": "min 50"
+      },
+      {
+        "id": "M1.crowded-units",
+        "pass": true,
+        "measured": 10,
+        "required": "min 10"
+      },
+      {
+        "id": "M1.archetype-strips",
+        "pass": true,
+        "measured": 6,
+        "required": "min 6"
+      },
+      {
+        "id": "M1.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M1.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M1.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "M1.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M1.artifact-freshness",
+        "pass": false,
+        "measured": 6,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "M2": [
+      {
+        "id": "M2.freshness",
+        "pass": true,
+        "measured": "341567cfb9a2e3e974de03bda6f4f649542fc103",
+        "required": "evidence >= 341567cfb9a2e3e974de03bda6f4f649542fc103"
+      },
+      {
+        "id": "M2.suite-freshness",
+        "pass": true,
+        "measured": "341567cfb9a2e3e974de03bda6f4f649542fc103",
+        "required": "suite >= 341567cfb9a2e3e974de03bda6f4f649542fc103"
+      },
+      {
+        "id": "M2.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "M2.units-inspected",
+        "pass": true,
+        "measured": 22,
+        "required": "eq 22"
+      },
+      {
+        "id": "M2.separate-parts",
+        "pass": true,
+        "measured": 22,
+        "required": "min 20"
+      },
+      {
+        "id": "M2.visible-faces",
+        "pass": true,
+        "measured": 22,
+        "required": "eq 22"
+      },
+      {
+        "id": "M2.zero-holes",
+        "pass": true,
+        "measured": 18,
+        "required": "min 18"
+      },
+      {
+        "id": "M2.remaining-holes",
+        "pass": true,
+        "measured": 79,
+        "required": "max 150"
+      },
+      {
+        "id": "M2.extreme-poses",
+        "pass": true,
+        "measured": 8,
+        "required": "min 8"
+      },
+      {
+        "id": "M2.joint-overlap",
+        "pass": true,
+        "measured": 12,
+        "required": "min 12"
+      },
+      {
+        "id": "M2.core-size",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M2.face-strips",
+        "pass": true,
+        "measured": 23,
+        "required": "min 22"
+      },
+      {
+        "id": "M2.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M2.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M2.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "M2.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "M2.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "V1": [
+      {
+        "id": "V1.freshness",
+        "pass": true,
+        "measured": "c7ff00b92a7a18d658a5b24c4576d20ecbea1046",
+        "required": "evidence >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046"
+      },
+      {
+        "id": "V1.suite-freshness",
+        "pass": false,
+        "measured": "d03416bbab0c887ca8d7f5167eea4e3caa6f8d46",
+        "required": "suite >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046"
+      },
+      {
+        "id": "V1.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "V1.plate-count",
+        "pass": true,
+        "measured": 13,
+        "required": "eq 13"
+      },
+      {
+        "id": "V1.coverage",
+        "pass": true,
+        "measured": 0.625700284090909,
+        "required": "min 0.6120624999999998"
+      },
+      {
+        "id": "V1.viewport",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V1.edges",
+        "pass": true,
+        "measured": 2,
+        "required": "eq 2"
+      },
+      {
+        "id": "V1.layer-types",
+        "pass": true,
+        "measured": 11,
+        "required": "min 7"
+      },
+      {
+        "id": "V1.particles",
+        "pass": true,
+        "measured": 480,
+        "required": "min 300"
+      },
+      {
+        "id": "V1.beats",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "V1.distinctness",
+        "pass": true,
+        "measured": 0.18218093990217687,
+        "required": "max 0.55"
+      },
+      {
+        "id": "V1.pair-count",
+        "pass": true,
+        "measured": 78,
+        "required": "eq 78"
+      },
+      {
+        "id": "V1.bytes",
+        "pass": true,
+        "measured": 20157327,
+        "required": "max 20971520"
+      },
+      {
+        "id": "V1.motif-area",
+        "pass": true,
+        "measured": 0.46392361111111113,
+        "required": "min 0.4"
+      },
+      {
+        "id": "V1.camera-paths",
+        "pass": true,
+        "measured": 13,
+        "required": "eq 13"
+      },
+      {
+        "id": "V1.comparisons",
+        "pass": true,
+        "measured": 13,
+        "required": "min 13"
+      },
+      {
+        "id": "V1.render-log",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "V1.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V1.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V1.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "V1.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V1.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "V2": [
+      {
+        "id": "V2.freshness",
+        "pass": false,
+        "measured": "1af92d4d36554f09b78a4ae8bba2ef748f580ed5",
+        "required": "evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "V2.suite-freshness",
+        "pass": false,
+        "measured": "1af92d4d36554f09b78a4ae8bba2ef748f580ed5",
+        "required": "suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "V2.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "V2.input-freshness",
+        "pass": false,
+        "measured": 4,
+        "required": "eq 0 missing or stale raw captures/reviews"
+      },
+      {
+        "id": "V2.number-height[wave1]",
+        "pass": true,
+        "measured": 46,
+        "required": "band [34.66216216216216,57.770270270270274]"
+      },
+      {
+        "id": "V2.number-height[wave3]",
+        "pass": true,
+        "measured": 46,
+        "required": "band [34.66216216216216,57.770270270270274]"
+      },
+      {
+        "id": "V2.number-height[boss]",
+        "pass": true,
+        "measured": 46,
+        "required": "band [34.66216216216216,57.770270270270274]"
+      },
+      {
+        "id": "V2.active-coverage[wave1]",
+        "pass": true,
+        "measured": 0.27606119791666667,
+        "required": "min 0.15"
+      },
+      {
+        "id": "V2.active-coverage[wave3]",
+        "pass": true,
+        "measured": 0.16379231770833333,
+        "required": "min 0.15"
+      },
+      {
+        "id": "V2.active-coverage[boss]",
+        "pass": true,
+        "measured": 0.3190256076388889,
+        "required": "min 0.15"
+      },
+      {
+        "id": "V2.basic-coverage[wave1]",
+        "pass": true,
+        "measured": 0.06484592013888889,
+        "required": "min 0.05"
+      },
+      {
+        "id": "V2.basic-coverage[wave3]",
+        "pass": true,
+        "measured": 0.052203776041666664,
+        "required": "min 0.05"
+      },
+      {
+        "id": "V2.basic-coverage[boss]",
+        "pass": true,
+        "measured": 0.06672634548611112,
+        "required": "min 0.05"
+      },
+      {
+        "id": "V2.impact-density[wave1]",
+        "pass": true,
+        "measured": 5.76923076923081,
+        "required": "min 3.0000000000000027"
+      },
+      {
+        "id": "V2.impact-density[wave3]",
+        "pass": true,
+        "measured": 5.769230769230769,
+        "required": "min 3.0000000000000027"
+      },
+      {
+        "id": "V2.impact-density[boss]",
+        "pass": true,
+        "measured": 5.769230769230769,
+        "required": "min 3.0000000000000027"
+      },
+      {
+        "id": "V2.high-fps[wave1]",
+        "pass": true,
+        "measured": 59.93001238496691,
+        "required": "min 50"
+      },
+      {
+        "id": "V2.high-fps[wave3]",
+        "pass": true,
+        "measured": 60.05080581351768,
+        "required": "min 50"
+      },
+      {
+        "id": "V2.high-fps[boss]",
+        "pass": true,
+        "measured": 60.00482701804433,
+        "required": "min 50"
+      },
+      {
+        "id": "V2.sequences",
+        "pass": true,
+        "measured": 36,
+        "required": "min 36"
+      },
+      {
+        "id": "V2.all-active-coverage",
+        "pass": true,
+        "measured": 0.21612738715277777,
+        "required": "min 0.15"
+      },
+      {
+        "id": "V2.all-basic-coverage",
+        "pass": true,
+        "measured": 0.06421766493055556,
+        "required": "min 0.05"
+      },
+      {
+        "id": "V2.distinctness",
+        "pass": true,
+        "measured": 0.5763846476870877,
+        "required": "max 0.6"
+      },
+      {
+        "id": "V2.sequence-strips",
+        "pass": true,
+        "measured": 36,
+        "required": "min 36"
+      },
+      {
+        "id": "V2.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V2.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V2.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "V2.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V2.artifact-freshness",
+        "pass": false,
+        "measured": 36,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "V3": [
+      {
+        "id": "V3.freshness",
+        "pass": true,
+        "measured": "b55fef878076ed880504f74a8719dc1f33839c72",
+        "required": "evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "V3.suite-freshness",
+        "pass": false,
+        "measured": "d2def5b5e311fa9946a020b25f758a46c931de06",
+        "required": "suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "V3.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "V3.cue-density[wave1]",
+        "pass": true,
+        "measured": 7.54945054945055,
+        "required": "min 4.775700934579438"
+      },
+      {
+        "id": "V3.cue-density[wave3]",
+        "pass": true,
+        "measured": 7.5809935205183585,
+        "required": "min 4.775700934579438"
+      },
+      {
+        "id": "V3.cue-density[boss]",
+        "pass": true,
+        "measured": 6.983805668016195,
+        "required": "min 4.775700934579438"
+      },
+      {
+        "id": "V3.ultimate-voice[wave1]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.ultimate-voice[wave3]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.ultimate-voice[boss]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.active-voice[wave1]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.active-voice[wave3]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.active-voice[boss]",
+        "pass": true,
+        "measured": 1,
+        "required": "eq 1"
+      },
+      {
+        "id": "V3.unknown-cues[wave1]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.unknown-cues[wave3]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.unknown-cues[boss]",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.bark-spacing[wave1]",
+        "pass": true,
+        "measured": 7.5,
+        "required": "band [7,8]"
+      },
+      {
+        "id": "V3.bark-spacing[wave3]",
+        "pass": true,
+        "measured": 7.5,
+        "required": "band [7,8]"
+      },
+      {
+        "id": "V3.bark-spacing[boss]",
+        "pass": true,
+        "measured": 7.5,
+        "required": "band [7,8]"
+      },
+      {
+        "id": "V3.callout-rows",
+        "pass": true,
+        "measured": 112,
+        "required": "min 25"
+      },
+      {
+        "id": "V3.callout-table",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "V3.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "V3.artifact-freshness",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ],
+    "T1": [
+      {
+        "id": "T1.freshness",
+        "pass": true,
+        "measured": "b55fef878076ed880504f74a8719dc1f33839c72",
+        "required": "evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "T1.suite-freshness",
+        "pass": false,
+        "measured": "df506d321ab40b3e86f48ddd69a2a754444c2a99",
+        "required": "suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94"
+      },
+      {
+        "id": "T1.committed-source",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0 uncommitted source changes"
+      },
+      {
+        "id": "T1.word-samples[wave1]",
+        "pass": true,
+        "measured": 30,
+        "required": "min 30"
+      },
+      {
+        "id": "T1.word-samples[wave3]",
+        "pass": true,
+        "measured": 30,
+        "required": "min 30"
+      },
+      {
+        "id": "T1.word-samples[boss]",
+        "pass": true,
+        "measured": 30,
+        "required": "min 30"
+      },
+      {
+        "id": "T1.word-max[wave1]",
+        "pass": true,
+        "measured": 3,
+        "required": "max 8"
+      },
+      {
+        "id": "T1.word-max[wave3]",
+        "pass": true,
+        "measured": 3,
+        "required": "max 8"
+      },
+      {
+        "id": "T1.word-max[boss]",
+        "pass": true,
+        "measured": 3,
+        "required": "max 8"
+      },
+      {
+        "id": "T1.system-fonts",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "T1.desktop-small",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "T1.desktop-large",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "T1.phone",
+        "pass": true,
+        "measured": 1,
+        "required": "min 1"
+      },
+      {
+        "id": "T1.comparisons",
+        "pass": true,
+        "measured": 3,
+        "required": "min 3"
+      },
+      {
+        "id": "T1.typecheck",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "T1.unit",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "T1.e2e",
+        "pass": false,
+        "measured": 1,
+        "required": "eq 0"
+      },
+      {
+        "id": "T1.parity",
+        "pass": true,
+        "measured": 0,
+        "required": "eq 0"
+      },
+      {
+        "id": "T1.artifact-freshness",
+        "pass": false,
+        "measured": 3,
+        "required": "eq 0 artifacts older than last source commit"
+      }
+    ]
+  }
+}

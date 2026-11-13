@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T07:22:55.742Z",
-    "sourceCommit": "d2def5b5e311fa9946a020b25f758a46c931de06"
+    "generatedAt": "2026-11-13T11:20:12.368Z",
+    "sourceCommit": "b55fef878076ed880504f74a8719dc1f33839c72"
   },
   "plans": [
     {
@@ -2199,285 +2199,6 @@
       ],
       "ultimate": true,
       "tier": "ultimate"
-    },
-    {
-      "id": 176,
-      "skill": "enemy:kettle-knight:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 176,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-0-kettle-knight",
-          "skillId": "eliteAttack",
-          "targetIds": [
-            "panko",
-            "foe-0-kettle-knight"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 176,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-0-kettle-knight",
-          "skillId": "eliteAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 176,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "eliteAttack",
-          "targetIds": [
-            "foe-0-kettle-knight"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 181,
-      "skill": "enemy:crumb-sentinel:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 181,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-3-crumb-sentinel",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "panko",
-            "foe-3-crumb-sentinel"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 2,
-          "turn": 0,
-          "round": 3,
-          "actionId": 181,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-3-crumb-sentinel",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 181,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "foe-3-crumb-sentinel"
-          ],
-          "amount": 32,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 181,
-          "beat": 2,
-          "type": "status_apply",
-          "actorId": "foe-3-crumb-sentinel",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 1,
-          "note": "Crumb trail"
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 183,
-      "skill": "enemy:spool-ram:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 183,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-1-spool-ram",
-          "skillId": "chargerAttack",
-          "targetIds": [
-            "foe-1-spool-ram"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 1,
-          "turn": 0,
-          "round": 3,
-          "actionId": 183,
-          "beat": 2,
-          "type": "charge",
-          "actorId": "foe-1-spool-ram",
-          "skillId": "chargerAttack",
-          "targetIds": [
-            "foe-1-spool-ram"
-          ],
-          "amount": 1,
-          "note": "Charging a row strike"
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 188,
-      "skill": "enemy:needle-moth:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 188,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-4-needle-moth",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko",
-            "foe-4-needle-moth"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 188,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-4-needle-moth",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 188,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "foe-4-needle-moth"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 192,
-      "skill": "enemy:pollen-scout:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 192,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-2-pollen-scout",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko",
-            "foe-2-pollen-scout"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 2,
-          "turn": 0,
-          "round": 3,
-          "actionId": 192,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-2-pollen-scout",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 192,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "foe-2-pollen-scout"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
     }
   ],
   "sink": [
@@ -2998,17 +2719,17 @@
       }
     },
     {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
       "cue": "voice.mochi.select",
       "options": {
         "volume": 0.65,
         "priority": 40
+      }
+    },
+    {
+      "cue": "kit.slash.impact",
+      "options": {
+        "speed": 1,
+        "element": "slash"
       }
     },
     {
@@ -3457,6 +3178,13 @@
       }
     },
     {
+      "cue": "voice.soot.attack",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "kit.slash.tail",
       "options": {
         "speed": 1,
@@ -3476,13 +3204,6 @@
       "options": {
         "speed": 1,
         "element": "heavy"
-      }
-    },
-    {
-      "cue": "voice.soot.attack",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
       }
     },
     {
@@ -3773,6 +3494,13 @@
       }
     },
     {
+      "cue": "voice.clover.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "kit.holy.release",
       "options": {
         "speed": 1,
@@ -3931,13 +3659,6 @@
       }
     },
     {
-      "cue": "voice.clover.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.garden.release",
       "options": {
         "speed": 1,
@@ -4070,242 +3791,10 @@
       }
     },
     {
-      "cue": "kit.heavy.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.elite.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.heavy.release",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.heavy.impact",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.heavy.tail",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.elite.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "status.debuff.on",
-      "options": {}
-    },
-    {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "status.debuff.off",
-      "options": {}
-    },
-    {
-      "cue": "move.guard.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "status.debuff.on",
-      "options": {}
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.guard.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.heavy.charge",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.charger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.heavy.release",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.heavy.impact",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "kit.heavy.tail",
-      "options": {
-        "speed": 1,
-        "element": "heavy"
-      }
-    },
-    {
-      "cue": "move.charger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "heavy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
       "cue": "voice.panko.attack",
       "options": {
         "volume": 0.65,
         "priority": 40
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
       }
     }
   ],
@@ -4613,7 +4102,7 @@
       "role": "movement"
     },
     {
-      "at": 3.4,
+      "at": 3.5,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4623,7 +4112,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 3.4,
+      "at": 3.5,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4633,7 +4122,7 @@
       "targetId": "panko"
     },
     {
-      "at": 3.4,
+      "at": 3.5,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4642,7 +4131,7 @@
       "role": "charge"
     },
     {
-      "at": 3.433333333333334,
+      "at": 3.533333333333334,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4652,7 +4141,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 3.433333333333334,
+      "at": 3.533333333333334,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4662,7 +4151,7 @@
       "targetId": "panko"
     },
     {
-      "at": 3.533333333333334,
+      "at": 3.633333333333332,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4672,7 +4161,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 3.533333333333334,
+      "at": 3.633333333333332,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4681,7 +4170,7 @@
       "role": "charge"
     },
     {
-      "at": 3.566666666666666,
+      "at": 3.666666666666666,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4690,73 +4179,13 @@
       "role": "movement"
     },
     {
-      "at": 4.033333333333334,
+      "at": 4.133333333333332,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
       "actorId": "panko",
       "cue": "kit.heavy.release",
       "role": "release"
-    },
-    {
-      "at": 4.166666666666668,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "mochi"
-    },
-    {
-      "at": 4.2,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.buff.on",
-      "role": "status",
-      "targetId": "mochi"
-    },
-    {
-      "at": 4.2,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.shield.on",
-      "role": "status",
-      "targetId": "soot"
-    },
-    {
-      "at": 4.2,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.shield.on",
-      "role": "status",
-      "targetId": "clover"
-    },
-    {
-      "at": 4.2,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "status.buff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 4.233333333333334,
-      "planId": 33,
-      "skillId": "panko-3",
-      "tier": "active",
-      "actorId": "panko",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "soot"
     },
     {
       "at": 4.266666666666666,
@@ -4766,10 +4195,70 @@
       "actorId": "panko",
       "cue": "kit.holy.impact",
       "role": "impact",
+      "targetId": "mochi"
+    },
+    {
+      "at": 4.3,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.buff.on",
+      "role": "status",
+      "targetId": "mochi"
+    },
+    {
+      "at": 4.3,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.shield.on",
+      "role": "status",
+      "targetId": "soot"
+    },
+    {
+      "at": 4.3,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.shield.on",
+      "role": "status",
       "targetId": "clover"
     },
     {
       "at": 4.3,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "status.buff.on",
+      "role": "status",
+      "targetId": "panko"
+    },
+    {
+      "at": 4.333333333333332,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "kit.holy.impact",
+      "role": "impact",
+      "targetId": "soot"
+    },
+    {
+      "at": 4.366666666666668,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "kit.holy.impact",
+      "role": "impact",
+      "targetId": "clover"
+    },
+    {
+      "at": 4.4,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4779,7 +4268,7 @@
       "targetId": "panko"
     },
     {
-      "at": 4.366666666666668,
+      "at": 4.466666666666666,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4788,7 +4277,7 @@
       "role": "tail"
     },
     {
-      "at": 4.433333333333334,
+      "at": 4.533333333333334,
       "planId": 33,
       "skillId": "panko-3",
       "tier": "active",
@@ -4797,7 +4286,7 @@
       "role": "movement"
     },
     {
-      "at": 4.933333333333334,
+      "at": 5.133333333333332,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4807,7 +4296,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 4.933333333333334,
+      "at": 5.133333333333332,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4816,7 +4305,7 @@
       "role": "charge"
     },
     {
-      "at": 4.966666666666666,
+      "at": 5.166666666666668,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4826,7 +4315,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 5.233333333333334,
+      "at": 5.433333333333334,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4835,7 +4324,7 @@
       "role": "movement"
     },
     {
-      "at": 5.233333333333334,
+      "at": 5.433333333333334,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4844,7 +4333,7 @@
       "role": "release"
     },
     {
-      "at": 5.333333333333332,
+      "at": 5.533333333333334,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4854,7 +4343,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 5.366666666666668,
+      "at": 5.566666666666666,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4864,7 +4353,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 5.366666666666668,
+      "at": 5.566666666666666,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4874,7 +4363,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 5.533333333333334,
+      "at": 5.733333333333334,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4883,7 +4372,7 @@
       "role": "tail"
     },
     {
-      "at": 5.533333333333334,
+      "at": 5.733333333333334,
       "planId": 40,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -4892,7 +4381,7 @@
       "role": "movement"
     },
     {
-      "at": 5.6,
+      "at": 5.8,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4902,7 +4391,7 @@
       "targetId": "panko"
     },
     {
-      "at": 5.6,
+      "at": 5.8,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4911,7 +4400,7 @@
       "role": "charge"
     },
     {
-      "at": 5.633333333333332,
+      "at": 5.833333333333332,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4921,7 +4410,7 @@
       "targetId": "panko"
     },
     {
-      "at": 5.9,
+      "at": 6.100000000000001,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4930,7 +4419,7 @@
       "role": "movement"
     },
     {
-      "at": 5.9,
+      "at": 6.100000000000001,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4939,7 +4428,7 @@
       "role": "release"
     },
     {
-      "at": 6,
+      "at": 6.2,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4949,7 +4438,7 @@
       "targetId": "panko"
     },
     {
-      "at": 6.033333333333332,
+      "at": 6.233333333333334,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4959,7 +4448,7 @@
       "targetId": "panko"
     },
     {
-      "at": 6.033333333333332,
+      "at": 6.233333333333334,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4969,7 +4458,7 @@
       "targetId": "panko"
     },
     {
-      "at": 6.033333333333332,
+      "at": 6.233333333333334,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4979,7 +4468,7 @@
       "targetId": "foe-3-crumb-sentinel"
     },
     {
-      "at": 6.2,
+      "at": 6.4,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4988,7 +4477,7 @@
       "role": "tail"
     },
     {
-      "at": 6.2,
+      "at": 6.4,
       "planId": 45,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -4997,7 +4486,7 @@
       "role": "movement"
     },
     {
-      "at": 6.266666666666666,
+      "at": 6.466666666666668,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5006,7 +4495,7 @@
       "role": "charge"
     },
     {
-      "at": 6.566666666666668,
+      "at": 6.766666666666664,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5015,7 +4504,7 @@
       "role": "movement"
     },
     {
-      "at": 6.566666666666668,
+      "at": 6.766666666666664,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5024,7 +4513,7 @@
       "role": "release"
     },
     {
-      "at": 6.666666666666668,
+      "at": 6.866666666666668,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5033,7 +4522,7 @@
       "role": "impact"
     },
     {
-      "at": 6.866666666666668,
+      "at": 7.066666666666668,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5042,7 +4531,7 @@
       "role": "tail"
     },
     {
-      "at": 6.866666666666668,
+      "at": 7.066666666666668,
       "planId": 47,
       "skillId": "enemy:spool-ram:basic",
       "tier": "basic",
@@ -5051,7 +4540,7 @@
       "role": "movement"
     },
     {
-      "at": 6.933333333333332,
+      "at": 7.133333333333332,
       "planId": 52,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5060,7 +4549,7 @@
       "role": "charge"
     },
     {
-      "at": 7.233333333333336,
+      "at": 7.433333333333332,
       "planId": 52,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5069,23 +4558,13 @@
       "role": "movement"
     },
     {
-      "at": 7.233333333333336,
+      "at": 7.433333333333332,
       "planId": 52,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
       "actorId": "foe-4-needle-moth",
       "cue": "kit.slash.release",
       "role": "release"
-    },
-    {
-      "at": 7.333333333333332,
-      "planId": 52,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-4-needle-moth"
     },
     {
       "at": 7.5,
@@ -5102,11 +4581,21 @@
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
       "actorId": "foe-4-needle-moth",
+      "cue": "kit.slash.impact",
+      "role": "impact",
+      "targetId": "foe-4-needle-moth"
+    },
+    {
+      "at": 7.733333333333336,
+      "planId": 52,
+      "skillId": "enemy:needle-moth:basic",
+      "tier": "basic",
+      "actorId": "foe-4-needle-moth",
       "cue": "kit.slash.tail",
       "role": "tail"
     },
     {
-      "at": 7.533333333333332,
+      "at": 7.733333333333336,
       "planId": 52,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5115,7 +4604,7 @@
       "role": "movement"
     },
     {
-      "at": 7.6,
+      "at": 7.8,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5124,7 +4613,7 @@
       "role": "charge"
     },
     {
-      "at": 7.9,
+      "at": 8.1,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5133,7 +4622,7 @@
       "role": "movement"
     },
     {
-      "at": 7.9,
+      "at": 8.1,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5142,7 +4631,7 @@
       "role": "release"
     },
     {
-      "at": 8,
+      "at": 8.2,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5152,7 +4641,7 @@
       "targetId": "panko"
     },
     {
-      "at": 8.033333333333331,
+      "at": 8.233333333333336,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5162,7 +4651,7 @@
       "targetId": "foe-2-pollen-scout"
     },
     {
-      "at": 8.2,
+      "at": 8.4,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5171,7 +4660,7 @@
       "role": "tail"
     },
     {
-      "at": 8.2,
+      "at": 8.4,
       "planId": 55,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5180,7 +4669,7 @@
       "role": "movement"
     },
     {
-      "at": 8.266666666666664,
+      "at": 8.466666666666669,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5190,7 +4679,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 8.266666666666664,
+      "at": 8.466666666666669,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5200,7 +4689,7 @@
       "targetId": "foe-5-teacup-healer"
     },
     {
-      "at": 8.266666666666664,
+      "at": 8.466666666666669,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5209,7 +4698,7 @@
       "role": "charge"
     },
     {
-      "at": 8.3,
+      "at": 8.5,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5219,7 +4708,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 8.3,
+      "at": 8.5,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5229,7 +4718,7 @@
       "targetId": "foe-5-teacup-healer"
     },
     {
-      "at": 8.566666666666668,
+      "at": 8.766666666666664,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5238,7 +4727,7 @@
       "role": "movement"
     },
     {
-      "at": 8.566666666666668,
+      "at": 8.766666666666664,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5247,7 +4736,7 @@
       "role": "release"
     },
     {
-      "at": 8.666666666666664,
+      "at": 8.866666666666667,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5257,7 +4746,7 @@
       "targetId": "foe-5-teacup-healer"
     },
     {
-      "at": 8.7,
+      "at": 8.9,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5267,7 +4756,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 8.7,
+      "at": 8.9,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5277,7 +4766,7 @@
       "targetId": "foe-5-teacup-healer"
     },
     {
-      "at": 8.866666666666667,
+      "at": 9.066666666666668,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5286,7 +4775,7 @@
       "role": "tail"
     },
     {
-      "at": 8.866666666666667,
+      "at": 9.066666666666668,
       "planId": 68,
       "skillId": "enemy:teacup-healer:basic",
       "tier": "basic",
@@ -5295,7 +4784,7 @@
       "role": "movement"
     },
     {
-      "at": 9.233333333333336,
+      "at": 9.433333333333332,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5304,7 +4793,7 @@
       "role": "charge"
     },
     {
-      "at": 9.366666666666667,
+      "at": 9.566666666666668,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5313,7 +4802,7 @@
       "role": "movement"
     },
     {
-      "at": 9.4,
+      "at": 9.6,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5322,7 +4811,7 @@
       "role": "release"
     },
     {
-      "at": 9.533333333333331,
+      "at": 9.733333333333336,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5332,7 +4821,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 9.566666666666668,
+      "at": 9.766666666666664,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5342,7 +4831,7 @@
       "targetId": "foe-3-crumb-sentinel"
     },
     {
-      "at": 9.633333333333333,
+      "at": 9.833333333333336,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5352,7 +4841,7 @@
       "targetId": "foe-5-teacup-healer"
     },
     {
-      "at": 9.666666666666664,
+      "at": 9.866666666666667,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5362,7 +4851,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 9.733333333333336,
+      "at": 9.933333333333332,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5371,7 +4860,7 @@
       "role": "tail"
     },
     {
-      "at": 9.8,
+      "at": 10,
       "planId": 76,
       "skillId": "mochi-1",
       "tier": "basic",
@@ -5380,7 +4869,7 @@
       "role": "movement"
     },
     {
-      "at": 9.933333333333332,
+      "at": 10.133333333333333,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5389,7 +4878,7 @@
       "role": "charge"
     },
     {
-      "at": 10.066666666666668,
+      "at": 10.266666666666664,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5399,7 +4888,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 10.066666666666668,
+      "at": 10.266666666666664,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5408,7 +4897,7 @@
       "role": "charge"
     },
     {
-      "at": 10.1,
+      "at": 10.3,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5417,7 +4906,7 @@
       "role": "movement"
     },
     {
-      "at": 10.566666666666668,
+      "at": 10.766666666666664,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5426,7 +4915,7 @@
       "role": "release"
     },
     {
-      "at": 10.7,
+      "at": 10.9,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5436,7 +4925,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 10.9,
+      "at": 11.1,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5445,7 +4934,7 @@
       "role": "tail"
     },
     {
-      "at": 10.966666666666669,
+      "at": 11.166666666666664,
       "planId": 79,
       "skillId": "soot-3",
       "tier": "active",
@@ -5454,7 +4943,7 @@
       "role": "movement"
     },
     {
-      "at": 11.466666666666669,
+      "at": 11.666666666666664,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5463,7 +4952,7 @@
       "role": "charge"
     },
     {
-      "at": 11.6,
+      "at": 11.8,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5473,7 +4962,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 11.6,
+      "at": 11.8,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5482,7 +4971,7 @@
       "role": "charge"
     },
     {
-      "at": 11.633333333333333,
+      "at": 11.833333333333336,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5491,7 +4980,7 @@
       "role": "movement"
     },
     {
-      "at": 11.933333333333332,
+      "at": 12.133333333333333,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5500,7 +4989,7 @@
       "role": "release"
     },
     {
-      "at": 12.1,
+      "at": 12.3,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5510,7 +4999,7 @@
       "targetId": "panko"
     },
     {
-      "at": 12.133333333333333,
+      "at": 12.333333333333336,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5520,7 +5009,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 12.3,
+      "at": 12.5,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5529,7 +5018,7 @@
       "role": "tail"
     },
     {
-      "at": 12.333333333333336,
+      "at": 12.533333333333331,
       "planId": 86,
       "skillId": "clover-2",
       "tier": "active",
@@ -5538,7 +5027,7 @@
       "role": "movement"
     },
     {
-      "at": 12.8,
+      "at": 13.1,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5547,7 +5036,7 @@
       "role": "charge"
     },
     {
-      "at": 12.933333333333332,
+      "at": 13.233333333333336,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5556,7 +5045,7 @@
       "role": "movement"
     },
     {
-      "at": 12.966666666666669,
+      "at": 13.266666666666664,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5565,7 +5054,7 @@
       "role": "release"
     },
     {
-      "at": 13.1,
+      "at": 13.4,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5575,7 +5064,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 13.3,
+      "at": 13.6,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5584,7 +5073,7 @@
       "role": "tail"
     },
     {
-      "at": 13.366666666666667,
+      "at": 13.666666666666664,
       "planId": 91,
       "skillId": "panko-1",
       "tier": "basic",
@@ -5593,7 +5082,7 @@
       "role": "movement"
     },
     {
-      "at": 13.5,
+      "at": 13.8,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5602,7 +5091,7 @@
       "role": "charge"
     },
     {
-      "at": 13.8,
+      "at": 14.1,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5611,7 +5100,7 @@
       "role": "movement"
     },
     {
-      "at": 13.8,
+      "at": 14.1,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5620,7 +5109,7 @@
       "role": "release"
     },
     {
-      "at": 13.9,
+      "at": 14.2,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5630,7 +5119,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 14.1,
+      "at": 14.4,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5639,7 +5128,7 @@
       "role": "tail"
     },
     {
-      "at": 14.1,
+      "at": 14.4,
       "planId": 96,
       "skillId": "enemy:kettle-knight:basic",
       "tier": "basic",
@@ -5648,7 +5137,7 @@
       "role": "movement"
     },
     {
-      "at": 14.166666666666664,
+      "at": 14.466666666666669,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5657,7 +5146,7 @@
       "role": "charge"
     },
     {
-      "at": 14.466666666666669,
+      "at": 14.766666666666664,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5666,7 +5155,7 @@
       "role": "movement"
     },
     {
-      "at": 14.466666666666669,
+      "at": 14.766666666666664,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5675,7 +5164,7 @@
       "role": "release"
     },
     {
-      "at": 14.566666666666668,
+      "at": 14.866666666666667,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5685,7 +5174,7 @@
       "targetId": "panko"
     },
     {
-      "at": 14.6,
+      "at": 14.9,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5695,7 +5184,16 @@
       "targetId": "foe-3-crumb-sentinel"
     },
     {
-      "at": 14.766666666666664,
+      "at": 15,
+      "planId": 100,
+      "skillId": "enemy:crumb-sentinel:basic",
+      "tier": "basic",
+      "actorId": "soot",
+      "cue": "voice.soot.attack",
+      "role": "bark"
+    },
+    {
+      "at": 15.066666666666668,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5704,7 +5202,7 @@
       "role": "tail"
     },
     {
-      "at": 14.766666666666664,
+      "at": 15.066666666666668,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
       "tier": "basic",
@@ -5713,7 +5211,7 @@
       "role": "movement"
     },
     {
-      "at": 14.833333333333336,
+      "at": 15.133333333333333,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5722,16 +5220,7 @@
       "role": "charge"
     },
     {
-      "at": 15,
-      "planId": 108,
-      "skillId": "enemy:spool-ram",
-      "tier": "active",
-      "actorId": "soot",
-      "cue": "voice.soot.attack",
-      "role": "bark"
-    },
-    {
-      "at": 15.1,
+      "at": 15.4,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5741,7 +5230,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 15.1,
+      "at": 15.4,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5750,7 +5239,7 @@
       "role": "charge"
     },
     {
-      "at": 15.133333333333333,
+      "at": 15.433333333333332,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5759,7 +5248,7 @@
       "role": "movement"
     },
     {
-      "at": 15.133333333333333,
+      "at": 15.433333333333332,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5768,7 +5257,7 @@
       "role": "release"
     },
     {
-      "at": 15.233333333333336,
+      "at": 15.533333333333331,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5778,7 +5267,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 15.266666666666664,
+      "at": 15.566666666666668,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5788,7 +5277,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 15.266666666666664,
+      "at": 15.566666666666668,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5798,7 +5287,7 @@
       "targetId": "foe-1-spool-ram"
     },
     {
-      "at": 15.3,
+      "at": 15.6,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5808,7 +5297,7 @@
       "targetId": "panko"
     },
     {
-      "at": 15.433333333333332,
+      "at": 15.733333333333336,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5817,7 +5306,7 @@
       "role": "tail"
     },
     {
-      "at": 15.433333333333332,
+      "at": 15.766666666666664,
       "planId": 108,
       "skillId": "enemy:spool-ram",
       "tier": "active",
@@ -5826,7 +5315,7 @@
       "role": "movement"
     },
     {
-      "at": 15.5,
+      "at": 16.6,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5835,7 +5324,7 @@
       "role": "charge"
     },
     {
-      "at": 15.8,
+      "at": 16.9,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5844,7 +5333,7 @@
       "role": "movement"
     },
     {
-      "at": 15.8,
+      "at": 16.9,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5853,7 +5342,7 @@
       "role": "release"
     },
     {
-      "at": 15.9,
+      "at": 17,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5863,7 +5352,7 @@
       "targetId": "panko"
     },
     {
-      "at": 15.933333333333332,
+      "at": 17.033333333333335,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5873,7 +5362,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 16.1,
+      "at": 17.2,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5882,7 +5371,7 @@
       "role": "tail"
     },
     {
-      "at": 16.1,
+      "at": 17.2,
       "planId": 112,
       "skillId": "enemy:needle-moth:basic",
       "tier": "basic",
@@ -5891,7 +5380,7 @@
       "role": "movement"
     },
     {
-      "at": 16.166666666666668,
+      "at": 17.266666666666666,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5900,7 +5389,7 @@
       "role": "charge"
     },
     {
-      "at": 16.466666666666665,
+      "at": 17.566666666666666,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5909,7 +5398,7 @@
       "role": "movement"
     },
     {
-      "at": 16.466666666666665,
+      "at": 17.566666666666666,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5918,7 +5407,7 @@
       "role": "release"
     },
     {
-      "at": 16.566666666666666,
+      "at": 17.666666666666668,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5928,7 +5417,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 16.6,
+      "at": 17.7,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5938,7 +5427,7 @@
       "targetId": "foe-2-pollen-scout"
     },
     {
-      "at": 16.766666666666666,
+      "at": 17.866666666666667,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5947,7 +5436,7 @@
       "role": "tail"
     },
     {
-      "at": 16.766666666666666,
+      "at": 17.866666666666667,
       "planId": 115,
       "skillId": "enemy:pollen-scout:basic",
       "tier": "basic",
@@ -5956,7 +5445,7 @@
       "role": "movement"
     },
     {
-      "at": 16.833333333333332,
+      "at": 17.933333333333334,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -5965,7 +5454,7 @@
       "role": "charge"
     },
     {
-      "at": 17.1,
+      "at": 18.2,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -5975,7 +5464,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 17.1,
+      "at": 18.2,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -5984,7 +5473,7 @@
       "role": "charge"
     },
     {
-      "at": 17.133333333333333,
+      "at": 18.233333333333334,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -5993,7 +5482,7 @@
       "role": "movement"
     },
     {
-      "at": 17.133333333333333,
+      "at": 18.233333333333334,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -6002,7 +5491,7 @@
       "role": "release"
     },
     {
-      "at": 17.233333333333334,
+      "at": 18.333333333333332,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -6012,7 +5501,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 17.266666666666666,
+      "at": 18.366666666666667,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -6022,7 +5511,7 @@
       "targetId": "foe-0-kettle-knight"
     },
     {
-      "at": 17.433333333333334,
+      "at": 18.533333333333335,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -6031,7 +5520,7 @@
       "role": "tail"
     },
     {
-      "at": 17.433333333333334,
+      "at": 18.566666666666666,
       "planId": 132,
       "skillId": "enemy:teacup-healer",
       "tier": "active",
@@ -6040,7 +5529,7 @@
       "role": "movement"
     },
     {
-      "at": 17.8,
+      "at": 19.466666666666665,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6049,7 +5538,7 @@
       "role": "charge"
     },
     {
-      "at": 17.833333333333332,
+      "at": 19.5,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6059,7 +5548,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 17.833333333333332,
+      "at": 19.5,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6068,7 +5557,7 @@
       "role": "charge"
     },
     {
-      "at": 18.433333333333334,
+      "at": 20.1,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6077,7 +5566,7 @@
       "role": "movement"
     },
     {
-      "at": 18.733333333333334,
+      "at": 20.4,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6086,7 +5575,7 @@
       "role": "cut"
     },
     {
-      "at": 19.4,
+      "at": 21.066666666666666,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6095,7 +5584,7 @@
       "role": "charge"
     },
     {
-      "at": 20.566666666666666,
+      "at": 22.233333333333334,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6104,7 +5593,16 @@
       "role": "movement"
     },
     {
-      "at": 20.833333333333332,
+      "at": 22.5,
+      "planId": 155,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.select",
+      "role": "bark"
+    },
+    {
+      "at": 22.5,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6113,7 +5611,7 @@
       "role": "release"
     },
     {
-      "at": 20.933333333333334,
+      "at": 22.6,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6123,7 +5621,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 20.933333333333334,
+      "at": 22.6,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6132,7 +5630,7 @@
       "role": "release"
     },
     {
-      "at": 20.966666666666665,
+      "at": 22.633333333333333,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6142,7 +5640,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 21,
+      "at": 22.66666666666667,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6152,7 +5650,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 21,
+      "at": 22.66666666666667,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6162,7 +5660,7 @@
       "targetId": "panko"
     },
     {
-      "at": 21,
+      "at": 22.66666666666667,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6172,7 +5670,7 @@
       "targetId": "panko"
     },
     {
-      "at": 21.033333333333335,
+      "at": 22.700000000000003,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6182,7 +5680,7 @@
       "targetId": "soot"
     },
     {
-      "at": 21.066666666666666,
+      "at": 22.733333333333334,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6192,7 +5690,7 @@
       "targetId": "clover"
     },
     {
-      "at": 21.1,
+      "at": 22.766666666666666,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6202,7 +5700,7 @@
       "targetId": "panko"
     },
     {
-      "at": 21.133333333333333,
+      "at": 22.8,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6212,7 +5710,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 21.166666666666668,
+      "at": 22.83333333333333,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6221,7 +5719,7 @@
       "role": "tail"
     },
     {
-      "at": 21.233333333333334,
+      "at": 22.9,
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
@@ -6230,7 +5728,7 @@
       "role": "movement"
     },
     {
-      "at": 21.4,
+      "at": 24.16666666666667,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6239,7 +5737,7 @@
       "role": "charge"
     },
     {
-      "at": 21.533333333333335,
+      "at": 24.3,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6248,7 +5746,7 @@
       "role": "movement"
     },
     {
-      "at": 21.566666666666666,
+      "at": 24.33333333333333,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6257,7 +5755,7 @@
       "role": "release"
     },
     {
-      "at": 21.7,
+      "at": 24.466666666666672,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6267,7 +5765,7 @@
       "targetId": "foe-4-needle-moth"
     },
     {
-      "at": 21.9,
+      "at": 24.66666666666667,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6276,7 +5774,7 @@
       "role": "tail"
     },
     {
-      "at": 21.966666666666665,
+      "at": 24.733333333333334,
       "planId": 159,
       "skillId": "soot-1",
       "tier": "basic",
@@ -6285,7 +5783,7 @@
       "role": "movement"
     },
     {
-      "at": 22.1,
+      "at": 24.866666666666664,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6294,7 +5792,7 @@
       "role": "charge"
     },
     {
-      "at": 22.233333333333334,
+      "at": 25,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6304,7 +5802,7 @@
       "voicePhase": "active"
     },
     {
-      "at": 22.233333333333334,
+      "at": 25,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6313,7 +5811,7 @@
       "role": "charge"
     },
     {
-      "at": 22.266666666666666,
+      "at": 25.033333333333328,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6322,16 +5820,7 @@
       "role": "movement"
     },
     {
-      "at": 22.5,
-      "planId": 166,
-      "skillId": "clover-2",
-      "tier": "active",
-      "actorId": "clover",
-      "cue": "voice.clover.select",
-      "role": "bark"
-    },
-    {
-      "at": 22.566666666666663,
+      "at": 25.33333333333333,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6340,7 +5829,7 @@
       "role": "release"
     },
     {
-      "at": 22.733333333333334,
+      "at": 25.5,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6350,7 +5839,7 @@
       "targetId": "mochi"
     },
     {
-      "at": 22.766666666666666,
+      "at": 25.533333333333328,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6360,7 +5849,7 @@
       "targetId": "panko"
     },
     {
-      "at": 22.933333333333337,
+      "at": 25.7,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6369,7 +5858,7 @@
       "role": "tail"
     },
     {
-      "at": 22.966666666666672,
+      "at": 25.733333333333334,
       "planId": 166,
       "skillId": "clover-2",
       "tier": "active",
@@ -6378,7 +5867,7 @@
       "role": "movement"
     },
     {
-      "at": 23.433333333333337,
+      "at": 26.3,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6387,7 +5876,7 @@
       "role": "charge"
     },
     {
-      "at": 23.466666666666672,
+      "at": 26.33333333333333,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6397,7 +5886,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 23.466666666666672,
+      "at": 26.33333333333333,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6406,7 +5895,7 @@
       "role": "charge"
     },
     {
-      "at": 24.066666666666663,
+      "at": 26.933333333333337,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6415,7 +5904,7 @@
       "role": "movement"
     },
     {
-      "at": 24.366666666666664,
+      "at": 27.233333333333334,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6424,7 +5913,7 @@
       "role": "cut"
     },
     {
-      "at": 25.033333333333328,
+      "at": 27.9,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6433,7 +5922,7 @@
       "role": "charge"
     },
     {
-      "at": 26.2,
+      "at": 29.066666666666663,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6442,7 +5931,7 @@
       "role": "movement"
     },
     {
-      "at": 26.466666666666672,
+      "at": 29.33333333333333,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6451,7 +5940,7 @@
       "role": "release"
     },
     {
-      "at": 26.566666666666663,
+      "at": 29.433333333333337,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6461,7 +5950,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 26.566666666666663,
+      "at": 29.433333333333337,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6470,7 +5959,7 @@
       "role": "release"
     },
     {
-      "at": 26.6,
+      "at": 29.466666666666672,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6480,7 +5969,7 @@
       "targetId": "panko"
     },
     {
-      "at": 26.8,
+      "at": 29.66666666666667,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6489,7 +5978,7 @@
       "role": "tail"
     },
     {
-      "at": 26.866666666666664,
+      "at": 29.733333333333334,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -6498,317 +5987,13 @@
       "role": "movement"
     },
     {
-      "at": 27.033333333333328,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "kit.heavy.charge",
-      "role": "charge"
-    },
-    {
-      "at": 27.33333333333333,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "move.elite.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 27.33333333333333,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "kit.heavy.release",
-      "role": "release"
-    },
-    {
-      "at": 27.433333333333337,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "kit.heavy.impact",
-      "role": "impact",
-      "targetId": "foe-0-kettle-knight"
-    },
-    {
-      "at": 27.633333333333336,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "kit.heavy.tail",
-      "role": "tail"
-    },
-    {
-      "at": 27.633333333333336,
-      "planId": 176,
-      "skillId": "enemy:kettle-knight:basic",
-      "tier": "basic",
-      "actorId": "foe-0-kettle-knight",
-      "cue": "move.elite.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 27.7,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "status.debuff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 27.7,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
-      "at": 27.733333333333334,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "status.debuff.off",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 28,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "move.guard.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 28.1,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-3-crumb-sentinel"
-    },
-    {
-      "at": 28.133333333333336,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "status.debuff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 28.3,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 28.3,
-      "planId": 181,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "foe-3-crumb-sentinel",
-      "cue": "move.guard.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28.366666666666664,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "kit.heavy.charge",
-      "role": "charge"
-    },
-    {
-      "at": 28.66666666666667,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "move.charger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28.66666666666667,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "kit.heavy.release",
-      "role": "release"
-    },
-    {
-      "at": 28.766666666666666,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "kit.heavy.impact",
-      "role": "impact"
-    },
-    {
-      "at": 28.966666666666672,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "kit.heavy.tail",
-      "role": "tail"
-    },
-    {
-      "at": 28.966666666666672,
-      "planId": 183,
-      "skillId": "enemy:spool-ram:basic",
-      "tier": "basic",
-      "actorId": "foe-1-spool-ram",
-      "cue": "move.charger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.033333333333328,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
-      "at": 29.33333333333333,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.33333333333333,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 29.433333333333337,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-4-needle-moth"
-    },
-    {
-      "at": 29.633333333333336,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 29.633333333333336,
-      "planId": 188,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-4-needle-moth",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.7,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
       "at": 30,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
+      "planId": 171,
+      "skillId": "panko-4",
+      "tier": "ultimate",
       "actorId": "panko",
       "cue": "voice.panko.attack",
       "role": "bark"
-    },
-    {
-      "at": 30,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 30,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 30.1,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-2-pollen-scout"
-    },
-    {
-      "at": 30.3,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 30.3,
-      "planId": 192,
-      "skillId": "enemy:pollen-scout:basic",
-      "tier": "basic",
-      "actorId": "foe-2-pollen-scout",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
     }
   ],
   "unknown": [],
