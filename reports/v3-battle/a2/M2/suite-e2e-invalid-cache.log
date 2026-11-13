@@ -1,0 +1,120 @@
+COMMAND: pnpm --filter @taskbar-hero/web exec playwright test --config ../../tools/cinematic-compositor/playwright.config.ts
+
+Running 10 tests using 1 worker
+
+(node:73616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] e2e/formation-c2.spec.ts:6:1 › C2 recovers a fallen frontline through the two visible placement taps
+  1) e2e/formation-c2.spec.ts:6:1 › C2 recovers a fallen frontline through the two visible placement taps 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 60000ms exceeded.
+
+       6 | test('C2 recovers a fallen frontline through the two visible placement taps', async ({page}) => {
+       7 |   await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+    >  8 |   await page.waitForFunction(()=>!!window.__depthReview);
+         |              ^
+       9 |   const before=await page.evaluate(()=>{
+      10 |     const m=window.__depthReview!;m.state.tutorial=4;m.state.freeInvite=true;
+      11 |     m.start(1,'campaign',1);
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/formation-c2.spec.ts:8:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../work/v3-battle-e2e/formation-c2-C2-recovers-a-717ae--two-visible-placement-taps/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../work/v3-battle-e2e/formation-c2-C2-recovers-a-717ae--two-visible-placement-taps/error-context.md
+
+
+(node:73690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1280×720
+  2) e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1280×720 ─────────
+
+    Test timeout of 60000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 60000ms exceeded.
+
+      29 |     await page.setViewportSize(viewport);
+      30 |     await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+    > 31 |     await page.waitForFunction(()=>!!window.__depthReview);
+         |                ^
+      32 |     await page.evaluate(()=>{const m=window.__depthReview!;m.state.tutorial=4;m.state.freeInvite=true;m.state.settings.reducedMotion=true;m.tutorial();m.notice='';m.notify(false);});
+      33 |     const seats=page.locator('.c2-seat');await expect(seats).toHaveCount(4);
+      34 |     const ids=await seats.evaluateAll(buttons=>buttons.map(b=>b.getAttribute('data-seat')!));
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/formation-c2.spec.ts:31:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../work/v3-battle-e2e/formation-c2-C2-four-slots-d8d9f-d-battle-bounds-at-1280×720/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../work/v3-battle-e2e/formation-c2-C2-four-slots-d8d9f-d-battle-bounds-at-1280×720/error-context.md
+
+
+(node:73832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1440×900
+  3) e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1440×900 ─────────
+
+    Test timeout of 60000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 60000ms exceeded.
+
+      29 |     await page.setViewportSize(viewport);
+      30 |     await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+    > 31 |     await page.waitForFunction(()=>!!window.__depthReview);
+         |                ^
+      32 |     await page.evaluate(()=>{const m=window.__depthReview!;m.state.tutorial=4;m.state.freeInvite=true;m.state.settings.reducedMotion=true;m.tutorial();m.notice='';m.notify(false);});
+      33 |     const seats=page.locator('.c2-seat');await expect(seats).toHaveCount(4);
+      34 |     const ids=await seats.evaluateAll(buttons=>buttons.map(b=>b.getAttribute('data-seat')!));
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/formation-c2.spec.ts:31:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../work/v3-battle-e2e/formation-c2-C2-four-slots-3aea4-d-battle-bounds-at-1440×900/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../work/v3-battle-e2e/formation-c2-C2-four-slots-3aea4-d-battle-bounds-at-1440×900/error-context.md
+
+
+(node:73964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1024×600
+  4) e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1024×600 ─────────
+
+    Test timeout of 60000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 60000ms exceeded.
+
+      29 |     await page.setViewportSize(viewport);
+      30 |     await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+    > 31 |     await page.waitForFunction(()=>!!window.__depthReview);
+         |                ^
+      32 |     await page.evaluate(()=>{const m=window.__depthReview!;m.state.tutorial=4;m.state.freeInvite=true;m.state.settings.reducedMotion=true;m.tutorial();m.notice='';m.notify(false);});
+      33 |     const seats=page.locator('.c2-seat');await expect(seats).toHaveCount(4);
+      34 |     const ids=await seats.evaluateAll(buttons=>buttons.map(b=>b.getAttribute('data-seat')!));
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/formation-c2.spec.ts:31:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../work/v3-battle-e2e/formation-c2-C2-four-slots-59568-d-battle-bounds-at-1024×600/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../work/v3-battle-e2e/formation-c2-C2-four-slots-59568-d-battle-bounds-at-1024×600/error-context.md
+
+
+(node:74143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/10] e2e/text-diet-c2.spec.ts:5:1 › C2 player screens and route decisions stay within 25 visible words
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command was killed with SIGTERM (Termination): playwright test --config ../../tools/cinematic-compositor/playwright.config.ts

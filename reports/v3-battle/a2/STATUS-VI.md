@@ -1,12 +1,14 @@
 # V3-A2 — đang thực hiện
-- Đã tiếp tục đúng worktree và nhánh Session A; không merge main/deploy.
-- M1: cả 3 cảnh giữ nguyên kết quả chiến đấu; 111/111 đòn có phản ứng trúng đòn.
-- Nhân vật dịch chuyển tối thiểu 8,79% chiều rộng; High khoảng 60 FPS với 10 nhân vật.
-- M1 CHƯA ĐẠT: năng lượng chuyển động 8,05–9,48; yêu cầu ít nhất 15,80.
-- Đã sửa fixture kiểm thử tải nhân vật; toàn bộ unit test chạy lại thành công.
-- E2E vẫn 9/10: đường dẫn Night tips thuộc Session B chưa có; đã ghi yêu cầu.
-- M2 đang tách mắt/miệng/vũ khí thật và kiểm tra 8 tư thế cho 22 nhân vật.
-- Đã loại một bản vá kín lỗ nhưng làm xấu đường viền; đang kiểm tra cách vá nhỏ hơn.
-- Không đánh dấu card hoàn tất nếu checker chưa PASS tất cả.
-- Sync sớm nhất: 16/11 lúc 19:00 giờ Việt Nam; lần hai 18/11 lúc 19:00.
-- Chưa quay demo cuối; chỉ thực hiện sau lần sync 18/11.
+- M2 đã tách mắt, miệng và vũ khí; 22/22 nhân vật có chớp mắt và đổi miệng thật.
+- Kiểm tra 8 tư thế: 18/22 kín lỗ hoàn toàn; 4 nhân vật còn tối đa 79/150 pixel.
+- Độ chồng mép khớp đo từ alpha đạt tối thiểu 12/12 pixel.
+- Đã vẽ tay áo ẩn sau khiên Panko/Biscuit và sửa thứ tự tính xương vũ khí.
+- Typecheck, toàn bộ unit test và combat parity đều PASS.
+- E2E chạy lại sau khi sửa cache Vite: 9/10; Night tips của Session B vẫn lỗi.
+- M2 vẫn đang thực hiện, chưa đánh dấu hoàn tất khi checker chưa PASS hết.
+- V1 đang làm: hiệu ứng triệu hồi gốc, nhân vật rig động, nền/camera riêng từng chiêu.
+- 3 bản xem thử đạt 480 hạt; hình triệu hồi chiếm khoảng 56–78% khung ở cao trào.
+- M1 vẫn thiếu năng lượng chuyển động: 8,05–9,48 so với yêu cầu 15,80.
+- Không đổi luật chiến đấu, không merge main hoặc deploy.
+- Sync sớm nhất 16/11 19:00; lần hai 18/11 19:00 giờ Việt Nam.
+- Demo cuối chỉ quay sau sync 18/11.

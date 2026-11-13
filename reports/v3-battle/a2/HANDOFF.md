@@ -1,18 +1,17 @@
 # V3-A2 handoff
-NOW: M2 actual separate faces/props, full 22-unit eight-pose audit running.
-FIND: Inherited Vite92109 exited during M2 audit; later captures failed connection, not rigs.
-FIX: Restart local Vite5990, rerun captures; discard incomplete repair logs.
-NEXT 1: Paint hidden joints from measured M2 pose gaps; verify all 22 face strips.
-NEXT 2: V1 full-viewport distinct plates and V2 density to resolve M1 motion energy.
-NEXT 3: V3 audio events, T1 battle UI, all open gates and polish.
-LAST GOOD COMMIT: 1f8261375 (M1 readiness); M2 source changes uncommitted.
-OPEN: G0/R/F1/F2 shared Night tips E2E remains 9/10; no skipped cases.
-M1: wave1/3/boss energy8.052/8.964/9.484 <15.796; 111/111 hit reactions.
-M1: min travel.08795; 16.82–20.09 displacement events/10s; High59.88–60.02FPS.
-M1: all3 capture videos/parity verified; temporary frame PNGs removed.
-M2: local original-source face art + annotated props in art/units/*/depth-parts.
-M2: Biscuit blink/mouth visible; holes294/504 in strike/ult require hidden joint repair.
-PIDS: Vite69096 port5990 exec62345; M2 pipeline exec46285; old Vite92109 exited.
+NOW: M2 source committed, fresh audit complete; V1 original painted motifs and compositor next.
+FIND/FIX: Source seek test caught weapon evaluated before new hand parent; fixed parent-first order.
+NEXT 1: Collect M2 evidence committed/pushed; keep open for Night tips.
+NEXT 2: V1 thirteen distinct painted motifs, animated rigs, full-viewport compositor and measured renders.
+NEXT 3: V2 field density to resolve M1 motion energy; V3 audio; T1 HUD; polish.
+LAST GOOD COMMIT: 341567cfb (M2 parent-first prop evaluation); source 75d11227d.
+M2: 22 separate face sets, visible blink/mouth22; zero holes18/22; max79/150; overlap12/12.
+M2: fresh suite typecheck/unit/parity0; E2E9/10 Night tips; all rig metric gates PASS.
+OPEN: G0/R/F1/F2/M1 shared Night tips E2E9/10; M1 energy8.052–9.484 <15.796.
+V1: original generated motifs cinnamon, mochi, soot saved tools/cinematic-compositor/motifs/.
+V1: exact prompts in V1/prompts.json and assets/provenance.json. No reference input.
+PIDS: Vite74581 port5990 exec79959; M2 suite16782 completed; E2E rerun16206 completed.
+DISK: 338GiB free at resume; cleaned only local Vite caches. No low-disk mode.
 SYNC: 16 Nov12:00UTC;18 Nov12:00UTC;freeze19 Nov12:00UTC. Never early.
-STOP: check STOP-V3A. Work alone. No deploy/main merge.
+STOP: check STOP-V3A. Work alone. No deploy/main merge or Session B file edits.
 REQUEST: /Users/bao/.codex/attachments/3d4f353b-16ba-41af-97a2-f33b19f0eba7/Pasted text.txt

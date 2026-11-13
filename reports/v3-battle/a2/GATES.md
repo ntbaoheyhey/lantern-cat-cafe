@@ -132,3 +132,24 @@ PASS F2.parity: measured=0; required=eq 0
 PASS F2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
 TOTAL 16 PASS / 1 FAIL / 17 gates
 ```
+
+## M2 fresh source 341567cfb
+```text
+PASS M2.freshness: measured=341567cfb9a2e3e974de03bda6f4f649542fc103; required=evidence >= 341567cfb9a2e3e974de03bda6f4f649542fc103
+PASS M2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS M2.units-inspected: measured=22; required=eq 22
+PASS M2.separate-parts: measured=22; required=min 20
+PASS M2.visible-faces: measured=22; required=eq 22
+PASS M2.zero-holes: measured=18; required=min 18
+PASS M2.remaining-holes: measured=79; required=max 150
+PASS M2.extreme-poses: measured=8; required=min 8
+PASS M2.joint-overlap: measured=12; required=min 12
+PASS M2.core-size: measured=0; required=eq 0
+PASS M2.face-strips: measured=23; required=min 22
+PASS M2.typecheck: measured=0; required=eq 0
+PASS M2.unit: measured=0; required=eq 0
+FAIL M2.e2e: measured=1; required=eq 0
+PASS M2.parity: measured=0; required=eq 0
+FAIL M2.artifact-freshness: measured=1; required=eq 0 artifacts older than last source commit
+TOTAL 14 PASS / 2 FAIL / 16 gates
+```

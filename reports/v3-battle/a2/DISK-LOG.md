@@ -32,3 +32,9 @@ Before: 90 GiB free.
 Removed: reports/v3-battle/a2/M1/capture/wave3: 304 encoded PNGs (279.7 MiB), reports/v3-battle/a2/M1/capture/boss: 333 encoded PNGs (265.4 MiB), reports/v3-battle/a2/M1/capture/wave1: 310 encoded PNGs (252.0 MiB), reports/v3-battle/a2/M1/preview/wave1: 50 encoded PNGs (47.0 MiB), old decoded reference directory.
 After: /dev/disk3s1   926Gi   797Gi    91Gi    90%    5.4M  955M    1%   /System/Volumes/Data
 Active M1 suite output retained until exit; low disk mode off.
+
+## Resume 2026-11-13T05:37:59.453627+00:00
+Before: /dev/disk3s1   926Gi   550Gi   338Gi    62%    5.3M  3.5G    0%   /System/Volumes/Data
+Removed in this worktree only: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp
+After: /dev/disk3s1   926Gi   550Gi   338Gi    62%    5.3M  3.5G    0%   /System/Volumes/Data
+Normal disk mode. Current M2 evidence retained.
