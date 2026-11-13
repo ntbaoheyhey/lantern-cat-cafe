@@ -84,7 +84,10 @@ it('opens preparation after choosing a stage from the home map button',async()=>
  const m=new DepthModel(true,true,true,true);
  function View(){useSyncExternalStore(m.subscribe,m.snapshot);return <ShellV3 m={m}>{null}</ShellV3>;}
  const {container}=render(<View/>);
- fireEvent.click(screen.getByRole('button',{name:'Open route map'}));
+ await act(async()=>{
+  fireEvent.click(screen.getByRole('button',{name:'Open route map'}));
+  await vi.dynamicImportSettled();
+ });
  fireEvent.click(await screen.findByRole('button',{name:/Chapter 1/}));
  const stage=container.querySelector('.dp-node:not(:disabled)');expect(stage).toBeTruthy();
  fireEvent.click(stage!);
