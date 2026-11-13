@@ -1,18 +1,23 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {writeFileSync,mkdirSync} from 'node:fs';
-import {sha} from './runtime.mjs';
+import {sha,loadLabRuntime} from './runtime.mjs';
+import {hashConfig} from './search-core.mjs';
 import {openAudioScreen} from '../../../scripts/audio/ui-fixtures.mjs';
-Object.assign(process.env,{CHAIN_LOCAL_WEB_PORT:'5996',CHAIN_LOCAL_API_PORT:'5997',CHAIN_LOCAL_RPC_PORT:'8546'});
+process.env.CHAIN_LOCAL_WEB_PORT??='5995';
+process.env.CHAIN_LOCAL_API_PORT??='5997';
+process.env.CHAIN_LOCAL_RPC_PORT??='8546';
 const {startLocal,devAccount,walletFor,artifact}=await import('../local.mjs');
 const require=createRequire(new URL('../../../apps/web/package.json',import.meta.url));
 const {chromium}=require('@playwright/test'),{parseEther}=require('viem');
 const B='reports/v3-shell/b2/econ';mkdirSync(`${B}/shots`,{recursive:true});
+const rules=await loadLabRuntime();
+const sources=['packages/game-rules/src/cardrpg/economy-lab.ts','packages/game-rules/src/cardrpg/economy-sinks-v3.ts','supabase/functions/_shared/economy-v3.ts','apps/web/src/game/cardrpg/chain/EconomySinksB2.tsx','tools/chain/economy-lab/studio.mjs'].map(path=>({path,sha256:sha(path)}));
 const local=await startLocal({web:true}),browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']});
 const p=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'reduce'}),errors=[];p.on('pageerror',e=>errors.push(e.message));
-const report={fixture:'Throwaway local Anvil only. Judge quest is real; eight additional bound Stars and Worn quality on its earned Epic are explicit visual-test fixtures, not claimed production rewards. Treasury transfers fund the test wallet. Browser signs real burn transactions.',sinks:[],errors};
+const report={configHash:hashConfig(rules.ECONOMY_LAB),sources,fixture:'Throwaway local Anvil only. Judge quest is real; eight additional bound Stars and Worn quality on its earned Epic are explicit visual-test fixtures, not claimed production rewards. Treasury transfers fund the test wallet. Browser signs real burn transactions.',sinks:[],errors};
 try{
- await openAudioScreen(p,'wallet-deed');
+ await openAudioScreen(p,'wallet-deed',`http://127.0.0.1:${process.env.CHAIN_LOCAL_WEB_PORT}`);
  const wallet=await p.evaluate(async()=>{const g=await import('/src/game/cardrpg/chain/guest.ts');return g.existingGuestAddress();});assert(wallet);
  const row=(await local.db.query('select player_id,state from chain_v3_accounts where wallet=$1',[wallet.toLowerCase()])).rows[0];assert(row);
  const s=structuredClone(row.state);s.stars+=8;s.gear[0].quality=1000;
@@ -41,5 +46,7 @@ try{
   report.sinks.push({id,quote:text,benefit:intent.recipe.benefit,stars:intent.recipe.starThread,yarnBurn:intent.cost,transactionHash,status:receipt.status,blockNumber:Number(receipt.blockNumber),screenshot:{path:screenshot,sha256:sha(screenshot)},supplyDelta:paid.toString()});
   console.log(`PASS ${id}: visible quote, exact burn, persisted benefit`);
  }
- assert.equal(errors.length,0);writeFileSync(`${B}/SINK-BROWSER.json`,JSON.stringify(report,null,2)+'\n');
+ assert.equal(errors.length,0);
+ for(const source of sources)assert.equal(sha(source.path),source.sha256,'Source changed during sink capture: '+source.path);
+ writeFileSync(`${B}/SINK-BROWSER.json`,JSON.stringify(report,null,2)+'\n');
 }finally{await browser.close();await local.stop();}

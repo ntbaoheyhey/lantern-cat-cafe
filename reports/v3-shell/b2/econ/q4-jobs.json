@@ -380,5 +380,38 @@
     "started": "2026-11-13T18:22:25.782959+00:00",
     "failedPid": 16934,
     "note": "Initial wrapper syntax fixed before running; no simulation output lost."
+  },
+  {
+    "name": "q4-current-sinks",
+    "pid": 35789,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q4-refresh-sinks-current.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-current-sinks.log",
+    "started": "2026-11-13T21:10:35.480648+00:00",
+    "note": "Waits for Q5 full capture/matrix/suites before starting; local ports5995/5997/8546. No model calls."
+  },
+  {
+    "name": "q4-current-sinks-browser-retry1",
+    "pid": 41504,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/sinks-browser.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-current-sinks-browser-retry1.log",
+    "started": "2026-11-13T21:26:07.067810+00:00",
+    "note": "Wait for actual review hook before fixture seeding. Previous targeted tests passed; browser-only retry."
+  },
+  {
+    "name": "q4-current-sinks-browser-retry3",
+    "pid": 41961,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/sinks-browser.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-current-sinks-browser-retry3.log",
+    "started": "2026-11-13T21:27:35.545428+00:00",
+    "note": "Method change: chain fixtures use server accounts; skip offline-model seeding instead of waiting for an unavailable review hook."
   }
 ]

@@ -1,6 +1,6 @@
 {
   "label": "NATIVE-SENSITIVITY",
-  "date": "2026-11-13T20:03:03.913Z",
+  "date": "2026-11-13T22:09:01.843Z",
   "base": {
     "path": "reports/v3-shell/b2/econ/PROGRESSION-200.json",
     "sha256": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b"
@@ -11,7 +11,7 @@
     "sha256": "1f4b9b6ee85233fe1b85c1f3b2dbfd8886257f65a8b3a4c759f0f1cd55ab93c1"
   },
   "method": "Actual C2 transitions; rerun only the changed profile using the same 200 seeds, reuse unchanged profiles exactly. Timing changes rerun every profile. Integer perturbations with no policy change reuse verified records.",
-  "elapsedSeconds": 15439.127691084,
+  "elapsedSeconds": 22997.045661709,
   "complete": false,
   "cases": [
     {
@@ -480,6 +480,33 @@
       "manifest": {
         "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.decisionSeconds-plus.json",
         "sha256": "bc4228d537559bfb3ffcdecdd0a7aff354cde0b30cf6ed7eb486d9ff47282e56"
+      }
+    },
+    {
+      "assumption": "timing.battleActionSeconds",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.battleActionSeconds-minus.json",
+        "sha256": "d30622898bc95e596be6f599cef1c24ded7fbbd758883fda31996aa770948470"
+      }
+    },
+    {
+      "assumption": "timing.battleActionSeconds",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.battleActionSeconds-plus.json",
+        "sha256": "4f2e18b4874f10dd9b6527ff493631d85bc1e1078d17fefa46530704c94add02"
+      }
+    },
+    {
+      "assumption": "timing.minimumEncounterSeconds",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.minimumEncounterSeconds-minus.json",
+        "sha256": "c201694af4aacad158977499308acb54a2716ea4b818853964c5ba0b9a9b8dd9"
       }
     }
   ]

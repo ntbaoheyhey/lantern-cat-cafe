@@ -1,50 +1,73 @@
 {
+  "configHash": "497ba9738ee175c0efc7b21864fcdc44af611abac366f07e87150676eb995bd3",
+  "sources": [
+    {
+      "path": "packages/game-rules/src/cardrpg/economy-lab.ts",
+      "sha256": "9a9ecb0c3e11481da9e62c344f01a2bd0077525ec60c17ae6230e40a52c50569"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
+      "sha256": "bdcf30a0c1531879dcd60c7c0146ce7f6d8f94abf7dc8ff6ce06c4c1808f0821"
+    },
+    {
+      "path": "supabase/functions/_shared/economy-v3.ts",
+      "sha256": "8251e1f30625f9da20f1e172c9b1f03f2afe933c49fc33178322fb2f4df51381"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/chain/EconomySinksB2.tsx",
+      "sha256": "c26c89f31c26bc8e995df3000ba677bd3b5629c762e48d04225179ee865263aa"
+    },
+    {
+      "path": "tools/chain/economy-lab/studio.mjs",
+      "sha256": "811336aef4fe91200559b40f6b7a33ab196005473b9082a5e031980008f1f8fc"
+    }
+  ],
   "fixture": "Throwaway local Anvil only. Judge quest is real; eight additional bound Stars and Worn quality on its earned Epic are explicit visual-test fixtures, not claimed production rewards. Treasury transfers fund the test wallet. Browser signs real burn transactions.",
   "sinks": [
     {
       "id": "polish",
-      "quote": "1\n4\nSuccess 100%",
+      "quote": "1\n3\nSuccess 100%",
       "benefit": "Guaranteed Fine quality",
       "stars": 1,
-      "yarnBurn": "4000000000000000000",
-      "transactionHash": "0x9d53c27150119f0af2595ab50f792153e55de6f827d263d47939f4ca93be69fe",
+      "yarnBurn": "3000000000000000000",
+      "transactionHash": "0xf0928852998f7664f9353d92b7706f895e9790e8a708d567e2009b24fc3c7526",
       "status": "success",
       "blockNumber": 28,
       "screenshot": {
         "path": "reports/v3-shell/b2/econ/shots/sink-polish.png",
-        "sha256": "fff1a089d4688fc8ee8cf677550fd856fbe308926a1d2e590748e2e7461dbb4e"
+        "sha256": "06fd2447fef0dc20beb054e713f6cb903f00ea48e9865c5464a51d9b3c356208"
       },
-      "supplyDelta": "4000000000000000000"
+      "supplyDelta": "3000000000000000000"
     },
     {
       "id": "decor",
-      "quote": "2\n4\nSuccess 100%",
+      "quote": "1\n2\nSuccess 100%",
       "benefit": "Permanent moon café scene",
-      "stars": 2,
-      "yarnBurn": "4000000000000000000",
-      "transactionHash": "0x1877381af1d1b0a9f2fa9d7329de859782b1a6114644082b59aeeed5916afde2",
+      "stars": 1,
+      "yarnBurn": "2000000000000000000",
+      "transactionHash": "0x1c19da0c7469dfae61902775d38693eb3621922e3ce774d166e24a5e56ac21ed",
       "status": "success",
       "blockNumber": 29,
       "screenshot": {
         "path": "reports/v3-shell/b2/econ/shots/sink-decor.png",
-        "sha256": "9686f37d9446f5a61d068ef5c00f68116ddfb8735437d7f662eb4291c78dc357"
+        "sha256": "6a510fd67548494fcf9a579d077e94485726fe2c6f1afe5497595af72e48c2a2"
       },
-      "supplyDelta": "4000000000000000000"
+      "supplyDelta": "2000000000000000000"
     },
     {
       "id": "display",
-      "quote": "1\n3\nSuccess 100%",
+      "quote": "1\n2\nSuccess 100%",
       "benefit": "Permanent 3 display slots",
       "stars": 1,
-      "yarnBurn": "3000000000000000000",
-      "transactionHash": "0xe88dadb0351f8bbbdd11985c7a6458b03e6def105c00e2de0f91b5c406c6a26c",
+      "yarnBurn": "2000000000000000000",
+      "transactionHash": "0x47f1afcc0a2e7f50850b075ac81d4de5cbff0de0a2760e8285ff6aa3623a6110",
       "status": "success",
       "blockNumber": 30,
       "screenshot": {
         "path": "reports/v3-shell/b2/econ/shots/sink-display.png",
-        "sha256": "7b0583b598bb4ffc060e5c8e2861f6587cdde4f9ffe39335579343e2f9f8f666"
+        "sha256": "aa81859af9d92223d147c1093173d794c3251e65826a59bf507ba2f516a7db9b"
       },
-      "supplyDelta": "3000000000000000000"
+      "supplyDelta": "2000000000000000000"
     }
   ],
   "errors": []

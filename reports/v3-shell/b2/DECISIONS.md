@@ -181,3 +181,5 @@ Full120.2s boss36 passes transient rate0.849/s, loudness-14.67 LUFS and peak-2.3
 ## SOLO Q5 evidence checker cache
 
 The citation check repeatedly read and hashed the same large committed economy JSON for every report number. Digest and committed-blob results now live in invocation-local caches. Every new invocation rereads evidence. All gate rows are identical before and after (q5-checker-cache-equivalence.json); all fifteen existing checker tests pass. No thresholds or required evidence changed.
+
+2026-11-13T22:22:32.080105+00:00 Q4 evidence refresh: all token-replay sensitivity cases finished. FINAL now exposes80/85 complete assumptions (161/170 individual cases), rather than the previous65/85 snapshot. Five native assumptions remain pending, so T-h stays FAIL and E3 stays open. Fresh E2 sink receipts carry current source/config hashes; full Q6 suites will also cover the two evidence-tool updates.
