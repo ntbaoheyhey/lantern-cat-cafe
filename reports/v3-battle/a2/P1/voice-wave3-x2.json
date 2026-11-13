@@ -1,0 +1,542 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T09:33:56.150Z",
+    "sourceCommit": "7769d0df3d9f9f3bc7e49f7265b6b11e7b39297d"
+  },
+  "fixture": "wave3",
+  "speed": 2,
+  "seconds": 32.666666666666664,
+  "required": 16,
+  "fired": 16,
+  "missing": 0,
+  "interrupted": 0,
+  "minClearanceMs": 96.33333333334281,
+  "cueEventsPerSecond": 8.26530612244898,
+  "parity": true,
+  "errors": [],
+  "cuts": [],
+  "voices": [
+    {
+      "at": 0.46666666666666606,
+      "planId": 12,
+      "skillId": "soot-2",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.skill.soot-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 1.7,
+      "planId": 20,
+      "skillId": "clover-2",
+      "tier": "active",
+      "actorId": "clover",
+      "cue": "voice.clover.skill.clover-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 3.033333333333334,
+      "planId": 33,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "voice.panko.skill.panko-3",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 7.133333333333332,
+      "planId": 79,
+      "skillId": "soot-3",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.skill.soot-3",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 8.533333333333331,
+      "planId": 86,
+      "skillId": "clover-2",
+      "tier": "active",
+      "actorId": "clover",
+      "cue": "voice.clover.skill.clover-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 10.966666666666669,
+      "planId": 108,
+      "skillId": "enemy:spool-ram",
+      "tier": "active",
+      "actorId": "foe-1-spool-ram",
+      "cue": "voice.spool-ram.skill.enemy:spool-ram",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 12.966666666666669,
+      "planId": 132,
+      "skillId": "enemy:teacup-healer",
+      "tier": "active",
+      "actorId": "foe-5-teacup-healer",
+      "cue": "voice.teacup-healer.skill.enemy:teacup-healer",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 14.1,
+      "planId": 155,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "mochi",
+      "cue": "voice.mochi.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 16.366666666666667,
+      "planId": 155,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "mochi",
+      "cue": "voice.mochi.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    },
+    {
+      "at": 18.333333333333332,
+      "planId": 166,
+      "skillId": "clover-2",
+      "tier": "active",
+      "actorId": "clover",
+      "cue": "voice.clover.skill.clover-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 19.6,
+      "planId": 171,
+      "skillId": "panko-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "voice.panko.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 21.766666666666666,
+      "planId": 171,
+      "skillId": "panko-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "voice.panko.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    },
+    {
+      "at": 25.7,
+      "planId": 244,
+      "skillId": "soot-4",
+      "tier": "ultimate",
+      "actorId": "soot",
+      "cue": "voice.soot.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 27.83333333333333,
+      "planId": 244,
+      "skillId": "soot-4",
+      "tier": "ultimate",
+      "actorId": "soot",
+      "cue": "voice.soot.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    },
+    {
+      "at": 29.16666666666667,
+      "planId": 257,
+      "skillId": "clover-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 31.2,
+      "planId": 257,
+      "skillId": "clover-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    }
+  ],
+  "plans": [
+    {
+      "id": 8,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 12,
+      "skill": "soot-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1308,
+          "cue": "voice.soot.skill.soot-2",
+          "durationMs": 1068
+        }
+      ],
+      "duration": 1308,
+      "contact": 650
+    },
+    {
+      "id": 20,
+      "skill": "clover-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1408,
+          "cue": "voice.clover.skill.clover-2",
+          "durationMs": 1168
+        }
+      ],
+      "duration": 1408,
+      "contact": 650
+    },
+    {
+      "id": 33,
+      "skill": "panko-3",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1621,
+          "cue": "voice.panko.skill.panko-3",
+          "durationMs": 1381
+        }
+      ],
+      "duration": 1621,
+      "contact": 800
+    },
+    {
+      "id": 40,
+      "skill": "enemy:kettle-knight:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 45,
+      "skill": "enemy:crumb-sentinel:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 47,
+      "skill": "enemy:spool-ram:basic",
+      "voiceWindows": [],
+      "duration": 648,
+      "contact": 407
+    },
+    {
+      "id": 52,
+      "skill": "enemy:needle-moth:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 55,
+      "skill": "enemy:pollen-scout:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 68,
+      "skill": "enemy:teacup-healer:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 68,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 76,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 79,
+      "skill": "soot-3",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1415,
+          "cue": "voice.soot.skill.soot-3",
+          "durationMs": 1175
+        }
+      ],
+      "duration": 1500,
+      "contact": 800
+    },
+    {
+      "id": 86,
+      "skill": "clover-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1408,
+          "cue": "voice.clover.skill.clover-2",
+          "durationMs": 1168
+        }
+      ],
+      "duration": 1408,
+      "contact": 650
+    },
+    {
+      "id": 91,
+      "skill": "panko-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 96,
+      "skill": "enemy:kettle-knight:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 100,
+      "skill": "enemy:crumb-sentinel:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 108,
+      "skill": "enemy:spool-ram",
+      "voiceWindows": [
+        {
+          "start": 288,
+          "end": 1462,
+          "cue": "voice.spool-ram.skill.enemy:spool-ram",
+          "durationMs": 1094
+        }
+      ],
+      "duration": 1462,
+      "contact": 407
+    },
+    {
+      "id": 112,
+      "skill": "enemy:needle-moth:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 115,
+      "skill": "enemy:pollen-scout:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 132,
+      "skill": "enemy:teacup-healer",
+      "voiceWindows": [
+        {
+          "start": 289,
+          "end": 1219,
+          "cue": "voice.teacup-healer.skill.enemy:teacup-healer",
+          "durationMs": 850
+        }
+      ],
+      "duration": 1219,
+      "contact": 409
+    },
+    {
+      "id": 132,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 155,
+      "skill": "mochi-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1456,
+          "cue": "voice.mochi.ult.charge",
+          "durationMs": 1321
+        },
+        {
+          "start": 3160,
+          "end": 4670,
+          "cue": "voice.mochi.ult.release",
+          "durationMs": 1430
+        }
+      ],
+      "duration": 4670,
+      "contact": 3200
+    },
+    {
+      "id": 159,
+      "skill": "soot-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 166,
+      "skill": "clover-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1408,
+          "cue": "voice.clover.skill.clover-2",
+          "durationMs": 1168
+        }
+      ],
+      "duration": 1408,
+      "contact": 650
+    },
+    {
+      "id": 171,
+      "skill": "panko-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1246,
+          "cue": "voice.panko.ult.charge",
+          "durationMs": 1111
+        },
+        {
+          "start": 3160,
+          "end": 4534,
+          "cue": "voice.panko.ult.release",
+          "durationMs": 1294
+        }
+      ],
+      "duration": 4534,
+      "contact": 3200
+    },
+    {
+      "id": 176,
+      "skill": "enemy:kettle-knight:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 181,
+      "skill": "enemy:crumb-sentinel:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 183,
+      "skill": "enemy:spool-ram:basic",
+      "voiceWindows": [],
+      "duration": 648,
+      "contact": 407
+    },
+    {
+      "id": 188,
+      "skill": "enemy:needle-moth:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 192,
+      "skill": "enemy:pollen-scout:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 212,
+      "skill": "enemy:teacup-healer:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 212,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 220,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 244,
+      "skill": "soot-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1178,
+          "cue": "voice.soot.ult.charge",
+          "durationMs": 1043
+        },
+        {
+          "start": 3160,
+          "end": 4477,
+          "cue": "voice.soot.ult.release",
+          "durationMs": 1237
+        }
+      ],
+      "duration": 4477,
+      "contact": 3200
+    },
+    {
+      "id": 257,
+      "skill": "clover-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1027,
+          "cue": "voice.clover.ult.charge",
+          "durationMs": 892
+        },
+        {
+          "start": 3160,
+          "end": 4502,
+          "cue": "voice.clover.ult.release",
+          "durationMs": 1262
+        }
+      ],
+      "duration": 4502,
+      "contact": 3200
+    }
+  ]
+}

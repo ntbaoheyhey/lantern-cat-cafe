@@ -1,0 +1,395 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T09:34:38.659Z",
+    "sourceCommit": "2bb54cf9c05799a9f278ec5d6e835209a79bb6b0"
+  },
+  "fixture": "boss",
+  "speed": 1,
+  "seconds": 33,
+  "required": 11,
+  "fired": 11,
+  "missing": 0,
+  "interrupted": 0,
+  "minClearanceMs": 162.99999999999864,
+  "cueEventsPerSecond": 6.545454545454546,
+  "parity": true,
+  "errors": [],
+  "cuts": [],
+  "voices": [
+    {
+      "at": 0.8666666666666679,
+      "planId": 9,
+      "skillId": "soot-3",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.skill.soot-3",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 2.366666666666668,
+      "planId": 17,
+      "skillId": "clover-2",
+      "tier": "active",
+      "actorId": "clover",
+      "cue": "voice.clover.skill.clover-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 3.8,
+      "planId": 30,
+      "skillId": "panko-3",
+      "tier": "active",
+      "actorId": "panko",
+      "cue": "voice.panko.skill.panko-3",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 9.133333333333333,
+      "planId": 68,
+      "skillId": "clover-2",
+      "tier": "active",
+      "actorId": "clover",
+      "cue": "voice.clover.skill.clover-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 13.466666666666669,
+      "planId": 123,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "mochi",
+      "cue": "voice.mochi.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 16.566666666666666,
+      "planId": 123,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "mochi",
+      "cue": "voice.mochi.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    },
+    {
+      "at": 18.266666666666666,
+      "planId": 127,
+      "skillId": "soot-2",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.skill.soot-2",
+      "role": "voice",
+      "voicePhase": "active"
+    },
+    {
+      "at": 23.9,
+      "planId": 176,
+      "skillId": "soot-4",
+      "tier": "ultimate",
+      "actorId": "soot",
+      "cue": "voice.soot.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 27,
+      "planId": 176,
+      "skillId": "soot-4",
+      "tier": "ultimate",
+      "actorId": "soot",
+      "cue": "voice.soot.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    },
+    {
+      "at": 28.4,
+      "planId": 189,
+      "skillId": "clover-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 31.5,
+      "planId": 189,
+      "skillId": "clover-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.ult.release",
+      "role": "voice",
+      "voicePhase": "release"
+    }
+  ],
+  "plans": [
+    {
+      "id": 6,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 9,
+      "skill": "soot-3",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1415,
+          "cue": "voice.soot.skill.soot-3",
+          "durationMs": 1175
+        }
+      ],
+      "duration": 1500,
+      "contact": 800
+    },
+    {
+      "id": 17,
+      "skill": "clover-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1408,
+          "cue": "voice.clover.skill.clover-2",
+          "durationMs": 1168
+        }
+      ],
+      "duration": 1408,
+      "contact": 650
+    },
+    {
+      "id": 30,
+      "skill": "panko-3",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1621,
+          "cue": "voice.panko.skill.panko-3",
+          "durationMs": 1381
+        }
+      ],
+      "duration": 1621,
+      "contact": 800
+    },
+    {
+      "id": 35,
+      "skill": "enemy:yarn-giant:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 416
+    },
+    {
+      "id": 41,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 51,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 51,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 57,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 61,
+      "skill": "soot-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 68,
+      "skill": "clover-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1408,
+          "cue": "voice.clover.skill.clover-2",
+          "durationMs": 1168
+        }
+      ],
+      "duration": 1408,
+      "contact": 650
+    },
+    {
+      "id": 73,
+      "skill": "panko-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 78,
+      "skill": "enemy:yarn-giant:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 416
+    },
+    {
+      "id": 84,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 100,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 100,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 123,
+      "skill": "mochi-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1456,
+          "cue": "voice.mochi.ult.charge",
+          "durationMs": 1321
+        },
+        {
+          "start": 3160,
+          "end": 4670,
+          "cue": "voice.mochi.ult.release",
+          "durationMs": 1430
+        }
+      ],
+      "duration": 4670,
+      "contact": 3200
+    },
+    {
+      "id": 127,
+      "skill": "soot-2",
+      "voiceWindows": [
+        {
+          "start": 160,
+          "end": 1308,
+          "cue": "voice.soot.skill.soot-2",
+          "durationMs": 1068
+        }
+      ],
+      "duration": 1308,
+      "contact": 650
+    },
+    {
+      "id": 131,
+      "skill": "clover-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 136,
+      "skill": "panko-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 140,
+      "skill": "enemy:yarn-giant:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 416
+    },
+    {
+      "id": 145,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 160,
+      "skill": "enemy:binding-thread:basic",
+      "voiceWindows": [],
+      "duration": 647,
+      "contact": 409
+    },
+    {
+      "id": 160,
+      "skill": "round-status",
+      "voiceWindows": [],
+      "duration": 300,
+      "contact": 0
+    },
+    {
+      "id": 166,
+      "skill": "mochi-1",
+      "voiceWindows": [],
+      "duration": 700,
+      "contact": 330
+    },
+    {
+      "id": 176,
+      "skill": "soot-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1178,
+          "cue": "voice.soot.ult.charge",
+          "durationMs": 1043
+        },
+        {
+          "start": 3160,
+          "end": 4477,
+          "cue": "voice.soot.ult.release",
+          "durationMs": 1237
+        }
+      ],
+      "duration": 4477,
+      "contact": 3200
+    },
+    {
+      "id": 189,
+      "skill": "clover-4",
+      "voiceWindows": [
+        {
+          "start": 55,
+          "end": 1027,
+          "cue": "voice.clover.ult.charge",
+          "durationMs": 892
+        },
+        {
+          "start": 3160,
+          "end": 4502,
+          "cue": "voice.clover.ult.release",
+          "durationMs": 1262
+        }
+      ],
+      "duration": 4502,
+      "contact": 3200
+    }
+  ]
+}
