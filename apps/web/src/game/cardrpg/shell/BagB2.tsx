@@ -1,4 +1,6 @@
-import {useState,useSyncExternalStore} from 'react';
+import {useEffect,useRef,useState,useSyncExternalStore} from 'react';
+import {playCue} from '../contracts/audio-cues';
+import {reducedMotionB2} from './motion-b2';
 import {EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
@@ -18,6 +20,20 @@ const shortName=(name:string)=>name.replace(/^(Common|Rare|Epic|Legendary) /,'')
 export function BagB2({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [slot,setSlot]=useState(m.inventorySlot),[forge,setForge]=useState(false),[detailTab,setDetailTab]=useState<'set'|'affixes'>('set');
+ const [feedback,setFeedback]=useState<{id:number;result:'success'|'fail'}>();
+ const feedbackTimers=useRef<ReturnType<typeof setTimeout>[]>([]);
+ useEffect(()=>()=>feedbackTimers.current.forEach(clearTimeout),[]);
+ const enhance=()=>{
+  if(!item)return;
+  feedbackTimers.current.forEach(clearTimeout);
+  const before=item.enhancement,result=R.enhanceGear(m.state,item.id);
+  m.apply(result,'Forge complete.');
+  if(!result.ok){playCue('ui.fail');return;}
+  const success=(result.state.gear.find(g=>g.id===item.id)?.enhancement??before)>before;
+  setFeedback({id:performance.now(),result:success?'success':'fail'});playCue('ui.forge.hammer');
+  const delay=reducedMotionB2()?0:260;
+  feedbackTimers.current=[setTimeout(()=>playCue(success?'ui.forge.success':'ui.forge.fail'),delay),setTimeout(()=>setFeedback(undefined),950)];
+ };
  const s=m.state,locked=!!s.run&&!s.run.complete,cardId=s.account.cards.some(c=>c.cardId===m.cardId)?m.cardId:s.team[0]!,cat=R.CAT_BY_ID[cardId]!;
  const gear=s.gear.filter(g=>slot==='all'||R.GEAR_BY_ID[g.templateId]!.slot===slot),item=gear.find(g=>g.id===m.itemId)??gear[0],spec=item?R.GEAR_BY_ID[item.templateId]:undefined;
  const ownerOf=(id:string)=>Object.entries(s.equipment).find(([,gear])=>Object.values(gear).includes(id))?.[0],owner=item?ownerOf(item.id):undefined,equipped=owner===cardId;
@@ -39,6 +55,6 @@ export function BagB2({m}:{m:DepthModel}) {
    <footer className="b2-dialog-actions"><button className="cr-primary" disabled={locked||equipped||!!stats.error} onClick={()=>{const result=R.equipGear(m.state,cardId,item.id);if(result.ok)result.state.tutorial=Math.max(4,result.state.tutorial);m.apply(result,'Equipped.');}}><GameIcon name="check"/>{equipped?'Equipped':'Equip'}</button><button aria-label={`Enhance +${item.enhancement+1}`} onClick={()=>setForge(true)}><GameIcon name="forge"/>Enhance</button></footer>
   </aside>:<aside className="b2-empty"><GuideMascot pose="point"/></aside>}
   </div>
-  {forge&&item&&spec&&quote&&<MenuDialogB2 title="Enhance" onClose={()=>setForge(false)} className="b2-forge-dialog"><div className="b2-forge-scene"><GuideMascot pose="shop"/><div className="b2-forge-item"><GearArtA6 slot={spec.slot} setId={spec.setId}/><h3>{shortName(spec.name)}</h3><p className="b2-number">+{item.enhancement}<GameIcon name="arrow"/>+{Math.min(s.economyV3?10:12,item.enhancement+1)}</p></div></div><div className="b2-enhance-quote" aria-label="Enhancement quote"><p><GameIcon name={spec.main==='attack'?'fight':spec.main==='defense'?'shield':'heart'}/>{quote.before}<GameIcon name="arrow" size={22}/><strong>{quote.after}</strong></p><p aria-label="Enhancement odds">{'chanceBp' in quote?Number(quote.chanceBp)/100:100}%<span>Blessing +{'blessingBp' in quote?Number(quote.blessingBp)/100:0}%</span></p><CostView cost={quote.cost}/></div><footer className="b2-dialog-actions"><button className="cr-primary" disabled={locked||maxed||!affordable} aria-label={maxed?'Maximum enhancement':!affordable?'Need materials':`Confirm enhance +${item.enhancement+1}`} onClick={()=>m.apply(R.enhanceGear(m.state,item.id),'Forge complete.')}><GameIcon name="forge"/>{maxed?'Max':locked?'Patrol active':!affordable?'Need materials':'Enhance'}</button></footer></MenuDialogB2>}
+  {forge&&item&&spec&&quote&&<MenuDialogB2 title="Enhance" onClose={()=>setForge(false)} className="b2-forge-dialog"><div className="b2-forge-scene">{feedback&&<div key={feedback.id} className="b2-forge-impact" data-result={feedback.result} aria-hidden="true"><GameIcon name="forge" className="b2-forge-hammer" size={84}/></div>}<GuideMascot pose="shop"/><div className="b2-forge-item"><GearArtA6 slot={spec.slot} setId={spec.setId}/><h3>{shortName(spec.name)}</h3><p className="b2-number">+{item.enhancement}<GameIcon name="arrow"/>+{Math.min(s.economyV3?10:12,item.enhancement+1)}</p></div></div><div className="b2-enhance-quote" aria-label="Enhancement quote"><p><GameIcon name={spec.main==='attack'?'fight':spec.main==='defense'?'shield':'heart'}/>{quote.before}<GameIcon name="arrow" size={22}/><strong>{quote.after}</strong></p><p aria-label="Enhancement odds">{'chanceBp' in quote?Number(quote.chanceBp)/100:100}%<span>Blessing +{'blessingBp' in quote?Number(quote.blessingBp)/100:0}%</span></p><CostView cost={quote.cost}/></div><footer className="b2-dialog-actions"><button className="cr-primary" disabled={locked||maxed||!affordable} aria-label={maxed?'Maximum enhancement':!affordable?'Need materials':`Confirm enhance +${item.enhancement+1}`} onClick={enhance}><GameIcon name="forge"/>{maxed?'Max':locked?'Patrol active':!affordable?'Need materials':'Enhance'}</button></footer></MenuDialogB2>}
  </section>;
 }

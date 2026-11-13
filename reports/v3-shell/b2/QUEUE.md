@@ -12,8 +12,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
 - [ ] U3 — PARTIAL (32/54 states meet all screen gates; 22 have two logged redesign iterations; complete two-size evidence, tests pass; self-score 7/10)
-- [ ] U4 — in progress
-- [ ] S5 — todo
+- [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
+- [ ] S5 — in progress
 - [ ] S6 — todo
 - [ ] S7 — todo
 - [ ] E1 — todo
@@ -172,3 +172,15 @@ FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
 PASS U3.flows: measured 108; required passing test + SHA-256-verified log
 
 The checker confirms the permitted PARTIAL condition. All 53 baseline states plus the new batch dialog have before/after comparisons at both sizes. Visual quality remains below target in 22 states; protected A preparation has four plain buttons. See UI-REBUILD.md and U3-ITERATIONS.md. Local suite and type evidence: tests/u3-accept-suite.log, tests/u3-accept-types.log, tests/u3-accept-final-web-types.log. No full U3 acceptance is claimed.
+
+## U4 evidence
+
+PASS U4.tour: measured 62; required >= 60s WebM with sound, <= 25000000 bytes
+
+PASS U4.cls: measured 0; required 0 layout shifts > 0.05 CLS
+
+PASS U4.fps: measured 60; required median >= 60 fps in panel transitions
+
+PASS U4.reducedMotion: measured 16; required passing test + SHA-256-verified log
+
+Checks: tests/u4-types.log, tests/u4-suite.log (2,514 web, 724 server; 1,388 rules with 2 expected failures and 11 existing skips), tests/u4-motion-unit-targeted.log (16), tests/u4-reduced-motion.log (16 browser assertions), tests/u4-gate-unit.log (14). The 62-second real menu tour has output audio and is 6.7 MiB. Video encoding and runtime FPS were measured separately; both raw traces are retained in UI-MOTION.json.

@@ -3,7 +3,7 @@
 Generated from typed sound-map.ts. This is the production plan; assets, screen wiring and playback measurements are separately gated by S2–S7.
 
 2549 event/screen assignments; 49 screens; 865 distinct cues.
-473 legacy/current cue IDs inspected; 0 missing. 17 call sites in 505 production source files; 0 unresolved.
+473 legacy/current cue IDs inspected; 0 missing. 30 call sites in 506 production source files; 0 unresolved.
 
 Pitch values are playback-rate ratios. Random gain is in dB. Every layer pool is a production role, not a claim that the asset exists. Hits reserve four variants per layer; UI reserves three. High-priority ultimate/voice requests duck music −8 dB with 120 ms attack / 400 ms release.
 

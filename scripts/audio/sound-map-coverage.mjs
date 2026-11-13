@@ -23,6 +23,7 @@ export function collectAudioCalls(source,path,{domains={},eventCues=[],forwarded
   }
   const values=node=>{
     if(!node)return [];
+    if(domains[node.getText(sf)])return domains[node.getText(sf)];
     if(ts.isStringLiteralLike(node))return [node.text];
     if(ts.isParenthesizedExpression(node)||ts.isAsExpression(node)||ts.isNonNullExpression(node))return values(node.expression);
     if(ts.isConditionalExpression(node)){const a=values(node.whenTrue),b=values(node.whenFalse);return a.length&&b.length?unique([...a,...b]):[];}
@@ -78,6 +79,8 @@ export async function writeSoundMap(){
     const path=relative(root,file),source=readFileSync(file,'utf8');
     const slots=JSON.parse(readFileSync(resolve(root,'apps/web/src/audio/voice-callouts.json'),'utf8')).filter(r=>r.kind==='skill').map(r=>({unit:r.unitId,slot:r.slot}));
     const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},bindings:slots,eventCues}:
+      path==='apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx'?{domains:{'active.rarity':M.SOUND_RARITIES}}:
+      path==='apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx'?{domains:{currency:M.SOUND_CURRENCIES}}:
       path==='apps/web/src/game/cardrpg/contracts/audio-cues.ts'?{forwardedIds:[...M.SOUND_CUES.keys()]}:{};
     const found=collectAudioCalls(source,path,adapters);
     if(found.length){calls.push(...found);inspected.push(signed(path));}

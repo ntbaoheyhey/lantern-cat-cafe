@@ -9,6 +9,8 @@ import { chainRuntime, loadChainConfig, txLink } from './runtime';
 import { moveGuestAssets } from './move';
 import './chain.css';
 import './chain-b2.css';
+import '../shell/motion-b2.css';
+import {useMenuClose} from '../shell/motion-b2';
 import { chainFlags } from './flags';
 import { CHAIN_ITEM_IDS, CHAIN_V3_ITEM_IDS } from '@taskbar-hero/game-rules/cardrpg';
 import { GasBalance } from './GasBalance';
@@ -28,7 +30,7 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   const [lastHash, setLastHash] = useState('');
   const [room,setRoom]=useState<Tab>();
   const panel=useRef<HTMLDialogElement>(null),walletTrigger=useRef<HTMLElement|null>(null);
-  const closeWallet=()=>{panel.current?.close?.();setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();};
+  const closeWallet=useMenuClose(panel,()=>{panel.current?.close?.();setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();});
   useEffect(()=>{
     if(!embedded)return;
     const openWallet=()=>{walletTrigger.current=document.activeElement as HTMLElement;setOpen(true);};

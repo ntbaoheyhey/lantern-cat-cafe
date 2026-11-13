@@ -14,6 +14,7 @@ import {CountUpA6} from './CountUpA6';
 import {RecruitActionsA6} from './RecruitActionsA6';
 import {GearArtA6} from './KeepsakeArtA6';
 import './recruit-a6.css';
+import {playCue} from '../contracts/audio-cues';
 
 type Beat='letter'|'seal'|'burst'|'reveal'|'summary';
 const rank={common:0,rare:1,epic:2,legendary:3};
@@ -54,6 +55,13 @@ export default function RecruitV3({m}:{m:DepthModel}){
   const timer=setTimeout(()=>{if(beat==='letter')setBeat('seal');else if(beat==='seal')setBeat('burst');else if(beat==='burst')setBeat('reveal');else if(index+1<results.length){setIndex(index+1);setBeat('letter')}else setBeat('summary')},delay);
   return()=>clearTimeout(timer);
  },[a6,revealing,reduced,beat,active?.rarity,index,results.length]);
+ useEffect(()=>{
+  if(!active)return;
+  if(beat==='letter')playCue('ui.confirm');
+  else if(beat==='seal')playCue('gacha.charge');
+  else if(beat==='burst'){playCue('gacha.flip');playCue(`ui.reveal.${active.rarity}`);}
+  else if(beat==='summary')playCue(`item.land.${active.rarity}`);
+ },[beat,index,active?.index,active?.rarity]);
  function invite(count:number,welcome=false){
   if(revealing)return;
   const currentPity=m.state.account.pity[banner.pityGroup]??emptyPity();

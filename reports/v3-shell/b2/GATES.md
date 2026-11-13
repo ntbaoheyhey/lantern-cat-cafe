@@ -61,10 +61,10 @@ PASS U3.fonts: measured 0; required 0 system fonts
 PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
 FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
 PASS U3.flows: measured 108; required passing test + SHA-256-verified log
-FAIL U4.tour: measured missing; required >= 60s WebM with sound, <= 25000000 bytes
-FAIL U4.cls: measured missing; required 0 layout shifts > 0.05 CLS
-FAIL U4.fps: measured missing; required median >= 60 fps in panel transitions
-FAIL U4.reducedMotion: measured missing; required passing test + SHA-256-verified log
+PASS U4.tour: measured 62; required >= 60s WebM with sound, <= 25000000 bytes
+PASS U4.cls: measured 0; required 0 layout shifts > 0.05 CLS
+PASS U4.fps: measured 60; required median >= 60 fps in panel transitions
+PASS U4.reducedMotion: measured 16; required passing test + SHA-256-verified log
 FAIL S5.battle.render: measured missing; required >= 180s measured Opus render
 FAIL S5.battle.onsetsPerSecond: measured missing; required reference +/- 30% (reference 4.066666666666666)
 FAIL S5.battle.layers: measured missing; required >= reference median - 0.5
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1125; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1206; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

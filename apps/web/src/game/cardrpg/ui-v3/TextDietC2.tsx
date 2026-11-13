@@ -2,6 +2,8 @@ import {GameIcon} from '../../../ui/GameIcon';
 import {createContext,useContext,useEffect,useRef,useState,type ReactNode} from 'react';
 import {createPortal} from 'react-dom';
 import '../shell/screen-skin.css';
+import {useMenuClose} from '../shell/motion-b2';
+import '../shell/motion-b2.css';
 
 export const TextDietContext=createContext(false);
 export const useTextDiet=()=>useContext(TextDietContext);
@@ -10,8 +12,8 @@ export const useTextDiet=()=>useContext(TextDietContext);
 export function HelpC2({children,label='Help',symbol='?',title}:{children:ReactNode;label?:string;symbol?:ReactNode;title?:string}) {
  const compact=useTextDiet(),[open,setOpen]=useState(false),dialog=useRef<HTMLDialogElement>(null),trigger=useRef<HTMLButtonElement>(null);
  useEffect(()=>{if(open){dialog.current?.showModal();dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();}},[open]);
+ const close=useMenuClose(dialog,()=>{dialog.current?.close();setOpen(false);trigger.current?.focus();});
  if(!compact)return <>{children}</>;
- const close=()=>{dialog.current?.close();setOpen(false);trigger.current?.focus();};
  return <><button ref={trigger} type="button" className="c2-help-trigger" aria-label={label} aria-haspopup="dialog" onClick={()=>setOpen(true)}>{symbol==='?'?<GameIcon name="guide" size={24}/>:symbol}</button>{open&&createPortal(<dialog ref={dialog} className="c2-help b2-help" data-c2-help aria-label={label} onCancel={e=>{e.preventDefault();close();}} onKeyDown={e=>{
   e.stopPropagation();
   if(e.key==='Escape'){e.preventDefault();close();}

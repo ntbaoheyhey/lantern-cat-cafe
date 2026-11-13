@@ -4,6 +4,8 @@ import {GameIcon} from '../../../ui/GameIcon';
 import {LiveCounters,EconomyVitals,SeasonEdition} from './LiveCounters';
 import {GuideMascot,PaintedAction,PaintedTabs,RibbonTitle,type KitIcon} from './PaintedKit';
 import './screen-skin.css';
+import './motion-b2.css';
+import {useMenuClose} from './motion-b2';
 const pct=(bp:number)=>`${bp/100}%`;
 const oddsPages=[['banner','Banner odds','bell'],['featured','Featured & shards','shard'],['enhance','Enhancement & fusion','forge'],['drops','Drops','bag']] as const;
 
@@ -23,7 +25,7 @@ const economyTabs:[string,string,KitIcon][]=[['flow','Flow','economy'],['allocat
 export function ShellPages(){
  const [page,setPage]=useState(''),[tab,setTab]=useState('flow'),[guide,setGuide]=useState(false);
  const root=useRef<HTMLElement>(null),prior=useRef<HTMLElement|null>(null);
- const close=()=>{setPage('');prior.current?.focus();};
+ const close=useMenuClose(root,()=>{setPage('');prior.current?.focus();});
  useEffect(()=>{const open=(e:Event)=>{prior.current=document.activeElement as HTMLElement;setPage(String((e as CustomEvent).detail));setTab('flow');setGuide(false);};const trailer=()=>open(new CustomEvent('shell:page',{detail:'trailer'}));window.addEventListener('shell:page',open);window.addEventListener('shell:trailer',trailer);return()=>{window.removeEventListener('shell:page',open);window.removeEventListener('shell:trailer',trailer);};},[]);
  useEffect(()=>{if(page)root.current?.focus();},[page]);
  if(!page)return null;

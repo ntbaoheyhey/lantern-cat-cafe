@@ -1,7 +1,7 @@
 {
   "existingCueCount": 473,
   "missingExisting": [],
-  "callsiteCount": 17,
+  "callsiteCount": 30,
   "unresolved": [],
   "cuesSource": {
     "path": "apps/web/src/audio/cues.ts",
@@ -25,6 +25,10 @@
       "sha256": "2716b9b753a5dad4719457753228ccb6d608fe382a686157ed1cf835ff94e5dd"
     },
     {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "sha256": "5fc3b022437f0239dd803202afad8c6cfdab3e935e3268f7634256e706bd8f1d"
+    },
+    {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
       "sha256": "8cdb83f6d224d613817dca4faa7594bd6f2d148172ce2cd97b2257aa4c194bee"
     },
@@ -35,6 +39,18 @@
     {
       "path": "apps/web/src/game/cardrpg/shell/HomeExtras.tsx",
       "sha256": "145028e80b9d9f15d2ac3a2d0b91fbe61bc24d91235ecf7899d54e2bd39c67cf"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
+      "sha256": "3c4011c21cf2fb9922bb4f2e0c91e1c0584d19f7d046c493cd981671f261c430"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "sha256": "2071f1d5a1d2e28d9fddfdba7f0cb0a29080d93f5cb1bb4b1417026a58f9b377"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
+      "sha256": "7378edcc8969ec9c8347fcbb4036c83cda2564ab71da1d40205f1a6363cdd6ff"
     },
     {
       "path": "apps/web/src/game/squad/turn3d/audio.ts",
@@ -49,7 +65,7 @@
     "path": "apps/web/public/audio/manifest.json",
     "sha256": "f17559d062db0cabeedfa97809b21c829033e1d43e4085550cbb3f074a0b4f5d"
   },
-  "scannedSourceCount": 505,
+  "scannedSourceCount": 506,
   "calls": [
     {
       "path": "apps/web/src/audio/engine.ts",
@@ -1335,6 +1351,37 @@
       "delegation": true
     },
     {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 31,
+      "column": 18,
+      "expression": "'ui.fail'",
+      "ids": [
+        "ui.fail"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 33,
+      "column": 71,
+      "expression": "'ui.forge.hammer'",
+      "ids": [
+        "ui.forge.hammer"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 35,
+      "column": 42,
+      "expression": "success?'ui.forge.success':'ui.forge.fail'",
+      "ids": [
+        "ui.forge.success",
+        "ui.forge.fail"
+      ],
+      "delegation": false
+    },
+    {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
       "line": 18,
       "column": 267,
@@ -1381,6 +1428,128 @@
       "expression": "'ambience.cafe'",
       "ids": [
         "ambience.cafe"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
+      "line": 13,
+      "column": 3,
+      "expression": "'ui.close'",
+      "ids": [
+        "ui.close"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
+      "line": 23,
+      "column": 2,
+      "expression": "'ui.open'",
+      "ids": [
+        "ui.open"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
+      "line": 32,
+      "column": 20,
+      "expression": "'count.tick'",
+      "ids": [
+        "count.tick"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "line": 60,
+      "column": 22,
+      "expression": "'ui.confirm'",
+      "ids": [
+        "ui.confirm"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "line": 61,
+      "column": 25,
+      "expression": "'gacha.charge'",
+      "ids": [
+        "gacha.charge"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "line": 62,
+      "column": 27,
+      "expression": "'gacha.flip'",
+      "ids": [
+        "gacha.flip"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "line": 62,
+      "column": 49,
+      "expression": "`ui.reveal.${active.rarity}`",
+      "ids": [
+        "ui.reveal.common",
+        "ui.reveal.rare",
+        "ui.reveal.epic",
+        "ui.reveal.legendary",
+        "ui.reveal.mythic"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "line": 63,
+      "column": 28,
+      "expression": "`item.land.${active.rarity}`",
+      "ids": [
+        "item.land.common",
+        "item.land.rare",
+        "item.land.epic",
+        "item.land.legendary",
+        "item.land.mythic"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
+      "line": 17,
+      "column": 15,
+      "expression": "'ui.reward-fly'",
+      "ids": [
+        "ui.reward-fly"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
+      "line": 18,
+      "column": 130,
+      "expression": "`currency.${currency}.gain`",
+      "ids": [
+        "currency.fish.gain",
+        "currency.threads.gain",
+        "currency.stamps.gain",
+        "currency.essence.gain",
+        "currency.thread.gain",
+        "currency.bell.gain",
+        "currency.boss-seal.gain",
+        "currency.yarn.gain",
+        "currency.spool.gain",
+        "currency.star-thread.gain",
+        "currency.dawn-thread.gain",
+        "currency.favour.gain",
+        "currency.motes.gain",
+        "currency.shards.gain",
+        "currency.xp.gain"
       ],
       "delegation": false
     },

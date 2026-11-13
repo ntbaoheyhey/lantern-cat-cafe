@@ -1,3 +1,4 @@
+import {useMenuClose} from '../shell/motion-b2';
 import {GameIcon} from '../../../ui/GameIcon';
 import {PaintedAction,PaintedButton,GuideMascot,RibbonTitle,type KitIcon} from '../shell/PaintedKit';
 import {MenuDialogB2} from '../shell/MenuDialogB2';
@@ -52,7 +53,8 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const [treasures,setTreasures]=useState<Record<string,string>>({}),[cat,setCat]=useState('Mochi');
   const [page,setPage]=useState(0),[checks,setChecks]=useState<Record<string,boolean>>({});
   const [more,setMore]=useState(false),[purchase,setPurchase]=useState<ChainListing>();
-  const requestId=useRef(0),actionLock=useRef(false);
+  const requestId=useRef(0),actionLock=useRef(false),roomElement=useRef<HTMLElement>(null);
+  const closeRoom=useMenuClose(roomElement,()=>onClose?.());
   const guest=!!session&&existingGuestAddress()?.toLowerCase()===session.wallet.toLowerCase();
   const yarnOn=flags.yarnToken&&!!config?.YarnToken&&!!config.SeasonRewards;
   const stylesOn=flags.yarnCosmetics&&yarnOn;
@@ -196,8 +198,8 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const selectTab=(t:Tab)=>{setTab(t);setMore(false);if(t==='History'&&runtime)void run(historyPage);if(t==='Seal'||t==='Forge')void run(loadInventory);if(t==='Style')void run(loadStyles);};
   const pages=(length:number,label:string)=><div className="chain-pagination"><button aria-label={`Previous ${label}`} disabled={page===0} onClick={()=>setPage(p=>p-1)}><GameIcon name="arrow-left" size={18}/></button><button aria-label={`Next ${label}`} disabled={(page+1)*2>=length} onClick={()=>setPage(p=>p+1)}><GameIcon name="arrow" size={18}/></button></div>;
   const stats=(id:bigint)=>{const item=sealedDepthEquipment(Number(id));return item?<small title="Template main stat scales with companion level. Unenhanced; minimum affix rolls. Chain ownership currently has no combat effect.">{item.main} <GameIcon name="close" size={20}/>{item.rarity==='legendary'?1.75:1.5}</small>:null;};
-  return <TextDietContext.Provider value={true}><section className="chain-room b2-chain-room" data-tab={tab} data-style={stylesOn?cosmetics?.active??undefined:undefined} aria-label="Fuji game">
-    <header className="b2-chain-heading"><RibbonTitle>Fuji</RibbonTitle><small title={TESTNET_NOTICE}>Testnet · no value</small>{yarnOn&&<output data-testid="yarn-balance"><GameIcon name="yarn" size={28}/> {formatEther(yarn)}</output>}{guest&&<GasBalance/>}{onClose&&<button aria-label="Close market" onClick={onClose}><GameIcon name="close" size={24}/></button>}</header>
+  return <TextDietContext.Provider value={true}><section ref={roomElement} className="chain-room b2-chain-room" data-tab={tab} data-style={stylesOn?cosmetics?.active??undefined:undefined} aria-label="Fuji game">
+    <header className="b2-chain-heading"><RibbonTitle>Fuji</RibbonTitle><small title={TESTNET_NOTICE}>Testnet · no value</small>{yarnOn&&<output data-testid="yarn-balance"><GameIcon name="yarn" size={28}/> {formatEther(yarn)}</output>}{guest&&<GasBalance/>}{onClose&&<button aria-label="Close market" onClick={closeRoom}><GameIcon name="close" size={24}/></button>}</header>
     <nav className="b2-chain-rail" aria-label="Chain screens">{rail.map(t=><PaintedAction key={t} icon={tabIcons[t]} active={tab===t} onClick={()=>selectTab(t)}>{t}</PaintedAction>)}{extra.length>0&&<PaintedAction icon="guide" active={extra.includes(tab)} onClick={()=>setMore(true)}>More</PaintedAction>}</nav>
     {more&&<MenuDialogB2 title="More" onClose={()=>setMore(false)}><div className="b2-chain-more">{extra.map(t=><PaintedAction key={t} icon={tabIcons[t]} active={tab===t} onClick={()=>selectTab(t)}>{t}</PaintedAction>)}</div></MenuDialogB2>}
     {!session?<p>Play as guest.</p>:<>

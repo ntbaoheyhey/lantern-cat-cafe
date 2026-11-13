@@ -30,6 +30,8 @@ import './cafe-menu-a6.css';
 import './first-steps-c.css';
 import './supplies-c.css';
 import '../shell/screen-skin.css';
+import '../shell/motion-b2.css';
+import {openPanelB2,useMenuClose} from '../shell/motion-b2';
 import {CountUpA6} from './CountUpA6';
 import {OpeningA6} from './OpeningA6';
 import {useNewDiscoveries} from './useNewDiscoveries';
@@ -66,12 +68,12 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  const sheet=m.screen!=='hub'||events;
  const closeMenu=()=>{setMenu(false);menuTrigger.current?.focus();};
  const headerCat=events?'brioche':({team:'mochi',inventory:'panko',relics:'sorrel',tower:'yarn-giant',bonds:'clover',gacha:'marigold',prepare:'mochi',result:'mochi'} as Partial<Record<Screen,string>>)[m.screen]??m.cardId;
- const close=()=>{setEvents(false);setMenu(false);if(m.replay){m.finish();return;}m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
+ const close=useMenuClose(dialog,()=>{setEvents(false);setMenu(false);if(m.replay){m.finish();return;}m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});});
  const go=(screen:Screen)=>{const origin=document.activeElement as HTMLElement;if(!dialog.current?.contains(origin))returnFocus.current=origin;setEvents(false);setMenu(false);setRoute(false);m.go(screen);};
  const openEvents=()=>{returnFocus.current=document.activeElement as HTMLElement;m.go('hub');setEventPage('login');setEvents(true);setMenu(false);};
  useEffect(()=>{const act=(e:Event)=>{const action=(e as CustomEvent<string>).detail;if(action==='Collect')openEvents();else go(action==='Grow'?'team':'hub');};window.addEventListener('shell:season-action',act);return()=>window.removeEventListener('shell:season-action',act);},[m]);
  useEffect(()=>{if(m.screen!=='hub')setEvents(false);if(m.screen==='prepare'&&R.gameplayA6(m.state))setRoute(false);},[m.screen,m.battle?.initial.seed]);
- useEffect(()=>{if(sheet)dialog.current?.focus();},[sheet,m.screen]);
+ useEffect(()=>{if(!sheet)return;dialog.current?.focus();const animation=openPanelB2(dialog.current);return()=>animation?.cancel();},[sheet,m.screen]);
  useEffect(()=>{if(menu&&R.gameplayA6(m.state))menuNav.current?.querySelector<HTMLButtonElement>('.a6-menu-link')?.focus();},[menu,m]);
  useEffect(()=>{
   if(!menu||!R.gameplayA6(m.state))return;

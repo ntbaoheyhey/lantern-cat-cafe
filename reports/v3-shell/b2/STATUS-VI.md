@@ -14,3 +14,7 @@
 - Chưa chứng minh kinh tế đạt mục tiêu mới hoặc bộ đếm Fuji trực tiếp.
 - Lịch đồng bộ: 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
 - Không triển khai, không merge main. Người dùng triển khai ngày 20-11 theo USER-DEPLOY-VI.md.
+
+U4 đạt: video menu 62 giây có âm thanh (6,7 MiB); trung vị 60 fps; dịch chuyển bố cục lớn nhất 0,0304.
+Đã kiểm tra giảm chuyển động theo hệ thống và cài đặt game (16 mục). Toàn bộ 2.514 test web và 724 test server đạt.
+Tiếp theo: đo và chỉnh bản phối âm thanh S5, rồi hoàn thiện kinh tế. Chưa triển khai môi trường thật.
