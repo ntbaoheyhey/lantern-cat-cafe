@@ -46,14 +46,14 @@ PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
 PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
 PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
 PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
-FAIL U1.screens: measured missing; required >= 24 states, screenshots, all metrics and fix lists
-FAIL U1.report: measured missing; required nonempty reports/v3-shell/b2/UI-AUDIT.md
+PASS U1.screens: measured 53; required >= 24 states, screenshots, all metrics and fix lists
+PASS U1.report: measured 17010; required nonempty reports/v3-shell/b2/UI-AUDIT.md
 FAIL U2.files: measured missing; required >= 60 new art files with provenance
 FAIL U2.bytes: measured missing; required <= 8000000 bytes new UI art
 FAIL U2.inputs: measured missing; required 0 reference frames as generator inputs; text/own images only
 FAIL U2.sheet: measured missing; required nonempty reports/v3-shell/b2/shots/ui-kit.png
 FAIL U3.screens: measured missing; required >= 24 rebuilt screens
-FAIL U3.coverage: measured missing; required every U1 screen rebuilt
+FAIL U3.coverage: measured 0/53; required every U1 screen rebuilt
 FAIL U3.images: measured missing; required 1280x720 AND 1440x900 before/after images per screen
 FAIL U3.words: measured missing; required <= 25 visible words every screen
 FAIL U3.buttons: measured missing; required <= 2 plain text buttons every screen

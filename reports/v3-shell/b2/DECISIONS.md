@@ -46,3 +46,6 @@
 - The local Piper LJSpeech model is MIT per the repository metadata and uses the public-domain LJ Speech dataset. Ryan is rejected (NC); LibriTTS is not used under the user's restricted audio licence list. Piper/Whisper run locally; their model files remain in ignored tools/audio-models.
 
 - V roster planning fetched A at 3c0bc9cb9b67d163b8ec3789f67158148bd9e77e. Catalogue and V5 cat/enemy implementations are byte-identical to B; hashes are in VOICE-A-ROSTER.json. The producer reads executable rules and fails on an un-scripted new unit or skill. Include all thirteen enemies, beyond the seven mandatory elites/bosses. No merge or A-owned edit.
+
+## U1 close / U2 art direction
+Campaign audit fixture used invalid challenge band 0; corrected to 1 and verified actual party/enemy outcomes without touching combat sources. Replaced the accidental black/loading comparison frame with the inspected result ribbon frame. U2 uses built-in imagegen from written prompts only, never the private reference frames. Export originals into project-owned WebP assets with hashes and per-file provenance.

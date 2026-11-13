@@ -9,8 +9,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
 - [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
 - [ ] V — PARTIAL (allowed: only recognition misses after 9 documented processing iterations; all other V gates PASS; self-score 7/10)
-- [ ] U1 — in progress (53 baseline states; final loss-fixture verification and private comparisons)
-- [ ] U2 — todo
+- [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
+- [ ] U2 — in progress (original text-only painted assets)
 - [ ] U3 — todo
 - [ ] U4 — todo
 - [ ] S5 — todo
@@ -130,3 +130,11 @@ PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
 PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
 
 Acceptance checker confirms the permitted recognition-only PARTIAL condition with 9 measured iterations. Checks: tests/v-types.log, tests/v-suite.log, tests/v-source-final.log; exact misses and current hashes: VOICE-CALLOUTS-VALIDATION.json.
+
+## U1 evidence
+
+PASS U1.screens: measured 53; required >= 24 states, screenshots, all metrics and fix lists
+
+PASS U1.report: measured 17010; required nonempty reports/v3-shell/b2/UI-AUDIT.md
+
+Checks: tests/u1-types.log, tests/u1-suite.log (2,503 web and 724 server tests pass; existing rule expected failures/skips remain disclosed). Real campaign victory/defeat verified by tests/u1-campaign-results-2.log. All 53 private comparisons are outside the repository. Baseline: 26 states exceed 25 words, 42 exceed two plain buttons; no U3 completion claimed.
