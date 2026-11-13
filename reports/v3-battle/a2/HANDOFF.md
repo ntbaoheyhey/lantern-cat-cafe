@@ -1,17 +1,18 @@
 # V3-A2 handoff
-NOW: F2 measured and recorded; M1 root motion integration underway.
-NEXT 1: Wire six archetypes + per-hit reactions + three after-images into the cut-out scene.
-NEXT 2: Capture 30s of all three M1 fixtures; measure real displacement, energy, hits and FPS.
-NEXT 3: M2 separate parts, V1 distinct full-screen plates, V2/V3 effects/audio, T1 UI, polish.
-LAST GOOD COMMIT: e502656bd (F2 source; full typecheck/unit/parity green, inherited E2E exit1).
-OPEN: G0/R/F1 shared Night tips failure; F2 full E2E also exit1. No skipped cases.
-F2: alpha1.00; bubbles max.600s, interior max.06275; contrast min42.59/18; 3x30s parity PASS.
-F2 LOG: resumed duplicate suite stopped after inherited process37310 completed; suite.json is complete source-e502 run.
-R: reference12 windows/44 bodies/33 glyphs. Numeric gates pass. No verified boss reference.
-TARGETS: scale [.157095,.261825], motion >=15.79559, travel >=2/10s, glyph [34.662,57.770].
-F1: scale.20946; 6 enemy seats; face occlusion0; floor min.51068; pixel masks explicitly clear buffers.
-M1: pure sampler tests3/3; no rules changes. New uncommitted motion.ts/motion.test.ts/motion-trails.ts.
-PIDS: inherited Vite92109 port5990 retained; F2 suite and audits ended; duplicate39955 tree stopped.
-SYNC: 16 Nov12:00 UTC;18 Nov12:00 UTC;freeze19 Nov12:00 UTC. Never early.
-STOP: check STOP-V3A before every card. Work alone. No deploy/main merge.
-REQUEST: /Users/bao/.codex/attachments/d9be20c4-0c9b-4b69-8bf0-15aef6541d74/Pasted text.txt
+NOW: M2 actual separate faces/props, full 22-unit eight-pose audit running.
+FIND: Inherited Vite92109 exited during M2 audit; later captures failed connection, not rigs.
+FIX: Restart local Vite5990, rerun captures; discard incomplete repair logs.
+NEXT 1: Paint hidden joints from measured M2 pose gaps; verify all 22 face strips.
+NEXT 2: V1 full-viewport distinct plates and V2 density to resolve M1 motion energy.
+NEXT 3: V3 audio events, T1 battle UI, all open gates and polish.
+LAST GOOD COMMIT: 1f8261375 (M1 readiness); M2 source changes uncommitted.
+OPEN: G0/R/F1/F2 shared Night tips E2E remains 9/10; no skipped cases.
+M1: wave1/3/boss energy8.052/8.964/9.484 <15.796; 111/111 hit reactions.
+M1: min travel.08795; 16.82–20.09 displacement events/10s; High59.88–60.02FPS.
+M1: all3 capture videos/parity verified; temporary frame PNGs removed.
+M2: local original-source face art + annotated props in art/units/*/depth-parts.
+M2: Biscuit blink/mouth visible; holes294/504 in strike/ult require hidden joint repair.
+PIDS: Vite69096 port5990 exec62345; M2 pipeline exec46285; old Vite92109 exited.
+SYNC: 16 Nov12:00UTC;18 Nov12:00UTC;freeze19 Nov12:00UTC. Never early.
+STOP: check STOP-V3A. Work alone. No deploy/main merge.
+REQUEST: /Users/bao/.codex/attachments/3d4f353b-16ba-41af-97a2-f33b19f0eba7/Pasted text.txt

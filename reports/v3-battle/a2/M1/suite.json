@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T05:20:21.319Z",
+    "sourceCommit": "1f8261375afaed7a42197d9df55e16994c461873"
+  },
+  "typecheckExit": 0,
+  "parityExit": 0,
+  "unitExit": 0,
+  "e2eExit": 1,
+  "repairs": {
+    "unitRerunAt": "2026-11-13T05:25:09.835997+00:00",
+    "reason": "Scene lifecycle fixture now constructs the trail renderer and home-position map introduced by M1. Full pnpm test rerun passes; E2E failure unchanged."
+  }
+}

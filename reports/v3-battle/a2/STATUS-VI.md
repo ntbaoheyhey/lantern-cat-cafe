@@ -1,8 +1,12 @@
-# Trạng thái V3-A2
-- F1: tỉ lệ nhân vật, đội hình, che mặt và diện tích sàn đạt yêu cầu; kiểm thử Night tips của giao diện B còn lỗi.
-- F2: màu gốc đã đúng; độ mờ nhân vật 1.00; bong bóng khiên tối đa 0,6 giây.
-- Độ tương phản thấp nhất 42,59, yêu cầu 18; ba trận mẫu 30 giây đều giữ nguyên kết quả chiến đấu.
-- Typecheck, unit và parity đạt. E2E còn lỗi nên F2 chưa đánh dấu hoàn tất.
-- Đang làm M1: sáu kiểu di chuyển tấn công, đẩy lùi khi trúng đòn và ảnh dư.
-- Chưa đến lịch đồng bộ 16/11, 18/11; chưa có demo cuối cùng.
-- Không triển khai, không gộp vào main. Chưa cần người dùng thao tác.
+# V3-A2 — đang thực hiện
+- Đã tiếp tục đúng worktree và nhánh Session A; không merge main/deploy.
+- M1: cả 3 cảnh giữ nguyên kết quả chiến đấu; 111/111 đòn có phản ứng trúng đòn.
+- Nhân vật dịch chuyển tối thiểu 8,79% chiều rộng; High khoảng 60 FPS với 10 nhân vật.
+- M1 CHƯA ĐẠT: năng lượng chuyển động 8,05–9,48; yêu cầu ít nhất 15,80.
+- Đã sửa fixture kiểm thử tải nhân vật; toàn bộ unit test chạy lại thành công.
+- E2E vẫn 9/10: đường dẫn Night tips thuộc Session B chưa có; đã ghi yêu cầu.
+- M2 đang tách mắt/miệng/vũ khí thật và kiểm tra 8 tư thế cho 22 nhân vật.
+- Đã loại một bản vá kín lỗ nhưng làm xấu đường viền; đang kiểm tra cách vá nhỏ hơn.
+- Không đánh dấu card hoàn tất nếu checker chưa PASS tất cả.
+- Sync sớm nhất: 16/11 lúc 19:00 giờ Việt Nam; lần hai 18/11 lúc 19:00.
+- Chưa quay demo cuối; chỉ thực hiện sau lần sync 18/11.

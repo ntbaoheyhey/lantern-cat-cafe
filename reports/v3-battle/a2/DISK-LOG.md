@@ -26,3 +26,9 @@ Before: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /Syste
 After: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /System/Volumes/Data
 Removed local rebuildable output: apps/web/node_modules/.vite.
 Retained reference comparison frames for current F2 card. Normal disk mode (90 GiB free).
+
+## Resume 2026-11-13T05:18:57.777668+00:00
+Before: 90 GiB free.
+Removed: reports/v3-battle/a2/M1/capture/wave3: 304 encoded PNGs (279.7 MiB), reports/v3-battle/a2/M1/capture/boss: 333 encoded PNGs (265.4 MiB), reports/v3-battle/a2/M1/capture/wave1: 310 encoded PNGs (252.0 MiB), reports/v3-battle/a2/M1/preview/wave1: 50 encoded PNGs (47.0 MiB), old decoded reference directory.
+After: /dev/disk3s1   926Gi   797Gi    91Gi    90%    5.4M  955M    1%   /System/Volumes/Data
+Active M1 suite output retained until exit; low disk mode off.

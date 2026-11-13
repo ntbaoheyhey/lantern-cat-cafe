@@ -29,3 +29,10 @@ The prior checker used active voice >= 0.5. The request requires 100%; changed i
 ## F2 closeout / M1 method — 2026-11-13
 Measured clarity from isolated rendered actors against the same painted stage; histograms and all 900-frame timelines remain in F2/metrics.json. The material alpha audit excludes original transparent atlas pixels and effect overlays. Pixelwise contrast passes; Panko/Mochi average luminance is still close to the floor (not hidden in the review).
 M1 uses analytic, seekable root transforms around each unit's foot, driven by the existing plan impact time. Six styles, independent idle phase, three pooled after-images, and damage-event reactions leave all rule events untouched. Ranged root travel uses the already documented 8.8%-viewport step to meet the stricter every-action >6% gate. No target or gate changes.
+
+## M1 measured dependency — 2026-11-13
+The 31s normal fixture has 39/39 visible hit reactions, minimum actor travel .08795 viewport widths, 18.71 displacement events/10s, and ~60 FPS. The unchanged full-frame 10Hz motion estimator is only 8.052 against 15.796. Root motion alone does not make the required scene density. Keep M1 in progress; prepare M2 assets while the other two captures finish, then build the V1/V2 visual density needed for the same unchanged metric. Do not inflate motion with arbitrary camera jitter or reduce the target.
+M2 uses the R-c chosen small-paint method. Original atlas regions are decoded out of PMA for painting; annotated eye/mouth regions are our own art only. No public unit assets change until the current M1 captures finish. The old template facialPolicy forbidding new painted faces belongs to A5 and is superseded by the explicit A2 request for separate face parts and hidden-area repaint.
+
+## M2 hidden-area repair / rejected visual result
+The first inverse-pose hole fill chose head/prop substrate and expanded by distance-to-paint; Biscuit reached zero holes but acquired a visibly oversized painted patch. Rejected. Method now restricts backing to torso/sleeves/tail/feet with fixed 14-source-pixel margins. Review full silhouettes, not just the hole metric. Gates unchanged.

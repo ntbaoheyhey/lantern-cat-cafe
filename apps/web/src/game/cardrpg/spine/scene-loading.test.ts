@@ -20,7 +20,8 @@ function actor() {
 function fixture() {
   let view = {actors: []} as unknown as SceneView;
   const scene: SpineScene = Object.assign(Object.create(SpineScene.prototype) as SpineScene, {
-    scene: new T.Scene(), actors: new Map(), pending: new Map(), failed: new Set(), lanes: new Map(), sampled: new Map(),
+    scene: new T.Scene(), actors: new Map(), pending: new Map(), failed: new Set(), lanes: new Map(), sampled: new Map(), homes: new Map(),
+    trails: {dispose: vi.fn()},
     loading: {completed: 0, total: 0}, stats: {loaded: 0}, time: 0, disposed: false, ready: false,
     geometry: new T.PlaneGeometry(), ringGeometry: new T.RingGeometry(), shadowTexture: new T.Texture(),
     onFailure: vi.fn(), view: () => view,
