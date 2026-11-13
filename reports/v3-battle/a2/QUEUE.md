@@ -31,3 +31,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 - [x] P8: Native/touch drag swaps, row preview and snap; P8/metrics.json, comparison and phone captures. HP, seed, rows and enemy stats unchanged; type/unit/parity PASS; shared E2E9/10. Source4d3c27e1c, evidence1ce5fcefa.
 - [x] P9: Shield absorption/resist/immunity icons from real log entries; P9/metrics.json and comparison. Exact absorbed22; no combat mutation. Source7f6808420, evidence2a79db332; type/unit/parity PASS, shared E2E9/10.
 - [x] P10:86 sheets on25 lossless pages, exact RGBA maxDelta0. High60.00FPS; Low4x50.76–53.01FPS; parity all6 PASS. P10/metrics.json and compare-performance.png; shared E2E9/10 keeps aggregate card open.
+
+## V3SOLO Q0 preservation
+
+Refreshed evidence and P1 trials preserved at 0b13880c3c9a09533233ce19430dd3ae5be559eb. Current baseline: typecheck PASS, full unit PASS, parity PASS; E2E 9/10 with hidden Review Night tips. See Q0/suite.json and Q0/suite-*.log. Stale measurement artifacts remain explicit in ../v3-solo/Q0-A-GATES.json and will be refreshed in Q1; no A card is newly closed.
