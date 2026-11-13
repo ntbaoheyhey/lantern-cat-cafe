@@ -1,0 +1,41 @@
+PASS F2.freshness: measured=16cb6cdfce0f68112c8cac5664e7cb3375349e76; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS F2.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS F2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS F2.alpha[wave1]: measured=1; required=min 0.97
+PASS F2.alpha[wave3]: measured=1; required=min 0.97
+PASS F2.alpha[boss]: measured=1; required=min 0.97
+PASS F2.persistent-bubbles[wave1]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[wave3]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[boss]: measured=0; required=eq 0
+PASS F2.contrast[wave1]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[wave3]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[boss]: measured=39.72415996830986; required=min 18
+PASS F2.comparisons: measured=3; required=min 3
+PASS F2.typecheck: measured=0; required=eq 0
+PASS F2.unit: measured=0; required=eq 0
+PASS F2.e2e: measured=0; required=eq 0
+PASS F2.parity: measured=0; required=eq 0
+PASS F2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+FAIL V1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= 16cb6cdfce0f68112c8cac5664e7cb3375349e76
+FAIL V1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= 16cb6cdfce0f68112c8cac5664e7cb3375349e76
+PASS V1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V1.plate-count: measured=13; required=eq 13
+PASS V1.coverage: measured=0.6254928977272727; required=min 0.6120624999999998
+PASS V1.viewport: measured=1; required=eq 1
+PASS V1.edges: measured=2; required=eq 2
+PASS V1.layer-types: measured=11; required=min 7
+PASS V1.particles: measured=480; required=min 300
+PASS V1.beats: measured=3; required=min 3
+PASS V1.distinctness: measured=0.18218093990217687; required=max 0.55
+PASS V1.pair-count: measured=78; required=eq 78
+PASS V1.bytes: measured=20157327; required=max 20971520
+PASS V1.motif-area: measured=0.46392361111111113; required=min 0.4
+PASS V1.camera-paths: measured=13; required=eq 13
+PASS V1.comparisons: measured=13; required=min 13
+PASS V1.render-log: measured=1; required=min 1
+PASS V1.typecheck: measured=0; required=eq 0
+PASS V1.unit: measured=0; required=eq 0
+PASS V1.e2e: measured=0; required=eq 0
+PASS V1.parity: measured=0; required=eq 0
+FAIL V1.artifact-freshness: measured=14; required=eq 0 artifacts older than last source commit
+TOTAL 37 PASS / 3 FAIL / 40 gates

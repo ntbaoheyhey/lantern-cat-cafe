@@ -1,0 +1,9 @@
+PASS Q7.plates: measured=13; required=13 distinct plates
+PASS Q7.caster-silhouettes: measured=[0.7916623950004578,0.755094051361084,0.7764502167701721,0.7087732553482056,0.7792301177978516,0.7608722448348999,0.7635061740875244,0.6290873885154724,0.7978551983833313,0.7748227119445801,0.6713889241218567,0.7135920524597168,0.8202793598175049]; required=all13 caster-region IoU <=0.85
+PASS Q7.wave1.effect-saturation: measured=0.8162497866959187; required=>=70% reference median
+PASS Q7.wave1.effect-luminance: measured=1.003247358260859; required=>=80% reference median
+PASS Q7.wave3.effect-saturation: measured=0.865981318884256; required=>=70% reference median
+PASS Q7.wave3.effect-luminance: measured=1.003247358260859; required=>=80% reference median
+PASS Q7.boss.effect-saturation: measured=0.8148015516750522; required=>=70% reference median
+PASS Q7.boss.effect-luminance: measured=1.003247358260859; required=>=80% reference median
+TOTAL 8 PASS / 0 FAIL / 8 gates

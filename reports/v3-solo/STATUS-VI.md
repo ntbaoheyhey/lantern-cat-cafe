@@ -13,3 +13,6 @@
 13. Tiếp theo:Q7 chuyển động caster/độ rực,Q8 hướng dẫn/Fuji,Q9 đánh bóng.
 14. Đồng bộ16/11 và18/11;đóng băng19/11 lúc12:00 UTC.
 15. Chưa deploy hoặc merge main;người dùng triển khai20/11.
+
+- Q7 hoàn tất:13 pose,259+8+9 gate PASS;435/435 browser;High60FPS.
+- Q8 đang làm coach bám mục tiêu và số liệu Fuji thật.

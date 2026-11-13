@@ -1,0 +1,1990 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T22:57:24.235Z",
+    "sourceCommit": "61e7e3357ba56ebe1c4819349d795d2138df7c18"
+  },
+  "method": "Same960x480 field-normalized, SIFT/RANSAC similarity-registered transient light mask: positive Rec709 luma delta>=20 and max RGB delta>=32 vs entrance; connected components>=24px; HUD cropped and damage/callout text excluded. Mean HSV saturation includes white pixels. Peak=99.9th-percentile Rec709 luma. Six reference field-active samples; three natural actives x2 beats per fixture. No threshold tuned per build.",
+  "limitations": [
+    "Transient masks can include moving bright prop edges; identical detector used on both products. Reference has no isolated effect-alpha layer.",
+    "Reference entrances were inspected; the gold sample starts after the cut-in has left the field.",
+    "Reference is PvP; no reference boss identity is inferred."
+  ],
+  "reference": {
+    "source": "V2 ua_e236yxNM user video; private measurement only",
+    "median": {
+      "meanSaturation": 0.46439218217299977,
+      "peakLuminance": 254.174604
+    },
+    "samples": [
+      {
+        "id": "ribbon",
+        "baselineSeconds": 40.5,
+        "seconds": 40.6,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            390,
+            180,
+            250,
+            240
+          ]
+        ],
+        "sha256": "57548db89432e6bec386e77f29af6a71d69b39ec0edca6b0ba6529fd628687b6",
+        "pixels": 33047,
+        "meanSaturation": 0.42253866596416156,
+        "peakLuminance": 254.63899999999998,
+        "cameraRegistration": {
+          "affine": [
+            [
+              0.9999475256823408,
+              -0.00017432303567328726,
+              0.10810974343587951
+            ],
+            [
+              0.00017432303567328726,
+              0.9999475256823408,
+              0.030296168351708203
+            ]
+          ],
+          "inliers": 565,
+          "matches": 882,
+          "residualP95": 1.663426918373605,
+          "validPixelFraction": 1.0
+        }
+      },
+      {
+        "id": "ribbon",
+        "baselineSeconds": 40.5,
+        "seconds": 41.1,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            390,
+            180,
+            250,
+            240
+          ]
+        ],
+        "sha256": "131aecfa4f757b29ed5c2aa784285ab622dd368224f05b4904a8b23b78ed0f77",
+        "pixels": 124896,
+        "meanSaturation": 0.506245698381838,
+        "peakLuminance": 254.99999999999997,
+        "cameraRegistration": {
+          "affine": [
+            [
+              1.000098828744765,
+              -0.0015818476366781843,
+              0.1685858834200781
+            ],
+            [
+              0.0015818476366781843,
+              1.000098828744765,
+              -0.9240785220997326
+            ]
+          ],
+          "inliers": 425,
+          "matches": 541,
+          "residualP95": 1.6459282072857213,
+          "validPixelFraction": 0.9980403645833333
+        }
+      },
+      {
+        "id": "gold-strike",
+        "baselineSeconds": 270.8,
+        "seconds": 270.9,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [],
+        "sha256": "974749ea1eeed3411847c095eec2ecdd2e4442870e8b2a019a6cdd0a114368b2",
+        "pixels": 50249,
+        "meanSaturation": 0.6148666698664181,
+        "peakLuminance": 254.35320800000002,
+        "cameraRegistration": {
+          "affine": [
+            [
+              0.9999790122180925,
+              -8.255363973973239e-05,
+              -0.020135508167926072
+            ],
+            [
+              8.255363973973239e-05,
+              0.9999790122180925,
+              -0.2042273127271376
+            ]
+          ],
+          "inliers": 1254,
+          "matches": 1591,
+          "residualP95": 1.4905640668528002,
+          "validPixelFraction": 1.0
+        }
+      },
+      {
+        "id": "gold-strike",
+        "baselineSeconds": 270.8,
+        "seconds": 271.0,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [],
+        "sha256": "b7d1189e5240ab2389a2a07ac77b8b558ab197303c82eb979cb142c57a4059ef",
+        "pixels": 32555,
+        "meanSaturation": 0.5509319070893601,
+        "peakLuminance": 253.99599999999998,
+        "cameraRegistration": {
+          "affine": [
+            [
+              1.0000808754045543,
+              0.0005718439729406204,
+              -0.21010904455754956
+            ],
+            [
+              -0.0005718439729406204,
+              1.0000808754045543,
+              0.12131455092562557
+            ]
+          ],
+          "inliers": 986,
+          "matches": 1265,
+          "residualP95": 1.6768535561349858,
+          "validPixelFraction": 1.0
+        }
+      },
+      {
+        "id": "fire-strike",
+        "baselineSeconds": 806.6,
+        "seconds": 806.9,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            590,
+            70,
+            450,
+            345
+          ],
+          [
+            350,
+            420,
+            550,
+            50
+          ]
+        ],
+        "sha256": "b35a9292bad20b8b70385b1d41d99758b39801b3c529707e4dccb21c19ddbca8",
+        "pixels": 23845,
+        "meanSaturation": 0.33405416517624037,
+        "peakLuminance": 252.85439999999997,
+        "cameraRegistration": {
+          "affine": [
+            [
+              0.9998609189148465,
+              -1.523899704872631e-05,
+              0.0631882406122819
+            ],
+            [
+              1.523899704872631e-05,
+              0.9998609189148465,
+              -0.06653898592249732
+            ]
+          ],
+          "inliers": 586,
+          "matches": 995,
+          "residualP95": 1.5637369627201871,
+          "validPixelFraction": 1.0
+        }
+      },
+      {
+        "id": "fire-strike",
+        "baselineSeconds": 806.6,
+        "seconds": 807.0,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            590,
+            70,
+            450,
+            345
+          ],
+          [
+            350,
+            420,
+            550,
+            50
+          ]
+        ],
+        "sha256": "ddb26130fcd1eccce32fdcb6d051081ae03552b0cd63fdbd2f648a7dde459343",
+        "pixels": 18986,
+        "meanSaturation": 0.36292169875429364,
+        "peakLuminance": 252.7110830000002,
+        "cameraRegistration": {
+          "affine": [
+            [
+              1.0000252856372605,
+              0.0023246619360006086,
+              -0.4036308003694905
+            ],
+            [
+              -0.0023246619360006086,
+              1.0000252856372605,
+              0.801150479660098
+            ]
+          ],
+          "inliers": 686,
+          "matches": 1034,
+          "residualP95": 1.7234997130136542,
+          "validPixelFraction": 0.9959635416666667
+        }
+      }
+    ]
+  },
+  "fixtures": {
+    "wave1": {
+      "meanSaturation": 0.3790600196419633,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.8162497866959187,
+      "luminanceRatio": 1.003247358260859,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-0-contact.png",
+          "sha256": "db759ef5f59c99d01e9097839468133be9a635ef6b1b72ad214dc67a886818b3",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              571.5652410714287,
+              71.59522058823515,
+              132.8695178571426,
+              61.162499999999895
+            ]
+          ],
+          "pixels": 189727,
+          "meanSaturation": 0.3504556857081646,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.06600632516693,
+                0.0004648801740306585,
+                -119.26685625373037
+              ],
+              [
+                -0.0004648801740306585,
+                1.06600632516693,
+                -20.121602938380686
+              ]
+            ],
+            "inliers": 769,
+            "matches": 1108,
+            "residualP95": 1.5185008612749809,
+            "validPixelFraction": 0.9395833333333333
+          }
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-0-resolve.png",
+          "sha256": "34b3a95d2a80e21312e3e2b52e0f75be31f47903a622820f0b5fb272008c5766",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              575.4528571428572,
+              63.76470588235277,
+              125.0942857142857,
+              58
+            ],
+            [
+              578.2983541666669,
+              52.10502450980371,
+              119.40329166666633,
+              58.095833333333196
+            ]
+          ],
+          "pixels": 188353,
+          "meanSaturation": 0.3373893803697542,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0453251225755704,
+                6.569253117608134e-05,
+                -107.13651738997629
+              ],
+              [
+                -6.569253117608134e-05,
+                1.0453251225755704,
+                -10.495576184012767
+              ]
+            ],
+            "inliers": 565,
+            "matches": 937,
+            "residualP95": 1.5277588719729,
+            "validPixelFraction": 0.93125
+          }
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-1-contact.png",
+          "sha256": "b722a4865ad8826d07f2e41754831531c5ba6a27ef8110ee9f553b39d7aa6c90",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 264694,
+          "meanSaturation": 0.3059971580946523,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0565082358221687,
+                -0.00013040584799712887,
+                -26.077763415228127
+              ],
+              [
+                0.00013040584799712887,
+                1.0565082358221687,
+                -0.7813850354968531
+              ]
+            ],
+            "inliers": 577,
+            "matches": 1052,
+            "residualP95": 1.7627938762681647,
+            "validPixelFraction": 1.0
+          }
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-1-resolve.png",
+          "sha256": "f69c9dbe9d9c15d85ef3f2327fbc23606fd6a47c508d8170141618978104a8db",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 280740,
+          "meanSaturation": 0.31148811195062903,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.05783745870441,
+                -0.0002594062126184139,
+                -33.07382837930442
+              ],
+              [
+                0.0002594062126184139,
+                1.05783745870441,
+                -1.2893478983908908
+              ]
+            ],
+            "inliers": 399,
+            "matches": 898,
+            "residualP95": 1.5279010371589583,
+            "validPixelFraction": 1.0
+          }
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-2-contact.png",
+          "sha256": "3498508da4a7c0c22884a45a927d1d1a83aa1d29c1d8c3c4b72a95a38e8f61dd",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              29.91245833333369,
+              324.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 271732,
+          "meanSaturation": 0.4832834139058005,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0481478364167378,
+                0.0007298668387059932,
+                -41.252287308200735
+              ],
+              [
+                -0.0007298668387059932,
+                1.0481478364167378,
+                0.510362271033114
+              ]
+            ],
+            "inliers": 626,
+            "matches": 1005,
+            "residualP95": 1.57008630690137,
+            "validPixelFraction": 1.0
+          }
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-2-resolve.png",
+          "sha256": "e072ef4ebe81ab3df7c762470f9c9740c881c52ff82679cdc079faa1209fd6a0",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              34.46714285714286,
+              316.70588235294053,
+              127.06571428571428,
+              58
+            ],
+            [
+              645.3884017857147,
+              53.22757352941131,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              30.871339285714697,
+              395.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 275335,
+          "meanSaturation": 0.46355494928281665,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0516057677041764,
+                0.010404163396595991,
+                -47.88335667589548
+              ],
+              [
+                -0.010404163396595991,
+                1.0516057677041764,
+                6.727448512965938
+              ]
+            ],
+            "inliers": 350,
+            "matches": 798,
+            "residualP95": 1.8267012303323165,
+            "validPixelFraction": 0.9932009548611112
+          }
+        }
+      ],
+      "parity": true,
+      "errors": []
+    },
+    "wave3": {
+      "meanSaturation": 0.40215495439771204,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.865981318884256,
+      "luminanceRatio": 1.003247358260859,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-0-contact.png",
+          "sha256": "680a832121ff965dd5c1a147a33811c6d3020f130bd7698009cc23df6980fe16",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              1120.329895405137,
+              263.1938943450296,
+              126.54862499999976,
+              61.162499999999895
+            ]
+          ],
+          "pixels": 138728,
+          "meanSaturation": 0.3821803647934002,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0421992679135037,
+                0.0019690659865196354,
+                -137.3425449593921
+              ],
+              [
+                -0.0019690659865196354,
+                1.0421992679135037,
+                -9.139433176575064
+              ]
+            ],
+            "inliers": 1065,
+            "matches": 1702,
+            "residualP95": 1.6620093143963675,
+            "validPixelFraction": 0.8975303819444445
+          }
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-0-resolve.png",
+          "sha256": "994dd958c63396a5785e053b9216cdcbcf8d2140426052a8179b2f45ecbd8c61",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              1124.014207905137,
+              255.36337963914724,
+              119.17999999999998,
+              58
+            ],
+            [
+              1096.3259910030722,
+              208.49926673044425,
+              119.40329166666633,
+              58.095833333333196
+            ]
+          ],
+          "pixels": 150478,
+          "meanSaturation": 0.3903803800125561,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0419868969430848,
+                6.97565581809989e-05,
+                -129.90384252513084
+              ],
+              [
+                -6.97565581809989e-05,
+                1.0419868969430848,
+                -10.224911974779934
+              ]
+            ],
+            "inliers": 722,
+            "matches": 1513,
+            "residualP95": 1.6640957893500845,
+            "validPixelFraction": 0.9041666666666667
+          }
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-1-contact.png",
+          "sha256": "99d054455514d806ca28d3738945fa5d3fb90e585fe49332aa2f85dd2ec3ca68",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 263203,
+          "meanSaturation": 0.32330506394341263,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0332544002643245,
+                -6.993423778020835e-05,
+                -36.16148194414528
+              ],
+              [
+                6.993423778020835e-05,
+                1.0332544002643245,
+                0.2909164538904438
+              ]
+            ],
+            "inliers": 391,
+            "matches": 1381,
+            "residualP95": 1.7393704737771754,
+            "validPixelFraction": 0.99375
+          }
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-1-resolve.png",
+          "sha256": "648d9005ee34d3ef59728129f4b61265fa38d8e065076baf655968e9d11308d9",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 286121,
+          "meanSaturation": 0.33345582367421545,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0378685719536191,
+                -0.0020224787816097347,
+                -37.01822024644393
+              ],
+              [
+                0.0020224787816097347,
+                1.0378685719536191,
+                0.3749141664946016
+              ]
+            ],
+            "inliers": 238,
+            "matches": 1250,
+            "residualP95": 1.8749745162029146,
+            "validPixelFraction": 0.9898567708333333
+          }
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-2-contact.png",
+          "sha256": "53949c9092ac261c4e01dd6098c6f3e2df8072e18010393aabae9bc3a16bd0da",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              299.9124583333337,
+              480.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 275824,
+          "meanSaturation": 0.4888618516610194,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0158863890159155,
+                0.003029290336222936,
+                -16.349960527556817
+              ],
+              [
+                -0.003029290336222936,
+                1.0158863890159155,
+                -1.7818187372522871
+              ]
+            ],
+            "inliers": 646,
+            "matches": 1256,
+            "residualP95": 1.8549734673747253,
+            "validPixelFraction": 0.99869140625
+          }
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-2-resolve.png",
+          "sha256": "326dd2123371505cd8209ce466d8e83c8360c6294556a8788bb063507914ee24",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              304.46714285714285,
+              472.70588235294053,
+              127.06571428571428,
+              58
+            ],
+            [
+              33.38840178571468,
+              332.2275735294113,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              30.871339285714697,
+              407.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 277159,
+          "meanSaturation": 0.4780565045518927,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0162045501895116,
+                0.009904503564002286,
+                -19.69661022244001
+              ],
+              [
+                -0.009904503564002286,
+                1.0162045501895116,
+                2.9003386679068464
+              ]
+            ],
+            "inliers": 561,
+            "matches": 1145,
+            "residualP95": 1.8340492285415417,
+            "validPixelFraction": 0.9947092013888889
+          }
+        }
+      ],
+      "parity": true,
+      "errors": []
+    },
+    "boss": {
+      "meanSaturation": 0.37838747062032374,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.8148015516750522,
+      "luminanceRatio": 1.003247358260859,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-0-contact.png",
+          "sha256": "1112594e74c294e0e91fc53c2585c67a32f216c53e0b69fe52c3bd1688e29d78",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              811.5419483619826,
+              62.976984795921794,
+              129.79258333333303,
+              61.64166666666654
+            ]
+          ],
+          "pixels": 207245,
+          "meanSaturation": 0.3395576609856951,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.058825666804342,
+                0.00035638958700026803,
+                -55.91937492246974
+              ],
+              [
+                -0.00035638958700026803,
+                1.058825666804342,
+                -24.138789163391777
+              ]
+            ],
+            "inliers": 669,
+            "matches": 1151,
+            "residualP95": 1.6451695597343792,
+            "validPixelFraction": 1.0
+          }
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-0-resolve.png",
+          "sha256": "c3a8a1a1091cc0412d1375de26e01e2f41f32ad352f0d788abd40d3a07efd749",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              815.8625257429347,
+              55.38605342337276,
+              121.15142857142857,
+              58
+            ],
+            [
+              750.8649113863867,
+              52.806617647058594,
+              122.51582142857106,
+              58.57499999999985
+            ]
+          ],
+          "pixels": 223623,
+          "meanSaturation": 0.33892723686828313,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.0225784032765737,
+                4.948794434045914e-05,
+                -30.9516308406207
+              ],
+              [
+                -4.948794434045914e-05,
+                1.0225784032765737,
+                -6.494097186364517
+              ]
+            ],
+            "inliers": 516,
+            "matches": 1194,
+            "residualP95": 1.496630331282475,
+            "validPixelFraction": 0.9885416666666667
+          }
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-1-contact.png",
+          "sha256": "0b83f6bc0eb33f06ed08ed702c3941c5e52fe1b11176e31511576b1e7b47932d",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 236803,
+          "meanSaturation": 0.31158495027677924,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.05775279512038,
+                -0.0006430107477397667,
+                -56.39912453253675
+              ],
+              [
+                0.0006430107477397667,
+                1.05775279512038,
+                -3.019435901422474
+              ]
+            ],
+            "inliers": 531,
+            "matches": 1354,
+            "residualP95": 1.6650859651646375,
+            "validPixelFraction": 0.996875
+          }
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-1-resolve.png",
+          "sha256": "73f99270db116548bbd07c50190005becf4c88d9d99da24e446465c102117700",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 252737,
+          "meanSaturation": 0.31802460389149784,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.060577953331527,
+                0.00014972021584025032,
+                -58.941108543689865
+              ],
+              [
+                -0.00014972021584025032,
+                1.060577953331527,
+                -3.4049027229642808
+              ]
+            ],
+            "inliers": 390,
+            "matches": 1174,
+            "residualP95": 1.6224951937916572,
+            "validPixelFraction": 0.996875
+          }
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-2-contact.png",
+          "sha256": "b9540863a6a1499cbbabd1f7c52db1abe5189b049b02b3d019deeb651a62b71b",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              263.9124583333337,
+              432.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 252556,
+          "meanSaturation": 0.47809507749630525,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.058108325167711,
+                -0.012385666027223737,
+                -52.662903881487345
+              ],
+              [
+                0.012385666027223737,
+                1.058108325167711,
+                -13.238730023289545
+              ]
+            ],
+            "inliers": 376,
+            "matches": 1066,
+            "residualP95": 1.7409510932483963,
+            "validPixelFraction": 0.9986458333333333
+          }
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-2-resolve.png",
+          "sha256": "5ad6f9c55ead76a013c62971f5295ad170c9a4a49065bf6ed2533427198c2041",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              268.46714285714285,
+              424.70588235294065,
+              127.06571428571428,
+              58
+            ],
+            [
+              555.3884017857147,
+              53.22757352941131,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              102.8713392857147,
+              479.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 254460,
+          "meanSaturation": 0.46785030352626783,
+          "peakLuminance": 254.99999999999997,
+          "cameraRegistration": {
+            "affine": [
+              [
+                1.049124048025829,
+                -0.016673855299629305,
+                -42.963033389783604
+              ],
+              [
+                0.016673855299629305,
+                1.049124048025829,
+                -15.557226532993395
+              ]
+            ],
+            "inliers": 361,
+            "matches": 977,
+            "residualP95": 1.8449299591513735,
+            "validPixelFraction": 0.9983810763888888
+          }
+        }
+      ],
+      "parity": true,
+      "errors": []
+    }
+  },
+  "comparisons": [
+    "reports/v3-battle/a2/Q7/compare-wave1-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave1-resolve.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave3-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave3-resolve.jpg",
+    "reports/v3-battle/a2/Q7/compare-boss-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-boss-resolve.jpg"
+  ],
+  "plates": [
+    {
+      "id": "biscuit-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7902611534276387,
+      "casterIoU": 0.7916623950004578,
+      "registration": [
+        2,
+        0
+      ],
+      "entranceArea": 26071,
+      "climaxArea": 26577,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/biscuit-ult-12.png",
+          "sha256": "f002330840e08abee6825d74d286955effe15ea7e669979aba45102b04d2f114"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/biscuit-ult-35.png",
+          "sha256": "91ab0c92e3e12fad9340c506da171c82266bbec6ed4c4ecf7057e50ac0875abd"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/biscuit-ult-54.png",
+          "sha256": "371694203137fc656a09ebf819634a340c4d7d581faeb1c475e63329d104f635"
+        }
+      ],
+      "motion": {
+        "gesture": "rolling-pin-swing",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "brioche-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7442050840155106,
+      "casterIoU": 0.755094051361084,
+      "registration": [
+        7,
+        4
+      ],
+      "entranceArea": 19721,
+      "climaxArea": 20762,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/brioche-ult-12.png",
+          "sha256": "976d7d841749ce4dd7c7dc14e019243a480cb52624c179f13895c2318df01163"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/brioche-ult-35.png",
+          "sha256": "17a20ced17ce9a7d1cd23a0ed2d846fa4ad2ed3a3a6d6b53fbacb87c614f230a"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/brioche-ult-54.png",
+          "sha256": "0522dc93c051193436bf81b9f09bd0a5b0b5cc3ccafaeef4e6777357e6c2aad2"
+        }
+      ],
+      "motion": {
+        "gesture": "moon-bowl-offering",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "cinnamon-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7747160099396521,
+      "casterIoU": 0.7764502167701721,
+      "registration": [
+        3,
+        0
+      ],
+      "entranceArea": 19866,
+      "climaxArea": 20129,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/cinnamon-ult-12.png",
+          "sha256": "494ddaeb7085c5df7f5f33d3cad860862d69e8797b69ff9d8bd4bb5e1e8588d1"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/cinnamon-ult-35.png",
+          "sha256": "5c838f7026dbc2c62a5277af045ff04c972a3815df62f1f88c546fc1c9e3fdd7"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/cinnamon-ult-54.png",
+          "sha256": "abe62b1384812b751a06668ed0f876e7e6592ee7b4a7369d3232de58260efb54"
+        }
+      ],
+      "motion": {
+        "gesture": "steam-pour",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "clover-ult",
+      "source": "placeholder",
+      "fixedRootIoU": 0.6977500393349767,
+      "casterIoU": 0.7087732553482056,
+      "registration": [
+        -2,
+        0
+      ],
+      "entranceArea": 16171,
+      "climaxArea": 16200,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.24444444444444446,
+          "path": "reports/v3-solo/Q7/gesture3-casters/clover-ult-12.png",
+          "sha256": "5c76a810b1a5cbe542c48fd2f0eef0d4e8ac770e19f7aa0c81df675fd8ff5e1b"
+        },
+        {
+          "frame": 35,
+          "time": 0.712962962962963,
+          "path": "reports/v3-solo/Q7/gesture3-casters/clover-ult-35.png",
+          "sha256": "33db6adad5a632153addbd8a0e77fa3f2b46f9000c5b8bef46031160b2c11f59"
+        },
+        {
+          "frame": 54,
+          "time": 1.1,
+          "path": "reports/v3-solo/Q7/gesture3-casters/clover-ult-54.png",
+          "sha256": "8e4c8c29cc7b2998c5d128550964c9af6e010602ff761a364e3f2c356b28990b"
+        }
+      ],
+      "motion": {
+        "gesture": "teapot-arc",
+        "joints": [
+          "l-arm-upper",
+          "r-arm-upper",
+          "tail-1",
+          "torso",
+          "head-pivot"
+        ]
+      }
+    },
+    {
+      "id": "inkcap-ult",
+      "source": "template",
+      "fixedRootIoU": 0.778781769745842,
+      "casterIoU": 0.7792301177978516,
+      "registration": [
+        1,
+        0
+      ],
+      "entranceArea": 24768,
+      "climaxArea": 24643,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/inkcap-ult-12.png",
+          "sha256": "e807dcfa7862cc6424fdf5beba823b474b7ba96883d4d8d8788019f63661a7ef"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/inkcap-ult-35.png",
+          "sha256": "98c0d851ca5ea57a2c0577f3db6a56477a91e43addab156d8add9e108c1e422f"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/inkcap-ult-54.png",
+          "sha256": "fa5ae3c6910927a4b215e25ad73cdc8700cedd4f7646f2c3e7820d2a3de03631"
+        }
+      ],
+      "motion": {
+        "gesture": "brush-flourish",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "mallow-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7608722434396945,
+      "casterIoU": 0.7608722448348999,
+      "registration": [
+        0,
+        0
+      ],
+      "entranceArea": 21971,
+      "climaxArea": 20908,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mallow-ult-12.png",
+          "sha256": "f6800ce9dbc8baf4365f6471df04ac195685d621b355dcf28ab97d27b184c4fb"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mallow-ult-35.png",
+          "sha256": "389621e03aceeaf739c0fddff3b3d71c338ba8e6bab657da4d2d3af7b8af746a"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mallow-ult-54.png",
+          "sha256": "898ee40387fc0b4f8b445ddc17ec253ee265620ddeca5677b253f77343a0a620"
+        }
+      ],
+      "motion": {
+        "gesture": "hearth-opening",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "marigold-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7482925952552121,
+      "casterIoU": 0.7635061740875244,
+      "registration": [
+        7,
+        0
+      ],
+      "entranceArea": 19380,
+      "climaxArea": 19530,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/marigold-ult-12.png",
+          "sha256": "8af0764a9e9b69cdb949845e1e53dc430520e30054a842983e248be0304a76da"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/marigold-ult-35.png",
+          "sha256": "e94acd03f58bf56e12d188da21f56ad1d8d4bc1671c091cfccd5f4ea5b631be6"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/marigold-ult-54.png",
+          "sha256": "48d59c497db04be3a141a0d3969b5da262a4d1d6fe57ba0130c474dc92bc70f4"
+        }
+      ],
+      "motion": {
+        "gesture": "staff-summon",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "mochi-ult",
+      "source": "placeholder",
+      "fixedRootIoU": 0.6285073351374448,
+      "casterIoU": 0.6290873885154724,
+      "registration": [
+        0,
+        1
+      ],
+      "entranceArea": 22671,
+      "climaxArea": 23064,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.24444444444444446,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mochi-ult-12.png",
+          "sha256": "742d6bb9b47bc5e0d50f4bda9db9bfa8ec6c73b761cf3fc438f4e5bb88c5ef4b"
+        },
+        {
+          "frame": 35,
+          "time": 0.712962962962963,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mochi-ult-35.png",
+          "sha256": "f847b33b08c378fd9f92388b610438105c01c46f0b5f3583e47cbf7b3d3abdc3"
+        },
+        {
+          "frame": 54,
+          "time": 1.1,
+          "path": "reports/v3-solo/Q7/gesture3-casters/mochi-ult-54.png",
+          "sha256": "f1524efb74a4e85cd6fbf7f5847606f21a138ffa010fa00a8fe684c458e6aadc"
+        }
+      ],
+      "motion": {
+        "gesture": "shield-lift",
+        "joints": [
+          "l-arm-upper",
+          "r-arm-upper",
+          "tail-1",
+          "torso",
+          "head-pivot"
+        ]
+      }
+    },
+    {
+      "id": "panko-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7968886499563201,
+      "casterIoU": 0.7978551983833313,
+      "registration": [
+        2,
+        0
+      ],
+      "entranceArea": 26550,
+      "climaxArea": 26929,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/panko-ult-12.png",
+          "sha256": "4837fafdf75ed4fee86daec95423c8024a6bfc4953e7b4fa6412407bf9660dd5"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/panko-ult-35.png",
+          "sha256": "d9fa80fc2163e3471d99a20b45ed106a0c8e98ae2f5f7158512aea1a09e4eda1"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/panko-ult-54.png",
+          "sha256": "f908269bcecf44046c6425c0b820b32e13b5a57128cb82a85e661badd270996b"
+        }
+      ],
+      "motion": {
+        "gesture": "hammer-strike",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "soot-ult",
+      "source": "placeholder",
+      "fixedRootIoU": 0.7613161483306207,
+      "casterIoU": 0.7748227119445801,
+      "registration": [
+        2,
+        -1
+      ],
+      "entranceArea": 20077,
+      "climaxArea": 19963,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.24444444444444446,
+          "path": "reports/v3-solo/Q7/gesture3-casters/soot-ult-12.png",
+          "sha256": "5382f11365070d7a25f4e8f8fd44234284de7c9ab7f868af5820d749a7d58664"
+        },
+        {
+          "frame": 35,
+          "time": 0.712962962962963,
+          "path": "reports/v3-solo/Q7/gesture3-casters/soot-ult-35.png",
+          "sha256": "b581132f396de417a24d3f547f3bf55ea06df4733855aed62c7f8e6fe7d24540"
+        },
+        {
+          "frame": 54,
+          "time": 1.1,
+          "path": "reports/v3-solo/Q7/gesture3-casters/soot-ult-54.png",
+          "sha256": "b8c22b34e8a89f27df086de15d1d6848a0f063363ebbebf58ceaa665d1c4bb4b"
+        }
+      ],
+      "motion": {
+        "gesture": "lantern-sweep",
+        "joints": [
+          "arm-l",
+          "arm-r",
+          "tail",
+          "hip",
+          "head"
+        ]
+      }
+    },
+    {
+      "id": "sorrel-ult",
+      "source": "template",
+      "fixedRootIoU": 0.6630990117471565,
+      "casterIoU": 0.6713889241218567,
+      "registration": [
+        7,
+        -3
+      ],
+      "entranceArea": 23236,
+      "climaxArea": 21360,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/sorrel-ult-12.png",
+          "sha256": "2c637fd76581c0b7fc7beef202847fe73b82c9a7143e846f58d0f115014b816d"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/sorrel-ult-35.png",
+          "sha256": "c34512c9a048e4d1ae2ed9179d742a45421de3d08ababe8eaee828660fb29141"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/sorrel-ult-54.png",
+          "sha256": "5b5b8580fa55e837306da47bd99638210144a8b9f08c79e6f03dec9eeac9ea87"
+        }
+      ],
+      "motion": {
+        "gesture": "water-offering",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "velvet-ult",
+      "source": "template",
+      "fixedRootIoU": 0.7135920571076566,
+      "casterIoU": 0.7135920524597168,
+      "registration": [
+        0,
+        0
+      ],
+      "entranceArea": 24737,
+      "climaxArea": 22553,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/velvet-ult-12.png",
+          "sha256": "d3a42ca4388184f7f62176be257c669fcc4af9bd7c79283e28f5bb2a49607ec7"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/velvet-ult-35.png",
+          "sha256": "fc2361d8e7ab5b98c2286cefc225aaf4dd534b00d8d7215dcb9046c8793a6ee8"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/velvet-ult-54.png",
+          "sha256": "ec6bff0293dfcb4d8fe6dc0eb96ea246139dc5cf7beac2b9646c3e44bafb3a06"
+        }
+      ],
+      "motion": {
+        "gesture": "ribbon-fan",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "tail_1",
+          "torso",
+          "neck"
+        ]
+      }
+    },
+    {
+      "id": "yarn-giant-ult",
+      "source": "template",
+      "fixedRootIoU": 0.8202793677155313,
+      "casterIoU": 0.8202793598175049,
+      "registration": [
+        0,
+        0
+      ],
+      "entranceArea": 31927,
+      "climaxArea": 29451,
+      "frames": [
+        {
+          "frame": 12,
+          "time": 0.12222222222222223,
+          "path": "reports/v3-solo/Q7/gesture3-casters/yarn-giant-ult-12.png",
+          "sha256": "e13fcd62c83a1c1b37349caed8a76ce5e153357522c3e3a2f8b7759874862081"
+        },
+        {
+          "frame": 35,
+          "time": 0.3564814814814815,
+          "path": "reports/v3-solo/Q7/gesture3-casters/yarn-giant-ult-35.png",
+          "sha256": "bec2b5dc868ccffaf585680e5fe91dbd60080b2d5fe560faa3df1726191d2caa"
+        },
+        {
+          "frame": 54,
+          "time": 0.55,
+          "path": "reports/v3-solo/Q7/gesture3-casters/yarn-giant-ult-54.png",
+          "sha256": "3dd3ebd7446656969e89821f2026c9620b65c8adf998bc29d9f5de013a27bf19"
+        }
+      ],
+      "motion": {
+        "gesture": "whale-command",
+        "joints": [
+          "arm_upper_l",
+          "arm_upper_r",
+          "torso",
+          "neck"
+        ]
+      }
+    }
+  ],
+  "silhouetteMethod": "Alpha>=64 at640x360. Maximize intersection under translation only by cross-correlation. No scale/rotation fitting. Fixed camera, root angle and360px semantic height. Higher registered IoU conservatively rejects camera-only differences.",
+  "captureSourceNotes": "Caster/field captures made with final uncommitted source later committed as 9b4323716; Q7 plate render and browser validation on 16cb6cdfc. Preserve original capture metadata; source was not retroactively relabelled.",
+  "measurementAudit": {
+    "registrationTest": {
+      "path": "scripts/v3solo/field-colour-metrics.test.py",
+      "cases": 2,
+      "passed": 2
+    },
+    "baselineRatios": {
+      "wave1": {
+        "saturationRatio": 0.7657468505627526,
+        "luminanceRatio": 0.9694532660705945
+      },
+      "wave3": {
+        "saturationRatio": 0.81716460458403,
+        "luminanceRatio": 0.9695795572086344
+      },
+      "boss": {
+        "saturationRatio": 0.7779746107417215,
+        "luminanceRatio": 0.9695952944220975
+      }
+    },
+    "note": "Replaces unregistered preliminary values in prior commit; acceptance threshold unchanged."
+  },
+  "performance": {
+    "_meta": {
+      "generatedAt": "2026-11-13T23:07:58.051Z",
+      "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
+    },
+    "profile": "1280\u00d7720, device scale 1; Chrome CDP 4x CPU slowdown for Low (proxy, not a physical 2019 laptop)",
+    "rows": [
+      {
+        "fixture": "wave1",
+        "quality": "high",
+        "cpuThrottle": 1,
+        "frames": 721,
+        "seconds": 12.0162,
+        "fps": 60.00233018758011,
+        "p95FrameMs": 16.700000000000728,
+        "p95RenderMs": 3,
+        "over33ms": 0,
+        "units": 8,
+        "stats": {
+          "frames": 788,
+          "calls": 1,
+          "triangles": 1,
+          "geometries": 15,
+          "textures": 17,
+          "particles": 0,
+          "estimatedGpuBytes": 0,
+          "loaded": 8,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 0,
+          "peak": 52,
+          "dropped": 0,
+          "draws": 50,
+          "impacts": 0,
+          "cues": 18,
+          "allocated": 256,
+          "maskedFaces": 8,
+          "override": 0
+        },
+        "field": {
+          "skill": "enemy:button-guard:basic",
+          "tier": "basic",
+          "particles": 32,
+          "layers": [
+            "lingering-ground",
+            "impact-debris",
+            "lingering-ground",
+            "impact-debris"
+          ],
+          "groundCount": 2,
+          "groundCapacity": 24,
+          "pooledParticles": 576
+        },
+        "peakParticles": 288,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      },
+      {
+        "fixture": "wave1",
+        "quality": "low",
+        "cpuThrottle": 4,
+        "frames": 663,
+        "seconds": 12.0495,
+        "fps": 55.02303000124486,
+        "p95FrameMs": 33.29999999999973,
+        "p95RenderMs": 6.700000017881393,
+        "over33ms": 15,
+        "units": 8,
+        "stats": {
+          "frames": 710,
+          "calls": 25,
+          "triangles": 15738,
+          "geometries": 15,
+          "textures": 13,
+          "particles": 0,
+          "estimatedGpuBytes": 0,
+          "loaded": 8,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 0,
+          "peak": 52,
+          "dropped": 0,
+          "draws": 30,
+          "impacts": 0,
+          "cues": 18,
+          "allocated": 256,
+          "maskedFaces": 8,
+          "override": 0
+        },
+        "field": {
+          "skill": "enemy:button-guard:basic",
+          "tier": "basic",
+          "particles": 12,
+          "layers": [
+            "lingering-ground",
+            "impact-debris",
+            "lingering-ground",
+            "impact-debris"
+          ],
+          "groundCount": 2,
+          "groundCapacity": 24,
+          "pooledParticles": 576
+        },
+        "peakParticles": 112,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      },
+      {
+        "fixture": "wave3",
+        "quality": "high",
+        "cpuThrottle": 1,
+        "frames": 721,
+        "seconds": 12.0162,
+        "fps": 60.00233018758011,
+        "p95FrameMs": 16.700000000000728,
+        "p95RenderMs": 4.0999999940395355,
+        "over33ms": 0,
+        "units": 10,
+        "stats": {
+          "frames": 787,
+          "calls": 1,
+          "triangles": 1,
+          "geometries": 17,
+          "textures": 19,
+          "particles": 0,
+          "estimatedGpuBytes": 0,
+          "loaded": 10,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 0,
+          "peak": 68,
+          "dropped": 0,
+          "draws": 0,
+          "impacts": 0,
+          "cues": 19,
+          "allocated": 256,
+          "maskedFaces": 0,
+          "override": 0
+        },
+        "field": {
+          "skill": "clover-2",
+          "tier": "active",
+          "particles": 0,
+          "layers": [],
+          "groundCount": 0,
+          "groundCapacity": 24,
+          "pooledParticles": 720
+        },
+        "peakParticles": 288,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      },
+      {
+        "fixture": "wave3",
+        "quality": "low",
+        "cpuThrottle": 4,
+        "frames": 640,
+        "seconds": 12.016200000000001,
+        "fps": 53.261430402290245,
+        "p95FrameMs": 33.400000000000546,
+        "p95RenderMs": 9.300000011920929,
+        "over33ms": 26,
+        "units": 10,
+        "stats": {
+          "frames": 681,
+          "calls": 31,
+          "triangles": 21596,
+          "geometries": 17,
+          "textures": 15,
+          "particles": 0,
+          "estimatedGpuBytes": 0,
+          "loaded": 10,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 0,
+          "peak": 68,
+          "dropped": 0,
+          "draws": 0,
+          "impacts": 0,
+          "cues": 19,
+          "allocated": 256,
+          "maskedFaces": 0,
+          "override": 0
+        },
+        "field": {
+          "skill": "clover-2",
+          "tier": "active",
+          "particles": 0,
+          "layers": [],
+          "groundCount": 0,
+          "groundCapacity": 24,
+          "pooledParticles": 720
+        },
+        "peakParticles": 112,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      },
+      {
+        "fixture": "boss",
+        "quality": "high",
+        "cpuThrottle": 1,
+        "frames": 721,
+        "seconds": 12.016099999999998,
+        "fps": 60.00282953703782,
+        "p95FrameMs": 16.799999999999272,
+        "p95RenderMs": 3.4000000059604645,
+        "over33ms": 0,
+        "units": 7,
+        "stats": {
+          "frames": 788,
+          "calls": 1,
+          "triangles": 1,
+          "geometries": 14,
+          "textures": 15,
+          "particles": 0,
+          "estimatedGpuBytes": 0,
+          "loaded": 7,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 0,
+          "peak": 47,
+          "dropped": 0,
+          "draws": 50,
+          "impacts": 0,
+          "cues": 18,
+          "allocated": 256,
+          "maskedFaces": 7,
+          "override": 0
+        },
+        "field": {
+          "skill": "enemy:binding-thread:basic",
+          "tier": "basic",
+          "particles": 32,
+          "layers": [
+            "lingering-ground",
+            "impact-debris",
+            "lingering-ground",
+            "impact-debris"
+          ],
+          "groundCount": 2,
+          "groundCapacity": 24,
+          "pooledParticles": 432
+        },
+        "peakParticles": 288,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      },
+      {
+        "fixture": "boss",
+        "quality": "low",
+        "cpuThrottle": 4,
+        "frames": 663,
+        "seconds": 12.016200000000001,
+        "fps": 55.17551305737255,
+        "p95FrameMs": 33.30000000000018,
+        "p95RenderMs": 6.399999976158142,
+        "over33ms": 11,
+        "units": 7,
+        "stats": {
+          "frames": 709,
+          "calls": 25,
+          "triangles": 20666,
+          "geometries": 14,
+          "textures": 11,
+          "particles": 2,
+          "estimatedGpuBytes": 0,
+          "loaded": 7,
+          "hiddenFrames": 0,
+          "quality": "high"
+        },
+        "painted": {
+          "active": 2,
+          "peak": 47,
+          "dropped": 0,
+          "draws": 70,
+          "impacts": 0,
+          "cues": 18,
+          "allocated": 256,
+          "maskedFaces": 7,
+          "override": 0
+        },
+        "field": {
+          "skill": "enemy:binding-thread:basic",
+          "tier": "basic",
+          "particles": 40,
+          "layers": [
+            "lingering-ground",
+            "impact-debris",
+            "lingering-ground",
+            "impact-debris",
+            "painted-core",
+            "painted-sweep",
+            "element-aura",
+            "twelve-frame-spark",
+            "element-particles",
+            "painted-core",
+            "painted-sweep",
+            "element-aura",
+            "twelve-frame-spark",
+            "element-particles"
+          ],
+          "groundCount": 2,
+          "groundCapacity": 24,
+          "pooledParticles": 432
+        },
+        "peakParticles": 112,
+        "peakGround": 4,
+        "texturePages": 25,
+        "decodedMiB": 172,
+        "atlasEntries": 86,
+        "parity": true,
+        "errors": []
+      }
+    ]
+  },
+  "score": 8.2
+}

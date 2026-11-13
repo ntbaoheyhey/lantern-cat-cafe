@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T15:09:32.817Z",
-    "sourceCommit": "5882ad28f64617f06300b2e702191a45dad4f9fd"
+    "generatedAt": "2026-11-13T23:08:55.002Z",
+    "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
   },
   "medianCoreHeightFraction": 0.20676215855120456,
   "maxFaceOcclusion": 0,
@@ -30,6 +30,36 @@
     "height": 550
   },
   "units": [
+    {
+      "id": "foe-3-needle-moth",
+      "asset": "needle-moth",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 458.3249516441007,
+      "box": {
+        "x": 669.8867636772542,
+        "y": 297.5875618400017,
+        "width": 192.0820882351552,
+        "height": 187.60144004860518
+      },
+      "coreBox": {
+        "x": 734.662849298194,
+        "y": 334.87430209870547,
+        "width": 54.10511393956858,
+        "height": 148.86875415686728
+      },
+      "faceBox": {
+        "x": 738.9912584133596,
+        "y": 334.87430209870547,
+        "width": 45.448295709237605,
+        "height": 65.5022518290216
+      },
+      "drawOrder": 171269,
+      "ratio": 0.3410935273611003,
+      "source": "template",
+      "fallback": false
+    },
     {
       "id": "panko",
       "asset": "panko",
@@ -87,36 +117,6 @@
       },
       "drawOrder": 112105,
       "ratio": 0.3335372509465429,
-      "source": "template",
-      "fallback": false
-    },
-    {
-      "id": "foe-3-needle-moth",
-      "asset": "needle-moth",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 458.3249516441007,
-      "box": {
-        "x": 669.8867636772542,
-        "y": 297.5875618400017,
-        "width": 192.0820882351552,
-        "height": 187.60144004860518
-      },
-      "coreBox": {
-        "x": 734.662849298194,
-        "y": 334.87430209870547,
-        "width": 54.10511393956858,
-        "height": 148.86875415686728
-      },
-      "faceBox": {
-        "x": 738.9912584133596,
-        "y": 334.87430209870547,
-        "width": 45.448295709237605,
-        "height": 65.5022518290216
-      },
-      "drawOrder": 171269,
-      "ratio": 0.3410935273611003,
       "source": "template",
       "fallback": false
     },
@@ -181,36 +181,6 @@
       "fallback": false
     },
     {
-      "id": "soot",
-      "asset": "soot",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 448.90140845070425,
-      "box": {
-        "x": 210.4466515201335,
-        "y": 70.56720464548782,
-        "width": 150.29315988098568,
-        "height": 164.38108231463548
-      },
-      "coreBox": {
-        "x": 237.25347365963495,
-        "y": 93.07335987340905,
-        "width": 97.3329156546643,
-        "height": 141.0881338381094
-      },
-      "faceBox": {
-        "x": 245.0401069120081,
-        "y": 93.07335987340905,
-        "width": 81.75964914991802,
-        "height": 62.078778888768134
-      },
-      "drawOrder": 82524,
-      "ratio": 0.2988746951175191,
-      "source": "placeholder",
-      "fallback": false
-    },
-    {
       "id": "mochi",
       "asset": "mochi",
       "side": "party",
@@ -237,6 +207,36 @@
       },
       "drawOrder": 112105,
       "ratio": 0.3094550317481708,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "soot",
+      "asset": "soot",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 448.90140845070425,
+      "box": {
+        "x": 210.4466515201335,
+        "y": 70.56720464548782,
+        "width": 150.29315988098568,
+        "height": 164.38108231463548
+      },
+      "coreBox": {
+        "x": 237.25347365963495,
+        "y": 93.07335987340905,
+        "width": 97.3329156546643,
+        "height": 141.0881338381094
+      },
+      "faceBox": {
+        "x": 245.0401069120081,
+        "y": 93.07335987340905,
+        "width": 81.75964914991802,
+        "height": 62.078778888768134
+      },
+      "drawOrder": 82524,
+      "ratio": 0.2988746951175191,
       "source": "placeholder",
       "fallback": false
     },
