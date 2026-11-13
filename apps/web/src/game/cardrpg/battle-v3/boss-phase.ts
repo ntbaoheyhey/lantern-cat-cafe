@@ -4,7 +4,7 @@ const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 /** Phase pips and the original boss painting stay outside the fixed HUD. */
 export class BossPhase {
  readonly canvas=document.createElement('canvas');
- readonly audit={visible:false,phase:1,age:0,aura:false};
+ readonly audit={visible:false,phase:1,age:0,aura:false,portrait:'yarn-giant'};
  private c:CanvasRenderingContext2D;private image=new Image();private seen=new Map<string,number>();
  private battleKey:unknown;private started=-100;private id='';private phase=1;
  constructor(host:HTMLElement){
@@ -14,6 +14,8 @@ export class BossPhase {
  }
  render(view:SceneView,time:number,width:number,height:number,bounds:(id:string)=>Rect|undefined){
   if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.seen.clear();this.started=-100;}
+  const bossId=Object.keys(view.bossPhases??{})[0],portrait=bossId?view.models?.[bossId]??'yarn-giant':'yarn-giant';
+  if(portrait!==this.audit.portrait){this.audit.portrait=portrait;this.image.src=`/units/${portrait}/portrait.webp`;}
   for(const [id,phase] of Object.entries(view.bossPhases??{})){
    const previous=this.seen.get(id);if(previous!==undefined&&phase>previous){this.started=time;this.id=id;this.phase=phase;}this.seen.set(id,phase);
   }
