@@ -1,8 +1,8 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {join,dirname} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {numeric,cards,checkCard,filesMatching,fresh} from './check-gates.mjs';
 
@@ -58,6 +58,23 @@ test('date gate: real future sync cannot pass before its exact UTC time',()=>{
   const data={_meta:{generatedAt:'2026-11-16T12:00:00Z'}};
   const at=time=>checkCard('SY1',{data,skipFreshness:true,now:new Date(time)}).find(r=>r.id==='SY1.date').pass;
   assert.equal(at('2026-11-16T11:59:59Z'),false);assert.equal(at('2026-11-16T12:00:00Z'),true);
+});
+test('fresh aggregate metadata cannot disguise an old raw motion capture',()=>{
+  const repo=mkdtempSync(join(tmpdir(),'v3a2-inputs-')),base=join(repo,'evidence');
+  const git=(...args)=>execFileSync('git',args,{cwd:repo,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
+  try{
+    git('init');git('config','user.name','Gate fixture');git('config','user.email','fixture@example.invalid');
+    const source=join(repo,'apps/web/src/game/cardrpg/battle-v3/motion.ts');mkdirSync(dirname(source),{recursive:true});
+    writeFileSync(source,'one');git('add','.');git('commit','-m','one');const first=git('rev-parse','HEAD');
+    writeFileSync(source,'two');git('commit','-am','two');const second=git('rev-parse','HEAD');
+    const meta={sourceCommit:second,generatedAt:new Date().toISOString()};
+    for(const input of cards.M1.inputs){const path=join(base,input);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,JSON.stringify({_meta:meta}));}
+    const row=()=>checkCard('M1',{repo,base,data:{_meta:meta}}).find(r=>r.id==='M1.input-freshness');
+    assert.equal(row().pass,true);
+    writeFileSync(join(base,cards.M1.inputs[0]),JSON.stringify({_meta:{...meta,sourceCommit:first}}));
+    assert.equal(row().pass,false);assert.equal(row().measured,1);
+    rmSync(join(base,cards.M1.inputs[1]));assert.equal(row().measured,2);
+  }finally{rmSync(repo,{recursive:true,force:true});}
 });
 test('fixture matrix fails any missing fixture/resolution',()=>{
   const data={fixtures:{'wave1@1280x720':{maxFaceOcclusion:0}}};

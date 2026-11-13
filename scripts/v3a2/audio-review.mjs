@@ -1,4 +1,4 @@
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 import {chromium,config,openFixture} from './browser-fixture.mjs';
@@ -44,5 +44,6 @@ try{
   await page.close();
  }
 }finally{await browser.close();}
-await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),fixtures,calloutRows:callouts.length,missingCalloutRows:missingRows},null,2)+'\n');
+const suite=await readFile(resolve(out,'suite.json'),'utf8').then(JSON.parse).catch(()=>null);
+await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),fixtures,calloutRows:callouts.length,missingCalloutRows:missingRows,suite},null,2)+'\n');
 await writeFile(resolve(out,'callouts.json'),JSON.stringify(callouts,null,2)+'\n');

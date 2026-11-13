@@ -99,3 +99,22 @@ Cache cleanup after inherited suite completed: ['apps/web/node_modules/.vite', '
 Before:290GiB free. Removed only worktree rebuildable output: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp; 304 already-encoded temporary frames (0.29GiB).
 After: /dev/disk3s1   926Gi   597Gi   291Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
 Stopped only the inherited documented preview PIDs40778/40756 to safely clear caches. Normal disk mode.
+
+## Resume 2026-11-13T10:09:19.676195+00:00
+Before:290GiB free. Removed 616 already encoded capture frames (0.61GiB).
+After: /dev/disk3s1   926Gi   597Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Vite caches and any dist output retained until the inherited running suite exits, then clean and restart only the documented preview.
+
+Inherited suite finished (type/unit/parity PASS, shared Night tips still FAIL). Stopped only documented preview PIDs47914/47893; cleaned apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp.
+
+- Resume 2026-11-13T10:33:38.922391+00:00: free 290.07 GiB before, 290.07 GiB after; removed 0 encoded temporary PNGs and no build/cache output. Existing Vite53537 retained on5990. No files outside this worktree removed.
+
+## Resume 2026-11-13T10:50:55.560497+00:00
+Before: /dev/disk3s1   926Gi   597Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Removed 408 encoded temporary PNGs and ['apps/web/node_modules/.vite', 'apps/web/node_modules/.vite-temp', 'reports/v3-battle/a2/ref']; reclaimed 0.43 GiB.
+After: /dev/disk3s1   926Gi   597Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Current encoded evidence retained. No low-disk restriction.
+
+## Resume 2026-11-13T11:05:53.134082+00:00
+Before 289.89 GiB; after 289.89 GiB. Removed 0 already encoded temporary PNGs and []. Running preview cache will be cleaned after stopping its documented PIDs; no other worktree touched.
+Stopped documented preview63874/63866; cleared its .vite and .vite-temp caches before restarting on5990.

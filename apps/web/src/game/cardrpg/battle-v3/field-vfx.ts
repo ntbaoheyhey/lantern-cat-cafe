@@ -87,7 +87,10 @@ export class FieldVfx {
    const low=view.quality==='low',count=view.reducedMotion?12:tier==='basic'?(low?14:32):(low?28:72),spread=since<0?progress*.45:.35+resolve*1.32;
    const points=this.particles.get(seed);this.audit.pooledParticles=this.particles.allocated;
    c.globalAlpha=release*.8;for(let i=0;i<count;i++){
-    const j=i*5,angle=points[j]!,rr=r*points[j+3]!*spread,px=target.x+points[j+1]!*rr,py=target.y+points[j+2]!*rr*.72-(since>0?since*.07:0),size=(tier==='basic'?3:5)+points[j+4]!;
+    // Charge particles belong to the travelling spell. Starting every mote
+    // on the receiver made the anticipation read like a premature hit and
+    // left the space between the moving hand and contact almost empty.
+    const j=i*5,angle=points[j]!,rr=r*points[j+3]!*spread,px=x+points[j+1]!*rr,py=y+points[j+2]!*rr*.72-(since>0?since*.07:0),size=(tier==='basic'?3:5)+points[j+4]!;
     c.fillStyle=i%3?palette[1]!:palette[0]!;
     if(seed%3===0){c.save();c.translate(px,py);c.rotate(angle+at/700);c.beginPath();c.ellipse(0,0,size,size*2.5,0,0,7);c.fill();c.restore();}
     else if(seed%3===1){c.fillRect(px-size/2,py-size/2,size,size*1.6);}else star(c,px,py,size,3+i%3);

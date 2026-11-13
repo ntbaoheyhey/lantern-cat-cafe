@@ -1,5 +1,6 @@
 import {T} from '../../apps/web/src/game/cardrpg/battle-v3/compositor-deps';
 import {loadSpineActor,type SpineActor} from '../../apps/web/src/game/cardrpg/spine/assets';
+import {summonMotions,summonVertex} from './summon-motion.mjs';
 import '../../apps/web/node_modules/@fontsource/baloo-2/800.css';
 /** Offline deterministic director. Every logged layer comes from a real draw call. */
 const timelines=import.meta.glob('./plates/*.json',{eager:true,import:'default'}) as Record<string,any>;
@@ -11,8 +12,11 @@ const motifCanvas=document.createElement('canvas');motifCanvas.width=1280;motifC
 const probe=document.createElement('canvas');probe.width=320;probe.height=180;const pc=probe.getContext('2d',{willReadFrequently:true})!;
 const renderer=new T.WebGLRenderer({alpha:true,antialias:true,preserveDrawingBuffer:true});renderer.setSize(1280,720);renderer.setPixelRatio(1);renderer.setClearColor(0,0);renderer.outputColorSpace=T.SRGBColorSpace;
 const scene=new T.Scene(),camera=new T.OrthographicCamera(-640,640,720,0,.1,2000);camera.position.z=1000;
+const summonScene=new T.Scene(),summonGeometry=new T.PlaneGeometry(1,1,48,40);
+const summonMaterial=new T.MeshBasicMaterial({transparent:true,side:T.DoubleSide,depthTest:false});
+const summonMesh=new T.Mesh(summonGeometry,summonMaterial);summonMesh.frustumCulled=false;summonScene.add(summonMesh);
 let plate:any,actor:SpineActor,summon:HTMLImageElement,paint:HTMLImageElement,core:any;
-let audit:{layers:Record<string,number>;particles:number;motifCoverage:number|null;casterCorePixels:number;camera:string};
+let audit:{layers:Record<string,number>;particles:number;motifCoverage:number|null;casterCorePixels:number;camera:string;summonMotion:{kind:string;peakLocalPixels:number}};
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const smooth=(v:number)=>{const t=clamp(v);return t*t*(3-2*t);};
 const ease=(v:number)=>1-(1-clamp(v))**3;
@@ -67,7 +71,11 @@ function move(frame:number){const p=frame/67,build=smooth((frame-12)/35),cam=pla
  switch(cam){case 'sanctuary-rise':y=90*(1-ease(p*3));z=1+p*.12;break;case 'meteor-dive':x=140*(1-p);y=-90*(1-p);angle=-.055*p;break;case 'garden-orbit':x=Math.sin(p*4)*70;y=Math.cos(p*4)*30;z=1+build*.08;break;case 'shield-charge':x=-190*(1-ease(p*3))+p*80;z=1+build*.17;break;case 'baker-whip':x=-210*(1-ease(p*4));angle=.06*(1-build);z=1+build*.08;break;case 'hearth-drop':y=-180*(1-ease(p*3));z=1+p*.18;break;case 'rain-pullback':z=1.2-p*.2;y=60*(1-p);break;case 'ink-spiral':angle=-.13+p*.21;z=1+p*.17;break;case 'steam-orbit':x=Math.sin(p*3)*90;angle=.025*Math.sin(p*4);break;case 'ribbon-sweep':x=160*Math.sin(p*2.7);y=Math.sin(p*4)*25;angle=-.045*Math.sin(p*3);break;case 'moon-reveal':z=1.23-p*.23;x=-p*75;break;case 'crane-ascent':y=120-p*180;z=1+p*.08;break;case 'whale-surge':x=190*(1-ease(p*2));y=-Math.sin(p*3)*65;z=1+p*.14;break;}
  return{x,y,z,angle};}
 function paintedSummon(frame:number){const comp=plate.composition,build=ease((frame-6)/36),climax=smooth((frame-42)/15),m=move(frame),size=comp.motifSize*(.55+.45*build+.08*climax),w=size,h=size*summon.height/summon.width;
- mc.clearRect(0,0,1280,720);mc.save();mc.translate(comp.focus[0]+m.x,comp.focus[1]+m.y);mc.rotate(m.angle+Math.sin(frame/24)*comp.motifTilt);mc.scale(m.z,m.z);mc.globalAlpha=.18+.82*build;mc.drawImage(summon,-w/2,-h/2,w,h);mc.restore();
+ const positions=summonGeometry.attributes.position,uv=summonGeometry.attributes.uv;let peak=0;
+ for(let i=0;i<positions.count;i++){const x=uv.getX(i),y=1-uv.getY(i),p=summonVertex(plate.unit,x,y,frame);positions.setXYZ(i,(p.x-.5)*w,(.5-p.y)*h,0);peak=Math.max(peak,Math.hypot((p.x-x)*w,(p.y-y)*h));}
+ positions.needsUpdate=true;summonMesh.position.set(comp.focus[0]+m.x-640,720-comp.focus[1]-m.y,0);summonMesh.rotation.z=-m.angle-Math.sin(frame/24)*comp.motifTilt;summonMesh.scale.setScalar(m.z);summonMaterial.opacity=.18+.82*build;
+ renderer.render(summonScene,camera);mc.clearRect(0,0,1280,720);mc.drawImage(renderer.domElement,0,0);
+ audit.summonMotion={kind:summonMotions[plate.unit as keyof typeof summonMotions],peakLocalPixels:peak};
  layer('painted-motif',()=>{c.drawImage(motifCanvas,0,0);});
  if([12,35,54].includes(frame)){pc.clearRect(0,0,320,180);pc.drawImage(motifCanvas,0,0,320,180);const pixels=pc.getImageData(0,0,320,180).data;let n=0;for(let i=3;i<pixels.length;i+=4)if(pixels[i]>=48)n++;audit.motifCoverage=n/(320*180);}
 }
@@ -86,9 +94,10 @@ async function load(id:string){
  plate=Object.values(timelines).find(p=>p.id===id);if(!plate?.composition)throw Error('Missing V2 plate '+id);
  actor?.dispose();const l=plate.layers.find((l:any)=>l.type==='painted-layer');const motif=Object.entries(motifs).find(([p])=>p.endsWith('/'+plate.unit+'.png'))?.[1];if(!motif)throw Error('Missing original motif '+plate.unit);
  [actor,summon,paint]=await Promise.all([loadSpineActor(plate.unit),loadImage(motif),loadImage(Object.entries(art).find(([p])=>p.endsWith('/'+l.source.split('/').at(-1)))![1]),document.fonts.ready]);scene.add(actor.root);actor.setOrder(2);core=Object.values(cores).find(p=>p.id===plate.unit);
+ summonMaterial.map?.dispose();summonMaterial.map=new T.Texture(summon);summonMaterial.map.colorSpace=T.SRGBColorSpace;summonMaterial.map.needsUpdate=true;summonMaterial.needsUpdate=true;
  renderFrame(0);return{id:plate.id,frames:plate.frames,source:actor.source,beatFrames:[12,35,54]};
 }
-function renderFrame(value:number){const frame=Math.max(0,Math.min(plate.frames-1,Math.floor(value)));audit={layers:{},particles:0,motifCoverage:null,casterCorePixels:0,camera:plate.composition.camera};c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,1280,720);
+function renderFrame(value:number){const frame=Math.max(0,Math.min(plate.frames-1,Math.floor(value)));audit={layers:{},particles:0,motifCoverage:null,casterCorePixels:0,camera:plate.composition.camera,summonMotion:{kind:'none',peakLocalPixels:0}};c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,1280,720);
  // Entrance whip, tightening charge, and release pull-out move the complete
  // painted composition. Each plate retains its individual actor/motif camera.
  const side=plate.composition.seed%2?1:-1,entrance=1-ease(frame/18),charge=smooth((frame-18)/25),release=smooth((frame-43)/18);

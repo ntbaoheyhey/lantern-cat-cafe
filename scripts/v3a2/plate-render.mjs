@@ -41,7 +41,7 @@ try{
    for(const r of encoded)if(r.status==='rejected')throw r.reason;
    await sharp(poster).webp({quality:80}).toFile(resolve(out,id+'-poster.webp'));
    await sharp({create:{width:1280,height:144,channels:3,background:'#151125'}}).composite(strip).png().toFile(resolve(report,id+'-film.png'));
-   const result={_meta:evidenceMeta(),id,actor:actor.source,sourceHash:hash(await readFile(resolve(root,'tools/cinematic-compositor/compositor.ts'))),plateHash:hash(await readFile(resolve(root,'tools/cinematic-compositor/plates',id+'.json'))),deterministic:true,frames,encoded:Object.fromEntries(encoded.map(r=>r.value)),renderSeconds:(performance.now()-started)/1000,errors:[...errors]};
+   const result={_meta:evidenceMeta(),id,actor:actor.source,sourceHash:hash(await readFile(resolve(root,'tools/cinematic-compositor/compositor.ts'))),deformationHash:hash(await readFile(resolve(root,'tools/cinematic-compositor/summon-motion.mjs'))),plateHash:hash(await readFile(resolve(root,'tools/cinematic-compositor/plates',id+'.json'))),deterministic:true,frames,encoded:Object.fromEntries(encoded.map(r=>r.value)),renderSeconds:(performance.now()-started)/1000,errors:[...errors]};
    await writeFile(resolve(report,id+'-render.json'),JSON.stringify(result,null,2)+'\n');
    console.log(id,JSON.stringify({seconds:result.renderSeconds,webm:result.encoded.webm.bytes,mp4:result.encoded.mp4.bytes,layers:[...new Set(frames.flatMap(f=>Object.keys(f.layers)))].length,particles:Math.max(...frames.map(f=>f.particles))}));
   }finally{await rm(framesDir,{recursive:true,force:true});}

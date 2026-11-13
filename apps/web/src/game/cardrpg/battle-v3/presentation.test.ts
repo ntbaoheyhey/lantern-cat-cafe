@@ -6,11 +6,13 @@ import {presentationTier,impactFeedback} from './presentation';
 import {configureSequence} from './sequence';
 import {CinematicPlayer} from './cinematic-player';
 
-it('gives each real enemy signature active feedback and keeps its basic quiet',()=>{
+it('gives signatures active feedback and basics a smaller, flash-free contact',()=>{
  for(const owner of Object.keys(ENEMY_BY_ID)){
   const active=configureSequence(pilotFixture('enemy:'+owner).plan),basic=configureSequence(pilotFixture('enemy:'+owner+':basic').plan);
   expect(presentationTier(active)).toBe(active.ultimate?'ultimate':'active');
   expect(presentationTier(basic)).toBe('basic');
+  const basicContact=impactFeedback(basic,basic.beats[2]!.start,false);
+  expect(basicContact.flash).toBe(0);expect(basicContact.shake).toBeGreaterThan(0);expect(basicContact.shake).toBeLessThanOrEqual(3);
   const before=JSON.stringify(active),contact=active.beats[2]!.start;
   expect(impactFeedback(active,contact,false).flash).toBeGreaterThan(0);
   expect(impactFeedback(active,contact-1,false)).toEqual({flash:0,shake:0});

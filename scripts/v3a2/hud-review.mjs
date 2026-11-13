@@ -1,4 +1,4 @@
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {chromium,config,openFixture} from './browser-fixture.mjs';
 import {root,evidenceMeta} from './check-gates.mjs';
@@ -41,4 +41,5 @@ try{
  }
 }finally{await browser.close();}
 const fontLint={systemFonts:fontFindings.filter(f=>!/(Baloo|Barlow)/i.test(f.font)).length,families:[...new Set(fontFindings.map(f=>f.font))]};
-await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),fixtures,fontLint},null,2)+'\n');console.log('fontLint',JSON.stringify(fontLint));
+const suite=await readFile(resolve(out,'suite.json'),'utf8').then(JSON.parse).catch(()=>null);
+await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),fixtures,fontLint,suite},null,2)+'\n');console.log('fontLint',JSON.stringify(fontLint));
