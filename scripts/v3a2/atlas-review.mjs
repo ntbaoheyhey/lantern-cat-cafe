@@ -9,7 +9,9 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const {page,errors}=await openFixture(browser,config.fixtures[1]);
  const result=await page.evaluate(async()=>{
-  const images=window.__depthScene.effects.layered.images,canvas=document.createElement('canvas'),c=canvas.getContext('2d',{willReadFrequently:true}),rows=[];
+  // Match the production GPU Canvas2D path. A CPU readback canvas differs by
+  // one channel level when it premultiplies alpha, independently of packing.
+  const images=window.__depthScene.effects.layered.images,canvas=document.createElement('canvas'),c=canvas.getContext('2d',{willReadFrequently:false}),rows=[];
   for(const [id,packed] of images){
    if(!packed.image)throw Error('Unpacked sheet: '+id);
    const source=new Image();source.src=packed.sourceUrl;await source.decode();
@@ -22,8 +24,8 @@ try{
   }
   return {entries:images.size,pages:new Set([...images.values()].map(p=>p.image)).size,rows};
  });
- assert.equal(result.entries,86);assert.ok(result.pages<86);assert.equal(Math.max(...result.rows.map(r=>r.maxDelta)),0);assert.deepEqual(errors,[]);
  await writeFile(resolve(out,'atlas-pixels.json'),JSON.stringify({_meta:evidenceMeta(),...result,errors},null,2)+'\n');
+ assert.equal(result.entries,86);assert.ok(result.pages<86);assert.equal(Math.max(...result.rows.map(r=>r.maxDelta)),0);assert.deepEqual(errors,[]);
  console.log(`PASS: ${result.entries} sheets on ${result.pages} packed pages; every RGBA channel matches the original`);
 }finally{await browser.close();}
 const shots=[];

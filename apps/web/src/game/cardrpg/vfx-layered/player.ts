@@ -5,10 +5,12 @@ import {paintedTargets} from '../spine/vfx-registry';
 import {chargeEvent} from '../depth/card-action-plan';
 import {stageLayoutC2} from '../stage/layout-c2';
 import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline';
-import {packPaintSheets,type PackedPaint} from './atlas';
+import type {PackedPaint} from './atlas';
+import packedManifest from '../../../../../../assets/cardrpg-look/vfx-packed/manifest.json';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const textures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+const packedTextures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-packed/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 export const PAINT_TIMELINES=new Map(Object.values(manifests).map(t=>[t.id,validatePaint(t)]));
 type Point={x:number;y:number};
 export class LayeredVfx {
@@ -18,15 +20,17 @@ export class LayeredVfx {
  enabled=true;onlyLayers:Set<string>|null=null;
  private disposed=false;
  constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){
-  const groups=new Map<string,{id:string;url:string}[]>();
-  for(const [id,timeline] of PAINT_TIMELINES){
-   const url=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
-   if(!url){this.stats.failed.push(id);continue;}
-   const group=groups.get(timeline.owner)??[];group.push({id,url});groups.set(timeline.owner,group);
-  }
-  this.ready=Promise.all([...groups.values()].map(async entries=>{
-   try{const packed=await packPaintSheets(entries,()=>this.disposed);for(const [id,image] of packed)this.images.set(id,image);}
-   catch{this.stats.failed.push(...entries.map(e=>e.id));}
+  this.ready=Promise.all(packedManifest.pages.map(async page=>{
+   const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page.file);
+   const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page.file))?.[1];
+   try{
+    if(!url)throw Error('Missing painted atlas '+page.file);
+    const image=new Image();image.src=url;await image.decode();if(this.disposed)return;
+    for(const [id,entry] of entries){const sourceUrl=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
+     if(!sourceUrl||!PAINT_TIMELINES.has(id))throw Error('Unknown packed painting '+id);
+     this.images.set(id,{image,...entry,sourceUrl});
+    }
+   }catch{this.stats.failed.push(...entries.map(([id])=>id));}
   })).then(()=>{});
  }
  handles(plan:EffectPlan){const id=plan.presentationId??plan.skillId;return this.enabled&&this.images.has(id)&&PAINT_TIMELINES.has(id);}
@@ -72,5 +76,5 @@ export class LayeredVfx {
    }
   }
  }
- dispose(){this.disposed=true;for(const image of new Set([...this.images.values()].map(p=>p.image)))image.width=image.height=1;this.images.clear();}
+ dispose(){this.disposed=true;for(const image of new Set([...this.images.values()].map(p=>p.image)))image.src='';this.images.clear();}
 }
