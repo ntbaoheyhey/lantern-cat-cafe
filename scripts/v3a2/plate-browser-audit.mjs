@@ -24,6 +24,10 @@ try{
    await p.waitForFunction(()=>{const v=document.querySelector('video.b3-plate');return v&&v.readyState>=1;},null,{timeout:20000});
    // Metadata is asynchronous; the production player seeks on its next render too.
    await seek(start+1800);
+   // This audit stops the scene RAF. Match the live player's next render
+   // after decoding so the readiness guard can reveal the sought frame.
+   await p.waitForFunction(()=>{const v=document.querySelector('video.b3-plate');return v&&v.readyState>=2&&Math.abs(v.currentTime-1.8)<.05;},null,{timeout:20000});
+   await seek(start+1800);
    await p.waitForFunction(()=>{const v=document.querySelector('video.b3-plate');return v&&!v.hidden&&v.readyState>=2&&Math.abs(v.currentTime-1.8)<.05;},null,{timeout:20000});
    const fit=await p.evaluate(()=>{
     const v=document.querySelector('video.b3-plate'),h=document.querySelector('.b3-cinema'),r=v.getBoundingClientRect(),box=h.getBoundingClientRect(),css=getComputedStyle(v);
