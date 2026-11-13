@@ -368,5 +368,17 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-published-policy-proof.log",
     "started": "2026-11-13T17:56:23.236800+00:00"
+  },
+  {
+    "name": "finish-sensitivity-supervisor",
+    "pid": 16952,
+    "command": [
+      "python3",
+      "work/q4-finish-sensitivity.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-finish-sensitivity.log",
+    "started": "2026-11-13T18:22:25.782959+00:00",
+    "failedPid": 16934,
+    "note": "Initial wrapper syntax fixed before running; no simulation output lost."
   }
 ]

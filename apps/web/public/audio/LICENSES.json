@@ -43539,6 +43539,144 @@
         }
       ],
       "processing": "Original layered arrangement; filtered source cuts and deterministic 280ms diffuse room tails; 48 kHz mono sprite with 80 ms guards; Opus/MP3. No reference audio."
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/home.ogg",
+          "sha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 1.1, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 1.1,
+      "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
+      "file": "menu-home-tempo-1.1.flac",
+      "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
+          "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 1.1, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 1.1,
+      "path": "apps/web/public/audio/menu-home.webm",
+      "file": "menu-home.webm",
+      "sha256": "a73363b7e08b2105005b7621ec541412f477d52e5079d7be4f0aa7e228e9c568"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
+          "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 1.1, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 1.1,
+      "path": "apps/web/public/audio/menu-home.mp3",
+      "file": "menu-home.mp3",
+      "sha256": "07a1ab263f777bdd844396ca1d5a779bf7e30efe580129fee7f37e2e11854cca"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/home.ogg",
+          "sha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 0.84, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 0.84,
+      "path": "assets/audio-sources/b2/music/menu-forge-tempo-0.84.flac",
+      "file": "menu-forge-tempo-0.84.flac",
+      "sha256": "01241ca56de59181d0403d39c6cbeeede76aa93705ed090305840da8d564e683"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-forge-tempo-0.84.flac",
+          "sha256": "01241ca56de59181d0403d39c6cbeeede76aa93705ed090305840da8d564e683"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 0.84, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 0.84,
+      "path": "apps/web/public/audio/menu-forge.webm",
+      "file": "menu-forge.webm",
+      "sha256": "5d8dc2d4fe3e86b7a5670796c28e977ce66b2d732d8794125b6342b2d4c167f4"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-forge-tempo-0.84.flac",
+          "sha256": "01241ca56de59181d0403d39c6cbeeede76aa93705ed090305840da8d564e683"
+        }
+      ],
+      "tool": "ffmpeg atempo and NumPy loop crossfade",
+      "script": {
+        "path": "scripts/audio/menu-score-tempo.py",
+        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
+      },
+      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 0.84, -18 LUFS, -4 dBTP ceiling. No reference media.",
+      "tempo": 0.84,
+      "path": "apps/web/public/audio/menu-forge.mp3",
+      "file": "menu-forge.mp3",
+      "sha256": "5789f6c96de9c665b294352104ab4b219a6a5b39947cc5fe3a622ab6d2a1eef1"
     }
   ]
 }

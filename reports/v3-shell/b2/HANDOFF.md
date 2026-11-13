@@ -1,8 +1,8 @@
-NOW: Q4 candidate497ba9738e passes18 scenarios/200seeds T-a..g; T-h20/170 cases observed with no misses; remainder pending.
-NEXT: Continue native37303/sensitivity59609/confirm24 67137; resume missing sensitivity cases after native completion.
-E4/E5:16 exact-policy receipts,18 shots,5 odds checks; report816 numeric citations. Full suite rerun pending after repaired tests.
-Q5:V8/8 gates PASS on22 full capture. S5 still7 numeric failures; current trial24 source pending full capture.
-Q5 METHOD:23 high shelves insufficient.24 lowpass voice3500/SFX2200; menu shelf-6/+3 presence; shortened greetings; fusion reaction.
-JOBS:econ/q4-jobs.json,q5/jobs.json. Sims resumed18:12:38UTC; pause for next realtime recording.
-OPEN:Q4-Q9; no sync before16Nov12UTC.
-UPDATED:2026-11-13T18:15:19.612287+00:00
+NOW: Q4 active: selected497ba9738e T-a..g PASS; sensitivity36/170 cases complete, no observed failures.
+Q5: trial24 V PASS; S5 has five tick misses (gacha passes). Gain-only25 and four de-essing probes insufficient.
+NEXT: Candidate26 foregrounds resonant SFX bodies; two licensed menu score tempos + scoped workshop music. Engine/menu21/21 PASS.
+NEXT: Commit source; refresh isolated B checkout with A battle; capture26 battle/boss45s then four menus60s. Not acceptance until full duration.
+ECONOMY: round24 top10 confirmed at200seeds,8 have zero distance. Native37303/sensitivity59609 active; supervisor16952 resumes native pending cases.
+JOBS: econ/q4-jobs.json and q5/jobs.json. Pause owned simulations for runtime measurements; resume in runner finally.
+OPEN: Q4-Q9. No sync before16Nov12UTC. E3 requires170/170 sensitivity cases.
+UPDATED: 2026-11-13T18:38:46.654595+00:00

@@ -8,7 +8,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
 - [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
-- [ ] V — measured clarity50/50 ultimates,62/62 skills,12/12 identities,212/212 levels; current180.02s battle33/33 cast phases ducked with0 missing. Updated9-case timing matrix and Q5 full suite pending; self-score7/10
+- [ ] V — measured clarity50/50 ultimates,62/62 skills,12/12 identities,212/212 levels; current180.02s battle33/33 cast phases ducked with0 missing. Full workspace suite PASS on f6db229c6; current mix/timing recheck pending; self-score7/10
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
 - [ ] U3 — open (32/54 states meet all screen gates; the SOLO request requires at least48/54 for PARTIAL; 22 redesigns remain, self-score 7/10)
@@ -19,8 +19,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
 - [ ] E3 — active (24 rounds,1273 unique configs; top10 confirmed at200seeds; T-a..g PASS, T-h9/85 assumptions completed; exact candidate497ba9738e in rules, remaining robustness still required)
-- [ ] E4 — measured PASS4/4 on candidate497ba9738e:16 receipts,3 sinks,18 desktop shots,5 odds tests; Q4 full-suite rerun and final sensitivity selection pending
-- [ ] E5 — report generated with816 source-linked numbers; commit report JSON then repeat citation checker; final sensitivity section pending
+- [ ] E4 — measured PASS4/4 on candidate497ba9738e:16 receipts,3 sinks,18 desktop shots,5 odds tests; Q4 full workspace suite PASS; final sensitivity selection pending
+- [ ] E5 — report generated with816 source-linked numbers; citation checker816/816 PASS; final sensitivity section pending
 - [ ] T1 — todo
 - [ ] C1 — todo
 - [ ] E6 — todo

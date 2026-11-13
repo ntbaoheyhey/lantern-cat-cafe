@@ -22,6 +22,7 @@ export class AudioEngine implements AudioBridge {
  private lastVoiceRequested=-Infinity; private calloutRequests=new Map<string,number>();
  private bedTokens={music:0,ambience:0}; private bedIds={music:'',ambience:''}; private paused=false; private rate=1;
  private speechCutDb=0;
+ private musicScopes:{key:symbol;id:string}[]=[];private musicScopeBase='';
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
  constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/'){
@@ -44,15 +45,7 @@ export class AudioEngine implements AudioBridge {
    this.buses.get('master')!.connect(trim);this.duck=this.ctx.createGain();this.duck.connect(this.buses.get('master')!);
    this.speechSpace=this.ctx.createBiquadFilter();this.speechSpace.type='lowshelf';this.speechSpace.frequency.value=1200;this.speechSpace.gain.value=0;
    this.speechSpace.connect(this.duck);
-   // Keep consonants and impact bodies clear without the brittle high-frequency
-   // chatter exposed by isolated-bus captures. User bus levels stay independent.
-   for(const name of BUS_NAMES.slice(1)){
-    if(name==='voice'||name==='sfx'){
-     const tone=this.ctx.createBiquadFilter();tone.type='lowpass';
-     tone.frequency.value=name==='voice'?3500:2200;tone.Q.value=.7;
-     this.buses.get(name)!.connect(tone).connect(this.buses.get('master')!);
-    }else this.buses.get(name)!.connect(name==='music'?this.speechSpace:this.buses.get('master')!);
-   }
+   for(const name of BUS_NAMES.slice(1))this.buses.get(name)!.connect(name==='music'?this.speechSpace:this.buses.get('master')!);
   }
   await this.ctx.resume();this.paused=false;this.remember();
  }
@@ -140,17 +133,21 @@ export class AudioEngine implements AudioBridge {
    if(bus==='ambience'){this.ambience(id);return;}
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
-   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?6:this.bedIds.music==='music.boss'?0:3):id==='ui.hover'?4:0;
+   // Keep the original consonant spectrum; balance repeated movement beneath
+   // the strike and the voice instead of filtering every sound's upper range.
+   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?4:this.bedIds.music==='music.boss'?-1.5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?4:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
     this.start(id,loaded.get(chosen.sample.pack)!,chosen.sample,priority,userPitch*pitch,volume*dbGain(gainDb),0,'flat',group);
-    played.push(...chosen.layers.map(l=>({...l,pitch:userPitch*pitch,gainDb})));
+    played.push(...chosen.layers.map(l=>({...l,pitch:userPitch*pitch,gainDb:gainDb+cueTrimDb})));
    }else if(design){
     for(const layer of design.layers){
      const sample=this.pools.next(`${id}/${layer.role}`,layer.variants,s=>s.variantId??`${s.pack}:${s.start}`),pitch=userPitch*between(design.pitchRange,this.random),gainDb=layer.gainDb+between(design.gainRange,this.random);
-     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume*dbGain(gainDb),layer.offsetMs/1000,layer.eq,group);
-     played.push({role:layer.role,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:layer.offsetMs,pitch,gainDb});
+     // Resonant bodies carry strikes; bright attacks remain shorter accents.
+     const roleTrimDb=bus==='sfx'?(layer.role==='transient'?-9:layer.role==='sweetener'?-7:layer.role==='body'?3:1):0;
+     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume*dbGain(gainDb+roleTrimDb),layer.offsetMs/1000,layer.eq,group);
+     played.push({role:layer.role,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:layer.offsetMs,pitch,gainDb:gainDb+cueTrimDb+roleTrimDb});
     }
    }else{
     const sample=this.pools.next(id,choices!,s=>s.variantId??`${s.pack}:${s.start}`),profile=bus==='voice'?(voiceProfiles[id.split('.')[1]!]??voiceProfiles.mochi!):undefined;
@@ -190,7 +187,8 @@ export class AudioEngine implements AudioBridge {
   source.onended=()=>this.end(p,false);
   if(s.loop){source.loop=true;source.loopStart=s.start;source.loopEnd=s.start+s.duration;source.start(now,s.start);}
   else{
-   const attack=Math.min(.003,duration*.15),release=Math.min(.015,duration*.3);
+   const movement=id.startsWith('move.');
+   const attack=Math.min(movement ? .035 : .003,duration*.3),release=Math.min(movement ? .04 : .015,duration*.3);
    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
    gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
    source.start(now,s.start,s.duration);
@@ -208,7 +206,18 @@ export class AudioEngine implements AudioBridge {
   for(const p of this.active)if(!id||p.id===id)this.end(p,true);
   for(const bus of ['music','ambience'] as const)if(!id||id===this.bedIds[bus]){this.bedIds[bus]='';this.bedTokens[bus]++;}this.releaseDuck();
  }
- music(id:string){this.bed('music',id);}
+ music(id:string){this.musicScopes=[];this.bed('music',id);}
+ /** Dialog scores restore the underlying scene; later navigation wins. */
+ musicScope(id:string){
+  if(!this.musicScopes.length)this.musicScopeBase=this.bedIds.music;
+  const key=Symbol(id);this.musicScopes.push({key,id});this.bed('music',id);
+  return()=>{
+   const index=this.musicScopes.findIndex(s=>s.key===key);if(index<0)return;
+   this.musicScopes.splice(index,1);
+   const next=this.musicScopes.at(-1)?.id??this.musicScopeBase;
+   if(next)this.bed('music',next);else this.stop(this.bedIds.music);
+  };
+ }
  ambience(id:string){this.bed('ambience',id);}
  private bed(bus:'music'|'ambience',id:string){
   const cue=id.startsWith(`${bus}.`)?id:`${bus}.${id}`;if(cue===this.bedIds[bus])return;this.bedIds[bus]=cue;

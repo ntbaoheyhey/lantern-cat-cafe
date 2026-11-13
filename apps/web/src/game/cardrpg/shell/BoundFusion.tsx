@@ -1,4 +1,5 @@
-import {useState,useSyncExternalStore} from 'react';
+import {useEffect,useState,useSyncExternalStore} from 'react';
+import {audioEngine} from '../../../audio/engine';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {ECONOMY_V3 as E} from '@taskbar-hero/game-rules/src/cardrpg/economy-v3';
 import type {DepthModel} from '../depth/model';
@@ -8,6 +9,7 @@ import {playCue} from '../contracts/audio-cues';
 import {GearArtA6} from '../ui-v3/KeepsakeArtA6';
 import {PaintedTile} from './PaintedKit';
 export function BoundFusion({m,onCraft}:{m:DepthModel;onCraft?:()=>void}){
+ useEffect(()=>audioEngine.musicScope('forge'),[]);
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [chosen,setChosen]=useState<string[]>([]),[reveal,setReveal]=useState('');
  const eligible=m.state.gear.filter(g=>['common','rare'].includes(R.GEAR_BY_ID[g.templateId]!.rarity)&&!Object.values(m.state.equipment).some(slots=>Object.values(slots).includes(g.id)));

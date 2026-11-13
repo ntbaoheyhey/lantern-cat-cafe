@@ -228,6 +228,14 @@
     "menu-voices": {
       "webm": "/audio/menu-voices.webm",
       "mp3": "/audio/menu-voices.mp3"
+    },
+    "menu-home": {
+      "webm": "/audio/menu-home.webm",
+      "mp3": "/audio/menu-home.mp3"
+    },
+    "menu-forge": {
+      "webm": "/audio/menu-forge.webm",
+      "mp3": "/audio/menu-forge.mp3"
     }
   },
   "cues": {
@@ -2510,9 +2518,9 @@
     ],
     "music.home": [
       {
-        "pack": "home",
+        "pack": "menu-home",
         "start": 0,
-        "duration": 31.99501133786848,
+        "duration": 29.102063492063493,
         "bus": "music",
         "loop": true
       }
@@ -8205,6 +8213,15 @@
         "bus": "voice",
         "processedVoice": true,
         "variantId": "mochi-6.flac"
+      }
+    ],
+    "music.forge": [
+      {
+        "pack": "menu-forge",
+        "start": 0,
+        "duration": 38.08061224489796,
+        "bus": "music",
+        "loop": true
       }
     ]
   },

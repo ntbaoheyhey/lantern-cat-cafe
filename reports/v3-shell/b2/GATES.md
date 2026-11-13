@@ -1,6 +1,6 @@
 # B2 gate results
 
-Generated from current files. Missing evidence is FAIL; no production completion is inferred.
+Measured from current files; pending sensitivity cases remain FAIL.
 
 ```text
 PASS G0.inventory: measured 24; required every required card has gates and thresholds
@@ -12,7 +12,7 @@ PASS R.report: measured 8910; required nonempty reports/v3-shell/b2/RESEARCH-B2.
 PASS S1.events: measured 2552; required >= 160 complete events; 0 TBD
 PASS S1.screens: measured 49; required >= 18 screens
 PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
-PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
+FAIL S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
 PASS S1.report: measured 630465; required nonempty reports/v3-shell/b2/SOUND-MAP.md
 PASS S1.typedMap: measured 12853; required nonempty apps/web/src/audio/sound-map.ts
 PASS S2.clips: measured 595; required >= 350 usable hashed source clips
@@ -30,7 +30,7 @@ PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
 PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
 PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
 PASS S3.voiceConcurrency: measured 1; required <= 1 voice
-PASS S3.bytes: measured 15499344; required <= 16000000 bytes incl. callouts
+PASS S3.bytes: measured 15791794; required <= 16000000 bytes incl. callouts
 PASS S3.cpu: measured 4.524575153654773; required < 8% added main-thread time, 180s paired traces
 PASS S4.cats: measured 12; required >= 12 cats, >= 9 lines each
 PASS S4.consonants: measured 12/12; required each rendered line >= 0.5 consonants/syllable
@@ -40,12 +40,12 @@ PASS S4.cadence: measured 7.563; required median voice interval 6-9s
 PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
 PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
 PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
-FAIL V.ultAccuracy: measured 32/50; required recogniser word accuracy >= 0.7
-FAIL V.skillAccuracy: measured 59/62; required recogniser word accuracy >= 0.5
+PASS V.ultAccuracy: measured 50/50; required recogniser word accuracy >= 0.7
+PASS V.skillAccuracy: measured 62/62; required recogniser word accuracy >= 0.5
 PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
 PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
 PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
-PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
+PASS V.lines: measured 4261; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
 PASS U1.screens: measured 53; required >= 24 states, screenshots, all metrics and fix lists
 PASS U1.report: measured 17010; required nonempty reports/v3-shell/b2/UI-AUDIT.md
 PASS U2.files: measured 76; required >= 60 new art files with provenance
@@ -67,23 +67,23 @@ PASS U4.fps: measured 60; required median >= 60 fps in panel transitions
 PASS U4.reducedMotion: measured 16; required passing test + SHA-256-verified log
 PASS S5.algorithm: measured 6/6; required same current measurement algorithm for references and all six non-diagnostic renders
 PASS S5.battle.render: measured 180.20099773242632; required >= 180s measured Opus render
-PASS S5.battle.onsetsPerSecond: measured 3.396207610951943; required reference +/- 30% (reference 2.6333333333333333)
-PASS S5.battle.layers: measured 0.4493464052287582; required >= reference median - 0.5
-FAIL S5.battle.tickTransientsPerSecond: measured 1.7813441880973424; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.onsetsPerSecond: measured 3.257473639916324; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.battle.layers: measured 0.293015332197615; required >= reference median - 0.5
+FAIL S5.battle.tickTransientsPerSecond: measured 1.553820475598928; required reference +/- 40% (reference 0.6499999999999999)
 PASS S5.battle.music: measured 1; required music bed >= 95%
-FAIL S5.battle.voiceContoursPerMinute: measured 2.330730713398392; required reference +/- 35% (reference 5)
+FAIL S5.battle.voiceContoursPerMinute: measured 0.33296153048548455; required reference +/- 35% (reference 5)
 PASS S5.battle.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.battle.lufs: measured -14.38; required -16 to -13 LUFS
-PASS S5.battle.peak: measured -1.77; required <= -1 dBTP
-PASS S5.boss.render: measured 120.19800453514739; required >= 120s measured Opus render
-PASS S5.boss.onsetsPerSecond: measured 3.302883450813963; required reference +/- 30% (reference 2.6333333333333333)
-PASS S5.boss.layers: measured 0.44080604534005036; required >= reference median - 0.5
-FAIL S5.boss.tickTransientsPerSecond: measured 1.3893741468159493; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.lufs: measured -14.87; required -16 to -13 LUFS
+PASS S5.battle.peak: measured -1.79; required <= -1 dBTP
+PASS S5.boss.render: measured 120.20299319727891; required >= 120s measured Opus render
+PASS S5.boss.onsetsPerSecond: measured 3.252830812276738; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.boss.layers: measured 0.37595907928388744; required >= reference median - 0.5
+FAIL S5.boss.tickTransientsPerSecond: measured 1.9051106291850972; required reference +/- 40% (reference 0.6499999999999999)
 PASS S5.boss.music: measured 1; required music bed >= 95%
-FAIL S5.boss.voiceContoursPerMinute: measured 2.9950580410403695; required reference +/- 35% (reference 5)
+PASS S5.boss.voiceContoursPerMinute: measured 3.993244986938195; required reference +/- 35% (reference 5)
 PASS S5.boss.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.boss.lufs: measured -14.63; required -16 to -13 LUFS
-PASS S5.boss.peak: measured -1.44; required <= -1 dBTP
+PASS S5.boss.lufs: measured -14.71; required -16 to -13 LUFS
+PASS S5.boss.peak: measured -2.04; required <= -1 dBTP
 PASS S5.home.render: measured 60.20199546485261; required >= 60s measured Opus render
 PASS S5.home.onsetsPerSecond: measured 4.086243289786313; required reference +/- 30% (reference 3.6666666666666665)
 PASS S5.home.layers: measured 1.5609756097560976; required >= reference median - 0.5
@@ -132,32 +132,32 @@ PASS S7.random: measured 20; required >= 20 random cues from static server, 0 er
 PASS E1.scenarios: measured 18; required 3 mixes x 2 demands x 3 bot shares; >= 200 seeds each, 52 weeks + gear cohort
 PASS E1.runtime: measured 1737.338635708; required < 1800s
 PASS E1.liveConfig: measured 5; required passing test + SHA-256-verified log
-PASS E2.sinks: measured 3; required >= 3 new sinks in rules, server, UI, sim with tests and screenshots
+FAIL E2.sinks: measured 0; required >= 3 new sinks in rules, server, UI, sim with tests and screenshots
 PASS E2.bellsOnly: measured 11; required passing test + SHA-256-verified log
-FAIL E3.rounds: measured 0; required >= 15 logged rounds with scenario tables and lessons
-FAIL E3.leverChanges: measured missing; required >= 2 changed levers per round on average
-FAIL E3.searchLevers: measured missing; required >= 10 levers per search
-FAIL E3.configs: measured missing; required >= 600 unique configs evaluated with >= 40 seeds
-FAIL E3.confirmed: measured missing; required top 10 confirmed with >= 200 seeds
-FAIL E3.structural: measured missing; required >= 3 model/lever structural changes
-FAIL E3.finalScenarios: measured missing; required all 18 scenarios at >= 200 seeds
-FAIL E3.T-a: measured missing; required burn/all claims >= 1; at 100% demand <= 1.6
-FAIL E3.T-b: measured missing; required Star Thread source/sink 0.9-1.1
-FAIL E3.T-c: measured missing; required heavy/casual YARN/hour <= 3x both directions
-FAIL E3.T-d: measured missing; required casual day 10-16; heavy day 5-9, strictly faster
-FAIL E3.T-e: measured missing; required at 35% bots, bot/regular YARN/hour <= 0.5
-FAIL E3.T-f: measured missing; required top-1% share of withdrawn YARN <= 8%
-FAIL E3.T-g: measured missing; required p90: half-demand burn >= 0.95; Star 0.8-1.2
-FAIL E3.T-h: measured missing; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
-FAIL E3.configOdds: measured missing; required passing test + SHA-256-verified log
-FAIL E3.configSource: measured missing; required committed final rules config matches measured hash
-FAIL E4.receipts: measured missing; required >= 13 + new sink count confirmed receipts
-FAIL E4.sinks: measured 0/3; required one confirmed use of every new sink
-FAIL E4.screenshots: measured missing; required 1280x720 and 1440x900 economy screenshots
-FAIL E4.odds: measured missing; required passing test + SHA-256-verified log
-FAIL E5.report: measured missing; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
-FAIL E5.numbers: measured missing; required >= 10 report numbers checked against committed JSON
-FAIL E5.allCitations: measured missing; required all report-number citations valid
+PASS E3.rounds: measured 24; required >= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured 8.958333333333334; required >= 2 changed levers per round on average
+PASS E3.searchLevers: measured 20; required >= 10 levers per search
+PASS E3.configs: measured 1273; required >= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured 10; required top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured 5; required >= 3 model/lever structural changes
+PASS E3.finalScenarios: measured 18; required all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured 18/18; required burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured 18/18; required Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured 18/18; required heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
+FAIL E3.T-h: measured 9/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
+PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash
+PASS E4.receipts: measured 16; required >= 13 + new sink count confirmed receipts
+PASS E4.sinks: measured 3/3; required one confirmed use of every new sink
+PASS E4.screenshots: measured 18; required 1280x720 and 1440x900 economy screenshots
+PASS E4.odds: measured 5; required passing test + SHA-256-verified log
+PASS E5.report: measured 18076; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
+PASS E5.numbers: measured 816; required >= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured 816/816; required all report-number citations valid
 FAIL E6.migration: measured missing; required passing test + SHA-256-verified log
 FAIL E6.dynamicFee: measured missing; required passing test + SHA-256-verified log
 FAIL E6.median: measured missing; required 7-day median seal price
@@ -176,81 +176,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1748; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1120; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
-```
-
-## V3SOLO Q1 shared browser closure
-
-PASS Q1.B.browser: measured=435/435; required=435/435.
-PASS Q1.B.unit: measured=293 files /2537 tests; required=all pass.
-PASS Q1.B.typecheck: measured=0; required=exit0.
-Evidence: tests/q1-final.json (hashed logs). Own B2 cards retain their current measured states.
-
-## SOLO Q2 closure — 2026-11-13T14:37:58.241996+00:00
-
-Source B298a4fbd8 with A18ea6e6e8. Final B435/435 browser cases,2538 web unit tests and all workspace types PASS. Q2 does not close V recognition or the remaining S5 mix targets.
-
-```text
-PASS Q2.matrix: measured=9; required=3 fixtures x3 speeds
-PASS Q2.wave1.x1.ultimates: measured=4; required=all required charge/release callouts played
-PASS Q2.wave1.x1.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave1.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave1.x1.bark-spacing: measured=7.49563333333532; required=7–8 seconds
-PASS Q2.wave1.x1.parity: measured=true; required=true
-PASS Q2.wave1.x1.browser-errors: measured=0; required=eq0
-PASS Q2.wave1.x2.ultimates: measured=8; required=all required charge/release callouts played
-PASS Q2.wave1.x2.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave1.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave1.x2.bark-spacing: measured=7.503599999999007; required=7–8 seconds
-PASS Q2.wave1.x2.parity: measured=true; required=true
-PASS Q2.wave1.x2.browser-errors: measured=0; required=eq0
-PASS Q2.wave1.x3.ultimates: measured=8; required=all required charge/release callouts played
-PASS Q2.wave1.x3.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave1.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave1.x3.bark-spacing: measured=7.50393333333234; required=7–8 seconds
-PASS Q2.wave1.x3.parity: measured=true; required=true
-PASS Q2.wave1.x3.browser-errors: measured=0; required=eq0
-PASS Q2.wave3.x1.ultimates: measured=4; required=all required charge/release callouts played
-PASS Q2.wave3.x1.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave3.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave3.x1.bark-spacing: measured=7.503199999998014; required=7–8 seconds
-PASS Q2.wave3.x1.parity: measured=true; required=true
-PASS Q2.wave3.x1.browser-errors: measured=0; required=eq0
-PASS Q2.wave3.x2.ultimates: measured=6; required=all required charge/release callouts played
-PASS Q2.wave3.x2.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave3.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave3.x2.bark-spacing: measured=7.516099999999007; required=7–8 seconds
-PASS Q2.wave3.x2.parity: measured=true; required=true
-PASS Q2.wave3.x2.browser-errors: measured=0; required=eq0
-PASS Q2.wave3.x3.ultimates: measured=8; required=all required charge/release callouts played
-PASS Q2.wave3.x3.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.wave3.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.wave3.x3.bark-spacing: measured=7.513599999999006; required=7–8 seconds
-PASS Q2.wave3.x3.parity: measured=true; required=true
-PASS Q2.wave3.x3.browser-errors: measured=0; required=eq0
-PASS Q2.boss.x1.ultimates: measured=4; required=all required charge/release callouts played
-PASS Q2.boss.x1.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.boss.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.boss.x1.bark-spacing: measured=7.5168333333333335; required=7–8 seconds
-PASS Q2.boss.x1.parity: measured=true; required=true
-PASS Q2.boss.x1.browser-errors: measured=0; required=eq0
-PASS Q2.boss.x2.ultimates: measured=10; required=all required charge/release callouts played
-PASS Q2.boss.x2.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.boss.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.boss.x2.bark-spacing: measured=7.49813333333532; required=7–8 seconds
-PASS Q2.boss.x2.parity: measured=true; required=true
-PASS Q2.boss.x2.browser-errors: measured=0; required=eq0
-PASS Q2.boss.x3.ultimates: measured=10; required=all required charge/release callouts played
-PASS Q2.boss.x3.ultimate-interrupted: measured=0; required=eq0
-PASS Q2.boss.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
-PASS Q2.boss.x3.bark-spacing: measured=7.514699999998013; required=7–8 seconds
-PASS Q2.boss.x3.parity: measured=true; required=true
-PASS Q2.boss.x3.browser-errors: measured=0; required=eq0
-PASS Q2.battle.voice-contours: measured=4.661461426796784; required=3.25–6.75/min
-PASS Q2.battle.duration: measured=180.20099773242632; required=full S5 duration
-PASS Q2.boss.voice-contours: measured=3.4940893635709207; required=3.25–6.75/min
-PASS Q2.boss.duration: measured=120.20299319727891; required=full S5 duration
-TOTAL 59 PASS / 0 FAIL / 59 gates
 ```

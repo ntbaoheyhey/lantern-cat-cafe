@@ -1,5 +1,6 @@
 import {lazy,Suspense,useEffect,useRef,useState,useSyncExternalStore} from 'react';
 import {playCue} from '../contracts/audio-cues';
+import {audioEngine} from '../../../audio/engine';
 import {reducedMotionB2} from './motion-b2';
 import {EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -22,6 +23,7 @@ export function BagB2({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [slot,setSlot]=useState(m.inventorySlot),[forge,setForge]=useState(false),[detailTab,setDetailTab]=useState<'set'|'affixes'>('set');
  const [feedback,setFeedback]=useState<{id:number;result:'success'|'fail'}>();
+ useEffect(()=>forge?audioEngine.musicScope('forge'):undefined,[forge]);
  const feedbackTimers=useRef<ReturnType<typeof setTimeout>[]>([]);
  const lastComment=useRef(-Infinity);
  const comment=(event:'select'|'victory')=>{

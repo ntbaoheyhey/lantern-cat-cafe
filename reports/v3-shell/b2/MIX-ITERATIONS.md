@@ -220,3 +220,34 @@ See the change and interpretation recorded in DECISIONS.md.
 | [forge](mix/22-clear-callouts-forge.json) | 60.20 | 4.153 | 1.416 | 5.166 | 0.000 | 1.000 | -17.990 | -4.640 |
 | [gacha](mix/22-clear-callouts-gacha.json) | 60.20 | 4.103 | 1.619 | 5.316 | 0.000 | 1.000 | -18.090 | -6.260 |
 | [home](mix/22-clear-callouts-home.json) | 60.20 | 4.186 | 1.520 | 5.033 | 2.990 | 1.000 | -17.860 | -4.680 |
+
+## 23-gentle-tone
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/23-gentle-tone-battle.json) | 45.20 | 3.230 | 0.425 | 2.035 | 6.637 | 1.000 | -13.580 | -1.620 |
+| [boss](mix/23-gentle-tone-boss.json) | 45.20 | 3.075 | 0.381 | 1.637 | 7.965 | 1.000 | -15.170 | -2.290 |
+
+## 24-lowpass-menu-space
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/24-lowpass-menu-space-bag.json) | 60.20 | 4.119 | 1.440 | 4.884 | 1.993 | 1.000 | -17.640 | -2.540 |
+| [battle](mix/24-lowpass-menu-space-battle.json) | 180.20 | 3.169 | 0.392 | 2.053 | 6.659 | 1.000 | -13.600 | -1.450 |
+| [boss](mix/24-lowpass-menu-space-boss.json) | 120.20 | 3.195 | 0.349 | 1.847 | 6.489 | 1.000 | -14.970 | -2.140 |
+| [forge](mix/24-lowpass-menu-space-forge.json) | 60.20 | 4.120 | 1.488 | 5.415 | 1.993 | 1.000 | -17.530 | -2.930 |
+| [gacha](mix/24-lowpass-menu-space-gacha.json) | 60.20 | 4.153 | 1.652 | 4.983 | 0.000 | 1.000 | -18.080 | -4.610 |
+| [home](mix/24-lowpass-menu-space-home.json) | 60.20 | 4.153 | 1.488 | 5.016 | 1.993 | 1.000 | -17.660 | -2.360 |
+
+## 25-balanced-transients
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/25-balanced-transients-battle.json) | 45.20 | 3.186 | 0.319 | 1.748 | 6.637 | 1.000 | -14.130 | -1.580 |
+| [boss](mix/25-balanced-transients-boss.json) | 45.20 | 3.186 | 0.264 | 1.527 | 7.964 | 1.000 | -15.900 | -2.980 |
