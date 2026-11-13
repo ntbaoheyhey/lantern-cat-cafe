@@ -1,0 +1,287 @@
+{
+  "at": "2026-11-13T21:00:41.984838+00:00",
+  "trial": "37-dialogue-balanced",
+  "diagnostic": true,
+  "metadata": {
+    "path": "work/v3solo-integration/apps/web/src/audio/voice-callouts.json",
+    "sha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a"
+  },
+  "manifest": {
+    "path": "work/v3solo-integration/apps/web/public/audio/manifest.json",
+    "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+  },
+  "method": "First complete actual occurrence per callout cue per scene, cropped from full unnormalized browser mix with150ms pre-roll and200ms tail. Local unprompted ASR; background music/effects retained. This supplements isolated V recognition, not a substitute for its full-roster gate.",
+  "scenes": [
+    {
+      "name": "boss",
+      "metric": {
+        "path": "reports/v3-shell/b2/mix/37-dialogue-balanced-boss.json",
+        "sha256": "fe74875d7ba3bcddbe7af250da5255192ac23dddb0d0a3e1e0ecd9699385a5d9"
+      },
+      "audio": {
+        "path": "reports/v3-shell/b2/renders/37-dialogue-balanced-boss.opus",
+        "sha256": "cfe057f3630854ee18208da71917184cca5623936dfa4d3f390b6d9c84c08b00"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "scene": "boss",
+      "cueId": "voice.mochi.skill.mochi-2",
+      "kind": "skill",
+      "atSeconds": 1.0929999351501465,
+      "durationSeconds": 1.297,
+      "variantId": "mochi-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-001.flac",
+        "sha256": "2944459345f17650250f017154fa105a68c8d2310fedea48b7f21efff7912a58"
+      },
+      "expected": "Warm welcome!",
+      "recognized": "Ooh, a little cough.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.soot.skill.soot-3",
+      "kind": "skill",
+      "atSeconds": 15.881999969482422,
+      "durationSeconds": 1.1753333333333333,
+      "variantId": "soot-skill-3-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-002.flac",
+        "sha256": "f3aa6efc7469a067d651c844b2ba9d7bf452c76790cdf44e3a58de5d93f8cc35"
+      },
+      "expected": "Light the wick!",
+      "recognized": "Like the whip.",
+      "wordAccuracy": 0.33333333333333337,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.panko.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 18.799999952316284,
+      "durationSeconds": 1.05525,
+      "variantId": "panko-charge-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-003.flac",
+        "sha256": "bb248317d4a384ada029116e68fa791fe68b7cb486787d12a528fba8ec05deee"
+      },
+      "expected": "Close!",
+      "recognized": "Close",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.panko.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 21.75499987602234,
+      "durationSeconds": 1.4237083333333334,
+      "variantId": "panko-release-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-004.flac",
+        "sha256": "0460d14709a86993bffded4b4e796740d92a40253e3190d2e7774d5431a8a58b"
+      },
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.soot.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 25.806999921798706,
+      "durationSeconds": 1.0369166666666667,
+      "variantId": "soot-charge-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-005.flac",
+        "sha256": "f118b24067e71b90823de57672d5e5fc648914e2c7283476ff64de98ce142799"
+      },
+      "expected": "Lights!",
+      "recognized": "He likes.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.soot.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 28.777999877929688,
+      "durationSeconds": 1.3254583333333334,
+      "variantId": "soot-release-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-006.flac",
+        "sha256": "e2542c004329347449668971fff2708c752a2b26a410589f9763d2a951b97b2e"
+      },
+      "expected": "Lights out!",
+      "recognized": "like that.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.clover.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 30.259000062942505,
+      "durationSeconds": 1.921375,
+      "variantId": "clover-charge-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-007.flac",
+        "sha256": "2d8befa949982ee313a03014b4aebaa6493467795915e296e868ef9833467889"
+      },
+      "expected": "Watch the flowers bloom!",
+      "recognized": "Watch the flowers blow.",
+      "wordAccuracy": 0.75,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.clover.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 33.180999994277954,
+      "durationSeconds": 1.2602916666666666,
+      "variantId": "clover-release-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-008.flac",
+        "sha256": "dddfff252d498bfcdb339c6dc208b7f6814036f30498f2d40fe484aa1babf53e"
+      },
+      "expected": "Bloom again!",
+      "recognized": "Glow again.",
+      "wordAccuracy": 0.5,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.yarn-giant.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 39.751999855041504,
+      "durationSeconds": 0.9862916666666667,
+      "variantId": "yarn-giant-charge-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-009.flac",
+        "sha256": "36c68e2d461dbf4d10923d830f5984d9196e413615500189f5c056e5cd26acd5"
+      },
+      "expected": "Tangle!",
+      "recognized": "Tangle.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.yarn-giant.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 42.473000049591064,
+      "durationSeconds": 1.2130416666666666,
+      "variantId": "yarn-giant-release-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-010.flac",
+        "sha256": "12efbf1b0246b6e131f1b85f0b59225b8e07fbe62e9b163fae7d078edbad46c9"
+      },
+      "expected": "Tangle them!",
+      "recognized": "Tangle them.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.soot.skill.soot-2",
+      "kind": "skill",
+      "atSeconds": 50.58399987220764,
+      "durationSeconds": 1.0677083333333333,
+      "variantId": "soot-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-011.flac",
+        "sha256": "88b28840b48c76dad26942893150a02e0f2cf0dda73af4f860a02bbd853e90b0"
+      },
+      "expected": "Found you!",
+      "recognized": "I found you.",
+      "wordAccuracy": 0.5,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "boss",
+      "cueId": "voice.clover.skill.clover-2",
+      "kind": "skill",
+      "atSeconds": 59.40299987792969,
+      "durationSeconds": 1.1677083333333333,
+      "variantId": "clover-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/boss-012.flac",
+        "sha256": "947555b11f1216e566aef38a529753e28f7ee4432cc5b6be9e24eb3687ab5229"
+      },
+      "expected": "Let it steep!",
+      "recognized": "Let it stay.",
+      "wordAccuracy": 0.6666666666666667,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    }
+  ],
+  "summary": {
+    "boss": {
+      "passed": 7,
+      "measured": 12
+    }
+  }
+}
