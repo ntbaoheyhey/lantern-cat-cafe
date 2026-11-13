@@ -27,7 +27,7 @@ const comparable=[...unique.values()].filter(r=>r.rounds.some(n=>selectedRounds.
 const ranked=frontier(comparable).sort((a,b)=>a.score-b.score);
 const pareto=ranked.slice(0,20).map(row=>({configHash:row.configHash,score:row.score,rounds:row.rounds,onFront:!row.dominated,distances:row.worstDistances,
  conflicts:Object.entries(row.worstDistances).filter(([,n])=>n>0).map(([key])=>key),
- reason:row.worstDistances['T-e']>0?'The same public rewards are available to an automated account that follows a human route. Reward caps alone do not prove a 50% per-hour penalty. Thread affordability, finite collections and churn constrain higher prices.':'Median objectives fit these pilot seeds; sensitivity and independent confirmation remain separate checks.',
+ reason:row.worstDistances['T-e']>0?'The same public rewards and paid craft rebates are available to automated accounts. The modeled spending mix still misses the bot ratio; finite collections, available YARN, and Thread constrain higher prices.':Object.values(row.worstDistances).some(n=>n>0)?'The bot objective fits these pilot seeds, but the listed balance or tail objectives still miss. Reducing passive grants, craft affordability, and finite desired collections trade off against one another.':'All pilot objectives fit these seeds; sensitivity and independent confirmation remain separate checks.',
  scenarioScores:row.scenarioScores.map(s=>({id:s.id,median:s.quantiles.median,distances:s.distances})),
  }));
 const structuralChanges=[
@@ -35,6 +35,7 @@ const structuralChanges=[
  ['Showcase Thread fitting cost stays fixed per shelf so every permanent upgrade remains affordable under a small bank.',['packages/game-rules/src/cardrpg/economy-sinks-v3.ts','tools/chain/economy-lab/studio.mjs']],
  ['Native item qualities and completed-route origins replace reconstructed qualities and encounter-count reward eligibility.',['tools/chain/economy-lab/cohort.mjs','tools/chain/economy-lab/token.mjs']],
  ['V3 guaranteed Legendary tailoring has its own recipe and distinct-earned-seal proof requirement; legacy C2 stays separate.',['packages/game-rules/src/cardrpg/depth/equipment-v4.ts','packages/game-rules/src/cardrpg/economy-v3.ts']],
+ ['Confirmed deterministic studio burns can earn a capped Spool rebate; all accounts use the same quote and repeated finalization cannot duplicate credit.',['packages/game-rules/src/cardrpg/economy-v3.ts','supabase/functions/_shared/economy-v3.ts','tools/chain/economy-lab/token.mjs','supabase/tests/src/economy-sinks-v3.test.ts']],
 ].map(([description,paths])=>({description,sources:paths.map(path=>signed(resolve(root,path)))}));
 const output={date:new Date().toISOString(),sources,leverNames:[...levers],configs:[...unique.values()].map(({configHash,recordedHash,seeds,rounds,score,scenarioScores})=>({configHash,recordedHash,seeds,rounds,score,scenarioScores})),
  confirmed:confirmation?.confirmed??[],confirmation:confirmationPath?signed(confirmationPath):null,structuralChanges,

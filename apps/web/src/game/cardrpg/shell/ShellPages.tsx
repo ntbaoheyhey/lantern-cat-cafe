@@ -1,5 +1,6 @@
 import {useEffect,useRef,useState,type CSSProperties} from 'react';
 import {ECONOMY_V3 as E,v3Season} from '@taskbar-hero/game-rules/src/cardrpg/economy-v3';
+import {ECONOMY_SINKS,economySinkQuote} from '@taskbar-hero/game-rules/src/cardrpg/economy-sinks-v3';
 import {GameIcon} from '../../../ui/GameIcon';
 import {LiveCounters,EconomyVitals,SeasonEdition} from './LiveCounters';
 import {GuideMascot,PaintedAction,PaintedTabs,RibbonTitle,type KitIcon} from './PaintedKit';
@@ -21,7 +22,14 @@ export function PublishedOdds(){
  </section>;
 }
 
-const economyTabs:[string,string,KitIcon][]=[['flow','Flow','economy'],['allocation','Allocation','yarn'],['fees','Fees','withdraw'],['odds','Odds','bell']];
+const economyTabs:[string,string,KitIcon][]=[['flow','Flow','economy'],['allocation','Allocation','yarn'],['fees','Fees','withdraw'],['odds','Odds','bell'],['craft','Craft','forge']];
+export function EconomyRecipes(){
+ const inventory={gear:[{id:'preview',template:'hearthloom-weapon-epic',quality:0}],styles:[]};
+ return <><div className="b2-rule-grid b2-economy-recipes" aria-label="Guaranteed studio recipes">{(['polish','decor','display'] as const).map(id=>{
+  const quote=economySinkQuote(id,inventory,'preview');
+  return <article key={id} data-sink-id={id} aria-label={quote.benefit}><GameIcon name={id==='polish'?'forge':id==='decor'?'season':'deed'} size={72}/><h3>{id==='polish'?'Polish':id==='decor'?'Decor':'Showcase'}</h3><small>{id==='polish'?'Fine':id==='decor'?'Scene':`${quote.slots} slots`}</small><div className="b2-chain-cost" aria-label="Starting recipe cost"><span aria-label={`${quote.yarn} YARN`}><GameIcon name="yarn" size={28}/>{quote.yarn}</span><span aria-label={`${quote.starThread} Star Thread`}><GameIcon name="star-thread" size={28}/>{quote.starThread}</span></div></article>;
+ })}</div><p className="b2-policy-note" aria-label="Guaranteed recipe success">{pct(ECONOMY_SINKS.successBp)}</p>{E.craft.rebateBp>0&&<p className="b2-policy-note" aria-label="Confirmed craft Spool rebate limit">Rebate ≤{pct(E.craft.rebateBp)} / {E.craft.weeklySpoolCap} weekly</p>}</>;
+}
 export function ShellPages(){
  const [page,setPage]=useState(''),[tab,setTab]=useState('flow'),[guide,setGuide]=useState(false);
  const root=useRef<HTMLElement>(null),prior=useRef<HTMLElement|null>(null);
@@ -44,9 +52,9 @@ export function ShellPages(){
    {guide&&<p className="b2-season-note">Free rewards stay bound. Premium pass: roadmap.</p>}
   </>:<>
    <PaintedTabs className="b-page-nav" label="Economy pages">{economyTabs.map(([id,label,icon])=><PaintedAction key={id} icon={icon} aria-label={id} active={tab===id} onClick={()=>{setTab(id);setGuide(false);}}>{label}</PaintedAction>)}</PaintedTabs>
-   {tab==='flow'?<><div className="b2-economy-flow"><GuideMascot pose="explain"/><div className="b2-flow-steps">{([['spool','Spool','Bound'],['withdraw','Withdraw','Deed required'],['fuse','Seal · Fuse','YARN burned']] as const).map(([icon,title,note])=><article key={icon}><GameIcon name={icon} size={96}/><h3>{title}</h3><small>{note}</small></article>)}</div></div><LiveCounters/><EconomyVitals/></>
+   {tab==='flow'?<><div className="b2-economy-flow"><GuideMascot pose="explain"/><div className="b2-flow-steps" aria-label="Earn bound Spool, withdraw with a held Deed, burn YARN for guaranteed fusion">{([['spool','Spool',`${E.rewards.weeklySpool}/week`],['withdraw','Withdraw',`${pct(E.spool.feeBp)} retained`],['fuse','Fuse',`${E.fusion.legendary.yarn} YARN`]] as const).map(([icon,title,note])=><article key={icon}><GameIcon name={icon} size={96}/><h3>{title}</h3><small>{note}</small></article>)}</div></div><p className="b2-policy-note" aria-label="New Star Thread grants pause at the bank cap; existing balances stay">Thread cap {E.rewards.starThreadBankCap}</p><LiveCounters/><EconomyVitals/></>
     :tab==='allocation'?<div className="b2-allocation"><div className="b2-allocation-pie" role="img" aria-label={allocation.map(([n,v])=>`${n} ${v}%`).join(', ')} style={{'--allocation':`conic-gradient(${gradient})`} as CSSProperties}><GameIcon name="yarn" size={100}/></div><dl>{allocation.map(([name,value],i)=><div key={name}><dt><i style={{background:colours[i%colours.length]}}/>{name}</dt><dd className="t-number">{value}%</dd></div>)}</dl></div>
-    :tab==='odds'?<PublishedOdds/>:<><div className="b2-rule-grid"><article><GameIcon name="withdraw" size={88}/><h3>Withdraw</h3><strong>{pct(E.spool.feeBp)}</strong><small>retained</small></article><article><GameIcon name="market" size={88}/><h3>Market</h3><strong>{pct(E.market.feeBp)}</strong><small>{pct(E.market.burnBp)} burn · {pct(E.market.treasuryBp)} treasury</small></article><article><GameIcon name="season" size={88}/><h3>Seasons</h3><strong>4 / 13</strong><small>content / contract weeks</small></article></div><button className="b2-page-help" aria-label="Limits and risks" aria-expanded={guide} onClick={()=>setGuide(!guide)}><GameIcon name="guide" size={28}/></button>{guide&&<p>Testnet: no real value. Vietnam Decree 147/2024 restricts real-money item trading.</p>}</>}
+    :tab==='craft'?<EconomyRecipes/>:tab==='odds'?<PublishedOdds/>:<><div className="b2-rule-grid"><article><GameIcon name="withdraw" size={88}/><h3>Withdraw</h3><strong>{pct(E.spool.feeBp)}</strong><small>retained</small></article><article><GameIcon name="market" size={88}/><h3>Market</h3><strong>{pct(E.market.feeBp)}</strong><small>{pct(E.market.burnBp)} burn · {pct(E.market.treasuryBp)} treasury</small></article><article><GameIcon name="season" size={88}/><h3>Seasons</h3><strong>{E.season.days/7} / 13</strong><small>content / contract weeks</small></article></div><button className="b2-page-help" aria-label="Limits and risks" aria-expanded={guide} onClick={()=>setGuide(!guide)}><GameIcon name="guide" size={28}/></button>{guide&&<p>Testnet: no real value. Vietnam Decree 147/2024 restricts real-money item trading.</p>}</>}
   </>}
  </section></div>;
 }

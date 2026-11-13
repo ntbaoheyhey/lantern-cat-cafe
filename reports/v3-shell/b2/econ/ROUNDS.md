@@ -645,3 +645,80 @@ Refining round12 yields score 5.7086; median ranges: burnClaims [1.0083, 1.5089]
 | heavy-heavy-d1-b0.1 | 1.231 | 1.053 | 13 / 9 | 0.924 |
 | heavy-heavy-d1-b0.2 | 1.392 | 1.057 | 13 / 9 | 0.949 |
 | heavy-heavy-d1-b0.35 | 1.509 | 1.066 | 13 / 9 | 0.928 |
+
+## Round 17 — Confirmed-craft rebates
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 0.5826.
+
+The first capped rebate search lowers bot/regular withdrawn YARN per active hour from about0.91 to0.519–0.559, but the best candidate still misses burn at0.973 and Star at1.116. Rebates do not require a bot label and apply only after deterministic studio payments. Next round narrows passive Spool grants and combines lower fusion cost with a high rebate; all original acceptance bands remain unchanged.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 0.65 |
+| policy.rewards.seasonRankMax | 3 | 2 |
+| policy.spool.weeklyNetCap | 4 | 6 |
+| policy.fusion.legendary.yarn | 5 | 8 |
+| policy.seal.feeBp | 800 | 1100 |
+| sinks.polish.yarn.0 | 1 | 3 |
+| sinks.polish.yarn.1 | 1 | 3 |
+| sinks.decor.yarn | 2 | 1 |
+| sinks.display.yarn | 1 | 3 |
+| policy.craft.rebateBp | 5000 | 7500 |
+| policy.craft.weeklySpoolCap | 2 | 3 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 0.973 | 1.088 | 13 / 9 | 0.519 |
+| casual-heavy-d0.5-b0.2 | 1.018 | 1.100 | 13 / 9 | 0.544 |
+| casual-heavy-d0.5-b0.35 | 1.090 | 1.116 | 13 / 8.5 | 0.523 |
+| casual-heavy-d1-b0.1 | 1.137 | 1.066 | 13 / 9 | 0.550 |
+| casual-heavy-d1-b0.2 | 1.278 | 1.072 | 13 / 9 | 0.559 |
+| casual-heavy-d1-b0.35 | 1.419 | 1.082 | 13 / 8.5 | 0.535 |
+| balanced-d0.5-b0.1 | 0.983 | 1.066 | 13 / 9 | 0.525 |
+| balanced-d0.5-b0.2 | 1.022 | 1.075 | 13 / 9 | 0.529 |
+| balanced-d0.5-b0.35 | 1.094 | 1.090 | 13 / 9 | 0.523 |
+| balanced-d1-b0.1 | 1.133 | 1.048 | 13 / 9 | 0.542 |
+| balanced-d1-b0.2 | 1.259 | 1.054 | 13 / 9 | 0.550 |
+| balanced-d1-b0.35 | 1.429 | 1.065 | 13 / 9 | 0.543 |
+| heavy-heavy-d0.5-b0.1 | 0.983 | 1.050 | 13 / 9 | 0.539 |
+| heavy-heavy-d0.5-b0.2 | 1.022 | 1.056 | 13 / 9 | 0.541 |
+| heavy-heavy-d0.5-b0.35 | 1.087 | 1.069 | 13 / 9 | 0.534 |
+| heavy-heavy-d1-b0.1 | 1.111 | 1.034 | 13 / 9 | 0.541 |
+| heavy-heavy-d1-b0.2 | 1.263 | 1.039 | 13 / 9 | 0.556 |
+| heavy-heavy-d1-b0.35 | 1.407 | 1.049 | 13 / 9 | 0.543 |
+
+## Round 18 — Lower fusion cost and passive grants
+
+80 unique configs × 40 seeds × 18 scenarios. Best score 1.4171.
+
+Cheaper fusion competes for the one-Thread bank before studio purchases, while very low passive grants leave non-market humans unable to fund a craft. The best score worsens to1.4171: Star peaks at1.1606 and bot hourly ratio at0.6096. Do not select this round. Next isolate the trade-off with higher fusion prices, funded weekly grants, cheaper seasonal decor, and a larger rebate allowance.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.seasonRankMax | 2 | 1 |
+| policy.spool.skinCost | 6 | 8 |
+| policy.spool.weeklyNetCap | 6 | 5 |
+| policy.fusion.legendary.yarn | 8 | 6 |
+| sinks.polish.yarn.1 | 3 | 4 |
+| sinks.decor.yarn | 1 | 3 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 0.975 | 1.131 | 13 / 9 | 0.544 |
+| casual-heavy-d0.5-b0.2 | 1.012 | 1.143 | 13 / 9 | 0.541 |
+| casual-heavy-d0.5-b0.35 | 1.053 | 1.161 | 13 / 8.5 | 0.536 |
+| casual-heavy-d1-b0.1 | 1.104 | 1.112 | 13 / 9 | 0.609 |
+| casual-heavy-d1-b0.2 | 1.246 | 1.115 | 13 / 9 | 0.598 |
+| casual-heavy-d1-b0.35 | 1.370 | 1.125 | 13 / 8.5 | 0.576 |
+| balanced-d0.5-b0.1 | 0.980 | 1.102 | 13 / 9 | 0.540 |
+| balanced-d0.5-b0.2 | 1.011 | 1.111 | 13 / 9 | 0.537 |
+| balanced-d0.5-b0.35 | 1.069 | 1.130 | 13 / 9 | 0.529 |
+| balanced-d1-b0.1 | 1.086 | 1.091 | 13 / 9 | 0.580 |
+| balanced-d1-b0.2 | 1.234 | 1.097 | 13 / 9 | 0.595 |
+| balanced-d1-b0.35 | 1.363 | 1.107 | 13 / 9 | 0.589 |
+| heavy-heavy-d0.5-b0.1 | 0.982 | 1.082 | 13 / 9 | 0.535 |
+| heavy-heavy-d0.5-b0.2 | 1.005 | 1.091 | 13 / 9 | 0.553 |
+| heavy-heavy-d0.5-b0.35 | 1.056 | 1.107 | 13 / 9 | 0.529 |
+| heavy-heavy-d1-b0.1 | 1.068 | 1.078 | 13 / 9 | 0.581 |
+| heavy-heavy-d1-b0.2 | 1.186 | 1.083 | 13 / 9 | 0.610 |
+| heavy-heavy-d1-b0.35 | 1.346 | 1.093 | 13 / 9 | 0.586 |

@@ -21,6 +21,69 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round17.log",
-    "started": "2026-11-13T16:20:34.938741+00:00"
+    "started": "2026-11-13T16:20:34.938741+00:00",
+    "completed": "2026-11-13T16:25:17.239410+00:00"
+  },
+  {
+    "name": "round18-refinement",
+    "pid": 45563,
+    "command": [
+      "nohup",
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "18",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-17-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND18-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round18.log",
+    "started": "2026-11-13T16:25:17.239410+00:00",
+    "completed": "2026-11-13T16:33:39.446775+00:00"
+  },
+  {
+    "name": "round19-craft-funding",
+    "pid": 46908,
+    "command": [
+      "nohup",
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "19",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-17-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND19-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round19.log",
+    "started": "2026-11-13T16:33:39.446775+00:00"
+  },
+  {
+    "name": "anvil-proof-pilot",
+    "pid": 47042,
+    "command": [
+      "nohup",
+      "node",
+      "tools/chain/economy-v3-flow.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-proof-pilot.log",
+    "started": "2026-11-13T16:34:17.481484+00:00"
   }
 ]

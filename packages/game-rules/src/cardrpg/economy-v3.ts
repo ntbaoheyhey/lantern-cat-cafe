@@ -19,6 +19,12 @@ export const ECONOMY_V3={
 } as const;
 export function v3Season(now=Date.now()){const {epoch,days}=ECONOMY_V3.season,length=days*86400000,number=Math.max(1,Math.floor((now-epoch)/length)+1),ends=epoch+number*length;return {number,ends,days:Math.min(days,Math.max(0,Math.ceil((ends-now)/86400000)))};}
 export function withdrawalQuote(gross:bigint){if(gross<=0n)throw new Error('Positive Spool amount required');const retained=gross*BigInt(ECONOMY_V3.spool.feeBp)/10000n;return {gross,retained,net:gross-retained,burned:0n};}
+/** Largest gross withdrawal whose rounded net fits the public weekly cap. */
+export function withdrawableSpool(balance:bigint){
+ if(balance<0n)throw new Error('Invalid Spool balance');
+ const cap=BigInt(ECONOMY_V3.spool.weeklyNetCap)*10n**18n*10000n/BigInt(10000-ECONOMY_V3.spool.feeBp);
+ return balance<cap?balance:cap;
+}
 /** Pause new bound Thread grants when the bank is full; never erase old stock. */
 export function weeklyStarThreadGrant(current:number){if(!Number.isSafeInteger(current)||current<0)throw new Error('Invalid Star Thread balance');return Math.min(ECONOMY_V3.rewards.weeklyStarThread,Math.max(0,ECONOMY_V3.rewards.starThreadBankCap-current));}
 /** Confirmed deterministic crafts can return a bounded amount of Spool.

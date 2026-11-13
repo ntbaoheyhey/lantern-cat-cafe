@@ -1,9 +1,17 @@
 import {afterEach,describe,expect,it} from 'vitest';
-import {ECONOMY_V3,craftSpoolRebate,withdrawalQuote} from './economy-v3';
+import {ECONOMY_V3,craftSpoolRebate,withdrawalQuote,withdrawableSpool} from './economy-v3';
 const policy=ECONOMY_V3.craft as {rebateBp:number;weeklySpoolCap:number};
 const original={...policy},UNIT=10n**18n;
 afterEach(()=>Object.assign(policy,original));
 describe('deterministic craft rebate',()=>{
+ it('quotes an affordable maximum with no rounded-net overflow at the cap',()=>{
+  expect(withdrawableSpool(0n)).toBe(0n);
+  expect(withdrawableSpool(UNIT)).toBe(UNIT);
+  const cap=BigInt(ECONOMY_V3.spool.weeklyNetCap)*UNIT,max=withdrawableSpool(1000n*UNIT);
+  expect(withdrawalQuote(max).net).toBeLessThanOrEqual(cap);
+  expect(withdrawalQuote(max+1n).net).toBeGreaterThan(cap);
+  expect(()=>withdrawableSpool(-1n)).toThrow('Invalid');
+ });
  it('cannot repay a farming loop, even at the highest allowed rate',()=>{
   Object.assign(policy,{rebateBp:7500,weeklySpoolCap:100});
   for(const paid of [1n,UNIT,3n*UNIT+7n,90n*UNIT]){
