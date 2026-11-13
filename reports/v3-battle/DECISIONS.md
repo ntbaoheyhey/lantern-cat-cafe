@@ -46,3 +46,9 @@ A5 visual repair: projected arm weights bent upward-pointing staff props. The fo
 
 ## A6 first available sync (2026-11-13)
 Merge Session B's published B1–B5 head 84b4e49f9 now, ahead of the planned calendar checkpoints, to expose integration issues while B finishes B6. Section 0.6 authorizes this earlier sync; it does not imply a future scheduled merge was run. Preserve Session B shell/audio/fonts/icons/chain code and Session A battle code. Resolve the two conflicts by unioning root scripts/dependencies and retaining both original-asset provenance lists. No battle-owned source conflicts. Fetch B again before final capture and publication.
+
+## A6 toolbar integration repair
+The global audio mute/Mix controls covered the battle guide and More buttons. Reserve their 112px width in the battle-owned topbar/menu (only when the audio controls exist). Preserve pointer assertions and all audio-owned files. This repairs the three-viewport C2 control timeout.
+
+## A5 bounded end-of-queue revisit
+While B prepares its final published integration commit, perform the single A5 revisit rather than idle. Diagnose gaps at overlapping pieces receiving different transforms. Pilot a continuous alpha-weighted skin field with shared world-space mesh lines on Sorrel; it changes geometry only, preserving every approved atlas pixel and authored negative space. Keep the strict raw-alpha gate and compare visual poses/performance before adopting. This revisit is the final attempt, not a new unbounded art pass.

@@ -52,3 +52,8 @@
 .b3-skip-plate{position:fixed;right:24px;bottom:132px;z-index:95;border:1px solid #edc77f;background:#241d32e8;color:#fff0c2;padding:8px 18px;border-radius:8px;font-family:var(--font-display)}
 
 .b3-cinema-occludes .b3-world-layer{visibility:hidden}
+
+/* The shared audio controls occupy the upper-right corner of the shell. */
+.battle-v3-active:has(.th-audio) .b3-top{padding-right:112px}
+.battle-v3-active:has(.th-audio) .b3-menu{right:112px}
+@media(max-width:600px){.battle-v3-active:has(.th-audio) .b3-location{display:none}}

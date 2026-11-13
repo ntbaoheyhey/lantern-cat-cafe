@@ -4,8 +4,8 @@ NEXT 1: Merge B6 once published; run full local unit/E2E/typecheck/lint/build on
 NEXT 2: Capture 90-second audible landing/guest/home/battle/victory/forge demo.
 NEXT 3: Finish bounded A5 connectivity revisit, update reports/PR #444, push.
 LAST GOOD COMMIT: 3726cef96; branch codex/v3-battle-2026-11-13.
-DIAGNOSIS: Legacy font fallback, hidden Night tips/menu budget remain B-owned requests.
-FIX: REQUESTS-TO-B.md has exact repros; A adapts only owned battle/tests. No relaxed gates.
+DIAGNOSIS: C2 pointer test stalls: global audio controls cover battle guide/More in top-right. Legacy font/tips/menu remain B-owned.
+FIX: Reserve audio width within A-owned battle topbar; rerun exact pointer test. No relaxed gates.
 OPEN: A5 original alpha gate PARTIAL 20/22; INBOX empty; no deploy/main merge.
 PIDS: Vite 79776 / parent 79768, port 5990, verified cwd apps/web; owned by resumed task.
 DISK: 98.21 GiB after safe cleanup; keep active builds/caches until servers exit.
