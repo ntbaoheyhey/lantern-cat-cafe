@@ -49,7 +49,7 @@ export default function BattleHud({m}:{m:DepthModel}){
    document.body.classList.toggle('b3-cinema-occludes',!!scene?.cinema&&(scene.cinema.audit.plate||scene.cinema.audit.cutin));
    if(skipButton.current)skipButton.current.hidden=!scene?.cinema?.audit.plate;
    const plan=m.plan,state=totalState.current,now=performance.now();
-   if(plan?.ultimate&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
+   if(plan&&(plan.ultimate||/-[23]$/.test(plan.presentationId??plan.skillId))&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
    if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}
    raf=requestAnimationFrame(paint);
   };paint();return()=>{cancelAnimationFrame(raf);document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
@@ -85,7 +85,7 @@ export default function BattleHud({m}:{m:DepthModel}){
     <button aria-label="Skip to result" disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars to skip this battle'} onClick={()=>m.skip()}>SKIP ›</button></div>
   </footer>
   <button ref={skipButton} hidden className="b3-skip-plate" onClick={()=>skipPlate(m)}>Skip cinematic ›</button>
-  <output className="b3-total" ref={total} aria-label="Total ultimate damage" hidden><i>TOTAL</i><b>0</b></output>
+  <output className="b3-total" ref={total} aria-label="Total skill damage" hidden><i>Σ</i><b>0</b></output>
   {more&&<div className="b3-menu">{m.a6Battle&&!m.replay&&<label className="b3-autonext"><input type="checkbox" aria-label="Auto-next" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false);}}/>Auto-next battle</label>}<label>Ultimate cinematics<select value={controls.cinematics} onChange={e=>{controls.cinematics=e.target.value as CinematicMode;m.notify(false);}}><option value="full">Full</option><option value="short">Short</option><option value="off">Off</option></select></label>
    <label>Effects quality<select value={m.state.settings.quality} onChange={e=>{m.state.settings.quality=e.target.value as typeof m.state.settings.quality;m.notify(false);}}><option value="high">High</option><option value="low">Low</option></select></label><SoundControlA6 m={m} battle/><button onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false);}}>Read battle log</button>
    <button onClick={()=>{setMore(false);if(m.replay||m.galleryBattle){m.leave();return;}paused.current=m.paused;m.paused=true;m.notify(false);setLeaving(true);}}>Leave table</button></div>}

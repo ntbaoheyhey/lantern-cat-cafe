@@ -25,7 +25,7 @@ export class PaintedVfx {
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
  private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private fallbackCast=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
  constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
-  this.field=new FieldVfx(socket);
+  this.field=new FieldVfx(socket,id=>this.layered.images.get(id));
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.layered=new LayeredVfx(socket);this.ready=Promise.all([this.overrides.prepare(),this.layered.ready]).then(()=>{this.layered.warm(this.ctx);});
  }
@@ -113,13 +113,16 @@ export class PaintedVfx {
   // Export bounds are Spine/world units. Head motion and species proportions
   // must not rescale the export; only the stage transform and camera do.
   this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=this.overrides.stats.active;
-  if(view.formationC2){this.field.render(c,view);this.stats.draws+=this.field.draws;}
+  if(view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
   // A nonzero union removes overlapping masks once; unlike even-odd holes,
   // intersecting protected regions cannot accidentally reveal a face again.
-  c.globalCompositeOperation='destination-out';c.globalAlpha=1;c.beginPath();
-  for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;c.moveTo(face.x+size*.30,face.y);c.ellipse(face.x,face.y,size*.30,size*.27,0,0,Math.PI*2);this.stats.maskedFaces++;}
-  for(const box of protectedLabels)c.rect(box.x-3,box.y-3,box.width+6,box.height+6);
-  if(this.stats.draws)c.fill();
+  c.globalCompositeOperation='destination-out';c.globalAlpha=1;
+  if(this.stats.draws)for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
+   const mask=c.createRadialGradient(face.x,face.y,size*.18,face.x,face.y,size*.55);mask.addColorStop(0,'#000');mask.addColorStop(.25,'#000');mask.addColorStop(1,'#0000');c.fillStyle=mask;c.fillRect(face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);this.stats.maskedFaces++;
+  }
+  // Battle bars already have an opaque HUD backing. Large text-lane cutouts made
+  // the new effects look like a checkerboard; legacy labels keep their masks.
+  if(!view.formationC2){c.fillStyle='#000';for(const box of protectedLabels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
  clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}

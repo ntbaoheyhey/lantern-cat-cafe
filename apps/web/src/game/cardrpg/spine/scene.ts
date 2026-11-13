@@ -283,7 +283,7 @@ export class SpineScene {
   this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined);
   this.audio.render(view);
   this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
-  this.numbers.setAnchors(this.anchors);this.numbers.render(this.firstHit?frame:null,view.cardPresentation,this.width,this.height,view.reducedMotion,true);
+  this.numbers.setAnchors(this.anchors);this.numbers.render(frame,view.cardPresentation,this.width,this.height,view.reducedMotion,true,view.fixedTime);
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
  private bounds(entry:DisplayActor,b=entry.actor.bounds):Rect{

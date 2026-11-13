@@ -50,3 +50,9 @@ M2 browser infrastructure repair: mandatory resume cache cleanup left the inheri
 - Initial WebM metrics: coverage min.6345 vs.6121; max pair SSIM.1909 vs.55 over78 pairs; motif min.455. Initial size21,762,391 bytes exceeds20MiB. Encoding CRF40 and poster80 reduce cost without raising the budget.
 - Cinnamon/Clover/Soot edge columns did not exceed the25-luma threshold against the field despite full geometrical coverage. Added broad animated reflected side light before the summons, not a checker exemption; re-rendering.
 - Vite did not invalidate import.meta.glob after adding artwork outside apps/web; restarted only this session port5990 server. The capture now waits for video metadata before seeking, and uses actor.id to check roster readiness.
+
+## V2 visual repair — 2026-11-13
+The first enlarged procedural pilot measured 20–44% coverage but looked like flat geometry, with circular and rectangular cutouts around faces and labels. That does not meet the painted-art quality bar. Replace the broad solid fill with a soft element aura and the existing approved painted core/trail regions, and feather face protection; measure coverage again without lowering its threshold. Battle rules and source art stay unchanged.
+
+## V2 distinctness diagnostic — 2026-11-13
+All 24 actives covered 18.8–40.1% of the viewport, but full-canvas RGB SSIM peaked at0.727 (limit0.6); Velvet basic covered only2.74% (limit5%). Retain these failed measurements. Increase Velvet’s painted slash reach and give each cat an environmental cast motif (doors, ember rain, leaves, shields, constellations, ink mist, stitches, steam, wind, crescents, flowers, ice). Soot/Mallow and Clover/Marigold now use different silhouettes. Measure again with the same full-canvas black-composite SSIM; no crops or thresholds changed.

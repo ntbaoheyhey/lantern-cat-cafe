@@ -9,7 +9,9 @@ it.each(['full','short','off'] as CinematicMode[])('keeps resolved events and ex
  for(const id of SEQUENCES.keys()){
   const original=pilotFixture(id).plan,events=JSON.stringify(original.events),plan=configureSequence(original,mode),impact=plan.beats[2]!.start;
   expect(plan.sequence!.impact).toBe(impact);expect(JSON.stringify(plan.events)).toBe(events);expect(plan.events).toBe(original.events);
-  expect(sequenceAt(plan,impact-1)!.flash).toBe(0);expect(sequenceAt(plan,impact)!.flash).toBe(plan.ultimate?.35:0);
+  expect(sequenceAt(plan,impact-1)!.flash).toBe(0);
+  expect(sequenceAt(plan,impact)!.flash).toBe(plan.ultimate?.35:plan.sequence!.tier==='active'?.16:plan.events.some(e=>e.critical)?.12:0);
+  expect(sequenceAt(plan,impact+34)!.flash).toBe(0);
   expect(sequenceAt(plan,impact,true)!.flash).toBe(0);expect(sequenceAt(plan,impact,true)!.shake).toBe(sequenceAt(plan,impact)!.shake/2);
   expect(sequenceAt(plan,impact)!.plate).toBe(false);
  }

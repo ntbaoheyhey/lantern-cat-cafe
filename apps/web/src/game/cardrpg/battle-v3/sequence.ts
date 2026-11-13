@@ -62,7 +62,7 @@ export function sequenceAt(plan:EffectPlan,elapsed:number,reduced=false){
  return {seq,at,camera:sampleKeys(seq.camera,at),timeScale:sampleKeys(seq.time,at).value,dim:sampleKeys(seq.dim,at).value,
   post:sampleKeys(seq.postfx,at),plate:!!seq.plate&&at>=seq.plate.start&&at<seq.plate.end,
   cutin:!!seq.cutin&&at>=seq.cutin.start&&at<seq.cutin.end,
-  shake:impact?strength*(1-since/300)*(reduced?.5:1):0,flash:seq.tier==='ultimate'&&!reduced&&since>=0&&since<1000/30?.35:0};
+  shake:impact?strength*(1-since/300)*(reduced?.5:1):0,flash:!reduced&&since>=0&&since<1000/30?(seq.tier==='ultimate'?.35:seq.tier==='active'?.16:plan.events.some(e=>e.critical)?.12:0):0};
 }
 
 /** Analytic integral keeps world slow-motion stable during arbitrary seeking. */

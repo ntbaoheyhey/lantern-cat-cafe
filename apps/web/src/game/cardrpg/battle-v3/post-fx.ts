@@ -40,7 +40,9 @@ export class BattlePostFx {
   this.bloom.selection.clear();if(high&&caster)caster.traverse(o=>{if(o instanceof T.Mesh)this.bloom.selection.add(o);});
   this.bloom.intensity=high?(state?.post.bloom??0):0;
   this.aberration.blendMode.blendFunction=high&&!reduced?BlendFunction.NORMAL:BlendFunction.SKIP;
-  this.aberration.offset.setScalar(high&&!reduced?(state?.post.aberration??0):0);
+  const since=elapsed-(state?.seq.impact??plan?.beats[2]?.start??Infinity),crit=plan?.events.some(e=>e.critical);
+  const spike=crit&&since>=0&&since<100?.006*(1-since/100):0;
+  this.aberration.offset.setScalar(high&&!reduced?Math.max(spike,state?.post.aberration??0):0);
   this.vignette.darkness=state?.post.vignette??.2;
   this.shock.amplitude=reduced?.0125:.025;
   if(state&&plan&&state.seq.tier==='ultimate'&&elapsed>=state.seq.impact&&this.impactPlan!==plan){if(impact)this.shock.position.copy(impact);this.shock.explode();this.impactPlan=plan;}
