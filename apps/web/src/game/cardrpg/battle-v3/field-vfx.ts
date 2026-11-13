@@ -5,6 +5,7 @@ import type {PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool} from './field-pool';
 import {paintImpactWake} from './impact-wake';
 import {paintImpactStrokes} from './impact-strokes';
+import {presentationTier} from './presentation';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const random=(n:number)=>{const v=Math.sin(n*127.1+317.7)*43758.5453;return v-Math.floor(v);};
@@ -26,7 +27,7 @@ export class FieldVfx {
   const frame=view.frame,state=frame&&sequenceAt(frame.plan,frame.elapsed,view.reducedMotion);
   if(!frame||state?.plate)return;
   const plan=frame.plan,seq=state?.seq,at=frame.elapsed,contact=seq?.impact??plan.beats[2]!.start;
-  const active=seq?.tier==='active'||!seq&&['special','telegraph'].includes(plan.beats[0]!.clip),tier=seq?.tier??(plan.ultimate?'ultimate':active?'active':'basic');
+  const tier=presentationTier(plan);
   const unit=view.actors.find(a=>a.id===plan.actorId),owner=(plan.presentationId??unit?.cardRpg?.cardId??plan.skillId).replace(/^enemy:/,'').replace(/-[1-4]$/,'');
   const palette=SIGNATURES.get(owner)?.element.palette??[plan.accent,plan.color,'#241b32'];
   const from=this.socket(plan.actorId,'mainHand');if(!from)return;

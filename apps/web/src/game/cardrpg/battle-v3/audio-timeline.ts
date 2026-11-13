@@ -1,6 +1,7 @@
 import type {EffectPlan} from '../../squad/turn3d/effects';
 import type {AudioCue} from '../contracts/audio-cues';
-import type {SkillSequence,SequencePlan} from './sequence';
+import type {SkillSequence} from './sequence';
+import {presentationTier as cueTier} from './presentation';
 import snapshot from './voice-timing.json';
 import {CAT_BY_ID,ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 export interface VoiceTiming {unitId:string;skillId:string;cueId:string;text:string;durationMs:number;syncPointMs:number;phase?:string;kind:string}
@@ -11,7 +12,7 @@ export type CueRole='charge'|'movement'|'release'|'impact'|'tail'|'voice'|'bark'
 export interface TimelineCue {t:number;cue:AudioCue;role:CueRole;element?:string;targetId?:string;voicePhase?:'active'|'charge'|'release'}
 const elements:Record<string,string>={mochi:'holy',soot:'ember',clover:'garden',panko:'heavy',biscuit:'lightning',inkcap:'shadow',velvet:'ice',cinnamon:'fire',brioche:'hearth',sorrel:'tide',marigold:'nature',mallow:'moon'};
 export function cueOwner(plan:EffectPlan){return (plan.presentationId??plan.skillId).replace(/^enemy:/,'').replace(/:basic$/,'').replace(/-[1-4]$/,'');}
-export function cueTier(plan:EffectPlan):'basic'|'active'|'ultimate'{return (plan as SequencePlan).sequence?.tier??(plan.ultimate?'ultimate':/^enemy:/.test(plan.presentationId??plan.skillId)&&!(plan.presentationId??plan.skillId).endsWith(':basic')?'active':'basic');}
+export {cueTier};
 export function voiceTiming(owner:string,skill:string,phase?:string){return VOICE_TIMING.find(v=>v.unitId===owner&&v.skillId===skill&&(phase?v.phase===phase:v.kind==='skill'));}
 /** Authored beat times plus resolved recipients; amounts and the combat clock are read-only. */
 export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineCue[]{

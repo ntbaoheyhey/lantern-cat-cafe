@@ -2,7 +2,7 @@ import type {EffectFrame,EffectPlan} from '../../squad/turn3d/effects';
 import type {Anchor} from '../../squad/turn3d/scene';
 import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
-import type {SequencePlan} from './sequence';
+import {presentationTier} from './presentation';
 import {numberPieces,numberRecipients,numberOffset} from './number-pieces';
 import {paintNumberBadge,type NumberBadge,type BadgePlan} from './number-badges';
 type Glyph={x:number;y:number;width:number;height:number};
@@ -56,7 +56,7 @@ export class BattleNumbers {
   if(frame?.plan!==this.plan){this.plan=frame?.plan??null;this.pending=frame?puppetNumberRows({...frame.plan,targetIds:numberRecipients(frame.plan)},presentation):[];this.shown.clear();this.frameAt=-1;}
   if(frame&&frame.elapsed<this.frameAt){this.shown.clear();this.bursts.length=0;}
   if(frame){
-   this.frameAt=frame.elapsed;const contact=frame.plan.beats[2]!.start,tier=(frame.plan as SequencePlan).sequence?.tier??(frame.plan.ultimate?'ultimate':'basic');
+   this.frameAt=frame.elapsed;const contact=frame.plan.beats[2]!.start,tier=presentationTier(frame.plan);
    const scale=Math.min(1.3,Math.max(.65,this.host.ownerDocument.defaultView!.innerHeight/720));
    this.pending.forEach((row,targetIndex)=>{
     const a=this.anchors.find(a=>a.id===row.id);if(!a)return;let stack=0;

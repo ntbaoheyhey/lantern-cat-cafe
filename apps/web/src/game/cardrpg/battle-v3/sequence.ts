@@ -3,6 +3,7 @@ import type {PaintTimeline} from '../vfx-layered/timeline';
 import type {AudioCue} from '../contracts/audio-cues';
 import {audioTimeline} from './audio-timeline';
 import {minimumVoicedImpact,reserveVoiceTails,type VoiceWindow} from './voice-windows';
+import {impactFeedback} from './presentation';
 
 export type CinematicMode = 'full' | 'short' | 'off';
 export interface ScalarKey {t:number;value:number}
@@ -61,12 +62,11 @@ export function sampleKeys<T extends {t:number}>(keys:readonly T[],at:number):T 
 }
 export function sequenceAt(plan:EffectPlan,elapsed:number,reduced=false){
  const seq=(plan as SequencePlan).sequence;if(!seq)return null;
- const at=Math.max(0,elapsed),since=at-seq.impact,impact=since>=0&&since<300;
- const strength=seq.tier==='ultimate'?12:seq.tier==='active'?5:plan.events.some(e=>e.critical)?3:0;
+ const at=Math.max(0,elapsed);
  return {seq,at,camera:sampleKeys(seq.camera,at),timeScale:sampleKeys(seq.time,at).value,dim:sampleKeys(seq.dim,at).value,
   post:sampleKeys(seq.postfx,at),plate:!!seq.plate&&at>=seq.plate.start&&at<seq.plate.end,
   cutin:!!seq.cutin&&at>=seq.cutin.start&&at<seq.cutin.end,
-  shake:impact?strength*(1-since/300)*(reduced?.5:1):0,flash:!reduced&&since>=0&&since<1000/30?(seq.tier==='ultimate'?.35:seq.tier==='active'?.16:plan.events.some(e=>e.critical)?.12:0):0};
+  ...impactFeedback(plan,at,reduced)};
 }
 
 /** Analytic integral keeps world slow-motion stable during arbitrary seeking. */

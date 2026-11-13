@@ -2,6 +2,7 @@ import type {EffectFrame} from '../../squad/turn3d/effects';
 import {voiceTiming} from './audio-timeline';
 import {sequenceAt,SIGNATURES} from './sequence';
 import {ALTERNATE_CAMERAS,alternatePlateCamera} from './plate-camera';
+import {impactFeedback} from './presentation';
 
 /** The rules contact clock drives visibility; late/failed media can never delay damage. */
 export class CinematicPlayer {
@@ -11,7 +12,7 @@ export class CinematicPlayer {
  private video=document.createElement('video');private poster=document.createElement('img');
  private plan:EffectFrame['plan']|null=null;private failed=false;
  private battleKey:unknown;private takes=new Map<string,number>();private assigned=new WeakMap<EffectFrame['plan'],boolean>();private alternate=false;private owner='';
- readonly audit={plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0,cameraTake:'original'};
+ readonly audit={plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0,cameraTake:'original',flash:0};
  constructor(host:HTMLElement){
   this.root.className='b3-cinema';this.root.setAttribute('aria-hidden','true');
   this.dim.className='b3-cinema-dim';this.flash.className='b3-cinema-flash';this.cutin.className='b3-cutin';
@@ -19,11 +20,15 @@ export class CinematicPlayer {
   this.video.addEventListener('error',()=>{this.failed=true;});this.cutin.append(this.bust,this.title);
   this.root.append(this.dim,this.poster,this.video,this.cutin,this.flash);host.append(this.root);this.hide();
  }
- private hide(){this.dim.hidden=this.flash.hidden=this.cutin.hidden=this.video.hidden=this.poster.hidden=true;this.video.pause();Object.assign(this.audit,{plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0});}
+ private hide(){this.dim.hidden=this.flash.hidden=this.cutin.hidden=this.video.hidden=this.poster.hidden=true;this.video.pause();Object.assign(this.audit,{plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0,flash:0});}
  render(frame:EffectFrame|null,paused:boolean,speed:number,reduced:boolean,fixed=false,battleKey?:unknown){
   if(battleKey!==this.battleKey){this.battleKey=battleKey;this.takes.clear();this.assigned=new WeakMap();this.plan=null;}
   const state=frame?sequenceAt(frame.plan,frame.elapsed,reduced):null;
-  if(!frame||!state){this.hide();this.plan=null;return;}
+  if(!frame||!state){
+   this.hide();this.plan=null;
+   if(frame){const {flash}=impactFeedback(frame.plan,frame.elapsed,reduced);this.flash.hidden=flash===0;this.flash.style.opacity=String(flash);this.audit.flash=flash;}
+   return;
+  }
   const {seq,at}=state;
   if(this.plan!==frame.plan){
    this.plan=frame.plan;this.failed=false;
@@ -50,7 +55,7 @@ export class CinematicPlayer {
    if(Number.isFinite(this.video.duration)&&Math.abs(this.video.currentTime-seconds)>1/30)this.video.currentTime=Math.min(this.video.duration,seconds);
    if(paused||fixed)this.video.pause();else if(this.video.paused)void this.video.play().catch(()=>{this.failed=true;});
   }else this.video.pause();
-  Object.assign(this.audit,{plate:state.plate,cutin:state.cutin,elapsed:at,contact:seq.impact,videoTime:this.video.currentTime});
+  Object.assign(this.audit,{plate:state.plate,cutin:state.cutin,elapsed:at,contact:seq.impact,videoTime:this.video.currentTime,flash:state.flash});
  }
  dispose(){this.video.pause();this.video.removeAttribute('src');this.video.replaceChildren();this.video.load();this.root.remove();}
 }

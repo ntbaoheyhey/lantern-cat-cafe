@@ -33,7 +33,8 @@ try{
     const battle=R.createBattle({seed,chapter:fixture.chapter,cats:R.battleCats(m.state),enemies:fixture.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true});
     battle.v4.committed=true;
     m.tutorialBattle=battle;m.galleryBattle=null;m.replay=null;m.plan=null;m.roundPlan=null;m.watching=true;m.paused=true;m.sceneStarted=true;m.screen='map';m.notify(false);
-    window.__v3a2={R,initial:structuredClone(battle),plans:[],lastPlan:null};
+    const {presentationTier}=await import('/@fs'+root+'/apps/web/src/game/cardrpg/battle-v3/presentation.ts');
+    window.__v3a2={R,presentationTier,initial:structuredClone(battle),plans:[],lastPlan:null};
   },{fixture,seed:config.seed,root});
   await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
   await page.evaluate(()=>document.fonts.ready);
@@ -59,7 +60,7 @@ try{
       const audit=s.audit(),visibleWords=[...document.querySelectorAll('.b3-hud *')].filter(e=>e.childElementCount===0&&e.getClientRects().length).map(e=>e.textContent).join(' ').match(/\b[A-Za-z]+\b/g)??[];
       let coverage=null;
       if(i%3===0&&s.effects){const canvas=s.effects.canvas,px=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;let pixels=0;for(let j=3;j<px.length;j+=4)if(px[j]>=64)pixels++;coverage=pixels/(innerWidth*innerHeight*(canvas.width/s.width)**2);}
-      return {index:i,t:i/fps,fieldSize:{width:s.width,height:s.height},units:audit.units,motion:audit.motion??[],events:audit.events.slice(-8),sequence:{...audit.sequence},stats:{...audit.stats},numbers:s.numbers?.drawn??[],field:{...s.effects?.field?.audit,coverage},visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.presentationId??m.plan.skillId,tier:m.plan.sequence?.tier??(m.plan.ultimate?'ultimate':'basic'),elapsed:m.animationAt,duration:m.plan.duration,impact:m.plan.beats[2].start}:null};
+      return {index:i,t:i/fps,fieldSize:{width:s.width,height:s.height},units:audit.units,motion:audit.motion??[],events:audit.events.slice(-8),sequence:{...audit.sequence},stats:{...audit.stats},numbers:s.numbers?.drawn??[],field:{...s.effects?.field?.audit,coverage},visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.presentationId??m.plan.skillId,tier:c.presentationTier(m.plan),elapsed:m.animationAt,duration:m.plan.duration,impact:m.plan.beats[2].start}:null};
     },{i,fps,minimumFrames});
     outstanding=!!sample.action;
     // Paint HUD timers at a controlled clock; model stays paused during this tick.

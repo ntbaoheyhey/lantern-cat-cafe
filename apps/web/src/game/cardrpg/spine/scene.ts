@@ -16,6 +16,7 @@ import {MotionTrails} from '../battle-v3/motion-trails';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
 import {crowdPose} from '../battle-v3/crowd';
+import {presentationTier,impactFeedback} from '../battle-v3/presentation';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
@@ -271,7 +272,7 @@ export class SpineScene {
    const actor=plan&&view.actors.find(a=>a.id===plan.actorId),home=actor&&this.homes.get(actor.id)?.point;
    const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==actor?.side))??plan?.targetIds[0];
    const target=this.homes.get(targetId??'')?.point??home;
-   const tier=sequence?.seq.tier??(frame.plan.ultimate?'ultimate':frame.clip==='special'||frame.clip==='telegraph'?'active':'basic');
+   const tier=presentationTier(frame.plan);
    const follow=actor&&home&&target&&(tier!=='ultimate'||frame.elapsed>=frame.plan.beats[2]!.start);
    const camera=follow?actionCamera({plan:frame.plan,elapsed:frame.elapsed,asset:this.actors.get(actor.id)!.asset,side:actor.side,home,target,width,height},tier):sequence?.camera??{zoom:1,x:0,y:0,tilt:0};
    this.camera.zoom=view.reducedMotion?1:camera.zoom;
@@ -279,8 +280,9 @@ export class SpineScene {
    this.camera.position.x+=view.reducedMotion?0:camera.x*this.worldWidth;
    this.camera.position.y+=view.reducedMotion?0:camera.y*PAINT.worldHeight;
    const px=this.worldWidth/width;
-   this.camera.position.x+=view.reducedMotion?0:Math.sin(frame.elapsed*.105)*(sequence?.shake??0)*px;
-   this.camera.position.y+=view.reducedMotion?0:Math.cos(frame.elapsed*.085)*(sequence?.shake??0)*.4*px;
+   const {shake}=impactFeedback(frame.plan,frame.elapsed,view.reducedMotion);
+   this.camera.position.x+=view.reducedMotion?0:Math.sin(frame.elapsed*.105)*shake*px;
+   this.camera.position.y+=view.reducedMotion?0:Math.cos(frame.elapsed*.085)*shake*.4*px;
    this.firstHit=frame.elapsed>=(sequence?.seq.impact??frame.plan.beats[2]!.start);
   }else this.camera.rotation.z=0;
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
