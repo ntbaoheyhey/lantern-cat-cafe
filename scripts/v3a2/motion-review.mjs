@@ -24,11 +24,13 @@ try{
  const {page,errors:stripErrors}=await openFixture(browser,config.fixtures[0]);
  for(const [id,motion] of [['mochi-1','dash-slash'],['panko-2','leap-slam'],['brioche-2','spin'],['cinnamon-2','throw'],['soot-2','staff-cast'],['clover-2','summon']]){
   await page.evaluate(id=>{window.__depthReview.inspect(id,0);window.__depthScene.prepare();},id);
+  await page.clock.runFor(100);
   for(let retry=0;retry<300;retry++){
-   if(await page.evaluate(()=>window.__depthScene.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length))break;
+   if(await page.evaluate(()=>{const s=window.__depthScene,m=window.__depthReview;s.prepare();return s.ready&&s.actors.size===m.battle.actors.length&&m.battle.actors.every(a=>s.actors.get(a.id)?.asset===a.catalogId);}))break;
    await page.clock.runFor(34);await new Promise(resolve=>setTimeout(resolve,20));
    if(retry===299)throw Error('Rig preparation timed out: '+id);
   }
+  await page.clock.runFor(100);
   const timing=await page.evaluate(()=>{const p=window.__depthReview.plan;return {impact:p.beats[2].start,duration:p.duration};});
   const times=[0,100,Math.max(120,timing.impact-200),timing.impact-150,timing.impact-100,timing.impact-50,timing.impact,timing.impact+66,timing.impact+133,timing.impact+200,timing.impact+300,timing.duration-1];
   const shots=[];
