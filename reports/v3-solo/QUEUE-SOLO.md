@@ -13,7 +13,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q6 | done | B | U3 9/9 PASS;54/54 screens;435/435 browser; types/unit PASS;24 phone samples | STARTED 2026-11-13T21:17:35.227574+00:00; sourceB9b25782ff,Af6dc3cadd; ENDED 2026-11-13T22:45:54.020159+00:00 |
 | Q7 | done | A | 259 A +8 Q7 +9 Q3 PASS;IoU max.8203;saturation.815–.866;luminance1.003;High60FPS;browser435/435 | STARTED 2026-11-13T22:46:49.566670+00:00; source9b4323716/media16cb6cdfc/measurementb066e4caa; ENDED 2026-11-13T23:21:53.009864+00:00 |
 | Q8 | done | B (+ A attributes) | T1 90/90,0 fallback;C1 3/4;7 gates PASS;browser435/435,unit/types/parity PASS | STARTED 2026-11-13T23:10:58.474439+00:00;A14a4f33bb,B496df289b;ENDED 2026-11-13T23:50:37.928363+00:00 |
-| Q9 | active | A/B by ownership | A P1 then B P1-P8,E6 | STARTED 2026-11-13T23:51:32.209273+00:00; A P1 re-audit |
+| Q9 | active | A/B by ownership | A P1 then B P1-P8,E6 | STARTED 2026-11-13T23:51:32.209273+00:00;A P1+aggregate14 PASS ENDED 2026-11-13T23:58:15.262596+00:00;B P1 six variants PASS;B P2 active |
 | S1 | scheduled | A then B | 2026-11-16 12:00 UTC; SYNC-16 |  |
 | S2 | scheduled | A then B | 2026-11-18 12:00 UTC; SYNC-18 + D1 |  |
 | S3 | scheduled | A/B | 2026-11-19 12:00 UTC; FREEZE final reports/checkers |  |
@@ -1000,4 +1000,24 @@ PASS T1.words: measured 90/90; required <= 12 words per step
 PASS C1.counters: measured 3; required >= 3/4 real Fuji counters numeric, raw RPC + screenshot
 PASS C1.policy: measured {"timeoutMs":6000,"cacheMs":60000,"retries":2,"logWindow":100,"deedBatchSize":500}; required 6000ms timeout, 60000ms cache, 2 retries
 PASS C1.offline: measured 11; required passing test + SHA-256-verified log
+```
+
+## Q9 A polish checker evidence
+
+```text
+PASS P.freshness: measured=6589318da05147f4288a824bec6f12647a845d8e; required=evidence >= source revision
+PASS P.suite-freshness: measured=6589318da05147f4288a824bec6f12647a845d8e; required=suite >= source revision
+PASS P.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS P.items: measured=10; required=eq 10
+PASS P.commits: measured=10; required=min 10
+PASS P.comparisons: measured=10; required=eq 10
+PASS P.unresolved-partials: measured=0; required=eq 0
+PASS P.six-camera-variants: measured=12; required=min 6
+PASS P.low-fps: measured=53.261430402290245; required=min 30
+PASS P.typecheck: measured=0; required=eq 0
+PASS P.unit: measured=0; required=eq 0
+PASS P.e2e: measured=0; required=eq 0
+PASS P.parity: measured=0; required=eq 0
+PASS P.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 14 PASS / 0 FAIL / 14 gates
 ```

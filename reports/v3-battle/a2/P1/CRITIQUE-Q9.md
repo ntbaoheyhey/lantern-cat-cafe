@@ -11,4 +11,4 @@
 9. Whole-field motion now clears all three fixture gates, but a passing average does not imply equal character in every action.
 10. Low quality is checked with a four-times Chrome CPU throttle; this remains a proxy rather than a physical 2019 laptop measurement.
 
-Acceptance score is assigned only after the current full suite and P checker complete. No reference media is shipped.
+Self-score8/10: current full suite passes and all14 P gates pass. No reference media is shipped.

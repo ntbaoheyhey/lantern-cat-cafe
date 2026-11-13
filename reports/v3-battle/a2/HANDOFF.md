@@ -1,6 +1,5 @@
-NOW:Q8 accepted;259 A+76 SOLO gates PASS;stable battle tutorial targets.
-NEXT:Q9 A P1 revisit partials and aggregate polish evidence.
-DONE:Q0-Q8;browser435/435,units,types,parity PASS.
-OPEN:Q9 and scheduled16/18Nov12UTC;freeze19Nov12UTC.
-PIDS:A Vite36397;no simulations.
-UPDATED:2026-11-13T23:50:37.928363+00:00
+NOW:All pre-sync A cards and10 polish items done;259 core+14 P+76 solo gates PASS.
+NEXT:Scheduled SY1 at16Nov12UTC;B polish remains active in its own worktree.
+SUITE:Q9 type/unit/e2e/parity PASS;High60FPS,Low4x53.26–55.09FPS.
+PIDS:A Vite36397;no sims.
+UPDATED:2026-11-13T23:58:15.262596+00:00

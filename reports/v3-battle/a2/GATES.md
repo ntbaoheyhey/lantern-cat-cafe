@@ -1260,3 +1260,23 @@ PASS Q7.boss.effect-saturation: measured=0.8148015516750522; required=>=70% refe
 PASS Q7.boss.effect-luminance: measured=1.003247358260859; required=>=80% reference median
 TOTAL 76 PASS / 0 FAIL / 76 gates
 ```
+
+## Q9 A polish
+
+```text
+PASS P.freshness: measured=6589318da05147f4288a824bec6f12647a845d8e; required=evidence >= source revision
+PASS P.suite-freshness: measured=6589318da05147f4288a824bec6f12647a845d8e; required=suite >= source revision
+PASS P.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS P.items: measured=10; required=eq 10
+PASS P.commits: measured=10; required=min 10
+PASS P.comparisons: measured=10; required=eq 10
+PASS P.unresolved-partials: measured=0; required=eq 0
+PASS P.six-camera-variants: measured=12; required=min 6
+PASS P.low-fps: measured=53.261430402290245; required=min 30
+PASS P.typecheck: measured=0; required=eq 0
+PASS P.unit: measured=0; required=eq 0
+PASS P.e2e: measured=0; required=eq 0
+PASS P.parity: measured=0; required=eq 0
+PASS P.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 14 PASS / 0 FAIL / 14 gates
+```
