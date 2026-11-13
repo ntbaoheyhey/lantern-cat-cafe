@@ -4,11 +4,11 @@ import {tokenRun,scenarios} from './token.mjs';
 import {T} from '../../../scripts/v3b2/thresholds.mjs';
 export const LEVERS=[
  ['policy.rewards.weeklySpool',.25,2,.05],['policy.rewards.chapterSpool',0,2,1],['policy.rewards.seasonRankMax',1,6,1],['policy.rewards.starThreadBankCap',1,8,1],
- ['policy.spool.skinCost',2,8,1],['policy.spool.weeklyNetCap',4,12,1],['policy.fusion.legendary.yarn',6,26,1],['policy.fusion.legendary.starThread',1,3,1],
+ ['policy.spool.skinCost',2,8,1],['policy.spool.weeklyNetCap',4,12,1],['policy.spool.feeBp',2000,3000,250],['policy.fusion.legendary.yarn',6,26,1],['policy.fusion.legendary.starThread',1,3,1],
  ['policy.seal.feeBp',500,1500,100],['sinks.polish.yarn.0',1,8,1],['sinks.polish.yarn.1',3,16,1],
  ['sinks.polish.starThread.0',1,3,1],['sinks.polish.starThread.1',1,5,1],['sinks.decor.yarn',1,8,1],
  ['sinks.decor.starThread',1,8,1],['sinks.display.yarn',1,6,1],['sinks.display.starThread',1,4,1],
- ['policy.craft.rebateBp',0,7500,500],['policy.craft.weeklySpoolCap',0,4,1],
+ ['policy.craft.rebateBp',0,9500,500],['policy.craft.weeklySpoolCap',0,6,1],
 ].map(([path,min,max,step])=>({path,min,max,step}));
 export const get=(o,path)=>path.split('.').reduce((a,k)=>a[k],o);
 export function set(o,path,value){const ks=path.split('.'),key=ks.pop();ks.reduce((a,k)=>a[k],o)[key]=value;}

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {sha} from './runtime.mjs';
+import {hashConfig} from './search-core.mjs';
 const require=createRequire(new URL('../../../apps/web/package.json',import.meta.url));
 const {chromium}=require('@playwright/test');
 const folder='reports/v3-shell/b2/econ',signed=path=>({path,sha256:sha(path)});
@@ -29,6 +30,8 @@ export async function captureEconomyUi(rules,{url='http://127.0.0.1:5995',oddsLo
    const policy=rules.ECONOMY_LAB.policy;
    const flow=await dialog.locator('.b2-flow-steps').innerText();
    assert(flow.includes(`${policy.rewards.weeklySpool}/week`));assert(flow.includes(`${policy.fusion.legendary.yarn} YARN`));
+   assert(flow.includes(`${policy.spool.feeBp/100}% retained`));
+   assert.equal(await dialog.getByLabel('New Star Thread grants pause at the bank cap; existing balances stay').innerText(),`Thread cap ${policy.rewards.starThreadBankCap}`);
    await shoot('flow');
    for(const tab of ['allocation','craft','fees','odds']){
     await dialog.getByRole('button',{name:tab,exact:true}).click();
@@ -41,6 +44,12 @@ export async function captureEconomyUi(rules,{url='http://127.0.0.1:5995',oddsLo
       await tile.getByLabel(`${quote.starThread} Star Thread`,{exact:true}).waitFor();
       observations.push({width,kind:'recipe',id,yarn:quote.yarn,starThread:quote.starThread});
      }
+     if(policy.craft.rebateBp>0)assert.equal(await dialog.getByLabel('Confirmed craft Spool rebate limit').innerText(),`Rebate ≤${policy.craft.rebateBp/100}% / ${policy.craft.weeklySpoolCap} weekly`);
+    }
+    if(tab==='fees'){
+     const values=await dialog.locator('.b2-rule-grid article strong').allTextContents();
+     assert.deepEqual(values,[`${policy.spool.feeBp/100}%`,`${policy.market.feeBp/100}%`,`${policy.season.days/7} / 13`]);
+     observations.push({width,kind:'fees',values});
     }
     if(tab==='odds'){
      const values=await dialog.getByRole('table',{name:'Published gacha odds'}).locator('tbody tr').evaluateAll(rows=>rows.map(r=>Array.from(r.querySelectorAll('td'),c=>c.textContent)));
@@ -70,7 +79,7 @@ export async function captureEconomyUi(rules,{url='http://127.0.0.1:5995',oddsLo
   assert.deepEqual(errors,[]);
   const log=readFileSync(oddsLog,'utf8'),passed=Number(log.match(/Tests\s+(\d+) passed/)?.[1]);
   assert(passed>0&&!/Tests\s+\d+ failed|FAIL /.test(log),'Passing odds test log required');
-  const report={date:new Date().toISOString(),environment:'Disposable localhost Anvil; live public Fuji belongs to C1',shots,observations,errors,oddsTest:{exitCode:0,passed,log:signed(oddsLog)}};
+  const report={date:new Date().toISOString(),environment:'Disposable localhost Anvil; live public Fuji belongs to C1',configHash:hashConfig(rules.ECONOMY_LAB),configSources:['packages/game-rules/src/cardrpg/economy-v3.ts','packages/game-rules/src/cardrpg/economy-sinks-v3.ts','packages/game-rules/src/cardrpg/economy-lab.ts'].map(signed),shots,observations,errors,oddsTest:{exitCode:0,passed,log:signed(oddsLog)}};
   writeFileSync(`${folder}/UI.json`,JSON.stringify(report,null,2)+'\n');
   return report;
  }finally{await browser.close();}

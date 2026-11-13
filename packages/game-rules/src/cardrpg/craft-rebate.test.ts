@@ -13,12 +13,14 @@ describe('deterministic craft rebate',()=>{
   expect(()=>withdrawableSpool(-1n)).toThrow('Invalid');
  });
  it('cannot repay a farming loop, even at the highest allowed rate',()=>{
-  Object.assign(policy,{rebateBp:7500,weeklySpoolCap:100});
+  Object.assign(policy,{rebateBp:9999,weeklySpoolCap:100});
   for(const paid of [1n,UNIT,3n*UNIT+7n,90n*UNIT]){
    const gross=craftSpoolRebate(paid);
    expect(gross).toBeLessThan(paid);
    if(gross)expect(withdrawalQuote(gross).net).toBeLessThan(paid);
   }
+  policy.rebateBp=10000;
+  expect(()=>craftSpoolRebate(UNIT)).toThrow('Invalid');
  });
  it('clips fractional rebates to the weekly remainder without losing old credit',()=>{
   Object.assign(policy,{rebateBp:7500,weeklySpoolCap:2});

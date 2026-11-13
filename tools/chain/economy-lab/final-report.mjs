@@ -1,8 +1,12 @@
 import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
 import {T} from '../../../scripts/v3b2/thresholds.mjs';
 import {checkGates} from '../../../scripts/v3b2/check-gates.mjs';
 const B='reports/v3-shell/b2/econ/',read=name=>JSON.parse(readFileSync(B+name)),final=read('FINAL.json'),baseline=read('BASELINE.json'),search=read('SEARCH.json');
-const generated={date:new Date().toISOString(),thresholds:T,scenarios:final.scenarios.length,seeds:Math.min(...final.scenarios.map(s=>s.seeds)),sensitivityTotal:final.sensitivity.length,sensitivityComplete:final.sensitivity.filter(a=>a.cases.length===2).length,counts:search.counts};
+const proof=read('ANVIL-E2E.json'),ui=read('UI.json');
+assert.equal(proof.configHash,final.configHash,'Repeat the local receipt flow on the final policy');
+assert.equal(ui.configHash,final.configHash,'Repeat the desktop UI proof on the final policy');
+const generated={date:new Date().toISOString(),thresholds:T,scenarios:final.scenarios.length,seeds:Math.min(...final.scenarios.map(s=>s.seeds)),sensitivityTotal:final.sensitivity.length,sensitivityComplete:final.sensitivity.filter(a=>a.cases.length===2).length,counts:search.counts,confirmedReceipts:proof.receipts.filter(r=>r.status==='success').length,desktopScreenshots:ui.shots.length};
 writeFileSync(B+'REPORT-METRICS.json',JSON.stringify(generated,null,2)+'\n');
 const sources={'FINAL.json':final,'BASELINE.json':baseline,'SEARCH.json':search,'REPORT-METRICS.json':generated},citations=[];
 function value(file,pointer,decimals=3){
@@ -47,6 +51,7 @@ md+='The bot objective is conditional on the stated spending and play profiles. 
 md+=`Opening outside-market stock is finite: ${v('/policy/initial/marketYarnPerParticipant')} YARN per modeled market participant. Tester grants are ${v('/policy/initial/testerYarn')} YARN to ${v('/policy/initial/testerRecipients')} recipients. Neither is invented ongoing income. Without outside stock, conservation prevents sustained burns exceeding all claims while balances remain.\n\n`;
 md+='Monitor actual burn against all issued claims, late-season burn, banked and inactive Thread, withdrawals by cohort and account, gross rebates versus paid burns, market float depletion, and observed Legendary progression. Refit demand and retention from observed behaviour before enabling issuance. Keep reward budgets finite and display unavailable chain data as unavailable.\n\n';
 md+='The original immutable contract season and routine cap are unchanged. The UI explains the content season separately. Local Anvil receipts prove the transaction flow and deterministic sink benefits; they are not public Fuji receipts. Source-linked reports, captured UI odds, and receipt hashes are under this directory.\n';
+md+=`\nThe final policy hash matches ${value('REPORT-METRICS.json','/confirmedReceipts')} confirmed local receipts and ${value('REPORT-METRICS.json','/desktopScreenshots')} desktop screenshots. Displayed recipe costs, withdrawal fees, grants, caps, and odds were compared directly with that policy.\n`;
 writeFileSync(B+'ECONOMY-FINAL.md',md);
 writeFileSync(B+'REPORT-NUMBERS.json',JSON.stringify({generatedAt:new Date().toISOString(),citations},null,2)+'\n');
 console.log(JSON.stringify({reportNumbers:citations.length,targets:targetRows.map(([id])=>({id,status:status(id)}))}));

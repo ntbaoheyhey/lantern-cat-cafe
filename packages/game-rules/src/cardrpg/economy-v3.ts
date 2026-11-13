@@ -31,7 +31,7 @@ export function weeklyStarThreadGrant(current:number){if(!Number.isSafeInteger(c
  * The gross rebate stays below the burn; no random purchase qualifies. */
 export function craftSpoolRebate(paid:bigint,claimed=0n){
  const {rebateBp,weeklySpoolCap}=ECONOMY_V3.craft;
- if(paid<0n||claimed<0n||!Number.isInteger(rebateBp)||rebateBp<0||rebateBp>7500||!Number.isInteger(weeklySpoolCap)||weeklySpoolCap<0)throw new Error('Invalid craft rebate');
+ if(paid<0n||claimed<0n||!Number.isInteger(rebateBp)||rebateBp<0||rebateBp>=10000||!Number.isInteger(weeklySpoolCap)||weeklySpoolCap<0)throw new Error('Invalid craft rebate');
  const room=BigInt(weeklySpoolCap)*10n**18n-claimed,quote=paid*BigInt(rebateBp)/10000n;
  return room<=0n?0n:quote<room?quote:room;
 }
