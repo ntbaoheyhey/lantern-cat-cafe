@@ -312,8 +312,14 @@ export class SpineScene {
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
  private bounds(entry:DisplayActor,b=entry.actor.bounds):Rect{
-  const root=entry.actor.root,a=this.screen(root.localToWorld(this.scratch.set(b.x,b.y,0))),c=this.screen(root.localToWorld(this.scratch.set(b.x+b.width,b.y+b.height,0)));
-  return{x:Math.min(a.x,c.x),y:Math.min(a.y,c.y),width:Math.abs(a.x-c.x),height:Math.abs(a.y-c.y)};
+  const root=entry.actor.root;let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
+  // Opposite corners alone collapse a rotated rectangle at a quarter turn.
+  // Every corner must participate in framing, face protection and label lanes.
+  for(const x of [b.x,b.x+b.width])for(const y of [b.y,b.y+b.height]){
+   const p=this.screen(root.localToWorld(this.scratch.set(x,y,0)));
+   left=Math.min(left,p.x);top=Math.min(top,p.y);right=Math.max(right,p.x);bottom=Math.max(bottom,p.y);
+  }
+  return{x:left,y:top,width:right-left,height:bottom-top};
  }
  private projectAnchors(view:SceneView){
   this.anchors.length=0;const labels:LabelInput[]=[],text:LabelInput[]=[],bodies:Rect[]=[];

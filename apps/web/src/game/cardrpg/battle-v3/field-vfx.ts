@@ -4,6 +4,7 @@ import {sequenceAt,SIGNATURES} from './sequence';
 import type {PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool} from './field-pool';
 import {paintImpactWake} from './impact-wake';
+import {paintImpactStrokes} from './impact-strokes';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const random=(n:number)=>{const v=Math.sin(n*127.1+317.7)*43758.5453;return v-Math.floor(v);};
@@ -81,6 +82,7 @@ export class FieldVfx {
     else star(c,0,0,r*(.22+p*.25),4+seed%4);
     c.restore();this.draws++;this.audit.layers.push('twelve-frame-spark');
    }
+   if(painted){const strokes=paintImpactStrokes(c,painted,since,target.x,target.y,radius,target.x>=from.x?1:-1,targets.length,tier,seed,view.reducedMotion,view.quality==='low');this.draws+=strokes;if(strokes)this.audit.layers.push('painted-impact-strokes');}
    const low=view.quality==='low',count=view.reducedMotion?12:tier==='basic'?(low?14:32):(low?28:72),spread=since<0?progress*.45:.35+resolve*1.32;
    const points=this.particles.get(seed);this.audit.pooledParticles=this.particles.allocated;
    c.globalAlpha=release*.8;for(let i=0;i<count;i++){
