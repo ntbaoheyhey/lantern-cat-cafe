@@ -14,7 +14,8 @@
 - Typecheck đạt; 2.532 test web, 724 server đạt.
 - Rules: 1.388 đạt, 2 expected-fail, 11 skip có sẵn.
 - S6 đạt: 795/802 thao tác, 54 trạng thái; 0 lỗi âm thanh; khoảng im lặng 3,54 ms.
-- S7 đạt kiểm tra; đang ghi kết quả. E1 đang chạy 200 seed; các thẻ sau chưa hoàn tất.
+- S7 đạt: đủ 867 cue; phát 20 cue ngẫu nhiên và xem thử 12 giọng mèo trên máy.
+- E1 đang chạy 200 seed; E2–E5, T1, C1, E6 và polish chưa hoàn tất.
 - Kinh tế mới và bộ đếm Fuji trực tiếp chưa có kết quả đạt.
 - Đồng bộ 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
 - Không triển khai hoặc merge main; người dùng triển khai ngày 20-11.

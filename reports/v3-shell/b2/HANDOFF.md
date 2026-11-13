@@ -2,10 +2,10 @@
 NOW: S6 PASS; 795/802 activations across 54 states, no audio errors, 3.54ms longest music gap. S7 static lab PASS.
 DIAGNOSIS: Initial guest failures were depleted local quotas; fresh failures came from Vite cache removal while live.
 FIX: Roll back both ledgers; pre-fund disposable local guests; restart Vite after cleanup.
-NEXT 1: Record/push S6 and S7 acceptance. Preserve seven inconclusive fixture activations in UI-AUDIO.md.
+NEXT 1: Finish E1 baseline; keep the measured performance and real C2 reward diagnostics. E2 sink implementation next.
 NEXT 2: S7 lab PASS. E1 baseline running via pnpm econ:lab --scenario all --seeds 200 (6 local CPU workers, no model agents), e1-baseline-run.log. Do NOT change policy/C2 tables or rebuild lab runtime until it finishes. Then E2.
 NEXT 3: Dated syncs 16/18/19 Nov 12:00 UTC. None due yet.
-LAST GOOD COMMIT: 7ea281237 (S5, pushed).
+LAST GOOD COMMIT: 859f94a67 (S6; S7 commit follows).
 OPEN: S5 numeric fails are unchanged in GATES.md. Eleven mix iterations meet allowed PARTIAL with S5-A-VOICE-WINDOW.
 OPEN: 48/75 battle and 16/35 boss voice starts interrupted; report uses actual starts/selected sprite lengths. A needs phase recovery holds.
 OPEN: Menu contour/tick misses are B-owned, not blamed on A. All scenes pass onset, band-layer, bed, loudness, silence and peak gates.

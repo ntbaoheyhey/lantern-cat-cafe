@@ -15,7 +15,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
 - [ ] S5 — PARTIAL (11 measured mix iterations; A timing blocker S5-A-VOICE-WINDOW; numeric misses retained; self-score 7/10)
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
-- [ ] S7 — todo
+- [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [ ] E1 — todo
 - [ ] E2 — todo
 - [ ] E3 — todo
@@ -315,3 +315,10 @@ PASS S6.gaps: measured 3.54167; required no music silence > 400ms during screen 
 PASS S6.settings: measured 15; required passing test + SHA-256-verified log
 
 Checks: tests/s6-accept-types.log and tests/s6-accept-suite.log (2,532 web, 724 server, 1,388 rules; two expected failures and eleven existing skips). Fifteen real mixer assertions verify amplitude, isolated buses, mute and reload persistence. Seven inconclusive fixture activations remain listed in UI-AUDIO.md and count against coverage. No public transactions.
+
+## S7 evidence
+
+PASS S7.coverage: measured 1; required 100% mapped cues listed in lab
+PASS S7.random: measured 20; required >= 20 random cues from static server, 0 errors
+
+Checks: tests/s7-types.log, tests/s7-suite.log (2,532 web and 724 server; existing rules expected failures/skips retained), tests/s7-static-browser.log. Static lab plays twenty seeded random cues, randomises layered variants and previews editable text for all twelve cats. Production engine and licensed source grains are used locally.
