@@ -42,3 +42,7 @@ reports/turn3d-polish/video/page@*.webm
 # Local Supabase CLI link/cache metadata.
 /supabase/.temp/
 __pycache__/
+
+# Local, reproducible voice production tools and model caches.
+/tools/.venv/
+/tools/audio-models/

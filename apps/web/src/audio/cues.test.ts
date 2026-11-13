@@ -10,8 +10,12 @@ describe('sample cue coverage',()=>{
   for(const type of Object.keys(EVENT_CUES))expect(resolveCue(eventCue({type}),m)?.length,type).toBeGreaterThan(0);
   for(const cat of CATS){for(const phase of ['charge','release','impact','tail'])expect(resolveCue(`ult.${cat}.${phase}`,m)?.length).toBeGreaterThan(0);expect(resolveCue(`voice.${cat}.ult`,m)?.[0]?.bus).toBe('voice');}
  });
- it('keeps twelve distinct pitch or timbre identities',()=>{
-  expect(Object.keys(voiceProfiles)).toHaveLength(12);const p=Object.values(voiceProfiles);for(let a=0;a<p.length;a++)for(let b=a+1;b<p.length;b++)expect(Math.abs(12*Math.log2(p[a]!.pitch/p[b]!.pitch))>=3.99||p[a]!.timbre!==p[b]!.timbre).toBe(true);
+ it('gives all twelve cats their own recording and preprocessed voice samples',()=>{
+  expect(Object.keys(voiceProfiles)).toHaveLength(12);expect(new Set(Object.values(voiceProfiles).map(p=>p.source)).size).toBe(12);
+  for(const cat of CATS)for(const event of ['select','attack','skill','ult','hit','death','victory']){
+   const samples=resolveCue(`voice.${cat}.${event}`,m)!;expect(samples.length).toBeGreaterThanOrEqual(2);
+   expect(samples.every(s=>s.processedVoice&&s.pack===`cat-${cat}`)).toBe(true);
+  }
  });
  it('emits damage/status/death at impact and the ultimate voice at charge',()=>{
   const ids:string[]=[];const audio={play:(id:string)=>{ids.push(id);}};

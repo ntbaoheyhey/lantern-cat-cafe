@@ -30,14 +30,14 @@ PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
 PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
 PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
 PASS S3.voiceConcurrency: measured 1; required <= 1 voice
-PASS S3.bytes: measured 5618061; required <= 16000000 bytes incl. callouts
-PASS S3.cpu: measured 2.1909003031056833; required < 8% added main-thread time, 180s paired traces
-FAIL S4.cats: measured missing; required >= 12 cats, >= 9 lines each
-FAIL S4.consonants: measured missing; required each rendered line >= 0.5 consonants/syllable
-FAIL S4.distinct: measured missing; required nearest MFCC >= source p25; F0 >= 3 semitones OR different source
-FAIL S4.loudness: measured missing; required -16 LUFS +/- 1
-FAIL S4.cadence: measured 0.883; required median voice interval 6-9s
-PASS S4.lines: measured 5474; required nonempty reports/v3-shell/b2/VOICE-LINES.md
+PASS S3.bytes: measured 11133967; required <= 16000000 bytes incl. callouts
+PASS S3.cpu: measured 4.524575153654773; required < 8% added main-thread time, 180s paired traces
+PASS S4.cats: measured 12; required >= 12 cats, >= 9 lines each
+PASS S4.consonants: measured 12/12; required each rendered line >= 0.5 consonants/syllable
+PASS S4.distinct: measured 12/12; required nearest MFCC >= source p25; F0 >= 3 semitones OR different source
+PASS S4.loudness: measured 12/12; required -16 LUFS +/- 1
+PASS S4.cadence: measured 7.563; required median voice interval 6-9s
+PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
 FAIL V.coverage: measured missing; required 100% playable, elite and boss active skills + ultimates from rules
 FAIL V.variants: measured missing; required >= 2 takes per ultimate line
 FAIL V.ultAccuracy: measured missing; required recogniser word accuracy >= 0.7
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 834; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 973; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

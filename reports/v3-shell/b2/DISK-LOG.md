@@ -13,3 +13,6 @@ After cleanup: /dev/disk3s1   926Gi   791Gi    97Gi    90%    5.4M  1.0G    1%  
 Resume 13 November 02:06 UTC: 97 GiB free; worktree 27 GiB. Disk inventory complete. Rebuildable cache cleanup is deferred until the already-running paired browser trace finishes, to preserve a stable source/server during measurement. No protected path removed.
 Cleanup after trace: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. No raw WAVs or downloaded ZIPs from completed cards remained.
 After: /dev/disk3s1   926Gi   792Gi    97Gi    90%    5.4M  1.0G    1%   /System/Volumes/Data
+
+Resume 2026-11-13T02:27+00:00: 93 GiB available before cleanup; worktree 28 GiB. Removed only rebuildable outputs: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. No protected files or source recordings removed.
+After: /dev/disk3s1   926Gi   795Gi    93Gi    90%    5.4M  975M    1%   /System/Volumes/Data

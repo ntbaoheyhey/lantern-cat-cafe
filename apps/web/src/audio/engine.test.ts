@@ -48,7 +48,18 @@ describe('layered playback admission and variants',()=>{
  it('keeps a single voice source and protects the ultimate from a lower priority request',async()=>{
   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.ult');await flush();e.play('voice.soot.attack');await flush();
   expect(e.diagnostics.voice).toBe(1);expect(e.hits.at(-1)?.result).toBe('priority');
-  Context.latest.currentTime+=1;e.play('voice.soot.ult');await flush();expect(e.diagnostics.voice).toBe(1);
+  Context.latest.currentTime+=7;e.play('voice.soot.ult');await flush();expect(e.diagnostics.voice).toBe(1);
+ });
+ it('spaces ordinary cat-speak across units, including generic skill barks, by seven seconds',async()=>{
+  const e=new AudioEngine();await e.unlock();e.play('voice.mochi.skill');await flush();
+  Context.latest.currentTime+=1;e.play('voice.soot.skill');await flush();expect(e.hits.at(-1)?.result).toBe('cadence');
+  Context.latest.currentTime+=6;e.play('voice.soot.skill');await flush();expect(e.hits.at(-1)?.result).toBe('played');
+ });
+ it('preserves an authored voice pitch instead of processing it twice',async()=>{
+  const m={...fixture,cues:{...fixture.cues,'voice.mochi.select':samples('voice').map(s=>({...s,processedVoice:true}))}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();e.play('voice.mochi.select');await flush();
+  expect(Context.latest.sources.at(-1)?.playbackRate.value).toBe(1);
  });
  it('invalidates in-flight requests when stop is called while a pack is loading',async()=>{
   let finish:()=>void=()=>{};const pending=new Promise<void>(r=>{finish=r;});

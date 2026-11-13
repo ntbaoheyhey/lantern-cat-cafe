@@ -9,6 +9,7 @@ const require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=re
 const seconds=Number(process.env.AUDIO_SECONDS??180),prefix=process.env.AUDIO_TRIAL??'s3';
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
 const signed=path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(root,path))).digest('hex')});
+const sources=['apps/web/src/audio/engine.ts','apps/web/src/audio/cues.ts','apps/web/src/audio/events.ts','apps/web/public/audio/manifest.json'].map(signed);
 const measures=[];
 try{
  for(const muted of [true,false]){
@@ -51,6 +52,7 @@ try{
   console.log(JSON.stringify(measures.at(-1)));await context.close();
  }
  const [muted,audio]=measures;
- const result={addedMainThreadPercent:(audio.taskSeconds-muted.taskSeconds)/muted.taskSeconds*100,addedWallTimePercent:(audio.taskSeconds-muted.taskSeconds)/Math.min(audio.durationSeconds,muted.durationSeconds)*100,method:'CDP Performance.TaskDuration, paired warm real UI at 1280x720, same initial battle and replay, true mute skips transient scheduling. Percentage is relative to muted main-thread time, not wall time. Traces preserved as gzip JSON.',traces:measures.map(r=>({...r.trace,durationSeconds:r.durationSeconds})),runs:measures};
+ for(const source of sources)if(signed(source.path).sha256!==source.sha256)throw new Error('Measured source changed during the paired trial: '+source.path);
+ const result={sources,addedMainThreadPercent:(audio.taskSeconds-muted.taskSeconds)/muted.taskSeconds*100,addedWallTimePercent:(audio.taskSeconds-muted.taskSeconds)/Math.min(audio.durationSeconds,muted.durationSeconds)*100,method:'CDP Performance.TaskDuration, paired warm real UI at 1280x720, same initial battle and replay, true mute skips transient scheduling. Percentage is relative to muted main-thread time, not wall time. Traces preserved as gzip JSON. Source hashes are identical before and after the paired trial.',traces:measures.map(r=>({...r.trace,durationSeconds:r.durationSeconds})),runs:measures};
  writeFileSync(resolve(dir,'AUDIO-PERFORMANCE.json'),JSON.stringify(result,null,2)+'\n');console.log('CPU comparison',result.addedMainThreadPercent);
 }finally{await browser.close();}

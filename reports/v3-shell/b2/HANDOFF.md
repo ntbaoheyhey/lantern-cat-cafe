@@ -1,8 +1,8 @@
 # V3B2 handoff
-NOW: S3 gates and suite pass; committing S3. S4 pilot ready for identity tuning.
-NEXT 1: Restore S4 pilot from work/v3b2/s4-first after S3 commit/push.
-NEXT 2: Measure/tune distinctness, engine processedVoice and battle cadence; S4 full suite.
-NEXT 3: V local free-TTS callouts; recogniser, roster contract, fallback and evidence.
-LAST GOOD COMMIT: a2272ec70; next S3 commit is this checkpoint.
-OPEN: S4/V and all UI/economy work pending. No deployment or A-owned changes.
-PIDS: No browser/server running. Local voice-tool installer exec session 54535.
+NOW: S4 all gates PASS; commit/push then V callout production.
+NEXT 1: Local Piper synthesis + Whisper recognition; keep 16 MB shipped budget.
+NEXT 2: Engine cast fallback, explicit-call suppression, ultimate priority and evidence.
+NEXT 3: U1 non-battle UI audit after V gates pass.
+LAST GOOD COMMIT: 84ac9d17a (S3), pushed; S4 committing now.
+OPEN: V and UI/economy work pending. Roster: 12 cats and 13 enemies, same as A at 3c0bc9cb9.
+PIDS: 16444 Vite parent / 16469 server on 5994. Paired capture complete.

@@ -1,3 +1,4 @@
+import authoredVoiceProfiles from './voice-profiles.json';
 export const CATS=['mochi','soot','clover','panko','mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold'] as const;
 export const BUS_NAMES=['master','music','ambience','sfx','voice','ui'] as const;
 export type Bus=typeof BUS_NAMES[number];
@@ -5,8 +6,8 @@ export const CUE_ALIASES: Readonly<Record<string,string>> = {
  'ui.forge-success':'ui.forge.success',
  'ui.forge-fail':'ui.forge.fail',
 };
-export const voiceProfiles=Object.fromEntries(CATS.map((cat,i)=>[cat,{pitch:2**((-9+(i%6)*4)/12),speed:.085+(i%3)*.022,brightness:i<6?750+i*200:2400+(i-6)*350,timbre:i<6?'warm':'bright'}]));
-export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; }
+export const voiceProfiles=Object.fromEntries(Object.entries(authoredVoiceProfiles).map(([cat,p])=>[cat,{...p,pitch:2**(p.baseSemitones/12),timbre:String(p.source)}]));
+export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; processedVoice?:boolean; }
 export type LayerEq = 'flat'|'high-pass-1800'|'low-shelf-180'|'high-pass-80';
 export interface CueLayer {
  role:string; variants:Sample[]; offsetMs:number; eq:LayerEq; gainDb:number;

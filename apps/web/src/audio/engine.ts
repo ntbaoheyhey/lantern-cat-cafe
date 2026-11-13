@@ -84,7 +84,7 @@ export class AudioEngine implements AudioBridge {
    if(bus==='voice'&&voiceToken!==this.voiceRequest){this.record(id,'superseded');return;}
    const now=this.ctx.currentTime*1000;
    if(now-(this.last.get(id)??-Infinity)<(design?.cooldownMs??30)){this.record(id,'cooldown');return;}
-   if(bus==='voice'&&priority<90&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
+   if(bus==='voice'&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
    const count=design?.baked?1:design?.layers.length??1;
    if(!this.admit(bus,count,priority)){this.record(id,'limit');return;}
    if(bus==='voice'){this.stopBus('voice');this.voicePriority=priority;this.last.set('voice-cadence',now);}
@@ -104,7 +104,8 @@ export class AudioEngine implements AudioBridge {
     }
    }else{
     const sample=this.pools.next(id,choices!,s=>s.variantId??`${s.pack}:${s.start}`),profile=bus==='voice'?(voiceProfiles[id.split('.')[1]!]??voiceProfiles.mochi!):undefined;
-    const pitch=userPitch*(profile?.pitch??1);
+    // Authored cat sprites already contain pitch, formants and syllable timing.
+    const pitch=userPitch*(sample.processedVoice?1:profile?.pitch??1);
     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume,0,'flat',group);
     played.push({role:bus,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:0,pitch,gainDb:0});
    }

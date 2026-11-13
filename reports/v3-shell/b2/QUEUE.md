@@ -7,8 +7,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S1 — done (self-score 8/10 for plan/coverage; sound production remains pending)
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
-- [ ] S4 — in progress
-- [ ] V — todo
+- [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
+- [ ] V — in progress
 - [ ] U1 — todo
 - [ ] U2 — todo
 - [ ] U3 — todo
@@ -99,3 +99,14 @@ PASS S3.bytes: measured 5618061; required <= 16000000 bytes incl. callouts
 PASS S3.cpu: measured 2.1909003031056833; required < 8% added main-thread time, 180s paired traces
 
 Checks: tests/s3-verified-types.log, tests/s3-verified-suite.log, tests/s3-restored-audio-tests.log, tests/s3-source-verified.log. Web 2,497 and server 724 pass; game-rule 2 expected failures and 11 existing skips remain disclosed. The repaired 180-second paired traces and logs are saved with hashes in AUDIO-PERFORMANCE.json and AUDIO-BATTLE.json.
+
+## S4 evidence
+
+PASS S4.cats: measured 12; required >= 12 cats, >= 9 lines each
+PASS S4.consonants: measured 12/12; required each rendered line >= 0.5 consonants/syllable
+PASS S4.distinct: measured 12/12; required nearest MFCC >= source p25; F0 >= 3 semitones OR different source
+PASS S4.loudness: measured 12/12; required -16 LUFS +/- 1
+PASS S4.cadence: measured 7.563; required median voice interval 6-9s
+PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
+
+Checks: tests/s4-types.log, tests/s4-suite.log, tests/s4-browser.log; web 2,499 and server 724 pass. Paired 180-second traces: 4.525% added main-thread time, no console errors, cadence median 7.563 seconds, one voice and at most 14 SFX layers. All 216 takes and 12 identities meet loudness/consonant/distinctness gates. Existing game-rule expected failures and skips remain disclosed.
