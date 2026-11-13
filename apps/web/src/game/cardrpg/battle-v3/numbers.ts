@@ -4,9 +4,10 @@ import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
 import type {SequencePlan} from './sequence';
 import {numberPieces,numberRecipients,numberOffset} from './number-pieces';
+import {paintNumberBadge,type NumberBadge,type BadgePlan} from './number-badges';
 type Glyph={x:number;y:number;width:number;height:number};
 type Atlas={canvas:HTMLCanvasElement;glyphs:Map<string,Glyph>;digitHeight:number};
-type Burst={key:string;id:string;text:string;x:number;y:number;at:number;height:number;color:string;critical:boolean;kind:string};
+type Burst={key:string;id:string;text:string;x:number;y:number;at:number;height:number;color:string;critical:boolean;kind:string;badge?:NumberBadge};
 /** Gradient digits are baked once; measured ink bounds, not nominal CSS font size, set their height. */
 export class BattleNumbers {
  readonly canvas=document.createElement('canvas');
@@ -43,7 +44,7 @@ export class BattleNumbers {
  }
  private textWidth(text:string,height:number,color:string){
   const atlas=this.atlas(color),glyphs=[...text].map(ch=>atlas.glyphs.get(ch)).filter((g):g is Glyph=>!!g);
-  return glyphs.reduce((n,g)=>n+g.width*height/atlas.digitHeight+height*.065,0)-height*.065;
+  return Math.max(0,glyphs.reduce((n,g)=>n+g.width*height/atlas.digitHeight+height*.065,0)-height*.065);
  }
  render(frame:EffectFrame|null,presentation:StatusPresentation|undefined,width:number,height:number,reduced:boolean,enabled:boolean,fixedTime?:number){
   const clock=fixedTime===undefined?performance.now():fixedTime*1000;
@@ -59,7 +60,7 @@ export class BattleNumbers {
    const scale=Math.min(1.3,Math.max(.65,this.host.ownerDocument.defaultView!.innerHeight/720));
    this.pending.forEach((row,targetIndex)=>{
     const a=this.anchors.find(a=>a.id===row.id);if(!a)return;let stack=0;
-    row.labels.filter(e=>['damage','heal','shield','fizzle'].includes(e.type)).forEach((label,labelIndex)=>{
+    row.labels.filter(e=>['damage','heal','shield','fizzle'].includes(e.type)&&!(e.type==='fizzle'&&(frame.plan as BadgePlan).numberBadges?.some(b=>b.targetId===row.id&&b.kind!=='absorb'))).forEach((label,labelIndex)=>{
      const event=frame.plan.events.find(e=>e.targetIds.includes(row.id)&&e.type===label.type);
      const dot=!!(event&&'dot' in event&&event.dot),pieces=numberPieces(label.amount,label.type==='damage'&&!dot?(tier==='ultimate'?3:tier==='active'?2:1):1);
      pieces.forEach((amount,i)=>{
@@ -73,11 +74,19 @@ export class BattleNumbers {
      });
     });
    });
+   const stacks=new Map<string,number>();
+   for(const [index,badge] of ((frame.plan as BadgePlan).numberBadges??[]).entries()){
+    const a=this.anchors.find(a=>a.id===badge.targetId);if(!a)continue;
+    const stack=stacks.get(badge.targetId)??0;stacks.set(badge.targetId,stack+1);
+    const key=`${frame.plan.id}:badge:${index}`,offset=Math.min(index*35,Math.max(0,frame.plan.duration-contact-40));
+    if(this.shown.has(key)||frame.elapsed<contact+offset)continue;this.shown.add(key);
+    this.bursts.push({key,id:badge.targetId,text:badge.kind==='absorb'?String(badge.amount):'',badge:badge.kind,kind:badge.kind,critical:false,height:28*scale,color:badge.kind==='absorb'?'#83ddff':badge.kind==='resist'?'#c9adf3':'#ffe0a2',x:Math.max(45,Math.min(width-45,a.x+40*scale)),y:Math.max(28*scale,Math.min(height-32,(a.textLane?.y??a.footY-100)+75*scale+stack*32*scale)),at:this.now-(frame.elapsed-contact-offset)});
+   }
   }
   this.bursts=this.bursts.filter(b=>this.now-b.at<850);
   for(const b of this.bursts){
    const age=this.now-b.at;if(age<0)continue;const t=age/850,pop=reduced?1:1+(b.critical?.4:.1)*(1-Math.min(1,age/160)),gh=b.height*pop,y=b.y-(reduced?0:48*t);
-   const inkWidth=this.textWidth(b.text,gh,b.color),angle=b.critical&&!reduced?.07:0;
+   const textWidth=this.textWidth(b.text,gh,b.color),badgeSize=b.badge?gh:0,gap=b.badge&&b.text?5:0,inkWidth=textWidth+badgeSize+gap,angle=b.critical&&!reduced?.07:0;
    // Include the crit tag and tilted corners when constraining rising stacks.
    const halfWidth=Math.max(inkWidth/2,b.critical?this.textWidth('CRIT',20,'#ffad55')/2:0);
    const top=b.critical?Math.max(gh/2,gh*.75+10):gh/2;
@@ -86,8 +95,9 @@ export class BattleNumbers {
    const marginBottom=gh/2*Math.cos(angle)+halfWidth*Math.sin(angle)+4;
    const x=Math.max(marginX,Math.min(width-marginX,b.x)),safeY=Math.max(marginTop,Math.min(height-marginBottom,y));
    c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(x,safeY);if(angle)c.rotate(-angle);
-   this.text(b.text,0,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,20,'#ffad55');c.restore();
-   this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-inkWidth/2,y:safeY-gh/2,width:inkWidth,height:gh,glyphHeight:gh,kind:b.kind,born:b.at});
+   if(b.badge)paintNumberBadge(c,b.badge,-(textWidth+gap)/2,0,badgeSize);
+   if(b.text)this.text(b.text,(badgeSize+gap)/2,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,20,'#ffad55');c.restore();
+   this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-inkWidth/2,y:safeY-gh/2,width:inkWidth,height:gh,glyphHeight:b.text?gh:0,kind:b.kind,born:b.at});
   }
  }
  dispose(){this.canvas.remove();delete this.host.dataset.puppetNumbers;this.atlases.clear();this.bursts.length=0;}
