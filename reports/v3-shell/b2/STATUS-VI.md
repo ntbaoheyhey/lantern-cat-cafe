@@ -1,18 +1,16 @@
-1. Q0–Q3 đã hoàn thành; giữ nguyên bằng chứng và giới hạn kiểm tra.
-2. Q4 đang làm; chưa chốt cân bằng cuối cùng.
-3. Đã ghi 24 vòng, 1.280 lượt thử, 1.273 cấu hình khác nhau.
-4. Top 10 vòng 23 đã xác nhận với 200 hạt giống mỗi kịch bản.
-5. Có 4 cấu hình vượt T-a đến T-g; T-h còn đang chạy.
-6. Cấu hình thử hiện tại: 497ba9738e, đã đưa vào nhánh B.
-7. Tỷ lệ đốt/phát hành: 1,0104–1,2523 ở trung vị.
-8. Nguồn/tiêu Star Thread: 1,0422–1,09975; biên còn hẹp.
-9. Legendary: người chơi thường ngày 13, chơi nhiều ngày 9.
-10. Có 16 biên nhận Anvil; chưa triển khai hay giao dịch Fuji.
-11. Đã chụp 18 ảnh giao diện; giá và xác suất khớp cấu hình.
-12. 5 kiểm tra xác suất và 20 kiểm tra luật/máy chủ đã đạt.
-13. Toàn bộ kiểm tra kiểu và kiểm thử workspace đã đạt trên f6db229c6.
-17. Lịch đồng bộ giữ nguyên 16/11, 18/11; đóng băng 19/11 12:00 UTC.
-Q4: T-h đã chạy 108/170 trường hợp; chưa được chốt E3.
-Q5: thoại riêng đạt 50/50 tuyệt chiêu, 62/62 kỹ năng; mix 29 còn thiếu thoại café.
-Nhận dạng trong mix: 9/12 câu trận thường, 5/12 câu boss; giữ rõ hạn chế này.
-Lời chào café mới đã qua kiểm tra; chuẩn bị thu lại đủ sáu cảnh.
+1. Q0–Q3 đã hoàn thành; chưa có mốc đồng bộ đến hạn.
+2. Q4: 24 vòng, 1.280 lượt thử, 1.273 cấu hình khác nhau.
+3. Top 10 đã xác nhận với 200 hạt giống mỗi kịch bản.
+4. Cấu hình 497ba9738e vượt T-a đến T-g trong 18 kịch bản.
+5. T-h còn chạy: 121/170 trường hợp, chưa chốt E3.
+6. Trung vị đốt/phát hành 1,0104–1,2523; Star Thread 1,0422–1,09975.
+7. Legendary: chơi thường ngày 13, chơi nhiều ngày 9.
+8. Có 16 biên nhận Anvil và 18 ảnh; chưa triển khai hoặc giao dịch Fuji.
+9. Giá/xác suất khớp cấu hình; 5 kiểm tra xác suất và 20 kiểm tra luật đạt.
+10. Q5: thoại riêng đạt 50/50 tuyệt chiêu, 62/62 kỹ năng, 12 giọng phân biệt.
+11. Mix 31: năm cảnh đạt; lò rèn còn 2,990 contour/phút, giới hạn 2,7.
+12. Thoại trong mix 31: trận thường 9/13 câu, boss 5/12 câu được nhận dạng.
+13. Thu riêng từng bus cho thấy nhạc che lời; độ lệch ghi âm chỉ khoảng 5–11 ms.
+14. Đang thử cân bằng lời/nhạc và nhạc gõ mới cho lò rèn; chưa coi là đạt.
+15. Chạy lại đủ sáu cảnh nếu thay đổi mix; mô phỏng tiếp tục sau lúc thu.
+16. Giữ lịch 16/11 và 18/11; đóng băng 19/11 12:00 UTC.

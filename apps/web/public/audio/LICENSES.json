@@ -43523,52 +43523,6 @@
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "license": "CC0-1.0",
       "author": "MintoDog",
-      "date": "2026-11-13",
-      "sourceFiles": [
-        {
-          "path": "assets/audio-sources/b2/music/menu-forge-tempo-0.84.flac",
-          "sha256": "01241ca56de59181d0403d39c6cbeeede76aa93705ed090305840da8d564e683"
-        }
-      ],
-      "tool": "ffmpeg atempo and NumPy loop crossfade",
-      "script": {
-        "path": "scripts/audio/menu-score-tempo.py",
-        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
-      },
-      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 0.84, -18 LUFS, -4 dBTP ceiling. No reference media.",
-      "tempo": 0.84,
-      "path": "apps/web/public/audio/menu-forge.webm",
-      "file": "menu-forge.webm",
-      "sha256": "5d8dc2d4fe3e86b7a5670796c28e977ce66b2d732d8794125b6342b2d4c167f4"
-    },
-    {
-      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "author": "MintoDog",
-      "date": "2026-11-13",
-      "sourceFiles": [
-        {
-          "path": "assets/audio-sources/b2/music/menu-forge-tempo-0.84.flac",
-          "sha256": "01241ca56de59181d0403d39c6cbeeede76aa93705ed090305840da8d564e683"
-        }
-      ],
-      "tool": "ffmpeg atempo and NumPy loop crossfade",
-      "script": {
-        "path": "scripts/audio/menu-score-tempo.py",
-        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
-      },
-      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 0.84, -18 LUFS, -4 dBTP ceiling. No reference media.",
-      "tempo": 0.84,
-      "path": "apps/web/public/audio/menu-forge.mp3",
-      "file": "menu-forge.mp3",
-      "sha256": "5789f6c96de9c665b294352104ab4b219a6a5b39947cc5fe3a622ab6d2a1eef1"
-    },
-    {
-      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "author": "MintoDog",
       "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
       "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95",
       "file": "menu-home-shaker.flac",
@@ -43632,6 +43586,69 @@
       },
       "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
       "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
+    },
+    {
+      "license": "Own synthesis",
+      "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "licenseUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "author": "Taskbar Hero original synthesis",
+      "date": "2026-11-13",
+      "tool": "Python NumPy/SciPy + ffmpeg",
+      "prompt": "Original workshop score: metal and wood mallets over a warm sustained harmony.\nNo reference recordings, pretrained generators or third-party samples are inputs.\n",
+      "script": {
+        "path": "scripts/audio/q5-forge-score.py",
+        "sha256": "7731fb06f4161ddd1465069e9c434527c1fc3d252cee9abe5c29e2cfe2a03af8"
+      },
+      "processing": "Original 96 BPM mallet composition, eight chord changes, metal/wood attacks, sustained harmony. Mastered -18 LUFS, -4 dBTP.",
+      "file": "forge-33-metal-wood.flac",
+      "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+      "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+    },
+    {
+      "license": "Own synthesis",
+      "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "licenseUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "author": "Taskbar Hero original synthesis",
+      "date": "2026-11-13",
+      "tool": "Python NumPy/SciPy + ffmpeg",
+      "prompt": "Original workshop score: metal and wood mallets over a warm sustained harmony.\nNo reference recordings, pretrained generators or third-party samples are inputs.\n",
+      "script": {
+        "path": "scripts/audio/q5-forge-score.py",
+        "sha256": "7731fb06f4161ddd1465069e9c434527c1fc3d252cee9abe5c29e2cfe2a03af8"
+      },
+      "processing": "Original 96 BPM mallet composition, eight chord changes, metal/wood attacks, sustained harmony. Mastered -18 LUFS, -4 dBTP.",
+      "file": "menu-forge.webm",
+      "path": "apps/web/public/audio/menu-forge.webm",
+      "sha256": "c71b420dd342dfd80af6ae79d2c24b41ed2eba9807069519e80f2dc1ff526cee",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+          "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+        }
+      ]
+    },
+    {
+      "license": "Own synthesis",
+      "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "licenseUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/q5-forge-score.py",
+      "author": "Taskbar Hero original synthesis",
+      "date": "2026-11-13",
+      "tool": "Python NumPy/SciPy + ffmpeg",
+      "prompt": "Original workshop score: metal and wood mallets over a warm sustained harmony.\nNo reference recordings, pretrained generators or third-party samples are inputs.\n",
+      "script": {
+        "path": "scripts/audio/q5-forge-score.py",
+        "sha256": "7731fb06f4161ddd1465069e9c434527c1fc3d252cee9abe5c29e2cfe2a03af8"
+      },
+      "processing": "Original 96 BPM mallet composition, eight chord changes, metal/wood attacks, sustained harmony. Mastered -18 LUFS, -4 dBTP.",
+      "file": "menu-forge.mp3",
+      "path": "apps/web/public/audio/menu-forge.mp3",
+      "sha256": "c84920fb39ccd04e9bb067b5b77b61daa05f921c5dfe9d261a87b7cfc56bd53f",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+          "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+        }
+      ]
     }
   ]
 }

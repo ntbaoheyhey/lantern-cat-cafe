@@ -512,5 +512,199 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture29-mixed-speech.log",
     "started": "2026-11-13T20:12:44.596054+00:00",
     "note": "Read-only mixed diagnostic before updating integration; two local CPU threads."
+  },
+  {
+    "name": "q5-capture30-current",
+    "pid": 64990,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-30.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture30-current.log",
+    "started": "2026-11-13T20:16:06.220658+00:00",
+    "note": "Home first; only if voice band passes capture remaining five scenes and9 fixture/speed matrix. Committed source07f86a63b. Pause owned sims and resume in finally."
+  },
+  {
+    "name": "q5-capture31-current",
+    "pid": 74435,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-31.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture31-current.log",
+    "started": "2026-11-13T20:26:44.307337+00:00",
+    "note": "Home full capture first and every numeric band checked; then remaining scenes and9 voice cases. Owned simulations pause/resume in finally."
+  },
+  {
+    "name": "q5-boss31-stems",
+    "pid": 78000,
+    "command": [
+      "node",
+      "scripts/audio/render-runtime.mjs"
+    ],
+    "env": {
+      "MIX_TRIAL": "diagnostic-31-boss-stems",
+      "AUDIO_SCENES": "boss",
+      "AUDIO_SECONDS": "90",
+      "DIAGNOSTIC_STEMS": "1"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-boss31-stems.log",
+    "started": "2026-11-13T20:30:51.400804+00:00",
+    "note": "Diagnostic clocked buses, current immutable integration. Does not alter output or acceptance captures. No FPS/CPU metrics; economy remains paused by74435."
+  },
+  {
+    "name": "q5-dialogue31-probes",
+    "pid": 81092,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue31-probes.log",
+    "started": "2026-11-13T20:34:40.510340+00:00",
+    "note": "Diagnostic only. No production source mutation or acceptance replacement."
+  },
+  {
+    "name": "q5-capture31-mixed-speech",
+    "pid": 81093,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/recognize-mixed-callouts.py",
+      "31-menu-percussion"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture31-mixed-speech.log",
+    "started": "2026-11-13T20:34:40.510340+00:00",
+    "note": "Diagnostic only. No production source mutation or acceptance replacement."
+  },
+  {
+    "name": "q5-dialogue31-recognition",
+    "pid": 95185,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue31-recognition.log",
+    "started": "2026-11-13T20:35:32.947722+00:00"
+  },
+  {
+    "name": "q5-stem31-alignment",
+    "pid": 1653,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-stem-alignment.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stem31-alignment.log",
+    "started": "2026-11-13T20:36:35.887504+00:00"
+  },
+  {
+    "name": "q5-dialogue32-probes",
+    "pid": 1902,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json",
+      "32"
+    ],
+    "env": {},
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue32-probes.log",
+    "started": "2026-11-13T20:37:34.388799+00:00",
+    "note": "Diagnostic only; prior four masking probes inconclusive. No runtime source changes."
+  },
+  {
+    "name": "q5-forge31-stems",
+    "pid": 1903,
+    "command": [
+      "node",
+      "scripts/audio/render-runtime.mjs"
+    ],
+    "env": {
+      "AUDIO_RUNTIME_ROOT": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
+      "AUDIO_URL": "http://127.0.0.1:5996",
+      "AUDIO_PYTHON": "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "MIX_TRIAL": "diagnostic-31-forge-stems",
+      "AUDIO_SCENES": "forge",
+      "DIAGNOSTIC_STEMS": "1"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge31-stems.log",
+    "started": "2026-11-13T20:37:34.388799+00:00",
+    "note": "Diagnostic only; prior four masking probes inconclusive. No runtime source changes."
+  },
+  {
+    "name": "q5-dialogue32-recognition",
+    "pid": 2127,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py",
+      "32"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue32-recognition.log",
+    "started": "2026-11-13T20:38:48.137557+00:00"
+  },
+  {
+    "name": "q5-forge-body-probes",
+    "pid": 2130,
+    "command": [
+      "python3",
+      "work/q5-forge-body-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-body-probes.log",
+    "started": "2026-11-13T20:38:48.218571+00:00"
+  },
+  {
+    "name": "q5-forge-original32-probes",
+    "pid": 2621,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original32-probes.log",
+    "started": "2026-11-13T20:40:27.718337+00:00",
+    "note": "New original workshop composition after four failed midrange EQ variants. Source/codec diagnostics only."
+  },
+  {
+    "name": "q5-dialogue33-probes",
+    "pid": 2823,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json",
+      "33"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue33-probes.log",
+    "started": "2026-11-13T20:41:34.249783+00:00"
+  },
+  {
+    "name": "q5-forge-original33-probes",
+    "pid": 2824,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original33-probes.log",
+    "started": "2026-11-13T20:41:34.249783+00:00"
+  },
+  {
+    "name": "q5-dialogue33-recognition",
+    "pid": 3005,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py",
+      "33"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue33-recognition.log",
+    "started": "2026-11-13T20:42:31.871746+00:00"
+  },
+  {
+    "name": "q5-forge-original33-publication",
+    "pid": 3006,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py",
+      "--publish",
+      "--variant",
+      "metal-wood"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original33-publication.log",
+    "started": "2026-11-13T20:42:31.871746+00:00"
   }
 ]

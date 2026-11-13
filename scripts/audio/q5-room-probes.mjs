@@ -7,8 +7,8 @@ const require=createRequire(new URL('../../apps/web/package.json',import.meta.ur
 const {chromium}=require('@playwright/test');
 const base='reports/v3-shell/b2',scene=process.argv[2]||'battle';
 const mode=process.argv[3]||'room',isBattle=['battle','boss'].includes(scene),seconds=isBattle?45.2:60.2;
-const input=`${base}/mix/diagnostic-26-${isBattle?'clocked':'menus'}-${scene}.json`;
-const variants=mode==='score'?[
+const input=process.env.PROBE_METRIC??`${base}/mix/diagnostic-26-${isBattle?'clocked':'menus'}-${scene}.json`;
+const variants=mode==='forge-body'?[{name:'baseline'},{name:'open-low-mid',musicNotch:{frequency:350,db:-6}},{name:'open-mid',musicNotch:{frequency:650,db:-6}},{name:'open-high-mid',musicNotch:{frequency:950,db:-6}}]:mode==='score'?[
  {name:'clear-warm-score',voiceTone:0,sfxTone:-12,musicTone:6,voiceDb:-1},
  {name:'clear-bright-score',voiceTone:0,sfxTone:-12,musicTone:9,voiceDb:-1},
  {name:'light-warm-score',voiceTone:-3,sfxTone:-12,musicTone:6,voiceDb:-1},
@@ -42,7 +42,7 @@ try{
  },sources);
  for(const variant of variants){
   const {name}=variant;
-  const bytes=await page.evaluate(async({voiceWet=0,sfxWet=0,voiceTone=0,sfxTone=0,musicTone=0,voiceDb=0,band,seconds})=>{
+  const bytes=await page.evaluate(async({voiceWet=0,sfxWet=0,voiceTone=0,sfxTone=0,musicTone=0,voiceDb=0,band,musicNotch,seconds})=>{
    const rate=48000,ctx=new OfflineAudioContext(2,Math.round(seconds*rate),rate);
    const master=ctx.createGain();master.gain.value=.7;
    const trim=ctx.createGain();trim.gain.value=10**(6/20);
@@ -64,6 +64,7 @@ try{
      const compressor=ctx.createDynamicsCompressor();compressor.threshold.value=band.threshold;compressor.knee.value=12;compressor.ratio.value=band.ratio;compressor.attack.value=.001;compressor.release.value=band.release;
      halves[1].connect(compressor).connect(master);
     }
+    else if(bus==='music'&&musicNotch){const body=ctx.createBiquadFilter();body.type='peaking';body.frequency.value=musicNotch.frequency;body.Q.value=.9;body.gain.value=musicNotch.db;gain.connect(body).connect(master);}
     else if(toneDb){const tone=ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=toneDb;gain.connect(tone).connect(master);}
     else gain.connect(master);
     const wet=bus==='voice'?voiceWet:bus==='sfx'?sfxWet:0;
