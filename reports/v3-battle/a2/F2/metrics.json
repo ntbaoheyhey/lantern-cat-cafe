@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T23:01:38.244Z",
-    "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
+    "generatedAt": "2026-11-13T23:42:05.874Z",
+    "sourceCommit": "14a4f33bb26dc7d3b26e4990845c40af6d5a080c"
   },
   "method": "Contrast = mean absolute luminance difference inside >95% original alpha, against the same rendered stage without the actor. Minimum unit is the fixture score. Unit opacity excludes original painted alpha and overlay effects.",
   "fixtures": {
@@ -13,42 +13,6 @@
       "parity": true,
       "errors": [],
       "units": [
-        {
-          "id": "foe-2-teacup-healer",
-          "asset": "teacup-healer",
-          "pixels": 12351,
-          "meanAbsoluteLumaDifference": 58.506035980892705,
-          "unitMeanLuma": 73.77936989717422,
-          "backgroundMeanLuma": 128.8599174803659,
-          "differenceOfMeans": 55.08054758319168
-        },
-        {
-          "id": "foe-1-sock-skipper",
-          "asset": "sock-skipper",
-          "pixels": 8819,
-          "meanAbsoluteLumaDifference": 71.46868815058362,
-          "unitMeanLuma": 48.17254963147764,
-          "backgroundMeanLuma": 118.5616221793848,
-          "differenceOfMeans": 70.38907254790716
-        },
-        {
-          "id": "foe-0-button-guard",
-          "asset": "button-guard",
-          "pixels": 16378,
-          "meanAbsoluteLumaDifference": 76.83326936133817,
-          "unitMeanLuma": 73.38719158627407,
-          "backgroundMeanLuma": 147.23603588961288,
-          "differenceOfMeans": 73.8488443033388
-        },
-        {
-          "id": "panko",
-          "asset": "panko",
-          "pixels": 17671,
-          "meanAbsoluteLumaDifference": 39.72415996830986,
-          "unitMeanLuma": 136.32716836624982,
-          "backgroundMeanLuma": 129.4622122460531,
-          "differenceOfMeans": 6.864956120196715
-        },
         {
           "id": "foe-3-needle-moth",
           "asset": "needle-moth",
@@ -68,13 +32,40 @@
           "differenceOfMeans": 13.62154315774778
         },
         {
-          "id": "clover",
-          "asset": "clover",
-          "pixels": 9052,
-          "meanAbsoluteLumaDifference": 47.226076800707,
-          "unitMeanLuma": 167.74683049049835,
-          "backgroundMeanLuma": 129.67067012814806,
-          "differenceOfMeans": 38.07616036235031
+          "id": "panko",
+          "asset": "panko",
+          "pixels": 17671,
+          "meanAbsoluteLumaDifference": 39.72415996830986,
+          "unitMeanLuma": 136.32716836624982,
+          "backgroundMeanLuma": 129.4622122460531,
+          "differenceOfMeans": 6.864956120196715
+        },
+        {
+          "id": "foe-0-button-guard",
+          "asset": "button-guard",
+          "pixels": 16378,
+          "meanAbsoluteLumaDifference": 76.83326936133817,
+          "unitMeanLuma": 73.38719158627407,
+          "backgroundMeanLuma": 147.23603588961288,
+          "differenceOfMeans": 73.8488443033388
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "asset": "sock-skipper",
+          "pixels": 8819,
+          "meanAbsoluteLumaDifference": 71.46868815058362,
+          "unitMeanLuma": 48.17254963147764,
+          "backgroundMeanLuma": 118.5616221793848,
+          "differenceOfMeans": 70.38907254790716
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "asset": "teacup-healer",
+          "pixels": 12351,
+          "meanAbsoluteLumaDifference": 58.506035980892705,
+          "unitMeanLuma": 73.77936989717422,
+          "backgroundMeanLuma": 128.8599174803659,
+          "differenceOfMeans": 55.08054758319168
         },
         {
           "id": "soot",
@@ -84,6 +75,15 @@
           "unitMeanLuma": 64.93603465954618,
           "backgroundMeanLuma": 119.67571051179621,
           "differenceOfMeans": 54.73967585225004
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "pixels": 9052,
+          "meanAbsoluteLumaDifference": 47.226076800707,
+          "unitMeanLuma": 167.74683049049835,
+          "backgroundMeanLuma": 129.67067012814806,
+          "differenceOfMeans": 38.07616036235031
         }
       ],
       "histogram": [
@@ -7139,13 +7139,13 @@
           "differenceOfMeans": 74.62119023387606
         },
         {
-          "id": "panko",
-          "asset": "panko",
-          "pixels": 17671,
-          "meanAbsoluteLumaDifference": 39.72415996830986,
-          "unitMeanLuma": 136.32716836624982,
-          "backgroundMeanLuma": 129.4622122460531,
-          "differenceOfMeans": 6.864956120196715
+          "id": "foe-4-needle-moth",
+          "asset": "needle-moth",
+          "pixels": 12579,
+          "meanAbsoluteLumaDifference": 74.71048876699328,
+          "unitMeanLuma": 53.534126576039704,
+          "backgroundMeanLuma": 126.78553414420837,
+          "differenceOfMeans": 73.25140756816867
         },
         {
           "id": "foe-0-kettle-knight",
@@ -7157,6 +7157,15 @@
           "differenceOfMeans": 71.42092251722252
         },
         {
+          "id": "panko",
+          "asset": "panko",
+          "pixels": 17671,
+          "meanAbsoluteLumaDifference": 39.72415996830986,
+          "unitMeanLuma": 136.32716836624982,
+          "backgroundMeanLuma": 129.4622122460531,
+          "differenceOfMeans": 6.864956120196715
+        },
+        {
           "id": "foe-2-pollen-scout",
           "asset": "pollen-scout",
           "pixels": 21391,
@@ -7164,15 +7173,6 @@
           "unitMeanLuma": 59.79656207750944,
           "backgroundMeanLuma": 114.87361807302393,
           "differenceOfMeans": 55.077055995514485
-        },
-        {
-          "id": "foe-4-needle-moth",
-          "asset": "needle-moth",
-          "pixels": 12579,
-          "meanAbsoluteLumaDifference": 74.71048876699328,
-          "unitMeanLuma": 53.534126576039704,
-          "backgroundMeanLuma": 126.78553414420837,
-          "differenceOfMeans": 73.25140756816867
         },
         {
           "id": "foe-3-crumb-sentinel",
@@ -7193,13 +7193,13 @@
           "differenceOfMeans": 52.28281002154058
         },
         {
-          "id": "clover",
-          "asset": "clover",
-          "pixels": 9052,
-          "meanAbsoluteLumaDifference": 47.226076800707,
-          "unitMeanLuma": 167.74683049049835,
-          "backgroundMeanLuma": 129.67067012814806,
-          "differenceOfMeans": 38.07616036235031
+          "id": "mochi",
+          "asset": "mochi",
+          "pixels": 14542,
+          "meanAbsoluteLumaDifference": 54.289795310136086,
+          "unitMeanLuma": 161.28359023518007,
+          "backgroundMeanLuma": 147.66204707743228,
+          "differenceOfMeans": 13.62154315774778
         },
         {
           "id": "soot",
@@ -7211,13 +7211,13 @@
           "differenceOfMeans": 54.73967585225004
         },
         {
-          "id": "mochi",
-          "asset": "mochi",
-          "pixels": 14542,
-          "meanAbsoluteLumaDifference": 54.289795310136086,
-          "unitMeanLuma": 161.28359023518007,
-          "backgroundMeanLuma": 147.66204707743228,
-          "differenceOfMeans": 13.62154315774778
+          "id": "clover",
+          "asset": "clover",
+          "pixels": 9052,
+          "meanAbsoluteLumaDifference": 47.226076800707,
+          "unitMeanLuma": 167.74683049049835,
+          "backgroundMeanLuma": 129.67067012814806,
+          "differenceOfMeans": 38.07616036235031
         }
       ],
       "histogram": [
@@ -13893,15 +13893,6 @@
       "errors": [],
       "units": [
         {
-          "id": "soot",
-          "asset": "soot",
-          "pixels": 11235,
-          "meanAbsoluteLumaDifference": 59.96396085447235,
-          "unitMeanLuma": 64.93603465954618,
-          "backgroundMeanLuma": 119.67571051179621,
-          "differenceOfMeans": 54.73967585225004
-        },
-        {
           "id": "mochi",
           "asset": "mochi",
           "pixels": 14542,
@@ -13945,6 +13936,15 @@
           "unitMeanLuma": 56.16674038043625,
           "backgroundMeanLuma": 136.87736399119865,
           "differenceOfMeans": 80.71062361076238
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "pixels": 11235,
+          "meanAbsoluteLumaDifference": 59.96396085447235,
+          "unitMeanLuma": 64.93603465954618,
+          "backgroundMeanLuma": 119.67571051179621,
+          "differenceOfMeans": 54.73967585225004
         },
         {
           "id": "clover",
@@ -20645,47 +20645,12 @@
   },
   "suite": {
     "_meta": {
-      "generatedAt": "2026-11-13T23:04:54.441Z",
-      "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
+      "generatedAt": "2026-11-13T23:28:30.335Z",
+      "sourceCommit": "14a4f33bb26dc7d3b26e4990845c40af6d5a080c"
     },
     "typecheckExit": 0,
     "parityExit": 0,
     "unitExit": 0,
-    "e2eExit": 0,
-    "verification": {
-      "browser": {
-        "passed": 435,
-        "failed": 0,
-        "groups": [
-          {
-            "group": "local",
-            "passed": 375,
-            "failed": 0,
-            "note": "Eight API-dependent fallback cases were initially invoked without the API and failed; all eight pass in the separate fallback group.",
-            "path": "reports/v3-solo/Q7-e2e-local.log",
-            "sha256": "5403c0963e0bc1a0abd6a99a99bbb6aef632cc84d03b969e0679d4f0be7ff3ff"
-          },
-          {
-            "group": "server",
-            "passed": 52,
-            "failed": 0,
-            "path": "reports/v3-solo/Q7-e2e-server.log",
-            "sha256": "8a4202a289fe985ddcd25a7bd63e89e2e23007f1be0461232dec03f2f73cb852"
-          },
-          {
-            "group": "fallback",
-            "passed": 8,
-            "failed": 0,
-            "path": "reports/v3-solo/Q7-e2e-fallback.log",
-            "sha256": "beff81ee7cb163f94156f5bef0cddc02c9f4dfaa5a232edda970c3449219ef88"
-          }
-        ]
-      },
-      "battleSubset": {
-        "passed": 10,
-        "path": "reports/v3-battle/a2/Q7/suite-e2e.log",
-        "sha256": "1c4753ef9e2ccd08199306ca022ab62e93747d7cf9f328416259c6e5e8e36e61"
-      }
-    }
+    "e2eExit": 0
   }
 }

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T23:09:01.081Z",
-    "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
+    "generatedAt": "2026-11-13T23:41:49.157Z",
+    "sourceCommit": "14a4f33bb26dc7d3b26e4990845c40af6d5a080c"
   },
   "medianCoreHeightFraction": 0.20676215855120447,
   "maxFaceOcclusion": 0,
@@ -61,36 +61,6 @@
       "fallback": false
     },
     {
-      "id": "soot",
-      "asset": "soot",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 448.90140845070425,
-      "box": {
-        "x": 227.05831440016675,
-        "y": 106.19500580685963,
-        "width": 187.86644985123223,
-        "height": 205.47635289329452
-      },
-      "coreBox": {
-        "x": 260.5668420745437,
-        "y": 134.32769984176124,
-        "width": 121.66614456833031,
-        "height": 176.36016729763682
-      },
-      "faceBox": {
-        "x": 270.3001336400101,
-        "y": 134.32769984176124,
-        "width": 102.19956143739746,
-        "height": 77.5984736109602
-      },
-      "drawOrder": 82524,
-      "ratio": 0.2814744560182117,
-      "source": "placeholder",
-      "fallback": false
-    },
-    {
       "id": "panko",
       "asset": "panko",
       "side": "party",
@@ -117,36 +87,6 @@
       },
       "drawOrder": 171269,
       "ratio": 0.3438514381025142,
-      "source": "template",
-      "fallback": false
-    },
-    {
-      "id": "foe-1-sock-skipper",
-      "asset": "sock-skipper",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 307.18471953578336,
-      "box": {
-        "x": 1053.2256282234048,
-        "y": 120.15567415884364,
-        "width": 125.64373478786979,
-        "height": 188.8119181860206
-      },
-      "coreBox": {
-        "x": 1063.1004984298822,
-        "y": 131.49662737284294,
-        "width": 105.88828933494187,
-        "height": 177.46599526390284
-      },
-      "faceBox": {
-        "x": 1071.5715615766776,
-        "y": 131.49662737284294,
-        "width": 88.94616304135117,
-        "height": 78.08503791611724
-      },
-      "drawOrder": 82524,
-      "ratio": 0.25864646326852136,
       "source": "template",
       "fallback": false
     },
@@ -181,6 +121,36 @@
       "fallback": false
     },
     {
+      "id": "foe-1-sock-skipper",
+      "asset": "sock-skipper",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 307.18471953578336,
+      "box": {
+        "x": 1053.2256282234048,
+        "y": 120.15567415884364,
+        "width": 125.64373478786979,
+        "height": 188.8119181860206
+      },
+      "coreBox": {
+        "x": 1063.1004984298822,
+        "y": 131.49662737284294,
+        "width": 105.88828933494187,
+        "height": 177.46599526390284
+      },
+      "faceBox": {
+        "x": 1071.5715615766776,
+        "y": 131.49662737284294,
+        "width": 88.94616304135117,
+        "height": 78.08503791611724
+      },
+      "drawOrder": 82524,
+      "ratio": 0.25864646326852136,
+      "source": "template",
+      "fallback": false
+    },
+    {
       "id": "foe-2-teacup-healer",
       "asset": "teacup-healer",
       "side": "enemy",
@@ -211,36 +181,6 @@
       "fallback": false
     },
     {
-      "id": "clover",
-      "asset": "clover",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 412.35692307692307,
-      "box": {
-        "x": 280.0313160113656,
-        "y": 323.95621829229316,
-        "width": 166.03210655140703,
-        "height": 208.850079360812
-      },
-      "coreBox": {
-        "x": 298.1634727985798,
-        "y": 348.2133135167011,
-        "width": 116.89663983951021,
-        "height": 183.6882104609424
-      },
-      "faceBox": {
-        "x": 307.5152039857406,
-        "y": 348.2133135167011,
-        "width": 98.19317746518858,
-        "height": 80.82281260281465
-      },
-      "drawOrder": 141687,
-      "ratio": 0.2860959991244,
-      "source": "placeholder",
-      "fallback": false
-    },
-    {
       "id": "mochi",
       "asset": "mochi",
       "side": "party",
@@ -267,6 +207,66 @@
       },
       "drawOrder": 112105,
       "ratio": 0.29143881414639383,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "soot",
+      "asset": "soot",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 448.90140845070425,
+      "box": {
+        "x": 227.05831440016675,
+        "y": 106.19500580685963,
+        "width": 187.86644985123223,
+        "height": 205.47635289329452
+      },
+      "coreBox": {
+        "x": 260.5668420745437,
+        "y": 134.32769984176124,
+        "width": 121.66614456833031,
+        "height": 176.36016729763682
+      },
+      "faceBox": {
+        "x": 270.3001336400101,
+        "y": 134.32769984176124,
+        "width": 102.19956143739746,
+        "height": 77.5984736109602
+      },
+      "drawOrder": 82524,
+      "ratio": 0.2814744560182117,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "clover",
+      "asset": "clover",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 412.35692307692307,
+      "box": {
+        "x": 280.0313160113656,
+        "y": 323.95621829229316,
+        "width": 166.03210655140703,
+        "height": 208.850079360812
+      },
+      "coreBox": {
+        "x": 298.1634727985798,
+        "y": 348.2133135167011,
+        "width": 116.89663983951021,
+        "height": 183.6882104609424
+      },
+      "faceBox": {
+        "x": 307.5152039857406,
+        "y": 348.2133135167011,
+        "width": 98.19317746518858,
+        "height": 80.82281260281465
+      },
+      "drawOrder": 141687,
+      "ratio": 0.2860959991244,
       "source": "placeholder",
       "fallback": false
     }
