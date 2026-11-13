@@ -44,7 +44,7 @@ export function Coach({m}:{m:DepthModel}){
   const refresh=()=>flushSync(update);
   update();panel.current?.focus();
   const observer=typeof ResizeObserver==='undefined'?undefined:new ResizeObserver(refresh);
-  for(let node:Element|null=target.current;node;node=node.parentElement)observer?.observe(node);
+  for(let node:Element|null=target.current as Element|null;node;node=node.parentElement)observer?.observe(node);
   let frame=0;const follow=()=>{refresh();frame=requestAnimationFrame(follow);};frame=requestAnimationFrame(follow);window.addEventListener('resize',refresh);window.addEventListener('scroll',refresh,true);
   const allowed=(node:EventTarget|null)=>node instanceof Node&&(panel.current?.contains(node)||target.current?.contains(node));
   const block=(event:Event)=>{if(!allowed(event.target)){event.preventDefault();event.stopImmediatePropagation();}};
