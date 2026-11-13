@@ -762,3 +762,40 @@ Round19 improves score to0.4942, but burn minimum0.9893, Star maximum1.1172, and
 | heavy-heavy-d1-b0.1 | 1.146 | 1.044 | 13 / 9 | 0.525 |
 | heavy-heavy-d1-b0.2 | 1.274 | 1.048 | 13 / 9 | 0.536 |
 | heavy-heavy-d1-b0.35 | 1.378 | 1.058 | 13 / 9 | 0.527 |
+
+## Round 20 — Higher subcost rebates with public withdrawal fees
+
+80 unique configs × 40 seeds × 18 scenarios. Best score 0.0962.
+
+The best score improves to0.096208. Burn1.0238–1.2973 and all other pilot targets pass except Star1.106927 in casual-heavy demand50% bots35%. Four rebate/price rounds narrowed the gap but have not closed it. Change method to paired local coordinate probes around the measured best, prioritizing funding and affordable deterministic recipes; keep every threshold and behavioural assumption fixed.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 0.95 | 1.05 |
+| policy.rewards.seasonRankMax | 1 | 2 |
+| policy.spool.weeklyNetCap | 8 | 6 |
+| policy.fusion.legendary.yarn | 11 | 17 |
+| policy.craft.rebateBp | 7500 | 8500 |
+| policy.craft.weeklySpoolCap | 4 | 5 |
+| policy.spool.feeBp | 2500 | 2000 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.025 | 1.080 | 13 / 9 | 0.493 |
+| casual-heavy-d0.5-b0.2 | 1.094 | 1.090 | 13 / 9 | 0.505 |
+| casual-heavy-d0.5-b0.35 | 1.161 | 1.107 | 13 / 8.5 | 0.485 |
+| casual-heavy-d1-b0.1 | 1.142 | 1.061 | 13 / 9 | 0.480 |
+| casual-heavy-d1-b0.2 | 1.215 | 1.067 | 13 / 9 | 0.485 |
+| casual-heavy-d1-b0.35 | 1.291 | 1.078 | 13 / 8.5 | 0.465 |
+| balanced-d0.5-b0.1 | 1.024 | 1.059 | 13 / 9 | 0.497 |
+| balanced-d0.5-b0.2 | 1.094 | 1.067 | 13 / 9 | 0.498 |
+| balanced-d0.5-b0.35 | 1.169 | 1.083 | 13 / 9 | 0.488 |
+| balanced-d1-b0.1 | 1.152 | 1.050 | 13 / 9 | 0.472 |
+| balanced-d1-b0.2 | 1.224 | 1.056 | 13 / 9 | 0.467 |
+| balanced-d1-b0.35 | 1.296 | 1.066 | 13 / 9 | 0.463 |
+| heavy-heavy-d0.5-b0.1 | 1.033 | 1.044 | 13 / 9 | 0.498 |
+| heavy-heavy-d0.5-b0.2 | 1.080 | 1.050 | 13 / 9 | 0.494 |
+| heavy-heavy-d0.5-b0.35 | 1.156 | 1.064 | 13 / 9 | 0.491 |
+| heavy-heavy-d1-b0.1 | 1.160 | 1.042 | 13 / 9 | 0.475 |
+| heavy-heavy-d1-b0.2 | 1.230 | 1.047 | 13 / 9 | 0.477 |
+| heavy-heavy-d1-b0.35 | 1.297 | 1.056 | 13 / 9 | 0.475 |

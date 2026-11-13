@@ -1,14 +1,18 @@
 import {Worker} from 'node:worker_threads';
+import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync,existsSync,readdirSync} from 'node:fs';
 import {resolve,relative} from 'node:path';
 import {loadLabRuntime,root,sha} from './runtime.mjs';
 import {nativePolicy,hashConfig} from './search-core.mjs';
-import {freezeModel} from './freeze.mjs';
+import {freezeModel,restoreModel} from './freeze.mjs';
+import {verifiedConfirmation} from './evidence.mjs';
 const args=process.argv.slice(2),arg=(k,d)=>args.includes('--'+k)?args[args.indexOf('--'+k)+1]:d;
 const B=resolve(root,'reports/v3-shell/b2/econ'),folder=resolve(B,'search');
 const label=arg('label','CONFIRMED'),seeds=Number(arg('seeds',200)),top=Number(arg('top',10)),workers=Number(arg('workers',6));
 if(!/^[A-Za-z0-9_-]+$/.test(label)||![seeds,top,workers].every(n=>Number.isSafeInteger(n)&&n>0))throw Error('Invalid confirmation arguments');
 const outputPath=resolve(B,label+'.json');if(existsSync(outputPath))throw Error('Preserve measured confirmation');
+const checkpointPath=resolve(B,label+'-checkpoint.json'),prior=existsSync(checkpointPath)?JSON.parse(readFileSync(checkpointPath)):null;
+const firstSeed=Number(arg('first-seed',53113));
 const manifestPath=resolve(root,arg('bank')),manifest=JSON.parse(readFileSync(manifestPath)),bankPath=resolve(root,manifest.cohort.path);
 if(sha(bankPath)!==manifest.cohort.sha256)throw Error('Native cohort hash mismatch');
 if(manifest.cohort.seedsPerProfile<seeds)throw Error('Confirm the native progression with at least as many seeds first.');
@@ -20,21 +24,31 @@ for(const file of readdirSync(folder).filter(f=>/^round-\d+\.json$/.test(f))){
   if(!unique.has(row.configHash)||row.score<unique.get(row.configHash).score)unique.set(row.configHash,{...row,round:round.round});
  }
 }
-const selected=[...unique.values()].sort((a,b)=>a.score-b.score).slice(0,top);
+const selected=prior?.selected??[...unique.values()].sort((a,b)=>a.score-b.score).slice(0,top).map(({config,configHash,score,round})=>({config,configHash,score,round}));
 if(selected.length<top)throw Error('Not enough unique candidates with this exact native policy');
-const runtime=await loadLabRuntime(resolve(root,'work/economy-lab/confirm-'+label)),started=performance.now(),confirmed=[],active=[];let next=0;
-const frozen=freezeModel('confirm-'+label,runtime.runtimePath);
+if(prior){assert.equal(prior.seeds,seeds);assert.equal(prior.firstSeed,firstSeed);assert.equal(prior.selected.length,top);assert.equal(prior.bankHash,sha(bankPath));assert.equal(prior.manifestHash,sha(manifestPath));}
+const runtime=prior?null:await loadLabRuntime(resolve(root,'work/economy-lab/confirm-'+label)),started=performance.now(),confirmed=[],active=[];let next=0;
+const frozen=prior?restoreModel('confirm-'+label,prior.modelSnapshot):freezeModel('confirm-'+label,runtime.runtimePath),runtimePath=frozen.runtimePath??runtime.runtimePath;
+const checkpoint=prior??{label,seeds,firstSeed,selected,sources,compared:unique.size,bankHash:sha(bankPath),manifestHash:sha(manifestPath),modelSnapshot:frozen.evidence};
+if(!prior)writeFileSync(checkpointPath,JSON.stringify(checkpoint,null,2)+'\n');
 mkdirSync(resolve(B,'confirm'),{recursive:true});
-try{await Promise.all(Array.from({length:Math.min(workers,selected.length)},()=>new Promise((accept,reject)=>{
- const worker=new Worker(frozen.worker,{workerData:{runtimePath:runtime.runtimePath,bankPath}});active.push(worker);
- const dispatch=()=>{if(existsSync(resolve(root,'STOP-V3B'))){reject(Error('STOP-V3B requested'));return;}const row=selected[next++];if(!row){void worker.terminate();accept();return;}worker.postMessage({id:row.configHash,config:row.config,seeds,firstSeed:Number(arg('first-seed',53113))});};
+const pending=[];
+for(const row of selected){
+ const path=resolve(B,'confirm',label+'-'+row.configHash+'.json');
+ if(existsSync(path))confirmed.push(verifiedConfirmation(JSON.parse(readFileSync(path)),{configHash:row.configHash,seeds,firstSeed,modelSha256:frozen.evidence.sha256,bankSha256:sha(bankPath)}));
+ else pending.push(row);
+}
+if(confirmed.length)console.log(`Resuming ${confirmed.length}/${selected.length} verified confirmations.`);
+try{await Promise.all(Array.from({length:Math.min(workers,pending.length)},()=>new Promise((accept,reject)=>{
+ const worker=new Worker(frozen.worker,{workerData:{runtimePath,bankPath}});active.push(worker);
+ const dispatch=()=>{if(existsSync(resolve(root,'STOP-V3B'))){reject(Error('STOP-V3B requested'));return;}const row=pending[next++];if(!row){void worker.terminate();accept();return;}worker.postMessage({id:row.configHash,config:row.config,seeds,firstSeed});};
  worker.on('error',reject);worker.on('message',row=>{if(row.error){reject(Error(row.error));return;}const candidate=selected.find(r=>r.configHash===row.id);
   if(row.configHash!==hashConfig(candidate.config)){reject(Error('Confirmed runtime applied a different config'));return;}
-  const result={...row,config:candidate.config,searchScore:candidate.score,searchRound:candidate.round};confirmed.push(result);
+  const result={...row,config:candidate.config,searchScore:candidate.score,searchRound:candidate.round,modelSnapshot:frozen.evidence,bank:manifest.cohort};confirmed.push(result);
   writeFileSync(resolve(B,'confirm',label+'-'+row.configHash+'.json'),JSON.stringify(result,null,2)+'\n');
   console.log(`${label}: ${confirmed.length}/${selected.length}; score ${row.score.toFixed(4)}; ${((performance.now()-started)/1000).toFixed(1)}s`);dispatch();
  });dispatch();
 })));}finally{await Promise.all(active.map(w=>w.terminate()));}
 confirmed.sort((a,b)=>a.score-b.score);
-writeFileSync(outputPath,JSON.stringify({label,seeds,date:new Date().toISOString(),selection:'Top unique configs under the final comparable model and exact native policy. Independent confirmation token seeds.',compared:unique.size,sources,modelSnapshot:frozen.evidence,bank:{...manifest.cohort,manifest:{path:relative(root,manifestPath),sha256:sha(manifestPath)}},elapsedSeconds:(performance.now()-started)/1000,confirmed},null,2)+'\n');
+writeFileSync(outputPath,JSON.stringify({label,seeds,date:new Date().toISOString(),selection:'Top unique configs under the final comparable model and exact native policy. Independent confirmation token seeds.',compared:checkpoint.compared,sources:checkpoint.sources,modelSnapshot:frozen.evidence,bank:{...manifest.cohort,manifest:{path:relative(root,manifestPath),sha256:sha(manifestPath)}},elapsedSeconds:(performance.now()-started)/1000,confirmed},null,2)+'\n');
 console.log(`Saved ${relative(root,outputPath)}.`);

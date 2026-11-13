@@ -1,6 +1,6 @@
 {
   "label": "NATIVE-SENSITIVITY",
-  "date": "2026-11-13T16:17:59.131Z",
+  "date": "2026-11-13T16:53:06.280Z",
   "base": {
     "path": "reports/v3-shell/b2/econ/PROGRESSION-200.json",
     "sha256": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b"
@@ -11,7 +11,7 @@
     "sha256": "1f4b9b6ee85233fe1b85c1f3b2dbfd8886257f65a8b3a4c759f0f1cd55ab93c1"
   },
   "method": "Actual C2 transitions; rerun only the changed profile using the same 200 seeds, reuse unchanged profiles exactly. Timing changes rerun every profile. Integer perturbations with no policy change reuse verified records.",
-  "elapsedSeconds": 1934.383071584,
+  "elapsedSeconds": 4041.524169417,
   "complete": false,
   "cases": [
     {
@@ -354,6 +354,51 @@
       "manifest": {
         "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.3.activeDays-plus.json",
         "sha256": "28006ecaae2869c3eb4b1f2dc576aa09792fe4da1b3000e6ab589250b7aae011"
+      }
+    },
+    {
+      "assumption": "profiles.3.upgrades",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.3.upgrades-minus.json",
+        "sha256": "1a5224ffc13055d04d38116aff92fe802dcd36a35b2d8a144a54582621f4f43c"
+      }
+    },
+    {
+      "assumption": "profiles.3.upgrades",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.3.upgrades-plus.json",
+        "sha256": "3e921fd9ebbc526a02b37bf37dadd4f1e592f1b65828fba8291b78d54748483e"
+      }
+    },
+    {
+      "assumption": "profiles.4.hours",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.hours-minus.json",
+        "sha256": "f6e31b55461c0c7fe5be361b6b2d94e3edb1922f345a4bc5334c2eb94297dac4"
+      }
+    },
+    {
+      "assumption": "profiles.4.hours",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.hours-plus.json",
+        "sha256": "ebaa60085fd6875312123a811c2a26b06205e6dff081d3795be605bf51d0ac9b"
+      }
+    },
+    {
+      "assumption": "profiles.4.hoursSigma",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.hoursSigma-minus.json",
+        "sha256": "38d116eef74ce510977b52fd6cdc7417e1c038d7e744cae4f1401a4810b945c6"
       }
     }
   ]

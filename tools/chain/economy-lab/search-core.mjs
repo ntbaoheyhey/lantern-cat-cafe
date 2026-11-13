@@ -39,6 +39,33 @@ export function candidates(base,count,seed,{center,levers=LEVERS,seen=new Set()}
  }
  return rows;
 }
+/** Paired local experiments around a measured policy. Single-axis probes come
+ * first, then paired axes. Fixed or invalid quotes never count as new trials. */
+export function coordinateCandidates(base,count,{levers=LEVERS,seen=new Set()}={}){
+ const rows=[];
+ const add=changes=>{
+  const config=structuredClone(base);
+  for(const [lever,direction] of changes)set(config,lever.path,snap(get(base,lever.path)+direction*lever.step,lever));
+  if(!validConfig(config))return;
+  const configHash=hashConfig(config);
+  if(seen.has(configHash))return;
+  seen.add(configHash);rows.push({config,configHash});
+ };
+ seen.add(hashConfig(base));
+ const active=levers.filter(l=>l.max>l.min);
+ for(let radius=1;radius<=4&&rows.length<count;radius++){
+  for(const lever of active)for(const direction of [-radius,radius]){
+   if(rows.length<count)add([[lever,direction]]);
+  }
+  for(let i=0;i<active.length&&rows.length<count;i++)for(let j=i+1;j<active.length&&rows.length<count;j++){
+   for(const left of [-radius,radius])for(const right of [-radius,radius]){
+    if(rows.length<count)add([[active[i],left],[active[j],right]]);
+   }
+  }
+ }
+ if(rows.length<count)throw Error('Local coordinate space exhausted');
+ return rows;
+}
 const bounded=(x,min,max=Infinity)=>!Number.isFinite(x)?100:x<min?(min-x)/Math.max(min,.1):x>max?(x-max)/Math.max(max,.1):0;
 export function targetDistances(q,scenario){return {
  'T-a':bounded(q.burnClaims,T.burnClaimsMin,scenario.demand===1?T.fullDemandBurnClaimsMax:Infinity),

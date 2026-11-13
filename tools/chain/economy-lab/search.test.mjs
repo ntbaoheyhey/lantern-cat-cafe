@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadLabRuntime,root} from './runtime.mjs';
 import {resolve} from 'node:path';
-import {candidates,LEVERS,targetDistances,applyConfig,validConfig,hashConfig} from './search-core.mjs';
+import {candidates,coordinateCandidates,LEVERS,targetDistances,applyConfig,validConfig,hashConfig,get} from './search-core.mjs';
 const runtime=await loadLabRuntime(resolve(root,'work/economy-lab/tests',String(process.pid)));
 test('config identity ignores key insertion order and preserves array order',()=>{
  assert.equal(hashConfig({a:1,b:{x:2,y:3}}),hashConfig({b:{y:3,x:2},a:1}));
@@ -17,4 +17,13 @@ test('the score rejects each requested median miss and never rewards a missing m
  const scenario={demand:1,botShare:.35},q={burnClaims:1.2,starRatio:1,heavyCasualHourlyRatio:1,casualLegendaryDay:13,heavyLegendaryDay:7,botRegularHourlyRatio:.4,topOnePercentWithdrawnShare:.02};
  assert(Object.values(targetDistances(q,scenario)).every(x=>x===0));
  for(const [key,value,target] of [['burnClaims',.9,'T-a'],['burnClaims',1.7,'T-a'],['starRatio',1.2,'T-b'],['heavyCasualHourlyRatio',4,'T-c'],['heavyLegendaryDay',11,'T-d'],['botRegularHourlyRatio',.8,'T-e'],['topOnePercentWithdrawnShare',.09,'T-f'],['starRatio',null,'T-b']])assert(targetDistances({...q,[key]:value},scenario)[target]>0);
+});
+test('coordinate refinement isolates valid live levers and never repeats an evaluated policy',()=>{
+ const base=structuredClone(runtime.ECONOMY_LAB),seen=new Set(),rows=coordinateCandidates(base,40,{seen});
+ assert.equal(new Set(rows.map(r=>r.configHash)).size,40);assert(rows.every(r=>validConfig(r.config)));
+ assert(rows.every(r=>r.configHash!==hashConfig(base)));
+ assert(new Set(rows.flatMap(r=>LEVERS.filter(l=>get(base,l.path)!==get(r.config,l.path)).map(l=>l.path))).size>=10);
+ const next=coordinateCandidates(rows[0].config,40,{seen});
+ assert(next.every(r=>!rows.some(old=>old.configHash===r.configHash)));
+ assert.deepEqual(base,runtime.ECONOMY_LAB);
 });

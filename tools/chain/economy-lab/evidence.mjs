@@ -27,6 +27,18 @@ export function comparablePolicy(a, b) {
   return JSON.stringify(canonical(nativePolicy(a))) === JSON.stringify(canonical(nativePolicy(b)));
 }
 
+/** A saved worker result is reusable only for the exact frozen experiment. */
+export function verifiedConfirmation(row, expected) {
+  verifiedConfig(row);
+  assert.equal(row.configHash,expected.configHash,'Confirmation policy changed');
+  assert.equal(row.seeds,expected.seeds,'Confirmation seed count changed');
+  assert.equal(row.firstSeed,expected.firstSeed,'Confirmation seed range changed');
+  assert.equal(row.modelSnapshot?.sha256,expected.modelSha256,'Confirmation model changed');
+  assert.equal(row.bank?.sha256,expected.bankSha256,'Confirmation native bank changed');
+  assert(Number.isFinite(row.score),'Missing confirmation score');
+  return row;
+}
+
 export const worstDistances = row => Object.fromEntries(
   ['T-a', 'T-b', 'T-c', 'T-d', 'T-e', 'T-f', 'T-g'].map(key => [key,
     Math.max(...row.scenarioScores.map(s => s.distances[key] ?? Infinity)),

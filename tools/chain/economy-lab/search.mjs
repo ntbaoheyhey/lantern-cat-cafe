@@ -4,9 +4,10 @@ import {resolve,relative} from 'node:path';
 import {gzipSync} from 'node:zlib';
 import {pathToFileURL} from 'node:url';
 import {loadLabRuntime,root,sha} from './runtime.mjs';
-import {LEVERS,candidates,nativePolicy,hashConfig} from './search-core.mjs';
+import {LEVERS,candidates,coordinateCandidates,nativePolicy,hashConfig} from './search-core.mjs';
 const args=process.argv.slice(2),arg=(k,d)=>args.includes('--'+k)?args[args.indexOf('--'+k)+1]:d;
 const round=Number(arg('round',1)),count=Number(arg('configs',40)),seeds=Number(arg('seeds',40)),workers=Number(arg('workers',6));
+const method=arg('method','stratified');if(!['stratified','coordinate'].includes(method))throw Error('Unknown search method');
 for(const n of [round,count,seeds,workers])if(!Number.isSafeInteger(n)||n<1)throw Error('Positive integer parameters required');
 const B=resolve(root,'reports/v3-shell/b2/econ'),folder=resolve(B,'search');mkdirSync(folder,{recursive:true});
 const out=resolve(folder,`round-${String(round).padStart(2,'0')}.json`);if(existsSync(out)&&!args.includes('--replace'))throw Error('Round already exists; preserve measured history');
@@ -34,12 +35,12 @@ async function batch(jobs){
 }
 const seen=new Set();
 try{
- await batch(candidates(base,Math.ceil(count/2),round*104729,{seen,levers}));
+ await batch(method==='coordinate'?coordinateCandidates(base,Math.ceil(count/2),{seen,levers}):candidates(base,Math.ceil(count/2),round*104729,{seen,levers}));
  const center=configByHash.get([...results].sort((a,b)=>a.score-b.score)[0].configHash);
- if(count>1)await batch(candidates(base,Math.floor(count/2),round*104729+7919,{center,seen,levers}));
+ if(count>1)await batch(method==='coordinate'?coordinateCandidates(center,Math.floor(count/2),{seen,levers}):candidates(base,Math.floor(count/2),round*104729+7919,{center,seen,levers}));
 }finally{await Promise.all(active.map(w=>w.terminate()));}
 results.sort((a,b)=>a.score-b.score);
-const output={round,seeds,configsEvaluated:results.length,elapsedSeconds:(performance.now()-started)/1000,method:'Constrained stratified search then local refinement. Paired token seeds, all 18 scenarios, worst-case score weighted 3x plus mean. Exact production quotes; finite token conservation; verified native C2 bank.',modelSnapshot:{path:relative(root,snapshotPath),sha256:sha(snapshotPath)},leverNames:levers.map(l=>l.path),leverRanges:levers,bank:{...cohort,manifest:relative(root,evidencePath)},baseConfig:base,baseHash:hashConfig(base),configs:results.map(r=>({...r,config:configByHash.get(r.configHash)}))};
+const output={round,seeds,configsEvaluated:results.length,elapsedSeconds:(performance.now()-started)/1000,method:(method==='coordinate'?'Single-axis and paired-axis local probes, then repeat around the measured best.':'Constrained stratified search then local refinement.')+' Paired token seeds, all 18 scenarios, worst-case score weighted 3x plus mean. Exact production quotes; finite token conservation; verified native C2 bank.',modelSnapshot:{path:relative(root,snapshotPath),sha256:sha(snapshotPath)},leverNames:levers.map(l=>l.path),leverRanges:levers,bank:{...cohort,manifest:relative(root,evidencePath)},baseConfig:base,baseHash:hashConfig(base),configs:results.map(r=>({...r,config:configByHash.get(r.configHash)}))};
 writeFileSync(out,JSON.stringify(output,null,2)+'\n');
 writeFileSync(resolve(folder,`round-${String(round).padStart(2,'0')}-best.json`),JSON.stringify(configByHash.get(results[0].configHash),null,2)+'\n');
 console.log(`Saved ${relative(root,out)}; best score ${results[0].score.toFixed(4)}.`);
