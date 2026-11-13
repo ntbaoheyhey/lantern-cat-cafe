@@ -5,23 +5,23 @@ NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
-NOW: Resumed Q4/Q5. All nine current voice rows complete; Q2 collector59/59 PASS. Full37 final audio/suite supervisor remains active.
-NEXT 1: Finish supervisor25627, refresh V validation, inspect full suite, accept S5/V and commit. Q6 screen review prepared while waiting.
-NEXT 2: Economy16952/37303/59609 resumed at21:14:48 UTC. Sensitivity135/170, no measured misses; final Q4 closure still pending.
-NEXT 3: Current sink35789 waits for Q5 suite; exact current-policy browser proof then E2 refresh. Do not overwrite running captures.
-LAST GOOD COMMIT A: fc95f4898 pushed. Q3 sourceaf1e1fdf3; Q5 wording95ea0d843. Collector alias change awaits actual matrix check.
-LAST GOOD COMMIT B: a366059d9 pushed: six full37 recordings; source422585ca5. Checker9fc52efb4. Economy snapshot268cb45fd.
-OPEN: Q4-Q9; Q0-Q3 complete per checker evidence. No STOP files; no time trigger due.
+NOW: Q5 V/S5 all gates PASS; full37 unit/types and 435 browser cases pass. Saving Q5; Q4 sink browser hit a review-hook readiness race.
+NEXT 1: Commit Q5 acceptance, fix Q4 sink fixture wait and recapture exact-policy burns; no production changes needed.
+NEXT 2: Continue Q6 owned screens in isolated preview while Q4 sensitivity completes (138/170 measured, no reported misses).
+NEXT 3: Q7 caster/vibrance, Q8 coach/Fuji, Q9 polish; scheduled syncs unchanged.
+LAST GOOD COMMIT A: e91714fc5 pushed; current Q2 replay59/59, source af1e1fdf3, callout wording95ea0d843.
+LAST GOOD COMMIT B: d67b0a303 Q5 acceptance committed; push running. Source422585ca5; checker9fc52efb4; economy snapshot268cb45fd.
+OPEN: Q4,Q6-Q9. Q0-Q3 done; Q5 checker V8/8 S5 all PASS on fresh rerun.
 ECONOMY: 24 rounds/1280 evaluations/1273 unique; sensitivity135/170 measured,132 committed; no measured robustness misses. Native53 cases; timings pending.
 E4/E5:16 exact-policy Anvil receipts/18 screenshots; odds5/5; report816 citations. Final report refresh after T-h.
-Q5 V: 50/50 ultimate lines,62/62 skills and12 identities PASS. Source/sprite212 levels PASS. Current battle refresh pending.
-Q5 S5: Full37 all six actual-duration renders pass numeric preflight; current nine-row voice matrix0 interrupted, parity9/9.
-DIAGNOSIS: Q5 all six full37 scenes pass numeric preflight; nine fixture/speed matrix active. E2 source hashes are stale after Q4 policy change; refresh actual studio browser burns/quotes, not just hashes.
-PIDS: A Vite36397; B integration67841; native37303,sensitivity59609,supervisor16952; Q5 supervisor25627; current-sinks35789.
+Q5 V: 50/50 ultimate lines,62/62 skills,12 identities,212 levels PASS; 180.2s battle34/34 casts,0 missing.
+Q5 S5: Six full37 actual-duration renders all gates PASS; reel90.054s; mixed ASR7/12 battle and7/12 boss remains a disclosed limitation.
+DIAGNOSIS: Q4 sink fixture accesses __depthReview before dynamic review hook installs. Wait for the real hook before seeding; rerun browser only.
+PIDS: A Vite36397; B integration67841; native37303,sensitivity59609,supervisor16952. Q5 supervisor25627 completed; sinks35789 failed readiness.
 BACKGROUND JOBS: B q5/jobs.json logs all commands; economy econ/q4-jobs.json. Full31 runner resumes sims in finally.
 PERF: 2026-11-13T21:14:48.276577+00:00 resumed owned sims [16952, 37303, 59609] after full37 scenes and matrix.
-SUITES: A checker259/259 plusSOLO68/68 PASS on resume. Current B full suite runs after full37 capture/matrix. Prior full suitef6db229c6 passes.
+SUITES: Q5 full types/unit PASS; browser375 local+52 server+8 fallback=435 PASS. V/S5 fresh check PASS.
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze. No early merge or deployment.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
-DISK-LOG: 276.63GiB free; resume-disk-2115.json; removed0 disposable output directories.
-UPDATED: 2026-11-13T21:15:15.521856+00:00
+DISK-LOG: Resume 277GiB free. Cleanup checks only within both lane roots; no low-disk mode.
+UPDATED: 2026-11-13T21:25:40.344963+00:00

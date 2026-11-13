@@ -9,8 +9,8 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q2 | done | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity | STARTED 2026-11-13T13:20:12.094442+00:00; PASS59/59; A18ea6e6e8 B298a4fbd8/evidence fa65a9b40; ENDED 2026-11-13T14:38:34.072973+00:00 |
 | Q3 | done | A | M1 29/29; dependencies 259/259; SOLO9/9; High59.95–60.05; parity | STARTED 2026-11-13T14:39:07.792289+00:00; PASS 259 A +9 SOLO; source af1e1fdf3; evidence a881b1fc8; ENDED 2026-11-13T16:15:40.347744+00:00 |
 | Q4 | active | B | E3 active:24 rounds/1273 unique; T-a..g PASS at200seeds, T-h132/170 complete with no misses; E4 proof16 receipts/18 shots; E5 generated with816 citations | STARTED 2026-11-13T16:16:50.578116+00:00 |
-| Q5 | active probes | B (+ A texts) | V50/50+62/62 isolated; full31 S5 five scenes PASS; forge33 actual60s PASS1.993contours/min,3.505ticks/s; boss35 clearer speech full capture running; source35=33e2d1adf | STARTED 2026-11-13T17:25:44.984813+00:00 |
-| Q6 | todo | B | U3 54/54 >=8; button/font/word gates |  |
+| Q5 | done | B (+ A texts) | V8/8, S5 all PASS; 50/50 ultimate,62/62 skill; 6 full renders; reel90.054s; suite435 browser PASS | STARTED 2026-11-13T17:25:44.984813+00:00; source422585ca5/evidence d67b0a303; ENDED 2026-11-13T21:25:40.344963+00:00 |
+| Q6 | preparation | B | U3 54/54 >=8; button/font/word gates; draft changes outside live source until Q5 suite ends | STARTED 2026-11-13T21:17:35.227574+00:00 |
 | Q7 | todo | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS |  |
 | Q8 | todo | B (+ A attributes) | T1 coach and C1 >=3/4 live Fuji counters |  |
 | Q9 | todo | A/B by ownership | Open items then A P1, B P1-P8, E6 if E3 passed |  |
@@ -595,4 +595,75 @@ PASS Q3.boss.enemy-actions: measured=9; required=>0 measured enemy actions
 PASS Q3.boss.enemy-displacement: measured=9; required=100% >6% viewport width
 PASS Q3.boss.minimum-displacement: measured=0.11499948174032582; required=>0.06
 TOTAL 9 PASS / 0 FAIL / 9 gates
+```
+
+## Q5 checker evidence
+
+```text
+PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
+PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
+PASS V.ultAccuracy: measured 50/50; required recogniser word accuracy >= 0.7
+PASS V.skillAccuracy: measured 62/62; required recogniser word accuracy >= 0.5
+PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
+PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
+PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
+PASS V.lines: measured 2428; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
+PASS S5.algorithm: measured 6/6; required same current measurement algorithm for references and all six non-diagnostic renders
+PASS S5.battle.render: measured 180.20099773242632; required >= 180s measured Opus render
+PASS S5.battle.onsetsPerSecond: measured 3.179782616136378; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.battle.layers: measured 0.20593368237347295; required >= reference median - 0.5
+PASS S5.battle.tickTransientsPerSecond: measured 0.6714724198123939; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.music: measured 0.9751342969485518; required music bed >= 95%
+PASS S5.battle.voiceContoursPerMinute: measured 4.994422957282269; required reference +/- 35% (reference 5)
+PASS S5.battle.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.battle.lufs: measured -14.82; required -16 to -13 LUFS
+PASS S5.battle.peak: measured -2.79; required <= -1 dBTP
+PASS S5.boss.render: measured 120.2; required >= 120s measured Opus render
+PASS S5.boss.onsetsPerSecond: measured 3.1613976705490847; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.boss.layers: measured 0.22631578947368422; required >= reference median - 0.5
+PASS S5.boss.tickTransientsPerSecond: measured 0.7321131447587355; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.boss.music: measured 1; required music bed >= 95%
+PASS S5.boss.voiceContoursPerMinute: measured 4.9916805324459235; required reference +/- 35% (reference 5)
+PASS S5.boss.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.boss.lufs: measured -14.93; required -16 to -13 LUFS
+PASS S5.boss.peak: measured -2.76; required <= -1 dBTP
+PASS S5.home.render: measured 60.20199546485261; required >= 60s measured Opus render
+PASS S5.home.onsetsPerSecond: measured 4.102854034866745; required reference +/- 30% (reference 3.6666666666666665)
+PASS S5.home.layers: measured 1.45748987854251; required >= reference median - 0.5
+PASS S5.home.tickTransientsPerSecond: measured 5.9466467387947155; required reference +/- 40% (reference 8.9)
+PASS S5.home.music: measured 1; required music bed >= 95%
+PASS S5.home.voiceContoursPerMinute: measured 1.9932894096518599; required reference +/- 35% (reference 2)
+PASS S5.home.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.home.lufs: measured -17.39; required -20 to -16 LUFS
+PASS S5.home.peak: measured -2.23; required <= -1 dBTP
+PASS S5.bag.render: measured 60.202993197278914; required >= 60s measured Opus render
+PASS S5.bag.onsetsPerSecond: measured 4.219059327626262; required reference +/- 30% (reference 3.7)
+PASS S5.bag.layers: measured 1.437007874015748; required >= reference median - 0.5
+PASS S5.bag.tickTransientsPerSecond: measured 5.996379595563309; required reference +/- 40% (reference 8.466666666666667)
+PASS S5.bag.music: measured 1; required music bed >= 95%
+PASS S5.bag.voiceContoursPerMinute: measured 1.9932563752565018; required reference +/- 35% (reference 2)
+PASS S5.bag.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.bag.lufs: measured -17.37; required -20 to -16 LUFS
+PASS S5.bag.peak: measured -1.96; required <= -1 dBTP
+PASS S5.gacha.render: measured 60.20199546485261; required >= 60s measured Opus render
+PASS S5.gacha.onsetsPerSecond: measured 4.252350740590634; required reference +/- 30% (reference 3.966666666666667)
+PASS S5.gacha.layers: measured 1.5078125; required >= reference median - 0.5
+PASS S5.gacha.tickTransientsPerSecond: measured 5.83037152323169; required reference +/- 40% (reference 8.233333333333333)
+PASS S5.gacha.music: measured 1; required music bed >= 95%
+PASS S5.gacha.voiceContoursPerMinute: measured 0; required reference +/- 35% (reference 0)
+PASS S5.gacha.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.gacha.lufs: measured -18.11; required -20 to -16 LUFS
+PASS S5.gacha.peak: measured -6.08; required <= -1 dBTP
+PASS S5.forge.render: measured 60.19800453514739; required >= 60s measured Opus render
+PASS S5.forge.onsetsPerSecond: measured 3.77088911423074; required reference +/- 30% (reference 4.4)
+PASS S5.forge.layers: measured 1.198237885462555; required >= reference median - 0.5
+PASS S5.forge.tickTransientsPerSecond: measured 3.5217114194577834; required reference +/- 40% (reference 3.433333333333333)
+PASS S5.forge.music: measured 1; required music bed >= 95%
+PASS S5.forge.voiceContoursPerMinute: measured 1.993421558183651; required reference +/- 35% (reference 2)
+PASS S5.forge.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.forge.lufs: measured -17.36; required -20 to -16 LUFS
+PASS S5.forge.peak: measured -1.94; required <= -1 dBTP
+PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
+PASS S5.chart: measured 86892; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
+PASS S5.reel: measured 90.054; required >= 90s sound reel
 ```
