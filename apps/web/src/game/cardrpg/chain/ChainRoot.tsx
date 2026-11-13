@@ -14,6 +14,7 @@ import {useMenuClose} from '../shell/motion-b2';
 import { chainFlags } from './flags';
 import { CHAIN_ITEM_IDS, CHAIN_V3_ITEM_IDS } from '@taskbar-hero/game-rules/cardrpg';
 import { GasBalance } from './GasBalance';
+import {PaintedIcon} from '../shell/PaintedKit';
 import { YarnBalance } from './YarnBalance';
 import { friendlyError } from './errors';
 import type { Tab } from './ChainRoom';
@@ -65,18 +66,18 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   };
   return <><aside className="chain-dock" aria-label="Fuji wallet">
     {!embedded&&<button className="chain-launch" onClick={() => setOpen(!open)}><GameIcon name="wallet" size={18}/> Fuji</button>}
-    {open && <dialog ref={panel} tabIndex={-1} className="chain-panel" aria-label="Fuji panel" onCancel={event=>{event.preventDefault();closeWallet();}} onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
+    {open && <dialog ref={panel} tabIndex={-1} className="chain-panel b2-wallet" aria-label="Fuji panel" onCancel={event=>{event.preventDefault();closeWallet();}} onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
       <header><strong><GameIcon name="wallet" size={18}/> Fuji</strong><button aria-label="Close Fuji" onClick={closeWallet}><GameIcon name="close" size={20}/></button></header>
       <small title={TESTNET_NOTICE}>Testnet · no value</small>
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
-        {guest && flags.chainLoop && <GasBalance />}
-        {flags.yarnToken&&<YarnBalance/>}
-        {flags.chainLoop&&<button disabled={busy} onClick={()=>setRoom('Market')}><GameIcon name="wallet" size={18}/> Market</button>}
-        <button disabled={busy} onClick={() => store.clear()}><GameIcon name="arrow" size={18}/> Sign out</button>
-        {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}><GameIcon name="upload" size={18}/> Export key</button>
+        <div className="b2-wallet-balances">{guest && flags.chainLoop && <section aria-label="AVAX test gas"><PaintedIcon name="wallet" size={52}/><h3>AVAX test gas</h3><GasBalance /></section>}
+        {flags.yarnToken&&<section aria-label="YARN"><PaintedIcon name="yarn" size={52}/><h3>YARN</h3><YarnBalance/></section>}</div>
+        {flags.chainLoop&&<button disabled={busy} onClick={()=>setRoom('Market')}><PaintedIcon name="market" size={64}/> Market</button>}
+        <button disabled={busy} onClick={() => store.clear()}><PaintedIcon name="wallet" size={64}/> Sign out</button>
+        {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}><PaintedIcon name="deed" size={64}/> Export key</button>
           {warning && <div role="alert"><p>Anyone with this key controls your guest assets. Keep it private.</p><button disabled={copied || busy} onClick={() => void run(async () => {await copyGuestKey(localStorage, navigator.clipboard);setCopied(true);})}>{copied ? 'Copied' : 'Copy once'}</button></div>}
-          <button disabled={busy} onClick={() => void run(async () => {await connect();setMoving(true);})}><GameIcon name="arrow" size={18}/> Move wallet</button>
+          <button disabled={busy} onClick={() => void run(async () => {await connect();setMoving(true);})}><PaintedIcon name="withdraw" size={64}/> Move wallet</button>
           {moving && external.address && <div><p title={external.address}>{external.address.slice(0,8)}…{external.address.slice(-4)}</p><button disabled={busy || !externalWallet} onClick={() => void run(async () => {
             requireFuji(external.chainId ?? 0);
             const config = await loadChainConfig();

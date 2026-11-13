@@ -1,9 +1,9 @@
 /** Re-enter the real audited screens in isolated, disposable browser accounts. */
 export const chainScreen=id=>id.startsWith('wallet-')||id.startsWith('market-');
-export async function openAudioScreen(p,id){
+export async function openAudioScreen(p,id,url='http://127.0.0.1:5996'){
  p.setDefaultTimeout(12000);
  await p.addInitScript(()=>localStorage.setItem('lantern.coach.v3','{"disabled":true}'));
- await p.goto('http://127.0.0.1:5996/?demo=1&squad=1&cardrpg2=1&a6=1&formationc2=1');
+ await p.goto(`${url}/?demo=1&squad=1&cardrpg2=1&a6=1&formationc2=1`);
  const button=name=>p.getByRole('button',{name,exact:true});
  const click=name=>button(name).click();
  await button('Play free').waitFor();
@@ -12,6 +12,10 @@ export async function openAudioScreen(p,id){
  if(id==='sign-in')await click('Connect wallet');
  if(['landing','sign-in'].includes(id)){await p.waitForTimeout(400);return;}
  await click('Play free');await p.locator('.uv-shell').waitFor();
+ // Chain fixtures use server-owned accounts and must not require the optional
+ // offline model review hook (the local campaign entry does not install it).
+ if(!chainScreen(id)){
+ await p.waitForFunction(()=>window.__depthReview?.state);
  await p.evaluate(async()=>{
   const m=window.__depthReview,R=await import('/@fs/Users/bao/taskbar-hero-chain/packages/game-rules/src/cardrpg/depth/index.ts');
   m.state.tutorial=5;m.state.freeInvite=true;m.state.economyV3=true;m.state.settings.reducedMotion=true;
@@ -21,6 +25,7 @@ export async function openAudioScreen(p,id){
   for(let n=0;n<4;n++)m.state.gear.push(R.makeGear(m.state,'hearthloom-weapon-common',1));
   m.notify(false);await window.__thAudio.preload('home');
  });
+ }
  await p.waitForTimeout(450);
  for(let n=0;n<20;n++){
   const dismiss=p.getByRole('button',{name:/^(Dismiss celebration|Skip celebration)$/}).first();

@@ -57,6 +57,13 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  const musicScene=soundScene(m.screen,m.showBattle,isBoss),ambientScene=ambienceScene(m.screen,m.showBattle,isBoss);
  useEffect(()=>{audioEngine.music(musicScene);},[musicScene]);
  useEffect(()=>{audioEngine.ambience(ambientScene);},[ambientScene]);
+ const seasonSnapshot=m.snapshot();
+ useEffect(()=>{
+  const publish=()=>{const b=R.dailyBoardA6(m.state,m.cafeNow);window.dispatchEvent(new CustomEvent('shell:season-progress',{detail:{points:b.progress.weeklyPoints,days:b.weekDaysLeft,rewards:b.weekly.map(r=>({points:r.points,claimed:r.claimed,reason:r.reason,reward:r.reward}))}}));};
+  const claim=(e:Event)=>{const points=(e as CustomEvent<unknown>).detail;if(typeof points==='number'&&[10,20,30].includes(points)){m.apply(R.claimDailyA6(m.state,m.cafeNow,'weekly',points),'Collected.');publish();}};
+  window.addEventListener('shell:season-request',publish);window.addEventListener('shell:season-claim',claim);publish();
+  return()=>{window.removeEventListener('shell:season-request',publish);window.removeEventListener('shell:season-claim',claim);};
+ },[m,seasonSnapshot,m.cafeNow]);
  const [eventPage,setEventPage]=useState<'login'|'weekly'>('login');
  const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
  const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state,m.snapshot()]);

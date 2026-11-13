@@ -7,14 +7,15 @@ import {CARD_RPG_CONFIG,emptyPity,RARITY_ORDER} from '@taskbar-hero/game-rules/c
 import {HelpC2} from './TextDietC2';
 import {GearArtA6} from './KeepsakeArtA6';
 import {artPropsA6} from './art-a6';
+import {GuideMascot} from '../shell/PaintedKit';
 
 const icons:Record<string,string>={fish:'fish',threads:'thread',stamps:'bell',essence:'season',materials:'bag',seals:'boss-seal'};
 const percent=(value:number)=>`${Number((value*100).toFixed(4))}%`;
 export function OddsC2({source,children}:{source:string;children:ReactNode}){
- return <HelpC2 label={`${source} odds`} title="Odds" symbol={<OddsMarkC2/>}><div className="c2-odds">{children}</div></HelpC2>;
+ return <HelpC2 label={`${source} odds`} title="Odds" symbol={<OddsMarkC2/>}><div className={`c2-odds${source==='Invitation'?' b2-invitation-rates':''}`}>{source==='Invitation'&&<GuideMascot pose="shop"/>}{children}</div></HelpC2>;
 }
 function RarityRates({base,next}:{base:Record<string,number>;next:Record<string,number>}){
- return <table aria-label="Base and current rarity probabilities"><thead><tr><th aria-label="Rarity">Rarity</th><th aria-label="Base probability">Base</th><th aria-label="Current probability">Next</th></tr></thead><tbody>{RARITY_ORDER.map(rarity=><tr key={rarity}><th scope="row" aria-label={rarity}>{rarity}</th><td>{percent(base[rarity]!/10000)}</td><td>{percent(next[rarity]!/10000)}</td></tr>)}</tbody></table>;
+ return <table aria-label="Base and current rarity probabilities"><thead><tr><th aria-label="Rarity">Rarity</th><th aria-label="Base probability">Base</th><th aria-label="Current probability">Next</th></tr></thead><tbody>{RARITY_ORDER.map(rarity=><tr key={rarity} data-rarity={rarity}><th scope="row" aria-label={rarity}>{rarity}</th><td>{percent(base[rarity]!/10000)}</td><td>{percent(next[rarity]!/10000)}</td></tr>)}</tbody></table>;
 }
 function ExactRates({pool}:{pool:{id:string;probability:number}[]}){
  return <details><summary aria-label="Exact item probabilities"><GameIcon name="bag" size={18}/> %</summary><div className="c2-odds-pool">{pool.map(p=>{const g=R.GEAR_BY_ID[p.id],cat=R.CAT_BY_ID[p.id];return <figure key={p.id} title={g?.name??cat?.name??p.id} aria-label={`${g?.name??cat?.name??p.id}: ${percent(p.probability)}`}>{g?<GearArtA6 slot={g.slot} setId={g.setId}/>:<img {...artPropsA6(p.id,'face')} alt=""/>}<figcaption>{percent(p.probability)}</figcaption></figure>;})}</div></details>;
