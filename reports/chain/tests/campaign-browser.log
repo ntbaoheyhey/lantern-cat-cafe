@@ -1,0 +1,51 @@
+[WebServer] (node:65664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:65709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint (19.2s)
+
+
+  1) e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  getByRole('dialog', { name: 'Fuji market', exact: true }).getByRole('region', { name: 'Campaign', exact: true }).getByTestId('campaign-progress')
+    Expected: "6"
+    Received: "5"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveAttribute" getByRole('dialog', { name: 'Fuji market', exact: true }).getByRole('region', { name: 'Campaign', exact: true }).getByTestId('campaign-progress') with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'Fuji market', exact: true }).getByRole('region', { name: 'Campaign', exact: true }).getByTestId('campaign-progress')
+        34 × locator resolved to <output data-revision="5" data-phase="fight" aria-label="Campaign progress" data-testid="campaign-progress">◷ 5/6 · 0/7</output>
+           - unexpected value "5"
+
+
+      29 |  await tab(room,'Campaign');const panel=room.getByRole('region',{name:'Campaign',exact:true});
+      30 |  const progress=panel.getByTestId('campaign-progress');await expect(progress).toHaveAttribute('data-revision','0');
+    > 31 |  const advance=async(action:Locator)=>{const revision=Number(await progress.getAttribute('data-revision'));await action.click();await expect(progress).toHaveAttribute('data-revision',String(revision+1));};
+         |                                                                                                                                                        ^
+      32 |  await panel.getByRole('button',{name:'Crew',exact:true}).click();
+      33 |  for(const cat of ['mochi','soot','clover'])await advance(panel.getByRole('button',{name:'Train '+cat}));
+      34 |  await panel.getByRole('button',{name:'Route',exact:true}).click();
+        at advance (/Users/bao/taskbar-hero-chain/apps/web/e2e/chain/campaign.spec.ts:31:152)
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/chain/campaign.spec.ts:40:3
+
+    Error Context: test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/chain/campaign-server-campaign-→-07d2d-ine-copy-or-duplicated-mint/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint 
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.chain.config.ts campaign.spec.ts

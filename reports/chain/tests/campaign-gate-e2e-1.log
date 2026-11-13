@@ -1,0 +1,104 @@
+
+> taskbar-hero@0.0.0 chain:test /Users/bao/taskbar-hero-chain
+> pnpm --filter @taskbar-hero/web exec playwright test --config playwright.chain.config.ts
+
+[WebServer] (node:74865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:74933) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/chain/campaign.spec.ts:18:1 › server campaign → earned Epic → lost export response → seal → trade; no offline copy or duplicated mint (16.8s)
+  ✘  2 e2e/chain/chain-guest.spec.ts:34:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real (21.0s)
+(node:75175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 e2e/chain/forge.spec.ts:9:1 › buy two Epic units → irreversible forge → permanent ornament; retry never charges (32.4s)
+(node:75376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 e2e/chain/guest-wallet.spec.ts:3:1 › guest login twice keeps the same address and does not send the private key (1.8s)
+
+
+  1) e2e/chain/chain-guest.spec.ts:34:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('chain-gas')
+    Expected: "▲ 0.0500"
+    Received: "▲ 0.0000"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('chain-gas') with timeout 15000ms
+      - waiting for getByTestId('chain-gas')
+        - locator resolved to <output data-testid="chain-gas"></output>
+        - unexpected value ""
+        33 × locator resolved to <output data-testid="chain-gas">▲ 0.0000</output>
+           - unexpected value "▲ 0.0000"
+
+
+      12 | async function login(page:Page){
+      13 |   await page.goto(route);await page.getByRole('button',{name:'▶ Play as guest'}).click();
+    > 14 |   await expect(page.getByTestId('chain-gas')).toHaveText('▲ 0.0500');
+         |                                               ^
+      15 |   const who=getAddress((await page.getByTestId('chain-address').getAttribute('title'))!);
+      16 |   expect(await client.getBalance({address:who})).toBe(parseEther('0.05'));
+      17 |   await page.getByRole('button',{name:'◈ Market',exact:true}).click();
+        at login (/Users/bao/taskbar-hero-chain/apps/web/e2e/chain/chain-guest.spec.ts:14:47)
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/chain/chain-guest.spec.ts:65:50
+
+    Error Context: test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/chain/chain-guest-guest-→-drip-→-0339e--→-cancel-balances-are-real/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) e2e/chain/forge.spec.ts:9:1 › buy two Epic units → irreversible forge → permanent ornament; retry never charges 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('chain-gas')
+    Expected: "▲ 0.0500"
+    Received: "▲ 0.0000"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('chain-gas') with timeout 15000ms
+      - waiting for getByTestId('chain-gas')
+        - locator resolved to <output data-testid="chain-gas"></output>
+        - unexpected value ""
+        33 × locator resolved to <output data-testid="chain-gas">▲ 0.0000</output>
+           - unexpected value "▲ 0.0000"
+
+
+      25 |   await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1');
+      26 |   await page.getByRole('button',{name:'▶ Play as guest'}).click();
+    > 27 |   await expect(page.getByTestId('chain-gas')).toHaveText('▲ 0.0500');
+         |                                               ^
+      28 |   const who=(await page.getByTestId('chain-address').getAttribute('title')) as Address;
+      29 |   await page.getByRole('button',{name:'◈ Market',exact:true}).click();
+      30 |   const room=page.getByRole('dialog',{name:'Fuji market',exact:true});
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/chain/forge.spec.ts:27:47
+
+    Error Context: test-results/chain/forge-buy-two-Epic-units-→-7c10c-rnament-retry-never-charges/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/chain/forge-buy-two-Epic-units-→-7c10c-rnament-retry-never-charges/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/chain/forge-buy-two-Epic-units-→-7c10c-rnament-retry-never-charges/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    e2e/chain/chain-guest.spec.ts:34:1 › guest → drip → scripted boss → mint → list → second guest buy → cancel; balances are real 
+    e2e/chain/forge.spec.ts:9:1 › buy two Epic units → irreversible forge → permanent ornament; retry never charges 
+  2 passed (1.3m)
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.chain.config.ts
+ ELIFECYCLE  Command failed with exit code 1.

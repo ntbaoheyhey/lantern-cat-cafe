@@ -1,0 +1,21 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-chain
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: src/chain-cosmetics.test.ts(33,33): error TS2345: Argument of type '(() => Promise<CosmeticState>) | (() => Promise<CosmeticOrder>)' is not assignable to parameter of type '() => Promise<CosmeticState>'.
+supabase/tests typecheck:   Type '() => Promise<CosmeticOrder>' is not assignable to type '() => Promise<CosmeticState>'.
+supabase/tests typecheck:     Type 'Promise<CosmeticOrder>' is not assignable to type 'Promise<CosmeticState>'.
+supabase/tests typecheck:       Type 'CosmeticOrder' is missing the following properties from type 'CosmeticState': orders, active
+supabase/tests typecheck: Failed
+/Users/bao/taskbar-hero-chain/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

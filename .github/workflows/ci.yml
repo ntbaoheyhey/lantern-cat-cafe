@@ -129,6 +129,16 @@ jobs:
         working-directory: apps/web
       - run: node tools/chain/check-drip.mjs
       - run: node tools/chain/check-move.mjs
+      - run: node tools/chain/check-cosmetics.mjs
+      - run: node tools/chain/check-source.mjs
+      - run: node tools/chain/campaign-manifest.mjs --check
+      - run: node tools/chain/check-campaign.mjs
+      - run: node tools/chain/check-campaign-rewards.mjs
+      - run: node tools/chain/check-forge.mjs
+      - run: node tools/chain/check-seal-trial.mjs
+      - run: node tools/chain/check-routine.mjs
+      - run: node tools/chain/check-tester-budget.mjs
+      - run: node tools/chain/check-reservations-postgres.mjs
       - run: node tools/chain/fuji-smoke.mjs --dry-run
       - run: node tools/chain/seed-market.mjs --dry-run
       - run: node --test tools/chain/*.test.mjs
@@ -138,6 +148,8 @@ jobs:
           for attempt in 1 2 3; do
             pnpm chain:test || exit 1
           done
+      - name: Optional price trial on fresh Anvil
+        run: CHAIN_SEAL_PRICE_TRIAL=1 pnpm chain:test
       - uses: actions/upload-artifact@v4
         if: always()
         with:

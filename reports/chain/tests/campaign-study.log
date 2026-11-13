@@ -1,0 +1,11 @@
+/Users/bao/taskbar-hero-chain/supabase/functions/_shared/chain-campaign.ts:107
+	if (!result.ok) throw new Error("campaign_rule:" + result.error);
+	                      ^
+
+Error: campaign_rule:The kettle needs more time, or today’s two services are complete.
+    at ok (/Users/bao/taskbar-hero-chain/supabase/functions/_shared/chain-campaign.ts:107:24)
+    at campaignStep (/Users/bao/taskbar-hero-chain/supabase/functions/_shared/chain-campaign.ts:147:17)
+    at step (file:///Users/bao/taskbar-hero-chain/tools/chain/campaign-study.mjs:28:11)
+    at file:///Users/bao/taskbar-hero-chain/tools/chain/campaign-study.mjs:38:30
+
+Node.js v24.22.2

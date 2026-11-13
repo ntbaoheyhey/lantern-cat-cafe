@@ -1,0 +1,27 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+
+ ❯ src/game/cardrpg/shell/Entrance.test.tsx (5 tests | 1 failed) 222ms
+   × explains a rejected signature and permits retry 22ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/shell/Entrance.test.tsx > explains a rejected signature and permits retry
+Error: Invalid Chai property: toHaveTextContent
+ ❯ src/game/cardrpg/shell/Entrance.test.tsx:9:344
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 17 passed (18)
+   Start at  06:26:10
+   Duration  2.08s (environment 42%, import 39%, tests 11%, transform 7%)
+
+    Isolate  3 workers spawned · ~528ms startup each (spawn + environment, per file)
+             at least ~264ms faster with isolate: false — reuses workers across files instead of one per file
+
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/shell/Entrance.test.tsx src/game/cardrpg/chain/guest.test.ts src/game/cardrpg/chain/ChainRoot.test.tsx

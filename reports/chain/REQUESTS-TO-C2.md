@@ -19,3 +19,10 @@ CHAIN has now measured the existing pure drop functions without changing C2 sour
 Trade coverage now includes all128 Depth templates, with64 Epic+ token IDs and normalized minimum-roll previews checked at levels1/10/30. Existing token IDs are unchanged. Before campaign sealing, the authoritative adapter must reserve a unique earned instance, disclose loss of enhancement/rolls, consume it once and prevent simultaneous equipment use. CHAIN ownership stays cosmetic until authority and win-rate evidence exist.
 
 Routine rank is paid once after a13-week season closes, under the next season's claim cap. Required receipt fields: source receipt ID, internal player/wallet binding, event type (weekly boss/closed rank), earning week/season, final result/rank, rules version, eligibility and finalization time. Do not accept any of these as browser assertions. A shared server lock must reserve budget and nonce before signing; retries return the same voucher, and expiry reconciliation must precede reissue. The offline reward-budget planner provides reserve arithmetic only; it does not implement that trusted ledger.
+
+
+## Measured legacy Relic violation — 2026-11-12 continuation
+
+The paired diagnostic is now concrete:26,880 battles,36 exploration cells and six selected cells with512 disjoint holdout seeds, identical starting party/enemies/policy. The largest held-out increase is44.53 percentage points (chapter3 boss, level4/band1, relic4:225/512 baseline wins vs453/512). Even rarity1 produces20.31pp in another case. This is a selected sensitivity diagnostic, not a population win rate. See RELIC-POWER-STUDY.md and docs/chain/relic-power-study.json. CHAIN Treasure/styles/forge still add0 combat stats and never set legacy selectedRelic.
+
+A separate candidate-cap experiment tests0/25/50/100/200/400/800bps with1,024 further paired seeds and exact checks against original200/400/800 stat/crew rounding. Reports:RELIC-CAP-STUDY.md and docs/chain/relic-cap-study.json. Recommendation remains cosmetic-only ownership; a small stat percentage is not a3pp win-rate guarantee. No C2 battle/drop code has been changed.

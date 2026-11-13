@@ -18,7 +18,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, sans-serif;
+  
 }
 .page {
   min-height: calc(100% - var(--strip-h));
@@ -36,7 +36,7 @@ body {
 }
 .page-title {
   margin: 0 0 8px;
-  font-family: var(--font-display);
+  
   color: var(--gold);
   text-shadow: 2px 2px 0 #000;
   font-size: 2.2rem;
@@ -81,7 +81,7 @@ body {
 }
 .cat-name {
   margin: 0;
-  font-family: var(--font-display);
+  
   font-size: 1.3rem;
   color: var(--gold);
   text-shadow: 2px 2px 0 #000;
@@ -94,7 +94,7 @@ body {
 }
 .cat-chip {
   color: var(--text);
-  font-family: var(--font-num);
+  
   font-size: 0.8rem;
   padding: 3px 8px;
 }
@@ -260,7 +260,7 @@ body {
 }
 .stats { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0; align-items: baseline; }
 .stats dt { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
-.stats dd { margin: 0; font-family: var(--font-num); font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.stats dd { margin: 0;  font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
 
 /* Small screens: tighter tabs, a fade hinting at more tabs to the right, and a taller drawer. */
 @media (max-width: 600px) {

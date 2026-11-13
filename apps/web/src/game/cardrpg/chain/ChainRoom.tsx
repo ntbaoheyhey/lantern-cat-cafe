@@ -1,10 +1,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { formatEther, parseEther, type Address, type Hash, type Hex } from 'viem';
 import { useWalletClient } from 'wagmi';
-import { relicMarketAbi, relicNftAbi, relicMarketV2Abi, yarnTokenAbi, seasonRewardsAbi } from '@taskbar-hero/chain';
-import { CHAIN_ITEM_IDS, TRADE_BY_TOKEN, TRADE_BY_ID, sealedDepthEquipment, sealCost } from '@taskbar-hero/game-rules/cardrpg';
+import { FORGE_DESIGNS, relicForgeAbi, relicMarketAbi, relicNftAbi, relicMarketV2Abi, yarnTokenAbi, seasonRewardsAbi, readSealPolicy, type SealPricePolicy, type CosmeticState, type YarnStyle } from '@taskbar-hero/chain';
+import { CHAIN_ITEM_IDS, TRADE_BY_TOKEN, TRADE_BY_ID, sealedDepthEquipment } from '@taskbar-hero/game-rules/cardrpg';
 import { useSession } from '../../../wallet/WalletProvider';
 import { chainPost } from './api';
+import {YarnStyles} from './YarnStyles';
+import {CampaignPanel} from './CampaignPanel';
+import {CampaignRewardPanel} from './CampaignRewardPanel';
+import {validateCampaignQuote,claimCampaignReward} from './campaign-reward-client';
+import {RelicForgePanel,ForgeMark} from './RelicForgePanel';
+import {craftDesign} from './forge-client';
+import {validateStyleQuote} from './style-quote';
+import {displayedSealCost,validateSealQuote,type SealInventory as Inventory} from './seal-quote';
 import { chainFlags } from './flags';
 import { friendlyError } from './errors';
 import { existingGuestAddress, guestClient, TESTNET_NOTICE } from './guest';
@@ -12,10 +20,9 @@ import { chainRuntime, loadChainConfig, txLink, type ChainConfig, type ChainList
 import { readChainHistory, type HistoryRow } from './history';
 export const RELIC_IDS = [1n,2n,3n,4n];
 export const RELIC_NAMES = ['Paw Charm','Star Bell','Moon Collar','Golden Maneki'];
-export type Tab='Judge'|'Market'|'Bag'|'Seal'|'History';
+export type Tab='Judge'|'Market'|'Bag'|'Seal'|'History'|'Style'|'Forge'|'Campaign';
 interface Voucher {player:Address;relicId:string;rarity:number;nonce:string;expiry:string;signature:Hex;used:boolean;source:string}
 interface Pass {vouchers:Voucher[];battle?:{won:boolean;rounds:number;log:unknown[]}}
-interface Inventory {id:string;item_id:string;state:string;seal:{id:string;cost:string}|null}
 interface Reward {claim:{player:Address;amount:string;season:string;nonce:string;expiry:string};signature:Hex;used:boolean}
 const nameOf=(id:bigint|string)=>TRADE_BY_TOKEN[Number(id)]?.name??`#${id}`;
 const artOf=(id:bigint|string|number)=>Number(id)<10000?`/relics/${id}.svg`:Number(id)<20000?'/chain/star-thread.svg':'/chain/sealed-gear.svg';
@@ -29,13 +36,18 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const [own,setOwn]=useState(false),[price,setPrice]=useState('0.001'),[selected,setSelected]=useState('');
   const [version,setVersion]=useState<'v1'|'v2'>('v2'),[currency,setCurrency]=useState(0),[kind,setKind]=useState(''),[rarity,setRarity]=useState('');
   const [yarn,setYarn]=useState(0n),[claimed,setClaimed]=useState(false),[feeBps,setFeeBps]=useState(500n),[proceeds,setProceeds]=useState([0n,0n]);
+  const [cosmetics,setCosmetics]=useState<CosmeticState>();
+  const [forgeOwned,setForgeOwned]=useState<boolean[]>([]);
   const [inventory,setInventory]=useState<Inventory[]>([]);
+  const [sealPolicy,setSealPolicy]=useState<SealPricePolicy>('standard-v1');
   const [success,setSuccess]=useState<{hash:Hash;id?:bigint}>(),[history,setHistory]=useState<HistoryRow[]>([]);
   const [treasures,setTreasures]=useState<Record<string,string>>({}),[cat,setCat]=useState('Mochi');
   const [page,setPage]=useState(0),[checks,setChecks]=useState<Record<string,boolean>>({});
   const requestId=useRef(0),actionLock=useRef(false);
   const guest=!!session&&existingGuestAddress()?.toLowerCase()===session.wallet.toLowerCase();
   const yarnOn=flags.yarnToken&&!!config?.YarnToken&&!!config.SeasonRewards;
+  const stylesOn=flags.yarnCosmetics&&yarnOn;
+  const forgeOn=flags.relicForge&&flags.itemTrading&&yarnOn&&!!config?.RelicForge;
   const v2=yarnOn&&!!config?.RelicMarketV2&&version==='v2';
   const market=v2?config?.RelicMarketV2:config?.RelicMarket,marketAbi=v2?relicMarketV2Abi:relicMarketAbi;
   const runtime=useMemo(()=>{
@@ -48,26 +60,40 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   useEffect(()=>{void connect();},[connect]);
   const loadInventory=useCallback(async()=>{
     if(!session||!flags.itemTrading||!yarnOn)return;
-    const result=await chainPost<{items:Inventory[]}>('chain-items',session.token,{action:'inventory'});setInventory(result.items);
+    const result=await chainPost<{items:Inventory[];sealPolicy?:unknown}>('chain-items',session.token,{action:'inventory'});
+    const policy=readSealPolicy(result.sealPolicy);
+    result.items.forEach(item=>{if(TRADE_BY_ID[item.item_id]?.tradable)displayedSealCost(item,policy);});
+    setSealPolicy(policy);setInventory(result.items);
   },[session,flags.itemTrading,yarnOn]);
+  const loadStyles=async()=>{
+    if(!session||!stylesOn)return;
+    setCosmetics(await chainPost<CosmeticState>('chain-cosmetics',session.token,{action:'state'}));
+  };
+  useEffect(()=>{
+    let current=true;setCosmetics(undefined);
+    if(session&&stylesOn)void chainPost<CosmeticState>('chain-cosmetics',session.token,{action:'state'})
+      .then(s=>{if(current)setCosmetics(s);}).catch(()=>{});
+    return()=>{current=false;};
+  },[session,stylesOn]);
   const refresh=useCallback(async()=>{
     if(!runtime||!session)return;const id=++requestId.current;
     try{
       await runtime.guard();
-      const [items,balances,balance,fees,owing]=await Promise.all([
+      const [items,balances,balance,fees,owing,designs]=await Promise.all([
         runtime.listings(v2?'v2':'v1'),runtime.holdings(flags.itemTrading?CHAIN_ITEM_IDS:RELIC_IDS),
         yarnOn?runtime.client.readContract({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'balanceOf',args:[session.wallet as Address]}):0n,
         v2?runtime.client.readContract({address:market!,abi:relicMarketV2Abi,functionName:'feeBps'}):0n,
         v2?Promise.all([0,1].map(c=>runtime.client.readContract({address:market!,abi:relicMarketV2Abi,functionName:'proceeds',args:[session.wallet as Address,c]}))):[0n,0n],
+        forgeOn?Promise.all(FORGE_DESIGNS.map(d=>runtime.client.readContract({address:config!.RelicForge!,abi:relicForgeAbi,functionName:'hasDesign',args:[session.wallet as Address,d.id]}))):[],
       ]);
       if(id!==requestId.current)return;
-      setListings(items);setHoldings(balances);setYarn(balance);setFeeBps(fees);setProceeds(owing);setOffline(false);
+      setForgeOwned(designs);setListings(items);setHoldings(balances);setYarn(balance);setFeeBps(fees);setProceeds(owing);setOffline(false);
       const saved=JSON.parse(localStorage.getItem(localTreasures(session.wallet))||'{}') as Record<string,string>;
       const valid=Object.fromEntries(Object.entries(saved).filter(([,token])=>balances.some(b=>String(b.id)===token)));
       setTreasures(valid);localStorage.setItem(localTreasures(session.wallet),JSON.stringify(valid));
-    }catch(e){if(id===requestId.current){setStatus(friendlyError(e));setOffline(true);setHoldings([]);setTreasures({});}}
-  },[runtime,session,v2,flags.itemTrading,yarnOn,config,market]);
-  useEffect(()=>{setPass(undefined);setChecks({});setClaimed(false);setInventory([]);},[session]);
+    }catch(e){if(id===requestId.current){setStatus(friendlyError(e));setOffline(true);setHoldings([]);setTreasures({});setForgeOwned([]);}}
+  },[runtime,session,v2,flags.itemTrading,yarnOn,forgeOn,config,market]);
+  useEffect(()=>{setPass(undefined);setChecks({});setClaimed(false);setInventory([]);setForgeOwned([]);setSealPolicy('standard-v1');},[session]);
   useEffect(()=>{
     if(!runtime||!session)return;void refresh();
     const timer=setInterval(()=>void refresh(),5000);
@@ -76,10 +102,10 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
     return()=>{requestId.current++;clearInterval(timer);stops.forEach(stop=>stop());};
   },[runtime,session,refresh,config,yarnOn]);
   useEffect(()=>{setPage(0);setSelected('');},[tab,own,kind,rarity,currency,version]);
-  const run=async(action:()=>Promise<void>)=>{
-    if(actionLock.current)return;actionLock.current=true;setBusy(true);setStatus('Pending…');
+  const run=async(action:()=>Promise<void>,propagate=false)=>{
+    if(actionLock.current){if(propagate)throw new Error('Pending…');return;}actionLock.current=true;setBusy(true);setStatus('Pending…');
     try{await action();setStatus('');await refresh();window.dispatchEvent(new Event('chain:changed'));}
-    catch(e){setStatus(friendlyError(e));}finally{actionLock.current=false;setBusy(false);}
+    catch(e){setStatus(friendlyError(e));if(propagate)throw e;}finally{actionLock.current=false;setBusy(false);}
   };
   const grant=async(action:'pass'|'boss')=>{setPass(await chainPost<Pass>('chain-judge',session!.token,{action}));};
   const mint=async(v:Voucher)=>{
@@ -103,9 +129,14 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
     setClaimed(true);
   };
   const seal=async(item:Inventory)=>{
-    const {intent,hash}=await chainPost<{intent:{id:string;cost:string};hash:Hex}>('chain-items',session!.token,{action:'reserve',inventory:item.id});
+    const expectedCost=displayedSealCost(item,sealPolicy);
+    const response=await chainPost<unknown>('chain-items',session!.token,{action:'reserve',inventory:item.id});
+    let intent;
+    try{intent=validateSealQuote(response,item,expectedCost);}catch(error){await loadInventory();throw error;}
+    const {hash}=intent;
     const paid=await runtime!.client.readContract({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'sealPayments',args:[session!.wallet as Address,hash]});
-    if(paid===0n)await runtime!.write({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'seal',args:[hash,BigInt(intent.cost)]});
+    if(paid!==0n&&paid!==intent.cost)throw new Error('Quote changed. Retry.');
+    if(paid===0n)await runtime!.write({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'seal',args:[hash,intent.cost]});
     const result=await chainPost<{voucher:Voucher}>('chain-items',session!.token,{action:'finalize',intent:intent.id});
     await mint(result.voucher);await loadInventory();
   };
@@ -120,6 +151,23 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
     const hash=await runtime!.write({address:market!,abi:marketAbi,functionName:'buy',args:[l.id],value:l.currency===0?l.price:0n});
     setSuccess({hash,id:l.relicId});setChecks(c=>({...c,Buy:true}));
   };
+  const equipStyle=async(sku:YarnStyle|'none')=>{
+    setCosmetics(await chainPost<CosmeticState>('chain-cosmetics',session!.token,{action:'equip',sku}));
+  };
+  const buyStyle=async(sku:YarnStyle)=>{
+    const quote=await chainPost<unknown>('chain-cosmetics',session!.token,{action:'reserve',sku});
+    const {order,hash}=validateStyleQuote(quote,{wallet:session!.wallet as Address,token:config!.YarnToken!,sku});
+    const paid=await runtime!.client.readContract({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'sealPayments',args:[session!.wallet as Address,hash]});
+    if(paid!==0n&&paid!==BigInt(order.cost))throw new Error('Payment mismatch.');
+    let tx:Hash|undefined;
+    if(paid===0n)tx=await runtime!.write({address:config!.YarnToken!,abi:yarnTokenAbi,functionName:'seal',args:[hash,BigInt(order.cost)]});
+    setCosmetics(await chainPost<CosmeticState>('chain-cosmetics',session!.token,{action:'finalize',intent:order.id}));
+    await equipStyle(sku);
+    if(tx)setSuccess({hash:tx});
+  };
+  const forge=async(design:number,first:bigint,second:bigint)=>{
+    const hash=await craftDesign(runtime!,config!,session!.wallet as Address,design,first,second);if(hash)setSuccess({hash});
+  };
   const cancel=async(l:ChainListing)=>{setSuccess({hash:await runtime!.write({address:market!,abi:marketAbi,functionName:'cancel',args:[l.id]})});};
   const withdraw=async(c:number)=>{setSuccess({hash:await runtime!.write({address:market!,abi:relicMarketV2Abi,functionName:'withdraw',args:[c,session!.wallet]})});};
   const historyPage=async()=>{
@@ -132,12 +180,12 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
   const shown=listings.filter(l=>(!own||mine(l))&&(!v2||l.currency===currency)&&filter(l.relicId));
   const owned=holdings.filter(h=>filter(h.id));
   const sealable=inventory.filter(i=>TRADE_BY_ID[i.item_id]?.tradable);
-  const tabs:Tab[]=['Judge','Market','Bag',...(flags.itemTrading&&yarnOn?['Seal' as const]:[]),'History'];
+  const tabs:Tab[]=['Judge','Market','Bag',...(flags.itemTrading&&yarnOn?['Seal' as const]:[]),...(stylesOn?['Style' as const]:[]),...(forgeOn?['Forge' as const]:[]),...(flags.campaign?['Campaign' as const]:[]),'History'];
   const pages=(length:number,label:string)=><div className="chain-pagination"><button aria-label={`Previous ${label}`} disabled={page===0} onClick={()=>setPage(p=>p-1)}>←</button><button aria-label={`Next ${label}`} disabled={(page+1)*2>=length} onClick={()=>setPage(p=>p+1)}>→</button></div>;
   const stats=(id:bigint)=>{const item=sealedDepthEquipment(Number(id));return item?<small title="Template main stat scales with companion level. Unenhanced; minimum affix rolls. Chain ownership currently has no combat effect.">{item.main} ×{item.rarity==='legendary'?1.75:1.5}</small>:null;};
-  return <section className="chain-room" aria-label="Fuji game">
-    <header><h2>◈ Fuji</h2><small>{TESTNET_NOTICE}</small>{yarnOn&&<output data-testid="yarn-balance">🧶 {formatEther(yarn)}</output>}{onClose&&<button aria-label="Close market" onClick={onClose}>×</button>}</header>
-    <nav aria-label="Chain screens">{tabs.map(t=><button key={t} aria-pressed={tab===t} onClick={()=>{setTab(t);if(t==='History'&&runtime)void run(historyPage);if(t==='Seal')void run(loadInventory);}}>{t}</button>)}</nav>
+  return <section className="chain-room" data-style={stylesOn?cosmetics?.active??undefined:undefined} aria-label="Fuji game">
+    <header><h2>◈ Fuji</h2><small>{TESTNET_NOTICE}</small>{yarnOn&&<output data-testid="yarn-balance">🧶 {formatEther(yarn)}</output>}{forgeOn&&<span className="chain-forge-badges">{forgeOwned.map((yes,id)=>yes?<ForgeMark key={id} design={id}/>:null)}</span>}{onClose&&<button aria-label="Close market" onClick={onClose}>×</button>}</header>
+    <nav aria-label="Chain screens">{tabs.map(t=><button key={t} aria-pressed={tab===t} onClick={()=>{setTab(t);if(t==='History'&&runtime)void run(historyPage);if(t==='Seal'||t==='Forge')void run(loadInventory);if(t==='Style')void run(loadStyles);}}>{t}</button>)}</nav>
     {!session?<p>Play as guest.</p>:<>
       {(tab==='Market'||tab==='Bag')&&<div className="chain-filters">
         {yarnOn&&config?.RelicMarketV2&&<select aria-label="Market version" value={version} onChange={e=>setVersion(e.target.value as 'v1'|'v2')}><option value="v2">V2</option><option value="v1">V1</option></select>}
@@ -145,6 +193,10 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
         {flags.itemTrading&&<><select aria-label="Item type" value={kind} onChange={e=>setKind(e.target.value)}><option value="">All</option><option value="relic">Relic</option><option value="material">Material</option><option value="equipment">Gear</option></select><select aria-label="Item rarity" value={rarity} onChange={e=>setRarity(e.target.value)}><option value="">All</option>{['common','rare','epic','legendary'].map(r=><option key={r}>{r}</option>)}</select></>}
         {v2&&<output aria-label="Sale fee">{Number(feeBps)/100}%</output>}
       </div>}
+      {tab==='Campaign'&&flags.campaign&&<><CampaignPanel key={session.wallet} wallet={session.wallet} token={session.token} onSeal={()=>{setTab('Seal');void run(loadInventory);}}/>
+        {flags.campaignRewards&&yarnOn&&runtime&&<CampaignRewardPanel key={'reward:'+session.wallet} disabled={busy}
+          onQuote={async kind=>validateCampaignQuote(await chainPost('chain-campaign-reward',session.token,{action:'quote',kind}),{contract:config!.SeasonRewards!,wallet:session.wallet,kind})}
+          onClaim={quote=>run(async()=>{const hash=await claimCampaignReward(runtime,quote,()=>chainPost('chain-campaign-reward',session.token,{action:'claim',kind:quote.kind}));if(hash)setSuccess({hash});},true)}/>}</>}
       {tab==='Judge'&&<>
         <ol className="chain-checklist" aria-label="Judge checklist">{['Mint','List','Buy','Snowtrace'].map(c=><li key={c} data-done={!!checks[c]}>{checks[c]?'✓':'○'} {c}</li>)}</ol>
         {!pass?<button disabled={disabled} onClick={()=>void run(()=>grant('pass'))}>🎟 Judge pass</button>:<>
@@ -171,10 +223,12 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
         {selected&&<form onSubmit={e=>{e.preventDefault();void run(()=>list(BigInt(selected)));}}><label>{currency&&v2?'🧶':'▲'}<input aria-label={`Price in ${currency&&v2?'YARN':'AVAX'}`} value={price} onChange={e=>setPrice(e.target.value)} inputMode="decimal"/></label><button disabled={disabled}>✓ Confirm</button></form>}
         {owned.length>2&&pages(owned.length,'holdings')}
       </>}
-      {tab==='Seal'&&<><div className="chain-grid">{sealable.slice(page*2,page*2+2).map(item=><article key={item.id} data-testid={`drop-${item.item_id}`}><img src={artOf(TRADE_BY_ID[item.item_id]?.tokenId??10001)} alt={TRADE_BY_ID[item.item_id]?.name}/><strong>{TRADE_BY_ID[item.item_id]?.name}</strong><output>🧶 {formatEther(sealCost(item.item_id))}</output><button disabled={disabled} onClick={()=>void run(()=>seal(item))}>{item.state==='available'?'✦ Seal to Fuji':'↻ Recover'}</button></article>)}</div>{sealable.length>2&&pages(sealable.length,'seal items')}</>}
+      {tab==='Seal'&&<><div className="chain-grid">{sealable.slice(page*2,page*2+2).map(item=><article key={item.id} data-testid={`drop-${item.item_id}`}><img src={artOf(TRADE_BY_ID[item.item_id]?.tokenId??10001)} alt={TRADE_BY_ID[item.item_id]?.name}/><strong>{TRADE_BY_ID[item.item_id]?.name}</strong><output>🧶 {formatEther(displayedSealCost(item,sealPolicy))}</output><button disabled={disabled} onClick={()=>void run(()=>seal(item))}>{item.state==='available'?'✦ Seal to Fuji':'↻ Recover'}</button></article>)}</div>{sealable.length>2&&pages(sealable.length,'seal items')}</>}
+      {tab==='Forge'&&forgeOn&&<RelicForgePanel holdings={holdings} owned={forgeOwned} busy={disabled} balance={yarn} sealPolicy={sealPolicy} inventory={inventory} craft={(d,a,b)=>void run(()=>forge(d,a,b))}/>}
+      {tab==='Style'&&stylesOn&&<YarnStyles state={cosmetics} busy={disabled} balance={yarn} buy={sku=>void run(()=>buyStyle(sku))} equip={sku=>void run(()=>equipStyle(sku))}/>}
       {tab==='History'&&<ol className="chain-history">{history.map(h=><li key={h.hash}><a href={txLink(h.hash)} target="_blank" rel="noreferrer" title={h.hash}>↗ {h.hash.slice(0,10)}…</a></li>)}</ol>}
     </>}
-    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Judge'&&pass)await grant('pass');if(tab==='Seal')await loadInventory();if(tab==='History'&&runtime)await historyPage();})}>↻</button><details><summary>?</summary><p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
+    <footer><p role="status">{status}</p><button aria-label="Refresh chain" disabled={busy} onClick={()=>void run(async()=>{if(!config)await connect();else await refresh();if(tab==='Judge'&&pass)await grant('pass');if(tab==='Seal')await loadInventory();if(tab==='Style')await loadStyles();if(tab==='History'&&runtime)await historyPage();})}>↻</button><details><summary>?</summary>{forgeOn&&<p>Forge: choose two owned, sealed Epic units. Both enter irreversible custody and 3 YARN burns atomically. No refund or exit. Inputs bought from the market have their own cost; self-sealing two costs another 20 YARN. Each ornament unlocks once per wallet, with zero Power or rewards. Three designs total; preview is free. Ornaments stay with this wallet when assets move.</p>}{stylesOn&&<p>Style: permanent room and card decoration, bound to this account, zero combat or reward benefit. Preview freely; each style burns 4 YARN once. Recovery never pays twice. Reset is free. Styles do not move with wallet assets. Three styles total; no subscription or expiry.</p>}<p>V2: any price, including gifts. The seller pays the displayed fee; 40% of that fee is burned, 60% goes to treasury. AVAX sink is not YARN burn. Claim sale proceeds under Mine. Bought items wait ten minutes before V2 relisting. V1 stays fee-free. Seal costs 10% of fixed reference YARN, burned once. Recovery renews the same mint nonce without paying again. Only the server-run boss creates this test drop; offline saves never authorize minting. Treasure is cosmetic and clears on transfer. History scans 120,000 blocks. All assets are Fuji testnet only, with no real value.</p></details></footer>
     {success&&<div className="chain-success" role="dialog" aria-label="Transaction confirmed" aria-modal="true"><button aria-label="Close receipt" onClick={()=>setSuccess(undefined)}>×</button><b>✓ Confirmed</b><small>{TESTNET_NOTICE}</small>{success.id&&<img src={artOf(success.id)} alt={nameOf(success.id)}/>}<code>{success.hash}</code><a href={txLink(success.hash)} target="_blank" rel="noreferrer" onClick={()=>setChecks(c=>({...c,Snowtrace:true}))}>↗ Snowtrace</a></div>}
   </section>;
 }

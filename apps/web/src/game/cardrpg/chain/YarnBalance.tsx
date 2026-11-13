@@ -11,5 +11,5 @@ export function YarnBalance(){
     void update();const timer=setInterval(()=>void update(),5000);const changed=()=>void update();window.addEventListener('chain:changed',changed);
     return()=>{active=false;clearInterval(timer);window.removeEventListener('chain:changed',changed);};
   },[session]);
-  return balance===undefined?null:<output aria-label="YARN balance">🧶 {balance}</output>;
+  return balance===undefined?null:<output aria-label="YARN balance">{balance}</output>;
 }

@@ -21,7 +21,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   color: var(--map-text);
-  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  
 }
 
 /* Light mode overrides: preserve cozy cat café dark plum surfaces and high contrast */
@@ -65,7 +65,7 @@
 
 .v2-map-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: 1.5rem;
   line-height: 1.1;
   color: var(--map-gold);
@@ -76,7 +76,7 @@
 .v2-map-subtitle {
   font-size: var(--fs-sm, 0.875rem);
   color: var(--map-muted);
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
 }
 
 /* Canvas & Vertical List: zero horizontal scroll, fits any panel */
@@ -205,7 +205,7 @@
 }
 
 .v2-map-chapter-num {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   font-weight: 700;
   color: var(--map-muted);
@@ -236,7 +236,7 @@
 /* Chapter Title */
 .v2-map-chapter-name {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: 1.05rem;
   line-height: 1.15;
   color: var(--map-text);
@@ -263,7 +263,7 @@
 }
 
 .v2-map-boss-label {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   font-weight: 700;
   color: var(--map-muted);
@@ -271,7 +271,7 @@
 }
 
 .v2-map-boss-name {
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-weight: 700;
   color: var(--map-text);
   white-space: nowrap;
@@ -303,13 +303,13 @@
 .v2-map-badge--round {
   background: var(--map-accent);
   color: var(--on-accent, #1a1200);
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
 }
 
 .v2-map-badge--rematch {
   background: var(--map-gold);
   color: var(--on-accent, #1a1200);
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   text-transform: uppercase;
 }
 
@@ -383,7 +383,7 @@
 }
 
 .v2-map-locked-text {
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: 12px;
   color: var(--map-muted);
   font-style: italic;

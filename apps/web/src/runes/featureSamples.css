@@ -10,7 +10,7 @@
 .feature-sample-list button { width: 100%; min-height: 80px; display: flex; gap: 12px; align-items: center; padding: 10px; border: 2px solid var(--border); color: var(--text); background: var(--surface); text-align: left; cursor: pointer; }
 .feature-sample-list button[aria-pressed='true'] { border-color: var(--accent); background: var(--surface-2); }
 .feature-sample-list button:focus-visible, .feature-sample-rank select:focus-visible { outline: 2px solid var(--focus); outline-offset: -5px; }
-.feature-sample-list strong { display: block; font-family: var(--font-display); }
+.feature-sample-list strong { display: block;  }
 .feature-sample-list small { display: block; color: var(--muted); margin-top: 3px; }
 .feature-sample-thumb { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; flex: none; overflow: hidden; }
 .feature-sample-thumb > * { flex: none; transform: scale(.5); transform-origin: center; }

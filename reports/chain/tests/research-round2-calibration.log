@@ -1,0 +1,349 @@
+Completed fixed6, demand 1
+Completed fixed6, demand 0.5
+Completed fixed6, demand 0.25
+Completed fixed6, demand 0.1
+Completed fixed1.5, demand 1
+Completed fixed1.5, demand 0.5
+Completed fixed1.5, demand 0.25
+Completed fixed1.5, demand 0.1
+Completed closed25, demand 1
+Completed closed25, demand 0.5
+Completed closed25, demand 0.25
+Completed closed25, demand 0.1
+Completed closed50, demand 1
+Completed closed50, demand 0.5
+Completed closed50, demand 0.25
+Completed closed50, demand 0.1
+Completed closed75, demand 1
+Completed closed75, demand 0.5
+Completed closed75, demand 0.25
+Completed closed75, demand 0.1
+Completed closed50-optin, demand 1
+Completed closed50-optin, demand 0.5
+Completed closed50-optin, demand 0.25
+Completed closed50-optin, demand 0.1
+{
+  "runs": 1440,
+  "stressRuns": 21,
+  "acceptance": {
+    "originalUnchanged": true,
+    "candidateStandardFlowAndFarming": true,
+    "weakDemandProven": false,
+    "utilityCalibrated": false,
+    "activation": false
+  },
+  "holdout": [
+    {
+      "policy": "fixed6",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 2.4193917814971755,
+      "farmerCasualWorst": 0.19167459265057304,
+      "medianCasualRoutine": 77.88197979470362,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 1,
+      "maxLastSeasonEmission": 418.34571864646114
+    },
+    {
+      "policy": "fixed6",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 4.687730393868324,
+      "farmerCasualWorst": 0.19280345705302585,
+      "medianCasualRoutine": 72.43599572191187,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 1,
+      "maxLastSeasonEmission": 154.53696243547716
+    },
+    {
+      "policy": "fixed6",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 7.740192493268752,
+      "farmerCasualWorst": 0.19193095916592848,
+      "medianCasualRoutine": 53.627740852524084,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 1,
+      "maxLastSeasonEmission": 197.39708618116305
+    },
+    {
+      "policy": "fixed6",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 18.344845731770747,
+      "farmerCasualWorst": 0.1933464307732415,
+      "medianCasualRoutine": 42.75541762197082,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 0.995,
+      "maxLastSeasonEmission": 100.50130023201514
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.386327364532528,
+      "farmerCasualWorst": 0.19082092947723328,
+      "medianCasualRoutine": 36,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 1,
+      "maxLastSeasonEmission": 15286
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 2.919690285769034,
+      "farmerCasualWorst": 0.19078188170522917,
+      "medianCasualRoutine": 36,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 1,
+      "maxLastSeasonEmission": 15238.681664363496
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 4.902701016676526,
+      "farmerCasualWorst": 0.19096293877941495,
+      "medianCasualRoutine": 25.576431952728644,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 0.995,
+      "maxLastSeasonEmission": 3220.69056008475
+    },
+    {
+      "policy": "fixed1.5",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 13.973500679496677,
+      "farmerCasualWorst": 0.1915681906440876,
+      "medianCasualRoutine": 17.501498321348667,
+      "minCasualRenameShare": 1,
+      "minCasualEpicShare": 0.955,
+      "maxLastSeasonEmission": 380.915489009102
+    },
+    {
+      "policy": "closed25",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.17423291384191,
+      "farmerCasualWorst": 0.1809608705954739,
+      "medianCasualRoutine": 2.420921101792817,
+      "minCasualRenameShare": 0.39,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed25",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 2.2893615902144653,
+      "farmerCasualWorst": 0.18097284793917176,
+      "medianCasualRoutine": 1.1728661538461538,
+      "minCasualRenameShare": 0.005,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed25",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 4.558322604588394,
+      "farmerCasualWorst": 0.18153958256331368,
+      "medianCasualRoutine": 0.5646738461538462,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed25",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 12.43930336113837,
+      "farmerCasualWorst": 0.18120670197790073,
+      "medianCasualRoutine": 0.2361744419716634,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.3098844981909081,
+      "farmerCasualWorst": 0.18084150670788576,
+      "medianCasualRoutine": 4.9752081081608175,
+      "minCasualRenameShare": 0.935,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 128.79984615384615
+    },
+    {
+      "policy": "closed50",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 2.4608025875130877,
+      "farmerCasualWorst": 0.18093380760896327,
+      "medianCasualRoutine": 2.3457323076923076,
+      "minCasualRenameShare": 0.395,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 4.730680296896087,
+      "farmerCasualWorst": 0.18149814861028268,
+      "medianCasualRoutine": 1.1321169230769232,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 12.61167836113837,
+      "farmerCasualWorst": 0.18120670197790073,
+      "medianCasualRoutine": 0.4723488839433268,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed75",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.237509168084374,
+      "farmerCasualWorst": 0.18247693095584014,
+      "medianCasualRoutine": 8.829435951355658,
+      "minCasualRenameShare": 0.995,
+      "minCasualEpicShare": 0.14,
+      "maxLastSeasonEmission": 1576.475826923077
+    },
+    {
+      "policy": "closed75",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 2.634478883383081,
+      "farmerCasualWorst": 0.1809338076089633,
+      "medianCasualRoutine": 3.5258676923076924,
+      "minCasualRenameShare": 0.735,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 31.26738461538461
+    },
+    {
+      "policy": "closed75",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 4.903037989203779,
+      "farmerCasualWorst": 0.18149814861028268,
+      "medianCasualRoutine": 1.7023292307692308,
+      "minCasualRenameShare": 0.08,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed75",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 0,
+      "worstClaimsBurn": 12.78405336113837,
+      "farmerCasualWorst": 0.18120670197790076,
+      "medianCasualRoutine": 0.7085233259149902,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50-optin",
+      "demand": 1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.3098844981909081,
+      "farmerCasualWorst": 0.18084150670788576,
+      "medianCasualRoutine": 4.9752081081608175,
+      "minCasualRenameShare": 0.935,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 128.79984615384615
+    },
+    {
+      "policy": "closed50-optin",
+      "demand": 0.5,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 45,
+      "worstClaimsBurn": 1.6019199641983821,
+      "farmerCasualWorst": 0.18093380760896327,
+      "medianCasualRoutine": 2.3457323076923076,
+      "minCasualRenameShare": 0.395,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50-optin",
+      "demand": 0.25,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 34,
+      "worstClaimsBurn": 2.1723674595141698,
+      "farmerCasualWorst": 0.18105056329884744,
+      "medianCasualRoutine": 1.1317707692307692,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    },
+    {
+      "policy": "closed50-optin",
+      "demand": 0.1,
+      "split": "holdout",
+      "runs": 45,
+      "passed": 30,
+      "worstClaimsBurn": 3.8756712007504692,
+      "farmerCasualWorst": 0.18109098038160218,
+      "medianCasualRoutine": 0.4652307692307692,
+      "minCasualRenameShare": 0,
+      "minCasualEpicShare": 0,
+      "maxLastSeasonEmission": 0
+    }
+  ]
+}

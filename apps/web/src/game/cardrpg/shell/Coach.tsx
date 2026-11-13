@@ -1,0 +1,21 @@
+import {createPortal} from 'react-dom';
+import {useEffect,useRef,useState} from 'react';
+import type {DepthModel} from '../depth/model';
+import {GameIcon} from '../../../ui/GameIcon';
+import {LESSONS} from './lessons';
+import './coach.css';
+const KEY='lantern.coach.v3';
+function read(){try{return JSON.parse(localStorage.getItem(KEY)??'{}') as Record<string,boolean>;}catch{return {};}}
+function mark(topic:string){try{localStorage.setItem(KEY,JSON.stringify({...read(),[topic]:true}));}catch{/* lessons remain usable without storage */}}
+export function TutorialSettings(){const [disabled,setDisabled]=useState(()=>!!read().disabled);return <div className="b-tutorial-settings"><label><input type="checkbox" checked={disabled} onChange={e=>{setDisabled(e.target.checked);try{localStorage.setItem(KEY,JSON.stringify({...read(),disabled:e.target.checked}));}catch{}window.dispatchEvent(new Event('coach:changed'));}}/>Skip tutorial</label><button onClick={()=>{try{localStorage.removeItem(KEY);}catch{}setDisabled(false);window.dispatchEvent(new Event('coach:changed'));}}>Replay lessons</button></div>;}
+export function Coach({m}:{m:DepthModel}){
+ const [topic,setTopic]=useState(''),[index,setIndex]=useState(0),[rect,setRect]=useState<DOMRect>(),[revision,setRevision]=useState(0);const previousPause=useRef(false),paused=useRef(false),panel=useRef<HTMLElement>(null);
+ const finish=()=>{if(topic)mark(topic);setTopic('');setIndex(0);if(paused.current){m.paused=previousPause.current;paused.current=false;m.notify(false);}};
+ useEffect(()=>{const changed=()=>{setRevision(x=>x+1);if(read().disabled)finish();};const page=(e:Event)=>{const requested=String((e as CustomEvent).detail),key=requested==='economy'?'wallet':requested;if(LESSONS[key]&&!read()[key]&&!read().disabled){setTopic(key);setIndex(0);}};const wallet=()=>page(new CustomEvent('shell:page',{detail:'wallet'}));window.addEventListener('coach:changed',changed);window.addEventListener('shell:page',page);window.addEventListener('chain:wallet',wallet);return()=>{window.removeEventListener('coach:changed',changed);window.removeEventListener('shell:page',page);window.removeEventListener('chain:wallet',wallet);};},[topic,m]);
+ useEffect(()=>{if(read().disabled)return;const key=m.showBattle?'battle':m.screen;if(!topic&&LESSONS[key]&&!read()[key]){setTopic(key);setIndex(0);}},[m.showBattle,m.screen,topic,revision]);
+ useEffect(()=>{if(topic==='battle'&&m.showBattle&&!paused.current){previousPause.current=m.paused;paused.current=true;m.paused=true;m.notify(false);}return()=>{};},[topic,m.showBattle,m]);
+ useEffect(()=>()=>{if(paused.current){m.paused=previousPause.current;paused.current=false;m.notify(false);}},[m]);
+ useEffect(()=>{if(!topic)return;panel.current?.focus();const update=()=>{const selector=LESSONS[topic]?.[index]?.target;setRect(selector?document.querySelector(selector)?.getBoundingClientRect():undefined);};update();const id=setInterval(update,300);return()=>clearInterval(id);},[topic,index]);
+ const lesson=LESSONS[topic]?.[index];if(!lesson)return null;
+ return createPortal(<div className="b-coach" data-topic={topic}><div className="b-coach-focus" style={rect&&rect.width?{left:Math.max(8,rect.left-6),top:Math.max(8,rect.top-6),width:Math.min(innerWidth-16,rect.width+12),height:Math.min(innerHeight-16,rect.height+12)}:undefined}/><section className="b-coach-card" role="dialog" aria-label="Tutorial" aria-modal="true" ref={panel} tabIndex={-1} onKeyDown={e=>{if(e.key==='Escape')finish();if(e.key==='Tab'){const buttons=panel.current?.querySelectorAll<HTMLButtonElement>('button');if(e.shiftKey&&(document.activeElement===buttons?.[0]||document.activeElement===panel.current)){e.preventDefault();buttons?.[1]?.focus();}else if(!e.shiftKey&&document.activeElement===buttons?.[1]){e.preventDefault();buttons?.[0]?.focus();}}}}><GameIcon name={lesson.icon} size={48}/><small>{index+1} / {LESSONS[topic]!.length}</small><p>{lesson.text}</p><div><button onClick={finish}>Skip</button><button className="b-primary" onClick={()=>index+1<LESSONS[topic]!.length?setIndex(index+1):finish()}>{index+1<LESSONS[topic]!.length?'Next':'Got it'}</button></div></section></div>,document.body);
+}

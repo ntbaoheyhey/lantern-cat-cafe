@@ -286,3 +286,11 @@ forge coverage --root contracts
 ```
 
 Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](../reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and public on-chain verification versus pending frontend/timing work.
+
+## Optional finite RelicForge (local proof, public deployment pending)
+
+`RelicForge.sol` pins existing NFT/YARN and permits32 canonical Epic IDs only. Each wallet may unlock each of three designs once. `forge(design,firstId,secondId)` atomically puts two units in permanent custody and burns3 YARN via exact ERC20 allowance. Identical IDs require two units. A failed payment rolls back transfers and unlocks. No owner, upgrade, withdrawal, approval forwarding or NFT/token mint exists. Unsolicited single/batch transfers are rejected. NFTs remain in ERC1155 accounting; the vault tracks unusable units in `consumedOf`, not an NFT burn.
+
+The browser verifies pins/cost/design count, reloads on-chain ownership and recovers an already-confirmed craft before approving again. Ornament rights remain wallet-bound and are not transferred by guest asset migration. `VITE_RELIC_FORGE=1` and a user-deployed `VITE_RELIC_FORGE_ADDRESS` are independent opt-ins. The regular demo flag does not enable them. Unit/fuzz/invariant tests pass and forge line coverage is100%; this is not an independent audit. Public registry intentionally has no invented vault address.
+
+Room styles use the existing YARN `seal` payment primitive with a distinct cosmetic intent domain. Server orders bind wallet/token/SKU/exact cost, and finalization recovers immutable payment state. See the cosmetic pilot protocol for roster/receipt evidence and deployment steps.

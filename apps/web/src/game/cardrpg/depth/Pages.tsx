@@ -1,3 +1,4 @@
+import {FieldGuideV3} from '../shell/FieldGuide';
 import { HomeV4 } from './HomeV4';
 import { CafeBoardV4 } from './CafeV4';
 import { useState } from 'react';
@@ -8,7 +9,6 @@ import type { DepthModel } from './model';
 import { CompanionPreview } from './CompanionPreview';
 import { nextChallenge } from './meta-presentation';
 import { portraitProps } from './assets';
-import {FieldGuideA6} from '../ui-v3/FieldGuideA6';
 export { Team, Collection } from './TeamCollection';
 export { Inventory } from './Equipment';
 export { Invitations } from './Invitations';
@@ -37,7 +37,7 @@ export function Hub({ m }: { m: DepthModel }) {
       </section>}</div></>;
 }
 export function Codex({ v4 = false, skillsV5 = false, a6 = false }: { v4?: boolean; skillsV5?: boolean; a6?: boolean }) {
-  return a6?<FieldGuideA6 v4={v4} skillsV5={skillsV5}/>:<LegacyCodex v4={v4} skillsV5={skillsV5}/>;
+  return a6?<FieldGuideV3/>:<LegacyCodex v4={v4} skillsV5={skillsV5}/>;
 }
 function LegacyCodex({v4,skillsV5}:{v4:boolean;skillsV5:boolean}) {
   const [tab,setTab]=useState('keywords');
