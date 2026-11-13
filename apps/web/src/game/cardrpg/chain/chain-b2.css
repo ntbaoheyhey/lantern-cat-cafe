@@ -100,3 +100,25 @@ dialog.chain-panel{position:fixed;inset:0;margin:auto;height:max-content;max-hei
 .b2-chain-room .b2-chain-fusion .b-fusion-inputs{max-height:170px;align-self:center;min-height:120px}
 .b2-chain-room .b2-chain-fusion .b2-dialog-actions{padding:0}
 @media(max-width:700px){.b2-chain-room .b2-history-desk{grid-template-columns:1fr}.b2-history-desk>.b2-guide{display:none}.b2-chain-room .chain-history a{padding:8px}.b2-chain-room .chain-forge,.b2-chain-room .b2-chain-fusion{grid-template-columns:1fr}.b2-chain-room .chain-forge>*,.b2-chain-fusion>:is(.b2-chain-cost,.b-fusion-inputs,.b2-dialog-actions){grid-column:1}.b2-chain-room .chain-forge>.chain-forge-preview,.b2-chain-fusion>.b2-fusion-target{grid-row:auto;min-height:180px;height:180px;width:100%;background-size:200px 45px}.b2-chain-room .b2-ornament-output{height:165px}.b2-chain-room .b2-ornament-output>.chain-forge-mark{width:135px!important;height:135px!important}.b2-chain-room .chain-forge .chain-style-choices>button{flex-direction:column}.b2-forge-slot{grid-template-columns:1fr;justify-items:center}.b2-fusion-target>.b2-icon{width:80px;height:80px}.b2-fusion-target h4{margin:4px}.b2-chain-room .chain-forge-preview>.b2-guide{display:none}}
+
+/* Phone wallet pages keep every receipt and cafe object inside the scroll panel. */
+@media(max-width:650px){
+ .chain-overlay{padding:8px}
+ .chain-room.b2-chain-room{box-sizing:border-box;width:100%;max-width:100%;max-height:calc(100dvh - 16px);padding:8px;border-width:16px;border-image-width:28px}
+ .b2-chain-room *{box-sizing:border-box;min-width:0}
+ .b2-chain-room .b2-chain-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;padding-right:38px;min-height:80px}
+ .b2-chain-room .b2-chain-heading .b2-ribbon{width:180px;max-width:100%;min-width:0;height:58px;min-height:58px;font-size:24px}
+ .b2-chain-room .b2-chain-heading>small{display:block;grid-column:1/-1;max-width:none;font-size:13px;text-align:center}
+ .b2-chain-room .b2-chain-heading>output{font-size:18px;grid-column:2;grid-row:1}
+ .b2-chain-room .b2-chain-heading>button{width:32px;height:36px;top:8px}
+ .b2-chain-room .chain-history{grid-template-columns:minmax(0,1fr)}
+ .b2-chain-room .chain-history a{min-height:70px}
+ .b2-chain-room .chain-history a>span{min-width:0}
+ .b2-chain-room .b2-cafe-scene{grid-template-columns:minmax(0,1fr);gap:14px;min-height:0}
+ .b2-chain-room .b2-cafe-scene>nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .b2-chain-room .b2-cafe-scene>nav>.b2-action{min-height:94px;font-size:15px}
+ .b2-chain-room .b2-cafe-scene>nav>.b2-action .b2-icon{width:48px;height:48px}
+ .b2-chain-room .b2-cafe-balances{flex-wrap:wrap;gap:6px}
+ .b2-chain-room .b2-cafe-balances>output{padding:4px 8px!important;font-size:16px}
+ .b2-chain-room .b-deed-card{max-width:100%;width:100%}
+}

@@ -36,7 +36,7 @@ export function measureScreen() {
     bounds:{x:Math.round(e.getBoundingClientRect().x),y:Math.round(e.getBoundingClientRect().y),width:Math.round(e.getBoundingClientRect().width),height:Math.round(e.getBoundingClientRect().height)}
   }));
   // Document width can stay fixed while a panel clips its own controls.
-  const modal=[...document.querySelectorAll('dialog:modal')].at(-1);
+  const modal=[...document.querySelectorAll('dialog:modal')].at(-1)||[...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].filter(e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true})).at(-1);
   const horizontalClippedControls=[...(modal||document).querySelectorAll('button,a,summary,input,select')].filter(painted).flatMap(e=>{
     const r=e.getBoundingClientRect();let left=0,right=innerWidth,top=0,bottom=innerHeight;
     for(let parent=e.parentElement;parent&&parent!==document.body&&parent!==document.documentElement;parent=parent.parentElement){

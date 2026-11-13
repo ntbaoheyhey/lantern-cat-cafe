@@ -1,6 +1,6 @@
 /** Exercise scrolling to controls, including controls outside a panel's first view. */
 export async function measurePhoneControls() {
-  const modal=[...document.querySelectorAll('dialog:modal')].at(-1);
+  const modal=[...document.querySelectorAll('dialog:modal')].at(-1)||[...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].filter(e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true})).at(-1);
   const scope=modal||document.querySelector('.th-audio details[open]')||document.querySelector('.b-page')||document.querySelector('.uv-sheet')||document.body;
   const saved=[...document.querySelectorAll('*')].filter(e=>e.scrollHeight>e.clientHeight||e.scrollWidth>e.clientWidth).map(e=>[e,e.scrollLeft,e.scrollTop]);
   const visible=e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true});

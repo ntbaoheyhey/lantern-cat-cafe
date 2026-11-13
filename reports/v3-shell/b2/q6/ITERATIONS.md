@@ -22,3 +22,7 @@ UI captures of non-chain screens use the temporary B preview with A-owned curren
 ## 2026-11-13T22:20:59.877906+00:00 — phone map and result controls
 
 Final4 found four clipped map nodes and covered help/close controls in both result states. Retained that failed evidence. Reoriented the same map graph vertically on phones, separated chapter tiles and star chests, and fitted the discovery notice into the unused result header area. First map attempt lost the cascade to campaign CSS; added the existing shell scope. Focused map5 now has 17/17 reachable controls, zero clipping,11 words; victory and defeat each have zero unreachable controls. Review: phone-map5-review.jpg. Desktop acceptance and full suites remain pending.
+
+## 2026-11-13T22:27:14.965752+00:00 — wallet phone controls
+
+Final5 exposed transaction-history cards wider than their narrow container and a phone-audit scope bug: background home controls remained in the audit behind the ARIA wallet modal. Added phone wallet grid sizing and min-width limits. Both audits now scope to the visible ARIA modal just as they do native modal dialogs. The regression verifies covered home exclusion and still rejects a clipped wallet action. Focused capture chain-phone-repair6-390: all five states have zero overflow, clipping or unreachable controls; modal audit 2/2 passes. Full acceptance pending.
