@@ -15,7 +15,7 @@ export function SeasonTrackB2(){
   return()=>window.removeEventListener('shell:season-progress',receive);
  },[]);
  if(!view)return <p role="status">Open your café.</p>;
- return <section className="b2-weekly-track" aria-label="Weekly reward track">
+ return <section data-tutorial-id="season-track" className="b2-weekly-track" aria-label="Weekly reward track">
   <header><span>Weekly</span><output aria-label="Weekly activity points">{view.points}/30</output><span><GameIcon name="clock" size={20}/>{view.days}d</span></header>
   <progress aria-label="Weekly reward progress" value={Math.min(view.points,30)} max={30}/>
   <div>{view.rewards.map(r=><article key={r.points} data-ready={!r.reason} data-claimed={r.claimed}>

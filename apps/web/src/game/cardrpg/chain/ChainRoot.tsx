@@ -67,13 +67,13 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   return <><aside className="chain-dock" aria-label="Fuji wallet">
     {!embedded&&<button className="chain-launch" onClick={() => setOpen(!open)}><GameIcon name="wallet" size={18}/> Fuji</button>}
     {open && <dialog ref={panel} tabIndex={-1} className="chain-panel b2-wallet" aria-label="Fuji panel" onCancel={event=>{event.preventDefault();closeWallet();}} onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
-      <header><strong><GameIcon name="wallet" size={18}/> Fuji</strong><button aria-label="Close Fuji" onClick={closeWallet}><GameIcon name="close" size={20}/></button></header>
+      <header data-tutorial-id="wallet-title"><strong><GameIcon name="wallet" size={18}/> Fuji</strong><button aria-label="Close Fuji" onClick={closeWallet}><GameIcon name="close" size={20}/></button></header>
       <small title={TESTNET_NOTICE}>Testnet · no value</small>
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
-        <div className="b2-wallet-balances">{guest && flags.chainLoop && <section aria-label="AVAX test gas"><PaintedIcon name="wallet" size={52}/><h3>AVAX test gas</h3><GasBalance /></section>}
+        <div data-tutorial-id="wallet-balances" className="b2-wallet-balances">{guest && flags.chainLoop && <section aria-label="AVAX test gas"><PaintedIcon name="wallet" size={52}/><h3>AVAX test gas</h3><GasBalance /></section>}
         {flags.yarnToken&&<section aria-label="YARN"><PaintedIcon name="yarn" size={52}/><h3>YARN</h3><YarnBalance/></section>}</div>
-        {flags.chainLoop&&<button disabled={busy} onClick={()=>setRoom('Market')}><PaintedIcon name="market" size={64}/> Market</button>}
+        {flags.chainLoop&&<button data-tutorial-id="wallet-actions" disabled={busy} onClick={()=>setRoom('Market')}><PaintedIcon name="market" size={64}/> Market</button>}
         <button disabled={busy} onClick={() => store.clear()}><PaintedIcon name="wallet" size={64}/> Sign out</button>
         {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}><PaintedIcon name="deed" size={64}/> Export key</button>
           {warning && <div role="alert"><p>Anyone with this key controls your guest assets. Keep it private.</p><button disabled={copied || busy} onClick={() => void run(async () => {await copyGuestKey(localStorage, navigator.clipboard);setCopied(true);})}>{copied ? 'Copied' : 'Copy once'}</button></div>}

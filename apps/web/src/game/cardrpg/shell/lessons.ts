@@ -1,20 +1,23 @@
-export interface Lesson{icon:string;text:string;target?:string}
+export interface Lesson{icon:string;text:string;target:string}
+const at=(id:string)=>`[data-tutorial-id="${id}"]`;
 export const LESSONS:Record<string,readonly Lesson[]>={
  battle:[
-  {icon:'team',text:'Guardians hold front. Witches hit groups. Alchemists heal.',target:'.uv-battle-party'},
-  {icon:'shield',text:'Front cats protect the back row.',target:'.dp-canvas'},
-  {icon:'clock',text:'The turn bar shows who acts next.',target:'.dp-turn-order'},
-  {icon:'debuff',text:'Read enemy intent. Change targeting in your preparation plan.',target:'.uv-enemy-rage'},
-  {icon:'buff',text:'Full rage triggers ultimates. Tap a portrait for details.',target:'.uv-battle-party'},
-  {icon:'burn',text:'Burn hurts. Freeze delays. Shields absorb damage.',target:'.dp-world-plate'},
-  {icon:'potion',text:'Pack supplies before battle. Each use costs one cat action.',target:'.uv-battle-party'},
-  {icon:'settings',text:'Change speed or pause auto. Your plan stays active.',target:'.uv-battle-actions'},
+  {icon:'team',text:'Guardians hold front. Witches hit groups. Alchemists heal.',target:at('battle-roles')},
+  {icon:'shield',text:'Front cats protect the back row.',target:at('battle-rows')},
+  {icon:'clock',text:'These portraits show who acts next.',target:at('battle-order')},
+  {icon:'debuff',text:'Read enemy intent. Choose targeting before battle.',target:at('battle-intent')},
+  {icon:'buff',text:'Full rage readies ultimates. Auto casts on legal turns.',target:at('battle-rage')},
+  {icon:'burn',text:'Status icons show shields, burns, and delays.',target:at('battle-statuses')},
+  {icon:'potion',text:'Pack supplies before battle. Your packed treat appears here.',target:at('battle-supplies')},
+  {icon:'settings',text:'Change speed here. Pause and Auto remain available.',target:at('battle-speed')},
  ],
- team:[{icon:'team',text:'Keep guardians in front and fragile cats behind.',target:'.a6-formation-desk'},{icon:'weapon',text:'Equip gear, then compare the green stat changes.'},{icon:'outfit',text:'Matching sets unlock bonuses. Read each set before swapping.'}],
- inventory:[{icon:'bag',text:'Select gear to compare stats and equip a cat.',target:'.a6-inventory-detail'},{icon:'forge',text:'Check enhancement odds. Failed attempts add Blessing.'},{icon:'star-thread',text:'Fuse matching gear. Legendary fusion uses Star Thread and YARN.'}],
- gacha:[{icon:'bell',text:'Spend bound Bells. YARN never buys random outcomes.',target:'.uv-recruit-buttons'},{icon:'invitations',text:'Open Odds before pulling. Pity increases your next chance.'},{icon:'cats',text:'A featured miss guarantees your next featured Legendary.'},{icon:'shard',text:'Duplicate cats give shards. Pity carries between matching banners.'}],
- season:[{icon:'season',text:'Seasons last four weeks. Check the countdown.'},{icon:'bell',text:'Free rewards stay bound. Premium passes remain on the roadmap.'},{icon:'relic',text:'Edition supply is limited. Offline counters never imply availability.'}],
- wallet:[{icon:'spool',text:'Earn bound Spool. Spend it at equal YARN value.'},{icon:'deed',text:'A Deed unlocks withdrawals. Playing and earning stay free.'},{icon:'yarn',text:'Withdrawals retain 25 percent. Review net YARN before signing.'},{icon:'wallet',text:'Seal eligible items before trading. Cats and shards stay bound.'},{icon:'market',text:'Fuji is testnet. Items and tokens have no real value.'}],
+ team:[{icon:'team',text:'Keep guardians in front and fragile cats behind.',target:at('team-rows')},{icon:'weapon',text:'Choose a gear slot to compare upgrades.',target:at('team-gear')},{icon:'outfit',text:'Save a crew for each activity.',target:at('team-tools')}],
+ inventory:[{icon:'bag',text:'Select gear to compare stats and equip a cat.',target:at('bag-item')},{icon:'forge',text:'Enhance gear here. Review costs before confirming.',target:at('bag-enhance')},{icon:'star-thread',text:'Open the workshop to fuse matching gear.',target:at('bag-workshop')}],
+ forge:[{icon:'forge',text:'Preview the next level before spending materials.',target:at('forge-preview')},{icon:'bell',text:'Check odds. Failed attempts add Blessing.',target:at('forge-odds')},{icon:'thread',text:'Review the material cost, then confirm.',target:at('forge-cost')}],
+ gacha:[{icon:'bell',text:'Spend bound Bells. YARN never buys random outcomes.',target:at('invite-balance')},{icon:'invitations',text:'Open Odds before pulling. Pity increases your next chance.',target:at('invite-pity')},{icon:'cats',text:'Choose a banner. Featured guarantees carry between matching banners.',target:at('invite-banners')},{icon:'shard',text:'Duplicate cats give shards. Each invitation saves immediately.',target:at('invite-purchases')}],
+ season:[{icon:'season',text:'Content seasons last four weeks. Check the countdown.',target:at('season-clock')},{icon:'bell',text:'Play weekly goals for bound rewards.',target:at('season-track')},{icon:'relic',text:'Edition supply shows verified counts, or Offline.',target:at('season-edition')}],
+ wallet:[{icon:'wallet',text:'This is your Fuji wallet. Test tokens have no value.',target:at('wallet-title')},{icon:'yarn',text:'Check balances before signing. Test AVAX pays network gas.',target:at('wallet-balances')},{icon:'market',text:'Market opens your onchain items and Café.',target:at('wallet-actions')}],
+ cafe:[{icon:'spool',text:'Earn bound Spool. Spend it at equal YARN value.',target:at('cafe-spool')},{icon:'deed',text:'A Deed unlocks withdrawals. Playing and earning stay free.',target:at('cafe-deed')},{icon:'yarn',text:'Review net YARN and the retained fee before signing.',target:at('cafe-withdraw')}],
 };
 export const GUIDE_PAGES=[
  {id:'roles',title:'Roles',icon:'team',text:'Guardians protect. Witches strike groups. Alchemists heal. Keep two cats forward.'},

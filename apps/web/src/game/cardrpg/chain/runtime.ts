@@ -1,4 +1,4 @@
-import { createPublicClient, http, isAddress, isAddressEqual, type Abi, type Address, type Hash, type WalletClient } from 'viem';
+import { createPublicClient, http, isAddress, isAddressEqual, type Abi, type Address, type Hash, type WalletClient, type HttpTransportConfig } from 'viem';
 import { avalancheFuji } from 'viem/chains';
 import { getAddresses, relicNftAbi, relicMarketAbi, relicMarketV2Abi } from '@taskbar-hero/chain';
 import { requireFuji } from './guest';
@@ -24,13 +24,14 @@ export async function loadChainConfig(): Promise<ChainConfig> {
   const optional = (value?: string) => value && isAddress(value) ? value : undefined;
   return { chainId: 43113, rpcUrl: import.meta.env.VITE_FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/rpc',
     RelicNFT: addresses.RelicNFT!, RelicMarket: addresses.RelicMarket!,
-    YarnToken: optional(import.meta.env.VITE_YARN_ADDRESS), RelicMarketV2: optional(import.meta.env.VITE_MARKET_V2_ADDRESS),
-    SeasonRewards: optional(import.meta.env.VITE_SEASON_REWARDS_ADDRESS),
-    RelicForge: optional(import.meta.env.VITE_RELIC_FORGE_ADDRESS),
+    YarnToken: optional(import.meta.env.VITE_YARN_ADDRESS) ?? addresses.YarnToken, RelicMarketV2: optional(import.meta.env.VITE_MARKET_V2_ADDRESS) ?? addresses.RelicMarketV2,
+    SeasonRewards: optional(import.meta.env.VITE_SEASON_REWARDS_ADDRESS) ?? addresses.SeasonRewards,
+    RelicForge: optional(import.meta.env.VITE_RELIC_FORGE_ADDRESS) ?? addresses.RelicForge,
+    startBlock: import.meta.env.VITE_V3_START_BLOCK || undefined,
   };
 }
-export function publicChain(config: ChainConfig) {
-  return createPublicClient({ chain: avalancheFuji, transport: http(config.rpcUrl, { timeout: 10_000, retryCount: 1 }), pollingInterval: 750 });
+export function publicChain(config: ChainConfig, policy:HttpTransportConfig = {timeout: 10_000, retryCount: 1}) {
+  return createPublicClient({ chain: avalancheFuji, transport: http(config.rpcUrl, policy), pollingInterval: 750 });
 }
 /** One block for all batches; a transfer cannot duplicate or hide an item mid-scan. */
 export async function readHoldings(client:ReturnType<typeof publicChain>,nft:Address,address:Address,ids:readonly bigint[]) {

@@ -1,10 +1,17 @@
-import {cleanup,fireEvent,render,screen} from '@testing-library/react';
+import {act,cleanup,fireEvent,render,screen} from '@testing-library/react';
 import {afterEach,expect,it,vi} from 'vitest';
 import {Coach,TutorialSettings} from './Coach';
 import {LESSONS,GUIDE_PAGES} from './lessons';
 import type {DepthModel} from '../depth/model';
-afterEach(()=>{cleanup();localStorage.clear();});
+afterEach(()=>{cleanup();localStorage.clear();vi.useRealTimers();});
 it('keeps every coaching instruction within twelve words',()=>{for(const [topic,steps] of Object.entries(LESSONS)){expect(steps.length,topic).toBeGreaterThanOrEqual(3);for(const step of steps)expect(step.text.split(/\s+/).length,step.text).toBeLessThanOrEqual(12);}expect(GUIDE_PAGES.map(p=>p.id)).toEqual(expect.arrayContaining(['roles','formation','turns','rage','statuses','supplies','speed','gear','enhance','fusion','gacha','rewards','trade','season']));});
 it('can finish a lesson even if no target element exists, restoring pause',()=>{const m={showBattle:true,screen:'map',paused:false,notify:vi.fn()} as unknown as DepthModel;render(<Coach m={m}/>);expect(m.paused).toBe(true);for(let i=0;i<7;i++)fireEvent.click(screen.getByRole('button',{name:'Next'}));fireEvent.click(screen.getByRole('button',{name:'Got it'}));expect(m.paused).toBe(false);expect(screen.queryByRole('dialog')).toBeNull();expect(JSON.parse(localStorage.getItem('lantern.coach.v3')!).battle).toBe(true);});
 it('skip retains an already paused battle',()=>{const m={showBattle:true,screen:'map',paused:true,notify:vi.fn()} as unknown as DepthModel;render(<Coach m={m}/>);fireEvent.click(screen.getByRole('button',{name:'Skip'}));expect(m.paused).toBe(true);});
 it('settings can disable coaching and replay lessons',()=>{render(<TutorialSettings/>);fireEvent.click(screen.getByRole('checkbox'));expect(JSON.parse(localStorage.getItem('lantern.coach.v3')!).disabled).toBe(true);fireEvent.click(screen.getByRole('button',{name:'Replay lessons'}));expect(localStorage.getItem('lantern.coach.v3')).toBeNull();});
+
+it('waits two seconds before logging a missing target and keeps Skip usable',()=>{
+ vi.useFakeTimers();const fallback=vi.fn();window.addEventListener('coach:fallback',fallback);
+ const m={showBattle:true,screen:'map',paused:false,notify:vi.fn()} as unknown as DepthModel;render(<Coach m={m}/>);
+ act(()=>vi.advanceTimersByTime(1900));expect(fallback).not.toHaveBeenCalled();act(()=>vi.advanceTimersByTime(200));expect(fallback).toHaveBeenCalledTimes(1);
+ fireEvent.click(screen.getByRole('button',{name:'Skip'}));expect(m.paused).toBe(false);window.removeEventListener('coach:fallback',fallback);
+});

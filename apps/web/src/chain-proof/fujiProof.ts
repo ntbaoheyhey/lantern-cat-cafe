@@ -4,7 +4,10 @@ import { decodeEventLog, type Address, type Hex, type PublicClient } from 'viem'
 export const PROOF_CACHE_MS = 30_000;
 export const PROOF_BLOCK_WINDOW = 100n;
 export const PROOF_EVENT_LIMIT = 10;
-export const PROOF_CONTRACTS = getAddresses(FUJI_CHAIN_ID);
+const registry = getAddresses(FUJI_CHAIN_ID);
+// This proof describes the original NFT/market pair; registry additions serve
+// their own readers and must not silently change this exported proof scope.
+export const PROOF_CONTRACTS = {RelicNFT:registry.RelicNFT,RelicMarket:registry.RelicMarket};
 export type ProofClient = Pick<PublicClient, 'getChainId' | 'getBlockNumber' | 'getBlock' | 'getCode' | 'readContract' | 'getLogs'>;
 export type ReadFact<T> = { status: 'verified'; value: T } | { status: 'unavailable' };
 export interface RecentEvent { address: Address; block: bigint; transaction: Hex; event: string }
