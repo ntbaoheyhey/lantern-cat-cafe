@@ -1,0 +1,14 @@
+COMMAND: pnpm -r typecheck
+Scope: 6 of 7 workspace projects
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
