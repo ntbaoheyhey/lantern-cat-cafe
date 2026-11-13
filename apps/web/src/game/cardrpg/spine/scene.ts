@@ -15,6 +15,7 @@ import {actionPose,actionCamera,attackMotion,hitPose,idlePhase,neutralPose,type 
 import {MotionTrails} from '../battle-v3/motion-trails';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
+import {crowdPose} from '../battle-v3/crowd';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
@@ -38,7 +39,7 @@ export class SpineScene {
  readonly labelAudit:{heads:Rect[];cards:Rect[];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
  private cinematicRects:Rect[]=[];
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
- readonly motionAudit:{id:string;asset:string;homeX:number;homeY:number;x:number;y:number;dx:number;dy:number;phase:string;archetype:string;hitOffset:number;flash:number}[]=[];
+ readonly motionAudit:{id:string;asset:string;homeX:number;homeY:number;x:number;y:number;dx:number;dy:number;phase:string;archetype:string;hitOffset:number;flash:number;crowd:string}[]=[];
  readonly anchors:Anchor[]=[];
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
  private stage=new PaintedStage(()=>this.invalidate());private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
@@ -197,6 +198,7 @@ export class SpineScene {
    }
    const worldTime=sequence&&frame?time-frame.elapsed/1000+sequenceWorldTime(sequence.seq,frame.elapsed)/1000:time;
    const phaseOffset=idlePhase(unit.id);
+   const crowd=crowdPose(view,unit,height);
    let name='idle',key:unknown='idle',at=(worldTime+phaseOffset)%actor.duration('idle');
    if(view.model){name=({ultimate:'ult',cast:'skill',hit:'hurt',KO:'ko'} as Record<string,string>)[view.model.clip]??view.model.clip;at=(view.modelProgress??0)*actor.duration(name);key=name;}
    else if(frame&&unit.id===frame.plan.actorId){
@@ -207,6 +209,7 @@ export class SpineScene {
     at=retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
    }else if(unit.hp<=0){if(entry.koAt<0)entry.koAt=time;name='ko';key=entry.koAt;at=time-entry.koAt;}
    else if(time-entry.hurtAt<actor.duration('hurt')){name='hurt';key=entry.hurtAt;at=time-entry.hurtAt;}
+   else if(crowd.kind!=='idle'){name=crowd.kind==='cheer'?'victory':'hurt';key=plan;at=crowd.age/650*actor.duration(name);}
    else if(time-entry.phaseAt<actor.duration('enrage')&&actor.clips.has('enrage')){name='enrage';key=entry.phaseAt;at=time-entry.phaseAt;}
    else if(time-entry.entered<actor.duration('appear')&&!view.galleryPreview&&!view.reducedMotion){name='appear';key=entry.entered;at=Math.max(0,time-entry.entered);}
    else if(entry.phase>1&&actor.clips.has('idle-phase2')){name='idle-phase2';key=name;at=time%actor.duration(name);}
@@ -226,6 +229,7 @@ export class SpineScene {
     if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
     const from=this.homes.get(caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
     reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
+    if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
     if(rootPose.phase==='idle'&&unit.hp>0){const breath=Math.sin(worldTime*2.1+phaseOffset);rootPose.sx=1-breath*.006;rootPose.sy=1+breath*.010;}
     if(unit.hp<=0){const fall=Math.min(1,deathAge/.4);rootPose.angle=(unit.side==='enemy'?-1:1)*fall*.9;rootPose.y=fall*12*height/720;}
    }
@@ -243,7 +247,7 @@ export class SpineScene {
     this.trails.render(actor.root,[1,2,3].map(i=>actionPose({...input,elapsed:input.elapsed-i*1000/30})),rootPose,pixelsToWorld);
    }
    const measured=actor.root.localToWorld(this.scratch.set(actor.bounds.x+actor.bounds.width/2,core.world.y,0)),mx=(measured.x+this.worldWidth/2)/pixelsToWorld,my=(PAINT.worldHeight-measured.y)/pixelsToWorld;
-   this.motionAudit.push({id:unit.id,asset:entry.asset,homeX:home.point.x,homeY:home.point.y,x:mx,y:my,dx:mx-home.point.x,dy:my-home.point.y,phase:rootPose.phase,archetype:plan?attackMotion(entry.asset,plan):'idle',hitOffset:Math.abs(reaction.x),flash:reaction.flash});
+   this.motionAudit.push({id:unit.id,asset:entry.asset,homeX:home.point.x,homeY:home.point.y,x:mx,y:my,dx:mx-home.point.x,dy:my-home.point.y,phase:rootPose.phase,archetype:plan?attackMotion(entry.asset,plan):'idle',hitOffset:Math.abs(reaction.x),flash:reaction.flash,crowd:crowd.kind});
    if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
    const since=time-this.hitAt,hitActive=this.firstHit&&!!plan?.targetIds.includes(unit.id)&&since>=0&&since<.32;
    entry.hit.visible=false;if(hitActive){actor.socket('vfxOrigin',entry.hit.position);entry.hit.scale.setScalar((.2+since)*actor.unit.targetHeight);entry.hit.material.opacity=(1-since/.32)*.65;}
