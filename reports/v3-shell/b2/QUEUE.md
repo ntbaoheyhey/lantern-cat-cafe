@@ -17,7 +17,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
-- [ ] E2 — todo
+- [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
 - [ ] E3 — todo
 - [ ] E4 — todo
 - [ ] E5 — todo
@@ -332,3 +332,11 @@ PASS E1.runtime: measured 1737.338635708; required < 1800s
 PASS E1.liveConfig: measured 5; required passing test + SHA-256-verified log
 
 Checks: tests/e1-model-unit.log (5), tests/e1-accept-types.log, tests/e1-accept-suite.log. Full suite: 2,536 web and 730 server tests pass; 1,393 rules pass with two existing expected failures and eleven skips. Native 42-day cohorts feed the 52-week token model. BASELINE.md documents extrapolation, finite market float and target misses. No baseline numbers were tuned.
+
+## E2 evidence
+
+PASS E2.sinks: measured 3; required >= 3 new sinks in rules, server, UI, sim with tests and screenshots
+
+PASS E2.bellsOnly: measured 11; required passing test + SHA-256-verified log
+
+Checks: tests/e2-final-types.log, tests/e2-final-suite.log (2,536 web, 730 server; 1,393 rules plus two existing expected failures and eleven skips), tests/e2-model.log (8), tests/e2-browser-final.log. SINKS.json ties production source hashes to three actual Anvil burns and quote screenshots. SINK-MODEL.json is a 40-seed regression, not E3 acceptance. Existing audio callsites were re-inspected: no unresolved or missing cues.

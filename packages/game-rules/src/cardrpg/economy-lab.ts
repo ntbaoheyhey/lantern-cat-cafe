@@ -1,10 +1,12 @@
 import {ECONOMY_V3} from './economy-v3';
 import {ECONOMY_C2} from './depth/economy-c2';
+import {ECONOMY_SINKS} from './economy-sinks-v3';
 
 /** Scenario assumptions, not measured player behaviour or production entitlements.
  * Both ledgers receive this object. Policy references are the actual rule tables. */
 export const ECONOMY_LAB = {
-  policy:ECONOMY_V3, c2:ECONOMY_C2,
+  policy:ECONOMY_V3, c2:ECONOMY_C2, sinks:ECONOMY_SINKS,
+  preferences:{loadoutItems:16},
   population:500, tokenWeeks:52, cohortDays:42, startEpoch:Date.UTC(2026,10,13),
   initial:{testerYarn:20,testerRecipients:100,marketYarnPerParticipant:40},
   profiles:[

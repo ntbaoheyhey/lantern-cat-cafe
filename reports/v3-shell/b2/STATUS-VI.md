@@ -11,12 +11,13 @@
 - 48/75 lời trong trận thường, 16/35 lời trong trận boss bị lời sau cắt ngang.
 - Đã ghi yêu cầu nhịp chuyển chiêu cho A; lỗi đo giọng/menu vẫn thuộc B.
 - Gói âm thanh hiện 15,42 MB, dưới giới hạn 16 MB; nguồn và giấy phép được giữ.
-- Typecheck đạt; 2.532 test web, 724 server đạt.
-- Rules: 1.388 đạt, 2 expected-fail, 11 skip có sẵn.
+- Typecheck đạt; 2.536 test web, 730 server đạt.
+- Rules: 1.393 đạt, 2 expected-fail, 11 skip có sẵn.
 - S6 đạt: 795/802 thao tác, 54 trạng thái; 0 lỗi âm thanh; khoảng im lặng 3,54 ms.
 - S7 đạt: đủ 867 cue; phát 20 cue ngẫu nhiên và xem thử 12 giọng mèo trên máy.
 - E1 đạt: 18 kịch bản, mỗi kịch bản 200 seed, 1.000 tài khoản C2; 28 phút 57 giây.
-- E2: 3 sink đã chạy Anvil; đang hoàn tất kiểm tra mô phỏng. E3–E5, T1, C1, E6 và polish còn mở.
+- E2 đạt: 3 sink bảo đảm, đủ giá/odds, burn Anvil đúng và chống tiêu hai lần.
+- Mô phỏng sink giảm tỷ lệ Star Thread xuống 2,46–4,67; vẫn chưa đạt. E3–E5, T1, C1, E6 và polish còn mở.
 - Kinh tế mới và bộ đếm Fuji trực tiếp chưa có kết quả đạt.
 - Đồng bộ 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
 - Không triển khai hoặc merge main; người dùng triển khai ngày 20-11.

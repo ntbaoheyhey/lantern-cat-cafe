@@ -1,0 +1,156 @@
+{
+  "sinks": [
+    {
+      "rules": {
+        "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
+        "sha256": "8a0725325c3cccb390a70df683c5c3c9816318b581fcafe14d718ce2399c3ad9"
+      },
+      "server": {
+        "path": "supabase/functions/_shared/economy-v3.ts",
+        "sha256": "9ea46cf6ab316dc0ae5b62c8e9bfea1020f497041746e8a7db13e6158af4d0a5"
+      },
+      "ui": {
+        "path": "apps/web/src/game/cardrpg/chain/EconomySinksB2.tsx",
+        "sha256": "c26c89f31c26bc8e995df3000ba677bd3b5629c762e48d04225179ee865263aa"
+      },
+      "sim": {
+        "path": "tools/chain/economy-lab/studio.mjs",
+        "sha256": "976e214c697eb9e82ec7fe8b483d1d0165dfc7ac2265ff3604889d4b1b9c7da4"
+      },
+      "id": "polish",
+      "benefit": "Guaranteed Fine quality",
+      "costShown": true,
+      "oddsShown": true,
+      "screenshot": {
+        "path": "reports/v3-shell/b2/econ/shots/sink-polish.png",
+        "sha256": "fff1a089d4688fc8ee8cf677550fd856fbe308926a1d2e590748e2e7461dbb4e"
+      },
+      "test": {
+        "exitCode": 0,
+        "passed": 6,
+        "log": {
+          "path": "reports/v3-shell/b2/tests/e2-server.log",
+          "sha256": "e43aa441e1bbc650b535a09cf1a6578a77436862436f123fdb6d5ee355c5f2e8"
+        }
+      },
+      "receipt": "0x9d53c27150119f0af2595ab50f792153e55de6f827d263d47939f4ca93be69fe"
+    },
+    {
+      "rules": {
+        "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
+        "sha256": "8a0725325c3cccb390a70df683c5c3c9816318b581fcafe14d718ce2399c3ad9"
+      },
+      "server": {
+        "path": "supabase/functions/_shared/economy-v3.ts",
+        "sha256": "9ea46cf6ab316dc0ae5b62c8e9bfea1020f497041746e8a7db13e6158af4d0a5"
+      },
+      "ui": {
+        "path": "apps/web/src/game/cardrpg/chain/EconomySinksB2.tsx",
+        "sha256": "c26c89f31c26bc8e995df3000ba677bd3b5629c762e48d04225179ee865263aa"
+      },
+      "sim": {
+        "path": "tools/chain/economy-lab/studio.mjs",
+        "sha256": "976e214c697eb9e82ec7fe8b483d1d0165dfc7ac2265ff3604889d4b1b9c7da4"
+      },
+      "id": "decor",
+      "benefit": "Permanent moon café scene",
+      "costShown": true,
+      "oddsShown": true,
+      "screenshot": {
+        "path": "reports/v3-shell/b2/econ/shots/sink-decor.png",
+        "sha256": "9686f37d9446f5a61d068ef5c00f68116ddfb8735437d7f662eb4291c78dc357"
+      },
+      "test": {
+        "exitCode": 0,
+        "passed": 6,
+        "log": {
+          "path": "reports/v3-shell/b2/tests/e2-server.log",
+          "sha256": "e43aa441e1bbc650b535a09cf1a6578a77436862436f123fdb6d5ee355c5f2e8"
+        }
+      },
+      "receipt": "0x1877381af1d1b0a9f2fa9d7329de859782b1a6114644082b59aeeed5916afde2"
+    },
+    {
+      "rules": {
+        "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
+        "sha256": "8a0725325c3cccb390a70df683c5c3c9816318b581fcafe14d718ce2399c3ad9"
+      },
+      "server": {
+        "path": "supabase/functions/_shared/economy-v3.ts",
+        "sha256": "9ea46cf6ab316dc0ae5b62c8e9bfea1020f497041746e8a7db13e6158af4d0a5"
+      },
+      "ui": {
+        "path": "apps/web/src/game/cardrpg/chain/EconomySinksB2.tsx",
+        "sha256": "c26c89f31c26bc8e995df3000ba677bd3b5629c762e48d04225179ee865263aa"
+      },
+      "sim": {
+        "path": "tools/chain/economy-lab/studio.mjs",
+        "sha256": "976e214c697eb9e82ec7fe8b483d1d0165dfc7ac2265ff3604889d4b1b9c7da4"
+      },
+      "id": "display",
+      "benefit": "Permanent 3 display slots",
+      "costShown": true,
+      "oddsShown": true,
+      "screenshot": {
+        "path": "reports/v3-shell/b2/econ/shots/sink-display.png",
+        "sha256": "7b0583b598bb4ffc060e5c8e2861f6587cdde4f9ffe39335579343e2f9f8f666"
+      },
+      "test": {
+        "exitCode": 0,
+        "passed": 6,
+        "log": {
+          "path": "reports/v3-shell/b2/tests/e2-server.log",
+          "sha256": "e43aa441e1bbc650b535a09cf1a6578a77436862436f123fdb6d5ee355c5f2e8"
+        }
+      },
+      "receipt": "0xe88dadb0351f8bbbdd11985c7a6458b03e6def105c00e2de0f91b5c406c6a26c"
+    }
+  ],
+  "checks": {
+    "rules": {
+      "exitCode": 0,
+      "passed": 11,
+      "log": {
+        "path": "reports/v3-shell/b2/tests/e2-rules.log",
+        "sha256": "4e297c1f1463aec30f42244990b66baa12374838fba13c74ed6a7498c52a47e5"
+      }
+    },
+    "server": {
+      "exitCode": 0,
+      "passed": 6,
+      "log": {
+        "path": "reports/v3-shell/b2/tests/e2-server.log",
+        "sha256": "e43aa441e1bbc650b535a09cf1a6578a77436862436f123fdb6d5ee355c5f2e8"
+      }
+    },
+    "ui": {
+      "exitCode": 0,
+      "passed": 4,
+      "log": {
+        "path": "reports/v3-shell/b2/tests/e2-ui-final.log",
+        "sha256": "1a889759825189c814a462015e561ddbcbc27aa109cc4f7a03ab5d0c7042ca60"
+      }
+    },
+    "model": {
+      "exitCode": 0,
+      "passed": 8,
+      "log": {
+        "path": "reports/v3-shell/b2/tests/e2-model.log",
+        "sha256": "2232c1986e3eb18541344baefd2f3b5c0451140fc95391542b4fdd11d2de1e44"
+      }
+    }
+  },
+  "bellsOnlyTest": {
+    "exitCode": 0,
+    "passed": 11,
+    "log": {
+      "path": "reports/v3-shell/b2/tests/e2-rules.log",
+      "sha256": "4e297c1f1463aec30f42244990b66baa12374838fba13c74ed6a7498c52a47e5"
+    }
+  },
+  "config": {
+    "path": "packages/game-rules/src/cardrpg/economy-lab.ts",
+    "sha256": "9a9ecb0c3e11481da9e62c344f01a2bd0077525ec60c17ae6230e40a52c50569"
+  },
+  "method": "Server ledger reservations, exact existing YARN sealPayments burn verification, idempotent finalization, no random currency or outcome. Same recipe quote executes in token simulation. Real Anvil browser screenshots and receipts; explicit visual fixtures are documented in SINK-BROWSER.json."
+}

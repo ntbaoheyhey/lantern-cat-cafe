@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {loadLabRuntime} from './runtime.mjs';
+import {loadLabRuntime,root} from './runtime.mjs';
+import {resolve} from 'node:path';
 import {gearAccount} from './cohort.mjs';
 import {scenarios,tokenRun} from './token.mjs';
-const runtime=await loadLabRuntime(),config=runtime.ECONOMY_LAB;
+const runtime=await loadLabRuntime(resolve(root,'work/economy-lab/tests',String(process.pid))),config=runtime.ECONOMY_LAB;
 const fixtureBank=()=>config.profiles.map((p,i)=>({profile:p.id,firstLegendaryDay:i?7:13,daily:Array.from({length:config.cohortDays},(_,d)=>({day:d+1,active:true,hours:p.hours,wins:6,level:20,cleared:[1,2,3],gear:{'hearthloom-weapon-epic':3}}))}));
 test('all eighteen unique scenario combinations retain independent bot shares',()=>{
  const cases=scenarios(config);assert.equal(cases.length,18);assert.equal(new Set(cases.map(c=>c.id)).size,18);

@@ -1,9 +1,10 @@
 /** Public, seed-free economy protocol. Amounts use 18-decimal token units. */
 export interface EconomyGear {id:string;template:string;quality:number}
 export interface EconomyIntent {
- id:string;kind:'seal'|'fusion'|'withdraw';cost:string;token:number;rarity:number;
+ id:string;kind:'seal'|'fusion'|'withdraw'|'sink';cost:string;token:number;rarity:number;
  gross?:string;net?:string;retained?:string;burnIds:number[];burnAmounts:number[];
  ready:boolean;created:number;burnTx?:string;minted?:boolean;
+ recipe?:{id:'polish'|'decor'|'display';name:string;key:string;benefit:string;starThread:number;successBp:number;style?:string;item?:EconomyGear;quality?:number;slots?:number};
 }
 export interface EconomyState {
  spool:string;stars:number;bossSeals:number;level:number;quest:boolean;deed:number|null;
@@ -17,6 +18,7 @@ export type EconomyCommand =
  | {action:'seal';instance:string;deed?:number}
  | {action:'fusion';instances:string[];tokens:number[];sealedStars:number}
  | {action:'spend';sku:'lantern-skin'}
+ | {action:'sink';sink:'polish'|'decor'|'display';instance?:string}
  | {action:'finalize';intent:string;burnTx?:string}
  | {action:'voucher';intent:string};
 export interface EconomyVoucher {player:string;relicId:string;rarity:number;nonce:string;expiry:string;signature:string;used:boolean}
