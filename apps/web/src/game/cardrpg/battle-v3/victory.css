@@ -10,7 +10,21 @@
 .c2-result .a6-result-goals li:nth-child(2){animation-delay:.14s}.c2-result .a6-result-goals li:nth-child(3){animation-delay:.28s}
 @keyframes b3-star-pop{from{opacity:0;transform:scale(.5) rotate(-18deg)}70%{opacity:1;transform:scale(1.2) rotate(5deg)}to{transform:scale(1)}}
 .c2-result[data-reduced=true] .a6-result-goals li{animation:none}
-.c2-result .a6-result-heading h2,.c2-result .a6-result-companion h3{color:#ffe2a2}
-.c2-result .a6-result-companion>p{color:#ead8be}
-.c2-result[data-a6-loss=true] .a6-result-heading h2{color:#f7afa3}
+.uv-app[data-a6=true] .c2-result .a6-result-heading h2,.uv-app[data-a6=true] .c2-result .a6-result-companion h3{color:#ffe2a2}
+.uv-app[data-a6=true] .c2-result .a6-result-companion>p{color:#ead8be}
+.uv-app[data-a6=true] .c2-result[data-a6-loss=true] .a6-result-heading h2{color:#f7afa3}
+.uv-app[data-a6=true] .c2-result .a6-result-receipt:not(:has([data-reward-id])){min-height:0;background:none;border:0;outline:0;box-shadow:none}
+@media(max-width:650px){
+ .uv-app[data-a6=true] .uv-sheet-content[data-screen=result]:has(.c2-result){overflow:auto}
+ .uv-app[data-a6=true] .uv-result.c2-result{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;align-content:start;height:auto;min-height:100%;gap:10px;padding-bottom:8px}
+ .uv-app[data-a6=true] .c2-result .a6-result-heading{gap:10px;flex-wrap:wrap}
+ .uv-app[data-a6=true] .c2-result .a6-result-heading h2{font-size:36px}
+ .uv-app[data-a6=true] .c2-result .a6-result-companion h3{font-size:24px}
+ .uv-app[data-a6=true] .c2-result .b3-victory-crew{height:190px;min-height:150px}
+ .uv-app[data-a6=true] .c2-result .a6-result-receipt{min-width:0;min-height:0;padding:10px;width:100%;box-sizing:border-box}
+ .uv-app[data-a6=true] .c2-result .a6-result-tickets{grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 8px;gap:6px}
+ .uv-app[data-a6=true] .c2-result .a6-result-tickets article{flex-wrap:wrap;justify-content:center;padding:6px;gap:4px}
+ .uv-app[data-a6=true] .c2-result .a6-result-actions{gap:8px;flex-wrap:wrap}
+ .uv-app[data-a6=true] .c2-result .a6-result-actions>button{min-width:0;flex:1}
+}
 @media(prefers-reduced-motion:reduce){.b3-confetti{display:none}.c2-result .a6-result-goals li{animation:none}}
