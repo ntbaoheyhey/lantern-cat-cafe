@@ -8,9 +8,9 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q1 | done | B then A | 435/435 browser; B E2E; 33 word-budget screens | STARTED 2026-11-13 12:39:36 UTC; A e7ce36076 B c32b6475f; 230 PASS/0 FAIL; ENDED 2026-11-13T13:19:00.871648+00:00 |
 | Q2 | done | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity | STARTED 2026-11-13T13:20:12.094442+00:00; PASS59/59; A18ea6e6e8 B298a4fbd8/evidence fa65a9b40; ENDED 2026-11-13T14:38:34.072973+00:00 |
 | Q3 | done | A | M1 29/29; dependencies 259/259; SOLO9/9; High59.95–60.05; parity | STARTED 2026-11-13T14:39:07.792289+00:00; PASS 259 A +9 SOLO; source af1e1fdf3; evidence a881b1fc8; ENDED 2026-11-13T16:15:40.347744+00:00 |
-| Q4 | active | B | E3 active:24 rounds/1273 unique; T-a..g PASS at200seeds, T-h132/170 complete with no misses; E4 proof16 receipts/18 shots; E5 generated with816 citations | STARTED 2026-11-13T16:16:50.578116+00:00 |
+| Q4 | done | B | E3-E5 24/24 PASS;85 assumptions,170 cases,0 misses; current suite435/435 PASS | STARTED 2026-11-13T16:16:50.578116+00:00; evidence838434f59; ENDED 2026-11-13T22:45:54.020159+00:00 |
 | Q5 | done | B (+ A texts) | V8/8, S5 all PASS; 50/50 ultimate,62/62 skill; 6 full renders; reel90.054s; suite435 browser PASS | STARTED 2026-11-13T17:25:44.984813+00:00; source422585ca5/evidence d67b0a303; ENDED 2026-11-13T21:25:40.344963+00:00 |
-| Q6 | active | B | U3 target54/54 >=8; preparation controls already repaired on A; rebuilding hero focus/bonds and labelled wallet first | STARTED 2026-11-13T21:17:35.227574+00:00 |
+| Q6 | done | B | U3 9/9 PASS;54/54 screens;435/435 browser; types/unit PASS;24 phone samples | STARTED 2026-11-13T21:17:35.227574+00:00; sourceB9b25782ff,Af6dc3cadd; ENDED 2026-11-13T22:45:54.020159+00:00 |
 | Q7 | todo | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS |  |
 | Q8 | todo | B (+ A attributes) | T1 coach and C1 >=3/4 live Fuji counters |  |
 | Q9 | todo | A/B by ownership | Open items then A P1, B P1-P8, E6 if E3 passed |  |
@@ -666,4 +666,42 @@ PASS S5.forge.peak: measured -1.94; required <= -1 dBTP
 PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
 PASS S5.chart: measured 86892; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
 PASS S5.reel: measured 90.054; required >= 90s sound reel
+```
+
+## Q4 and Q6 checker evidence
+
+```text
+PASS E3.rounds: measured 24; required >= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured 8.958333333333334; required >= 2 changed levers per round on average
+PASS E3.searchLevers: measured 20; required >= 10 levers per search
+PASS E3.configs: measured 1273; required >= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured 10; required top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured 5; required >= 3 model/lever structural changes
+PASS E3.finalScenarios: measured 18; required all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured 18/18; required burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured 18/18; required Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured 18/18; required heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
+PASS E3.T-h: measured 85/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
+PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash
+PASS E4.receipts: measured 16; required >= 13 + new sink count confirmed receipts
+PASS E4.sinks: measured 3/3; required one confirmed use of every new sink
+PASS E4.screenshots: measured 18; required 1280x720 and 1440x900 economy screenshots
+PASS E4.odds: measured 5; required passing test + SHA-256-verified log
+PASS E5.report: measured 18077; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
+PASS E5.numbers: measured 816; required >= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured 816/816; required all report-number citations valid
+PASS U3.screens: measured 54; required >= 24 rebuilt screens
+PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
+PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
+PASS U3.words: measured 54/54; required <= 25 visible words every screen
+PASS U3.buttons: measured 54/54; required <= 2 plain text buttons every screen
+PASS U3.fonts: measured 0; required 0 system fonts
+PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
+PASS U3.scores: measured 54/54; required average >= 8; every criterion >= 7
+PASS U3.flows: measured 435; required passing test + SHA-256-verified log
 ```
