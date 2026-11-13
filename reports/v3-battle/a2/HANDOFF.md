@@ -1,17 +1,16 @@
 # V3-A2 handoff
-NOW: P9 icon browser review; P8 full suite running.
-NEXT 1: Find a legal immunity event for badge review; finish P7/P8/P9 evidence.
-NEXT 2: P10 atlas/pool performance under4x CPU; refresh M1 full-frame motion.
-NEXT 3: Refresh stale visual gates; scheduled SY1/SY2/SY3 only on dates.
-LAST GOOD COMMIT: 7f6808420 P9 source; pushed through4d3c27e1c.
-OPEN: Shared Night tips E2E9/10; all primary cards remain open.
-P6: all12 poses, pixel-still reduced, real stars/rewards; phone stack/cascade repaired.
-P7: exact500ms at0.4x for all3 speeds; three seeded full encounters identical.
-P8: native+touch swaps and row preview; HP/seed/stats unchanged; suite running.
-P9: absorb/resist seen in3 real fixtures; need legal immunity flow, no invented badge.
-M1: old baseline8–9; later all-actors pilot15.343/15.796 before weather/crowd.
-UNCOMMITTED: refreshed M1/V1/V2 evidence from prior run; P7/P8/P9 scripts/reports.
-PIDS: Vite13804 parent13794 port5990; P8 suite session9335.
-DISK:290GiB free; no low-disk restriction.
+NOW: P10 packed atlas and particle pools; baseline and wave1 ensemble capture.
+NEXT 1: Finish P9 suite/commit; wire P10 after ensemble capture completes.
+NEXT 2: Run packed-pixel equality and High/Low4x CPU checks; commit P10.
+NEXT 3: Refresh M1 full-frame energy and all stale visual gates. Scheduled sync only on dates.
+LAST GOOD COMMIT: 1ce5fcefa P8 evidence; older source7f6808420 P9.
+OPEN: Shared hidden Night tips E2E9/10, no threshold or selector weakened.
+P8: native/touch swaps, row preview and HP/seed/stats equality verified.
+P9: all3 icons captured from legal combat; original source and log math unchanged.
+P10: baseline High59.84–60 FPS; Low4x33.20–42.94 FPS; 86 decoded sheets172MiB.
+M1: ensemble wave1 capture under way; previous all-actors15.343/15.796.
+UNCOMMITTED: older refreshed M1/V1/V2 evidence; P9 evidence; new unused P10 atlas/pool modules.
+PIDS: Vite13804 parent13794 port5990; P9 suite28588 session72378; ensemble session38663.
+DISK:290GiB free; resume cleanup logged; no low-disk restriction.
 SYNC:16Nov12:00UTC;18Nov12:00UTC;freeze19Nov12:00UTC.
 STOP: check STOP-V3A; work alone; no deploy/main merge or B-owned edits.
