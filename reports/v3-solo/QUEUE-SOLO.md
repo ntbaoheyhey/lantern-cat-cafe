@@ -4,8 +4,8 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 
 | Item | State | Worktree | Evidence / gates | Item log |
 |---|---|---|---|---|
-| Q0 | active | B then A | Preserve edits; clean trees; pushes | STARTED 2026-11-13 12:26:47 UTC |
-| Q1 | todo | B then A | 435/435 browser; B E2E; 33 word-budget screens |  |
+| Q0 | done | B then A | Q0-RESULT.json; saved evidence/source and all tests | STARTED 2026-11-13 12:26:47 UTC; PASS Q0.A.clean=0; PASS Q0.B.clean=0; PASS both pushes; A ca90150a5 B e281e4d73; ENDED 2026-11-13 12:38:57 UTC |
+| Q1 | active | B then A | 435/435 browser; B E2E; 33 word-budget screens | STARTED 2026-11-13 12:39:36 UTC |
 | Q2 | todo | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity |  |
 | Q3 | todo | A | M1 full fixtures >=15.80; all enemy displacements >6%; FPS/parity |  |
 | Q4 | todo | B | E3, E4, E5; background search after Q0 |  |
