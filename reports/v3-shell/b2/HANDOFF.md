@@ -1,5 +1,5 @@
 # V3B2 handoff
-NOW: V3SOLO Q0: types and 17 economy-lab tests PASS; saving inherited E3 source/reports. Full unit suite PASS; standalone word-budget blocked at entrance; Q1 will repair shared helper/route. No E3 acceptance.
+NOW: V3SOLO Q0: types and 17 economy-lab tests PASS; source/reports saved and pushed; recording completed baseline checks. Full unit suite PASS; standalone word-budget blocked at entrance; Q1 will repair shared helper/route. No E3 acceptance.
 DIAGNOSIS: Round 4 raw JSON key ordering broke config lookup/local refinement, despite correct worker metrics. All 40 configs reconstructed and verified by original hashes.
 FIX: Canonical config hashes + fail-closed worker identity check. Round 4 honestly reports two global passes. Frozen modules prevent mid-run model drift.
 NEXT 1: Continue E3 to >=15 measured rounds / >=600 unique configs; inspect outliers and adjust >=10 live ranges. Log each with log-round.mjs.
