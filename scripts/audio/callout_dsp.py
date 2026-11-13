@@ -63,7 +63,24 @@ def process(row, take=0, settings=None):
     # survives the chest/nasal coloration so small speakers retain the words.
     semitones=p['baseSemitones']*settings['pitchWeight']+(take-.5)*.35
     ratio=2**(semitones/12)
-    speech=ffmpeg(speech,f"asetrate={round(RATE*ratio)},aresample={RATE},atempo={1/ratio}")
+    if settings.get('preserveFormants'):
+        # WORLD keeps each vowel's spectral envelope while changing the vocal
+        # excitation. This avoids the chipmunk/darkened vowels of resampling.
+        import pyworld as world
+        source=np.asarray(speech,dtype=np.float64)
+        f0,t=world.dio(source,RATE,f0_floor=70,f0_ceil=1200,frame_period=5)
+        f0=world.stonemask(source,f0,t,RATE)
+        envelope=world.cheaptrick(source,f0,t,RATE)
+        aperiodicity=world.d4c(source,f0,t,RATE)
+        accent=settings.get('phraseAccent',0)
+        voiced=np.flatnonzero(f0>0)
+        progress=np.clip((t-t[voiced[0]])/max(.01,t[voiced[-1]]-t[voiced[0]]),0,1) if len(voiced) else t*0
+        # A spoken exclamation relaxes from its opening emphasis into the end.
+        gesture=.5-(3*progress**2-2*progress**3)
+        f0*=2**((semitones+accent*gesture)/12)
+        speech=world.synthesize(f0,envelope,aperiodicity,RATE,frame_period=5).astype(np.float32)[:len(source)]
+    else:
+        speech=ffmpeg(speech,f"asetrate={round(RATE*ratio)},aresample={RATE},atempo={1/ratio}")
     weight=settings['filterWeight']
     speech=cat_speak.spectral(speech,lambda f:(1-weight)+weight/(1+(f/p['brightness'])**(2*p.get('rolloff',1))))
     speech=cat_speak.spectral(speech,lambda f:10**(p.get('colorDb',0)*weight*np.exp(-.5*(np.log2(np.maximum(f,30)/p.get('colorHz',900))/.65)**2)/20))
@@ -94,7 +111,11 @@ def process(row, take=0, settings=None):
         d=int(RATE*seconds);x[d:]+=dry[:-d]*gain
     if settings.get('eq'):
         eq=settings['eq']
-        x=cat_speak.spectral(x,lambda f:colour_response(f,eq))
+        # Retain a measured amount of the spoken core under character colour.
+        # Narrow character filters otherwise remove voiced fundamentals and
+        # consonants together, leaving a thin line that music easily masks.
+        dry_mix=max(0,min(1,settings.get('spokenCore',0)))
+        x=cat_speak.spectral(x,lambda f:dry_mix+(1-dry_mix)*colour_response(f,eq))
     return normalize_callout(x),used,{'profile':p,'settings':settings,'semitones':semitones,'grains':details,'speechModel':MODEL_URL,'firstWordMs':round(lead*1000)}
 
 def normalize_callout(x):

@@ -4,14 +4,19 @@ import {mkdirSync,readFileSync,writeFileSync,rmSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {gzipSync} from 'node:zlib';
+import {resolve} from 'node:path';
 import {installOutputCapture} from './capture-page.mjs';
+import {runtimeSignature,assertUnchanged} from './runtime-signature.mjs';
 const require=createRequire(new URL('../../apps/web/package.json',import.meta.url)),{chromium}=require('@playwright/test');
 const base='reports/v3-shell/b2',trial=process.env.MIX_TRIAL||'baseline';
+const runtimeRoot=resolve(process.env.AUDIO_RUNTIME_ROOT||'.');
+const runtimeUrl=process.env.AUDIO_URL||'http://127.0.0.1:5995';
 const mutedBuses=(process.env.DIAGNOSTIC_MUTE_BUSES||'').split(',').filter(Boolean);
 if(mutedBuses.length&&!trial.startsWith('diagnostic-'))throw Error('Stem isolation must be labelled diagnostic, never acceptance evidence.');
 const names=(process.env.AUDIO_SCENES||'battle,boss,home,bag,gacha,forge').split(',');
 const durations={battle:180,boss:120,home:60,bag:60,gacha:60,forge:60};
 const signed=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
+const runtimeSources=runtimeSignature(runtimeRoot);
 mkdirSync(`${base}/renders`,{recursive:true});mkdirSync(`${base}/mix`,{recursive:true});mkdirSync('tmp/b2-mix',{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
 try{
@@ -23,32 +28,34 @@ try{
   const raw=`tmp/b2-mix/${trial}-${name}.webm`,output=`${base}/renders/${trial}-${name}.opus`;
   await installOutputCapture(p,raw);
   await p.addInitScript(()=>localStorage.setItem('lantern.coach.v3','{"disabled":true}'));
-  await p.goto('http://127.0.0.1:5994/?demo=1&squad=1&turn3d=1&cardrpg2=1&a6=1&formationc2=1');
+  await p.goto(runtimeUrl+'/?demo=1&squad=1&turn3d=1&cardrpg2=1&a6=1&formationc2=1');
   await p.getByRole('button',{name:'Play free',exact:true}).click();await p.locator('.uv-shell').waitFor();
-  await p.evaluate(async()=>{
-   const m=window.__depthReview,R=await import('/@fs/Users/bao/taskbar-hero-chain/packages/game-rules/src/cardrpg/depth/index.ts');
+  await p.evaluate(async runtimeRoot=>{
+   const m=window.__depthReview,R=await import('/@fs'+runtimeRoot+'/packages/game-rules/src/cardrpg/depth/index.ts');
    m.state.tutorial=5;m.state.freeInvite=true;m.state.economyV3=true;m.state.settings.reducedMotion=false;
    m.state.account.currencies={...m.state.account.currencies,fish:200000,threads:50000,stamps:6000};m.state.materials=500;m.state.seals=10;
    for(const item of R.itemCatalogueV4())m.state.account.inventory.stacks[item.id]=10;
    for(let n=0;n<4;n++)m.state.gear.push(R.makeGear(m.state,'hearthloom-weapon-common',1));
    m.notify(false);await window.__thAudio.unlock();
-  });
+  },runtimeRoot);
   await p.waitForTimeout(1800);
   for(let n=0;n<15;n++){const dismiss=p.getByRole('button',{name:/^(Dismiss celebration|Skip celebration)$/}).first();if(!await dismiss.isVisible().catch(()=>false))break;await dismiss.click();}
   if(['battle','boss'].includes(name)){
-   await p.evaluate(async name=>{
-    const m=window.__depthReview,R=await import('/@fs/Users/bao/taskbar-hero-chain/packages/game-rules/src/cardrpg/depth/index.ts');
+   await p.evaluate(async({name,runtimeRoot})=>{
+    const m=window.__depthReview,R=await import('/@fs'+runtimeRoot+'/packages/game-rules/src/cardrpg/depth/index.ts');
     m.watchNow();
     // Rules-built encounter with a fixed seed for repeatable mix comparisons.
     // The seed changes randomness only; roster, stats and actions remain real.
     m.plan=null;m.tutorialBattle=R.createBattle({...m.battle.initial,seed:20261113,...(name==='boss'?{enemies:['yarn-giant']}:{enemies:['teacup-healer','sock-skipper']}),tutorial:false});m.fight();
-    window.__mixStats={restarts:0,initial:m.battle.initial,start:Date.now()};
+    window.__mixStats={restarts:0,initial:m.battle.initial,start:Date.now(),speechSpace:[]};
     window.__mixTimer=setInterval(()=>{
+     const audio=window.__thAudio;
+     if(audio.diagnostics.voice)window.__mixStats.speechSpace.push({at:Date.now(),db:audio.speechSpace?.gain.value??0,music:audio.bedIds?.music});
      if(m.screen!=='result')return;
      m.plan=null;m.tutorialBattle=R.createBattle(window.__mixStats.initial);m.fight();
      window.__mixStats.restarts++;
     },75);
-   },name);
+   },{name,runtimeRoot});
   }else if(name!=='home'){
    await p.evaluate(screen=>window.__depthReview.go(screen),name==='gacha'?'gacha':'inventory');
    await p.locator(name==='gacha'?'.uv-recruit':'.b2-bag').first().waitFor();
@@ -89,8 +96,9 @@ try{
   writeFileSync(log,gzipSync(JSON.stringify({name,started,ended,actions,errors,...runtime})));
   await p.close();
   execFileSync('ffmpeg',['-v','error','-y','-i',raw,'-c:a','copy',output]);rmSync(raw);
-  const metrics=JSON.parse(execFileSync('python3',['scripts/audio/analyse.py',output,'--duration',String(seconds+.2)],{encoding:'utf8',maxBuffer:8e6}));
-  const result={name,...signed(output),...metrics,algorithmSha256:signed('scripts/audio/analyse.py').sha256,runtime:signed(log),actions,errors,trial,...(mutedBuses.length?{diagnostic:true,mutedBuses}:{}),method:'Actual browser output, seeded local saves and real UI/rules actions; no test playback calls, output normalization or postmix effects.'};
+  const metrics=JSON.parse(execFileSync(process.env.AUDIO_PYTHON||'python3',['scripts/audio/analyse.py',output,'--duration',String(seconds+.2)],{encoding:'utf8',maxBuffer:8e6}));
+  assertUnchanged(runtimeRoot,runtimeSources);
+  const result={name,...signed(output),...metrics,algorithmSha256:signed('scripts/audio/analyse.py').sha256,runtime:signed(log),runtimeSources,actions,errors,trial,...(mutedBuses.length?{diagnostic:true,mutedBuses}:{}),method:'Actual browser output, seeded local saves and real UI/rules actions; no test playback calls, output normalization or postmix effects.'};
   writeFileSync(`${base}/mix/${trial}-${name}.json`,JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify({trial,name,seconds:metrics.durationSeconds,onsets:metrics.onsetsPerSecond,layers:metrics.layersPerOnset,ticks:metrics.tickTransientsPerSecond,voices:metrics.voiceContoursPerMinute,bed:metrics.musicBedFraction,lufs:metrics.integratedLufs,peak:metrics.truePeakDbTP,errors}));
   if(errors.length)process.exitCode=1;

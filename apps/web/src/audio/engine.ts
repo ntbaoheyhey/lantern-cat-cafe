@@ -14,13 +14,14 @@ export interface LayerPlayed {role:string;variantId:string;offsetMs:number;pitch
 export interface AudioHit {id:string;result:string;at:number;layers?:LayerPlayed[];sfx?:number;voice?:number;duckDb?:number;}
 export class AudioEngine implements AudioBridge {
  private ctx?:AudioContext;
- private buses=new Map<Bus,GainNode>(); private duck?:GainNode;
+ private buses=new Map<Bus,GainNode>(); private duck?:GainNode; private speechSpace?:BiquadFilterNode;
  private buffers=new Map<string,Promise<AudioBuffer>>(); private manifest?:Promise<AudioManifest>;
  private active=new Set<Playing>(); private last=new Map<string,number>();
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
  private voiceRequest=0; private pendingVoicePriority=0; private voicePriority=0;
  private lastVoiceRequested=-Infinity; private calloutRequests=new Map<string,number>();
  private bedTokens={music:0,ambience:0}; private bedIds={music:'',ambience:''}; private paused=false; private rate=1;
+ private speechCut=false;
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
  constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/'){
@@ -36,12 +37,14 @@ export class AudioEngine implements AudioBridge {
   this.ctx??=new AudioContext();
   if(!this.buses.size){
    const limiter=this.ctx.createDynamicsCompressor();limiter.threshold.value=-4;limiter.knee.value=6;limiter.ratio.value=20;limiter.attack.value=.002;limiter.release.value=.15;
-   const headroom=this.ctx.createGain();headroom.gain.value=dbGain(-2);limiter.connect(headroom).connect(this.ctx.destination);
+   const headroom=this.ctx.createGain();headroom.gain.value=dbGain(-2.25);limiter.connect(headroom).connect(this.ctx.destination);
    // Calibrate the authored mix without changing the user's saved bus levels.
    const trim=this.ctx.createGain();trim.gain.value=dbGain(6);trim.connect(limiter);
    for(const name of BUS_NAMES){const gain=this.ctx.createGain();gain.gain.value=name==='master'&&this.muted?0:this.preferences[name];this.buses.set(name,gain);}
    this.buses.get('master')!.connect(trim);this.duck=this.ctx.createGain();this.duck.connect(this.buses.get('master')!);
-   for(const name of BUS_NAMES.slice(1))this.buses.get(name)!.connect(name==='music'?this.duck:this.buses.get('master')!);
+   this.speechSpace=this.ctx.createBiquadFilter();this.speechSpace.type='lowshelf';this.speechSpace.frequency.value=1200;this.speechSpace.gain.value=0;
+   this.speechSpace.connect(this.duck);
+   for(const name of BUS_NAMES.slice(1))this.buses.get(name)!.connect(name==='music'?this.speechSpace:this.buses.get('master')!);
   }
   await this.ctx.resume();this.paused=false;this.remember();
  }
@@ -66,8 +69,17 @@ export class AudioEngine implements AudioBridge {
  mute(value:boolean){this.muted=value;this.buses.get('master')?.gain.setTargetAtTime(value?0:this.preferences.master,this.ctx!.currentTime,.025);this.remember();}
  pause(value:boolean){this.paused=value;if(value)void this.ctx?.suspend();else void this.ctx?.resume().catch(()=>{});}
  speed(value:number){if(!Number.isFinite(value))return;this.rate=Math.max(1,Math.min(3,value));for(const p of this.active)if(p.bus==='sfx')p.source.playbackRate.setValueAtTime(p.baseRate*this.rate,this.ctx!.currentTime);}
- private duckMusic(){if(!this.ctx||!this.duck)return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
- private releaseDuck(){if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
+ private makeSpeechSpace(){
+  if(!this.ctx||!this.speechSpace)return;
+  const speaking=this.count('voice')>0&&this.bedIds.music==='music.battle';
+  if(speaking===this.speechCut)return;this.speechCut=speaking;
+  const p=this.speechSpace.gain,now=this.ctx.currentTime;
+  // Keep the upper strings and pulse while opening the dense battle harmony
+  // around the spoken fundamentals. The normal -8 dB music duck remains.
+  p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(speaking?-12:0,now+(speaking ? .06 : .4));
+ }
+ private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
+ private releaseDuck(){this.makeSpeechSpace();if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
  play(id:string,opts:CueOptions={}){
   const now=Date.now();
   if(id.startsWith('voice.')){
@@ -119,7 +131,8 @@ export class AudioEngine implements AudioBridge {
    if(bus==='ambience'){this.ambience(id);return;}
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
-   const volume=Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1;
+   const voiceTrimDb=bus==='voice'&&this.bedIds.music==='music.battle'?6:0;
+   const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(voiceTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
     this.start(id,loaded.get(chosen.sample.pack)!,chosen.sample,priority,userPitch*pitch,volume*dbGain(gainDb),0,'flat',group);
@@ -135,7 +148,7 @@ export class AudioEngine implements AudioBridge {
     // Authored cat sprites already contain pitch, formants and syllable timing.
     const pitch=userPitch*(sample.processedVoice?1:profile?.pitch??1);
     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume,0,'flat',group);
-    played.push({role:bus,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:0,pitch,gainDb:0});
+    played.push({role:bus,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:0,pitch,gainDb:voiceTrimDb});
    }
    if(design?.ducking)this.duckMusic();
    this.record(id,'played',played);

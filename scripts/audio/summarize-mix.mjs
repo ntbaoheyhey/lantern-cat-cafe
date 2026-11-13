@@ -17,6 +17,15 @@ const notes={
  '09-score-voice-balance':'Raised the authored battle score 3 dB; fixed the encounter seed for subsequent comparisons and measured the first complete encounters.',
  '10-upper-strings':'Restored upper bowed-string texture after spectral balance and isolated-stem diagnosis.',
  '11-room-tails':'Smoothed the impact room tails to reduce excess short bursts. Full captures still miss transient/voice targets; source-start analysis identifies interrupted charge/release lines.',
+ '12-solo-current':'Current A battle in isolated B checkout: zero source-start interruptions in both full renders, but the battle mix masks voiced contours. Boss passes the voice band.',
+ '13-battle-score-space':'Lowering the entire battle score by6dB leaves the45s probe below voice density and loudness targets. Rejected as the final mix.',
+ '14-speech-space':'A low-shelf opening under battle speech keeps loudness, but this45s probe still misses voice density. Not acceptance evidence.',
+ '15-speech-space-transitions':'Schedule the speech shelf on voice-state changes only; inspect actual shelf automation alongside the45s probe. Full renders remain required.',
+ '16-callout-presence':'The short presence probe passes, but is not acceptance evidence. The following full capture exposes the remaining articulation weakness.',
+ '17-current-full':'Full battle and boss fail contour density after the short probe passed. Source articulation, rather than more overall gain, is the next method.',
+ '18-spoken-articulation':'Both full voice-density bands pass, but a Mochi clarity edit breaks identity separation. Rejected; original Mochi restored.',
+ '19-preserved-identities':'All twelve voice identities pass. Battle contours4.661/min pass; boss6.988/min exceeds6.75. Rejected as final acceptance.',
+ '20-boss-balance':'Reduce only boss voice presence from6 to4.5dB; battle stays6dB. Source takes, every required callout, timing and analyser remain unchanged.',
 };
 const columns=['onsetsPerSecond','layersPerOnset','tickTransientsPerSecond','voiceContoursPerMinute','musicBedFraction','integratedLufs','truePeakDbTP'];
 let md='# S5 mix iterations\n\nEvery row links to actual browser-output measurements. Early trials are 30-second probes, not full-duration acceptance. All have been remeasured with the same corrected analyser. Diagnostic isolated stems are excluded from the iteration count and all gates. Numeric acceptance thresholds are unchanged.\n\n';

@@ -1,0 +1,2946 @@
+[
+  {
+    "cueId": "voice.mochi.skill.mochi-2",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/mochi-skill-2-1.flac",
+      "sha256": "9fbdbb0e4f8bcec2920c9244ef439297761e049d1e75b1ed989cb84331a298e3"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        }
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "war",
+          "vowel": "a",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.24,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.26
+        },
+        {
+          "syllable": "m",
+          "vowel": "u",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-02.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.52
+        },
+        {
+          "syllable": "wel",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-03.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.78
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-13.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.04
+        },
+        {
+          "syllable": "me",
+          "vowel": "e",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-05.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -4.72,
+      "durationSeconds": 1.2970068027210884
+    },
+    "contours": [
+      {
+        "start": 0.05,
+        "duration": 0.509,
+        "semitones": 2.22
+      }
+    ],
+    "recognition": {
+      "expected": "Warm welcome!",
+      "recognized": "You're welcome.",
+      "wordAccuracy": 0.5,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.mochi.skill.mochi-2",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/mochi-skill-core0.15.flac",
+      "sha256": "973f849fa1057c030402bf28dd85666bf668971108454e4b5cafe3e34fcdf119"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "war",
+          "vowel": "a",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.24,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.26
+        },
+        {
+          "syllable": "m",
+          "vowel": "u",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-02.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.52
+        },
+        {
+          "syllable": "wel",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-03.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.78
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-13.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.04
+        },
+        {
+          "syllable": "me",
+          "vowel": "e",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-05.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -4.75,
+      "durationSeconds": 1.2970068027210884
+    },
+    "contours": [
+      {
+        "start": 0.05,
+        "duration": 0.509,
+        "semitones": 2.22
+      }
+    ],
+    "recognition": {
+      "expected": "Warm welcome!",
+      "recognized": "Warm welcome.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.mochi.skill.mochi-2",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/mochi-skill-core0.3.flac",
+      "sha256": "c92673a8e2f5ea651a38fcc212c8d32e34e33159a7dffeec1b2a56f598c285d3"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "war",
+          "vowel": "a",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.24,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.26
+        },
+        {
+          "syllable": "m",
+          "vowel": "u",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-02.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.52
+        },
+        {
+          "syllable": "wel",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-03.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.78
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-13.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.04
+        },
+        {
+          "syllable": "me",
+          "vowel": "e",
+          "class": "nasal",
+          "consonantSource": "freesound:104374:consonants/104374-05.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.36,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -4.61,
+      "durationSeconds": 1.2970068027210884
+    },
+    "contours": [
+      {
+        "start": 0.05,
+        "duration": 0.509,
+        "semitones": 2.22
+      }
+    ],
+    "recognition": {
+      "expected": "Warm welcome!",
+      "recognized": "Warm welcome.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.mochi.ult.release",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/mochi-release-1.flac",
+      "sha256": "23f54c704f6c68da099cb12f010fef0848a3acfc3ba2812cc1e2d5f515ea7707"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        }
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "shiel",
+          "vowel": "i",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.43333333333333335
+        },
+        {
+          "syllable": "ds",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-11.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "up",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-12.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.22931999999999997,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -4.85,
+      "durationSeconds": 1.3420861678004534
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.mochi.ult.release",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/mochi-release-core0.15.flac",
+      "sha256": "cbf3a825fa0a00b4d8c798381429eed98ad33564c94ea7683e00010aca48aaa4"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "shiel",
+          "vowel": "i",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.43333333333333335
+        },
+        {
+          "syllable": "ds",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-11.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "up",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-12.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.22931999999999997,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -4.93,
+      "durationSeconds": 1.3420861678004534
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.mochi.ult.release",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/mochi-release-core0.3.flac",
+      "sha256": "7252e0c20d124c412a2a928a9d9f117260a1689dac596d62c315a63fba776ad7"
+    },
+    "production": {
+      "profile": {
+        "source": 110011,
+        "baseSemitones": -4.4,
+        "range": 2,
+        "speed": 0.18,
+        "brightness": 2238,
+        "breathiness": 0.02,
+        "formantShift": 0.82,
+        "signature": "purr",
+        "personality": "Steady door keeper",
+        "lines": {
+          "select": [
+            "Right here."
+          ],
+          "attack": [
+            "Knock knock!",
+            "Stand back!",
+            "With me!"
+          ],
+          "skill": [
+            "Stay behind me!"
+          ],
+          "ult": [
+            "Shields up!"
+          ],
+          "hit": [
+            "Still standing."
+          ],
+          "death": [
+            "Keep them safe."
+          ],
+          "victory": [
+            "Everyone home."
+          ]
+        },
+        "rolloff": 3.3,
+        "colorHz": 1385,
+        "colorDb": 7.88,
+        "vowelMix": 0.56
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 400.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2157.399922599508,
+          "resonanceDb": -7.0914510967121425
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": -1.715,
+      "grains": [
+        {
+          "syllable": "shiel",
+          "vowel": "i",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.43333333333333335
+        },
+        {
+          "syllable": "ds",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-11.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.1764,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "up",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-12.flac",
+          "vowelSource": "freesound:110011:cats/110011.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.22931999999999997,
+          "contourSemitones": 1.3
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -4.98,
+      "durationSeconds": 1.3420861678004534
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.skill.soot-2",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/soot-skill-2-1.flac",
+      "sha256": "34c3c446857915d12664cd18ee03b3d8cdf15d8503ea31d0a38a1ea5ed1d35da"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        }
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "foun",
+          "vowel": "o",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "d",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-17.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "you",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-24.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -5.17,
+      "durationSeconds": 1.0677097505668933
+    },
+    "contours": [
+      {
+        "start": 0.08,
+        "duration": 0.249,
+        "semitones": 3.458
+      }
+    ],
+    "recognition": {
+      "expected": "Found you!",
+      "recognized": "found you.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.skill.soot-2",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/soot-skill-core0.15.flac",
+      "sha256": "30ebb403ab5c76dfc43f8a27f4dbb5d2c867b64a3ef3f37a4c080bcf907e9f99"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "foun",
+          "vowel": "o",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "d",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-17.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "you",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-24.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.97,
+      "truePeakDbTP": -5.13,
+      "durationSeconds": 1.0677097505668933
+    },
+    "contours": [
+      {
+        "start": 0.08,
+        "duration": 0.249,
+        "semitones": 3.458
+      }
+    ],
+    "recognition": {
+      "expected": "Found you!",
+      "recognized": "found you.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.skill.soot-2",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/soot-skill-core0.3.flac",
+      "sha256": "6502ca43977ee9186bbd1d0f17dcde5c4f96be181b3604752052a223174f824f"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "foun",
+          "vowel": "o",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "d",
+          "vowel": "u",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-17.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "you",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-24.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.04,
+      "truePeakDbTP": -5.12,
+      "durationSeconds": 1.0677097505668933
+    },
+    "contours": [
+      {
+        "start": 0.08,
+        "duration": 0.249,
+        "semitones": 3.458
+      }
+    ],
+    "recognition": {
+      "expected": "Found you!",
+      "recognized": "found you.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.ult.release",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/soot-release-1.flac",
+      "sha256": "587df2bd0c50c25397d5e8a587bc6de4c4c610620a4ed1d3c690be72446b36c8"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        }
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "lig",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-22.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "hts",
+          "vowel": "u",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "out",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-18.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1911,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -2.83,
+      "durationSeconds": 1.2369614512471656
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Lights out!",
+      "recognized": "lights out",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.ult.release",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/soot-release-core0.15.flac",
+      "sha256": "212fb70a7f3fc15d4653be368a0377da7ade857fe6f6dbc70306ad359c64c8fe"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "lig",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-22.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "hts",
+          "vowel": "u",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "out",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-18.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1911,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -2.8,
+      "durationSeconds": 1.2369614512471656
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Lights out!",
+      "recognized": "lights out.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.soot.ult.release",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/soot-release-core0.3.flac",
+      "sha256": "4feb22051202e503da21a7f8250b168736d8010165fdbf696f84776ec0cd32c2"
+    },
+    "production": {
+      "profile": {
+        "source": 264507,
+        "baseSemitones": -3.84,
+        "range": 3,
+        "speed": 0.15,
+        "brightness": 585,
+        "breathiness": 0.08,
+        "formantShift": 0.91,
+        "signature": "trill",
+        "personality": "Dry, mischievous ash reader",
+        "lines": {
+          "select": [
+            "After dark."
+          ],
+          "attack": [
+            "Little spark!",
+            "Black coffee!",
+            "Found you!"
+          ],
+          "skill": [
+            "Watch the wick!"
+          ],
+          "ult": [
+            "Lights out!"
+          ],
+          "hit": [
+            "Too bright."
+          ],
+          "death": [
+            "Last ember."
+          ],
+          "victory": [
+            "Night served."
+          ]
+        },
+        "rolloff": 1.15,
+        "colorHz": 658,
+        "colorDb": 10.02,
+        "vowelMix": 0.6
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 45.0,
+          "lowpass": 11500.0,
+          "highSlope": 3.0,
+          "lowSlope": 3.0,
+          "resonanceHz": 2381.773207470935,
+          "resonanceDb": -11.649702044492322
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": -1.519,
+      "grains": [
+        {
+          "syllable": "lig",
+          "vowel": "i",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-22.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.48,
+          "durationSeconds": 0.147,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "hts",
+          "vowel": "u",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.72,
+          "durationSeconds": 0.147,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "out",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-18.flac",
+          "vowelSource": "freesound:264507:cats/264507.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.1911,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -2.77,
+      "durationSeconds": 1.2369614512471656
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Lights out!",
+      "recognized": "lights out.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.skill.clover-2",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/clover-skill-2-1.flac",
+      "sha256": "bddea2b8bb538272c9dcebcb6739f2687e9f5c869ceeb9cec246cad6b97b59d9"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        }
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "let",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-04.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "it",
+          "vowel": "i",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 4.92,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "steep",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -5.23,
+      "durationSeconds": 1.1677097505668934
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Let it steep!",
+      "recognized": "Let it steep.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.skill.clover-2",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/clover-skill-core0.15.flac",
+      "sha256": "f43815adf5a46814a43ee70adb7399a2a8c261391c8b8bf2bbba9afc592c49fb"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "let",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-04.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "it",
+          "vowel": "i",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 4.92,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "steep",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -5.61,
+      "durationSeconds": 1.1677097505668934
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Let it steep!",
+      "recognized": "Let it steep.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.skill.clover-2",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/clover-skill-core0.3.flac",
+      "sha256": "314c7ee3d979b57b6c3ac26936f21613ef84536dc2382ae9aa1771cfd428a46a"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "let",
+          "vowel": "e",
+          "class": "liquid",
+          "consonantSource": "freesound:843435:consonants/843435-04.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "it",
+          "vowel": "i",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 4.92,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "steep",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 2.76,
+          "durationSeconds": 0.196,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -5.44,
+      "durationSeconds": 1.1677097505668934
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Let it steep!",
+      "recognized": "Let it steep.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.ult.release",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/clover-release-1.flac",
+      "sha256": "1634336ab34cca782a397443000fabfa25ed33ee4d4d846ec5dc51d97a206fdf"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        }
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "bloom",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:175678:consonants/175678-03.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 6.48,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "a",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "gain",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:721074:consonants/721074-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.2548,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.03,
+      "truePeakDbTP": -3.5,
+      "durationSeconds": 1.2603174603174603
+    },
+    "contours": [
+      {
+        "start": 0.1,
+        "duration": 0.21,
+        "semitones": 1.557
+      }
+    ],
+    "recognition": {
+      "expected": "Bloom again!",
+      "recognized": "Bloom again.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.ult.release",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/clover-release-core0.15.flac",
+      "sha256": "c6d5c9b89b48cff92289aa1afeab7fb243d83d70d823c1c42dc792eca5dd3e8a"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "bloom",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:175678:consonants/175678-03.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 6.48,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "a",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "gain",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:721074:consonants/721074-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.2548,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -3.89,
+      "durationSeconds": 1.2603174603174603
+    },
+    "contours": [
+      {
+        "start": 0.06,
+        "duration": 0.249,
+        "semitones": 2.847
+      }
+    ],
+    "recognition": {
+      "expected": "Bloom again!",
+      "recognized": "Bloom again.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.clover.ult.release",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/clover-release-core0.3.flac",
+      "sha256": "d9c5c690633940a08083905d4d00ce59041b95ed2176cdc440664bea2e4ac79a"
+    },
+    "production": {
+      "profile": {
+        "source": 451250,
+        "baseSemitones": 5.79,
+        "range": 4,
+        "speed": 0.2,
+        "brightness": 5624,
+        "breathiness": 0.04,
+        "formantShift": 1.16,
+        "signature": "trill",
+        "personality": "Patient garden healer",
+        "lines": {
+          "select": [
+            "Take your time."
+          ],
+          "attack": [
+            "Leaf tap!",
+            "Easy now!",
+            "Gentle touch!"
+          ],
+          "skill": [
+            "Let it steep."
+          ],
+          "ult": [
+            "Bloom again!"
+          ],
+          "hit": [
+            "Just a scratch."
+          ],
+          "death": [
+            "Rest a little."
+          ],
+          "victory": [
+            "Growing strong."
+          ]
+        },
+        "rolloff": 1.97,
+        "colorHz": 1900,
+        "colorDb": 2.91,
+        "vowelMix": 0.58
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 850.0,
+          "lowpass": 4200.0,
+          "highSlope": 3.0,
+          "lowSlope": 2.0,
+          "resonanceHz": 1283.8202555119037,
+          "resonanceDb": -3.467543790341474
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": 1.8515,
+      "grains": [
+        {
+          "syllable": "bloom",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:175678:consonants/175678-03.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 6.48,
+          "durationSeconds": 0.196,
+          "contourSemitones": 0.8666666666666667
+        },
+        {
+          "syllable": "a",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:691910:consonants/691910-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.196,
+          "contourSemitones": 1.7333333333333334
+        },
+        {
+          "syllable": "gain",
+          "vowel": "a",
+          "class": "plosive",
+          "consonantSource": "freesound:721074:consonants/721074-01.flac",
+          "vowelSource": "freesound:451250:cats/451250.flac",
+          "sourceStartSeconds": 0.6,
+          "durationSeconds": 0.2548,
+          "contourSemitones": 2.6
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.04,
+      "truePeakDbTP": -4.07,
+      "durationSeconds": 1.2603174603174603
+    },
+    "contours": [
+      {
+        "start": 0.05,
+        "duration": 0.259,
+        "semitones": 3.071
+      }
+    ],
+    "recognition": {
+      "expected": "Bloom again!",
+      "recognized": "Bloom again.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.skill.panko-2",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/panko-skill-2-1.flac",
+      "sha256": "65e6f8890fcd8cae41aa204fc87ad4cbe33bdcdd6baf1dd43f92cfba2e91bff1"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        }
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "bread",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-20.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "ver",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -4.23,
+      "durationSeconds": 1.1379138321995466
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Bread cover!",
+      "recognized": "bread cover.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.skill.panko-2",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/panko-skill-core0.15.flac",
+      "sha256": "8e91af11b1283b789ca9acbf0fd7feb402e59bbf282f995e4fdaa1ac1f2790de"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "bread",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-20.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "ver",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.02,
+      "truePeakDbTP": -4.21,
+      "durationSeconds": 1.1379138321995466
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Bread cover!",
+      "recognized": "bread cover.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.skill.panko-2",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/panko-skill-core0.3.flac",
+      "sha256": "dd09b7851bd72187fc0f2ae2d02b44f53d774fbb0a9d2d2bbe071ee4634dd44a"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "bread",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.65
+        },
+        {
+          "syllable": "co",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-20.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.3
+        },
+        {
+          "syllable": "ver",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -16.05,
+      "truePeakDbTP": -4.14,
+      "durationSeconds": 1.1379138321995466
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Bread cover!",
+      "recognized": "bread cover.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.ult.release",
+    "take": 1,
+    "spokenCore": 0,
+    "audio": {
+      "path": "assets/audio-sources/b2/callouts/panko-release-1.flac",
+      "sha256": "19f6fb923a877966a4b5259d4ebedf97c30161ddb038119e0faf477d3a192fbe"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        }
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "clo",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.48750000000000004
+        },
+        {
+          "syllable": "se",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.9750000000000001
+        },
+        {
+          "syllable": "the",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-21.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.4625000000000001
+        },
+        {
+          "syllable": "door",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:172067:consonants/172067-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.21658000000000002,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.98,
+      "truePeakDbTP": -5.51,
+      "durationSeconds": 1.2481179138321996
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.ult.release",
+    "take": 1,
+    "spokenCore": 0.15,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/panko-release-core0.15.flac",
+      "sha256": "fb798495b13943cdfd221a3644e8bd011567921b8b902286207eb8fd0c0ba57d"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        },
+        "spokenCore": 0.15
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "clo",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.48750000000000004
+        },
+        {
+          "syllable": "se",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.9750000000000001
+        },
+        {
+          "syllable": "the",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-21.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.4625000000000001
+        },
+        {
+          "syllable": "door",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:172067:consonants/172067-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.21658000000000002,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -5.68,
+      "durationSeconds": 1.2481179138321996
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  },
+  {
+    "cueId": "voice.panko.ult.release",
+    "take": 1,
+    "spokenCore": 0.3,
+    "audio": {
+      "path": "work/v3b2/callouts/q2-presence/panko-release-core0.3.flac",
+      "sha256": "afea9809369bc2b3c22ef3c3bf17af6f99cf3de69a4eca2742fd82e2a930e033"
+    },
+    "production": {
+      "profile": {
+        "source": 656249,
+        "baseSemitones": 3.53,
+        "range": 3,
+        "speed": 0.17,
+        "brightness": 3256,
+        "breathiness": 0.03,
+        "formantShift": 0.78,
+        "signature": "purr",
+        "personality": "Warm, stubborn counter guardian",
+        "lines": {
+          "select": [
+            "Fresh from oven!"
+          ],
+          "attack": [
+            "Pan ready!",
+            "Hot crust!",
+            "Your turn!"
+          ],
+          "skill": [
+            "Bread cover!"
+          ],
+          "ult": [
+            "Oven door!"
+          ],
+          "hit": [
+            "Hard crust."
+          ],
+          "death": [
+            "Cooling down."
+          ],
+          "victory": [
+            "Golden finish!"
+          ]
+        },
+        "rolloff": 1.2,
+        "colorHz": 1284,
+        "colorDb": 14.57,
+        "vowelMix": 0.32
+      },
+      "settings": {
+        "pitchWeight": 0.35,
+        "filterWeight": 0,
+        "grainGain": 0.18,
+        "tailSeconds": 0.2,
+        "eq": {
+          "highpass": 150.0,
+          "lowpass": 1700.0,
+          "highSlope": 3.0,
+          "lowSlope": 1.0,
+          "resonanceHz": 898.5084133547614,
+          "resonanceDb": 6.589240783108769
+        },
+        "spokenCore": 0.3
+      },
+      "semitones": 1.0604999999999998,
+      "grains": [
+        {
+          "syllable": "clo",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-19.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.48750000000000004
+        },
+        {
+          "syllable": "se",
+          "vowel": "e",
+          "class": "fricative",
+          "consonantSource": "freesound:691913:consonants/691913-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 0.9750000000000001
+        },
+        {
+          "syllable": "the",
+          "vowel": "e",
+          "class": "plosive",
+          "consonantSource": "freesound:764351:consonants/764351-21.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.54,
+          "durationSeconds": 0.1666,
+          "contourSemitones": 1.4625000000000001
+        },
+        {
+          "syllable": "door",
+          "vowel": "o",
+          "class": "plosive",
+          "consonantSource": "freesound:172067:consonants/172067-01.flac",
+          "vowelSource": "freesound:656249:cats/656249.flac",
+          "sourceStartSeconds": 0.84,
+          "durationSeconds": 0.21658000000000002,
+          "contourSemitones": 1.9500000000000002
+        }
+      ],
+      "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+      "firstWordMs": 40
+    },
+    "levels": {
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -5.62,
+      "durationSeconds": 1.2481179138321996
+    },
+    "contours": [],
+    "recognition": {
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en"
+    }
+  }
+]
