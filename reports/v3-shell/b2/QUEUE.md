@@ -13,12 +13,12 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
 - [ ] U3 — open (32/54 states meet all screen gates; the SOLO request requires at least48/54 for PARTIAL; 22 redesigns remain, self-score 7/10)
 - [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
-- [ ] S5 — open (21 measured mix iterations; Q2 battle4.661/boss3.494 contours per minute PASS; other S5 numeric mix misses remain; self-score 7/10)
+- [ ] S5 — open (27 measured iterations; trial27 battle short pilot0.420ticks/s and5.310contours/min; boss7.965contours/min FAIL, home0.997 FAIL; full-duration/current six-scene acceptance pending; self-score7/10)
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
-- [ ] E3 — active (24 rounds,1273 unique configs; top10 confirmed at200seeds; T-a..g PASS, T-h9/85 assumptions completed; exact candidate497ba9738e in rules, remaining robustness still required)
+- [ ] E3 — active (24 rounds,1273 unique configs; top10 confirmed at200seeds; T-a..g PASS, T-h54/170 perturbations measured; final evidence refresh pending; exact candidate497ba9738e in rules, remaining robustness still required)
 - [ ] E4 — measured PASS4/4 on candidate497ba9738e:16 receipts,3 sinks,18 desktop shots,5 odds tests; Q4 full workspace suite PASS; final sensitivity selection pending
 - [ ] E5 — report generated with816 source-linked numbers; citation checker816/816 PASS; final sensitivity section pending
 - [ ] T1 — todo

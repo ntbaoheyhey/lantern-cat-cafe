@@ -8,7 +8,22 @@ const {chromium}=require('@playwright/test');
 const base='reports/v3-shell/b2',scene=process.argv[2]||'battle';
 const mode=process.argv[3]||'room',isBattle=['battle','boss'].includes(scene),seconds=isBattle?45.2:60.2;
 const input=`${base}/mix/diagnostic-26-${isBattle?'clocked':'menus'}-${scene}.json`;
-const variants=mode==='balanced'?(scene==='battle'?[{name:'rounded',voiceTone:-18,sfxTone:-12},{name:'rounded-body',voiceTone:-18,sfxTone:-12,voiceDb:-2},{name:'rounded-quieter',voiceTone:-18,sfxTone:-12,voiceDb:-4}]:[{name:'rounded',voiceTone:-12,sfxTone:-9},{name:'rounded-presence',voiceTone:-11,sfxTone:-8,voiceDb:.75}]):mode==='tone'?[{name:'baseline'},{name:'warm-voice',voiceTone:-9},{name:'warm-pair',voiceTone:-12,sfxTone:-9},{name:'soft-pair',voiceTone:-18,sfxTone:-12}]:mode==='menu'?
+const variants=mode==='score'?[
+ {name:'clear-warm-score',voiceTone:0,sfxTone:-12,musicTone:6,voiceDb:-1},
+ {name:'clear-bright-score',voiceTone:0,sfxTone:-12,musicTone:9,voiceDb:-1},
+ {name:'light-warm-score',voiceTone:-3,sfxTone:-12,musicTone:6,voiceDb:-1},
+ {name:'light-bright-score',voiceTone:-3,sfxTone:-12,musicTone:9,voiceDb:-1},
+]:mode==='band'?[
+ {name:'air-soft',band:{frequency:1800,threshold:-30,ratio:8,release:.05},voiceDb:-1},
+ {name:'air-controlled',band:{frequency:1800,threshold:-36,ratio:12,release:.08},voiceDb:-1},
+ {name:'air-long',band:{frequency:1800,threshold:-36,ratio:12,release:.15},voiceDb:-2},
+ {name:'air-deep',band:{frequency:1800,threshold:-42,ratio:20,release:.2},voiceDb:-2},
+]:mode==='articulation'?[
+ {name:'clear-room',voiceTone:-9,sfxTone:-15,voiceWet:.7,sfxWet:.45,voiceDb:-2},
+ {name:'clear-deeper-room',voiceTone:-9,sfxTone:-15,voiceWet:1,sfxWet:.7,voiceDb:-2},
+ {name:'open-room',voiceTone:-6,sfxTone:-18,voiceWet:1,sfxWet:.7,voiceDb:-3},
+ {name:'open-deeper-room',voiceTone:-6,sfxTone:-18,voiceWet:1.3,sfxWet:.85,voiceDb:-3},
+]:mode==='balanced'?(scene==='battle'?[{name:'rounded',voiceTone:-18,sfxTone:-12},{name:'rounded-body',voiceTone:-18,sfxTone:-12,voiceDb:-2},{name:'rounded-quieter',voiceTone:-18,sfxTone:-12,voiceDb:-4}]:[{name:'rounded',voiceTone:-12,sfxTone:-9},{name:'rounded-presence',voiceTone:-11,sfxTone:-8,voiceDb:.75}]):mode==='tone'?[{name:'baseline'},{name:'warm-voice',voiceTone:-9},{name:'warm-pair',voiceTone:-12,sfxTone:-9},{name:'soft-pair',voiceTone:-18,sfxTone:-12}]:mode==='menu'?
  (scene==='home'?[{name:'baseline'},{name:'dialogue',voiceDb:3},{name:'bright-room',voiceDb:3,musicTone:6},{name:'bright-clear',voiceDb:5,musicTone:9}]:[{name:'baseline'},{name:'warm-score',musicTone:-6},{name:'soft-score',musicTone:-12},{name:'clear-workshop',musicTone:-9,voiceDb:2}]):
  [{name:'baseline'},{name:'small-room',voiceWet:.7,sfxWet:.45},{name:'soft-room',voiceWet:1,sfxWet:.7},{name:'live-room',voiceWet:1.3,sfxWet:.85}];
 const capture=JSON.parse(readFileSync(input));
@@ -27,7 +42,7 @@ try{
  },sources);
  for(const variant of variants){
   const {name}=variant;
-  const bytes=await page.evaluate(async({voiceWet=0,sfxWet=0,voiceTone=0,sfxTone=0,musicTone=0,voiceDb=0,seconds})=>{
+  const bytes=await page.evaluate(async({voiceWet=0,sfxWet=0,voiceTone=0,sfxTone=0,musicTone=0,voiceDb=0,band,seconds})=>{
    const rate=48000,ctx=new OfflineAudioContext(2,Math.round(seconds*rate),rate);
    const master=ctx.createGain();master.gain.value=.7;
    const trim=ctx.createGain();trim.gain.value=10**(6/20);
@@ -39,7 +54,17 @@ try{
     const gain=ctx.createGain();gain.gain.value=bus==='voice'?10**(voiceDb/20):1;
     source.connect(gain);
     const toneDb=bus==='voice'?voiceTone:bus==='sfx'?sfxTone:bus==='music'?musicTone:0;
-    if(toneDb){const tone=ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=toneDb;gain.connect(tone).connect(master);}
+    if(band&&(bus==='voice'||bus==='sfx')){
+     const halves=['lowpass','highpass'].map(type=>{
+      const first=ctx.createBiquadFilter(),second=ctx.createBiquadFilter();
+      for(const filter of [first,second]){filter.type=type;filter.frequency.value=band.frequency;filter.Q.value=Math.SQRT1_2;}
+      gain.connect(first).connect(second);return second;
+     });
+     halves[0].connect(master);
+     const compressor=ctx.createDynamicsCompressor();compressor.threshold.value=band.threshold;compressor.knee.value=12;compressor.ratio.value=band.ratio;compressor.attack.value=.001;compressor.release.value=band.release;
+     halves[1].connect(compressor).connect(master);
+    }
+    else if(toneDb){const tone=ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=toneDb;gain.connect(tone).connect(master);}
     else gain.connect(master);
     const wet=bus==='voice'?voiceWet:bus==='sfx'?sfxWet:0;
     if(wet){

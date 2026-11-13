@@ -251,3 +251,30 @@ See the change and interpretation recorded in DECISIONS.md.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | [battle](mix/25-balanced-transients-battle.json) | 45.20 | 3.186 | 0.319 | 1.748 | 6.637 | 1.000 | -14.130 | -1.580 |
 | [boss](mix/25-balanced-transients-boss.json) | 45.20 | 3.186 | 0.264 | 1.527 | 7.964 | 1.000 | -15.900 | -2.980 |
+
+## 26-body-menu-tempo
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/26-body-menu-tempo-bag.json) | 60.20 | 4.352 | 1.492 | 5.548 | 1.993 | 1.000 | -17.600 | -2.300 |
+| [battle](mix/26-body-menu-tempo-battle.json) | 45.20 | 3.186 | 0.292 | 1.438 | 6.637 | 1.000 | -13.980 | -1.680 |
+| [boss](mix/26-body-menu-tempo-boss.json) | 45.20 | 3.296 | 0.275 | 1.305 | 5.310 | 1.000 | -15.610 | -2.680 |
+| [forge](mix/26-body-menu-tempo-forge.json) | 60.20 | 3.970 | 1.176 | 5.399 | 1.993 | 1.000 | -17.460 | -2.630 |
+| [gacha](mix/26-body-menu-tempo-gacha.json) | 60.20 | 4.302 | 1.618 | 5.449 | 0.000 | 1.000 | -18.130 | -5.980 |
+| [home](mix/26-body-menu-tempo-home.json) | 60.20 | 4.286 | 1.663 | 5.482 | 0.000 | 1.000 | -17.670 | -2.520 |
+
+## 27-tone-greeting
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/27-tone-greeting-battle.json) | 45.20 | 3.407 | 0.221 | 0.420 | 5.310 | 1.000 | -15.880 | -2.290 |
+| [boss](mix/27-tone-greeting-boss.json) | 45.20 | 3.164 | 0.259 | 0.398 | 7.965 | 1.000 | -15.710 | -2.600 |
+| [home](mix/27-tone-greeting-home.json) | 60.20 | 4.253 | 1.586 | 5.416 | 0.997 | 1.000 | -17.610 | -2.580 |
+
+## Candidate28 — speech-preserving score balance
+
+Four clocked-stem score tests retain the original voice spectrum or a mild3dB shelf. Battle mild shelf +9dB sustained music overtones:0.79646ticks/s,3.9823contours/min,3.40708onsets/s, but-11.78LUFS; production reduces battle master calibration by3.2dB. Boss unfiltered speech +6dB music overtones:0.50885ticks/s,5.30973contours/min,-13.94LUFS. These are diagnostics only. All16 engine tests pass. Full captures and recognition guard pending; no acceptance claim.

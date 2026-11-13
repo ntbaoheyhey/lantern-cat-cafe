@@ -257,5 +257,131 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-probes-repaired.log",
     "started": "2026-11-13T19:01:29.032484+00:00"
+  },
+  {
+    "name": "q5-capture27",
+    "pid": 76592,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-27.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture27.log",
+    "started": "2026-11-13T19:03:53.068651+00:00"
+  },
+  {
+    "name": "q5-scene27-clarity",
+    "pid": 77020,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture27-clarity.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene27-clarity.log",
+    "started": "2026-11-13T19:05:32.371954+00:00",
+    "note": "Wait for capture27, then isolated clarity guard; no reference inputs."
+  },
+  {
+    "name": "q5-menu-codec-mallow2-28",
+    "pid": 77437,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture27-menu.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-mallow2-28.log",
+    "started": "2026-11-13T19:07:43.521534+00:00",
+    "note": "Second actual home utterance had no contour in27; preserve words and source identity, test codec-resistant delivery."
+  },
+  {
+    "name": "q5-articulation-room",
+    "pid": 78049,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "articulation"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-articulation-room.log",
+    "started": "2026-11-13T19:09:53.068714+00:00"
+  },
+  {
+    "name": "q5-tea-greeting",
+    "pid": 78050,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py",
+      "--basename",
+      "mallow-2.flac",
+      "--label",
+      "menu-tea-28",
+      "--text",
+      "Tea is ready!"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-tea-greeting.log",
+    "started": "2026-11-13T19:09:53.071505+00:00"
+  },
+  {
+    "name": "q5-gentle-clarity",
+    "pid": 78370,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-scene-clarity.py",
+      "--shelf",
+      "-6",
+      "--label",
+      "scene28-gentle",
+      "--cues",
+      "voice.mochi.ult.release,voice.soot.ult.charge,voice.mallow.ult.charge,voice.cinnamon.ult.charge,voice.velvet.ult.release"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-gentle-clarity.log",
+    "started": "2026-11-13T19:10:55.820565+00:00"
+  },
+  {
+    "name": "q5-band-battle",
+    "pid": 78578,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "band"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-band-battle.log",
+    "started": "2026-11-13T19:11:22.062956+00:00"
+  },
+  {
+    "name": "q5-score-battle28",
+    "pid": 79359,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "score"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-score-battle28.log",
+    "started": "2026-11-13T19:15:31.043636+00:00"
+  },
+  {
+    "name": "q5-score-boss28",
+    "pid": 86940,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "boss",
+      "score"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-score-boss28.log",
+    "started": "2026-11-13T19:16:39.338320+00:00"
+  },
+  {
+    "name": "q5-light-clarity28",
+    "pid": 86941,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-scene-clarity.py",
+      "--shelf",
+      "-3",
+      "--label",
+      "scene28-light"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-light-clarity28.log",
+    "started": "2026-11-13T19:16:39.340722+00:00"
   }
 ]

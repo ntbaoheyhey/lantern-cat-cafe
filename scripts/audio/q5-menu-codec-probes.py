@@ -1,27 +1,36 @@
 #!/usr/bin/env python3
 """Preserve the greeting's spoken inflection through the shipping Opus codec."""
-import datetime, json, subprocess
+import argparse, datetime, json, subprocess
 from pathlib import Path
 from analyse import analyse_file
 from callout_dsp import ROOT, WORK, process, save, recognizer, recognize, cat_speak
 from publish_callouts import signed
 
 B=ROOT/'reports/v3-shell/b2'
+parser=argparse.ArgumentParser()
+parser.add_argument('--basename',default='mallow-1.flac',choices=['mallow-1.flac','mallow-2.flac'])
+parser.add_argument('--label',default='menu-codec')
+parser.add_argument('--text')
+args=parser.parse_args()
+assert args.label.replace('-','').isalnum()
 source=B/'MENU-VOICE-LINES.json'
 production=json.loads(source.read_text())
-row=next(r for r in production['lines'] if Path(r['path']).name=='mallow-1.flac')
-report=B/'q5/menu-codec-probes.json'
+row=next(r for r in production['lines'] if Path(r['path']).name==args.basename)
+original_text=row['text']
+if args.text:row={**row,'text':args.text}
+report=B/f'q5/{args.label}-probes.json'
+assert not report.exists(),'Keep earlier probe evidence; use a new label.'
 result={'date':datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'sourceProduction':signed(source),
         'method':'The first greeting lost its contour in real encoded playback. Preserve vowel formants while giving the welcome a longer falling inflection. Test recognition, loudness and the exact shipping64kbps Opus codec; fresh browser evidence remains required.',
         'rows':[{'source':signed(ROOT/row['path']),'cueId':row['cueId'],
-                 'unitId':row['unitId'],'originalText':row['text'],'attempts':[]}]}
+                 'unitId':row['unitId'],'originalText':original_text,'attempts':[]}]}
 model=recognizer(threads=2)
 for index,(accent,pace) in enumerate([(4,1.15),(6,1.15),(6,1.3),(8,1.3)]):
     settings={**row['production']['settings'],'preserveFormants':True,
               'phraseAccent':accent,'paceMultiplier':pace}
     pcm,used,details=process({**row,'kind':'skill'},0,settings)
-    path=WORK/'q5-menu-codec'/f'mallow-{index}.flac';save(path,pcm)
+    path=WORK/'q5-menu-codec'/args.label/f'{Path(args.basename).stem}-{index}.flac';save(path,pcm)
     opus=path.with_suffix('.opus')
     subprocess.run(['ffmpeg','-v','error','-y','-i',str(path),'-c:a','libopus','-b:a','64k',str(opus)],check=True)
     levels=cat_speak.loudness(path);asr=recognize(model,opus,row['text'])

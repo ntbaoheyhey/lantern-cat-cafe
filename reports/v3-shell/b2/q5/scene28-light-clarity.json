@@ -1,0 +1,721 @@
+{
+  "at": "2026-11-13T19:16:42.296431+00:00",
+  "source": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-VALIDATION.json",
+    "sha256": "cb65b1faf6c74523c14881919ff59c58d9bf48e79f5ce455940f5f78ba9e34ff"
+  },
+  "engine": {
+    "path": "apps/web/src/audio/engine.ts",
+    "sha256": "d2995bcff95af6b01511b7e4f6de1aa4711d214db4ac44b7bf39517573cf1ac5"
+  },
+  "diagnostic": true,
+  "shelfDb": -3.0,
+  "selectedCues": null,
+  "method": "First take of selected required lines through a 1500Hz, -3.0dB high shelf, +2dB voice trim and 64kbps Opus. This is an isolated articulation guard for the strongest runtime tone, not recognition of a complete mixed battle.",
+  "rows": [
+    {
+      "cueId": "voice.mochi.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mochi-charge-1.flac",
+        "sha256": "ea933846487e4d56a1e914f101ba84da859ddebff4883db6671f128d162324fd"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/mochi-charge-1.opus",
+        "sha256": "db9f28d167e5aeb6f3508b9a01b04cecd86cdf54d0299998fe79aa1aadb3de13"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Shields!",
+      "recognized": "shields.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.mochi.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mochi-release-1.flac",
+        "sha256": "23f54c704f6c68da099cb12f010fef0848a3acfc3ba2812cc1e2d5f515ea7707"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/mochi-release-1.opus",
+        "sha256": "0988233954584a05aae61c6bd2131008edc9a8c7550e158bd925a9da6dd91e96"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.soot.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/soot-charge-1.flac",
+        "sha256": "ff9afb60f556d54cde3bab652a61e83269582d321a1f552006b14c525c67b7c4"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/soot-charge-1.opus",
+        "sha256": "b9e7780be94ef0e9431ce5f87135d31d48c8f4c0605e9fdc4aa981b184b688f6"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Lights!",
+      "recognized": "lights.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.soot.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/soot-release-1.flac",
+        "sha256": "cb1cc6aa8c7c3cb31233251c2ad73c4f228c304de15e66e070cbeec6b879b270"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/soot-release-1.opus",
+        "sha256": "209366ac0b0236f38fa0c4bd511c6fbdec20a69bd89bc3128505c29d0f42c704"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Lights out!",
+      "recognized": "lights out.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.clover.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/clover-charge-1.flac",
+        "sha256": "077d784906cd8aee05eb43225ce92572d892149489679b072a6e58bce0e7b6f3"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/clover-charge-1.opus",
+        "sha256": "b9549416226c1b503be367ec4f981c74205211c6c3a6b1d9d19ccddf362eb1bd"
+      },
+      "baselineWordAccuracy": 0.75,
+      "expected": "Watch the flowers bloom!",
+      "recognized": "Watch the flowers blow.",
+      "wordAccuracy": 0.75,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.clover.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/clover-release-1.flac",
+        "sha256": "1634336ab34cca782a397443000fabfa25ed33ee4d4d846ec5dc51d97a206fdf"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/clover-release-1.opus",
+        "sha256": "da618e59783d38b14f9cb858a8ffd79844582cbfdd20ecb827c033fc6259711c"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Bloom again!",
+      "recognized": "Bloom again.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.panko.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/panko-charge-1.flac",
+        "sha256": "41b774827337e9b0d255d534fbc6e3d83e6282983ae682a4b86f6b0067d96d31"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/panko-charge-1.opus",
+        "sha256": "6c059c0a505f78a742c4c92dc1ca12e422e7d5f021bd40a4a2b647f7ba14ad21"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Close!",
+      "recognized": "Close.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.panko.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/panko-release-1.flac",
+        "sha256": "49fcbee4d3d00a1121b51dc2dc43136fa10e9669483a5cd461b3ae6e8bdc3dc3"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/panko-release-1.opus",
+        "sha256": "284042b1b1c03151c001f7ca47a5745a9c322c536b3401bceabefe299c2b2f35"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.mallow.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mallow-charge-1.flac",
+        "sha256": "b764e309ad3c3b23aee1b72fe4804f4cdd6408df6530940bd10834c593c14f8b"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/mallow-charge-1.opus",
+        "sha256": "310a7b55d8d263e45ee0f34f732a283362fa4e733777ac392dc51829805e425c"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Burn!",
+      "recognized": "Burn!",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.mallow.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mallow-release-1.flac",
+        "sha256": "709a9c28099f301db252051cde727d14b1922c964a5070af1e8e41a68c3f153d"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/mallow-release-1.opus",
+        "sha256": "826e97f21a848311f02bf7e0708d90b3abb183a147cce297e6e230fd78356bd8"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Burn bright!",
+      "recognized": "Burn Bright.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.sorrel.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/sorrel-charge-1.flac",
+        "sha256": "48d03a018b2722ce10002999cddf817646ecf5de2c2a9f075366ad78f90cc1f1"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/sorrel-charge-1.opus",
+        "sha256": "0b5c2e537d056007206b207be6c32ccd443064265a37230671c325dc38d2df65"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "One more cup!",
+      "recognized": "One more cup.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.sorrel.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/sorrel-release-1.flac",
+        "sha256": "1093bbdb02e2e0c0cfc4d68b7497bda62b7e383f437210a13d127c9474fe8772"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/sorrel-release-1.opus",
+        "sha256": "f4911dac56cba9f545a202cf5b9f0c33c5885a6dfad5cf0a86669e5d0b11ed58"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "One more cup!",
+      "recognized": "One more cup.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.biscuit.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-charge-1.flac",
+        "sha256": "299bf8698731740841a1a1a44c62f9ffd8376378f798a5af4b3f80a545fc17e8"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/biscuit-charge-1.opus",
+        "sha256": "d1285f051adf7e366907542f370935562c6e2ffe9db415cdde2344e355625845"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Move with me!",
+      "recognized": "Move with me.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.biscuit.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
+        "sha256": "75c949c954b9204a84f8526031c4f43fdfc860b19bc25cce8fad9a9793508a23"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/biscuit-release-1.opus",
+        "sha256": "c8731a44fb097a8d58721cc22cd2d139edaeb6e76329a8a2be2d50d3e6c05927"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Move as one!",
+      "recognized": "All movies won.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "cueId": "voice.inkcap.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/inkcap-charge-1.flac",
+        "sha256": "10fb37e7e1969c47f13dfec1c9a9748f5c8d3b632b4674fd135f8892520fd4ef"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/inkcap-charge-1.opus",
+        "sha256": "b9ce6c613c2bc9be264ebb46587857c3fe84c785a94b348bea05e9f35987a767"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Sweet!",
+      "recognized": "Sweet.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.inkcap.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/inkcap-release-1.flac",
+        "sha256": "f652e6a5b741806732bc60ec5cf4d0ef07e7dd881f17345e2417991f2d42f37b"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/inkcap-release-1.opus",
+        "sha256": "dacaf58bad3c5651bdcaeca3eeb8de0d7f12084a1239f2868defaccca1024f0b"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Sweet dreams!",
+      "recognized": "Sweet dreams.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.cinnamon.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
+        "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/cinnamon-charge-1.opus",
+        "sha256": "40ddb6681157a423132c33b755869c0e4d01837260b2633587bc27f2170fdb59"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Back!",
+      "recognized": "Fuck.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "cueId": "voice.cinnamon.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-release-1.flac",
+        "sha256": "43bd21c490bde024b943a0f147824d4d97884f0c6c4fb3fb62ff2ce80da0acf9"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/cinnamon-release-1.opus",
+        "sha256": "12bf4e2b5dc1f76ef692365927a8c416c141d9758204697964290163535c84da"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Back for seconds!",
+      "recognized": "back for seconds.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.brioche.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/brioche-charge-1.flac",
+        "sha256": "6b7ff393ed85d11bf7abd580207cab018244054199492722f20635843df84b0e"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/brioche-charge-1.opus",
+        "sha256": "c7547568705e65d4cc344186e0d33a87e77f16a9861ac0e07eace15b0a7449ea"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Stars!",
+      "recognized": "STARS",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.brioche.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/brioche-release-1.flac",
+        "sha256": "67b79aa0206cdc434ad171334aa845cfaec52f61860860392008f9aa52f735ac"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/brioche-release-1.opus",
+        "sha256": "2fd7e1d620747567da600cf68a8b960a2e7aa0744a296cbee5c116337abbf904"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Stars protect us!",
+      "recognized": "Stars protect us.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.velvet.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/velvet-charge-1.flac",
+        "sha256": "8bde631c4b933c0fd1d97db86fd2144917b0cda77c156ad70d4be8f40913df6e"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/velvet-charge-1.opus",
+        "sha256": "5b41406669fd4fb135721eb7098c99b4b3db707bb2328304d4efb86c0475987f"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Raise the curtain!",
+      "recognized": "Raise the curtain.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.velvet.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/velvet-release-1.flac",
+        "sha256": "e0a3e42c54208567e193ef1b7497747c568f7256682fa1f2c2022f045d98476e"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/velvet-release-1.opus",
+        "sha256": "1e72f7a8a42d5e0426a591bebfb43ee547efad95af072de98f0364f4bc724790"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Curtain falls!",
+      "recognized": "Curtain Falls",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.marigold.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/marigold-charge-1.flac",
+        "sha256": "fdbda5a8c39d25dbd9750a893f6a55b52cc6bf5a7561af4bd6b415acbe8a9708"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/marigold-charge-1.opus",
+        "sha256": "f33138e160e73d500d14570d9795d1412eea1f0632a60a3e7364b592b64ca980"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Rise!",
+      "recognized": "Rise.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.marigold.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/marigold-release-1.flac",
+        "sha256": "b79e92683da240a2b2a923c87f39c7b734bbf7cfb81fc257349586f08e40fbc4"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/marigold-release-1.opus",
+        "sha256": "50f5ec992e0136750315c650a4b5d644acc4911cd0381f3729cc8579ffcbeabb"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Rise and bloom!",
+      "recognized": "Rise and bloom!",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.button-guard.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/button-guard-charge-1.flac",
+        "sha256": "035049181903b35dd408a01dc23922971065a391928ffbfee9cca6f0f74a83c9"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/button-guard-charge-1.opus",
+        "sha256": "98115d550205e4de5debaace9d214cd737471da7dbd32a9508cf5ed27c734799"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Hold the line!",
+      "recognized": "Hold the line.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.button-guard.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/button-guard-release-1.flac",
+        "sha256": "97a9cdaf75be6ee01887e988b2d3d0baef564724f44cd92d1d0fa4ebab80e27c"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/button-guard-release-1.opus",
+        "sha256": "262bcf95327f8b6afc792860662ae2c13c386b9b17d2a2c3664f1847feafa909"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Hold the line!",
+      "recognized": "Hold the line.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.sock-skipper.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/sock-skipper-charge-1.flac",
+        "sha256": "1f1fb61bdbde5383eefb6fa9b12caff0ecdf14616e32ebdee626fde69740f828"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/sock-skipper-charge-1.opus",
+        "sha256": "1b3c1bda668541bc0a1ee8284f06d6d15f297323ef9676dabc068c37ca3451db"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Catch!",
+      "recognized": "Catch!",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.sock-skipper.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/sock-skipper-release-1.flac",
+        "sha256": "a623792fc55041d26ec06302c5ef772636e169cc9884437af510758e0635727f"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/sock-skipper-release-1.opus",
+        "sha256": "a046d37e728526292e867fe37274be38e985b8b6fa6c5369fe8d4f8a7672ab1d"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Catch me!",
+      "recognized": "Catch me.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.spool-ram.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/spool-ram-charge-1.flac",
+        "sha256": "3968756d0fbd8423ae189941b7013b1144cb0d32a841cfdf929760999c11a9cd"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/spool-ram-charge-1.opus",
+        "sha256": "0d3de2dd41c86a4fb086696d17735aeef71d49dac306bbdec49c9c80cc93b8f1"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Full!",
+      "recognized": "full.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.spool-ram.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/spool-ram-release-1.flac",
+        "sha256": "b5a19a301eb81ee04a3268d0ced93e287d652f812a19ac1d4fb0db21e9d66767"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/spool-ram-release-1.opus",
+        "sha256": "035a46bcafbbefcbe6526cb0e42b1e7b8942302e083968132abdeabef036a297"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Full charge!",
+      "recognized": "Full charge.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.needle-moth.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/needle-moth-charge-1.flac",
+        "sha256": "d35dc0d2225c7f718a120c4842d98e3e50f8755c7c7522875193bf3544550d0f"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/needle-moth-charge-1.opus",
+        "sha256": "55b843ad43a691eca67b35daa7cd21dbdb956dad5f9a53805a23afdaf2d21f17"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Wings sharp and ready!",
+      "recognized": "wings sharp and ready!",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.needle-moth.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/needle-moth-release-1.flac",
+        "sha256": "a637cfa9c052eadb567477d1fd90de5080683b0b1ba1c16fba936d9cce252bfe"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-light-clarity/needle-moth-release-1.opus",
+        "sha256": "8fba07171a7a085ac82b78ece96c4f933e4148627916870d6ea277fe2be2b62d"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Sharp wings!",
+      "recognized": "sharp wings.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    }
+  ]
+}

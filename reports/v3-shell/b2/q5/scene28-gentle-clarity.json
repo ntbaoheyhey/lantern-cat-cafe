@@ -1,0 +1,127 @@
+{
+  "at": "2026-11-13T19:10:59.106103+00:00",
+  "source": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-VALIDATION.json",
+    "sha256": "cb65b1faf6c74523c14881919ff59c58d9bf48e79f5ce455940f5f78ba9e34ff"
+  },
+  "engine": {
+    "path": "apps/web/src/audio/engine.ts",
+    "sha256": "d2995bcff95af6b01511b7e4f6de1aa4711d214db4ac44b7bf39517573cf1ac5"
+  },
+  "diagnostic": true,
+  "shelfDb": -6.0,
+  "selectedCues": "voice.mochi.ult.release,voice.soot.ult.charge,voice.mallow.ult.charge,voice.cinnamon.ult.charge,voice.velvet.ult.release",
+  "method": "First take of selected required lines through a 1500Hz, -6.0dB high shelf, +2dB voice trim and 64kbps Opus. This is an isolated articulation guard for the strongest runtime tone, not recognition of a complete mixed battle.",
+  "rows": [
+    {
+      "cueId": "voice.mochi.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mochi-release-1.flac",
+        "sha256": "23f54c704f6c68da099cb12f010fef0848a3acfc3ba2812cc1e2d5f515ea7707"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-gentle-clarity/mochi-release-1.opus",
+        "sha256": "a23c38ddee35865d10d501b8a350f42998b3c574c2996ad76c63a2b5084dd8d0"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.soot.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/soot-charge-1.flac",
+        "sha256": "ff9afb60f556d54cde3bab652a61e83269582d321a1f552006b14c525c67b7c4"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-gentle-clarity/soot-charge-1.opus",
+        "sha256": "8e4ffec32026fa7d1bce56ea29015c90776a410aa5ea2593ca50eae516f81f36"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Lights!",
+      "recognized": "lights.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.mallow.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/mallow-charge-1.flac",
+        "sha256": "b764e309ad3c3b23aee1b72fe4804f4cdd6408df6530940bd10834c593c14f8b"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-gentle-clarity/mallow-charge-1.opus",
+        "sha256": "68172bd9d978956f9b32ebc9cee99b71db4437a230399fc8542905e2276edba3"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Burn!",
+      "recognized": "Burn!",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "cueId": "voice.cinnamon.ult.charge",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
+        "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-gentle-clarity/cinnamon-charge-1.opus",
+        "sha256": "8f6850f0167b2e38a197314b2bef158a522d6f9ab7ccd76ceb3a865dab87a33f"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Back!",
+      "recognized": "Fuck.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "cueId": "voice.velvet.ult.release",
+      "kind": "ultimate",
+      "source": {
+        "path": "assets/audio-sources/b2/callouts/velvet-release-1.flac",
+        "sha256": "e0a3e42c54208567e193ef1b7497747c568f7256682fa1f2c2022f045d98476e"
+      },
+      "processed": {
+        "path": "work/audio/q5-scene28-gentle-clarity/velvet-release-1.opus",
+        "sha256": "74f34ff1d5794cd990e04f11aba60da3ae0f0b8feca75b672575dd7e13733370"
+      },
+      "baselineWordAccuracy": 1,
+      "expected": "Curtain falls!",
+      "recognized": "Curtain falls.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    }
+  ]
+}
