@@ -8,7 +8,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q1 | done | B then A | 435/435 browser; B E2E; 33 word-budget screens | STARTED 2026-11-13 12:39:36 UTC; A e7ce36076 B c32b6475f; 230 PASS/0 FAIL; ENDED 2026-11-13T13:19:00.871648+00:00 |
 | Q2 | done | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity | STARTED 2026-11-13T13:20:12.094442+00:00; PASS59/59; A18ea6e6e8 B298a4fbd8/evidence fa65a9b40; ENDED 2026-11-13T14:38:34.072973+00:00 |
 | Q3 | done | A | M1 29/29; dependencies 259/259; SOLO9/9; High59.95–60.05; parity | STARTED 2026-11-13T14:39:07.792289+00:00; PASS 259 A +9 SOLO; source af1e1fdf3; evidence a881b1fc8; ENDED 2026-11-13T16:15:40.347744+00:00 |
-| Q4 | active | B | E3, E4, E5;21 rounds /999 unique configs; round22 and independent confirmation active | STARTED 2026-11-13T16:16:50.578116+00:00 |
+| Q4 | active | B | E3, E4, E5;22 rounds/1074 unique;10 confirmed200-seed configs still Star FAIL; round23 active | STARTED 2026-11-13T16:16:50.578116+00:00 |
 | Q5 | todo | B (+ A texts) | V and S5; sound reel |  |
 | Q6 | todo | B | U3 54/54 >=8; button/font/word gates |  |
 | Q7 | todo | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS |  |
