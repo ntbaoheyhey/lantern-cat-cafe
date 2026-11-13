@@ -16,4 +16,3 @@ export function atlasSlots(count:number,width:number,height:number,maxSize=4096)
   return {width:cols*width,height:usedRows*height,slots:Array.from({length},(_,i)=>({index:page*capacity+i,x:i%cols*width,y:Math.floor(i/cols)*height}))};
  });
 }
-

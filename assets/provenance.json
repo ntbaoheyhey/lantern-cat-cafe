@@ -80,7 +80,7 @@
       "license": "Original generated output; OpenAI Terms of Use. No third-party input.",
       "source": "assets/v3-shell/item-atlas.png",
       "files": "apps/web/public/icons/*-{128,64}.webp",
-      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Caf\u00e9. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/caf\u00e9 deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
+      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Café. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/café deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
       "processing": "Grid crop, preserve alpha, Lanczos export 128/64 WebP."
     },
     {
@@ -99,7 +99,7 @@
       "files": [
         "apps/web/public/art/v3-shell/landing.webp"
       ],
-      "prompt": "Original 16:9 painted Lantern Cat Caf\u00e9 at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
+      "prompt": "Original 16:9 painted Lantern Cat Café at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
     },
     {
       "type": "gameplay-trailer",
@@ -155,7 +155,7 @@
     },
     {
       "asset": "art/units/*/depth-parts/",
-      "tool": "Local Pillow raster painting + OpenCV Navier\u2013Stokes substrate fill + native cut-out compiler",
+      "tool": "Local Pillow raster painting + OpenCV Navier–Stokes substrate fill + native cut-out compiler",
       "prompt": "Separate the eyes, mouth and held objects of our own approved cats and enemies; paint eyelids, speaking mouths, hidden handles and narrow joint substrate in each original palette. Inputs are exclusively our own source atlases. No reference game art used.",
       "date": "2026-11-13",
       "source": "reports/v3-battle/a2/M2/source-map.json; face-annotations.json; scripts/v3a2/weapon-annotations.json",
@@ -282,6 +282,231 @@
       "date": "2026-11-13T06:15:28.981287+00:00",
       "prompt": "Use case: stylized-concept. Original painted ultimate summon sprite for the Yarn Giant boss in a cozy night-cafe cat RPG. An immense humpback whale woven entirely from thick wine-red, plum and dusty-rose knitting yarn surges upward and left, broad knotted snout, bright golden button eye, massive knitted pectoral fins spread wide, long trailing yarn skeins curling into a dramatic sweeping tail on the right. Twisted threads coil like ocean spray and brass knitting needles form small harmless decorative tusks. Strong broad diagonal silhouette and huge textured volume, majestic cozy craft magic with formidable motion. Lush hand-painted storybook fantasy illustration, visible brush grain, carefully shaded interwoven wool, luminous peach and cream rim highlights, dark burgundy shadows. The entire whale fits inside clear margins, square composition maximum1280 pixels wide. True transparent alpha background and gaps between skeins; no scenery, floor, rectangular glow, text, people, UI, watermark or reference images. Original from description only.",
       "output": "tools/cinematic-compositor/motifs/yarn-giant.png",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "25aa8da5314987a10fc1ed5f6f94ec3da17955da1628dc98678e3d845bf5171e",
+      "output": "assets/cardrpg-look/vfx-packed/biscuit-0.webp",
+      "id": "v3a2-packed-vfx-biscuit-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "ea384762c7f55b6b069679dc0ca9a085981ef5db34e8fa9c875e2eee76ccf2f3",
+      "output": "assets/cardrpg-look/vfx-packed/brioche-0.webp",
+      "id": "v3a2-packed-vfx-brioche-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "982694b77cbe039acc8a1f9112fa2e6a054004f30236445f46ce921d01e5051d",
+      "output": "assets/cardrpg-look/vfx-packed/cinnamon-0.webp",
+      "id": "v3a2-packed-vfx-cinnamon-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "c1c0bc6fcc435c2ba2035812b468ae67d446c12a2689a4709d3e865e8134e199",
+      "output": "assets/cardrpg-look/vfx-packed/clover-0.webp",
+      "id": "v3a2-packed-vfx-clover-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "6c635ee1c73b5057679ede7b32567a30bf9e52281b145ab36796d960d75ab161",
+      "output": "assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
+      "id": "v3a2-packed-vfx-binding-thread-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "384e569f455914fe03f9cc25d894e721ce7429a05a041713aac6e478e2103348",
+      "output": "assets/cardrpg-look/vfx-packed/button-guard-0.webp",
+      "id": "v3a2-packed-vfx-button-guard-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "accbe5e7564880681f7cc6dde84e6ddf19a906b01b0668764d4495675ecaab14",
+      "output": "assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp",
+      "id": "v3a2-packed-vfx-crumb-sentinel-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "c0b2fedcfc5b19e18930baa29b5485b4aeb9980632837c725f6aea0cbeda256e",
+      "output": "assets/cardrpg-look/vfx-packed/kettle-knight-0.webp",
+      "id": "v3a2-packed-vfx-kettle-knight-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "b8e2b416fc14a8e180eb6a62fac45e52c5fde0c631df6d1a498ddf58131789a5",
+      "output": "assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
+      "id": "v3a2-packed-vfx-needle-moth-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "69ebc0b92a7231ec9c7d5782d7ca31d65d3f53785478bafd0240caacc4d9f0de",
+      "output": "assets/cardrpg-look/vfx-packed/pantry-crown-0.webp",
+      "id": "v3a2-packed-vfx-pantry-crown-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "0fa9451d02d0a4782de7de377dc05c857876cf393e1123a3cc841e0725684a19",
+      "output": "assets/cardrpg-look/vfx-packed/pollen-scout-0.webp",
+      "id": "v3a2-packed-vfx-pollen-scout-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "453e5ca8c60faf4c7a1890f1f865f3613a9d319d6c7fd598e5c27d1c4b293f07",
+      "output": "assets/cardrpg-look/vfx-packed/practice-cushion-0.webp",
+      "id": "v3a2-packed-vfx-practice-cushion-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "3593127758016459b46f38a1352761b9e3cceff4a037f1dffda60959d765ae87",
+      "output": "assets/cardrpg-look/vfx-packed/rain-spool-0.webp",
+      "id": "v3a2-packed-vfx-rain-spool-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "44af97fa8fdbf332ffcf3f4810882f1be3dde889c76fab3c6c08cbd962b35dcb",
+      "output": "assets/cardrpg-look/vfx-packed/sock-skipper-0.webp",
+      "id": "v3a2-packed-vfx-sock-skipper-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "64880225ccb65e1be9027b6b67895c61af7fac4b4bfe901a66505623adc0f439",
+      "output": "assets/cardrpg-look/vfx-packed/spool-ram-0.webp",
+      "id": "v3a2-packed-vfx-spool-ram-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "d2a38d0c1df3fba649a09e85351bf8b333be7d612837e0ed83c245d3d89ffba2",
+      "output": "assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
+      "id": "v3a2-packed-vfx-teacup-healer-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "e93a46f3812c93d597a2c1894a5e2b2fdea52c189685301e99d164ce0f6a7897",
+      "output": "assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
+      "id": "v3a2-packed-vfx-yarn-giant-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "21fb80eb6cca877e0156194ae8c50e37dde3665fecf07f7ff753ff397c9cdfa6",
+      "output": "assets/cardrpg-look/vfx-packed/inkcap-0.webp",
+      "id": "v3a2-packed-vfx-inkcap-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "7b04db8dd5eec4fb573f5623db68ca52a076d534096d60f450e208af57abf4a7",
+      "output": "assets/cardrpg-look/vfx-packed/mallow-0.webp",
+      "id": "v3a2-packed-vfx-mallow-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "a8f2802a07d2b797b390f0f30fdf2f0051c2082eca265ef70dc1b5c01b4a6559",
+      "output": "assets/cardrpg-look/vfx-packed/marigold-0.webp",
+      "id": "v3a2-packed-vfx-marigold-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "f08a34979f8ac410d046ae4c4639f1b3cac8285133a732539cee9375a42588c0",
+      "output": "assets/cardrpg-look/vfx-packed/mochi-0.webp",
+      "id": "v3a2-packed-vfx-mochi-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "66720d11663a387c76e5b0295fc8fec49608342a8ca57d2fd9c03b38044cd76f",
+      "output": "assets/cardrpg-look/vfx-packed/panko-0.webp",
+      "id": "v3a2-packed-vfx-panko-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "ca02da5fbe8c03f03a01586d2779fbf97ef3a8ab45dcf5cc50bc9f3ba6f6e17b",
+      "output": "assets/cardrpg-look/vfx-packed/soot-0.webp",
+      "id": "v3a2-packed-vfx-soot-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "79b5b42fd975088777aba94603c1d4adbcf1bd8b3b001b5ea245d9be5d4a972e",
+      "output": "assets/cardrpg-look/vfx-packed/sorrel-0.webp",
+      "id": "v3a2-packed-vfx-sorrel-0",
+      "referenceInput": false
+    },
+    {
+      "tool": "scripts/art/pack-vfx.mjs (sharp lossless WebP; decoded RGBA row copy)",
+      "prompt": "Pack approved original painted skill layers without resampling, repainting, reference imagery or model calls. Source SHA-256 values and layouts: assets/cardrpg-look/vfx-packed/manifest.json.",
+      "date": "2026-11-13",
+      "sha256": "3a557cd27ceb7d9414d3d49de1ddb3052bd465d11be5bc382ab48a179aac00a5",
+      "output": "assets/cardrpg-look/vfx-packed/velvet-0.webp",
+      "id": "v3a2-packed-vfx-velvet-0",
       "referenceInput": false
     }
   ]
