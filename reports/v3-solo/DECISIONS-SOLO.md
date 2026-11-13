@@ -99,3 +99,9 @@ Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped fa
 ## 2026-11-13T20:13:33.894936+00:00 — resume and corrected speech interpretation
 
 Disk and fresh E3 checker retain Q0–Q3 as complete. Q4 remains active on T-h;24 rounds,1273 unique configurations,18 final scenarios and T-a..g PASS. Full29 S5 misses only cafe voice density0.9967/min. The missing contour belongs to the first greeting. Trial28 mixed ASR passed5/12 lines per scene; this additional diagnostic must remain separate from passing isolated-callout recognition. No sync time has arrived.
+
+2026-11-13T20:37:34.388799+00:00 Q5 full31 preserves five passing scenes; forge again measures2.990contours/min despite only2 actual voice starts. Narrow music/effect masking probes retain5/12 boss callouts. Cross-correlation shows5–11ms recorder offset and clear isolated runtime voice; this is masking, not a cropped-word artifact. Change method to wider music EQ/voice balance; retain original analyser, windows and all thresholds.
+
+## 2026-11-13T20:54:07.996522+00:00 — resumed Q4/Q5
+
+The committed original forge score now passes actual60s: 1.9933 voice contours/min, 3.5049 ticks/s, -17.38 LUFS, -2.07 dBTP, zero browser errors. Source e628f3764. The full V checker reports8/8 PASS (50/50 ultimate,62/62 skill,12 identities,212 levels). Boss speech is still being validated against the complete mix after diagnostic gains improved9/12 lines; voice high-shelf attenuation was rejected because it harms words. Current boss source33e2d1adf has36 passing audio tests; the initial outdated boss expectation failed and remains in evidence. Economy snapshot132/170 has zero robustness misses; T-h stays open. No early merge or deployment.
