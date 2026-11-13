@@ -17,7 +17,7 @@ export class CinematicPlayer {
   this.video.addEventListener('error',()=>{this.failed=true;});this.cutin.append(this.bust,this.title);
   this.root.append(this.dim,this.poster,this.video,this.cutin,this.flash);host.append(this.root);this.hide();
  }
- private hide(){this.dim.hidden=this.flash.hidden=this.cutin.hidden=this.video.hidden=this.poster.hidden=true;this.video.pause();this.audit.plate=false;this.audit.cutin=false;}
+ private hide(){this.dim.hidden=this.flash.hidden=this.cutin.hidden=this.video.hidden=this.poster.hidden=true;this.video.pause();Object.assign(this.audit,{plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0});}
  render(frame:EffectFrame|null,paused:boolean,speed:number,reduced:boolean,fixed=false){
   const state=frame?sequenceAt(frame.plan,frame.elapsed,reduced):null;
   if(!frame||!state){this.hide();this.plan=null;return;}

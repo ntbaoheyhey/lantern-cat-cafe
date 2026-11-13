@@ -60,3 +60,19 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
  p.x=Math.max(-38*scale,Math.min(38*scale,p.x));return p;
 }
 export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}
+
+/** A single follow-through move per action, with a stable contact hold and home framing. */
+export function actionCamera(input:MotionInput,tier:'basic'|'active'|'ultimate'){
+ const {plan,elapsed:t,home,target,width,height}=input,rest={zoom:1,x:0,y:0,tilt:0};
+ if(!hasActorAction(plan)||t<=0||t>=plan.duration||tier==='ultimate')return rest;
+ const impact=plan.beats[2]!.start,direction=input.side==='enemy'?-1:1;
+ const travel=smooth((t-Math.max(100,impact-230))/230);
+ const enter=smooth(t/Math.max(100,impact-180));
+ const recover=1-smooth((t-impact-100)/Math.max(1,plan.duration-impact-100));
+ const envelope=enter*recover,zoom=1+(tier==='active'?.18:.11)*envelope;
+ const focusX=home.x+(target.x-home.x)*(.25+.50*travel);
+ const focusY=home.y+(target.y-home.y)*(.25+.50*travel)-home.core*.4;
+ const kind=input.motion??attackMotion(input.asset,plan);
+ return {zoom,x:(focusX/width-.5)*(1-1/zoom)+direction*.012*(travel-.5)*envelope,
+  y:(.5-focusY/height)*(1-1/zoom),tilt:(kind==='spin'?.012:kind==='leap-slam'?-.006:0)*direction*envelope};
+}

@@ -41,6 +41,10 @@ export class BattleNumbers {
   const gap=height*.065,w=glyphs.reduce((n,g)=>n+g.width*s+gap,0)-gap;let left=x-w/2;
   for(const g of glyphs){this.c.drawImage(atlas.canvas,g.x,g.y,g.width,g.height,left,y-g.height*s/2,g.width*s,g.height*s);left+=g.width*s+gap;}return w;
  }
+ private textWidth(text:string,height:number,color:string){
+  const atlas=this.atlas(color),glyphs=[...text].map(ch=>atlas.glyphs.get(ch)).filter((g):g is Glyph=>!!g);
+  return glyphs.reduce((n,g)=>n+g.width*height/atlas.digitHeight+height*.065,0)-height*.065;
+ }
  render(frame:EffectFrame|null,presentation:StatusPresentation|undefined,width:number,height:number,reduced:boolean,enabled:boolean,fixedTime?:number){
   const clock=fixedTime===undefined?performance.now():fixedTime*1000;
   if(clock<this.last){this.bursts.length=0;this.shown.clear();}this.last=clock;this.now=clock;
@@ -73,9 +77,17 @@ export class BattleNumbers {
   this.bursts=this.bursts.filter(b=>this.now-b.at<850);
   for(const b of this.bursts){
    const age=this.now-b.at;if(age<0)continue;const t=age/850,pop=reduced?1:1+(b.critical?.4:.1)*(1-Math.min(1,age/160)),gh=b.height*pop,y=b.y-(reduced?0:48*t);
-   c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(b.x,y);if(b.critical&&!reduced)c.rotate(-.07);
-   const width=this.text(b.text,0,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,20,'#ffad55');c.restore();
-   this.drawn.push({key:b.key,id:b.id,text:b.text,x:b.x-width/2,y:y-gh/2,width,height:gh,glyphHeight:gh,kind:b.kind,born:b.at});
+   const inkWidth=this.textWidth(b.text,gh,b.color),angle=b.critical&&!reduced?.07:0;
+   // Include the crit tag and tilted corners when constraining rising stacks.
+   const halfWidth=Math.max(inkWidth/2,b.critical?this.textWidth('CRIT',20,'#ffad55')/2:0);
+   const top=b.critical?Math.max(gh/2,gh*.75+10):gh/2;
+   const marginX=halfWidth*Math.cos(angle)+top*Math.sin(angle)+4;
+   const marginTop=top*Math.cos(angle)+halfWidth*Math.sin(angle)+4;
+   const marginBottom=gh/2*Math.cos(angle)+halfWidth*Math.sin(angle)+4;
+   const x=Math.max(marginX,Math.min(width-marginX,b.x)),safeY=Math.max(marginTop,Math.min(height-marginBottom,y));
+   c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(x,safeY);if(angle)c.rotate(-angle);
+   this.text(b.text,0,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,20,'#ffad55');c.restore();
+   this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-inkWidth/2,y:safeY-gh/2,width:inkWidth,height:gh,glyphHeight:gh,kind:b.kind,born:b.at});
   }
  }
  dispose(){this.canvas.remove();delete this.host.dataset.puppetNumbers;this.atlases.clear();this.bursts.length=0;}

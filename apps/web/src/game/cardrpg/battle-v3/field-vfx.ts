@@ -43,16 +43,23 @@ export class FieldVfx {
    const expansion=since<0?.40+.60*arrival:1+Math.min(.22,since/1000),r=radius*expansion;
    c.save();c.globalCompositeOperation='screen';c.lineCap='round';c.lineJoin='round';
    // Broad painted-style energy, composed from each element's own silhouette.
-   c.save();c.translate(x,y);c.rotate((seed%11-5)*.08+(view.reducedMotion?0:Math.sin(at/270+seed)*.08));
+   c.save();c.translate(x,y);
+   const winding=view.reducedMotion?0:(since<0?progress*.7:.7+Math.min(.8,since/450))*(seed%2?1:-1);
+   c.rotate((seed%11-5)*.08+winding);
    const aura=c.createRadialGradient(0,0,r*.10,0,0,r*1.05);
    aura.addColorStop(0,palette[1]+'b0');aura.addColorStop(.48,palette[1]+'90');aura.addColorStop(.8,palette[1]+'48');aura.addColorStop(1,palette[1]+'00');
    c.globalAlpha=release/Math.sqrt(targets.length);c.fillStyle=aura;c.strokeStyle=aura;
    this.silhouette(c,owner,family,r,progress,at/1000,seed);
    if(painted){
+    // Unfurl the painted energy around the hand, then sweep it out through the
+    // target. The original painting remains intact; this is a moving cut-out.
+    const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI);
+    c.save();c.scale(swell,swell);
     c.globalCompositeOperation='source-over';c.globalAlpha=release*.95;
     const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted,256,0,256,256,-extent/2,-extent/2,extent,extent);
     c.globalCompositeOperation='screen';c.globalAlpha=release*.42;
     c.rotate((seed%2?1:-1)*.25);c.drawImage(painted,512,0,256,256,-r*1.4,-r*1.05,r*2.8,r*2.1);
+    c.restore();
     this.audit.layers.push('painted-core','painted-sweep');this.draws+=2;
    }else{c.globalAlpha=release*.8;c.strokeStyle=palette[0]!;c.fillStyle=palette[0]!;c.lineWidth=r*.025;this.motif(c,family,r*.68,Math.max(.3,progress),at/1000,view.reducedMotion);}
    c.restore();this.draws+=2;this.audit.layers.push('element-aura');
@@ -91,13 +98,13 @@ export class FieldVfx {
   const ellipse=(x:number,y:number,rx:number,ry:number,angle=0)=>{c.beginPath();c.ellipse(x,y,rx,ry,angle,0,Math.PI*2);c.stroke();};
   switch(owner){
    case 'mochi':
-    for(let i=0;i<7;i++){const x=w*(i/6);c.beginPath();c.moveTo(cx,h*.75);c.lineTo(x-w*.1,0);c.lineTo(x+w*.035,0);c.closePath();c.fill();}c.lineWidth=8;ellipse(cx,cy,w*.42,h*.48);break;
+    for(let i=0;i<7;i++){const x=w*(i/6)+Math.sin(t*2.5)*w*.18;c.beginPath();c.moveTo(cx,h*.75);c.lineTo(x-w*.1,0);c.lineTo(x+w*.035,0);c.closePath();c.fill();}c.lineWidth=8;ellipse(cx,cy,w*(.34+.08*Math.sin(t*3)),h*.48);break;
    case 'soot':
     for(let i=0;i<8;i++){const x=w*(i+.4)/8,y=h*((t*.4+i*.21)%1);c.lineWidth=18+(i%3)*9;c.beginPath();c.moveTo(x-w*.12,y-h*.65);c.quadraticCurveTo(x-w*.04,y-h*.2,x,y);c.stroke();}break;
    case 'clover':
     for(let i=0;i<15;i++){const x=w*(i+.5)/15,y=h*(.5+.43*Math.sin(i*2.4+t));c.save();c.translate(x,y);c.rotate(i+t*.4);c.beginPath();c.ellipse(0,0,w*.055,h*.055,0,0,7);c.fill();c.restore();}break;
    case 'panko':
-    for(let i=0;i<6;i++){const x=w*(i+.5)/6,d=w*.08;c.beginPath();c.moveTo(x-d,h*.12);c.lineTo(x+d,h*.12);c.lineTo(x+d,h*.72);c.lineTo(x,h*.98);c.lineTo(x-d,h*.72);c.closePath();c.lineWidth=11;c.stroke();}break;
+    for(let i=0;i<6;i++){const x=w*(i+.5)/6,d=w*.08,drop=Math.sin(t*3+i*.65)*h*.16;c.save();c.translate(0,drop);c.beginPath();c.moveTo(x-d,h*.12);c.lineTo(x+d,h*.12);c.lineTo(x+d,h*.72);c.lineTo(x,h*.98);c.lineTo(x-d,h*.72);c.closePath();c.lineWidth=11;c.stroke();c.restore();}break;
    case 'biscuit':
     c.globalAlpha=release*.42;c.lineWidth=4;c.beginPath();for(let i=0;i<12;i++){const x=w*(i+.5)/12,y=h*(.5+.39*Math.sin(i*3.1));if(i===0)c.moveTo(x,y);else c.lineTo(x,y);}c.stroke();
     for(let i=0;i<12;i++)star(c,w*(i+.5)/12,h*(.5+.39*Math.sin(i*3.1)),22+8*Math.sin(t*3+i),5);
@@ -106,7 +113,7 @@ export class FieldVfx {
    case 'inkcap':
     for(let i=0;i<7;i++){const x=w*(i+.5)/7,y=h*(.5+.3*Math.sin(i*2+t));const fog=c.createRadialGradient(x,y,0,x,y,w*.19);fog.addColorStop(0,palette[1]+'dd');fog.addColorStop(1,palette[1]+'00');c.fillStyle=fog;c.fillRect(x-w*.2,y-w*.2,w*.4,w*.4);}break;
    case 'velvet':
-    c.lineWidth=8;for(let i=-2;i<8;i++){const x=w*i/6;c.beginPath();c.moveTo(x,0);c.lineTo(x+w*.5,h);c.moveTo(x,h);c.lineTo(x+w*.5,0);c.stroke();}break;
+    c.lineWidth=8;for(let i=-2;i<8;i++){const x=w*i/6+w*(t*.45%1)/6;c.beginPath();c.moveTo(x,0);c.lineTo(x+w*.5,h);c.moveTo(x,h);c.lineTo(x+w*.5,0);c.stroke();}break;
    case 'cinnamon':
     c.lineWidth=24;for(let i=0;i<5;i++){const x=w*(i+.5)/5;ellipse(x,h*.58,w*.12,h*(.22+.03*Math.sin(t*3+i)),t*.3+i);}break;
    case 'sorrel':

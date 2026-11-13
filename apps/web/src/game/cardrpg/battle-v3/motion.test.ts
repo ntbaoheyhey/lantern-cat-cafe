@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {createActionPlan} from '../../squad/turn3d/effects';
-import {MOTIONS,actionPose,hitPose,idlePhase} from './motion';
+import {MOTIONS,actionPose,actionCamera,hitPose,idlePhase} from './motion';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const events=[{type:'action_start',actorId:'cat',targetIds:['enemy'],skillId:'guardianBasic',actionId:1},{type:'damage',actorId:'cat',targetIds:['enemy'],amount:12,skillId:'guardianBasic',actionId:1}] as TurnEvent[];
 it('moves every archetype through anticipation, strike, return without mutating the event plan',()=>{
@@ -25,4 +25,13 @@ it('lands at the hero spot before the cut-in and seeks identically in reverse or
  const expected=actionPose({...input,elapsed:150});expect(expected.x).toBeCloseTo(1280*.48-250);
  actionPose({...input,elapsed:plan.duration-30});expect(actionPose({...input,elapsed:150})).toEqual(expected);
  expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
+});
+it('holds the camera through contact, restores framing, and mirrors enemy attacks',()=>{
+ const plan=createActionPlan(events),input={plan,asset:'mochi',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width:1280,height:720};
+ const at=(elapsed:number)=>actionCamera({...input,elapsed},'active'),contact=plan.beats[2]!.start;
+ expect(at(0)).toEqual({zoom:1,x:0,y:0,tilt:0});expect(at(plan.duration)).toEqual(at(0));
+ expect(at(contact).zoom).toBeCloseTo(1.18);expect(at(contact+80)).toEqual(at(contact));
+ const reverse=actionCamera({...input,elapsed:contact,side:'enemy',home:{...input.home,x:980},target:{...input.target,x:430}},'active');
+ expect(reverse.x).toBeCloseTo(-at(contact).x);expect(reverse.zoom).toBe(at(contact).zoom);
+ expect(actionCamera({...input,elapsed:contact},'ultimate')).toEqual(at(0));
 });

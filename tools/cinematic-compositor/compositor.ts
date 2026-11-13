@@ -88,7 +88,14 @@ async function load(id:string){
  [actor,summon,paint]=await Promise.all([loadSpineActor(plate.unit),loadImage(motif),loadImage(Object.entries(art).find(([p])=>p.endsWith('/'+l.source.split('/').at(-1)))![1]),document.fonts.ready]);scene.add(actor.root);actor.setOrder(2);core=Object.values(cores).find(p=>p.id===plate.unit);
  renderFrame(0);return{id:plate.id,frames:plate.frames,source:actor.source,beatFrames:[12,35,54]};
 }
-function renderFrame(value:number){const frame=Math.max(0,Math.min(plate.frames-1,Math.floor(value)));audit={layers:{},particles:0,motifCoverage:null,casterCorePixels:0,camera:plate.composition.camera};c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,1280,720);background(frame);lightShafts(frame);speedLines(frame);ground(frame);
- if(plate.composition.casterBehind){cast(frame);paintedSummon(frame);}else{paintedSummon(frame);cast(frame);}originalLayer(frame);particles(frame);impact(frame);flash(frame);
+function renderFrame(value:number){const frame=Math.max(0,Math.min(plate.frames-1,Math.floor(value)));audit={layers:{},particles:0,motifCoverage:null,casterCorePixels:0,camera:plate.composition.camera};c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,1280,720);
+ // Entrance whip, tightening charge, and release pull-out move the complete
+ // painted composition. Each plate retains its individual actor/motif camera.
+ const side=plate.composition.seed%2?1:-1,entrance=1-ease(frame/18),charge=smooth((frame-18)/25),release=smooth((frame-43)/18);
+ const zoom=1+entrance*.36+charge*.23-release*.18;
+ const pan=side*(-150*entrance+85*charge-70*release),tilt=side*(-.035*entrance+.018*charge-.015*release);
+ c.save();c.translate(640+pan,360);c.rotate(tilt);c.scale(zoom,zoom);c.translate(-640,-360);
+ background(frame);lightShafts(frame);speedLines(frame);ground(frame);
+ if(plate.composition.casterBehind){cast(frame);paintedSummon(frame);}else{paintedSummon(frame);cast(frame);}originalLayer(frame);particles(frame);c.restore();impact(frame);flash(frame);
  return{frame,seconds:frame/30,...audit};}
 Object.assign(window,{compositor:{load,renderFrame,ids:Object.values(timelines).map(p=>p.id)}});

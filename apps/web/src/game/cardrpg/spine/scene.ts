@@ -11,7 +11,7 @@ import {BattleNumbers as PuppetNumbers} from '../battle-v3/numbers';
 import {BodyFx} from '../battle-v3/body-fx';
 import {bodyStatuses} from '../battle-v3/status';
 import {bodyTint} from '../battle-v3/clarity';
-import {actionPose,attackMotion,hitPose,idlePhase,neutralPose,type MotionPoint} from '../battle-v3/motion';
+import {actionPose,actionCamera,attackMotion,hitPose,idlePhase,neutralPose,type MotionPoint} from '../battle-v3/motion';
 import {MotionTrails} from '../battle-v3/motion-trails';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
@@ -256,17 +256,22 @@ export class SpineScene {
    const framing=fitStageCamera(this.worldWidth,left,right,1+(maxZoom-1)*focus,PAINT.framingMargin*focus+PAINT.shake,this.framing);
    this.camera.zoom=framing.zoom;this.camera.position.x+=framing.x;
   }
-  // No camera motion in reduced mode. Animated fitting only guides the existing
-  // ultimate push-in; the ordinary stage and identity lanes remain stable.
-  if(sequence){
-   this.camera.zoom=view.reducedMotion?1:sequence.camera.zoom;
-   this.camera.rotation.z=view.reducedMotion?0:sequence.camera.tilt;
-   this.camera.position.x+=sequence.camera.x*this.worldWidth;
-   this.camera.position.y+=sequence.camera.y*PAINT.worldHeight;
+  // Track the acting pair through anticipation, contact and recovery. Ultimate
+  // plates keep their authored camera; reduced motion keeps a stationary field.
+  if(frame){
+   const actor=plan&&view.actors.find(a=>a.id===plan.actorId),home=actor&&this.homes.get(actor.id)?.point;
+   const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==actor?.side))??plan?.targetIds[0];
+   const target=this.homes.get(targetId??'')?.point??home;
+   const tier=sequence?.seq.tier??(frame.plan.ultimate?'ultimate':frame.clip==='special'||frame.clip==='telegraph'?'active':'basic');
+   const camera=actor&&home&&target&&tier!=='ultimate'?actionCamera({plan:frame.plan,elapsed:frame.elapsed,asset:this.actors.get(actor.id)!.asset,side:actor.side,home,target,width,height},tier):sequence?.camera??{zoom:1,x:0,y:0,tilt:0};
+   this.camera.zoom=view.reducedMotion?1:camera.zoom;
+   this.camera.rotation.z=view.reducedMotion?0:camera.tilt;
+   this.camera.position.x+=view.reducedMotion?0:camera.x*this.worldWidth;
+   this.camera.position.y+=view.reducedMotion?0:camera.y*PAINT.worldHeight;
    const px=this.worldWidth/width;
-   this.camera.position.x+=Math.sin(frame!.elapsed*.105)*sequence.shake*px;
-   this.camera.position.y+=Math.cos(frame!.elapsed*.085)*sequence.shake*.4*px;
-   this.firstHit=frame!.elapsed>=sequence.seq.impact;
+   this.camera.position.x+=view.reducedMotion?0:Math.sin(frame.elapsed*.105)*(sequence?.shake??0)*px;
+   this.camera.position.y+=view.reducedMotion?0:Math.cos(frame.elapsed*.085)*(sequence?.shake??0)*.4*px;
+   this.firstHit=frame.elapsed>=(sequence?.seq.impact??frame.plan.beats[2]!.start);
   }else this.camera.rotation.z=0;
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
   this.stage.update(this.worldWidth,PAINT.worldHeight,view.reducedMotion?0:20*focus,.18*focus,view.formationC2);
