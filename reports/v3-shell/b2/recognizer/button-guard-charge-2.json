@@ -1,11 +1,11 @@
 {
   "audio": {
     "path": "assets/audio-sources/b2/callouts/button-guard-charge-2.flac",
-    "sha256": "5f1b55a850bdbbfc11c82392fa7f920c2d8d31710853ebcdac627829739b0dfd"
+    "sha256": "1d48b5619cd6ba88f5346b4b195e636667ac4804305e3faf12e9a15c72abdf7d"
   },
-  "expected": "Hold!",
-  "recognized": "Oles.",
-  "wordAccuracy": 0,
+  "expected": "Hold the line!",
+  "recognized": "Hold the line.",
+  "wordAccuracy": 1.0,
   "model": "faster-whisper small.en int8 CPU",
   "prompt": null,
   "beamSize": 5,

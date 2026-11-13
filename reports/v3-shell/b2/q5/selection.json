@@ -1,0 +1,991 @@
+{
+  "date": "2026-11-13T17:48:39.636307+00:00",
+  "source": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-PRODUCTION.json",
+    "sha256": "07966a32b49dd1d92fcad1ca3f43d7ecc38a61f44a753fbe230b653052649c2a"
+  },
+  "inputs": [
+    {
+      "path": "reports/v3-shell/b2/q5/formant-probes.json",
+      "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+    },
+    {
+      "path": "reports/v3-shell/b2/q5/onset-probes.json",
+      "sha256": "42f074f4a0cc75f3dfde3202860823d82e1ca7c4c152f9cf0d88ca23f3405c98"
+    },
+    {
+      "path": "reports/v3-shell/b2/q5/wording-probes.json",
+      "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+    },
+    {
+      "path": "reports/v3-shell/b2/q5/wording-clover-round2.json",
+      "sha256": "51a880ca4d14b9011a33826144c31c16992ec4088a2d8ab5a2943dbd6126f88c"
+    }
+  ],
+  "changes": [
+    {
+      "destination": "assets/audio-sources/b2/callouts/clover-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/clover-charge-1.flac",
+        "sha256": "d10a046ff92469587ab80490d8cd363d1573242b951c628e8834fc4660058620",
+        "text": "Bloom!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording-clover-round2/clover-charge-1-0.flac",
+        "sha256": "077d784906cd8aee05eb43225ce92572d892149489679b072a6e58bce0e7b6f3"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-clover-round2.json",
+        "sha256": "51a880ca4d14b9011a33826144c31c16992ec4088a2d8ab5a2943dbd6126f88c"
+      },
+      "text": "Watch the flowers bloom!",
+      "wordAccuracy": 0.75
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/clover-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/clover-charge-2.flac",
+        "sha256": "8eb1b9239c39e69b4208e6bd309f3c24a8292526518d48d9973119bf18c06c78",
+        "text": "Bloom!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording-clover-round2/clover-charge-2-0.flac",
+        "sha256": "fe4be1a074f516707795be7783687dec5520e4e00f59b9d24bd04a8b272f2a38"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-clover-round2.json",
+        "sha256": "51a880ca4d14b9011a33826144c31c16992ec4088a2d8ab5a2943dbd6126f88c"
+      },
+      "text": "Watch the flowers bloom!",
+      "wordAccuracy": 0.75
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/clover-release-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/clover-release-2.flac",
+        "sha256": "cf0f7a27f464e4311d79491baba5851594e00f665f12ac649d3110d52f40fafc",
+        "text": "Bloom again!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-formants/clover-release-2-1.flac",
+        "sha256": "2adeaf7015cbbdfa9fb14351ed1dfc1856a16f639f2ce361d7ac01bf42fc043b"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/formant-probes.json",
+        "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+      },
+      "text": "Bloom again!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/mallow-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/mallow-charge-1.flac",
+        "sha256": "64aa11bd897e32748b5856ede4f8f133adeefa8de63e778a7b19778b7e6d143c",
+        "text": "Burn!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-onsets/mallow-charge-1-2.flac",
+        "sha256": "b764e309ad3c3b23aee1b72fe4804f4cdd6408df6530940bd10834c593c14f8b"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/onset-probes.json",
+        "sha256": "42f074f4a0cc75f3dfde3202860823d82e1ca7c4c152f9cf0d88ca23f3405c98"
+      },
+      "text": "Burn!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/sorrel-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/sorrel-charge-1.flac",
+        "sha256": "9306c9078136b405971b53c29114e1ab8264e9f73aeb6e75bfa6ff349ce48336",
+        "text": "One!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/sorrel-charge-1-0.flac",
+        "sha256": "48d03a018b2722ce10002999cddf817646ecf5de2c2a9f075366ad78f90cc1f1"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "One more cup!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/sorrel-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/sorrel-charge-2.flac",
+        "sha256": "bb282f0d74be864ce0305e96192e7175833ef5f6d7799e99aba44e7dc10e852c",
+        "text": "One!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/sorrel-charge-2-0.flac",
+        "sha256": "e6fdd90026c57ea14b1d6699dca70dd7c54680cdc26e06e9df743dcd1f5c789b"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "One more cup!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/biscuit-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-charge-1.flac",
+        "sha256": "f6dc2393e9bad924d57e2b1dc1177ec084aece57be1651924bb6f8751843ccd6",
+        "text": "Move!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/biscuit-charge-1-0.flac",
+        "sha256": "299bf8698731740841a1a1a44c62f9ffd8376378f798a5af4b3f80a545fc17e8"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Move with me!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/biscuit-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-charge-2.flac",
+        "sha256": "6d1cfc3af941962e984f8639db5dd6cc4215d2756c3da7248a62cfd77a45e251",
+        "text": "Move!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/biscuit-charge-2-0.flac",
+        "sha256": "aff9510cab129c2c510967c96441dc50573d1b5292119718b23e84ea171ef698"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Move with me!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
+        "sha256": "648297cebf35ab04d3246640c84d19c039648e773ccfd41cb6782eff206d3bd6",
+        "text": "Back!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-formants/cinnamon-charge-2-1.flac",
+        "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/formant-probes.json",
+        "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+      },
+      "text": "Back!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/velvet-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/velvet-charge-1.flac",
+        "sha256": "6797690536af5b4fe0ae4e0e63628a309decdc45c8200d3d0db947b372361449",
+        "text": "Curtain!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/velvet-charge-1-0.flac",
+        "sha256": "8bde631c4b933c0fd1d97db86fd2144917b0cda77c156ad70d4be8f40913df6e"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Raise the curtain!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/velvet-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/velvet-charge-2.flac",
+        "sha256": "f88c4ed7af0aecef12c65831a15a5e301a2fcb91475ecdfbd29066a7bb9275d5",
+        "text": "Curtain!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/velvet-charge-2-0.flac",
+        "sha256": "b4bbf249d939731dcb5cb967e31822b438df6d6fe6ea0899bdde76eb2b5dc068"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Raise the curtain!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/button-guard-skill-1-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/button-guard-skill-1-1.flac",
+        "sha256": "70e25f6eb55f0819045802131d3374498d928bd24dbb857f1c01eec495f01151",
+        "text": "Button cut!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-formants/button-guard-1-1-2.flac",
+        "sha256": "e4cf85e4d745ea9e21a22e0340e2e0e7abfba5ca111daba01958c44416d9cac3"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/formant-probes.json",
+        "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+      },
+      "text": "Button cut!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/button-guard-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/button-guard-charge-1.flac",
+        "sha256": "98bb6a556eaeb3ae7b1798540338ebf5371611e56b95c105480e4257bd0ad8ef",
+        "text": "Hold!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/button-guard-charge-1-0.flac",
+        "sha256": "035049181903b35dd408a01dc23922971065a391928ffbfee9cca6f0f74a83c9"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Hold the line!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/button-guard-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/button-guard-charge-2.flac",
+        "sha256": "5f1b55a850bdbbfc11c82392fa7f920c2d8d31710853ebcdac627829739b0dfd",
+        "text": "Hold!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/button-guard-charge-2-0.flac",
+        "sha256": "1d48b5619cd6ba88f5346b4b195e636667ac4804305e3faf12e9a15c72abdf7d"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Hold the line!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/spool-ram-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/spool-ram-charge-1.flac",
+        "sha256": "bebd40603419a316e9a80919bb1cf47b77e2712dda4ed1aeb795b9b2bf73c558",
+        "text": "Full!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-formants/spool-ram-charge-1-0.flac",
+        "sha256": "3968756d0fbd8423ae189941b7013b1144cb0d32a841cfdf929760999c11a9cd"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/formant-probes.json",
+        "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+      },
+      "text": "Full!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/needle-moth-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/needle-moth-charge-1.flac",
+        "sha256": "1d4f61c239f911844211490263e77d7304d0215760d3a305676d0113b968d191",
+        "text": "Sharp!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/needle-moth-charge-1-0.flac",
+        "sha256": "d35dc0d2225c7f718a120c4842d98e3e50f8755c7c7522875193bf3544550d0f"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Wings sharp and ready!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/needle-moth-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/needle-moth-charge-2.flac",
+        "sha256": "7d09bda7fc822258c9136edfca5ed5d01d9f9799ca6d102cfd334c0e13fa7c5c",
+        "text": "Sharp!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/needle-moth-charge-2-0.flac",
+        "sha256": "b58d58f9cbf1c90df12719fce2482ca3f9c7a598bfa0105cf4d4e236f4a47436"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Wings sharp and ready!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/teacup-healer-skill-1-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/teacup-healer-skill-1-1.flac",
+        "sha256": "3cec3bb6fbedef4cc7395baafb2f7fbc1142694972c55d38ffd2f3a1c90cc824",
+        "text": "Cup tap!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-formants/teacup-healer-1-1-2.flac",
+        "sha256": "554cc69df8e946aafaa2a1a1eb0da74e6c311650f3a9f144522e412207fb5c66"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/formant-probes.json",
+        "sha256": "df72f27e6af69a4eed10b266ada0c56b02a4199e59ebd4b9078fc0b398666379"
+      },
+      "text": "Cup tap!",
+      "wordAccuracy": 0.5
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/teacup-healer-skill-2-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/teacup-healer-skill-2-1.flac",
+        "sha256": "9dce7abfde02b7ccf3b3364a109aa5532c50be559cb588f4f8fd47f77efe21d1",
+        "text": "Refill!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/teacup-healer-2-1-0.flac",
+        "sha256": "a06798968174f9f7b90ff41b656f61647e8e7738f400e7490f6daf675f8fb262"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Fill it up!",
+      "wordAccuracy": 0.6666666666666667
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/teacup-healer-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/teacup-healer-charge-1.flac",
+        "sha256": "6e1b2111e18fee4bcb073a4d44439a2e7ac45c78c5efe5547513272df75cef4e",
+        "text": "Full!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/teacup-healer-charge-1-1.flac",
+        "sha256": "0f0e208b2d51d3da2072b297a793f829808216cbd02069b18836f5b79f714e3e"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Fill the cup!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/teacup-healer-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/teacup-healer-charge-2.flac",
+        "sha256": "d8bce076c7bc19f60b9a3d7c1fbc4d45ea5cc7e7a08a49e49d900c2353e6d0c4",
+        "text": "Full!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/teacup-healer-charge-2-0.flac",
+        "sha256": "b0ef546c6f35ecd331097b73783feceb85a0ff10309697b79966fe5e7e5f2573"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Fill the cup!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/kettle-knight-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/kettle-knight-charge-1.flac",
+        "sha256": "45060d0e1ca46ab60598401a30860aec3c2c8cac74552526a8c61e0c1ad1318c",
+        "text": "Boil!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/kettle-knight-charge-1-0.flac",
+        "sha256": "5b4cb3f5abb4d608f18b35e0cd13670aebce5888d1d14177e2738e88aac930d1"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Steam is rising!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/kettle-knight-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/kettle-knight-charge-2.flac",
+        "sha256": "4a83124f077737f28144bef1b05b745d7eaf473ea6f0ea7ebf2affe7d4015123",
+        "text": "Boil!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/kettle-knight-charge-2-0.flac",
+        "sha256": "c7b1c7c0d484d3da79fcdd9e1ab4ea03689a2520c81c2bb2639e86c4163792c4"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Steam is rising!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/kettle-knight-release-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/kettle-knight-release-1.flac",
+        "sha256": "988731f5b0b729d82e4e4596113be4253d6e76815328b325140fafca8928e159",
+        "text": "Boil over!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/kettle-knight-release-1-1.flac",
+        "sha256": "5a1080be5d30f59484c58c4472f200a507be2469c53593cd63ea0e5059f115f1"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Let off steam!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/kettle-knight-release-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/kettle-knight-release-2.flac",
+        "sha256": "6d7814ad9b6628dab7983b2666623a9a70827b2444f9beb1f08cfcaefb33ca35",
+        "text": "Boil over!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/kettle-knight-release-2-1.flac",
+        "sha256": "9e2fc3420f280a7676f1d676e622764a3bad4d4ca8576fa6aea1cde182547e54"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Let off steam!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/binding-thread-release-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/binding-thread-release-1.flac",
+        "sha256": "a3a9f66f7470d5f5711726340bb9c9332e59c1976b68708c9eba6b15b5388739",
+        "text": "Bound fast!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/binding-thread-release-1-0.flac",
+        "sha256": "763dda94664870623d9ba22c0d166c96bb6971217d7a4a04609ed214919e63c2"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Hold them tight!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/binding-thread-release-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/binding-thread-release-2.flac",
+        "sha256": "2a334f415fad3d7396e96e277975d5f2e14beb15f2dbf363f09883ea771f1069",
+        "text": "Bound fast!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/binding-thread-release-2-0.flac",
+        "sha256": "43c9259b849fff2af1a2a0ef5015f2976726ec9945cb0e8012eb06c236bec671"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Hold them tight!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/practice-cushion-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/practice-cushion-charge-1.flac",
+        "sha256": "b543b2fdbc891b45a6a71a4b894c9017cbc2954b7c8ad5174fdbe0965db7c340",
+        "text": "Good!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/practice-cushion-charge-1-0.flac",
+        "sha256": "89fa8c175a9204c98aac030f9e2bf8056a9d5b0764639d2b30900cb99eb04768"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Good luck to you!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/practice-cushion-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/practice-cushion-charge-2.flac",
+        "sha256": "de72b943fdbdaf65019ee36925f1335c75d681c6650a5d56335a6d5c0f6a2d46",
+        "text": "Good!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/practice-cushion-charge-2-0.flac",
+        "sha256": "e0f2a6fd5054ff301092ae4d633c7a3c3e6355fc1c00ef459fbd15a297476282"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "Good luck to you!",
+      "wordAccuracy": 0.75
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/pollen-scout-release-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/pollen-scout-release-1.flac",
+        "sha256": "cc507393e6f2b54ff7f2a6db009924f3fa2be970d3c371daa111d100943438a8",
+        "text": "Pollen storm!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/pollen-scout-release-1-0.flac",
+        "sha256": "845b9290daaa1b67c313d24ffcd09cb4be563551d14169459b900148465c7079"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "A storm of seeds!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/pollen-scout-release-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/pollen-scout-release-2.flac",
+        "sha256": "6b2c71ff8b2a6ced2dc95d11db4c46e0bb1048eaaabe484d7a28b6f086dafdf5",
+        "text": "Pollen storm!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/pollen-scout-release-2-0.flac",
+        "sha256": "f00e9b1193e9fe30a104e0fabe2443504d8d5122c9e7e1282ba206ae9375fcba"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "A storm of seeds!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-1.flac",
+        "sha256": "51697254f4da929f3c2288cf543edb2b83da6a71cf0ea84f1b2c2b3479459fc4",
+        "text": "All!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/crumb-sentinel-charge-1-0.flac",
+        "sha256": "ca443d87b8cb7a38f5fab805e9fb914a587e9cdc7f41cdf11044f86c44e7c2bf"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "All together now!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-2.flac",
+        "sha256": "de1801630fefd7c7298e09632eb450fdc99c92feaf22232abb915c2289d8ad6a",
+        "text": "All!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/crumb-sentinel-charge-2-0.flac",
+        "sha256": "3fbaddd8ea9d6d056c98266e9a34b97313a2d565e390ea4b87ba83e2cf11facb"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "All together now!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/pantry-crown-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/pantry-crown-charge-1.flac",
+        "sha256": "f37f7886b548cb0ca3f858b6d09feb4d91698b9d849b1fb9381855a5669cd78a",
+        "text": "Mine!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/pantry-crown-charge-1-1.flac",
+        "sha256": "e487e82e449091efcf81c97e2bf616dadd88ad0bf082d7e123ef898b8e8f6621"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "All is mine!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/pantry-crown-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/pantry-crown-charge-2.flac",
+        "sha256": "8b3868aa4811822ef89ecdcea9e7b639d5007342212590d37cdf62f7dc47c80d",
+        "text": "Mine!",
+        "wordAccuracy": 0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-wording/pantry-crown-charge-2-0.flac",
+        "sha256": "2d0fd9beaa107bdab2e6cfea7ff19d38a3a63d7acef246a57317ebae8490b515"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/wording-probes.json",
+        "sha256": "690c5a8ff87debe11f3ad86d98ba4e8491eda3ef40edfc0bb92981612ba67908"
+      },
+      "text": "All is mine!",
+      "wordAccuracy": 1.0
+    }
+  ],
+  "cats": [
+    {
+      "id": "mochi",
+      "sourceRecording": 110011,
+      "mfcc": [
+        39.97092355208779,
+        -11.08056647167326,
+        -14.91988260225351,
+        -32.37337336854304,
+        -19.68354257063272,
+        -13.923250547920553,
+        -1.1426942383470144,
+        -19.432703114238404,
+        -2.6291829341610216,
+        -8.786475666372196,
+        1.8159731480000196,
+        -5.884019930057721,
+        0.40341825536610254
+      ],
+      "medianF0": 315.7894736842105,
+      "nearestCat": "soot",
+      "nearestMfccDistance": 52.62585545541031,
+      "nearestF0Semitones": 5.512783083392955,
+      "passes": true
+    },
+    {
+      "id": "soot",
+      "sourceRecording": 264507,
+      "mfcc": [
+        56.270557263397514,
+        22.719567539453383,
+        5.850418035310553,
+        -13.651719276776824,
+        -3.846925982731309,
+        -7.744212609616677,
+        3.920904435856094,
+        -9.597760016959493,
+        5.881086599420585,
+        -1.6680472723433726,
+        3.6664293393317564,
+        0.4197831087708032,
+        -0.9544920345318011
+      ],
+      "medianF0": 229.6703296703297,
+      "nearestCat": "mochi",
+      "nearestMfccDistance": 52.62585545541031,
+      "nearestF0Semitones": 5.512783083392956,
+      "passes": true
+    },
+    {
+      "id": "clover",
+      "sourceRecording": 451250,
+      "mfcc": [
+        -5.741659581046363,
+        -83.92389441728488,
+        -17.77806021718935,
+        -34.2751212442919,
+        -22.754322334252674,
+        -12.779541964314452,
+        -8.017463728838406,
+        -4.41870959420065,
+        -3.666399443417699,
+        -1.7050157990075838,
+        3.300116291565331,
+        -3.922968075356426,
+        1.5867457926730832
+      ],
+      "medianF0": 705.8823529411765,
+      "nearestCat": "inkcap",
+      "nearestMfccDistance": 49.962243703758304,
+      "nearestF0Semitones": 2.753782153473208,
+      "passes": true
+    },
+    {
+      "id": "panko",
+      "sourceRecording": 656249,
+      "mfcc": [
+        107.85986307182783,
+        -16.88592993770948,
+        -7.368039481088384,
+        -11.83816467844757,
+        -9.937958529317122,
+        -2.1441188423610296,
+        -6.893879485616217,
+        -1.9088013116733176,
+        4.101795583870103,
+        -1.6304183584724843,
+        1.6465217649062367,
+        -4.104797809431155,
+        1.558775596317824
+      ],
+      "medianF0": 229.6703296703297,
+      "nearestCat": "mallow",
+      "nearestMfccDistance": 51.236128541986005,
+      "nearestF0Semitones": 5.974472857168586,
+      "passes": true
+    },
+    {
+      "id": "mallow",
+      "sourceRecording": 333916,
+      "mfcc": [
+        111.73616526671306,
+        -62.57676175529782,
+        -6.201854097924009,
+        7.562853501776019,
+        -3.4296714279337324,
+        -6.592066146186926,
+        -8.763978849136867,
+        1.72574482255619,
+        3.5680740597384655,
+        -5.100636300747561,
+        -5.59442257718493,
+        -3.2332263128549026,
+        2.1385391605252115
+      ],
+      "medianF0": 324.3243243243243,
+      "nearestCat": "panko",
+      "nearestMfccDistance": 51.236128541986005,
+      "nearestF0Semitones": 5.974472857168585,
+      "passes": true
+    },
+    {
+      "id": "sorrel",
+      "sourceRecording": 668821,
+      "mfcc": [
+        154.08770362811606,
+        33.30628042624237,
+        -11.724771851028057,
+        -11.951998563151543,
+        -4.819331367920292,
+        -1.3330286330740455,
+        -2.59647573936,
+        -5.516448738054489,
+        -2.6176885429301935,
+        0.9677750539607467,
+        -0.5665120636565688,
+        -2.6621381153848263,
+        -1.1266381043445417
+      ],
+      "medianF0": 250.0,
+      "nearestCat": "panko",
+      "nearestMfccDistance": 69.27985722756232,
+      "nearestF0Semitones": 1.468363236062108,
+      "passes": true
+    },
+    {
+      "id": "biscuit",
+      "sourceRecording": 763906,
+      "mfcc": [
+        138.96385034675515,
+        -49.395986741195564,
+        -37.98550603728414,
+        -11.646955113671597,
+        -19.44786458992726,
+        -14.180884319779897,
+        -3.848227796792051,
+        -8.992227989633108,
+        -9.437668550670024,
+        -3.851407094456421,
+        -1.0881821592612926,
+        0.3458563168822346,
+        -2.944137106775161
+      ],
+      "medianF0": 241.21212121212122,
+      "nearestCat": "mallow",
+      "nearestMfccDistance": 54.563437512348266,
+      "nearestF0Semitones": 5.125617884180826,
+      "passes": true
+    },
+    {
+      "id": "inkcap",
+      "sourceRecording": 845517,
+      "mfcc": [
+        34.52178041420416,
+        -100.57795784049652,
+        -39.92765723042847,
+        -29.16405901677909,
+        -20.263162918712172,
+        -13.061072982821221,
+        -5.180755434318432,
+        -5.319461749928322,
+        3.3034575881088117,
+        -0.03163357737221184,
+        0.8523059239328155,
+        -5.770659801342209,
+        -0.6643658135798411
+      ],
+      "medianF0": 827.5862068965517,
+      "nearestCat": "clover",
+      "nearestMfccDistance": 49.962243703758304,
+      "nearestF0Semitones": 2.753782153473209,
+      "passes": true
+    },
+    {
+      "id": "cinnamon",
+      "sourceRecording": 756236,
+      "mfcc": [
+        -19.151594879822785,
+        1.0015149638222771,
+        -8.798124980161784,
+        -24.152123365954626,
+        -14.375611496003744,
+        -10.029216970756073,
+        -5.837664623953441,
+        3.105145190931714,
+        -2.9744550347152425,
+        -6.628116782159652,
+        -1.0657972234389959,
+        -2.2913503691247037,
+        -2.679953105567328
+      ],
+      "medianF0": 324.3243243243243,
+      "nearestCat": "mochi",
+      "nearestMfccDistance": 65.9950415438129,
+      "nearestF0Semitones": 0.46168977377562764,
+      "passes": true
+    },
+    {
+      "id": "brioche",
+      "sourceRecording": 814892,
+      "mfcc": [
+        59.99333974912951,
+        -25.802016033785165,
+        23.789937257957614,
+        -3.061086527006381,
+        -0.6358227298394817,
+        -2.7567236656726615,
+        -4.320586062164994,
+        -6.783711432474991,
+        4.678336797146414,
+        -1.1154568019149946,
+        2.9352104023317174,
+        -5.678311763788162,
+        3.985447641482302
+      ],
+      "medianF0": 247.42268041237114,
+      "nearestCat": "marigold",
+      "nearestMfccDistance": 52.199280062524245,
+      "nearestF0Semitones": 1.2967169502894371,
+      "passes": true
+    },
+    {
+      "id": "velvet",
+      "sourceRecording": 668824,
+      "mfcc": [
+        94.91946268099724,
+        -79.195324172148,
+        -36.67085958952688,
+        -29.035442125511157,
+        -27.01470388119174,
+        -15.169757033804332,
+        -8.610860022834904,
+        -9.906790422603597,
+        -3.63300929501172,
+        -3.730800957263494,
+        -1.2057593914118458,
+        -1.7530080789814475,
+        -0.31269343834709323
+      ],
+      "medianF0": 827.5862068965517,
+      "nearestCat": "marigold",
+      "nearestMfccDistance": 52.54844573683757,
+      "nearestF0Semitones": 19.60646521442523,
+      "passes": true
+    },
+    {
+      "id": "marigold",
+      "sourceRecording": 234333,
+      "mfcc": [
+        65.41730830775647,
+        -56.067825417418966,
+        -3.3565676808892206,
+        -21.1350487537274,
+        -19.21404511355883,
+        -12.625766325627142,
+        -10.065236437193077,
+        -0.007219857822838793,
+        -5.958802167994144,
+        -2.166614174554909,
+        -4.060275204184223,
+        -1.5310266836676332,
+        0.26191437876862533
+      ],
+      "medianF0": 266.6666666666667,
+      "nearestCat": "brioche",
+      "nearestMfccDistance": 52.199280062524245,
+      "nearestF0Semitones": 1.2967169502894382,
+      "passes": true
+    }
+  ],
+  "distinctnessThreshold": 46.9676681343465,
+  "allDistinct": true,
+  "skillLines": 62,
+  "ultimateLines": 50,
+  "published": true,
+  "publishedSource": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-PRODUCTION.json",
+    "sha256": "c9d90111e6fda635dd5010c9f1c055b6f916d0808f017ad774d6ea37b3fd0698"
+  }
+}

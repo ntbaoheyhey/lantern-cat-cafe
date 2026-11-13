@@ -1,11 +1,11 @@
 {
   "audio": {
     "path": "assets/audio-sources/b2/callouts/pantry-crown-charge-2.flac",
-    "sha256": "8b3868aa4811822ef89ecdcea9e7b639d5007342212590d37cdf62f7dc47c80d"
+    "sha256": "2d0fd9beaa107bdab2e6cfea7ff19d38a3a63d7acef246a57317ebae8490b515"
   },
-  "expected": "Mine!",
-  "recognized": "Buh-bye.",
-  "wordAccuracy": 0,
+  "expected": "All is mine!",
+  "recognized": "All is mine.",
+  "wordAccuracy": 1.0,
   "model": "faster-whisper small.en int8 CPU",
   "prompt": null,
   "beamSize": 5,

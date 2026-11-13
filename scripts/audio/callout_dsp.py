@@ -59,6 +59,7 @@ def process(row, take=0, settings=None):
     speech=speak(settings.get('ttsText',text),settings.get('ttsTake',take),pace)
     if settings.get('cutSpeechMs'):
         speech=cat_speak.edge(speech[:round(RATE*settings['cutSpeechMs']/1000)],.008)
+    clear_speech=rms_normalize(speech.copy())
     # Rate-preserving pitch/formant processing. A clear upper consonant band
     # survives the chest/nasal coloration so small speakers retain the words.
     semitones=p['baseSemitones']*settings['pitchWeight']+(take-.5)*.35
@@ -92,8 +93,10 @@ def process(row, take=0, settings=None):
     start=int(RATE*lead);tail=int(RATE*settings['tailSeconds'])
     x=np.zeros(start+len(speech)+tail+int(RATE*.12),dtype=np.float32)
     x[start:start+len(speech)]=speech
+    word_onsets=settings.get('wordOnsetsSeconds')
     for i,word in enumerate(re.findall(r"[\w']+",text)):
-        at=start+int(RATE*.06)+int(len(speech)*i/max(1,len(text.split())))
+        onset=int(RATE*word_onsets[i]) if word_onsets and i<len(word_onsets) else int(len(speech)*i/max(1,len(text.split())))
+        at=min(start+len(speech)-int(RATE*.09),start+int(RATE*.06)+onset)
         grain=cat_speak.edge(cat[(i*int(RATE*.1))%max(1,len(cat)-int(RATE*.09)):][:int(RATE*.09)])
         x[at:at+len(grain)]+=grain*settings['grainGain']
     ending=cat_speak.edge(cat[-min(len(cat),tail+int(RATE*.1)):-int(RATE*.1)])
@@ -116,6 +119,16 @@ def process(row, take=0, settings=None):
         # consonants together, leaving a thin line that music easily masks.
         dry_mix=max(0,min(1,settings.get('spokenCore',0)))
         x=cat_speak.spectral(x,lambda f:dry_mix+(1-dry_mix)*colour_response(f,eq))
+    if settings.get('consonantCore') and word_onsets:
+        # Restore short, time-aligned upper-band speech attacks after character
+        # colour. Timestamps come from unprompted local ASR of the clean source;
+        # the measured callout is independently recognised without a prompt.
+        core=cat_speak.spectral(clear_speech,lambda f:1-np.exp(-(f/1800)**4))
+        for onset in word_onsets:
+            at=max(0,round(RATE*onset));end=min(len(core),at+round(RATE*.14))
+            grain=cat_speak.edge(core[at:end],.008)*settings['consonantCore']
+            count=min(len(grain),len(x)-start-at)
+            if count>0:x[start+at:start+at+count]+=grain[:count]
     return normalize_callout(x),used,{'profile':p,'settings':settings,'semitones':semitones,'grains':details,'speechModel':MODEL_URL,'firstWordMs':round(lead*1000)}
 
 def normalize_callout(x):
@@ -163,9 +176,9 @@ def accuracy(expected,actual):
         dp=nxt
     return max(0,1-dp[-1]/max(1,len(a)))
 
-def recognizer():
+def recognizer(threads=4):
     from faster_whisper import WhisperModel
-    return WhisperModel('small.en',device='cpu',compute_type='int8',cpu_threads=4,download_root=str(ROOT/'tools/audio-models'),local_files_only=True)
+    return WhisperModel('small.en',device='cpu',compute_type='int8',cpu_threads=threads,download_root=str(ROOT/'tools/audio-models'),local_files_only=True)
 
 def recognize(model,path,text):
     segments,info=model.transcribe(str(path),language='en',beam_size=5,vad_filter=False,condition_on_previous_text=False,temperature=0)

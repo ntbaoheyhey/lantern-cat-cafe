@@ -29,3 +29,31 @@ Draft script for local free synthesis. Timing contract and recogniser evidence a
 | teacup-healer | Enemy growl/roar | Cup tap! | Refill! | — | Full cups! |
 | binding-thread | Enemy growl/roar | Tie tight! | Knot them! | — | Bound fast! |
 | practice-cushion | Enemy growl/roar | Soft bump! | Try again! | — | Good practice! |
+
+## Q5 measured wording updates
+
+Current playback metadata remains apps/web/src/audio/voice-callouts.json. All variants of a line share the text below.
+
+| Cue | Text | Minimum recognised accuracy |
+|---|---|---:|
+| voice.clover.ult.charge | Watch the flowers bloom! | 0.75 |
+| voice.clover.ult.release | Bloom again! | 1.0 |
+| voice.mallow.ult.charge | Burn! | 1.0 |
+| voice.sorrel.ult.charge | One more cup! | 1.0 |
+| voice.biscuit.ult.charge | Move with me! | 1.0 |
+| voice.cinnamon.ult.charge | Back! | 1.0 |
+| voice.velvet.ult.charge | Raise the curtain! | 1.0 |
+| voice.button-guard.skill.enemy:button-guard:basic | Button cut! | 1.0 |
+| voice.button-guard.ult.charge | Hold the line! | 1.0 |
+| voice.spool-ram.ult.charge | Full! | 1.0 |
+| voice.needle-moth.ult.charge | Wings sharp and ready! | 1.0 |
+| voice.teacup-healer.skill.enemy:teacup-healer:basic | Cup tap! | 0.5 |
+| voice.teacup-healer.skill.enemy:teacup-healer | Fill it up! | 0.6666666666666667 |
+| voice.teacup-healer.ult.charge | Fill the cup! | 1.0 |
+| voice.kettle-knight.ult.charge | Steam is rising! | 1.0 |
+| voice.kettle-knight.ult.release | Let off steam! | 1.0 |
+| voice.binding-thread.ult.release | Hold them tight! | 1.0 |
+| voice.practice-cushion.ult.charge | Good luck to you! | 0.75 |
+| voice.pollen-scout.ult.release | A storm of seeds! | 1.0 |
+| voice.crumb-sentinel.ult.charge | All together now! | 1.0 |
+| voice.pantry-crown.ult.charge | All is mine! | 1.0 |

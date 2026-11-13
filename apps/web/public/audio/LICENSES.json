@@ -27629,7 +27629,7 @@
     {
       "path": "apps/web/public/audio/callout-mochi.webm",
       "file": "callout-mochi.webm",
-      "sha256": "07086eefd2113e2edf503cce1eafbc5f9daba667c049beb37aede0cfd1255e5c",
+      "sha256": "f44899990d59ef18575f05fbe6f9a890b06b5af3c55c7a2fd1be10af2005b2c0",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28163,7 +28163,7 @@
     {
       "path": "apps/web/public/audio/callout-soot.webm",
       "file": "callout-soot.webm",
-      "sha256": "635bd29aa14f6aa4b4b66135485064011e90102cd254640fb8c68bc11a40cabe",
+      "sha256": "4884a24de5515c3be47cb362bab902772de9e7938cfc3c9238ab32c89fc4d3d5",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28497,7 +28497,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/clover-charge-1.flac",
       "file": "clover-charge-1.flac",
-      "sha256": "d10a046ff92469587ab80490d8cd363d1573242b951c628e8834fc4660058620",
+      "sha256": "077d784906cd8aee05eb43225ce92572d892149489679b072a6e58bce0e7b6f3",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28515,29 +28515,42 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/451250.flac",
-          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c",
-          "sourceUrl": "https://freesound.org/people/dreamstobecome/sounds/451250/",
-          "license": "CC0-1.0"
+          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/175678-03.flac",
-          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-04.flac",
+          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-08.flac",
+          "sha256": "22aa7fa295cb7585cf66ae0ecc301f7b605e65235c72792c6b99d817310ab882"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-04.flac",
+          "sha256": "e0d00db8fe8d504a9797e9eaaa53181ea63451d7d5fd342df375858cfca7a81a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-13.flac",
-          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Watch the flowers bloom!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/clover-charge-2.flac",
       "file": "clover-charge-2.flac",
-      "sha256": "8eb1b9239c39e69b4208e6bd309f3c24a8292526518d48d9973119bf18c06c78",
+      "sha256": "fe4be1a074f516707795be7783687dec5520e4e00f59b9d24bd04a8b272f2a38",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28555,24 +28568,37 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/451250.flac",
-          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c",
-          "sourceUrl": "https://freesound.org/people/dreamstobecome/sounds/451250/",
-          "license": "CC0-1.0"
+          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-05.flac",
+          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-09.flac",
+          "sha256": "5fa022f27e5b482ca66ba071da5ecc81559e2f1f1779e46e00107c5e3871d2e9"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-05.flac",
+          "sha256": "62806db1fa85bf8075f78d65b8e485ff1d464bd4cd828f43ae62a7e17464f08b"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Watch the flowers bloom!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/clover-release-1.flac",
@@ -28629,7 +28655,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/clover-release-2.flac",
       "file": "clover-release-2.flac",
-      "sha256": "cf0f7a27f464e4311d79491baba5851594e00f665f12ac649d3110d52f40fafc",
+      "sha256": "2adeaf7015cbbdfa9fb14351ed1dfc1856a16f639f2ce361d7ac01bf42fc043b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28647,41 +28673,39 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/451250.flac",
-          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c",
-          "sourceUrl": "https://freesound.org/people/dreamstobecome/sounds/451250/",
-          "license": "CC0-1.0"
+          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
         },
         {
           "path": "assets/audio-sources/b2/consonants/721074-01.flac",
-          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990",
-          "sourceUrl": "https://freesound.org/people/OZ%C3%98NA/sounds/721074/",
-          "license": "CC0-1.0"
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-01.flac",
-          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Bloom again!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "apps/web/public/audio/callout-clover.webm",
       "file": "callout-clover.webm",
-      "sha256": "24f8ceabc14925c201e39fc3518205d1fa6b57c0dc174a5b11ad86dc044c9be2",
+      "sha256": "ba214c1dc12df20791cfff7b4e0a77a312465b7c5a3dba1116c528140eed5d94",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28764,7 +28788,7 @@
     {
       "path": "apps/web/public/audio/callout-clover.mp3",
       "file": "callout-clover.mp3",
-      "sha256": "bde9330719858b3681d3ecad380f03c670df267f5845ed6eba2f75a6402f8f9d",
+      "sha256": "45ee4a9ad07a23fa278028809d3bbd7f8ca80abca8509f5c19de0cae9e34d1e6",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -28842,7 +28866,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.4700000000000024
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/panko-skill-1-1.flac",
@@ -29229,7 +29253,7 @@
     {
       "path": "apps/web/public/audio/callout-panko.webm",
       "file": "callout-panko.webm",
-      "sha256": "1e9d876befa46485b707c43849ff0eb197a1f4c8a88e45266c5c3eb305d020ab",
+      "sha256": "9e61d82ee8b59917b2fefd4f85a4868ab8e5adf4d9d1acf0f11c4cbdfc7731d5",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -29563,7 +29587,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/mallow-charge-1.flac",
       "file": "mallow-charge-1.flac",
-      "sha256": "64aa11bd897e32748b5856ede4f8f133adeefa8de63e778a7b19778b7e6d143c",
+      "sha256": "b764e309ad3c3b23aee1b72fe4804f4cdd6408df6530940bd10834c593c14f8b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -29581,30 +29605,25 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/333916.flac",
-          "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498",
-          "sourceUrl": "https://freesound.org/people/lextrack/sounds/333916/",
-          "license": "CC0-1.0"
+          "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-06.flac",
-          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Burn!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/mallow-charge-2.flac",
@@ -29771,7 +29790,7 @@
     {
       "path": "apps/web/public/audio/callout-mallow.webm",
       "file": "callout-mallow.webm",
-      "sha256": "538105b59d912bcfb7b8a81068d7346e5ac0d63ca732cd80e74e15314907d3e2",
+      "sha256": "27ebc4e4d65081cb30859892f9e5a52662611675bb94cbe8db574b87e4aab817",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -29872,7 +29891,7 @@
     {
       "path": "apps/web/public/audio/callout-mallow.mp3",
       "file": "callout-mallow.mp3",
-      "sha256": "17ac54bee95760d02c8a9236ff27f0379b02c971879cb22de3ed44ddbc539045",
+      "sha256": "47b7b808667c19b61bceb4c654f20e84127f0befbf83034edf1c5fdb37ef38d0",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -29968,7 +29987,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.4800000000000004
+      "spriteGainDb": 0.4299999999999997
     },
     {
       "path": "assets/audio-sources/b2/callouts/sorrel-skill-1-1.flac",
@@ -30129,7 +30148,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/sorrel-charge-1.flac",
       "file": "sorrel-charge-1.flac",
-      "sha256": "9306c9078136b405971b53c29114e1ab8264e9f73aeb6e75bfa6ff349ce48336",
+      "sha256": "48d03a018b2722ce10002999cddf817646ecf5de2c2a9f075366ad78f90cc1f1",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30147,35 +30166,42 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668821.flac",
-          "sha256": "3a3e671a484e8bd17e61a45b6e12c17ab8ceba49bd3b4ea1a28fcf4edb2ca061",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668821/",
-          "license": "CC0-1.0"
+          "sha256": "3a3e671a484e8bd17e61a45b6e12c17ab8ceba49bd3b4ea1a28fcf4edb2ca061"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-17.flac",
-          "sha256": "aee0d21a17e9790037f070edf47b5944d665a44b07914c8dffbd13a9b5d7a82c",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "aee0d21a17e9790037f070edf47b5944d665a44b07914c8dffbd13a9b5d7a82c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-18.flac",
+          "sha256": "dcdbafdfcc0f12f945759405ba6dc9644619fa3c53b19209081496df76dd1932"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-19.flac",
+          "sha256": "7516fe543029ca83bd07ccf2b178ba13c0b719013808b92b5286e1e4f6f5159a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-04.flac",
-          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "One more cup!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/sorrel-charge-2.flac",
       "file": "sorrel-charge-2.flac",
-      "sha256": "bb282f0d74be864ce0305e96192e7175833ef5f6d7799e99aba44e7dc10e852c",
+      "sha256": "e6fdd90026c57ea14b1d6699dca70dd7c54680cdc26e06e9df743dcd1f5c789b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30193,30 +30219,37 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668821.flac",
-          "sha256": "3a3e671a484e8bd17e61a45b6e12c17ab8ceba49bd3b4ea1a28fcf4edb2ca061",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668821/",
-          "license": "CC0-1.0"
+          "sha256": "3a3e671a484e8bd17e61a45b6e12c17ab8ceba49bd3b4ea1a28fcf4edb2ca061"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-18.flac",
-          "sha256": "dcdbafdfcc0f12f945759405ba6dc9644619fa3c53b19209081496df76dd1932",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "dcdbafdfcc0f12f945759405ba6dc9644619fa3c53b19209081496df76dd1932"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-19.flac",
+          "sha256": "bf2199a722263170b9e405c6aba7ad3fb7fb3be640cbcd63b4df3234b87fab8a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-20.flac",
+          "sha256": "1eebdf13b5a5d530f5c7bdb2215b1d4379c7ace38dd041607a473f950a6d90dd"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-05.flac",
-          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "One more cup!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/sorrel-release-1.flac",
@@ -30349,7 +30382,7 @@
     {
       "path": "apps/web/public/audio/callout-sorrel.webm",
       "file": "callout-sorrel.webm",
-      "sha256": "43333eaa847aca8b21fe3519c0665625bf506015e01cefbd9f8f918af6e9643b",
+      "sha256": "2aa88207bb2183f3568e2a71e32b76c0c73d1eab3888383c494751299a9359b4",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30462,7 +30495,7 @@
     {
       "path": "apps/web/public/audio/callout-sorrel.mp3",
       "file": "callout-sorrel.mp3",
-      "sha256": "872843f1f48260fcb86a1a538b451a0e6eb97e73c3a532c6c82543cce23aaf86",
+      "sha256": "ee8a1dd7c96287108b9eea56a3524258d1498a5a1887af827bb05c33a712a48e",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30749,7 +30782,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/biscuit-charge-1.flac",
       "file": "biscuit-charge-1.flac",
-      "sha256": "f6dc2393e9bad924d57e2b1dc1177ec084aece57be1651924bb6f8751843ccd6",
+      "sha256": "299bf8698731740841a1a1a44c62f9ffd8376378f798a5af4b3f80a545fc17e8",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30767,35 +30800,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/763906.flac",
-          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a",
-          "sourceUrl": "https://freesound.org/people/Countrygirls13/sounds/763906/",
-          "license": "CC0-1.0"
+          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-12.flac",
-          "sha256": "eb6a4ca51d2d77b53115eef7484177628cc838ae23b70e455479366ce77d99e2",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "eb6a4ca51d2d77b53115eef7484177628cc838ae23b70e455479366ce77d99e2"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-14.flac",
+          "sha256": "868738a2d3a44f5882785e7c48640f37e86f36eafc15aa7af6aa3e654552835e"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-16.flac",
+          "sha256": "742dcec97f2f5f81a7bb90851eb76e32f6ce74ee664574b8f8e836dc40a2b848"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-20.flac",
-          "sha256": "1eebdf13b5a5d530f5c7bdb2215b1d4379c7ace38dd041607a473f950a6d90dd",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "1eebdf13b5a5d530f5c7bdb2215b1d4379c7ace38dd041607a473f950a6d90dd"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Move with me!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/biscuit-charge-2.flac",
       "file": "biscuit-charge-2.flac",
-      "sha256": "6d1cfc3af941962e984f8639db5dd6cc4215d2756c3da7248a62cfd77a45e251",
+      "sha256": "aff9510cab129c2c510967c96441dc50573d1b5292119718b23e84ea171ef698",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -30813,30 +30849,33 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/763906.flac",
-          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a",
-          "sourceUrl": "https://freesound.org/people/Countrygirls13/sounds/763906/",
-          "license": "CC0-1.0"
+          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-13.flac",
-          "sha256": "dd66d7ff61e2cc2cce020d6891fb44b70a9f44dfa43904ed12af2aa40f089bc9",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "dd66d7ff61e2cc2cce020d6891fb44b70a9f44dfa43904ed12af2aa40f089bc9"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-15.flac",
+          "sha256": "ad225bf8fe8762a9ea4169fa92fff4bf52621851c0d24c4435aa9ecc1d7c729c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-17.flac",
+          "sha256": "aee0d21a17e9790037f070edf47b5944d665a44b07914c8dffbd13a9b5d7a82c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-21.flac",
-          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Move with me!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
@@ -30969,7 +31008,7 @@
     {
       "path": "apps/web/public/audio/callout-biscuit.webm",
       "file": "callout-biscuit.webm",
-      "sha256": "61d2766c02846f2db37772bbc2b196dc0c6690a873d639e374ddfc927d412d09",
+      "sha256": "a0df3b9ba600805a2634065593961f2e040f618a8cc3eb1100746223c5a27101",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -31088,7 +31127,7 @@
     {
       "path": "apps/web/public/audio/callout-biscuit.mp3",
       "file": "callout-biscuit.mp3",
-      "sha256": "8099fed3f391b118c6060c2dfa148279d95d7cc4f5f366185ed0847c8e700d09",
+      "sha256": "7e423b8906ca1ca89f77e028293b6fe41b77477df591068b25071e2e2fb62f30",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -31535,7 +31574,7 @@
     {
       "path": "apps/web/public/audio/callout-inkcap.webm",
       "file": "callout-inkcap.webm",
-      "sha256": "28be172078cd2d179a17f80a08dda2721ac6c9e1986a651011d13616a3cc9c14",
+      "sha256": "c9732bc58348ba38e38d53500795f343e8cc80428669f54eb1def5b286a68631",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -31903,7 +31942,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
       "file": "cinnamon-charge-2.flac",
-      "sha256": "648297cebf35ab04d3246640c84d19c039648e773ccfd41cb6782eff206d3bd6",
+      "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -31921,30 +31960,30 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/756236.flac",
-          "sha256": "70e54a946207224292d2bc1160cc4bf9c09813f6129bbc40909511be6c793f4a",
-          "sourceUrl": "https://freesound.org/people/Vrymaa/sounds/756236/",
-          "license": "CC0-1.0"
+          "sha256": "70e54a946207224292d2bc1160cc4bf9c09813f6129bbc40909511be6c793f4a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-17.flac",
-          "sha256": "aee0d21a17e9790037f070edf47b5944d665a44b07914c8dffbd13a9b5d7a82c",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "aee0d21a17e9790037f070edf47b5944d665a44b07914c8dffbd13a9b5d7a82c"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Back!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-release-1.flac",
@@ -32077,7 +32116,7 @@
     {
       "path": "apps/web/public/audio/callout-cinnamon.webm",
       "file": "callout-cinnamon.webm",
-      "sha256": "cedc846ba2571f64f71a870b4d397831813ff0943d14064098ca958fbbf6e387",
+      "sha256": "fd29aa6c36bcfb1849165cb383ec74d006c13454bdb4ef7145891df836da437b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -32166,7 +32205,7 @@
     {
       "path": "apps/web/public/audio/callout-cinnamon.mp3",
       "file": "callout-cinnamon.mp3",
-      "sha256": "d2eda0cd5869a105ce8fe46c1439134d8e619e4e18dfdd899d290a2d7ceeeae4",
+      "sha256": "a5a67ef62cb360a5ab52a9c42ab5475725a0ef52fc2982f2b7362223dc1544ac",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -32637,7 +32676,7 @@
     {
       "path": "apps/web/public/audio/callout-brioche.webm",
       "file": "callout-brioche.webm",
-      "sha256": "5f411dc3bfaf4646721c331659868159ced1e24565f70b4482e2592485e1b4fb",
+      "sha256": "78219a2328835fd9ac11555f5ab2be5997bc86939beee810dab3bf3e8d7bb55c",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -33019,7 +33058,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/velvet-charge-1.flac",
       "file": "velvet-charge-1.flac",
-      "sha256": "6797690536af5b4fe0ae4e0e63628a309decdc45c8200d3d0db947b372361449",
+      "sha256": "8bde631c4b933c0fd1d97db86fd2144917b0cda77c156ad70d4be8f40913df6e",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -33037,35 +33076,42 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-09.flac",
-          "sha256": "4dbf19633edfd8517f8dc8d4b579f9c0582fe33b927b1008cb496b726fea0955",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-15.flac",
+          "sha256": "ad225bf8fe8762a9ea4169fa92fff4bf52621851c0d24c4435aa9ecc1d7c729c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-03.flac",
-          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Raise the curtain!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/velvet-charge-2.flac",
       "file": "velvet-charge-2.flac",
-      "sha256": "f88c4ed7af0aecef12c65831a15a5e301a2fcb91475ecdfbd29066a7bb9275d5",
+      "sha256": "b4bbf249d939731dcb5cb967e31822b438df6d6fe6ea0899bdde76eb2b5dc068",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -33083,30 +33129,37 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-16.flac",
+          "sha256": "b414734e95b867623107bb086a29b12ea6036c9693f89ef31475a6b0193f6027"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-04.flac",
-          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Raise the curtain!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/velvet-release-1.flac",
@@ -33227,7 +33280,7 @@
     {
       "path": "apps/web/public/audio/callout-velvet.webm",
       "file": "callout-velvet.webm",
-      "sha256": "b51d9d43d90e2101dac39b61285f56fb563dce0df53663ea12aa2aa3d439c280",
+      "sha256": "b64089d25f4fd92d508428516869fa58ec41894094b1fd9c06379eb78bfeed30",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -33334,7 +33387,7 @@
     {
       "path": "apps/web/public/audio/callout-velvet.mp3",
       "file": "callout-velvet.mp3",
-      "sha256": "4c26e1a34f54b71ac5f734d6ae5a8d918cba7fd4dcc0f825466ccada039a1962",
+      "sha256": "05d76ea5a38651b8ac4b47eb0287d9207fb07549ef4fbc0941822bc58dc966a8",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -33823,7 +33876,7 @@
     {
       "path": "apps/web/public/audio/callout-marigold.webm",
       "file": "callout-marigold.webm",
-      "sha256": "afa4fdf8a2a7561023d239ebef1ccbf6f163a96948f1068b606fa4f415f4f157",
+      "sha256": "8ff111e48f4eb435ace6656b9d287075cc1196ac86de80ed8c4d950645efdfd2",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34025,7 +34078,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/button-guard-skill-1-1.flac",
       "file": "button-guard-skill-1-1.flac",
-      "sha256": "70e25f6eb55f0819045802131d3374498d928bd24dbb857f1c01eec495f01151",
+      "sha256": "e4cf85e4d745ea9e21a22e0340e2e0e7abfba5ca111daba01958c44416d9cac3",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34043,30 +34096,30 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/845517.flac",
-          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100",
-          "sourceUrl": "https://freesound.org/people/steprock/sounds/845517/",
-          "license": "CC0-1.0"
+          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-02.flac",
-          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-03.flac",
-          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Button cut!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/button-guard-skill-2-1.flac",
@@ -34117,7 +34170,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/button-guard-charge-1.flac",
       "file": "button-guard-charge-1.flac",
-      "sha256": "98bb6a556eaeb3ae7b1798540338ebf5371611e56b95c105480e4257bd0ad8ef",
+      "sha256": "035049181903b35dd408a01dc23922971065a391928ffbfee9cca6f0f74a83c9",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34135,35 +34188,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/845517.flac",
-          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100",
-          "sourceUrl": "https://freesound.org/people/steprock/sounds/845517/",
-          "license": "CC0-1.0"
+          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-03.flac",
-          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-24.flac",
+          "sha256": "eaf0d903903a02ac66eaa8500cd1f69c237b01af4c639d43ffb94a795bdfd38a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-01.flac",
+          "sha256": "ff73a4f6880de31f34d0feab48f4a0a06ab37c20ad16da11114bfa61e438d888"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Hold the line!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/button-guard-charge-2.flac",
       "file": "button-guard-charge-2.flac",
-      "sha256": "5f1b55a850bdbbfc11c82392fa7f920c2d8d31710853ebcdac627829739b0dfd",
+      "sha256": "1d48b5619cd6ba88f5346b4b195e636667ac4804305e3faf12e9a15c72abdf7d",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34181,24 +34237,33 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/845517.flac",
-          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100",
-          "sourceUrl": "https://freesound.org/people/steprock/sounds/845517/",
-          "license": "CC0-1.0"
+          "sha256": "4b9e97014b087fffcfea725f853dda4873e4e8a82a1f3dd207cab1a472e1c100"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-01.flac",
+          "sha256": "96967859745c69ac1bb29882da4909b59cde6d0f33885a1a3c9745d88e6a8cf4"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-02.flac",
+          "sha256": "2cde1a1752c8a155bc94b980bf0b0b36cc59daa8a34dd9711b8674d6700649da"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Hold the line!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/button-guard-release-1.flac",
@@ -34319,7 +34384,7 @@
     {
       "path": "apps/web/public/audio/callout-button-guard.webm",
       "file": "callout-button-guard.webm",
-      "sha256": "1f0ab28bc09f7ab57735b2e95cf4eb6ebac8b18f91cccad719aae4fb6f0d6958",
+      "sha256": "0765400f195ba5b2f25d1aef5a442e894ed155f01287edc638f6ba1a064ffcbc",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34402,7 +34467,7 @@
     {
       "path": "apps/web/public/audio/callout-button-guard.mp3",
       "file": "callout-button-guard.mp3",
-      "sha256": "e3e223faed65a3f4e5b52e4cc5de68953282b2c65056a011760d30c557fea4e8",
+      "sha256": "6b982dce9d22fc92c6feb4c3dfa664fad122cf3831bc593605ed16faf14d3cd1",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -34480,7 +34545,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.5100000000000016
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/sock-skipper-skill-1-1.flac",
@@ -34791,7 +34856,7 @@
     {
       "path": "apps/web/public/audio/callout-sock-skipper.webm",
       "file": "callout-sock-skipper.webm",
-      "sha256": "a93e5d6990ebcf66876f20ac3a788f37e19fdd3edfb64653806cac593748c52a",
+      "sha256": "1a68d0b9e88c8380b327732eec293e951a4d19c3f2282aefb29e0ac9e2771d4a",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35055,7 +35120,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/spool-ram-charge-1.flac",
       "file": "spool-ram-charge-1.flac",
-      "sha256": "bebd40603419a316e9a80919bb1cf47b77e2712dda4ed1aeb795b9b2bf73c558",
+      "sha256": "3968756d0fbd8423ae189941b7013b1144cb0d32a841cfdf929760999c11a9cd",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35073,30 +35138,30 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/110011.flac",
-          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d",
-          "sourceUrl": "https://freesound.org/people/tuberatanka/sounds/110011/",
-          "license": "CC0-1.0"
+          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-12.flac",
-          "sha256": "7c9e56c13dc75627b8681cfce41cc39ca0047a8e18ae61b1732927f83270482d",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "7c9e56c13dc75627b8681cfce41cc39ca0047a8e18ae61b1732927f83270482d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-11.flac",
-          "sha256": "e48033d7ba573496fb6b4205ed8393a222d0b48c0dee524e94663684e38a332f",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "e48033d7ba573496fb6b4205ed8393a222d0b48c0dee524e94663684e38a332f"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Full!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/spool-ram-charge-2.flac",
@@ -35251,7 +35316,7 @@
     {
       "path": "apps/web/public/audio/callout-spool-ram.webm",
       "file": "callout-spool-ram.webm",
-      "sha256": "c5f38b28b0728093816f6f0d07996a8832db22ec0104ad84dbb9a30120284c67",
+      "sha256": "f228bc7cd7041f4a0eab83ba141e16fe39ac816a8700444f0ae8a9edbbd9b090",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35334,7 +35399,7 @@
     {
       "path": "apps/web/public/audio/callout-spool-ram.mp3",
       "file": "callout-spool-ram.mp3",
-      "sha256": "d1ff147664eed3d7cdb013d7bb66051ce038d747be8fb328972b01f8cc885946",
+      "sha256": "40d4b35ec7cffb0920ae756aaeb28aa461c6e16c5f9a11ac7e23f93e1853233b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35412,7 +35477,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.5800000000000018
+      "spriteGainDb": 0.4499999999999993
     },
     {
       "path": "assets/audio-sources/b2/callouts/needle-moth-skill-1-1.flac",
@@ -35521,7 +35586,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/needle-moth-charge-1.flac",
       "file": "needle-moth-charge-1.flac",
-      "sha256": "1d4f61c239f911844211490263e77d7304d0215760d3a305676d0113b968d191",
+      "sha256": "d35dc0d2225c7f718a120c4842d98e3e50f8755c7c7522875193bf3544550d0f",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35539,35 +35604,54 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/814892.flac",
-          "sha256": "9c83832859ff63b97125467e858349c020ce56bf28a8a3e72baad22177b084a8",
-          "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/814892/",
-          "license": "CC0-1.0"
+          "sha256": "9c83832859ff63b97125467e858349c020ce56bf28a8a3e72baad22177b084a8"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-03.flac",
+          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba"
         },
         {
           "path": "assets/audio-sources/b2/consonants/172067-01.flac",
-          "sha256": "5a0368063382ffd6182c6bca1a2989f50282d97825b10f28b33ec25195ef0ea7",
-          "sourceUrl": "https://freesound.org/people/Jeffijoe/sounds/172067/",
-          "license": "CC0-1.0"
+          "sha256": "5a0368063382ffd6182c6bca1a2989f50282d97825b10f28b33ec25195ef0ea7"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/175678-02.flac",
+          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/175678-03.flac",
+          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-09.flac",
+          "sha256": "5fa022f27e5b482ca66ba071da5ecc81559e2f1f1779e46e00107c5e3871d2e9"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Wings sharp and ready!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/needle-moth-charge-2.flac",
       "file": "needle-moth-charge-2.flac",
-      "sha256": "7d09bda7fc822258c9136edfca5ed5d01d9f9799ca6d102cfd334c0e13fa7c5c",
+      "sha256": "b58d58f9cbf1c90df12719fce2482ca3f9c7a598bfa0105cf4d4e236f4a47436",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35585,30 +35669,49 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/814892.flac",
-          "sha256": "9c83832859ff63b97125467e858349c020ce56bf28a8a3e72baad22177b084a8",
-          "sourceUrl": "https://freesound.org/people/Sadiquecat/sounds/814892/",
-          "license": "CC0-1.0"
+          "sha256": "9c83832859ff63b97125467e858349c020ce56bf28a8a3e72baad22177b084a8"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-04.flac",
+          "sha256": "aa1de8ef0f64f8ac0c26c008dd85ce02fb27098cbdf964262805808e5d1e76e6"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-01.flac",
-          "sha256": "1c92839e85a07258eceab241155ffc29a1d3efaf3368dd791b116a216d0a6c4a",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "1c92839e85a07258eceab241155ffc29a1d3efaf3368dd791b116a216d0a6c4a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/175678-03.flac",
+          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-10.flac",
+          "sha256": "b998fc10bb2e3c890d0dcafe0f872dbdd7f2270281cfd4b9b29be76f880a5003"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+          "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-13.flac",
-          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Wings sharp and ready!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/needle-moth-release-1.flac",
@@ -35729,7 +35832,7 @@
     {
       "path": "apps/web/public/audio/callout-needle-moth.webm",
       "file": "callout-needle-moth.webm",
-      "sha256": "0a834fa47ccc6e7413d5faa542b9b4e98567089b7c3f0626a30f9294580601c7",
+      "sha256": "fba3173862faa9c74877a49cca01972a09447580d40adde5869d08b0af662080",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35824,7 +35927,7 @@
     {
       "path": "apps/web/public/audio/callout-needle-moth.mp3",
       "file": "callout-needle-moth.mp3",
-      "sha256": "112529995b858551b38263349c0b29d4e12a395c48e125d0fa31f9e08a2c68a8",
+      "sha256": "26fb9718fa9070cee972018e4d225e287266b02e47b5f984bc55d56384f66303",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35919,7 +36022,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/teacup-healer-skill-1-1.flac",
       "file": "teacup-healer-skill-1-1.flac",
-      "sha256": "3cec3bb6fbedef4cc7395baafb2f7fbc1142694972c55d38ffd2f3a1c90cc824",
+      "sha256": "554cc69df8e946aafaa2a1a1eb0da74e6c311650f3a9f144522e412207fb5c66",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35937,35 +36040,35 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-21.flac",
-          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Cup tap!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/teacup-healer-skill-2-1.flac",
       "file": "teacup-healer-skill-2-1.flac",
-      "sha256": "9dce7abfde02b7ccf3b3364a109aa5532c50be559cb588f4f8fd47f77efe21d1",
+      "sha256": "a06798968174f9f7b90ff41b656f61647e8e7738f400e7490f6daf675f8fb262",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -35983,41 +36086,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/843435-17.flac",
-          "sha256": "948ea567b0d9981a40c456bb8e87e3d735292ba914a18dcb822acd356748cf97",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-19.flac",
-          "sha256": "7516fe543029ca83bd07ccf2b178ba13c0b719013808b92b5286e1e4f6f5159a",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-18.flac",
+          "sha256": "9fb7d8060a91a0d1a511cd06082a7d3756412035ee056d1636d282243d97d41e"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-21.flac",
-          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Fill it up!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/teacup-healer-charge-1.flac",
       "file": "teacup-healer-charge-1.flac",
-      "sha256": "6e1b2111e18fee4bcb073a4d44439a2e7ac45c78c5efe5547513272df75cef4e",
+      "sha256": "0f0e208b2d51d3da2072b297a793f829808216cbd02069b18836f5b79f714e3e",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36035,35 +36135,43 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-18.flac",
-          "sha256": "9fb7d8060a91a0d1a511cd06082a7d3756412035ee056d1636d282243d97d41e",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "9fb7d8060a91a0d1a511cd06082a7d3756412035ee056d1636d282243d97d41e"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-21.flac",
-          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Fill the cup!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/teacup-healer-charge-2.flac",
       "file": "teacup-healer-charge-2.flac",
-      "sha256": "d8bce076c7bc19f60b9a3d7c1fbc4d45ea5cc7e7a08a49e49d900c2353e6d0c4",
+      "sha256": "b0ef546c6f35ecd331097b73783feceb85a0ff10309697b79966fe5e7e5f2573",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36081,30 +36189,33 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/668824.flac",
-          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114",
-          "sourceUrl": "https://freesound.org/people/MBPL/sounds/668824/",
-          "license": "CC0-1.0"
+          "sha256": "8227b313f2a6e9f4ccdf5f0e8454a6c97a1fa73b3ae1a981a021d3930fa0d114"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-19.flac",
-          "sha256": "7516fe543029ca83bd07ccf2b178ba13c0b719013808b92b5286e1e4f6f5159a",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "7516fe543029ca83bd07ccf2b178ba13c0b719013808b92b5286e1e4f6f5159a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-22.flac",
-          "sha256": "f566de5f9445decaf3fae95df8d492834ce6514ab5ae3f7376f372db9fb98d66",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "f566de5f9445decaf3fae95df8d492834ce6514ab5ae3f7376f372db9fb98d66"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Fill the cup!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/teacup-healer-release-1.flac",
@@ -36213,7 +36324,7 @@
     {
       "path": "apps/web/public/audio/callout-teacup-healer.webm",
       "file": "callout-teacup-healer.webm",
-      "sha256": "e769ba4a1ab6933809784cac031eb958713c80f8293ca82889f0eb7539e4c1a4",
+      "sha256": "0751bfb5f2903dd10aa7d2e9afd7dcfde5384c9740e5ab50e37c2a2cc902d976",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36302,7 +36413,7 @@
     {
       "path": "apps/web/public/audio/callout-teacup-healer.mp3",
       "file": "callout-teacup-healer.mp3",
-      "sha256": "0722e4fc697568b1de9aa14d95cdcc05d72a0db5d7fa6506c528dc0afddd6f76",
+      "sha256": "fa0b9647650664165c89c80364145d2240f18a436512b45100a6e755748eecf5",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36386,7 +36497,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.41000000000000014
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
@@ -36495,7 +36606,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-charge-1.flac",
       "file": "kettle-knight-charge-1.flac",
-      "sha256": "45060d0e1ca46ab60598401a30860aec3c2c8cac74552526a8c61e0c1ad1318c",
+      "sha256": "5b4cb3f5abb4d608f18b35e0cd13670aebce5888d1d14177e2738e88aac930d1",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36513,29 +36624,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/264507.flac",
-          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006",
-          "sourceUrl": "https://freesound.org/people/d.n.audio.uk/sounds/264507/",
-          "license": "CC0-1.0"
+          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
+          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-17.flac",
-          "sha256": "6168a5a7afef1e4f04b166ae58d3772c5ec557d135850a2780770ca47a73377c",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "6168a5a7afef1e4f04b166ae58d3772c5ec557d135850a2780770ca47a73377c"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Steam is rising!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-charge-2.flac",
       "file": "kettle-knight-charge-2.flac",
-      "sha256": "4a83124f077737f28144bef1b05b745d7eaf473ea6f0ea7ebf2affe7d4015123",
+      "sha256": "c7b1c7c0d484d3da79fcdd9e1ab4ea03689a2520c81c2bb2639e86c4163792c4",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36553,29 +36673,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/264507.flac",
-          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006",
-          "sourceUrl": "https://freesound.org/people/d.n.audio.uk/sounds/264507/",
-          "license": "CC0-1.0"
+          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-23.flac",
+          "sha256": "9e68fe7b9b79f1332c53bb73efe0a231a3e0bbdb32d72efb32806d6c8ffbeef1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-16.flac",
+          "sha256": "7e58c172699076ba1907b1b6b67aa5d034f61c591d6125ddc4c5f77bc4e8d6c1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-18.flac",
-          "sha256": "fb22f71a00631916f2c75892c75111c80a273868a4002d8ca2bc50639dd689d1",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fb22f71a00631916f2c75892c75111c80a273868a4002d8ca2bc50639dd689d1"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Steam is rising!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-release-1.flac",
       "file": "kettle-knight-release-1.flac",
-      "sha256": "988731f5b0b729d82e4e4596113be4253d6e76815328b325140fafca8928e159",
+      "sha256": "5a1080be5d30f59484c58c4472f200a507be2469c53593cd63ea0e5059f115f1",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36593,41 +36722,39 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/264507.flac",
-          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006",
-          "sourceUrl": "https://freesound.org/people/d.n.audio.uk/sounds/264507/",
-          "license": "CC0-1.0"
+          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-20.flac",
+          "sha256": "1eebdf13b5a5d530f5c7bdb2215b1d4379c7ace38dd041607a473f950a6d90dd"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-17.flac",
-          "sha256": "6168a5a7afef1e4f04b166ae58d3772c5ec557d135850a2780770ca47a73377c",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "6168a5a7afef1e4f04b166ae58d3772c5ec557d135850a2780770ca47a73377c"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Let off steam!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-release-2.flac",
       "file": "kettle-knight-release-2.flac",
-      "sha256": "6d7814ad9b6628dab7983b2666623a9a70827b2444f9beb1f08cfcaefb33ca35",
+      "sha256": "9e2fc3420f280a7676f1d676e622764a3bad4d4ca8576fa6aea1cde182547e54",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36645,41 +36772,39 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/264507.flac",
-          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006",
-          "sourceUrl": "https://freesound.org/people/d.n.audio.uk/sounds/264507/",
-          "license": "CC0-1.0"
+          "sha256": "603d106a2561725b0d046b56483408581bc2f830e6ef498d09162309d0739006"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-21.flac",
+          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-13.flac",
-          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-18.flac",
-          "sha256": "fb22f71a00631916f2c75892c75111c80a273868a4002d8ca2bc50639dd689d1",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fb22f71a00631916f2c75892c75111c80a273868a4002d8ca2bc50639dd689d1"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Let off steam!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "apps/web/public/audio/callout-kettle-knight.webm",
       "file": "callout-kettle-knight.webm",
-      "sha256": "d01d00d39c5bb7ecab6d87f2474828d58ce85db3b0aa53e3d500ab467ef74044",
+      "sha256": "182355f3ba064f6c5483167accb56489d0b92939cb76f32713eec369a0f47388",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36756,7 +36881,7 @@
     {
       "path": "apps/web/public/audio/callout-kettle-knight.mp3",
       "file": "callout-kettle-knight.mp3",
-      "sha256": "654c9b013fdde705711f3f115c7736af94669154cafc812f7fe26e6c318f5953",
+      "sha256": "e4afe3483fa2e3a31f4204fde3006a20d896bc2d745a25fb49fea2d3490984e0",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -36828,7 +36953,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.5600000000000023
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/yarn-giant-skill-1-1.flac",
@@ -37133,7 +37258,7 @@
     {
       "path": "apps/web/public/audio/callout-yarn-giant.webm",
       "file": "callout-yarn-giant.webm",
-      "sha256": "51c546f69f8735aacd7fe62a6e87cfcc8cd5b865c14f6169537d88f9bdd3d290",
+      "sha256": "de0262dbfc85a4469f2410e44088a37e7cbaaa9ed14ce2c4f8df89298e5e0d96",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37489,7 +37614,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/binding-thread-release-1.flac",
       "file": "binding-thread-release-1.flac",
-      "sha256": "a3a9f66f7470d5f5711726340bb9c9332e59c1976b68708c9eba6b15b5388739",
+      "sha256": "763dda94664870623d9ba22c0d166c96bb6971217d7a4a04609ed214919e63c2",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37507,47 +37632,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/234333.flac",
-          "sha256": "0a14b7e628b058f56e409c2bfeb6104f30018e5e66a93c5516f0455c7f4e624d",
-          "sourceUrl": "https://freesound.org/people/mcroce/sounds/234333/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
-          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691910/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
-          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990",
-          "sourceUrl": "https://freesound.org/people/OZ%C3%98NA/sounds/721074/",
-          "license": "CC0-1.0"
+          "sha256": "0a14b7e628b058f56e409c2bfeb6104f30018e5e66a93c5516f0455c7f4e624d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-02.flac",
-          "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Hold them tight!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/binding-thread-release-2.flac",
       "file": "binding-thread-release-2.flac",
-      "sha256": "2a334f415fad3d7396e96e277975d5f2e14beb15f2dbf363f09883ea771f1069",
+      "sha256": "43c9259b849fff2af1a2a0ef5015f2976726ec9945cb0e8012eb06c236bec671",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37565,47 +37681,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/234333.flac",
-          "sha256": "0a14b7e628b058f56e409c2bfeb6104f30018e5e66a93c5516f0455c7f4e624d",
-          "sourceUrl": "https://freesound.org/people/mcroce/sounds/234333/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
-          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990",
-          "sourceUrl": "https://freesound.org/people/OZ%C3%98NA/sounds/721074/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
-          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "0a14b7e628b058f56e409c2bfeb6104f30018e5e66a93c5516f0455c7f4e624d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+          "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-03.flac",
-          "sha256": "66eb19f8c32ae3b7c47675910a528d9571331df1845b8f2fe1d40ac23285ede5",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "66eb19f8c32ae3b7c47675910a528d9571331df1845b8f2fe1d40ac23285ede5"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-11.flac",
-          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Hold them tight!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "apps/web/public/audio/callout-binding-thread.webm",
       "file": "callout-binding-thread.webm",
-      "sha256": "7cd83377b21cb4b8f09ca8a05901e6f8e0e09e57be6cc92c57eaaa1c4d60f204",
+      "sha256": "63abb211514135883dfe8e833cd28b7ca72f54d95294d361152a3ada28898271",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37682,7 +37789,7 @@
     {
       "path": "apps/web/public/audio/callout-binding-thread.mp3",
       "file": "callout-binding-thread.mp3",
-      "sha256": "9f79110440a92f3355296fc4022f4e035344e944262ef95f3a36660b7ef8a505",
+      "sha256": "280396eee94922cff8e3857df80201bb8371f7a509e4188d2ecca7801e505d5c",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37754,7 +37861,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.35999999999999943
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
@@ -37869,7 +37976,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-charge-1.flac",
       "file": "practice-cushion-charge-1.flac",
-      "sha256": "b543b2fdbc891b45a6a71a4b894c9017cbc2954b7c8ad5174fdbe0965db7c340",
+      "sha256": "89fa8c175a9204c98aac030f9e2bf8056a9d5b0764639d2b30900cb99eb04768",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37887,29 +37994,42 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/110011.flac",
-          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d",
-          "sourceUrl": "https://freesound.org/people/tuberatanka/sounds/110011/",
-          "license": "CC0-1.0"
+          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-02.flac",
-          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-19.flac",
+          "sha256": "7516fe543029ca83bd07ccf2b178ba13c0b719013808b92b5286e1e4f6f5159a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
+          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-02.flac",
-          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Good luck to you!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-charge-2.flac",
       "file": "practice-cushion-charge-2.flac",
-      "sha256": "de72b943fdbdaf65019ee36925f1335c75d681c6650a5d56335a6d5c0f6a2d46",
+      "sha256": "e0f2a6fd5054ff301092ae4d633c7a3c3e6355fc1c00ef459fbd15a297476282",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -37927,24 +38047,37 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/110011.flac",
-          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d",
-          "sourceUrl": "https://freesound.org/people/tuberatanka/sounds/110011/",
-          "license": "CC0-1.0"
+          "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/175678-03.flac",
-          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff",
-          "sourceUrl": "https://freesound.org/people/SaundKlyp/sounds/175678/",
-          "license": "CC0-1.0"
+          "sha256": "f1b50ee859c3369f36b82e4921bcbf1e6c681f1519bd9ccf9baf290e8c826eff"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-20.flac",
+          "sha256": "1eebdf13b5a5d530f5c7bdb2215b1d4379c7ace38dd041607a473f950a6d90dd"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-23.flac",
+          "sha256": "9e68fe7b9b79f1332c53bb73efe0a231a3e0bbdb32d72efb32806d6c8ffbeef1"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-03.flac",
-          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "Good luck to you!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-release-1.flac",
@@ -38065,7 +38198,7 @@
     {
       "path": "apps/web/public/audio/callout-practice-cushion.webm",
       "file": "callout-practice-cushion.webm",
-      "sha256": "6934e677d3072b5caca599fe88dca8b18ca27fed41725c5c65c0d6a9143097ed",
+      "sha256": "e185bdf1651a937aeff5beaf56f955da8619804ee0763d8a49d0dc7fc95f40cf",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -38142,7 +38275,7 @@
     {
       "path": "apps/web/public/audio/callout-practice-cushion.mp3",
       "file": "callout-practice-cushion.mp3",
-      "sha256": "ad6be78f26c5e3829b4189128941387688e3903944876dd78b098a067297495f",
+      "sha256": "f2f57313d1454cc9953158e5bb50ef50d4a93916c348c6e3ecb6f8594dbc7112",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -38214,7 +38347,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.4700000000000024
+      "spriteGainDb": 0
     },
     {
       "path": "assets/audio-sources/b2/callouts/pollen-scout-skill-1-1.flac",
@@ -38415,7 +38548,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/pollen-scout-release-1.flac",
       "file": "pollen-scout-release-1.flac",
-      "sha256": "cc507393e6f2b54ff7f2a6db009924f3fa2be970d3c371daa111d100943438a8",
+      "sha256": "845b9290daaa1b67c313d24ffcd09cb4be563551d14169459b900148465c7079",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -38433,47 +38566,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/451250.flac",
-          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c",
-          "sourceUrl": "https://freesound.org/people/dreamstobecome/sounds/451250/",
-          "license": "CC0-1.0"
+          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-06.flac",
-          "sha256": "2178efdf7032e9ec0ef024aa432e936fec8eaa15833fd0d494060fffbf69a117",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/843435-07.flac",
-          "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "2178efdf7032e9ec0ef024aa432e936fec8eaa15833fd0d494060fffbf69a117"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-09.flac",
-          "sha256": "ff4057d76f82da75a5d716a365bbd5907453718167d19378503f62fe139f4e62",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/104374-08.flac",
+          "sha256": "f7086033e580562fedde753d7d2c4e76acada6ad938b3716dcc9885964206826"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-09.flac",
+          "sha256": "4dbf19633edfd8517f8dc8d4b579f9c0582fe33b927b1008cb496b726fea0955"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-07.flac",
-          "sha256": "04f575ce14285af6b643d6441e23263b98481f80e3e1111194d4b5dc74ac39c5",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "04f575ce14285af6b643d6441e23263b98481f80e3e1111194d4b5dc74ac39c5"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "A storm of seeds!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/pollen-scout-release-2.flac",
       "file": "pollen-scout-release-2.flac",
-      "sha256": "6b2c71ff8b2a6ced2dc95d11db4c46e0bb1048eaaabe484d7a28b6f086dafdf5",
+      "sha256": "f00e9b1193e9fe30a104e0fabe2443504d8d5122c9e7e1282ba206ae9375fcba",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -38491,47 +38615,38 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/451250.flac",
-          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c",
-          "sourceUrl": "https://freesound.org/people/dreamstobecome/sounds/451250/",
-          "license": "CC0-1.0"
+          "sha256": "97992af18690e4ff170ab36dc1e7da02beca442515de2b542e7492a60a19410c"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-07.flac",
-          "sha256": "04f575ce14285af6b643d6441e23263b98481f80e3e1111194d4b5dc74ac39c5",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/843435-08.flac",
-          "sha256": "22aa7fa295cb7585cf66ae0ecc301f7b605e65235c72792c6b99d817310ab882",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "04f575ce14285af6b643d6441e23263b98481f80e3e1111194d4b5dc74ac39c5"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c",
-          "sourceUrl": "https://freesound.org/people/hollandm/sounds/691913/",
-          "license": "CC0-1.0"
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-10.flac",
-          "sha256": "585002f1f4f7d1f068d45a922efcf9635e093b3ff390afd1206929e2e36149fd",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/104374-09.flac",
+          "sha256": "ff4057d76f82da75a5d716a365bbd5907453718167d19378503f62fe139f4e62"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-10.flac",
+          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-08.flac",
-          "sha256": "a9278587f8da5178a01313dfd4b1c19ee817b1f072601707955839161a01fb21",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "a9278587f8da5178a01313dfd4b1c19ee817b1f072601707955839161a01fb21"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "A storm of seeds!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "apps/web/public/audio/callout-pollen-scout.webm",
       "file": "callout-pollen-scout.webm",
-      "sha256": "d5194e8243dd3cefba2d2de3b6e5d285adf32b1c75903856a3a3cdedab8e1094",
+      "sha256": "f088a90347dff99344e1ac594ebb31492ee3acda1081a6e691b8adaf20878df6",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -38626,7 +38741,7 @@
     {
       "path": "apps/web/public/audio/callout-pollen-scout.mp3",
       "file": "callout-pollen-scout.mp3",
-      "sha256": "95faafd09d5d3f6ee326720611a4b7fb95aa83ad2b944cf148581144571c231d",
+      "sha256": "63f8df9cd18af8ce3fbccc946c18daf3ed70b5263adcf44ef4fa7487a7fec95d",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39021,7 +39136,7 @@
     {
       "path": "apps/web/public/audio/callout-rain-spool.webm",
       "file": "callout-rain-spool.webm",
-      "sha256": "52ecd4f7afa435d1d64707f05d38cf01a6c2b8b0e6c0add460b24c86e333e47f",
+      "sha256": "0930ee2833379a1a87aeead995f9e754648af46dda1293eaa38ca84fc8129c1b",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39309,7 +39424,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-1.flac",
       "file": "crumb-sentinel-charge-1.flac",
-      "sha256": "51697254f4da929f3c2288cf543edb2b83da6a71cf0ea84f1b2c2b3479459fc4",
+      "sha256": "ca443d87b8cb7a38f5fab805e9fb914a587e9cdc7f41cdf11044f86c44e7c2bf",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39327,35 +39442,46 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/656249.flac",
-          "sha256": "ee8616ad5cffae3cf696dacb4b17e0080f8d824813b8f30aefd4c959b2278a64",
-          "sourceUrl": "https://freesound.org/people/mars1312/sounds/656249/",
-          "license": "CC0-1.0"
+          "sha256": "ee8616ad5cffae3cf696dacb4b17e0080f8d824813b8f30aefd4c959b2278a64"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-10.flac",
-          "sha256": "b998fc10bb2e3c890d0dcafe0f872dbdd7f2270281cfd4b9b29be76f880a5003",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "b998fc10bb2e3c890d0dcafe0f872dbdd7f2270281cfd4b9b29be76f880a5003"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-14.flac",
+          "sha256": "1ba97269b07abd53eb48962d7a5443eedb702e221d52a1cd8cd3c9ba32341a42"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-05.flac",
-          "sha256": "2eedf446ded315c72c6088a92e3354787f5149068c81e30a6dc6f72b355f9f48",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "2eedf446ded315c72c6088a92e3354787f5149068c81e30a6dc6f72b355f9f48"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "All together now!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-2.flac",
       "file": "crumb-sentinel-charge-2.flac",
-      "sha256": "de1801630fefd7c7298e09632eb450fdc99c92feaf22232abb915c2289d8ad6a",
+      "sha256": "3fbaddd8ea9d6d056c98266e9a34b97313a2d565e390ea4b87ba83e2cf11facb",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39373,30 +39499,41 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/656249.flac",
-          "sha256": "ee8616ad5cffae3cf696dacb4b17e0080f8d824813b8f30aefd4c959b2278a64",
-          "sourceUrl": "https://freesound.org/people/mars1312/sounds/656249/",
-          "license": "CC0-1.0"
+          "sha256": "ee8616ad5cffae3cf696dacb4b17e0080f8d824813b8f30aefd4c959b2278a64"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-13.flac",
-          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62",
-          "sourceUrl": "https://freesound.org/people/ShangusBurger/sounds/764351/",
-          "license": "CC0-1.0"
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-11.flac",
-          "sha256": "7d268193aa6e6cdb410503d0089f96dc829ea233025dde258095b83c79c89ffb",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "7d268193aa6e6cdb410503d0089f96dc829ea233025dde258095b83c79c89ffb"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-16.flac",
+          "sha256": "7e58c172699076ba1907b1b6b67aa5d034f61c591d6125ddc4c5f77bc4e8d6c1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-15.flac",
+          "sha256": "19f9807ac8e6c74e021f0574052219324733012c20b796676aabaed9892b5125"
         },
         {
           "path": "assets/audio-sources/b2/consonants/104374-06.flac",
-          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "All together now!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/crumb-sentinel-release-1.flac",
@@ -39529,7 +39666,7 @@
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.webm",
       "file": "callout-crumb-sentinel.webm",
-      "sha256": "87ffa35f1992f97ebda5471318ea437e8034da6eb489d1f589758f022cf2c70a",
+      "sha256": "7bba480035caf0315432a460effca245fc3275fc1a4409f7cf9ca30a988f7cc7",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39624,7 +39761,7 @@
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.mp3",
       "file": "callout-crumb-sentinel.mp3",
-      "sha256": "5b13b901cd46fda630727222443453f7e026b72e62c3ea4a33103ea67dda57f3",
+      "sha256": "cdf362bc186dbb2b60835e35d19de6ca638f489cb77203bf553dd85b0ab0852e",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39841,7 +39978,7 @@
     {
       "path": "assets/audio-sources/b2/callouts/pantry-crown-charge-1.flac",
       "file": "pantry-crown-charge-1.flac",
-      "sha256": "f37f7886b548cb0ca3f858b6d09feb4d91698b9d849b1fb9381855a5669cd78a",
+      "sha256": "e487e82e449091efcf81c97e2bf616dadd88ad0bf082d7e123ef898b8e8f6621",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39859,35 +39996,47 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/763906.flac",
-          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a",
-          "sourceUrl": "https://freesound.org/people/Countrygirls13/sounds/763906/",
-          "license": "CC0-1.0"
+          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-21.flac",
-          "sha256": "544055bdfaf8fb53b25224cc0cdf3ec670ca407b88cff6543560df2711704c48",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/764351-21.flac",
+          "sha256": "c99eb0da1ca468f83908553b8b8a0d539e1f37be034b78ef0fb5e955a46095cb"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-22.flac",
-          "sha256": "f566de5f9445decaf3fae95df8d492834ce6514ab5ae3f7376f372db9fb98d66",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
+          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/175678-01.flac",
+          "sha256": "1c92839e85a07258eceab241155ffc29a1d3efaf3368dd791b116a216d0a6c4a"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-24.flac",
+          "sha256": "e7809f5ec458d5c023fa1b3b6dcc099a61a998be4aa353e114c194412376afd8"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-01.flac",
+          "sha256": "ff73a4f6880de31f34d0feab48f4a0a06ab37c20ad16da11114bfa61e438d888"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-01.flac",
-          "sha256": "96967859745c69ac1bb29882da4909b59cde6d0f33885a1a3c9745d88e6a8cf4",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "96967859745c69ac1bb29882da4909b59cde6d0f33885a1a3c9745d88e6a8cf4"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "All is mine!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/callouts/pantry-crown-charge-2.flac",
       "file": "pantry-crown-charge-2.flac",
-      "sha256": "8b3868aa4811822ef89ecdcea9e7b639d5007342212590d37cdf62f7dc47c80d",
+      "sha256": "2d0fd9beaa107bdab2e6cfea7ff19d38a3a63d7acef246a57317ebae8490b515",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -39905,30 +40054,37 @@
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/cats/763906.flac",
-          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a",
-          "sourceUrl": "https://freesound.org/people/Countrygirls13/sounds/763906/",
-          "license": "CC0-1.0"
+          "sha256": "f6797c0953b681932fc69d5e98f171732bae5ae4837fd1a88fdba201f97bd40a"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-22.flac",
-          "sha256": "f566de5f9445decaf3fae95df8d492834ce6514ab5ae3f7376f372db9fb98d66",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/172067-01.flac",
+          "sha256": "5a0368063382ffd6182c6bca1a2989f50282d97825b10f28b33ec25195ef0ea7"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-23.flac",
-          "sha256": "605d71439367009dff39d8a664d58983678029d3ab3d3250c862f90b66fd1942",
-          "sourceUrl": "https://freesound.org/people/RutgerMuller/sounds/104374/",
-          "license": "CC0-1.0"
+          "path": "assets/audio-sources/b2/consonants/843435-23.flac",
+          "sha256": "9e68fe7b9b79f1332c53bb73efe0a231a3e0bbdb32d72efb32806d6c8ffbeef1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/175678-02.flac",
+          "sha256": "d6ac973438d2e71e64dffc38c6ec854b8d88e308995b3f272fd8cc5e8def148c"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-01.flac",
+          "sha256": "ff73a4f6880de31f34d0feab48f4a0a06ab37c20ad16da11114bfa61e438d888"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-02.flac",
+          "sha256": "2cde1a1752c8a155bc94b980bf0b0b36cc59daa8a34dd9711b8674d6700649da"
         },
         {
           "path": "assets/audio-sources/b2/consonants/843435-02.flac",
-          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a",
-          "sourceUrl": "https://freesound.org/people/qubodup/sounds/843435/",
-          "license": "CC0-1.0"
+          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a"
         }
       ],
-      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS."
+      "processing": "Local Piper public-domain voice + CC0 cat/mouth grains; per-character pitch/formants/EQ, effort and room tail; short-speech peak compression, two-pass -16 LUFS.",
+      "processingDate": "2026-11-13T17:48:39.636307+00:00",
+      "prompt": "All is mine!",
+      "processingEvidence": "reports/v3-shell/b2/q5/selection.json"
     },
     {
       "path": "assets/audio-sources/b2/callouts/pantry-crown-release-1.flac",
@@ -40049,7 +40205,7 @@
     {
       "path": "apps/web/public/audio/callout-pantry-crown.webm",
       "file": "callout-pantry-crown.webm",
-      "sha256": "f0075cd16bd81ed1a60b830f999f207fac47141a1a58a0184bcb78dde647692b",
+      "sha256": "8f026429407d6fd1f13b8366d7314ccb2444dd0586b8631a7310935032138faf",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -40144,7 +40300,7 @@
     {
       "path": "apps/web/public/audio/callout-pantry-crown.mp3",
       "file": "callout-pantry-crown.mp3",
-      "sha256": "b2557abed85e624c105710cb205436a513cacf4d9ed0b8804b7b35da02d9f15e",
+      "sha256": "1bd4dfe00d17e957466596237efba2c58ffb8b77a82f3a36109caa0758a333ab",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -40234,7 +40390,7 @@
         }
       ],
       "processing": "Per-unit sprite of original local spoken callouts. Each source line is normalized before encoding; 20 ms sprite gap.",
-      "spriteGainDb": 0.3100000000000023
+      "spriteGainDb": 0
     },
     {
       "sourceUrl": "https://freesound.org/people/Kinoton/sounds/568356/",
@@ -40375,12 +40531,12 @@
     {
       "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
       "file": "mallow-1.flac",
-      "sha256": "495cc5b0ede7dc1d5ae9985ec396d880982d1a1b8fba4817eb6fc8f5751bb2ba",
+      "sha256": "dc34b39a41b1becb46aee69523c0baca82ce8df8e666c31d4892ac6f1437c423",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: RutgerMuller, ShangusBurger, hollandm, lextrack, qubodup",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40396,53 +40552,60 @@
           "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-05.flac",
-          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/104374-06.flac",
-          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
+          "path": "assets/audio-sources/b2/consonants/843435-06.flac",
+          "sha256": "20c2337055fd4ccb6d1b9752aa694cee923c462872c63f87dde4afe76a04dafd"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-01.flac",
           "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
         },
         {
+          "path": "assets/audio-sources/b2/consonants/104374-08.flac",
+          "sha256": "f7086033e580562fedde753d7d2c4e76acada6ad938b3716dcc9885964206826"
+        },
+        {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
           "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-09.flac",
-          "sha256": "5fa022f27e5b482ca66ba071da5ecc81559e2f1f1779e46e00107c5e3871d2e9"
+          "path": "assets/audio-sources/b2/consonants/104374-10.flac",
+          "sha256": "585002f1f4f7d1f068d45a922efcf9635e093b3ff390afd1206929e2e36149fd"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-04.flac",
-          "sha256": "e0d00db8fe8d504a9797e9eaaa53181ea63451d7d5fd342df375858cfca7a81a"
+          "path": "assets/audio-sources/b2/consonants/843435-11.flac",
+          "sha256": "7d268193aa6e6cdb410503d0089f96dc829ea233025dde258095b83c79c89ffb"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-11.flac",
-          "sha256": "e48033d7ba573496fb6b4205ed8393a222d0b48c0dee524e94663684e38a332f"
+          "path": "assets/audio-sources/b2/consonants/764351-06.flac",
+          "sha256": "2178efdf7032e9ec0ef024aa432e936fec8eaa15833fd0d494060fffbf69a117"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-13.flac",
-          "sha256": "dd66d7ff61e2cc2cce020d6891fb44b70a9f44dfa43904ed12af2aa40f089bc9"
+          "path": "assets/audio-sources/b2/consonants/843435-14.flac",
+          "sha256": "868738a2d3a44f5882785e7c48640f37e86f36eafc15aa7af6aa3e654552835e"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "Welcome home, little hero!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/menu-voices/mallow-2.flac",
       "file": "mallow-2.flac",
-      "sha256": "387c79896d20eb8f5be6bd014eff0ea275d566036c129d5d7dc0dbed3e2a7df7",
+      "sha256": "744924ebcddfaca2ef9de37b5bfdd192c7488b3ab00f4adacbb18796ffd46454",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: ShangusBurger, lextrack, qubodup",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40458,8 +40621,12 @@
           "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-06.flac",
-          "sha256": "20c2337055fd4ccb6d1b9752aa694cee923c462872c63f87dde4afe76a04dafd"
+          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/104374-06.flac",
+          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-01.flac",
@@ -40470,29 +40637,36 @@
           "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-09.flac",
-          "sha256": "5fa022f27e5b482ca66ba071da5ecc81559e2f1f1779e46e00107c5e3871d2e9"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-04.flac",
-          "sha256": "e0d00db8fe8d504a9797e9eaaa53181ea63451d7d5fd342df375858cfca7a81a"
+          "path": "assets/audio-sources/b2/consonants/764351-05.flac",
+          "sha256": "62806db1fa85bf8075f78d65b8e485ff1d464bd4cd828f43ae62a7e17464f08b"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
-          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "Come and have tea!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/menu-voices/mochi-3.flac",
       "file": "mochi-3.flac",
-      "sha256": "c782d952ded252c953c59946946a43fddbf106b520e6c115cedf932f6c0d71cb",
+      "sha256": "3ebff79248ca7deaafac00a0367355f3373747ea2ade578c25faad9868852ede",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: ShangusBurger, hollandm, qubodup, tuberatanka",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40508,12 +40682,12 @@
           "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
+          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-02.flac",
-          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a"
+          "path": "assets/audio-sources/b2/consonants/843435-03.flac",
+          "sha256": "91d38c08677d942c9dc860919efa38c4d4864aeff3b0b940802f2699166a85ba"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
@@ -40524,21 +40698,36 @@
           "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-21.flac",
-          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-07.flac",
+          "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
+          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "That looks good on you!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/menu-voices/mochi-4.flac",
       "file": "mochi-4.flac",
-      "sha256": "b2dfef7f03e4495fec892537aebbfd8dd1668ae6b67fcbe913ecdf290fbcd6b5",
+      "sha256": "4bb7df45ebe0f03e012b2699ca7645da99602de94a4ac0d380da5da94bacde3c",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: RutgerMuller, ShangusBurger, hollandm, qubodup, tuberatanka",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40554,41 +40743,52 @@
           "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-02.flac",
-          "sha256": "d54c545771239c3d9c8a71758b8aa8272cf215bedacf0c688512c50e8eb3792a"
+          "path": "assets/audio-sources/b2/consonants/843435-01.flac",
+          "sha256": "96967859745c69ac1bb29882da4909b59cde6d0f33885a1a3c9745d88e6a8cf4"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
+          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
           "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
+          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-06.flac",
-          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
+          "path": "assets/audio-sources/b2/consonants/104374-05.flac",
+          "sha256": "2eedf446ded315c72c6088a92e3354787f5149068c81e30a6dc6f72b355f9f48"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
-          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
+          "path": "assets/audio-sources/b2/consonants/104374-07.flac",
+          "sha256": "b44e42291ecff47bfacbbc5fd06721b797b95c59da01635d248b91379cb7ef66"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-21.flac",
+          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "Ready for another night!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/menu-voices/mochi-5.flac",
       "file": "mochi-5.flac",
-      "sha256": "50b5f7adb24f609a01bda6a62401ad3f4a997671fc2163446340dd6c56e3f99d",
+      "sha256": "36534801168fd3a122c70ad29851fb6fb7b6b157c37b3c93ffd0d68bfee79685",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: ShangusBurger, qubodup, tuberatanka",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40604,49 +40804,60 @@
           "sha256": "71c7261bf4cdae3a7e6866f581c1534e719ce424994bca4665200b31592e6d6d"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-10.flac",
-          "sha256": "cd5943f2e7f7d5e1619ca4cce10df39858889e473aec75e0792154b3ae0a5415"
-        },
-        {
           "path": "assets/audio-sources/b2/consonants/764351-11.flac",
           "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-12.flac",
-          "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
+          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
+          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-13.flac",
-          "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
+          "path": "assets/audio-sources/b2/consonants/104374-04.flac",
+          "sha256": "fe7b5cdd8c2347a724fecd0898fe33a68e88b5ecb55e977990ba81520a7ddde5"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-14.flac",
           "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-06.flac",
-          "sha256": "20c2337055fd4ccb6d1b9752aa694cee923c462872c63f87dde4afe76a04dafd"
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-16.flac",
           "sha256": "7e58c172699076ba1907b1b6b67aa5d034f61c591d6125ddc4c5f77bc4e8d6c1"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-21.flac",
-          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
+          "path": "assets/audio-sources/b2/consonants/843435-08.flac",
+          "sha256": "22aa7fa295cb7585cf66ae0ecc301f7b605e65235c72792c6b99d817310ab882"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/764351-18.flac",
+          "sha256": "fb22f71a00631916f2c75892c75111c80a273868a4002d8ca2bc50639dd689d1"
+        },
+        {
+          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
+          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "A fine piece of work!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "assets/audio-sources/b2/menu-voices/mochi-6.flac",
       "file": "mochi-6.flac",
-      "sha256": "70f1208b14b23020208c2ee17e99ca16bf0445e42d4b9cb6f259cdaff3f627c8",
+      "sha256": "9d021ef6c24ef9107434d0b3288ef1714b231774d9f3ab76d459923d4ab35205",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: ShangusBurger, hollandm, qubodup, tuberatanka",
-      "date": "2026-11-13",
+      "date": "2026-11-13T17:49:45.207995+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40666,6 +40877,10 @@
           "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
+          "path": "assets/audio-sources/b2/consonants/764351-11.flac",
+          "sha256": "fe90bededb5f70fbd08d4cb86ae3f62d95b25502a0f289b469d47ea791f8045d"
+        },
+        {
           "path": "assets/audio-sources/b2/consonants/764351-12.flac",
           "sha256": "3a662cbb98d9acb1c2b11bc5e420088b9d389af421876217f9e8605c947428e4"
         },
@@ -40674,24 +40889,31 @@
           "sha256": "ee10fcd48f7e90990a5bc26be4eb17178050021eb8ebf7b4b27876763184eb62"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
-          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
+          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-07.flac",
-          "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df"
+          "path": "assets/audio-sources/b2/consonants/843435-08.flac",
+          "sha256": "22aa7fa295cb7585cf66ae0ecc301f7b605e65235c72792c6b99d817310ab882"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-22.flac",
-          "sha256": "f55197f5e103724a0883485d5d2269dd4381c1731c553706a610c799f15b7e8f"
+          "path": "assets/audio-sources/b2/consonants/843435-21.flac",
+          "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
+      "prompt": "Stronger than ever before!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "formantProcessor": {
+        "tool": "pyworld 0.3.5",
+        "license": "MIT",
+        "evidence": "assets/audio-sources/license-evidence/pyworld-LICENSE.txt"
+      }
     },
     {
       "path": "apps/web/public/audio/menu-voices.webm",
       "file": "menu-voices.webm",
-      "sha256": "235ada17ecf02914b9fbfb0510155a6441719feb00eaef42280042daf5c62e36",
+      "sha256": "787a6144adedd89c6ff7cbd403a9b2e95cd570cc1f2dba36e97bbb4d2692617a",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -40800,12 +41022,14 @@
           "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-publication.json",
+      "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/menu-voices.mp3",
       "file": "menu-voices.mp3",
-      "sha256": "9d5de188a8c6cbf2f662440fa66890a8656fbe58be6ae88ac33ebf3b2d45d8b3",
+      "sha256": "08557df1231b1c6cd77fd53418a025f3aaf8c193a8626a644cd7991d04e5ead5",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -40914,7 +41138,9 @@
           "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df"
         }
       ],
-      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input."
+      "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-publication.json",
+      "spriteGainDb": 0
     },
     {
       "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-underscore.py",

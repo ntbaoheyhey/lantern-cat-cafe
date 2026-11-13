@@ -45,3 +45,9 @@ S5 is permitted PARTIAL after eleven measured mix iterations. Other misses (tran
 ## SOLO Q2 correction — 13 November 2026
 
 S5-A-VOICE-WINDOW is resolved on A18ea6e6e8: actual combined playback has zero interrupted ultimate/skill starts across nine fixture/speed cases. The older48/75 and16/35 measurements describe the earlier B battle model. Remaining S5 failures are B mix quality and cannot qualify as an A timing blocker. Candidate18 is being measured; see b2/q2/.
+
+## Q5 original callout text — 2026-11-13T17:37:56.345332+00:00
+
+Request and same-session resolution: A owns original2–4-word replacements for charge syllables that fail slower speech, formant preservation and onset-aligned consonant trials. Authored in A apps/web/src/game/cardrpg/battle-v3/callouts.json. B reads that file for local probes; synthesis/metadata remain B-owned. No early merge. After accepted audio, refresh A voice-timing.json from measured B metadata and rerun interruption/parity gates.
+
+Q5 articulation 2026-11-13T17:44:47.699946+00:00: Clover charge take 2 still misses unprompted recognition after four new-phrase treatments (0.667; requirement 0.70). Request an original four-word phrase, "Watch the flowers bloom!", to preserve the nature action and resolve the indistinct opening. A owns the wording; B will remeasure both takes.

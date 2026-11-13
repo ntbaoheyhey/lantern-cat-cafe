@@ -1,11 +1,11 @@
 {
   "audio": {
     "path": "assets/audio-sources/b2/callouts/teacup-healer-skill-1-1.flac",
-    "sha256": "3cec3bb6fbedef4cc7395baafb2f7fbc1142694972c55d38ffd2f3a1c90cc824"
+    "sha256": "554cc69df8e946aafaa2a1a1eb0da74e6c311650f3a9f144522e412207fb5c66"
   },
   "expected": "Cup tap!",
-  "recognized": "It's a good time.",
-  "wordAccuracy": 0,
+  "recognized": "CUP TEP",
+  "wordAccuracy": 0.5,
   "model": "faster-whisper small.en int8 CPU",
   "prompt": null,
   "beamSize": 5,

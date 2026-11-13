@@ -1,0 +1,1922 @@
+{
+  "configHash": "c6fa386c47e242423a393422be063b593ce552dc0e7160e31c6cd9a5d1024a46",
+  "seeds": 200,
+  "firstSeed": 53113,
+  "score": 0.0001695550471075218,
+  "worst": 0.00005549074268973441,
+  "mean": 0.0000030828190383185786,
+  "scenarioScores": [
+    {
+      "id": "casual-heavy-d0.5-b0.1",
+      "mix": "casual-heavy",
+      "demand": 0.5,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.018567584343832,
+          "starRatio": 1.0754424916456296,
+          "heavyCasualHourlyRatio": 1.3850540311955508,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.48158928043893034,
+          "topOnePercentWithdrawnShare": 0.02877143506068234,
+          "claims": 23688.14264037604,
+          "withdrawals": 21688.14264037604,
+          "burn": 24119,
+          "starSource": 5533,
+          "starSink": 5149,
+          "starBalances": 389,
+          "inactiveStarBalances": 167,
+          "pausedStarGrants": 13200,
+          "lateBurnClaims": 1.1536617174104213,
+          "craftRebates": 12946.4250000003
+        },
+        "p10": {
+          "burnClaims": 0.9750874985472399,
+          "starRatio": 1.0705577416631606,
+          "heavyCasualHourlyRatio": 1.2188177164862477,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.42294050149243245,
+          "topOnePercentWithdrawnShare": 0.02697667014196859,
+          "claims": 22600.9836992855,
+          "withdrawals": 20600.9836992855,
+          "burn": 22507.2,
+          "starSource": 5273.6,
+          "starSink": 4879.2,
+          "starBalances": 379,
+          "inactiveStarBalances": 155,
+          "pausedStarGrants": 12783.3,
+          "lateBurnClaims": 1.055766468975488,
+          "craftRebates": 12223.890000000249
+        },
+        "p90": {
+          "burnClaims": 1.0589442127946174,
+          "starRatio": 1.0810134178714605,
+          "heavyCasualHourlyRatio": 1.5525506334784362,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5507079378966746,
+          "topOnePercentWithdrawnShare": 0.030283928748181296,
+          "claims": 24917.76278554604,
+          "withdrawals": 22917.76278554604,
+          "burn": 25758.9,
+          "starSource": 5808.599999999999,
+          "starSink": 5428.7,
+          "starBalances": 400,
+          "inactiveStarBalances": 178,
+          "pausedStarGrants": 13682.4,
+          "lateBurnClaims": 1.257129443280759,
+          "craftRebates": 13678.495000000348
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "casual-heavy-d0.5-b0.2",
+      "mix": "casual-heavy",
+      "demand": 0.5,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.0750513199279608,
+          "starRatio": 1.0836327564575519,
+          "heavyCasualHourlyRatio": 1.3734556562007993,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8.5,
+          "botRegularHourlyRatio": 0.48362517579321285,
+          "topOnePercentWithdrawnShare": 0.02854322893674776,
+          "claims": 23770.593950652008,
+          "withdrawals": 21770.593950652008,
+          "burn": 25541.5,
+          "starSource": 5135,
+          "starSink": 4739.5,
+          "starBalances": 398,
+          "inactiveStarBalances": 156,
+          "pausedStarGrants": 14197,
+          "lateBurnClaims": 1.2942178688613182,
+          "craftRebates": 11863.975000000253
+        },
+        "p10": {
+          "burnClaims": 1.034706760747685,
+          "starRatio": 1.078592317511895,
+          "heavyCasualHourlyRatio": 1.1780032324346335,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.43205102926873296,
+          "topOnePercentWithdrawnShare": 0.027004221346457413,
+          "claims": 22612.9398645461,
+          "withdrawals": 20612.9398645461,
+          "burn": 23910,
+          "starSource": 4881.8,
+          "starSink": 4485.2,
+          "starBalances": 387,
+          "inactiveStarBalances": 144.9,
+          "pausedStarGrants": 13716.8,
+          "lateBurnClaims": 1.195601098208744,
+          "craftRebates": 11224.735000000224
+        },
+        "p90": {
+          "burnClaims": 1.1173342849594152,
+          "starRatio": 1.089926453306735,
+          "heavyCasualHourlyRatio": 1.5637928385127202,
+          "casualLegendaryDay": 13.5,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5349367224136384,
+          "topOnePercentWithdrawnShare": 0.030201167743256544,
+          "claims": 24987.916895261882,
+          "withdrawals": 22987.916895261882,
+          "burn": 27046.6,
+          "starSource": 5410.4,
+          "starSink": 5008.9,
+          "starBalances": 410.1,
+          "inactiveStarBalances": 168,
+          "pausedStarGrants": 14554.2,
+          "lateBurnClaims": 1.4078078685236484,
+          "craftRebates": 12578.44500000027
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "casual-heavy-d0.5-b0.35",
+      "mix": "casual-heavy",
+      "demand": 0.5,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1371803065032424,
+          "starRatio": 1.1000122079633918,
+          "heavyCasualHourlyRatio": 1.397071751891179,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8.5,
+          "botRegularHourlyRatio": 0.47904515016533467,
+          "topOnePercentWithdrawnShare": 0.028452353512398994,
+          "claims": 23852.629162627785,
+          "withdrawals": 21852.629162627785,
+          "burn": 27151,
+          "starSource": 4545,
+          "starSink": 4132.5,
+          "starBalances": 413,
+          "inactiveStarBalances": 143,
+          "pausedStarGrants": 15570,
+          "lateBurnClaims": 1.3990463994898126,
+          "craftRebates": 10296.000000000178
+        },
+        "p10": {
+          "burnClaims": 1.1023366865907887,
+          "starRatio": 1.0931610139296974,
+          "heavyCasualHourlyRatio": 1.1714078733240911,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4344693572937848,
+          "topOnePercentWithdrawnShare": 0.027035377065849985,
+          "claims": 22844.4466390221,
+          "withdrawals": 20844.4466390221,
+          "burn": 25857.9,
+          "starSource": 4335.8,
+          "starSink": 3926.4,
+          "starBalances": 403,
+          "inactiveStarBalances": 130,
+          "pausedStarGrants": 15178.9,
+          "lateBurnClaims": 1.292805195480846,
+          "craftRebates": 9782.58500000017
+        },
+        "p90": {
+          "burnClaims": 1.1739237489784646,
+          "starRatio": 1.1063846035176823,
+          "heavyCasualHourlyRatio": 1.631083441536429,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5338667744892815,
+          "topOnePercentWithdrawnShare": 0.029936458956605717,
+          "claims": 24988.305349812876,
+          "withdrawals": 22988.305349812876,
+          "burn": 28492.3,
+          "starSource": 4777,
+          "starSink": 4363.5,
+          "starBalances": 421,
+          "inactiveStarBalances": 153,
+          "pausedStarGrants": 16047.5,
+          "lateBurnClaims": 1.5191773339093664,
+          "craftRebates": 10918.04000000019
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0.000011098148537946882,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0.00005549074268973441
+    },
+    {
+      "id": "casual-heavy-d1-b0.1",
+      "mix": "casual-heavy",
+      "demand": 1,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1265683178938346,
+          "starRatio": 1.0591870087882025,
+          "heavyCasualHourlyRatio": 1.202742884230011,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4669491001503145,
+          "topOnePercentWithdrawnShare": 0.02608222133744785,
+          "claims": 27214.649022676786,
+          "withdrawals": 25214.649022676786,
+          "burn": 30570,
+          "starSource": 7174,
+          "starSink": 6778,
+          "starBalances": 400,
+          "inactiveStarBalances": 148,
+          "pausedStarGrants": 11511,
+          "lateBurnClaims": 1.0489129075746457,
+          "craftRebates": 17360.15000000054
+        },
+        "p10": {
+          "burnClaims": 1.1046726924675432,
+          "starRatio": 1.0555547801814376,
+          "heavyCasualHourlyRatio": 1.0677139359951158,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4115567172169008,
+          "topOnePercentWithdrawnShare": 0.02474290943019827,
+          "claims": 25953.37169657205,
+          "withdrawals": 23953.37169657205,
+          "burn": 29281.5,
+          "starSource": 6826.7,
+          "starSink": 6424.1,
+          "starBalances": 389.9,
+          "inactiveStarBalances": 135,
+          "pausedStarGrants": 11060.8,
+          "lateBurnClaims": 0.9792512171781241,
+          "craftRebates": 16471.690000000377
+        },
+        "p90": {
+          "burnClaims": 1.1537305311084745,
+          "starRatio": 1.062921142442157,
+          "heavyCasualHourlyRatio": 1.35649551780821,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5344507771686734,
+          "topOnePercentWithdrawnShare": 0.02760504539585384,
+          "claims": 28554.196240211873,
+          "withdrawals": 26554.196240211873,
+          "burn": 32114.7,
+          "starSource": 7514.4,
+          "starSink": 7119,
+          "starBalances": 411,
+          "inactiveStarBalances": 161.1,
+          "pausedStarGrants": 11941.5,
+          "lateBurnClaims": 1.120686210447669,
+          "craftRebates": 18268.865000000642
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "casual-heavy-d1-b0.2",
+      "mix": "casual-heavy",
+      "demand": 1,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1724725277101662,
+          "starRatio": 1.064729263873535,
+          "heavyCasualHourlyRatio": 1.1913666542369543,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8.5,
+          "botRegularHourlyRatio": 0.469190016920885,
+          "topOnePercentWithdrawnShare": 0.026205964662281776,
+          "claims": 27093.280156902638,
+          "withdrawals": 25093.280156902638,
+          "burn": 31729,
+          "starSource": 6662.5,
+          "starSink": 6253.5,
+          "starBalances": 407,
+          "inactiveStarBalances": 141,
+          "pausedStarGrants": 12575,
+          "lateBurnClaims": 1.022735354523149,
+          "craftRebates": 16074.30000000033
+        },
+        "p10": {
+          "burnClaims": 1.1488073228772295,
+          "starRatio": 1.0609030555704129,
+          "heavyCasualHourlyRatio": 1.037192015948215,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.41605316316684127,
+          "topOnePercentWithdrawnShare": 0.02496088697352757,
+          "claims": 25847.505174447215,
+          "withdrawals": 23847.505174447215,
+          "burn": 30513.5,
+          "starSource": 6395.6,
+          "starSink": 5989.5,
+          "starBalances": 395,
+          "inactiveStarBalances": 126,
+          "pausedStarGrants": 12141.1,
+          "lateBurnClaims": 0.9585778721484763,
+          "craftRebates": 15334.965000000351
+        },
+        "p90": {
+          "burnClaims": 1.1962271575715122,
+          "starRatio": 1.0687882926585266,
+          "heavyCasualHourlyRatio": 1.3598025661839657,
+          "casualLegendaryDay": 13.5,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5214061763778273,
+          "topOnePercentWithdrawnShare": 0.027452243262456513,
+          "claims": 28381.911448843373,
+          "withdrawals": 26381.911448843373,
+          "burn": 33117,
+          "starSource": 7006.2,
+          "starSink": 6595.4,
+          "starBalances": 417,
+          "inactiveStarBalances": 154,
+          "pausedStarGrants": 12942.5,
+          "lateBurnClaims": 1.1236383011002666,
+          "craftRebates": 16924.140000000505
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "casual-heavy-d1-b0.35",
+      "mix": "casual-heavy",
+      "demand": 1,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.2358105991004342,
+          "starRatio": 1.0746481891275836,
+          "heavyCasualHourlyRatio": 1.2110837519003694,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8.5,
+          "botRegularHourlyRatio": 0.466946363425913,
+          "topOnePercentWithdrawnShare": 0.02634915793572413,
+          "claims": 26869.88524880377,
+          "withdrawals": 24869.88524880377,
+          "burn": 33268,
+          "starSource": 5961,
+          "starSink": 5544.5,
+          "starBalances": 414,
+          "inactiveStarBalances": 127,
+          "pausedStarGrants": 14086.5,
+          "lateBurnClaims": 1.0047565756246697,
+          "craftRebates": 14208.300000000225
+        },
+        "p10": {
+          "burnClaims": 1.2133995621586406,
+          "starRatio": 1.0691622848408102,
+          "heavyCasualHourlyRatio": 1.028529566393359,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.42280950710134096,
+          "topOnePercentWithdrawnShare": 0.024851352859844716,
+          "claims": 25780.02545040797,
+          "withdrawals": 23780.02545040797,
+          "burn": 32059.3,
+          "starSource": 5681.9,
+          "starSink": 5268.9,
+          "starBalances": 402,
+          "inactiveStarBalances": 117,
+          "pausedStarGrants": 13692.5,
+          "lateBurnClaims": 0.9510151646824523,
+          "craftRebates": 13468.585000000183
+        },
+        "p90": {
+          "burnClaims": 1.2628847964018182,
+          "starRatio": 1.0787617100385711,
+          "heavyCasualHourlyRatio": 1.3860659861372746,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5228705454274863,
+          "topOnePercentWithdrawnShare": 0.027577583464410776,
+          "claims": 28326.73091777982,
+          "withdrawals": 26326.73091777982,
+          "burn": 34633.1,
+          "starSource": 6331.3,
+          "starSink": 5912.8,
+          "starBalances": 426.1,
+          "inactiveStarBalances": 139,
+          "pausedStarGrants": 14538.2,
+          "lateBurnClaims": 1.0776217015956007,
+          "craftRebates": 15092.025000000272
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d0.5-b0.1",
+      "mix": "balanced",
+      "demand": 0.5,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.0449363453714056,
+          "starRatio": 1.0558566579643134,
+          "heavyCasualHourlyRatio": 1.3929355262069976,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4849674566954647,
+          "topOnePercentWithdrawnShare": 0.02343912172060327,
+          "claims": 29151.531770002315,
+          "withdrawals": 27151.531770002315,
+          "burn": 30549.5,
+          "starSource": 7067,
+          "starSink": 6685.5,
+          "starBalances": 374,
+          "inactiveStarBalances": 138,
+          "pausedStarGrants": 12684,
+          "lateBurnClaims": 1.206926158286321,
+          "craftRebates": 16939.50000000037
+        },
+        "p10": {
+          "burnClaims": 1.007220556195293,
+          "starRatio": 1.0526838671297463,
+          "heavyCasualHourlyRatio": 1.2282075872635925,
+          "casualLegendaryDay": 12.950000000000001,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.43741840242156205,
+          "topOnePercentWithdrawnShare": 0.022388329297532365,
+          "claims": 27908.29338235168,
+          "withdrawals": 25908.29338235168,
+          "burn": 28923.4,
+          "starSource": 6747.3,
+          "starSink": 6374.6,
+          "starBalances": 360,
+          "inactiveStarBalances": 126,
+          "pausedStarGrants": 12338.6,
+          "lateBurnClaims": 1.1003867106154075,
+          "craftRebates": 16178.120000000417
+        },
+        "p90": {
+          "burnClaims": 1.0808051384163226,
+          "starRatio": 1.0596671485535007,
+          "heavyCasualHourlyRatio": 1.5781592615023596,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5365519363644076,
+          "topOnePercentWithdrawnShare": 0.02454938366248958,
+          "claims": 30436.587545012288,
+          "withdrawals": 28436.587545012288,
+          "burn": 31912.5,
+          "starSource": 7348.7,
+          "starSink": 6982.7,
+          "starBalances": 385.1,
+          "inactiveStarBalances": 148,
+          "pausedStarGrants": 13112.5,
+          "lateBurnClaims": 1.3021358566484802,
+          "craftRebates": 17657.09000000024
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d0.5-b0.2",
+      "mix": "balanced",
+      "demand": 0.5,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.0843297981984845,
+          "starRatio": 1.0629683198814432,
+          "heavyCasualHourlyRatio": 1.3792785332924151,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4804041752964239,
+          "topOnePercentWithdrawnShare": 0.023855962199719343,
+          "claims": 28569.52630747792,
+          "withdrawals": 26569.52630747792,
+          "burn": 30990.5,
+          "starSource": 6484.5,
+          "starSink": 6095.5,
+          "starBalances": 384,
+          "inactiveStarBalances": 132,
+          "pausedStarGrants": 13671,
+          "lateBurnClaims": 1.2896563346843255,
+          "craftRebates": 15401.2250000004
+        },
+        "p10": {
+          "burnClaims": 1.0501214585202259,
+          "starRatio": 1.0597607943974354,
+          "heavyCasualHourlyRatio": 1.1977848047789992,
+          "casualLegendaryDay": 12.450000000000001,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4429709761475956,
+          "topOnePercentWithdrawnShare": 0.02288700286372871,
+          "claims": 27357.982427077943,
+          "withdrawals": 25357.982427077943,
+          "burn": 29525.7,
+          "starSource": 6186.9,
+          "starSink": 5800,
+          "starBalances": 372,
+          "inactiveStarBalances": 119.9,
+          "pausedStarGrants": 13227.7,
+          "lateBurnClaims": 1.205651393149221,
+          "craftRebates": 14617.225000000353
+        },
+        "p90": {
+          "burnClaims": 1.1229206000651937,
+          "starRatio": 1.0676692414562607,
+          "heavyCasualHourlyRatio": 1.5821520988898534,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5242420998484637,
+          "topOnePercentWithdrawnShare": 0.02497002444110892,
+          "claims": 29712.59745600824,
+          "withdrawals": 27712.59745600824,
+          "burn": 32496.2,
+          "starSource": 6757.4,
+          "starSink": 6381.1,
+          "starBalances": 396,
+          "inactiveStarBalances": 142,
+          "pausedStarGrants": 14043.9,
+          "lateBurnClaims": 1.3875931893528652,
+          "craftRebates": 16075.390000000414
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d0.5-b0.35",
+      "mix": "balanced",
+      "demand": 0.5,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1442358519518943,
+          "starRatio": 1.0766987284339682,
+          "heavyCasualHourlyRatio": 1.3810701153395302,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4808582866469248,
+          "topOnePercentWithdrawnShare": 0.02450484576048513,
+          "claims": 27705.062200303764,
+          "withdrawals": 25705.062200303764,
+          "burn": 31701,
+          "starSource": 5610,
+          "starSink": 5217.5,
+          "starBalances": 400,
+          "inactiveStarBalances": 121,
+          "pausedStarGrants": 15183.5,
+          "lateBurnClaims": 1.399318914888168,
+          "craftRebates": 13100.17500000028
+        },
+        "p10": {
+          "burnClaims": 1.114061882134449,
+          "starRatio": 1.0724686301847333,
+          "heavyCasualHourlyRatio": 1.1878387684498237,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4397462727687009,
+          "topOnePercentWithdrawnShare": 0.023641516628108632,
+          "claims": 26755.25205351896,
+          "withdrawals": 24755.25205351896,
+          "burn": 30371.9,
+          "starSource": 5375.8,
+          "starSink": 4973.6,
+          "starBalances": 389.9,
+          "inactiveStarBalances": 107,
+          "pausedStarGrants": 14833.4,
+          "lateBurnClaims": 1.3226684437804976,
+          "craftRebates": 12490.430000000237
+        },
+        "p90": {
+          "burnClaims": 1.176448077019896,
+          "starRatio": 1.0817522233887218,
+          "heavyCasualHourlyRatio": 1.5621984324905536,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5256322149203015,
+          "topOnePercentWithdrawnShare": 0.025656007178182606,
+          "claims": 28814.702582494334,
+          "withdrawals": 26814.702582494334,
+          "burn": 33097.8,
+          "starSource": 5868.7,
+          "starSink": 5463.9,
+          "starBalances": 412,
+          "inactiveStarBalances": 133,
+          "pausedStarGrants": 15620,
+          "lateBurnClaims": 1.4839226985038416,
+          "craftRebates": 13718.765000000289
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d1-b0.1",
+      "mix": "balanced",
+      "demand": 1,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1477057013170353,
+          "starRatio": 1.049886117023386,
+          "heavyCasualHourlyRatio": 1.207939061510697,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4686748549044274,
+          "topOnePercentWithdrawnShare": 0.021868188085853987,
+          "claims": 32442.827632477936,
+          "withdrawals": 30442.827632477936,
+          "burn": 37251.5,
+          "starSource": 8606,
+          "starSink": 8200,
+          "starBalances": 410,
+          "inactiveStarBalances": 121.5,
+          "pausedStarGrants": 11112.5,
+          "lateBurnClaims": 1.0806348285450547,
+          "craftRebates": 21015.825000001234
+        },
+        "p10": {
+          "burnClaims": 1.122871943235368,
+          "starRatio": 1.0475312383617659,
+          "heavyCasualHourlyRatio": 1.0598386184754993,
+          "casualLegendaryDay": 12.950000000000001,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4234684586708953,
+          "topOnePercentWithdrawnShare": 0.02089473163765141,
+          "claims": 31107.21248123304,
+          "withdrawals": 29107.21248123304,
+          "burn": 35434.8,
+          "starSource": 8241.5,
+          "starSink": 7821,
+          "starBalances": 398,
+          "inactiveStarBalances": 111,
+          "pausedStarGrants": 10657.7,
+          "lateBurnClaims": 1.025049221112718,
+          "craftRebates": 20057.660000001255
+        },
+        "p90": {
+          "burnClaims": 1.1681877059714478,
+          "starRatio": 1.0525731010562471,
+          "heavyCasualHourlyRatio": 1.3767032656945941,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5188153308807791,
+          "topOnePercentWithdrawnShare": 0.022869825133668593,
+          "claims": 33945.11722430781,
+          "withdrawals": 31945.117224307807,
+          "burn": 38839.1,
+          "starSource": 8960.5,
+          "starSink": 8551,
+          "starBalances": 419,
+          "inactiveStarBalances": 134,
+          "pausedStarGrants": 11526.5,
+          "lateBurnClaims": 1.154491788141386,
+          "craftRebates": 21991.16000000125
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d1-b0.2",
+      "mix": "balanced",
+      "demand": 1,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1815641526853837,
+          "starRatio": 1.0549000306881045,
+          "heavyCasualHourlyRatio": 1.2050273588088047,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.4663242312110465,
+          "topOnePercentWithdrawnShare": 0.02225121010356326,
+          "claims": 31898.11048917882,
+          "withdrawals": 29898.11048917882,
+          "burn": 37743,
+          "starSource": 7980.5,
+          "starSink": 7566.5,
+          "starBalances": 414.5,
+          "inactiveStarBalances": 115,
+          "pausedStarGrants": 12238.5,
+          "lateBurnClaims": 1.0989353037115648,
+          "craftRebates": 19437.100000001126
+        },
+        "p10": {
+          "burnClaims": 1.159903070319805,
+          "starRatio": 1.0518932838760446,
+          "heavyCasualHourlyRatio": 1.032416906065267,
+          "casualLegendaryDay": 12.450000000000001,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4325646944458113,
+          "topOnePercentWithdrawnShare": 0.02120449629342523,
+          "claims": 30586.552563783745,
+          "withdrawals": 28586.552563783745,
+          "burn": 36216.9,
+          "starSource": 7604.9,
+          "starSink": 7194.2,
+          "starBalances": 404.9,
+          "inactiveStarBalances": 105.9,
+          "pausedStarGrants": 11785,
+          "lateBurnClaims": 1.0205595644720145,
+          "craftRebates": 18521.520000000855
+        },
+        "p90": {
+          "burnClaims": 1.2043079112615571,
+          "starRatio": 1.0576710995296081,
+          "heavyCasualHourlyRatio": 1.383743551068847,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5134020548244276,
+          "topOnePercentWithdrawnShare": 0.023287924970827188,
+          "claims": 33254.80125612331,
+          "withdrawals": 31254.801256123308,
+          "burn": 39318.2,
+          "starSource": 8314.3,
+          "starSink": 7901.3,
+          "starBalances": 426,
+          "inactiveStarBalances": 130,
+          "pausedStarGrants": 12580.1,
+          "lateBurnClaims": 1.1912910454676744,
+          "craftRebates": 20322.95500000128
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "balanced-d1-b0.35",
+      "mix": "balanced",
+      "demand": 1,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.2391732003035258,
+          "starRatio": 1.0635054063810236,
+          "heavyCasualHourlyRatio": 1.2008025062606453,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.46584746991434256,
+          "topOnePercentWithdrawnShare": 0.0229828201993518,
+          "claims": 30768.859969680903,
+          "withdrawals": 28768.859969680903,
+          "burn": 38227.5,
+          "starSource": 7003,
+          "starSink": 6583,
+          "starBalances": 420,
+          "inactiveStarBalances": 108,
+          "pausedStarGrants": 13757.5,
+          "lateBurnClaims": 1.035903694500428,
+          "craftRebates": 16903.75000000043
+        },
+        "p10": {
+          "burnClaims": 1.21687089426406,
+          "starRatio": 1.0604829323416558,
+          "heavyCasualHourlyRatio": 1.0457624906302585,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4234015833610844,
+          "topOnePercentWithdrawnShare": 0.022176159920233692,
+          "claims": 29580.74957336993,
+          "withdrawals": 27580.74957336993,
+          "burn": 36789.9,
+          "starSource": 6715.4,
+          "starSink": 6295,
+          "starBalances": 410,
+          "inactiveStarBalances": 96.9,
+          "pausedStarGrants": 13333.2,
+          "lateBurnClaims": 0.9729443467807792,
+          "craftRebates": 16127.295000000235
+        },
+        "p90": {
+          "burnClaims": 1.2650484658895103,
+          "starRatio": 1.0673081613539313,
+          "heavyCasualHourlyRatio": 1.3870149862813437,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5079485406278892,
+          "topOnePercentWithdrawnShare": 0.023937193393317378,
+          "claims": 31933.47647273012,
+          "withdrawals": 29933.47647273012,
+          "burn": 39398.7,
+          "starSource": 7288.7,
+          "starSink": 6869.3,
+          "starBalances": 430,
+          "inactiveStarBalances": 119,
+          "pausedStarGrants": 14239.7,
+          "lateBurnClaims": 1.1273396338578023,
+          "craftRebates": 17633.91500000062
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d0.5-b0.1",
+      "mix": "heavy-heavy",
+      "demand": 0.5,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.0723301804244858,
+          "starRatio": 1.0422838982225402,
+          "heavyCasualHourlyRatio": 1.3652389258847109,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.47831331323856885,
+          "topOnePercentWithdrawnShare": 0.019103896096720002,
+          "claims": 35815.48103287774,
+          "withdrawals": 33815.48103287774,
+          "burn": 38285,
+          "starSource": 8904,
+          "starSink": 8547,
+          "starBalances": 361,
+          "inactiveStarBalances": 104,
+          "pausedStarGrants": 12071,
+          "lateBurnClaims": 1.2552426946069661,
+          "craftRebates": 21726.349999999693
+        },
+        "p10": {
+          "burnClaims": 1.0368910825375315,
+          "starRatio": 1.0395270498807418,
+          "heavyCasualHourlyRatio": 1.1491791162549352,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.42529659592587893,
+          "topOnePercentWithdrawnShare": 0.018525074133249067,
+          "claims": 34553.51672819768,
+          "withdrawals": 32553.51672819768,
+          "burn": 36422.7,
+          "starSource": 8606.6,
+          "starSink": 8237.7,
+          "starBalances": 348,
+          "inactiveStarBalances": 92,
+          "pausedStarGrants": 11670.4,
+          "lateBurnClaims": 1.1610664406367606,
+          "craftRebates": 20945.97499999976
+        },
+        "p90": {
+          "burnClaims": 1.1102390845225545,
+          "starRatio": 1.0447809158789276,
+          "heavyCasualHourlyRatio": 1.6306255471394773,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5393272909547216,
+          "topOnePercentWithdrawnShare": 0.019860158567090534,
+          "claims": 36840.98265068351,
+          "withdrawals": 34840.98265068351,
+          "burn": 40419.7,
+          "starSource": 9208.4,
+          "starSink": 8839.5,
+          "starBalances": 374,
+          "inactiveStarBalances": 114,
+          "pausedStarGrants": 12474,
+          "lateBurnClaims": 1.3495390300345897,
+          "craftRebates": 22458.51999999968
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d0.5-b0.2",
+      "mix": "heavy-heavy",
+      "demand": 0.5,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1079108607290253,
+          "starRatio": 1.047986101237956,
+          "heavyCasualHourlyRatio": 1.3550950508688238,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.47899095514822854,
+          "topOnePercentWithdrawnShare": 0.019831537650675572,
+          "claims": 34573.42977390334,
+          "withdrawals": 32573.429773903343,
+          "burn": 38212.5,
+          "starSource": 8157.5,
+          "starSink": 7788,
+          "starBalances": 374,
+          "inactiveStarBalances": 99,
+          "pausedStarGrants": 13158,
+          "lateBurnClaims": 1.3258459372624927,
+          "craftRebates": 19775.700000000077
+        },
+        "p10": {
+          "burnClaims": 1.0683728788858078,
+          "starRatio": 1.0456534198990985,
+          "heavyCasualHourlyRatio": 1.1655955464507342,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.430962960652143,
+          "topOnePercentWithdrawnShare": 0.0191126631903644,
+          "claims": 33380.8963595288,
+          "withdrawals": 31380.8963595288,
+          "burn": 36390.8,
+          "starSource": 7852.7,
+          "starSink": 7477.8,
+          "starBalances": 360.9,
+          "inactiveStarBalances": 87,
+          "pausedStarGrants": 12773,
+          "lateBurnClaims": 1.2414541212308083,
+          "craftRebates": 18963.195000000218
+        },
+        "p90": {
+          "burnClaims": 1.1430270013881119,
+          "starRatio": 1.0504790951668894,
+          "heavyCasualHourlyRatio": 1.6791468558803482,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5266496853455166,
+          "topOnePercentWithdrawnShare": 0.020593209371431408,
+          "claims": 35616.93367165385,
+          "withdrawals": 33616.93367165385,
+          "burn": 39978.9,
+          "starSource": 8423.9,
+          "starSink": 8051.7,
+          "starBalances": 385,
+          "inactiveStarBalances": 110,
+          "pausedStarGrants": 13623.6,
+          "lateBurnClaims": 1.4146176872336051,
+          "craftRebates": 20398.25999999991
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d0.5-b0.35",
+      "mix": "heavy-heavy",
+      "demand": 0.5,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.16311568422711,
+          "starRatio": 1.0597784650675577,
+          "heavyCasualHourlyRatio": 1.3705245597003646,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.473455075896283,
+          "topOnePercentWithdrawnShare": 0.021070342979794127,
+          "claims": 32492.646505980265,
+          "withdrawals": 30492.646505980265,
+          "burn": 37606,
+          "starSource": 6954,
+          "starSink": 6565.5,
+          "starBalances": 392,
+          "inactiveStarBalances": 95,
+          "pausedStarGrants": 14733,
+          "lateBurnClaims": 1.4238923222003073,
+          "craftRebates": 16624.100000000377
+        },
+        "p10": {
+          "burnClaims": 1.1271053094602324,
+          "starRatio": 1.056346398999784,
+          "heavyCasualHourlyRatio": 1.1570073453357061,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.43376991160090206,
+          "topOnePercentWithdrawnShare": 0.02037462387614066,
+          "claims": 31373.283976865237,
+          "withdrawals": 29373.283976865237,
+          "burn": 36168.6,
+          "starSource": 6697.7,
+          "starSink": 6309.3,
+          "starBalances": 380,
+          "inactiveStarBalances": 83.9,
+          "pausedStarGrants": 14406,
+          "lateBurnClaims": 1.3325535720333126,
+          "craftRebates": 15896.035000000362
+        },
+        "p90": {
+          "burnClaims": 1.1872237907968026,
+          "starRatio": 1.0633715268828672,
+          "heavyCasualHourlyRatio": 1.6946940762852447,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5262677502486508,
+          "topOnePercentWithdrawnShare": 0.021866100295673933,
+          "claims": 33495.20436914523,
+          "withdrawals": 31495.20436914523,
+          "burn": 39142.7,
+          "starSource": 7233.1,
+          "starSink": 6843.3,
+          "starBalances": 404.1,
+          "inactiveStarBalances": 107,
+          "pausedStarGrants": 15189.2,
+          "lateBurnClaims": 1.5159995532045465,
+          "craftRebates": 17252.975000000366
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d1-b0.1",
+      "mix": "heavy-heavy",
+      "demand": 1,
+      "botShare": 0.1,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.171854221407041,
+          "starRatio": 1.0427201606835532,
+          "heavyCasualHourlyRatio": 1.1932354465765602,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.46510574420722545,
+          "topOnePercentWithdrawnShare": 0.018285974781666436,
+          "claims": 38660.13094050453,
+          "withdrawals": 36660.13094050453,
+          "burn": 45347,
+          "starSource": 10243.5,
+          "starSink": 9823,
+          "starBalances": 421.5,
+          "inactiveStarBalances": 91,
+          "pausedStarGrants": 10746,
+          "lateBurnClaims": 1.0938949367290496,
+          "craftRebates": 25223.22500000173
+        },
+        "p10": {
+          "burnClaims": 1.1523489225100065,
+          "starRatio": 1.0413605981447644,
+          "heavyCasualHourlyRatio": 1.0082935983326549,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.4208797496781686,
+          "topOnePercentWithdrawnShare": 0.017622091006653823,
+          "claims": 37371.735617899176,
+          "withdrawals": 35371.735617899176,
+          "burn": 43868.8,
+          "starSource": 9935.8,
+          "starSink": 9511.2,
+          "starBalances": 412,
+          "inactiveStarBalances": 82,
+          "pausedStarGrants": 10342.4,
+          "lateBurnClaims": 1.036253990243077,
+          "craftRebates": 24382.120000001727
+        },
+        "p90": {
+          "burnClaims": 1.190016227220691,
+          "starRatio": 1.0444994776037677,
+          "heavyCasualHourlyRatio": 1.4607878492062603,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5360647712261171,
+          "topOnePercentWithdrawnShare": 0.01891972545508553,
+          "claims": 39898.97140947334,
+          "withdrawals": 37898.97140947334,
+          "burn": 46753.5,
+          "starSource": 10589.1,
+          "starSink": 10163.3,
+          "starBalances": 432,
+          "inactiveStarBalances": 102,
+          "pausedStarGrants": 11092.1,
+          "lateBurnClaims": 1.159991353873377,
+          "craftRebates": 26091.670000001443
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d1-b0.2",
+      "mix": "heavy-heavy",
+      "demand": 1,
+      "botShare": 0.2,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.1947968794855144,
+          "starRatio": 1.0472373228675957,
+          "heavyCasualHourlyRatio": 1.1851191298855301,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.46831777712698885,
+          "topOnePercentWithdrawnShare": 0.018910515838297504,
+          "claims": 37235.20149038013,
+          "withdrawals": 35235.20149038013,
+          "burn": 44488,
+          "starSource": 9386,
+          "starSink": 8965,
+          "starBalances": 425,
+          "inactiveStarBalances": 89,
+          "pausedStarGrants": 11881,
+          "lateBurnClaims": 1.170469016669604,
+          "craftRebates": 23114.225000001737
+        },
+        "p10": {
+          "burnClaims": 1.174241717797823,
+          "starRatio": 1.0453088378536097,
+          "heavyCasualHourlyRatio": 0.9952224129444277,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.42004251724643354,
+          "topOnePercentWithdrawnShare": 0.018276451055571456,
+          "claims": 36090.48301890958,
+          "withdrawals": 34090.48301890958,
+          "burn": 43160,
+          "starSource": 9087.6,
+          "starSink": 8670.9,
+          "starBalances": 414,
+          "inactiveStarBalances": 79,
+          "pausedStarGrants": 11440.9,
+          "lateBurnClaims": 1.0868331784841754,
+          "craftRebates": 22304.57000000192
+        },
+        "p90": {
+          "burnClaims": 1.2177186926406418,
+          "starRatio": 1.0492963327648055,
+          "heavyCasualHourlyRatio": 1.4506804769183042,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5180133598426383,
+          "topOnePercentWithdrawnShare": 0.019594513337172263,
+          "claims": 38530.998439463496,
+          "withdrawals": 36530.998439463496,
+          "burn": 46026.5,
+          "starSource": 9717.8,
+          "starSink": 9292,
+          "starBalances": 434,
+          "inactiveStarBalances": 100,
+          "pausedStarGrants": 12247,
+          "lateBurnClaims": 1.2516925279652684,
+          "craftRebates": 24015.790000001623
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    },
+    {
+      "id": "heavy-heavy-d1-b0.35",
+      "mix": "heavy-heavy",
+      "demand": 1,
+      "botShare": 0.35,
+      "seeds": 200,
+      "tokenWeeks": 52,
+      "quantiles": {
+        "median": {
+          "burnClaims": 1.2452316561277263,
+          "starRatio": 1.0552517499174916,
+          "heavyCasualHourlyRatio": 1.1700944639978283,
+          "casualLegendaryDay": 13,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.46538772650413524,
+          "topOnePercentWithdrawnShare": 0.019935906779766616,
+          "claims": 35357.793254457836,
+          "withdrawals": 33357.793254457836,
+          "burn": 44069,
+          "starSource": 8217,
+          "starSink": 7788,
+          "starBalances": 430,
+          "inactiveStarBalances": 86,
+          "pausedStarGrants": 13559,
+          "lateBurnClaims": 1.0992254713330134,
+          "craftRebates": 20044.200000001583
+        },
+        "p10": {
+          "burnClaims": 1.22379748216567,
+          "starRatio": 1.053093532689601,
+          "heavyCasualHourlyRatio": 0.9839944864419311,
+          "casualLegendaryDay": 12,
+          "heavyLegendaryDay": 8,
+          "botRegularHourlyRatio": 0.41678497016387006,
+          "topOnePercentWithdrawnShare": 0.01922587641638675,
+          "claims": 34050.99186324607,
+          "withdrawals": 32050.99186324607,
+          "burn": 42603.9,
+          "starSource": 7867.4,
+          "starSink": 7439.3,
+          "starBalances": 419,
+          "inactiveStarBalances": 76,
+          "pausedStarGrants": 13183.7,
+          "lateBurnClaims": 1.0101515289246665,
+          "craftRebates": 19121.750000001273
+        },
+        "p90": {
+          "burnClaims": 1.2652064515790442,
+          "starRatio": 1.0582747024404937,
+          "heavyCasualHourlyRatio": 1.4397087127650439,
+          "casualLegendaryDay": 14,
+          "heavyLegendaryDay": 9,
+          "botRegularHourlyRatio": 0.5139159810813515,
+          "topOnePercentWithdrawnShare": 0.020745128962838776,
+          "claims": 36611.65968903209,
+          "withdrawals": 34611.65968903209,
+          "burn": 45409.9,
+          "starSource": 8495.8,
+          "starSink": 8063.9,
+          "starBalances": 441,
+          "inactiveStarBalances": 97,
+          "pausedStarGrants": 13970.6,
+          "lateBurnClaims": 1.219824417997949,
+          "craftRebates": 20804.02000000172
+        }
+      },
+      "distances": {
+        "T-a": 0,
+        "T-b": 0,
+        "T-c": 0,
+        "T-d": 0,
+        "T-e": 0,
+        "T-f": 0,
+        "T-g": 0
+      },
+      "score": 0
+    }
+  ],
+  "elapsedSeconds": 174.71748766600004,
+  "id": "c6fa386c47e242423a393422be063b593ce552dc0e7160e31c6cd9a5d1024a46",
+  "config": {
+    "policy": {
+      "version": 3,
+      "rewards": {
+        "weeklySpool": 1.05,
+        "chapterSpool": 0,
+        "seasonRankMax": 2,
+        "weeklyStarThread": 1,
+        "starThreadBankCap": 1
+      },
+      "season": {
+        "days": 28,
+        "epoch": 1794528000000,
+        "editionSupply": 600
+      },
+      "deed": {
+        "firstId": 30001,
+        "lastId": 33000,
+        "supply": 3000,
+        "level": 15,
+        "demoLevel": 5
+      },
+      "spool": {
+        "feeBp": 1500,
+        "minAgeDays": 7,
+        "cooldownDays": 7,
+        "weeklyNetCap": 7,
+        "skinCost": 12
+      },
+      "cat": {
+        "odds": {
+          "common": 5500,
+          "rare": 3300,
+          "epic": 1100,
+          "legendary": 100
+        },
+        "soft": 50,
+        "hard": 70,
+        "stepBp": 600,
+        "featuredBp": 5000
+      },
+      "gear": {
+        "odds": {
+          "common": 5000,
+          "rare": 3500,
+          "epic": 1420,
+          "legendary": 80
+        },
+        "soft": 40,
+        "hard": 60,
+        "stepBp": 600
+      },
+      "shards": {
+        "common": 5,
+        "rare": 10,
+        "epic": 20,
+        "legendary": 40
+      },
+      "starShards": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "selector": 120,
+      "enhancement": {
+        "max": 10,
+        "successBp": [
+          10000,
+          10000,
+          10000,
+          10000,
+          10000,
+          8000,
+          7000,
+          6000,
+          5000,
+          4000
+        ],
+        "blessingBp": 1000,
+        "fishBase": 30,
+        "growth": 1.35
+      },
+      "fusion": {
+        "rare": {
+          "count": 4,
+          "input": "common",
+          "starThread": 0,
+          "yarn": 0
+        },
+        "epic": {
+          "count": 3,
+          "input": "rare",
+          "starThread": 0,
+          "yarn": 0
+        },
+        "legendary": {
+          "count": 3,
+          "input": "epic",
+          "starThread": 1,
+          "yarn": 19
+        },
+        "successBp": 10000
+      },
+      "seal": {
+        "level": 15,
+        "demoLevel": 5,
+        "perDay": 3,
+        "deedExtra": 1,
+        "bossSeals": 1,
+        "feeBp": 1200,
+        "relistMinutes": 10,
+        "reference": {
+          "epic": 100,
+          "legendary": 300,
+          "mythic": 900,
+          "starThread": 20
+        }
+      },
+      "quality": [
+        {
+          "name": "Worn",
+          "floorBp": 0,
+          "offset": 0
+        },
+        {
+          "name": "Fine",
+          "floorBp": 4000,
+          "offset": 1000
+        },
+        {
+          "name": "Perfect",
+          "floorBp": 8500,
+          "offset": 2000
+        }
+      ],
+      "drops": {
+        "full": 6,
+        "halfUntil": 18,
+        "halfBp": 5000,
+        "battle": {
+          "chanceBp": 3000,
+          "odds": {
+            "common": 6500,
+            "rare": 3000,
+            "epic": 500,
+            "legendary": 0
+          }
+        },
+        "elite": {
+          "chanceBp": 6000,
+          "odds": {
+            "common": 0,
+            "rare": 7200,
+            "epic": 2790,
+            "legendary": 10
+          }
+        },
+        "boss": {
+          "chanceBp": 10000,
+          "odds": {
+            "common": 0,
+            "rare": 3000,
+            "epic": 6970,
+            "legendary": 30
+          }
+        },
+        "firstBoss": {
+          "chanceBp": 10000,
+          "odds": {
+            "common": 0,
+            "rare": 0,
+            "epic": 9700,
+            "legendary": 300
+          }
+        },
+        "tower": {
+          "chanceBp": 10000,
+          "odds": {
+            "common": 0,
+            "rare": 0,
+            "epic": 9150,
+            "legendary": 850
+          }
+        }
+      },
+      "allocation": {
+        "players": 35,
+        "team": 15,
+        "treasury": 12,
+        "investors": 12,
+        "ecosystem": 10,
+        "earlyTesters": 6,
+        "liquidity": 5,
+        "advisors": 3,
+        "partners": 2
+      },
+      "market": {
+        "feeBp": 500,
+        "burnBp": 200,
+        "treasuryBp": 300
+      },
+      "tailoring": {
+        "legendary": {
+          "fish": 100,
+          "threads": 300,
+          "essence": 45,
+          "materials": 160,
+          "seals": 7
+        }
+      },
+      "craft": {
+        "rebateBp": 9500,
+        "weeklySpoolCap": 5
+      }
+    },
+    "c2": {
+      "equipment": {
+        "commonPower": 0.008,
+        "maximumPower": 0.02,
+        "minimumMain": 1,
+        "affixScale": 0.25,
+        "defenseWeight": 3,
+        "hpWeight": 0.6
+      },
+      "sets": {
+        "hearthloomShareBp": 500,
+        "bellsteelSheltersPerBattle": 0,
+        "bellsteelRipostesPerBattle": 1
+      },
+      "uniques": {
+        "rainbellCleanseStacks": 1,
+        "softcollarShield": 8
+      },
+      "dropsPerDay": 6,
+      "drops": {
+        "battle": {
+          "common": 6500,
+          "rare": 3000,
+          "epic": 500,
+          "legendary": 0
+        },
+        "elite": {
+          "common": 0,
+          "rare": 7200,
+          "epic": 2795,
+          "legendary": 5
+        },
+        "boss": {
+          "common": 0,
+          "rare": 2985,
+          "epic": 7000,
+          "legendary": 15
+        }
+      },
+      "equipmentInvitation": {
+        "stamps": 300
+      },
+      "tailoring": {
+        "common": {
+          "fish": 180,
+          "threads": 30
+        },
+        "rare": {
+          "fish": 180,
+          "threads": 30
+        },
+        "epic": {
+          "fish": 20,
+          "threads": 240,
+          "essence": 9
+        },
+        "legendary": {
+          "fish": 100,
+          "threads": 300,
+          "essence": 60
+        }
+      },
+      "legendary": {
+        "seals": 10,
+        "materials": 200,
+        "selectorMarks": 72
+      }
+    },
+    "sinks": {
+      "successBp": 10000,
+      "polish": {
+        "yarn": [
+          3,
+          3
+        ],
+        "starThread": [
+          1,
+          1
+        ]
+      },
+      "decor": {
+        "yarn": 2,
+        "starThread": 1,
+        "patterns": [
+          "moon",
+          "dawn",
+          "rain",
+          "ember"
+        ]
+      },
+      "display": {
+        "yarn": 2,
+        "starThread": 1,
+        "maxLevel": 3,
+        "baseSlots": 1,
+        "slotsPerLevel": 2
+      }
+    },
+    "preferences": {
+      "loadoutItems": 16
+    },
+    "population": 500,
+    "tokenWeeks": 52,
+    "cohortDays": 42,
+    "startEpoch": 1794528000000,
+    "initial": {
+      "testerYarn": 20,
+      "testerRecipients": 100,
+      "marketYarnPerParticipant": 40
+    },
+    "profiles": [
+      {
+        "id": "casual",
+        "hours": 0.5,
+        "hoursSigma": 0.35,
+        "sessionMinutes": 18,
+        "activeDays": 0.7,
+        "churnFirst": 0.055,
+        "churnLater": 0.012,
+        "deed": 0.55,
+        "withdraw": 0.7,
+        "sink": 0.5,
+        "market": 0.2,
+        "sell": 0.5,
+        "buy": 0.25,
+        "upgrades": 1
+      },
+      {
+        "id": "regular",
+        "hours": 1,
+        "hoursSigma": 0.3,
+        "sessionMinutes": 30,
+        "activeDays": 0.85,
+        "churnFirst": 0.035,
+        "churnLater": 0.008,
+        "deed": 0.75,
+        "withdraw": 0.8,
+        "sink": 0.7,
+        "market": 0.45,
+        "sell": 0.6,
+        "buy": 0.45,
+        "upgrades": 2
+      },
+      {
+        "id": "heavy",
+        "hours": 3,
+        "hoursSigma": 0.3,
+        "sessionMinutes": 50,
+        "activeDays": 0.95,
+        "churnFirst": 0.02,
+        "churnLater": 0.005,
+        "deed": 0.85,
+        "withdraw": 0.9,
+        "sink": 0.85,
+        "market": 0.65,
+        "sell": 0.7,
+        "buy": 0.6,
+        "upgrades": 3
+      },
+      {
+        "id": "whale-free",
+        "hours": 6,
+        "hoursSigma": 0.25,
+        "sessionMinutes": 75,
+        "activeDays": 0.98,
+        "churnFirst": 0.015,
+        "churnLater": 0.004,
+        "deed": 0.9,
+        "withdraw": 0.95,
+        "sink": 0.95,
+        "market": 0.8,
+        "sell": 0.8,
+        "buy": 0.75,
+        "upgrades": 3
+      },
+      {
+        "id": "bot",
+        "hours": 12,
+        "hoursSigma": 0.15,
+        "sessionMinutes": 180,
+        "activeDays": 0.99,
+        "churnFirst": 0.01,
+        "churnLater": 0.003,
+        "deed": 0.85,
+        "withdraw": 1,
+        "sink": 0.05,
+        "market": 0.9,
+        "sell": 1,
+        "buy": 0.05,
+        "upgrades": 3
+      }
+    ],
+    "mixes": {
+      "casual-heavy": [
+        0.7,
+        0.2,
+        0.08,
+        0.02
+      ],
+      "balanced": [
+        0.4,
+        0.35,
+        0.2,
+        0.05
+      ],
+      "heavy-heavy": [
+        0.15,
+        0.3,
+        0.4,
+        0.15
+      ]
+    },
+    "timing": {
+      "decisionSeconds": 2,
+      "battleActionSeconds": 2.8,
+      "minimumEncounterSeconds": 12
+    }
+  },
+  "searchScore": 0.013293428007105706,
+  "searchRound": 23,
+  "modelSnapshot": {
+    "path": "reports/v3-shell/b2/econ/snapshots/confirm-Q4-CONFIRM23-200.json.gz",
+    "sha256": "84d1eafa50cd710c0ac95ad304871a80892b9bdf8aa2bbcdd93d8ba536271287"
+  },
+  "bank": {
+    "path": "reports/v3-shell/b2/econ/PROGRESSION-200.jsonl.gz",
+    "sha256": "2b6182d99a05b9e314933b87d1f55e8e8864f9edb1c8501d7c8c8760fd6dbddd",
+    "accounts": 1000,
+    "seedsPerProfile": 200,
+    "days": 42,
+    "profiles": [
+      {
+        "id": "casual",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 13,
+          "p10": 4,
+          "p90": 18
+        },
+        "firstSources": {
+          "tailor": 155,
+          "route:campaign": 24,
+          "gear-invitation": 21
+        }
+      },
+      {
+        "id": "regular",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3.900000000000002,
+          "p90": 12
+        },
+        "firstSources": {
+          "tailor": 164,
+          "route:campaign": 22,
+          "gear-invitation": 14
+        }
+      },
+      {
+        "id": "heavy",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 16,
+          "route:campaign": 19
+        }
+      },
+      {
+        "id": "whale-free",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      },
+      {
+        "id": "bot",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 9
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      }
+    ]
+  }
+}

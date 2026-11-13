@@ -1,0 +1,112 @@
+[
+  {
+    "name": "q5-formant-probes",
+    "pid": 56763,
+    "command": [
+      "nohup",
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-formant-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-formant-probes.log",
+    "started": "2026-11-13T17:25:49Z",
+    "note": "Recovered original PID after job-ledger directory race; no restart.",
+    "completed": "2026-11-13T17:32:55.509979+00:00"
+  },
+  {
+    "name": "q5-onset-probes",
+    "pid": 59376,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-onset-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-onset-probes.log",
+    "started": "2026-11-13T17:32:55.509979+00:00",
+    "completed": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-wording-probes",
+    "pid": 61270,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-wording-probes.log",
+    "started": "2026-11-13T17:37:56.543236+00:00",
+    "completed": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-wording-complete",
+    "pid": 62888,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-wording-complete.log",
+    "started": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-menu-probes",
+    "pid": 62889,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-probes.log",
+    "started": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-clover-round2",
+    "pid": 63895,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json",
+      "--label",
+      "wording-clover-round2",
+      "--cues",
+      "voice.clover.ult.charge"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-clover-round2.log",
+    "started": "2026-11-13T17:45:11.487091+00:00"
+  },
+  {
+    "name": "q5-menu-delivery",
+    "pid": 64036,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py",
+      "--delivery"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-delivery.log",
+    "started": "2026-11-13T17:45:35.904599+00:00",
+    "ended": "2026-11-13T17:46:38.476461+00:00",
+    "reason": "Stopped to isolate probe outputs by method before resuming."
+  },
+  {
+    "name": "q5-menu-delivery-resume",
+    "pid": 64440,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py",
+      "--delivery"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-delivery-resume.log",
+    "started": "2026-11-13T17:46:38.476461+00:00"
+  },
+  {
+    "name": "q5-callout-publication",
+    "pid": 64908,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-select-callouts.py",
+      "--publish"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-callout-publication.log",
+    "started": "2026-11-13T17:48:34.012030+00:00"
+  }
+]
