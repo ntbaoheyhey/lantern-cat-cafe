@@ -3,6 +3,7 @@ import type {ResolveSocket} from '../spine/vfx';
 import {sequenceAt,SIGNATURES} from './sequence';
 import type {PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool} from './field-pool';
+import {paintImpactWake} from './impact-wake';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const random=(n:number)=>{const v=Math.sin(n*127.1+317.7)*43758.5453;return v-Math.floor(v);};
@@ -86,6 +87,9 @@ export class FieldVfx {
    }
    this.draws+=count;this.audit.particles+=count;this.audit.layers.push('element-particles');
    c.restore();
+   if(painted&&view.quality!=='low'&&paintImpactWake(c,painted,since,feet.x,feet.y,radius,target.x>=from.x?1:-1,targets.length,view.reducedMotion)){
+    this.draws++;this.audit.layers.push('painted-impact-wake');
+   }
    if(since>=0&&this.groundPlan!==plan)this.ground.emit(feet.x,feet.y,radius*.8,time-since/1000,palette[1]!,family,seed);
   }
   if(since>=0)this.groundPlan=plan;

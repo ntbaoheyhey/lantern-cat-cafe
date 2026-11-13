@@ -90,3 +90,6 @@ Adding P4 weather and P5 crowd reactions produces15.3523 full-frame energy versu
 
 ## P10 method change: exact lossless pixel packing
 Three canvas readback attempts exposed CPU/GPU premultiplication differences of one channel level. Keep the zero-difference audit and use offline raw-row copying into lossless WebP pages instead. All86 browser-rendered originals match their25 atlas regions exactly (max channel difference0). Encoded pages are12.23MiB; decoded storage stays172MiB, with no claimed memory reduction. This uses12.23MiB of packed paint payload (source files remain for provenance) for fewer requests and avoids runtime atlas composition. Source hashes and exact layouts live in vfx-packed/manifest.json; no reference imagery or model generation is involved.
+
+## P1/M1: grounded painted strike continuation
+The contact strip shows a strong initial bloom followed by a nearly stationary fade. Add a487ms directional ground wake, starting33ms after actual contact, using that skill's existing painted trail. It expands and moves away from the striking hand and dissipates below the target. This changes actual skill follow-through, preserves camera settings and combat timing, and adds no reference pixels. Reduced motion and Low omit this secondary layer. Keep15.7956 as the exact energy threshold and test the same fixed seed.
