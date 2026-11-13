@@ -8,6 +8,7 @@ export const LEVERS=[
  ['policy.seal.feeBp',500,1500,100],['sinks.polish.yarn.0',1,8,1],['sinks.polish.yarn.1',3,16,1],
  ['sinks.polish.starThread.0',1,3,1],['sinks.polish.starThread.1',1,5,1],['sinks.decor.yarn',1,8,1],
  ['sinks.decor.starThread',1,8,1],['sinks.display.yarn',1,6,1],['sinks.display.starThread',1,4,1],
+ ['policy.craft.rebateBp',0,7500,500],['policy.craft.weeklySpoolCap',0,4,1],
 ].map(([path,min,max,step])=>({path,min,max,step}));
 export const get=(o,path)=>path.split('.').reduce((a,k)=>a[k],o);
 export function set(o,path,value){const ks=path.split('.'),key=ks.pop();ks.reduce((a,k)=>a[k],o)[key]=value;}
@@ -47,7 +48,7 @@ export function targetDistances(q,scenario){return {
  'T-e':scenario.botShare===.35?bounded(q.botRegularHourlyRatio,0,T.botHourlyRatioMax):0,
  'T-f':bounded(q.topOnePercentWithdrawnShare,0,T.topPercentWithdrawnShareMax),
 };}
-export const METRICS=['burnClaims','starRatio','heavyCasualHourlyRatio','casualLegendaryDay','heavyLegendaryDay','botRegularHourlyRatio','topOnePercentWithdrawnShare','claims','withdrawals','burn','starSource','starSink','starBalances','inactiveStarBalances','pausedStarGrants','lateBurnClaims'];
+export const METRICS=['burnClaims','starRatio','heavyCasualHourlyRatio','casualLegendaryDay','heavyLegendaryDay','botRegularHourlyRatio','topOnePercentWithdrawnShare','claims','withdrawals','burn','starSource','starSink','starBalances','inactiveStarBalances','pausedStarGrants','lateBurnClaims','craftRebates'];
 export function evaluate(runtime,bank,candidate,seeds,firstSeed=43113,scenarioOverrides){
  const config=applyConfig(runtime.ECONOMY_LAB,candidate),rows=[];
  for(const scenario of scenarioOverrides??scenarios(config)){

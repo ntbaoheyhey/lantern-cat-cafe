@@ -1,0 +1,26 @@
+[
+  {
+    "name": "round17-craft-rebate",
+    "pid": 45061,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "17",
+      "--configs",
+      "40",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/Q4-REBATE-CONFIG.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-REBATE-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round17.log",
+    "started": "2026-11-13T16:20:34.938741+00:00"
+  }
+]

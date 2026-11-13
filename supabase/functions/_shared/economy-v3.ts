@@ -1,5 +1,5 @@
 import {keccak256,toBytes,type Address,type Hex} from 'viem';
-import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket,weeklyStarThreadGrant} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket,weeklyStarThreadGrant,craftSpoolRebate} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
 import {GEAR_BY_ID} from '../../../packages/game-rules/src/cardrpg/depth/equipment.ts';
 import {gearQualityBp} from '../../../packages/game-rules/src/cardrpg/depth/fusion-v3.ts';
 import {equipmentTokenId} from '../../../packages/game-rules/src/cardrpg/trade.ts';
@@ -155,6 +155,9 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
        const recipe=i.recipe;if(!recipe)fail('Recipe unavailable.');
        if(recipe.item){if(recipe.quality===undefined)fail('Quality unavailable.');s.gear.push({...recipe.item,quality:recipe.quality});}
        if(recipe.style&&!s.styles.includes(recipe.style))s.styles.push(recipe.style);
+       const week=Math.floor((clock-4*DAY)/(7*DAY)),claimed=s.craftRebate?.week===week?BigInt(s.craftRebate.spool):0n;
+       const rebate=craftSpoolRebate(BigInt(i.cost),claimed);
+       if(rebate>0n){s.spool=(BigInt(s.spool)+rebate).toString();s.craftRebate={week,spool:(claimed+rebate).toString()};}
       }
       i.ready=true;
      }break;

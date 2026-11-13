@@ -25,6 +25,15 @@ test('live weekly reward changes the token ledger; retained fees are never burns
   assert(Math.abs(after.conservationError)<1e-6);assert.equal(after.burn,Object.values(after.burnBySink).reduce((n,x)=>n+x,0));
  }finally{config.policy.rewards.weeklySpool=original;}
 });
+test('craft rebates use the production quote, preserve conservation, and cannot exceed paid burns',()=>{
+ const bank=fixtureBank(),original={...config.policy.craft};
+ try{
+  Object.assign(config.policy.craft,{rebateBp:7500,weeklySpoolCap:2});
+  const r=tokenRun(runtime,config,bank,scenarios(config)[0],43113);
+  assert(r.craftRebates>0);assert(r.craftRebates<=(r.burnBySink.polish+r.burnBySink.decor+r.burnBySink.display)*.75+1e-6);
+  assert(Math.abs(r.conservationError)<1e-6);
+ }finally{Object.assign(config.policy.craft,original);}
+});
 test('no external opening stock cannot produce more burns than all claims',()=>{
  for(const scenario of scenarios(config)){
   const r=tokenRun(runtime,config,fixtureBank(),scenario,92811,{zeroExternal:true});

@@ -5,6 +5,7 @@ export const ECONOMY_V3={
  season:{days:28,epoch:Date.UTC(2026,10,13),editionSupply:600},
  deed:{firstId:30001,lastId:33000,supply:3000,level:15,demoLevel:5},
  spool:{feeBp:2500,minAgeDays:7,cooldownDays:7,weeklyNetCap:12,skinCost:5},
+ craft:{rebateBp:0,weeklySpoolCap:0},
  cat:{odds:{common:5500,rare:3300,epic:1100,legendary:100},soft:50,hard:70,stepBp:600,featuredBp:5000},
  gear:{odds:{common:5000,rare:3500,epic:1420,legendary:80},soft:40,hard:60,stepBp:600},
  shards:{common:5,rare:10,epic:20,legendary:40},starShards:[10,20,40,80],selector:120,
@@ -20,6 +21,14 @@ export function v3Season(now=Date.now()){const {epoch,days}=ECONOMY_V3.season,le
 export function withdrawalQuote(gross:bigint){if(gross<=0n)throw new Error('Positive Spool amount required');const retained=gross*BigInt(ECONOMY_V3.spool.feeBp)/10000n;return {gross,retained,net:gross-retained,burned:0n};}
 /** Pause new bound Thread grants when the bank is full; never erase old stock. */
 export function weeklyStarThreadGrant(current:number){if(!Number.isSafeInteger(current)||current<0)throw new Error('Invalid Star Thread balance');return Math.min(ECONOMY_V3.rewards.weeklyStarThread,Math.max(0,ECONOMY_V3.rewards.starThreadBankCap-current));}
+/** Confirmed deterministic crafts can return a bounded amount of Spool.
+ * The gross rebate stays below the burn; no random purchase qualifies. */
+export function craftSpoolRebate(paid:bigint,claimed=0n){
+ const {rebateBp,weeklySpoolCap}=ECONOMY_V3.craft;
+ if(paid<0n||claimed<0n||!Number.isInteger(rebateBp)||rebateBp<0||rebateBp>7500||!Number.isInteger(weeklySpoolCap)||weeklySpoolCap<0)throw new Error('Invalid craft rebate');
+ const room=BigInt(weeklySpoolCap)*10n**18n-claimed,quote=paid*BigInt(rebateBp)/10000n;
+ return room<=0n?0n:quote<room?quote:room;
+}
 export function enhancementQuote(level:number,blessingBp=0){if(!Number.isInteger(level)||level<0||level>=10||!Number.isInteger(blessingBp)||blessingBp<0||blessingBp>10000)throw new Error('Invalid enhancement');return {fish:Math.ceil(ECONOMY_V3.enhancement.fishBase*ECONOMY_V3.enhancement.growth**level),chanceBp:Math.min(10000,ECONOMY_V3.enhancement.successBp[level]!+blessingBp)};}
 export function dropMultiplierBp(dropsToday:number){if(!Number.isSafeInteger(dropsToday)||dropsToday<0)throw new Error('Invalid drop count');return dropsToday<6?10000:dropsToday<18?5000:0;}
 export function qualityBucket(rollBp:number){if(!Number.isInteger(rollBp)||rollBp<0||rollBp>10000)throw new Error('Invalid quality');return ECONOMY_V3.quality[rollBp>=8500?2:rollBp>=4000?1:0]!;}

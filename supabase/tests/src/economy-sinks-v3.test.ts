@@ -3,6 +3,7 @@ import {buildMigratedDb,as} from './standalone-db';
 import {createEconomy,economyIntentHash,freshEconomy,type EconomyChain,type EconomyStore} from '../../functions/_shared/economy-v3';
 import {economyStore} from '../../functions/_shared/economy-v3-store';
 import {economySinkQuote,ECONOMY_SINK_IDS} from '../../../packages/game-rules/src/cardrpg/economy-sinks-v3';
+import {ECONOMY_V3,craftSpoolRebate} from '../../../packages/game-rules/src/cardrpg/economy-v3';
 import type {EconomyCommand} from '../../../packages/chain/src/economy-v3';
 import type {PGlite} from '@electric-sql/pglite';
 import type {Address} from 'viem';
@@ -24,6 +25,27 @@ beforeEach(async()=>{
 });
 afterAll(async()=>{await db?.close();});
 describe('real service-ledger deterministic sinks',()=>{
+ it('credits the shared craft rebate only after payment and never on a repeated finalize',async()=>{
+  const policy=ECONOMY_V3.craft as {rebateBp:number;weeklySpoolCap:number},original={...policy};
+  Object.assign(policy,{rebateBp:7500,weeklySpoolCap:1});
+  try{
+   const reserve=await call({action:'sink',sink:'decor'}),id=reserve.intent!.id;
+   expect(reserve.state.spool).toBe('0');
+   await expect(call({action:'finalize',intent:id})).rejects.toThrow('Exact');
+   expect((await call({action:'state'})).state.spool).toBe('0');
+   payments.set(economyIntentHash(id),BigInt(reserve.intent!.cost));
+   const done=await call({action:'finalize',intent:id}),expected=craftSpoolRebate(BigInt(reserve.intent!.cost));
+   expect(done.state.spool).toBe(String(expected));expect(done.state.craftRebate?.spool).toBe(String(expected));
+   expect((await call({action:'finalize',intent:id})).state).toEqual(done.state);
+   const second=await call({action:'sink',sink:'display'});payments.set(economyIntentHash(second.intent!.id),BigInt(second.intent!.cost));
+   const capped=await call({action:'finalize',intent:second.intent!.id});expect(BigInt(capped.state.spool)).toBeLessThanOrEqual(UNIT);
+   const later=createEconomy({enabled:true,store,chain,now:()=>now+7*86400000});
+   const next=await later(player,wallet,{id:crypto.randomUUID(),command:{action:'sink',sink:'polish',instance:'earned:1'}});
+   payments.set(economyIntentHash(next.intent!.id),BigInt(next.intent!.cost));
+   const renewed=await later(player,wallet,{id:crypto.randomUUID(),command:{action:'finalize',intent:next.intent!.id}});
+   expect(BigInt(renewed.state.spool)).toBeGreaterThan(BigInt(capped.state.spool));
+  }finally{Object.assign(policy,original);}
+ });
  it.each(ECONOMY_SINK_IDS)('%s requires the exact chain burn and applies its guaranteed benefit exactly once',async sink=>{
   const command:EconomyCommand={action:'sink',sink,...(sink==='polish'?{instance:'earned:1'}:{})};
   const quote=economySinkQuote(sink,initial(),'earned:1',now),id=crypto.randomUUID();

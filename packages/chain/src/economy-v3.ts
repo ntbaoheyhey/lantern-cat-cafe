@@ -10,6 +10,7 @@ export interface EconomyState {
  spool:string;stars:number;bossSeals:number;level:number;quest:boolean;deed:number|null;
  credits:string[];gear:EconomyGear[];intents:EconomyIntent[];styles:string[];
  lastWithdraw:number;sealDay:number;sealsToday:number;
+ craftRebate?:{week:number;spool:string};
 }
 export type EconomyCommand =
  | {action:'state'|'quest'|'deed'}

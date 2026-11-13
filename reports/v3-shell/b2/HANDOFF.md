@@ -1,11 +1,10 @@
 # B2 handoff
-NOW: Q2 closed59/59 SOLO gates; battle4.661/boss3.494 voice contours per minute.
-NEXT: Q3 in A; B native sensitivity continues, then economy E3-E5 in Q4.
-SOURCE:298a4fbd8; five Soot/Panko edits, original Mochi restored;12/12 identities and212/212 file levels PASS.
-TESTS: Final435/435 browser,2538 web unit cases, all workspace types PASS. A full suite/parity PASS.
-EVIDENCE: q2/REPORT.md, q2/gates.log, q2/voice-matrix.json, tests/q2-accepted21-*.
-JOBS: Integration Vite4118 port5996; native-sensitivity72306 running. Exact commands q2/resume-jobs.json.
-ECONOMY:16 rounds/640 configs; top10x200 confirmed with target failures retained. Saving completed rounds14–16, confirmation and27 sensitivity cases; parent72306 continues.
-OPEN: E3-E5; V32/50 ultimate recognition; S5 non-voice mix targets; U3; T1/C1; later cards.
-SYNC:16Nov12UTC/18Nov12UTC; freeze19Nov12UTC. No deploy/main merge/early lane merge.
-CHECKPOINT: 2026-11-13T14:50:02.899518+00:00; Q3 foreground remains in A. No new tuning source in this checkpoint.
+NOW: Q4 active. Preserve 16 rounds/640 configs and top10 confirmation; test structural earning lever.
+NEXT: E3 final candidate and robustness; E4 live config UI/local Anvil; E5 source-linked report.
+SOURCE:005e9c34e pushed; Q2 source298a4fbd8.
+JOBS: Native sensitivity37303 continues frozen model; econ/q3-resume-job.json. B integration4118 port5996.
+EVIDENCE: SOLO-PRESTRUCTURE-200.json candidate e315fec6acb9 passes T-a/T-b/T-d but bot0.906–0.923 exceeds0.5.
+OPEN: E3-E5; V/S5/U3/T1/C1/Q9. No early merge/deploy.
+UPDATED: 2026-11-13T16:16:50.654945+00:00
+SEARCH:PID45061; econ/q4-jobs.json; tests/q4-round17.log;40 configs x40 seeds x18 scenarios.
+CHECKPOINT: 2026-11-13T16:21:17.918959+00:00; saving disabled craft rebate source after rules2/server7/model12/typecheck PASS, search45061 remains active.
