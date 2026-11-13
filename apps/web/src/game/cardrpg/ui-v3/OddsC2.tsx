@@ -1,3 +1,4 @@
+import {OddsMarkC2} from './CompactLabelsC2';
 import {GameIcon,StarIcons} from '../../../ui/GameIcon';
 import {ECONOMY_V3 as E} from '@taskbar-hero/game-rules/src/cardrpg/economy-v3';
 import type {ReactNode} from 'react';
@@ -10,7 +11,7 @@ import {artPropsA6} from './art-a6';
 const icons:Record<string,string>={fish:'fish',threads:'thread',stamps:'bell',essence:'season',materials:'bag',seals:'boss-seal'};
 const percent=(value:number)=>`${Number((value*100).toFixed(4))}%`;
 export function OddsC2({source,children}:{source:string;children:ReactNode}){
- return <HelpC2 label={`${source} odds`} title="Odds" symbol="Odds"><div className="c2-odds">{children}</div></HelpC2>;
+ return <HelpC2 label={`${source} odds`} title="Odds" symbol={<OddsMarkC2/>}><div className="c2-odds">{children}</div></HelpC2>;
 }
 function RarityRates({base,next}:{base:Record<string,number>;next:Record<string,number>}){
  return <table aria-label="Base and current rarity probabilities"><thead><tr><th aria-label="Rarity"><GameIcon name="season" size={18}/></th><th aria-label="Base probability">%</th><th aria-label="Current probability"><GameIcon name="arrow" size={18}/> %</th></tr></thead><tbody>{RARITY_ORDER.map((rarity,i)=><tr key={rarity}><th scope="row" aria-label={rarity}>{<StarIcons count={i+1}/>}</th><td>{percent(base[rarity]!/10000)}</td><td>{percent(next[rarity]!/10000)}</td></tr>)}</tbody></table>;

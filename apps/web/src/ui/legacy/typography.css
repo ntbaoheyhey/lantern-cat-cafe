@@ -1,0 +1,210 @@
+/* Legacy entries retain their reviewed font roles. Imported only by the legacy
+ * app and its Market fixture; the café uses ui/typography.css independently.
+ * Family declarations restored from the pre-migration 380586c54 parent. */
+.hp-label > span:last-child {font-family:var(--font-num);}
+.cafe-card-title {font-family:var(--font-display);}
+.cafe-boss-progress-meta {font-family:var(--font-num);}
+.cafe-relic-name {font-family:var(--font-display);}
+.cafe-relic-empty-title {font-family:var(--font-display);}
+.fuji-proof h3,.fuji-proof h4 {font-family:var(--font-display);}
+.fuji-proof-card a,.fuji-proof-snapshot,.fuji-proof-facts dd {font-family:var(--font-num);}
+.art-pilot {font-family:var(--font-body, system-ui, sans-serif);}
+.art-pilot__title {font-family:var(--font-display, monospace);}
+.art-pilot__btn {font-family:var(--font-display, monospace);}
+.art-pilot__metrics-heading {font-family:var(--font-display, monospace);}
+.art-pilot__metric-val {font-family:var(--font-num, monospace);}
+.art-pilot__section-title {font-family:var(--font-display, monospace);}
+.art-pilot__card-title {font-family:var(--font-display, monospace);}
+.art-pilot__card-tag {font-family:var(--font-num, monospace);}
+.art-pilot__vs-badge {font-family:var(--font-display, monospace);}
+.art-pilot__scale-label {font-family:var(--font-num, monospace);}
+.art-pilot__strip-anim-name {font-family:var(--font-display, monospace);}
+.art-pilot__frame-index {font-family:var(--font-num, monospace);}
+.art-pilot__silhouette-item span {font-family:var(--font-num, monospace);}
+.art-pilot__backdrop-actor span {font-family:var(--font-display, monospace);}
+.sprite-preview h1 {font-family:var(--font-display);}
+.sq-shell h1,.sq-shell h2 {font-family:'Pixelify Sans',system-ui,sans-serif;}
+.t3-shell {font-family:system-ui,sans-serif;}
+.t3-shell h1,.t3-shell h2 {font-family:Georgia,serif;}
+.stage-kills {font-family:var(--font-num, monospace);}
+.stage-banner-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.stage-banner-text {font-family:var(--font-display, monospace);}
+.inv-power strong {font-family:var(--font-num);}
+.help-v2-container {font-family:var(--font-body, 'DM Sans', system-ui, sans-serif);}
+.help-panel-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.help-panel-desc {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.help-v2-section h3 {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.help-v2-term {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.help-v2-def {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.help-v2-code {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.help-v2-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.help-topic-list label {font-family:var(--font-display);}
+.bag-count {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.bag-status {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.bag-filter-chip {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.sort-select {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.bag-equip-best, .bag-footer .pixel-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.bag-equip-best-note {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.bag-level {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.bag-empty {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.detail-hint-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.compare-skeleton-heading {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.compare-skeleton-row {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.skeleton-placeholder {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.detail-title h3 {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.rarity-pill {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.detail-meta {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.detail-section-heading {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.detail-lines {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.compare h4 {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.compare-col-heading {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.compare-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.compare-sub {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.compare-empty {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.deltas {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.detail-actions .pixel-btn, .bag-btn-secondary {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.detail-note {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.boss-map-card h3 span {font-family:var(--font-body);}
+.boss-map-power-values strong {font-family:var(--font-num);}
+.boss-gate-panel {font-family:var(--font-body, 'DM Sans', system-ui, sans-serif);}
+.boss-gate-boss-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.boss-gate-chapter-sub {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.boss-portrait-fallback::after {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.boss-gate-keys, .boss-key-cost {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.boss-power-label {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.boss-power-numbers {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.boss-bar-name {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.boss-chapter-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.boss-fight-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.boss-gate-panel[data-status='cooldown'] .boss-gate-status-text {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.boss-key-hint-count {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.v2-character-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.character-meta {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.xp-text {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.slot-btn {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.slot-level {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.slot-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.stats dt {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.stats dd {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.stats .power dt {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.stats .power dd {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.stats-hint {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.hero-cat {font-family:var(--font-display);}
+.hero-breakdown dd {font-family:var(--font-num);}
+.class-picker {font-family:var(--font-body, 'DM Sans', system-ui, sans-serif);}
+.class-picker__title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.class-picker__subtitle {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.class-picker__locked-notice {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.class-card__name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.class-card__role {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.class-card__passive {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.class-card__stat-label {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.class-card__stat-value {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.class-card__speed-label {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.class-card__speed-value {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.class-picker__confirm-text {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.class-picker__confirm-btn {font-family:var(--font-display, 'Pixelify Sans', monospace) !important;}
+.class-picker__cancel-btn {font-family:var(--font-display, 'Pixelify Sans', monospace) !important;}
+.class-picker__choose-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-chances-table th {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-panel-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-panel-desc {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-tab-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-section-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-section-desc {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-selector-label {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-option-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-preview-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-preview-meta {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-cost-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-cost-item {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-cost-item-name {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-note {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-confirm-text {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-confirm-yield {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-salvage-yield-lead {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-yield-token {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-mini-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-item-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-item-meta {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-item-salvage-preview {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-item-status-tag {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.forge-empty-note {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.forge-odds-list {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.forge-tag {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.home-card__title {font-family:var(--font-display);}
+.home-card__subtitle {font-family:var(--font-display);}
+.home-card__tag {font-family:var(--font-num);}
+.home-hero-badge {font-family:var(--font-num);}
+.home-hero-card__power {font-family:var(--font-num);}
+.home-hero-stat-row dd {font-family:var(--font-num);}
+.home-goal-progress__count {font-family:var(--font-num);}
+.home-event-log__title {font-family:var(--font-display);}
+.home-event-log__list {font-family:var(--font-body);}
+.home-event-log__bullet {font-family:monospace;}
+.home-loot-curr-val {font-family:var(--font-num);}
+.hud-bar {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.hud-level-badge, .hud-power-value, .hud-progress-text, .hud-stack-amount, .hud-xp-text {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.landing__network-pill {font-family:var(--font-num, monospace);}
+.landing__title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.landing__promise {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.landing__guest-btn {font-family:var(--font-display, 'Pixelify Sans', monospace) !important;}
+.landing__wallet-btn-wrap .wallet-btn {font-family:var(--font-display, 'Pixelify Sans', monospace) !important;}
+.landing__wallet-btn-wrap .wallet-badge {font-family:var(--font-num, monospace);}
+.landing__footnote {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.landing__proof-item {font-family:var(--font-num, monospace);}
+.v2-shell {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.v2-tab {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.v2-tabpanel-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.bag-equip-best, .boss-fight-btn, .forge-btn-craft, .forge-btn-salvage, .forge-btn-relic {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.loot-summary-heading {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.loot-summary-empty {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.loot-line {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.loot-line-levelup {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.loot-line-badge {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.loot-item-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.loot-item-meta {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.loot-salvaged-note {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.chest-reveal-dialog .ui-modal-heading h2 {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.chest-reveal-btn, .welcome-back-btn {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.welcome-back-dialog .ui-modal-heading h2 {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.welcome-back-duration {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.action-notice {font-family:var(--font-body, inherit);}
+.v2-chapter-map {font-family:var(--font-body, 'DM Sans', system-ui, sans-serif);}
+.v2-map-title {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.v2-map-subtitle {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.v2-map-chapter-num {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.v2-map-chapter-name {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.v2-map-boss-label {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.v2-map-boss-name {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.v2-map-badge--round {font-family:var(--font-num, 'JetBrains Mono', monospace);}
+.v2-map-badge--rematch {font-family:var(--font-display, 'Pixelify Sans', monospace);}
+.v2-map-locked-text {font-family:var(--font-body, 'DM Sans', sans-serif);}
+.market-sort {font-family:var(--font-display);}
+.market-facts dd {font-family:var(--font-num);}
+.help-step-badge {font-family:var(--font-display);}
+.help-start {font-family:var(--font-display);}
+.next-hint-lead {font-family:var(--font-display);}
+.original-quality-label {font-family:var(--font-display);}
+.original-preview dd {font-family:var(--font-num);}
+.original-stat-table thead th {font-family:var(--font-display);}
+.original-stat-table td:nth-child(2),.original-stat-table td:nth-child(3) {font-family:var(--font-num);}
+.feature-sample-list strong {font-family:var(--font-display);}
+.rail-item {font-family:var(--font-display, monospace);}
+.rail-fuji-badge {font-family:var(--font-num, monospace);}
+.hud-chip {font-family:var(--font-num, monospace);}
+body {font-family:system-ui, sans-serif;}
+.page-title {font-family:var(--font-display);}
+.cat-name {font-family:var(--font-display);}
+.cat-chip {font-family:var(--font-num);}
+.stats dd {font-family:var(--font-num);}
+body {font-family:var(--font-body);}
+h1, h2, h3, .tab, .toggle {font-family:var(--font-display);}
+.num, [data-num] {font-family:var(--font-num);}
+.label-uppercase {font-family:var(--font-display);}
+.hud {font-family:var(--font-num);}
+.ui-toast strong {font-family:var(--font-display);}
+.app-shell[data-has-rail=true] .home-card__subtitle {font-family:var(--font-body);}
+.app-shell .boss-arena button {font-family:var(--font-display);}
+body {font-family:var(--font-body);}

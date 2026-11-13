@@ -45,6 +45,8 @@ export async function visibleWords(page,names){
 
 export const screens=['home','collection','team','inventory','gacha','map','tower','journal','bonds','relics','save','daily','prepare','result','battle','materials','skills','cat-gear','cat-bonds','weekly','tasks','gifts','codex','menu','route','route-reward','route-shop','route-campfire','route-event','route-treasure','route-complete','save-reset','tips'];
 export async function runBudget(page,{shots=process.env.C2_WORD_SHOTS,only=screens}={}){
+ // These are returning-player screens; entry/coach flows have their own checks.
+ await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true}));});
  await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
  await page.waitForFunction(()=>!!window.__depthReview);
  // The hook is retained; the visible application runs in normal player mode.
@@ -53,7 +55,12 @@ export async function runBudget(page,{shots=process.env.C2_WORD_SHOTS,only=scree
  const rows=[];
  for(const screen of only){
   // Remount each sheet so tabs, dialogs and menu state cannot leak between cases.
-  if(await page.locator('.uv-close').isVisible())await page.locator('.uv-close').click();
+  if(await page.locator('.uv-close').isVisible()){
+   await page.locator('.uv-close').click();
+   // The shell keeps its focus trap alive during the exit animation. Navigating
+   // before it finishes lets the previous close callback replace the next page.
+   await page.locator('.uv-sheet').waitFor({state:'hidden'});
+  }
   await page.evaluate(()=>{const m=window.__depthReview;m.watching=false;m.plan=null;m.go('hub');});
   await page.locator('.uv-dock').waitFor();
   await page.evaluate(({screen,boons})=>{const m=window.__depthReview;m.watching=false;m.plan=null;m.tutorialBattle=null;m.galleryBattle=null;m.state.run=null;m.error=false;m.notice='';m.state.settings.speed=3;m.state.v4.journey.pending=[];
@@ -61,11 +68,14 @@ export async function runBudget(page,{shots=process.env.C2_WORD_SHOTS,only=scree
    else if(screen.startsWith('route')){m.start(1,'campaign',1);const r=m.state.run;r.battle=null;r.rewardChoices=[];r.points=100;r.supplies=2;if(screen==='route-reward')r.rewardChoices=boons;if(screen==='route-complete'){r.complete=true;r.won=true;}const kind=screen.slice(6),node=r.nodes.find(n=>n.kind===kind);if(node){r.current=node.id;r.visited=[];}m.go('map');}
    else m.go(({home:'hub',tips:'hub',daily:'hub',weekly:'hub',tasks:'hub',gifts:'hub',menu:'hub',materials:'inventory',skills:'collection','cat-gear':'collection','cat-bonds':'collection','save-reset':'save'})[screen]??screen);
   },{screen,boons});
+  const destination=({home:'hub',tips:'hub',daily:'hub',weekly:'hub',tasks:'hub',gifts:'hub',menu:'hub',materials:'inventory',skills:'collection','cat-gear':'collection','cat-bonds':'collection','save-reset':'save',result:'prepare',battle:'prepare'})[screen]??(screen.startsWith('route')?'map':screen);
+  if(destination==='hub')await page.locator('.uv-dock').waitFor();
+  else await page.locator(`.uv-sheet[data-sheet="${destination}"]`).waitFor();
   if(['daily','weekly','tasks','gifts'].includes(screen)){await page.getByRole('button',{name:'Events',exact:true}).click();if(screen!=='daily')await page.getByRole('button',{name:new RegExp(screen,'i')}).first().click();}
   if(screen==='materials')await page.getByRole('button',{name:'Materials',exact:true}).click();
   if(['skills','cat-gear','cat-bonds'].includes(screen))await page.getByRole('navigation',{name:'Companion details'}).getByRole('button',{name:screen==='skills'?'Skills':screen==='cat-gear'?'Gear':'Bonds',exact:true}).click();
   if(screen==='menu')await page.getByRole('button',{name:'Open menu'}).click();
-  if(screen==='save-reset')await page.getByRole('button',{name:'Reset',exact:true}).click();
+  if(screen==='save-reset')await page.getByRole('button',{name:/^(?:↺\s*)?Reset$/,exact:true}).click();
   if(screen==='tips')await page.getByRole('button',{name:'Review Night tips',exact:true}).click();
   if(screen==='result'||screen==='battle')await page.getByRole('button',{name:/^Fight/}).click();
   if(screen==='result')await page.locator('.uv-result').waitFor({timeout:120000});

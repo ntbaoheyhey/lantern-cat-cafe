@@ -36,7 +36,7 @@ export function IdleChestA6({m}:{m:DepthModel}) {
  return <><div className={`a6-idle a6-tip-corner ${collected?'a6-idle-collected':''}`} data-reduced={m.state.settings.reducedMotion} data-ready={!!p.claims}>
   <button className="uv-tips" onClick={()=>open('tips')} aria-label="Review Night tips" title="Review saved tips and today’s limits">
    <TipBox/>
-   <span className="a6-tip-sign"><b>Night tips</b><small>{(p.elapsed/3600).toFixed(1)} / 12 h{!m.state.formationC2&&' saved'}</small><progress aria-label="Night tips fill" max={43200} value={p.elapsed}/>
+   <span className="a6-tip-sign"><b>{m.state.formationC2?'Tips':'Night tips'}</b><small>{(p.elapsed/3600).toFixed(1)} / 12 h{!m.state.formationC2&&' saved'}</small><progress aria-label="Night tips fill" max={43200} value={p.elapsed}/>
     <span className="a6-tip-amounts"><span>{currencyIconA6('fish')} {p.reward.fish??0}{!m.state.formationC2&&' fish'}</span><span>{currencyIconA6('threads')} {p.reward.threads??0}{!m.state.formationC2&&' threads'}</span><span>{currencyIconA6('stamps')} {p.reward.stamps??0}{!m.state.formationC2&&' stamps'}</span></span>
     <span className="a6-tip-status" aria-label={status}>{m.state.formationC2?(p.claims?'Done':'Time'):status}</span>
    </span>
