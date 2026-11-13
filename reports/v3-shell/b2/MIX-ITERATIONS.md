@@ -301,3 +301,61 @@ See the change and interpretation recorded in DECISIONS.md.
 | [forge](mix/29-balanced-under-speech-forge.json) | 60.20 | 3.903 | 1.102 | 4.119 | 1.993 | 1.000 | -17.690 | -2.290 |
 | [gacha](mix/29-balanced-under-speech-gacha.json) | 60.20 | 4.352 | 1.588 | 5.066 | 0.000 | 1.000 | -18.130 | -6.140 |
 | [home](mix/29-balanced-under-speech-home.json) | 60.20 | 4.219 | 1.547 | 5.499 | 0.997 | 1.000 | -17.410 | -1.940 |
+
+## 30-cafe-invitation
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [home](mix/30-cafe-invitation-home.json) | 60.20 | 4.302 | 1.579 | 5.100 | 1.993 | 1.000 | -17.400 | -2.170 |
+
+## 31-menu-percussion
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/31-menu-percussion-bag.json) | 60.20 | 4.169 | 1.450 | 5.863 | 1.993 | 1.000 | -17.370 | -1.900 |
+| [battle](mix/31-menu-percussion-battle.json) | 180.20 | 3.119 | 0.171 | 0.688 | 5.660 | 0.972 | -14.820 | -2.870 |
+| [boss](mix/31-menu-percussion-boss.json) | 120.20 | 3.103 | 0.172 | 0.507 | 4.992 | 1.000 | -13.630 | -2.470 |
+| [forge](mix/31-menu-percussion-forge.json) | 60.20 | 3.788 | 1.000 | 4.303 | 2.990 | 1.000 | -17.690 | -2.140 |
+| [gacha](mix/31-menu-percussion-gacha.json) | 60.20 | 4.186 | 1.468 | 5.781 | 0.000 | 1.000 | -18.130 | -6.270 |
+| [home](mix/31-menu-percussion-home.json) | 60.20 | 4.153 | 1.528 | 6.146 | 1.993 | 1.000 | -17.370 | -2.210 |
+
+## 33-original-forge
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [forge](mix/33-original-forge-forge.json) | 60.20 | 3.737 | 1.222 | 3.505 | 1.993 | 1.000 | -17.380 | -2.070 |
+
+## 35-dialogue-lead
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [boss](mix/35-dialogue-lead-boss.json) | 120.20 | 3.236 | 0.249 | 0.940 | 7.487 | 1.000 | -14.000 | -2.000 |
+
+## 36-dialogue-balance
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [boss](mix/36-dialogue-balance-boss.json) | 120.20 | 3.261 | 0.214 | 0.849 | 6.988 | 1.000 | -14.670 | -2.310 |
+
+## 37-dialogue-balanced
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/37-dialogue-balanced-bag.json) | 60.20 | 4.219 | 1.437 | 5.996 | 1.993 | 1.000 | -17.370 | -1.960 |
+| [battle](mix/37-dialogue-balanced-battle.json) | 180.20 | 3.180 | 0.206 | 0.671 | 4.994 | 0.975 | -14.820 | -2.790 |
+| [boss](mix/37-dialogue-balanced-boss.json) | 120.20 | 3.161 | 0.226 | 0.732 | 4.992 | 1.000 | -14.930 | -2.760 |
+| [forge](mix/37-dialogue-balanced-forge.json) | 60.20 | 3.771 | 1.198 | 3.522 | 1.993 | 1.000 | -17.360 | -1.940 |
+| [gacha](mix/37-dialogue-balanced-gacha.json) | 60.20 | 4.252 | 1.508 | 5.830 | 0.000 | 1.000 | -18.110 | -6.080 |
+| [home](mix/37-dialogue-balanced-home.json) | 60.20 | 4.103 | 1.457 | 5.947 | 1.993 | 1.000 | -17.390 | -2.230 |

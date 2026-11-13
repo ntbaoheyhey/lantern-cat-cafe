@@ -180,3 +180,105 @@ PASS SY3.status: measured 1120; required nonempty reports/v3-shell/b2/STATUS-VI.
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```
+
+## Q4 checkpoint132 — 2026-11-13T20:57:39.794042+00:00
+
+```text
+PASS E3.rounds: measured=24; required=>= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured=8.958333333333334; required=>= 2 changed levers per round on average
+PASS E3.searchLevers: measured=20; required=>= 10 levers per search
+PASS E3.configs: measured=1273; required=>= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured=10; required=top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured=5; required=>= 3 model/lever structural changes
+PASS E3.finalScenarios: measured=18; required=all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured=18/18; required=burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured=18/18; required=Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured=18/18; required=heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured=18/18; required=casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured=6/6; required=at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured=18/18; required=top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured=18/18; required=p90: half-demand burn >= 0.95; Star 0.8-1.2
+FAIL E3.T-h: measured=65/85; required=each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured=5; required=passing test + SHA-256-verified log
+PASS E3.configSource: measured=packages/game-rules/src/cardrpg/economy-v3.ts; required=committed final rules config matches measured hash
+PASS E4.receipts: measured=16; required=>= 13 + new sink count confirmed receipts
+PASS E4.sinks: measured=3/3; required=one confirmed use of every new sink
+PASS E4.screenshots: measured=18; required=1280x720 and 1440x900 economy screenshots
+PASS E4.odds: measured=5; required=passing test + SHA-256-verified log
+PASS E5.report: measured=18077; required=nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
+PASS E5.numbers: measured=816; required=>= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured=816/816; required=all report-number citations valid
+```
+
+T-h remains open:65/85 assumptions have both perturbations;132/170 individual cases are retained. No measured burn/Star robustness miss in completed cases.
+
+## Q5 final acceptance — 2026-11-13T21:25:40.463029+00:00
+
+```text
+PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
+PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
+PASS V.ultAccuracy: measured 50/50; required recogniser word accuracy >= 0.7
+PASS V.skillAccuracy: measured 62/62; required recogniser word accuracy >= 0.5
+PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
+PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
+PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
+PASS V.lines: measured 2428; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
+PASS S5.algorithm: measured 6/6; required same current measurement algorithm for references and all six non-diagnostic renders
+PASS S5.battle.render: measured 180.20099773242632; required >= 180s measured Opus render
+PASS S5.battle.onsetsPerSecond: measured 3.179782616136378; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.battle.layers: measured 0.20593368237347295; required >= reference median - 0.5
+PASS S5.battle.tickTransientsPerSecond: measured 0.6714724198123939; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.music: measured 0.9751342969485518; required music bed >= 95%
+PASS S5.battle.voiceContoursPerMinute: measured 4.994422957282269; required reference +/- 35% (reference 5)
+PASS S5.battle.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.battle.lufs: measured -14.82; required -16 to -13 LUFS
+PASS S5.battle.peak: measured -2.79; required <= -1 dBTP
+PASS S5.boss.render: measured 120.2; required >= 120s measured Opus render
+PASS S5.boss.onsetsPerSecond: measured 3.1613976705490847; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.boss.layers: measured 0.22631578947368422; required >= reference median - 0.5
+PASS S5.boss.tickTransientsPerSecond: measured 0.7321131447587355; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.boss.music: measured 1; required music bed >= 95%
+PASS S5.boss.voiceContoursPerMinute: measured 4.9916805324459235; required reference +/- 35% (reference 5)
+PASS S5.boss.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.boss.lufs: measured -14.93; required -16 to -13 LUFS
+PASS S5.boss.peak: measured -2.76; required <= -1 dBTP
+PASS S5.home.render: measured 60.20199546485261; required >= 60s measured Opus render
+PASS S5.home.onsetsPerSecond: measured 4.102854034866745; required reference +/- 30% (reference 3.6666666666666665)
+PASS S5.home.layers: measured 1.45748987854251; required >= reference median - 0.5
+PASS S5.home.tickTransientsPerSecond: measured 5.9466467387947155; required reference +/- 40% (reference 8.9)
+PASS S5.home.music: measured 1; required music bed >= 95%
+PASS S5.home.voiceContoursPerMinute: measured 1.9932894096518599; required reference +/- 35% (reference 2)
+PASS S5.home.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.home.lufs: measured -17.39; required -20 to -16 LUFS
+PASS S5.home.peak: measured -2.23; required <= -1 dBTP
+PASS S5.bag.render: measured 60.202993197278914; required >= 60s measured Opus render
+PASS S5.bag.onsetsPerSecond: measured 4.219059327626262; required reference +/- 30% (reference 3.7)
+PASS S5.bag.layers: measured 1.437007874015748; required >= reference median - 0.5
+PASS S5.bag.tickTransientsPerSecond: measured 5.996379595563309; required reference +/- 40% (reference 8.466666666666667)
+PASS S5.bag.music: measured 1; required music bed >= 95%
+PASS S5.bag.voiceContoursPerMinute: measured 1.9932563752565018; required reference +/- 35% (reference 2)
+PASS S5.bag.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.bag.lufs: measured -17.37; required -20 to -16 LUFS
+PASS S5.bag.peak: measured -1.96; required <= -1 dBTP
+PASS S5.gacha.render: measured 60.20199546485261; required >= 60s measured Opus render
+PASS S5.gacha.onsetsPerSecond: measured 4.252350740590634; required reference +/- 30% (reference 3.966666666666667)
+PASS S5.gacha.layers: measured 1.5078125; required >= reference median - 0.5
+PASS S5.gacha.tickTransientsPerSecond: measured 5.83037152323169; required reference +/- 40% (reference 8.233333333333333)
+PASS S5.gacha.music: measured 1; required music bed >= 95%
+PASS S5.gacha.voiceContoursPerMinute: measured 0; required reference +/- 35% (reference 0)
+PASS S5.gacha.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.gacha.lufs: measured -18.11; required -20 to -16 LUFS
+PASS S5.gacha.peak: measured -6.08; required <= -1 dBTP
+PASS S5.forge.render: measured 60.19800453514739; required >= 60s measured Opus render
+PASS S5.forge.onsetsPerSecond: measured 3.77088911423074; required reference +/- 30% (reference 4.4)
+PASS S5.forge.layers: measured 1.198237885462555; required >= reference median - 0.5
+PASS S5.forge.tickTransientsPerSecond: measured 3.5217114194577834; required reference +/- 40% (reference 3.433333333333333)
+PASS S5.forge.music: measured 1; required music bed >= 95%
+PASS S5.forge.voiceContoursPerMinute: measured 1.993421558183651; required reference +/- 35% (reference 2)
+PASS S5.forge.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.forge.lufs: measured -17.36; required -20 to -16 LUFS
+PASS S5.forge.peak: measured -1.94; required <= -1 dBTP
+PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
+PASS S5.chart: measured 86892; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
+PASS S5.reel: measured 90.054; required >= 90s sound reel
+```

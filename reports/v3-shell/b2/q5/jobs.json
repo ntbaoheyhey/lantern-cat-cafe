@@ -728,5 +728,49 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue34.log",
     "started": "2026-11-13T20:48:41.726933+00:00",
     "note": "Fourth stem-balance method: soften high consonant shelf under forward dialogue; no change to timing, source take, meter or thresholds."
+  },
+  {
+    "name": "q5-capture35-boss",
+    "pid": 10619,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-35.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture35-boss.log",
+    "started": "2026-11-13T20:51:40.433098+00:00",
+    "note": "Full120s current boss; then mixed ASR. Pause owned simulations only while recording; resume in finally."
+  },
+  {
+    "name": "q5-capture36-boss",
+    "pid": 16889,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-36.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture36-boss.log",
+    "started": "2026-11-13T20:55:16.760318+00:00",
+    "note": "Second full120s dialogue balance after boss35 failed density. Pause owned simulations during capture; mixed ASR afterwards."
+  },
+  {
+    "name": "q5-capture37-boss",
+    "pid": 25245,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-37.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture37-boss.log",
+    "started": "2026-11-13T20:58:24.332117+00:00",
+    "note": "Third runtime balance candidate, full120s, all authored voice triggers intact. Pause owned simulations during capture and resume in finally."
+  },
+  {
+    "name": "q5-finish37",
+    "pid": 25627,
+    "command": [
+      "python3",
+      "work/q5-finish-37.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-finish37.log",
+    "started": "2026-11-13T20:59:13.685495+00:00",
+    "note": "Wait for boss37; abort on failed bands. Then remaining full scenes, matrix, mixedASR, full unit/types/browser suites, reel and V/S5 checker. No source edits."
   }
 ]

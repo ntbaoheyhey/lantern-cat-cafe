@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T20:42:27.682Z",
-  "trial": "q5-31-current",
+  "generatedAt": "2026-11-13T21:14:48.239Z",
+  "trial": "q5-37-current",
   "integration": {
-    "generatedAt": "2026-11-13T20:26:47.058Z",
-    "aHead": "830920177b27231a5852ebab3cc596e75e7b7014",
-    "bHead": "89a4b2dc437092cbd445d754071bec0a2a789325",
+    "generatedAt": "2026-11-13T20:58:26.422Z",
+    "aHead": "fc95f4898d8168013841e23f71174cf0287b2221",
+    "bHead": "422585ca577077732b86bb3f039eae48ad649984",
     "out": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
     "base": [
       "apps/web",
@@ -45,7 +45,7 @@
       },
       {
         "path": "apps/web/src/audio/engine.ts",
-        "sha256": "c9d042299a285fc8ba11c36cf0c825ee8ae2a527031956849e8c8df09855e829"
+        "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
       },
       {
         "path": "apps/web/src/audio/voice-callouts.json",
@@ -53,7 +53,7 @@
       },
       {
         "path": "apps/web/public/audio/manifest.json",
-        "sha256": "ed13f495aaafee39c420e3c916c4ed2ca58cf516d5b90439f071508bda9a6210"
+        "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
       }
     ],
     "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit."
@@ -437,15 +437,15 @@
     },
     {
       "path": "apps/web/public/audio/manifest.json",
-      "sha256": "ed13f495aaafee39c420e3c916c4ed2ca58cf516d5b90439f071508bda9a6210"
+      "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
     },
     {
       "path": "apps/web/public/audio/menu-forge.mp3",
-      "sha256": "5789f6c96de9c665b294352104ab4b219a6a5b39947cc5fe3a622ab6d2a1eef1"
+      "sha256": "c84920fb39ccd04e9bb067b5b77b61daa05f921c5dfe9d261a87b7cfc56bd53f"
     },
     {
       "path": "apps/web/public/audio/menu-forge.webm",
-      "sha256": "5d8dc2d4fe3e86b7a5670796c28e977ce66b2d732d8794125b6342b2d4c167f4"
+      "sha256": "c71b420dd342dfd80af6ae79d2c24b41ed2eba9807069519e80f2dc1ff526cee"
     },
     {
       "path": "apps/web/public/audio/menu-home.mp3",
@@ -537,7 +537,7 @@
     },
     {
       "path": "apps/web/src/audio/engine.ts",
-      "sha256": "c9d042299a285fc8ba11c36cf0c825ee8ae2a527031956849e8c8df09855e829"
+      "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
     },
     {
       "path": "apps/web/src/audio/voice-callouts.json",
@@ -553,13 +553,13 @@
     {
       "fixture": "wave1",
       "speed": 1,
-      "seconds": 30.04,
+      "seconds": 30.029,
       "ultimateRequired": 4,
       "ultimatePlayed": 4,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.498833333333334,
+      "meanBarkIntervalSeconds": 7.495899999996026,
       "parity": true,
       "errors": [],
       "played": 6,
@@ -568,20 +568,20 @@
         "cadence": 7
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave1-x1.json.gz",
-        "sha256": "7fcab99675b3d9ae6957f8bd701a244f898ff911f9b394c9d391b6a863ae0383"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x1.json.gz",
+        "sha256": "c777e052a640048a197ad18e05444e397c43bbcfcd946ae1043acad9b571f5d9"
       }
     },
     {
       "fixture": "wave1",
       "speed": 2,
-      "seconds": 30.841,
+      "seconds": 30.683,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.494033333336314,
+      "meanBarkIntervalSeconds": 7.50940000000596,
       "parity": true,
       "errors": [],
       "played": 10,
@@ -592,20 +592,20 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave1-x2.json.gz",
-        "sha256": "fc28de43e2b2c74e7da1e47d6afc646d54ba0351ede51af02ef9429df67b0b7f"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x2.json.gz",
+        "sha256": "da0040741e3d08ba44d274e54ed29e6d998a16f248ce2bf0eee48bbf1d3f1fa9"
       }
     },
     {
       "fixture": "wave1",
       "speed": 3,
-      "seconds": 30.174,
+      "seconds": 30.25,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.496033333331346,
+      "meanBarkIntervalSeconds": 7.491199999998013,
       "parity": true,
       "errors": [],
       "played": 10,
@@ -615,20 +615,20 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave1-x3.json.gz",
-        "sha256": "b3953814edff00a5f391f05da94e757f5bee46f2f8c4c63c287f992e0bc0d7a6"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x3.json.gz",
+        "sha256": "cb8fbf25f62beaa9cb24e78e9a87cfcc2c3e9baffaa5e45ddd3463321838330e"
       }
     },
     {
       "fixture": "wave3",
       "speed": 1,
-      "seconds": 33.123,
+      "seconds": 32.715,
       "ultimateRequired": 4,
       "ultimatePlayed": 4,
       "ultimateInterrupted": 0,
       "skillPlayed": 3,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.4947333333343265,
+      "meanBarkIntervalSeconds": 7.493566666662693,
       "parity": true,
       "errors": [],
       "played": 7,
@@ -638,67 +638,66 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave3-x1.json.gz",
-        "sha256": "457266c830ccbb024aa12e2199ca66fe56acee81ed1543073b9ee40df1feeb5c"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x1.json.gz",
+        "sha256": "858314b4e026b0a81123d60a1da8e7ca0eeb2cfbb0b985e8d55ee9e2369fbe20"
       }
     },
     {
       "fixture": "wave3",
       "speed": 2,
-      "seconds": 31.234,
+      "seconds": 30.98,
       "ultimateRequired": 6,
       "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.530766666665673,
+      "meanBarkIntervalSeconds": 7.503566666662692,
       "parity": true,
       "errors": [],
-      "played": 9,
-      "interrupted": 1,
+      "played": 8,
+      "interrupted": 0,
       "suppressed": {
-        "cadence": 8,
+        "cadence": 9,
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave3-x2.json.gz",
-        "sha256": "7fa93df704e72afa40068923700a7a978ff9b0364e50ca2aa68efce496a4b8e6"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x2.json.gz",
+        "sha256": "b06b613d07c5d38efb4e460a3d000e4259fdb452a0588c23f791ad07cfba5bdc"
       }
     },
     {
       "fixture": "wave3",
       "speed": 3,
-      "seconds": 31.458,
+      "seconds": 31.231,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.48273333332936,
+      "meanBarkIntervalSeconds": 7.497933333337308,
       "parity": true,
       "errors": [],
       "played": 10,
       "interrupted": 0,
       "suppressed": {
         "cadence": 8,
-        "priority": 1,
-        "superseded": 1
+        "priority": 2
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-wave3-x3.json.gz",
-        "sha256": "2731ca692fd29db6967c740e152f4bed23d7579f74cd000a7494af12c55f43fb"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x3.json.gz",
+        "sha256": "ee0d50e9ee7e6fe78c81d5264803c588da6724b4af1ff575c268616f25dfd536"
       }
     },
     {
       "fixture": "boss",
       "speed": 1,
-      "seconds": 34.263,
+      "seconds": 34.113,
       "ultimateRequired": 6,
       "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.501033333331347,
+      "meanBarkIntervalSeconds": 7.513633333335321,
       "parity": true,
       "errors": [],
       "played": 8,
@@ -708,20 +707,20 @@
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-boss-x1.json.gz",
-        "sha256": "1c52700870c90af284be92ecf2df20c70fdc78f071be549133d87e138c91ac7a"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x1.json.gz",
+        "sha256": "7411c74a902c272a5f24588112ea4d0c067bf0415d834db419edc99b004c35a8"
       }
     },
     {
       "fixture": "boss",
       "speed": 2,
-      "seconds": 32.431,
+      "seconds": 32.124,
       "ultimateRequired": 10,
       "ultimatePlayed": 10,
       "ultimateInterrupted": 0,
       "skillPlayed": 1,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.50013333333532,
+      "meanBarkIntervalSeconds": 7.489033333331346,
       "parity": true,
       "errors": [],
       "played": 11,
@@ -731,20 +730,20 @@
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-boss-x2.json.gz",
-        "sha256": "e6c71c8de84790bbe5b0b5ae264d611f0281edc50f13266e85366c25cb33d0f3"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x2.json.gz",
+        "sha256": "fa0f1311608da659233dbaf7cb537c5915e9d4deb344f73cdaf057738015209f"
       }
     },
     {
       "fixture": "boss",
       "speed": 3,
-      "seconds": 30.96,
+      "seconds": 30.807,
       "ultimateRequired": 10,
       "ultimatePlayed": 10,
       "ultimateInterrupted": 0,
       "skillPlayed": 1,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.491266666660706,
+      "meanBarkIntervalSeconds": 7.4925333333313455,
       "parity": true,
       "errors": [],
       "played": 11,
@@ -754,8 +753,8 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-31-current/voice-boss-x3.json.gz",
-        "sha256": "69a6b98af29ea6fbe410eed9fed0a0eb156307495427b358ed2a0fa02b6adf18"
+        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x3.json.gz",
+        "sha256": "4fcae59ac03376a400c090a97b08aba46ed50ed2925e09ac238ef8666f50ff7e"
       }
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-13T21:00:41.984838+00:00",
+  "at": "2026-11-13T21:14:51.259894+00:00",
   "trial": "37-dialogue-balanced",
   "diagnostic": true,
   "metadata": {
@@ -13,6 +13,17 @@
   "method": "First complete actual occurrence per callout cue per scene, cropped from full unnormalized browser mix with150ms pre-roll and200ms tail. Local unprompted ASR; background music/effects retained. This supplements isolated V recognition, not a substitute for its full-roster gate.",
   "scenes": [
     {
+      "name": "battle",
+      "metric": {
+        "path": "reports/v3-shell/b2/mix/37-dialogue-balanced-battle.json",
+        "sha256": "5f5475c77acf3ef3f6a2fd5f62cbe5a6dd069bfd7a0acd3f66480dde70527032"
+      },
+      "audio": {
+        "path": "reports/v3-shell/b2/renders/37-dialogue-balanced-battle.opus",
+        "sha256": "ae6afc3b7f1d99282853dbeb254548b0bc24d74e50bddfda4ff23223c2e7af30"
+      }
+    },
+    {
       "name": "boss",
       "metric": {
         "path": "reports/v3-shell/b2/mix/37-dialogue-balanced-boss.json",
@@ -25,6 +36,258 @@
     }
   ],
   "rows": [
+    {
+      "scene": "battle",
+      "cueId": "voice.soot.skill.soot-2",
+      "kind": "skill",
+      "atSeconds": 1.7599999904632568,
+      "durationSeconds": 1.0677083333333333,
+      "variantId": "soot-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-001.flac",
+        "sha256": "59cabbdb49fa57468bcfb8a6566215fd7999c55fa12b9394d77944caf34f6f2b"
+      },
+      "expected": "Found you!",
+      "recognized": "I found you.",
+      "wordAccuracy": 0.5,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.clover.skill.clover-2",
+      "kind": "skill",
+      "atSeconds": 9.401999950408936,
+      "durationSeconds": 1.1677083333333333,
+      "variantId": "clover-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-002.flac",
+        "sha256": "14d5ab4bf71798c769c5adbe59b036c1ab47ee8e58fb55cddfcec4a2d1cc6b9d"
+      },
+      "expected": "Let it steep!",
+      "recognized": "Let it stay.",
+      "wordAccuracy": 0.6666666666666667,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.panko.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 19.061000108718872,
+      "durationSeconds": 1.111,
+      "variantId": "panko-charge-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-003.flac",
+        "sha256": "2696002a20b0edae6c7df8a459223c1423d7e48253177afb655bf0ec36124f5d"
+      },
+      "expected": "Close!",
+      "recognized": "So",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.panko.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 21.996000051498413,
+      "durationSeconds": 1.5131666666666668,
+      "variantId": "panko-release-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-004.flac",
+        "sha256": "5f4b97fa82f0c2733c0f1a0ed0e520fddd1d58fb7556676256aed7ff78c611d6"
+      },
+      "expected": "Close the door!",
+      "recognized": "Close the door.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.mochi.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 25.38100004196167,
+      "durationSeconds": 1.1948333333333334,
+      "variantId": "mochi-charge-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-005.flac",
+        "sha256": "90c5d75092d66901a327753402249cd8e6d16108194b612dcdb2e6cef42e09f6"
+      },
+      "expected": "Shields!",
+      "recognized": "more shields",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.mochi.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 28.365000009536743,
+      "durationSeconds": 1.3420416666666666,
+      "variantId": "mochi-release-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-006.flac",
+        "sha256": "885e97fcc5420943a1e91ecae1d575b2fd63f0797d358bb59d61c83980a97f21"
+      },
+      "expected": "Shields up!",
+      "recognized": "shields up.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.soot.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 29.95900011062622,
+      "durationSeconds": 1.0369166666666667,
+      "variantId": "soot-charge-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-007.flac",
+        "sha256": "febbd34aca6aa4844347c682baacb8adc1aebb06df603f95e02344d11d9b53fb"
+      },
+      "expected": "Lights!",
+      "recognized": "and the lights.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.soot.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 32.894999980926514,
+      "durationSeconds": 1.3254583333333334,
+      "variantId": "soot-release-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-008.flac",
+        "sha256": "6c0a3332e3d2c4af86c697c743e8c9af921fd0b1ab4f44f2f58706ed17297569"
+      },
+      "expected": "Lights out!",
+      "recognized": "Lights out.",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.clover.ult.charge",
+      "kind": "ultimate",
+      "atSeconds": 34.37299990653992,
+      "durationSeconds": 1.921375,
+      "variantId": "clover-charge-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-009.flac",
+        "sha256": "6136a69aaca4ab82607720a7d6625ade93a47dc938e872e8b3277260d6bbb3ed"
+      },
+      "expected": "Watch the flowers bloom!",
+      "recognized": "Watch the flowers blow.",
+      "wordAccuracy": 0.75,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.clover.ult.release",
+      "kind": "ultimate",
+      "atSeconds": 37.33699989318848,
+      "durationSeconds": 1.4629583333333334,
+      "variantId": "clover-release-2.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-010.flac",
+        "sha256": "d6f30b33757993320c8c222d965946f27e3a652f7e866548ffb0917af1adbc91"
+      },
+      "expected": "Bloom again!",
+      "recognized": "Hello? Again?",
+      "wordAccuracy": 0.5,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer",
+      "kind": "skill",
+      "atSeconds": 86.94899988174438,
+      "durationSeconds": 1.16375,
+      "variantId": "teacup-healer-skill-2-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-011.flac",
+        "sha256": "408d9e9daa33cfe0c9bed1564bdbb43a7d1fcbb1d2a856ef67bebe5c1af5b3ee"
+      },
+      "expected": "Fill it up!",
+      "recognized": "It's so lit up.",
+      "wordAccuracy": 0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": false
+    },
+    {
+      "scene": "battle",
+      "cueId": "voice.panko.skill.panko-3",
+      "kind": "skill",
+      "atSeconds": 162.0920000076294,
+      "durationSeconds": 1.3810833333333334,
+      "variantId": "panko-skill-3-1.flac",
+      "crop": {
+        "path": "work/audio/37-dialogue-balanced-mixed-speech/battle-012.flac",
+        "sha256": "d45417a40ce59f4bd85d2512ec61c2694ed1d4b90b578d8597a63685df3bfc6c"
+      },
+      "expected": "Send it back!",
+      "recognized": "Send it back",
+      "wordAccuracy": 1.0,
+      "model": "faster-whisper small.en int8 CPU",
+      "prompt": null,
+      "beamSize": 5,
+      "temperature": 0,
+      "language": "en",
+      "passes": true
+    },
     {
       "scene": "boss",
       "cueId": "voice.mochi.skill.mochi-2",
@@ -279,6 +542,10 @@
     }
   ],
   "summary": {
+    "battle": {
+      "passed": 7,
+      "measured": 12
+    },
     "boss": {
       "passed": 7,
       "measured": 12

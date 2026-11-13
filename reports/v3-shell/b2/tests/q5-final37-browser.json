@@ -1,0 +1,40 @@
+{
+  "sourceCommit": "a366059d9c5e42f62fe36cf98979afcaa04b8f6c",
+  "groups": [
+    "local",
+    "server",
+    "fallback"
+  ],
+  "rows": [
+    {
+      "group": "local",
+      "exitCode": 0,
+      "passed": 375,
+      "minimumPassed": 375,
+      "started": "2026-11-13T21:18:36.927801+00:00",
+      "ended": "2026-11-13T21:23:16.573542+00:00",
+      "log": "reports/v3-shell/b2/tests/q5-final37-browser-local.log",
+      "sha256": "ee69b6526cc9337c8d2fc45220f5c48fbed1855686db3b6b2e6f5390e1b4cb0c"
+    },
+    {
+      "group": "server",
+      "exitCode": 0,
+      "passed": 52,
+      "minimumPassed": 52,
+      "started": "2026-11-13T21:23:16.574480+00:00",
+      "ended": "2026-11-13T21:23:41.582312+00:00",
+      "log": "reports/v3-shell/b2/tests/q5-final37-browser-server.log",
+      "sha256": "4f62f1bf9d8f3e38464f9f417f8b13f6e0925b8d9d2cd2eea5d0e3421734cc23"
+    },
+    {
+      "group": "fallback",
+      "exitCode": 0,
+      "passed": 8,
+      "minimumPassed": 8,
+      "started": "2026-11-13T21:23:41.583155+00:00",
+      "ended": "2026-11-13T21:23:54.131299+00:00",
+      "log": "reports/v3-shell/b2/tests/q5-final37-browser-fallback.log",
+      "sha256": "01f1d741188b9f0d2b6ac1f44f3309651191d9b5959c736fc09ef597dd84c48e"
+    }
+  ]
+}

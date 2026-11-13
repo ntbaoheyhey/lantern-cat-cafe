@@ -1,16 +1,12 @@
-1. Q0–Q3 đã hoàn thành; chưa có mốc đồng bộ đến hạn.
-2. Q4: 24 vòng, 1.280 lượt thử, 1.273 cấu hình khác nhau.
-3. Top 10 đã xác nhận với 200 hạt giống mỗi kịch bản.
-4. Cấu hình 497ba9738e vượt T-a đến T-g trong 18 kịch bản.
-5. T-h còn chạy: 132/170 trường hợp, chưa chốt E3.
-6. Trung vị đốt/phát hành 1,0104–1,2523; Star Thread 1,0422–1,09975.
-7. Legendary: chơi thường ngày 13, chơi nhiều ngày 9.
-8. Có 16 biên nhận Anvil và 18 ảnh; chưa triển khai hoặc giao dịch Fuji.
-9. Giá/xác suất khớp cấu hình; 5 kiểm tra xác suất và 20 kiểm tra luật đạt.
-10. Q5: thoại riêng đạt 50/50 tuyệt chiêu, 62/62 kỹ năng, 12 giọng phân biệt.
-11. Lò rèn mới đạt: 1,993 contour/phút, 3,505 tick/giây, -17,38 LUFS.
-12. Thoại trong mix 31: trận thường 9/13 câu, boss 5/12 câu được nhận dạng.
-13. Thu riêng từng bus cho thấy nhạc che lời; độ lệch ghi âm chỉ khoảng 5–11 ms.
-14. Đang thu lại boss với lời rõ hơn; chỉ chốt sau đủ sáu cảnh và bộ kiểm tra.
-15. Chạy lại đủ sáu cảnh nếu thay đổi mix; mô phỏng tiếp tục sau lúc thu.
-16. Giữ lịch 16/11 và 18/11; đóng băng 19/11 12:00 UTC.
+1. Q0–Q3 hoàn thành; Q5 vừa vượt toàn bộ cổng V và S5.
+2. Thoại riêng: 50/50 tuyệt chiêu, 62/62 kỹ năng; 12 giọng phân biệt.
+3. Trận 180 giây có 34/34 lượt thoại tuyệt chiêu, không thiếu; chín lần thử tốc độ không ngắt lời.
+4. Sáu cảnh âm thanh đủ thời lượng đều đạt; reel mới dài 90,054 giây.
+5. Bộ kiểm tra kiểu, unit và 435 ca trình duyệt đều đạt.
+6. Lời trong mix còn hạn chế: nhận dạng 7/12 câu ở trận thường và boss.
+7. Q4: 24 vòng, 1.273 cấu hình; top10 xác nhận ở 200 hạt giống.
+8. T-a đến T-g đạt; T-h còn chạy, chưa chốt E3.
+9. Đang làm mới chứng cứ ba sink theo cấu hình hiện tại; chỉ Anvil nội bộ.
+10. Tiếp theo Q6: 22 màn hình còn dưới điểm8.
+11. Giữ lịch đồng bộ16/11,18/11 và đóng băng19/11 12:00UTC.
+12. Chưa triển khai hoặc merge vào main; người dùng triển khai20/11.
