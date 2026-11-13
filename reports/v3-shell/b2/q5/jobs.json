@@ -383,5 +383,72 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-light-clarity28.log",
     "started": "2026-11-13T19:16:39.340722+00:00"
+  },
+  {
+    "name": "q5-scene28-wording",
+    "pid": 88276,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json",
+      "--label",
+      "scene28-wording",
+      "--cues",
+      "voice.biscuit.ult.release,voice.cinnamon.ult.charge,voice.cinnamon.skill.cinnamon-2,voice.kettle-knight.skill.enemy:kettle-knight:basic,voice.practice-cushion.skill.enemy:practice-cushion:basic,voice.rain-spool.skill.enemy:rain-spool,voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+      "--clarity",
+      "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/q5/scene28-light-clarity.json",
+      "--shelf",
+      "-3"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-wording.log",
+    "started": "2026-11-13T19:21:58.624837+00:00"
+  },
+  {
+    "name": "q5-scene28-publication",
+    "pid": 88794,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-select-callouts.py",
+      "--reports",
+      "scene28-wording",
+      "--label",
+      "scene28-selection",
+      "--publish"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-publication.log",
+    "started": "2026-11-13T19:23:40.467191+00:00"
+  },
+  {
+    "name": "q5-bark-fallback-budget",
+    "pid": 99570,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget.log",
+    "started": "2026-11-13T19:31:12.684020+00:00"
+  },
+  {
+    "name": "q5-bark-fallback-budget-r2",
+    "pid": 99714,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget-r2.log",
+    "started": "2026-11-13T19:31:42.006778+00:00",
+    "note": "First attempt stopped before publication because ffmpeg wrote progress after the loudnorm JSON. Parse one JSON object and preserve the failed log."
+  },
+  {
+    "name": "q5-bark-fallback-budget-r3",
+    "pid": 4580,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget-r3.log",
+    "started": "2026-11-13T19:32:46.890208+00:00",
+    "note": "All12 identities pass40kbps. Five sprite levels miss by0.05\u20130.19dB. Add0.3dB constant gain and remeasure, no threshold change."
   }
 ]

@@ -72,3 +72,5 @@ Resume 2026-11-13T10:45:26.666988+00:00: 289.90 GiB before; 289.90 GiB after. Re
 Resume 2026-11-13T11:08:22.437344+00:00: 289.88 GiB before; 289.88 GiB after. Removed rebuildable paths: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp, packages/game-rules/node_modules/.vite, packages/game-rules/node_modules/.vite-temp, supabase/tests/node_modules/.vite, supabase/tests/node_modules/.vite-temp. Active native runtime, compressed sources, current evidence and protected trees retained.
 
 Resume 2026-11-13T11:26:29.424999+00:00: 289.74 GiB before; 289.74 GiB after. Removed rebuildable outputs: apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite, packages/game-rules/node_modules/.vite-temp, packages/game-rules/node_modules/.vite. Active economy runtimes, current evidence, compressed audio sources and protected trees retained.
+
+- 2026-11-13T19:29:23.276059+00:00: resume cleanup removed ['apps/web/node_modules/.vite']; free 282.10 -> 282.10 GiB. Current captures and checkpoints retained.

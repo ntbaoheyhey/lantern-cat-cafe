@@ -25,10 +25,6 @@
       "webm": "/audio/landing.webm",
       "mp3": "/audio/landing.mp3"
     },
-    "home": {
-      "webm": "/audio/home.webm",
-      "mp3": "/audio/home.mp3"
-    },
     "ambience": {
       "webm": "/audio/ambience.webm",
       "mp3": "/audio/ambience.mp3"
@@ -2529,7 +2525,7 @@
       {
         "pack": "score-battle",
         "start": 0,
-        "duration": 32.0,
+        "duration": 32,
         "bus": "music",
         "loop": true
       }
@@ -6203,7 +6199,7 @@
     "voice.mochi.skill.mochi-1": [
       {
         "pack": "callout-mochi",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.138125,
         "bus": "voice",
         "variantId": "mochi-skill-1-1.flac",
@@ -6269,7 +6265,7 @@
     "voice.soot.skill.soot-1": [
       {
         "pack": "callout-soot",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.34075,
         "bus": "voice",
         "variantId": "soot-skill-1-1.flac",
@@ -6335,7 +6331,7 @@
     "voice.clover.skill.clover-1": [
       {
         "pack": "callout-clover",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.0678333333333334,
         "bus": "voice",
         "variantId": "clover-skill-1-1.flac",
@@ -6401,7 +6397,7 @@
     "voice.panko.skill.panko-1": [
       {
         "pack": "callout-panko",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.0989166666666668,
         "bus": "voice",
         "variantId": "panko-skill-1-1.flac",
@@ -6467,7 +6463,7 @@
     "voice.mallow.skill.mallow-1": [
       {
         "pack": "callout-mallow",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.1347916666666666,
         "bus": "voice",
         "variantId": "mallow-skill-1-1.flac",
@@ -6533,7 +6529,7 @@
     "voice.sorrel.skill.sorrel-1": [
       {
         "pack": "callout-sorrel",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3144583333333333,
         "bus": "voice",
         "variantId": "sorrel-skill-1-1.flac",
@@ -6599,7 +6595,7 @@
     "voice.biscuit.skill.biscuit-1": [
       {
         "pack": "callout-biscuit",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.1150833333333334,
         "bus": "voice",
         "variantId": "biscuit-skill-1-1.flac",
@@ -6648,15 +6644,15 @@
       {
         "pack": "callout-biscuit",
         "start": 6.527833333333334,
-        "duration": 1.2889166666666667,
+        "duration": 1.3269583333333332,
         "bus": "voice",
         "variantId": "biscuit-release-1.flac",
         "processedVoice": true
       },
       {
         "pack": "callout-biscuit",
-        "start": 7.83675,
-        "duration": 1.2926666666666666,
+        "start": 7.874791666666667,
+        "duration": 1.3025,
         "bus": "voice",
         "variantId": "biscuit-release-2.flac",
         "processedVoice": true
@@ -6665,7 +6661,7 @@
     "voice.inkcap.skill.inkcap-1": [
       {
         "pack": "callout-inkcap",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.1538333333333333,
         "bus": "voice",
         "variantId": "inkcap-skill-1-1.flac",
@@ -6731,7 +6727,7 @@
     "voice.cinnamon.skill.cinnamon-1": [
       {
         "pack": "callout-cinnamon",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.2912083333333333,
         "bus": "voice",
         "variantId": "cinnamon-skill-1-1.flac",
@@ -6742,7 +6738,7 @@
       {
         "pack": "callout-cinnamon",
         "start": 1.3112083333333333,
-        "duration": 0.9435416666666666,
+        "duration": 1.2297083333333334,
         "bus": "voice",
         "variantId": "cinnamon-skill-2-1.flac",
         "processedVoice": true
@@ -6751,7 +6747,7 @@
     "voice.cinnamon.skill.cinnamon-3": [
       {
         "pack": "callout-cinnamon",
-        "start": 2.27475,
+        "start": 2.5609166666666665,
         "duration": 1.4597083333333334,
         "bus": "voice",
         "variantId": "cinnamon-skill-3-1.flac",
@@ -6761,16 +6757,16 @@
     "voice.cinnamon.ult.charge": [
       {
         "pack": "callout-cinnamon",
-        "start": 3.7544583333333335,
-        "duration": 0.8843333333333333,
+        "start": 4.040625,
+        "duration": 1.4000833333333333,
         "bus": "voice",
         "variantId": "cinnamon-charge-1.flac",
         "processedVoice": true
       },
       {
         "pack": "callout-cinnamon",
-        "start": 4.658791666666667,
-        "duration": 0.8910416666666666,
+        "start": 5.460708333333334,
+        "duration": 1.4134583333333333,
         "bus": "voice",
         "variantId": "cinnamon-charge-2.flac",
         "processedVoice": true
@@ -6779,7 +6775,7 @@
     "voice.cinnamon.ult.release": [
       {
         "pack": "callout-cinnamon",
-        "start": 5.569833333333333,
+        "start": 6.894166666666667,
         "duration": 1.7134166666666666,
         "bus": "voice",
         "variantId": "cinnamon-release-1.flac",
@@ -6787,7 +6783,7 @@
       },
       {
         "pack": "callout-cinnamon",
-        "start": 7.30325,
+        "start": 8.627583333333334,
         "duration": 1.63,
         "bus": "voice",
         "variantId": "cinnamon-release-2.flac",
@@ -6797,7 +6793,7 @@
     "voice.brioche.skill.brioche-1": [
       {
         "pack": "callout-brioche",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.259125,
         "bus": "voice",
         "variantId": "brioche-skill-1-1.flac",
@@ -6863,7 +6859,7 @@
     "voice.velvet.skill.velvet-1": [
       {
         "pack": "callout-velvet",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3022083333333334,
         "bus": "voice",
         "variantId": "velvet-skill-1-1.flac",
@@ -6929,7 +6925,7 @@
     "voice.marigold.skill.marigold-1": [
       {
         "pack": "callout-marigold",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.390375,
         "bus": "voice",
         "variantId": "marigold-skill-1-1.flac",
@@ -6995,7 +6991,7 @@
     "voice.button-guard.skill.enemy:button-guard:basic": [
       {
         "pack": "callout-button-guard",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3817083333333333,
         "bus": "voice",
         "variantId": "button-guard-skill-1-1.flac",
@@ -7051,7 +7047,7 @@
     "voice.sock-skipper.skill.enemy:sock-skipper:basic": [
       {
         "pack": "callout-sock-skipper",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.128875,
         "bus": "voice",
         "variantId": "sock-skipper-skill-1-1.flac",
@@ -7107,7 +7103,7 @@
     "voice.spool-ram.skill.enemy:spool-ram:basic": [
       {
         "pack": "callout-spool-ram",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.0310416666666666,
         "bus": "voice",
         "variantId": "spool-ram-skill-1-1.flac",
@@ -7163,7 +7159,7 @@
     "voice.needle-moth.skill.enemy:needle-moth:basic": [
       {
         "pack": "callout-needle-moth",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3836666666666666,
         "bus": "voice",
         "variantId": "needle-moth-skill-1-1.flac",
@@ -7219,7 +7215,7 @@
     "voice.teacup-healer.skill.enemy:teacup-healer:basic": [
       {
         "pack": "callout-teacup-healer",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.06825,
         "bus": "voice",
         "variantId": "teacup-healer-skill-1-1.flac",
@@ -7275,8 +7271,8 @@
     "voice.kettle-knight.skill.enemy:kettle-knight:basic": [
       {
         "pack": "callout-kettle-knight",
-        "start": 0.0,
-        "duration": 1.287875,
+        "start": 0,
+        "duration": 1.38325,
         "bus": "voice",
         "variantId": "kettle-knight-skill-1-1.flac",
         "processedVoice": true
@@ -7285,7 +7281,7 @@
     "voice.kettle-knight.skill.enemy:kettle-knight": [
       {
         "pack": "callout-kettle-knight",
-        "start": 1.307875,
+        "start": 1.40325,
         "duration": 1.3959583333333334,
         "bus": "voice",
         "variantId": "kettle-knight-skill-2-1.flac",
@@ -7295,7 +7291,7 @@
     "voice.kettle-knight.ult.charge": [
       {
         "pack": "callout-kettle-knight",
-        "start": 2.7238333333333333,
+        "start": 2.8192083333333335,
         "duration": 1.6710416666666668,
         "bus": "voice",
         "variantId": "kettle-knight-charge-1.flac",
@@ -7303,7 +7299,7 @@
       },
       {
         "pack": "callout-kettle-knight",
-        "start": 4.414875,
+        "start": 4.51025,
         "duration": 1.66275,
         "bus": "voice",
         "variantId": "kettle-knight-charge-2.flac",
@@ -7313,7 +7309,7 @@
     "voice.kettle-knight.ult.release": [
       {
         "pack": "callout-kettle-knight",
-        "start": 6.097625,
+        "start": 6.193,
         "duration": 1.43975,
         "bus": "voice",
         "variantId": "kettle-knight-release-1.flac",
@@ -7321,7 +7317,7 @@
       },
       {
         "pack": "callout-kettle-knight",
-        "start": 7.557375,
+        "start": 7.65275,
         "duration": 1.6139166666666667,
         "bus": "voice",
         "variantId": "kettle-knight-release-2.flac",
@@ -7331,7 +7327,7 @@
     "voice.yarn-giant.skill.enemy:yarn-giant:basic": [
       {
         "pack": "callout-yarn-giant",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3024583333333333,
         "bus": "voice",
         "variantId": "yarn-giant-skill-1-1.flac",
@@ -7387,7 +7383,7 @@
     "voice.binding-thread.skill.enemy:binding-thread:basic": [
       {
         "pack": "callout-binding-thread",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.2564583333333332,
         "bus": "voice",
         "variantId": "binding-thread-skill-1-1.flac",
@@ -7443,8 +7439,8 @@
     "voice.practice-cushion.skill.enemy:practice-cushion:basic": [
       {
         "pack": "callout-practice-cushion",
-        "start": 0.0,
-        "duration": 1.25975,
+        "start": 0,
+        "duration": 1.4323333333333332,
         "bus": "voice",
         "variantId": "practice-cushion-skill-1-1.flac",
         "processedVoice": true
@@ -7453,7 +7449,7 @@
     "voice.practice-cushion.skill.enemy:practice-cushion": [
       {
         "pack": "callout-practice-cushion",
-        "start": 1.27975,
+        "start": 1.4523333333333333,
         "duration": 1.2540833333333334,
         "bus": "voice",
         "variantId": "practice-cushion-skill-2-1.flac",
@@ -7463,7 +7459,7 @@
     "voice.practice-cushion.ult.charge": [
       {
         "pack": "callout-practice-cushion",
-        "start": 2.5538333333333334,
+        "start": 2.7264166666666667,
         "duration": 1.4645416666666666,
         "bus": "voice",
         "variantId": "practice-cushion-charge-1.flac",
@@ -7471,7 +7467,7 @@
       },
       {
         "pack": "callout-practice-cushion",
-        "start": 4.038375,
+        "start": 4.210958333333333,
         "duration": 1.463875,
         "bus": "voice",
         "variantId": "practice-cushion-charge-2.flac",
@@ -7481,7 +7477,7 @@
     "voice.practice-cushion.ult.release": [
       {
         "pack": "callout-practice-cushion",
-        "start": 5.52225,
+        "start": 5.694833333333333,
         "duration": 1.3227916666666666,
         "bus": "voice",
         "variantId": "practice-cushion-release-1.flac",
@@ -7489,7 +7485,7 @@
       },
       {
         "pack": "callout-practice-cushion",
-        "start": 6.8650416666666665,
+        "start": 7.037625,
         "duration": 1.3836666666666666,
         "bus": "voice",
         "variantId": "practice-cushion-release-2.flac",
@@ -7499,7 +7495,7 @@
     "voice.pollen-scout.skill.enemy:pollen-scout:basic": [
       {
         "pack": "callout-pollen-scout",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3397083333333333,
         "bus": "voice",
         "variantId": "pollen-scout-skill-1-1.flac",
@@ -7555,7 +7551,7 @@
     "voice.rain-spool.skill.enemy:rain-spool:basic": [
       {
         "pack": "callout-rain-spool",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3610416666666667,
         "bus": "voice",
         "variantId": "rain-spool-skill-1-1.flac",
@@ -7566,7 +7562,7 @@
       {
         "pack": "callout-rain-spool",
         "start": 1.3810416666666667,
-        "duration": 1.6454166666666667,
+        "duration": 1.435,
         "bus": "voice",
         "variantId": "rain-spool-skill-2-1.flac",
         "processedVoice": true
@@ -7575,7 +7571,7 @@
     "voice.rain-spool.ult.charge": [
       {
         "pack": "callout-rain-spool",
-        "start": 3.0464583333333333,
+        "start": 2.8360416666666666,
         "duration": 1.1676666666666666,
         "bus": "voice",
         "variantId": "rain-spool-charge-1.flac",
@@ -7583,7 +7579,7 @@
       },
       {
         "pack": "callout-rain-spool",
-        "start": 4.234125,
+        "start": 4.023708333333333,
         "duration": 1.1256666666666666,
         "bus": "voice",
         "variantId": "rain-spool-charge-2.flac",
@@ -7593,7 +7589,7 @@
     "voice.rain-spool.ult.release": [
       {
         "pack": "callout-rain-spool",
-        "start": 5.379791666666667,
+        "start": 5.169375,
         "duration": 1.4687083333333333,
         "bus": "voice",
         "variantId": "rain-spool-release-1.flac",
@@ -7601,7 +7597,7 @@
       },
       {
         "pack": "callout-rain-spool",
-        "start": 6.8685,
+        "start": 6.658083333333333,
         "duration": 1.7203333333333333,
         "bus": "voice",
         "variantId": "rain-spool-release-2.flac",
@@ -7611,7 +7607,7 @@
     "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic": [
       {
         "pack": "callout-crumb-sentinel",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3384166666666666,
         "bus": "voice",
         "variantId": "crumb-sentinel-skill-1-1.flac",
@@ -7622,7 +7618,7 @@
       {
         "pack": "callout-crumb-sentinel",
         "start": 1.3584166666666666,
-        "duration": 1.3607916666666666,
+        "duration": 1.5271666666666666,
         "bus": "voice",
         "variantId": "crumb-sentinel-skill-2-1.flac",
         "processedVoice": true
@@ -7631,7 +7627,7 @@
     "voice.crumb-sentinel.ult.charge": [
       {
         "pack": "callout-crumb-sentinel",
-        "start": 2.7392083333333335,
+        "start": 2.9055833333333334,
         "duration": 1.5769583333333332,
         "bus": "voice",
         "variantId": "crumb-sentinel-charge-1.flac",
@@ -7639,7 +7635,7 @@
       },
       {
         "pack": "callout-crumb-sentinel",
-        "start": 4.336166666666666,
+        "start": 4.502541666666667,
         "duration": 1.582625,
         "bus": "voice",
         "variantId": "crumb-sentinel-charge-2.flac",
@@ -7649,7 +7645,7 @@
     "voice.crumb-sentinel.ult.release": [
       {
         "pack": "callout-crumb-sentinel",
-        "start": 5.938791666666667,
+        "start": 6.105166666666666,
         "duration": 1.4309583333333333,
         "bus": "voice",
         "variantId": "crumb-sentinel-release-1.flac",
@@ -7657,7 +7653,7 @@
       },
       {
         "pack": "callout-crumb-sentinel",
-        "start": 7.38975,
+        "start": 7.556125,
         "duration": 1.3973333333333333,
         "bus": "voice",
         "variantId": "crumb-sentinel-release-2.flac",
@@ -7667,7 +7663,7 @@
     "voice.pantry-crown.skill.enemy:pantry-crown:basic": [
       {
         "pack": "callout-pantry-crown",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.4507916666666667,
         "bus": "voice",
         "variantId": "pantry-crown-skill-1-1.flac",
@@ -8164,7 +8160,7 @@
     "voice.guide.idle": [
       {
         "pack": "menu-voices",
-        "start": 0.0,
+        "start": 0,
         "duration": 1.3817083333333333,
         "bus": "voice",
         "processedVoice": true,
@@ -8234,7 +8230,7 @@
           "variants": [
             {
               "pack": "b2-hits",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.12,
               "bus": "sfx",
               "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient"
@@ -8269,7 +8265,7 @@
             },
             {
               "pack": "b2-hits",
-              "start": 1.0,
+              "start": 1,
               "duration": 0.12,
               "bus": "sfx",
               "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient"
@@ -9094,7 +9090,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -9144,7 +9140,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -9310,7 +9306,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -9691,7 +9687,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -9807,7 +9803,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -9857,7 +9853,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -10023,7 +10019,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -10404,7 +10400,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -10520,7 +10516,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -10570,7 +10566,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -10736,7 +10732,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -11117,7 +11113,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -11233,7 +11229,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -11283,7 +11279,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -11449,7 +11445,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -11830,7 +11826,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -11946,7 +11942,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -11996,7 +11992,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -12162,7 +12158,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -12543,7 +12539,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -12659,7 +12655,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -12709,7 +12705,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -12875,7 +12871,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -13256,7 +13252,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -13372,7 +13368,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -13422,7 +13418,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -13588,7 +13584,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -13969,7 +13965,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -14085,7 +14081,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -14135,7 +14131,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -14301,7 +14297,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -14682,7 +14678,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -14798,7 +14794,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -14848,7 +14844,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -15014,7 +15010,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -15395,7 +15391,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -15511,7 +15507,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -15561,7 +15557,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -15727,7 +15723,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -16108,7 +16104,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -16224,7 +16220,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -16274,7 +16270,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -16440,7 +16436,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -16821,7 +16817,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -16937,7 +16933,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -16987,7 +16983,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -17153,7 +17149,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -17534,7 +17530,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -17650,7 +17646,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -17700,7 +17696,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -17866,7 +17862,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -18247,7 +18243,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -18363,7 +18359,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -18413,7 +18409,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -18579,7 +18575,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -18960,7 +18956,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -19076,7 +19072,7 @@
           "variants": [
             {
               "pack": "b2-magic",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.3848125,
               "bus": "sfx",
               "variantId": "kenney:digital-audio:pepSound1:digital-audio/pepSound1.flac/body"
@@ -19126,7 +19122,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -19292,7 +19288,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -19673,7 +19669,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -19789,7 +19785,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "ui",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -19899,7 +19895,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "ui",
             "variantId": "ui.click/0"
@@ -22434,7 +22430,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -22549,7 +22545,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -22664,7 +22660,7 @@
           "variants": [
             {
               "pack": "b2-motion",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.34,
               "bus": "sfx",
               "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley"
@@ -22972,7 +22968,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -23082,7 +23078,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -26665,7 +26661,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -26775,7 +26771,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -27368,7 +27364,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -27478,7 +27474,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -27611,7 +27607,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -27721,7 +27717,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -27969,7 +27965,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -28079,7 +28075,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -28212,7 +28208,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -28322,7 +28318,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -29056,7 +29052,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -29166,7 +29162,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -29299,7 +29295,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -29409,7 +29405,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -29542,7 +29538,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -29652,7 +29648,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -29785,7 +29781,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -29895,7 +29891,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -30028,7 +30024,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -30138,7 +30134,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -30616,7 +30612,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -30726,7 +30722,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"
@@ -30859,7 +30855,7 @@
           "variants": [
             {
               "pack": "b2-ui",
-              "start": 0.0,
+              "start": 0,
               "duration": 0.0909375,
               "bus": "sfx",
               "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient"
@@ -30969,7 +30965,7 @@
         {
           "sample": {
             "pack": "b2-ui-baked",
-            "start": 0.0,
+            "start": 0,
             "duration": 0.0909375,
             "bus": "sfx",
             "variantId": "ui.click/0"

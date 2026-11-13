@@ -51,3 +51,7 @@ S5-A-VOICE-WINDOW is resolved on A18ea6e6e8: actual combined playback has zero i
 Request and same-session resolution: A owns original2–4-word replacements for charge syllables that fail slower speech, formant preservation and onset-aligned consonant trials. Authored in A apps/web/src/game/cardrpg/battle-v3/callouts.json. B reads that file for local probes; synthesis/metadata remain B-owned. No early merge. After accepted audio, refresh A voice-timing.json from measured B metadata and rerun interruption/parity gates.
 
 Q5 articulation 2026-11-13T17:44:47.699946+00:00: Clover charge take 2 still misses unprompted recognition after four new-phrase treatments (0.667; requirement 0.70). Request an original four-word phrase, "Watch the flowers bloom!", to preserve the nature action and resolve the indistinct opening. A owns the wording; B will remeasure both takes.
+
+- Q5 scene28: mild speech processing makes voice.cinnamon.ult.charge (Back!) and voice.biscuit.ult.release (Move as one!) ambiguous. Requested A-owned two-word rewrites Stay back! and Charge together!; applied on A as b27459d02. B will measure both variants and retain exact duration metadata.
+
+- Q5 codec guard found7 literal recognition misses (two are compound-word spelling, not lost meaning). A95ea0d843 contains clearer short alternatives for all7. B tests all9 takes dry and with the exact diagnostic codec/shelf. No source publication until identity/level checks pass.

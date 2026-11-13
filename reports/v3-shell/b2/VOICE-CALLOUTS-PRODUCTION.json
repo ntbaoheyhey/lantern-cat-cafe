@@ -6633,31 +6633,31 @@
           "skillId": "biscuit-4",
           "skillName": "Bakers procession",
           "cueId": "voice.biscuit.ult.release",
-          "text": "Move as one!",
+          "text": "Charge together!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
-          "sha256": "75c949c954b9204a84f8526031c4f43fdfc860b19bc25cce8fad9a9793508a23",
-          "integratedLufs": -16.05,
-          "truePeakDbTP": -4.52,
+          "sha256": "171b03b2e63605a6aa350db49515234d1e31b5b7cb1b0ef1cf7c06863e606dbb",
+          "integratedLufs": -15.98,
+          "truePeakDbTP": -3.83,
           "mfcc": [
-            137.90451572024986,
-            -48.04647043451543,
-            -31.40707457014521,
-            -13.44393955879475,
-            -17.68718770295969,
-            -10.789681477782732,
-            -6.909852925019966,
-            -10.325301952548214,
-            -10.163482478840283,
-            -7.56763266598536,
-            -2.9253618652453883,
-            1.6319589363468021,
-            -3.225631164837978
+            126.61355308414691,
+            -68.38480442448167,
+            -38.7463875278971,
+            -12.138506447809903,
+            -11.216678110213971,
+            -13.802002034552345,
+            -11.260648887736227,
+            -8.8252755358568,
+            -7.736986150545445,
+            -2.431427001165266,
+            -0.26389598767455114,
+            -0.1916036073381063,
+            -2.9447363601033074
           ],
-          "medianF0": 461.53846153846155,
-          "voicedFrames": 62,
-          "audibleFrames": 87,
+          "medianF0": 263.7362637362637,
+          "voicedFrames": 56,
+          "audibleFrames": 88,
           "production": {
             "profile": {
               "source": 763906,
@@ -6702,7 +6702,7 @@
             "settings": {
               "pitchWeight": 0.35,
               "filterWeight": 0,
-              "grainGain": 0.18,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "eq": {
                 "highpass": 850.0,
@@ -6711,55 +6711,57 @@
                 "lowSlope": 3.0,
                 "resonanceHz": 667.270990219774,
                 "resonanceDb": -1.5025016241921383
-              }
+              },
+              "paceMultiplier": 1.05,
+              "ttsTake": 0
             },
             "semitones": -4.004,
             "grains": [
               {
-                "syllable": "mo",
-                "vowel": "o",
-                "class": "nasal",
-                "consonantSource": "freesound:104374:consonants/104374-12.flac",
+                "syllable": "char",
+                "vowel": "a",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.48,
+                "sourceStartSeconds": 0.12,
                 "durationSeconds": 0.1862,
                 "contourSemitones": 0.39
               },
               {
-                "syllable": "ve",
+                "syllable": "ge",
                 "vowel": "e",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
+                "class": "plosive",
+                "consonantSource": "freesound:172067:consonants/172067-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
                 "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1862,
                 "contourSemitones": 0.78
               },
               {
-                "syllable": "as",
-                "vowel": "a",
+                "syllable": "to",
+                "vowel": "o",
                 "class": "plosive",
                 "consonantSource": "freesound:175678:consonants/175678-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.12,
+                "sourceStartSeconds": 0.48,
                 "durationSeconds": 0.1862,
                 "contourSemitones": 1.1700000000000002
               },
               {
-                "syllable": "o",
-                "vowel": "o",
+                "syllable": "get",
+                "vowel": "e",
                 "class": "plosive",
                 "consonantSource": "freesound:175678:consonants/175678-02.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.48,
+                "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1862,
                 "contourSemitones": 1.56
               },
               {
-                "syllable": "ne",
+                "syllable": "her",
                 "vowel": "e",
-                "class": "nasal",
-                "consonantSource": "freesound:104374:consonants/104374-16.flac",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
                 "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.24206000000000003,
@@ -6771,10 +6773,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/biscuit-release-1.json",
-            "sha256": "85cf54ee9c23bd872795ca706d5f85794cbca97de4330c69f8fb13f0fb949484"
+            "sha256": "5e12e37e9ff933dce716cbba3b216325f451fea4e0f1aafc705b039fc9487f14"
           },
           "wordAccuracy": 1.0,
-          "recognized": "Move as one."
+          "recognized": "Charge together!"
         },
         {
           "unitId": "biscuit",
@@ -6783,31 +6785,31 @@
           "skillId": "biscuit-4",
           "skillName": "Bakers procession",
           "cueId": "voice.biscuit.ult.release",
-          "text": "Move as one!",
+          "text": "Charge together!",
           "syncPointMs": 0,
           "take": 2,
           "path": "assets/audio-sources/b2/callouts/biscuit-release-2.flac",
-          "sha256": "d64888da08cb4f92188b364dc310bddab8cc15969c86422cb90e73d838bbb23a",
+          "sha256": "641d780ad4d474e39a1d5fe2bd2f10a6b0742efa3a18d87385db097c822e9f6c",
           "integratedLufs": -15.99,
-          "truePeakDbTP": -5.57,
+          "truePeakDbTP": -3.49,
           "mfcc": [
-            136.4470597052257,
-            -51.64070269693351,
-            -41.87729392756395,
-            -18.16406898617085,
-            -16.142674057459026,
-            -8.952698009479807,
-            -9.274746131990595,
-            -13.400389656958486,
-            -4.031645396532362,
-            0.6011337444523978,
-            -1.7900972363828072,
-            -4.76356351510588,
-            -1.7156995387631468
+            121.05325249490342,
+            -71.603336148229,
+            -42.217003596426395,
+            -16.75425402510644,
+            -17.0427333571924,
+            -17.70750094413179,
+            -10.672110231796943,
+            -7.222070141894551,
+            -2.315069606647408,
+            -1.0646079334381493,
+            -5.036033655890113,
+            -5.599001199915916,
+            -3.929443010649532
           ],
-          "medianF0": 228.57142857142858,
-          "voicedFrames": 56,
-          "audibleFrames": 85,
+          "medianF0": 347.82608695652175,
+          "voicedFrames": 59,
+          "audibleFrames": 83,
           "production": {
             "profile": {
               "source": 763906,
@@ -6852,7 +6854,7 @@
             "settings": {
               "pitchWeight": 0,
               "filterWeight": 0,
-              "grainGain": 0.12,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "eq": {
                 "highpass": 850.0,
@@ -6862,56 +6864,56 @@
                 "resonanceHz": 667.270990219774,
                 "resonanceDb": -1.5025016241921383
               },
-              "ttsTake": 2,
-              "paceMultiplier": 1.12
+              "ttsTake": 0,
+              "paceMultiplier": 1.05
             },
             "semitones": 0.175,
             "grains": [
               {
-                "syllable": "mo",
-                "vowel": "o",
-                "class": "nasal",
-                "consonantSource": "freesound:104374:consonants/104374-13.flac",
+                "syllable": "char",
+                "vowel": "a",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.48,
+                "sourceStartSeconds": 0.12,
                 "durationSeconds": 0.1938,
                 "contourSemitones": 0.39
               },
               {
-                "syllable": "ve",
+                "syllable": "ge",
                 "vowel": "e",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
+                "class": "plosive",
+                "consonantSource": "freesound:175678:consonants/175678-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
                 "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1938,
                 "contourSemitones": 0.78
               },
               {
-                "syllable": "as",
-                "vowel": "a",
+                "syllable": "to",
+                "vowel": "o",
                 "class": "plosive",
                 "consonantSource": "freesound:175678:consonants/175678-02.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.12,
+                "sourceStartSeconds": 0.48,
                 "durationSeconds": 0.1938,
                 "contourSemitones": 1.1700000000000002
               },
               {
-                "syllable": "o",
-                "vowel": "o",
+                "syllable": "get",
+                "vowel": "e",
                 "class": "plosive",
                 "consonantSource": "freesound:175678:consonants/175678-03.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
-                "sourceStartSeconds": 0.48,
+                "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1938,
                 "contourSemitones": 1.56
               },
               {
-                "syllable": "ne",
+                "syllable": "her",
                 "vowel": "e",
-                "class": "nasal",
-                "consonantSource": "freesound:104374:consonants/104374-17.flac",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:763906:cats/763906.flac",
                 "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.25194000000000005,
@@ -6923,10 +6925,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/biscuit-release-2.json",
-            "sha256": "e45d8233d3331bba756079014e91ddb3471b863dc4e3c5a25a3b6f794c2d81ec"
+            "sha256": "06134308fa9b934fadec84368594f303f1fa834d99490ef46dfb84b2fccb51df"
           },
           "wordAccuracy": 1.0,
-          "recognized": "Move as one."
+          "recognized": "charge together."
         }
       ]
     },
@@ -7983,31 +7985,31 @@
           "skillName": "Comfort cup",
           "slot": 2,
           "cueId": "voice.cinnamon.skill.cinnamon-2",
-          "text": "Take a sip!",
+          "text": "Drink up!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/cinnamon-skill-2-1.flac",
-          "sha256": "13238f2245b034fbe0030b4a75b0282c84be2a072c3f7ee02208464a0632c4f2",
-          "integratedLufs": -16.1,
-          "truePeakDbTP": -4.52,
+          "sha256": "f283cdaa23499b81d4fc445148b7599083f51932c0f79caf1f13e8c3b507fe7a",
+          "integratedLufs": -16.0,
+          "truePeakDbTP": -2.35,
           "mfcc": [
-            -27.127197344422186,
-            2.0826678793629916,
-            -5.0989910720235025,
-            -28.207259182581385,
-            -17.485774192429226,
-            -10.441559863083667,
-            -6.840182187005136,
-            1.1521145226605993,
-            -3.7650782511531444,
-            -6.055019359427805,
-            -0.6845758826421233,
-            -1.3540121572935655,
-            -4.277725805560112
+            18.282191077812637,
+            -23.586906105767824,
+            -13.56845337180206,
+            -31.628917816396736,
+            -4.1099900049940405,
+            -3.898131991949169,
+            -9.079581783298682,
+            -1.147385198853106,
+            -3.7782703081390747,
+            -0.817971718946872,
+            -7.042236074129871,
+            0.8140378735056691,
+            -5.532152366182321
           ],
-          "medianF0": 685.7142857142857,
-          "voicedFrames": 34,
-          "audibleFrames": 68,
+          "medianF0": 289.1566265060241,
+          "voicedFrames": 55,
+          "audibleFrames": 82,
           "production": {
             "profile": {
               "source": 756236,
@@ -8052,7 +8054,7 @@
             "settings": {
               "pitchWeight": 0.35,
               "filterWeight": 0,
-              "grainGain": 0.18,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "eq": {
                 "highpass": 850.0,
@@ -8061,47 +8063,39 @@
                 "lowSlope": 2.0,
                 "resonanceHz": 2835.582104725963,
                 "resonanceDb": -10.964882848618238
-              }
+              },
+              "paceMultiplier": 1.05,
+              "ttsTake": 0
             },
             "semitones": 3.9935,
             "grains": [
               {
-                "syllable": "ta",
-                "vowel": "a",
+                "syllable": "drin",
+                "vowel": "i",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-09.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
-                "sourceStartSeconds": 3.3,
+                "sourceStartSeconds": 6.0,
                 "durationSeconds": 0.196,
-                "contourSemitones": 0.48750000000000004
+                "contourSemitones": 0.65
               },
               {
-                "syllable": "ke",
-                "vowel": "e",
+                "syllable": "k",
+                "vowel": "u",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-10.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
-                "sourceStartSeconds": 3.42,
+                "sourceStartSeconds": 8.52,
                 "durationSeconds": 0.196,
-                "contourSemitones": 0.9750000000000001
+                "contourSemitones": 1.3
               },
               {
-                "syllable": "a",
-                "vowel": "a",
+                "syllable": "up",
+                "vowel": "u",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-11.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
-                "sourceStartSeconds": 3.3,
-                "durationSeconds": 0.196,
-                "contourSemitones": 1.4625000000000001
-              },
-              {
-                "syllable": "sip",
-                "vowel": "i",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
-                "vowelSource": "freesound:756236:cats/756236.flac",
-                "sourceStartSeconds": 6.0,
+                "sourceStartSeconds": 8.52,
                 "durationSeconds": 0.196,
                 "contourSemitones": 1.9500000000000002
               }
@@ -8111,10 +8105,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/cinnamon-skill-2-1.json",
-            "sha256": "b08a51af9f8495f9cede664d04d82e724372521907ce1098a852808226171a0f"
+            "sha256": "04677604f300f6643fabb9c278c9599c1e3b3b31742380f36669a26a997f0a0f"
           },
           "wordAccuracy": 1.0,
-          "recognized": "Take a sip."
+          "recognized": "Drink up."
         },
         {
           "unitId": "cinnamon",
@@ -8263,31 +8257,31 @@
           "skillId": "cinnamon-4",
           "skillName": "Second serving",
           "cueId": "voice.cinnamon.ult.charge",
-          "text": "Back!",
+          "text": "Stay back!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
-          "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6",
-          "integratedLufs": -16.06,
-          "truePeakDbTP": -2.62,
+          "sha256": "b27abb1ab6efcbc746d3699e784762e754cba26516c69ee4abcbe7bc08845bf0",
+          "integratedLufs": -16.01,
+          "truePeakDbTP": -3.89,
           "mfcc": [
-            4.988335368017967,
-            -24.040003643494327,
-            -9.787160803826762,
-            -16.009320745184773,
-            -7.320840837823462,
-            -10.348884098891888,
-            -8.292087801536274,
-            7.581273541171053,
-            1.8380021096069319,
-            -3.997310149156968,
-            -2.2894660887662277,
-            -1.9154242604509821,
-            -0.448140782367448
+            0.8091046520906859,
+            -10.524720169174074,
+            -7.943265102836039,
+            -19.10402904668559,
+            -13.009481068022984,
+            -6.977815071624819,
+            -9.480414111361972,
+            5.582172792434347,
+            -2.0195773930745027,
+            -5.9577310730233055,
+            -0.8213991559208006,
+            -4.744475622989135,
+            3.2843492730420087
           ],
-          "medianF0": 727.2727272727273,
-          "voicedFrames": 22,
-          "audibleFrames": 64,
+          "medianF0": 545.4545454545455,
+          "voicedFrames": 52,
+          "audibleFrames": 102,
           "production": {
             "profile": {
               "source": 756236,
@@ -8332,7 +8326,7 @@
             "settings": {
               "pitchWeight": 0.2,
               "filterWeight": 0,
-              "grainGain": 0.06,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "eq": {
                 "highpass": 850.0,
@@ -8343,25 +8337,35 @@
                 "resonanceDb": -10.964882848618238
               },
               "ttsTake": 0,
-              "paceMultiplier": 1.2
+              "paceMultiplier": 1.05
             },
             "semitones": 2.2070000000000003,
             "grains": [
               {
-                "syllable": "bac",
+                "syllable": "stay",
                 "vowel": "a",
-                "class": "plosive",
-                "consonantSource": "freesound:764351:consonants/764351-09.flac",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
                 "sourceStartSeconds": 3.3,
                 "durationSeconds": 0.196,
-                "contourSemitones": 0.9750000000000001
+                "contourSemitones": 0.65
+              },
+              {
+                "syllable": "bac",
+                "vowel": "a",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-10.flac",
+                "vowelSource": "freesound:756236:cats/756236.flac",
+                "sourceStartSeconds": 3.3,
+                "durationSeconds": 0.196,
+                "contourSemitones": 1.3
               },
               {
                 "syllable": "k",
                 "vowel": "u",
                 "class": "plosive",
-                "consonantSource": "freesound:764351:consonants/764351-10.flac",
+                "consonantSource": "freesound:764351:consonants/764351-11.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
                 "sourceStartSeconds": 8.52,
                 "durationSeconds": 0.2548,
@@ -8373,10 +8377,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/cinnamon-charge-1.json",
-            "sha256": "ef8af1b32ed78ec518b6d23b226f9f7abc09070b25c32cc33374a771702a79da"
+            "sha256": "3392cf02e8bbd691ea92fe641ea03b528a1149c32d8e5f27255fe837abb34921"
           },
           "wordAccuracy": 1.0,
-          "recognized": "Back."
+          "recognized": "Stay back."
         },
         {
           "unitId": "cinnamon",
@@ -8385,31 +8389,31 @@
           "skillId": "cinnamon-4",
           "skillName": "Second serving",
           "cueId": "voice.cinnamon.ult.charge",
-          "text": "Back!",
+          "text": "Stay back!",
           "syncPointMs": 0,
           "take": 2,
           "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
-          "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a",
-          "integratedLufs": -16.01,
-          "truePeakDbTP": -2.08,
+          "sha256": "4a068213813c011b6dcc2d54c39ad0270baa0a925f0a13c6b7583aa7e84dcbc6",
+          "integratedLufs": -15.99,
+          "truePeakDbTP": -2.82,
           "mfcc": [
-            10.494205237149494,
-            -26.892911191430226,
-            -12.2785861050877,
-            -16.83691750243255,
-            -4.0461618698298345,
-            -8.552022915709722,
-            -12.023803366413501,
-            -0.5665116817523778,
-            11.522909770024953,
-            -5.667897227534628,
-            1.6435840532679082,
-            -7.908351076808238,
-            2.034029707929686
+            4.004897025708625,
+            -9.369848698049886,
+            -6.340288603586962,
+            -16.30848607969349,
+            -9.614040012423164,
+            -11.01494695903381,
+            -8.907247197966747,
+            -4.085686341787743,
+            8.53111342244005,
+            -11.384918943289264,
+            3.9797529504224336,
+            -7.306413712691068,
+            -0.6910677725404799
           ],
           "medianF0": 827.5862068965517,
-          "voicedFrames": 25,
-          "audibleFrames": 65,
+          "voicedFrames": 43,
+          "audibleFrames": 91,
           "production": {
             "profile": {
               "source": 756236,
@@ -8454,7 +8458,7 @@
             "settings": {
               "pitchWeight": 0.2,
               "filterWeight": 0,
-              "grainGain": 0.06,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "eq": {
                 "highpass": 850.0,
@@ -8465,26 +8469,36 @@
                 "resonanceDb": -10.964882848618238
               },
               "ttsTake": 0,
-              "paceMultiplier": 1.18,
+              "paceMultiplier": 1.05,
               "preserveFormants": true
             },
             "semitones": 2.557,
             "grains": [
               {
-                "syllable": "bac",
+                "syllable": "stay",
                 "vowel": "a",
-                "class": "plosive",
-                "consonantSource": "freesound:764351:consonants/764351-10.flac",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
                 "sourceStartSeconds": 3.3,
                 "durationSeconds": 0.20400000000000001,
-                "contourSemitones": 0.9750000000000001
+                "contourSemitones": 0.65
+              },
+              {
+                "syllable": "bac",
+                "vowel": "a",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-11.flac",
+                "vowelSource": "freesound:756236:cats/756236.flac",
+                "sourceStartSeconds": 3.3,
+                "durationSeconds": 0.20400000000000001,
+                "contourSemitones": 1.3
               },
               {
                 "syllable": "k",
                 "vowel": "u",
                 "class": "plosive",
-                "consonantSource": "freesound:764351:consonants/764351-11.flac",
+                "consonantSource": "freesound:764351:consonants/764351-12.flac",
                 "vowelSource": "freesound:756236:cats/756236.flac",
                 "sourceStartSeconds": 8.52,
                 "durationSeconds": 0.2652,
@@ -8496,10 +8510,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/cinnamon-charge-2.json",
-            "sha256": "c417fd1d9e01ccfbca7407b7d9f49b0fe14619f1faadf42f920df9ef6d07c94b"
+            "sha256": "843e5c06ed134a59bc6b7416fc86a75cb4c136e4d267d586e696efb108378925"
           },
           "wordAccuracy": 1.0,
-          "recognized": "Back."
+          "recognized": "Stay back."
         },
         {
           "unitId": "cinnamon",
@@ -15883,31 +15897,31 @@
           "skillName": "Basic",
           "slot": 1,
           "cueId": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
-          "text": "Iron strike!",
+          "text": "Kettle strike!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
-          "sha256": "4cda51e1dda5c50fe3ba305416728936f6a94417371a16444a6bb885b531d84b",
+          "sha256": "d5e199b3c87c9c6825555bfa3a84a496b034eda2cec4badccda5efd622ff03e5",
           "integratedLufs": -16.0,
-          "truePeakDbTP": -5.14,
+          "truePeakDbTP": -4.25,
           "mfcc": [
-            41.83120358561234,
-            -14.17420841542527,
-            8.089918524726148,
-            -8.291109010813589,
-            6.0748675368093865,
-            -17.272067008464845,
-            4.016565204234993,
-            -11.185504320121252,
-            4.0084175248023275,
-            0.9572421627960875,
-            0.13842464348771852,
-            1.7873389690429176,
-            0.7941872795626901
+            40.46445969967797,
+            -10.65327157411482,
+            20.20635808547382,
+            -12.036109137355988,
+            4.589372847868111,
+            -11.782480477019968,
+            5.562893690527842,
+            -13.136068297515763,
+            4.032215805798637,
+            -0.5788291231339372,
+            1.2808877140622,
+            -0.06718347602227388,
+            0.7193756662883797
           ],
-          "medianF0": 275.86206896551727,
-          "voicedFrames": 54,
-          "audibleFrames": 97,
+          "medianF0": 170.2127659574468,
+          "voicedFrames": 35,
+          "audibleFrames": 92,
           "production": {
             "profile": {
               "source": 264507,
@@ -15952,28 +15966,30 @@
             "settings": {
               "pitchWeight": 0.65,
               "filterWeight": 0.25,
-              "grainGain": 0.32,
-              "tailSeconds": 0.2
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "paceMultiplier": 1.05,
+              "ttsTake": 0
             },
             "semitones": -3.8149999999999995,
             "grains": [
               {
-                "syllable": "i",
-                "vowel": "i",
+                "syllable": "ket",
+                "vowel": "e",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-11.flac",
                 "vowelSource": "freesound:264507:cats/264507.flac",
-                "sourceStartSeconds": 0.48,
+                "sourceStartSeconds": 0.36,
                 "durationSeconds": 0.147,
                 "contourSemitones": 0.48750000000000004
               },
               {
-                "syllable": "ron",
-                "vowel": "o",
-                "class": "liquid",
-                "consonantSource": "freesound:843435:consonants/843435-21.flac",
+                "syllable": "tle",
+                "vowel": "e",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-12.flac",
                 "vowelSource": "freesound:264507:cats/264507.flac",
-                "sourceStartSeconds": 0.6,
+                "sourceStartSeconds": 0.36,
                 "durationSeconds": 0.147,
                 "contourSemitones": 0.9750000000000001
               },
@@ -16003,10 +16019,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/kettle-knight-skill-1-1.json",
-            "sha256": "10d472e13f2ef023167e2627a056e0c731d8e400ad97a483fec9f936da68227e"
+            "sha256": "ac2672b553752be1dec8a6c1f32b70758386aa9e96297a7b08125397848ef270"
           },
-          "wordAccuracy": 0.5,
-          "recognized": "IAN STRIKE"
+          "wordAccuracy": 1.0,
+          "recognized": "Kettle strike."
         },
         {
           "unitId": "kettle-knight",
@@ -18192,31 +18208,31 @@
           "skillName": "Basic",
           "slot": 1,
           "cueId": "voice.practice-cushion.skill.enemy:practice-cushion:basic",
-          "text": "Soft bump!",
+          "text": "A gentle tap!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
-          "sha256": "ecfde712974d373be2805267f99903a63790cf059ee68090007a47bba86a4a88",
-          "integratedLufs": -15.98,
-          "truePeakDbTP": -4.0,
+          "sha256": "144e8feb07f11f1d14228b936eeda7ae069071550c2185eef742af451cc1faf1",
+          "integratedLufs": -16.0,
+          "truePeakDbTP": -2.91,
           "mfcc": [
-            42.289044664715064,
-            8.468267644642772,
-            0.8454711385733307,
-            -23.108021283195775,
-            -10.266440471160983,
-            1.35820491004582,
-            12.519776707490722,
-            -6.033699068129328,
-            3.7162710692585437,
-            -1.91264859395683,
-            4.323028543955135,
-            -9.362106940492193,
-            2.5648446433623557
+            60.17515798623886,
+            -7.035901507076358,
+            10.243716045142328,
+            -4.184997879099956,
+            -3.350723945028733,
+            -5.851111204818097,
+            -0.9047932696640095,
+            -3.1133226899173985,
+            6.776547894672801,
+            0.17058510888921535,
+            3.1439009502529323,
+            -4.943196180073799,
+            0.9460128686678109
           ],
-          "medianF0": 266.6666666666667,
-          "voicedFrames": 63,
-          "audibleFrames": 80,
+          "medianF0": 181.15529224108465,
+          "voicedFrames": 52,
+          "audibleFrames": 91,
           "production": {
             "profile": {
               "source": 110011,
@@ -18261,50 +18277,50 @@
             "settings": {
               "pitchWeight": 0.2,
               "filterWeight": 0.25,
-              "grainGain": 0.06,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
               "ttsTake": 0,
-              "paceMultiplier": 1.2
+              "paceMultiplier": 1.05
             },
             "semitones": -1.0150000000000001,
             "grains": [
               {
-                "syllable": "sof",
-                "vowel": "o",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
+                "syllable": "a",
+                "vowel": "a",
+                "class": "plosive",
+                "consonantSource": "freesound:175678:consonants/175678-02.flac",
                 "vowelSource": "freesound:110011:cats/110011.flac",
-                "sourceStartSeconds": 0.6,
+                "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1764,
                 "contourSemitones": 0.325
               },
               {
-                "syllable": "t",
-                "vowel": "u",
+                "syllable": "gen",
+                "vowel": "e",
                 "class": "plosive",
                 "consonantSource": "freesound:175678:consonants/175678-03.flac",
                 "vowelSource": "freesound:110011:cats/110011.flac",
-                "sourceStartSeconds": 0.72,
+                "sourceStartSeconds": 0.36,
                 "durationSeconds": 0.1764,
                 "contourSemitones": 0.65
               },
               {
-                "syllable": "bum",
-                "vowel": "u",
+                "syllable": "tle",
+                "vowel": "e",
                 "class": "plosive",
                 "consonantSource": "freesound:691910:consonants/691910-01.flac",
                 "vowelSource": "freesound:110011:cats/110011.flac",
-                "sourceStartSeconds": 0.72,
+                "sourceStartSeconds": 0.36,
                 "durationSeconds": 0.1764,
                 "contourSemitones": 0.9750000000000001
               },
               {
-                "syllable": "p",
-                "vowel": "u",
+                "syllable": "tap",
+                "vowel": "a",
                 "class": "plosive",
                 "consonantSource": "freesound:721074:consonants/721074-01.flac",
                 "vowelSource": "freesound:110011:cats/110011.flac",
-                "sourceStartSeconds": 0.72,
+                "sourceStartSeconds": 0.24,
                 "durationSeconds": 0.1764,
                 "contourSemitones": 1.3
               }
@@ -18314,10 +18330,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/practice-cushion-skill-1-1.json",
-            "sha256": "537a4e071beb163a1d7c88c1b5e7c83f0434f8d8e217ab63d9549280fa4bd6eb"
+            "sha256": "53724ce58a07e4b909d1204f214cb10eb88d6d353f3f7a9b80c3fc2bb7180fcf"
           },
-          "wordAccuracy": 0.5,
-          "recognized": "A soft bump."
+          "wordAccuracy": 1.0,
+          "recognized": "A gentle tap."
         },
         {
           "unitId": "practice-cushion",
@@ -19944,31 +19960,31 @@
           "skillName": "storm",
           "slot": 2,
           "cueId": "voice.rain-spool.skill.enemy:rain-spool",
-          "text": "Cloud burst!",
+          "text": "Rain falls!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/rain-spool-skill-2-1.flac",
-          "sha256": "c5a1b46f0d3b22f0a734c94a39a53f1582da324d10c68058320b255ce2710735",
-          "integratedLufs": -16.0,
-          "truePeakDbTP": -4.92,
+          "sha256": "0a7a5733da90b943fd45d205ec1a5626120b15adf4e3f4e4ccabeaf59a8dbe2a",
+          "integratedLufs": -15.98,
+          "truePeakDbTP": -4.0,
           "mfcc": [
-            42.0958406054841,
-            7.624523848839473,
-            -2.7456422463728676,
-            -11.055549824494888,
-            -0.4982886762815791,
-            -0.6698846013441234,
-            -0.5566651173748461,
-            -9.456901452860945,
-            5.607627090481246,
-            1.2415880903135526,
-            4.083736732003213,
-            -4.269006819116328,
-            2.42814808125421
+            38.044741582207116,
+            19.778631630002927,
+            12.647014140576237,
+            -7.93780358488683,
+            -13.660185479501637,
+            -4.861276909393692,
+            -4.883088481310463,
+            -3.936101467161785,
+            1.9051854491870697,
+            -1.6167265276265936,
+            4.011143174612818,
+            -3.251594367428553,
+            1.9592474277882554
           ],
-          "medianF0": 203.38983050847457,
-          "voicedFrames": 67,
-          "audibleFrames": 126,
+          "medianF0": 473.5009671179884,
+          "voicedFrames": 60,
+          "audibleFrames": 107,
           "production": {
             "profile": {
               "source": 668821,
@@ -20013,38 +20029,38 @@
             "settings": {
               "pitchWeight": 0,
               "filterWeight": 0.25,
-              "grainGain": 0.12,
+              "grainGain": 0.08,
               "tailSeconds": 0.2,
-              "ttsTake": 2,
-              "paceMultiplier": 1.12
+              "ttsTake": 0,
+              "paceMultiplier": 1.05
             },
             "semitones": -0.175,
             "grains": [
               {
-                "syllable": "cloud",
-                "vowel": "o",
-                "class": "plosive",
-                "consonantSource": "freesound:175678:consonants/175678-02.flac",
+                "syllable": "rain",
+                "vowel": "a",
+                "class": "liquid",
+                "consonantSource": "freesound:843435:consonants/843435-21.flac",
                 "vowelSource": "freesound:668821:cats/668821.flac",
-                "sourceStartSeconds": 0.54,
+                "sourceStartSeconds": 0.12,
                 "durationSeconds": 0.22540000000000002,
                 "contourSemitones": 0.43333333333333335
               },
               {
-                "syllable": "bur",
-                "vowel": "u",
-                "class": "plosive",
-                "consonantSource": "freesound:175678:consonants/175678-03.flac",
+                "syllable": "fal",
+                "vowel": "a",
+                "class": "fricative",
+                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:668821:cats/668821.flac",
-                "sourceStartSeconds": 0.66,
+                "sourceStartSeconds": 0.12,
                 "durationSeconds": 0.22540000000000002,
                 "contourSemitones": 0.8666666666666667
               },
               {
-                "syllable": "st",
+                "syllable": "ls",
                 "vowel": "u",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
+                "class": "liquid",
+                "consonantSource": "freesound:843435:consonants/843435-23.flac",
                 "vowelSource": "freesound:668821:cats/668821.flac",
                 "sourceStartSeconds": 0.66,
                 "durationSeconds": 0.22540000000000002,
@@ -20056,10 +20072,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/rain-spool-skill-2-1.json",
-            "sha256": "eafcc5175a8a657297a5549a32470c7af46ba47cdead01756c3e17af8b490368"
+            "sha256": "db3d97d987d81e214cc4a60403bf8e1636d289f968631091d650575593255b2f"
           },
-          "wordAccuracy": 0.5,
-          "recognized": "Flour burst."
+          "wordAccuracy": 1.0,
+          "recognized": "Rain falls."
         },
         {
           "unitId": "rain-spool",
@@ -20699,31 +20715,31 @@
           "skillName": "bomb",
           "slot": 2,
           "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
-          "text": "Sugar burst!",
+          "text": "Sweet blast!",
           "syncPointMs": 0,
           "take": 1,
           "path": "assets/audio-sources/b2/callouts/crumb-sentinel-skill-2-1.flac",
-          "sha256": "f44840690146eb43a9818d587de526b3200c45cd893e5d79795bacd32422e3df",
-          "integratedLufs": -16.0,
-          "truePeakDbTP": -4.93,
+          "sha256": "49bc6e671714812ffe189c12b4baad2ade0ca2154245fd7a421ec1b2c1b701de",
+          "integratedLufs": -15.99,
+          "truePeakDbTP": -4.29,
           "mfcc": [
-            34.98832982269244,
-            4.606416180233443,
-            9.161169913460617,
-            -14.42933210765631,
-            1.6423079217266563,
-            -5.480231746146044,
-            1.0969666829351803,
-            -13.477304281494783,
-            2.2937151356452037,
-            0.15793991483107753,
-            6.23455865762066,
-            -0.025173792419530716,
-            -1.1452348207570626
+            19.6760403753873,
+            2.7920544546310504,
+            18.41718732814062,
+            -11.907712340568777,
+            3.8195728545061667,
+            -9.453344191141438,
+            7.859033295212084,
+            -12.296785286483434,
+            4.5075318166392595,
+            -1.265456940219491,
+            4.9403769395275345,
+            -3.2261124115556634,
+            -1.4189152335015487
           ],
-          "medianF0": 234.1964965727342,
-          "voicedFrames": 60,
-          "audibleFrames": 106,
+          "medianF0": 165.51724137931035,
+          "voicedFrames": 57,
+          "audibleFrames": 111,
           "production": {
             "profile": {
               "source": 656249,
@@ -20768,46 +20784,38 @@
             "settings": {
               "pitchWeight": 0.65,
               "filterWeight": 0.25,
-              "grainGain": 0.32,
-              "tailSeconds": 0.2
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "paceMultiplier": 1.05,
+              "ttsTake": 0
             },
             "semitones": -1.9950000000000006,
             "grains": [
               {
-                "syllable": "su",
-                "vowel": "u",
+                "syllable": "sweet",
+                "vowel": "e",
                 "class": "fricative",
                 "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:656249:cats/656249.flac",
-                "sourceStartSeconds": 0.96,
+                "sourceStartSeconds": 0.54,
                 "durationSeconds": 0.1666,
-                "contourSemitones": 0.48750000000000004
+                "contourSemitones": 0.65
               },
               {
-                "syllable": "gar",
+                "syllable": "blas",
                 "vowel": "a",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-13.flac",
                 "vowelSource": "freesound:656249:cats/656249.flac",
                 "sourceStartSeconds": 0.42,
                 "durationSeconds": 0.1666,
-                "contourSemitones": 0.9750000000000001
+                "contourSemitones": 1.3
               },
               {
-                "syllable": "bur",
+                "syllable": "t",
                 "vowel": "u",
                 "class": "plosive",
                 "consonantSource": "freesound:764351:consonants/764351-14.flac",
-                "vowelSource": "freesound:656249:cats/656249.flac",
-                "sourceStartSeconds": 0.96,
-                "durationSeconds": 0.1666,
-                "contourSemitones": 1.4625000000000001
-              },
-              {
-                "syllable": "st",
-                "vowel": "u",
-                "class": "fricative",
-                "consonantSource": "freesound:691913:consonants/691913-01.flac",
                 "vowelSource": "freesound:656249:cats/656249.flac",
                 "sourceStartSeconds": 0.96,
                 "durationSeconds": 0.1666,
@@ -20819,10 +20827,10 @@
           },
           "recogniserLog": {
             "path": "reports/v3-shell/b2/recognizer/crumb-sentinel-skill-2-1.json",
-            "sha256": "6246248e3296d0aad38631e68c112b6fabc8a644de8f53334ad4849b2d0a29bd"
+            "sha256": "2a7a4a0ecf8e497eb92c31289bbc29488b66aec7bd601b812ea768aa4cd8c8b8"
           },
-          "wordAccuracy": 0.5,
-          "recognized": "shoulder burst."
+          "wordAccuracy": 1.0,
+          "recognized": "Sweet blast."
         },
         {
           "unitId": "crumb-sentinel",
@@ -22305,7 +22313,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-mochi.webm",
-      "sha256": "f44899990d59ef18575f05fbe6f9a890b06b5af3c55c7a2fd1be10af2005b2c0",
+      "sha256": "24bee00f9980058c0dd5af0778652c80d3002fccc41c49523b6144057eede2ab",
       "integratedLufs": -16.43,
       "truePeakDbTP": -1.81,
       "spriteGainDb": 0
@@ -22361,7 +22369,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-soot.webm",
-      "sha256": "4884a24de5515c3be47cb362bab902772de9e7938cfc3c9238ab32c89fc4d3d5",
+      "sha256": "ad2cf423723eda42123f0f3c30f031efe8c3d46d324d9a0a8499b7929d45f6ce",
       "integratedLufs": -16.51,
       "truePeakDbTP": -2.42,
       "spriteGainDb": 0
@@ -22417,7 +22425,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-clover.webm",
-      "sha256": "ba214c1dc12df20791cfff7b4e0a77a312465b7c5a3dba1116c528140eed5d94",
+      "sha256": "d7e2a77880ebd9576e871184a18e9a2cf16601dc953d3bb35f5b6850e8dcab82",
       "integratedLufs": -16.49,
       "truePeakDbTP": -2.08,
       "spriteGainDb": 0
@@ -22473,7 +22481,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-panko.webm",
-      "sha256": "9e61d82ee8b59917b2fefd4f85a4868ab8e5adf4d9d1acf0f11c4cbdfc7731d5",
+      "sha256": "a8f34b27f606cd00b8d43d41e4870a198d8be46d508f99471b2d09c37e21e653",
       "integratedLufs": -16.35,
       "truePeakDbTP": -2.05,
       "spriteGainDb": 0
@@ -22529,7 +22537,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-mallow.webm",
-      "sha256": "27ebc4e4d65081cb30859892f9e5a52662611675bb94cbe8db574b87e4aab817",
+      "sha256": "e5ca05ec40e0388c71d75c5d51ffd3ebd1e1232a59d15ce474a222f883e17c70",
       "integratedLufs": -16.67,
       "truePeakDbTP": -3.31,
       "spriteGainDb": 0
@@ -22585,7 +22593,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-sorrel.webm",
-      "sha256": "2aa88207bb2183f3568e2a71e32b76c0c73d1eab3888383c494751299a9359b4",
+      "sha256": "ad4d08ee9135c6e498e914c8e4279390a50e8ba6eacaa3b3daa1ccc2bcf3bf54",
       "integratedLufs": -16.35,
       "truePeakDbTP": -4.55,
       "spriteGainDb": 0
@@ -22629,27 +22637,27 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
-      "sha256": "75c949c954b9204a84f8526031c4f43fdfc860b19bc25cce8fad9a9793508a23",
-      "integratedLufs": -16.05,
-      "truePeakDbTP": -4.52
+      "sha256": "171b03b2e63605a6aa350db49515234d1e31b5b7cb1b0ef1cf7c06863e606dbb",
+      "integratedLufs": -15.98,
+      "truePeakDbTP": -3.83
     },
     {
       "path": "assets/audio-sources/b2/callouts/biscuit-release-2.flac",
-      "sha256": "d64888da08cb4f92188b364dc310bddab8cc15969c86422cb90e73d838bbb23a",
+      "sha256": "641d780ad4d474e39a1d5fe2bd2f10a6b0742efa3a18d87385db097c822e9f6c",
       "integratedLufs": -15.99,
-      "truePeakDbTP": -5.57
+      "truePeakDbTP": -3.49
     },
     {
       "path": "apps/web/public/audio/callout-biscuit.webm",
-      "sha256": "a0df3b9ba600805a2634065593961f2e040f618a8cc3eb1100746223c5a27101",
-      "integratedLufs": -16.47,
+      "sha256": "d9f552131c3509f52f829d3b2aff934020f98b80f63f399ab75e1347ed979e73",
+      "integratedLufs": -16.39,
       "truePeakDbTP": -3.02,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-biscuit.mp3",
-      "sha256": "7e423b8906ca1ca89f77e028293b6fe41b77477df591068b25071e2e2fb62f30",
-      "integratedLufs": -16.91,
+      "sha256": "4810432c82f84d972cd7c07252520d73dc19fe90ff61e44e99b63bec680fffe1",
+      "integratedLufs": -16.84,
       "truePeakDbTP": -3.5,
       "spriteGainDb": 0
     },
@@ -22697,7 +22705,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-inkcap.webm",
-      "sha256": "c9732bc58348ba38e38d53500795f343e8cc80428669f54eb1def5b286a68631",
+      "sha256": "0837fe6dbe84fd071b28edc5de656f2a6f87f739e7c95c25b1bd72d2c684b7e0",
       "integratedLufs": -16.57,
       "truePeakDbTP": -3.35,
       "spriteGainDb": 0
@@ -22717,9 +22725,9 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-skill-2-1.flac",
-      "sha256": "13238f2245b034fbe0030b4a75b0282c84be2a072c3f7ee02208464a0632c4f2",
-      "integratedLufs": -16.1,
-      "truePeakDbTP": -4.52
+      "sha256": "f283cdaa23499b81d4fc445148b7599083f51932c0f79caf1f13e8c3b507fe7a",
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -2.35
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-skill-3-1.flac",
@@ -22729,15 +22737,15 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
-      "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6",
-      "integratedLufs": -16.06,
-      "truePeakDbTP": -2.62
+      "sha256": "b27abb1ab6efcbc746d3699e784762e754cba26516c69ee4abcbe7bc08845bf0",
+      "integratedLufs": -16.01,
+      "truePeakDbTP": -3.89
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
-      "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a",
-      "integratedLufs": -16.01,
-      "truePeakDbTP": -2.08
+      "sha256": "4a068213813c011b6dcc2d54c39ad0270baa0a925f0a13c6b7583aa7e84dcbc6",
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -2.82
     },
     {
       "path": "assets/audio-sources/b2/callouts/cinnamon-release-1.flac",
@@ -22753,16 +22761,16 @@
     },
     {
       "path": "apps/web/public/audio/callout-cinnamon.webm",
-      "sha256": "fd29aa6c36bcfb1849165cb383ec74d006c13454bdb4ef7145891df836da437b",
-      "integratedLufs": -16.47,
-      "truePeakDbTP": -1.97,
+      "sha256": "4aa396f2e6e67b160f91a41762837885ec92725d45d441e9368ca0105f7edcd2",
+      "integratedLufs": -16.34,
+      "truePeakDbTP": -2.39,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-cinnamon.mp3",
-      "sha256": "a5a67ef62cb360a5ab52a9c42ab5475725a0ef52fc2982f2b7362223dc1544ac",
-      "integratedLufs": -16.86,
-      "truePeakDbTP": -3.01,
+      "sha256": "01695290ea45bf841038bae3b2b880e122ff7badcf831af7ffea4ae1985b4591",
+      "integratedLufs": -16.74,
+      "truePeakDbTP": -2.72,
       "spriteGainDb": 0
     },
     {
@@ -22809,7 +22817,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-brioche.webm",
-      "sha256": "78219a2328835fd9ac11555f5ab2be5997bc86939beee810dab3bf3e8d7bb55c",
+      "sha256": "b86b773db93a8e242d88b7ebbac1dbe5536f750cb7f06c9c8766e8342131720b",
       "integratedLufs": -16.42,
       "truePeakDbTP": -3.39,
       "spriteGainDb": 0
@@ -22865,7 +22873,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-velvet.webm",
-      "sha256": "b64089d25f4fd92d508428516869fa58ec41894094b1fd9c06379eb78bfeed30",
+      "sha256": "b2e78f01fbd7d448bf27eca3e0aba765500425723aa69453b6b022e2d94c4812",
       "integratedLufs": -16.36,
       "truePeakDbTP": -2.07,
       "spriteGainDb": 0
@@ -22921,7 +22929,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-marigold.webm",
-      "sha256": "8ff111e48f4eb435ace6656b9d287075cc1196ac86de80ed8c4d950645efdfd2",
+      "sha256": "5432a6bf6dd1bae07fcd66b9236395e4f7671f2bd2db1992e8a8a2a2cdfc170f",
       "integratedLufs": -16.51,
       "truePeakDbTP": -3.29,
       "spriteGainDb": 0
@@ -22971,7 +22979,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-button-guard.webm",
-      "sha256": "0765400f195ba5b2f25d1aef5a442e894ed155f01287edc638f6ba1a064ffcbc",
+      "sha256": "41da5a22e742fdedd227dad2276cb8040fdeddcd60e9553bdb24f6f25563b9aa",
       "integratedLufs": -16.42,
       "truePeakDbTP": -2.7,
       "spriteGainDb": 0
@@ -23021,7 +23029,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-sock-skipper.webm",
-      "sha256": "1a68d0b9e88c8380b327732eec293e951a4d19c3f2282aefb29e0ac9e2771d4a",
+      "sha256": "751520fb78dde40d2593f416a5367e492ffd43d095af9688e973828e3306b411",
       "integratedLufs": -17.0,
       "truePeakDbTP": -3.05,
       "spriteGainDb": 0
@@ -23071,7 +23079,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-spool-ram.webm",
-      "sha256": "f228bc7cd7041f4a0eab83ba141e16fe39ac816a8700444f0ae8a9edbbd9b090",
+      "sha256": "13ef450711c6fd80a925e78ea61f9fa249d83fd3ce63a603790e9277b95a0ce6",
       "integratedLufs": -16.73,
       "truePeakDbTP": -1.42,
       "spriteGainDb": 0
@@ -23121,7 +23129,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-needle-moth.webm",
-      "sha256": "fba3173862faa9c74877a49cca01972a09447580d40adde5869d08b0af662080",
+      "sha256": "c262162cf5debca5810339c8299381e867534904c737e4a774329990f24ffb94",
       "integratedLufs": -16.18,
       "truePeakDbTP": -3.4,
       "spriteGainDb": 0
@@ -23171,7 +23179,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-teacup-healer.webm",
-      "sha256": "0751bfb5f2903dd10aa7d2e9afd7dcfde5384c9740e5ab50e37c2a2cc902d976",
+      "sha256": "2fa2b79dd176fcc551b4adb3904e77625cceaa5804b8a87301495c2634d2fa92",
       "integratedLufs": -16.55,
       "truePeakDbTP": -1.04,
       "spriteGainDb": 0
@@ -23185,9 +23193,9 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
-      "sha256": "4cda51e1dda5c50fe3ba305416728936f6a94417371a16444a6bb885b531d84b",
+      "sha256": "d5e199b3c87c9c6825555bfa3a84a496b034eda2cec4badccda5efd622ff03e5",
       "integratedLufs": -16.0,
-      "truePeakDbTP": -5.14
+      "truePeakDbTP": -4.25
     },
     {
       "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-2-1.flac",
@@ -23221,16 +23229,16 @@
     },
     {
       "path": "apps/web/public/audio/callout-kettle-knight.webm",
-      "sha256": "182355f3ba064f6c5483167accb56489d0b92939cb76f32713eec369a0f47388",
-      "integratedLufs": -16.51,
-      "truePeakDbTP": -4.91,
+      "sha256": "449ca1d594a7df73a6bf141408060f69f37cc5604b40eef93e604981c413b2ba",
+      "integratedLufs": -16.43,
+      "truePeakDbTP": -3.54,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-kettle-knight.mp3",
-      "sha256": "e4afe3483fa2e3a31f4204fde3006a20d896bc2d745a25fb49fea2d3490984e0",
-      "integratedLufs": -16.96,
-      "truePeakDbTP": -5.02,
+      "sha256": "c87d55ef21401b339a9df54a0897689d67ec6c8fe1c1c8e9715397bdad362834",
+      "integratedLufs": -16.82,
+      "truePeakDbTP": -3.58,
       "spriteGainDb": 0
     },
     {
@@ -23271,7 +23279,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-yarn-giant.webm",
-      "sha256": "de0262dbfc85a4469f2410e44088a37e7cbaaa9ed14ce2c4f8df89298e5e0d96",
+      "sha256": "71a23c2ce20a746dcc72c622fafd2b458977b4d2ba9fb1a6aa64e067edce905d",
       "integratedLufs": -16.82,
       "truePeakDbTP": -3.01,
       "spriteGainDb": 0
@@ -23321,7 +23329,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-binding-thread.webm",
-      "sha256": "63abb211514135883dfe8e833cd28b7ca72f54d95294d361152a3ada28898271",
+      "sha256": "16e417a280ce85c10b19f6cfa2f4fd604cef38fcb43330f22dc53149c07da985",
       "integratedLufs": -16.39,
       "truePeakDbTP": -1.42,
       "spriteGainDb": 0
@@ -23335,9 +23343,9 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
-      "sha256": "ecfde712974d373be2805267f99903a63790cf059ee68090007a47bba86a4a88",
-      "integratedLufs": -15.98,
-      "truePeakDbTP": -4.0
+      "sha256": "144e8feb07f11f1d14228b936eeda7ae069071550c2185eef742af451cc1faf1",
+      "integratedLufs": -16.0,
+      "truePeakDbTP": -2.91
     },
     {
       "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-2-1.flac",
@@ -23371,17 +23379,17 @@
     },
     {
       "path": "apps/web/public/audio/callout-practice-cushion.webm",
-      "sha256": "e185bdf1651a937aeff5beaf56f955da8619804ee0763d8a49d0dc7fc95f40cf",
-      "integratedLufs": -16.53,
-      "truePeakDbTP": -3.16,
+      "sha256": "16e91ef33cec48b4922c0411251bc3a5f227d455753a81ee59b9000fcbfd7a44",
+      "integratedLufs": -16.6,
+      "truePeakDbTP": -2.66,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-practice-cushion.mp3",
-      "sha256": "f2f57313d1454cc9953158e5bb50ef50d4a93916c348c6e3ecb6f8594dbc7112",
-      "integratedLufs": -16.96,
-      "truePeakDbTP": -3.45,
-      "spriteGainDb": 0
+      "sha256": "acb7b430ee7871a5ef6210d86fc6c4aacb89bfc2ecb7cfcb74c490fa00df80e2",
+      "integratedLufs": -16.72,
+      "truePeakDbTP": -2.9,
+      "spriteGainDb": 0.33999999999999986
     },
     {
       "path": "assets/audio-sources/b2/callouts/pollen-scout-skill-1-1.flac",
@@ -23421,7 +23429,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-pollen-scout.webm",
-      "sha256": "f088a90347dff99344e1ac594ebb31492ee3acda1081a6e691b8adaf20878df6",
+      "sha256": "cf75dc40316844c8ec5ec1175adc0a7a3e575c7a7e11225e7a67b2c9e03e15cb",
       "integratedLufs": -16.55,
       "truePeakDbTP": -2.96,
       "spriteGainDb": 0
@@ -23441,9 +23449,9 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/rain-spool-skill-2-1.flac",
-      "sha256": "c5a1b46f0d3b22f0a734c94a39a53f1582da324d10c68058320b255ce2710735",
-      "integratedLufs": -16.0,
-      "truePeakDbTP": -4.92
+      "sha256": "0a7a5733da90b943fd45d205ec1a5626120b15adf4e3f4e4ccabeaf59a8dbe2a",
+      "integratedLufs": -15.98,
+      "truePeakDbTP": -4.0
     },
     {
       "path": "assets/audio-sources/b2/callouts/rain-spool-charge-1.flac",
@@ -23471,16 +23479,16 @@
     },
     {
       "path": "apps/web/public/audio/callout-rain-spool.webm",
-      "sha256": "0930ee2833379a1a87aeead995f9e754648af46dda1293eaa38ca84fc8129c1b",
-      "integratedLufs": -16.45,
-      "truePeakDbTP": -3.99,
+      "sha256": "9f153df16d6005ba8c56da5995f38bd4209e4e14251140b26bf74e64be291cc4",
+      "integratedLufs": -16.3,
+      "truePeakDbTP": -4.17,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-rain-spool.mp3",
-      "sha256": "7fcd4274c66e09794d3d53bea2f8b5fbae76ab67dfbff9aa58153c77601f571e",
-      "integratedLufs": -16.73,
-      "truePeakDbTP": -3.99,
+      "sha256": "8eb07d718b960fafb39747e09a3f507f26eaa1d24a5699b514386709c24dd720",
+      "integratedLufs": -16.64,
+      "truePeakDbTP": -3.72,
       "spriteGainDb": 0
     },
     {
@@ -23491,9 +23499,9 @@
     },
     {
       "path": "assets/audio-sources/b2/callouts/crumb-sentinel-skill-2-1.flac",
-      "sha256": "f44840690146eb43a9818d587de526b3200c45cd893e5d79795bacd32422e3df",
-      "integratedLufs": -16.0,
-      "truePeakDbTP": -4.93
+      "sha256": "49bc6e671714812ffe189c12b4baad2ade0ca2154245fd7a421ec1b2c1b701de",
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -4.29
     },
     {
       "path": "assets/audio-sources/b2/callouts/crumb-sentinel-charge-1.flac",
@@ -23521,16 +23529,16 @@
     },
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.webm",
-      "sha256": "7bba480035caf0315432a460effca245fc3275fc1a4409f7cf9ca30a988f7cc7",
-      "integratedLufs": -16.28,
-      "truePeakDbTP": -3.17,
+      "sha256": "cfdb0b847b76e5ca11a4cf852cf3adeccee117945bcdcb5573ed5c4a5764d28a",
+      "integratedLufs": -16.11,
+      "truePeakDbTP": -3.52,
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.mp3",
-      "sha256": "cdf362bc186dbb2b60835e35d19de6ca638f489cb77203bf553dd85b0ab0852e",
-      "integratedLufs": -16.7,
-      "truePeakDbTP": -3.33,
+      "sha256": "c03bc91021d1a4c0ef0cf0314fe54abaced3c2b55a151fbf5652bbaa5a2a19e3",
+      "integratedLufs": -16.53,
+      "truePeakDbTP": -4.0,
       "spriteGainDb": 0
     },
     {
@@ -23571,7 +23579,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-pantry-crown.webm",
-      "sha256": "8f026429407d6fd1f13b8366d7314ccb2444dd0586b8631a7310935032138faf",
+      "sha256": "c50976a54f60aaa15387962983ae3e6e32c0f4cc14b96a5e2cc43f84e43a6705",
       "integratedLufs": -16.46,
       "truePeakDbTP": -2.81,
       "spriteGainDb": 0
@@ -24475,30 +24483,30 @@
       "cueId": "voice.biscuit.ult.release",
       "unitId": "biscuit",
       "kind": "ultimate",
-      "text": "Move as one!",
+      "text": "Charge together!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
-          "sha256": "75c949c954b9204a84f8526031c4f43fdfc860b19bc25cce8fad9a9793508a23"
+          "sha256": "171b03b2e63605a6aa350db49515234d1e31b5b7cb1b0ef1cf7c06863e606dbb"
         },
         {
           "path": "assets/audio-sources/b2/callouts/biscuit-release-2.flac",
-          "sha256": "d64888da08cb4f92188b364dc310bddab8cc15969c86422cb90e73d838bbb23a"
+          "sha256": "641d780ad4d474e39a1d5fe2bd2f10a6b0742efa3a18d87385db097c822e9f6c"
         }
       ],
       "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/biscuit-release-2.json",
-        "sha256": "e45d8233d3331bba756079014e91ddb3471b863dc4e3c5a25a3b6f794c2d81ec"
+        "sha256": "06134308fa9b934fadec84368594f303f1fa834d99490ef46dfb84b2fccb51df"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/biscuit-release-1.json",
-          "sha256": "85cf54ee9c23bd872795ca706d5f85794cbca97de4330c69f8fb13f0fb949484"
+          "sha256": "5e12e37e9ff933dce716cbba3b216325f451fea4e0f1aafc705b039fc9487f14"
         },
         {
           "path": "reports/v3-shell/b2/recognizer/biscuit-release-2.json",
-          "sha256": "e45d8233d3331bba756079014e91ddb3471b863dc4e3c5a25a3b6f794c2d81ec"
+          "sha256": "06134308fa9b934fadec84368594f303f1fa834d99490ef46dfb84b2fccb51df"
         }
       ]
     },
@@ -24660,22 +24668,22 @@
       "cueId": "voice.cinnamon.skill.cinnamon-2",
       "unitId": "cinnamon",
       "kind": "skill",
-      "text": "Take a sip!",
+      "text": "Drink up!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/cinnamon-skill-2-1.flac",
-          "sha256": "13238f2245b034fbe0030b4a75b0282c84be2a072c3f7ee02208464a0632c4f2"
+          "sha256": "f283cdaa23499b81d4fc445148b7599083f51932c0f79caf1f13e8c3b507fe7a"
         }
       ],
       "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/cinnamon-skill-2-1.json",
-        "sha256": "b08a51af9f8495f9cede664d04d82e724372521907ce1098a852808226171a0f"
+        "sha256": "04677604f300f6643fabb9c278c9599c1e3b3b31742380f36669a26a997f0a0f"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/cinnamon-skill-2-1.json",
-          "sha256": "b08a51af9f8495f9cede664d04d82e724372521907ce1098a852808226171a0f"
+          "sha256": "04677604f300f6643fabb9c278c9599c1e3b3b31742380f36669a26a997f0a0f"
         }
       ]
     },
@@ -24706,30 +24714,30 @@
       "cueId": "voice.cinnamon.ult.charge",
       "unitId": "cinnamon",
       "kind": "ultimate",
-      "text": "Back!",
+      "text": "Stay back!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
-          "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6"
+          "sha256": "b27abb1ab6efcbc746d3699e784762e754cba26516c69ee4abcbe7bc08845bf0"
         },
         {
           "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
-          "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a"
+          "sha256": "4a068213813c011b6dcc2d54c39ad0270baa0a925f0a13c6b7583aa7e84dcbc6"
         }
       ],
       "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/cinnamon-charge-2.json",
-        "sha256": "c417fd1d9e01ccfbca7407b7d9f49b0fe14619f1faadf42f920df9ef6d07c94b"
+        "sha256": "843e5c06ed134a59bc6b7416fc86a75cb4c136e4d267d586e696efb108378925"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/cinnamon-charge-1.json",
-          "sha256": "ef8af1b32ed78ec518b6d23b226f9f7abc09070b25c32cc33374a771702a79da"
+          "sha256": "3392cf02e8bbd691ea92fe641ea03b528a1149c32d8e5f27255fe837abb34921"
         },
         {
           "path": "reports/v3-shell/b2/recognizer/cinnamon-charge-2.json",
-          "sha256": "c417fd1d9e01ccfbca7407b7d9f49b0fe14619f1faadf42f920df9ef6d07c94b"
+          "sha256": "843e5c06ed134a59bc6b7416fc86a75cb4c136e4d267d586e696efb108378925"
         }
       ]
     },
@@ -25701,22 +25709,22 @@
       "cueId": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
       "unitId": "kettle-knight",
       "kind": "skill",
-      "text": "Iron strike!",
+      "text": "Kettle strike!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
-          "sha256": "4cda51e1dda5c50fe3ba305416728936f6a94417371a16444a6bb885b531d84b"
+          "sha256": "d5e199b3c87c9c6825555bfa3a84a496b034eda2cec4badccda5efd622ff03e5"
         }
       ],
-      "wordAccuracy": 0.5,
+      "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/kettle-knight-skill-1-1.json",
-        "sha256": "10d472e13f2ef023167e2627a056e0c731d8e400ad97a483fec9f936da68227e"
+        "sha256": "ac2672b553752be1dec8a6c1f32b70758386aa9e96297a7b08125397848ef270"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/kettle-knight-skill-1-1.json",
-          "sha256": "10d472e13f2ef023167e2627a056e0c731d8e400ad97a483fec9f936da68227e"
+          "sha256": "ac2672b553752be1dec8a6c1f32b70758386aa9e96297a7b08125397848ef270"
         }
       ]
     },
@@ -26025,22 +26033,22 @@
       "cueId": "voice.practice-cushion.skill.enemy:practice-cushion:basic",
       "unitId": "practice-cushion",
       "kind": "skill",
-      "text": "Soft bump!",
+      "text": "A gentle tap!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
-          "sha256": "ecfde712974d373be2805267f99903a63790cf059ee68090007a47bba86a4a88"
+          "sha256": "144e8feb07f11f1d14228b936eeda7ae069071550c2185eef742af451cc1faf1"
         }
       ],
-      "wordAccuracy": 0.5,
+      "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/practice-cushion-skill-1-1.json",
-        "sha256": "537a4e071beb163a1d7c88c1b5e7c83f0434f8d8e217ab63d9549280fa4bd6eb"
+        "sha256": "53724ce58a07e4b909d1204f214cb10eb88d6d353f3f7a9b80c3fc2bb7180fcf"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/practice-cushion-skill-1-1.json",
-          "sha256": "537a4e071beb163a1d7c88c1b5e7c83f0434f8d8e217ab63d9549280fa4bd6eb"
+          "sha256": "53724ce58a07e4b909d1204f214cb10eb88d6d353f3f7a9b80c3fc2bb7180fcf"
         }
       ]
     },
@@ -26264,22 +26272,22 @@
       "cueId": "voice.rain-spool.skill.enemy:rain-spool",
       "unitId": "rain-spool",
       "kind": "skill",
-      "text": "Cloud burst!",
+      "text": "Rain falls!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/rain-spool-skill-2-1.flac",
-          "sha256": "c5a1b46f0d3b22f0a734c94a39a53f1582da324d10c68058320b255ce2710735"
+          "sha256": "0a7a5733da90b943fd45d205ec1a5626120b15adf4e3f4e4ccabeaf59a8dbe2a"
         }
       ],
-      "wordAccuracy": 0.5,
+      "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/rain-spool-skill-2-1.json",
-        "sha256": "eafcc5175a8a657297a5549a32470c7af46ba47cdead01756c3e17af8b490368"
+        "sha256": "db3d97d987d81e214cc4a60403bf8e1636d289f968631091d650575593255b2f"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/rain-spool-skill-2-1.json",
-          "sha256": "eafcc5175a8a657297a5549a32470c7af46ba47cdead01756c3e17af8b490368"
+          "sha256": "db3d97d987d81e214cc4a60403bf8e1636d289f968631091d650575593255b2f"
         }
       ]
     },
@@ -26372,22 +26380,22 @@
       "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
       "unitId": "crumb-sentinel",
       "kind": "skill",
-      "text": "Sugar burst!",
+      "text": "Sweet blast!",
       "variants": [
         {
           "path": "assets/audio-sources/b2/callouts/crumb-sentinel-skill-2-1.flac",
-          "sha256": "f44840690146eb43a9818d587de526b3200c45cd893e5d79795bacd32422e3df"
+          "sha256": "49bc6e671714812ffe189c12b4baad2ade0ca2154245fd7a421ec1b2c1b701de"
         }
       ],
-      "wordAccuracy": 0.5,
+      "wordAccuracy": 1.0,
       "recogniserLog": {
         "path": "reports/v3-shell/b2/recognizer/crumb-sentinel-skill-2-1.json",
-        "sha256": "6246248e3296d0aad38631e68c112b6fabc8a644de8f53334ad4849b2d0a29bd"
+        "sha256": "2a7a4a0ecf8e497eb92c31289bbc29488b66aec7bd601b812ea768aa4cd8c8b8"
       },
       "recogniserLogs": [
         {
           "path": "reports/v3-shell/b2/recognizer/crumb-sentinel-skill-2-1.json",
-          "sha256": "6246248e3296d0aad38631e68c112b6fabc8a644de8f53334ad4849b2d0a29bd"
+          "sha256": "2a7a4a0ecf8e497eb92c31289bbc29488b66aec7bd601b812ea768aa4cd8c8b8"
         }
       ]
     },

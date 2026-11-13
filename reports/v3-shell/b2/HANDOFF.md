@@ -1,7 +1,8 @@
-NOW: Q4 sensitivity continues; Q5 candidate28 preserves speech, balances sustained score against effect accents.
-NEXT: Commit candidate28 then archive B+A overlay, actual180s battle,120s boss,60s home capture with owned simulations paused.
-ECONOMY: native37303 and sensitivity59609; supervisor16952. No observed T-h misses so far.
-Q5:16 engine tests PASS; isolated112-line clarity86941 ongoing. Strong27 shelf rejected; menus tea28 awaits capture.
-JOBS: econ/q4-jobs.json and q5/jobs.json; pause owned simulations only for live performance/captures.
-OPEN: Q4-Q9; no early sync or deploy.
-UPDATED: 2026-11-13T19:17:57.727780+00:00
+NOW: Q4 sensitivity continues; Q5 scene28 nine replacement takes published. Validation before full capture.
+NEXT: Commit verified audio; rebuild committed B+A temporary overlay; record all six full scenes with owned simulations paused.
+ECONOMY: native37303, sensitivity59609, supervisor16952 still active; checkpoint files retained.
+Q5: Seven clearer A-owned phrases, nine takes; dry+codec recognition and all12 identities accepted in q5/scene28-selection.json.
+JOBS: econ/q4-jobs.json and q5/jobs.json; no branches merged.
+OPEN: Q4-Q9; no sync due.
+UPDATED: 2026-11-13T19:29:23.276059+00:00
+BUDGET: decoded12/12 fallback identities and levels PASS; shipped15,747,841bytes. Next committed trial28 capture.

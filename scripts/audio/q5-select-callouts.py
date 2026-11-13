@@ -5,10 +5,12 @@ import numpy as np
 from callout_dsp import ROOT, decode, features
 from publish_callouts import publish, signed
 
-parser=argparse.ArgumentParser();parser.add_argument('--publish',action='store_true');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--publish',action='store_true');parser.add_argument('--reports');parser.add_argument('--label',default='selection');args=parser.parse_args()
+assert args.label.replace('-','').isalnum()
 B=ROOT/'reports/v3-shell/b2';source=B/'VOICE-CALLOUTS-PRODUCTION.json'
 original=json.loads(source.read_text());production=copy.deepcopy(original)
 labels=['formant-probes','onset-probes','wording-probes','wording-clover-round2']
+if args.reports:labels=args.reports.split(',')
 selected={};inputs=[]
 for label in labels:
  path=B/'q5'/f'{label}.json';report=json.loads(path.read_text())
@@ -51,12 +53,12 @@ for cat in cats:
  distance=math.dist(cat['mfcc'],other['mfcc']);pitch=abs(12*math.log2(max(1,cat['medianF0'])/max(1,other['medianF0'])))
  cat.update(nearestCat=other['id'],nearestMfccDistance=distance,nearestF0Semitones=pitch,passes=distance>=threshold and (cat['sourceRecording']!=other['sourceRecording'] or pitch>=3))
 report={'date':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source':signed(source),'inputs':inputs,'changes':changes,'cats':cats,'distinctnessThreshold':threshold,'allDistinct':all(c['passes'] for c in cats),'skillLines':sum(r['kind']=='skill' for r in original['recognised']),'ultimateLines':sum(r['kind']=='ultimate' for r in original['recognised']),'published':False}
-(B/'q5/selection.json').write_text(json.dumps(report,indent=2)+'\n')
+(B/f'q5/{args.label}.json').write_text(json.dumps(report,indent=2)+'\n')
 assert report['allDistinct'], 'Do not publish a loss of measured character identity'
 print('Selected',len(changes),'takes; all recognition checks and',len(cats),'identities pass.',flush=True)
 if not args.publish:raise SystemExit(0)
 
-archive=B/'q5/production-before-selection.json.gz'
+archive=B/f'q5/production-before-{args.label}.json.gz'
 assert not archive.exists(), 'Preserve the previous publication; do not overwrite its archive'
 archive.write_bytes(gzip.compress(source.read_bytes()))
 licence_path=ROOT/'apps/web/public/audio/LICENSES.json';licences=json.loads(licence_path.read_text());by_path={r['path']:r for r in licences['files']}
@@ -69,10 +71,10 @@ for unit in production['units']:
   log=ROOT/row['recogniserLog']['path'];log.write_text(json.dumps({'audio':signed(path),**asr},indent=2)+'\n')
   row.update(**signed(path),recogniserLog=signed(log))
   entry=by_path[row['path']]
-  entry.update(sha256=row['sha256'],processingDate=report['date'],prompt=row['text'],processingEvidence='reports/v3-shell/b2/q5/selection.json',sourceFiles=trial['sources'])
+  entry.update(sha256=row['sha256'],processingDate=report['date'],prompt=row['text'],processingEvidence=f'reports/v3-shell/b2/q5/{args.label}.json',sourceFiles=trial['sources'])
   if trial['production']['settings'].get('preserveFormants'):entry['formantProcessor']={'tool':'pyworld 0.3.5','license':'MIT','evidence':'assets/audio-sources/license-evidence/pyworld-LICENSE.txt'}
 licence_path.write_text(json.dumps(licences,indent=2)+'\n')
 publish(production)
 report.update(published=True,publishedSource=signed(source))
-(B/'q5/selection.json').write_text(json.dumps(report,indent=2)+'\n')
+(B/f'q5/{args.label}.json').write_text(json.dumps(report,indent=2)+'\n')
 print('Published measured callouts and signed recognition logs.',flush=True)

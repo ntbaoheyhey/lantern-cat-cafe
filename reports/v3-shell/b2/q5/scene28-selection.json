@@ -1,0 +1,485 @@
+{
+  "date": "2026-11-13T19:23:43.806147+00:00",
+  "source": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-PRODUCTION.json",
+    "sha256": "c9d90111e6fda635dd5010c9f1c055b6f916d0808f017ad774d6ea37b3fd0698"
+  },
+  "inputs": [
+    {
+      "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+      "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+    }
+  ],
+  "changes": [
+    {
+      "destination": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-release-1.flac",
+        "sha256": "75c949c954b9204a84f8526031c4f43fdfc860b19bc25cce8fad9a9793508a23",
+        "text": "Move as one!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/biscuit-release-1-0.flac",
+        "sha256": "171b03b2e63605a6aa350db49515234d1e31b5b7cb1b0ef1cf7c06863e606dbb"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Charge together!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/biscuit-release-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/biscuit-release-2.flac",
+        "sha256": "d64888da08cb4f92188b364dc310bddab8cc15969c86422cb90e73d838bbb23a",
+        "text": "Move as one!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/biscuit-release-2-0.flac",
+        "sha256": "641d780ad4d474e39a1d5fe2bd2f10a6b0742efa3a18d87385db097c822e9f6c"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Charge together!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/cinnamon-skill-2-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-skill-2-1.flac",
+        "sha256": "13238f2245b034fbe0030b4a75b0282c84be2a072c3f7ee02208464a0632c4f2",
+        "text": "Take a sip!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/cinnamon-2-1-0.flac",
+        "sha256": "f283cdaa23499b81d4fc445148b7599083f51932c0f79caf1f13e8c3b507fe7a"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Drink up!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-charge-1.flac",
+        "sha256": "4c5621bad5ba386fcab4fc6e3f88d659e46f4544feaa641402f5f265a2e0dab6",
+        "text": "Back!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/cinnamon-charge-1-0.flac",
+        "sha256": "b27abb1ab6efcbc746d3699e784762e754cba26516c69ee4abcbe7bc08845bf0"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Stay back!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/cinnamon-charge-2.flac",
+        "sha256": "9023fb33942a6fbb9f099046676b7f073ea0f209c5b97ab327510805acdf845a",
+        "text": "Back!",
+        "wordAccuracy": 1.0
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/cinnamon-charge-2-0.flac",
+        "sha256": "4a068213813c011b6dcc2d54c39ad0270baa0a925f0a13c6b7583aa7e84dcbc6"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Stay back!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/kettle-knight-skill-1-1.flac",
+        "sha256": "4cda51e1dda5c50fe3ba305416728936f6a94417371a16444a6bb885b531d84b",
+        "text": "Iron strike!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/kettle-knight-1-1-0.flac",
+        "sha256": "d5e199b3c87c9c6825555bfa3a84a496b034eda2cec4badccda5efd622ff03e5"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Kettle strike!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/practice-cushion-skill-1-1.flac",
+        "sha256": "ecfde712974d373be2805267f99903a63790cf059ee68090007a47bba86a4a88",
+        "text": "Soft bump!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/practice-cushion-1-1-0.flac",
+        "sha256": "144e8feb07f11f1d14228b936eeda7ae069071550c2185eef742af451cc1faf1"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "A gentle tap!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/rain-spool-skill-2-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/rain-spool-skill-2-1.flac",
+        "sha256": "c5a1b46f0d3b22f0a734c94a39a53f1582da324d10c68058320b255ce2710735",
+        "text": "Cloud burst!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/rain-spool-2-1-0.flac",
+        "sha256": "0a7a5733da90b943fd45d205ec1a5626120b15adf4e3f4e4ccabeaf59a8dbe2a"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Rain falls!",
+      "wordAccuracy": 1.0
+    },
+    {
+      "destination": "assets/audio-sources/b2/callouts/crumb-sentinel-skill-2-1.flac",
+      "before": {
+        "path": "assets/audio-sources/b2/callouts/crumb-sentinel-skill-2-1.flac",
+        "sha256": "f44840690146eb43a9818d587de526b3200c45cd893e5d79795bacd32422e3df",
+        "text": "Sugar burst!",
+        "wordAccuracy": 0.5
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-scene28-wording/crumb-sentinel-2-1-0.flac",
+        "sha256": "49bc6e671714812ffe189c12b4baad2ade0ca2154245fd7a421ec1b2c1b701de"
+      },
+      "report": {
+        "path": "reports/v3-shell/b2/q5/scene28-wording.json",
+        "sha256": "8d8809643ec18e37efa77ca088a26e32d60513f6c4caa92885592c3754a986e0"
+      },
+      "text": "Sweet blast!",
+      "wordAccuracy": 1.0
+    }
+  ],
+  "cats": [
+    {
+      "id": "mochi",
+      "sourceRecording": 110011,
+      "mfcc": [
+        39.97092355208779,
+        -11.08056647167326,
+        -14.91988260225351,
+        -32.37337336854304,
+        -19.68354257063272,
+        -13.923250547920553,
+        -1.1426942383470144,
+        -19.432703114238404,
+        -2.6291829341610216,
+        -8.786475666372196,
+        1.8159731480000196,
+        -5.884019930057721,
+        0.40341825536610254
+      ],
+      "medianF0": 315.7894736842105,
+      "nearestCat": "cinnamon",
+      "nearestMfccDistance": 52.10921144336559,
+      "nearestF0Semitones": 1.5253430148400704,
+      "passes": true
+    },
+    {
+      "id": "soot",
+      "sourceRecording": 264507,
+      "mfcc": [
+        56.270557263397514,
+        22.719567539453383,
+        5.850418035310553,
+        -13.651719276776824,
+        -3.846925982731309,
+        -7.744212609616677,
+        3.920904435856094,
+        -9.597760016959493,
+        5.881086599420585,
+        -1.6680472723433726,
+        3.6664293393317564,
+        0.4197831087708032,
+        -0.9544920345318011
+      ],
+      "medianF0": 229.6703296703297,
+      "nearestCat": "mochi",
+      "nearestMfccDistance": 52.62585545541031,
+      "nearestF0Semitones": 5.512783083392956,
+      "passes": true
+    },
+    {
+      "id": "clover",
+      "sourceRecording": 451250,
+      "mfcc": [
+        -5.741659581046363,
+        -83.92389441728488,
+        -17.77806021718935,
+        -34.2751212442919,
+        -22.754322334252674,
+        -12.779541964314452,
+        -8.017463728838406,
+        -4.41870959420065,
+        -3.666399443417699,
+        -1.7050157990075838,
+        3.300116291565331,
+        -3.922968075356426,
+        1.5867457926730832
+      ],
+      "medianF0": 705.8823529411765,
+      "nearestCat": "inkcap",
+      "nearestMfccDistance": 49.962243703758304,
+      "nearestF0Semitones": 2.753782153473208,
+      "passes": true
+    },
+    {
+      "id": "panko",
+      "sourceRecording": 656249,
+      "mfcc": [
+        107.85986307182783,
+        -16.88592993770948,
+        -7.368039481088384,
+        -11.83816467844757,
+        -9.937958529317122,
+        -2.1441188423610296,
+        -6.893879485616217,
+        -1.9088013116733176,
+        4.101795583870103,
+        -1.6304183584724843,
+        1.6465217649062367,
+        -4.104797809431155,
+        1.558775596317824
+      ],
+      "medianF0": 229.6703296703297,
+      "nearestCat": "mallow",
+      "nearestMfccDistance": 51.236128541986005,
+      "nearestF0Semitones": 5.974472857168586,
+      "passes": true
+    },
+    {
+      "id": "mallow",
+      "sourceRecording": 333916,
+      "mfcc": [
+        111.73616526671306,
+        -62.57676175529782,
+        -6.201854097924009,
+        7.562853501776019,
+        -3.4296714279337324,
+        -6.592066146186926,
+        -8.763978849136867,
+        1.72574482255619,
+        3.5680740597384655,
+        -5.100636300747561,
+        -5.59442257718493,
+        -3.2332263128549026,
+        2.1385391605252115
+      ],
+      "medianF0": 324.3243243243243,
+      "nearestCat": "panko",
+      "nearestMfccDistance": 51.236128541986005,
+      "nearestF0Semitones": 5.974472857168585,
+      "passes": true
+    },
+    {
+      "id": "sorrel",
+      "sourceRecording": 668821,
+      "mfcc": [
+        154.08770362811606,
+        33.30628042624237,
+        -11.724771851028057,
+        -11.951998563151543,
+        -4.819331367920292,
+        -1.3330286330740455,
+        -2.59647573936,
+        -5.516448738054489,
+        -2.6176885429301935,
+        0.9677750539607467,
+        -0.5665120636565688,
+        -2.6621381153848263,
+        -1.1266381043445417
+      ],
+      "medianF0": 250.0,
+      "nearestCat": "panko",
+      "nearestMfccDistance": 69.27985722756232,
+      "nearestF0Semitones": 1.468363236062108,
+      "passes": true
+    },
+    {
+      "id": "biscuit",
+      "sourceRecording": 763906,
+      "mfcc": [
+        135.20019613472084,
+        -56.17543140451764,
+        -40.4319436898681,
+        -11.211810743343316,
+        -17.291028059012017,
+        -15.184991172036433,
+        -5.298493117697472,
+        -8.492219184069302,
+        -8.62883644123841,
+        -2.1393385395163893,
+        -0.20102686673768003,
+        -0.26199786434606814,
+        -2.850505505196938
+      ],
+      "medianF0": 241.21212121212122,
+      "nearestCat": "velvet",
+      "nearestMfccDistance": 51.27345863341311,
+      "nearestF0Semitones": 21.34328633019736,
+      "passes": true
+    },
+    {
+      "id": "inkcap",
+      "sourceRecording": 845517,
+      "mfcc": [
+        34.52178041420416,
+        -100.57795784049652,
+        -39.92765723042847,
+        -29.16405901677909,
+        -20.263162918712172,
+        -13.061072982821221,
+        -5.180755434318432,
+        -5.319461749928322,
+        3.3034575881088117,
+        -0.03163357737221184,
+        0.8523059239328155,
+        -5.770659801342209,
+        -0.6643658135798411
+      ],
+      "medianF0": 827.5862068965517,
+      "nearestCat": "clover",
+      "nearestMfccDistance": 49.962243703758304,
+      "nearestF0Semitones": 2.753782153473209,
+      "passes": true
+    },
+    {
+      "id": "cinnamon",
+      "sourceRecording": 756236,
+      "mfcc": [
+        -4.015132072411176,
+        -7.5550096978879955,
+        -11.621279080087971,
+        -25.292676243893073,
+        -9.917016766858682,
+        -7.848074347044573,
+        -6.584131156051289,
+        2.338645283760479,
+        -2.978852387043885,
+        -4.882434235332675,
+        -3.185017287268245,
+        -1.5686670255249588,
+        -3.0980952924413976
+      ],
+      "medianF0": 289.1566265060241,
+      "nearestCat": "mochi",
+      "nearestMfccDistance": 52.10921144336559,
+      "nearestF0Semitones": 1.52534301484007,
+      "passes": true
+    },
+    {
+      "id": "brioche",
+      "sourceRecording": 814892,
+      "mfcc": [
+        59.99333974912951,
+        -25.802016033785165,
+        23.789937257957614,
+        -3.061086527006381,
+        -0.6358227298394817,
+        -2.7567236656726615,
+        -4.320586062164994,
+        -6.783711432474991,
+        4.678336797146414,
+        -1.1154568019149946,
+        2.9352104023317174,
+        -5.678311763788162,
+        3.985447641482302
+      ],
+      "medianF0": 247.42268041237114,
+      "nearestCat": "marigold",
+      "nearestMfccDistance": 52.199280062524245,
+      "nearestF0Semitones": 1.2967169502894371,
+      "passes": true
+    },
+    {
+      "id": "velvet",
+      "sourceRecording": 668824,
+      "mfcc": [
+        94.91946268099724,
+        -79.195324172148,
+        -36.67085958952688,
+        -29.035442125511157,
+        -27.01470388119174,
+        -15.169757033804332,
+        -8.610860022834904,
+        -9.906790422603597,
+        -3.63300929501172,
+        -3.730800957263494,
+        -1.2057593914118458,
+        -1.7530080789814475,
+        -0.31269343834709323
+      ],
+      "medianF0": 827.5862068965517,
+      "nearestCat": "biscuit",
+      "nearestMfccDistance": 51.27345863341311,
+      "nearestF0Semitones": 21.343286330197362,
+      "passes": true
+    },
+    {
+      "id": "marigold",
+      "sourceRecording": 234333,
+      "mfcc": [
+        65.41730830775647,
+        -56.067825417418966,
+        -3.3565676808892206,
+        -21.1350487537274,
+        -19.21404511355883,
+        -12.625766325627142,
+        -10.065236437193077,
+        -0.007219857822838793,
+        -5.958802167994144,
+        -2.166614174554909,
+        -4.060275204184223,
+        -1.5310266836676332,
+        0.26191437876862533
+      ],
+      "medianF0": 266.6666666666667,
+      "nearestCat": "brioche",
+      "nearestMfccDistance": 52.199280062524245,
+      "nearestF0Semitones": 1.2967169502894382,
+      "passes": true
+    }
+  ],
+  "distinctnessThreshold": 46.9676681343465,
+  "allDistinct": true,
+  "skillLines": 62,
+  "ultimateLines": 50,
+  "published": true,
+  "publishedSource": {
+    "path": "reports/v3-shell/b2/VOICE-CALLOUTS-PRODUCTION.json",
+    "sha256": "3b9e7ad9c7e5163595f47ae70ff73cbdf8957a3223859c38067accd47744dfbc"
+  }
+}
