@@ -6,7 +6,7 @@
 - [x] B4 done after revisit — Landing, sign-in and café hub
 - [x] B5 done — Guided battle and first-visit tutorials
 - [x] B6 closed PARTIAL — Economy flow proved; simulation targets missed after three tuning candidates
-- [ ] B7 todo — Sync, reports and Vietnamese deployment guide
+- [x] B7 done — Pushed handoff, draft PR #445, current evidence and Vietnamese deployment guide
 
 Each card records gates, evidence, self-score and any PARTIAL limits here. Local runs only.
 
@@ -27,3 +27,6 @@ G1: tests/b5-flow.json walks a new guest through the practice battle, all 26 ste
 
 ## B6 — closed PARTIAL after final revisit, score 6/10
 G1: tests/b6-anvil.json, 13 confirmed receipts including dead-address burn, quality/Deed discovery and guest-wallet movement; tests/b6-browser.json shows guest quest/mint/withdraw UI. G2: live-counters-final.log and economy-v3 rule tests compare published odds to actual rules. G3: ECONOMY-SIM.md/JSON and COHORT-SUMMARY.json, complete 120-account cohort. Half-demand burn/all claims 0.846–0.897 FAIL; Star Thread source/sink 25.93–36.04 FAIL; heavy first Legendary median day 11 FAIL. Casual day 11 PASS; hourly ratio <=3x PASS within model. Three tuning candidates exhausted; report honestly, no fourth round. G4: Bell-only draw costs, deterministic fusion, no YARN random path. G5: release-suite/types/build and real PostgreSQL concurrency checks pass. V3 guest quest gate and shared tester-pool guard pass focused checks. Final revisit completed; no pending implementation card, but economy acceptance remains PARTIAL. Optional currency migration/dynamic fees deferred.
+
+## B7 — done, score 8/10
+Implementation committed at 9af6da640 and pushed to codex/v3-shell-2026-11-13. Draft [PR #445](https://github.com/ntbaoheyhey/taskbar-hero/pull/445) targets main without merging. REPORT.md and TEST-EVIDENCE.md distinguish current passing local checks from historical repairs and the three economic misses. USER-DEPLOY-VI.md covers the 20 November operator sequence, finite shared budgets, Supabase changes, Vercel demo flags, sponsor funding, market seed, public smoke and rollback; SQL and ten shell blocks were checked locally. STATUS-VI.md remains under 30 lines. Recorded preview PIDs 41682 and 41781 are stopped. Session A's later battle/rig/trailer integration and the user's deployment remain explicit external follow-ups; no request to import A was present.
