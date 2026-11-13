@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-11-13T13:26:35.729Z",
+  "aHead": "18ea6e6e82d03c274a6a2ce843ecb9ce1989ee2d",
+  "bHead": "0b547a1ce0d2ae1b0e34c414ebc7f2fb821cc02e",
+  "out": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
+  "base": [
+    "apps/web",
+    "packages",
+    "tools",
+    "scripts",
+    "tsconfig.base.json",
+    "pnpm-workspace.yaml",
+    "package.json"
+  ],
+  "overlay": [
+    "apps/web/src/game/cardrpg/battle-v3",
+    "apps/web/src/game/cardrpg/spine",
+    "apps/web/src/game/cardrpg/stage",
+    "apps/web/src/game/cardrpg/vfx-layered",
+    "apps/web/src/game/rig",
+    "apps/web/src/game/cardrpg/depth/model.ts",
+    "apps/web/src/game/cardrpg/depth/Battle.tsx",
+    "apps/web/src/game/cardrpg/depth/CompanionCard.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/BattleHudV3.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/ResultA6.tsx",
+    "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
+    "apps/web/public/art",
+    "apps/web/public/cinematics",
+    "apps/web/public/units",
+    "skills",
+    "tools/cinematic-compositor",
+    "scripts/art"
+  ],
+  "signatures": [
+    {
+      "path": "apps/web/src/game/cardrpg/depth/model.ts",
+      "sha256": "f11706644b4227483e4d0bbb62cc6d1a91f3aaf8394176bfffaf8c8ed751464f"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/voice-windows.ts",
+      "sha256": "09a863a6e078dd13de660f61d7c2799f8b3495344742fc53898830b29742cedf"
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "sha256": "f0aa6422b1d0d75cb98639f54495503173b1a8573445739979981b76cc2fae00"
+    },
+    {
+      "path": "apps/web/src/audio/voice-callouts.json",
+      "sha256": "697d122a8930d42abf49777f900ce057b4a857233512ea4f7ef0dd76d6af8d78"
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "5d2eecdfda47042d90ce0718111de275c65ff129acf072e2718d01c8a38a25b4"
+    }
+  ],
+  "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit.",
+  "runtimeLinks": {
+    "assets": "/Users/bao/taskbar-hero-cardrpg-a6/assets",
+    "art": "/Users/bao/taskbar-hero-cardrpg-a6/art",
+    "reports": "/Users/bao/taskbar-hero-chain/reports"
+  },
+  "runtimeConfig": "vite.solo.config.mts: permit the two lane dependency roots; dedupe three/react/react-dom",
+  "workingCandidate": {
+    "label": "19-preserved-identities",
+    "date": "2026-11-13T14:09:06.649252+00:00",
+    "sourceLane": "B",
+    "description": "Five improved spoken takes; Mochi original restored to preserve all12 character identities. Battle/boss voice space and output headroom unchanged from18."
+  }
+}

@@ -8,17 +8,17 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
 - [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
-- [ ] V — PARTIAL (allowed: only recognition misses after 9 documented processing iterations; all other V gates PASS; self-score 7/10)
+- [ ] V — open (recognition32/50 ultimates and59/62 skills; candidate21 retains12/12 callout identities; Q2 playback62/62 ultimate phases and17 skills without cuts; self-score7/10)
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
-- [ ] U3 — PARTIAL (32/54 states meet all screen gates; 22 have two logged redesign iterations; complete two-size evidence, tests pass; self-score 7/10)
+- [ ] U3 — open (32/54 states meet all screen gates; the SOLO request requires at least48/54 for PARTIAL; 22 redesigns remain, self-score 7/10)
 - [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
-- [ ] S5 — PARTIAL (11 measured mix iterations; A timing blocker S5-A-VOICE-WINDOW; numeric misses retained; self-score 7/10)
+- [ ] S5 — open (21 measured mix iterations; Q2 battle4.661/boss3.494 contours per minute PASS; other S5 numeric mix misses remain; self-score 7/10)
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
-- [ ] E3 — todo
+- [ ] E3 — active background (16 rounds,640 configurations; top10 independently confirmed at200 seeds; bot target remains open)
 - [ ] E4 — todo
 - [ ] E5 — todo
 - [ ] T1 — todo
@@ -303,7 +303,7 @@ PASS S5.chart: measured 87147; required nonempty reports/v3-shell/b2/shots/audio
 
 PASS S5.reel: measured 90.045; required >= 90s sound reel
 
-Eleven actual-output mix iterations. Six full-duration renders and a 90-second reel use production defaults with no output normalization. Timing blocker S5-A-VOICE-WINDOW and matching source-start evidence are in REQUESTS-TO-A.md and VOICE-INTERRUPTIONS.json. Transient/contour misses remain explicit, including B-owned menu tuning. No full acceptance is claimed.
+Historical S5 evidence below describes11-room-tails on the old battle timing. Q2 resolves S5-A-VOICE-WINDOW on current A. Current S5 is open for B mix failures, not PARTIAL on an A blocker. The earlier six renders and reel are retained; numeric acceptance remains unchanged.
 
 S5 checks: tests/s5-types.log and tests/s5-suite.log pass (2,521 web, 724 server; 1,388 rules plus 2 expected failures and 11 existing skips). tests/s5-source-final.log verifies all audio provenance and hashes. Acceptance remains PARTIAL, never done.
 
@@ -344,3 +344,70 @@ Checks: tests/e2-final-types.log, tests/e2-final-suite.log (2,536 web, 730 serve
 ## V3SOLO Q0 preservation checks
 
 Workspace types PASS; economy-lab 17/17 PASS; full unit suite PASS (73 root, 1,396 rules, 732 server, 2,537 web, 72 other package tests; two existing expected failures and eleven skips). Logs: tests/q0-typecheck.log, tests/q0-economy-lab.log, tests/q0-full-unit.log. Standalone browser budget fails before entry because it lacks the returning-guest fixture (tests/q0-browser.log); Q1 repairs this without excluding screens. Inherited source preserved at 021dd1d43ee82d9459ba56413089a201c5d04a66; no E3 acceptance claimed.
+
+## SOLO Q2 closure — 2026-11-13T14:37:58.241996+00:00
+
+Source B298a4fbd8 with A18ea6e6e8. Final B435/435 browser cases,2538 web unit tests and all workspace types PASS. Q2 does not close V recognition or the remaining S5 mix targets.
+
+```text
+PASS Q2.matrix: measured=9; required=3 fixtures x3 speeds
+PASS Q2.wave1.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.wave1.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x1.bark-spacing: measured=7.49563333333532; required=7–8 seconds
+PASS Q2.wave1.x1.parity: measured=true; required=true
+PASS Q2.wave1.x1.browser-errors: measured=0; required=eq0
+PASS Q2.wave1.x2.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave1.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x2.bark-spacing: measured=7.503599999999007; required=7–8 seconds
+PASS Q2.wave1.x2.parity: measured=true; required=true
+PASS Q2.wave1.x2.browser-errors: measured=0; required=eq0
+PASS Q2.wave1.x3.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave1.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x3.bark-spacing: measured=7.50393333333234; required=7–8 seconds
+PASS Q2.wave1.x3.parity: measured=true; required=true
+PASS Q2.wave1.x3.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.wave3.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x1.bark-spacing: measured=7.503199999998014; required=7–8 seconds
+PASS Q2.wave3.x1.parity: measured=true; required=true
+PASS Q2.wave3.x1.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x2.ultimates: measured=6; required=all required charge/release callouts played
+PASS Q2.wave3.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x2.bark-spacing: measured=7.516099999999007; required=7–8 seconds
+PASS Q2.wave3.x2.parity: measured=true; required=true
+PASS Q2.wave3.x2.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x3.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave3.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x3.bark-spacing: measured=7.513599999999006; required=7–8 seconds
+PASS Q2.wave3.x3.parity: measured=true; required=true
+PASS Q2.wave3.x3.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.boss.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x1.bark-spacing: measured=7.5168333333333335; required=7–8 seconds
+PASS Q2.boss.x1.parity: measured=true; required=true
+PASS Q2.boss.x1.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x2.ultimates: measured=10; required=all required charge/release callouts played
+PASS Q2.boss.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x2.bark-spacing: measured=7.49813333333532; required=7–8 seconds
+PASS Q2.boss.x2.parity: measured=true; required=true
+PASS Q2.boss.x2.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x3.ultimates: measured=10; required=all required charge/release callouts played
+PASS Q2.boss.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x3.bark-spacing: measured=7.514699999998013; required=7–8 seconds
+PASS Q2.boss.x3.parity: measured=true; required=true
+PASS Q2.boss.x3.browser-errors: measured=0; required=eq0
+PASS Q2.battle.voice-contours: measured=4.661461426796784; required=3.25–6.75/min
+PASS Q2.battle.duration: measured=180.20099773242632; required=full S5 duration
+PASS Q2.boss.voice-contours: measured=3.4940893635709207; required=3.25–6.75/min
+PASS Q2.boss.duration: measured=120.20299319727891; required=full S5 duration
+TOTAL 59 PASS / 0 FAIL / 59 gates
+```

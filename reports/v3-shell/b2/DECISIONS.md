@@ -104,3 +104,14 @@ Q0 clean-tree verification found active native-sensitivity stdout changing betwe
 The first375-case local run failed13 returning-player tests at entry. The entry fixture resolved9; remaining4 exposed missing Invitation odds, unconditional v3 Fusion in the legacy workshop, an Events tab selector mismatch, and mixer interception of More battle options. Restored the two product paths, moved only the B-owned mixer, and explicitly selected Login. All4 pass with original probability/geometry/focus assertions unchanged. These B-specific repairs are not cherry-picked to A.
 
 - 2026-11-13T13:19:00.294991+00:00: Q1 complete browser435/435 and full units2537/2537 on B after odds/workshop/mixer repairs; no new B2 sound/economy acceptance claimed. Round13 slightly improves search score but misses Star in worst scenario; round14 returns to round12 with a one-Thread bank cap.
+
+## Q2 current-build voice reconciliation
+A current18ea6e6e8 with B0b547a1ce in an isolated checkout plays58/58 ultimate phases and18 skill sources in9fixture/speed cases with0cuts. Full battle44and boss24voice sources also have0cuts. The older48/75and16/35 interruptions used pre-hold A timing; the A timing blocker is resolved, so S5 cannot claim PARTIAL on that blocker. Current waveform contours0.333battle and3.993boss expose a remaining mix failure. Lowering the whole score failed loudness; a speech shelf alone failed contours. Speech shelf plus6dB battle-only voice presence gives5.31/min in45s, pending full-duration validation.
+
+## Q2 candidate18 identity check
+
+The six accepted source takes preserve or improve recognized words and all212 source/sprite level checks pass. Updated callout distinctness is10/12, so the candidate cannot be accepted as a completed voice change without restoring that gate. S4 standalone cat-speak still passes12/12. Full candidate recordings continue as diagnostic evidence; no threshold was changed.
+
+- Candidate20 still has14 detected boss contours in120.2s (6.988/min), despite1.5dB less voice boost; all62 ultimate phases/17 skills remain uncut. Next method restores the original boss mix path (no battle-only presence or speech shelf), which passed4.0/min before global battle processing was extended to it. Keep all five clearer takes and the standard8dB duck. Threshold/analyser unchanged.
+
+- Q2 final candidate21: battle4.661461/min over180.201s; boss3.494089/min over120.203s. Both reference bands pass, with unchanged analyser and no suppressed callouts. Actual9-case playback:62/62 ultimate phases,17 skill starts, zero interruptions, parity9/9. B source298a4fbd8; A battle18ea6e6e8. Full source/audio hashes are in q2/voice-matrix.json and mix/21-battle-only-presence-*.json. This closes only Q2 measurements, not recognition V or all S5 mix targets.

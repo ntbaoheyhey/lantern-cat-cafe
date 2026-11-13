@@ -1,0 +1,6 @@
+{"group": "local", "pid": 22415, "command": ["pnpm", "--filter", "@taskbar-hero/web", "exec", "playwright", "test", "--config", "../../scripts/v3b2/q1-playwright.config.mts", "--grep-invert", "guidance remains readable with fallback fonts"], "ports": [5995, 5997, 6191, 6192]}
+{"group": "local", "exitCode": 0, "passed": 375, "log": "reports/v3-shell/b2/tests/q2-accepted21-browser-local.log", "sha256": "86ff26b3153d4158b87b5ac31ee84ccc933700a66321ab91e076c6b7bcb53b57"}
+{"group": "server", "pid": 24073, "command": ["pnpm", "--filter", "@taskbar-hero/web", "exec", "playwright", "test", "--config", "../../scripts/v3b2/q1-playwright.config.mts"], "ports": [6190, 6191, 5997, 5995]}
+{"group": "server", "exitCode": 0, "passed": 52, "log": "reports/v3-shell/b2/tests/q2-accepted21-browser-server.log", "sha256": "c0c633e920aa103d7d79ca2162258d8203aeb73b0049a0c1649380941a24ca72"}
+{"group": "fallback", "pid": 24322, "command": ["pnpm", "--filter", "@taskbar-hero/web", "exec", "playwright", "test", "--config", "../../scripts/v3b2/q1-playwright.config.mts", "--grep", "guidance remains readable with fallback fonts"], "ports": [6190, 6191, 5997, 5995]}
+{"group": "fallback", "exitCode": 0, "passed": 8, "log": "reports/v3-shell/b2/tests/q2-accepted21-browser-fallback.log", "sha256": "f96c5e15efb261893837321f54dbc1edc9b18c9e3e8475fd1b445ecd2b2ab8cc"}

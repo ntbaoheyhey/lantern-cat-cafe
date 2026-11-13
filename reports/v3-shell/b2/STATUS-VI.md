@@ -1,25 +1,10 @@
-# Trạng thái B2
-
-- Đã đạt G0, R, S1–S4, U1–U2 và U4.
-- V: PARTIAL sau 9 vòng; còn ngưỡng nhận dạng lời.
-- U3: PARTIAL; 32/54 trạng thái đạt đầy đủ, 54/54 đạt giới hạn 25 từ.
-- Còn 22 trạng thái cần chỉnh hình ảnh; mỗi trạng thái đã có 2 vòng thiết kế.
-- U4: video menu 62 giây có âm thanh; trung vị 60 fps; CLS tối đa 0,0304.
-- S5: PARTIAL sau 11 vòng phối âm; đủ 6 bản thu thật và reel 90 giây.
-- Cả 6 cảnh đạt âm lượng, đỉnh âm, nền nhạc, nhịp khởi âm và giới hạn im lặng.
-- Mật độ tiếng ngắn và đường nét giọng nói còn trượt; không tuyên bố hoàn tất.
-- 48/75 lời trong trận thường, 16/35 lời trong trận boss bị lời sau cắt ngang.
-- Đã ghi yêu cầu nhịp chuyển chiêu cho A; lỗi đo giọng/menu vẫn thuộc B.
-- Gói âm thanh hiện 15,42 MB, dưới giới hạn 16 MB; nguồn và giấy phép được giữ.
-- Typecheck đạt; 2.536 test web, 730 server đạt.
-- Rules: 1.393 đạt, 2 expected-fail, 11 skip có sẵn.
-- S6 đạt: 795/802 thao tác, 54 trạng thái; 0 lỗi âm thanh; khoảng im lặng 3,54 ms.
-- S7 đạt: đủ 867 cue; phát 20 cue ngẫu nhiên và xem thử 12 giọng mèo trên máy.
-- E1 đạt: 18 kịch bản, mỗi kịch bản 200 seed, 1.000 tài khoản C2; 28 phút 57 giây.
-- E2 đạt: 3 sink bảo đảm, đủ giá/odds, burn Anvil đúng và chống tiêu hai lần.
-- E3: đã ghi 7 vòng / 280 cấu hình; vòng 6–7 đạt burn, Thread và ngày Legendary ở 40 seed.
-- Bot còn khoảng 0,91–0,95 lần người chơi thường/giờ; mục tiêu tối đa 0,5 chưa đạt.
-- Đang kiểm tra 200 seed và độ nhạy; chưa chấp nhận E3. E4–E5, T1, C1, E6 và polish còn mở.
-- Kinh tế mới và bộ đếm Fuji trực tiếp chưa có kết quả đạt.
-- Đồng bộ 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
-- Không triển khai hoặc merge main; người dùng triển khai ngày 20-11.
+# Tiến độ V3 B2
+- Q0 và Q1 hoàn tất; hai nhánh đạt 435/435 ca trình duyệt.
+- Q2 hoàn tất 59/59 điều kiện đo: trận 4,66 và trùm 3,49 lần giọng/phút.
+- Cả 9 tổ hợp trận/tốc độ không cắt câu: đủ 62 pha chiêu cuối và 17 câu kỹ năng.
+- Bản cuối B đạt 435/435 ca trình duyệt, 2538 bài kiểm thử web và kiểm tra kiểu toàn bộ workspace.
+- Giữ đủ 12 giọng riêng biệt; độ rõ lời và các phần phối âm còn lại tiếp tục ở Q5.
+- Kinh tế: 16 vòng/640 cấu hình; top 10 đã xác nhận 200 seed, các mục Star Thread/bot còn lỗi.
+- U3 mới 32/54 màn hình đạt; chưa đủ PARTIAL theo yêu cầu SOLO.
+- Tiếp theo Q3 chuyển động, rồi Q4 kinh tế.
+- Chưa gộp sớm hoặc triển khai; đồng bộ 16/18-11, đóng băng 19-11.

@@ -1,0 +1,11 @@
+[2026-11-13 20:58:33.956] [ctranslate2] [thread 4929987] [warning] Tip: experimental MPS backend is available and often 2x+ faster than CPU on Apple Silicon (varies by workload and hardware). Try device="mps".
+{"cueId": "voice.mochi.skill.mochi-2", "label": "baseline", "contours": 1, "accuracy": 0.5, "levels": {"integratedLufs": -16.01, "truePeakDbTP": -4.72, "durationSeconds": 1.2970068027210884}}
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-chain/scripts/audio/probe-q2-source.py", line 23, in <module>
+    x,used,details=process(row,0,settings)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bao/taskbar-hero-chain/scripts/audio/callout_dsp.py", line 69, in process
+    import pyworld as world
+  File "/Users/bao/taskbar-hero-chain/tools/.venv/lib/python3.11/site-packages/pyworld/__init__.py", line 13, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'

@@ -41,3 +41,7 @@ Full production-output captures (`mix/11-room-tails-*-runtime.json.gz`) show 48/
 Please reserve each charge/release voice's `durationMs` from `apps/web/src/audio/voice-callouts.json` before starting the next required voice, including consecutive ultimates. Keep existing damage timing and the release sync point consistent with the animation; a recover/hold beat may accommodate the remaining spoken tail. Do not layer voices or issue an extra generic bark. B can shorten a specific line after you publish a fixed timing budget, but accelerating all speech would worsen the already reported recognition misses. This timing request concerns A-owned cinematic/phase scheduling; no A-owned file has been edited and no merge is requested.
 
 S5 is permitted PARTIAL after eleven measured mix iterations. Other misses (transient density and menu contour proxies) remain B-owned tuning work, explicitly shown in OUR-AUDIO.json/GATES.md; they are not attributed to A. All six scenes meet loudness, peak and bed coverage limits in the current full captures.
+
+## SOLO Q2 correction — 13 November 2026
+
+S5-A-VOICE-WINDOW is resolved on A18ea6e6e8: actual combined playback has zero interrupted ultimate/skill starts across nine fixture/speed cases. The older48/75 and16/35 measurements describe the earlier B battle model. Remaining S5 failures are B mix quality and cannot qualify as an A timing blocker. Candidate18 is being measured; see b2/q2/.

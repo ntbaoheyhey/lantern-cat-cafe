@@ -187,3 +187,70 @@ PASS Q1.B.browser: measured=435/435; required=435/435.
 PASS Q1.B.unit: measured=293 files /2537 tests; required=all pass.
 PASS Q1.B.typecheck: measured=0; required=exit0.
 Evidence: tests/q1-final.json (hashed logs). Own B2 cards retain their current measured states.
+
+## SOLO Q2 closure — 2026-11-13T14:37:58.241996+00:00
+
+Source B298a4fbd8 with A18ea6e6e8. Final B435/435 browser cases,2538 web unit tests and all workspace types PASS. Q2 does not close V recognition or the remaining S5 mix targets.
+
+```text
+PASS Q2.matrix: measured=9; required=3 fixtures x3 speeds
+PASS Q2.wave1.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.wave1.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x1.bark-spacing: measured=7.49563333333532; required=7–8 seconds
+PASS Q2.wave1.x1.parity: measured=true; required=true
+PASS Q2.wave1.x1.browser-errors: measured=0; required=eq0
+PASS Q2.wave1.x2.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave1.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x2.bark-spacing: measured=7.503599999999007; required=7–8 seconds
+PASS Q2.wave1.x2.parity: measured=true; required=true
+PASS Q2.wave1.x2.browser-errors: measured=0; required=eq0
+PASS Q2.wave1.x3.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave1.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave1.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave1.x3.bark-spacing: measured=7.50393333333234; required=7–8 seconds
+PASS Q2.wave1.x3.parity: measured=true; required=true
+PASS Q2.wave1.x3.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.wave3.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x1.bark-spacing: measured=7.503199999998014; required=7–8 seconds
+PASS Q2.wave3.x1.parity: measured=true; required=true
+PASS Q2.wave3.x1.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x2.ultimates: measured=6; required=all required charge/release callouts played
+PASS Q2.wave3.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x2.bark-spacing: measured=7.516099999999007; required=7–8 seconds
+PASS Q2.wave3.x2.parity: measured=true; required=true
+PASS Q2.wave3.x2.browser-errors: measured=0; required=eq0
+PASS Q2.wave3.x3.ultimates: measured=8; required=all required charge/release callouts played
+PASS Q2.wave3.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.wave3.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.wave3.x3.bark-spacing: measured=7.513599999999006; required=7–8 seconds
+PASS Q2.wave3.x3.parity: measured=true; required=true
+PASS Q2.wave3.x3.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x1.ultimates: measured=4; required=all required charge/release callouts played
+PASS Q2.boss.x1.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x1.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x1.bark-spacing: measured=7.5168333333333335; required=7–8 seconds
+PASS Q2.boss.x1.parity: measured=true; required=true
+PASS Q2.boss.x1.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x2.ultimates: measured=10; required=all required charge/release callouts played
+PASS Q2.boss.x2.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x2.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x2.bark-spacing: measured=7.49813333333532; required=7–8 seconds
+PASS Q2.boss.x2.parity: measured=true; required=true
+PASS Q2.boss.x2.browser-errors: measured=0; required=eq0
+PASS Q2.boss.x3.ultimates: measured=10; required=all required charge/release callouts played
+PASS Q2.boss.x3.ultimate-interrupted: measured=0; required=eq0
+PASS Q2.boss.x3.skill-interrupted: measured=0; required=<=0.05 of played skills
+PASS Q2.boss.x3.bark-spacing: measured=7.514699999998013; required=7–8 seconds
+PASS Q2.boss.x3.parity: measured=true; required=true
+PASS Q2.boss.x3.browser-errors: measured=0; required=eq0
+PASS Q2.battle.voice-contours: measured=4.661461426796784; required=3.25–6.75/min
+PASS Q2.battle.duration: measured=180.20099773242632; required=full S5 duration
+PASS Q2.boss.voice-contours: measured=3.4940893635709207; required=3.25–6.75/min
+PASS Q2.boss.duration: measured=120.20299319727891; required=full S5 duration
+TOTAL 59 PASS / 0 FAIL / 59 gates
+```

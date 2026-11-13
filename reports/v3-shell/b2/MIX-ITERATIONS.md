@@ -121,3 +121,89 @@ Smoothed the impact room tails to reduce excess short bursts. Full captures stil
 | [forge](mix/11-room-tails-forge.json) | 60.20 | 4.136 | 1.454 | 5.100 | 0.000 | 1.000 | -17.740 | -3.500 |
 | [gacha](mix/11-room-tails-gacha.json) | 60.20 | 4.136 | 1.582 | 4.851 | 0.000 | 1.000 | -17.880 | -5.700 |
 | [home](mix/11-room-tails-home.json) | 60.20 | 4.086 | 1.561 | 5.166 | 0.000 | 1.000 | -17.520 | -4.060 |
+
+## 12-solo-current
+
+Current A battle in isolated B checkout: zero source-start interruptions in both full renders, but the battle mix masks voiced contours. Boss passes the voice band.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/12-solo-current-battle.json) | 180.20 | 3.257 | 0.293 | 1.554 | 0.333 | 1.000 | -14.870 | -1.790 |
+| [boss](mix/12-solo-current-boss.json) | 120.20 | 3.253 | 0.376 | 1.905 | 3.993 | 1.000 | -14.710 | -2.040 |
+
+## 13-battle-score-space
+
+Lowering the entire battle score by6dB leaves the45s probe below voice density and loudness targets. Rejected as the final mix.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/13-battle-score-space-battle.json) | 45.07 | 3.528 | 0.453 | 2.618 | 1.331 | 1.000 | -16.810 | -1.620 |
+
+## 14-speech-space
+
+A low-shelf opening under battle speech keeps loudness, but this45s probe still misses voice density. Not acceptance evidence.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/14-speech-space-battle.json) | 45.20 | 3.119 | 0.383 | 1.881 | 1.327 | 1.000 | -14.850 | -2.080 |
+
+## 15-speech-space-transitions
+
+Schedule the speech shelf on voice-state changes only; inspect actual shelf automation alongside the45s probe. Full renders remain required.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/15-speech-space-transitions-battle.json) | 45.20 | 3.097 | 0.414 | 1.903 | 1.327 | 1.000 | -14.770 | -2.150 |
+
+## 16-callout-presence
+
+The short presence probe passes, but is not acceptance evidence. The following full capture exposes the remaining articulation weakness.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/16-callout-presence-battle.json) | 45.20 | 3.319 | 0.387 | 1.527 | 5.310 | 1.000 | -13.270 | -1.020 |
+
+## 17-current-full
+
+Full battle and boss fail contour density after the short probe passed. Source articulation, rather than more overall gain, is the next method.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/17-current-full-battle.json) | 180.20 | 3.158 | 0.397 | 1.454 | 2.331 | 1.000 | -13.300 | -0.980 |
+| [boss](mix/17-current-full-boss.json) | 120.20 | 3.278 | 0.358 | 1.497 | 1.997 | 1.000 | -15.080 | -1.460 |
+
+## 18-spoken-articulation
+
+Both full voice-density bands pass, but a Mochi clarity edit breaks identity separation. Rejected; original Mochi restored.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/18-spoken-articulation-battle.json) | 180.20 | 3.147 | 0.365 | 1.598 | 5.327 | 1.000 | -13.460 | -1.380 |
+| [boss](mix/18-spoken-articulation-boss.json) | 120.20 | 3.228 | 0.430 | 1.830 | 6.489 | 1.000 | -13.870 | -1.130 |
+
+## 19-preserved-identities
+
+All twelve voice identities pass. Battle contours4.661/min pass; boss6.988/min exceeds6.75. Rejected as final acceptance.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/19-preserved-identities-battle.json) | 180.20 | 3.252 | 0.389 | 1.620 | 4.661 | 1.000 | -13.420 | -1.140 |
+| [boss](mix/19-preserved-identities-boss.json) | 120.20 | 3.369 | 0.420 | 1.631 | 6.988 | 0.996 | -13.760 | -1.600 |
+
+## 20-boss-balance
+
+Reduce only boss voice presence from6 to4.5dB; battle stays6dB. Source takes, every required callout, timing and analyser remain unchanged.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/20-boss-balance-battle.json) | 180.20 | 3.241 | 0.409 | 1.620 | 3.996 | 1.000 | -13.320 | -1.380 |
+| [boss](mix/20-boss-balance-boss.json) | 120.20 | 3.253 | 0.402 | 1.839 | 6.988 | 1.000 | -13.980 | -1.530 |
+
+## 21-battle-only-presence
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [battle](mix/21-battle-only-presence-battle.json) | 180.20 | 3.196 | 0.358 | 1.826 | 4.661 | 1.000 | -13.310 | -1.240 |
+| [boss](mix/21-battle-only-presence-boss.json) | 120.20 | 3.294 | 0.376 | 1.780 | 3.494 | 1.000 | -14.890 | -1.920 |

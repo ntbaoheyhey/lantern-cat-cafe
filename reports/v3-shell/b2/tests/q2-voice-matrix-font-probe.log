@@ -1,0 +1,12 @@
+{"fixture":"wave1","speed":1,"seconds":30.374,"ultimateRequired":4,"ultimatePlayed":4,"ultimateInterrupted":0,"skillPlayed":2,"skillInterrupted":0,"meanBarkIntervalSeconds":7.510099999999007,"parity":true,"errors":[],"played":6,"interrupted":0,"suppressed":{"cadence":6,"priority":1},"raw":{"path":"reports/v3-shell/b2/q2/voice-wave1-x1.json.gz","sha256":"4b821446a24e18a9fb0760677692e8a74d8bb87dbc964fe850be84dad6356f73"}}
+{"fixture":"wave1","speed":2,"seconds":32.01,"ultimateRequired":8,"ultimatePlayed":8,"ultimateInterrupted":0,"skillPlayed":2,"skillInterrupted":0,"meanBarkIntervalSeconds":7.47876666667064,"parity":true,"errors":[],"played":10,"interrupted":0,"suppressed":{"cadence":7,"priority":1},"raw":{"path":"reports/v3-shell/b2/q2/voice-wave1-x2.json.gz","sha256":"b6cc13a77d5668c6cfd724f24e1d8c93145ab8d31728a1a564cf7e4fff4de918"}}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Target page, context or browser has been closed
+    at /Users/bao/taskbar-hero-chain/scripts/audio/voice-matrix.mjs:42:14 {
+  log: []
+}
+
+Node.js v24.22.2
