@@ -1,27 +1,60 @@
 import type {SceneView} from '../../squad/turn3d/scene';
-import {playCue} from '../contracts/audio-cues';
+import {playCue,type AudioCue,type CueOptions} from '../contracts/audio-cues';
 import {bodyStatuses,type BodyStatus} from './status';
-
-/** Crossing-based cues; paused redraws and gallery seeks stay silent. */
+import {audioTimeline,cueTier,type TimelineCue,type CueRole} from './audio-timeline';
+import type {SequencePlan} from './sequence';
+export interface FiredCue {cue:AudioCue;at:number;planId:number|string|null;skillId:string;tier:string;actorId:string;role:CueRole;targetId?:string;voicePhase?:string}
+/** One battle-owned scheduler. B retains all decoding, mixing and voice synthesis. */
 export class BattleAudio {
- private battle:unknown;private impact:unknown;private lastPlan:unknown;private statuses=new Map<string,Set<BodyStatus>>();
+ readonly events:FiredCue[]=[];
+ private battle:unknown;private lastPlan:unknown;private fired=new Set<number>();private track:TimelineCue[]=[];
+ private statuses=new Map<string,Set<BodyStatus>>();private lastWall:number|undefined;private elapsed=0;private nextBark=7500;private barks=0;
+ private capture=false;private impacts:number[]=[];private pending:{event:FiredCue;options:CueOptions}[]=[];
+ constructor(private play:(id:AudioCue,options?:CueOptions)=>void=playCue){}
+ /** Deterministic evidence swaps the audio bridge for a recorder, never a second AudioContext. */
+ setCapture(enabled:boolean){this.capture=enabled;}
+ private send(event:FiredCue,options:CueOptions={}){
+  if(event.role==='impact'){
+   this.impacts=this.impacts.filter(t=>event.at-t<.1);
+   if(this.impacts.length>=6){this.pending.push({event,options});return;}
+   this.impacts.push(event.at);
+  }
+  this.events.push(event);if(this.events.length>12000)this.events.splice(0,1000);
+  this.play(event.cue,options);
+ }
  render(view:SceneView){
-  if(view.battleKey!==this.battle){this.battle=view.battleKey;this.impact=null;this.lastPlan=null;this.statuses.clear();}
-  const live=!view.paused&&view.fixedTime===undefined&&!view.galleryPreview,frame=view.frame;
+  if(view.battleKey!==this.battle){
+   this.battle=view.battleKey;this.lastPlan=null;this.statuses.clear();this.fired.clear();this.track=[];this.events.length=0;
+   this.elapsed=0;this.nextBark=7500;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
+  }
+  const now=view.fixedTime===undefined?performance.now():view.fixedTime*1000,delta=this.lastWall===undefined?0:Math.max(0,Math.min(250,now-this.lastWall));this.lastWall=now;
+  if(view.galleryPreview||(!this.capture&&(view.paused||view.fixedTime!==undefined)))return;
+  this.elapsed+=delta;const at=this.elapsed/1000,frame=view.frame;
+  const oldPending=this.pending;this.pending=[];for(const p of oldPending)this.send({...p.event,at},p.options);
+  const context={at,planId:frame?.plan.id??null,skillId:frame?.plan.presentationId??frame?.plan.skillId??'',tier:frame?cueTier(frame.plan):'',actorId:frame?.plan.actorId??''};
   for(const unit of view.actors){
    const current=new Set(bodyStatuses(view.cardStatuses?.[unit.id],unit.shield)),previous=this.statuses.get(unit.id);
-   if(live&&previous){for(const s of current)if(!previous.has(s))playCue(`status.${s}.on`);for(const s of previous)if(!current.has(s))playCue(`status.${s}.off`);}
+   if(previous){for(const status of current)if(!previous.has(status))this.send({...context,cue:`status.${status}.on`,role:'status',targetId:unit.id});for(const status of previous)if(!current.has(status))this.send({...context,cue:`status.${status}.off`,role:'status',targetId:unit.id});}
    this.statuses.set(unit.id,current);
   }
+  if(this.elapsed>=this.nextBark){
+   const party=view.actors.filter(a=>a.side==='party'&&a.hp>0),actor=party[this.barks%Math.max(1,party.length)],owner=actor&&(view.models?.[actor.id]??actor.cardRpg?.cardId);
+   if(owner)this.send({...context,cue:`voice.${owner}.${this.barks%2?'attack':'select'}`,role:'bark',actorId:actor!.id},{volume:.65,priority:40});
+   this.barks++;this.nextBark+=7500;
+  }
   if(!frame)return;
-  const owner=view.models?.[frame.plan.actorId]??view.actors.find(a=>a.id===frame.plan.actorId)?.cardRpg?.cardId;
-  if(frame.plan!==this.lastPlan){this.lastPlan=frame.plan;if(live&&owner&&!frame.plan.ultimate)playCue(`voice.${owner}.${frame.clip==='attack'?'attack':'skill'}`,{volume:.65});}
-  if(frame.elapsed<frame.plan.beats[2]!.start||this.impact===frame.plan)return;
-  this.impact=frame.plan;if(!live)return;
-  if(frame.plan.events.some(e=>e.type==='damage'))playCue(frame.plan.ultimate?'hit.heavy':/slash|cross|arrow/.test(frame.plan.shape)?'hit.slash':/orb|flask|storm|beam/.test(frame.plan.shape)?'hit.magic':'hit.blunt');
-  for(const e of frame.plan.events){
-   if(e.type==='death')for(const id of e.targetIds){const unit=view.models?.[id]??view.actors.find(a=>a.id===id)?.cardRpg?.cardId;if(unit)playCue(`voice.${unit}.death`);}
-   if(e.type==='damage'&&['burn','poison','bleed'].includes(e.skillId))playCue(`status.${e.skillId}.tick`);
+  if(frame.plan!==this.lastPlan){this.lastPlan=frame.plan;this.fired.clear();this.track=audioTimeline(frame.plan,(frame.plan as SequencePlan).sequence);}
+  for(const [i,key] of this.track.entries()){
+   if(this.fired.has(i)||key.t>frame.elapsed)continue;this.fired.add(i);
+   this.send({...context,cue:key.cue,role:key.role,targetId:key.targetId,voicePhase:key.voicePhase},{speed:view.playbackSpeed??1,element:key.element,...(key.role==='voice'?{priority:context.tier==='ultimate'?100:90}:{}),...(key.role==='movement'?{volume:.7}:{})});
+  }
+  // Death and periodic damage are independent resolved events, not extra hit amounts.
+  if(frame.elapsed>=frame.plan.beats[2]!.start&&!this.fired.has(-1)){
+   this.fired.add(-1);
+   for(const event of frame.plan.events){
+    if(event.type==='death')for(const id of event.targetIds){const owner=view.models?.[id]??view.actors.find(a=>a.id===id)?.cardRpg?.cardId;if(owner)this.send({...context,cue:`voice.${owner}.death`,role:'voice',targetId:id},{priority:80});}
+    if(event.type==='damage'&&['burn','poison','bleed'].includes(event.skillId))this.send({...context,cue:`status.${event.skillId}.tick`,role:'status'});
+   }
   }
  }
 }

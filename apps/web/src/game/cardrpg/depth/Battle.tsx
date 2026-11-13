@@ -161,7 +161,8 @@ export function BattleView({ m }: { m: DepthModel }) {
         loadingProgress.current.max = loading.total;
         loadingProgress.current.value = loading.completed;
       }
-      currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
+      // C2's renderer owns beat/voice timing; keep the legacy adapter on other renderers.
+      if(!m.battle?.initial.formationC2)currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
         m.paused || !m.showBattle, R.CHAPTERS[(m.battle?.chapter ?? 1) - 1]!.ambience / 174);
       animation = requestAnimationFrame(tick);
     };

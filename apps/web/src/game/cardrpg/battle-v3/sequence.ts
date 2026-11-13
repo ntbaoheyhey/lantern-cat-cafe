@@ -1,6 +1,7 @@
 import type {EffectPlan} from '../../squad/turn3d/effects';
 import type {PaintTimeline} from '../vfx-layered/timeline';
 import type {AudioCue} from '../contracts/audio-cues';
+import {audioTimeline} from './audio-timeline';
 
 export type CinematicMode = 'full' | 'short' | 'off';
 export interface ScalarKey {t:number;value:number}
@@ -44,7 +45,9 @@ export function configureSequence(plan:EffectPlan,mode:CinematicMode='full'):Seq
  lengths[1]=impact-lengths[0]!;
  let start=0;
  const beats=plan.beats.map((beat,i)=>{const next={...beat,start,duration:lengths[i]!,shake:i===2?(ultimate?12:3):0,flash:i===2?.35:0};start+=next.duration;return next;});
- return {...plan,ultimate,beats,duration,sequence,cinematicMode:mode};
+ const configured={...plan,ultimate,beats,duration,sequence,cinematicMode:mode};
+ sequence.audio=audioTimeline(configured,sequence);
+ return configured;
 }
 
 export function sampleKeys<T extends {t:number}>(keys:readonly T[],at:number):T {
