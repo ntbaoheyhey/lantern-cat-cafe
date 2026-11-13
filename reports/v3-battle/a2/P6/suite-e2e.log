@@ -1,0 +1,121 @@
+COMMAND: pnpm --filter @taskbar-hero/web exec playwright test --config ../../tools/cinematic-compositor/playwright.config.ts
+
+Running 10 tests using 1 worker
+
+(node:24348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] e2e/formation-c2.spec.ts:6:1 › C2 recovers a fallen frontline through the two visible placement taps
+[2/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1280×720
+[3/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1440×900
+[4/10] e2e/formation-c2.spec.ts:28:3 › C2 four slots, tap swap and battle bounds at 1024×600
+[5/10] e2e/text-diet-c2.spec.ts:5:1 › C2 player screens and route decisions stay within 25 visible words
+e2e/text-diet-c2.spec.ts:5:1 › C2 player screens and route decisions stay within 25 visible words
+home 21
+
+collection 31
+
+team 8
+
+inventory 20
+
+gacha 14
+
+map 17
+
+tower 39
+
+journal 18
+
+bonds 27
+
+relics 17
+
+save 22
+
+daily 12
+
+prepare 10
+
+result 8
+
+battle 3
+
+materials 9
+
+skills 30
+
+cat-gear 26
+
+cat-bonds 26
+
+weekly 18
+
+tasks 34
+
+gifts 30
+
+codex 23
+
+menu 28
+
+route 17
+
+route-reward 20
+
+route-shop 18
+
+route-campfire 15
+
+route-event 13
+
+route-treasure 13
+
+route-complete 19
+
+save-reset 23
+
+  1) e2e/text-diet-c2.spec.ts:5:1 › C2 player screens and route decisions stay within 25 visible words 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: locator.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Review Night tips', exact: true })
+
+
+       at ../../../tools/cardrpg-c2/word-budget.mjs:69
+
+      67 |   if(screen==='menu')await page.getByRole('button',{name:'Open menu'}).click();
+      68 |   if(screen==='save-reset')await page.getByRole('button',{name:'Reset',exact:true}).click();
+    > 69 |   if(screen==='tips')await page.getByRole('button',{name:'Review Night tips',exact:true}).click();
+         |                                                                                           ^
+      70 |   if(screen==='result'||screen==='battle')await page.getByRole('button',{name:/^Fight/}).click();
+      71 |   if(screen==='result')await page.locator('.uv-result').waitFor({timeout:120000});
+      72 |   if(screen==='battle'){await page.waitForFunction(()=>window.__depthReview.sceneReady);await page.evaluate(()=>{const m=window.__depthReview;m.paused=true;m.notify(false);});}
+        at runBudget (/Users/bao/taskbar-hero-cardrpg-a6/tools/cardrpg-c2/word-budget.mjs:69:91)
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/text-diet-c2.spec.ts:9:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../work/v3-battle-e2e/text-diet-c2-C2-player-scr-134ca-tay-within-25-visible-words/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../work/v3-battle-e2e/text-diet-c2-C2-player-scr-134ca-tay-within-25-visible-words/error-context.md
+
+
+(node:25389) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/10] e2e/text-diet-c2.spec.ts:14:1 › C2 explanations keep keyboard access and return focus
+[7/10] e2e/text-diet-c2.spec.ts:29:1 › C2 battle controls have separate pointer targets at every supported viewport
+[8/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-1: real contact, protected faces and calm flash
+[9/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-4: real contact, protected faces and calm flash
+[10/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted enemy:yarn-giant: real contact, protected faces and calm flash
+  1 failed
+    e2e/text-diet-c2.spec.ts:5:1 › C2 player screens and route decisions stay within 25 visible words 
+  9 passed (3.5m)
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config ../../tools/cinematic-compositor/playwright.config.ts

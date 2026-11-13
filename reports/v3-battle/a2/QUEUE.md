@@ -26,7 +26,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 - [x] P3: Boss phase cinematic and enrage aura; P3/metrics.json: 2.5s, phases II/III, all 3 boss paintings, static reduced aura, battle reset and unchanged rules PASS; source25de0255a. Shared suite E2E remains 9/10.
 - [x] P4: Chapter ambience; P4/metrics.json: 3 chapter palettes,4 sprite kinds, stationary reduced motion, Low29/High91 max particles PASS; source d685ffdf1; type/unit/parity PASS, shared E2E9/10.
 - [x] P5: Crowd reactions; P5/metrics.json: every living unaffected boss spectator flinches;3 allies cheer; reduced motion and combat snapshots unchanged. Source954414a69; shared E2E9/10.
-- [ ] P6: Cat victory poses, confetti and stars
+- [x] P6: All12 cat victory poses, confetti and stars; P6/metrics.json and comparisons. Reduced motion, real rewards/stars, phone layout, type/unit/parity PASS; shared E2E9/10. Source0018a05f8.
 - [ ] P7: Slow-motion final wave hit
 - [ ] P8: Drag-to-swap formation with snap and row preview
 - [ ] P9: Shield/resist/immune number icons
