@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {openAudioScreen} from '../audio/ui-fixtures.mjs';
 import {measureScreen} from './measure-screen.mjs';
+import {measurePhoneControls} from './phone-controls.mjs';
 const require=createRequire(new URL('../../apps/web/package.json',import.meta.url));
 const {chromium}=require('@playwright/test');
 const width=Number(process.env.CAPTURE_WIDTH||1280),height=width===1440?900:width<600?844:720;
@@ -50,12 +51,17 @@ try{
    if(broken.length)throw Error(`${id}: broken visible images ${broken.join(', ')}`);
    const metrics=await p.evaluate(measureScreen),path=`${out}/${id}.png`;
    await p.screenshot({path});
+   if(width<600)metrics.phoneControls=await p.evaluate(measurePhoneControls);
    rows.push({id,viewport:{width,height},screenshot:{path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')},...metrics});
    writeFileSync(`${out}/metrics.json`,JSON.stringify({label,sourceCommit,aCommit,runtimeRoot,runtimeHash,sourceSignatures,capturedAt:new Date().toISOString(),rows,errors},null,2)+'\n');
-   console.log(JSON.stringify({id,words:metrics.visibleWords,plain:metrics.plainTextButtons,overflow:metrics.horizontalOverflow}));
+   console.log(JSON.stringify({id,words:metrics.visibleWords,plain:metrics.plainTextButtons,overflow:metrics.horizontalOverflow,clipped:metrics.horizontalClippedControls.length,unreachable:metrics.phoneControls?.unreachable.length}));
   }finally{await p.close();if(isolated)await fixture('rollback');}
  }
  if(errors.length)throw Error(JSON.stringify(errors));
+ if(width<600){
+  const failures=rows.filter(row=>row.horizontalOverflow||row.horizontalClippedControls?.length||!row.phoneControls||row.phoneControls.unreachable.length);
+  if(failures.length)throw Error('Phone controls need repair: '+failures.map(row=>row.id+': '+(row.phoneControls?.unreachable.map(c=>c.label).join(', ')||'initial clipping')).join('; '));
+ }
  for(const source of sourceSignatures)if(createHash('sha256').update(readFileSync(source.path)).digest('hex')!==source.sha256)throw Error(`Source changed during capture: ${source.path}`);
  for(const source of runtimeSources)if(createHash('sha256').update(readFileSync(resolve(runtimeRoot,source.path))).digest('hex')!==source.sha256)throw Error(`Runtime source changed during capture: ${source.path}`);
 }finally{await browser.close();}

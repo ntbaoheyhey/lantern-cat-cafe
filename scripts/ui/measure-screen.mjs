@@ -35,7 +35,21 @@ export function measureScreen() {
     icon:!!e.querySelector('img,svg,canvas,.uv-icon,.game-icon'),disabled:!!e.disabled,
     bounds:{x:Math.round(e.getBoundingClientRect().x),y:Math.round(e.getBoundingClientRect().y),width:Math.round(e.getBoundingClientRect().width),height:Math.round(e.getBoundingClientRect().height)}
   }));
-  return {visibleWords:texts.reduce((n,t)=>n+(t.match(/\p{L}+(?:['’]\p{L}+)*/gu)||[]).length,0),
+  // Document width can stay fixed while a panel clips its own controls.
+  const modal=[...document.querySelectorAll('dialog:modal')].at(-1);
+  const horizontalClippedControls=[...(modal||document).querySelectorAll('button,a,summary,input,select')].filter(painted).flatMap(e=>{
+    const r=e.getBoundingClientRect();let left=0,right=innerWidth,top=0,bottom=innerHeight;
+    for(let parent=e.parentElement;parent&&parent!==document.body&&parent!==document.documentElement;parent=parent.parentElement){
+      const s=getComputedStyle(parent),b=parent.getBoundingClientRect();
+      if(/hidden|clip|auto|scroll/.test(s.overflowX)){left=Math.max(left,b.left+parent.clientLeft);right=Math.min(right,b.left+parent.clientLeft+parent.clientWidth);}
+      if(/hidden|clip|auto|scroll/.test(s.overflowY)){top=Math.max(top,b.top+parent.clientTop);bottom=Math.min(bottom,b.top+parent.clientTop+parent.clientHeight);}
+    }
+    if(r.bottom<=top||r.top>=bottom||r.left>=left-2&&r.right<=right+2)return [];
+    const clippedRect={left:Math.max(left,r.left),right:Math.min(right,r.right),top:Math.max(top,r.top),bottom:Math.min(bottom,r.bottom)};
+    if(clippedRect.right>clippedRect.left&&!uncovered(e,clippedRect))return [];
+    return [{label:e.getAttribute('aria-label')||e.textContent.trim(),selector:e.tagName.toLowerCase()+'.'+e.className,bounds:{left:r.left,right:r.right},available:{left,right}}];
+  });
+  return {horizontalClippedControls,visibleWords:texts.reduce((n,t)=>n+(t.match(/\p{L}+(?:['’]\p{L}+)*/gu)||[]).length,0),
     plainTextButtons:controls.filter(c=>['button','summary'].includes(c.tag)&&!c.icon&&/\p{L}/u.test(c.text)).length,
     iconTiles:controls.filter(c=>c.icon).length,texts,fonts:[...fonts],controls,
     horizontalOverflow:document.documentElement.scrollWidth>innerWidth};

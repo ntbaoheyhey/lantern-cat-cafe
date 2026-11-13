@@ -312,6 +312,51 @@ dialog.chain-panel.b2-wallet>button{display:flex;flex-direction:column;gap:6px;m
 .b2-invitation-rates dl>div{min-width:0;gap:8px;padding:4px}.b2-invitation-rates dl dt{font-size:17px}.b2-invitation-rates dl dd{font:19px var(--font-num)}
 @media(max-width:700px){.b2-invitation-rates dl{grid-template-columns:1fr}}
 
+/* Phone panels own their available width, including portal dialog frames. */
+@media(max-width:900px){
+ .uv-app[data-a6=true] .uv-shell .uv-sheet-content:has(.a6-cats-workspace){grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(4,max-content);grid-auto-rows:max-content;overflow:auto;gap:14px;padding:12px}
+ .uv-app[data-a6=true] .uv-shell .a6-cats-workspace>.a6-cat-detail{grid-column:1;grid-row:1;position:static;max-height:none;min-width:0;width:100%;padding:12px;overflow:visible}
+ .uv-app[data-a6=true] .uv-shell .uv-sheet-content:has(.a6-cats-workspace)>.uv-section-tools{grid-column:1;grid-row:2}
+ .uv-app[data-a6=true] .uv-shell .uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade{grid-column:1;grid-row:3}
+ .uv-app[data-a6=true] .uv-shell .a6-cats-workspace>.uv-cat-grid{grid-column:1;grid-row:4}
+ .uv-app[data-a6=true] .uv-shell .c2-cat-detail>.a6-cat-hero{grid-template-columns:100px minmax(0,1fr);min-height:130px;gap:8px}
+ .uv-app[data-a6=true] .uv-shell .c2-cat-detail>.a6-cat-hero>img{width:100px;height:130px}
+ .uv-app[data-a6=true] .uv-shell .c2-cat-detail>.a6-cat-hero h2{font-size:26px}
+ .uv-app[data-a6=true] .uv-shell .c2-cat-detail>.a6-cat-tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+ .uv-app[data-a6=true] .uv-shell .c2-cat-detail>.a6-cat-tabs button{min-width:0;padding:5px 2px;font-size:13px}
+ .uv-app[data-a6=true] .uv-shell button.b2-bond-link{grid-template-columns:22px 46px minmax(0,1fr) 20px;gap:6px;font-size:18px}
+ .uv-app[data-a6=true] .uv-shell button.b2-bond-link>img:not(.game-icon){width:46px;height:46px}
+}
+@media(max-width:650px){
+ dialog.c2-help.b2-help,dialog.b2-dialog,.b-page.b2-page{box-sizing:border-box;width:calc(100vw - 20px);max-width:calc(100vw - 20px);padding:10px;border-width:14px;border-image-width:24px;max-height:calc(100dvh - 24px)}
+ dialog.b2-help *,dialog.b2-dialog *,.b-page.b2-page *{box-sizing:border-box;min-width:0}
+ dialog.b2-help .c2-help-body{max-height:calc(100dvh - 170px);padding:4px}
+ .b2-supply-manager .b2-mode-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ .b2-supply-manager .b2-mode-tabs button{flex-direction:column;justify-content:center;gap:4px;font-size:14px;padding:6px 2px}
+ .b2-supply-manager .b2-managed-items,.b2-supply-manager .b2-supply-recipes{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:10px;margin:12px 0}
+ .b2-supply-manager .b2-managed-items>.b2-tile,.b2-supply-manager .b2-supply-recipes>.b2-tile{height:92px}
+ .b2-supply-manager .b2-managed-items .game-icon,.b2-supply-manager .b2-supply-recipes .game-icon{width:54px;height:54px}
+ .b2-supply-manager .b2-supply-recipient{gap:8px;margin:12px 0}
+ .b2-supply-manager .b2-supply-recipient>img{width:90px;height:105px;background-size:85px 28px}
+ .b2-supply-manager .b2-supply-recipient select{font-size:20px;padding:8px;max-width:140px}
+ .b2-dialog-actions{flex-wrap:wrap;gap:8px}
+ .b2-supply-manager .b2-dialog-actions button{min-width:0;flex:1 1 120px;font-size:16px;padding:8px}
+ .b2-managed-focus{padding:10px;gap:12px}.b2-managed-focus h3{font-size:22px}
+ .b2-supplies{grid-template-columns:minmax(0,1fr);gap:14px}
+ .b2-batch-controls{gap:4px}.b2-batch-controls button{min-width:30px;padding:4px;font-size:17px}.b2-batch-controls>output{min-width:30px;font-size:24px}
+ .uv-app[data-a6=true] .uv-shell .c2-settings{grid-template-columns:minmax(0,1fr)}
+ .c2-settings>.b2-settings-navigation{flex-wrap:wrap;gap:10px}
+ .uv-app[data-a6=true] .uv-shell .c2-settings .a6-comfort-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .uv-app[data-a6=true] .uv-shell .c2-settings .a6-save-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .uv-app[data-a6=true] .uv-shell .c2-settings .a6-save-actions button{flex-wrap:wrap;font-size:15px}
+ .b2-page[data-family=garden] .b2-season-scene{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .b2-page[data-family=garden] :is(.b2-season-medal,.b2-edition){display:flex;flex-direction:column;gap:4px}
+ .b2-page[data-family=garden] :is(.b2-season-medal,.b2-edition)>.game-icon{width:54px;height:54px}
+ .b2-page[data-family=garden] :is(.b2-season-medal,.b2-edition) h3{font-size:20px}
+ .b2-weekly-track{padding:10px 6px}.b2-weekly-track article>button{flex-wrap:wrap;font-size:15px}
+ .b2-page[data-family=garden] .b2-season-track{flex-wrap:wrap;gap:8px;width:100%;padding:8px}
+}
+
 /* Q6: the A-owned result keeps the shell kit after the scheduled integration. */
 .uv-app[data-a6=true] .uv-shell .c2-result:not(.b2-result) .a6-result-heading h2{background:url('/art/v3-shell/b2/title-victory.webp') center/contain no-repeat;color:transparent!important;text-shadow:none!important}
 .uv-app[data-a6=true] .uv-shell .c2-result:not(.b2-result)[data-outcome=enemy] .a6-result-heading h2{background-image:url('/art/v3-shell/b2/title-defeat.webp')}

@@ -36,7 +36,10 @@ for width in [1280,1440]:
 phones=[]
 for name in [label+'-phone','chain-'+label+'-phone']:
  folder=q/f'{name}-390';data=read(folder/'metrics.json');assert not data['errors']
- for row in data['rows']:assert not row['horizontalOverflow'],row['id'];verify(row['screenshot'])
+ for row in data['rows']:
+  assert not row['horizontalOverflow'] and not row['horizontalClippedControls'],row['id']
+  assert row['phoneControls']['tested']>0 and not row['phoneControls']['unreachable'],row['id']
+  verify(row['screenshot'])
  phones.extend(data['rows']);captureManifests.append({'metrics':signed(folder/'metrics.json'),'sources':signed(folder/'sources.json')})
 assert len(phones)==24
 fonts=read(b/'tests/q6-final-fonts.log');icons=read(b/'tests/q6-final-icons.log')
@@ -56,7 +59,7 @@ for prior in previous['screens']:
   row['shots'].append({'width':width,'height':height,**after,'before':before,'comparison':signed(path)})
  rows.append(row)
 flow=b/f'tests/q6-{label}-flows.log'
-flow.write_text('Q6 verified full local browser suite and screen flows\n'+''.join(f"PASS {r['group']}: {r['passed']}/{r['minimumPassed']}; {r['log']}; sha256 {r['sha256']}\n" for r in browser['rows'])+f'PASS 108 desktop captures; 54 states at1280x720 and1440x900.\nPASS {len(phones)} phone captures at390x844; zero horizontal overflow.\nPASS workspace unit/type checks; receipts in q6-{label}-suite.json.\n')
+flow.write_text('Q6 verified full local browser suite and screen flows\n'+''.join(f"PASS {r['group']}: {r['passed']}/{r['minimumPassed']}; {r['log']}; sha256 {r['sha256']}\n" for r in browser['rows'])+f'PASS 108 desktop captures; 54 states at1280x720 and1440x900.\nPASS {len(phones)} phone captures at390x844; zero horizontal overflow or clipped/unreachable controls.\nPASS workspace unit/type checks; receipts in q6-{label}-suite.json.\n')
 qualifies=lambda r:r['visibleWords']<=25 and r['plainTextButtons']<=2 and min(r['scores'].values())>=7 and r['averageScore']>=8
 passing=sum(qualifies(r) for r in rows)
 method='Explicit visual judgments over current A/B temporary preview and isolated local Anvil captures. Counts use actual visible DOM, including discovery notices, and the worst of both desktop sizes. Runtime source hashes bind every capture. Each chain screen rolls back its disposable database/Anvil fixture; production quotas remain intact. Before baseline for the added batch dialog is its former bag manager.'
