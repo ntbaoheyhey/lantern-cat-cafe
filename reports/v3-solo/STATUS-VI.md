@@ -4,7 +4,8 @@
 - Q2 hoàn tất 59/59 điều kiện: không cắt 62 pha chiêu cuối hoặc 17 câu kỹ năng ở 9 tổ hợp.
 - Trận đạt 4,66 và trùm 3,49 lần giọng/phút; kết quả chiến đấu không đổi.
 - Kiểm thử cuối A/B đều đạt; độ rõ lời và các phần phối âm khác tiếp tục ở Q5.
-- Tiếp theo Q3: chuyển động toàn bộ diễn viên và kiểm tra riêng mọi hành động địch.
+- Q3 đang đo lại: lần 5 đạt 15,663/15,80, 34/34 đòn có phản ứng; chưa đóng thẻ.
+- Đã sửa mảnh vỡ bị ngắt khi đổi lượt; đang quay lại đủ 3 cảnh trên commit c32274053.
 - Kinh tế đang chạy nền: 16 vòng/640 cấu hình, top 10 xác nhận 200 seed; Star Thread/bot còn lỗi.
 - Q4–Q9 còn mở; chưa gộp sớm, chưa triển khai.
 - Đồng bộ 16/18-11 lúc 12:00 UTC; đóng băng 19-11 lúc 12:00 UTC.

@@ -45,3 +45,5 @@ The chapter aria-label repair preserves semantics, but did not resolve the A uni
 
 ## Q3 recovery continuation — 2026-11-13T15:24:46.172375+00:00
 Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped faces and parity PASS. Inspection found debris tied to the current action frame, so short basics cut its flight off. Method6 stores damage debris in the existing bounded ground pool, lets it finish for 560 ms across action changes, and adds a local two-frame impact light. Healing never emits damage debris. The reference estimator, capture duration and all thresholds stay unchanged.
+
+- 2026-11-13T15:30:34.697544+00:00 Q3 method6 measured15.687217,34/34 reactions,zero clipped face samples,parity PASS. The diagnostic groups fixed-estimator samples by action/phase; active idle/recovery is12.830/14.280 while basic travel is17.845. Method7 keeps16 fragments but increases their physical size and impulse, extending ballistic recovery from560 to720ms within the existing850ms pool lifetime. Fine motes remain separate. No camera, voice clock, capture window or estimator changes.

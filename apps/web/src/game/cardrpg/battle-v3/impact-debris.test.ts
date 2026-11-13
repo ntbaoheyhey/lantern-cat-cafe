@@ -8,7 +8,7 @@ function canvas(){
 }
 it('starts only at contact, expires, and respects reduced motion and the low-quality budget',()=>{
  const {c,points,balance}=canvas(),paint=(t:number,reduced=false,low=false)=>paintImpactDebris(c,t,300,400,220,1,['#fff','#f60'],12,1,reduced,low);
- expect(paint(-1)).toBe(0);expect(paint(560)).toBe(0);expect(paint(100,true)).toBe(0);expect(points).toHaveLength(0);
+ expect(paint(-1)).toBe(0);expect(paint(720)).toBe(0);expect(paint(100,true)).toBe(0);expect(points).toHaveLength(0);
  expect(paint(100,false,true)).toBe(6);expect(paint(100)).toBe(16);expect(balance()).toBe(0);
 });
 it('limits contact light to two authored frames while fragments keep falling',()=>{
