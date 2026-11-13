@@ -39,8 +39,8 @@ test('C2 nested tailoring and salvage Odds keep the workshop open on Escape',asy
  const workshop=page.getByRole('dialog',{name:'Gear workshop',exact:true});
  await workshop.getByLabel('Template',{exact:true}).selectOption('hearthloom-weapon-legendary');
  let odds=await disclose(page,'Tailoring odds');
- await expect(odds.dialog.getByLabel('seals').locator('..')).toHaveText('❖10');
- await expect(odds.dialog.getByLabel('materials').locator('..')).toHaveText('◇200');
+ await expect(odds.dialog.getByLabel('seals').locator('..').locator('dd')).toHaveText('10');
+ await expect(odds.dialog.getByLabel('materials').locator('..').locator('dd')).toHaveText('200');
  await odds.close();await expect(workshop).toBeVisible();
  odds=await disclose(page,'Salvage odds');
  await expect(odds.dialog.getByLabel('Deterministic reward')).toHaveText('100%');
@@ -68,7 +68,7 @@ test('C2 equipment invitations show their live hard guarantee and selector price
  await fresh(page);await page.evaluate(()=>window.__depthReview!.go('gacha'));
  await page.getByRole('navigation',{name:'Invitation banners'}).getByRole('button').nth(2).click();
  let odds=await disclose(page,'Invitation odds');
- await expect(odds.dialog.getByLabel('Price in stamps').locator('..')).toHaveText('✉300');
+ await expect(odds.dialog.getByLabel('Price in stamps').locator('..').locator('dd')).toHaveText('300');
  await odds.close();
  await page.evaluate(()=>{
   const m=window.__depthReview!;m.state.account.pity.gear={sinceLegendary:23,totalPulls:23,featuredGuaranteed:false};m.notify(false);
@@ -77,10 +77,10 @@ test('C2 equipment invitations show their live hard guarantee and selector price
  await expect(odds.dialog.getByRole('row').last()).toContainText('1%100%');
  await expect(odds.dialog.getByLabel('Legendary hard pity').locator('..')).toContainText('1 / 24');
  await odds.close();
- await page.getByText('✦ Choose',{exact:true}).click();
+ await page.getByLabel('Choose with marks',{exact:true}).click();
  await page.getByLabel('Reward type',{exact:true}).selectOption('gear');
  await page.getByLabel('Chosen reward',{exact:true}).selectOption('hearthloom-weapon-legendary');
  odds=await disclose(page,'Selector odds');
- await expect(odds.dialog.getByLabel('Selector marks cost').locator('..')).toHaveText('✦72');
+ await expect(odds.dialog.getByLabel('Selector marks cost').locator('..').locator('dd')).toHaveText('72');
  await odds.close();
 });

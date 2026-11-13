@@ -1,13 +1,16 @@
 # Session A handoff
-NOW: A6 awaiting B6 publication; A-owned guide tests fixed (18/18). Review guest helpers are valid.
-NEXT 1: Merge B6 once published; run full local unit/E2E/typecheck/lint/build on integrated head.
-NEXT 2: Capture 90-second audible landing/guest/home/battle/victory/forge demo.
-NEXT 3: Finish bounded A5 connectivity revisit, update reports/PR #444, push.
-LAST GOOD COMMIT: 3726cef96; branch codex/v3-battle-2026-11-13.
-DIAGNOSIS: C2 pointer test stalls: global audio controls cover battle guide/More in top-right. Legacy font/tips/menu remain B-owned.
-FIX: Reserve audio width within A-owned battle topbar; rerun exact pointer test. No relaxed gates.
-OPEN: A5 original alpha gate PARTIAL 20/22; INBOX empty; no deploy/main merge.
-PIDS: Vite 79776 / parent 79768, port 5990, verified cwd apps/web; owned by resumed task.
-DISK: 98.21 GiB after safe cleanup; keep active builds/caches until servers exit.
-PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/444 (draft).
+NOW: Queue closed: A1–A4 done; A5/A6 PARTIAL with bounded revisits complete. Demo delivered; final reports ready.
+NEXT 1: B repairs the 13 remaining browser cases listed in A6/REMAINING-GATES.md; A must preserve ownership.
+NEXT 2: After owner fixes, rerun affected cases and full suite; independent rig repaint/split work remains incomplete.
+NEXT 3: User reviews draft PR #444 and decides merge/deployment; no active A card or approval wait remains.
+LAST GOOD COMMIT: 0b323e282 (integrated product; final evidence/fixture closure follows), branch codex/v3-battle-2026-11-13.
+CHECKS: 4,721 unit tests pass; 2 expected failures/11 skips; typecheck/lint/build pass.
+E2E: Full run 420/435; subsequent Odds 4/4 resolves two failures; 13 unresolved, no all-green claim.
+DEMO: A6/demo-v3.webm and Desktop/TaskbarHero-REVIEW/demo-v3.webm; 90.007s, 720p30, real mixer audio.
+DIAGNOSIS: Legacy entry lacks B's font application; Night tips hidden by B CSS; nine screens exceed unchanged word budget.
+FIX: Only owned test selectors/capture encoding changed. Requests and exact repros retained; no B screen edits or baseline relaxation.
+OPEN: A5 strict alpha gate fails 20/22; A6 E2E PARTIAL; inherited B6 economics PARTIAL. INBOX has no corrections.
+PIDS: None. Earlier Vite/E2E processes exited; ports 5990–5993 have no listeners.
+DISK: 98.14 GiB after cleanup; retained latest V2 build; no worktrees removed.
+PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/444 (draft; no main merge/deploy).
 SOURCE: /Users/bao/.codex/attachments/a3bf736a-eb43-4258-b4d6-7061215edd13/Pasted text.txt

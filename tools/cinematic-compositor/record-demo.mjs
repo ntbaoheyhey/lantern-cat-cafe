@@ -2,7 +2,7 @@
 import {createRequire} from 'node:module';
 import {mkdir,writeFile,copyFile,rm} from 'node:fs/promises';
 import {resolve} from 'node:path';
-import {spawn} from 'node:child_process';
+import {encodeDemo} from './encode-demo.mjs';
 import assert from 'node:assert/strict';
 
 const root=resolve(import.meta.dirname,'../..');
@@ -12,11 +12,6 @@ const out=resolve(root,'reports/v3-battle/A6'),temp=resolve(root,'work/demo-v3-c
 const desktop='/Users/bao/Desktop/TaskbarHero-REVIEW';
 const base=process.env.DEMO_URL??'http://127.0.0.1:5990';
 await mkdir(temp,{recursive:true});await mkdir(out,{recursive:true});await mkdir(desktop,{recursive:true});
-const run=(command,args)=>new Promise((yes,no)=>{
-  const child=spawn(command,args,{stdio:['ignore','pipe','pipe']}),stdout=[],stderr=[];
-  child.stdout.on('data',chunk=>stdout.push(chunk));child.stderr.on('data',chunk=>stderr.push(chunk));
-  child.on('error',no);child.on('exit',code=>code===0?yes(Buffer.concat(stdout)):no(Error(Buffer.concat(stderr).toString().slice(-3000))));
-});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal'],ignoreDefaultArgs:['--mute-audio']});
 const context=await browser.newContext({viewport:{width:1280,height:720},recordVideo:{dir:temp,size:{width:1280,height:720}}});
 const page=await context.newPage(),errors=[],checkpoints=[];
@@ -110,14 +105,11 @@ try{
   const cues=await page.evaluate(()=>window.__thAudio.hits);
   const video=page.video();await context.close();raw=await video.path();
   assert.deepEqual(errors,[]);
-  const metadata=JSON.parse((await run('ffprobe',['-v','error','-show_streams','-of','json',raw])).toString());
-  const [n,d]=metadata.streams[0].avg_frame_rate.split('/').map(Number),fps=n/d;
-  const markers=await run('ffmpeg',['-hide_banner','-loglevel','error','-i',raw,'-t','30','-vf','crop=8:8:0:0,format=gray','-f','rawvideo','-']);
-  let first=-1;for(let i=0;i<markers.length/64;i++){let sum=0;for(let j=0;j<64;j++)sum+=markers[i*64+j];if(sum/64>248){first=i;break;}}
-  assert.ok(first>=0,'Missing audio/video sync marker');
   const target=resolve(out,'demo-v3.webm');
-  await run('ffmpeg',['-hide_banner','-loglevel','error','-y','-ss',String(first/fps+.3),'-i',raw,'-ss','.3','-i',audioPath,'-t','90','-map','0:v:0','-map','1:a:0','-vf','fps=30','-c:v','libvpx-vp9','-crf','34','-b:v','0','-row-mt','1','-cpu-used','5','-c:a','libopus','-b:a','112k',target]);
+  const review={errors,fixture,battle,checkpoints,audio:{source:'Unmodified live AudioEngine master output',played:cues.filter(c=>c.result==='played').length,ultimateImpacts:cues.filter(c=>c.result==='played'&&/^ult\..*\.impact$/.test(c.id)),forge:cues.filter(c=>c.id==='ui.forge-success')},seconds:90};
+  await writeFile(resolve(out,'demo-review.json'),JSON.stringify(review,null,2)+'\n');
+  const encoded=await encodeDemo(raw,audioPath,target);
   await copyFile(target,resolve(desktop,'demo-v3.webm'));
-  await writeFile(resolve(out,'demo-review.json'),JSON.stringify({errors,fixture,battle,checkpoints,audio:{source:'Unmodified live AudioEngine master output',synchronizationFrameSeconds:1/fps,played:cues.filter(c=>c.result==='played').length,ultimateImpacts:cues.filter(c=>c.result==='played'&&/^ult\..*\.impact$/.test(c.id)),forge:cues.filter(c=>c.id==='ui.forge-success')},seconds:90},null,2)+'\n');
+  await writeFile(resolve(out,'demo-review.json'),JSON.stringify({...review,encoded},null,2)+'\n');
   await rm(temp,{recursive:true,force:true});console.log('90-second audible demo captured');
 }finally{await browser.close();}

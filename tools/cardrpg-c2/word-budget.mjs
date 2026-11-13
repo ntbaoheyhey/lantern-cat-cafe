@@ -65,7 +65,7 @@ export async function runBudget(page,{shots=process.env.C2_WORD_SHOTS,only=scree
   if(screen==='materials')await page.getByRole('button',{name:'Materials',exact:true}).click();
   if(['skills','cat-gear','cat-bonds'].includes(screen))await page.getByRole('navigation',{name:'Companion details'}).getByRole('button',{name:screen==='skills'?'Skills':screen==='cat-gear'?'Gear':'Bonds',exact:true}).click();
   if(screen==='menu')await page.getByRole('button',{name:'Open menu'}).click();
-  if(screen==='save-reset')await page.getByRole('button',{name:'↺ Reset',exact:true}).click();
+  if(screen==='save-reset')await page.getByRole('button',{name:'Reset',exact:true}).click();
   if(screen==='tips')await page.getByRole('button',{name:'Review Night tips',exact:true}).click();
   if(screen==='result'||screen==='battle')await page.getByRole('button',{name:/^Fight/}).click();
   if(screen==='result')await page.locator('.uv-result').waitFor({timeout:120000});

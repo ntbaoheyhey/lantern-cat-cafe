@@ -54,3 +54,12 @@ The global audio mute/Mix controls covered the battle guide and More buttons. Re
 While B prepares its final published integration commit, perform the single A5 revisit rather than idle. Diagnose gaps at overlapping pieces receiving different transforms. Pilot a continuous alpha-weighted skin field with shared world-space mesh lines on Sorrel; it changes geometry only, preserving every approved atlas pixel and authored negative space. Keep the strict raw-alpha gate and compare visual poses/performance before adopting. This revisit is the final attempt, not a new unbounded art pass.
 
 A5 revisit outcome: reject shared-skin candidate after Sorrel visual review. Peak holes fell 1006→684 but staff bending/foot slivers worsened. Restore exact committed compiler/runtime. Close A5 PARTIAL after one bounded revisit, retain failing measurements and rejected patch. No broadened batch or softened gate.
+
+## A6 final browser fixture alignment
+B3 replaces glyph characters with image icons. Update C2 Odds assertions to their labelled numeric dd values and the Choose button role; keep exact costs, probabilities, focus and keyboard expectations. Update the Reset selector to its current accessible name. Genuine font/hidden-entry/word-budget failures stay visible; do not update pixel baselines to bless an unconfirmed typography regression.
+
+## A6 demo encoding recovery
+The complete journey passed both played-ultimate cues, real party victory, forge reveal and zero-page-error assertions before encoding failed on FFmpeg numeric syntax (-ss .3). Reuse the original raw capture/mixer audio with -ss 0.3. Distinguish the 8px sync marker from the browser initial blank frame by checking its adjacent dark pixels. Save future capture metadata before encoding so recoveries retain all runtime cue arrays.
+
+## A6 closure and bounded revisit
+Close A6 PARTIAL after the fresh-build full suite and focused repair/recheck method. The final fetch includes all published B commits and yields no new implementation. Thirteen remaining browser cases require B-owned typography/non-battle fixes; the user explicitly prohibits A editing those files. Preserve failing gates and exact requests instead of hiding tips, changing word counts or accepting fallback-font baselines. A5's single revisit is already complete. No active cards or pilot approval waits remain. The final report distinguishes the 420/435 full run from the four-case Odds recheck.

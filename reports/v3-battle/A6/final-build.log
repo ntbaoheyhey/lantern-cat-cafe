@@ -1,0 +1,651 @@
+
+> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero-cardrpg-a6
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build && node ../../tools/chain/economy-v3-metadata.mjs
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 3192 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                                               2.06 kB │ gzip:   0.75 kB
+apps/web build: dist/assets/clover-2-1x-BzG82R-T.webp                         4.12 kB
+apps/web build: dist/assets/mochi-Ba7ND20s.atlas                              4.20 kB
+apps/web build: dist/assets/enemy-binding-thread-basic-BhoxSWLg.webp          4.21 kB
+apps/web build: dist/assets/mochi-1-1x-0eO9HYpi.webp                          4.26 kB
+apps/web build: dist/assets/enemy-practice-cushion-basic-Cf8zR36B.webp        4.41 kB
+apps/web build: dist/assets/enemy-spool-ram-basic-DTvSPUHH.webp               4.52 kB
+apps/web build: dist/assets/soot-1-CXKpAFzs.webp                              4.52 kB
+apps/web build: dist/assets/mochi-4-1x-Cq_OpluA.webp                          4.55 kB
+apps/web build: dist/assets/sheet-B8UIec1E.png                                4.55 kB
+apps/web build: dist/assets/mochi-passive-PFU5FLW0.webp                       4.60 kB
+apps/web build: dist/assets/clover-4-1x-DrUYIN-L.webp                         4.61 kB
+apps/web build: dist/assets/enemy-button-guard-basic-Dou8RSl2.webp            4.72 kB
+apps/web build: dist/assets/baloo-2-vietnamese-800-normal-ConLnEgt.woff2      4.79 kB
+apps/web build: dist/assets/enemy-yarn-giant-basic-KCKd0wgB.webp              4.81 kB
+apps/web build: dist/assets/clover-DMMElfhQ.atlas                             4.84 kB
+apps/web build: dist/assets/clover-passive-Dxawk41_.webp                      5.17 kB
+apps/web build: dist/assets/clover-1-B7S3oNJF.webp                            5.22 kB
+apps/web build: dist/assets/needle-moth-face-B0UVdrBI.webp                    5.45 kB
+apps/web build: dist/assets/soot-passive-D_keaMGl.webp                        5.57 kB
+apps/web build: dist/assets/baseline-dpr1-enemy-CHUsflAp.webp                 5.69 kB
+apps/web build: dist/assets/binding-thread-face-DIyXWHxM.webp                 5.81 kB
+apps/web build: dist/assets/needle-moth-face-144-BS1CAibG.webp                5.83 kB
+apps/web build: dist/assets/mochi-face-DyYSTsWA.webp                          6.04 kB
+apps/web build: dist/assets/enemy-sock-skipper-BvDanL-2.webp                  6.05 kB
+apps/web build: dist/assets/baseline-dpr1-hero-face-B7M8-U0d.webp             6.09 kB
+apps/web build: dist/assets/clover-face-CiYVwXAC.webp                         6.10 kB
+apps/web build: dist/assets/soot-2-k-ZErThO.webp                              6.26 kB
+apps/web build: dist/assets/current-dpr1-enemy-fFUzbewu.webp                  6.26 kB
+apps/web build: dist/assets/current-dpr1-hero-face-ekIj4_ua.webp              6.28 kB
+apps/web build: dist/assets/brioche-face-AizFZDKj.webp                        6.29 kB
+apps/web build: dist/assets/panko-face-CpKtrbZ_.webp                          6.43 kB
+apps/web build: dist/assets/binding-thread-face-144-VD5Dbgz4.webp             6.47 kB
+apps/web build: dist/assets/velvet-face-DGAeEoxA.webp                         6.59 kB
+apps/web build: dist/assets/velvet-face-144-Be6cyj4l.webp                     6.64 kB
+apps/web build: dist/assets/mochi-face-144-Bvb-MK7N.webp                      6.67 kB
+apps/web build: dist/assets/mallow-face-CTdovehN.webp                         6.70 kB
+apps/web build: dist/assets/clover-face-144-UazMHC1D.webp                     6.70 kB
+apps/web build: dist/assets/baloo-2-vietnamese-800-normal-GQACmpuv.woff       6.73 kB
+apps/web build: dist/assets/panko-face-144-DC552jUb.webp                      6.75 kB
+apps/web build: dist/assets/biscuit-face-BMhs9-Pd.webp                        6.82 kB
+apps/web build: dist/assets/brioche-face-144-B7mh50qz.webp                    6.96 kB
+apps/web build: dist/assets/marigold-face-B7eBW0go.webp                       7.00 kB
+apps/web build: dist/assets/enemy-practice-cushion-DXaSf4ck.webp              7.00 kB
+apps/web build: dist/assets/mallow-face-144-BT5VLE9H.webp                     7.06 kB
+apps/web build: dist/assets/enemy-binding-thread-BrcLKcjC.webp                7.09 kB
+apps/web build: dist/assets/clover-2-BdHGh2Bd.webp                            7.10 kB
+apps/web build: dist/assets/soot-3-CO3sEToS.webp                              7.17 kB
+apps/web build: dist/assets/biscuit-face-144-CbRBa9tF.webp                    7.26 kB
+apps/web build: dist/assets/marigold-face-144-ATXFKY0-.webp                   7.26 kB
+apps/web build: dist/assets/soot-face-nFpwfOl1.webp                           7.27 kB
+apps/web build: dist/assets/cinnamon-face-gefP2wvB.webp                       7.38 kB
+apps/web build: dist/assets/enemy-teacup-healer-DDWjxz4I.webp                 7.50 kB
+apps/web build: dist/assets/soot-face-144-BONZld_-.webp                       7.50 kB
+apps/web build: dist/assets/button-guard-face-BRl0vm9X.webp                   7.74 kB
+apps/web build: dist/assets/mochi-1-Bfp2moUc.webp                             7.75 kB
+apps/web build: dist/assets/teacup-healer-face-BqnXQ4wW.webp                  7.77 kB
+apps/web build: dist/assets/enemy-needle-moth-IGDew6xF.webp                   7.80 kB
+apps/web build: dist/assets/cinnamon-face-144-BLN7NVdT.webp                   7.84 kB
+apps/web build: dist/assets/practice-cushion-face-144-C-MMw7AA.webp           7.90 kB
+apps/web build: dist/assets/teacup-healer-face-144-Bcafz8SF.webp              7.96 kB
+apps/web build: dist/assets/sock-skipper-face-CgwvpPf0.webp                   8.05 kB
+apps/web build: dist/assets/enemy-button-guard-DYxDAl3U.webp                  8.09 kB
+apps/web build: dist/assets/yarn-giant-face-C4o6ws5t.webp                     8.10 kB
+apps/web build: dist/assets/button-guard-face-144-DDWoPuWK.webp               8.10 kB
+apps/web build: dist/assets/yarn-giant-face-144-DXKyeANu.webp                 8.24 kB
+apps/web build: dist/assets/pollen-scout-face-144-EipX6_qz.webp               8.26 kB
+apps/web build: dist/assets/enemy-spool-ram-Dm1UmUtu.webp                     8.31 kB
+apps/web build: dist/assets/pantry-crown-face-DYPcuHgj.webp                   8.37 kB
+apps/web build: dist/assets/sock-skipper-face-144-68iooCdR.webp               8.40 kB
+apps/web build: dist/assets/practice-cushion-face-ViMhQvKO.webp               8.40 kB
+apps/web build: dist/assets/kettle-knight-face-DgJ5jJBG.webp                  8.44 kB
+apps/web build: dist/assets/kettle-knight-face-144-CouvtYtu.webp              8.50 kB
+apps/web build: dist/assets/pantry-crown-face-144-BQh4qm9S.webp               8.50 kB
+apps/web build: dist/assets/mochi-2-DYQNeNuI.webp                             8.52 kB
+apps/web build: dist/assets/pollen-scout-face-CSwYKvHH.webp                   8.59 kB
+apps/web build: dist/assets/sorrel-face-DBRegbVU.webp                         8.63 kB
+apps/web build: dist/assets/inkcap-face-BT1C75G1.webp                         8.78 kB
+apps/web build: dist/assets/spool-ram-face-144-BQIqgOcY.webp                  8.85 kB
+apps/web build: dist/assets/sorrel-face-144-DGL0IC8L.webp                     8.87 kB
+apps/web build: dist/assets/spool-ram-face-CpziMKRB.webp                      8.88 kB
+apps/web build: dist/assets/mochi-3-CLlUkQcR.webp                             8.97 kB
+apps/web build: dist/assets/inkcap-face-144-9hgGdYFP.webp                     8.99 kB
+apps/web build: dist/assets/crumb-sentinel-face-CYJABMAJ.webp                 9.21 kB
+apps/web build: dist/assets/crumb-sentinel-face-144-N6-Tnz9w.webp             9.51 kB
+apps/web build: dist/assets/soot-armL-DIRlvpvU.webp                           9.62 kB
+apps/web build: dist/assets/clover-3-B8GXW1B7.webp                            9.82 kB
+apps/web build: dist/assets/rain-spool-face-144--Md5c901.webp                 9.83 kB
+apps/web build: dist/assets/rain-spool-face-DqdoP4Br.webp                     9.98 kB
+apps/web build: dist/assets/soot-4-YkzX02yy.webp                             10.05 kB
+apps/web build: dist/assets/soot-feet-CDviSCao.webp                          10.43 kB
+apps/web build: dist/assets/practice-cushion-CyKAlpls.json                   11.41 kB │ gzip:   1.47 kB
+apps/web build: dist/assets/crumb-sentinel-Qw036mmv.json                     11.43 kB │ gzip:   1.54 kB
+apps/web build: dist/assets/teacup-healer-CohyjiAC.json                      11.44 kB │ gzip:   1.52 kB
+apps/web build: dist/assets/binding-thread-cWger-Qp.json                     11.46 kB │ gzip:   1.52 kB
+apps/web build: dist/assets/kettle-knight-9hLCSEgZ.json                      11.47 kB │ gzip:   1.54 kB
+apps/web build: dist/assets/button-guard-961O7y2d.json                       11.47 kB │ gzip:   1.45 kB
+apps/web build: dist/assets/mochi-4-Cn_G-l7V.webp                            11.82 kB
+apps/web build: dist/assets/soot-NOC_z34r.json                               11.98 kB │ gzip:   1.39 kB
+apps/web build: dist/assets/mochi-CbxPWm1Y.json                              12.03 kB │ gzip:   1.48 kB
+apps/web build: dist/assets/spool-ram-B5_tI-Ct.json                          12.37 kB │ gzip:   1.51 kB
+apps/web build: dist/assets/clover-4-ORRPOw6Y.webp                           12.43 kB
+apps/web build: dist/assets/clover-DLkOgkUY.json                             12.43 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/sorrel-Bftj2P_g.json                             12.44 kB │ gzip:   1.54 kB
+apps/web build: dist/assets/cinnamon-C2JLXCrk.json                           12.45 kB │ gzip:   1.56 kB
+apps/web build: dist/assets/velvet-UAm9fS4Z.json                             12.45 kB │ gzip:   1.54 kB
+apps/web build: dist/assets/panko-DVRftSVG.json                              12.46 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/mallow-B57fVEdB.json                             12.46 kB │ gzip:   1.60 kB
+apps/web build: dist/assets/marigold-CPSk4HwO.json                           12.46 kB │ gzip:   1.60 kB
+apps/web build: dist/assets/inkcap-CMJ92dx7.json                             12.47 kB │ gzip:   1.59 kB
+apps/web build: dist/assets/sock-skipper--PAW3oBW.json                       12.48 kB │ gzip:   1.60 kB
+apps/web build: dist/assets/brioche-BuPHM_en.json                            12.50 kB │ gzip:   1.61 kB
+apps/web build: dist/assets/biscuit-Ce_gCjMk.json                            12.50 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/yarn-giant-footR-C7rG1Cvc.webp                   12.52 kB
+apps/web build: dist/assets/mochi-feet-DcIOiRzQ.webp                         13.08 kB
+apps/web build: dist/assets/mochi-tail-LxzSQHBX.webp                         13.52 kB
+apps/web build: dist/assets/pollen-scout-CYXP3xW4.json                       13.55 kB │ gzip:   1.66 kB
+apps/web build: dist/assets/needle-moth-CZWeF7uG.json                        13.56 kB │ gzip:   1.72 kB
+apps/web build: dist/assets/pantry-crown-BsCCnVhP.json                       13.62 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/yarn-giant-BaCddA4K.json                         13.62 kB │ gzip:   1.58 kB
+apps/web build: dist/assets/enemy-yarn-giant-Bb35uvZp.webp                   14.28 kB
+apps/web build: dist/assets/yarn-giant-footL-ILQovLIQ.webp                   14.48 kB
+apps/web build: dist/assets/baloo-2-latin-ext-800-normal-C_Iwmf1s.woff2      15.06 kB
+apps/web build: dist/assets/button-guard-footR-COxbISXR.webp                 15.22 kB
+apps/web build: dist/assets/rain-spool-CLgrZwnc.json                         16.27 kB │ gzip:   1.77 kB
+apps/web build: dist/assets/baseline-dpr2-enemy-CXEl-bLs.webp                17.05 kB
+apps/web build: dist/assets/current-dpr2-enemy-DlflLJJV.webp                 18.12 kB
+apps/web build: dist/assets/inkcap-C_3RK3h2.webp                             18.24 kB
+apps/web build: dist/assets/current-dpr2-hero-face-C-9DmphY.webp             18.25 kB
+apps/web build: dist/assets/baloo-2-latin-800-normal-BbF3Etk1.woff2          18.63 kB
+apps/web build: dist/assets/baseline-dpr2-hero-face-e8Qeu8XY.webp            18.72 kB
+apps/web build: dist/assets/soot-tail-D8AImiqL.webp                          18.85 kB
+apps/web build: dist/assets/button-guard-footL-CBYMxyso.webp                 19.34 kB
+apps/web build: dist/assets/sock-skipper-G5KYCT1e.webp                       19.40 kB
+apps/web build: dist/assets/mochi-armL-B5SAkkfT.webp                         19.59 kB
+apps/web build: dist/assets/baloo-2-latin-ext-800-normal-D-iCxxqE.woff       19.67 kB
+apps/web build: dist/assets/teacup-healer-Bvas5AiI.webp                      20.62 kB
+apps/web build: dist/assets/soot-armR-CicZZszd.webp                          21.26 kB
+apps/web build: dist/assets/baloo-2-latin-800-normal-B8BXfZF7.woff           22.60 kB
+apps/web build: dist/assets/practice-cushion-3dpB-fN4.webp                   22.90 kB
+apps/web build: dist/assets/mallow-Dtd_0gVX.webp                             25.14 kB
+apps/web build: dist/assets/velvet-DBkTei-D.webp                             25.52 kB
+apps/web build: dist/assets/panko-qVnx8MBX.webp                              26.13 kB
+apps/web build: dist/assets/clover-BA2FQYdp.webp                             26.23 kB
+apps/web build: dist/assets/kettle-knight-DubmdjH6.webp                      27.00 kB
+apps/web build: dist/assets/button-guard-C0YgfxB1.webp                       27.04 kB
+apps/web build: dist/assets/biscuit-DPmqCd6R.webp                            27.94 kB
+apps/web build: dist/assets/binding-thread-xFBSvJjL.webp                     28.22 kB
+apps/web build: dist/assets/button-guard-armR-D1CkFJEQ.webp                  28.52 kB
+apps/web build: dist/assets/crumb-sentinel-lu60wggo.webp                     29.13 kB
+apps/web build: dist/assets/current-dpr1-portrait-oOnP2es0.webp              29.18 kB
+apps/web build: dist/assets/baseline-dpr1-portrait-D7Ni7tJJ.webp             29.30 kB
+apps/web build: dist/assets/spool-ram-bYRDglAQ.webp                          29.51 kB
+apps/web build: dist/assets/paper-CYl1aa2a.png                               29.80 kB
+apps/web build: dist/assets/brioche-Delr-yx0.webp                            29.90 kB
+apps/web build: dist/assets/marigold-BzCXwCSs.webp                           30.11 kB
+apps/web build: dist/assets/mochi-armR-CkALRcGj.webp                         30.24 kB
+apps/web build: dist/assets/pollen-scout-C5SPbn9k.webp                       30.37 kB
+apps/web build: dist/assets/mochi-body-DlTEGtC8.webp                         30.43 kB
+apps/web build: dist/assets/soot-DXJ3xTFA.webp                               30.85 kB
+apps/web build: dist/assets/cinnamon-CbLFB8sx.webp                           30.91 kB
+apps/web build: dist/assets/needle-moth-BBHj-dYi.webp                        32.17 kB
+apps/web build: dist/assets/mochi-BqlYPZ1k.webp                              33.28 kB
+apps/web build: dist/assets/sorrel-CEj6tuME.webp                             33.82 kB
+apps/web build: dist/assets/inkcap-1x-CDufIEz1.webp                          34.70 kB
+apps/web build: dist/assets/soot-1x-B-eVyKBz.webp                            35.18 kB
+apps/web build: dist/assets/rain-spool-grO-_8dr.webp                         35.86 kB
+apps/web build: dist/assets/mallow-1x-WHD8uUh6.webp                          36.30 kB
+apps/web build: dist/assets/felt-BysZyDBf.png                                37.33 kB
+apps/web build: dist/assets/yarn-giant-body-BGH5gNZP.webp                    37.58 kB
+apps/web build: dist/assets/grain-D7_yec7V.png                               38.51 kB
+apps/web build: dist/assets/button-guard-armL-17bB_jRb.webp                  39.04 kB
+apps/web build: dist/assets/brioche-1x-Bb4b6ylV.webp                         41.18 kB
+apps/web build: dist/assets/button-guard-head-C0keosij.webp                  43.26 kB
+apps/web build: dist/assets/brioche-3-g9xsHS1Z.webp                          43.60 kB
+apps/web build: dist/assets/velvet-1x-CRgJP83t.webp                          43.63 kB
+apps/web build: dist/assets/sorrel-1x-Ci1dqBbj.webp                          44.84 kB
+apps/web build: dist/assets/clover-1x-BBAlJAV3.webp                          44.92 kB
+apps/web build: dist/assets/biscuit-1x-v-1QjBZT.webp                         45.22 kB
+apps/web build: dist/assets/brioche-4-C6Sx31vO.webp                          45.99 kB
+apps/web build: dist/assets/enemy-needle-moth-basic-jFxu2X88.webp            46.32 kB
+apps/web build: dist/assets/enemy-sock-skipper-basic-B0c4N7Is.webp           46.57 kB
+apps/web build: dist/assets/enemy-kettle-knight-basic-CCtxCOQz.webp          46.92 kB
+apps/web build: dist/assets/sorrel-2-BjKZpfQC.webp                           47.69 kB
+apps/web build: dist/assets/marigold-1x-BrhsFMHe.webp                        47.77 kB
+apps/web build: dist/assets/enemy-needle-moth-Bd44C06F.webp                  48.43 kB
+apps/web build: dist/assets/biscuit-2-COEI7loN.webp                          48.48 kB
+apps/web build: dist/assets/enemy-rain-spool-basic-BBvTpO6c.webp             48.51 kB
+apps/web build: dist/assets/mochi-1-BGmJYunw.webp                            48.81 kB
+apps/web build: dist/assets/panko-1x-BkVihpdC.webp                           48.96 kB
+apps/web build: dist/assets/soot-head-BYCjP_Lw.webp                          49.39 kB
+apps/web build: dist/assets/mochi-1x-CkbkV-l6.webp                           49.67 kB
+apps/web build: dist/assets/biscuit-4-TRVA8afF.webp                          49.69 kB
+apps/web build: dist/assets/cinnamon-1x-BeWDGJly.webp                        49.69 kB
+apps/web build: dist/assets/mochi-D-l8gebf.json                              49.70 kB │ gzip:   4.47 kB
+apps/web build: dist/assets/stage-window-DyMqJO28.png                        49.84 kB
+apps/web build: dist/assets/enemy-binding-thread-basic-CctOkWRM.webp         50.20 kB
+apps/web build: dist/assets/soot-passive-BEoIpIuX.webp                       50.84 kB
+apps/web build: dist/assets/enemy-pollen-scout-basic-C_B5AVNX.webp           50.88 kB
+apps/web build: dist/assets/cafe-DHF4ZABg.webp                               51.30 kB
+apps/web build: dist/assets/soot-body-CQPaPb7o.webp                          51.86 kB
+apps/web build: dist/assets/panko-passive-CgIyKb0w.webp                      52.35 kB
+apps/web build: dist/assets/cinnamon-3-ijv64hQN.webp                         52.43 kB
+apps/web build: dist/assets/enemy-sock-skipper-BuAh7O8u.webp                 52.71 kB
+apps/web build: dist/assets/sorrel-1-Cf-4VC5L.webp                           52.75 kB
+apps/web build: dist/assets/enemy-teacup-healer-basic-CpeFO8Vz.webp          52.80 kB
+apps/web build: dist/assets/mochi-head-CZc2dyvQ.webp                         53.08 kB
+apps/web build: dist/assets/soot-2-DdyKlckP.webp                             53.49 kB
+apps/web build: dist/assets/inkcap-passive-X0QvAOVU.webp                     53.49 kB
+apps/web build: dist/assets/sorrel-passive-DJLX7hUB.webp                     53.53 kB
+apps/web build: dist/assets/biscuit-1-CcJCKQ88.webp                          53.59 kB
+apps/web build: dist/assets/enemy-pollen-scout-1BhXKRKo.webp                 54.07 kB
+apps/web build: dist/assets/enemy-spool-ram-DnrkoaF2.webp                    54.11 kB
+apps/web build: dist/assets/enemy-practice-cushion-DLFUZ7as.webp             54.29 kB
+apps/web build: dist/assets/inkcap-3-D3IEYnpB.webp                           54.47 kB
+apps/web build: dist/assets/clover-3-6gYFmUps.webp                           54.61 kB
+apps/web build: dist/assets/clover-passive-DrUbtG6M.webp                     55.36 kB
+apps/web build: dist/assets/enemy-kettle-knight-BPFiJuVa.webp                55.56 kB
+apps/web build: dist/assets/yarn-giant-armR-CplhdYWM.webp                    55.95 kB
+apps/web build: dist/assets/yarn-giant-armL-Cow9jFt-.webp                    55.96 kB
+apps/web build: dist/assets/velvet-passive-CuxPKRxF.webp                     56.19 kB
+apps/web build: dist/assets/enemy-button-guard-BWISBLNR.webp                 56.24 kB
+apps/web build: dist/assets/soot-3-BvUVSVPm.webp                             56.30 kB
+apps/web build: dist/assets/enemy-spool-ram-hcX3hO2x.webp                    56.34 kB
+apps/web build: dist/assets/sorrel-4-WhEJApKo.webp                           56.51 kB
+apps/web build: dist/assets/velvet-2-Bhlzwttd.webp                           56.63 kB
+apps/web build: dist/assets/mochi-2-DZ0JV3wU.webp                            56.96 kB
+apps/web build: dist/assets/baloo-2-devanagari-800-normal-BURIY0wZ.woff2     56.99 kB
+apps/web build: dist/assets/inkcap-2-KYGqQUTL.webp                           57.93 kB
+apps/web build: dist/assets/brioche-passive-CD44zbsl.webp                    57.97 kB
+apps/web build: dist/assets/mallow-passive-B1p0v5y_.webp                     58.04 kB
+apps/web build: dist/assets/enemy-practice-cushion-Bv8lS5NZ.webp             58.44 kB
+apps/web build: dist/assets/button-guard-body-CLFmPT3r.webp                  58.79 kB
+apps/web build: dist/assets/mallow-4-68PeHS7i.webp                           59.07 kB
+apps/web build: dist/assets/yarn-giant-head-N9kS5lzA.webp                    59.10 kB
+apps/web build: dist/assets/mallow-3-CnRyAzrC.webp                           59.20 kB
+apps/web build: dist/assets/sorrel-3-LMAlkHHN.webp                           59.52 kB
+apps/web build: dist/assets/brioche-2-Bc_iy1HH.webp                          59.66 kB
+apps/web build: dist/assets/marigold-3-B69M6N5x.webp                         59.71 kB
+apps/web build: dist/assets/clover-2-qQ3Evfxe.webp                           59.87 kB
+apps/web build: dist/assets/enemy-yarn-giant-L5wt8MPJ.webp                   60.04 kB
+apps/web build: dist/assets/clover-4-CKPxh47Q.webp                           60.40 kB
+apps/web build: dist/assets/mochi-3-hWfonFm_.webp                            60.55 kB
+apps/web build: dist/assets/cinnamon-passive-7blAULcL.webp                   60.78 kB
+apps/web build: dist/assets/inkcap-4-U099SjR2.webp                           61.09 kB
+apps/web build: dist/assets/enemy-teacup-healer-DcMK8xvC.webp                61.64 kB
+apps/web build: dist/assets/marigold-4-DGdwbjr8.webp                         61.74 kB
+apps/web build: dist/assets/marigold-1-Bx7f3e-Y.webp                         61.96 kB
+apps/web build: dist/assets/panko-2-8niqRJ2T.webp                            62.08 kB
+apps/web build: dist/assets/cinnamon-4-CWYGEQEm.webp                         62.12 kB
+apps/web build: dist/assets/biscuit-3-Bmi-PdKY.webp                          62.41 kB
+apps/web build: dist/assets/enemy-spool-ram-basic-C06R8UY4.webp              62.42 kB
+apps/web build: dist/assets/enemy-rain-spool-BTWtgYgZ.webp                   62.54 kB
+apps/web build: dist/assets/velvet-4-DsEn3aDY.webp                           62.80 kB
+apps/web build: dist/assets/mochi-passive-CTq5T-EW.webp                      62.80 kB
+apps/web build: dist/assets/mochi-4-fY3oX8rE.webp                            63.17 kB
+apps/web build: dist/assets/velvet-3-p2SJfwkt.webp                           63.17 kB
+apps/web build: dist/assets/mochi-1-B7H83J4C.webp                            63.32 kB
+apps/web build: dist/assets/clover-1-T9a_qkg_.webp                           63.52 kB
+apps/web build: dist/assets/enemy-sock-skipper-BRLs1Vz3.webp                 63.65 kB
+apps/web build: dist/assets/marigold-passive-B2uPrdTJ.webp                   64.02 kB
+apps/web build: dist/assets/cinnamon-2-sEa_9iIx.webp                         64.93 kB
+apps/web build: dist/assets/soot-1-fsfPp6TI.webp                             65.17 kB
+apps/web build: dist/assets/v5-motifs-CLLoks8n.webp                          65.19 kB
+apps/web build: dist/assets/soot-4-Wuk8unK3.webp                             65.42 kB
+apps/web build: dist/assets/mallow-2-B6aHw5Ky.webp                           65.66 kB
+apps/web build: dist/assets/mallow-1-DbbAUdDD.webp                           66.09 kB
+apps/web build: dist/assets/panko-4-05DPYoIL.webp                            66.18 kB
+apps/web build: dist/assets/v5-soft-BJrgX26l.webp                            67.19 kB
+apps/web build: dist/assets/enemy-binding-thread-CovtmfXY.webp               67.35 kB
+apps/web build: dist/assets/enemy-needle-moth-BrqsFQEv.webp                  67.52 kB
+apps/web build: dist/assets/inkcap-1-DZ_GJ4cL.webp                           67.54 kB
+apps/web build: dist/assets/panko-3-Ro4w3uSj.webp                            67.87 kB
+apps/web build: dist/assets/biscuit-passive-0VTN4Gf0.webp                    67.99 kB
+apps/web build: dist/assets/enemy-pantry-crown-BQv0V5va.webp                 68.19 kB
+apps/web build: dist/assets/enemy-button-guard-7gbJvOSB.webp                 68.46 kB
+apps/web build: dist/assets/marigold-2-CHtVJd9v.webp                         68.52 kB
+apps/web build: dist/assets/enemy-crumb-sentinel-u44_fL8o.webp               68.93 kB
+apps/web build: dist/assets/enemy-yarn-giant-basic-B137T_hG.webp             69.28 kB
+apps/web build: dist/assets/enemy-binding-thread-DlITB3aG.webp               69.40 kB
+apps/web build: dist/assets/enemy-pantry-crown-basic-DK-p0-Pg.webp           69.66 kB
+apps/web build: dist/assets/enemy-practice-cushion-basic-BIewOvnb.webp       70.12 kB
+apps/web build: dist/assets/velvet-1-D_VGKFFL.webp                           70.97 kB
+apps/web build: dist/assets/mochi-CLKxiP2D.json                              71.02 kB │ gzip:   6.80 kB
+apps/web build: dist/assets/cinnamon-1-q5XcpgEY.webp                         74.46 kB
+apps/web build: dist/assets/panko-1-sekZSrK9.webp                            74.74 kB
+apps/web build: dist/assets/enemy-teacup-healer-XGTJXYku.webp                77.58 kB
+apps/web build: dist/assets/clover-1-BgLJ_Toj.webp                           79.08 kB
+apps/web build: dist/assets/brioche-1-k_9gKzd3.webp                          82.35 kB
+apps/web build: dist/assets/enemy-button-guard-basic-OrqfRPRV.webp           84.53 kB
+apps/web build: dist/assets/pantry-crown-BF8FId0N.webp                       84.95 kB
+apps/web build: dist/assets/mochi-2-IdTUNyjN.webp                            85.31 kB
+apps/web build: dist/assets/enemy-crumb-sentinel-basic-BAkkm_S8.webp         85.66 kB
+apps/web build: dist/assets/current-dpr2-portrait-BtwihL6m.webp              86.94 kB
+apps/web build: dist/assets/baseline-dpr2-portrait-BfV4X8Hx.webp             87.87 kB
+apps/web build: dist/assets/baloo-2-devanagari-800-normal-YLp1oUqR.woff      89.06 kB
+apps/web build: dist/assets/mochi-3-JQQYEnP0.webp                            90.12 kB
+apps/web build: dist/assets/slots-CSBdV68i.json                              91.28 kB │ gzip:   6.13 kB
+apps/web build: dist/assets/yarn-giant-CCu0tWKm.webp                         92.85 kB
+apps/web build: dist/assets/soot-1-UxdQD3qa.webp                             95.50 kB
+apps/web build: dist/assets/soot-2-BGtBLp_D.webp                             96.02 kB
+apps/web build: dist/assets/soot-3-DoEyqS_B.webp                            101.27 kB
+apps/web build: dist/assets/inkcap-2x-CrzOvjlr.webp                         104.17 kB
+apps/web build: dist/assets/soot-4-BGYeUR4x.webp                            104.25 kB
+apps/web build: dist/assets/rain-spool-DPLmvtxk.webp                        104.65 kB
+apps/web build: dist/assets/soot-2x-aEByoc2S.webp                           105.19 kB
+apps/web build: dist/assets/mochi-4-Cq_AO7sJ.webp                           107.46 kB
+apps/web build: dist/assets/spool-ram-mW99UNA7.webp                         107.50 kB
+apps/web build: dist/assets/needle-moth-qbqT-P7y.webp                       108.93 kB
+apps/web build: dist/assets/mallow-2x-DCa67rqS.webp                         109.47 kB
+apps/web build: dist/assets/enemy-yarn-giant-5chxU_Nq.webp                  110.65 kB
+apps/web build: dist/assets/clover-2-CBbbq7WS.webp                          110.95 kB
+apps/web build: dist/assets/brioche-2x-DLFsZloZ.webp                        122.66 kB
+apps/web build: dist/assets/pollen-scout-BYrcAqHE.webp                      122.89 kB
+apps/web build: dist/assets/practice-cushion-p85pQZdE.glb                   123.08 kB
+apps/web build: dist/assets/teacup-healer-DayIsiT4.glb                      123.69 kB
+apps/web build: dist/assets/1280-bounds-w8viP7Fc.webp                       126.04 kB
+apps/web build: dist/assets/teacup-healer-Bvz5T3KZ.webp                     130.00 kB
+apps/web build: dist/assets/velvet-2x-gb3SsXQo.webp                         132.00 kB
+apps/web build: dist/assets/binding-thread-fLDAxy4_.webp                    132.53 kB
+apps/web build: dist/assets/sorrel-2x-Bsc33u8F.webp                         133.42 kB
+apps/web build: dist/assets/clover-ZHxSjkYI.webp                            133.79 kB
+apps/web build: dist/assets/mochi-Dvp7yae4.webp                             134.53 kB
+apps/web build: dist/assets/clover-2x-DgbNOuiE.webp                         134.97 kB
+apps/web build: dist/assets/clover-3-rAfzyjOR.webp                          135.21 kB
+apps/web build: dist/assets/biscuit-2x-DkxrS1Vp.webp                        136.85 kB
+apps/web build: dist/assets/soot-BBMAonk6.webp                              137.84 kB
+apps/web build: dist/assets/clover-4-DiH06Q3v.webp                          137.95 kB
+apps/web build: dist/assets/crumb-sentinel-B6nU2RoK.glb                     138.78 kB
+apps/web build: dist/assets/skills-atlas-1x-D64OFwZW.webp                   141.03 kB
+apps/web build: dist/assets/velvet-B5XLcJEN.webp                            141.07 kB
+apps/web build: dist/assets/marigold-2x-CUVMAgZF.webp                       142.55 kB
+apps/web build: dist/assets/button-guard-Cwh39V0y.glb                       143.57 kB
+apps/web build: dist/assets/sock-skipper-CE879vOq.glb                       144.18 kB
+apps/web build: dist/assets/kettle-knight-DYNizycW.webp                     144.66 kB
+apps/web build: dist/assets/panko-2x-D467Wscq.webp                          147.31 kB
+apps/web build: dist/assets/cinnamon-2x-B9eZZkuV.webp                       147.48 kB
+apps/web build: dist/assets/soot-BSXaDuel.png                               148.31 kB
+apps/web build: dist/assets/practice-cushion-BdfTM3gd.webp                  148.54 kB
+apps/web build: dist/assets/clover-CrzEHM6s.png                             148.96 kB
+apps/web build: dist/assets/needle-moth-C8RGygEU.glb                        149.38 kB
+apps/web build: dist/assets/needle-moth-CnLbCImk.webp                       150.78 kB
+apps/web build: dist/assets/mochi-2x-CpvccwD-.webp                          151.06 kB
+apps/web build: dist/assets/sorrel-BRvWT8dz.png                             151.61 kB
+apps/web build: dist/assets/mallow-Bj4iVmD3.png                             152.55 kB
+apps/web build: dist/assets/marigold-DU-txD25.webp                          152.67 kB
+apps/web build: dist/assets/inkcap-DjB6gGYP.webp                            152.91 kB
+apps/web build: dist/assets/button-guard-C9PyZp7F.webp                      153.25 kB
+apps/web build: dist/assets/brioche-DC5KkFib.webp                           154.23 kB
+apps/web build: dist/assets/cinnamon-BjmD01Q3.webp                          154.82 kB
+apps/web build: dist/assets/kettle-knight-DPRVz1Aj.glb                      155.00 kB
+apps/web build: dist/assets/crumb-sentinel-Bk7VtmCH.webp                    155.54 kB
+apps/web build: dist/assets/cinnamon-D2CVatjc.png                           157.78 kB
+apps/web build: dist/assets/inkcap-PfvOTGGr.png                             158.32 kB
+apps/web build: dist/assets/marigold-D5Ix9U4F.png                           159.89 kB
+apps/web build: dist/assets/velvet-DEJKycIV.png                             160.79 kB
+apps/web build: dist/assets/mochi-CqqpGwHA.png                              163.63 kB
+apps/web build: dist/assets/sock-skipper-BnXvTDdY.webp                      164.42 kB
+apps/web build: dist/assets/panko-C5k0olxY.webp                             165.69 kB
+apps/web build: dist/assets/mallow-CDHtSkyM.webp                            168.80 kB
+apps/web build: dist/assets/yarn-giant-DE7Q_Cu9.webp                        169.02 kB
+apps/web build: dist/assets/inkcap-D_Bghc2Y.webp                            169.59 kB
+apps/web build: dist/assets/biscuit-DNFBWNSv.webp                           170.78 kB
+apps/web build: dist/assets/biscuit-CQSPgItR.png                            171.74 kB
+apps/web build: dist/assets/pollen-scout-Crssjb2w.glb                       173.08 kB
+apps/web build: dist/assets/panko-Cnartubd.png                              173.64 kB
+apps/web build: dist/assets/practice-cushion-umU1QXPF.webp                  174.26 kB
+apps/web build: dist/assets/pantry-crown-dxi-MuK7.webp                      174.98 kB
+apps/web build: dist/assets/button-guard-DS2cbRic.glb                       175.55 kB
+apps/web build: dist/assets/brioche-BkNkUxI2.png                            177.52 kB
+apps/web build: dist/assets/spool-ram-BLJrGRUe.glb                          177.78 kB
+apps/web build: dist/assets/clover-CBI7vRHn.json                            180.07 kB │ gzip:  23.88 kB
+apps/web build: dist/assets/sorrel-BqnMHhKD.webp                            180.13 kB
+apps/web build: dist/assets/mochi-DGr7McCx.json                             182.94 kB │ gzip:  24.69 kB
+apps/web build: dist/assets/clover-CsRKxx5j.webp                            183.99 kB
+apps/web build: dist/assets/sorrel-C2t2C9va.webp                            186.55 kB
+apps/web build: dist/assets/binding-thread-DI9wcNbA.glb                     193.41 kB
+apps/web build: dist/assets/rain-spool-7osRihaN.glb                         203.43 kB
+apps/web build: dist/assets/spool-ram-C-i6Fa_w.webp                         203.69 kB
+apps/web build: dist/assets/binding-thread-BAZD_UOm.webp                    203.73 kB
+apps/web build: dist/assets/soot-CT9AS6lQ.webp                              206.15 kB
+apps/web build: dist/assets/cinnamon-DipPoFmV.webp                          208.21 kB
+apps/web build: dist/assets/velvet-CqNdg-0M.webp                            214.63 kB
+apps/web build: dist/assets/mochi-DvhL0Od2.webp                             223.13 kB
+apps/web build: dist/assets/pantry-crown-DFV5vQ0v.glb                       232.04 kB
+apps/web build: dist/assets/teacup-healer-B3dlwZYl.webp                     232.22 kB
+apps/web build: dist/assets/inkcap-BpofBjL0.glb                             238.31 kB
+apps/web build: dist/assets/velvet-B5Tc0mGY.glb                             243.10 kB
+apps/web build: dist/assets/sock-skipper-mnwFPk0p.webp                      243.15 kB
+apps/web build: dist/assets/painted-cafe-c11-v1-B-hcVdVI.webp               244.29 kB
+apps/web build: dist/assets/brioche-B1st5C7X.webp                           249.17 kB
+apps/web build: dist/assets/rain-spool-B0lS0BYz.webp                        252.14 kB
+apps/web build: dist/assets/panko-D-M0FsG9.glb                              254.10 kB
+apps/web build: dist/assets/marigold-SlnpA0ka.webp                          254.54 kB
+apps/web build: dist/assets/mallow-DeSrPWb8.glb                             254.73 kB
+apps/web build: dist/assets/cinnamon-CSk2dNr3.glb                           256.20 kB
+apps/web build: dist/assets/sorrel-B8Sh0QEu.glb                             258.14 kB
+apps/web build: dist/assets/brioche-DYQqe0nz.glb                            259.46 kB
+apps/web build: dist/assets/mallow-D_eG14HT.webp                            260.12 kB
+apps/web build: dist/assets/biscuit-QgZ1UvSj.glb                            261.47 kB
+apps/web build: dist/assets/pollen-scout-ZBrMqWUp.webp                      261.65 kB
+apps/web build: dist/assets/marigold-B6nOuXba.glb                           261.77 kB
+apps/web build: dist/assets/biscuit-BnWfL8Ef.webp                           265.56 kB
+apps/web build: dist/assets/button-guard-BfGAiCtV.webp                      266.13 kB
+apps/web build: dist/assets/panko-C9BnsX93.webp                             275.54 kB
+apps/web build: dist/assets/crumb-sentinel-OlNpMMF5.webp                    279.15 kB
+apps/web build: dist/assets/yarn-giant-BzvWDpGw.glb                         309.71 kB
+apps/web build: dist/assets/yarn-giant-lvEKK15y.glb                         311.54 kB
+apps/web build: dist/assets/pantry-crown-ClZFDyWo.webp                      318.54 kB
+apps/web build: dist/assets/kettle-knight-DKUBMiZI.webp                     325.44 kB
+apps/web build: dist/assets/felt-color-TK8vVB4k.png                         346.12 kB
+apps/web build: dist/assets/spool-ram-DETF3Lh3.glb                          357.19 kB
+apps/web build: dist/assets/rain-spool-TxUE30Fm.glb                         367.65 kB
+apps/web build: dist/assets/sock-skipper-_hYrxupk.glb                       378.76 kB
+apps/web build: dist/assets/teacup-healer-CUPasW0T.glb                      387.18 kB
+apps/web build: dist/assets/binding-thread-qY88yoU1.glb                     404.30 kB
+apps/web build: dist/assets/baseline-BF-2_flR.webp                          429.95 kB
+apps/web build: dist/assets/button-guard-oHLKN9do.glb                       431.43 kB
+apps/web build: dist/assets/needle-moth-3JUN0d7d.glb                        433.98 kB
+apps/web build: dist/assets/crumb-sentinel-BVW2tmY9.glb                     446.08 kB
+apps/web build: dist/assets/pollen-scout-Bx5A0JDl.glb                       456.58 kB
+apps/web build: dist/assets/yarn-giant-DcI9GeYI.webp                        457.19 kB
+apps/web build: dist/assets/practice-cushion-ohULnBr7.glb                   467.77 kB
+apps/web build: dist/assets/soot-CexgQL4w.glb                               499.60 kB
+apps/web build: dist/assets/kettle-knight-C_F7G4t6.glb                      517.79 kB
+apps/web build: dist/assets/automatic-B6d8pt4r.webp                         531.95 kB
+apps/web build: dist/assets/mochi-qVQ95Sb3.glb                              532.44 kB
+apps/web build: dist/assets/clover-B2XEN_CN.glb                             545.49 kB
+apps/web build: dist/assets/mochi-CqSK80mh.glb                              550.21 kB
+apps/web build: dist/assets/soot-B5T2ok1s.glb                               582.14 kB
+apps/web build: dist/assets/needle-moth-CKZYmZXA.png                        597.68 kB
+apps/web build: dist/assets/mochi-BcWLFXsv.glb                              608.45 kB
+apps/web build: dist/assets/mochi-k3em9Dit.png                              659.14 kB
+apps/web build: dist/assets/biscuit-DryCo2-T.glb                            691.92 kB
+apps/web build: dist/assets/velvet-Cr0ksRRO.glb                             692.04 kB
+apps/web build: dist/assets/mallow-B8X_B6_I.glb                             693.75 kB
+apps/web build: dist/assets/panko-BUVqJlIa.glb                              699.82 kB
+apps/web build: dist/assets/brioche-tujP1NUo.glb                            708.14 kB
+apps/web build: dist/assets/inkcap-BxrK2JzN.glb                             710.40 kB
+apps/web build: dist/assets/soot-x_xNVDhe.glb                               727.25 kB
+apps/web build: dist/assets/sorrel-pZEw4gV6.png                             732.79 kB
+apps/web build: dist/assets/irradiance-D9AtLSAn.webp                        753.10 kB
+apps/web build: dist/assets/inkcap-D25zf7Uw.png                             791.20 kB
+apps/web build: dist/assets/cinnamon-DzHgCwMe.glb                           826.75 kB
+apps/web build: dist/assets/yarn-giant-D-k_SjO6.glb                         828.46 kB
+apps/web build: dist/assets/sorrel-CZutb-2v.glb                             831.08 kB
+apps/web build: dist/assets/clover-C7jZqP-M.glb                             836.77 kB
+apps/web build: dist/assets/pantry-crown-Dw-ipmcg.glb                       838.25 kB
+apps/web build: dist/assets/mochi-XJdpVarr.glb                              845.06 kB
+apps/web build: dist/assets/mochi-BTMx_wwY.png                              858.45 kB
+apps/web build: dist/assets/practice-cushion-DucOklCD.png                   862.13 kB
+apps/web build: dist/assets/clover-lUoUXsp7.png                             869.76 kB
+apps/web build: dist/assets/soot-CCKLQv0Z.glb                               899.16 kB
+apps/web build: dist/assets/marigold-BBja_cQT.glb                           900.47 kB
+apps/web build: dist/assets/spool-ram-7sEIX6Ku.png                          936.65 kB
+apps/web build: dist/assets/cinnamon-BxmqzmL-.png                           946.42 kB
+apps/web build: dist/assets/soot-D9EdxT-u.png                               947.71 kB
+apps/web build: dist/assets/mochi-Cw4xYKJK.png                              962.51 kB
+apps/web build: dist/assets/binding-thread-kdyF9LAF.png                     970.24 kB
+apps/web build: dist/assets/clover-Cgil4ddk.png                             971.44 kB
+apps/web build: dist/assets/velvet-BsDh-DfC.png                             981.78 kB
+apps/web build: dist/assets/cafe-BZYd0NoZ.glb                             1,015.27 kB
+apps/web build: dist/assets/teacup-healer-tdkOAr3T.png                    1,079.40 kB
+apps/web build: dist/assets/sock-skipper-DIdZ9hbJ.png                     1,085.53 kB
+apps/web build: dist/assets/mochi-BXuMEgNV.png                            1,136.91 kB
+apps/web build: dist/assets/stage-cloth-CEAm7PvZ.png                      1,143.97 kB
+apps/web build: dist/assets/pollen-scout-CX5BBHAG.png                     1,159.43 kB
+apps/web build: dist/assets/mallow-D3cblb8d.png                           1,160.69 kB
+apps/web build: dist/assets/marigold-DsOq97z4.png                         1,178.94 kB
+apps/web build: dist/assets/button-guard-BhPqfMru.png                     1,254.55 kB
+apps/web build: dist/assets/stage-wood-jrjb09y4.png                       1,270.51 kB
+apps/web build: dist/assets/brioche-Da6stF-C.png                          1,279.67 kB
+apps/web build: dist/assets/panko-Bfo5nR28.png                            1,357.82 kB
+apps/web build: dist/assets/biscuit-CkqOixMD.png                          1,364.04 kB
+apps/web build: dist/assets/crumb-sentinel-VnMdeJ-u.png                   1,369.34 kB
+apps/web build: dist/assets/rain-spool-BiRxu15Y.png                       1,436.56 kB
+apps/web build: dist/assets/felt-normal-Dr7XIb6z.png                      1,725.03 kB
+apps/web build: dist/assets/pantry-crown-C4Q1cVj9.png                     1,794.55 kB
+apps/web build: dist/assets/kettle-knight-CW5mgKiv.png                    1,867.37 kB
+apps/web build: dist/assets/yarn-giant-BPLQ17sE.png                       2,677.22 kB
+apps/web build: dist/assets/roster-light-D-DWIHhU.webp                    3,238.62 kB
+apps/web build: dist/assets/entry-Jne0GINi.css                                0.10 kB │ gzip:   0.10 kB
+apps/web build: dist/assets/SoundControlA6-DSV53eLu.css                       0.21 kB │ gzip:   0.17 kB
+apps/web build: dist/assets/GameIcon-CKpojp-j.css                             0.61 kB │ gzip:   0.39 kB
+apps/web build: dist/assets/OpeningA6-BbdQu3dP.css                            0.70 kB │ gzip:   0.38 kB
+apps/web build: dist/assets/SheetsV3-BIAPvCGg.css                             0.84 kB │ gzip:   0.34 kB
+apps/web build: dist/assets/Art2-CAHATuhQ.css                                 0.92 kB │ gzip:   0.46 kB
+apps/web build: dist/assets/RouteTonic-C5GLw35W.css                           1.75 kB │ gzip:   0.73 kB
+apps/web build: dist/assets/Entrance-B7nIbZK4.css                             1.81 kB │ gzip:   0.79 kB
+apps/web build: dist/assets/FormationA6-Dn6EyyMH.css                          1.82 kB │ gzip:   0.73 kB
+apps/web build: dist/assets/FeelLab-BRfFjXsP.css                              2.65 kB │ gzip:   0.93 kB
+apps/web build: dist/assets/FeatureSamples-l4abltAk.css                       2.71 kB │ gzip:   0.85 kB
+apps/web build: dist/assets/ui-BPa1tMFm.css                                   3.10 kB │ gzip:   0.96 kB
+apps/web build: dist/assets/SelectorV4-DD_Dvot-.css                           4.04 kB │ gzip:   1.03 kB
+apps/web build: dist/assets/RunMap-Q_HmGra8.css                               4.61 kB │ gzip:   1.17 kB
+apps/web build: dist/assets/OriginalCatalog-_SMNL7U1.css                      4.90 kB │ gzip:   1.25 kB
+apps/web build: dist/assets/Utility-CyA7VYwl.css                              5.79 kB │ gzip:   1.38 kB
+apps/web build: dist/assets/ChainRoot-QP3OeX9M.css                            6.24 kB │ gzip:   1.85 kB
+apps/web build: dist/assets/Invitations-CGE1bmM8.css                          8.01 kB │ gzip:   2.37 kB
+apps/web build: dist/assets/squad-M6mBeuPx.css                               12.75 kB │ gzip:   3.25 kB
+apps/web build: dist/assets/CafeAdventure--Ys12J6X.css                       13.23 kB │ gzip:   3.47 kB
+apps/web build: dist/assets/RecruitV3-CsvsOK2A.css                           16.01 kB │ gzip:   3.00 kB
+apps/web build: dist/assets/shell-Ckk8p4Pg.css                               16.16 kB │ gzip:   4.60 kB
+apps/web build: dist/assets/TurnApp-CmzRGWFM.css                             18.76 kB │ gzip:   4.79 kB
+apps/web build: dist/assets/EncounterV3-D2FG7Ps6.css                         21.72 kB │ gzip:   4.53 kB
+apps/web build: dist/assets/cardrpg-C7O6Ih3o.css                             22.04 kB │ gzip:   5.74 kB
+apps/web build: dist/assets/battle-layout-DafSuDpI.css                       26.97 kB │ gzip:   6.02 kB
+apps/web build: dist/assets/BattleHudV3-C3LHQJ1U.css                         29.38 kB │ gzip:   7.06 kB
+apps/web build: dist/assets/entry-hs6S3DLC.css                               53.73 kB │ gzip:  11.79 kB
+apps/web build: dist/assets/legacy-entry-TtxsmVV3.css                       180.95 kB │ gzip:  31.45 kB
+apps/web build: dist/assets/ShellV3-DsRUr4nJ.css                            278.12 kB │ gzip:  46.83 kB
+apps/web build: dist/assets/audio-cues-CH4y0Ed8.js                            0.07 kB │ gzip:   0.09 kB
+apps/web build: dist/assets/player-mode-BWI3uI_F.js                           0.11 kB │ gzip:   0.12 kB
+apps/web build: dist/assets/entry-BW4FUyQs.js                                 0.31 kB │ gzip:   0.23 kB
+apps/web build: dist/assets/flags-BGmMTbyJ.js                                 0.48 kB │ gzip:   0.30 kB
+apps/web build: dist/assets/onboarding-B3RJSNzl.js                            0.53 kB │ gzip:   0.37 kB
+apps/web build: dist/assets/OpeningA6-Dwi1n7-x.js                             0.54 kB │ gzip:   0.32 kB
+apps/web build: dist/assets/rng-Cfw1Pt4b.js                                   0.55 kB │ gzip:   0.33 kB
+apps/web build: dist/assets/GameIcon-BEnztkKl.js                              0.64 kB │ gzip:   0.43 kB
+apps/web build: dist/assets/ScoutingV4-CshFnwaW.js                            0.64 kB │ gzip:   0.39 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js                      0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/SoundControlA6-CTQsDLi6.js                        0.72 kB │ gzip:   0.48 kB
+apps/web build: dist/assets/managedGame-B-Ra4VQQ.js                           0.75 kB │ gzip:   0.40 kB
+apps/web build: dist/assets/CountUpA6-CV3kwu6j.js                             0.84 kB │ gzip:   0.54 kB
+apps/web build: dist/assets/Art2-Cji5Adj-.js                                  0.88 kB │ gzip:   0.54 kB
+apps/web build: dist/assets/YarnBalance-CmI2DpXR.js                           0.88 kB │ gzip:   0.53 kB
+apps/web build: dist/assets/badges-a6-YlYqfR3u.js                             1.01 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/star-plans-v4-BwhJbUro.js                         1.06 kB │ gzip:   0.60 kB
+apps/web build: dist/assets/WalletProvider-khDXRv6S.js                        1.13 kB │ gzip:   0.65 kB
+apps/web build: dist/assets/GiftAmountsA6-B-tb2KB_.js                         1.15 kB │ gzip:   0.56 kB
+apps/web build: dist/assets/cardrpg-DQu7FIb9.js                               1.17 kB │ gzip:   0.67 kB
+apps/web build: dist/assets/choreography-Bx5cQUVE.js                          1.34 kB │ gzip:   0.62 kB
+apps/web build: dist/assets/Art2Preview-B4XBOOAm.js                           1.34 kB │ gzip:   0.61 kB
+apps/web build: dist/assets/RouteTonic-CrV9EjgD.js                            1.55 kB │ gzip:   0.78 kB
+apps/web build: dist/assets/TextDietC2-A-Ycgm08.js                            1.58 kB │ gzip:   0.79 kB
+apps/web build: dist/assets/FrameOverlay-lrJEfPwB.js                          1.72 kB │ gzip:   0.95 kB
+apps/web build: dist/assets/cues-DdLPlVDn.js                                  1.83 kB │ gzip:   0.83 kB
+apps/web build: dist/assets/card-staging-BjkyyDRG.js                          2.22 kB │ gzip:   1.08 kB
+apps/web build: dist/assets/meta-presentation-BAeny4V6.js                     2.23 kB │ gzip:   1.13 kB
+apps/web build: dist/assets/layout-c2-CUnDsE71.js                             2.32 kB │ gzip:   1.33 kB
+apps/web build: dist/assets/CompanionCard-BtWollkj.js                         2.53 kB │ gzip:   1.12 kB
+apps/web build: dist/assets/OpeningV4-DksCN9Dr.js                             2.60 kB │ gzip:   1.22 kB
+apps/web build: dist/assets/Icon-Cbyk2NQj.js                                  2.60 kB │ gzip:   1.29 kB
+apps/web build: dist/assets/stage-painting-DpYs5JzH.js                        2.89 kB │ gzip:   1.23 kB
+apps/web build: dist/assets/SkillsV5-r2lN1zUV.js                              3.26 kB │ gzip:   1.29 kB
+apps/web build: dist/assets/assets-DCzM3trz.js                                3.35 kB │ gzip:   1.63 kB
+apps/web build: dist/assets/battle-presentation-BjCXng9H.js                   3.76 kB │ gzip:   1.68 kB
+apps/web build: dist/assets/JourneyV4-iZWPYjkp.js                             4.22 kB │ gzip:   1.76 kB
+apps/web build: dist/assets/guide-a6-eIqpFPt5.js                              4.28 kB │ gzip:   1.91 kB
+apps/web build: dist/assets/shared-EChOAJV_.js                                4.51 kB │ gzip:   1.82 kB
+apps/web build: dist/assets/CompanionGrowthV4-BNUln28z.js                     4.69 kB │ gzip:   1.68 kB
+apps/web build: dist/assets/runtime-CZpIOREB.js                               4.69 kB │ gzip:   1.98 kB
+apps/web build: dist/assets/GasBalance-SoxMAtw8.js                            5.07 kB │ gzip:   2.27 kB
+apps/web build: dist/assets/OddsC2-Dw8csuRn.js                                5.07 kB │ gzip:   1.76 kB
+apps/web build: dist/assets/PowerA6-BNSgyCaT.js                               5.43 kB │ gzip:   1.91 kB
+apps/web build: dist/assets/v2Frames-BS2OsVYQ.js                              5.92 kB │ gzip:   1.32 kB
+apps/web build: dist/assets/PreparationV4-BKf61JEa.js                         6.15 kB │ gzip:   2.36 kB
+apps/web build: dist/assets/FeatureSamples-BAb7HHoW.js                        6.32 kB │ gzip:   2.11 kB
+apps/web build: dist/assets/OriginalArt-CLk2B0-R.js                           6.67 kB │ gzip:   1.08 kB
+apps/web build: dist/assets/ChainRoot-dxWrfkhz.js                             6.74 kB │ gzip:   2.69 kB
+apps/web build: dist/assets/LiveCounters-BOvUKhqi.js                          6.76 kB │ gzip:   2.89 kB
+apps/web build: dist/assets/card-v4-presentation-DaAl0g7x.js                  6.84 kB │ gzip:   2.83 kB
+apps/web build: dist/assets/CafeV4-C9Dw4Rc8.js                                6.94 kB │ gzip:   2.44 kB
+apps/web build: dist/assets/ui-DtuerLWk.js                                    6.96 kB │ gzip:   2.66 kB
+apps/web build: dist/assets/CollectibleDesigns-CPGHG562.js                    7.09 kB │ gzip:   2.55 kB
+apps/web build: dist/assets/engine-CN1sfLAt.js                                7.18 kB │ gzip:   2.73 kB
+apps/web build: dist/assets/scene-actors-Cr2s0MKu.js                          7.24 kB │ gzip:   3.41 kB
+apps/web build: dist/assets/SelectorV4-BeUvv1_D.js                            7.38 kB │ gzip:   2.65 kB
+apps/web build: dist/assets/BondsA6-Bi8RtAWC.js                               8.04 kB │ gzip:   2.29 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js                            8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/audio-B2RSDAVk.js                                 8.54 kB │ gzip:   3.55 kB
+apps/web build: dist/assets/config-DgKJWkbX.js                                8.74 kB │ gzip:   3.61 kB
+apps/web build: dist/assets/FeelLab-DEmEnwix.js                               8.80 kB │ gzip:   3.20 kB
+apps/web build: dist/assets/Encounter-By36-CCT.js                             8.91 kB │ gzip:   3.18 kB
+apps/web build: dist/assets/OriginalCatalog-D-z_K3J-.js                       8.92 kB │ gzip:   2.73 kB
+apps/web build: dist/assets/Entrance-su3J0bT9.js                              9.08 kB │ gzip:   3.30 kB
+apps/web build: dist/assets/KeepsakeArtA6-BGiAyFyd.js                         9.21 kB │ gzip:   2.84 kB
+apps/web build: dist/assets/ArenaScene-C01Zy9NS.js                            9.37 kB │ gzip:   3.44 kB
+apps/web build: dist/assets/EquipmentV4-PTk0cV-3.js                           9.41 kB │ gzip:   3.41 kB
+apps/web build: dist/assets/CompanionPreview-CSSJAu9U.js                      9.46 kB │ gzip:   3.80 kB
+apps/web build: dist/assets/TeamCollection-BRL69CFS.js                       10.67 kB │ gzip:   3.54 kB
+apps/web build: dist/assets/Invitations-Cbt-vHVq.js                          13.48 kB │ gzip:   4.57 kB
+apps/web build: dist/assets/TowerA6-Lk2v9kT2.js                              13.53 kB │ gzip:   4.19 kB
+apps/web build: dist/assets/JournalA6-IRWs6xtU.js                            14.39 kB │ gzip:   3.88 kB
+apps/web build: dist/assets/assets-DK6-vR8J.js                               14.73 kB │ gzip:   5.42 kB
+apps/web build: dist/assets/RecruitV3-DTxvuz6t.js                            16.42 kB │ gzip:   5.62 kB
+apps/web build: dist/assets/SquadScene-Cl7cwLif.js                           16.87 kB │ gzip:   6.15 kB
+apps/web build: dist/assets/StageScene-BNIycDF_.js                           17.28 kB │ gzip:   6.26 kB
+apps/web build: dist/assets/entry-CGTAa4lM.js                                18.17 kB │ gzip:   6.03 kB
+apps/web build: dist/assets/save-Bcb60UGe.js                                 18.41 kB │ gzip:   7.02 kB
+apps/web build: dist/assets/Equipment-BmE4AY4b.js                            18.50 kB │ gzip:   6.01 kB
+apps/web build: dist/assets/index-B7XTvmFe.js                                21.14 kB │ gzip:   8.73 kB
+apps/web build: dist/assets/RunMap-Dskjqj-6.js                               23.62 kB │ gzip:   6.66 kB
+apps/web build: dist/assets/FormationA6-BD6XYFOh.js                          25.01 kB │ gzip:   8.26 kB
+apps/web build: dist/assets/CafeAdventure-Dq9X6biV.js                        27.80 kB │ gzip:   8.69 kB
+apps/web build: dist/assets/Pages-G5mgCMfk.js                                28.47 kB │ gzip:   8.63 kB
+apps/web build: dist/assets/Utility-CEveDMXn.js                              30.73 kB │ gzip:   8.06 kB
+apps/web build: dist/assets/BattleHudV3-B_XTJIoi.js                          33.84 kB │ gzip:  10.49 kB
+apps/web build: dist/assets/entry-DNS5yhLh.js                                36.36 kB │ gzip:  12.02 kB
+apps/web build: dist/assets/catalog-CsoEMbH5.js                              36.63 kB │ gzip:  12.35 kB
+apps/web build: dist/assets/EncounterV3-DEOxf2xP.js                          36.68 kB │ gzip:  11.03 kB
+apps/web build: dist/assets/engine-BBi8W8na.js                               37.79 kB │ gzip:  13.32 kB
+apps/web build: dist/assets/ShellV3-BSB4HQTp.js                              39.59 kB │ gzip:  11.99 kB
+apps/web build: dist/assets/siwe-BuGYOpsS.js                                 40.97 kB │ gzip:   4.33 kB
+apps/web build: dist/assets/ChainRoom-CBCnH0kb.js                            45.51 kB │ gzip:  13.99 kB
+apps/web build: dist/assets/src-Da6VhTl0.js                                  46.96 kB │ gzip:  15.66 kB
+apps/web build: dist/assets/depth-DK0EFH_M.js                                49.95 kB │ gzip:  17.75 kB
+apps/web build: dist/assets/TurnApp-D1yHlFZ1.js                              52.15 kB │ gzip:  16.52 kB
+apps/web build: dist/assets/SheetsV3-34l6nkoD.js                             59.03 kB │ gzip:  14.92 kB
+apps/web build: dist/assets/entry-Cek_3urb.js                                60.85 kB │ gzip:  13.49 kB
+apps/web build: dist/assets/ForecastV4-BFE-abyB.js                          118.26 kB │ gzip:  38.23 kB
+apps/web build: dist/assets/cardrpg-CO_t9xMt.js                             153.41 kB │ gzip:  51.51 kB
+apps/web build: dist/assets/AdviceV4-BGOVyd4E.js                            165.88 kB │ gzip:  54.79 kB
+apps/web build: dist/assets/controls-33zWjQ9j.js                            208.77 kB │ gzip:  12.07 kB
+apps/web build: dist/assets/react-W5ZNnHZt.js                               218.75 kB │ gzip:  68.26 kB
+apps/web build: dist/assets/Battle-DnjkxnDr.js                              221.65 kB │ gzip:  66.69 kB
+apps/web build: dist/assets/velvet-1x-sCeplT4Q.js                           256.49 kB │ gzip:  68.92 kB
+apps/web build: dist/assets/art-a6-z033h7dn.js                              257.64 kB │ gzip:  88.49 kB
+apps/web build: dist/assets/legacy-entry-CNfpjrTz.js                        261.87 kB │ gzip:  77.48 kB
+apps/web build: dist/assets/EffectEvidence-85OtaNxR.js                      294.37 kB │ gzip:  65.90 kB
+apps/web build: dist/assets/card-effect-data-C4CU59fD.js                    311.36 kB │ gzip:  83.58 kB
+apps/web build: dist/assets/player-ebgeEPqT.js                              324.55 kB │ gzip:  27.31 kB
+apps/web build: dist/assets/web3-DIlalSJF.js                                387.92 kB │ gzip: 115.81 kB
+apps/web build: dist/assets/combat-DU8kX7Cm.js                              945.65 kB │ gzip:  86.37 kB
+apps/web build: dist/assets/scene-CUyDoJyS.js                               992.11 kB │ gzip: 379.92 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js                            1,194.43 kB │ gzip: 318.49 kB
+apps/web build: ✓ built in 1.00s
+apps/web build: {"v3MetadataFiles":6256,"bytes":2875342,"deeds":3000,"qualityItems":128}
+apps/web build: Done

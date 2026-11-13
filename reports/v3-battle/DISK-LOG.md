@@ -424,3 +424,13 @@ Correction: the nested dist/v2-server output was still used by guidance cases la
 - Removed /Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite/vitest: 0.03 MiB.
 - Preserved newest classic/v2 builds and active Vite dependency cache (PID 79776, port 5990). No prunable worktrees were listed; no worktrees removed.
 - E2E failure ids copied to A6/e2e-last-run-before-resume.json before test-output cleanup.
+
+- Final demo decode and Desktop SHA-256 match verified; removed 23.65 MiB raw capture/audio intermediates. Preserved final 10.71 MiB 720p demo and compact review images.
+
+## Final resume cleanup 2026-11-13T00:50:50.086228+00:00
+- Free before: 97.57 GiB; after: 98.14 GiB.
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist`: 454.45 MiB (regenerable).
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/test-results`: 0.15 MiB (regenerable).
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite`: 33.51 MiB (regenerable).
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.vite`: 0.00 MiB (regenerable).
+- Retained newest build: `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist-v2/e2e-5991`. No running listeners on ports 5990–5993; no prunable worktrees, so none removed.
