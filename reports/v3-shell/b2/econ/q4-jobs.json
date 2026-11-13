@@ -73,7 +73,8 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round19.log",
-    "started": "2026-11-13T16:33:39.446775+00:00"
+    "started": "2026-11-13T16:33:39.446775+00:00",
+    "completed": "2026-11-13T16:42:01.407915+00:00"
   },
   {
     "name": "anvil-proof-pilot",
@@ -84,6 +85,120 @@
       "tools/chain/economy-v3-flow.mjs"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-proof-pilot.log",
-    "started": "2026-11-13T16:34:17.481484+00:00"
+    "started": "2026-11-13T16:34:17.481484+00:00",
+    "completed": "2026-11-13T16:36:20.781336+00:00"
+  },
+  {
+    "name": "anvil-and-ui-pilot",
+    "pid": 47533,
+    "command": [
+      "nohup",
+      "node",
+      "tools/chain/economy-v3-flow.mjs",
+      "--screens"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-ui-proof-pilot.log",
+    "started": "2026-11-13T16:36:20.781336+00:00",
+    "completed": "2026-11-13T16:42:01.407915+00:00"
+  },
+  {
+    "name": "round20-subcost-rebates",
+    "pid": 48304,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "20",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-19-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND20-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round20.log",
+    "started": "2026-11-13T16:42:01.407915+00:00",
+    "completed": "2026-11-13T16:50:03.966423+00:00"
+  },
+  {
+    "name": "round21-coordinate-probes",
+    "pid": 49412,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "21",
+      "--method",
+      "coordinate",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-20-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND21-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round21.log",
+    "started": "2026-11-13T16:50:03.966423+00:00",
+    "completed": "2026-11-13T17:00:07.147948+00:00"
+  },
+  {
+    "name": "round22-affordable-recipes",
+    "pid": 51244,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "22",
+      "--method",
+      "coordinate",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-21-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND22-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round22.log",
+    "started": "2026-11-13T17:00:07.147948+00:00"
+  },
+  {
+    "name": "confirm-round21",
+    "pid": 51245,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/confirm.mjs",
+      "--label",
+      "Q4-CONFIRM21-200",
+      "--rounds",
+      "20,21",
+      "--top",
+      "10",
+      "--seeds",
+      "200",
+      "--workers",
+      "2",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-confirm21.log",
+    "started": "2026-11-13T17:00:07.147948+00:00"
   }
 ]

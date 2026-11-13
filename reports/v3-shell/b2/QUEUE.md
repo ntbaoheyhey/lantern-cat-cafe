@@ -18,7 +18,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
-- [ ] E3 — active background (16 rounds,640 configurations; top10 independently confirmed at200 seeds; bot target remains open)
+- [ ] E3 — active background (21 rounds,1000 evaluated configurations; new top10 confirmation at200 seeds running; one pilot Star target remains open)
 - [ ] E4 — todo
 - [ ] E5 — todo
 - [ ] T1 — todo

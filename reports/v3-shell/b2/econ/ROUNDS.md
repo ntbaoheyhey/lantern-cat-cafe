@@ -799,3 +799,36 @@ The best score improves to0.096208. Burn1.0238–1.2973 and all other pilot targ
 | heavy-heavy-d1-b0.1 | 1.160 | 1.042 | 13 / 9 | 0.475 |
 | heavy-heavy-d1-b0.2 | 1.230 | 1.047 | 13 / 9 | 0.477 |
 | heavy-heavy-d1-b0.35 | 1.297 | 1.056 | 13 / 9 | 0.475 |
+
+## Round 21 — Paired local funding and recipe probes
+
+80 unique configs × 40 seeds × 18 scenarios. Best score 0.0600.
+
+Three selected levers changed. The best score is 0.059972; all pilot median targets except Star pass. The remaining Star ratio is 1.104318 in casual-heavy half-demand with 35% bots. Continue affordable recipe and withdrawal funding probes; independent 200-seed confirmation tests whether the remaining margin survives different seeds.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 1.1 |
+| policy.spool.skinCost | 7 | 8 |
+| sinks.display.yarn | 4 | 3 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.031 | 1.079 | 13 / 9 | 0.486 |
+| casual-heavy-d0.5-b0.2 | 1.094 | 1.088 | 13 / 9 | 0.499 |
+| casual-heavy-d0.5-b0.35 | 1.158 | 1.104 | 13 / 8.5 | 0.489 |
+| casual-heavy-d1-b0.1 | 1.142 | 1.061 | 13 / 9 | 0.480 |
+| casual-heavy-d1-b0.2 | 1.205 | 1.067 | 13 / 9 | 0.479 |
+| casual-heavy-d1-b0.35 | 1.280 | 1.076 | 13 / 8.5 | 0.459 |
+| balanced-d0.5-b0.1 | 1.033 | 1.058 | 13 / 9 | 0.504 |
+| balanced-d0.5-b0.2 | 1.089 | 1.067 | 13 / 9 | 0.500 |
+| balanced-d0.5-b0.35 | 1.152 | 1.080 | 13 / 9 | 0.495 |
+| balanced-d1-b0.1 | 1.136 | 1.050 | 13 / 9 | 0.475 |
+| balanced-d1-b0.2 | 1.204 | 1.055 | 13 / 9 | 0.474 |
+| balanced-d1-b0.35 | 1.272 | 1.065 | 13 / 9 | 0.468 |
+| heavy-heavy-d0.5-b0.1 | 1.031 | 1.044 | 13 / 9 | 0.505 |
+| heavy-heavy-d0.5-b0.2 | 1.084 | 1.049 | 13 / 9 | 0.497 |
+| heavy-heavy-d0.5-b0.35 | 1.152 | 1.062 | 13 / 9 | 0.497 |
+| heavy-heavy-d1-b0.1 | 1.141 | 1.042 | 13 / 9 | 0.482 |
+| heavy-heavy-d1-b0.2 | 1.215 | 1.047 | 13 / 9 | 0.465 |
+| heavy-heavy-d1-b0.35 | 1.273 | 1.055 | 13 / 9 | 0.474 |
