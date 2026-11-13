@@ -1,5 +1,5 @@
 # V3-A2 handoff
-NOW: V2 painted field skills and 46px bitmap numbers implemented; collecting all36 strips.
+NOW: V2 repaired secondary damage schedule + native RAF cancellation; browser regression PASS39/39 in3 pieces. Recollect V2 evidence.
 FIND/FIX: V2 live capture omits Mochi ult secondary damage: puppetNumberRows only visits plan.targetIds. Add all numeric recipients.
 FIND/FIX: capture did not cancel scene RAF; mixed clocks reset number bursts. Cancel renderer RAF before fixed steps. Healer basic4.5%<5%.
 NEXT 1: Finish V2 measured capture/SSIM, full suite, commit/push; retain shared E2E failure.
@@ -11,7 +11,7 @@ M2: fresh suite typecheck/unit/parity0; E2E9/10 Night tips; all rig metric gates
 OPEN: G0/R/F1/F2/M1 shared Night tips E2E9/10; M1 energy8.052–9.484 <15.796.
 V1: all13 motifs saved tools/cinematic-compositor/motifs/; exact prompts + provenance recorded.
 V1: exact prompts in V1/prompts.json and assets/provenance.json. No reference input.
-PIDS: inherited Vite79140 port5990; V2 field-skill-review active exec11585.
+PIDS: inherited Vite79140 port5990. Obsolete capture tree90554 stopped; suite88916 completed9/10.
 DISK: 338GiB free at resume; cleaned only local Vite caches. No low-disk mode.
 SYNC: 16 Nov12:00UTC;18 Nov12:00UTC;freeze19 Nov12:00UTC. Never early.
 STOP: check STOP-V3A. Work alone. No deploy/main merge or Session B file edits.

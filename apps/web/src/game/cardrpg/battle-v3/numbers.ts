@@ -3,7 +3,7 @@ import type {Anchor} from '../../squad/turn3d/scene';
 import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
 import type {SequencePlan} from './sequence';
-import {numberPieces,numberRecipients} from './number-pieces';
+import {numberPieces,numberRecipients,numberOffset} from './number-pieces';
 type Glyph={x:number;y:number;width:number;height:number};
 type Atlas={canvas:HTMLCanvasElement;glyphs:Map<string,Glyph>;digitHeight:number};
 type Burst={key:string;id:string;text:string;x:number;y:number;at:number;height:number;color:string;critical:boolean;kind:string};
@@ -59,7 +59,7 @@ export class BattleNumbers {
      const event=frame.plan.events.find(e=>e.targetIds.includes(row.id)&&e.type===label.type);
      const dot=!!(event&&'dot' in event&&event.dot),pieces=numberPieces(label.amount,label.type==='damage'&&!dot?(tier==='ultimate'?3:tier==='active'?2:1):1);
      pieces.forEach((amount,i)=>{
-      const key=`${frame.plan.id}:${row.id}:${labelIndex}:${i}`,offset=(presentation?.offsets.get(row.id)??0)+targetIndex*25+i*60;
+      const key=`${frame.plan.id}:${row.id}:${labelIndex}:${i}`,offset=numberOffset(frame.plan.duration-contact,presentation?.offsets.get(row.id)??targetIndex*25,i,pieces.length);
       const stackIndex=stack++;if(this.shown.has(key)||frame.elapsed<contact+offset)return;this.shown.add(key);
       const text=label.type==='fizzle'?'×':(label.type==='heal'?'+':label.type==='shield'?'◇':'−')+amount;
       const digitHeight=(dot?30:label.critical?70:label.type==='fizzle'?30:46)*scale;

@@ -37,6 +37,9 @@ try{
   },{fixture,seed:config.seed,root});
   await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
   await page.evaluate(()=>document.fonts.ready);
+  // Cancel the native RAF before Playwright replaces request/cancelAnimationFrame.
+  // A pre-install handle cannot be cancelled through the synthetic clock API.
+  await page.evaluate(()=>cancelAnimationFrame(window.__depthScene.raf));
   await page.clock.install({time:new Date('2026-11-13T00:00:00Z')});
   await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));
   // The capture owns the renderer clock. React's HUD RAF may still paint, but

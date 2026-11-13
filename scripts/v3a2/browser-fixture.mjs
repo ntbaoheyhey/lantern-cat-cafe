@@ -24,6 +24,7 @@ export async function openFixture(browser,fixture,{width=1280,height=720,url='ht
  },{fixture,seed:config.seed,root});
  await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
  await page.evaluate(()=>document.fonts.ready);
+ await page.evaluate(()=>cancelAnimationFrame(window.__depthScene.raf));
  if(fixedClock){await page.clock.install({time:new Date('2026-11-13T00:00:00Z')});await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));}
  await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:10,paused:true},0);});
  if(fixedClock)await page.clock.runFor(34);

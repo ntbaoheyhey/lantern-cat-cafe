@@ -59,3 +59,7 @@ All 24 actives covered 18.8–40.1% of the viewport, but full-canvas RGB SSIM pe
 
 ## V2 live-fixture repair — 2026-11-13
 All-gallery coverage and SSIM passed, but wave1 retained two real failures: healer basic4.50% (min5%) and zero visible secondary damage from Mochi’s shield ultimate. The number list only enumerated primary friendly recipients; it now includes numeric resolved-event recipients without modifying the plan. Enemy fallback effects receive a wider painted shape. The capture also lacked scene RAF cancellation, mixing two clocks and clearing number bursts; the recorder now owns the render clock. Re-record all three fixtures; preserve the failed diagnostics, keep all thresholds.
+
+## V2 repair: bounded number timing and native clock cancellation
+The secondary hit was still hidden: status offsets (280 ms) plus another target stagger (100 ms) placed its first number after the last renderable frame. Number births now reserve two frames before action completion, keeping all integer pieces and the exact resolved total. A 590-frame real-browser regression sees all 39 damage in three pieces and continuous shielding numbers.
+Playwright replaces the RAF API; cancelling a native handle after clock installation did not stop the native render loop. Cancellation now happens before installation, verified as 590 fixed renders and zero native renders. The obsolete crowded/boss capture process tree started by this session was stopped and will be replaced. Thresholds unchanged.
