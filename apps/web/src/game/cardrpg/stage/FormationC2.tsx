@@ -9,6 +9,7 @@ import cafeUrl from '../../../../../../assets/cardrpg-look/stage/painted-cafe-c1
 import { cafePainting, formationPaintingC2 } from '../spine/stage-painting';
 import './formation-c2.css';
 import {DropOddsC2} from '../ui-v3/OddsC2';
+import {useFormationDrag} from './use-formation-drag';
 
 export function FormationC2({ m, preparing = false }: { m: DepthModel; preparing?: boolean }) {
   useSyncExternalStore(m.subscribe, m.snapshot);
@@ -33,22 +34,26 @@ export function FormationC2({ m, preparing = false }: { m: DepthModel; preparing
     const next = R.placeInSlotC2(ids,rows,cat,slot);
     if (next && R.validRowsC2(next.team,next.rows,hp ?? undefined)) { update(next.team,next.rows); select(null); }
   };
+  const drag=useFormationDrag(locked,place);
   const enemies = battle?.actors.filter(a => a.side === 'enemy') ?? [];
   const boxes = stageLayoutC2([
     ...ids.map(id => ({id,side:'party' as const,row:rows[id]!,aspect:1})),
     ...enemies.map(a => ({id:a.id,side:'enemy' as const,row:a.row,boss:R.ENEMY_BY_ID[a.catalogId]?.tier==='boss',aspect:1.1})),
   ], 1000, 562.5);
   const position = (id: string): CSSProperties => { const b = boxes.get(id)!; return {left:`${b.footX/10}%`,top:`${b.y/5.625}%`,height:`${b.height/5.625}%`,width:`${b.width/10}%`,zIndex:b.order}; };
-  return <section className="c2-formation" aria-label="Formation" data-preparing={preparing}>
+  return <section className="c2-formation" aria-label="Formation" data-preparing={preparing} data-reduced={state.settings.reducedMotion} data-dragging={drag.dragging??undefined}>
     <nav aria-label="Formation tools"><button onClick={()=>setTool('crew')}>♟ Crew</button><button onClick={()=>setTool('saved')}>▣ Saved</button><button aria-label="Formation help" onClick={()=>setTool('help')}>?</button><output aria-live="polite">{locked?'🔒':selected?R.CAT_BY_ID[selected]!.name:'↔'}</output></nav>
     <div className="c2-formation-picture" style={{backgroundImage:`url(${backdrop})`}} role="group" aria-label="Opening formation">
-      {seats.map((id,slot)=>id&&<button key={id} className="c2-seat" style={position(id)} disabled={locked} data-seat={id} data-slot={SLOTS_C2.slots[slot]!.id}
-        draggable={!locked} onDragStart={e=>{e.dataTransfer.setData('text/plain',id);select(id);}} onDragOver={e=>e.preventDefault()} onDrop={e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),slot);}}
+      {seats.map((id,slot)=>id&&<button key={id} className="c2-seat" style={position(id)} disabled={locked} data-seat={id} data-slot={SLOTS_C2.slots[slot]!.id} data-slot-index={slot} data-row={slot<2?'front':'rear'} data-drag-source={drag.dragging===id||undefined} data-drop-preview={drag.preview===slot||undefined}
+        draggable={!locked} onDragStart={e=>{e.dataTransfer.setData('text/plain',id);e.dataTransfer.effectAllowed='move';drag.start(id);select(id);}} onDragOver={e=>{e.preventDefault();if(!locked)drag.setPreview(slot);}} onDrop={e=>{e.preventDefault();place(e.dataTransfer.getData('text/plain'),slot);drag.clear();}} onDragEnd={drag.clear}
+        onPointerDown={e=>drag.down(e,id)} onPointerMove={drag.move} onPointerUp={drag.up} onPointerCancel={drag.clear} onLostPointerCapture={drag.clear}
         aria-label={`${R.CAT_BY_ID[id]!.name}, ${SLOTS_C2.slots[slot]!.id}. ${selected?'Place selected companion':'Select for placement'}`} aria-pressed={selected===id}
-        onClick={()=>selected&&selected!==id?place(selected,slot):select(selected===id?null:id)}>
+        onClick={()=>{if(drag.consumeClick())return;selected&&selected!==id?place(selected,slot):select(selected===id?null:id);}}>
         <img {...artPropsA6(id)} alt="" draggable={false}/><span aria-hidden="true">{slot<2?'🛡':'🏹'} {R.CAT_BY_ID[id]!.name}</span>
         {hp&&<progress aria-label={`${R.CAT_BY_ID[id]!.name} HP`} value={hp[id]} max={battle!.actors.find(a=>a.id===id)!.maxHp}/>}</button>)}
       {enemies.map(a=><div className="c2-foe" key={a.id} style={position(a.id)}><img {...artPropsA6(a.catalogId)} alt={a.name}/><span>{a.name}</span></div>)}
+      {drag.dragging&&drag.point&&<div className="c2-drag-ghost" aria-hidden="true" style={{left:drag.point.x,top:drag.point.y,width:drag.point.width,height:drag.point.height}}><img {...artPropsA6(drag.dragging)} alt=""/></div>}
+      {drag.preview!==null&&<div className="c2-row-preview" data-row={drag.preview<2?'front':'rear'} role="status" aria-label={`Swap into ${drag.preview<2?'front':'back'} row`}><span aria-hidden="true">{drag.preview<2?'🛡':'🏹'} ↔</span></div>}
     </div>
     {tool&&<FormationToolA6 title={tool==='crew'?'Crew':tool==='saved'?'Saved teams':'Formation'} catId={picked} onClose={()=>setTool(null)}>
       {tool==='help'&&<><p>Tap or drag one companion onto another to swap seats. Shield: front. Bow: back. Two per row; keep one living companion in front.</p><p>Ordinary hits reach the front first. Backline and area skills can reach behind it. Row skills keep their bonuses.</p></>}
