@@ -1,5 +1,18 @@
-# Trạng thái V3B
-- Đã lưu và đẩy nhánh CHAIN; typecheck và 32 bài kiểm tra đạt.
-- Đã hợp nhất vào nhánh codex/v3-shell-2026-11-13.
-- Đang làm âm thanh miễn phí, sau đó phông chữ và giao diện.
-- Còn khoảng 100 GB trống. Không triển khai; người dùng triển khai ngày 20/11.
+# Tiến độ V3B — 13/11/2026
+- Xong âm thanh miễn phí: nhạc, hiệu ứng, giọng mèo tổng hợp, mixer và mute.
+- Xong font tiếng Việt, icon, landing, đăng nhập ví và sảnh café.
+- Xong hướng dẫn 26 bước và 14 trang Guide; giữ phần ghi chú chiến đấu.
+- Xong luồng Deed, Spool, rút trừ 25%, seal, fusion và giao dịch local.
+- Anvil xác nhận 13 giao dịch; PostgreSQL xác minh chống đua ngân sách/cấp Deed.
+- Test local: 2.485 web, 724 server; typecheck và build demo đều đạt.
+- Metadata build có đủ 3.000 Deed và gear theo quality.
+- Đã push nhánh codex/v3-shell-2026-11-13; mở PR #445 dạng draft, chưa merge.
+- Kinh tế vẫn PARTIAL: đốt/phát thưởng khi cầu 50% chỉ 0,846–0,897.
+- Star Thread dư lớn; người chơi heavy nhận Legendary trung vị ngày 11, chưa đạt ngày 5–9.
+- Đã dùng đủ 3 phương án tinh chỉnh; không ghi các chỉ tiêu này thành đạt.
+- Mùa game 4 tuần; hợp đồng thưởng hiện tại vẫn 13 tuần.
+- Phí rút 25% giữ trong quỹ, không đốt. Deed chỉ chặn rút, không chặn chơi.
+- Chưa triển khai v3 lên Fuji/Vercel, chưa merge main.
+- Bạn triển khai ngày 20/11 theo USER-DEPLOY-VI.md; nạp khoảng 2,5 AVAX test cho sponsor.
+- Session A còn tích hợp battle/rig/trailer cuối; CI dùng local vì GitHub billing bị chặn.
+- Đã lưu REPORT.md, TEST-EVIDENCE.md và hướng dẫn triển khai; đã dừng server preview của B.
