@@ -1,0 +1,54 @@
+diff --git a/scripts/art/build-spine.mjs b/scripts/art/build-spine.mjs
+index a30a22300..f9e1f3d21 100644
+--- a/scripts/art/build-spine.mjs
++++ b/scripts/art/build-spine.mjs
+@@ -22,7 +22,8 @@ async function make(unit){
+    const vs=part.vertices.map(v=>({x:v[0].x+oldWorld[v[0].bone].x,y:v[0].y+oldWorld[v[0].bone].y})),xs=vs.map(p=>p.x),ys=vs.map(p=>p.y),box={x:Math.min(...xs),y:Math.min(...ys),w:Math.max(...xs)-Math.min(...xs),h:Math.max(...ys)-Math.min(...ys)};
+    const [left,top,width,height]=regions[part.name],pixels=await sharp(resolve(out,pageNames[part.page])).extract({left,top,width,height}).ensureAlpha().raw().toBuffer();const mask=new Set();let sx=0,sy=0,count=0;
+    for(let y=0;y<height;y+=2)for(let x=0;x<width;x+=2)if(pixels[(y*width+x)*4+3]>=32){const wx=box.x+x/width*box.w,wy=box.y+(1-y/height)*box.h,key=(Math.round(wx/2)+2048)*4096+Math.round(wy/2)+2048;mask.add(key);sx+=wx;sy+=wy;count++;}
+-   parts.push({part,box,mask,centroid:{x:sx/count,y:sy/count}});
++   const coverage=await sharp(pixels,{raw:{width,height,channels:4}}).extractChannel(3).blur(6).raw().toBuffer();
++   parts.push({part,box,mask,coverage,width,height,centroid:{x:sx/count,y:sy/count}});
+   }
+   const body=parts.find(p=>p.part.name==='body');
+   for(const p of parts){let sx=0,sy=0,count=0;for(const key of p.mask)if(body.mask.has(key)){sx+=(Math.floor(key/4096)-2048)*2;sy+=(key%4096-2048)*2;count++;}const sourceBone=old.nodes[p.part.vertices[0][0].bone].name;const fallback=get(sourceBone)??p.centroid;
+@@ -43,8 +44,8 @@ async function make(unit){
+   const nodes=[];for(const [name,parent] of contract.hierarchy){const p=points[name]??head,q=points[parent]??{x:0,y:0};nodes.push({name,parent:nodes.findIndex(n=>n.name===parent),x:round(p.x-q.x),y:round(p.y-q.y),rotation:0,sx:1,sy:1});}
+   const nw=worlds(nodes),node=name=>nodes.findIndex(n=>n.name===name),native=[];
+   const weight=(name,x,y,weight)=>{const index=node(name),p=nw[index];return{bone:index,x:round(x-p.x),y:round(y-p.y),weight:round(weight)};};
+-  for(const item of parts){const {part,box}=item,n=part.name==='head'?32:8,vertices=[],uv=[],triangles=[],oldUv=part.uv;
+-   const weights=(x,y)=>{
++  for(const item of parts){const {part,box}=item;
++   item.weights=(x,y)=>{
+     let chain=['torso'],u=0;
+     if(part.name==='body'){const t=smooth((y-hip.y+h*.15)/(h*.3));return[weight('hip',x,y,1-t),weight('torso',x,y,t)];}
+     if(part.name==='head'){chain=['head'];const t=smooth((y-(box.y+box.h*.65))/(box.h*.25))*smooth(Math.abs(x-(box.x+box.w/2))/(box.w*.25));if(t>0)return[weight('head',x,y,1-t),weight(x<box.x+box.w/2?'ear_l':'ear_r',x,y,t)];}
+@@ -54,7 +55,27 @@ async function make(unit){
+     else if(part.name.startsWith('wing-')){chain=['torso',`wing_${part.name.at(-1)}`];u=smooth(Math.abs(x-pivots[part.name].x)/(box.w*.5));}
+     if(chain.length===1)return[weight(chain[0],x,y,1)];const t=u*(chain.length-1),i=Math.min(chain.length-2,Math.floor(t)),f=t-i;return[weight(chain[i],x,y,1-f),weight(chain[i+1],x,y,f)];
+    };
+-   for(let y=0;y<=n;y++)for(let x=0;x<=n;x++){const u=x/n,v=y/n;vertices.push(weights(box.x+box.w*u,box.y+box.h*v));uv.push(oldUv[0]+(oldUv[2]-oldUv[0])*u,oldUv[1]+(oldUv[7]-oldUv[1])*v);if(x<n&&y<n){const a=y*(n+1)+x;triangles.push(a,a+1,a+n+2,a,a+n+2,a+n+1);}}
++  }
++  // All painted pieces sample the same skin field. Overlapping pixels therefore
++  // receive the same transform instead of separating when a joint rotates.
++  const sharedWeights=(x,y)=>{
++   const totals=new Map();let sum=0;
++   for(const item of parts){
++    const u=(x-item.box.x)/item.box.w,v=1-(y-item.box.y)/item.box.h;
++    if(u<0||u>1||v<0||v>1)continue;
++    const px=u*(item.width-1),py=v*(item.height-1),ix=Math.floor(px),iy=Math.floor(py),fx=px-ix,fy=py-iy;
++    const at=(dx,dy)=>item.coverage[Math.min(iy+dy,item.height-1)*item.width+Math.min(ix+dx,item.width-1)];
++    const coverage=(at(0,0)*(1-fx)+at(1,0)*fx)*(1-fy)+(at(0,1)*(1-fx)+at(1,1)*fx)*fy;
++    if(coverage<.1)continue;
++    sum+=coverage;for(const w of item.weights(x,y))totals.set(w.bone,(totals.get(w.bone)??0)+w.weight*coverage);
++   }
++   if(!sum)return[weight('torso',x,y,1)];
++   return [...totals].map(([bone,value])=>weight(nodes[bone].name,x,y,value/sum));
++  };
++  // Shared world-space grid lines also give overlaps identical interpolation.
++  const step=h/48,axis=(start,size)=>{const values=[start];for(let p=(Math.floor(start/step)+1)*step;p<start+size-1e-5;p+=step)values.push(p);values.push(start+size);return values;};
++  for(const {part,box} of parts){const vertices=[],uv=[],triangles=[],oldUv=part.uv,xs=axis(box.x,box.w),ys=axis(box.y,box.h),stride=xs.length;
++   for(let y=0;y<ys.length;y++)for(let x=0;x<xs.length;x++){const u=(xs[x]-box.x)/box.w,v=(ys[y]-box.y)/box.h;vertices.push(sharedWeights(xs[x],ys[y]));uv.push(oldUv[0]+(oldUv[2]-oldUv[0])*u,oldUv[1]+(oldUv[7]-oldUv[1])*v);if(x<xs.length-1&&y<ys.length-1){const a=y*stride+x;triangles.push(a,a+1,a+stride+1,a,a+stride+1,a+stride);}}
+    native.push({...part,vertices,uv,triangles});
+   }
+   style={template:unit.kind==='cat'?'cat':floating.has(unit.id)?'floating-insect':heavy.has(unit.id)?'blob-heavy':'biped',amplitude:['marigold','cinnamon','velvet'].includes(unit.id)?.7:['brioche','sorrel','sock-skipper'].includes(unit.id)?1.3:heavy.has(unit.id)?.7:1,weaponArc:['mallow','sorrel','cinnamon','marigold'].includes(unit.id)?'staff':'sweep'};

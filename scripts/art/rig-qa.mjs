@@ -1,5 +1,5 @@
 import {createRequire} from 'node:module';import {readFile,writeFile,mkdir,rm,copyFile} from 'node:fs/promises';import {resolve} from 'node:path';import {spawn} from 'node:child_process';import sharp from 'sharp';
-const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out=resolve(root,'reports/v3-battle/A5'),contract=JSON.parse(await readFile(resolve(root,'art/rig-templates/cat.template.json'),'utf8'));
+const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out=resolve(root,'reports/v3-battle/A5',process.argv.includes('--revisit')?'revisit':''),contract=JSON.parse(await readFile(resolve(root,'art/rig-templates/cat.template.json'),'utf8'));
 const args=process.argv.slice(2),pilot=args.includes('--pilot'),ids=args.filter(a=>!a.startsWith('--')),all=JSON.parse(await readFile(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8')).units.map(u=>u.id).filter(id=>!['mochi','soot','clover'].includes(id));await mkdir(out,{recursive:true});
 async function pixels(buffer){return sharp(buffer).ensureAlpha().raw().toBuffer({resolveWithObject:true});}
 async function holes(buffer){
@@ -37,8 +37,8 @@ try{
   for(const name of ['idle','victory','stunned','frozen'])report.seams[name]=await difference(await capture(name,0),await capture(name,info.clips[name].duration));
   for(const [name,duration] of Object.entries(contract.clips)){
    if(!info.clips[name]){report.contract=false;continue;}const strip=[],d=info.clips[name].duration;
-   for(let i=0;i<12;i++){const shot=await capture(name,d*i/11);strip.push({input:await sharp(shot).resize(212,212).toBuffer(),left:i%6*212,top:Math.floor(i/6)*212});}
-   await sharp({create:{width:1272,height:424,channels:4,background:'#342a40'}}).composite(strip).png().toFile(resolve(unitOut,name+'-film.png'));
+   for(let i=0;i<(args.includes('--revisit')?0:12);i++){const shot=await capture(name,d*i/11);strip.push({input:await sharp(shot).resize(212,212).toBuffer(),left:i%6*212,top:Math.floor(i/6)*212});}
+   if(!args.includes('--revisit'))await sharp({create:{width:1272,height:424,channels:4,background:'#342a40'}}).composite(strip).png().toFile(resolve(unitOut,name+'-film.png'));
    report.events[name]=info.clips[name].cues.map(c=>c.name);
    if((contract.events[name]??[]).some(([event,time])=>!info.clips[name].cues.some(c=>c.name===event&&Math.abs(c.time-time)<1/30)))report.contract=false;
   }

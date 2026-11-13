@@ -9,4 +9,4 @@
 
 Pilot review: **auto-approved** by the user's final instruction. Marigold + Button Guard WebM clips are copied to `/Users/bao/Desktop/TaskbarHero-REVIEW/`. The shared setup preserves approved atlas pixels; no generation or re-split of the three designer cats was performed. Documentation: `docs/rig-contract.md` (English/Vietnamese).
 
-Self-score: 7.8/10 (impact 8, readability 8, distinctness 6, performance 10, stability 9, disk 7). The reusable motion and performance gates are achieved; the strict art-splitting/zero-hole result is not. Revisit A5 once after A6, per the requested repair policy.
+Self-score: 7.8/10 (impact 8, readability 8, distinctness 6, performance 10, stability 9, disk 7). The reusable motion and performance gates are achieved; the strict art-splitting/zero-hole result is not. The single bounded revisit is complete: see revisit/REVIEW.md. A shared-skin candidate reduced peak hole count but worsened the staff silhouette; it was rejected and the original runtime restored. A5 is closed PARTIAL.

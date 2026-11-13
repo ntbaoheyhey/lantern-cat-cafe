@@ -52,3 +52,5 @@ The global audio mute/Mix controls covered the battle guide and More buttons. Re
 
 ## A5 bounded end-of-queue revisit
 While B prepares its final published integration commit, perform the single A5 revisit rather than idle. Diagnose gaps at overlapping pieces receiving different transforms. Pilot a continuous alpha-weighted skin field with shared world-space mesh lines on Sorrel; it changes geometry only, preserving every approved atlas pixel and authored negative space. Keep the strict raw-alpha gate and compare visual poses/performance before adopting. This revisit is the final attempt, not a new unbounded art pass.
+
+A5 revisit outcome: reject shared-skin candidate after Sorrel visual review. Peak holes fell 1006→684 but staff bending/foot slivers worsened. Restore exact committed compiler/runtime. Close A5 PARTIAL after one bounded revisit, retain failing measurements and rejected patch. No broadened batch or softened gate.
