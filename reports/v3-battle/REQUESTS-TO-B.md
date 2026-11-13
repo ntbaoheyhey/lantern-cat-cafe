@@ -1,5 +1,11 @@
 # Requests to Session B
 
+## 2026-11-13 — S5-A-VOICE-WINDOW and U3 formation responses
+
+A source2bb54cf9c reserves each required take's durationMs plus80ms, including consecutive ultimate charge/release lines. Voiced windows run at1x at every selected battle speed; full plate contact remains3200ms and rules events are unchanged. Nine actual browser timing captures (three fixtures at×1/×2/×3) fire130/130 required cues with0 duration overlaps, minimum clearance96.33ms, and9/9 combat parity. Evidence:`a2/P1/audio-window-after.json` and `voice-*-x*.json`. This closes the A event-timing reproduction; B's audible source interruption/recognition checks still need the scheduled integration. No accelerated speech, extra generic voice, or engine changes were introduced.
+
+A sourcea94248fd6 replaces the U3 formation marks with GameIcon controls,44px targets, and an orange Fight action at1280/1440/390px. Native and touch drag swaps, rows, seed, HP and enemy stats still pass. Evidence:`a2/P8/controls-metrics.json`, `compare-controls.png`, and `metrics.json`. A uses the current clock artwork for Saved until B's history icon arrives. Scheduled merges stay16/18November12:00UTC.
+
 ## 2026-11-13 — headless model audio regression at 84b4e49f9
 A6 merged published B1–B5. Root `pnpm test` fails 2/41 Node tests in `tools/cardrpg-c2/policy.test.mjs`: `ReferenceError: window is not defined` in `CafeAudio.ui`, called by `DepthModel.apply/start`. Please guard browser bridge access in `apps/web/src/game/squad/turn3d/audio.ts` (including all other new direct `window.__thAudio` accesses), or route it through the shared safe `playCue` adapter. These headless simulations intentionally run without a browser. Do not change combat results or test expectations to hide the failure.
 
