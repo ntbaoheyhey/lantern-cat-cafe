@@ -11,16 +11,16 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] V — done (50/50 ultimates,62/62 skills,12/12 identities,212/212 levels;34/34 battle casts; full37 suite435 browser PASS; self-score8/10)
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
-- [ ] U3 — open (32/54 states meet all screen gates; the SOLO request requires at least48/54 for PARTIAL; 22 redesigns remain, self-score 7/10)
+- [x] U3 — done (9/9 gates;54/54 states,108 desktop and24 phone captures;435/435 browser cases; self-score8/10, remaining visual limitations in q6/CRITIQUE.md)
 - [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
 - [x] S5 — done (six full37 renders, every numeric gate PASS;90.054s reel; mixed recognition7/12 battle and7/12 boss disclosed in q5/CRITIQUE.md; self-score8/10)
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
 - [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [x] E2 — done (three deterministic sinks in rules/server/UI and model; Anvil screenshots and exact burns; self-score 8/10)
-- [ ] E3 — active (24 rounds,1273 unique configs; top10 confirmed at200seeds; T-a..g PASS, T-h132/170 perturbations measured; final evidence refresh pending; exact candidate497ba9738e in rules, remaining robustness still required)
-- [ ] E4 — measured PASS4/4 on candidate497ba9738e:16 receipts,3 sinks,18 desktop shots,5 odds tests; Q4 full workspace suite PASS; final sensitivity selection pending
-- [ ] E5 — report generated with816 source-linked numbers; citation checker816/816 PASS; final sensitivity section pending
+- [x] E3 — done (17/17 gates;24 rounds,1273 configs,top10 at200 seeds,5 structural changes,18 scenarios,T-a..T-h PASS;85 assumptions,170 cases; self-score8/10)
+- [x] E4 — done (4/4 gates;16 exact-policy Anvil receipts,3 sinks,18 desktop shots,5 odds tests; self-score8/10)
+- [x] E5 — done (3/3 gates;816/816 committed citations; final sensitivity and15-line Vietnamese summary; self-score8/10)
 - [ ] T1 — todo
 - [ ] C1 — todo
 - [ ] E6 — todo
@@ -481,4 +481,75 @@ PASS S5.forge.peak: measured -1.94; required <= -1 dBTP
 PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
 PASS S5.chart: measured 86892; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
 PASS S5.reel: measured 90.054; required >= 90s sound reel
+```
+
+## Q4 final committed-evidence checker
+
+```text
+PASS E3.rounds: measured 24; required >= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured 8.958333333333334; required >= 2 changed levers per round on average
+PASS E3.searchLevers: measured 20; required >= 10 levers per search
+PASS E3.configs: measured 1273; required >= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured 10; required top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured 5; required >= 3 model/lever structural changes
+PASS E3.finalScenarios: measured 18; required all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured 18/18; required burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured 18/18; required Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured 18/18; required heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
+PASS E3.T-h: measured 85/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
+PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash
+PASS E4.receipts: measured 16; required >= 13 + new sink count confirmed receipts
+PASS E4.sinks: measured 3/3; required one confirmed use of every new sink
+PASS E4.screenshots: measured 18; required 1280x720 and 1440x900 economy screenshots
+PASS E4.odds: measured 5; required passing test + SHA-256-verified log
+PASS E5.report: measured 18077; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
+PASS E5.numbers: measured 816; required >= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured 816/816; required all report-number citations valid
+```
+
+Evidence commit838434f59. Full current unit/types PASS; browser suite must finish before SOLO Q4 closes.
+
+## SOLO Q4 and Q6 final acceptance — 2026-11-13T22:45:54.020159+00:00
+
+Full current source suite: tests/q6-final6-suite.json (workspace types and unit tests), tests/q6-final6-browser.json (435 passing browser cases). Q4 report-only completion reuses this same current-source run; no duplicate suite claimed.
+
+```text
+PASS E3.rounds: measured 24; required >= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured 8.958333333333334; required >= 2 changed levers per round on average
+PASS E3.searchLevers: measured 20; required >= 10 levers per search
+PASS E3.configs: measured 1273; required >= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured 10; required top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured 5; required >= 3 model/lever structural changes
+PASS E3.finalScenarios: measured 18; required all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured 18/18; required burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured 18/18; required Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured 18/18; required heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
+PASS E3.T-h: measured 85/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
+PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash
+PASS E4.receipts: measured 16; required >= 13 + new sink count confirmed receipts
+PASS E4.sinks: measured 3/3; required one confirmed use of every new sink
+PASS E4.screenshots: measured 18; required 1280x720 and 1440x900 economy screenshots
+PASS E4.odds: measured 5; required passing test + SHA-256-verified log
+PASS E5.report: measured 18077; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
+PASS E5.numbers: measured 816; required >= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured 816/816; required all report-number citations valid
+PASS U3.screens: measured 54; required >= 24 rebuilt screens
+PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
+PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
+PASS U3.words: measured 54/54; required <= 25 visible words every screen
+PASS U3.buttons: measured 54/54; required <= 2 plain text buttons every screen
+PASS U3.fonts: measured 0; required 0 system fonts
+PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
+PASS U3.scores: measured 54/54; required average >= 8; every criterion >= 7
+PASS U3.flows: measured 435; required passing test + SHA-256-verified log
 ```

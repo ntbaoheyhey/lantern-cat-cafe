@@ -1,0 +1,6035 @@
+{
+  "label": "chain-final5-phone",
+  "sourceCommit": "751915f7f1e45ef5b16e717057affdb7d6e39cf2",
+  "aCommit": "64e7d183723576b37060270a56871f1e2d04dbab",
+  "runtimeRoot": "/Users/bao/taskbar-hero-chain",
+  "runtimeHash": "b48bb3b55c4f6f7661bbae3471f3679a507350e4222377d270b66887132bffd9",
+  "sourceSignatures": [],
+  "capturedAt": "2026-11-13T22:23:39.817Z",
+  "rows": [
+    {
+      "id": "wallet-panel",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final5-phone-390/wallet-panel.png",
+        "sha256": "7bfc990d6a658eda1ab1e379269c5217f11b2b482d912f614770788097ed1ab9"
+      },
+      "horizontalClippedControls": [],
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "iconTiles": 5,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0xb173ad",
+        "…",
+        "458f",
+        "AVAX test gas",
+        "0.1500",
+        "YARN",
+        "0",
+        "Market",
+        "Sign out",
+        "Export key",
+        "Move wallet",
+        "?"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Close Fuji",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 318,
+            "y": 118,
+            "width": 54,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 28,
+            "y": 437,
+            "width": 166,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Sign out",
+          "text": "Sign out",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 206,
+            "y": 437,
+            "width": 166,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Export key",
+          "text": "Export key",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 28,
+            "y": 571,
+            "width": 166,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Move wallet",
+          "text": "Move wallet",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 206,
+            "y": 571,
+            "width": 166,
+            "height": 122
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "?",
+          "text": "?",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 28,
+            "y": 705,
+            "width": 344,
+            "height": 22
+          }
+        }
+      ],
+      "horizontalOverflow": false,
+      "phoneControls": {
+        "tested": 6,
+        "unreachable": [],
+        "controls": [
+          {
+            "label": "Close Fuji",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 318,
+              "y": 117.5,
+              "width": 54,
+              "height": 48
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 28,
+              "y": 436.5,
+              "width": 166,
+              "height": 122
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          },
+          {
+            "label": "Sign out",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 206,
+              "y": 436.5,
+              "width": 166,
+              "height": 122
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          },
+          {
+            "label": "Export key",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 28,
+              "y": 570.5,
+              "width": 166,
+              "height": 122
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          },
+          {
+            "label": "Move wallet",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 206,
+              "y": 570.5,
+              "width": 166,
+              "height": 122
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          },
+          {
+            "label": "?",
+            "tag": "summary",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 28,
+              "y": 704.5,
+              "width": 344,
+              "height": 22
+            },
+            "available": {
+              "left": 14,
+              "right": 386,
+              "top": 103.5,
+              "bottom": 740.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-fusion",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final5-phone-390/wallet-fusion.png",
+        "sha256": "2f4aaf5feb562df5d71ef415aa6f40783b8e86bb1c8ec63cda42b49087629301"
+      },
+      "horizontalClippedControls": [],
+      "visibleWords": 10,
+      "plainTextButtons": 0,
+      "iconTiles": 14,
+      "texts": [
+        "Fuji",
+        "0",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Fusion",
+        "Legendary",
+        "0",
+        "/",
+        "3",
+        "3",
+        "1",
+        "18",
+        "Success",
+        "100",
+        "%"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 296,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 338,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 65,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 105,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 158,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 211,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 264,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 317,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 322,
+            "y": 265,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Back to café",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 109,
+            "y": 354,
+            "width": 46,
+            "height": 38
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 276,
+            "y": 356,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Pan · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 60,
+            "y": 759,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Apron · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 223,
+            "y": 759,
+            "width": 145,
+            "height": 150
+          }
+        }
+      ],
+      "horizontalOverflow": false,
+      "phoneControls": {
+        "tested": 42,
+        "unreachable": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0xf9fa…6142",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 258.34375,
+              "y": 21,
+              "width": 131.578125,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 337.921875,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          }
+        ],
+        "controls": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0xf9fa…6142",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 258.34375,
+              "y": 21,
+              "width": 131.578125,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 337.921875,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Mute sound",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 296,
+              "y": 12,
+              "width": 38,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Audio mixer",
+            "tag": "summary",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338,
+              "y": 12,
+              "width": 40,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Close market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 65.3125,
+              "width": 42,
+              "height": 42
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Café",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 52,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 105.0625,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 158.125,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Style",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 211.1875,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "History",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 264.25,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "More",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 317.3125,
+              "y": 137.3125,
+              "width": 49.078125,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Recover reserved actions",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 322.390625,
+              "y": 265.3125,
+              "width": 44,
+              "height": 36
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Back to café",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 108.6875,
+              "y": 353.8125,
+              "width": 46,
+              "height": 38
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Fusion guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 275.703125,
+              "y": 355.8125,
+              "width": 34,
+              "height": 34
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Epic Hearthloom Pan · Perfect",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 60.1875,
+              "y": 442.3125,
+              "width": 145,
+              "height": 150
+            },
+            "available": {
+              "left": 52,
+              "right": 374,
+              "top": 437.3125,
+              "bottom": 617.3125
+            }
+          },
+          {
+            "label": "Epic Hearthloom Apron · Perfect",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 223.1875,
+              "y": 442.3125,
+              "width": 145,
+              "height": 150
+            },
+            "available": {
+              "left": 52,
+              "right": 374,
+              "top": 437.3125,
+              "bottom": 617.3125
+            }
+          },
+          {
+            "label": "Epic Hearthloom Bell · Perfect",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 60.1875,
+              "y": 462.3125,
+              "width": 145,
+              "height": 150
+            },
+            "available": {
+              "left": 52,
+              "right": 374,
+              "top": 437.3125,
+              "bottom": 617.3125
+            }
+          },
+          {
+            "label": "Epic Hearthloom Cup · Perfect",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 223.1875,
+              "y": 462.3125,
+              "width": 145,
+              "height": 150
+            },
+            "available": {
+              "left": 52,
+              "right": 374,
+              "top": 437.3125,
+              "bottom": 617.3125
+            }
+          },
+          {
+            "label": "Sealed inputs",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 73.640625,
+              "y": 639.3125,
+              "width": 110,
+              "height": 34
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Reserve fusion",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 191.640625,
+              "y": 627.3125,
+              "width": 153.109375,
+              "height": 58
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Receipt 1",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 332.703125,
+              "y": 707.3125,
+              "width": 33.6875,
+              "height": 27
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Refresh chain",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Fuji guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-history",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final5-phone-390/wallet-history.png",
+        "sha256": "5c65c463c4bcbb2550b7f70973b89c4c16aaa47cc82c127158ecca403ef89e57"
+      },
+      "horizontalClippedControls": [
+        {
+          "label": "Listing transaction 0xa5846d0ffb878a4d9e753ff1d67a46200b12e8dcd29abff5a558e4a4c7153f24",
+          "selector": "a.",
+          "bounds": {
+            "left": 213.3125,
+            "right": 387.828125
+          },
+          "available": {
+            "left": 44,
+            "right": 374
+          }
+        },
+        {
+          "label": "Listing transaction 0xe4f8929fd5d656ed854df7563c20bddecb87ad951880a925726f6cca461ccdee",
+          "selector": "a.",
+          "bounds": {
+            "left": 213.3125,
+            "right": 387.828125
+          },
+          "available": {
+            "left": 44,
+            "right": 374
+          }
+        },
+        {
+          "label": "Listing transaction 0xed1d135cd8136083d91b64d42af1dc854bff89649ab53cd9f0c6ca95d330a92f",
+          "selector": "a.",
+          "bounds": {
+            "left": 213.3125,
+            "right": 387.828125
+          },
+          "available": {
+            "left": 44,
+            "right": 374
+          }
+        },
+        {
+          "label": "Listing transaction 0x291a3eef14d4c133f7600b081259344bb63662eec0f982fbf9099add36bdcb7b",
+          "selector": "a.",
+          "bounds": {
+            "left": 213.3125,
+            "right": 387.828125
+          },
+          "available": {
+            "left": 44,
+            "right": 374
+          }
+        }
+      ],
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "iconTiles": 19,
+      "texts": [
+        "Fuji",
+        "0",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "Mint",
+        "27",
+        "Listing",
+        "25",
+        "Mint",
+        "24",
+        "Listing",
+        "23",
+        "Mint",
+        "22",
+        "Listing",
+        "21",
+        "Mint",
+        "20",
+        "Listing",
+        "19"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 296,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 338,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 88,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 105,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 158,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 211,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 264,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 317,
+            "y": 160,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x08aa3e1832dfda7846aea7d08bcde52bf6e5ab5458de8492681b9a1b207db6de",
+          "text": "Mint27",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 263,
+            "width": 151,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0xa5846d0ffb878a4d9e753ff1d67a46200b12e8dcd29abff5a558e4a4c7153f24",
+          "text": "Listing25",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 213,
+            "y": 263,
+            "width": 175,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x2a51bdacba2be4d7e45f131b9e02d6998e12446c0004b862f079d4d7c4ed7c7e",
+          "text": "Mint24",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 377,
+            "width": 151,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0xe4f8929fd5d656ed854df7563c20bddecb87ad951880a925726f6cca461ccdee",
+          "text": "Listing23",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 213,
+            "y": 377,
+            "width": 175,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0xf18e8d87e851e479da126fdc7592b5bb921edb7e00642ca11d88a978c89fce81",
+          "text": "Mint22",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 491,
+            "width": 151,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0xed1d135cd8136083d91b64d42af1dc854bff89649ab53cd9f0c6ca95d330a92f",
+          "text": "Listing21",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 213,
+            "y": 491,
+            "width": 175,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x87c9ff323834ea1a38992a3dbe5417559e4742a7435002896fe895adb6851e9d",
+          "text": "Mint20",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 605,
+            "width": 151,
+            "height": 104
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0x291a3eef14d4c133f7600b081259344bb63662eec0f982fbf9099add36bdcb7b",
+          "text": "Listing19",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 213,
+            "y": 605,
+            "width": 175,
+            "height": 104
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 274,
+            "y": 723,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 723,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false,
+      "phoneControls": {
+        "tested": 40,
+        "unreachable": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0x0484…a31f",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 256.34375,
+              "y": 21,
+              "width": 134.046875,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338.390625,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          }
+        ],
+        "controls": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0x0484…a31f",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 256.34375,
+              "y": 21,
+              "width": 134.046875,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338.390625,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Mute sound",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 296,
+              "y": 12,
+              "width": 38,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Audio mixer",
+            "tag": "summary",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338,
+              "y": 12,
+              "width": 40,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Close market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 87.5,
+              "width": 42,
+              "height": 42
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Café",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 52,
+              "y": 159.5,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 105.0625,
+              "y": 159.5,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 158.125,
+              "y": 159.5,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Style",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 211.1875,
+              "y": 159.5,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "History",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 264.25,
+              "y": 159.5,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "More",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 317.3125,
+              "y": 159.5,
+              "width": 49.078125,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Mint transaction 0x08aa3e1832dfda7846aea7d08bcde52bf6e5ab5458de8492681b9a1b207db6de",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 52,
+              "y": 262.5,
+              "width": 151.3125,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Listing transaction 0xa5846d0ffb878a4d9e753ff1d67a46200b12e8dcd29abff5a558e4a4c7153f24",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 200.3125,
+              "y": 262.5,
+              "width": 174.515625,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Mint transaction 0x2a51bdacba2be4d7e45f131b9e02d6998e12446c0004b862f079d4d7c4ed7c7e",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 44,
+              "y": 376.5,
+              "width": 151.3125,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Listing transaction 0xe4f8929fd5d656ed854df7563c20bddecb87ad951880a925726f6cca461ccdee",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 200.3125,
+              "y": 376.5,
+              "width": 174.515625,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Mint transaction 0xf18e8d87e851e479da126fdc7592b5bb921edb7e00642ca11d88a978c89fce81",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 44,
+              "y": 490.5,
+              "width": 151.3125,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Listing transaction 0xed1d135cd8136083d91b64d42af1dc854bff89649ab53cd9f0c6ca95d330a92f",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 200.3125,
+              "y": 490.5,
+              "width": 174.515625,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Mint transaction 0x87c9ff323834ea1a38992a3dbe5417559e4742a7435002896fe895adb6851e9d",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 44,
+              "y": 604.5,
+              "width": 151.3125,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Listing transaction 0x291a3eef14d4c133f7600b081259344bb63662eec0f982fbf9099add36bdcb7b",
+            "tag": "a",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 200.3125,
+              "y": 604.5,
+              "width": 174.515625,
+              "height": 104
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Refresh chain",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 261.390625,
+              "y": 722.5,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          },
+          {
+            "label": "Fuji guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 311.390625,
+              "y": 722.5,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 69.5,
+              "bottom": 774.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-ornament-forge",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final5-phone-390/wallet-ornament-forge.png",
+        "sha256": "b45108d69748cea7412f6898958cafe45077d2c4251206bd0b9782abc260b207"
+      },
+      "horizontalClippedControls": [],
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "iconTiles": 13,
+      "texts": [
+        "Fuji",
+        "0",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "Orbit",
+        "Bloom",
+        "Flare",
+        "Self-seal",
+        "20",
+        "+",
+        "3",
+        "=",
+        "23",
+        "Short",
+        "23",
+        "2 Epic +",
+        "3",
+        "Forge"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 296,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 338,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 65,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 105,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 158,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 211,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 264,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 317,
+            "y": 137,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Orbit",
+          "text": "Orbit",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 83,
+            "y": 438,
+            "width": 76,
+            "height": 103
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bloom",
+          "text": "Bloom",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 171,
+            "y": 438,
+            "width": 76,
+            "height": 103
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Flare",
+          "text": "Flare",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 259,
+            "y": 438,
+            "width": 76,
+            "height": 103
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Epic 1",
+          "text": "Epic 1",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 63,
+            "y": 700,
+            "width": 128,
+            "height": 40
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Epic 2",
+          "text": "Epic 2",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 227,
+            "y": 700,
+            "width": 128,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Forge",
+          "text": "Forge",
+          "icon": true,
+          "disabled": true,
+          "bounds": {
+            "x": 109,
+            "y": 801,
+            "width": 200,
+            "height": 46
+          }
+        }
+      ],
+      "horizontalOverflow": false,
+      "phoneControls": {
+        "tested": 38,
+        "unreachable": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0xda19…4c7b",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 255.34375,
+              "y": 21,
+              "width": 134.953125,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338.296875,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          }
+        ],
+        "controls": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.375,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0xda19…4c7b",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 255.34375,
+              "y": 21,
+              "width": 134.953125,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338.296875,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Mute sound",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 296,
+              "y": 12,
+              "width": 38,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Audio mixer",
+            "tag": "summary",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338,
+              "y": 12,
+              "width": 40,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Close market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 65.3125,
+              "width": 42,
+              "height": 42
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Café",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 52,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 105.0625,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 158.125,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Style",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 211.1875,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "History",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 264.25,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "More",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 317.3125,
+              "y": 137.3125,
+              "width": 49.078125,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Orbit",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 82.515625,
+              "y": 370.3125,
+              "width": 76.453125,
+              "height": 103
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Bloom",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170.96875,
+              "y": 370.3125,
+              "width": 76.453125,
+              "height": 103
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Flare",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 259.421875,
+              "y": 370.3125,
+              "width": 76.453125,
+              "height": 103
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Epic 1",
+            "tag": "select",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 63,
+              "y": 587.3125,
+              "width": 128.1875,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Epic 2",
+            "tag": "select",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 227.1875,
+              "y": 587.3125,
+              "width": 128.203125,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 109.1875,
+              "y": 688.3125,
+              "width": 200,
+              "height": 46
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Refresh chain",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Fuji guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wallet-offline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final5-phone-390/wallet-offline.png",
+        "sha256": "166f85841849a1f732bad50352cdf56139bcbffe0141ff7695bdc332bd18be02"
+      },
+      "horizontalClippedControls": [],
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "iconTiles": 19,
+      "texts": [
+        "Fuji",
+        "0",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "0",
+        "0",
+        "/",
+        "1",
+        "0",
+        "Deed",
+        "Quest",
+        "Withdraw",
+        "Seal",
+        "Spool",
+        "History",
+        "Unavailable. Retry."
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 296,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 338,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 33,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 52,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 105,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 158,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 211,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 264,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 317,
+            "y": 105,
+            "width": 49,
+            "height": 76
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Complete quest",
+          "text": "Quest",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 65,
+            "y": 509,
+            "width": 165,
+            "height": 64
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Deed perks",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 198,
+            "y": 348,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Withdraw",
+          "text": "Withdraw",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 262,
+            "y": 280,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal",
+          "text": "Seal",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 282,
+            "y": 280,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion",
+          "text": "Fusion",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 262,
+            "y": 404,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Spool",
+          "text": "Spool",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 282,
+            "y": 404,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Studio",
+          "text": "Studio",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 262,
+            "y": 528,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 282,
+            "y": 528,
+            "width": 10,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 274,
+            "y": 756,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 324,
+            "y": 756,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false,
+      "phoneControls": {
+        "tested": 41,
+        "unreachable": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.46875,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0x4fdf…12fe",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 259.34375,
+              "y": 21,
+              "width": 130.25,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 337.59375,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          }
+        ],
+        "controls": [
+          {
+            "label": "Your next goal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 20,
+              "y": 105,
+              "width": 36,
+              "height": 36
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Night tips",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 541,
+              "width": 100,
+              "height": 105
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Review Fast reward",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 290,
+              "y": 650,
+              "width": 100,
+              "height": 44
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get fish",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 231.90625,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Get stamps",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 349.578125,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Use Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 373.46875,
+              "y": 29,
+              "width": 16.765625,
+              "height": 24
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "0x4fdf…12fe",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 259.34375,
+              "y": 21,
+              "width": 130.25,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Open menu",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 337.59375,
+              "y": 15,
+              "width": 52,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Invitations",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 185.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 0,
+              "y": 307.671875,
+              "width": 85,
+              "height": 104
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season 128 days",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 160.359375,
+              "width": 128.59375,
+              "height": 60
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Quests",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 232.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Events",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 229.40625,
+              "y": 296.359375,
+              "width": 128.59375,
+              "height": 52
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Team",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 22,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Cats",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 106,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": true,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 190,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Forge",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 274,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Season",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324,
+              "y": 721,
+              "width": 66,
+              "height": 97
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "FightYour first adventure",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": false,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 170,
+              "y": 715,
+              "width": 220,
+              "height": 103
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Mute sound",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 296,
+              "y": 12,
+              "width": 38,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Audio mixer",
+            "tag": "summary",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 338,
+              "y": 12,
+              "width": 40,
+              "height": 40
+            },
+            "available": {
+              "left": 0,
+              "right": 390,
+              "top": 0,
+              "bottom": 844
+            }
+          },
+          {
+            "label": "Close market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 324.390625,
+              "y": 65.3125,
+              "width": 42,
+              "height": 42
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Café",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 52,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Market",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 105.0625,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Bag",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 158.125,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Style",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 211.1875,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "History",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 264.25,
+              "y": 137.3125,
+              "width": 49.0625,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "More",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 317.3125,
+              "y": 137.3125,
+              "width": 49.078125,
+              "height": 76
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Recover reserved actions",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 330,
+              "y": 248.3125,
+              "width": 44,
+              "height": 36
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Complete quest",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 43.5,
+              "y": 496.8125,
+              "width": 165,
+              "height": 64
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Deed perks",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 177,
+              "y": 379.8125,
+              "width": 34,
+              "height": 34
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Withdraw",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 241,
+              "y": 312.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Seal",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 261,
+              "y": 312.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Fusion",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 241,
+              "y": 392.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Spool",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 261,
+              "y": 392.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Studio",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 241,
+              "y": 516.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "History",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 261,
+              "y": 516.3125,
+              "width": 10,
+              "height": 114
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Refresh chain",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 253.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          },
+          {
+            "label": "Fuji guide",
+            "tag": "button",
+            "disabled": false,
+            "centerVisible": true,
+            "horizontalFit": true,
+            "bounds": {
+              "x": 303.390625,
+              "y": 744.3125,
+              "width": 42,
+              "height": 40
+            },
+            "available": {
+              "left": 44,
+              "right": 374,
+              "top": 47.3125,
+              "bottom": 796.3125
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

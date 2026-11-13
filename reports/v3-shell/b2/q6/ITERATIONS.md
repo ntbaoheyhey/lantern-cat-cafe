@@ -26,3 +26,11 @@ Final4 found four clipped map nodes and covered help/close controls in both resu
 ## 2026-11-13T22:27:14.965752+00:00 — wallet phone controls
 
 Final5 exposed transaction-history cards wider than their narrow container and a phone-audit scope bug: background home controls remained in the audit behind the ARIA wallet modal. Added phone wallet grid sizing and min-width limits. Both audits now scope to the visible ARIA modal just as they do native modal dialogs. The regression verifies covered home exclusion and still rejects a clipped wallet action. Focused capture chain-phone-repair6-390: all five states have zero overflow, clipping or unreachable controls; modal audit 2/2 passes. Full acceptance pending.
+
+## 2026-11-13T22:39:08.246240+00:00 — final6 visual review
+
+All 108 desktop captures and 24 phone captures were explicitly reviewed. Every state remains within 25 visible words and 2 plain buttons at both desktop sizes; phone samples have zero clipped or unreachable controls. Scores remain authored judgments against the five U1 criteria, minimum average 8 and criterion 7. Native inputs and exact withdrawal decimals remain disclosed limitations. Full local suites and U3 checker still decide closure.
+
+## 2026-11-13T22:45:54.020159+00:00 — accepted
+
+Full local browser suite435/435, workspace types and unit tests passed. U3 checker9/9 PASS, every one of54 states passes. PIL publication uses tools/.venv/bin/python.

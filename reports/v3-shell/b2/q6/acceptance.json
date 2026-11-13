@@ -1,0 +1,52 @@
+[
+  {
+    "name": "shell-1280",
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "landing,sign-in,cafe-hub,team-formation,team-presets,cats-list,hero-level-star,hero-awakening,hero-skills,hero-bonds,hero-gear,bag-gear,bag-item-detail,forge-enhance,forge-fusion,bag-materials,bag-manage,bag-consumables,bag-batch-use,invitations,invitations-rates,invitations-reveal,invitations-ten-results,season-track-countdown-edition,season-guide,economy-flow,economy-allocation,economy-fees,economy-odds,field-guide,settings,settings-audio,quests-daily,events,chapter-map,battle-prep,victory,defeat,error-offline",
+      "CAPTURE_WIDTH": "1280",
+      "CAPTURE_LABEL": "final"
+    },
+    "exitCode": 1,
+    "started": "2026-11-13T21:43:06.917989+00:00",
+    "ended": "2026-11-13T21:45:31.909688+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final-shell-1280.log"
+  },
+  {
+    "name": "shell-1280",
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "landing,sign-in,cafe-hub,team-formation,team-presets,cats-list,hero-level-star,hero-awakening,hero-skills,hero-bonds,hero-gear,bag-gear,bag-item-detail,forge-enhance,forge-fusion,bag-materials,bag-manage,bag-consumables,bag-batch-use,invitations,invitations-rates,invitations-reveal,invitations-ten-results,season-track-countdown-edition,season-guide,economy-flow,economy-allocation,economy-fees,economy-odds,field-guide,settings,settings-audio,quests-daily,events,chapter-map,battle-prep,victory,defeat,error-offline",
+      "CAPTURE_WIDTH": "1280",
+      "CAPTURE_LABEL": "final",
+      "CAPTURE_RESUME": "1"
+    },
+    "exitCode": 0,
+    "started": "2026-11-13T21:46:14.956085+00:00",
+    "ended": "2026-11-13T21:46:45.326289+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final-shell-1280.log"
+  },
+  {
+    "name": "chain-1280",
+    "command": [
+      "node",
+      "scripts/ui/q6-chain-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "wallet-panel,market-browse,market-buy,market-my-listings,market-list,wallet-cafe,wallet-deed,wallet-withdraw,wallet-seal,wallet-fusion,wallet-spool,wallet-history,wallet-style,wallet-ornament-forge,wallet-offline",
+      "CAPTURE_WIDTH": "1280",
+      "CAPTURE_LABEL": "chain-final",
+      "CAPTURE_RESUME": "1"
+    },
+    "exitCode": 1,
+    "started": "2026-11-13T21:46:45.326817+00:00",
+    "ended": "2026-11-13T21:47:46.343073+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final-chain-1280.log"
+  }
+]

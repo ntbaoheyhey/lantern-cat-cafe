@@ -1,64 +1,64 @@
-# U3 screen rebuild — qualified PARTIAL
+# U3 screen rebuild
 
-Explicit human-readable visual judgments after inspecting 54 actual UI states. Counts use visible DOM and occlusion checks; worst of both sizes. Flow evidence is the Playwright scripted menu/Anvil tour, not a claim that every legacy E2E spec was rerun. Baseline for the added batch dialog is its former bag-manage destination.
+Explicit visual judgments over current A/B temporary preview and isolated local Anvil captures. Counts use actual visible DOM, including discovery notices, and the worst of both desktop sizes. Runtime source hashes bind every capture. Each chain screen rolls back its disposable database/Anvil fixture; production quotas remain intact. Before baseline for the added batch dialog is its former bag manager.
 
-32 of 54 states meet all per-screen numeric and visual gates. Every original state has two-size before/after evidence; word budgets pass. Battle prep exceeds the button limit; visual acceptance is still below target for the states listed below. U3 is not marked done.
+54/54 states meet every screen criterion. Full browser suite:435 passing cases. Desktop captures:108; phone samples:24.
 
-| State | Words | Plain | Art / hierarchy / text / feel / consistency | Review |
+| Screen | Words | Plain buttons | Art / hierarchy / text / feel / consistency | Review |
 |---|---:|---:|---|---|
 | landing | 21 | 0 | 9 / 9 / 9 / 9 / 9 | Live counters remain for C1; entrance art and primary action are clear. |
 | sign-in | 12 | 0 | 8 / 9 / 9 / 8 / 9 | Native wallet actions retain signing explanation. |
-| cafe-hub | 20 | 1 | 9 / 9 / 9 / 8 / 8 | Large team, painted dock and real weekly-event destination. |
+| cafe-hub | 19 | 2 | 9 / 9 / 9 / 8 / 8 | Large team, painted dock and real weekly-event destination. |
 | team-formation | 11 | 1 | 9 / 8 / 9 / 9 / 8 | Four heroes on pedestals with surrounding gear and shared POWER. |
 | team-presets | 13 | 0 | 8 / 8 / 9 / 8 / 8 | Actual saved squad commands retained. |
-| cats-list | 20 | 1 | 7 / 7 / 8 / 7 / 7 | Hero detail is still a small right-side card; dedicate more space to the selected hero. |
-| hero-level-star | 20 | 1 | 7 / 7 / 8 / 7 / 7 | Costs and deltas fit; separate Level/Star focus and a large left pedestal remain. |
-| hero-awakening | 7 | 0 | 7 / 8 / 9 / 7 / 8 | Constellation is readable but lacks hero focus and strong node states. |
-| hero-skills | 21 | 1 | 7 / 7 / 8 / 7 / 7 | Skill rail is legible but preview and selected hero remain too small. |
-| hero-bonds | 17 | 1 | 7 / 6 / 9 / 6 / 7 | Still a bonus chip; needs connected companion portraits and bond preview. |
-| hero-gear | 17 | 1 | 7 / 7 / 9 / 7 / 7 | Dark equipment tiles repaired; equipment should surround a larger selected hero. |
+| cats-list | 20 | 1 | 8 / 8 / 9 / 8 / 8 | Large selected hero stands on a pedestal beside framed roster tiles; growth, skills, bonds and gear share stable tabs. |
+| hero-level-star | 20 | 1 | 8 / 8 / 9 / 8 / 8 | Selected hero stays visible beside the orange level action, exact resource costs and stat changes. |
+| hero-awakening | 7 | 0 | 8 / 8 / 9 / 8 / 8 | Hero and constellation share the dialog; unavailable action explains the actual level and star requirement. |
+| hero-skills | 21 | 1 | 8 / 8 / 9 / 8 / 8 | Selected hero, four skill tiles and one Preview action form a clear left-to-right composition. |
+| hero-bonds | 18 | 1 | 8 / 8 / 9 / 8 / 8 | Selected hero and companion portrait identify the actual pair; its numeric bonus remains visible. Larger bond networks could improve this later. |
+| hero-gear | 17 | 1 | 8 / 8 / 9 / 8 / 8 | Large hero stays beside four illustrated equipment slots in a consistent detail panel. |
 | bag-gear | 10 | 1 | 8 / 8 / 9 / 8 / 8 | Pantry grid, wearer preview, stat deltas and deterministic equip preserved. |
-| bag-item-detail | 19 | 0 | 7 / 8 / 8 / 7 / 8 | Contrast repaired; selected-item composition still has excessive empty space. |
+| bag-item-detail | 19 | 0 | 8 / 8 / 8 / 8 / 8 | Selected equipment has a radial display and two distinct set milestones with their real benefit text. |
 | forge-enhance | 5 | 0 | 8 / 9 / 9 / 8 / 8 | Dedicated workshop with live quote and confirmation; U4 adds action motion. |
 | forge-fusion | 8 | 0 | 8 / 8 / 9 / 8 / 8 | Selectable same-set inputs and deterministic output remain visible. |
 | bag-materials | 7 | 1 | 8 / 8 / 9 / 8 / 8 | Original material tiles and selected-item mascot. |
-| bag-manage | 9 | 0 | 7 / 8 / 9 / 7 / 8 | Usable tile manager; needs stronger selected-item focus. |
-| bag-consumables | 7 | 0 | 7 / 8 / 9 / 7 / 8 | Atomic batch flow added; manager still feels sparse. |
+| bag-manage | 5 | 0 | 8 / 8 / 9 / 8 / 8 | Painted pantry rail presents the owned materials; selected material art and exact quantity occupy the focus area. |
+| bag-consumables | 7 | 0 | 8 / 8 / 9 / 8 / 8 | Framed consumables, the selected recipient and explicit unavailable actions retain a usable inventory flow. |
 | bag-batch-use | 12 | 2 | 8 / 9 / 9 / 8 / 8 | New quantity dialog; unavailable use explicitly explains patrol requirement. |
 | invitations | 6 | 1 | 8 / 8 / 9 / 8 / 8 | Cost, remaining capacity and pity precede confirmed bound-currency draws. |
-| invitations-rates | 16 | 0 | 7 / 8 / 9 / 7 / 8 | Named rarity/Base/Next table is now readable; illustrative composition remains basic. |
-| invitations-reveal | 9 | 1 | 8 / 8 / 9 / 8 / 8 | Ten sealed cards fit without hiding cost. |
+| invitations-rates | 16 | 0 | 8 / 8 / 9 / 8 / 8 | Mascot anchors the named Base/Next odds table; details use two columns and fit their scroll panel. |
+| invitations-reveal | 20 | 1 | 8 / 8 / 9 / 8 / 8 | Ten sealed cards fit without hiding cost. |
 | invitations-ten-results | 19 | 1 | 9 / 8 / 9 / 8 / 8 | All ten real outcomes visible; primary Cats action. |
-| season-track-countdown-edition | 10 | 0 | 8 / 6 / 9 / 7 / 8 | Play/Collect/Grow links are not a real pass track. Premium pass remains explicitly roadmap. |
-| season-guide | 17 | 0 | 8 / 6 / 9 / 7 / 8 | Honest roadmap explanation; no completed pass-track claim. |
+| season-track-countdown-edition | 15 | 0 | 8 / 8 / 9 / 8 / 8 | Three actual weekly reward milestones show progress, rewards and claim state; season and edition counts stay separate. |
+| season-guide | 22 | 0 | 8 / 8 / 9 / 8 / 8 | Short guide states bound rewards and the premium-pass roadmap honestly while retaining the real weekly track. |
 | economy-flow | 20 | 0 | 8 / 8 / 9 / 8 / 8 | Painted flow objects; live readings and final sinks belong to C1/E4. |
-| economy-allocation | 14 | 0 | 8 / 8 / 9 / 8 / 8 | All nine allocations and legend fit 720p. |
-| economy-fees | 14 | 0 | 8 / 8 / 9 / 8 / 8 | Retained withdrawal fee and content/contract season difference visible. |
-| economy-odds | 15 | 0 | 7 / 8 / 9 / 7 / 8 | Live rules table is readable; still a table-heavy presentation. |
+| economy-allocation | 15 | 0 | 8 / 8 / 9 / 8 / 8 | All nine allocations and legend fit 720p. |
+| economy-fees | 15 | 0 | 8 / 8 / 9 / 8 / 8 | Retained withdrawal fee and content/contract season difference visible. |
+| economy-odds | 16 | 0 | 8 / 8 / 9 / 8 / 8 | Original mascot and currency tabs support the exact configuration table and pity figures. |
 | field-guide | 21 | 1 | 8 / 8 / 9 / 8 / 8 | Original mascot with short lessons and stable navigation. |
-| settings | 20 | 1 | 7 / 7 / 8 / 7 / 7 | Native import textarea/selects remain prominent; language selector absent. |
-| settings-audio | 23 | 0 | 7 / 7 / 9 / 7 / 7 | Per-bus mixer works but feels like an app popover. |
+| settings | 19 | 1 | 8 / 8 / 8 / 8 / 8 | Save controls and performance settings have separate framed desks; all essential controls fit at720p. |
+| settings-audio | 25 | 1 | 8 / 8 / 9 / 8 / 8 | Six named volume buses occupy a framed gold-slider mixer; settings stay visible behind it. |
 | quests-daily | 10 | 1 | 8 / 8 / 9 / 8 / 8 | Seven reward tiles and one enabled claim. |
 | events | 11 | 1 | 8 / 8 / 9 / 8 / 8 | Real weekly reward progress instead of repeated login gifts. |
-| chapter-map | 14 | 1 | 7 / 7 / 9 / 7 / 7 | Existing geometric route remains; backdrop alone is not a painted world-map rebuild. |
-| battle-prep | 14 | 4 | 7 / 7 / 9 / 6 / 6 | Owned wrapper rebuilt; protected A stage still has four plain/glyph controls. Exact request sent to A. |
-| victory | 4 | 1 | 9 / 8 / 9 / 9 / 8 | Original title plate, radial burst, hero pedestal and actual reward tiles. |
-| defeat | 6 | 1 | 9 / 8 / 9 / 9 / 8 | Distinct result plate and team-improvement action. |
-| error-offline | 20 | 1 | 8 / 9 / 9 / 8 / 8 | Warning and dismiss use inline SVG and remain available without network. |
-| wallet-panel | 16 | 0 | 7 / 7 / 9 / 7 / 7 | Native dialog focus repaired; needs a stronger account/object composition. |
+| chapter-map | 13 | 1 | 8 / 8 / 9 / 8 / 8 | Painted chapter landscape frames the actual branching route and its locked chapters; node topology stays readable. |
+| battle-prep | 12 | 1 | 8 / 8 / 9 / 8 / 8 | Readable original portraits, row identifiers and three icon tools precede one orange Fight action. Placement remains functional. |
+| victory | 18 | 2 | 9 / 8 / 9 / 9 / 8 | Current A animated victory crew keeps the original B title and reward frames; guide and Next controls remain distinct. |
+| defeat | 20 | 2 | 9 / 8 / 9 / 9 / 8 | Distinct defeat title, companion focus and real reward tiles preserve the Improve team and Cafe actions. |
+| error-offline | 19 | 2 | 8 / 9 / 9 / 8 / 8 | Warning and dismiss use inline SVG and remain available without network. |
+| wallet-panel | 19 | 0 | 8 / 9 / 9 / 8 / 8 | AVAX test gas and YARN use named balance tiles; Market, Export key, Move wallet and Sign out use large icon actions. |
 | market-browse | 17 | 0 | 8 / 8 / 9 / 8 / 8 | Large listing tiles with exact price and purchase confirmation. Legacy item art retained. |
 | market-buy | 3 | 0 | 8 / 8 / 9 / 8 / 8 | Confirmed local receipt and explorer link; no live transaction. |
 | market-my-listings | 13 | 0 | 8 / 8 / 9 / 8 / 8 | Explicit empty state in the same painted market. |
 | market-list | 6 | 0 | 8 / 8 / 9 / 8 / 8 | Dedicated item/price/fee confirmation dialog. |
-| wallet-cafe | 17 | 0 | 9 / 9 / 9 / 8 / 8 | Six-icon rail and café action objects replace fourteen text tabs. |
-| wallet-deed | 18 | 0 | 9 / 9 / 9 / 8 / 8 | Quest-gated free Deed follows the real server/Anvil flow. |
+| wallet-cafe | 18 | 0 | 9 / 9 / 9 / 8 / 8 | Six-icon rail and café action objects replace fourteen text tabs. |
+| wallet-deed | 19 | 0 | 9 / 9 / 9 / 8 / 8 | Quest-gated free Deed follows the real server/Anvil flow. |
 | wallet-withdraw | 15 | 0 | 8 / 8 / 9 / 8 / 8 | Exact retained/burned/received quote shown before reservation. |
 | wallet-seal | 16 | 0 | 8 / 7 / 9 / 8 / 8 | Eligible gear tiles and recipe costs preserved. |
-| wallet-fusion | 18 | 0 | 7 / 7 / 9 / 7 / 7 | Ingredients and primary confirmation fit; the bottom recovery/help controls still need more room at 720p. |
+| wallet-fusion | 19 | 0 | 8 / 8 / 9 / 8 / 8 | Output pedestal, framed ingredient tiles and exact costs precede the orange Reserve action. |
 | wallet-spool | 14 | 0 | 8 / 8 / 9 / 8 / 8 | Actual cosmetic preview and bound Spool cost. |
-| wallet-history | 10 | 0 | 7 / 6 / 9 / 7 / 7 | Receipt cards still use ordinal labels; transaction-type naming needed. |
+| wallet-history | 18 | 0 | 8 / 8 / 9 / 8 / 8 | Actual decoded event names and action icons replace receipt ordinals; explorer links remain attached to real transactions. |
 | wallet-style | 14 | 0 | 8 / 8 / 9 / 8 / 8 | Large owned cosmetic preview with swatches. |
-| wallet-ornament-forge | 18 | 0 | 7 / 7 / 9 / 7 / 7 | Workshop and original preview added; input selects and abstract mark remain too generic. |
-| wallet-offline | 25 | 0 | 7 / 7 / 8 / 7 / 7 | Recovery remains functional; underlying ornament composition still below target. |
+| wallet-ornament-forge | 18 | 0 | 8 / 8 / 9 / 8 / 8 | Large ornament preview, illustrated ingredient selectors and explicit shortfall support the retained quote flow. |
+| wallet-offline | 25 | 0 | 8 / 8 / 8 / 8 / 8 | Offline state retains the painted account room, an explicit error and refresh controls; no successful chain state is fabricated. |
 
-Full local suite: 2,508 web + 724 server pass; game rules 1,388 pass, two expected failures, eleven existing skips. Types and font/icon lint pass. All transactions in this evidence use disposable local Anvil. No public deployment, migration or contract deployment occurred.
+These are reviewed fixture states, not a claim that every possible account state or language has been exercised. All transaction evidence uses disposable local Anvil.

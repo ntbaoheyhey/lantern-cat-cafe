@@ -1,0 +1,49 @@
+[
+  {
+    "name": "phone-audit",
+    "command": [
+      "node",
+      "--test",
+      "scripts/ui/phone-controls.test.mjs"
+    ],
+    "environment": null,
+    "exitCode": 0,
+    "started": "2026-11-13T22:21:37.031907+00:00",
+    "ended": "2026-11-13T22:21:37.575078+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final5-phone-audit.log"
+  },
+  {
+    "name": "shell-phone",
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "cats-list,hero-level-star,hero-skills,hero-bonds,hero-gear,hero-awakening,bag-item-detail,bag-manage,bag-consumables,invitations-rates,season-track-countdown-edition,season-guide,economy-odds,settings,settings-audio,chapter-map,battle-prep,victory,defeat",
+      "CAPTURE_WIDTH": "390",
+      "CAPTURE_LABEL": "final5-phone",
+      "CAPTURE_RESUME": "1"
+    },
+    "exitCode": 0,
+    "started": "2026-11-13T22:21:37.575493+00:00",
+    "ended": "2026-11-13T22:23:01.135126+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final5-shell-phone.log"
+  },
+  {
+    "name": "chain-phone",
+    "command": [
+      "node",
+      "scripts/ui/q6-chain-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "wallet-panel,wallet-fusion,wallet-history,wallet-ornament-forge,wallet-offline",
+      "CAPTURE_WIDTH": "390",
+      "CAPTURE_LABEL": "chain-final5-phone",
+      "CAPTURE_RESUME": "1"
+    },
+    "exitCode": 1,
+    "started": "2026-11-13T22:23:01.135579+00:00",
+    "ended": "2026-11-13T22:23:39.871251+00:00",
+    "log": "reports/v3-shell/b2/tests/q6-final5-chain-phone.log"
+  }
+]

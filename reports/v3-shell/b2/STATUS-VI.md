@@ -14,7 +14,7 @@
 14. E4: 16 biên nhận Anvil, ba sink, 18 ảnh; kiểm tra odds 5/5.
 15. Báo cáo có 816 trích dẫn số liệu; đây là mô phỏng, chưa phải dữ liệu người chơi.
 16. Q5 đã đạt V/S5; nhận dạng thoại trong mix vẫn chỉ 7/12 mỗi cảnh trận/boss.
-17. Q6 đã xem 108 ảnh desktop và 24 ảnh điện thoại; đang chạy browser suite cuối.
+17. Q6 đạt54/54 màn hình;108 ảnh desktop,24 ảnh điện thoại; browser435/435 đạt.
 18. Q7 hình ảnh, Q8 hướng dẫn/Fuji và Q9 đánh bóng còn mở.
 19. Giữ đồng bộ ngày16 và18/11; đóng băng19/11 lúc12:00 UTC.
 20. Chưa deploy hoặc merge main; người dùng triển khai20/11.

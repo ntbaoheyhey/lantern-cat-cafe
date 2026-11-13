@@ -56,11 +56,11 @@ PASS U3.screens: measured 54; required >= 24 rebuilt screens
 PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
 PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
 PASS U3.words: measured 54/54; required <= 25 visible words every screen
-FAIL U3.buttons: measured 53/54; required <= 2 plain text buttons every screen
+PASS U3.buttons: measured 54/54; required <= 2 plain text buttons every screen
 PASS U3.fonts: measured 0; required 0 system fonts
 PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
-FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
-PASS U3.flows: measured 108; required passing test + SHA-256-verified log
+PASS U3.scores: measured 54/54; required average >= 8; every criterion >= 7
+PASS U3.flows: measured 435; required passing test + SHA-256-verified log
 PASS U4.tour: measured 62; required >= 60s WebM with sound, <= 25000000 bytes
 PASS U4.cls: measured 0; required 0 layout shifts > 0.05 CLS
 PASS U4.fps: measured 60; required median >= 60 fps in panel transitions
@@ -148,7 +148,7 @@ PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly 
 PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
 PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
 PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
-FAIL E3.T-h: measured 80/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.T-h: measured 85/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
 PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
 PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash
 PASS E4.receipts: measured 16; required >= 13 + new sink count confirmed receipts
@@ -156,8 +156,8 @@ PASS E4.sinks: measured 3/3; required one confirmed use of every new sink
 PASS E4.screenshots: measured 18; required 1280x720 and 1440x900 economy screenshots
 PASS E4.odds: measured 5; required passing test + SHA-256-verified log
 PASS E5.report: measured 18077; required nonempty reports/v3-shell/b2/econ/ECONOMY-FINAL.md
-PASS E5.numbers: measured 398; required >= 10 report numbers checked against committed JSON
-FAIL E5.allCitations: measured 398/816; required all report-number citations valid
+PASS E5.numbers: measured 816; required >= 10 report numbers checked against committed JSON
+PASS E5.allCitations: measured 816/816; required all report-number citations valid
 FAIL E6.migration: measured missing; required passing test + SHA-256-verified log
 FAIL E6.dynamicFee: measured missing; required passing test + SHA-256-verified log
 FAIL E6.median: measured missing; required 7-day median seal price
@@ -176,7 +176,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 984; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1470; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

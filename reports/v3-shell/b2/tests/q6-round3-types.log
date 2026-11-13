@@ -1,0 +1,28 @@
+
+> @taskbar-hero/web@0.0.0 typecheck /Users/bao/taskbar-hero-chain/apps/web
+> tsc --noEmit
+
+src/game/cardrpg/chain/history.test.ts(29,21): error TS2345: Argument of type '{ topics: [`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]; data: `0x${string}`; }' is not assignable to parameter of type '{ data: `0x${string}`; topics: readonly `0x${string}`[]; }'.
+  Types of property 'topics' are incompatible.
+    Type '[`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]' is not assignable to type 'readonly `0x${string}`[]'.
+      Type '`0x${string}` | `0x${string}`[] | null' is not assignable to type '`0x${string}`'.
+        Type 'null' is not assignable to type '`0x${string}`'.
+src/game/cardrpg/chain/history.test.ts(30,21): error TS2345: Argument of type '{ topics: [`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]; data: `0x${string}`; }' is not assignable to parameter of type '{ data: `0x${string}`; topics: readonly `0x${string}`[]; }'.
+  Types of property 'topics' are incompatible.
+    Type '[`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]' is not assignable to type 'readonly `0x${string}`[]'.
+      Type '`0x${string}` | `0x${string}`[] | null' is not assignable to type '`0x${string}`'.
+        Type 'null' is not assignable to type '`0x${string}`'.
+src/game/cardrpg/chain/history.test.ts(31,21): error TS2345: Argument of type '{ topics: [`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]; data: `0x${string}`; }' is not assignable to parameter of type '{ data: `0x${string}`; topics: readonly `0x${string}`[]; }'.
+  Types of property 'topics' are incompatible.
+    Type '[`0x${string}`, ...(`0x${string}` | `0x${string}`[] | null)[]]' is not assignable to type 'readonly `0x${string}`[]'.
+      Type '`0x${string}` | `0x${string}`[] | null' is not assignable to type '`0x${string}`'.
+        Type 'null' is not assignable to type '`0x${string}`'.
+src/game/cardrpg/chain/history.ts(13,12): error TS2538: Type 'undefined' cannot be used as an index type.
+src/game/cardrpg/chain/history.ts(13,42): error TS2538: Type 'undefined' cannot be used as an index type.
+src/game/cardrpg/chain/history.ts(14,61): error TS2345: Argument of type 'undefined' is not assignable to parameter of type 'string'.
+src/game/cardrpg/chain/history.ts(15,15): error TS2352: Conversion of type 'readonly unknown[] | undefined' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'readonly unknown[]' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'readonly unknown[]'.
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

@@ -1,0 +1,3713 @@
+{
+  "label": "chain-final2",
+  "sourceCommit": "343645dcdc7229b868278368a3d4e0e3537da1e5",
+  "aCommit": "f6dc3cadd8565fb8624496cfa72744b6493ca6bf",
+  "runtimeRoot": "/Users/bao/taskbar-hero-chain",
+  "runtimeHash": "b9917d6f3bf487d8ad0a470a550e8b96f14438af13d8c16f5b90acb5abf0cc4a",
+  "sourceSignatures": [],
+  "capturedAt": "2026-11-13T21:56:07.107Z",
+  "rows": [
+    {
+      "id": "wallet-panel",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-panel.png",
+        "sha256": "52649fbc39d1c2a5faf3a4a783309020bf7d9ebde5c49da7370ca361cec96442"
+      },
+      "visibleWords": 19,
+      "plainTextButtons": 0,
+      "iconTiles": 5,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0xe747fc",
+        "…",
+        "d5cb",
+        "AVAX test gas",
+        "0.1500",
+        "YARN",
+        "0",
+        "Market",
+        "Sign out",
+        "Export key",
+        "Move wallet",
+        "?"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Close Fuji",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 916,
+            "y": 78,
+            "width": 54,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 310,
+            "y": 352,
+            "width": 324,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Sign out",
+          "text": "Sign out",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 646,
+            "y": 352,
+            "width": 324,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Export key",
+          "text": "Export key",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 310,
+            "y": 486,
+            "width": 324,
+            "height": 122
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Move wallet",
+          "text": "Move wallet",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 646,
+            "y": 486,
+            "width": 324,
+            "height": 122
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "?",
+          "text": "?",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 310,
+            "y": 620,
+            "width": 660,
+            "height": 22
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "market-browse",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/market-browse.png",
+        "sha256": "f2ba96972ee5d1cf04eb3b919666154968315fe236395fba64d0daeaa37b745c"
+      },
+      "visibleWords": 17,
+      "plainTextButtons": 0,
+      "iconTiles": 16,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "5",
+        "%",
+        "Mine",
+        "Paw Charm",
+        "0.001",
+        "Buy",
+        "Moon Collar",
+        "0.001",
+        "Buy"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 79,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 129,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Market version",
+          "text": "V2V1",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 448,
+            "y": 213,
+            "width": 57,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Currency",
+          "text": "AVAXYARN",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 515,
+            "y": 213,
+            "width": 73,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Item type",
+          "text": "AllRelicMaterialGear",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 598,
+            "y": 213,
+            "width": 90,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Item rarity",
+          "text": "Allcommonrareepiclegendary",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 698,
+            "y": 213,
+            "width": 101,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Mine",
+          "text": "Mine",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1032,
+            "y": 274,
+            "width": 78,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Inspect Paw Charm",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 380,
+            "y": 281,
+            "width": 140,
+            "height": 130
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Buy",
+          "text": "Buy",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 370,
+            "y": 508,
+            "width": 160,
+            "height": 62
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Inspect Moon Collar",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 760,
+            "y": 281,
+            "width": 140,
+            "height": 130
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Buy",
+          "text": "Buy",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 750,
+            "y": 508,
+            "width": 160,
+            "height": 62
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 606,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 606,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "market-buy",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/market-buy.png",
+        "sha256": "17d06b4c3e1a7fbed9db3d5bc95b2da848fcbb53eb86f456368b779854a70911"
+      },
+      "visibleWords": 3,
+      "plainTextButtons": 0,
+      "iconTiles": 3,
+      "texts": [
+        "Confirmed",
+        "Snowtrace",
+        "Done"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Close dialog",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1050,
+            "y": 160,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Snowtrace",
+          "text": "Snowtrace",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 693,
+            "y": 387,
+            "width": 109,
+            "height": 28
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close receipt",
+          "text": "Done",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 817,
+            "y": 499,
+            "width": 160,
+            "height": 52
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "market-my-listings",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/market-my-listings.png",
+        "sha256": "38acbd8b8044f163deac6658b7f3cb1fec0bed6b774b2261b68ba12f507d9a12"
+      },
+      "visibleWords": 13,
+      "plainTextButtons": 0,
+      "iconTiles": 12,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "5",
+        "%",
+        "Mine",
+        "No listings"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 118,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 168,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Market version",
+          "text": "V2V1",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 448,
+            "y": 252,
+            "width": 57,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Currency",
+          "text": "AVAXYARN",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 515,
+            "y": 252,
+            "width": 73,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Item type",
+          "text": "AllRelicMaterialGear",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 598,
+            "y": 252,
+            "width": 90,
+            "height": 34
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Item rarity",
+          "text": "Allcommonrareepiclegendary",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 698,
+            "y": 252,
+            "width": 101,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Mine",
+          "text": "Mine",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1032,
+            "y": 313,
+            "width": 78,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 567,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 567,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "market-list",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/market-list.png",
+        "sha256": "6d43001eb0b335bf0094e965bdc1b4993473b50b49e27002e8ed1581efbb4ca3"
+      },
+      "visibleWords": 6,
+      "plainTextButtons": 0,
+      "iconTiles": 2,
+      "texts": [
+        "List",
+        "Paw Charm",
+        "AVAX",
+        "Fee",
+        "5",
+        "%",
+        "Confirm"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Close dialog",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1050,
+            "y": 145,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "input",
+          "label": "Price in AVAX",
+          "text": "",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 463,
+            "y": 501,
+            "width": 166,
+            "height": 54
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Confirm",
+          "text": "Confirm",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 731,
+            "y": 508,
+            "width": 132,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-cafe",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-cafe.png",
+        "sha256": "d9854108f1f53592ae7a899283810a071234ca357058fc6bcf6521a87b2ab64d"
+      },
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "iconTiles": 20,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "0",
+        "0",
+        "/",
+        "1",
+        "0",
+        "Deed",
+        "Quest",
+        "Withdraw",
+        "Seal",
+        "Fusion",
+        "Spool",
+        "Studio",
+        "History"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 204,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Complete quest",
+          "text": "Quest",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 159,
+            "y": 446,
+            "width": 165,
+            "height": 64
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Deed perks",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 292,
+            "y": 285,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Withdraw",
+          "text": "Withdraw",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal",
+          "text": "Seal",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion",
+          "text": "Fusion",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Spool",
+          "text": "Spool",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Studio",
+          "text": "Studio",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 638,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 638,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-deed",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-deed.png",
+        "sha256": "fa50da18fbdedced24700edc046778269cad72077fdeef01efba5851da6d83ee"
+      },
+      "visibleWords": 19,
+      "plainTextButtons": 0,
+      "iconTiles": 20,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Deed",
+        "Mint free",
+        "Withdraw",
+        "Seal",
+        "Fusion",
+        "Spool",
+        "Studio",
+        "History"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 204,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Mint free Deed",
+          "text": "Mint free",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 159,
+            "y": 446,
+            "width": 165,
+            "height": 64
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Deed perks",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 292,
+            "y": 285,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Withdraw",
+          "text": "Withdraw",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal",
+          "text": "Seal",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion",
+          "text": "Fusion",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 273,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Spool",
+          "text": "Spool",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Studio",
+          "text": "Studio",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 409,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 638,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 638,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-withdraw",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-withdraw.png",
+        "sha256": "a8feb86b60c6686c1db6d494949f2175b296c1adb55a6d2d6791d71297e02fb9"
+      },
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "iconTiles": 16,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Withdraw",
+        "Retained",
+        "1.058823529411764705",
+        "Burned",
+        "0",
+        "Receive",
+        "6",
+        "Reserve",
+        "1"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 204,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Back to café",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 520,
+            "y": 274,
+            "width": 46,
+            "height": 38
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Withdraw guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 726,
+            "y": 276,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "input",
+          "label": "Withdraw Spool",
+          "text": "",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 596,
+            "y": 364,
+            "width": 150,
+            "height": 48
+          }
+        },
+        {
+          "tag": "input",
+          "label": "Held Deed",
+          "text": "",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 798,
+            "y": 364,
+            "width": 150,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Reserve withdrawal",
+          "text": "Reserve",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 554,
+            "y": 512,
+            "width": 153,
+            "height": 58
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Receipt 1",
+          "text": "1",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1100,
+            "y": 619,
+            "width": 34,
+            "height": 27
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 652,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 652,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-seal",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-seal.png",
+        "sha256": "93f6dec3439d7d759d8f2ba012e3ec865f1a74f88f437213a4459d28b8b915fb"
+      },
+      "visibleWords": 16,
+      "plainTextButtons": 0,
+      "iconTiles": 21,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Seal",
+        "1",
+        "0",
+        "/",
+        "3",
+        "Perfect",
+        "13",
+        "Perfect",
+        "13",
+        "Perfect",
+        "13",
+        "Perfect",
+        "13",
+        "2.6",
+        "Import",
+        "1"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 204,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Back to café",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 555,
+            "y": 274,
+            "width": 46,
+            "height": 38
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 691,
+            "y": 276,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal Epic Hearthloom Pan Perfect",
+          "text": "Perfect13",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 151,
+            "y": 412,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal Epic Hearthloom Apron Perfect",
+          "text": "Perfect13",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 314,
+            "y": 412,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal Epic Hearthloom Bell Perfect",
+          "text": "Perfect13",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 477,
+            "y": 412,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal Epic Hearthloom Cup Perfect",
+          "text": "Perfect13",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 640,
+            "y": 412,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal Star Thread",
+          "text": "2.6",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 803,
+            "y": 412,
+            "width": 145,
+            "height": 150
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Import earned gear",
+          "text": "Import",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 965,
+            "y": 476,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Receipt 1",
+          "text": "1",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1100,
+            "y": 589,
+            "width": 34,
+            "height": 27
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 622,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 622,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-fusion",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-fusion.png",
+        "sha256": "6340f06d41c93185dc2c2b7f5732d5e880b17fc571980ffa8e19388a7393c375"
+      },
+      "visibleWords": 19,
+      "plainTextButtons": 0,
+      "iconTiles": 19,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Fusion",
+        "Legendary",
+        "0",
+        "/",
+        "3",
+        "3",
+        "1",
+        "18",
+        "Success",
+        "100",
+        "%",
+        "Perfect",
+        "Perfect",
+        "Perfect",
+        "Perfect",
+        "Sealed",
+        "Reserve",
+        "1"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 204,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Back to café",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 539,
+            "y": 274,
+            "width": 46,
+            "height": 38
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 707,
+            "y": 276,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Pan · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 450,
+            "y": 480,
+            "width": 145,
+            "height": 110
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Apron · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 613,
+            "y": 480,
+            "width": 145,
+            "height": 110
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Bell · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 776,
+            "y": 480,
+            "width": 145,
+            "height": 110
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Epic Hearthloom Cup · Perfect",
+          "text": "Perfect",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 939,
+            "y": 480,
+            "width": 145,
+            "height": 110
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Sealed inputs",
+          "text": "Sealed",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 608,
+            "y": 635,
+            "width": 140,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Reserve fusion",
+          "text": "Reserve",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 762,
+            "y": 623,
+            "width": 153,
+            "height": 58
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Receipt 1",
+          "text": "1",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1100,
+            "y": 703,
+            "width": 34,
+            "height": 27
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-spool",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-spool.png",
+        "sha256": "12e7b438177c95f05fe0fd1426882f0435c833f44e1624e4a6f554248ef49b01"
+      },
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "iconTiles": 16,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1500",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "16",
+        "2",
+        "/",
+        "1",
+        "2",
+        "Spool",
+        "Lantern café",
+        "11",
+        "Unlock",
+        "1"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 66,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 116,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 208,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Back to café",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 546,
+            "y": 278,
+            "width": 46,
+            "height": 38
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Spool guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 700,
+            "y": 280,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Unlock",
+          "text": "Unlock",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 668,
+            "y": 500,
+            "width": 142,
+            "height": 58
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Receipt 1",
+          "text": "1",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1100,
+            "y": 585,
+            "width": 34,
+            "height": 27
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 618,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 618,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-history",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-history.png",
+        "sha256": "fc9b8910d62bf0525fbb40ac4a97996a4cfc760807f62bda0d93fe8c135f99ba"
+      },
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "iconTiles": 19,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1499",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "Mint",
+        "27",
+        "Listing",
+        "25",
+        "Mint",
+        "24",
+        "Listing",
+        "23",
+        "Mint",
+        "22",
+        "Listing",
+        "21",
+        "Mint",
+        "20",
+        "Listing",
+        "19"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 62,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 112,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x13926d26fc7009e7e796d02c480352ec3d8ac1e9cc806a967a1f7114238f01df",
+          "text": "Mint27",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 409,
+            "y": 198,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0x286da8439c13642c21573a3dd7430f5360e3e3d7e6a7804a63101e65c289fab3",
+          "text": "Listing25",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 767,
+            "y": 198,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x372e4f1844efb789458c38c541bcd3418bb192a19b0dc2531f0a43189ac27228",
+          "text": "Mint24",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 409,
+            "y": 320,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0x5dd8d47f046fad5282ef72b491f33397279433f07a1062a0e41c758fadb235a4",
+          "text": "Listing23",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 767,
+            "y": 320,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x5dd49dc00dee4cccc3faca86bb8781776dd6fa3548b93a2da33e2be1ff013ac8",
+          "text": "Mint22",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 409,
+            "y": 442,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0xa10712bac58ae2a0e621b7c64515958f97b3a33cb6f5905eb975078132d66374",
+          "text": "Listing21",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 767,
+            "y": 442,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Mint transaction 0x46192f6f856de7fe84aea87ff5e99b98fcb9bdaa0ca023c89cc6adb6e5633ca1",
+          "text": "Mint20",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 409,
+            "y": 564,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "a",
+          "label": "Listing transaction 0x83d3f7516270161abdcc38fd0f6d2c85b9748b264a1385d9f14d8603dd240f0c",
+          "text": "Listing19",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 767,
+            "y": 564,
+            "width": 348,
+            "height": 112
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 688,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 688,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-style",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-style.png",
+        "sha256": "a863a70c8c6cccaaaed687e75b1114f26798f8b36675dfdab0975e2af4f3a51a"
+      },
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "iconTiles": 15,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1499",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "Fern",
+        "Tide",
+        "Ember",
+        "Burn 4"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 123,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 173,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fern",
+          "text": "Fern",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 478,
+            "y": 445,
+            "width": 94,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Tide",
+          "text": "Tide",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 586,
+            "y": 445,
+            "width": 93,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Ember",
+          "text": "Ember",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 694,
+            "y": 445,
+            "width": 108,
+            "height": 48
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Burn 4",
+          "text": "Burn 4",
+          "icon": true,
+          "disabled": true,
+          "bounds": {
+            "x": 560,
+            "y": 503,
+            "width": 160,
+            "height": 46
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 561,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 561,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-ornament-forge",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-ornament-forge.png",
+        "sha256": "ab70380a419f1845bdce96bb68a7b40e15ae6e1f889acae8b97412887404781e"
+      },
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "iconTiles": 15,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "0.1499",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "Orbit",
+        "Bloom",
+        "Flare",
+        "Self-seal",
+        "20",
+        "+",
+        "3",
+        "=",
+        "23",
+        "Short",
+        "23",
+        "2 Epic +",
+        "3",
+        "Forge"
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 107,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 157,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Orbit",
+          "text": "Orbit",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 571,
+            "y": 241,
+            "width": 129,
+            "height": 63
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bloom",
+          "text": "Bloom",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 712,
+            "y": 241,
+            "width": 129,
+            "height": 63
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Flare",
+          "text": "Flare",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 854,
+            "y": 241,
+            "width": 129,
+            "height": 63
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Epic 1",
+          "text": "Epic 1",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 546,
+            "y": 410,
+            "width": 213,
+            "height": 40
+          }
+        },
+        {
+          "tag": "select",
+          "label": "Epic 2",
+          "text": "Epic 2",
+          "icon": false,
+          "disabled": false,
+          "bounds": {
+            "x": 853,
+            "y": 410,
+            "width": 213,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Forge",
+          "text": "Forge",
+          "icon": true,
+          "disabled": true,
+          "bounds": {
+            "x": 677,
+            "y": 516,
+            "width": 200,
+            "height": 46
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 578,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 578,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "id": "wallet-offline",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q6/chain-final2-1280/wallet-offline.png",
+        "sha256": "f48e8bcee7cc51ac583446ffb942e4cb0de489a5cb5efd22c025f89040beb208"
+      },
+      "visibleWords": 25,
+      "plainTextButtons": 0,
+      "iconTiles": 22,
+      "texts": [
+        "Fuji",
+        "Testnet · no value",
+        "0",
+        "Gas unavailable.",
+        "Retry",
+        "Copy address",
+        "Café",
+        "Market",
+        "Bag",
+        "Style",
+        "History",
+        "More",
+        "0",
+        "0",
+        "/",
+        "1",
+        "0",
+        "Deed",
+        "Quest",
+        "Withdraw",
+        "Seal",
+        "Fusion",
+        "Spool",
+        "Studio",
+        "History",
+        "Unavailable. Retry."
+      ],
+      "fonts": [
+        "\"Baloo 2\", sans-serif",
+        "\"Barlow Condensed\", sans-serif"
+      ],
+      "controls": [
+        {
+          "tag": "button",
+          "label": "Mute sound",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1186,
+            "y": 12,
+            "width": 38,
+            "height": 40
+          }
+        },
+        {
+          "tag": "summary",
+          "label": "Audio mixer",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1228,
+            "y": 12,
+            "width": 40,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Retry",
+          "text": "Retry",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1025,
+            "y": 62,
+            "width": 67,
+            "height": 31
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Copy address",
+          "text": "Copy address",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1159,
+            "y": 52,
+            "width": 81,
+            "height": 50
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Close market",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 60,
+            "width": 42,
+            "height": 42
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Café",
+          "text": "Café",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 146,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Market",
+          "text": "Market",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 313,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Bag",
+          "text": "Bag",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 480,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Style",
+          "text": "Style",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 647,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 814,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "More",
+          "text": "More",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 981,
+            "y": 110,
+            "width": 153,
+            "height": 68
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Recover reserved actions",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1090,
+            "y": 202,
+            "width": 44,
+            "height": 36
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Complete quest",
+          "text": "Quest",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 159,
+            "y": 444,
+            "width": 165,
+            "height": 64
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Deed perks",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 292,
+            "y": 283,
+            "width": 34,
+            "height": 34
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Withdraw",
+          "text": "Withdraw",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 271,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Seal",
+          "text": "Seal",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 271,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fusion",
+          "text": "Fusion",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 271,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Spool",
+          "text": "Spool",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 744,
+            "y": 407,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Studio",
+          "text": "Studio",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 877,
+            "y": 407,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "History",
+          "text": "History",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1011,
+            "y": 407,
+            "width": 123,
+            "height": 114
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Refresh chain",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1042,
+            "y": 636,
+            "width": 42,
+            "height": 40
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Fuji guide",
+          "text": "",
+          "icon": true,
+          "disabled": false,
+          "bounds": {
+            "x": 1092,
+            "y": 636,
+            "width": 42,
+            "height": 40
+          }
+        }
+      ],
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,11 @@
+{"id":"chapter-map","words":5,"plain":0,"overflow":false,"clipped":4,"unreachable":5}
+{"id":"victory","words":9,"plain":1,"overflow":false,"clipped":0,"unreachable":0}
+{"id":"defeat","words":10,"plain":1,"overflow":false,"clipped":0,"unreachable":0}
+file:///Users/bao/taskbar-hero-chain/scripts/ui/q6-capture.mjs:63
+  if(failures.length)throw Error('Phone controls need repair: '+failures.map(row=>row.id+': '+(row.phoneControls?.unreachable.map(c=>c.label).join(', ')||'initial clipping')).join('; '));
+                           ^
+
+Error: Phone controls need repair: chapter-map: Patrol 1, A little story 2, Elite 2, Patrol 6, 30/3
+    at file:///Users/bao/taskbar-hero-chain/scripts/ui/q6-capture.mjs:63:28
+
+Node.js v24.22.2
