@@ -1,7 +1,8 @@
+import {returningGuest} from './review-guest.mjs';
 import {createRequire} from 'node:module';import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';import sharp from 'sharp';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
 const out=resolve(root,'reports/v3-battle/A1');await mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});const report={errors:[],waves:[]};page.on('pageerror',e=>report.errors.push(e.message));
-try{await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
+try{await returningGuest(page);await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
  for(const [name,enemies] of [['wave1',['button-guard','sock-skipper','teacup-healer','needle-moth']],['wave3',['kettle-knight','spool-ram','pollen-scout','crumb-sentinel']],['boss',['yarn-giant','binding-thread','binding-thread']]]){
  await page.evaluate(async enemies=>{const m=window.__depthReview,R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts');m.state.tutorial=4;m.galleryBattle=R.createBattle({seed:71,chapter:3,gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true,cats:R.battleCats(m.state),enemies});m.galleryBattle.v4.committed=true;m.galleryAction=null;m.watching=true;m.paused=true;m.sceneStarted=true;m.screen='map';m.plan=null;m.notify(false);},enemies);
  await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});

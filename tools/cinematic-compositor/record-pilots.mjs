@@ -1,9 +1,10 @@
+import {returningGuest} from './review-guest.mjs';
 import {createRequire} from 'node:module';import {mkdir,rm,rename,writeFile,copyFile} from 'node:fs/promises';import {resolve} from 'node:path';import {spawn} from 'node:child_process';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out=resolve(root,'reports/v3-battle/A3'),desktop='/Users/bao/Desktop/TaskbarHero-REVIEW';await mkdir(desktop,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{for(const id of (process.argv.slice(2).length?process.argv.slice(2):['mochi','soot','clover'])){
  const temp=resolve(root,'work/pilot-capture',id),context=await browser.newContext({viewport:{width:1280,height:720},recordVideo:{dir:temp,size:{width:1280,height:720}}}),page=await context.newPage();
- await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
+ await returningGuest(page);await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
  await page.evaluate(async id=>{
   const m=window.__depthReview,R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts');
   m.sceneError='';m.state.tutorial=4;m.state.settings.speed=1;m.state.settings.quality='high';

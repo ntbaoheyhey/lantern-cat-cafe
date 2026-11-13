@@ -1,3 +1,4 @@
+import {returningGuest} from './review-guest.mjs';
 import {createRequire} from 'node:module';import {readFile,readdir,mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';import sharp from 'sharp';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),out=resolve(root,'reports/v3-battle/A4');await mkdir(out,{recursive:true});
 const ids=(await readdir(resolve(root,'skills'))).sort(),rows=[],errors=[];
@@ -7,7 +8,7 @@ for(let start=0;start<ids.length;start+=4){const layers=[];for(const [i,id] of i
 }await sharp({create:{width:1280,height:168*Math.min(4,ids.length-start),channels:4,background:'#171221'}}).composite(layers).png().toFile(resolve(out,`ultimates-${1+start/4}.png`));}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']}),page=await browser.newPage({viewport:{width:1280,height:720}});page.on('pageerror',e=>errors.push(e.message));
 try{
- await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
+ await returningGuest(page);await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
  const thumbs=[];
  for(const id of ids)for(const n of (id==='yarn-giant'?[4]:[1,2,3,4])){
   const skill=id==='yarn-giant'?'enemy:yarn-giant':id+'-'+n;

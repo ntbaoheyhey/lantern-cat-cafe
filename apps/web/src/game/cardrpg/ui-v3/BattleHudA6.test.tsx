@@ -147,7 +147,8 @@ it.each([false,true])('opens a native battle guide and restores prior pause=%s o
  // Wait for the real lazy import, not testing-library's one-second polling
  // deadline: a cold full-suite transform can outlast it on a busy runner.
  await act(async()=>{await vi.dynamicImportSettled();});
- await within(guide).findByRole('region',{name:'Cafe field guide'});
+ const chapters=await within(guide).findByRole('navigation',{name:'Guide chapters'});
+ expect(within(chapters).getByRole('combobox',{name:'Guide chapter'})).toBeTruthy();
  const at=m.playbackAt;act(()=>m.tick(1000));expect(m.playbackAt).toBe(at);expect(m.paused).toBe(true);
  if(wasPaused)fireEvent(guide,new Event('cancel',{cancelable:true}));
  else fireEvent.keyDown(within(guide).getByRole('button',{name:'Close guide'}),{key:'Escape'});

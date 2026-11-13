@@ -416,3 +416,11 @@ Free before: 98.00 GiB; after: 98.28 GiB.
 Active full E2E outputs/caches retained until run exits. No worktrees were marked prunable; none removed.
 
 Correction: the nested dist/v2-server output was still used by guidance cases later in the full E2E run. Restored with server-build.mjs --build-only and the same ports; affected cases will be rerun. Further cleanup waits for all owned servers to exit.
+
+## Resume 2026-11-13 00:34 UTC
+- Free before: 98.04 GiB; after: 98.21 GiB.
+- Removed /Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist/v2-server: 150.56 MiB.
+- Removed /Users/bao/taskbar-hero-cardrpg-a6/apps/web/test-results: 0.13 MiB.
+- Removed /Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite/vitest: 0.03 MiB.
+- Preserved newest classic/v2 builds and active Vite dependency cache (PID 79776, port 5990). No prunable worktrees were listed; no worktrees removed.
+- E2E failure ids copied to A6/e2e-last-run-before-resume.json before test-output cleanup.

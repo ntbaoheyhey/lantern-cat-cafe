@@ -1,3 +1,4 @@
+import {returningGuest} from './review-guest.mjs';
 import {createRequire} from 'node:module';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
@@ -7,7 +8,7 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 try {
- await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
+ await returningGuest(page);await page.goto('http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
  await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
  await page.evaluate(()=>{const m=window.__depthReview;m.state.tutorial=4;m.state.freeInvite=true;m.start(1,'campaign',1);m.enter('0-0');m.watching=true;m.paused=true;m.sceneStarted=true;m.notify(false);});
  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:90000});
