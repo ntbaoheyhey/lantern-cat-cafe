@@ -1,0 +1,17 @@
+PASS E3.rounds: measured 24; required >= 15 logged rounds with scenario tables and lessons
+PASS E3.leverChanges: measured 8.958333333333334; required >= 2 changed levers per round on average
+PASS E3.searchLevers: measured 20; required >= 10 levers per search
+PASS E3.configs: measured 1273; required >= 600 unique configs evaluated with >= 40 seeds
+PASS E3.confirmed: measured 10; required top 10 confirmed with >= 200 seeds
+PASS E3.structural: measured 5; required >= 3 model/lever structural changes
+PASS E3.finalScenarios: measured 18; required all 18 scenarios at >= 200 seeds
+PASS E3.T-a: measured 18/18; required burn/all claims >= 1; at 100% demand <= 1.6
+PASS E3.T-b: measured 18/18; required Star Thread source/sink 0.9-1.1
+PASS E3.T-c: measured 18/18; required heavy/casual YARN/hour <= 3x both directions
+PASS E3.T-d: measured 18/18; required casual day 10-16; heavy day 5-9, strictly faster
+PASS E3.T-e: measured 6/6; required at 35% bots, bot/regular YARN/hour <= 0.5
+PASS E3.T-f: measured 18/18; required top-1% share of withdrawn YARN <= 8%
+PASS E3.T-g: measured 18/18; required p90: half-demand burn >= 0.95; Star 0.8-1.2
+FAIL E3.T-h: measured 80/85; required each assumption +/- 20%: burn >= 0.95; Star 0.8-1.2
+PASS E3.configOdds: measured 5; required passing test + SHA-256-verified log
+PASS E3.configSource: measured packages/game-rules/src/cardrpg/economy-v3.ts; required committed final rules config matches measured hash

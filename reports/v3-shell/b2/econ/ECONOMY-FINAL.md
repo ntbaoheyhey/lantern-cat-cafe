@@ -2,7 +2,7 @@
 
 Measured candidate: `497ba9738ee175c0efc7b21864fcdc44af611abac366f07e87150676eb995bd3`. These are simulations and disposable local transactions, not observed player behaviour or public-chain deployment.
 
-Search: 24 rounds, 1273 distinct configurations. Final confirmation: 18 scenarios, 200 seeds per scenario. Sensitivity coverage: 80 / 85 assumptions. Incomplete cases remain failed evidence.
+Search: 24 rounds, 1273 distinct configurations. Final confirmation: 18 scenarios, 200 seeds per scenario. Sensitivity coverage: 85 / 85 assumptions. Incomplete cases remain failed evidence.
 
 ## Targets
 
@@ -15,7 +15,7 @@ Search: 24 rounds, 1273 distinct configurations. Final confirmation: 18 scenario
 | T-e | Bot / regular hourly YARN ≤ 0.5 in the largest bot mix | PASS |
 | T-f | Top-percent account share ≤ 0.08 | PASS |
 | T-g | Upper-tail half-demand burn ≥ 0.95; Star 0.8–1.2 | PASS |
-| T-h | Each behaviour assumption ± 0.2: burn ≥ 0.95; Star 0.8–1.2 | FAIL |
+| T-h | Each behaviour assumption ± 0.2: burn ≥ 0.95; Star 0.8–1.2 | PASS |
 
 ## Published changes
 

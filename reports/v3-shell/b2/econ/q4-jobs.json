@@ -379,7 +379,9 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-finish-sensitivity.log",
     "started": "2026-11-13T18:22:25.782959+00:00",
     "failedPid": 16934,
-    "note": "Initial wrapper syntax fixed before running; no simulation output lost."
+    "note": "Initial wrapper syntax fixed before running; no simulation output lost.",
+    "completed": "2026-11-13T22:39:58.024317+00:00",
+    "exitCode": 0
   },
   {
     "name": "q4-current-sinks",
@@ -413,5 +415,30 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-current-sinks-browser-retry3.log",
     "started": "2026-11-13T21:27:35.545428+00:00",
     "note": "Method change: chain fixtures use server accounts; skip offline-model seeding instead of waiting for an unavailable review hook."
+  },
+  {
+    "name": "sensitivity23-native-completion",
+    "pid": 59395,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/sensitivity.mjs",
+      "--label",
+      "Q4-SENSITIVITY23-200",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-23-best.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+      "--native-index",
+      "reports/v3-shell/b2/econ/NATIVE-SENSITIVITY.json",
+      "--seeds",
+      "200",
+      "--workers",
+      "4",
+      "--resume"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-sensitivity23-resume.log",
+    "started": "2026-11-13T22:35:00.693685+00:00",
+    "completed": "2026-11-13T22:39:58.024317+00:00",
+    "exitCode": 0
   }
 ]
