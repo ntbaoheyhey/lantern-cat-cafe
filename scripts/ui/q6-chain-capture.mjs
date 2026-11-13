@@ -3,6 +3,7 @@ import {spawn} from 'node:child_process';
 process.env.CHAIN_LOCAL_WEB_PORT='5995';
 process.env.CHAIN_LOCAL_API_PORT='5997';
 process.env.CHAIN_LOCAL_RPC_PORT='8546';
+process.env.CHAIN_LOCAL_FIXTURE_ISOLATION='1';
 const {startLocal}=await import('../../tools/chain/local.mjs');
 const local=await startLocal({web:true});
 try{

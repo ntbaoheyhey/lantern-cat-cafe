@@ -63,7 +63,7 @@ export async function openAudioScreen(p,id,url='http://127.0.0.1:5996'){
  else if(id.startsWith('economy-')){await shell('economy');const tab=id.split('-')[1];if(tab!=='flow')await p.locator('.b-page-nav').getByRole('button',{name:tab,exact:true}).click();}
  else if(id==='field-guide')await go('codex');
  else if(id.startsWith('settings')){await go('save');if(id==='settings-audio')await p.locator('.th-audio summary').click();}
- else if(['quests-daily','events'].includes(id))await click(id==='quests-daily'?'Daily quests':'Events');
+ else if(['quests-daily','events'].includes(id))await p.locator('.b-right-events').getByRole('button',{name:id==='quests-daily'?'Quests':'Events',exact:true}).click();
  else if(id==='chapter-map')await go('map');
  else if(id==='battle-prep'){await p.evaluate(()=>window.__depthReview.tutorial());await p.waitForTimeout(300);}
  else if(['victory','defeat'].includes(id)){

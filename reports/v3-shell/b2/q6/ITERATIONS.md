@@ -10,3 +10,6 @@ The weekly track reuses dailyBoardA6 and claimDailyA6. Browser evidence proves t
 History labels are decoded from receipt events; unknown events remain Activity. Specific actions outrank their supporting token transfers. The list now shows the newest eight of the returned receipts.
 
 UI captures of non-chain screens use the temporary B preview with A-owned current battle files, never a branch merge. Wallet/market captures use B source and disposable local Anvil.
+
+5. Full screen capture exposed the A current result missing B title/receipt skin; B CSS now covers the generic result class and A exposes outcome plus guide/next icons. Discovery overlay remains included in counts. A preparation portraits use the compact-board viewport basis. Retained screenshots show2 plain buttons on victory/defeat and1 on preparation. Desktop fonts/icons pass.
+6. Chain captures now use a local database transaction plus Anvil snapshot per screen, preserving the real Judge/day quotas. The earlier chain pass exhausted its shared disposable fixture at wallet-seal; no quota was raised. Capture provenance now hashes every runtime app/rules source, including the temporary A overlay.
