@@ -1,0 +1,15 @@
+{"time": "2026-11-13T15:39:57.585213+00:00", "command": ["node", "scripts/v3a2/battle-capture.mjs", "--fixture", "wave1", "--out", "reports/v3-solo/Q3/method7b", "--complete-actions"]}
+file:///Users/bao/taskbar-hero-cardrpg-a6/scripts/v3a2/battle-capture.mjs:89
+  if(errors.length||!result.parity)throw Error(`${fixture.id}: ${errors.length} browser errors; parity=${result.parity}`);
+                                         ^
+
+Error: wave1: 1 browser errors; parity=true
+    at file:///Users/bao/taskbar-hero-cardrpg-a6/scripts/v3a2/battle-capture.mjs:89:42
+
+Node.js v24.22.2
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method7b-runner.py", line 8, in <module>
+    subprocess.run(command,cwd=root,check=True)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', 'scripts/v3a2/battle-capture.mjs', '--fixture', 'wave1', '--out', 'reports/v3-solo/Q3/method7b', '--complete-actions']' returned non-zero exit status 1.

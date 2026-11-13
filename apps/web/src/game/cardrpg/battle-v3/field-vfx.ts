@@ -174,11 +174,14 @@ export class FieldVfx {
    default:if(family.includes('thread')){ribbon(1);ribbon(-1);}else if(family.includes('slash')||family.includes('sweep')){c.lineWidth=r*.5;c.beginPath();c.arc(-r*.1,0,r*.75,-1.7,1.8);c.stroke();}else star(c,0,0,r,5+seed%4);
   }
  }
- private residue(c:CanvasRenderingContext2D,g:{x:number;y:number;r:number;born:number;color:string;family:string;seed:number},age:number){
+ private residue(c:CanvasRenderingContext2D,g:GroundMark,age:number){
   const p=clamp(age/.85);if(p>=1||p<0)return;c.save();c.translate(g.x,g.y);c.scale(1,.26);c.globalAlpha=(1-p)*.55;c.strokeStyle=g.color;c.fillStyle=g.color;c.lineWidth=8;
-  c.beginPath();c.ellipse(0,0,g.r*(.75+p*.45),g.r*(.75+p*.45),0,0,7);c.stroke();
+  // Damage drives one travelling pressure ring. Healing keeps its slower
+  // growth; neither layer repeats or changes the contact/voice clock.
+  const travel=g.debris?1-(1-p)**3:p,ring=g.r*(g.debris ? .28+.98*travel : .75+p*.45);
+  c.beginPath();c.ellipse(0,0,ring,ring,0,0,7);c.stroke();
   if(/leaf|petal|herb|spore|ink|tea/.test(g.family)){for(let j=0;j<8;j++){const a=j*2.4;c.beginPath();c.ellipse(Math.cos(a)*g.r*.6,Math.sin(a)*g.r*.6,g.r*.22,g.r*.1,a,0,7);c.fill();}}
-  else for(let j=0;j<7;j++){const a=j*2.4+g.seed;c.beginPath();c.moveTo(0,0);c.lineTo(Math.cos(a)*g.r*.5,Math.sin(a)*g.r*.4);c.lineTo(Math.cos(a+.12)*g.r,Math.sin(a+.12)*g.r);c.stroke();}
+  else for(let j=0;j<7;j++){const a=j*2.4+g.seed,r=g.r*(g.debris ? .5+.5*travel : 1);c.beginPath();c.moveTo(0,0);c.lineTo(Math.cos(a)*r*.5,Math.sin(a)*r*.4);c.lineTo(Math.cos(a+.12)*r,Math.sin(a+.12)*r);c.stroke();}
   c.restore();this.draws+=9;this.audit.layers.push('lingering-ground');
  }
  private motif(c:CanvasRenderingContext2D,name:string,r:number,p:number,time:number,reduced:boolean){

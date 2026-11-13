@@ -1,0 +1,23 @@
+{"time": "2026-11-13T15:37:26.463693+00:00", "command": ["node", "scripts/v3a2/battle-capture.mjs", "--fixture", "wave1", "--out", "reports/v3-solo/Q3/method7b", "--complete-actions"]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1
+Call log:
+[2m  - navigating to "http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1", waiting until "load"[22m
+
+    at /Users/bao/taskbar-hero-cardrpg-a6/scripts/v3a2/battle-capture.mjs:28:14 {
+  log: [
+    '  - navigating to "http://127.0.0.1:5990/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.22.2
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method7b-runner.py", line 8, in <module>
+    subprocess.run(command,cwd=root,check=True)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', 'scripts/v3a2/battle-capture.mjs', '--fixture', 'wave1', '--out', 'reports/v3-solo/Q3/method7b', '--complete-actions']' returned non-zero exit status 1.

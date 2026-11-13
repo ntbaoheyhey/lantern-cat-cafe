@@ -69,6 +69,12 @@ try{
     await page.clock.runFor(Math.round((i+1)*1000/fps)-Math.round(i*1000/fps));
     // Seeked media is decoded before screenshot, independent of wall-clock speed.
     await page.evaluate(async()=>{await Promise.all([...document.querySelectorAll('video')].filter(v=>!v.hidden&&v.seeking).map(v=>new Promise(resolve=>v.addEventListener('seeked',resolve,{once:true}))));});
+    // Setting currentTime temporarily reduces readyState to HAVE_METADATA.
+    // Audit the decoded frame after that seek, not the transient pre-seek state.
+    if(sample.sequence.plate)Object.assign(sample.sequence,await page.evaluate(()=>{
+      const v=document.querySelector('video.b3-plate');
+      return {mediaReady:v?.readyState??0,videoTime:v?.currentTime??0,mediaFailed:!!v?.error};
+    }));
     const png=await page.screenshot({type:'png'});
     if(!encoder.stdin.write(png))await once(encoder.stdin,'drain');
     if(i%3===0){await writeFile(resolve(folder,`frame-${String(i).padStart(5,'0')}.png`),png);}
