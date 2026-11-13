@@ -16,7 +16,7 @@
 .uv-app[data-a6=true] .c2-result .a6-result-receipt:not(:has([data-reward-id])){min-height:0;background:none;border:0;outline:0;box-shadow:none}
 @media(max-width:650px){
  .uv-app[data-a6=true] .uv-sheet-content[data-screen=result]:has(.c2-result){overflow:auto}
- .uv-app[data-a6=true] .uv-result.c2-result{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;align-content:start;height:auto;min-height:100%;gap:10px;padding-bottom:8px}
+ .uv-app[data-a6=true] .uv-result.a6-result-story.c2-result{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;align-content:start;height:auto;min-height:100%;gap:10px;padding-bottom:8px}
  .uv-app[data-a6=true] .c2-result .a6-result-heading{gap:10px;flex-wrap:wrap}
  .uv-app[data-a6=true] .c2-result .a6-result-heading h2{font-size:36px}
  .uv-app[data-a6=true] .c2-result .a6-result-companion h3{font-size:24px}
