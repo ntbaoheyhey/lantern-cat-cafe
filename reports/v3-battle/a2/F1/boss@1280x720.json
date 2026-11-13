@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T12:59:41.867Z",
-    "sourceCommit": "b6ac286d2cefcbfe008fcf427d2071f69fa8e69f"
+    "generatedAt": "2026-11-13T15:03:52.363Z",
+    "sourceCommit": "134f13e711208b825f71e860ba029a31c287dce3"
   },
   "medianCoreHeightFraction": 0.20228747426319904,
   "maxFaceOcclusion": 0,
@@ -30,66 +30,6 @@
     "height": 550
   },
   "units": [
-    {
-      "id": "foe-1-binding-thread",
-      "asset": "binding-thread",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 309.85976789168285,
-      "box": {
-        "x": 1108.6787983799727,
-        "y": 281.9951922951071,
-        "width": 115.83897702058675,
-        "height": 172.9381477148383
-      },
-      "coreBox": {
-        "x": 1117.9153602416995,
-        "y": 309.091601605633,
-        "width": 96.79862022530097,
-        "height": 145.64698146950332
-      },
-      "faceBox": {
-        "x": 1125.6592498597236,
-        "y": 309.091601605633,
-        "width": 81.31084098925281,
-        "height": 64.08467184658146
-      },
-      "drawOrder": 160875,
-      "ratio": 0.31443299584516055,
-      "source": "template",
-      "fallback": false
-    },
-    {
-      "id": "foe-2-binding-thread",
-      "asset": "binding-thread",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 309.85976789168285,
-      "box": {
-        "x": 1064.566936206218,
-        "y": 69.49571544255392,
-        "width": 118.77118357691575,
-        "height": 169.45228056106956
-      },
-      "coreBox": {
-        "x": 1074.7099537468455,
-        "y": 95.96773424300761,
-        "width": 99.25715382546537,
-        "height": 142.70409315688326
-      },
-      "faceBox": {
-        "x": 1082.6505260528827,
-        "y": 95.96773424300761,
-        "width": 83.3760092133909,
-        "height": 62.789800989028635
-      },
-      "drawOrder": 84123,
-      "ratio": 0.30809505556558103,
-      "source": "template",
-      "fallback": false
-    },
     {
       "id": "mochi",
       "asset": "mochi",
@@ -151,6 +91,96 @@
       "fallback": false
     },
     {
+      "id": "foe-1-binding-thread",
+      "asset": "binding-thread",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 309.85976789168285,
+      "box": {
+        "x": 1108.6787983799727,
+        "y": 281.9951922951071,
+        "width": 115.83897702058675,
+        "height": 172.9381477148383
+      },
+      "coreBox": {
+        "x": 1117.9153602416995,
+        "y": 309.091601605633,
+        "width": 96.79862022530097,
+        "height": 145.64698146950332
+      },
+      "faceBox": {
+        "x": 1125.6592498597236,
+        "y": 309.091601605633,
+        "width": 81.31084098925281,
+        "height": 64.08467184658146
+      },
+      "drawOrder": 160875,
+      "ratio": 0.31443299584516055,
+      "source": "template",
+      "fallback": false
+    },
+    {
+      "id": "foe-2-binding-thread",
+      "asset": "binding-thread",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 309.85976789168285,
+      "box": {
+        "x": 1064.566936206218,
+        "y": 69.49571544255392,
+        "width": 118.77118357691575,
+        "height": 169.45228056106956
+      },
+      "coreBox": {
+        "x": 1074.7099537468455,
+        "y": 95.96773424300761,
+        "width": 99.25715382546537,
+        "height": 142.70409315688326
+      },
+      "faceBox": {
+        "x": 1082.6505260528827,
+        "y": 95.96773424300761,
+        "width": 83.3760092133909,
+        "height": 62.789800989028635
+      },
+      "drawOrder": 84123,
+      "ratio": 0.30809505556558103,
+      "source": "template",
+      "fallback": false
+    },
+    {
+      "id": "foe-0-yarn-giant",
+      "asset": "yarn-giant",
+      "side": "enemy",
+      "kind": "boss",
+      "height": 922,
+      "footprint": 1015.7627118644068,
+      "box": {
+        "x": 659.2194517891049,
+        "y": 148.12192567245344,
+        "width": 342.9554598014423,
+        "height": 311.5744577181232
+      },
+      "coreBox": {
+        "x": 671.3214315606258,
+        "y": 185.60325614695068,
+        "width": 319.06702656789594,
+        "height": 273.9936421560274
+      },
+      "faceBox": {
+        "x": 696.8467936860575,
+        "y": 185.60325614695068,
+        "width": 268.01630231703257,
+        "height": 120.55720254865207
+      },
+      "drawOrder": 162474,
+      "ratio": 0.5664990140329512,
+      "source": "template",
+      "fallback": false
+    },
+    {
       "id": "soot",
       "asset": "soot",
       "side": "party",
@@ -208,36 +238,6 @@
       "drawOrder": 141687,
       "ratio": 0.29889274837834795,
       "source": "placeholder",
-      "fallback": false
-    },
-    {
-      "id": "foe-0-yarn-giant",
-      "asset": "yarn-giant",
-      "side": "enemy",
-      "kind": "boss",
-      "height": 922,
-      "footprint": 1015.7627118644068,
-      "box": {
-        "x": 659.2194517891049,
-        "y": 148.12192567245344,
-        "width": 342.9554598014423,
-        "height": 311.5744577181232
-      },
-      "coreBox": {
-        "x": 671.3214315606258,
-        "y": 185.60325614695068,
-        "width": 319.06702656789594,
-        "height": 273.9936421560274
-      },
-      "faceBox": {
-        "x": 696.8467936860575,
-        "y": 185.60325614695068,
-        "width": 268.01630231703257,
-        "height": 120.55720254865207
-      },
-      "drawOrder": 162474,
-      "ratio": 0.5664990140329512,
-      "source": "template",
       "fallback": false
     }
   ],

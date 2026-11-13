@@ -22,7 +22,7 @@ export class MotionTrails {
   for(let i=0;i<this.ghosts.length;i++){
    const ghost=this.ghosts[i]!,pose=poses[i]!;ghost.visible=pose.phase!=='idle';
    ghost.position.copy(source.position);ghost.position.x+=(pose.x-current.x)*pixelsToWorld;ghost.position.y-=(pose.y-current.y)*pixelsToWorld;
-   ghost.scale.copy(source.scale);ghost.rotation.copy(source.rotation);ghost.rotation.z+=pose.angle-current.angle;
+   ghost.scale.copy(source.scale);ghost.rotation.copy(source.rotation);ghost.rotation.z+=current.angle-pose.angle;
   }
  }
  private clear(){for(const ghost of this.ghosts)ghost.traverse(node=>{if(node instanceof T.Mesh)(node.material as T.Material).dispose();});this.root.clear();this.ghosts=[];this.source=undefined;}

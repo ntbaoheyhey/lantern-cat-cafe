@@ -36,3 +36,5 @@ The chapter aria-label repair preserves semantics, but did not resolve the A uni
 - Q3 method1 full30.333s:15.677 energy (from15.605),34/34 knockbacks, min action0.1052, parityPASS; still below15.79559. Stronger caster body travel is retained but not accepted as closure. Attempt2 adds grounded anticipation, a deeper strike squash and28px ordinary recoil (within the18–30px specification); no camera, timeline or estimator changes.
 
 - 2026-11-13T15:02:13.359804+00:00 Q3 method2 full30.333s:15.698 energy,34/34 recoil,minimum action.1052,parity PASS;still FAIL. Method3 gives actual damage recipients a grounded pre-contact brace, separate from hitOffset/flash, mirrored for both sides. No brace on DoT, bystanders, freeze or stun. Camera/timing/estimator unchanged.
+
+- 2026-11-13T15:07:53.921141+00:00 Q3 method3:15.671 energy,34/34 hits,zero clipped face samples,parity PASS;still FAIL. Bracing improves recipient anticipation but cannot close motion energy. Method4 changes secondary motion: correct inverse after-image rotation and independently phased planted-foot weight/shoulder shifts. Next failure changes method again; no camera/timing/estimator edits.

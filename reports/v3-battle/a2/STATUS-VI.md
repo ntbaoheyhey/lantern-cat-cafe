@@ -8,3 +8,5 @@
 - Kinh tế đang chạy nền: 16 vòng/640 cấu hình, top 10 xác nhận 200 seed; Star Thread/bot còn lỗi.
 - Q4–Q9 còn mở; chưa gộp sớm, chưa triển khai.
 - Đồng bộ 16/18-11 lúc 12:00 UTC; đóng băng 19-11 lúc 12:00 UTC.
+
+Q3: đang cải thiện chuyển động; wave1 lần2=15.698, chưa đạt15.80. Giữ nguyên nhịp thoại và kết quả chiến đấu.

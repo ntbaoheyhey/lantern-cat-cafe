@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T10:42:04.997Z",
-    "sourceCommit": "ec01ea423ca3928db42e5eacc7e42aef76254c57"
+    "generatedAt": "2026-11-13T15:04:50.205Z",
+    "sourceCommit": "134f13e711208b825f71e860ba029a31c287dce3"
   },
   "method": "Contrast = mean absolute luminance difference inside >95% original alpha, against the same rendered stage without the actor. Minimum unit is the fixture score. Unit opacity excludes original painted alpha and overlay effects.",
   "fixtures": {
@@ -14,6 +14,24 @@
       "errors": [],
       "units": [
         {
+          "id": "foe-3-needle-moth",
+          "asset": "needle-moth",
+          "pixels": 12304,
+          "meanAbsoluteLumaDifference": 75.47187290312078,
+          "unitMeanLuma": 53.6567209200261,
+          "backgroundMeanLuma": 128.28820542912817,
+          "differenceOfMeans": 74.63148450910205
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "pixels": 14645,
+          "meanAbsoluteLumaDifference": 54.35622488221198,
+          "unitMeanLuma": 161.23794525093822,
+          "backgroundMeanLuma": 147.77785472174978,
+          "differenceOfMeans": 13.460090529188461
+        },
+        {
           "id": "foe-2-teacup-healer",
           "asset": "teacup-healer",
           "pixels": 12288,
@@ -21,6 +39,15 @@
           "unitMeanLuma": 73.84877626953114,
           "backgroundMeanLuma": 128.8515343424477,
           "differenceOfMeans": 55.002758072916556
+        },
+        {
+          "id": "panko",
+          "asset": "panko",
+          "pixels": 17713,
+          "meanAbsoluteLumaDifference": 39.69182659063967,
+          "unitMeanLuma": 136.26518611189553,
+          "backgroundMeanLuma": 129.49765948173678,
+          "differenceOfMeans": 6.767526630158754
         },
         {
           "id": "foe-1-sock-skipper",
@@ -41,33 +68,6 @@
           "differenceOfMeans": 73.83553039976059
         },
         {
-          "id": "panko",
-          "asset": "panko",
-          "pixels": 17713,
-          "meanAbsoluteLumaDifference": 39.69182659063967,
-          "unitMeanLuma": 136.26518611189553,
-          "backgroundMeanLuma": 129.49765948173678,
-          "differenceOfMeans": 6.767526630158754
-        },
-        {
-          "id": "foe-3-needle-moth",
-          "asset": "needle-moth",
-          "pixels": 12304,
-          "meanAbsoluteLumaDifference": 75.47187290312078,
-          "unitMeanLuma": 53.6567209200261,
-          "backgroundMeanLuma": 128.28820542912817,
-          "differenceOfMeans": 74.63148450910205
-        },
-        {
-          "id": "soot",
-          "asset": "soot",
-          "pixels": 11240,
-          "meanAbsoluteLumaDifference": 60.039439341636864,
-          "unitMeanLuma": 64.92178290035635,
-          "backgroundMeanLuma": 119.60151398576804,
-          "differenceOfMeans": 54.67973108541168
-        },
-        {
           "id": "clover",
           "asset": "clover",
           "pixels": 9047,
@@ -77,13 +77,13 @@
           "differenceOfMeans": 38.11569214104156
         },
         {
-          "id": "mochi",
-          "asset": "mochi",
-          "pixels": 14645,
-          "meanAbsoluteLumaDifference": 54.35622488221198,
-          "unitMeanLuma": 161.23794525093822,
-          "backgroundMeanLuma": 147.77785472174978,
-          "differenceOfMeans": 13.460090529188461
+          "id": "soot",
+          "asset": "soot",
+          "pixels": 11240,
+          "meanAbsoluteLumaDifference": 60.039439341636864,
+          "unitMeanLuma": 64.92178290035635,
+          "backgroundMeanLuma": 119.60151398576804,
+          "differenceOfMeans": 54.67973108541168
         }
       ],
       "histogram": [
@@ -7139,6 +7139,15 @@
           "differenceOfMeans": 74.63301954428518
         },
         {
+          "id": "foe-4-needle-moth",
+          "asset": "needle-moth",
+          "pixels": 12514,
+          "meanAbsoluteLumaDifference": 74.78123359437423,
+          "unitMeanLuma": 53.51922242288647,
+          "backgroundMeanLuma": 126.91184204890482,
+          "differenceOfMeans": 73.39261962601834
+        },
+        {
           "id": "foe-0-kettle-knight",
           "asset": "kettle-knight",
           "pixels": 26007,
@@ -7166,15 +7175,6 @@
           "differenceOfMeans": 54.71002943143982
         },
         {
-          "id": "foe-4-needle-moth",
-          "asset": "needle-moth",
-          "pixels": 12514,
-          "meanAbsoluteLumaDifference": 74.78123359437423,
-          "unitMeanLuma": 53.51922242288647,
-          "backgroundMeanLuma": 126.91184204890482,
-          "differenceOfMeans": 73.39261962601834
-        },
-        {
           "id": "foe-5-teacup-healer",
           "asset": "teacup-healer",
           "pixels": 13919,
@@ -7193,15 +7193,6 @@
           "differenceOfMeans": 55.24041860589257
         },
         {
-          "id": "soot",
-          "asset": "soot",
-          "pixels": 11240,
-          "meanAbsoluteLumaDifference": 60.039439341636864,
-          "unitMeanLuma": 64.92178290035635,
-          "backgroundMeanLuma": 119.60151398576804,
-          "differenceOfMeans": 54.67973108541168
-        },
-        {
           "id": "mochi",
           "asset": "mochi",
           "pixels": 14645,
@@ -7218,6 +7209,15 @@
           "unitMeanLuma": 167.65504794959665,
           "backgroundMeanLuma": 129.5393558085551,
           "differenceOfMeans": 38.11569214104156
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "pixels": 11240,
+          "meanAbsoluteLumaDifference": 60.039439341636864,
+          "unitMeanLuma": 64.92178290035635,
+          "backgroundMeanLuma": 119.60151398576804,
+          "differenceOfMeans": 54.67973108541168
         }
       ],
       "histogram": [
@@ -13893,15 +13893,6 @@
       "errors": [],
       "units": [
         {
-          "id": "panko",
-          "asset": "panko",
-          "pixels": 17713,
-          "meanAbsoluteLumaDifference": 39.69182659063967,
-          "unitMeanLuma": 136.26518611189553,
-          "backgroundMeanLuma": 129.49765948173678,
-          "differenceOfMeans": 6.767526630158754
-        },
-        {
           "id": "foe-1-binding-thread",
           "asset": "binding-thread",
           "pixels": 7130,
@@ -13920,6 +13911,33 @@
           "differenceOfMeans": 72.47848311651984
         },
         {
+          "id": "clover",
+          "asset": "clover",
+          "pixels": 9047,
+          "meanAbsoluteLumaDifference": 47.33595308942184,
+          "unitMeanLuma": 167.65504794959665,
+          "backgroundMeanLuma": 129.5393558085551,
+          "differenceOfMeans": 38.11569214104156
+        },
+        {
+          "id": "panko",
+          "asset": "panko",
+          "pixels": 17713,
+          "meanAbsoluteLumaDifference": 39.69182659063967,
+          "unitMeanLuma": 136.26518611189553,
+          "backgroundMeanLuma": 129.49765948173678,
+          "differenceOfMeans": 6.767526630158754
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "pixels": 11240,
+          "meanAbsoluteLumaDifference": 60.039439341636864,
+          "unitMeanLuma": 64.92178290035635,
+          "backgroundMeanLuma": 119.60151398576804,
+          "differenceOfMeans": 54.67973108541168
+        },
+        {
           "id": "foe-0-yarn-giant",
           "asset": "yarn-giant",
           "pixels": 70489,
@@ -13936,24 +13954,6 @@
           "unitMeanLuma": 161.23794525093822,
           "backgroundMeanLuma": 147.77785472174978,
           "differenceOfMeans": 13.460090529188461
-        },
-        {
-          "id": "soot",
-          "asset": "soot",
-          "pixels": 11240,
-          "meanAbsoluteLumaDifference": 60.039439341636864,
-          "unitMeanLuma": 64.92178290035635,
-          "backgroundMeanLuma": 119.60151398576804,
-          "differenceOfMeans": 54.67973108541168
-        },
-        {
-          "id": "clover",
-          "asset": "clover",
-          "pixels": 9047,
-          "meanAbsoluteLumaDifference": 47.33595308942184,
-          "unitMeanLuma": 167.65504794959665,
-          "backgroundMeanLuma": 129.5393558085551,
-          "differenceOfMeans": 38.11569214104156
         }
       ],
       "histogram": [

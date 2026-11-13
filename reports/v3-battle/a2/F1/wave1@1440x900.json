@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T12:59:44.563Z",
-    "sourceCommit": "b6ac286d2cefcbfe008fcf427d2071f69fa8e69f"
+    "generatedAt": "2026-11-13T15:03:55.271Z",
+    "sourceCommit": "134f13e711208b825f71e860ba029a31c287dce3"
   },
   "medianCoreHeightFraction": 0.2080669501050843,
   "maxFaceOcclusion": 0,
@@ -30,96 +30,6 @@
     "height": 730
   },
   "units": [
-    {
-      "id": "foe-3-needle-moth",
-      "asset": "needle-moth",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 458.3249516441007,
-      "box": {
-        "x": 742.363785067582,
-        "y": 407.9766252295657,
-        "width": 238.7687130620052,
-        "height": 235.4670733813433
-      },
-      "coreBox": {
-        "x": 822.9786959119947,
-        "y": 454.6281012179279,
-        "width": 66.90864191958849,
-        "height": 187.26025509457588
-      },
-      "faceBox": {
-        "x": 828.3313872655617,
-        "y": 454.6281012179279,
-        "width": 56.20325921245433,
-        "height": 82.39451224161338
-      },
-      "drawOrder": 171269,
-      "ratio": 0.32255763476896343,
-      "source": "template",
-      "fallback": false
-    },
-    {
-      "id": "soot",
-      "asset": "soot",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 448.90140845070425,
-      "box": {
-        "x": 228.21262224113303,
-        "y": 104.82436821275518,
-        "width": 186.41434388771228,
-        "height": 206.4292047260804
-      },
-      "coreBox": {
-        "x": 261.4978128228141,
-        "y": 133.0496128928151,
-        "width": 120.54444828740975,
-        "height": 177.37068233854728
-      },
-      "faceBox": {
-        "x": 271.1413686858069,
-        "y": 133.0496128928151,
-        "width": 101.25733656142418,
-        "height": 78.04310022896081
-      },
-      "drawOrder": 82524,
-      "ratio": 0.28277973250148,
-      "source": "placeholder",
-      "fallback": false
-    },
-    {
-      "id": "foe-2-teacup-healer",
-      "asset": "teacup-healer",
-      "side": "enemy",
-      "kind": "standard",
-      "height": 614,
-      "footprint": 663.2992700729926,
-      "box": {
-        "x": 965.0112863066099,
-        "y": 325.78611257908057,
-        "width": 225.57288038207003,
-        "height": 207.0404781627164
-      },
-      "coreBox": {
-        "x": 1018.6914414698508,
-        "y": 353.4055595554063,
-        "width": 118.78894632378274,
-        "height": 178.2643984239346
-      },
-      "faceBox": {
-        "x": 1028.1945571757535,
-        "y": 353.4055595554063,
-        "width": 99.7827149119775,
-        "height": 78.43633530653123
-      },
-      "drawOrder": 141687,
-      "ratio": 0.2836170933735841,
-      "source": "template",
-      "fallback": false
-    },
     {
       "id": "panko",
       "asset": "panko",
@@ -211,6 +121,66 @@
       "fallback": false
     },
     {
+      "id": "foe-2-teacup-healer",
+      "asset": "teacup-healer",
+      "side": "enemy",
+      "kind": "standard",
+      "height": 614,
+      "footprint": 663.2992700729926,
+      "box": {
+        "x": 965.0112863066099,
+        "y": 325.78611257908057,
+        "width": 225.57288038207003,
+        "height": 207.0404781627164
+      },
+      "coreBox": {
+        "x": 1018.6914414698508,
+        "y": 353.4055595554063,
+        "width": 118.78894632378274,
+        "height": 178.2643984239346
+      },
+      "faceBox": {
+        "x": 1028.1945571757535,
+        "y": 353.4055595554063,
+        "width": 99.7827149119775,
+        "height": 78.43633530653123
+      },
+      "drawOrder": 141687,
+      "ratio": 0.2836170933735841,
+      "source": "template",
+      "fallback": false
+    },
+    {
+      "id": "foe-3-needle-moth",
+      "asset": "needle-moth",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 458.3249516441007,
+      "box": {
+        "x": 742.363785067582,
+        "y": 407.9766252295657,
+        "width": 238.7687130620052,
+        "height": 235.4670733813433
+      },
+      "coreBox": {
+        "x": 822.9786959119947,
+        "y": 454.6281012179279,
+        "width": 66.90864191958849,
+        "height": 187.26025509457588
+      },
+      "faceBox": {
+        "x": 828.3313872655617,
+        "y": 454.6281012179279,
+        "width": 56.20325921245433,
+        "height": 82.39451224161338
+      },
+      "drawOrder": 171269,
+      "ratio": 0.32255763476896343,
+      "source": "template",
+      "fallback": false
+    },
+    {
       "id": "mochi",
       "asset": "mochi",
       "side": "party",
@@ -237,6 +207,36 @@
       },
       "drawOrder": 112105,
       "ratio": 0.29194588577073577,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "soot",
+      "asset": "soot",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 448.90140845070425,
+      "box": {
+        "x": 228.21262224113303,
+        "y": 104.82436821275518,
+        "width": 186.41434388771228,
+        "height": 206.4292047260804
+      },
+      "coreBox": {
+        "x": 261.4978128228141,
+        "y": 133.0496128928151,
+        "width": 120.54444828740975,
+        "height": 177.37068233854728
+      },
+      "faceBox": {
+        "x": 271.1413686858069,
+        "y": 133.0496128928151,
+        "width": 101.25733656142418,
+        "height": 78.04310022896081
+      },
+      "drawOrder": 82524,
+      "ratio": 0.28277973250148,
       "source": "placeholder",
       "fallback": false
     },

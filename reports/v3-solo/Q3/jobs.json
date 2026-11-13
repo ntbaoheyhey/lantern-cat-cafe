@@ -41,5 +41,53 @@
     ],
     "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method2-capture.log",
     "started": "2026-11-13T14:53:40.098085+00:00"
+  },
+  {
+    "name": "method3-wave1",
+    "pid": 27877,
+    "command": [
+      "node",
+      "scripts/v3a2/battle-capture.mjs",
+      "--fixture",
+      "wave1",
+      "--out",
+      "reports/v3-solo/Q3/method3",
+      "--complete-actions"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method3-wave1.log",
+    "started": "2026-11-13T15:02:32.536870+00:00"
+  },
+  {
+    "name": "push-method3",
+    "pid": 27878,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-method3.log",
+    "started": "2026-11-13T15:02:32.536870+00:00"
+  },
+  {
+    "name": "field-audit",
+    "pid": 28331,
+    "command": [
+      "node",
+      "scripts/v3a2/field-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/field-audit.log",
+    "started": "2026-11-13T15:03:42.858316+00:00"
+  },
+  {
+    "name": "clarity-audit",
+    "pid": 28494,
+    "command": [
+      "node",
+      "scripts/v3a2/clarity-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/clarity-audit.log",
+    "started": "2026-11-13T15:04:35.031927+00:00"
   }
 ]

@@ -64,7 +64,7 @@ it('finishes the landing squash before a long spoken recovery ends',()=>{
 });
 it('keeps idle feet planted, phases independent and seeks deterministic',()=>{
  const sample=idlePose(12.5,'mochi');expect(sample).not.toEqual(idlePose(12.5,'soot'));
- for(let t=0;t<20;t+=.1){const p=idlePose(t,'mochi');expect(p.x).toBe(0);expect(p.y).toBe(0);expect(Math.abs(p.angle)).toBeLessThanOrEqual(.035);expect(Math.abs(p.sy-1)).toBeLessThanOrEqual(.01800001);}
+ for(let t=0;t<20;t+=.1){const p=idlePose(t,'mochi');expect(p.x).toBe(0);expect(p.y).toBe(0);expect(Math.abs(p.angle)).toBeLessThanOrEqual(.064);expect(Math.abs(p.sy-1)).toBeLessThanOrEqual(.02800001);}
  idlePose(1,'mochi');expect(idlePose(12.5,'mochi')).toEqual(sample);
 });
 it('mirrors every enemy archetype through travel, strike and recovery without changing timing',()=>{

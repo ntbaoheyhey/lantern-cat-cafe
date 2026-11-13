@@ -75,8 +75,9 @@ export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.i
 /** Slow weight shifts around planted feet; independent phases keep a squad alive. */
 export function idlePose(time:number,id:string):RootPose {
  const p=neutralPose(),phase=idlePhase(id),breath=Math.sin(time*2.1+phase);
- p.sx=1-breath*.010;p.sy=1+breath*.018;
- p.angle=Math.sin(time*1.45+phase)*.035;
+ p.sx=1-breath*.014;p.sy=1+breath*.028;
+ // Weight transfer and a smaller shoulder counter-motion share a planted foot.
+ p.angle=Math.sin(time*1.45+phase)*.052+Math.sin(time*3.7+phase*.7)*.012;
  return p;
 }
 

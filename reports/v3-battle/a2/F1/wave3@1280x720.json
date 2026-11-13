@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T12:59:38.952Z",
-    "sourceCommit": "b6ac286d2cefcbfe008fcf427d2071f69fa8e69f"
+    "generatedAt": "2026-11-13T15:03:49.377Z",
+    "sourceCommit": "134f13e711208b825f71e860ba029a31c287dce3"
   },
   "medianCoreHeightFraction": 0.21747252706566694,
   "maxFaceOcclusion": 0,
@@ -30,36 +30,6 @@
     "height": 550
   },
   "units": [
-    {
-      "id": "foe-1-spool-ram",
-      "asset": "spool-ram",
-      "side": "enemy",
-      "kind": "standard",
-      "height": 614,
-      "footprint": 941.9525222551929,
-      "box": {
-        "x": 624.1653081773276,
-        "y": 285.4772234340622,
-        "width": 294.3862133077689,
-        "height": 202.60469946002468
-      },
-      "coreBox": {
-        "x": 658.1286920993095,
-        "y": 302.9288304342888,
-        "width": 225.89205702064123,
-        "height": 183.96845698556268
-      },
-      "faceBox": {
-        "x": 676.2000566609609,
-        "y": 302.9288304342888,
-        "width": 189.74932789733862,
-        "height": 80.94612107364757
-      },
-      "drawOrder": 171269,
-      "ratio": 0.3683721808364085,
-      "source": "template",
-      "fallback": false
-    },
     {
       "id": "panko",
       "asset": "panko",
@@ -91,6 +61,36 @@
       "fallback": false
     },
     {
+      "id": "foe-1-spool-ram",
+      "asset": "spool-ram",
+      "side": "enemy",
+      "kind": "standard",
+      "height": 614,
+      "footprint": 941.9525222551929,
+      "box": {
+        "x": 624.1653081773276,
+        "y": 285.4772234340622,
+        "width": 294.3862133077689,
+        "height": 202.60469946002468
+      },
+      "coreBox": {
+        "x": 658.1286920993095,
+        "y": 302.9288304342888,
+        "width": 225.89205702064123,
+        "height": 183.96845698556268
+      },
+      "faceBox": {
+        "x": 676.2000566609609,
+        "y": 302.9288304342888,
+        "width": 189.74932789733862,
+        "height": 80.94612107364757
+      },
+      "drawOrder": 171269,
+      "ratio": 0.3683721808364085,
+      "source": "template",
+      "fallback": false
+    },
+    {
       "id": "foe-0-kettle-knight",
       "asset": "kettle-knight",
       "side": "enemy",
@@ -117,36 +117,6 @@
       },
       "drawOrder": 112105,
       "ratio": 0.3848486669979566,
-      "source": "template",
-      "fallback": false
-    },
-    {
-      "id": "foe-3-crumb-sentinel",
-      "asset": "crumb-sentinel",
-      "side": "enemy",
-      "kind": "standard",
-      "height": 614,
-      "footprint": 681.9291084854993,
-      "box": {
-        "x": 834.138329475288,
-        "y": 206.4460893895932,
-        "width": 213.29929961273365,
-        "height": 193.19718240898007
-      },
-      "coreBox": {
-        "x": 865.767821421982,
-        "y": 235.97210306717926,
-        "width": 154.73222823613207,
-        "height": 163.66723267725348
-      },
-      "faceBox": {
-        "x": 878.1463996808726,
-        "y": 235.97210306717926,
-        "width": 129.97507171835093,
-        "height": 72.01358237799153
-      },
-      "drawOrder": 141687,
-      "ratio": 0.35126760437996374,
       "source": "template",
       "fallback": false
     },
@@ -241,33 +211,33 @@
       "fallback": false
     },
     {
-      "id": "mochi",
-      "asset": "mochi",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 509.63419329996145,
+      "id": "foe-3-crumb-sentinel",
+      "asset": "crumb-sentinel",
+      "side": "enemy",
+      "kind": "standard",
+      "height": 614,
+      "footprint": 681.9291084854993,
       "box": {
-        "x": 394.55282611899247,
-        "y": 145.7435234433942,
-        "width": 170.8046686130957,
-        "height": 170.49639729010968
+        "x": 834.138329475288,
+        "y": 206.4460893895932,
+        "width": 213.29929961273365,
+        "height": 193.19718240898007
       },
       "coreBox": {
-        "x": 430.348354295529,
-        "y": 165.98298750754097,
-        "width": 96.38450646139779,
-        "height": 150.2381008621326
+        "x": 865.767821421982,
+        "y": 235.97210306717926,
+        "width": 154.73222823613207,
+        "height": 163.66723267725348
       },
       "faceBox": {
-        "x": 438.05911481244084,
-        "y": 165.98298750754097,
-        "width": 80.96298542757414,
-        "height": 66.10476437933835
+        "x": 878.1463996808726,
+        "y": 235.97210306717926,
+        "width": 129.97507171835093,
+        "height": 72.01358237799153
       },
-      "drawOrder": 112105,
-      "ratio": 0.30999344961838127,
-      "source": "placeholder",
+      "drawOrder": 141687,
+      "ratio": 0.35126760437996374,
+      "source": "template",
       "fallback": false
     },
     {
@@ -297,6 +267,36 @@
       },
       "drawOrder": 82524,
       "ratio": 0.30026066141975327,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "mochi",
+      "asset": "mochi",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 509.63419329996145,
+      "box": {
+        "x": 394.55282611899247,
+        "y": 145.7435234433942,
+        "width": 170.8046686130957,
+        "height": 170.49639729010968
+      },
+      "coreBox": {
+        "x": 430.348354295529,
+        "y": 165.98298750754097,
+        "width": 96.38450646139779,
+        "height": 150.2381008621326
+      },
+      "faceBox": {
+        "x": 438.05911481244084,
+        "y": 165.98298750754097,
+        "width": 80.96298542757414,
+        "height": 66.10476437933835
+      },
+      "drawOrder": 112105,
+      "ratio": 0.30999344961838127,
       "source": "placeholder",
       "fallback": false
     },
