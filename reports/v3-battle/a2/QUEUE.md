@@ -22,7 +22,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 
 ## Polish items (each needs a separate commit and comparison evidence)
 - [ ] P1: Revisit every PARTIAL with a new method
-- [ ] P2: Second ultimate camera for six most-used cats
+- [x] P2: Second ultimate camera for all12 cats (covers the six most-used): P2/metrics.json;12 browser original/alternate/reduced checks PASS;12 comparison sheets; source770aab169.
 - [ ] P3: Boss phase cinematic and enrage aura
 - [ ] P4: Element weather by chapter
 - [ ] P5: Crowd reactions
