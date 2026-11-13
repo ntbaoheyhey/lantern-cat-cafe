@@ -179,3 +179,33 @@ PASS V1.parity: measured=0; required=eq 0
 PASS V1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
 TOTAL 20 PASS / 1 FAIL / 21 gates
 ```
+
+## V2 current measured gates
+PASS V2.freshness: measured=1af92d4d36554f09b78a4ae8bba2ef748f580ed5; required=evidence >= 1af92d4d36554f09b78a4ae8bba2ef748f580ed5
+PASS V2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V2.number-height[wave1]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.number-height[wave3]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.number-height[boss]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.active-coverage[wave1]: measured=0.27606119791666667; required=min 0.15
+PASS V2.active-coverage[wave3]: measured=0.16379231770833333; required=min 0.15
+PASS V2.active-coverage[boss]: measured=0.3190256076388889; required=min 0.15
+PASS V2.basic-coverage[wave1]: measured=0.06484592013888889; required=min 0.05
+PASS V2.basic-coverage[wave3]: measured=0.052203776041666664; required=min 0.05
+PASS V2.basic-coverage[boss]: measured=0.06672634548611112; required=min 0.05
+PASS V2.impact-density[wave1]: measured=5.76923076923081; required=min 3.0000000000000027
+PASS V2.impact-density[wave3]: measured=5.769230769230769; required=min 3.0000000000000027
+PASS V2.impact-density[boss]: measured=5.769230769230769; required=min 3.0000000000000027
+PASS V2.high-fps[wave1]: measured=59.93001238496691; required=min 50
+PASS V2.high-fps[wave3]: measured=60.05080581351768; required=min 50
+PASS V2.high-fps[boss]: measured=60.00482701804433; required=min 50
+PASS V2.sequences: measured=36; required=min 36
+PASS V2.all-active-coverage: measured=0.21612738715277777; required=min 0.15
+PASS V2.all-basic-coverage: measured=0.06421766493055556; required=min 0.05
+PASS V2.distinctness: measured=0.5763846476870877; required=max 0.6
+PASS V2.sequence-strips: measured=36; required=min 36
+PASS V2.typecheck: measured=0; required=eq 0
+PASS V2.unit: measured=0; required=eq 0
+FAIL V2.e2e: measured=1; required=eq 0
+PASS V2.parity: measured=0; required=eq 0
+PASS V2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 26 PASS / 1 FAIL / 27 gates

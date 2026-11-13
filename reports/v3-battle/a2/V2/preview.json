@@ -1,0 +1,542 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T06:37:00.004Z",
+    "sourceCommit": "059b00b7089ee92fee13eb3dd5c19850f8cee951"
+  },
+  "method": "Coverage counts actual painted canvas pixels with alpha >=64 after face/HUD masks, divided by full viewport pixels; no bounding-box proxy.",
+  "rows": [
+    {
+      "id": "mochi-1",
+      "impact": 330,
+      "duration": 700,
+      "tier": "basic",
+      "frames": [
+        {
+          "t": 200,
+          "coverage": 0.012415364583333333,
+          "field": {
+            "skill": "mochi-1",
+            "tier": "basic",
+            "particles": 96,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": []
+        },
+        {
+          "t": 363,
+          "coverage": 0.10684244791666667,
+          "field": {
+            "skill": "mochi-1",
+            "tier": "basic",
+            "particles": 96,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": [
+            {
+              "key": "1:foe-0-yarn-giant:0:0",
+              "id": "foe-0-yarn-giant",
+              "text": "−40",
+              "x": 803.0073664268634,
+              "y": 70.92370013734752,
+              "width": 127.7455732142857,
+              "height": 49.65125,
+              "glyphHeight": 49.65125,
+              "kind": "damage",
+              "born": 10330
+            }
+          ]
+        },
+        {
+          "t": 530,
+          "coverage": 0.10968532986111111,
+          "field": {
+            "skill": "mochi-1",
+            "tier": "basic",
+            "particles": 96,
+            "layers": [
+              "lingering-ground",
+              "lingering-ground",
+              "lingering-ground",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 3
+          },
+          "numbers": [
+            {
+              "key": "1:foe-0-yarn-giant:0:0",
+              "id": "foe-0-yarn-giant",
+              "text": "−40",
+              "x": 807.704438748292,
+              "y": 63.3187369020534,
+              "width": 118.35142857142857,
+              "height": 46,
+              "glyphHeight": 46,
+              "kind": "damage",
+              "born": 10330
+            },
+            {
+              "key": "1:foe-1-binding-thread:0:0",
+              "id": "foe-1-binding-thread",
+              "text": "−30",
+              "x": 1110.5428356029684,
+              "y": 16.279963235294115,
+              "width": 116.30216964285715,
+              "height": 47.581250000000004,
+              "glyphHeight": 47.581250000000004,
+              "kind": "damage",
+              "born": 10425
+            },
+            {
+              "key": "1:mochi:0:0",
+              "id": "mochi",
+              "text": "◇18",
+              "x": 548.1226141852773,
+              "y": 150.42209358263491,
+              "width": 109.833625,
+              "height": 46.2875,
+              "glyphHeight": 46.2875,
+              "kind": "shield",
+              "born": 10380
+            }
+          ]
+        }
+      ],
+      "peakCoverage": 0.10968532986111111
+    },
+    {
+      "id": "soot-2",
+      "impact": 650,
+      "duration": 1300,
+      "tier": "active",
+      "frames": [
+        {
+          "t": 520,
+          "coverage": 0.11788628472222222,
+          "field": {
+            "skill": "soot-2",
+            "tier": "active",
+            "particles": 72,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": []
+        },
+        {
+          "t": 683,
+          "coverage": 0.2747526041666667,
+          "field": {
+            "skill": "soot-2",
+            "tier": "active",
+            "particles": 72,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": [
+            {
+              "key": "1:foe-0-yarn-giant:0:0",
+              "id": "foe-0-yarn-giant",
+              "text": "−15",
+              "x": 819.9418108989933,
+              "y": 32.105173179155045,
+              "width": 106.46646607142856,
+              "height": 49.65125,
+              "glyphHeight": 49.65125,
+              "kind": "damage",
+              "born": 10650
+            }
+          ]
+        },
+        {
+          "t": 850,
+          "coverage": 0.30961263020833335,
+          "field": {
+            "skill": "soot-2",
+            "tier": "active",
+            "particles": 72,
+            "layers": [
+              "lingering-ground",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 1
+          },
+          "numbers": [
+            {
+              "key": "1:foe-0-yarn-giant:0:0",
+              "id": "foe-0-yarn-giant",
+              "text": "−15",
+              "x": 823.8564725061361,
+              "y": 24.500209943860924,
+              "width": 98.63714285714286,
+              "height": 46,
+              "glyphHeight": 46,
+              "kind": "damage",
+              "born": 10650
+            },
+            {
+              "key": "1:foe-0-yarn-giant:0:1",
+              "id": "foe-0-yarn-giant",
+              "text": "−15",
+              "x": 809.6241909292742,
+              "y": 14.806617647058825,
+              "width": 99.87010714285714,
+              "height": 46.574999999999996,
+              "glyphHeight": 46.574999999999996,
+              "kind": "damage",
+              "born": 10710
+            }
+          ]
+        }
+      ],
+      "peakCoverage": 0.30961263020833335
+    },
+    {
+      "id": "clover-2",
+      "impact": 650,
+      "duration": 1300,
+      "tier": "active",
+      "frames": [
+        {
+          "t": 520,
+          "coverage": 0.1022439236111111,
+          "field": {
+            "skill": "clover-2",
+            "tier": "active",
+            "particles": 144,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": []
+        },
+        {
+          "t": 683,
+          "coverage": 0.2654275173611111,
+          "field": {
+            "skill": "clover-2",
+            "tier": "active",
+            "particles": 144,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": [
+            {
+              "key": "1:mochi:0:0",
+              "id": "mochi",
+              "text": "+36",
+              "x": 408.860851663829,
+              "y": 19.310845588235292,
+              "width": 120.6525375,
+              "height": 49.65125,
+              "glyphHeight": 49.65125,
+              "kind": "heal",
+              "born": 10650
+            }
+          ]
+        },
+        {
+          "t": 850,
+          "coverage": 0.29904188368055556,
+          "field": {
+            "skill": "clover-2",
+            "tier": "active",
+            "particles": 144,
+            "layers": [
+              "lingering-ground",
+              "lingering-ground",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 2
+          },
+          "numbers": [
+            {
+              "key": "1:mochi:0:0",
+              "id": "mochi",
+              "text": "+36",
+              "x": 413.297120413829,
+              "y": 11.705882352941174,
+              "width": 111.78,
+              "height": 46,
+              "glyphHeight": 46,
+              "kind": "heal",
+              "born": 10650
+            },
+            {
+              "key": "1:panko:0:0",
+              "id": "panko",
+              "text": "+36",
+              "x": 670.18878125,
+              "y": 19.279963235294115,
+              "width": 115.62243749999999,
+              "height": 47.581250000000004,
+              "glyphHeight": 47.581250000000004,
+              "kind": "heal",
+              "born": 10745
+            }
+          ]
+        }
+      ],
+      "peakCoverage": 0.29904188368055556
+    },
+    {
+      "id": "panko-3",
+      "impact": 800,
+      "duration": 1500,
+      "tier": "active",
+      "frames": [
+        {
+          "t": 670,
+          "coverage": 0.11953776041666667,
+          "field": {
+            "skill": "panko-3",
+            "tier": "active",
+            "particles": 288,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": []
+        },
+        {
+          "t": 833,
+          "coverage": 0.37695638020833333,
+          "field": {
+            "skill": "panko-3",
+            "tier": "active",
+            "particles": 288,
+            "layers": [
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "travel-ribbon",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 0
+          },
+          "numbers": [
+            {
+              "key": "1:mochi:0:0",
+              "id": "mochi",
+              "text": "◇35",
+              "x": 53.90047232142858,
+              "y": 70.3108455882353,
+              "width": 124.19905535714284,
+              "height": 49.65125,
+              "glyphHeight": 49.65125,
+              "kind": "shield",
+              "born": 10800
+            }
+          ]
+        },
+        {
+          "t": 1000,
+          "coverage": 0.4011371527777778,
+          "field": {
+            "skill": "panko-3",
+            "tier": "active",
+            "particles": 288,
+            "layers": [
+              "lingering-ground",
+              "lingering-ground",
+              "lingering-ground",
+              "lingering-ground",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles",
+              "painted-core",
+              "painted-sweep",
+              "element-aura",
+              "twelve-frame-spark",
+              "element-particles"
+            ],
+            "groundCount": 4
+          },
+          "numbers": [
+            {
+              "key": "1:mochi:0:0",
+              "id": "mochi",
+              "text": "◇35",
+              "x": 58.46714285714286,
+              "y": 62.705882352941174,
+              "width": 115.06571428571428,
+              "height": 46,
+              "glyphHeight": 46,
+              "kind": "shield",
+              "born": 10800
+            },
+            {
+              "key": "1:soot:0:0",
+              "id": "soot",
+              "text": "◇35",
+              "x": 56.489450892857135,
+              "y": 16.279963235294115,
+              "width": 119.02109821428573,
+              "height": 47.581250000000004,
+              "glyphHeight": 47.581250000000004,
+              "kind": "shield",
+              "born": 10895
+            },
+            {
+              "key": "1:clover:0:0",
+              "id": "clover",
+              "text": "◇35",
+              "x": 53.073437500000004,
+              "y": 119.27904411764706,
+              "width": 125.85312499999999,
+              "height": 50.3125,
+              "glyphHeight": 50.3125,
+              "kind": "shield",
+              "born": 10990
+            }
+          ]
+        }
+      ],
+      "peakCoverage": 0.4011371527777778
+    }
+  ],
+  "performance": {},
+  "errors": []
+}

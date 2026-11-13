@@ -10,8 +10,10 @@
 - V1: phủ khung 100%, diện tích hiệu ứng tối thiểu 65,36%; 11 lớp, 480 hạt.
 - SSIM cao nhất 0,200/0,55; thư mục video 19,27 MB, dưới giới hạn 20 MiB.
 - V1 còn lỗi E2E Night tips chung, không tự đánh dấu hoàn tất.
-- Đang làm V2: kỹ năng trên sân lớn hơn, số sát thương lớn và xếp tầng.
-- M1 vẫn thiếu năng lượng chuyển động: 8,05–9,48 so với yêu cầu 15,80.
+- V2 đạt 26/27 gate: số 46px; active tối thiểu 16,38%, basic 5,22%; 5,77 số/giây.
+- V2 chạy khoảng 60 FPS; parity cả 3 trận PASS. Còn lỗi E2E Night tips của B.
+- Đang làm V3: lịch âm thanh theo từng nhịp, dùng 112 callout B đã công bố.
+- M1 vẫn thiếu năng lượng chuyển động: wave1 hiện 10,13 so với yêu cầu 15,80.
 - Không đổi luật chiến đấu, không merge main hoặc deploy.
 - Sync sớm nhất 16/11 19:00; lần hai 18/11 19:00 giờ Việt Nam.
 - Demo cuối chỉ quay sau sync 18/11.
