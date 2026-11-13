@@ -157,3 +157,13 @@ Audio suite found one stale sound-map route: new dedicated music.forge was absen
 2026-11-13T20:37:34.388799+00:00 Q5 full31 preserves five passing scenes; forge again measures2.990contours/min despite only2 actual voice starts. Narrow music/effect masking probes retain5/12 boss callouts. Cross-correlation shows5–11ms recorder offset and clear isolated runtime voice; this is masking, not a cropped-word artifact. Change method to wider music EQ/voice balance; retain original analyser, windows and all thresholds.
 
 2026-11-13T20:43:57.247366+00:00 Q5 forge music replacement: four midrange-EQ diagnostics worsened the musical false contour. Adopt an original metal/wood mallet score with quiet offbeat brush taps, warm harmony,96BPM. Source-only Opus+scene-tone measurements: onsets3.25/s,ticks3.3/s,contours0,bed1. No reference input. New production capture is required. Full31 matrix9cases has64/64 ultimate starts,0 interrupted ultimate/skill lines,all parity. Diagnostic speech33 lead improves boss recognition to9/12; not yet a runtime change.
+
+## 2026-11-13 20:49 UTC — Q5 runtime forge repair
+
+Source e628f3764 is pushed. The actual 60.202-second forge flow performed five enhancements and one fusion: 3.7374 onsets/s, 3.5049 ticks/s, 1.9933 voice contours/min, 100% music, -17.38 LUFS and -2.07 dBTP. No browser errors. The original metal/wood score resolves the previous 2.990-contour result without changing the detector, thresholds or dialogue events. See mix/33-original-forge-forge.json and its hashed runtime log.
+
+Boss dialogue diagnostics: the fourth balance method tests a gentler consonant shelf beneath forward speech. Prior stronger gain improved recognition from 5/12 to 10/12 but exceeded contour/tick bands; these remain diagnostic and are not accepted runtime evidence.
+
+## 2026-11-13T20:50:51.032642+00:00 — boss dialogue method selection
+
+The fourth diagnostic method (a softer voice high shelf) reduces tick density but harms recognizer accuracy. Preserve spoken consonants. Trial35 uses the speech-lead33 balance: boss callout trim rises from -1.5 to +4.5 dB, boss master trim falls from +6 to +4.5 dB, and the score opens 8 dB at 1.7 kHz only during speech. This is a runtime validation candidate, not a gate pass. All callout times and source takes remain intact. The forge score is already validated.

@@ -82,11 +82,14 @@ export class AudioEngine implements AudioBridge {
  private makeSpeechSpace(){
   if(!this.ctx||!this.speechSpace)return;
   const speaking=this.count('voice')>0;
-  const amount=speaking?(this.bedIds.music==='music.battle'?-9:this.bedIds.music==='music.boss'?0:this.bedIds.music==='music.home'?-9:-6):0;
-  if(amount===this.speechCutDb)return;this.speechCutDb=amount;
+  const boss=this.bedIds.music==='music.boss';
+  const amount=speaking?(this.bedIds.music==='music.battle'?-9:boss?-8:this.bedIds.music==='music.home'?-9:-6):0;
+  const type=boss?'peaking':'lowshelf';
+  if(amount===this.speechCutDb&&this.speechSpace.type===type)return;this.speechCutDb=amount;
+  this.speechSpace.type=type;this.speechSpace.frequency.value=boss?1700:1200;this.speechSpace.Q.value=.7;
   const p=this.speechSpace.gain,now=this.ctx.currentTime;
-  // Keep the upper strings and pulse while opening the dense battle harmony
-  // around the spoken fundamentals. The normal -8 dB music duck remains.
+  // Open the boss strings around speech without dulling spoken consonants.
+  // Other scenes keep their low-shelf opening and the normal music duck.
   p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(amount,now+(speaking ? .06 : .4));
  }
  private setSceneTone(){
@@ -96,7 +99,7 @@ export class AudioEngine implements AudioBridge {
   // effect accents. The brighter battle arrangement has its own output trim.
   const amounts:Partial<Record<Bus,number>>=scene==='music.battle'?{voice:-3,sfx:-12,music:9}:scene==='music.boss'?{sfx:-12,music:6}:scene==='music.forge'?{music:-9}:{};
   for(const [bus,tone] of this.tones){const gain=tone.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(amounts[bus]??0,now+.15);}
-  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?2.8:6),now+.15);}
+  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?2.8:scene==='music.boss'?4.5:6),now+.15);}
  }
  private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
  private releaseDuck(){this.makeSpeechSpace();if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
@@ -152,7 +155,7 @@ export class AudioEngine implements AudioBridge {
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
    // Balance repeated movement beneath the strike and the spoken line.
-   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?-1.5:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
+   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?4.5:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
