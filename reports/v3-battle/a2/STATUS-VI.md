@@ -1,10 +1,9 @@
 # Trạng thái V3-A2
-
-- G0: 10/10 kiểm thử bộ đo đạt; 3 cảnh quay giữ nguyên kết quả chiến đấu.
-- Typecheck, toàn bộ unit test và parity đạt.
-- E2E đạt 9/10; một ca lỗi nút hướng dẫn cũ của giao diện B, đã ghi yêu cầu sửa.
-- G0 chưa được đánh dấu hoàn tất; không bỏ qua ca lỗi.
-- Đang làm R: đo 12 đoạn video, so sánh 3 cách tách nhân vật Biscuit.
-- Chưa thay đổi hình ảnh chiến đấu sản phẩm trong lượt A2.
-- Đồng bộ B: 16/11 và 18/11 lúc 19:00 giờ Việt Nam.
-- Đóng băng: 19/11 lúc 19:00 giờ Việt Nam.
+Đã đo 12 đoạn tham chiếu: 44 khung thân, 33 số sát thương, 6 đoạn có chiêu cuối toàn màn hình.
+Mèo hiện tại cao 32% màn hình; tham chiếu khoảng 21%. Chưa có di chuyển gốc vượt ngưỡng.
+Chữ sát thương thực tế khoảng 22px; mục tiêu 35–58px ở 720p. Màn hình có tới 27 từ, giới hạn 8.
+Đã thử 3 cách tách Biscuit; chọn vẽ bù chi tiết nhỏ nhưng còn lỗi khớp, chưa đạt chuẩn rig.
+Đang chạy bộ kiểm tra đầy đủ. Lỗi Night tips thuộc phiên B vẫn được giữ, không bỏ qua.
+Tiếp theo: thu nhỏ và xếp đội hình, sửa màu/độ trong, rồi thêm động tác lao tới và giật lùi.
+Chưa hoàn tất bản battle; chưa ghi demo cuối, chưa gộp main, chưa triển khai.
+Đồng bộ đúng lịch 16/11 và 18/11 lúc 12:00 UTC.

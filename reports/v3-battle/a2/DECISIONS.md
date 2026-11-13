@@ -7,3 +7,15 @@
 - G0 uses fail-closed numeric gates and source-commit freshness; measured reference targets stay unset until R supplies observations. No planner estimates masquerade as measurements.
 
 - Case-path repair: git ignored lowercase add pathspecs while legacy A2 was tracked. Moved the unchanged first-run evidence to a2-first-run/ and made a2/ canonical for this run. No legacy evidence was deleted; old A2 filenames now live in a2-first-run/.
+
+## Resume audit: enforce the user voice gate
+The prior checker used active voice >= 0.5. The request requires 100%; changed it to equality 1. No user threshold was reduced. Baseline 3×10 s captures are complete and deterministic parity passes. Encoded temporary PNGs were deleted.
+
+## R: measured targets and method selection
+- Core median .20946 viewport, numeric ink 46.22 px, luma energy 22.565, climax coverage .87437. Exact numeric bands live in targets.json; no thresholds lowered.
+- Complete plate fragments joined before duration: median 2.60 s; only six confirmed plate windows, not twelve optimistic labels.
+- Actor travel excludes summoned effects. Sparse confirmed travel gives a lower bound; target retains a stricter 2 events/10 s floor and every-action >6% travel.
+- Pilot method 3 (small matched repaint with local fill) selected. Maximum 111 hole pixels and duplicated handle remain; M2 must fix both, not accept prototype as completed rig.
+- V2 contains x3 PvP, not a verified boss. V1 early campaign and late mode thumbnails reviewed; boss sampling remains a disclosed source limitation.
+- Atlas alpha replaces a contaminated warm-pixel baseline number estimator: real median ink 21.58 px, not rectangle height 33 px.
+- Ranged 20px description conflicts with the stricter every-action >6% width gate; preserve the gate with 80–96px cast steps plus 20px recoil.

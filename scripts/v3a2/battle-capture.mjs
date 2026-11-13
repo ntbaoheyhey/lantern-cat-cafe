@@ -51,7 +51,7 @@ try{
       m.tick(i===0?0:1000/fps,1000+i*1000/fps);m.paused=true;
       s.render({...s.view(),fixedTime:10+i/fps,paused:true},1/fps);
       const audit=s.audit(),visibleWords=[...document.querySelectorAll('.b3-hud *')].filter(e=>e.childElementCount===0&&e.getClientRects().length).map(e=>e.textContent).join(' ').match(/\b[A-Za-z]+\b/g)??[];
-      return {index:i,t:i/fps,units:audit.units,events:audit.events.slice(-8),sequence:audit.sequence,stats:audit.stats,visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.skillId,elapsed:m.animationAt,duration:m.plan.duration}:null};
+      return {index:i,t:i/fps,units:audit.units,events:audit.events.slice(-8),sequence:audit.sequence,stats:audit.stats,numbers:s.numbers?.drawn??[],visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.skillId,elapsed:m.animationAt,duration:m.plan.duration}:null};
     },{i,fps});
     // Paint HUD timers at a controlled clock; model stays paused during this tick.
     await page.clock.runFor(Math.round((i+1)*1000/fps)-Math.round(i*1000/fps));

@@ -4,3 +4,12 @@
 - Before: Data volume 926 GiB total, 790 GiB used, 98 GiB available. Worktree 27 GiB.
 - Removed in this worktree only: .claude-audit/ and apps/web/dist-v2/. No trace/frame/cache folders were present at the named cleanup paths.
 - After: 98 GiB available. Normal disk mode. No art, tools, reference videos, other worktrees, or other projects removed.
+
+## Resume 2026-11-13 02:14 UTC
+Before: 96 GiB free on Data.
+Removed only regenerable output inside this worktree: apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite, reports/v3-battle/a2/R/baseline/wave3: 100 encoded PNGs, reports/v3-battle/a2/R/baseline/boss: 100 encoded PNGs, reports/v3-battle/a2/R/baseline/wave1: 100 encoded PNGs.
+After: /dev/disk3s1   926Gi   792Gi    96Gi    90%    5.4M  1.0G    1%   /System/Volumes/Data
+Low-disk mode: off. Current-card reference decode retained until R is complete.
+
+## Resume 2026-11-13T02:27:27.820168+00:00
+Before: 93 GiB free. Removed regenerable worktree outputs: none; encoded baseline PNGs. Current R reference decode retained. Low disk mode off.

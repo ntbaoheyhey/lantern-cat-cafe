@@ -6,6 +6,13 @@ import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {numeric,cards,checkCard,filesMatching,fresh} from './check-gates.mjs';
 
+test('every active requires one voice; half coverage must never pass',()=>{
+  const gate=cards.V3.gates.find(g=>g.id==='active-voice');
+  assert.equal(numeric(1,gate.op,gate.limit),true);
+  assert.equal(numeric(.5,gate.op,gate.limit),false);
+  assert.equal(numeric(.999,gate.op,gate.limit),false);
+});
+
 for(const op of ['min','max','eq','band']) test(`${op}: fake PASS and fake FAIL, NaN, absent target`,()=>{
   const limit=op==='band'?[1,3]:2;
   assert.equal(numeric(2,op,limit),true);

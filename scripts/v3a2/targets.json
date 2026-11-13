@@ -1,15 +1,22 @@
 {
   "schema": 1,
-  "status": "unmeasured",
-  "reference": null,
-  "scaleBand": null,
-  "numberHeightBand": null,
-  "motionEnergyMin": null,
-  "displacementEventsPer10sMin": null,
-  "effectCoverageMin": null,
-  "numbersPerSecondMin": null,
-  "cueEventsPerSecondMin": null,
+  "status": "measured",
+  "reference": "reports/v3-battle/a2/REF-METRICS.json",
+  "scaleBand": [
+    0.157095,
+    0.26182500000000003
+  ],
+  "numberHeightBand": [
+    34.66216216216216,
+    57.770270270270274
+  ],
+  "motionEnergyMin": 15.795591764922111,
+  "displacementEventsPer10sMin": 2,
+  "effectCoverageMin": 0.6120624999999998,
+  "numbersPerSecondMin": 3.0000000000000027,
+  "cueEventsPerSecondMin": 4.775700934579438,
   "silhouetteContrastMin": 18,
   "densityRatioMin": 0.7,
-  "medianTolerance": 0.25
+  "medianTolerance": 0.25,
+  "scaleMedian": 0.20946
 }
