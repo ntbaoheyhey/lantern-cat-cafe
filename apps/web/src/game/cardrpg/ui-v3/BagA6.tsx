@@ -37,13 +37,13 @@ export function BagA6({m}:{m:DepthModel}) {
  const enhancePreview=item?R.enhancementPreview(item,state,owner??cardId):undefined;
  // The read-only comparison can show a future fit while the real actions remain route-locked.
  const compare=item?gearComparison(locked?{...state,run:null}:state,cardId,item.id):null,utility=item?R.comparisonV4(state,cardId,item.id):null;
- const current=R.depthStats(state,cardId),canAfford=!!preview&&state.account.currencies.fish>=preview.cost.fish&&state.account.currencies.threads>=preview.cost.threads;
+ const current=R.depthStats(state,cardId),canAfford=!!preview&&state.account.currencies.fish>=preview.cost.fish&&state.account.currencies.threads>=preview.cost.threads&&state.account.currencies.stamps>=preview.cost.stamps;
  const crewBefore=Math.round(utility?.teamBefore??0),crewAfter=Math.round(utility?.teamAfter??0),crewDelta=crewAfter-crewBefore;
  const lost=utility?[...utility.lost.map(effect=>({cardId,effect})),...utility.transferLost.map(effect=>({cardId:utility.transfer!,effect}))]:[];
  const changes=[...lost.map(change=>({...change,gain:false})),...(utility?.gained??[]).map(effect=>({cardId,effect,gain:true}))];
  const reviewEffects=()=>{setPage('effects');requestAnimationFrame(()=>{if(readingPanel.current)readingPanel.current.scrollTop=0;effectPanel.current?.focus({preventScroll:true});});};
  const maxed=!!item&&item.enhancement>=(state.economyV3?10:12);
- const missing=preview?(['fish','threads'] as const).flatMap(id=>{
+ const missing=preview?(['fish','threads','stamps'] as const).flatMap(id=>{
   const amount=preview.cost[id]-state.account.currencies[id];
   return amount>0?[`${amount} more ${id==='threads'&&amount===1?'thread':id}`]:[];
  }):[];
@@ -78,7 +78,7 @@ export function BagA6({m}:{m:DepthModel}) {
     </div><button aria-describedby={equipDescription} className={!locked&&!equipped&&!compare?.error?'cr-primary':undefined} disabled={locked||equipped||!!compare?.error} onClick={()=>{const result=R.equipGear(m.state,cardId,item.id);if(result.ok)result.state.tutorial=Math.max(4,result.state.tutorial);m.apply(result,spec.name+' equipped.');}}>{equipped?'Equipped':'Equip'}</button></div><div><div id={enhanceDescription} className="a6-inventory-enhance" aria-label="Enhancement quote">
      <small>{owner?'Worn by '+R.CAT_BY_ID[owner]!.name:'For '+cat.name+' · Equip to use'}{!maxed&&enhancePreview.before===enhancePreview.after&&<> · No main-stat gain at +{item.enhancement+1}.</>}</small>
      <div className="a6-inventory-cost">{maxed?<span>Maximum enhancement</span>:<><span>{statName(spec.main)} {enhancePreview.before} to {enhancePreview.after}</span>{state.economyV3&&'chanceBp' in enhancePreview&&<small aria-label="Enhancement odds">{Number(enhancePreview.chanceBp)/100}% · Blessing +{Number(enhancePreview.blessingBp)/100}%</small>}<CostView cost={enhancePreview.cost}/></>}</div>
-     {locked?<small>Finish this route to enhance gear.</small>:!maxed&&missing.length>0&&<small className="a6-inventory-missing">Need {missing.join(' · ')}. Patrol gives fish and threads.</small>}
+     {locked?<small>Finish this route to enhance gear.</small>:!maxed&&missing.length>0&&<small className="a6-inventory-missing">Need {missing.join(' · ')}. {state.economyV3?'Earn Bells from quests.':'Patrol gives fish and threads.'}</small>}
     </div><button aria-describedby={enhanceDescription} disabled={locked||maxed||!canAfford} onClick={()=>m.apply(R.enhanceGear(m.state,item.id),spec.name+' enhanced to +'+(item.enhancement+1)+'.')}>{maxed?'Max +12':!canAfford?'Need materials':'Enhance +'+(item.enhancement+1)}</button></div></footer>
    </aside>:<aside className="a6-inventory-welcome"><img {...artPropsA6(cardId)} alt=""/><h2>A little care before the next patrol</h2><p>Choose a piece to compare it on {cat.name}.</p></aside>}
   </div>

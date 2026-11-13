@@ -17,7 +17,9 @@
 - S7 đạt: đủ 867 cue; phát 20 cue ngẫu nhiên và xem thử 12 giọng mèo trên máy.
 - E1 đạt: 18 kịch bản, mỗi kịch bản 200 seed, 1.000 tài khoản C2; 28 phút 57 giây.
 - E2 đạt: 3 sink bảo đảm, đủ giá/odds, burn Anvil đúng và chống tiêu hai lần.
-- Mô phỏng sink giảm tỷ lệ Star Thread xuống 2,46–4,67; vẫn chưa đạt. E3–E5, T1, C1, E6 và polish còn mở.
+- E3: đã ghi 7 vòng / 280 cấu hình; vòng 6–7 đạt burn, Thread và ngày Legendary ở 40 seed.
+- Bot còn khoảng 0,91–0,95 lần người chơi thường/giờ; mục tiêu tối đa 0,5 chưa đạt.
+- Đang kiểm tra 200 seed và độ nhạy; chưa chấp nhận E3. E4–E5, T1, C1, E6 và polish còn mở.
 - Kinh tế mới và bộ đếm Fuji trực tiếp chưa có kết quả đạt.
 - Đồng bộ 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
 - Không triển khai hoặc merge main; người dùng triển khai ngày 20-11.

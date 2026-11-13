@@ -22,7 +22,7 @@ describe('guaranteed Star Thread sinks',()=>{
     let owned={...inventory,styles:[] as string[]};expect(displaySlots(owned.styles)).toBe(1);
     for(let n=1;n<=ECONOMY_SINKS.display.maxLevel;n++){
       const q=economySinkQuote('display',owned);expect(q.yarn).toBe(n*ECONOMY_SINKS.display.yarn);
-      expect(q.starThread).toBe(n*ECONOMY_SINKS.display.starThread);owned.styles.push(q.style!);expect(displaySlots(owned.styles)).toBe(q.slots);
+      expect(q.starThread).toBe(ECONOMY_SINKS.display.starThread);owned.styles.push(q.style!);expect(displaySlots(owned.styles)).toBe(q.slots);
     }
     expect(()=>economySinkQuote('display',owned)).toThrow('complete');
   });

@@ -6,6 +6,7 @@ import {economyChain} from '../../functions/_shared/economy-v3-chain';
 import type {EconomyCommand} from '../../../packages/chain/src/economy-v3';
 import type {PGlite} from '@electric-sql/pglite';
 import type {Address,Hex} from 'viem';
+import {ECONOMY_V3 as E} from '../../../packages/game-rules/src/cardrpg/economy-v3';
 const player='43113000-0000-0000-0000-000000000001',wallet=('0x'+'1'.repeat(40)) as Address,unit=10n**18n;
 let db:PGlite,store:EconomyStore,clock=Date.UTC(2026,10,13),paid=0n,burns=0,hasDeed=true;
 const chain:EconomyChain={nftUsed:async()=>false,rewardUsed:async()=>false,owns:async()=>hasDeed,paid:async()=>paid,burn:async()=>{burns++;},capacity:async()=>{},season:async()=>0n,mint:async()=>'0x12',claim:async()=>'0x12',certify:async()=>'0x12'};
@@ -14,6 +15,14 @@ const request=(command:EconomyCommand,id=crypto.randomUUID())=>act(player,wallet
 beforeAll(async()=>{db=await buildMigratedDb();await db.query('insert into players(id,wallet,created_at) values($1,$2,$3)',[player,wallet,new Date(clock).toISOString()]);await db.exec('update chain_v3_budget set enabled=true,ceiling=100000000000000000000');store=economyStore(async(name,args)=>{const values=Object.values(args).map(v=>v&&typeof v==='object'?JSON.stringify(v):v);return as(db,'service_role',null,async()=>((await db.query('select '+name+'('+values.map((_,i)=>'$'+(i+1)).join(',')+') r',values)).rows[0] as {r:unknown}).r);});act=createEconomy({enabled:true,demo:true,store,chain,now:()=>clock});},30000);
 afterAll(async()=>{await db?.close();});
 describe('server economy',()=>{
+ it('preserves old Thread above cap while continuing Spool and idempotent weekly credit',async()=>{
+  let state={...freshEconomy(),stars:E.rewards.starThreadBankCap+20};
+  const localStore:EconomyStore={receipt:async()=>null,read:async()=>({state,revision:0,createdAt:new Date(clock).toISOString(),judge:false,campaign:null,wins:[{id:2,at:new Date(clock).toISOString(),chapter:1}]}),commit:async p=>{state=p.state;return {hash:p.hash,state,revision:1};}};
+  const service=createEconomy({enabled:true,store:localStore,chain,now:()=>clock});
+  const first=await service(player,wallet,{id:crypto.randomUUID(),command:{action:'state'}});
+  expect(first.state.stars).toBe(E.rewards.starThreadBankCap+20);expect(BigInt(first.state.spool)).toBeGreaterThan(0n);
+  const again=await service(player,wallet,{id:crypto.randomUUID(),command:{action:'state'}});expect(again.state).toEqual(first.state);
+ });
  it('is default off and rejects invented balances/quest wins',async()=>{
   expect(typeof economyChain).toBe('function');
   await expect(createEconomy({store,chain})(player,wallet,{id:crypto.randomUUID(),command:{action:'state'}})).rejects.toThrow('campaign_disabled');
@@ -38,6 +47,9 @@ describe('server economy',()=>{
   await expect(request({action:'seal',instance:'quest:weapon'})).rejects.toThrow('earned');
   await expect(request({action:'finalize',intent:r.intent!.id})).rejects.toThrow('Exact');paid=10n*unit;
   const done=await request({action:'finalize',intent:r.intent!.id});expect(done.voucher?.relicId).toBe('22020');
+ });
+ it('rejects excess sealed Thread before it can increase the bound balance',async()=>{
+  await expect(request({action:'fusion',instances:['quest:outfit','quest:charm'],tokens:[22020],sealedStars:E.fusion.legendary.starThread+1})).rejects.toThrow('invalid_request');
  });
  it('consumes mixed sealed and bound inputs with deterministic quality and a unique burn receipt',async()=>{
   const r=await request({action:'fusion',instances:['quest:outfit','quest:charm'],tokens:[22020],sealedStars:0});

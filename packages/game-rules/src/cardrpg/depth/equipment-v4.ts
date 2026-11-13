@@ -1,3 +1,4 @@
+import {ECONOMY_V3 as E} from '../economy-v3';
 import { gameplayA6 } from './gameplay-a6';
 import { powerScoreA6 } from './power-a6';
 import { computeCardStats } from '../equipment';
@@ -103,8 +104,8 @@ export function comparisonV4(state:DepthAccount,cardId:string,instanceId:string)
   gained:after.effects.filter(e=>!before.effects.includes(e)),lost:before.effects.filter(e=>!after.effects.includes(e)),
   transfer,transferLost:transfer?equipmentEffects(state,transfer).effects.filter(e=>!donorAfter.includes(e)):[]};
 }
-export function gearCostV4(id:string,state?:DepthAccount){const g=GEAR_BY_ID[id]!;return state?.formationC2?ECONOMY_C2.tailoring[g.rarity]:g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};}
-export function legendaryTailoringRequirements(state:DepthAccount){return state.formationC2?{materials:ECONOMY_C2.legendary.materials,seals:ECONOMY_C2.legendary.seals}:{materials:20,seals:1};}
+export function gearCostV4(id:string,state?:DepthAccount){const g=GEAR_BY_ID[id]!;return state?.economyV3&&g.rarity==='legendary'?{fish:E.tailoring.legendary.fish,threads:E.tailoring.legendary.threads,essence:E.tailoring.legendary.essence}:state?.formationC2?ECONOMY_C2.tailoring[g.rarity]:g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};}
+export function legendaryTailoringRequirements(state:DepthAccount){return state.economyV3?{materials:E.tailoring.legendary.materials,seals:E.tailoring.legendary.seals}:state.formationC2?{materials:ECONOMY_C2.legendary.materials,seals:ECONOMY_C2.legendary.seals}:{materials:20,seals:1};}
 export function rarityMeaningV4(rarity:string){return ['One main stat; readily replaceable.','One affix refines a role.','Two affixes; plan a targeted source.','Three affixes and one bounded unique behavior.'][RARITY_ORDER.indexOf(rarity as typeof RARITY_ORDER[number])]??'Cosmetic edition; no combat power.';}
 export function itemUtilityV4(state:DepthAccount,cardId:string,item:GearInstance){
  // A6 previews change only this loadout; avoid copying retained battle logs per item.

@@ -45,7 +45,7 @@ export function BagB2({m}:{m:DepthModel}) {
  const ownerOf=(id:string)=>Object.entries(s.equipment).find(([,gear])=>Object.values(gear).includes(id))?.[0],owner=item?ownerOf(item.id):undefined,equipped=owner===cardId;
  const quote=item?R.enhancementPreview(item,s,owner??cardId):null,comparison=item?R.comparisonV4(s,cardId,item.id):null,stats=item?gearComparison(locked?{...s,run:null}:s,cardId,item.id):null;
  const current=R.depthStats(s,cardId),crewDelta=Math.round((comparison?.teamAfter??0)-(comparison?.teamBefore??0));
- const maxed=!!item&&item.enhancement>=(s.economyV3?10:12),affordable=quote&&s.account.currencies.fish>=quote.cost.fish&&s.account.currencies.threads>=quote.cost.threads;
+ const maxed=!!item&&item.enhancement>=(s.economyV3?10:12),affordable=quote&&s.account.currencies.fish>=quote.cost.fish&&s.account.currencies.threads>=quote.cost.threads&&s.account.currencies.stamps>=quote.cost.stamps;
  const set=R.SETS.find(t=>t.id===spec?.setId),setText=set?R.setTextV4(set,true,s.formationC2):null;
  return <section className="b2-bag" aria-label="Gear workbench">
   <header className="b2-tools"><b className="b2-number"><GameIcon name="bag"/>{s.gear.length}/{R.GEAR_CAP_V4}</b><select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{s.account.cards.map(c=><option key={c.id} value={c.cardId}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select><DropOddsC2 state={s}/><HelpC2 label="Gear workshop" title="Fusion" symbol={<GameIcon name="forge"/>}><BoundFusion m={m}/></HelpC2></header>

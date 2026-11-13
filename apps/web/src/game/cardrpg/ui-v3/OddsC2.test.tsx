@@ -39,3 +39,14 @@ it('discloses the Legendary tailoring proof cost and actual affix roll intervals
  expect(screen.getByLabelText('materials').nextElementSibling!.textContent).toBe('200');
  expect(screen.getByLabelText('Chosen template probability').textContent).toBe('100%');
 });
+
+it('discloses each exact v3 tailoring value before payment, with no hidden affix draw',()=>{
+ const state=fresh();state.economyV3=true;const id='hearthloom-weapon-legendary',quote=R.tailoredGearPreview(state,id);
+ render(<TextDietContext value={true}><CraftOddsC2 state={state} id={id}/></TextDietContext>);
+ fireEvent.click(screen.getByRole('button',{name:'Tailoring odds'}));
+ for(const affix of quote.affixes){
+  const value=screen.getByLabelText(R.AFFIX_BY_ID[affix]!.name+' fixed value').nextElementSibling!;
+  expect(value.textContent).toBe(quote.rolls[affix]+' · 100%');
+ }
+ expect(screen.queryByLabelText(/uniform integer roll/)).toBeNull();
+});

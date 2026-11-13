@@ -18,12 +18,13 @@ function weeklyCohort(runtime,bank){
     // Historical E1 records retain templates/counts, not original affix rolls.
     // Reconstruct that missing distribution using the production item generator;
     // this is a seeded quality replay, never claimed as the exact original item.
-    if(runtime.gearQualityBp&&['epic','legendary'].includes(t.rarity))for(let i=0;i<n;i++){
+    if(!day.gearItems&&runtime.gearQualityBp&&['epic','legendary'].includes(t.rarity))for(let i=0;i<n;i++){
      const gear=runtime.R.makeGear(qualityState,id,(account.seed+qualityState.account.nextId*7919+at*104729)>>>0);
      items.push({id:gear.id,template:id,quality:runtime.gearQualityBp(gear),setId:t.setId,rarity:t.rarity});
     }
    }
-   weeks.push({hours:sum(days,d=>d.hours),wins:sum(days,d=>d.wins),level:Math.max(...days.map(d=>d.level)),chapters:[...new Set(days.flatMap(d=>d.cleared))],epics,legendary,items});
+   for(const day of days)for(const item of day.gearItems??[]){const t=runtime.R.GEAR_BY_ID[item.template];if(['epic','legendary'].includes(t.rarity)){assert(Number.isInteger(item.quality),'Native item quality required');items.push({...item,setId:t.setId,rarity:t.rarity});}}
+   weeks.push({hours:sum(days,d=>d.hours),wins:sum(days,d=>d.wins),rewardWins:sum(days,d=>d.completedRoutes?d.completedRoutes.length:d.wins),level:Math.max(...days.map(d=>d.level)),chapters:[...new Set(days.flatMap(d=>d.cleared))],epics,legendary,items});
   }
   if(!groups.has(account.profile))groups.set(account.profile,[]);groups.get(account.profile).push({...account,weeks});
  }
@@ -45,7 +46,7 @@ export function tokenRun(runtime,config,bank,scenario,seed,{zeroExternal=false}=
  for(let i=0;i<recipients;i++)all[i].yarn=all[i].claims=config.initial.testerYarn;
  const testerClaims=recipients*config.initial.testerYarn;
  const openingMarketYarn=zeroExternal?0:config.initial.marketYarnPerParticipant*all.filter(a=>a.market).length;
- let external=openingMarketYarn,burn=0,treasury=0,withdrawals=0,retained=0,starSource=0,starSink=0,seals=0,fusions=0,volume=0,externalVolume=0;
+ let external=openingMarketYarn,burn=0,treasury=0,withdrawals=0,retained=0,starSource=0,starSink=0,pausedStarGrants=0,seals=0,fusions=0,volume=0,externalVolume=0;
  const weeks=[],burnBySink={fusion:0,seal:0,market:0,polish:0,decor:0,display:0},studioPurchases={polish:0,decor:0,display:0};
  const spend=(a,cost,kind)=>{if(cost<0||!Number.isFinite(cost))throw Error('Invalid cost');if(a.yarn+1e-9<cost)return false;a.yarn-=cost;burn+=cost;burnBySink[kind]=(burnBySink[kind]??0)+cost;return true;};
  for(let week=0;week<config.tokenWeeks;week++){
@@ -55,7 +56,8 @@ export function tokenRun(runtime,config,bank,scenario,seed,{zeroExternal=false}=
    if(week&&random()<(week<4?a.p.churnFirst:a.p.churnLater)){a.alive=false;continue;}
    // Aggregate exact C2 day records once. Mature weeks reuse the final fortnight.
    const index=week<a.gear.weeks.length?week:Math.max(0,a.gear.weeks.length-2)+(week%2),row=a.gear.weeks[index];
-   const won=row.wins,chapters=row.chapters;
+   // The server credits a completed route, not every victorious encounter in it.
+   const won=row.rewardWins,chapters=row.chapters;
    a.hours+=row.hours?lognormal(random,row.hours,a.p.hoursSigma*.3):0;a.level=Math.max(a.level,row.level);
    for(const [set,n] of Object.entries(row.epics))a.epics[set]=(a.epics[set]??0)+n;a.legendary+=row.legendary;
    if(config.sinks)for(const item of row.items){
@@ -63,7 +65,7 @@ export function tokenRun(runtime,config,bank,scenario,seed,{zeroExternal=false}=
     a.studio.gear.push({id:`${week}:${item.id}`,template:item.template,quality:item.quality});
     if(item.rarity==='epic')a.epics[item.setId]--;else a.legendary--;
    }
-   if(won){a.spool+=E.rewards.weeklySpool;a.stars+=E.rewards.weeklyStarThread;starSource+=E.rewards.weeklyStarThread;a.bossSeals++;a.score=Math.min(39,a.score+1);}
+   if(won){const grant=runtime.weeklyStarThreadGrant?runtime.weeklyStarThreadGrant(a.stars):E.rewards.weeklyStarThread;a.spool+=E.rewards.weeklySpool;a.stars+=grant;starSource+=grant;pausedStarGrants+=E.rewards.weeklyStarThread-grant;a.bossSeals++;a.score=Math.min(39,a.score+1);}
    for(const c of chapters)if(!a.chapters.has(c)){a.chapters.add(c);a.spool+=E.rewards.chapterSpool;}
    if(!a.style&&a.spool>=E.spool.skinCost&&random()<a.p.sink*scenario.demand*.25){a.spool-=E.spool.skinCost;a.style=true;}
   }
@@ -102,10 +104,11 @@ export function tokenRun(runtime,config,bank,scenario,seed,{zeroExternal=false}=
   }
   weeks.push({week:week+1,active:all.filter(a=>a.alive).length,claims:withdrawals-before.withdrawals,burn:burn-before.burn,starSource:starSource-before.starSource,starSink:starSink-before.starSink});
  }
- const claims=testerClaims+withdrawals,balances=sum(all,a=>a.yarn),error=testerClaims+openingMarketYarn+withdrawals-burn-treasury-balances-external;
+ const claims=testerClaims+withdrawals,balances=sum(all,a=>a.yarn),starBalances=sum(all,a=>a.stars),error=testerClaims+openingMarketYarn+withdrawals-burn-treasury-balances-external;
  assert(Math.abs(error)<1e-6,'YARN conservation '+error);
+ assert.equal(starSource,starSink+starBalances,'Bound Thread conservation, including churned accounts');
  const byType=Object.fromEntries(types.map(p=>{const xs=all.filter(a=>a.p.id===p.id);return[p.id,{accounts:xs.length,activeHours:sum(xs,a=>a.hours),withdrawn:sum(xs,a=>a.withdrawn),yarnPerHour:ratio(sum(xs,a=>a.withdrawn),sum(xs,a=>a.hours))}];}));
  const first=id=>quantile(all.filter(a=>a.p.id===id).map(a=>a.gear.firstLegendaryDay??config.cohortDays+1),.5);
  const top=all.map(a=>a.withdrawn).sort((a,b)=>b-a).slice(0,Math.ceil(all.length*.01));
- return {seed,burnClaims:ratio(burn,claims),starRatio:ratio(starSource,starSink),heavyCasualHourlyRatio:ratio(byType.heavy.yarnPerHour,byType.casual.yarnPerHour),casualLegendaryDay:first('casual'),heavyLegendaryDay:first('heavy'),botRegularHourlyRatio:ratio(byType.bot.yarnPerHour,byType.regular.yarnPerHour),topOnePercentWithdrawnShare:ratio(sum(top,x=>x),withdrawals),claims,testerClaims,withdrawals,burn,retained,treasury,balances,openingMarketYarn,remainingMarketYarn:external,externalVolume,volume,starSource,starSink,seals,fusions,burnBySink,studioPurchases,byType,conservationError:error,lateBurnClaims:ratio(sum(weeks.slice(-13),w=>w.burn),sum(weeks.slice(-13),w=>w.claims)),weeks};
+ return {seed,burnClaims:ratio(burn,claims),starRatio:ratio(starSource,starSink),heavyCasualHourlyRatio:ratio(byType.heavy.yarnPerHour,byType.casual.yarnPerHour),casualLegendaryDay:first('casual'),heavyLegendaryDay:first('heavy'),botRegularHourlyRatio:ratio(byType.bot.yarnPerHour,byType.regular.yarnPerHour),topOnePercentWithdrawnShare:ratio(sum(top,x=>x),withdrawals),claims,testerClaims,withdrawals,burn,retained,treasury,balances,openingMarketYarn,remainingMarketYarn:external,externalVolume,volume,starSource,starSink,pausedStarGrants,starBalances,inactiveStarBalances:sum(all.filter(a=>!a.alive),a=>a.stars),seals,fusions,burnBySink,studioPurchases,byType,conservationError:error,lateBurnClaims:ratio(sum(weeks.slice(-13),w=>w.burn),sum(weeks.slice(-13),w=>w.claims)),weeks};
 }

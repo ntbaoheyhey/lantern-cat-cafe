@@ -6,15 +6,17 @@ export function gearAccount(runtime,config,seed,profile,{days=config.cohortDays}
  const {R,playRun}=runtime,random=rng(seed),epoch=config.startEpoch+(seed%28)*86400000;
  let state=R.setFormationC2(R.setGameplayA6(R.setSkillsV5(R.setGameplayV4(R.createDepthAccount(seed,epoch),true),true),true));state.economyV3=true;
  const report={seed,profile:profile.id,days,firstEpicDay:null,firstLegendaryDay:null,calendarOffset:seed%28,daily:[],actions:{},gearCreated:{},income:{},spent:{},failures:0};
- let day=1,seconds=0;
- const record=(before,after,source)=>{
+ let day=1,seconds=0,dayItems=[];
+ const record=(before,after,source,routeMode)=>{
   report.actions[source]=(report.actions[source]??0)+1;
   for(const [k,v] of Object.entries(after.account.currencies)){const delta=v-before.account.currencies[k],bucket=delta>=0?report.income:report.spent;bucket[k]=(bucket[k]??0)+Math.abs(delta);}
   const old=new Set(before.gear.map(g=>g.id));
   for(const g of after.gear)if(!old.has(g.id)){
    const t=R.GEAR_BY_ID[g.templateId];report.gearCreated[t.id]=(report.gearCreated[t.id]??0)+1;
-   if(t.rarity==='epic')report.firstEpicDay??=day;
-   if(t.rarity==='legendary')report.firstLegendaryDay??=day;
+   const origin=routeMode?`${source}:${routeMode}`:source;
+   if(t.rarity==='epic'&&report.firstEpicDay===null){report.firstEpicDay=day;report.firstEpicSource=origin;}
+   if(t.rarity==='legendary'&&report.firstLegendaryDay===null){report.firstLegendaryDay=day;report.firstLegendarySource=origin;}
+   dayItems.push({id:g.id,template:t.id,quality:runtime.gearQualityBp?.(g)??null,source:origin});
   }
  };
  const apply=(result,source)=>{if(!result.ok)return false;record(state,result.state,source);state=result.state;seconds+=config.timing.decisionSeconds;return true;};
@@ -51,11 +53,12 @@ export function gearAccount(runtime,config,seed,profile,{days=config.cohortDays}
  }
  apply(runtime.firstInvitation(state,4),'welcome');
  for(day=1;day<=days;day++){
-  seconds=0;const now=epoch+(day-1)*86400000;
+  seconds=0;dayItems=[];const now=epoch+(day-1)*86400000;
+  const incomeBefore={...report.income},spentBefore={...report.spent},actionsBefore={...report.actions};
   apply(R.syncCalendarDay(state,now),'calendar');
   const active=random()<profile.activeDays,hours=active?Math.min(16,lognormal(random,profile.hours,profile.hoursSigma)):0;
   const sessionMinutes=lognormal(random,profile.sessionMinutes,.25),sessions=active?Math.max(1,Math.round(hours*60/sessionMinutes)):0;
-  let encounters=0,wins=0,routes=0,daySeconds=0,completedSessions=0;
+  let encounters=0,wins=0,routes=0,daySeconds=0,completedSessions=0;const completedRoutes=[];
   const createdBefore={...report.gearCreated};
   for(let session=0;session<sessions;session++){
    const sessionStart=now+daySeconds*1000;
@@ -68,14 +71,15 @@ export function gearAccount(runtime,config,seed,profile,{days=config.cohortDays}
     if(!apply(start,'start')){report.failures++;break;}
     const before=state;const after=playRun(state,'auto',battle=>{
      encounters++;seconds+=Math.max(config.timing.minimumEncounterSeconds,battle.choices.length*config.timing.battleActionSeconds);if(battle.result==='party')wins++;
-    });record(before,after,'route');state=after;routes++;home(Math.floor(sessionStart+seconds*1000));
+    });record(before,after,'route',mode);if(after.run?.won)completedRoutes.push({chapter:after.run.chapter,mode});state=after;routes++;home(Math.floor(sessionStart+seconds*1000));
    }
    daySeconds+=seconds;
    if(state.account.daily.battles>=6)break;
   }
   const gear=Object.fromEntries(Object.entries(report.gearCreated).map(([id,n])=>[id,n-(createdBefore[id]??0)]).filter(([,n])=>n));
   // Do not improve bot efficiency metrics by dividing by unused/AFK budget.
-  report.daily.push({day,active,hours:daySeconds/3600,plannedHours:hours,sessions:completedSessions,modeledSeconds:daySeconds,encounters,wins,routes,gear,level:Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id).level)),cleared:[...state.cleared],seals:state.seals,materials:state.materials,tower:state.towerBest});
+  const delta=(after,before)=>Object.fromEntries(Object.entries(after).map(([k,v])=>[k,v-(before[k]??0)]).filter(([,v])=>v));
+  report.daily.push({day,active,hours:daySeconds/3600,plannedHours:hours,sessions:completedSessions,modeledSeconds:daySeconds,encounters,wins,routes,completedRoutes,gear,gearItems:dayItems,income:delta(report.income,incomeBefore),spent:delta(report.spent,spentBefore),actions:delta(report.actions,actionsBefore),level:Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id).level)),cleared:[...state.cleared],seals:state.seals,materials:state.materials,tower:state.towerBest});
  }
  report.finalBalances={...state.account.currencies};report.censoredLegendary=report.firstLegendaryDay===null;return report;
 }

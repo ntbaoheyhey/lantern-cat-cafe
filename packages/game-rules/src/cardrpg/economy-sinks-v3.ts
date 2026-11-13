@@ -44,7 +44,9 @@ export function economySinkQuote(id:EconomySinkId,inventory:SinkInventory,instan
   if(id==='display') {
     const level=displayLevel(inventory.styles)+1;if(level>ECONOMY_SINKS.display.maxLevel)throw new Error('Showcase complete.');
     const style=`display:${level}`,slots=ECONOMY_SINKS.display.baseSlots+level*ECONOMY_SINKS.display.slotsPerLevel;
-    return {...base,name:'Café showcase',benefit:`Permanent ${slots} display slots`,key:style,style,level,slots,yarn:ECONOMY_SINKS.display.yarn*level,starThread:ECONOMY_SINKS.display.starThread*level};
+    // Each shelf needs one Thread fitting; only its YARN material cost scales.
+    // A small bound bank must never make the final shelf impossible to buy.
+    return {...base,name:'Café showcase',benefit:`Permanent ${slots} display slots`,key:style,style,level,slots,yarn:ECONOMY_SINKS.display.yarn*level,starThread:ECONOMY_SINKS.display.starThread};
   }
   throw new Error('Unknown recipe.');
 }

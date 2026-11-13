@@ -1,5 +1,5 @@
 import {keccak256,toBytes,type Address,type Hex} from 'viem';
-import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket,weeklyStarThreadGrant} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
 import {GEAR_BY_ID} from '../../../packages/game-rules/src/cardrpg/depth/equipment.ts';
 import {gearQualityBp} from '../../../packages/game-rules/src/cardrpg/depth/fusion-v3.ts';
 import {equipmentTokenId} from '../../../packages/game-rules/src/cardrpg/trade.ts';
@@ -42,7 +42,7 @@ export function economyRequest(input:unknown):{id:string;command:EconomyCommand}
   case 'state':case 'quest':case 'deed':keys=['action'];break;
   case 'withdraw':if(typeof c.amount!=='string'||! /^[1-9][0-9]{0,21}$/.test(c.amount)||!Number.isInteger(c.deed))return fail('invalid_request');keys=['action','amount','deed'];break;
   case 'import':case 'seal':if(!label(c.instance)||c.deed!==undefined&&!Number.isInteger(c.deed))return fail('invalid_request');keys=c.action==='import'?['action','instance']:['action','instance','deed'];break;
-  case 'fusion':if(!Array.isArray(c.instances)||c.instances.length>3||!c.instances.every(label)||!Array.isArray(c.tokens)||c.tokens.length>3||!c.tokens.every(n=>Number.isSafeInteger(n)&&n>0)||!Number.isInteger(c.sealedStars)||Number(c.sealedStars)<0||Number(c.sealedStars)>2)return fail('invalid_request');keys=['action','instances','tokens','sealedStars'];break;
+  case 'fusion':if(!Array.isArray(c.instances)||c.instances.length>3||!c.instances.every(label)||!Array.isArray(c.tokens)||c.tokens.length>3||!c.tokens.every(n=>Number.isSafeInteger(n)&&n>0)||!Number.isInteger(c.sealedStars)||Number(c.sealedStars)<0||Number(c.sealedStars)>E.fusion.legendary.starThread)return fail('invalid_request');keys=['action','instances','tokens','sealedStars'];break;
   case 'spend':if(c.sku!=='lantern-skin')return fail('invalid_request');keys=['action','sku'];break;
   case 'sink':if(!ECONOMY_SINK_IDS.includes(c.sink as EconomySinkId)||(c.sink==='polish'?!label(c.instance):c.instance!==undefined))return fail('invalid_request');keys=['action','sink','instance'];break;
   case 'finalize':case 'voucher':if(typeof c.intent!=='string'||!uuid.test(c.intent)||c.burnTx!==undefined&&(typeof c.burnTx!=='string'||!/^0x[0-9a-fA-F]{64}$/.test(c.burnTx)))return fail('invalid_request');keys=c.action==='voucher'?['action','intent']:['action','intent','burnTx'];break;
@@ -58,7 +58,7 @@ function accrue(s:EconomyState,snap:EconomySnapshot,player:string){
  const g=snap.campaign?.state.game;
  if(g)s.level=Math.max(s.level,Math.min(...g.team.map(id=>g.account.cards.find(c=>c.cardId===id)!.level)));
  for(const w of snap.wins){const week=Math.floor((Date.parse(w.at)-4*DAY)/(7*DAY)),key=`boss:${week}`;
-  if(!s.credits.includes(key)){s.credits.push(key);s.spool=(BigInt(s.spool)+BigInt(Math.round(E.rewards.weeklySpool*100))*UNIT/100n).toString();s.stars+=E.rewards.weeklyStarThread;s.bossSeals++;}
+  if(!s.credits.includes(key)){s.credits.push(key);s.spool=(BigInt(s.spool)+BigInt(Math.round(E.rewards.weeklySpool*100))*UNIT/100n).toString();s.stars+=weeklyStarThreadGrant(s.stars);s.bossSeals++;}
   const milestone=`chapter:${w.chapter}`;if(!s.credits.includes(milestone)){s.credits.push(milestone);s.spool=(BigInt(s.spool)+BigInt(E.rewards.chapterSpool)*UNIT).toString();}
  }
  for(const season of new Set((snap.ranks??[]).map(x=>x.season))){
@@ -99,7 +99,7 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
      if(clock-Date.parse(snap.createdAt)<(demo?0:E.spool.minAgeDays)*DAY)fail('Account age must reach seven days.');
      if(s.lastWithdraw&&clock-s.lastWithdraw<E.spool.cooldownDays*DAY)fail('One withdrawal every seven days.');
      const quote=withdrawalQuote(BigInt(c.amount));if(quote.gross>BigInt(s.spool))fail('Not enough Spool.');
-     if(quote.net>BigInt(E.spool.weeklyNetCap)*UNIT)fail('Net weekly cap is 12 YARN.');
+     if(quote.net>BigInt(E.spool.weeklyNetCap)*UNIT)fail(`Net weekly cap is ${E.spool.weeklyNetCap} YARN.`);
      await chain.capacity(wallet,quote.net);
      const i={...newIntent('withdraw',0n,0,0),gross:quote.gross.toString(),net:quote.net.toString(),retained:quote.retained.toString(),ready:true};
      s.spool=(BigInt(s.spool)-quote.gross).toString();s.lastWithdraw=clock;s.intents.push(i);break;
@@ -124,12 +124,13 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
      s.bossSeals-=E.seal.bossSeals;s.sealsToday++;s.intents.push(newIntent('seal',BigInt(reference)*UNIT*BigInt(E.seal.feeBp)/10000n,token,rarity));break;
     }
     case 'fusion':{
-     if(c.instances.length+c.tokens.length!==3||new Set(c.instances).size!==c.instances.length)fail('Choose three distinct Epic inputs.');
+     if(c.instances.length+c.tokens.length!==E.fusion.legendary.count||new Set(c.instances).size!==c.instances.length)fail(`Choose ${E.fusion.legendary.count} distinct Epic inputs.`);
      const items=c.instances.map(x=>s.gear.find(g=>g.id===x)),sealed=c.tokens.map(decodeEconomyGear);
      if(items.some(x=>!x)||sealed.some(x=>!x))fail('Input unavailable.');
      const all=[...items,...sealed] as EconomyGear[],t=GEAR_BY_ID[all[0]!.template]!;
      if(all.some(x=>GEAR_BY_ID[x.template]!.rarity!=='epic'||GEAR_BY_ID[x.template]!.setId!==t.setId))fail('Use three Epics from the same set.');
-     const boundStars=2-c.sealedStars;if(s.stars<boundStars)fail('Two Star Thread required.');
+     if(!Number.isSafeInteger(c.sealedStars)||c.sealedStars<0||c.sealedStars>E.fusion.legendary.starThread)fail('Invalid sealed Thread count.');
+     const boundStars=E.fusion.legendary.starThread-c.sealedStars;if(s.stars<boundStars)fail(`${E.fusion.legendary.starThread} Star Thread required.`);
      const totals=new Map<number,number>();for(const token of c.tokens)totals.set(token,(totals.get(token)??0)+1);if(c.sealedStars)totals.set(10001,c.sealedStars);
      for(const [token,amount] of totals)if(!await chain.owns(wallet,token,amount))fail('Sealed input balance changed.');
      const quality=E.quality[Math.max(0,Math.max(...all.map(x=>qualityBucket(x.quality).offset/1000))-1)]!;
