@@ -29,9 +29,9 @@ export function actionPose(input:MotionInput):RootPose {
  dx=direction*Math.min(Math.abs(dx),width*.46);
  const dy=ultimate?(height*.59-home.y):melee?(target.y-home.y):0;
  let travel=0,arc=0;
- if(t<launch){const lean=smooth(t/120);p.phase='anticipation';p.x=-direction*12*scale*lean;p.sx=1+.065*lean;p.sy=1-.065*lean;p.angle=direction*.10*lean;return p;}
+ if(t<launch){const lean=smooth(t/120);p.phase='anticipation';p.x=-direction*14*scale*lean;p.sx=1+.065*lean;p.sy=1-.065*lean;p.angle=direction*.16*lean;return p;}
  if(t<arrival){const u=clamp((t-launch)/Math.max(1,arrival-launch));travel=out(u);arc=Math.sin(u*Math.PI);p.phase='travel';p.sx=1+.10*arc;p.sy=1-.07*arc;}
- else if(t<holdEnd){travel=1;p.phase='strike';p.sx=1.04;p.sy=.96;}
+ else if(t<holdEnd){travel=1;p.phase='strike';p.sx=1.07;p.sy=.93;}
  else if(t<returnEnd){const u=clamp((t-holdEnd)/Math.max(1,returnEnd-holdEnd));travel=1-smooth(u);arc=Math.sin(u*Math.PI);p.phase='return';p.sx=1+.03*arc;p.sy=1-.03*arc;}
  else {if(t>=returnEnd+67)return p;const settle=Math.sin(clamp((t-returnEnd)/67)*Math.PI);p.phase='land';p.sx=1+.06*settle;p.sy=1-.06*settle;return p;}
  p.x=dx*travel;p.y=dy*travel;
@@ -41,7 +41,7 @@ export function actionPose(input:MotionInput):RootPose {
  else if(kind==='throw')p.angle=direction*(p.phase==='strike'?-.28:-.13*travel);
  else if(kind==='staff-cast')p.angle=-direction*.15*travel;
  else if(kind==='summon'){p.sy+=.065*travel;p.y-=20*scale*travel;}
- else p.angle=-direction*.10*travel;
+ else p.angle=-direction*.18*travel;
  if(p.phase==='strike'&&!melee&&!ultimate){const recoil=Math.sin(clamp((t-impact)/100)*Math.PI);p.x-=direction*28*scale*recoil;}
  return p;
 }
@@ -52,7 +52,7 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
  const impact=plan.beats[2]!.start,scale=height/720;
  for(let i=0;i<hits.length;i++){
   const age=elapsed-impact-Math.min(i,5)*33;if(age<0||age>360)continue;
-  const strength=hits[i]!.critical?30:24,attack=out(age/67),settle=1-smooth((age-100)/260),amount=attack*settle;
+  const strength=hits[i]!.critical?30:28,attack=out(age/67),settle=1-smooth((age-100)/260),amount=attack*settle;
   p.x+=direction*strength*scale*amount;p.y-=Math.sin(clamp(age/260)*Math.PI)*5*scale;
   p.angle+=direction*(hits[i]!.critical?.13:.07)*amount;p.sx+=.055*amount;p.sy-=.055*amount;
   p.flash=Math.max(p.flash,age<2000/30?1:0);
