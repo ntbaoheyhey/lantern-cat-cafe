@@ -27,7 +27,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 - [x] P4: Chapter ambience; P4/metrics.json: 3 chapter palettes,4 sprite kinds, stationary reduced motion, Low29/High91 max particles PASS; source d685ffdf1; type/unit/parity PASS, shared E2E9/10.
 - [x] P5: Crowd reactions; P5/metrics.json: every living unaffected boss spectator flinches;3 allies cheer; reduced motion and combat snapshots unchanged. Source954414a69; shared E2E9/10.
 - [x] P6: All12 cat victory poses, confetti and stars; P6/metrics.json and comparisons. Reduced motion, real rewards/stars, phone layout, type/unit/parity PASS; shared E2E9/10. Source0018a05f8.
-- [ ] P7: Slow-motion final wave hit
+- [x] P7: Final-wave contact0.4x for500 real milliseconds at×1/×2/×3; P7/metrics.json and comparison; full-battle parity and pause checks PASS; source9e6c48006; shared E2E9/10.
 - [ ] P8: Drag-to-swap formation with snap and row preview
 - [ ] P9: Shield/resist/immune number icons
 - [ ] P10: Atlas/pool performance and Low at 4x CPU throttle

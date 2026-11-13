@@ -48,3 +48,6 @@ There are 88 distinct cue/element pairs in the three captured timelines. Your ma
 
 ## 2026-11-13 — T1 HUD icon hooks
 The battle uses current /icons clock, fight, boss-seal, menu and refresh. Please preserve these IDs through U2. Please supply the U2 paths for speed, pause/play, auto and skip painted controls so A can adopt them at SY1. A uses original inline skip geometry and scoped button frames meanwhile; no B icon or font file was edited.
+
+## 2026-11-13 — phone shell around battle result/preparation
+A2 P6/P8 uses a single-column result and working native/touch formation swaps. At390×844, the shared wallet/avatar strip compresses the avatar into a vertical sliver, and first-patrol guidance can extend off the right edge over the result stars or preparation sheet. Please keep shared guidance within the viewport and collapse the wallet strip on phone. A's returning-player review clears journey.pending as the established word-budget fixture does; the shared shell files remain unchanged. See a2/P6/phone.png and a2/P8/phone-preview.png for shell geometry. The battle-owned result colors and mobile grid are fixed on A.
