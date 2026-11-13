@@ -8,6 +8,7 @@ import { copyGuestKey, existingGuestAddress, guestClient, guestSignIn, requireFu
 import { chainRuntime, loadChainConfig, txLink } from './runtime';
 import { moveGuestAssets } from './move';
 import './chain.css';
+import './chain-b2.css';
 import { chainFlags } from './flags';
 import { CHAIN_ITEM_IDS, CHAIN_V3_ITEM_IDS } from '@taskbar-hero/game-rules/cardrpg';
 import { GasBalance } from './GasBalance';
@@ -26,15 +27,15 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   const [warning, setWarning] = useState(false), [copied, setCopied] = useState(false), [moving, setMoving] = useState(false);
   const [lastHash, setLastHash] = useState('');
   const [room,setRoom]=useState<Tab>();
-  const panel=useRef<HTMLElement>(null),walletTrigger=useRef<HTMLElement|null>(null);
-  const closeWallet=()=>{setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();};
+  const panel=useRef<HTMLDialogElement>(null),walletTrigger=useRef<HTMLElement|null>(null);
+  const closeWallet=()=>{panel.current?.close?.();setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();};
   useEffect(()=>{
     if(!embedded)return;
     const openWallet=()=>{walletTrigger.current=document.activeElement as HTMLElement;setOpen(true);};
     window.addEventListener('chain:wallet',openWallet);
     return()=>window.removeEventListener('chain:wallet',openWallet);
   },[embedded]);
-  useEffect(()=>{if(embedded&&open)panel.current?.focus();},[embedded,open]);
+  useEffect(()=>{if(open){panel.current?.showModal?.();panel.current?.focus();}},[open]);
   useEffect(()=>{
     if (!flags.chainLoop) return;
     const open=(event:Event)=>{const tab=(event as CustomEvent<unknown>).detail;setRoom(['Judge','Market','Bag','Seal','History','Style','Forge','Campaign',...(flags.economyV3?['Café']:[])].includes(String(tab))?tab as Tab:'Judge');};
@@ -62,14 +63,14 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   };
   return <><aside className="chain-dock" aria-label="Fuji wallet">
     {!embedded&&<button className="chain-launch" onClick={() => setOpen(!open)}><GameIcon name="wallet" size={18}/> Fuji</button>}
-    {open && <section ref={panel} tabIndex={-1} className="chain-panel" aria-label="Fuji panel" onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
+    {open && <dialog ref={panel} tabIndex={-1} className="chain-panel" aria-label="Fuji panel" onCancel={event=>{event.preventDefault();closeWallet();}} onKeyDown={event=>{if(embedded&&event.key==='Escape'){event.stopPropagation();closeWallet();}}}>
       <header><strong><GameIcon name="wallet" size={18}/> Fuji</strong><button aria-label="Close Fuji" onClick={closeWallet}><GameIcon name="close" size={20}/></button></header>
-      <small>{TESTNET_NOTICE}</small>
+      <small title={TESTNET_NOTICE}>Testnet · no value</small>
       {session ? <>
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
         {guest && flags.chainLoop && <GasBalance />}
         {flags.yarnToken&&<YarnBalance/>}
-        {flags.chainLoop&&<button disabled={busy} onClick={()=>setRoom('Judge')}><GameIcon name="wallet" size={18}/> Market</button>}
+        {flags.chainLoop&&<button disabled={busy} onClick={()=>setRoom('Market')}><GameIcon name="wallet" size={18}/> Market</button>}
         <button disabled={busy} onClick={() => store.clear()}><GameIcon name="arrow" size={18}/> Sign out</button>
         {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}><GameIcon name="upload" size={18}/> Export key</button>
           {warning && <div role="alert"><p>Anyone with this key controls your guest assets. Keep it private.</p><button disabled={copied || busy} onClick={() => void run(async () => {await copyGuestKey(localStorage, navigator.clipboard);setCopied(true);})}>{copied ? 'Copied' : 'Copy once'}</button></div>}
@@ -85,7 +86,7 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
       {busy && <p role="status">Pending…</p>}{message && <p role="alert">{message}</p>}
       {lastHash && <a href={txLink(lastHash)} target="_blank" rel="noreferrer"><GameIcon name="external" size={18}/> Snowtrace</a>}
       <details><summary>?</summary><p>Guest keys stay in this browser. Export before clearing storage. Connect MetaMask or Core to move assets. Offline play stays available.</p></details>
-    </section>}
+    </dialog>}
   </aside>{room&&flags.chainLoop&&<div className="chain-overlay" role="dialog" aria-label="Fuji market" aria-modal="true"><Suspense fallback={<p>Opening…</p>}><ChainRoom key={room} initialTab={room} onClose={()=>setRoom(undefined)}/></Suspense></div>}</>;
 }
 export default function ChainRoot({children,embedded=false}: {children: ReactNode;embedded?:boolean}) {

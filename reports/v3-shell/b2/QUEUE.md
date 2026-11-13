@@ -11,8 +11,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [ ] V — PARTIAL (allowed: only recognition misses after 9 documented processing iterations; all other V gates PASS; self-score 7/10)
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
-- [ ] U3 — in progress (53 audited states; kit ready)
-- [ ] U4 — todo
+- [ ] U3 — PARTIAL (32/54 states meet all screen gates; 22 have two logged redesign iterations; complete two-size evidence, tests pass; self-score 7/10)
+- [ ] U4 — in progress
 - [ ] S5 — todo
 - [ ] S6 — todo
 - [ ] S7 — todo
@@ -150,3 +150,25 @@ PASS U2.inputs: measured 76/76; required 0 reference frames as generator inputs;
 PASS U2.sheet: measured 947189; required nonempty reports/v3-shell/b2/shots/ui-kit.png
 
 Checks: tests/u2-types.log, tests/u2-suite.log (2,503 web and 724 server tests pass; 2 expected rule failures and 11 existing skips retained), tests/u2-browser.log (76/76 images, font loaded, zero errors/overflow). Typography and icon lint pass. Original kit reviewed at small display sizes and as stretched frames; generator source-size limits disclosed in UI-ART.json.
+
+## U3 permitted PARTIAL evidence
+
+PASS U3.screens: measured 54; required >= 24 rebuilt screens
+
+PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
+
+PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
+
+PASS U3.words: measured 54/54; required <= 25 visible words every screen
+
+FAIL U3.buttons: measured 53/54; required <= 2 plain text buttons every screen
+
+PASS U3.fonts: measured 0; required 0 system fonts
+
+PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
+
+FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
+
+PASS U3.flows: measured 108; required passing test + SHA-256-verified log
+
+The checker confirms the permitted PARTIAL condition. All 53 baseline states plus the new batch dialog have before/after comparisons at both sizes. Visual quality remains below target in 22 states; protected A preparation has four plain buttons. See UI-REBUILD.md and U3-ITERATIONS.md. Local suite and type evidence: tests/u3-accept-suite.log, tests/u3-accept-types.log, tests/u3-accept-final-web-types.log. No full U3 acceptance is claimed.

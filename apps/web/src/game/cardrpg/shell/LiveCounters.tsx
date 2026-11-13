@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react';
+import {GameIcon} from '../../../ui/GameIcon';
 import {formatEther,parseAbi,parseAbiItem} from 'viem';
 import {loadChainConfig,publicChain} from '../chain/runtime';
 import {chainFlags} from '../chain/flags';
@@ -44,6 +45,6 @@ export async function readCounters():Promise<Counters>{
  return result;
 }
 function useLiveCounters(){const [stats,setStats]=useState<Counters>({});useEffect(()=>{if(!chainFlags().chainLoop)return;let live=true;const update=()=>void readCounters().then(v=>{if(live)setStats(v);}).catch(()=>{if(live)setStats({});});update();const id=setInterval(update,60000);return()=>{live=false;clearInterval(id);};},[]);return stats;}
-export function LiveCounters(){const stats=useLiveCounters();return <div className="b-live" aria-label="Live Fuji counters">{([['deeds','Deeds',' / 3,000'],['burned','YARN burned',''],['fused','Fused',''],['transactions','Fuji tx','']] as const).map(([key,label,suffix])=><a key={key} href="https://testnet.snowtrace.io" target="_blank" rel="noreferrer"><strong className="t-number">{stats[key]===undefined?'Offline':`${stats[key]}${suffix}`}</strong><small>{label}</small></a>)}</div>;}
-export function EconomyVitals(){const stats=useLiveCounters();return <details><summary>Live burn / emission</summary><p>Burned {stats.seasonBurned??'Offline'} · Claimed {stats.emitted??'Offline'} YARN · Ratio {stats.burnEmission??'Offline'}</p><small>Contract season {stats.rewardSeason??'Offline'} · 13 weeks · includes tester claims</small></details>;}
+export function LiveCounters(){const stats=useLiveCounters();return <div className="b-live" aria-label="Live Fuji counters">{([['deeds','Deeds',' / 3,000'],['burned','YARN burned',''],['fused','Fused',''],['transactions','Fuji tx','']] as const).map(([key,label,suffix])=><a key={key} aria-label={label} title={label} href="https://testnet.snowtrace.io" target="_blank" rel="noreferrer"><strong className="t-number">{stats[key]===undefined?'Offline':`${stats[key]}${suffix}`}</strong><GameIcon name={{deeds:"deed",burned:"yarn",fused:"fuse",transactions:"history"}[key]} size={28}/></a>)}</div>;}
+export function EconomyVitals(){const stats=useLiveCounters();return <details><summary><GameIcon name="economy" size={24}/>Live ratio</summary><p>Burned {stats.seasonBurned??'Offline'} · Claimed {stats.emitted??'Offline'} YARN · Ratio {stats.burnEmission??'Offline'}</p><small>Contract season {stats.rewardSeason??'Offline'} · 13 weeks · includes tester claims</small></details>;}
 export function SeasonEdition(){const stats=useLiveCounters();return <p>{stats.editionMinted??'Offline'} / {ECONOMY_V3.season.editionSupply}</p>;}

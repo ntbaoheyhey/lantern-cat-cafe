@@ -1,4 +1,5 @@
 import {GameIcon} from '../../../ui/GameIcon';
+import {GuideMascot} from '../shell/PaintedKit';
 import {useState} from 'react';
 import {FORGE_COST,FORGE_DESIGNS,isForgeInput,type SealPricePolicy} from '@taskbar-hero/chain';
 import {TRADE_BY_TOKEN} from '@taskbar-hero/game-rules/cardrpg';
@@ -22,11 +23,11 @@ export function RelicForgePanel({holdings,owned,busy,balance,sealPolicy='standar
     &&(inputs.find(h=>String(h.id)===second)?.amount??0n)>=1n;
   const select=(label:string,value:string,change:(v:string)=>void)=><select aria-label={label} value={value}
     disabled={busy} onChange={e=>{change(e.target.value);setConfirm(false);}}><option value="">{label}</option>
-    {inputs.map(h=><option key={String(h.id)} value={String(h.id)}>{TRADE_BY_TOKEN[Number(h.id)]?.name??String(h.id)} <GameIcon name="close" size={20}/>{String(h.amount)}</option>)}</select>;
+    {inputs.map(h=><option key={String(h.id)} value={String(h.id)}>{TRADE_BY_TOKEN[Number(h.id)]?.name??String(h.id)} ×{String(h.amount)}</option>)}</select>;
   return <div className="chain-forge">
-    <div className="chain-forge-preview"><ForgeMark design={design}/></div>
+    <div className="chain-forge-preview"><GuideMascot pose="shop"/><div className="b2-ornament-output"><GameIcon name="forge" size={130}/><ForgeMark design={design}/></div></div>
     <div className="chain-style-choices">{FORGE_DESIGNS.map(d=><button key={d.id} disabled={busy} aria-pressed={design===d.id}
-      onClick={()=>{setDesign(d.id);setConfirm(false);}}>{d.name}</button>)}</div>
+      onClick={()=>{setDesign(d.id);setConfirm(false);}}><GameIcon name="forge" size={24}/>{d.name}</button>)}</div>
     {owned[design]?<output data-testid="forge-unlocked"><GameIcon name="check" size={18}/> Unlocked</output>:<>
       <output data-testid="forge-budget" title="Additional YARN for self-sealing missing Epic inputs, then forging. Requires earned source items; market prices are separate.">Self-seal <GameIcon name="yarn" size={18}/> {formatEther(budget.preparation)} + {formatEther(budget.fee)} = {formatEther(budget.total)}</output>
       {balance<budget.total&&<output data-testid="forge-shortfall">Short <GameIcon name="yarn" size={18}/> {formatEther(budget.total-balance)}</output>}

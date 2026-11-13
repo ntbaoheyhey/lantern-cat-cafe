@@ -33,3 +33,20 @@ Removed rebuildable worktree caches: none present. Sources and other worktrees u
 ## Resume 2026-11-13T06:20:36.620632+00:00
 Before: 337.58 GiB available. After: 337.50 GiB available.
 Removed rebuildable worktree outputs: none present. Protected trees and current art sources retained.
+
+## Resume 2026-11-13T06:37:30.976213+00:00
+Before: 337.45 GiB. After: 337.49 GiB.
+Removed only rebuildable worktree paths: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. Protected trees retained.
+
+## Resume 2026-11-13T06:49:37.147075+00:00
+Before: 332.47 GiB. After: 332.47 GiB.
+Removed rebuildable worktree outputs: none present. Live Vite cache deferred until U3 capture completes. Sources and protected trees retained.
+
+Resume 2026-11-13T07:06:22.184871+00:00: 327 GiB free before cleanup; 30 GiB worktree. Removed only rebuildable outputs: apps/web/node_modules/.vite. Protected directories retained. No source-audio ZIP or old raw WAV deletion needed.
+After: /dev/disk3s1   926Gi   562Gi   327Gi    64%    5.4M  3.4G    0%   /System/Volumes/Data
+
+Resume 2026-11-13T07:23:34.774204+00:00: 286.74 GiB before; 286.80 GiB after. Removed rebuildable paths: contracts/cache, contracts/out, apps/web/node_modules/.vite. No B2 temporary WAV/archive remained; tracked prior-session audio evidence retained.
+
+Resume 2026-11-13T07:39:32.266022+00:00: 278.39 GiB before; 278.45 GiB after. Removed rebuildable worktree paths: contracts/cache, contracts/out, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite, apps/web/node_modules/.vite. Source audio, other worktrees and protected folders retained.
+
+Resume 2026-11-13T07:55:24.671095+00:00: 271.34 GiB before; 271.38 GiB after. Removed rebuildable worktree paths: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite, contracts/cache, contracts/out. No current source audio or protected trees removed.

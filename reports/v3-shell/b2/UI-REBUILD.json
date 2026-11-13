@@ -1,0 +1,2688 @@
+{
+  "reviewedAt": "2026-11-13T07:51:23.461Z",
+  "method": "Explicit human-readable visual judgments after inspecting 54 actual UI states. Counts use visible DOM and occlusion checks; worst of both sizes. Flow evidence is the Playwright scripted menu/Anvil tour, not a claim that every legacy E2E spec was rerun. Baseline for the added batch dialog is its former bag-manage destination.",
+  "screens": [
+    {
+      "id": "landing",
+      "family": "home",
+      "visibleWords": 21,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 9,
+        "consistency": 9
+      },
+      "averageScore": 9,
+      "review": "Live counters remain for C1; entrance art and primary action are clear.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/landing.png",
+          "sha256": "a4b0d759715d5d69b5ff0eb650ad75f6c7179866e78bb5c96520b8dbc564e5a3",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/landing.png",
+            "sha256": "3d2c3a65a6ba9a689ce2d3ca121e45dc437f50fe127b5de0af6d140ab9deff29"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/landing-1280.png",
+            "sha256": "4899a2dca2b61e986c05820d0410e86140e583d3fa40a3f9e7d7e16a240646f9"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/landing.png",
+          "sha256": "e6ee86c193e33e0a38207a6ff68ade3c22c768de1f915cae87bf0ae1fcf23b8c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/landing.png",
+            "sha256": "3d2c3a65a6ba9a689ce2d3ca121e45dc437f50fe127b5de0af6d140ab9deff29"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/landing-1440.png",
+            "sha256": "fc4c7d5b311e0fc935ea7a01083535399945aaf5374b5a185cb48dc0d3a88dc4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sign-in",
+      "family": "dialog",
+      "visibleWords": 12,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 9
+      },
+      "averageScore": 8.6,
+      "review": "Native wallet actions retain signing explanation.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/sign-in.png",
+          "sha256": "59bcdff5dee3c3afd596dabbfb361030ea2962acfa7d7f86e16be8f126fc5a3c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/sign-in.png",
+            "sha256": "970e7cff1bb9234c6cc2cab78fc6db236ec3da7f282bdbda98b9e33bfd98be54"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/sign-in-1280.png",
+            "sha256": "cc05517c5801488e1728b3d9beb6722b14266fe284ef00a52293b3332d58c1f8"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/sign-in.png",
+          "sha256": "5f1ad1c5fa7c3ff0d22e3e2bf1baef989f2908febd6f5d985b2c8a919a9310f7",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/sign-in.png",
+            "sha256": "970e7cff1bb9234c6cc2cab78fc6db236ec3da7f282bdbda98b9e33bfd98be54"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/sign-in-1440.png",
+            "sha256": "31f66404216b9807666cdbfe2c92949b17f50ce35c758bf51d5b4a5fc1a7356a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cafe-hub",
+      "family": "home",
+      "visibleWords": 20,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Large team, painted dock and real weekly-event destination.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/cafe-hub.png",
+          "sha256": "92fb2cce202dbe1fe09473147cd6b1b30ff5073fa702cffadfe51897e7e2956c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/cafe-hub.png",
+            "sha256": "1ec4b04a33be921a9921d95aa3ac97b929fb9e2a9027ef2b8f89e4eabbce1dca"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/cafe-hub-1280.png",
+            "sha256": "6ca36253143abf2ea9b292369fa02b573e21eff246c3ee91aa9e217d774fe482"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/cafe-hub.png",
+          "sha256": "688d0781a38c9ebfb2120dbfea17d104978d90d8ba4bcea39da87fc0611ecf9b",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/cafe-hub.png",
+            "sha256": "1ec4b04a33be921a9921d95aa3ac97b929fb9e2a9027ef2b8f89e4eabbce1dca"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/cafe-hub-1440.png",
+            "sha256": "d45fdbc8fc1f9cc300a66de80c38a17660b92632a4cc1e52cf441bd159c46bd6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "team-formation",
+      "family": "formation",
+      "visibleWords": 11,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 9,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Four heroes on pedestals with surrounding gear and shared POWER.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/team-formation.png",
+          "sha256": "97ca15b45ac9cfa0c311bb55963e3c05a72f49c1fe485bb34d1bd412d944794f",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/team-formation.png",
+            "sha256": "04d98c885986feda6e7b11498330d466034cfc47b6e6dd87d458c6829945bf51"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/team-formation-1280.png",
+            "sha256": "1a4499c7d13be7f720f40a1168f877784add22bd14f3fcf336a5bcd7e666c1be"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/team-formation.png",
+          "sha256": "1eae0ab0c2eba178ef4756d0eab2d0a78877e82cf72cdf140fb13680b9e91b2d",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/team-formation.png",
+            "sha256": "04d98c885986feda6e7b11498330d466034cfc47b6e6dd87d458c6829945bf51"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/team-formation-1440.png",
+            "sha256": "2a7baf30936032a197b094b6124e2a7a546ab33e226a4b09590e1e22ecbb3a4f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "team-presets",
+      "family": "formation",
+      "visibleWords": 13,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Actual saved squad commands retained.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/team-presets.png",
+          "sha256": "65062c9e005b54fde00f75ac9bdfb0926ee755c9a08c712e8bdd94bd69bb802c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/team-presets.png",
+            "sha256": "62bb6b18ea86217792aa4caeb9d43f69889e1e5b4a480351b9369989ac8ab366"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/team-presets-1280.png",
+            "sha256": "262947d7407d2b495585911a171793cc4a0328fb76d11909709bf494db145c4c"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/team-presets.png",
+          "sha256": "ef5eaf18a5ad7792edfe0eee1e7076da308739d73c11e6ec79a45fb3bc2e3856",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/team-presets.png",
+            "sha256": "62bb6b18ea86217792aa4caeb9d43f69889e1e5b4a480351b9369989ac8ab366"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/team-presets-1440.png",
+            "sha256": "cd55c2ffbedc6d7b0ac55cf642d025dd260b542d6a0ad4b0df102c2c2f995fb4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cats-list",
+      "family": "hero",
+      "visibleWords": 20,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Hero detail is still a small right-side card; dedicate more space to the selected hero.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/cats-list.png",
+          "sha256": "7a9345d8696ed7530a1f9d4a19cd14c7af1d1826c491674908cd8762d86863d8",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/cats-list.png",
+            "sha256": "a591fb55deb5d0e5814a8e63f4ccd56a7c6a924d7909cb2aaf1fa10220acc42b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/cats-list-1280.png",
+            "sha256": "8eba0a1286d77ab3d856008d4045c686f446671b703c12a6aa9824acb15ff38e"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/cats-list.png",
+          "sha256": "29ab62c7d0e72c37d8d531e0a1b8c482ea8b6895ea96c65fd249ff90114c7630",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/cats-list.png",
+            "sha256": "a591fb55deb5d0e5814a8e63f4ccd56a7c6a924d7909cb2aaf1fa10220acc42b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/cats-list-1440.png",
+            "sha256": "58e0a194f3c437a11e2f601fac7321ec9d4f1f3fc01eff252c06501e53d5d475"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hero-level-star",
+      "family": "hero",
+      "visibleWords": 20,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Costs and deltas fit; separate Level/Star focus and a large left pedestal remain.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/hero-level-star.png",
+          "sha256": "7a9345d8696ed7530a1f9d4a19cd14c7af1d1826c491674908cd8762d86863d8",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-level-star.png",
+            "sha256": "a591fb55deb5d0e5814a8e63f4ccd56a7c6a924d7909cb2aaf1fa10220acc42b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-level-star-1280.png",
+            "sha256": "824241e71e0bb1bc7204cced876ea04804c7f182dd160228df2b3880a652d034"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/hero-level-star.png",
+          "sha256": "29ab62c7d0e72c37d8d531e0a1b8c482ea8b6895ea96c65fd249ff90114c7630",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-level-star.png",
+            "sha256": "a591fb55deb5d0e5814a8e63f4ccd56a7c6a924d7909cb2aaf1fa10220acc42b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-level-star-1440.png",
+            "sha256": "c578d48b1dbe64f890942439b5a7d91809691e4c89386da3522932cca00ff2e2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hero-awakening",
+      "family": "hero",
+      "visibleWords": 7,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.8,
+      "review": "Constellation is readable but lacks hero focus and strong node states.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/hero-awakening.png",
+          "sha256": "71ad1cd4060c503c9eb4bcdf336fb8eac98abf36663ec11d880c8df2562f5abb",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-awakening.png",
+            "sha256": "5e063174f71e02700c2859ce5e3947d96d83c825dbd1c0ba25e95bdac7ece98a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-awakening-1280.png",
+            "sha256": "7e309e4513b7197e5c22756966d5d14403770c138947963b89059123b14dab72"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/hero-awakening.png",
+          "sha256": "087b0b992263620a2877ae963529b9ff3dcb07f623fbe3b2ddcad533e0a661ad",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-awakening.png",
+            "sha256": "5e063174f71e02700c2859ce5e3947d96d83c825dbd1c0ba25e95bdac7ece98a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-awakening-1440.png",
+            "sha256": "61a75f4b5a6187781ab2631fa42b8267ac9a34b225c40d4a7bcca3f5e3ac4992"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hero-skills",
+      "family": "hero",
+      "visibleWords": 21,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Skill rail is legible but preview and selected hero remain too small.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/hero-skills.png",
+          "sha256": "7510af41fdb7daa9605766098b686f9c73d7391be3fa075a02cbf883f7abd753",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-skills.png",
+            "sha256": "9a7ebe7976ba799b582039da2e2c50ea69aa0ee2644aeb8ced8b3183983f36f9"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-skills-1280.png",
+            "sha256": "00638bfe9f2b22c01ebd5833673d00b57a0b02a91523669d68f19713adfccd59"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/hero-skills.png",
+          "sha256": "1b4c35c1a3928a0444d3f61dc46fdd73b31a2ffd463b10ae47b5464e2e099294",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-skills.png",
+            "sha256": "9a7ebe7976ba799b582039da2e2c50ea69aa0ee2644aeb8ced8b3183983f36f9"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-skills-1440.png",
+            "sha256": "3d49e53b9a49ad40313c9f1820266785a552546bf415825af455a029d7dbfbe8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hero-bonds",
+      "family": "hero",
+      "visibleWords": 17,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 6,
+        "textDiet": 9,
+        "gameFeel": 6,
+        "consistency": 7
+      },
+      "averageScore": 7,
+      "review": "Still a bonus chip; needs connected companion portraits and bond preview.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/hero-bonds.png",
+          "sha256": "8400334f7f40e306c326903fb54d068ec146e4bdcb725e9285e97aa1d6f07b47",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-bonds.png",
+            "sha256": "b88fb12bf02c94ee28c9e7f3299a83f481387119b6399ef16b1a3407a24d83eb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-bonds-1280.png",
+            "sha256": "3ca83aba86469ec23480c95250bb0e3097a2ebd7ffa7ada7c4b838972f7dd9ba"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/hero-bonds.png",
+          "sha256": "ca700e5c0517cb749714e2b0fd08869b1f3d77946a46c562e08011a25f3d5f32",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-bonds.png",
+            "sha256": "b88fb12bf02c94ee28c9e7f3299a83f481387119b6399ef16b1a3407a24d83eb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-bonds-1440.png",
+            "sha256": "3533f4b16df9a197f88976ef31049667aa753b4e862f611fa7c3667c477c781e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hero-gear",
+      "family": "hero",
+      "visibleWords": 17,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Dark equipment tiles repaired; equipment should surround a larger selected hero.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/hero-gear.png",
+          "sha256": "aedf40bf35859355c6b63a2af2c574463bf567b9bfe0585fa91005ec5c6a34b5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-gear.png",
+            "sha256": "0e7e40a5478ca504fe2615c02e022b26874f25e1e143110972d8d9908b531f31"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-gear-1280.png",
+            "sha256": "39b5081ad2d813d70483c26ba7b4e868edfbbbb9a4bc7b19232b5134d9cadcc0"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/hero-gear.png",
+          "sha256": "8570972ceee5ac12f7b6b09284ead79ed71e820c7d3e8a04e31f96d2384448f5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/hero-gear.png",
+            "sha256": "0e7e40a5478ca504fe2615c02e022b26874f25e1e143110972d8d9908b531f31"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/hero-gear-1440.png",
+            "sha256": "1f0058bd3b4b9a66c38d80581c751dd349b83151bcd032cef951012f754c5312"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-gear",
+      "family": "bag",
+      "visibleWords": 10,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Pantry grid, wearer preview, stat deltas and deterministic equip preserved.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-gear.png",
+          "sha256": "a69693172b3b1268e9cfa4a1582ef567adcd74841b595b082c68bfa632643504",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-gear.png",
+            "sha256": "13871b7f6621447b33f678f8537df3b92b8816b369341f9ddfe1bbe2899a9aeb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-gear-1280.png",
+            "sha256": "14e855e53c249e6e4ead568308b9a8c2c100c0c6e2cdff9cd3b625d19d98a384"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-gear.png",
+          "sha256": "3a7e79a7e97da89f9e392b409ba254aab66d6846e4c55b23f21e56fbfc2806c9",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-gear.png",
+            "sha256": "13871b7f6621447b33f678f8537df3b92b8816b369341f9ddfe1bbe2899a9aeb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-gear-1440.png",
+            "sha256": "a64615329dad2d8d4c22f0b8e1a11057bd13b5bdc275c4a92f307ab07a90d90f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-item-detail",
+      "family": "bag",
+      "visibleWords": 19,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.6,
+      "review": "Contrast repaired; selected-item composition still has excessive empty space.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-item-detail.png",
+          "sha256": "d16fb92bd900a42dbe3d26ddcf7596fe2f9b4327c5f84d8d9868e83f1dc4d66b",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-item-detail.png",
+            "sha256": "402f8727b225c6faecb4c8842d3d5ac05f83d575c76f0e84ab0afb3c45d9d7c5"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-item-detail-1280.png",
+            "sha256": "699338835dab077b9d4a8a0336e3b43ecff96987bb0ea1be34daab8949992c7f"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-item-detail.png",
+          "sha256": "21e83018b4d27bd1dff73f1fc4856258fb39ea42f4310ce8456e9c8280b7ad87",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-item-detail.png",
+            "sha256": "402f8727b225c6faecb4c8842d3d5ac05f83d575c76f0e84ab0afb3c45d9d7c5"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-item-detail-1440.png",
+            "sha256": "40d9fe1d5ce8a3e6394784bd2094456df8f1f21ccf4d07b960b366afaa660289"
+          }
+        }
+      ]
+    },
+    {
+      "id": "forge-enhance",
+      "family": "forge",
+      "visibleWords": 5,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.4,
+      "review": "Dedicated workshop with live quote and confirmation; U4 adds action motion.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/forge-enhance.png",
+          "sha256": "c89826e02168196656b9d6b4abd89d71eac6b6728ae63766786dffbef1b945ff",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/forge-enhance.png",
+            "sha256": "8f4d42b63ef35e2a5822f788800eb88f7543db05d1a0d76c401d0999ba7171ee"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/forge-enhance-1280.png",
+            "sha256": "2eb46ac13f383086da1ff28ae17d022488222e0d17ab4ab5205f9dafa28267ab"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/forge-enhance.png",
+          "sha256": "d8f5859909082550748431fe59d08b148e683d10a0f02e5444dcdae8518e7a27",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/forge-enhance.png",
+            "sha256": "8f4d42b63ef35e2a5822f788800eb88f7543db05d1a0d76c401d0999ba7171ee"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/forge-enhance-1440.png",
+            "sha256": "11f589256cb420437e119da3bdadcc9562ea043f17b34f9953d5edf8a03cb564"
+          }
+        }
+      ]
+    },
+    {
+      "id": "forge-fusion",
+      "family": "forge",
+      "visibleWords": 8,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Selectable same-set inputs and deterministic output remain visible.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/forge-fusion.png",
+          "sha256": "1727756cdbc9f71e5adb56935e8fdeb24de0bd9b6faac5bfd7597d1bcf0e0d2f",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/forge-fusion.png",
+            "sha256": "09d7a7866a8983a764cf570fb5246ec0628ee0385eeb1e9a71adf5e1b5f7dba0"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/forge-fusion-1280.png",
+            "sha256": "bd2c94dd6aa778ff5dfa8fb9db39583910bb1646c9f5aeae3b1c1ade493a97cd"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/forge-fusion.png",
+          "sha256": "336ead8c93ca6c3b91726d926de40c504ea014734b7e8abafdd7f59936919dbf",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/forge-fusion.png",
+            "sha256": "09d7a7866a8983a764cf570fb5246ec0628ee0385eeb1e9a71adf5e1b5f7dba0"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/forge-fusion-1440.png",
+            "sha256": "26e4c7b06242644c6888f0e85134a6eee2f383943661d6a414ba110221fe1855"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-materials",
+      "family": "bag",
+      "visibleWords": 7,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Original material tiles and selected-item mascot.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-materials.png",
+          "sha256": "e49b6861877051fda7c6091cb5bca74f71a507d75cc0f260b0649688e63eb9d5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-materials.png",
+            "sha256": "f5c90255894c8e95b0d00855370eeac5afb30141226163d440948c308e6cded5"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-materials-1280.png",
+            "sha256": "a5119507110ef3929825b5df42e589ac8c86ccb20bff283cd7c762aabec2ddbc"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-materials.png",
+          "sha256": "51d59f7f27525ffcd018e071dfc41d794ac626d80c5576298a17ffd502069566",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-materials.png",
+            "sha256": "f5c90255894c8e95b0d00855370eeac5afb30141226163d440948c308e6cded5"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-materials-1440.png",
+            "sha256": "e1126b3674ba4a77745d050c559e43969372716c2d7dc74af5e538407412e082"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-manage",
+      "family": "bag",
+      "visibleWords": 9,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.8,
+      "review": "Usable tile manager; needs stronger selected-item focus.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-manage.png",
+          "sha256": "0c49a465b76be12274f14c0f3a7a2d10809063ae16b13a635aafd8941871e288",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-manage.png",
+            "sha256": "b7b8ee85cf8c9c3e198a1fbbc872b2485e23a8f608df9852f3763c6d2bc4d985"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-manage-1280.png",
+            "sha256": "4136547995becf23450a2fb67040994ba04be4d701426eb8047469ecbc0f046d"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-manage.png",
+          "sha256": "684f6be36a46205ce9671430d53f9a636136e3656ec8b3124ef4113eccf68ecf",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-manage.png",
+            "sha256": "b7b8ee85cf8c9c3e198a1fbbc872b2485e23a8f608df9852f3763c6d2bc4d985"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-manage-1440.png",
+            "sha256": "37fa5c520ad52d7869afce107e04771358d3fadcdafcbaf4233458e0c8d569ee"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-consumables",
+      "family": "bag",
+      "visibleWords": 7,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.8,
+      "review": "Atomic batch flow added; manager still feels sparse.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-consumables.png",
+          "sha256": "4bdc28935650828e60da902855d10072e9ac5f471a9c33e76395c6faeab29527",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-consumables.png",
+            "sha256": "5f8d4fa8fe4f1c3cb7eae0e2ebc092aca327fc788bba07984fe028db20d75b0a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-consumables-1280.png",
+            "sha256": "f51faab60380f60036861de56b6ad33d71cb648105b0670b07093a42d6e940ab"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-consumables.png",
+          "sha256": "1308329a93d463dac7ddfc0282951d9b8a439976754d6104c57b30c4d2f93c11",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-consumables.png",
+            "sha256": "5f8d4fa8fe4f1c3cb7eae0e2ebc092aca327fc788bba07984fe028db20d75b0a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-consumables-1440.png",
+            "sha256": "007da7e3b01d5b3bb2596a49fb61c5735636141647f5c3686d0075f474207347"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag-batch-use",
+      "family": "bag",
+      "visibleWords": 12,
+      "plainTextButtons": 2,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.4,
+      "review": "New quantity dialog; unavailable use explicitly explains patrol requirement.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/bag-batch-use.png",
+          "sha256": "efaac06642d7b6e6500cf8c86645d20fb666c84f1825c321b89dd7667dc13420",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-manage.png",
+            "sha256": "b7b8ee85cf8c9c3e198a1fbbc872b2485e23a8f608df9852f3763c6d2bc4d985"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-batch-use-1280.png",
+            "sha256": "dd8007ae8bec298a82582d1033e586aa04ad6e0b94d56b7378d992db2a2b7a06"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/bag-batch-use.png",
+          "sha256": "d6bc3cccb473e404edb743db3fe0e6b233c966637d512377d35c9fcd7745fba4",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/bag-manage.png",
+            "sha256": "b7b8ee85cf8c9c3e198a1fbbc872b2485e23a8f608df9852f3763c6d2bc4d985"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/bag-batch-use-1440.png",
+            "sha256": "fa7746f0de7839e5cb53282579f2e8049c15a8d297f9674e043dca87b716d4b1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invitations",
+      "family": "gacha",
+      "visibleWords": 6,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Cost, remaining capacity and pity precede confirmed bound-currency draws.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/invitations.png",
+          "sha256": "88ad12a52eb65d2a79dc6cce69651bd66a96d389d9fd051c45b1fa751c96ca88",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations.png",
+            "sha256": "3d327384bec235dfd714ec9211ba80032b4f9ffc7bff239831ac614519814122"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-1280.png",
+            "sha256": "70a1fcfc40669b917ed73ae00a32cc6907dcb9562d4b2a05b35cf90053b6b39e"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/invitations.png",
+          "sha256": "48659cca12b28141b4117a27358614dc89cd2cbcfb55016ab7d0ca1f564bdf5a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations.png",
+            "sha256": "3d327384bec235dfd714ec9211ba80032b4f9ffc7bff239831ac614519814122"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-1440.png",
+            "sha256": "078f04dfa305ae62eca1410c0a184c2b9ccf9d2657067f65eddb1717754eebd1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invitations-rates",
+      "family": "gacha",
+      "visibleWords": 16,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.8,
+      "review": "Named rarity/Base/Next table is now readable; illustrative composition remains basic.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/invitations-rates.png",
+          "sha256": "f7aaaa1db5f21861ce31a32d4d31d0b0aaf3c790dfb8e8667e261b481878f4d0",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-rates.png",
+            "sha256": "706ce3350a66e323ed37abb6c22510825c3199de3ade1e8f7be693facf8de277"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-rates-1280.png",
+            "sha256": "e81af5cf53299f5b434459748116a4ecaf8b49401c3540f596b1f0ae9afa1a31"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/invitations-rates.png",
+          "sha256": "185578faf9dc38d4e1064f9220280a2ec1d9b1ba57df8471e4703e163006585a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-rates.png",
+            "sha256": "706ce3350a66e323ed37abb6c22510825c3199de3ade1e8f7be693facf8de277"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-rates-1440.png",
+            "sha256": "ca18a66e25f1e015c48ce6ca8e400b7b26797a706415204dbcd87139bef25b9b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invitations-reveal",
+      "family": "gacha",
+      "visibleWords": 9,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Ten sealed cards fit without hiding cost.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/invitations-reveal.png",
+          "sha256": "984ce166ec3e81a3718f3e71bb05e3fa9b30818d32aacdf21e24c68fd4389128",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-reveal.png",
+            "sha256": "676bd4cd68e0048ab5405a5bf26c918567881105d95bf40e7c621de5fc989fc9"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-reveal-1280.png",
+            "sha256": "b22c2441e23f22d4c81b4692bc9f74d904cc272cd54769305563bf0ca7c2fc04"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/invitations-reveal.png",
+          "sha256": "8620b952be76b3b3ffa897782737b30e4d9c1bfc80289b1df1ea913c664a5720",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-reveal.png",
+            "sha256": "676bd4cd68e0048ab5405a5bf26c918567881105d95bf40e7c621de5fc989fc9"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-reveal-1440.png",
+            "sha256": "a27e71490347599fed1c2800dee265b6803b92cae32b5447dfeb37318926090c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "invitations-ten-results",
+      "family": "gacha",
+      "visibleWords": 19,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.4,
+      "review": "All ten real outcomes visible; primary Cats action.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/invitations-ten-results.png",
+          "sha256": "059d593a53b9cc7d6e9b24088e7fa89c88be509d322586fd855b2416f24ed4c3",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-ten-results.png",
+            "sha256": "473f66e4b23f0f534569ae5da4850976d5b9757efa239f1acb02a196fa4e8ede"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-ten-results-1280.png",
+            "sha256": "7f081f019cdf7a462d95ff568c0a26db3d9ba5a90fb7d6d094d8aa7e200a141a"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/invitations-ten-results.png",
+          "sha256": "debdbfd150b6f2a63f281ab2d4c7dcc14d7676d6b2af18d81e66dead92753c67",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/invitations-ten-results.png",
+            "sha256": "473f66e4b23f0f534569ae5da4850976d5b9757efa239f1acb02a196fa4e8ede"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/invitations-ten-results-1440.png",
+            "sha256": "962ed85a26f6360df20809aedaaadef1d79058292027119775ee48539faccca7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "season-track-countdown-edition",
+      "family": "season",
+      "visibleWords": 10,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 6,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.6,
+      "review": "Play/Collect/Grow links are not a real pass track. Premium pass remains explicitly roadmap.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/season-track-countdown-edition.png",
+          "sha256": "ad7b754272284e5a93a5ece28d0407f04cba48e14198e37b958afef03d7e6e0c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/season-track-countdown-edition.png",
+            "sha256": "367197b75dfdbc945bf3426274ae2a9cd4cf14637bba93bef79c15f18e46816c"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/season-track-countdown-edition-1280.png",
+            "sha256": "e98bd17b22f679e99a564415ec828c8926116109d9b6212d5813a71acb04c97a"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/season-track-countdown-edition.png",
+          "sha256": "eed793d91f1305838ce0ea7a803870ba8832cd006f144e9cb8d3223e6c17e57c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/season-track-countdown-edition.png",
+            "sha256": "367197b75dfdbc945bf3426274ae2a9cd4cf14637bba93bef79c15f18e46816c"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/season-track-countdown-edition-1440.png",
+            "sha256": "032069a030b697de31bb4f413dd1cae1cf06d81060ea7fa8953d03316604dc5f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "season-guide",
+      "family": "season",
+      "visibleWords": 17,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 6,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.6,
+      "review": "Honest roadmap explanation; no completed pass-track claim.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/season-guide.png",
+          "sha256": "c0bd1e6758aabe51c0a9d5226382423fe06e83ca05c1bffe0e77d6bbf5934674",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/season-guide.png",
+            "sha256": "c778932bbdaebe764c8471a495d401c912c3b72318b3c5f8414a66b1cc0e45bb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/season-guide-1280.png",
+            "sha256": "f22c054e7fadebab67a756da068de3c98471c6c5c341fb62d780021436c66162"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/season-guide.png",
+          "sha256": "8efaf059d3cc9edccbfec84c4f30bb69d7254cea100ea8f952a68dad4f77ef0c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/season-guide.png",
+            "sha256": "c778932bbdaebe764c8471a495d401c912c3b72318b3c5f8414a66b1cc0e45bb"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/season-guide-1440.png",
+            "sha256": "4f344edb720557ab1c011ed8cf6d673ef53e88b51454987baeb8b786887625e2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "economy-flow",
+      "family": "economy",
+      "visibleWords": 20,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Painted flow objects; live readings and final sinks belong to C1/E4.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/economy-flow.png",
+          "sha256": "665a06e2a59d1b78043b9a4decf366c0f984b03fa9c27f2a1506ae8b2c6f0adb",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-flow.png",
+            "sha256": "898d7c2e3ee7fdecd130480dc5826f367ffa98079be6f1753f8c2fa0b9aa9112"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-flow-1280.png",
+            "sha256": "2f1918760777db4241c26a8ae9bb0c2dc45868f1174f4ad205fc91a02659a97e"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/economy-flow.png",
+          "sha256": "08a78f8403eb0b88cadff7afef596f059915c276063120215d878a607d79a189",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-flow.png",
+            "sha256": "898d7c2e3ee7fdecd130480dc5826f367ffa98079be6f1753f8c2fa0b9aa9112"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-flow-1440.png",
+            "sha256": "2b3575a8f639972ab48757dcf51b218c24b953ca96c09361f18b730fa3be9656"
+          }
+        }
+      ]
+    },
+    {
+      "id": "economy-allocation",
+      "family": "economy",
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "All nine allocations and legend fit 720p.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/economy-allocation.png",
+          "sha256": "62508ab5693f7127af15d4f4e28bf3146e17fa5cba6129faf6de2cd4cf279ab4",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-allocation.png",
+            "sha256": "34b0fc1b36cb39501d7964850332a774f7b0583b6509a3af509e7622d75ef95f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-allocation-1280.png",
+            "sha256": "71494d08200cd54dcf661f0500bf558142eeabcc7a7524d9161d11c91e4c3410"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/economy-allocation.png",
+          "sha256": "e401147446aeb25670cc946820eb048513be3fa149dc316d909e63653c5fa896",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-allocation.png",
+            "sha256": "34b0fc1b36cb39501d7964850332a774f7b0583b6509a3af509e7622d75ef95f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-allocation-1440.png",
+            "sha256": "e64374c0491186282861de9dc32196d8b1ca35247ef19acb0a4f321c49e13b2b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "economy-fees",
+      "family": "economy",
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Retained withdrawal fee and content/contract season difference visible.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/economy-fees.png",
+          "sha256": "c7f7931ee788b47b22d720f909908fad12f96d9fc7c743512cde88bcd94ec59a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-fees.png",
+            "sha256": "45ddc27e75f0d4cc46d3c958cb8534cb66f8b00cb5d75c5c6486118a508d230d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-fees-1280.png",
+            "sha256": "c298e847c4c5e751c9ea88c75c70d0a51c233037c03b6e9aabfd637d45587098"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/economy-fees.png",
+          "sha256": "f2f927645b6ad3e58fea9359d00b34326eed179abc51baa6dc532663794d3459",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-fees.png",
+            "sha256": "45ddc27e75f0d4cc46d3c958cb8534cb66f8b00cb5d75c5c6486118a508d230d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-fees-1440.png",
+            "sha256": "f13b8f435d694e3a32f358103c42b5145638e5b4b0056a49587824d3b1538177"
+          }
+        }
+      ]
+    },
+    {
+      "id": "economy-odds",
+      "family": "economy",
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 8
+      },
+      "averageScore": 7.8,
+      "review": "Live rules table is readable; still a table-heavy presentation.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/economy-odds.png",
+          "sha256": "831b1aa61adae9bb11c3b81e088ad889d4d5635813f0b1c69a54da9df3447e69",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-odds.png",
+            "sha256": "0a76837958b03e9ed248e27cfc7e8c6814fa305bd044371ae8d0aeb44b4c572f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-odds-1280.png",
+            "sha256": "2cc9ff8a1b27e754fcb78fb559ac869b2402358b27c6fa6648a20054b68e4534"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/economy-odds.png",
+          "sha256": "9b1ac6046355d07f9187fda11036f62f08638f36361b4756d91f51f620efd755",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/economy-odds.png",
+            "sha256": "0a76837958b03e9ed248e27cfc7e8c6814fa305bd044371ae8d0aeb44b4c572f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/economy-odds-1440.png",
+            "sha256": "cde6893f479567310ad8c092b479ea26b5b1158d17460af7d9395b1515498aed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "field-guide",
+      "family": "guide",
+      "visibleWords": 21,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Original mascot with short lessons and stable navigation.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/field-guide.png",
+          "sha256": "15d1511591f8ecbd5a4e06394e9d20eb5e2dba27b2ee20bafa25084d46ab4ae6",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/field-guide.png",
+            "sha256": "62666b6e774d6bee6b53ace71539f20e349fab22ac7379fddebcfb6199c28590"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/field-guide-1280.png",
+            "sha256": "b63cd2cfe6a42eea21d5c57902bb9fa0de8f923ed18820c11e492dd7917a14f2"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/field-guide.png",
+          "sha256": "6d30a46c58940c0e85898e18de31c5e261f2740cc271522a573388501f026f42",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/field-guide.png",
+            "sha256": "62666b6e774d6bee6b53ace71539f20e349fab22ac7379fddebcfb6199c28590"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/field-guide-1440.png",
+            "sha256": "6d8a952ac9ecde48183f6f0a99b2fc6e49b35d373907748849ccb573aea1f458"
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "family": "settings",
+      "visibleWords": 20,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Native import textarea/selects remain prominent; language selector absent.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/settings.png",
+          "sha256": "d083503fc140cbe5184b6cdb41d62992733fb395d40d4a9073756d5ebd7a4b3a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/settings.png",
+            "sha256": "0d6ee5fad0490fbfef4270cb9bd1cd74e0979bb8bd93584531b8f6ad779db5c2"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/settings-1280.png",
+            "sha256": "4eb72e401f7f9e9ab5ffaa61a1a1c34790b1e75ffe616244e6d5743be748a616"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/settings.png",
+          "sha256": "982af40dbac588c9548a4ee07f5ee56c4e1bdd98a696c6bb2167fe0728ac6cb3",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/settings.png",
+            "sha256": "0d6ee5fad0490fbfef4270cb9bd1cd74e0979bb8bd93584531b8f6ad779db5c2"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/settings-1440.png",
+            "sha256": "4733ab89a6708e1920536867b3a23aee9c4d81b0321608b0bdd25da2d502c831"
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings-audio",
+      "family": "settings",
+      "visibleWords": 23,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Per-bus mixer works but feels like an app popover.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/settings-audio.png",
+          "sha256": "b111240eb47e3c6d8f1b8ef39d6ad5462ab3f95faeeed83d14c9b1706235e282",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/settings-audio.png",
+            "sha256": "070309e10b4cda8fdbafe7a67e58724b4ea7e99f89e11f8baefde418cda10a53"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/settings-audio-1280.png",
+            "sha256": "9573def1e01b7854b8cb96467de803d0966bd630713af1b52c6da63305a4c784"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/settings-audio.png",
+          "sha256": "7506ce830f1b22c5c723a0281e0771694c7b178e905c40842aa9a93651e732fd",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/settings-audio.png",
+            "sha256": "070309e10b4cda8fdbafe7a67e58724b4ea7e99f89e11f8baefde418cda10a53"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/settings-audio-1440.png",
+            "sha256": "900eae92f1cab0aadccdce8589cb6475e10db677fa95b1afb9cf33db061ed23d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "quests-daily",
+      "family": "quest",
+      "visibleWords": 10,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Seven reward tiles and one enabled claim.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/quests-daily.png",
+          "sha256": "118c9fbd56d7f3df8b6cd08dcf31646f479e977a91fff23d257329072b070991",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/quests-daily.png",
+            "sha256": "305acc156af171d27902d39387e78502180009e362c09d6f7a189a3ea6d54d6e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/quests-daily-1280.png",
+            "sha256": "1357d7c22e53b1541e06d7799f101999182cd15947afdf5909dfb55b6ef74ce7"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/quests-daily.png",
+          "sha256": "18c3d3b98f27948e7d473c9a452973646b2760791eb473d1b8402e8698cdce3a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/quests-daily.png",
+            "sha256": "305acc156af171d27902d39387e78502180009e362c09d6f7a189a3ea6d54d6e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/quests-daily-1440.png",
+            "sha256": "4900f6e37f39957635a2d68b670d0ae5f2ab873c44ce2d682e1eb3b5f220dace"
+          }
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "family": "quest",
+      "visibleWords": 11,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Real weekly reward progress instead of repeated login gifts.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/events.png",
+          "sha256": "b67be723266279052ca0ff2506b83e15a383d8f07d66f877d130a5c9389638cb",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/events.png",
+            "sha256": "3fb0ecfb22c26b2ae1aebcce94e96be39f0d1edb4968a9bfd85512c58c04dd8b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/events-1280.png",
+            "sha256": "a6f255f2a3d78832d621b00083a40e5f90c2f46ebcd9d73640d0d3dfb9dcc8aa"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/events.png",
+          "sha256": "d85f5feae99e55eeda06213f5d5071c7121172dcc3ea7d6074c3914ec3ea20a3",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/events.png",
+            "sha256": "3fb0ecfb22c26b2ae1aebcce94e96be39f0d1edb4968a9bfd85512c58c04dd8b"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/events-1440.png",
+            "sha256": "e1b84dbac6a28764c99234296f1e960492d2cd3739192978e19a208afe74622b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chapter-map",
+      "family": "map",
+      "visibleWords": 14,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Existing geometric route remains; backdrop alone is not a painted world-map rebuild.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/chapter-map.png",
+          "sha256": "87daed4593517c6af47dcda56a8ac921c2ee6c6e486046b1d4654c179580dd2d",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/chapter-map.png",
+            "sha256": "cea01dd3eb9446317323cf4bc0d9d1f38949cb4e10b85d0ce946618be339982d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/chapter-map-1280.png",
+            "sha256": "944b7059c30dc752b980271080bb948b7e8e4dd79bd13ec4c5e301d7ab7e9dab"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/chapter-map.png",
+          "sha256": "a63eb2081d0d6970b0e0e77c6523bba83edbd3b86591fc04bcd1294bec3dce4b",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/chapter-map.png",
+            "sha256": "cea01dd3eb9446317323cf4bc0d9d1f38949cb4e10b85d0ce946618be339982d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/chapter-map-1440.png",
+            "sha256": "5801bd4f23575a312053f516e092ec9286332e102e9cfc61fd5887d8157add6b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "battle-prep",
+      "family": "result",
+      "visibleWords": 14,
+      "plainTextButtons": 4,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 6,
+        "consistency": 6
+      },
+      "averageScore": 7,
+      "review": "Owned wrapper rebuilt; protected A stage still has four plain/glyph controls. Exact request sent to A.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/battle-prep.png",
+          "sha256": "938043f64e329c8ae80b5779662a34d9d1df3bc1270c7263d139a966a6199dfb",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/battle-prep.png",
+            "sha256": "d3a0e6615abb081d10aa0b3d32449175a56ebe0701960e38f6b95471f2396e18"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/battle-prep-1280.png",
+            "sha256": "9c72fb5ac74b1346e0db4c94efeb726c16200e38b8c6860e07902de00ae60756"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/battle-prep.png",
+          "sha256": "8b5376328d0f24b316b83af873778cfed74dd97df67d156a650bf6b0fc64a1f5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/battle-prep.png",
+            "sha256": "d3a0e6615abb081d10aa0b3d32449175a56ebe0701960e38f6b95471f2396e18"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/battle-prep-1440.png",
+            "sha256": "f064ace45834690a68b45fe7920dcd4d675c0cfc757e60fa03a91604c5036921"
+          }
+        }
+      ]
+    },
+    {
+      "id": "victory",
+      "family": "result",
+      "visibleWords": 4,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 9,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Original title plate, radial burst, hero pedestal and actual reward tiles.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/victory.png",
+          "sha256": "40b4bc0e5ef63f243cd0ce86022b2026a81fdc01dffc94810e143401ea153d0e",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/victory.png",
+            "sha256": "7811a3af1b432e9be45de322ee55a784c417a0baee0d60627dbbd1fb2b434881"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/victory-1280.png",
+            "sha256": "630e4eec254496b421b2eddf028b9c30e8d855e06076a3665abe7dd727f0ce22"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/victory.png",
+          "sha256": "43865a7d4d996aee3b1c9ad5637e66f8aac2e991367c4404f6c21f0231c7a225",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/victory.png",
+            "sha256": "7811a3af1b432e9be45de322ee55a784c417a0baee0d60627dbbd1fb2b434881"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/victory-1440.png",
+            "sha256": "b5f1cc325d8187e3dea2d7b76c2dd590c1ff879249f9d3dade723d1753b75de3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "defeat",
+      "family": "result",
+      "visibleWords": 6,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 9,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Distinct result plate and team-improvement action.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/defeat.png",
+          "sha256": "ff69f20e2a5e15f13116386c5a3a612a42470af9c08becafca3dc7801d6fec8d",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/defeat.png",
+            "sha256": "6a7b78555b423126aaa1546d7173905cb61e7b7849c5055184d4c373ed1500d0"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/defeat-1280.png",
+            "sha256": "e433b3b8f9983239c90b88d95671eba63917d0208dfd23931ac010caa3522650"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/defeat.png",
+          "sha256": "197c3e4aba2f56151e1080e5263790470412e23b4713d55ddf48d8ab6b5973d5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/defeat.png",
+            "sha256": "6a7b78555b423126aaa1546d7173905cb61e7b7849c5055184d4c373ed1500d0"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/defeat-1440.png",
+            "sha256": "21efff5803798cdc7ac6f8078d5034e0ffbd15be6290a9c513c4568ec4116e49"
+          }
+        }
+      ]
+    },
+    {
+      "id": "error-offline",
+      "family": "error",
+      "visibleWords": 20,
+      "plainTextButtons": 1,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.4,
+      "review": "Warning and dismiss use inline SVG and remain available without network.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/error-offline.png",
+          "sha256": "a9fcbcf5321d707a82e53860c76c4c7ab6e8a4e4f410ccbf3c78e29861fedb7c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/error-offline.png",
+            "sha256": "02d325081ca878468e106efd6a5e81b09fdf363c95f312db3ae1fcd4a354167e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/error-offline-1280.png",
+            "sha256": "c67d5f2625dad8a13b8defa25e81a459a11090dad5512b25110e5b0457bdb971"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/error-offline.png",
+          "sha256": "695d63da407cb94b5e11c50575c1e247bd27b63a7a59073498442193abeb32e3",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/error-offline.png",
+            "sha256": "02d325081ca878468e106efd6a5e81b09fdf363c95f312db3ae1fcd4a354167e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/error-offline-1440.png",
+            "sha256": "a78344dc77adf8129022e9db5b47a30514fa6c1cee8d74148cc88157a50989e8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-panel",
+      "family": "wallet",
+      "visibleWords": 16,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Native dialog focus repaired; needs a stronger account/object composition.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-panel.png",
+          "sha256": "fd36649345196039a5842e4700a3cc19ccd67e6601555bc656a5760ffda1c764",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-panel.png",
+            "sha256": "dd87b88b5df0b5e949163fb016b3620df2fbe8d1282b24f8b888645ba43c311c"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-panel-1280.png",
+            "sha256": "654f2762f2dcdfc776ae25831a49ccfd1bbe542cb0293b685c946c85b43a0232"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-panel.png",
+          "sha256": "fd62288a8ab8fd2032b14338bf2359288e284bbcf5c7336463255f2fe39ddcc1",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-panel.png",
+            "sha256": "dd87b88b5df0b5e949163fb016b3620df2fbe8d1282b24f8b888645ba43c311c"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-panel-1440.png",
+            "sha256": "20da15dc374d03c7284ba7cea549ec3fef62716905094e49b4c6ba859406df6d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-browse",
+      "family": "market",
+      "visibleWords": 17,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Large listing tiles with exact price and purchase confirmation. Legacy item art retained.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/market-browse.png",
+          "sha256": "198ab42d678631473eb783e82b5e53561c2da0ff520abb9e6f02fbbe386f9fea",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-browse.png",
+            "sha256": "566d5828127fb21a7c20cfcad7521cdeb458edbb8e25c8edfd0d80ee755acb6a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-browse-1280.png",
+            "sha256": "2c39bce82439ba4c51020183322190e31966bf9853578001929b64b61c9eaff5"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/market-browse.png",
+          "sha256": "1fbd3849556b8a678ff3b89c881d46e68d2fc73f8e1f880d330a39b720bee3b5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-browse.png",
+            "sha256": "566d5828127fb21a7c20cfcad7521cdeb458edbb8e25c8edfd0d80ee755acb6a"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-browse-1440.png",
+            "sha256": "ccc5478cb23a26ae5adb1861f60fad6db205b9bbf541d136acfeaa1fa0186725"
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-buy",
+      "family": "market",
+      "visibleWords": 3,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Confirmed local receipt and explorer link; no live transaction.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/market-buy.png",
+          "sha256": "579bfcfa6cae570fa7c9aa805c0276f65e522a20762a4d6055fc3d7350908b00",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-buy.png",
+            "sha256": "565cdab417a303110bf3b33310f3192635cafa4dbb002a18594d8ad573793014"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-buy-1280.png",
+            "sha256": "042a1bfd144b86719afd01cdc481b1708388239a2710ff8592118dc6270e5134"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/market-buy.png",
+          "sha256": "9f80dc309b4a9257fec7b3eb585145a3eba79ccb9778b3bd3fff8da65bbbe1d5",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-buy.png",
+            "sha256": "565cdab417a303110bf3b33310f3192635cafa4dbb002a18594d8ad573793014"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-buy-1440.png",
+            "sha256": "7d7cea8486452168a31e3ee7b2e8c6ea38855efbedc7f7c8012268ff3a6a77b0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-my-listings",
+      "family": "market",
+      "visibleWords": 13,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Explicit empty state in the same painted market.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/market-my-listings.png",
+          "sha256": "54c75fcb78a46996dd0364ba6b725faea24cc75c87e7c98d244338273b2ad3ea",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-my-listings.png",
+            "sha256": "90f1c5c5c8ad700652bd8ed0a4df4972695fe7499e123f1d9f3c1b79a9b36b9f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-my-listings-1280.png",
+            "sha256": "c55c0b5363bfbe1d5e390f765126b28f0da2926b3d6ac45dc08373b603f732ac"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/market-my-listings.png",
+          "sha256": "6a64e6149d170b22667a0a9fc8376948411185bd0e19dd9784f1e7b61bafa9f8",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-my-listings.png",
+            "sha256": "90f1c5c5c8ad700652bd8ed0a4df4972695fe7499e123f1d9f3c1b79a9b36b9f"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-my-listings-1440.png",
+            "sha256": "cef92f940914cb1f7fafb5214605c5150ba2df02ad6db58f3ad48cb45ff550df"
+          }
+        }
+      ]
+    },
+    {
+      "id": "market-list",
+      "family": "market",
+      "visibleWords": 6,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Dedicated item/price/fee confirmation dialog.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/market-list.png",
+          "sha256": "573e0cf6f26bc3f1a9737edf4fac523b08ebe1c751559e7549f4e07529b31636",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-list.png",
+            "sha256": "34d88d8df315ea14c2fc96a1741219aeaf3aca13d0e3fef9915e92b0f899448d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-list-1280.png",
+            "sha256": "6650e41b1a1f41ff300c4610dc0bd140dac1f86aaf0d69837d549295ff2ee3d3"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/market-list.png",
+          "sha256": "053a79936403506470dc959e2b15d80cfff80d514de31a9b5b975240015d7a52",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/market-list.png",
+            "sha256": "34d88d8df315ea14c2fc96a1741219aeaf3aca13d0e3fef9915e92b0f899448d"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/market-list-1440.png",
+            "sha256": "7ceb35e88bf7310389a93fe6a500cda2af3d4ae50c8c4d41bebeb03837199631"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-cafe",
+      "family": "wallet",
+      "visibleWords": 17,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Six-icon rail and café action objects replace fourteen text tabs.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-cafe.png",
+          "sha256": "9b14cd9e55ac857f3749526c87c325bf9256caa81fed61562bc2f25c0d1abe23",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-cafe.png",
+            "sha256": "c638ca84b98bc59618fd38a62c81b21168f5608f7818d7404c405e2402674b06"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-cafe-1280.png",
+            "sha256": "bfe3f918f49351d0489f1bc5b4a167d6f5bac1dae64de49885c0a72fce8a9e1a"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-cafe.png",
+          "sha256": "0d0f4a7229556ea9d86eb1c429a35641701c9577000126748814077bfa915834",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-cafe.png",
+            "sha256": "c638ca84b98bc59618fd38a62c81b21168f5608f7818d7404c405e2402674b06"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-cafe-1440.png",
+            "sha256": "2b6bf2486f39d5c4a0961db2b6c24978a96117ee0f5f36191c139940ef795108"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-deed",
+      "family": "wallet",
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 9,
+        "hierarchy": 9,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.6,
+      "review": "Quest-gated free Deed follows the real server/Anvil flow.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-deed.png",
+          "sha256": "2f9c18808ee95365ca2e3079c3208ef555f1936d45b21ad0d153564b2edb1a73",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-deed.png",
+            "sha256": "bcaf35efa909ab35c1e1b63111ec357c86ac8f1a440ffb6dbcfc4eadb2dad4b6"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-deed-1280.png",
+            "sha256": "c3891b2dfe15ed8915285cd6c27e8197b91309a8f85b4ef29910d716152798ed"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-deed.png",
+          "sha256": "a9cb72ae513a2c6f83058f80c1460f07eb863639c826ffc8cada829241d44bf0",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-deed.png",
+            "sha256": "bcaf35efa909ab35c1e1b63111ec357c86ac8f1a440ffb6dbcfc4eadb2dad4b6"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-deed-1440.png",
+            "sha256": "e54805da3726e06bbcd9db961543476041dcbb1eeac36451641d109a59eb34d5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-withdraw",
+      "family": "wallet",
+      "visibleWords": 15,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Exact retained/burned/received quote shown before reservation.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-withdraw.png",
+          "sha256": "f9421888863495afeff2b78531833b0040fe51388143f1376e37ad61d5f89981",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-withdraw.png",
+            "sha256": "bb4a1e87c940f7a89811bbd1109ddb7f909892bedfa0c02d4f554ea3a41a3909"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-withdraw-1280.png",
+            "sha256": "b35d57b719ad03ffa84d1e5c7b5bd5782f66d9f1c4c03918f670da59677feb81"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-withdraw.png",
+          "sha256": "eaf7635dade513f85c5a6f608cabcfe8e561bfe2117c72bbe40fd29c9cdb5a9f",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-withdraw.png",
+            "sha256": "bb4a1e87c940f7a89811bbd1109ddb7f909892bedfa0c02d4f554ea3a41a3909"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-withdraw-1440.png",
+            "sha256": "27022ab169c62b694bcd06e25ccdd3651211700c18740e11cc523184d2cf0255"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-seal",
+      "family": "wallet",
+      "visibleWords": 16,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8,
+      "review": "Eligible gear tiles and recipe costs preserved.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-seal.png",
+          "sha256": "001e45a4dd53ca462250b7f9f182db7486982cece039c0a142c4d2919b7f9b76",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-seal.png",
+            "sha256": "d4f9cea89154ea19d0d3dcadac516130672fc951b47cdadd33a7df737bc55212"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-seal-1280.png",
+            "sha256": "a3f650f807bbceb270288d6737e1c837dae26b6e26e9e4391bc0e09bb12ff25e"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-seal.png",
+          "sha256": "0ec09baa23f5917257df9079e7bf0fc594ff796cee8b3c3f828bc01b7484ddc6",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-seal.png",
+            "sha256": "d4f9cea89154ea19d0d3dcadac516130672fc951b47cdadd33a7df737bc55212"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-seal-1440.png",
+            "sha256": "d21b7d88a3bc743de4f5991511559e1929eafd42f972502ffc7c9f39fb55e539"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-fusion",
+      "family": "wallet",
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Ingredients and primary confirmation fit; the bottom recovery/help controls still need more room at 720p.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-fusion.png",
+          "sha256": "12fc8395157b469890d5cc23b15c5f006222ab876eb0934eb09ac99677680f46",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-fusion.png",
+            "sha256": "31e754a99d52c356acbc8bacbcfba6526ba3589ee89e5dc3a2375928a7ecf38e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-fusion-1280.png",
+            "sha256": "ece3309a9f8495ad341f2deae1d5d03c90ca5531b194a7cb81cc6c432f9aebf2"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-fusion.png",
+          "sha256": "61f5d8fa69806a3cfd86504601e444f2fd0b5db4a799840e4aa663c614be5242",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-fusion.png",
+            "sha256": "31e754a99d52c356acbc8bacbcfba6526ba3589ee89e5dc3a2375928a7ecf38e"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-fusion-1440.png",
+            "sha256": "d0cc8e32874a0da002dc246b15c01944e254adec0807a5e7a664e581d231773a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-spool",
+      "family": "wallet",
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Actual cosmetic preview and bound Spool cost.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-spool.png",
+          "sha256": "2e3e29e0ff06d35c51c610cf23c18e4ac050807b61f33fc23df7ecd5593ee5ee",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-spool.png",
+            "sha256": "6075ee38db0958ffbe681997e8d424318a371c95cf04fc9f3cea41faf7cb3a65"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-spool-1280.png",
+            "sha256": "f6aed1145d0459965e0f0af161c2f7ce69c61c3a73499e9f95bd3def7046bde1"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-spool.png",
+          "sha256": "36eeed1784306d614e3c359c11a83a76719092f4c6c3fb472b3773b5334e1300",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-spool.png",
+            "sha256": "6075ee38db0958ffbe681997e8d424318a371c95cf04fc9f3cea41faf7cb3a65"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-spool-1440.png",
+            "sha256": "14f1a24e57e992b7dbbc5ac3382a250d3c52ece624b254661c0191247c7c97a8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-history",
+      "family": "wallet",
+      "visibleWords": 10,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 6,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Receipt cards still use ordinal labels; transaction-type naming needed.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-history.png",
+          "sha256": "a8f2cc295252ba4fb2bb90d5de5558693367ddcca99f97f3e4250811a53d2387",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-history.png",
+            "sha256": "e4abef253b2656b79edd531c0944692e3c9c216618caa84d93ae8035a6148072"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-history-1280.png",
+            "sha256": "7f227fc55a3d77685d7292ad6c81db502efeac20172571985bb0169f026f85f8"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-history.png",
+          "sha256": "ad33710858866859c8c722010559b1d2f3b62fd5a533555759c99486f9e57b6c",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-history.png",
+            "sha256": "e4abef253b2656b79edd531c0944692e3c9c216618caa84d93ae8035a6148072"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-history-1440.png",
+            "sha256": "06992a7c5a2df12f0302573eab6ec4d4e75c01faaba97db22cc6a8d11dc70ea5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-style",
+      "family": "wallet",
+      "visibleWords": 14,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 8,
+        "hierarchy": 8,
+        "textDiet": 9,
+        "gameFeel": 8,
+        "consistency": 8
+      },
+      "averageScore": 8.2,
+      "review": "Large owned cosmetic preview with swatches.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-style.png",
+          "sha256": "305ffd6808e223b65d030e7f2a58e776c33728ff0093d3e62a63029c27d1595a",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-style.png",
+            "sha256": "73cf085e0fcee5cfb0b3e11c714c117a3cc7e9d13f4d9cf646c0cc5775d10c95"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-style-1280.png",
+            "sha256": "e8abaaebd677a7357f26bfe9850c78477c1f26de406bdc7e51789475f371737e"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-style.png",
+          "sha256": "52391b63fc4a614c0297988982e03320082012c15e1a706a237f93ce03c8667e",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-style.png",
+            "sha256": "73cf085e0fcee5cfb0b3e11c714c117a3cc7e9d13f4d9cf646c0cc5775d10c95"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-style-1440.png",
+            "sha256": "60fe3fe1708a1f7b53b686e4da895413bb7ec55bca32174af002171049bef8fa"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-ornament-forge",
+      "family": "wallet",
+      "visibleWords": 18,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 9,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.4,
+      "review": "Workshop and original preview added; input selects and abstract mark remain too generic.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-ornament-forge.png",
+          "sha256": "1d8b942e487c3f4a62451121d61adc5230003f8d4904c4786df0e5df3b6c6a9e",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-ornament-forge.png",
+            "sha256": "31227409cec417b68b399e0b70eba2e7dc637b3ab3c6644e9beee931b92a8413"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-ornament-forge-1280.png",
+            "sha256": "211c4d1231181a9c797dd4acaf9fd537a98ca80b7bef1406d3e7152dfbad48de"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-ornament-forge.png",
+          "sha256": "1e79cc414cd37ec05a8294dd7df4445af1c2bb564adc2f3b3a82d3e67f556263",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-ornament-forge.png",
+            "sha256": "31227409cec417b68b399e0b70eba2e7dc637b3ab3c6644e9beee931b92a8413"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-ornament-forge-1440.png",
+            "sha256": "021c9eded9e8bbfb111b77688bb41dfb79a3349818ce882bc0ca5a764790d7ce"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wallet-offline",
+      "family": "wallet",
+      "visibleWords": 25,
+      "plainTextButtons": 0,
+      "scores": {
+        "artRichness": 7,
+        "hierarchy": 7,
+        "textDiet": 8,
+        "gameFeel": 7,
+        "consistency": 7
+      },
+      "averageScore": 7.2,
+      "review": "Recovery remains functional; underlying ornament composition still below target.",
+      "redesignIterations": 2,
+      "iterationEvidence": [
+        "U3-ITERATIONS.md"
+      ],
+      "shots": [
+        {
+          "width": 1280,
+          "height": 720,
+          "path": "reports/v3-shell/b2/shots/ui-after-1280/wallet-offline.png",
+          "sha256": "e49cf51f781e56ab45301598c016d2f78fdef47f130b0ac78382e3f848bda31f",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-offline.png",
+            "sha256": "f307a73ed0a8bb6a4a3f395d872f0d7f078fe8d985b3b6eadbb11d424ee83413"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-offline-1280.png",
+            "sha256": "5f431d0c563bc52f750971a5478b0f5ca5b81be5aa99e32103e786331b51519c"
+          }
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "path": "reports/v3-shell/b2/shots/ui-after-1440/wallet-offline.png",
+          "sha256": "a2f3c4eace5fe22d364ae5d92113fc3d1a8b281e4977314dcc24d681a71a24f8",
+          "before": {
+            "path": "reports/v3-shell/b2/shots/ui-before/wallet-offline.png",
+            "sha256": "f307a73ed0a8bb6a4a3f395d872f0d7f078fe8d985b3b6eadbb11d424ee83413"
+          },
+          "comparison": {
+            "path": "reports/v3-shell/b2/shots/ui-before-after/wallet-offline-1440.png",
+            "sha256": "333f27e98fb6f103375190008650247bdee60f78a6625b12879c3ab86e97e6b7"
+          }
+        }
+      ]
+    }
+  ],
+  "systemFontCount": 0,
+  "unicodeIconCount": 0,
+  "e2e": {
+    "exitCode": 0,
+    "passed": 108,
+    "log": {
+      "path": "reports/v3-shell/b2/tests/u3-accept-flows.log",
+      "sha256": "73a19ca01536b81e96dab5cf69c8246d6df16b2c1343abc5ed16cec6ecaa1e58"
+    }
+  },
+  "passingScreens": 32,
+  "remaining": [
+    "cats-list",
+    "hero-level-star",
+    "hero-awakening",
+    "hero-skills",
+    "hero-bonds",
+    "hero-gear",
+    "bag-item-detail",
+    "bag-manage",
+    "bag-consumables",
+    "invitations-rates",
+    "season-track-countdown-edition",
+    "season-guide",
+    "economy-odds",
+    "settings",
+    "settings-audio",
+    "chapter-map",
+    "battle-prep",
+    "wallet-panel",
+    "wallet-fusion",
+    "wallet-history",
+    "wallet-ornament-forge",
+    "wallet-offline"
+  ],
+  "status": "PARTIAL; not done"
+}

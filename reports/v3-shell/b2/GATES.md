@@ -52,15 +52,15 @@ PASS U2.files: measured 76; required >= 60 new art files with provenance
 PASS U2.bytes: measured 3997810; required <= 8000000 bytes new UI art
 PASS U2.inputs: measured 76/76; required 0 reference frames as generator inputs; text/own images only
 PASS U2.sheet: measured 947189; required nonempty reports/v3-shell/b2/shots/ui-kit.png
-FAIL U3.screens: measured missing; required >= 24 rebuilt screens
-FAIL U3.coverage: measured 0/53; required every U1 screen rebuilt
-FAIL U3.images: measured missing; required 1280x720 AND 1440x900 before/after images per screen
-FAIL U3.words: measured missing; required <= 25 visible words every screen
-FAIL U3.buttons: measured missing; required <= 2 plain text buttons every screen
-FAIL U3.fonts: measured missing; required 0 system fonts
-FAIL U3.glyphs: measured missing; required 0 Unicode glyph icons
-FAIL U3.scores: measured missing; required average >= 8; every criterion >= 7
-FAIL U3.flows: measured missing; required passing test + SHA-256-verified log
+PASS U3.screens: measured 54; required >= 24 rebuilt screens
+PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
+PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
+PASS U3.words: measured 54/54; required <= 25 visible words every screen
+FAIL U3.buttons: measured 53/54; required <= 2 plain text buttons every screen
+PASS U3.fonts: measured 0; required 0 system fonts
+PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
+FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
+PASS U3.flows: measured 108; required passing test + SHA-256-verified log
 FAIL U4.tour: measured missing; required >= 60s WebM with sound, <= 25000000 bytes
 FAIL U4.cls: measured missing; required 0 layout shifts > 0.05 CLS
 FAIL U4.fps: measured missing; required median >= 60 fps in panel transitions
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1014; required nonempty reports/v3-shell/b2/STATUS-VI.md
-PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
+PASS SY3.status: measured 1125; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

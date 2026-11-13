@@ -1,0 +1,50 @@
+landing 22 words 1 plain buttons
+sign-in 13 words 1 plain buttons
+cats-list 24 words 2 plain buttons
+hero-skills 25 words 2 plain buttons
+hero-gear 21 words 2 plain buttons
+season-track-countdown-edition 11 words 1 plain buttons
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 20000ms exceeded.
+Call log:
+[2m  - waiting for getByText('Season guide', { exact: true })[22m
+[2m    - locator resolved to <span>Season guide</span>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    39 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not visible[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at /Users/bao/taskbar-hero-chain/scripts/ui/rebuild-b2.mjs:70:49 {
+  log: [
+    "  - waiting for getByText('Season guide', { exact: true })",
+    '    - locator resolved to <span>Season guide</span>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not visible',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    39 × waiting for element to be visible, enabled and stable',
+    '       - element is not visible',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

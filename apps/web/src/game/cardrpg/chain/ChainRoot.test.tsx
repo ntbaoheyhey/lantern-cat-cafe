@@ -1,5 +1,5 @@
 import {act, cleanup, fireEvent, render, screen} from '@testing-library/react';
-import {afterEach, expect, it, vi} from 'vitest';
+import {afterAll, afterEach, beforeAll, expect, it, vi} from 'vitest';
 import {ChainDock} from './ChainRoot';
 
 vi.mock('wagmi', () => ({
@@ -7,6 +7,19 @@ vi.mock('wagmi', () => ({
   useConnect: () => ({connectAsync: vi.fn(), connectors: []}), useSignMessage: () => ({signMessageAsync: vi.fn()}),
 }));
 vi.mock('../../../wallet/WalletProvider', () => ({useSession: () => null, useAuthContext: () => ({api: {}, store: {}})}));
+const nativeDialog = Object.fromEntries(['showModal', 'close'].map(key => [key, Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype, key)]));
+beforeAll(() => {
+  Object.defineProperties(HTMLDialogElement.prototype, {
+    showModal: {configurable: true, value() {this.setAttribute('open', '');}},
+    close: {configurable: true, value() {this.removeAttribute('open');}},
+  });
+});
+afterAll(() => {
+  for (const [key, descriptor] of Object.entries(nativeDialog)) {
+    if (descriptor) Object.defineProperty(HTMLDialogElement.prototype, key, descriptor);
+    else Reflect.deleteProperty(HTMLDialogElement.prototype, key);
+  }
+});
 afterEach(() => {cleanup(); vi.unstubAllEnvs();});
 it('keeps the integrated battle controls clear until wallet access is requested', () => {
   vi.stubEnv('VITE_CHAIN_DEMO', '1');
@@ -14,7 +27,7 @@ it('keeps the integrated battle controls clear until wallet access is requested'
   expect(screen.queryByRole('button')).toBeNull();
   act(() => window.dispatchEvent(new Event('chain:wallet')));
   expect(screen.getByRole('button', {name:'Play as guest'})).toBeTruthy();
-  expect(document.activeElement).toBe(screen.getByRole('region', {name:'Fuji panel'}));
+  expect(document.activeElement).toBe(screen.getByRole('dialog', {name:'Fuji panel'}));
   fireEvent.keyDown(document.activeElement!, {key:'Escape'});
   expect(screen.queryByRole('button')).toBeNull();
   act(() => window.dispatchEvent(new Event('chain:wallet')));
@@ -32,5 +45,5 @@ it('enables guest sign-in in the demo and ignores room events when chainLoop is 
   render(<ChainDock/>);
   expect(screen.getByRole('button', {name: 'Play as guest'})).toBeTruthy();
   act(() => window.dispatchEvent(new CustomEvent('chain:open', {detail: 'Market'})));
-  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(screen.queryByRole('dialog', {name: 'Fuji market'})).toBeNull();
 });

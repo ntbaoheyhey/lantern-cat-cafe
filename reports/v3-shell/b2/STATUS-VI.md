@@ -1,11 +1,16 @@
-# Tiến độ V3B2
-- U2 đạt: 76 ảnh UI gốc, 3,997,810 byte / 8 MB; đủ 34 biểu tượng, 5 nền, 6 tư thế mèo hướng dẫn.
-- Mỗi ảnh có prompt, giấy phép và mã băm; không đưa ảnh tham khảo của game khác vào công cụ tạo ảnh.
-- Trình duyệt tải đủ 76 ảnh, không lỗi; font/icon lint và typecheck đạt.
-- Bộ test cục bộ đạt: 2.503 web, 724 server; vẫn ghi rõ 2 expected fail và 11 skip cũ trong rules.
-- U3 đang làm: 53 trạng thái cần dựng lại và chụp ở hai kích thước; chưa nhận đạt.
-- Sửa lỗi biểu tượng vai trò che chân dung mèo và chữ khó đọc trong hộp hướng dẫn.
-- V chỉ PARTIAL ở nhận dạng giọng nói sau 9 vòng; các cổng còn lại đạt.
-- Còn phối âm S5–S7, mô phỏng/tinh chỉnh kinh tế E1–E5, tutorial T1 và số liệu Fuji C1.
-- Bạn triển khai ngày 20/11 theo USER-DEPLOY-VI.md; không triển khai hay đổi hợp đồng trong phiên này.
-- Không cần phản hồi để tiếp tục; các mốc đồng bộ 16/18 và khóa 19/11 giữ nguyên.
+# Trạng thái B2
+
+- Đã hoàn tất G0, R, S1–S4, U1–U2.
+- V: PARTIAL, chỉ còn ngưỡng nhận dạng lời sau 9 vòng xử lý; không coi là hoàn tất.
+- U3: PARTIAL, 32/54 trạng thái đạt toàn bộ tiêu chí màn hình.
+- 54/54 đạt giới hạn 25 từ; đủ ảnh trước/sau ở 1280×720 và 1440×900.
+- Còn 22 trạng thái cần cải thiện hình ảnh; mỗi trạng thái đã ghi 2 vòng thiết kế.
+- Chuẩn bị chiến đấu còn 4 nút chữ trong tệp của A; đã gửi yêu cầu cụ thể.
+- Các luồng menu và Anvil cục bộ chạy được; không giao dịch mạng thật.
+- Kiểm thử: 2.508 web + 724 server đạt; typecheck đạt.
+- Game rules: 1.388 đạt, 2 expected-fail và 11 skip có sẵn được giữ nguyên.
+- Đang làm U4: chuyển cảnh, phản hồi thao tác, video có âm thanh.
+- S5–S7, E1–E5, T1, C1, E6 và polish chưa hoàn tất.
+- Chưa chứng minh kinh tế đạt mục tiêu mới hoặc bộ đếm Fuji trực tiếp.
+- Lịch đồng bộ: 16/18/19-11 lúc 12:00 UTC; chưa đến hạn.
+- Không triển khai, không merge main. Người dùng triển khai ngày 20-11 theo USER-DEPLOY-VI.md.

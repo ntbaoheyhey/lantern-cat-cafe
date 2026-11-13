@@ -55,3 +55,8 @@ U2 identity continuity: remaining guide poses and button hover/press states use 
 U2 resume review: 54 exported files loaded with no browser errors or overflow. Small-size inspection retained the currency silhouettes and result lettering, and increased corner badges to 32 px. Font declarations moved into the existing central typography file; both original typography and glyph lint commands pass without changing their scope. Reusable tab rail and explicit button types were added for the upcoming screen work.
 
 - U2 completion: retain all 74 original generated sources and export 76 runtime WebPs (3,997,810 bytes). The final 34-icon vocabulary distinguishes mint, withdraw, seal, fuse, list, buy, history and audio; each has an exact text prompt and hash. The 1.5311× backdrop upscale stays disclosed. No third-party reference frames were generator inputs.
+
+## U3 acceptance, 13 November 07:50 UTC
+
+U3 uses the explicit permitted PARTIAL condition, not a false completion: 32 of 54 states pass all per-state gates; 22 weak states retain two documented redesign rounds. All 53 baseline states and the newly added batch dialog have two-size before/after evidence. Visual scores are manual judgments after inspection, independent of word counts. The checker thresholds remain unchanged. Continue with U4; the remaining UI failures stay in the polish backlog and must not disappear from final reporting.
+The wallet is now a native modal; tests model native open/close behavior and still verify focus, Escape and default-off chain flags. Invitation odds retain readable rarity and pity labels rather than relying on repeated star icons. Offline warning and dismiss marks are inline SVG, avoiding a new asset request during network failure.
