@@ -43503,52 +43503,6 @@
       "date": "2026-11-13",
       "sourceFiles": [
         {
-          "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
-          "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
-        }
-      ],
-      "tool": "ffmpeg atempo and NumPy loop crossfade",
-      "script": {
-        "path": "scripts/audio/menu-score-tempo.py",
-        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
-      },
-      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 1.1, -18 LUFS, -4 dBTP ceiling. No reference media.",
-      "tempo": 1.1,
-      "path": "apps/web/public/audio/menu-home.webm",
-      "file": "menu-home.webm",
-      "sha256": "a73363b7e08b2105005b7621ec541412f477d52e5079d7be4f0aa7e228e9c568"
-    },
-    {
-      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "author": "MintoDog",
-      "date": "2026-11-13",
-      "sourceFiles": [
-        {
-          "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
-          "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
-        }
-      ],
-      "tool": "ffmpeg atempo and NumPy loop crossfade",
-      "script": {
-        "path": "scripts/audio/menu-score-tempo.py",
-        "sha256": "728e78b9a81834b637a710725a10be74868ab4e88fb211d037ca091de64abfcf"
-      },
-      "processing": "Original licensed menu theme, 8\u201341s phrase, one-second wrap crossfade, pitch-preserving tempo 1.1, -18 LUFS, -4 dBTP ceiling. No reference media.",
-      "tempo": 1.1,
-      "path": "apps/web/public/audio/menu-home.mp3",
-      "file": "menu-home.mp3",
-      "sha256": "07a1ab263f777bdd844396ca1d5a779bf7e30efe580129fee7f37e2e11854cca"
-    },
-    {
-      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
-      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "author": "MintoDog",
-      "date": "2026-11-13",
-      "sourceFiles": [
-        {
           "path": "assets/audio-sources/home.ogg",
           "sha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7"
         }
@@ -43609,6 +43563,75 @@
       "path": "apps/web/public/audio/menu-forge.mp3",
       "file": "menu-forge.mp3",
       "sha256": "5789f6c96de9c665b294352104ab4b219a6a5b39947cc5fe3a622ab6d2a1eef1"
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+      "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95",
+      "file": "menu-home-shaker.flac",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-home-tempo-1.1.flac",
+          "sha256": "f361819f6c5b3f71b023d4256d4095b0d4455b5ef86849ba7445871f72fe1ef2"
+        }
+      ],
+      "tool": "NumPy and SciPy original percussion synthesis; ffmpeg encoding",
+      "script": {
+        "path": "scripts/audio/publish-home-percussion.py",
+        "sha256": "44658ae15c41a6d0ce520a68401f0321e7530fc219b57472a95fd61aac355d6c"
+      },
+      "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
+      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "path": "apps/web/public/audio/menu-home.webm",
+      "sha256": "04ad52c04476e14889181f441ef664d5fdba5ce3e46b356a6b9eab22cda3ab0a",
+      "file": "menu-home.webm",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+          "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+        }
+      ],
+      "tool": "NumPy and SciPy original percussion synthesis; ffmpeg encoding",
+      "script": {
+        "path": "scripts/audio/publish-home-percussion.py",
+        "sha256": "44658ae15c41a6d0ce520a68401f0321e7530fc219b57472a95fd61aac355d6c"
+      },
+      "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
+      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "MintoDog",
+      "path": "apps/web/public/audio/menu-home.mp3",
+      "sha256": "c2cfb9c9ed4118cf8004dce55942d45476c674f50f6defd64831ac6cc4d647ea",
+      "file": "menu-home.mp3",
+      "date": "2026-11-13",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+          "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+        }
+      ],
+      "tool": "NumPy and SciPy original percussion synthesis; ffmpeg encoding",
+      "script": {
+        "path": "scripts/audio/publish-home-percussion.py",
+        "sha256": "44658ae15c41a6d0ce520a68401f0321e7530fc219b57472a95fd61aac355d6c"
+      },
+      "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
+      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
     }
   ]
 }
