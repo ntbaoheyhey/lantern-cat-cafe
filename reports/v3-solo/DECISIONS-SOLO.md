@@ -71,3 +71,7 @@ Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped fa
 2026-11-13T17:08:17.330244+00:00 Q4: four independent round21 confirmations retain the small Star miss. A200-seed diagnostic varies demand and finite opening market stock by exactly20% each, to reveal robustness constraints before selecting a final policy. This diagnostic is not final sensitivity and will not be reused for a different hash.
 
 2026-11-13T17:13:34.699093+00:00 Q4 round22: only fee changed, Star1.102623 and bot0.502630 still fail. Two local rounds mainly adjust funding; round23 changes method to joint stratified search with120 candidates plus local refinement. Native first16-item diagnosis shows roughly5.5 Worn and8.7 Fine items per account, so both polish prices matter. Demand minus20% diagnostic at200 seeds passes robust bands (burn minimum0.974281; Star maximum1.122213), but is not final sensitivity.
+
+2026-11-13T17:26:07.518039+00:00 Q5 probes start during Q4 background simulations, permitted by the solo scheduling rule. Q4 results preempt. Prior V8 measured four slower/clearer candidates per failed line; next method uses WORLD formant-preserving pitch. No production replacement or CPU gates during simulations.
+
+2026-11-13T17:31:11.169008+00:00 Q4 round23: first pilot zero-distance candidate; Star maximum1.099908, minimum burn1.013381. Independent200-seed top10 confirmation23 launched; round24 explores local margins. No policy publication or final gate claim yet.

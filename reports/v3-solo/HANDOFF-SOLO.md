@@ -5,20 +5,20 @@ NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
-NOW: Q4 active; round22 logged with Star1.102623 and bot0.502630 misses. Round23 tests joint prices/rebates.
-NEXT 1: Read round23 PID53896; local refinement running. 10/10 confirm21 candidates miss Star; all saved/pushed on B949f987bf.
-NEXT 2: Select confirmed policy, complete native/token sensitivity, then publish exact policy and E4/E5 proof.
-NEXT 3: Q5 only after Q4 acceptance; scheduled syncs remain future.
-LAST GOOD COMMIT A:577d5cc92 pushed; Q3 closure a881b1fc8, source af1e1fdf3.
-LAST GOOD COMMIT B:949f987bf1ff3f93596ceae24a4e135b85237cb8 pushed; final policy not selected.
+NOW: Q4 active; round23 first pilot PASS, Star maximum1.099908; independent confirmation23 and margin search24 running.
+NEXT 1: Read confirm23 and round24 results; do not select until independent200-seed pass.
+NEXT 2: Candidate497ba9738e passes first independent200-seed confirmation; full top10 pending. Sensitivity PID59609 runs170 assumption cases as native banks become available.
+NEXT 3: Q5 formant probes use Q4 simulation wait time; Q4 results always preempt. No audio replacement yet.
+LAST GOOD COMMIT A:58e171a219b9209ac21e5338d816ef2d56a42bf2 pushed; Q3 source af1e1fdf3.
+LAST GOOD COMMIT B:51e9d1a16e8225c419df0039f7571bee40fd2dfc pushed; round23 independent candidate pass, T-h pending.
 OPEN: Q4-Q9. Q0-Q3 have checker PASS evidence in QUEUE-SOLO; no STOP file.
-ECONOMY:22 rounds/1080 evaluations/1074 unique;10 confirmed at200 seeds; best Star1.104078 fails. Round23 active.
-DIAGNOSIS: Local fee reduction improved Star but worsened bot fairness. Change to joint stratified price/reward probes.
+ECONOMY:23 logged rounds;1200 evaluations; final policy not selected. Round23 pilot all medians/tails PASS with narrow Star margin.
+DIAGNOSIS: Joint prices/rebates passed pilot; narrow margins may not survive confirmation. No thresholds or assumptions changed.
 VALIDATION:7 search/evidence tests PASS;2/2 exact checkpoint reuse and altered-seed rejection PASS. Pilot Anvil16 receipts/18 shots; final hash pending.
-PIDS: A Vite36397; B integration4118; native37303; round23 search53896. Confirmation51245/robustness52817 completed.
-BACKGROUND JOBS: B econ/q4-jobs.json; native log tests/q3-native-sensitivity-resume.log; controlled jobs have frozen model/config checks.
-DISK-LOG:287.08GiB free; Q4/resume-disk-1719.json; removed 0 generated folders; tracked evidence retained.
+PIDS: A Vite36397; B integration4118; native37303; confirm-round2359131; round24-local-margin59132.
+BACKGROUND JOBS: Q5 onset probe PID59376 in B q5/jobs.json; B econ/q4-jobs.json; native log tests/q3-native-sensitivity-resume.log; frozen model/config checks.
+DISK-LOG:286.69GiB free; Q4/resume-disk-1733.json; removed 0 generated paths; tracked evidence retained.
 SUITES: Last full Q2 B2538 units/435 browser/types PASS; Q4 full suite pending final policy. A Q3 full/parity/perf evidence preserved.
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze. No early merge.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
-UPDATED: 2026-11-13T17:22:55.155685+00:00
+UPDATED: 2026-11-13T17:35:29.769327+00:00
