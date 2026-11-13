@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {createActionPlan} from '../../squad/turn3d/effects';
-import {MOTIONS,actionPose,actionCamera,fitMotionFrame,hitPose,idlePhase} from './motion';
+import {MOTIONS,actionPose,actionCamera,fitMotionFrame,hitPose,idlePhase,idlePose} from './motion';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const events=[{type:'action_start',actorId:'cat',targetIds:['enemy'],skillId:'guardianBasic',actionId:1},{type:'damage',actorId:'cat',targetIds:['enemy'],amount:12,skillId:'guardianBasic',actionId:1}] as TurnEvent[];
 it('moves every archetype through anticipation, strike, return without mutating the event plan',()=>{
@@ -54,4 +54,16 @@ it('leaves the ultimate plate camera intact and resolves the field shot through 
  expect(at(3400).zoom).toBeCloseTo(1.2);expect(at(4000).zoom).toBeGreaterThan(1);
  expect(at(4670)).toEqual(at(0));
  const expected=at(4000);at(3400);expect(at(4000)).toEqual(expected);
+});
+it('finishes the landing squash before a long spoken recovery ends',()=>{
+ const plan={...createActionPlan(events),duration:2000};
+ const input={plan,asset:'soot',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width:1280,height:720};
+ const impact=plan.beats[2]!.start;
+ expect(actionPose({...input,elapsed:impact+390}).phase).toBe('land');
+ expect(actionPose({...input,elapsed:impact+500})).toMatchObject({phase:'idle',x:0,y:0,angle:0,sx:1,sy:1});
+});
+it('keeps idle feet planted, phases independent and seeks deterministic',()=>{
+ const sample=idlePose(12.5,'mochi');expect(sample).not.toEqual(idlePose(12.5,'soot'));
+ for(let t=0;t<20;t+=.1){const p=idlePose(t,'mochi');expect(p.x).toBe(0);expect(p.y).toBe(0);expect(Math.abs(p.angle)).toBeLessThanOrEqual(.035);expect(Math.abs(p.sy-1)).toBeLessThanOrEqual(.01800001);}
+ idlePose(1,'mochi');expect(idlePose(12.5,'mochi')).toEqual(sample);
 });

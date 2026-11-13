@@ -33,7 +33,7 @@ export function actionPose(input:MotionInput):RootPose {
  if(t<arrival){const u=clamp((t-launch)/Math.max(1,arrival-launch));travel=out(u);arc=Math.sin(u*Math.PI);p.phase='travel';p.sx=1+.10*arc;p.sy=1-.07*arc;}
  else if(t<holdEnd){travel=1;p.phase='strike';p.sx=1.04;p.sy=.96;}
  else if(t<returnEnd){const u=clamp((t-holdEnd)/Math.max(1,returnEnd-holdEnd));travel=1-smooth(u);arc=Math.sin(u*Math.PI);p.phase='return';p.sx=1+.03*arc;p.sy=1-.03*arc;}
- else {const settle=Math.sin(clamp((t-returnEnd)/67)*Math.PI);p.phase='land';p.sx=1+.06*settle;p.sy=1-.06*settle;return p;}
+ else {if(t>=returnEnd+67)return p;const settle=Math.sin(clamp((t-returnEnd)/67)*Math.PI);p.phase='land';p.sx=1+.06*settle;p.sy=1-.06*settle;return p;}
  p.x=dx*travel;p.y=dy*travel;
  const jump=ultimate?40:kind==='leap-slam'?58:kind==='spin'?20:kind==='summon'?18:6;
  p.y-=arc*jump*scale;
@@ -60,6 +60,14 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
  p.x=Math.max(-38*scale,Math.min(38*scale,p.x));return p;
 }
 export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}
+
+/** Slow weight shifts around planted feet; independent phases keep a squad alive. */
+export function idlePose(time:number,id:string):RootPose {
+ const p=neutralPose(),phase=idlePhase(id),breath=Math.sin(time*2.1+phase);
+ p.sx=1-breath*.010;p.sy=1+breath*.018;
+ p.angle=Math.sin(time*1.45+phase)*.035;
+ return p;
+}
 
 /** A single follow-through move per action, with a stable contact hold and home framing. */
 export function actionCamera(input:MotionInput,tier:'basic'|'active'|'ultimate'){
