@@ -45,3 +45,6 @@ A now owns all C2 battle cue timing in battle-v3/audio-timeline.ts + battle-audi
 | None | All cat actives/ultimates and all 13 enemy signatures checked | Existing B lines retained | Existing | 0 |
 
 There are 88 distinct cue/element pairs in the three captured timelines. Your manifest resolves 84 directly; status.buff.on/off and status.debuff.on/off currently use your generic shield-status fallback. Please supply explicit buff/debuff designs or confirm that intended alias. All move/kit/voice/ultimate cues resolve at a1353ff10. Coverage is file/design verification only; audible mix and final ducking still require the scheduled integration review. A has not modified src/audio or public/audio.
+
+## 2026-11-13 — T1 HUD icon hooks
+The battle uses current /icons clock, fight, boss-seal, menu and refresh. Please preserve these IDs through U2. Please supply the U2 paths for speed, pause/play, auto and skip painted controls so A can adopt them at SY1. A uses original inline skip geometry and scoped button frames meanwhile; no B icon or font file was edited.

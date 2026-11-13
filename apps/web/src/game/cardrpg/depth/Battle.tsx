@@ -153,7 +153,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         }
       }
       const loading = scene.current?.loading;
-      const loadingLabel=m.a6Battle?'Lighting the lanterns…':loading?.label;
+      const loadingLabel=m.battle?.initial.formationC2?'':m.a6Battle?'Lighting the lanterns…':loading?.label;
       if (loading && loadingText.current && loadingText.current.textContent !== loadingLabel) {
         loadingText.current.textContent = loadingLabel??'';
       }
@@ -222,7 +222,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
         <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
-      {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
+      {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{battle.initial.formationC2?'':m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
       {battle.actors.filter(candidate => (candidate.side === 'enemy'||m.state.formationC2) && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);

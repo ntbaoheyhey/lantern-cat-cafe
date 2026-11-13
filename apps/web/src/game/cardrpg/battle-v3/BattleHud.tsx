@@ -11,6 +11,10 @@ import {battleControls,skipPlate,type CinematicMode} from './controls';
 import {STATUS_BODY,STATUS_COLOR,STATUS_PATH} from './status';
 import '@fontsource/baloo-2/800.css';
 import './battle.css';
+import './hud-details.css';
+import {GameIcon} from '../../../ui/GameIcon';
+import {displayedBossPhase} from '../depth/battle-presentation';
+import {battleWave,IntentMark} from './hud-details';
 
 function Meter({hp,max,name,shield=0,reduced=false}:{hp:number;max:number;name:string;shield?:number;reduced?:boolean}){
  const value=Math.max(0,Math.min(100,hp/max*100)),[trail,setTrail]=useState(value);
@@ -33,6 +37,9 @@ function Badges({actor}:{actor:R.Actor}){
 }
 export default function BattleHud({m}:{m:DepthModel}){
  const battle=m.visualBattle!,controls=battleControls(m),world=useRef(new Map<string,HTMLDivElement>()),total=useRef<HTMLOutputElement>(null);
+ const [intro,setIntro]=useState(true);
+ const wave=battleWave(m),boss=battle.actors.find(a=>a.side==='enemy'&&R.ENEMY_BY_ID[a.catalogId]?.tier==='boss');
+ useEffect(()=>{setIntro(true);const timer=setTimeout(()=>setIntro(false),900);return()=>clearTimeout(timer);},[battle.initial]);
  const [more,setMore]=useState(false),[help,setHelp]=useState(false),[log,setLog]=useState(false),[leaving,setLeaving]=useState(false);
  const menuButton=useRef<HTMLButtonElement>(null),helpButton=useRef<HTMLButtonElement>(null),dialog=useRef<HTMLDialogElement>(null),paused=useRef(false);
  const skipButton=useRef<HTMLButtonElement>(null);
@@ -49,7 +56,7 @@ export default function BattleHud({m}:{m:DepthModel}){
    document.body.classList.toggle('b3-cinema-occludes',!!scene?.cinema&&(scene.cinema.audit.plate||scene.cinema.audit.cutin));
    if(skipButton.current)skipButton.current.hidden=!scene?.cinema?.audit.plate;
    const plan=m.plan,state=totalState.current,now=performance.now();
-   if(plan&&(plan.ultimate||/-[23]$/.test(plan.presentationId??plan.skillId))&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
+   if(plan&&(plan.ultimate||/-[23]$/.test(plan.presentationId??plan.skillId)||/^enemy:[^:]+$/.test(plan.presentationId??plan.skillId))&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
    if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}
    raf=requestAnimationFrame(paint);
   };paint();return()=>{cancelAnimationFrame(raf);document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
@@ -59,32 +66,39 @@ export default function BattleHud({m}:{m:DepthModel}){
  useEffect(()=>{const listener=(e:KeyboardEvent)=>{if(e.key==='Escape'&&more){setMore(false);menuButton.current?.focus();}};window.addEventListener('keydown',listener);return()=>window.removeEventListener('keydown',listener);},[more]);
  const party=battle.actors.filter(a=>a.side==='party');
  return <div className="b3-hud" data-reduced={m.state.settings.reducedMotion} aria-label="Battle controls">
-  <header className="b3-top"><span className="b3-round" aria-label={`Wave 1 of 1, round ${battle.round}`}>ROUND <b>{battle.round}/15</b></span>
-   <span className="b3-location">{R.CHAPTERS[battle.chapter-1]!.name}</span><span className="b3-wave" aria-label="Wave 1 of 1">◆</span>
-   <button aria-label={m.paused?'Resume auto':'Pause auto'} onClick={()=>{m.paused=!m.paused;m.notify(false);}}>{m.paused?'▶':'Ⅱ'}</button>
+  <header className="b3-top">
+   <span className="b3-wave" title={`Wave ${wave.current} of ${wave.total}`} aria-label={`Wave ${wave.current} of ${wave.total}`}><GameIcon name="fight" size={22}/><b>{wave.current}/{wave.total}</b></span>
+   <span className="b3-round" title={`Round ${battle.round} of 15`} aria-label={`Round ${battle.round} of 15`}><GameIcon name="clock" size={20}/><b>{battle.round}/15</b></span>
+   {boss&&<div className="b3-boss" title={boss.name} aria-label={`${boss.name}, phase ${displayedBossPhase(battle,boss)}`}>
+    <GameIcon name="boss-seal" size={32}/><Meter hp={boss.hp} max={boss.maxHp} name={boss.name} shield={boss.shield} reduced={m.state.settings.reducedMotion}/>
+    <span className="b3-phase-ticks" aria-hidden="true">{(battle.initial.gameplayA6?[.66,.33]:[.5]).map(at=><i key={at} style={{left:`${at*100}%`}}/>)}</span><b>{Math.ceil(100*boss.hp/boss.maxHp)}%</b>
+   </div>}
+   <span className="b3-top-spacer"/>
+   <button aria-label={m.paused?'Resume auto':'Pause auto'} title={m.paused?'Resume':'Pause'} onClick={()=>{m.paused=!m.paused;m.notify(false);}}>{m.paused?'▶':'Ⅱ'}</button>
    <button ref={helpButton} aria-label="Read battle guide" onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setHelp(true);}}>?</button>
-   <button ref={menuButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button>
+   <button ref={menuButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}><GameIcon name="menu" size={20}/></button>
   </header>
+  {intro&&!m.plan&&battle.round===1&&<div className="b3-wave-intro" aria-live="polite"><GameIcon name="fight" size={36}/><strong>Wave {wave.current}/{wave.total}</strong></div>}
   <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
-   <Badges actor={a}/><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
+   <div className="b3-marker-row">{a.side==='enemy'&&<IntentMark intent={battle.intents.find(i=>i.actorId===a.id)} />}<Badges actor={a}/></div><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
   </div>)}</div>
   <footer className="b3-bottom">
    <button className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>
    <div className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
     const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate'),ready=cat.hp>0&&cat.charge>=100&&cat.skills.includes(ult?.id??''),queued=controls.queued.has(cat.id);
     const stars=m.state.account.cards.find(c=>c.cardId===cat.catalogId)?.stars??1;
-    return <button key={cat.id} className="b3-portrait" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0} data-rarity={CARD_BY_ID[cat.catalogId]?.rarity}
+    return <button key={cat.id} className="b3-portrait" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0} data-rarity={CARD_BY_ID[cat.catalogId]?.rarity} title={cat.name}
      style={{'--element':ELEMENT_COLORS[cat.catalogId]??'#e8c06e'} as CSSProperties}
      aria-label={`${cat.name} ultimate: ${ready?'Ready':cat.hp<=0?'Fallen':cat.charge+'/100 rage'}.${controls.auto?' Casts automatically.':queued?' Queued for next legal turn.':' Click to queue.'}`}
      onClick={()=>{if(!controls.auto&&ready){queued?controls.queued.delete(cat.id):controls.queued.add(cat.id);m.notify(false);}}}>
-      <img src={`/units/${cat.catalogId}/portrait.webp`} alt=""/><span className="b3-name">{cat.name}</span><span className="b3-stars" aria-label={stars+' stars'}>{'★'.repeat(stars)}</span>
-      {queued&&<span className="b3-queued">QUEUED</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><Rage value={cat.charge} name={cat.name}/>
+      <img src={`/units/${cat.catalogId}/portrait.webp`} alt=""/><span className="b3-name" aria-hidden="true">{cat.name}</span><span className="b3-portrait-shine" aria-hidden="true"/><span className="b3-stars" aria-label={stars+' stars'}>{'★'.repeat(stars)}</span>
+      {queued&&<span className="b3-queued" aria-label="Queued">◆</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><Rage value={cat.charge} name={cat.name}/>
      </button>;
    })}</div>
-   <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>{controls.auto=!controls.auto;m.notify(false);}}>AUTO {controls.auto?'ON':'OFF'}</button>
-    <button aria-label="Skip to result" disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars to skip this battle'} onClick={()=>m.skip()}>SKIP ›</button></div>
+   <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>{controls.auto=!controls.auto;m.notify(false);}} className="b3-auto"><GameIcon name="refresh" size={20}/>Auto<i data-on={controls.auto}/></button>
+    <button aria-label="Skip to result" disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars to skip this battle'} onClick={()=>m.skip()} className="b3-skip"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M4 4 15 12 4 20ZM16 4 27 12 16 20Z"/><path d="M29 4V20"/></svg></button></div>
   </footer>
-  <button ref={skipButton} hidden className="b3-skip-plate" onClick={()=>skipPlate(m)}>Skip cinematic ›</button>
+  <button ref={skipButton} hidden className="b3-skip-plate" onClick={()=>skipPlate(m)} aria-label="Skip cinematic" title="Skip cinematic"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M4 4 15 12 4 20ZM16 4 27 12 16 20Z"/></svg></button>
   <output className="b3-total" ref={total} aria-label="Total skill damage" hidden><i>Σ</i><b>0</b></output>
   {more&&<div className="b3-menu">{m.a6Battle&&!m.replay&&<label className="b3-autonext"><input type="checkbox" aria-label="Auto-next" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false);}}/>Auto-next battle</label>}<label>Ultimate cinematics<select value={controls.cinematics} onChange={e=>{controls.cinematics=e.target.value as CinematicMode;m.notify(false);}}><option value="full">Full</option><option value="short">Short</option><option value="off">Off</option></select></label>
    <label>Effects quality<select value={m.state.settings.quality} onChange={e=>{m.state.settings.quality=e.target.value as typeof m.state.settings.quality;m.notify(false);}}><option value="high">High</option><option value="low">Low</option></select></label><SoundControlA6 m={m} battle/><button onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setLog(true);setMore(false);}}>Read battle log</button>

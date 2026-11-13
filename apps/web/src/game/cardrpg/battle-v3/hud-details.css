@@ -1,0 +1,42 @@
+/* T1: the battle's only persistent words are Auto and the shared Mix control. */
+.b3-top :is(.b3-wave,.b3-round){display:flex;align-items:center;gap:6px;flex:none;white-space:nowrap}
+.b3-round b{margin-left:0;font-size:19px}.b3-wave b{font-family:var(--font-num);font-size:19px;color:#ffe4a2}
+.b3-top-spacer{flex:1}.b3-top button{flex:none;display:grid;place-items:center}
+.b3-hud button:not(.b3-portrait){background:radial-gradient(ellipse at 35% 0,#e7bc5e27,transparent 70%),repeating-linear-gradient(174deg,#ffffff07 0 1px,transparent 1px 5px),linear-gradient(175deg,#72503e,#3d2c31 55%,#241f2b);border-color:#bd8d54;box-shadow:inset 0 0 0 2px #2b2026,inset 0 4px 0 #fbd7922b,0 3px 0 #17131d,0 5px 9px #0005;transition:filter .15s,transform .15s}
+.b3-hud button:not(:disabled):hover{filter:brightness(1.15)}.b3-hud button:active{transform:translateY(2px)}
+.b3-hud button.b3-speed{font-size:30px;min-height:54px;border:1px solid #b18750;border-radius:25% 18% 24% 20%;min-width:70px}
+.b3-bottom-actions button{min-height:44px;display:flex;align-items:center;justify-content:center;gap:8px}
+.b3-auto i{width:7px;height:7px;border-radius:50%;background:#655254;box-shadow:inset 0 1px #fff3}.b3-auto i[data-on=true]{background:#b9e98a;box-shadow:0 0 9px #b9e98a}
+.b3-skip svg,.b3-skip-plate svg{width:27px;height:21px;fill:#ffdc91;stroke:#ffdc91;stroke-width:1.5;stroke-linejoin:round}.b3-skip-plate{min-width:45px}
+.b3-rage i{transition:width .3s ease;box-shadow:0 0 5px #ffe592}
+.b3-portrait .b3-name{opacity:0;pointer-events:none;transition:opacity .15s;background:#241c2bdc;padding:2px 5px;border-radius:5px;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;white-space:nowrap}
+.b3-portrait:hover .b3-name,.b3-portrait:focus-visible .b3-name{opacity:1}
+.b3-portrait-shine{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:6px}
+.b3-portrait-shine:after{content:"";position:absolute;inset:-20% -70%;background:linear-gradient(110deg,transparent 40%,#fff9d673 49%,transparent 58%);transform:translateX(-70%)}
+.b3-portrait[data-ready=true] .b3-portrait-shine:after{animation:b3-shine 2.4s ease-in-out infinite}
+.b3-portrait[data-ready=true]:before{content:"";position:absolute;inset:-5px;border:1px solid #fff0b5;border-radius:12px;box-shadow:0 0 15px #ffd16d88;pointer-events:none}
+.b3-marker-row{display:flex;justify-content:center;align-items:center;gap:3px;margin-bottom:3px}.b3-marker-row:empty{display:none}.b3-marker-row .b3-statuses{margin:0}.b3-statuses:empty{display:none}
+.b3-intent{width:18px;height:18px;display:grid;place-items:center;background:#382133e8;border:1px solid #d08a63;border-radius:50%;pointer-events:auto;flex:none}
+.b3-intent[data-signature=true]{border-color:#ffac6e;box-shadow:0 0 8px #f9714d88;animation:b3-intent 1.2s ease-in-out infinite}.b3-intent[data-interrupted=true]{filter:grayscale(1);opacity:.6}
+.b3-boss{position:absolute;left:50%;transform:translateX(-50%);width:min(40vw,520px);height:32px;display:flex;align-items:center;gap:8px;padding:2px 8px;background:linear-gradient(90deg,#34212d,#251d29,#34212d);border:1px solid #b17b5277;border-radius:20px}
+.b3-boss>.game-icon{flex:none}.b3-boss .b3-hp{height:12px;width:auto;flex:1;border:1px solid #b98253;border-radius:5px;background:#2d1526;box-shadow:0 0 0 2px #1c1523}
+.b3-boss .b3-fill{background:linear-gradient(#ffcd91,#df6d57 45%,#a5424b)}.b3-boss>b{font-size:14px;min-width:37px;text-align:right;font-family:var(--font-num)}
+.b3-phase-ticks{position:absolute;left:48px;right:53px;top:9px;height:12px;pointer-events:none}.b3-phase-ticks i{position:absolute;left:50%;height:100%;border-left:2px solid #ffe4b3}
+.b3-wave-intro{position:absolute;left:50%;top:27%;transform:translateX(-50%) rotate(-3deg);display:flex;align-items:center;gap:16px;padding:10px 64px;background:linear-gradient(100deg,#251b2b00,#251b2bf5 15%,#332332f2 85%,#251b2b00);border-block:1px solid #e9bc6988;font-family:var(--font-display);font-size:38px;color:#ffe8a6;text-shadow:2px 3px #241323;animation:b3-wave-in .9s ease both}
+.battle-v3-active .dp-loading[data-a6=true] img{animation:b3-load-breathe 1.5s ease-in-out infinite}.battle-v3-active .dp-loading[data-a6=true] span:empty{display:none}
+.c2-result .a6-result-heading h2{animation:b3-result-title .55s cubic-bezier(.2,.9,.3,1.2) both}.c2-result .a6-result-tickets article{animation:b3-reward-in .7s cubic-bezier(.2,.8,.3,1.2) both}.c2-result .a6-result-tickets article:nth-child(2){animation-delay:.14s}.c2-result .a6-result-tickets article:nth-child(3){animation-delay:.28s}
+.c2-result[data-reduced=true] *{animation:none!important;transition:none!important}
+@keyframes b3-shine{0%,30%{transform:translateX(-70%)}70%,100%{transform:translateX(70%)}}
+@keyframes b3-intent{50%{box-shadow:0 0 12px #ffb267bb}}
+@keyframes b3-wave-in{0%{opacity:0;translate:-80px 0;scale:.8}20%,70%{opacity:1;translate:0 0;scale:1}100%{opacity:0;translate:55px 0}}
+@keyframes b3-load-breathe{50%{transform:translateY(-6px) scale(1.03,.98)}}
+@keyframes b3-result-title{from{opacity:0;transform:translateY(-15px) scale(1.25)}to{opacity:1;transform:none}}
+@keyframes b3-reward-in{from{opacity:0;transform:translate(100px,-45px) scale(.4) rotate(15deg)}to{opacity:1;transform:none}}
+@media(max-width:700px){
+ .b3-top .b3-round{display:none}.b3-top .b3-wave b{font-size:16px}.b3-top .b3-wave .game-icon{width:18px;height:18px}.b3-top{gap:5px}
+ .b3-boss{top:52px;width:min(76vw,440px);height:30px;pointer-events:none}.b3-boss .b3-hp{height:10px}.b3-phase-ticks{top:8px;height:10px}
+ .b3-hud button.b3-speed{min-width:36px;min-height:46px;font-size:22px;padding:4px}.b3-bottom-actions button{min-height:32px;gap:3px;padding:5px}.b3-auto>.game-icon{display:none}.b3-auto i{width:5px;height:5px}
+ .b3-skip svg{height:18px;width:24px}.b3-marker-row{gap:1px;margin-bottom:1px}.b3-intent{width:14px;height:14px}.b3-intent .game-icon{width:12px;height:12px}
+ .b3-wave-intro{top:28%;font-size:26px;padding:8px 40px;white-space:nowrap}.b3-portrait[data-ready=true]:before{inset:-3px}
+}
+@media(prefers-reduced-motion:reduce){.b3-hud *,.c2-result *{animation:none!important;transition:none!important}}
