@@ -22,7 +22,7 @@ try{
   await page.close();
  }
  const {page,errors:stripErrors}=await openFixture(browser,config.fixtures[0]);
- for(const [id,motion] of [['mochi-1','dash-slash'],['panko-2','leap-slam'],['brioche-2','spin'],['cinnamon-2','throw'],['soot-2','staff-cast'],['clover-2','summon']]){
+ for(const [id,motion] of [['mochi-1','dash-slash'],['panko-2','leap-slam'],['brioche-2','spin'],['cinnamon-2','throw'],['soot-2','staff-cast'],['clover-2','summon'],['enemy:button-guard:basic','enemy-dash-slash'],['enemy:kettle-knight','enemy-leap-slam'],['enemy:sock-skipper','enemy-spin'],['enemy:needle-moth','enemy-throw'],['enemy:binding-thread','enemy-staff-cast'],['enemy:teacup-healer','enemy-summon']]){
   await page.evaluate(id=>{window.__depthReview.inspect(id,0);window.__depthScene.prepare();},id);
   await page.clock.runFor(100);
   for(let retry=0;retry<300;retry++){

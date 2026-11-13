@@ -67,3 +67,27 @@ it('keeps idle feet planted, phases independent and seeks deterministic',()=>{
  for(let t=0;t<20;t+=.1){const p=idlePose(t,'mochi');expect(p.x).toBe(0);expect(p.y).toBe(0);expect(Math.abs(p.angle)).toBeLessThanOrEqual(.035);expect(Math.abs(p.sy-1)).toBeLessThanOrEqual(.01800001);}
  idlePose(1,'mochi');expect(idlePose(12.5,'mochi')).toEqual(sample);
 });
+it('mirrors every enemy archetype through travel, strike and recovery without changing timing',()=>{
+ const plan=createActionPlan(events),before=JSON.stringify(plan),width=1280;
+ const party={plan,asset:'mochi',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width,height:720};
+ const enemy={...party,asset:'button-guard',side:'enemy',home:{...party.home,x:width-party.home.x},target:{...party.target,x:width-party.target.x}};
+ for(const motion of MOTIONS){let peak=0;
+  for(let elapsed=0;elapsed<=plan.duration;elapsed+=1000/30){
+   const a=actionPose({...party,motion,elapsed}),b=actionPose({...enemy,motion,elapsed});
+   expect(b.x).toBeCloseTo(-a.x);expect(b.y).toBeCloseTo(a.y);expect(b.angle).toBeCloseTo(-a.angle);expect(b.phase).toBe(a.phase);
+   peak=Math.max(peak,Math.hypot(b.x,b.y));
+  }
+  expect(peak/width).toBeGreaterThan(.06);
+  expect(actionPose({...enemy,motion,elapsed:plan.duration})).toMatchObject({x:0,y:0,sx:1,sy:1,angle:0});
+ }
+ expect(JSON.stringify(plan)).toBe(before);
+});
+it('gives every target of a simultaneous multi-target hit its own recoil and flash',()=>{
+ const recipients=['front','rear','healer'];
+ const plan=createActionPlan([events[0]!,...recipients.map(id=>({...events[1]!,targetIds:[id]}))]);
+ for(const id of recipients){
+  expect(hitPose(plan,plan.beats[2]!.start+33,id,1,720).flash).toBe(1);
+  expect(hitPose(plan,plan.beats[2]!.start+67,id,1,720).x).toBeGreaterThanOrEqual(23);
+  expect(hitPose(plan,plan.beats[2]!.start+400,id,1,720).x).toBe(0);
+ }
+});

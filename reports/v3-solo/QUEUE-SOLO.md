@@ -7,7 +7,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q0 | done | B then A | Q0-RESULT.json; saved evidence/source and all tests | STARTED 2026-11-13 12:26:47 UTC; PASS Q0.A.clean=0; PASS Q0.B.clean=0; PASS both pushes; A ca90150a5 B e281e4d73; ENDED 2026-11-13 12:38:57 UTC |
 | Q1 | done | B then A | 435/435 browser; B E2E; 33 word-budget screens | STARTED 2026-11-13 12:39:36 UTC; A e7ce36076 B c32b6475f; 230 PASS/0 FAIL; ENDED 2026-11-13T13:19:00.871648+00:00 |
 | Q2 | done | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity | STARTED 2026-11-13T13:20:12.094442+00:00; PASS59/59; A18ea6e6e8 B298a4fbd8/evidence fa65a9b40; ENDED 2026-11-13T14:38:34.072973+00:00 |
-| Q3 | todo | A | M1 full fixtures >=15.80; all enemy displacements >6%; FPS/parity |  |
+| Q3 | active | A | M1 full fixtures >=15.80; all enemy displacements >6%; FPS/parity | STARTED 2026-11-13T14:39:07.792289+00:00 |
 | Q4 | todo | B | E3, E4, E5; background search after Q0 |  |
 | Q5 | todo | B (+ A texts) | V and S5; sound reel |  |
 | Q6 | todo | B | U3 54/54 >=8; button/font/word gates |  |

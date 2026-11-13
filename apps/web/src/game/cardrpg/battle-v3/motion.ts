@@ -22,27 +22,27 @@ export function actionPose(input:MotionInput):RootPose {
  const ultimate=plan.ultimate,launch=ultimate?0:Math.max(120,impact-200),arrival=ultimate?150:impact;
  const holdEnd=Math.min(plan.duration-100,impact+100),returnEnd=Math.min(plan.duration,holdEnd+267);
  const melee=['dash-slash','leap-slam','spin'].includes(kind),scale=height/720;
- // Caster steps deliberately clear six percent of the viewport; melee stops
+ // Caster steps and counterweight read through the full wind-up; melee stops
  // before the target's body. An ultimate arrives before the 150 ms cut-in.
- let dx=ultimate?(width*(direction>0?.48:.52)-home.x):melee?(target.x-direction*(home.core*.42+target.core*.30)-home.x):direction*width*.088;
+ let dx=ultimate?(width*(direction>0?.48:.52)-home.x):melee?(target.x-direction*(home.core*.42+target.core*.30)-home.x):direction*width*.115;
  if(dx*direction<width*.088)dx=direction*width*.088;
  dx=direction*Math.min(Math.abs(dx),width*.46);
  const dy=ultimate?(height*.59-home.y):melee?(target.y-home.y):0;
  let travel=0,arc=0;
- if(t<launch){const lean=smooth(t/120);p.phase='anticipation';p.x=-direction*8*scale*lean;p.sx=1+.065*lean;p.sy=1-.065*lean;p.angle=direction*.10*lean;return p;}
+ if(t<launch){const lean=smooth(t/120);p.phase='anticipation';p.x=-direction*12*scale*lean;p.sx=1+.065*lean;p.sy=1-.065*lean;p.angle=direction*.10*lean;return p;}
  if(t<arrival){const u=clamp((t-launch)/Math.max(1,arrival-launch));travel=out(u);arc=Math.sin(u*Math.PI);p.phase='travel';p.sx=1+.10*arc;p.sy=1-.07*arc;}
  else if(t<holdEnd){travel=1;p.phase='strike';p.sx=1.04;p.sy=.96;}
  else if(t<returnEnd){const u=clamp((t-holdEnd)/Math.max(1,returnEnd-holdEnd));travel=1-smooth(u);arc=Math.sin(u*Math.PI);p.phase='return';p.sx=1+.03*arc;p.sy=1-.03*arc;}
  else {if(t>=returnEnd+67)return p;const settle=Math.sin(clamp((t-returnEnd)/67)*Math.PI);p.phase='land';p.sx=1+.06*settle;p.sy=1-.06*settle;return p;}
  p.x=dx*travel;p.y=dy*travel;
- const jump=ultimate?40:kind==='leap-slam'?58:kind==='spin'?20:kind==='summon'?18:6;
+ const jump=ultimate?40:kind==='leap-slam'?58:kind==='spin'?20:kind==='summon'?28:kind==='throw'?24:kind==='staff-cast'?18:6;
  p.y-=arc*jump*scale;
  if(kind==='spin'&&!ultimate)p.angle=direction*Math.PI*2*(t<arrival?travel:t<holdEnd?1:travel);
- else if(kind==='throw')p.angle=direction*(p.phase==='strike'?-.18:-.09*travel);
- else if(kind==='staff-cast')p.angle=-direction*.065*travel;
- else if(kind==='summon'){p.sy+=.05*travel;p.y-=12*scale*travel;}
+ else if(kind==='throw')p.angle=direction*(p.phase==='strike'?-.28:-.13*travel);
+ else if(kind==='staff-cast')p.angle=-direction*.15*travel;
+ else if(kind==='summon'){p.sy+=.065*travel;p.y-=20*scale*travel;}
  else p.angle=-direction*.10*travel;
- if(p.phase==='strike'&&!melee&&!ultimate){const recoil=Math.sin(clamp((t-impact)/100)*Math.PI);p.x-=direction*20*scale*recoil;}
+ if(p.phase==='strike'&&!melee&&!ultimate){const recoil=Math.sin(clamp((t-impact)/100)*Math.PI);p.x-=direction*28*scale*recoil;}
  return p;
 }
 /** One visible impulse for each target, including counter-hits and damage over time. */
