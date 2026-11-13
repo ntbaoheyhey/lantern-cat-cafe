@@ -74,3 +74,9 @@ Before: /dev/disk3s1   926Gi   605Gi   276Gi    69%    5.4M  2.9G    0%   /Syste
 After: /dev/disk3s1   926Gi   605Gi   276Gi    69%    5.4M  2.9G    0%   /System/Volumes/Data
 Removed regenerable paths: apps/web/node_modules/.vite, reports/v3-battle/a2/ref
 No low-disk restriction. Encoded evidence retained.
+
+## Resume 2026-11-13T08:34:28.441136+00:00
+Before: 290 GiB free.
+Removed only regenerable worktree outputs: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp.
+After: /dev/disk3s1   926Gi   596Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+No low-disk restriction. Current uncommitted evidence retained.
