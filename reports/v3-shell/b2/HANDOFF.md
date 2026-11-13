@@ -19,3 +19,4 @@ OPEN: C1 public RPC allows only 100-block log windows (existing reader uses 2000
 PIDS: 67495 static 5995; 72306 native sensitivity (4 workers). Round 9 PID recorded next.
 LEARNED: PROGRESSION-200 complete: casual Legendary median 13, heavy 9, 1,000 accounts in 1,676.79s.
 Q0 OWNED PID: 80690 Vite5996, tests/q0-vite.log. Full unit suite PASS (2537 web / 1396 rules / 732 server).
+Q0 LIVE LOG: e3-native-sensitivity.log kept on disk, ignored while appending; committed snapshot tests/q0-native-sensitivity-snapshot.log. All result JSON remains tracked.

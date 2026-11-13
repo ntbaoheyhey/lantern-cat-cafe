@@ -91,3 +91,5 @@ E2 chooses guaranteed quality polish, season décor, and café showcases. Each s
 ## 2026-11-13 12:30 UTC — Solo Q0 preservation
 
 The user replaced both sessions with one. All inherited source stays in its owning worktree. Workspace typecheck and 17 economy-lab tests pass; preserve the full E3 implementation and rounds without a stash. Round 9 also completed on disk; its measured interpretation belongs to Q4. Q0 is a preservation checkpoint, not economy acceptance.
+
+Q0 clean-tree verification found active native-sensitivity stdout changing between commit and push. Preserve that exact output in tests/q0-native-sensitivity-snapshot.log, keep the original live log on disk and ignore its continued appends. All JSON measurements/checkpoints remain versioned; no result is discarded.

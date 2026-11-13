@@ -49,3 +49,6 @@ __pycache__/
 
 # Reproducible B2 browser capture and audio build intermediates.
 /tmp/b2-*/
+
+# Solo: a running job appends stdout; committed snapshots and JSON retain evidence.
+/reports/v3-shell/b2/tests/e3-native-sensitivity.log
