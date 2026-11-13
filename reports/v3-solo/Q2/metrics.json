@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-11-13T14:29:26.284Z",
-  "trial": "21-battle-only-presence",
+  "generatedAt": "2026-11-13T21:15:01.446Z",
+  "trial": "37-dialogue-balanced",
+  "matrixTrial": "q5-37-current",
   "integration": {
-    "generatedAt": "2026-11-13T13:26:35.729Z",
-    "aHead": "18ea6e6e82d03c274a6a2ce843ecb9ce1989ee2d",
-    "bHead": "0b547a1ce0d2ae1b0e34c414ebc7f2fb821cc02e",
+    "generatedAt": "2026-11-13T20:58:26.422Z",
+    "aHead": "fc95f4898d8168013841e23f71174cf0287b2221",
+    "bHead": "422585ca577077732b86bb3f039eae48ad649984",
     "out": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
     "base": [
       "apps/web",
@@ -45,30 +46,18 @@
       },
       {
         "path": "apps/web/src/audio/engine.ts",
-        "sha256": "f0aa6422b1d0d75cb98639f54495503173b1a8573445739979981b76cc2fae00"
+        "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
       },
       {
         "path": "apps/web/src/audio/voice-callouts.json",
-        "sha256": "697d122a8930d42abf49777f900ce057b4a857233512ea4f7ef0dd76d6af8d78"
+        "sha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a"
       },
       {
         "path": "apps/web/public/audio/manifest.json",
-        "sha256": "5d2eecdfda47042d90ce0718111de275c65ff129acf072e2718d01c8a38a25b4"
+        "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
       }
     ],
-    "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit.",
-    "runtimeLinks": {
-      "assets": "/Users/bao/taskbar-hero-cardrpg-a6/assets",
-      "art": "/Users/bao/taskbar-hero-cardrpg-a6/art",
-      "reports": "/Users/bao/taskbar-hero-chain/reports"
-    },
-    "runtimeConfig": "vite.solo.config.mts: permit the two lane dependency roots; dedupe three/react/react-dom",
-    "workingCandidate": {
-      "label": "19-preserved-identities",
-      "date": "2026-11-13T14:09:06.649252+00:00",
-      "sourceLane": "B",
-      "description": "Five improved spoken takes; Mochi original restored to preserve all12 character identities. Battle/boss voice space and output headroom unchanged from18."
-    }
+    "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit."
   },
   "runtimeSources": [
     {
@@ -121,19 +110,19 @@
     },
     {
       "path": "apps/web/public/audio/callout-binding-thread.mp3",
-      "sha256": "9f79110440a92f3355296fc4022f4e035344e944262ef95f3a36660b7ef8a505"
+      "sha256": "280396eee94922cff8e3857df80201bb8371f7a509e4188d2ecca7801e505d5c"
     },
     {
       "path": "apps/web/public/audio/callout-binding-thread.webm",
-      "sha256": "7cd83377b21cb4b8f09ca8a05901e6f8e0e09e57be6cc92c57eaaa1c4d60f204"
+      "sha256": "16e417a280ce85c10b19f6cfa2f4fd604cef38fcb43330f22dc53149c07da985"
     },
     {
       "path": "apps/web/public/audio/callout-biscuit.mp3",
-      "sha256": "8099fed3f391b118c6060c2dfa148279d95d7cc4f5f366185ed0847c8e700d09"
+      "sha256": "4810432c82f84d972cd7c07252520d73dc19fe90ff61e44e99b63bec680fffe1"
     },
     {
       "path": "apps/web/public/audio/callout-biscuit.webm",
-      "sha256": "61d2766c02846f2db37772bbc2b196dc0c6690a873d639e374ddfc927d412d09"
+      "sha256": "d9f552131c3509f52f829d3b2aff934020f98b80f63f399ab75e1347ed979e73"
     },
     {
       "path": "apps/web/public/audio/callout-brioche.mp3",
@@ -141,39 +130,39 @@
     },
     {
       "path": "apps/web/public/audio/callout-brioche.webm",
-      "sha256": "5f411dc3bfaf4646721c331659868159ced1e24565f70b4482e2592485e1b4fb"
+      "sha256": "b86b773db93a8e242d88b7ebbac1dbe5536f750cb7f06c9c8766e8342131720b"
     },
     {
       "path": "apps/web/public/audio/callout-button-guard.mp3",
-      "sha256": "e3e223faed65a3f4e5b52e4cc5de68953282b2c65056a011760d30c557fea4e8"
+      "sha256": "6b982dce9d22fc92c6feb4c3dfa664fad122cf3831bc593605ed16faf14d3cd1"
     },
     {
       "path": "apps/web/public/audio/callout-button-guard.webm",
-      "sha256": "1f0ab28bc09f7ab57735b2e95cf4eb6ebac8b18f91cccad719aae4fb6f0d6958"
+      "sha256": "41da5a22e742fdedd227dad2276cb8040fdeddcd60e9553bdb24f6f25563b9aa"
     },
     {
       "path": "apps/web/public/audio/callout-cinnamon.mp3",
-      "sha256": "d2eda0cd5869a105ce8fe46c1439134d8e619e4e18dfdd899d290a2d7ceeeae4"
+      "sha256": "01695290ea45bf841038bae3b2b880e122ff7badcf831af7ffea4ae1985b4591"
     },
     {
       "path": "apps/web/public/audio/callout-cinnamon.webm",
-      "sha256": "cedc846ba2571f64f71a870b4d397831813ff0943d14064098ca958fbbf6e387"
+      "sha256": "4aa396f2e6e67b160f91a41762837885ec92725d45d441e9368ca0105f7edcd2"
     },
     {
       "path": "apps/web/public/audio/callout-clover.mp3",
-      "sha256": "bde9330719858b3681d3ecad380f03c670df267f5845ed6eba2f75a6402f8f9d"
+      "sha256": "45ee4a9ad07a23fa278028809d3bbd7f8ca80abca8509f5c19de0cae9e34d1e6"
     },
     {
       "path": "apps/web/public/audio/callout-clover.webm",
-      "sha256": "24f8ceabc14925c201e39fc3518205d1fa6b57c0dc174a5b11ad86dc044c9be2"
+      "sha256": "d7e2a77880ebd9576e871184a18e9a2cf16601dc953d3bb35f5b6850e8dcab82"
     },
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.mp3",
-      "sha256": "5b13b901cd46fda630727222443453f7e026b72e62c3ea4a33103ea67dda57f3"
+      "sha256": "c03bc91021d1a4c0ef0cf0314fe54abaced3c2b55a151fbf5652bbaa5a2a19e3"
     },
     {
       "path": "apps/web/public/audio/callout-crumb-sentinel.webm",
-      "sha256": "87ffa35f1992f97ebda5471318ea437e8034da6eb489d1f589758f022cf2c70a"
+      "sha256": "cfdb0b847b76e5ca11a4cf852cf3adeccee117945bcdcb5573ed5c4a5764d28a"
     },
     {
       "path": "apps/web/public/audio/callout-inkcap.mp3",
@@ -181,23 +170,23 @@
     },
     {
       "path": "apps/web/public/audio/callout-inkcap.webm",
-      "sha256": "28be172078cd2d179a17f80a08dda2721ac6c9e1986a651011d13616a3cc9c14"
+      "sha256": "0837fe6dbe84fd071b28edc5de656f2a6f87f739e7c95c25b1bd72d2c684b7e0"
     },
     {
       "path": "apps/web/public/audio/callout-kettle-knight.mp3",
-      "sha256": "654c9b013fdde705711f3f115c7736af94669154cafc812f7fe26e6c318f5953"
+      "sha256": "c87d55ef21401b339a9df54a0897689d67ec6c8fe1c1c8e9715397bdad362834"
     },
     {
       "path": "apps/web/public/audio/callout-kettle-knight.webm",
-      "sha256": "d01d00d39c5bb7ecab6d87f2474828d58ce85db3b0aa53e3d500ab467ef74044"
+      "sha256": "449ca1d594a7df73a6bf141408060f69f37cc5604b40eef93e604981c413b2ba"
     },
     {
       "path": "apps/web/public/audio/callout-mallow.mp3",
-      "sha256": "17ac54bee95760d02c8a9236ff27f0379b02c971879cb22de3ed44ddbc539045"
+      "sha256": "47b7b808667c19b61bceb4c654f20e84127f0befbf83034edf1c5fdb37ef38d0"
     },
     {
       "path": "apps/web/public/audio/callout-mallow.webm",
-      "sha256": "538105b59d912bcfb7b8a81068d7346e5ac0d63ca732cd80e74e15314907d3e2"
+      "sha256": "e5ca05ec40e0388c71d75c5d51ffd3ebd1e1232a59d15ce474a222f883e17c70"
     },
     {
       "path": "apps/web/public/audio/callout-marigold.mp3",
@@ -205,7 +194,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-marigold.webm",
-      "sha256": "afa4fdf8a2a7561023d239ebef1ccbf6f163a96948f1068b606fa4f415f4f157"
+      "sha256": "5432a6bf6dd1bae07fcd66b9236395e4f7671f2bd2db1992e8a8a2a2cdfc170f"
     },
     {
       "path": "apps/web/public/audio/callout-mochi.mp3",
@@ -213,15 +202,15 @@
     },
     {
       "path": "apps/web/public/audio/callout-mochi.webm",
-      "sha256": "07086eefd2113e2edf503cce1eafbc5f9daba667c049beb37aede0cfd1255e5c"
+      "sha256": "24bee00f9980058c0dd5af0778652c80d3002fccc41c49523b6144057eede2ab"
     },
     {
       "path": "apps/web/public/audio/callout-needle-moth.mp3",
-      "sha256": "112529995b858551b38263349c0b29d4e12a395c48e125d0fa31f9e08a2c68a8"
+      "sha256": "26fb9718fa9070cee972018e4d225e287266b02e47b5f984bc55d56384f66303"
     },
     {
       "path": "apps/web/public/audio/callout-needle-moth.webm",
-      "sha256": "0a834fa47ccc6e7413d5faa542b9b4e98567089b7c3f0626a30f9294580601c7"
+      "sha256": "c262162cf5debca5810339c8299381e867534904c737e4a774329990f24ffb94"
     },
     {
       "path": "apps/web/public/audio/callout-panko.mp3",
@@ -229,39 +218,39 @@
     },
     {
       "path": "apps/web/public/audio/callout-panko.webm",
-      "sha256": "1e9d876befa46485b707c43849ff0eb197a1f4c8a88e45266c5c3eb305d020ab"
+      "sha256": "a8f34b27f606cd00b8d43d41e4870a198d8be46d508f99471b2d09c37e21e653"
     },
     {
       "path": "apps/web/public/audio/callout-pantry-crown.mp3",
-      "sha256": "b2557abed85e624c105710cb205436a513cacf4d9ed0b8804b7b35da02d9f15e"
+      "sha256": "1bd4dfe00d17e957466596237efba2c58ffb8b77a82f3a36109caa0758a333ab"
     },
     {
       "path": "apps/web/public/audio/callout-pantry-crown.webm",
-      "sha256": "f0075cd16bd81ed1a60b830f999f207fac47141a1a58a0184bcb78dde647692b"
+      "sha256": "c50976a54f60aaa15387962983ae3e6e32c0f4cc14b96a5e2cc43f84e43a6705"
     },
     {
       "path": "apps/web/public/audio/callout-pollen-scout.mp3",
-      "sha256": "95faafd09d5d3f6ee326720611a4b7fb95aa83ad2b944cf148581144571c231d"
+      "sha256": "63f8df9cd18af8ce3fbccc946c18daf3ed70b5263adcf44ef4fa7487a7fec95d"
     },
     {
       "path": "apps/web/public/audio/callout-pollen-scout.webm",
-      "sha256": "d5194e8243dd3cefba2d2de3b6e5d285adf32b1c75903856a3a3cdedab8e1094"
+      "sha256": "cf75dc40316844c8ec5ec1175adc0a7a3e575c7a7e11225e7a67b2c9e03e15cb"
     },
     {
       "path": "apps/web/public/audio/callout-practice-cushion.mp3",
-      "sha256": "ad6be78f26c5e3829b4189128941387688e3903944876dd78b098a067297495f"
+      "sha256": "acb7b430ee7871a5ef6210d86fc6c4aacb89bfc2ecb7cfcb74c490fa00df80e2"
     },
     {
       "path": "apps/web/public/audio/callout-practice-cushion.webm",
-      "sha256": "6934e677d3072b5caca599fe88dca8b18ca27fed41725c5c65c0d6a9143097ed"
+      "sha256": "16e91ef33cec48b4922c0411251bc3a5f227d455753a81ee59b9000fcbfd7a44"
     },
     {
       "path": "apps/web/public/audio/callout-rain-spool.mp3",
-      "sha256": "7fcd4274c66e09794d3d53bea2f8b5fbae76ab67dfbff9aa58153c77601f571e"
+      "sha256": "8eb07d718b960fafb39747e09a3f507f26eaa1d24a5699b514386709c24dd720"
     },
     {
       "path": "apps/web/public/audio/callout-rain-spool.webm",
-      "sha256": "52ecd4f7afa435d1d64707f05d38cf01a6c2b8b0e6c0add460b24c86e333e47f"
+      "sha256": "9f153df16d6005ba8c56da5995f38bd4209e4e14251140b26bf74e64be291cc4"
     },
     {
       "path": "apps/web/public/audio/callout-sock-skipper.mp3",
@@ -269,7 +258,7 @@
     },
     {
       "path": "apps/web/public/audio/callout-sock-skipper.webm",
-      "sha256": "a93e5d6990ebcf66876f20ac3a788f37e19fdd3edfb64653806cac593748c52a"
+      "sha256": "751520fb78dde40d2593f416a5367e492ffd43d095af9688e973828e3306b411"
     },
     {
       "path": "apps/web/public/audio/callout-soot.mp3",
@@ -277,39 +266,39 @@
     },
     {
       "path": "apps/web/public/audio/callout-soot.webm",
-      "sha256": "635bd29aa14f6aa4b4b66135485064011e90102cd254640fb8c68bc11a40cabe"
+      "sha256": "ad2cf423723eda42123f0f3c30f031efe8c3d46d324d9a0a8499b7929d45f6ce"
     },
     {
       "path": "apps/web/public/audio/callout-sorrel.mp3",
-      "sha256": "872843f1f48260fcb86a1a538b451a0e6eb97e73c3a532c6c82543cce23aaf86"
+      "sha256": "ee8a1dd7c96287108b9eea56a3524258d1498a5a1887af827bb05c33a712a48e"
     },
     {
       "path": "apps/web/public/audio/callout-sorrel.webm",
-      "sha256": "43333eaa847aca8b21fe3519c0665625bf506015e01cefbd9f8f918af6e9643b"
+      "sha256": "ad4d08ee9135c6e498e914c8e4279390a50e8ba6eacaa3b3daa1ccc2bcf3bf54"
     },
     {
       "path": "apps/web/public/audio/callout-spool-ram.mp3",
-      "sha256": "d1ff147664eed3d7cdb013d7bb66051ce038d747be8fb328972b01f8cc885946"
+      "sha256": "40d4b35ec7cffb0920ae756aaeb28aa461c6e16c5f9a11ac7e23f93e1853233b"
     },
     {
       "path": "apps/web/public/audio/callout-spool-ram.webm",
-      "sha256": "c5f38b28b0728093816f6f0d07996a8832db22ec0104ad84dbb9a30120284c67"
+      "sha256": "13ef450711c6fd80a925e78ea61f9fa249d83fd3ce63a603790e9277b95a0ce6"
     },
     {
       "path": "apps/web/public/audio/callout-teacup-healer.mp3",
-      "sha256": "0722e4fc697568b1de9aa14d95cdcc05d72a0db5d7fa6506c528dc0afddd6f76"
+      "sha256": "fa0b9647650664165c89c80364145d2240f18a436512b45100a6e755748eecf5"
     },
     {
       "path": "apps/web/public/audio/callout-teacup-healer.webm",
-      "sha256": "e769ba4a1ab6933809784cac031eb958713c80f8293ca82889f0eb7539e4c1a4"
+      "sha256": "2fa2b79dd176fcc551b4adb3904e77625cceaa5804b8a87301495c2634d2fa92"
     },
     {
       "path": "apps/web/public/audio/callout-velvet.mp3",
-      "sha256": "4c26e1a34f54b71ac5f734d6ae5a8d918cba7fd4dcc0f825466ccada039a1962"
+      "sha256": "05d76ea5a38651b8ac4b47eb0287d9207fb07549ef4fbc0941822bc58dc966a8"
     },
     {
       "path": "apps/web/public/audio/callout-velvet.webm",
-      "sha256": "b51d9d43d90e2101dac39b61285f56fb563dce0df53663ea12aa2aa3d439c280"
+      "sha256": "b2e78f01fbd7d448bf27eca3e0aba765500425723aa69453b6b022e2d94c4812"
     },
     {
       "path": "apps/web/public/audio/callout-yarn-giant.mp3",
@@ -317,11 +306,11 @@
     },
     {
       "path": "apps/web/public/audio/callout-yarn-giant.webm",
-      "sha256": "51c546f69f8735aacd7fe62a6e87cfcc8cd5b865c14f6169537d88f9bdd3d290"
+      "sha256": "71a23c2ce20a746dcc72c622fafd2b458977b4d2ba9fb1a6aa64e067edce905d"
     },
     {
       "path": "apps/web/public/audio/cat-biscuit.mp3",
-      "sha256": "6d93e78655633311b9c52cf45f0b913251850b98d07aa244a6e16f98d311157a"
+      "sha256": "5587b9d110f1ba45a641135c0f1922d56a8d3d8a94d833db010fbbc82f5200e3"
     },
     {
       "path": "apps/web/public/audio/cat-biscuit.webm",
@@ -329,7 +318,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-brioche.mp3",
-      "sha256": "514583ef3edb9d7b54e0a4917fd0a71e334eabed7449c841867b4a57e72ca1bb"
+      "sha256": "97de715f403dc60195d32840c0fbaa29797e09ff7a94c3bfd6a3b7073279ca8d"
     },
     {
       "path": "apps/web/public/audio/cat-brioche.webm",
@@ -337,7 +326,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-cinnamon.mp3",
-      "sha256": "5c185efeb3e83031babe344c0882bf0b74626ad9ca9f34d96df6190673c79884"
+      "sha256": "846b57d3795db9345a494f7320d876231a4356d97a724bca3b2978a59d18d69d"
     },
     {
       "path": "apps/web/public/audio/cat-cinnamon.webm",
@@ -345,7 +334,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-clover.mp3",
-      "sha256": "b296faea981e064400ca1483fbf47d8dcd57eb248d00b4dc22e0c7791c9edccb"
+      "sha256": "9873c53718d1318eaf21004c99ef5227bf51d33a679c3913daa35d7a21fc67bf"
     },
     {
       "path": "apps/web/public/audio/cat-clover.webm",
@@ -353,7 +342,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-inkcap.mp3",
-      "sha256": "6c2c6fbe4f0344d94d10949af9498351392a264774a4ad3110e9cfad36130cce"
+      "sha256": "82724236fc6cf78ba468f1eaf0410a75dcdf46202c00bea2fd4ad82fc060866c"
     },
     {
       "path": "apps/web/public/audio/cat-inkcap.webm",
@@ -361,7 +350,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-mallow.mp3",
-      "sha256": "b16301ad450fcbc2549188c715179d21c882143a7e2414648a4f8744e08c8f18"
+      "sha256": "32f9230e4d176e8259c9543a821e493d0828a64ece34d363876eae0d184f5447"
     },
     {
       "path": "apps/web/public/audio/cat-mallow.webm",
@@ -369,7 +358,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-marigold.mp3",
-      "sha256": "9707ea6177b61f4d42c190af05dd6b0ae605546ea72837b37fe9442f2cdcacdb"
+      "sha256": "0a264559ad753d17b87284f92e3964cea92040a22daf0493406573148e6cd2a5"
     },
     {
       "path": "apps/web/public/audio/cat-marigold.webm",
@@ -377,7 +366,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-mochi.mp3",
-      "sha256": "94cc0db56c41f75faa5821898034e02b9fdffeae50fcc200792a160b2bb66671"
+      "sha256": "15a52a68f33435841f7cb20a7df0a16aa442d98a16f6548df212f29f14303646"
     },
     {
       "path": "apps/web/public/audio/cat-mochi.webm",
@@ -385,7 +374,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-panko.mp3",
-      "sha256": "9b25141530ea7947348983988e73521e4bc71f41a3b5c1ad3aa820347721be2d"
+      "sha256": "96d5a3ef99620af8dc513f58dac9458a9bce5a453a7eba3b99f14375b77ce82d"
     },
     {
       "path": "apps/web/public/audio/cat-panko.webm",
@@ -393,7 +382,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-soot.mp3",
-      "sha256": "d83a6eaae825171452cfc4b0b3af169f8cbfb98b25c72f314c1e00a8a7c444ac"
+      "sha256": "57403f58505e91cccb8f7eb897cf7db88ef60da5c89592f977b24abd0899d7d7"
     },
     {
       "path": "apps/web/public/audio/cat-soot.webm",
@@ -401,7 +390,7 @@
     },
     {
       "path": "apps/web/public/audio/cat-sorrel.mp3",
-      "sha256": "aa9f5ef4a1ebfff5f3c1a7136ff0caca5d773de43b6d62d0cfaa00467e2b8101"
+      "sha256": "d8763b752364716da7c34503ae99799b206cc31fe24b0f889a0a978d9ad3b9ae"
     },
     {
       "path": "apps/web/public/audio/cat-sorrel.webm",
@@ -409,19 +398,11 @@
     },
     {
       "path": "apps/web/public/audio/cat-velvet.mp3",
-      "sha256": "bfe39a3c538a6f6dbc0d77266464f5f7ebc0952ae5ebd49ff7cb9eac5e81bca8"
+      "sha256": "4c1dfd9fae774fe2c32c1a51bda4eef8fe31ca748f978d1274ff21588900d6da"
     },
     {
       "path": "apps/web/public/audio/cat-velvet.webm",
       "sha256": "5cbcd8a4b7c8fe68a204c2e9b799ecf3ad5ab2781ce582017195901f94a3024e"
-    },
-    {
-      "path": "apps/web/public/audio/home.mp3",
-      "sha256": "9d4f974227c843ad910356d6569e345b86ac12574ed882f5d242d56a413899a3"
-    },
-    {
-      "path": "apps/web/public/audio/home.webm",
-      "sha256": "0beae25891d6a53c753de83531a6ed8cc6043bd804404087be09c62ed4e43d80"
     },
     {
       "path": "apps/web/public/audio/impact.mp3",
@@ -457,15 +438,31 @@
     },
     {
       "path": "apps/web/public/audio/manifest.json",
-      "sha256": "449d8f546cf7388b3a0c087dccd8e31ed5f058979809c0a1acb6863579c2a666"
+      "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+    },
+    {
+      "path": "apps/web/public/audio/menu-forge.mp3",
+      "sha256": "c84920fb39ccd04e9bb067b5b77b61daa05f921c5dfe9d261a87b7cfc56bd53f"
+    },
+    {
+      "path": "apps/web/public/audio/menu-forge.webm",
+      "sha256": "c71b420dd342dfd80af6ae79d2c24b41ed2eba9807069519e80f2dc1ff526cee"
+    },
+    {
+      "path": "apps/web/public/audio/menu-home.mp3",
+      "sha256": "c2cfb9c9ed4118cf8004dce55942d45476c674f50f6defd64831ac6cc4d647ea"
+    },
+    {
+      "path": "apps/web/public/audio/menu-home.webm",
+      "sha256": "04ad52c04476e14889181f441ef664d5fdba5ce3e46b356a6b9eab22cda3ab0a"
     },
     {
       "path": "apps/web/public/audio/menu-voices.mp3",
-      "sha256": "9d5de188a8c6cbf2f662440fa66890a8656fbe58be6ae88ac33ebf3b2d45d8b3"
+      "sha256": "89f71cef7a36d3e3ddcb8ad3dea0f73e7d53b04c8d2225dcb16083d27fc60ffc"
     },
     {
       "path": "apps/web/public/audio/menu-voices.webm",
-      "sha256": "235ada17ecf02914b9fbfb0510155a6441719feb00eaef42280042daf5c62e36"
+      "sha256": "f2d1df577f3b0a22308fe600510ea17c4e0e24e8e45a02ccde7593cbc529d84a"
     },
     {
       "path": "apps/web/public/audio/rpg.mp3",
@@ -541,11 +538,11 @@
     },
     {
       "path": "apps/web/src/audio/engine.ts",
-      "sha256": "ada42986549c18e437ec3ce7604a70379b8abb0bd9bc10dba27786b9ee5e2c8b"
+      "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
     },
     {
       "path": "apps/web/src/audio/voice-callouts.json",
-      "sha256": "4acb643cc6177db1f1b8190f17772ce419c7bdd9848bf26605059dce908e77ca"
+      "sha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a"
     },
     {
       "path": "apps/web/src/game/cardrpg/depth/model.ts",
@@ -554,42 +551,42 @@
   ],
   "method": "B source-start method, actual selected sprite duration/pitch, single-voice stop policy and40ms jitter tolerance. Real wall clock and original production engine.",
   "matrixEvidence": {
-    "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-matrix.json",
-    "sha256": "5e772bb7a7ced743e9f70615a3811d7b1117c5b7145ae9a4f40559b8dbfab200"
+    "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-matrix.json",
+    "sha256": "53798cfa8111e068876e472b96bb843b65d11d6c44c2ef151a53a0b978a2afd7"
   },
   "rows": [
     {
       "fixture": "wave1",
       "speed": 1,
-      "seconds": 30.378,
+      "seconds": 30.029,
       "ultimateRequired": 4,
       "ultimatePlayed": 4,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.49563333333532,
+      "meanBarkIntervalSeconds": 7.495899999996026,
       "parity": true,
       "errors": [],
       "played": 6,
       "interrupted": 0,
       "suppressed": {
-        "cadence": 8
+        "cadence": 7
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave1-x1.json.gz",
-        "sha256": "5b8f144d29cea1f7578ca5a07d06a0f3845640b5ee2db94423c9ec039fbe1b28"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave1-x1.json.gz",
+        "sha256": "c777e052a640048a197ad18e05444e397c43bbcfcd946ae1043acad9b571f5d9"
       }
     },
     {
       "fixture": "wave1",
       "speed": 2,
-      "seconds": 30.47,
+      "seconds": 30.683,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.503599999999007,
+      "meanBarkIntervalSeconds": 7.50940000000596,
       "parity": true,
       "errors": [],
       "played": 10,
@@ -600,20 +597,20 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave1-x2.json.gz",
-        "sha256": "8d3037f1629fc0489f8d58a5b6a1a8a8b3ce27c876d7385445ed87f5c0c2cb71"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave1-x2.json.gz",
+        "sha256": "da0040741e3d08ba44d274e54ed29e6d998a16f248ce2bf0eee48bbf1d3f1fa9"
       }
     },
     {
       "fixture": "wave1",
       "speed": 3,
-      "seconds": 30.204,
+      "seconds": 30.25,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.50393333333234,
+      "meanBarkIntervalSeconds": 7.491199999998013,
       "parity": true,
       "errors": [],
       "played": 10,
@@ -623,20 +620,20 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave1-x3.json.gz",
-        "sha256": "1d2a91b84a81244ef16fb37499fe3723848bfb41eb9057ad72fc59982c1872a2"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave1-x3.json.gz",
+        "sha256": "cb8fbf25f62beaa9cb24e78e9a87cfcc2c3e9baffaa5e45ddd3463321838330e"
       }
     },
     {
       "fixture": "wave3",
       "speed": 1,
-      "seconds": 32.63,
+      "seconds": 32.715,
       "ultimateRequired": 4,
       "ultimatePlayed": 4,
       "ultimateInterrupted": 0,
       "skillPlayed": 3,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.503199999998014,
+      "meanBarkIntervalSeconds": 7.493566666662693,
       "parity": true,
       "errors": [],
       "played": 7,
@@ -646,44 +643,43 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave3-x1.json.gz",
-        "sha256": "7ea75b5e11335950a8eed10e4e72d9aac981fb151188937b43e6681c65aaca6c"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave3-x1.json.gz",
+        "sha256": "858314b4e026b0a81123d60a1da8e7ca0eeb2cfbb0b985e8d55ee9e2369fbe20"
       }
     },
     {
       "fixture": "wave3",
       "speed": 2,
-      "seconds": 31.482,
+      "seconds": 30.98,
       "ultimateRequired": 6,
       "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.516099999999007,
+      "meanBarkIntervalSeconds": 7.503566666662692,
       "parity": true,
       "errors": [],
       "played": 8,
       "interrupted": 0,
       "suppressed": {
-        "cadence": 8,
-        "priority": 1,
-        "superseded": 1
+        "cadence": 9,
+        "priority": 1
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave3-x2.json.gz",
-        "sha256": "96133a1d604df3c10766c42a8eec8b481e9c25214aa70c386ffb4f8d1b3ab66b"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave3-x2.json.gz",
+        "sha256": "b06b613d07c5d38efb4e460a3d000e4259fdb452a0588c23f791ad07cfba5bdc"
       }
     },
     {
       "fixture": "wave3",
       "speed": 3,
-      "seconds": 30.659,
+      "seconds": 31.231,
       "ultimateRequired": 8,
       "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.513599999999006,
+      "meanBarkIntervalSeconds": 7.497933333337308,
       "parity": true,
       "errors": [],
       "played": 10,
@@ -693,44 +689,43 @@
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-wave3-x3.json.gz",
-        "sha256": "752d4e55fde0d58018b8e7ef631bf6337d71cf001ec3256c7122fd21cbbaccb8"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-wave3-x3.json.gz",
+        "sha256": "ee0d50e9ee7e6fe78c81d5264803c588da6724b4af1ff575c268616f25dfd536"
       }
     },
     {
       "fixture": "boss",
       "speed": 1,
-      "seconds": 30.269,
-      "ultimateRequired": 4,
-      "ultimatePlayed": 4,
+      "seconds": 34.113,
+      "ultimateRequired": 6,
+      "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.5168333333333335,
+      "meanBarkIntervalSeconds": 7.513633333335321,
       "parity": true,
       "errors": [],
-      "played": 6,
+      "played": 8,
       "interrupted": 0,
       "suppressed": {
         "cadence": 5,
-        "superseded": 1,
-        "priority": 1
+        "priority": 2
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-boss-x1.json.gz",
-        "sha256": "3d7dcc8b2886f1b2a330859305b102e18609d39b3c32da9040eaafd2b0ca25e5"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-boss-x1.json.gz",
+        "sha256": "7411c74a902c272a5f24588112ea4d0c067bf0415d834db419edc99b004c35a8"
       }
     },
     {
       "fixture": "boss",
       "speed": 2,
-      "seconds": 32.202,
+      "seconds": 32.124,
       "ultimateRequired": 10,
       "ultimatePlayed": 10,
       "ultimateInterrupted": 0,
       "skillPlayed": 1,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.49813333333532,
+      "meanBarkIntervalSeconds": 7.489033333331346,
       "parity": true,
       "errors": [],
       "played": 11,
@@ -740,20 +735,20 @@
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-boss-x2.json.gz",
-        "sha256": "da006cdd20c1e0fb0b3c12b0eaa4eec5111403901ad81324c71874aea51cb1f1"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-boss-x2.json.gz",
+        "sha256": "fa0f1311608da659233dbaf7cb537c5915e9d4deb344f73cdaf057738015209f"
       }
     },
     {
       "fixture": "boss",
       "speed": 3,
-      "seconds": 30.506,
+      "seconds": 30.807,
       "ultimateRequired": 10,
       "ultimatePlayed": 10,
       "ultimateInterrupted": 0,
       "skillPlayed": 1,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.514699999998013,
+      "meanBarkIntervalSeconds": 7.4925333333313455,
       "parity": true,
       "errors": [],
       "played": 11,
@@ -763,47 +758,47 @@
         "priority": 1
       },
       "raw": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/voice-boss-x3.json.gz",
-        "sha256": "8aea3130e15da3bea511c158e1928e7a2d04d848e67d1365791e646bc0978b38"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/voice-boss-x3.json.gz",
+        "sha256": "4fcae59ac03376a400c090a97b08aba46ed50ed2925e09ac238ef8666f50ff7e"
       }
     }
   ],
   "mixes": [
     {
       "name": "battle",
-      "voiceContoursPerMinute": 4.661461426796784,
+      "voiceContoursPerMinute": 4.994422957282269,
       "durationSeconds": 180.20099773242632,
       "evidence": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/21-battle-only-presence-battle.json",
-        "sha256": "c5cf87dc5a79094f167d106915494f7daa9c2ad8ddd715cc3d88f4d2d0a2e983"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/37-dialogue-balanced-battle.json",
+        "sha256": "5f5475c77acf3ef3f6a2fd5f62cbe5a6dd069bfd7a0acd3f66480dde70527032"
       },
       "runtime": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/21-battle-only-presence-battle-runtime.json.gz",
-        "sha256": "be1a520d27133a1049e3d17699b4321ae2e0333ca1ea675562ed80832d119852"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/37-dialogue-balanced-battle-runtime.json.gz",
+        "sha256": "da90ffe3213f31225a33cb1d2a8f2b179b40d35ba059e0898f45a0d0eebbba66"
       },
       "audio": {
         "lane": "B",
-        "path": "reports/v3-shell/b2/renders/21-battle-only-presence-battle.opus",
-        "sha256": "a5653c0fbddeb453debeff639cec6d53ca65e2dc35751966f059b1a294468b1b"
+        "path": "reports/v3-shell/b2/renders/37-dialogue-balanced-battle.opus",
+        "sha256": "ae6afc3b7f1d99282853dbeb254548b0bc24d74e50bddfda4ff23223c2e7af30"
       },
       "algorithmSha256": "c8554122a5045f82af01def91368ced1164afcd352c94f28bd1c67b7cf139594"
     },
     {
       "name": "boss",
-      "voiceContoursPerMinute": 3.4940893635709207,
-      "durationSeconds": 120.20299319727891,
+      "voiceContoursPerMinute": 4.9916805324459235,
+      "durationSeconds": 120.2,
       "evidence": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/21-battle-only-presence-boss.json",
-        "sha256": "016c60c8a81319be40cd40f8a6436b1f82d31989427ddf10d22e37db61568a81"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/37-dialogue-balanced-boss.json",
+        "sha256": "fe74875d7ba3bcddbe7af250da5255192ac23dddb0d0a3e1e0ecd9699385a5d9"
       },
       "runtime": {
-        "path": "reports/v3-solo/Q2/playback/21-battle-only-presence/21-battle-only-presence-boss-runtime.json.gz",
-        "sha256": "bc8ce1807979233199e8395996418fce6e7adacffacf00f3df5b0ae736071be9"
+        "path": "reports/v3-solo/Q2/playback/37-dialogue-balanced/37-dialogue-balanced-boss-runtime.json.gz",
+        "sha256": "929dcb860baef28beb9f6a64aa79b8289ad9293a912eb2f878dac86ea3dd4ba7"
       },
       "audio": {
         "lane": "B",
-        "path": "reports/v3-shell/b2/renders/21-battle-only-presence-boss.opus",
-        "sha256": "78cd8a0708aba61df3557cfc34811b263c10508e31b030f15a84029c32d003b9"
+        "path": "reports/v3-shell/b2/renders/37-dialogue-balanced-boss.opus",
+        "sha256": "cfe057f3630854ee18208da71917184cca5623936dfa4d3f390b6d9c84c08b00"
       },
       "algorithmSha256": "c8554122a5045f82af01def91368ced1164afcd352c94f28bd1c67b7cf139594"
     }

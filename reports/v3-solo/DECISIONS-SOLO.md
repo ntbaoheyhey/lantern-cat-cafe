@@ -105,3 +105,5 @@ Disk and fresh E3 checker retain Q0–Q3 as complete. Q4 remains active on T-h;2
 ## 2026-11-13T20:54:07.996522+00:00 — resumed Q4/Q5
 
 The committed original forge score now passes actual60s: 1.9933 voice contours/min, 3.5049 ticks/s, -17.38 LUFS, -2.07 dBTP, zero browser errors. Source e628f3764. The full V checker reports8/8 PASS (50/50 ultimate,62/62 skill,12 identities,212 levels). Boss speech is still being validated against the complete mix after diagnostic gains improved9/12 lines; voice high-shelf attenuation was rejected because it harms words. Current boss source33e2d1adf has36 passing audio tests; the initial outdated boss expectation failed and remains in evidence. Economy snapshot132/170 has zero robustness misses; T-h stays open. No early merge or deployment.
+
+2026-11-13 Q5 current playback refresh: permit an explicit separate matrix label in collect-q2.mjs, because the full-scene capture and nine-fixture timing run use distinct job labels. Runtime code, encoded audio, cue metadata, analyser and owning-worktree hashes must still match. No new acceptance exception or threshold change.

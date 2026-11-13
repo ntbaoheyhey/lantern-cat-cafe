@@ -5,23 +5,23 @@ NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
-NOW: Q5 boss dialogue35 source a4cf509ea committed;36 audio tests pass after scene-transition expectation update; forge33 actual flow passes all numeric bands.
-NEXT 1: Capture boss35 full120s and mixed ASR; if pass, final six-scene capture, reel, suite and V/S5 gates.
-NEXT 2: Economy native37303 and sensitivity59609 running, supervisor16952 awaiting completion; retain checkpoints.
-NEXT 3: Complete sensitivity, refresh E3-E5 evidence and suite. Full battle/boss durations still required for Q5.
-LAST GOOD COMMIT A:dd7e38c8e pushed; Q3 sourceaf1e1fdf3; Q5 wording95ea0d843.
-LAST GOOD COMMIT B:268cb45fd pushed (Q4 checkpoint132); source35=33e2d1adf;36 audio tests.
+NOW: Resumed Q4/Q5. All nine current voice rows complete; Q2 collector59/59 PASS. Full37 final audio/suite supervisor remains active.
+NEXT 1: Finish supervisor25627, refresh V validation, inspect full suite, accept S5/V and commit. Q6 screen review prepared while waiting.
+NEXT 2: Economy16952/37303/59609 resumed at21:14:48 UTC. Sensitivity135/170, no measured misses; final Q4 closure still pending.
+NEXT 3: Current sink35789 waits for Q5 suite; exact current-policy browser proof then E2 refresh. Do not overwrite running captures.
+LAST GOOD COMMIT A: fc95f4898 pushed. Q3 sourceaf1e1fdf3; Q5 wording95ea0d843. Collector alias change awaits actual matrix check.
+LAST GOOD COMMIT B: a366059d9 pushed: six full37 recordings; source422585ca5. Checker9fc52efb4. Economy snapshot268cb45fd.
 OPEN: Q4-Q9; Q0-Q3 complete per checker evidence. No STOP files; no time trigger due.
-ECONOMY:24 rounds/1280 evaluations/1273 unique; sensitivity132/170,no misses; burn min0.961416,Star1.037908–1.127269. Paused only for capture.
+ECONOMY: 24 rounds/1280 evaluations/1273 unique; sensitivity135/170 measured,132 committed; no measured robustness misses. Native53 cases; timings pending.
 E4/E5:16 exact-policy Anvil receipts/18 screenshots; odds5/5; report816 citations. Final report refresh after T-h.
 Q5 V: 50/50 ultimate lines,62/62 skills and12 identities PASS. Source/sprite212 levels PASS. Current battle refresh pending.
-Q5 S5: Full31 five scenes pass; forge33 now passes actual60s. Final same-source six scenes needed after speech balance.
-DIAGNOSIS: Voice shelf34 blunts words. Preserve consonants; use measured speech-lead33 in runtime: voice+6dB, midrange opening-8dB, master-1.5dB.
-PIDS: A Vite36397; B integration67841; native37303,sensitivity59609,supervisor16952 running; boss35 capture10619; forge33 done.
+Q5 S5: Full37 all six actual-duration renders pass numeric preflight; current nine-row voice matrix0 interrupted, parity9/9.
+DIAGNOSIS: Q5 all six full37 scenes pass numeric preflight; nine fixture/speed matrix active. E2 source hashes are stale after Q4 policy change; refresh actual studio browser burns/quotes, not just hashes.
+PIDS: A Vite36397; B integration67841; native37303,sensitivity59609,supervisor16952; Q5 supervisor25627; current-sinks35789.
 BACKGROUND JOBS: B q5/jobs.json logs all commands; economy econ/q4-jobs.json. Full31 runner resumes sims in finally.
-PERF: 2026-11-13T20:53:56.002305+00:00 resumed owned sims [16952, 37303, 59609] after trial35.
-SUITES: Full workspace types + unit PASS on f6db229c6; tests/q4-q5-articulation-suite.json. Q4 server/rules20/20.
+PERF: 2026-11-13T21:14:48.276577+00:00 resumed owned sims [16952, 37303, 59609] after full37 scenes and matrix.
+SUITES: A checker259/259 plusSOLO68/68 PASS on resume. Current B full suite runs after full37 capture/matrix. Prior full suitef6db229c6 passes.
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze. No early merge or deployment.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
-DISK-LOG: 277GiB free at resume; Q4/resume-disk-2049.json; removed 0 disposable outputs.
-UPDATED: 2026-11-13T20:50:51.032642+00:00
+DISK-LOG: 276.63GiB free; resume-disk-2115.json; removed0 disposable output directories.
+UPDATED: 2026-11-13T21:15:15.521856+00:00

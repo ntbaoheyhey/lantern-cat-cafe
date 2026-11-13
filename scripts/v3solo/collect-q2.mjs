@@ -5,15 +5,15 @@ import {createHash} from 'node:crypto';
 import {checkSolo,format} from './check-solo.mjs';
 const root=resolve(import.meta.dirname,'../..');
 const b=resolve(process.env.V3SOLO_B_ROOT??'/Users/bao/taskbar-hero-chain');
-const trial=process.argv[2];
-if(!trial||!/^[a-zA-Z0-9-]+$/.test(trial))throw Error('Supply a measured mix trial.');
+const [trial,matrixTrial=trial]=process.argv.slice(2);
+if(!trial||![trial,matrixTrial].every(value=>/^[a-zA-Z0-9-]+$/.test(value)))throw Error('Supply a measured mix trial and optional matrix trial.');
 const out=resolve(root,'reports/v3-solo/Q2');
 mkdirSync(resolve(out,'playback',trial),{recursive:true});
 mkdirSync(resolve(out,'trials'),{recursive:true});
 const hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
 const matrixPath=resolve(b,'reports/v3-shell/b2/q2/voice-matrix.json');
 const matrix=JSON.parse(readFileSync(matrixPath));
-if(matrix.trial!==trial)throw Error('Matrix belongs to another trial: '+matrix.trial);
+if(matrix.trial!==matrixTrial)throw Error('Matrix belongs to another trial: '+matrix.trial);
 for(const source of matrix.runtimeSources){
  const owner=source.path.startsWith('apps/web/src/game/')?root:b;
  if(hash(resolve(owner,source.path))!==source.sha256)throw Error('Capture no longer matches its owning lane: '+source.path);
@@ -46,7 +46,7 @@ const mixes=['battle','boss'].map(name=>{
   evidence:copy(path,`${trial}-${name}.json`),runtime:copy(resolve(b,data.runtime.path),`${trial}-${name}-runtime.json.gz`,data.runtime.sha256),
   audio:{lane:'B',path:data.path,sha256:data.sha256},algorithmSha256:data.algorithmSha256};
 });
-const metrics={generatedAt:new Date().toISOString(),trial,integration:matrix.integration,runtimeSources:matrix.runtimeSources,method:matrix.method,matrixEvidence,rows,mixes};
+const metrics={generatedAt:new Date().toISOString(),trial,matrixTrial,integration:matrix.integration,runtimeSources:matrix.runtimeSources,method:matrix.method,matrixEvidence,rows,mixes};
 writeFileSync(resolve(out,'trials',trial+'.json'),JSON.stringify(metrics,null,2)+'\n');
 writeFileSync(resolve(out,'metrics.json'),JSON.stringify(metrics,null,2)+'\n');
 const gates=checkSolo('Q2',metrics),lines=gates.map(format);
