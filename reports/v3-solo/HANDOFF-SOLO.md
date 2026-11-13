@@ -8,7 +8,7 @@ DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 NOW: Q4 active; round23 first pilot PASS, Star maximum1.099908; independent confirmation23 and margin search24 running.
 NEXT 1: Read confirm23 and round24 results; do not select until independent200-seed pass.
 NEXT 2: Candidate497ba9738e passes first independent200-seed confirmation; full top10 pending. Sensitivity PID59609 runs170 assumption cases as native banks become available.
-NEXT 3: Q5 formant probes use Q4 simulation wait time; Q4 results always preempt. No audio replacement yet.
+NEXT 3: Q5 onset probes active; A battle-v3/callouts.json holds original wording candidates. B probes only after4 failed onset attempts. No audio replacement yet.
 LAST GOOD COMMIT A:58e171a219b9209ac21e5338d816ef2d56a42bf2 pushed; Q3 source af1e1fdf3.
 LAST GOOD COMMIT B:51e9d1a16e8225c419df0039f7571bee40fd2dfc pushed; round23 independent candidate pass, T-h pending.
 OPEN: Q4-Q9. Q0-Q3 have checker PASS evidence in QUEUE-SOLO; no STOP file.
