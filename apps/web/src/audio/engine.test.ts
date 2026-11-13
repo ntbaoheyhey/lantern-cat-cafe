@@ -61,6 +61,25 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.select');await flush();
   expect(Context.latest.sources.at(-1)?.playbackRate.value).toBe(1);
  });
+ it('plays an ultimate release during chatter cooldown and ducks while keeping one voice',async()=>{
+  const e=new AudioEngine();await e.unlock();e.play('voice.mochi.skill');await flush();
+  Context.latest.currentTime+=.4;e.play('voice.soot.ult.release');await flush();
+  expect(e.hits.at(-1)).toMatchObject({id:'voice.soot.ult.release',result:'played',voice:1,duckDb:-8});
+ });
+ it('supplies a callout without A changes, suppresses a same-tick explicit duplicate and honors recent voices',async()=>{
+  const e=new AudioEngine();await e.unlock();e.play('ult.mochi.charge');await flush();
+  expect(e.hits.filter(h=>h.id==='voice.mochi.ult.charge'&&h.result==='played')).toHaveLength(1);
+  e.play('voice.mochi.ult.charge');await flush();expect(e.hits.at(-1)?.result).toBe('duplicate');
+  const f=new AudioEngine();await f.unlock();f.play('ult.soot.charge');f.play('voice.soot.ult.charge');await flush();
+  expect(f.hits.filter(h=>h.id==='voice.soot.ult.charge'&&h.result==='played')).toHaveLength(1);
+  f.play('ult.clover.charge');await flush();expect(f.hits.some(h=>h.id==='voice.clover.ult.charge')).toBe(false);
+ });
+ it('routes an enemy cast fallback to its own spoken signature and cancels a stopped pending fallback',async()=>{
+  const e=new AudioEngine();await e.unlock();e.play('skill.foe-0-yarn-giant.2.cast');await flush();
+  expect(e.hits.some(h=>h.id==='voice.yarn-giant.skill.enemy:yarn-giant'&&h.result==='played')).toBe(true);
+  const f=new AudioEngine();await f.unlock();f.play('ult.mochi.release');f.stop();await flush();
+  expect(f.hits.some(h=>h.id==='voice.mochi.ult.release')).toBe(false);
+ });
  it('invalidates in-flight requests when stop is called while a pack is loading',async()=>{
   let finish:()=>void=()=>{};const pending=new Promise<void>(r=>{finish=r;});
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>{await pending;return new ArrayBuffer(8);}}));

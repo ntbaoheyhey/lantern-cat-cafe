@@ -62733,6 +62733,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-button-guard-1",
+      "cueId": "voice.button-guard.skill.enemy:button-guard:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-button-guard-1",
       "cueId": "voice.button-guard.skill.button-guard-1",
       "bus": "voice",
       "layers": [
@@ -62881,6 +62936,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-button-guard-2",
+      "cueId": "voice.button-guard.skill.enemy:button-guard",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.button-guard.skill.enemy:button-guard/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.button-guard.skill.enemy:button-guard/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.button-guard.skill.enemy:button-guard/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.button-guard.skill.enemy:button-guard/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-button-guard-2",
       "cueId": "voice.button-guard.skill.button-guard-2",
       "bus": "voice",
       "layers": [
@@ -63723,6 +63833,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-sock-skipper-1",
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-sock-skipper-1",
       "cueId": "voice.sock-skipper.skill.sock-skipper-1",
       "bus": "voice",
       "layers": [
@@ -63871,6 +64036,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-sock-skipper-2",
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-sock-skipper-2",
       "cueId": "voice.sock-skipper.skill.sock-skipper-2",
       "bus": "voice",
       "layers": [
@@ -64713,6 +64933,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-spool-ram-1",
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-spool-ram-1",
       "cueId": "voice.spool-ram.skill.spool-ram-1",
       "bus": "voice",
       "layers": [
@@ -64861,6 +65136,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-spool-ram-2",
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-spool-ram-2",
       "cueId": "voice.spool-ram.skill.spool-ram-2",
       "bus": "voice",
       "layers": [
@@ -65703,6 +66033,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-needle-moth-1",
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-needle-moth-1",
       "cueId": "voice.needle-moth.skill.needle-moth-1",
       "bus": "voice",
       "layers": [
@@ -65851,6 +66236,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-needle-moth-2",
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-needle-moth-2",
       "cueId": "voice.needle-moth.skill.needle-moth-2",
       "bus": "voice",
       "layers": [
@@ -66693,6 +67133,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-teacup-healer-1",
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-teacup-healer-1",
       "cueId": "voice.teacup-healer.skill.teacup-healer-1",
       "bus": "voice",
       "layers": [
@@ -66841,6 +67336,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-teacup-healer-2",
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-teacup-healer-2",
       "cueId": "voice.teacup-healer.skill.teacup-healer-2",
       "bus": "voice",
       "layers": [
@@ -67683,6 +68233,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-kettle-knight-1",
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-kettle-knight-1",
       "cueId": "voice.kettle-knight.skill.kettle-knight-1",
       "bus": "voice",
       "layers": [
@@ -67831,6 +68436,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-kettle-knight-2",
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-kettle-knight-2",
       "cueId": "voice.kettle-knight.skill.kettle-knight-2",
       "bus": "voice",
       "layers": [
@@ -68673,6 +69333,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-yarn-giant-1",
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-yarn-giant-1",
       "cueId": "voice.yarn-giant.skill.yarn-giant-1",
       "bus": "voice",
       "layers": [
@@ -68821,6 +69536,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-yarn-giant-2",
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-yarn-giant-2",
       "cueId": "voice.yarn-giant.skill.yarn-giant-2",
       "bus": "voice",
       "layers": [
@@ -69663,6 +70433,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-binding-thread-1",
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-binding-thread-1",
       "cueId": "voice.binding-thread.skill.binding-thread-1",
       "bus": "voice",
       "layers": [
@@ -69811,6 +70636,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-binding-thread-2",
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-binding-thread-2",
       "cueId": "voice.binding-thread.skill.binding-thread-2",
       "bus": "voice",
       "layers": [
@@ -70653,6 +71533,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-practice-cushion-1",
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-practice-cushion-1",
       "cueId": "voice.practice-cushion.skill.practice-cushion-1",
       "bus": "voice",
       "layers": [
@@ -70801,6 +71736,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-practice-cushion-2",
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-practice-cushion-2",
       "cueId": "voice.practice-cushion.skill.practice-cushion-2",
       "bus": "voice",
       "layers": [
@@ -71643,6 +72633,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-pollen-scout-1",
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-pollen-scout-1",
       "cueId": "voice.pollen-scout.skill.pollen-scout-1",
       "bus": "voice",
       "layers": [
@@ -71791,6 +72836,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-pollen-scout-2",
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-pollen-scout-2",
       "cueId": "voice.pollen-scout.skill.pollen-scout-2",
       "bus": "voice",
       "layers": [
@@ -72633,6 +73733,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-rain-spool-1",
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-rain-spool-1",
       "cueId": "voice.rain-spool.skill.rain-spool-1",
       "bus": "voice",
       "layers": [
@@ -72781,6 +73936,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-rain-spool-2",
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-rain-spool-2",
       "cueId": "voice.rain-spool.skill.rain-spool-2",
       "bus": "voice",
       "layers": [
@@ -73623,6 +74833,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-crumb-sentinel-1",
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-crumb-sentinel-1",
       "cueId": "voice.crumb-sentinel.skill.crumb-sentinel-1",
       "bus": "voice",
       "layers": [
@@ -73771,6 +75036,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-crumb-sentinel-2",
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-crumb-sentinel-2",
       "cueId": "voice.crumb-sentinel.skill.crumb-sentinel-2",
       "bus": "voice",
       "layers": [
@@ -74613,6 +75933,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-pantry-crown-1",
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-pantry-crown-1",
       "cueId": "voice.pantry-crown.skill.pantry-crown-1",
       "bus": "voice",
       "layers": [
@@ -74761,6 +76136,61 @@
     {
       "screen": "battle",
       "event": "skill-callout-pantry-crown-2",
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "battle",
+      "event": "legacy-skill-callout-pantry-crown-2",
       "cueId": "voice.pantry-crown.skill.pantry-crown-2",
       "bus": "voice",
       "layers": [
@@ -96812,6 +98242,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-button-guard-1",
+      "cueId": "voice.button-guard.skill.enemy:button-guard:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.button-guard.skill.enemy:button-guard:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-button-guard-1",
       "cueId": "voice.button-guard.skill.button-guard-1",
       "bus": "voice",
       "layers": [
@@ -96960,6 +98445,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-button-guard-2",
+      "cueId": "voice.button-guard.skill.enemy:button-guard",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.button-guard.skill.enemy:button-guard/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.button-guard.skill.enemy:button-guard/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.button-guard.skill.enemy:button-guard/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.button-guard.skill.enemy:button-guard/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-button-guard-2",
       "cueId": "voice.button-guard.skill.button-guard-2",
       "bus": "voice",
       "layers": [
@@ -97802,6 +99342,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-sock-skipper-1",
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-sock-skipper-1",
       "cueId": "voice.sock-skipper.skill.sock-skipper-1",
       "bus": "voice",
       "layers": [
@@ -97950,6 +99545,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-sock-skipper-2",
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.sock-skipper.skill.enemy:sock-skipper/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-sock-skipper-2",
       "cueId": "voice.sock-skipper.skill.sock-skipper-2",
       "bus": "voice",
       "layers": [
@@ -98792,6 +100442,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-spool-ram-1",
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-spool-ram-1",
       "cueId": "voice.spool-ram.skill.spool-ram-1",
       "bus": "voice",
       "layers": [
@@ -98940,6 +100645,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-spool-ram-2",
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.spool-ram.skill.enemy:spool-ram/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-spool-ram-2",
       "cueId": "voice.spool-ram.skill.spool-ram-2",
       "bus": "voice",
       "layers": [
@@ -99782,6 +101542,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-needle-moth-1",
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-needle-moth-1",
       "cueId": "voice.needle-moth.skill.needle-moth-1",
       "bus": "voice",
       "layers": [
@@ -99930,6 +101745,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-needle-moth-2",
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.needle-moth.skill.enemy:needle-moth/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-needle-moth-2",
       "cueId": "voice.needle-moth.skill.needle-moth-2",
       "bus": "voice",
       "layers": [
@@ -100772,6 +102642,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-teacup-healer-1",
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-teacup-healer-1",
       "cueId": "voice.teacup-healer.skill.teacup-healer-1",
       "bus": "voice",
       "layers": [
@@ -100920,6 +102845,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-teacup-healer-2",
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.teacup-healer.skill.enemy:teacup-healer/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-teacup-healer-2",
       "cueId": "voice.teacup-healer.skill.teacup-healer-2",
       "bus": "voice",
       "layers": [
@@ -101762,6 +103742,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-kettle-knight-1",
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-kettle-knight-1",
       "cueId": "voice.kettle-knight.skill.kettle-knight-1",
       "bus": "voice",
       "layers": [
@@ -101910,6 +103945,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-kettle-knight-2",
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.kettle-knight.skill.enemy:kettle-knight/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-kettle-knight-2",
       "cueId": "voice.kettle-knight.skill.kettle-knight-2",
       "bus": "voice",
       "layers": [
@@ -102752,6 +104842,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-yarn-giant-1",
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-yarn-giant-1",
       "cueId": "voice.yarn-giant.skill.yarn-giant-1",
       "bus": "voice",
       "layers": [
@@ -102900,6 +105045,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-yarn-giant-2",
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.yarn-giant.skill.enemy:yarn-giant/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-yarn-giant-2",
       "cueId": "voice.yarn-giant.skill.yarn-giant-2",
       "bus": "voice",
       "layers": [
@@ -103742,6 +105942,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-binding-thread-1",
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-binding-thread-1",
       "cueId": "voice.binding-thread.skill.binding-thread-1",
       "bus": "voice",
       "layers": [
@@ -103890,6 +106145,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-binding-thread-2",
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.binding-thread.skill.enemy:binding-thread/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-binding-thread-2",
       "cueId": "voice.binding-thread.skill.binding-thread-2",
       "bus": "voice",
       "layers": [
@@ -104732,6 +107042,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-practice-cushion-1",
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-practice-cushion-1",
       "cueId": "voice.practice-cushion.skill.practice-cushion-1",
       "bus": "voice",
       "layers": [
@@ -104880,6 +107245,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-practice-cushion-2",
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.practice-cushion.skill.enemy:practice-cushion/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-practice-cushion-2",
       "cueId": "voice.practice-cushion.skill.practice-cushion-2",
       "bus": "voice",
       "layers": [
@@ -105722,6 +108142,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-pollen-scout-1",
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-pollen-scout-1",
       "cueId": "voice.pollen-scout.skill.pollen-scout-1",
       "bus": "voice",
       "layers": [
@@ -105870,6 +108345,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-pollen-scout-2",
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pollen-scout.skill.enemy:pollen-scout/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-pollen-scout-2",
       "cueId": "voice.pollen-scout.skill.pollen-scout-2",
       "bus": "voice",
       "layers": [
@@ -106712,6 +109242,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-rain-spool-1",
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-rain-spool-1",
       "cueId": "voice.rain-spool.skill.rain-spool-1",
       "bus": "voice",
       "layers": [
@@ -106860,6 +109445,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-rain-spool-2",
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.rain-spool.skill.enemy:rain-spool/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-rain-spool-2",
       "cueId": "voice.rain-spool.skill.rain-spool-2",
       "bus": "voice",
       "layers": [
@@ -107702,6 +110342,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-crumb-sentinel-1",
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-crumb-sentinel-1",
       "cueId": "voice.crumb-sentinel.skill.crumb-sentinel-1",
       "bus": "voice",
       "layers": [
@@ -107850,6 +110545,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-crumb-sentinel-2",
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.crumb-sentinel.skill.enemy:crumb-sentinel/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-crumb-sentinel-2",
       "cueId": "voice.crumb-sentinel.skill.crumb-sentinel-2",
       "bus": "voice",
       "layers": [
@@ -108692,6 +111442,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-pantry-crown-1",
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown:basic",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown:basic/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-pantry-crown-1",
       "cueId": "voice.pantry-crown.skill.pantry-crown-1",
       "bus": "voice",
       "layers": [
@@ -108840,6 +111645,61 @@
     {
       "screen": "boss",
       "event": "skill-callout-pantry-crown-2",
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown",
+      "bus": "voice",
+      "layers": [
+        {
+          "role": "consonant",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/consonant",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "voice-grain",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/voice-grain",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        },
+        {
+          "role": "foley",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/foley",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "high-pass-80"
+        },
+        {
+          "role": "tail",
+          "pool": "voice.pantry-crown.skill.enemy:pantry-crown/tail",
+          "variants": 3,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 3,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 300,
+      "priority": 90,
+      "ducking": {
+        "bus": "music",
+        "db": -8,
+        "attackMs": 120,
+        "releaseMs": 400
+      },
+      "loop": false,
+      "owner": "A"
+    },
+    {
+      "screen": "boss",
+      "event": "legacy-skill-callout-pantry-crown-2",
       "cueId": "voice.pantry-crown.skill.pantry-crown-2",
       "bus": "voice",
       "layers": [

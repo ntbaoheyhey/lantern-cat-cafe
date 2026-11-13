@@ -9,12 +9,12 @@ PASS R.windows: measured 10; required >= 10 measured windows with all metrics, o
 PASS R.candidates: measured 755; required >= 120 candidate files with licence URLs
 PASS R.levers: measured 10; required >= 8 new economy levers with file:line
 PASS R.report: measured 8233; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
-PASS S1.events: measured 2497; required >= 160 complete events; 0 TBD
+PASS S1.events: measured 2549; required >= 160 complete events; 0 TBD
 PASS S1.screens: measured 49; required >= 18 screens
 PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
 PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
-PASS S1.report: measured 606357; required nonempty reports/v3-shell/b2/SOUND-MAP.md
-PASS S1.typedMap: measured 12537; required nonempty apps/web/src/audio/sound-map.ts
+PASS S1.report: measured 629637; required nonempty reports/v3-shell/b2/SOUND-MAP.md
+PASS S1.typedMap: measured 12721; required nonempty apps/web/src/audio/sound-map.ts
 PASS S2.clips: measured 593; required >= 350 usable hashed source clips
 PASS S2.catRecordings: measured 22; required >= 15 distinct original recordings
 PASS S2.catAuthors: measured 18; required >= 6 cat-recording authors
@@ -30,7 +30,7 @@ PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
 PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
 PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
 PASS S3.voiceConcurrency: measured 1; required <= 1 voice
-PASS S3.bytes: measured 11133967; required <= 16000000 bytes incl. callouts
+PASS S3.bytes: measured 14491591; required <= 16000000 bytes incl. callouts
 PASS S3.cpu: measured 4.524575153654773; required < 8% added main-thread time, 180s paired traces
 PASS S4.cats: measured 12; required >= 12 cats, >= 9 lines each
 PASS S4.consonants: measured 12/12; required each rendered line >= 0.5 consonants/syllable
@@ -38,13 +38,13 @@ PASS S4.distinct: measured 12/12; required nearest MFCC >= source p25; F0 >= 3 s
 PASS S4.loudness: measured 12/12; required -16 LUFS +/- 1
 PASS S4.cadence: measured 7.563; required median voice interval 6-9s
 PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
-FAIL V.coverage: measured missing; required 100% playable, elite and boss active skills + ultimates from rules
-FAIL V.variants: measured missing; required >= 2 takes per ultimate line
-FAIL V.ultAccuracy: measured missing; required recogniser word accuracy >= 0.7
-FAIL V.skillAccuracy: measured missing; required recogniser word accuracy >= 0.5
-FAIL V.distinct: measured missing; required S4 distinctness holds for callouts
-FAIL V.battle: measured missing; required 0 missing ultimate callouts; music ducks; >= 180s
-FAIL V.levels: measured missing; required -16 LUFS +/- 1, peak <= -1 dBTP
+PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
+PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
+FAIL V.ultAccuracy: measured 32/50; required recogniser word accuracy >= 0.7
+FAIL V.skillAccuracy: measured 59/62; required recogniser word accuracy >= 0.5
+PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
+PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
+PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
 PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
 FAIL U1.screens: measured missing; required >= 24 states, screenshots, all metrics and fix lists
 FAIL U1.report: measured missing; required nonempty reports/v3-shell/b2/UI-AUDIT.md
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 973; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 992; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

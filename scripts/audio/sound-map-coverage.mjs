@@ -13,7 +13,7 @@ const unique=a=>[...new Set(a)];
 const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(resolve(dir,e.name)):[resolve(dir,e.name)]);
 
 /** Expand only literals, finite domains and inspected adapters. Unknown expressions fail closed. */
-export function collectAudioCalls(source,path,{domains={},eventCues=[],forwardedIds=[]}={}){
+export function collectAudioCalls(source,path,{domains={},eventCues=[],forwardedIds=[],bindings=[]}={}){
   const sf=ts.createSourceFile(path,source,ts.ScriptTarget.Latest,true,path.endsWith('tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);
   const calls=[];
   const cueNames=new Set(['playCue']),engineNames=new Set(['audioEngine','audio']);
@@ -29,6 +29,12 @@ export function collectAudioCalls(source,path,{domains={},eventCues=[],forwarded
     if(ts.isIdentifier(node))return node.text==='id'&&forwardedIds.length?forwardedIds:domains[node.text]??[];
     if(ts.isCallExpression(node)&&node.expression.getText(sf)==='eventCue')return eventCues;
     if(ts.isTemplateExpression(node)){
+      const bound=node.templateSpans.some(s=>ts.isIdentifier(s.expression)&&bindings.some(b=>s.expression.text in b));
+      if(bound)return unique(bindings.flatMap(binding=>{
+        let out=[node.head.text];
+        for(const span of node.templateSpans){const vs=ts.isIdentifier(span.expression)&&span.expression.text in binding?[binding[span.expression.text]]:values(span.expression);if(!vs.length)return [];out=out.flatMap(a=>vs.map(b=>a+b+span.literal.text));}
+        return out;
+      }));
       let out=[node.head.text];
       for(const span of node.templateSpans){const vs=values(span.expression);if(!vs.length)return [];out=out.flatMap(a=>vs.map(b=>a+b+span.literal.text));}
       return unique(out);
@@ -70,7 +76,8 @@ export async function writeSoundMap(){
   const calls=[],inspected=[];
   for(const file of sources){
     const path=relative(root,file),source=readFileSync(file,'utf8');
-    const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},eventCues}:
+    const slots=JSON.parse(readFileSync(resolve(root,'apps/web/src/audio/voice-callouts.json'),'utf8')).filter(r=>r.kind==='skill').map(r=>({unit:r.unitId,slot:r.slot}));
+    const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},bindings:slots,eventCues}:
       path==='apps/web/src/game/cardrpg/contracts/audio-cues.ts'?{forwardedIds:[...M.SOUND_CUES.keys()]}:{};
     const found=collectAudioCalls(source,path,adapters);
     if(found.length){calls.push(...found);inspected.push(signed(path));}

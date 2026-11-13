@@ -16,3 +16,9 @@ After: /dev/disk3s1   926Gi   792Gi    97Gi    90%    5.4M  1.0G    1%   /System
 
 Resume 2026-11-13T02:27+00:00: 93 GiB available before cleanup; worktree 28 GiB. Removed only rebuildable outputs: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. No protected files or source recordings removed.
 After: /dev/disk3s1   926Gi   795Gi    93Gi    90%    5.4M  975M    1%   /System/Volumes/Data
+
+Resume 2026-11-13T04:45+00:00: 89 GiB free before cleanup; worktree 29 GiB. Removed rebuildable paths: apps/web/node_modules/.vite. Current V sources and protected directories retained.
+After: /dev/disk3s1   926Gi   799Gi    89Gi    90%    5.4M  932M    1%   /System/Volumes/Data
+
+Resume 2026-11-13T04:59:51.017Z: 91 GiB free before cleanup; 30 GiB worktree. Removed rebuildable outputs: none. Live web .vite and contracts out/cache deferred until U1 captures finish. Current V FLAC sources and protected trees retained.
+After: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /System/Volumes/Data

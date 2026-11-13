@@ -139,7 +139,9 @@ for(const screen of ['battle','boss'] as const){
     const skills=cat?cat.skills.filter(s=>s.type!=='ultimate').map(s=>Number(s.id.split('-').at(-1))):[1,2];
     for(const n of skills){
       for(const phase of ['cast','impact'])add(screen,`skill-${unit}-${n}-${phase}`,`skill.${unit}.${n}.${phase}`,'A');
-      add(screen,`skill-callout-${unit}-${n}`,`voice.${unit}.skill.${unit}-${n}`,'A');
+      const skillId=cat?`${unit}-${n}`:n===1?`enemy:${unit}:basic`:`enemy:${unit}`;
+      add(screen,`skill-callout-${unit}-${n}`,`voice.${unit}.skill.${skillId}`,'A');
+      if(!cat)add(screen,`legacy-skill-callout-${unit}-${n}`,`voice.${unit}.skill.${unit}-${n}`,'A');
     }
     for(const phase of ['charge','release'])add(screen,`ultimate-callout-${unit}-${phase}`,`voice.${unit}.ult.${phase}`,'A');
     for(const event of LEGACY_VOICE_EVENTS)add(screen,`voice-${unit}-${event}`,`voice.${unit}.${event}`,'A');

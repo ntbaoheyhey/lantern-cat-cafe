@@ -1,0 +1,13 @@
+[2026-11-13 09:42:13.149] [ctranslate2] [thread 3302662] [warning] Tip: experimental MPS backend is available and often 2x+ faster than CPU on Apple Silicon (varies by workload and hardware). Try device="mps".
+clover raw {'expected': 'Bloom!', 'recognized': 'below.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+clover nasal {'expected': 'Bloom!', 'recognized': 'Fluent.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+clover clear {'expected': 'Bloom!', 'recognized': 'Fluent.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+marigold raw {'expected': 'Rise!', 'recognized': 'Rise.', 'wordAccuracy': 1.0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+marigold nasal {'expected': 'Rise!', 'recognized': 'Fries.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+marigold clear {'expected': 'Rise!', 'recognized': 'Fries.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+spool-ram raw {'expected': 'Full!', 'recognized': 'Oh.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+spool-ram nasal {'expected': 'Full!', 'recognized': 'Oh.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+spool-ram clear {'expected': 'Full!', 'recognized': 'Oh.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+button-guard raw {'expected': 'Hold!', 'recognized': 'old.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+button-guard nasal {'expected': 'Hold!', 'recognized': '...holes.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}
+button-guard clear {'expected': 'Hold!', 'recognized': '...holes.', 'wordAccuracy': 0, 'model': 'faster-whisper small.en int8 CPU', 'prompt': None, 'beamSize': 5, 'temperature': 0, 'language': 'en'}

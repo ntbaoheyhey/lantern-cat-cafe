@@ -17,16 +17,25 @@ describe('sample cue coverage',()=>{
    expect(samples.every(s=>s.processedVoice&&s.pack===`cat-${cat}`)).toBe(true);
   }
  });
- it('emits damage/status/death at impact and the ultimate voice at charge',()=>{
+ it('emits damage/status/death at impact and exposes charge/release to the engine fallback',()=>{
   const ids:string[]=[];const audio={play:(id:string)=>{ids.push(id);}};
-  const frame={plan:{id:1,actorId:'mochi',shape:'bash',ultimate:true,events:[{type:'damage'},{type:'death'},{type:'status_apply',status:'burn'}]},beat:{kind:'anticipation'}};
-  playFrame(audio,frame as never);expect(ids).toContain('voice.mochi.ult');frame.beat.kind='impact';playFrame(audio,frame as never);expect(ids).toEqual(expect.arrayContaining(['hit.blunt','ui.death','status.burn.on']));for(const id of ids)expect(resolveCue(id,m)?.length,id).toBeGreaterThan(0);
+  const frame={plan:{id:1,actorId:'mochi',skillId:'mochi-4',shape:'bash',ultimate:true,events:[{type:'damage'},{type:'death'},{type:'status_apply',status:'burn'}]},beat:{kind:'anticipation'}};
+  playFrame(audio,frame as never);expect(ids).toContain('ult.mochi.charge');expect(ids.some(id=>id.startsWith('voice.'))).toBe(false);frame.beat.kind='impact';playFrame(audio,frame as never);expect(ids).toEqual(expect.arrayContaining(['hit.blunt','ui.death','status.burn.on']));for(const id of ids)expect(resolveCue(id,m)?.length,id).toBeGreaterThan(0);
  });
  it('does not turn travel, recoil or residue into repeated skill impacts',()=>{
   const ids:string[]=[];const audio={play:(id:string)=>ids.push(id)};
-  for(const kind of ['anticipation','travel','impact','reaction','residue'])playFrame(audio,{plan:{id:2,actorId:'mochi',shape:'bash',ultimate:false,events:[{type:'damage'}]},beat:{kind}} as never);
+  for(const kind of ['anticipation','travel','impact','reaction','residue'])playFrame(audio,{plan:{id:2,actorId:'mochi',skillId:'mochi-1',shape:'bash',ultimate:false,events:[{type:'damage'}]},beat:{kind}} as never);
   expect(ids.filter(id=>id==='skill.mochi.1.impact')).toHaveLength(1);
   expect(ids.filter(id=>id==='hit.blunt')).toHaveLength(1);
   expect(ids).toContain('kit.slash.release');
+ });
+ it('uses the real skill slot and enemy catalogue ID, with no cast for a round tick',()=>{
+  const ids:string[]=[];const audio={play:(id:string)=>ids.push(id)};
+  for(const [actorId,skillId] of [['soot','soot-3'],['foe-2-yarn-giant','enemy:yarn-giant'],['','']]){
+   playFrame(audio,{plan:{actorId,skillId,shape:'bash',ultimate:false,events:[]},beat:{kind:'anticipation'}} as never);
+  }
+  expect(ids).toEqual(['skill.soot.3.cast','skill.yarn-giant.2.cast']);
+  playFrame(audio,{plan:{actorId:'foe-0-teacup-healer',skillId:'enemy-special',presentationId:'enemy:teacup-healer',shape:'heal',ultimate:false,events:[]},beat:{kind:'anticipation'}} as never);
+  expect(ids.at(-1)).toBe('skill.teacup-healer.2.cast');
  });
 });

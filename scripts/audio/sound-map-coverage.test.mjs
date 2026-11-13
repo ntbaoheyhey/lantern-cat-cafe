@@ -19,3 +19,7 @@ test('event adapter is explicit, and unresolved music identifiers remain unresol
   const calls=collectAudioCalls('audio.play(eventCue(event)); audioEngine.music(selected);','events.ts',{eventCues:['ui.turn','hit.blunt']});
   assert.deepEqual(calls.map(c=>c.ids),[['ui.turn','hit.blunt'],[]]);
 });
+test('correlates unit and slot bindings instead of inventing nonexistent enemy skills',()=>{
+ const calls=collectAudioCalls('audio.play(`skill.${unit}.${slot}.cast`); audio.play(unknown);','events.ts',{bindings:[{unit:'mochi',slot:3},{unit:'yarn-giant',slot:2}]});
+ assert.deepEqual(calls.map(c=>c.ids),[['skill.mochi.3.cast','skill.yarn-giant.2.cast'],[]]);
+});

@@ -1,5 +1,6 @@
 import type {AudioBridge,CueOptions} from '../game/cardrpg/contracts/audio-cues';
 import {BUS_NAMES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
+import {calloutForCast,voiceCallout} from './callouts';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 
 const KEY='tbh-audio-v3';
@@ -9,7 +10,7 @@ interface Playing {
  bus:Bus; priority:number; group:number; baseRate:number; ended:boolean;
 }
 export interface LayerPlayed {role:string;variantId:string;offsetMs:number;pitch:number;gainDb:number;}
-export interface AudioHit {id:string;result:string;at:number;layers?:LayerPlayed[];sfx?:number;voice?:number;}
+export interface AudioHit {id:string;result:string;at:number;layers?:LayerPlayed[];sfx?:number;voice?:number;duckDb?:number;}
 export class AudioEngine implements AudioBridge {
  private ctx?:AudioContext;
  private buses=new Map<Bus,GainNode>(); private duck?:GainNode;
@@ -17,6 +18,7 @@ export class AudioEngine implements AudioBridge {
  private active=new Set<Playing>(); private last=new Map<string,number>();
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
  private voiceRequest=0; private pendingVoicePriority=0; private voicePriority=0;
+ private lastVoiceRequested=-Infinity; private calloutRequests=new Map<string,number>();
  private musicToken=0; private musicId=''; private paused=false; private rate=1;
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
@@ -52,7 +54,7 @@ export class AudioEngine implements AudioBridge {
   try{const m=await this.loadManifest();const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui','voice','battle']:['b2-ui',screen];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
  }
  private record(id:string,result:string,layers?:LayerPlayed[]){
-  this.hits.push({id,result,at:Date.now(),...(layers?{layers,sfx:this.count('sfx'),voice:this.count('voice')}:{})});
+  this.hits.push({id,result,at:Date.now(),...(layers?{layers,sfx:this.count('sfx'),voice:this.count('voice'),duckDb:this.count('voice')||id.startsWith('ult.')?-8:0}:{})});
   if(this.hits.length>12000)this.hits.splice(0,1000);
  }
  setBus(name:string,value:number){if(!BUS_NAMES.includes(name as Bus)||!Number.isFinite(value))return;const bus=name as Bus;this.preferences[bus]=Math.max(0,Math.min(1,value));this.buses.get(bus)?.gain.setTargetAtTime(bus==='master'&&this.muted?0:this.preferences[bus],this.ctx!.currentTime,.025);this.remember();}
@@ -61,7 +63,25 @@ export class AudioEngine implements AudioBridge {
  speed(value:number){if(!Number.isFinite(value))return;this.rate=Math.max(1,Math.min(3,value));for(const p of this.active)if(p.bus==='sfx')p.source.playbackRate.setValueAtTime(p.baseRate*this.rate,this.ctx!.currentTime);}
  private duckMusic(){if(!this.ctx||!this.duck)return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
  private releaseDuck(){if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
- play(id:string,opts:CueOptions={}){void this.perform(id,opts);}
+ play(id:string,opts:CueOptions={}){
+  const now=Date.now();
+  if(id.startsWith('voice.')){
+   this.lastVoiceRequested=now;
+   // A can send its explicit request just after the cast fallback. One take
+   // owns that sync point, so the second request must not restart the line.
+   if(voiceCallout(id)){
+    if(now-(this.calloutRequests.get(id)??-Infinity)<300){this.record(id,'duplicate');return;}
+    this.calloutRequests.set(id,now);
+   }
+  }
+  void this.perform(id,opts);
+  const fallback=calloutForCast(id),epoch=this.epoch;
+  if(fallback)this.record(id,'cast');
+  if(fallback)queueMicrotask(()=>{
+   // Wait one microtask for A's explicit voice call at the same cast point.
+   if(epoch===this.epoch&&Date.now()-this.lastVoiceRequested>=300)this.play(fallback);
+  });
+ }
  private async perform(id:string,opts:CueOptions){
   if(!this.ctx||this.paused){this.record(id,'locked');return;}
   if(this.muted){this.record(id,'muted');return;}
@@ -84,7 +104,10 @@ export class AudioEngine implements AudioBridge {
    if(bus==='voice'&&voiceToken!==this.voiceRequest){this.record(id,'superseded');return;}
    const now=this.ctx.currentTime*1000;
    if(now-(this.last.get(id)??-Infinity)<(design?.cooldownMs??30)){this.record(id,'cooldown');return;}
-   if(bus==='voice'&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
+   // Required ultimate charge/release lines override ordinary chatter cadence.
+   // They still share a single voice source and retain priority over skills.
+   const requiredUltimate=voiceCallout(id)?.kind==='ultimate';
+   if(bus==='voice'&&!requiredUltimate&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
    const count=design?.baked?1:design?.layers.length??1;
    if(!this.admit(bus,count,priority)){this.record(id,'limit');return;}
    if(bus==='voice'){this.stopBus('voice');this.voicePriority=priority;this.last.set('voice-cadence',now);}

@@ -8,8 +8,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
 - [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
-- [ ] V — in progress
-- [ ] U1 — todo
+- [ ] V — PARTIAL (allowed: only recognition misses after 9 documented processing iterations; all other V gates PASS; self-score 7/10)
+- [ ] U1 — in progress (53 baseline states; final loss-fixture verification and private comparisons)
 - [ ] U2 — todo
 - [ ] U3 — todo
 - [ ] U4 — todo
@@ -110,3 +110,23 @@ PASS S4.cadence: measured 7.563; required median voice interval 6-9s
 PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
 
 Checks: tests/s4-types.log, tests/s4-suite.log, tests/s4-browser.log; web 2,499 and server 724 pass. Paired 180-second traces: 4.525% added main-thread time, no console errors, cadence median 7.563 seconds, one voice and at most 14 SFX layers. All 216 takes and 12 identities meet loudness/consonant/distinctness gates. Existing game-rule expected failures and skips remain disclosed.
+
+## V permitted PARTIAL evidence
+
+PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
+
+PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
+
+FAIL V.ultAccuracy: measured 32/50; required recogniser word accuracy >= 0.7
+
+FAIL V.skillAccuracy: measured 59/62; required recogniser word accuracy >= 0.5
+
+PASS V.distinct: measured 12/12; required S4 distinctness holds for callouts
+
+PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
+
+PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
+
+PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
+
+Acceptance checker confirms the permitted recognition-only PARTIAL condition with 9 measured iterations. Checks: tests/v-types.log, tests/v-suite.log, tests/v-source-final.log; exact misses and current hashes: VOICE-CALLOUTS-VALIDATION.json.

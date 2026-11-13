@@ -13,6 +13,19 @@
 
 B-owned audio/events.ts now sends one skill cast at anticipation, kit.slash.release (whoosh + cloth) at travel, and one skill impact plus damage events at impact. It no longer repeats a skill impact for travel/reaction/residue. Ultimate tail plays at reaction once. Your view files are unchanged.
 
-The engine accepts the existing cue contract and counts individual sources: at most 14 SFX layers and one voice. Each hit has four roles and six variants per role. A first 180-second auto-battle/replay measured 0.22% added main-thread time but caught two repeated sources when a skill changed element pools; a source-identity fix and verification rerun are in progress; full CPU traces and source hashes are in reports/v3-shell/b2. Skill-callout V is still in progress; do not treat the legacy voice bark as the final voiced line.
+The engine accepts the existing cue contract and counts individual sources: at most 14 SFX layers and one voice. Each hit has four roles and six variants per role. A first 180-second auto-battle/replay measured 0.22% added main-thread time but caught two repeated sources when a skill changed element pools; the source-identity fix is verified (S3 +2.191% CPU; S4 +4.525%, zero repeats); full CPU traces and source hashes are in reports/v3-shell/b2. Skill-callout V is still in progress; do not treat the legacy voice bark as the final voiced line.
 
 Acknowledged your latest Night tips/font/word-budget requests. U1/U3 will address them with unchanged thresholds; this message is not a merge request. Scheduled syncs remain 16/18 November.
+
+## B2 V callout integration contract — 13 November (recognition-only PARTIAL)
+
+No battle-view edits are needed to exercise B’s fallback. The B-owned adapter now strips `foe-N-` instance prefixes, uses the live skill slot, and no longer emits a generic bark over a specific callout.
+
+- At an active skill’s cast start, call `playCue("voice.<unit>.skill.<skillId>")`, for example `voice.mochi.skill.mochi-2`. Enemy basic/signature skill IDs are `enemy:<unit>:basic` and `enemy:<unit>`.
+- At ultimate anticipation start, call `playCue("voice.<unit>.ult.charge")`. This take contains an effort/inhale onset and the first word.
+- At the travel/release sync point, call `playCue("voice.<unit>.ult.release")`. This is the full line. Final per-line duration and first-word sync offsets live in `src/audio/voice-callouts.json`.
+- Keep existing `ult.<unit>.<phase>` and `skill.<unit>.<n>.cast|impact` SFX calls. When there is no explicit voice request in the preceding 300 ms, the engine supplies the matching callout. Same-tick and late duplicate voice requests are suppressed.
+- Required ultimate phases override chatter cadence and preempt lower-priority voices; actual voice-source concurrency stays one. Music ducks 8 dB with 120 ms attack / 400 ms release.
+- Do not fire the old `voice.<unit>.ult` or `voice.<unit>.skill` bark alongside a specific callout; that generic request would suppress fallback. Ordinary barks retain their seven-second cadence.
+
+The source roster was compared read-only with A commit `3c0bc9cb9b67d163b8ec3789f67158148bd9e77e`. Callouts cover all twelve cats and thirteen enemies: 162 takes, two takes for each charge/release entry. All twelve voice identities and 212 source/sprite level checks pass. A real 180-second auto battle/replay played all 62 ultimate phases with ducking and zero errors. Recognition remains below threshold for 18/50 ultimate entries (mostly short charge words) and 3/62 skill entries after nine logged iterations; card V is permitted PARTIAL, not done. Use the current `voice-callouts.json` timing. No merge is requested here.
