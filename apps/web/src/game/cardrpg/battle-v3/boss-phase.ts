@@ -15,7 +15,7 @@ export class BossPhase {
  render(view:SceneView,time:number,width:number,height:number,bounds:(id:string)=>Rect|undefined){
   if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.seen.clear();this.started=-100;}
   const bossId=Object.keys(view.bossPhases??{})[0],portrait=bossId?view.models?.[bossId]??'yarn-giant':'yarn-giant';
-  if(portrait!==this.audit.portrait){this.audit.portrait=portrait;this.image.src=`/units/${portrait}/portrait.webp`;}
+  if(portrait!==this.audit.portrait){this.audit.portrait=portrait;this.image.src=`/units/${portrait}/${portrait==='yarn-giant'?'portrait':'runtime'}.webp`;}
   for(const [id,phase] of Object.entries(view.bossPhases??{})){
    const previous=this.seen.get(id);if(previous!==undefined&&phase>previous){this.started=time;this.id=id;this.phase=phase;}this.seen.set(id,phase);
   }
@@ -44,7 +44,10 @@ export class BossPhase {
   c.strokeStyle=this.phase>=3?'#ffbd75':'#edc6ff';c.lineWidth=4;
   for(const y of [height*.1,height*.89]){c.beginPath();c.moveTo(left,y);c.lineTo(width,y);c.stroke();}
   const size=height*.82,drift=view.reducedMotion?0:Math.sin(age*Math.PI/2.5)*height*.035;
-  if(this.image.complete&&this.image.naturalWidth)c.drawImage(this.image,width*.80-size/2,height*.50-size/2-drift,size,size);
+  if(this.image.complete&&this.image.naturalWidth){
+   if(this.audit.portrait==='yarn-giant')c.drawImage(this.image,width*.80-size/2,height*.50-size/2-drift,size,size);
+   else c.drawImage(this.image,0,160,640,480,width*.80-size/2,height*.50-size*.375-drift,size,size*.75);
+  }
   // Two or three lit stitches communicate phase without another sentence.
   for(let i=0;i<3;i++){c.fillStyle=i<this.phase?'#ffdfa1':'#67506c';c.beginPath();c.arc(width*.80+(i-1)*26,height*.14,8,0,Math.PI*2);c.fill();}
   if(!view.reducedMotion){c.globalAlpha=opacity*.2;c.lineWidth=1;for(let i=0;i<16;i++){const y=(i/16+age*.22)%1*height;c.beginPath();c.moveTo(left,y);c.lineTo(width,y-height*.12);c.stroke();}}
