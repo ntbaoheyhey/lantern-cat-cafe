@@ -136,3 +136,7 @@ Checker audit follow-up: fresh aggregates must also carry suite metadata at leas
 
 ## P1/V1: synchronize the complete caster pose
 The compositor sampled only the first0.8s of a1s template ultimate, or at most1.1s of a longer designer clip. That released template hands around13 frames before the frame54 climax and left Mochi's authored1.1s strike almost at the closing flash. Reuse the existing piecewise clip retimer: authored release/hit lands on frame54, then the remaining clip follows through by frame67. No new rig, split, speech, camera, timeline length or combat timing. Encoded metrics now assert every caster reaches its release on the climax and finishes its full pose. This fixes a real timing mismatch; the separate motion threshold remains unchanged.
+
+- 2026-11-13 Q1 exception: B shared-blocker commit af969ae398c0f4b97b535e937f7008eeff9ece2c cherry-picked as A 291fc21c9791f3a3432f69ae792b33c0ede7596b. Conflict resolution only adapted compact labels, helper reset naming and the Quests copy to A’s older layout; no B redesign/audio/economy was imported. Pixel baselines and thresholds unchanged.
+
+- Q1 second shared-blocker pick: B 3dc9982d0 -> A e36aa024fe156569cfeddbf766dd5c0bf374e19a; compact badge label only.
