@@ -1,7 +1,8 @@
-NOW: Q4 candidate497ba9738e provisionally in rules; all18 scenarios/200seeds T-a..g pass; T-h9/85 assumptions complete.
-NEXT: Resume sensitivities after Q5 audio, confirm24 top10, complete full suite and browser checks; no E3 closure yet.
-E4:16 Anvil receipts;18 screenshots;5 odds tests; exact policy hash matches. E5 report generation next.
-Q5:35 repaired takes and6 menu lines published;12 identities pass; full22-clear-callouts capture runner68133.
-JOBS: econ/q4-jobs.json; q5/jobs.json. Sims37303,59609,67137 paused for render, supervisor resumes in finally.
-OPEN: Q4-Q9; no sync before16Nov12UTC.
-UPDATED: 2026-11-13T17:58:36.273084+00:00
+NOW: Q4 candidate497ba9738e passes18 scenarios/200seeds T-a..g; T-h20/170 cases observed with no misses; remainder pending.
+NEXT: Continue native37303/sensitivity59609/confirm24 67137; resume missing sensitivity cases after native completion.
+E4/E5:16 exact-policy receipts,18 shots,5 odds checks; report816 numeric citations. Full suite rerun pending after repaired tests.
+Q5:V8/8 gates PASS on22 full capture. S5 still7 numeric failures; current trial24 source pending full capture.
+Q5 METHOD:23 high shelves insufficient.24 lowpass voice3500/SFX2200; menu shelf-6/+3 presence; shortened greetings; fusion reaction.
+JOBS:econ/q4-jobs.json,q5/jobs.json. Sims resumed18:12:38UTC; pause for next realtime recording.
+OPEN:Q4-Q9; no sync before16Nov12UTC.
+UPDATED:2026-11-13T18:15:19.612287+00:00

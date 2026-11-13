@@ -29,7 +29,7 @@ describe('layered playback admission and variants',()=>{
  it('plays four audible roles with bounded jitter, micro offsets and role EQ',async()=>{
   const e=new AudioEngine(()=>.5);await e.unlock();e.play('hit.blunt');await flush();
   expect(e.diagnostics.sfx).toBe(4);expect(e.hits.at(-1)?.layers?.map(l=>l.offsetMs)).toEqual([0,7,18,23]);
-  expect(Context.latest.filters.map(f=>[f.type,f.frequency.value])).toEqual([['lowshelf',1200],['lowshelf',180],['highpass',1800]]);
+  expect(Context.latest.filters.map(f=>[f.type,f.frequency.value])).toEqual([['lowshelf',1200],['lowpass',2200],['lowpass',3500],['lowshelf',180],['highpass',1800]]);
   expect(Context.latest.sources.map(s=>s.start.mock.calls[0]?.[0])).toEqual([10,10.007,10.018,10.023]);
  });
  it('avoids a repeated source when an element changes to a shorter overlapping pool',()=>{
@@ -50,7 +50,7 @@ describe('layered playback admission and variants',()=>{
   expect(e.diagnostics.voice).toBe(1);expect(e.hits.at(-1)?.result).toBe('priority');
   Context.latest.currentTime+=7;e.play('voice.soot.ult');await flush();expect(e.diagnostics.voice).toBe(1);
  });
- it('opens space in battle music while speaking and keeps other scene mixes unchanged',async()=>{
+ it('opens speech space in battle and menus while retaining the boss balance',async()=>{
   const music=samples('music').map(s=>({...s,loop:true}));
   const m={...fixture,cues:{...fixture.cues,'music.battle':music,'music.boss':music,'music.home':music}};
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
@@ -63,7 +63,7 @@ describe('layered playback admission and variants',()=>{
   e.music('boss');await flush();Context.latest.currentTime+=8;
   e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(0);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(0);
   Context.latest.sources.at(-1)!.onended!();e.music('home');await flush();Context.latest.currentTime+=8;
-  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(0);
+  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-6);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(3);
  });
  it('spaces ordinary cat-speak across units, including generic skill barks, by seven seconds',async()=>{
   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.skill');await flush();

@@ -136,5 +136,35 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-full-current.log",
     "started": "2026-11-13T17:57:26.015948+00:00",
     "note": "Wait for existing suite67408, pause only owned sims, capture six full scenes, finally resume sims."
+  },
+  {
+    "name": "q5-isolate-buses",
+    "pid": 97905,
+    "command": [
+      "python3",
+      "scripts/audio/q5-isolate-buses.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-isolate-buses.log",
+    "started": "2026-11-13T18:07:52.541177+00:00"
+  },
+  {
+    "name": "q5-tone-pilot",
+    "pid": 98622,
+    "command": [
+      "python3",
+      "work/q5-tone-pilot.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-tone-pilot.log",
+    "started": "2026-11-13T18:10:49.198890+00:00"
+  },
+  {
+    "name": "q5-menu-phrases",
+    "pid": 6594,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-phrases.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-phrases.log",
+    "started": "2026-11-13T18:12:35.702992+00:00"
   }
 ]

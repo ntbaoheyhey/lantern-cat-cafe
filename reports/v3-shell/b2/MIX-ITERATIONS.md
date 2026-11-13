@@ -207,3 +207,16 @@ See the change and interpretation recorded in DECISIONS.md.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | [battle](mix/21-battle-only-presence-battle.json) | 180.20 | 3.196 | 0.358 | 1.826 | 4.661 | 1.000 | -13.310 | -1.240 |
 | [boss](mix/21-battle-only-presence-boss.json) | 120.20 | 3.294 | 0.376 | 1.780 | 3.494 | 1.000 | -14.890 | -1.920 |
+
+## 22-clear-callouts
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/22-clear-callouts-bag.json) | 60.20 | 4.103 | 1.393 | 5.232 | 0.997 | 1.000 | -17.870 | -3.790 |
+| [battle](mix/22-clear-callouts-battle.json) | 180.02 | 3.189 | 0.378 | 1.689 | 5.999 | 1.000 | -13.290 | -1.420 |
+| [boss](mix/22-clear-callouts-boss.json) | 120.20 | 3.095 | 0.339 | 1.872 | 4.493 | 1.000 | -14.880 | -1.930 |
+| [forge](mix/22-clear-callouts-forge.json) | 60.20 | 4.153 | 1.416 | 5.166 | 0.000 | 1.000 | -17.990 | -4.640 |
+| [gacha](mix/22-clear-callouts-gacha.json) | 60.20 | 4.103 | 1.619 | 5.316 | 0.000 | 1.000 | -18.090 | -6.260 |
+| [home](mix/22-clear-callouts-home.json) | 60.20 | 4.186 | 1.520 | 5.033 | 2.990 | 1.000 | -17.860 | -4.680 |

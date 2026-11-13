@@ -40531,12 +40531,12 @@
     {
       "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
       "file": "mallow-1.flac",
-      "sha256": "dc34b39a41b1becb46aee69523c0baca82ce8df8e666c31d4892ac6f1437c423",
+      "sha256": "620afee69a9f8111bb0bd9692aa53be613bfe2252cac7e9393cf1cc04f8f9e8a",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: RutgerMuller, ShangusBurger, hollandm, lextrack, qubodup",
-      "date": "2026-11-13T17:49:45.207995+00:00",
+      "date": "2026-11-13T18:13:29.775713+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40552,45 +40552,33 @@
           "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-06.flac",
-          "sha256": "20c2337055fd4ccb6d1b9752aa694cee923c462872c63f87dde4afe76a04dafd"
+          "path": "assets/audio-sources/b2/consonants/843435-05.flac",
+          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
-          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-08.flac",
-          "sha256": "f7086033e580562fedde753d7d2c4e76acada6ad938b3716dcc9885964206826"
+          "path": "assets/audio-sources/b2/consonants/104374-07.flac",
+          "sha256": "b44e42291ecff47bfacbbc5fd06721b797b95c59da01635d248b91379cb7ef66"
         },
         {
           "path": "assets/audio-sources/b2/consonants/691913-01.flac",
           "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-10.flac",
-          "sha256": "585002f1f4f7d1f068d45a922efcf9635e093b3ff390afd1206929e2e36149fd"
+          "path": "assets/audio-sources/b2/consonants/104374-09.flac",
+          "sha256": "ff4057d76f82da75a5d716a365bbd5907453718167d19378503f62fe139f4e62"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-11.flac",
-          "sha256": "7d268193aa6e6cdb410503d0089f96dc829ea233025dde258095b83c79c89ffb"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/764351-06.flac",
-          "sha256": "2178efdf7032e9ec0ef024aa432e936fec8eaa15833fd0d494060fffbf69a117"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/843435-14.flac",
-          "sha256": "868738a2d3a44f5882785e7c48640f37e86f36eafc15aa7af6aa3e654552835e"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/764351-15.flac",
-          "sha256": "e735e462c8937b0bbef385bd34b44880d4a7dfd4eefce0de5c65b4adc7ebbf70"
+          "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+          "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
         }
       ],
       "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
-      "prompt": "Welcome home, little hero!",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "prompt": "Welcome home!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-phrase-probes.json",
       "formantProcessor": {
         "tool": "pyworld 0.3.5",
         "license": "MIT",
@@ -40722,12 +40710,12 @@
     {
       "path": "assets/audio-sources/b2/menu-voices/mochi-4.flac",
       "file": "mochi-4.flac",
-      "sha256": "4bb7df45ebe0f03e012b2699ca7645da99602de94a4ac0d380da5da94bacde3c",
+      "sha256": "3f375287cb7acd5903f5f8b07df527d77f2a87b88b2aff8d277fa749af90968d",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: RutgerMuller, ShangusBurger, hollandm, qubodup, tuberatanka",
-      "date": "2026-11-13T17:49:45.207995+00:00",
+      "date": "2026-11-13T18:13:29.775713+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40763,17 +40751,13 @@
           "sha256": "2eedf446ded315c72c6088a92e3354787f5149068c81e30a6dc6f72b355f9f48"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-07.flac",
-          "sha256": "b44e42291ecff47bfacbbc5fd06721b797b95c59da01635d248b91379cb7ef66"
-        },
-        {
           "path": "assets/audio-sources/b2/consonants/843435-21.flac",
           "sha256": "ee56846b2259c5bb81ea497d46086dd26252e6bc8cdc0eae04d357c9dbcea28d"
         }
       ],
       "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
-      "prompt": "Ready for another night!",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-delivery-probes.json",
+      "prompt": "Ready for tonight!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-phrase-probes.json",
       "formantProcessor": {
         "tool": "pyworld 0.3.5",
         "license": "MIT",
@@ -40913,7 +40897,7 @@
     {
       "path": "apps/web/public/audio/menu-voices.webm",
       "file": "menu-voices.webm",
-      "sha256": "787a6144adedd89c6ff7cbd403a9b2e95cd570cc1f2dba36e97bbb4d2692617a",
+      "sha256": "1a3664311adffb9b15683c665b109c115188a5afd0055ed8174157bbabd122c0",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -41023,13 +41007,13 @@
         }
       ],
       "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-publication.json",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-phrase-publication.json",
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/menu-voices.mp3",
       "file": "menu-voices.mp3",
-      "sha256": "08557df1231b1c6cd77fd53418a025f3aaf8c193a8626a644cd7991d04e5ead5",
+      "sha256": "8959a07bc5818d0e7545a745cc57e9ceb590c8a0e9ecd68e55593fcf3d2a1138",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -41139,7 +41123,7 @@
         }
       ],
       "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-publication.json",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-phrase-publication.json",
       "spriteGainDb": 0
     },
     {
