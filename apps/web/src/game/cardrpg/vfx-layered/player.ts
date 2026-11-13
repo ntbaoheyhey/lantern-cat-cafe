@@ -5,27 +5,33 @@ import {paintedTargets} from '../spine/vfx-registry';
 import {chargeEvent} from '../depth/card-action-plan';
 import {stageLayoutC2} from '../stage/layout-c2';
 import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline';
+import {packPaintSheets,type PackedPaint} from './atlas';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const textures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 export const PAINT_TIMELINES=new Map(Object.values(manifests).map(t=>[t.id,validatePaint(t)]));
 type Point={x:number;y:number};
 export class LayeredVfx {
- readonly images=new Map<string,HTMLImageElement>();
+ readonly images=new Map<string,PackedPaint>();
  readonly stats={draws:0,active:0,failed:[] as string[]};
  readonly ready:Promise<void>;
  enabled=true;onlyLayers:Set<string>|null=null;
  private disposed=false;
  constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){
-  this.ready=Promise.all([...PAINT_TIMELINES].map(async([id])=>{
+  const groups=new Map<string,{id:string;url:string}[]>();
+  for(const [id,timeline] of PAINT_TIMELINES){
    const url=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
-   if(!url){this.stats.failed.push(id);return;}
-   try{const image=new Image();image.src=url;await image.decode();if(!this.disposed)this.images.set(id,image);}catch{this.stats.failed.push(id);}
+   if(!url){this.stats.failed.push(id);continue;}
+   const group=groups.get(timeline.owner)??[];group.push({id,url});groups.set(timeline.owner,group);
+  }
+  this.ready=Promise.all([...groups.values()].map(async entries=>{
+   try{const packed=await packPaintSheets(entries,()=>this.disposed);for(const [id,image] of packed)this.images.set(id,image);}
+   catch{this.stats.failed.push(...entries.map(e=>e.id));}
   })).then(()=>{});
  }
  handles(plan:EffectPlan){const id=plan.presentationId??plan.skillId;return this.enabled&&this.images.has(id)&&PAINT_TIMELINES.has(id);}
  /** Decode and upload the atlas before its first combat impact. */
- warm(c:CanvasRenderingContext2D){c.save();for(const [id,image] of this.images)for(const layer of PAINT_TIMELINES.get(id)!.layers)c.drawImage(image,...layer.region,0,0,8,8);c.restore();c.clearRect(0,0,8,8);}
+ warm(c:CanvasRenderingContext2D){c.save();for(const image of new Set([...this.images.values()].map(p=>p.image)))c.drawImage(image,0,0,8,8);c.restore();c.clearRect(0,0,8,8);}
  render(c:CanvasRenderingContext2D,view:SceneView,width:number,height:number){
   this.stats.draws=0;this.stats.active=0;
   const frame=view.frame;if(!frame)return;
@@ -62,9 +68,9 @@ export class LayeredVfx {
     const extent=unit*layer.size*(passiveTarget?.75:charging?.7:1),rotation=view.reducedMotion?0:key.rotate;
     c.save();c.globalCompositeOperation=layer.blend==='add'?'lighter':layer.blend==='screen'?'screen':'source-over';c.globalAlpha=key.alpha;
     c.translate(p.x+key.x*unit*facing,p.y+key.y*unit);c.rotate(rotation*facing);c.scale(key.sx*facing,key.sy);
-    c.drawImage(image,...region,-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
+    c.drawImage(image.image,image.x+region[0],image.y+region[1],region[2],region[3],-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
    }
   }
  }
- dispose(){this.disposed=true;this.images.clear();}
+ dispose(){this.disposed=true;for(const image of new Set([...this.images.values()].map(p=>p.image)))image.width=image.height=1;this.images.clear();}
 }

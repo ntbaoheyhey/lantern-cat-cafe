@@ -81,3 +81,9 @@ Retain bounded action-follow cameras for both teams, animated painted skill buil
 
 ## P3 verification repairs
 The inherited phase layer used Yarn’s portrait for every boss. Later bosses now reuse their existing full painted runtime images without adding media. The four lifecycle tests bypass constructors and needed a bossPhase dispose stub. Initial full suite passed 2508 other web tests; the four repaired tests pass in loading-repair.log. The browser audit also checks stationary reduced-motion aura, reset clearing, and both later boss assets. The shared Night tips shell test still fails and is not waived.
+
+## P10: bounded paint and Low preset (13 Nov)
+Baseline: High59.84–60.00FPS; Low4x CPU33.20–42.94FPS. Pack the86 original1024×512 sheets into exact-size per-unit canvas pages, preserving all source pixels and releasing source image references after packing. Keep24 reusable ground marks and72 reusable particle trajectories per element. Low retains full-resolution bodies and numbers, reduces secondary particles, renders VFX at0.85 scale and skips postprocessing buffers. The 4x CDP profile is a proxy, not a claim of testing a physical2019 laptop. Same three deterministic fixtures and pixel comparisons are required before completion.
+
+## P1/M1: ensemble pilot remains below the unchanged target
+Adding P4 weather and P5 crowd reactions produces15.3523 full-frame energy versus15.7956 required in wave1. This is a FAIL, not a rounded pass. Keep the already-approved displacement and hit-reaction checks; next compare the recovery portion of the reference and ours to strengthen intentional strike follow-through rather than add arbitrary camera shake.

@@ -68,7 +68,7 @@ export class PaintedVfx {
   for(const layer of recipe.layers)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,id,id,time,i,layer.count,speed);
  }
  render(view:SceneView,time:number,width:number,height:number,protectedLabels:readonly Rect[]){
-  const c=this.ctx,ratio=Math.min(devicePixelRatio||1,2),w=Math.round(width*ratio),h=Math.round(height*ratio);
+  const c=this.ctx,ratio=view.quality==='low'?.85:Math.min(devicePixelRatio||1,2),w=Math.round(width*ratio),h=Math.round(height*ratio);
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
   c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);c.save();this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;this.stats.maskedFaces=0;
   // All effects share one final protection pass. Nested clips multiply the

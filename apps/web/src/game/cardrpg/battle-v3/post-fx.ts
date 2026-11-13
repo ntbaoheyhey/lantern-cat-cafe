@@ -14,7 +14,7 @@ export class BattlePostFx {
  private colorPass:EffectPass;private bloomPass:EffectPass;
  private grades=new Map<string,LookupTexture>();
  private impactPlan:EffectPlan|null=null;
- constructor(renderer:T.WebGLRenderer,scene:T.Scene,camera:T.Camera){
+ constructor(private renderer:T.WebGLRenderer,private scene:T.Scene,private camera:T.Camera){
   this.composer=new EffectComposer(renderer,{multisampling:0});
   this.bloom=new SelectiveBloomEffect(scene,camera,{intensity:.45,luminanceThreshold:.7,mipmapBlur:true,resolutionScale:.35});
   this.bloom.ignoreBackground=true;
@@ -35,6 +35,9 @@ export class BattlePostFx {
   lut.needsUpdate=true;this.grades.set(key,lut);return lut;
  }
  render(plan:EffectPlan|null,elapsed:number,delta:number,quality:string,reduced:boolean,caster?:T.Object3D,impact?:T.Vector3){
+  // The Low preset keeps full-resolution painted actors and numbers, while
+  // avoiding offscreen colour/bloom buffers and secondary post-processing.
+  if(quality==='low'){this.renderer.render(this.scene,this.camera);return;}
   const state=plan?sequenceAt(plan,elapsed,reduced):null,high=quality!=='low';
   this.bloomPass.enabled=high&&!!state;
   this.bloom.selection.clear();if(high&&caster)caster.traverse(o=>{if(o instanceof T.Mesh)this.bloom.selection.add(o);});

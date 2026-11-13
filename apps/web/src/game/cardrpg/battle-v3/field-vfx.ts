@@ -1,6 +1,8 @@
 import type {SceneView} from '../../squad/turn3d/scene';
 import type {ResolveSocket} from '../spine/vfx';
 import {sequenceAt,SIGNATURES} from './sequence';
+import type {PackedPaint} from '../vfx-layered/atlas';
+import {GroundPool,ElementParticlePool} from './field-pool';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const random=(n:number)=>{const v=Math.sin(n*127.1+317.7)*43758.5453;return v-Math.floor(v);};
@@ -9,16 +11,16 @@ function star(c:CanvasRenderingContext2D,x:number,y:number,r:number,n=4){
 }
 /** Fixed-clock procedural paths share the painted canvas and its face/label mask. */
 export class FieldVfx {
- draws=0;readonly audit={skill:'',tier:'',particles:0,layers:[] as string[],groundCount:0};
- private ground:{x:number;y:number;r:number;born:number;color:string;family:string;seed:number}[]=[];
+ draws=0;readonly audit={skill:'',tier:'',particles:0,layers:[] as string[],groundCount:0,groundCapacity:24,pooledParticles:0};
+ private ground=new GroundPool();
+ private particles=new ElementParticlePool();
  private groundPlan:unknown;private lastTime=-Infinity;
- constructor(private socket:ResolveSocket,private painted:(id:string)=>HTMLImageElement|undefined=()=>undefined){}
+ constructor(private socket:ResolveSocket,private painted:(id:string)=>PackedPaint|undefined=()=>undefined){}
  render(c:CanvasRenderingContext2D,view:SceneView,width:number,height:number,time:number){
   this.draws=0;this.audit.particles=0;this.audit.layers.length=0;
-  if(time<this.lastTime)this.ground.length=0;this.lastTime=time;
-  this.ground=this.ground.filter(g=>time-g.born<.85);
-  for(const g of this.ground)this.residue(c,g,time-g.born);
-  this.audit.groundCount=this.ground.length;
+  if(time<this.lastTime)this.ground.clear();this.lastTime=time;
+  this.audit.groundCount=this.ground.expire(time);
+  for(const g of this.ground.items)if(g.active)this.residue(c,g,time-g.born);
   const frame=view.frame,state=frame&&sequenceAt(frame.plan,frame.elapsed,view.reducedMotion);
   if(!frame||state?.plate)return;
   const plan=frame.plan,seq=state?.seq,at=frame.elapsed,contact=seq?.impact??plan.beats[2]!.start;
@@ -56,9 +58,9 @@ export class FieldVfx {
     const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI);
     c.save();c.scale(swell,swell);
     c.globalCompositeOperation='source-over';c.globalAlpha=release*.95;
-    const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted,256,0,256,256,-extent/2,-extent/2,extent,extent);
+    const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted.image,painted.x+256,painted.y,256,256,-extent/2,-extent/2,extent,extent);
     c.globalCompositeOperation='screen';c.globalAlpha=release*.42;
-    c.rotate((seed%2?1:-1)*.25);c.drawImage(painted,512,0,256,256,-r*1.4,-r*1.05,r*2.8,r*2.1);
+    c.rotate((seed%2?1:-1)*.25);c.drawImage(painted.image,painted.x+512,painted.y,256,256,-r*1.4,-r*1.05,r*2.8,r*2.1);
     c.restore();
     this.audit.layers.push('painted-core','painted-sweep');this.draws+=2;
    }else{c.globalAlpha=release*.8;c.strokeStyle=palette[0]!;c.fillStyle=palette[0]!;c.lineWidth=r*.025;this.motif(c,family,r*.68,Math.max(.3,progress),at/1000,view.reducedMotion);}
@@ -70,23 +72,23 @@ export class FieldVfx {
    const pose=Math.floor(since/(1000/30));
    if(pose>=0&&pose<12){
     const p=pose/12;c.save();c.translate(target.x,target.y);c.rotate(seed*.1+p*.3);c.globalAlpha=(1-p)*.86/Math.sqrt(targets.length);c.fillStyle=palette[0]!;
-    if(painted){const size=r*(1.1+p*.9);c.drawImage(painted,768,0,256,256,-size/2,-size/2,size,size);}
+    if(painted){const size=r*(1.1+p*.9);c.drawImage(painted.image,painted.x+768,painted.y,256,256,-size/2,-size/2,size,size);}
     else star(c,0,0,r*(.22+p*.25),4+seed%4);
     c.restore();this.draws++;this.audit.layers.push('twelve-frame-spark');
    }
-   const count=view.reducedMotion?12:tier==='basic'?32:72,spread=since<0?progress*.45:.35+since/470;
+   const low=view.quality==='low',count=view.reducedMotion?12:tier==='basic'?(low?14:32):(low?28:72),spread=since<0?progress*.45:.35+since/470;
+   const points=this.particles.get(seed);this.audit.pooledParticles=this.particles.allocated;
    c.globalAlpha=release*.8;for(let i=0;i<count;i++){
-    const angle=i*2.399963+seed,rr=r*(.25+random(i+seed)*.85)*spread,px=target.x+Math.cos(angle)*rr,py=target.y+Math.sin(angle)*rr*.72-(since>0?since*.07:0),size=(tier==='basic'?3:5)+random(i+13)*7;
+    const j=i*5,angle=points[j]!,rr=r*points[j+3]!*spread,px=target.x+points[j+1]!*rr,py=target.y+points[j+2]!*rr*.72-(since>0?since*.07:0),size=(tier==='basic'?3:5)+points[j+4]!;
     c.fillStyle=i%3?palette[1]!:palette[0]!;
     if(seed%3===0){c.save();c.translate(px,py);c.rotate(angle+at/700);c.beginPath();c.ellipse(0,0,size,size*2.5,0,0,7);c.fill();c.restore();}
     else if(seed%3===1){c.fillRect(px-size/2,py-size/2,size,size*1.6);}else star(c,px,py,size,3+i%3);
    }
    this.draws+=count;this.audit.particles+=count;this.audit.layers.push('element-particles');
    c.restore();
-   if(since>=0&&this.groundPlan!==plan){this.ground.push({x:feet.x,y:feet.y,r:radius*.8,born:time-since/1000,color:palette[1]!,family,seed});}
+   if(since>=0&&this.groundPlan!==plan)this.ground.emit(feet.x,feet.y,radius*.8,time-since/1000,palette[1]!,family,seed);
   }
   if(since>=0)this.groundPlan=plan;
-  this.ground=this.ground.slice(-24);
  }
  private castField(c:CanvasRenderingContext2D,owner:string,w:number,h:number,time:number,release:number,palette:string[],seed:number,reduced:boolean){
   // Each element occupies the whole field with its own moving environmental
