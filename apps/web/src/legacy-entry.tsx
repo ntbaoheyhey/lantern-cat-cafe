@@ -4,6 +4,7 @@ import { App } from './App';
 import './styles.css';
 import './theme.css';
 import './motion.css';
+import './ui/legacy/typography.css';
 
 const root = createRoot(document.getElementById('root')!);
 

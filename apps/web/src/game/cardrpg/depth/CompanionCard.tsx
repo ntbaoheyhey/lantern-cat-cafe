@@ -7,6 +7,7 @@ import { powerScore } from './meta-presentation';
 import type { DepthModel } from './model';
 
 import { artPropsA6 } from '../ui-v3/art-a6';
+import {LevelMarkC2} from '../ui-v3/CompactLabelsC2';
 import { PowerA6 } from '../ui-v3/PowerA6';
 
 const ROLE_ICONS = { guardian: 'shield', hexer: 'moon', healer: 'heart', striker: 'fight', controller: 'stun', witch: 'burn' };
@@ -30,7 +31,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
       <span className="dp-card-rarity" aria-label={card.rarity}>{m.state.formationC2?<StarIcons count={['common','rare','epic','legendary'].indexOf(card.rarity)+1}/>:card.rarity}</span>
     </div>
     <div className="cr-card-caption">{!m.state.formationC2&&<small>{cat.role} · {cat.flavour}</small>}<h3>{cat.name}</h3>
-      <p>{owned ? <>{!m.state.formationC2&&<>Lv. {owned.level}</>} <span className="dp-card-stars" aria-label={`${owned.stars} stars`}>{<StarIcons count={owned.stars}/>}</span></> : m.state.formationC2?<GameIcon name="invitations" size={20}/>:'Invite to collect'}</p>
+      <p>{owned ? <>{m.state.formationC2?<LevelMarkC2 level={owned.level}/>:<>Lv. {owned.level}</>} <span className="dp-card-stars" aria-label={`${owned.stars} stars`}>{<StarIcons count={owned.stars}/>}</span></> : m.state.formationC2?<GameIcon name="invitations" size={20}/>:'Invite to collect'}</p>
       {owned && <strong className="dp-card-power">{R.gameplayA6(m.state)?<PowerA6 value={power!} reducedMotion={m.state.settings.reducedMotion}/>:<>{power}<small> power</small></>}</strong>}
     </div>
   </button>;

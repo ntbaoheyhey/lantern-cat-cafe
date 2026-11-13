@@ -13,6 +13,7 @@ import '../../src/theme.css';
 import '../../src/motion.css';
 import '../../src/layout/layout.css';
 import '../../src/forge/forge.css';
+import '../../src/ui/legacy/typography.css';
 
 type Scenario = 'populated' | 'empty' | 'error' | 'loading' | 'extreme';
 interface Call { kind: 'buy' | 'cancel' | 'list'; id: string; amount: string; price: string }
