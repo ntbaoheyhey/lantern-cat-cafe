@@ -173,3 +173,7 @@ The fourth diagnostic method (a softer voice high shelf) reduces tick density bu
 ## 2026-11-13T20:54:32.869912+00:00 — actual boss35 result
 
 Full120.203s boss35 is rejected: contours7.487/min exceeds6.75, ticks0.940/s exceeds0.910/s. Loudness-14.00 LUFS and peak-2.00 dBTP pass. Preserve this failure in mix/35-dialogue-lead-boss.json. Next trial36 uses half of the additional dialogue gain (+3 dB above source31, +1.5dB authored cue trim) while retaining the speech-focused music opening. No voice call is dropped, and the source takes/analyser/thresholds are unchanged.
+
+## 2026-11-13T20:57:59.913489+00:00 — actual boss36 result
+
+Full120.2s boss36 passes transient rate0.849/s, loudness-14.67 LUFS and peak-2.31dBTP. Its14 contours give6.988/min, still above6.75. Trial37 keeps the accompaniment opening and uses a neutral boss cue trim (1.5dB above the original balance). This is the third runtime gain candidate; preserve all rejected outputs and do not omit any callout or change a threshold.
