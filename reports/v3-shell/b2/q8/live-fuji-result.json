@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-13T23:20:58.353Z",
+  "stats": {
+    "reasons": {
+      "fused": "Fusion totals need a verified indexer.",
+      "deeds": "Deed enumeration RPC unavailable."
+    },
+    "links": {
+      "deeds": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "burned": "https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b",
+      "transactions": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "fused": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    },
+    "burned": "2.02",
+    "rewardSeason": 0,
+    "emitted": "40",
+    "seasonBurned": "2.02",
+    "burnEmission": "0.05",
+    "transactions": 0,
+    "transactionRange": {
+      "from": "61028548",
+      "to": "61029547",
+      "complete": false
+    }
+  },
+  "policy": {
+    "timeoutMs": 6000,
+    "cacheMs": 60000,
+    "retries": 2,
+    "logWindow": 100
+  },
+  "counters": [
+    {
+      "id": "deeds",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-fuji-rpc.json",
+        "sha256": "43770948b71fe23290c421588992467036ac85522db3208194b3711c57603b7f"
+      },
+      "reason": "Deed enumeration RPC unavailable."
+    },
+    {
+      "id": "burned",
+      "value": 2.02,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-fuji-rpc.json",
+        "sha256": "43770948b71fe23290c421588992467036ac85522db3208194b3711c57603b7f"
+      }
+    },
+    {
+      "id": "fused",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-fuji-rpc.json",
+        "sha256": "43770948b71fe23290c421588992467036ac85522db3208194b3711c57603b7f"
+      },
+      "reason": "Fusion totals need a verified indexer."
+    },
+    {
+      "id": "transactions",
+      "value": 0,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-fuji-rpc.json",
+        "sha256": "43770948b71fe23290c421588992467036ac85522db3208194b3711c57603b7f"
+      }
+    }
+  ],
+  "screenshot": {
+    "path": "reports/v3-shell/b2/q8/live-fuji.png",
+    "sha256": "854e9e99dc7e9392c801c9a9ae9e9f3e7e458e5959d3f01f425ead8c8d426d4b"
+  }
+}

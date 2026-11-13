@@ -1,0 +1,81 @@
+{
+  "at": "2026-11-13T23:35:33.552Z",
+  "stats": {
+    "reasons": {
+      "fused": "Fusion totals need a verified indexer."
+    },
+    "links": {
+      "deeds": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "burned": "https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b",
+      "fused": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "transactions": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    },
+    "deeds": "0",
+    "burned": "2.02",
+    "transactions": "0",
+    "transactionScope": "Tx \u00b7 1k blocks"
+  },
+  "policy": {
+    "timeoutMs": 6000,
+    "cacheMs": 60000,
+    "retries": 2,
+    "logWindow": 100,
+    "deedBatchSize": 500
+  },
+  "counters": [
+    {
+      "id": "deeds",
+      "value": 0,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-final/live-fuji-rpc.json",
+        "sha256": "d2391462b3510849a20dec38c1070079d2d1cf62ad2b04c7d3daf901b82cd8d0"
+      }
+    },
+    {
+      "id": "burned",
+      "value": 2.02,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-final/live-fuji-rpc.json",
+        "sha256": "d2391462b3510849a20dec38c1070079d2d1cf62ad2b04c7d3daf901b82cd8d0"
+      }
+    },
+    {
+      "id": "fused",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-final/live-fuji-rpc.json",
+        "sha256": "d2391462b3510849a20dec38c1070079d2d1cf62ad2b04c7d3daf901b82cd8d0"
+      },
+      "reason": "Fusion totals need a verified indexer."
+    },
+    {
+      "id": "transactions",
+      "value": 0,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-final/live-fuji-rpc.json",
+        "sha256": "d2391462b3510849a20dec38c1070079d2d1cf62ad2b04c7d3daf901b82cd8d0"
+      }
+    }
+  ],
+  "screenshot": {
+    "path": "reports/v3-shell/b2/q8/live-final/live-fuji.png",
+    "sha256": "d5c1113fba348ce9ba7c4244a64a6b4adbaa3f705f1f79f53e76f2bd93ddcf52"
+  },
+  "offlineTest": {
+    "exitCode": 0,
+    "passed": 11,
+    "log": {
+      "path": "reports/v3-shell/b2/tests/q8-counter-batch-limit.log",
+      "sha256": "2a45259abec952b57850e648c0f0a700f5b41ef2fb0b07ddff2fc6d1ef756394"
+    }
+  },
+  "method": "Real Chromium browser; public Fuji only, registry addresses, no wallet writes or request substitution. Complete Deed ID range at one block. Transaction count is event-bearing transactions in the labelled 1,000-block window, not a lifetime total. Fused requires a verified indexer."
+}

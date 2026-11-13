@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-13T23:29:42.790Z",
+  "stats": {
+    "reasons": {
+      "deeds": "Fuji RPC unavailable.",
+      "burned": "Fuji RPC unavailable.",
+      "fused": "Fuji RPC unavailable.",
+      "transactions": "Fuji RPC unavailable."
+    },
+    "links": {
+      "deeds": "https://testnet.snowtrace.io/",
+      "burned": "https://testnet.snowtrace.io/",
+      "fused": "https://testnet.snowtrace.io/",
+      "transactions": "https://testnet.snowtrace.io/"
+    },
+    "transactionScope": "Fuji tx"
+  },
+  "policy": {
+    "timeoutMs": 6000,
+    "cacheMs": 60000,
+    "retries": 2,
+    "logWindow": 100,
+    "deedBatchSize": 500
+  },
+  "counters": [
+    {
+      "id": "deeds",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-batch500/live-fuji-rpc.json",
+        "sha256": "9867c67a87c0727a6c21c4d09d706e1e56af6eff5e5d33bf27608f737798f8c4"
+      },
+      "reason": "Fuji RPC unavailable."
+    },
+    {
+      "id": "burned",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-batch500/live-fuji-rpc.json",
+        "sha256": "9867c67a87c0727a6c21c4d09d706e1e56af6eff5e5d33bf27608f737798f8c4"
+      },
+      "reason": "Fuji RPC unavailable."
+    },
+    {
+      "id": "fused",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-batch500/live-fuji-rpc.json",
+        "sha256": "9867c67a87c0727a6c21c4d09d706e1e56af6eff5e5d33bf27608f737798f8c4"
+      },
+      "reason": "Fuji RPC unavailable."
+    },
+    {
+      "id": "transactions",
+      "value": null,
+      "source": "fuji-rpc",
+      "chainId": 43113,
+      "rawRpc": {
+        "path": "reports/v3-shell/b2/q8/live-batch500/live-fuji-rpc.json",
+        "sha256": "9867c67a87c0727a6c21c4d09d706e1e56af6eff5e5d33bf27608f737798f8c4"
+      },
+      "reason": "Fuji RPC unavailable."
+    }
+  ],
+  "screenshot": {
+    "path": "reports/v3-shell/b2/q8/live-batch500/live-fuji.png",
+    "sha256": "8d86867be0e4891aee8733f3eb88caf7ce0ebc4e0bf5773357f1ca0cd8e2ceaf"
+  }
+}

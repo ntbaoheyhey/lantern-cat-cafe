@@ -1,0 +1,19 @@
+{"stats":{"reasons":{"deeds":"Fuji RPC unavailable.","burned":"Fuji RPC unavailable.","fused":"Fuji RPC unavailable.","transactions":"Fuji RPC unavailable."},"links":{"deeds":"https://testnet.snowtrace.io/","burned":"https://testnet.snowtrace.io/","fused":"https://testnet.snowtrace.io/","transactions":"https://testnet.snowtrace.io/"},"transactionScope":"Fuji tx"},"requests":3,"numeric":0}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(counters.filter(r=>r.value!==null).length>=3)
+
+    at file:///Users/bao/taskbar-hero-chain/scripts/ui/q8-live-fuji.mjs:33:2 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

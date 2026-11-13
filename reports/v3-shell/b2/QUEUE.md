@@ -21,8 +21,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] E3 — done (17/17 gates;24 rounds,1273 configs,top10 at200 seeds,5 structural changes,18 scenarios,T-a..T-h PASS;85 assumptions,170 cases; self-score8/10)
 - [x] E4 — done (4/4 gates;16 exact-policy Anvil receipts,3 sinks,18 desktop shots,5 odds tests; self-score8/10)
 - [x] E5 — done (3/3 gates;816/816 committed citations; final sensitivity and15-line Vietnamese summary; self-score8/10)
-- [ ] T1 — todo
-- [ ] C1 — todo
+- [x] T1 — done (90/90 steps at three widths;0 fallback,4/4 gates;435 browser PASS; self-score8/10)
+- [x] C1 — done (3/4 live Fuji counters;bounded public RPC,offline test,3/3 gates; self-score8/10)
 - [ ] E6 — todo
 - [ ] P — todo
 - [ ] SY1 — todo
@@ -553,3 +553,17 @@ PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
 PASS U3.scores: measured 54/54; required average >= 8; every criterion >= 7
 PASS U3.flows: measured 435; required passing test + SHA-256-verified log
 ```
+
+## Q8 accepted 2026-11-13T23:50:04.048077+00:00
+
+```text
+PASS T1.walkthrough: measured 90; required passing test + SHA-256-verified log
+PASS T1.geometry: measured 90/90; required target inside spotlight with >= 8px padding; bubble not overlapping
+PASS T1.fallbacks: measured 0; required 0 fallback steps on owned screens
+PASS T1.words: measured 90/90; required <= 12 words per step
+PASS C1.counters: measured 3; required >= 3/4 real Fuji counters numeric, raw RPC + screenshot
+PASS C1.policy: measured {"timeoutMs":6000,"cacheMs":60000,"retries":2,"logWindow":100,"deedBatchSize":500}; required 6000ms timeout, 60000ms cache, 2 retries
+PASS C1.offline: measured 11; required passing test + SHA-256-verified log
+```
+
+Source 496df289b5172f23d0947ee901bc4db547bb878b; q8/ACCEPTANCE.json links full unit,435/435 browser and corrected typecheck. Fused remains Offline without a verified indexer; transaction count is labelled for the last1,000 blocks.

@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: HttpRequestError: HTTP request failed.
+
+URL: https://api.avax-test.network/ext/bc/C/rpc
+Request body: {"method":"eth_chainId"}
+
+Details: Failed to fetch
+Version: viem@2.57.10
+    at Object.request (http://127.0.0.1:5995/node_modules/.vite/deps/_esm-CNBM5Oar.js?v=6b9eb145:3184:10)
+    at async fn (http://127.0.0.1:5995/node_modules/.vite/deps/_esm-CNBM5Oar.js?v=6b9eb145:8519:58)
+    at async request (http://127.0.0.1:5995/node_modules/.vite/deps/_esm-CNBM5Oar.js?v=6b9eb145:8523:33)
+    at async withRetry.delay.count.count (http://127.0.0.1:5995/node_modules/.vite/deps/_esm-CNBM5Oar.js?v=6b9eb145:2899:12)
+    at async attemptRetry (http://127.0.0.1:5995/node_modules/.vite/deps/_esm-CNBM5Oar.js?v=6b9eb145:1034:13)
+    at /Users/bao/taskbar-hero-chain/scripts/ui/q8-live-fuji.mjs:13:26 {
+  log: []
+}
+
+Node.js v24.22.2

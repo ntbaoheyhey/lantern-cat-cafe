@@ -12,7 +12,7 @@ PASS R.report: measured 8910; required nonempty reports/v3-shell/b2/RESEARCH-B2.
 PASS S1.events: measured 2552; required >= 160 complete events; 0 TBD
 PASS S1.screens: measured 49; required >= 18 screens
 PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
-FAIL S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
+PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
 PASS S1.report: measured 630471; required nonempty reports/v3-shell/b2/SOUND-MAP.md
 PASS S1.typedMap: measured 12914; required nonempty apps/web/src/audio/sound-map.ts
 PASS S2.clips: measured 595; required >= 350 usable hashed source clips
@@ -161,13 +161,13 @@ PASS E5.allCitations: measured 816/816; required all report-number citations val
 FAIL E6.migration: measured missing; required passing test + SHA-256-verified log
 FAIL E6.dynamicFee: measured missing; required passing test + SHA-256-verified log
 FAIL E6.median: measured missing; required 7-day median seal price
-FAIL T1.walkthrough: measured missing; required passing test + SHA-256-verified log
-FAIL T1.geometry: measured missing; required target inside spotlight with >= 8px padding; bubble not overlapping
-FAIL T1.fallbacks: measured missing; required 0 fallback steps on owned screens
-FAIL T1.words: measured missing; required <= 12 words per step
-FAIL C1.counters: measured missing; required >= 3/4 real Fuji counters numeric, raw RPC + screenshot
-FAIL C1.policy: measured missing; required 6000ms timeout, 60000ms cache, 2 retries
-FAIL C1.offline: measured missing; required passing test + SHA-256-verified log
+PASS T1.walkthrough: measured 90; required passing test + SHA-256-verified log
+PASS T1.geometry: measured 90/90; required target inside spotlight with >= 8px padding; bubble not overlapping
+PASS T1.fallbacks: measured 0; required 0 fallback steps on owned screens
+PASS T1.words: measured 90/90; required <= 12 words per step
+PASS C1.counters: measured 3; required >= 3/4 real Fuji counters numeric, raw RPC + screenshot
+PASS C1.policy: measured {"timeoutMs":6000,"cacheMs":60000,"retries":2,"logWindow":100,"deedBatchSize":500}; required 6000ms timeout, 60000ms cache, 2 retries
+PASS C1.offline: measured 11; required passing test + SHA-256-verified log
 FAIL SY1.time: measured missing; required at or after 2026-11-16T12:00:00Z
 FAIL SY1.commits: measured missing; required both branch commit IDs, suite, coverage numbers
 FAIL SY1.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-16.md
@@ -176,7 +176,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1470; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1129; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```
