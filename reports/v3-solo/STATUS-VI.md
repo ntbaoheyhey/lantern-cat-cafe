@@ -1,10 +1,10 @@
-# Trạng thái V3 Solo
-
-Cập nhật: 2026-11-13 12:26:47 UTC
-- Q0 đạt: đã lưu/push hai nhánh và kiểm tra sạch; typecheck/unit đều qua.
-- Đang Q1: sửa Night tips, phông chữ, giới hạn từ và ART2.
-- Sau đó Q2: đo giọng chiến đấu trên cùng bản dựng.
-- A E2E hiện 9/10; chưa đóng các thẻ chiến đấu bằng kết quả cũ.
-- Không triển khai, không gộp main, không gộp hai nhánh sớm.
-- Đồng bộ: 16 và 18/11 lúc 19:00 giờ Việt Nam.
-- Đóng băng: 19/11 lúc 19:00; người dùng triển khai 20/11.
+# Tiến độ V3 SOLO
+- Q0 đã lưu và đẩy hai nhánh.
+- Q1 hoàn tất: A và B đều435/435 ca trình duyệt đạt;33/33 màn hình tối đa25 từ.
+- Chín thẻ A đạt230/230 điều kiện; kiểm tra luật chiến đấu không thay đổi.
+- A:2544 kiểm thử web đạt; B:2537 kiểm thử web đạt; kiểm tra kiểu dữ liệu đạt.
+- V2 đo lại60.01–60.05FPS, đã tạm dừng mô phỏng kinh tế khi đo.
+- Tiếp theo Q2: đo tiếng gọi chiêu thực tế trên cùng bản chiến đấu.
+- Kinh tế đã ghi13 vòng/520 cấu hình; vòng14 đang chạy. Chưa đạt điều kiện bot.
+- M1 chuyển động và độ sáng/động tác tranh chiêu còn mở.
+- Chưa gộp sớm, chưa triển khai; lịch đồng bộ16/18-11, đóng băng19-11.

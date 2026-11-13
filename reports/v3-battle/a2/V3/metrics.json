@@ -54,12 +54,66 @@
   "missingCalloutRows": [],
   "suite": {
     "_meta": {
-      "generatedAt": "2026-11-13T07:29:21.347Z",
-      "sourceCommit": "d2def5b5e311fa9946a020b25f758a46c931de06"
+      "generatedAt": "2026-11-13T13:13:39.701281+00:00",
+      "sourceCommit": "e7ce360769ce3a32d7586ee1df8a434e9cd48d32"
     },
     "typecheckExit": 0,
     "parityExit": 0,
     "unitExit": 0,
-    "e2eExit": 1
+    "e2eExit": 0,
+    "verification": {
+      "browser": {
+        "passed": 435,
+        "failed": 0,
+        "groups": [
+          {
+            "group": "local",
+            "passed": 375,
+            "failed": 0,
+            "path": "reports/v3-solo/Q1/a-e2e-local.log",
+            "sha256": "bc67e29235a8c9294449ebb829df78eba79626377cc4a49c6a5cbfcb1b91a018"
+          },
+          {
+            "group": "api",
+            "passed": 52,
+            "failed": 0,
+            "path": "reports/v3-solo/Q1/a-e2e-server.log",
+            "sha256": "2cee99225e0b4a6ad766d8f9ed519721119ba2aaeaca515e7f3f1dd57509100a"
+          },
+          {
+            "group": "fallback",
+            "passed": 8,
+            "failed": 0,
+            "path": "reports/v3-solo/Q1/a-e2e-fallback.log",
+            "sha256": "5b7e84bdcff2c29bab16fce030b7cf1a0524472f4ddb0128720bc5b91654a2f0"
+          }
+        ],
+        "note": "Complete suite partitioned by local/API/fallback projects for assigned ports. The later source changes only add a chapter aria-label and await the lazy module in a unit test."
+      },
+      "battleSubset": {
+        "passed": 10,
+        "path": "reports/v3-battle/a2/G0/suite-e2e.log",
+        "sha256": "e6af363f76590834f3a3f7d690d9ede1ca92cd2b50f13ae7fa0aa2c80e4b3a79"
+      },
+      "unit": {
+        "note": "All unchanged workspace packages from full run; final complete299-file web rerun after the lazy-import test repair. Failed attempts retained.",
+        "workspace": {
+          "path": "reports/v3-solo/Q1/a-unit-rerun.log",
+          "sha256": "cc0fcf3c62a28fa4dd11aa8bba8991bc4162f86c574627d0a5b7dcc1b1c4658a"
+        },
+        "finalWeb": {
+          "path": "reports/v3-solo/Q1/a-web-unit-final.log",
+          "sha256": "bcfca9b06e61d48dadec46e50c9d7fcd941b2fb661f261825a6d23fb82614c9c"
+        },
+        "webFiles": 299,
+        "webTests": 2544
+      },
+      "words": {
+        "screens": 33,
+        "max": 25,
+        "path": "reports/v3-solo/Q1/a-word-final.json",
+        "sha256": "7045e33ba836283e05e679151a59ca1351286ad36a571ad42d3aa71097a2ef20"
+      }
+    }
   }
 }

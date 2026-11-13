@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T10:41:08.311Z",
-    "sourceCommit": "ec01ea423ca3928db42e5eacc7e42aef76254c57"
+    "generatedAt": "2026-11-13T12:59:47.708Z",
+    "sourceCommit": "b6ac286d2cefcbfe008fcf427d2071f69fa8e69f"
   },
   "medianCoreHeightFraction": 0.21747252706566694,
   "maxFaceOcclusion": 0.0018061181589966798,
@@ -57,6 +57,36 @@
       },
       "drawOrder": 171269,
       "ratio": 0.3469258552397684,
+      "source": "template",
+      "fallback": false
+    },
+    {
+      "id": "foe-2-pollen-scout",
+      "asset": "pollen-scout",
+      "side": "enemy",
+      "kind": "small",
+      "height": 461,
+      "footprint": 546.6444954128439,
+      "box": {
+        "x": 945.3235590011012,
+        "y": 51.35093908474731,
+        "width": 304.76933780110573,
+        "height": 263.3726711114301
+      },
+      "coreBox": {
+        "x": 1057.5800697474526,
+        "y": 102.08850941700746,
+        "width": 66.77643747515322,
+        "height": 207.49249960512833
+      },
+      "faceBox": {
+        "x": 1062.9221847454648,
+        "y": 102.08850941700746,
+        "width": 56.092207479128696,
+        "height": 91.29669982625647
+      },
+      "drawOrder": 82524,
+      "ratio": 0.36078448097456184,
       "source": "template",
       "fallback": false
     },
@@ -151,36 +181,6 @@
       "fallback": false
     },
     {
-      "id": "foe-2-pollen-scout",
-      "asset": "pollen-scout",
-      "side": "enemy",
-      "kind": "small",
-      "height": 461,
-      "footprint": 546.6444954128439,
-      "box": {
-        "x": 945.3235590011012,
-        "y": 51.35093908474731,
-        "width": 304.76933780110573,
-        "height": 263.3726711114301
-      },
-      "coreBox": {
-        "x": 1057.5800697474526,
-        "y": 102.08850941700746,
-        "width": 66.77643747515322,
-        "height": 207.49249960512833
-      },
-      "faceBox": {
-        "x": 1062.9221847454648,
-        "y": 102.08850941700746,
-        "width": 56.092207479128696,
-        "height": 91.29669982625647
-      },
-      "drawOrder": 82524,
-      "ratio": 0.36078448097456184,
-      "source": "template",
-      "fallback": false
-    },
-    {
       "id": "foe-3-crumb-sentinel",
       "asset": "crumb-sentinel",
       "side": "enemy",
@@ -241,36 +241,6 @@
       "fallback": false
     },
     {
-      "id": "mochi",
-      "asset": "mochi",
-      "side": "party",
-      "kind": "cat",
-      "height": 512,
-      "footprint": 509.63419329996145,
-      "box": {
-        "x": 433.19103264874076,
-        "y": 206.61265430424277,
-        "width": 213.50583576636944,
-        "height": 213.1204966126371
-      },
-      "coreBox": {
-        "x": 477.93544286941136,
-        "y": 231.9119843844263,
-        "width": 120.48063307674721,
-        "height": 187.79762607766568
-      },
-      "faceBox": {
-        "x": 487.57389351555116,
-        "y": 231.9119843844263,
-        "width": 101.20373178446765,
-        "height": 82.63095547417291
-      },
-      "drawOrder": 112105,
-      "ratio": 0.29194588577073577,
-      "source": "placeholder",
-      "fallback": false
-    },
-    {
       "id": "soot",
       "asset": "soot",
       "side": "party",
@@ -327,6 +297,36 @@
       },
       "drawOrder": 141687,
       "ratio": 0.28149145823303323,
+      "source": "placeholder",
+      "fallback": false
+    },
+    {
+      "id": "mochi",
+      "asset": "mochi",
+      "side": "party",
+      "kind": "cat",
+      "height": 512,
+      "footprint": 509.63419329996145,
+      "box": {
+        "x": 433.19103264874076,
+        "y": 206.61265430424277,
+        "width": 213.50583576636944,
+        "height": 213.1204966126371
+      },
+      "coreBox": {
+        "x": 477.93544286941136,
+        "y": 231.9119843844263,
+        "width": 120.48063307674721,
+        "height": 187.79762607766568
+      },
+      "faceBox": {
+        "x": 487.57389351555116,
+        "y": 231.9119843844263,
+        "width": 101.20373178446765,
+        "height": 82.63095547417291
+      },
+      "drawOrder": 112105,
+      "ratio": 0.29194588577073577,
       "source": "placeholder",
       "fallback": false
     }

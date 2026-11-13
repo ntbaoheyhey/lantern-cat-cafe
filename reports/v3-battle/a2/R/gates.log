@@ -1,4 +1,5 @@
 PASS R.freshness: measured=ae12e046fd36daf7633838a26a3579a116d9324e; required=evidence >= ae12e046fd36daf7633838a26a3579a116d9324e
+PASS R.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= ae12e046fd36daf7633838a26a3579a116d9324e
 PASS R.committed-source: measured=0; required=eq 0 uncommitted source changes
 PASS R.windows: measured=12; required=min 12
 PASS R.window-seconds: measured=10; required=min 10
@@ -36,7 +37,7 @@ PASS R.layer-types: measured=20; required=min 15
 PASS R.targets-measured: measured=1; required=eq 1
 PASS R.typecheck: measured=0; required=eq 0
 PASS R.unit: measured=0; required=eq 0
-FAIL R.e2e: measured=1; required=eq 0
+PASS R.e2e: measured=0; required=eq 0
 PASS R.parity: measured=0; required=eq 0
 PASS R.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 40 PASS / 1 FAIL / 41 gates
+TOTAL 42 PASS / 0 FAIL

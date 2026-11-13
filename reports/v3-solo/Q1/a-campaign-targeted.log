@@ -1,0 +1,393 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/ui-v3/CampaignA6.test.tsx (8 tests | 1 failed) 2136ms
+   × opens preparation after choosing a stage from the home map button 1122ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/ui-v3/CampaignA6.test.tsx > opens preparation after choosing a stage from the home map button
+TestingLibraryElementError: Unable to find role="button" and name `/Chapter 1/`
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"uv-shell "[39m
+      [33mdata-a6-guide[39m=[32m"patrol"[39m
+      [33mdata-ui-v3[39m=[32m"true"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-label[39m=[32m"Living cafe"[39m
+        [33mclass[39m=[32m"uv-scene"[39m
+      [36m>[39m
+        [36m<img[39m
+          [33malt[39m=[32m"Lantern-lit cafe, ready for the evening shift"[39m
+          [33mclass[39m=[32m"uv-cafe-poster"[39m
+          [33msrc[39m=[32m"/src/game/cardrpg/ui-v3/assets/cafe.webp"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"uv-ambient"[39m
+        [36m>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-lantern"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-lantern"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Your current crew"[39m
+          [33mclass[39m=[32m"uv-home-crew"[39m
+        [36m>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: 0s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Mochi"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/mochi.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mMochi[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: -0.8s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Soot"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mSoot[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: -1.6s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Clover"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/clover.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mClover[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"uv-scene-vignette"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"uv-home-title"[39m
+        [36m>[39m
+          [36m<small>[39m
+            [0mTHE EVENING SHIFT[0m
+          [36m</small>[39m
+          [36m<h1>[39m
+            [0mYour evening crew[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Recruit counter"[39m
+          [33mclass[39m=[32m"uv-hotspot uv-recruit-hotspot"[39m
+          [33mdisabled[39m=[32m""[39m
+        [36m>[39m
+          [0mRecruit counter[0m
+          [0m [0m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m""[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"game-icon "[39m
+              [33mdraggable[39m=[32m"false"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33msrc[39m=[32m"/icons/external.svg"[39m
+              [33mwidth[39m=[32m"18"[39m
+            [36m/>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Notice board"[39m
+          [33mclass[39m=[32m"uv-hotspot uv-board-hotspot"[39m
+          [33mdisabled[39m=[32m""[39m
+        [36m>[39m
+          [0mNotice board[0m
+          [0m [0m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m""[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"game-icon "[39m
+              [33mdraggable[39m=[32m"false"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33msrc[39m=[32m"/icons/external.svg"[39m
+              [33mwidth[39m=[32m"18"[39m
+            [36m/>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"a6-idle a6-tip-corner "[39m
+          [33mdata-ready[39m=[32m"false"[39m
+          [33mdata-reduced[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Review Night tips"[39m
+            [33mclass[39m=[32m"uv-tips"[39m
+            [33mtitle[39m=[32m"Review saved tips and today’s limits"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"a6-tip-illustration"[39m
+              [33mviewBox[39m=[32m"0 0 180 126"[39m
+            [36m>[39m
+              [36m<ellipse[39m
+                [33mcx[39m=[32m"90"[39m
+                [33mcy[39m=[32m"116"[39m
+                [33mfill[39m=[32m"#261e2c"[39m
+                [33mopacity[39m=[32m".4"[39m
+                [33mrx[39m=[32m"74"[39m
+                [33mry[39m=[32m"9"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M26 57 154 57 148 109Q90 123 32 109Z"[39m
+                [33mfill[39m=[32m"#70432d"[39m
+                [33mstroke[39m=[32m"#382b2c"[39m
+                [33mstroke-width[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M32 64H148L144 102Q90 113 36 102Z"[39m
+                [33mfill[39m=[32m"#a4683d"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M37 80Q88 87 145 80M36 95Q86 103 144 95M59 65V106M120 64V107"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"#75482f"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M24 57Q24 24 ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"uv-shell "[39m
+      [33mdata-a6-guide[39m=[32m"patrol"[39m
+      [33mdata-ui-v3[39m=[32m"true"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-label[39m=[32m"Living cafe"[39m
+        [33mclass[39m=[32m"uv-scene"[39m
+      [36m>[39m
+        [36m<img[39m
+          [33malt[39m=[32m"Lantern-lit cafe, ready for the evening shift"[39m
+          [33mclass[39m=[32m"uv-cafe-poster"[39m
+          [33msrc[39m=[32m"/src/game/cardrpg/ui-v3/assets/cafe.webp"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"uv-ambient"[39m
+        [36m>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-lantern"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-lantern"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+          [36m<i[39m
+            [33mclass[39m=[32m"uv-mote"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Your current crew"[39m
+          [33mclass[39m=[32m"uv-home-crew"[39m
+        [36m>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: 0s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Mochi"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/mochi.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mMochi[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: -0.8s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Soot"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mSoot[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+          [36m<figure[39m
+            [33mstyle[39m=[32m"animation-delay: -1.6s;"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"Clover"[39m
+              [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/clover.webp"[39m
+            [36m/>[39m
+            [36m<figcaption>[39m
+              [0mClover[0m
+            [36m</figcaption>[39m
+          [36m</figure>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"uv-scene-vignette"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"uv-home-title"[39m
+        [36m>[39m
+          [36m<small>[39m
+            [0mTHE EVENING SHIFT[0m
+          [36m</small>[39m
+          [36m<h1>[39m
+            [0mYour evening crew[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Recruit counter"[39m
+          [33mclass[39m=[32m"uv-hotspot uv-recruit-hotspot"[39m
+          [33mdisabled[39m=[32m""[39m
+        [36m>[39m
+          [0mRecruit counter[0m
+          [0m [0m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m""[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"game-icon "[39m
+              [33mdraggable[39m=[32m"false"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33msrc[39m=[32m"/icons/external.svg"[39m
+              [33mwidth[39m=[32m"18"[39m
+            [36m/>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Notice board"[39m
+          [33mclass[39m=[32m"uv-hotspot uv-board-hotspot"[39m
+          [33mdisabled[39m=[32m""[39m
+        [36m>[39m
+          [0mNotice board[0m
+          [0m [0m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m""[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"game-icon "[39m
+              [33mdraggable[39m=[32m"false"[39m
+              [33mheight[39m=[32m"18"[39m
+              [33msrc[39m=[32m"/icons/external.svg"[39m
+              [33mwidth[39m=[32m"18"[39m
+            [36m/>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"a6-idle a6-tip-corner "[39m
+          [33mdata-ready[39m=[32m"false"[39m
+          [33mdata-reduced[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Review Night tips"[39m
+            [33mclass[39m=[32m"uv-tips"[39m
+            [33mtitle[39m=[32m"Review saved tips and today’s limits"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"a6-tip-illustration"[39m
+              [33mviewBox[39m=[32m"0 0 180 126"[39m
+            [36m>[39m
+              [36m<ellipse[39m
+                [33mcx[39m=[32m"90"[39m
+                [33mcy[39m=[32m"116"[39m
+                [33mfill[39m=[32m"#261e2c"[39m
+                [33mopacity[39m=[32m".4"[39m
+                [33mrx[39m=[32m"74"[39m
+                [33mry[39m=[32m"9"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M26 57 154 57 148 109Q90 123 32 109Z"[39m
+                [33mfill[39m=[32m"#70432d"[39m
+                [33mstroke[39m=[32m"#382b2c"[39m
+                [33mstroke-width[39m=[32m"3"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M32 64H148L144 102Q90 113 36 102Z"[39m
+                [33mfill[39m=[32m"#a4683d"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M37 80Q88 87 145 80M36 95Q86 103 144 95M59 65V106M120 64V107"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mstroke[39m=[32m"#75482f"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M24 57Q24 24 ...
+ ❯ waitForWrapper ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/game/cardrpg/ui-v3/CampaignA6.test.tsx:88:31
+     86|  const {container}=render(<View/>);
+     87|  fireEvent.click(screen.getByRole('button',{name:'Open route map'}));
+     88|  fireEvent.click(await screen.findByRole('button',{name:/Chapter 1/}));
+       |                               ^
+     89|  const stage=container.querySelector('.dp-node:not(:disabled)');expect…
+     90|  fireEvent.click(stage!);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  20:06:51
+   Duration  7.89s (transform 51%, tests 28%, import 15%, environment 6%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/ui-v3/CampaignA6.test.tsx

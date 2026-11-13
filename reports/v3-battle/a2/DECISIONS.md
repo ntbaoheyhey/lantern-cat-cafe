@@ -140,3 +140,5 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 - 2026-11-13 Q1 exception: B shared-blocker commit af969ae398c0f4b97b535e937f7008eeff9ece2c cherry-picked as A 291fc21c9791f3a3432f69ae792b33c0ede7596b. Conflict resolution only adapted compact labels, helper reset naming and the Quests copy to A’s older layout; no B redesign/audio/economy was imported. Pixel baselines and thresholds unchanged.
 
 - Q1 second shared-blocker pick: B 3dc9982d0 -> A e36aa024fe156569cfeddbf766dd5c0bf374e19a; compact badge label only.
+
+- Q1 shared-blocker pick B ebf250b48 -> A c5f9192bc: restored Chapter accessible names after compact word-budget labels; B unit8/8 PASS, A full verification running.

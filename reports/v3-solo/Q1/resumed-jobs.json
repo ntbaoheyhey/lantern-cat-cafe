@@ -1,0 +1,50 @@
+[
+  {
+    "name": "a-unit-rerun",
+    "pid": 91976,
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "env": {},
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q1/a-unit-rerun.log",
+    "utc": "2026-11-13T13:05:05.717413+00:00"
+  },
+  {
+    "name": "a-word-final",
+    "pid": 91977,
+    "command": [
+      "node",
+      "tools/cardrpg-c2/word-budget.mjs"
+    ],
+    "env": {
+      "C2_URL": "http://127.0.0.1:5990",
+      "C2_WORD_OUTPUT": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q1/a-word-final.json"
+    },
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q1/a-word-final.log",
+    "utc": "2026-11-13T13:05:05.721738+00:00"
+  },
+  {
+    "name": "a-e2e-server",
+    "pid": 91978,
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "playwright",
+      "test",
+      "--config",
+      "../../scripts/v3solo/q1-playwright.config.mts"
+    ],
+    "env": {
+      "V3SOLO_E2E_GROUP": "server",
+      "E2E_PORT_CLASSIC": "5990",
+      "E2E_PORT_V2": "5993",
+      "E2E_PORT_SERVER": "5991",
+      "E2E_PORT_API": "5992"
+    },
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q1/a-e2e-server.log",
+    "utc": "2026-11-13T13:05:05.725863+00:00"
+  }
+]
