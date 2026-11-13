@@ -11,6 +11,7 @@
 11. Đã chụp 18 ảnh giao diện; giá và xác suất khớp cấu hình.
 12. 5 kiểm tra xác suất và 20 kiểm tra luật/máy chủ đã đạt.
 13. Toàn bộ kiểm tra kiểu và kiểm thử workspace đã đạt trên f6db229c6.
-14. Q5: thử bản 27 trong game; đã làm rõ lời chào và giảm tiếng sắc ở trận đánh.
-15. T-h đã chạy 54/170 trường hợp, chưa thấy lỗi; chưa chốt E3.
-16. Lịch đồng bộ giữ nguyên 16/11, 18/11; đóng băng 19/11 12:00 UTC.
+14. Q5: nhận dạng 50/50 thoại tuyệt chiêu và 62/62 kỹ năng; còn 5 mục mix chưa đạt.
+15. T-h đã chạy 90/170 trường hợp, chưa thấy lỗi; chưa chốt E3.
+16. Bản mix 29 đã lưu/push; đang chờ thu lại đủ 6 cảnh và kiểm tra thoại.
+17. Lịch đồng bộ giữ nguyên 16/11, 18/11; đóng băng 19/11 12:00 UTC.

@@ -93,3 +93,5 @@ Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped fa
 2026-11-13 Q5: complete scene28 guard also found Cinnamon Take a sip! ambiguous after codec/shelf. Add Drink up! as the A-owned skill phrase; B must retain recognition, identity and timing checks.
 
 2026-11-13 Q5 scene28 final112-line codec guard:7 misses, including four enemy skill lines. Add Kettle strike!, A gentle tap!, Rain falls!, Sweet blast! as original A-owned alternatives for measured B trials; no runtime/combat changes. Prior Cinnamon note referred to the running guard, not final acceptance.
+
+2026-11-13T19:48:59.890836+00:00 Full28 recording completes all six scenes but is not accepted: battle bed0.940466<0.95, boss ticks0.349409<0.39, home ticks5.282129<5.34 and contours0.996628<1.3, forge contours2.990182>2.7. Forge source log contains exactly two spoken reactions; the extra proxy event is non-speech overlap, not an extra voice start. New B source05890b174 retains battle harmony and steadies menu dialogue; full29 recording queued. Q4 FINAL now45/85 fully paired assumptions, with90/170 cases committed and no measured sensitivity misses.
