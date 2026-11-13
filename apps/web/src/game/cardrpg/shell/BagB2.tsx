@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState,useSyncExternalStore} from 'react';
+import {lazy,Suspense,useEffect,useRef,useState,useSyncExternalStore} from 'react';
 import {playCue} from '../contracts/audio-cues';
 import {reducedMotionB2} from './motion-b2';
 import {EQUIPMENT_SLOTS} from '@taskbar-hero/game-rules/cardrpg';
@@ -16,6 +16,7 @@ import {BoundFusion} from './BoundFusion';
 import {GuideMascot,PaintedTile} from './PaintedKit';
 
 const slots={all:'All',weapon:'Weapons',outfit:'Outfits',charm:'Charms',relic:'Relic gear'};
+const LegacyWorkshop=lazy(()=>import('../depth/Equipment').then(module=>({default:module.Inventory})));
 const shortName=(name:string)=>name.replace(/^(Common|Rare|Epic|Legendary) /,'');
 export function BagB2({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
@@ -48,7 +49,7 @@ export function BagB2({m}:{m:DepthModel}) {
  const maxed=!!item&&item.enhancement>=(s.economyV3?10:12),affordable=quote&&s.account.currencies.fish>=quote.cost.fish&&s.account.currencies.threads>=quote.cost.threads&&s.account.currencies.stamps>=quote.cost.stamps;
  const set=R.SETS.find(t=>t.id===spec?.setId),setText=set?R.setTextV4(set,true,s.formationC2):null;
  return <section className="b2-bag" aria-label="Gear workbench">
-  <header className="b2-tools"><b className="b2-number"><GameIcon name="bag"/>{s.gear.length}/{R.GEAR_CAP_V4}</b><select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{s.account.cards.map(c=><option key={c.id} value={c.cardId}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select><DropOddsC2 state={s}/><HelpC2 label="Gear workshop" title="Fusion" symbol={<GameIcon name="forge"/>}><BoundFusion m={m}/></HelpC2></header>
+  <header className="b2-tools"><b className="b2-number"><GameIcon name="bag"/>{s.gear.length}/{R.GEAR_CAP_V4}</b><select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{s.account.cards.map(c=><option key={c.id} value={c.cardId}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select><DropOddsC2 state={s}/><HelpC2 label="Gear workshop" title={s.economyV3?"Fusion":"Workshop"} symbol={<GameIcon name="forge"/>}><Suspense fallback={<p role="status">Opening workshop…</p>}>{s.economyV3?<BoundFusion m={m}/>:<LegacyWorkshop m={m}/>}</Suspense></HelpC2></header>
   <div className="b2-bag-desk"><section className="b2-bag-shelf" aria-label="Gear shelf"><nav>{(['all',...EQUIPMENT_SLOTS] as const).map(id=><button key={id} aria-label={slots[id]} aria-pressed={slot===id} onClick={()=>setSlot(id)}><GameIcon name={id==='all'?'bag':id} size={30}/></button>)}</nav>
    <div className="b2-bag-grid">{gear.map(g=>{const t=R.GEAR_BY_ID[g.templateId]!;return <PaintedTile key={g.id} rarity={t.rarity} tag={ownerOf(g.id)?'equipped':undefined} label={`${t.name} +${g.enhancement}${ownerOf(g.id)?' · Worn by '+R.CAT_BY_ID[ownerOf(g.id)!]!.name:''}`} selected={g.id===item?.id} onClick={()=>{m.itemId=g.id;m.notify(false);comment('select');}}><GearArtA6 slot={t.slot} setId={t.setId}/><b className="b2-tile-count">+{g.enhancement}</b></PaintedTile>;})}</div>
    {!gear.length&&<div className="b2-empty"><GuideMascot pose="comfort"/><button onClick={()=>setSlot('all')}><GameIcon name="bag"/>All gear</button></div>}
