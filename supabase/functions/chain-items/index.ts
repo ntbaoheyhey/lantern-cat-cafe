@@ -17,6 +17,7 @@ Deno.serve(async req=>{
   catch{return json(req,{error:'unauthenticated'},401);}
   try{
     const body=await readChainBody(req,'chain-items');
+    if(body.action==='reserve'&&Deno.env.get('CHAIN_ECONOMY_V3_ENABLED')==='1')return json(req,{error:'spool_rewards',message:'Seal earned items through the café.'},409);
     if(Deno.env.get(body.action==='reward'?'CHAIN_YARN_ENABLED':'CHAIN_ITEMS_ENABLED')!=='1')return json(req,{error:'unavailable'},503);
     const client=createPublicClient({transport:http(Deno.env.get('FUJI_RPC_URL')||'https://api.avax-test.network/ext/bc/C/rpc')});
     if(await client.getChainId()!==43113)throw new Error('wrong_chain');
@@ -27,7 +28,7 @@ Deno.serve(async req=>{
     let result;
     if(body.action==='reward'){
       const contract=getAddress(Deno.env.get('SEASON_REWARDS_ADDRESS')||'');
-      const reservationRequired=testerBudgetRequired(Deno.env.get('CHAIN_TESTER_BUDGET_ENABLED'),Deno.env.get('CHAIN_CAMPAIGN_REWARDS_ENABLED'));
+      const reservationRequired=testerBudgetRequired(Deno.env.get('CHAIN_TESTER_BUDGET_ENABLED'),Deno.env.get('CHAIN_CAMPAIGN_REWARDS_ENABLED'),Deno.env.get('CHAIN_ECONOMY_V3_ENABLED'));
       const reserve=reservationRequired?createTesterBudgetReservation({contract,
         snapshot:async()=>{
           const block=await client.getBlock({blockTag:'latest'});

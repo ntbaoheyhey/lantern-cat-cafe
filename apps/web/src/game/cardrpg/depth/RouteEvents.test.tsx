@@ -11,9 +11,9 @@ function model(kind:'event'|'treasure'='event',event='chipped-cup'){
 for(const event of R.EVENTS)for(const choice of event.choices)it(`previews and applies ${event.id}/${choice.id} without changing the save during review`,()=>{
  const m=model('event',event.id),before=R.exportSave(m.state),expected=R.resolveNode(m.state,choice.id);render(<RouteStory m={m}/>);
  const card=screen.getByRole('article',{name:choice.label}),action=within(card).getByRole('button',{name:choice.label});
- expect(card.textContent).toContain(`Run points: 35 → ${expected.state.run!.points}`);
- if(choice.heal!==0)for(const id of m.state.team){const a=m.state.run!.hp[id]!,b=expected.state.run!.hp[id]!;expect(card.textContent).toContain(`${a} → ${b} HP (${b>=a?'+':''}${b-a})`);}
- if(choice.boon){expect(card.textContent).toContain(R.boonForMode(choice.boon,true).description);expect(card.textContent).toContain('Stack 0 → 1/2');}
+ expect(card.textContent).toContain(`Run points: 35 to ${expected.state.run!.points}`);
+ if(choice.heal!==0)for(const id of m.state.team){const a=m.state.run!.hp[id]!,b=expected.state.run!.hp[id]!;expect(card.textContent).toContain(`${a} to ${b} HP (${b>=a?'+':''}${b-a})`);}
+ if(choice.boon){expect(card.textContent).toContain(R.boonForMode(choice.boon,true).description);expect(card.textContent).toContain('Stack 0 to 1/2');}
  if(choice.heal>0)expect(card.textContent).toContain('Revives');if(choice.heal<0)expect(card.textContent).not.toContain('Revives');
  expect(R.exportSave(m.state)).toBe(before);expect(document.getElementById(action.getAttribute('aria-describedby')!)?.parentElement).toBe(card);
  fireEvent.click(action);expect(expected.ok).toBe(true);expect(m.state).toEqual(expected.state);
@@ -37,7 +37,7 @@ it('revalidates an event quote against current funds at activation',()=>{
 it.each(['points','charm'])('describes and applies the exact treasure %s gift',kind=>{
  const m=model('treasure'),id=R.shopStock(m.state.run!)[0]!,boon=R.boonForMode(id,true),before=R.exportSave(m.state),expected=R.resolveNode(m.state,kind);
  render(<RouteTreasure m={m}/>);const card=screen.getByRole('article',{name:kind==='points'?'Take 70 run points':`Take ${boon.name}`});
- expect(card.textContent).toContain(`Run points: 35 → ${expected.state.run!.points}`);if(kind==='charm')expect(card.textContent).toContain(boon.description);
+ expect(card.textContent).toContain(`Run points: 35 to ${expected.state.run!.points}`);if(kind==='charm')expect(card.textContent).toContain(boon.description);
  expect(R.exportSave(m.state)).toBe(before);fireEvent.click(within(card).getByRole('button'));expect(m.state).toEqual(expected.state);
 });
 it('handles exhausted treasure charms without crashing or blocking the points gift',()=>{

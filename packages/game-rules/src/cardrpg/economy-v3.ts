@@ -1,6 +1,7 @@
 /** Published v3 policy. Currency amounts are integers; all chances are basis points. */
 export const ECONOMY_V3={
  version:3,
+ rewards:{weeklySpool:1.5,chapterSpool:1,seasonRankMax:6,weeklyStarThread:1},
  season:{days:28,epoch:Date.UTC(2026,10,13),editionSupply:600},
  deed:{firstId:30001,lastId:33000,supply:3000,level:15,demoLevel:5},
  spool:{feeBp:2500,minAgeDays:7,cooldownDays:7,weeklyNetCap:12},

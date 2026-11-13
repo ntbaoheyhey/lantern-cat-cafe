@@ -34,7 +34,7 @@ export function PantryRecipeV4({m}:{m:DepthModel}) {
    {recipes.map(r=><option key={r.id} value={r.id}>{r.id.startsWith('pantry-')?`Make ${itemName(r.outputStackId!)}`:r.name}</option>)}
   </select></label>
   <section id={description} className="dp-v4-recipe-preview" aria-label="Recipe preview" aria-live="polite">
-   <p><b>{name}</b> · {preview.ok?`${owned} → ${preview.state.account.inventory.stacks[id]}/${cap}`:`${owned}/${cap} owned`}</p>
+   <p><b>{name}</b> · {preview.ok?`${owned} to ${preview.state.account.inventory.stacks[id]}/${cap}`:`${owned}/${cap} owned`}</p>
    <div className="dp-v4-recipe-cost"><span>Cost:</span><CostView cost={chosen.cost}/>
     {Object.entries(chosen.materials).map(([key,amount])=><span key={key}>{amount} {itemName(key)}</span>)}
    </div>

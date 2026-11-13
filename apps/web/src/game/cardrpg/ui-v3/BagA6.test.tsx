@@ -58,7 +58,7 @@ it('quotes enhancement on the wearer while comparing equipment for a different c
  const expected=R.enhancementPreview(item,m.state,'mochi'),selected=R.enhancementPreview(item,m.state,'soot'),before=R.exportSave(m.state);
  expect(expected.before).not.toBe(selected.before);render(<BagA6 m={m}/>);
  const quote=screen.getByLabelText('Enhancement quote');
- expect(quote.textContent).toContain('Worn by Mochi');expect(quote.textContent).toContain(`Attack ${expected.before} → ${expected.after}`);
+ expect(quote.textContent).toContain('Worn by Mochi');expect(quote.textContent).toContain(`Attack ${expected.before} to ${expected.after}`);
  expect(screen.getByText('Move from Mochi to Soot')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
  const result=R.enhanceGear(m.state,id);expect(result.ok).toBe(true);fireEvent.click(screen.getByRole('button',{name:'Enhance +12'}));
  expect(m.state.gear).toEqual(result.state.gear);expect(m.state.equipment).toEqual(result.state.equipment);expect(m.state.account.currencies).toEqual(result.state.account.currencies);

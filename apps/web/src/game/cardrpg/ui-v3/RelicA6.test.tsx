@@ -16,7 +16,7 @@ it('equips a demo team treasure and restores an empty slot without touching cat 
   const gear = JSON.stringify(m.state.equipment);
   fireEvent.click(screen.getByRole('button', { name: 'Equip Legendary lantern cup' }));
   expect(screen.getByText('Team bonus +8%')).toBeTruthy(); expect(JSON.stringify(m.state.equipment)).toBe(gear);
-  expect(screen.getByRole('link', { name: 'Relic Fuji ↗' }).getAttribute('href')).toContain(R.FUJI_RELIC_ADDRESS);
+  expect(screen.getByRole('link', { name: 'Relic Fuji' }).getAttribute('href')).toContain(R.FUJI_RELIC_ADDRESS);
   fireEvent.click(screen.getByRole('button', { name: 'Unequip treasure' }));
   expect(screen.getByText('Team bonus +0%')).toBeTruthy();
 });

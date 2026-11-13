@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {useMemo,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from './model';
@@ -16,10 +17,10 @@ export function RouteRewards({m}:{m:DepthModel}){
    return <button className="dp-reward" key={id} disabled={!result.ok} onClick={()=>m.apply(R.chooseReward(m.state,id),'Choice added for this run. Continue along the map.')}>
     <h3>{skill?.name??boon?.name}</h3>
     {skill?<><p>{R.CAT_BY_ID[skill.catId]!.name} · Skill upgrade</p>
-      <p><b>Rank {rank}{result.ok?` → ${next}`:''}/3</b></p>
-      {result.ok&&<p>Effect power +{R.routeSkillPowerBonusPercent(rank)}% → +{R.routeSkillPowerBonusPercent(next!)}%.</p>}
+      <p><b>Rank {rank}{result.ok?` to ${next}`:''}/3</b></p>
+      {result.ok&&<p>Effect power +{R.routeSkillPowerBonusPercent(rank)}% to +{R.routeSkillPowerBonusPercent(next!)}%.</p>}
       <small>{skill.effects.some(effect=>(effect.power??0)>0)?'Status stacks and timing stay the same.':'This skill has no power-based effect to increase.'}</small>
-     </>:<><p>{boon?.description}</p><p><b>Stack {rank}{result.ok?` → ${next}`:''}/{boon?.cap}</b></p><small>Night charm · {boon?.archetype}</small></>}
+     </>:<><p>{boon?.description}</p><p><b>Stack {rank}{result.ok?` to ${next}`:''}/{boon?.cap}</b></p><small>Night charm · {boon?.archetype}</small></>}
     {!result.ok&&<p className="dp-route-reward-reason">{result.error}</p>}
    </button>;
   })}</div>

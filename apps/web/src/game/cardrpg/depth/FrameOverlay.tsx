@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import { useEffect, useRef } from 'react';
 import type { DepthModel } from './model';
 
@@ -52,7 +53,7 @@ export function FrameOverlay({ m }: { m: DepthModel }) {
     return () => clearInterval(timer);
   }, [m]);
   return <aside className="dp-frame-overlay" aria-label="Live frame performance">
-    <button onClick={() => { m.labPerformance = false; m.notify(false); }} aria-label="Hide frame overlay">×</button>
+    <button onClick={() => { m.labPerformance = false; m.notify(false); }} aria-label="Hide frame overlay"><GameIcon name="close" size={20}/></button>
     <output ref={summary} />
     <canvas ref={graph} width={240} height={54} aria-label="Recent frame times with a 50 millisecond line" />
   </aside>;

@@ -12,13 +12,13 @@ for(const modern of [true,false])for(const rank of [0,1,2])it(`shows the exact s
  const m=model(modern);m.state.run!.upgrades['mochi-2']=rank;
  const before=R.exportSave(m.state),expected=R.chooseReward(m.state,'skill:mochi-2');render(<RouteRewards m={m}/>);
  const button=screen.getByRole('button',{name:/Warm welcome/});
- expect(button.textContent).toContain(`Rank ${rank} → ${rank+1}/3`);expect(button.textContent).toContain(`Effect power +${rank*20}% → +${(rank+1)*20}%.`);
+ expect(button.textContent).toContain(`Rank ${rank} to ${rank+1}/3`);expect(button.textContent).toContain(`Effect power +${rank*20}% to +${(rank+1)*20}%.`);
  expect(button.textContent).toContain('Mochi · Skill upgrade');expect(button.textContent).toContain('Status stacks and timing stay the same.');
  expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(expected.state);expect(m.state.run!.current).toBeNull();
 });
 it.each([true,false])('shows charm stack progress and the correct mode effect (modern=%s)',modern=>{
  const m=model(modern),before=R.exportSave(m.state),expected=R.chooseReward(m.state,'shelter-1');render(<RouteRewards m={m}/>);
- const button=screen.getByRole('button',{name:/Door mat/});expect(button.textContent).toContain('Stack 1 → 2/2');
+ const button=screen.getByRole('button',{name:/Door mat/});expect(button.textContent).toContain('Stack 1 to 2/2');
  expect(screen.getByRole('button',{name:/Late candle/}).textContent).toContain(R.boonForMode('night-1',modern).description);
  expect(R.exportSave(m.state)).toBe(before);fireEvent.click(button);expect(m.state).toEqual(expected.state);
 });

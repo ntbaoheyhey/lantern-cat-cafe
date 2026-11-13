@@ -16,7 +16,7 @@ it('explains empty stock before packing and keeps an existing reservation unchan
 it('quotes capped missing HP, spends one milk immediately, and then explains full HP',()=>{
  const m=model(),max=R.battleCats(m.state).find(c=>c.id==='mochi')!.stats.hp;m.state.run!.hp.mochi=max-43;
  const expected=R.packSupplyV4(m.state,'milk-tonic','mochi');render(<PantryV4 m={m}/>);choose('milk-tonic');
- expect(screen.getByRole('region',{name:'Supply preview'}).textContent).toContain(`${max-43} → ${max} HP (+43)`);expect(milk().disabled).toBe(false);fireEvent.click(milk());
+ expect(screen.getByRole('region',{name:'Supply preview'}).textContent).toContain(`${max-43} to ${max} HP (+43)`);expect(milk().disabled).toBe(false);fireEvent.click(milk());
  expect(m.state).toEqual(expected.state);expect(milk().disabled).toBe(true);expect(screen.getByRole('region',{name:'Supply preview'}).textContent).toContain('This companion has no missing HP.');
 });
 it('blocks a fallen recipient while allowing a living recipient to receive the supply',()=>{

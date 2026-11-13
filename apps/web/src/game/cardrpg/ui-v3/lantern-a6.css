@@ -24,7 +24,7 @@
  :focus-visible {outline:3px solid #e39d38;outline-offset:3px}
  .uv-sheet:focus-visible {outline:none}
  .uv-hud {height:80px;background:linear-gradient(#241c24f5,#382b2ada,transparent);border-top:2px solid #d6aa64;padding-inline:28px}
- .uv-identity b {font:700 27px Georgia,serif;letter-spacing:-.035em}
+ .uv-identity b {font:700 27px var(--font-display);letter-spacing:-.035em}
  .uv-avatar {width:56px;height:56px;box-shadow:0 0 0 3px #5f4334,0 0 0 4px #d2a76c}
  .uv-avatar img {object-fit:cover}
  .uv-avatar span {font-size:13px;line-height:1.25}
@@ -47,13 +47,13 @@
  .uv-ambient {background:radial-gradient(ellipse at 48% 35%,#ffd99530,transparent 60%)}
  .uv-scene-vignette {background:linear-gradient(0deg,#30202f8c,transparent 40%),linear-gradient(90deg,#2b1d292e,transparent 60%)}
  .uv-home-title {left:9%;top:16%;text-shadow:0 3px 0 #4a3024,0 8px 24px #1b1826}
- .uv-home-title h1 {font:700 clamp(34px,4vw,58px) Georgia,serif;margin:6px 0}
+ .uv-home-title h1 {font:700 clamp(34px,4vw,58px) var(--font-display);margin:6px 0}
  .uv-home-title small {font-size:12px;letter-spacing:.24em;color:#ffda8d}
  .uv-home-crew {left:18%;right:24%;top:auto;bottom:21%;gap:1.2vw;align-items:flex-end}
  .uv-home-crew figure {flex:1;min-width:0;filter:drop-shadow(0 13px 5px #2a182b80)}
  .uv-home-crew figure:nth-child(2n) {top:22px}
  .uv-home-crew img {width:100%;max-width:none;height:36vh;object-fit:contain;transform:none!important}
- .uv-home-crew figcaption {display:inline-block;min-width:120px;padding:5px 20px;background:linear-gradient(#614334,#35262c);border:1px solid #f3c270;border-radius:5px 5px 15px 15px;font:700 17px Georgia,serif;box-shadow:0 3px 0 #301e23}
+ .uv-home-crew figcaption {display:inline-block;min-width:120px;padding:5px 20px;background:linear-gradient(#614334,#35262c);border:1px solid #f3c270;border-radius:5px 5px 15px 15px;font:700 17px var(--font-display);box-shadow:0 3px 0 #301e23}
  .uv-hotspot {background:linear-gradient(#674e3c,#392d30);border-color:#c6a160;color:#ffe5b4}
  .uv-recruit-hotspot {top:28%;left:48%}
  .uv-board-hotspot {top:23%;right:9%}
@@ -128,7 +128,7 @@
  .uv-cat-grid .cr-portrait {height:clamp(140px,22vh,210px);border-radius:8px;background:radial-gradient(ellipse at 50% 55%,#fff5dd,var(--a6-wash) 70%);border:1px solid var(--a6-rarity);overflow:hidden}
  .uv-cat-grid .cr-portrait img {height:100%;width:100%;object-fit:contain;filter:drop-shadow(0 5px 4px #56353645)}
  .uv-cat-grid .cr-portrait::before {content:"";position:absolute;inset:4px;border:1px solid #fff6d7a0;border-radius:4px;pointer-events:none}
- .uv-cat-grid .cr-portrait::after {content:"✦";position:absolute;left:5px;bottom:2px;color:var(--a6-rarity);font-size:25px;pointer-events:none}
+ .uv-cat-grid .cr-portrait::after {content:"";background:url(/icons/season.svg) center/contain no-repeat;width:18px;height:18px;position:absolute;left:5px;bottom:2px;color:var(--a6-rarity);font-size:25px;pointer-events:none}
  .uv-cat-grid .cr-card-caption {padding:8px 9px;text-align:left;background:transparent;color:#4b3024}
  .uv-cat-grid .cr-card-caption h3 {font-size:23px;margin:0 0 4px;color:#402b23}
  .uv-cat-grid .cr-card-caption p {margin:3px 0;color:#775539}
@@ -174,7 +174,7 @@
  .a6-formation-cat {flex:1;max-width:210px;min-width:0;flex-direction:column;text-align:center;justify-content:flex-end;padding:8px!important;gap:4px;background:linear-gradient(#fff9e0,#e4ca9c);border:2px solid #b6955f}
  .a6-formation-cat img {height:145px;width:130px;max-width:100%;object-fit:contain;filter:drop-shadow(0 5px 4px #76522e44)}
  .a6-formation-cat div {display:grid;gap:1px;justify-items:center}
- .a6-formation-cat b {font:700 21px Georgia,serif}
+ .a6-formation-cat b {font:700 21px var(--font-display)}
  .a6-formation-cat[aria-pressed=true] {border-color:#b77c2d;box-shadow:0 0 0 3px #f9e9b7,0 0 0 5px #d2a158}
  .a6-bond-lines {stroke:#9f6a2b;opacity:.65;z-index:3}
  .a6-bond-lines path {stroke:#9f6a2b}

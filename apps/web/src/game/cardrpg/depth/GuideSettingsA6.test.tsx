@@ -42,6 +42,7 @@ it('preserves quadruple speed for legacy playback',()=>{
 });
 it('explains the A6 rage trigger while leaving the earlier ultimate rule in legacy mode',()=>{
  const view=render(<Codex v4 skillsV5 a6/>);
+ fireEvent.change(screen.getByRole('combobox',{name:'Guide chapter'}),{target:{value:'3'}});
  expect(screen.getByText(/automatically at 100 rage/)).toBeTruthy();
  expect(screen.queryByText(/after two own turns/)).toBeNull();
  view.rerender(<Codex v4 skillsV5/>);
@@ -51,6 +52,7 @@ it('explains the A6 rage trigger while leaving the earlier ultimate rule in lega
 
 it('uses current enemy mechanics and phase advice only in the A6 field guide',()=>{
  const view=render(<Codex v4 skillsV5 a6/>);
+ fireEvent.click(screen.getByRole('button',{name:'Battle notes'}));
  fireEvent.click(screen.getByRole('button',{name:'enemies'}));
  fireEvent.click(screen.getByRole('button',{name:'Teacup Healer'}));
  expect(screen.getByText(/Heals its weakest ally on even rounds or at full rage/)).toBeTruthy();

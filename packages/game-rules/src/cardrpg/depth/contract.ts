@@ -76,8 +76,9 @@ export interface GearTemplate {
   source: string; main: keyof Stats; value: number; affixes: string[]; unique?: string; story: string;
 }
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
-export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
+export interface GearInstance { blessingBp?: number; enhanceAttempts?: number; id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
+  economyV3?: boolean;
   formationNoticeC2?: 'four' | 'bench';
   dailyA6?: DailyProgressA6;
   formationC2?: boolean; gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;

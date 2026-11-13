@@ -1,3 +1,4 @@
+import {ECONOMY_V3 as E} from '../economy-v3';
 import { partySize, validRowsC2 } from './formation-c2';
 import { gameplayA6 } from './gameplay-a6';
 import { observeDailyA6 } from './daily-state-a6';
@@ -11,7 +12,7 @@ import { GEAR_CAP_V4 } from './equipment-v4';
 import { stackCapV4 } from './items-v4';
 import { applyCommand } from '../commands';
 import { craftGear, depthStats, equipmentEffects, equippedItems, initializeEquipment, makeGear } from './equipment';
-import { clone, grant, requireRule, RuleFailure } from '../internal';
+import { clone, grant, requireRule, RuleFailure, spend } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
 import { crewStats, gameplayV4 } from './gameplay-v4';
@@ -57,6 +58,9 @@ export function grantDepth(state: DepthAccount, currencies: Partial<typeof DEPTH
 export function metaCommand(state: DepthAccount, command: Command): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     requireHome(s);
+    if(s.economyV3&&command.type==='ascend'){
+      const card=s.account.cards.find(c=>c.id===command.cardId);requireRule(card&&card.stars<5,'MAX_LEVEL','Choose a cat below five stars.');const cost=E.starShards[card.stars-1]!;requireRule(card.shards>=cost,'INSUFFICIENT_FUNDS',`Need ${cost} matching shards.`);spend(s.account,{fish:150*card.stars});card.shards-=cost;card.stars++;return;
+    }
     if(gameplayV4(s)){
       if(command.type==='claimQuest'){settleBoardV4(s,command.questId);return;}
       if(command.type==='pull'){drawInvitationsV4(s,command.bannerId,command.seed,command.count);return;}

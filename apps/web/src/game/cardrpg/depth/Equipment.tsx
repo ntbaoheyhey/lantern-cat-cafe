@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {CraftOddsC2,RewardOddsC2,DropOddsC2} from '../ui-v3/OddsC2';
 import { EquipmentForecastV4 } from "./EquipmentForecastV4";
 import { EquipmentFiltersV4 } from "./EquipmentFiltersV4";
@@ -134,13 +135,13 @@ export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel;
               <dl className="cr-stats">{Object.entries(R.depthStats(state, cardId)).map(([key, before]) => {
                 const after = comparison?.stats?.[key as keyof CatStats] ?? before;
                 return <div key={key}><dt>{statName(key)}</dt><dd className={after > before ? 'up' : after < before ? 'down' : ''}>
-                  {statValue(key, before)} → {statValue(key, after)}
+                  {statValue(key, before)} to {statValue(key, after)}
                 </dd></div>;
               })}</dl>
             </div>
             {v4&&<UtilityComparison state={state} cardId={cardId} instanceId={item.id}/>}
             {comparison?.error && <p>{comparison.error}</p>}
-            <p>{template.main} {preview.before}{item.enhancement < 12 ? ` → ${preview.after} at +${item.enhancement + 1}` : ' · maximum +12'}</p>
+            <p>{template.main} {preview.before}{item.enhancement < 12 ? ` to ${preview.after} at +${item.enhancement + 1}` : ' · maximum +12'}</p>
             <CostView cost={preview.cost} />
             <div className="cr-actions">
 

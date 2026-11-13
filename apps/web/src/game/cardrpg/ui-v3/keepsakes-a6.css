@@ -2,7 +2,7 @@
 .uv-app[data-a6=true] {
  .a6-gear-art {width:104px;height:98px;flex:none;filter:drop-shadow(0 4px 3px #56392020)}
  .a6-bag-tools {padding:0 2px 5px;border-bottom:1px solid #ba965e}
- .a6-bag-tools>span {font:700 22px Georgia,serif;color:#63472e}
+ .a6-bag-tools>span {font:700 22px var(--font-display);color:#63472e}
  .a6-bag-workspace {grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:20px;align-items:start}
  .a6-bag-workspace>.uv-gear-grid {max-height:calc(100vh - 350px);overflow:auto;padding:8px 10px 14px;border:1px solid #a57e50;border-radius:14px;background:repeating-linear-gradient(0deg,#845b3e12 0 2px,transparent 2px 48px),linear-gradient(105deg,#e5c89e,#c7a16f);scrollbar-width:thin;scrollbar-color:#8f693e #dbc096;align-content:start;gap:12px}
  .a6-bag-workspace .uv-gear-grid>button {position:relative;min-height:166px;gap:3px;padding:6px 9px 11px;background:radial-gradient(ellipse at 45% 24%,#fff6da,var(--a6-wash,#ead8b9));border-width:2px;border-bottom-width:5px;border-radius:13px;box-shadow:inset 0 0 0 2px #fff6db99,0 5px 5px #704a3022}
@@ -54,10 +54,10 @@
  .a6-route-stage {position:relative}
  .a6-route-stage[data-activity=true]>.a6-route-activity {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;background:#1f2337a6;border-radius:15px;overflow:auto}
  .a6-route-activity>.cr-panel {width:100%;max-height:100%;overflow:auto;margin:0;padding:20px;background:linear-gradient(#fff0d2,#e8d0a0);border:2px solid #c7a56b;border-radius:16px;box-shadow:0 12px 28px #19162680}
- .a6-route-activity>.cr-panel h2 {margin:0 0 12px;color:#553520;font:700 25px Georgia,serif}
+ .a6-route-activity>.cr-panel h2 {margin:0 0 12px;color:#553520;font:700 25px var(--font-display)}
  .a6-route-activity .dp-three {gap:12px}
  .a6-route-activity .dp-three>button {min-height:110px;background:linear-gradient(#fff5dc,#e8cca0);border-color:#b9935e;color:#483421;text-align:left;box-shadow:0 4px 0 #ae8955}
- .a6-route-activity .dp-three>button h3 {color:#684323;font:700 19px Georgia,serif;margin:0 0 9px}
+ .a6-route-activity .dp-three>button h3 {color:#684323;font:700 19px var(--font-display);margin:0 0 9px}
  .a6-route-activity .dp-three>button p {line-height:1.4;font-size:14px}
  .a6-route-activity .dp-three>button small {color:#725638}
  /* An earned boon must stay readable against the parchment card. */
@@ -124,9 +124,9 @@
  .a6-daily-rewards {display:flex;flex-wrap:wrap;gap:8px;line-height:1.5}
  .a6-daily-rewards>span {display:inline-flex;align-items:center;gap:5px;color:#65452d;white-space:nowrap}
  .a6-daily-rewards i {font-style:normal;font-size:17px;color:#9c6c27}
- .a6-daily-rewards b {font:700 14px/1.5 system-ui,sans-serif}
+ .a6-daily-rewards b {font:700 14px/1.5 var(--font-body)}
  .a6-login-days .a6-daily-rewards {display:flex;flex-direction:column;align-items:center}
- .a6-login-days .a6-daily-rewards b {font:700 14px/1.5 system-ui,sans-serif}
+ .a6-login-days .a6-daily-rewards b {font:700 14px/1.5 var(--font-body)}
  .a6-login-days {gap:7px;margin:12px 0}
  .a6-login-days>div {gap:4px;padding:7px 3px;border-bottom-width:4px}
  .a6-login-days .a6-gift-art {width:61px;height:53px}
@@ -213,7 +213,7 @@
  .a6-daily-sections {display:flex;align-items:center;gap:8px}
  .a6-daily-sections button {display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 18px;font-size:15px;border-radius:12px}
  .a6-daily-sections button[aria-pressed=true] {background:linear-gradient(#ffe4a2,#dfae57);border-color:#9a6c2c;color:#4d301d;box-shadow:inset 0 1px #fff5d8,0 3px #ad79383d}
- .a6-daily-sections button span {display:grid;place-items:center;min-width:24px;height:24px;border-radius:50%;background:#d7c6a3;color:#664d35;font:700 13px/1 system-ui,sans-serif}
+ .a6-daily-sections button span {display:grid;place-items:center;min-width:24px;height:24px;border-radius:50%;background:#d7c6a3;color:#664d35;font:700 13px/1 var(--font-body)}
  .a6-daily-sections button span[data-ready=true] {background:#8e462d;color:#fff9df}
  .a6-daily-sections p {margin:0 0 0 auto;font-size:14px;color:#73563a}
  .a6-earned-gifts {display:grid;gap:14px}
@@ -231,8 +231,8 @@
  .a6-gift-tickets article[data-ready=true] {border-color:#a38643;background:linear-gradient(125deg,#fff9df,#f1dfa6);box-shadow:0 2px #a9894d22}
  .a6-gift-tickets article[data-collected=true] {background:#e1e3c8;border-color:#acb390}
  .a6-gift-tickets .a6-gift-art {width:36px;height:36px}
- .a6-gift-tickets h4 {font:700 15px/1.3 system-ui,sans-serif;margin:0 0 3px;color:#59412c}
- .a6-gift-note {font:14px/1.4 system-ui,sans-serif;color:#72573a}
+ .a6-gift-tickets h4 {font:700 15px/1.3 var(--font-body);margin:0 0 3px;color:#59412c}
+ .a6-gift-note {font:14px/1.4 var(--font-body);color:#72573a}
  .a6-gift-tickets .a6-daily-rewards {gap:8px}
  .a6-gift-tickets .a6-daily-rewards b {font-size:14px}
  .a6-gift-tickets .a6-daily-rewards i {font-size:14px}

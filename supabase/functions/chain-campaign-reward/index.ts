@@ -6,6 +6,7 @@ import {readChainBody,chainStoreError,chainFailure,ChainRequestError,routineErro
 import {createCampaignClaim} from '../_shared/chain-campaign-claim.ts';
 import {CAMPAIGN_RULES_HASH} from '../_shared/chain-campaign-manifest.ts';
 Deno.serve(async req=>{
+  if(req.method!=='OPTIONS'&&Deno.env.get('CHAIN_ECONOMY_V3_ENABLED')==='1')return json(req,{error:'spool_rewards',message:'Rewards now accrue as Spool in the café.'},409);
   if(req.method==='OPTIONS')return new Response(null,{status:204,headers:json(req,{}).headers});
   if(req.method!=='POST')return json(req,{error:'method_not_allowed'},405);
   let session;

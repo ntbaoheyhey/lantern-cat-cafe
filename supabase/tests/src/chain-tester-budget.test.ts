@@ -41,6 +41,7 @@ it('campaign activation cannot bypass the common grant ledger when the separate 
   expect((await db.query('select * from chain_tester_reservations where contract=$1',[f.contract.toLowerCase()])).rows).toHaveLength(0);
   expect(testerBudgetRequired('1','0')).toBe(true);
   expect(testerBudgetRequired('0','0')).toBe(false);
+  expect(testerBudgetRequired('0','0','1')).toBe(true);
 });
 it('two20 grants exhaust40; retries retain one exact nonce and cannot spend the ceiling again',async()=>{
   const f=await setup(),g=await actor(),h=await actor();

@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {useId,useMemo,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from './model';
@@ -11,9 +12,9 @@ function RouteDecision({m,state,choice,result,cats}:{m:DepthModel;state:R.DepthA
  return <article className="dp-route-decision" aria-label={choice.label}>
   <h3>{choice.label}</h3><p>{choice.description}</p>
   <div id={description} className="dp-route-decision-preview">
-   {result.ok?<p><b>Run points: {run.points} → {next.points}</b></p>:<p><b>{short?`Need ${short} more run points (${run.points}/${choice.cost}).`:choice.unavailable??result.error}</b></p>}
-   {boon&&<p><b>{boon.name} · Stack {run.boons[boon.id]??0}{result.ok?` → ${next.boons[boon.id]}`:''}/{boon.cap}</b><span>{boon.description}</span></p>}
-   {result.ok&&(changed?<ul>{hp.map(row=><li key={row.id}><b>{R.CAT_BY_ID[row.id]!.name}</b><span>{row.before} → {row.after} HP ({row.after>=row.before?'+':''}{row.after-row.before}){row.before===0&&row.after>0?' · Revives':''}</span></li>)}</ul>:<p>Crew HP unchanged.</p>)}
+   {result.ok?<p><b>Run points: {run.points} to {next.points}</b></p>:<p><b>{short?`Need ${short} more run points (${run.points}/${choice.cost}).`:choice.unavailable??result.error}</b></p>}
+   {boon&&<p><b>{boon.name} · Stack {run.boons[boon.id]??0}{result.ok?` to ${next.boons[boon.id]}`:''}/{boon.cap}</b><span>{boon.description}</span></p>}
+   {result.ok&&(changed?<ul>{hp.map(row=><li key={row.id}><b>{R.CAT_BY_ID[row.id]!.name}</b><span>{row.before} to {row.after} HP ({row.after>=row.before?'+':''}{row.after-row.before}){row.before===0&&row.after>0?' · Revives':''}</span></li>)}</ul>:<p>Crew HP unchanged.</p>)}
   </div>
   <button aria-describedby={description} disabled={!result.ok} onClick={()=>m.apply(R.resolveNode(m.state,choice.id),'Choice made. Continue along the route.')}>{choice.label}</button>
  </article>;

@@ -1,4 +1,5 @@
 import {useEffect,useRef,useState} from 'react';
+import {GameIcon} from '../../../ui/GameIcon';
 
 /** Presentation only: the authoritative amount always comes from the model. */
 export function CountUpA6({value,from,reducedMotion=false}:{value:number;from?:number;reducedMotion?:boolean}) {
@@ -12,4 +13,4 @@ export function CountUpA6({value,from,reducedMotion=false}:{value:number;from?:n
  },[value,reducedMotion]);
  return <span className="a6-count" aria-label={String(value)}>{shown.toLocaleString('en-US')}</span>;
 }
-export const currencyIconA6=(id:string)=>({fish:'◈',stamps:'✉',threads:'⌁',shards:'✦',points:'✧'}[id]??'◆');
+export const currencyIconA6=(id:string)=><GameIcon name={{fish:'fish',stamps:'bell',threads:'thread',shards:'shard',points:'season'}[id]??'materials'} size={18}/>;

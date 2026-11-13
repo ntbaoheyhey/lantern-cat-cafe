@@ -185,6 +185,8 @@ export function validateDepth(value: unknown, legacyFormation = false): asserts 
   if(new Set(state.gear.map(g=>g.id)).size!==state.gear.length)fail();
   for (const gear of state.gear) {
     if (!GEAR_BY_ID[gear.templateId] || !Number.isInteger(gear.enhancement) || gear.enhancement < 0
+      || gear.blessingBp!==undefined&&(!Number.isInteger(gear.blessingBp)||gear.blessingBp<0||gear.blessingBp>10000)
+      || gear.enhanceAttempts!==undefined&&(!Number.isSafeInteger(gear.enhanceAttempts)||gear.enhanceAttempts<0||gear.enhanceAttempts>1000000)
       || gear.enhancement > 12 || ![1,2,3].includes(gear.tier) || !Array.isArray(gear.affixes) || !record(gear.rolls)
       || new Set(gear.affixes).size!==gear.affixes.length || gear.affixes.some(id=>!AFFIX_BY_ID[id]?.slots.includes(GEAR_BY_ID[gear.templateId]!.slot))
       || Object.values(gear.rolls).some(n=>!Number.isSafeInteger(n)||n<0)) fail();

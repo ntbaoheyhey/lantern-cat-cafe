@@ -107,23 +107,24 @@ export function campaignStep(prior:CampaignState,command:CampaignCommand,now:num
   // Removed origins remain as tombstones; an exported instance never reappears.
   return state;
 }
-export function createCampaign({enabled=false,rulesHash,store,now=()=>Date.now(),seed=()=>crypto.getRandomValues(new Uint32Array(1))[0]!}:{
-  enabled?:boolean;rulesHash:string;store:CampaignStore;now?:()=>number;seed?:()=>number;
+export function createCampaign({enabled=false,economyV3=false,rulesHash,store,now=()=>Date.now(),seed=()=>crypto.getRandomValues(new Uint32Array(1))[0]!}:{
+  enabled?:boolean;economyV3?:boolean;rulesHash:string;store:CampaignStore;now?:()=>number;seed?:()=>number;
 }) {
   return async(player:string,wallet:string,input:unknown):Promise<CampaignReceipt>=>{
     if(!enabled)throw new Error('campaign_disabled');
     if(!uuid.test(player)||!/^0x[0-9a-f]{40}$/.test(wallet)||!/^[0-9a-f]{64}$/.test(rulesHash))throw new Error('campaign_identity');
     const request=campaignRequest(input),requestHash=await campaignHash([CAMPAIGN_SOURCE,player,wallet,rulesHash,request]);
+    if(economyV3&&request.command.type==='export')throw new Error('campaign_source');
     const prior=await store.receipt(player,wallet,request.id);
     if(prior){if(prior.request_hash!==requestHash)throw new Error('campaign_conflict');return prior;}
     const clock=now();
     if(!Number.isSafeInteger(clock)||clock<0)throw new Error('campaign_clock');
-    const snapshot=await store.boot(player,wallet,rulesHash,{game:setGameplayA6(createDepthAccount(seed(),clock),true),origins:{}});
+    const snapshot=await store.boot(player,wallet,rulesHash,{game:{...setGameplayA6(createDepthAccount(seed(),clock),true),economyV3},origins:{}});
     if(snapshot.rules_hash!==rulesHash)throw new Error('campaign_rules_changed');
     if(snapshot.revision!==request.revision)throw new Error('campaign_stale');
     const transitionNow=now();
     if(!Number.isSafeInteger(transitionNow)||transitionNow<clock||transitionNow<Date.parse(snapshot.updated_at))throw new Error('campaign_clock');
-    const state=campaignStep(snapshot.state,request.command,transitionNow,seed());
+    const state=campaignStep({...snapshot.state,game:{...snapshot.state.game,economyV3}},request.command,transitionNow,seed());
     return store.commit({player,wallet,rules:rulesHash,id:request.id,requestHash,revision:request.revision,state,
       exportInstance:request.command.type==='export'?request.command.instance:null});
   };

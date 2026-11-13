@@ -1,0 +1,70 @@
+{
+  "source": {
+    "head": "84b4e49f9f8b84f72dc365f1bff15710da2fe13f",
+    "runtimeSha256": "a3b341c2ea35ad314c1d54a5836858c652e56841d1e4762e0c53fc7823ecae0e",
+    "driverSha256": "7960144cefd8bd5a84fa169e5efd5962ca57a6a73d8e4ac9aec0eb659daccd88",
+    "date": "2026-11-12T23:49:51.164Z",
+    "calendar": {
+      "firstDay": "2026-11-13",
+      "startSpanDays": 20,
+      "firstSeed": 90001,
+      "assignment": "Consecutive account seeds cycle evenly through consecutive start dates; matched profiles share each account date.",
+      "dailyRouteSeeds": "shared across accounts by calendar date",
+      "independentDailySamples": false
+    },
+    "cohort": {
+      "firstSeed": 90001,
+      "count": 40,
+      "days": 30
+    }
+  },
+  "profiles": [
+    {
+      "profile": "casual",
+      "accounts": 40,
+      "minutesPerDay": 30,
+      "firstLegendaryMedianDay": 11.0,
+      "minDay": 1,
+      "maxDay": 12,
+      "censoredAt30Days": 0,
+      "dayHistogram": {
+        "1": 6,
+        "2": 2,
+        "5": 3,
+        "11": 24,
+        "12": 5
+      }
+    },
+    {
+      "profile": "regular",
+      "accounts": 40,
+      "minutesPerDay": 60,
+      "firstLegendaryMedianDay": 11.0,
+      "minDay": 1,
+      "maxDay": 11,
+      "censoredAt30Days": 0,
+      "dayHistogram": {
+        "1": 6,
+        "5": 1,
+        "9": 2,
+        "10": 1,
+        "11": 30
+      }
+    },
+    {
+      "profile": "heavy",
+      "accounts": 40,
+      "minutesPerDay": 180,
+      "firstLegendaryMedianDay": 11.0,
+      "minDay": 1,
+      "maxDay": 11,
+      "censoredAt30Days": 0,
+      "dayHistogram": {
+        "1": 5,
+        "4": 2,
+        "6": 1,
+        "11": 32
+      }
+    }
+  ]
+}

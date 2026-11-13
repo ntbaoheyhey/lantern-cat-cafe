@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import { useEffect,useId } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from './model';
@@ -10,8 +11,8 @@ export function NodeStarsV4({ m, node, goals = false }: { m: DepthModel; node: R
   const conditions = m.state.v4?.journey?.stars[R.nodeStarKeyV4(run,node)]?.conditions ?? [false,false,false];
   const count = conditions.filter(Boolean).length;
   return <span className="dp-v4-stars" aria-label={`${count} of 3 stars`}>
-    <span aria-hidden="true">{conditions.map((c,i) => <span key={i} data-earned={c}>{c ? '★' : '☆'}</span>)}</span>
-    {goals && <span className="dp-v4-star-goals">{R.nodeStarGoalsV4(node).map((g,i)=><span key={g.id}>{conditions[i] ? '✓ ' : '○ '}{g.text}</span>)}</span>}
+    <span aria-hidden="true">{conditions.map((c,i) => <span key={i} data-earned={c}><GameIcon name="season" size={16} className={c?'':'game-star-empty'}/></span>)}</span>
+    {goals && <span className="dp-v4-star-goals">{R.nodeStarGoalsV4(node).map((g,i)=><span key={g.id}>{conditions[i] ? 'Done  ' : 'Pending  '}{g.text}</span>)}</span>}
   </span>;
 }
 export function StarBoardV4({ m,reducedNoteId }: { m: DepthModel;reducedNoteId?:string }) {

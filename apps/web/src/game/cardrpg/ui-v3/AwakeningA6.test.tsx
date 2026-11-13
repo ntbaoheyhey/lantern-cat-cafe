@@ -22,7 +22,7 @@ it.each([0,1,2])('previews and spends exactly the next rank after rank %i withou
  const m=ready(rank),before=structuredClone(m.state),stats=R.depthStats(m.state,'mochi');
  const ui=open(m),n=rank+1;
  expect(m.state).toEqual(before);
- for(const text of [`Mochi → rank ${n}/3`,`${300*n} fish points`,`${40*n} threads`,`${5*n} essence`,`${30*n} mastery materials`])expect(screen.getByText(text)).toBeTruthy();
+ for(const text of [`Mochi to rank ${n}/3`,`${300*n} fish points`,`${40*n} threads`,`${5*n} essence`,`${30*n} mastery materials`])expect(screen.getByText(text)).toBeTruthy();
  const receipt=screen.getByText(/Health · \+/).textContent;
  fireEvent.click(screen.getByRole('button',{name:'Awaken'}));
  expect(m.state.awakened.mochi).toBe(n);

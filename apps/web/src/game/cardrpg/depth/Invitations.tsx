@@ -176,7 +176,7 @@ export function Invitations({ m }: { m: DepthModel }) {
             </div> : <div className="dp-flip-result">
               {active.cardId ? <CompanionCard id={active.cardId} m={m} />
                 : <div className="dp-invitation-item"><ItemIcon slot={(R.GEAR_BY_ID[active.itemId!]??ITEM_BY_ID[active.itemId!])!.slot} /><h3>{resultName(active)}</h3><p>{active.rarity}</p></div>}
-              <p role="status">{active.cardId && active.duplicate ? `Duplicate → ${active.shards} ${resultName(active)} shards`
+              <p role="status">{active.cardId && active.duplicate ? `Duplicate to ${active.shards} ${resultName(active)} shards`
                 : active.cardId ? 'A new companion joins your collection.' : 'Equipment added to your inventory.'}</p>
               <small>Account-bound</small>
               <button onClick={nextResult}>{index + 1 === results.length ? 'View results' : 'Next invitation'}</button>
@@ -200,7 +200,7 @@ export function Invitations({ m }: { m: DepthModel }) {
       <div className="dp-batch-grid">{results.map((result, resultIndex) => <article key={`${result.index}-${resultIndex}`} style={rarityStyle(result.rarity)}>
         {result.cardId ? <CompanionCard id={result.cardId} m={m} />
           : <div className="dp-invitation-item"><ItemIcon slot={(R.GEAR_BY_ID[result.itemId!]??ITEM_BY_ID[result.itemId!])!.slot} /><h3>{resultName(result)}</h3><small>{result.rarity} · Account-bound</small></div>}
-        <p>{result.cardId && result.duplicate ? `Duplicate → ${result.shards} shards` : result.duplicate ? 'Another equipment piece' : 'New to your collection'}</p>
+        <p>{result.cardId && result.duplicate ? `Duplicate to ${result.shards} shards` : result.duplicate ? 'Another equipment piece' : 'New to your collection'}</p>
       </article>)}</div><div className="cr-actions"><button onClick={() => m.go('team')}>Build your team</button><button onClick={() => m.go('inventory')}>View inventory</button></div>
     </section>}
     {m.state.gameplayV4&&<SelectorV4 m={m}/>}

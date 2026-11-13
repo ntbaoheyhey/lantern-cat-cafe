@@ -1,5 +1,6 @@
 import {pilotFixture} from '../vfx-layered/fixture';
 import {prepareBattleSequence} from '../battle-v3/controls';
+import {chainFlags} from '../chain/flags';
 import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
@@ -85,7 +86,7 @@ export class DepthModel {
       this.state.selectedRelic = null;
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
-    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock();
+    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.state.economyV3=chainFlags().economyV3; this.resetCafeClock();
     this.itemId = this.state.gear[0]?.id ?? '';
     if (!offline) {
       try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
@@ -332,8 +333,8 @@ export class DepthModel {
   tick(milliseconds: number, now = performance.now()) {
     const previousFrame = this.playbackFrameAt;
     this.playbackFrameAt = now;
-    window.__thAudio?.speed(this.state.settings.speed);
-    window.__thAudio?.pause(this.paused);
+    if(typeof window!=='undefined')window.__thAudio?.speed(this.state.settings.speed);
+    if(typeof window!=='undefined')window.__thAudio?.pause(this.paused);
     if (this.paused || !this.showBattle || (!this.sceneReady && !this.sceneError)) return;
     // The shared canvas caps its delta at 100 ms. Keep opted-in playback at
     // wall-clock speed on slow frames, without catching up an inactive tab.
@@ -440,7 +441,7 @@ export class DepthModel {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now(), this.c2Mode);
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.state.economyV3=chainFlags().economyV3; this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
       this.restoreEncounter();
       this.paused = false;
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
@@ -450,7 +451,7 @@ export class DepthModel {
   reset() {
     this.state = R.setGameplayV4(R.createDepthAccount(11, this.offline ? 0 : Date.now()), this.gameplayMode);
     if(this.skillsMode)this.state=R.setSkillsV5(this.state,true);
-    this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.resetCafeClock();
+    this.state=R.setGameplayA6(this.state,this.a6Mode); if(this.c2Mode)this.state=R.setFormationC2(this.state); this.state.economyV3=chainFlags().economyV3; this.resetCafeClock();
     this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
     this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';

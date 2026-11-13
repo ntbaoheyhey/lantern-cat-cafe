@@ -87,7 +87,7 @@ export class CafeAudio {
     this.remember();
   }
   async toggle() {
-    if(window.__thAudio){await window.__thAudio.unlock();this.enabled=!this.enabled;window.__thAudio.mute(!this.enabled);return;}
+    if(typeof window!=='undefined'&&window.__thAudio){await window.__thAudio.unlock();this.enabled=!this.enabled;window.__thAudio.mute(!this.enabled);return;}
     if (this.starting) return this.starting;
     if (this.enabled) { this.enabled = false; this.master?.gain.setTargetAtTime(0, this.ctx!.currentTime, .04); this.remember(); return; }
     const controller = new AbortController(); this.startup = controller; this.blocked = false;
@@ -114,9 +114,9 @@ export class CafeAudio {
     } catch { if (!signal.aborted) { this.blocked = true; this.enabled = false; } }
     finally { release(); }
   }
-  ui() { if(window.__thAudio){window.__thAudio.play('ui.click');return;} if (this.enabled && this.ctx && this.master) synthCue(this.ctx, this.master, 'chime', 0, this.ctx.currentTime, 4); }
+  ui() { if(typeof window!=='undefined'&&window.__thAudio){window.__thAudio.play('ui.click');return;} if (this.enabled && this.ctx && this.master) synthCue(this.ctx, this.master, 'chime', 0, this.ctx.currentTime, 4); }
   update(frame: EffectFrame | null, round: number, actor: string | null, quiet: boolean, ambienceScale = 1) {
-    if(window.__thAudio){const audio=window.__thAudio;const key=frame?`${frame.plan.id}/${frame.beat.kind}`:'';if(key&&key!==this.key){this.key=key;playFrame(audio,frame!);}return;}
+    if(typeof window!=='undefined'&&window.__thAudio){const audio=window.__thAudio;const key=frame?`${frame.plan.id}/${frame.beat.kind}`:'';if(key&&key!==this.key){this.key=key;playFrame(audio,frame!);}return;}
     if (!this.enabled || !this.ctx || !this.master || this.ctx.state !== 'running') return;
     const now = this.ctx.currentTime, id = frame?.plan.presentationId || frame?.plan.skillId || '';
     const key = frame ? `${frame.plan.id}/${id}/${frame.beat.kind}` : '';

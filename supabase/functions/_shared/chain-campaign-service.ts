@@ -38,17 +38,17 @@ export function campaignView(snapshot:CampaignSnapshot,now:number):CampaignView 
       return {instance:gear.id,item:gear.templateId,equipped,
         eligible:home&&!equipped&&rule?.tradable===true&&rule.kind==='equipment'&&origin?.item===gear.templateId&&origin.level>=TRADE_POLICY.minLevel};})};
 }
-export function createCampaignService({enabled=false,rulesHash,store,now=()=>Date.now(),seed=()=>crypto.getRandomValues(new Uint32Array(1))[0]!}:{
-  enabled?:boolean;rulesHash:string;store:CampaignStore;now?:()=>number;seed?:()=>number;
+export function createCampaignService({enabled=false,economyV3=false,rulesHash,store,now=()=>Date.now(),seed=()=>crypto.getRandomValues(new Uint32Array(1))[0]!}:{
+  enabled?:boolean;economyV3?:boolean;rulesHash:string;store:CampaignStore;now?:()=>number;seed?:()=>number;
 }){
-  const act=createCampaign({enabled,rulesHash,store,now,seed});
+  const act=createCampaign({enabled,economyV3,rulesHash,store,now,seed});
   return async(player:string,wallet:string,input:Record<string,unknown>):Promise<CampaignResponse>=>{
     try{
       if(!enabled)throw new ChainRequestError('campaign_disabled');
       if(!/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(player)||!/^0x[0-9a-f]{40}$/.test(wallet)||!/^[0-9a-f]{64}$/.test(rulesHash))throw new ChainRequestError('unauthenticated');
       if(input.action==='state'&&Object.keys(input).length===1){
         const clock=now();
-        const snapshot=await store.boot(player,wallet,rulesHash,{game:setGameplayA6(createDepthAccount(seed(),clock),true),origins:{}});
+        const snapshot=await store.boot(player,wallet,rulesHash,{game:{...setGameplayA6(createDepthAccount(seed(),clock),true),economyV3},origins:{}});
         if(snapshot.rules_hash!==rulesHash)throw new ChainRequestError('campaign_rules_changed');
         return {view:campaignView(snapshot,clock),receipt:null};
       }

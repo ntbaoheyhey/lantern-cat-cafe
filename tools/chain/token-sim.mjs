@@ -14,6 +14,9 @@ import {forgePreparation} from './forge-preparation.mjs';
 import {tiedRankAmounts} from '../../packages/chain/src/rank.ts';
 import {validateCampaignCohort,campaignWeek} from './campaign-cohort.mjs';
 
+import {economyV3Scenarios} from './economy-v3-sim.mjs';
+export {simulateEconomyV3,economyV3Scenarios} from './economy-v3-sim.mjs';
+
 export const UNIT = 10n ** 18n;
 const GENESIS = 1_000_000_000n * UNIT;
 const THRESHOLD = 8n * UNIT / 10n;
@@ -486,6 +489,7 @@ function chart(scenarios, field, title, target) {
 }
 
 function main() {
+  if(process.argv.includes('--v3')){const scenarios=economyV3Scenarios();writeFileSync(resolve(root,'reports/v3-shell/ECONOMY-SIM.json'),JSON.stringify(scenarios,null,2));console.log(JSON.stringify(scenarios.map(x=>({mix:x.mix,demand:x.demand,burnEmission:x.burnEmission,late:x.last13WeeksBurnEmission,starSourceSink:x.starSourceSink}))));return;}
   const supplyPath = process.argv.find(x => x.startsWith('--supply='))?.slice(9);
   const supply = validateSupply(supplyPath ? JSON.parse(readFileSync(supplyPath, 'utf8')) : loadSourceSupply());
   const out = resolve(root, 'docs/chain'); mkdirSync(out, {recursive: true});

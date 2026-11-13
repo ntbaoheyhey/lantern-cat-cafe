@@ -60,8 +60,11 @@ export async function loadModules() {
     const trade = await loader.ssrLoadModule('/packages/game-rules/src/cardrpg/trade.ts');
     const move = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/move.ts');
     const runtime = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/runtime.ts');
+    const economy = await loader.ssrLoadModule('/supabase/functions/_shared/economy-v3.ts');
+    const economyAdapter = await loader.ssrLoadModule('/supabase/functions/_shared/economy-v3-chain.ts');
+    const economyStoreModule = await loader.ssrLoadModule('/supabase/functions/_shared/economy-v3-store.ts');
     const forgeClient = await loader.ssrLoadModule('/apps/web/src/game/cardrpg/chain/forge-client.ts');
-    return {...db,...auth,...drip,...relic,...judge,...items,...cosmeticsModule,...source,...campaign,...campaignService,...campaignManifest,...campaignRewards,...campaignClaim,...routine,...rewards,...testerBudget,...budgetRegister,...chainHttp,...trade,...move,...runtime,...forgeClient,close:()=>loader.close()};
+    return {...economy,...economyAdapter,...economyStoreModule,...db,...auth,...drip,...relic,...judge,...items,...cosmeticsModule,...source,...campaign,...campaignService,...campaignManifest,...campaignRewards,...campaignClaim,...routine,...rewards,...testerBudget,...budgetRegister,...chainHttp,...trade,...move,...runtime,...forgeClient,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
 export async function startLocal({web = true, campaignRewards = web} = {}) {
@@ -132,6 +135,8 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
     const chainOne=async(sql,args)=>{try{return await one(sql,args);}catch(error){throw modules.chainStoreError(error);}};
     // Explicit local test policy, deterministic server seed, never a production default.
     await db.query('insert into chain_source_policies(source_id,rules_hash,enabled) values($1,$2,true)',[modules.CAMPAIGN_SOURCE,modules.CAMPAIGN_RULES_HASH]);
+    await db.exec('update chain_v3_budget set enabled=true,ceiling=10000000000000000000000');
+    const economy=modules.createEconomy({enabled:true,demo:true,store:modules.economyStore(async(name,args)=>{const values=Object.values(args).map(v=>v&&typeof v==='object'?JSON.stringify(v):v);return chainOne('select '+name+'('+values.map((_,i)=>'$'+(i+1)).join(',')+') r',values);}),chain:modules.economyChain({client,nft:RelicNFT,token:YarnToken,rewards:SeasonRewards,key:signerKey})});
     const campaign=modules.createCampaignService({enabled:true,rulesHash:modules.CAMPAIGN_RULES_HASH,seed:()=>43113,store:{
       boot:(p,w,r,s)=>chainOne('select chain_campaign_boot($1,$2,$3,$4) r',[p,w,r,JSON.stringify(s)]),
       receipt:(p,w,i)=>chainOne('select chain_campaign_receipt($1,$2,$3) r',[p,w,i]),
@@ -199,7 +204,7 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
         if(incoming.url==='/health'){outgoing.end('local-chain');return;}
         if(incoming.method!=='POST'){outgoing.writeHead(405).end();return;}
         const name=incoming.url.replace('/functions/v1/','');let input,result;
-        if(['guest-drip','chain-items','chain-judge','chain-cosmetics','chain-campaign','chain-campaign-reward'].includes(name)){
+        if(['guest-drip','chain-items','chain-judge','chain-cosmetics','chain-campaign','chain-campaign-reward','chain-economy-v3'].includes(name)){
           const abort=new AbortController(),cancel=()=>abort.abort();incoming.once('aborted',cancel);
           try{input=await modules.readChainBody(new Request(localApi+incoming.url,{method:'POST',headers:incoming.headers,body:Readable.toWeb(incoming),duplex:'half',signal:abort.signal}),name);}
           finally{incoming.off('aborted',cancel);}
@@ -213,7 +218,8 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
           const token=(incoming.headers.authorization||'').replace(/^Bearer\s+/i,'');
           const session=await modules.verifySessionToken(token,{jwtSecret});
           if(name==='guest-drip')result=await drip(session.sub,viem.getAddress(session.wallet),await modules.dripIpHash(incoming.socket.remoteAddress,jwtSecret));
-          else if(name==='chain-items')result=input.action==='reward'?await reward(session.sub,viem.getAddress(session.wallet)):await items(session.sub,viem.getAddress(session.wallet),input);
+          else if(name==='chain-economy-v3')result=await economy(session.sub,session.wallet,input);
+            else if(name==='chain-items')result=input.action==='reward'?await reward(session.sub,viem.getAddress(session.wallet)):await items(session.sub,viem.getAddress(session.wallet),input);
           else if(name==='chain-cosmetics')result=await cosmetics(session.sub,viem.getAddress(session.wallet),input);
           else if(name==='chain-campaign-reward'){
             // Anvil has no background block producer; tick only the local chain.
@@ -237,12 +243,12 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){
-      Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_CHAIN_MODE:'local',VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',VITE_CHAIN_CAMPAIGN_REWARDS:campaignRewards?'1':'0',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
+      Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_V3_START_BLOCK:'0',VITE_CHAIN_MODE:'local',VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',VITE_CHAIN_CAMPAIGN_REWARDS:campaignRewards?'1':'0',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
       const {createServer}=await import(pathToFileURL(webRequire.resolve('vite')));
       const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:ports.web,strictPort:true}});
       await vite.listen();handles.push(()=>vite.close());
     }
-    return {config,client,db,modules,drip,judge,items,cosmetics,campaign,campaignClaim,reward,authDeps,stop};
+    return {economy,config,client,db,modules,drip,judge,items,cosmetics,campaign,campaignClaim,reward,authDeps,stop};
   }catch(error){await stop();throw error;}
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

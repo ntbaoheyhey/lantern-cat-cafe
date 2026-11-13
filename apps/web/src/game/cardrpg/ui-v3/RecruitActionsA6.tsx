@@ -1,3 +1,5 @@
+import {GameIcon} from '../../../ui/GameIcon';
+import {RecruitOddsC2} from './OddsC2';
 import {HelpC2} from './TextDietC2';
 import {useId,useMemo,useSyncExternalStore} from 'react';
 import {CARD_RPG_CONFIG,emptyPity} from '@taskbar-hero/game-rules/cardrpg';
@@ -19,12 +21,12 @@ export function RecruitActionsA6({m,bannerId,revealing,onInvite}:{m:DepthModel;b
    if(remaining<count)needs.push(`${remaining} invitation${remaining===1?'':'s'} left today; this needs ${count}.`);
    if(!welcome&&banner.kind==='equipment'&&room<count)needs.push(`${room} gear spaces free; this needs ${count}.`);
    if(!result.ok&&!needs.length)needs.push(result.error??'This invitation is unavailable.');
-   const after=welcome?'Free · stamps unchanged · no marks added. Uses one daily invitation.':stamps>=cost?`${stamps} → ${stamps-cost} stamps · +${count} mark${count===1?'':'s'}.`:`${cost} stamps total · +${count} mark${count===1?'':'s'}.`;
+   const after=welcome?'Free · stamps unchanged · no marks added. Uses one daily invitation.':stamps>=cost?`${stamps} to ${stamps-cost} stamps · +${count} mark${count===1?'':'s'}.`:`${cost} stamps total · +${count} mark${count===1?'':'s'}.`;
    return {count,welcome,ok:result.ok,cost,needs,after,marks,remaining};
   });
  },[state,bannerId]);
  return <><div className="uv-recruit-buttons a6-recruit-purchases">{quotes.map(q=>{const key=q.welcome?'welcome':String(q.count),description=`${id}-${key}`;return <div key={key} role="group" aria-label={q.welcome?'Free welcome':`${q.count} invitation purchase`}>
-  <button className={q.welcome?'uv-fight':q.count===10?'cr-primary':undefined} aria-describedby={description} disabled={revealing||!q.ok} onClick={()=>onInvite(q.count,q.welcome)}>{q.welcome?(state.formationC2?'✉ Welcome':'Welcome a friend'):`Recruit ×${q.count} · ${q.cost}`}</button>
-  <div id={description} className="a6-recruit-quote"><HelpC2 label="Invitation cost"><p>{q.after}</p>{q.needs.length>0&&<ul>{q.needs.map(need=><li key={need}>{need}</li>)}</ul>}</HelpC2></div>
- </div>;})}</div><p className="a6-recruit-limits">{state.formationC2?<span aria-label="Daily invitations left and saved marks">✉ {quotes[0]!.remaining}/30 · ✦ {quotes[0]!.marks}</span>:<>{quotes[0]!.remaining} invitation{quotes[0]!.remaining===1?'':'s'} left today · resets daily.<br/>{quotes[0]!.marks} marks saved · {R.SELECTOR_COST_V4} choose one reward.<br/>Earned stamps only · from patrols and tasks.</>}</p></>;
+  <button className={q.welcome?'uv-fight':q.count===10?'cr-primary':undefined} aria-describedby={description} disabled={revealing||!q.ok} onClick={()=>onInvite(q.count,q.welcome)}>{q.welcome?(state.formationC2?'Welcome':'Welcome a friend'):`Recruit ×${q.count} · ${q.cost}`}</button>
+  <div id={description} className="a6-recruit-quote"><HelpC2 label="Invitation cost"><p>{state.economyV3?q.after.replaceAll('stamps','Bells'):q.after}</p>{q.needs.length>0&&<ul>{q.needs.map(need=><li key={need}>{state.economyV3?need.replaceAll('stamps','Bells'):need}</li>)}</ul>}</HelpC2>{state.economyV3&&<RecruitOddsC2 state={state} bannerId={bannerId}/>}</div>
+ </div>;})}</div><p className="a6-recruit-limits">{state.formationC2?<span aria-label="Daily invitations left and saved marks"><GameIcon name="invitations" size={18}/> {quotes[0]!.remaining}/30 · <GameIcon name="season" size={18}/> {quotes[0]!.marks}</span>:<>{quotes[0]!.remaining} invitation{quotes[0]!.remaining===1?'':'s'} left today · resets daily.<br/>{quotes[0]!.marks} marks saved · {R.SELECTOR_COST_V4} choose one reward.<br/>Earned stamps only · from patrols and tasks.</>}</p></>;
 }

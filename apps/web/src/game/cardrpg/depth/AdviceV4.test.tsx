@@ -226,7 +226,7 @@ it.each(['no-change', 'timeout', 'unavailable'] as const)('reviews a free owned-
   if(status === 'timeout')act(() => vi.advanceTimersByTime(8_000));
   else if(status === 'unavailable')act(() => mock.workers[0]!.onerror!());
   else reply(mock.workers[0]!, null);
-  expect(screen.getByText(`Crew Power ${power.toLocaleString('en-US')} → ${after.toLocaleString('en-US')} (+${(after-power).toLocaleString('en-US')}).`)).toBeTruthy();
+  expect(screen.getByText(`Crew Power ${power.toLocaleString('en-US')} to ${after.toLocaleString('en-US')} (+${(after-power).toLocaleString('en-US')}).`)).toBeTruthy();
   const review = screen.getByRole('button', {name:'Review owned gear'});
   expect(review.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ')).toContain('No currency needed.');
   expect(R.exportSave(m.state)).toBe(before);
@@ -246,7 +246,7 @@ it('keeps the completed recommendation ahead of the free fallback and quotes its
   const before=Math.round(R.teamPowerV4(worker.request!.state)), after=Math.round(R.teamPowerV4(expected.state));
   reply(worker, recommendation);
   expect(screen.queryByRole('button', {name:'Review owned gear'})).toBeNull();
-  expect(screen.getByText(`Crew Power ${before.toLocaleString('en-US')} → ${after.toLocaleString('en-US')} (+${(after-before).toLocaleString('en-US')}).`)).toBeTruthy();
+  expect(screen.getByText(`Crew Power ${before.toLocaleString('en-US')} to ${after.toLocaleString('en-US')} (+${(after-before).toLocaleString('en-US')}).`)).toBeTruthy();
   const apply=screen.getByRole('button', {name:'Apply and retry route'});
   const description=apply.getAttribute('aria-describedby')!.split(' ').map(id=>document.getElementById(id)!.textContent).join(' ');
   expect(description).toContain('Restart chapter 1 at its first stop with full crew HP.');

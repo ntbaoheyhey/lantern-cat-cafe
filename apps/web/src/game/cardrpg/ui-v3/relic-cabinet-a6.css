@@ -7,7 +7,7 @@
  .a6-relic-cabinet .a6-relic-slot .a6-relic-art {width:100%;height:clamp(190px,26vh,265px);flex:0 1 auto;min-height:150px;max-width:300px;filter:drop-shadow(0 10px 9px #21192366)}
  .a6-relic-cabinet .a6-relic-slot[data-empty=true] .a6-relic-art {opacity:.65;filter:saturate(.35)}
  .a6-relic-cabinet .a6-relic-slot .a6-relic-eyebrow {font-size:13px;letter-spacing:.08em;margin-top:6px}
- .a6-relic-cabinet .a6-relic-slot h3 {font:700 29px/1.15 Georgia,serif;margin:8px auto 11px}
+ .a6-relic-cabinet .a6-relic-slot h3 {font:700 29px/1.15 var(--font-display);margin:8px auto 11px}
  .a6-relic-cabinet .a6-relic-slot small {font-size:14px}
  .a6-relic-cabinet .a6-relic-slot strong {display:block;font-size:25px}
  .a6-relic-cabinet .a6-relic-slot p {font-size:15px;line-height:1.4;margin:8px 0 0}
@@ -18,7 +18,7 @@
  .a6-relic-cabinet .a6-relic-collection {min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:16px}
  .a6-relic-cabinet .a6-relic-collection article {display:grid;grid-template-columns:95px minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;column-gap:8px;row-gap:7px;padding:15px 12px 12px;align-items:center;text-align:left;min-height:0;border-radius:18px 18px 9px 9px}
  .a6-relic-cabinet .a6-relic-collection .a6-relic-art {width:105px;height:115px;max-width:100%;display:block!important}
- .a6-relic-cabinet .a6-relic-card-copy {min-width:0}.a6-relic-cabinet .a6-relic-card-copy small {font-size:14px;color:#735434}.a6-relic-cabinet .a6-relic-card-copy h3 {font:700 24px/1.1 Georgia,serif;margin:7px 0 9px;color:#523824;max-width:none;text-transform:capitalize}.a6-relic-cabinet .a6-relic-card-copy strong {font-size:18px;color:#8d5a20}
+ .a6-relic-cabinet .a6-relic-card-copy {min-width:0}.a6-relic-cabinet .a6-relic-card-copy small {font-size:14px;color:#735434}.a6-relic-cabinet .a6-relic-card-copy h3 {font:700 24px/1.1 var(--font-display);margin:7px 0 9px;color:#523824;max-width:none;text-transform:capitalize}.a6-relic-cabinet .a6-relic-card-copy strong {font-size:18px;color:#8d5a20}
  .a6-relic-cabinet .a6-relic-collection button {grid-column:1/-1;width:100%;min-height:44px;font-size:14px;margin:0;padding:8px}
  .a6-relic-cabinet button:disabled {background:#ddd5c5;border-color:#b5a78e;color:#655d52;box-shadow:none;opacity:1;cursor:not-allowed;transform:none}
  .a6-relic-cabinet article[data-selected=true] button:disabled {background:#dde4c7;border-color:#9ca77a;color:#4f5b35}

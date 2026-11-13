@@ -83,7 +83,7 @@ it('quotes saved gear and donor bonuses before applying the exact saved team',()
  const m=savedGearModel(),before=R.exportSave(m.state),command=R.applyLoadoutV4(m.state,0);
  render(<FormationA6 m={m}/>);openSaved();
  const quote=screen.getByRole('region',{name:'Saved team changes'});
- expect(quote.textContent).toContain(Math.round(R.teamPowerV4(m.state)).toLocaleString('en-US')+' → '+Math.round(R.teamPowerV4(command.state)).toLocaleString('en-US'));
+ expect(quote.textContent).toContain(Math.round(R.teamPowerV4(m.state)).toLocaleString('en-US')+' to '+Math.round(R.teamPowerV4(command.state)).toLocaleString('en-US'));
  expect(quote.textContent).toContain('Soot loses unique effect');expect(quote.textContent).toContain('Mochi gains unique effect');
  expect(quote.textContent).toContain('The patient doorstop');expect(R.exportSave(m.state)).toBe(before);
  fireEvent.click(screen.getByRole('button',{name:'Use saved campaign team'}));

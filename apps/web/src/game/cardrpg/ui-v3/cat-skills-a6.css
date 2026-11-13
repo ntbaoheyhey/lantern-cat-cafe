@@ -21,7 +21,7 @@
  .a6-cat-skill-detail {padding:10px 14px;border:1px solid #bd9c64;border-radius:7px;background:#fff3d9;color:#60462f;}
  .a6-cat-skill-detail[data-ultimate=true] {border-color:#b68537;box-shadow:inset 3px 0 0 #d2a448;}
  .a6-cat-skill-detail>header {display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
- .a6-cat-skill-detail>header>b {font:700 18px Georgia,serif;color:#5b3c29;}
+ .a6-cat-skill-detail>header>b {font:700 18px var(--font-display);color:#5b3c29;}
  .a6-cat-skill-detail>header>small {font-size:11px;color:#7b5b2d;}
  .a6-cat-skill-detail>p {margin:9px 0 0;font-size:15px;line-height:1.45;}
  .a6-cat-skill-unlock {display:block;margin-top:7px;font-size:12px;color:#83522f;}
@@ -108,7 +108,7 @@
  .a6-awakening .a6-awakening-back,.a6-awakening[open] .a6-awakening-open {display:none}
  .a6-awakening[open] .a6-awakening-back {display:inline}
  .a6-awakening-receipt {padding:0 3px 3px;color:#62482d;font-size:14px;line-height:1.4}
- .a6-awakening-receipt h3 {margin:3px 0 6px;font:700 21px Georgia,serif;color:#513822}
+ .a6-awakening-receipt h3 {margin:3px 0 6px;font:700 21px var(--font-display);color:#513822}
  .a6-awakening-receipt p {margin:6px 0;font-size:14px;line-height:1.4}
  .a6-awakening-receipt>div {display:grid;gap:5px;padding:10px 12px;margin:9px 0;background:#fff5d9;border:1px solid #bd9b60;border-radius:7px}
  .a6-awakening-receipt .cr-cost {display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px}

@@ -39,7 +39,7 @@ it('updates the actual card on live LOOK changes and removes srcset on return wi
       <CompanionCard id="marigold" m={model} /></>;
   }
   const view = render(<Cards />);
-  const [mochi, marigold] = view.container.querySelectorAll('img');
+  const [mochi, marigold] = view.container.querySelectorAll('.cr-portrait > img');
   expect(mochi!.getAttribute('src')).toBe('/classic/mochi.webp');
   expect(mochi!.hasAttribute('srcset')).toBe(false);
   act(() => setLookV2(true));

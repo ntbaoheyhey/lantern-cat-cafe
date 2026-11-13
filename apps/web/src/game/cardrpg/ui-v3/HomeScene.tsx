@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {useEffect,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
@@ -18,9 +19,9 @@ export function HomeScene({m,onRecruit,onTasks,onTower}:{m:DepthModel;onRecruit:
   <div className="uv-home-crew" aria-label="Your current crew">{m.state.team.map((id,index)=><figure key={id} style={{animationDelay:`${index*-.8}s`}}><img {...portraitProps(id)} alt={R.CAT_BY_ID[id]!.name}/><figcaption>{R.CAT_BY_ID[id]!.name}</figcaption></figure>)}</div>
   <div className="uv-scene-vignette"/>
   {!m.state.formationC2&&<div className="uv-home-title"><small>THE EVENING SHIFT</small><h1>Your evening crew</h1></div>}
-  <button disabled={a6&&m.state.tutorial<3} className="uv-hotspot uv-recruit-hotspot" onClick={onRecruit} aria-label="Recruit counter">{m.state.formationC2?'✉':'Recruit counter'} <span aria-hidden="true">↗</span></button>
-  <button disabled={a6&&!intro.features.find(f=>f.id==='daily')!.open} className="uv-hotspot uv-board-hotspot" onClick={onTasks} aria-label="Notice board">{m.state.formationC2?'✦':'Notice board'} <span aria-hidden="true">↗</span></button>
-  {a6&&intro.features.find(f=>f.id==='tower')!.open&&<button className="uv-hotspot a6-tower-hotspot" onClick={onTower}>Yarn Tower <small>{m.state.cleared.includes(1)?`Floor ${Math.min(30,m.state.towerBest+1)}`:'Clear chapter 1'}</small><span aria-hidden="true">↗</span></button>}
+  <button disabled={a6&&m.state.tutorial<3} className="uv-hotspot uv-recruit-hotspot" onClick={onRecruit} aria-label="Recruit counter">{m.state.formationC2?'invitations':'Recruit counter'} <span aria-hidden="true"><GameIcon name="external" size={18}/></span></button>
+  <button disabled={a6&&!intro.features.find(f=>f.id==='daily')!.open} className="uv-hotspot uv-board-hotspot" onClick={onTasks} aria-label="Notice board">{m.state.formationC2?'season':'Notice board'} <span aria-hidden="true"><GameIcon name="external" size={18}/></span></button>
+  {a6&&intro.features.find(f=>f.id==='tower')!.open&&<button className="uv-hotspot a6-tower-hotspot" onClick={onTower}>Yarn Tower <small>{m.state.cleared.includes(1)?`Floor ${Math.min(30,m.state.towerBest+1)}`:'Clear chapter 1'}</small><span aria-hidden="true"><GameIcon name="external" size={18}/></span></button>}
   {R.gameplayA6(m.state)?<IdleChestA6 m={m}/>:<button className={`uv-tips ${ready?'uv-tips-ready':''}`} disabled={!ready} onClick={()=>m.apply(R.claimCafeShiftV4(m.state,m.cafeNow),'Night tips collected.')} aria-label={`Collect Night tips ${hours.toFixed(1)}/8 h`}><Icon name="chest"/><b>Night tips {hours.toFixed(1)}/8 h</b><small>{ready?'Collect':active?'After your patrol':shift.remaining===0?'Fresh tips tomorrow':`Ready in ${Math.max(1,Math.ceil((shift.readyAt-shift.now)/60000))} min`}</small></button>}
  </div>;
 }
