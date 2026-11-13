@@ -1,17 +1,15 @@
-# Tiến độ V3 Solo
-- Q0–Q3 đã xong; Q3 đạt 259 gate A + 9 gate Solo.
-- Motion energy: 15,91 / 17,32 / 17,10, đều vượt 15,80.
-- 98/98 phản ứng đòn đánh; 33/33 hành động địch di chuyển đủ xa.
-- High khoảng 60 FPS với 10 nhân vật; combat parity đạt.
-- Q4 đang tối ưu kinh tế; 22 vòng, 1.074 cấu hình duy nhất đã đo.
-- Vòng 21: burn 1,031–1,280; Thread cao nhất 1,1043, vẫn vượt 1,10.
-- Bot ở các kịch bản 35% đã đạt ngưỡng 0,5 trong vòng 21.
-- Top 10 đã xác nhận ở 200 seed: Thread tốt nhất 1,10408 vẫn chưa đạt.
-- Vòng 23 đang tinh chỉnh phối hợp giá và hoàn Spool.
-- Anvil cục bộ đạt 16 biên nhận, đủ cả 3 sink mới.
-- Đã chụp 18 màn hình; sẽ đo lại với cấu hình cuối.
-- Phân tích độ nhạy 200 seed vẫn chạy nền.
-- Q5–Q9 còn mở. Không deploy, không merge sớm.
-- Đồng bộ 16 và 18/11 lúc 12:00 UTC; freeze 19/11 12:00 UTC.
-
-Q4: một cấu hình đạt T-a..T-g ở200 hạt giống; đang kiểm tra độ nhạy, chưa chốt.
+1. Q0–Q3 đã hoàn thành; giữ nguyên bằng chứng và giới hạn kiểm tra.
+2. Q4 đang làm; chưa chốt cân bằng cuối cùng.
+3. Đã ghi 24 vòng, 1.280 lượt thử, 1.273 cấu hình khác nhau.
+4. Top 10 vòng 23 đã xác nhận với 200 hạt giống mỗi kịch bản.
+5. Có 4 cấu hình vượt T-a đến T-g; T-h còn đang chạy.
+6. Cấu hình thử hiện tại: 497ba9738e, đã đưa vào nhánh B.
+7. Tỷ lệ đốt/phát hành: 1,0104–1,2523 ở trung vị.
+8. Nguồn/tiêu Star Thread: 1,0422–1,09975; biên còn hẹp.
+9. Legendary: người chơi thường ngày 13, chơi nhiều ngày 9.
+10. Có 16 biên nhận Anvil; chưa triển khai hay giao dịch Fuji.
+11. Đã chụp 18 ảnh giao diện; giá và xác suất khớp cấu hình.
+12. 5 kiểm tra xác suất và 20 kiểm tra luật/máy chủ đã đạt.
+13. Phải chạy lại toàn bộ bộ kiểm tra sau sửa kỳ vọng phí cũ.
+14. Q5: đã thay 35 bản thoại, giữ 12 giọng; đang thu âm đủ 6 cảnh.
+15. Lịch đồng bộ giữ nguyên 16/11, 18/11; đóng băng 19/11 12:00 UTC.
