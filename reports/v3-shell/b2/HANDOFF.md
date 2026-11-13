@@ -1,6 +1,7 @@
-NOW: Q4 top10 independent200-seed confirmation complete;4 configs pass T-a..T-g. Sensitivity23 running; final config unselected.
-NEXT: Finish round24 margin study,170 sensitivity cases/native replays, then publish exact policy and E4/E5.
-AUDIO: Q5 publishes35 repaired callout takes,6 menu lines. All recognition/identity/source levels pass; current full battle and S5 renders pending.
-JOBS: econ/q4-jobs.json and q5/jobs.json; A integration server4118, A server36397.
+NOW: Q4 candidate497ba9738e provisionally in rules; all18 scenarios/200seeds T-a..g pass; T-h9/85 assumptions complete.
+NEXT: Resume sensitivities after Q5 audio, confirm24 top10, complete full suite and browser checks; no E3 closure yet.
+E4:16 Anvil receipts;18 screenshots;5 odds tests; exact policy hash matches. E5 report generation next.
+Q5:35 repaired takes and6 menu lines published;12 identities pass; full22-clear-callouts capture runner68133.
+JOBS: econ/q4-jobs.json; q5/jobs.json. Sims37303,59609,67137 paused for render, supervisor resumes in finally.
 OPEN: Q4-Q9; no sync before16Nov12UTC.
-UPDATED: 2026-11-13T17:50:58.887753+00:00
+UPDATED: 2026-11-13T17:58:36.273084+00:00

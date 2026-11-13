@@ -108,5 +108,33 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-callout-publication.log",
     "started": "2026-11-13T17:48:34.012030+00:00"
+  },
+  {
+    "name": "q5-integration-vite",
+    "pid": 67841,
+    "command": [
+      "node",
+      "/Users/bao/taskbar-hero-chain/apps/web/node_modules/vite/bin/vite.js",
+      "--config",
+      "vite.solo.config.mts",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "5996",
+      "--strictPort"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-integration-vite.log",
+    "started": "2026-11-13T17:56:40.937022+00:00"
+  },
+  {
+    "name": "q5-full-current",
+    "pid": 68133,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-current.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-full-current.log",
+    "started": "2026-11-13T17:57:26.015948+00:00",
+    "note": "Wait for existing suite67408, pause only owned sims, capture six full scenes, finally resume sims."
   }
 ]

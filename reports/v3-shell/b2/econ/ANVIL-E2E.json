@@ -1,27 +1,27 @@
 {
-  "date": "2026-11-13T16:36:29.101Z",
+  "date": "2026-11-13T17:56:42.832Z",
   "environment": "Disposable localhost Anvil; not public Fuji",
   "chain": 43113,
   "rpcPort": 8546,
   "guestSiwe": true,
   "questLevel": 5,
   "deed": 30001,
-  "spoolGross": "16000000000000000000",
-  "retained": "4000000000000000000",
-  "netYarn": "12000000000000000000",
-  "configHash": "9f2c40a060f5cd001301ab7dbcf186b0ca267f060d3acb678605fed98510dab9",
+  "spoolGross": "7058823529411764705",
+  "retained": "1058823529411764705",
+  "netYarn": "6000000000000000000",
+  "configHash": "497ba9738ee175c0efc7b21864fcdc44af611abac366f07e87150676eb995bd3",
   "configSources": [
     {
       "path": "packages/game-rules/src/cardrpg/economy-v3.ts",
-      "sha256": "ca7ec0489947cb8a75ebf4620de736f6d04a1e84e522b27d5b643c28a0fc4b8b"
+      "sha256": "8f2f917af3c35da034624dc1a68f47d1c9788de8f17c463748078c330d109b58"
     },
     {
       "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
-      "sha256": "76b272473c154d3edf70c61cf3b816166e36f6138cee5af17a08e30e5a09fd68"
+      "sha256": "bdcf30a0c1531879dcd60c7c0146ce7f6d8f94abf7dc8ff6ce06c4c1808f0821"
     }
   ],
   "fusionOutput": "21031",
-  "sealedInputBurn": "0x9e78d86b37bca489062c25df9c61a8e244c62458e60806992f3cccdd0c242974",
+  "sealedInputBurn": "0x043ed9f9c01e22f9fd03024c7c4143c8a664d86c135702f13419ea213ebce70d",
   "secondWalletBought": true,
   "fixtures": {
     "demoQuest": true,
@@ -33,141 +33,141 @@
     {
       "id": "polish",
       "benefit": "Guaranteed Fine quality",
-      "cost": "4000000000000000000",
+      "cost": "3000000000000000000",
       "starThread": 1,
-      "rebate": "0",
-      "transactionHash": "0xb79508e4e8d91e7a020398103655a6f7ce49a7b434915ba17b1cc80f2aa0ab97"
+      "rebate": "2850000000000000000",
+      "transactionHash": "0xcf01015e4c82a30703f9596fe7d073f5568fdcdcc3decbd38d81a14f1655b875"
     },
     {
       "id": "decor",
       "benefit": "Permanent moon café scene",
-      "cost": "4000000000000000000",
-      "starThread": 2,
-      "rebate": "0",
-      "transactionHash": "0x8c0b3273d3f479019240ddbefc66c770e5462fb178b2e3f40dc214863cbc064c"
+      "cost": "2000000000000000000",
+      "starThread": 1,
+      "rebate": "1900000000000000000",
+      "transactionHash": "0x78cc5998b7023c6980c93cbdf9a4f29b701232ca6f5888e3da7f6081245038e3"
     },
     {
       "id": "display",
       "benefit": "Permanent 3 display slots",
-      "cost": "3000000000000000000",
+      "cost": "2000000000000000000",
       "starThread": 1,
-      "rebate": "0",
-      "transactionHash": "0xbdf91c30028d167e11091a7edac8d163801a0503c5a4e4d8836e9808314c1cba"
+      "rebate": "250000000000000000",
+      "transactionHash": "0xad66a9d765d87412dca87c1f0089dc5da65481817b21fc78e46123e3599fee04"
     }
   ],
   "receipts": [
     {
       "action": "mint",
-      "hash": "0x51bfa1a8013ae3b847f5714f8999bca454b7d0ffacbecc59fcdf5371bfb52f47",
-      "transactionHash": "0x51bfa1a8013ae3b847f5714f8999bca454b7d0ffacbecc59fcdf5371bfb52f47",
+      "hash": "0x2f1192d305f3cba9bec1b7b2a893b7d2877709a4e2ca7ceff9b0abc5d5a58dce",
+      "transactionHash": "0x2f1192d305f3cba9bec1b7b2a893b7d2877709a4e2ca7ceff9b0abc5d5a58dce",
       "status": "success",
       "blockNumber": 26
     },
     {
       "action": "claim",
-      "hash": "0x4f27fa0f1619267f9e1ddd6465fe33e4dc5d8df0d3a012d29df5c31b39472f75",
-      "transactionHash": "0x4f27fa0f1619267f9e1ddd6465fe33e4dc5d8df0d3a012d29df5c31b39472f75",
+      "hash": "0x254c71f78dda910df738268eecb6fce381cec7792e0e03225001756bc74a3f04",
+      "transactionHash": "0x254c71f78dda910df738268eecb6fce381cec7792e0e03225001756bc74a3f04",
       "status": "success",
       "blockNumber": 27
     },
     {
       "action": "transfer",
-      "hash": "0x9e6354e3553eb8246c7ddf7f8f965d95b9af629641c7e91da4c0373effa352aa",
-      "transactionHash": "0x9e6354e3553eb8246c7ddf7f8f965d95b9af629641c7e91da4c0373effa352aa",
+      "hash": "0x2df18f4fe77b9784f2b7e95a098021d816c94182611aa570457156ed833e6b7c",
+      "transactionHash": "0x2df18f4fe77b9784f2b7e95a098021d816c94182611aa570457156ed833e6b7c",
       "status": "success",
       "blockNumber": 28,
       "fixture": "Finite test treasury transfer; not earned Spool"
     },
     {
       "action": "seal",
-      "hash": "0x1d7cea2040822d2c2ef43858c952317bd27af18237fd26e8bd13d972955b83c3",
-      "transactionHash": "0x1d7cea2040822d2c2ef43858c952317bd27af18237fd26e8bd13d972955b83c3",
+      "hash": "0x0b0fe49142b8bc9045e2e1a5a7311037b458b1c84ccc3fb5db4886ff83847a8f",
+      "transactionHash": "0x0b0fe49142b8bc9045e2e1a5a7311037b458b1c84ccc3fb5db4886ff83847a8f",
       "status": "success",
       "blockNumber": 29
     },
     {
       "action": "mint",
-      "hash": "0xb7e9a12428f2ef7f4bfb288155f6dc192b1ca091df7b88a270450606a94c2348",
-      "transactionHash": "0xb7e9a12428f2ef7f4bfb288155f6dc192b1ca091df7b88a270450606a94c2348",
+      "hash": "0x8a1a1ecaeec9baf759e9ef3bbc4e0d989c7b0e222a162c3033f0d7b188ae22db",
+      "transactionHash": "0x8a1a1ecaeec9baf759e9ef3bbc4e0d989c7b0e222a162c3033f0d7b188ae22db",
       "status": "success",
       "blockNumber": 30
     },
     {
       "action": "seal",
-      "hash": "0xcb1efd5514801295e258688705166bc22b422c7f628013c441e5cfe431ad63c3",
-      "transactionHash": "0xcb1efd5514801295e258688705166bc22b422c7f628013c441e5cfe431ad63c3",
+      "hash": "0xede10055ef439374cc0c96db0d1cb6c606b00bf4b8de22a38a1a17799437b8df",
+      "transactionHash": "0xede10055ef439374cc0c96db0d1cb6c606b00bf4b8de22a38a1a17799437b8df",
       "status": "success",
       "blockNumber": 31
     },
     {
       "action": "safeBatchTransferFrom",
-      "hash": "0x9e78d86b37bca489062c25df9c61a8e244c62458e60806992f3cccdd0c242974",
-      "transactionHash": "0x9e78d86b37bca489062c25df9c61a8e244c62458e60806992f3cccdd0c242974",
+      "hash": "0x043ed9f9c01e22f9fd03024c7c4143c8a664d86c135702f13419ea213ebce70d",
+      "transactionHash": "0x043ed9f9c01e22f9fd03024c7c4143c8a664d86c135702f13419ea213ebce70d",
       "status": "success",
       "blockNumber": 32
     },
     {
       "action": "mint",
-      "hash": "0x4edf1e1a4a1f6f39f39476dc88ea72952e1e15caaf0e14390fe283f4c027bdcf",
-      "transactionHash": "0x4edf1e1a4a1f6f39f39476dc88ea72952e1e15caaf0e14390fe283f4c027bdcf",
+      "hash": "0x43833acfde479fa5563474df7b1d68918237bfe0c96019181cd64a6dac467b75",
+      "transactionHash": "0x43833acfde479fa5563474df7b1d68918237bfe0c96019181cd64a6dac467b75",
       "status": "success",
       "blockNumber": 33
     },
     {
       "action": "setApprovalForAll",
-      "hash": "0x252db759655e206087bbcc8d5ef212a43d97669f435fd6cb775c4e1bca2cc73e",
-      "transactionHash": "0x252db759655e206087bbcc8d5ef212a43d97669f435fd6cb775c4e1bca2cc73e",
+      "hash": "0x3f67e580fcfe92e226ed2196a3220d41333dc84d617b532de025e307c7d467c0",
+      "transactionHash": "0x3f67e580fcfe92e226ed2196a3220d41333dc84d617b532de025e307c7d467c0",
       "status": "success",
       "blockNumber": 34
     },
     {
       "action": "list",
-      "hash": "0x3b7dd113c6c9678b243465f08479ef043df0491aa3278b5c2b2b763f6e4efb68",
-      "transactionHash": "0x3b7dd113c6c9678b243465f08479ef043df0491aa3278b5c2b2b763f6e4efb68",
+      "hash": "0x8455a79d52fd38d9cf6ba1de86599ca68faf4eeb146e3352743d7bd119337ffe",
+      "transactionHash": "0x8455a79d52fd38d9cf6ba1de86599ca68faf4eeb146e3352743d7bd119337ffe",
       "status": "success",
       "blockNumber": 35
     },
     {
       "action": "transfer",
-      "hash": "0x261b2c9184daf1ec26137a4198d2d246a666f897016941bd47c62f72d35e7f3a",
-      "transactionHash": "0x261b2c9184daf1ec26137a4198d2d246a666f897016941bd47c62f72d35e7f3a",
+      "hash": "0xaa54a47a65af96336a619a3f45b2c1e88146bad69a109eee235fb00bc01b72d6",
+      "transactionHash": "0xaa54a47a65af96336a619a3f45b2c1e88146bad69a109eee235fb00bc01b72d6",
       "status": "success",
       "blockNumber": 36
     },
     {
       "action": "approve",
-      "hash": "0xa7d63a048b215f756f06bac906deed7a22607d4a5d2e6cb41c9638b95e4cb0ed",
-      "transactionHash": "0xa7d63a048b215f756f06bac906deed7a22607d4a5d2e6cb41c9638b95e4cb0ed",
+      "hash": "0x9a6d503dfc981f7162211b5c2ed5cab7b2f001e22bc22cbcf7218760a0f53080",
+      "transactionHash": "0x9a6d503dfc981f7162211b5c2ed5cab7b2f001e22bc22cbcf7218760a0f53080",
       "status": "success",
       "blockNumber": 37
     },
     {
       "action": "buy",
-      "hash": "0xb9afd2e09b37272fc856146f749da0e021b7a04c60405695a8ad19f876ca85b8",
-      "transactionHash": "0xb9afd2e09b37272fc856146f749da0e021b7a04c60405695a8ad19f876ca85b8",
+      "hash": "0x529cbddcf9c936bffd1a176b1087b00554579f4e1e3c17f40660d8fed5d49dbd",
+      "transactionHash": "0x529cbddcf9c936bffd1a176b1087b00554579f4e1e3c17f40660d8fed5d49dbd",
       "status": "success",
       "blockNumber": 38
     },
     {
       "action": "seal",
-      "hash": "0xb79508e4e8d91e7a020398103655a6f7ce49a7b434915ba17b1cc80f2aa0ab97",
-      "transactionHash": "0xb79508e4e8d91e7a020398103655a6f7ce49a7b434915ba17b1cc80f2aa0ab97",
+      "hash": "0xcf01015e4c82a30703f9596fe7d073f5568fdcdcc3decbd38d81a14f1655b875",
+      "transactionHash": "0xcf01015e4c82a30703f9596fe7d073f5568fdcdcc3decbd38d81a14f1655b875",
       "status": "success",
       "blockNumber": 39,
       "sinkId": "polish"
     },
     {
       "action": "seal",
-      "hash": "0x8c0b3273d3f479019240ddbefc66c770e5462fb178b2e3f40dc214863cbc064c",
-      "transactionHash": "0x8c0b3273d3f479019240ddbefc66c770e5462fb178b2e3f40dc214863cbc064c",
+      "hash": "0x78cc5998b7023c6980c93cbdf9a4f29b701232ca6f5888e3da7f6081245038e3",
+      "transactionHash": "0x78cc5998b7023c6980c93cbdf9a4f29b701232ca6f5888e3da7f6081245038e3",
       "status": "success",
       "blockNumber": 40,
       "sinkId": "decor"
     },
     {
       "action": "seal",
-      "hash": "0xbdf91c30028d167e11091a7edac8d163801a0503c5a4e4d8836e9808314c1cba",
-      "transactionHash": "0xbdf91c30028d167e11091a7edac8d163801a0503c5a4e4d8836e9808314c1cba",
+      "hash": "0xad66a9d765d87412dca87c1f0089dc5da65481817b21fc78e46123e3599fee04",
+      "transactionHash": "0xad66a9d765d87412dca87c1f0089dc5da65481817b21fc78e46123e3599fee04",
       "status": "success",
       "blockNumber": 41,
       "sinkId": "display"

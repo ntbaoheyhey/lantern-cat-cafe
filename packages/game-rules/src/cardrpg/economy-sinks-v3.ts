@@ -2,11 +2,11 @@ import {ECONOMY_V3, qualityBucket, v3Season} from './economy-v3';
 
 /** Named, guaranteed outputs only. These recipes never grant Bells, attempts,
  * random affixes, or access to a random reward. All Star Thread is earned/bound. */
-export const ECONOMY_SINKS = {
-  successBp:10000,
-  polish:{yarn:[4,8],starThread:[1,2]},
-  decor:{yarn:4,starThread:2,patterns:['moon','dawn','rain','ember']},
-  display:{yarn:3,starThread:1,maxLevel:3,baseSlots:1,slotsPerLevel:2},
+export const ECONOMY_SINKS={
+ successBp:10000,
+ polish:{"yarn":[3,3],"starThread":[1,1]},
+ decor:{"yarn":2,"starThread":1,"patterns":["moon","dawn","rain","ember"]},
+ display:{"yarn":2,"starThread":1,"maxLevel":3,"baseSlots":1,"slotsPerLevel":2},
 } as const;
 export type EconomySinkId = 'polish'|'decor'|'display';
 export interface SinkGear {id:string;template:string;quality:number}

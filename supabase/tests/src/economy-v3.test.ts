@@ -6,7 +6,7 @@ import {economyChain} from '../../functions/_shared/economy-v3-chain';
 import type {EconomyCommand} from '../../../packages/chain/src/economy-v3';
 import type {PGlite} from '@electric-sql/pglite';
 import type {Address,Hex} from 'viem';
-import {ECONOMY_V3 as E} from '../../../packages/game-rules/src/cardrpg/economy-v3';
+import {ECONOMY_V3 as E,withdrawableSpool} from '../../../packages/game-rules/src/cardrpg/economy-v3';
 const player='43113000-0000-0000-0000-000000000001',wallet=('0x'+'1'.repeat(40)) as Address,unit=10n**18n;
 let db:PGlite,store:EconomyStore,clock=Date.UTC(2026,10,13),paid=0n,burns=0,hasDeed=true;
 const chain:EconomyChain={nftUsed:async()=>false,rewardUsed:async()=>false,owns:async()=>hasDeed,paid:async()=>paid,burn:async()=>{burns++;},capacity:async()=>{},season:async()=>0n,mint:async()=>'0x12',claim:async()=>'0x12',certify:async()=>'0x12'};
@@ -35,25 +35,29 @@ describe('server economy',()=>{
   expect((await request({action:'quest'})).state.spool).toBe(q.state.spool);
   const first=await request({action:'deed'}),again=await request({action:'deed'});expect(first.voucher?.relicId).toBe('30001');expect(again.voucher?.nonce).toBe(first.voucher?.nonce);
  });
- it('withdraws the net once, retaining 25%, enforcing ownership and cooldown',async()=>{
+ it('withdraws the net once with the published fee, cap, ownership and cooldown',async()=>{
   hasDeed=false;await expect(request({action:'withdraw',amount:String(16n*unit),deed:30001})).rejects.toThrow('held');hasDeed=true;
-  const id=crypto.randomUUID(),c={action:'withdraw' as const,amount:String(16n*unit),deed:30001},a=await request(c,id),b=await request(c,id);
-  expect(a.withdrawal?.claim.amount).toBe(String(12n*unit));expect(a.intent?.retained).toBe(String(4n*unit));expect(b.state.spool).toBe('0');expect(b.withdrawal?.claim.nonce).toBe(a.withdrawal?.claim.nonce);
+  await expect(request({action:'withdraw',amount:String(16n*unit),deed:30001})).rejects.toThrow('cap');
+  const gross=withdrawableSpool(16n*unit),retained=gross*BigInt(E.spool.feeBp)/10000n,net=gross-retained;
+  const id=crypto.randomUUID(),c={action:'withdraw' as const,amount:String(gross),deed:30001},a=await request(c,id),b=await request(c,id);
+  expect(net).toBeLessThanOrEqual(BigInt(E.spool.weeklyNetCap)*unit);
+  expect(a.withdrawal?.claim.amount).toBe(String(net));expect(a.intent?.retained).toBe(String(retained));expect(b.state.spool).toBe(String(16n*unit-gross));expect(b.withdrawal?.claim.nonce).toBe(a.withdrawal?.claim.nonce);
   await expect(request({...c,amount:'1'},id)).rejects.toThrow('campaign_conflict');await expect(request(c)).rejects.toThrow('seven days');
-  expect((await db.query<{reserved_net:string}>('select reserved_net from chain_v3_budget')).rows[0]!.reserved_net).toBe(String(12n*unit));
+  expect((await db.query<{reserved_net:string}>('select reserved_net from chain_v3_budget')).rows[0]!.reserved_net).toBe(String(net));
  });
  it('reserves real gear once and refuses unpaid minting',async()=>{
   const r=await request({action:'seal',instance:'quest:weapon'});expect(r.intent?.token).toBe(22020);expect(r.hash).toBe(economyIntentHash(r.intent!.id));
   await expect(request({action:'seal',instance:'quest:weapon'})).rejects.toThrow('earned');
-  await expect(request({action:'finalize',intent:r.intent!.id})).rejects.toThrow('Exact');paid=10n*unit;
+  await expect(request({action:'finalize',intent:r.intent!.id})).rejects.toThrow('Exact');paid=BigInt(r.intent!.cost);
   const done=await request({action:'finalize',intent:r.intent!.id});expect(done.voucher?.relicId).toBe('22020');
  });
  it('rejects excess sealed Thread before it can increase the bound balance',async()=>{
   await expect(request({action:'fusion',instances:['quest:outfit','quest:charm'],tokens:[22020],sealedStars:E.fusion.legendary.starThread+1})).rejects.toThrow('invalid_request');
  });
  it('consumes mixed sealed and bound inputs with deterministic quality and a unique burn receipt',async()=>{
+  const before=(await request({action:'state'})).state.stars;
   const r=await request({action:'fusion',instances:['quest:outfit','quest:charm'],tokens:[22020],sealedStars:0});
-  expect(r.intent?.burnIds).toEqual([22020]);expect(r.intent?.token).toBe(21031);expect(r.state.stars).toBe(0);paid=20n*unit;
+  expect(r.intent?.burnIds).toEqual([22020]);expect(r.intent?.token).toBe(21031);expect(r.state.stars).toBe(before-E.fusion.legendary.starThread);paid=BigInt(r.intent!.cost);
   await expect(request({action:'finalize',intent:r.intent!.id})).rejects.toThrow('receipt required');
   const done=await request({action:'finalize',intent:r.intent!.id,burnTx:('0x'+'a'.repeat(64)) as Hex});expect(done.voucher?.relicId).toBe('21031');expect(burns).toBe(1);
   await request({action:'voucher',intent:r.intent!.id});expect(burns).toBe(1);

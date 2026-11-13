@@ -903,3 +903,36 @@ First zero-distance pilot: Star maximum 1.099908 and minimum burn/claims 1.01338
 | heavy-heavy-d1-b0.1 | 1.182 | 1.043 | 13 / 9 | 0.474 |
 | heavy-heavy-d1-b0.2 | 1.211 | 1.048 | 13 / 9 | 0.487 |
 | heavy-heavy-d1-b0.35 | 1.258 | 1.057 | 13 / 9 | 0.478 |
+
+## Round 24 — Local margin around the independently confirmed policy
+
+80 unique configs × 40 seeds × 18 scenarios. Best score 0.0000.
+
+Single-axis and paired-axis price probes found five pilot passes, but the best Star margin remains below one thousandth. No confirmed candidate is replaced on pilot evidence. Confirm the new top ten independently; continue all original behaviour sensitivities against the round-23 candidate.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 1.1 |
+| policy.rewards.seasonRankMax | 2 | 1 |
+| policy.craft.rebateBp | 9500 | 9400 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.008 | 1.077 | 13 / 9 | 0.495 |
+| casual-heavy-d0.5-b0.2 | 1.076 | 1.085 | 13 / 9 | 0.496 |
+| casual-heavy-d0.5-b0.35 | 1.146 | 1.100 | 13 / 8.5 | 0.488 |
+| casual-heavy-d1-b0.1 | 1.132 | 1.059 | 13 / 9 | 0.480 |
+| casual-heavy-d1-b0.2 | 1.183 | 1.065 | 13 / 9 | 0.483 |
+| casual-heavy-d1-b0.35 | 1.243 | 1.076 | 13 / 8.5 | 0.469 |
+| balanced-d0.5-b0.1 | 1.039 | 1.056 | 13 / 9 | 0.492 |
+| balanced-d0.5-b0.2 | 1.081 | 1.063 | 13 / 9 | 0.487 |
+| balanced-d0.5-b0.35 | 1.154 | 1.076 | 13 / 9 | 0.486 |
+| balanced-d1-b0.1 | 1.154 | 1.050 | 13 / 9 | 0.482 |
+| balanced-d1-b0.2 | 1.190 | 1.055 | 13 / 9 | 0.477 |
+| balanced-d1-b0.35 | 1.254 | 1.064 | 13 / 9 | 0.471 |
+| heavy-heavy-d0.5-b0.1 | 1.062 | 1.042 | 13 / 9 | 0.487 |
+| heavy-heavy-d0.5-b0.2 | 1.087 | 1.049 | 13 / 9 | 0.494 |
+| heavy-heavy-d0.5-b0.35 | 1.157 | 1.059 | 13 / 9 | 0.496 |
+| heavy-heavy-d1-b0.1 | 1.182 | 1.043 | 13 / 9 | 0.477 |
+| heavy-heavy-d1-b0.2 | 1.208 | 1.048 | 13 / 9 | 0.495 |
+| heavy-heavy-d1-b0.35 | 1.260 | 1.056 | 13 / 9 | 0.479 |

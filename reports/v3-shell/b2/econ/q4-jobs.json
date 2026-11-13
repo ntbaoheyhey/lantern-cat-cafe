@@ -273,7 +273,8 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-confirm23.log",
-    "started": "2026-11-13T17:31:10.984247+00:00"
+    "started": "2026-11-13T17:31:10.984247+00:00",
+    "completed": "2026-11-13T17:55:41.506927+00:00"
   },
   {
     "name": "round24-local-margin",
@@ -299,7 +300,8 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round24.log",
-    "started": "2026-11-13T17:31:10.984247+00:00"
+    "started": "2026-11-13T17:31:10.984247+00:00",
+    "completed": "2026-11-13T17:55:41.506927+00:00"
   },
   {
     "name": "sensitivity-round23",
@@ -322,5 +324,49 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-sensitivity23.log",
     "started": "2026-11-13T17:33:29.221422+00:00"
+  },
+  {
+    "name": "confirm-round24",
+    "pid": 67137,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/confirm.mjs",
+      "--label",
+      "Q4-CONFIRM24-200",
+      "--rounds",
+      "24",
+      "--top",
+      "10",
+      "--seeds",
+      "200",
+      "--workers",
+      "2",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-confirm24.log",
+    "started": "2026-11-13T17:55:41.506927+00:00"
+  },
+  {
+    "name": "published-policy-suite",
+    "pid": 67408,
+    "command": [
+      "node",
+      "scripts/v3b2/run-solo-unit-suite.mjs",
+      "q4-published"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-published-policy-suite.log",
+    "started": "2026-11-13T17:56:23.236800+00:00"
+  },
+  {
+    "name": "published-policy-proof",
+    "pid": 67409,
+    "command": [
+      "node",
+      "tools/chain/economy-v3-flow.mjs",
+      "--screens"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-published-policy-proof.log",
+    "started": "2026-11-13T17:56:23.236800+00:00"
   }
 ]

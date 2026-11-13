@@ -1,0 +1,48 @@
+{
+  "sourceCommit": "f02aaffe0c2cbb0ef2bd73fdc4c93067d610b5e9",
+  "sources": [
+    {
+      "path": "packages/game-rules/src/cardrpg/economy-sinks-v3.ts",
+      "sha256": "bdcf30a0c1531879dcd60c7c0146ce7f6d8f94abf7dc8ff6ce06c4c1808f0821"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/economy-v3.test.ts",
+      "sha256": "6e973b700c97be6932418279b410b08f3f7e77779d06d97a8a4ef1ad6ba28a8d"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/economy-v3.ts",
+      "sha256": "8f2f917af3c35da034624dc1a68f47d1c9788de8f17c463748078c330d109b58"
+    }
+  ],
+  "results": [
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 1,
+      "started": "2026-11-13T17:56:23.402Z",
+      "ended": "2026-11-13T17:56:50.592Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q4-published-unit.log",
+        "sha256": "fd83df4c9c58486564cd1cff2a5a3598fd169b4dff496b96687006d2ef4b24c8"
+      }
+    },
+    {
+      "id": "types",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T17:56:23.396Z",
+      "ended": "2026-11-13T17:57:06.686Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q4-published-types.log",
+        "sha256": "56d017d1218e57b5e07acd621435fb938d6c675148a78f0a430f9652d07fe8a7"
+      }
+    }
+  ]
+}
