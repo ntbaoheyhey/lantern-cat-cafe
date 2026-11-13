@@ -1,10 +1,7 @@
-NOW: Q4 sensitivity continues; Q5 scene28 nine replacement takes published. Validation before full capture.
-NEXT: Commit verified audio; rebuild committed B+A temporary overlay; record all six full scenes with owned simulations paused.
-ECONOMY: native37303, sensitivity59609, supervisor16952 still active; checkpoint files retained.
-Q5: Seven clearer A-owned phrases, nine takes; dry+codec recognition and all12 identities accepted in q5/scene28-selection.json.
-JOBS: econ/q4-jobs.json and q5/jobs.json; no branches merged.
+NOW: Q5 trial29 balanced speech/music candidate ready; source tests18/18 pass. Q4 background sensitivity pending.
+NEXT: Finish capture28 PID8825 and mixed speech PID9082 before rebuilding integration. Full29 acceptance still required.
+ECONOMY:16952,37303,59609 paused by capture28, resume in its finally.
+Q5: Trial28 battle bed94.05%, boss ticks0.349/s, home voice0.997/min and ticks5.282/s fail. Bag/gacha pass.
+JOBS: econ/q4-jobs.json and q5/jobs.json.
 OPEN: Q4-Q9; no sync due.
-UPDATED: 2026-11-13T19:29:23.276059+00:00
-BUDGET: decoded12/12 fallback identities and levels PASS; shipped15,747,841bytes. Next committed trial28 capture.
-CAPTURE: PID8825; work/q5-render-28.py; tests/q5-capture28-current.log. A95ea0d843+B76b441a35; six full scenes then9-speed matrix; sims paused in finally wrapper.
-ECONOMY CHECKPOINT:90/170 cases, burn minimum0.96141601256, Star1.03790768460–1.12726934393;0 failures. Q4 remains open.
+UPDATED: 2026-11-13T19:45:09.532852+00:00

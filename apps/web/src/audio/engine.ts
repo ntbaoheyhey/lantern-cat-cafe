@@ -82,7 +82,7 @@ export class AudioEngine implements AudioBridge {
  private makeSpeechSpace(){
   if(!this.ctx||!this.speechSpace)return;
   const speaking=this.count('voice')>0;
-  const amount=speaking?(this.bedIds.music==='music.battle'?-12:this.bedIds.music==='music.boss'?0:-6):0;
+  const amount=speaking?(this.bedIds.music==='music.battle'?-9:this.bedIds.music==='music.boss'?0:this.bedIds.music==='music.home'?-9:-6):0;
   if(amount===this.speechCutDb)return;this.speechCutDb=amount;
   const p=this.speechSpace.gain,now=this.ctx.currentTime;
   // Keep the upper strings and pulse while opening the dense battle harmony
@@ -152,7 +152,7 @@ export class AudioEngine implements AudioBridge {
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
    // Balance repeated movement beneath the strike and the spoken line.
-   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?-2.5:this.bedIds.music==='music.forge'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?4:0;
+   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?-1.5:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);

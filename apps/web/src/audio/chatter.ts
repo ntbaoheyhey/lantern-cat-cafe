@@ -6,11 +6,11 @@ export function useCafeChatter(active:boolean){
  useEffect(()=>{
   if(!active)return;
   let timer:ReturnType<typeof setTimeout>,alive=true;
-  const schedule=()=>{timer=setTimeout(()=>{
+  const schedule=(first=false)=>{timer=setTimeout(()=>{
    if(!alive)return;
    if(!document.hidden)audioEngine.play('voice.guide.idle',{priority:25});
    schedule();
-  },20000+Math.random()*10000);};
-  schedule();return()=>{alive=false;clearTimeout(timer);};
+  },(first?20000:30000)+Math.random()*3000);};
+  schedule(true);return()=>{alive=false;clearTimeout(timer);};
  },[active]);
 }
