@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {createActionPlan} from '../../squad/turn3d/effects';
-import {MOTIONS,actionPose,actionCamera,fitMotionFrame,hitPose,idlePhase,idlePose} from './motion';
+import {MOTIONS,actionPose,actionCamera,fitMotionFrame,bracePose,hitPose,idlePhase,idlePose} from './motion';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const events=[{type:'action_start',actorId:'cat',targetIds:['enemy'],skillId:'guardianBasic',actionId:1},{type:'damage',actorId:'cat',targetIds:['enemy'],amount:12,skillId:'guardianBasic',actionId:1}] as TurnEvent[];
 it('moves every archetype through anticipation, strike, return without mutating the event plan',()=>{
@@ -90,4 +90,17 @@ it('gives every target of a simultaneous multi-target hit its own recoil and fla
   expect(hitPose(plan,plan.beats[2]!.start+67,id,1,720).x).toBeGreaterThanOrEqual(23);
   expect(hitPose(plan,plan.beats[2]!.start+400,id,1,720).x).toBe(0);
  }
+});
+it('braces actual recipients before contact without inventing a hit or moving bystanders',()=>{
+ const plan=createActionPlan(events),before=JSON.stringify(plan),impact=plan.beats[2]!.start;
+ const ready=bracePose(plan,impact-67,'enemy',1,720);
+ expect(ready).toMatchObject({phase:'anticipation',x:8,flash:0});
+ expect(bracePose(plan,impact-67,'enemy',-1,720).x).toBe(-8);
+ expect(hitPose(plan,impact-67,'enemy',1,720).x).toBe(0);
+ for(const elapsed of [impact-201,impact+100,plan.duration])expect(bracePose(plan,elapsed,'enemy',1,720)).toMatchObject({phase:'idle',x:0,angle:0});
+ expect(bracePose(plan,impact-67,'bystander',1,720).x).toBe(0);
+ const dot={...plan,events:plan.events.filter(e=>e.type!=='action_start')};
+ expect(bracePose(dot,impact-67,'enemy',1,720).x).toBe(0);
+ bracePose(plan,0,'enemy',1,720);expect(bracePose(plan,impact-67,'enemy',1,720)).toEqual(ready);
+ expect(JSON.stringify(plan)).toBe(before);
 });

@@ -45,6 +45,17 @@ export function actionPose(input:MotionInput):RootPose {
  if(p.phase==='strike'&&!melee&&!ultimate){const recoil=Math.sin(clamp((t-impact)/100)*Math.PI);p.x-=direction*28*scale*recoil;}
  return p;
 }
+/** A recipient plants its weight before contact; this is separate from hit recoil. */
+export function bracePose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number):RootPose {
+ const p=neutralPose();
+ if(!plan||!hasActorAction(plan)||!plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(id)))return p;
+ const age=elapsed-plan.beats[2]!.start;
+ if(age<=-200||age>=100)return p;
+ const weight=smooth((age+200)/133)*(1-smooth(age/100));
+ p.phase=age<0?'anticipation':'strike';p.x=direction*8*height/720*weight;
+ p.sx=1+.04*weight;p.sy=1-.04*weight;p.angle=direction*.10*weight;
+ return p;
+}
 /** One visible impulse for each target, including counter-hits and damage over time. */
 export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number):RootPose {
  const p=neutralPose();if(!plan)return p;
