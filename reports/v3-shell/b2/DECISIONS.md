@@ -16,3 +16,6 @@
 - S1 uses a typed authoring map; map coverage does not claim S3 assets or S6 event wiring are complete. The AST scanner fails unknown dynamic expressions and expands the existing battle adapter from live cat/enemy/status catalogues.
 - Fixed legacy ui.forge-success / ui.forge-fail aliases without renaming either cue. Equipment-slot and currency coverage reads live rules.
 - S2 preparation found Drupal _0 alternate encoding filenames were still counted in research. Tightened same-work deduplication and added a regression; 755 candidate rows remain (22 cat recordings, 18 authors).
+
+- S2 provides two original 16-bar result scores (victory/defeat) in addition to ten CC0 tracks; separate from the eighteen licensed stings. Source normalization is RMS/peak preparation, not final LUFS. No sources are automatically shipped.
+- The short-click source threshold is 5 ms, preserving a measured 11.6 ms Kenney click; individual rejected outputs are removed and logged rather than invalidating an entire pack. Nine source/analysis tests pass.

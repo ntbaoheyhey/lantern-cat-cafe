@@ -15,14 +15,14 @@ PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspecte
 PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
 PASS S1.report: measured 606357; required nonempty reports/v3-shell/b2/SOUND-MAP.md
 PASS S1.typedMap: measured 12537; required nonempty apps/web/src/audio/sound-map.ts
-FAIL S2.clips: measured missing; required >= 350 usable hashed source clips
-FAIL S2.catRecordings: measured missing; required >= 15 distinct original recordings
-FAIL S2.catAuthors: measured missing; required >= 6 cat-recording authors
-FAIL S2.consonants: measured missing; required >= 40 consonant/mouth/click grains
-FAIL S2.ambience: measured missing; required >= 6 ambience beds
-FAIL S2.music: measured missing; required >= 8 music pieces
-FAIL S2.stings: measured missing; required >= 8 stings
-FAIL S2.licenceCoverage: measured 0; required 100% source and shipped audio files with licence, author, URL, date, SHA-256
+PASS S2.clips: measured 593; required >= 350 usable hashed source clips
+PASS S2.catRecordings: measured 22; required >= 15 distinct original recordings
+PASS S2.catAuthors: measured 18; required >= 6 cat-recording authors
+PASS S2.consonants: measured 76; required >= 40 consonant/mouth/click grains
+PASS S2.ambience: measured 11; required >= 6 ambience beds
+PASS S2.music: measured 12; required >= 8 music pieces
+PASS S2.stings: measured 18; required >= 8 stings
+PASS S2.licenceCoverage: measured 1; required 100% source and shipped audio files with licence, author, URL, date, SHA-256
 PASS S2.licences: measured 0; required 0 non-commercial, unlicensed, or disallowed licence rows
 FAIL S3.hitLayers: measured missing; required each battle hit >= 3 layers
 FAIL S3.hitVariants: measured missing; required each hit layer >= 4 variants
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 732; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 787; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

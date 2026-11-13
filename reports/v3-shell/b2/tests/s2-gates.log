@@ -1,0 +1,9 @@
+PASS S2.clips: measured 593; required >= 350 usable hashed source clips
+PASS S2.catRecordings: measured 22; required >= 15 distinct original recordings
+PASS S2.catAuthors: measured 18; required >= 6 cat-recording authors
+PASS S2.consonants: measured 76; required >= 40 consonant/mouth/click grains
+PASS S2.ambience: measured 11; required >= 6 ambience beds
+PASS S2.music: measured 12; required >= 8 music pieces
+PASS S2.stings: measured 18; required >= 8 stings
+PASS S2.licenceCoverage: measured 1; required 100% source and shipped audio files with licence, author, URL, date, SHA-256
+PASS S2.licences: measured 0; required 0 non-commercial, unlicensed, or disallowed licence rows
