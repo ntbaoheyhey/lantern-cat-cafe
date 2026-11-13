@@ -77,3 +77,5 @@ Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped fa
 2026-11-13T17:31:11.169008+00:00 Q4 round23: first pilot zero-distance candidate; Star maximum1.099908, minimum burn1.013381. Independent200-seed top10 confirmation23 launched; round24 explores local margins. No policy publication or final gate claim yet.
 
 2026-11-13T17:37:55.967189+00:00 Q5 wording source: earlier source tree had no A-owned callouts.json. Added battle-v3/callouts.json in A for original2–4-word alternatives. B reads it for local probes and records its hash; B owns audio/metadata. Only cases already exhausted by slower speech, formants and onset grains may enter wording probes. No production audio replacement yet.
+
+- 2026-11-13T17:44:48.516348+00:00: Q5 Clover charge wording changed to "Watch the flowers bloom!" after four unsuccessful treatments of "Let it bloom!" for take 2 (0.667 recognition). Prior report and authored version remain in git; B will measure both new takes. No timing, combat or threshold change.

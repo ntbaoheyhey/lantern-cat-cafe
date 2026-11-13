@@ -142,3 +142,5 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 - Q1 second shared-blocker pick: B 3dc9982d0 -> A e36aa024fe156569cfeddbf766dd5c0bf374e19a; compact badge label only.
 
 - Q1 shared-blocker pick B ebf250b48 -> A c5f9192bc: restored Chapter accessible names after compact word-budget labels; B unit8/8 PASS, A full verification running.
+
+- 2026-11-13T17:44:48.516348+00:00: Q5 Clover charge wording changed to "Watch the flowers bloom!" after four unsuccessful treatments of "Let it bloom!" for take 2 (0.667 recognition). Prior report and authored version remain in git; B will measure both new takes. No timing, combat or threshold change.
