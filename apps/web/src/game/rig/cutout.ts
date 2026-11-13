@@ -5,8 +5,14 @@ interface CutoutNode {name:string;parent:number;x:number;y:number;rotation:numbe
 interface Weight {bone:number;x:number;y:number;weight:number}
 interface Part {name:string;slot:string;visible:boolean;page:number;vertices:Weight[][];uv:number[];triangles:number[]}
 interface Clip {duration:number;tracks:{node:number;property:string;keys:CutoutKey[]}[];visibility:{slot:string;keys:CutoutKey[]}[];events:{name:string;time:number}[]}
-export interface CutoutData {format:'taskbar-cutout-v1';nodes:CutoutNode[];parts:Part[];pages:{name:string;width:number;height:number;pma:boolean}[];clips:Record<string,Clip>;bounds:{x:number;y:number;width:number;height:number}}
+export interface CutoutData {format:'taskbar-cutout-v1';nodes:CutoutNode[];parts:Part[];pages:{name:string;width:number;height:number;pma:boolean}[];clips:Record<string,Clip>;bounds:{x:number;y:number;width:number;height:number};blink?:{part:string;bone:number;seed:number;eyes:{x:number;y:number;rx:number;ry:number}[]}}
 export interface CutoutBone {worldX:number;worldY:number;a:number;b:number;c:number;d:number}
+/** Seekable independent blink clock; seeded intervals stay within 2.5–5 seconds. */
+export function blinkAt(time:number,seed:number){
+ const intervals=Array.from({length:16},(_,i)=>2.5+(((Math.imul(seed+i,1664525)+1013904223)>>>0)%2500)/1000);
+ let at=Math.max(0,time)%intervals.reduce((a,b)=>a+b,0);
+ for(const duration of intervals){if(at<duration)return at>duration-.1?Math.sin((at-duration+.1)/.1*Math.PI):0;at-=duration;}return 0;
+}
 /** Monotonic cubic solve for exported normalized Bezier timing. */
 function curve(t:number,c:CutoutKey['curve']){
  if(c==='stepped')return 0;if(!Array.isArray(c)||c.length!==4)return t;
@@ -19,6 +25,7 @@ function value(keys:CutoutKey[],at:number,key:'x'|'y'|'value',fallback:number){
  const t=curve(Math.min(1,(at-(a.time??0))/Math.max(1e-6,(b.time??0)-(a.time??0))),a.curve);return v+((b[key]??(key==='value'?b.angle:undefined)??fallback)-v)*t;
 }
 export class CutoutMesh extends T.Group {
+ proceduralTime=0;
  readonly bones:CutoutBone[];private local:number[][];private at=0;private clip='';private loop=false;
  private batches:{geometry:T.BufferGeometry;parts:{part:Part;offset:number}[];positions:Float32Array}[]=[];
  zOffset=.001;
@@ -54,8 +61,13 @@ export class CutoutMesh extends T.Group {
    else Object.assign(b,{worldX:p[0],worldY:p[1],a,b:bb,c,d});
   }
   const attachments=new Map<string,string|null>();for(const v of clip?.visibility??[]){let key:CutoutKey|undefined;for(const k of v.keys)if((k.time??0)<=at)key=k;else break;if(key)attachments.set(v.slot,key.name??null);}
+  const blink=this.data.blink,amount=blink?blinkAt(this.proceduralTime,blink.seed):0;
   for(const batch of this.batches){for(const {part,offset} of batch.parts){const visible=attachments.has(part.slot)?attachments.get(part.slot)===part.name:part.visible;
-   for(let i=0;i<part.vertices.length;i++){let x=0,y=0;if(visible)for(const w of part.vertices[i]!){const b=this.bones[w.bone]!;x+=(b.a*w.x+b.b*w.y+b.worldX)*w.weight;y+=(b.c*w.x+b.d*w.y+b.worldY)*w.weight;}batch.positions[(offset+i)*3]=x;batch.positions[(offset+i)*3+1]=y;}
+   for(let i=0;i<part.vertices.length;i++){let x=0,y=0;if(visible)for(const w of part.vertices[i]!){const b=this.bones[w.bone]!;x+=(b.a*w.x+b.b*w.y+b.worldX)*w.weight;y+=(b.c*w.x+b.d*w.y+b.worldY)*w.weight;}
+    if(visible&&blink&&amount>0&&part.name===blink.part){const b=this.bones[blink.bone]!,det=b.a*b.d-b.b*b.c,dx=x-b.worldX,dy=y-b.worldY,lx=(b.d*dx-b.b*dy)/det;let ly=(-b.c*dx+b.a*dy)/det;
+     for(const eye of blink.eyes){const qx=Math.abs(lx-eye.x)/eye.rx,qy=Math.abs(ly-eye.y)/eye.ry;if(qx<1&&qy<1)ly+=(eye.y-ly)*amount*.94*(1-qx**4)*(1-qy**4);}
+     x=b.a*lx+b.b*ly+b.worldX;y=b.c*lx+b.d*ly+b.worldY;
+    }batch.positions[(offset+i)*3]=x;batch.positions[(offset+i)*3+1]=y;}
   }batch.geometry.attributes.position!.needsUpdate=true;}
  }
  private bounds(){let x=Infinity,y=Infinity,right=-Infinity,top=-Infinity;for(const batch of this.batches)for(let i=0;i<batch.positions.length;i+=3){const px=batch.positions[i]!,py=batch.positions[i+1]!;if(px===0&&py===0)continue;x=Math.min(x,px);y=Math.min(y,py);right=Math.max(right,px);top=Math.max(top,py);}return Number.isFinite(x)?{x,y,width:right-x,height:top-y}:{...this.data.bounds};}

@@ -403,3 +403,8 @@ Before: 100 GiB available (df).
   ],
   "worktrees": "No listed worktree is prunable; none removed."
 }
+
+## Resume cleanup 2026-11-13T07:05:03
+Free: 98.97 GiB before; 98.97 GiB after.
+- Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite` (0.00 MiB; regenerable).
+No stopped worktrees are marked prunable; none removed. Protected paths retained.

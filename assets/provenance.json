@@ -46,6 +46,13 @@
       "tool": "tools/cinematic-compositor/compositor.ts + Playwright + ffmpeg",
       "prompt": "Original oven-door rush, eruption, needles, slashes, ink, teapot, ribbons, moon beam, paper cranes and yarn whale, composited only with approved original art.",
       "date": "2026-11-13"
+    },
+    {
+      "asset": "apps/web/public/units/*/rig.json + rig-page-*.png",
+      "tool": "scripts/art/build-spine.mjs; original cut-out compiler and weighted mesh template",
+      "prompt": "Reuse only approved original atlas pieces, preserve the setup pose, infer overlap-centroid pivots, add shared deterministic motion and seeded blink deformation. Preserve Mochi/Soot/Clover authored deliveries. No image generation or external reference art.",
+      "date": "2026-11-13",
+      "source": "assets/cardrpg-look/spine/*/placeholder/*; art/rig-templates/*"
     }
   ]
 }

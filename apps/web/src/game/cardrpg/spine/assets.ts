@@ -1,6 +1,7 @@
 /** Stateless data/texture cache; every displayed actor receives a separate cut-out pose state. */
 import * as T from 'three';
 import { CutoutMesh, type CutoutData, type CutoutBone } from '../../rig/cutout';
+import {withRigContract} from '../../rig/contract';
 import { importSkeleton } from '../../../../../../scripts/art/import-spine.mjs';
 import { loadPuppetModel, animateIllustrated } from '../../squad/turn3d/look-puppet';
 import { fallbackScale } from '../../squad/turn3d/look-scale';
@@ -16,13 +17,29 @@ type SkeletonAsset={data:CutoutData;create:()=>CutoutMesh;clips:Map<string,ClipD
 interface SequenceManifest {id:string;height:number;width:number;scale?:number;fps?:number;sockets:Record<string,[number,number]>;animations:Record<string,{fps?:number;frames:string[];events?:{name:string;time:number}[]}>}
 type SequenceAsset={manifest:SequenceManifest;textures:Map<string,T.Texture>;clips:Map<string,ClipData>};
 const skeletonCache=new Map<string,Promise<SkeletonAsset>>(),sequenceCache=new Map<string,Promise<SequenceAsset>>();
+const templateStyles=import.meta.glob('../../../../../../art/units/*/style.json',{eager:true,import:'default'});
+const templateIds=new Set(Object.keys(templateStyles).map(p=>p.split('/').at(-2)!));
+const designerIds=new Set(['mochi','soot','clover']);
+/** Native JSON and original atlas pixels; no third-party animation runtime. */
+export function loadNativeRig(id:string):Promise<SkeletonAsset>{
+ const key='native:'+id,cached=skeletonCache.get(key);if(cached)return cached;
+ const pending=(async()=>{
+  const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
+  const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
+  const textures:T.Texture[]=[];
+  try{for(const page of data.pages){const img=new Image();img.src=`/units/${id}/${page.name}`;await img.decode();const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+   const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
+   return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
+  }catch(e){textures.forEach(t=>t.dispose());throw e;}
+ })().catch(e=>{skeletonCache.delete(key);throw e;});skeletonCache.set(key,pending);return pending;
+}
 export const spineCacheStats=()=>({skeletons:skeletonCache.size,sequences:sequenceCache.size});
 export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
  const key=`${spec.skeleton}:${spec.scale}`;let cached=skeletonCache.get(key);if(cached)return cached;
  cached=(async()=>{
   if(spec.skeleton.endsWith('.skel'))throw Error('Export JSON and convert with scripts/art/convert-spine.mjs; binary Spine runtime is not shipped');
   const atlasText=await (await response(spec.atlas)).text(),source=await (await response(spec.skeleton)).json();
-  const data=importSkeleton(source,atlasText,spec.scale),textures:T.Texture[]=[];
+  const data=withRigContract(importSkeleton(source,atlasText,spec.scale)),textures:T.Texture[]=[];
   try {
    const folder=spec.atlas.slice(0,spec.atlas.lastIndexOf('/')+1);
    for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const texture=new T.Texture(await image(folder+page.name));texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
@@ -47,7 +64,7 @@ function loadSequence(spec:AcceptedSequence):Promise<SequenceAsset>{
 export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
- readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'placeholder'|'sequence'|'puppet'='puppet';
+ readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'='puppet';
  private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
  mesh?:CutoutMesh;puppet?:T.Group;sequence?:SequenceAsset;plane?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  private animation='';private key:unknown;private at=0;private order=0;
@@ -81,6 +98,12 @@ export class SpineActor {
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet'):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
  const designer=unit.designer,sequence=unit.sequence;
+ if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
+  const data=await loadNativeRig(id);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);
+  for(const [name,clip] of data.clips)actor.clips.set(name,clip);
+  for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing native socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}
+  return actor;
+ }catch(error){actor.mesh?.dispose();actor.mesh=undefined;actor.clips.clear();actor.boneRefs.clear();errors.push(String(error));}
  const noRuntime=typeof location!=='undefined'&&new URLSearchParams(location.search).get('spineRuntime')==='0';
  const candidates:{source:'designer'|'placeholder';spec:AcceptedSkeleton}[]=[];
  if(!noRuntime&&preference!=='puppet'&&preference!=='sequence'){

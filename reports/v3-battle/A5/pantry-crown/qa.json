@@ -1,0 +1,144 @@
+{
+  "id": "pantry-crown",
+  "source": "template",
+  "restDifference": 0.00011514605684920031,
+  "referenceHoles": {
+    "pixels": 0,
+    "components": [],
+    "opaque": 63551
+  },
+  "extremes": [
+    {
+      "name": "attack",
+      "at": 0.18,
+      "pixels": 396,
+      "components": [
+        {
+          "area": 392,
+          "x": 232,
+          "y": 375
+        },
+        {
+          "area": 2,
+          "x": 390,
+          "y": 375
+        },
+        {
+          "area": 2,
+          "x": 237,
+          "y": 441
+        }
+      ],
+      "opaque": 61769
+    },
+    {
+      "name": "attack",
+      "at": 0.26,
+      "pixels": 0,
+      "components": [],
+      "opaque": 63895
+    },
+    {
+      "name": "cast",
+      "at": 0.35,
+      "pixels": 0,
+      "components": [],
+      "opaque": 64094
+    },
+    {
+      "name": "ultimate",
+      "at": 0.55,
+      "pixels": 0,
+      "components": [],
+      "opaque": 63989
+    },
+    {
+      "name": "hit",
+      "at": 0.06,
+      "pixels": 0,
+      "components": [],
+      "opaque": 63677
+    },
+    {
+      "name": "death",
+      "at": 0.7,
+      "pixels": 502,
+      "components": [
+        {
+          "area": 474,
+          "x": 394,
+          "y": 430
+        },
+        {
+          "area": 28,
+          "x": 413,
+          "y": 493
+        }
+      ],
+      "opaque": 62399
+    },
+    {
+      "name": "stunned",
+      "at": 0.9,
+      "pixels": 0,
+      "components": [],
+      "opaque": 63713
+    },
+    {
+      "name": "enter",
+      "at": 0,
+      "pixels": 880,
+      "components": [
+        {
+          "area": 767,
+          "x": 216,
+          "y": 398
+        },
+        {
+          "area": 113,
+          "x": 208,
+          "y": 460
+        }
+      ],
+      "opaque": 63475
+    }
+  ],
+  "seams": {
+    "idle": 0,
+    "victory": 0,
+    "stunned": 0,
+    "frozen": 0
+  },
+  "events": {
+    "idle": [],
+    "attack": [
+      "hit"
+    ],
+    "cast": [
+      "cast",
+      "hit"
+    ],
+    "ultimate": [
+      "ult-start",
+      "cast",
+      "ult_release",
+      "hit",
+      "ult-end"
+    ],
+    "hit": [],
+    "stunned": [],
+    "frozen": [],
+    "death": [
+      "dust"
+    ],
+    "victory": [],
+    "enter": []
+  },
+  "contract": true,
+  "gates": {
+    "rest": true,
+    "holes": false,
+    "seams": true,
+    "contract": true
+  }
+}

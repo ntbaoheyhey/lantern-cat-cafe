@@ -1,0 +1,11 @@
+{
+ "format":"taskbar-cutout-template-v1",
+ "fps":30,
+ "hierarchy":[["root",null],["hip","root"],["torso","hip"],["neck","torso"],["head","neck"],["ear_l","head"],["ear_r","head"],["eyes","head"],["mouth","head"],["shoulder_l","torso"],["arm_upper_l","shoulder_l"],["arm_lower_l","arm_upper_l"],["hand_l","arm_lower_l"],["weapon","hand_l"],["shoulder_r","torso"],["arm_upper_r","shoulder_r"],["arm_lower_r","arm_upper_r"],["hand_r","arm_lower_r"],["leg_l","hip"],["leg_r","hip"],["tail_1","hip"],["tail_2","tail_1"],["tail_3","tail_2"],["wing_l","torso"],["wing_r","torso"],["hp-anchor","head"],["vfx-origin","torso"],["main-hand","hand_l"],["off-hand","hand_r"]],
+ "parts":["head","ear_l","ear_r","hair_tuft","brow_l","brow_r","eye_l","eye_r","eye_l_closed","eye_r_closed","mouth_neutral","mouth_open","mouth_shout","torso","cloth","arm_upper_l","arm_lower_l","hand_l","arm_upper_r","arm_lower_r","hand_r","leg_l","leg_r","tail_1","tail_2","tail_3","weapon","accessory_1"],
+ "clips":{"idle":1.8,"attack":0.55,"cast":0.6,"ultimate":1.0,"hit":0.25,"stunned":1.8,"frozen":1.8,"death":0.7,"victory":1.8,"enter":0.5},
+ "events":{"attack":[["hit",0.29]],"cast":[["cast",0.35],["hit",0.35]],"ultimate":[["ult-start",0],["cast",0.4],["ult_release",0.55],["hit",0.55],["ult-end",0.95]],"death":[["dust",0.55]]},
+ "joints":{"minimumPaintedOverlapPixels":12,"meshSubdivisions":8},
+ "facialPolicy":"Slots are optional when their pixels remain embedded in an approved mesh. Report embedded slots; never erase existing faces or fabricate hand-painted replacements.",
+ "blink":{"minimumSeconds":2.5,"maximumSeconds":5,"closedSeconds":0.1,"clock":"seeded, independent of idle loop"}
+}

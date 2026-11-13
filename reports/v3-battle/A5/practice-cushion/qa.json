@@ -1,0 +1,106 @@
+{
+  "id": "practice-cushion",
+  "source": "template",
+  "restDifference": 0.00007822084776154076,
+  "referenceHoles": {
+    "pixels": 0,
+    "components": [],
+    "opaque": 91834
+  },
+  "extremes": [
+    {
+      "name": "attack",
+      "at": 0.18,
+      "pixels": 0,
+      "components": [],
+      "opaque": 92626
+    },
+    {
+      "name": "attack",
+      "at": 0.26,
+      "pixels": 0,
+      "components": [],
+      "opaque": 92147
+    },
+    {
+      "name": "cast",
+      "at": 0.35,
+      "pixels": 0,
+      "components": [],
+      "opaque": 93065
+    },
+    {
+      "name": "ultimate",
+      "at": 0.55,
+      "pixels": 0,
+      "components": [],
+      "opaque": 92292
+    },
+    {
+      "name": "hit",
+      "at": 0.06,
+      "pixels": 0,
+      "components": [],
+      "opaque": 92027
+    },
+    {
+      "name": "death",
+      "at": 0.7,
+      "pixels": 0,
+      "components": [],
+      "opaque": 90685
+    },
+    {
+      "name": "stunned",
+      "at": 0.9,
+      "pixels": 0,
+      "components": [],
+      "opaque": 92069
+    },
+    {
+      "name": "enter",
+      "at": 0,
+      "pixels": 0,
+      "components": [],
+      "opaque": 91692
+    }
+  ],
+  "seams": {
+    "idle": 0,
+    "victory": 0,
+    "stunned": 0,
+    "frozen": 0
+  },
+  "events": {
+    "idle": [],
+    "attack": [
+      "hit"
+    ],
+    "cast": [
+      "cast",
+      "hit"
+    ],
+    "ultimate": [
+      "ult-start",
+      "cast",
+      "ult_release",
+      "hit",
+      "ult-end"
+    ],
+    "hit": [],
+    "stunned": [],
+    "frozen": [],
+    "death": [
+      "dust"
+    ],
+    "victory": [],
+    "enter": []
+  },
+  "contract": true,
+  "gates": {
+    "rest": true,
+    "holes": true,
+    "seams": true,
+    "contract": true
+  }
+}

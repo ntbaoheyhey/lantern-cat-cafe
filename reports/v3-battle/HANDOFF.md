@@ -1,9 +1,9 @@
 # Session A handoff
-NOW: A1–A4 complete; A3 auto-approved. A5 shared cut-out rigs next.
-NEXT 1: Native template builder and loader; pilot Marigold + Button Guard.
-NEXT 2: Eight extreme poses, holes/seams/events, films, 8-unit FPS; preserve designer cats.
-NEXT 3: A6 Session B sync, full local suite, audible 90s demo, draft PR and reports.
-LAST GOOD COMMIT: cab25087d (A4).
-OPEN: B currently B6. No Spine runtime. INBOX empty.
-PIDS: Vite node 38461 on 5990 inherited from task.
+NOW: A5 complete with PARTIAL G2 (literal alpha-hole gate); pilots auto-approved. A6 integration next.
+NEXT 1: Merge available Session B commits by ownership, then full local suite.
+NEXT 2: 90s audible demo, draft PR, English report + Vietnamese status.
+NEXT 3: Revisit A5 PARTIAL once after A6; preserve honest raw gate evidence.
+LAST GOOD COMMIT: A5 commit being created; prior 7505947ff (A4).
+OPEN: B at B6; no Spine runtime, no deploy/main merge. INBOX empty.
+PIDS: Vite node 38461 port 5990 inherited from this task. QA browsers exited.
 SOURCE: /Users/bao/.codex/attachments/a3bf736a-eb43-4258-b4d6-7061215edd13/Pasted text.txt

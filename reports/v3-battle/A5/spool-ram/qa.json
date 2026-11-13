@@ -1,0 +1,106 @@
+{
+  "id": "spool-ram",
+  "source": "template",
+  "restDifference": 0.00007786911620754711,
+  "referenceHoles": {
+    "pixels": 0,
+    "components": [],
+    "opaque": 115780
+  },
+  "extremes": [
+    {
+      "name": "attack",
+      "at": 0.18,
+      "pixels": 0,
+      "components": [],
+      "opaque": 117607
+    },
+    {
+      "name": "attack",
+      "at": 0.26,
+      "pixels": 0,
+      "components": [],
+      "opaque": 117958
+    },
+    {
+      "name": "cast",
+      "at": 0.35,
+      "pixels": 0,
+      "components": [],
+      "opaque": 116812
+    },
+    {
+      "name": "ultimate",
+      "at": 0.55,
+      "pixels": 0,
+      "components": [],
+      "opaque": 117623
+    },
+    {
+      "name": "hit",
+      "at": 0.06,
+      "pixels": 0,
+      "components": [],
+      "opaque": 117100
+    },
+    {
+      "name": "death",
+      "at": 0.7,
+      "pixels": 0,
+      "components": [],
+      "opaque": 110900
+    },
+    {
+      "name": "stunned",
+      "at": 0.9,
+      "pixels": 0,
+      "components": [],
+      "opaque": 117266
+    },
+    {
+      "name": "enter",
+      "at": 0,
+      "pixels": 0,
+      "components": [],
+      "opaque": 116855
+    }
+  ],
+  "seams": {
+    "idle": 0,
+    "victory": 0,
+    "stunned": 0,
+    "frozen": 0
+  },
+  "events": {
+    "idle": [],
+    "attack": [
+      "hit"
+    ],
+    "cast": [
+      "cast",
+      "hit"
+    ],
+    "ultimate": [
+      "ult-start",
+      "cast",
+      "ult_release",
+      "hit",
+      "ult-end"
+    ],
+    "hit": [],
+    "stunned": [],
+    "frozen": [],
+    "death": [
+      "dust"
+    ],
+    "victory": [],
+    "enter": []
+  },
+  "contract": true,
+  "gates": {
+    "rest": true,
+    "holes": true,
+    "seams": true,
+    "contract": true
+  }
+}

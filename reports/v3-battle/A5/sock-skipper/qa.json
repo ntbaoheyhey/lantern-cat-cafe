@@ -1,0 +1,158 @@
+{
+  "id": "sock-skipper",
+  "source": "template",
+  "restDifference": 0.00017273425741740604,
+  "referenceHoles": {
+    "pixels": 0,
+    "components": [],
+    "opaque": 46575
+  },
+  "extremes": [
+    {
+      "name": "attack",
+      "at": 0.18,
+      "pixels": 145,
+      "components": [
+        {
+          "area": 78,
+          "x": 357,
+          "y": 382
+        },
+        {
+          "area": 60,
+          "x": 247,
+          "y": 377
+        },
+        {
+          "area": 7,
+          "x": 365,
+          "y": 431
+        }
+      ],
+      "opaque": 47463
+    },
+    {
+      "name": "attack",
+      "at": 0.26,
+      "pixels": 219,
+      "components": [
+        {
+          "area": 219,
+          "x": 283,
+          "y": 406
+        }
+      ],
+      "opaque": 47265
+    },
+    {
+      "name": "cast",
+      "at": 0.35,
+      "pixels": 0,
+      "components": [],
+      "opaque": 47988
+    },
+    {
+      "name": "ultimate",
+      "at": 0.55,
+      "pixels": 195,
+      "components": [
+        {
+          "area": 195,
+          "x": 245,
+          "y": 403
+        }
+      ],
+      "opaque": 47329
+    },
+    {
+      "name": "hit",
+      "at": 0.06,
+      "pixels": 372,
+      "components": [
+        {
+          "area": 372,
+          "x": 362,
+          "y": 406
+        }
+      ],
+      "opaque": 46923
+    },
+    {
+      "name": "death",
+      "at": 0.7,
+      "pixels": 154,
+      "components": [
+        {
+          "area": 154,
+          "x": 350,
+          "y": 448
+        }
+      ],
+      "opaque": 44918
+    },
+    {
+      "name": "stunned",
+      "at": 0.9,
+      "pixels": 358,
+      "components": [
+        {
+          "area": 358,
+          "x": 372,
+          "y": 407
+        }
+      ],
+      "opaque": 46937
+    },
+    {
+      "name": "enter",
+      "at": 0,
+      "pixels": 447,
+      "components": [
+        {
+          "area": 447,
+          "x": 309,
+          "y": 396
+        }
+      ],
+      "opaque": 46640
+    }
+  ],
+  "seams": {
+    "idle": 0,
+    "victory": 0,
+    "stunned": 0,
+    "frozen": 0
+  },
+  "events": {
+    "idle": [],
+    "attack": [
+      "hit"
+    ],
+    "cast": [
+      "cast",
+      "hit"
+    ],
+    "ultimate": [
+      "ult-start",
+      "cast",
+      "ult_release",
+      "hit",
+      "ult-end"
+    ],
+    "hit": [],
+    "stunned": [],
+    "frozen": [],
+    "death": [
+      "dust"
+    ],
+    "victory": [],
+    "enter": []
+  },
+  "contract": true,
+  "gates": {
+    "rest": true,
+    "holes": false,
+    "seams": true,
+    "contract": true
+  }
+}

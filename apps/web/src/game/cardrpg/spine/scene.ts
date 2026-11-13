@@ -182,8 +182,12 @@ export class SpineScene {
    else if(time-entry.phaseAt<actor.duration('enrage')&&actor.clips.has('enrage')){name='enrage';key=entry.phaseAt;at=time-entry.phaseAt;}
    else if(time-entry.entered<actor.duration('appear')&&!view.galleryPreview&&!view.reducedMotion){name='appear';key=entry.entered;at=Math.max(0,time-entry.entered);}
    else if(entry.phase>1&&actor.clips.has('idle-phase2')){name='idle-phase2';key=name;at=time%actor.duration(name);}
-   const previous=this.sampled.get(unit.id),iced=bodyStatuses(view.cardStatuses?.[unit.id]).includes('freeze'),frozen=iced||!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
-   if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
+   const statuses=bodyStatuses(view.cardStatuses?.[unit.id]);
+   if(unit.hp>0&&name==='idle'&&statuses.includes('stun')&&actor.clips.has('stunned')){name='stunned';key=name;at=worldTime%actor.duration(name);}
+   const previous=this.sampled.get(unit.id),iced=statuses.includes('freeze'),frozen=iced||!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
+   if(iced&&unit.hp>0&&previous){name=previous.name;key=previous.key;at=previous.at;}
+   else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
+   if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
    const since=time-this.hitAt,hitActive=this.firstHit&&!!plan?.targetIds.includes(unit.id)&&since>=0&&since<.32;

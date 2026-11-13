@@ -1,0 +1,195 @@
+{
+  "id": "teacup-healer",
+  "source": "template",
+  "restDifference": 0.0001600114651815192,
+  "referenceHoles": {
+    "pixels": 841,
+    "components": [
+      {
+        "area": 841,
+        "x": 412,
+        "y": 303
+      }
+    ],
+    "opaque": 55957
+  },
+  "extremes": [
+    {
+      "name": "attack",
+      "at": 0.18,
+      "pixels": 1084,
+      "components": [
+        {
+          "area": 817,
+          "x": 422,
+          "y": 321
+        },
+        {
+          "area": 267,
+          "x": 385,
+          "y": 390
+        }
+      ],
+      "opaque": 56285
+    },
+    {
+      "name": "attack",
+      "at": 0.26,
+      "pixels": 1723,
+      "components": [
+        {
+          "area": 840,
+          "x": 420,
+          "y": 288
+        },
+        {
+          "area": 461,
+          "x": 226,
+          "y": 373
+        },
+        {
+          "area": 299,
+          "x": 435,
+          "y": 329
+        },
+        {
+          "area": 123,
+          "x": 253,
+          "y": 401
+        }
+      ],
+      "opaque": 55076
+    },
+    {
+      "name": "cast",
+      "at": 0.35,
+      "pixels": 836,
+      "components": [
+        {
+          "area": 836,
+          "x": 412,
+          "y": 299
+        }
+      ],
+      "opaque": 56906
+    },
+    {
+      "name": "ultimate",
+      "at": 0.55,
+      "pixels": 1461,
+      "components": [
+        {
+          "area": 832,
+          "x": 400,
+          "y": 290
+        },
+        {
+          "area": 499,
+          "x": 205,
+          "y": 362
+        },
+        {
+          "area": 130,
+          "x": 231,
+          "y": 398
+        }
+      ],
+      "opaque": 56315
+    },
+    {
+      "name": "hit",
+      "at": 0.06,
+      "pixels": 827,
+      "components": [
+        {
+          "area": 827,
+          "x": 412,
+          "y": 311
+        }
+      ],
+      "opaque": 56197
+    },
+    {
+      "name": "death",
+      "at": 0.7,
+      "pixels": 722,
+      "components": [
+        {
+          "area": 722,
+          "x": 430,
+          "y": 379
+        }
+      ],
+      "opaque": 54288
+    },
+    {
+      "name": "stunned",
+      "at": 0.9,
+      "pixels": 822,
+      "components": [
+        {
+          "area": 822,
+          "x": 420,
+          "y": 313
+        }
+      ],
+      "opaque": 56262
+    },
+    {
+      "name": "enter",
+      "at": 0,
+      "pixels": 940,
+      "components": [
+        {
+          "area": 827,
+          "x": 361,
+          "y": 291
+        },
+        {
+          "area": 113,
+          "x": 189,
+          "y": 402
+        }
+      ],
+      "opaque": 55786
+    }
+  ],
+  "seams": {
+    "idle": 0,
+    "victory": 0,
+    "stunned": 0,
+    "frozen": 0
+  },
+  "events": {
+    "idle": [],
+    "attack": [
+      "hit"
+    ],
+    "cast": [
+      "cast",
+      "hit"
+    ],
+    "ultimate": [
+      "ult-start",
+      "cast",
+      "ult_release",
+      "hit",
+      "ult-end"
+    ],
+    "hit": [],
+    "stunned": [],
+    "frozen": [],
+    "death": [
+      "dust"
+    ],
+    "victory": [],
+    "enter": []
+  },
+  "contract": true,
+  "gates": {
+    "rest": true,
+    "holes": false,
+    "seams": true,
+    "contract": true
+  }
+}

@@ -18,7 +18,9 @@
     "chain:test": "pnpm --filter @taskbar-hero/web exec playwright test --config playwright.chain.config.ts",
     "demo:play": "node tools/demo-play.mjs",
     "cine:render": "node tools/cinematic-compositor/render.mjs",
-    "art:signatures": "node scripts/art/signature-check.mjs"
+    "art:signatures": "node scripts/art/signature-check.mjs",
+    "rig:build": "node scripts/art/build-spine.mjs",
+    "rig:qa": "node scripts/art/rig-qa.mjs"
   },
   "devDependencies": {
     "pngjs": "7.0.0",

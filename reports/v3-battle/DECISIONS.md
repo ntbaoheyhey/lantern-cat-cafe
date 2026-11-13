@@ -36,3 +36,10 @@
 - Static lab now plays/scrubs all 36 field sequences from generated runtime data, with before/after and quarter speed under file://. Its OFL font is self-contained.
 - Added boss portrait and hit/status/death/voice cue crossings through the shared audio bridge. No second audio engine.
 - Local evidence: 49 browser sequences, 74 relevant unit tests, 10 cardrpg E2E, typecheck. Cinematic media totals 5,999,616 bytes.
+
+## A5 continuation: approved pixels and honest alpha gate (2026-11-13)
+Reuse the approved split atlas artwork for 22 non-designer units. A connected, weighted mesh keeps the rest pose; canonical bones, independent seeded blinks and the shared motion set supply animation. Separate facial/weapon slots that are still embedded in the art are explicitly listed in parts.json. This authorized section 0.6 method change avoids a redundant generation/re-split of already approved original art. Mochi, Soot and Clover remain authored deliveries; only non-destructive socket/event aliases are added at intake.
+
+The first alpha-hole method counted every enclosed transparent pixel, including anti-alias pinholes. Corrected erosion of each transparent region by two pixels removes pinholes but retains deliberate handle and tail openings (Marigold reference: 301 pixels). This is the second measurement method; preserve original negative spaces and report the literal zero-hole gate as PARTIAL if any remain, with visual extreme-pose evidence. Never suppress failing units. Pilots are auto-approved under the user's final decisions; clips are copied to Desktop/TaskbarHero-REVIEW and batching continues.
+
+A5 visual repair: projected arm weights bent upward-pointing staff props. The four staff users now use radial shoulder-to-hand weights so remote staff pixels follow the hand rigidly; original setup coordinates and pixels remain identical. Re-render the affected four units and the Marigold pilot. This is a visual deformation fix, with no battle rule changes.
