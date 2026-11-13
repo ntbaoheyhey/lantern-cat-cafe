@@ -93,3 +93,8 @@ Three canvas readback attempts exposed CPU/GPU premultiplication differences of 
 
 ## P1/M1: grounded painted strike continuation
 The contact strip shows a strong initial bloom followed by a nearly stationary fade. Add a487ms directional ground wake, starting33ms after actual contact, using that skill's existing painted trail. It expands and moves away from the striking hand and dissipates below the target. This changes actual skill follow-through, preserves camera settings and combat timing, and adds no reference pixels. Reduced motion and Low omit this secondary layer. Keep15.7956 as the exact energy threshold and test the same fixed seed.
+
+## P1/V3: preserve complete speech at every battle speed
+B's S5-A-VOICE-WINDOW request was reproduced against current A2 events: six required lines across the three normal-speed fixtures overlap the next required voice (1/2/3 per fixture). A2 already gives the full plate a longer charge than B's older integrated battle, but release tails still need protection.
+Reserve B's durationMs plus80ms for frame-boundary tolerance. Full-mode contact stays at3200ms; recovery extends to the end of its release line. Short/off modes carry the charge through its full take before release. Voiced windows run at normal speed even at×2/×3; unvoiced portions retain the selected speed. The final-hit0.4x/500ms hold continues inside these windows. Combat event identity, recipients and amounts stay untouched.
+Targeted tests cover every authored cat sequence and all13 enemy signatures in three cinematic modes at all three speeds;24 tests pass. Actual browser clock gaps, cue density and parity are checked separately before reporting closure. No sound engine or B-owned source is edited.

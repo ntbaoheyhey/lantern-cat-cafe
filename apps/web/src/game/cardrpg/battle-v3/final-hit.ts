@@ -1,11 +1,18 @@
 import type {EffectPlan} from '../../squad/turn3d/effects';
-export interface FinalHitPlan extends EffectPlan {finalHit?:boolean}
-/** Analytic clock: 200 ms of authored movement takes 500 ms around the last contact. */
+import type {VoiceWindow} from './voice-windows';
+export interface FinalHitPlan extends EffectPlan {finalHit?:boolean;voiceWindows?:VoiceWindow[]}
+/** Spoken windows stay at real time; final contact retains its half-second hold. */
 export function advanceBattleClock(plan:FinalHitPlan,elapsed:number,delta:number,reduced:boolean,speed=1){
- if(!plan.finalHit||reduced)return elapsed+delta*speed;
- const start=Math.max(0,plan.beats[2]!.start-80),end=Math.min(plan.duration,start+200);
- const entry=start/speed,exit=entry+(end-start)/.4;
- const toWall=(t:number)=>t<=start?t/speed:t<end?entry+(t-start)/.4:exit+(t-end)/speed;
- const wall=toWall(elapsed)+delta;
- return wall<=entry?wall*speed:wall<exit?start+(wall-entry)*.4:end+(wall-exit)*speed;
+ const windows=(plan.voiceWindows??[]).map(window=>({start:window.start,end:window.end,rate:1}));
+ if(plan.finalHit&&!reduced){const start=Math.max(0,plan.beats[2]!.start-80);windows.push({start,end:Math.min(plan.duration,start+200),rate:.4});}
+ if(!windows.length)return elapsed+delta*speed;
+ const boundaries=[...new Set(windows.flatMap(window=>[window.start,window.end]))].sort((a,b)=>a-b);
+ let at=elapsed,remaining=delta;
+ for(const end of [...boundaries.filter(t=>t>elapsed+1e-7),Infinity]){
+  const rate=Math.min(speed,...windows.filter(window=>at>=window.start-1e-7&&at<window.end-1e-7).map(window=>window.rate));
+  const wall=(end-at)/rate;
+  if(remaining<=wall)return at+remaining*rate;
+  at=end;remaining-=wall;
+ }
+ return at;
 }

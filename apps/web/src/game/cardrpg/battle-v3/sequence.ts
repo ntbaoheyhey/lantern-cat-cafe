@@ -2,6 +2,7 @@ import type {EffectPlan} from '../../squad/turn3d/effects';
 import type {PaintTimeline} from '../vfx-layered/timeline';
 import type {AudioCue} from '../contracts/audio-cues';
 import {audioTimeline} from './audio-timeline';
+import {minimumVoicedImpact,reserveVoiceTails,type VoiceWindow} from './voice-windows';
 
 export type CinematicMode = 'full' | 'short' | 'off';
 export interface ScalarKey {t:number;value:number}
@@ -23,19 +24,19 @@ const fields=import.meta.glob('../../../../../../skills/*/field.json',{eager:tru
 const signatures=import.meta.glob('../../../../../../skills/*/signature.json',{eager:true,import:'default'}) as Record<string,Signature>;
 export const SEQUENCES=new Map([...Object.values(files),...Object.values(fields).flat()].filter(t=>t.sequence).map(t=>[t.id,t]));
 export const SIGNATURES=new Map(Object.entries(signatures).map(([path,s])=>[path.split('/').at(-2)!,s]));
-export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode};
+export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode;voiceWindows?:VoiceWindow[]};
 
 /** Retimes presentation only. Event objects, actor IDs, recipients and amounts are unchanged. */
 export function configureSequence(plan:EffectPlan,mode:CinematicMode='full'):SequencePlan {
  const authored=SEQUENCES.get(plan.presentationId??plan.skillId)?.sequence;
- if(!authored)return plan;
+ if(!authored)return reserveVoiceTails(plan);
  const sequence=structuredClone(authored);
  const ultimate=sequence.tier==='ultimate';
- const impact=ultimate?(mode==='full'?sequence.impact:mode==='short'?950:450):sequence.impact;
+ const impact=ultimate?Math.max(mode==='full'?sequence.impact:mode==='short'?950:450,minimumVoicedImpact(plan,mode==='off'?0:150)):sequence.impact;
  const duration=ultimate?impact+400:sequence.duration;
  const remap=(t:number)=>t<=authored.impact?t/authored.impact*impact:impact+(t-authored.impact)/(authored.duration-authored.impact)*(duration-impact);
- // Short preserves the original charge/cut-in lengths and removes only the plate.
- const trackTime=(t:number)=>ultimate&&mode==='short'?(t<=950?t:Math.max(950,t-2250)):remap(t);
+ // Short retains the cut-in, then carries its build through the spoken charge.
+ const trackTime=(t:number)=>ultimate&&mode==='short'?(t<=650?t:t<=authored.impact?650+(t-650)/(authored.impact-650)*(impact-650):remap(t)):remap(t);
  for(const track of [sequence.camera,sequence.time,sequence.dim,sequence.postfx,sequence.audio,sequence.casterAnim,sequence.targetAnim,sequence.damage])for(const key of track)key.t=trackTime(key.t);
  sequence.duration=duration;sequence.impact=impact;
  if(sequence.plate&&mode!=='full')delete sequence.plate;
@@ -45,7 +46,7 @@ export function configureSequence(plan:EffectPlan,mode:CinematicMode='full'):Seq
  lengths[1]=impact-lengths[0]!;
  let start=0;
  const beats=plan.beats.map((beat,i)=>{const next={...beat,start,duration:lengths[i]!,shake:i===2?(ultimate?12:3):0,flash:i===2?.35:0};start+=next.duration;return next;});
- const configured={...plan,ultimate,beats,duration,sequence,cinematicMode:mode};
+ const configured=reserveVoiceTails({...plan,ultimate,beats,duration,sequence,cinematicMode:mode},sequence);
  sequence.audio=audioTimeline(configured,sequence);
  return configured;
 }
