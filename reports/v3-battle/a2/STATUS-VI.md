@@ -6,8 +6,11 @@
 - Typecheck, toàn bộ unit test và combat parity đều PASS.
 - E2E chạy lại sau khi sửa cache Vite: 9/10; Night tips của Session B vẫn lỗi.
 - M2 vẫn đang thực hiện, chưa đánh dấu hoàn tất khi checker chưa PASS hết.
-- V1 đang làm: hiệu ứng triệu hồi gốc, nhân vật rig động, nền/camera riêng từng chiêu.
-- 3 bản xem thử đạt 480 hạt; hình triệu hồi chiếm khoảng 56–78% khung ở cao trào.
+- V1: đã tạo 13 tranh triệu hồi gốc, rig động và 13 đường camera riêng.
+- V1: phủ khung 100%, diện tích hiệu ứng tối thiểu 65,36%; 11 lớp, 480 hạt.
+- SSIM cao nhất 0,200/0,55; thư mục video 19,27 MB, dưới giới hạn 20 MiB.
+- V1 còn lỗi E2E Night tips chung, không tự đánh dấu hoàn tất.
+- Đang làm V2: kỹ năng trên sân lớn hơn, số sát thương lớn và xếp tầng.
 - M1 vẫn thiếu năng lượng chuyển động: 8,05–9,48 so với yêu cầu 15,80.
 - Không đổi luật chiến đấu, không merge main hoặc deploy.
 - Sync sớm nhất 16/11 19:00; lần hai 18/11 19:00 giờ Việt Nam.

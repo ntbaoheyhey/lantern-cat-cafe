@@ -10,8 +10,8 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | F2 | Field clarity | in progress | F2/gates.log: 16 PASS / 1 FAIL; alpha 1.00, persistent bubble frames 0, contrast min42.59/18; FAIL F2.e2e exit1. Full-suite source e502656bd; card remains open |
 | M1 | Attack choreography | in progress | 30s each: 111/111 hit reactions, min travel .08795, High59.88–60.02FPS. Energy8.052/8.964/9.484 FAIL required15.796; shared E2E9/10. Remains open. |
 | M2 | Separate parts and face animation | in progress | M2/gates.log: 15 PASS / 1 FAIL; faces22/22; zero holes18/22; max79/150px; overlap12/12px; type/unit/parity PASS. FAIL M2.e2e measured=1 required=0 (Night tips). |
-| V1 | Full-screen distinct ultimate plates | in progress | New native-rig compositor; original painted motifs; first 3 previews show 480 particles and motif coverage .556–.780. Encoded gates pending. |
-| V2 | Field skills and damage numbers | todo | pending |
+| V1 | Full-screen distinct ultimate plates | in progress | V1/gates.log: 20 PASS / 1 FAIL; 13 plates; coverage .65356/.61206; full fill1; edges2; layers11; particles480; SSIM .19967/.55 across78 pairs; 19,269,131/20,971,520bytes. FAIL V1.e2e1/0 (shared Night tips). |
+| V2 | Field skills and damage numbers | in progress | Expanding measured field shapes, bitmap numbers and layered contact cues; no evidence yet |
 | V3 | Battle audio cue choreography | todo | pending |
 | T1 | Battle UI and text diet | todo | pending |
 | SY1 | Sync at 2026-11-16 12:00 UTC | todo | pending |

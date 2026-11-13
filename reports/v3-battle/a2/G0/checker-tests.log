@@ -1,18 +1,19 @@
-✔ min: fake PASS and fake FAIL, NaN, absent target (0.498666ms)
-✔ max: fake PASS and fake FAIL, NaN, absent target (0.059333ms)
-✔ eq: fake PASS and fake FAIL, NaN, absent target (0.042583ms)
-✔ band: fake PASS and fake FAIL, NaN, absent target (0.050875ms)
-✔ every declared numeric gate rejects a failing value, including zero limits (0.186ms)
-✔ absent evidence cannot pass using files or a past scheduled date (2.368167ms)
-✔ files: counts real nonempty files, rejects missing and empty artifacts (0.762083ms)
-✔ freshness: evidence from before the last source commit fails (95.568667ms)
-✔ date gate: real future sync cannot pass before its exact UTC time (0.278417ms)
-✔ fixture matrix fails any missing fixture/resolution (0.217875ms)
-ℹ tests 10
+✔ every active requires one voice; half coverage must never pass (0.460833ms)
+✔ min: fake PASS and fake FAIL, NaN, absent target (0.073417ms)
+✔ max: fake PASS and fake FAIL, NaN, absent target (0.04375ms)
+✔ eq: fake PASS and fake FAIL, NaN, absent target (0.042209ms)
+✔ band: fake PASS and fake FAIL, NaN, absent target (0.052583ms)
+✔ every declared numeric gate rejects a failing value, including zero limits (0.17ms)
+✔ absent evidence cannot pass using files or a past scheduled date (2.369208ms)
+✔ files: counts real nonempty files, rejects missing and empty artifacts (0.780458ms)
+✔ freshness: evidence from before the last source commit fails (131.39525ms)
+✔ date gate: real future sync cannot pass before its exact UTC time (0.301542ms)
+✔ fixture matrix fails any missing fixture/resolution (0.218791ms)
+ℹ tests 11
 ℹ suites 0
-ℹ pass 10
+ℹ pass 11
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 155.776375
+ℹ duration_ms 191.134958

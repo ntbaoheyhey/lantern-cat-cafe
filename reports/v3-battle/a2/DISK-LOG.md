@@ -38,3 +38,9 @@ Before: /dev/disk3s1   926Gi   550Gi   338Gi    62%    5.3M  3.5G    0%   /Syste
 Removed in this worktree only: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp
 After: /dev/disk3s1   926Gi   550Gi   338Gi    62%    5.3M  3.5G    0%   /System/Volumes/Data
 Normal disk mode. Current M2 evidence retained.
+
+## Resume 2026-11-13T06:00:20.832428+00:00
+Before: /dev/disk3s1   926Gi   551Gi   338Gi    62%    5.4M  3.5G    0%   /System/Volumes/Data
+Removed only local regenerable outputs: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp
+After: /dev/disk3s1   926Gi   551Gi   338Gi    62%    5.4M  3.5G    0%   /System/Volumes/Data
+Normal disk mode. V1 current render evidence retained.

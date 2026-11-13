@@ -153,3 +153,29 @@ PASS M2.parity: measured=0; required=eq 0
 FAIL M2.artifact-freshness: measured=1; required=eq 0 artifacts older than last source commit
 TOTAL 14 PASS / 2 FAIL / 16 gates
 ```
+
+## V1 encoded plate audit
+```text
+PASS V1.freshness: measured=d03416bbab0c887ca8d7f5167eea4e3caa6f8d46; required=evidence >= d03416bbab0c887ca8d7f5167eea4e3caa6f8d46
+PASS V1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V1.plate-count: measured=13; required=eq 13
+PASS V1.coverage: measured=0.6536363636363637; required=min 0.6120624999999998
+PASS V1.viewport: measured=1; required=eq 1
+PASS V1.edges: measured=2; required=eq 2
+PASS V1.layer-types: measured=11; required=min 7
+PASS V1.particles: measured=480; required=min 300
+PASS V1.beats: measured=3; required=min 3
+PASS V1.distinctness: measured=0.19967248657396475; required=max 0.55
+PASS V1.pair-count: measured=78; required=eq 78
+PASS V1.bytes: measured=19269131; required=max 20971520
+PASS V1.motif-area: measured=0.45515625; required=min 0.4
+PASS V1.camera-paths: measured=13; required=eq 13
+PASS V1.comparisons: measured=13; required=min 13
+PASS V1.render-log: measured=1; required=min 1
+PASS V1.typecheck: measured=0; required=eq 0
+PASS V1.unit: measured=0; required=eq 0
+FAIL V1.e2e: measured=1; required=eq 0
+PASS V1.parity: measured=0; required=eq 0
+PASS V1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 20 PASS / 1 FAIL / 21 gates
+```
