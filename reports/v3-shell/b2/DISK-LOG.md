@@ -6,3 +6,6 @@ Worktree size: 27 GiB. Other worktrees, reference art and tools retained.
 
 Resume 13 November 01:23 UTC: 97 GiB available before cleanup. Removed rebuildable paths: supabase/tests/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, apps/web/node_modules/.vite. Protected trees retained.
 After cleanup: 97 GiB available. Worktree remains 27 GiB; disk budget safe.
+
+Resume 2026-11-13T01:45+00:00: 97 GiB free before cleanup. Removed only rebuildable worktree outputs: apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite.
+After cleanup: /dev/disk3s1   926Gi   791Gi    97Gi    90%    5.4M  1.0G    1%   /System/Volumes/Data. Protected directories retained.

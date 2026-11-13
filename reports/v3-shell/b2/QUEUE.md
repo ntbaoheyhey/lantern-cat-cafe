@@ -5,8 +5,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] G0 — done (self-score 8/10 for acceptance tooling; production quality not yet scored)
 - [x] R — done (self-score 8/10; spectral proxies explicitly qualified)
 - [x] S1 — done (self-score 8/10 for plan/coverage; sound production remains pending)
-- [ ] S2 — in progress
-- [ ] S3 — todo
+- [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
+- [ ] S3 — in progress
 - [ ] S4 — todo
 - [ ] V — todo
 - [ ] U1 — todo
@@ -72,3 +72,17 @@ PASS S1.report: measured 606357; required nonempty reports/v3-shell/b2/SOUND-MAP
 PASS S1.typedMap: measured 12537; required nonempty apps/web/src/audio/sound-map.ts
 
 Checks: tests/s1-map-unit.log (3), tests/s1-coverage.log (3), tests/s1-types.log, tests/s1-final-types.log, tests/s1-suite.log. Web 2,488 and server 724 pass. Existing game-rule expected failures/skips remain reported.
+
+## S2 evidence
+
+PASS S2.clips: measured 593; required >= 350 usable hashed source clips
+PASS S2.catRecordings: measured 22; required >= 15 distinct original recordings
+PASS S2.catAuthors: measured 18; required >= 6 cat-recording authors
+PASS S2.consonants: measured 76; required >= 40 consonant/mouth/click grains
+PASS S2.ambience: measured 11; required >= 6 ambience beds
+PASS S2.music: measured 12; required >= 8 music pieces
+PASS S2.stings: measured 18; required >= 8 stings
+PASS S2.licenceCoverage: measured 1; required 100% source and shipped audio files with licence, author, URL, date, SHA-256
+PASS S2.licences: measured 0; required 0 non-commercial, unlicensed, or disallowed licence rows
+
+Checks: tests/s2-source-verify.log (989 files, zero errors), tests/s2-python.log, tests/s2-source-unit.log, tests/s2-types.log, tests/s2-suite.log. Web 2,488 and server 724 pass; game-rule expected failures/skips remain disclosed.
