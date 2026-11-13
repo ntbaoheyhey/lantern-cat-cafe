@@ -1,10 +1,15 @@
 export const CATS=['mochi','soot','clover','panko','mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold'] as const;
 export const BUS_NAMES=['master','music','ambience','sfx','voice','ui'] as const;
 export type Bus=typeof BUS_NAMES[number];
+export const CUE_ALIASES: Readonly<Record<string,string>> = {
+ 'ui.forge-success':'ui.forge.success',
+ 'ui.forge-fail':'ui.forge.fail',
+};
 export const voiceProfiles=Object.fromEntries(CATS.map((cat,i)=>[cat,{pitch:2**((-9+(i%6)*4)/12),speed:.085+(i%3)*.022,brightness:i<6?750+i*200:2400+(i-6)*350,timbre:i<6?'warm':'bright'}]));
 export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; }
 export interface AudioManifest { version:number; packs:Record<string,{webm:string;mp3:string}>; cues:Record<string,Sample[]>; }
 export function resolveCue(id:string,manifest:AudioManifest,element='magic'):Sample[]|undefined {
+ if(CUE_ALIASES[id])id=CUE_ALIASES[id]!;
  if(manifest.cues[id])return manifest.cues[id];
  if(id.startsWith('voice.'))return manifest.cues['voice.meow'];
  if(id.startsWith('ult.'))return manifest.cues[`kit.${element}.${id.split('.').at(-1)}`]??manifest.cues[`kit.magic.${id.split('.').at(-1)}`];

@@ -18,11 +18,11 @@
 14. Build continuous beds, multi-layer impacts, short sweeteners and priority-controlled callouts; compare with this same algorithm.
 15. No reference audio was written to disk, copied into an asset, used for synthesis, or provided to a generator.
 
-Measurement: `scripts/audio/analyse-reference.mjs` invokes NumPy + ffmpeg. Exact windows and selections are in `REFERENCE-WINDOWS.json`; every metric, onset, band count and contour is in `REFERENCE-AUDIO.json`. Private contact sheets remain outside Git. Five analysis/licence-scope tests pass. S5 must use the same algorithm hash; changing the detector requires remeasuring both sides.
+Measurement: `scripts/audio/analyse-reference.mjs` invokes NumPy + ffmpeg. Exact windows and selections are in `REFERENCE-WINDOWS.json`; every metric, onset, band count and contour is in `REFERENCE-AUDIO.json`. Private contact sheets remain outside Git. Five original analysis/licence-scope tests passed; a sixth regression now also covers Drupal’s _0 alternate-encoding suffix. S5 must use the same algorithm hash; changing the detector requires remeasuring both sides.
 
 ## Free-source decisions
 
-Official candidate catalogue: **766 distinct candidate rows**, including **22 original cat recordings from 18 authors**. Candidates are research, not yet trimmed/accepted source clips. Each has a licence URL and evidence URL. `assets/audio-sources/license-evidence/` stores the official licence evidence and response hashes.
+Official candidate catalogue: **755 distinct candidate rows**, including **22 original cat recordings from 18 authors**. Candidates are research, not yet trimmed/accepted source clips. Each has a licence URL and evidence URL. `assets/audio-sources/license-evidence/` stores the official licence evidence and response hashes.
 
 - Kenney: RPG, Impact, Interface, Music Jingles, UI, Digital, Casino, Voiceover, Fighter and Sci-fi. Signed links work with a cookie jar and page Referer; ZIPs are inspected in memory, never retained. Foley’s standalone public URL returns 404; existing RPG/Impact/Casino cover those roles.
 - Freesound: meows, purrs, hisses, trills and chirps; tongue/click/mouth sessions; empty café room tone, kitchen, kettle/cup, rain, street and hearth. Only official CC0 pages and their official high-quality previews are candidates. Reuploads of the same cat recording do not count separately.

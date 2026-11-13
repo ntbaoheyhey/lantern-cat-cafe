@@ -6,15 +6,15 @@ Generated from current files. Missing evidence is FAIL; no production completion
 PASS G0.inventory: measured 24; required every required card has gates and thresholds
 PASS G0.tests: measured 14; required passing test + SHA-256-verified log
 PASS R.windows: measured 10; required >= 10 measured windows with all metrics, or logged videos missing
-PASS R.candidates: measured 766; required >= 120 candidate files with licence URLs
+PASS R.candidates: measured 755; required >= 120 candidate files with licence URLs
 PASS R.levers: measured 10; required >= 8 new economy levers with file:line
-PASS R.report: measured 8146; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
-FAIL S1.events: measured missing; required >= 160 complete events; 0 TBD
-FAIL S1.screens: measured missing; required >= 18 screens
-FAIL S1.existingCues: measured missing; required 0 existing cues absent; >= 1 inspected
-FAIL S1.callsites: measured missing; required 0 unresolved playCue sites; >= 1 inspected
-FAIL S1.report: measured missing; required nonempty reports/v3-shell/b2/SOUND-MAP.md
-FAIL S1.typedMap: measured missing; required nonempty apps/web/src/audio/sound-map.ts
+PASS R.report: measured 8233; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
+PASS S1.events: measured 2497; required >= 160 complete events; 0 TBD
+PASS S1.screens: measured 49; required >= 18 screens
+PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
+PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
+PASS S1.report: measured 606357; required nonempty reports/v3-shell/b2/SOUND-MAP.md
+PASS S1.typedMap: measured 12537; required nonempty apps/web/src/audio/sound-map.ts
 FAIL S2.clips: measured missing; required >= 350 usable hashed source clips
 FAIL S2.catRecordings: measured missing; required >= 15 distinct original recordings
 FAIL S2.catAuthors: measured missing; required >= 6 cat-recording authors
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 560; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 732; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

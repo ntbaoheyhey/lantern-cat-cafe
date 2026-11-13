@@ -111,17 +111,26 @@ def field_block(page,field):
     raise ValueError('Unclosed official content field')
 
 
+def preferred_encodings(links):
+    # Drupal appends _0 to an alternate encoding when its upload name collides.
+    # Collapse only when the unsuffixed stem exists in this same work's field.
+    stems={Path(link).stem for link in links}
+    preferred={}
+    for link in sorted(links):
+        stem=Path(link).stem
+        base=re.sub(r'_0$','',stem)
+        key=base if base in stems else stem
+        if key not in preferred or link.endswith('.ogg'):preferred[key]=link
+    return sorted(preferred.values())
+
+
 def music(slug):
     url='https://opengameart.org/content/'+slug;body=fetch(url);page=body.decode()
     if not re.search(r'creativecommons.org/publicdomain/zero|>CC0<',field_block(page,'field-name-field-art-licenses')):raise ValueError('Official CC0 evidence missing')
     # Related works/comments have separate authors and licences. Never inherit the
     # main work's CC0 licence onto their attachments or count alternative encodes.
     links=set(re.findall(r'https://opengameart.org/sites/default/files/[^\s\"<>]+\.(?:mp3|ogg|wav)',field_block(page,'field-name-field-art-files')))
-    preferred={}
-    for link in sorted(links):
-        key=Path(link).stem
-        if key not in preferred or link.endswith('.ogg'):preferred[key]=link
-    links=set(preferred.values())
+    links=preferred_encodings(links)
     if not links:raise ValueError('Official music file absent')
     proof=evidence('oga-'+slug,url,body,'Official work page labels CC0 and MintoDog as author.')
     author=re.search(r'<meta name="dcterms.creator" content="([^\"]+)"',page)

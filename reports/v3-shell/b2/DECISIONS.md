@@ -12,3 +12,7 @@
 - Sonniss live licence v2.0 (effective 27 Aug 2026) restricts standalone source redistribution; no Sonniss files selected for the public source tree. CC0 sources cover the required roles.
 - Economy conservation: the old closed model includes all initial YARN in claims, so burn/claims cannot reach 1 while any balance/treasury remains. E1 must expose finite pre-existing circulation and all funding assumptions, retain a no-external-demand stress case, and never call retained fees a burn.
 - Bells-only audit must cover enhancement and indirect conversions, not only invitations. Candidate Star Thread/YARN sinks are deterministic; no paid affix rerolls or Bell conversions.
+
+- S1 uses a typed authoring map; map coverage does not claim S3 assets or S6 event wiring are complete. The AST scanner fails unknown dynamic expressions and expands the existing battle adapter from live cat/enemy/status catalogues.
+- Fixed legacy ui.forge-success / ui.forge-fail aliases without renaming either cue. Equipment-slot and currency coverage reads live rules.
+- S2 preparation found Drupal _0 alternate encoding filenames were still counted in research. Tightened same-work deduplication and added a regression; 755 candidate rows remain (22 cat recordings, 18 authors).

@@ -1,7 +1,9 @@
 import unittest
 import runpy
 from pathlib import Path
-field_block=runpy.run_path(str(Path(__file__).with_name('catalogue-candidates.py')))['field_block']
+MODULE=runpy.run_path(str(Path(__file__).with_name('catalogue-candidates.py')))
+field_block=MODULE['field_block']
+preferred_encodings=MODULE['preferred_encodings']
 
 
 class LicenceScope(unittest.TestCase):
@@ -14,6 +16,10 @@ class LicenceScope(unittest.TestCase):
     def test_missing_licence_field_is_rejected(self):
         with self.assertRaises(ValueError):
             field_block('<p>Comment mentions CC0</p>','field-name-field-art-licenses')
+
+    def test_drupal_alternate_encoding_not_counted_twice(self):
+        links=['https://example.org/song.mp3','https://example.org/song_0.ogg','https://example.org/song_1.ogg','https://example.org/other_0.ogg']
+        self.assertEqual(preferred_encodings(links),['https://example.org/other_0.ogg','https://example.org/song_0.ogg','https://example.org/song_1.ogg'])
 
 
 if __name__=='__main__':unittest.main()
