@@ -527,3 +527,121 @@ The wider ranges improve the aggregate score to 5.8084 but let worst-case median
 | heavy-heavy-d1-b0.1 | 1.345 | 1.046 | 13 / 9 | 0.935 |
 | heavy-heavy-d1-b0.2 | 1.494 | 1.051 | 13 / 9 | 0.955 |
 | heavy-heavy-d1-b0.35 | 1.571 | 1.061 | 13 / 9 | 0.932 |
+
+## Round 14 — Keep one Thread in reserve and tune earning bounds
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.7756.
+
+The one-Thread bank and adjusted weekly grants improve score to5.7756. Record the full scenario results and use them to tighten round15; no bot-efficiency acceptance is claimed. Native progression is unchanged from the200-seed bank.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 1 |
+| policy.rewards.seasonRankMax | 3 | 2 |
+| policy.spool.skinCost | 6 | 5 |
+| policy.spool.weeklyNetCap | 4 | 9 |
+| policy.fusion.legendary.yarn | 5 | 2 |
+| policy.seal.feeBp | 800 | 1100 |
+| sinks.polish.yarn.0 | 1 | 2 |
+| sinks.polish.yarn.1 | 1 | 2 |
+| sinks.decor.yarn | 2 | 4 |
+| sinks.display.yarn | 1 | 2 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.024 | 1.089 | 13 / 9 | 0.930 |
+| casual-heavy-d0.5-b0.2 | 1.105 | 1.099 | 13 / 9 | 0.955 |
+| casual-heavy-d0.5-b0.35 | 1.192 | 1.116 | 13 / 8.5 | 0.905 |
+| casual-heavy-d1-b0.1 | 1.312 | 1.073 | 13 / 9 | 0.948 |
+| casual-heavy-d1-b0.2 | 1.449 | 1.079 | 13 / 9 | 0.949 |
+| casual-heavy-d1-b0.35 | 1.527 | 1.086 | 13 / 8.5 | 0.930 |
+| balanced-d0.5-b0.1 | 1.041 | 1.068 | 13 / 9 | 0.936 |
+| balanced-d0.5-b0.2 | 1.103 | 1.076 | 13 / 9 | 0.925 |
+| balanced-d0.5-b0.35 | 1.189 | 1.092 | 13 / 9 | 0.927 |
+| balanced-d1-b0.1 | 1.358 | 1.054 | 13 / 9 | 0.938 |
+| balanced-d1-b0.2 | 1.462 | 1.061 | 13 / 9 | 0.938 |
+| balanced-d1-b0.35 | 1.552 | 1.072 | 13 / 9 | 0.930 |
+| heavy-heavy-d0.5-b0.1 | 1.053 | 1.051 | 13 / 9 | 0.942 |
+| heavy-heavy-d0.5-b0.2 | 1.114 | 1.058 | 13 / 9 | 0.934 |
+| heavy-heavy-d0.5-b0.35 | 1.185 | 1.072 | 13 / 9 | 0.929 |
+| heavy-heavy-d1-b0.1 | 1.416 | 1.041 | 13 / 9 | 0.942 |
+| heavy-heavy-d1-b0.2 | 1.520 | 1.046 | 13 / 9 | 0.951 |
+| heavy-heavy-d1-b0.35 | 1.590 | 1.056 | 13 / 9 | 0.934 |
+
+## Round 15 — Lower grants with affordable repeat sinks
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 6.3276.
+
+Reducing weekly Spool to 0.25–0.60 worsened the best score to 6.3276. Burn/claims spans 1.0035–1.6523, Star source/sink 1.0565–1.1227, and bot/human hourly earnings 0.9032–0.9485. Round12 remains stronger. Next narrow around its affordable sink prices and weekly supply; a structural earning rule is still needed for bots.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 0.55 |
+| policy.rewards.seasonRankMax | 3 | 4 |
+| policy.spool.skinCost | 6 | 5 |
+| policy.spool.weeklyNetCap | 4 | 6 |
+| policy.fusion.legendary.yarn | 5 | 1 |
+| policy.seal.feeBp | 800 | 1000 |
+| sinks.polish.yarn.1 | 1 | 3 |
+| sinks.decor.yarn | 2 | 3 |
+| sinks.display.yarn | 1 | 2 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.003 | 1.099 | 13 / 9 | 0.936 |
+| casual-heavy-d0.5-b0.2 | 1.050 | 1.108 | 13 / 9 | 0.947 |
+| casual-heavy-d0.5-b0.35 | 1.144 | 1.123 | 13 / 8.5 | 0.903 |
+| casual-heavy-d1-b0.1 | 1.328 | 1.082 | 13 / 9 | 0.949 |
+| casual-heavy-d1-b0.2 | 1.479 | 1.087 | 13 / 9 | 0.946 |
+| casual-heavy-d1-b0.35 | 1.577 | 1.095 | 13 / 8.5 | 0.910 |
+| balanced-d0.5-b0.1 | 1.013 | 1.078 | 13 / 9 | 0.928 |
+| balanced-d0.5-b0.2 | 1.099 | 1.086 | 13 / 9 | 0.915 |
+| balanced-d0.5-b0.35 | 1.165 | 1.101 | 13 / 9 | 0.928 |
+| balanced-d1-b0.1 | 1.411 | 1.067 | 13 / 9 | 0.926 |
+| balanced-d1-b0.2 | 1.530 | 1.072 | 13 / 9 | 0.916 |
+| balanced-d1-b0.35 | 1.625 | 1.081 | 13 / 9 | 0.916 |
+| heavy-heavy-d0.5-b0.1 | 1.031 | 1.062 | 13 / 9 | 0.933 |
+| heavy-heavy-d0.5-b0.2 | 1.099 | 1.070 | 13 / 9 | 0.938 |
+| heavy-heavy-d0.5-b0.35 | 1.157 | 1.083 | 13 / 9 | 0.933 |
+| heavy-heavy-d1-b0.1 | 1.468 | 1.057 | 13 / 9 | 0.933 |
+| heavy-heavy-d1-b0.2 | 1.587 | 1.061 | 13 / 9 | 0.935 |
+| heavy-heavy-d1-b0.35 | 1.652 | 1.071 | 13 / 9 | 0.938 |
+
+## Round 16 — Local supply and sink refinement
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.7086.
+
+Refining round12 yields score 5.7086; median ranges: burnClaims [1.0083, 1.5089], starRatio [1.0527, 1.1242], botRegularHourlyRatio [0.8985, 0.9511]. Price and grant tuning still cannot resolve bot efficiency. Confirm the current top10 at200 independent seeds before adding the structural earning lever.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 1.2 |
+| policy.rewards.seasonRankMax | 3 | 1 |
+| policy.spool.skinCost | 6 | 7 |
+| policy.spool.weeklyNetCap | 4 | 5 |
+| policy.fusion.legendary.yarn | 5 | 6 |
+| policy.seal.feeBp | 800 | 1100 |
+| sinks.polish.yarn.1 | 1 | 4 |
+| sinks.decor.yarn | 2 | 1 |
+| sinks.display.yarn | 1 | 2 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.011 | 1.100 | 13 / 9 | 0.923 |
+| casual-heavy-d0.5-b0.2 | 1.117 | 1.111 | 13 / 9 | 0.930 |
+| casual-heavy-d0.5-b0.35 | 1.205 | 1.124 | 13 / 8.5 | 0.899 |
+| casual-heavy-d1-b0.1 | 1.255 | 1.082 | 13 / 9 | 0.937 |
+| casual-heavy-d1-b0.2 | 1.406 | 1.086 | 13 / 9 | 0.951 |
+| casual-heavy-d1-b0.35 | 1.470 | 1.095 | 13 / 8.5 | 0.924 |
+| balanced-d0.5-b0.1 | 1.013 | 1.078 | 13 / 9 | 0.932 |
+| balanced-d0.5-b0.2 | 1.111 | 1.086 | 13 / 9 | 0.933 |
+| balanced-d0.5-b0.35 | 1.207 | 1.101 | 13 / 9 | 0.922 |
+| balanced-d1-b0.1 | 1.269 | 1.065 | 13 / 9 | 0.917 |
+| balanced-d1-b0.2 | 1.411 | 1.070 | 13 / 9 | 0.918 |
+| balanced-d1-b0.35 | 1.493 | 1.079 | 13 / 9 | 0.925 |
+| heavy-heavy-d0.5-b0.1 | 1.008 | 1.061 | 13 / 9 | 0.931 |
+| heavy-heavy-d0.5-b0.2 | 1.083 | 1.068 | 13 / 9 | 0.935 |
+| heavy-heavy-d0.5-b0.35 | 1.179 | 1.081 | 13 / 9 | 0.924 |
+| heavy-heavy-d1-b0.1 | 1.231 | 1.053 | 13 / 9 | 0.924 |
+| heavy-heavy-d1-b0.2 | 1.392 | 1.057 | 13 / 9 | 0.949 |
+| heavy-heavy-d1-b0.35 | 1.509 | 1.066 | 13 / 9 | 0.928 |

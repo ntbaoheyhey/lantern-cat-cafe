@@ -1,6 +1,6 @@
 {
   "label": "NATIVE-SENSITIVITY",
-  "date": "2026-11-13T12:37:08.093Z",
+  "date": "2026-11-13T14:45:37.047Z",
   "base": {
     "path": "reports/v3-shell/b2/econ/PROGRESSION-200.json",
     "sha256": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b"
@@ -11,7 +11,7 @@
     "sha256": "1f4b9b6ee85233fe1b85c1f3b2dbfd8886257f65a8b3a4c759f0f1cd55ab93c1"
   },
   "method": "Actual C2 transitions; rerun only the changed profile using the same 200 seeds, reuse unchanged profiles exactly. Timing changes rerun every profile. Integer perturbations with no policy change reuse verified records.",
-  "elapsedSeconds": 4408.641179416,
+  "elapsedSeconds": 12117.574769541,
   "complete": false,
   "cases": [
     {
@@ -102,6 +102,159 @@
       "manifest": {
         "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.0.upgrades-plus.json",
         "sha256": "f7974e3a5e3dc904b81520152088252de72c885a4c615fc1613c40a921c6cc75"
+      }
+    },
+    {
+      "assumption": "profiles.1.hours",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.hours-minus.json",
+        "sha256": "c6052c127d430ac62c53b5ddfab613e033fb1fd864a07d87ef36eff1cf82844b"
+      }
+    },
+    {
+      "assumption": "profiles.1.hours",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.hours-plus.json",
+        "sha256": "f8f7d5774cba27ffbdd8a60f315654d2b495abe6df10c1a9ad779bb621cefa99"
+      }
+    },
+    {
+      "assumption": "profiles.1.hoursSigma",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.hoursSigma-minus.json",
+        "sha256": "970653a7b6010c3fb548a5c5a19d08ca78d74b4c2ae2cad3ff776bcb13932665"
+      }
+    },
+    {
+      "assumption": "profiles.1.hoursSigma",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.hoursSigma-plus.json",
+        "sha256": "d3f9d6ba765e1963577bdc444b42037cad2a394cd08521e3e49d9b73b06cf8ea"
+      }
+    },
+    {
+      "assumption": "profiles.1.sessionMinutes",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.sessionMinutes-minus.json",
+        "sha256": "35ab36866eecaa4e30f1c40aa92327c1bf983d1c99e501bdbd347ad43e02f033"
+      }
+    },
+    {
+      "assumption": "profiles.1.sessionMinutes",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.sessionMinutes-plus.json",
+        "sha256": "9453876bb04c9dc24e27171270ca9eac0ffd9976c950a87b8c2193dcc073d48a"
+      }
+    },
+    {
+      "assumption": "profiles.1.activeDays",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.activeDays-minus.json",
+        "sha256": "5e4ae51bf86d283dc1c4c3d2898a2123ac0abf50fb4eee804bbd304ca74e8dc2"
+      }
+    },
+    {
+      "assumption": "profiles.1.activeDays",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.activeDays-plus.json",
+        "sha256": "9bd8a853d6ea5e2863a5d1ce2ff3cfb84649039229b377da280ae9722677e328"
+      }
+    },
+    {
+      "assumption": "profiles.1.upgrades",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.upgrades-minus.json",
+        "sha256": "0f7deb0c1d3c0f93f17cd261046f8d9a0b3de8b75d14ef4fec14802312285a70"
+      }
+    },
+    {
+      "assumption": "profiles.1.upgrades",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.1.upgrades-plus.json",
+        "sha256": "edd2247f80e42be43b34226a3b36e3a05aac5afd7dcce907989787b990411e0f"
+      }
+    },
+    {
+      "assumption": "profiles.2.hours",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.hours-minus.json",
+        "sha256": "2a0a7fd09e94c65b68a337840472a9a1224d6c08b490e4c68f065e0bb7571ec8"
+      }
+    },
+    {
+      "assumption": "profiles.2.hours",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.hours-plus.json",
+        "sha256": "43ee9dbfbf220ab20e1b6b102852ad13239c29314bc420af426608a65e1c6af1"
+      }
+    },
+    {
+      "assumption": "profiles.2.hoursSigma",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.hoursSigma-minus.json",
+        "sha256": "c27e092728a32302120114081d9d875ad13ce0959fa7d9dfb46aa33ff38c7ee1"
+      }
+    },
+    {
+      "assumption": "profiles.2.hoursSigma",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.hoursSigma-plus.json",
+        "sha256": "0cdda970f7640ef107020e2dbcb2d71516f900aa5640882755a8002eba47b58a"
+      }
+    },
+    {
+      "assumption": "profiles.2.sessionMinutes",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.sessionMinutes-minus.json",
+        "sha256": "2cef42974c5277caa13abeba66fbb26508fcb5b18539b285ba545b81ed4a2d63"
+      }
+    },
+    {
+      "assumption": "profiles.2.sessionMinutes",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.sessionMinutes-plus.json",
+        "sha256": "8ed889db5745b54971bb3513dd3aeaeca237ce54ea1cbe48b7fd7c960102bd93"
+      }
+    },
+    {
+      "assumption": "profiles.2.activeDays",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.2.activeDays-minus.json",
+        "sha256": "9517fb22fa3c1d38667f14b79438e1958de72f9b7f9e7463d93068ac0c41fccd"
       }
     }
   ]

@@ -1,0 +1,22 @@
+{
+  "pid": 6570,
+  "command": [
+    "node",
+    "tools/chain/economy-lab/confirm.mjs",
+    "--label",
+    "SOLO-PRESTRUCTURE-200",
+    "--seeds",
+    "200",
+    "--top",
+    "10",
+    "--workers",
+    "2",
+    "--bank",
+    "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+    "--rounds",
+    "9,10,11,12,13,14,15,16"
+  ],
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/e3-confirm-prestructure.log",
+  "utc": "2026-11-13T13:42:39.365172+00:00",
+  "purpose": "Independent200-seed confirmation of top10 before structural bot-rule work; all failures retained."
+}

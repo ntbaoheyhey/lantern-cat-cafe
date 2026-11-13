@@ -1,0 +1,24 @@
+{
+  "pid": 4712,
+  "command": [
+    "node",
+    "tools/chain/economy-lab/search.mjs",
+    "--round",
+    "16",
+    "--configs",
+    "40",
+    "--seeds",
+    "40",
+    "--workers",
+    "2",
+    "--bank",
+    "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+    "--config",
+    "reports/v3-shell/b2/econ/search/round-12-best.json",
+    "--levers",
+    "reports/v3-shell/b2/econ/search/round-16-levers.json"
+  ],
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/e3-round-16-solo.log",
+  "utc": "2026-11-13T13:34:35.376540+00:00",
+  "purpose": "Refine round12 around modest weekly supply and affordable repeat sinks; preserve the unresolved bot gate."
+}
