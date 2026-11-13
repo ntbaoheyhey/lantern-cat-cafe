@@ -1,5 +1,6 @@
 import {pilotFixture} from '../vfx-layered/fixture';
 import {prepareBattleSequence} from '../battle-v3/controls';
+import {advanceBattleClock} from '../battle-v3/final-hit';
 import {chainFlags} from '../chain/flags';
 import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -317,6 +318,10 @@ export class DepthModel {
     this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
     if (savingHeal) savingHeal.note = 'Clutch heal';
     this.plan = prepareBattleSequence(this, paceActionA6(createCardActionPlan(events, identity), battle.initial));
+    if(this.state.formationC2){
+      Object.assign(this.plan,{finalHit:lastHit});
+      if(this.roundPlan)Object.assign(this.roundPlan,{finalHit:!lastHit&&this.roundPlan.events.some(event=>event.type==='death')&&battle.actors.filter(target=>target.side==='enemy').every(target=>target.hp<=0)});
+    }
     if(this.a6Battle && this.plan.ultimate && actor.side==='party'){
       this.ultimateBannersAt=this.ultimateBannersAt.filter(at=>this.playbackAt-at<10000);
       if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+800/this.state.settings.speed;}
@@ -342,7 +347,7 @@ export class DepthModel {
       ? Math.max(milliseconds, Math.min(250, Math.max(0, now - previousFrame))) : milliseconds;
     this.playbackAt += elapsed;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
-    this.animationAt += elapsed * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
+    this.animationAt = advanceBattleClock(this.plan,this.animationAt,elapsed,this.state.settings.reducedMotion,this.galleryBattle?this.gallerySpeed:this.state.settings.speed);
     if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
       this.impactApplied = true;
       this.notify(false);
