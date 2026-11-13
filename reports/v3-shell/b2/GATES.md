@@ -5,10 +5,10 @@ Generated from current files. Missing evidence is FAIL; no production completion
 ```text
 PASS G0.inventory: measured 24; required every required card has gates and thresholds
 PASS G0.tests: measured 14; required passing test + SHA-256-verified log
-FAIL R.windows: measured missing; required >= 10 measured windows with all metrics, or logged videos missing
-FAIL R.candidates: measured missing; required >= 120 candidate files with licence URLs
-FAIL R.levers: measured missing; required >= 8 new economy levers with file:line
-FAIL R.report: measured missing; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
+PASS R.windows: measured 10; required >= 10 measured windows with all metrics, or logged videos missing
+PASS R.candidates: measured 766; required >= 120 candidate files with licence URLs
+PASS R.levers: measured 10; required >= 8 new economy levers with file:line
+PASS R.report: measured 8146; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
 FAIL S1.events: measured missing; required >= 160 complete events; 0 TBD
 FAIL S1.screens: measured missing; required >= 18 screens
 FAIL S1.existingCues: measured missing; required 0 existing cues absent; >= 1 inspected
@@ -66,56 +66,56 @@ FAIL U4.cls: measured missing; required 0 layout shifts > 0.05 CLS
 FAIL U4.fps: measured missing; required median >= 60 fps in panel transitions
 FAIL U4.reducedMotion: measured missing; required passing test + SHA-256-verified log
 FAIL S5.battle.render: measured missing; required >= 180s measured Opus render
-FAIL S5.battle.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.battle.onsetsPerSecond: measured missing; required reference +/- 30% (reference 4.066666666666666)
 FAIL S5.battle.layers: measured missing; required >= reference median - 0.5
-FAIL S5.battle.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.battle.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 0.6499999999999999)
 FAIL S5.battle.music: measured missing; required music bed >= 95%
-FAIL S5.battle.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.battle.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 5)
 FAIL S5.battle.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.battle.lufs: measured missing; required -16 to -13 LUFS
 FAIL S5.battle.peak: measured missing; required <= -1 dBTP
 FAIL S5.boss.render: measured missing; required >= 120s measured Opus render
-FAIL S5.boss.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.boss.onsetsPerSecond: measured missing; required reference +/- 30% (reference 4.066666666666666)
 FAIL S5.boss.layers: measured missing; required >= reference median - 0.5
-FAIL S5.boss.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.boss.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 0.6499999999999999)
 FAIL S5.boss.music: measured missing; required music bed >= 95%
-FAIL S5.boss.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.boss.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 5)
 FAIL S5.boss.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.boss.lufs: measured missing; required -16 to -13 LUFS
 FAIL S5.boss.peak: measured missing; required <= -1 dBTP
 FAIL S5.home.render: measured missing; required >= 60s measured Opus render
-FAIL S5.home.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.home.onsetsPerSecond: measured missing; required reference +/- 30% (reference 5.5)
 FAIL S5.home.layers: measured missing; required >= reference median - 0.5
-FAIL S5.home.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.home.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 8.9)
 FAIL S5.home.music: measured missing; required music bed >= 95%
-FAIL S5.home.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.home.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 2)
 FAIL S5.home.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.home.lufs: measured missing; required -20 to -16 LUFS
 FAIL S5.home.peak: measured missing; required <= -1 dBTP
 FAIL S5.bag.render: measured missing; required >= 60s measured Opus render
-FAIL S5.bag.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.bag.onsetsPerSecond: measured missing; required reference +/- 30% (reference 5.8)
 FAIL S5.bag.layers: measured missing; required >= reference median - 0.5
-FAIL S5.bag.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.bag.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 8.466666666666667)
 FAIL S5.bag.music: measured missing; required music bed >= 95%
-FAIL S5.bag.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.bag.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 2)
 FAIL S5.bag.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.bag.lufs: measured missing; required -20 to -16 LUFS
 FAIL S5.bag.peak: measured missing; required <= -1 dBTP
 FAIL S5.gacha.render: measured missing; required >= 60s measured Opus render
-FAIL S5.gacha.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.gacha.onsetsPerSecond: measured missing; required reference +/- 30% (reference 5.4)
 FAIL S5.gacha.layers: measured missing; required >= reference median - 0.5
-FAIL S5.gacha.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.gacha.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 8.233333333333333)
 FAIL S5.gacha.music: measured missing; required music bed >= 95%
-FAIL S5.gacha.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.gacha.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 0)
 FAIL S5.gacha.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.gacha.lufs: measured missing; required -20 to -16 LUFS
 FAIL S5.gacha.peak: measured missing; required <= -1 dBTP
 FAIL S5.forge.render: measured missing; required >= 60s measured Opus render
-FAIL S5.forge.onsetsPerSecond: measured missing; required reference +/- 30% (reference missing)
+FAIL S5.forge.onsetsPerSecond: measured missing; required reference +/- 30% (reference 5.966666666666667)
 FAIL S5.forge.layers: measured missing; required >= reference median - 0.5
-FAIL S5.forge.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference missing)
+FAIL S5.forge.tickTransientsPerSecond: measured missing; required reference +/- 40% (reference 3.433333333333333)
 FAIL S5.forge.music: measured missing; required music bed >= 95%
-FAIL S5.forge.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference missing)
+FAIL S5.forge.voiceContoursPerMinute: measured missing; required reference +/- 35% (reference 2)
 FAIL S5.forge.silence: measured missing; required <= reference + 3 percentage points
 FAIL S5.forge.lufs: measured missing; required -20 to -16 LUFS
 FAIL S5.forge.peak: measured missing; required <= -1 dBTP
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 499; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 560; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

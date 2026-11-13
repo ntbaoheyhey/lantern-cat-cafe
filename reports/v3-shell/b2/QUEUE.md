@@ -3,8 +3,8 @@
 Revision 2, 13 November 2026. A card is done only with all checker PASS lines below its entry.
 
 - [x] G0 — done (self-score 8/10 for acceptance tooling; production quality not yet scored)
-- [ ] R — in progress
-- [ ] S1 — todo
+- [x] R — done (self-score 8/10; spectral proxies explicitly qualified)
+- [ ] S1 — in progress
 - [ ] S2 — todo
 - [ ] S3 — todo
 - [ ] S4 — todo
@@ -52,3 +52,12 @@ PASS G0.inventory: measured 24; required every required card has gates and thres
 PASS G0.tests: measured 14; required passing test + SHA-256-verified log
 
 Checks: tests/g0-unit.log, tests/g0-types.log, tests/g0-suite.log. Full local suite passes; 2 expected failures and 11 existing skips in game rules remain explicitly reported.
+
+## R evidence
+
+PASS R.windows: measured 10; required >= 10 measured windows with all metrics, or logged videos missing
+PASS R.candidates: measured 766; required >= 120 candidate files with licence URLs
+PASS R.levers: measured 10; required >= 8 new economy levers with file:line
+PASS R.report: measured 8146; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
+
+Checks: tests/r-analysis.log (5), tests/r-types.log, tests/r-suite.log. Full local suite passes; 2 expected failures and 11 pre-existing skips remain disclosed. No reference audio was saved.
