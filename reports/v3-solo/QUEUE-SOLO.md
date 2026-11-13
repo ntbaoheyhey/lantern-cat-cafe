@@ -10,7 +10,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q3 | done | A | M1 29/29; dependencies 259/259; SOLO9/9; High59.95–60.05; parity | STARTED 2026-11-13T14:39:07.792289+00:00; PASS 259 A +9 SOLO; source af1e1fdf3; evidence a881b1fc8; ENDED 2026-11-13T16:15:40.347744+00:00 |
 | Q4 | active | B | E3 active:24 rounds/1273 unique; T-a..g PASS at200seeds, T-h132/170 complete with no misses; E4 proof16 receipts/18 shots; E5 generated with816 citations | STARTED 2026-11-13T16:16:50.578116+00:00 |
 | Q5 | done | B (+ A texts) | V8/8, S5 all PASS; 50/50 ultimate,62/62 skill; 6 full renders; reel90.054s; suite435 browser PASS | STARTED 2026-11-13T17:25:44.984813+00:00; source422585ca5/evidence d67b0a303; ENDED 2026-11-13T21:25:40.344963+00:00 |
-| Q6 | preparation | B | U3 54/54 >=8; button/font/word gates; draft changes outside live source until Q5 suite ends | STARTED 2026-11-13T21:17:35.227574+00:00 |
+| Q6 | active | B | U3 target54/54 >=8; preparation controls already repaired on A; rebuilding hero focus/bonds and labelled wallet first | STARTED 2026-11-13T21:17:35.227574+00:00 |
 | Q7 | todo | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS |  |
 | Q8 | todo | B (+ A attributes) | T1 coach and C1 >=3/4 live Fuji counters |  |
 | Q9 | todo | A/B by ownership | Open items then A P1, B P1-P8, E6 if E3 passed |  |
