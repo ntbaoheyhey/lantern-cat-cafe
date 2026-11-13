@@ -2,7 +2,7 @@
 
 Measured candidate: `497ba9738ee175c0efc7b21864fcdc44af611abac366f07e87150676eb995bd3`. These are simulations and disposable local transactions, not observed player behaviour or public-chain deployment.
 
-Search: 24 rounds, 1273 distinct configurations. Final confirmation: 18 scenarios, 200 seeds per scenario. Sensitivity coverage: 45 / 85 assumptions. Incomplete cases remain failed evidence.
+Search: 24 rounds, 1273 distinct configurations. Final confirmation: 18 scenarios, 200 seeds per scenario. Sensitivity coverage: 65 / 85 assumptions. Incomplete cases remain failed evidence.
 
 ## Targets
 
