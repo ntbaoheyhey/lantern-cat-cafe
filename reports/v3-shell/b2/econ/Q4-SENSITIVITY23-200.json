@@ -1,0 +1,824 @@
+{
+  "label": "Q4-SENSITIVITY23-200",
+  "seeds": 200,
+  "firstSeed": 63113,
+  "date": "2026-11-13T17:33:29.527Z",
+  "configSource": {
+    "path": "reports/v3-shell/b2/econ/search/round-23-best.json",
+    "sha256": "603c1672f5d3b0f7aea734a7bf8ffdeb450fc44c9be5fe2fe31d34624e0d5df3"
+  },
+  "modelSnapshot": {
+    "path": "reports/v3-shell/b2/econ/snapshots/sensitivity-Q4-SENSITIVITY23-200.json.gz",
+    "sha256": "84d1eafa50cd710c0ac95ad304871a80892b9bdf8aa2bbcdd93d8ba536271287"
+  },
+  "bank": {
+    "path": "reports/v3-shell/b2/econ/PROGRESSION-200.jsonl.gz",
+    "sha256": "2b6182d99a05b9e314933b87d1f55e8e8864f9edb1c8501d7c8c8760fd6dbddd",
+    "accounts": 1000,
+    "seedsPerProfile": 200,
+    "days": 42,
+    "profiles": [
+      {
+        "id": "casual",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 13,
+          "p10": 4,
+          "p90": 18
+        },
+        "firstSources": {
+          "tailor": 155,
+          "route:campaign": 24,
+          "gear-invitation": 21
+        }
+      },
+      {
+        "id": "regular",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3.900000000000002,
+          "p90": 12
+        },
+        "firstSources": {
+          "tailor": 164,
+          "route:campaign": 22,
+          "gear-invitation": 14
+        }
+      },
+      {
+        "id": "heavy",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 16,
+          "route:campaign": 19
+        }
+      },
+      {
+        "id": "whale-free",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      },
+      {
+        "id": "bot",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 9
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      }
+    ],
+    "manifest": "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+  },
+  "complete": false,
+  "elapsedSeconds": 0.0008138749999999959,
+  "assumptions": [
+    {
+      "path": "demand",
+      "kind": "token",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.hours",
+      "name": "casual.hours",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.hoursSigma",
+      "name": "casual.hoursSigma",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.sessionMinutes",
+      "name": "casual.sessionMinutes",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.activeDays",
+      "name": "casual.activeDays",
+      "kind": "native",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.upgrades",
+      "name": "casual.upgrades",
+      "kind": "native",
+      "probability": false,
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.churnFirst",
+      "name": "casual.churnFirst",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.churnLater",
+      "name": "casual.churnLater",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.deed",
+      "name": "casual.deed",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.withdraw",
+      "name": "casual.withdraw",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.sink",
+      "name": "casual.sink",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.market",
+      "name": "casual.market",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.sell",
+      "name": "casual.sell",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.0.buy",
+      "name": "casual.buy",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.hours",
+      "name": "regular.hours",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.hoursSigma",
+      "name": "regular.hoursSigma",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.sessionMinutes",
+      "name": "regular.sessionMinutes",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.activeDays",
+      "name": "regular.activeDays",
+      "kind": "native",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.upgrades",
+      "name": "regular.upgrades",
+      "kind": "native",
+      "probability": false,
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.churnFirst",
+      "name": "regular.churnFirst",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.churnLater",
+      "name": "regular.churnLater",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.deed",
+      "name": "regular.deed",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.withdraw",
+      "name": "regular.withdraw",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.sink",
+      "name": "regular.sink",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.market",
+      "name": "regular.market",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.sell",
+      "name": "regular.sell",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.1.buy",
+      "name": "regular.buy",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.hours",
+      "name": "heavy.hours",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.hoursSigma",
+      "name": "heavy.hoursSigma",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.sessionMinutes",
+      "name": "heavy.sessionMinutes",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.activeDays",
+      "name": "heavy.activeDays",
+      "kind": "native",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.upgrades",
+      "name": "heavy.upgrades",
+      "kind": "native",
+      "probability": false,
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.churnFirst",
+      "name": "heavy.churnFirst",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.churnLater",
+      "name": "heavy.churnLater",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.deed",
+      "name": "heavy.deed",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.withdraw",
+      "name": "heavy.withdraw",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.sink",
+      "name": "heavy.sink",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.market",
+      "name": "heavy.market",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.sell",
+      "name": "heavy.sell",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.2.buy",
+      "name": "heavy.buy",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.hours",
+      "name": "whale-free.hours",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.hoursSigma",
+      "name": "whale-free.hoursSigma",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.sessionMinutes",
+      "name": "whale-free.sessionMinutes",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.activeDays",
+      "name": "whale-free.activeDays",
+      "kind": "native",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.upgrades",
+      "name": "whale-free.upgrades",
+      "kind": "native",
+      "probability": false,
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.churnFirst",
+      "name": "whale-free.churnFirst",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.churnLater",
+      "name": "whale-free.churnLater",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.deed",
+      "name": "whale-free.deed",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.withdraw",
+      "name": "whale-free.withdraw",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.sink",
+      "name": "whale-free.sink",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.market",
+      "name": "whale-free.market",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.sell",
+      "name": "whale-free.sell",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.3.buy",
+      "name": "whale-free.buy",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.hours",
+      "name": "bot.hours",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.hoursSigma",
+      "name": "bot.hoursSigma",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.sessionMinutes",
+      "name": "bot.sessionMinutes",
+      "kind": "native",
+      "probability": false,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.activeDays",
+      "name": "bot.activeDays",
+      "kind": "native",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": "Native session replay is incomplete; no rescaled substitute is used."
+    },
+    {
+      "path": "profiles.4.upgrades",
+      "name": "bot.upgrades",
+      "kind": "native",
+      "probability": false,
+      "integer": true,
+      "cases": [],
+      "reason": "Native session replay is incomplete; no rescaled substitute is used."
+    },
+    {
+      "path": "profiles.4.churnFirst",
+      "name": "bot.churnFirst",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.churnLater",
+      "name": "bot.churnLater",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.deed",
+      "name": "bot.deed",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.withdraw",
+      "name": "bot.withdraw",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.sink",
+      "name": "bot.sink",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.market",
+      "name": "bot.market",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.sell",
+      "name": "bot.sell",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "profiles.4.buy",
+      "name": "bot.buy",
+      "kind": "token",
+      "probability": true,
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "timing.decisionSeconds",
+      "kind": "native",
+      "cases": [],
+      "reason": "Native session replay is incomplete; no rescaled substitute is used."
+    },
+    {
+      "path": "timing.battleActionSeconds",
+      "kind": "native",
+      "cases": [],
+      "reason": "Native session replay is incomplete; no rescaled substitute is used."
+    },
+    {
+      "path": "timing.minimumEncounterSeconds",
+      "kind": "native",
+      "cases": [],
+      "reason": "Native session replay is incomplete; no rescaled substitute is used."
+    },
+    {
+      "path": "initial.testerYarn",
+      "kind": "token",
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "initial.testerRecipients",
+      "kind": "token",
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "initial.marketYarnPerParticipant",
+      "kind": "token",
+      "integer": false,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "preferences.loadoutItems",
+      "kind": "token",
+      "integer": true,
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.casual-heavy.0",
+      "kind": "token",
+      "mix": "casual-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.casual-heavy.1",
+      "kind": "token",
+      "mix": "casual-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.casual-heavy.2",
+      "kind": "token",
+      "mix": "casual-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.casual-heavy.3",
+      "kind": "token",
+      "mix": "casual-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.balanced.0",
+      "kind": "token",
+      "mix": "balanced",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.balanced.1",
+      "kind": "token",
+      "mix": "balanced",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.balanced.2",
+      "kind": "token",
+      "mix": "balanced",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.balanced.3",
+      "kind": "token",
+      "mix": "balanced",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.heavy-heavy.0",
+      "kind": "token",
+      "mix": "heavy-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.heavy-heavy.1",
+      "kind": "token",
+      "mix": "heavy-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.heavy-heavy.2",
+      "kind": "token",
+      "mix": "heavy-heavy",
+      "cases": [],
+      "reason": null
+    },
+    {
+      "path": "mixes.heavy-heavy.3",
+      "kind": "token",
+      "mix": "heavy-heavy",
+      "cases": [],
+      "reason": null
+    }
+  ]
+}

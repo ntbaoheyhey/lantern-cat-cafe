@@ -250,6 +250,77 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round23.log",
-    "started": "2026-11-13T17:13:34.699093+00:00"
+    "started": "2026-11-13T17:13:34.699093+00:00",
+    "completed": "2026-11-13T17:31:10.984247+00:00"
+  },
+  {
+    "name": "confirm-round23",
+    "pid": 59131,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/confirm.mjs",
+      "--label",
+      "Q4-CONFIRM23-200",
+      "--rounds",
+      "23",
+      "--top",
+      "10",
+      "--seeds",
+      "200",
+      "--workers",
+      "2",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-confirm23.log",
+    "started": "2026-11-13T17:31:10.984247+00:00"
+  },
+  {
+    "name": "round24-local-margin",
+    "pid": 59132,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "24",
+      "--method",
+      "coordinate",
+      "--configs",
+      "80",
+      "--seeds",
+      "40",
+      "--workers",
+      "2",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-23-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND24-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round24.log",
+    "started": "2026-11-13T17:31:10.984247+00:00"
+  },
+  {
+    "name": "sensitivity-round23",
+    "pid": 59609,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/sensitivity.mjs",
+      "--label",
+      "Q4-SENSITIVITY23-200",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-23-best.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+      "--native-index",
+      "reports/v3-shell/b2/econ/NATIVE-SENSITIVITY.json",
+      "--seeds",
+      "200",
+      "--workers",
+      "2"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-sensitivity23.log",
+    "started": "2026-11-13T17:33:29.221422+00:00"
   }
 ]
