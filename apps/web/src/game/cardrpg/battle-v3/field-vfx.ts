@@ -32,7 +32,7 @@ export class FieldVfx {
   if(at<80||release<=0)return;
   const shader=seq?.vfx.find(t=>t.type==='shader'),family=shader?.source??plan.shape;
   const seed=[...owner].reduce((n,ch)=>n+ch.charCodeAt(0),0),viewportHeight=Math.max(height,typeof window==='undefined'?height:window.innerHeight);
-  const radius=Math.sqrt(width*viewportHeight*(tier==='basic'?.05:.15)/Math.PI)*(tier==='basic'?(owner==='velvet'?2.2:1.5):1.65);
+  const radius=Math.sqrt(width*viewportHeight*(tier==='basic'?.05:.15)/Math.PI)*(tier==='basic'?(owner==='velvet'?2.2:seq?1.5:1.8):1.65);
   const targets=plan.targetIds.length?plan.targetIds:[plan.actorId];
   Object.assign(this.audit,{skill:plan.presentationId??plan.skillId,tier});
   if(tier!=='basic')this.castField(c,owner,width,height,at/1000,release,palette,seed,view.reducedMotion);

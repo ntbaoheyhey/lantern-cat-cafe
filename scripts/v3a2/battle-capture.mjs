@@ -39,6 +39,9 @@ try{
   await page.evaluate(()=>document.fonts.ready);
   await page.clock.install({time:new Date('2026-11-13T00:00:00Z')});
   await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));
+  // The capture owns the renderer clock. React's HUD RAF may still paint, but
+  // a second scene RAF would mix performance.now() with fixedTime and reset bursts.
+  await page.evaluate(()=>cancelAnimationFrame(window.__depthScene.raf));
   const encoder=spawn('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-framerate',String(fps),'-vcodec','png','-i','pipe:0','-an','-c:v','libvpx-vp9','-b:v','0','-crf','33','-row-mt','1','-pix_fmt','yuv420p',resolve(folder,'battle.webm')],{stdio:['pipe','ignore','pipe']});
   let fferror='';encoder.stderr.on('data',d=>{fferror+=d;});const encoded=new Promise((res,rej)=>{encoder.on('error',rej);encoder.on('close',code=>code===0?res():rej(Error(fferror)));});
   const frames=[],minimumFrames=Math.ceil(seconds*fps),completeActions=args.includes('--complete-actions');let outstanding=false;

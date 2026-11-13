@@ -32,6 +32,7 @@ try{
    },t);
    await page.clock.runFor(1);
    const png=await page.screenshot();shots.push(await sharp(png).resize(400,225).png().toBuffer());
+   if(beat===1&&['soot-3','clover-2','biscuit-3'].includes(id))await writeFile(resolve(out,'contact-'+id+'.png'),png);
    await writeFile(resolve(out,`${id}-effect-${beat}.png`),Buffer.from(sample.effects.split(',')[1],'base64'));delete sample.effects;frames.push(sample);
    if(preview&&beat===1)await writeFile(resolve(out,'preview-'+id+'.png'),png);
   }

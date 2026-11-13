@@ -3,7 +3,7 @@ import type {Anchor} from '../../squad/turn3d/scene';
 import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
 import type {SequencePlan} from './sequence';
-import {numberPieces} from './number-pieces';
+import {numberPieces,numberRecipients} from './number-pieces';
 type Glyph={x:number;y:number;width:number;height:number};
 type Atlas={canvas:HTMLCanvasElement;glyphs:Map<string,Glyph>;digitHeight:number};
 type Burst={key:string;id:string;text:string;x:number;y:number;at:number;height:number;color:string;critical:boolean;kind:string};
@@ -48,7 +48,7 @@ export class BattleNumbers {
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
   const c=this.c;c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);this.drawn.length=0;
   this.canvas.hidden=!enabled;this.host.dataset.puppetNumbers=String(enabled);if(!enabled)return;
-  if(frame?.plan!==this.plan){this.plan=frame?.plan??null;this.pending=frame?puppetNumberRows(frame.plan,presentation):[];this.shown.clear();this.frameAt=-1;}
+  if(frame?.plan!==this.plan){this.plan=frame?.plan??null;this.pending=frame?puppetNumberRows({...frame.plan,targetIds:numberRecipients(frame.plan)},presentation):[];this.shown.clear();this.frameAt=-1;}
   if(frame&&frame.elapsed<this.frameAt){this.shown.clear();this.bursts.length=0;}
   if(frame){
    this.frameAt=frame.elapsed;const contact=frame.plan.beats[2]!.start,tier=(frame.plan as SequencePlan).sequence?.tier??(frame.plan.ultimate?'ultimate':'basic');

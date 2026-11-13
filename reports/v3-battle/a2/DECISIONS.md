@@ -56,3 +56,6 @@ The first enlarged procedural pilot measured 20–44% coverage but looked like f
 
 ## V2 distinctness diagnostic — 2026-11-13
 All 24 actives covered 18.8–40.1% of the viewport, but full-canvas RGB SSIM peaked at0.727 (limit0.6); Velvet basic covered only2.74% (limit5%). Retain these failed measurements. Increase Velvet’s painted slash reach and give each cat an environmental cast motif (doors, ember rain, leaves, shields, constellations, ink mist, stitches, steam, wind, crescents, flowers, ice). Soot/Mallow and Clover/Marigold now use different silhouettes. Measure again with the same full-canvas black-composite SSIM; no crops or thresholds changed.
+
+## V2 live-fixture repair — 2026-11-13
+All-gallery coverage and SSIM passed, but wave1 retained two real failures: healer basic4.50% (min5%) and zero visible secondary damage from Mochi’s shield ultimate. The number list only enumerated primary friendly recipients; it now includes numeric resolved-event recipients without modifying the plan. Enemy fallback effects receive a wider painted shape. The capture also lacked scene RAF cancellation, mixing two clocks and clearing number bursts; the recorder now owns the render clock. Re-record all three fixtures; preserve the failed diagnostics, keep all thresholds.

@@ -1,6 +1,7 @@
 # V3-A2 handoff
 NOW: V2 painted field skills and 46px bitmap numbers implemented; collecting all36 strips.
-FIND/FIX: V2 solid shapes and hard face cutouts looked wrong despite area PASS. Replaced with painted cores and feathered protection.
+FIND/FIX: V2 live capture omits Mochi ult secondary damage: puppetNumberRows only visits plan.targetIds. Add all numeric recipients.
+FIND/FIX: capture did not cancel scene RAF; mixed clocks reset number bursts. Cancel renderer RAF before fixed steps. Healer basic4.5%<5%.
 NEXT 1: Finish V2 measured capture/SSIM, full suite, commit/push; retain shared E2E failure.
 NEXT 2: V2 larger field shapes, bitmap numbers and 36+ sequence strips; remeasure M1.
 NEXT 3: V2 field density to resolve M1 motion energy; V3 audio; T1 HUD; polish.
