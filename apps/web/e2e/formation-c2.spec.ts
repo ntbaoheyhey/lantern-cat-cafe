@@ -1,5 +1,6 @@
 import type { SpineScene } from '../src/game/cardrpg/spine/scene';
-import { expect, test } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from './support/depth-fixture';
 
 test('C2 recovers a fallen frontline through the two visible placement taps', async ({page}) => {
   await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');

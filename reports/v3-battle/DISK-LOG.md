@@ -408,3 +408,11 @@ Before: 100 GiB available (df).
 Free: 98.97 GiB before; 98.97 GiB after.
 - Removed `/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/.vite` (0.00 MiB; regenerable).
 No stopped worktrees are marked prunable; none removed. Protected paths retained.
+
+## Resume 2026-11-13T00:22:07.014820+00:00
+Free before: 98.00 GiB; after: 98.28 GiB.
+- /Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist/v2-server: 157,869,392 bytes
+- /Users/bao/taskbar-hero-cardrpg-a6/apps/web/dist-v2/e2e-5971: 110,661,375 bytes
+Active full E2E outputs/caches retained until run exits. No worktrees were marked prunable; none removed.
+
+Correction: the nested dist/v2-server output was still used by guidance cases later in the full E2E run. Restored with server-build.mjs --build-only and the same ports; affected cases will be rerun. Further cleanup waits for all owned servers to exit.

@@ -1,4 +1,5 @@
-import {expect,test,type Page} from '@playwright/test';
+import {expect,type Page} from '@playwright/test';
+import {test} from './support/depth-fixture';
 
 async function fresh(page:Page){
  await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');

@@ -1,4 +1,5 @@
-import {expect,test} from '@playwright/test';
+import {expect} from '@playwright/test';
+import {test} from './support/depth-fixture';
 import {runBudget} from '../../../tools/cardrpg-c2/word-budget.mjs';
 
 test('C2 player screens and route decisions stay within 25 visible words',async({page})=>{

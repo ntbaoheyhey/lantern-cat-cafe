@@ -1,0 +1,103 @@
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/supabase/tests
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  07:16:33
+packages/chain test:    Duration  458ms (import 41%, transform 40%, tests 17%, worker 1%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  07:16:33
+packages/auth test:    Duration  541ms (import 60%, tests 27%, transform 11%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  ❯ src/deno-imports.test.ts (4 tests | 2 failed) 2016ms
+supabase/tests test:    × every Edge Function resolves its transitive local imports using its own Deno map 884ms
+supabase/tests test:    × does not exempt formerly unresolved explicit-index imports 289ms
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+supabase/tests test:  FAIL  src/deno-imports.test.ts > every Edge Function resolves its transitive local imports using its own Deno map
+supabase/tests test: AssertionError: expected 'chain-campaign: packages/game-rules/s…' to be '' // Object.is equality
+supabase/tests test: - Expected
+supabase/tests test: + Received
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/state.ts -> ./formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/equipment-v4.ts -> ./economy-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/equipment.ts -> ./economy-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/loadouts-v4.ts -> ./formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/skills-v5/shapes.ts -> ../formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/gacha-v4.ts -> ./economy-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/run.ts -> ./formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/run.ts -> ./balance-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/tower-a6.ts -> ./formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/battle.ts -> ./formation-c2
+supabase/tests test: + chain-campaign: packages/game-rules/src/cardrpg/depth/battle.ts -> ./economy-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/state.ts -> ./formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/equipment-v4.ts -> ./economy-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/equipment.ts -> ./economy-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/loadouts-v4.ts -> ./formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/skills-v5/shapes.ts -> ../formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/gacha-v4.ts -> ./economy-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/run.ts -> ./formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/run.ts -> ./balance-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/tower-a6.ts -> ./formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/battle.ts -> ./formation-c2
+supabase/tests test: + chain-campaign-reward: packages/game-rules/src/cardrpg/depth/battle.ts -> ./economy-c2
+supabase/tests test: +
+supabase/tests test:  ❯ src/deno-imports.test.ts:15:25
+supabase/tests test:      13| it("every Edge Function resolves its transitive local imports using it…
+supabase/tests test:      14|   const result = run(root);
+supabase/tests test:      15|   expect(result.stderr).toBe("");
+supabase/tests test:        |                         ^
+supabase/tests test:      16|   expect(result.status).toBe(0);
+supabase/tests test:      17|   expect(result.stdout).toMatch(/functions clean/);
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+supabase/tests test:  FAIL  src/deno-imports.test.ts > does not exempt formerly unresolved explicit-index imports
+supabase/tests test: AssertionError: expected [ …(22) ] to deeply equal []
+supabase/tests test: - Expected
+supabase/tests test: + Received
+supabase/tests test: - []
+supabase/tests test: + [
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/state.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/equipment-v4.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/equipment.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/loadouts-v4.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/skills-v5/shapes.ts -> ../formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/gacha-v4.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/run.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/run.ts -> ./balance-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/tower-a6.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/battle.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign: packages/game-rules/src/cardrpg/depth/battle.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/state.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/equipment-v4.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/equipment.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/loadouts-v4.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/skills-v5/shapes.ts -> ../formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/gacha-v4.ts -> ./economy-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/run.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/run.ts -> ./balance-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/tower-a6.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/battle.ts -> ./formation-c2",
+supabase/tests test: +   "chain-campaign-reward: packages/game-rules/src/cardrpg/depth/battle.ts -> ./economy-c2",
+supabase/tests test: + ]
+supabase/tests test:  ❯ src/deno-imports.test.ts:38:60
+supabase/tests test:      36| it("does not exempt formerly unresolved explicit-index imports", () =>…
+supabase/tests test:      37|   const result = run(root);
+supabase/tests test:      38|   expect(result.stderr.trim().split("\n").filter(Boolean)).toEqual([]);
+supabase/tests test:        |                                                            ^
+supabase/tests test:      39| });
+supabase/tests test:      40|
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+supabase/tests test:  Test Files  1 failed | 47 passed (48)
+supabase/tests test:       Tests  2 failed | 713 passed (715)
+supabase/tests test:    Start at  07:16:33
+supabase/tests test:    Duration  12.02s (tests 77%, import 15%, transform 8%)
+supabase/tests test: Failed
+/Users/bao/taskbar-hero-cardrpg-a6/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run`
+Exit status 1

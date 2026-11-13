@@ -1,4 +1,5 @@
-import {expect,test} from '@playwright/test';
+import {expect} from '@playwright/test';
+import {test} from './support/depth-fixture';
 import type {SpineScene} from '../src/game/cardrpg/spine/scene';
 import {pilotFixture} from '../src/game/cardrpg/vfx-layered/fixture';
 
