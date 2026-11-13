@@ -1,0 +1,102 @@
+COMMAND: pnpm test
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6
+> node --test scripts/*.test.mjs tools/cardrpg-c2/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (13.505791ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (5.329416ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (3.721292ms)
+✔ output order is stable regardless of file creation order (3.439583ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (5.192916ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (35.960583ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (25.200959ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (20.940958ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (23.824167ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (19.657958ms)
+✔ auth health fails closed when the transport is unavailable (16.254541ms)
+✔ calendar strata cover every start date with balanced exposure, including a year boundary (3.14775ms)
+✔ one-date plan retains the original calendar and matched-profile dates are deterministic (0.444542ms)
+✔ invalid dates and cohort ranges fail before projections can silently change identity (0.446125ms)
+✔ equal no-loss runs pass parity but retain censoring (3.499542ms)
+✔ equal summary numbers cannot conceal different combat decisions or outcomes (0.4785ms)
+✔ session failure or a different horizon cannot pass acceptance (0.328833ms)
+✔ timing and economic differences above the threshold fail independently (0.44375ms)
+✔ a simulated loss cannot match a censored real observation (0.129041ms)
+✔ normal HP excludes elite encounters and earned skips, while keeping their wins (0.088292ms)
+✔ an in-progress real trace does not count as a completed seed (0.30575ms)
+✔ cohort median includes censored sessions rather than just losing players (0.298416ms)
+✔ a decision or progression mismatch is rejected even with identical fights (0.278583ms)
+✔ missing or reordered middle encounters cannot hide behind matching aggregate counts (0.52925ms)
+✔ empty action traces or missing playback measurements cannot pass (0.128625ms)
+✔ balance requires uncensored median, no early loss, both HP statistics and the full cohort (0.176792ms)
+✔ boss timing pairs identical encounters and discloses a verified live tail at the fixed horizon (2.203666ms)
+✔ a missing, changed or overlong boss tail cannot be excused as horizon censoring (0.322667ms)
+✔ gross issuance survives salvage, duplicates, and the weekly boundary (2.372625ms)
+✔ a missing observed purchase is detected by conservation (0.475583ms)
+✔ daily counters are not tradable materials and inventory existing at entry is not new issuance (1.129917ms)
+✔ fixture union retains every context and excludes historical outcomes (6.478292ms)
+✔ resuming validates the retained paired outcomes and derived statistics (0.273958ms)
+✔ item comparisons retain regressions and saturated cells instead of treating Power as a win rate (0.575583ms)
+✔ rarity quantiles retain accounts censored at the observation horizon (0.499458ms)
+✔ partial weeks use actual exposure and gross supply is independent of the bag (2.359792ms)
+✔ the shared player repairs a fallen frontline through a legal swap without healing or rerolling (7.098792ms)
+✔ the shared player leaves a legal healthy or partly fallen formation alone (3.057167ms)
+✔ unknown Epic gear stays bound and a one-time judge drop is never recurring campaign supply (1.293ms)
+✔ active account mixes weight created items, preserving per-profile exposure (0.499167ms)
+✔ calendar-stratified supply discloses its actual window without claiming independent daily draws (1.178375ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 265.101709
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  15:47:29
+packages/chain test:    Duration  351ms (import 47%, tests 36%, transform 12%, worker 4%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  15:47:29
+packages/auth test:    Duration  462ms (import 59%, tests 33%, transform 7%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  49 passed (49)
+supabase/tests test:       Tests  724 passed (724)
+supabase/tests test:    Start at  15:47:29
+supabase/tests test:    Duration  15.44s (tests 83%, import 15%, transform 1%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  93 passed | 3 skipped (96)
+packages/game-rules test:       Tests  1388 passed | 2 expected fail | 11 skipped (1401)
+packages/game-rules test:    Start at  15:47:29
+packages/game-rules test:    Duration  46.32s (tests 94%, import 5%, transform 1%)
+packages/game-rules test:     Isolate  96 workers spawned · ~114ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~5.35s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  15:48:17
+packages/api-contract test:    Duration  362ms (transform 65%, import 29%, tests 4%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+apps/web test:  Test Files  294 passed (294)
+apps/web test:       Tests  2523 passed (2523)
+apps/web test:    Start at  15:48:17
+apps/web test:    Duration  103.58s (environment 48%, tests 34%, import 15%, transform 2%)
+apps/web test: Environment  jsdom was created 294 times · 87.72s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

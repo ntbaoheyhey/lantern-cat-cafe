@@ -1,0 +1,18 @@
+import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';import assert from 'node:assert/strict';import sharp from 'sharp';
+import {root,evidenceMeta} from './check-gates.mjs';import {chromium,openFixture,config} from './browser-fixture.mjs';
+const out=resolve(root,'reports/v3-battle/a2/P8');await mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+try{
+ const {page,errors}=await openFixture(browser,config.fixtures[0]);await page.evaluate(()=>{const m=window.__depthReview;m.tutorialBattle=null;m.state.run=null;m.watching=false;m.paused=false;m.plan=null;m.start(1,'campaign',1);m.enter(m.state.run.nodes[0].id);});await page.clock.runFor(500);await page.locator('.c2-formation').waitFor();
+ const original=await page.evaluate(()=>{const m=window.__depthReview;return {seed:m.battle.seed,hp:m.state.run.hp,stats:m.battle.initial.enemyStats};});
+ const a=page.locator('.c2-seat[data-slot-index="0"]'),b=page.locator('.c2-seat[data-slot-index="2"]'),id=await a.getAttribute('data-seat');const source=page.locator(`[data-seat="${id}"]`),targetId=await b.getAttribute('data-seat');
+ const shots=[await sharp(await page.screenshot()).resize(640,360).png().toBuffer()];
+ await a.dragTo(b);await page.clock.runFor(400);assert.equal(await source.getAttribute('data-slot-index'),'2');shots.push(await sharp(await page.screenshot()).resize(640,360).png().toBuffer());
+ await page.setViewportSize({width:390,height:844});await page.clock.runFor(300);
+ const target=page.locator(`[data-seat="${targetId}"]`),from=await source.boundingBox(),to=await target.boundingBox();const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setTouchEmulationEnabled',{enabled:true});
+ const point=r=>({x:r.x+r.width/2,y:r.y+r.height/2});const s=point(from),t=point(to);
+ await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[s]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[t]});await page.clock.runFor(34);assert.equal(await page.locator('.c2-row-preview').getAttribute('data-row'),'front');await page.screenshot({path:resolve(out,'phone-preview.png')});
+ await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.clock.runFor(400);assert.equal(await source.getAttribute('data-slot-index'),'0');assert.equal(await page.locator('.c2-drag-ghost').count(),0);assert.equal(await page.locator('.c2-seat[aria-pressed=true]').count(),0);await page.screenshot({path:resolve(out,'phone-after.png')});
+ const row=await page.evaluate(()=>{const m=window.__depthReview;return {seed:m.battle.seed,hp:m.state.run.hp,stats:m.battle.initial.enemyStats,valid:window.__v3a2.R.validRowsC2(m.battle.initial.cats.map(c=>c.id),Object.fromEntries(m.battle.initial.cats.map(c=>[c.id,c.row])))};});assert.deepEqual({seed:row.seed,hp:row.hp,stats:row.stats},original);assert.ok(row.valid);assert.deepEqual(errors,[]);
+ await sharp({create:{width:1280,height:388,channels:3,background:'#171620'}}).composite([{input:Buffer.from('<svg width="1280" height="28"><text x="12" y="20" font-size="17" fill="white">Before / native drag swap — phone pointer preview and restored front row in separate captures</text></svg>'),left:0,top:0},...shots.map((input,i)=>({input,left:i*640,top:28}))]).png().toFile(resolve(out,'compare-formation.png'));
+ await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),nativeSwap:true,touchSwap:true,rowPreview:true,validRows:row.valid,seedHpStatsUnchanged:true,errors},null,2)+'\n');console.log('PASS: native and touch swaps; row preview; no stray tap; seed, HP and enemy stats unchanged');
+}finally{await browser.close();}

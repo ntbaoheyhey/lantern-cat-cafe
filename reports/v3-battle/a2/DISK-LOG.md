@@ -80,3 +80,9 @@ Before: 290 GiB free.
 Removed only regenerable worktree outputs: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp.
 After: /dev/disk3s1   926Gi   596Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
 No low-disk restriction. Current uncommitted evidence retained.
+
+## Resume 2026-11-13T08:54:27.726802+00:00
+Before: 290 GiB free.
+Removed regenerable worktree outputs: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp.
+After: /dev/disk3s1   926Gi   596Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Current evidence retained. No low-disk restriction.
