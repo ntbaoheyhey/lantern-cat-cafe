@@ -89,5 +89,52 @@
     ],
     "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/clarity-audit.log",
     "started": "2026-11-13T15:04:35.031927+00:00"
+  },
+  {
+    "name": "method4",
+    "pid": 28968,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/method4-runner.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method4.log",
+    "started": "2026-11-13T15:08:05.630903+00:00"
+  },
+  {
+    "name": "push-method4",
+    "pid": 28969,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-method4.log",
+    "started": "2026-11-13T15:08:05.630903+00:00"
+  },
+  {
+    "name": "push-method4-retry1",
+    "pid": 29077,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-method4-retry1.log",
+    "started": "2026-11-13T15:08:54.995209+00:00",
+    "reason": "Initial push returned HTTP408; verify remote after retry."
+  },
+  {
+    "name": "field-audit-method4",
+    "pid": 29182,
+    "command": [
+      "node",
+      "scripts/v3a2/field-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/field-audit-method4.log",
+    "started": "2026-11-13T15:09:29.596902+00:00"
   }
 ]

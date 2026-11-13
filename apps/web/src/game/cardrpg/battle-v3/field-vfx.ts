@@ -5,6 +5,7 @@ import type {PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool} from './field-pool';
 import {paintImpactWake} from './impact-wake';
 import {paintImpactStrokes} from './impact-strokes';
+import {paintImpactDebris} from './impact-debris';
 import {presentationTier} from './presentation';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
@@ -97,6 +98,10 @@ export class FieldVfx {
    }
    this.draws+=count;this.audit.particles+=count;this.audit.layers.push('element-particles');
    c.restore();
+   if(plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(id))){
+    const debris=paintImpactDebris(c,since,feet.x,feet.y-radius*.16,radius,target.x>=from.x?1:-1,palette,seed,targets.length,view.reducedMotion,view.quality==='low');
+    this.draws+=debris;this.audit.particles+=debris;if(debris)this.audit.layers.push('impact-debris');
+   }
    if(painted&&view.quality!=='low'&&paintImpactWake(c,painted,since,feet.x,feet.y,radius,target.x>=from.x?1:-1,targets.length,view.reducedMotion)){
     this.draws++;this.audit.layers.push('painted-impact-wake');
    }

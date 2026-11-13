@@ -38,3 +38,7 @@ The chapter aria-label repair preserves semantics, but did not resolve the A uni
 - 2026-11-13T15:02:13.359804+00:00 Q3 method2 full30.333s:15.698 energy,34/34 recoil,minimum action.1052,parity PASS;still FAIL. Method3 gives actual damage recipients a grounded pre-contact brace, separate from hitOffset/flash, mirrored for both sides. No brace on DoT, bystanders, freeze or stun. Camera/timing/estimator unchanged.
 
 - 2026-11-13T15:07:53.921141+00:00 Q3 method3:15.671 energy,34/34 hits,zero clipped face samples,parity PASS;still FAIL. Bracing improves recipient anticipation but cannot close motion energy. Method4 changes secondary motion: correct inverse after-image rotation and independently phased planted-foot weight/shoulder shifts. Next failure changes method again; no camera/timing/estimator edits.
+
+- Q3 method4 full30.333s=15.634;34/34 hits,zero clipped faces,parity PASS. Four attempts show root/secondary amplitude is not closing the full-frame gate. Change method: bounded ballistic contact debris tied only to actual damage events, to carry impact and recovery through the empty floor. Keep recipient brace/trail bug fix for readability; no estimator, camera or combat/voice clock changes.
+
+- Method5 adds16 short ballistic debris cut-outs for each damaged target (6 at Low,0 reduced motion);560ms lifetime, seekable trajectories, no ambient emission. A checker source lists now include the new debris module/tests and trail regression test so later edits invalidate evidence; no thresholds/assertions changed.

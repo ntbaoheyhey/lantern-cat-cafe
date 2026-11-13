@@ -1,0 +1,42 @@
+✔ every active requires one voice; half coverage must never pass (0.483833ms)
+✔ min: fake PASS and fake FAIL, NaN, absent target (0.086667ms)
+✔ max: fake PASS and fake FAIL, NaN, absent target (0.05325ms)
+✔ eq: fake PASS and fake FAIL, NaN, absent target (0.046042ms)
+✔ band: fake PASS and fake FAIL, NaN, absent target (0.0505ms)
+✔ every declared numeric gate rejects a failing value, including zero limits (0.184834ms)
+✔ absent evidence cannot pass using files or a past scheduled date (3.600292ms)
+✔ files: counts real nonempty files, rejects missing and empty artifacts (1.86875ms)
+✔ freshness: evidence from before the last source commit fails (108.686958ms)
+✔ date gate: real future sync cannot pass before its exact UTC time (0.347791ms)
+✔ fresh aggregate metadata cannot disguise an old raw motion capture (443.236208ms)
+✔ fixture matrix fails any missing fixture/resolution (0.444917ms)
+✔ Q2 fake PASS at boundaries (0.721917ms)
+✔ Q2 missing evidence fails (0.083792ms)
+✔ Q3 fake PASS at boundaries (0.070209ms)
+✔ Q3 missing evidence fails (0.04025ms)
+✔ Q7 fake PASS at boundaries (0.111ms)
+✔ Q7 missing evidence fails (0.039333ms)
+✔ Q2.matrix fake PASS and FAIL (0.123667ms)
+✔ Q2.ultimates fake PASS and FAIL (0.083041ms)
+✔ Q2.ultimate-interrupted fake PASS and FAIL (0.079417ms)
+✔ Q2.skill-interrupted fake PASS and FAIL (0.166333ms)
+✔ Q2.bark-spacing fake PASS and FAIL (0.098708ms)
+✔ Q2.parity fake PASS and FAIL (0.080416ms)
+✔ Q2.browser-errors fake PASS and FAIL (0.064166ms)
+✔ Q2.voice-contours fake PASS and FAIL (0.0595ms)
+✔ Q2.duration fake PASS and FAIL (0.051375ms)
+✔ Q3.enemy-actions fake PASS and FAIL (0.0565ms)
+✔ Q3.enemy-displacement fake PASS and FAIL (0.058417ms)
+✔ Q3.minimum-displacement fake PASS and FAIL (0.042416ms)
+✔ Q7.plates fake PASS and FAIL (0.043333ms)
+✔ Q7.caster-silhouettes fake PASS and FAIL (0.043792ms)
+✔ Q7.effect-saturation fake PASS and FAIL (0.031875ms)
+✔ Q7.effect-luminance fake PASS and FAIL (0.037375ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 614.661959
