@@ -12,7 +12,9 @@ const base='reports/v3-shell/b2',trial=process.env.MIX_TRIAL||'baseline';
 const runtimeRoot=resolve(process.env.AUDIO_RUNTIME_ROOT||'.');
 const runtimeUrl=process.env.AUDIO_URL||'http://127.0.0.1:5995';
 const mutedBuses=(process.env.DIAGNOSTIC_MUTE_BUSES||'').split(',').filter(Boolean);
+const stemNames=process.env.DIAGNOSTIC_STEMS?['music','ambience','sfx','voice','ui']:[];
 if(mutedBuses.length&&!trial.startsWith('diagnostic-'))throw Error('Stem isolation must be labelled diagnostic, never acceptance evidence.');
+if(stemNames.length&&!trial.startsWith('diagnostic-'))throw Error('Stem instrumentation must be labelled diagnostic.');
 const names=(process.env.AUDIO_SCENES||'battle,boss,home,bag,gacha,forge').split(',');
 const durations={battle:180,boss:120,home:60,bag:60,gacha:60,forge:60};
 const signed=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
@@ -26,7 +28,8 @@ try{
   p.setDefaultTimeout(15000);p.on('pageerror',e=>errors.push(e.message));
   p.on('console',m=>{if(m.type()==='warning'&&m.text().startsWith('Audio unavailable'))errors.push(m.text());});
   const raw=`tmp/b2-mix/${trial}-${name}.webm`,output=`${base}/renders/${trial}-${name}.opus`;
-  await installOutputCapture(p,raw);
+  const stemPaths=Object.fromEntries(stemNames.map(stem=>[stem,`${base}/renders/${trial}-${name}-${stem}.opus`]));
+  await installOutputCapture(p,raw,stemPaths);
   await p.addInitScript(()=>localStorage.setItem('lantern.coach.v3','{"disabled":true}'));
   await p.goto(runtimeUrl+'/?demo=1&squad=1&turn3d=1&cardrpg2=1&a6=1&formationc2=1');
   await p.getByRole('button',{name:'Play free',exact:true}).click();await p.locator('.uv-shell').waitFor();
@@ -98,7 +101,7 @@ try{
   execFileSync('ffmpeg',['-v','error','-y','-i',raw,'-c:a','copy',output]);rmSync(raw);
   const metrics=JSON.parse(execFileSync(process.env.AUDIO_PYTHON||'python3',['scripts/audio/analyse.py',output,'--duration',String(seconds+.2)],{encoding:'utf8',maxBuffer:8e6}));
   assertUnchanged(runtimeRoot,runtimeSources);
-  const result={name,...signed(output),...metrics,algorithmSha256:signed('scripts/audio/analyse.py').sha256,runtime:signed(log),runtimeSources,actions,errors,trial,...(mutedBuses.length?{diagnostic:true,mutedBuses}:{}),method:'Actual browser output, seeded local saves and real UI/rules actions; no test playback calls, output normalization or postmix effects.'};
+  const result={name,...signed(output),...metrics,algorithmSha256:signed('scripts/audio/analyse.py').sha256,runtime:signed(log),runtimeSources,actions,errors,trial,...(mutedBuses.length||stemNames.length?{diagnostic:true,mutedBuses,stems:Object.entries(stemPaths).map(([bus,path])=>({bus,...signed(path)}))}:{}),method:'Actual browser output, seeded local saves and real UI/rules actions; no test playback calls, output normalization or postmix effects.'};
   writeFileSync(`${base}/mix/${trial}-${name}.json`,JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify({trial,name,seconds:metrics.durationSeconds,onsets:metrics.onsetsPerSecond,layers:metrics.layersPerOnset,ticks:metrics.tickTransientsPerSecond,voices:metrics.voiceContoursPerMinute,bed:metrics.musicBedFraction,lufs:metrics.integratedLufs,peak:metrics.truePeakDbTP,errors}));
   if(errors.length)process.exitCode=1;

@@ -29,7 +29,7 @@ describe('layered playback admission and variants',()=>{
  it('plays four audible roles with bounded jitter, micro offsets and role EQ',async()=>{
   const e=new AudioEngine(()=>.5);await e.unlock();e.play('hit.blunt');await flush();
   expect(e.diagnostics.sfx).toBe(4);expect(e.hits.at(-1)?.layers?.map(l=>l.offsetMs)).toEqual([0,7,18,23]);
-  expect(Context.latest.filters.map(f=>[f.type,f.frequency.value])).toEqual([['lowshelf',1200],['lowshelf',180],['highpass',1800]]);
+  expect(Context.latest.filters.map(f=>[f.type,f.frequency.value])).toEqual(expect.arrayContaining([['lowshelf',1200],['lowshelf',180],['highpass',1800]]));
   expect(Context.latest.sources.map(s=>s.start.mock.calls[0]?.[0])).toEqual([10,10.007,10.018,10.023]);
  });
  it('restores nested dialog music while letting later navigation take precedence',async()=>{
@@ -40,8 +40,13 @@ describe('layered playback admission and variants',()=>{
   const closeOuter=e.musicScope('forge'),closeInner=e.musicScope('forge');await flush();
   closeOuter();await flush();expect(e.hits.filter(h=>h.id.startsWith('music.')).at(-1)?.id).toBe('music.forge');
   closeInner();await flush();expect(e.hits.filter(h=>h.id.startsWith('music.')).at(-1)?.id).toBe('music.home');
+  expect(Context.latest.filters.filter(f=>f.type==='highshelf').every(f=>f.gain.value===0)).toBe(true);
   const close=e.musicScope('forge');await flush();e.music('battle');await flush();close();await flush();
   expect(e.hits.filter(h=>h.id.startsWith('music.')).at(-1)?.id).toBe('music.battle');
+  expect(Context.latest.filters.some(f=>f.type==='highshelf'&&f.gain.value<0)).toBe(true);
+  const preferences=e.settings;e.stop();
+  expect(Context.latest.filters.filter(f=>f.type==='highshelf').every(f=>f.gain.value===0)).toBe(true);
+  expect(e.settings).toEqual(preferences);
  });
  it('avoids a repeated source when an element changes to a shorter overlapping pool',()=>{
   const p=new VariantPools(()=>0),a=[{id:'a'},{id:'b'},{id:'c'}],b=[{id:'b'},{id:'a'}];
@@ -68,11 +73,11 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.unlock();e.music('battle');await flush();
   const shelf=Context.latest.filters.find(f=>f.frequency.value===1200)!;
   expect(shelf.gain.value).toBe(0);
-  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-12);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(4);
+  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-12);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(2);
   Context.latest.sources.at(-1)!.onended!();expect(shelf.gain.value).toBe(0);
   expect(e.settings.music).toBe(.55);expect(e.diagnostics.voice).toBe(0);
   e.music('boss');await flush();Context.latest.currentTime+=8;
-  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(0);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(-1.5);
+  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(0);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(0);
   Context.latest.sources.at(-1)!.onended!();e.music('home');await flush();Context.latest.currentTime+=8;
   e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-6);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(3);
  });

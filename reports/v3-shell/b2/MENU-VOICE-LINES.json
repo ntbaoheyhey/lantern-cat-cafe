@@ -5,8 +5,8 @@
       "unitId": "mallow",
       "text": "Welcome home!",
       "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
-      "sha256": "620afee69a9f8111bb0bd9692aa53be613bfe2252cac7e9393cf1cc04f8f9e8a",
-      "durationSeconds": 1.161125,
+      "sha256": "ffcfa86ea9b6fd075216fae625b4c72c21592cfcdbc6f169229edce315ff97e2",
+      "durationSeconds": 1.3817083333333333,
       "production": {
         "profile": {
           "source": 333916,
@@ -63,7 +63,8 @@
           },
           "preserveFormants": true,
           "spokenCore": 0.45,
-          "paceMultiplier": 1.1
+          "paceMultiplier": 1.3,
+          "phraseAccent": 6
         },
         "semitones": 0.528,
         "grains": [
@@ -121,8 +122,8 @@
         "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
         "firstWordMs": 40
       },
-      "integratedLufs": -16.01,
-      "truePeakDbTP": -3.9,
+      "integratedLufs": -15.98,
+      "truePeakDbTP": -5.28,
       "expected": "Welcome home!",
       "recognized": "Welcome home.",
       "wordAccuracy": 1.0,

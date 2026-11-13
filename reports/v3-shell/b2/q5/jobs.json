@@ -196,5 +196,66 @@
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-processing-probes.log",
     "started": "2026-11-13T18:36:01.113312+00:00"
+  },
+  {
+    "name": "q5-capture26",
+    "pid": 27653,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-26.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture26.log",
+    "started": "2026-11-13T18:39:36.501669+00:00"
+  },
+  {
+    "name": "q5-stems26",
+    "pid": 27980,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-stems26.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stems26.log",
+    "started": "2026-11-13T18:41:22.447249+00:00",
+    "note": "Wait for capture27653, then pause owned simulations and record five simultaneous real buses. Diagnostic only."
+  },
+  {
+    "name": "q5-stems-clocked",
+    "pid": 29133,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-stems-clocked.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stems-clocked.log",
+    "started": "2026-11-13T18:48:24.692807+00:00"
+  },
+  {
+    "name": "q5-menu-stems",
+    "pid": 29276,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-menu-stems.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-stems.log",
+    "started": "2026-11-13T18:49:04.018297+00:00"
+  },
+  {
+    "name": "q5-menu-codec-probes",
+    "pid": 45716,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-probes.log",
+    "started": "2026-11-13T18:56:48.579161+00:00"
+  },
+  {
+    "name": "q5-menu-codec-repaired",
+    "pid": 64956,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-probes-repaired.log",
+    "started": "2026-11-13T19:01:29.032484+00:00"
   }
 ]
