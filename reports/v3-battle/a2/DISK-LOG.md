@@ -86,3 +86,11 @@ Before: 290 GiB free.
 Removed regenerable worktree outputs: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp.
 After: /dev/disk3s1   926Gi   596Gi   290Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
 Current evidence retained. No low-disk restriction.
+
+## Resume 2026-11-13T09:24:24.767670+00:00
+Before: /dev/disk3s1   926Gi   598Gi   289Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Removed 1615 encoded temporary capture frames and ['reports/v3-battle/a2/ref']; reclaimed 1.56 GiB.
+After: /dev/disk3s1   926Gi   596Gi   291Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Vite cache cleanup deferred until inherited P10 suite ends; server owns port5990. No low-disk restriction.
+
+Cache cleanup after inherited suite completed: ['apps/web/node_modules/.vite', 'apps/web/node_modules/.vite-temp']. Restarting the recorded session server on5990; no other processes touched.

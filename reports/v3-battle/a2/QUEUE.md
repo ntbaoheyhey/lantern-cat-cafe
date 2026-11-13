@@ -29,5 +29,5 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 - [x] P6: All12 cat victory poses, confetti and stars; P6/metrics.json and comparisons. Reduced motion, real rewards/stars, phone layout, type/unit/parity PASS; shared E2E9/10. Source0018a05f8.
 - [x] P7: Final-wave contact0.4x for500 real milliseconds at×1/×2/×3; P7/metrics.json and comparison; full-battle parity and pause checks PASS; source9e6c48006; shared E2E9/10.
 - [x] P8: Native/touch drag swaps, row preview and snap; P8/metrics.json, comparison and phone captures. HP, seed, rows and enemy stats unchanged; type/unit/parity PASS; shared E2E9/10. Source4d3c27e1c, evidence1ce5fcefa.
-- [x] P9: Shield absorption/resist/immunity icons from real log entries; P9/metrics.json and comparison. Exact absorbed22; no combat mutation. Source7f6808420; shared suite closure still pending.
-- [ ] P10: Atlas/pool performance and Low at 4x CPU throttle
+- [x] P9: Shield absorption/resist/immunity icons from real log entries; P9/metrics.json and comparison. Exact absorbed22; no combat mutation. Source7f6808420, evidence2a79db332; type/unit/parity PASS, shared E2E9/10.
+- [x] P10:86 sheets on25 lossless pages, exact RGBA maxDelta0. High60.00FPS; Low4x50.76–53.01FPS; parity all6 PASS. P10/metrics.json and compare-performance.png; shared E2E9/10 keeps aggregate card open.
