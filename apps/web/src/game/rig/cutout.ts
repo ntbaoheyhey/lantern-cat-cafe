@@ -33,13 +33,22 @@ function value(keys:CutoutKey[],at:number,key:'x'|'y'|'value',fallback:number){
 }
 export class CutoutMesh extends T.Group {
  proceduralTime=0;
- readonly bones:CutoutBone[];private local:number[][];private at=0;private clip='';private loop=false;
+ readonly bones:CutoutBone[];private boneOrder:number[]=[];private local:number[][];private at=0;private clip='';private loop=false;
  private batches:{geometry:T.BufferGeometry;parts:{part:Part;offset:number}[];positions:Float32Array}[]=[];
  zOffset=.001;
  readonly state:{data:{defaultMix:number};setAnimation:(track:number,name:string,loop:boolean)=>void;clearTracks:()=>void;getCurrent:(track:number)=>{animation:{name:string}}|null};
  readonly skeleton:{data:CutoutData;setToSetupPose:()=>void;findBone:(name:string)=>CutoutBone|undefined;getBoundsRect:()=>CutoutData['bounds'];getBounds:(offset:T.Vector2,size:T.Vector2,vertices?:number[])=>void};
  constructor(readonly data:CutoutData,textures:T.Texture[]){
-  super();this.bones=data.nodes.map(()=>({worldX:0,worldY:0,a:1,b:0,c:0,d:1}));this.local=data.nodes.map(()=>[0,0,0,1,1]);
+  super();
+  // Prop pivots may be reparented to a hand declared later in the template.
+  // Evaluate parents first so arbitrary seek never uses the preceding pose.
+  const visited=new Uint8Array(data.nodes.length);
+  const visit=(i:number)=>{if(visited[i]===2)return;if(visited[i]===1)throw Error('Cyclic cut-out skeleton');
+   visited[i]=1;const parent=data.nodes[i]!.parent;
+   if(parent>=0){if(parent>=data.nodes.length)throw Error('Invalid cut-out parent');visit(parent);}
+   visited[i]=2;this.boneOrder.push(i);
+  };for(let i=0;i<data.nodes.length;i++)visit(i);
+  this.bones=data.nodes.map(()=>({worldX:0,worldY:0,a:1,b:0,c:0,d:1}));this.local=data.nodes.map(()=>[0,0,0,1,1]);
   this.state={data:{defaultMix:0},setAnimation:(_track,name,loop)=>{this.clip=name;this.at=0;this.loop=loop;},clearTracks:()=>{this.clip='';this.at=0;},getCurrent:()=>this.clip?{animation:{name:this.clip}}:null};
   this.skeleton={data,setToSetupPose:()=>this.pose(0,''),findBone:name=>this.bones[data.nodes.findIndex(n=>n.name===name)],getBoundsRect:()=>this.bounds(),getBounds:(offset,size)=>{const b=this.bounds();offset.set(b.x,b.y);size.set(b.width,b.height);}};
   for(let page=0;page<textures.length;page++){
@@ -61,7 +70,7 @@ export class CutoutMesh extends T.Group {
    if(track.property==='rotate')p[2]!+=value(track.keys,at,'value',0);
    if(track.property==='scale'){p[3]!*=value(track.keys,at,'x',1);p[4]!*=value(track.keys,at,'y',1);}
   }
-  for(let i=0;i<this.bones.length;i++){
+  for(const i of this.boneOrder){
    const p=this.local[i]!,b=this.bones[i]!,parent=this.bones[this.data.nodes[i]!.parent],r=p[2]!*Math.PI/180,a=Math.cos(r)*p[3]!,c=Math.sin(r)*p[3]!,bb=-Math.sin(r)*p[4]!,d=Math.cos(r)*p[4]!;
    if(parent){b.worldX=parent.a*p[0]!+parent.b*p[1]!+parent.worldX;b.worldY=parent.c*p[0]!+parent.d*p[1]!+parent.worldY;b.a=parent.a*a+parent.b*c;b.b=parent.a*bb+parent.b*d;b.c=parent.c*a+parent.d*c;b.d=parent.c*bb+parent.d*d;}
    else Object.assign(b,{worldX:p[0],worldY:p[1],a,b:bb,c,d});
