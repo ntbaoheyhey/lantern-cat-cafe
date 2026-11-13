@@ -34,6 +34,7 @@ export class FieldVfx {
   const from=this.socket(plan.actorId,'mainHand');if(!from)return;
   const painted=this.painted(plan.presentationId??plan.skillId);
   const progress=clamp((at-100)/Math.max(1,contact-100)),since=at-contact;
+  const damaging=plan.events.some(e=>e.type==='damage');
   // Spoken releases can outlast the old 620 ms fade. Carry their painted
   // energy through a bounded resolve, keeping contact and ground life intact.
   const tail=tier==='basic'?620:Math.max(620,Math.min(tier==='ultimate'?1450:1000,plan.duration-contact));
@@ -54,7 +55,10 @@ export class FieldVfx {
    c.save();c.globalCompositeOperation='screen';c.lineCap='round';c.lineJoin='round';
    // Broad painted-style energy, composed from each element's own silhouette.
    c.save();c.translate(x,y);
-   const winding=view.reducedMotion?0:(since<0?progress*.7:.7+1.1*resolve)*(seed%2?1:-1);
+   // A damaging stroke continues in one direction after contact, then
+   // settles. Keep support paint on its gentler growth/rotation path.
+   const follow=damaging?1-(1-resolve)**2:resolve;
+   const winding=view.reducedMotion?0:(since<0?progress*.7:.7+(damaging?3.2:1.1)*follow)*(seed%2?1:-1);
    c.rotate((seed%11-5)*.08+winding);
    const aura=c.createRadialGradient(0,0,r*.10,0,0,r*1.05);
    aura.addColorStop(0,palette[1]+'b0');aura.addColorStop(.48,palette[1]+'90');aura.addColorStop(.8,palette[1]+'48');aura.addColorStop(1,palette[1]+'00');
@@ -65,7 +69,7 @@ export class FieldVfx {
     // target. The original painting remains intact; this is a moving cut-out.
     const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI)-.32*clamp((since-420)/Math.max(1,tail-420));
     c.save();c.scale(swell,swell);
-    c.globalCompositeOperation='source-over';c.globalAlpha=release*.95;
+    c.globalCompositeOperation='source-over';c.globalAlpha=(damaging&&since>=0?Math.sqrt(release):release)*.95;
     const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted.image,painted.x+256,painted.y,256,256,-extent/2,-extent/2,extent,extent);
     c.globalCompositeOperation='screen';c.globalAlpha=release*.42;
     c.rotate((seed%2?1:-1)*.25);c.drawImage(painted.image,painted.x+512,painted.y,256,256,-r*1.4,-r*1.05,r*2.8,r*2.1);
