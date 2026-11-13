@@ -6,7 +6,7 @@ ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
 VALIDATION: A/B types and full unit suites PASS; economy-lab 17/17; A parity PASS; A E2E9/10 hidden tips, B budget entrance failure. Q1 carries browser failures.
-NOW: Q0 final evidence commit next; both preserved sources pushed, final clean-tree/remote checks next.
+NOW: Q0 clean-tree check caught the active sensitivity stdout changing. Save a committed log snapshot; ignore only the continuing stdout, retain all measured JSON/checkpoints.
 NEXT 1: Q1 shared browser blockers, B fix commits only cherry-picked to A.
 NEXT 2: Q2 voice reconciliation on current A build.
 NEXT 3: Q3 motion; Q4 background search starts after Q0.
