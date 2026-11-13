@@ -26,14 +26,14 @@ def run(name,cmd):
  print(name,code,flush=True)
  if code:raise SystemExit(code)
 def sim(action):
- process=subprocess.run(['ps','-p','72306','-o','command='],capture_output=True,text=True)
+ process=subprocess.run(['ps','-p','37303','-o','command='],capture_output=True,text=True)
  if 'native-sensitivity.mjs' in process.stdout:
-  os.killpg(72306,signal.SIGSTOP if action=='STOP' else signal.SIGCONT)
+  os.killpg(37303,signal.SIGSTOP if action=='STOP' else signal.SIGCONT)
   h=root/'reports/v3-solo/HANDOFF-SOLO.md'
   lines=h.read_text().splitlines();lines=[line for line in lines if not line.startswith('PERF-SIM:')]
-  lines.append('PERF-SIM: native-sensitivity group72306 '+action+' '+datetime.datetime.now(datetime.timezone.utc).isoformat())
+  lines.append('PERF-SIM: native-sensitivity group37303 '+action+' '+datetime.datetime.now(datetime.timezone.utc).isoformat())
   h.write_text('\n'.join(lines)+'\n')
-  print('Simulation group72306 '+action,flush=True)
+  print('Simulation group37303 '+action,flush=True)
 sim('STOP')
 try:
  run('final-motion-review',['node','scripts/v3a2/motion-review.mjs'])

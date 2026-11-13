@@ -1,6 +1,7 @@
 /** Independent flat cut-out player; data and GPU pixels are shared, pose state is not. */
 import * as T from 'three';
 import {usePaintedAtlasColor} from './atlas-color';
+import {followThrough,FOLLOW_THROUGH_DEGREES} from './follow-through';
 export interface CutoutKey {time?:number;x?:number;y?:number;value?:number;angle?:number;name?:string|null;curve?:'stepped'|number[]}
 interface CutoutNode {name:string;parent:number;x:number;y:number;rotation:number;sx:number;sy:number}
 interface Weight {bone:number;x:number;y:number;weight:number}
@@ -69,6 +70,17 @@ export class CutoutMesh extends T.Group {
    if(track.property==='translate'){p[0]!+=value(track.keys,at,'x',0);p[1]!+=value(track.keys,at,'y',0);}
    if(track.property==='rotate')p[2]!+=value(track.keys,at,'value',0);
    if(track.property==='scale'){p[3]!*=value(track.keys,at,'x',1);p[4]!*=value(track.keys,at,'y',1);}
+  }
+  // Template parts have painted joint overlap and named pivots. Preserve
+  // designer-authored rigs; their limb geometry follows their own tracks.
+  if(clip&&this.data.face){
+   const contact=clip.events.find(e=>e.name==='hit'||e.name==='ult_release')?.time??clip.duration*.55;
+   for(let i=0;i<this.local.length;i++){
+    const bone=this.data.nodes[i]!.name,degrees=FOLLOW_THROUGH_DEGREES[bone];if(!degrees)continue;
+    const delayed=bone==='head'||bone.startsWith('tail_');
+    const t=delayed?Math.max(0,at-clip.duration*.06)/(1-.06):at;
+    this.local[i]![2]!+=degrees*followThrough(name,t,clip.duration,contact);
+   }
   }
   for(const i of this.boneOrder){
    const p=this.local[i]!,b=this.bones[i]!,parent=this.bones[this.data.nodes[i]!.parent],r=p[2]!*Math.PI/180,a=Math.cos(r)*p[3]!,c=Math.sin(r)*p[3]!,bb=-Math.sin(r)*p[4]!,d=Math.cos(r)*p[4]!;

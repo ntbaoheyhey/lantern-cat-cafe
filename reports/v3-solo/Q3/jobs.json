@@ -254,5 +254,28 @@
     ],
     "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method7b-restart.log",
     "started": "2026-11-13T15:39:57.555755+00:00"
+  },
+  {
+    "name": "method8",
+    "pid": 37163,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/method8-runner.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method8.log",
+    "started": "2026-11-13T15:44:47.207137+00:00"
+  },
+  {
+    "name": "push-method8",
+    "pid": 37164,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-method8.log",
+    "started": "2026-11-13T15:44:47.207137+00:00"
   }
 ]
