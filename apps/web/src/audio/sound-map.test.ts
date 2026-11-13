@@ -4,7 +4,7 @@ import {resolve} from 'node:path';
 import {CATS,ENEMIES,STATUS_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {EQUIPMENT_SLOTS,CURRENCY_IDS} from '@taskbar-hero/game-rules/src/cardrpg/contract';
 import {SOUND_MAP,SOUND_CUES,SOUND_SCREENS,SOUND_SLOTS,SOUND_CURRENCIES,mappedCue} from './sound-map';
-import {CUE_ALIASES,EVENT_CUES,resolveCue,type AudioManifest} from './cues';
+import {CUE_ALIASES,EVENT_CUES,resolveCue,resolveDesign,type AudioManifest} from './cues';
 
 describe('production sound plan coverage',()=>{
   const manifest=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
@@ -12,7 +12,8 @@ describe('production sound plan coverage',()=>{
     for(const cue of [...Object.keys(manifest.cues),...Object.values(EVENT_CUES)])expect(mappedCue(cue),cue).toBeDefined();
     for(const [alias,id] of Object.entries(CUE_ALIASES)){
       expect(mappedCue(alias),alias).toBeDefined();
-      expect(resolveCue(alias,manifest),alias).toBe(manifest.cues[id]);
+      expect(resolveCue(alias,manifest),alias).toEqual(resolveCue(id,manifest));
+      expect(resolveDesign(alias,manifest),alias).toBe(resolveDesign(id,manifest));
       expect(manifest.cues[id]?.length,id).toBeGreaterThan(0);
     }
   });

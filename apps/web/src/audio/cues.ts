@@ -6,10 +6,32 @@ export const CUE_ALIASES: Readonly<Record<string,string>> = {
  'ui.forge-fail':'ui.forge.fail',
 };
 export const voiceProfiles=Object.fromEntries(CATS.map((cat,i)=>[cat,{pitch:2**((-9+(i%6)*4)/12),speed:.085+(i%3)*.022,brightness:i<6?750+i*200:2400+(i-6)*350,timbre:i<6?'warm':'bright'}]));
-export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; }
-export interface AudioManifest { version:number; packs:Record<string,{webm:string;mp3:string}>; cues:Record<string,Sample[]>; }
+export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; }
+export type LayerEq = 'flat'|'high-pass-1800'|'low-shelf-180'|'high-pass-80';
+export interface CueLayer {
+ role:string; variants:Sample[]; offsetMs:number; eq:LayerEq; gainDb:number;
+}
+export interface CueDesign {
+ bus:Bus; layers:CueLayer[]; pitchRange:[number,number]; gainRange:[number,number];
+ cooldownMs:number; priority:number; ducking?:boolean;
+ /** Frequent UI composites retain their constituent identities in the playback log. */
+ baked?:Array<{sample:Sample; layers:Array<{role:string;variantId:string;offsetMs:number}>}>;
+}
+export interface AudioManifest {
+ version:number; packs:Record<string,{webm:string;mp3:string}>; cues:Record<string,Sample[]>;
+ designs?:Record<string,CueDesign>; bindings?:Record<string,string>;
+}
+export function resolveDesign(id:string,manifest:AudioManifest,element='magic'):CueDesign|undefined {
+ id=CUE_ALIASES[id]??id;
+ let key=manifest.bindings?.[id]??id;
+ if(id.startsWith('ult.'))key=`kit.${element}.${id.split('.').at(-1)}`;
+ if(id.startsWith('skill.'))key=`kit.${element}.${id.endsWith('.cast')?'charge':'impact'}`;
+ return manifest.designs?.[key]??manifest.designs?.[manifest.bindings?.[id]??id];
+}
 export function resolveCue(id:string,manifest:AudioManifest,element='magic'):Sample[]|undefined {
  if(CUE_ALIASES[id])id=CUE_ALIASES[id]!;
+ const design=resolveDesign(id,manifest,element);
+ if(design)return design.baked?.map(v=>v.sample)??design.layers[0]?.variants;
  if(manifest.cues[id])return manifest.cues[id];
  if(id.startsWith('voice.'))return manifest.cues['voice.meow'];
  if(id.startsWith('ult.'))return manifest.cues[`kit.${element}.${id.split('.').at(-1)}`]??manifest.cues[`kit.magic.${id.split('.').at(-1)}`];

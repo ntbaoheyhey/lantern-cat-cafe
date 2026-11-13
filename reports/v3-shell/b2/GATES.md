@@ -24,20 +24,20 @@ PASS S2.music: measured 12; required >= 8 music pieces
 PASS S2.stings: measured 18; required >= 8 stings
 PASS S2.licenceCoverage: measured 1; required 100% source and shipped audio files with licence, author, URL, date, SHA-256
 PASS S2.licences: measured 0; required 0 non-commercial, unlicensed, or disallowed licence rows
-FAIL S3.hitLayers: measured missing; required each battle hit >= 3 layers
-FAIL S3.hitVariants: measured missing; required each hit layer >= 4 variants
-FAIL S3.uiVariants: measured missing; required each UI cue >= 2 variants
-FAIL S3.repeats: measured missing; required 0 consecutive identical variants in >= 180s auto battle
-FAIL S3.sfxConcurrency: measured missing; required <= 14 sfx including layers
-FAIL S3.voiceConcurrency: measured missing; required <= 1 voice
-PASS S3.bytes: measured 3937590; required <= 16000000 bytes incl. callouts
-FAIL S3.cpu: measured missing; required < 8% added main-thread time, 180s paired traces
+PASS S3.hitLayers: measured 106/106; required each battle hit >= 3 layers
+PASS S3.hitVariants: measured 106/106; required each hit layer >= 4 variants
+PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
+PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
+PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
+PASS S3.voiceConcurrency: measured 1; required <= 1 voice
+PASS S3.bytes: measured 5618061; required <= 16000000 bytes incl. callouts
+PASS S3.cpu: measured 2.1909003031056833; required < 8% added main-thread time, 180s paired traces
 FAIL S4.cats: measured missing; required >= 12 cats, >= 9 lines each
 FAIL S4.consonants: measured missing; required each rendered line >= 0.5 consonants/syllable
 FAIL S4.distinct: measured missing; required nearest MFCC >= source p25; F0 >= 3 semitones OR different source
 FAIL S4.loudness: measured missing; required -16 LUFS +/- 1
-FAIL S4.cadence: measured missing; required median voice interval 6-9s
-FAIL S4.lines: measured missing; required nonempty reports/v3-shell/b2/VOICE-LINES.md
+FAIL S4.cadence: measured 0.883; required median voice interval 6-9s
+PASS S4.lines: measured 5474; required nonempty reports/v3-shell/b2/VOICE-LINES.md
 FAIL V.coverage: measured missing; required 100% playable, elite and boss active skills + ultimates from rules
 FAIL V.variants: measured missing; required >= 2 takes per ultimate line
 FAIL V.ultAccuracy: measured missing; required recogniser word accuracy >= 0.7
@@ -45,7 +45,7 @@ FAIL V.skillAccuracy: measured missing; required recogniser word accuracy >= 0.5
 FAIL V.distinct: measured missing; required S4 distinctness holds for callouts
 FAIL V.battle: measured missing; required 0 missing ultimate callouts; music ducks; >= 180s
 FAIL V.levels: measured missing; required -16 LUFS +/- 1, peak <= -1 dBTP
-FAIL V.lines: measured missing; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
+PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
 FAIL U1.screens: measured missing; required >= 24 states, screenshots, all metrics and fix lists
 FAIL U1.report: measured missing; required nonempty reports/v3-shell/b2/UI-AUDIT.md
 FAIL U2.files: measured missing; required >= 60 new art files with provenance
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 787; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 834; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

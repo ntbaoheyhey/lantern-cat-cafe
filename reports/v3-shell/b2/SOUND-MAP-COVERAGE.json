@@ -1,20 +1,20 @@
 {
   "existingCueCount": 361,
   "missingExisting": [],
-  "callsiteCount": 15,
+  "callsiteCount": 18,
   "unresolved": [],
   "cuesSource": {
     "path": "apps/web/src/audio/cues.ts",
-    "sha256": "7e32a1c6e0ccb920ff00704568276fb6b9d717845d444e4bc24f08ada1cdd4d4"
+    "sha256": "3f0b1054187cc10115d5e9203c4eed8e655b9d6d57db0849b54217e658be0949"
   },
   "sources": [
     {
       "path": "apps/web/src/audio/engine.ts",
-      "sha256": "ac3ab73f5e1c2bc60822a1dc4b25f03cfabf8deb497f0e3038235d32df1e30b2"
+      "sha256": "56bd9bdf595cf825ff701bbb293ac8f8e60823de3e3c7f428b2832421c7b0741"
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "sha256": "cbc36bd752b600a8c65930866a4bd71db52c161146e03c96e6e4ab777628ef93"
+      "sha256": "61487050a7aa51c207c5a72d8642f3995dce032eb294b76df71650251b0537b6"
     },
     {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
@@ -47,14 +47,14 @@
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "c5fddcd6b513e670c59bdbeecd2dcae89ae7e7afd72de2419f9c20180f2fd9a3"
+    "sha256": "1b45b7e81a7798d46f82541c6a0f21a459efa60258c56893a3f4ff1ccf7425c3"
   },
-  "scannedSourceCount": 498,
+  "scannedSourceCount": 499,
   "calls": [
     {
       "path": "apps/web/src/audio/engine.ts",
-      "line": 86,
-      "column": 82,
+      "line": 174,
+      "column": 96,
       "expression": "'ui.click'",
       "ids": [
         "ui.click"
@@ -63,8 +63,8 @@
     },
     {
       "path": "apps/web/src/audio/engine.ts",
-      "line": 87,
-      "column": 92,
+      "line": 175,
+      "column": 178,
       "expression": "'ui.hover'",
       "ids": [
         "ui.hover"
@@ -73,9 +73,9 @@
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "line": 5,
-      "column": 2,
-      "expression": "p.ultimate?`ult.${unit}.${phase}`:`skill.${unit}.1.${phase==='charge'?'cast':'impact'}`",
+      "line": 6,
+      "column": 45,
+      "expression": "`ult.${unit}.${phase}`",
       "ids": [
         "ult.mochi.charge",
         "ult.mochi.release",
@@ -176,63 +176,91 @@
         "ult.pantry-crown.charge",
         "ult.pantry-crown.release",
         "ult.pantry-crown.impact",
-        "ult.pantry-crown.tail",
+        "ult.pantry-crown.tail"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/events.ts",
+      "line": 7,
+      "column": 40,
+      "expression": "`skill.${unit}.1.cast`",
+      "ids": [
         "skill.mochi.1.cast",
-        "skill.mochi.1.impact",
         "skill.soot.1.cast",
-        "skill.soot.1.impact",
         "skill.clover.1.cast",
-        "skill.clover.1.impact",
         "skill.panko.1.cast",
-        "skill.panko.1.impact",
         "skill.mallow.1.cast",
-        "skill.mallow.1.impact",
         "skill.sorrel.1.cast",
-        "skill.sorrel.1.impact",
         "skill.biscuit.1.cast",
-        "skill.biscuit.1.impact",
         "skill.inkcap.1.cast",
-        "skill.inkcap.1.impact",
         "skill.cinnamon.1.cast",
-        "skill.cinnamon.1.impact",
         "skill.brioche.1.cast",
-        "skill.brioche.1.impact",
         "skill.velvet.1.cast",
-        "skill.velvet.1.impact",
         "skill.marigold.1.cast",
-        "skill.marigold.1.impact",
         "skill.button-guard.1.cast",
-        "skill.button-guard.1.impact",
         "skill.sock-skipper.1.cast",
-        "skill.sock-skipper.1.impact",
         "skill.spool-ram.1.cast",
-        "skill.spool-ram.1.impact",
         "skill.needle-moth.1.cast",
-        "skill.needle-moth.1.impact",
         "skill.teacup-healer.1.cast",
-        "skill.teacup-healer.1.impact",
         "skill.kettle-knight.1.cast",
-        "skill.kettle-knight.1.impact",
         "skill.yarn-giant.1.cast",
-        "skill.yarn-giant.1.impact",
         "skill.binding-thread.1.cast",
-        "skill.binding-thread.1.impact",
         "skill.practice-cushion.1.cast",
-        "skill.practice-cushion.1.impact",
         "skill.pollen-scout.1.cast",
-        "skill.pollen-scout.1.impact",
         "skill.rain-spool.1.cast",
-        "skill.rain-spool.1.impact",
         "skill.crumb-sentinel.1.cast",
+        "skill.pantry-crown.1.cast"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/events.ts",
+      "line": 8,
+      "column": 40,
+      "expression": "`skill.${unit}.1.impact`",
+      "ids": [
+        "skill.mochi.1.impact",
+        "skill.soot.1.impact",
+        "skill.clover.1.impact",
+        "skill.panko.1.impact",
+        "skill.mallow.1.impact",
+        "skill.sorrel.1.impact",
+        "skill.biscuit.1.impact",
+        "skill.inkcap.1.impact",
+        "skill.cinnamon.1.impact",
+        "skill.brioche.1.impact",
+        "skill.velvet.1.impact",
+        "skill.marigold.1.impact",
+        "skill.button-guard.1.impact",
+        "skill.sock-skipper.1.impact",
+        "skill.spool-ram.1.impact",
+        "skill.needle-moth.1.impact",
+        "skill.teacup-healer.1.impact",
+        "skill.kettle-knight.1.impact",
+        "skill.yarn-giant.1.impact",
+        "skill.binding-thread.1.impact",
+        "skill.practice-cushion.1.impact",
+        "skill.pollen-scout.1.impact",
+        "skill.rain-spool.1.impact",
         "skill.crumb-sentinel.1.impact",
-        "skill.pantry-crown.1.cast",
         "skill.pantry-crown.1.impact"
       ],
       "delegation": false
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "line": 6,
+      "line": 9,
+      "column": 36,
+      "expression": "'kit.slash.release'",
+      "ids": [
+        "kit.slash.release"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/events.ts",
+      "line": 10,
       "column": 22,
       "expression": "`voice.${unit}.${p.ultimate?'ult':'skill'}`",
       "ids": [
@@ -291,7 +319,7 @@
     },
     {
       "path": "apps/web/src/audio/events.ts",
-      "line": 7,
+      "line": 11,
       "column": 50,
       "expression": "eventCue(event)",
       "ids": [

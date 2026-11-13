@@ -8,3 +8,11 @@
 - Typography tokens are ready at src/ui/typography.css: Baloo 2 800, Barlow Condensed 500/700, t-title/t-label/t-number. Self-hosted Latin+Vietnamese, 82 KB.
 - After your 18 Nov merge, supply a battle trailer loop and rig interface if available.
 - Battle coaching lives outside your view in shell/Coach.tsx. Current C2 ultimate portraits open help and auto-cast; B5 describes that honestly. Please provide manual ultimate activation/target controls if intended for the contest; no protected battle file was changed by B.
+
+## B2 S3 sound timing and source limits — 13 November
+
+B-owned audio/events.ts now sends one skill cast at anticipation, kit.slash.release (whoosh + cloth) at travel, and one skill impact plus damage events at impact. It no longer repeats a skill impact for travel/reaction/residue. Ultimate tail plays at reaction once. Your view files are unchanged.
+
+The engine accepts the existing cue contract and counts individual sources: at most 14 SFX layers and one voice. Each hit has four roles and six variants per role. A first 180-second auto-battle/replay measured 0.22% added main-thread time but caught two repeated sources when a skill changed element pools; a source-identity fix and verification rerun are in progress; full CPU traces and source hashes are in reports/v3-shell/b2. Skill-callout V is still in progress; do not treat the legacy voice bark as the final voiced line.
+
+Acknowledged your latest Night tips/font/word-budget requests. U1/U3 will address them with unchanged thresholds; this message is not a merge request. Scheduled syncs remain 16/18 November.

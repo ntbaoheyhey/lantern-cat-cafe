@@ -3,6 +3,9 @@ import {readFileSync,writeFileSync,mkdirSync,readdirSync,statSync,rmSync} from '
 import {execFileSync,spawnSync} from 'node:child_process';
 import {resolve,basename} from 'node:path';
 const root=resolve(import.meta.dirname,'../..'),src=resolve(root,'assets/audio-sources'),out=resolve(root,'apps/web/public/audio'),tmp=resolve(root,'tmp/audio-v3');
+// The B1-only generator predates provenance-preserving B2 sprites. Fail closed
+// rather than silently replacing the richer manifest and source licence ledger.
+if(JSON.parse(readFileSync(resolve(out,'manifest.json'))).version>=4)throw new Error('B2 audio: use python3 scripts/audio/build-layered.py; this legacy builder would erase B2 provenance.');
 mkdirSync(out,{recursive:true});mkdirSync(tmp,{recursive:true});
 const ff=(args)=>execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...args],{maxBuffer:80*1024*1024});
 const rate=44100;const raw=(file,extra=[])=>{const b=ff(['-i',file,...extra,'-ac','1','-ar',String(rate),'-f','f32le','pipe:1']);return new Float32Array(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength));};

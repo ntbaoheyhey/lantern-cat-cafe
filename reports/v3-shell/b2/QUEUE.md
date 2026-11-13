@@ -6,8 +6,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] R — done (self-score 8/10; spectral proxies explicitly qualified)
 - [x] S1 — done (self-score 8/10 for plan/coverage; sound production remains pending)
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
-- [ ] S3 — in progress
-- [ ] S4 — todo
+- [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
+- [ ] S4 — in progress
 - [ ] V — todo
 - [ ] U1 — todo
 - [ ] U2 — todo
@@ -86,3 +86,16 @@ PASS S2.licenceCoverage: measured 1; required 100% source and shipped audio file
 PASS S2.licences: measured 0; required 0 non-commercial, unlicensed, or disallowed licence rows
 
 Checks: tests/s2-source-verify.log (989 files, zero errors), tests/s2-python.log, tests/s2-source-unit.log, tests/s2-types.log, tests/s2-suite.log. Web 2,488 and server 724 pass; game-rule expected failures/skips remain disclosed.
+
+## S3 evidence
+
+PASS S3.hitLayers: measured 106/106; required each battle hit >= 3 layers
+PASS S3.hitVariants: measured 106/106; required each hit layer >= 4 variants
+PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
+PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
+PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
+PASS S3.voiceConcurrency: measured 1; required <= 1 voice
+PASS S3.bytes: measured 5618061; required <= 16000000 bytes incl. callouts
+PASS S3.cpu: measured 2.1909003031056833; required < 8% added main-thread time, 180s paired traces
+
+Checks: tests/s3-verified-types.log, tests/s3-verified-suite.log, tests/s3-restored-audio-tests.log, tests/s3-source-verified.log. Web 2,497 and server 724 pass; game-rule 2 expected failures and 11 existing skips remain disclosed. The repaired 180-second paired traces and logs are saved with hashes in AUDIO-PERFORMANCE.json and AUDIO-BATTLE.json.

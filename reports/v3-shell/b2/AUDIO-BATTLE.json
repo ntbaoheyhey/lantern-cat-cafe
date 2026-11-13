@@ -1,0 +1,31 @@
+{
+  "durationSeconds": 180.02846000000136,
+  "played": 1260,
+  "layeredPlays": 1121,
+  "layerChoices": 3530,
+  "consecutiveVariantRepeats": 0,
+  "repeats": [],
+  "maxSfxConcurrency": 14,
+  "maxVoiceConcurrency": 1,
+  "medianVoiceIntervalSeconds": 0.883,
+  "results": {
+    "played": 1260,
+    "cooldown": 354,
+    "limit": 188,
+    "priority": 47
+  },
+  "errors": [],
+  "log": {
+    "path": "reports/v3-shell/b2/tests/s3-final-audio-battle.json.gz",
+    "sha256": "50c8caed6e661b1c08b2bcb620ce23c4e4e7ef9e1b4a265c85e271d07b159260"
+  },
+  "scenario": "Actual stage-1 auto battle followed by its recorded replay. Existing battle adapter; no A-owned file modified.",
+  "variantScope": "Every layered SFX/UI cue. Legacy unlayered voice identity is replaced and measured in S4.",
+  "stats": {
+    "restarts": 2,
+    "frames": 1870,
+    "battleFrames": 1868,
+    "maximumSfx": 14,
+    "maximumVoice": 1
+  }
+}

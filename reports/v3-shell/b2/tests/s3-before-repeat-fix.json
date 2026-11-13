@@ -1,0 +1,42 @@
+{
+  "durationSeconds": 180.02656700000807,
+  "played": 1261,
+  "layeredPlays": 1122,
+  "layerChoices": 3532,
+  "consecutiveVariantRepeats": 2,
+  "repeats": [
+    {
+      "key": "skill.soot.1.impact/transient",
+      "at": 1794534886530,
+      "variant": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient"
+    },
+    {
+      "key": "skill.soot.1.impact/transient",
+      "at": 1794534970725,
+      "variant": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient"
+    }
+  ],
+  "maxSfxConcurrency": 14,
+  "maxVoiceConcurrency": 1,
+  "medianVoiceIntervalSeconds": 0.883,
+  "results": {
+    "played": 1261,
+    "cooldown": 367,
+    "limit": 174,
+    "priority": 47
+  },
+  "errors": [],
+  "log": {
+    "path": "reports/v3-shell/b2/tests/s3-audio-battle.json.gz",
+    "sha256": "17062483b94d58f0c511a40ddf306a17cc705648c273e63ee925abcf1f0fd2d8"
+  },
+  "scenario": "Actual stage-1 auto battle followed by its recorded replay. Existing battle adapter; no A-owned file modified.",
+  "variantScope": "Every layered SFX/UI cue. Legacy unlayered voice identity is replaced and measured in S4.",
+  "stats": {
+    "restarts": 2,
+    "frames": 1870,
+    "battleFrames": 1868,
+    "maximumSfx": 14,
+    "maximumVoice": 1
+  }
+}
