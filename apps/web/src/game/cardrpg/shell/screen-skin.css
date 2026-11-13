@@ -358,6 +358,21 @@ dialog.chain-panel.b2-wallet>button{display:flex;flex-direction:column;gap:6px;m
 }
 
 /* Q6: the A-owned result keeps the shell kit after the scheduled integration. */
+.uv-app[data-a6=true] .uv-shell .a6-campaign .b2-route-lines-phone{display:none}
+@media(max-width:650px){
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-chapter-picker{grid-template-columns:minmax(0,1fr) 64px;gap:6px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-chapters button{min-width:0;width:100%;padding:4px!important;min-height:86px;justify-items:center}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-chapters button img{position:static;width:42px;height:52px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-scenic{height:1200px;min-height:1200px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .b2-route-lines-desktop{display:none}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .b2-route-lines-phone{display:block;top:5%;height:84%}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-scenic .a6-scenic-stop{left:calc(100% - var(--stop-y));top:calc(5% + var(--stop-x)*.84);width:104px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-scenic .a6-scenic-stop[data-kind=boss]{width:112px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-map-milestones{position:absolute;bottom:12px;left:6px;right:6px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-map-chest{position:static;transform:none;min-width:0;min-height:64px;padding:4px;gap:2px;justify-content:center;flex-wrap:wrap}
+ .uv-app[data-a6=true] .uv-shell .a6-campaign .a6-map-chest svg{width:24px;height:24px}
+}
 .uv-app[data-a6=true] .uv-shell .c2-result:not(.b2-result) .a6-result-heading h2{background:url('/art/v3-shell/b2/title-victory.webp') center/contain no-repeat;color:transparent!important;text-shadow:none!important}
 .uv-app[data-a6=true] .uv-shell .c2-result:not(.b2-result)[data-outcome=enemy] .a6-result-heading h2{background-image:url('/art/v3-shell/b2/title-defeat.webp')}
 .uv-app[data-a6=true] .uv-shell .c2-result .b3-victory-crew{height:245px;min-height:0}

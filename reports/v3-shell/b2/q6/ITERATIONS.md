@@ -18,3 +18,7 @@ UI captures of non-chain screens use the temporary B preview with A-owned curren
 
 8. Phone screenshots contradicted the document-width check: the hero detail retained a 360px desktop column and portal dialogs used content-box sizing. Mobile panels now use their available width, supplied items wrap into three columns, Settings shrinks correctly, and Season cards fit the frame. The selected hero uses content-sized grid rows so the roster cannot overlap its controls.
 9. New phone audit checks clipping against panel ancestors and scrolls each control into view to verify its hit target. A regression fixture proves that a fixed-width document can still contain a clipped button, while ordinary vertical scrolling passes. Root body overflow propagation is treated as the viewport, matching the browser's fixed-position behavior. Four affected phone states pass; full 24-state acceptance remains pending.
+
+## 2026-11-13T22:20:59.877906+00:00 — phone map and result controls
+
+Final4 found four clipped map nodes and covered help/close controls in both result states. Retained that failed evidence. Reoriented the same map graph vertically on phones, separated chapter tiles and star chests, and fitted the discovery notice into the unused result header area. First map attempt lost the cascade to campaign CSS; added the existing shell scope. Focused map5 now has 17/17 reachable controls, zero clipping,11 words; victory and defeat each have zero unreachable controls. Review: phone-map5-review.jpg. Desktop acceptance and full suites remain pending.

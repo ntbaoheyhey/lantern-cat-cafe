@@ -1,6 +1,12 @@
 /* Motion changes only transform and opacity; panel geometry stays fixed. */
 /* A queued discovery remains in one place while the player changes sheets. */
 .uv-app[data-a6=true] .dp-v4-celebration,.uv-app[data-a6=true]:has(.uv-sheet) .dp-v4-celebration{position:fixed!important;left:auto!important;right:20px!important;top:94px!important;bottom:auto!important;width:360px!important;max-width:calc(100vw - 40px)!important;transform:none!important;box-sizing:border-box}
+@media(max-width:650px){
+ .uv-app[data-a6=true]:has(.uv-sheet[data-sheet=result]) .dp-v4-celebration{left:30px!important;right:auto!important;width:calc(100vw - 156px)!important;max-width:none!important;padding:5px 6px;display:grid;grid-template-columns:minmax(0,1fr) 30px;gap:5px;align-items:center}
+ .uv-app[data-a6=true]:has(.uv-sheet[data-sheet=result]) .dp-v4-celebration>small{display:none}
+ .uv-app[data-a6=true]:has(.uv-sheet[data-sheet=result]) .dp-v4-celebration>p{font-size:12px;line-height:1.2;margin:0}
+ .uv-app[data-a6=true]:has(.uv-sheet[data-sheet=result]) .dp-v4-celebration>button{font-size:0;width:30px;min-height:30px;padding:2px;background:#493444 url('/icons/close.svg') center/22px 22px no-repeat}
+}
 .b2-dialog,.b2-help,.b2-page,.b2-chain-room,.chain-panel{animation:b2-panel-enter 180ms cubic-bezier(.16,1,.3,1)}
 @keyframes b2-panel-enter{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
 :is(.uv-shell,.b2-dialog,.b2-help,.b2-page,.b2-chain-room,.chain-panel) button:not(:disabled){transition:transform 140ms ease-out}

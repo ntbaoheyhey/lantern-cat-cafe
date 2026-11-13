@@ -1,6 +1,4 @@
-NOW: Q6 phone layouts repaired; hero, supplies, settings, season pass bounds and scrolling checks.
-NEXT: commit source, prepare current A/B temporary preview, final4 phone-first acceptance (24 phone,108 desktop,full suites).
-A: c449090bb pushed; Q6 A unit/types/browser/parity PASS.
-Q4:80/85 assumptions; native37303/supervisor16952 still running.
-JOBS:q6/jobs.json and econ/q4-jobs.json.
-UPDATED:2026-11-13T22:11:19.903448+00:00
+NOW: Q6 focused phone map/result repairs pass; save source then run final5 acceptance.
+NEXT: 24 phone states,108 desktop captures,full local suites,explicit visual review,U3 checker.
+Q4:80/85 assumptions measured; native37303 and supervisor16952 continue.
+UPDATED:2026-11-13T22:20:59.877906+00:00

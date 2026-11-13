@@ -13,18 +13,22 @@ const stops: Record<string,[number,number]> = {'0-0':[95,305],'1-0':[255,160],'1
 const labels: Record<R.NodeKind,string> = {battle:'Patrol',elite:'Elite',event:'A little story',treasure:'Hidden gift',shop:'Tea cart',campfire:'Warm kettle',boss:'Chapter guardian'};
 const symbols: Record<R.NodeKind,string> = {battle:'fight',elite:'season',event:'invitations',treasure:'bag',shop:'home',campfire:'potion',boss:'boss'};
 const position=(node:R.RunNode):[number,number]=>stops[node.id]??[95+node.depth*160,235+node.lane*90];
+const routePath=(from:[number,number],to:[number,number],portrait:boolean)=>{
+ const [x,y]=from,[tx,ty]=to,mid=(x+tx)/2;
+ return portrait?`M${500-y} ${x}C${500-y} ${mid},${500-ty} ${mid},${500-ty} ${tx}`:`M${x} ${y}C${mid} ${y},${mid} ${ty},${tx} ${ty}`;
+};
 
 export function CampaignSceneryA6({m}:{m:DepthModel}){
  const run=m.state.run,nodes=run?.nodes??R.generateMap(1,1),available=run?R.availableNodes(run).map(n=>n.id):[],stars=R.starCountV4(m.state);
  return <section className="a6-scenic" aria-label="Branching chapter route" data-reduced={m.state.settings.reducedMotion}>
   <div className="b2-chapter-landscape" aria-hidden="true"/>
   <div className="a6-map-caption"><span><GameIcon name="season" size={18}/></span> {m.state.formationC2?`Chapter ${run?.chapter??1}`:run?`Chapter ${run.chapter} · ${R.CHAPTERS[run.chapter-1]!.name}`:'A little adventure after closing'}{!m.state.formationC2&&<small>{run?'Follow the glowing lanterns':'Choose a chapter above to begin'}</small>}</div>
-  <svg className="a6-route-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">{nodes.flatMap(node=>node.next.map(next=>{
+  {[false,true].map(portrait=><svg key={String(portrait)} className={`a6-route-lines${portrait?' b2-route-lines-phone':' b2-route-lines-desktop'}`} viewBox={portrait?'0 0 500 1200':'0 0 1200 500'} preserveAspectRatio="none" aria-hidden="true">{nodes.flatMap(node=>node.next.map(next=>{
    const target=nodes.find(n=>n.id===next);if(!target)return null;
-   const [x,y]=position(node),[tx,ty]=position(target),d=`M${x} ${y}C${(x+tx)/2} ${y},${(x+tx)/2} ${ty},${tx} ${ty}`;
+   const d=routePath(position(node),position(target),portrait);
    const walked=run?.visited.includes(node.id)&&run.visited.includes(next);
    return <g key={`${node.id}-${next}`} data-walked={walked}><path d={d} className="a6-path-edge"/><path d={d} className="a6-path-stone"/><path d={d} className="a6-path-thread"/></g>;
-  }))}</svg>
+  }))}</svg>)}
   {nodes.map(node=>{
    const [x,y]=position(node),visited=run?.visited.includes(node.id),current=run?.current===node.id,open=available.includes(node.id),art=node.enemies[0];
    const recommended=run&&node.enemies.length?R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,enemyStats:R.campaignEnemyStatsA6(run,node),mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0):undefined;
