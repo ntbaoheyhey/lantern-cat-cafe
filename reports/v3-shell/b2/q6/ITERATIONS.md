@@ -13,3 +13,5 @@ UI captures of non-chain screens use the temporary B preview with A-owned curren
 
 5. Full screen capture exposed the A current result missing B title/receipt skin; B CSS now covers the generic result class and A exposes outcome plus guide/next icons. Discovery overlay remains included in counts. A preparation portraits use the compact-board viewport basis. Retained screenshots show2 plain buttons on victory/defeat and1 on preparation. Desktop fonts/icons pass.
 6. Chain captures now use a local database transaction plus Anvil snapshot per screen, preserving the real Judge/day quotas. The earlier chain pass exhausted its shared disposable fixture at wallet-seal; no quota was raised. Capture provenance now hashes every runtime app/rules source, including the temporary A overlay.
+
+7. Final2 at1440 exposed26 visible words with Settings+audio, while1280 passed. The lesson launcher now says Lessons and retains Replay lessons as its accessible name. No content is hidden; final3 re-captures both sizes and phone.
