@@ -5,20 +5,20 @@ NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
-NOW: Q4 active; round20 explores larger subcost rebates plus withdrawal fees. Round19 remains a measured miss.
-NEXT 1: Inspect B tests/q4-round20.log (PID48304); log outcome and confirm top10 at200 seeds.
-NEXT 2: Publish exact selected policy; E3 sensitivity, E4 current-config UI/Anvil, E5 cited report.
+NOW: Q4 active; round21 logged. Round22 paired recipe/funding probes plus independent top10 confirmation running.
+NEXT 1: Read B tests/q4-round22.log PID51244 and q4-confirm21.log PID51245; log outliers.
+NEXT 2: Select confirmed policy, complete native/token sensitivity, then publish exact policy and E4/E5 proof.
 NEXT 3: Q5 only after Q4 acceptance; scheduled syncs remain future.
-LAST GOOD COMMIT A:353bc38a2 pushed; Q3 closure a881b1fc8, source af1e1fdf3.
-LAST GOOD COMMIT B:ae4d840b8 source/evidence checkpoint; push running; final policy not selected.
+LAST GOOD COMMIT A:3a876e6a6 pushed; Q3 closure a881b1fc8, source af1e1fdf3.
+LAST GOOD COMMIT B:837e4e583 committed; push in progress; final policy not selected.
 OPEN: Q4-Q9. Q0-Q3 have checker PASS evidence in QUEUE-SOLO; no STOP file.
-ECONOMY:19 logged rounds/840 unique configs; previous top10x200 preserved; final policy pending.
-DIAGNOSIS: Round19 burn0.9893–1.3882, Star1.0437–1.1172, bots0.5069–0.5467; larger rebates may improve spending, all gates unchanged.
+ECONOMY:21 logged rounds/999 unique configs; independent confirmation still running. Best pilot Star1.104318 still >1.10.
+DIAGNOSIS: Round21 changes3 levers; burn1.0311–1.2803; all35% bot median targets pass. One Star scenario remains open.
 VALIDATION: Subcost rebate rules3/model12 PASS; pilot Anvil16 receipts and18 shots PASS; final proof requires identical policy hash.
-PIDS: A Vite36397; B integration4118; native37303; round20 search48304.
-BACKGROUND JOBS: B econ/q4-jobs.json and econ/q3-resume-job.json; logs B tests/q4-round19.log, q4-ui-proof-pilot.log, q3-native-sensitivity-resume.log.
-DISK-LOG:287.66GiB free; Q4/resume-disk-1640.json; removed regenerated B Vite cache only.
+PIDS: A Vite36397; B integration4118; native37303; round22 search51244; confirmation51245.
+BACKGROUND JOBS: B econ/q4-jobs.json; native log tests/q3-native-sensitivity-resume.log; controlled jobs have frozen model/config checks.
+DISK-LOG:287.41GiB free; Q4/resume-disk-1705.json; removed 0 untracked test output folders.
 SUITES: Last full Q2 B2538 units/435 browser/types PASS; Q4 full suite pending final policy. A Q3 full/parity/perf evidence preserved.
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze. No early merge.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
-UPDATED: 2026-11-13T16:42:01.407915+00:00
+UPDATED: 2026-11-13T17:06:40.467871+00:00

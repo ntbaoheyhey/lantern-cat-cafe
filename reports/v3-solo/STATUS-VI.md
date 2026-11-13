@@ -3,10 +3,10 @@
 - Motion energy: 15,91 / 17,32 / 17,10, đều vượt 15,80.
 - 98/98 phản ứng đòn đánh; 33/33 hành động địch di chuyển đủ xa.
 - High khoảng 60 FPS với 10 nhân vật; combat parity đạt.
-- Q4 đang tối ưu kinh tế; 19 vòng, 840 cấu hình đã đo.
-- Vòng 19 chưa đạt: burn thấp nhất 0,989; Thread cao nhất 1,117.
-- Bot còn kiếm 0,507–0,547 lần mỗi giờ so với người chơi thường.
-- Vòng 20 thử mức hoàn Spool và phí rút; không hạ ngưỡng.
+- Q4 đang tối ưu kinh tế; 21 vòng, 999 cấu hình duy nhất đã đo.
+- Vòng 21: burn 1,031–1,280; Thread cao nhất 1,1043, vẫn vượt 1,10.
+- Bot ở các kịch bản 35% đã đạt ngưỡng 0,5 trong vòng 21.
+- Vòng 22 và xác nhận top 10 ở 200 seed đang chạy; không hạ ngưỡng.
 - Anvil cục bộ đạt 16 biên nhận, đủ cả 3 sink mới.
 - Đã chụp 18 màn hình; sẽ đo lại với cấu hình cuối.
 - Phân tích độ nhạy 200 seed vẫn chạy nền.
