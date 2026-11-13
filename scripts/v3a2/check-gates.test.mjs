@@ -70,6 +70,8 @@ test('fresh aggregate metadata cannot disguise an old raw motion capture',()=>{
     const meta={sourceCommit:second,generatedAt:new Date().toISOString()};
     for(const input of cards.M1.inputs){const path=join(base,input);mkdirSync(dirname(path),{recursive:true});writeFileSync(path,JSON.stringify({_meta:meta}));}
     const row=()=>checkCard('M1',{repo,base,data:{_meta:meta}}).find(r=>r.id==='M1.input-freshness');
+    const suite=sourceCommit=>checkCard('M1',{repo,base,data:{_meta:meta,suite:{_meta:{...meta,sourceCommit}}}}).find(r=>r.id==='M1.suite-freshness');
+    assert.equal(suite(first).pass,false);assert.equal(suite(second).pass,true);
     assert.equal(row().pass,true);
     writeFileSync(join(base,cards.M1.inputs[0]),JSON.stringify({_meta:{...meta,sourceCommit:first}}));
     assert.equal(row().pass,false);assert.equal(row().measured,1);

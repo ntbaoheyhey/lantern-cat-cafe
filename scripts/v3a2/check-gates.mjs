@@ -22,7 +22,7 @@ const matrix = (id,path,op,limit,sizes=views)=>G(id,path,op,limit,{matrix:sizes.
 const three = (id,path,op,limit)=>G(id,path,op,limit,{matrix:fixtures});
 const shared = [G('typecheck','suite.typecheckExit','eq',0),G('unit','suite.unitExit','eq',0),G('e2e','suite.e2eExit','eq',0),G('parity','suite.parityExit','eq',0)];
 export const cards = {
-  G0: {sources:['scripts/v3a2/check-gates.mjs','scripts/v3a2/check-gates.test.mjs','scripts/v3a2/compare-sheet.mjs','scripts/v3a2/battle-capture.mjs','scripts/v3a2/fixtures.json'], gates:[
+  G0: {sources:['scripts/v3a2/collect-checker.mjs','scripts/v3a2/check-gates.mjs','scripts/v3a2/check-gates.test.mjs','scripts/v3a2/compare-sheet.mjs','scripts/v3a2/battle-capture.mjs','scripts/v3a2/fixtures.json'], gates:[
     G('bootstrap-all-fail','bootstrap.failed','eq','bootstrap.total',{localLimit:true}),G('bootstrap-gate-count','bootstrap.total','min',100),G('tests','checkerTestExit','eq',0),
     G('fixtures','captureFixtures','eq',3),G('fps','captureFps','eq',30),file('fixture-captures','G0/capture-*.json',3),file('checker-test-log','G0/checker-tests.log'),file('bootstrap-log','G0/bootstrap.log'),file('compare-tool','../../../scripts/v3a2/compare-sheet.mjs'),file('capture-tool','../../../scripts/v3a2/battle-capture.mjs')
   ]},
@@ -89,6 +89,7 @@ export function checkCard(id, {repo=root,base=resolve(repo,evidenceRoot),targets
   if(!skipFreshness){
     const revision=sourceRevision(repo,spec.sources),ok=fresh(data?._meta,revision,repo);
     rows.push({id:`${id}.freshness`,pass:ok,measured:data?._meta?.sourceCommit??'missing',required:`evidence >= ${revision?.commit??'source revision'}`});
+    rows.push({id:`${id}.suite-freshness`,pass:fresh(data?.suite?._meta,revision,repo),measured:data?.suite?._meta?.sourceCommit??'missing',required:`suite >= ${revision?.commit??'source revision'}`});
     let dirty=true;try{dirty=spec.sources.length>0&&execFileSync('git',['status','--porcelain','--',...spec.sources],{cwd:repo,encoding:'utf8'}).trim().length>0;}catch{}
     rows.push({id:`${id}.committed-source`,pass:!!data&&!dirty,measured:data?(dirty?1:0):'missing evidence',required:'eq 0 uncommitted source changes'});
   }
