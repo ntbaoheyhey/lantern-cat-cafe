@@ -10,10 +10,10 @@ const preview=()=>screen.getByRole('region',{name:'Route tonic recovery'});
 it('shows exact capped crew recovery, reviving and unaffected cats before spending',()=>{
  const m=model(),cats=R.battleCats(m.state);m.state.run!.hp.mochi=cats[0]!.stats.hp-43;m.state.run!.hp.soot=0;
  const before=R.exportSave(m.state),expected=R.useTonic(m.state);render(<RouteTonic m={m}/>);
- expect(preview().textContent).toContain(`${cats[0]!.stats.hp-43} → ${cats[0]!.stats.hp} HP (+43)`);
- expect(preview().textContent).toContain('0 → 100 HP (+100)');expect(preview().textContent).toContain('Revives');expect(preview().textContent).toContain('Already full');
- expect(preview().textContent).toContain('2 → 1 remaining');expect(R.exportSave(m.state)).toBe(before);expect(button().getAttribute('aria-describedby')).toBe(preview().id);
- fireEvent.click(button());expect(m.state).toEqual(expected.state);expect(preview().textContent).toContain('1 → 0 remaining');
+ expect(preview().textContent).toContain(`${cats[0]!.stats.hp-43} to ${cats[0]!.stats.hp} HP (+43)`);
+ expect(preview().textContent).toContain('0 to 100 HP (+100)');expect(preview().textContent).toContain('Revives');expect(preview().textContent).toContain('Already full');
+ expect(preview().textContent).toContain('2 to 1 remaining');expect(R.exportSave(m.state)).toBe(before);expect(button().getAttribute('aria-describedby')).toBe(preview().id);
+ fireEvent.click(button());expect(m.state).toEqual(expected.state);expect(preview().textContent).toContain('1 to 0 remaining');
 });
 it('stops a second use once the last missing HP is restored',()=>{
  const m=model();m.state.run!.hp.mochi!-=43;render(<RouteTonic m={m}/>);fireEvent.click(button());expect(button().disabled).toBe(true);expect(preview().textContent).toContain('Every companion is already at full HP.');const before=R.exportSave(m.state);fireEvent.click(button());expect(R.exportSave(m.state)).toBe(before);expect(m.state.run!.supplies).toBe(1);

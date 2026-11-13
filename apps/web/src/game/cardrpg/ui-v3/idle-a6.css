@@ -6,7 +6,7 @@
  .a6-tip-sparkle {opacity:.15}
  &[data-ready=true] .a6-tip-sparkle {opacity:1}
  .a6-tip-sign {display:grid;justify-items:center;gap:6px;width:100%;padding:10px 12px 9px;border:1px solid #c8a063;border-radius:10px;background:linear-gradient(110deg,#684833,#372a30);box-shadow:0 4px 0 #2b2024,inset 0 0 0 3px #fff0c00a;text-shadow:0 1px 2px #251c24}
- .a6-tip-sign>b {font:700 21px Georgia,serif;padding:0;background:none;color:#ffe2a4}
+ .a6-tip-sign>b {font:700 21px var(--font-display);padding:0;background:none;color:#ffe2a4}
  .a6-tip-sign>small {font-size:13px;padding:0;background:none;color:#edd2a7}
  progress {width:100%;height:8px;accent-color:#efbf67}
  .a6-tip-amounts {display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;font-size:13px;color:#fff0ce;line-height:1.35}

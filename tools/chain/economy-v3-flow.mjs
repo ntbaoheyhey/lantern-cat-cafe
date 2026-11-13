@@ -1,0 +1,51 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {writeFileSync} from 'node:fs';
+Object.assign(process.env,{CHAIN_LOCAL_WEB_PORT:'5996',CHAIN_LOCAL_RPC_PORT:'8546',CHAIN_LOCAL_API_PORT:'5997'});
+const {startLocal,devAccount,walletFor,artifact}=await import('./local.mjs');
+const require=createRequire(new URL('../../apps/web/package.json',import.meta.url));
+const {parseEther,getAddress}=require('viem');
+const local=await startLocal({web:false,campaignRewards:false}),receipts=[];
+try{
+ const guest=devAccount(6),buyer=devAccount(7),w=walletFor(guest),bw=walletFor(buyer),c=local.config;
+ const send=async(wallet,address,name,fn,args)=>{const hash=await wallet.writeContract({address,abi:artifact(name).abi,functionName:fn,args}),r=await local.client.waitForTransactionReceipt({hash});assert.equal(r.status,'success');receipts.push({action:fn,hash});return hash;};
+ const nonce=await local.modules.issueNonce(local.authDeps);
+ // Use the public SIWE verifier with an Anvil-only guest key.
+ const {createSiweMessage}=require('viem/siwe');
+ const signed=createSiweMessage({domain:'127.0.0.1:5996',address:guest.address,nonce:nonce.nonce,chainId:43113,uri:'http://127.0.0.1:5996',version:'1',statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
+ const auth=await local.modules.verifySignIn(local.authDeps,{message:signed,signature:await guest.signMessage({message:signed})});
+ const session=await local.modules.verifySessionToken(auth.token,{jwtSecret:local.authDeps.config.jwtSecret});
+ const p=session.sub,call=(command,id=crypto.randomUUID())=>local.economy(p,guest.address,{id,command});
+ await local.judge(p,guest.address,'1'.repeat(64),'boss');
+ const q=await call({action:'quest'});assert.equal(q.state.level,5);assert.equal(q.state.spool,parseEther('16').toString());
+ const d=await call({action:'deed'});const mint=async v=>send(w,c.RelicNFT,'RelicNFT','mint',[{player:getAddress(v.player),relicId:BigInt(v.relicId),rarity:v.rarity,nonce:BigInt(v.nonce),expiry:BigInt(v.expiry)},v.signature]);
+ await mint(d.voucher);assert.equal(d.state.deed,30001);
+ const withdrawalId=crypto.randomUUID(),withdraw=await call({action:'withdraw',amount:parseEther('16').toString(),deed:30001},withdrawalId),claim=withdraw.withdrawal.claim;
+ await send(w,c.SeasonRewards,'SeasonRewards','claim',[{player:guest.address,amount:BigInt(claim.amount),season:BigInt(claim.season),nonce:BigInt(claim.nonce),expiry:BigInt(claim.expiry)},withdraw.withdrawal.signature]);
+ assert.equal(claim.amount,parseEther('12').toString());assert.equal((await call({action:'withdraw',amount:parseEther('16').toString(),deed:30001},withdrawalId)).withdrawal.used,true);
+ // Fixture treasury funding is separate from earned Spool. Never invented by the ledger.
+ await send(walletFor(devAccount(0)),c.YarnToken,'YarnToken','transfer',[guest.address,parseEther('30')]);
+ const seal=await call({action:'seal',instance:'quest:weapon',deed:30001});await send(w,c.YarnToken,'YarnToken','seal',[seal.hash,BigInt(seal.intent.cost)]);await mint((await call({action:'finalize',intent:seal.intent.id})).voucher);
+ const fusion=await call({action:'fusion',instances:['quest:outfit','quest:charm'],tokens:[seal.intent.token],sealedStars:0});
+ await assert.rejects(()=>call({action:'finalize',intent:fusion.intent.id}),/payment/);
+ await send(w,c.YarnToken,'YarnToken','seal',[fusion.hash,BigInt(fusion.intent.cost)]);
+ const burnTx=await send(w,c.RelicNFT,'RelicNFT','safeBatchTransferFrom',[guest.address,local.modules.ECONOMY_DEAD,fusion.intent.burnIds.map(BigInt),fusion.intent.burnAmounts.map(BigInt),fusion.hash]);
+ await assert.rejects(()=>call({action:'finalize',intent:fusion.intent.id,burnTx:receipts[0].hash}),/Batch burn required/);
+ const fused=await call({action:'finalize',intent:fusion.intent.id,burnTx});await mint(fused.voucher);
+ const token=BigInt(fused.voucher.relicId);await send(w,c.RelicNFT,'RelicNFT','setApprovalForAll',[c.RelicMarketV2,true]);await send(w,c.RelicMarketV2,'RelicMarketV2','list',[token,1n,parseEther('1'),1]);
+ await send(walletFor(devAccount(0)),c.YarnToken,'YarnToken','transfer',[buyer.address,parseEther('2')]);await send(bw,c.YarnToken,'YarnToken','approve',[c.RelicMarketV2,parseEther('1')]);
+ const [ids,items]=await local.client.readContract({address:c.RelicMarketV2,abi:artifact('RelicMarketV2').abi,functionName:'getListings',args:[0n,100n]});
+ const index=items.findIndex(x=>x.relicId===token&&x.seller.toLowerCase()===guest.address.toLowerCase());assert.ok(index>=0);
+ await send(bw,c.RelicMarketV2,'RelicMarketV2','buy',[ids[index]]);
+ assert.equal(await local.client.readContract({address:c.RelicNFT,abi:artifact('RelicNFT').abi,functionName:'balanceOf',args:[buyer.address,token]}),1n);
+ assert.equal(await local.client.readContract({address:c.RelicNFT,abi:artifact('RelicNFT').abi,functionName:'balanceOf',args:[local.modules.ECONOMY_DEAD,BigInt(seal.intent.token)]}),1n);
+ const guestRuntime=local.modules.chainRuntime(c,w,guest.address),buyerRuntime=local.modules.chainRuntime(c,bw,buyer.address);
+ const guestHoldings=await guestRuntime.holdings(local.modules.CHAIN_V3_ITEM_IDS);
+ assert(guestHoldings.some(h=>h.id===30001n&&h.amount===1n),'Deed appears in the chain Bag');
+ assert((await buyerRuntime.holdings(local.modules.CHAIN_V3_ITEM_IDS)).some(h=>h.id===token),'Quality output appears for buyer');
+ const move=await guestRuntime.moveAdapter(local.modules.CHAIN_V3_ITEM_IDS),moving=await move.relics();
+ await move.moveRelics(buyer.address,moving.map(h=>h.id),moving.map(h=>h.amount));
+ assert((await buyerRuntime.holdings(local.modules.CHAIN_V3_ITEM_IDS)).some(h=>h.id===30001n),'Transferred Deed remains discoverable');
+ writeFileSync('reports/v3-shell/tests/b6-anvil.json',JSON.stringify({chain:43113,rpcPort:8546,guestSiwe:true,questLevel:5,deed:30001,spoolGross:'16',retained:'4',netYarn:'12',fusionOutput:String(token),sealedInputBurn:burnTx,secondWalletBought:true,receipts},null,2));
+ console.log(`V3 Anvil PASS: guest SIWE → quest → Deed → Spool → withdraw → seal → dead-address fusion → list → buy; ${receipts.length} receipts`);
+}finally{await local.stop();}

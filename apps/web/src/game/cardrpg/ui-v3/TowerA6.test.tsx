@@ -48,7 +48,7 @@ function earnedTower() {
 it('keeps the chosen floor across gift sections and presents the current counter advice',()=>{
  const m=earnedTower();render(<TowerA6 m={m}/>);
  fireEvent.click(screen.getByRole('button',{name:'Floor 1 cleared'}));
- expect(screen.getByRole('button',{name:'Climb floor 1 →'})).toBeTruthy();
+ expect(screen.getByRole('button',{name:'Climb floor 1'})).toBeTruthy();
  expect(screen.queryByText(/Hush prevents the brace/)).toBeNull();
  expect(screen.getByText('Use Shred and direct hits to strip shields, or Burn to bypass them.')).toBeTruthy();
  const before=R.exportSave(m.state);
@@ -118,7 +118,7 @@ it('plans only the next playable floor from a future gift, transfers focus and l
  fireEvent.click(screen.getByRole('button',{name:'Floor 1 cleared'}));
  fireEvent.click(screen.getByRole('button',{name:'Milestone gifts 1'}));const before=R.exportSave(m.state);
  fireEvent.click(screen.getByRole('button',{name:'Plan floor 6 toward floor 30 gift'}));
- const climb=screen.getByRole('button',{name:'Climb floor 6 →'});
+ const climb=screen.getByRole('button',{name:'Climb floor 6'});
  expect(document.activeElement).toBe(climb);expect(R.exportSave(m.state)).toBe(before);
  expect(screen.getByRole('button',{name:'Floor 6'}).getAttribute('aria-pressed')).toBe('true');
  expect(screen.getByRole('button',{name:'Floor 30 locked'}).getAttribute('aria-pressed')).toBe('false');

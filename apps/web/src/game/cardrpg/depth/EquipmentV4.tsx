@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import { useId, useMemo, useState, useSyncExternalStore } from 'react';
 import { gearComparison } from './meta-presentation';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -14,7 +15,7 @@ export function ShiftLoadouts({m}:{m:DepthModel}){
   <label>Shift name<input value={name} maxLength={40} onChange={e=>setName(e.target.value)} /></label></div>
   <button disabled={locked||!name.trim()} onClick={()=>m.apply(R.saveLoadoutV4(state,slot,name),'Shift saved with this crew and its equipment.')}>Save current shift</button>
   {preset&&<><p>{preset.team.map(id=>R.CAT_BY_ID[id]!.name).join(' · ')} · {preset.plan.focus}/{preset.plan.care}</p>
-  {preview?.ok?<><p>Approximate crew score: {preview.before.toFixed(1)} → {preview.after?.toFixed(1)}</p><p>{preview.transfers.length?preview.transfers.join('; '):'No equipment transfers.'}</p><p>{preview.changes.length?preview.changes.map(c=>c).join('; '):'Set and unique effects stay the same.'}</p></>:<p role="status">{preview?.error}</p>}
+  {preview?.ok?<><p>Approximate crew score: {preview.before.toFixed(1)} to {preview.after?.toFixed(1)}</p><p>{preview.transfers.length?preview.transfers.join('; '):'No equipment transfers.'}</p><p>{preview.changes.length?preview.changes.map(c=>c).join('; '):'Set and unique effects stay the same.'}</p></>:<p role="status">{preview?.error}</p>}
   <button disabled={locked||!preview?.ok} onClick={()=>m.apply(R.applyLoadoutV4(state,slot),'Shift applied together; every piece has one owner.')}>Apply saved shift</button></>}
  </section>;
 }
@@ -25,7 +26,7 @@ export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccoun
    .filter(([key])=>delta[key]!==0).map(([key,label])=>`${delta[key]>0?'+':''}${delta[key]} ${label}`):[];
  return <div className="dp-v4-utility"><h3>What this changes</h3>
  {changes.length>0&&<p>{R.CAT_BY_ID[cardId]!.name}: {changes.join(' · ')}.</p>}
- <p>Build estimate: {result.before.total.toFixed(1)} → {result.after.total.toFixed(1)}.</p>
+ <p>Build estimate: {result.before.total.toFixed(1)} to {result.after.total.toFixed(1)}.</p>
  {result.transfer&&<p>Transfers from {R.CAT_BY_ID[result.transfer]!.name}; that companion loses this piece.</p>}
  {result.gained.map(effect => {
    const set=R.SETS.find(s=>s.twoEffect===effect||s.fourEffect===effect);
@@ -33,7 +34,7 @@ export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccoun
  })}
  {!result.gained.length&&<p>No new set bonus.</p>}
  {!!result.lost.length&&<p>Loses: {result.lost.map(effect=>R.effectTextV4(effect,state.formationC2)).join(' ')}</p>}
- <details><summary>How the estimate works</summary><p>Crew score: {result.teamBefore.toFixed(1)} → {result.teamAfter.toFixed(1)}. Piece share: {(result.share*100).toFixed(1)}%.</p><p>Core {result.after.core.toFixed(1)} + utility {result.after.utility.toFixed(1)}.</p><p>HP ÷ 5 + 2 × attack + 1.5 × defense, plus shield, healing and conditional effects in a three-round reference. Shield and healing use 0.2 per point; conditional damage 0.36; counter damage 0.3; extended status 2; rear reach 5. This is an approximate build estimate, not a win probability. Matchup calibration is still pending.</p></details></div>;
+ <details><summary>How the estimate works</summary><p>Crew score: {result.teamBefore.toFixed(1)} to {result.teamAfter.toFixed(1)}. Piece share: {(result.share*100).toFixed(1)}%.</p><p>Core {result.after.core.toFixed(1)} + utility {result.after.utility.toFixed(1)}.</p><p>HP ÷ 5 + 2 × attack + 1.5 × defense, plus shield, healing and conditional effects in a three-round reference. Shield and healing use 0.2 per point; conditional damage 0.36; counter damage 0.3; extended status 2; rear reach 5. This is an approximate build estimate, not a win probability. Matchup calibration is still pending.</p></details></div>;
 }
 const supplyName=(id:string)=>STACK_ITEMS.find(item=>item.id===id)?.name??id;
 export function PantryV4({m}:{m:DepthModel}){
@@ -51,7 +52,7 @@ export function PantryV4({m}:{m:DepthModel}){
  <label>Pantry supply<select aria-label="Pantry supply" value={supply} onChange={e=>setSupply(e.target.value as R.SupplyIdV4)}>{R.SUPPLY_IDS_V4.map(id=><option value={id} key={id}>{supplyName(id)} · {state.account.inventory.stacks[id]??0}/20</option>)}</select></label></div>
  <p>{R.SUPPLY_TEXT_V4[supply]}</p>
  <section id={description} className="dp-v4-supply-preview" aria-label="Supply preview" aria-live="polite">
-  {preview.ok?<>{supply==='milk-tonic'?<p><b>{R.CAT_BY_ID[cat]!.name}: {hp} → {preview.state.run!.hp[cat]} HP (+{preview.state.run!.hp[cat]!-hp})</b><br/>Uses 1 milk tonic now.{run?.packedSupply&&' Your packed treat stays ready.'}</p>:<><p><b>{supplyName(supply)} for {R.CAT_BY_ID[cat]!.name}</b> · next encounter.</p><p>{run?.packedSupply?`Returns ${supplyName(run.packedSupply.id)} to the pantry, then reserves 1 ${supplyName(supply)}.`:`Reserves 1 ${supplyName(supply)}. You can return it before opening Prepare.`}</p></>}</>:<p>{reason}</p>}
+  {preview.ok?<>{supply==='milk-tonic'?<p><b>{R.CAT_BY_ID[cat]!.name}: {hp} to {preview.state.run!.hp[cat]} HP (+{preview.state.run!.hp[cat]!-hp})</b><br/>Uses 1 milk tonic now.{run?.packedSupply&&' Your packed treat stays ready.'}</p>:<><p><b>{supplyName(supply)} for {R.CAT_BY_ID[cat]!.name}</b> · next encounter.</p><p>{run?.packedSupply?`Returns ${supplyName(run.packedSupply.id)} to the pantry, then reserves 1 ${supplyName(supply)}.`:`Reserves 1 ${supplyName(supply)}. You can return it before opening Prepare.`}</p></>}</>:<p>{reason}</p>}
   {!preview.ok&&active&&<small>{R.CAT_BY_ID[cat]!.name} · {hp}/{maxHp} HP{hp===0?' · Fallen':''}</small>}
  </section>
  <div className="dp-v4-pantry-actions"><button aria-describedby={description} disabled={!preview.ok} onClick={()=>m.apply(R.packSupplyV4(m.state,supply,cat),supply==='milk-tonic'?'Milk restored missing HP.':'Supply reserved for the next encounter.')}>{supply==='milk-tonic'?'Use milk tonic':'Confirm packed supply'}</button>

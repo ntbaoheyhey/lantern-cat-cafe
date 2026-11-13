@@ -31,6 +31,18 @@ export async function loadChainConfig(): Promise<ChainConfig> {
 export function publicChain(config: ChainConfig) {
   return createPublicClient({ chain: avalancheFuji, transport: http(config.rpcUrl, { timeout: 10_000, retryCount: 1 }), pollingInterval: 750 });
 }
+/** One block for all batches; a transfer cannot duplicate or hide an item mid-scan. */
+export async function readHoldings(client:ReturnType<typeof publicChain>,nft:Address,address:Address,ids:readonly bigint[]) {
+  if(!ids.length)return [];
+  const blockNumber=await client.getBlockNumber({cacheTime:0});
+  const rows:{id:bigint;amount:bigint}[]=[];
+  for(let start=0;start<ids.length;start+=500){
+    const batch=ids.slice(start,start+500);
+    const balances=await client.readContract({address:nft,abi:relicNftAbi,functionName:'balanceOfBatch',args:[batch.map(()=>address),batch],blockNumber});
+    rows.push(...batch.map((id,i)=>({id,amount:balances[i]!})).filter(row=>row.amount>0n));
+  }
+  return rows;
+}
 export const erc20Abi = [
   {type:'function',name:'balanceOf',stateMutability:'view',inputs:[{name:'owner',type:'address'}],outputs:[{type:'uint256'}]},
   {type:'function',name:'transfer',stateMutability:'nonpayable',inputs:[{name:'to',type:'address'},{name:'amount',type:'uint256'}],outputs:[{type:'bool'}]},
@@ -73,11 +85,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     }
     return rows;
   };
-  const holdings = async (ids: bigint[]) => {
-    if (!ids.length) return [];
-    const balances = await client.readContract({ address: config.RelicNFT, abi: relicNftAbi, functionName: 'balanceOfBatch', args: [ids.map(() => address), ids] });
-    return ids.map((id, i) => ({id, amount: balances[i]!})).filter(row => row.amount > 0n);
-  };
+  const holdings = (ids:bigint[]) => readHoldings(client,config.RelicNFT,address,ids);
   return { client, guard, receipt, write, listings, holdings,
     async moveAdapter(ids: bigint[]) {
       return {

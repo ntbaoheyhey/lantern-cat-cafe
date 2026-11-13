@@ -10,7 +10,7 @@
  .a6-guide-intro {display:grid;grid-template-columns:116px minmax(0,1fr);align-items:center;gap:22px;max-width:850px;margin:0 0 15px;padding:0 5px;}
  .a6-guide-intro>img {width:116px;height:128px;object-fit:contain;filter:drop-shadow(0 8px 5px #73553424);}
  .a6-guide-intro small {font-size:10px;letter-spacing:2px;color:#896642;}
- .a6-guide-intro h2 {margin:5px 0 7px;font:700 29px Georgia,serif;color:#63452c;}
+ .a6-guide-intro h2 {margin:5px 0 7px;font:700 29px var(--font-display);color:#63452c;}
  .a6-guide-intro p {font-size:14px;line-height:1.5;margin:0;color:#725534;}
  [data-screen=codex]>.cr-tabs {position:sticky;z-index:2;top:-18px;margin:0 0 15px;padding:8px 0 10px;background:linear-gradient(#f9eccb 90%,#f9eccb00);}
  [data-screen=codex]>.cr-tabs>button {min-height:42px;}
@@ -47,7 +47,7 @@
  .a6-comfort-panel .dp-three>label:has(input[type=checkbox]) {grid-column:1/-1;flex-direction:row;align-items:center;min-height:42px;padding:10px 12px;border:1px solid #c1a473;border-radius:7px;background:#fff5dd;}
  .a6-comfort-panel input[type=checkbox] {width:20px;height:20px;min-height:0;flex:none;margin:0 8px 0 0;accent-color:#967440;}
  .a6-comfort-panel .a6-replay-button {margin-top:16px;width:100%;}
- .a6-comfort-panel>.a6-replay-button+small {display:block;margin-top:10px;font:12px/1.4 system-ui,sans-serif;letter-spacing:0;}
+ .a6-comfort-panel>.a6-replay-button+small {display:block;margin-top:10px;font:12px/1.4 var(--font-body);letter-spacing:0;}
  .a6-settings-layout>.dp-shortcuts {grid-column:1/-1;}
  @media(max-height:760px) {
   .a6-guide-intro {grid-template-columns:88px minmax(0,1fr);gap:18px;margin-bottom:9px;}
@@ -92,7 +92,7 @@
  .a6-guide-writing {min-height:0;max-height:100%;overflow:auto;scrollbar-gutter:stable;padding:4px 9px 4px 3px;overscroll-behavior:contain}
  .a6-guide-writing header {border-bottom:1px dashed #bda16e;padding-bottom:14px;margin-bottom:18px}
  .a6-guide-writing header>small {text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:#927044}
- .a6-guide-writing h3,.a6-guide-no-match h3 {font:700 31px/1.15 Georgia,serif;color:#63462b;margin:8px 0 12px}
+ .a6-guide-writing h3,.a6-guide-no-match h3 {font:700 31px/1.15 var(--font-display);color:#63462b;margin:8px 0 12px}
  .a6-guide-writing header>p {font-size:13px;line-height:1.5;color:#896641;margin:0}
  .a6-guide-writing>p {font-size:16px;line-height:1.6;margin:12px 0;color:#6f5234}
  .a6-guide-no-match {grid-column:1/-1;text-align:center;color:#765638;font-size:15px}
@@ -136,12 +136,12 @@
  .a6-save-heading {display:grid;grid-template-columns:100px minmax(0,1fr);gap:17px;align-items:center;margin-bottom:17px}
  .a6-save-heading>img {height:142px;width:100%;object-fit:contain;filter:drop-shadow(0 8px 4px #795a3022)}
  .a6-save-heading small,.a6-comfort-desk header small,.a6-reset-page>small {font-size:10px;letter-spacing:.16em;color:#977347}
- .a6-settings-desk h2 {font:700 29px/1.2 Georgia,serif;color:#63452c;margin:7px 0 10px}
+ .a6-settings-desk h2 {font:700 29px/1.2 var(--font-display);color:#63452c;margin:7px 0 10px}
  .a6-settings-desk p {font-size:14px;line-height:1.5;margin:8px 0;color:#705337}
  .a6-save-state {display:inline-block;font-size:12px;line-height:1.35;color:#6b653e;border:1px solid #b4a678;border-radius:5px;background:#f7f0ce;padding:5px 9px;margin-top:3px}
  .a6-code-caption {display:flex;justify-content:space-between;align-items:center;gap:12px;margin:10px 0 8px}
  .a6-code-caption label {font-size:14px;color:#705337}.a6-code-caption small {font-size:12px;color:#8a6b46}
- .a6-save-letter>textarea {display:block;min-height:112px;height:112px;width:100%;resize:none;font:14px/1.45 system-ui,sans-serif;color:#664a30;background:#fffbed;border:1px solid #b99b6a;border-radius:8px;padding:12px;margin:0 0 14px;box-shadow:inset 0 2px 3px #8360390d}
+ .a6-save-letter>textarea {display:block;min-height:112px;height:112px;width:100%;resize:none;font:14px/1.45 var(--font-body);color:#664a30;background:#fffbed;border:1px solid #b99b6a;border-radius:8px;padding:12px;margin:0 0 14px;box-shadow:inset 0 2px 3px #8360390d}
  .a6-save-letter>textarea::placeholder {color:#997f5b}
  .a6-save-actions {display:flex;gap:8px}.a6-save-actions>button {min-height:42px;font-size:14px;padding:9px 12px;flex:1}
  .a6-save-letter>.a6-save-feedback {min-height:42px;font-size:14px;line-height:1.4;margin:12px 0 10px}
@@ -163,7 +163,7 @@
  .a6-comfort-desk>.a6-playback-note {margin:13px 0;font-size:14px}
  .a6-settings-replay>button {width:100%;min-height:42px;font-size:14px}.a6-settings-replay>small {display:block;font-size:12px;margin-top:8px;color:#886842}
  .a6-reset-page {border-top:1px dashed #b99a68;padding-top:20px;max-width:470px}
- .a6-reset-page h3 {font:700 27px/1.2 Georgia,serif;color:#68472d;margin:10px 0 16px}
+ .a6-reset-page h3 {font:700 27px/1.2 var(--font-display);color:#68472d;margin:10px 0 16px}
  .a6-reset-page>p {font-size:15px;line-height:1.6}.a6-reset-page>.a6-reset-account {font-size:13px;padding:10px 0;margin:12px 0;border-block:1px solid #bda16e55}
  .a6-reset-page .cr-actions {margin:18px 0 12px;gap:12px}.a6-reset-page button {font-size:14px;min-height:42px}
  .a6-reset-confirm {background:#e5c8a1;color:#854f32;border-color:#b98b65}
@@ -197,7 +197,7 @@
  .a6-comfort-motion {flex-direction:row;text-align:left}
  .a6-comfort-motion input {appearance:auto;padding:0;color-scheme:light}
  .a6-import-page {border-top:1px dashed #b99a68;padding-top:12px}
- .a6-import-page h3 {font:700 24px/1.2 Georgia,serif;margin:0 0 10px;color:#63452c}
+ .a6-import-page h3 {font:700 24px/1.2 var(--font-display);margin:0 0 10px;color:#63452c}
  .a6-import-page table {width:100%;border-collapse:collapse;font-size:14px;line-height:1.3;text-align:left}
  .a6-import-page caption {text-align:left;font-size:14px;color:#705337;margin-bottom:8px}
  .a6-import-page th,.a6-import-page td {padding:5px 8px;border-bottom:1px solid #b99a6844;color:#634b31}

@@ -49,7 +49,7 @@ export function chainFailure(error: unknown, fallback: string) {
 
 export const CHAIN_BODY_BYTES = 1024;
 export const CHAIN_BODY_TIMEOUT_MS = 10_000;
-export type ChainEndpoint = 'guest-drip' | 'chain-judge' | 'chain-items' | 'chain-cosmetics' | 'chain-campaign' | 'chain-campaign-reward';
+export type ChainEndpoint = 'guest-drip' | 'chain-judge' | 'chain-items' | 'chain-cosmetics' | 'chain-campaign' | 'chain-campaign-reward' | 'chain-economy-v3';
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /** Validate action/IDs before any RPC, inventory query or signature is created. */
@@ -57,7 +57,8 @@ function validateBody(endpoint: ChainEndpoint, body: unknown): Record<string, un
   if (!body || typeof body !== 'object' || Array.isArray(body)) throw new ChainRequestError('invalid_request');
   const value = body as Record<string, unknown>;
   let fields: string[];
-  if (endpoint === 'guest-drip') fields = [];
+  if(endpoint==='chain-economy-v3'){if(typeof value.id!=='string'||!uuid.test(value.id)||!value.command||typeof value.command!=='object'||Array.isArray(value.command))throw new ChainRequestError('invalid_request');fields=['id','command'];}
+  else if (endpoint === 'guest-drip') fields = [];
   else if(endpoint==='chain-campaign-reward'&&(value.action==='quote'||value.action==='claim')){
     if(!['weekly-boss','season-rank'].includes(String(value.kind)))throw new ChainRequestError('invalid_request');
     fields=['action','kind'];

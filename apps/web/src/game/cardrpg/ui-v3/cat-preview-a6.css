@@ -6,7 +6,7 @@
  .a6-preview-header>img {width:66px;height:66px;object-fit:contain;}
  .a6-preview-header>div {flex:1;min-width:0;}
  .a6-preview-header small {font-size:10px;letter-spacing:2px;color:#e9c18b;}
- .a6-preview-header h2 {margin:3px 0 0;font:700 27px Georgia,serif;color:#fff0ce;}
+ .a6-preview-header h2 {margin:3px 0 0;font:700 27px var(--font-display);color:#fff0ce;}
  .a6-preview-header>button {min-height:44px;font-size:14px;padding:9px 14px;white-space:nowrap;}
  .a6-preview-header>button>span {margin-left:12px;font-size:20px;}
  .a6-preview-body {display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:20px;padding:18px;flex:1;min-height:0;}
@@ -19,7 +19,7 @@
  .a6-preview-stage .dp-miniature-controls label {font-size:12px;}
  .a6-preview-copy {flex:none;min-height:0;max-height:45%;overflow:auto;padding:12px 14px;background:#fff4d9;border:1px solid #c2a36d;border-radius:8px;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2;}
  .a6-preview-copy>header {display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
- .a6-preview-copy h3 {font:700 21px Georgia,serif;margin:0;color:#62412b;}
+ .a6-preview-copy h3 {font:700 21px var(--font-display);margin:0;color:#62412b;}
  .a6-preview-copy small {font-size:12px;color:#805e33;}
  .a6-preview-copy p {font-size:15px;line-height:1.5;margin:7px 0 0;}
  .a6-preview-notes {min-height:0;overflow:auto;scrollbar-width:thin;}

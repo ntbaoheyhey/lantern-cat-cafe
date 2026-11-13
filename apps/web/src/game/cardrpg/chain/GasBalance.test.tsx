@@ -18,25 +18,25 @@ afterEach(() => {cleanup(); vi.resetAllMocks();});
 it('shows existing gas even when the sponsor service is unavailable', async () => {
   vi.mocked(chainPost).mockRejectedValue(new Error('unavailable'));
   render(<GasBalance/>);
-  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('▲ 0.0500'));
-  expect(screen.queryByRole('link', {name: '↗ Faucet'})).toBeNull();
+  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('0.0500'));
+  expect(screen.queryByRole('link', {name: 'Faucet'})).toBeNull();
 });
 it('updates spent gas without requesting a second grant', async () => {
   render(<GasBalance/>);
-  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('▲ 0.0500'));
+  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('0.0500'));
   balance.mockResolvedValue(17_000_000_000_000_000n);
   act(() => window.dispatchEvent(new Event('chain:changed')));
-  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('▲ 0.0170'));
+  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('0.0170'));
   expect(chainPost).toHaveBeenCalledTimes(1);
 });
 it('offers the faucet when a previously confirmed grant has been spent', async () => {
   balance.mockResolvedValue(0n); render(<GasBalance/>);
   await waitFor(() => expect(screen.getByText('No gas. Open faucet.')).toBeTruthy());
-  expect(screen.getByRole('link', {name: '↗ Faucet'})).toBeTruthy();
+  expect(screen.getByRole('link', {name: 'Faucet'})).toBeTruthy();
 });
 it('clears stale funds on an RPC failure', async () => {
   render(<GasBalance/>);
-  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('▲ 0.0500'));
+  await waitFor(() => expect(screen.getByTestId('chain-gas').textContent).toBe('0.0500'));
   balance.mockRejectedValue(new Error('RPC unavailable'));
   act(() => window.dispatchEvent(new Event('chain:changed')));
   await waitFor(() => expect(screen.getByText('Gas unavailable.')).toBeTruthy());

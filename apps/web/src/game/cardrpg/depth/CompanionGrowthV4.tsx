@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {HelpC2} from '../ui-v3/TextDietC2';
 import { useId } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -20,7 +21,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
     const next=preview.ok?preview.state.account.cards.find(c=>c.id===card.id)!:card;
     const cost:Cost=kind==='level'?{fish:C.level.fishBase*card.level,threads:C.level.threads}:{fish:C.level.ascendFish*card.stars};
     const before=R.depthStats(m.state,catId),after=preview.ok?R.depthStats(preview.state,catId):before;
-    return <div className="dp-v4-growth c2-growth" data-growth={kind}><button className={kind==='level'?'cr-primary':undefined} disabled={!preview.ok} aria-label={action} aria-describedby={descriptionId} onClick={()=>m.command(command)}>{kind==='level'?'↑ Level up':'★ Star'}</button><div id={descriptionId}><b>{kind==='level'?`↑ ${card.level} → ${preview.ok?next.level:card.level+1}`:`★ ${card.stars} → ${preview.ok?next.stars:card.stars+1}`}</b><CostView cost={cost}/>{kind==='ascend'&&<small aria-label="Matching shards">✦ {card.shards}/{C.level.shardsBase*card.stars}</small>}<small aria-label="Stat gains">♥ +{after.hp-before.hp} · ⚔ +{after.attack-before.attack} · 🛡 +{after.defense-before.defense}</small></div><HelpC2 label={action}><p>{preview.ok?'Costs are shown before you spend. The stat gains apply to this cat.':locked?'Finish this route before training.':preview.error}</p><p>Patrol gives fish and threads. Extra recruits give matching shards.</p></HelpC2></div>;
+    return <div className="dp-v4-growth c2-growth" data-growth={kind}><button className={kind==='level'?'cr-primary':undefined} disabled={!preview.ok} aria-label={action} aria-describedby={descriptionId} onClick={()=>m.command(command)}>{kind==='level'?'Level up':'Star'}</button><div id={descriptionId}><b>{kind==='level'?`${card.level}to ${preview.ok?next.level:card.level+1}`:`${card.stars}to ${preview.ok?next.stars:card.stars+1}`}</b><CostView cost={cost}/>{kind==='ascend'&&<small aria-label="Matching shards"><GameIcon name="season" size={18}/> {card.shards}/{C.level.shardsBase*card.stars}</small>}<small aria-label="Stat gains"><GameIcon name="heart" size={18}/> +{after.hp-before.hp} · <GameIcon name="fight" size={18}/> +{after.attack-before.attack} · <GameIcon name="shield" size={18}/> +{after.defense-before.defense}</small></div><HelpC2 label={action}><p>{preview.ok?'Costs are shown before you spend. The stat gains apply to this cat.':locked?'Finish this route before training.':preview.error}</p><p>Patrol gives fish and threads. Extra recruits give matching shards.</p></HelpC2></div>;
   }
   if (!preview.ok && R.gameplayA6(m.state) && !locked && !m.state.account.pendingRun) {
     const capped = kind === 'level' ? card.level >= CARD_BY_ID[catId]!.levelCap : card.stars >= C.level.maxStars;
@@ -35,7 +36,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
     if (!capped && needs.length) return <div className="dp-v4-growth a6-growth-shortfall" data-growth={kind}>
       <button disabled aria-describedby={descriptionId}>{action}</button>
       <div id={descriptionId}>
-        <b>{R.CAT_BY_ID[catId]!.name} → {kind === 'level' ? `level ${card.level + 1}` : `${card.stars + 1} stars`}</b>
+        <b>{R.CAT_BY_ID[catId]!.name} to {kind === 'level' ? `level ${card.level + 1}` : `${card.stars + 1} stars`}</b>
         <CostView cost={cost}/>
         {shards > 0 && <small>{card.shards} / {shards} matching shards</small>}
         <small className="a6-growth-missing">Need {needs.join(' · ')}.</small>
@@ -62,7 +63,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
       onClick={() => m.command(command)}>{action}</button>
     <div id={descriptionId}>
       {kind === 'ascend' && R.gameplayA6(m.state) && <small>{card.shards} matching shards owned</small>}
-      <b>{R.CAT_BY_ID[catId]!.name} → {kind === 'level' ? `level ${next.level}` : `${next.stars} stars`}</b>
+      <b>{R.CAT_BY_ID[catId]!.name} to {kind === 'level' ? `level ${next.level}` : `${next.stars} stars`}</b>
       <CostView cost={cost} />
       {card.shards > next.shards && <small>{card.shards - next.shards} matching shards</small>}
       {!!stats.length && <small>{stats.join(' · ')}</small>}

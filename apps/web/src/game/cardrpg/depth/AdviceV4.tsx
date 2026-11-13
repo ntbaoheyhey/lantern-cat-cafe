@@ -55,7 +55,7 @@ export function AdviceV4({ m }: { m: DepthModel }) {
   };
   const costText = (cost: Record<string, number>) => Object.entries(cost).filter(([,n]) => n > 0).map(([name,n]) => `${n} ${name}`).join(' · ') || 'No currency needed.';
   const powerText = powerAfter === undefined ? '' : powerAfter === powerBefore ? `Crew Power stays ${powerBefore.toLocaleString('en-US')}.` :
-    `Crew Power ${powerBefore.toLocaleString('en-US')} → ${powerAfter.toLocaleString('en-US')} (${powerAfter > powerBefore ? '+' : '−'}${Math.abs(powerAfter-powerBefore).toLocaleString('en-US')}).`;
+    `Crew Power ${powerBefore.toLocaleString('en-US')} to ${powerAfter.toLocaleString('en-US')} (${powerAfter > powerBefore ? '+' : '−'}${Math.abs(powerAfter-powerBefore).toLocaleString('en-US')}).`;
   const retryText = m.state.run?.towerA6 ? `Retry Tower floor ${m.state.run.floor} with full crew HP.` : `Restart chapter ${m.state.run?.chapter ?? battle.chapter} at its first stop with full crew HP.`;
   return <section className="cr-panel dp-v4-advice" aria-label="Your next change" aria-live="polite" aria-busy={!current} data-advice-state={!current?'checking':current.error??(current.advice?'ready':'no-change')}>
     <h2>One change for your next try</h2>

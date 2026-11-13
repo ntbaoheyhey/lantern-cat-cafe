@@ -29,7 +29,7 @@ it.each(['tonic','charm','leave'])('previews read-only shop choices and applies 
 });
 it('preserves the legacy tonic purchase above five',()=>{
  const m=model('shop',false);m.state.run!.supplies=5;const expected=R.resolveNode(m.state,'tonic');render(<RouteShop m={m}/>);
- expect(button('Buy route tonic · 45 points').disabled).toBe(false);expect(screen.getByText(/Route tonics: 5 → 6\./)).toBeTruthy();
+ expect(button('Buy route tonic · 45 points').disabled).toBe(false);expect(screen.getByText(/Route tonics: 5 to 6\./)).toBeTruthy();
  fireEvent.click(button('Buy route tonic · 45 points'));expect(m.state).toEqual(expected.state);
 });
 it('revalidates a stale shop quote before spending',()=>{
@@ -41,7 +41,7 @@ it.each([true,false])('shows exact campfire healing, clipping and revival (moder
  const m=model('campfire',modern),cats=R.battleCats(m.state);m.state.run!.hp.mochi=cats[0]!.stats.hp-43;m.state.run!.hp.soot=0;
  const expected=R.resolveNode(m.state,'heal'),before=R.exportSave(m.state);render(<RouteCampfire m={m}/>);
  const region=screen.getByRole('region',{name:'Campfire recovery'});
- for(const cat of cats){const hp=m.state.run!.hp[cat.id]!,after=expected.state.run!.hp[cat.id]!;expect(region.textContent).toContain(`${hp} → ${after} HP (+${after-hp})`);}
+ for(const cat of cats){const hp=m.state.run!.hp[cat.id]!,after=expected.state.run!.hp[cat.id]!;expect(region.textContent).toContain(`${hp} to ${after} HP (+${after-hp})`);}
  expect(region.textContent).toContain('Revives');expect(R.exportSave(m.state)).toBe(before);expect(button('Heal the crew').getAttribute('aria-describedby')).toBe(region.id);
  fireEvent.click(button('Heal the crew'));expect(m.state).toEqual(expected.state);
 });
@@ -49,7 +49,7 @@ it('previews a chosen skill rank and keeps HP unchanged when strengthening it',(
  const m=model('campfire'),skill=R.defaultSkills(m.state,'soot')[0]!;m.state.run!.upgrades[skill]=1;m.state.run!.hp.mochi!-=43;
  const before=R.exportSave(m.state),expected=R.resolveNode(m.state,'upgrade',skill);render(<RouteCampfire m={m}/>);
  fireEvent.change(screen.getByRole('combobox',{name:'Campfire skill'}),{target:{value:skill}});
- expect(screen.getByText('Rank 1 → 2/3 · effect power +20% → +40% for this route.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
+ expect(screen.getByText('Rank 1 to 2/3 · effect power +20% to +40% for this route.')).toBeTruthy();expect(R.exportSave(m.state)).toBe(before);
  fireEvent.click(button('Strengthen skill'));expect(m.state).toEqual(expected.state);
 });
 it('disables a capped skill and keeps full-HP continuation when every skill is capped',()=>{

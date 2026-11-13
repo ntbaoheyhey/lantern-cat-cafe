@@ -11,14 +11,14 @@ const choose=()=>screen.getByRole('button',{name:'Choose reward · 24 marks'});
 
 it('previews a new companion without spending, settles the exact command and opens that cat',()=>{
  const m=model(),before=R.exportSave(m.state),expected=R.chooseSelectorV4(m.state,'cat','sorrel');render(<SelectorA6 m={m}/>);select('cat','sorrel');
- const preview=screen.getByRole('region',{name:'Chosen reward preview'});expect(preview.textContent).toContain('Level 1 · 1 star');expect(preview.textContent).toContain('Marks after choosing: 48 → 24.');expect(choose().getAttribute('aria-describedby')).toBe(preview.id);expect(R.exportSave(m.state)).toBe(before);
+ const preview=screen.getByRole('region',{name:'Chosen reward preview'});expect(preview.textContent).toContain('Level 1 · 1 star');expect(preview.textContent).toContain('Marks after choosing: 48 to 24.');expect(choose().getAttribute('aria-describedby')).toBe(preview.id);expect(R.exportSave(m.state)).toBe(before);
  fireEvent.click(choose());expect(m.state).toEqual(expected.state);expect(screen.getByRole('status').textContent).toContain('Sorrel joined at level 1. 24 marks spent; 24 left. Banner pity unchanged.');
  fireEvent.click(screen.getByRole('button',{name:'View this cat'}));expect(m.cardId).toBe('sorrel');expect(m.screen).toBe('collection');
 });
 
 it('quotes actual duplicate shards, preserves level and stars, and rejects a full shard balance',()=>{
  const m=model();m.shortcut('unlock');m.state.v4!.selectorMarks=48;const cat=m.state.account.cards.find(c=>c.cardId==='mochi')!,before={...cat};
- const ui=render(<SelectorA6 m={m}/>);select('cat','mochi');expect(screen.getByText('120 → 122 matching shards (+2)')).toBeTruthy();fireEvent.click(choose());expect(m.state.account.cards.find(c=>c.cardId==='mochi')).toEqual({...before,shards:122});expect(screen.getByRole('status').textContent).toContain('Mochi: +2 matching shards.');
+ const ui=render(<SelectorA6 m={m}/>);select('cat','mochi');expect(screen.getByText('120 to 122 matching shards (+2)')).toBeTruthy();fireEvent.click(choose());expect(m.state.account.cards.find(c=>c.cardId==='mochi')).toEqual({...before,shards:122});expect(screen.getByRole('status').textContent).toContain('Mochi: +2 matching shards.');
  m.state.account.cards.find(c=>c.cardId==='mochi')!.shards=Number.MAX_SAFE_INTEGER;m.state={...m.state};ui.rerender(<SelectorA6 m={m}/>);
  expect((choose()as HTMLButtonElement).disabled).toBe(true);expect(screen.getByText('This saved balance is full.')).toBeTruthy();const full=R.exportSave(m.state);fireEvent.click(choose());expect(R.exportSave(m.state)).toBe(full);
 });
@@ -40,7 +40,7 @@ it('reveals the full shard balance even when missing marks and collection also b
 
 it('adds another owned gear template as a separate piece and opens its exact instance',()=>{
  const m=model(),gear=R.GEAR[0]!;m.state.gear.push(R.makeGear(m.state,gear.id,826051));const count=m.state.gear.filter(g=>g.templateId===gear.id).length,expected=R.chooseSelectorV4(m.state,'gear',gear.id),pity=structuredClone(m.state.account.pity),stamps=m.state.account.currencies.stamps;
- render(<SelectorA6 m={m}/>);select('gear',gear.id);expect(screen.getByText(`${count} → ${count+1} owned · one new piece in your bag`)).toBeTruthy();fireEvent.click(choose());expect(m.state).toEqual(expected.state);expect(m.state.account.pity).toEqual(pity);expect(m.state.account.currencies.stamps).toBe(stamps);
+ render(<SelectorA6 m={m}/>);select('gear',gear.id);expect(screen.getByText(`${count} to ${count+1} owned · one new piece in your bag`)).toBeTruthy();fireEvent.click(choose());expect(m.state).toEqual(expected.state);expect(m.state.account.pity).toEqual(pity);expect(m.state.account.currencies.stamps).toBe(stamps);
  fireEvent.click(screen.getByRole('button',{name:'View this gear'}));expect(m.itemId).toBe(expected.state.gear.at(-1)!.id);expect(m.screen).toBe('inventory');
 });
 

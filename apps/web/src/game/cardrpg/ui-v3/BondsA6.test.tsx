@@ -39,7 +39,7 @@ it('keeps bond affordances absent from flag-OFF companion cards', () => {
   const { rerender } = render(<CompanionCard id="mochi" m={m}/>);
   expect(screen.queryByText('∞ Bonds')).toBeNull();
   rerender(<CompanionCard id="mochi" m={new DepthModel(true, true, true, true)}/>);
-  expect(screen.getByText('∞ Combo ready')).toBeTruthy();
+ expect(screen.getByText('Combo ready')).toBeTruthy();
 });
 
 it('explains the selected cat’s pair effects, missing partners and automatic trigger without changing the crew', () => {

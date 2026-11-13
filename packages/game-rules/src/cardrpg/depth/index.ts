@@ -52,3 +52,5 @@ export * from './relic-a6';
 export * from './onboarding-a6';
 
 export * from './balance-c2';
+
+export * from './fusion-v3';

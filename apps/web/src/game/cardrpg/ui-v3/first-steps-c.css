@@ -14,7 +14,7 @@
  .a6-first-step span {font-size:14px;line-height:1.4}
  .a6-first-step small {color:#705132;font-size:13px}
  .uv-shell[data-a6-guide=patrol] .uv-fight-bar .uv-fight {position:relative;overflow:visible}
- .uv-shell[data-a6-guide=patrol] .uv-fight-bar .uv-fight::after {content:'☝';position:absolute;right:15px;top:-38px;font-size:36px;color:#ffd17d;text-shadow:0 2px 3px #41281f;animation:a6-hand-point 1.1s ease-in-out infinite;pointer-events:none}
+ .uv-shell[data-a6-guide=patrol] .uv-fight-bar .uv-fight::after {content:'';background:url(/icons/arrow.svg) center/contain no-repeat;width:36px;height:36px;position:absolute;right:15px;top:-38px;font-size:36px;color:#ffd17d;text-shadow:0 2px 3px #41281f;animation:a6-hand-point 1.1s ease-in-out infinite;pointer-events:none}
  &.dp-reduced-motion .uv-shell[data-a6-guide] :is([data-home-destination],.uv-fight,.dp-v4-growth>button)::after {animation:none!important}
 }
 @media(max-height:780px) {

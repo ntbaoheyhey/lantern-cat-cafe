@@ -1,3 +1,4 @@
+import {ECONOMY_V3 as E,enhancementQuote,dropMultiplierBp} from '../economy-v3';
 import { relicBonusA6 } from './relic-a6';
 import { gameplayA6 } from './gameplay-a6';
 import { collectionBonusA6 } from './bonds-a6';
@@ -124,8 +125,9 @@ export function equipGear(state:DepthAccount,cardId:string,instanceId:string|nul
     s.equipment[cardId]![template.slot]=instanceId;
   });
 }
-export function enhancementPreview(item:GearInstance,state?:DepthAccount,cardId?:string){if(state&&cardId&&gameplayV4(state))return {before:gearMainV4(state,cardId,item),after:gearMainV4(state,cardId,{...item,enhancement:Math.min(12,item.enhancement+1)}),cost:{fish:30*(item.enhancement+1)**2,threads:3*(item.enhancement+1)}};const g=GEAR_BY_ID[item.templateId]!;return {before:Math.round(g.value*(1+.06*item.enhancement)),after:Math.round(g.value*(1+.06*(item.enhancement+1))),cost:{fish:30*(item.enhancement+1)**2,threads:3*(item.enhancement+1)}};}
-export function enhanceGear(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id);requireRule(item,'UNKNOWN_ID','Equipment is missing.');requireRule(item.enhancement<12,'MAX_LEVEL','Enhancement is capped at +12.');spend(s.account,enhancementPreview(item).cost);item.enhancement++;progressEnhance(s);});}
+export function enhancementPreview(item:GearInstance,state?:DepthAccount,cardId?:string){if(state?.economyV3){const level=Math.min(9,item.enhancement),quote=enhancementQuote(level,item.blessingBp??0),before=cardId?gearMainV4(state,cardId,item):GEAR_BY_ID[item.templateId]!.value;return {before,after:cardId?gearMainV4(state,cardId,{...item,enhancement:Math.min(10,item.enhancement+1)}):before,cost:{fish:quote.fish,threads:0},chanceBp:item.enhancement>=10?0:quote.chanceBp,blessingBp:item.blessingBp??0};}if(state&&cardId&&gameplayV4(state))return {before:gearMainV4(state,cardId,item),after:gearMainV4(state,cardId,{...item,enhancement:Math.min(12,item.enhancement+1)}),cost:{fish:30*(item.enhancement+1)**2,threads:3*(item.enhancement+1)}};const g=GEAR_BY_ID[item.templateId]!;return {before:Math.round(g.value*(1+.06*item.enhancement)),after:Math.round(g.value*(1+.06*(item.enhancement+1))),cost:{fish:30*(item.enhancement+1)**2,threads:3*(item.enhancement+1)}};}
+export function enhanceGear(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id);requireRule(item,'UNKNOWN_ID','Equipment is missing.');requireRule(item.enhancement<(s.economyV3?E.enhancement.max:12),'MAX_LEVEL',`Enhancement is capped at +${s.economyV3?10:12}.`);spend(s.account,enhancementPreview(item,s).cost);
+ if(s.economyV3){const quote=enhancementQuote(item.enhancement,item.blessingBp??0),attempt=item.enhanceAttempts??0;requireRule(Number.isSafeInteger(attempt)&&attempt<1_000_000,'MAX_LEVEL','Enhancement limit reached.');let hash=0;for(const ch of id)hash=(Math.imul(hash,31)+ch.charCodeAt(0))>>>0;const roll=new Rng(deriveSeed(s.account.seed,deriveSeed(hash,attempt))).int(0,9999);item.enhanceAttempts=attempt+1;if(roll<quote.chanceBp){item.enhancement++;item.blessingBp=0;}else item.blessingBp=Math.min(10000,(item.blessingBp??0)+E.enhancement.blessingBp);}else item.enhancement++;progressEnhance(s);});}
 function progressEnhance(s:DepthAccount){const p=s.account.quests.mender;if(p)p.progress=Math.min(6,p.progress+1);}
 export function reforgeGear(state:DepthAccount,id:string,index:number,affixId:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id),affix=AFFIX_BY_ID[affixId];requireRule(item&&Number.isInteger(index)&&index>=0&&index<item.affixes.length&&affix,'INVALID_AMOUNT','Choose an existing affix to replace.');requireRule(affix.slots.includes(GEAR_BY_ID[item.templateId]!.slot)&&!item.affixes.includes(affixId),'WRONG_SLOT','Choose a compatible different affix.');spend(s.account,{fish:90,threads:15});delete item.rolls[item.affixes[index]!];item.affixes[index]=affixId;item.rolls[affixId]=affix.tiers[item.tier-1]![0];});}
 export function salvageGear(state:DepthAccount,id:string){return transactDepth(state,s=>{requireHome(s);const item=s.gear.find(g=>g.id===id);requireRule(item,'UNKNOWN_ID','Equipment is missing.');requireRule(!Object.values(s.equipment).some(l=>Object.values(l).includes(id)),'EQUIPPED','Unequip before salvaging.');s.gear=s.gear.filter(g=>g.id!==id);s.account.currencies.threads+=CARD_RPG_CONFIG.rarity[GEAR_BY_ID[item.templateId]!.rarity].salvage;});}
@@ -148,17 +150,19 @@ const LEGACY_DROP_ODDS = {
   elite:{common:0,rare:7000,epic:2700,legendary:300},
   boss:{common:0,rare:2000,epic:7000,legendary:1000},
 } as const;
-export function gearDropPreview(state:DepthAccount,kind:'battle'|'elite'|'boss',chapter:number){
-  const cap=state.formationC2?ECONOMY_C2.dropsPerDay:6;
+export function gearDropPreview(state:DepthAccount,kind:'battle'|'elite'|'boss'|'firstBoss'|'tower',chapter:number){
+  const cap=state.economyV3?E.drops.halfUntil:state.formationC2?ECONOMY_C2.dropsPerDay:6;
   const remaining=Math.max(0,cap-(state.account.inventory.stacks[`depth-drops-${state.account.day}`]??0));
-  const base=state.formationC2?ECONOMY_C2.drops[kind]:LEGACY_DROP_ODDS[kind];
-  const odds=Object.fromEntries(RARITY_ORDER.map(r=>[r,remaining?base[r]:0])) as Record<typeof RARITY_ORDER[number],number>;
+  const base=state.economyV3?E.drops[kind].odds:state.formationC2?ECONOMY_C2.drops[kind==='firstBoss'||kind==='tower'?'boss':kind]:LEGACY_DROP_ODDS[kind==='firstBoss'||kind==='tower'?'boss':kind];
+  const chanceBp=state.economyV3?E.drops[kind].chanceBp*dropMultiplierBp(state.account.inventory.stacks[`depth-drops-${state.account.day}`]??0)/10000:10000;
+  const odds=Object.fromEntries(RARITY_ORDER.map(r=>[r,remaining?base[r]*chanceBp/10000:0])) as Record<typeof RARITY_ORDER[number],number>;
   const pool=GEAR.filter(g=>g.chapter<=chapter);
-  return {cap,remaining,base,odds,pool:pool.map(g=>({id:g.id,rarity:g.rarity,probability:odds[g.rarity]/10000/pool.filter(p=>p.rarity===g.rarity).length}))};
+  return {cap,remaining,base,odds,chanceBp,pool:pool.map(g=>({id:g.id,rarity:g.rarity,probability:odds[g.rarity]/10000/pool.filter(p=>p.rarity===g.rarity).length}))};
 }
-export function dropGear(state:DepthAccount,kind:'battle'|'elite'|'boss',seed:number,chapter:number):string|null {
+export function dropGear(state:DepthAccount,kind:'battle'|'elite'|'boss'|'firstBoss'|'tower',seed:number,chapter:number):string|null {
   const dayKey=`depth-drops-${state.account.day}`,count=state.account.inventory.stacks[dayKey]??0;
-  const {remaining,base}=gearDropPreview(state,kind,chapter);if(!remaining)return null;
+  const {remaining,base,chanceBp}=gearDropPreview(state,kind,chapter);if(!remaining)return null;
+  if(state.economyV3){state.account.inventory.stacks[dayKey]=count+1;if(new Rng(deriveSeed(seed,701)).int(0,9999)>=chanceBp)return null;}
   // Preserve the original roll ordering and random draw count for old replays.
   const rng=new Rng(seed),roll=rng.int(0,9999),rarity=roll<base.legendary?'legendary':roll<base.legendary+base.epic?'epic':roll<base.legendary+base.epic+base.rare?'rare':'common';
   const pool=GEAR.filter(g=>g.chapter<=chapter&&g.rarity===rarity),template=pool[rng.int(0,pool.length-1)]!;

@@ -7,3 +7,44 @@
 .b-page{width:min(960px,94vw);max-height:88vh;overflow:auto;position:relative;border:2px solid #c19b62;border-radius:22px;background:linear-gradient(135deg,#372842,#20192e);padding:30px;color:#f7dfba;font:500 20px var(--font-body)}.b-page h1{margin:0 0 20px;font-size:36px}.b-page .b-close{position:sticky;top:0;float:right;padding:3px;z-index:2}.b-page h1{padding-right:48px}.b-page table{border-collapse:collapse;width:100%;margin:16px 0}.b-page th,.b-page td{text-align:left;padding:8px 12px;border-bottom:1px solid #71533c}.b-page a{color:#ffd48b}.b-page video{max-width:100%;border-radius:14px}.b-page-nav{display:flex;gap:8px;flex-wrap:wrap}.b-page-nav button{font-size:16px;padding:8px 12px}.b-page article{padding:16px;background:#20172b99;border:1px solid #795740;border-radius:12px}.b-page .b-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.b-page details{margin:15px 0}.b-page svg{max-width:100%}@keyframes b-breathe{50%{transform:translateY(-7px) rotate(.6deg)}}@media(prefers-reduced-motion:reduce){.uv-app .uv-home-crew figure{animation:none}}@media(max-width:1100px){.uv-app .uv-dock nav{gap:8px}.uv-app .uv-dock nav button{min-width:56px}.uv-app .uv-patrol{width:170px}.b-right-events{right:16px}.b-left-events{left:16px}.b-yarn{display:none!important}}@media(max-width:760px){.b-landing-top{font-size:10px}.b-hero{margin-top:10vh}.b-hero h1{font-size:65px}.b-live{gap:16px}.b-live strong{font-size:16px}.b-landing-bottom{display:grid;gap:18px}.b-hero{max-width:390px}.b-keyart{object-position:65%}.b-landing-shade{background:linear-gradient(90deg,#171229ef,#17122966),linear-gradient(0deg,#171229,transparent)}.b-actions{flex-wrap:wrap}.b-page .b-stat-grid{grid-template-columns:1fr}}
 .uv-app[data-a6=true] .uv-shell .uv-currency{display:flex;flex-direction:row;min-width:80px;height:46px}.uv-app[data-a6=true] .uv-shell .uv-home-crew figcaption{display:none!important}.uv-app[data-a6=true] .uv-shell .uv-home-crew{inset:27% 20% 16%!important}.uv-app[data-a6=true] .uv-shell .uv-patrol{width:220px!important;min-height:74px!important;font:800 30px var(--font-display)!important}.uv-app[data-a6=true] .uv-shell .uv-dock nav button{font:800 16px var(--font-display)!important}.uv-app[data-a6=true] .uv-shell .uv-dock nav{gap:18px!important}.uv-app[data-a6=true] .uv-shell .uv-patrol:after{content:none!important}.b-landing-top{padding-right:145px}.uv-app[data-a6=true] .uv-shell .uv-hud{padding-right:125px}.uv-app[data-a6=true] .uv-shell .uv-identity small{font:800 16px var(--font-display)}.uv-app[data-a6=true] .uv-shell .b-yarn{min-width:65px}.uv-app[data-a6=true] .uv-shell .b-yarn output:empty:after{content:'—'}
 .uv-app[data-a6=true] .uv-shell .a6-tip-corner{display:none}.uv-app[data-a6=true] .uv-sheet :is(.a6-inventory-shelf,.a6-inventory-detail,.a6-inventory-hero,.a6-inventory-stats>div,.a6-inventory-grid>button,.a6-cat-panel,.a6-cat-growth,.a6-cat-skillbook,.a6-guide-book,.a6-guide-writing,.a6-guide-chapters,.a6-save-letter,.a6-comfort-desk){background:linear-gradient(135deg,#3b2d48,#292138)!important;border-color:#a17d50!important;color:#f4dbb8!important}.uv-app[data-a6=true] .uv-sheet :is(.a6-inventory-detail,.a6-inventory-grid,.a6-cat-panel,.a6-guide-writing) :is(small,p,b,strong,h2,h3,h4){color:#f0d7b4!important}.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button[data-selected=true]{border:2px solid #efbd75!important}.uv-app[data-a6=true] .uv-sheet .a6-inventory-stats :is(span,b){color:#f1d5ac!important}
+
+.b-economy-play{display:grid;gap:14px;color:#f7dfba}.b-economy-play>nav{display:flex;gap:7px;flex-wrap:wrap}.b-economy-play output,.b-economy-play article,.b-economy-play aside{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px;border:1px solid #a17c4d;border-radius:14px;background:#211a30}.b-economy-play article>p{width:100%;margin:0}.b-economy-play label{display:inline-flex;align-items:center;gap:5px}.b-economy-play input{max-width:190px}.b-deed-card{background:radial-gradient(ellipse at 50% 0,#68523d,#211a30 80%)!important;border:2px solid #e4bc72!important}.b-deed-card h3{font:800 28px var(--font-display)}.b-chain-receipts{display:flex;gap:12px;flex-wrap:wrap}.b-economy-play [role=alert]{color:#ffc4a8}
+
+.b-bound-fusion>div{display:flex;gap:8px;flex-wrap:wrap;max-height:220px;overflow:auto}.b-bound-fusion label{display:grid;justify-items:center;position:relative;padding:6px;border:1px solid #ae8954;border-radius:8px}.b-fusion-reveal{position:fixed;inset:35% 25%;z-index:160;display:grid;place-items:center;border:3px solid #ffcb70;border-radius:24px;background:radial-gradient(#a06a38,#2b193d);font-size:54px;animation:b-reveal 2.2s both;pointer-events:none}@keyframes b-reveal{0%{opacity:0;transform:scale(.7)}30%,80%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.08)}}
+
+[data-cafe-skin=lantern] .uv-home-scene{filter:sepia(.18) saturate(1.15)}[data-cafe-skin=lantern] .uv-shell:after{content:"";position:absolute;inset:80px 0 0;pointer-events:none;background:radial-gradient(ellipse at 50% 15%,#ffc56829,transparent 65%);z-index:0}
+
+/* Finish inherited non-battle panels with the same plum and gold palette. */
+.uv-app[data-a6=true] .uv-sheet :is(.a6-inventory-stats dt,.a6-inventory-stats dd,.a6-inventory-power,.a6-inventory-actions span,.a6-inventory-actions small){color:#f4dcb6!important}
+.uv-app[data-a6=true] .uv-sheet :is(button,select,input){color:#f4dcb6;background-color:#3b2b45;border-color:#ac8656}
+.uv-app[data-a6=true] .uv-sheet :is(button,select)[aria-pressed=true],.uv-app[data-a6=true] .uv-sheet button.cr-primary{background:linear-gradient(#f9c677,#df924e)!important;color:#42272e!important}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-shelf>nav button{background:#37263f;color:#f6dfba}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button{--tile-border:#a79598;border:2px solid var(--tile-border)!important;background:radial-gradient(ellipse at top,#4c3e58,#261d35)!important}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button[data-rarity=rare]{--tile-border:#6aafda}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button[data-rarity=epic]{--tile-border:#bd8be1}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button[data-rarity=legendary]{--tile-border:#ecc66c}
+.uv-app[data-a6=true] .uv-sheet .a6-inventory-grid>button[aria-pressed=true]{box-shadow:inset 0 0 0 2px #f5d498,0 0 12px #efbf6766}
+.c2-help{background:linear-gradient(135deg,#3c2b48,#221b31);color:#f4dcbb;border-color:#c59a62}
+.c2-help :is(p,small,dt,dd,th,td,h2,h3){color:#f4dcbb}
+.c2-help button{background:#3b2b45;color:#f4dcbb;border-color:#ac8656}
+.chain-room,.chain-panel{background:linear-gradient(135deg,#362841,#1f192c);color:#f4dcbb;border-color:#c59a62}
+.chain-room :is(button,input,select),.chain-panel button{background:#3b2b45;color:#f4dcbb;border:1px solid #ac8656}
+.chain-room nav button[aria-pressed=true]{background:linear-gradient(#f9c677,#df924e);color:#42272e}
+.chain-room .chain-grid article{background:#2b2037;border-color:#b68c58}
+.chain-room>header{flex-wrap:wrap}.chain-room>header h2{font:800 26px var(--font-display);color:#f4dcbb}
+.chain-room .chain-gas{font-size:14px;display:flex;align-items:center;gap:10px}.chain-room .chain-gas p:empty{display:none}
+.chain-room [role=alert]{color:#ffc4a8;overflow-wrap:anywhere}.game-stars{display:inline-flex;vertical-align:middle;gap:1px}
+.uv-app .a6-fast-chest{display:none!important}
+
+/* Preserve contrast after legacy tabs and counters inherit the plum surface. */
+.uv-app[data-a6=true] .uv-sheet .uv-tabs button{color:#edd1ad}
+.uv-app[data-a6=true] .uv-sheet .uv-tabs button[aria-pressed=true]{color:#42272e}
+.uv-app[data-a6=true] .uv-sheet .uv-recruit-counter>strong{color:#ffd38a}
+.uv-app[data-a6=true] .uv-sheet :is(.uv-pity,.a6-recruit-limits,.a6-recruit-quote p,.a6-recruit-quote ul){color:#e6c8b7}
+.uv-app[data-a6=true] .uv-sheet .uv-recruit-history>summary{color:#edc695}
+.b-economy-play .b-fusion-inputs{display:flex;gap:10px;flex-wrap:wrap;width:100%}
+.b-economy-play .b-fusion-inputs label{padding:9px;border:1px solid #ac8656;border-radius:12px;background:#3b2b45;cursor:pointer}
+.b-economy-play .b-fusion-inputs label:has(:checked){border-color:#ffe4a4;background:#684366}
+.b-economy-play .b-fusion-inputs input{accent-color:#ecc37a}
+
+.b-legendary-reveal{position:fixed;inset:15% 18%;z-index:150;display:grid;place-content:center;justify-items:center;gap:20px;border:3px solid #ffd58c;border-radius:28px;background:radial-gradient(#9f6948,#33203f 60%,#1d142c);box-shadow:0 0 0 100vmax #10091ddd,0 0 80px #ffd58c80}.b-legendary-reveal h2{font-size:56px;margin:0}.b-legendary-reveal>.game-icon{width:128px;height:128px;filter:drop-shadow(0 0 25px #ffe8ad)}

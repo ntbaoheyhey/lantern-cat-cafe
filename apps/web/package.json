@@ -8,7 +8,7 @@
     "test": "vitest run",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node ../../tools/chain/economy-v3-metadata.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

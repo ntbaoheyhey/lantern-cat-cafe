@@ -27,7 +27,7 @@
       "license": "Original generated output; OpenAI Terms of Use. No third-party input.",
       "source": "assets/v3-shell/item-atlas.png",
       "files": "apps/web/public/icons/*-{128,64}.webp",
-      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Caf\u00e9. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/caf\u00e9 deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
+      "prompt": "Original 4x4 transparent item atlas for Lantern Cat Café. Chunky painted toy objects, dark plum outlines, upper-left light, slight 3/4 perspective. Rows: fish/thread/bell/spool; yarn coin/boss paw seal/star thread/wood sword; blue coat/leaf charm/moon lantern/craft pouch; key/potion/shard/café deed scroll. Plum/gold/coral/teal/lavender palette. No writing, watermark or reference game images.",
       "processing": "Grid crop, preserve alpha, Lanczos export 128/64 WebP."
     },
     {
@@ -46,7 +46,7 @@
       "files": [
         "apps/web/public/art/v3-shell/landing.webp"
       ],
-      "prompt": "Original 16:9 painted Lantern Cat Caf\u00e9 at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
+      "prompt": "Original 16:9 painted Lantern Cat Café at night. Cream guardian Mochi in blue quilted coat with teapot shield, black witch Soot in violet hat, calico healer Clover in green apron. Three chibi cats at right, quiet dark plum-blue space left for logo. Amber windows, lanterns, plants and fireflies. Warm golden rim light, chunky storybook silhouettes, tactile painted textures. No lettering, watermark, interface, references or copied game art."
     },
     {
       "type": "gameplay-trailer",
@@ -57,6 +57,40 @@
       "files": [
         "apps/web/public/art/v3-shell/battle-preview.webm"
       ]
+    },
+    {
+      "type": "navigation-svg",
+      "tool": "Original SVG path authoring",
+      "date": "2026-11-13",
+      "license": "Project-original",
+      "prompt": "Draw readable 24px utility icons with dark plum outline and top-lit gold strokes; no third-party inputs.",
+      "files": [
+        "apps/web/public/icons/heart.svg",
+        "apps/web/public/icons/lock.svg",
+        "apps/web/public/icons/circle.svg",
+        "apps/web/public/icons/avax.svg",
+        "apps/web/public/icons/moon.svg",
+        "apps/web/public/icons/refresh.svg",
+        "apps/web/public/icons/external.svg",
+        "apps/web/public/icons/arrow-left.svg",
+        "apps/web/public/icons/upload.svg",
+        "apps/web/public/icons/download.svg",
+        "apps/web/public/icons/upgrade.svg",
+        "apps/web/public/icons/boss.svg",
+        "apps/web/public/icons/tower.svg",
+        "apps/web/public/icons/warning.svg",
+        "apps/web/public/icons/swap.svg"
+      ]
+    },
+    {
+      "type": "shell-navigation-completion",
+      "tool": "Original SVG paths authored by Codex",
+      "date": "2026-11-13",
+      "license": "Project-original; no third-party reference input",
+      "files": [
+        "apps/web/public/icons/bonds.svg"
+      ],
+      "prompt": "Interlocked warm-gold links, dark plum 3px outline at 128px, light from upper left, matching the existing nav palette."
     }
   ]
 }

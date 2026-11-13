@@ -18,7 +18,7 @@
 .c2-help{color:#45312e;background:#f3e5ce;border:2px solid #aa8154;border-radius:22px;max-width:min(900px,92vw);width:max-content;max-height:85vh;padding:20px;box-shadow:0 20px 80px #21162166}
 .c2-help::backdrop{background:#20162280}
 .c2-help header{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.c2-help header h2{font:26px Georgia,serif;margin:0 0 12px}
+.c2-help header h2{font:26px var(--font-display);margin:0 0 12px}
 .c2-help header button{border-radius:50%;width:36px;height:36px}
 .c2-help-body{overflow:auto;max-height:65vh;min-width:280px}
 .c2-help-body p{max-width:70ch}
@@ -89,7 +89,7 @@
 .c2-route-toolbar{display:flex;align-items:center;gap:18px;padding:10px 0}
 .c2-route-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
 .c2-route-cards>article{display:grid;gap:14px;align-content:start;padding:20px;background:#f4e5ca;border:1px solid #b98f58;border-radius:18px}
-.c2-route-cards h3{font:21px Georgia,serif;margin:0}
+.c2-route-cards h3{font:21px var(--font-display);margin:0}
 .c2-route-health{list-style:none;padding:0;display:grid;gap:8px}
 .c2-route-health li{display:flex;align-items:center;gap:8px;font-size:13px}
 .c2-route-health img{height:36px;width:36px;object-fit:cover;border-radius:50%}

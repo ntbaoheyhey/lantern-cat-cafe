@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import { useId, useMemo, useState, useSyncExternalStore } from 'react';
 import { CARDS, CARD_RPG_CONFIG } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -49,12 +50,12 @@ export function SelectorA6({m}:{m:DepthModel}) {
    <label>Chosen reward<select aria-label="Chosen reward" value={chosen} onChange={e=>{setChosen(e.target.value);setReceipt(null);}}><option value="">Choose a reward</option>{options.map(o=><option key={o.id} value={o.id}>{o.name} · {o.rarity}</option>)}</select></label>
    <p>One mark per stamp invitation. The free welcome adds none. Marks never expire.</p>
    <button disabled={!quote?.ok} aria-describedby={description} onClick={choose}>Choose reward · {cost} marks</button>
-   {state.formationC2&&selected&&<OddsC2 source="Selector"><b aria-label="Chosen reward probability">100%</b><dl><div><dt aria-label="Selector marks cost">✦</dt><dd>{cost}</dd></div><div><dt aria-label="Reward quantity">◇</dt><dd>{owned?shardGain:1}</dd></div></dl></OddsC2>}
+   {state.formationC2&&selected&&<OddsC2 source="Selector"><b aria-label="Chosen reward probability">100%</b><dl><div><dt aria-label="Selector marks cost"><GameIcon name="season" size={18}/></dt><dd>{cost}</dd></div><div><dt aria-label="Reward quantity"><GameIcon name="bag" size={18}/></dt><dd>{owned?shardGain:1}</dd></div></dl></OddsC2>}
   </div><section id={description} className="a6-selector-preview" aria-label="Chosen reward preview">
    {selected?<><div className="a6-selector-reward">{template?<GearArtA6 slot={template.slot} setId={template.setId}/>:<img {...artPropsA6(chosen,'face')} alt=""/>}<div><small>{selected.rarity} {template?'keepsake':'companion'}</small><h3>{selected.name}</h3>
-    <p>{template?`${gearCount} → ${gearCount+1} owned · one new piece in your bag`:owned?shardsFit?`${owned.shards} → ${owned.shards+shardGain} matching shards (+${shardGain})`:'Matching shard balance is full.':'Level 1 · 1 star · new companion'}</p>
+    <p>{template?`${gearCount} to ${gearCount+1} owned · one new piece in your bag`:owned?shardsFit?`${owned.shards} to ${owned.shards+shardGain} matching shards (+${shardGain})`:'Matching shard balance is full.':'Level 1 · 1 star · new companion'}</p>
    </div></div>
-   <p className="a6-selector-cost">{marks>=cost?`Marks after choosing: ${marks} → ${marks-cost}.`:`Cost: ${cost} marks · ${marks} saved.`} Stamps and banner pity stay unchanged.</p>
+   <p className="a6-selector-cost">{marks>=cost?`Marks after choosing: ${marks} to ${marks-cost}.`:`Cost: ${cost} marks · ${marks} saved.`} Stamps and banner pity stay unchanged.</p>
    {owned&&<p>{collected}/{CARDS.length} companions collected. Duplicate choices require the full collection; they add shards and keep your cat’s level and stars.</p>}
    {template&&<p>Bag space: {state.gear.length}/{R.GEAR_CAP_V4}. Requires chapter {template.chapter}{template.rarity==='legendary'?' mastery':''}. Gear is added unequipped.</p>}
    {needs.length>0&&<ul className="a6-selector-needs">{needs.map(need=><li key={need}>{need}</li>)}</ul>}

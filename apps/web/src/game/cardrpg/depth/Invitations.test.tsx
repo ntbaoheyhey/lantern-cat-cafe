@@ -128,7 +128,7 @@ it('shows duplicate shard conversion and skips all ceremony for reduced motion',
   expect(result.duplicate).toBe(true);
   expect(screen.queryByRole('button', { name: 'Skip reveal' })).toBeNull();
   const summary = within(screen.getByRole('region', { name: 'Invitation results' }));
-  expect(summary.getByText(`Duplicate → ${result.shards} shards`)).toBeTruthy();
+  expect(summary.getByText(`Duplicate to ${result.shards} shards`)).toBeTruthy();
   expect(model.state.account.cards.find(card => card.cardId === result.cardId)!.shards).toBe(result.shards);
 });
 

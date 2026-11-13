@@ -196,7 +196,8 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
     if(!run.towerA6)run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
-    const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
+    const dropKind=s.economyV3?(run.towerA6?'tower':node.kind==='boss'&&!s.cleared.includes(run.chapter)?'firstBoss':node.kind):node.kind;
+    const drop=s.economyV3&&run.towerA6&&run.floor%10!==0?null:dropGear(s,dropKind as 'battle'|'elite'|'boss'|'firstBoss'|'tower',deriveSeed(run.seed,run.visited.length+999),run.chapter);
     if(drop)run.earnedItems.push(drop);
     if(node.kind==='boss'||run.towerA6){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));

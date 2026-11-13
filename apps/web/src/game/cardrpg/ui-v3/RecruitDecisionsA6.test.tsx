@@ -12,7 +12,7 @@ const button=(count:number)=>within(purchase(count)).getByRole('button');
 
 it('previews the stamp spend and mark gain without revealing or acquiring the draw',()=>{
  const m=ready();m.state.v4!.selectorMarks=23;const before=R.exportSave(m.state),expected=R.metaCommand(m.state,{type:'pull',bannerId:'standard',count:1,seed:m.state.account.seed+39});
- render(<RecruitV3 m={m}/>);expect(purchase(1).textContent).toContain('600 → 540 stamps · +1 mark.');expect(purchase(10).textContent).toContain('600 → 0 stamps · +10 marks.');expect(screen.getByText(/23 marks saved · 24 choose/)).toBeTruthy();expect(screen.queryByLabelText('Invitation results')).toBeNull();expect(R.exportSave(m.state)).toBe(before);
+ render(<RecruitV3 m={m}/>);expect(purchase(1).textContent).toContain('600 to 540 stamps · +1 mark.');expect(purchase(10).textContent).toContain('600 to 0 stamps · +10 marks.');expect(screen.getByText(/23 marks saved · 24 choose/)).toBeTruthy();expect(screen.queryByLabelText('Invitation results')).toBeNull();expect(R.exportSave(m.state)).toBe(before);
  fireEvent.click(button(1));expect(m.state).toEqual(expected.state);expect(screen.getByText(/24 marks saved · 24 choose/)).toBeTruthy();expect(screen.getByLabelText('Invitation results').querySelectorAll('article')).toHaveLength(1);
 });
 

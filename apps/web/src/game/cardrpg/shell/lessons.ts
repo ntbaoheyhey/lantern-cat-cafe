@@ -20,7 +20,7 @@ export const GUIDE_PAGES=[
  {id:'roles',title:'Roles',icon:'team',text:'Guardians protect. Witches strike groups. Alchemists heal. Keep two cats forward.'},
  {id:'formation',title:'Rows',icon:'shield',text:'The front row protects fragile allies. Drag cats in Team.'},
  {id:'turns',title:'Turns',icon:'clock',text:'Turn order follows initiative. Read enemy intent before choosing your plan.'},
- {id:'rage',title:'Rage',icon:'buff',text:'Rage fills during combat. Full portraits signal an automatic ultimate.'},
+ {id:'rage',title:'Rage',icon:'buff',text:'Ultimates cast automatically at 100 rage, when the cat can act.'},
  {id:'statuses',title:'Statuses',icon:'burn',text:'Burn damages. Freeze delays. Shields absorb hits. Inspect duration and stacks.'},
  {id:'supplies',title:'Supplies',icon:'potion',text:'Pack supplies during preparation. Using one spends that cat’s action.'},
  {id:'speed',title:'Speed',icon:'settings',text:'Choose one, two, or three times speed. Pause auto anytime.'},

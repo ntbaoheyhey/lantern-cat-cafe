@@ -1,9 +1,10 @@
-export interface ChainFlags { guestWallet: boolean; chainLoop: boolean; itemTrading: boolean; yarnToken: boolean; yarnCosmetics:boolean; relicForge:boolean; campaign:boolean; campaignRewards:boolean }
+export interface ChainFlags { guestWallet: boolean; chainLoop: boolean; itemTrading: boolean; yarnToken: boolean; yarnCosmetics:boolean; relicForge:boolean; campaign:boolean; campaignRewards:boolean; economyV3:boolean }
 
 /** Build switches only: a URL cannot activate a feature on the live build. */
 export function chainFlags(env: Record<string, unknown> = import.meta.env): ChainFlags {
   const demo = env.VITE_CHAIN_DEMO === '1';
   return {
+    economyV3: demo || env.VITE_ECONOMY_V3 === '1',
     guestWallet: demo || env.VITE_GUEST_WALLET === '1',
     chainLoop: demo || env.VITE_CHAIN_LOOP === '1',
     itemTrading: demo || env.VITE_ITEM_TRADING === '1',

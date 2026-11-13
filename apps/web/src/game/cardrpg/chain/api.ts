@@ -39,6 +39,7 @@ export async function chainPost<T>(name: string, token: string, body: unknown = 
     if (response.status === 401) throw new Error('Sign in again.');
     const result: unknown = await response.json().catch(() => null);
     const code = result && typeof result === 'object' && 'error' in result && typeof result.error === 'string' ? result.error : '';
+    if(code==='economy_rule'&&result&&typeof result==='object'&&'message' in result&&typeof result.message==='string')throw Object.assign(new Error(result.message.slice(0,160)),{name:'EconomyRuleError'});
     throw new ChainApiError(code);
   }
   return response.json() as Promise<T>;

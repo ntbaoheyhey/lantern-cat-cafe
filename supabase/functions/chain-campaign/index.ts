@@ -16,7 +16,7 @@ Deno.serve(async req=>{
     if(Deno.env.get('CHAIN_CAMPAIGN_ENABLED')!=='1')return json(req,{error:'campaign_disabled'},503);
     const db=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false}});
     const rpc=async(name:string,args:Record<string,unknown>)=>{const {data,error}=await db.rpc(name,args);if(error)throw chainStoreError(error);return data;};
-    const campaign=createCampaignService({enabled:true,rulesHash:CAMPAIGN_RULES_HASH,store:{
+    const campaign=createCampaignService({enabled:true,economyV3:Deno.env.get('CHAIN_ECONOMY_V3_ENABLED')==='1',rulesHash:CAMPAIGN_RULES_HASH,store:{
       boot:(p,w,r,s)=>rpc('chain_campaign_boot',{p_player:p,p_wallet:w,p_rules:r,p_state:s}),
       receipt:(p,w,id)=>rpc('chain_campaign_receipt',{p_player:p,p_wallet:w,p_id:id}),
       commit:c=>rpc('chain_campaign_commit',{p_player:c.player,p_wallet:c.wallet,p_rules:c.rules,p_id:c.id,p_request:c.requestHash,p_revision:c.revision,p_state:c.state,p_export:c.exportInstance}),

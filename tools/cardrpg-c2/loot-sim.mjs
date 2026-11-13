@@ -35,7 +35,7 @@ const rank = { common: 0, rare: 1, epic: 2, legendary: 3 };
 
 function project(seed, profile) {
  const start = accountCalendar(calendar, seed), epoch = start.epoch;
- const m = new DepthModel(true, true, true, true, true); m.state = freshAccount(R, seed, epoch);
+ const m = new DepthModel(true, true, true, true, true); m.state = freshAccount(R, seed, epoch); if(process.argv.includes('--economy-v3'))m.state.economyV3=true;
  const ledger = createEconomyLedger(m.state, R.GEAR_BY_ID), memory = {}, economy = { homes: {}, attempted: {}, seenGear: '', failedRoutes: 0 };
  const view = { eventsOpen: false, tipsOpen: false, eventTab: 'login', revealDone: false };
  const combat = { wins: 0, losses: 0, completed: 0, skips: 0, seconds: 0, byMode: {} };

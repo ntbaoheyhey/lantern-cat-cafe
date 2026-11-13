@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import type {ReactNode} from 'react';
 import {RouteC2} from '../ui-v3/RouteC2';
 import { PowerA6 } from '../ui-v3/PowerA6';
@@ -12,7 +13,7 @@ import { RouteCampfire, RouteShop } from './RouteStops';
 import { RouteStory, RouteTreasure } from './RouteEvents';
 import { RouteRewards } from './RouteRewards';
 import { RouteComplete } from './RouteComplete';
-const symbols = { battle: '⚔', elite: '✦', campfire: '♨', shop: '▧', event: '✉', treasure: '◇', boss: '♛' };
+const symbols = { battle: 'fight', elite: 'season', campfire: 'potion', shop: 'market', event: 'invitations', treasure: 'bag', boss: 'boss' };
 export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode }) {
   const run = m.state.run;
   if (!run) return <section className="cr-panel"><h1>Choose an evening route.</h1><button onClick={() => m.go('hub')}>Back to cafe</button></section>;
@@ -31,7 +32,7 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
   </>;
   const map = scenicMap ?? <>
     <section className="dp-map" aria-label="Branching chapter route">{Array.from({ length: 7 }, (_, depth) => <div className="dp-map-column" key={depth}>{run.nodes.filter(n => n.depth === depth).map(node => <button key={node.id} className={`dp-node ${run.visited.includes(node.id) ? 'visited' : ''} ${node.id === run.current ? 'current' : ''}`} disabled={!available.includes(node.id)} onClick={() => m.enter(node.id)} title={node.enemies.map(id => R.ENEMY_BY_ID[id]!.name).join(' · ') || node.kind}>
-      <span>{symbols[node.kind]}</span><b>{node.kind}</b><small>{run.visited.includes(node.id) ? 'Visited' : node.id === run.current ? 'Here' : available.includes(node.id) ? 'Choose' : 'Ahead'}</small>{run.gameplayA6&&node.enemies.length>0&&<PowerA6 label="Rec." value={nodePower(node)}/>}<NodeStarsV4 m={m} node={node}/>{run.gameplayV4 && R.nodeClueV4(node) && <small>{R.nodeClueV4(node) === 'opening' ? 'Opening clue' : R.nodeClueV4(node) === 'closing' ? 'Closing clue' : 'Reach clue'}</small>}</button>)}</div>)}</section>
+      <span><GameIcon name={symbols[node.kind]} size={24}/></span><b>{node.kind}</b><small>{run.visited.includes(node.id) ? 'Visited' : node.id === run.current ? 'Here' : available.includes(node.id) ? 'Choose' : 'Ahead'}</small>{run.gameplayA6&&node.enemies.length>0&&<PowerA6 label="Rec." value={nodePower(node)}/>}<NodeStarsV4 m={m} node={node}/>{run.gameplayV4 && R.nodeClueV4(node) && <small>{R.nodeClueV4(node) === 'opening' ? 'Opening clue' : R.nodeClueV4(node) === 'closing' ? 'Closing clue' : 'Reach clue'}</small>}</button>)}</div>)}</section>
   </>;
   const activity = <>
     {run.complete ? <section className="cr-panel"><RouteComplete m={m}/></section>
@@ -46,7 +47,7 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
   const pendingActivity = run.complete || run.rewardChoices.length > 0 || !!(current && !current.enemies.length);
   const scenicStage = scenicMap ? <div className="a6-route-stage" data-activity={pendingActivity || undefined}><div inert={pendingActivity} aria-hidden={pendingActivity || undefined}>{map}</div>{pendingActivity && <div className="a6-route-activity">{activity}</div>}</div> : null;
   const charms = <>
-    <section className="cr-panel"><h2>Your charms of the night</h2><div className="dp-combos">{Object.entries(run.boons).map(([id, count]) => <span className="active" title={R.boonForMode(id, !!run.gameplayV4).description} key={id}>{R.BOON_BY_ID[id]!.name} ×{count}</span>)}</div><p>{Object.keys(run.boons).length ? 'Charms last through this run. Their effects apply when the next encounter begins.' : 'Choose charms after encounters to build a plan for the boss.'}</p></section>
+    <section className="cr-panel"><h2>Your charms of the night</h2><div className="dp-combos">{Object.entries(run.boons).map(([id, count]) => <span className="active" title={R.boonForMode(id, !!run.gameplayV4).description} key={id}>{R.BOON_BY_ID[id]!.name} <GameIcon name="close" size={20}/>{count}</span>)}</div><p>{Object.keys(run.boons).length ? 'Charms last through this run. Their effects apply when the next encounter begins.' : 'Choose charms after encounters to build a plan for the boss.'}</p></section>
   </>;
   if(m.state.formationC2)return <RouteC2 m={m} map={map}/>;
   return <>{!scenicMap&&heading}{stats}{R.gameplayV4(m.state) && run.gameplayV4 ? <>{scenicMap?scenicStage:<>{activity}{map}</>}{scenicMap?<details className="a6-route-notes"><summary>Boss clues & route goals</summary>{context}</details>:context}</> : <>{context}{map}{activity}</>}{scenicMap?<details className="a6-route-notes"><summary>Your charms of the night</summary>{charms}</details>:charms}</>;

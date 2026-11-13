@@ -12,7 +12,7 @@ export function savedTeamPreviewA6(state:R.DepthAccount,slot:number) {
     const name=R.CAT_BY_ID[cardId]!.name;
     for(const slot of EQUIPMENT_SLOTS){
       const old=state.equipment[cardId]?.[slot],current=next.equipment[cardId]?.[slot];
-      if(old!==current)gear.push(`${name} · ${slot}: ${pieceName(old)} → ${pieceName(current)}`);
+      if(old!==current)gear.push(`${name} · ${slot}: ${pieceName(old)} to ${pieceName(current)}`);
     }
     const old=R.equipmentEffects(state,cardId).effects,current=R.equipmentEffects(next,cardId).effects;
     for(const gain of [false,true])for(const effect of (gain?current:old).filter(e=>!(gain?old:current).includes(e))){

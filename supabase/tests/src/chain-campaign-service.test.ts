@@ -46,6 +46,13 @@ it('disabled campaigns do not create or reset a save',async()=>{
  const off=createCampaignService({rulesHash:rules,store:{...store,boot:async()=>{throw new Error('storage touched');}}});
  await expect(off(player,wallet,{action:'state'})).rejects.toThrow('campaign_disabled');
 });
+it('opts authoritative campaigns into v3 and refuses the legacy export route',async()=>{
+ const v3Wallet='0x'+'9'.repeat(40),p=await one<string>('select upsert_player_by_wallet($1) r',[v3Wallet]);
+ const v3=createCampaignService({enabled:true,economyV3:true,rulesHash:rules,store,seed:()=>43113});
+ await v3(p,v3Wallet,{action:'state'});
+ expect(await one<boolean>("select (state#>>'{game,economyV3}')::boolean r from chain_campaigns where player_id=$1",[p])).toBe(true);
+ await expect(v3(p,v3Wallet,{action:'command',id:crypto.randomUUID(),revision:0,command:{type:'export',instance:'invented',normalization:'depth-min-roll-v1'}})).rejects.toThrow('campaign_source');
+});
 it('never makes starter gear exportable by catalog eligibility alone',()=>{
  const state={game:setGameplayA6(createDepthAccount(43113,Date.now()),true),origins:{}};
  const v=campaignView({revision:0,rules_hash:rules,state,updated_at:new Date().toISOString()},Date.now());

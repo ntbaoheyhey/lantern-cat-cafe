@@ -1,3 +1,4 @@
+import {GameIcon,StarIcons} from '../../../ui/GameIcon';
 import { FormationC2, PrepareC2 } from '../stage/FormationC2';
 import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type RefObject } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -74,7 +75,7 @@ function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}
         <FormationTrioA6 ids={saved?.team??ids} rows={saved?.rows??rows}/>
         {saved&&<p>Target: {saved.plan.focus==='leader'?'Their leader':saved.plan.focus==='support'?'Their support':'Weak foes'} · Care: {saved.plan.care==='protect'?'Protect':'Steady'}</p>}
         {savedPreview&&<section className="a6-saved-team-impact" aria-label="Saved team changes" tabIndex={0} key={mode}>
-          {savedPreview.ok?<><p className="a6-saved-team-power"><b>Crew Power</b><strong data-change={Math.sign(savedPreview.after-savedPreview.before)}>{savedPreview.before.toLocaleString('en-US')} → {savedPreview.after.toLocaleString('en-US')}</strong></p>
+          {savedPreview.ok?<><p className="a6-saved-team-power"><b>Crew Power</b><strong data-change={Math.sign(savedPreview.after-savedPreview.before)}>{savedPreview.before.toLocaleString('en-US')} to {savedPreview.after.toLocaleString('en-US')}</strong></p>
             {savedPreview.gear.length||savedPreview.bonuses.length?<details><summary>{savedPreview.gear.length} gear slots change · Review gear and bonuses</summary>{savedPreview.bonuses.map(text=><p key={text}>{text}</p>)}{savedPreview.gear.map(text=><p key={text}>{text}</p>)}</details>:<p>Gear and bonuses stay the same.</p>}
           </>:<><p role="status">{savedPreview.error}</p>{!locked&&<p>Save your current team to replace this plan.</p>}</>}
         </section>}
@@ -84,7 +85,7 @@ function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}
       {tool==='suggested'&&<section className="a6-suggestion-desk" aria-label="Suggested teams">
         <p>Choose a crew and its standing plan. Your cats carry it out automatically.</p>
         <div className="a6-team-suggestions">{suggestions.map((suggestion,index)=><button key={suggestion.name} disabled={rosterLocked||!keepsSupply(suggestion.team)} aria-label={`Use suggested team ${index+1}: ${suggestion.name}`} onClick={()=>{update(suggestion.team,{...rows,...suggestion.rows},suggestion.plan);if(!m.error)setTool(null);}}>
-          <small>PLAN {index+1}</small><h3>{suggestion.name}</h3><FormationTrioA6 ids={suggestion.team} rows={suggestion.rows}/><PowerA6 reducedMotion={m.state.settings.reducedMotion} value={suggestion.power}/><p>{suggestion.why}</p><strong>{!keepsSupply(suggestion.team)?`Needs ${supplyCat} in this crew`:rosterLocked?'Crew locked for this patrol':'Use this team →'}</strong>
+          <small>PLAN {index+1}</small><h3>{suggestion.name}</h3><FormationTrioA6 ids={suggestion.team} rows={suggestion.rows}/><PowerA6 reducedMotion={m.state.settings.reducedMotion} value={suggestion.power}/><p>{suggestion.why}</p><strong>{!keepsSupply(suggestion.team)?`Needs ${supplyCat} in this crew`:rosterLocked?'Crew locked for this patrol':'Use this team to'}</strong>
         </button>)}</div>
         {!suggestions.length&&<p className="a6-formation-empty">No full crew meets this route’s level requirement. Train three companions before trying a suggested team.</p>}
       </section>}
@@ -100,7 +101,7 @@ function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}
       <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=>{
         const actor=party?.find(cat=>cat.catalogId===id),name=R.CAT_BY_ID[id]!.name,description=`${healthId}-${id}`;
         return <button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} data-knocked-out={actor?.hp===0||undefined} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${name} for placement`} aria-describedby={actor?description:undefined} onClick={()=>setPicked(id)}>
-        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{"★".repeat(state.account.cards.find(c=>c.cardId===id)?.stars??1)}</span><img {...portraitProps(id)} alt=""/><div>{actor?<span className="a6-seat-identity"><b>{name}</b><small>{R.CAT_BY_ID[id]!.role}</small></span>:<b>{name}</b>}<PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/>{!actor&&<small>{R.CAT_BY_ID[id]!.role}</small>}
+        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{<StarIcons count={state.account.cards.find(c=>c.cardId===id)?.stars??1}/>}</span><img {...portraitProps(id)} alt=""/><div>{actor?<span className="a6-seat-identity"><b>{name}</b><small>{R.CAT_BY_ID[id]!.role}</small></span>:<b>{name}</b>}<PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/>{!actor&&<small>{R.CAT_BY_ID[id]!.role}</small>}
           {actor&&<span className="a6-seat-health" data-condition={actor.hp===0?'ko':actor.hp<=actor.maxHp/3?'low':actor.hp<actor.maxHp?'hurt':'full'}>
             <small id={description}>{actor.hp===0?'Knocked out · 0 HP':`${actor.hp.toLocaleString('en-US')} / ${actor.maxHp.toLocaleString('en-US')} HP`}</small>
             <progress aria-label={`${name} HP`} value={actor.hp} max={actor.maxHp}/>
@@ -109,7 +110,7 @@ function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}
       })}{!ids.some(id=>rows[id]===row)&&<p className="a6-empty-row">Choose a cat, then place it here.</p>}</div>
     </section>)}</div>
     <div className="a6-formation-notes"><p className="a6-placement-hint" aria-live="polite">{locked?'This crew is committed. Positions and plan are locked.':!hasLivingFront?'Choose a living cat, then place them in front.':<>{R.CAT_BY_ID[selected]!.name} selected · choose a row to place.{rosterLocked?' Keep this crew; positions and plan can still change.':''}</>}</p>
-    {R.activePairCombosA6(ids).length>0&&<div className="a6-ready-pairs">{R.activePairCombosA6(ids).map(pair=><span key={pair.id}>∞ {pair.name} <small>{pair.cats.map(id=>R.CAT_BY_ID[id]!.name).join(' + ')}</small></span>)}</div>}
+    {R.activePairCombosA6(ids).length>0&&<div className="a6-ready-pairs">{R.activePairCombosA6(ids).map(pair=><span key={pair.id}><GameIcon name="bonds" size={18}/> {pair.name} <small>{pair.cats.map(id=>R.CAT_BY_ID[id]!.name).join(' + ')}</small></span>)}</div>}
     </div>
 
   </section>;
@@ -128,7 +129,7 @@ function EnemyNoteA6({id,name}:{id:string;name:string}) {
     measure();const observer=new ResizeObserver(measure);observer.observe(el);return()=>observer.disconnect();
   },[]);
   return <section className="a6-foe-note" aria-live="polite"><h3>{name}</h3>
-    {scrollable&&<span className="a6-foe-scroll-hint">Scroll to read all tactics ↓</span>}
+    {scrollable&&<span className="a6-foe-scroll-hint">Scroll to read all tactics <GameIcon name="download" size={18}/></span>}
     <div ref={copy} className="a6-foe-copy" tabIndex={0} role="region" aria-label={`${name} tactics`}><p>{note.intent}</p><p className="a6-foe-counter"><strong>Try</strong> {note.counter}</p>{note.phases&&<small>{note.phases}</small>}</div>
   </section>;
 }
@@ -146,5 +147,5 @@ function LegacyPrepareA6({m}:{m:DepthModel}) {
       <div className="uv-enemy-preview a6-foes a6-foe-index" role="group" aria-label="Read an enemy note">{enemies.map(actor=><button key={actor.id} className="a6-foe-choice" aria-label={`Read ${actor.name} tactics`} aria-pressed={actor.id===selected.id} onClick={()=>setChosen(actor.id)}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 reducedMotion={m.state.settings.reducedMotion} value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small></button>)}</div>
       <EnemyNoteA6 key={selected.id} id={selected.catalogId} name={selected.name}/>
       <ForecastV4 setup={battle.initial} label="Matchup" unavailableMessage="Forecast unavailable. Read their plan above." compact/>
-    </aside></div></div><footer className="uv-fight-bar"><span>{m.tutorialBattle?'Practice together. Win to welcome a free friend.':knockedOut?'HP carries over between stops. Knocked-out cats cannot act.':injured?'HP carries over between stops. Your cats fight with the health shown.':'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
+    </aside></div></div><footer className="uv-fight-bar"><span>{m.tutorialBattle?'Practice together. Win to welcome a free friend.':knockedOut?'HP carries over between stops. Knocked-out cats cannot act.':injured?'HP carries over between stops. Your cats fight with the health shown.':'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true"><GameIcon name="arrow" size={18}/></span></button></footer></>;
 }

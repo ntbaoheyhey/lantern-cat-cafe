@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {useId} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
@@ -31,7 +32,7 @@ export function AwakeningA6({m,catId}:{m:DepthModel;catId:string}) {
    <div id={descriptionId}>
     {reason&&<p className="a6-awakening-reason">{reason}</p>}
     {showQuote&&<>
-     <b>{R.CAT_BY_ID[catId]!.name} → rank {rank+1}/3</b>
+     <b>{R.CAT_BY_ID[catId]!.name} to rank {rank+1}/3</b>
      <CostView cost={quote.currencies}/>
      <span>{quote.materials} mastery materials</span>
      {preview.ok?<strong>+{after!.hp-before!.hp} Health · +{after!.attack-before!.attack} Attack</strong>

@@ -25,7 +25,7 @@ it.each([['mend-pantry-key','pantry-key',99],['pantry-shield-biscuit','shield-bi
 });
 it('previews the last supply slot, spends exactly one key and ten threads, then blocks the full stack',()=>{
  const m=model();m.state.account.currencies.threads=10;m.state.account.inventory.stacks['shield-biscuit']=19;const before=R.exportSave(m.state),expected=R.metaCommand(m.state,{type:'forge',recipeId:'pantry-shield-biscuit'});
- render(<PantryV4 m={m}/>);choose('pantry-shield-biscuit');expect(craft().disabled).toBe(false);expect(quote().textContent).toContain('19 → 20/20');expect(R.exportSave(m.state)).toBe(before);fireEvent.click(craft());expect(m.state).toEqual(expected.state);expect(m.state.account.currencies.threads).toBe(0);expect(m.state.account.inventory.stacks['pantry-key']).toBe(0);expect(m.state.account.inventory.stacks['shield-biscuit']).toBe(20);expect(craft().disabled).toBe(true);expect(quote().textContent).toContain('Full: 20/20');
+ render(<PantryV4 m={m}/>);choose('pantry-shield-biscuit');expect(craft().disabled).toBe(false);expect(quote().textContent).toContain('19 to 20/20');expect(R.exportSave(m.state)).toBe(before);fireEvent.click(craft());expect(m.state).toEqual(expected.state);expect(m.state.account.currencies.threads).toBe(0);expect(m.state.account.inventory.stacks['pantry-key']).toBe(0);expect(m.state.account.inventory.stacks['shield-biscuit']).toBe(20);expect(craft().disabled).toBe(true);expect(quote().textContent).toContain('Full: 20/20');
 });
 it('keeps crafting locked during a patrol and refreshes after the patrol completes',()=>{
  const m=model();m.start(1,'campaign',1);render(<PantryV4 m={m}/>);expect(craft().disabled).toBe(true);expect(quote().textContent).toContain('Finish this patrol before crafting.');

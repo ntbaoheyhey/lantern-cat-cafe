@@ -17,7 +17,7 @@ it('previews the exact transaction without spending or recording a discovery', (
   expect(expected.ok).toBe(true);
   render(<CompanionGrowthV4 m={m} catId="mochi" kind="level" />);
   expect(R.exportSave(m.state)).toBe(before);
-  expect(screen.getByText('Mochi → level 2')).toBeTruthy();
+  expect(screen.getByText('Mochi to level 2')).toBeTruthy();
   expect(screen.getByText('25 fish points')).toBeTruthy();
   expect(screen.getByText('2 threads')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Level up' }));
@@ -45,7 +45,7 @@ it('shows currency and shard costs for a star that unlocks the same ultimate', (
   const expected = R.metaCommand(m.state, { type: 'ascend', cardId: card(m).id });
   expect(expected.ok).toBe(true);
   render(<CompanionGrowthV4 m={m} catId="mochi" kind="ascend" />);
-  expect(screen.getByText('Mochi → 3 stars')).toBeTruthy();
+  expect(screen.getByText('Mochi to 3 stars')).toBeTruthy();
   const spent = card(m).shards - expected.state.account.cards.find(c => c.cardId === 'mochi')!.shards;
   expect(screen.getByText(`${spent} matching shards`)).toBeTruthy();
   expect(screen.getByText(`Unlocks ${R.CAT_BY_ID.mochi!.skills[3]!.name}.`)).toBeTruthy();
@@ -79,10 +79,10 @@ it('honors route locks and rechecks the command if funds changed after the previ
 
 it('integrates with selected companions and preserves the legacy OFF buttons', () => {
   const m = model(), ui = render(<Collection m={m} />);
-  expect(screen.getByText('Mochi → level 2')).toBeTruthy();
+  expect(screen.getByText('Mochi to level 2')).toBeTruthy();
   m.cardId = 'soot'; ui.rerender(<Collection m={m} />);
-  expect(screen.queryByText('Mochi → level 2')).toBeNull();
-  expect(screen.getByText('Soot → level 2')).toBeTruthy();
+  expect(screen.queryByText('Mochi to level 2')).toBeNull();
+  expect(screen.getByText('Soot to level 2')).toBeTruthy();
   m.state = R.setGameplayV4(m.state, false); ui.rerender(<Collection m={m} />);
   expect(ui.container.querySelector('[data-growth]')).toBeNull();
   expect(screen.getByRole('button', { name: 'Level up' })).toBeTruthy();

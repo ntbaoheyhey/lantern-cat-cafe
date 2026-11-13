@@ -1,0 +1,31 @@
+Scope: 4 of 7 workspace projects
+packages/chain test$ vitest run
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/game-rules
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  07:08:11
+packages/chain test:    Duration  598ms (import 58%, tests 28%, transform 11%, worker 3%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  07:08:11
+packages/auth test:    Duration  722ms (import 71%, tests 23%, transform 4%, worker 1%)
+packages/auth test: Done
+packages/game-rules test:  Test Files  93 passed | 3 skipped (96)
+packages/game-rules test:       Tests  1388 passed | 2 expected fail | 11 skipped (1401)
+packages/game-rules test:    Start at  07:08:11
+packages/game-rules test:    Duration  38.96s (tests 93%, import 5%, transform 1%)
+packages/game-rules test:     Isolate  96 workers spawned · ~94ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~4.43s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  07:08:50
+packages/api-contract test:    Duration  207ms (transform 58%, import 35%, tests 5%, worker 2%)
+packages/api-contract test: Done

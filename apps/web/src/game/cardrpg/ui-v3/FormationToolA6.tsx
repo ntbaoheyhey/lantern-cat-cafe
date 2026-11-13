@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import {useEffect,useRef,type ReactNode} from 'react';
 import {artPropsA6} from './art-a6';
 import {CAT_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -22,7 +23,7 @@ export function FormationToolA6({title,catId,onClose,children}:{title:string;cat
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
    }
   }}>
-  <header><img {...artPropsA6(catId)} alt=""/><div><small>THE CREW TABLE</small><h2 id="a6-formation-tool-title">{title}</h2></div><button onClick={onClose}>Back to formation <span aria-hidden="true">×</span></button></header>
+  <header><img {...artPropsA6(catId)} alt=""/><div><small>THE CREW TABLE</small><h2 id="a6-formation-tool-title">{title}</h2></div><button onClick={onClose}>Back to formation <span aria-hidden="true"><GameIcon name="close" size={20}/></span></button></header>
   <div className="a6-formation-tool-body">{children}</div>
  </dialog>;
 }

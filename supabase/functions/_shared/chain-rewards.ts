@@ -7,9 +7,9 @@ export const claimDomain=(contract:Address)=>({name:'TaskbarHeroSeasonRewards',v
 export interface TesterReservationRequest {player:string;wallet:Address;contract:Address;nonce:bigint;amount:bigint}
 // Both issuers draw from one pool. Turning on campaign rewards must also put
 // every new judge grant through the shared ledger, even if its own flag was
-// omitted. Legacy behavior is retained only while both optional flags are off.
-export function testerBudgetRequired(testerBudgetFlag:string|undefined,campaignRewardFlag:string|undefined):boolean {
-  return testerBudgetFlag==='1'||campaignRewardFlag==='1';
+// omitted. V3 Spool withdrawals also use this pool and require finite gifts.
+export function testerBudgetRequired(testerBudgetFlag:string|undefined,campaignRewardFlag:string|undefined,economyV3Flag?:string):boolean {
+  return testerBudgetFlag==='1'||campaignRewardFlag==='1'||economyV3Flag==='1';
 }
 export function createTesterReward({key,contract,eligible,season,nonceUsed,reserve,reservationRequired=false,now=()=>Date.now()}:{
   key:Hex;contract:Address;eligible(player:string,wallet:string):Promise<boolean>;season():Promise<bigint>;

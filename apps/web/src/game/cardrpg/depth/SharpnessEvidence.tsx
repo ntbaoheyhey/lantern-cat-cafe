@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 interface CropMeasurement {
   phase: string;
   crop: string;
@@ -22,7 +23,7 @@ export function SharpnessEvidence() {
             src={crops[`../../../../../../assets/cardrpg3/evidence/${phase}-${row.crop}.webp`]}
             alt={`${label}, ${phase === 'baseline' ? 'baseline' : 'current'}, DPR ${dpr}`} />
             <figcaption>{phase === 'baseline' ? 'Baseline' : 'Current'}</figcaption></figure>)}
-        </div><p>{before.laplacianVariance.toFixed(1)} → {row.laplacianVariance.toFixed(1)} · {row.changePercent!.toFixed(1)}%</p></article>;
+        </div><p>{before.laplacianVariance.toFixed(1)} to {row.laplacianVariance.toFixed(1)} · {row.changePercent!.toFixed(1)}%</p></article>;
       })}</div>
     </details>)}
     <p className="dp-reference">REFERENCE — reports/cardrpg-big/sharpness.json · tools/cardrpg-big/inspect.mjs · tools/cardrpg-big/sharpness.py</p>

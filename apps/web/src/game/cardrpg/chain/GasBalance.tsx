@@ -1,3 +1,4 @@
+import {GameIcon} from '../../../ui/GameIcon';
 import { useEffect, useState } from 'react';
 import { formatEther, type Address } from 'viem';
 import { useSession } from '../../../wallet/WalletProvider';
@@ -36,7 +37,7 @@ export function GasBalance() {
     const timer = setInterval(changed, 5000);
     return () => {active = false; request++; clearInterval(timer); window.removeEventListener('chain:changed', changed);};
   },[session,attempt]);
-  return <div className="chain-gas"><output data-testid="chain-gas">{balance ? `▲ ${balance}` : ''}</output><p role="status">{status}</p>
-    {status && status !== 'Getting test gas…' && <><button onClick={() => setAttempt(a => a + 1)}>↻ Retry</button><a href={FAUCET_URL} target="_blank" rel="noreferrer">↗ Faucet</a><button onClick={() => void navigator.clipboard.writeText(session?.wallet ?? '').catch(() => setStatus('Copy unavailable.'))}>▣ Copy address</button></>}
+  return <div className="chain-gas"><output data-testid="chain-gas">{balance ? `${balance}` : ''}</output><p role="status">{status}</p>
+    {status && status !== 'Getting test gas…' && <><button onClick={() => setAttempt(a => a + 1)}><GameIcon name="refresh" size={18}/> Retry</button><a href={FAUCET_URL} target="_blank" rel="noreferrer"><GameIcon name="external" size={18}/> Faucet</a><button onClick={() => void navigator.clipboard.writeText(session?.wallet ?? '').catch(() => setStatus('Copy unavailable.'))}><GameIcon name="bag" size={18}/> Copy address</button></>}
   </div>;
 }
