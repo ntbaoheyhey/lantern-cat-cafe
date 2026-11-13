@@ -31,7 +31,11 @@ export class FieldVfx {
   const from=this.socket(plan.actorId,'mainHand');if(!from)return;
   const painted=this.painted(plan.presentationId??plan.skillId);
   const progress=clamp((at-100)/Math.max(1,contact-100)),since=at-contact;
-  const release=since<0?Math.sin(progress*Math.PI*.5):Math.max(0,1-since/620);
+  // Spoken releases can outlast the old 620 ms fade. Carry their painted
+  // energy through a bounded resolve, keeping contact and ground life intact.
+  const tail=tier==='basic'?620:Math.max(620,Math.min(tier==='ultimate'?1450:1000,plan.duration-contact));
+  const resolve=clamp(since/tail);
+  const release=since<0?Math.sin(progress*Math.PI*.5):1-resolve;
   if(at<80||release<=0)return;
   const shader=seq?.vfx.find(t=>t.type==='shader'),family=shader?.source??plan.shape;
   const seed=[...owner].reduce((n,ch)=>n+ch.charCodeAt(0),0),viewportHeight=Math.max(height,typeof window==='undefined'?height:window.innerHeight);
@@ -47,7 +51,7 @@ export class FieldVfx {
    c.save();c.globalCompositeOperation='screen';c.lineCap='round';c.lineJoin='round';
    // Broad painted-style energy, composed from each element's own silhouette.
    c.save();c.translate(x,y);
-   const winding=view.reducedMotion?0:(since<0?progress*.7:.7+Math.min(.8,since/450))*(seed%2?1:-1);
+   const winding=view.reducedMotion?0:(since<0?progress*.7:.7+1.1*resolve)*(seed%2?1:-1);
    c.rotate((seed%11-5)*.08+winding);
    const aura=c.createRadialGradient(0,0,r*.10,0,0,r*1.05);
    aura.addColorStop(0,palette[1]+'b0');aura.addColorStop(.48,palette[1]+'90');aura.addColorStop(.8,palette[1]+'48');aura.addColorStop(1,palette[1]+'00');
@@ -56,7 +60,7 @@ export class FieldVfx {
    if(painted){
     // Unfurl the painted energy around the hand, then sweep it out through the
     // target. The original painting remains intact; this is a moving cut-out.
-    const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI);
+    const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI)-.32*clamp((since-420)/Math.max(1,tail-420));
     c.save();c.scale(swell,swell);
     c.globalCompositeOperation='source-over';c.globalAlpha=release*.95;
     const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted.image,painted.x+256,painted.y,256,256,-extent/2,-extent/2,extent,extent);
@@ -77,7 +81,7 @@ export class FieldVfx {
     else star(c,0,0,r*(.22+p*.25),4+seed%4);
     c.restore();this.draws++;this.audit.layers.push('twelve-frame-spark');
    }
-   const low=view.quality==='low',count=view.reducedMotion?12:tier==='basic'?(low?14:32):(low?28:72),spread=since<0?progress*.45:.35+since/470;
+   const low=view.quality==='low',count=view.reducedMotion?12:tier==='basic'?(low?14:32):(low?28:72),spread=since<0?progress*.45:.35+resolve*1.32;
    const points=this.particles.get(seed);this.audit.pooledParticles=this.particles.allocated;
    c.globalAlpha=release*.8;for(let i=0;i<count;i++){
     const j=i*5,angle=points[j]!,rr=r*points[j+3]!*spread,px=target.x+points[j+1]!*rr,py=target.y+points[j+2]!*rr*.72-(since>0?since*.07:0),size=(tier==='basic'?3:5)+points[j+4]!;

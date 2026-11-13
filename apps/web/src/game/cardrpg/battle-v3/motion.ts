@@ -64,15 +64,38 @@ export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.i
 /** A single follow-through move per action, with a stable contact hold and home framing. */
 export function actionCamera(input:MotionInput,tier:'basic'|'active'|'ultimate'){
  const {plan,elapsed:t,home,target,width,height}=input,rest={zoom:1,x:0,y:0,tilt:0};
- if(!hasActorAction(plan)||t<=0||t>=plan.duration||tier==='ultimate')return rest;
+ if(!hasActorAction(plan)||t<=0||t>=plan.duration)return rest;
  const impact=plan.beats[2]!.start,direction=input.side==='enemy'?-1:1;
+ // The plate owns its camera up to contact. On return to the field, follow
+ // the receiving group through the release line, then restore the wide shot.
+ if(tier==='ultimate'){
+  if(t<=impact)return rest;
+  const age=t-impact,enter=smooth(age/133),recover=1-smooth((age-233)/Math.max(1,plan.duration-impact-233));
+  const zoom=1+.20*enter*recover;
+  return {zoom,x:(target.x/width-.5)*(1-1/zoom),y:(.5-(target.y-target.core*.4)/height)*(1-1/zoom),tilt:0};
+ }
  const travel=smooth((t-Math.max(100,impact-230))/230);
  const enter=smooth(t/Math.max(100,impact-180));
  const recover=1-smooth((t-impact-100)/Math.max(1,plan.duration-impact-100));
- const envelope=enter*recover,zoom=1+(tier==='active'?.18:.11)*envelope;
- const focusX=home.x+(target.x-home.x)*(.25+.50*travel);
- const focusY=home.y+(target.y-home.y)*(.25+.50*travel)-home.core*.4;
+ const envelope=enter*recover,zoom=1+(tier==='active'?.24:.18)*envelope;
+ // Begin on the striking hand, cross the complete travel corridor, and hold
+ // the receiver at contact. This keeps the wide field moving with the action
+ // without enlarging the cats further or adding repeated camera oscillation.
+ const focusX=home.x+(target.x-home.x)*travel;
+ const focusY=home.y+(target.y-home.y)*travel-home.core*.4;
  const kind=input.motion??attackMotion(input.asset,plan);
- return {zoom,x:(focusX/width-.5)*(1-1/zoom)+direction*.012*(travel-.5)*envelope,
+ return {zoom,x:(focusX/width-.5)*(1-1/zoom)+direction*.030*(travel-.5)*envelope,
   y:(.5-focusY/height)*(1-1/zoom),tilt:(kind==='spin'?.012:kind==='leap-slam'?-.006:0)*direction*envelope};
+}
+
+/** Keep the occupied bodies and their head bars inside an action shot. */
+export function fitMotionFrame(boxes:readonly {x:number;y:number;width:number;height:number}[],width:number,height:number){
+ if(!boxes.length)return {scale:1,dx:0,dy:0};
+ const left=Math.min(...boxes.map(b=>b.x)),right=Math.max(...boxes.map(b=>b.x+b.width));
+ const top=Math.min(...boxes.map(b=>b.y)),bottom=Math.max(...boxes.map(b=>b.y+b.height));
+ const padX=12,padTop=Math.min(60,height*.10),padBottom=10;
+ const scale=Math.min(1,(width-2*padX)/Math.max(1,right-left),(height-padTop-padBottom)/Math.max(1,bottom-top));
+ const x=width*.5+(left-width*.5)*scale,y=height*.5+(top-height*.5)*scale;
+ const endX=x+(right-left)*scale,endY=y+(bottom-top)*scale;
+ return {scale,dx:Math.max(padX-x,Math.min(width-padX-endX,0)),dy:Math.max(padTop-y,Math.min(height-padBottom-endY,0))};
 }

@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {createActionPlan} from '../../squad/turn3d/effects';
-import {MOTIONS,actionPose,actionCamera,hitPose,idlePhase} from './motion';
+import {MOTIONS,actionPose,actionCamera,fitMotionFrame,hitPose,idlePhase} from './motion';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const events=[{type:'action_start',actorId:'cat',targetIds:['enemy'],skillId:'guardianBasic',actionId:1},{type:'damage',actorId:'cat',targetIds:['enemy'],amount:12,skillId:'guardianBasic',actionId:1}] as TurnEvent[];
 it('moves every archetype through anticipation, strike, return without mutating the event plan',()=>{
@@ -30,8 +30,28 @@ it('holds the camera through contact, restores framing, and mirrors enemy attack
  const plan=createActionPlan(events),input={plan,asset:'mochi',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width:1280,height:720};
  const at=(elapsed:number)=>actionCamera({...input,elapsed},'active'),contact=plan.beats[2]!.start;
  expect(at(0)).toEqual({zoom:1,x:0,y:0,tilt:0});expect(at(plan.duration)).toEqual(at(0));
- expect(at(contact).zoom).toBeCloseTo(1.18);expect(at(contact+80)).toEqual(at(contact));
+ expect(at(contact).zoom).toBeCloseTo(1.24);expect(at(contact+80)).toEqual(at(contact));
  const reverse=actionCamera({...input,elapsed:contact,side:'enemy',home:{...input.home,x:980},target:{...input.target,x:430}},'active');
  expect(reverse.x).toBeCloseTo(-at(contact).x);expect(reverse.zoom).toBe(at(contact).zoom);
  expect(actionCamera({...input,elapsed:contact},'ultimate')).toEqual(at(0));
+});
+it('fits an action shot without clipping the upper row or a returning actor',()=>{
+ const width=1280,height=595,boxes=[{x:100,y:-35,width:140,height:170},{x:1000,y:460,width:130,height:150}];
+ const fit=fitMotionFrame(boxes,width,height);
+ for(const box of boxes){
+  const x=width*.5+(box.x-width*.5)*fit.scale+fit.dx,y=height*.5+(box.y-height*.5)*fit.scale+fit.dy;
+  expect(x).toBeGreaterThanOrEqual(12-1e-6);expect(x+box.width*fit.scale).toBeLessThanOrEqual(width-12+1e-6);
+  expect(y).toBeGreaterThanOrEqual(height*.10-1e-6);expect(y+box.height*fit.scale).toBeLessThanOrEqual(height-10+1e-6);
+ }
+ expect(fitMotionFrame([{x:200,y:100,width:800,height:400}],width,height)).toEqual({scale:1,dx:0,dy:0});
+});
+it('leaves the ultimate plate camera intact and resolves the field shot through a long spoken release',()=>{
+ const plan={...createActionPlan(events),duration:4670,ultimate:true};
+ plan.beats=plan.beats.map((beat,i)=>i===2?{...beat,start:3200}:beat);
+ const input={plan,asset:'mochi',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width:1280,height:720};
+ const at=(elapsed:number)=>actionCamera({...input,elapsed},'ultimate');
+ expect(at(3000)).toEqual(at(0));expect(at(3200)).toEqual(at(0));
+ expect(at(3400).zoom).toBeCloseTo(1.2);expect(at(4000).zoom).toBeGreaterThan(1);
+ expect(at(4670)).toEqual(at(0));
+ const expected=at(4000);at(3400);expect(at(4000)).toEqual(expected);
 });

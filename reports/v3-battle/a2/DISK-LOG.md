@@ -94,3 +94,8 @@ After: /dev/disk3s1   926Gi   596Gi   291Gi    68%    5.4M  3.0G    0%   /System
 Vite cache cleanup deferred until inherited P10 suite ends; server owns port5990. No low-disk restriction.
 
 Cache cleanup after inherited suite completed: ['apps/web/node_modules/.vite', 'apps/web/node_modules/.vite-temp']. Restarting the recorded session server on5990; no other processes touched.
+
+## Resume 2026-11-13T09:46:29.603209+00:00
+Before:290GiB free. Removed only worktree rebuildable output: apps/web/node_modules/.vite, apps/web/node_modules/.vite-temp; 304 already-encoded temporary frames (0.29GiB).
+After: /dev/disk3s1   926Gi   597Gi   291Gi    68%    5.4M  3.0G    0%   /System/Volumes/Data
+Stopped only the inherited documented preview PIDs40778/40756 to safely clear caches. Normal disk mode.

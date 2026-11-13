@@ -11,7 +11,7 @@ import {BattleNumbers as PuppetNumbers} from '../battle-v3/numbers';
 import {BodyFx} from '../battle-v3/body-fx';
 import {bodyStatuses} from '../battle-v3/status';
 import {bodyTint} from '../battle-v3/clarity';
-import {actionPose,actionCamera,attackMotion,hitPose,idlePhase,neutralPose,type MotionPoint} from '../battle-v3/motion';
+import {actionPose,actionCamera,fitMotionFrame,attackMotion,hitPose,idlePhase,neutralPose,type MotionPoint} from '../battle-v3/motion';
 import {MotionTrails} from '../battle-v3/motion-trails';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
@@ -272,7 +272,8 @@ export class SpineScene {
    const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==actor?.side))??plan?.targetIds[0];
    const target=this.homes.get(targetId??'')?.point??home;
    const tier=sequence?.seq.tier??(frame.plan.ultimate?'ultimate':frame.clip==='special'||frame.clip==='telegraph'?'active':'basic');
-   const camera=actor&&home&&target&&tier!=='ultimate'?actionCamera({plan:frame.plan,elapsed:frame.elapsed,asset:this.actors.get(actor.id)!.asset,side:actor.side,home,target,width,height},tier):sequence?.camera??{zoom:1,x:0,y:0,tilt:0};
+   const follow=actor&&home&&target&&(tier!=='ultimate'||frame.elapsed>=frame.plan.beats[2]!.start);
+   const camera=follow?actionCamera({plan:frame.plan,elapsed:frame.elapsed,asset:this.actors.get(actor.id)!.asset,side:actor.side,home,target,width,height},tier):sequence?.camera??{zoom:1,x:0,y:0,tilt:0};
    this.camera.zoom=view.reducedMotion?1:camera.zoom;
    this.camera.rotation.z=view.reducedMotion?0:camera.tilt;
    this.camera.position.x+=view.reducedMotion?0:camera.x*this.worldWidth;
@@ -283,6 +284,14 @@ export class SpineScene {
    this.firstHit=frame.elapsed>=(sequence?.seq.impact??frame.plan.beats[2]!.start);
   }else this.camera.rotation.z=0;
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+  if(frame&&view.formationC2&&!view.reducedMotion&&!sequence?.plate&&!sequence?.cutin){
+   const boxes=view.actors.filter(unit=>unit.hp>0).flatMap(unit=>{
+    const entry=this.actors.get(unit.id);return entry?[this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world)]:[];
+   });
+   const fit=fitMotionFrame(boxes,width,height);this.camera.zoom*=fit.scale;
+   this.scratch.set(-fit.dx*pixelsToWorld/this.camera.zoom,fit.dy*pixelsToWorld/this.camera.zoom,0).applyQuaternion(this.camera.quaternion);
+   this.camera.position.add(this.scratch);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+  }
   this.stage.update(this.worldWidth,PAINT.worldHeight,view.reducedMotion?0:20*focus,.18*focus,view.formationC2);
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
   this.weather.render(view,time,width,height,this.labelAudit.heads);
