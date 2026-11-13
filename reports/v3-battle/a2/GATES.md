@@ -329,3 +329,26 @@ FAIL P.e2e: measured=missing; required=eq 0
 FAIL P.parity: measured=missing; required=eq 0
 FAIL P.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
 TOTAL 204 PASS / 126 FAIL / 330 gates
+
+## T1 final verification
+```text
+PASS T1.freshness: measured=df506d321ab40b3e86f48ddd69a2a754444c2a99; required=evidence >= df506d321ab40b3e86f48ddd69a2a754444c2a99
+PASS T1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS T1.word-samples[wave1]: measured=30; required=min 30
+PASS T1.word-samples[wave3]: measured=30; required=min 30
+PASS T1.word-samples[boss]: measured=30; required=min 30
+PASS T1.word-max[wave1]: measured=3; required=max 8
+PASS T1.word-max[wave3]: measured=3; required=max 8
+PASS T1.word-max[boss]: measured=3; required=max 8
+PASS T1.system-fonts: measured=0; required=eq 0
+PASS T1.desktop-small: measured=1; required=min 1
+PASS T1.desktop-large: measured=1; required=min 1
+PASS T1.phone: measured=1; required=min 1
+PASS T1.comparisons: measured=3; required=min 3
+PASS T1.typecheck: measured=0; required=eq 0
+PASS T1.unit: measured=0; required=eq 0
+FAIL T1.e2e: measured=1; required=eq 0
+PASS T1.parity: measured=0; required=eq 0
+PASS T1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 17 PASS / 1 FAIL / 18 gates
+```

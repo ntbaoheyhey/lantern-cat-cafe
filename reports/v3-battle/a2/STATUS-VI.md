@@ -1,21 +1,9 @@
-# V3-A2 — đang thực hiện
-- M2 đã tách mắt, miệng và vũ khí; 22/22 nhân vật có chớp mắt và đổi miệng thật.
-- Kiểm tra 8 tư thế: 18/22 kín lỗ hoàn toàn; 4 nhân vật còn tối đa 79/150 pixel.
-- Độ chồng mép khớp đo từ alpha đạt tối thiểu 12/12 pixel.
-- Đã vẽ tay áo ẩn sau khiên Panko/Biscuit và sửa thứ tự tính xương vũ khí.
-- Typecheck, toàn bộ unit test và combat parity đều PASS.
-- E2E chạy lại sau khi sửa cache Vite: 9/10; Night tips của Session B vẫn lỗi.
-- M2 vẫn đang thực hiện, chưa đánh dấu hoàn tất khi checker chưa PASS hết.
-- V1: đã tạo 13 tranh triệu hồi gốc, rig động và 13 đường camera riêng.
-- V1: phủ khung 100%, diện tích hiệu ứng tối thiểu 65,36%; 11 lớp, 480 hạt.
-- SSIM cao nhất 0,200/0,55; thư mục video 19,27 MB, dưới giới hạn 20 MiB.
-- V1 còn lỗi E2E Night tips chung, không tự đánh dấu hoàn tất.
-- V2 đạt 26/27 gate: số 46px; active tối thiểu 16,38%, basic 5,22%; 5,77 số/giây.
-- V2 chạy khoảng 60 FPS; parity cả 3 trận PASS. Còn lỗi E2E Night tips của B.
-- V3: 7,30–8,79 cue/giây; 100% active/ultimate có voice đúng một lần; parity PASS.
-- V3 còn Night tips E2E; đã ghi 4 cue buff/debuff đang dùng âm dự phòng cho B.
-- Đang làm T1: giảm chữ, thêm boss HP, mốc phase và biểu tượng ý định địch.
-- M1 vẫn thiếu năng lượng chuyển động: wave1 hiện 10,13 so với yêu cầu 15,80.
-- Không đổi luật chiến đấu, không merge main hoặc deploy.
-- Sync sớm nhất 16/11 19:00; lần hai 18/11 19:00 giờ Việt Nam.
-- Demo cuối chỉ quay sau sync 18/11.
+# Trạng thái V3-A2
+- HUD T1: tối đa3/8 từ trên90 khung hình; không dùng font hệ thống.
+- Đã kiểm tra1280×720,1440×900 và điện thoại390×844.
+- Typecheck, unit test và tính xác định của trận đấu đều đạt.
+- E2E đạt9/10; ca Night tips thuộc màn hình B vẫn lỗi, đã ghi yêu cầu sửa.
+- M1 chưa đạt năng lượng chuyển động15,796; đang sửa camera theo nhịp tấn công.
+- Không hạ ngưỡng, không đánh dấu các thẻ còn lỗi là hoàn tất.
+- Tiếp tục10 mục polish; chưa đến lịch đồng bộ16 và18/11,12:00UTC.
+- Không deploy hoặc merge main.

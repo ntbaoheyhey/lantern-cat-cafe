@@ -13,7 +13,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | V1 | Full-screen distinct ultimate plates | in progress | V1/gates.log: 20 PASS / 1 FAIL; 13 plates; coverage .65356/.61206; full fill1; edges2; layers11; particles480; SSIM .19967/.55 across78 pairs; 19,269,131/20,971,520bytes. FAIL V1.e2e1/0 (shared Night tips). |
 | V2 | Field skills and damage numbers | in progress | V2/gates.log: 26 PASS / 1 FAIL; all36 strips, SSIM .5764/.6; glyph46px, active min.16379/.15, basic min.05220/.05, impacts5.769/3, High59.93–60.05FPS; parity PASS. Shared Night tips E2E9/10 remains open. |
 | V3 | Battle audio cue choreography | in progress | V3/gates.log: 23 PASS / 1 FAIL; cues7.30–8.79/4.78 per second; all19 actives and18 ultimate voice phases; unknown0; barks7.5s; all fixture parity PASS; FAIL V3.e2e1/0 (shared Night tips). |
-| T1 | Battle UI and text diet | todo | pending |
+| T1 | Battle UI and text diet | in progress | T1/gates.log: 17 PASS / 1 FAIL; 90 frames max3/8 words; system fonts0; three viewports and3 comparisons; type/unit/parity PASS; FAIL T1.e2e1/0 (shared Night tips). |
 | SY1 | Sync at 2026-11-16 12:00 UTC | todo | pending |
 | SY2 | Sync at 2026-11-18 12:00 UTC | todo | pending |
 | D1 | Final demo after SY2 | todo | pending |

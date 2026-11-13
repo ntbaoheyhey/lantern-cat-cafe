@@ -62,3 +62,9 @@ Before: /dev/disk3s1   926Gi   580Gi   300Gi    66%    5.4M  3.1G    0%   /Syste
 Removed local regenerable output: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp
 After: /dev/disk3s1   926Gi   580Gi   300Gi    66%    5.4M  3.1G    0%   /System/Volumes/Data
 Normal disk mode; encoded evidence and active V3 work retained.
+
+## Resume 2026-11-13T07:45:48.079033+00:00
+Before: 275 GiB free.
+Removed only regenerable worktree output: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp; reports/v3-battle/a2/ref
+After: /dev/disk3s1   926Gi   604Gi   277Gi    69%    5.4M  2.9G    0%   /System/Volumes/Data
+Normal disk mode. Encoded evidence retained.
