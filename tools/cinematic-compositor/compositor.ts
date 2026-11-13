@@ -2,6 +2,7 @@ import {T} from '../../apps/web/src/game/cardrpg/battle-v3/compositor-deps';
 import {loadSpineActor,type SpineActor} from '../../apps/web/src/game/cardrpg/spine/assets';
 import {retimedClipTime} from '../../apps/web/src/game/cardrpg/spine/events';
 import {summonMotions,summonVertex} from './summon-motion.mjs';
+import {preparePlateCaster} from './caster-rig';
 import '../../apps/web/node_modules/@fontsource/baloo-2/800.css';
 /** Offline deterministic director. Every logged layer comes from a real draw call. */
 const timelines=import.meta.glob('./plates/*.json',{eager:true,import:'default'}) as Record<string,any>;
@@ -17,6 +18,7 @@ const summonScene=new T.Scene(),summonGeometry=new T.PlaneGeometry(1,1,48,40);
 const summonMaterial=new T.MeshBasicMaterial({transparent:true,side:T.DoubleSide,depthTest:false});
 const summonMesh=new T.Mesh(summonGeometry,summonMaterial);summonMesh.frustumCulled=false;summonScene.add(summonMesh);
 let plate:any,actor:SpineActor,summon:HTMLImageElement,paint:HTMLImageElement,core:any;
+let casterMotion:{gesture:string;joints:string[]};
 let audit:{layers:Record<string,number>;particles:number;motifCoverage:number|null;casterCorePixels:number;camera:string;summonMotion:{kind:string;peakLocalPixels:number};casterClip?:{name:string;duration:number;release:number;time:number}};
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const smooth=(v:number)=>{const t=clamp(v);return t*t*(3-2*t);};
@@ -99,7 +101,7 @@ function flash(frame:number){if(frame<64)return;layer('closing-flash',()=>{c.glo
 async function load(id:string){
  plate=Object.values(timelines).find(p=>p.id===id);if(!plate?.composition)throw Error('Missing V2 plate '+id);
  actor?.dispose();const l=plate.layers.find((l:any)=>l.type==='painted-layer');const motif=Object.entries(motifs).find(([p])=>p.endsWith('/'+plate.unit+'.png'))?.[1];if(!motif)throw Error('Missing original motif '+plate.unit);
- [actor,summon,paint]=await Promise.all([loadSpineActor(plate.unit),loadImage(motif),loadImage(Object.entries(art).find(([p])=>p.endsWith('/'+l.source.split('/').at(-1)))![1]),document.fonts.ready]);scene.add(actor.root);actor.setOrder(2);core=Object.values(cores).find(p=>p.id===plate.unit);
+ [actor,summon,paint]=await Promise.all([loadSpineActor(plate.unit),loadImage(motif),loadImage(Object.entries(art).find(([p])=>p.endsWith('/'+l.source.split('/').at(-1)))![1]),document.fonts.ready]);casterMotion=preparePlateCaster(actor);scene.add(actor.root);actor.setOrder(2);core=Object.values(cores).find(p=>p.id===plate.unit);
  summonMaterial.map?.dispose();summonMaterial.map=new T.Texture(summon);summonMaterial.map.colorSpace=T.SRGBColorSpace;summonMaterial.map.needsUpdate=true;summonMaterial.needsUpdate=true;
  renderFrame(0);return{id:plate.id,frames:plate.frames,source:actor.source,beatFrames:[12,35,54]};
 }
@@ -112,5 +114,5 @@ function renderFrame(value:number){const frame=Math.max(0,Math.min(plate.frames-
  c.save();c.translate(640+pan,360);c.rotate(tilt);c.scale(zoom,zoom);c.translate(-640,-360);
  background(frame);lightShafts(frame);speedLines(frame);ground(frame);
  if(plate.composition.casterBehind){cast(frame);paintedSummon(frame);}else{paintedSummon(frame);cast(frame);}originalLayer(frame);particles(frame);c.restore();impact(frame);flash(frame);
- return{frame,seconds:frame/30,...audit};}
+ return{frame,seconds:frame/30,...audit,casterMotion};}
 Object.assign(window,{compositor:{load,renderFrame,ids:Object.values(timelines).map(p=>p.id)}});

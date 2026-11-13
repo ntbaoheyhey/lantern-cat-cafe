@@ -7,7 +7,7 @@ export function paintImpactDebris(c:CanvasRenderingContext2D,since:number,x:numb
   const flash=1-since/(2000/30),r=radius*.78;
   c.save();c.globalCompositeOperation='screen';c.globalAlpha=flash*.95/Math.sqrt(targets);
   const light=c.createRadialGradient(x,y,0,x,y,r);
-  light.addColorStop(0,'#fff9eaff');light.addColorStop(.25,'#fff9eaee');
+  light.addColorStop(0,(palette[0]??'#fff9ea')+'ff');light.addColorStop(.25,(palette[1]??'#ffe3ae')+'ee');
   light.addColorStop(.55,(palette[1]??'#ffe3ae')+'cc');light.addColorStop(1,(palette[1]??'#ffe3ae')+'00');
   c.fillStyle=light;c.fillRect(x-r,y-r,r*2,r*2);c.restore();
  }

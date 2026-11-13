@@ -11,7 +11,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q4 | done | B | E3-E5 24/24 PASS;85 assumptions,170 cases,0 misses; current suite435/435 PASS | STARTED 2026-11-13T16:16:50.578116+00:00; evidence838434f59; ENDED 2026-11-13T22:45:54.020159+00:00 |
 | Q5 | done | B (+ A texts) | V8/8, S5 all PASS; 50/50 ultimate,62/62 skill; 6 full renders; reel90.054s; suite435 browser PASS | STARTED 2026-11-13T17:25:44.984813+00:00; source422585ca5/evidence d67b0a303; ENDED 2026-11-13T21:25:40.344963+00:00 |
 | Q6 | done | B | U3 9/9 PASS;54/54 screens;435/435 browser; types/unit PASS;24 phone samples | STARTED 2026-11-13T21:17:35.227574+00:00; sourceB9b25782ff,Af6dc3cadd; ENDED 2026-11-13T22:45:54.020159+00:00 |
-| Q7 | todo | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS |  |
+| Q7 | active | A | 13 caster IoU <=.85; saturation >=70%, luminance >=80%; V1/F2/FPS | STARTED 2026-11-13T22:46:49.566670+00:00 |
 | Q8 | todo | B (+ A attributes) | T1 coach and C1 >=3/4 live Fuji counters |  |
 | Q9 | todo | A/B by ownership | Open items then A P1, B P1-P8, E6 if E3 passed |  |
 | S1 | scheduled | A then B | 2026-11-16 12:00 UTC; SYNC-16 |  |

@@ -17,6 +17,8 @@ for specpath in sorted((root/'tools/cinematic-compositor/plates').glob('*.json')
  spec=json.loads(specpath.read_text());id=spec['id'];log=json.loads((out/(id+'-render.json')).read_text())
  assert log['sourceHash']==sha(root/'tools/cinematic-compositor/compositor.ts'),id+' stale compositor'
  assert log['deformationHash']==sha(root/'tools/cinematic-compositor/summon-motion.mjs'),id+' stale summon deformation'
+ assert log['casterMotionHash']==sha(root/'tools/cinematic-compositor/caster-motion.mjs'),id+' stale caster motion'
+ assert log['casterRigHash']==sha(root/'tools/cinematic-compositor/caster-rig.ts'),id+' stale caster rig'
  assert log['plateHash']==sha(specpath),id+' stale plate'
  assert log['encoded']['webm']['sha256']==sha(video/(id+'.webm')),id+' stale WebM'
  assert log['encoded']['mp4']['sha256']==sha(video/(id+'.mp4')),id+' stale MP4'

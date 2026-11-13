@@ -1,0 +1,655 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T22:57:24.235Z",
+    "sourceCommit": "61e7e3357ba56ebe1c4819349d795d2138df7c18"
+  },
+  "method": "Same960x480 field-normalized transient light mask: positive Rec709 luma delta>=20 and max RGB delta>=32 vs entrance; connected components>=24px; HUD cropped and damage/callout text excluded. Mean HSV saturation includes white pixels. Peak=99.9th-percentile Rec709 luma. Six reference field-active samples; three natural actives x2 beats per fixture. No threshold tuned per build.",
+  "limitations": [
+    "Transient masks can include moving bright prop edges; identical detector used on both products. Reference has no isolated effect-alpha layer.",
+    "Reference gold baseline contains a cut-in; its entire banner region is excluded from both samples.",
+    "Reference is PvP; no reference boss identity is inferred."
+  ],
+  "reference": {
+    "source": "V2 ua_e236yxNM user video; private measurement only",
+    "median": {
+      "meanSaturation": 0.46137531738295284,
+      "peakLuminance": 253.7825606
+    },
+    "samples": [
+      {
+        "id": "ribbon",
+        "baselineSeconds": 40.5,
+        "seconds": 40.6,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            390,
+            180,
+            250,
+            240
+          ]
+        ],
+        "sha256": "57548db89432e6bec386e77f29af6a71d69b39ec0edca6b0ba6529fd628687b6",
+        "pixels": 33121,
+        "meanSaturation": 0.42240661247440314,
+        "peakLuminance": 254.63899999999998
+      },
+      {
+        "id": "ribbon",
+        "baselineSeconds": 40.5,
+        "seconds": 41.1,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            390,
+            180,
+            250,
+            240
+          ]
+        ],
+        "sha256": "131aecfa4f757b29ed5c2aa784285ab622dd368224f05b4904a8b23b78ed0f77",
+        "pixels": 125263,
+        "meanSaturation": 0.5059778696211407,
+        "peakLuminance": 254.99999999999997
+      },
+      {
+        "id": "gold-strike",
+        "baselineSeconds": 270.6,
+        "seconds": 270.9,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            0,
+            90,
+            820,
+            230
+          ]
+        ],
+        "sha256": "974749ea1eeed3411847c095eec2ecdd2e4442870e8b2a019a6cdd0a114368b2",
+        "pixels": 97172,
+        "meanSaturation": 0.5470652806464865,
+        "peakLuminance": 253.9955212
+      },
+      {
+        "id": "gold-strike",
+        "baselineSeconds": 270.6,
+        "seconds": 271.0,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            0,
+            90,
+            820,
+            230
+          ]
+        ],
+        "sha256": "b7d1189e5240ab2389a2a07ac77b8b558ab197303c82eb979cb142c57a4059ef",
+        "pixels": 82416,
+        "meanSaturation": 0.5003440222915025,
+        "peakLuminance": 253.56959999999998
+      },
+      {
+        "id": "fire-strike",
+        "baselineSeconds": 806.6,
+        "seconds": 806.9,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            590,
+            70,
+            450,
+            345
+          ],
+          [
+            350,
+            420,
+            550,
+            50
+          ]
+        ],
+        "sha256": "b35a9292bad20b8b70385b1d41d99758b39801b3c529707e4dccb21c19ddbca8",
+        "pixels": 23908,
+        "meanSaturation": 0.33501018610556155,
+        "peakLuminance": 252.85439999999997
+      },
+      {
+        "id": "fire-strike",
+        "baselineSeconds": 806.6,
+        "seconds": 807.0,
+        "field": [
+          0,
+          48,
+          1280,
+          420
+        ],
+        "excludedText": [
+          [
+            590,
+            70,
+            450,
+            345
+          ],
+          [
+            350,
+            420,
+            550,
+            50
+          ]
+        ],
+        "sha256": "ddb26130fcd1eccce32fdcb6d051081ae03552b0cd63fdbd2f648a7dde459343",
+        "pixels": 19553,
+        "meanSaturation": 0.3572819175233127,
+        "peakLuminance": 252.74395840000028
+      }
+    ]
+  },
+  "fixtures": {
+    "wave1": {
+      "meanSaturation": 0.38836728303415075,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.8417599910569042,
+      "luminanceRatio": 1.0047971751767404,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-0-contact.png",
+          "sha256": "db759ef5f59c99d01e9097839468133be9a635ef6b1b72ad214dc67a886818b3",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              571.5652410714287,
+              71.59522058823515,
+              132.8695178571426,
+              61.162499999999895
+            ]
+          ],
+          "pixels": 256658,
+          "meanSaturation": 0.3643708825003869,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-0-resolve.png",
+          "sha256": "34b3a95d2a80e21312e3e2b52e0f75be31f47903a622820f0b5fb272008c5766",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              575.4528571428572,
+              63.76470588235277,
+              125.0942857142857,
+              58
+            ],
+            [
+              578.2983541666669,
+              52.10502450980371,
+              119.40329166666633,
+              58.095833333333196
+            ]
+          ],
+          "pixels": 245132,
+          "meanSaturation": 0.3528839204039888,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-1-contact.png",
+          "sha256": "b722a4865ad8826d07f2e41754831531c5ba6a27ef8110ee9f553b39d7aa6c90",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 297123,
+          "meanSaturation": 0.3216977084752581,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-1-resolve.png",
+          "sha256": "f69c9dbe9d9c15d85ef3f2327fbc23606fd6a47c508d8170141618978104a8db",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 305836,
+          "meanSaturation": 0.32488103966524157,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-2-contact.png",
+          "sha256": "3498508da4a7c0c22884a45a927d1d1a83aa1d29c1d8c3c4b72a95a38e8f61dd",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              29.91245833333369,
+              324.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 294711,
+          "meanSaturation": 0.48855506900379175,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave1-2-resolve.png",
+          "sha256": "e072ef4ebe81ab3df7c762470f9c9740c881c52ff82679cdc079faa1209fd6a0",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              34.46714285714286,
+              316.70588235294053,
+              127.06571428571428,
+              58
+            ],
+            [
+              645.3884017857147,
+              53.22757352941131,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              30.871339285714697,
+              395.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 295305,
+          "meanSaturation": 0.47152190606521477,
+          "peakLuminance": 254.99999999999997
+        }
+      ],
+      "parity": true,
+      "errors": []
+    },
+    "wave3": {
+      "meanSaturation": 0.4053771554414627,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.8786277465835688,
+      "luminanceRatio": 1.0047971751767404,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-0-contact.png",
+          "sha256": "680a832121ff965dd5c1a147a33811c6d3020f130bd7698009cc23df6980fe16",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              1120.329895405137,
+              263.1938943450296,
+              126.54862499999976,
+              61.162499999999895
+            ]
+          ],
+          "pixels": 228871,
+          "meanSaturation": 0.3714846645781539,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-0-resolve.png",
+          "sha256": "994dd958c63396a5785e053b9216cdcbcf8d2140426052a8179b2f45ecbd8c61",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              1124.014207905137,
+              255.36337963914724,
+              119.17999999999998,
+              58
+            ],
+            [
+              1096.3259910030722,
+              208.49926673044425,
+              119.40329166666633,
+              58.095833333333196
+            ]
+          ],
+          "pixels": 237801,
+          "meanSaturation": 0.3880266503933797,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-1-contact.png",
+          "sha256": "99d054455514d806ca28d3738945fa5d3fb90e585fe49332aa2f85dd2ec3ca68",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 285734,
+          "meanSaturation": 0.3400628337036901,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-1-resolve.png",
+          "sha256": "648d9005ee34d3ef59728129f4b61265fa38d8e065076baf655968e9d11308d9",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 303282,
+          "meanSaturation": 0.3465439335499699,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-2-contact.png",
+          "sha256": "53949c9092ac261c4e01dd6098c6f3e2df8072e18010393aabae9bc3a16bd0da",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              299.9124583333337,
+              480.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 285477,
+          "meanSaturation": 0.494887188123462,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/wave3-2-resolve.png",
+          "sha256": "326dd2123371505cd8209ce466d8e83c8360c6294556a8788bb063507914ee24",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              304.46714285714285,
+              472.70588235294053,
+              127.06571428571428,
+              58
+            ],
+            [
+              33.38840178571468,
+              332.2275735294113,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              30.871339285714697,
+              407.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 286818,
+          "meanSaturation": 0.48499384524640143,
+          "peakLuminance": 254.99999999999997
+        }
+      ],
+      "parity": true,
+      "errors": []
+    },
+    "boss": {
+      "meanSaturation": 0.38803736560464935,
+      "peakEffectLuminance": 254.99999999999997,
+      "saturationRatio": 0.8410449171960555,
+      "luminanceRatio": 1.0047971751767404,
+      "samples": [
+        {
+          "action": 0,
+          "beat": "contact",
+          "skill": "soot-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-0-contact.png",
+          "sha256": "1112594e74c294e0e91fc53c2585c67a32f216c53e0b69fe52c3bd1688e29d78",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              811.5419483619826,
+              62.976984795921794,
+              129.79258333333303,
+              61.64166666666654
+            ]
+          ],
+          "pixels": 264993,
+          "meanSaturation": 0.3477793679048718,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 0,
+          "beat": "resolve",
+          "skill": "soot-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-0-resolve.png",
+          "sha256": "c3a8a1a1091cc0412d1375de26e01e2f41f32ad352f0d788abd40d3a07efd749",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              815.8625257429347,
+              55.38605342337276,
+              121.15142857142857,
+              58
+            ],
+            [
+              750.8649113863867,
+              52.806617647058594,
+              122.51582142857106,
+              58.57499999999985
+            ]
+          ],
+          "pixels": 249877,
+          "meanSaturation": 0.33652633958652756,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "contact",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-1-contact.png",
+          "sha256": "0b83f6bc0eb33f06ed08ed702c3941c5e52fe1b11176e31511576b1e7b47932d",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 264675,
+          "meanSaturation": 0.3307022263708544,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 1,
+          "beat": "resolve",
+          "skill": "clover-2",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-1-resolve.png",
+          "sha256": "73f99270db116548bbd07c50190005becf4c88d9d99da24e446465c102117700",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [],
+          "pixels": 275430,
+          "meanSaturation": 0.3354747407440629,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "contact",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-2-contact.png",
+          "sha256": "b9540863a6a1499cbbabd1f7c52db1abe5189b049b02b3d019deeb651a62b71b",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              263.9124583333337,
+              432.29681372548976,
+              136.17508333333262,
+              61.64166666666639
+            ]
+          ],
+          "pixels": 275249,
+          "meanSaturation": 0.49169222106842436,
+          "peakLuminance": 254.99999999999997
+        },
+        {
+          "action": 2,
+          "beat": "resolve",
+          "skill": "panko-3",
+          "path": "reports/v3-solo/Q7/glow1-field/boss-2-resolve.png",
+          "sha256": "5ad6f9c55ead76a013c62971f5295ad170c9a4a49065bf6ed2533427198c2041",
+          "field": [
+            0,
+            44,
+            1280,
+            550
+          ],
+          "excludedText": [
+            [
+              268.46714285714285,
+              424.70588235294065,
+              127.06571428571428,
+              58
+            ],
+            [
+              555.3884017857147,
+              53.22757352941131,
+              129.22319642857065,
+              58.862499999999685
+            ],
+            [
+              102.8713392857147,
+              479.1742647058819,
+              134.2573214285706,
+              60.87499999999968
+            ]
+          ],
+          "pixels": 272355,
+          "meanSaturation": 0.4785850502929963,
+          "peakLuminance": 254.99999999999997
+        }
+      ],
+      "parity": true,
+      "errors": []
+    }
+  },
+  "comparisons": [
+    "reports/v3-battle/a2/Q7/compare-wave1-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave1-resolve.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave3-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-wave3-resolve.jpg",
+    "reports/v3-battle/a2/Q7/compare-boss-contact.jpg",
+    "reports/v3-battle/a2/Q7/compare-boss-resolve.jpg"
+  ]
+}

@@ -10,6 +10,7 @@ import { PAINT } from './style';
 import { DesignerVfx } from './vfx-overrides';
 import { LayeredVfx } from '../vfx-layered/player';
 import {FieldVfx} from '../battle-v3/field-vfx';
+import {EffectGlow} from '../battle-v3/effect-glow';
 type Point={x:number;y:number};
 interface Particle {active:boolean;born:number;life:number;source:string;target:string;layer:PaintedLayer|null;recipe:PaintedRecipe|null;index:number;total:number;stamp:HTMLCanvasElement|null;origin:Point;end:Point;captured:boolean;impact:boolean}
 const floorLayer:PaintedLayer={glyph:'ring',motion:'expand',anchor:'caster',phase:'contact',socket:'feet',count:1,size:1.3,spread:.1,opacity:.5,accent:false,ground:true,turns:0,delay:0,life:.6};
@@ -18,6 +19,7 @@ const phase:PaintedRecipe={...entrance,id:'phase',name:'Phase change',color:PAIN
 export type ResolveSocket=(id:string,socket:SpineSocket)=>Point|undefined;
 export class PaintedVfx {
  private field:FieldVfx;
+ private glow=new EffectGlow();
  readonly layered:LayeredVfx;useLayered=false;
  readonly overrides=new DesignerVfx();readonly ready:Promise<void>;
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
@@ -114,6 +116,8 @@ export class PaintedVfx {
   // must not rescale the export; only the stage transform and camera do.
   this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=this.overrides.stats.active;
   if(view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
+  // Composite the effect-only bloom before the shared face protection pass.
+  if(view.formationC2&&this.stats.draws)this.glow.render(this.canvas,c,view.quality==='low',view.reducedMotion);
   // A nonzero union removes overlapping masks once; unlike even-odd holes,
   // intersecting protected regions cannot accidentally reveal a face again.
   c.globalCompositeOperation='destination-out';c.globalAlpha=1;
@@ -126,5 +130,5 @@ export class PaintedVfx {
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
  clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
- dispose(){this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.canvas.remove();}
+ dispose(){this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.canvas.remove();}
 }
