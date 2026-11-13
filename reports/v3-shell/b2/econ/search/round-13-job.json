@@ -1,0 +1,25 @@
+{
+  "pid": 91876,
+  "command": [
+    "node",
+    "tools/chain/economy-lab/search.mjs",
+    "--round",
+    "13",
+    "--configs",
+    "40",
+    "--seeds",
+    "40",
+    "--workers",
+    "2",
+    "--bank",
+    "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+    "--config",
+    "reports/v3-shell/b2/econ/search/round-12-best.json",
+    "--levers",
+    "reports/v3-shell/b2/econ/search/round-13-levers.json"
+  ],
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/e3-round-13-solo.log",
+  "utc": "2026-11-13T13:04:42.774091+00:00",
+  "checkpoint": "PROGRESSION-200.json; frozen round-13 model; search/round-13.json",
+  "purpose": "Widen claim/sink affordability around round12 to seek stronger worst-scenario burn margins while keeping Star cap low."
+}

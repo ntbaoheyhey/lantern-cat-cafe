@@ -491,3 +491,39 @@ The low bank cap plus cheaper Star-consuming upgrades brings all 18 median Star 
 | heavy-heavy-d1-b0.1 | 1.272 | 1.039 | 13 / 9 | 0.925 |
 | heavy-heavy-d1-b0.2 | 1.423 | 1.043 | 13 / 9 | 0.930 |
 | heavy-heavy-d1-b0.35 | 1.521 | 1.051 | 13 / 9 | 0.924 |
+
+## Round 13 — Wider claim and sink affordability bounds
+
+40 unique configs × 40 seeds × 18 scenarios. Best score 5.8084.
+
+The wider ranges improve the aggregate score to 5.8084 but let worst-case median Star source/sink rise to 1.122. Burn/claims spans 1.018-1.571 and bot/human hourly earnings 0.908-0.955. Retain round12 as the stronger Star-balanced candidate; the bot gate still needs a structural earning rule.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.rewards.weeklySpool | 1.05 | 0.9 |
+| policy.spool.skinCost | 6 | 5 |
+| policy.fusion.legendary.yarn | 5 | 2 |
+| policy.seal.feeBp | 800 | 1300 |
+| sinks.polish.yarn.0 | 1 | 2 |
+| sinks.polish.yarn.1 | 1 | 4 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.019 | 1.098 | 13 / 9 | 0.926 |
+| casual-heavy-d0.5-b0.2 | 1.068 | 1.108 | 13 / 9 | 0.936 |
+| casual-heavy-d0.5-b0.35 | 1.160 | 1.122 | 13 / 8.5 | 0.908 |
+| casual-heavy-d1-b0.1 | 1.305 | 1.081 | 13 / 9 | 0.940 |
+| casual-heavy-d1-b0.2 | 1.439 | 1.086 | 13 / 9 | 0.935 |
+| casual-heavy-d1-b0.35 | 1.534 | 1.094 | 13 / 8.5 | 0.917 |
+| balanced-d0.5-b0.1 | 1.018 | 1.078 | 13 / 9 | 0.927 |
+| balanced-d0.5-b0.2 | 1.071 | 1.087 | 13 / 9 | 0.924 |
+| balanced-d0.5-b0.35 | 1.140 | 1.102 | 13 / 9 | 0.919 |
+| balanced-d1-b0.1 | 1.303 | 1.062 | 13 / 9 | 0.926 |
+| balanced-d1-b0.2 | 1.462 | 1.067 | 13 / 9 | 0.925 |
+| balanced-d1-b0.35 | 1.569 | 1.077 | 13 / 9 | 0.925 |
+| heavy-heavy-d0.5-b0.1 | 1.021 | 1.063 | 13 / 9 | 0.931 |
+| heavy-heavy-d0.5-b0.2 | 1.078 | 1.071 | 13 / 9 | 0.934 |
+| heavy-heavy-d0.5-b0.35 | 1.129 | 1.083 | 13 / 9 | 0.936 |
+| heavy-heavy-d1-b0.1 | 1.345 | 1.046 | 13 / 9 | 0.935 |
+| heavy-heavy-d1-b0.2 | 1.494 | 1.051 | 13 / 9 | 0.955 |
+| heavy-heavy-d1-b0.35 | 1.571 | 1.061 | 13 / 9 | 0.932 |

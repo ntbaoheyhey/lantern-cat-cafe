@@ -180,3 +180,10 @@ PASS SY3.status: measured 1748; required nonempty reports/v3-shell/b2/STATUS-VI.
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```
+
+## V3SOLO Q1 shared browser closure
+
+PASS Q1.B.browser: measured=435/435; required=435/435.
+PASS Q1.B.unit: measured=293 files /2537 tests; required=all pass.
+PASS Q1.B.typecheck: measured=0; required=exit0.
+Evidence: tests/q1-final.json (hashed logs). Own B2 cards retain their current measured states.

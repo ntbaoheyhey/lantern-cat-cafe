@@ -93,3 +93,14 @@ E2 chooses guaranteed quality polish, season décor, and café showcases. Each s
 The user replaced both sessions with one. All inherited source stays in its owning worktree. Workspace typecheck and 17 economy-lab tests pass; preserve the full E3 implementation and rounds without a stash. Round 9 also completed on disk; its measured interpretation belongs to Q4. Q0 is a preservation checkpoint, not economy acceptance.
 
 Q0 clean-tree verification found active native-sensitivity stdout changing between commit and push. Preserve that exact output in tests/q0-native-sensitivity-snapshot.log, keep the original live log on disk and ignore its continued appends. All JSON measurements/checkpoints remain versioned; no result is discarded.
+
+- 2026-11-13 Q1 exception: B shared-blocker commit af969ae398c0f4b97b535e937f7008eeff9ece2c cherry-picked as A 291fc21c9791f3a3432f69ae792b33c0ede7596b. Conflict resolution only adapted compact labels, helper reset naming and the Quests copy to A’s older layout; no B redesign/audio/economy was imported. Pixel baselines and thresholds unchanged.
+
+- Q1 second shared-blocker pick: B 3dc9982d0 -> A e36aa024fe156569cfeddbf766dd5c0bf374e19a; compact badge label only.
+
+- Q1 third shared-blocker pick B ebf250b48 -> A c5f9192bc: accessible Chapter names retained alongside compact visible labels.
+
+## Q1 remaining browser regression diagnosis
+The first375-case local run failed13 returning-player tests at entry. The entry fixture resolved9; remaining4 exposed missing Invitation odds, unconditional v3 Fusion in the legacy workshop, an Events tab selector mismatch, and mixer interception of More battle options. Restored the two product paths, moved only the B-owned mixer, and explicitly selected Login. All4 pass with original probability/geometry/focus assertions unchanged. These B-specific repairs are not cherry-picked to A.
+
+- 2026-11-13T13:19:00.294991+00:00: Q1 complete browser435/435 and full units2537/2537 on B after odds/workshop/mixer repairs; no new B2 sound/economy acceptance claimed. Round13 slightly improves search score but misses Star in worst scenario; round14 returns to round12 with a one-Thread bank cap.
