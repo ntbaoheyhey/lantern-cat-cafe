@@ -12,7 +12,7 @@ export class CinematicPlayer {
  private video=document.createElement('video');private poster=document.createElement('img');
  private plan:EffectFrame['plan']|null=null;private failed=false;
  private battleKey:unknown;private takes=new Map<string,number>();private assigned=new WeakMap<EffectFrame['plan'],boolean>();private alternate=false;private owner='';
- readonly audit={plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0,cameraTake:'original',flash:0};
+ readonly audit={plate:false,cutin:false,elapsed:0,contact:0,videoTime:0,expectedVideoTime:0,mediaReady:0,mediaFailed:false,cameraTake:'original',flash:0};
  constructor(host:HTMLElement){
   this.root.className='b3-cinema';this.root.setAttribute('aria-hidden','true');
   this.dim.className='b3-cinema-dim';this.flash.className='b3-cinema-flash';this.cutin.className='b3-cutin';
@@ -44,7 +44,10 @@ export class CinematicPlayer {
   this.cutin.hidden=!state.cutin;
   if(state.cutin&&seq.cutin){const p=Math.min(1,(at-seq.cutin.start)/120),ease=1+2.70158*(p-1)**3+1.70158*(p-1)**2;this.cutin.style.transform=`translateX(${(1-ease)*-105}%)`;}
   this.flash.hidden=state.flash===0;this.flash.style.opacity=String(state.flash);
-  this.video.hidden=!state.plate||this.failed;this.poster.hidden=!state.plate||!this.failed&&this.video.readyState>=2;
+  // An empty video surface can cover the poster even before its first frame.
+  // Reveal it only after decoding, without changing the rules contact clock.
+  const ready=!this.failed&&this.video.readyState>=2;
+  this.video.hidden=!state.plate||!ready;this.poster.hidden=!state.plate||ready;
   const take=this.alternate&&!reduced&&seq.plate?alternatePlateCamera(this.owner,(at-seq.plate.start)/(seq.plate.end-seq.plate.start)):null;
   const transform=take?`translate(${take.x}%,${take.y}%) rotate(${take.angle}rad) scale(${take.zoom})`:'none';
   this.video.style.transform=this.poster.style.transform=transform;
@@ -55,7 +58,7 @@ export class CinematicPlayer {
    if(Number.isFinite(this.video.duration)&&Math.abs(this.video.currentTime-seconds)>1/30)this.video.currentTime=Math.min(this.video.duration,seconds);
    if(paused||fixed)this.video.pause();else if(this.video.paused)void this.video.play().catch(()=>{this.failed=true;});
   }else this.video.pause();
-  Object.assign(this.audit,{plate:state.plate,cutin:state.cutin,elapsed:at,contact:seq.impact,videoTime:this.video.currentTime,flash:state.flash});
+  Object.assign(this.audit,{plate:state.plate,cutin:state.cutin,elapsed:at,contact:seq.impact,videoTime:this.video.currentTime,mediaReady:this.video.readyState,mediaFailed:this.failed,flash:state.flash});
  }
  dispose(){this.video.pause();this.video.removeAttribute('src');this.video.replaceChildren();this.video.load();this.root.remove();}
 }

@@ -18,8 +18,10 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const fixture of config.fixtures.filter(f=>id==='all'||f.id===id)){
   const folder=resolve(out,fixture.id);await mkdir(folder,{recursive:true});
-  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1}),errors=[];
+  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1}),errors=[],mediaRequests=[];
   page.on('pageerror',e=>errors.push(e.message));
+  page.on('response',response=>{const u=new URL(response.url());if(u.pathname.startsWith('/cinematics/')&&response.status()>=400)mediaRequests.push(`Plate HTTP ${response.status()}: ${u.pathname}`);});
+  page.on('requestfailed',request=>{const u=new URL(request.url());if(u.pathname.startsWith('/cinematics/'))mediaRequests.push(`Plate request failed: ${u.pathname}: ${request.failure()?.errorText}`);});
   await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true}));});
   // All app traffic is local; fonts and original game art are served by Vite.
   await page.route('**/*',route=>{const u=new URL(route.request().url());return ['127.0.0.1','localhost'].includes(u.hostname)||['data:','blob:'].includes(u.protocol)?route.continue():route.abort();});
@@ -73,13 +75,15 @@ try{
     frames.push(sample);
   }
   encoder.stdin.end();await encoded;
+  const invalidMedia=frames.filter(f=>f.sequence.plate&&(f.sequence.mediaReady<2||f.sequence.mediaFailed||Math.abs(f.sequence.videoTime-f.sequence.expectedVideoTime)>2/fps));
+  if(invalidMedia.length)errors.push(`Undecoded or late plate media in ${invalidMedia.length} frames; first frame ${invalidMedia[0].index}`);
   const result=await page.evaluate(()=>{
     const m=window.__depthReview,c=window.__v3a2,expected=structuredClone(c.initial),actual=structuredClone(m.battle);
     // Finish both simulations through the same unchanged auto policy.
     c.R.playBattle(expected,'auto');c.R.playBattle(actual,'auto');
     return {parity:JSON.stringify(expected)===JSON.stringify(actual),initial:c.initial.initial,plans:c.plans,combatLog:m.battle.log,result:m.battle.result};
   });
-  const capture={_meta:evidenceMeta(),fixture:fixture.id,seconds:frames.length/fps,minimumSeconds:seconds,completeActions,fps,width,height,errors,...result,frames};
+  const capture={_meta:evidenceMeta(),fixture:fixture.id,seconds:frames.length/fps,minimumSeconds:seconds,completeActions,fps,width,height,errors,mediaRequests,...result,frames};
   await writeFile(resolve(folder,'capture.json'),JSON.stringify(capture)+'\n');
   await page.close();
   if(errors.length||!result.parity)throw Error(`${fixture.id}: ${errors.length} browser errors; parity=${result.parity}`);

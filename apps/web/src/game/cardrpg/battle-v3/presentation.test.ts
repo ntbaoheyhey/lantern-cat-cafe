@@ -44,3 +44,20 @@ it('paints and clears fallback contact without leaving a stale ultimate plate',(
   expect(cinema.audit).toMatchObject({plate:false,cutin:false,flash:0});
  }finally{cinema.dispose();pause.mockRestore();load.mockRestore();}
 });
+
+it('keeps the poster visible until a decoded plate is ready and restores it on media failure',()=>{
+ const pause=vi.spyOn(HTMLMediaElement.prototype,'pause').mockImplementation(()=>{});
+ const load=vi.spyOn(HTMLMediaElement.prototype,'load').mockImplementation(()=>{});
+ const host=document.createElement('div'),cinema=new CinematicPlayer(host);
+ try{
+  const plan=configureSequence(pilotFixture('mochi-4').plan),before=JSON.stringify(plan);
+  const video=host.querySelector('video')!,poster=host.querySelector('img.b3-plate') as HTMLImageElement;
+  let readiness=0;
+  Object.defineProperty(video,'readyState',{get:()=>readiness});
+  const render=()=>cinema.render(sampleActionPlan(plan,1200,false),true,1,false,true);
+  render();expect(video.hidden).toBe(true);expect(poster.hidden).toBe(false);
+  readiness=2;render();expect(video.hidden).toBe(false);expect(poster.hidden).toBe(true);
+  video.dispatchEvent(new Event('error'));render();expect(video.hidden).toBe(true);expect(poster.hidden).toBe(false);
+  expect(cinema.audit.mediaFailed).toBe(true);expect(JSON.stringify(plan)).toBe(before);
+ }finally{cinema.dispose();pause.mockRestore();load.mockRestore();}
+});
