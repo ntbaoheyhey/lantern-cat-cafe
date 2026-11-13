@@ -1,4 +1,4 @@
-export interface GroundMark {active:boolean;x:number;y:number;r:number;born:number;color:string;family:string;seed:number}
+export interface GroundMark {active:boolean;x:number;y:number;r:number;born:number;color:string;family:string;seed:number;debris?:{direction:number;palette:readonly string[];targets:number}}
 
 /** Residues are bounded and reused; long fights never grow this collection. */
 export class GroundPool {
@@ -6,9 +6,9 @@ export class GroundPool {
  private cursor=0;
  constructor(readonly capacity=24){this.items=Array.from({length:capacity},()=>({active:false,x:0,y:0,r:0,born:0,color:'',family:'',seed:0}));}
  clear(){for(const item of this.items)item.active=false;this.cursor=0;}
- emit(x:number,y:number,r:number,born:number,color:string,family:string,seed:number){
+ emit(x:number,y:number,r:number,born:number,color:string,family:string,seed:number,debris?:GroundMark['debris']){
   const item=this.items[this.cursor]!;this.cursor=(this.cursor+1)%this.capacity;
-  Object.assign(item,{active:true,x,y,r,born,color,family,seed});
+  Object.assign(item,{active:true,x,y,r,born,color,family,seed,debris});return item;
  }
  expire(time:number){let count=0;for(const item of this.items){if(item.active&&time-item.born>=.85)item.active=false;if(item.active)count++;}return count;}
 }

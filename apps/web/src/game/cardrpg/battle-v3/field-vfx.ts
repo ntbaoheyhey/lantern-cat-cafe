@@ -2,7 +2,7 @@ import type {SceneView} from '../../squad/turn3d/scene';
 import type {ResolveSocket} from '../spine/vfx';
 import {sequenceAt,SIGNATURES} from './sequence';
 import type {PackedPaint} from '../vfx-layered/atlas';
-import {GroundPool,ElementParticlePool} from './field-pool';
+import {GroundPool,ElementParticlePool,type GroundMark} from './field-pool';
 import {paintImpactWake} from './impact-wake';
 import {paintImpactStrokes} from './impact-strokes';
 import {paintImpactDebris} from './impact-debris';
@@ -24,7 +24,7 @@ export class FieldVfx {
   this.draws=0;this.audit.particles=0;this.audit.layers.length=0;
   if(time<this.lastTime)this.ground.clear();this.lastTime=time;
   this.audit.groundCount=this.ground.expire(time);
-  for(const g of this.ground.items)if(g.active)this.residue(c,g,time-g.born);
+  for(const g of this.ground.items)if(g.active){this.residue(c,g,time-g.born);this.impactDebris(c,g,time-g.born,view);}
   const frame=view.frame,state=frame&&sequenceAt(frame.plan,frame.elapsed,view.reducedMotion);
   if(!frame||state?.plate)return;
   const plan=frame.plan,seq=state?.seq,at=frame.elapsed,contact=seq?.impact??plan.beats[2]!.start;
@@ -98,16 +98,22 @@ export class FieldVfx {
    }
    this.draws+=count;this.audit.particles+=count;this.audit.layers.push('element-particles');
    c.restore();
-   if(plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(id))){
-    const debris=paintImpactDebris(c,since,feet.x,feet.y-radius*.16,radius,target.x>=from.x?1:-1,palette,seed,targets.length,view.reducedMotion,view.quality==='low');
-    this.draws+=debris;this.audit.particles+=debris;if(debris)this.audit.layers.push('impact-debris');
-   }
    if(painted&&view.quality!=='low'&&paintImpactWake(c,painted,since,feet.x,feet.y,radius,target.x>=from.x?1:-1,targets.length,view.reducedMotion)){
     this.draws++;this.audit.layers.push('painted-impact-wake');
    }
-   if(since>=0&&this.groundPlan!==plan)this.ground.emit(feet.x,feet.y,radius*.8,time-since/1000,palette[1]!,family,seed);
+   if(since>=0&&this.groundPlan!==plan){
+    const debris=plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(id))?{direction:target.x>=from.x?1:-1,palette,targets:targets.length}:undefined;
+    const ground=this.ground.emit(feet.x,feet.y,radius*.8,time-since/1000,palette[1]!,family,seed,debris);
+    this.impactDebris(c,ground,since/1000,view);
+   }
   }
   if(since>=0)this.groundPlan=plan;
+ }
+ private impactDebris(c:CanvasRenderingContext2D,g:GroundMark,age:number,view:SceneView){
+  if(!g.debris)return;
+  const {direction,palette,targets}=g.debris,radius=g.r/.8;
+  const count=paintImpactDebris(c,age*1000,g.x,g.y-radius*.16,radius,direction,palette,g.seed,targets,view.reducedMotion,view.quality==='low');
+  this.draws+=count;this.audit.particles+=count;if(count)this.audit.layers.push('impact-debris');
  }
  private castField(c:CanvasRenderingContext2D,owner:string,w:number,h:number,time:number,release:number,palette:string[],seed:number,reduced:boolean){
   // Each element occupies the whole field with its own moving environmental

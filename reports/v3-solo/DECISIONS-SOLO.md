@@ -42,3 +42,6 @@ The chapter aria-label repair preserves semantics, but did not resolve the A uni
 - Q3 method4 full30.333s=15.634;34/34 hits,zero clipped faces,parity PASS. Four attempts show root/secondary amplitude is not closing the full-frame gate. Change method: bounded ballistic contact debris tied only to actual damage events, to carry impact and recovery through the empty floor. Keep recipient brace/trail bug fix for readability; no estimator, camera or combat/voice clock changes.
 
 - Method5 adds16 short ballistic debris cut-outs for each damaged target (6 at Low,0 reduced motion);560ms lifetime, seekable trajectories, no ambient emission. A checker source lists now include the new debris module/tests and trail regression test so later edits invalidate evidence; no thresholds/assertions changed.
+
+## Q3 recovery continuation — 2026-11-13T15:24:46.172375+00:00
+Method5 measured 15.662886 motion energy (FAIL), 34/34 knockbacks, no clipped faces and parity PASS. Inspection found debris tied to the current action frame, so short basics cut its flight off. Method6 stores damage debris in the existing bounded ground pool, lets it finish for 560 ms across action changes, and adds a local two-frame impact light. Healing never emits damage debris. The reference estimator, capture duration and all thresholds stay unchanged.
