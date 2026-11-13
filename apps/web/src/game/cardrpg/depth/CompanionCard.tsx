@@ -24,7 +24,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
     aria-label={`${cat.name}, ${card.rarity}, ${owned ? `level ${owned.level}, power ${power}` : 'not collected'}`}
     onClick={onSelect ?? (() => { m.cardId = id; m.go('collection'); })}>
     <div className="cr-portrait"><img {...(R.gameplayA6(m.state) ? artPropsA6(id) : portraitProps(id))} alt="" />
-      {R.gameplayA6(m.state)&&owned&&<span className="a6-level-badge">{m.state.formationC2?<GameIcon name="upgrade" size={14}/>:'Lv.'} {owned.level}</span>}
+      {R.gameplayA6(m.state)&&owned&&<span className="a6-level-badge">{m.state.formationC2?<LevelMarkC2 level={owned.level}/>:<>Lv. {owned.level}</>}</span>}
       {!owned && <strong className="dp-question">?</strong>}
       <span className="dp-role" title={cat.role}><GameIcon name={ROLE_ICONS[cat.role]} size={20}/></span>
       {R.gameplayA6(m.state)&&<span className="a6-bond-icon" title={R.PAIR_COMBOS_A6.filter(p=>p.cats.includes(id)).map(p=>p.name).join(' · ')}><GameIcon name="bonds" size={18}/> {m.state.formationC2?'':R.activePairCombosA6(m.state.team).filter(p=>p.cats.includes(id)).length ? 'Combo ready' : 'Bonds'}</span>}
