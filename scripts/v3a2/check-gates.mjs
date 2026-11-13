@@ -38,7 +38,7 @@ export const cards = {
   F2: {sources:['apps/web/src/game/cardrpg/battle-v3/body-fx.ts','apps/web/src/game/cardrpg/battle-v3/clarity.ts','apps/web/src/game/cardrpg/battle-v3/clarity.test.ts','apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx','apps/web/src/game/cardrpg/spine/scene.ts','apps/web/src/game/rig/cutout.ts','apps/web/src/game/rig/atlas-color.ts','scripts/v3a2/clarity-audit.mjs','scripts/v3a2/atlas-color-audit.mjs'],gates:[
     three('alpha','unitMeanAlpha','min',.97),three('persistent-bubbles','framesWithMultiplePersistentBubbles','eq',0),three('contrast','silhouetteContrast','min','silhouetteContrastMin'),file('comparisons','F2/compare-*.png',3)
   ]},
-  M1: {sources:['apps/web/src/game/rig','apps/web/src/game/cardrpg/battle-v3/motion.ts','apps/web/src/game/cardrpg/spine/scene.ts'],gates:[
+  M1: {sources:['apps/web/src/game/rig','apps/web/src/game/cardrpg/battle-v3/motion.ts','apps/web/src/game/cardrpg/battle-v3/motion-trails.ts','apps/web/src/game/cardrpg/battle-v3/motion.test.ts','apps/web/src/game/cardrpg/spine/scene.ts','scripts/v3a2/motion-metrics.py','scripts/v3a2/motion-review.mjs','scripts/v3a2/battle-capture.mjs'],gates:[
     three('seconds','seconds','min',30),three('displacements','displacementPer10s','min','displacementEventsPer10sMin'),three('motion-energy','motionEnergy','min','motionEnergyMin'),three('every-action-moves','minActionDisplacementFraction','min',.06),three('hit-knockback','hitKnockbackFraction','eq',1),three('high-fps','fpsHigh','min',50),G('crowded-units','performanceUnits','min',10),file('archetype-strips','M1/motion-*.png',6)
   ]},
   M2: {sources:['art/rig-templates','art/units','apps/web/public/units','apps/web/src/game/rig'],gates:[

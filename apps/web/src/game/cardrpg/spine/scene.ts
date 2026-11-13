@@ -11,6 +11,8 @@ import {BattleNumbers as PuppetNumbers} from '../battle-v3/numbers';
 import {BodyFx} from '../battle-v3/body-fx';
 import {bodyStatuses} from '../battle-v3/status';
 import {bodyTint} from '../battle-v3/clarity';
+import {actionPose,attackMotion,hitPose,idlePhase,neutralPose,type MotionPoint} from '../battle-v3/motion';
+import {MotionTrails} from '../battle-v3/motion-trails';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
@@ -34,6 +36,7 @@ export class SpineScene {
  readonly labelAudit:{heads:Rect[];cards:Rect[];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
  private cinematicRects:Rect[]=[];
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
+ readonly motionAudit:{id:string;asset:string;homeX:number;homeY:number;x:number;y:number;dx:number;dy:number;phase:string;archetype:string;hitOffset:number;flash:number}[]=[];
  readonly anchors:Anchor[]=[];
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
  private stage=new PaintedStage(()=>this.invalidate());private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
@@ -44,6 +47,8 @@ export class SpineScene {
  private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private framing={zoom:1,x:0};
+ private homes=new Map<string,{x:number;y:number;scale:number;order:number;point:MotionPoint}>();
+ private trails=new MotionTrails();
  private postFx:BattlePostFx;readonly cinema:CinematicPlayer;private bodyFx:BodyFx;private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
  private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
  private visibility=()=>{this.last=0;this.dirty=true;};
@@ -53,7 +58,7 @@ export class SpineScene {
   this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.NoToneMapping;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
-  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root);this.postFx=new BattlePostFx(this.renderer,this.scene,this.camera);this.cinema=new CinematicPlayer(host);
+  this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root,this.trails.root);this.postFx=new BattlePostFx(this.renderer,this.scene,this.camera);this.cinema=new CinematicPlayer(host);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
   this.resize=new ResizeObserver(()=>this.invalidate());this.resize.observe(host);document.addEventListener('visibilitychange',this.visibility);
@@ -64,12 +69,12 @@ export class SpineScene {
  private ensureActors(view:SceneView){
   if(this.disposed)return;
   if(view.battleKey!==undefined&&view.battleKey!==this.battleKey){
-   this.c2Seats?.clear();this.c2Capacity=4;
+   this.c2Seats?.clear();this.c2Capacity=4;this.homes.clear();
    this.battleKey=view.battleKey;this.plan=null;this.sampled.clear();this.effects.clear();this.ultimate=false;this.ultStartedAt=-100;this.ultEndedAt=-100;this.phaseNoticeAt=-100;
    for(const [id,entry] of this.actors){entry.entered=this.time+entry.lane*PAINT.entranceStagger;entry.entranceDone=false;entry.hurtAt=-100;entry.koAt=-1;entry.phaseAt=-100;entry.phase=view.bossPhases?.[id]??1;}
   }
   const ids=new Set(view.actors.map(a=>a.id));
-  for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);}
+  for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);this.homes.delete(id);}
   // Removed requests no longer reserve a slot or hold the current roster's
   // loading gate. A request token also handles remove/return before completion.
   for(const id of this.lanes.keys())if(!ids.has(id)){this.lanes.delete(id);this.pending.delete(id);this.failed.delete(id);this.sampled.delete(id);}
@@ -154,16 +159,30 @@ export class SpineScene {
    return entry&&(unit.side==='party'||unit.hp>0)?[{id:unit.id,side:unit.side,row:view.rows?.[unit.id]==='rear'?'rear' as const:'front' as const,
     boss:entry.actor.unit.tier==='boss',aspect:entry.actor.bounds.width/entry.actor.bounds.height,coreHeight:unitCore(entry.asset,entry.actor.bounds).world.height/entry.actor.bounds.height,coreRatio:unitCore(entry.asset,entry.actor.bounds).ratio,bossRatio:unitCore(entry.asset,entry.actor.bounds).ratio,seat:unit.side==='enemy'?this.c2Seats.get(unit.id):undefined}]:[];
   }),this.worldWidth,PAINT.worldHeight,PAINT.worldHeight*(width<700?width*9/16:window.innerHeight)/height,this.c2Capacity):null;
+  const pixelsToWorld=this.worldWidth/width;
+  // Resolve all resting positions first, so target selection is independent of draw order.
+  for(const unit of view.actors){
+   const entry=this.actors.get(unit.id);if(!entry)continue;
+   if(unit.hp<=0&&this.homes.has(unit.id))continue;
+   const actor=entry.actor,core=unitCore(entry.asset,actor.bounds),box=layout?.get(unit.id),facing=unit.side==='enemy'?-1:1;
+   const base=stagePosition(unit.side,entry.lane,actor.unit.tier==='boss',view.boss,this.worldWidth);
+   if(box){base.scale=box.coreHeight/core.world.height;base.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*base.scale*facing;base.y=PAINT.worldHeight-box.footY-core.world.y*base.scale;}
+   this.homes.set(unit.id,{...base,order:box?box.order:10+Math.round((1-base.y/PAINT.worldHeight)*30),point:{x:(base.x+(actor.bounds.x+actor.bounds.width/2)*base.scale*facing+this.worldWidth/2)/pixelsToWorld,y:(PAINT.worldHeight-base.y-core.world.y*base.scale)/pixelsToWorld,core:core.world.height*base.scale/pixelsToWorld}});
+  }
+  this.motionAudit.length=0;this.trails.root.visible=false;
   const ordered=[...view.actors].sort((a,b)=>Number(b.id===plan?.actorId)-Number(a.id===plan?.actorId));
   for(const unit of ordered){
    const entry=this.actors.get(unit.id);if(!entry)continue;const actor=entry.actor,boss=actor.unit.tier==='boss',position=stagePosition(unit.side,entry.lane,boss,view.boss,this.worldWidth);
-   const box=layout?.get(unit.id),core=unitCore(entry.asset,actor.bounds);
+   const core=unitCore(entry.asset,actor.bounds);
    const rear=view.rows?.[unit.id]==='rear';
    const tint=bodyTint(bodyStatuses(view.cardStatuses?.[unit.id],unit.shield),time,rear,view.reducedMotion);
-   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);material.opacity=1;}});
-   actor.root.visible=!(view.formationC2&&unit.side==='enemy'&&unit.hp<=0);
-   if(box){position.scale=box.coreHeight/core.world.height;const facing=unit.side==='enemy'?-1:1;position.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*position.scale*facing;position.y=PAINT.worldHeight-box.footY-core.world.y*position.scale;}
-   actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(box?box.order:10+Math.round((1-position.y/PAINT.worldHeight)*30));
+   const home=this.homes.get(unit.id)!;Object.assign(position,home);
+   if(unit.hp>0)entry.koAt=-1;
+   else if(entry.koAt<0)entry.koAt=time;
+   const deathAge=unit.hp<=0?time-entry.koAt:0;
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);material.opacity=unit.hp<=0?Math.max(0,1-deathAge/.6):1;}});
+   actor.root.visible=unit.hp>0||deathAge<.6;
+   actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(home.order);
    entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
    entry.ring.visible=unit.hp>0;entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(core.world.height*position.scale*.38,core.world.height*position.scale*.095,1);entry.ring.material.color.set(ELEMENT_COLORS[entry.asset]??PAINT.rose);
    const phase=view.bossPhases?.[unit.id]??1;
@@ -172,7 +191,8 @@ export class SpineScene {
     entry.entranceDone=true;if(!view.galleryPreview&&!view.reducedMotion)this.effects.accent(unit.id,'entrance',time,view.playbackSpeed??1);
    }
    const worldTime=sequence&&frame?time-frame.elapsed/1000+sequenceWorldTime(sequence.seq,frame.elapsed)/1000:time;
-   let name='idle',key:unknown='idle',at=worldTime%actor.duration('idle');
+   const phaseOffset=idlePhase(unit.id);
+   let name='idle',key:unknown='idle',at=(worldTime+phaseOffset)%actor.duration('idle');
    if(view.model){name=({ultimate:'ult',cast:'skill',hit:'hurt',KO:'ko'} as Record<string,string>)[view.model.clip]??view.model.clip;at=(view.modelProgress??0)*actor.duration(name);key=name;}
    else if(frame&&unit.id===frame.plan.actorId){
     name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
@@ -190,8 +210,35 @@ export class SpineScene {
    const previous=this.sampled.get(unit.id),iced=statuses.includes('freeze'),frozen=iced||!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
    if(iced&&unit.hp>0&&previous){name=previous.name;key=previous.key;at=previous.at;}
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
-   if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime;
+   if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime+phaseOffset;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
+   let rootPose=neutralPose(),reaction=neutralPose();
+   const caster=plan?view.actors.find(a=>a.id===plan.actorId):undefined;
+   const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==unit.side))??plan?.targetIds.find(id=>id!==unit.id);
+   const target=this.homes.get(targetId??'')?.point??{...home.point,x:home.point.x+(unit.side==='enemy'?-1:1)*width*.30};
+   const input=frame?{plan:frame.plan,elapsed:frame.elapsed,asset:entry.asset,side:unit.side,home:home.point,target,width,height}:null;
+   if(!view.reducedMotion&&!view.model&&!iced){
+    if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
+    const from=this.homes.get(caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
+    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
+    if(rootPose.phase==='idle'&&unit.hp>0){const breath=Math.sin(worldTime*2.1+phaseOffset);rootPose.sx=1-breath*.006;rootPose.sy=1+breath*.010;}
+    if(unit.hp<=0){const fall=Math.min(1,deathAge/.4);rootPose.angle=(unit.side==='enemy'?-1:1)*fall*.9;rootPose.y=fall*12*height/720;}
+   }
+   const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
+   // Pivot the complete cut-out around its measured feet; sockets and labels follow.
+   const facing=unit.side==='enemy'?-1:1,footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
+   actor.root.scale.set(facing*position.scale*sx,position.scale*sy,1);actor.root.rotation.z=-angle;
+   const cos=Math.cos(-angle),sin=Math.sin(-angle);
+   actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
+   actor.root.updateMatrixWorld(true);
+   entry.shadow.position.x+=dx*pixelsToWorld;entry.shadow.position.y-=Math.max(0,dy)*pixelsToWorld;entry.shadow.material.opacity=unit.hp<=0?Math.max(0,1-deathAge/.6):1;
+   entry.ring.position.copy(entry.shadow.position);
+   if(reaction.flash)actor.root.traverse(node=>{if(node instanceof T.Mesh)(node.material as T.MeshBasicMaterial).color.lerp(new T.Color(2,2,2),.72);});
+   if(input&&unit.id===plan?.actorId&&unit.hp>0&&!view.reducedMotion){
+    this.trails.render(actor.root,[1,2,3].map(i=>actionPose({...input,elapsed:input.elapsed-i*1000/30})),rootPose,pixelsToWorld);
+   }
+   const measured=actor.root.localToWorld(this.scratch.set(actor.bounds.x+actor.bounds.width/2,core.world.y,0)),mx=(measured.x+this.worldWidth/2)/pixelsToWorld,my=(PAINT.worldHeight-measured.y)/pixelsToWorld;
+   this.motionAudit.push({id:unit.id,asset:entry.asset,homeX:home.point.x,homeY:home.point.y,x:mx,y:my,dx:mx-home.point.x,dy:my-home.point.y,phase:rootPose.phase,archetype:plan?attackMotion(entry.asset,plan):'idle',hitOffset:Math.abs(reaction.x),flash:reaction.flash});
    if(previous){previous.name=name;previous.key=key;previous.at=at;}else this.sampled.set(unit.id,{name,key,at});
    const since=time-this.hitAt,hitActive=this.firstHit&&!!plan?.targetIds.includes(unit.id)&&since>=0&&since<.32;
    entry.hit.visible=false;if(hitActive){actor.socket('vfxOrigin',entry.hit.position);entry.hit.scale.setScalar((.2+since)*actor.unit.targetHeight);entry.hit.material.opacity=(1-since/.32)*.65;}
@@ -273,7 +320,7 @@ export class SpineScene {
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox={x:coreBox.x+coreBox.width*.08,y:coreBox.y,width:coreBox.width*.84,height:coreBox.height*.44};return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
- audit(){return{renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,units:this.sizeAudit().units};}
+ audit(){return{renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.cinema.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.trails.dispose();this.homes.clear();this.cinema.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

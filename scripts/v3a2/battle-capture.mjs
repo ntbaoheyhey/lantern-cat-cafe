@@ -41,18 +41,19 @@ try{
   await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));
   const encoder=spawn('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','image2pipe','-framerate',String(fps),'-vcodec','png','-i','pipe:0','-an','-c:v','libvpx-vp9','-b:v','0','-crf','33','-row-mt','1','-pix_fmt','yuv420p',resolve(folder,'battle.webm')],{stdio:['pipe','ignore','pipe']});
   let fferror='';encoder.stderr.on('data',d=>{fferror+=d;});const encoded=new Promise((res,rej)=>{encoder.on('error',rej);encoder.on('close',code=>code===0?res():rej(Error(fferror)));});
-  const frames=[];
-  for(let i=0;i<Math.ceil(seconds*fps);i++){
-    const sample=await page.evaluate(({i,fps})=>{
+  const frames=[],minimumFrames=Math.ceil(seconds*fps),completeActions=args.includes('--complete-actions');let outstanding=false;
+  for(let i=0;i<minimumFrames||completeActions&&outstanding&&i<minimumFrames+fps*10;i++){
+    const sample=await page.evaluate(({i,fps,minimumFrames})=>{
       const m=window.__depthReview,s=window.__depthScene,c=window.__v3a2;
       m.paused=false;
-      if(!m.plan&&!m.battle.result)m.step();
+      if(!m.plan&&!m.battle.result&&i<minimumFrames)m.step();
       if(m.plan&&c.lastPlan!==m.plan){c.lastPlan=m.plan;c.plans.push({frame:i,at:i/fps,actorId:m.plan.actorId,skillId:m.plan.skillId,presentationId:m.plan.presentationId,ultimate:m.plan.ultimate,duration:m.plan.duration,events:structuredClone(m.plan.events)});}
       m.tick(i===0?0:1000/fps,1000+i*1000/fps);m.paused=true;
       s.render({...s.view(),fixedTime:10+i/fps,paused:true},1/fps);
       const audit=s.audit(),visibleWords=[...document.querySelectorAll('.b3-hud *')].filter(e=>e.childElementCount===0&&e.getClientRects().length).map(e=>e.textContent).join(' ').match(/\b[A-Za-z]+\b/g)??[];
-      return {index:i,t:i/fps,units:audit.units,events:audit.events.slice(-8),sequence:audit.sequence,stats:audit.stats,numbers:s.numbers?.drawn??[],visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.skillId,elapsed:m.animationAt,duration:m.plan.duration}:null};
-    },{i,fps});
+      return {index:i,t:i/fps,units:audit.units,motion:audit.motion??[],events:audit.events.slice(-8),sequence:audit.sequence,stats:audit.stats,numbers:s.numbers?.drawn??[],visibleWords,action:m.plan?{actorId:m.plan.actorId,skillId:m.plan.skillId,elapsed:m.animationAt,duration:m.plan.duration}:null};
+    },{i,fps,minimumFrames});
+    outstanding=!!sample.action;
     // Paint HUD timers at a controlled clock; model stays paused during this tick.
     await page.clock.runFor(Math.round((i+1)*1000/fps)-Math.round(i*1000/fps));
     // Seeked media is decoded before screenshot, independent of wall-clock speed.
@@ -69,7 +70,7 @@ try{
     c.R.playBattle(expected,'auto');c.R.playBattle(actual,'auto');
     return {parity:JSON.stringify(expected)===JSON.stringify(actual),initial:c.initial.initial,plans:c.plans,combatLog:m.battle.log,result:m.battle.result};
   });
-  const capture={_meta:evidenceMeta(),fixture:fixture.id,seconds,fps,width,height,errors,...result,frames};
+  const capture={_meta:evidenceMeta(),fixture:fixture.id,seconds:frames.length/fps,minimumSeconds:seconds,completeActions,fps,width,height,errors,...result,frames};
   await writeFile(resolve(folder,'capture.json'),JSON.stringify(capture)+'\n');
   await page.close();
   if(errors.length||!result.parity)throw Error(`${fixture.id}: ${errors.length} browser errors; parity=${result.parity}`);

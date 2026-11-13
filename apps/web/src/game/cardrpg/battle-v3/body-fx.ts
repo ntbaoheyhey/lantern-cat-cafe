@@ -6,6 +6,7 @@ export class BodyFx {
  readonly canvas=document.createElement('canvas');
  private c:CanvasRenderingContext2D;
  private frozen=new Map<string,number>();
+ private fallen=new Map<string,number>();
  private shields=new ShieldPulses();private battleKey:unknown;private shieldPlan:unknown;
  readonly audit={bubbles:[] as {id:string;age:number;alpha:number;interiorAlpha:number}[]};
  constructor(host:HTMLElement){
@@ -14,7 +15,7 @@ export class BodyFx {
   this.c=this.canvas.getContext('2d')!;host.appendChild(this.canvas);
  }
  render(view:SceneView,time:number,w:number,h:number,boxes:Map<string,Rect>){
-  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.shields.clear();this.frozen.clear();this.shieldPlan=undefined;}
+  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.shields.clear();this.frozen.clear();this.fallen.clear();this.shieldPlan=undefined;}
   this.audit.bubbles.length=0;this.shields.retain(new Set(view.actors.map(a=>a.id)));
   const frame=view.frame,applied=frame&&frame.elapsed>=frame.plan.beats[2]!.start&&this.shieldPlan!==frame.plan;
   const shieldTargets=new Set(applied?frame.plan.events.filter(e=>e.type==='shield').flatMap(e=>e.targetIds):[]);
@@ -24,7 +25,15 @@ export class BodyFx {
   c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,w,h);
   const t=view.reducedMotion?0:time;
   for(const unit of view.actors){
-   if(unit.hp<=0)continue;const b=boxes.get(unit.id);if(!b)continue;
+   const b=boxes.get(unit.id);if(!b)continue;
+   if(unit.hp<=0){
+    if(!this.fallen.has(unit.id))this.fallen.set(unit.id,time);
+    const age=time-this.fallen.get(unit.id)!;
+    if(!view.reducedMotion&&age<.6){const p=age/.6;c.fillStyle='#bca38a';c.globalAlpha=(1-p)*.5;
+     for(let i=0;i<9;i++){const a=i*2.4;c.beginPath();c.ellipse(b.x+b.width/2+Math.cos(a)*p*45,b.y+b.height-Math.abs(Math.sin(a))*p*22,4+p*6,3+p*4,0,0,Math.PI*2);c.fill();}c.globalAlpha=1;
+    }continue;
+   }
+   this.fallen.delete(unit.id);
    const kinds=bodyStatuses(view.cardStatuses?.[unit.id],unit.shield),cx=b.x+b.width/2,cy=b.y+b.height*.57,r=Math.min(b.width*.42,b.height*.38),feet=b.y+b.height;
    if(kinds.includes('freeze'))this.frozen.set(unit.id,time);
    else if(this.frozen.has(unit.id)&&time-this.frozen.get(unit.id)!>.35)this.frozen.delete(unit.id);
@@ -48,5 +57,5 @@ export class BodyFx {
   if(kind==='buff'||kind==='debuff'){const down=kind==='debuff';for(let i=0;i<3;i++){const p=(t*.6+i/3)%1,px=x+(i-1)*r*.65,py=down?top+r+p*r:feet-p*r;c.globalAlpha=.6*(1-p);c.beginPath();c.moveTo(px-5,py+(down?-5:5));c.lineTo(px,py);c.lineTo(px+5,py+(down?-5:5));c.stroke();}if(down){c.globalAlpha=.12;c.beginPath();c.ellipse(x,feet-8,r*.8,12,0,0,Math.PI*2);c.fill();}}
   c.restore();
  }
- dispose(){this.canvas.remove();this.frozen.clear();this.shields.clear();}
+ dispose(){this.canvas.remove();this.frozen.clear();this.fallen.clear();this.shields.clear();}
 }

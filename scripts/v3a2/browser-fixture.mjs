@@ -5,7 +5,7 @@ import {root} from './check-gates.mjs';
 const require=createRequire(resolve(root,'apps/web/package.json'));
 export const {chromium}=require('@playwright/test');
 export const config=JSON.parse(await readFile(resolve(root,'scripts/v3a2/fixtures.json'),'utf8'));
-export async function openFixture(browser,fixture,{width=1280,height=720,url='http://127.0.0.1:5990'}={}){
+export async function openFixture(browser,fixture,{width=1280,height=720,url='http://127.0.0.1:5990',fixedClock=true}={}){
  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true}));});
@@ -24,9 +24,8 @@ export async function openFixture(browser,fixture,{width=1280,height=720,url='ht
  },{fixture,seed:config.seed,root});
  await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
  await page.evaluate(()=>document.fonts.ready);
- await page.clock.install({time:new Date('2026-11-13T00:00:00Z')});
- await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));
+ if(fixedClock){await page.clock.install({time:new Date('2026-11-13T00:00:00Z')});await page.clock.pauseAt(new Date('2026-11-13T00:00:01Z'));}
  await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:10,paused:true},0);});
- await page.clock.runFor(34);
+ if(fixedClock)await page.clock.runFor(34);
  return {page,errors};
 }
