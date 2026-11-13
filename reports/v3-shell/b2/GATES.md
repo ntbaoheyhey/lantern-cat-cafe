@@ -12,7 +12,7 @@ PASS R.report: measured 8910; required nonempty reports/v3-shell/b2/RESEARCH-B2.
 PASS S1.events: measured 2552; required >= 160 complete events; 0 TBD
 PASS S1.screens: measured 49; required >= 18 screens
 PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
-PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
+FAIL S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
 PASS S1.report: measured 630465; required nonempty reports/v3-shell/b2/SOUND-MAP.md
 PASS S1.typedMap: measured 12853; required nonempty apps/web/src/audio/sound-map.ts
 PASS S2.clips: measured 595; required >= 350 usable hashed source clips
@@ -129,9 +129,9 @@ PASS S6.gaps: measured 3.54167; required no music silence > 400ms during screen 
 PASS S6.settings: measured 15; required passing test + SHA-256-verified log
 PASS S7.coverage: measured 1; required 100% mapped cues listed in lab
 PASS S7.random: measured 20; required >= 20 random cues from static server, 0 errors
-FAIL E1.scenarios: measured missing; required 3 mixes x 2 demands x 3 bot shares; >= 200 seeds each, 52 weeks + gear cohort
-FAIL E1.runtime: measured missing; required < 1800s
-FAIL E1.liveConfig: measured missing; required passing test + SHA-256-verified log
+PASS E1.scenarios: measured 18; required 3 mixes x 2 demands x 3 bot shares; >= 200 seeds each, 52 weeks + gear cohort
+PASS E1.runtime: measured 1737.338635708; required < 1800s
+PASS E1.liveConfig: measured 5; required passing test + SHA-256-verified log
 FAIL E2.sinks: measured missing; required >= 3 new sinks in rules, server, UI, sim with tests and screenshots
 FAIL E2.bellsOnly: measured missing; required passing test + SHA-256-verified log
 FAIL E3.rounds: measured 0; required >= 15 logged rounds with scenario tables and lessons
@@ -176,7 +176,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1408; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1609; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

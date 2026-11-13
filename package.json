@@ -9,6 +9,7 @@
     "test": "node --test scripts/*.test.mjs scripts/v3b2/*.test.mjs tools/cardrpg-c2/*.test.mjs && pnpm -r test",
     "test:v3b2": "node --test scripts/v3b2/*.test.mjs",
     "gates:v3b2": "node scripts/v3b2/check-gates.mjs --write",
+    "econ:lab": "node tools/chain/economy-lab/index.mjs",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",

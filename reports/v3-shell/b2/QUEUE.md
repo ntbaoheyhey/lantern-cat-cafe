@@ -16,7 +16,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [ ] S5 — PARTIAL (11 measured mix iterations; A timing blocker S5-A-VOICE-WINDOW; numeric misses retained; self-score 7/10)
 - [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [x] S7 — done (867/867 cues, static browser playback; self-score 8/10)
-- [ ] E1 — todo
+- [x] E1 — done (18 scenarios, 200 seeds each, 1,000 native C2 accounts; 1,737.34s cold run; self-score 8/10 for model integrity, targets still fail)
 - [ ] E2 — todo
 - [ ] E3 — todo
 - [ ] E4 — todo
@@ -322,3 +322,13 @@ PASS S7.coverage: measured 1; required 100% mapped cues listed in lab
 PASS S7.random: measured 20; required >= 20 random cues from static server, 0 errors
 
 Checks: tests/s7-types.log, tests/s7-suite.log (2,532 web and 724 server; existing rules expected failures/skips retained), tests/s7-static-browser.log. Static lab plays twenty seeded random cues, randomises layered variants and previews editable text for all twelve cats. Production engine and licensed source grains are used locally.
+
+## E1 evidence
+
+PASS E1.scenarios: measured 18; required 3 mixes x 2 demands x 3 bot shares; >= 200 seeds each, 52 weeks + gear cohort
+
+PASS E1.runtime: measured 1737.338635708; required < 1800s
+
+PASS E1.liveConfig: measured 5; required passing test + SHA-256-verified log
+
+Checks: tests/e1-model-unit.log (5), tests/e1-accept-types.log, tests/e1-accept-suite.log. Full suite: 2,536 web and 730 server tests pass; 1,393 rules pass with two existing expected failures and eleven skips. Native 42-day cohorts feed the 52-week token model. BASELINE.md documents extrapolation, finite market float and target misses. No baseline numbers were tuned.
