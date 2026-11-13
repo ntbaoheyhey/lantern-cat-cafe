@@ -35,7 +35,7 @@ export const cards = {
   F1: {sources:['apps/web/src/game/cardrpg/stage','apps/web/src/game/cardrpg/spine/layout.ts','apps/web/src/game/cardrpg/spine/scene.ts','apps/web/src/game/cardrpg/spine/stage-painting.ts','apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx','scripts/v3a2/field-audit.mjs','scripts/v3a2/browser-fixture.mjs','scripts/v3a2/collect-field.mjs','apps/web/e2e/formation-c2.spec.ts'],gates:[
     matrix('unit-height','medianCoreHeightFraction','band','scaleBand'),matrix('face-occlusion','maxFaceOcclusion','max',.1),matrix('clipping','clippedUnits','eq',0),matrix('floor','visibleFloorFraction','min',.5),matrix('field-names','fieldNameLabels','eq',0),G('core-size','coreSizeExit','eq',0),file('comparisons','F1/compare-*.png',3)
   ]},
-  F2: {sources:['apps/web/src/game/cardrpg/battle-v3/body-fx.ts','apps/web/src/game/cardrpg/spine/scene.ts'],gates:[
+  F2: {sources:['apps/web/src/game/cardrpg/battle-v3/body-fx.ts','apps/web/src/game/cardrpg/battle-v3/clarity.ts','apps/web/src/game/cardrpg/battle-v3/clarity.test.ts','apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx','apps/web/src/game/cardrpg/spine/scene.ts','apps/web/src/game/rig/cutout.ts','apps/web/src/game/rig/atlas-color.ts','scripts/v3a2/clarity-audit.mjs','scripts/v3a2/atlas-color-audit.mjs'],gates:[
     three('alpha','unitMeanAlpha','min',.97),three('persistent-bubbles','framesWithMultiplePersistentBubbles','eq',0),three('contrast','silhouetteContrast','min','silhouetteContrastMin'),file('comparisons','F2/compare-*.png',3)
   ]},
   M1: {sources:['apps/web/src/game/rig','apps/web/src/game/cardrpg/battle-v3/motion.ts','apps/web/src/game/cardrpg/spine/scene.ts'],gates:[

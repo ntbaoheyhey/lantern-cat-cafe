@@ -1,5 +1,6 @@
 /** Independent flat cut-out player; data and GPU pixels are shared, pose state is not. */
 import * as T from 'three';
+import {usePaintedAtlasColor} from './atlas-color';
 export interface CutoutKey {time?:number;x?:number;y?:number;value?:number;angle?:number;name?:string|null;curve?:'stepped'|number[]}
 interface CutoutNode {name:string;parent:number;x:number;y:number;rotation:number;sx:number;sy:number}
 interface Weight {bone:number;x:number;y:number;weight:number}
@@ -41,8 +42,7 @@ export class CutoutMesh extends T.Group {
    for(const {part,offset} of entries){uv.set(part.uv,offset*2);indices.push(...part.triangles.map(i=>i+offset));}
    const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.BufferAttribute(positions,3).setUsage(T.DynamicDrawUsage));geometry.setAttribute('uv',new T.BufferAttribute(uv,2));geometry.setIndex(indices);
    const material=new T.MeshBasicMaterial({map:textures[page],transparent:true,side:T.DoubleSide,forceSinglePass:true,depthTest:false,depthWrite:false,toneMapped:false});
-   // Existing atlas pixels are premultiplied. Decode them in the shader before normal alpha blending.
-   if(data.pages[page]?.pma){material.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>','#include <map_fragment>\n diffuseColor.rgb /= max(diffuseColor.a, 0.001);');};material.customProgramCacheKey=()=> 'cutout-pma-v1';}
+   usePaintedAtlasColor(material,!!data.pages[page]?.pma);
    const mesh=new T.Mesh(geometry,material);mesh.frustumCulled=false;this.add(mesh);this.batches.push({geometry,parts:entries,positions});
   }
   this.pose(0,'');

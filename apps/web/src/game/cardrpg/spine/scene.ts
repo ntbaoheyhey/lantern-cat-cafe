@@ -10,6 +10,7 @@ import { layoutLabels, intersects, type Rect, type LabelInput } from '../../squa
 import {BattleNumbers as PuppetNumbers} from '../battle-v3/numbers';
 import {BodyFx} from '../battle-v3/body-fx';
 import {bodyStatuses} from '../battle-v3/status';
+import {bodyTint} from '../battle-v3/clarity';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { retimedClipTime, type SpineCue } from './events';
@@ -158,7 +159,8 @@ export class SpineScene {
    const entry=this.actors.get(unit.id);if(!entry)continue;const actor=entry.actor,boss=actor.unit.tier==='boss',position=stagePosition(unit.side,entry.lane,boss,view.boss,this.worldWidth);
    const box=layout?.get(unit.id),core=unitCore(entry.asset,actor.bounds);
    const rear=view.rows?.[unit.id]==='rear';
-   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;const kinds=bodyStatuses(view.cardStatuses?.[unit.id],unit.shield);material.color.set(kinds.includes('freeze')?'#9ddcff':kinds.includes('poison')?'#c5efaa':kinds.includes('burn')&&Math.sin(time*Math.PI*2/.6)>0?'#ffcb9e':'#ffffff');material.color.multiplyScalar(rear?.92:1);}});
+   const tint=bodyTint(bodyStatuses(view.cardStatuses?.[unit.id],unit.shield),time,rear,view.reducedMotion);
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);material.opacity=1;}});
    actor.root.visible=!(view.formationC2&&unit.side==='enemy'&&unit.hp<=0);
    if(box){position.scale=box.coreHeight/core.world.height;const facing=unit.side==='enemy'?-1:1;position.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*position.scale*facing;position.y=PAINT.worldHeight-box.footY-core.world.y*position.scale;}
    actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(box?box.order:10+Math.round((1-position.y/PAINT.worldHeight)*30));

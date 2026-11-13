@@ -25,6 +25,7 @@ function Rage({value,name}:{value:number;name:string}){
 }
 function Badges({actor}:{actor:R.Actor}){
  return <div className="b3-statuses" aria-label={actor.name+' statuses'}>
+  {actor.shield>0&&<span role="img" tabIndex={0} aria-label={`${actor.shield} shield`} title={`${actor.shield} shield`} style={{color:STATUS_COLOR.shield}}><svg viewBox="0 0 20 20" aria-hidden="true"><path d={STATUS_PATH.shield}/></svg></span>}
   {actor.statuses.slice(0,3).map(s=>{const body=STATUS_BODY[s.id]??'debuff',rule=R.statusRuleV5(s.id,R.STATUS_BY_ID[s.id]);return <span key={s.id} tabIndex={0} role="img" aria-label={`${rule.name}, ${s.stacks} stacks, ${s.remaining} rounds. ${rule.description}`} title={rule.name+': '+rule.description} style={{color:STATUS_COLOR[body]}}>
    <svg viewBox="0 0 20 20" aria-hidden="true"><path d={STATUS_PATH[body]}/></svg><b>{s.stacks}</b></span>;})}
   {actor.statuses.length>3&&<span tabIndex={0} title={actor.statuses.slice(3).map(s=>R.STATUS_BY_ID[s.id].name).join(',')} aria-label={`${actor.statuses.length-3} more statuses`}>+{actor.statuses.length-3}</span>}
