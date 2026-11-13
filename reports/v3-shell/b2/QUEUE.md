@@ -33,7 +33,7 @@ Syncs interrupt the active card at 16 / 18 / 19 November, 12:00 UTC.
 
 ## Polish backlog
 
-- [ ] P1 — todo
+- [x] P1 — done;361/361 layers have six distinct decoded variants;S3 eight gates PASS;production unchanged;self-score8/10;ENDED 2026-11-13T23:56:30.140143+00:00
 - [ ] P2 — todo
 - [ ] P3 — todo
 - [ ] P4 — todo
@@ -567,3 +567,11 @@ PASS C1.offline: measured 11; required passing test + SHA-256-verified log
 ```
 
 Source 496df289b5172f23d0947ee901bc4db547bb878b; q8/ACCEPTANCE.json links full unit,435/435 browser and corrected typecheck. Fused remains Offline without a verified indexer; transaction count is labelled for the last1,000 blocks.
+
+## Q9 P1 checker evidence
+
+```text
+PASS P1.layers: measured 361 ; required every effect layer >=6 actual variants
+PASS P1.distinct: measured 6 ; required >=6 unique non-silent PCM segments in every layer
+PASS P1.licences: measured 4 ; required all referenced packs hashed CC0
+```
