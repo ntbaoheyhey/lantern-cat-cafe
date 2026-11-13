@@ -1,0 +1,420 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T01:12:17.962Z",
+    "sourceCommit": "0d76bed967e0865cbb9f8b40f6fff2e5332ecefc"
+  },
+  "fixture": "boss",
+  "seconds": 2,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "errors": [],
+  "parity": true,
+  "initial": {
+    "seed": 71,
+    "chapter": 3,
+    "cats": [
+      {
+        "id": "mochi",
+        "stats": {
+          "hp": 736,
+          "attack": 70,
+          "defense": 43,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ],
+        "row": "front",
+        "equipment": [
+          "hearthloom-weapon-common",
+          "hearthloom-outfit-common"
+        ],
+        "effects": [
+          "defend-shield"
+        ],
+        "bonuses": {}
+      },
+      {
+        "id": "soot",
+        "stats": {
+          "hp": 568,
+          "attack": 88,
+          "defense": 28,
+          "critBp": 1200,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 6
+        },
+        "skills": [
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "moonwick-weapon-common",
+          "moonwick-outfit-common"
+        ],
+        "effects": [
+          "marked-break"
+        ],
+        "bonuses": {}
+      },
+      {
+        "id": "clover",
+        "stats": {
+          "hp": 477,
+          "attack": 50,
+          "defense": 25,
+          "critBp": 500,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 4
+        },
+        "skills": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "mossbrew-weapon-common",
+          "mossbrew-outfit-common"
+        ],
+        "effects": [
+          "healing-cleanse"
+        ],
+        "bonuses": {}
+      },
+      {
+        "id": "panko",
+        "stats": {
+          "hp": 753,
+          "attack": 68,
+          "defense": 43,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 900,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "panko-1",
+          "panko-2",
+          "panko-3",
+          "panko-4"
+        ],
+        "row": "front",
+        "equipment": [],
+        "effects": [],
+        "bonuses": {}
+      }
+    ],
+    "enemies": [
+      "yarn-giant",
+      "binding-thread",
+      "binding-thread"
+    ],
+    "gameplayV4": true,
+    "skillsV5": true,
+    "gameplayA6": true,
+    "formationC2": true,
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    },
+    "enemyStats": {
+      "button-guard": {
+        "hp": 480,
+        "attack": 19,
+        "defense": 18
+      },
+      "sock-skipper": {
+        "hp": 701,
+        "attack": 22,
+        "defense": 8
+      },
+      "spool-ram": {
+        "hp": 1050,
+        "attack": 30,
+        "defense": 16
+      },
+      "needle-moth": {
+        "hp": 659,
+        "attack": 17,
+        "defense": 6
+      },
+      "teacup-healer": {
+        "hp": 765,
+        "attack": 14,
+        "defense": 10
+      },
+      "kettle-knight": {
+        "hp": 1190,
+        "attack": 25,
+        "defense": 35
+      },
+      "yarn-giant": {
+        "hp": 2870,
+        "attack": 32,
+        "defense": 22
+      },
+      "binding-thread": {
+        "hp": 383,
+        "attack": 10,
+        "defense": 0
+      },
+      "practice-cushion": {
+        "hp": 230,
+        "attack": 14,
+        "defense": 0
+      },
+      "pollen-scout": {
+        "hp": 945,
+        "attack": 22,
+        "defense": 10
+      },
+      "rain-spool": {
+        "hp": 3675,
+        "attack": 58,
+        "defense": 24
+      },
+      "crumb-sentinel": {
+        "hp": 1260,
+        "attack": 27,
+        "defense": 22
+      },
+      "pantry-crown": {
+        "hp": 4270,
+        "attack": 60,
+        "defense": 25
+      }
+    }
+  },
+  "plans": [
+    {
+      "frame": 0,
+      "at": 0,
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "presentationId": "mochi-1",
+      "ultimate": false,
+      "duration": 700,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 6,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-yarn-giant",
+            "foe-1-binding-thread",
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 6,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-0-yarn-giant"
+          ],
+          "amount": 50,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 6,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-1-binding-thread"
+          ],
+          "amount": 38,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 1,
+          "actionId": 6,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 18,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "at": 0.7333333333333333,
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "presentationId": "soot-3",
+      "ultimate": false,
+      "duration": 1500,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 9,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "soot",
+          "skillId": "soot-3",
+          "targetIds": [
+            "foe-0-yarn-giant"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 9,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-3",
+          "targetIds": [
+            "foe-0-yarn-giant"
+          ],
+          "amount": 72,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "combatLog": [
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 50,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 38,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 100%) \u00b7 Door knock"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 72,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-yarn-giant",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Yarn Giant (HP 98%) \u00b7 Lantern wick"
+    }
+  ],
+  "result": null,
+  "frames": [],
+  "note": "60 captured video frames; compact G0 smoke record; raw frame metrics will be retained for R."
+}

@@ -1,0 +1,18 @@
+PASS G0.freshness: measured=506a79d750f772bc0b96776bc2cef8b9b3ff3f3c; required=evidence >= 506a79d750f772bc0b96776bc2cef8b9b3ff3f3c
+PASS G0.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS G0.bootstrap-all-fail: measured=325; required=eq 325
+PASS G0.bootstrap-gate-count: measured=325; required=min 100
+PASS G0.tests: measured=0; required=eq 0
+PASS G0.fixtures: measured=3; required=eq 3
+PASS G0.fps: measured=30; required=eq 30
+PASS G0.fixture-captures: measured=3; required=min 3
+PASS G0.checker-test-log: measured=1; required=min 1
+PASS G0.bootstrap-log: measured=1; required=min 1
+PASS G0.compare-tool: measured=1; required=min 1
+PASS G0.capture-tool: measured=1; required=min 1
+PASS G0.typecheck: measured=0; required=eq 0
+PASS G0.unit: measured=0; required=eq 0
+FAIL G0.e2e: measured=1; required=eq 0
+PASS G0.parity: measured=0; required=eq 0
+PASS G0.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 16 PASS / 1 FAIL / 17 gates
