@@ -1,9 +1,9 @@
 # Session A handoff
-NOW: Queue closed: A1–A4 done; A5/A6 PARTIAL with bounded revisits complete. Demo delivered; final reports ready.
+NOW: Queue closed: A1–A4 done; A5/A6 PARTIAL with bounded revisits complete. Demo delivered; final reports and draft PR published.
 NEXT 1: B repairs the 13 remaining browser cases listed in A6/REMAINING-GATES.md; A must preserve ownership.
 NEXT 2: After owner fixes, rerun affected cases and full suite; independent rig repaint/split work remains incomplete.
 NEXT 3: User reviews draft PR #444 and decides merge/deployment; no active A card or approval wait remains.
-LAST GOOD COMMIT: 0b323e282 (integrated product; final evidence/fixture closure follows), branch codex/v3-battle-2026-11-13.
+LAST GOOD COMMIT: 4ab25a469 (pushed delivery, test fixtures and demo encoder), branch codex/v3-battle-2026-11-13.
 CHECKS: 4,721 unit tests pass; 2 expected failures/11 skips; typecheck/lint/build pass.
 E2E: Full run 420/435; subsequent Odds 4/4 resolves two failures; 13 unresolved, no all-green claim.
 DEMO: A6/demo-v3.webm and Desktop/TaskbarHero-REVIEW/demo-v3.webm; 90.007s, 720p30, real mixer audio.
