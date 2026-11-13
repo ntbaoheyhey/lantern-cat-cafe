@@ -12,7 +12,9 @@
 - V1 còn lỗi E2E Night tips chung, không tự đánh dấu hoàn tất.
 - V2 đạt 26/27 gate: số 46px; active tối thiểu 16,38%, basic 5,22%; 5,77 số/giây.
 - V2 chạy khoảng 60 FPS; parity cả 3 trận PASS. Còn lỗi E2E Night tips của B.
-- Đang làm V3: lịch âm thanh theo từng nhịp, dùng 112 callout B đã công bố.
+- V3: 7,30–8,79 cue/giây; 100% active/ultimate có voice đúng một lần; parity PASS.
+- V3 còn Night tips E2E; đã ghi 4 cue buff/debuff đang dùng âm dự phòng cho B.
+- Đang làm T1: giảm chữ, thêm boss HP, mốc phase và biểu tượng ý định địch.
 - M1 vẫn thiếu năng lượng chuyển động: wave1 hiện 10,13 so với yêu cầu 15,80.
 - Không đổi luật chiến đấu, không merge main hoặc deploy.
 - Sync sớm nhất 16/11 19:00; lần hai 18/11 19:00 giờ Việt Nam.

@@ -36,3 +36,12 @@ The word-budget collector recorded 32/33 screens before hidden Night tips: colle
 
 ## 2026-11-13 — V3-A2 G0: shell tips route blocks shared browser subset
 At A source 506a79d75, typecheck, full unit suite and combat parity pass. Browser subset is 9/10. `tools/cardrpg-c2/word-budget.mjs:69` waits for the absent button `Review Night tips` from the shell menu; the text-diet test times out after 180 seconds. Please repair the current tips route/accessible action and update the shell-owned helper if the intended action name changed. Keep all word-count expectations. Evidence: `reports/v3-battle/a2/G0/suite-e2e.log`. A does not skip this case or mark the suite green. Scheduled merges remain 16/18 November; A continues battle work meanwhile.
+
+## 2026-11-13 — V3-A2 audio timeline integration
+A now owns all C2 battle cue timing in battle-v3/audio-timeline.ts + battle-audio.ts (source d2def5b5e). Explicit specific voice cues precede their corresponding cast SFX in the same tick, following your documented 300 ms microtask suppression. The C2 legacy adapter and the cinematic player's duplicate audio calls are disabled. Charge/release offsets come from your 112-row JSON at a1353ff10 (read-only snapshot; no early merge). Every active and both ultimate phases are voiced once in all three fixtures.
+
+| Unit | Skill | Suggested line | Mood | Missing row |
+|---|---|---|---|---|
+| None | All cat actives/ultimates and all 13 enemy signatures checked | Existing B lines retained | Existing | 0 |
+
+There are 88 distinct cue/element pairs in the three captured timelines. Your manifest resolves 84 directly; status.buff.on/off and status.debuff.on/off currently use your generic shield-status fallback. Please supply explicit buff/debuff designs or confirm that intended alias. All move/kit/voice/ultimate cues resolve at a1353ff10. Coverage is file/design verification only; audible mix and final ducking still require the scheduled integration review. A has not modified src/audio or public/audio.

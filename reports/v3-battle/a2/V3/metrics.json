@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-13T07:23:04.849Z",
+    "sourceCommit": "d2def5b5e311fa9946a020b25f758a46c931de06"
+  },
+  "fixtures": {
+    "wave1": {
+      "cueEventsPerSecond": 8.193548387096774,
+      "voicedActiveFraction": 1,
+      "voicedUltimateFraction": 1,
+      "missingContractCueIds": 0,
+      "meanBarkIntervalSeconds": 7.5,
+      "seconds": 31,
+      "events": 254,
+      "active": 6,
+      "ultimates": 3,
+      "maxImpactsPer100ms": 3,
+      "parity": true,
+      "browserErrors": [],
+      "sinkEvents": 254
+    },
+    "wave3": {
+      "cueEventsPerSecond": 8.792535675082327,
+      "voicedActiveFraction": 1,
+      "voicedUltimateFraction": 1,
+      "missingContractCueIds": 0,
+      "meanBarkIntervalSeconds": 7.5,
+      "seconds": 30.366666666666667,
+      "events": 267,
+      "active": 8,
+      "ultimates": 2,
+      "maxImpactsPer100ms": 3,
+      "parity": true,
+      "browserErrors": [],
+      "sinkEvents": 267
+    },
+    "boss": {
+      "cueEventsPerSecond": 7.297297297297298,
+      "voicedActiveFraction": 1,
+      "voicedUltimateFraction": 1,
+      "missingContractCueIds": 0,
+      "meanBarkIntervalSeconds": 7.5,
+      "seconds": 33.3,
+      "events": 243,
+      "active": 5,
+      "ultimates": 4,
+      "maxImpactsPer100ms": 3,
+      "parity": true,
+      "browserErrors": [],
+      "sinkEvents": 243
+    }
+  },
+  "calloutRows": 112,
+  "missingCalloutRows": [],
+  "suite": {
+    "_meta": {
+      "generatedAt": "2026-11-13T07:29:21.347Z",
+      "sourceCommit": "d2def5b5e311fa9946a020b25f758a46c931de06"
+    },
+    "typecheckExit": 0,
+    "parityExit": 0,
+    "unitExit": 0,
+    "e2eExit": 1
+  }
+}

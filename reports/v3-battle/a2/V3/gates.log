@@ -1,0 +1,25 @@
+PASS V3.freshness: measured=d2def5b5e311fa9946a020b25f758a46c931de06; required=evidence >= d2def5b5e311fa9946a020b25f758a46c931de06
+PASS V3.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V3.cue-density[wave1]: measured=8.193548387096774; required=min 4.775700934579438
+PASS V3.cue-density[wave3]: measured=8.792535675082327; required=min 4.775700934579438
+PASS V3.cue-density[boss]: measured=7.297297297297298; required=min 4.775700934579438
+PASS V3.ultimate-voice[wave1]: measured=1; required=eq 1
+PASS V3.ultimate-voice[wave3]: measured=1; required=eq 1
+PASS V3.ultimate-voice[boss]: measured=1; required=eq 1
+PASS V3.active-voice[wave1]: measured=1; required=eq 1
+PASS V3.active-voice[wave3]: measured=1; required=eq 1
+PASS V3.active-voice[boss]: measured=1; required=eq 1
+PASS V3.unknown-cues[wave1]: measured=0; required=eq 0
+PASS V3.unknown-cues[wave3]: measured=0; required=eq 0
+PASS V3.unknown-cues[boss]: measured=0; required=eq 0
+PASS V3.bark-spacing[wave1]: measured=7.5; required=band [7,8]
+PASS V3.bark-spacing[wave3]: measured=7.5; required=band [7,8]
+PASS V3.bark-spacing[boss]: measured=7.5; required=band [7,8]
+PASS V3.callout-rows: measured=112; required=min 25
+PASS V3.callout-table: measured=1; required=min 1
+PASS V3.typecheck: measured=0; required=eq 0
+PASS V3.unit: measured=0; required=eq 0
+FAIL V3.e2e: measured=1; required=eq 0
+PASS V3.parity: measured=0; required=eq 0
+PASS V3.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 23 PASS / 1 FAIL / 24 gates

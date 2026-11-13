@@ -1,0 +1,29 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts (3 tests | 1 failed) 33ms
+   × gives every active one specific voice and every ultimate two phases with a single SFX owner 30ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > gives every active one specific voice and every ultimate two phases with a single SFX owner
+AssertionError: expected undefined to be defined
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:14:108
+     12|   for(const voice of voices){
+     13|    const cast=track.find(c=>c.t===voice.t&&c.role!=='voice'&&/^(skill|…
+     14|    expect(voiceTiming(id.replace(/-[1-4]$/,''),id,voice.voicePhase==='…
+       |                                                                                                            ^
+     15|   }
+     16|   expect(track.every(c=>c.t>=0&&c.t<plan.duration)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 10 passed (11)
+   Start at  14:13:33
+   Duration  1.24s (environment 58%, tests 16%, transform 14%, import 12%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/battle-v3/audio-timeline.test.ts src/game/cardrpg/battle-v3/sequence.test.ts src/game/cardrpg/battle-v3/controls.test.ts

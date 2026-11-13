@@ -56,3 +56,9 @@ Before: 331 GiB free.
 Removed in this worktree only: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp; reports/v3-battle/a2/V2/capture/wave3: 304 encoded frames; reports/v3-battle/a2/V2/capture/boss: 333 encoded frames; reports/v3-battle/a2/V2/capture/wave1: 310 encoded frames; reports/v3-battle/a2/V2/repaired-capture/wave1: 310 encoded frames; decoded old reference frames
 After: /dev/disk3s1   926Gi   557Gi   332Gi    63%    5.4M  3.5G    0%   /System/Volumes/Data
 Normal disk mode. Active suite output and encoded videos retained.
+
+## Resume 2026-11-13T07:20:16.574123+00:00
+Before: /dev/disk3s1   926Gi   580Gi   300Gi    66%    5.4M  3.1G    0%   /System/Volumes/Data
+Removed local regenerable output: apps/web/node_modules/.vite; apps/web/node_modules/.vite-temp
+After: /dev/disk3s1   926Gi   580Gi   300Gi    66%    5.4M  3.1G    0%   /System/Volumes/Data
+Normal disk mode; encoded evidence and active V3 work retained.
