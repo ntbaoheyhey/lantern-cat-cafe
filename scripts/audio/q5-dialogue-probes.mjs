@@ -24,13 +24,13 @@ const windows=voices.map((hit,i)=>{
  return {cueId:hit.id,start,duration:Math.min(duration,next-start),...callouts.find(c=>c.cueId===hit.id)};
 }).filter(w=>w.start>=0&&w.start+w.duration<metric.durationSeconds);
 const sources=metric.stems.map(s=>{if(sign(s.path).sha256!==s.sha256)throw Error('Changed stem');return {bus:s.bus,bytes:[...readFileSync(s.path)]};});
-const variants=label==='33'?[{name:'speech-lead',notch:-8,voiceGain:6,trimDb:4.5,sfxDuck:0},{name:'speech-clear',notch:-12,voiceGain:6,trimDb:4.5,sfxDuck:0},{name:'speech-front',notch:-8,voiceGain:9,trimDb:3,sfxDuck:0},{name:'speech-focus',notch:-12,voiceGain:9,trimDb:3,sfxDuck:0}]:label==='32'?[{name:'music-clear',notch:-12,sfxDuck:0},{name:'wide-clear',notch:-12,notchType:'highshelf',frequency:700,sfxDuck:0},{name:'voice-forward',notch:-8,voiceGain:3,sfxDuck:0},{name:'combined-clear',notch:-10,voiceGain:2,sfxDuck:-4}]:[{name:'baseline',notch:0,sfxDuck:0},{name:'music-space',notch:-4,sfxDuck:0},{name:'effect-space',notch:0,sfxDuck:-4},{name:'dialogue-space',notch:-4,sfxDuck:-4}];
+const variants=label==='34'?[{name:'lead-soft',notch:-8,voiceGain:6,voiceShelf:-3,trimDb:4.5,sfxDuck:0},{name:'lead-warm',notch:-8,voiceGain:6,voiceShelf:-6,trimDb:4.5,sfxDuck:0},{name:'clear-soft',notch:-8,voiceGain:7.5,voiceShelf:-3,trimDb:3.75,sfxDuck:0},{name:'front-soft',notch:-8,voiceGain:9,voiceShelf:-3,trimDb:3,sfxDuck:0}]:label==='33'?[{name:'speech-lead',notch:-8,voiceGain:6,trimDb:4.5,sfxDuck:0},{name:'speech-clear',notch:-12,voiceGain:6,trimDb:4.5,sfxDuck:0},{name:'speech-front',notch:-8,voiceGain:9,trimDb:3,sfxDuck:0},{name:'speech-focus',notch:-12,voiceGain:9,trimDb:3,sfxDuck:0}]:label==='32'?[{name:'music-clear',notch:-12,sfxDuck:0},{name:'wide-clear',notch:-12,notchType:'highshelf',frequency:700,sfxDuck:0},{name:'voice-forward',notch:-8,voiceGain:3,sfxDuck:0},{name:'combined-clear',notch:-10,voiceGain:2,sfxDuck:-4}]:[{name:'baseline',notch:0,sfxDuck:0},{name:'music-space',notch:-4,sfxDuck:0},{name:'effect-space',notch:0,sfxDuck:-4},{name:'dialogue-space',notch:-4,sfxDuck:-4}];
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage();mkdirSync('tmp/q5-dialogue',{recursive:true});const rows=[];
 try{
  await page.evaluate(async sources=>{const ctx=new AudioContext();window.stems={};for(const s of sources)window.stems[s.bus]=await ctx.decodeAudioData(new Uint8Array(s.bytes).buffer);const ds=Object.values(window.stems).map(b=>b.duration);if(Math.max(...ds)-Math.min(...ds)>.1)throw Error('Invalid stem clocks');await ctx.close();},sources);
  for(const variant of variants){
-  const bytes=await page.evaluate(async({seconds,windows,notch,sfxDuck,notchType='peaking',frequency=1700,voiceGain=0,trimDb=6})=>{
+  const bytes=await page.evaluate(async({seconds,windows,notch,sfxDuck,notchType='peaking',frequency=1700,voiceGain=0,voiceShelf=0,trimDb=6})=>{
    const rate=48000,ctx=new OfflineAudioContext(2,Math.round(seconds*rate),rate);
    const master=ctx.createGain();master.gain.value=.7;
    const trim=ctx.createGain();trim.gain.value=10**(trimDb/20);
@@ -47,6 +47,7 @@ try{
     if(bus==='sfx'){const tone=ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=-12;end.connect(tone);end=tone;if(sfxDuck){const duck=ctx.createGain();automate(duck.gain,10**(sfxDuck/20),1);end.connect(duck);end=duck;}}
     if(bus==='music'&&notch){const space=ctx.createBiquadFilter();space.type=notchType;space.frequency.value=frequency;space.Q.value=.7;automate(space.gain,notch,0);end.connect(space);end=space;}
     if(bus==='voice'&&voiceGain){const presence=ctx.createGain();presence.gain.value=10**(voiceGain/20);end.connect(presence);end=presence;}
+    if(bus==='voice'&&voiceShelf){const warmth=ctx.createBiquadFilter();warmth.type='highshelf';warmth.frequency.value=1500;warmth.gain.value=voiceShelf;end.connect(warmth);end=warmth;}
     end.connect(master);source.start();
    }
    const out=await ctx.startRendering(),pcm=new Float32Array(out.length*2);

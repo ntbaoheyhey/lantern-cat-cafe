@@ -66,7 +66,7 @@ describe('layered playback admission and variants',()=>{
   expect(e.diagnostics.voice).toBe(1);expect(e.hits.at(-1)?.result).toBe('priority');
   Context.latest.currentTime+=7;e.play('voice.soot.ult');await flush();expect(e.diagnostics.voice).toBe(1);
  });
- it('opens speech space in battle and menus while retaining the boss balance',async()=>{
+ it('opens speech space for each scene and restores the menu filter after a boss',async()=>{
   const music=samples('music').map(s=>({...s,loop:true}));
   const m={...fixture,cues:{...fixture.cues,'music.battle':music,'music.boss':music,'music.home':music}};
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
@@ -77,9 +77,11 @@ describe('layered playback admission and variants',()=>{
   Context.latest.sources.at(-1)!.onended!();expect(shelf.gain.value).toBe(0);
   expect(e.settings.music).toBe(.55);expect(e.diagnostics.voice).toBe(0);
   e.music('boss');await flush();Context.latest.currentTime+=8;
-  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(0);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(-1.5);
+  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(-8);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(4.5);
+  expect(shelf.type).toBe('peaking');expect(shelf.frequency.value).toBe(1700);
   Context.latest.sources.at(-1)!.onended!();e.music('home');await flush();Context.latest.currentTime+=8;
   e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-9);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(5);
+  expect(shelf.type).toBe('lowshelf');expect(shelf.frequency.value).toBe(1200);
  });
  it('spaces ordinary cat-speak across units, including generic skill barks, by seven seconds',async()=>{
   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.skill');await flush();

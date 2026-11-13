@@ -167,3 +167,5 @@ Boss dialogue diagnostics: the fourth balance method tests a gentler consonant s
 ## 2026-11-13T20:50:51.032642+00:00 — boss dialogue method selection
 
 The fourth diagnostic method (a softer voice high shelf) reduces tick density but harms recognizer accuracy. Preserve spoken consonants. Trial35 uses the speech-lead33 balance: boss callout trim rises from -1.5 to +4.5 dB, boss master trim falls from +6 to +4.5 dB, and the score opens 8 dB at 1.7 kHz only during speech. This is a runtime validation candidate, not a gate pass. All callout times and source takes remain intact. The forge score is already validated.
+
+2026-11-13T20:51:24.848524+00:00 — The first audio test run failed its old boss EQ/gain expectation (15/16 passing). Updated that scene-transition regression to require the new peaking dip and its restoration to the home low shelf. The recheck passes all36 audio tests. Initial failed evidence is retained.
