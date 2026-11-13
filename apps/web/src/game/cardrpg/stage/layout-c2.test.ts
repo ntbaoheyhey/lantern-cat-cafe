@@ -22,7 +22,7 @@ it.each([[1280,720],[1440,900],[1024,600]])('keeps dense measured core boxes rea
     const fieldHeight=height*.7,boxes=stageLayoutC2([...party,...wave],width,fieldHeight,height),all=[...boxes];
     for(const [id,b] of all){
       const actor=[...party,...wave].find(u=>u.id===id)!;
-      const ratio=actor.boss?Math.min(1.95,Math.max(1.7,actor.bossRatio??1.8)):actor.coreRatio;
+      const ratio=actor.boss?Math.min(1.95,Math.max(1.7,actor.bossRatio??1.8)):actor.coreRatio??1;
       expect(b.coreHeight/height,id).toBeCloseTo(.20946*ratio*(actor.row==='rear'&&!actor.boss?0.94:1),5);
       expect(b.x,id).toBeGreaterThanOrEqual(0);expect(b.x+b.width,id).toBeLessThanOrEqual(width);
       expect(b.y,id).toBeGreaterThanOrEqual(0);expect(b.y+b.height,id).toBeLessThanOrEqual(fieldHeight);
