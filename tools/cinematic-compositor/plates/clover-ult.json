@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "clover-ult",
   "unit": "clover",
   "title": "Greenhouse morning",
@@ -28,16 +28,41 @@
       "end": 68
     },
     {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
       "type": "speed-lines",
       "start": 0,
-      "end": 68,
-      "mode": "radial"
+      "end": 68
     },
     {
       "type": "caster",
       "start": 0,
-      "end": 58,
-      "source": "/units/clover/runtime.webp"
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/clover.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
     },
     {
       "type": "painted-layer",
@@ -52,30 +77,47 @@
       ]
     },
     {
-      "type": "motif",
-      "start": 8,
-      "end": 68
-    },
-    {
-      "type": "particles",
-      "start": 0,
-      "end": 68,
-      "count": 48
-    },
-    {
       "type": "impact-frame",
-      "start": 51,
-      "end": 52
+      "start": 55,
+      "end": 56
     },
     {
-      "type": "flash",
+      "type": "closing-flash",
       "start": 64,
       "end": 68
+    }
+  ],
+  "composition": {
+    "background": "garden",
+    "camera": "garden-orbit",
+    "focus": [
+      820,
+      330
+    ],
+    "motifSize": 1190,
+    "casterX": 300,
+    "casterFoot": 700,
+    "casterHeight": 580,
+    "casterEnter": -560,
+    "casterTilt": -0.03,
+    "motifTilt": 0.03,
+    "particle": "petal",
+    "casterBehind": false,
+    "seed": 9,
+    "impactDark": false
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
     },
     {
-      "type": "grade",
-      "start": 0,
-      "end": 68
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
     }
   ]
 }

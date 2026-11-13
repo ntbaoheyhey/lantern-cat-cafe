@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "sorrel-ult",
   "unit": "sorrel",
   "title": "Shared pot",
@@ -28,16 +28,41 @@
       "end": 68
     },
     {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
       "type": "speed-lines",
       "start": 0,
-      "end": 68,
-      "mode": "radial"
+      "end": 68
     },
     {
       "type": "caster",
       "start": 0,
-      "end": 58,
-      "source": "/units/sorrel/runtime.webp"
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/sorrel.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
     },
     {
       "type": "painted-layer",
@@ -52,30 +77,47 @@
       ]
     },
     {
-      "type": "motif",
-      "start": 8,
-      "end": 68
-    },
-    {
-      "type": "particles",
-      "start": 0,
-      "end": 68,
-      "count": 48
-    },
-    {
       "type": "impact-frame",
-      "start": 51,
-      "end": 52
+      "start": 55,
+      "end": 56
     },
     {
-      "type": "flash",
+      "type": "closing-flash",
       "start": 64,
       "end": 68
+    }
+  ],
+  "composition": {
+    "background": "rain",
+    "camera": "rain-pullback",
+    "focus": [
+      740,
+      290
+    ],
+    "motifSize": 1410,
+    "casterX": 330,
+    "casterFoot": 710,
+    "casterHeight": 570,
+    "casterEnter": -550,
+    "casterTilt": -0.04,
+    "motifTilt": 0.01,
+    "particle": "petal",
+    "casterBehind": false,
+    "seed": 21,
+    "impactDark": false
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
     },
     {
-      "type": "grade",
-      "start": 0,
-      "end": 68
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
     }
   ]
 }

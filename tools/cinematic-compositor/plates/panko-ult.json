@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "panko-ult",
   "unit": "panko",
   "title": "Oven door",
@@ -28,16 +28,41 @@
       "end": 68
     },
     {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
       "type": "speed-lines",
       "start": 0,
-      "end": 68,
-      "mode": "linear"
+      "end": 68
     },
     {
       "type": "caster",
       "start": 0,
-      "end": 58,
-      "source": "/units/panko/runtime.webp"
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/panko.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
     },
     {
       "type": "painted-layer",
@@ -52,30 +77,47 @@
       ]
     },
     {
-      "type": "motif",
-      "start": 8,
-      "end": 68
-    },
-    {
-      "type": "particles",
-      "start": 0,
-      "end": 68,
-      "count": 48
-    },
-    {
       "type": "impact-frame",
-      "start": 51,
-      "end": 52
+      "start": 55,
+      "end": 56
     },
     {
-      "type": "flash",
+      "type": "closing-flash",
       "start": 64,
       "end": 68
+    }
+  ],
+  "composition": {
+    "background": "forge",
+    "camera": "shield-charge",
+    "focus": [
+      820,
+      385
+    ],
+    "motifSize": 1220,
+    "casterX": 310,
+    "casterFoot": 680,
+    "casterHeight": 580,
+    "casterEnter": -700,
+    "casterTilt": -0.09,
+    "motifTilt": 0.04,
+    "particle": "shard",
+    "casterBehind": false,
+    "seed": 12,
+    "impactDark": true
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
     },
     {
-      "type": "grade",
-      "start": 0,
-      "end": 68
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
     }
   ]
 }

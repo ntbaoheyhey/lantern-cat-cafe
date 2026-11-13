@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "velvet-ult",
   "unit": "velvet",
   "title": "Velvet curtain",
@@ -28,16 +28,41 @@
       "end": 68
     },
     {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
       "type": "speed-lines",
       "start": 0,
-      "end": 68,
-      "mode": "radial"
+      "end": 68
     },
     {
       "type": "caster",
       "start": 0,
-      "end": 58,
-      "source": "/units/velvet/runtime.webp"
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/velvet.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
     },
     {
       "type": "painted-layer",
@@ -52,30 +77,47 @@
       ]
     },
     {
-      "type": "motif",
-      "start": 8,
-      "end": 68
-    },
-    {
-      "type": "particles",
-      "start": 0,
-      "end": 68,
-      "count": 48
-    },
-    {
       "type": "impact-frame",
-      "start": 51,
-      "end": 52
+      "start": 55,
+      "end": 56
     },
     {
-      "type": "flash",
+      "type": "closing-flash",
       "start": 64,
       "end": 68
+    }
+  ],
+  "composition": {
+    "background": "lunar",
+    "camera": "moon-reveal",
+    "focus": [
+      830,
+      310
+    ],
+    "motifSize": 1250,
+    "casterX": 300,
+    "casterFoot": 730,
+    "casterHeight": 600,
+    "casterEnter": -550,
+    "casterTilt": -0.03,
+    "motifTilt": 0.025,
+    "particle": "snow",
+    "casterBehind": false,
+    "seed": 33,
+    "impactDark": false
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
     },
     {
-      "type": "grade",
-      "start": 0,
-      "end": 68
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
     }
   ]
 }
