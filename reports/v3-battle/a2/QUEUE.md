@@ -8,7 +8,7 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | R | Measured reference research | done | Q1: 42 PASS /0 FAIL; R/gates.log; browser435/435, units2544/2544, parity PASS |
 | F1 | Viewport scale and staggered formation | done | Q1: 40 PASS /0 FAIL; F1/gates.log; browser435/435, units2544/2544, parity PASS |
 | F2 | Field clarity | done | Q1: 18 PASS /0 FAIL; F2/gates.log; browser435/435, units2544/2544, parity PASS |
-| M1 | Attack choreography | in progress | 30s each: 111/111 hit reactions, min travel .08795, High59.88–60.02FPS. Energy8.052/8.964/9.484 FAIL required15.796; shared E2E9/10. Remains open. |
+| M1 | Attack choreography | done | Q3: 29 PASS/0 FAIL; full energy15.908/17.321/17.096; 98/98 hit reactions; 33/33 enemies move; High59.95–60.05FPS; 10/10 battle E2E,2553 web units,types/parity PASS. |
 | M2 | Separate parts and face animation | done | Q1: 17 PASS /0 FAIL; M2/gates.log; browser435/435, units2544/2544, parity PASS |
 | V1 | Full-screen distinct ultimate plates | done | Q1: 22 PASS /0 FAIL; V1/gates.log; browser435/435, units2544/2544, parity PASS |
 | V2 | Field skills and damage numbers | done | Q1: 29 PASS /0 FAIL; V2/gates.log; browser435/435, units2544/2544, parity PASS |

@@ -1,17 +1,17 @@
-PASS F1.freshness: measured=c5f9192bc647547278c25f9213be3e80db75399e; required=evidence >= b6ac286d2cefcbfe008fcf427d2071f69fa8e69f
-PASS F1.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= b6ac286d2cefcbfe008fcf427d2071f69fa8e69f
+PASS F1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= 134f13e711208b825f71e860ba029a31c287dce3
+PASS F1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= 134f13e711208b825f71e860ba029a31c287dce3
 PASS F1.committed-source: measured=0; required=eq 0 uncommitted source changes
-PASS F1.unit-height[wave1@1280x720]: measured=0.2080669501050842; required=band [0.157095,0.26182500000000003]
-PASS F1.unit-height[wave3@1280x720]: measured=0.21747252706566694; required=band [0.157095,0.26182500000000003]
-PASS F1.unit-height[boss@1280x720]: measured=0.20228747426319904; required=band [0.157095,0.26182500000000003]
-PASS F1.unit-height[wave1@1440x900]: measured=0.2080669501050843; required=band [0.157095,0.26182500000000003]
-PASS F1.unit-height[wave3@1440x900]: measured=0.21747252706566694; required=band [0.157095,0.26182500000000003]
-PASS F1.unit-height[boss@1440x900]: measured=0.20228747426319899; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave1@1280x720]: measured=0.20676215855120456; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1280x720]: measured=0.2215818039782693; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1280x720]: measured=0.20554791138210932; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave1@1440x900]: measured=0.20676215855120447; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1440x900]: measured=0.22158180397826924; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1440x900]: measured=0.20554791138210918; required=band [0.157095,0.26182500000000003]
 PASS F1.face-occlusion[wave1@1280x720]: measured=0; required=max 0.1
 PASS F1.face-occlusion[wave3@1280x720]: measured=0; required=max 0.1
 PASS F1.face-occlusion[boss@1280x720]: measured=0; required=max 0.1
 PASS F1.face-occlusion[wave1@1440x900]: measured=0; required=max 0.1
-PASS F1.face-occlusion[wave3@1440x900]: measured=0.0018061181589966798; required=max 0.1
+PASS F1.face-occlusion[wave3@1440x900]: measured=0.003386293028293538; required=max 0.1
 PASS F1.face-occlusion[boss@1440x900]: measured=0; required=max 0.1
 PASS F1.clipping[wave1@1280x720]: measured=0; required=eq 0
 PASS F1.clipping[wave3@1280x720]: measured=0; required=eq 0
@@ -19,12 +19,12 @@ PASS F1.clipping[boss@1280x720]: measured=0; required=eq 0
 PASS F1.clipping[wave1@1440x900]: measured=0; required=eq 0
 PASS F1.clipping[wave3@1440x900]: measured=0; required=eq 0
 PASS F1.clipping[boss@1440x900]: measured=0; required=eq 0
-PASS F1.floor[wave1@1280x720]: measured=0.6295568181818182; required=min 0.5
-PASS F1.floor[wave3@1280x720]: measured=0.5163139204545455; required=min 0.5
-PASS F1.floor[boss@1280x720]: measured=0.5814076704545454; required=min 0.5
-PASS F1.floor[wave1@1440x900]: measured=0.6211691400304414; required=min 0.5
-PASS F1.floor[wave3@1440x900]: measured=0.5052768264840183; required=min 0.5
-PASS F1.floor[boss@1440x900]: measured=0.5707267884322679; required=min 0.5
+PASS F1.floor[wave1@1280x720]: measured=0.6295369318181818; required=min 0.5
+PASS F1.floor[wave3@1280x720]: measured=0.5162088068181818; required=min 0.5
+PASS F1.floor[boss@1280x720]: measured=0.5813480113636363; required=min 0.5
+PASS F1.floor[wave1@1440x900]: measured=0.6209446347031964; required=min 0.5
+PASS F1.floor[wave3@1440x900]: measured=0.5049448249619483; required=min 0.5
+PASS F1.floor[boss@1440x900]: measured=0.570519406392694; required=min 0.5
 PASS F1.field-names[wave1@1280x720]: measured=0; required=eq 0
 PASS F1.field-names[wave3@1280x720]: measured=0; required=eq 0
 PASS F1.field-names[boss@1280x720]: measured=0; required=eq 0
@@ -38,4 +38,4 @@ PASS F1.unit: measured=0; required=eq 0
 PASS F1.e2e: measured=0; required=eq 0
 PASS F1.parity: measured=0; required=eq 0
 PASS F1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 40 PASS / 0 FAIL
+TOTAL 40 PASS / 0 FAIL / 40 gates

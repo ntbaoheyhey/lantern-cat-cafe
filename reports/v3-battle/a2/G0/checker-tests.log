@@ -1,15 +1,15 @@
-✔ every active requires one voice; half coverage must never pass (1.457833ms)
-✔ min: fake PASS and fake FAIL, NaN, absent target (0.098542ms)
-✔ max: fake PASS and fake FAIL, NaN, absent target (0.057541ms)
-✔ eq: fake PASS and fake FAIL, NaN, absent target (0.056667ms)
-✔ band: fake PASS and fake FAIL, NaN, absent target (0.057792ms)
-✔ every declared numeric gate rejects a failing value, including zero limits (0.206666ms)
-✔ absent evidence cannot pass using files or a past scheduled date (5.166125ms)
-✔ files: counts real nonempty files, rejects missing and empty artifacts (2.154583ms)
-✔ freshness: evidence from before the last source commit fails (240.349042ms)
-✔ date gate: real future sync cannot pass before its exact UTC time (1.151292ms)
-✔ fresh aggregate metadata cannot disguise an old raw motion capture (1246.874916ms)
-✔ fixture matrix fails any missing fixture/resolution (0.38775ms)
+✔ every active requires one voice; half coverage must never pass (0.465416ms)
+✔ min: fake PASS and fake FAIL, NaN, absent target (0.077208ms)
+✔ max: fake PASS and fake FAIL, NaN, absent target (0.047959ms)
+✔ eq: fake PASS and fake FAIL, NaN, absent target (0.045584ms)
+✔ band: fake PASS and fake FAIL, NaN, absent target (0.049917ms)
+✔ every declared numeric gate rejects a failing value, including zero limits (0.176958ms)
+✔ absent evidence cannot pass using files or a past scheduled date (2.440167ms)
+✔ files: counts real nonempty files, rejects missing and empty artifacts (0.772041ms)
+✔ freshness: evidence from before the last source commit fails (100.079375ms)
+✔ date gate: real future sync cannot pass before its exact UTC time (0.338042ms)
+✔ fresh aggregate metadata cannot disguise an old raw motion capture (432.270125ms)
+✔ fixture matrix fails any missing fixture/resolution (0.419375ms)
 ℹ tests 12
 ℹ suites 0
 ℹ pass 12
@@ -17,4 +17,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1597.056416
+ℹ duration_ms 592.975875

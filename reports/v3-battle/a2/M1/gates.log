@@ -1,28 +1,30 @@
-PASS M1.freshness: measured=1f8261375afaed7a42197d9df55e16994c461873; required=evidence >= 1f8261375afaed7a42197d9df55e16994c461873
-FAIL M1.committed-source: measured=1; required=eq 0 uncommitted source changes
-PASS M1.seconds[wave1]: measured=31; required=min 30
-PASS M1.seconds[wave3]: measured=30.366666666666667; required=min 30
-PASS M1.seconds[boss]: measured=33.3; required=min 30
-PASS M1.displacements[wave1]: measured=18.709677419354836; required=min 2
-PASS M1.displacements[wave3]: measured=20.08781558726674; required=min 2
-PASS M1.displacements[boss]: measured=16.816816816816818; required=min 2
-FAIL M1.motion-energy[wave1]: measured=8.052015373429048; required=min 15.795591764922111
-FAIL M1.motion-energy[wave3]: measured=8.964323986088088; required=min 15.795591764922111
-FAIL M1.motion-energy[boss]: measured=9.484081449278866; required=min 15.795591764922111
-PASS M1.every-action-moves[wave1]: measured=0.08795395679706272; required=min 0.06
-PASS M1.every-action-moves[wave3]: measured=0.08795395679706272; required=min 0.06
-PASS M1.every-action-moves[boss]: measured=0.08795395679706272; required=min 0.06
+PASS M1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS M1.input-freshness: measured=0; required=eq 0 missing or stale raw captures/reviews
+PASS M1.seconds[wave1]: measured=30.333333333333332; required=min 30
+PASS M1.seconds[wave3]: measured=30.866666666666667; required=min 30
+PASS M1.seconds[boss]: measured=32.93333333333333; required=min 30
+PASS M1.displacements[wave1]: measured=17.802197802197803; required=min 2
+PASS M1.displacements[wave3]: measured=17.170626349892007; required=min 2
+PASS M1.displacements[boss]: measured=16.396761133603242; required=min 2
+PASS M1.motion-energy[wave1]: measured=15.908401105663565; required=min 15.795591764922111
+PASS M1.motion-energy[wave3]: measured=17.3206211638141; required=min 15.795591764922111
+PASS M1.motion-energy[boss]: measured=17.095655655063755; required=min 15.795591764922111
+PASS M1.every-action-moves[wave1]: measured=0.1052002746839527; required=min 0.06
+PASS M1.every-action-moves[wave3]: measured=0.1052002746839527; required=min 0.06
+PASS M1.every-action-moves[boss]: measured=0.1052002746839527; required=min 0.06
 PASS M1.hit-knockback[wave1]: measured=1; required=eq 1
 PASS M1.hit-knockback[wave3]: measured=1; required=eq 1
 PASS M1.hit-knockback[boss]: measured=1; required=eq 1
-PASS M1.high-fps[wave1]: measured=59.878247563258306; required=min 50
-PASS M1.high-fps[wave3]: measured=60.00083218907336; required=min 50
-PASS M1.high-fps[boss]: measured=60.02181097709672; required=min 50
+PASS M1.high-fps[wave1]: measured=59.95553297967696; required=min 50
+PASS M1.high-fps[wave3]: measured=60.046304778764494; required=min 50
+PASS M1.high-fps[boss]: measured=59.94804502761296; required=min 50
 PASS M1.crowded-units: measured=10; required=min 10
-PASS M1.archetype-strips: measured=6; required=min 6
+PASS M1.archetype-strips: measured=12; required=min 6
 PASS M1.typecheck: measured=0; required=eq 0
 PASS M1.unit: measured=0; required=eq 0
-FAIL M1.e2e: measured=1; required=eq 0
+PASS M1.e2e: measured=0; required=eq 0
 PASS M1.parity: measured=0; required=eq 0
 PASS M1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 22 PASS / 5 FAIL / 27 gates
+TOTAL 29 PASS / 0 FAIL / 29 gates

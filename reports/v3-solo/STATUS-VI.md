@@ -1,11 +1,10 @@
-# Tiến độ SOLO V3
-- Q0 và Q1 hoàn tất; A/B đều đạt 435/435 ca trình duyệt, 33 màn hình tối đa 25 từ.
-- Chín thẻ A đóng với 230/230 điều kiện đo.
-- Q2 hoàn tất 59/59 điều kiện: không cắt 62 pha chiêu cuối hoặc 17 câu kỹ năng ở 9 tổ hợp.
-- Trận đạt 4,66 và trùm 3,49 lần giọng/phút; kết quả chiến đấu không đổi.
-- Kiểm thử cuối A/B đều đạt; độ rõ lời và các phần phối âm khác tiếp tục ở Q5.
-- Q3 đang đo lại: lần 5 đạt 15,663/15,80, 34/34 đòn có phản ứng; chưa đóng thẻ.
-- Đã sửa mảnh vỡ bị ngắt khi đổi lượt; đang quay lại đủ 3 cảnh trên commit c32274053.
-- Kinh tế đang chạy nền: 16 vòng/640 cấu hình, top 10 xác nhận 200 seed; Star Thread/bot còn lỗi.
-- Q4–Q9 còn mở; chưa gộp sớm, chưa triển khai.
-- Đồng bộ 16/18-11 lúc 12:00 UTC; đóng băng 19-11 lúc 12:00 UTC.
+# Tiến độ V3 Solo
+- Q0–Q3 đã xong; Q3 đạt 259 gate A + 9 gate Solo.
+- Motion energy: 15.91 / 17.32 / 17.10, đều vượt 15.80.
+- 98/98 phản ứng đòn đánh; 33/33 hành động địch di chuyển đủ xa.
+- High khoảng 60 FPS với cảnh 10 nhân vật; combat parity đạt.
+- 2553 unit test web và 10 E2E battle đạt.
+- Tiếp theo Q4: kinh tế, bằng chứng Anvil và báo cáo.
+- 16 vòng / 640 cấu hình đã đo; bot vẫn kiếm quá nhiều mỗi giờ.
+- Q5–Q9 còn mở. Không deploy, không merge sớm.
+- Đồng bộ 16 và 18/11 lúc 12:00 UTC; freeze 19/11 12:00 UTC.

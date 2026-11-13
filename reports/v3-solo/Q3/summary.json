@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005",
+  "fixtures": {
+    "wave1": {
+      "motionEnergy": 15.908401105663565,
+      "seconds": 30.333333333333332,
+      "hitKnockbackFraction": 1.0,
+      "minActionDisplacementFraction": 0.1052002746839527,
+      "parity": true,
+      "fpsHigh": 59.95553297967696,
+      "units": 8
+    },
+    "wave3": {
+      "motionEnergy": 17.3206211638141,
+      "seconds": 30.866666666666667,
+      "hitKnockbackFraction": 1.0,
+      "minActionDisplacementFraction": 0.1052002746839527,
+      "parity": true,
+      "fpsHigh": 60.046304778764494,
+      "units": 10
+    },
+    "boss": {
+      "motionEnergy": 17.095655655063755,
+      "seconds": 32.93333333333333,
+      "hitKnockbackFraction": 1.0,
+      "minActionDisplacementFraction": 0.1052002746839527,
+      "parity": true,
+      "fpsHigh": 59.94804502761296,
+      "units": 7
+    }
+  },
+  "critique": "reports/v3-solo/Q3/CRITIQUE.md",
+  "selfScore": 8.23,
+  "aGates": {
+    "pass": 259,
+    "fail": 0
+  },
+  "soloGates": {
+    "pass": 9,
+    "fail": 0
+  },
+  "weights": {
+    "visualImpact": {
+      "score": 7.5,
+      "weight": 0.3
+    },
+    "motionLife": {
+      "score": 8.5,
+      "weight": 0.2
+    },
+    "distinctness": {
+      "score": 8,
+      "weight": 0.15
+    },
+    "readability": {
+      "score": 8.5,
+      "weight": 0.15
+    },
+    "stability": {
+      "score": 9,
+      "weight": 0.1
+    },
+    "budgets": {
+      "score": 9,
+      "weight": 0.1
+    }
+  },
+  "tests": {
+    "webUnits": 2553,
+    "battleE2E": 10,
+    "soloCheckerCases": 22,
+    "typecheckExit": 0,
+    "parityExit": 0
+  }
+}

@@ -41,9 +41,17 @@ try:
 finally:sim('CONT')
 run('final-suite',['node','scripts/v3a2/run-suite.mjs','M1'])
 suite=root/'reports/v3-battle/a2/M1/suite.json'
-shutil.copy2(suite,root/'reports/v3-battle/a2/V2/suite.json')
+for card in ['G0','F1','V2','F2','M2','V1','V3']:
+ dest=root/'reports/v3-battle/a2'/card
+ shutil.copy2(suite,dest/'suite.json')
+ metrics_path=dest/'metrics.json'
+ if metrics_path.exists():
+  report=json.loads(metrics_path.read_text());report['suite']=json.loads(suite.read_text());metrics_path.write_text(json.dumps(report,indent=2)+'\n')
+run('final-checker-evidence',['node','scripts/v3a2/collect-checker.mjs'])
+run('final-field-evidence',['node','scripts/v3a2/collect-field.mjs'])
 run('final-motion-metrics',['tools/.venv/bin/python','scripts/v3a2/motion-metrics.py'])
 run('final-field-skill-metrics',['tools/.venv/bin/python','scripts/v3a2/field-skill-metrics.py'])
 run('final-enemy-metrics',['node','scripts/v3solo/collect-q3.mjs'])
 run('final-comparisons',['tools/.venv/bin/python','scripts/v3solo/motion-compare.py'])
-run('final-gates',['node','scripts/v3a2/check-gates.mjs','M1','V2'])
+run('final-gates',['node','scripts/v3a2/check-gates.mjs','G0','R','F1','F2','M1','M2','V1','V2','V3','T1'])
+run('final-solo-gates',['node','scripts/v3solo/check-solo.mjs','Q3'])

@@ -314,5 +314,284 @@
     ],
     "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method9-joint-audit.log",
     "started": "2026-11-13T15:52:49.904921+00:00"
+  },
+  {
+    "name": "method10",
+    "pid": 39360,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/method10-runner.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/method10.log",
+    "started": "2026-11-13T15:55:58.446640+00:00"
+  },
+  {
+    "name": "push-method10",
+    "pid": 39361,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-method10.log",
+    "started": "2026-11-13T15:55:58.448893+00:00"
+  },
+  {
+    "name": "restored-joint-audit",
+    "pid": 39554,
+    "command": [
+      "node",
+      "scripts/v3a2/rig-depth-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/restored-joint-audit.log",
+    "started": "2026-11-13T15:56:35.377230+00:00"
+  },
+  {
+    "name": "independent-refresh",
+    "pid": 40138,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/refresh-independent.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/independent-refresh.log",
+    "started": "2026-11-13T15:58:47.163964+00:00"
+  },
+  {
+    "name": "refresh-clarity",
+    "pid": 40139,
+    "command": [
+      "node",
+      "scripts/v3a2/clarity-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-clarity.log",
+    "started": "2026-11-13T15:58:47.195815+00:00"
+  },
+  {
+    "name": "refresh-audio",
+    "pid": 40238,
+    "command": [
+      "node",
+      "scripts/v3a2/audio-review.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-audio.log",
+    "started": "2026-11-13T15:59:02.867643+00:00"
+  },
+  {
+    "name": "refresh-plate-browser",
+    "pid": 40333,
+    "command": [
+      "node",
+      "scripts/v3a2/plate-browser-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-browser.log",
+    "started": "2026-11-13T15:59:26.697354+00:00"
+  },
+  {
+    "name": "independent-refresh-retry",
+    "pid": 40561,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/refresh-independent.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/independent-refresh-retry.log",
+    "started": "2026-11-13T16:00:35.039708+00:00"
+  },
+  {
+    "name": "push-plate-audit",
+    "pid": 40562,
+    "command": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/v3-battle-2026-11-13"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/push-plate-audit.log",
+    "started": "2026-11-13T16:00:35.042652+00:00"
+  },
+  {
+    "name": "refresh-plate-browser",
+    "pid": 40565,
+    "command": [
+      "node",
+      "scripts/v3a2/plate-browser-audit.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-browser.log",
+    "started": "2026-11-13T16:00:35.077843+00:00"
+  },
+  {
+    "name": "refresh-plate-metrics",
+    "pid": 40719,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/plate-metrics.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-metrics.log",
+    "started": "2026-11-13T16:00:50.812848+00:00"
+  },
+  {
+    "name": "refresh-plate-compare",
+    "pid": 40734,
+    "command": [
+      "node",
+      "scripts/v3a2/plate-compare.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-compare.log",
+    "started": "2026-11-13T16:00:53.977559+00:00"
+  },
+  {
+    "name": "refresh-joint-overlap",
+    "pid": 40749,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/rig-joint-overlap.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-joint-overlap.log",
+    "started": "2026-11-13T16:01:00.293482+00:00"
+  },
+  {
+    "name": "refresh-rig-metrics",
+    "pid": 40752,
+    "command": [
+      "node",
+      "scripts/v3a2/collect-rigs.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-rig-metrics.log",
+    "started": "2026-11-13T16:01:01.495519+00:00"
+  },
+  {
+    "name": "final-verification",
+    "pid": 41830,
+    "command": [
+      "python3",
+      "reports/v3-solo/Q3/verify-final.py",
+      "method10"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-verification.log",
+    "started": "2026-11-13T16:08:10.671902+00:00"
+  },
+  {
+    "name": "final-motion-review",
+    "pid": 41832,
+    "command": [
+      "node",
+      "scripts/v3a2/motion-review.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-motion-review.log",
+    "started": "2026-11-13T16:08:10.826188+00:00"
+  },
+  {
+    "name": "final-field-skill-review",
+    "pid": 42016,
+    "command": [
+      "node",
+      "scripts/v3a2/field-skill-review.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-field-skill-review.log",
+    "started": "2026-11-13T16:09:21.034993+00:00"
+  },
+  {
+    "name": "final-suite",
+    "pid": 42185,
+    "command": [
+      "node",
+      "scripts/v3a2/run-suite.mjs",
+      "M1"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-suite.log",
+    "started": "2026-11-13T16:10:30.582116+00:00"
+  },
+  {
+    "name": "final-checker-evidence",
+    "pid": 43496,
+    "command": [
+      "node",
+      "scripts/v3a2/collect-checker.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-checker-evidence.log",
+    "started": "2026-11-13T16:14:34.580267+00:00"
+  },
+  {
+    "name": "final-field-evidence",
+    "pid": 43848,
+    "command": [
+      "node",
+      "scripts/v3a2/collect-field.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-field-evidence.log",
+    "started": "2026-11-13T16:14:35.956565+00:00"
+  },
+  {
+    "name": "final-motion-metrics",
+    "pid": 43854,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/motion-metrics.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-motion-metrics.log",
+    "started": "2026-11-13T16:14:36.683106+00:00"
+  },
+  {
+    "name": "final-field-skill-metrics",
+    "pid": 43887,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/field-skill-metrics.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-field-skill-metrics.log",
+    "started": "2026-11-13T16:14:40.852043+00:00"
+  },
+  {
+    "name": "final-enemy-metrics",
+    "pid": 43889,
+    "command": [
+      "node",
+      "scripts/v3solo/collect-q3.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-enemy-metrics.log",
+    "started": "2026-11-13T16:14:44.954709+00:00"
+  },
+  {
+    "name": "final-comparisons",
+    "pid": 43890,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3solo/motion-compare.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-comparisons.log",
+    "started": "2026-11-13T16:14:45.028864+00:00"
+  },
+  {
+    "name": "final-gates",
+    "pid": 43893,
+    "command": [
+      "node",
+      "scripts/v3a2/check-gates.mjs",
+      "G0",
+      "R",
+      "F1",
+      "F2",
+      "M1",
+      "M2",
+      "V1",
+      "V2",
+      "V3",
+      "T1"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-gates.log",
+    "started": "2026-11-13T16:14:47.822983+00:00"
+  },
+  {
+    "name": "final-solo-gates",
+    "pid": 44085,
+    "command": [
+      "node",
+      "scripts/v3solo/check-solo.mjs",
+      "Q3"
+    ],
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/final-solo-gates.log",
+    "started": "2026-11-13T16:14:48.756008+00:00"
   }
 ]

@@ -1,5 +1,5 @@
-PASS V3.freshness: measured=b55fef878076ed880504f74a8719dc1f33839c72; required=evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
-PASS V3.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
+PASS V3.freshness: measured=e9493db6e147c28e1d39b25e90d56a940593959b; required=evidence >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
+PASS V3.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
 PASS V3.committed-source: measured=0; required=eq 0 uncommitted source changes
 PASS V3.cue-density[wave1]: measured=7.54945054945055; required=min 4.775700934579438
 PASS V3.cue-density[wave3]: measured=7.5809935205183585; required=min 4.775700934579438
@@ -23,4 +23,4 @@ PASS V3.unit: measured=0; required=eq 0
 PASS V3.e2e: measured=0; required=eq 0
 PASS V3.parity: measured=0; required=eq 0
 PASS V3.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 25 PASS / 0 FAIL
+TOTAL 25 PASS / 0 FAIL / 25 gates

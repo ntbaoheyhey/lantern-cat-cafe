@@ -7,7 +7,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q0 | done | B then A | Q0-RESULT.json; saved evidence/source and all tests | STARTED 2026-11-13 12:26:47 UTC; PASS Q0.A.clean=0; PASS Q0.B.clean=0; PASS both pushes; A ca90150a5 B e281e4d73; ENDED 2026-11-13 12:38:57 UTC |
 | Q1 | done | B then A | 435/435 browser; B E2E; 33 word-budget screens | STARTED 2026-11-13 12:39:36 UTC; A e7ce36076 B c32b6475f; 230 PASS/0 FAIL; ENDED 2026-11-13T13:19:00.871648+00:00 |
 | Q2 | done | A then B | 0 interrupted ults; skill <=5%; contours 3.25-6.75/min; parity | STARTED 2026-11-13T13:20:12.094442+00:00; PASS59/59; A18ea6e6e8 B298a4fbd8/evidence fa65a9b40; ENDED 2026-11-13T14:38:34.072973+00:00 |
-| Q3 | active | A | M1 full fixtures >=15.80; all enemy displacements >6%; FPS/parity | STARTED 2026-11-13T14:39:07.792289+00:00 |
+| Q3 | done | A | M1 29/29; dependencies 259/259; SOLO9/9; High59.95–60.05; parity | STARTED 2026-11-13T14:39:07.792289+00:00; PASS 259 A +9 SOLO; source af1e1fdf3; evidence commit pending; ENDED 2026-11-13T16:15:40.347744+00:00 |
 | Q4 | todo | B | E3, E4, E5; background search after Q0 |  |
 | Q5 | todo | B (+ A texts) | V and S5; sound reel |  |
 | Q6 | todo | B | U3 54/54 >=8; button/font/word gates |  |
@@ -320,4 +320,279 @@ PASS Q2.battle.duration: measured=180.20099773242632; required=full S5 duration
 PASS Q2.boss.voice-contours: measured=3.4940893635709207; required=3.25–6.75/min
 PASS Q2.boss.duration: measured=120.20299319727891; required=full S5 duration
 TOTAL 59 PASS / 0 FAIL / 59 gates
+```
+
+## Q3 checker evidence
+
+```text
+PASS G0.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
+PASS G0.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
+PASS G0.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS G0.bootstrap-all-fail: measured=347; required=eq 347
+PASS G0.bootstrap-gate-count: measured=347; required=min 100
+PASS G0.tests: measured=0; required=eq 0
+PASS G0.fixtures: measured=3; required=eq 3
+PASS G0.fps: measured=30; required=eq 30
+PASS G0.fixture-captures: measured=3; required=min 3
+PASS G0.checker-test-log: measured=1; required=min 1
+PASS G0.bootstrap-log: measured=1; required=min 1
+PASS G0.compare-tool: measured=1; required=min 1
+PASS G0.capture-tool: measured=1; required=min 1
+PASS G0.typecheck: measured=0; required=eq 0
+PASS G0.unit: measured=0; required=eq 0
+PASS G0.e2e: measured=0; required=eq 0
+PASS G0.parity: measured=0; required=eq 0
+PASS G0.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS R.freshness: measured=ae12e046fd36daf7633838a26a3579a116d9324e; required=evidence >= ae12e046fd36daf7633838a26a3579a116d9324e
+PASS R.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= ae12e046fd36daf7633838a26a3579a116d9324e
+PASS R.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS R.windows: measured=12; required=min 12
+PASS R.window-seconds: measured=10; required=min 10
+PASS R.ultimate-windows: measured=6; required=min 6
+PASS R.unit-boxes: measured=44; required=min 40
+PASS R.unit-frames: measured=11; required=min 10
+PASS R.number-boxes: measured=33; required=min 30
+PASS R.text-frames: measured=10; required=min 10
+PASS R.displacement-windows: measured=3; required=min 3
+PASS R.scale.median: measured=0.20946; required=min 0
+PASS R.scale.p10: measured=0.16723; required=min 0
+PASS R.scale.p90: measured=0.22247; required=min 0
+PASS R.motion.meanEnergy: measured=22.565131092745876; required=min 0
+PASS R.motion.displacementPer10s: measured=0.6666666666666666; required=min 0
+PASS R.ultimate.coverageMedian: measured=0.8743749999999999; required=min 0
+PASS R.ultimate.peakLuminance: measured=255; required=min 0
+PASS R.ultimate.whiteoutFraction: measured=0.05936355311355311; required=min 0
+PASS R.ultimate.dominantHues: measured=3; required=min 0
+PASS R.ultimate.durationMedian: measured=2.599999999999997; required=min 0
+PASS R.numbers.medianHeight720: measured=46.21621621621622; required=min 0
+PASS R.numbers.maxSimultaneous: measured=9; required=min 0
+PASS R.numbers.impactPerSecond: measured=4.28571428571429; required=min 0
+PASS R.text.medianWords: measured=13; required=min 0
+PASS R.audio.normalOnsetsPerSecond: measured=5.544373284537969; required=min 0
+PASS R.audio.ultimateOnsetsPerSecond: measured=6.822429906542055; required=min 0
+PASS R.audio.voiceLikePerMinute: measured=2; required=min 0
+PASS R.reference-json: measured=1; required=min 1
+PASS R.baseline-json: measured=1; required=min 1
+PASS R.research-table: measured=1; required=min 1
+PASS R.table-rows: measured=22; required=min 20
+PASS R.articles: measured=4; required=min 3
+PASS R.motion-rules: measured=12; required=min 12
+PASS R.split-pilots: measured=3; required=eq 3
+PASS R.layer-types: measured=20; required=min 15
+PASS R.targets-measured: measured=1; required=eq 1
+PASS R.typecheck: measured=0; required=eq 0
+PASS R.unit: measured=0; required=eq 0
+PASS R.e2e: measured=0; required=eq 0
+PASS R.parity: measured=0; required=eq 0
+PASS R.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS F1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= 134f13e711208b825f71e860ba029a31c287dce3
+PASS F1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= 134f13e711208b825f71e860ba029a31c287dce3
+PASS F1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS F1.unit-height[wave1@1280x720]: measured=0.20676215855120456; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1280x720]: measured=0.2215818039782693; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1280x720]: measured=0.20554791138210932; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave1@1440x900]: measured=0.20676215855120447; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[wave3@1440x900]: measured=0.22158180397826924; required=band [0.157095,0.26182500000000003]
+PASS F1.unit-height[boss@1440x900]: measured=0.20554791138210918; required=band [0.157095,0.26182500000000003]
+PASS F1.face-occlusion[wave1@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave3@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[boss@1280x720]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave1@1440x900]: measured=0; required=max 0.1
+PASS F1.face-occlusion[wave3@1440x900]: measured=0.003386293028293538; required=max 0.1
+PASS F1.face-occlusion[boss@1440x900]: measured=0; required=max 0.1
+PASS F1.clipping[wave1@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[wave3@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[boss@1280x720]: measured=0; required=eq 0
+PASS F1.clipping[wave1@1440x900]: measured=0; required=eq 0
+PASS F1.clipping[wave3@1440x900]: measured=0; required=eq 0
+PASS F1.clipping[boss@1440x900]: measured=0; required=eq 0
+PASS F1.floor[wave1@1280x720]: measured=0.6295369318181818; required=min 0.5
+PASS F1.floor[wave3@1280x720]: measured=0.5162088068181818; required=min 0.5
+PASS F1.floor[boss@1280x720]: measured=0.5813480113636363; required=min 0.5
+PASS F1.floor[wave1@1440x900]: measured=0.6209446347031964; required=min 0.5
+PASS F1.floor[wave3@1440x900]: measured=0.5049448249619483; required=min 0.5
+PASS F1.floor[boss@1440x900]: measured=0.570519406392694; required=min 0.5
+PASS F1.field-names[wave1@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[wave3@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[boss@1280x720]: measured=0; required=eq 0
+PASS F1.field-names[wave1@1440x900]: measured=0; required=eq 0
+PASS F1.field-names[wave3@1440x900]: measured=0; required=eq 0
+PASS F1.field-names[boss@1440x900]: measured=0; required=eq 0
+PASS F1.core-size: measured=0; required=eq 0
+PASS F1.comparisons: measured=3; required=min 3
+PASS F1.typecheck: measured=0; required=eq 0
+PASS F1.unit: measured=0; required=eq 0
+PASS F1.e2e: measured=0; required=eq 0
+PASS F1.parity: measured=0; required=eq 0
+PASS F1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS F2.freshness: measured=e9493db6e147c28e1d39b25e90d56a940593959b; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS F2.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS F2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS F2.alpha[wave1]: measured=1; required=min 0.97
+PASS F2.alpha[wave3]: measured=1; required=min 0.97
+PASS F2.alpha[boss]: measured=1; required=min 0.97
+PASS F2.persistent-bubbles[wave1]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[wave3]: measured=0; required=eq 0
+PASS F2.persistent-bubbles[boss]: measured=0; required=eq 0
+PASS F2.contrast[wave1]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[wave3]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[boss]: measured=39.72415996830986; required=min 18
+PASS F2.comparisons: measured=3; required=min 3
+PASS F2.typecheck: measured=0; required=eq 0
+PASS F2.unit: measured=0; required=eq 0
+PASS F2.e2e: measured=0; required=eq 0
+PASS F2.parity: measured=0; required=eq 0
+PASS F2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS M1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS M1.input-freshness: measured=0; required=eq 0 missing or stale raw captures/reviews
+PASS M1.seconds[wave1]: measured=30.333333333333332; required=min 30
+PASS M1.seconds[wave3]: measured=30.866666666666667; required=min 30
+PASS M1.seconds[boss]: measured=32.93333333333333; required=min 30
+PASS M1.displacements[wave1]: measured=17.802197802197803; required=min 2
+PASS M1.displacements[wave3]: measured=17.170626349892007; required=min 2
+PASS M1.displacements[boss]: measured=16.396761133603242; required=min 2
+PASS M1.motion-energy[wave1]: measured=15.908401105663565; required=min 15.795591764922111
+PASS M1.motion-energy[wave3]: measured=17.3206211638141; required=min 15.795591764922111
+PASS M1.motion-energy[boss]: measured=17.095655655063755; required=min 15.795591764922111
+PASS M1.every-action-moves[wave1]: measured=0.1052002746839527; required=min 0.06
+PASS M1.every-action-moves[wave3]: measured=0.1052002746839527; required=min 0.06
+PASS M1.every-action-moves[boss]: measured=0.1052002746839527; required=min 0.06
+PASS M1.hit-knockback[wave1]: measured=1; required=eq 1
+PASS M1.hit-knockback[wave3]: measured=1; required=eq 1
+PASS M1.hit-knockback[boss]: measured=1; required=eq 1
+PASS M1.high-fps[wave1]: measured=59.95553297967696; required=min 50
+PASS M1.high-fps[wave3]: measured=60.046304778764494; required=min 50
+PASS M1.high-fps[boss]: measured=59.94804502761296; required=min 50
+PASS M1.crowded-units: measured=10; required=min 10
+PASS M1.archetype-strips: measured=12; required=min 6
+PASS M1.typecheck: measured=0; required=eq 0
+PASS M1.unit: measured=0; required=eq 0
+PASS M1.e2e: measured=0; required=eq 0
+PASS M1.parity: measured=0; required=eq 0
+PASS M1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS M2.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M2.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS M2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS M2.units-inspected: measured=22; required=eq 22
+PASS M2.separate-parts: measured=22; required=min 20
+PASS M2.visible-faces: measured=22; required=eq 22
+PASS M2.zero-holes: measured=18; required=min 18
+PASS M2.remaining-holes: measured=79; required=max 150
+PASS M2.extreme-poses: measured=8; required=min 8
+PASS M2.joint-overlap: measured=12; required=min 12
+PASS M2.core-size: measured=0; required=eq 0
+PASS M2.face-strips: measured=23; required=min 22
+PASS M2.typecheck: measured=0; required=eq 0
+PASS M2.unit: measured=0; required=eq 0
+PASS M2.e2e: measured=0; required=eq 0
+PASS M2.parity: measured=0; required=eq 0
+PASS M2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS V1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= af1e1fdf32fb184fb597bfc59888376c653ef005
+PASS V1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= af1e1fdf32fb184fb597bfc59888376c653ef005
+PASS V1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V1.plate-count: measured=13; required=eq 13
+PASS V1.coverage: measured=0.6254928977272727; required=min 0.6120624999999998
+PASS V1.viewport: measured=1; required=eq 1
+PASS V1.edges: measured=2; required=eq 2
+PASS V1.layer-types: measured=11; required=min 7
+PASS V1.particles: measured=480; required=min 300
+PASS V1.beats: measured=3; required=min 3
+PASS V1.distinctness: measured=0.18218093990217687; required=max 0.55
+PASS V1.pair-count: measured=78; required=eq 78
+PASS V1.bytes: measured=20157327; required=max 20971520
+PASS V1.motif-area: measured=0.46392361111111113; required=min 0.4
+PASS V1.camera-paths: measured=13; required=eq 13
+PASS V1.comparisons: measured=13; required=min 13
+PASS V1.render-log: measured=1; required=min 1
+PASS V1.typecheck: measured=0; required=eq 0
+PASS V1.unit: measured=0; required=eq 0
+PASS V1.e2e: measured=0; required=eq 0
+PASS V1.parity: measured=0; required=eq 0
+PASS V1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS V2.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS V2.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS V2.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V2.input-freshness: measured=0; required=eq 0 missing or stale raw captures/reviews
+PASS V2.number-height[wave1]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.number-height[wave3]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.number-height[boss]: measured=46; required=band [34.66216216216216,57.770270270270274]
+PASS V2.active-coverage[wave1]: measured=0.25296332465277777; required=min 0.15
+PASS V2.active-coverage[wave3]: measured=0.16555338541666667; required=min 0.15
+PASS V2.active-coverage[boss]: measured=0.328974609375; required=min 0.15
+PASS V2.basic-coverage[wave1]: measured=0.09510308159722222; required=min 0.05
+PASS V2.basic-coverage[wave3]: measured=0.07045572916666666; required=min 0.05
+PASS V2.basic-coverage[boss]: measured=0.0726974826388889; required=min 0.05
+PASS V2.impact-density[wave1]: measured=5.769230769230728; required=min 3.0000000000000027
+PASS V2.impact-density[wave3]: measured=5.76923076923085; required=min 3.0000000000000027
+PASS V2.impact-density[boss]: measured=5.769230769230728; required=min 3.0000000000000027
+PASS V2.high-fps[wave1]: measured=60.03480519911581; required=min 50
+PASS V2.high-fps[wave3]: measured=60.05606341657097; required=min 50
+PASS V2.high-fps[boss]: measured=60.0518061351273; required=min 50
+PASS V2.sequences: measured=36; required=min 36
+PASS V2.all-active-coverage: measured=0.23277560763888888; required=min 0.15
+PASS V2.all-basic-coverage: measured=0.06610894097222222; required=min 0.05
+PASS V2.distinctness: measured=0.5463187399806122; required=max 0.6
+PASS V2.sequence-strips: measured=36; required=min 36
+PASS V2.typecheck: measured=0; required=eq 0
+PASS V2.unit: measured=0; required=eq 0
+PASS V2.e2e: measured=0; required=eq 0
+PASS V2.parity: measured=0; required=eq 0
+PASS V2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS V3.freshness: measured=e9493db6e147c28e1d39b25e90d56a940593959b; required=evidence >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
+PASS V3.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
+PASS V3.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS V3.cue-density[wave1]: measured=7.54945054945055; required=min 4.775700934579438
+PASS V3.cue-density[wave3]: measured=7.5809935205183585; required=min 4.775700934579438
+PASS V3.cue-density[boss]: measured=6.983805668016195; required=min 4.775700934579438
+PASS V3.ultimate-voice[wave1]: measured=1; required=eq 1
+PASS V3.ultimate-voice[wave3]: measured=1; required=eq 1
+PASS V3.ultimate-voice[boss]: measured=1; required=eq 1
+PASS V3.active-voice[wave1]: measured=1; required=eq 1
+PASS V3.active-voice[wave3]: measured=1; required=eq 1
+PASS V3.active-voice[boss]: measured=1; required=eq 1
+PASS V3.unknown-cues[wave1]: measured=0; required=eq 0
+PASS V3.unknown-cues[wave3]: measured=0; required=eq 0
+PASS V3.unknown-cues[boss]: measured=0; required=eq 0
+PASS V3.bark-spacing[wave1]: measured=7.5; required=band [7,8]
+PASS V3.bark-spacing[wave3]: measured=7.5; required=band [7,8]
+PASS V3.bark-spacing[boss]: measured=7.5; required=band [7,8]
+PASS V3.callout-rows: measured=112; required=min 25
+PASS V3.callout-table: measured=1; required=min 1
+PASS V3.typecheck: measured=0; required=eq 0
+PASS V3.unit: measured=0; required=eq 0
+PASS V3.e2e: measured=0; required=eq 0
+PASS V3.parity: measured=0; required=eq 0
+PASS V3.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+PASS T1.freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
+PASS T1.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
+PASS T1.committed-source: measured=0; required=eq 0 uncommitted source changes
+PASS T1.word-samples[wave1]: measured=30; required=min 30
+PASS T1.word-samples[wave3]: measured=30; required=min 30
+PASS T1.word-samples[boss]: measured=30; required=min 30
+PASS T1.word-max[wave1]: measured=3; required=max 8
+PASS T1.word-max[wave3]: measured=3; required=max 8
+PASS T1.word-max[boss]: measured=3; required=max 8
+PASS T1.system-fonts: measured=0; required=eq 0
+PASS T1.desktop-small: measured=1; required=min 1
+PASS T1.desktop-large: measured=1; required=min 1
+PASS T1.phone: measured=1; required=min 1
+PASS T1.comparisons: measured=3; required=min 3
+PASS T1.typecheck: measured=0; required=eq 0
+PASS T1.unit: measured=0; required=eq 0
+PASS T1.e2e: measured=0; required=eq 0
+PASS T1.parity: measured=0; required=eq 0
+PASS T1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
+TOTAL 259 PASS / 0 FAIL / 259 gates
+PASS Q3.wave1.enemy-actions: measured=12; required=>0 measured enemy actions
+PASS Q3.wave1.enemy-displacement: measured=12; required=100% >6% viewport width
+PASS Q3.wave1.minimum-displacement: measured=0.11500722867799087; required=>0.06
+PASS Q3.wave3.enemy-actions: measured=12; required=>0 measured enemy actions
+PASS Q3.wave3.enemy-displacement: measured=12; required=100% >6% viewport width
+PASS Q3.wave3.minimum-displacement: measured=0.11500722867799087; required=>0.06
+PASS Q3.boss.enemy-actions: measured=9; required=>0 measured enemy actions
+PASS Q3.boss.enemy-displacement: measured=9; required=100% >6% viewport width
+PASS Q3.boss.minimum-displacement: measured=0.11499948174032582; required=>0.06
+TOTAL 9 PASS / 0 FAIL / 9 gates
 ```

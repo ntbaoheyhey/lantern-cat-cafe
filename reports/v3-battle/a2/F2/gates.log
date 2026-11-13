@@ -1,5 +1,5 @@
-PASS F2.freshness: measured=ec01ea423ca3928db42e5eacc7e42aef76254c57; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
-PASS F2.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= ec01ea423ca3928db42e5eacc7e42aef76254c57
+PASS F2.freshness: measured=e9493db6e147c28e1d39b25e90d56a940593959b; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+PASS F2.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
 PASS F2.committed-source: measured=0; required=eq 0 uncommitted source changes
 PASS F2.alpha[wave1]: measured=1; required=min 0.97
 PASS F2.alpha[wave3]: measured=1; required=min 0.97
@@ -7,13 +7,13 @@ PASS F2.alpha[boss]: measured=1; required=min 0.97
 PASS F2.persistent-bubbles[wave1]: measured=0; required=eq 0
 PASS F2.persistent-bubbles[wave3]: measured=0; required=eq 0
 PASS F2.persistent-bubbles[boss]: measured=0; required=eq 0
-PASS F2.contrast[wave1]: measured=39.69182659063967; required=min 18
-PASS F2.contrast[wave3]: measured=39.69182659063967; required=min 18
-PASS F2.contrast[boss]: measured=39.69182659063967; required=min 18
+PASS F2.contrast[wave1]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[wave3]: measured=39.72415996830986; required=min 18
+PASS F2.contrast[boss]: measured=39.72415996830986; required=min 18
 PASS F2.comparisons: measured=3; required=min 3
 PASS F2.typecheck: measured=0; required=eq 0
 PASS F2.unit: measured=0; required=eq 0
 PASS F2.e2e: measured=0; required=eq 0
 PASS F2.parity: measured=0; required=eq 0
 PASS F2.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 18 PASS / 0 FAIL
+TOTAL 18 PASS / 0 FAIL / 18 gates

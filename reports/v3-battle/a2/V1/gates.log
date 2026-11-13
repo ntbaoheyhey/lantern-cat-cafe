@@ -1,8 +1,8 @@
-PASS V1.freshness: measured=c7ff00b92a7a18d658a5b24c4576d20ecbea1046; required=evidence >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
-PASS V1.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
+PASS V1.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= af1e1fdf32fb184fb597bfc59888376c653ef005
+PASS V1.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= af1e1fdf32fb184fb597bfc59888376c653ef005
 PASS V1.committed-source: measured=0; required=eq 0 uncommitted source changes
 PASS V1.plate-count: measured=13; required=eq 13
-PASS V1.coverage: measured=0.625700284090909; required=min 0.6120624999999998
+PASS V1.coverage: measured=0.6254928977272727; required=min 0.6120624999999998
 PASS V1.viewport: measured=1; required=eq 1
 PASS V1.edges: measured=2; required=eq 2
 PASS V1.layer-types: measured=11; required=min 7
@@ -20,4 +20,4 @@ PASS V1.unit: measured=0; required=eq 0
 PASS V1.e2e: measured=0; required=eq 0
 PASS V1.parity: measured=0; required=eq 0
 PASS V1.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 22 PASS / 0 FAIL
+TOTAL 22 PASS / 0 FAIL / 22 gates

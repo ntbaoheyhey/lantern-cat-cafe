@@ -1,5 +1,5 @@
-PASS G0.freshness: measured=c5f9192bc647547278c25f9213be3e80db75399e; required=evidence >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f
-PASS G0.suite-freshness: measured=e7ce360769ce3a32d7586ee1df8a434e9cd48d32; required=suite >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f
+PASS G0.freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=evidence >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
+PASS G0.suite-freshness: measured=af1e1fdf32fb184fb597bfc59888376c653ef005; required=suite >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
 PASS G0.committed-source: measured=0; required=eq 0 uncommitted source changes
 PASS G0.bootstrap-all-fail: measured=347; required=eq 347
 PASS G0.bootstrap-gate-count: measured=347; required=min 100
@@ -16,4 +16,4 @@ PASS G0.unit: measured=0; required=eq 0
 PASS G0.e2e: measured=0; required=eq 0
 PASS G0.parity: measured=0; required=eq 0
 PASS G0.artifact-freshness: measured=0; required=eq 0 artifacts older than last source commit
-TOTAL 18 PASS / 0 FAIL
+TOTAL 18 PASS / 0 FAIL / 18 gates

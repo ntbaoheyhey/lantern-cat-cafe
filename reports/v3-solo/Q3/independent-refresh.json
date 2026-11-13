@@ -1,0 +1,79 @@
+{
+  "clarity": {
+    "command": [
+      "node",
+      "scripts/v3a2/clarity-audit.mjs"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-clarity.log",
+    "started": "2026-11-13T15:58:47.195815+00:00",
+    "ended": "2026-11-13T15:59:02.857664+00:00",
+    "sourceCommit": "e9493db6e147c28e1d39b25e90d56a940593959b"
+  },
+  "audio": {
+    "command": [
+      "node",
+      "scripts/v3a2/audio-review.mjs"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-audio.log",
+    "started": "2026-11-13T15:59:02.867643+00:00",
+    "ended": "2026-11-13T15:59:26.683939+00:00",
+    "sourceCommit": "e9493db6e147c28e1d39b25e90d56a940593959b"
+  },
+  "plate-browser": {
+    "command": [
+      "node",
+      "scripts/v3a2/plate-browser-audit.mjs"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-browser.log",
+    "started": "2026-11-13T16:00:35.077843+00:00",
+    "ended": "2026-11-13T16:00:50.803458+00:00",
+    "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005"
+  },
+  "plate-metrics": {
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/plate-metrics.py"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-metrics.log",
+    "started": "2026-11-13T16:00:50.812848+00:00",
+    "ended": "2026-11-13T16:00:53.966101+00:00",
+    "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005"
+  },
+  "plate-compare": {
+    "command": [
+      "node",
+      "scripts/v3a2/plate-compare.mjs"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-plate-compare.log",
+    "started": "2026-11-13T16:00:53.977559+00:00",
+    "ended": "2026-11-13T16:01:00.284762+00:00",
+    "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005"
+  },
+  "joint-overlap": {
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3a2/rig-joint-overlap.py"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-joint-overlap.log",
+    "started": "2026-11-13T16:01:00.293482+00:00",
+    "ended": "2026-11-13T16:01:01.481762+00:00",
+    "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005"
+  },
+  "rig-metrics": {
+    "command": [
+      "node",
+      "scripts/v3a2/collect-rigs.mjs"
+    ],
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v3-solo/Q3/refresh-rig-metrics.log",
+    "started": "2026-11-13T16:01:01.495519+00:00",
+    "ended": "2026-11-13T16:01:01.965273+00:00",
+    "sourceCommit": "af1e1fdf32fb184fb597bfc59888376c653ef005"
+  }
+}

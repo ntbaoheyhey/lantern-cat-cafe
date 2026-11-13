@@ -1,5 +1,5 @@
-FAIL G0.freshness: measured=missing; required=evidence >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f
-FAIL G0.suite-freshness: measured=missing; required=suite >= fcd64aac3b8a68d6f271a8bf7de24a3d105e9d7f
+FAIL G0.freshness: measured=missing; required=evidence >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
+FAIL G0.suite-freshness: measured=missing; required=suite >= 4a0dc810dd1ac99f8eb58f0cf5e42f4bb3965ca7
 FAIL G0.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL G0.bootstrap-all-fail: measured=missing; required=eq UNMEASURED TARGET
 FAIL G0.bootstrap-gate-count: measured=missing; required=min 100
@@ -58,8 +58,8 @@ FAIL R.unit: measured=missing; required=eq 0
 FAIL R.e2e: measured=missing; required=eq 0
 FAIL R.parity: measured=missing; required=eq 0
 FAIL R.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL F1.freshness: measured=missing; required=evidence >= b6ac286d2cefcbfe008fcf427d2071f69fa8e69f
-FAIL F1.suite-freshness: measured=missing; required=suite >= b6ac286d2cefcbfe008fcf427d2071f69fa8e69f
+FAIL F1.freshness: measured=missing; required=evidence >= 134f13e711208b825f71e860ba029a31c287dce3
+FAIL F1.suite-freshness: measured=missing; required=suite >= 134f13e711208b825f71e860ba029a31c287dce3
 FAIL F1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL F1.unit-height[wave1@1280x720]: measured=missing; required=band [0.157095,0.26182500000000003]
 FAIL F1.unit-height[wave3@1280x720]: measured=missing; required=band [0.157095,0.26182500000000003]
@@ -98,8 +98,8 @@ FAIL F1.unit: measured=missing; required=eq 0
 FAIL F1.e2e: measured=missing; required=eq 0
 FAIL F1.parity: measured=missing; required=eq 0
 FAIL F1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL F2.freshness: measured=missing; required=evidence >= ec01ea423ca3928db42e5eacc7e42aef76254c57
-FAIL F2.suite-freshness: measured=missing; required=suite >= ec01ea423ca3928db42e5eacc7e42aef76254c57
+FAIL F2.freshness: measured=missing; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+FAIL F2.suite-freshness: measured=missing; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
 FAIL F2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL F2.alpha[wave1]: measured=missing; required=min 0.97
 FAIL F2.alpha[wave3]: measured=missing; required=min 0.97
@@ -116,8 +116,8 @@ FAIL F2.unit: measured=missing; required=eq 0
 FAIL F2.e2e: measured=missing; required=eq 0
 FAIL F2.parity: measured=missing; required=eq 0
 FAIL F2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL M1.freshness: measured=missing; required=evidence >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
-FAIL M1.suite-freshness: measured=missing; required=suite >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
+FAIL M1.freshness: measured=missing; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+FAIL M1.suite-freshness: measured=missing; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
 FAIL M1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL M1.input-freshness: measured=4; required=eq 0 missing or stale raw captures/reviews
 FAIL M1.seconds[wave1]: measured=missing; required=min 30
@@ -145,8 +145,8 @@ FAIL M1.unit: measured=missing; required=eq 0
 FAIL M1.e2e: measured=missing; required=eq 0
 FAIL M1.parity: measured=missing; required=eq 0
 FAIL M1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL M2.freshness: measured=missing; required=evidence >= 341567cfb9a2e3e974de03bda6f4f649542fc103
-FAIL M2.suite-freshness: measured=missing; required=suite >= 341567cfb9a2e3e974de03bda6f4f649542fc103
+FAIL M2.freshness: measured=missing; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+FAIL M2.suite-freshness: measured=missing; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
 FAIL M2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL M2.units-inspected: measured=missing; required=eq 22
 FAIL M2.separate-parts: measured=missing; required=min 20
@@ -162,8 +162,8 @@ FAIL M2.unit: measured=missing; required=eq 0
 FAIL M2.e2e: measured=missing; required=eq 0
 FAIL M2.parity: measured=missing; required=eq 0
 FAIL M2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V1.freshness: measured=missing; required=evidence >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
-FAIL V1.suite-freshness: measured=missing; required=suite >= c7ff00b92a7a18d658a5b24c4576d20ecbea1046
+FAIL V1.freshness: measured=missing; required=evidence >= af1e1fdf32fb184fb597bfc59888376c653ef005
+FAIL V1.suite-freshness: measured=missing; required=suite >= af1e1fdf32fb184fb597bfc59888376c653ef005
 FAIL V1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V1.plate-count: measured=missing; required=eq 13
 FAIL V1.coverage: measured=missing; required=min 0.6120624999999998
@@ -184,8 +184,8 @@ FAIL V1.unit: measured=missing; required=eq 0
 FAIL V1.e2e: measured=missing; required=eq 0
 FAIL V1.parity: measured=missing; required=eq 0
 FAIL V1.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V2.freshness: measured=missing; required=evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
-FAIL V2.suite-freshness: measured=missing; required=suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
+FAIL V2.freshness: measured=missing; required=evidence >= e9493db6e147c28e1d39b25e90d56a940593959b
+FAIL V2.suite-freshness: measured=missing; required=suite >= e9493db6e147c28e1d39b25e90d56a940593959b
 FAIL V2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V2.input-freshness: measured=4; required=eq 0 missing or stale raw captures/reviews
 FAIL V2.number-height[wave1]: measured=missing; required=band [34.66216216216216,57.770270270270274]
@@ -213,8 +213,8 @@ FAIL V2.unit: measured=missing; required=eq 0
 FAIL V2.e2e: measured=missing; required=eq 0
 FAIL V2.parity: measured=missing; required=eq 0
 FAIL V2.artifact-freshness: measured=missing; required=eq 0 artifacts older than last source commit
-FAIL V3.freshness: measured=missing; required=evidence >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
-FAIL V3.suite-freshness: measured=missing; required=suite >= a40eb3bea88598ad1f27c9d90a9f3d4fe2ec3a94
+FAIL V3.freshness: measured=missing; required=evidence >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
+FAIL V3.suite-freshness: measured=missing; required=suite >= a6cfbb3014f09719bec2584ecfcd6f8126e183df
 FAIL V3.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
 FAIL V3.cue-density[wave1]: measured=missing; required=min 4.775700934579438
 FAIL V3.cue-density[wave3]: measured=missing; required=min 4.775700934579438
@@ -260,7 +260,7 @@ FAIL T1.artifact-freshness: measured=missing; required=eq 0 artifacts older than
 FAIL SY1.freshness: measured=missing; required=evidence >= source revision
 FAIL SY1.suite-freshness: measured=missing; required=suite >= source revision
 FAIL SY1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY1.date: measured=2026-11-13T13:06:29.560Z; required=>= 2026-11-16T12:00:00Z and evidence after that time
+FAIL SY1.date: measured=2026-11-13T16:14:35.155Z; required=>= 2026-11-16T12:00:00Z and evidence after that time
 FAIL SY1.report: measured=0; required=min 1
 FAIL SY1.commit-ids: measured=missing; required=eq 2
 FAIL SY1.lint: measured=missing; required=eq 0
@@ -275,7 +275,7 @@ FAIL SY1.artifact-freshness: measured=missing; required=eq 0 artifacts older tha
 FAIL SY2.freshness: measured=missing; required=evidence >= source revision
 FAIL SY2.suite-freshness: measured=missing; required=suite >= source revision
 FAIL SY2.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY2.date: measured=2026-11-13T13:06:29.562Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
+FAIL SY2.date: measured=2026-11-13T16:14:35.156Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
 FAIL SY2.report: measured=0; required=min 1
 FAIL SY2.commit-ids: measured=missing; required=eq 2
 FAIL SY2.lint: measured=missing; required=eq 0
@@ -290,7 +290,7 @@ FAIL SY2.artifact-freshness: measured=missing; required=eq 0 artifacts older tha
 FAIL D1.freshness: measured=missing; required=evidence >= 4ab25a4690db7254e039d8db87698f6147eaeec8
 FAIL D1.suite-freshness: measured=missing; required=suite >= 4ab25a4690db7254e039d8db87698f6147eaeec8
 FAIL D1.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL D1.date: measured=2026-11-13T13:06:29.562Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
+FAIL D1.date: measured=2026-11-13T16:14:35.156Z; required=>= 2026-11-18T12:00:00Z and evidence after that time
 FAIL D1.after-sync: measured=missing; required=eq 1
 FAIL D1.duration: measured=missing; required=eq 90
 FAIL D1.battle-time: measured=missing; required=min 55
@@ -320,7 +320,7 @@ FAIL D1.artifact-freshness: measured=missing; required=eq 0 artifacts older than
 FAIL SY3.freshness: measured=missing; required=evidence >= source revision
 FAIL SY3.suite-freshness: measured=missing; required=suite >= source revision
 FAIL SY3.committed-source: measured=missing evidence; required=eq 0 uncommitted source changes
-FAIL SY3.date: measured=2026-11-13T13:06:29.645Z; required=>= 2026-11-19T12:00:00Z and evidence after that time
+FAIL SY3.date: measured=2026-11-13T16:14:35.199Z; required=>= 2026-11-19T12:00:00Z and evidence after that time
 FAIL SY3.report: measured=0; required=min 1
 FAIL SY3.status: measured=0; required=min 1
 FAIL SY3.status-lines: measured=missing; required=max 30
