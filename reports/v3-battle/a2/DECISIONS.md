@@ -148,3 +148,5 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 2026-11-13 Q5: candidate28 mild speech shelf still loses Cinnamon charge and Biscuit release. Author clear two-word alternatives, Stay back! and Charge together!, for measured B synthesis. No combat logic or timing changes; runtime uses measured B duration metadata.
 
 2026-11-13 Q5: complete scene28 guard also found Cinnamon Take a sip! ambiguous after codec/shelf. Add Drink up! as the A-owned skill phrase; B must retain recognition, identity and timing checks.
+
+2026-11-13 Q5 scene28 final112-line codec guard:7 misses, including four enemy skill lines. Add Kettle strike!, A gentle tap!, Rain falls!, Sweet blast! as original A-owned alternatives for measured B trials; no runtime/combat changes. Prior Cinnamon note referred to the running guard, not final acceptance.

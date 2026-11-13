@@ -5,9 +5,9 @@ NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
 
-NOW: Q4 sensitivity continues; Q5 candidate28 preserved as unaccepted. Repairing three ambiguous callouts before full capture.
+NOW: Q4 sensitivity continues; Q5 full112-line codec guard finds7 ambiguous lines. Authoring clearer phrases before measured synthesis.
 NEXT 1: Native37303 + sensitivity59609 continue; supervisor16952 resumes missing native cases. Confirm24 top10 finished,8 pass T-a..g.
-NEXT 2: A wording Stay back!/Charge together!/Drink up! -> B two variants, check clean and mild-shelf codec recognition and character identities.
+NEXT 2: B scene28-wording probes for7 cues/9 takes; require source+codec recognition, levels and12 character identities before publication.
 NEXT 3: Complete sensitivity, refresh E3-E5 evidence and suite. Full battle/boss durations still required for Q5.
 LAST GOOD COMMIT A:3626a7802 pushed; Q3 source af1e1fdf3; callout text d41e2a338.
 LAST GOOD COMMIT B:13c608d70 pushed; candidate28 diagnostic balance, engine16/16 PASS; final capture pending.
@@ -25,4 +25,4 @@ SUITES: Full workspace types + unit PASS on f6db229c6; tests/q4-q5-articulation-
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze. No early merge or deployment.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
 DISK-LOG: 282.79GiB free; Q4/resume-disk-1920.json; removed1 generated paths.
-UPDATED: 2026-11-13T19:19:26.131041+00:00
+UPDATED: 2026-11-13T19:21:44.739377+00:00
