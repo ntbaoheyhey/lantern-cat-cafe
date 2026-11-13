@@ -1,5 +1,5 @@
 # V3B2 handoff
-NOW: V3SOLO Q0: types and 17 economy-lab tests PASS; saving inherited E3 source/reports. Broad suite is running; no E3 acceptance.
+NOW: V3SOLO Q0: types and 17 economy-lab tests PASS; saving inherited E3 source/reports. Full unit suite PASS; standalone word-budget blocked at entrance; Q1 will repair shared helper/route. No E3 acceptance.
 DIAGNOSIS: Round 4 raw JSON key ordering broke config lookup/local refinement, despite correct worker metrics. All 40 configs reconstructed and verified by original hashes.
 FIX: Canonical config hashes + fail-closed worker identity check. Round 4 honestly reports two global passes. Frozen modules prevent mid-run model drift.
 NEXT 1: Continue E3 to >=15 measured rounds / >=600 unique configs; inspect outliers and adjust >=10 live ranges. Log each with log-round.mjs.
@@ -18,3 +18,4 @@ LEARNED: R6/R7 pass T-a/b/c/d/f/g at 40 seeds; T-e remains ~0.91–0.95, never d
 OPEN: C1 public RPC allows only 100-block log windows (existing reader uses 2000); config omits optional registry addresses and gates reads off. Diagnosis in DECISIONS.
 PIDS: 67495 static 5995; 72306 native sensitivity (4 workers). Round 9 PID recorded next.
 LEARNED: PROGRESSION-200 complete: casual Legendary median 13, heavy 9, 1,000 accounts in 1,676.79s.
+Q0 OWNED PID: 80690 Vite5996, tests/q0-vite.log. Full unit suite PASS (2537 web / 1396 rules / 732 server).

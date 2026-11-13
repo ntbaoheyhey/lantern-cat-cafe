@@ -340,3 +340,7 @@ PASS E2.sinks: measured 3; required >= 3 new sinks in rules, server, UI, sim wit
 PASS E2.bellsOnly: measured 11; required passing test + SHA-256-verified log
 
 Checks: tests/e2-final-types.log, tests/e2-final-suite.log (2,536 web, 730 server; 1,393 rules plus two existing expected failures and eleven skips), tests/e2-model.log (8), tests/e2-browser-final.log. SINKS.json ties production source hashes to three actual Anvil burns and quote screenshots. SINK-MODEL.json is a 40-seed regression, not E3 acceptance. Existing audio callsites were re-inspected: no unresolved or missing cues.
+
+## V3SOLO Q0 preservation checks
+
+Workspace types PASS; economy-lab 17/17 PASS; full unit suite PASS (73 root, 1,396 rules, 732 server, 2,537 web, 72 other package tests; two existing expected failures and eleven skips). Logs: tests/q0-typecheck.log, tests/q0-economy-lab.log, tests/q0-full-unit.log. Standalone browser budget fails before entry because it lacks the returning-guest fixture (tests/q0-browser.log); Q1 repairs this without excluding screens. Inherited source preserved at 021dd1d43ee82d9459ba56413089a201c5d04a66; no E3 acceptance claimed.
