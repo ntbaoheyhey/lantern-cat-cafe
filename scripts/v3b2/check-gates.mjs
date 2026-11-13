@@ -18,7 +18,10 @@ const percentile = (xs, p) => {
 };
 
 export function checkGates({root = DEFAULT_ROOT, now = new Date()} = {}) {
-  const rows = [], cache = new Map();
+  // One synchronous evidence snapshot per invocation. Large committed economy
+  // reports are cited hundreds of times; hash each file and Git blob once.
+  // New calls get fresh caches, so edits between checks are still observed.
+  const rows = [], cache = new Map(), digests = new Map(), committedFiles = new Map();
   const path = p => { const a = resolve(root,p); if (relative(root,a).startsWith('..')) throw Error('Evidence outside repository'); return a; };
   const file = p => typeof p === 'string' && existsSync(path(p)) && statSync(path(p)).isFile() && statSync(path(p)).size > 0;
   const text = p => file(p) ? readFileSync(path(p),'utf8') : '';
@@ -28,11 +31,20 @@ export function checkGates({root = DEFAULT_ROOT, now = new Date()} = {}) {
     if (!existsSync(path(dir))) return [];
     return readdirSync(path(dir),{withFileTypes:true}).flatMap(e => e.isSymbolicLink() ? [] : e.isDirectory() ? files(`${dir}/${e.name}`) : [`${dir}/${e.name}`]);
   };
-  const digest = p => file(p) ? createHash('sha256').update(readFileSync(path(p))).digest('hex') : undefined;
+  const digest = p => {
+    if (!digests.has(p)) digests.set(p, file(p) ? createHash('sha256').update(readFileSync(path(p))).digest('hex') : undefined);
+    return digests.get(p);
+  };
   const signedFile = r => !!r && file(r.path) && typeof r.sha256 === 'string' && digest(r.path) === r.sha256;
   const committed = p => {
-    if (!file(p)) return false;
-    try { return createHash('sha256').update(execFileSync('git',['show',`HEAD:${p}`],{cwd:root,stdio:['ignore','pipe','ignore'],maxBuffer:64*1024*1024})).digest('hex')===digest(p); } catch { return false; }
+    if (!committedFiles.has(p)) {
+      let matches = false;
+      if (file(p)) {
+        try { matches = createHash('sha256').update(execFileSync('git',['show',`HEAD:${p}`],{cwd:root,stdio:['ignore','pipe','ignore'],maxBuffer:64*1024*1024})).digest('hex')===digest(p); } catch {}
+      }
+      committedFiles.set(p, matches);
+    }
+    return committedFiles.get(p);
   };
   const test = r => !!r && r.exitCode === 0 && r.passed > 0 && signedFile(r.log);
   const record = (id, threshold, measured, pass, detail='') => rows.push({id,card:id.split('.')[0],threshold,measured: measured ?? 'missing',status:pass?'PASS':'FAIL',detail});

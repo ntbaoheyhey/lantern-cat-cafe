@@ -177,3 +177,7 @@ Full120.203s boss35 is rejected: contours7.487/min exceeds6.75, ticks0.940/s exc
 ## 2026-11-13T20:57:59.913489+00:00 — actual boss36 result
 
 Full120.2s boss36 passes transient rate0.849/s, loudness-14.67 LUFS and peak-2.31dBTP. Its14 contours give6.988/min, still above6.75. Trial37 keeps the accompaniment opening and uses a neutral boss cue trim (1.5dB above the original balance). This is the third runtime gain candidate; preserve all rejected outputs and do not omit any callout or change a threshold.
+
+## SOLO Q5 evidence checker cache
+
+The citation check repeatedly read and hashed the same large committed economy JSON for every report number. Digest and committed-blob results now live in invocation-local caches. Every new invocation rereads evidence. All gate rows are identical before and after (q5-checker-cache-equivalence.json); all fifteen existing checker tests pass. No thresholds or required evidence changed.
