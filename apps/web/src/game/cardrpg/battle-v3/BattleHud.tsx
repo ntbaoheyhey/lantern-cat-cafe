@@ -27,8 +27,8 @@ function Meter({hp,max,name,shield=0,reduced=false}:{hp:number;max:number;name:s
 function Rage({value,name}:{value:number;name:string}){
  return <div className="b3-rage" role="progressbar" aria-label={name+' rage'} aria-valuemin={0} aria-valuemax={100} aria-valuenow={value}><i style={{width:`${Math.min(100,value)}%`}}/></div>;
 }
-function Badges({actor}:{actor:R.Actor}){
- return <div className="b3-statuses" aria-label={actor.name+' statuses'}>
+function Badges({actor,tutorial=false}:{actor:R.Actor;tutorial?:boolean}){
+ return <div data-tutorial-id={tutorial?"battle-statuses":undefined} className="b3-statuses" aria-label={actor.name+' statuses'}>
   {actor.shield>0&&<span role="img" tabIndex={0} aria-label={`${actor.shield} shield`} title={`${actor.shield} shield`} style={{color:STATUS_COLOR.shield}}><svg viewBox="0 0 20 20" aria-hidden="true"><path d={STATUS_PATH.shield}/></svg></span>}
   {actor.statuses.slice(0,3).map(s=>{const body=STATUS_BODY[s.id]??'debuff',rule=R.statusRuleV5(s.id,R.STATUS_BY_ID[s.id]);return <span key={s.id} tabIndex={0} role="img" aria-label={`${rule.name}, ${s.stacks} stacks, ${s.remaining} rounds. ${rule.description}`} title={rule.name+': '+rule.description} style={{color:STATUS_COLOR[body]}}>
    <svg viewBox="0 0 20 20" aria-hidden="true"><path d={STATUS_PATH[body]}/></svg><b>{s.stacks}</b></span>;})}
@@ -73,18 +73,20 @@ export default function BattleHud({m}:{m:DepthModel}){
     <GameIcon name="boss-seal" size={32}/><Meter hp={boss.hp} max={boss.maxHp} name={boss.name} shield={boss.shield} reduced={m.state.settings.reducedMotion}/>
     <span className="b3-phase-ticks" aria-hidden="true">{(battle.initial.gameplayA6?[.66,.33]:[.5]).map(at=><i key={at} style={{left:`${at*100}%`}}/>)}</span><b>{Math.ceil(100*boss.hp/boss.maxHp)}%</b>
    </div>}
+   <div className="b3-turns" data-tutorial-id="battle-order" aria-label="Upcoming turns">{battle.queue.filter(id=>!battle.acted.includes(id)).slice(0,4).map(id=>{const actor=battle.actors.find(a=>a.id===id)!;return <span key={id} title={actor.name} aria-label={actor.name}><img src={`/units/${actor.catalogId}/portrait.webp`} alt=""/></span>;})}</div>
+   <span className="b3-supplies" data-tutorial-id="battle-supplies" title={battle.initial.packedSupply?`Packed ${battle.initial.packedSupply.id}`:'No packed supply'} aria-label={battle.initial.packedSupply?`Packed ${battle.initial.packedSupply.id}`:'No packed supply'}><GameIcon name="potion" size={24}/><b>{battle.initial.packedSupply?1:0}</b></span>
    <span className="b3-top-spacer"/>
    <button aria-label={m.paused?'Resume auto':'Pause auto'} title={m.paused?'Resume':'Pause'} onClick={()=>{m.paused=!m.paused;m.notify(false);}}>{m.paused?'▶':'Ⅱ'}</button>
    <button ref={helpButton} aria-label="Read battle guide" onClick={()=>{paused.current=m.paused;m.paused=true;m.notify(false);setHelp(true);}}>?</button>
    <button ref={menuButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}><GameIcon name="menu" size={20}/></button>
   </header>
   {intro&&!m.plan&&battle.round===1&&<div className="b3-wave-intro" aria-live="polite"><GameIcon name="fight" size={36}/><strong>Wave {wave.current}/{wave.total}</strong></div>}
-  <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
-   <div className="b3-marker-row">{a.side==='enemy'&&<IntentMark intent={battle.intents.find(i=>i.actorId===a.id)} />}<Badges actor={a}/></div><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
+  <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-tutorial-id={a.id===party[0]?.id?"battle-rows":undefined} data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
+   <div data-tutorial-id={a.id===battle.actors.find(a=>a.side==='enemy'&&a.hp>0)?.id?"battle-intent":undefined} className="b3-marker-row">{a.side==='enemy'&&<IntentMark intent={battle.intents.find(i=>i.actorId===a.id)} />}<Badges actor={a} tutorial={a.id===party[0]?.id}/></div><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
   </div>)}</div>
   <footer className="b3-bottom">
-   <button className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>
-   <div className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
+   <button data-tutorial-id="battle-speed" className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>
+   <div data-tutorial-id="battle-roles" className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
     const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate'),ready=cat.hp>0&&cat.charge>=100&&cat.skills.includes(ult?.id??''),queued=controls.queued.has(cat.id);
     const stars=m.state.account.cards.find(c=>c.cardId===cat.catalogId)?.stars??1;
     return <button key={cat.id} className="b3-portrait" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0} data-rarity={CARD_BY_ID[cat.catalogId]?.rarity} title={cat.name}
@@ -92,7 +94,7 @@ export default function BattleHud({m}:{m:DepthModel}){
      aria-label={`${cat.name} ultimate: ${ready?'Ready':cat.hp<=0?'Fallen':cat.charge+'/100 rage'}.${controls.auto?' Casts automatically.':queued?' Queued for next legal turn.':' Click to queue.'}`}
      onClick={()=>{if(!controls.auto&&ready){queued?controls.queued.delete(cat.id):controls.queued.add(cat.id);m.notify(false);}}}>
       <img src={`/units/${cat.catalogId}/portrait.webp`} alt=""/><span className="b3-name" aria-hidden="true">{cat.name}</span><span className="b3-portrait-shine" aria-hidden="true"/><span className="b3-stars" aria-label={stars+' stars'}>{'★'.repeat(stars)}</span>
-      {queued&&<span className="b3-queued" aria-label="Queued">◆</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><Rage value={cat.charge} name={cat.name}/>
+      {queued&&<span className="b3-queued" aria-label="Queued">◆</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><span data-tutorial-id={cat.id===party[0]?.id?"battle-rage":undefined} className="b3-rage-target"><Rage value={cat.charge} name={cat.name}/></span>
      </button>;
    })}</div>
    <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>{controls.auto=!controls.auto;m.notify(false);}} className="b3-auto"><GameIcon name="refresh" size={20}/>Auto<i data-on={controls.auto}/></button>

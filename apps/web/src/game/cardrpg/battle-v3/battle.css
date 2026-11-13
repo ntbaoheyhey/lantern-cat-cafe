@@ -57,3 +57,7 @@
 .battle-v3-active:has(.th-audio) .b3-top{padding-right:112px}
 .battle-v3-active:has(.th-audio) .b3-menu{right:112px}
 @media(max-width:600px){.battle-v3-active:has(.th-audio) .b3-location{display:none}}
+
+.b3-turns{display:flex;gap:4px;max-width:96px}.b3-turns>span{display:grid;place-items:center;width:20px;height:24px;background:#241c27;border:1px solid #ad8a58;border-radius:5px}.b3-turns>span:first-child{border-color:#ffe5a4}.b3-supplies{display:flex;align-items:center;gap:2px;font-size:12px}.b3-rage-target{display:block;min-height:8px}.b3-statuses{min-width:20px;min-height:18px}@media(max-width:600px){.b3-top{gap:6px;padding:4px 8px}.b3-turns{max-width:44px;overflow:hidden;flex-shrink:0}.b3-turns>span{flex-shrink:0}.b3-supplies{gap:0}.b3-top-spacer{min-width:0}}
+
+.b3-turns img{width:18px;height:22px;object-fit:cover;border-radius:4px}

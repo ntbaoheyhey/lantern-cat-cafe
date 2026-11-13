@@ -60,3 +60,5 @@ A2 P6/P8 uses a single-column result and working native/touch formation swaps. A
 
 ## 2026-11-13 — active callout cadence is still engine-owned
 Read-only review of B's current audio/engine.ts finds that only `voiceCallout(id)?.kind === 'ultimate'` bypasses the7000ms voice cadence. A emits every active's explicit `voice.<unit>.skill.<skillId>` once, but this policy can suppress most of those lines. Please let required explicit skill callouts bypass chatter cadence too, while preserving one voice source and suppressing low-priority barks. A is reserving the full durationMs for required active/ultimate speech; no engine change or early merge is made here. The V3 event gate does not substitute for audible coverage at SY1.
+
+Q8 stable battle targets: battle-roles, battle-rows, battle-order, battle-intent, battle-rage, battle-statuses, battle-supplies, battle-speed. Existing HUD anchors plus a compact real queue and packed-supply indicator; no combat changes. Commit on A only; use current A files in B temporary integration for tutorial audit.

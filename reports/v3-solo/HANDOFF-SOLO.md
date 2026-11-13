@@ -9,7 +9,7 @@ NOW: Q7 complete:259 A+8 Q7+9 enemy gates PASS,435 browser cases PASS. Q8 coach/
 NEXT 1: Q8 finish targets, geometry walkthrough, live Fuji third numeric counter.
 NEXT 2: Q8 coach and live Fuji counters; Q9 polish.
 NEXT 3: Scheduled syncs unchanged; never run early.
-LAST GOOD COMMIT A:b066e4caa Q7 measurement; source9b4323716/media16cb6cdfc; acceptance commit next.
+LAST GOOD COMMIT A:970ba8296 Q7 accepted and pushed;Q8 battle targets source commit next.
 LAST GOOD COMMIT B:9b68bc176 final Q4/Q6 acceptance pushed.
 OPEN: Q8-Q9 and scheduled S1-S3. Q0-Q7 done.
 ECONOMY:24 rounds,1273 configs;18 scenarios at200 seeds;85 assumptions,170 sensitivity cases,0 misses; E3-E5 all24 gates PASS.
