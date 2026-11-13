@@ -123,12 +123,12 @@ PASS S5.forge.peak: measured -3.5; required <= -1 dBTP
 PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
 PASS S5.chart: measured 87147; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
 PASS S5.reel: measured 90.045; required >= 90s sound reel
-FAIL S6.coverage: measured missing; required >= 95% interactive elements emit mapped cue
-FAIL S6.errors: measured missing; required 0 console audio errors
-FAIL S6.gaps: measured missing; required no music silence > 400ms during screen changes
-FAIL S6.settings: measured missing; required passing test + SHA-256-verified log
-FAIL S7.coverage: measured missing; required 100% mapped cues listed in lab
-FAIL S7.random: measured missing; required >= 20 random cues from static server, 0 errors
+PASS S6.coverage: measured 0.9912718204488778; required >= 95% interactive elements emit mapped cue
+PASS S6.errors: measured 0; required 0 console audio errors
+PASS S6.gaps: measured 3.54167; required no music silence > 400ms during screen changes
+PASS S6.settings: measured 15; required passing test + SHA-256-verified log
+PASS S7.coverage: measured 1; required 100% mapped cues listed in lab
+PASS S7.random: measured 20; required >= 20 random cues from static server, 0 errors
 FAIL E1.scenarios: measured missing; required 3 mixes x 2 demands x 3 bot shares; >= 200 seeds each, 52 weeks + gear cohort
 FAIL E1.runtime: measured missing; required < 1800s
 FAIL E1.liveConfig: measured missing; required passing test + SHA-256-verified log
@@ -176,7 +176,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 1604; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1408; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 604; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

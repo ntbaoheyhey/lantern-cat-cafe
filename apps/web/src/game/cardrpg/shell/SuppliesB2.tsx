@@ -1,3 +1,4 @@
+import {playCue} from '../contracts/audio-cues';
 import {useState,useSyncExternalStore} from 'react';
 import {RECIPES} from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -34,7 +35,7 @@ function BatchDialogB2({m,action,onClose}:{m:DepthModel;action:SupplyBatchB2;onC
   <div className="b2-batch-controls" aria-label="Batch quantity"><button onClick={()=>change(1)} disabled={max<1}>Min</button><button aria-label="Decrease ten" onClick={()=>change(count-10)} disabled={count<=1}>−10</button><button aria-label="Decrease one" onClick={()=>change(count-1)} disabled={count<=1}>−</button><output aria-label="Quantity">{count}</output><button aria-label="Increase one" onClick={()=>change(count+1)} disabled={count>=max}>+</button><button aria-label="Increase ten" onClick={()=>change(count+10)} disabled={count>=max}>+10</button><button onClick={()=>change(max)} disabled={max<1}>Max</button></div>
   {recipe&&<div className="b2-batch-cost"><CostView cost={cost}/>{Object.entries(recipe.materials).map(([key,n])=><span key={key}><GameIcon name={icon(key)} size={26}/>{n*count}</span>)}<b aria-label="Guaranteed output">100%</b></div>}
   {!preview.ok&&<p role="status">{s.run?.battle?'Finish encounter':!s.run&&action.kind==='use'?'Start a patrol':action.kind==='craft'&&s.run&&!s.run.complete?'Finish patrol':'Unavailable'}</p>}
-  <footer className="b2-dialog-actions"><button className="cr-primary" disabled={!preview.ok} onClick={()=>{const result=supplyBatchB2(m.state,action,count);if(result.ok){m.state=result.state;m.notify();onClose();}else{m.error=true;m.notice=result.error;m.notify(false);}}}><GameIcon name={action.kind==='craft'?'forge':'check'}/>{action.kind==='craft'?'Craft':'Use'} ×{count}</button></footer>
+  <footer className="b2-dialog-actions"><button className="cr-primary" disabled={!preview.ok} onClick={()=>{const result=supplyBatchB2(m.state,action,count);if(result.ok){m.state=result.state;m.notify();playCue(action.kind==='craft'?'ui.batch':'ui.use');onClose();}else{playCue('ui.fail');m.error=true;m.notice=result.error;m.notify(false);}}}><GameIcon name={action.kind==='craft'?'forge':'check'}/>{action.kind==='craft'?'Craft':'Use'} ×{count}</button></footer>
  </MenuDialogB2>;
 }
 export function SuppliesB2({m}:{m:DepthModel}){

@@ -2,6 +2,7 @@ import type {AudioBridge,CueOptions} from '../game/cardrpg/contracts/audio-cues'
 import {BUS_NAMES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
 import {calloutForCast,voiceCallout} from './callouts';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
+import {installUiFeedback} from './feedback';
 
 const KEY='tbh-audio-v3';
 const defaults:Record<Bus,number>={master:.7,music:.55,ambience:.3,sfx:.8,voice:.7,ui:.6};
@@ -22,7 +23,7 @@ export class AudioEngine implements AudioBridge {
  private bedTokens={music:0,ambience:0}; private bedIds={music:'',ambience:''}; private paused=false; private rate=1;
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
- constructor(private random:()=>number=Math.random){
+ constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/'){
   this.pools=new VariantPools(random);
   try{const p=JSON.parse(localStorage.getItem(KEY)??'null');for(const b of BUS_NAMES)if(Number.isFinite(p?.[b]))this.preferences[b]=Math.max(0,Math.min(1,p[b]));this.muted=p?.muted===true;}catch{/* storage optional */}
  }
@@ -44,11 +45,12 @@ export class AudioEngine implements AudioBridge {
   }
   await this.ctx.resume();this.paused=false;this.remember();
  }
- private loadManifest(){return this.manifest??=fetch('/audio/manifest.json').then(r=>{if(!r.ok)throw new Error('Audio manifest unavailable');return r.json() as Promise<AudioManifest>;}).catch(e=>{this.manifest=undefined;throw e;});}
+ private assetUrl(path:string){return path.startsWith('/audio/')?this.assetBase+path.slice('/audio/'.length):path;}
+ private loadManifest(){return this.manifest??=fetch(this.assetUrl('/audio/manifest.json')).then(r=>{if(!r.ok)throw new Error('Audio manifest unavailable');return r.json() as Promise<AudioManifest>;}).catch(e=>{this.manifest=undefined;throw e;});}
  private buffer(pack:string,m:AudioManifest):Promise<AudioBuffer>{
   if(!this.buffers.has(pack))this.buffers.set(pack,(async()=>{
    const urls=m.packs[pack];if(!urls)throw new Error(`Unknown audio pack: ${pack}`);
-   for(const format of ['webm','mp3'] as const){try{const response=await fetch(urls[format]);if(!response.ok)continue;return await this.ctx!.decodeAudioData(await response.arrayBuffer());}catch{/* Safari may need MP3. */}}
+   for(const format of ['webm','mp3'] as const){try{const response=await fetch(this.assetUrl(urls[format]));if(!response.ok)continue;return await this.ctx!.decodeAudioData(await response.arrayBuffer());}catch{/* Safari may need MP3. */}}
    throw new Error(`Audio pack ${pack} unavailable`);
   })().catch(e=>{this.buffers.delete(pack);throw e;}));return this.buffers.get(pack)!;
  }
@@ -206,6 +208,5 @@ export const audioEngine=new AudioEngine();
 export function installAudio(){
  if(typeof window==='undefined')return;window.__thAudio=audioEngine;
  const unlock=()=>{void audioEngine.unlock().then(()=>audioEngine.preload('home')).catch(()=>{});};window.addEventListener('pointerdown',unlock,{once:true});window.addEventListener('keydown',unlock,{once:true});
- document.addEventListener('click',e=>{if((e.target as Element)?.closest?.('button,a,summary'))audioEngine.play('ui.click');});
- document.addEventListener('pointerover',e=>{const button=(e.target as Element)?.closest?.('button');if(button&&!button.contains((e as PointerEvent).relatedTarget as Node|null))audioEngine.play('ui.hover');});
+ installUiFeedback(audioEngine);
 }

@@ -1,7 +1,7 @@
 {
   "existingCueCount": 526,
   "missingExisting": [],
-  "callsiteCount": 33,
+  "callsiteCount": 44,
   "unresolved": [],
   "cuesSource": {
     "path": "apps/web/src/audio/cues.ts",
@@ -13,32 +13,44 @@
       "sha256": "2b7d9002f1ce2b349157e35c73446d7851d98e14cd919cbe841e9e7a5003245a"
     },
     {
-      "path": "apps/web/src/audio/engine.ts",
-      "sha256": "04a5ab1c00698b9c2d1702fc5e09c4827f8b8f727fca388d901926acb75afd94"
-    },
-    {
       "path": "apps/web/src/audio/events.ts",
       "sha256": "bab10bc81c732b0c712904f021ff05fe9bb31c2dbeede4b931e4b9292988b41e"
     },
     {
+      "path": "apps/web/src/audio/feedback.ts",
+      "sha256": "d3352832d280fbeeff5d59cdb553542459c39bd8f5c58accc7288c6ecad78c25"
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "sha256": "1aebe346b2884630d9e76e6e88a925a2ea239c89ecd5e361865cf5f87c59f381"
+    },
+    {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
-      "sha256": "41221b3ee92197299208bdc2c87247eeb84e13b0450c3f1925df8bb6e58ac2a8"
+      "sha256": "ecd5056253424f5c7c12bede0ef2edbe51cd096290b16025b7b0292155803b24"
     },
     {
       "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
       "sha256": "35d996d3d7d3ef3bccfd511b08d700fdb6d0d20e79229f82fd9d5e1f6599c943"
     },
     {
+      "path": "apps/web/src/game/cardrpg/depth/CompanionGrowthV4.tsx",
+      "sha256": "956203b6358b6954515f43a361962fdf6b73c21c11c5ad48fb0708daa54fa549"
+    },
+    {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "sha256": "fa6da437524c007a8b4cf134e859e334b3541591b65cf224cb68d2a08d277627"
+      "sha256": "475e5321aedf62cf78b1d82f20c990de1a6cf5ebc22ffe8c21cf103aaf78ce97"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "sha256": "8cdb83f6d224d613817dca4faa7594bd6f2d148172ce2cd97b2257aa4c194bee"
+      "sha256": "5a21168ea7d8c855dca56a332e64edb102a853baafd97e501ef5ecf681b7bca7"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/Entrance.tsx",
       "sha256": "20b5091ef37345052e06551614b537c29f8cf5571df43d3f1e0949264a05f8de"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/SuppliesB2.tsx",
+      "sha256": "f1bea68fa64d1f397fef0f96d011d84558799aada4d070bd23f0dd474357fee1"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
@@ -46,7 +58,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "sha256": "2071f1d5a1d2e28d9fddfdba7f0cb0a29080d93f5cb1bb4b1417026a58f9b377"
+      "sha256": "34b585c79046b59af19ae50282610a8a7bd5af4154185f930b9ad42d4ebd5000"
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
@@ -67,9 +79,9 @@
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "d71f3c6aad684c18a7c0e7ca3581ec6c2494621ba0ea9a0bb7bbbd20d142806d"
+    "sha256": "5d2eecdfda47042d90ce0718111de275c65ff129acf072e2718d01c8a38a25b4"
   },
-  "scannedSourceCount": 508,
+  "scannedSourceCount": 510,
   "calls": [
     {
       "path": "apps/web/src/audio/chatter.ts",
@@ -78,26 +90,6 @@
       "expression": "'voice.guide.idle'",
       "ids": [
         "voice.guide.idle"
-      ],
-      "delegation": false
-    },
-    {
-      "path": "apps/web/src/audio/engine.ts",
-      "line": 209,
-      "column": 96,
-      "expression": "'ui.click'",
-      "ids": [
-        "ui.click"
-      ],
-      "delegation": false
-    },
-    {
-      "path": "apps/web/src/audio/engine.ts",
-      "line": 210,
-      "column": 178,
-      "expression": "'ui.hover'",
-      "ids": [
-        "ui.hover"
       ],
       "delegation": false
     },
@@ -461,6 +453,79 @@
       "delegation": false
     },
     {
+      "path": "apps/web/src/audio/feedback.ts",
+      "line": 22,
+      "column": 132,
+      "expression": "id",
+      "ids": [
+        "ui.tab",
+        "ui.toggle",
+        "ui.close",
+        "ui.open",
+        "ui.page",
+        "ui.slider",
+        "ui.quantity",
+        "ui.select",
+        "ui.click",
+        "ui.denied",
+        "ui.hover",
+        "ui.release",
+        "ui.scroll"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "line": 14,
+      "column": 11,
+      "expression": "'tx.wallet'",
+      "ids": [
+        "tx.wallet"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "line": 17,
+      "column": 26,
+      "expression": "'tx.pending'",
+      "ids": [
+        "tx.pending"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "line": 17,
+      "column": 88,
+      "expression": "'tx.pending'",
+      "ids": [
+        "tx.pending"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "line": 21,
+      "column": 4,
+      "expression": "ok?'tx.confirmed':'tx.failed'",
+      "ids": [
+        "tx.confirmed",
+        "tx.failed"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/audio/transactions.ts",
+      "line": 24,
+      "column": 12,
+      "expression": "'tx.failed'",
+      "ids": [
+        "tx.failed"
+      ],
+      "delegation": false
+    },
+    {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
       "line": 34,
       "column": 3,
@@ -483,7 +548,7 @@
     {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
       "line": 67,
-      "column": 376,
+      "column": 393,
       "expression": "'ui.reward'",
       "ids": [
         "ui.reward"
@@ -1367,6 +1432,17 @@
       "delegation": true
     },
     {
+      "path": "apps/web/src/game/cardrpg/depth/CompanionGrowthV4.tsx",
+      "line": 20,
+      "column": 205,
+      "expression": "kind==='level'?'ui.level-up':'ui.star-up'",
+      "ids": [
+        "ui.level-up",
+        "ui.star-up"
+      ],
+      "delegation": false
+    },
+    {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
       "line": 28,
       "column": 23,
@@ -1442,12 +1518,59 @@
       "delegation": false
     },
     {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "line": 61,
+      "column": 289,
+      "expression": "`ui.equip.${spec.slot}`",
+      "ids": [
+        "ui.equip.weapon",
+        "ui.equip.outfit",
+        "ui.equip.charm",
+        "ui.equip.relic"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
+      "line": 17,
+      "column": 382,
+      "expression": "'ui.slot'",
+      "ids": [
+        "ui.slot"
+      ],
+      "delegation": false
+    },
+    {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
       "line": 18,
       "column": 267,
-      "expression": "'ui.forge-success'",
+      "expression": "'fusion.consume'",
       "ids": [
-        "ui.forge-success"
+        "fusion.consume"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
+      "line": 18,
+      "column": 293,
+      "expression": "'fusion.reveal'",
+      "ids": [
+        "fusion.reveal"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
+      "line": 18,
+      "column": 318,
+      "expression": "`item.land.${R.GEAR_BY_ID[r.state.gear.at(-1)!.templateId]!.rarity}`",
+      "ids": [
+        "item.land.common",
+        "item.land.rare",
+        "item.land.epic",
+        "item.land.legendary",
+        "item.land.mythic"
       ],
       "delegation": false
     },
@@ -1468,6 +1591,27 @@
       "expression": "'landing'",
       "ids": [
         "music.landing"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/SuppliesB2.tsx",
+      "line": 38,
+      "column": 204,
+      "expression": "action.kind==='craft'?'ui.batch':'ui.use'",
+      "ids": [
+        "ui.batch",
+        "ui.use"
+      ],
+      "delegation": false
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/SuppliesB2.tsx",
+      "line": 38,
+      "column": 271,
+      "expression": "'ui.fail'",
+      "ids": [
+        "ui.fail"
       ],
       "delegation": false
     },
@@ -1503,7 +1647,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "line": 60,
+      "line": 61,
       "column": 22,
       "expression": "'ui.confirm'",
       "ids": [
@@ -1513,7 +1657,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "line": 61,
+      "line": 62,
       "column": 25,
       "expression": "'gacha.charge'",
       "ids": [
@@ -1523,8 +1667,8 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "line": 62,
-      "column": 27,
+      "line": 64,
+      "column": 71,
       "expression": "'gacha.flip'",
       "ids": [
         "gacha.flip"
@@ -1533,8 +1677,8 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "line": 62,
-      "column": 49,
+      "line": 65,
+      "column": 4,
       "expression": "`ui.reveal.${active.rarity}`",
       "ids": [
         "ui.reveal.common",
@@ -1547,9 +1691,9 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "line": 63,
-      "column": 28,
-      "expression": "`item.land.${active.rarity}`",
+      "line": 67,
+      "column": 73,
+      "expression": "`item.land.${reward.rarity}`",
       "ids": [
         "item.land.common",
         "item.land.rare",

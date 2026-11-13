@@ -2,6 +2,7 @@ import { createPublicClient, http, isAddress, isAddressEqual, type Abi, type Add
 import { avalancheFuji } from 'viem/chains';
 import { getAddresses, relicNftAbi, relicMarketAbi, relicMarketV2Abi } from '@taskbar-hero/chain';
 import { requireFuji } from './guest';
+import {TransactionSounds} from '../../../audio/transactions';
 
 export interface ChainConfig {
   chainId: 43113; rpcUrl: string; RelicNFT: Address; RelicMarket: Address;
@@ -58,18 +59,27 @@ export async function requireWallet(wallet: Pick<WalletClient, 'getChainId' | 'g
 }
 export function chainRuntime(config: ChainConfig, wallet: WalletClient, address: Address) {
   const client = publicChain(config);
+  const sounds=new TransactionSounds();
   const guard = async () => { requireFuji(await client.getChainId()); await requireWallet(wallet, address); };
-  const receipt = async (hash: Hash) => {
-    const r = await client.waitForTransactionReceipt({ hash, timeout: 60_000 });
-    if (r.status !== 'success') throw new Error('Transaction failed.');
-    return hash;
+  const receipt = async (hash: Hash,scope=sounds.scope()) => {
+    const finish=scope.begin();
+    try{
+      const r = await client.waitForTransactionReceipt({ hash, timeout: 60_000 });
+      if (r.status !== 'success') throw new Error('Transaction failed.');
+      finish(true);return hash;
+    }catch(error){finish(false);throw error;}
   };
   async function write(request: {address: Address; abi: Abi; functionName: string; args?: readonly unknown[]; value?: bigint}) {
+   let submitted=false;const scope=sounds.scope();
+   try{
     await guard();
     const simulation = await client.simulateContract({ ...request, account: address });
     // A wallet can change accounts/networks while the RPC simulation is running.
     await guard();
-    return receipt(await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji }));
+    scope.wallet();
+    const hash=await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji });
+    submitted=true;return await receipt(hash,scope);
+   }catch(error){if(!submitted)scope.failure();throw error;}
   }
   const listings = async (version:'v1'|'v2'='v1'):Promise<ChainListing[]> => {
     const market=version==='v2'?config.RelicMarketV2:config.RelicMarket;
@@ -86,7 +96,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     return rows;
   };
   const holdings = (ids:bigint[]) => readHoldings(client,config.RelicNFT,address,ids);
-  return { client, guard, receipt, write, listings, holdings,
+  return { client, guard, receipt, write, listings, holdings, silenceSounds:()=>sounds.silence(),
     async moveAdapter(ids: bigint[]) {
       return {
         address, chainId: async () => { await guard(); return 43113; },
@@ -98,13 +108,18 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
         moveYarn: (to: Address, amount: bigint) => write({address: config.YarnToken!, abi: erc20Abi, functionName: 'transfer', args: [to, amount]}),
         balance: () => client.getBalance({address}),
         sweep: async (to: Address, balance: bigint) => {
+         const scope=sounds.scope();let submitted=false;
+         try{
           // Legacy gas gives a known fee; contracts receive an estimated gas allowance.
           const gasPrice = await client.getGasPrice();
           const gas = await client.estimateGas({account: address, to, value: 0n});
           const reserve = gas * gasPrice;
           if (balance <= reserve) return undefined;
           await guard();
-          return receipt(await wallet.sendTransaction({account: wallet.account ?? address, chain: avalancheFuji, to, value: balance - reserve, gas, gasPrice, type: 'legacy'}));
+          scope.wallet();
+          const hash=await wallet.sendTransaction({account: wallet.account ?? address, chain: avalancheFuji, to, value: balance - reserve, gas, gasPrice, type: 'legacy'});
+          submitted=true;return await receipt(hash,scope);
+         }catch(error){if(!submitted)scope.failure();throw error;}
         },
       };
     },

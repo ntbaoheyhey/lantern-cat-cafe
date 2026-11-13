@@ -57,11 +57,17 @@ export default function RecruitV3({m}:{m:DepthModel}){
  },[a6,revealing,reduced,beat,active?.rarity,index,results.length]);
  useEffect(()=>{
   if(!active)return;
+  const timers:ReturnType<typeof setTimeout>[]=[];
   if(beat==='letter')playCue('ui.confirm');
   else if(beat==='seal')playCue('gacha.charge');
-  else if(beat==='burst'){playCue('gacha.flip');playCue(`ui.reveal.${active.rarity}`);}
-  else if(beat==='summary')playCue(`item.land.${active.rarity}`);
- },[beat,index,active?.index,active?.rarity]);
+  else if(beat==='burst'){
+   for(let n=0;n<(a6?results.length:1);n++)timers.push(setTimeout(()=>playCue('gacha.flip',{pitch:1+n*.025}),n*80));
+   playCue(`ui.reveal.${active.rarity}`);
+  }else if(beat==='summary'){
+   for(const [n,reward] of results.entries())timers.push(setTimeout(()=>playCue(`item.land.${reward.rarity}`),n*90));
+  }
+  return()=>timers.forEach(clearTimeout);
+ },[a6,beat,index,active?.index,active?.rarity,results]);
  function invite(count:number,welcome=false){
   if(revealing)return;
   const currentPity=m.state.account.pity[banner.pityGroup]??emptyPity();

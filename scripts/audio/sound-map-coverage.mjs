@@ -63,7 +63,7 @@ export function collectAudioCalls(source,path,{domains={},eventCues=[],forwarded
 export async function writeSoundMap(){
   const tmp=resolve(root,'tmp/b2-sound-map');mkdirSync(tmp,{recursive:true});
   const entry=resolve(tmp,'entry.ts');
-  writeFileSync(entry,`export * from '../../apps/web/src/audio/sound-map';\nexport * from '../../apps/web/src/audio/cues';`);
+  writeFileSync(entry,`export * from '../../apps/web/src/audio/sound-map';\nexport * from '../../apps/web/src/audio/cues';\nexport * from '../../apps/web/src/audio/feedback';`);
   const {build}=await import(require.resolve('vite'));
   let M;
   try{
@@ -79,10 +79,12 @@ export async function writeSoundMap(){
     const path=relative(root,file),source=readFileSync(file,'utf8');
     const slots=JSON.parse(readFileSync(resolve(root,'apps/web/src/audio/voice-callouts.json'),'utf8')).filter(r=>r.kind==='skill').map(r=>({unit:r.unitId,slot:r.slot}));
     const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},bindings:slots,eventCues}:
-      path==='apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx'?{domains:{'active.rarity':M.SOUND_RARITIES}}:
+      path==='apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx'?{domains:{'active.rarity':M.SOUND_RARITIES,'reward.rarity':M.SOUND_RARITIES}}:
       path==='apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx'?{domains:{currency:M.SOUND_CURRENCIES}}:
       path==='apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx'?{domains:{musicScene:['home','map','battle','boss'],ambientScene:['home','bag','invitations','cats','settings','chapter-map','battle-prep','field-guide','reward','boss','battle']}}:
-      path==='apps/web/src/game/cardrpg/shell/BagB2.tsx'?{domains:{cardId:M.CATS,event:['select','victory']}}:
+      path==='apps/web/src/game/cardrpg/shell/BagB2.tsx'?{domains:{cardId:M.CATS,event:['select','victory'],'spec.slot':M.SOUND_SLOTS}}:
+      path==='apps/web/src/game/cardrpg/shell/BoundFusion.tsx'?{domains:{'R.GEAR_BY_ID[r.state.gear.at(-1)!.templateId]!.rarity':M.SOUND_RARITIES}}:
+      path==='apps/web/src/audio/feedback.ts'?{domains:{id:M.UI_FEEDBACK_CUES}}:
       path==='apps/web/src/game/cardrpg/contracts/audio-cues.ts'?{forwardedIds:[...M.SOUND_CUES.keys()]}:{};
     const found=collectAudioCalls(source,path,adapters);
     if(found.length){calls.push(...found);inspected.push(signed(path));}

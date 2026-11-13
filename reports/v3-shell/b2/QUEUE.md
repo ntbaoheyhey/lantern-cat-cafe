@@ -14,7 +14,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [ ] U3 — PARTIAL (32/54 states meet all screen gates; 22 have two logged redesign iterations; complete two-size evidence, tests pass; self-score 7/10)
 - [x] U4 — done (62s audible tour, median 60 fps, all shifts below 0.05; self-score 8/10)
 - [ ] S5 — PARTIAL (11 measured mix iterations; A timing blocker S5-A-VOICE-WINDOW; numeric misses retained; self-score 7/10)
-- [ ] S6 — todo
+- [x] S6 — done (795/802 activations, 54 states; self-score 8/10)
 - [ ] S7 — todo
 - [ ] E1 — todo
 - [ ] E2 — todo
@@ -306,3 +306,12 @@ PASS S5.reel: measured 90.045; required >= 90s sound reel
 Eleven actual-output mix iterations. Six full-duration renders and a 90-second reel use production defaults with no output normalization. Timing blocker S5-A-VOICE-WINDOW and matching source-start evidence are in REQUESTS-TO-A.md and VOICE-INTERRUPTIONS.json. Transient/contour misses remain explicit, including B-owned menu tuning. No full acceptance is claimed.
 
 S5 checks: tests/s5-types.log and tests/s5-suite.log pass (2,521 web, 724 server; 1,388 rules plus 2 expected failures and 11 existing skips). tests/s5-source-final.log verifies all audio provenance and hashes. Acceptance remains PARTIAL, never done.
+
+## S6 evidence
+
+PASS S6.coverage: measured 0.9912718204488778; required >= 95% interactive elements emit mapped cue
+PASS S6.errors: measured 0; required 0 console audio errors
+PASS S6.gaps: measured 3.54167; required no music silence > 400ms during screen changes
+PASS S6.settings: measured 15; required passing test + SHA-256-verified log
+
+Checks: tests/s6-accept-types.log and tests/s6-accept-suite.log (2,532 web, 724 server, 1,388 rules; two expected failures and eleven existing skips). Fifteen real mixer assertions verify amplitude, isolated buses, mute and reload persistence. Seven inconclusive fixture activations remain listed in UI-AUDIO.md and count against coverage. No public transactions.

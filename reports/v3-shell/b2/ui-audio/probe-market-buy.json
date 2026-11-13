@@ -1,0 +1,156 @@
+{
+  "screen": "market-buy",
+  "sourceHash": "d3352832d280fbeeff5d59cdb553542459c39bd8f5c58accc7288c6ecad78c25",
+  "diagnostic": true,
+  "complete": true,
+  "elements": [
+    {
+      "index": 0,
+      "key": "BUTTON||Close dialog|0",
+      "label": "Close dialog",
+      "tag": "BUTTON",
+      "type": "",
+      "value": "",
+      "mode": "click",
+      "requested": [
+        {
+          "id": "ui.click",
+          "at": 1794563210576
+        },
+        {
+          "id": "ui.close",
+          "at": 1794563210576
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794563210575,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9709242471508437,
+              "gainDb": -0.3293509374002044
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9709242471508437,
+              "gainDb": -0.3293509374002044
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.release",
+          "result": "played",
+          "at": 1794563210576,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9985071698712743,
+              "gainDb": -1.3399942918511327
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9985071698712743,
+              "gainDb": -1.3399942918511327
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.click",
+          "result": "played",
+          "at": 1794563210576,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0214534820297954,
+              "gainDb": -1.0001191506246332
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1.0214534820297954,
+              "gainDb": -1.0001191506246332
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.close",
+          "result": "played",
+          "at": 1794563210584,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:close_003:interface-sounds/close_003.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0284445841914167,
+              "gainDb": -7.303348697270911
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.997202079024189,
+              "gainDb": -18.470906563947832
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "mappedCue": "ui.click",
+      "audioErrors": []
+    }
+  ],
+  "audioErrors": [],
+  "errors": [],
+  "method": "Fresh app/browser fixture before each visible, enabled control activation. Click, native select or keyboard edit; no dispatched fake click handlers and no test playback. Both SQL and Anvil state are rolled back between local chain fixtures; no public transactions.",
+  "inventory": [
+    {
+      "index": 0,
+      "key": "BUTTON||Close dialog|0",
+      "label": "Close dialog",
+      "tag": "BUTTON",
+      "type": "",
+      "value": ""
+    },
+    {
+      "index": 1,
+      "key": "A||0x485ebdc88a29c96d9de6da72076119938ba11e2c400d79421b7c12864fd15a61|0",
+      "label": "0x485ebdc88a29c96d9de6da72076119938ba11e2c400d79421b7c12864fd15a61",
+      "tag": "A",
+      "type": "",
+      "value": null
+    },
+    {
+      "index": 2,
+      "key": "BUTTON||Close receipt|0",
+      "label": "Close receipt",
+      "tag": "BUTTON",
+      "type": "",
+      "value": ""
+    }
+  ]
+}

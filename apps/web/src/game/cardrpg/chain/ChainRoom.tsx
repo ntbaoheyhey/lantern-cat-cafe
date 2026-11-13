@@ -67,6 +67,7 @@ export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?
     if(!wallet||wallet.account?.address.toLowerCase()!==session.wallet.toLowerCase())return;
     return chainRuntime(config,wallet,session.wallet as Address);
   },[config,session,guest,externalWallet]);
+  useEffect(()=>()=>runtime?.silenceSounds?.(),[runtime]);
   const connect=useCallback(async()=>{try{setConfig(await loadChainConfig());}catch(e){setStatus(friendlyError(e));setOffline(true);}},[]);
   useEffect(()=>{void connect();},[connect]);
   const loadInventory=useCallback(async()=>{

@@ -134,7 +134,7 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
      const target=GEAR_BY_ID[`${t.setId}-${t.slot}-legendary`]!,i=newIntent('fusion',BigInt(E.fusion.legendary.yarn)*UNIT,equipmentTokenId(target)!+quality.offset,3);
      i.burnIds=[...totals.keys()];i.burnAmounts=[...totals.values()];s.stars-=boundStars;s.gear=s.gear.filter(x=>!c.instances.includes(x.id));s.intents.push(i);break;
     }
-    case 'spend':if(s.styles.includes(c.sku))fail('Already owned.');if(BigInt(s.spool)<5n*UNIT)fail('Five Spool required.');s.spool=(BigInt(s.spool)-5n*UNIT).toString();s.styles.push(c.sku);break;
+    case 'spend':if(s.styles.includes(c.sku))fail('Already owned.');if(BigInt(s.spool)<BigInt(E.spool.skinCost)*UNIT)fail(`${E.spool.skinCost} Spool required.`);s.spool=(BigInt(s.spool)-BigInt(E.spool.skinCost)*UNIT).toString();s.styles.push(c.sku);break;
     case 'finalize':{
      const i=s.intents.find(x=>x.id===c.intent);if(!i||i.kind==='withdraw')fail('Intent unavailable.');
      if(!i.ready){
