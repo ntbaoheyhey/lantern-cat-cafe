@@ -44,7 +44,9 @@ export function FormationC2({ m, preparing = false }: { m: DepthModel; preparing
   const boxes = stageLayoutC2([
     ...ids.map(id => ({id,side:'party' as const,row:rows[id]!,aspect:1})),
     ...enemies.map(a => ({id:a.id,side:'enemy' as const,row:a.row,boss:R.ENEMY_BY_ID[a.catalogId]?.tier==='boss',aspect:1.1})),
-  ], 1000, 562.5);
+  // This compact portrait board occupies roughly 5/8 of the desktop height.
+  // Preserve a readable whole-screen unit size without changing battle slots.
+  ], 1000, 562.5, 900);
   const position = (id: string): CSSProperties => { const b = boxes.get(id)!; return {left:`${b.footX/10}%`,top:`${b.y/5.625}%`,height:`${b.height/5.625}%`,width:`${b.width/10}%`,zIndex:b.order}; };
   return <section className="c2-formation" aria-label="Formation" data-preparing={preparing} data-reduced={state.settings.reducedMotion} data-dragging={drag.dragging??undefined}>
     <nav aria-label="Formation tools"><button className="c2-tool" aria-label="Crew" title="Crew" onClick={()=>setTool('crew')}><GameIcon name="team" size={28}/></button><button className="c2-tool" aria-label="Saved" title="Saved teams" onClick={()=>setTool('saved')}><GameIcon name="clock" size={28}/></button><button className="c2-tool" aria-label="Formation help" title="Formation help" onClick={()=>setTool('help')}><GameIcon name="guide" size={28}/></button><output aria-live="polite" aria-label={locked?'Formation locked':selected?R.CAT_BY_ID[selected]!.name:'Drag to swap'}>{locked?<svg className="c2-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5z" fill="none" stroke="currentColor" strokeWidth="2"/></svg>:selected?R.CAT_BY_ID[selected]!.name:<GameIcon name="arrow" size={24}/>}</output></nav>

@@ -150,3 +150,5 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 2026-11-13 Q5: complete scene28 guard also found Cinnamon Take a sip! ambiguous after codec/shelf. Add Drink up! as the A-owned skill phrase; B must retain recognition, identity and timing checks.
 
 2026-11-13 Q5 scene28 final112-line codec guard:7 misses, including four enemy skill lines. Add Kettle strike!, A gentle tap!, Rain falls!, Sweet blast! as original A-owned alternatives for measured B trials; no runtime/combat changes. Prior Cinnamon note referred to the running guard, not final acceptance.
+
+2026-11-13 Q6 acceptance: current victory/defeat plus a pending discovery showed3 plain buttons. Add shared guide and next/home icons to the A-owned result footer; retain accessible names, callbacks, and all combat/reward rules. The incidental Next to label becomes Next. B preview receives this source only in its temporary integration checkout.

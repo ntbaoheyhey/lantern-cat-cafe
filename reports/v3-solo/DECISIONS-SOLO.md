@@ -109,3 +109,7 @@ The committed original forge score now passes actual60s: 1.9933 voice contours/m
 2026-11-13 Q5 current playback refresh: permit an explicit separate matrix label in collect-q2.mjs, because the full-scene capture and nine-fixture timing run use distinct job labels. Runtime code, encoded audio, cue metadata, analyser and owning-worktree hashes must still match. No new acceptance exception or threshold change.
 
 - 2026-11-13T21:25:40.344963+00:00 Q5 accepted using fresh V/S5 checker output and completed full37 suites. Isolated ASR is50/50 ultimates and62/62 skills; actual mixed samples remain7/12 for battle and7/12 for boss. The critique keeps those limitations visible; no threshold or analyser changed.
+
+2026-11-13 Q6 acceptance: current victory/defeat plus a pending discovery showed3 plain buttons. Add shared guide and next/home icons to the A-owned result footer; retain accessible names, callbacks, and all combat/reward rules. The incidental Next to label becomes Next. B preview receives this source only in its temporary integration checkout.
+
+Q6 visual inspection: the compact preparation board reused stage height as whole-screen height, leaving portraits too small. Its presentation-only viewport basis is now900 for a562.5 board; slot contract and combat remain unchanged. ResultA6 also exposes data-outcome so B-owned CSS can style the current A result, including its victory-crew animation.
