@@ -1,11 +1,11 @@
 # Tiến độ V3B2
-
-- S4 đã PASS: 12 giọng mèo riêng, 216 bản thu ghép hạt âm CC0.
-- Nhịp thoại trung vị 7,563 giây; CPU âm thanh tăng 4,525%; không lỗi trình duyệt.
-- V đạt PARTIAL đúng điều kiện: đủ thoại cho 12 mèo + 13 địch; 162 bản thu, toàn bộ 212 tệp đạt chuẩn âm lượng.
-- 62/62 lượt thoại tuyệt chiêu chạy và hạ nhạc; không lỗi. 12 giọng vẫn phân biệt được.
-- Còn 18/50 mục tuyệt chiêu và 3/62 mục kỹ năng chưa đạt nhận dạng sau 9 vòng; không gọi là PASS.
-- Bộ kiểm thử tại máy: 2.503 web + 724 server PASS; các skip/expected-fail cũ được ghi rõ.
-- U1 PASS: 53 trạng thái; 26 vượt số từ, 42 quá nhiều nút chữ. Đang tạo tranh gốc U2.
-- UI, cân bằng kinh tế, hướng dẫn và số liệu Fuji còn chờ; chưa gọi là hoàn thành.
-- Người dùng triển khai ngày 20/11 theo USER-DEPLOY-VI.md; không cần phản hồi để tiếp tục.
+- U2 đạt: 76 ảnh UI gốc, 3,997,810 byte / 8 MB; đủ 34 biểu tượng, 5 nền, 6 tư thế mèo hướng dẫn.
+- Mỗi ảnh có prompt, giấy phép và mã băm; không đưa ảnh tham khảo của game khác vào công cụ tạo ảnh.
+- Trình duyệt tải đủ 76 ảnh, không lỗi; font/icon lint và typecheck đạt.
+- Bộ test cục bộ đạt: 2.503 web, 724 server; vẫn ghi rõ 2 expected fail và 11 skip cũ trong rules.
+- U3 đang làm: 53 trạng thái cần dựng lại và chụp ở hai kích thước; chưa nhận đạt.
+- Sửa lỗi biểu tượng vai trò che chân dung mèo và chữ khó đọc trong hộp hướng dẫn.
+- V chỉ PARTIAL ở nhận dạng giọng nói sau 9 vòng; các cổng còn lại đạt.
+- Còn phối âm S5–S7, mô phỏng/tinh chỉnh kinh tế E1–E5, tutorial T1 và số liệu Fuji C1.
+- Bạn triển khai ngày 20/11 theo USER-DEPLOY-VI.md; không triển khai hay đổi hợp đồng trong phiên này.
+- Không cần phản hồi để tiếp tục; các mốc đồng bộ 16/18 và khóa 19/11 giữ nguyên.

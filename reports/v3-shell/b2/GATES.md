@@ -48,10 +48,10 @@ PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
 PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md
 PASS U1.screens: measured 53; required >= 24 states, screenshots, all metrics and fix lists
 PASS U1.report: measured 17010; required nonempty reports/v3-shell/b2/UI-AUDIT.md
-FAIL U2.files: measured missing; required >= 60 new art files with provenance
-FAIL U2.bytes: measured missing; required <= 8000000 bytes new UI art
-FAIL U2.inputs: measured missing; required 0 reference frames as generator inputs; text/own images only
-FAIL U2.sheet: measured missing; required nonempty reports/v3-shell/b2/shots/ui-kit.png
+PASS U2.files: measured 76; required >= 60 new art files with provenance
+PASS U2.bytes: measured 3997810; required <= 8000000 bytes new UI art
+PASS U2.inputs: measured 76/76; required 0 reference frames as generator inputs; text/own images only
+PASS U2.sheet: measured 947189; required nonempty reports/v3-shell/b2/shots/ui-kit.png
 FAIL U3.screens: measured missing; required >= 24 rebuilt screens
 FAIL U3.coverage: measured 0/53; required every U1 screen rebuilt
 FAIL U3.images: measured missing; required 1280x720 AND 1440x900 before/after images per screen
@@ -175,7 +175,7 @@ FAIL SY2.commits: measured missing; required both branch commit IDs, suite, cove
 FAIL SY2.report: measured missing; required nonempty reports/v3-shell/b2/SYNC-18.md
 FAIL SY3.time: measured missing; required at or after 2026-11-19T12:00:00Z
 FAIL SY3.report: measured missing; required nonempty reports/v3-shell/b2/REPORT-B2.md
-PASS SY3.status: measured 992; required nonempty reports/v3-shell/b2/STATUS-VI.md
+PASS SY3.status: measured 1014; required nonempty reports/v3-shell/b2/STATUS-VI.md
 PASS SY3.user: measured 406; required nonempty reports/v3-shell/b2/NEEDS-USER.md
 FAIL SY3.final: measured missing; required all other gates PASS or explicitly qualified PARTIAL
 ```

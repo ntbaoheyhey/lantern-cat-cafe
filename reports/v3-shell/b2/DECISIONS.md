@@ -49,3 +49,9 @@
 
 ## U1 close / U2 art direction
 Campaign audit fixture used invalid challenge band 0; corrected to 1 and verified actual party/enemy outcomes without touching combat sources. Replaced the accidental black/loading comparison frame with the inspected result ribbon frame. U2 uses built-in imagegen from written prompts only, never the private reference frames. Export originals into project-owned WebP assets with hashes and per-file provenance.
+
+U2 identity continuity: remaining guide poses and button hover/press states use only their own generated base PNGs as edit inputs; hashes and paths are in per-file provenance. The 2x export manifest records source dimensions and any backdrop upscaling honestly. Preview validation: 11 images loaded, fonts loaded, zero browser errors/overflow. New components typecheck; no screen is yet marked rebuilt.
+
+U2 resume review: 54 exported files loaded with no browser errors or overflow. Small-size inspection retained the currency silhouettes and result lettering, and increased corner badges to 32 px. Font declarations moved into the existing central typography file; both original typography and glyph lint commands pass without changing their scope. Reusable tab rail and explicit button types were added for the upcoming screen work.
+
+- U2 completion: retain all 74 original generated sources and export 76 runtime WebPs (3,997,810 bytes). The final 34-icon vocabulary distinguishes mint, withdraw, seal, fuse, list, buy, history and audio; each has an exact text prompt and hash. The 1.5311× backdrop upscale stays disclosed. No third-party reference frames were generator inputs.

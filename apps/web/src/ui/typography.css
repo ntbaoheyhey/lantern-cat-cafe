@@ -18,3 +18,7 @@ h1,h2,h3,.t-title,.uv-patrol,.uv-dock button {font-family:var(--font-display)!im
 .th-audio button,.th-audio summary {display:grid;place-items:center;border:1px solid #bd8e52;background:#261a35;color:inherit;border-radius:12px;min-width:38px;min-height:38px;cursor:pointer}
 .th-audio details[open] {padding:8px;background:#261a35;border:1px solid #bd8e52;border-radius:12px}.th-audio label{display:flex;justify-content:space-between;gap:12px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+/* Original painted shell kit: keep all font selection centralized. */
+.b2-button,.b2-action,.b2-ribbon,.cr-app .b2-button,.cr-app .b2-action{font-family:var(--font-display)!important}
+.b2-guide>p{font-family:var(--font-body)}

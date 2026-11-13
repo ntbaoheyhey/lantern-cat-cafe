@@ -10,8 +10,8 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
 - [ ] V — PARTIAL (allowed: only recognition misses after 9 documented processing iterations; all other V gates PASS; self-score 7/10)
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
-- [ ] U2 — in progress (original text-only painted assets)
-- [ ] U3 — todo
+- [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)
+- [ ] U3 — in progress (53 audited states; kit ready)
 - [ ] U4 — todo
 - [ ] S5 — todo
 - [ ] S6 — todo
@@ -138,3 +138,15 @@ PASS U1.screens: measured 53; required >= 24 states, screenshots, all metrics an
 PASS U1.report: measured 17010; required nonempty reports/v3-shell/b2/UI-AUDIT.md
 
 Checks: tests/u1-types.log, tests/u1-suite.log (2,503 web and 724 server tests pass; existing rule expected failures/skips remain disclosed). Real campaign victory/defeat verified by tests/u1-campaign-results-2.log. All 53 private comparisons are outside the repository. Baseline: 26 states exceed 25 words, 42 exceed two plain buttons; no U3 completion claimed.
+
+## U2 evidence
+
+PASS U2.files: measured 76; required >= 60 new art files with provenance
+
+PASS U2.bytes: measured 3997810; required <= 8000000 bytes new UI art
+
+PASS U2.inputs: measured 76/76; required 0 reference frames as generator inputs; text/own images only
+
+PASS U2.sheet: measured 947189; required nonempty reports/v3-shell/b2/shots/ui-kit.png
+
+Checks: tests/u2-types.log, tests/u2-suite.log (2,503 web and 724 server tests pass; 2 expected rule failures and 11 existing skips retained), tests/u2-browser.log (76/76 images, font loaded, zero errors/overflow). Typography and icon lint pass. Original kit reviewed at small display sizes and as stretched frames; generator source-size limits disclosed in UI-ART.json.

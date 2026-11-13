@@ -25,3 +25,11 @@ After: /dev/disk3s1   926Gi   798Gi    90Gi    90%    5.4M  944M    1%   /System
 
 Resume 2026-11-13T05:14:35.962563+00:00: 91 GiB free before cleanup; 30 GiB worktree. Closed recorded U1-only Vite/local-server/Anvil PIDs after capture. Removed rebuildable outputs: contracts/cache, contracts/out, apps/web/node_modules/.vite, packages/auth/node_modules/.vite, packages/chain/node_modules/.vite, packages/game-rules/node_modules/.vite, packages/api-contract/node_modules/.vite, supabase/tests/node_modules/.vite. Protected trees retained.
 After: /dev/disk3s1   926Gi   798Gi    91Gi    90%    5.4M  949M    1%   /System/Volumes/Data
+
+## Resume 2026-11-13T05:32:48.623954+00:00
+Before: 337.92 GiB available. After: 337.92 GiB available.
+Removed rebuildable worktree caches: none present. Sources and other worktrees untouched.
+
+## Resume 2026-11-13T06:20:36.620632+00:00
+Before: 337.58 GiB available. After: 337.50 GiB available.
+Removed rebuildable worktree outputs: none present. Protected trees and current art sources retained.
