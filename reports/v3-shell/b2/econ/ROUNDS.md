@@ -832,3 +832,34 @@ Three selected levers changed. The best score is 0.059972; all pilot median targ
 | heavy-heavy-d1-b0.1 | 1.141 | 1.042 | 13 / 9 | 0.482 |
 | heavy-heavy-d1-b0.2 | 1.215 | 1.047 | 13 / 9 | 0.465 |
 | heavy-heavy-d1-b0.35 | 1.273 | 1.055 | 13 / 9 | 0.474 |
+
+## Round 22 — Affordable recipe ranges and local withdrawal probes
+
+80 unique configs × 40 seeds × 18 scenarios. Best score 0.0371.
+
+The selected change lowers withdrawal retention from 2000 to 1750 basis points. Star improves to 1.102623 in the worst scenario, but two bot ratios narrowly miss again (up to 0.502630). Single-axis and early paired probes mostly follow funding, not joint price/rebate trade-offs. Change method to stratified joint exploration and local refinement over affordable polish, display, rebates and rewards. Keep assumptions, source cap and acceptance thresholds fixed.
+
+| Lever | Before | After |
+|---|---:|---:|
+| policy.spool.feeBp | 2000 | 1750 |
+
+| Scenario | Burn / claims | Star source / sink | Casual / heavy Legendary | Bot / regular per hour |
+|---|---:|---:|---:|---:|
+| casual-heavy-d0.5-b0.1 | 1.036 | 1.078 | 13 / 9 | 0.497 |
+| casual-heavy-d0.5-b0.2 | 1.083 | 1.089 | 13 / 9 | 0.505 |
+| casual-heavy-d0.5-b0.35 | 1.162 | 1.103 | 13 / 8.5 | 0.491 |
+| casual-heavy-d1-b0.1 | 1.137 | 1.060 | 13 / 9 | 0.477 |
+| casual-heavy-d1-b0.2 | 1.196 | 1.066 | 13 / 9 | 0.481 |
+| casual-heavy-d1-b0.35 | 1.262 | 1.076 | 13 / 8.5 | 0.464 |
+| balanced-d0.5-b0.1 | 1.039 | 1.057 | 13 / 9 | 0.499 |
+| balanced-d0.5-b0.2 | 1.097 | 1.065 | 13 / 9 | 0.490 |
+| balanced-d0.5-b0.35 | 1.157 | 1.079 | 13 / 9 | 0.500 |
+| balanced-d1-b0.1 | 1.140 | 1.050 | 13 / 9 | 0.476 |
+| balanced-d1-b0.2 | 1.200 | 1.055 | 13 / 9 | 0.467 |
+| balanced-d1-b0.35 | 1.266 | 1.065 | 13 / 9 | 0.469 |
+| heavy-heavy-d0.5-b0.1 | 1.056 | 1.043 | 13 / 9 | 0.510 |
+| heavy-heavy-d0.5-b0.2 | 1.101 | 1.049 | 13 / 9 | 0.496 |
+| heavy-heavy-d0.5-b0.35 | 1.155 | 1.061 | 13 / 9 | 0.503 |
+| heavy-heavy-d1-b0.1 | 1.137 | 1.042 | 13 / 9 | 0.473 |
+| heavy-heavy-d1-b0.2 | 1.209 | 1.046 | 13 / 9 | 0.468 |
+| heavy-heavy-d1-b0.35 | 1.263 | 1.055 | 13 / 9 | 0.470 |

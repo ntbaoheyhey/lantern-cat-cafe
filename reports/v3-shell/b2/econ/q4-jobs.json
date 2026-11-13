@@ -177,7 +177,8 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round22.log",
-    "started": "2026-11-13T17:00:07.147948+00:00"
+    "started": "2026-11-13T17:00:07.147948+00:00",
+    "completed": "2026-11-13T17:13:34.699093+00:00"
   },
   {
     "name": "confirm-round21",
@@ -199,6 +200,56 @@
       "reports/v3-shell/b2/econ/PROGRESSION-200.json"
     ],
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-confirm21.log",
-    "started": "2026-11-13T17:00:07.147948+00:00"
+    "started": "2026-11-13T17:00:07.147948+00:00",
+    "completed": "2026-11-13T17:17:05.522888+00:00"
+  },
+  {
+    "name": "round21-robustness-diagnostic",
+    "pid": 52817,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/sensitivity.mjs",
+      "--label",
+      "Q4-ROBUSTNESS21",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-21-best.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+      "--keys",
+      "demand,initial.marketYarnPerParticipant",
+      "--seeds",
+      "200",
+      "--workers",
+      "2"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-robustness21.log",
+    "started": "2026-11-13T17:08:17.330244+00:00",
+    "completed": "2026-11-13T17:17:05.522888+00:00"
+  },
+  {
+    "name": "round23-joint-price-rebate",
+    "pid": 53896,
+    "command": [
+      "node",
+      "tools/chain/economy-lab/search.mjs",
+      "--round",
+      "23",
+      "--method",
+      "stratified",
+      "--configs",
+      "120",
+      "--seeds",
+      "40",
+      "--workers",
+      "4",
+      "--config",
+      "reports/v3-shell/b2/econ/search/round-22-best.json",
+      "--levers",
+      "reports/v3-shell/b2/econ/Q4-ROUND23-LEVERS.json",
+      "--bank",
+      "reports/v3-shell/b2/econ/PROGRESSION-200.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q4-round23.log",
+    "started": "2026-11-13T17:13:34.699093+00:00"
   }
 ]

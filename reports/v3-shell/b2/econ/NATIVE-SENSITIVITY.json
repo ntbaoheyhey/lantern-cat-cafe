@@ -1,6 +1,6 @@
 {
   "label": "NATIVE-SENSITIVITY",
-  "date": "2026-11-13T16:53:06.280Z",
+  "date": "2026-11-13T17:20:57.521Z",
   "base": {
     "path": "reports/v3-shell/b2/econ/PROGRESSION-200.json",
     "sha256": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b"
@@ -11,7 +11,7 @@
     "sha256": "1f4b9b6ee85233fe1b85c1f3b2dbfd8886257f65a8b3a4c759f0f1cd55ab93c1"
   },
   "method": "Actual C2 transitions; rerun only the changed profile using the same 200 seeds, reuse unchanged profiles exactly. Timing changes rerun every profile. Integer perturbations with no policy change reuse verified records.",
-  "elapsedSeconds": 4041.524169417,
+  "elapsedSeconds": 5712.757683542,
   "complete": false,
   "cases": [
     {
@@ -399,6 +399,33 @@
       "manifest": {
         "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.hoursSigma-minus.json",
         "sha256": "38d116eef74ce510977b52fd6cdc7417e1c038d7e744cae4f1401a4810b945c6"
+      }
+    },
+    {
+      "assumption": "profiles.4.hoursSigma",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.hoursSigma-plus.json",
+        "sha256": "7a4c34a83b5993b666ab8314271720cc4461f5e74a51ce73efca2626d930e8f1"
+      }
+    },
+    {
+      "assumption": "profiles.4.sessionMinutes",
+      "delta": -0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.sessionMinutes-minus.json",
+        "sha256": "38b6b65630abe07af70e559595ae6e3bacd1cd00f28a57089658dae76d8a49fd"
+      }
+    },
+    {
+      "assumption": "profiles.4.sessionMinutes",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/profiles.4.sessionMinutes-plus.json",
+        "sha256": "def9b01f7205cda63342211afcaea8aa9c1d2200226dde693b0db351975392e0"
       }
     }
   ]

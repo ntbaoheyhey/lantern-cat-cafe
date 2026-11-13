@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-13T17:11:45.986242+00:00",
+  "bank": {
+    "path": "reports/v3-shell/b2/econ/PROGRESSION-200.jsonl.gz",
+    "sha256": "2b6182d99a05b9e314933b87d1f55e8e8864f9edb1c8501d7c8c8760fd6dbddd",
+    "accounts": 1000,
+    "seedsPerProfile": 200,
+    "days": 42,
+    "profiles": [
+      {
+        "id": "casual",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 13,
+          "p10": 4,
+          "p90": 18
+        },
+        "firstSources": {
+          "tailor": 155,
+          "route:campaign": 24,
+          "gear-invitation": 21
+        }
+      },
+      {
+        "id": "regular",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3.900000000000002,
+          "p90": 12
+        },
+        "firstSources": {
+          "tailor": 164,
+          "route:campaign": 22,
+          "gear-invitation": 14
+        }
+      },
+      {
+        "id": "heavy",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 9,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 16,
+          "route:campaign": 19
+        }
+      },
+      {
+        "id": "whale-free",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 10
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      },
+      {
+        "id": "bot",
+        "seeds": 200,
+        "censored": 0,
+        "legendary": {
+          "median": 8,
+          "p10": 3,
+          "p90": 9
+        },
+        "firstSources": {
+          "tailor": 165,
+          "gear-invitation": 17,
+          "route:campaign": 18
+        }
+      }
+    ]
+  },
+  "method": "Native first sixteen Epic/Legendary items per account, same selection order as token studio. Mean counts by profile; this diagnoses affordable polish tiers, not acceptance.",
+  "profiles": {
+    "bot": {
+      "worn": 5.525,
+      "fine": 8.75,
+      "perfect": 1.725,
+      "eligible": 14.275
+    },
+    "casual": {
+      "worn": 5.675,
+      "fine": 8.44,
+      "perfect": 1.885,
+      "eligible": 14.115
+    },
+    "heavy": {
+      "worn": 5.505,
+      "fine": 8.775,
+      "perfect": 1.72,
+      "eligible": 14.28
+    },
+    "regular": {
+      "worn": 5.455,
+      "fine": 8.76,
+      "perfect": 1.785,
+      "eligible": 14.215
+    },
+    "whale-free": {
+      "worn": 5.53,
+      "fine": 8.735,
+      "perfect": 1.735,
+      "eligible": 14.265
+    }
+  }
+}
