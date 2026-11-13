@@ -1,0 +1,732 @@
+{
+  "date": "2026-11-13T20:11:53.845425+00:00",
+  "sourceProduction": {
+    "path": "reports/v3-shell/b2/MENU-VOICE-LINES.json",
+    "sha256": "48a01cd34f4ffab71de69bb9f4064d06737ecd3fc12d9bdb5c610cb1e23547d5"
+  },
+  "method": "The first greeting lost its contour in real encoded playback. Preserve vowel formants while giving the welcome a longer falling inflection. Test recognition, loudness and the exact shipping64kbps Opus codec; fresh browser evidence remains required.",
+  "rows": [
+    {
+      "source": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
+        "sha256": "ffcfa86ea9b6fd075216fae625b4c72c21592cfcdbc6f169229edce315ff97e2"
+      },
+      "cueId": "voice.guide.idle",
+      "unitId": "mallow",
+      "originalText": "Welcome home!",
+      "attempts": [
+        {
+          "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-0.flac",
+          "sha256": "cd95179a61a56f5a7a3e221cf0634b63cd78aa2ea1289cfd5ccdf17c277d9b9c",
+          "text": "Come on in!",
+          "attempt": 1,
+          "production": {
+            "profile": {
+              "source": 333916,
+              "baseSemitones": 7.03,
+              "range": 5,
+              "speed": 0.14,
+              "brightness": 4727,
+              "breathiness": 0.09,
+              "formantShift": 1.24,
+              "signature": "trill",
+              "personality": "Impatient fire whisk",
+              "lines": {
+                "select": [
+                  "Heat it up!"
+                ],
+                "attack": [
+                  "Sizzle!",
+                  "Sugar rush!",
+                  "Hot stuff!"
+                ],
+                "skill": [
+                  "Kettle's boiling!"
+                ],
+                "ult": [
+                  "Burn bright!"
+                ],
+                "hit": [
+                  "Still hot!"
+                ],
+                "death": [
+                  "Flame low."
+                ],
+                "victory": [
+                  "Perfectly toasted!"
+                ]
+              },
+              "rolloff": 2.42,
+              "colorHz": 1578,
+              "colorDb": 13.79,
+              "vowelMix": 0.33
+            },
+            "settings": {
+              "pitchWeight": 0.1,
+              "filterWeight": 0,
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "eq": {
+                "highpass": 45.0,
+                "lowpass": 2300.0,
+                "highSlope": 2.0,
+                "lowSlope": 2.0,
+                "resonanceHz": 2060.3040510092724,
+                "resonanceDb": 15.19707286235568
+              },
+              "preserveFormants": true,
+              "spokenCore": 0.45,
+              "paceMultiplier": 1.15,
+              "phraseAccent": 4
+            },
+            "semitones": 0.528,
+            "grains": [
+              {
+                "syllable": "co",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:691910:consonants/691910-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 0.8125
+              },
+              {
+                "syllable": "me",
+                "vowel": "e",
+                "class": "nasal",
+                "consonantSource": "freesound:104374:consonants/104374-06.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.3,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 1.625
+              },
+              {
+                "syllable": "on",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 2.4375
+              },
+              {
+                "syllable": "in",
+                "vowel": "i",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-02.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.42,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 3.25
+              }
+            ],
+            "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+            "firstWordMs": 40
+          },
+          "sources": [
+            {
+              "path": "assets/audio-sources/b2/cats/333916.flac",
+              "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+              "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/104374-06.flac",
+              "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+              "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+              "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+              "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+            }
+          ],
+          "integratedLufs": -16.0,
+          "truePeakDbTP": -5.89,
+          "expected": "Come on in!",
+          "recognized": "Come on in.",
+          "wordAccuracy": 1.0,
+          "model": "faster-whisper small.en int8 CPU",
+          "prompt": null,
+          "beamSize": 5,
+          "temperature": 0,
+          "language": "en",
+          "isolatedMetrics": {
+            "onsetsPerSecond": 5.016874597095295,
+            "layersPerOnset": 1.0,
+            "musicBedFraction": 0.8448275862068966,
+            "voiceContoursPerMinute": 50.16874597095294,
+            "tickTransientsPerSecond": 5.016874597095295,
+            "silenceFraction": 0.15517241379310345,
+            "onsetCount": 6,
+            "onsetBandCounts": [
+              0,
+              2,
+              0,
+              1,
+              1,
+              2
+            ],
+            "onsetTimes": [
+              0.033,
+              0.153,
+              0.283,
+              0.512,
+              0.692,
+              0.931
+            ],
+            "voiceContourEvents": [
+              {
+                "start": 0.259,
+                "duration": 0.229,
+                "semitones": 2.966
+              }
+            ],
+            "tickCount": 6,
+            "bandEnergyFractions": [
+              0.0004211043441034793,
+              0.660242430613894,
+              0.3390495761772335,
+              0.0002868888647688868
+            ],
+            "integratedLufs": -16.0,
+            "loudnessRange": 0.0,
+            "truePeakDbTP": -5.89,
+            "durationSeconds": 1.1959637188208616
+          },
+          "encoded": {
+            "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-0.opus",
+            "sha256": "32f087fb3a0a27eae45c7c3ae86ab8f19c029a438434267096e769faa942aa43",
+            "metrics": {
+              "onsetsPerSecond": 5.016874597095295,
+              "layersPerOnset": 0.8333333333333334,
+              "musicBedFraction": 0.8448275862068966,
+              "voiceContoursPerMinute": 50.16874597095294,
+              "tickTransientsPerSecond": 4.180728830912745,
+              "silenceFraction": 0.15517241379310345,
+              "onsetCount": 6,
+              "onsetBandCounts": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                2
+              ],
+              "onsetTimes": [
+                0.033,
+                0.153,
+                0.283,
+                0.512,
+                0.692,
+                0.931
+              ],
+              "voiceContourEvents": [
+                {
+                  "start": 0.259,
+                  "duration": 0.229,
+                  "semitones": 2.966
+                }
+              ],
+              "tickCount": 5,
+              "bandEnergyFractions": [
+                0.0004308910942678437,
+                0.662264664990437,
+                0.3370219108587736,
+                0.00028253305652168904
+              ],
+              "integratedLufs": -16.01,
+              "loudnessRange": 0.0,
+              "truePeakDbTP": -5.89,
+              "durationSeconds": 1.1959637188208616
+            }
+          },
+          "meetsDiagnosticCriteria": false
+        },
+        {
+          "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-1.flac",
+          "sha256": "e19234e81d904b99f3cba8609e2a2f7c5a449157348fa4a949f15d70b6101877",
+          "text": "Come on in!",
+          "attempt": 2,
+          "production": {
+            "profile": {
+              "source": 333916,
+              "baseSemitones": 7.03,
+              "range": 5,
+              "speed": 0.14,
+              "brightness": 4727,
+              "breathiness": 0.09,
+              "formantShift": 1.24,
+              "signature": "trill",
+              "personality": "Impatient fire whisk",
+              "lines": {
+                "select": [
+                  "Heat it up!"
+                ],
+                "attack": [
+                  "Sizzle!",
+                  "Sugar rush!",
+                  "Hot stuff!"
+                ],
+                "skill": [
+                  "Kettle's boiling!"
+                ],
+                "ult": [
+                  "Burn bright!"
+                ],
+                "hit": [
+                  "Still hot!"
+                ],
+                "death": [
+                  "Flame low."
+                ],
+                "victory": [
+                  "Perfectly toasted!"
+                ]
+              },
+              "rolloff": 2.42,
+              "colorHz": 1578,
+              "colorDb": 13.79,
+              "vowelMix": 0.33
+            },
+            "settings": {
+              "pitchWeight": 0.1,
+              "filterWeight": 0,
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "eq": {
+                "highpass": 45.0,
+                "lowpass": 2300.0,
+                "highSlope": 2.0,
+                "lowSlope": 2.0,
+                "resonanceHz": 2060.3040510092724,
+                "resonanceDb": 15.19707286235568
+              },
+              "preserveFormants": true,
+              "spokenCore": 0.45,
+              "paceMultiplier": 1.15,
+              "phraseAccent": 6
+            },
+            "semitones": 0.528,
+            "grains": [
+              {
+                "syllable": "co",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:691910:consonants/691910-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 0.8125
+              },
+              {
+                "syllable": "me",
+                "vowel": "e",
+                "class": "nasal",
+                "consonantSource": "freesound:104374:consonants/104374-06.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.3,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 1.625
+              },
+              {
+                "syllable": "on",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 2.4375
+              },
+              {
+                "syllable": "in",
+                "vowel": "i",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-02.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.42,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 3.25
+              }
+            ],
+            "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+            "firstWordMs": 40
+          },
+          "sources": [
+            {
+              "path": "assets/audio-sources/b2/cats/333916.flac",
+              "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+              "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/104374-06.flac",
+              "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+              "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+              "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+              "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+            }
+          ],
+          "integratedLufs": -16.01,
+          "truePeakDbTP": -5.88,
+          "expected": "Come on in!",
+          "recognized": "Come on in.",
+          "wordAccuracy": 1.0,
+          "model": "faster-whisper small.en int8 CPU",
+          "prompt": null,
+          "beamSize": 5,
+          "temperature": 0,
+          "language": "en",
+          "isolatedMetrics": {
+            "onsetsPerSecond": 5.016874597095295,
+            "layersPerOnset": 1.0,
+            "musicBedFraction": 0.8448275862068966,
+            "voiceContoursPerMinute": 50.16874597095294,
+            "tickTransientsPerSecond": 5.853020363277843,
+            "silenceFraction": 0.15517241379310345,
+            "onsetCount": 6,
+            "onsetBandCounts": [
+              0,
+              2,
+              0,
+              1,
+              1,
+              2
+            ],
+            "onsetTimes": [
+              0.033,
+              0.153,
+              0.283,
+              0.512,
+              0.702,
+              0.931
+            ],
+            "voiceContourEvents": [
+              {
+                "start": 0.15,
+                "duration": 0.339,
+                "semitones": 11.395
+              }
+            ],
+            "tickCount": 7,
+            "bandEnergyFractions": [
+              0.0010506820455658257,
+              0.6709992141556105,
+              0.3276281796287478,
+              0.0003219241700758361
+            ],
+            "integratedLufs": -16.01,
+            "loudnessRange": 0.0,
+            "truePeakDbTP": -5.88,
+            "durationSeconds": 1.1959637188208616
+          },
+          "encoded": {
+            "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-1.opus",
+            "sha256": "6a84586a092f0d52a7af2724eca722d1c099ab574ce2389895a066b359f73921",
+            "metrics": {
+              "onsetsPerSecond": 5.016874597095295,
+              "layersPerOnset": 1.1666666666666667,
+              "musicBedFraction": 0.8448275862068966,
+              "voiceContoursPerMinute": 50.16874597095294,
+              "tickTransientsPerSecond": 3.3445830647301964,
+              "silenceFraction": 0.15517241379310345,
+              "onsetCount": 6,
+              "onsetBandCounts": [
+                0,
+                2,
+                0,
+                1,
+                2,
+                2
+              ],
+              "onsetTimes": [
+                0.033,
+                0.153,
+                0.283,
+                0.512,
+                0.702,
+                0.931
+              ],
+              "voiceContourEvents": [
+                {
+                  "start": 0.249,
+                  "duration": 0.239,
+                  "semitones": 4.062
+                }
+              ],
+              "tickCount": 4,
+              "bandEnergyFractions": [
+                0.0011107617783088258,
+                0.6705468838363231,
+                0.3280207710989449,
+                0.00032158328642293763
+              ],
+              "integratedLufs": -15.99,
+              "loudnessRange": 0.0,
+              "truePeakDbTP": -5.85,
+              "durationSeconds": 1.1959637188208616
+            }
+          },
+          "meetsDiagnosticCriteria": false
+        },
+        {
+          "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-2.flac",
+          "sha256": "d842b3f95921909fe4c058ca2a372901b82ad4abe677572948745dacca8b8055",
+          "text": "Come on in!",
+          "attempt": 3,
+          "production": {
+            "profile": {
+              "source": 333916,
+              "baseSemitones": 7.03,
+              "range": 5,
+              "speed": 0.14,
+              "brightness": 4727,
+              "breathiness": 0.09,
+              "formantShift": 1.24,
+              "signature": "trill",
+              "personality": "Impatient fire whisk",
+              "lines": {
+                "select": [
+                  "Heat it up!"
+                ],
+                "attack": [
+                  "Sizzle!",
+                  "Sugar rush!",
+                  "Hot stuff!"
+                ],
+                "skill": [
+                  "Kettle's boiling!"
+                ],
+                "ult": [
+                  "Burn bright!"
+                ],
+                "hit": [
+                  "Still hot!"
+                ],
+                "death": [
+                  "Flame low."
+                ],
+                "victory": [
+                  "Perfectly toasted!"
+                ]
+              },
+              "rolloff": 2.42,
+              "colorHz": 1578,
+              "colorDb": 13.79,
+              "vowelMix": 0.33
+            },
+            "settings": {
+              "pitchWeight": 0.1,
+              "filterWeight": 0,
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "eq": {
+                "highpass": 45.0,
+                "lowpass": 2300.0,
+                "highSlope": 2.0,
+                "lowSlope": 2.0,
+                "resonanceHz": 2060.3040510092724,
+                "resonanceDb": 15.19707286235568
+              },
+              "preserveFormants": true,
+              "spokenCore": 0.45,
+              "paceMultiplier": 1.3,
+              "phraseAccent": 6
+            },
+            "semitones": 0.528,
+            "grains": [
+              {
+                "syllable": "co",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:691910:consonants/691910-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 0.8125
+              },
+              {
+                "syllable": "me",
+                "vowel": "e",
+                "class": "nasal",
+                "consonantSource": "freesound:104374:consonants/104374-06.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.3,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 1.625
+              },
+              {
+                "syllable": "on",
+                "vowel": "o",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.54,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 2.4375
+              },
+              {
+                "syllable": "in",
+                "vowel": "i",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-02.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.42,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 3.25
+              }
+            ],
+            "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+            "firstWordMs": 40
+          },
+          "sources": [
+            {
+              "path": "assets/audio-sources/b2/cats/333916.flac",
+              "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+              "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/104374-06.flac",
+              "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+              "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+              "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+              "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+            }
+          ],
+          "integratedLufs": -15.99,
+          "truePeakDbTP": -6.03,
+          "expected": "Come on in!",
+          "recognized": "Come on in.",
+          "wordAccuracy": 1.0,
+          "model": "faster-whisper small.en int8 CPU",
+          "prompt": null,
+          "beamSize": 5,
+          "temperature": 0,
+          "language": "en",
+          "isolatedMetrics": {
+            "onsetsPerSecond": 3.6806436536021905,
+            "layersPerOnset": 1.0,
+            "musicBedFraction": 0.8712121212121212,
+            "voiceContoursPerMinute": 44.167723843226284,
+            "tickTransientsPerSecond": 8.097416037924818,
+            "silenceFraction": 0.12878787878787878,
+            "onsetCount": 5,
+            "onsetBandCounts": [
+              0,
+              0,
+              2,
+              1,
+              2
+            ],
+            "onsetTimes": [
+              0.033,
+              0.143,
+              0.313,
+              0.333,
+              1.081
+            ],
+            "voiceContourEvents": [
+              {
+                "start": 0.559,
+                "duration": 0.349,
+                "semitones": 2.531
+              }
+            ],
+            "tickCount": 11,
+            "bandEnergyFractions": [
+              0.0003332332864452902,
+              0.5837317736186938,
+              0.4156464696813467,
+              0.00028852341351435893
+            ],
+            "integratedLufs": -15.99,
+            "loudnessRange": 0.0,
+            "truePeakDbTP": -6.03,
+            "durationSeconds": 1.3584580498866212
+          },
+          "encoded": {
+            "path": "work/v3b2/callouts/q5-menu-codec/menu-welcome30/mallow-1-2.opus",
+            "sha256": "bd21c6aa79a18c8ef85bece48a2cbb521a13b3ec3be563a7eadaa45352392464",
+            "metrics": {
+              "onsetsPerSecond": 3.6806436536021905,
+              "layersPerOnset": 1.0,
+              "musicBedFraction": 0.8712121212121212,
+              "voiceContoursPerMinute": 44.167723843226284,
+              "tickTransientsPerSecond": 8.097416037924818,
+              "silenceFraction": 0.12878787878787878,
+              "onsetCount": 5,
+              "onsetBandCounts": [
+                0,
+                0,
+                2,
+                1,
+                2
+              ],
+              "onsetTimes": [
+                0.033,
+                0.143,
+                0.313,
+                0.333,
+                1.091
+              ],
+              "voiceContourEvents": [
+                {
+                  "start": 0.559,
+                  "duration": 0.339,
+                  "semitones": 2.551
+                }
+              ],
+              "tickCount": 11,
+              "bandEnergyFractions": [
+                0.0003239933151470735,
+                0.586190227894313,
+                0.4131959037158937,
+                0.0002898750746461025
+              ],
+              "integratedLufs": -16.0,
+              "loudnessRange": 0.0,
+              "truePeakDbTP": -6.1,
+              "durationSeconds": 1.3584580498866212
+            }
+          },
+          "meetsDiagnosticCriteria": true
+        }
+      ],
+      "complete": true
+    }
+  ]
+}

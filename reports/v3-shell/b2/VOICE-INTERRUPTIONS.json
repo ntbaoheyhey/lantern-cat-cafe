@@ -1,38 +1,42 @@
 {
-  "trial": "21-battle-only-presence",
+  "trial": "29-balanced-under-speech",
   "manifest": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "449d8f546cf7388b3a0c087dccd8e31ed5f058979809c0a1acb6863579c2a666"
+    "sha256": "83388b1fbe35d9b2deed39fc339740c6e28be891893ccf8e997e566b92a1b762"
   },
   "method": "Inferred from logged source starts, selected sprite duration and the engine single-voice stop policy. A 40 ms tolerance excludes timing jitter. Not a waveform transcription.",
   "scenes": [
     {
       "name": "battle",
       "runtime": {
-        "path": "reports/v3-shell/b2/mix/21-battle-only-presence-battle-runtime.json.gz",
-        "sha256": "be1a520d27133a1049e3d17699b4321ae2e0333ca1ea675562ed80832d119852"
+        "path": "reports/v3-shell/b2/mix/29-balanced-under-speech-battle-runtime.json.gz",
+        "sha256": "222cc32e81b63eec1c2905cbc213abfd38e10bf1feeb61e0b90505393853cbdc"
       },
       "played": 48,
       "interruptedCount": 1,
+      "requiredInterruptedCount": 0,
+      "preemptibleBarkCount": 1,
       "interrupted": [
         {
           "cueId": "voice.panko.attack",
-          "variantId": "panko-attack-3-2.flac",
-          "expectedMs": 1029,
-          "heardMs": 320,
+          "variantId": "panko-attack-3-1.flac",
+          "expectedMs": 1009,
+          "heardMs": 466,
           "nextCueId": "voice.panko.ult.charge",
-          "at": 1794580030475
+          "at": 1794599561810
         }
       ]
     },
     {
       "name": "boss",
       "runtime": {
-        "path": "reports/v3-shell/b2/mix/21-battle-only-presence-boss-runtime.json.gz",
-        "sha256": "bc8ce1807979233199e8395996418fce6e7adacffacf00f3df5b0ae736071be9"
+        "path": "reports/v3-shell/b2/mix/29-balanced-under-speech-boss-runtime.json.gz",
+        "sha256": "4acbdba1591e4960c250c974b6ff1be4dd9f35ee38a3bacc5b936a8272fb6466"
       },
       "played": 25,
       "interruptedCount": 0,
+      "requiredInterruptedCount": 0,
+      "preemptibleBarkCount": 0,
       "interrupted": []
     }
   ]

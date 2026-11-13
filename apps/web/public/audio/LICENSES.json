@@ -40475,12 +40475,12 @@
     {
       "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
       "file": "mallow-1.flac",
-      "sha256": "ffcfa86ea9b6fd075216fae625b4c72c21592cfcdbc6f169229edce315ff97e2",
+      "sha256": "d842b3f95921909fe4c058ca2a372901b82ad4abe677572948745dacca8b8055",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
       "author": "Taskbar Hero original writing and synthesis; CC0 grains: RutgerMuller, ShangusBurger, hollandm, lextrack, qubodup",
-      "date": "2026-11-13T19:02:17.602050+00:00",
+      "date": "2026-11-13T20:13:06.157206+00:00",
       "speechModel": {
         "model": "Piper en_US-ljspeech-high",
         "modelLicense": "MIT",
@@ -40496,24 +40496,20 @@
           "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/843435-05.flac",
-          "sha256": "3e4a41a993a2acbafc7296567527901f66c89462dd39436ffeb74fdefe5f9ce2"
+          "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+          "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/721074-01.flac",
-          "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+          "path": "assets/audio-sources/b2/consonants/104374-06.flac",
+          "sha256": "0bd3fa5c7f73c06eaa82f00519a11f20a5880dd49adddf5791388c8242a4260a"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/104374-07.flac",
-          "sha256": "b44e42291ecff47bfacbbc5fd06721b797b95c59da01635d248b91379cb7ef66"
+          "path": "assets/audio-sources/b2/consonants/764351-01.flac",
+          "sha256": "6960c28bdc96bcd0b69d19ac3962131f960565087a667d80ab0a0d9efa0679d2"
         },
         {
-          "path": "assets/audio-sources/b2/consonants/691913-01.flac",
-          "sha256": "8b3ecae011a99542dcefbc5376519eda497e5b18cd6b137e62a51ad5a841930c"
-        },
-        {
-          "path": "assets/audio-sources/b2/consonants/104374-09.flac",
-          "sha256": "ff4057d76f82da75a5d716a365bbd5907453718167d19378503f62fe139f4e62"
+          "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+          "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
         },
         {
           "path": "assets/audio-sources/b2/consonants/764351-14.flac",
@@ -40521,8 +40517,8 @@
         }
       ],
       "processing": "Original menu dialogue; local Piper and CC0 grains, broader spoken formants with WORLD pitch preservation; measured -16 LUFS. No reference input.",
-      "prompt": "Welcome home!",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-codec-probes.json",
+      "prompt": "Come on in!",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-welcome30-probes.json",
       "formantProcessor": {
         "tool": "pyworld 0.3.5",
         "license": "MIT",
@@ -40833,7 +40829,7 @@
     {
       "path": "apps/web/public/audio/menu-voices.webm",
       "file": "menu-voices.webm",
-      "sha256": "cdc16d6ca81c2bfa214f0a1ed34f8dd3b475dafe13d78861e0efdc364b8828d9",
+      "sha256": "f2d1df577f3b0a22308fe600510ea17c4e0e24e8e45a02ccde7593cbc529d84a",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -40943,13 +40939,13 @@
         }
       ],
       "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-tea28-publication.json",
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-welcome30-publication.json",
       "spriteGainDb": 0
     },
     {
       "path": "apps/web/public/audio/menu-voices.mp3",
       "file": "menu-voices.mp3",
-      "sha256": "0966107561cb2076c338b52702c262c8fd3a4f7857e5459f5cc86d3b88e25660",
+      "sha256": "89f71cef7a36d3e3ddcb8ad3dea0f73e7d53b04c8d2225dcb16083d27fc60ffc",
       "sourceUrl": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
       "licenseUrl": "https://keithito.com/LJ-Speech-Dataset/",
       "license": "Own synthesis",
@@ -41059,8 +41055,8 @@
         }
       ],
       "processing": "Original menu dialogue, existing character formants and CC0 mouth/cat grains, local Piper; normalized -16 LUFS; no reference input.",
-      "processingEvidence": "reports/v3-shell/b2/q5/menu-tea28-publication.json",
-      "spriteGainDb": 0.5199999999999996
+      "processingEvidence": "reports/v3-shell/b2/q5/menu-welcome30-publication.json",
+      "spriteGainDb": 0
     },
     {
       "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-underscore.py",

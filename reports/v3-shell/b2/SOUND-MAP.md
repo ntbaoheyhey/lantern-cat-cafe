@@ -2,8 +2,8 @@
 
 Generated from typed sound-map.ts. This is the production plan; assets, screen wiring and playback measurements are separately gated by S2–S7.
 
-2552 event/screen assignments; 49 screens; 867 distinct cues.
-526 legacy/current cue IDs inspected; 0 missing. 44 call sites in 511 production source files; 0 unresolved.
+2552 event/screen assignments; 49 screens; 868 distinct cues.
+527 legacy/current cue IDs inspected; 0 missing. 44 call sites in 512 production source files; 0 unresolved.
 
 Pitch values are playback-rate ratios. Random gain is in dB. Every layer pool is a production role, not a claim that the asset exists. Hits reserve four variants per layer; UI reserves three. High-priority ultimate/voice requests duck music −8 dB with 120 ms attack / 400 ms release.
 
@@ -338,7 +338,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.forge-enhance | ambience | ambience.forge-enhance/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.home | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.forge | music | music.forge/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | forge-comment | voice.mochi.forge | voice | voice.mochi.forge/consonant / 3 / 0 / flat; voice.mochi.forge/voice-grain / 3 / 0 / flat; voice.mochi.forge/foley / 3 / 0 / high-pass-80; voice.mochi.forge/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | B |
 | enhance-hammer | ui.forge.hammer | ui | ui.forge.hammer/transient / 3 / 0 / flat; ui.forge.hammer/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | enhance-success | ui.forge.success | ui | ui.forge.success/transient / 3 / 0 / flat; ui.forge.success/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
@@ -367,7 +367,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.forge-fusion | ambience | ambience.forge-fusion/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.home | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.forge | music | music.forge/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | input-slot | ui.slot | ui | ui.slot/transient / 3 / 0 / flat; ui.slot/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | inputs-consumed | fusion.consume | sfx | fusion.consume/transient / 4 / 0 / flat; fusion.consume/body / 4 / 7 / low-shelf-180; fusion.consume/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | fusion-charge | fusion.charge | sfx | fusion.charge/transient / 4 / 0 / flat; fusion.charge/body / 4 / 7 / low-shelf-180; fusion.charge/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
@@ -918,7 +918,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | confirm | ui.confirm | ui | ui.confirm/transient / 3 / 0 / flat; ui.confirm/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | number-step | count.tick | ui | count.tick/transient / 3 / 0 / flat; count.tick/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 50 | 20 | none | B |
 | ambience-enter | ambience.chain-fusion | ambience | ambience.chain-fusion/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
-| music-enter | music.home | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| music-enter | music.forge | music | music.forge/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | input-slot | ui.slot | ui | ui.slot/transient / 3 / 0 / flat; ui.slot/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | inputs-consumed | fusion.consume | sfx | fusion.consume/transient / 4 / 0 / flat; fusion.consume/body / 4 / 7 / low-shelf-180; fusion.consume/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | fusion-charge | fusion.charge | sfx | fusion.charge/transient / 4 / 0 / flat; fusion.charge/body / 4 / 7 / low-shelf-180; fusion.charge/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |

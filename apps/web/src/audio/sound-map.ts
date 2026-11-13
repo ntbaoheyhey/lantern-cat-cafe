@@ -79,7 +79,7 @@ const common={hover:'ui.hover',press:'ui.click',release:'ui.release',open:'ui.op
 for(const screen of SOUND_SCREENS){
   events([screen],common);
   add(screen,'ambience-enter',`ambience.${screen}`);
-  add(screen,'music-enter',`music.${screen==='landing'||screen==='sign-in'?'landing':screen==='battle'?'battle':screen==='boss'?'boss':['chapter-map','stage-select','battle-prep'].includes(screen)?'map':screen==='victory'?'victory':screen==='defeat'?'defeat':'home'}`);
+  add(screen,'music-enter',`music.${screen==='landing'||screen==='sign-in'?'landing':screen==='battle'?'battle':screen==='boss'?'boss':screen.startsWith('forge-')||screen==='chain-fusion'?'forge':['chapter-map','stage-select','battle-prep'].includes(screen)?'map':screen==='victory'?'victory':screen==='defeat'?'defeat':'home'}`);
 }
 events(['hero-info','hero-level','hero-star','hero-gear','team','bag','market','wallet','season','settings'],{'tab-switch':'ui.tab'});
 events(['settings','team','batch-use','market-list','battle-prep'],{toggle:'ui.toggle','slider-step':'ui.slider'});

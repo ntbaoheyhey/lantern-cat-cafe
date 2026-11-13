@@ -56,7 +56,9 @@ const output={renders,mixIterations:trials.length,ducking:{db:-8,attackMs:120,re
 const interruptionsPath=`${base}/VOICE-INTERRUPTIONS.json`;
 if(existsSync(interruptionsPath)){
  const interruptions=JSON.parse(readFileSync(interruptionsPath));
- if(interruptions.trial===requested&&interruptions.scenes.some(s=>s.interruptedCount>0)){
+ // Ordinary attack/hit barks may yield to an ultimate by design. They are not
+ // the resolved A timing blocker and cannot justify S5's PARTIAL exception.
+ if(interruptions.trial===requested&&interruptions.scenes.some(s=>s.interrupted.some(row=>/^voice\..+\.(ult\.(charge|release)|skill\..+)$/.test(row.cueId)))){
   output.sessionABlocker='S5-A-VOICE-WINDOW';output.voiceInterruptions=signed(interruptionsPath);
  }
 }

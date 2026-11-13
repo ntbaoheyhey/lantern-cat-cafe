@@ -273,8 +273,31 @@ See the change and interpretation recorded in DECISIONS.md.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | [battle](mix/27-tone-greeting-battle.json) | 45.20 | 3.407 | 0.221 | 0.420 | 5.310 | 1.000 | -15.880 | -2.290 |
 | [boss](mix/27-tone-greeting-boss.json) | 45.20 | 3.164 | 0.259 | 0.398 | 7.965 | 1.000 | -15.710 | -2.600 |
+| [forge](mix/27-tone-greeting-forge.json) | 60.20 | 3.904 | 1.009 | 4.087 | 1.993 | 1.000 | -17.700 | -1.880 |
 | [home](mix/27-tone-greeting-home.json) | 60.20 | 4.253 | 1.586 | 5.416 | 0.997 | 1.000 | -17.610 | -2.580 |
 
-## Candidate28 — speech-preserving score balance
+## 28-clear-score
 
-Four clocked-stem score tests retain the original voice spectrum or a mild3dB shelf. Battle mild shelf +9dB sustained music overtones:0.79646ticks/s,3.9823contours/min,3.40708onsets/s, but-11.78LUFS; production reduces battle master calibration by3.2dB. Boss unfiltered speech +6dB music overtones:0.50885ticks/s,5.30973contours/min,-13.94LUFS. These are diagnostics only. All16 engine tests pass. Full captures and recognition guard pending; no acceptance claim.
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/28-clear-score-bag.json) | 60.20 | 4.335 | 1.498 | 5.432 | 1.993 | 1.000 | -17.590 | -2.350 |
+| [battle](mix/28-clear-score-battle.json) | 180.20 | 3.302 | 0.200 | 0.605 | 5.327 | 0.940 | -14.860 | -2.940 |
+| [boss](mix/28-clear-score-boss.json) | 120.20 | 3.086 | 0.189 | 0.349 | 3.494 | 1.000 | -13.760 | -1.940 |
+| [forge](mix/28-clear-score-forge.json) | 60.20 | 3.837 | 1.126 | 4.386 | 2.990 | 1.000 | -17.690 | -2.260 |
+| [gacha](mix/28-clear-score-gacha.json) | 60.20 | 4.302 | 1.668 | 5.315 | 0.000 | 1.000 | -18.130 | -5.920 |
+| [home](mix/28-clear-score-home.json) | 60.20 | 4.269 | 1.475 | 5.282 | 0.997 | 1.000 | -17.640 | -2.880 |
+
+## 29-balanced-under-speech
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/29-balanced-under-speech-bag.json) | 60.20 | 4.286 | 1.519 | 5.283 | 1.993 | 1.000 | -17.360 | -1.790 |
+| [battle](mix/29-balanced-under-speech-battle.json) | 180.20 | 3.246 | 0.207 | 0.616 | 5.327 | 0.962 | -14.860 | -2.920 |
+| [boss](mix/29-balanced-under-speech-boss.json) | 120.20 | 3.095 | 0.185 | 0.491 | 3.993 | 1.000 | -13.630 | -1.950 |
+| [forge](mix/29-balanced-under-speech-forge.json) | 60.20 | 3.903 | 1.102 | 4.119 | 1.993 | 1.000 | -17.690 | -2.290 |
+| [gacha](mix/29-balanced-under-speech-gacha.json) | 60.20 | 4.352 | 1.588 | 5.066 | 0.000 | 1.000 | -18.130 | -6.140 |
+| [home](mix/29-balanced-under-speech-home.json) | 60.20 | 4.219 | 1.547 | 5.499 | 0.997 | 1.000 | -17.410 | -1.940 |

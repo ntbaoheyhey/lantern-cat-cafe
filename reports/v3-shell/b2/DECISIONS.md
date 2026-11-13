@@ -143,3 +143,11 @@ The six accepted source takes preserve or improve recognized words and all212 so
 2026-11-13T19:33:32.162710+00:00: budget repair passed12/12 decoded fallback identities/levels after0.3dB sprite gain trim; shipped15,747,841bytes. B2 licence audit is authoritative; historical verifier output preserved q5/legacy-verifier-scene28.json. New nine speech takes retain50/50 ultimate and62/62 skill recognition with12/12 identities. Full candidate28 runtime remains pending.
 
 2026-11-13T19:45:09.532852+00:00 Q5 method29: full28 battle bed94.05% misses95%, boss ticks0.349 misses0.390/s; home1 contour/min and5.282ticks/s miss. Tonal-gap diagnostic locates holes during voice/ultimates. Retain3dB more low music under battle speech; boss voice+1dB. Home masking at15 score positions improves from10/15 to14/15 with voice+2dB and9dB low-shelf; use calmer30–33s repeat chatter after20–23s welcome and2dB more hover feedback. Candidate remains unaccepted; unchanged8dB duck, analyser and target bands. Source tests18/18 PASS.
+
+## 2026-11-13T20:13:33.894936+00:00 — resumed Q4/Q5 and full29 review
+
+Full29 has one remaining S5 failure: home voice contours0.9967/min, below1.3. Five other scenes pass every numeric band. The first greeting, not the second, is masked in this run; both source starts are logged. Trial30 rewrites only that greeting to "Come on in!" with the same licensed Mallow voice and cat grains, measured source/codec clarity and provenance. No reference material enters synthesis. The trial28 mixed-speech diagnostic remains5/12 per scene; isolated112/112 recognition is not described as mixed intelligibility.
+
+The interruption reporter now separates ordinary preemptible attack/hit barks from required skill/ultimate lines. Such barks cannot be used to claim an A timing blocker or the S5 PARTIAL exception. All checker thresholds are unchanged.
+
+Audio suite found one stale sound-map route: new dedicated music.forge was absent from the authoring map. Route forge-enhance, forge-fusion and chain-fusion to that actual score. Existing coverage test now passes3/3; other35 audio tests already passed. Mixed29 ASR improves battle to9/12 sampled lines; boss remains5/12.

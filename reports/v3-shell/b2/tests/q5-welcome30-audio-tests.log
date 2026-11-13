@@ -1,0 +1,31 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+
+ ❯ src/audio/sound-map.test.ts (3 tests | 1 failed) 27ms
+   ❯ production sound plan coverage (3)
+     × retains all shipped cues and fixes the screen forge aliases 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/audio/sound-map.test.ts > production sound plan coverage > retains all shipped cues and fixes the screen forge aliases
+AssertionError: music.forge: expected undefined to be defined
+ ❯ src/audio/sound-map.test.ts:12:110
+     10|   const manifest=JSON.parse(readFileSync(resolve(import.meta.dirname,'…
+     11|   it('retains all shipped cues and fixes the screen forge aliases',()=…
+     12|     for(const cue of [...Object.keys(manifest.cues),...Object.values(E…
+       |                                                                                                              ^
+     13|     for(const [alias,id] of Object.entries(CUE_ALIASES)){
+     14|       expect(mappedCue(alias),alias).toBeDefined();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  1 failed | 35 passed (36)
+   Start at  03:13:34
+   Duration  2.32s (environment 87%, import 6%, tests 3%, transform 3%, worker 1%)
+
+Environment  jsdom was created 7 times · 2.99s total, 87% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

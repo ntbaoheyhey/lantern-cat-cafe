@@ -1,7 +1,7 @@
-NOW: Q5 trial29 balanced speech/music candidate ready; source tests18/18 pass. Q4 background sensitivity pending.
-NEXT: Finish capture28 PID8825 and mixed speech PID9082 before rebuilding integration. Full29 acceptance still required.
-ECONOMY:16952,37303,59609 paused by capture28, resume in its finally.
-Q5: Trial28 battle bed94.05%, boss ticks0.349/s, home voice0.997/min and ticks5.282/s fail. Bag/gacha pass.
-JOBS: econ/q4-jobs.json and q5/jobs.json.
-OPEN: Q4-Q9; no sync due.
-UPDATED: 2026-11-13T19:45:09.532852+00:00
+NOW:Q5 greeting30 published; targeted audio tests before commit.
+NEXT:Wait for mixed29 PID54052; rebuild committed integration, capture home then six scenes.
+ECONOMY:Native37303 and sensitivity59609 running; supervisor16952 waits for complete native inputs.
+Q5:Full29 has one numeric failure, home voice0.997/min. Trial28 mixed ASR5/12 per scene is retained.
+JOBS:econ/q4-jobs.json and q5/jobs.json.
+OPEN:Q4-Q9; no sync due.
+UPDATED:2026-11-13T20:13:33.894936+00:00

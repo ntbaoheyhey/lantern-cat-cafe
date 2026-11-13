@@ -3,10 +3,10 @@
     {
       "cueId": "voice.guide.idle",
       "unitId": "mallow",
-      "text": "Welcome home!",
+      "text": "Come on in!",
       "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
-      "sha256": "ffcfa86ea9b6fd075216fae625b4c72c21592cfcdbc6f169229edce315ff97e2",
-      "durationSeconds": 1.3817083333333333,
+      "sha256": "d842b3f95921909fe4c058ca2a372901b82ad4abe677572948745dacca8b8055",
+      "durationSeconds": 1.3584583333333333,
       "production": {
         "profile": {
           "source": 333916,
@@ -69,52 +69,42 @@
         "semitones": 0.528,
         "grains": [
           {
-            "syllable": "wel",
-            "vowel": "e",
-            "class": "liquid",
-            "consonantSource": "freesound:843435:consonants/843435-05.flac",
-            "vowelSource": "freesound:333916:cats/333916.flac",
-            "sourceStartSeconds": 0.3,
-            "durationSeconds": 0.13720000000000002,
-            "contourSemitones": 0.65
-          },
-          {
             "syllable": "co",
             "vowel": "o",
             "class": "plosive",
-            "consonantSource": "freesound:721074:consonants/721074-01.flac",
+            "consonantSource": "freesound:691910:consonants/691910-01.flac",
             "vowelSource": "freesound:333916:cats/333916.flac",
             "sourceStartSeconds": 0.54,
             "durationSeconds": 0.13720000000000002,
-            "contourSemitones": 1.3
+            "contourSemitones": 0.8125
           },
           {
             "syllable": "me",
             "vowel": "e",
             "class": "nasal",
-            "consonantSource": "freesound:104374:consonants/104374-07.flac",
+            "consonantSource": "freesound:104374:consonants/104374-06.flac",
             "vowelSource": "freesound:333916:cats/333916.flac",
             "sourceStartSeconds": 0.3,
             "durationSeconds": 0.13720000000000002,
-            "contourSemitones": 1.95
+            "contourSemitones": 1.625
           },
           {
-            "syllable": "ho",
+            "syllable": "on",
             "vowel": "o",
-            "class": "fricative",
-            "consonantSource": "freesound:691913:consonants/691913-01.flac",
+            "class": "plosive",
+            "consonantSource": "freesound:764351:consonants/764351-01.flac",
             "vowelSource": "freesound:333916:cats/333916.flac",
             "sourceStartSeconds": 0.54,
             "durationSeconds": 0.13720000000000002,
-            "contourSemitones": 2.6
+            "contourSemitones": 2.4375
           },
           {
-            "syllable": "me",
-            "vowel": "e",
-            "class": "nasal",
-            "consonantSource": "freesound:104374:consonants/104374-09.flac",
+            "syllable": "in",
+            "vowel": "i",
+            "class": "plosive",
+            "consonantSource": "freesound:764351:consonants/764351-02.flac",
             "vowelSource": "freesound:333916:cats/333916.flac",
-            "sourceStartSeconds": 0.3,
+            "sourceStartSeconds": 0.42,
             "durationSeconds": 0.13720000000000002,
             "contourSemitones": 3.25
           }
@@ -122,10 +112,10 @@
         "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
         "firstWordMs": 40
       },
-      "integratedLufs": -15.98,
-      "truePeakDbTP": -5.28,
-      "expected": "Welcome home!",
-      "recognized": "Welcome home.",
+      "integratedLufs": -15.99,
+      "truePeakDbTP": -6.03,
+      "expected": "Come on in!",
+      "recognized": "Come on in.",
       "wordAccuracy": 1.0,
       "model": "faster-whisper small.en int8 CPU",
       "prompt": null,

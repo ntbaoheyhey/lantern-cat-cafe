@@ -450,5 +450,67 @@
     "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget-r3.log",
     "started": "2026-11-13T19:32:46.890208+00:00",
     "note": "All12 identities pass40kbps. Five sprite levels miss by0.05\u20130.19dB. Add0.3dB constant gain and remeasure, no threshold change."
+  },
+  {
+    "name": "q5-capture28-current",
+    "pid": 8825,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-28.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture28-current.log",
+    "started": "2026-11-13T19:34:41.813640+00:00",
+    "note": "Six full real-output scenes then9 fixtures/speeds, committed A95ea0d843+B76b441a35. Pauses owned simulations and resumes in finally."
+  },
+  {
+    "name": "q5-capture28-mixed-speech",
+    "pid": 9082,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture28-speech.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture28-mixed-speech.log",
+    "started": "2026-11-13T19:35:56.873124+00:00",
+    "note": "Wait for8825 to finish and resume simulations; then diagnostic ASR of actual mixed callouts, two local CPU threads."
+  },
+  {
+    "name": "q5-capture29-current",
+    "pid": 18614,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-29.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture29-current.log",
+    "started": "2026-11-13T19:46:33.257529+00:00",
+    "note": "Wait for capture28 and its mixed-speech check; rebuild committed overlay, pause owned simulations, capture six scenes; resume in finally."
+  },
+  {
+    "name": "q5-menu-welcome30",
+    "pid": 50653,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py",
+      "--basename",
+      "mallow-1.flac",
+      "--label",
+      "menu-welcome30",
+      "--text",
+      "Come on in!"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-welcome30.log",
+    "started": "2026-11-13T20:11:50.231691+00:00",
+    "note": "First greeting remains masked at production gain. Try a more natural invitation with longer spoken inflection; encoded recognition and unchanged contour measure first."
+  },
+  {
+    "name": "q5-capture29-mixed-speech",
+    "pid": 54052,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/recognize-mixed-callouts.py",
+      "29-balanced-under-speech"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture29-mixed-speech.log",
+    "started": "2026-11-13T20:12:44.596054+00:00",
+    "note": "Read-only mixed diagnostic before updating integration; two local CPU threads."
   }
 ]

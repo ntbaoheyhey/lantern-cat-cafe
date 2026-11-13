@@ -18,7 +18,10 @@ const scenes=['battle','boss'].map(name=>{
   const expectedMs=sample.duration/(layer.pitch||1)*1000,heardMs=next.at-current.at;
   if(expectedMs>heardMs+40)interrupted.push({cueId:current.id,variantId:layer.variantId,expectedMs:Math.round(expectedMs),heardMs,nextCueId:next.id,at:current.at});
  }
- return {name,runtime:metric.runtime,played:voices.length,interruptedCount:interrupted.length,interrupted};
+ const required=cue=>/^voice\..+\.(ult\.(charge|release)|skill\..+)$/.test(cue);
+ return {name,runtime:metric.runtime,played:voices.length,interruptedCount:interrupted.length,
+  requiredInterruptedCount:interrupted.filter(row=>required(row.cueId)).length,
+  preemptibleBarkCount:interrupted.filter(row=>!required(row.cueId)).length,interrupted};
 });
 const result={trial,manifest:sign(manifestPath),method:'Inferred from logged source starts, selected sprite duration and the engine single-voice stop policy. A 40 ms tolerance excludes timing jitter. Not a waveform transcription.',scenes};
 writeFileSync(`${base}/VOICE-INTERRUPTIONS.json`,JSON.stringify(result,null,2)+'\n');

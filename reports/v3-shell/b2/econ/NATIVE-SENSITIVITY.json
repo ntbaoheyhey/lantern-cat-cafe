@@ -1,6 +1,6 @@
 {
   "label": "NATIVE-SENSITIVITY",
-  "date": "2026-11-13T19:08:12.034Z",
+  "date": "2026-11-13T20:03:03.913Z",
   "base": {
     "path": "reports/v3-shell/b2/econ/PROGRESSION-200.json",
     "sha256": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b"
@@ -11,7 +11,7 @@
     "sha256": "1f4b9b6ee85233fe1b85c1f3b2dbfd8886257f65a8b3a4c759f0f1cd55ab93c1"
   },
   "method": "Actual C2 transitions; rerun only the changed profile using the same 200 seeds, reuse unchanged profiles exactly. Timing changes rerun every profile. Integer perturbations with no policy change reuse verified records.",
-  "elapsedSeconds": 12147.254820167,
+  "elapsedSeconds": 15439.127691084,
   "complete": false,
   "cases": [
     {
@@ -471,6 +471,15 @@
       "manifest": {
         "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.decisionSeconds-minus.json",
         "sha256": "af7b872c6b28a9059e3b151a412ec20ae6df50ec43b6891de284b13a4c8474cb"
+      }
+    },
+    {
+      "assumption": "timing.decisionSeconds",
+      "delta": 0.2,
+      "complete": true,
+      "manifest": {
+        "path": "reports/v3-shell/b2/econ/native-sensitivity/NATIVE-SENSITIVITY/timing.decisionSeconds-plus.json",
+        "sha256": "bc4228d537559bfb3ffcdecdd0a7aff354cde0b30cf6ed7eb486d9ff47282e56"
       }
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "existingCueCount": 526,
+  "existingCueCount": 527,
   "missingExisting": [],
   "callsiteCount": 44,
   "unresolved": [],
@@ -10,7 +10,7 @@
   "sources": [
     {
       "path": "apps/web/src/audio/chatter.ts",
-      "sha256": "2b7d9002f1ce2b349157e35c73446d7851d98e14cd919cbe841e9e7a5003245a"
+      "sha256": "595b115eb31dea0836138dc7c29127b3d7f032de28f9c77a518b38bd796e2d9b"
     },
     {
       "path": "apps/web/src/audio/events.ts",
@@ -26,7 +26,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
-      "sha256": "633f4b442f8c14b1a467870e755b0cfd45f7abcca3a6464f3dc514571a85a35d"
+      "sha256": "f0840489f469a80dde4501f9bb0489bf7daea586b2622b0aef67dbe57e2574b7"
     },
     {
       "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
@@ -38,11 +38,11 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "sha256": "475e5321aedf62cf78b1d82f20c990de1a6cf5ebc22ffe8c21cf103aaf78ce97"
+      "sha256": "592d9a077a7c229b2bcfba48ee2863e88ffca530bc1b129d296e4dc63fba1169"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "sha256": "5a21168ea7d8c855dca56a332e64edb102a853baafd97e501ef5ecf681b7bca7"
+      "sha256": "77a839654699ffccd415ef1f2c7d842505a9b4d037fb5d8372787fe6ba402369"
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/Entrance.tsx",
@@ -58,7 +58,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
-      "sha256": "34b585c79046b59af19ae50282610a8a7bd5af4154185f930b9ad42d4ebd5000"
+      "sha256": "e9090df7632fad6219b91aa895030c7a880c518a977cb61d578483634f372ddc"
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
@@ -66,7 +66,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
-      "sha256": "7058a7ba7bff2ff7c27bfced1486067fc2cee036cdb44adcb515d441a5aa4f40"
+      "sha256": "06c62d88c330779338a6a6ab0d080cc56ba08a17022e4a5d1869d203456621a4"
     },
     {
       "path": "apps/web/src/game/squad/turn3d/audio.ts",
@@ -75,13 +75,13 @@
   ],
   "mapSource": {
     "path": "apps/web/src/audio/sound-map.ts",
-    "sha256": "2ed315bf79cb357a59a0ab1210b122b42b2726ab115544f073e5e1674acaf9b5"
+    "sha256": "73d57081f1ff68393b08a6f939edba841978a57fdbadb9829b988ec1eaa09b3e"
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "5d2eecdfda47042d90ce0718111de275c65ff129acf072e2718d01c8a38a25b4"
+    "sha256": "ed13f495aaafee39c420e3c916c4ed2ca58cf516d5b90439f071508bda9a6210"
   },
-  "scannedSourceCount": 511,
+  "scannedSourceCount": 512,
   "calls": [
     {
       "path": "apps/web/src/audio/chatter.ts",
@@ -586,6 +586,7 @@
         "ambience.item-detail",
         "ambience.batch-use",
         "ambience.forge-enhance",
+        "music.forge",
         "ambience.forge-fusion",
         "ambience.invitations",
         "ambience.gacha-rates",
@@ -1444,7 +1445,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 28,
+      "line": 31,
       "column": 23,
       "expression": "event==='select'?'voice.mochi.gear':'voice.mochi.forge'",
       "ids": [
@@ -1455,7 +1456,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 29,
+      "line": 32,
       "column": 8,
       "expression": "`voice.${cardId}.${event}`",
       "ids": [
@@ -1488,7 +1489,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 37,
+      "line": 40,
       "column": 18,
       "expression": "'ui.fail'",
       "ids": [
@@ -1498,7 +1499,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 39,
+      "line": 42,
       "column": 71,
       "expression": "'ui.forge.hammer'",
       "ids": [
@@ -1508,7 +1509,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 41,
+      "line": 44,
       "column": 43,
       "expression": "success?'ui.forge.success':'ui.forge.fail'",
       "ids": [
@@ -1519,7 +1520,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
-      "line": 61,
+      "line": 64,
       "column": 289,
       "expression": "`ui.equip.${spec.slot}`",
       "ids": [
@@ -1532,7 +1533,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "line": 17,
+      "line": 19,
       "column": 382,
       "expression": "'ui.slot'",
       "ids": [
@@ -1542,7 +1543,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "line": 18,
+      "line": 20,
       "column": 267,
       "expression": "'fusion.consume'",
       "ids": [
@@ -1552,7 +1553,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "line": 18,
+      "line": 20,
       "column": 293,
       "expression": "'fusion.reveal'",
       "ids": [
@@ -1562,7 +1563,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/shell/BoundFusion.tsx",
-      "line": 18,
+      "line": 20,
       "column": 318,
       "expression": "`item.land.${R.GEAR_BY_ID[r.state.gear.at(-1)!.templateId]!.rarity}`",
       "ids": [
@@ -2299,6 +2300,7 @@
     "voice.guide.idle",
     "voice.mochi.gear",
     "voice.mochi.forge",
+    "music.forge",
     "status.snag.on",
     "status.snag.off",
     "status.snag.tick",
