@@ -2,8 +2,8 @@
 
 Generated from typed sound-map.ts. This is the production plan; assets, screen wiring and playback measurements are separately gated by S2–S7.
 
-2552 event/screen assignments; 49 screens; 868 distinct cues.
-527 legacy/current cue IDs inspected; 0 missing. 44 call sites in 514 production source files; 0 unresolved.
+2556 event/screen assignments; 49 screens; 869 distinct cues.
+528 legacy/current cue IDs inspected; 0 missing. 44 call sites in 514 production source files; 0 unresolved.
 
 Pitch values are playback-rate ratios. Random gain is in dB. Every layer pool is a production role, not a claim that the asset exists. Hits reserve four variants per layer; UI reserves three. High-priority ultimate/voice requests duck music −8 dB with 120 ms attack / 400 ms release.
 
@@ -405,6 +405,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | rarity-reveal-3-epic | ui.reveal.epic | ui | ui.reveal.epic/transient / 3 / 0 / flat; ui.reveal.epic/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rarity-reveal-4-legendary | ui.reveal.legendary | ui | ui.reveal.legendary/transient / 3 / 0 / flat; ui.reveal.legendary/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rarity-reveal-5-mythic | ui.reveal.mythic | ui | ui.reveal.mythic/transient / 3 / 0 / flat; ui.reveal.mythic/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
+| invitation-score | music.gacha | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## gacha-rates
 
@@ -424,6 +425,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | music-enter | music.home | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | pity-details | ui.open | ui | ui.open/transient / 3 / 0 / flat; ui.open/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rates-close | ui.close | ui | ui.close/transient / 3 / 0 / flat; ui.close/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
+| invitation-score | music.gacha | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## gacha-reveal
 
@@ -452,6 +454,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | rarity-reveal-4-legendary | ui.reveal.legendary | ui | ui.reveal.legendary/transient / 3 / 0 / flat; ui.reveal.legendary/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rarity-reveal-5-mythic | ui.reveal.mythic | ui | ui.reveal.mythic/transient / 3 / 0 / flat; ui.reveal.mythic/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | legacy-reveal-sting | music.reveal | music | music.reveal/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 80 | none | B |
+| invitation-score | music.gacha | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## gacha-results
 
@@ -479,6 +482,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | rarity-reveal-3-epic | ui.reveal.epic | ui | ui.reveal.epic/transient / 3 / 0 / flat; ui.reveal.epic/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rarity-reveal-4-legendary | ui.reveal.legendary | ui | ui.reveal.legendary/transient / 3 / 0 / flat; ui.reveal.legendary/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | rarity-reveal-5-mythic | ui.reveal.mythic | ui | ui.reveal.mythic/transient / 3 / 0 / flat; ui.reveal.mythic/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
+| invitation-score | music.gacha | music | music.home/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## market
 

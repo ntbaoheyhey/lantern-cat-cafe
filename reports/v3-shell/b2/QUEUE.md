@@ -7,7 +7,7 @@ Revision 2, 13 November 2026. A card is done only with all checker PASS lines be
 - [x] S1 — done (self-score 8/10 for plan/coverage; sound production remains pending)
 - [x] S2 — done (self-score 8/10 for library/licence integrity; shipped sound design pending)
 - [x] S3 — done (self-score 8/10 for layered playback; final mix and new voices pending)
-- [x] S4 — done (self-score 8/10; measured cat-speak, intelligible skill callouts follow in V)
+- [ ] S4 — reopened: identity/levels PASS; integrated current A cadence was not refreshed (trial38 raw median2.980s, required6–9s). No threshold reinterpretation.
 - [x] V — done (50/50 ultimates,62/62 skills,12/12 identities,212/212 levels;34/34 battle casts; full37 suite435 browser PASS; self-score8/10)
 - [x] U1 — done (53 actual states, private comparisons; self-score 8/10 for audit depth, UI quality remains below target)
 - [x] U2 — done (76 original exports, 3.998 MB; self-score 8/10 for kit quality; screen acceptance belongs to U3)

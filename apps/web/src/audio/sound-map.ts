@@ -152,6 +152,7 @@ for(const screen of ['battle','boss'] as const){
 events(['cats'],{'legacy-voice-demo':'voice.meow'});
 events(['home'],{'legacy-cafe-bed':'ambience.cafe'});
 events(['gacha-reveal'],{'legacy-reveal-sting':'music.reveal'});
+events(['invitations','gacha-rates','gacha-reveal','gacha-results'],{'invitation-score':'music.gacha'});
 events(['forge-enhance'],{'legacy-forge-fail':'ui.forge-fail'});
 events(['battle'],{'critical-accent':'crit','block-accent':'block'});
 

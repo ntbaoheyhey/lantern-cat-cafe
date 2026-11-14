@@ -1,11 +1,11 @@
 {
-  "existingCueCount": 527,
+  "existingCueCount": 528,
   "missingExisting": [],
   "callsiteCount": 44,
   "unresolved": [],
   "cuesSource": {
     "path": "apps/web/src/audio/cues.ts",
-    "sha256": "15d9a2bd0549f7163c73297a59c5289d15a830895fc31ed6a6fb6740c92526a7"
+    "sha256": "ab891c406e5dcb16f9fb0ead4b1e0557f3e4d2ec67f895cbee90326963e2e74c"
   },
   "sources": [
     {
@@ -75,11 +75,11 @@
   ],
   "mapSource": {
     "path": "apps/web/src/audio/sound-map.ts",
-    "sha256": "73d57081f1ff68393b08a6f939edba841978a57fdbadb9829b988ec1eaa09b3e"
+    "sha256": "07fa316902af091362fcb60e708d85b1048661c9c586064843cfa1f018dfca0e"
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+    "sha256": "8a46d0438fcdd2c3fc2c7495557813872f9f44f8be097090110dc4c4e03b6611"
   },
   "scannedSourceCount": 514,
   "calls": [
@@ -1426,6 +1426,7 @@
         "voice.meow",
         "ambience.cafe",
         "music.reveal",
+        "music.gacha",
         "ui.forge-fail",
         "crit",
         "block"
@@ -1747,7 +1748,8 @@
         "music.home",
         "music.map",
         "music.battle",
-        "music.boss"
+        "music.boss",
+        "music.gacha"
       ],
       "delegation": false
     },
@@ -2309,7 +2311,8 @@
     "status.bitter.tick",
     "ui.forge-success",
     "ui.forge-fail",
-    "music.map"
+    "music.map",
+    "music.gacha"
   ],
   "adapters": {
     "events": "playFrame unit IDs from live cat/enemy catalogues; four effect phases; eventCue outputs expanded over live statuses and known event types.",

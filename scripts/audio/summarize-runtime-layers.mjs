@@ -9,6 +9,8 @@ if(metric.diagnostic||metric.durationSeconds<180||metric.errors.length)throw Err
 const bytes=readFileSync(metric.runtime.path);
 if(createHash('sha256').update(bytes).digest('hex')!==metric.runtime.sha256)throw Error('Changed runtime log');
 const runtime=JSON.parse(gunzipSync(bytes)),played=runtime.hits.filter(h=>h.result==='played');
+const voiceStarts=played.filter(h=>h.id.startsWith('voice.'));
+const voiceIntervals=voiceStarts.slice(1).map((h,i)=>(h.at-voiceStarts[i].at)/1000).sort((a,b)=>a-b);
 const seen=new Map(),repeats=[],voiceRepeats=[];let layerChoices=0,layeredPlays=0;
 for(const h of played){
  if(!h.layers)continue;
@@ -23,6 +25,8 @@ for(const h of played){
 const result={trial,durationSeconds:metric.durationSeconds,played:played.length,layeredPlays,layerChoices,
  consecutiveVariantRepeats:repeats.length,repeats,voiceRepeats,
  maxSfxConcurrency:Math.max(...played.map(h=>h.sfx??0)),maxVoiceConcurrency:Math.max(...played.map(h=>h.voice??0)),
+ medianVoiceIntervalSeconds:voiceIntervals[Math.floor(voiceIntervals.length/2)],
+ voiceCadence:{method:'All played voice-source starts, including charge and release; unchanged S4 measurement.',starts:voiceStarts.length,intervalsSeconds:voiceIntervals},
  errors:runtime.errors,log:metric.runtime,runtimeSources:metric.runtimeSources,
  variantScope:'Every layered SFX/UI cue, matching the original S3 definition. Voice repetitions are reported separately; some skill lines have one authored take.',
  scenario:'180-second real browser battle mix; unchanged real UI/rules actions, no playback injection.'};

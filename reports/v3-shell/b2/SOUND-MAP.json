@@ -112526,6 +112526,122 @@
       "owner": "B"
     },
     {
+      "screen": "invitations",
+      "event": "invitation-score",
+      "cueId": "music.gacha",
+      "bus": "music",
+      "layers": [
+        {
+          "role": "music",
+          "pool": "music.home/music",
+          "variants": 1,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 1,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 0,
+      "priority": 0,
+      "ducking": null,
+      "loop": true,
+      "owner": "B"
+    },
+    {
+      "screen": "gacha-rates",
+      "event": "invitation-score",
+      "cueId": "music.gacha",
+      "bus": "music",
+      "layers": [
+        {
+          "role": "music",
+          "pool": "music.home/music",
+          "variants": 1,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 1,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 0,
+      "priority": 0,
+      "ducking": null,
+      "loop": true,
+      "owner": "B"
+    },
+    {
+      "screen": "gacha-reveal",
+      "event": "invitation-score",
+      "cueId": "music.gacha",
+      "bus": "music",
+      "layers": [
+        {
+          "role": "music",
+          "pool": "music.home/music",
+          "variants": 1,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 1,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 0,
+      "priority": 0,
+      "ducking": null,
+      "loop": true,
+      "owner": "B"
+    },
+    {
+      "screen": "gacha-results",
+      "event": "invitation-score",
+      "cueId": "music.gacha",
+      "bus": "music",
+      "layers": [
+        {
+          "role": "music",
+          "pool": "music.home/music",
+          "variants": 1,
+          "offsetMs": 0,
+          "eq": "flat"
+        }
+      ],
+      "variantCount": 1,
+      "pitchRange": [
+        1,
+        1
+      ],
+      "volumeRange": [
+        0,
+        0
+      ],
+      "cooldownMs": 0,
+      "priority": 0,
+      "ducking": null,
+      "loop": true,
+      "owner": "B"
+    },
+    {
       "screen": "forge-enhance",
       "event": "legacy-forge-fail",
       "cueId": "ui.forge-fail",

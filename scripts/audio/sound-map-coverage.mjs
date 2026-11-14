@@ -81,7 +81,7 @@ export async function writeSoundMap(){
     const adapters=path==='apps/web/src/audio/events.ts'?{domains:{unit:M.SOUND_UNITS,phase:M.SOUND_PHASES},bindings:slots,eventCues}:
       path==='apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx'?{domains:{'active.rarity':M.SOUND_RARITIES,'reward.rarity':M.SOUND_RARITIES}}:
       path==='apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx'?{domains:{currency:M.SOUND_CURRENCIES}}:
-      path==='apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx'?{domains:{musicScene:['home','map','battle','boss'],ambientScene:['home','bag','invitations','cats','settings','chapter-map','battle-prep','field-guide','reward','boss','battle']}}:
+      path==='apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx'?{domains:{musicScene:['home','map','battle','boss','gacha'],ambientScene:['home','bag','invitations','cats','settings','chapter-map','battle-prep','field-guide','reward','boss','battle']}}:
       path==='apps/web/src/game/cardrpg/shell/BagB2.tsx'?{domains:{cardId:M.CATS,event:['select','victory'],'spec.slot':M.SOUND_SLOTS}}:
       path==='apps/web/src/game/cardrpg/shell/BoundFusion.tsx'?{domains:{'R.GEAR_BY_ID[r.state.gear.at(-1)!.templateId]!.rarity':M.SOUND_RARITIES}}:
       path==='apps/web/src/audio/feedback.ts'?{domains:{id:M.UI_FEEDBACK_CUES}}:
