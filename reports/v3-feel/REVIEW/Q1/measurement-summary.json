@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-14T06:44:04.081Z",
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "frames": 3604,
+      "defects": 0,
+      "shakePx": 3.3299999958280146,
+      "actorDisplacementWidth": 0.025544417965251302,
+      "overlaps": [],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q1/wave1-mix.wav",
+        "integratedLufs": -15.15,
+        "truePeakDbTP": -3.03,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      }
+    },
+    {
+      "fixture": "wave3",
+      "frames": 3603,
+      "defects": 0,
+      "shakePx": 3.3333333253855626,
+      "actorDisplacementWidth": 0.02494984340489977,
+      "overlaps": [],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q1/wave3-mix.wav",
+        "integratedLufs": -15.16,
+        "truePeakDbTP": -3.1,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      }
+    },
+    {
+      "fixture": "boss",
+      "frames": 3603,
+      "defects": 0,
+      "shakePx": 3.30999999582685,
+      "actorDisplacementWidth": 0.023416287541929745,
+      "overlaps": [
+        {
+          "from": 193,
+          "to": 193,
+          "overlapMs": 7.800047665838861
+        }
+      ],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q1/boss-mix.wav",
+        "integratedLufs": -14.88,
+        "truePeakDbTP": -2,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      }
+    }
+  ]
+}

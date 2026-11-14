@@ -22,7 +22,7 @@ for fixture in ['wave1','wave3','boss']:
   impact=next((f['t'] for f in data['frames'] if f['t']>=plan['at']-.001 and f.get('action',{} ) and (f['action'].get('key')==plan['key'] if 'key' in plan else f['action']['id']==plan['id']) and f['action']['elapsed']>=plan['impact']),start+plan['impact']/1000)
   # Include complete focus, wind-up and recovery in addition to every required
   # contact window. A periodic status tick is retained and labelled explicitly.
-  times=sorted({round(t,6) for t in [start+i*.1 for i in range(math.ceil(plan['duration']/100)+1)]+[impact-.3+i*.1 for i in range(9)]})
+  times=sorted({round(t,6) for t in [start+i*.1 for i in range(math.ceil(plan['duration']/100)+1)]+[impact-.3+i*.1 for i in range(9)]+[impact+i/30 for i in range(-3,5)]})
   indices=sorted({round(t*30) for t in times});times=[n/30 for n in indices]
   # The 30s artifact may end in an action. Keep an explicit boundary marker;
   # never pretend its later impact was watched.

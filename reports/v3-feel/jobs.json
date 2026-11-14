@@ -81,5 +81,39 @@
     "log": "reports/v3-feel/Q1-capture.log",
     "started": "2026-11-14T06:18:24.039986+00:00",
     "finished": true
+  },
+  "q1CaptureSnapshot": {
+    "pid": 1454,
+    "command": "node scripts/v3feel/capture.mjs --item Q1",
+    "log": "reports/v3-feel/Q1-capture-snapshot.log",
+    "started": "2026-11-14T06:28:09.001828+00:00",
+    "finished": true
+  },
+  "q1CaptureSnapshot2": {
+    "pid": 2463,
+    "command": "node scripts/v3feel/capture.mjs --item Q1",
+    "log": "reports/v3-feel/Q1-capture-snapshot-2.log",
+    "started": "2026-11-14T06:32:12.815215+00:00",
+    "finished": true
+  },
+  "q1CapturePerRender": {
+    "pid": 3392,
+    "command": "node scripts/v3feel/capture.mjs --item Q1",
+    "log": "reports/v3-feel/Q1-capture-per-render.log",
+    "started": "2026-11-14T06:36:34.379581+00:00",
+    "finished": true
+  },
+  "q1Sheets": {
+    "pid": 4463,
+    "command": "tools/.venv/bin/python scripts/v3feel/review-sheets.py Q1",
+    "log": "reports/v3-feel/Q1-sheets-per-render.log",
+    "started": "2026-11-14T06:41:17.379547+00:00",
+    "finished": true
+  },
+  "q1FixedRegression": {
+    "pid": 4464,
+    "command": "node scripts/v3feel/regress.mjs Q1-FIXED",
+    "log": "reports/v3-feel/Q1-fixed-regression.log",
+    "started": "2026-11-14T06:41:17.380987+00:00"
   }
 }
