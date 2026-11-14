@@ -2,7 +2,7 @@ COMMAND: pnpm --filter @taskbar-hero/web exec playwright test --config ../../too
 
 Running 10 tests using 1 worker
 
-(node:43230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:40831) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -38,7 +38,7 @@ daily 11
 
 prepare 7
 
-result 8
+result 7
 
 battle 3
 
@@ -83,4 +83,4 @@ tips 10
 [8/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-1: real contact, protected faces and calm flash
 [9/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-4: real contact, protected faces and calm flash
 [10/10] e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted enemy:yarn-giant: real contact, protected faces and calm flash
-  10 passed (1.6m)
+  10 passed (1.9m)

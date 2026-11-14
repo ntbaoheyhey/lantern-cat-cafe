@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T15:59:10.080Z",
-    "sourceCommit": "e9493db6e147c28e1d39b25e90d56a940593959b"
+    "generatedAt": "2026-11-14T02:25:35.631Z",
+    "sourceCommit": "53fbf0da105a51415c5f783ec304daf790986d97"
   },
   "plans": [
     {
@@ -1845,471 +1845,6 @@
       ],
       "ultimate": true,
       "tier": "ultimate"
-    },
-    {
-      "id": 152,
-      "skill": "enemy:button-guard:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 152,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-0-button-guard",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "panko",
-            "foe-0-button-guard"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 152,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-0-button-guard",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 152,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "guardAttack",
-          "targetIds": [
-            "foe-0-button-guard"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 157,
-      "skill": "enemy:needle-moth:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 157,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-3-needle-moth",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko",
-            "foe-3-needle-moth"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 157,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-3-needle-moth",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 157,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "rangerAttack",
-          "targetIds": [
-            "foe-3-needle-moth"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 162,
-      "skill": "enemy:sock-skipper:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 162,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-1-sock-skipper",
-          "skillId": "flankerAttack",
-          "targetIds": [
-            "panko",
-            "foe-1-sock-skipper"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 162,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-1-sock-skipper",
-          "skillId": "flankerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 162,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "flankerAttack",
-          "targetIds": [
-            "foe-1-sock-skipper"
-          ],
-          "amount": 32,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 182,
-      "skill": "enemy:teacup-healer:basic",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 3,
-          "round": 3,
-          "actionId": 182,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "foe-2-teacup-healer",
-          "skillId": "healerAttack",
-          "targetIds": [
-            "panko",
-            "foe-2-teacup-healer"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "foe-2-teacup-healer",
-          "skillId": "healerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "panko",
-          "skillId": "healerAttack",
-          "targetIds": [
-            "foe-2-teacup-healer"
-          ],
-          "amount": 32,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 5,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "status_apply",
-          "actorId": "foe-2-teacup-healer",
-          "skillId": "healerAttack",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 1,
-          "note": "Mark"
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 182,
-      "skill": "round-status",
-      "events": [
-        {
-          "version": 3,
-          "seq": 1,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "heal",
-          "actorId": "clover",
-          "skillId": "round-status",
-          "targetIds": [
-            "mochi"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 3,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "heal",
-          "actorId": "clover",
-          "skillId": "round-status",
-          "targetIds": [
-            "soot"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 5,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "heal",
-          "actorId": "clover",
-          "skillId": "round-status",
-          "targetIds": [
-            "clover"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 7,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "heal",
-          "actorId": "clover",
-          "skillId": "round-status",
-          "targetIds": [
-            "panko"
-          ],
-          "amount": 0,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 9,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "heal",
-          "actorId": "foe-2-teacup-healer",
-          "skillId": "round-status",
-          "targetIds": [
-            "foe-2-teacup-healer"
-          ],
-          "amount": 18,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 11,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "status_expire",
-          "actorId": "soot",
-          "skillId": "round-status",
-          "targetIds": [
-            "soot"
-          ],
-          "amount": 0,
-          "note": "Regen"
-        },
-        {
-          "version": 3,
-          "seq": 12,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "status_expire",
-          "actorId": "clover",
-          "skillId": "round-status",
-          "targetIds": [
-            "clover"
-          ],
-          "amount": 0,
-          "note": "Regen"
-        },
-        {
-          "version": 3,
-          "seq": 13,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "status_expire",
-          "actorId": "foe-2-teacup-healer",
-          "skillId": "round-status",
-          "targetIds": [
-            "foe-2-teacup-healer"
-          ],
-          "amount": 0,
-          "note": "Regen"
-        },
-        {
-          "version": 3,
-          "seq": 14,
-          "turn": 0,
-          "round": 3,
-          "actionId": 182,
-          "beat": 2,
-          "type": "status_expire",
-          "actorId": "foe-3-needle-moth",
-          "skillId": "round-status",
-          "targetIds": [
-            "foe-3-needle-moth"
-          ],
-          "amount": 0,
-          "note": "Shred"
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
-    },
-    {
-      "id": 188,
-      "skill": "mochi-1",
-      "events": [
-        {
-          "version": 3,
-          "seq": 0,
-          "turn": 4,
-          "round": 4,
-          "actionId": 188,
-          "beat": 0,
-          "type": "action_start",
-          "actorId": "mochi",
-          "skillId": "mochi-1",
-          "targetIds": [
-            "foe-3-needle-moth",
-            "foe-2-teacup-healer",
-            "mochi"
-          ],
-          "amount": 0
-        },
-        {
-          "version": 3,
-          "seq": 2,
-          "turn": 0,
-          "round": 4,
-          "actionId": 188,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "mochi",
-          "skillId": "mochi-1",
-          "targetIds": [
-            "foe-3-needle-moth"
-          ],
-          "amount": 63,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 4,
-          "turn": 0,
-          "round": 4,
-          "actionId": 188,
-          "beat": 2,
-          "type": "damage",
-          "actorId": "mochi",
-          "skillId": "mochi-1",
-          "targetIds": [
-            "foe-2-teacup-healer"
-          ],
-          "amount": 22,
-          "note": ""
-        },
-        {
-          "version": 3,
-          "seq": 5,
-          "turn": 0,
-          "round": 4,
-          "actionId": 188,
-          "beat": 2,
-          "type": "shield",
-          "actorId": "mochi",
-          "skillId": "mochi-1",
-          "targetIds": [
-            "mochi"
-          ],
-          "amount": 18,
-          "note": ""
-        }
-      ],
-      "ultimate": false,
-      "tier": "basic"
     }
   ],
   "sink": [
@@ -2823,13 +2358,6 @@
       }
     },
     {
-      "cue": "voice.mochi.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.magic.impact",
       "options": {
         "speed": 1,
@@ -2864,6 +2392,13 @@
         "speed": 1,
         "element": "magic",
         "volume": 0.7
+      }
+    },
+    {
+      "cue": "voice.mochi.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
       }
     },
     {
@@ -3278,13 +2813,6 @@
       "options": {}
     },
     {
-      "cue": "voice.soot.attack",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.magic.tail",
       "options": {
         "speed": 1,
@@ -3297,6 +2825,13 @@
         "speed": 1,
         "element": "magic",
         "volume": 0.7
+      }
+    },
+    {
+      "cue": "voice.soot.attack",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
       }
     },
     {
@@ -3530,6 +3065,13 @@
       }
     },
     {
+      "cue": "voice.clover.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "voice.panko.ult.charge",
       "options": {
         "speed": 1,
@@ -3542,13 +3084,6 @@
       "options": {
         "speed": 1,
         "element": "heavy"
-      }
-    },
-    {
-      "cue": "voice.clover.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
       }
     },
     {
@@ -3626,260 +3161,10 @@
       }
     },
     {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.guard.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.guard.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.ranger.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.charge",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.flanker.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.slash.release",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.impact",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "kit.slash.tail",
-      "options": {
-        "speed": 1,
-        "element": "slash"
-      }
-    },
-    {
-      "cue": "move.flanker.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "slash",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "status.debuff.on",
-      "options": {}
-    },
-    {
-      "cue": "kit.magic.charge",
-      "options": {
-        "speed": 1,
-        "element": "magic"
-      }
-    },
-    {
-      "cue": "status.debuff.off",
-      "options": {}
-    },
-    {
-      "cue": "move.healer.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "magic",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.magic.release",
-      "options": {
-        "speed": 1,
-        "element": "magic"
-      }
-    },
-    {
-      "cue": "kit.magic.impact",
-      "options": {
-        "speed": 1,
-        "element": "magic"
-      }
-    },
-    {
-      "cue": "status.debuff.on",
-      "options": {}
-    },
-    {
-      "cue": "status.buff.off",
-      "options": {}
-    },
-    {
-      "cue": "kit.magic.tail",
-      "options": {
-        "speed": 1,
-        "element": "magic"
-      }
-    },
-    {
-      "cue": "move.healer.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "magic",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.holy.charge",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
-      "cue": "move.guardian.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "holy",
-        "volume": 0.7
-      }
-    },
-    {
-      "cue": "kit.holy.release",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
-      "cue": "kit.holy.impact",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
-      "cue": "kit.holy.impact",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
       "cue": "voice.panko.attack",
       "options": {
         "volume": 0.65,
         "priority": 40
-      }
-    },
-    {
-      "cue": "kit.holy.impact",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
-      "cue": "kit.holy.tail",
-      "options": {
-        "speed": 1,
-        "element": "holy"
-      }
-    },
-    {
-      "cue": "move.guardian.whoosh",
-      "options": {
-        "speed": 1,
-        "element": "holy",
-        "volume": 0.7
       }
     }
   ],
@@ -4643,15 +3928,6 @@
       "role": "release"
     },
     {
-      "at": 7.5,
-      "planId": 59,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "voice.mochi.select",
-      "role": "bark"
-    },
-    {
       "at": 7.533333333333332,
       "planId": 59,
       "skillId": "enemy:teacup-healer:basic",
@@ -4708,6 +3984,15 @@
       "actorId": "foe-2-teacup-healer",
       "cue": "move.healer.whoosh",
       "role": "movement"
+    },
+    {
+      "at": 8,
+      "planId": 59,
+      "skillId": "round-status",
+      "tier": "basic",
+      "actorId": "mochi",
+      "cue": "voice.mochi.select",
+      "role": "bark"
     },
     {
       "at": 8.1,
@@ -5239,15 +4524,6 @@
       "targetId": "foe-0-button-guard"
     },
     {
-      "at": 15,
-      "planId": 111,
-      "skillId": "enemy:teacup-healer",
-      "tier": "active",
-      "actorId": "soot",
-      "cue": "voice.soot.attack",
-      "role": "bark"
-    },
-    {
       "at": 15.066666666666668,
       "planId": 111,
       "skillId": "enemy:teacup-healer",
@@ -5264,6 +4540,15 @@
       "actorId": "foe-2-teacup-healer",
       "cue": "move.healer.whoosh",
       "role": "movement"
+    },
+    {
+      "at": 15.266666666666664,
+      "planId": 111,
+      "skillId": "enemy:teacup-healer",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.attack",
+      "role": "bark"
     },
     {
       "at": 16,
@@ -5565,25 +4850,6 @@
       "role": "charge"
     },
     {
-      "at": 22.133333333333333,
-      "planId": 147,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "voice.panko.ult.charge",
-      "role": "voice",
-      "voicePhase": "charge"
-    },
-    {
-      "at": 22.133333333333333,
-      "planId": 147,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "ult.panko.charge",
-      "role": "charge"
-    },
-    {
       "at": 22.5,
       "planId": 147,
       "skillId": "panko-4",
@@ -5593,7 +4859,26 @@
       "role": "bark"
     },
     {
-      "at": 22.733333333333334,
+      "at": 25.9,
+      "planId": 147,
+      "skillId": "panko-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "voice.panko.ult.charge",
+      "role": "voice",
+      "voicePhase": "charge"
+    },
+    {
+      "at": 25.9,
+      "planId": 147,
+      "skillId": "panko-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "ult.panko.charge",
+      "role": "charge"
+    },
+    {
+      "at": 26.5,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5602,7 +4887,7 @@
       "role": "movement"
     },
     {
-      "at": 23.033333333333328,
+      "at": 26.8,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5611,7 +4896,7 @@
       "role": "cut"
     },
     {
-      "at": 23.7,
+      "at": 27.466666666666672,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5620,7 +4905,7 @@
       "role": "charge"
     },
     {
-      "at": 24.866666666666664,
+      "at": 28.66666666666667,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5629,7 +4914,7 @@
       "role": "movement"
     },
     {
-      "at": 25.133333333333336,
+      "at": 28.9,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5638,7 +4923,7 @@
       "role": "release"
     },
     {
-      "at": 25.233333333333334,
+      "at": 29,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5648,7 +4933,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 25.233333333333334,
+      "at": 29,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5657,7 +4942,7 @@
       "role": "release"
     },
     {
-      "at": 25.266666666666666,
+      "at": 29.066666666666663,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5667,7 +4952,7 @@
       "targetId": "panko"
     },
     {
-      "at": 25.466666666666672,
+      "at": 29.266666666666666,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5676,7 +4961,7 @@
       "role": "tail"
     },
     {
-      "at": 25.533333333333328,
+      "at": 29.3,
       "planId": 147,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5685,348 +4970,13 @@
       "role": "movement"
     },
     {
-      "at": 26.66666666666667,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
-      "at": 26.966666666666672,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "move.guard.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 26.966666666666672,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 27.066666666666663,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-0-button-guard"
-    },
-    {
-      "at": 27.266666666666666,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 27.266666666666666,
-      "planId": 152,
-      "skillId": "enemy:button-guard:basic",
-      "tier": "basic",
-      "actorId": "foe-0-button-guard",
-      "cue": "move.guard.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 27.33333333333333,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
-      "at": 27.633333333333336,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 27.633333333333336,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 27.733333333333334,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-3-needle-moth"
-    },
-    {
-      "at": 27.933333333333337,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 27.933333333333337,
-      "planId": 157,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "foe-3-needle-moth",
-      "cue": "move.ranger.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "kit.slash.charge",
-      "role": "charge"
-    },
-    {
-      "at": 28.3,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "move.flanker.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28.3,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "kit.slash.release",
-      "role": "release"
-    },
-    {
-      "at": 28.4,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "kit.slash.impact",
-      "role": "impact",
-      "targetId": "foe-1-sock-skipper"
-    },
-    {
-      "at": 28.6,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "kit.slash.tail",
-      "role": "tail"
-    },
-    {
-      "at": 28.6,
-      "planId": 162,
-      "skillId": "enemy:sock-skipper:basic",
-      "tier": "basic",
-      "actorId": "foe-1-sock-skipper",
-      "cue": "move.flanker.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28.66666666666667,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "status.debuff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 28.66666666666667,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "kit.magic.charge",
-      "role": "charge"
-    },
-    {
-      "at": 28.7,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "status.debuff.off",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 28.966666666666672,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "move.healer.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 28.966666666666672,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "kit.magic.release",
-      "role": "release"
-    },
-    {
-      "at": 29.066666666666663,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "kit.magic.impact",
-      "role": "impact",
-      "targetId": "foe-2-teacup-healer"
-    },
-    {
-      "at": 29.1,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "status.debuff.on",
-      "role": "status",
-      "targetId": "panko"
-    },
-    {
-      "at": 29.1,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "status.buff.off",
-      "role": "status",
-      "targetId": "foe-2-teacup-healer"
-    },
-    {
-      "at": 29.266666666666666,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "kit.magic.tail",
-      "role": "tail"
-    },
-    {
-      "at": 29.266666666666666,
-      "planId": 182,
-      "skillId": "enemy:teacup-healer:basic",
-      "tier": "basic",
-      "actorId": "foe-2-teacup-healer",
-      "cue": "move.healer.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.633333333333336,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.charge",
-      "role": "charge"
-    },
-    {
       "at": 29.766666666666666,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "move.guardian.whoosh",
-      "role": "movement"
-    },
-    {
-      "at": 29.8,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.release",
-      "role": "release"
-    },
-    {
-      "at": 29.933333333333337,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "foe-3-needle-moth"
-    },
-    {
-      "at": 29.966666666666672,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "foe-2-teacup-healer"
-    },
-    {
-      "at": 30,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
+      "planId": 147,
+      "skillId": "panko-4",
+      "tier": "ultimate",
       "actorId": "panko",
       "cue": "voice.panko.attack",
       "role": "bark"
-    },
-    {
-      "at": 30.033333333333328,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.impact",
-      "role": "impact",
-      "targetId": "mochi"
-    },
-    {
-      "at": 30.133333333333336,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "kit.holy.tail",
-      "role": "tail"
-    },
-    {
-      "at": 30.2,
-      "planId": 188,
-      "skillId": "mochi-1",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "move.guardian.whoosh",
-      "role": "movement"
     }
   ],
   "unknown": [],

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T15:59:18.672Z",
-    "sourceCommit": "e9493db6e147c28e1d39b25e90d56a940593959b"
+    "generatedAt": "2026-11-14T02:25:42.031Z",
+    "sourceCommit": "53fbf0da105a51415c5f783ec304daf790986d97"
   },
   "plans": [
     {
@@ -2719,13 +2719,6 @@
       }
     },
     {
-      "cue": "voice.mochi.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.slash.impact",
       "options": {
         "speed": 1,
@@ -2752,6 +2745,13 @@
       "options": {
         "speed": 1,
         "element": "slash"
+      }
+    },
+    {
+      "cue": "voice.mochi.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
       }
     },
     {
@@ -3178,13 +3178,6 @@
       }
     },
     {
-      "cue": "voice.soot.attack",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.slash.tail",
       "options": {
         "speed": 1,
@@ -3234,6 +3227,13 @@
       "options": {
         "speed": 1,
         "element": "heavy"
+      }
+    },
+    {
+      "cue": "voice.soot.attack",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
       }
     },
     {
@@ -3494,13 +3494,6 @@
       }
     },
     {
-      "cue": "voice.clover.select",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
-      }
-    },
-    {
       "cue": "kit.holy.release",
       "options": {
         "speed": 1,
@@ -3540,6 +3533,13 @@
     {
       "cue": "status.debuff.off",
       "options": {}
+    },
+    {
+      "cue": "voice.clover.select",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
     },
     {
       "cue": "kit.holy.impact",
@@ -3717,6 +3717,13 @@
       }
     },
     {
+      "cue": "voice.panko.attack",
+      "options": {
+        "volume": 0.65,
+        "priority": 40
+      }
+    },
+    {
       "cue": "move.guardian.whoosh",
       "options": {
         "speed": 1,
@@ -3788,13 +3795,6 @@
         "speed": 1,
         "element": "heavy",
         "volume": 0.7
-      }
-    },
-    {
-      "cue": "voice.panko.attack",
-      "options": {
-        "volume": 0.65,
-        "priority": 40
       }
     }
   ],
@@ -4567,15 +4567,6 @@
       "role": "release"
     },
     {
-      "at": 7.5,
-      "planId": 52,
-      "skillId": "enemy:needle-moth:basic",
-      "tier": "basic",
-      "actorId": "mochi",
-      "cue": "voice.mochi.select",
-      "role": "bark"
-    },
-    {
       "at": 7.533333333333332,
       "planId": 52,
       "skillId": "enemy:needle-moth:basic",
@@ -4611,6 +4602,15 @@
       "actorId": "foe-2-pollen-scout",
       "cue": "kit.slash.charge",
       "role": "charge"
+    },
+    {
+      "at": 8,
+      "planId": 55,
+      "skillId": "enemy:pollen-scout:basic",
+      "tier": "basic",
+      "actorId": "mochi",
+      "cue": "voice.mochi.select",
+      "role": "bark"
     },
     {
       "at": 8.1,
@@ -5184,15 +5184,6 @@
       "targetId": "foe-3-crumb-sentinel"
     },
     {
-      "at": 15,
-      "planId": 100,
-      "skillId": "enemy:crumb-sentinel:basic",
-      "tier": "basic",
-      "actorId": "soot",
-      "cue": "voice.soot.attack",
-      "role": "bark"
-    },
-    {
       "at": 15.066666666666668,
       "planId": 100,
       "skillId": "enemy:crumb-sentinel:basic",
@@ -5255,6 +5246,15 @@
       "actorId": "foe-1-spool-ram",
       "cue": "kit.heavy.release",
       "role": "release"
+    },
+    {
+      "at": 15.5,
+      "planId": 108,
+      "skillId": "enemy:spool-ram",
+      "tier": "active",
+      "actorId": "soot",
+      "cue": "voice.soot.attack",
+      "role": "bark"
     },
     {
       "at": 15.533333333333331,
@@ -5597,15 +5597,6 @@
       "planId": 155,
       "skillId": "mochi-4",
       "tier": "ultimate",
-      "actorId": "clover",
-      "cue": "voice.clover.select",
-      "role": "bark"
-    },
-    {
-      "at": 22.5,
-      "planId": 155,
-      "skillId": "mochi-4",
-      "tier": "ultimate",
       "actorId": "mochi",
       "cue": "kit.holy.release",
       "role": "release"
@@ -5668,6 +5659,15 @@
       "cue": "status.debuff.off",
       "role": "status",
       "targetId": "panko"
+    },
+    {
+      "at": 22.700000000000003,
+      "planId": 155,
+      "skillId": "mochi-4",
+      "tier": "ultimate",
+      "actorId": "clover",
+      "cue": "voice.clover.select",
+      "role": "bark"
     },
     {
       "at": 22.700000000000003,
@@ -5876,7 +5876,7 @@
       "role": "charge"
     },
     {
-      "at": 26.33333333333333,
+      "at": 29.366666666666664,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5886,7 +5886,7 @@
       "voicePhase": "charge"
     },
     {
-      "at": 26.33333333333333,
+      "at": 29.366666666666664,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5895,7 +5895,16 @@
       "role": "charge"
     },
     {
-      "at": 26.933333333333337,
+      "at": 29.766666666666666,
+      "planId": 171,
+      "skillId": "panko-4",
+      "tier": "ultimate",
+      "actorId": "panko",
+      "cue": "voice.panko.attack",
+      "role": "bark"
+    },
+    {
+      "at": 29.966666666666672,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5904,7 +5913,7 @@
       "role": "movement"
     },
     {
-      "at": 27.233333333333334,
+      "at": 30.266666666666666,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5913,7 +5922,7 @@
       "role": "cut"
     },
     {
-      "at": 27.9,
+      "at": 30.933333333333337,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5922,7 +5931,7 @@
       "role": "charge"
     },
     {
-      "at": 29.066666666666663,
+      "at": 32.13333333333333,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5931,7 +5940,7 @@
       "role": "movement"
     },
     {
-      "at": 29.33333333333333,
+      "at": 32.36666666666667,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5940,7 +5949,7 @@
       "role": "release"
     },
     {
-      "at": 29.433333333333337,
+      "at": 32.46666666666667,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5950,7 +5959,7 @@
       "voicePhase": "release"
     },
     {
-      "at": 29.433333333333337,
+      "at": 32.46666666666667,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5959,7 +5968,7 @@
       "role": "release"
     },
     {
-      "at": 29.466666666666672,
+      "at": 32.53333333333333,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5969,7 +5978,7 @@
       "targetId": "panko"
     },
     {
-      "at": 29.66666666666667,
+      "at": 32.733333333333334,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
@@ -5978,22 +5987,13 @@
       "role": "tail"
     },
     {
-      "at": 29.733333333333334,
+      "at": 32.766666666666666,
       "planId": 171,
       "skillId": "panko-4",
       "tier": "ultimate",
       "actorId": "panko",
       "cue": "move.guardian.whoosh",
       "role": "movement"
-    },
-    {
-      "at": 30,
-      "planId": 171,
-      "skillId": "panko-4",
-      "tier": "ultimate",
-      "actorId": "panko",
-      "cue": "voice.panko.attack",
-      "role": "bark"
     }
   ],
   "unknown": [],
