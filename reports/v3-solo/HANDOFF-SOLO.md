@@ -4,8 +4,8 @@ CHECKER PASS = DONE, NEVER LOWER A THRESHOLD
 NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE, NO EARLY MERGE
 ORIGINAL ART ONLY, REFERENCE = MEASUREMENT ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW:Q9 S4 lead-in6 all3 motion PASS (15.873845/17.725569/16.314629);cadence6.161s;9-case voice matrix active.
-NEXT 1:Read S4/lead-in6/validation-progress.json;matrix failure stops before perf,mix,suites.No canonical promotion yet.
+NOW:Q9 S4 lead-in6 matrix has two bark-spacing misses; fixing wall-clock look-ahead while final cases finish.
+NEXT 1:Finish current matrix; validate speech-horizon repair at all three speeds, then current mix/perf/suites.
 NEXT 2:B P3-P8,E6 (and original P9-P11),then scheduled syncs.
 NEXT 3:Scheduled syncs unchanged; never run early.
 LAST GOOD COMMIT A:da83d2357 A P1+aggregate14 gates PASS,pushed.
@@ -24,5 +24,5 @@ PERF:No economy simulations active.
 SYNC:16Nov12UTC;18Nov12UTC+D1;19Nov12UTC freeze.
 DISK-LOG:2026-11-14T01:06:23.402475+00:00 267GiB free;removed 2 disposable build folders (403812640 bytes);active Vite caches retained.
 SOURCE:/Users/bao/art/codex-prompts/PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt
-P2 DIAGNOSIS:Full38 S5 52/54:boss7.487>6.75,gacha0.997>0 (no voice starts,one music contour).Body EQ and brighter invitation score probes preserve clarity;no threshold changes.
-UPDATED:2026-11-14T01:16:12.141566+00:00
+S4 DIAGNOSIS:Look-ahead multiplies speed although lead-in and speech run at wall time; this over-reserves at x2/x3. Use advanceBattleClock to predict the 1.8s horizon.
+UPDATED:2026-11-14T01:21:01.570156+00:00

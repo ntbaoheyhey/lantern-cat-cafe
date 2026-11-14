@@ -3,6 +3,7 @@ import {playCue,type AudioCue,type CueOptions} from '../contracts/audio-cues';
 import {bodyStatuses,type BodyStatus} from './status';
 import {audioTimeline,cueTier,type TimelineCue,type CueRole} from './audio-timeline';
 import type {SequencePlan} from './sequence';
+import {advanceBattleClock} from './final-hit';
 export interface FiredCue {cue:AudioCue;at:number;planId:number|string|null;skillId:string;tier:string;actorId:string;role:CueRole;targetId?:string;voicePhase?:string}
 /** One battle-owned scheduler. B retains all decoding, mixing and voice synthesis. */
 export class BattleAudio {
@@ -40,7 +41,10 @@ export class BattleAudio {
   if(frame&&frame.plan!==this.lastPlan){this.lastPlan=frame.plan;this.fired.clear();this.track=audioTimeline(frame.plan,(frame.plan as SequencePlan).sequence);}
   // A bark must fit before the next authored line. Keep its periodic due time
   // while the line owns the voice slot, then try again on the following frame.
-  const speechSoon=frame&&this.track.some(key=>key.role==='voice'&&key.t>=frame.elapsed-80&&key.t-frame.elapsed<1800*(view.playbackSpeed??1));
+  // Lead-ins and speech run at real time even at ×2/×3. Predict through the
+  // same clock as playback; multiplying by speed reserves several extra seconds.
+  const speechHorizon=frame?advanceBattleClock(frame.plan,frame.elapsed,1800,view.reducedMotion,view.playbackSpeed??1):0;
+  const speechSoon=frame&&this.track.some(key=>key.role==='voice'&&key.t>=frame.elapsed-80&&key.t<speechHorizon);
   if(this.elapsed>=this.nextBark&&!speechSoon){
    const party=view.actors.filter(a=>a.side==='party'&&a.hp>0),actor=party[this.barks%Math.max(1,party.length)],owner=actor&&(view.models?.[actor.id]??actor.cardRpg?.cardId);
    if(owner)this.send({...context,cue:`voice.${owner}.${this.barks%2?'attack':'select'}`,role:'bark',actorId:actor!.id},{volume:.65,priority:40});

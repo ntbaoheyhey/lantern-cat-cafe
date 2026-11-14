@@ -5,6 +5,7 @@ import {pilotFixture} from '../vfx-layered/fixture';
 import {BattleAudio} from './battle-audio';
 import type {SceneView} from '../../squad/turn3d/scene';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
+import {reserveUltimateLeadIn} from './voice-windows';
 it('gives every active one specific voice and every ultimate two phases with a single SFX owner',()=>{
  for(const id of SEQUENCES.keys())for(const mode of ['full','short','off'] as CinematicMode[]){
   const plan=configureSequence(pilotFixture(id).plan,mode),track=audioTimeline(plan,plan.sequence),tier=plan.sequence!.tier;
@@ -40,5 +41,14 @@ it('holds a due bark when an authored callout is about to start and resumes it a
  audio.render({...view,fixedTime:17.75,frame:sampleActionPlan(plan,charge.t,false)});
  expect(played).toContain(charge.cue);expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(0);
  audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,charge.t+100,false)});
+ expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
+});
+it.each([1,2,3])('fits a bark before a real-time lead-in without over-reserving at ×%s',speed=>{
+ const plan=reserveUltimateLeadIn(configureSequence(pilotFixture('mochi-4').plan),4000);
+ const audio=new BattleAudio(()=>{});audio.setCapture(true);
+ const view={battleKey:plan,actors:[{id:'mochi',side:'party',hp:10}],models:{mochi:'mochi'},paused:true,reducedMotion:false,playbackSpeed:speed} as unknown as SceneView;
+ for(let i=0;i<30;i++)audio.render({...view,fixedTime:10+i*.25});
+ const charge=audioTimeline(plan,plan.sequence).find(key=>key.voicePhase==='charge')!;
+ audio.render({...view,fixedTime:17.5,frame:sampleActionPlan(plan,charge.t-2100,false)});
  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
 });
