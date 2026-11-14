@@ -1,6 +1,7 @@
-NOW:S4 lead-in4 and P3 browser verification running.
-NEXT:Finish S4 without sacrificing M1;then current mix and remaining polish.
-OPEN:P3 seven scene gates PASS but browser/mix pending;S4 lead-in3 rejected15.25065 motion.
-PIDS:A36397,B97970;cadence10674,motion10675,types10928,browser9435.
-JOBS:polish/S4/lead-in4/jobs.json;polish/P3/browser-job.json.
-UPDATED:2026-11-14T00:48:10.123546+00:00
+NOW:S4 lead-in5 current A timing pilot under serial measurement.
+NEXT:Accept only with cadence6–9s and all M1 gates;then P3 current mix and P4.
+OPEN:P3 dedicated7/7 gates and435/435 browser/types/unit pass;current mix pending.
+S4:lead-in4 rejected:5.126s,36 raw starts,A motion15.586.
+PIDS:A36397,B97970;A verification13164.
+JOBS:A reports/v3-solo/S4/lead-in5/verification-job.json.
+UPDATED:2026-11-14T00:55:40.387663+00:00
