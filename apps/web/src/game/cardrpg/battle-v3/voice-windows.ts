@@ -33,6 +33,12 @@ export function reserveUltimateLeadIn(plan:SequencePlan,waitMs:number):SequenceP
  if(sequence){
   sequence.duration+=delay;sequence.impact+=delay;
   for(const track of [sequence.camera,sequence.time,sequence.dim,sequence.postfx,sequence.audio,sequence.casterAnim,sequence.targetAnim,sequence.damage])for(const key of track)key.t+=delay;
+  // Sampling before a track's first key returns that key. Explicit neutral
+  // keys keep the field lit and its world clock running before charge begins.
+  const hold=Math.max(0,delay-120);
+  sequence.time.unshift({t:0,value:1},{t:Math.max(0,delay-1),value:1});
+  sequence.dim.unshift({t:0,value:0},{t:hold,value:0});
+  sequence.postfx.unshift({t:0,bloom:0,aberration:0,vignette:0},{t:hold,bloom:0,aberration:0,vignette:0});
   if(sequence.cutin){sequence.cutin.start+=delay;sequence.cutin.end+=delay;}
   if(sequence.plate){sequence.plate.start+=delay;sequence.plate.end+=delay;}
  }

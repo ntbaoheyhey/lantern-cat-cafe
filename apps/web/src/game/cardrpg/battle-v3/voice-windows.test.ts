@@ -1,7 +1,7 @@
 import {expect,it} from 'vitest';
 import {ENEMIES} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {pilotFixture} from '../vfx-layered/fixture';
-import {configureSequence,SEQUENCES,type CinematicMode} from './sequence';
+import {configureSequence,SEQUENCES,sequenceAt,sequenceWorldTime,type CinematicMode} from './sequence';
 import {audioTimeline,VOICE_TIMING} from './audio-timeline';
 import {advanceBattleClock} from './final-hit';
 import {reserveUltimateLeadIn} from './voice-windows';
@@ -17,6 +17,10 @@ it.each([1,2,3])('keeps the whole deferred wind-up and its spoken tracks in sync
  const afterVoices=audioTimeline(plan,plan.sequence).filter(c=>c.role==='voice');
  expect(afterVoices.map(c=>c.t)).toEqual(beforeVoices.map(c=>c.t+1800));
  expect(advanceBattleClock(plan,0,1000,false,speed)).toBe(1000);
+ expect(sequenceWorldTime(plan.sequence!,1000)).toBe(1000);
+ expect(sequenceAt(plan,1000)?.dim).toBe(0);
+ expect(sequenceAt(plan,1000)?.post.vignette).toBe(0);
+ expect(sequenceAt(plan,1800)?.dim).toBe(sequenceAt(original,0)?.dim);
  const basic=configureSequence(pilotFixture('mochi-1').plan);
  expect(reserveUltimateLeadIn(basic,1800)).toBe(basic);
 });

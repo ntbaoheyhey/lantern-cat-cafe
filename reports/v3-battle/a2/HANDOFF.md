@@ -1,5 +1,5 @@
-NOW:Q9 S4 lead-in3 pilot;not accepted.
-NEXT:Measure cadence and30s motion,then fresh checks if both pass.
-OPEN:Lead-in2 rejected5.869s cadence/15.3684 motion;last accepted Ada83d2357.
-PIDS:A36397,B97970 servers;no active pilot jobs.
-UPDATED:2026-11-14T00:41:56.260351+00:00
+NOW:S4 lead-in4 pilot;explicit neutral pre-charge tracks.
+NEXT:Cadence and30s motion;all dependent gates must remain passing.
+DIAGNOSIS:lead-in3 raw6.261 PASS;motion15.25065 FAIL. First shifted keys darkened and froze the wind-up.
+PIDS:A36397,B97970;B P3 browser9435.
+UPDATED:2026-11-14T00:46:56.658937+00:00
