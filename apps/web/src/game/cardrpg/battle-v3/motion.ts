@@ -19,7 +19,8 @@ export function actionPose(input:MotionInput):RootPose {
  const {plan,elapsed:t,home,target,width,height}=input,p=neutralPose();
  if(!hasActorAction(plan)||t<0||t>=plan.duration)return p;
  const direction=input.side==='enemy'?-1:1,kind=input.motion??attackMotion(input.asset,plan),impact=plan.beats[2]!.start;
- const ultimate=plan.ultimate,launch=ultimate?0:Math.max(120,impact-200),arrival=ultimate?150:impact;
+ const leadIn=(plan as EffectPlan&{speechLeadInMs?:number}).speechLeadInMs??0;
+ const ultimate=plan.ultimate,launch=ultimate?0:Math.max(120,impact-200),arrival=ultimate?leadIn+150:impact;
  const holdEnd=Math.min(plan.duration-100,impact+100),returnEnd=Math.min(plan.duration,holdEnd+267);
  const melee=['dash-slash','leap-slam','spin'].includes(kind),scale=height/720;
  // Caster steps and counterweight read through the full wind-up; melee stops
@@ -89,6 +90,15 @@ export function actionCamera(input:MotionInput,tier:'basic'|'active'|'ultimate')
  // The plate owns its camera up to contact. On return to the field, follow
  // the receiving group through the release line, then restore the wide shot.
  if(tier==='ultimate'){
+  const leadIn=(plan as EffectPlan&{speechLeadInMs?:number}).speechLeadInMs??0;
+  if(leadIn>0&&t<leadIn+150){
+   // Follow the caster's measured approach once, then hand the frame to the
+   // plate. Breathing room is a visible wind-up, never a frozen recovery.
+   const enter=smooth(t/Math.max(1,leadIn*.6)),leave=1-smooth((t-leadIn)/150);
+   const zoom=1+.22*enter*leave,travel=out(t/(leadIn+150));
+   const x=home.x+(width*(direction>0?.48:.52)-home.x)*travel;
+   return {zoom,x:(x/width-.5)*(1-1/zoom),y:(.5-(home.y-home.core*.4)/height)*(1-1/zoom),tilt:0};
+  }
   if(t<=impact)return rest;
   const age=t-impact,enter=smooth(age/133),recover=1-smooth((age-233)/Math.max(1,plan.duration-impact-233));
   const zoom=1+.20*enter*recover;

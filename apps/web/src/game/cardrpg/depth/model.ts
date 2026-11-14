@@ -326,7 +326,7 @@ export class DepthModel {
     this.plan = prepareBattleSequence(this, paceActionA6(createCardActionPlan(events, identity), battle.initial));
     if(this.cadenceBattle!==battle){this.cadenceBattle=battle;this.lastUltimateVoiceAt=-Infinity;}
     this.voicedWindows.clear();
-    this.plan=reserveUltimateLeadIn(this.plan,6200-(this.playbackAt-this.lastUltimateVoiceAt));
+    this.plan=reserveUltimateLeadIn(this.plan,6700-(this.playbackAt-this.lastUltimateVoiceAt));
     if(this.state.formationC2){
       Object.assign(this.plan,{finalHit:lastHit,numberBadges:badgeEvents(presentation.impact.log.slice(before))});
       if(this.roundPlan)Object.assign(this.roundPlan,{finalHit:!lastHit&&this.roundPlan.events.some(event=>event.type==='death')&&battle.actors.filter(target=>target.side==='enemy').every(target=>target.hp<=0),numberBadges:badgeEvents(battle.log.slice(presentation.impact.log.length))});

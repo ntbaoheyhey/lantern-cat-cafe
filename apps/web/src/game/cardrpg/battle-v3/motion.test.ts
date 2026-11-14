@@ -3,6 +3,18 @@ import {createActionPlan} from '../../squad/turn3d/effects';
 import {MOTIONS,actionPose,actionCamera,fitMotionFrame,bracePose,hitPose,idlePhase,idlePose} from './motion';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 const events=[{type:'action_start',actorId:'cat',targetIds:['enemy'],skillId:'guardianBasic',actionId:1},{type:'damage',actorId:'cat',targetIds:['enemy'],amount:12,skillId:'guardianBasic',actionId:1}] as TurnEvent[];
+it('uses a deferred ultimate wind-up for one moving approach and hands off before the plate',()=>{
+ const plan={...createActionPlan(events),ultimate:true,duration:6500,speechLeadInMs:1800};
+ plan.beats=plan.beats.map((b,i)=>i===2?{...b,start:5000}:b);
+ const input={plan,asset:'soot',side:'party',home:{x:250,y:400,core:150},target:{x:850,y:400,core:160},width:1280,height:720};
+ const positions=[300,900,1800].map(elapsed=>actionPose({...input,elapsed}).x);
+ expect(positions[0]).toBeLessThan(positions[1]!);expect(positions[1]).toBeLessThan(positions[2]!);
+ expect(actionPose({...input,elapsed:1950}).x).toBeCloseTo(1280*.48-250);
+ expect(actionCamera({...input,elapsed:900},'ultimate').zoom).toBeGreaterThan(1);
+ expect(actionCamera({...input,elapsed:1950},'ultimate')).toEqual({zoom:1,x:0,y:0,tilt:0});
+ const expected=actionPose({...input,elapsed:900});actionPose({...input,elapsed:1800});
+ expect(actionPose({...input,elapsed:900})).toEqual(expected);
+});
 it('moves every archetype through anticipation, strike, return without mutating the event plan',()=>{
  const plan=createActionPlan(events),before=JSON.stringify(plan),input={plan,asset:'mochi',side:'party',home:{x:300,y:400,core:150},target:{x:850,y:380,core:160},width:1280,height:720};
  for(const motion of MOTIONS){const poses=Array.from({length:Math.ceil(plan.duration/16)+1},(_,i)=>actionPose({...input,elapsed:Math.min(i*16,plan.duration),motion}));

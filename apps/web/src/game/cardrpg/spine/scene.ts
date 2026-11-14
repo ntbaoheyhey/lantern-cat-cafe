@@ -274,7 +274,8 @@ export class SpineScene {
    const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==actor?.side))??plan?.targetIds[0];
    const target=this.homes.get(targetId??'')?.point??home;
    const tier=presentationTier(frame.plan);
-   const follow=actor&&home&&target&&(tier!=='ultimate'||frame.elapsed>=frame.plan.beats[2]!.start);
+   const leadIn=(frame.plan as typeof frame.plan&{speechLeadInMs?:number}).speechLeadInMs??0;
+   const follow=actor&&home&&target&&(tier!=='ultimate'||frame.elapsed>=frame.plan.beats[2]!.start||leadIn>0&&frame.elapsed<leadIn+150);
    const camera=follow?actionCamera({plan:frame.plan,elapsed:frame.elapsed,asset:this.actors.get(actor.id)!.asset,side:actor.side,home,target,width,height},tier):sequence?.camera??{zoom:1,x:0,y:0,tilt:0};
    this.camera.zoom=view.reducedMotion?1:camera.zoom;
    this.camera.rotation.z=view.reducedMotion?0:camera.tilt;

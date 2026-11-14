@@ -4,6 +4,22 @@ import {pilotFixture} from '../vfx-layered/fixture';
 import {configureSequence,SEQUENCES,type CinematicMode} from './sequence';
 import {audioTimeline,VOICE_TIMING} from './audio-timeline';
 import {advanceBattleClock} from './final-hit';
+import {reserveUltimateLeadIn} from './voice-windows';
+
+it.each([1,2,3])('keeps the whole deferred wind-up and its spoken tracks in sync at ×%s',speed=>{
+ const original=configureSequence(pilotFixture('mochi-4').plan),before=JSON.stringify(original);
+ const plan=reserveUltimateLeadIn(original,1800);
+ expect(JSON.stringify(original)).toBe(before);
+ expect(plan.events).toBe(original.events);
+ expect(plan.sequence!.impact).toBe(original.sequence!.impact+1800);
+ expect(plan.beats[2]!.start).toBe(original.beats[2]!.start+1800);
+ const beforeVoices=audioTimeline(original,original.sequence).filter(c=>c.role==='voice');
+ const afterVoices=audioTimeline(plan,plan.sequence).filter(c=>c.role==='voice');
+ expect(afterVoices.map(c=>c.t)).toEqual(beforeVoices.map(c=>c.t+1800));
+ expect(advanceBattleClock(plan,0,1000,false,speed)).toBe(1000);
+ const basic=configureSequence(pilotFixture('mochi-1').plan);
+ expect(reserveUltimateLeadIn(basic,1800)).toBe(basic);
+});
 
 it.each([1,2,3])('finishes every required spoken take before the next voice or action at ×%s',speed=>{
  const ids=[...SEQUENCES.keys(),...ENEMIES.map(enemy=>`enemy:${enemy.id}`)];
