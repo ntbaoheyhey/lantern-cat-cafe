@@ -227,3 +227,7 @@ P2 S4 fixture audit 2026-11-14T00:25:54.565916+00:00: The omitted cadence field 
 2026-11-14T01:21:37.795321+00:00 S4 current matrix exposes bark spacing8.0579s at wave1x2 and8.0496s at wave3x3; keep original thresholds. A repairs the actual clock horizon. Expanded future runtime signatures to include every battle speech scheduler dependency; the former signature included model.ts but omitted battle-audio.ts. Old receipts remain historical, unchanged.
 
 2026-11-14T01:25:54.415450+00:00 S4 horizon7 partial matrix preserved:20/20 ultimate phases,5 skills,0 required cuts;bossx3 improves9.1246→7.4988s,wave3x3 improves8.0496→7.9143s,wave1x2 remains8.0245s FAIL. No acceptance. Candidate8 keeps actual-clock horizon and chooses7.25s nominal bark requests within original7–8s average limit.
+
+## 2026-11-14T01:44:55.375254+00:00 — P3 decimal audio budget correction
+
+The P3-only checker incorrectly allowed 16 MiB. The unchanged B2 checker correctly rejected 16,380,501 bytes against 16,000,000. Fixed the dedicated check, added exact-boundary/failing regression cases, and encoded the two mono menu scores at 80 kb/s from their hash-verified lossless sources, with constrained Opus VBR. The shipment is now 15,911,147 bytes (469,354 saved); measured LUFS difference is 0.00. Speech assets, arrangements and durations are unchanged. Prior P3 budget PASS is withdrawn. Full capture46 belongs to the old audio; acceptance requires fresh output from the compressed assets.

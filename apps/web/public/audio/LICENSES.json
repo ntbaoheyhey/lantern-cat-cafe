@@ -43547,7 +43547,7 @@
       "license": "CC0-1.0",
       "author": "MintoDog",
       "path": "apps/web/public/audio/menu-home.webm",
-      "sha256": "04ad52c04476e14889181f441ef664d5fdba5ce3e46b356a6b9eab22cda3ab0a",
+      "sha256": "80c8070c8595ed77c1362ac67bb6b84c44bf0786754b4b73d1dfcfeb5c6f5eff",
       "file": "menu-home.webm",
       "date": "2026-11-13",
       "sourceFiles": [
@@ -43562,7 +43562,22 @@
         "sha256": "44658ae15c41a6d0ce520a68401f0321e7530fc219b57472a95fd61aac355d6c"
       },
       "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
-      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
+      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved.",
+      "encoding": {
+        "tool": "ffmpeg, libopus/libmp3lame",
+        "bitrate": 80000,
+        "opusMode": "constrained VBR",
+        "date": "2026-11-14T01:44:54.021337+00:00",
+        "script": {
+          "path": "scripts/audio/compact-music.py",
+          "sha256": "bcab8844ef5d90d993586424b7c2426fd6b9ac7233cffd5c675aaac83f158789"
+        },
+        "source": {
+          "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+          "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+        },
+        "processing": "Encode mono menu scores from their lossless licensed sources at 80 kb/s.\n\nConstrained Opus VBR avoids the large bitrate overshoot on harmonic music.\nThe arrangements, channels, timing and level remain unchanged. Speech is untouched."
+      }
     },
     {
       "sourceUrl": "https://opengameart.org/content/cozy-puzzle-in-game-2",
@@ -43570,7 +43585,7 @@
       "license": "CC0-1.0",
       "author": "MintoDog",
       "path": "apps/web/public/audio/menu-home.mp3",
-      "sha256": "c2cfb9c9ed4118cf8004dce55942d45476c674f50f6defd64831ac6cc4d647ea",
+      "sha256": "4e7b4e77ec2206d2a5b14e2008daf838467fa8573230e178a038577ac6c6b26d",
       "file": "menu-home.mp3",
       "date": "2026-11-13",
       "sourceFiles": [
@@ -43585,7 +43600,22 @@
         "sha256": "44658ae15c41a6d0ce520a68401f0321e7530fc219b57472a95fd61aac355d6c"
       },
       "prompt": "Add an original offbeat shaker to the licensed 99 BPM menu arrangement.\n\nThe quiet eighth-note part fills the browsing groove without speeding up the\nmelody. No reference audio is used. Production output remains a normal music\nasset; browser captures independently decide acceptance.",
-      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved."
+      "processing": "99 BPM; eighth-note shaker with sixteenth-note offset; alternating 45/55ms decay; 2ms attack; 3.2\u20137.8kHz noise; -16dB peak gain; seed3113. Existing melody and loudness are preserved.",
+      "encoding": {
+        "tool": "ffmpeg, libopus/libmp3lame",
+        "bitrate": 80000,
+        "opusMode": "constrained VBR",
+        "date": "2026-11-14T01:44:54.021797+00:00",
+        "script": {
+          "path": "scripts/audio/compact-music.py",
+          "sha256": "bcab8844ef5d90d993586424b7c2426fd6b9ac7233cffd5c675aaac83f158789"
+        },
+        "source": {
+          "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+          "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+        },
+        "processing": "Encode mono menu scores from their lossless licensed sources at 80 kb/s.\n\nConstrained Opus VBR avoids the large bitrate overshoot on harmonic music.\nThe arrangements, channels, timing and level remain unchanged. Speech is untouched."
+      }
     },
     {
       "license": "Own synthesis",
@@ -43619,13 +43649,28 @@
       "processing": "Original 96 BPM mallet composition, eight chord changes, metal/wood attacks, sustained harmony. Mastered -18 LUFS, -4 dBTP.",
       "file": "menu-forge.webm",
       "path": "apps/web/public/audio/menu-forge.webm",
-      "sha256": "c71b420dd342dfd80af6ae79d2c24b41ed2eba9807069519e80f2dc1ff526cee",
+      "sha256": "f744c95ab887bb3b2d3351464d270c57cc8cb0586c30c8c987b2ec2363d18861",
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
           "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
         }
-      ]
+      ],
+      "encoding": {
+        "tool": "ffmpeg, libopus/libmp3lame",
+        "bitrate": 80000,
+        "opusMode": "constrained VBR",
+        "date": "2026-11-14T01:44:54.020098+00:00",
+        "script": {
+          "path": "scripts/audio/compact-music.py",
+          "sha256": "bcab8844ef5d90d993586424b7c2426fd6b9ac7233cffd5c675aaac83f158789"
+        },
+        "source": {
+          "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+          "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+        },
+        "processing": "Encode mono menu scores from their lossless licensed sources at 80 kb/s.\n\nConstrained Opus VBR avoids the large bitrate overshoot on harmonic music.\nThe arrangements, channels, timing and level remain unchanged. Speech is untouched."
+      }
     },
     {
       "license": "Own synthesis",
@@ -43642,13 +43687,28 @@
       "processing": "Original 96 BPM mallet composition, eight chord changes, metal/wood attacks, sustained harmony. Mastered -18 LUFS, -4 dBTP.",
       "file": "menu-forge.mp3",
       "path": "apps/web/public/audio/menu-forge.mp3",
-      "sha256": "c84920fb39ccd04e9bb067b5b77b61daa05f921c5dfe9d261a87b7cfc56bd53f",
+      "sha256": "aa3ada8e00c30c5f6ba6fcc6f8cc9ea6a5a5483ad6540dbe74aa87c52c88e091",
       "sourceFiles": [
         {
           "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
           "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
         }
-      ]
+      ],
+      "encoding": {
+        "tool": "ffmpeg, libopus/libmp3lame",
+        "bitrate": 80000,
+        "opusMode": "constrained VBR",
+        "date": "2026-11-14T01:44:54.020875+00:00",
+        "script": {
+          "path": "scripts/audio/compact-music.py",
+          "sha256": "bcab8844ef5d90d993586424b7c2426fd6b9ac7233cffd5c675aaac83f158789"
+        },
+        "source": {
+          "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+          "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+        },
+        "processing": "Encode mono menu scores from their lossless licensed sources at 80 kb/s.\n\nConstrained Opus VBR avoids the large bitrate overshoot on harmonic music.\nThe arrangements, channels, timing and level remain unchanged. Speech is untouched."
+      }
     },
     {
       "path": "apps/web/public/audio/score-dawn.webm",

@@ -1,5 +1,5 @@
-NOW: Clock-horizon7 live repairs20/20 ultimate phases and5 skills,0cuts;bossx3 now7.499s,wave3x3 7.914s,wave1x2 8.0245s FAIL.
-NEXT: Candidate8 uses7.25s nominal bark interval; deterministic9case pilot before real9case matrix.
-OPEN: P3 dedicated7/7 and435/435 browser/types/unit pass; timing/mix pending.
-JOBS: A reports/v3-solo/S4/bark-cadence8/review-job.json.
-UPDATED: 2026-11-14T01:25:54.415450+00:00
+NOW:Q9 P3 budget repaired:15,911,147/16,000,000 bytes;fresh audio capture required.
+NEXT:Finish old46capture checkpoint,commit budget sources,refresh isolated integration and full47-budget+stage1.
+OPEN:S4 raw stage1=6.154s,battle=6.190s,0requiredcuts;fullmix/suites pending.
+JOBS:A validation20472;see reports/v3-solo/S4/bark-cadence8/validation-progress.json.
+UPDATED:2026-11-14T01:44:55.375254+00:00

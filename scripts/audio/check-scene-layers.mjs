@@ -1,5 +1,6 @@
-import {readFileSync,writeFileSync,readdirSync,statSync} from 'node:fs';
+import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {shippedAudioBytes,withinAudioBudget,SHIPPED_AUDIO_LIMIT_BYTES} from './shipped-budget.mjs';
 const base='reports/v3-shell/b2/polish/P3';
 const read=p=>JSON.parse(readFileSync(p));
 const data=read(base+'/playback.json'),manifest=read('apps/web/public/audio/manifest.json');
@@ -14,7 +15,7 @@ gate('dawn',gains.length===3&&gains.every(Number.isFinite)&&gains[0]>0&&gains[1]
 gate('cleanup',!data.cleanup.active.includes('music.boss.dawn'),data.cleanup.active,'dawn removed on leaving boss');
 gate('errors',data.errors.length===0,data.errors.length,'zero browser errors');
 gate('provenance',['webm','mp3'].every(e=>signed(licences.find(r=>r.path===`apps/web/public/audio/score-dawn.${e}`))),2,'both encoded dawn files have matching original-synthesis provenance');
-const bytes=readdirSync('apps/web/public/audio').filter(p=>/\.(mp3|webm|opus)$/.test(p)).reduce((n,p)=>n+statSync('apps/web/public/audio/'+p).size,0);
-gate('budget',bytes<=16*1024*1024,bytes,'<=16777216 bytes');
+const bytes=shippedAudioBytes('apps/web/public/audio');
+gate('budget',withinAudioBudget(bytes),bytes,`<=${SHIPPED_AUDIO_LIMIT_BYTES} bytes`);
 gate('reel',signed(data.reel),data.reel?.path,'hashed actual scene output');
 writeFileSync(base+'/gates.log',rows.join('\n')+'\n');console.log(rows.join('\n'));process.exitCode=rows.every(r=>r.startsWith('PASS'))?0:1;
