@@ -1,6 +1,6 @@
 import {chromium} from '../../scripts/v3feel/browser-fixture.mjs';
 import {installOutputCapture} from '../../scripts/audio/capture-page.mjs';
-import {mkdirSync,writeFileSync,readFileSync,rmSync} from 'node:fs';
+import {mkdirSync,writeFileSync,readFileSync,rmSync,linkSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {execFileSync,spawnSync} from 'node:child_process';
 import {gzipSync} from 'node:zlib';
@@ -21,9 +21,10 @@ try{
  await cdp.send('Page.stopScreencast');
  const trace=await page.evaluate(async()=>{window.__pilot.stop();await window.__outputCapture.stop();return {frames:window.__pilot.trace,events:window.__pilot.sound.events};});
  await page.close();if(!pictures.length)throw Error('No compositor frames');
- const list=[];if(pictures[0].t>0)list.push(`file '${pictures[0].name}'`,`duration ${pictures[0].t}`);
- pictures.forEach((p,i)=>list.push(`file '${p.name}'`,`duration ${Math.max(.001,(pictures[i+1]?.t??30.1)-p.t)}`));list.push(`file '${pictures.at(-1).name}'`);writeFileSync(raw+'/frames.txt',list.join('\n'));
- execFileSync('ffmpeg',['-v','error','-y','-f','concat','-safe','0','-i',raw+'/frames.txt','-i',raw+'/audio.webm','-t','30','-vf','fps=30','-c:v','libvpx-vp9','-crf','35','-b:v','1400k','-row-mt','1','-c:a','libopus','-b:a','96k',out+'/pilot.webm']);
+ // Select the latest actually displayed picture at each output timestamp. Never use future frames.
+ const selections=[];let j=0;for(let frame=0;frame<900;frame++){const t=frame/30;while(j+1<pictures.length&&pictures[j+1].t<=t)j++;const p=pictures[j];linkSync(resolve(raw,p.name),resolve(raw,`video-${String(frame).padStart(5,'0')}.jpg`));selections.push({frame,t,sourceTime:p.t,source:p.name});}
+ writeFileSync(out+'/frame-selections.json',JSON.stringify(selections));
+ execFileSync('ffmpeg',['-v','error','-y','-framerate','30','-i',raw+'/video-%05d.jpg','-i',raw+'/audio.webm','-t','30','-c:v','libvpx-vp9','-crf','35','-b:v','1400k','-row-mt','1','-c:a','libopus','-b:a','96k',out+'/pilot.webm']);
  execFileSync('ffmpeg',['-v','error','-y','-i',raw+'/audio.webm','-t','60','-ar','48000','-c:a','pcm_s16le',out+'/mix.wav']);
  const stderr=spawnSync('ffmpeg',['-hide_banner','-i',out+'/mix.wav','-af','loudnorm=I=-20:TP=-1:LRA=11:print_format=json','-f','null','-'],{encoding:'utf8'}).stderr;
  const loudness=JSON.parse(stderr.match(/\{\s*"input_i"[\s\S]*?\}/)?.[0]??'{}');

@@ -1,7 +1,8 @@
 import {chromium} from '../../scripts/v3feel/browser-fixture.mjs';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
-const root=resolve(import.meta.dirname,'../..'),out=resolve(root,'reports/v3-feel/REVIEW/QR-P1');
+const root=resolve(import.meta.dirname,'../..'),pilot=process.argv[2]??'QR-P1',out=resolve(root,'reports/v3-feel/REVIEW',pilot);
+if(!/^QR-P[123]$/.test(pilot))throw Error('Invalid pilot');
 mkdirSync(out+'/raw',{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal','--autoplay-policy=no-user-gesture-required']});
 try{

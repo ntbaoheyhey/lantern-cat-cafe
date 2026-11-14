@@ -11,7 +11,8 @@ Phương pháp 8/10: Quay 30 fps, xem mọi dải hình; kiểm tra âm thanh th
 Phương pháp 9/10: Video mẫu x2/x3 chỉ giúp học cấu trúc; số đo 10 fps có sai số 100 ms.
 Phương pháp 10/10: Chưa cần cài mô hình hay MCP; công cụ hiện có đủ để thử 1 mèo.
 Đã sửa 1 mẫu bị nhầm: chiêu nối sau ulti không được tính là đánh thường.
-Đã bổ sung các khung hồi phục bị thiếu; chưa sửa hoạt ảnh sản phẩm.
+Pilot 1 bị loại: 36 PASS, 11 FAIL, 7 OPEN; vùng ulti chỉ 17,86% khung.
+Pilot 2 đang quay: vùng ulti 30,09%; đã bảo vệ mặt và sửa điểm chạm theo hình thật.
 2008 kiểm tra bộ ngưỡng PASS; đây chưa phải PASS chất lượng trận đấu.
 Nghe âm thanh chưa được xác nhận; không dùng phân tích sóng âm thay cho nghe thật.
 Không deploy, không merge main, không agent phụ; demo cũ ở http://localhost:5994.

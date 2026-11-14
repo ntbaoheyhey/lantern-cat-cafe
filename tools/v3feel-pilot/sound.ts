@@ -11,7 +11,7 @@ export const cues=[
 ];
 export class PilotSound{
  context?:AudioContext;gain?:GainNode;buffers=new Map<string,AudioBuffer>();sources:AudioBufferSourceNode[]=[];events:any[]=[];
- async prepare(){if(this.context)return;const ctx=this.context=new AudioContext({sampleRate:48000});this.gain=ctx.createGain();this.gain.gain.value=.5;this.gain.connect(ctx.destination);
+ async prepare(){if(this.context)return;const ctx=this.context=new AudioContext({sampleRate:48000});this.gain=ctx.createGain();this.gain.gain.value=.84;this.gain.connect(ctx.destination);
   const voice=await ctx.decodeAudioData(await(await fetch('/audio/callout-soot.mp3')).arrayBuffer());
   const manifest=await(await fetch('/audio/manifest.json')).json(),line=manifest.cues['voice.soot.ult.charge'][0];
   const cut=ctx.createBuffer(voice.numberOfChannels,Math.round(line.duration*ctx.sampleRate),ctx.sampleRate);

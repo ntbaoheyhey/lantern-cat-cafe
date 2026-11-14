@@ -31,7 +31,7 @@ export class LanternEffects{
     c.strokeStyle='#d591d9';c.lineWidth=3;c.beginPath();c.moveTo(sx-40,sy-30);c.quadraticCurveTo(sx-54,sy+30,sx-10,sy+42);c.stroke();
    });
    layer('travelling-comet',envelope(t,230,296,350,450),c=>{
-    const p=smooth((t-250)/100),x=sx+(tx-sx)*p,y=sy+(ty-sy)*p-Math.sin(p*Math.PI)*45;
+    const p=clamp((t-250)/100),x=sx+(tx-sx)*p-24,y=sy+(ty-sy)*p-Math.sin(p*Math.PI)*45;
     const g=c.createLinearGradient(x-220,y,x+20,y);g.addColorStop(0,'#ef855400');g.addColorStop(.55,'#e5914b88');g.addColorStop(1,'#ffe48b');
     c.fillStyle=g;c.beginPath();c.moveTo(x+24,y);c.bezierCurveTo(x-25,y-37,x-135,y-25,x-225,y+15);c.bezierCurveTo(x-130,y-3,x-70,y+42,x+24,y);c.fill();
     c.strokeStyle='#fff3c0';c.lineWidth=4;c.beginPath();c.moveTo(x-140,y+5);c.quadraticCurveTo(x-30,y-10,x+17,y);c.stroke();
@@ -52,19 +52,21 @@ export class LanternEffects{
     c.drawImage(this.paint,256,0,256,256,sx-80,sy-145,160,150);
    });
    layer('cast-arch',envelope(t,600,733,1150,1467),c=>{
-    const p=smooth((t-600)/500),end=sx+(tx-sx)*p;
+    const p=clamp((t-600)/500),end=sx+(tx-sx)*p;
     c.strokeStyle='#e2a65f';c.lineWidth=10;c.beginPath();c.moveTo(sx,sy);c.bezierCurveTo(sx+170,120,end-130,155,end,250);c.stroke();
     c.strokeStyle='#fff1b8';c.lineWidth=3;c.stroke();
-    for(let i=0;i<5;i++){const q=(i+1)/5,x=sx+(tx-sx)*q,y=185+80*(q-.45)**2;if(p<q-.07)continue;c.globalAlpha*=smooth((p-q+.07)/.14);c.drawImage(this.paint,256,0,256,256,x-76,y-50,152,150);}
+    for(let i=0;i<5;i++){const q=(i+1)/5,x=sx+(tx-sx)*q,y=150+80*(q-.45)**2;if(p<q-.07)continue;c.save();c.globalAlpha*=smooth((p-q+.07)/.14);c.drawImage(this.paint,256,0,256,256,x-110,y-70,220,220);c.restore();}
    });
    layer('procession-ribbons',envelope(t,600,733,1267,1733),c=>{
-    const p=smooth((t-600)/500),end=sx+(tx-sx)*p;
-    // Three interlocking, tapered fabric flames; deliberately open between contours.
+    const p=clamp((t-600)/500),end=sx+(tx-sx)*p;
+    // A broad canopy of three brush-textured fabric flames, blocked as a silhouette first.
     for(let i=0;i<3;i++){
-     const y=sy-90+i*110,bow=i===1?130:-105,thick=58+i*6;
+     const y=180+i*155,bow=i===1?105:-65,thick=235-i*10;
      const g=c.createLinearGradient(sx,0,tx,0);g.addColorStop(0,'#9c58b733');g.addColorStop(.5,['#f1b454','#d39aec','#ffc866'][i]);g.addColorStop(1,'#fff1ad');c.fillStyle=g;
-     c.beginPath();c.moveTo(sx,sy);c.bezierCurveTo(sx+180,y+bow,end-135,y-bow,end+20,y);c.bezierCurveTo(end-100,y-bow+thick,sx+180,y+bow+thick,sx,sy+8);c.fill();
+     c.beginPath();c.moveTo(sx,sy);c.bezierCurveTo(sx+180,y+bow,end-135,y-bow,end,y);c.bezierCurveTo(end-100,y-bow+thick,sx+180,y+bow+thick,sx,sy+8);c.fill();
+     c.save();c.clip();c.globalAlpha*=.4;c.drawImage(this.paint,512,0,256,256,sx,y-140,Math.max(1,end-sx),410);c.restore();
      c.strokeStyle='#ffedaf';c.lineWidth=3;c.stroke();
+     for(let j=0;j<5;j++){const q=(j+1)/6,x=sx+(end-sx)*q,yy=sy+(y-sy)*q+(30+i*7)*Math.sin(q*Math.PI);star(c,x,yy,6+i*2,'#fff3ba',-.7);}
     }
    });
    layer('contact-fan',t<1100?0:envelope(t,1099,1134,1234,1567),c=>{
