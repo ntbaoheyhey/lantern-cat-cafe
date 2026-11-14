@@ -137,3 +137,15 @@ Q6 visual inspection: the compact preparation board reused stage height as whole
 2026-11-14T01:21:01.570156+00:00 S4 matrix continuation: wave1 x2 bark mean8.057933s and wave3 x3 mean8.049633s fail7–8s; all completed required voice lines remain uninterrupted. Diagnosis: bark look-ahead multiplies playback speed while the same plan deliberately runs lead-ins and spoken windows at real time. Reuse advanceBattleClock for the actual1.8s horizon; do not change the periodic7.5s schedule, thresholds, or combat timing.
 
 2026-11-14T01:25:03.812865+00:00 Speech-horizon7 improves wave3x3 to7.9143s but wave1x2 remains8.0245s: reserving a real callout still delays the final bark beyond the short-window average. Keep the correct clock horizon and first7.5s request; nominal subsequent spacing becomes7.25s, within the original7–8s requirement, leaving room for deferrals. Validate allnine deterministic schedules before another live matrix.
+
+2026-11-14T01:39:56.708447+00:00 P3 acceptance audit caught16,380,501 shipped audio bytes above the owning S3 limit16,000,000. The dedicated P3 checker incorrectly used16MiB. P3 was pending, never accepted. Correct the auxiliary checker to the owning threshold and reduce actual shipping bytes; keep the current full capture as evidence, do not lower or reinterpret the limit.
+
+## 2026-11-14T01:44:55.375254+00:00 — P3 decimal audio budget correction
+
+The P3-only checker incorrectly allowed 16 MiB. The unchanged B2 checker correctly rejected 16,380,501 bytes against 16,000,000. Fixed the dedicated check, added exact-boundary/failing regression cases, and encoded the two mono menu scores at 80 kb/s from their hash-verified lossless sources, with constrained Opus VBR. The shipment is now 15,911,147 bytes (469,354 saved); measured LUFS difference is 0.00. Speech assets, arrangements and durations are unchanged. Prior P3 budget PASS is withdrawn. Full capture46 belongs to the old audio; acceptance requires fresh output from the compressed assets.
+
+## 2026-11-14T01:56:26.484832+00:00 — authorized shared browser fix
+
+A full browser run exposed Collection and Settings at 26 words while the unlock toast was visible. B commit 1bd241f39 changes only IntroductionA6.tsx: the label "NOW OPEN" becomes "Unlocked", preserving the feature title, dismissal and timing. Cherry-picked onto A as 18e3237cf748f81475d3d63f6eaec493ba223f9f under the explicit shared-browser-blocker exception. No branch merge. The failed capture remains historical; fresh word-budget and full browser checks are required.
+
+2026-11-14T02:02:43.290225+00:00 Validation47 resume: historical trial46 browser FAIL is preserved. Its three passing A renderer reviews have verified log hashes and unchanged A source hashes; only these independent reviews are reused. New A suite/browser and all current-asset B timing/mix checks are required. Supervisor uses a detached process group after the first nohup launch exited before Python initialized.

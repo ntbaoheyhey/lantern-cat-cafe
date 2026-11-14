@@ -152,3 +152,7 @@ The compositor sampled only the first0.8s of a1s template ultimate, or at most1.
 2026-11-13 Q5 scene28 final112-line codec guard:7 misses, including four enemy skill lines. Add Kettle strike!, A gentle tap!, Rain falls!, Sweet blast! as original A-owned alternatives for measured B trials; no runtime/combat changes. Prior Cinnamon note referred to the running guard, not final acceptance.
 
 2026-11-13 Q6 acceptance: current victory/defeat plus a pending discovery showed3 plain buttons. Add shared guide and next/home icons to the A-owned result footer; retain accessible names, callbacks, and all combat/reward rules. The incidental Next to label becomes Next. B preview receives this source only in its temporary integration checkout.
+
+## 2026-11-14T01:56:26.484832+00:00 — authorized shared browser fix
+
+A full browser run exposed Collection and Settings at 26 words while the unlock toast was visible. B commit 1bd241f39 changes only IntroductionA6.tsx: the label "NOW OPEN" becomes "Unlocked", preserving the feature title, dismissal and timing. Cherry-picked onto A as 18e3237cf748f81475d3d63f6eaec493ba223f9f under the explicit shared-browser-blocker exception. No branch merge. The failed capture remains historical; fresh word-budget and full browser checks are required.
