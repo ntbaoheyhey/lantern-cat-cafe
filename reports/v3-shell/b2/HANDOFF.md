@@ -1,7 +1,5 @@
-NOW: S4 lead-in6 has three bark-spacing misses at x2/x3; required ultimate and skill lines have no interruptions in completed cases.
-NEXT: Matrix finished; A clock-horizon repair committed; repeat matrix, stage-one cadence and current S5.
-OPEN: P3 dedicated7/7 and435/435 browser/types/unit pass; timing/mix acceptance pending.
-DIAGNOSIS: A bark look-ahead multiplied speed during real-time speech and lead-ins; now uses the same playback clock.
-SIGNATURES: Future runtime receipts include battle-audio, voice-windows, audio-timeline, voice-timing, sequence and final-hit files in addition to model/audio/assets.
-PIDS: A36397,B97970;previous A validation17319 and matrix17774 finished.
-UPDATED: 2026-11-14T01:21:37.795321+00:00
+NOW: Clock-horizon7 live repairs20/20 ultimate phases and5 skills,0cuts;bossx3 now7.499s,wave3x3 7.914s,wave1x2 8.0245s FAIL.
+NEXT: Candidate8 uses7.25s nominal bark interval; deterministic9case pilot before real9case matrix.
+OPEN: P3 dedicated7/7 and435/435 browser/types/unit pass; timing/mix pending.
+JOBS: A reports/v3-solo/S4/bark-cadence8/review-job.json.
+UPDATED: 2026-11-14T01:25:54.415450+00:00
