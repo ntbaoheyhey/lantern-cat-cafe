@@ -63,6 +63,6 @@ export function IntroductionA6({ m }: { m: DepthModel }) {
     {step && <ol className="a6-first-path" aria-label="First three steps">{firstSteps.map((item, index) => <li key={item.id} aria-current={index === stepIndex ? 'step' : undefined} data-done={index < stepIndex}><span aria-hidden="true">{index < stepIndex ? 'Done' : index + 1}</span>{item.title}</li>)}</ol>}
     <p>{step?.action ?? intro.goal}</p>{step && <strong className="a6-first-reward">{step.reward}</strong>}
   </aside>}
-    {celebration && <aside className="a6-unlock-toast" role="status"><span aria-hidden="true"><GameIcon name="season" size={18}/></span><div><small>NOW OPEN</small><strong>{celebration.name}</strong>{!m.state.formationC2&&<p>{celebration.hint}</p>}</div><button aria-label="Dismiss celebration" onClick={dismiss}><GameIcon name="close" size={20}/></button></aside>}
+    {celebration && <aside className="a6-unlock-toast" role="status"><span aria-hidden="true"><GameIcon name="season" size={18}/></span><div><small>Unlocked</small><strong>{celebration.name}</strong>{!m.state.formationC2&&<p>{celebration.hint}</p>}</div><button aria-label="Dismiss celebration" onClick={dismiss}><GameIcon name="close" size={20}/></button></aside>}
   </>;
 }
