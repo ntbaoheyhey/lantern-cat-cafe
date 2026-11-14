@@ -34,5 +34,21 @@
     "arch": "arm64",
     "blenderInPath": false
   },
-  "noInstallRequired": true
+  "noInstallRequired": true,
+  "pilot3RevisionSeconds": {
+    "register": 30.834,
+    "pose": 20.946,
+    "timing-layers": 40.723,
+    "author-effect": 12.187,
+    "integrate": 39.285,
+    "sound": 34.533,
+    "capture-measure": 210.567,
+    "review": 375.437
+  },
+  "rolloutTimingCaveat": "Measured revision time is a lower bound, not fresh-character authoring cost. Initial pipeline budgets retained; QR step-time acceptance remains OPEN.",
+  "pilot3Result": {
+    "PASS": 46,
+    "FAIL": 6,
+    "OPEN": 2
+  }
 }

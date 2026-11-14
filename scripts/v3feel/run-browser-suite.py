@@ -51,5 +51,5 @@ for group in groups:
     rows.append(row)
     result_path.write_text(json.dumps({'sourceCommit': head, 'groups': groups, 'rows': rows}, indent=2) + '\n')
     print(json.dumps(row), flush=True)
-    if code or passed < expected:
-        raise SystemExit('Browser group failed; inspect the retained log before retrying')
+if any(row['exitCode'] or row['passed'] < row['minimumPassed'] for row in rows):
+    raise SystemExit('Browser groups failed; all requested groups were attempted. Inspect the retained logs before retrying.')

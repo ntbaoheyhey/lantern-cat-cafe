@@ -1,6 +1,6 @@
 # Repeatable character and skill pipeline
 
-Status: proposed method; pilot step times are not yet measured. Source inputs: F1–F13, `PRINCIPLES.md`, `REFERENCE-BREAKDOWN.md`, `QUALITY-BAR.md`, S04/S05/S07/S08 and local sources L01–L05 in `sources.json`.
+Status: three pilots reviewed and rejected; continue under QR.6 exception. Revision step times are measured; fresh-character step timings are still unverified. Source inputs: F1–F13, `PRINCIPLES.md`, `REFERENCE-BREAKDOWN.md`, `QUALITY-BAR.md`, S04/S05/S07/S08 and local sources L01–L05 in `sources.json`.
 
 ## Inputs and clock
 
@@ -44,3 +44,9 @@ Write actual compositor timestamps, scheduled contact and observed contact separ
 Only after the five QR documents and automated quality checks exist, implement one cat's basic and ultimate in a local pilot using the production cut-out renderer and accepted original assets. Keep it outside ordinary battle routing until reviewed. Include idle/hit/death in the same scene to exercise character rows. No broad production animation/VFX edits before QR acceptance. Record start/end UTC for each step in `pilot-times.json`; preserve failed attempts with their reasons. A failed pilot changes the method, never the bar.
 
 After acceptance, reuse its recipe format and render functions for Q1–Q3. Q1 removes actives and switches camera/timing only; Q2 sets scale/facing/layout; Q3 rolls out the eight basic families and thirteen ultimate silhouettes. Re-run parity and full regression for each item. Pilot elapsed step times become the remaining-twelve plan; a study estimate is insufficient.
+
+## Pilot 3 review: retained and changed method
+
+The third capture loses cast progression (film f152–167) while deterministic seeks look correct. Keep source sockets, planted key poses, face protection, contact shadows, two-frame pose hold and direct audio capture. Do not copy its per-frame full-canvas layer allocation/readback/filter path into production. Use prewarmed sprites or bounded vector draws in the existing renderer, with time driven from one action clock. Keep aspect ratio in responsive views. Inspect actual media before accepting masks or scheduled cue logs.
+
+Measured revision times are in `pilot-3-times.json` and `pipeline-plan.json`; they are not original authoring times. A revision is not a reliable 13-unit cost predictor. Keep initial time budgets as estimates until first production unit measurement. QR stays OPEN: 46/54 rows pass, six fail, two require listening.

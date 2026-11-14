@@ -33,5 +33,19 @@
     "log": "reports/v3-feel/QR-reference-extraction.log",
     "started": "2026-11-14T04:53:11.324804+00:00",
     "finished": true
+  },
+  "qrPilot3": {
+    "pid": 83987,
+    "command": "node tools/v3feel-pilot/capture.mjs QR-P3",
+    "log": "reports/v3-feel/QR-P3-capture.log",
+    "started": "2026-11-14T05:41:44.965157+00:00",
+    "finished": true
+  },
+  "qrRegression": {
+    "pid": 84710,
+    "command": "node scripts/v3feel/regress.mjs QR",
+    "log": "reports/v3-feel/QR-regression.log",
+    "started": "2026-11-14T05:44:52.259436+00:00",
+    "finished": true
   }
 }

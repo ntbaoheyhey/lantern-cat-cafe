@@ -23,7 +23,7 @@ export const actions=[{at:2000,kind:'basic' as const},{at:4500,kind:'ultimate' a
 let last:any=null;
 function paintActor(a:SpineActor,i:number,t:number,kind:Kind|null,elapsed:number,hitElapsed:number,deathElapsed:number){
  const pose=i===0&&kind?'feel-'+kind:'feel-idle';
- const idleClock=hitElapsed>=0&&hitElapsed<timing.hold?t-hitElapsed:t;
+ const idleClock=i===0&&kind?t-elapsed+poseClock(elapsed,kind):hitElapsed>=0&&hitElapsed<timing.hold?t-hitElapsed:t;
  const at=i===0&&kind?poseClock(elapsed,kind)/1000:((idleClock/1000+i*.89)%4);
  a.mesh!.proceduralTime=idleClock/1000+i*.89;a.sample(pose,pose,at,0,camera,false);
  let recoil=0,squash=0;
@@ -72,10 +72,13 @@ function draw(time:number){
  }
  ctx.fillStyle='#251d2be6';ctx.fillRect(0,640,1280,80);ctx.fillStyle='#f8e5c6';ctx.font='600 24px Georgia';ctx.fillText('Soot · lantern study',38,677);ctx.font='16px system-ui';ctx.fillStyle='#d5c5b9';ctx.fillText('Basic 0.80 s   /   Ultimate 2.20 s',38,703);
  ctx.textAlign='right';ctx.fillStyle='#e0c795';ctx.font='15px system-ui';ctx.fillText(kind?kind==='ultimate'?'LANTERN REQUIEM':'LANTERN SPARK':death>=0?'DISSOLVE':casterHit>=0?'RECOIL':'IDLE',1238,683);ctx.textAlign='left';
+ // Study-only frame watermark: makes video-frame time independently recoverable
+ // from pixels instead of assuming a CDP metadata timestamp equals draw time.
+ for(let bit=0;bit<16;bit++){ctx.fillStyle=(Math.round(t)>>bit)&1?'#fff':'#000';ctx.fillRect(1150+bit*4,710,4,4);}
  last={t,kind,elapsed,states,source,target:recipient,focusBrightness:1-.55*focus,banner,camera:camera.projectionMatrix.toArray()};return last;
 }
 let running=false,epoch=0,raf=0;const trace:any[]=[];
 async function play(seconds=30){await sound.prepare();await sound.context!.resume();sound.stop();sound.events=[];trace.length=0;running=true;epoch=performance.now();const audioZero=sound.context!.currentTime;for(let cycle=0;cycle<seconds/15;cycle++)sound.play(audioZero+cycle*15,cycle);function loop(){const t=performance.now()-epoch;draw(t%15000);trace.push({t,...last,elapsedWall:t,audioTime:sound.context!.currentTime-audioZero});if(running&&t<seconds*1000)raf=requestAnimationFrame(loop);}cancelAnimationFrame(raf);loop();return {epoch,wall:Date.now()/1000,audioZero};}
 document.querySelector('#play')!.addEventListener('click',()=>play());
-(window as any).__pilot={ready:true,draw,play,trace,stop(){running=false;cancelAnimationFrame(raf);sound.stop();},prepare:()=>sound.prepare(),recipe,actions,cues,canvases,effect,sound,telemetry:()=>last,frame:()=>canvas.toDataURL('image/png'),masks:()=>Object.fromEntries([...effect.layers].map(([name,c])=>[name,c.toDataURL('image/png')]))};
+(window as any).__pilot={ready:true,canvas,draw,play,trace,stop(){running=false;cancelAnimationFrame(raf);sound.stop();},prepare:()=>sound.prepare(),recipe,actions,cues,canvases,effect,sound,telemetry:()=>last,frame:()=>canvas.toDataURL('image/png'),masks:()=>Object.fromEntries([...effect.layers].map(([name,c])=>[name,c.toDataURL('image/png')]))};
 draw(0);

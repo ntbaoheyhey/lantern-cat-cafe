@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-14T05:42:47.386Z",
+  "clocks": {
+    "captureZero": 1794634888.819,
+    "captureAudio": 0.005333333333333333,
+    "epoch": 400.30000001192093,
+    "wall": 1794634888.833,
+    "audioZero": 0.005333333333333333
+  },
+  "errors": [],
+  "renderedFrames": 3573,
+  "maxRenderGapMs": 292.5,
+  "videoBytes": 2954762,
+  "loudness": {
+    "input_i": "-19.88",
+    "input_tp": "-6.11",
+    "input_lra": "13.70",
+    "input_thresh": "-31.08",
+    "output_i": "-19.09",
+    "output_tp": "-2.00",
+    "output_lra": "9.70",
+    "output_thresh": "-30.28",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.91"
+  },
+  "simultaneousVoicesMax": 2,
+  "method": "Actual canvas.captureStream(30) and direct gain-output audio in one MediaRecorder. Frame clock encoded in pilot-only HUD; no replay or postmix normalization."
+}

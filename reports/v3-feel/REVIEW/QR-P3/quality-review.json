@@ -1,0 +1,553 @@
+{
+  "pilot": 3,
+  "at": "2026-11-14T05:49:46.566988+00:00",
+  "state": "FAIL",
+  "counts": {
+    "PASS": 46,
+    "FAIL": 6,
+    "OPEN": 2
+  },
+  "score": 5,
+  "rows": [
+    {
+      "id": "B01",
+      "state": "PASS",
+      "frame": "basic-01.jpg f60/84/87",
+      "observed": "Action is planted and returns to idle by f84; 800 ms envelope."
+    },
+    {
+      "id": "B02",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f70/71",
+      "observed": "First contact f71 = 366.667 ms after nominal start; decoded scene clock 372 ms, within 350 +/-33 ms."
+    },
+    {
+      "id": "B03",
+      "state": "PASS",
+      "frame": "basic-windup-01.jpg f63/64/65/66/67",
+      "observed": "Five successive frames show the raised lantern arm and compressed torso before release."
+    },
+    {
+      "id": "B04",
+      "state": "PASS",
+      "frame": "basic-windup-01.jpg f60/66/68",
+      "observed": "Lantern arm opens separately from torso; head counters the lean."
+    },
+    {
+      "id": "B05",
+      "state": "PASS",
+      "frame": "basic-01.jpg f63/69/72/75",
+      "observed": "Preparation glint, travelling comet, contact star and floor splinters are visible."
+    },
+    {
+      "id": "B06",
+      "state": "PASS",
+      "frame": "basic-01.jpg f66/69/72",
+      "observed": "Pointed glint, tapered curved comet and directional splinters have different contours."
+    },
+    {
+      "id": "B07",
+      "state": "PASS",
+      "frame": "basic-peak-mask.png; basic-contact-01.jpg f71/72",
+      "observed": "Peak rotational IoU 0.345639; directional comet and contact fan."
+    },
+    {
+      "id": "B08",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f70/71",
+      "observed": "Recipient recoil and flash start on first contact f71."
+    },
+    {
+      "id": "B09",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71/72/73",
+      "observed": "Both contact poses hold for f71/72, then settle at f73; 66.667 ms authored hold."
+    },
+    {
+      "id": "B10",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71/72/73",
+      "observed": "Two lower-body flash frames preserve eyes; no screen whiteout."
+    },
+    {
+      "id": "B11",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71; audio-measurements.json",
+      "observed": "Measured transient at 2.357208 s is 9.458 ms from observed video contact."
+    },
+    {
+      "id": "B12",
+      "state": "OPEN",
+      "frame": "pilot.webm 2.000\u20132.600 s; mix.wav",
+      "observed": "Listening perception is unavailable. Waveform evidence does not certify sound identity."
+    },
+    {
+      "id": "B13",
+      "state": "PASS",
+      "frame": "basic-01.jpg f60\u201384; measurements.json",
+      "observed": "Ranged root x stays 245, no lunge or approach."
+    },
+    {
+      "id": "B14",
+      "state": "PASS",
+      "frame": "basic-01.jpg f60/84/87",
+      "observed": "Feet return to the same floor anchor at the end; no lasting displacement."
+    },
+    {
+      "id": "B15",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71/72",
+      "observed": "Faces remain visible above the comet and lower-body flash."
+    },
+    {
+      "id": "B16",
+      "state": "PASS",
+      "frame": "basic-01.jpg f63\u201384; basic-contact-01.jpg f69\u201375",
+      "observed": "Glint/comet/residue ease; abrupt contact accent is intentional and local."
+    },
+    {
+      "id": "B17",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f69/70/71",
+      "observed": "Comet moves left-to-right from lantern to near surface of guard at strip scale."
+    },
+    {
+      "id": "B18",
+      "state": "PASS",
+      "frame": "basic-01.jpg f51\u201399",
+      "observed": "Window posts and floor registration are unchanged; no camera motion or shake."
+    },
+    {
+      "id": "U01",
+      "state": "PASS",
+      "frame": "ultimate-02.jpg f198/201/204",
+      "observed": "Residue ends within 2200 ms envelope, then idle; only one pilot actor tested."
+    },
+    {
+      "id": "U02",
+      "state": "PASS",
+      "frame": "focus-boundary-01.jpg f150/151/152",
+      "observed": "Dim and banner visibly end at f152, 566.667 ms after start; decoded clock 571.7 ms is within one 33 ms frame of 600."
+    },
+    {
+      "id": "U03",
+      "state": "FAIL",
+      "frame": "ultimate-contact-01.jpg f165\u2013168; frame-clocks.json",
+      "observed": "Contact itself is f168 at 1100 ms, but the cast is not visibly rendered from 600 ms: recorded frames hold old state until the whole effect appears at contact."
+    },
+    {
+      "id": "U04",
+      "state": "PASS",
+      "frame": "focus-1280.png; ultimate-01.jpg f141/144",
+      "observed": "Guard and field darken, caster remains bright; steady-state filter brightness 0.45."
+    },
+    {
+      "id": "U05",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f138/141/144",
+      "observed": "In-field dim, outline/rim and nearby name visible."
+    },
+    {
+      "id": "U06",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f150/168/177",
+      "observed": "Raised lantern wind-up and extended release differ; feet stay in place. Missing intermediate cast frames logged separately."
+    },
+    {
+      "id": "U07",
+      "state": "FAIL",
+      "frame": "ultimate-01.jpg f153\u2013168",
+      "observed": "Focus and impact/residue are visible, but separate cast/travel roles disappear during the recorded freeze. Seeked layer masks alone cannot pass this."
+    },
+    {
+      "id": "U08",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f174/177",
+      "observed": "Hanging lantern roofs/tassels, curved ribbon blades and pointed impact fan are distinct non-radial contour families."
+    },
+    {
+      "id": "U09",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f174/177; ultimate-peak-mask.png",
+      "observed": "Isolated peak union is 28.275825%; same composition visible in film. Alpha-threshold sensitivity 27.674588\u201328.429579%; before actor occlusion, dim/banner excluded."
+    },
+    {
+      "id": "U10",
+      "state": "PASS",
+      "frame": "ultimate-peak-mask.png; ultimate-01.jpg f174",
+      "observed": "Peak symmetry 0.617075, below 0.8; directional composition."
+    },
+    {
+      "id": "U11",
+      "state": "FAIL",
+      "frame": "ultimate-01.jpg f167/168/177",
+      "observed": "Lantern theme is readable now, but a full-size tableau appears abruptly and hangs in place. Does not read as a strong moving strike."
+    },
+    {
+      "id": "U12",
+      "state": "FAIL",
+      "frame": "ultimate-contact-01.jpg f165\u2013168",
+      "observed": "Peak lines connect source and target, but recorded energy does not visibly travel to recipient before contact."
+    },
+    {
+      "id": "U13",
+      "state": "PASS",
+      "frame": "ultimate-contact-01.jpg f167/168",
+      "observed": "Guard recoil and flash start on first recorded contact f168."
+    },
+    {
+      "id": "U14",
+      "state": "PASS",
+      "frame": "ultimate-contact-01.jpg f168/169/170",
+      "observed": "Contact holds for two frames then settles at f170."
+    },
+    {
+      "id": "U15",
+      "state": "PASS",
+      "frame": "ultimate-contact-01.jpg f168/169/170",
+      "observed": "Two lower-body flash frames; no screen whiteout."
+    },
+    {
+      "id": "U16",
+      "state": "PASS",
+      "frame": "ultimate-contact-01.jpg f168/169/170",
+      "observed": "Soot face and guard eyes/hat remain readable; effects are behind bodies."
+    },
+    {
+      "id": "U17",
+      "state": "PASS",
+      "frame": "ultimate-contact-01.jpg f168; audio-measurements.json",
+      "observed": "Transient 5.607208 s differs from video contact by 7.208 ms."
+    },
+    {
+      "id": "U18",
+      "state": "OPEN",
+      "frame": "pilot.webm 4.500\u20136.700 s; mix.wav",
+      "observed": "Callout/cast/contact/tail are scheduled and recorded, but listening identity is unverified; cast visual also stalls."
+    },
+    {
+      "id": "U19",
+      "state": "PASS",
+      "frame": "ultimate-peak-mask.png; mask-measurements.json",
+      "observed": "Mean saturation 0.368419 exceeds 80% of estimated reference median; reference extraction caveats retained."
+    },
+    {
+      "id": "U20",
+      "state": "PASS",
+      "frame": "ultimate-peak-mask.png; mask-measurements.json",
+      "observed": "p95 linear luminance 0.837783 exceeds 80% of estimated reference median; reference extraction caveats retained."
+    },
+    {
+      "id": "U21",
+      "state": "FAIL",
+      "frame": "ultimate-contact-01.jpg f167/168; ultimate-01.jpg f180/183",
+      "observed": "Fade-out is gradual, but the entire main composition pops in on f168 after a recorded freeze."
+    },
+    {
+      "id": "U22",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f135\u2013183",
+      "observed": "Window/floor registration unchanged; no plate, scene cut, zoom, pan or walk-up."
+    },
+    {
+      "id": "U23",
+      "state": "FAIL",
+      "frame": "focus-1280.png; focus-1440.png; focus-390.png",
+      "observed": "Banner fits numerically and avoids faces, but 390 view stretches all artwork and compresses letters severely. Width/overflow-only probe misses the defect."
+    },
+    {
+      "id": "U24",
+      "state": "PASS",
+      "frame": "ultimate-02.jpg f201; hit-01.jpg f255",
+      "observed": "Ultimate ends before next separate reaction; no overlapping actions."
+    },
+    {
+      "id": "C01",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0/24/48",
+      "observed": "Soft foot shadows anchor both actors and stay attached during idle."
+    },
+    {
+      "id": "C02",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0\u201354; measurements.json",
+      "observed": "Rendered opaque height range 240\u2013248 caster, 234\u2013248 guard exceeds 1.5% amplitude; one-cat study only."
+    },
+    {
+      "id": "C03",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0/24/48",
+      "observed": "Guard and caster rise/settle at different phases."
+    },
+    {
+      "id": "C04",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0/24/48; basic-01.jpg f66/78",
+      "observed": "Tail and lantern arm lag torso and settle; not whole-image translation alone."
+    },
+    {
+      "id": "C05",
+      "state": "PASS",
+      "frame": "basic-01.jpg f60\u201384",
+      "observed": "Foot anchor stays planted while torso compresses and arm lifts."
+    },
+    {
+      "id": "C06",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71\u201375; hit-01.jpg f255/258/261",
+      "observed": "Recoil, squash and local flash followed by settle are visible; eyes retained."
+    },
+    {
+      "id": "C07",
+      "state": "PASS",
+      "frame": "death-01.jpg f333\u2013363; death-02.jpg f375",
+      "observed": "Separated armour fragments rise while the body fades, then gradually disappear."
+    },
+    {
+      "id": "C08",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0; focus-1280.png",
+      "observed": "Warm coat/armour highlights fit cafe light without erasing original hue/value detail."
+    },
+    {
+      "id": "C09",
+      "state": "PASS",
+      "frame": "ultimate-01.jpg f141/174",
+      "observed": "Gold rim follows caster and recipient contours at the action; no unbounded unit glow."
+    },
+    {
+      "id": "C10",
+      "state": "PASS",
+      "frame": "idle-01.jpg f0; basic-contact-01.jpg f71; death-01.jpg f333",
+      "observed": "Lantern/face toward right; guard weapon/eyes toward left in shown states. Not a roster-wide facing verdict."
+    },
+    {
+      "id": "C11",
+      "state": "PASS",
+      "frame": "basic-01.jpg f66/72/78; ultimate-01.jpg f150/168",
+      "observed": "No detached joint, seam hole, inverted limb or duplicated eye observed in these poses."
+    },
+    {
+      "id": "C12",
+      "state": "PASS",
+      "frame": "basic-contact-01.jpg f71; ultimate-contact-01.jpg f168; hit-01.jpg f255",
+      "observed": "All faces remain visible; no numbers in the study, so production number layout remains unverified."
+    }
+  ],
+  "sheetsViewed": [
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/idle-01.jpg",
+      "frames": [
+        0,
+        6,
+        12,
+        18,
+        24,
+        30,
+        36,
+        42,
+        48,
+        54,
+        60
+      ],
+      "first": 0.0,
+      "last": 2.0
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/basic-01.jpg",
+      "frames": [
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75,
+        78,
+        81,
+        84,
+        87,
+        90,
+        93,
+        96,
+        99
+      ],
+      "first": 1.7,
+      "last": 3.3
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/ultimate-01.jpg",
+      "frames": [
+        126,
+        129,
+        132,
+        135,
+        138,
+        141,
+        144,
+        147,
+        150,
+        153,
+        156,
+        159,
+        162,
+        165,
+        168,
+        171,
+        174,
+        177,
+        180,
+        183
+      ],
+      "first": 4.2,
+      "last": 6.1
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/ultimate-02.jpg",
+      "frames": [
+        186,
+        189,
+        192,
+        195,
+        198,
+        201,
+        204,
+        207,
+        210,
+        213,
+        216
+      ],
+      "first": 6.2,
+      "last": 7.2
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/hit-01.jpg",
+      "frames": [
+        246,
+        249,
+        252,
+        255,
+        258,
+        261,
+        264,
+        267,
+        270,
+        273,
+        276,
+        279,
+        282,
+        285,
+        288,
+        291,
+        294
+      ],
+      "first": 8.2,
+      "last": 9.8
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/death-01.jpg",
+      "frames": [
+        315,
+        318,
+        321,
+        324,
+        327,
+        330,
+        333,
+        336,
+        339,
+        342,
+        345,
+        348,
+        351,
+        354,
+        357,
+        360,
+        363,
+        366,
+        369,
+        372
+      ],
+      "first": 10.5,
+      "last": 12.4
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/death-02.jpg",
+      "frames": [
+        375,
+        378,
+        381,
+        384
+      ],
+      "first": 12.5,
+      "last": 12.8
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/basic-contact-01.jpg",
+      "frames": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "first": 2.3,
+      "last": 2.5
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/ultimate-contact-01.jpg",
+      "frames": [
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173
+      ],
+      "first": 5.5,
+      "last": 5.766666666666667
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/basic-windup-01.jpg",
+      "frames": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "first": 2.0,
+      "last": 2.2666666666666666
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/QR-P3/focus-boundary-01.jpg",
+      "frames": [
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156
+      ],
+      "first": 5.0,
+      "last": 5.2
+    }
+  ],
+  "productionCertified": false,
+  "privateComparisonsViewed": [
+    "ref/QR/pilot3-compare/basic.jpg",
+    "ref/QR/pilot3-compare/ultimate.jpg"
+  ]
+}

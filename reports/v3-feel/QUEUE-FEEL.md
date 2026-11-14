@@ -3,7 +3,7 @@
 | Item | State | Work | Evidence / log |
 |---|---|---|---|
 | Q0 | open | Save + baseline | STARTED 2026-11-14T03:48:34.089519+00:00; baseline head 83891115c; branch pushed; ENDED 2026-11-14T04:48:11.765103+00:00 at 60-minute cap; typecheck/unit/parity PASS, browser/A/B FAIL; REVIEW/Q0/REVIEW.md incomplete; next method: finish frame audit + classify regression failures in Q9 |
-| QR | started | Research craft + pipeline + quality bar + one-cat pilot (F13) | STARTED 2026-11-14T04:48:11.765103+00:00; F13 blocks animation/VFX code until research + pilot acceptance |
+| QR | open | Research craft + pipeline + quality bar + one-cat pilot (F13) | STARTED 2026-11-14T04:48:11.765103+00:00; F13 research complete; ENDED 2026-11-14T05:51:57.056975+00:00 via QR.6 three-pilot exception: final pilot 46 PASS/6 FAIL/2 OPEN, QR checker {'PASS': 65, 'FAIL': 7, 'OPEN': 3}; REVIEW/QR-P3/REVIEW.md; typecheck/unit/parity PASS, browsers 434/435, A/B FAIL; next method cached/bounded renderer + aspect-correct layout, listening unresolved |
 | Q1 | todo | Basic + ultimate; static camera; equal timing | pending |
 | Q2 | todo | Scale, facing, frame fill | pending |
 | Q3 | todo | Skill visuals and effects | pending |

@@ -5,7 +5,7 @@ export const recipe={
  actor:'soot',target:'button-guard',name:'Lantern Requiem',width:1280,height:720,
  sources:['assets/cardrpg-look/vfx-layered/soot-1.webp','assets/cardrpg-look/vfx-layered/soot-4.webp'],
  basic:{layers:['preparation-glint','travelling-comet','contact-star','ground-splinters'],...timing.basic},
- ultimate:{layers:['focus-lantern','cast-arch','procession-ribbons','contact-fan','lantern-residue'],...timing.ultimate},
+ ultimate:{layers:['focus-lantern','cast-arch','lantern-procession','contact-fan','lantern-residue'],...timing.ultimate},
 } as const;
 export const makeCanvas=()=>{const c=document.createElement('canvas');c.width=1280;c.height=720;return c;};
 const path=(ctx:CanvasRenderingContext2D,pts:number[][],fill:string)=>{
@@ -14,6 +14,23 @@ const path=(ctx:CanvasRenderingContext2D,pts:number[][],fill:string)=>{
 const envelope=(t:number,a:number,b:number,c:number,d:number)=>smooth((t-a)/(b-a))*(1-smooth((t-c)/(d-c)));
 const star=(ctx:CanvasRenderingContext2D,x:number,y:number,size:number,color:string,angle=0)=>{
  ctx.save();ctx.translate(x,y);ctx.rotate(angle);path(ctx,[[0,-size],[size*.18,-size*.2],[size*.7,0],[size*.15,size*.2],[0,size],[-size*.18,size*.2],[-size*.7,0],[-size*.18,-size*.2]],color);ctx.restore();
+};
+// Original paper-and-glass lantern geometry; gold core, violet ribs and a
+// hooked roof remain legible in grayscale and at the small review-strip size.
+const lantern=(c:CanvasRenderingContext2D,x:number,y:number,h:number,tilt:number)=>{
+ c.save();c.translate(x,y);c.rotate(tilt);const w=h*.60;
+ c.lineJoin='round';c.lineWidth=3;c.strokeStyle='#774473';
+ const body=()=>{c.beginPath();c.moveTo(-w*.38,-h*.34);c.lineTo(w*.38,-h*.34);c.quadraticCurveTo(w*.64,-h*.08,w*.36,h*.30);c.lineTo(0,h*.4);c.lineTo(-w*.36,h*.30);c.quadraticCurveTo(-w*.64,-h*.08,-w*.38,-h*.34);c.closePath();};
+ const glass=c.createLinearGradient(-w/2,0,w/2,0);glass.addColorStop(0,'#b65eab');glass.addColorStop(.22,'#ffc174');glass.addColorStop(.46,'#fff9cf');glass.addColorStop(.68,'#ffdc94');glass.addColorStop(1,'#cb78b7');
+ body();c.fillStyle=glass;c.fill();c.stroke();
+ c.strokeStyle='#b46d9c';c.lineWidth=2;
+ for(const sign of [-1,1]){c.beginPath();c.moveTo(sign*w*.16,-h*.34);c.quadraticCurveTo(sign*w*.28,0,sign*w*.13,h*.34);c.stroke();}
+ path(c,[[-w*.54,-h*.33],[-w*.30,-h*.45],[0,-h*.55],[w*.30,-h*.45],[w*.54,-h*.33],[w*.13,-h*.39],[0,-h*.35],[-w*.13,-h*.39]],'#bd82bf');
+ c.strokeStyle='#ffe4a4';c.lineWidth=4;c.beginPath();c.moveTo(-w*.48,-h*.34);c.quadraticCurveTo(0,-h*.48,w*.48,-h*.34);c.stroke();
+ c.lineWidth=2;c.beginPath();c.moveTo(0,-h*.55);c.bezierCurveTo(-w*.1,-h*.74,w*.22,-h*.73,w*.10,-h*.60);c.stroke();
+ c.strokeStyle='#edba78';c.lineWidth=3;
+ for(const side of [-1,0,1]){c.beginPath();c.moveTo(side*w*.12,h*.35);c.quadraticCurveTo(side*w*.1+h*.08,h*.48,side*w*.14-h*.06,h*.61);c.stroke();}
+ star(c,0,-h*.06,h*.14,'#fffce1',.4);c.restore();
 };
 export class LanternEffects{
  readonly layers=new Map<string,HTMLCanvasElement>();readonly union=makeCanvas();
@@ -46,7 +63,7 @@ export class LanternEffects{
     for(let i=0;i<6;i++){const p=clamp((t-350)/430),x=tx+28+i*17+80*p,y=512-i%3*23-55*Math.sin(p*Math.PI);star(c,x,y,4*(1-p),'#e9bb70',i);}
    });
   }else{
-   layer('focus-lantern',envelope(t,0,100,650,850),c=>{
+   layer('focus-lantern',envelope(t,0,100,500,600),c=>{
     star(c,sx,sy,25+5*Math.sin(t/130),'#ffe2a1');
     c.strokeStyle='#e9b464';c.lineWidth=3;c.beginPath();c.moveTo(sx-23,sy+35);c.bezierCurveTo(sx-90,sy-10,sx-20,sy-90,sx+50,sy-55);c.stroke();
     c.drawImage(this.paint,256,0,256,256,sx-80,sy-145,160,150);
@@ -57,17 +74,26 @@ export class LanternEffects{
     c.strokeStyle='#fff1b8';c.lineWidth=3;c.stroke();
     for(let i=0;i<5;i++){const q=(i+1)/5,x=sx+(tx-sx)*q,y=150+80*(q-.45)**2;if(p<q-.07)continue;c.save();c.globalAlpha*=smooth((p-q+.07)/.14);c.drawImage(this.paint,256,0,256,256,x-110,y-70,220,220);c.restore();}
    });
-   layer('procession-ribbons',envelope(t,600,733,1267,1733),c=>{
+   layer('lantern-procession',envelope(t,600,733,1267,1733),c=>{
     const p=clamp((t-600)/500),end=sx+(tx-sx)*p;
-    // A broad canopy of three brush-textured fabric flames, blocked as a silhouette first.
+    // The front follows the painted contact surface. No off-axis beam or large
+    // lantern may touch the target before that front arrives at impact.
+    c.save();c.beginPath();c.rect(0,0,end,720);c.clip();
     for(let i=0;i<3;i++){
-     const y=180+i*155,bow=i===1?105:-65,thick=235-i*10;
+     const y=160+i*155,bow=i===1?105:-65,thick=[155,110,165][i];
      const g=c.createLinearGradient(sx,0,tx,0);g.addColorStop(0,'#9c58b733');g.addColorStop(.5,['#f1b454','#d39aec','#ffc866'][i]);g.addColorStop(1,'#fff1ad');c.fillStyle=g;
-     c.beginPath();c.moveTo(sx,sy);c.bezierCurveTo(sx+180,y+bow,end-135,y-bow,end,y);c.bezierCurveTo(end-100,y-bow+thick,sx+180,y+bow+thick,sx,sy+8);c.fill();
+     c.beginPath();c.moveTo(sx,sy);c.bezierCurveTo(sx+180,y+bow,end-135,y-bow,end,y);c.lineTo(end-45,y+thick*.3);c.lineTo(end-20,y+thick*.32);c.lineTo(end-95,y+thick*.7);c.bezierCurveTo(end-135,y-bow+thick,sx+180,y+bow+thick,sx,sy+8);c.fill();
      c.save();c.clip();c.globalAlpha*=.4;c.drawImage(this.paint,512,0,256,256,sx,y-140,Math.max(1,end-sx),410);c.restore();
      c.strokeStyle='#ffedaf';c.lineWidth=3;c.stroke();
      for(let j=0;j<5;j++){const q=(j+1)/6,x=sx+(end-sx)*q,yy=sy+(y-sy)*q+(30+i*7)*Math.sin(q*Math.PI);star(c,x,yy,6+i*2,'#fff3ba',-.7);}
     }
+    // Each lantern follows the same advancing procession, with secondary swing.
+    // Staggered sizes and roof/tassel contours avoid a stack of cloned glow disks.
+    for(let i=0;i<5;i++){
+     const q=(i+1)/5,x=sx+(end-sx)*q-48*q,y=sy+(ty-sy)*q-Math.sin(q*Math.PI)*198;
+     lantern(c,x,y,[135,165,195,215,240][i]*(.35+.65*p),-.36+q*.46+Math.sin(t/150+i)*.045);
+    }
+    c.restore();
    });
    layer('contact-fan',t<1100?0:envelope(t,1099,1134,1234,1567),c=>{
     const p=smooth((t-1100)/400);

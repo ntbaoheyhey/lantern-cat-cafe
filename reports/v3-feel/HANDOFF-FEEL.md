@@ -7,16 +7,17 @@ CHECKER PASS + VIDEO REVIEW = DONE, NEVER LOWER A THRESHOLD
 NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE
 ORIGINAL ART ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW: QR pilot 2 rejected; all nine sheets reviewed. Preparing final pilot with shared recording clock and stronger lantern shape.
-NEXT 1: Final pilot 3, separately timed steps; no broad production changes before pilot limit/QR acceptance.
-NEXT 2: Keep listening OPEN; direct media-clock evidence and responsive banner remain to establish.
-NEXT 3: Q1 after QR acceptance; return Q0 incomplete review/regressions in Q9.
-LAST GOOD COMMIT: 8dc58f553 (pilot 2 implementation; review rejects visual theme/timing).
-OPEN: Q0 boss sheets A03-A27 and listening not reviewed; browser/A/B regression fails inherited.
-DIAGNOSIS: Q0 frame review catches wrong-facing ram and plate obscuring logged hit; telemetry alone is insufficient.
-METHOD: Keep actual compositor timestamps and frame-observed contact separate from scheduled impact.
-PIDS: Own Vite launcher 62552 alive; inherited demo supervisor 46445 untouched.
-BACKGROUND JOBS: QR extraction finished; Vite 62552 alive. See jobs.json.
+NOW: QR final pilot reviewed/rejected; three-pilot exception allows Q1 while QR remains OPEN.
+NEXT 1: Q1 rules kit boundary + fixed 800/2200 ms beat + static camera/in-field focus.
+NEXT 2: Retune three wins within Q0 duration limits; record F6 parity baseline once.
+NEXT 3: Capture every fixture; full regression; return QR/Q0 deficits in Q9 with new method.
+LAST GOOD COMMIT: be1c37392; committing QR final review now.
+OPEN: QR 46/54 PASS, 6 FAIL (cast freeze/phone), 2 OPEN listening; Q0 boss audit unfinished.
+DIAGNOSIS: f152–167 repeats recorded cast frames; seek masks look correct and hide the failure.
+METHOD: Preserve planted rig/clock; replace per-frame full-canvas layers with cached/bounded draws.
+REGRESSION: QR typecheck/unit/parity PASS; browsers 434/435; A/B inherited evidence gates FAIL.
+PIDS: Own Vite 62552 alive; inherited demo supervisor 46445 untouched.
+BACKGROUND JOBS: QR capture/extraction/regression finished. See jobs.json.
 TRIGGERS: R1 2026-11-16T12:00Z; R2 2026-11-18T12:00Z; FREEZE 2026-11-19T12:00Z.
 SOURCE: reports/v3-feel/REQUEST-FEEL.txt (immutable).
-UPDATED: 2026-11-14T05:36:38.152488+00:00
+UPDATED: 2026-11-14T05:51:57.056975+00:00

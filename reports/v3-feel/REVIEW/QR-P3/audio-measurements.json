@@ -1,0 +1,30 @@
+{
+  "sampleRate": 48000,
+  "channels": 2,
+  "seconds": 60.0,
+  "events": [
+    {
+      "event": "basic",
+      "scheduledSeconds": 2.35,
+      "observedContactSeconds": 2.3666666666666667,
+      "observedFrame": 71,
+      "transientSeconds": 2.3572083333333333,
+      "offsetMs": 9.458333333333346,
+      "thresholdFraction": 0.18,
+      "peakWindowAmplitude": 0.415985107421875,
+      "method": "First absolute sample above 18% of local maximum, 80ms before to 150ms after event. Contact frame supplied by actual video review, never hard-coded from another pilot. Listening unverified."
+    },
+    {
+      "event": "ultimate",
+      "scheduledSeconds": 5.6,
+      "observedContactSeconds": 5.6,
+      "observedFrame": 168,
+      "transientSeconds": 5.607208333333333,
+      "offsetMs": 7.208333333333705,
+      "thresholdFraction": 0.18,
+      "peakWindowAmplitude": 0.436981201171875,
+      "method": "First absolute sample above 18% of local maximum, 80ms before to 150ms after event. Contact frame supplied by actual video review, never hard-coded from another pilot. Listening unverified."
+    }
+  ],
+  "listened": false
+}

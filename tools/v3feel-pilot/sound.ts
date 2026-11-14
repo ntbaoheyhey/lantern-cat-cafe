@@ -9,6 +9,7 @@ export const cues=[
  {at:8.5,duration:.2,type:'contact',cause:'hit response'},
  {at:10.8,duration:.8,type:'tail',cause:'death dissolve'},
 ];
+const bufferKey=(cue:typeof cues[number])=>cue.type==='callout'?'callout':`${cue.type}:${cue.duration}`;
 export class PilotSound{
  context?:AudioContext;gain?:GainNode;buffers=new Map<string,AudioBuffer>();sources:AudioBufferSourceNode[]=[];events:any[]=[];
  async prepare(){if(this.context)return;const ctx=this.context=new AudioContext({sampleRate:48000});this.gain=ctx.createGain();this.gain.gain.value=.84;this.gain.connect(ctx.destination);
@@ -25,9 +26,9 @@ export class PilotSound{
     else if(cue.type==='riser')v[i]=(Math.sin(2*Math.PI*(180*t+620*t*t))*.12+noise*.04)*Math.sin(Math.PI*p)**2;
     else if(cue.type==='tail')v[i]=(Math.sin(t*2*Math.PI*740)+Math.sin(t*2*Math.PI*1110)*.5)*.10*env;
     else v[i]=(Math.sin(2*Math.PI*(120*t-80*t*t))*.28+noise*.12+Math.sin(t*2*Math.PI*1450)*.12)*env;
-   }this.buffers.set(cue.type,buffer);
+   }this.buffers.set(bufferKey(cue),buffer);
   }
  }
- play(zero:number,cycle=0){for(const cue of cues){const src=this.context!.createBufferSource();src.buffer=this.buffers.get(cue.type)!;src.connect(this.gain!);src.start(zero+cue.at);this.sources.push(src);this.events.push({...cue,cycle,actualBufferDuration:src.buffer.duration,contextAt:zero+cue.at});}}
+ play(zero:number,cycle=0){for(const cue of cues){const src=this.context!.createBufferSource();src.buffer=this.buffers.get(bufferKey(cue))!;src.connect(this.gain!);src.start(zero+cue.at);this.sources.push(src);this.events.push({...cue,cycle,actualBufferDuration:src.buffer.duration,contextAt:zero+cue.at});}}
  stop(){for(const src of this.sources){try{src.stop();}catch{}}this.sources=[];}
 }
