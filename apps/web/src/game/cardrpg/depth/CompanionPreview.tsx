@@ -34,6 +34,7 @@ export function CompanionPreview({ m, id, skillId, entranceKey, earnedReveal, ho
     if (skillId) return galleryFixture(skillId);
     if (id && !state.account.cards.some(card => card.cardId === id)) return galleryFixture(`${id}-1`);
     return { battle: R.createBattle({ seed: 11, chapter: 1,
+      gameplayV4: R.gameplayV4(state), skillsV5: R.skillsV5(state), gameplayA6: R.gameplayA6(state),
       cats: R.battleCats({ ...state, team: id ? [id] : state.team }), enemies: [] }), plan: null };
   }, [state, id, skillId]);
   const view = useMemo<SceneView & { earnedReveal?: R.GameplayEventV4 }>(() => {

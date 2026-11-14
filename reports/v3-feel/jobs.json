@@ -52,6 +52,34 @@
     "pid": 93702,
     "command": "node scripts/v3feel/regress.mjs Q1",
     "log": "reports/v3-feel/Q1-regression.log",
-    "started": "2026-11-14T06:10:08.095606+00:00"
+    "started": "2026-11-14T06:10:08.095606+00:00",
+    "finished": true
+  },
+  "q1FixedBrowser": {
+    "pid": 98182,
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "playwright",
+      "test",
+      "--config",
+      "../../scripts/v3feel/playwright.config.mts",
+      "--grep",
+      "saved C2 tailoring",
+      "--project",
+      "classic"
+    ],
+    "log": "reports/v3-feel/Q1-fixed-browser.log",
+    "started": "2026-11-14T06:18:13.600020+00:00",
+    "finished": true
+  },
+  "q1Capture": {
+    "pid": 98503,
+    "command": "node scripts/v3feel/capture.mjs --item Q1",
+    "log": "reports/v3-feel/Q1-capture.log",
+    "started": "2026-11-14T06:18:24.039986+00:00",
+    "finished": true
   }
 }

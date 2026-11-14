@@ -184,3 +184,5 @@ Q1 test changes (no cases silently deleted; parameterized matrices retained). Q1
 - `e2e/odds-c2.spec.ts`: Nested tailoring/salvage case explicitly selects historical economy; current economy opens Fusion. No case removed.
 
 Capture correction: resample compositor JPEGs to 900 frames from actual timestamps at 30 Hz. Old concat JPEG demuxer had implicit 25 Hz timebase. Historical films remain unchanged. New review must use corrected capture.
+
+2026-11-14T06:25:48.467728+00:00 — Q1 preview crash reproduced in real browser: CompanionPreview omitted A6/skills/V4 flags while battleCats returned a two-skill kit. Preserve account rule flags when creating the isolated miniature; no rules baseline change. Added owned A6/saved-workshop regression without changing the browser expectation. First corrected captures (Q1-first-capture.json) remain rejected: battle mix -15.15/-15.15/-14.91 LUFS, peak voice counts 9/9/10. Defer full Q5 mix work until ordered queue; no sound PASS claimed.

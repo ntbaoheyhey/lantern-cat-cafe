@@ -27,6 +27,18 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
 
+it('opens an owned A6 miniature with its two-skill rules, including the saved workshop', async () => {
+  const model = new DepthModel(true, true);
+  model.state = R.setGameplayA6(model.state, true);
+  model.state.economyV3 = false;
+  const before = JSON.stringify(model.state);
+  const view = render(<CompanionPreview m={model} id="mochi" />);
+  await act(() => vi.advanceTimersByTimeAsync(400));
+  expect(view.getByLabelText('Mochi miniature')).toBeTruthy();
+  expect(window.__depthPreviewScene).toBeTruthy();
+  expect(JSON.stringify(model.state)).toBe(before);
+});
+
 it('waits for model readiness and plays each reveal once on the existing scene', async () => {
   const model = new DepthModel(true);
   miniature.ready = false;
