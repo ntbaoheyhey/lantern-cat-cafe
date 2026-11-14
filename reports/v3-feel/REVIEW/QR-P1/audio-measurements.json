@@ -1,0 +1,28 @@
+{
+  "sampleRate": 48000,
+  "channels": 2,
+  "seconds": 59.998,
+  "events": [
+    {
+      "event": "basic",
+      "scheduledSeconds": 2.35,
+      "observedContactSeconds": 2.3666666666666667,
+      "transientSeconds": 2.3858958333333335,
+      "offsetMs": 19.229166666666853,
+      "thresholdFraction": 0.18,
+      "peakWindowAmplitude": 0.248748779296875,
+      "method": "First absolute sample above 18% of local maximum, 80ms before to 150ms after event. Threshold uncertainty preserved; listening unverified."
+    },
+    {
+      "event": "ultimate",
+      "scheduledSeconds": 5.6,
+      "observedContactSeconds": 5.633333333333334,
+      "transientSeconds": 5.635875,
+      "offsetMs": 2.5416666666666643,
+      "thresholdFraction": 0.18,
+      "peakWindowAmplitude": 0.2554779052734375,
+      "method": "First absolute sample above 18% of local maximum, 80ms before to 150ms after event. Threshold uncertainty preserved; listening unverified."
+    }
+  ],
+  "listened": false
+}

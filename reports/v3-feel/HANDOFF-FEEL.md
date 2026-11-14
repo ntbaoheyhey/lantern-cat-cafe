@@ -7,11 +7,11 @@ CHECKER PASS + VIDEO REVIEW = DONE, NEVER LOWER A THRESHOLD
 NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE
 ORIGINAL ART ONLY
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW: QR pilot 1 recorded/being measured. Ultimate area 17.85%, FAIL vs 25–60%; no acceptance claim.
-NEXT 1: Finish QR-P1 capture/sheets and all 54 review rows; then change silhouette method for pilot 2.
+NOW: QR pilot 1 REJECTED; all 54 rows reviewed. Starting pilot 2, broad canopy + surface-timed contact.
+NEXT 1: Pilot 2 silhouette/face-safe lighting; capture with explicit timestamp resampler.
 NEXT 2: Pilot 2 needs separate step timers; P1 bundled timings cannot support a per-step rollout estimate.
 NEXT 3: Q1 after QR acceptance; return Q0 incomplete review/regressions in Q9.
-LAST GOOD COMMIT: 57499363f (QR research pushed; gameplay unchanged).
+LAST GOOD COMMIT: a53037ea1 (isolated pilot checkpoint pushed; gameplay unchanged).
 OPEN: Q0 boss sheets A03-A27 and listening not reviewed; browser/A/B regression fails inherited.
 DIAGNOSIS: Q0 frame review catches wrong-facing ram and plate obscuring logged hit; telemetry alone is insufficient.
 METHOD: Keep actual compositor timestamps and frame-observed contact separate from scheduled impact.
