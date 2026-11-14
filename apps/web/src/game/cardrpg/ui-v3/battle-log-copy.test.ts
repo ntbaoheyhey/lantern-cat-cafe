@@ -43,7 +43,7 @@ it('names repeated enemies independently, including fallen helpers, without chan
 it('does not label an enemy support summary with its unused attack planning target',()=>{
  const b=R.createBattle({...fixture().initial,enemies:['teacup-healer','button-guard']});
  const healer=b.actors.find(a=>a.catalogId==='teacup-healer')!,patient=b.actors.find(a=>a.catalogId==='button-guard')!;
- patient.hp=20;b.queue=[healer.id];b.intents.find(i=>i.actorId===healer.id)!.signature=true;
+ patient.hp=20;healer.charge=100;b.queue=[healer.id];b.intents.find(i=>i.actorId===healer.id)!.signature=true;
  expect(R.enemyAct(b)).toBe(true);
  const heal=b.log.find(e=>e.kind==='heal'&&e.actorId===healer.id)!,action=b.log.find(e=>e.kind==='enemy-action')!;
  expect(heal.targetId).toBe(patient.id);expect(action.targetId).not.toBe(patient.id);

@@ -33,8 +33,11 @@ test('C2 encounter Odds reflect the exhausted allowance and preserve the parent 
  await odds.close();await expect(page.getByRole('region',{name:'Gear workbench'})).toBeVisible();
 });
 
-test('C2 nested tailoring and salvage Odds keep the workshop open on Escape',async({page})=>{
+test('saved C2 tailoring and salvage Odds keep the workshop open on Escape',async({page})=>{
  await fresh(page);await page.evaluate(()=>window.__depthReview!.go('inventory'));
+ // The current economy opens Fusion. This saved C2 fixture deliberately keeps
+ // the historical tailoring flow and its nested-dialog keyboard coverage.
+ await page.evaluate(()=>{const m=window.__depthReview!;m.state.economyV3=false;m.notify(false);});
  await page.getByRole('button',{name:'Gear workshop',exact:true}).click();
  const workshop=page.getByRole('dialog',{name:'Gear workshop',exact:true});
  await workshop.getByLabel('Template',{exact:true}).selectOption('hearthloom-weapon-legendary');

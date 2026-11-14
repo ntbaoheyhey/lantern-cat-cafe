@@ -173,3 +173,14 @@ Q1 test changes (no cases silently deleted; parameterized matrices retained). Q1
 
 `packages/game-rules/src/cardrpg/depth/route-upgrades.test.ts`
 - preserves rank ${rank} legacy effects and rejects retired actives in ${mode} — was “preserves rank ${rank} shield/healing amounts and status stacks in ${mode}”.
+
+2026-11-14T06:17:59.572448+00:00 — Q1 regression follow-up. No acceptance threshold changed.
+- `cat-presentation.test.ts`: Marigold historical debuffs use archive-only V5; the all-skill case checks two live entries, retired-ID rejection and retained archive rendering.
+- `outcome-labels.test.ts`: Resist/immune case uses the retained basic fixture; direct status outcomes unchanged.
+- `utility-presentation.test.ts`: Saved preparation requests now resolve to direct strikes. Historical charge/hit cases use V5 kits and signature intents.
+- `scene-loading.test.ts`: Four scene-disposal mocks include caster-focus resource.
+- `battle-log-copy.test.ts`: Enemy support fixture sets full rage for its ultimate heal.
+- `card-effects.test.ts`: Two recipe/resource cases retain archived artwork but require retired IDs absent from live gallery.
+- `e2e/odds-c2.spec.ts`: Nested tailoring/salvage case explicitly selects historical economy; current economy opens Fusion. No case removed.
+
+Capture correction: resample compositor JPEGs to 900 frames from actual timestamps at 30 Hz. Old concat JPEG demuxer had implicit 25 Hz timebase. Historical films remain unchanged. New review must use corrected capture.

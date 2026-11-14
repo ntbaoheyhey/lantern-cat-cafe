@@ -52,7 +52,7 @@ describe('original starter effect compositions', () => {
   it('covers the slice with unique structural signatures and valid layer intervals', () => {
     const signatures = new Set<string>();
     for (const [id, recipe] of Object.entries(CARD_EFFECT_RECIPES)) {
-      expect(GALLERY_ACTIONS.some(action => action.id === id)).toBe(true);
+      expect(GALLERY_ACTIONS.some(action => action.id === id)).toBe(!/-[23]$/.test(id)); // Retired art remains validated but is not in the live skill browser.
       expect(signatures.has(cardEffectSignature(recipe)), id).toBe(false);
       signatures.add(cardEffectSignature(recipe));
       for (const layer of recipe.layers) {
@@ -80,7 +80,7 @@ describe('original starter effect compositions', () => {
     });
     const matrix = new T.Matrix4();
     for (const [id, recipe] of Object.entries(CARD_EFFECT_RECIPES)) {
-      const { battle, plan } = galleryFixture(id);
+      const { battle, plan } = galleryFixture(id,false,true);
       const actors = battle.actors as unknown as TurnActor[];
       const positions = new Map(actors.map((actor, index) => [actor.id, new T.Vector3(index * 2, 0, 0)]));
       for (const quality of ['high', 'medium', 'low'] as const) {

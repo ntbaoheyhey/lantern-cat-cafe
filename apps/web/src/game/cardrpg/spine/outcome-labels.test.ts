@@ -9,7 +9,7 @@ import {visibleImpactLabel} from '../../squad/turn3d/impact-labels';
 import {numberLaneWidth} from '../../squad/turn3d/card-number-lane';
 
 it('keeps real resisted and immune outcomes readable without a false zero-damage number',()=>{
- const battle=R.createBattle(galleryFixture('marigold-3').battle.initial);
+ const battle=R.createBattle(galleryFixture('marigold-1').battle.initial);
  const source=battle.actors.find(a=>a.catalogId==='marigold')!,target=battle.actors.find(a=>a.side==='enemy')!;
  target.effectResist=100000;
  R.applyStatus(battle,source,target,'scald');R.applyStatus(battle,source,target,'crumb');

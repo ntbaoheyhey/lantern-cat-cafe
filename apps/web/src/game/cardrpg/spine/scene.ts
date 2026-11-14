@@ -261,8 +261,9 @@ export class SpineScene {
   this.camera.zoom=1;this.camera.position.x=0;this.camera.position.y=0;this.camera.rotation.z=0;
   if(frame){
    const {shake}=impactFeedback(frame.plan,frame.elapsed,view.reducedMotion),px=this.worldWidth/width;
-   this.camera.position.x=Math.sin(frame.elapsed*.105)*shake*px;
-   this.camera.position.y=Math.cos(frame.elapsed*.085)*shake*.4*px;
+   const shakeX=Math.sin(frame.elapsed*.105),shakeY=Math.cos(frame.elapsed*.085)*.4,shakeNorm=Math.max(1,Math.hypot(shakeX,shakeY));
+   this.camera.position.x=shakeX/shakeNorm*shake*px;
+   this.camera.position.y=shakeY/shakeNorm*shake*px;
    this.firstHit=frame.elapsed>=frame.plan.beats[2]!.start;
   }
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();

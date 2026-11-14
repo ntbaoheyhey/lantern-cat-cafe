@@ -1,0 +1,60 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/spine/utility-presentation.test.ts (6 tests | 1 failed) 14ms
+   ❯ historical Spool Ram preparation and current damage presentation (6)
+     × keeps historical V5 charge visible on the caster with full rage=true 3ms
+ ❯ src/game/cardrpg/spine/cat-presentation.test.ts (9 tests | 1 failed) 20ms
+   ❯ cat outcome presentation from current combat rules (9)
+     × previews the two-skill A6 kit and preserves retired V5 art outside the live gallery 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > previews the two-skill A6 kit and preserves retired V5 art outside the live gallery
+AssertionError: expected { seed: 71, chapter: 1, …(6) } to match object { gameplayV4: true, …(2) }
+(21 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "gameplayA6": false,
+    "gameplayV4": true,
+    "skillsV5": true,
+  }
+
+ ❯ src/game/cardrpg/spine/cat-presentation.test.ts:67:27
+     65|    expect(GALLERY_ACTIONS.some(action=>action.id===skill.id)).toBe(!re…
+     66|    if(retired)expect(()=>galleryFixture(skill.id)).toThrow('Unknown ga…
+     67|    expect(battle.initial).toMatchObject({gameplayV4:true,skillsV5:true…
+       |                           ^
+     68|    expect(battle.choices).toHaveLength(1);expect(battle.choices[0]!.sk…
+     69|    expect(plan.events.slice(1).every(event=>battle.log.some(raw=>raw.a…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/game/cardrpg/spine/utility-presentation.test.ts > historical Spool Ram preparation and current damage presentation > keeps historical V5 charge visible on the caster with full rage=true
+AssertionError: expected 'enemy:spool-ram:basic' to be 'enemy:spool-ram' // Object.is equality
+
+Expected: "enemy:spool-ram"
+Received: "enemy:spool-ram:basic"
+
+ ❯ src/game/cardrpg/spine/utility-presentation.test.ts:33:31
+     31|  it.each([false,true])('keeps historical V5 charge visible on the cast…
+     32|   const {plan,actor,battle,model}=resolveRam(false,rage);
+     33|   expect(plan.presentationId).toBe(`enemy:spool-ram${rage?'':':basic'}…
+       |                               ^
+     34|   expect(chargeEvent(plan)?.targetIds).toEqual([actor.id]);
+     35|   expect(plan.name).toBe('Charging a row strike');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 13 passed (15)
+   Start at  13:15:53
+   Duration  640ms (environment 52%, transform 25%, import 19%, tests 3%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/spine/cat-presentation.test.ts src/game/cardrpg/spine/utility-presentation.test.ts

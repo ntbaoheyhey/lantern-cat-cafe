@@ -7,28 +7,28 @@ import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
 import {galleryFixture} from '../depth/feel-lab';
 
 function resolveRam(charged=false,rage=false,dazed=false){
- const account=R.setGameplayA6(R.setSkillsV5(R.setGameplayV4(R.createDepthAccount(71),true),true),true);
- const battle=R.createBattle({seed:71,chapter:1,gameplayV4:true,skillsV5:true,gameplayA6:true,cats:R.battleCats(account),enemies:['spool-ram','binding-thread']});
+ const account=R.setSkillsV5(R.setGameplayV4(R.createDepthAccount(71),true),true);
+ const battle=R.createBattle({seed:71,chapter:1,gameplayV4:true,skillsV5:true,gameplayA6:false,cats:R.battleCats(account),enemies:['spool-ram','binding-thread']});
  const actor=battle.actors.find(a=>a.catalogId==='spool-ram')!,intent=battle.intents.find(i=>i.actorId===actor.id)!;
  battle.actors.find(a=>a.catalogId==='soot')!.row='front';
- actor.turns=2;actor.bonuses.v5Charge=Number(charged);actor.charge=rage?100:0;intent.signature=charged;
+ actor.turns=2;actor.bonuses.v5Charge=Number(charged);actor.charge=rage?100:0;intent.signature=charged||rage;
  if(dazed)actor.statuses.push({id:'drowsy',stacks:1,remaining:2,source:'mochi',appliedRound:1});
  battle.queue=[actor.id,...battle.queue.filter(id=>id!==actor.id)];battle.v4!.committed=true;
  const model=new DepthModel(true);model.tutorialBattle=battle;model.sceneReady=true;model.sceneStarted=true;model.watching=true;model.screen='map';model.act();
  return{battle,actor,plan:model.plan!,model};
 }
 
-describe('actual Spool Ram preparation and damage presentation',()=>{
- it('lets the gallery preview real preparation separately from a strike',()=>{
+describe('historical Spool Ram preparation and current damage presentation',()=>{
+ it('previews a current direct strike even when a saved gallery request asks for preparation',()=>{
   for(const id of ['enemy:spool-ram:basic','enemy:spool-ram']){
    const preview=galleryFixture(id,true),strike=galleryFixture(id);
-   expect(chargeEvent(preview.plan)).toBeDefined();expect(preview.plan.targetIds).toEqual([preview.plan.actorId]);
-   expect(preview.plan.events.some(e=>e.type==='damage')).toBe(false);
+   expect(chargeEvent(preview.plan)).toBeUndefined();
+   expect(preview.plan.events.some(e=>e.type==='damage')).toBe(true);
    expect(strike.plan.events.some(e=>e.type==='damage')).toBe(true);
    expect(chargeEvent(strike.plan)).toBeUndefined();
   }
  });
- it.each([false,true])('keeps charge visible and on the caster with full rage=%s',rage=>{
+ it.each([false,true])('keeps historical V5 charge visible on the caster with full rage=%s',rage=>{
   const {plan,actor,battle,model}=resolveRam(false,rage);
   expect(plan.presentationId).toBe(`enemy:spool-ram${rage?'':':basic'}`);
   expect(chargeEvent(plan)?.targetIds).toEqual([actor.id]);

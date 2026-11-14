@@ -6,8 +6,8 @@ import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import {snapshotBattle,splitPresentation} from './battle-presentation';
 
 /** Isolated presentation fixtures. Previewing never grants items or alters the account. */
-export const GALLERY_ACTIONS = [
-  ...R.CATS.flatMap(cat => R.battleKitA6(cat.id).map(skill => ({
+export const ARCHIVE_ACTIONS = [
+  ...R.CATS.flatMap(cat => cat.skills.map(skill => ({
     id: skill.id, owner: cat.id, name: `${cat.name} · ${skill.name}`, ultimate: skill.type === 'ultimate', enemy: false,
   }))),
   ...R.CATS.filter(cat => CARD_EFFECT_RECIPES[cat.passive.id]).map(cat => ({
@@ -22,9 +22,12 @@ export const GALLERY_ACTIONS = [
   })),
 ];
 
-export function galleryFixture(id: string, preparation = false) {
-  const action = GALLERY_ACTIONS.find(item => item.id === id);
+export const GALLERY_ACTIONS=ARCHIVE_ACTIONS.filter(action=>!/-[23]$/.test(action.id));
+
+export function galleryFixture(id: string, preparation = false, archive = false) {
+  const action = (archive?ARCHIVE_ACTIONS:GALLERY_ACTIONS).find(item => item.id === id);
   if (!action) throw new Error(`Unknown gallery action ${id}`);
+  const retired=archive&&/-[23]$/.test(id);
   const account = R.createDepthAccount(71);
   account.account.cards = CARDS.map(card => ({ id: card.id, cardId: card.id, level: 10, stars: 3, shards: 0, soulbound: true }));
   account.team = [...new Set([action.enemy ? 'mochi' : action.owner, 'mochi', 'soot', 'clover'])].slice(0, 3);
@@ -33,7 +36,7 @@ export function galleryFixture(id: string, preparation = false) {
     account.skills[cat.id] = cat.skills.slice(0, 3).map(skill => skill.id);
   }
   const enemy = R.ENEMY_BY_ID[action.owner];
-  const battle = R.createBattle({ seed: 71, chapter: enemy?.chapter ?? 1, cats: R.battleCats(account), gameplayV4:true, skillsV5:true, gameplayA6:true, enemies: [action.enemy ? action.owner : 'button-guard'] });
+  const battle = R.createBattle({ seed: 71, chapter: enemy?.chapter ?? 1, cats: R.battleCats(account), gameplayV4:true, skillsV5:true, gameplayA6:!retired, enemies: [action.enemy ? action.owner : 'button-guard'] });
   const caster = battle.actors.find(actor => actor.catalogId === action.owner)!;
   const skill = R.skillById(id);
   const passive = action.id.endsWith('-passive');
@@ -46,9 +49,9 @@ export function galleryFixture(id: string, preparation = false) {
   if (!action.enemy && !passive) {
     // Current cat rules own mixed outcomes and situational targets. A synthetic
     // damage/heal event hid debuff-only skills and painted Clover's heal on self.
-    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:true});
+    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:!retired});
     const cat = actual.actors.find(actor => actor.catalogId === action.owner)!;
-    cat.skills = R.battleKitA6(action.owner).map(skill => skill.id);
+    cat.skills = (retired?R.CAT_BY_ID[action.owner]!.skills:R.battleKitA6(action.owner)).map(skill => skill.id);
     cat.charge = 100; cat.turns = 3; cat.shield = 45;
     for (const ally of actual.actors.filter(actor => actor.side === cat.side)) ally.hp = Math.floor(ally.maxHp * (ally.id === cat.id ? .8 : .4));
     const patient = actual.actors.find(actor => actor.side === cat.side && actor.id !== cat.id)!;
@@ -65,7 +68,7 @@ export function galleryFixture(id: string, preparation = false) {
   }
   if (preparation && action.owner === 'spool-ram') {
     // The charge variant is resolved by current combat rules, not a fabricated hit.
-    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:true});
+    const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:!retired});
     const ram = actual.actors.find(actor => actor.catalogId === 'spool-ram')!;
     ram.turns = 2; ram.charge = id.endsWith(':basic') ? 0 : 100;
     actual.queue = [ram.id,...actual.queue.filter(actorId => actorId !== ram.id)]; actual.v4!.committed = true;

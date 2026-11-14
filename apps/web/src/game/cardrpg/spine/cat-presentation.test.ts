@@ -1,12 +1,12 @@
 import {describe,it,expect} from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {DepthModel} from '../depth/model';
-import {galleryFixture} from '../depth/feel-lab';
+import {galleryFixture,GALLERY_ACTIONS} from '../depth/feel-lab';
 import {paintedRecipe,paintedTargets,type PaintedRecipients} from './vfx-registry';
 import {statusPresentation} from '../../squad/turn3d/card-status-beats';
 
 function resolveCat(id:string,variant='ally'){
- const initial=galleryFixture(id).battle.initial,battle=R.createBattle(initial);
+ const initial=galleryFixture(id,false,true).battle.initial,battle=R.createBattle(initial);
  const actor=battle.actors.find(a=>a.catalogId===id.split('-')[0])!;
  actor.skills=R.CAT_BY_ID[actor.catalogId]!.skills.map(skill=>skill.id);actor.charge=100;actor.turns=3;
  const patient=battle.actors.find(a=>a.side===actor.side&&a.id!==actor.id)!;
@@ -59,10 +59,13 @@ describe('cat outcome presentation from current combat rules',()=>{
   const targets=['stale'];paintedTargets(plan,'hostile',[],targets);expect(targets).toEqual([]);
   expect(battle.actors.some(a=>a.id===enemy.id)).toBe(true);
  });
- it('previews all 48 cats skills through legal A6/V5 actions without mutating an account',()=>{
+ it('previews the two-skill A6 kit and preserves retired V5 art outside the live gallery',()=>{
   for(const cat of R.CATS)for(const skill of cat.skills){
-   const {battle,plan}=galleryFixture(skill.id);
-   expect(battle.initial).toMatchObject({gameplayV4:true,skillsV5:true,gameplayA6:true});
+   const retired=!R.battleKitA6(cat.id).some(current=>current.id===skill.id),{battle,plan}=galleryFixture(skill.id,false,true);
+   expect(GALLERY_ACTIONS.some(action=>action.id===skill.id)).toBe(!retired);
+   if(retired)expect(()=>galleryFixture(skill.id)).toThrow('Unknown gallery action');
+   expect(battle.initial).toMatchObject({gameplayV4:true,skillsV5:true});
+   expect(!!battle.initial.gameplayA6).toBe(!retired);
    expect(battle.choices).toHaveLength(1);expect(battle.choices[0]!.skillId).toBe(skill.id);
    expect(plan.events.slice(1).every(event=>battle.log.some(raw=>raw.actorId===event.actorId&&event.targetIds.includes(raw.targetId)&&raw.amount===event.amount))).toBe(true);
   }

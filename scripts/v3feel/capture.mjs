@@ -1,6 +1,6 @@
 /** Observe a real-time production battle. CDP pictures and WebAudio share wall time.
  * Video is resampled from actual compositor timestamps; audio is never replayed or normalized. */
-import {mkdirSync,writeFileSync,readFileSync,rmSync} from 'node:fs';
+import {mkdirSync,writeFileSync,readFileSync,rmSync,symlinkSync} from 'node:fs';
 import {resolve,relative} from 'node:path';
 import {execFileSync,spawnSync} from 'node:child_process';
 import {gzipSync} from 'node:zlib';
@@ -40,7 +40,7 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
    if(m.battle?.result&&!c.finishedAt)c.finishedAt=t;
    if(t-c.lastSample<1/30)return;c.lastSample=t;
    const audit=s.audit(),rect=s.renderer.domElement.getBoundingClientRect();
-   c.frames.push({t,units:audit.units,motion:audit.motion,sequence:audit.sequence,numbers:s.numbers?.drawn??[],camera:{zoom:s.camera.zoom,position:s.camera.position.toArray(),root:s.stage.root.matrix.toArray()},field:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},action:m.plan?{id:m.plan.id,elapsed:m.animationAt}:null});
+   c.frames.push({t,units:audit.units,motion:audit.motion,sequence:audit.sequence,numbers:s.numbers?.drawn??[],focus:audit.focus,renderCamera:audit.camera,rootPoses:[...s.actors].map(([id,e])=>({id,x:e.actor.root.position.x,y:e.actor.root.position.y,scaleX:e.actor.root.scale.x,scaleY:e.actor.root.scale.y,angle:e.actor.root.rotation.z})),camera:{zoom:s.camera.zoom,position:s.camera.position.toArray(),root:s.stage.root.matrix.toArray()},field:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},action:m.plan?{id:m.plan.id,elapsed:m.animationAt}:null});
    const d=a.diagnostics;c.voiceWindows.push({t,sfx:d.sfx,voice:d.voice,active:d.active});
   };
   s.last=0;s.raf=requestAnimationFrame(s.loop);m.nextStepAt=0;m.paused=false;m.notify(false);return start;
@@ -51,21 +51,26 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
   window.__depthReview.paused=true;await window.__outputCapture.stop();
   const c=window.__feelCapture,m=window.__depthReview,a=window.__thAudio,r=window.__v3a2;
   const expected=structuredClone(r.initial),actual=structuredClone(m.battle);r.R.playBattle(expected,'auto');r.R.playBattle(actual,'auto');
-  return {...c,lastPlan:undefined,initial:r.initial,combatLog:m.battle.log,result:expected.result,parity:JSON.stringify(expected)===JSON.stringify(actual),hits:a.hits,settings:a.settings};
+  return {...c,lastPlan:undefined,initial:r.initial,combatLog:m.battle.log,result:expected.result,parity:JSON.stringify(expected)===JSON.stringify(actual),hits:a.hits,battleAudio:window.__depthScene.audio.events,settings:a.settings};
  });
  await page.close();
- const list=[];if(!pictures.length)throw Error('No compositor frames');
- if(pictures[0].t>0){list.push(`file '${pictures[0].name}'`,`duration ${pictures[0].t}`);}
- for(let i=0;i<pictures.length;i++){const p=pictures[i],next=pictures[i+1]?.t??30.1;list.push(`file '${p.name}'`,`duration ${Math.max(.001,next-p.t)}`);}
- list.push(`file '${pictures.at(-1).name}'`);writeFileSync(resolve(raw,'frames.txt'),list.join('\n')+'\n');
+ if(!pictures.length)throw Error('No compositor frames');
+ // Resample by actual timestamps. The concat demuxer's implicit 25 fps JPEG
+ // timebase rounded each gap and could make a smooth battle appear to stall.
+ const resampled=[];let shot=0;
+ for(let frame=0;frame<900;frame++){
+  const t=frame/30;while(shot+1<pictures.length&&pictures[shot+1].t<=t)shot++;
+  symlinkSync(pictures[shot].name,resolve(raw,`frame-${String(frame).padStart(5,'0')}.jpg`));
+  resampled.push({frame,t,source:pictures[shot].name,sourceTime:pictures[shot].t});
+ }
  const video=resolve(out,fixture.id+'.webm');
- execFileSync('ffmpeg',['-v','error','-y','-f','concat','-safe','0','-i',resolve(raw,'frames.txt'),'-i',resolve(raw,'audio.webm'),'-t','30','-vf','fps=30','-c:v','libvpx-vp9','-crf','36','-b:v','1400k','-row-mt','1','-c:a','libopus','-b:a','96k',video]);
+ execFileSync('ffmpeg',['-v','error','-y','-framerate','30','-i',resolve(raw,'frame-%05d.jpg'),'-i',resolve(raw,'audio.webm'),'-t','30','-vf','fps=30','-c:v','libvpx-vp9','-crf','36','-b:v','1400k','-row-mt','1','-c:a','libopus','-b:a','96k',video]);
  const wav=resolve(out,fixture.id+'-mix.wav');
  execFileSync('ffmpeg',['-v','error','-y','-i',resolve(raw,'audio.webm'),'-t',String(seconds),'-ar','48000','-c:a','pcm_s16le',wav]);
  const loudness=spawnSync('ffmpeg',['-hide_banner','-i',wav,'-af','loudnorm=I=-20:TP=-1:LRA=11:print_format=json','-f','null','-'],{encoding:'utf8'}).stderr;
  const loudnessJson=JSON.parse(loudness.match(/\{\s*"input_i"[\s\S]*?\}/)?.[0]??'{}');
  const gaps=pictures.slice(1).map((p,i)=>p.t-pictures[i].t);
- const data={sourceCommit,recorded:new Date().toISOString(),fixture:fixture.id,seconds,fps:30,width:1280,height:720,errors,video:relative(root,video),videoBytes:readFileSync(video).length,videoSha256:createHash('sha256').update(readFileSync(video)).digest('hex'),actualCompositorFrames:pictures.length,maxCompositorGapSeconds:Math.max(...gaps),audio:{path:relative(root,wav),integratedLufs:Number(loudnessJson.input_i),truePeakDbTP:Number(loudnessJson.input_tp),maxTransientVoices:Math.max(...capture.voiceWindows.map(v=>v.active)),method:'Unmodified production WebAudio output; actual timestamps; no postmix normalization.'},...capture,pictures};
+ const data={sourceCommit,recorded:new Date().toISOString(),fixture:fixture.id,seconds,fps:30,width:1280,height:720,errors,video:relative(root,video),videoBytes:readFileSync(video).length,videoSha256:createHash('sha256').update(readFileSync(video)).digest('hex'),actualCompositorFrames:pictures.length,maxCompositorGapSeconds:Math.max(...gaps),audio:{path:relative(root,wav),integratedLufs:Number(loudnessJson.input_i),truePeakDbTP:Number(loudnessJson.input_tp),maxTransientVoices:Math.max(...capture.voiceWindows.map(v=>v.active)),method:'Unmodified production WebAudio output; actual timestamps; no postmix normalization.'},...capture,pictures,resampled};
  writeFileSync(resolve(out,fixture.id,'capture.json.gz'),gzipSync(JSON.stringify(data)));
  writeFileSync(resolve(out,fixture.id,'summary.json'),JSON.stringify({sourceCommit,fixture:fixture.id,recorded:data.recorded,seconds,fps:30,videoBytes:data.videoBytes,actualCompositorFrames:pictures.length,maxCompositorGapSeconds:data.maxCompositorGapSeconds,audio:data.audio,plans:capture.plans,result:capture.result,parity:capture.parity,errors},null,2)+'\n');
  rmSync(raw,{recursive:true});console.log(`${fixture.id}: ${pictures.length} compositor frames; ${capture.plans.length} actions; parity=${capture.parity}; ${data.audio.integratedLufs} LUFS`);
