@@ -20,6 +20,13 @@ def measure():
     return json.loads((base/'motion.json').read_text())['fixtures']
 def acceptable(row):
     return row['motionEnergy']>=threshold and row['hitKnockbackFraction']==1 and row['minActionDisplacementFraction']>.06 and row['displacementPer10s']>=2 and row['parity'] and not row['browserErrors']
+base.mkdir(parents=True,exist_ok=True)
+run('capture-wave1',['node','scripts/v3a2/battle-capture.mjs','--fixture','wave1','--seconds','30','--complete-actions','--out',str(base)])
+rows=measure()
+if not acceptable(rows['wave1']):
+    summary=dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),cadenceSeconds=None,motionEnergy={k:v['motionEnergy'] for k,v in rows.items()},pilotPass=False,accepted=False)
+    (base/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary),flush=True)
+    raise SystemExit('Motion failed first; do not spend another live trial on this candidate.')
 b.mkdir(parents=True,exist_ok=True)
 base.mkdir(parents=True,exist_ok=True)
 cadence_command=['node','scripts/audio/measure-current-cadence.mjs']
@@ -30,7 +37,6 @@ with (b/'cadence.log').open('w') as output:
     (base/'verification-jobs.json').write_text(json.dumps(jobs,indent=2)+'\n')
     code=p.wait()
 if code:raise SystemExit(code)
-run('capture-wave1',['node','scripts/v3a2/battle-capture.mjs','--fixture','wave1','--seconds','30','--complete-actions','--out',str(base)])
 cadence=json.loads((b/'current-cadence.json').read_text())
 rows=measure();pilot=6<=cadence['medianVoiceIntervalSeconds']<=9 and not cadence['errors'] and acceptable(rows['wave1'])
 summary=dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),cadenceSeconds=cadence['medianVoiceIntervalSeconds'],voices=cadence['voiceStarts'],motionEnergy={k:v['motionEnergy'] for k,v in rows.items()},pilotPass=pilot,accepted=False)
