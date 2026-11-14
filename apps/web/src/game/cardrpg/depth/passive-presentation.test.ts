@@ -1,12 +1,14 @@
+// Legacy passive triggers remain archived; F6 live kits reject their retired actions.
 import { expect, it } from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
 import { passivePresentation } from './passive-presentation';
 
 function cast(owner:string, skillId:string, prepare?:(battle:R.Battle)=>void) {
-  const account=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),true));
+  const account=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),false));
   account.skills[owner]=R.CAT_BY_ID[owner]!.skills.slice(0,3).map(s=>s.id);
-  const battle=R.createBattle({seed:71,chapter:1,formationC2:true,gameplayA6:true,gameplayV4:true,skillsV5:true,cats:R.battleCats(account),enemies:['yarn-giant']});
+  const battle=R.createBattle({seed:71,chapter:1,formationC2:false,gameplayA6:false,gameplayV4:true,skillsV5:true,cats:R.battleCats(account),enemies:['yarn-giant']});
+  battle.initial.formationC2=true;
   const actor=battle.actors.find(a=>a.catalogId===owner)!;
   battle.actors.filter(a=>a.side==='party').forEach(a=>{a.hp=Math.floor(a.maxHp*.6);a.shield=0;});
   battle.actors.find(a=>a.catalogId==='panko')!.hp=50;

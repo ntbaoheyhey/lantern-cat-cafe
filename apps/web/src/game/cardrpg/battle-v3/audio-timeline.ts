@@ -18,6 +18,21 @@ export function voiceTiming(owner:string,skill:string,phase?:string){return VOIC
 export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineCue[]{
  const id=plan.presentationId??plan.skillId,owner=cueOwner(plan),tier=sequence?.tier??cueTier(plan),impact=sequence?.impact??plan.beats[2]!.start,duration=sequence?.duration??plan.duration;
  if(!plan.events.some(e=>e.type==='action_start'||e.type==='charge'))return [];
+ // The fixed beat owns speech and weapon cues; voice lengths never move contact.
+ if((plan as EffectPlan&{fixedTiming?:boolean}).fixedTiming){
+  const element=elements[owner]??'heavy',role=(CAT_BY_ID[owner]??ENEMY_BY_ID[owner])?.role??'striker';
+  if(tier==='basic')return [
+   {t:0,cue:`move.${role}.whoosh`,role:'movement',element},
+   {t:impact,cue:`kit.${element}.impact`,role:'impact',element},
+  ];
+  const line=voiceTiming(owner,id,'charge');
+  return [
+   ...(line?[{t:0,cue:line.cueId as AudioCue,role:'voice' as const,element,voicePhase:'charge' as const}]:[]),
+   {t:600,cue:`ult.${owner}.charge` as AudioCue,role:'charge',element},
+   {t:impact,cue:`kit.${element}.impact` as AudioCue,role:'impact',element},
+   {t:impact+200,cue:`ult.${owner}.tail` as AudioCue,role:'tail',element},
+  ];
+ }
  const movement=plan.beats[1]!.start,slot=Number(id.match(/-([1-4])$/)?.[1]??(tier==='active'?2:1));
  const family=/slash|arrow|cross/.test(plan.shape)?'slash':/bash|charge|sweep/.test(plan.shape)?'heavy':'magic';
  const role=(CAT_BY_ID[owner]??ENEMY_BY_ID[owner])?.role??'striker',element=elements[owner]??family,track:TimelineCue[]=[];

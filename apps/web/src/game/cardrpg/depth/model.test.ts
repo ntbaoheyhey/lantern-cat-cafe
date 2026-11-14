@@ -140,12 +140,12 @@ it('restores an unstarted encounter to Prepare and a completed encounter to Resu
   expect(restored.showBattle).toBe(false);
 });
 
-it('previews every authored skill and enemy without mutating account progress', () => {
+it('previews every live basic, ultimate, passive motif and enemy without mutating account progress', () => {
   const model = new DepthModel(true);
   const original = exportSave(model.state);
   const passives = R.CATS.filter(cat => CARD_EFFECT_RECIPES[cat.passive.id]);
   const basics = R.ENEMIES.filter(enemy => CARD_EFFECT_RECIPES[`enemy:${enemy.id}:basic`]);
-  const skills = R.CATS.flatMap(cat => cat.skills);
+  const skills = R.CATS.flatMap(cat => R.battleKitA6(cat.id));
   expect(model.galleryActions).toHaveLength(skills.length + passives.length + basics.length + R.ENEMIES.length);
   expect(model.galleryActions.filter(action => action.id.endsWith('-passive')).map(action => action.id))
     .toEqual(passives.map(cat => cat.passive.id));

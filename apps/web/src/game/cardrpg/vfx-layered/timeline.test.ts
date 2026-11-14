@@ -7,7 +7,7 @@ describe('painted contact timing',()=>{
  it('keeps every pilot aligned to actual four-unit rules contacts at all playback speeds',()=>{
   expect(PAINT_TIMELINES.size).toBeGreaterThanOrEqual(3);
   for(const timeline of PAINT_TIMELINES.values()){
-   const fixture=pilotFixture(timeline.id),plan=fixture.plan,contact=plan.beats[2]!.start;
+   const fixture=pilotFixture(timeline.id,false,true),plan=fixture.plan,contact=plan.beats[2]!.start;
    expect(fixture.battle.initial.formationC2).toBe(true);
    expect(fixture.battle.actors.filter(a=>a.side==='party')).toHaveLength(4);
    expect(plan.events.some(e=>['damage','shield','heal','status_apply','status_expire','charge'].includes(e.type))).toBe(true);

@@ -5,8 +5,8 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {chromium,config,openFixture} from './browser-fixture.mjs';
 const root=resolve(import.meta.dirname,'../..'),mode=process.argv[2]??'check';
-if(!['old','new','check'].includes(mode))throw Error('Use old, new, or check');
-const output=resolve(root,`reports/v3-feel/parity-${mode==='check'?'latest':mode}.json`);
+if(!['old','new','check','probe'].includes(mode))throw Error('Use old, new, check, or probe');
+const output=resolve(root,`reports/v3-feel/parity-${mode==='check'?'latest':mode==='probe'?'probe-'+Date.now():mode}.json`);
 if(mode!=='check'&&existsSync(output))throw Error('Never overwrite a parity baseline');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']}),rows=[];
 try{for(const fixture of config.fixtures){

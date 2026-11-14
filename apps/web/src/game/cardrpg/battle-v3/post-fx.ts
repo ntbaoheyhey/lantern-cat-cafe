@@ -32,7 +32,7 @@ export class BattlePostFx {
  render(plan:EffectPlan|null,elapsed:number,delta:number,quality:string,reduced:boolean,_caster?:T.Object3D,impact?:T.Vector3){
   // The Low preset keeps full-resolution painted actors and numbers, while
   // avoiding offscreen colour/bloom buffers and secondary post-processing.
-  if(quality==='low'){this.renderer.render(this.scene,this.camera);return;}
+  if(quality==='low'||(plan as EffectPlan&{fixedTiming?:boolean}|null)?.fixedTiming){this.renderer.render(this.scene,this.camera);return;}
   const state=plan?sequenceAt(plan,elapsed,reduced):null,high=quality!=='low';
   // Bloom belongs to the isolated 2D effect canvas. Actor textures keep their
   // authored colour and opacity even during the brightest active skills.

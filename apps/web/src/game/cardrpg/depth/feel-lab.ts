@@ -7,7 +7,7 @@ import {snapshotBattle,splitPresentation} from './battle-presentation';
 
 /** Isolated presentation fixtures. Previewing never grants items or alters the account. */
 export const GALLERY_ACTIONS = [
-  ...R.CATS.flatMap(cat => cat.skills.map(skill => ({
+  ...R.CATS.flatMap(cat => R.battleKitA6(cat.id).map(skill => ({
     id: skill.id, owner: cat.id, name: `${cat.name} · ${skill.name}`, ultimate: skill.type === 'ultimate', enemy: false,
   }))),
   ...R.CATS.filter(cat => CARD_EFFECT_RECIPES[cat.passive.id]).map(cat => ({
@@ -18,7 +18,7 @@ export const GALLERY_ACTIONS = [
     name: `${enemy.name} · ${CARD_EFFECT_RECIPES[`enemy:${enemy.id}:basic`]!.name}`, ultimate: false, enemy: true,
   })),
   ...R.ENEMIES.map(enemy => ({
-    id: `enemy:${enemy.id}`, owner: enemy.id, name: `${enemy.name} · ${enemy.intent}`, ultimate: false, enemy: true,
+    id: `enemy:${enemy.id}`, owner: enemy.id, name: `${enemy.name} · ${enemy.intent}`, ultimate: true, enemy: true,
   })),
 ];
 
@@ -33,7 +33,7 @@ export function galleryFixture(id: string, preparation = false) {
     account.skills[cat.id] = cat.skills.slice(0, 3).map(skill => skill.id);
   }
   const enemy = R.ENEMY_BY_ID[action.owner];
-  const battle = R.createBattle({ seed: 71, chapter: enemy?.chapter ?? 1, cats: R.battleCats(account), enemies: [action.enemy ? action.owner : 'button-guard'] });
+  const battle = R.createBattle({ seed: 71, chapter: enemy?.chapter ?? 1, cats: R.battleCats(account), gameplayV4:true, skillsV5:true, gameplayA6:true, enemies: [action.enemy ? action.owner : 'button-guard'] });
   const caster = battle.actors.find(actor => actor.catalogId === action.owner)!;
   const skill = R.skillById(id);
   const passive = action.id.endsWith('-passive');
@@ -48,7 +48,7 @@ export function galleryFixture(id: string, preparation = false) {
     // damage/heal event hid debuff-only skills and painted Clover's heal on self.
     const actual = R.createBattle({...battle.initial,gameplayV4:true,skillsV5:true,gameplayA6:true});
     const cat = actual.actors.find(actor => actor.catalogId === action.owner)!;
-    cat.skills = R.CAT_BY_ID[action.owner]!.skills.map(skill => skill.id);
+    cat.skills = R.battleKitA6(action.owner).map(skill => skill.id);
     cat.charge = 100; cat.turns = 3; cat.shield = 45;
     for (const ally of actual.actors.filter(actor => actor.side === cat.side)) ally.hp = Math.floor(ally.maxHp * (ally.id === cat.id ? .8 : .4));
     const patient = actual.actors.find(actor => actor.side === cat.side && actor.id !== cat.id)!;

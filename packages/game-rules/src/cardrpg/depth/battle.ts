@@ -1,7 +1,7 @@
 import { FORMATION_C2, validRowsC2 } from './formation-c2';
 import { ECONOMY_C2 } from './economy-c2';
 import { triggerPairCombosA6 } from './bonds-a6';
-import { gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
+import { battleKitA6, gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
 import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
 import { enemyActionV5, enemyIntentV5, encounterEnemiesV5, phaseHelpersV5, releaseThreadV5 } from './skills-v5/enemies';
 import { executeShapeV5, shapeV5, weakestV5, type EffectV5, type ShapeV5 } from './skills-v5/shapes';
@@ -255,8 +255,8 @@ export function createBattle(setup: BattleSetup): Battle {
   initial.enemyStats ??= Object.fromEntries(Object.values(ENEMY_BY_ID).map(({ id, hp, attack, defense }) => [id, { hp, attack, defense }]));
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
-    if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
-    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
+    if (!cat || !(setup.gameplayA6?[2, 3, 4]:[3, 4]).includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
+    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:setup.gameplayA6?battleKitA6(c.id).map(skill=>skill.id):[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
   if(setup.formationC2){const count={front:0,rear:0};for(const foe of actors.filter(a=>a.side==='enemy')){if(count[foe.row]>=2)foe.row=foe.row==='front'?'rear':'front';count[foe.row]++;}}
@@ -361,9 +361,9 @@ export function energyCost(actor: Actor, skill: Skill) { return skill.cost + (sk
 export function legalChoices(b: Battle): Choice[] {
   const actor=currentActor(b);
   if (!actor||actor.side!=='party'||b.result) return [];
-  return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{
+  return (b.initial.gameplayA6?actor.skills.filter(id=>(id.endsWith('-1')||SKILLS[id]?.type==='ultimate')):[...actor.skills,'defend',...(b.v4?[]:['wait'])]).flatMap(id=>{
     const base=skillById(id,b.initial.skillsV5)!,skill=b.initial.skillsV5?situationalSkillV5(b,actor,base):base;
-    if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&(b.initial.gameplayA6?actor.charge<100:actor.turns<2)) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
+    if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&(b.initial.gameplayA6?actor.charge<100:actor.turns<2)) || (!b.initial.gameplayA6&&(actor.cooldowns[id]??0)>0) || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));
   });
 }
@@ -589,8 +589,8 @@ export function enemyAct(b: Battle): boolean {
     actor.charge=0;intent.power=175;
     emitGameplayEvent(b,{kind:'ultimate.cast',actorId:actor.id,skillId:actor.catalogId,displayName:spec.intent,text:`${actor.name} · ${spec.intent}`});
   }
-  const signature=(intent.signature||rageReady)&&!impaired;
-  if(rageReady)intent.signature=true;
+  const signature=(b.initial.gameplayA6?rageReady:intent.signature)&&!impaired;
+  intent.signature=signature;
   const creditSuppression = () => {
     record(b,actor,actor,'suppressed',1,impaired?'Control softened enemy action':'Hush stopped enemy utility');
     const controller=b.actors.find(a=>a.id===actor.statuses.find(s=>s.id===(impaired?'drowsy':'hush'))?.source);

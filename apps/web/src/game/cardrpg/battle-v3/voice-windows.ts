@@ -15,6 +15,7 @@ export function minimumVoicedImpact(plan:EffectPlan,cutinStart:number){
 
 /** Extend recovery only; resolved events and contact positions remain intact. */
 export function reserveVoiceTails(plan:SequencePlan,sequence?:SkillSequence):SequencePlan {
+ if(plan.fixedTiming)return plan;
  const voiceWindows=audioTimeline(plan,sequence).filter(key=>key.role==='voice').flatMap(key=>{
   const take=VOICE_TIMING.find(line=>line.cueId===key.cue);
   return take?[{start:key.t,end:key.t+take.durationMs+VOICE_TAIL_GUARD_MS,cue:key.cue,durationMs:take.durationMs}]:[];
@@ -28,7 +29,7 @@ export function reserveVoiceTails(plan:SequencePlan,sequence?:SkillSequence):Seq
 
 /** Keep intervening basic actions moving; only an adjacent spoken ultimate waits. */
 export function reserveUltimateLeadIn(plan:SequencePlan,waitMs:number):SequencePlan {
- if(!plan.ultimate||waitMs<=0)return plan;
+ if(plan.fixedTiming||!plan.ultimate||waitMs<=0)return plan;
  const delay=Math.max(0,waitMs),sequence=plan.sequence?structuredClone(plan.sequence):undefined;
  if(sequence){
   sequence.duration+=delay;sequence.impact+=delay;

@@ -35,7 +35,7 @@ it('returns from preview to the precise in-progress battle without changing save
   const before = JSON.stringify(model.state);
   const plan = model.plan;
   expect(plan).toBeTruthy();
-  model.inspect('soot-2', .5, true);
+  model.inspect('soot-1', .5, true);
   model.gallerySpeed = .25;
   const time = model.animationAt;
   model.tick(100);

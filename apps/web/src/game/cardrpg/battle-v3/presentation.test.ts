@@ -1,63 +1,35 @@
-import {expect,it,vi} from 'vitest';
+import {expect,it} from 'vitest';
 import {ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {pilotFixture} from '../vfx-layered/fixture';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
 import {presentationTier,impactFeedback} from './presentation';
 import {configureSequence} from './sequence';
 import {CinematicPlayer} from './cinematic-player';
-
-it('gives signatures active feedback and basics a smaller, flash-free contact',()=>{
+it('gives enemies only Basic or Ultimate and limits shake to ultimate contact',()=>{
  for(const owner of Object.keys(ENEMY_BY_ID)){
-  const active=configureSequence(pilotFixture('enemy:'+owner).plan),basic=configureSequence(pilotFixture('enemy:'+owner+':basic').plan);
-  expect(presentationTier(active)).toBe(active.ultimate?'ultimate':'active');
-  expect(presentationTier(basic)).toBe('basic');
-  const basicContact=impactFeedback(basic,basic.beats[2]!.start,false);
-  expect(basicContact.flash).toBe(0);expect(basicContact.shake).toBeGreaterThan(0);expect(basicContact.shake).toBeLessThanOrEqual(3);
-  const before=JSON.stringify(active),contact=active.beats[2]!.start;
-  expect(impactFeedback(active,contact,false).flash).toBeGreaterThan(0);
-  expect(impactFeedback(active,contact-1,false)).toEqual({flash:0,shake:0});
-  expect(impactFeedback(active,contact+34,false).flash).toBe(0);
-  expect(impactFeedback(active,contact+300,false)).toEqual({flash:0,shake:0});
-  expect(impactFeedback(active,contact,true).flash).toBe(0);
-  expect(JSON.stringify(active)).toBe(before);
+  const ultimate=configureSequence(pilotFixture('enemy:'+owner).plan),basic=configureSequence(pilotFixture('enemy:'+owner+':basic').plan);
+  expect(presentationTier(ultimate)).toBe('ultimate');expect(presentationTier(basic)).toBe('basic');expect(impactFeedback(basic,350,false)).toEqual({flash:0,shake:0});
+  const before=JSON.stringify(ultimate),contact=ultimate.beats[2]!.start;
+  expect(impactFeedback(ultimate,contact,false)).toEqual({flash:0,shake:4});
+  for(const offset of [-1,120,300])expect(impactFeedback(ultimate,contact+offset,false)).toEqual({flash:0,shake:0});
+  expect(impactFeedback(ultimate,contact,true)).toEqual({flash:0,shake:0});expect(JSON.stringify(ultimate)).toBe(before);
  }
 });
-
-it('paints and clears fallback contact without leaving a stale ultimate plate',()=>{
- const pause=vi.spyOn(HTMLMediaElement.prototype,'pause').mockImplementation(()=>{});
- const load=vi.spyOn(HTMLMediaElement.prototype,'load').mockImplementation(()=>{});
+it('shows only a local caster banner during focus and clears it on the next action',()=>{
  const host=document.createElement('div'),cinema=new CinematicPlayer(host);
  try{
-  const ultimate=configureSequence(pilotFixture('mochi-4').plan);
-  cinema.render(sampleActionPlan(ultimate,1000,false),true,1,false,true);
-  expect(cinema.audit.plate).toBe(true);
-  const active=configureSequence(pilotFixture('enemy:teacup-healer').plan),at=active.beats[2]!.start;
-  cinema.render(sampleActionPlan(active,at,false),true,1,false,true);
-  expect(cinema.audit).toMatchObject({plate:false,cutin:false,flash:.16});
-  expect((host.querySelector('.b3-cinema-flash') as HTMLElement).hidden).toBe(false);
-  cinema.render(sampleActionPlan(active,at+34,false),true,1,false,true);
-  expect(cinema.audit.flash).toBe(0);
-  expect((host.querySelector('.b3-cinema-flash') as HTMLElement).hidden).toBe(true);
-  cinema.render(sampleActionPlan(active,at,false),true,1,true,true);
-  expect(cinema.audit.flash).toBe(0);
-  cinema.render(null,true,1,false,true);
-  expect(cinema.audit).toMatchObject({plate:false,cutin:false,flash:0});
- }finally{cinema.dispose();pause.mockRestore();load.mockRestore();}
+  const plan=configureSequence(pilotFixture('mochi-4').plan),box={x:120,y:80,width:240,height:40};
+  cinema.render(sampleActionPlan(plan,300,false),true,1,false,true,undefined,box);
+  expect(cinema.audit).toMatchObject({plate:false,cutin:false,focus:true,banner:true});
+  const title=host.querySelector('.b3-focus-name') as HTMLElement;expect(title.hidden).toBe(false);expect(title.textContent).toBe(plan.name);expect(title.style.left).toBe('120px');
+  cinema.render(sampleActionPlan(plan,600,false),true,1,false,true);expect(title.hidden).toBe(true);
+  cinema.render(sampleActionPlan(configureSequence(pilotFixture('mochi-1').plan),100,false),true,1,false,true);expect(title.hidden).toBe(true);
+  cinema.render(null,true,1,false,true);expect(cinema.audit).toMatchObject({plate:false,cutin:false,flash:0,focus:false});
+ }finally{cinema.dispose();}
 });
-
-it('keeps the poster visible until a decoded plate is ready and restores it on media failure',()=>{
- const pause=vi.spyOn(HTMLMediaElement.prototype,'pause').mockImplementation(()=>{});
- const load=vi.spyOn(HTMLMediaElement.prototype,'load').mockImplementation(()=>{});
- const host=document.createElement('div'),cinema=new CinematicPlayer(host);
- try{
-  const plan=configureSequence(pilotFixture('mochi-4').plan),before=JSON.stringify(plan);
-  const video=host.querySelector('video')!,poster=host.querySelector('img.b3-plate') as HTMLImageElement;
-  let readiness=0;
-  Object.defineProperty(video,'readyState',{get:()=>readiness});
-  const render=()=>cinema.render(sampleActionPlan(plan,1200,false),true,1,false,true);
-  render();expect(video.hidden).toBe(true);expect(poster.hidden).toBe(false);
-  readiness=2;render();expect(video.hidden).toBe(false);expect(poster.hidden).toBe(true);
-  video.dispatchEvent(new Event('error'));render();expect(video.hidden).toBe(true);expect(poster.hidden).toBe(false);
-  expect(cinema.audit.mediaFailed).toBe(true);expect(JSON.stringify(plan)).toBe(before);
- }finally{cinema.dispose();pause.mockRestore();load.mockRestore();}
+it('never loads a full-screen video or plate regardless of seeking and reduced motion',()=>{
+ const host=document.createElement('div'),cinema=new CinematicPlayer(host),plan=configureSequence(pilotFixture('mochi-4').plan),before=JSON.stringify(plan);
+ try{for(const reduced of [false,true])for(const at of [2200,0,599,1100,300,600]){
+  cinema.render(sampleActionPlan(plan,at,reduced),true,1,reduced,true);expect(host.querySelector('video,img.b3-plate')).toBeNull();expect(cinema.audit.plate).toBe(false);
+ }expect(JSON.stringify(plan)).toBe(before);}finally{cinema.dispose();expect(host.children).toHaveLength(0);}
 });

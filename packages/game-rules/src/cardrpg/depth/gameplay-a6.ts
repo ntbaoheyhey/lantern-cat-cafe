@@ -1,8 +1,13 @@
 import { clone } from '../internal';
-import { ENEMY_BY_ID } from './catalog';
+import { ENEMY_BY_ID, CAT_BY_ID } from './catalog';
 import { emitGameplayEvent } from './events-v4';
 import { setSkillsV5 } from './skills-v5';
 import type { Actor, Battle, DepthAccount } from './contract';
+
+/** F6: the live kit is always Basic + Ultimate, including migrated accounts. */
+export function battleKitA6(id:string) {
+  return CAT_BY_ID[id]?.skills.filter(skill=>skill.id.endsWith('-1')||skill.type==='ultimate')??[];
+}
 
 /** Preferences affect the next route; a committed route keeps its rules. */
 export function gameplayA6(state: DepthAccount): boolean {
@@ -16,13 +21,13 @@ export function setGameplayA6(state: DepthAccount, enabled: boolean): DepthAccou
 }
 export const RAGE_COST_A6 = 100;
 export const RAGE_GAIN_A6: Record<string, number> = {
-  mochi: 1.1, panko: 1.1, brioche: 1.1, mallow: 1.1, soot: 1.1, cinnamon: 1.1,
-  clover: 1.2, sorrel: 1.2, marigold: 1.2, velvet: 1.1, biscuit: 1.1, inkcap: 1.1,
+  mochi: 2, panko: 2, brioche: 2, mallow: 2, soot: 2, cinnamon: 2,
+  clover: 2, sorrel: 2, marigold: 2, velvet: 2, biscuit: 2, inkcap: 2,
 };
 export function gainRageA6(b: Battle, actor: Actor, amount: number): void {
   if (!b.initial.gameplayA6 || actor.hp <= 0) return;
   const before = actor.charge;
-  actor.charge = Math.min(RAGE_COST_A6, before + Math.round(amount * (RAGE_GAIN_A6[actor.catalogId] ?? 1)));
+  actor.charge = Math.min(RAGE_COST_A6, before + Math.round(amount * (RAGE_GAIN_A6[actor.catalogId] ?? 2)));
   if (before < RAGE_COST_A6 && actor.charge === RAGE_COST_A6)
     emitGameplayEvent(b, { kind: 'rage.full', actorId: actor.id, amount: RAGE_COST_A6, text: `${actor.name}: rage full!` });
 }

@@ -2,7 +2,7 @@ import type {EffectPlan} from '../../squad/turn3d/effects';
 import type {PaintTimeline} from '../vfx-layered/timeline';
 import type {AudioCue} from '../contracts/audio-cues';
 import {audioTimeline} from './audio-timeline';
-import {minimumVoicedImpact,reserveVoiceTails,type VoiceWindow} from './voice-windows';
+import {type VoiceWindow} from './voice-windows';
 import {impactFeedback} from './presentation';
 
 export type CinematicMode = 'full' | 'short' | 'off';
@@ -25,29 +25,25 @@ const fields=import.meta.glob('../../../../../../skills/*/field.json',{eager:tru
 const signatures=import.meta.glob('../../../../../../skills/*/signature.json',{eager:true,import:'default'}) as Record<string,Signature>;
 export const SEQUENCES=new Map([...Object.values(files),...Object.values(fields).flat()].filter(t=>t.sequence).map(t=>[t.id,t]));
 export const SIGNATURES=new Map(Object.entries(signatures).map(([path,s])=>[path.split('/').at(-2)!,s]));
-export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode;voiceWindows?:VoiceWindow[];speechLeadInMs?:number};
+export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode;voiceWindows?:VoiceWindow[];speechLeadInMs?:number;fixedTiming?:boolean};
 
-/** Retimes presentation only. Event objects, actor IDs, recipients and amounts are unchanged. */
-export function configureSequence(plan:EffectPlan,mode:CinematicMode='full'):SequencePlan {
- const authored=SEQUENCES.get(plan.presentationId??plan.skillId)?.sequence;
- if(!authored)return reserveVoiceTails(plan);
- const sequence=structuredClone(authored);
- const ultimate=sequence.tier==='ultimate';
- const impact=ultimate?Math.max(mode==='full'?sequence.impact:mode==='short'?950:450,minimumVoicedImpact(plan,mode==='off'?0:150)):sequence.impact;
- const duration=ultimate?impact+400:sequence.duration;
- const remap=(t:number)=>t<=authored.impact?t/authored.impact*impact:impact+(t-authored.impact)/(authored.duration-authored.impact)*(duration-impact);
- // Short retains the cut-in, then carries its build through the spoken charge.
- const trackTime=(t:number)=>ultimate&&mode==='short'?(t<=650?t:t<=authored.impact?650+(t-650)/(authored.impact-650)*(impact-650):remap(t)):remap(t);
- for(const track of [sequence.camera,sequence.time,sequence.dim,sequence.postfx,sequence.audio,sequence.casterAnim,sequence.targetAnim,sequence.damage])for(const key of track)key.t=trackTime(key.t);
- sequence.duration=duration;sequence.impact=impact;
- if(sequence.plate&&mode!=='full')delete sequence.plate;
- if(mode==='off')delete sequence.cutin;
- if(sequence.cutin&&mode==='full'){sequence.cutin.start=150;sequence.cutin.end=650;}
- const lengths=ultimate?[Math.min(650,impact*.68),0,100,200,100]:[Math.min(200,impact*.5),0,70,120,duration-impact-190];
- lengths[1]=impact-lengths[0]!;
- let start=0;
- const beats=plan.beats.map((beat,i)=>{const next={...beat,start,duration:lengths[i]!,shake:i===2?(ultimate?12:3):0,flash:i===2?.35:0};start+=next.duration;return next;});
- const configured=reserveVoiceTails({...plan,ultimate,beats,duration,sequence,cinematicMode:mode},sequence);
+/** F3/F11: one action clock for every actor, independent of voices and media. */
+export const ACTION_TIMING=Object.freeze({basic:{duration:800,anticipation:250,impact:350},ultimate:{duration:2200,anticipation:600,impact:1100}});
+export function configureSequence(plan:EffectPlan,_mode:CinematicMode='full'):SequencePlan {
+ if(!plan.events.some(event=>event.type==='action_start'||event.type==='charge'))return {...plan,fixedTiming:true};
+ const id=plan.presentationId??plan.skillId,authored=SEQUENCES.get(id)?.sequence;
+ const ultimate=plan.ultimate||id.startsWith('enemy:')&&!id.endsWith(':basic');
+ const tier=ultimate?'ultimate':'basic',timing=ACTION_TIMING[tier],{duration,impact}=timing;
+ const sequence:SkillSequence={tier,duration,impact,
+  camera:[{t:0,zoom:1,x:0,y:0,tilt:0},{t:duration,zoom:1,x:0,y:0,tilt:0}],
+  time:[{t:0,value:1},{t:duration,value:1}],
+  dim:ultimate?[{t:0,value:.55},{t:600,value:.55},{t:800,value:0},{t:duration,value:0}]:[{t:0,value:0},{t:duration,value:0}],
+  casterAnim:[{t:0,name:ultimate?'ult':'attack'}],targetAnim:[{t:impact,name:'hurt'}],
+  vfx:structuredClone(authored?.vfx??[]),postfx:[{t:0,bloom:0,aberration:0,vignette:0},{t:duration,bloom:0,aberration:0,vignette:0}],audio:[],
+  damage:plan.targetIds.map(target=>({t:impact,target,split:1}))};
+ const lengths=[timing.anticipation,impact-timing.anticipation,200/3,ultimate?700:250,duration-impact-200/3-(ultimate?700:250)];
+ let start=0;const beats=plan.beats.map((beat,i)=>{const next={...beat,start,duration:lengths[i]!,shake:0,flash:0};start+=next.duration;return next;});
+ const configured:SequencePlan={...plan,ultimate,duration,beats,sequence,fixedTiming:true,cinematicMode:'off',speechLeadInMs:0,voiceWindows:[]};
  sequence.audio=audioTimeline(configured,sequence);
  return configured;
 }

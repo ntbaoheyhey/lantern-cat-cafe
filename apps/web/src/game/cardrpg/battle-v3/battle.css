@@ -61,3 +61,7 @@
 .b3-turns{display:flex;gap:4px;max-width:96px}.b3-turns>span{display:grid;place-items:center;width:20px;height:24px;background:#241c27;border:1px solid #ad8a58;border-radius:5px}.b3-turns>span:first-child{border-color:#ffe5a4}.b3-supplies{display:flex;align-items:center;gap:2px;font-size:12px}.b3-rage-target{display:block;min-height:8px}.b3-statuses{min-width:20px;min-height:18px}@media(max-width:600px){.b3-top{gap:6px;padding:4px 8px}.b3-turns{max-width:44px;overflow:hidden;flex-shrink:0}.b3-turns>span{flex-shrink:0}.b3-supplies{gap:0}.b3-top-spacer{min-width:0}}
 
 .b3-turns img{width:18px;height:22px;object-fit:cover;border-radius:4px}
+
+/* In-field ultimate title: fixed camera, local focus. */
+.b3-focus-name {position:absolute;box-sizing:border-box;min-height:38px;display:flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid var(--element,#f6d7a0);border-radius:8px;background:linear-gradient(100deg,#241c2aee,#463242ee);color:#fff5d9;font:700 16px/1.25 var(--font-display);text-align:center;overflow-wrap:anywhere;text-shadow:0 1px 2px #000;box-shadow:0 2px 12px #0008;}
+.b3-focus-name[hidden]{display:none;}

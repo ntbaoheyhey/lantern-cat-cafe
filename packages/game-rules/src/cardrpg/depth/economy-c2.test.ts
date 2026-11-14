@@ -1,3 +1,4 @@
+// F6: these legacy equipment-trigger contracts retain their historical action rules.
 import {expect,it} from 'vitest';
 import * as R from './index';
 import {RECIPES} from '../catalog';
@@ -8,8 +9,8 @@ import {clone} from '../internal';
 const fresh=()=>R.setFormationC2(R.setGameplayA6(R.setGameplayV4(R.createDepthAccount(90001,0),true),true));
 it('keeps Bellsteel Riposte bounded without adding a gear taunt, preserving native Panko and legacy replays',()=>{
  for(const c2 of [true,false])for(const cardId of ['mochi','panko']){
-  const s=fresh(),setup={seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2};
-  const battle=R.createBattle(setup),mochi=battle.actors.find(a=>a.id===cardId)!;
+  const s=R.setGameplayA6(fresh(),false),setup={seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:false,formationC2:false};
+  const battle=R.createBattle(setup);battle.initial.formationC2=c2;const mochi=battle.actors.find(a=>a.id===cardId)!;
   mochi.setEffects=['defend-riposte'];
   for(let turn=0;turn<2;turn++){
    battle.queue=[mochi.id];mochi.cooldowns={};mochi.statuses=[];
@@ -25,8 +26,9 @@ it('keeps Bellsteel Riposte bounded without adding a gear taunt, preserving nati
 });
 it('bounds the Rain Bell to one debuff stack per swap and preserves the legacy full-status cleanse',()=>{
  for(const c2 of [true,false]){
-  const s=fresh();s.account.cards.forEach(c=>{c.level=6;c.stars=1;});
-  const b=R.createBattle({seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2});
+  const s=R.setGameplayA6(fresh(),false);s.account.cards.forEach(c=>{c.level=6;c.stars=1;});
+  const b=R.createBattle({seed:71,chapter:1,cats:R.battleCats(s),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:false,formationC2:false});
+  b.initial.formationC2=c2;
   const actor=b.actors.find(a=>a.id==='mochi')!,source=b.actors.find(a=>a.side==='enemy')!;
   actor.setEffects=['unique:rainbell'];actor.statuses=[{id:'scald',stacks:3,remaining:3,source:source.id,appliedRound:b.round},{id:'scent',stacks:1,remaining:2,source:source.id,appliedRound:b.round}];
   b.queue=[actor.id];b.energy=10;actor.cooldowns={};

@@ -3,7 +3,7 @@ import { clone } from '../internal';
 import * as R from './index';
 
 function fixture(legacy = false) {
-  const state = R.setGameplayA6(R.createDepthAccount(917287, 0), true);
+  const state = R.setGameplayA6(R.createDepthAccount(917287, 0), !legacy);
   return R.createBattle({ seed: 917287, chapter: 1, cats: R.battleCats(state),
     enemies: ['button-guard', 'teacup-healer'], gameplayV4: true, skillsV5: !legacy,
     gameplayA6: !legacy, plan: { focus: 'support', care: 'protect' } });

@@ -1,11 +1,13 @@
+// F6: these legacy equipment-trigger contracts retain their historical action rules.
 import {expect,it} from 'vitest';
 import * as R from './index';
 import {clone} from '../internal';
 import {actorValueV5} from './skills-v5/policy';
 
 function fixture(c2=true){
- const state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71,0),true));
- const battle=R.createBattle({seed:71,chapter:1,cats:R.battleCats(state),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:c2});
+ const state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71,0),false));
+ const battle=R.createBattle({seed:71,chapter:1,cats:R.battleCats(state),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:false,formationC2:false});
+ battle.initial.formationC2=c2; // Exercise the archived equipment caps without re-enabling live actives.
  const mochi=battle.actors.find(a=>a.id==='mochi')!,panko=battle.actors.find(a=>a.id==='panko')!,enemy=battle.actors.find(a=>a.side==='enemy')!;
  mochi.setEffects=['defend-link'];
  for(const a of battle.actors){a.statuses=[];a.shield=0;a.hp=a.maxHp=1000;a.bonuses={};}

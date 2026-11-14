@@ -6,7 +6,7 @@ export const LESSONS:Record<string,readonly Lesson[]>={
   {icon:'shield',text:'Front cats protect the back row.',target:at('battle-rows')},
   {icon:'clock',text:'These portraits show who acts next.',target:at('battle-order')},
   {icon:'debuff',text:'Read enemy intent. Choose targeting before battle.',target:at('battle-intent')},
-  {icon:'buff',text:'Full rage readies ultimates. Auto casts on legal turns.',target:at('battle-rage')},
+  {icon:'buff',text:'Basics build rage. Full rage readies your Ultimate.',target:at('battle-rage')},
   {icon:'burn',text:'Status icons show shields, burns, and delays.',target:at('battle-statuses')},
   {icon:'potion',text:'Pack supplies before battle. Your packed treat appears here.',target:at('battle-supplies')},
   {icon:'settings',text:'Change speed here. Pause and Auto remain available.',target:at('battle-speed')},

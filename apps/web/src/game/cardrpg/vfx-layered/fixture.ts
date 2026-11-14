@@ -5,7 +5,7 @@ import {createCardActionPlan} from '../depth/card-action-plan';
 import {passivePresentation} from '../depth/passive-presentation';
 import type {TurnEvent} from '@taskbar-hero/game-rules/src/squad/turn/types';
 
-export function pilotFixture(id:string,preparation=false){
+export function pilotFixture(id:string,preparation=false,archive=false){
  const enemy=id.startsWith('enemy:'),owner=enemy?id.split(':')[1]!:id.replace(/-(?:[1-4]|passive)$/,'');
  if(enemy?!R.ENEMY_BY_ID[owner]:!R.CAT_BY_ID[owner])throw Error('Unknown painted effect: '+id);
  const account=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),true));
@@ -16,8 +16,12 @@ export function pilotFixture(id:string,preparation=false){
   account.team[index]=owner;
  }
  if(!enemy)account.skills[owner]=R.CAT_BY_ID[owner]!.skills.slice(0,3).map(skill=>skill.id);
- const battle=R.createBattle({seed:71,chapter:enemy?R.ENEMY_BY_ID[owner]!.chapter:1,gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true,
+ // Retired art may be inspected only through an explicit archive fixture.
+ const legacy=archive&&(/-[23]$/.test(id)||id.endsWith('-passive')) || id.endsWith('-passive');
+ if(legacy){account.gameplayA6=false;for(const cat of R.CATS)account.skills[cat.id]=cat.skills.map(s=>s.id);}
+ const battle=R.createBattle({seed:71,chapter:enemy?R.ENEMY_BY_ID[owner]!.chapter:1,gameplayV4:true,skillsV5:true,gameplayA6:!legacy,formationC2:!legacy,
   cats:R.battleCats(account),enemies:[enemy?owner:'yarn-giant','binding-thread','binding-thread']});
+ if(legacy)battle.initial.formationC2=true; // Archived pre-F6 formation, isolated from production.
  const caster=battle.actors.find(a=>a.catalogId===owner)!;
  for(const a of battle.actors)a.hp=Math.round(a.maxHp*(a.side==='party'?.55:.8));
  const patient=battle.actors.find(a=>a.side==='party'&&a.id!==caster.id)!;

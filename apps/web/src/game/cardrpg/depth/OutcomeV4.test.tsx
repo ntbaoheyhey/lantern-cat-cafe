@@ -10,7 +10,7 @@ const plans=[
  ['leader','steady','Their leader','Steady',45],['leader','protect','Their leader','Protect',65],
 ] as const;
 function fixture(plan:R.StandingPlan,legacy=false){
- const state=R.setGameplayA6(R.createDepthAccount(917286,0),true);
+ const state=R.setGameplayA6(R.createDepthAccount(917286,0),!legacy);
  const battle=R.createBattle({seed:917286,chapter:1,cats:R.battleCats(state),enemies:['button-guard'],gameplayV4:true,skillsV5:!legacy,gameplayA6:!legacy,plan});
  const choice=R.legalChoices(battle)[0]!;expect(R.act(battle,choice)).toBe(true);return battle;
 }

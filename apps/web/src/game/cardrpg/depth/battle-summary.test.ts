@@ -26,7 +26,8 @@ it('sums actual HP damage, healing and damage taken without double-counting defe
 });
 
 it.each([false, true])('does not call a Bleed-cancelled choice the first ultimate (A6=$0)', gameplayA6 => {
-  const state = R.setGameplayA6(R.createDepthAccount(917281), true);
+  const state = R.setGameplayA6(R.createDepthAccount(917281), gameplayA6);
+  state.account.cards.forEach(c=>{c.level=6;c.stars=3;});
   const battle = R.createBattle({ seed: 917281, chapter: 1, gameplayV4: true, skillsV5: true, gameplayA6,
     cats: R.battleCats(state), enemies: ['button-guard'] });
   const soot = battle.actors.find(a => a.id === 'soot')!, foe = battle.actors.find(a => a.side === 'enemy')!;

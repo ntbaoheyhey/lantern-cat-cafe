@@ -38,7 +38,7 @@ export class BattleAudio {
   const context={at,planId:frame?.plan.id??null,skillId:frame?.plan.presentationId??frame?.plan.skillId??'',tier:frame?cueTier(frame.plan):'',actorId:frame?.plan.actorId??''};
   for(const unit of view.actors){
    const current=new Set(bodyStatuses(view.cardStatuses?.[unit.id],unit.shield)),previous=this.statuses.get(unit.id);
-   if(previous){for(const status of current)if(!previous.has(status))this.send({...context,cue:`status.${status}.on`,role:'status',targetId:unit.id});for(const status of previous)if(!current.has(status))this.send({...context,cue:`status.${status}.off`,role:'status',targetId:unit.id});}
+   if(previous&&!view.formationC2){for(const status of current)if(!previous.has(status))this.send({...context,cue:`status.${status}.on`,role:'status',targetId:unit.id});for(const status of previous)if(!current.has(status))this.send({...context,cue:`status.${status}.off`,role:'status',targetId:unit.id});}
    this.statuses.set(unit.id,current);
   }
   if(frame&&frame.plan!==this.lastPlan){this.lastPlan=frame.plan;this.fired.clear();this.track=audioTimeline(frame.plan,(frame.plan as SequencePlan).sequence);}
@@ -48,7 +48,7 @@ export class BattleAudio {
   // same clock as playback; multiplying by speed reserves several extra seconds.
   const speechHorizon=frame?advanceBattleClock(frame.plan,frame.elapsed,1800,view.reducedMotion,view.playbackSpeed??1):0;
   const speechSoon=frame&&this.track.some(key=>key.role==='voice'&&key.t>=frame.elapsed-80&&key.t<speechHorizon);
-  if(this.elapsed>=this.nextBark&&!speechSoon){
+  if(!view.formationC2&&this.elapsed>=this.nextBark&&!speechSoon){
    const party=view.actors.filter(a=>a.side==='party'&&a.hp>0),actor=party[this.barks%Math.max(1,party.length)],owner=actor&&(view.models?.[actor.id]??actor.cardRpg?.cardId);
    if(owner)this.send({...context,cue:`voice.${owner}.${this.barks%2?'attack':'select'}`,role:'bark',actorId:actor!.id},{volume:.65,priority:40});
    // Leave room inside the 7–8s cadence for a nearby authored speech slot.

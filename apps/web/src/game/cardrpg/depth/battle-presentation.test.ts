@@ -34,10 +34,11 @@ it.each([2, 3])('holds Burn-triggered phase %s and its helpers until the round b
   boss.statuses = [{id: 'scald', stacks: 1, remaining: 3, source: cat.id, appliedRound: battle.round}];
   battle.queue = [cat.id]; battle.acted = battle.actors.filter(actor => actor !== cat).map(actor => actor.id);
   battle.v4!.committed = true;
+  cat.charge=100; // The defensive ultimate replaces the removed Defend action.
   const before = snapshotBattle(battle);
-  expect(R.act(battle, {actorId: cat.id, skillId: 'defend', targetId: cat.id})).toBe(true);
+  expect(R.act(battle, {actorId: cat.id, skillId: 'mochi-4', targetId: cat.id})).toBe(true);
   expect(displayedBossPhase(battle, boss)).toBe(phase);
-  const resolved = JSON.stringify(battle), {impact, roundPlan} = splitPresentation(before, battle, 'defend');
+  const resolved = JSON.stringify(battle), {impact, roundPlan} = splitPresentation(before, battle, 'mochi-4');
   const shown = impact.actors.find(actor => actor.id === boss.id)!;
   expect(shown.hp).toBe(before.actors.find(actor => actor.id === boss.id)!.hp);
   expect(displayedBossPhase(impact, shown)).toBe(phase - 1);

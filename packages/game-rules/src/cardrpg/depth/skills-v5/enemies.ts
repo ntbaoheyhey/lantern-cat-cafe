@@ -36,8 +36,8 @@ export const ENEMY_MECHANICS_V5:Record<string,{mechanic:string;counter:string}>=
 };
 export function enemyIntentV5(b:Battle,actor:Actor,intent:Intent):Intent {
   const spec=ENEMY_MECHANICS_V5[actor.catalogId];if(!spec)return intent;
-  const signature=actor.catalogId==='spool-ram'?!!actor.bonuses.v5Charge:actor.catalogId==='teacup-healer'?b.round%2===0:intent.signature;
-  const label=actor.catalogId==='spool-ram'?(signature?'Charged row strike':'Charging for next turn'):actor.catalogId==='teacup-healer'&&signature?'Refill the weakest cup':signature?spec.mechanic:intent.label;
+  const signature=b.initial.gameplayA6?actor.charge>=100:actor.catalogId==='spool-ram'?!!actor.bonuses.v5Charge:actor.catalogId==='teacup-healer'?b.round%2===0:intent.signature;
+  const label=b.initial.gameplayA6?(signature?ENEMY_BY_ID[actor.catalogId]!.intent:actor.name+' · Basic'):actor.catalogId==='spool-ram'?(signature?'Charged row strike':'Charging for next turn'):actor.catalogId==='teacup-healer'&&signature?'Refill the weakest cup':signature?spec.mechanic:intent.label;
   return {...intent,signature,label,counter:spec.counter};
 }
 export interface EnemyRuntimeV5 {
@@ -65,6 +65,11 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       if(victim){hit(victim);io.apply(b,actor,victim,'snag');}break;
     }
     case 'spool-ram':
+      if(b.initial.gameplayA6){
+        if(intent.signature)for(const landing of landingsV5(b,actor,target,'row',n=>io.roll(b,n)))hit(landing.target,175*landing.multiplier,'row');
+        else hit(target);
+        break;
+      }
       if(!actor.bonuses.v5Charge){actor.bonuses.v5Charge=1;io.record(b,actor,actor,'charge',1,'Charging a row strike');}
       else{actor.bonuses.v5Charge=0;for(const landing of landingsV5(b,actor,target,'row',n=>io.roll(b,n)))hit(landing.target,175*landing.multiplier,'row');}
       break;

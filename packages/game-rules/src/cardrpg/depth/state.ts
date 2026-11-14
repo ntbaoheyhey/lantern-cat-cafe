@@ -1,6 +1,6 @@
 import {ECONOMY_V3 as E} from '../economy-v3';
 import { partySize, validRowsC2 } from './formation-c2';
-import { gameplayA6 } from './gameplay-a6';
+import { gameplayA6, battleKitA6 } from './gameplay-a6';
 import { observeDailyA6 } from './daily-state-a6';
 import { observeDiscoveriesV4 } from './journey-v4';
 import { observeCollectionV4, settleBoardV4 } from './meta-v4';
@@ -35,7 +35,7 @@ export function transactDepth(state: DepthAccount, fn: (draft: DepthAccount)=>vo
 export function requireHome(state: DepthAccount) {requireRule(!state.run||state.run.complete,'BATTLE_PENDING','Finish or abandon this run before changing its loadout.');}
 export function availableSkills(state: DepthAccount, id: string) {
   const owned=state.account.cards.find(c=>c.cardId===id);
-  return CAT_BY_ID[id]?.skills.filter(s=>owned&&(gameplayA6(state)||owned.level>=s.unlockLevel||owned.stars>=s.unlockStars))??[];
+  return (gameplayA6(state)?battleKitA6(id):CAT_BY_ID[id]?.skills??[]).filter(s=>owned&&(gameplayA6(state)||owned.level>=s.unlockLevel||owned.stars>=s.unlockStars));
 }
 /** New encounters derive their complete kit from progression, including old accounts. */
 export function defaultSkills(state: DepthAccount, id: string): string[] {

@@ -1,0 +1,1776 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+ ❯ src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx (4 tests | 3 failed) 183ms
+   × browses all four exact current effects without changing the account or losing preview navigation 104ms
+   × explains the current kit cooldowns without using their historical values 26ms
+   × separates base effects from the active patrol bonus and clears completed-route bonuses 19ms
+ ❯ src/game/cardrpg/battle-v3/sequence.test.ts (6 tests | 5 failed) 111ms
+   × keeps resolved events and exact contact in full 19ms
+   × keeps resolved events and exact contact in short 2ms
+   × keeps resolved events and exact contact in off 2ms
+   × shortens only after three full presentations and skips without a second resolution 3ms
+   × C2 seeded combat remains byte-identical across presentation modes 81ms
+ ❯ src/game/cardrpg/ui-v3/CatPreviewA6.test.tsx (2 tests | 1 failed) 434ms
+   × opens the selected skill, previews freely and restores its trigger without changing the account 236ms
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts (8 tests | 8 failed) 16ms
+   × keeps the whole deferred wind-up and its spoken tracks in sync at ×1 9ms
+   × keeps the whole deferred wind-up and its spoken tracks in sync at ×2 1ms
+   × keeps the whole deferred wind-up and its spoken tracks in sync at ×3 1ms
+   × finishes every required spoken take before the next voice or action at ×1 1ms
+   × finishes every required spoken take before the next voice or action at ×2 1ms
+   × finishes every required spoken take before the next voice or action at ×3 1ms
+   × preserves final-hit slow motion inside a spoken window and reduced-motion speech timing 1ms
+   × keeps ordinary basic attacks at the selected speed and leaves the full-plate contact unchanged 1ms
+ ❯ src/game/cardrpg/depth/model.test.ts (12 tests | 1 failed) 118ms
+   × previews every authored skill and enemy without mutating account progress 5ms
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts (7 tests | 7 failed) 34ms
+   × gives every active one specific voice and every ultimate two phases with a single SFX owner 27ms
+   × keeps paused and gallery frames silent and never repeats a cue on redraw 0ms
+   × caps a late multi-target impact at six cues in a hundred milliseconds 0ms
+   × holds a due bark when an authored callout is about to start and resumes it afterwards 3ms
+   × fits a bark before a real-time lead-in without over-reserving at ×1 1ms
+   × fits a bark before a real-time lead-in without over-reserving at ×2 1ms
+   × fits a bark before a real-time lead-in without over-reserving at ×3 1ms
+ ❯ src/game/cardrpg/battle-v3/presentation.test.ts (3 tests | 3 failed) 18ms
+   × gives signatures active feedback and basics a smaller, flash-free contact 7ms
+   × paints and clears fallback contact without leaving a stale ultimate plate 5ms
+   × keeps the poster visible until a decoded plate is ready and restores it on media failure 6ms
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts (12 tests | 8 failed) 11ms
+   × uses a deferred ultimate wind-up for one moving approach and hands off before the plate 3ms
+   × moves every archetype through anticipation, strike, return without mutating the event plan 0ms
+   × lands at the hero spot before the cut-in and seeks identically in reverse order 0ms
+   × holds the camera through contact, restores framing, and mirrors enemy attacks 0ms
+   × fits an action shot without clipping the upper row or a returning actor 0ms
+   × leaves the ultimate plate camera intact and resolves the field shot through a long spoken release 0ms
+   × finishes the landing squash before a long spoken recovery ends 1ms
+   × mirrors every enemy archetype through travel, strike and recovery without changing timing 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 36 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > gives every active one specific voice and every ultimate two phases with a single SFX owner
+Error: Pilot fixture has no legal cast: biscuit-2
+ ❯ pilotFixture src/game/cardrpg/vfx-layered/fixture.ts:57:108
+     55|  const before=snapshotBattle(battle);
+     56|  if(enemy)R.enemyAct(battle);
+     57|  else {const choice=R.legalChoices(battle).find(c=>c.skillId===id);if(…
+       |                                                                                                            ^
+     58|  const resolved=splitPresentation(before,battle,id),targets=[...new Se…
+     59|  const start:TurnEvent={version:3,seq:0,turn:1,round:1,actionId:1,beat…
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:11:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > keeps paused and gallery frames silent and never repeats a cue on redraw
+Error: Pilot fixture has no legal cast: mochi-2
+ ❯ pilotFixture src/game/cardrpg/vfx-layered/fixture.ts:57:108
+     55|  const before=snapshotBattle(battle);
+     56|  if(enemy)R.enemyAct(battle);
+     57|  else {const choice=R.legalChoices(battle).find(c=>c.skillId===id);if(…
+       |                                                                                                            ^
+     58|  const resolved=splitPresentation(before,battle,id),targets=[...new Se…
+     59|  const start:TurnEvent={version:3,seq:0,turn:1,round:1,actionId:1,beat…
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:21:31
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > caps a late multi-target impact at six cues in a hundred milliseconds
+Error: Pilot fixture has no legal cast: mochi-2
+ ❯ pilotFixture src/game/cardrpg/vfx-layered/fixture.ts:57:108
+     55|  const before=snapshotBattle(battle);
+     56|  if(enemy)R.enemyAct(battle);
+     57|  else {const choice=R.legalChoices(battle).find(c=>c.skillId===id);if(…
+       |                                                                                                            ^
+     58|  const resolved=splitPresentation(before,battle,id),targets=[...new Se…
+     59|  const start:TurnEvent={version:3,seq:0,turn:1,round:1,actionId:1,beat…
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:27:31
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > holds a due bark when an authored callout is about to start and resumes it afterwards
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:44:50
+     42|  expect(played).toContain(charge.cue);expect(audio.events.filter(e=>e.…
+     43|  audio.render({...view,fixedTime:18.5,frame:sampleActionPlan(plan,char…
+     44|  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
+       |                                                  ^
+     45| });
+     46| it.each([1,2,3])('fits a bark before a real-time lead-in without over-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > fits a bark before a real-time lead-in without over-reserving at ×1
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > fits a bark before a real-time lead-in without over-reserving at ×2
+ FAIL  src/game/cardrpg/battle-v3/audio-timeline.test.ts > fits a bark before a real-time lead-in without over-reserving at ×3
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ src/game/cardrpg/battle-v3/audio-timeline.test.ts:53:50
+     51|  const charge=audioTimeline(plan,plan.sequence).find(key=>key.voicePha…
+     52|  audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,charge…
+     53|  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
+       |                                                  ^
+     54| });
+     55|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > uses a deferred ultimate wind-up for one moving approach and hands off before the plate
+AssertionError: expected 0 to be less than 0
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:11:23
+      9|  const input={plan,asset:'soot',side:'party',home:{x:250,y:400,core:15…
+     10|  const positions=[300,900,1800].map(elapsed=>actionPose({...input,elap…
+     11|  expect(positions[0]).toBeLessThan(positions[1]!);expect(positions[1])…
+       |                       ^
+     12|  expect(actionPose({...input,elapsed:1950}).x).toBeCloseTo(1280*.48-25…
+     13|  expect(actionCamera({...input,elapsed:900},'ultimate').zoom).toBeGrea…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > moves every archetype through anticipation, strike, return without mutating the event plan
+AssertionError: expected 0 to be greater than 76.8
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:21:58
+     19|  const plan=createActionPlan(events),before=JSON.stringify(plan),input…
+     20|  for(const motion of MOTIONS){const poses=Array.from({length:Math.ceil…
+     21|   expect(Math.max(...poses.map(p=>Math.hypot(p.x,p.y)))).toBeGreaterTh…
+       |                                                          ^
+     22|   expect(poses.at(-1)).toMatchObject({x:0,y:0,sx:1,sy:1,angle:0});
+     23|   for(const phase of ['anticipation','travel','strike','return'])expec…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > lands at the hero spot before the cut-in and seeks identically in reverse order
+AssertionError: expected +0 to be close to 364.4, received difference is 364.4, but expected 0.005
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:37:71
+     35| it('lands at the hero spot before the cut-in and seeks identically in …
+     36|  const plan={...createActionPlan(events),ultimate:true},input={plan,as…
+     37|  const expected=actionPose({...input,elapsed:150});expect(expected.x).…
+       |                                                                       ^
+     38|  actionPose({...input,elapsed:plan.duration-30});expect(actionPose({..…
+     39|  expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > holds the camera through contact, restores framing, and mirrors enemy attacks
+AssertionError: expected 1 to be close to 1.24, received difference is 0.24, but expected 0.005
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:45:27
+     43|  const at=(elapsed:number)=>actionCamera({...input,elapsed},'active'),…
+     44|  expect(at(0)).toEqual({zoom:1,x:0,y:0,tilt:0});expect(at(plan.duratio…
+     45|  expect(at(contact).zoom).toBeCloseTo(1.24);expect(at(contact+80)).toE…
+       |                           ^
+     46|  const reverse=actionCamera({...input,elapsed:contact,side:'enemy',hom…
+     47|  expect(reverse.x).toBeCloseTo(-at(contact).x);expect(reverse.zoom).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > fits an action shot without clipping the upper row or a returning actor
+AssertionError: expected -35 to be greater than or equal to 59.499999
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:56:13
+     54|   const x=width*.5+(box.x-width*.5)*fit.scale+fit.dx,y=height*.5+(box.…
+     55|   expect(x).toBeGreaterThanOrEqual(12-1e-6);expect(x+box.width*fit.sca…
+     56|   expect(y).toBeGreaterThanOrEqual(height*.10-1e-6);expect(y+box.heigh…
+       |             ^
+     57|  }
+     58|  expect(fitMotionFrame([{x:200,y:100,width:800,height:400}],width,heig…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > leaves the ultimate plate camera intact and resolves the field shot through a long spoken release
+AssertionError: expected 1 to be close to 1.2, received difference is 0.19999999999999996, but expected 0.005
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:66:24
+     64|  const at=(elapsed:number)=>actionCamera({...input,elapsed},'ultimate'…
+     65|  expect(at(3000)).toEqual(at(0));expect(at(3200)).toEqual(at(0));
+     66|  expect(at(3400).zoom).toBeCloseTo(1.2);expect(at(4000).zoom).toBeGrea…
+       |                        ^
+     67|  expect(at(4670)).toEqual(at(0));
+     68|  const expected=at(4000);at(3400);expect(at(4000)).toEqual(expected);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > finishes the landing squash before a long spoken recovery ends
+AssertionError: expected 'return' to be 'land' // Object.is equality
+
+Expected: "land"
+Received: "return"
+
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:74:58
+     72|  const input={plan,asset:'soot',side:'party',home:{x:300,y:400,core:15…
+     73|  const impact=plan.beats[2]!.start;
+     74|  expect(actionPose({...input,elapsed:impact+390}).phase).toBe('land');
+       |                                                          ^
+     75|  expect(actionPose({...input,elapsed:impact+500})).toMatchObject({phas…
+     76| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/motion.test.ts > mirrors every enemy archetype through travel, strike and recovery without changing timing
+AssertionError: expected 0 to be greater than 0.06
+ ❯ src/game/cardrpg/battle-v3/motion.test.ts:92:22
+     90|    peak=Math.max(peak,Math.hypot(b.x,b.y));
+     91|   }
+     92|   expect(peak/width).toBeGreaterThan(.06);
+       |                      ^
+     93|   expect(actionPose({...enemy,motion,elapsed:plan.duration})).toMatchO…
+     94|  }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/presentation.test.ts > gives signatures active feedback and basics a smaller, flash-free contact
+AssertionError: expected 0 to be greater than 0
+ ❯ src/game/cardrpg/battle-v3/presentation.test.ts:15:65
+     13|   expect(presentationTier(basic)).toBe('basic');
+     14|   const basicContact=impactFeedback(basic,basic.beats[2]!.start,false);
+     15|   expect(basicContact.flash).toBe(0);expect(basicContact.shake).toBeGr…
+       |                                                                 ^
+     16|   const before=JSON.stringify(active),contact=active.beats[2]!.start;
+     17|   expect(impactFeedback(active,contact,false).flash).toBeGreaterThan(0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/presentation.test.ts > paints and clears fallback contact without leaving a stale ultimate plate
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/game/cardrpg/battle-v3/presentation.test.ts:33:30
+     31|   const ultimate=configureSequence(pilotFixture('mochi-4').plan);
+     32|   cinema.render(sampleActionPlan(ultimate,1000,false),true,1,false,tru…
+     33|   expect(cinema.audit.plate).toBe(true);
+       |                              ^
+     34|   const active=configureSequence(pilotFixture('enemy:teacup-healer').p…
+     35|   cinema.render(sampleActionPlan(active,at,false),true,1,false,true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/presentation.test.ts > keeps the poster visible until a decoded plate is ready and restores it on media failure
+TypeError: Object.defineProperty called on non-object
+ ❯ src/game/cardrpg/battle-v3/presentation.test.ts:56:10
+     54|   const video=host.querySelector('video')!,poster=host.querySelector('…
+     55|   let readiness=0;
+     56|   Object.defineProperty(video,'readyState',{get:()=>readiness});
+       |          ^
+     57|   const render=()=>cinema.render(sampleActionPlan(plan,1200,false),tru…
+     58|   render();expect(video.hidden).toBe(true);expect(poster.hidden).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/sequence.test.ts > keeps resolved events and exact contact in full
+ FAIL  src/game/cardrpg/battle-v3/sequence.test.ts > keeps resolved events and exact contact in short
+ FAIL  src/game/cardrpg/battle-v3/sequence.test.ts > keeps resolved events and exact contact in off
+AssertionError: expected +0 to be 0.35 // Object.is equality
+
+- Expected
++ Received
+
+- 0.35
++ 0
+
+ ❯ src/game/cardrpg/battle-v3/sequence.test.ts:13:42
+     11|   expect(plan.sequence!.impact).toBe(impact);expect(JSON.stringify(pla…
+     12|   expect(sequenceAt(plan,impact-1)!.flash).toBe(0);
+     13|   expect(sequenceAt(plan,impact)!.flash).toBe(plan.ultimate?.35:plan.s…
+       |                                          ^
+     14|   expect(sequenceAt(plan,impact+34)!.flash).toBe(0);
+     15|   expect(sequenceAt(plan,impact,true)!.flash).toBe(0);expect(sequenceA…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/sequence.test.ts > shortens only after three full presentations and skips without a second resolution
+AssertionError: expected { id: 1, actorId: 'soot', …(17) } to have property "cinematicMode" with value 'full'
+
+Expected: "full"
+Received: "off"
+
+ ❯ src/game/cardrpg/battle-v3/sequence.test.ts:33:64
+     31|  const m={state:R.setFormationC2(R.setGameplayA6(R.createDepthAccount(…
+     32|  const original=pilotFixture('soot-4').plan;
+     33|  for(let i=0;i<3;i++)expect(prepareBattleSequence(m,original)).toHaveP…
+       |                                                                ^
+     34|  expect(prepareBattleSequence(m,original)).toHaveProperty('cinematicMo…
+     35|  battleControls(m).seen.clear();m.plan=prepareBattleSequence(m,origina…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/sequence.test.ts > C2 seeded combat remains byte-identical across presentation modes
+Error: Pilot fixture has no legal cast: biscuit-2
+ ❯ pilotFixture src/game/cardrpg/vfx-layered/fixture.ts:57:108
+     55|  const before=snapshotBattle(battle);
+     56|  if(enemy)R.enemyAct(battle);
+     57|  else {const choice=R.legalChoices(battle).find(c=>c.skillId===id);if(…
+       |                                                                                                            ^
+     58|  const resolved=splitPresentation(before,battle,id),targets=[...new Se…
+     59|  const start:TurnEvent={version:3,seq:0,turn:1,round:1,actionId:1,beat…
+ ❯ src/game/cardrpg/battle-v3/sequence.test.ts:42:181
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > keeps the whole deferred wind-up and its spoken tracks in sync at ×1
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > keeps the whole deferred wind-up and its spoken tracks in sync at ×2
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > keeps the whole deferred wind-up and its spoken tracks in sync at ×3
+AssertionError: expected 1100 to be 2900 // Object.is equality
+
+- Expected
++ Received
+
+- 2900
++ 1100
+
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:14:32
+     12|  expect(JSON.stringify(original)).toBe(before);
+     13|  expect(plan.events).toBe(original.events);
+     14|  expect(plan.sequence!.impact).toBe(original.sequence!.impact+1800);
+       |                                ^
+     15|  expect(plan.beats[2]!.start).toBe(original.beats[2]!.start+1800);
+     16|  const beforeVoices=audioTimeline(original,original.sequence).filter(c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > finishes every required spoken take before the next voice or action at ×1
+AssertionError: biscuit-4 full voice.biscuit.ult.charge: expected 1033.3333333333337 to be greater than or equal to 1356
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:40:77
+     38|   for(let i=0;i<voices.length;i++){
+     39|    const duration=VOICE_TIMING.find(take=>take.cueId===voices[i]!.cue)…
+     40|    expect((starts[i+1]??wall)-starts[i]!,`${id} ${mode} ${voices[i]!.c…
+       |                                                                             ^
+     41|   }
+     42|   expect(plan.events).toBe(original.events);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > finishes every required spoken take before the next voice or action at ×2
+AssertionError: biscuit-4 full voice.biscuit.ult.charge: expected 499.99999999999994 to be greater than or equal to 1356
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:40:77
+     38|   for(let i=0;i<voices.length;i++){
+     39|    const duration=VOICE_TIMING.find(take=>take.cueId===voices[i]!.cue)…
+     40|    expect((starts[i+1]??wall)-starts[i]!,`${id} ${mode} ${voices[i]!.c…
+       |                                                                             ^
+     41|   }
+     42|   expect(plan.events).toBe(original.events);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > finishes every required spoken take before the next voice or action at ×3
+AssertionError: biscuit-4 full voice.biscuit.ult.charge: expected 333.3333333333333 to be greater than or equal to 1356
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:40:77
+     38|   for(let i=0;i<voices.length;i++){
+     39|    const duration=VOICE_TIMING.find(take=>take.cueId===voices[i]!.cue)…
+     40|    expect((starts[i+1]??wall)-starts[i]!,`${id} ${mode} ${voices[i]!.c…
+       |                                                                             ^
+     41|   }
+     42|   expect(plan.events).toBe(original.events);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > preserves final-hit slow motion inside a spoken window and reduced-motion speech timing
+TypeError: Cannot read properties of undefined (reading 'start')
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:50:37
+     48|  const plan=configureSequence(pilotFixture('mochi-4').plan);
+     49|  const end=plan.voiceWindows!.at(-1)!;
+     50|  expect(advanceBattleClock(plan,end.start,500,true,3)).toBeCloseTo(end…
+       |                                     ^
+     51|  const final={...plan,finalHit:true},start=plan.beats[2]!.start-80;
+     52|  expect(advanceBattleClock(final,start,500,false,3)).toBeCloseTo(start…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/36]⎯
+
+ FAIL  src/game/cardrpg/battle-v3/voice-windows.test.ts > keeps ordinary basic attacks at the selected speed and leaves the full-plate contact unchanged
+AssertionError: expected [] to be undefined
+
+- Expected:
+undefined
+
++ Received:
+[]
+
+ ❯ src/game/cardrpg/battle-v3/voice-windows.test.ts:58:29
+     56| it('keeps ordinary basic attacks at the selected speed and leaves the …
+     57|  const basic=configureSequence(pilotFixture('mochi-1').plan);
+     58|  expect(basic.voiceWindows).toBeUndefined();expect(advanceBattleClock(…
+       |                             ^
+     59|  const ultimate=configureSequence(pilotFixture('mochi-4').plan);
+     60|  expect(ultimate.beats[2]!.start).toBe(3200);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/36]⎯
+
+ FAIL  src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx > browses all four exact current effects without changing the account or losing preview navigation
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Warm welcome/`
+
+Here are the accessible roles:
+
+  button:
+
+  Name "BASICDoor knock":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "ULTIMATELast light shelter":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mdata-ultimate[39m=[32m"true"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<nav[39m
+  [33maria-label[39m=[32m"Mochi skills"[39m
+  [33mclass[39m=[32m"a6-cat-skill-index"[39m
+[36m>[39m
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+  [36m>[39m
+    [36m<img[39m
+      [33malt[39m=[32m""[39m
+      [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+    [36m/>[39m
+    [36m<span>[39m
+      [36m<small>[39m
+        [0mBASIC[0m
+      [36m</small>[39m
+      [36m<b>[39m
+        [0mDoor knock[0m
+      [36m</b>[39m
+    [36m</span>[39m
+  [36m</button>[39m
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mdata-ultimate[39m=[32m"true"[39m
+  [36m>[39m
+    [36m<img[39m
+      [33malt[39m=[32m""[39m
+      [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+    [36m/>[39m
+    [36m<span>[39m
+      [36m<small>[39m
+        [0mULTIMATE[0m
+      [36m</small>[39m
+      [36m<b>[39m
+        [0mLast light shelter[0m
+      [36m</b>[39m
+    [36m</span>[39m
+  [36m</button>[39m
+[36m</nav>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx:13:80
+     11|  fireEvent.click(screen.getByRole('button',{name:'Skills'}));
+     12|  for(const skill of R.CAT_BY_ID.mochi!.skills){
+     13|   fireEvent.click(within(screen.getByRole('navigation',{name:'Mochi sk…
+       |                                                                                ^
+     14|   expect(screen.getByRole('region',{name:skill.name}).textContent).toC…
+     15|  }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/36]⎯
+
+ FAIL  src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx > explains the current kit cooldowns without using their historical values
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Black cup/`
+
+Here are the accessible roles:
+
+  complementary:
+
+  Name "Cat details":
+  [36m<aside[39m
+    [33maria-label[39m=[32m"Cat details"[39m
+    [33mclass[39m=[32m"uv-detail a6-cat-detail"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"a6-cat-hero"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<header />[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Soot":
+  [36m<img[39m
+    [33malt[39m=[32m"Soot"[39m
+    [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Soot":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"a6-cat-passive"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Companion details":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Companion details"[39m
+    [33mclass[39m=[32m"a6-cat-tabs"[39m
+  [36m/>[39m
+
+  Name "Soot skills":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Soot skills"[39m
+    [33mclass[39m=[32m"a6-cat-skill-index"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Growth":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "Skills":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+  [36m/>[39m
+
+  Name "Bonds":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "Gear":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "BASICCocoa spark":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "ULTIMATEMidnight service":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mdata-ultimate[39m=[32m"true"[39m
+  [36m/>[39m
+
+  Name "Watch skill previews":
+  [36m<button[39m
+    [33mclass[39m=[32m"a6-cat-preview"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Skills":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Skills"[39m
+    [33mclass[39m=[32m"a6-cat-panel"[39m
+  [36m/>[39m
+
+  Name "Cocoa spark":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cocoa spark"[39m
+    [33mclass[39m=[32m"a6-cat-skill-detail"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+    [33mid[39m=[32m"a6-cat-skill-detail"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<aside[39m
+      [33maria-label[39m=[32m"Cat details"[39m
+      [33mclass[39m=[32m"uv-detail a6-cat-detail"[39m
+    [36m>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"a6-cat-hero"[39m
+      [36m>[39m
+        [36m<img[39m
+          [33malt[39m=[32m"Soot"[39m
+          [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+        [36m/>[39m
+        [36m<div>[39m
+          [36m<small>[39m
+            [0mcommon[0m
+            [0m · [0m
+            [0mhexer[0m
+          [36m</small>[39m
+          [36m<h2>[39m
+            [0mSoot[0m
+          [36m</h2>[39m
+          [36m<span[39m
+            [33maria-label[39m=[32m"Power 2696"[39m
+            [33mclass[39m=[32m"a6-power"[39m
+            [33mdata-gain[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0mPower[0m
+              [0m [0m
+              [36m<b>[39m
+                [0m2,696[0m
+              [36m</b>[39m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<p>[39m
+            [0mLevel 1 · 1 stars[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Companion details"[39m
+        [33mclass[39m=[32m"a6-cat-tabs"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/upgrade.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mGrowth[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"true"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/fight.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mSkills[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/bonds.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mBonds[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/art/v3-shell/b2/icon-gear.webp"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mGear[0m
+        [36m</button>[39m
+      [36m</nav>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Skills"[39m
+        [33mclass[39m=[32m"a6-cat-panel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"a6-cat-skillbook"[39m
+        [36m>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Soot skills"[39m
+            [33mclass[39m=[32m"a6-cat-skill-index"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+              [33maria-pressed[39m=[32m"true"[39m
+              [33mdata-ultimate[39m=[32m"false"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m""[39m
+                [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+              [36m/>[39m
+              [36m<span>[39m
+                [36m<small>[39m
+                  [0mBASIC[0m
+                [36m</small>[39m
+                [36m<b>[39m
+                  [0mCocoa spark[0m
+                [36m</b>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mdata-ultimate[39m=[32m"true"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m""[39m
+                [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+              [36m/>[39m
+              [36m<span>[39m
+                [36m<small>[39m
+                  [0mULTIMATE[0m
+                [36m</small>[39m
+                [36m<b>[39m
+                  [0mMidnight service[0m
+                [36m</b>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</nav>[39m
+          [36m<section[39m
+            [33maria-label[39m=[32m"Cocoa spark"[39m
+            [33mclass[39m=[32m"a6-cat-skill-detail"[39m
+            [33mdata-ultimate[39m=[32m"false"[39m
+            [33mid[39m=[32m"a6-cat-skill-detail"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<header>[39m
+              [36m<b>[39m
+                [0mCocoa spark[0m
+              [36m</b>[39m
+              [36m<small>[39m
+                [0mUsed automatically[0m
+              [36m</small>[39m
+            [36m</header>[39m
+            [36m<p>[39m
+              [0mPierce. 85% attack. 1 Crumb.[0m
+            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"a6-skill-context"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [36m<b>[39m
+                  [0mCooldown[0m
+                [36m</b>[39m
+                [0m · [0m
+                [0mCan be used every round.[0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mBase effects shown.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"a6-cat-passive"[39m
+            [36m>[39m
+              [36m<small>[39m
+                [0mPASSIVE[0m
+              [36m</small>[39m
+              [36m<b>[39m
+                [0mAsh reader[0m
+              [36m</b>[39m
+              [36m<span>[39m
+                [0mA successful detonation grants 6 shield, once per turn.[0m
+              [36m</span>[39m
+            [36m</p>[39m
+          [36m</section>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"a6-cat-preview"[39m
+          [36m>[39m
+            [0mWatch skill previews[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</aside>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx:42:26
+     40|   rerender(<CatDetailsA6 key={catId} m={m} catId={catId} onPreview={()…
+     41|   fireEvent.click(screen.getByRole('button',{name:'Skills'}));
+     42|   fireEvent.click(screen.getByRole('button',{name:new RegExp(skillName…
+       |                          ^
+     43|   const note=screen.getByRole('region',{name:skillName});
+     44|   expect(note.textContent).toContain(wait?`Wait ${wait} round${wait===…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/36]⎯
+
+ FAIL  src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx > separates base effects from the active patrol bonus and clears completed-route bonuses
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Black cup/`
+
+Here are the accessible roles:
+
+  complementary:
+
+  Name "Cat details":
+  [36m<aside[39m
+    [33maria-label[39m=[32m"Cat details"[39m
+    [33mclass[39m=[32m"uv-detail a6-cat-detail"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"a6-cat-hero"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<header />[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Soot":
+  [36m<img[39m
+    [33malt[39m=[32m"Soot"[39m
+    [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Soot":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"a6-cat-passive"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Companion details":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Companion details"[39m
+    [33mclass[39m=[32m"a6-cat-tabs"[39m
+  [36m/>[39m
+
+  Name "Soot skills":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Soot skills"[39m
+    [33mclass[39m=[32m"a6-cat-skill-index"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Growth":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "Skills":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+  [36m/>[39m
+
+  Name "Bonds":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "Gear":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "BASICCocoa spark":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "ULTIMATEMidnight service":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mdata-ultimate[39m=[32m"true"[39m
+  [36m/>[39m
+
+  Name "Watch skill previews":
+  [36m<button[39m
+    [33mclass[39m=[32m"a6-cat-preview"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Skills":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Skills"[39m
+    [33mclass[39m=[32m"a6-cat-panel"[39m
+  [36m/>[39m
+
+  Name "Cocoa spark":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cocoa spark"[39m
+    [33mclass[39m=[32m"a6-cat-skill-detail"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+    [33mid[39m=[32m"a6-cat-skill-detail"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<aside[39m
+      [33maria-label[39m=[32m"Cat details"[39m
+      [33mclass[39m=[32m"uv-detail a6-cat-detail"[39m
+    [36m>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"a6-cat-hero"[39m
+      [36m>[39m
+        [36m<img[39m
+          [33malt[39m=[32m"Soot"[39m
+          [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/soot.webp"[39m
+        [36m/>[39m
+        [36m<div>[39m
+          [36m<small>[39m
+            [0mcommon[0m
+            [0m · [0m
+            [0mhexer[0m
+          [36m</small>[39m
+          [36m<h2>[39m
+            [0mSoot[0m
+          [36m</h2>[39m
+          [36m<span[39m
+            [33maria-label[39m=[32m"Power 2696"[39m
+            [33mclass[39m=[32m"a6-power"[39m
+            [33mdata-gain[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+            [36m>[39m
+              [0mPower[0m
+              [0m [0m
+              [36m<b>[39m
+                [0m2,696[0m
+              [36m</b>[39m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<p>[39m
+            [0mLevel 1 · 1 stars[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Companion details"[39m
+        [33mclass[39m=[32m"a6-cat-tabs"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/upgrade.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mGrowth[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"true"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/fight.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mSkills[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/icons/bonds.svg"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mBonds[0m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"game-icon "[39m
+            [33mdraggable[39m=[32m"false"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33msrc[39m=[32m"/art/v3-shell/b2/icon-gear.webp"[39m
+            [33mwidth[39m=[32m"24"[39m
+          [36m/>[39m
+          [0mGear[0m
+        [36m</button>[39m
+      [36m</nav>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Skills"[39m
+        [33mclass[39m=[32m"a6-cat-panel"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"a6-cat-skillbook"[39m
+        [36m>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Soot skills"[39m
+            [33mclass[39m=[32m"a6-cat-skill-index"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+              [33maria-pressed[39m=[32m"true"[39m
+              [33mdata-ultimate[39m=[32m"false"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m""[39m
+                [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+              [36m/>[39m
+              [36m<span>[39m
+                [36m<small>[39m
+                  [0mBASIC[0m
+                [36m</small>[39m
+                [36m<b>[39m
+                  [0mCocoa spark[0m
+                [36m</b>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"a6-cat-skill-detail"[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mdata-ultimate[39m=[32m"true"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m""[39m
+                [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M21%2012H39L36%2035H24ZM25%208L30%203L35%208M25%2020L35%2027M35%2020L25%2027'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+              [36m/>[39m
+              [36m<span>[39m
+                [36m<small>[39m
+                  [0mULTIMATE[0m
+                [36m</small>[39m
+                [36m<b>[39m
+                  [0mMidnight service[0m
+                [36m</b>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</nav>[39m
+          [36m<section[39m
+            [33maria-label[39m=[32m"Cocoa spark"[39m
+            [33mclass[39m=[32m"a6-cat-skill-detail"[39m
+            [33mdata-ultimate[39m=[32m"false"[39m
+            [33mid[39m=[32m"a6-cat-skill-detail"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<header>[39m
+              [36m<b>[39m
+                [0mCocoa spark[0m
+              [36m</b>[39m
+              [36m<small>[39m
+                [0mUsed automatically[0m
+              [36m</small>[39m
+            [36m</header>[39m
+            [36m<p>[39m
+              [0mPierce. 85% attack. 1 Crumb.[0m
+            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"a6-skill-context"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [36m<b>[39m
+                  [0mCooldown[0m
+                [36m</b>[39m
+                [0m · [0m
+                [0mCan be used every round.[0m
+              [36m</p>[39m
+              [36m<p>[39m
+                [0mBase effects shown.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"a6-cat-passive"[39m
+            [36m>[39m
+              [36m<small>[39m
+                [0mPASSIVE[0m
+              [36m</small>[39m
+              [36m<b>[39m
+                [0mAsh reader[0m
+              [36m</b>[39m
+              [36m<span>[39m
+                [0mA successful detonation grants 6 shield, once per turn.[0m
+              [36m</span>[39m
+            [36m</p>[39m
+          [36m</section>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"a6-cat-preview"[39m
+          [36m>[39m
+            [0mWatch skill previews[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</aside>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx:56:85
+     54|  const before=JSON.stringify(m.state);
+     55|  const {rerender}=render(<CatDetailsA6 m={m} catId="soot" onPreview={(…
+     56|  fireEvent.click(screen.getByRole('button',{name:'Skills'}));fireEvent…
+       |                                                                                     ^
+     57|  const note=screen.getByRole('region',{name:'Black cup'});
+     58|  expect(note.textContent).toContain('Base effects shown. Your patrol r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/36]⎯
+
+ FAIL  src/game/cardrpg/ui-v3/CatPreviewA6.test.tsx > opens the selected skill, previews freely and restores its trigger without changing the account
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Warm welcome/`
+
+Here are the accessible roles:
+
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"a6-preview-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/mochi.webp"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Mochi · skill previews":
+  [36m<h2[39m
+    [33mid[39m=[32m"a6-preview-title"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Back to Skills":
+  [36m<button />[39m
+
+  --------------------------------------------------region:
+
+  Name "Door knock":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Door knock"[39m
+    [33mclass[39m=[32m"a6-preview-copy"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Door knock":
+  [36m<h3 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  complementary:
+
+  Name "":
+  [36m<aside[39m
+    [33mclass[39m=[32m"a6-preview-notes"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Mochi skill previews":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Mochi skill previews"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "BASICDoor knock":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mdata-ultimate[39m=[32m"false"[39m
+  [36m/>[39m
+
+  Name "ULTIMATELast light shelter":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mdata-ultimate[39m=[32m"true"[39m
+  [36m/>[39m
+
+  Name "View miniature":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"a6-preview-rotate"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  presentation:
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<img[39m
+    [33malt[39m=[32m""[39m
+    [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "":
+  [36m<details />[39m
+
+  --------------------------------------------------
+  term:
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  Name "":
+  [36m<dt />[39m
+
+  --------------------------------------------------
+  definition:
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  Name "":
+  [36m<dd />[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "":
+  [36m<ul />[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li />[39m
+
+  Name "":
+  [36m<li />[39m
+
+  Name "":
+  [36m<li />[39m
+
+  Name "":
+  [36m<li />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<dialog[39m
+  [33maria-labelledby[39m=[32m"a6-preview-title"[39m
+  [33mclass[39m=[32m"a6-cat-preview-dialog"[39m
+  [33mopen[39m=[32m""[39m
+[36m>[39m
+  [36m<header[39m
+    [33mclass[39m=[32m"a6-preview-header"[39m
+  [36m>[39m
+    [36m<img[39m
+      [33malt[39m=[32m""[39m
+      [33msrc[39m=[32m"/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-a6/illustrations/mochi.webp"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<small>[39m
+        [0mTHE PRACTICE TABLE[0m
+      [36m</small>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"a6-preview-title"[39m
+      [36m>[39m
+        [0mMochi[0m
+        [0m · skill previews[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<button>[39m
+      [0mBack to Skills[0m
+      [0m [0m
+      [36m<span[39m
+        [33maria-hidden[39m=[32m"true"[39m
+      [36m>[39m
+        [0m×[0m
+      [36m</span>[39m
+    [36m</button>[39m
+  [36m</header>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"a6-preview-body"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"a6-preview-stage"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mdata-cat[39m=[32m"mochi"[39m
+        [33mdata-skill[39m=[32m"mochi-1"[39m
+        [33mdata-testid[39m=[32m"preview"[39m
+      [36m/>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Door knock"[39m
+        [33mclass[39m=[32m"a6-preview-copy"[39m
+        [33mtabindex[39m=[32m"0"[39m
+      [36m>[39m
+        [36m<header>[39m
+          [36m<h3>[39m
+            [0mDoor knock[0m
+          [36m</h3>[39m
+          [36m<small>[39m
+            [0mUsed automatically[0m
+          [36m</small>[39m
+        [36m</header>[39m
+        [36m<p>[39m
+          [0mSplash · 100/40%. 90% attack. 18 shield on self.[0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"a6-skill-context"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [36m<b>[39m
+              [0mCooldown[0m
+            [36m</b>[39m
+            [0m · [0m
+            [0mCan be used every round.[0m
+          [36m</p>[39m
+          [36m<p>[39m
+            [0mBase effects shown.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+    [36m<aside[39m
+      [33mclass[39m=[32m"a6-preview-notes"[39m
+    [36m>[39m
+      [36m<p>[39m
+        [0mPreview freely. Your crew stays unchanged.[0m
+      [36m</p>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Mochi skill previews"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"true"[39m
+          [33mdata-ultimate[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23e8c58e'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M5%2048L15%2038M6%2039L14%2047'/%3e%3c/g%3e%3c/svg%3e"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [36m<small>[39m
+              [0mBASIC[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mDoor knock[0m
+            [36m</b>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<button[39m
+          [33maria-pressed[39m=[32m"false"[39m
+          [33mdata-ultimate[39m=[32m"true"[39m
+        [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m""[39m
+            [33msrc[39m=[32m"data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='60'%20shape-rendering='geometricPrecision'%20viewBox='0%200%2064%2060'%3e%3cg%20fill='none'%20stroke='%23f0ca68'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M16%2011L30%206L44%2011V29Q30%2046%2016%2029Z%20M24%2022H36M30%2016V29'/%3e%3cpath%20d='M50%2033L53%2041L61%2043L53%2046L50%2054L47%2046L39%2043L47%2041Z'/%3e%3c/g%3e%3c/svg%3e"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [36m<small>[39m
+              [0mULTIMATE[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mLast light shelter[0m
+            [36m</b>[39m
+          [36m</span>[39m
+        [36m</button>[39m
+      [36m</nav>[39m
+      [36m<button[39m
+        [33maria-pressed[39m=[32m"false"[39m
+        [33mclass[39m=[32m"a6-preview-rotate"[39m
+      [36m>[39m
+        [0mView miniature[0m
+      [36m</button>[39m
+      [36m<details>[39m
+        [36m<summary>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"a6-preview-stats-closed"[39m
+          [36m>[39m
+            [0mStats & equipped gear[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"a6-preview-stats-open"[39m
+          [36m>[39m
+            [0mBack to skill choices[0m
+          [36m</span>[39m
+        [36m</summary>[39m
+        [36m<dl[39m
+          [33mclass[39m=[32m"cr-stats"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mHealth[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m578[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mAttack[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m56[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mDefense[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m34[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mCritical chance[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m8%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mCritical bonus[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m50%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mEffect accuracy[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m0%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mEffect resistance[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m0%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mHealing bonus[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m0%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mShield bonus[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m0%[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<dt>[39m
+              [0mRound order[0m
+            [36m</dt>[39m
+            [36m<dd>[39m
+              [0m8[0m
+            [36m</dd>[39m
+          [36m</div>[39m
+        [36m</dl>[39m
+        [36m<ul>[39m
+          [36m<li>[39m
+            [36m<small>[39m
+              [0mweapon[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mCommon Hearthloom Pan[0m
+            [36m</b>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<small>[39m
+              [0moutfit[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mCommon Hearthloom Apron[0m
+            [36m</b>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<small>[39m
+              [0mcharm[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mEmpty slot[0m
+            [36m</b>[39m
+          [36m</li>[39m
+          [36m<li>[39m
+            [36m<small>[39m
+              [0mrelic[0m
+            [36m</small>[39m
+            [36m<b>[39m
+              [0mEmpty slot[0m
+            [36m</b>[39m
+          [36m</li>[39m
+        [36m</ul>[39m
+      [36m</details>[39m
+    [36m</aside>[39m
+  [36m</div>[39m
+[36m</dialog>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/ui-v3/CatPreviewA6.test.tsx:33:34
+     31|  expect(within(dialog).getByText('Base effects shown.')).toBeTruthy();
+     32|  for(const skill of cat.skills){
+     33|   fireEvent.click(within(dialog).getByRole('button',{name:new RegExp(s…
+       |                                  ^
+     34|   expect(screen.getByTestId('preview').getAttribute('data-skill')).toB…
+     35|   expect(within(dialog).getByRole('region',{name:skill.name}).textCont…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/36]⎯
+
+ FAIL  src/game/cardrpg/depth/model.test.ts > previews every authored skill and enemy without mutating account progress
+Error: No legal gallery action mochi-2
+ ❯ galleryFixture src/game/cardrpg/depth/feel-lab.ts:58:24
+     56|     actual.queue = [cat.id,...actual.queue.filter(actorId => actorId !…
+     57|     const choice = R.legalChoices(actual).find(choice => choice.skillI…
+     58|     if (!choice) throw new Error(`No legal gallery action ${id}`);
+       |                        ^
+     59|     const before = snapshotBattle(actual);
+     60|     if (!R.act(actual,choice)) throw new Error(`Gallery action rejecte…
+ ❯ DepthModel.inspect src/game/cardrpg/depth/model.ts:163:113
+ ❯ src/game/cardrpg/depth/model.test.ts:154:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/36]⎯
+
+
+ Test Files  8 failed | 10 passed (18)
+      Tests  36 failed | 45 passed (81)
+   Start at  13:00:00
+   Duration  5.78s (environment 53%, import 17%, transform 17%, tests 12%)
+
+Environment  jsdom was created 18 times · 5.36s total, 53% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/battle-v3 src/game/cardrpg/depth/model.test.ts src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx src/game/cardrpg/ui-v3/CatPreviewA6.test.tsx

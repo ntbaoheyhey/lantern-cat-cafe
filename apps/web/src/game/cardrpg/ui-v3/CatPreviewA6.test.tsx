@@ -27,9 +27,9 @@ it('opens the selected skill, previews freely and restores its trigger without c
  expect(screen.getByTestId('preview').getAttribute('data-skill')).toBe(last.id);
  expect(within(dialog).queryByText('Opens at level 6 or 3 stars')).toBeNull();
  expect(within(dialog).getByText('Automatic at 100 rage')).toBeTruthy();
- expect(within(dialog).getByText('Wait 3 rounds after use.',{exact:false})).toBeTruthy();
+ expect(within(dialog).getByText('Ready at 100 rage. Casts in 2.2 seconds.',{exact:false})).toBeTruthy();
  expect(within(dialog).getByText('Base effects shown.')).toBeTruthy();
- for(const skill of cat.skills){
+ for(const skill of R.battleKitA6(cat.id)){
   fireEvent.click(within(dialog).getByRole('button',{name:new RegExp(skill.name)}));
   expect(screen.getByTestId('preview').getAttribute('data-skill')).toBe(skill.id);
   expect(within(dialog).getByRole('region',{name:skill.name}).textContent).toContain(R.kitSkillV5(skill).description);

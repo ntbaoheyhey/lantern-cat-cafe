@@ -312,7 +312,7 @@ export class DepthModel {
       ...presentation.events];
     this.beforeImpact = snapshot;
     this.afterImpact = presentation.impact;
-    this.roundPlan = presentation.roundPlan;
+    this.roundPlan = presentation.roundPlan ? prepareBattleSequence(this,presentation.roundPlan) : null;
     this.impactApplied = false;
     const identity = actor.side === 'enemy'
       ? battle.log.slice(before).find(event=>event.kind==='enemy-action')?.skillId || `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
