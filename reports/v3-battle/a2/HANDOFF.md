@@ -1,5 +1,4 @@
-NOW:All pre-sync A cards and10 polish items done;259 core+14 P+76 solo gates PASS.
-NEXT:Scheduled SY1 at16Nov12UTC;B polish remains active in its own worktree.
-SUITE:Q9 type/unit/e2e/parity PASS;High60FPS,Low4x53.26–55.09FPS.
-PIDS:A Vite36397;no sims.
-UPDATED:2026-11-13T23:58:15.262596+00:00
+NOW:Q9 S4 pilot rejected;restoring previous voice timing before next method.
+OPEN:S4 cadence;prior A measured gates remain historical until source restored/rechecked.
+PIDS:A36397,B97970;no sims.
+UPDATED:2026-11-14T00:34:36.648801+00:00

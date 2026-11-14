@@ -121,3 +121,5 @@ Q6 visual inspection: the compact preparation board reused stage height as whole
 2026-11-13T23:21:53.009864+00:00 Q7 final: reused byte-identical fresh complete M1 raw captures for V2, which measures the same field/numbers recorded in those fixtures; recomputed V2 metrics with tools/.venv Python. No freshness metadata was invented. All259 owning-lane gates PASS,8 visual gates PASS,9 enemy gates PASS.
 
 2026-11-14T00:30:00.219584+00:00 Q9 P2 accepted:24/24 elemental phases;B S1/S3/S5/S7/V PASS,current435/435 browser,types/unit PASS. Fresh S4 stage1 raw median2.916s and S5 stress2.974s both fail6–9s. Original fixture repetition did not resolve the regression; no phrase grouping accepted. Next A-owned timing pilot must preserve higher-priority motion and all required calls.
+
+2026-11-14T00:34:36.648801+00:00 S4 recovery1 rejected:7s after every voiced action yields raw stage1 median7.332s (28 starts), but full wave1 motion6.797 below15.7956.11 actions,14/14 hits,parity PASS. Restore exact pre-pilot voice windows. Next method reserves only still-unspent time before a following voiced action; intervening basics count toward breathing room. No threshold change.

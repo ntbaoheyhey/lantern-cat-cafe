@@ -26,7 +26,8 @@ export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineC
  add(Math.max(movement,impact-160),`kit.${element}.release`,'release');
  if(tier==='ultimate'){
   const charge=voiceTiming(owner,id,'charge'),release=voiceTiming(owner,id,'release');
-  const chargeAt=Math.max(0,(sequence?.cutin?.start??0)-(charge?.syncPointMs??0));
+  const leadIn=(plan as EffectPlan&{speechLeadInMs?:number}).speechLeadInMs??0;
+  const chargeAt=Math.max(leadIn,(sequence?.cutin?.start??leadIn)-(charge?.syncPointMs??0));
   const releaseAt=Math.max(0,impact-(release?.syncPointMs??0));
   // Explicit voice precedes its cast SFX in the same tick: B's documented
   // microtask fallback sees it and never starts a second take.

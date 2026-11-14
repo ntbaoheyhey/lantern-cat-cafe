@@ -1,5 +1,7 @@
 import {pilotFixture} from '../vfx-layered/fixture';
 import {prepareBattleSequence} from '../battle-v3/controls';
+import {reserveUltimateLeadIn} from '../battle-v3/voice-windows';
+import type {SequencePlan} from '../battle-v3/sequence';
 import {advanceBattleClock} from '../battle-v3/final-hit';
 import {badgeEvents} from '../battle-v3/number-badges';
 import {chainFlags} from '../chain/flags';
@@ -46,6 +48,9 @@ export class DepthModel {
   plan: EffectPlan | null = null;
   animationAt = 0;
   playbackAt = 0;
+  private cadenceBattle: R.Battle | null = null;
+  private lastUltimateVoiceAt = -Infinity;
+  private voicedWindows = new Set<number>();
   private playbackFrameAt?: number;
   ultimateBannerUntil = 0;
   comboBanner = '';
@@ -319,6 +324,9 @@ export class DepthModel {
     this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
     if (savingHeal) savingHeal.note = 'Clutch heal';
     this.plan = prepareBattleSequence(this, paceActionA6(createCardActionPlan(events, identity), battle.initial));
+    if(this.cadenceBattle!==battle){this.cadenceBattle=battle;this.lastUltimateVoiceAt=-Infinity;}
+    this.voicedWindows.clear();
+    this.plan=reserveUltimateLeadIn(this.plan,6200-(this.playbackAt-this.lastUltimateVoiceAt));
     if(this.state.formationC2){
       Object.assign(this.plan,{finalHit:lastHit,numberBadges:badgeEvents(presentation.impact.log.slice(before))});
       if(this.roundPlan)Object.assign(this.roundPlan,{finalHit:!lastHit&&this.roundPlan.events.some(event=>event.type==='death')&&battle.actors.filter(target=>target.side==='enemy').every(target=>target.hp<=0),numberBadges:badgeEvents(battle.log.slice(presentation.impact.log.length))});
@@ -349,6 +357,9 @@ export class DepthModel {
     this.playbackAt += elapsed;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
     this.animationAt = advanceBattleClock(this.plan,this.animationAt,elapsed,this.state.settings.reducedMotion,this.galleryBattle?this.gallerySpeed:this.state.settings.speed);
+    if(this.plan.ultimate)for(const [i,window] of ((this.plan as SequencePlan).voiceWindows??[]).entries()){
+      if(this.animationAt>=window.start&&!this.voicedWindows.has(i)){this.voicedWindows.add(i);this.lastUltimateVoiceAt=this.playbackAt;}
+    }
     if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
       this.impactApplied = true;
       this.notify(false);

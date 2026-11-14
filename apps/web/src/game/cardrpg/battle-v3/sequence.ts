@@ -25,7 +25,7 @@ const fields=import.meta.glob('../../../../../../skills/*/field.json',{eager:tru
 const signatures=import.meta.glob('../../../../../../skills/*/signature.json',{eager:true,import:'default'}) as Record<string,Signature>;
 export const SEQUENCES=new Map([...Object.values(files),...Object.values(fields).flat()].filter(t=>t.sequence).map(t=>[t.id,t]));
 export const SIGNATURES=new Map(Object.entries(signatures).map(([path,s])=>[path.split('/').at(-2)!,s]));
-export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode;voiceWindows?:VoiceWindow[]};
+export type SequencePlan=EffectPlan & {sequence?:SkillSequence;cinematicMode?:CinematicMode;voiceWindows?:VoiceWindow[];speechLeadInMs?:number};
 
 /** Retimes presentation only. Event objects, actor IDs, recipients and amounts are unchanged. */
 export function configureSequence(plan:EffectPlan,mode:CinematicMode='full'):SequencePlan {
