@@ -44,3 +44,21 @@ export function focusBannerBox(caster:Rect,width:number,height:number,obstacles:
  const candidates=[{x:caster.x+caster.width+8,y:caster.y+caster.height*.35},{x:caster.x-w-8,y:caster.y+caster.height*.35},{x:caster.x+(caster.width-w)/2,y:caster.y-h-48},{x:caster.x+(caster.width-w)/2,y:caster.y+caster.height+8}].map(p=>({x:Math.max(8,Math.min(width-w-8,p.x)),y:Math.max(8,Math.min(height-h-8,p.y)),width:w,height:h}));
  return candidates.reduce((best,b)=>obstacles.reduce((sum,o)=>sum+overlap(b,o),0)<obstacles.reduce((sum,o)=>sum+overlap(best,o),0)?b:best);
 }
+
+/** Keep a title at one chosen location for its action. Idle breathing must not
+ * flip it between equally clear sides; a real viewport resize can relayout. */
+export class FocusBannerAnchor {
+ private key:unknown;
+ private width=0;
+ private height=0;
+ private box?:Rect;
+ place(key:unknown,caster:Rect,width:number,height:number,obstacles:readonly Rect[]):Rect {
+  if(!this.box||key!==this.key||width!==this.width||height!==this.height){
+   const breathingMargin=12;
+   const reserved=obstacles.map(r=>({x:r.x-breathingMargin,y:r.y-breathingMargin,width:r.width+2*breathingMargin,height:r.height+2*breathingMargin}));
+   this.box=focusBannerBox(caster,width,height,reserved);
+   this.key=key;this.width=width;this.height=height;
+  }
+  return this.box;
+ }
+}

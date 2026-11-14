@@ -166,9 +166,12 @@ export function BattleView({ m }: { m: DepthModel }) {
       // C2's renderer owns beat/voice timing; keep the legacy adapter on other renderers.
       if(!m.battle?.initial.formationC2)currentAudio.update(m.frame, m.battle?.round ?? 0, m.battle ? R.currentActor(m.battle)?.id ?? null : null,
         m.paused || !m.showBattle, R.CHAPTERS[(m.battle?.chapter ?? 1) - 1]!.ambience / 174);
-      animation = requestAnimationFrame(tick);
+      if(!(scene.current instanceof SpineScene))animation = requestAnimationFrame(tick);
     };
-    animation = requestAnimationFrame(tick);
+    // One RAF owns the C2 model and pixels. Independent loops could paint the
+    // previous action for an extra frame after the model had finished it.
+    if(scene.current instanceof SpineScene)scene.current.beforeFrame=tick;
+    else animation = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
   }, [m, lookV2, readable]);
   useEffect(() => {

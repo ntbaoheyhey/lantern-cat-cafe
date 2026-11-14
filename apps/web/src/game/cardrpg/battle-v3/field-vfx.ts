@@ -1,6 +1,6 @@
 import type {SceneView} from '../../squad/turn3d/scene';
 import type {ResolveSocket} from '../spine/vfx';
-import {sequenceAt,SIGNATURES} from './sequence';
+import {sequenceAt,SIGNATURES,type SequencePlan} from './sequence';
 import type {PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool,type GroundMark} from './field-pool';
 import {paintImpactWake} from './impact-wake';
@@ -33,14 +33,15 @@ export class FieldVfx {
   const palette=SIGNATURES.get(owner)?.element.palette??[plan.accent,plan.color,'#241b32'];
   const from=this.socket(plan.actorId,'mainHand');if(!from)return;
   const painted=this.painted(plan.presentationId??plan.skillId);
-  const progress=clamp((at-100)/Math.max(1,contact-100)),since=at-contact;
+  const castStart=(plan as SequencePlan).fixedTiming&&tier==='ultimate'?600:100;
+  const progress=clamp((at-castStart)/Math.max(1,contact-castStart)),since=at-contact;
   const damaging=plan.events.some(e=>e.type==='damage');
   // Spoken releases can outlast the old 620 ms fade. Carry their painted
   // energy through a bounded resolve, keeping contact and ground life intact.
   const tail=tier==='basic'?620:Math.max(620,Math.min(tier==='ultimate'?1450:1000,plan.duration-contact));
   const resolve=clamp(since/tail);
   const release=since<0?Math.sin(progress*Math.PI*.5):1-resolve;
-  if(at<80||release<=0)return;
+  if(at<castStart||release<=0)return;
   const shader=seq?.vfx.find(t=>t.type==='shader'),family=shader?.source??plan.shape;
   const seed=[...owner].reduce((n,ch)=>n+ch.charCodeAt(0),0),viewportHeight=Math.max(height,typeof window==='undefined'?height:window.innerHeight);
   const radius=Math.sqrt(width*viewportHeight*(tier==='basic'?.05:.15)/Math.PI)*(tier==='basic'?(owner==='velvet'?2.2:seq?1.5:1.8):1.65);

@@ -1,4 +1,4 @@
-import {CasterFocus,focusBannerBox} from '../battle-v3/focus';
+import {CasterFocus,FocusBannerAnchor} from '../battle-v3/focus';
 import {BattlePostFx} from '../battle-v3/post-fx';
 import {BattleAudio} from '../battle-v3/battle-audio';
 import {CinematicPlayer} from '../battle-v3/cinematic-player';
@@ -36,6 +36,8 @@ export class SpineScene {
  private audio=new BattleAudio();
  readonly scene=new T.Scene();readonly camera=new T.OrthographicCamera(-1,1,1,0,.1,1000);
  readonly renderer:T.WebGLRenderer;readonly actors=new Map<string,DisplayActor>();
+ /** Advance the presentation immediately before taking this frame's view. */
+ beforeFrame?: (now:number)=>void;
  readonly loading={completed:0,total:1,label:'Lighting the lanterns…'};ready=false;
  readonly stats={frames:0,calls:0,triangles:0,geometries:0,textures:0,particles:0,estimatedGpuBytes:0,loaded:0,hiddenFrames:0,quality:'high' as 'high'|'medium'|'low'};
  readonly labelAudit:{heads:Rect[];cards:Rect[];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
@@ -52,6 +54,7 @@ export class SpineScene {
  private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private casterFocus=new CasterFocus();
+ private focusBanner=new FocusBannerAnchor();
  private homes=new Map<string,{x:number;y:number;scale:number;order:number;point:MotionPoint}>();
  private trails=new MotionTrails();
  private bossPhase:BossPhase;
@@ -136,7 +139,9 @@ export class SpineScene {
   }
  }
  private loop=(now:number)=>{
-  if(this.disposed)return;const delta=this.last?Math.min(.1,(now-this.last)/1000):0;this.last=now;const view=this.view();
+  if(this.disposed)return;
+  this.beforeFrame?.(now);
+  const delta=this.last?Math.min(.1,(now-this.last)/1000):0;this.last=now;const view=this.view();
   if(document.hidden||view.suspended){this.stats.hiddenFrames++;this.raf=requestAnimationFrame(this.loop);return;}
   this.ensureActors(view);if(!view.paused&&this.ready)this.time+=delta*(view.playbackSpeed??1);
   if(!view.paused||this.dirty){this.render(view,delta);this.dirty=false;}
@@ -283,7 +288,7 @@ export class SpineScene {
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
   this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
-  this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,plan&&this.actors.has(plan.actorId)?focusBannerBox(this.bounds(this.actors.get(plan.actorId)!),width,height,this.cinematicRects):undefined);
+  this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,plan?.ultimate&&this.actors.has(plan.actorId)?this.focusBanner.place(plan,this.bounds(this.actors.get(plan.actorId)!),width,height,this.cinematicRects):undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
   this.audio.render(view);
   this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});

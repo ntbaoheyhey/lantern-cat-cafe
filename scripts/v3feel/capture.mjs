@@ -76,7 +76,7 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
  const video=resolve(out,fixture.id+'.webm');
  execFileSync('ffmpeg',['-v','error','-y','-framerate','30','-i',resolve(raw,'frame-%05d.jpg'),'-i',resolve(raw,'audio.webm'),'-t','30','-vf','fps=30','-c:v','libvpx-vp9','-crf','36','-b:v','1400k','-row-mt','1','-c:a','libopus','-b:a','96k',video]);
  const wav=resolve(out,fixture.id+'-mix.wav');
- execFileSync('ffmpeg',['-v','error','-y','-i',resolve(raw,'audio.webm'),'-t',String(seconds),'-ar','48000','-c:a','pcm_s16le',wav]);
+ execFileSync('ffmpeg',['-v','error','-y','-i',resolve(raw,'audio.webm'),'-af',`aresample=48000,atrim=end_sample=${Math.round(seconds*48000)},asetpts=PTS-STARTPTS`,'-c:a','pcm_s16le',wav]);
  const loudness=spawnSync('ffmpeg',['-hide_banner','-i',wav,'-af','loudnorm=I=-20:TP=-1:LRA=11:print_format=json','-f','null','-'],{encoding:'utf8'}).stderr;
  const loudnessJson=JSON.parse(loudness.match(/\{\s*"input_i"[\s\S]*?\}/)?.[0]??'{}');
  const gaps=pictures.slice(1).map((p,i)=>p.t-pictures[i].t);

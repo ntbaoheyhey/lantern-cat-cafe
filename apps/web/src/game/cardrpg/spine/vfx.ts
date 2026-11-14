@@ -11,6 +11,7 @@ import { DesignerVfx } from './vfx-overrides';
 import { LayeredVfx } from '../vfx-layered/player';
 import {FieldVfx} from '../battle-v3/field-vfx';
 import {EffectGlow} from '../battle-v3/effect-glow';
+import type {SequencePlan} from '../battle-v3/sequence';
 type Point={x:number;y:number};
 interface Particle {active:boolean;born:number;life:number;source:string;target:string;layer:PaintedLayer|null;recipe:PaintedRecipe|null;index:number;total:number;stamp:HTMLCanvasElement|null;origin:Point;end:Point;captured:boolean;impact:boolean}
 const floorLayer:PaintedLayer={glyph:'ring',motion:'expand',anchor:'caster',phase:'contact',socket:'feet',count:1,size:1.3,spread:.1,opacity:.5,accent:false,ground:true,turns:0,delay:0,life:.6};
@@ -38,6 +39,7 @@ export class PaintedVfx {
  }
  private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
  cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors'],cues:readonly SpineCue[]){
+  if((frame.plan as SequencePlan).fixedTiming&&frame.plan.ultimate&&frame.elapsed<600)return;
   // A working designer export remains the highest-priority source. Failed paint
   // loads fall back to the established renderer instead of leaving a blank hit.
   if(this.useLayered&&this.layered.handles(frame.plan)&&!this.overrides.effects.has(frame.plan.presentationId??frame.plan.skillId)){this.stats.cues++;return;}

@@ -6,6 +6,7 @@ import {chargeEvent} from '../depth/card-action-plan';
 import {stageLayoutC2} from '../stage/layout-c2';
 import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline';
 import type {PackedPaint} from './atlas';
+import type {SequencePlan} from '../battle-v3/sequence';
 import packedManifest from '../../../../../../assets/cardrpg-look/vfx-packed/manifest.json';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
@@ -48,7 +49,9 @@ export class LayeredVfx {
  private renderClip(c:CanvasRenderingContext2D,view:SceneView,width:number,height:number,id:string,passiveTarget?:string){
   const frame=view.frame!,plan=frame.plan,timeline=PAINT_TIMELINES.get(id)!,image=this.images.get(id)!;
   if(passiveTarget&&frame.elapsed<plan.beats[2]!.start)return;
-  const at=passiveTarget?timeline.impact+(frame.elapsed-plan.beats[2]!.start)*(view.reducedMotion?2:1):paintTime(timeline,frame.elapsed,plan.duration,plan.beats[2]!.start,view.reducedMotion);
+  const castStart=(plan as SequencePlan).fixedTiming&&plan.ultimate?600:0;
+  const at=passiveTarget?timeline.impact+(frame.elapsed-plan.beats[2]!.start)*(view.reducedMotion?2:1):paintTime(timeline,frame.elapsed,plan.duration,plan.beats[2]!.start,view.reducedMotion,castStart);
+  if(at<0)return;
   const charging=!passiveTarget&&!!chargeEvent(plan);
   const targets:string[]=[];
   if(passiveTarget||charging)targets.push(passiveTarget??plan.actorId);

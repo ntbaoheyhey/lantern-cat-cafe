@@ -13,7 +13,11 @@ export function samplePaint(layer:PaintLayer,time:number):PaintKey|null {
  return {t:time,x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,sx:a.sx+(b.sx-a.sx)*t,sy:a.sy+(b.sy-a.sy)*t,rotate:a.rotate+(b.rotate-a.rotate)*t,alpha:a.alpha+(b.alpha-a.alpha)*t};
 }
 /** Preserve rules contact exactly, independently of authored clip length. Calm mode shortens the tail. */
-export function paintTime(timeline:PaintTimeline,elapsed:number,planDuration:number,planImpact:number,reduced=false):number {
+export function paintTime(timeline:PaintTimeline,elapsed:number,planDuration:number,planImpact:number,reduced=false,castStart=0):number {
+ // Fixed ultimates reserve the first 600 ms for the in-field focus. Retiming
+ // the cast interval (rather than just hiding it) preserves its wind-up.
+ if(elapsed<castStart)return -1;
+ elapsed-=castStart;planDuration-=castStart;planImpact-=castStart;
  const before=elapsed<=planImpact;
  // A longer rules recovery must not stretch a 1.2s painting beyond its budget.
  const tail=Math.min(planDuration-planImpact,timeline.duration-timeline.impact);

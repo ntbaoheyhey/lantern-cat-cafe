@@ -116,5 +116,17 @@
     "log": "reports/v3-feel/Q1-fixed-regression.log",
     "started": "2026-11-14T06:41:17.380987+00:00",
     "finished": true
+  },
+  "q1ClockCapture": {
+    "pid": 9682,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q1"
+    ],
+    "log": "reports/v3-feel/Q1-capture-clock-fixed.log",
+    "started": "2026-11-14T06:55:24.080283+00:00",
+    "finished": true
   }
 }

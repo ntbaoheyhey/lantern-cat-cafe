@@ -4,6 +4,19 @@ import {paintTime,samplePaint,validatePaint} from './timeline';
 import {pilotFixture} from './fixture';
 
 describe('painted contact timing',()=>{
+ it('reserves ultimate focus and retimes the complete cast without moving contact',()=>{
+  for(const timeline of PAINT_TIMELINES.values())for(const reduced of [false,true]){
+   for(const at of [0,200,599]){
+    const time=paintTime(timeline,at,2200,1100,reduced,600);
+    expect(timeline.layers.every(layer=>samplePaint(layer,time)===null)).toBe(true);
+   }
+   expect(paintTime(timeline,600,2200,1100,reduced,600)).toBe(0);
+   expect(paintTime(timeline,850,2200,1100,reduced,600)).toBe(timeline.impact/2);
+   expect(paintTime(timeline,1100,2200,1100,reduced,600)).toBe(timeline.impact);
+   const end=paintTime(timeline,2200,2200,1100,reduced,600);
+   expect(timeline.layers.every(layer=>samplePaint(layer,end)===null)).toBe(true);
+  }
+ });
  it('keeps every pilot aligned to actual four-unit rules contacts at all playback speeds',()=>{
   expect(PAINT_TIMELINES.size).toBeGreaterThanOrEqual(3);
   for(const timeline of PAINT_TIMELINES.values()){

@@ -4,6 +4,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import {renderedTiming} from './render-timing.mjs';
 const base='reports/v3-feel/',item='Q1',folder=base+'REVIEW/'+item+'/';
 const fixtures=['wave1','wave3','boss'];
 const hash=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
@@ -37,11 +38,7 @@ for(const fixture of fixtures){
   if(plan?.ultimate&&elapsed>=0&&elapsed<600)focus.push({t:f.t,brightness:f.focus.brightness,outline:f.focus.outline,banner:f.sequence.banner});
  }
  for(const plan of plans){
-  const frames=d.frames.filter(f=>f.action?.key===plan.key),hit=frames.find(f=>f.action.elapsed>=plan.impact);
-  const previous=hit?frames[frames.indexOf(hit)-1]:null;
-  observed.push({id:plan.id,actor:plan.actorId,skill:plan.skillId,tier:plan.tier,clockStart:plan.clockStart,duration:plan.duration,impact:plan.impact,
-   firstVisible:frames[0]?.t,lastVisible:frames.at(-1)?.t,firstContact:hit?.t,contactWallOffsetMs:hit?(hit.t-plan.clockStart)*1000:null,
-   contactBracketMs:hit&&previous?(hit.t-previous.t)*1000:null});
+  const timing=renderedTiming(plan,d.frames);if(timing)observed.push(timing);
  }
  const overlaps=d.plans.slice(1).map((p,i)=>({from:d.plans[i].id,to:p.id,overlapMs:Math.max(0,(d.plans[i].clockStart+d.plans[i].duration/1000-p.clockStart)*1000)})).filter(r=>r.overlapMs>0.001);
  const stats={fixture,recorded:d.recorded,frames:d.frames.length,cameraDefects,shakePx,shakeOutside,plateFrames,
@@ -57,12 +54,16 @@ for(const fixture of fixtures){
  add('plateFrames',fixture,plateFrames,evidence);
  // The tolerance above is numerical zero (world-to-pixel roundoff), not motion.
  for(const [tier,prefix] of [['basic','basic'],['ultimate','ultimate']]){
-  const set=plans.filter(p=>p.tier===tier);if(!set.length)continue;
-  add(prefix+'DurationMs',fixture,Math.max(...set.map(p=>p.duration)),evidence);
-  add(prefix+'DurationSpreadMs',fixture,Math.max(...set.map(p=>p.duration))-Math.min(...set.map(p=>p.duration)),evidence);
-  add(prefix+'ImpactMs',fixture,Math.max(...set.map(p=>p.impact)),evidence);
-  add(prefix+'ImpactSpreadMs',fixture,Math.max(...set.map(p=>p.impact))-Math.min(...set.map(p=>p.impact)),evidence);
-  add(tier==='basic'?'basicAnticipationEndMs':'focusEndMs',fixture,Math.max(...set.map(p=>p.beats[0].duration)),evidence);
+  const set=observed.filter(p=>p.tier===tier);if(!set.length)continue;
+  const durations=set.flatMap(p=>p.observedDurationMs===null?[]:[p.observedDurationMs]);
+  const impacts=set.flatMap(p=>p.observedImpactMs===null?[]:[p.observedImpactMs]);
+  for(const p of set){
+   add(prefix+'DurationMs',fixture,p.observedDurationMs,evidence);
+   add(prefix+'ImpactMs',fixture,p.observedImpactMs,evidence);
+   add(tier==='basic'?'basicAnticipationEndMs':'focusEndMs',fixture,p.observedAnticipationEndMs,evidence);
+  }
+  if(durations.length)add(prefix+'DurationSpreadMs',fixture,Math.max(...durations)-Math.min(...durations),evidence);
+  if(impacts.length)add(prefix+'ImpactSpreadMs',fixture,Math.max(...impacts)-Math.min(...impacts),evidence);
  }
  if(focus.length){
   add('focusBrightness',fixture,focus.reduce((a,b)=>Math.abs(a.brightness-.45)>Math.abs(b.brightness-.45)?a:b).brightness,evidence);
