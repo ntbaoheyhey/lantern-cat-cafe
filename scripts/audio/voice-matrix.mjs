@@ -14,11 +14,22 @@ const runtimeSources=runtimeSignature(runtimeRoot);
 const trial=process.env.VOICE_MATRIX_TRIAL??'current';
 if(!/^[a-zA-Z0-9-]+$/.test(trial))throw Error('Invalid matrix trial');
 const base=resolve(root,'reports/v3-shell/b2/q2'),out=resolve(base,'matrices',trial),rows=[];
-if(existsSync(resolve(out,'voice-matrix.json')))throw Error('Preserve measured matrix; choose a new trial label.');
+const matrixPath=resolve(out,'voice-matrix.json');
+if(existsSync(matrixPath)){
+ const previous=JSON.parse(readFileSync(matrixPath));
+ if(previous.trial!==trial||JSON.stringify(previous.runtimeSources)!==JSON.stringify(runtimeSources))throw Error('Preserve measured matrix; runtime changed, choose a new trial label.');
+ for(const row of previous.rows){
+  if(createHash('sha256').update(readFileSync(resolve(root,row.raw.path))).digest('hex')!==row.raw.sha256)throw Error('Matrix checkpoint was modified: '+row.raw.path);
+  rows.push(row);
+ }
+}
+const selected=process.env.VOICE_MATRIX_CASES?.split(',');
+if(selected?.some(key=>!fixtures.fixtures.some(f=>[1,2,3].some(speed=>key===`${f.id}:${speed}`))))throw Error('Unknown matrix case');
 mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
 try{
  for(const fixture of fixtures.fixtures)for(const speed of [1,2,3]){
+  if(selected&&!selected.includes(`${fixture.id}:${speed}`)||rows.some(row=>row.fixture===fixture.id&&row.speed===speed))continue;
   const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3','{"disabled":true}');});

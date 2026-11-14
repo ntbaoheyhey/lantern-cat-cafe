@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-13T21:14:48.239Z",
-  "trial": "q5-37-current",
+  "generatedAt": "2026-11-14T01:21:29.773Z",
+  "trial": "44-s4-lead-in6",
   "integration": {
-    "generatedAt": "2026-11-13T20:58:26.422Z",
-    "aHead": "fc95f4898d8168013841e23f71174cf0287b2221",
-    "bHead": "422585ca577077732b86bb3f039eae48ad649984",
+    "generatedAt": "2026-11-14T01:02:47.693Z",
+    "aHead": "003505e95960422417f57c1da59e80f272fdc04b",
+    "bHead": "818b29b8b39379b37d1d3f2d1a5083785fc76aee",
     "out": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
     "base": [
       "apps/web",
@@ -37,15 +37,15 @@
     "signatures": [
       {
         "path": "apps/web/src/game/cardrpg/depth/model.ts",
-        "sha256": "f11706644b4227483e4d0bbb62cc6d1a91f3aaf8394176bfffaf8c8ed751464f"
+        "sha256": "f8fbc6a427e30cde02c895e46d1c75a05c0221a33107f83ed624dc6f8111dbc5"
       },
       {
         "path": "apps/web/src/game/cardrpg/battle-v3/voice-windows.ts",
-        "sha256": "09a863a6e078dd13de660f61d7c2799f8b3495344742fc53898830b29742cedf"
+        "sha256": "28860d2ffa001a9a0c60c9e92e74f18da98b5e44c9282699d214d0afc7d39452"
       },
       {
         "path": "apps/web/src/audio/engine.ts",
-        "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
+        "sha256": "7249bf719e212df12d9e1b07bc7afab9bfd155c1e7bb93314a65426830606d57"
       },
       {
         "path": "apps/web/src/audio/voice-callouts.json",
@@ -53,7 +53,7 @@
       },
       {
         "path": "apps/web/public/audio/manifest.json",
-        "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+        "sha256": "b56b03c70fa2152606fe5e87aa7742fa4c42d4cdb352402cef3f206e1fcd6cce"
       }
     ],
     "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit."
@@ -437,7 +437,7 @@
     },
     {
       "path": "apps/web/public/audio/manifest.json",
-      "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+      "sha256": "b56b03c70fa2152606fe5e87aa7742fa4c42d4cdb352402cef3f206e1fcd6cce"
     },
     {
       "path": "apps/web/public/audio/menu-forge.mp3",
@@ -520,6 +520,14 @@
       "sha256": "3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d"
     },
     {
+      "path": "apps/web/public/audio/score-dawn.mp3",
+      "sha256": "8b61ecf285767f8a58da85446ddf51df9101a611400514e99eb9e38df4392a7e"
+    },
+    {
+      "path": "apps/web/public/audio/score-dawn.webm",
+      "sha256": "ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7"
+    },
+    {
       "path": "apps/web/public/audio/voice.mp3",
       "sha256": "c52b11912be8cd75057534319a1af7be25015a8ea3918a4dea1fc5b226197bd7"
     },
@@ -533,11 +541,11 @@
     },
     {
       "path": "apps/web/src/audio/cues.ts",
-      "sha256": "15d9a2bd0549f7163c73297a59c5289d15a830895fc31ed6a6fb6740c92526a7"
+      "sha256": "ab891c406e5dcb16f9fb0ead4b1e0557f3e4d2ec67f895cbee90326963e2e74c"
     },
     {
       "path": "apps/web/src/audio/engine.ts",
-      "sha256": "c689776031ff8513250a97fb55eeac21aeb7a3aa364ec25ea4429140775dcb92"
+      "sha256": "7249bf719e212df12d9e1b07bc7afab9bfd155c1e7bb93314a65426830606d57"
     },
     {
       "path": "apps/web/src/audio/voice-callouts.json",
@@ -545,7 +553,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/depth/model.ts",
-      "sha256": "f11706644b4227483e4d0bbb62cc6d1a91f3aaf8394176bfffaf8c8ed751464f"
+      "sha256": "f8fbc6a427e30cde02c895e46d1c75a05c0221a33107f83ed624dc6f8111dbc5"
     }
   ],
   "method": "B source-start method, actual selected sprite duration/pitch, single-voice stop policy and40ms jitter tolerance. Real wall clock and original production engine.",
@@ -553,208 +561,209 @@
     {
       "fixture": "wave1",
       "speed": 1,
-      "seconds": 30.029,
+      "seconds": 30.833,
       "ultimateRequired": 4,
       "ultimatePlayed": 4,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.495899999996026,
+      "meanBarkIntervalSeconds": 7.5047333333293595,
       "parity": true,
       "errors": [],
       "played": 6,
       "interrupted": 0,
       "suppressed": {
-        "cadence": 7
+        "cadence": 7,
+        "priority": 1
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x1.json.gz",
-        "sha256": "c777e052a640048a197ad18e05444e397c43bbcfcd946ae1043acad9b571f5d9"
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave1-x1.json.gz",
+        "sha256": "e768ef22e62147fad6dc08eabaf9f585770e1cd2cd2d207caf08c9f77045d59d"
       }
     },
     {
       "fixture": "wave1",
       "speed": 2,
-      "seconds": 30.683,
-      "ultimateRequired": 8,
-      "ultimatePlayed": 8,
-      "ultimateInterrupted": 0,
-      "skillPlayed": 2,
-      "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.50940000000596,
-      "parity": true,
-      "errors": [],
-      "played": 10,
-      "interrupted": 0,
-      "suppressed": {
-        "cadence": 6,
-        "superseded": 1,
-        "priority": 1
-      },
-      "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x2.json.gz",
-        "sha256": "da0040741e3d08ba44d274e54ed29e6d998a16f248ce2bf0eee48bbf1d3f1fa9"
-      }
-    },
-    {
-      "fixture": "wave1",
-      "speed": 3,
-      "seconds": 30.25,
-      "ultimateRequired": 8,
-      "ultimatePlayed": 8,
-      "ultimateInterrupted": 0,
-      "skillPlayed": 2,
-      "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.491199999998013,
-      "parity": true,
-      "errors": [],
-      "played": 10,
-      "interrupted": 0,
-      "suppressed": {
-        "cadence": 8,
-        "priority": 1
-      },
-      "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave1-x3.json.gz",
-        "sha256": "cb8fbf25f62beaa9cb24e78e9a87cfcc2c3e9baffaa5e45ddd3463321838330e"
-      }
-    },
-    {
-      "fixture": "wave3",
-      "speed": 1,
-      "seconds": 32.715,
-      "ultimateRequired": 4,
-      "ultimatePlayed": 4,
-      "ultimateInterrupted": 0,
-      "skillPlayed": 3,
-      "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.493566666662693,
-      "parity": true,
-      "errors": [],
-      "played": 7,
-      "interrupted": 0,
-      "suppressed": {
-        "cadence": 8,
-        "priority": 1
-      },
-      "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x1.json.gz",
-        "sha256": "858314b4e026b0a81123d60a1da8e7ca0eeb2cfbb0b985e8d55ee9e2369fbe20"
-      }
-    },
-    {
-      "fixture": "wave3",
-      "speed": 2,
-      "seconds": 30.98,
+      "seconds": 32.729,
       "ultimateRequired": 6,
       "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
       "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.503566666662692,
-      "parity": true,
-      "errors": [],
-      "played": 8,
-      "interrupted": 0,
-      "suppressed": {
-        "cadence": 9,
-        "priority": 1
-      },
-      "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x2.json.gz",
-        "sha256": "b06b613d07c5d38efb4e460a3d000e4259fdb452a0588c23f791ad07cfba5bdc"
-      }
-    },
-    {
-      "fixture": "wave3",
-      "speed": 3,
-      "seconds": 31.231,
-      "ultimateRequired": 8,
-      "ultimatePlayed": 8,
-      "ultimateInterrupted": 0,
-      "skillPlayed": 2,
-      "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.497933333337308,
-      "parity": true,
-      "errors": [],
-      "played": 10,
-      "interrupted": 0,
-      "suppressed": {
-        "cadence": 8,
-        "priority": 2
-      },
-      "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-wave3-x3.json.gz",
-        "sha256": "ee0d50e9ee7e6fe78c81d5264803c588da6724b4af1ff575c268616f25dfd536"
-      }
-    },
-    {
-      "fixture": "boss",
-      "speed": 1,
-      "seconds": 34.113,
-      "ultimateRequired": 6,
-      "ultimatePlayed": 6,
-      "ultimateInterrupted": 0,
-      "skillPlayed": 2,
-      "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.513633333335321,
+      "meanBarkIntervalSeconds": 8.057933333337308,
       "parity": true,
       "errors": [],
       "played": 8,
       "interrupted": 0,
       "suppressed": {
         "cadence": 5,
+        "priority": 3
+      },
+      "raw": {
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave1-x2.json.gz",
+        "sha256": "b8f2dc0278d7db9d40947c85dd6212a785313986117ea90fc7a986649303e952"
+      }
+    },
+    {
+      "fixture": "wave1",
+      "speed": 3,
+      "seconds": 38.372,
+      "ultimateRequired": 8,
+      "ultimatePlayed": 8,
+      "ultimateInterrupted": 0,
+      "skillPlayed": 1,
+      "skillInterrupted": 0,
+      "meanBarkIntervalSeconds": 7.505875,
+      "parity": true,
+      "errors": [],
+      "played": 10,
+      "interrupted": 0,
+      "suppressed": {
+        "cadence": 6,
+        "priority": 3
+      },
+      "raw": {
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave1-x3.json.gz",
+        "sha256": "ef62375321ee80781d6c7e58615a0d124746614040ac71f0e5ba499583d7c160"
+      }
+    },
+    {
+      "fixture": "wave3",
+      "speed": 1,
+      "seconds": 34.762,
+      "ultimateRequired": 4,
+      "ultimatePlayed": 4,
+      "ultimateInterrupted": 0,
+      "skillPlayed": 3,
+      "skillInterrupted": 0,
+      "meanBarkIntervalSeconds": 7.6868333333333325,
+      "parity": true,
+      "errors": [],
+      "played": 7,
+      "interrupted": 0,
+      "suppressed": {
+        "cadence": 7,
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x1.json.gz",
-        "sha256": "7411c74a902c272a5f24588112ea4d0c067bf0415d834db419edc99b004c35a8"
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave3-x1.json.gz",
+        "sha256": "9dc0d10360ac1bacaafa3a8996038c8d7c41f5b11f0637d24ea0c3717f58a270"
+      }
+    },
+    {
+      "fixture": "wave3",
+      "speed": 2,
+      "seconds": 30.286,
+      "ultimateRequired": 4,
+      "ultimatePlayed": 4,
+      "ultimateInterrupted": 0,
+      "skillPlayed": 2,
+      "skillInterrupted": 0,
+      "meanBarkIntervalSeconds": 7.506033333331346,
+      "parity": true,
+      "errors": [],
+      "played": 7,
+      "interrupted": 1,
+      "suppressed": {
+        "cadence": 8,
+        "priority": 1
+      },
+      "raw": {
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave3-x2.json.gz",
+        "sha256": "3c3180cf3c746f21be19d615e8ff16b8716148820e1d328cbf3cb1902ef4e450"
+      }
+    },
+    {
+      "fixture": "wave3",
+      "speed": 3,
+      "seconds": 32.737,
+      "ultimateRequired": 6,
+      "ultimatePlayed": 6,
+      "ultimateInterrupted": 0,
+      "skillPlayed": 2,
+      "skillInterrupted": 0,
+      "meanBarkIntervalSeconds": 8.04963333333532,
+      "parity": true,
+      "errors": [],
+      "played": 8,
+      "interrupted": 0,
+      "suppressed": {
+        "cadence": 7,
+        "superseded": 1,
+        "priority": 2
+      },
+      "raw": {
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-wave3-x3.json.gz",
+        "sha256": "faa7bb672cfaf437874019b72a9de6fb0d845476fb12372de57a1a21a3f47ee1"
       }
     },
     {
       "fixture": "boss",
-      "speed": 2,
-      "seconds": 32.124,
-      "ultimateRequired": 10,
-      "ultimatePlayed": 10,
+      "speed": 1,
+      "seconds": 38.913,
+      "ultimateRequired": 6,
+      "ultimatePlayed": 6,
       "ultimateInterrupted": 0,
-      "skillPlayed": 1,
+      "skillPlayed": 2,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.489033333331346,
+      "meanBarkIntervalSeconds": 7.56004999999702,
       "parity": true,
       "errors": [],
-      "played": 11,
+      "played": 8,
       "interrupted": 0,
       "suppressed": {
         "cadence": 6,
         "priority": 2
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x2.json.gz",
-        "sha256": "fa0f1311608da659233dbaf7cb537c5915e9d4deb344f73cdaf057738015209f"
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-boss-x1.json.gz",
+        "sha256": "05159cb833eadd1f4e822b1cd9931b1f5777033b8dbdc377acbf6f9f0db6bdfa"
+      }
+    },
+    {
+      "fixture": "boss",
+      "speed": 2,
+      "seconds": 30.674,
+      "ultimateRequired": 6,
+      "ultimatePlayed": 6,
+      "ultimateInterrupted": 0,
+      "skillPlayed": 1,
+      "skillInterrupted": 0,
+      "meanBarkIntervalSeconds": 7.491466666668654,
+      "parity": true,
+      "errors": [],
+      "played": 7,
+      "interrupted": 0,
+      "suppressed": {
+        "cadence": 7,
+        "priority": 1
+      },
+      "raw": {
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-boss-x2.json.gz",
+        "sha256": "12897651ff670d75649d919d84a55da94bfa5b0da6b7eae7a1d287ebe6fd50b7"
       }
     },
     {
       "fixture": "boss",
       "speed": 3,
-      "seconds": 30.807,
-      "ultimateRequired": 10,
-      "ultimatePlayed": 10,
+      "seconds": 36.014,
+      "ultimateRequired": 8,
+      "ultimatePlayed": 8,
       "ultimateInterrupted": 0,
       "skillPlayed": 1,
       "skillInterrupted": 0,
-      "meanBarkIntervalSeconds": 7.4925333333313455,
+      "meanBarkIntervalSeconds": 9.124600000003975,
       "parity": true,
       "errors": [],
-      "played": 11,
+      "played": 9,
       "interrupted": 0,
       "suppressed": {
-        "cadence": 8,
-        "priority": 1
+        "cadence": 5,
+        "priority": 3
       },
       "raw": {
-        "path": "reports/v3-shell/b2/q2/matrices/q5-37-current/voice-boss-x3.json.gz",
-        "sha256": "4fcae59ac03376a400c090a97b08aba46ed50ed2925e09ac238ef8666f50ff7e"
+        "path": "reports/v3-shell/b2/q2/matrices/44-s4-lead-in6/voice-boss-x3.json.gz",
+        "sha256": "0ead678cb944aa4009553ae0f5f3e09c8420b7fa31ee40a3458daa31b4559566"
       }
     }
   ]
