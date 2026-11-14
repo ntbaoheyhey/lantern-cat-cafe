@@ -1,13 +1,13 @@
 /** Durable full regression receipt. Never suppress failing exit codes. */
 import {spawn,execFileSync} from 'node:child_process';
-import {createWriteStream,readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {createWriteStream,readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
 import {resolve,relative} from 'node:path';
 import {createHash} from 'node:crypto';
 const root=resolve(import.meta.dirname,'../..'),item=process.argv[2];
 if(!/^[A-Z0-9-]+$/.test(item??''))throw Error('Supply a unique item label');
 const out=resolve(root,'reports/v3-feel/tests');mkdirSync(out,{recursive:true});
 const results=[];
-const commands=[['typecheck',['pnpm','-r','typecheck']],['unit',['pnpm','test']],['parity',['pnpm','--filter','@taskbar-hero/web','exec','vitest','run','src/game/cardrpg/battle-v3/controls.test.ts']],['browser',['python3','scripts/v3feel/run-browser-suite.py',item.toLowerCase()]],['aLane',['node','scripts/v3a2/check-gates.mjs']],['bLane',['node','scripts/v3b2/check-gates.mjs']]];
+const commands=[['typecheck',['pnpm','-r','typecheck']],['unit',['pnpm','test']],['parity',existsSync(resolve(root,'reports/v3-feel/parity-new.json'))?['node','scripts/v3feel/parity.mjs','check']:['pnpm','--filter','@taskbar-hero/web','exec','vitest','run','src/game/cardrpg/battle-v3/controls.test.ts']],['browser',['python3','scripts/v3feel/run-browser-suite.py',item.toLowerCase()]],['aLane',['node','scripts/v3a2/check-gates.mjs']],['bLane',['node','scripts/v3b2/check-gates.mjs']]];
 for(const [id,command] of commands){
  const path=resolve(out,`${item}-${id}.log`),log=createWriteStream(path),started=new Date().toISOString();
  const child=spawn(command[0],command.slice(1),{cwd:root,stdio:['ignore','pipe','pipe']});child.stdout.pipe(log);child.stderr.pipe(log);

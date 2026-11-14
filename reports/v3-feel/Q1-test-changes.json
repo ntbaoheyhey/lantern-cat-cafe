@@ -1,0 +1,354 @@
+{
+  "at": "2026-11-14T06:10:56.669490+00:00",
+  "cases": [
+    {
+      "file": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.test.ts",
+      "before": [
+        "gives every active one specific voice and every ultimate two phases with a single SFX owner",
+        "keeps paused and gallery frames silent and never repeats a cue on redraw",
+        "caps a late multi-target impact at six cues in a hundred milliseconds",
+        "holds a due bark when an authored callout is about to start and resumes it afterwards",
+        "fits a bark before a real-time lead-in without over-reserving at \u00d7%s"
+      ],
+      "after": [
+        "uses weapon cues for basics and at most one ultimate callout at focus start",
+        "keeps paused and gallery frames silent and never repeats a cue on redraw",
+        "uses one impact cue for a simultaneous hit on many recipients",
+        "never starts optional chatter before or after an ultimate callout",
+        "cannot reintroduce chatter through archived lead-in metadata at \u00d7%s"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/battle-v3/motion.test.ts",
+      "before": [
+        "uses a deferred ultimate wind-up for one moving approach and hands off before the plate",
+        "moves every archetype through anticipation, strike, return without mutating the event plan",
+        "reacts to actual damage recipients, including counter-damage, and settles exactly",
+        "lands at the hero spot before the cut-in and seeks identically in reverse order",
+        "holds the camera through contact, restores framing, and mirrors enemy attacks",
+        "fits an action shot without clipping the upper row or a returning actor",
+        "leaves the ultimate plate camera intact and resolves the field shot through a long spoken release",
+        "finishes the landing squash before a long spoken recovery ends",
+        "keeps idle feet planted, phases independent and seeks deterministic",
+        "mirrors every enemy archetype through travel, strike and recovery without changing timing",
+        "gives every target of a simultaneous multi-target hit its own recoil and flash",
+        "braces actual recipients before contact without inventing a hit or moving bystanders"
+      ],
+      "after": [
+        "holds the caster in its slot during focus and ignores archived walk-up metadata",
+        "keeps every archetype planted with readable weight changes and an exact return",
+        "reacts to actual damage recipients, including counter-damage, and settles exactly",
+        "seeks an ultimate identically in reverse order without a hero-spot approach",
+        "keeps both side cameras fixed before, during and after contact",
+        "never reframes the stage to follow a moving or clipped actor",
+        "keeps archived spoken-release metadata from changing the fixed camera",
+        "finishes basic weight recovery within its 800 ms action",
+        "keeps idle feet planted, phases independent and seeks deterministic",
+        "mirrors enemy poses while retaining the same timing and bounded displacement",
+        "gives every simultaneous damage recipient its own recoil and flash",
+        "braces actual recipients without inventing a hit or moving bystanders"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/battle-v3/presentation.test.ts",
+      "before": [
+        "gives signatures active feedback and basics a smaller, flash-free contact",
+        "paints and clears fallback contact without leaving a stale ultimate plate",
+        "keeps the poster visible until a decoded plate is ready and restores it on media failure"
+      ],
+      "after": [
+        "gives enemies only Basic or Ultimate and limits shake to ultimate contact",
+        "shows only a local caster banner during focus and clears it on the next action",
+        "never loads a full-screen video or plate regardless of seeking and reduced motion"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/battle-v3/sequence.test.ts",
+      "before": [
+        "keeps resolved events and exact contact in %s",
+        "covers every cat with two different actives and a basic from four archetypes",
+        "shortens only after three full presentations and skips without a second resolution",
+        "C2 seeded combat remains byte-identical across presentation modes"
+      ],
+      "after": [
+        "keeps fixed timing and resolved events regardless of archived mode %s",
+        "exposes exactly one Basic and Ultimate per cat while preserving archived effect assets",
+        "repeated ultimates keep the same beat and cannot skip a nonexistent plate",
+        "C2 seeded combat remains byte-identical across archived presentation preferences"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/battle-v3/voice-windows.test.ts",
+      "before": [
+        "keeps the whole deferred wind-up and its spoken tracks in sync at \u00d7%s",
+        "finishes every required spoken take before the next voice or action at \u00d7%s",
+        "preserves final-hit slow motion inside a spoken window and reduced-motion speech timing",
+        "keeps ordinary basic attacks at the selected speed and leaves the full-plate contact unchanged"
+      ],
+      "after": [
+        "never lets an old speech lead-in move the fixed beat at \u00d7%s",
+        "scales every live Basic and Ultimate uniformly at \u00d7%s",
+        "keeps final hits and reduced motion on the same fixed clock",
+        "keeps basic and ultimate contact fixed with no plate or speech windows"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/OutcomeV4.test.tsx",
+      "before": [
+        "explains the recorded %s/%s plan and preserves its actual decision",
+        "reads each decision\u2019s own plan when the surrounding battle plan differs",
+        "formats complete version1 receipts and preserves unfamiliar or incomplete recorded text",
+        "does not show a back-row percentage without incoming HP damage (%s)",
+        "states the back-row share of incoming HP damage only (rear=%s)"
+      ],
+      "after": [
+        "explains the recorded %s/%s plan and preserves its actual decision",
+        "reads each decision\u2019s own plan when the surrounding battle plan differs",
+        "formats complete version1 receipts and preserves unfamiliar or incomplete recorded text",
+        "does not show a back-row percentage without incoming HP damage (%s)",
+        "states the back-row share of incoming HP damage only (rear=%s)"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/battle-presentation.test.ts",
+      "before": [
+        "presents all three A6 boss phases from the real thresholds while retaining the two legacy phases",
+        "holds Burn-triggered phase %s and its helpers until the round beat",
+        "keeps direct-hit phase %s and its helpers on the action impact",
+        "preserves an action phase when its following round tick reaches the next phase",
+        "holds HP, KO, round and order until their presentation beat while rules resolve once",
+        "separates action HP, reflected damage and round ticks into a single bounded round beat",
+        "keeps an imminent KO visible during anticipation and handles revival values exactly",
+        "restores a pending impact after preview, honors pause and skips a moment cleanly",
+        "fits every gallery action inside the x1 pacing budget including hit stop and kill settle",
+        "advances presentation at %sx and preserves the watched rules result"
+      ],
+      "after": [
+        "presents all three A6 boss phases from the real thresholds while retaining the two legacy phases",
+        "holds Burn-triggered phase %s and its helpers until the round beat",
+        "keeps direct-hit phase %s and its helpers on the action impact",
+        "preserves an action phase when its following round tick reaches the next phase",
+        "holds HP, KO, round and order until their presentation beat while rules resolve once",
+        "separates action HP, reflected damage and round ticks into a single bounded round beat",
+        "keeps an imminent KO visible during anticipation and handles revival values exactly",
+        "restores a pending impact after preview, honors pause and skips a moment cleanly",
+        "fits every gallery action inside the x1 pacing budget including hit stop and kill settle",
+        "advances presentation at %sx and preserves the watched rules result"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/battle-summary.test.ts",
+      "before": [
+        "sums actual HP damage, healing and damage taken without double-counting defeat events",
+        "does not call a Bleed-cancelled choice the first ultimate (A6=$0)",
+        "leaves biggest hit empty when every recorded strike was fully blocked",
+        "leaves the star unassigned without a crew contribution (%s)",
+        "keeps a support-only star when recorded %s is positive",
+        "keeps enemy ultimates separate and uses the first actual crew cast after a Daze interruption",
+        "reports actual Rupture HP loss through shields (incoming=$incoming, HP=$hp)"
+      ],
+      "after": [
+        "sums actual HP damage, healing and damage taken without double-counting defeat events",
+        "does not call a Bleed-cancelled choice the first ultimate (A6=$0)",
+        "leaves biggest hit empty when every recorded strike was fully blocked",
+        "leaves the star unassigned without a crew contribution (%s)",
+        "keeps a support-only star when recorded %s is positive",
+        "keeps enemy ultimates separate and uses the first actual crew cast after a Daze interruption",
+        "reports actual Rupture HP loss through shields (incoming=$incoming, HP=$hp)"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/card-action-plan.test.ts",
+      "before": [
+        "changes presentation identity while preserving existing action and target IDs",
+        "gives each starter ultimate a bounded presentation duration",
+        "returns from preview to the precise in-progress battle without changing saved progress"
+      ],
+      "after": [
+        "changes presentation identity while preserving existing action and target IDs",
+        "gives each starter ultimate a bounded presentation duration",
+        "returns from preview to the precise in-progress battle without changing saved progress"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/model.test.ts",
+      "before": [
+        "presents the resolved A6 rage signature when rage fills after the round intent",
+        "keeps the offline entry free of storage access and writes",
+        "restores app progress and reports storage failures with manual recovery",
+        "mounts the battle scene when resuming a local or imported active encounter",
+        "starts a new lesson and resets without inheriting a paused battle",
+        "waits at Prepare, then completes a fully automatic watched fight",
+        "skips %s from a paused, partly watched fight and replays the same result",
+        "keeps lesson, immediate battle, reward settlement and improvement usable",
+        "restores an unstarted encounter to Prepare and a completed encounter to Result",
+        "previews every authored skill and enemy without mutating account progress"
+      ],
+      "after": [
+        "presents the resolved A6 rage signature when rage fills after the round intent",
+        "keeps the offline entry free of storage access and writes",
+        "restores app progress and reports storage failures with manual recovery",
+        "mounts the battle scene when resuming a local or imported active encounter",
+        "starts a new lesson and resets without inheriting a paused battle",
+        "waits at Prepare, then completes a fully automatic watched fight",
+        "skips %s from a paused, partly watched fight and replays the same result",
+        "keeps lesson, immediate battle, reward settlement and improvement usable",
+        "restores an unstarted encounter to Prepare and a completed encounter to Result",
+        "previews every live basic, ultimate, passive motif and enemy without mutating account progress"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/depth/passive-presentation.test.ts",
+      "before": [
+        "places the first-heal cleanse on the actual patient, and does not retrigger later",
+        "shows Mochi shelter only when the ally-shield passive adds self shield",
+        "requires a real Soot detonation and presents Panko riposte on Defend"
+      ],
+      "after": [
+        "places the first-heal cleanse on the actual patient, and does not retrigger later",
+        "shows Mochi shelter only when the ally-shield passive adds self shield",
+        "requires a real Soot detonation and presents Panko riposte on Defend"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/ui-v3/CatDetailsA6.test.tsx",
+      "before": [
+        "browses all four exact current effects without changing the account or losing preview navigation",
+        "discloses automatic ultimates from recruitment through growth, and keeps unowned cats recruitable",
+        "explains the current kit cooldowns without using their historical values",
+        "separates base effects from the active patrol bonus and clears completed-route bonuses"
+      ],
+      "after": [
+        "browses exactly Basic and Ultimate effects without changing the account or losing preview navigation",
+        "discloses automatic ultimates from recruitment through growth, and keeps unowned cats recruitable",
+        "explains the fixed Basic and Ultimate timings without historical cooldowns",
+        "separates base effects from the active patrol bonus and clears completed-route bonuses"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/ui-v3/CatPreviewA6.test.tsx",
+      "before": [
+        "opens the selected skill, previews freely and restores its trigger without changing the account",
+        "allows unowned previews without implying unlock, and returns from the gear miniature"
+      ],
+      "after": [
+        "opens the selected skill, previews freely and restores its trigger without changing the account",
+        "allows unowned previews without implying unlock, and returns from the gear miniature"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "apps/web/src/game/cardrpg/vfx-layered/timeline.test.ts",
+      "before": [
+        "keeps every pilot aligned to actual four-unit rules contacts at all playback speeds",
+        "shortens the calm tail without moving the hit and produces no layers after the clip",
+        "can scrub backwards with the same result as a fresh sample",
+        "does not stretch painted tails when combat has a longer recovery",
+        "rejects malformed intervals and unordered keys before playback"
+      ],
+      "after": [
+        "keeps every pilot aligned to actual four-unit rules contacts at all playback speeds",
+        "shortens the calm tail without moving the hit and produces no layers after the clip",
+        "can scrub backwards with the same result as a fresh sample",
+        "does not stretch painted tails when combat has a longer recovery",
+        "rejects malformed intervals and unordered keys before playback"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "packages/game-rules/src/cardrpg/depth/economy-c2.test.ts",
+      "before": [
+        "keeps Bellsteel Riposte bounded without adding a gear taunt, preserving native Panko and legacy replays",
+        "bounds the Rain Bell to one debuff stack per swap and preserves the legacy full-status cleanse",
+        "quotes the C2 Rain Bell stack limit and Bellsteel trigger without changing legacy item text",
+        "bounds Soft Collar opening shielding in C2 without changing legacy shielding or other cats",
+        "discloses normalized live source odds, including exhausted daily drops and exact templates",
+        "preserves the legacy rarity roll order and template pool for old saves",
+        "keeps the earned 24-pull guarantee and separate cat price when pacing gear invitations",
+        "uses the same advertised tailoring cost through the legacy recipe entry point",
+        "consumes ten distinct seals atomically, without accepting a forged balance as an extra receipt",
+        "prices Legendary selectors at their own quoted mark cost, keeping cat choices unchanged",
+        "recovers a useful full-shelf drop even after the earned-thread cap is exhausted"
+      ],
+      "after": [
+        "keeps Bellsteel Riposte bounded without adding a gear taunt, preserving native Panko and legacy replays",
+        "bounds the Rain Bell to one debuff stack per swap and preserves the legacy full-status cleanse",
+        "quotes the C2 Rain Bell stack limit and Bellsteel trigger without changing legacy item text",
+        "bounds Soft Collar opening shielding in C2 without changing legacy shielding or other cats",
+        "discloses normalized live source odds, including exhausted daily drops and exact templates",
+        "preserves the legacy rarity roll order and template pool for old saves",
+        "keeps the earned 24-pull guarantee and separate cat price when pacing gear invitations",
+        "uses the same advertised tailoring cost through the legacy recipe entry point",
+        "consumes ten distinct seals atomically, without accepting a forged balance as an extra receipt",
+        "prices Legendary selectors at their own quoted mark cost, keeping cat choices unchanged",
+        "recovers a useful full-shelf drop even after the earned-thread cap is exhausted"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "packages/game-rules/src/cardrpg/depth/feel-kit.test.ts",
+      "before": [],
+      "after": [
+        "normalizes old four-skill loadouts into Basic + Ultimate for every live cat",
+        "resolves enemy signatures only from full rage, including a previously charged ram"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "packages/game-rules/src/cardrpg/depth/link-source-c2.test.ts",
+      "before": [
+        "keeps a native link at 30% when its caster wears Hearthloom",
+        "uses the configured gear share, then allows the native skill to replace it",
+        "does not overwrite a living stronger skill link when Defend grants a gear link",
+        "preserves the legacy equipped-caster link behavior outside C2",
+        "values a weak gear link below a native skill link during auto-play"
+      ],
+      "after": [
+        "keeps a native link at 30% when its caster wears Hearthloom",
+        "uses the configured gear share, then allows the native skill to replace it",
+        "does not overwrite a living stronger skill link when Defend grants a gear link",
+        "preserves the legacy equipped-caster link behavior outside C2",
+        "values a weak gear link below a native skill link during auto-play"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "packages/game-rules/src/cardrpg/depth/outcome-v4.test.ts",
+      "before": [
+        "describes the selected plan without claiming it caused a manual action (legacy=%s)",
+        "counts only matching actor, focus and care receipts for the displayed plan",
+        "omits the tactic summary for absent or unfamiliar records",
+        "preserves measured effects ahead of the optional plan summary"
+      ],
+      "after": [
+        "describes the selected plan without claiming it caused a manual action (legacy=%s)",
+        "counts only matching actor, focus and care receipts for the displayed plan",
+        "omits the tactic summary for absent or unfamiliar records",
+        "preserves measured effects ahead of the optional plan summary"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    },
+    {
+      "file": "packages/game-rules/src/cardrpg/depth/route-upgrades.test.ts",
+      "before": [
+        "preserves rank ${rank} shield/healing amounts and status stacks in ${mode}"
+      ],
+      "after": [
+        "preserves rank ${rank} legacy effects and rejects retired actives in ${mode}"
+      ],
+      "reason": "F2/F3/F6/F7/F11: removed presentation assertions, two-skill kit checks, or explicit legacy fixtures."
+    }
+  ]
+}
