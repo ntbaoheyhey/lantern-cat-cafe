@@ -25,8 +25,20 @@ Ownership follows A2 §3.3 and B2 §3.3. No rules, thresholds, or Q9 acceptance 
 
 No product-source merge fixes needed. Lockfile unchanged; existing installed dependencies retained.
 
+Demo packaging only:
+- Reuse the existing A6 builder and loader with `--v3-demo`; the old output path and artifact stay untouched.
+- Add B's entrance, audio engine/controls, shell pages and wallet panel around the existing offline game entry.
+- Embed shipped public audio, cinematics, art, rigs, fonts and icons. A single file would exceed 60 MB, so the existing payload is split into script packs under `assets/`; no new bundler.
+- Resolve public resource URLs to restored Blob URLs for file://. Static chain mode is explicitly offline.
+- The demo Vite config redirects localhost to B's loopback fixture origin, fixing guest SIWE/CORS. It removes external font links because fonts are bundled locally.
+- A's turn-order HUD asks for twelve enemy `portrait.webp` paths omitted by B's public rig directories. A demo-only alias map serves the existing A face/art files in both live and static packaging. No new art or combat changes.
+
 Verification: workspace typecheck PASS; complete `pnpm test` PASS (2 pre-existing expected failures and 11 pre-existing skips); combat parity `battle-v3/controls.test.ts` PASS 2/2.
 
 ## Known demo gaps
 
-Pending runtime and static smoke verification. Q9 S4 remains paused and unaccepted.
+- Saved artifact is a folder, about 249 MB with all shipped audio/cinematics. Keep `assets/` beside `index.html`.
+- Live wallet/economy uses B's disposable local Anvil/API fixture; no public chain or funded real wallet is required. Chain state resets when the fixture restarts.
+- Static gameplay, forge and wallet panel work offline; chain balances/actions and guest sign-in require the live fixture. Save/import codes preserve offline progress; the offline account itself resets on reload.
+- Q9 S4 bark cadence remains paused and unaccepted. This task does not tune balance, gates, or presentation cadence.
+- Full smoke matrix is still in progress; update the final evidence once all four variants pass.
