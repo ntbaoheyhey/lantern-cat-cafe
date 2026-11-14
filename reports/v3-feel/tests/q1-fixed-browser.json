@@ -1,0 +1,40 @@
+{
+  "sourceCommit": "2e7461916e3bfcb3e5a82e6bf797dc8654294a32",
+  "groups": [
+    "local",
+    "server",
+    "fallback"
+  ],
+  "rows": [
+    {
+      "group": "local",
+      "exitCode": 1,
+      "passed": 374,
+      "minimumPassed": 375,
+      "started": "2026-11-14T06:43:43.663390+00:00",
+      "ended": "2026-11-14T06:48:33.689212+00:00",
+      "log": "reports/v3-feel/tests/q1-fixed-browser-local.log",
+      "sha256": "a13d86b7cbe9d4129aeb5bda2b55a27e6b1b0ed47487af2be3ca373bbbb58fd4"
+    },
+    {
+      "group": "server",
+      "exitCode": 0,
+      "passed": 52,
+      "minimumPassed": 52,
+      "started": "2026-11-14T06:48:33.689855+00:00",
+      "ended": "2026-11-14T06:48:54.292515+00:00",
+      "log": "reports/v3-feel/tests/q1-fixed-browser-server.log",
+      "sha256": "debaa73340251399b3d996e37e9af843730958271ab92795093a1e99dd68776f"
+    },
+    {
+      "group": "fallback",
+      "exitCode": 0,
+      "passed": 8,
+      "minimumPassed": 8,
+      "started": "2026-11-14T06:48:54.292986+00:00",
+      "ended": "2026-11-14T06:49:04.178758+00:00",
+      "log": "reports/v3-feel/tests/q1-fixed-browser-fallback.log",
+      "sha256": "dc7e4413875b73122c29c2bd1d961533eedb136674fe336e03e9ca1f3b2fcbb9"
+    }
+  ]
+}

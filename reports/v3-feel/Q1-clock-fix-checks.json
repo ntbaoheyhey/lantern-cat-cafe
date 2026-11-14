@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-14T06:55:05.396217+00:00",
+  "motionAndClockTests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "pointerBrowserCase": {
+    "passed": 1,
+    "failed": 0,
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        1440,
+        900
+      ],
+      [
+        1024,
+        600
+      ]
+    ]
+  },
+  "priorFullBrowserSuite": {
+    "passed": 434,
+    "total": 435,
+    "failure": "C2 battle controls have separate pointer targets: omitted opening More battle options"
+  },
+  "acceptance": "Q1 remains OPEN/FAIL; new three-fixture capture and full regression pending",
+  "evidence": [
+    {
+      "path": "reports/v3-feel/tests/q1-clock-targeted.log",
+      "sha256": "0351edbdcfb63c1fad2ae6a5a0d5ef9b6e16ef2ecb839aa82adb97f56c15e928"
+    },
+    {
+      "path": "reports/v3-feel/tests/q1-control-menu-targeted.log",
+      "sha256": "b96f0bf57bcef4f73a0e88de9153f466dee1b894c3541170a73b7fdffac034a5"
+    },
+    {
+      "path": "reports/v3-feel/tests/Q1-FIXED-regression.json",
+      "sha256": "efc346edc8620ca069f3deb1b02b6ce0260d185d795431f43dc8aec0a8309a8c"
+    },
+    {
+      "path": "reports/v3-feel/tests/q1-fixed-browser.json",
+      "sha256": "bcf7b1d95f4e476a306e4f5661349e175ba5ba459bbbbf7338784c24266731c8"
+    }
+  ]
+}

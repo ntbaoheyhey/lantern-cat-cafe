@@ -27,6 +27,17 @@ it('seeks an ultimate identically in reverse order without a hero-spot approach'
  const input=fixture(true),expected=actionPose({...input,elapsed:900});expect(expected).toMatchObject({x:0,y:0});
  actionPose({...input,elapsed:2100});expect(actionPose({...input,elapsed:900})).toEqual(expected);expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
 });
+it('keeps a reflected ranged hit planted without losing its reaction or changing damage',()=>{
+ const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}]));
+ const before=JSON.stringify(plan),impact=plan.beats[2]!.start;
+ for(let at=impact;at<impact+400;at+=1000/30){
+  const recoil=hitPose(plan,at,'cat',-1,720),planted=hitPose(plan,at,'cat',-1,720,true);
+  expect(planted).toEqual({...recoil,x:0,y:0});
+ }
+ const contact=hitPose(plan,impact+33,'cat',-1,720,true);
+ expect(contact.flash).toBe(1);expect(contact.sy).toBeLessThan(1);expect(contact.angle).not.toBe(0);
+ expect(JSON.stringify(plan)).toBe(before);
+});
 it('keeps both side cameras fixed before, during and after contact',()=>{
  const input=fixture();for(const side of ['party','enemy'])for(let elapsed=0;elapsed<=800;elapsed+=20)for(const tier of ['basic','active','ultimate'] as const)expect(actionCamera({...input,side,elapsed},tier)).toEqual({zoom:1,x:0,y:0,tilt:0});
 });

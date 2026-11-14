@@ -39,7 +39,7 @@ export function bracePose(plan:EffectPlan|null,elapsed:number,id:string,directio
  return p;
 }
 /** One visible impulse for each target, including counter-hits and damage over time. */
-export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number):RootPose {
+export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number,planted=false):RootPose {
  const p=neutralPose();if(!plan)return p;
  const hits=plan.events.filter(e=>e.type==='damage'&&e.targetIds.includes(id));
  const impact=plan.beats[2]!.start,scale=height/720;
@@ -50,7 +50,11 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
   p.angle+=direction*(hits[i]!.critical?.13:.07)*amount;p.sx+=.055*amount;p.sy-=.055*amount;
   p.flash=Math.max(p.flash,age<2000/30?1:0);
  }
- p.x=Math.max(-38*scale,Math.min(38*scale,p.x));return p;
+ p.x=Math.max(-38*scale,Math.min(38*scale,p.x));
+ // A ranged caster can receive reflected damage during its own action. Keep
+ // that slot planted while retaining squash, tilt and the contact flash.
+ if(planted){p.x=0;p.y=0;}
+ return p;
 }
 export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}
 

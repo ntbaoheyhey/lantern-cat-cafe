@@ -40,6 +40,7 @@ test('C2 battle controls have separate pointer targets at every supported viewpo
    m.fight();m.paused=true;m.autoContinue=false;m.notify(false);
   });
   await page.waitForFunction(()=>window.__depthReview!.sceneReady);
+  await page.getByRole('button',{name:'More battle options'}).click();
   const auto=page.getByRole('checkbox',{name:'Auto-next'});
   const box=await auto.boundingBox(),parent=await auto.locator('..').boundingBox();
   expect(box).not.toBeNull();expect(parent).not.toBeNull();
@@ -52,7 +53,6 @@ test('C2 battle controls have separate pointer targets at every supported viewpo
   await page.getByRole('button',{name:'Change playback speed'}).click();
   expect(await page.evaluate(()=>window.__depthReview!.state.settings.speed)).not.toBe(speed);
   await expect(auto).not.toBeChecked();
-  await page.getByRole('button',{name:'More battle options'}).click();
   await expect(page.getByRole('button',{name:'Read battle log'})).toBeVisible();
   await page.getByRole('button',{name:'More battle options'}).click();
   await page.getByRole('button',{name:'Skip to result'}).click();

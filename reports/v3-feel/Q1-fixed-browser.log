@@ -1,0 +1,79 @@
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:98195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:98213) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:98214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:98220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:98229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:98277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:98278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:98334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] 
+[WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] 
+[WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a6/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:98341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:98385) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] [classic] › e2e/odds-c2.spec.ts:36:1 › saved C2 tailoring and salvage Odds keep the workshop open on Escape
+  1) [classic] › e2e/odds-c2.spec.ts:36:1 › saved C2 tailoring and salvage Odds keep the workshop open on Escape 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog', { name: 'Gear workshop', exact: true }).getByLabel('Template', { exact: true })
+
+
+      41 |  await page.getByRole('button',{name:'Gear workshop',exact:true}).click();
+      42 |  const workshop=page.getByRole('dialog',{name:'Gear workshop',exact:true});
+    > 43 |  await workshop.getByLabel('Template',{exact:true}).selectOption('hearthloom-weapon-legendary');
+         |                                                     ^
+      44 |  let odds=await disclose(page,'Tailoring odds');
+      45 |  await expect(odds.dialog.getByLabel('seals').locator('..').locator('dd')).toHaveText('10');
+      46 |  await expect(odds.dialog.getByLabel('materials').locator('..').locator('dd')).toHaveText('200');
+        at /Users/bao/taskbar-hero-cardrpg-a6/apps/web/e2e/odds-c2.spec.ts:43:53
+
+    Error Context: ../../work/v3feel-e2e-local/odds-c2-saved-C2-tailoring-81f02-the-workshop-open-on-Escape-classic/error-context.md
+
+
+  1 failed
+    [classic] › e2e/odds-c2.spec.ts:36:1 › saved C2 tailoring and salvage Odds keep the workshop open on Escape 
+undefined
+/Users/bao/taskbar-hero-cardrpg-a6/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config ../../scripts/v3feel/playwright.config.mts --grep saved C2 tailoring --project classic

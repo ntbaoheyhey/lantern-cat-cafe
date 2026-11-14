@@ -232,7 +232,8 @@ export class SpineScene {
    if(!view.reducedMotion&&!view.model&&!iced){
     if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
     const from=this.homes.get(caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
-    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
+    const plantedCaster=!!plan&&unit.id===plan.actorId&&['throw','staff-cast','summon'].includes(attackMotion(entry.asset,plan));
+    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height,plantedCaster);
     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
     if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun'))rootPose=idlePose(worldTime,unit.id);

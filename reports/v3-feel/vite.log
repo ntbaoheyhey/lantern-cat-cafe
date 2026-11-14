@@ -65,3 +65,111 @@
 1:06:27 PM [vite] (client) hmr update /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/App.tsx
 1:06:27 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
 1:08:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
+1:11:50 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+1:12:10 PM [vite] (client) hmr update /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/App.tsx
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:19:29 PM [vite] (client) [Unhandled error] Error: Invalid cat skill kit
+ > ../../packages/game-rules/src/cardrpg/depth/battle.ts:258:183
+    256 |    const actors: Actor[] = setup.cats.map((c,index) => {
+    257 |      const cat = CAT_BY_ID[c.id];
+    258 |  ...h || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
+        |                                                                 ^
+    259 |      return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.fla...
+    260 |    });
+ > Module.createBattle ../../packages/game-rules/src/cardrpg/depth/battle.ts:256:37
+ > src/game/cardrpg/depth/CompanionPreview.tsx:36:23
+ > mountMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:9161:22
+ > Object.useMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28886:17
+ > exports.useMemo ../../node_modules/.pnpm/react@19.3.1/node_modules/react/cjs/react.development.js:1297:33
+ > CompanionPreview src/game/cardrpg/depth/CompanionPreview.tsx:33:18
+ > Object.react_stack_bottom_frame ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+
+1:19:29 PM [vite] (client) [console.warn] An error occurred in the <CompanionPreview> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:19:52 PM [vite] (client) [Unhandled error] Error: Invalid cat skill kit
+ > ../../packages/game-rules/src/cardrpg/depth/battle.ts:258:183
+    256 |    const actors: Actor[] = setup.cats.map((c,index) => {
+    257 |      const cat = CAT_BY_ID[c.id];
+    258 |  ...h || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
+        |                                                                 ^
+    259 |      return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.fla...
+    260 |    });
+ > Module.createBattle ../../packages/game-rules/src/cardrpg/depth/battle.ts:256:37
+ > src/game/cardrpg/depth/CompanionPreview.tsx:36:23
+ > mountMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:9161:22
+ > Object.useMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28886:17
+ > exports.useMemo ../../node_modules/.pnpm/react@19.3.1/node_modules/react/cjs/react.development.js:1297:33
+ > CompanionPreview src/game/cardrpg/depth/CompanionPreview.tsx:33:18
+ > Object.react_stack_bottom_frame ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+
+1:19:52 PM [vite] (client) [console.warn] An error occurred in the <CompanionPreview> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:24:21 PM [vite] (client) [Unhandled error] Error: Invalid cat skill kit
+ > ../../packages/game-rules/src/cardrpg/depth/battle.ts:258:183
+    256 |    const actors: Actor[] = setup.cats.map((c,index) => {
+    257 |      const cat = CAT_BY_ID[c.id];
+    258 |  ...h || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
+        |                                                                 ^
+    259 |      return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.fla...
+    260 |    });
+ > Module.createBattle ../../packages/game-rules/src/cardrpg/depth/battle.ts:256:37
+ > src/game/cardrpg/depth/CompanionPreview.tsx:36:23
+ > mountMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:9161:22
+ > Object.useMemo ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28886:17
+ > exports.useMemo ../../node_modules/.pnpm/react@19.3.1/node_modules/react/cjs/react.development.js:1297:33
+ > CompanionPreview src/game/cardrpg/depth/CompanionPreview.tsx:33:18
+ > Object.react_stack_bottom_frame ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:28571:19
+ > renderWithHooks ../../node_modules/.pnpm/react-dom@19.3.1_react@19.3.1/node_modules/react-dom/cjs/react-dom-client.development.js:8030:21
+
+1:24:21 PM [vite] (client) [console.warn] An error occurred in the <CompanionPreview> component.
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
+
+1:24:52 PM [vite] (client) hmr update /src/game/cardrpg/depth/CompanionPreview.tsx
+1:29:09 PM [vite] (client) page reload src/game/cardrpg/spine/events.ts
+1:29:09 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+1:31:58 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
+1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
+1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx

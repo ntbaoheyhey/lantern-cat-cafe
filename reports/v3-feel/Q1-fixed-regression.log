@@ -1,0 +1,12 @@
+{"id":"typecheck","pid":4470,"command":["pnpm","-r","typecheck"],"started":"2026-11-14T06:41:17.420Z"}
+typecheck: PASS (0)
+{"id":"unit","pid":4622,"command":["pnpm","test"],"started":"2026-11-14T06:41:33.407Z"}
+unit: PASS (0)
+{"id":"parity","pid":5617,"command":["node","scripts/v3feel/parity.mjs","check"],"started":"2026-11-14T06:43:37.591Z"}
+parity: PASS (0)
+{"id":"browser","pid":5716,"command":["python3","scripts/v3feel/run-browser-suite.py","q1-fixed"],"started":"2026-11-14T06:43:43.622Z"}
+browser: FAIL (1)
+{"id":"aLane","pid":7871,"command":["node","scripts/v3a2/check-gates.mjs"],"started":"2026-11-14T06:49:04.192Z"}
+aLane: FAIL (1)
+{"id":"bLane","pid":8026,"command":["node","scripts/v3b2/check-gates.mjs"],"started":"2026-11-14T06:49:05.046Z"}
+bLane: FAIL (1)

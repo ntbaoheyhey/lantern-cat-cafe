@@ -10,6 +10,9 @@ import {installOutputCapture} from '../audio/capture-page.mjs';
 const root=resolve(import.meta.dirname,'../..');
 const arg=(name,fallback)=>{const n=process.argv.indexOf('--'+name);return n<0?fallback:process.argv[n+1];};
 const item=arg('item','Q0'),selected=arg('fixture','all'),seconds=Number(arg('seconds','60'));
+// Opus packet boundaries may round a capture just under the requested length.
+// Record real battle audio past the endpoint, then trim; never pad silence.
+const recordSeconds=seconds+1;
 if(!/^[A-Z0-9-]+$/.test(item))throw Error('Invalid item');
 const out=resolve(root,'reports/v3-feel/REVIEW',item);mkdirSync(out,{recursive:true});
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
@@ -51,7 +54,7 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
   };
   s.last=0;s.raf=requestAnimationFrame(s.loop);m.nextStepAt=0;m.paused=false;m.notify(false);return start;
  });
- for(let elapsed=0;elapsed<seconds;elapsed+=15){await page.waitForTimeout(Math.min(15,seconds-elapsed)*1000);console.log(`${item} ${fixture.id}: ${Math.min(elapsed+15,seconds)}/${seconds}s`);}
+ for(let elapsed=0;elapsed<recordSeconds;elapsed+=15){await page.waitForTimeout(Math.min(15,recordSeconds-elapsed)*1000);console.log(`${item} ${fixture.id}: ${Math.min(elapsed+15,recordSeconds)}/${recordSeconds}s`);}
  await cdp.send('Page.stopScreencast');
  const capture=await page.evaluate(async()=>{
   if(!window.__feelCapture)throw Error('Page reloaded during capture. Do not edit browser source during a recording.');

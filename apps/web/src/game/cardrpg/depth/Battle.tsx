@@ -129,7 +129,9 @@ export function BattleView({ m }: { m: DepthModel }) {
     const tick = (now: number) => {
       const ready = scene.current?.ready ?? false;
       if (m.sceneReady !== ready) { m.sceneReady = ready; m.notify(false); }
-      m.tick(last ? Math.min(100, now - last) : 0); last = now;
+      // Both deltas must use the RAF timestamp. Mixing it with performance.now()
+      // accumulated positive callback jitter and made action beats run early.
+      m.tick(last ? Math.min(100, now - last) : 0, now); last = now;
       if (skillBanner.current) {
         skillBanner.current.hidden = !m.plan || m.animationAt >= 600 || m.galleryEffectOnly;
       }
