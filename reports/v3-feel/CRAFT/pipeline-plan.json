@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-14T05:08:43.848205+00:00",
+  "timingBasis": "User F3/F11; reference wall times explicitly not x1 targets",
+  "basic": {
+    "durationMs": 800,
+    "anticipationEndMs": 250,
+    "impactMs": 350
+  },
+  "ultimate": {
+    "durationMs": 2200,
+    "focusEndMs": 600,
+    "impactMs": 1100
+  },
+  "poseHoldMs": 66.66666666666667,
+  "budgets": {
+    "atlasMaxDimension": 2048,
+    "atlasSheetsPerUltimate": 2,
+    "decodedBytesPerUltimate": 33554432,
+    "compressedBytesTargetPerUltimate": 2000000
+  },
+  "stepEstimatesMinutes": {
+    "register": 10,
+    "pose": 20,
+    "recipe": 10,
+    "author": 30,
+    "integrate": 20,
+    "sound": 15,
+    "capture": 20,
+    "review": 25
+  },
+  "stepTimesMeasured": false,
+  "remainingUltimatesEstimate": null,
+  "host": {
+    "arch": "arm64",
+    "blenderInPath": false
+  },
+  "noInstallRequired": true
+}

@@ -15,3 +15,7 @@ Demo supervisor 46445 on 5994/5997/8546 left untouched. Own ports limited to 599
 2026-11-14T04:23:42.358734+00:00 — New user request adds F13 and QR. Preserved earlier request as REQUEST-FEEL-before-F13.txt; REQUEST-FEEL.txt is now the verbatim current attachment. QR research + quality bar blocks Q1–Q3 animation/VFX edits. No animation code has changed. Existing Q0 evidence is resumed, not recreated.
 
 2026-11-14T04:48:11.765103+00:00 — Resume preserves all Q0 recordings and reviewed-frame notes. Q0 reaches its 60-minute cap with incomplete boss-frame/audio review and inherited browser/A/B failures; state OPEN, never DONE. Continue QR per section 0.5; no animation or rules code edited. Next Q0 method: explicit per-action frame + audio evidence and failure classification, not another broad blind run.
+
+2026-11-14T05:08:43.848205+00:00 — QR correction: B08 v2 43.1–44.1 was an ultimate follow-up, not a basic; replaced with v1 76.5–77.6 after frame inspection. B06/U02/U07 clips were extended before measurement. Timings are 10 fps wall samples at reference x2/x3; mask measurements are estimates, not alpha ground truth. Sound has not been heard. No animation code changed.
+
+2026-11-14T05:10:53.153490+00:00 - Extended B01/B07/U05 and inspected recovery frames: B01 n11-13, B07 n11, U05 n50-54. Previous incomplete windows preserved in JSON; B07 contact refined to n7-8. No audio listening claim.

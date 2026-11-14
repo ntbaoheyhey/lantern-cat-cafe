@@ -1,0 +1,76 @@
+PASS QR.principlesDocument: 1 samples | CRAFT/PRINCIPLES.md present and non-empty; the 12 principles applied to 2D game combat
+PASS QR.referenceDocument: 1 samples | CRAFT/REFERENCE-BREAKDOWN.md present and non-empty
+PASS QR.referenceBasics: 1 samples | 8 basics + 8 ultimates at 10 fps from the two OMG3Q videos
+PASS QR.referenceUltimates: 1 samples | 8 basics + 8 ultimates at 10 fps from the two OMG3Q videos
+PASS QR.referenceVideos: 1 samples | from the two OMG3Q videos
+PASS QR.referenceFps: 1 samples | 8 basics + 8 ultimates at 10 fps
+PASS QR.frameTimingCharts: 1 samples | 16 actions with frame timing charts: anticipation / contact / follow-through / recovery in frames
+PASS QR.referenceLayersMeasured: 1 samples | layers per action, peak effect area % of viewport, effect duration, directional streak count in REF-EFFECTS.json
+PASS QR.pipelineDocument: 1 samples | CRAFT/PIPELINE.md present and non-empty: inputs, tools, output format, size budget, time per step
+PASS QR.toolsDocument: 1 samples | CRAFT/TOOLS.md present and non-empty; recommendation per step
+PASS QR.toolsAssessed: 1 samples | >= 8 tools assessed; licence, install size, Apple Silicon, setup time, risk
+PASS QR.sourcesCited: 1 samples | >= 12 cited sources
+PASS QR.qualityDocument: 1 samples | CRAFT/QUALITY-BAR.md present and non-empty
+PASS QR.basicChecks: 1 samples | >= 15 basic-attack checks
+PASS QR.ultimateChecks: 1 samples | >= 20 ultimate checks
+PASS QR.characterChecks: 1 samples | >= 10 character checks
+OPEN QR.pilotQualityFraction: No samples | pilot REVIEW passes every QUALITY-BAR row with frame references
+OPEN QR.pilotFrameReferences: No samples | pilot REVIEW passes every QUALITY-BAR row with frame references
+OPEN QR.pilotStepTimes: No samples | time spent per step logged; measured time per step sets plan for other 12 ultimates
+OPEN QR.pilotsAttempted: No samples | max 3 pilots, then write blocker and best result in STATUS-VI.md and continue with best method
+PASS QR.vietnameseSummaryLines: 1 samples | STATUS-VI.md has a 10-line Vietnamese summary of method and any tool/model proposals
+OPEN QR.craft.B01: No samples | Basic ends at 800 ms +/- one captured frame; no extra lead-in. Evidence: pixels+clock.
+OPEN QR.craft.B02: No samples | First actual contact at 350 ms +/-33 ms, not only a scheduled marker. Evidence: pixels+clock.
+OPEN QR.craft.B03: No samples | At least four 30 fps frames show a silhouette-changing wind-up before release. Evidence: pixels+clock.
+OPEN QR.craft.B04: No samples | Hand/weapon and torso visibly separate wind-up from rest; frame pair named. Evidence: manual frames.
+OPEN QR.craft.B05: No samples | At least three separately visible layers: preparation, travelling strike, impact/decal. Evidence: isolated layer masks + manual.
+OPEN QR.craft.B06: No samples | At least three distinct contours; duplicated circles/glows count as one. Evidence: manual frames.
+OPEN QR.craft.B07: No samples | Peak union effect mask rotational-symmetry IoU <0.8; shape also reads directionally. Evidence: isolated masks.
+OPEN QR.craft.B08: No samples | Target recoil or support response begins within one 30 fps frame of actual contact. Evidence: pixels+clock.
+OPEN QR.craft.B09: No samples | Attacker and recipient poses hold 60–90 ms at impact inside the fixed duration. Evidence: pixels+clock.
+OPEN QR.craft.B10: No samples | A local target/contact flash or authored smear lasts 1–2 frames, without a viewport whiteout. Evidence: pixels+clock.
+OPEN QR.craft.B11: No samples | Absolute weapon transient-to-observed-contact error <=33 ms; inspect waveform, not just cue schedule. Evidence: waveform+frames.
+OPEN QR.craft.B12: No samples | Listening confirms the heard weapon sound belongs to this action. Evidence: listen + frame reference.
+OPEN QR.craft.B13: No samples | Any melee lunge stays <=5% viewport width; ranged root stays planted. Evidence: rendered body mask.
+OPEN QR.craft.B14: No samples | Actor returns to its original slot within one pixel by 800 ms. Evidence: pixels+clock.
+OPEN QR.craft.B15: No samples | No effect, number, name or neighbouring body hides a face. Evidence: face masks + manual.
+OPEN QR.craft.B16: No samples | No unintended one-frame layer pop; entry/exit ease over >=2 frames except the labelled contact transient. Evidence: adjacent frame review.
+OPEN QR.craft.B17: No samples | Source-to-target travel reads at 1280x720 and in the scaled contact strip. Evidence: manual frames.
+OPEN QR.craft.B18: No samples | Background registration and stage-root transform remain constant; no basic shake. Evidence: pixels+clock.
+OPEN QR.craft.U01: No samples | Ultimate ends at 2200 ms +/-33 ms; its total is the same for every unit. Evidence: pixels+clock.
+OPEN QR.craft.U02: No samples | In-field focus ends at 600 ms +/-33 ms. Evidence: pixels+clock.
+OPEN QR.craft.U03: No samples | Observed contact at 1100 ms +/-33 ms; cast begins at 600 ms. Evidence: pixels+clock.
+OPEN QR.craft.U04: No samples | Non-caster brightness is 45%; caster and nearby name remain visible. Evidence: render buffer + scene state.
+OPEN QR.craft.U05: No samples | Dim field, caster outline/rim and local name banner all visible. Evidence: manual frames.
+OPEN QR.craft.U06: No samples | Wind-up and release are distinct weapon/torso poses; no walk-up. Evidence: manual frames.
+OPEN QR.craft.U07: No samples | Five visible roles: focus aura, cast shape, travel/area body, impact, residue. Evidence: isolated layer masks + manual.
+OPEN QR.craft.U08: No samples | At least three non-radial contour families are visible in the composition. Evidence: manual frames.
+OPEN QR.craft.U09: No samples | Peak effect-alpha union covers 25–60% of viewport; exclude dim/HUD/banner/grade. Evidence: isolated masks.
+OPEN QR.craft.U10: No samples | Peak mask symmetry score <0.8; no radial-only composition. Evidence: isolated masks.
+OPEN QR.craft.U11: No samples | Main silhouette reads as a strong, distinctive themed ultimate; identify it in words. Evidence: manual frames.
+OPEN QR.craft.U12: No samples | Energy originates at caster and reaches the affected group; no unrelated ambient flash. Evidence: manual frames.
+OPEN QR.craft.U13: No samples | Damage target recoils, or support recipient responds, within one frame of contact. Evidence: pixels+clock.
+OPEN QR.craft.U14: No samples | Contact pose hold is 60–90 ms inside the 2200 ms envelope. Evidence: pixels+clock.
+OPEN QR.craft.U15: No samples | Local contact highlight lasts 1–2 frames; no full-frame whiteout. Evidence: pixels+clock.
+OPEN QR.craft.U16: No samples | Caster and recipient faces remain readable through the effect. Evidence: face masks + manual.
+OPEN QR.craft.U17: No samples | Measured impact transient is within 33 ms of observed impact. Evidence: waveform+frames.
+OPEN QR.craft.U18: No samples | Callout/cast/contact/tail heard and mapped to their displayed causes. Evidence: listen + frame reference.
+OPEN QR.craft.U19: No samples | Mean effect saturation >=80% of estimated reference median; retain estimation caveat. Evidence: isolated masks.
+OPEN QR.craft.U20: No samples | p95 linear luminance >=80% of estimated reference median; retain estimation caveat. Evidence: isolated masks.
+OPEN QR.craft.U21: No samples | Layers ease in/out over >=2 frames except the explicit 1–2 frame contact accent. Evidence: adjacent frame review.
+OPEN QR.craft.U22: No samples | No cinematic plate, scene cut, camera scale/pan or off-slot approach. Evidence: pixels+clock.
+OPEN QR.craft.U23: No samples | Name fits its box and avoids faces at 1280, 1440 and 390 widths. Evidence: DOM + frames.
+OPEN QR.craft.U24: No samples | No next action begins before this ultimate ends; no overlapping ultimates. Evidence: pixels+clock.
+OPEN QR.craft.C01: No samples | Soft contact shadow visibly anchors every shown unit, without detaching at idle. Evidence: rendered shadow mask + manual.
+OPEN QR.craft.C02: No samples | Idle body/attachment motion amplitude >=1.5% body height, measured on rendered pixels. Evidence: rendered body mask.
+OPEN QR.craft.C03: No samples | Separate actors have phase offsets; the squad does not breathe in lockstep. Evidence: manual frames.
+OPEN QR.craft.C04: No samples | Weapon/tail/ears lag the torso and settle; not just whole-PNG translation. Evidence: manual frames.
+OPEN QR.craft.C05: No samples | Idle/anticipation keeps feet at the floor; any approved lunge returns to that anchor. Evidence: manual frames.
+OPEN QR.craft.C06: No samples | Hit shows directional recoil + squash + local flash, with a clear settle. Evidence: manual frames.
+OPEN QR.craft.C07: No samples | Death fades with visible separated dissolve particles; no single-frame disappearance. Evidence: manual frames.
+OPEN QR.craft.C08: No samples | Painted body lighting belongs to the field; contours retain their original hue/value structure. Evidence: manual frames.
+OPEN QR.craft.C09: No samples | Local effect-coloured rim affects the caster/recipient at the action, not an unbounded unit glow. Evidence: manual frames.
+OPEN QR.craft.C10: No samples | Cats face right and enemies left in idle/attack/hit/death; face/weapon-side table verified. Evidence: manual frames.
+OPEN QR.craft.C11: No samples | No detached joint, seam hole, inverted limb or double-eye artefact in any key pose. Evidence: manual frames.
+OPEN QR.craft.C12: No samples | No other unit, HUD element or number covers any face during the sampled states. Evidence: manual frames.
+{"PASS":17,"FAIL":0,"OPEN":58}

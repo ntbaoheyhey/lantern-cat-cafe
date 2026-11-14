@@ -185,6 +185,12 @@ rows('GLOBAL',[
 rows('R1',[['checkpointDone','eq',true,'at/after 16 Nov 12:00 UTC run R1 once']]);
 rows('R2',[['finalDemoDone','eq',true,'at/after 18 Nov 12:00 UTC run R2 once'],['deployGuideUpdated','eq',true,'update reports/v3-shell/USER-DEPLOY-VI.md for this branch']]);
 rows('R3',[['freezeDone','eq',true,'at/after 19 Nov 12:00 UTC run FREEZE'],['draftPrCount','eq',1,'Open ONE draft PR codex/v3-feel-2026-11-14 -> main (do not merge)'],['finalReport','eq',true,'Final REPORT-FEEL.md (English) and STATUS-VI.md']]);
+// F13 adds the researched craft bar. Keep explicit per-row results: document
+// presence or a numeric mask cannot stand in for a frame/listening verdict.
+export const craftCriteria=Object.freeze(JSON.parse(readFileSync(resolve(root,'reports/v3-feel/CRAFT/quality-bar.json'),'utf8')).criteria);
+for(const item of ['QR','Q1','Q2','Q3','Q9'])for(const criterion of craftCriteria){
+ add(item,`craft.${criterion.id}`,criterion.op,criterion.limit,`${criterion.check} Evidence: ${criterion.method}.`);
+}
 export const gates=Object.freeze(definitions);
 export function numeric(value,op,limit){
  if(op==='eq')return value===limit;

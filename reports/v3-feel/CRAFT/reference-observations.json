@@ -1,0 +1,1471 @@
+{
+  "observedAt": "2026-11-14T05:02:25.341180+00:00",
+  "sampleFps": 10,
+  "timingUncertaintyMs": 100,
+  "method": "Direct inspection of every sheet in reference-selection.json. Frame n is zero-based, relative to that selection. Phase intervals are inclusive. Blending is inferred, not recovered from the reference engine. A basic classification means no focus/cut-in and a repeated weapon action; internal game skill IDs are unavailable. Source playback indicators are x2 (v1) and x3 (v2); wall times are NOT x1 design targets.",
+  "sound": "Reference audio not yet heard. No sub-frame synchronization claim from 10 fps sheets. Automated transient analysis will be kept separate from a listening verdict.",
+  "actions": [
+    {
+      "id": "B01",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          4
+        ],
+        "contact": [
+          5,
+          6
+        ],
+        "followThrough": [
+          7,
+          8
+        ],
+        "secondContact": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          13
+        ],
+        "nextAction": [
+          14,
+          15
+        ]
+      },
+      "peak": 42.0,
+      "baseline": 41.7,
+      "roi": [
+        0.42,
+        0.32,
+        0.94,
+        0.72
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Background fixed; actor runs forward.",
+      "reaction": "Target leans away at n7 and turns red at n9; weapon held high then across body. Extended review: n11 weapon lowers, n12-13 upright, next guard preparation n14-15.",
+      "layers": [
+        [
+          "red-white sword crescent",
+          "normal/add inferred",
+          "red, white",
+          [
+            4,
+            7
+          ],
+          "curves down and right"
+        ],
+        [
+          "gold contact wedge",
+          "add inferred",
+          "yellow, white",
+          [
+            5,
+            7
+          ],
+          "expands toward target"
+        ],
+        [
+          "needle sparks",
+          "add inferred",
+          "gold",
+          [
+            5,
+            9
+          ],
+          "fan to right"
+        ],
+        [
+          "green hit fragments",
+          "normal inferred",
+          "green",
+          [
+            6,
+            10
+          ],
+          "scatter behind target"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          6,
+          7
+        ],
+        "followThrough": [
+          8,
+          9
+        ],
+        "recovery": [
+          10,
+          10
+        ]
+      },
+      "peak": 43.2,
+      "baseline": 43.0,
+      "roi": [
+        0.23,
+        0.3,
+        0.61,
+        0.7
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Fixed background; guard steps toward sword fighter.",
+      "reaction": "Sword fighter red/leaning at n6; two diagonal cuts cross the torso.",
+      "layers": [
+        [
+          "blue diagonal blade",
+          "add inferred",
+          "cyan, white",
+          [
+            6,
+            8
+          ],
+          "bottom-left to top-right"
+        ],
+        [
+          "curved sweep",
+          "add inferred",
+          "blue",
+          [
+            6,
+            8
+          ],
+          "clockwise hook"
+        ],
+        [
+          "impact flecks",
+          "normal/add inferred",
+          "green, white",
+          [
+            6,
+            9
+          ],
+          "away from contact"
+        ]
+      ]
+    },
+    {
+      "id": "B03",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "anticipation": [
+          4,
+          5
+        ],
+        "contact": [
+          6,
+          7
+        ],
+        "followThrough": [
+          8,
+          8
+        ],
+        "secondContact": [
+          9,
+          12
+        ],
+        "recovery": [
+          13,
+          14
+        ]
+      },
+      "peak": 44.7,
+      "baseline": 44.6,
+      "roi": [
+        0.39,
+        0.32,
+        0.94,
+        0.73
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Fixed background; forward approach.",
+      "reaction": "Opponent bends at n7, turns red at n11, recovers upright at n14.",
+      "layers": [
+        [
+          "red crescent",
+          "normal/add inferred",
+          "red, white",
+          [
+            5,
+            8
+          ],
+          "downward sweep"
+        ],
+        [
+          "gold impact wedge",
+          "add inferred",
+          "gold, white",
+          [
+            6,
+            10
+          ],
+          "fan right"
+        ],
+        [
+          "green fragments",
+          "normal inferred",
+          "green",
+          [
+            7,
+            12
+          ],
+          "scatter right"
+        ],
+        [
+          "second white slash",
+          "add inferred",
+          "white, red",
+          [
+            10,
+            12
+          ],
+          "cross-body return"
+        ]
+      ]
+    },
+    {
+      "id": "B04",
+      "phases": {
+        "anticipation": [
+          0,
+          2
+        ],
+        "contact": [
+          3,
+          4
+        ],
+        "followThrough": [
+          5,
+          6
+        ],
+        "recovery": [
+          7,
+          9
+        ]
+      },
+      "peak": 45.9,
+      "baseline": 45.8,
+      "roi": [
+        0.2,
+        0.29,
+        0.64,
+        0.7
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Fixed background; guard closes then returns.",
+      "reaction": "Red recipient at n4; clear recoil followed by an upright settle n7.",
+      "layers": [
+        [
+          "cyan edge smear",
+          "add inferred",
+          "cyan, white",
+          [
+            3,
+            5
+          ],
+          "diagonal across target"
+        ],
+        [
+          "blue crescent",
+          "add inferred",
+          "blue",
+          [
+            3,
+            5
+          ],
+          "curves behind blade"
+        ],
+        [
+          "flecks",
+          "normal inferred",
+          "green",
+          [
+            4,
+            6
+          ],
+          "follow contact vector"
+        ]
+      ]
+    },
+    {
+      "id": "B05",
+      "phases": {
+        "context": [
+          0,
+          1
+        ],
+        "anticipation": [
+          2,
+          3
+        ],
+        "contact": [
+          4,
+          6
+        ],
+        "followThrough": [
+          7,
+          8
+        ],
+        "recovery": [
+          9,
+          10
+        ]
+      },
+      "peak": 27.7,
+      "baseline": 27.3,
+      "roi": [
+        0.17,
+        0.37,
+        0.65,
+        0.81
+      ],
+      "streakCountMinimum": 3,
+      "camera": "Fixed field; large lower fighter advances left.",
+      "reaction": "White shield/contact masks the small recipient; recoil cannot be distinguished from ambient animation.",
+      "layers": [
+        [
+          "white-gold weapon sweep",
+          "add inferred",
+          "white, gold",
+          [
+            3,
+            5
+          ],
+          "right to left"
+        ],
+        [
+          "contact rim",
+          "add inferred",
+          "cream",
+          [
+            4,
+            8
+          ],
+          "vertical arc"
+        ],
+        [
+          "short gold rays",
+          "add inferred",
+          "gold",
+          [
+            5,
+            8
+          ],
+          "left fan"
+        ]
+      ]
+    },
+    {
+      "id": "B06",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          6,
+          8
+        ],
+        "followThrough": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          14
+        ]
+      },
+      "peak": 29.2,
+      "baseline": 29.0,
+      "roi": [
+        0.02,
+        0.28,
+        0.77,
+        0.82
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Background fixed; dark weapon fighter steps left.",
+      "reaction": "Immunity text obscures lower recipient; no reliable flinch measurement.",
+      "layers": [
+        [
+          "violet crescent",
+          "add inferred",
+          "violet, white",
+          [
+            6,
+            7
+          ],
+          "large arc to left"
+        ],
+        [
+          "horizontal lance",
+          "add inferred",
+          "magenta, white",
+          [
+            7,
+            9
+          ],
+          "travels left"
+        ],
+        [
+          "ground streak",
+          "add inferred",
+          "purple",
+          [
+            8,
+            10
+          ],
+          "leftward taper"
+        ]
+      ]
+    },
+    {
+      "id": "B07",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          7,
+          8
+        ],
+        "followThrough": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          11
+        ],
+        "nextAction": [
+          12,
+          14
+        ]
+      },
+      "peak": 39.0,
+      "baseline": 38.8,
+      "roi": [
+        0.33,
+        0.34,
+        0.82,
+        0.82
+      ],
+      "streakCountMinimum": 4,
+      "camera": "Fixed field; lower fighter approaches target group.",
+      "reaction": "Gold/red contact n7-8, fragments n9-10, attack returns to rest at n11 before the next focus banner n12. Recipient flinch remains obscured by absorption text.",
+      "layers": [
+        [
+          "white approach slash",
+          "add inferred",
+          "white",
+          [
+            4,
+            6
+          ],
+          "diagonal right"
+        ],
+        [
+          "gold starburst",
+          "add inferred",
+          "gold, white",
+          [
+            6,
+            8
+          ],
+          "right-facing fan"
+        ],
+        [
+          "red contact accent",
+          "normal/add inferred",
+          "red",
+          [
+            7,
+            9
+          ],
+          "short wedge"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "anticipation": [
+          4,
+          6
+        ],
+        "contact": [
+          7,
+          8
+        ],
+        "followThrough": [
+          9,
+          9
+        ],
+        "recovery": [
+          10,
+          10
+        ]
+      },
+      "peak": 77.2,
+      "baseline": 77.1,
+      "roi": [
+        0.42,
+        0.35,
+        0.94,
+        0.77
+      ],
+      "streakCountMinimum": 5,
+      "camera": "Fixed stage; sword fighter crosses to center-right. Other basics overlap this action.",
+      "reaction": "Selected guard turns red at n8; sword arm visibly crosses from high to low.",
+      "layers": [
+        [
+          "red-white sword arc",
+          "normal/add inferred",
+          "red, white",
+          [
+            7,
+            8
+          ],
+          "down-right"
+        ],
+        [
+          "gold point impact",
+          "add inferred",
+          "gold, white",
+          [
+            7,
+            8
+          ],
+          "outward wedge"
+        ],
+        [
+          "directional flecks",
+          "normal/add inferred",
+          "green, gold",
+          [
+            8,
+            9
+          ],
+          "rightward scatter"
+        ]
+      ]
+    },
+    {
+      "id": "U01",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          9
+        ],
+        "anticipation": [
+          10,
+          11
+        ],
+        "contact": [
+          12,
+          13
+        ],
+        "followThrough": [
+          14,
+          16
+        ],
+        "secondContact": [
+          17,
+          19
+        ],
+        "recovery": [
+          20,
+          20
+        ]
+      },
+      "peak": 37.9,
+      "baseline": 37.3,
+      "roi": [
+        0.3,
+        0.27,
+        0.97,
+        0.78
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Field dimmed, wide banner; fixed background after banner. Actor approaches. Do not copy approach or banner.",
+      "reaction": "Target red/knocked back after crescents n13\u201315 and n18\u201320; final collapse.",
+      "layers": [
+        [
+          "focus dim and portrait ribbon",
+          "normal inferred",
+          "black, cyan",
+          [
+            4,
+            9
+          ],
+          "slides horizontally"
+        ],
+        [
+          "gold-white crescent",
+          "add inferred",
+          "gold, white",
+          [
+            12,
+            13
+          ],
+          "sweeps right"
+        ],
+        [
+          "second broad crescent",
+          "normal/add inferred",
+          "white, amber",
+          [
+            17,
+            18
+          ],
+          "lower sweep"
+        ],
+        [
+          "gold contact spokes",
+          "add inferred",
+          "gold",
+          [
+            12,
+            19
+          ],
+          "outward to right"
+        ],
+        [
+          "green shards",
+          "normal inferred",
+          "green",
+          [
+            14,
+            20
+          ],
+          "away from target"
+        ]
+      ]
+    },
+    {
+      "id": "U02",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          4
+        ],
+        "anticipation": [
+          5,
+          7
+        ],
+        "castShape": [
+          8,
+          10
+        ],
+        "hold": [
+          11,
+          14
+        ],
+        "contact": [
+          15,
+          16
+        ],
+        "followThrough": [
+          17,
+          17
+        ],
+        "recovery": [
+          18,
+          18
+        ],
+        "nextAction": [
+          19,
+          20
+        ]
+      },
+      "peak": 49.7,
+      "baseline": 49.6,
+      "roi": [
+        0.05,
+        0.26,
+        0.51,
+        0.74
+      ],
+      "streakCountMinimum": 4,
+      "camera": "Dim fixed field, no full-screen plate; caster stays in left slot.",
+      "reaction": "Recipients have heal numbers and upright poses; no damage flinch applicable.",
+      "layers": [
+        [
+          "caster flare",
+          "add inferred",
+          "gold",
+          [
+            5,
+            6
+          ],
+          "four sharp rays"
+        ],
+        [
+          "ribbon helix",
+          "add inferred",
+          "cyan, violet",
+          [
+            7,
+            10
+          ],
+          "winds upward"
+        ],
+        [
+          "recipient glow",
+          "add inferred",
+          "purple, green",
+          [
+            15,
+            17
+          ],
+          "opens outward"
+        ],
+        [
+          "thin floor runes",
+          "add inferred",
+          "cyan",
+          [
+            15,
+            18
+          ],
+          "under feet"
+        ],
+        [
+          "vertical healing sparks",
+          "add inferred",
+          "green",
+          [
+            16,
+            18
+          ],
+          "rise"
+        ]
+      ]
+    },
+    {
+      "id": "U03",
+      "phases": {
+        "context": [
+          0,
+          4
+        ],
+        "focus": [
+          5,
+          9
+        ],
+        "anticipation": [
+          10,
+          14
+        ],
+        "castShape": [
+          15,
+          16
+        ],
+        "contact": [
+          17,
+          20
+        ],
+        "followThrough": [
+          21,
+          22
+        ],
+        "recovery": [
+          23,
+          25
+        ]
+      },
+      "peak": 33.0,
+      "baseline": 32.4,
+      "roi": [
+        0.19,
+        0.2,
+        0.86,
+        0.84
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Dim field, sliding banner; no apparent background scale shift in field section.",
+      "reaction": "Right group flashes/red silhouettes among numbers as fire travels; bodies partly obscured.",
+      "layers": [
+        [
+          "caster star flare",
+          "add inferred",
+          "gold, white",
+          [
+            10,
+            11
+          ],
+          "crossed rays"
+        ],
+        [
+          "green winding leaves",
+          "normal/add inferred",
+          "green",
+          [
+            13,
+            14
+          ],
+          "spiral up"
+        ],
+        [
+          "fire silhouette",
+          "normal/add inferred",
+          "orange, gold",
+          [
+            15,
+            20
+          ],
+          "rises at caster"
+        ],
+        [
+          "red falling lances",
+          "add inferred",
+          "red",
+          [
+            16,
+            19
+          ],
+          "diagonal toward enemies"
+        ],
+        [
+          "contact cores",
+          "add inferred",
+          "violet, white",
+          [
+            17,
+            21
+          ],
+          "sharp bloom"
+        ],
+        [
+          "ground flame residue",
+          "normal/add inferred",
+          "orange",
+          [
+            20,
+            22
+          ],
+          "shrinks"
+        ]
+      ]
+    },
+    {
+      "id": "U04",
+      "phases": {
+        "context": [
+          0,
+          1
+        ],
+        "focus": [
+          2,
+          8
+        ],
+        "anticipation": [
+          9,
+          12
+        ],
+        "firstContact": [
+          13,
+          17
+        ],
+        "followThrough": [
+          18,
+          21
+        ],
+        "cinematic": [
+          22,
+          28
+        ],
+        "contact": [
+          29,
+          33
+        ],
+        "recovery": [
+          34,
+          37
+        ]
+      },
+      "peak": 42.4,
+      "baseline": 40.4,
+      "roi": [
+        0.0,
+        0.05,
+        0.98,
+        0.84
+      ],
+      "streakCountMinimum": 8,
+      "camera": "Full field replacement n22\u201328; strong whiteout n31; static background cannot be inferred during replacement. Disallowed in our battle.",
+      "reaction": "Left bodies largely occluded by tornado. Ground cracked by n35. Reject this obscuration for our game.",
+      "layers": [
+        [
+          "focus banner",
+          "normal inferred",
+          "cyan, pink",
+          [
+            2,
+            8
+          ],
+          "slides"
+        ],
+        [
+          "thin pink spiral",
+          "add inferred",
+          "pink",
+          [
+            13,
+            16
+          ],
+          "wraps vertically"
+        ],
+        [
+          "wide ribbon tornado",
+          "normal/add inferred",
+          "pink, white",
+          [
+            17,
+            21
+          ],
+          "grows upward"
+        ],
+        [
+          "crossed lances",
+          "add inferred",
+          "magenta, gold",
+          [
+            24,
+            27
+          ],
+          "intersect"
+        ],
+        [
+          "long contact rays",
+          "add inferred",
+          "white, gold",
+          [
+            29,
+            33
+          ],
+          "fan out"
+        ],
+        [
+          "cracked ground and petals",
+          "normal inferred",
+          "black, pink",
+          [
+            33,
+            37
+          ],
+          "fall and dissipate"
+        ]
+      ]
+    },
+    {
+      "id": "U05",
+      "phases": {
+        "context": [
+          0,
+          4
+        ],
+        "focus": [
+          5,
+          9
+        ],
+        "anticipation": [
+          10,
+          13
+        ],
+        "cinematic": [
+          14,
+          43
+        ],
+        "contact": [
+          44,
+          47
+        ],
+        "followThrough": [
+          48,
+          49
+        ],
+        "recovery": [
+          50,
+          54
+        ],
+        "nextAction": [
+          55,
+          57
+        ]
+      },
+      "peak": 50.6,
+      "baseline": 50.5,
+      "roi": [
+        0.18,
+        0.06,
+        0.98,
+        0.85
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Full-screen replacement, enlarged caster, scene cuts and whiteouts n14\u201343. In-field target pillar resumes n44. Disallowed cinematics; study only impulse spacing.",
+      "reaction": "Enemy silhouettes nearly lost in tall pillar; gold impact visible n45. Collapse/crater n48\u201349. Extended n50-54: field restored, caster steps back, impact debris fades; new action n55.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            5,
+            9
+          ],
+          "slide"
+        ],
+        [
+          "casting cross",
+          "add inferred",
+          "gold",
+          [
+            10,
+            11
+          ],
+          "four rays"
+        ],
+        [
+          "spearing diagonal smear",
+          "normal/add inferred",
+          "cyan, white",
+          [
+            14,
+            19
+          ],
+          "cross-screen"
+        ],
+        [
+          "giant summon silhouette",
+          "normal/add inferred",
+          "blue",
+          [
+            20,
+            24
+          ],
+          "enlarges"
+        ],
+        [
+          "spiral cone and cut",
+          "normal/add inferred",
+          "cyan, white",
+          [
+            30,
+            43
+          ],
+          "rises then slices"
+        ],
+        [
+          "field impact pillar",
+          "add inferred",
+          "cyan, white",
+          [
+            44,
+            47
+          ],
+          "downward"
+        ],
+        [
+          "debris and crater",
+          "normal inferred",
+          "brown, grey",
+          [
+            46,
+            49
+          ],
+          "eject then settle"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ]
+    },
+    {
+      "id": "U06",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          8
+        ],
+        "anticipation": [
+          9,
+          10
+        ],
+        "castShape": [
+          11,
+          12
+        ],
+        "contact": [
+          13,
+          15
+        ],
+        "followThrough": [
+          16,
+          17
+        ],
+        "recovery": [
+          18,
+          19
+        ]
+      },
+      "peak": 58.6,
+      "baseline": 58.2,
+      "roi": [
+        0.44,
+        0.16,
+        0.97,
+        0.8
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Dim fixed field and banner; summon occupies right group.",
+      "reaction": "Healing numbers, no damage recoil applicable; summon wings open after white flare.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            4,
+            8
+          ],
+          "slide"
+        ],
+        [
+          "white beast silhouette",
+          "normal inferred",
+          "white, blue",
+          [
+            11,
+            19
+          ],
+          "rises and opens wings"
+        ],
+        [
+          "violet star core",
+          "add inferred",
+          "violet, white",
+          [
+            13,
+            15
+          ],
+          "sharp point bloom"
+        ],
+        [
+          "orbital ribbons",
+          "add inferred",
+          "blue, magenta",
+          [
+            14,
+            17
+          ],
+          "cross around body"
+        ],
+        [
+          "small foot seal",
+          "add inferred",
+          "mint",
+          [
+            14,
+            17
+          ],
+          "appears under feet"
+        ],
+        [
+          "blue feather residue",
+          "normal/add inferred",
+          "blue",
+          [
+            16,
+            19
+          ],
+          "tapers outward"
+        ]
+      ]
+    },
+    {
+      "id": "U07",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          9
+        ],
+        "anticipation": [
+          10,
+          12
+        ],
+        "castShape": [
+          13,
+          13
+        ],
+        "contact": [
+          14,
+          17
+        ],
+        "followThrough": [
+          18,
+          20
+        ],
+        "recovery": [
+          21,
+          22
+        ]
+      },
+      "peak": 60.7,
+      "baseline": 60.4,
+      "roi": [
+        0.34,
+        0.03,
+        0.96,
+        0.85
+      ],
+      "streakCountMinimum": 5,
+      "camera": "Dim fixed field, banner; no scale change visible after it.",
+      "reaction": "Target inside water column with repeated gold hit flashes; visible silhouette retained intermittently.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            4,
+            9
+          ],
+          "slide"
+        ],
+        [
+          "dragon summon",
+          "normal inferred",
+          "cyan, blue",
+          [
+            10,
+            16
+          ],
+          "rises at left"
+        ],
+        [
+          "cast gate",
+          "add inferred",
+          "blue, orange",
+          [
+            13,
+            18
+          ],
+          "rotates toward target"
+        ],
+        [
+          "vertical water spear",
+          "add inferred",
+          "cyan, white",
+          [
+            14,
+            18
+          ],
+          "drops on right"
+        ],
+        [
+          "contact stars",
+          "add inferred",
+          "gold",
+          [
+            15,
+            18
+          ],
+          "rightward fan"
+        ],
+        [
+          "splash curls and pool",
+          "normal/add inferred",
+          "blue",
+          [
+            18,
+            22
+          ],
+          "fall, flatten and fade"
+        ]
+      ]
+    },
+    {
+      "id": "U08",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "focus": [
+          3,
+          8
+        ],
+        "anticipation": [
+          9,
+          11
+        ],
+        "castShape": [
+          12,
+          13
+        ],
+        "contact": [
+          14,
+          16
+        ],
+        "followThrough": [
+          17,
+          18
+        ],
+        "recovery": [
+          19,
+          21
+        ]
+      },
+      "peak": 62.8,
+      "baseline": 62.5,
+      "roi": [
+        0.08,
+        0.22,
+        0.91,
+        0.84
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Dim fixed field; phoenix floats across center then explosion at left group.",
+      "reaction": "Left bodies lost briefly in explosion; ground cracks persist and smoke falls away n17\u201320.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan, red",
+          [
+            3,
+            8
+          ],
+          "slide"
+        ],
+        [
+          "phoenix silhouette",
+          "normal inferred",
+          "red, orange",
+          [
+            10,
+            17
+          ],
+          "rises and travels left"
+        ],
+        [
+          "fire seed",
+          "add inferred",
+          "yellow",
+          [
+            12,
+            13
+          ],
+          "drops toward ground"
+        ],
+        [
+          "jagged eruption",
+          "normal/add inferred",
+          "yellow, white",
+          [
+            14,
+            16
+          ],
+          "upward pointed wedge"
+        ],
+        [
+          "contact rays",
+          "add inferred",
+          "orange",
+          [
+            15,
+            17
+          ],
+          "fan left and right"
+        ],
+        [
+          "glowing cracks",
+          "add inferred",
+          "orange",
+          [
+            16,
+            18
+          ],
+          "spreads along floor"
+        ],
+        [
+          "smoke residue",
+          "normal inferred",
+          "grey",
+          [
+            17,
+            20
+          ],
+          "expands then fades"
+        ]
+      ]
+    }
+  ],
+  "updatedAt": "2026-11-14T05:10:53.153490+00:00"
+}

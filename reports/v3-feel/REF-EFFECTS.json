@@ -1,0 +1,1867 @@
+{
+  "missingMeasurements": [],
+  "at": "2026-11-14T05:10:53.540364+00:00",
+  "method": "320px observed contact-sheet samples; ROI from observed shape; positive max-RGB delta > .18 vs same-action pre-contact frame; sensitivity .10/.26; saturation HSV; p95 linear Rec.709 luminance",
+  "sampleFps": 10,
+  "phasePrecisionMs": 100,
+  "soundHeard": false,
+  "referenceMedianSaturation": 0.38740379159526944,
+  "referenceMedianPeakLuminance": 0.9914534564752563,
+  "actions": [
+    {
+      "id": "B01",
+      "source": "v1",
+      "start": 41.4,
+      "end": 43.0,
+      "tier": "basic",
+      "description": "Sword forward cut",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "previousWindows": [
+        {
+          "start": 41.4,
+          "end": 42.5,
+          "reason": "Extended to inspect recovery, 2026-11-14T05:10:53.153490+00:00"
+        }
+      ],
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          4
+        ],
+        "contact": [
+          5,
+          6
+        ],
+        "followThrough": [
+          7,
+          8
+        ],
+        "secondContact": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          13
+        ],
+        "nextAction": [
+          14,
+          15
+        ]
+      },
+      "peak": 42.0,
+      "baseline": 41.7,
+      "roi": [
+        0.42,
+        0.32,
+        0.94,
+        0.72
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Background fixed; actor runs forward.",
+      "reaction": "Target leans away at n7 and turns red at n9; weapon held high then across body. Extended review: n11 weapon lowers, n12-13 upright, next guard preparation n14-15.",
+      "layers": [
+        [
+          "red-white sword crescent",
+          "normal/add inferred",
+          "red, white",
+          [
+            4,
+            7
+          ],
+          "curves down and right"
+        ],
+        [
+          "gold contact wedge",
+          "add inferred",
+          "yellow, white",
+          [
+            5,
+            7
+          ],
+          "expands toward target"
+        ],
+        [
+          "needle sparks",
+          "add inferred",
+          "gold",
+          [
+            5,
+            9
+          ],
+          "fan to right"
+        ],
+        [
+          "green hit fragments",
+          "normal inferred",
+          "green",
+          [
+            6,
+            10
+          ],
+          "scatter behind target"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B01/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.038277582159624415,
+      "areaSensitivityRange": [
+        0.0485475352112676,
+        0.038277582159624415,
+        0.029386737089201878
+      ],
+      "peakRoiAreaFraction": 0.20701291079812206,
+      "effectSpanSeconds": 1.1,
+      "meanEffectSaturation": 0.387649087998557,
+      "peakLuminanceP95": 0.9930729584727535,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B01.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B02",
+      "source": "v1",
+      "start": 42.5,
+      "end": 43.6,
+      "tier": "basic",
+      "description": "Guard crossing swipe",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          6,
+          7
+        ],
+        "followThrough": [
+          8,
+          9
+        ],
+        "recovery": [
+          10,
+          10
+        ]
+      },
+      "peak": 43.2,
+      "baseline": 43.0,
+      "roi": [
+        0.23,
+        0.3,
+        0.61,
+        0.7
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Fixed background; guard steps toward sword fighter.",
+      "reaction": "Sword fighter red/leaning at n6; two diagonal cuts cross the torso.",
+      "layers": [
+        [
+          "blue diagonal blade",
+          "add inferred",
+          "cyan, white",
+          [
+            6,
+            8
+          ],
+          "bottom-left to top-right"
+        ],
+        [
+          "curved sweep",
+          "add inferred",
+          "blue",
+          [
+            6,
+            8
+          ],
+          "clockwise hook"
+        ],
+        [
+          "impact flecks",
+          "normal/add inferred",
+          "green, white",
+          [
+            6,
+            9
+          ],
+          "away from contact"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B02/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.043133802816901406,
+      "areaSensitivityRange": [
+        0.04785798122065728,
+        0.043133802816901406,
+        0.03955399061032864
+      ],
+      "peakRoiAreaFraction": 0.1539319248826291,
+      "effectSpanSeconds": 0.8,
+      "meanEffectSaturation": 0.33934106976123785,
+      "peakLuminanceP95": 0.9918048158366828,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B02.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B03",
+      "source": "v1",
+      "start": 44.1,
+      "end": 45.6,
+      "tier": "basic",
+      "description": "Sword double cut",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "anticipation": [
+          4,
+          5
+        ],
+        "contact": [
+          6,
+          7
+        ],
+        "followThrough": [
+          8,
+          8
+        ],
+        "secondContact": [
+          9,
+          12
+        ],
+        "recovery": [
+          13,
+          14
+        ]
+      },
+      "peak": 44.7,
+      "baseline": 44.6,
+      "roi": [
+        0.39,
+        0.32,
+        0.94,
+        0.73
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Fixed background; forward approach.",
+      "reaction": "Opponent bends at n7, turns red at n11, recovers upright at n14.",
+      "layers": [
+        [
+          "red crescent",
+          "normal/add inferred",
+          "red, white",
+          [
+            5,
+            8
+          ],
+          "downward sweep"
+        ],
+        [
+          "gold impact wedge",
+          "add inferred",
+          "gold, white",
+          [
+            6,
+            10
+          ],
+          "fan right"
+        ],
+        [
+          "green fragments",
+          "normal inferred",
+          "green",
+          [
+            7,
+            12
+          ],
+          "scatter right"
+        ],
+        [
+          "second white slash",
+          "add inferred",
+          "white, red",
+          [
+            10,
+            12
+          ],
+          "cross-body return"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B03/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.039480633802816904,
+      "areaSensitivityRange": [
+        0.05014671361502347,
+        0.039480633802816904,
+        0.029958920187793427
+      ],
+      "peakRoiAreaFraction": 0.22464788732394367,
+      "effectSpanSeconds": 1.1,
+      "meanEffectSaturation": 0.3603514984589153,
+      "peakLuminanceP95": 0.991834028505885,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B03.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B04",
+      "source": "v1",
+      "start": 45.6,
+      "end": 46.6,
+      "tier": "basic",
+      "description": "Guard counter",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "anticipation": [
+          0,
+          2
+        ],
+        "contact": [
+          3,
+          4
+        ],
+        "followThrough": [
+          5,
+          6
+        ],
+        "recovery": [
+          7,
+          9
+        ]
+      },
+      "peak": 45.9,
+      "baseline": 45.8,
+      "roi": [
+        0.2,
+        0.29,
+        0.64,
+        0.7
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Fixed background; guard closes then returns.",
+      "reaction": "Red recipient at n4; clear recoil followed by an upright settle n7.",
+      "layers": [
+        [
+          "cyan edge smear",
+          "add inferred",
+          "cyan, white",
+          [
+            3,
+            5
+          ],
+          "diagonal across target"
+        ],
+        [
+          "blue crescent",
+          "add inferred",
+          "blue",
+          [
+            3,
+            5
+          ],
+          "curves behind blade"
+        ],
+        [
+          "flecks",
+          "normal inferred",
+          "green",
+          [
+            4,
+            6
+          ],
+          "follow contact vector"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B04/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.04887030516431925,
+      "areaSensitivityRange": [
+        0.05377053990610329,
+        0.04887030516431925,
+        0.044336854460093895
+      ],
+      "peakRoiAreaFraction": 0.1807511737089202,
+      "effectSpanSeconds": 1.0,
+      "meanEffectSaturation": 0.27559291504052835,
+      "peakLuminanceP95": 0.9943544687387025,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B04.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B05",
+      "source": "v2",
+      "start": 27.1,
+      "end": 28.2,
+      "tier": "basic",
+      "description": "Low gold contact",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          1
+        ],
+        "anticipation": [
+          2,
+          3
+        ],
+        "contact": [
+          4,
+          6
+        ],
+        "followThrough": [
+          7,
+          8
+        ],
+        "recovery": [
+          9,
+          10
+        ]
+      },
+      "peak": 27.7,
+      "baseline": 27.3,
+      "roi": [
+        0.17,
+        0.37,
+        0.65,
+        0.81
+      ],
+      "streakCountMinimum": 3,
+      "camera": "Fixed field; large lower fighter advances left.",
+      "reaction": "White shield/contact masks the small recipient; recoil cannot be distinguished from ambient animation.",
+      "layers": [
+        [
+          "white-gold weapon sweep",
+          "add inferred",
+          "white, gold",
+          [
+            3,
+            5
+          ],
+          "right to left"
+        ],
+        [
+          "contact rim",
+          "add inferred",
+          "cream",
+          [
+            4,
+            8
+          ],
+          "vertical arc"
+        ],
+        [
+          "short gold rays",
+          "add inferred",
+          "gold",
+          [
+            5,
+            8
+          ],
+          "left fan"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B05/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.05363175675675676,
+      "areaSensitivityRange": [
+        0.0762035472972973,
+        0.05363175675675676,
+        0.039125844594594596
+      ],
+      "peakRoiAreaFraction": 0.21135979729729729,
+      "effectSpanSeconds": 0.9,
+      "meanEffectSaturation": 0.3298517832329782,
+      "peakLuminanceP95": 0.9431909697934144,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B05.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B06",
+      "source": "v2",
+      "start": 28.5,
+      "end": 30.0,
+      "tier": "basic",
+      "description": "Purple crescent",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          6,
+          8
+        ],
+        "followThrough": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          14
+        ]
+      },
+      "peak": 29.2,
+      "baseline": 29.0,
+      "roi": [
+        0.02,
+        0.28,
+        0.77,
+        0.82
+      ],
+      "streakCountMinimum": 2,
+      "camera": "Background fixed; dark weapon fighter steps left.",
+      "reaction": "Immunity text obscures lower recipient; no reliable flinch measurement.",
+      "layers": [
+        [
+          "violet crescent",
+          "add inferred",
+          "violet, white",
+          [
+            6,
+            7
+          ],
+          "large arc to left"
+        ],
+        [
+          "horizontal lance",
+          "add inferred",
+          "magenta, white",
+          [
+            7,
+            9
+          ],
+          "travels left"
+        ],
+        [
+          "ground streak",
+          "add inferred",
+          "purple",
+          [
+            8,
+            10
+          ],
+          "leftward taper"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B06/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.2688133445945946,
+      "areaSensitivityRange": [
+        0.30905827702702704,
+        0.2688133445945946,
+        0.22880067567567566
+      ],
+      "peakRoiAreaFraction": 0.40540540540540543,
+      "effectSpanSeconds": 1.2,
+      "meanEffectSaturation": 0.4474244587474453,
+      "peakLuminanceP95": 0.9887226848675637,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B06.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B07",
+      "source": "v2",
+      "start": 38.3,
+      "end": 39.8,
+      "tier": "basic",
+      "description": "Forward weapon streak",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "previousWindows": [
+        {
+          "start": 38.3,
+          "end": 39.3,
+          "reason": "Extended to inspect recovery, 2026-11-14T05:10:53.153490+00:00"
+        }
+      ],
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "anticipation": [
+          3,
+          5
+        ],
+        "contact": [
+          7,
+          8
+        ],
+        "followThrough": [
+          9,
+          10
+        ],
+        "recovery": [
+          11,
+          11
+        ],
+        "nextAction": [
+          12,
+          14
+        ]
+      },
+      "peak": 39.0,
+      "baseline": 38.8,
+      "roi": [
+        0.33,
+        0.34,
+        0.82,
+        0.82
+      ],
+      "streakCountMinimum": 4,
+      "camera": "Fixed field; lower fighter approaches target group.",
+      "reaction": "Gold/red contact n7-8, fragments n9-10, attack returns to rest at n11 before the next focus banner n12. Recipient flinch remains obscured by absorption text.",
+      "layers": [
+        [
+          "white approach slash",
+          "add inferred",
+          "white",
+          [
+            4,
+            6
+          ],
+          "diagonal right"
+        ],
+        [
+          "gold starburst",
+          "add inferred",
+          "gold, white",
+          [
+            6,
+            8
+          ],
+          "right-facing fan"
+        ],
+        [
+          "red contact accent",
+          "normal/add inferred",
+          "red",
+          [
+            7,
+            9
+          ],
+          "short wedge"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B07/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.06824324324324324,
+      "areaSensitivityRange": [
+        0.09512246621621621,
+        0.06824324324324324,
+        0.0480152027027027
+      ],
+      "peakRoiAreaFraction": 0.23536739864864864,
+      "effectSpanSeconds": 0.9,
+      "meanEffectSaturation": 0.36744442826635604,
+      "peakLuminanceP95": 0.9202636771127138,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B07.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "B08",
+      "source": "v1",
+      "start": 76.5,
+      "end": 77.6,
+      "tier": "basic",
+      "description": "Sword cut in three-unit fight",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "correction": "Earlier 43.1\u201344.1 v2 selection was follow-up to U04 and cannot establish a basic; rejected on frame inspection.",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "anticipation": [
+          4,
+          6
+        ],
+        "contact": [
+          7,
+          8
+        ],
+        "followThrough": [
+          9,
+          9
+        ],
+        "recovery": [
+          10,
+          10
+        ]
+      },
+      "peak": 77.2,
+      "baseline": 77.1,
+      "roi": [
+        0.42,
+        0.35,
+        0.94,
+        0.77
+      ],
+      "streakCountMinimum": 5,
+      "camera": "Fixed stage; sword fighter crosses to center-right. Other basics overlap this action.",
+      "reaction": "Selected guard turns red at n8; sword arm visibly crosses from high to low.",
+      "layers": [
+        [
+          "red-white sword arc",
+          "normal/add inferred",
+          "red, white",
+          [
+            7,
+            8
+          ],
+          "down-right"
+        ],
+        [
+          "gold point impact",
+          "add inferred",
+          "gold, white",
+          [
+            7,
+            8
+          ],
+          "outward wedge"
+        ],
+        [
+          "directional flecks",
+          "normal/add inferred",
+          "green, gold",
+          [
+            8,
+            9
+          ],
+          "rightward scatter"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/B08/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.04669894366197183,
+      "areaSensitivityRange": [
+        0.058758802816901406,
+        0.04669894366197183,
+        0.036634389671361504
+      ],
+      "peakRoiAreaFraction": 0.21919014084507044,
+      "effectSpanSeconds": 0.7,
+      "meanEffectSaturation": 0.38715849519198187,
+      "peakLuminanceP95": 0.9911020971138298,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/B08.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U01",
+      "source": "v1",
+      "start": 36.2,
+      "end": 38.3,
+      "tier": "ultimate",
+      "description": "Sword cut-in and double finish",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          9
+        ],
+        "anticipation": [
+          10,
+          11
+        ],
+        "contact": [
+          12,
+          13
+        ],
+        "followThrough": [
+          14,
+          16
+        ],
+        "secondContact": [
+          17,
+          19
+        ],
+        "recovery": [
+          20,
+          20
+        ]
+      },
+      "peak": 37.9,
+      "baseline": 37.3,
+      "roi": [
+        0.3,
+        0.27,
+        0.97,
+        0.78
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Field dimmed, wide banner; fixed background after banner. Actor approaches. Do not copy approach or banner.",
+      "reaction": "Target red/knocked back after crescents n13\u201315 and n18\u201320; final collapse.",
+      "layers": [
+        [
+          "focus dim and portrait ribbon",
+          "normal inferred",
+          "black, cyan",
+          [
+            4,
+            9
+          ],
+          "slides horizontally"
+        ],
+        [
+          "gold-white crescent",
+          "add inferred",
+          "gold, white",
+          [
+            12,
+            13
+          ],
+          "sweeps right"
+        ],
+        [
+          "second broad crescent",
+          "normal/add inferred",
+          "white, amber",
+          [
+            17,
+            18
+          ],
+          "lower sweep"
+        ],
+        [
+          "gold contact spokes",
+          "add inferred",
+          "gold",
+          [
+            12,
+            19
+          ],
+          "outward to right"
+        ],
+        [
+          "green shards",
+          "normal inferred",
+          "green",
+          [
+            14,
+            20
+          ],
+          "away from target"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U01/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.09552523474178404,
+      "areaSensitivityRange": [
+        0.11399647887323944,
+        0.09552523474178404,
+        0.08490316901408451
+      ],
+      "peakRoiAreaFraction": 0.34222417840375585,
+      "effectSpanSeconds": 1.7,
+      "meanEffectSaturation": 0.46885602344147614,
+      "peakLuminanceP95": 0.9943092169675861,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U01.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U02",
+      "source": "v1",
+      "start": 48.2,
+      "end": 50.3,
+      "tier": "ultimate",
+      "description": "Harp healing focus",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          4
+        ],
+        "anticipation": [
+          5,
+          7
+        ],
+        "castShape": [
+          8,
+          10
+        ],
+        "hold": [
+          11,
+          14
+        ],
+        "contact": [
+          15,
+          16
+        ],
+        "followThrough": [
+          17,
+          17
+        ],
+        "recovery": [
+          18,
+          18
+        ],
+        "nextAction": [
+          19,
+          20
+        ]
+      },
+      "peak": 49.7,
+      "baseline": 49.6,
+      "roi": [
+        0.05,
+        0.26,
+        0.51,
+        0.74
+      ],
+      "streakCountMinimum": 4,
+      "camera": "Dim fixed field, no full-screen plate; caster stays in left slot.",
+      "reaction": "Recipients have heal numbers and upright poses; no damage flinch applicable.",
+      "layers": [
+        [
+          "caster flare",
+          "add inferred",
+          "gold",
+          [
+            5,
+            6
+          ],
+          "four sharp rays"
+        ],
+        [
+          "ribbon helix",
+          "add inferred",
+          "cyan, violet",
+          [
+            7,
+            10
+          ],
+          "winds upward"
+        ],
+        [
+          "recipient glow",
+          "add inferred",
+          "purple, green",
+          [
+            15,
+            17
+          ],
+          "opens outward"
+        ],
+        [
+          "thin floor runes",
+          "add inferred",
+          "cyan",
+          [
+            15,
+            18
+          ],
+          "under feet"
+        ],
+        [
+          "vertical healing sparks",
+          "add inferred",
+          "green",
+          [
+            16,
+            18
+          ],
+          "rise"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U02/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media__kiXkwkoUuY_OMG3Q-Hu\u031bo\u031b\u0301ng-Da\u0302\u0303n-Ta\u0302n-Thu\u0309-2026-Nga\u0300y-1-Ca\u0300y-Chay-Build-The\u0302\u0301-Na\u0300o_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.12910798122065728,
+      "areaSensitivityRange": [
+        0.15344776995305165,
+        0.12910798122065728,
+        0.10601525821596244
+      ],
+      "peakRoiAreaFraction": 0.21998239436619718,
+      "effectSpanSeconds": 1.5,
+      "meanEffectSaturation": 0.4615909090909091,
+      "peakLuminanceP95": 0.8664926739776796,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U02.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U03",
+      "source": "v2",
+      "start": 31.2,
+      "end": 33.8,
+      "tier": "ultimate",
+      "description": "Fire column",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          4
+        ],
+        "focus": [
+          5,
+          9
+        ],
+        "anticipation": [
+          10,
+          14
+        ],
+        "castShape": [
+          15,
+          16
+        ],
+        "contact": [
+          17,
+          20
+        ],
+        "followThrough": [
+          21,
+          22
+        ],
+        "recovery": [
+          23,
+          25
+        ]
+      },
+      "peak": 33.0,
+      "baseline": 32.4,
+      "roi": [
+        0.19,
+        0.2,
+        0.86,
+        0.84
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Dim field, sliding banner; no apparent background scale shift in field section.",
+      "reaction": "Right group flashes/red silhouettes among numbers as fire travels; bodies partly obscured.",
+      "layers": [
+        [
+          "caster star flare",
+          "add inferred",
+          "gold, white",
+          [
+            10,
+            11
+          ],
+          "crossed rays"
+        ],
+        [
+          "green winding leaves",
+          "normal/add inferred",
+          "green",
+          [
+            13,
+            14
+          ],
+          "spiral up"
+        ],
+        [
+          "fire silhouette",
+          "normal/add inferred",
+          "orange, gold",
+          [
+            15,
+            20
+          ],
+          "rises at caster"
+        ],
+        [
+          "red falling lances",
+          "add inferred",
+          "red",
+          [
+            16,
+            19
+          ],
+          "diagonal toward enemies"
+        ],
+        [
+          "contact cores",
+          "add inferred",
+          "violet, white",
+          [
+            17,
+            21
+          ],
+          "sharp bloom"
+        ],
+        [
+          "ground flame residue",
+          "normal/add inferred",
+          "orange",
+          [
+            20,
+            22
+          ],
+          "shrinks"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U03/sheet-01.jpg",
+        "reports/v3-feel/ref/QR/U03/sheet-02.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.2359375,
+      "areaSensitivityRange": [
+        0.26716638513513513,
+        0.2359375,
+        0.2082347972972973
+      ],
+      "peakRoiAreaFraction": 0.43127111486486486,
+      "effectSpanSeconds": 2.1,
+      "meanEffectSaturation": 0.6694915016301849,
+      "peakLuminanceP95": 0.9263342912173814,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U03.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U04",
+      "source": "v2",
+      "start": 39.3,
+      "end": 43.1,
+      "tier": "ultimate",
+      "description": "Pink spiral and crossing lances",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          1
+        ],
+        "focus": [
+          2,
+          8
+        ],
+        "anticipation": [
+          9,
+          12
+        ],
+        "firstContact": [
+          13,
+          17
+        ],
+        "followThrough": [
+          18,
+          21
+        ],
+        "cinematic": [
+          22,
+          28
+        ],
+        "contact": [
+          29,
+          33
+        ],
+        "recovery": [
+          34,
+          37
+        ]
+      },
+      "peak": 42.4,
+      "baseline": 40.4,
+      "roi": [
+        0.0,
+        0.05,
+        0.98,
+        0.84
+      ],
+      "streakCountMinimum": 8,
+      "camera": "Full field replacement n22\u201328; strong whiteout n31; static background cannot be inferred during replacement. Disallowed in our battle.",
+      "reaction": "Left bodies largely occluded by tornado. Ground cracked by n35. Reject this obscuration for our game.",
+      "layers": [
+        [
+          "focus banner",
+          "normal inferred",
+          "cyan, pink",
+          [
+            2,
+            8
+          ],
+          "slides"
+        ],
+        [
+          "thin pink spiral",
+          "add inferred",
+          "pink",
+          [
+            13,
+            16
+          ],
+          "wraps vertically"
+        ],
+        [
+          "wide ribbon tornado",
+          "normal/add inferred",
+          "pink, white",
+          [
+            17,
+            21
+          ],
+          "grows upward"
+        ],
+        [
+          "crossed lances",
+          "add inferred",
+          "magenta, gold",
+          [
+            24,
+            27
+          ],
+          "intersect"
+        ],
+        [
+          "long contact rays",
+          "add inferred",
+          "white, gold",
+          [
+            29,
+            33
+          ],
+          "fan out"
+        ],
+        [
+          "cracked ground and petals",
+          "normal inferred",
+          "black, pink",
+          [
+            33,
+            37
+          ],
+          "fall and dissipate"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U04/sheet-01.jpg",
+        "reports/v3-feel/ref/QR/U04/sheet-02.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.7353673986486486,
+      "areaSensitivityRange": [
+        0.7415540540540541,
+        0.7353673986486486,
+        0.7279771959459459
+      ],
+      "peakRoiAreaFraction": 0.7732474662162162,
+      "effectSpanSeconds": 3.6,
+      "meanEffectSaturation": 0.21191919499013895,
+      "peakLuminanceP95": 0.998718489734051,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U04.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U05",
+      "source": "v2",
+      "start": 46.2,
+      "end": 52.0,
+      "tier": "ultimate",
+      "description": "Cyan spear cinematic",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "previousWindows": [
+        {
+          "start": 46.2,
+          "end": 51.2,
+          "reason": "Extended to inspect recovery, 2026-11-14T05:10:53.153490+00:00"
+        }
+      ],
+      "phases": {
+        "context": [
+          0,
+          4
+        ],
+        "focus": [
+          5,
+          9
+        ],
+        "anticipation": [
+          10,
+          13
+        ],
+        "cinematic": [
+          14,
+          43
+        ],
+        "contact": [
+          44,
+          47
+        ],
+        "followThrough": [
+          48,
+          49
+        ],
+        "recovery": [
+          50,
+          54
+        ],
+        "nextAction": [
+          55,
+          57
+        ]
+      },
+      "peak": 50.6,
+      "baseline": 50.5,
+      "roi": [
+        0.18,
+        0.06,
+        0.98,
+        0.85
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Full-screen replacement, enlarged caster, scene cuts and whiteouts n14\u201343. In-field target pillar resumes n44. Disallowed cinematics; study only impulse spacing.",
+      "reaction": "Enemy silhouettes nearly lost in tall pillar; gold impact visible n45. Collapse/crater n48\u201349. Extended n50-54: field restored, caster steps back, impact debris fades; new action n55.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            5,
+            9
+          ],
+          "slide"
+        ],
+        [
+          "casting cross",
+          "add inferred",
+          "gold",
+          [
+            10,
+            11
+          ],
+          "four rays"
+        ],
+        [
+          "spearing diagonal smear",
+          "normal/add inferred",
+          "cyan, white",
+          [
+            14,
+            19
+          ],
+          "cross-screen"
+        ],
+        [
+          "giant summon silhouette",
+          "normal/add inferred",
+          "blue",
+          [
+            20,
+            24
+          ],
+          "enlarges"
+        ],
+        [
+          "spiral cone and cut",
+          "normal/add inferred",
+          "cyan, white",
+          [
+            30,
+            43
+          ],
+          "rises then slices"
+        ],
+        [
+          "field impact pillar",
+          "add inferred",
+          "cyan, white",
+          [
+            44,
+            47
+          ],
+          "downward"
+        ],
+        [
+          "debris and crater",
+          "normal inferred",
+          "brown, grey",
+          [
+            46,
+            49
+          ],
+          "eject then settle"
+        ]
+      ],
+      "corrections": [
+        {
+          "at": "2026-11-14T05:10:53.153490+00:00",
+          "previousRecovery": null,
+          "reason": "Direct review of extended contact sheet."
+        }
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U05/sheet-01.jpg",
+        "reports/v3-feel/ref/QR/U05/sheet-02.jpg",
+        "reports/v3-feel/ref/QR/U05/sheet-03.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.08416385135135135,
+      "areaSensitivityRange": [
+        0.1324535472972973,
+        0.08416385135135135,
+        0.04267314189189189
+      ],
+      "peakRoiAreaFraction": 0.6324324324324324,
+      "effectSpanSeconds": 5.0,
+      "meanEffectSaturation": 0.11503300768375588,
+      "peakLuminanceP95": 0.9981083058464002,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U05.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U06",
+      "source": "v2",
+      "start": 57.2,
+      "end": 59.2,
+      "tier": "ultimate",
+      "description": "Violet white-beast bloom",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          8
+        ],
+        "anticipation": [
+          9,
+          10
+        ],
+        "castShape": [
+          11,
+          12
+        ],
+        "contact": [
+          13,
+          15
+        ],
+        "followThrough": [
+          16,
+          17
+        ],
+        "recovery": [
+          18,
+          19
+        ]
+      },
+      "peak": 58.6,
+      "baseline": 58.2,
+      "roi": [
+        0.44,
+        0.16,
+        0.97,
+        0.8
+      ],
+      "streakCountMinimum": 6,
+      "camera": "Dim fixed field and banner; summon occupies right group.",
+      "reaction": "Healing numbers, no damage recoil applicable; summon wings open after white flare.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            4,
+            8
+          ],
+          "slide"
+        ],
+        [
+          "white beast silhouette",
+          "normal inferred",
+          "white, blue",
+          [
+            11,
+            19
+          ],
+          "rises and opens wings"
+        ],
+        [
+          "violet star core",
+          "add inferred",
+          "violet, white",
+          [
+            13,
+            15
+          ],
+          "sharp point bloom"
+        ],
+        [
+          "orbital ribbons",
+          "add inferred",
+          "blue, magenta",
+          [
+            14,
+            17
+          ],
+          "cross around body"
+        ],
+        [
+          "small foot seal",
+          "add inferred",
+          "mint",
+          [
+            14,
+            17
+          ],
+          "appears under feet"
+        ],
+        [
+          "blue feather residue",
+          "normal/add inferred",
+          "blue",
+          [
+            16,
+            19
+          ],
+          "tapers outward"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U06/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.24512246621621622,
+      "areaSensitivityRange": [
+        0.30219594594594595,
+        0.24512246621621622,
+        0.21011402027027026
+      ],
+      "peakRoiAreaFraction": 0.34100506756756754,
+      "effectSpanSeconds": 1.6,
+      "meanEffectSaturation": 0.4032047481754352,
+      "peakLuminanceP95": 0.9978451223470325,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U06.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U07",
+      "source": "v2",
+      "start": 59.2,
+      "end": 61.5,
+      "tier": "ultimate",
+      "description": "Water dragon column",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          3
+        ],
+        "focus": [
+          4,
+          9
+        ],
+        "anticipation": [
+          10,
+          12
+        ],
+        "castShape": [
+          13,
+          13
+        ],
+        "contact": [
+          14,
+          17
+        ],
+        "followThrough": [
+          18,
+          20
+        ],
+        "recovery": [
+          21,
+          22
+        ]
+      },
+      "peak": 60.7,
+      "baseline": 60.4,
+      "roi": [
+        0.34,
+        0.03,
+        0.96,
+        0.85
+      ],
+      "streakCountMinimum": 5,
+      "camera": "Dim fixed field, banner; no scale change visible after it.",
+      "reaction": "Target inside water column with repeated gold hit flashes; visible silhouette retained intermittently.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan",
+          [
+            4,
+            9
+          ],
+          "slide"
+        ],
+        [
+          "dragon summon",
+          "normal inferred",
+          "cyan, blue",
+          [
+            10,
+            16
+          ],
+          "rises at left"
+        ],
+        [
+          "cast gate",
+          "add inferred",
+          "blue, orange",
+          [
+            13,
+            18
+          ],
+          "rotates toward target"
+        ],
+        [
+          "vertical water spear",
+          "add inferred",
+          "cyan, white",
+          [
+            14,
+            18
+          ],
+          "drops on right"
+        ],
+        [
+          "contact stars",
+          "add inferred",
+          "gold",
+          [
+            15,
+            18
+          ],
+          "rightward fan"
+        ],
+        [
+          "splash curls and pool",
+          "normal/add inferred",
+          "blue",
+          [
+            18,
+            22
+          ],
+          "fall, flatten and fade"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U07/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.29894425675675673,
+      "areaSensitivityRange": [
+        0.33228462837837835,
+        0.29894425675675673,
+        0.2710304054054054
+      ],
+      "peakRoiAreaFraction": 0.508424831081081,
+      "effectSpanSeconds": 1.9,
+      "meanEffectSaturation": 0.5333743272701085,
+      "peakLuminanceP95": 0.9563039365084072,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U07.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    },
+    {
+      "id": "U08",
+      "source": "v2",
+      "start": 61.2,
+      "end": 63.4,
+      "tier": "ultimate",
+      "description": "Phoenix ground eruption",
+      "sampleFps": 10,
+      "classification": "visual inference from cut-in/charge treatment; no reference event log",
+      "phases": {
+        "context": [
+          0,
+          2
+        ],
+        "focus": [
+          3,
+          8
+        ],
+        "anticipation": [
+          9,
+          11
+        ],
+        "castShape": [
+          12,
+          13
+        ],
+        "contact": [
+          14,
+          16
+        ],
+        "followThrough": [
+          17,
+          18
+        ],
+        "recovery": [
+          19,
+          21
+        ]
+      },
+      "peak": 62.8,
+      "baseline": 62.5,
+      "roi": [
+        0.08,
+        0.22,
+        0.91,
+        0.84
+      ],
+      "streakCountMinimum": 7,
+      "camera": "Dim fixed field; phoenix floats across center then explosion at left group.",
+      "reaction": "Left bodies lost briefly in explosion; ground cracks persist and smoke falls away n17\u201320.",
+      "layers": [
+        [
+          "focus ribbon",
+          "normal inferred",
+          "cyan, red",
+          [
+            3,
+            8
+          ],
+          "slide"
+        ],
+        [
+          "phoenix silhouette",
+          "normal inferred",
+          "red, orange",
+          [
+            10,
+            17
+          ],
+          "rises and travels left"
+        ],
+        [
+          "fire seed",
+          "add inferred",
+          "yellow",
+          [
+            12,
+            13
+          ],
+          "drops toward ground"
+        ],
+        [
+          "jagged eruption",
+          "normal/add inferred",
+          "yellow, white",
+          [
+            14,
+            16
+          ],
+          "upward pointed wedge"
+        ],
+        [
+          "contact rays",
+          "add inferred",
+          "orange",
+          [
+            15,
+            17
+          ],
+          "fan left and right"
+        ],
+        [
+          "glowing cracks",
+          "add inferred",
+          "orange",
+          [
+            16,
+            18
+          ],
+          "spreads along floor"
+        ],
+        [
+          "smoke residue",
+          "normal inferred",
+          "grey",
+          [
+            17,
+            20
+          ],
+          "expands then fades"
+        ]
+      ],
+      "sheetPaths": [
+        "reports/v3-feel/ref/QR/U08/sheet-01.jpg"
+      ],
+      "sourcePath": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
+      "estimatedPeakAreaFraction": 0.325,
+      "areaSensitivityRange": [
+        0.3581081081081081,
+        0.325,
+        0.2939400337837838
+      ],
+      "peakRoiAreaFraction": 0.516722972972973,
+      "effectSpanSeconds": 1.9,
+      "meanEffectSaturation": 0.6342299029799029,
+      "peakLuminanceP95": 0.9599435262440716,
+      "measurementSheet": "reports/v3-feel/ref/QR/measurements/U08.jpg",
+      "measurementLimit": "Positive-difference mask may include moving actors and numbers; field ROI excludes portrait HUD. U05 samples in-field impact, not full-screen cinematic. Values are estimates, not acceptance-grade isolation."
+    }
+  ]
+}
