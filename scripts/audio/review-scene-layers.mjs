@@ -38,7 +38,9 @@ try{
   }
   rows.push({chapter,boss:!chapter,cue,samples});
  }
- await page.evaluate(()=>{window.__depthReview.finish();window.__depthReview.go('hub');});
+ // Leave an unfinished encounter through the same retreat flow as the HUD.
+ await page.evaluate(()=>window.__depthReview.leave());
+ await page.waitForFunction(()=>!window.__depthReview.showBattle&&window.__thAudio.bedIds.music==='music.home');
  await page.waitForTimeout(1200);
  const cleanup=await page.evaluate(()=>({active:[...window.__thAudio.active].map(p=>p.id),hits:window.__thAudio.hits}));
  await page.evaluate(()=>window.__outputCapture.stop());
