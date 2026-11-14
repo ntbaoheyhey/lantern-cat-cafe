@@ -8,7 +8,7 @@ const require=createRequire(new URL('../../apps/web/package.json',import.meta.ur
 const {chromium}=require('@playwright/test');
 const root=process.env.AUDIO_RUNTIME_ROOT,url=process.env.AUDIO_URL;
 if(!root||!url)throw Error('Specify the current runtime root and URL');
-const base='reports/v3-shell/b2/polish/P2',sources=runtimeSignature(root);
+const base=process.env.CADENCE_OUT||'reports/v3-shell/b2/polish/P2',sources=runtimeSignature(root);
 const sign=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
 const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];

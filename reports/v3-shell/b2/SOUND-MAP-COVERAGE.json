@@ -1,5 +1,5 @@
 {
-  "existingCueCount": 528,
+  "existingCueCount": 532,
   "missingExisting": [],
   "callsiteCount": 44,
   "unresolved": [],
@@ -66,7 +66,7 @@
     },
     {
       "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
-      "sha256": "89d5d224b8380fb4aac63b92a033448747fcec7ec87b92b0b769084cf6058219"
+      "sha256": "2bb278175d9b4c22474e5cebc3e2050ae63a7d5cbd161f79e51caadacc1837ba"
     },
     {
       "path": "apps/web/src/game/squad/turn3d/audio.ts",
@@ -75,11 +75,11 @@
   ],
   "mapSource": {
     "path": "apps/web/src/audio/sound-map.ts",
-    "sha256": "07fa316902af091362fcb60e708d85b1048661c9c586064843cfa1f018dfca0e"
+    "sha256": "3d4927a367625aeed953db57df64b9cd391dc8aaae78ab125f5d4c4afae00c6b"
   },
   "manifestSource": {
     "path": "apps/web/public/audio/manifest.json",
-    "sha256": "8a46d0438fcdd2c3fc2c7495557813872f9f44f8be097090110dc4c4e03b6611"
+    "sha256": "b56b03c70fa2152606fe5e87aa7742fa4c42d4cdb352402cef3f206e1fcd6cce"
   },
   "scannedSourceCount": 514,
   "calls": [
@@ -1425,6 +1425,10 @@
         "voice.pantry-crown.victory",
         "voice.meow",
         "ambience.cafe",
+        "ambience.chapter-1",
+        "ambience.chapter-2",
+        "ambience.chapter-3",
+        "music.boss.dawn",
         "music.reveal",
         "music.gacha",
         "ui.forge-fail",
@@ -1769,7 +1773,10 @@
         "ambience.field-guide",
         "ambience.reward",
         "ambience.boss",
-        "ambience.battle"
+        "ambience.battle",
+        "ambience.chapter-1",
+        "ambience.chapter-2",
+        "ambience.chapter-3"
       ],
       "delegation": false
     },
@@ -2303,6 +2310,10 @@
     "voice.mochi.gear",
     "voice.mochi.forge",
     "music.forge",
+    "music.boss.dawn",
+    "ambience.chapter-1",
+    "ambience.chapter-2",
+    "ambience.chapter-3",
     "status.snag.on",
     "status.snag.off",
     "status.snag.tick",

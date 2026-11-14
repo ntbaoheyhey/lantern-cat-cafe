@@ -22,6 +22,24 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('layered playback admission and variants',()=>{
+ it('starts dawn on the boss bar clock and releases both music layers on navigation',async()=>{
+  const m={...fixture,packs:{...fixture.packs,dawn:{webm:'/dawn.webm',mp3:'/dawn.mp3'}},cues:{...fixture.cues,
+   'music.home':samples('music').map(s=>({...s,loop:true})),
+   'music.boss':samples('music').map(s=>({...s,loop:true})),
+   'music.boss.dawn':[{pack:'dawn',start:0,duration:30.72,bus:'music' as const,loop:true}]}};
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);
+  const e=new AudioEngine();await e.unlock();e.music('home');await flush();
+  expect(e.diagnostics.packs).not.toContain('dawn');
+  e.music('boss');await flush();
+  const sources=Context.latest.sources.slice(-2);
+  expect(sources.map(s=>s.start.mock.calls[0]?.[0])).toEqual([10,10]);
+  expect(sources.every(s=>s.loop)).toBe(true);
+  expect(e.hits.at(-1)?.id).toBe('music.boss.dawn');
+  e.pause(true);expect(Context.latest.state).toBe('suspended');
+  e.pause(false);e.music('home');await flush();expect(e.diagnostics.active).toBe(1);
+  expect(e.diagnostics.voice).toBe(0);
+ });
  it('cycles each pool without repeats across several cycles',()=>{
   const p=new VariantPools(()=>.99);const values=Array.from({length:25},()=>p.next('hit/body',[0,1,2,3,4,5]));
   expect(new Set(values)).toHaveLength(6);expect(values.every((v,i)=>i===0||v!==values[i-1])).toBe(true);

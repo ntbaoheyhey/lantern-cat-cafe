@@ -43649,6 +43649,40 @@
           "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
         }
       ]
+    },
+    {
+      "path": "apps/web/public/audio/score-dawn.webm",
+      "file": "score-dawn.webm",
+      "sha256": "ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7",
+      "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py",
+      "licenseUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py",
+      "license": "Own synthesis",
+      "author": "Taskbar Hero original synthesis",
+      "date": "2026-11-14",
+      "tool": "Python NumPy + ffmpeg",
+      "prompt": "Original dawn strings for the boss wave, following its authored D-minor score.\n\nTwo octaves of slow bowed harmonics open above the existing night score. No\nrecordings, reference media, paid tools or model calls are used.\n",
+      "script": {
+        "path": "scripts/audio/compose-dawn.py",
+        "sha256": "39bd6fe43d7e9d7916773900e39ab0190889e9010c3e12130736a871ceebdcc2"
+      },
+      "processing": "Mono 16-bar bowed harmonic score; same chord progression and tempo as original boss score; no reference media."
+    },
+    {
+      "path": "apps/web/public/audio/score-dawn.mp3",
+      "file": "score-dawn.mp3",
+      "sha256": "8b61ecf285767f8a58da85446ddf51df9101a611400514e99eb9e38df4392a7e",
+      "sourceUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py",
+      "licenseUrl": "https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py",
+      "license": "Own synthesis",
+      "author": "Taskbar Hero original synthesis",
+      "date": "2026-11-14",
+      "tool": "Python NumPy + ffmpeg",
+      "prompt": "Original dawn strings for the boss wave, following its authored D-minor score.\n\nTwo octaves of slow bowed harmonics open above the existing night score. No\nrecordings, reference media, paid tools or model calls are used.\n",
+      "script": {
+        "path": "scripts/audio/compose-dawn.py",
+        "sha256": "39bd6fe43d7e9d7916773900e39ab0190889e9010c3e12130736a871ceebdcc2"
+      },
+      "processing": "Mono 16-bar bowed harmonic score; same chord progression and tempo as original boss score; no reference media."
     }
   ]
 }

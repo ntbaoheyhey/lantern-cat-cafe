@@ -2,8 +2,8 @@
 
 Generated from typed sound-map.ts. This is the production plan; assets, screen wiring and playback measurements are separately gated by S2–S7.
 
-2556 event/screen assignments; 49 screens; 869 distinct cues.
-528 legacy/current cue IDs inspected; 0 missing. 44 call sites in 514 production source files; 0 unresolved.
+2566 event/screen assignments; 49 screens; 873 distinct cues.
+532 legacy/current cue IDs inspected; 0 missing. 44 call sites in 514 production source files; 0 unresolved.
 
 Pitch values are playback-rate ratios. Random gain is in dB. Every layer pool is a production role, not a claim that the asset exists. Hits reserve four variants per layer; UI reserves three. High-priority ultimate/voice requests duck music −8 dB with 120 ms attack / 400 ms release.
 
@@ -1006,6 +1006,9 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | sweep-ten | ui.batch | ui | ui.batch/transient / 3 / 0 / flat; ui.batch/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | supply-select | ui.select | ui | ui.select/transient / 3 / 0 / flat; ui.select/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | ready | battle.ready | sfx | battle.ready/transient / 4 / 0 / flat; battle.ready/body / 4 / 7 / low-shelf-180; battle.ready/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
+| chapter-one | ambience.chapter-1 | ambience | ambience.chapter-1/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-two | ambience.chapter-2 | ambience | ambience.chapter-2/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-three | ambience.chapter-3 | ambience | ambience.chapter-3/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## stage-select
 
@@ -1054,6 +1057,9 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | sweep-ten | ui.batch | ui | ui.batch/transient / 3 / 0 / flat; ui.batch/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | supply-select | ui.select | ui | ui.select/transient / 3 / 0 / flat; ui.select/sweetener / 3 / 7 / high-pass-1800 | 3 | 0.97–1.03 | -1.5–1.5 | 30 | 20 | none | B |
 | ready | battle.ready | sfx | battle.ready/transient / 4 / 0 / flat; battle.ready/body / 4 / 7 / low-shelf-180; battle.ready/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
+| chapter-one | ambience.chapter-1 | ambience | ambience.chapter-1/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-two | ambience.chapter-2 | ambience | ambience.chapter-2/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-three | ambience.chapter-3 | ambience | ambience.chapter-3/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## battle
 
@@ -1783,6 +1789,9 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | voice-pantry-crown-hit | voice.pantry-crown.hit | voice | voice.pantry-crown.hit/consonant / 3 / 0 / flat; voice.pantry-crown.hit/voice-grain / 3 / 0 / flat; voice.pantry-crown.hit/foley / 3 / 0 / high-pass-80; voice.pantry-crown.hit/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | A |
 | voice-pantry-crown-death | voice.pantry-crown.death | voice | voice.pantry-crown.death/consonant / 3 / 0 / flat; voice.pantry-crown.death/voice-grain / 3 / 0 / flat; voice.pantry-crown.death/foley / 3 / 0 / high-pass-80; voice.pantry-crown.death/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 80 | -8 dB; 120/400 ms | A |
 | voice-pantry-crown-victory | voice.pantry-crown.victory | voice | voice.pantry-crown.victory/consonant / 3 / 0 / flat; voice.pantry-crown.victory/voice-grain / 3 / 0 / flat; voice.pantry-crown.victory/foley / 3 / 0 / high-pass-80; voice.pantry-crown.victory/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | A |
+| chapter-one | ambience.chapter-1 | ambience | ambience.chapter-1/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-two | ambience.chapter-2 | ambience | ambience.chapter-2/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
+| chapter-three | ambience.chapter-3 | ambience | ambience.chapter-3/ambience / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 | critical-accent | crit | sfx | crit/transient / 4 / 0 / flat; crit/body / 4 / 7 / low-shelf-180; crit/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 | block-accent | block | sfx | block/transient / 4 / 0 / flat; block/body / 4 / 7 / low-shelf-180; block/tail / 4 / 18 / flat | 4 | 0.97–1.03 | -1.5–1.5 | 30 | 0 | none | B |
 
@@ -2514,6 +2523,7 @@ The legacy forge-success/fail hyphen IDs remain accepted aliases for the dotted 
 | voice-pantry-crown-hit | voice.pantry-crown.hit | voice | voice.pantry-crown.hit/consonant / 3 / 0 / flat; voice.pantry-crown.hit/voice-grain / 3 / 0 / flat; voice.pantry-crown.hit/foley / 3 / 0 / high-pass-80; voice.pantry-crown.hit/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | A |
 | voice-pantry-crown-death | voice.pantry-crown.death | voice | voice.pantry-crown.death/consonant / 3 / 0 / flat; voice.pantry-crown.death/voice-grain / 3 / 0 / flat; voice.pantry-crown.death/foley / 3 / 0 / high-pass-80; voice.pantry-crown.death/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 80 | -8 dB; 120/400 ms | A |
 | voice-pantry-crown-victory | voice.pantry-crown.victory | voice | voice.pantry-crown.victory/consonant / 3 / 0 / flat; voice.pantry-crown.victory/voice-grain / 3 / 0 / flat; voice.pantry-crown.victory/foley / 3 / 0 / high-pass-80; voice.pantry-crown.victory/tail / 3 / 0 / flat | 3 | 1–1 | 0–0 | 300 | 40 | -8 dB; 120/400 ms | A |
+| dawn-harmonics | music.boss.dawn | music | music.boss.dawn/music / 1 / 0 / flat | 1 | 1–1 | 0–0 | 0 | 0 | none | B |
 
 ## victory
 

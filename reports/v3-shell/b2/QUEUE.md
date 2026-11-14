@@ -35,7 +35,7 @@ Syncs interrupt the active card at 16 / 18 / 19 November, 12:00 UTC.
 
 - [x] P1 — done;361/361 layers have six distinct decoded variants;S3 eight gates PASS;production unchanged;self-score8/10;ENDED 2026-11-13T23:56:30.140143+00:00
 - [x] P2 — done;24/24 phases;S1/S3/S5/S7/V all PASS;current suite435/435;self-score8/10;ENDED 2026-11-14T00:30:00.219584+00:00; STARTED 2026-11-13T23:57:22.827701+00:00;distinct elemental material palettes within unchanged byte budget
-- [ ] P3 — todo
+- [ ] P3 — STARTED 2026-11-14T00:32:12.449560+00:00;authoring independent ambience/music assets while S4 pilots run;acceptance waits for cadence outcome
 - [ ] P4 — todo
 - [ ] P5 — todo
 - [ ] P6 — todo

@@ -231,7 +231,7 @@ export class AudioEngine implements AudioBridge {
  private stopBus(bus:Bus){for(const p of this.active)if(p.bus===bus)this.end(p,true);}
  stop(id?:string){
   if(id)this.stopped.set(id,(this.stopped.get(id)??0)+1);else{this.epoch++;this.voiceRequest++;this.pendingVoicePriority=0;}
-  for(const p of this.active)if(!id||p.id===id)this.end(p,true);
+  for(const p of this.active)if(!id||p.id===id||(id==='music.boss'&&p.id==='music.boss.dawn'))this.end(p,true);
   for(const bus of ['music','ambience'] as const)if(!id||id===this.bedIds[bus]){this.bedIds[bus]='';this.bedTokens[bus]++;}this.setSceneTone();this.releaseDuck();
  }
  music(id:string){this.musicScopes=[];this.bed('music',id);}
@@ -253,7 +253,9 @@ export class AudioEngine implements AudioBridge {
   const token=++this.bedTokens[bus];
   void(async()=>{try{
    const m=await this.loadManifest(),s=resolveCue(cue,m)?.[0];if(!s||!this.ctx){if(token===this.bedTokens[bus]){this.bedIds[bus]='';this.setSceneTone();}return;}
-   const b=await this.buffer(s.pack,m);if(token!==this.bedTokens[bus])return;
+   const dawn=cue==='music.boss'?resolveCue('music.boss.dawn',m)?.[0]:undefined;
+   const [b,dawnBuffer]=await Promise.all([this.buffer(s.pack,m),dawn?this.buffer(dawn.pack,m):undefined]);
+   if(token!==this.bedTokens[bus])return;
    // Keep the outgoing bed until the incoming audio has decoded. Both sides
    // then crossfade for 800 ms, including when a rapid tab switch supersedes a load.
    const now=this.ctx.currentTime;
@@ -261,6 +263,13 @@ export class AudioEngine implements AudioBridge {
    const level=dbGain(['music.battle','music.boss'].includes(cue)?3:0);
    const incoming=this.start(cue,b,s,0,1,level,0,'flat',++this.group);
    incoming.gain.gain.setValueAtTime(0,now);incoming.gain.gain.linearRampToValueAtTime(level,now+.8);this.record(cue,'played');
+   // Decode together so the dawn harmonics follow the boss score's bar clock.
+   // They share music volume, ducking, mute and pause, and leave with the scene.
+   if(dawn&&dawnBuffer){
+    const layer=this.start('music.boss.dawn',dawnBuffer,dawn,0,1,0,0,'flat',++this.group);
+    layer.gain.gain.setValueAtTime(0,now);layer.gain.gain.linearRampToValueAtTime(.42,now+30.72);
+    this.record('music.boss.dawn','played');
+   }
   }catch{if(token===this.bedTokens[bus]){this.bedIds[bus]='';this.setSceneTone();}this.record(cue,'unavailable');}})();
  }
 }

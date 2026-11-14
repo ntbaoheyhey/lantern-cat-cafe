@@ -232,6 +232,10 @@
     "menu-forge": {
       "webm": "/audio/menu-forge.webm",
       "mp3": "/audio/menu-forge.mp3"
+    },
+    "score-dawn": {
+      "webm": "/audio/score-dawn.webm",
+      "mp3": "/audio/score-dawn.mp3"
     }
   },
   "cues": {
@@ -8217,6 +8221,42 @@
         "start": 0,
         "duration": 40,
         "bus": "music",
+        "loop": true
+      }
+    ],
+    "music.boss.dawn": [
+      {
+        "pack": "score-dawn",
+        "start": 0,
+        "duration": 30.72,
+        "bus": "music",
+        "loop": true
+      }
+    ],
+    "ambience.chapter-1": [
+      {
+        "pack": "scene-night",
+        "start": 0,
+        "duration": 24,
+        "bus": "ambience",
+        "loop": true
+      }
+    ],
+    "ambience.chapter-2": [
+      {
+        "pack": "scene-rain",
+        "start": 0,
+        "duration": 24,
+        "bus": "ambience",
+        "loop": true
+      }
+    ],
+    "ambience.chapter-3": [
+      {
+        "pack": "scene-workshop",
+        "start": 0,
+        "duration": 24,
+        "bus": "ambience",
         "loop": true
       }
     ]

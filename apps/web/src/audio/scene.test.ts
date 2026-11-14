@@ -16,4 +16,12 @@ describe('music scene routing',()=>{
   expect(ambienceScene('map',true,true)).toBe('boss');
   expect(ambienceScene('map',false,false)).toBe('chapter-map');
  });
+ it('gives every chapter its own route and field bed while keeping menu and boss beds',()=>{
+  for(const chapter of [1,2,3])for(const screen of ['map','prepare']){
+   expect(ambienceScene(screen,false,false,chapter)).toBe(`chapter-${chapter}`);
+   expect(ambienceScene(screen,true,false,chapter)).toBe(`chapter-${chapter}`);
+  }
+  expect(ambienceScene('map',true,true,2)).toBe('boss');
+  expect(ambienceScene('inventory',false,false,2)).toBe('bag');
+ });
 });
