@@ -8,11 +8,11 @@ Only checker PASS permits done. PARTIAL remains unfinished. Scheduled syncs cann
 | R | Measured reference research | done | Q1: 42 PASS /0 FAIL; R/gates.log; browser435/435, units2544/2544, parity PASS |
 | F1 | Viewport scale and staggered formation | done | Q1: 40 PASS /0 FAIL; F1/gates.log; browser435/435, units2544/2544, parity PASS |
 | F2 | Field clarity | done | Q1: 18 PASS /0 FAIL; F2/gates.log; browser435/435, units2544/2544, parity PASS |
-| M1 | Attack choreography | done | Q3: 29 PASS/0 FAIL; full energy15.908/17.321/17.096; 98/98 hit reactions; 33/33 enemies move; High59.95–60.05FPS; 10/10 battle E2E,2553 web units,types/parity PASS. |
+| M1 | Attack choreography | open | S4 retiming pilots reopened motion;last pilot15.586 FAIL. Historical accepted evidence: Q3: 29 PASS/0 FAIL; full energy15.908/17.321/17.096; 98/98 hit reactions; 33/33 enemies move; High59.95–60.05FPS; 10/10 battle E2E,2553 web units,types/parity PASS. |
 | M2 | Separate parts and face animation | done | Q1: 17 PASS /0 FAIL; M2/gates.log; browser435/435, units2544/2544, parity PASS |
 | V1 | Full-screen distinct ultimate plates | done | Q1: 22 PASS /0 FAIL; V1/gates.log; browser435/435, units2544/2544, parity PASS |
 | V2 | Field skills and damage numbers | done | Q1: 29 PASS /0 FAIL; V2/gates.log; browser435/435, units2544/2544, parity PASS |
-| V3 | Battle audio cue choreography | done | Q1: 25 PASS /0 FAIL; V3/gates.log; browser435/435, units2544/2544, parity PASS |
+| V3 | Battle audio cue choreography | open | S4 speech-slot change needs current remeasurement. Historical accepted evidence: Q1: 25 PASS /0 FAIL; V3/gates.log; browser435/435, units2544/2544, parity PASS |
 | T1 | Battle UI and text diet | done | Q1: 19 PASS /0 FAIL; T1/gates.log; browser435/435, units2544/2544, parity PASS |
 | SY1 | Sync at 2026-11-16 12:00 UTC | todo | pending |
 | SY2 | Sync at 2026-11-18 12:00 UTC | todo | pending |

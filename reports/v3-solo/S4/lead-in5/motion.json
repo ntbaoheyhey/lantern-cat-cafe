@@ -1,0 +1,651 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-14T01:01:03.428360+00:00",
+    "sourceCommit": "0e46b2510dbf057dfe03c5ce1352b5076a3e15b3"
+  },
+  "fixtures": {
+    "wave1": {
+      "seconds": 35.9,
+      "completeActions": true,
+      "capture": {
+        "path": "reports/v3-solo/S4/lead-in5/wave1/capture.json",
+        "sha256": "ce54b581bed542c3d8b4671a86acfb6cdc836bfe960a9bb796010c1069041132"
+      },
+      "video": {
+        "path": "reports/v3-solo/S4/lead-in5/wave1/battle.webm",
+        "sha256": "6a901fd9f52b9ff4a780e5c68f122003b710b993daa944cfc64a1aef132a2796"
+      },
+      "captureMeta": {
+        "generatedAt": "2026-11-14T01:01:01.664Z",
+        "sourceCommit": "0e46b2510dbf057dfe03c5ce1352b5076a3e15b3"
+      },
+      "displacementPer10s": 11.420612813370475,
+      "motionEnergy": 14.445512153582866,
+      "motionEnergyPerSecond": [
+        16.781321334838868,
+        17.54966983795166,
+        18.080203247070312,
+        14.426567554473877,
+        17.497611331939698,
+        16.310097217559814,
+        17.801078033447265,
+        15.330821323394776,
+        16.49817008972168,
+        16.407571506500243,
+        15.54672384262085,
+        15.00613899230957,
+        16.19767713546753,
+        17.418607711791992,
+        18.703354263305663,
+        9.844907879829407,
+        3.8626874923706054,
+        5.666119766235352,
+        4.744861078262329,
+        6.234697961807251,
+        6.988348913192749,
+        13.462944531440735,
+        19.96706953048706,
+        14.697262382507324,
+        21.264295387268067,
+        15.461906147003173,
+        16.626892280578613,
+        11.784793519973755,
+        7.233916616439819,
+        6.045033025741577,
+        8.551687526702882,
+        15.146399116516113,
+        19.747996520996093,
+        21.683421516418456,
+        30.204043006896974,
+        10.468046844005585
+      ],
+      "minActionDisplacementFraction": 0.1052002746839527,
+      "hitKnockbackFraction": 1.0,
+      "actions": [
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "side": "party",
+          "frame": 0,
+          "peak": 0.19142326931789183
+        },
+        {
+          "skill": "soot-2",
+          "actor": "soot",
+          "side": "party",
+          "frame": 22,
+          "peak": 0.1149670721903285
+        },
+        {
+          "skill": "clover-2",
+          "actor": "clover",
+          "side": "party",
+          "frame": 62,
+          "peak": 0.11607705116518419
+        },
+        {
+          "skill": "panko-3",
+          "actor": "panko",
+          "side": "party",
+          "frame": 105,
+          "peak": 0.17710434429595887
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "foe-0-button-guard",
+          "side": "enemy",
+          "frame": 154,
+          "peak": 0.19114767774084623
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "foe-3-needle-moth",
+          "side": "enemy",
+          "frame": 174,
+          "peak": 0.11500722867799087
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "foe-1-sock-skipper",
+          "side": "enemy",
+          "frame": 194,
+          "peak": 0.3516371923055425
+        },
+        {
+          "skill": "enemy:teacup-healer:basic",
+          "actor": "foe-2-teacup-healer",
+          "side": "enemy",
+          "frame": 214,
+          "peak": 0.11603981916055361
+        },
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "side": "party",
+          "frame": 243,
+          "peak": 0.19142326931789183
+        },
+        {
+          "skill": "soot-3",
+          "actor": "soot",
+          "side": "party",
+          "frame": 264,
+          "peak": 0.11499999999999999
+        },
+        {
+          "skill": "clover-2",
+          "actor": "clover",
+          "side": "party",
+          "frame": 310,
+          "peak": 0.11607705116518419
+        },
+        {
+          "skill": "panko-1",
+          "actor": "panko",
+          "side": "party",
+          "frame": 353,
+          "peak": 0.1158507179629626
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "foe-0-button-guard",
+          "side": "enemy",
+          "frame": 374,
+          "peak": 0.16516208579132288
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "foe-3-needle-moth",
+          "side": "enemy",
+          "frame": 394,
+          "peak": 0.11500722867799087
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "foe-1-sock-skipper",
+          "side": "enemy",
+          "frame": 414,
+          "peak": 0.32447262977673974
+        },
+        {
+          "skill": "enemy:teacup-healer",
+          "actor": "foe-2-teacup-healer",
+          "side": "enemy",
+          "frame": 434,
+          "peak": 0.11603981916055361
+        },
+        {
+          "skill": "mochi-4",
+          "actor": "mochi",
+          "side": "party",
+          "frame": 480,
+          "peak": 0.1052002746839527
+        },
+        {
+          "skill": "soot-1",
+          "actor": "soot",
+          "side": "party",
+          "frame": 785,
+          "peak": 0.11494744753923647
+        },
+        {
+          "skill": "clover-1",
+          "actor": "clover",
+          "side": "party",
+          "frame": 806,
+          "peak": 0.11625583112783011
+        },
+        {
+          "skill": "panko-4",
+          "actor": "panko",
+          "side": "party",
+          "frame": 827,
+          "peak": 0.15791060643796953
+        }
+      ],
+      "actionTypes": {
+        "mochi-1": 0.19142326931789183,
+        "soot-2": 0.1149670721903285,
+        "clover-2": 0.11607705116518419,
+        "panko-3": 0.17710434429595887,
+        "enemy:button-guard:basic": 0.16516208579132288,
+        "enemy:needle-moth:basic": 0.11500722867799087,
+        "enemy:sock-skipper:basic": 0.32447262977673974,
+        "enemy:teacup-healer:basic": 0.11603981916055361,
+        "soot-3": 0.11499999999999999,
+        "panko-1": 0.1158507179629626,
+        "enemy:teacup-healer": 0.11603981916055361,
+        "mochi-4": 0.1052002746839527,
+        "soot-1": 0.11494744753923647,
+        "clover-1": 0.11625583112783011,
+        "panko-4": 0.15791060643796953
+      },
+      "hits": [
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "target": "foe-2-teacup-healer",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "soot-2",
+          "actor": "soot",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "foe-0-button-guard",
+          "target": "panko",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "panko",
+          "target": "foe-0-button-guard",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "foe-3-needle-moth",
+          "target": "panko",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "panko",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "foe-1-sock-skipper",
+          "target": "panko",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "panko",
+          "target": "foe-1-sock-skipper",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:teacup-healer:basic",
+          "actor": "foe-2-teacup-healer",
+          "target": "panko",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:teacup-healer:basic",
+          "actor": "panko",
+          "target": "foe-2-teacup-healer",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "target": "foe-2-teacup-healer",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "soot-3",
+          "actor": "soot",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "panko-1",
+          "actor": "panko",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "foe-0-button-guard",
+          "target": "mochi",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:button-guard:basic",
+          "actor": "mochi",
+          "target": "foe-0-button-guard",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "foe-3-needle-moth",
+          "target": "panko",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:needle-moth:basic",
+          "actor": "panko",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "foe-1-sock-skipper",
+          "target": "mochi",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "enemy:sock-skipper:basic",
+          "actor": "mochi",
+          "target": "foe-1-sock-skipper",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "mochi-4",
+          "actor": "mochi",
+          "target": "foe-0-button-guard",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "soot-1",
+          "actor": "soot",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        },
+        {
+          "skill": "clover-1",
+          "actor": "clover",
+          "target": "foe-3-needle-moth",
+          "reacted": true,
+          "maxKnockback": 21.388888888888886
+        }
+      ],
+      "displacements": [
+        {
+          "t": 0.3,
+          "id": "mochi",
+          "fraction": 0.18967383837088742
+        },
+        {
+          "t": 0.6333333333333333,
+          "id": "mochi",
+          "fraction": 0.16563170465576443
+        },
+        {
+          "t": 1.2333333333333334,
+          "id": "soot",
+          "fraction": 0.10106214375893204
+        },
+        {
+          "t": 1.6333333333333333,
+          "id": "soot",
+          "fraction": 0.08834929338528365
+        },
+        {
+          "t": 2.566666666666667,
+          "id": "clover",
+          "fraction": 0.1037629769076273
+        },
+        {
+          "t": 2.966666666666667,
+          "id": "clover",
+          "fraction": 0.08813488595408249
+        },
+        {
+          "t": 4.1,
+          "id": "panko",
+          "fraction": 0.08532870013643744
+        },
+        {
+          "t": 4.4,
+          "id": "panko",
+          "fraction": 0.0809343430978848
+        },
+        {
+          "t": 4.733333333333333,
+          "id": "panko",
+          "fraction": 0.1536439442209228
+        },
+        {
+          "t": 5.366666666666666,
+          "id": "foe-0-button-guard",
+          "fraction": 0.12334772815504629
+        },
+        {
+          "t": 5.7,
+          "id": "foe-0-button-guard",
+          "fraction": 0.1206983809670509
+        },
+        {
+          "t": 6.066666666666666,
+          "id": "foe-3-needle-moth",
+          "fraction": 0.09742145826796902
+        },
+        {
+          "t": 6.4,
+          "id": "foe-3-needle-moth",
+          "fraction": 0.11476889373023395
+        },
+        {
+          "t": 6.666666666666667,
+          "id": "foe-1-sock-skipper",
+          "fraction": 0.11907138162143108
+        },
+        {
+          "t": 7.033333333333333,
+          "id": "foe-1-sock-skipper",
+          "fraction": 0.2140545173582446
+        },
+        {
+          "t": 7.4,
+          "id": "foe-2-teacup-healer",
+          "fraction": 0.09997304479555888
+        },
+        {
+          "t": 7.733333333333333,
+          "id": "foe-2-teacup-healer",
+          "fraction": 0.1162643914661263
+        },
+        {
+          "t": 8.233333333333333,
+          "id": "mochi",
+          "fraction": 0.0858442171661954
+        },
+        {
+          "t": 8.533333333333333,
+          "id": "mochi",
+          "fraction": 0.09473308376397606
+        },
+        {
+          "t": 8.833333333333334,
+          "id": "mochi",
+          "fraction": 0.18056817090864472
+        },
+        {
+          "t": 9.433333333333334,
+          "id": "soot",
+          "fraction": 0.08976433522546727
+        },
+        {
+          "t": 9.866666666666667,
+          "id": "soot",
+          "fraction": 0.09720893650870585
+        },
+        {
+          "t": 10.833333333333334,
+          "id": "clover",
+          "fraction": 0.1037629769076273
+        },
+        {
+          "t": 11.233333333333333,
+          "id": "clover",
+          "fraction": 0.08813488595408249
+        },
+        {
+          "t": 11.933333333333334,
+          "id": "panko",
+          "fraction": 0.08905158369835957
+        },
+        {
+          "t": 12.333333333333334,
+          "id": "panko",
+          "fraction": 0.08175588290797191
+        },
+        {
+          "t": 12.7,
+          "id": "foe-0-button-guard",
+          "fraction": 0.108148717288254
+        },
+        {
+          "t": 13.033333333333333,
+          "id": "foe-0-button-guard",
+          "fraction": 0.10732457588826838
+        },
+        {
+          "t": 13.4,
+          "id": "foe-3-needle-moth",
+          "fraction": 0.09742145826796902
+        },
+        {
+          "t": 13.733333333333333,
+          "id": "foe-3-needle-moth",
+          "fraction": 0.11476889373023395
+        },
+        {
+          "t": 14,
+          "id": "foe-1-sock-skipper",
+          "fraction": 0.11126308768536841
+        },
+        {
+          "t": 14.3,
+          "id": "foe-1-sock-skipper",
+          "fraction": 0.16601401757068554
+        },
+        {
+          "t": 14.633333333333333,
+          "id": "foe-1-sock-skipper",
+          "fraction": 0.1827814780962102
+        },
+        {
+          "t": 14.733333333333333,
+          "id": "foe-2-teacup-healer",
+          "fraction": 0.09997304479555888
+        },
+        {
+          "t": 15.133333333333333,
+          "id": "foe-2-teacup-healer",
+          "fraction": 0.09234764669740952
+        },
+        {
+          "t": 24.933333333333334,
+          "id": "mochi",
+          "fraction": 0.09127357664001731
+        },
+        {
+          "t": 26.333333333333332,
+          "id": "soot",
+          "fraction": 0.08396543630820935
+        },
+        {
+          "t": 26.733333333333334,
+          "id": "soot",
+          "fraction": 0.0802548508600624
+        },
+        {
+          "t": 27.033333333333335,
+          "id": "clover",
+          "fraction": 0.08667773637136475
+        },
+        {
+          "t": 27.433333333333334,
+          "id": "clover",
+          "fraction": 0.08010887452313811
+        },
+        {
+          "t": 34.766666666666666,
+          "id": "panko",
+          "fraction": 0.08665839521334935
+        }
+      ],
+      "parity": true,
+      "browserErrors": [],
+      "fpsHigh": 60.00532640888257
+    }
+  },
+  "performanceUnits": 10,
+  "suite": {
+    "_meta": {
+      "generatedAt": "2026-11-13T23:04:54.441Z",
+      "sourceCommit": "16cb6cdfce0f68112c8cac5664e7cb3375349e76"
+    },
+    "typecheckExit": 0,
+    "parityExit": 0,
+    "unitExit": 0,
+    "e2eExit": 0,
+    "verification": {
+      "browser": {
+        "passed": 435,
+        "failed": 0,
+        "groups": [
+          {
+            "group": "local",
+            "passed": 375,
+            "failed": 0,
+            "note": "Eight API-dependent fallback cases were initially invoked without the API and failed; all eight pass in the separate fallback group.",
+            "path": "reports/v3-solo/Q7-e2e-local.log",
+            "sha256": "5403c0963e0bc1a0abd6a99a99bbb6aef632cc84d03b969e0679d4f0be7ff3ff"
+          },
+          {
+            "group": "server",
+            "passed": 52,
+            "failed": 0,
+            "path": "reports/v3-solo/Q7-e2e-server.log",
+            "sha256": "8a4202a289fe985ddcd25a7bd63e89e2e23007f1be0461232dec03f2f73cb852"
+          },
+          {
+            "group": "fallback",
+            "passed": 8,
+            "failed": 0,
+            "path": "reports/v3-solo/Q7-e2e-fallback.log",
+            "sha256": "beff81ee7cb163f94156f5bef0cddc02c9f4dfaa5a232edda970c3449219ef88"
+          }
+        ]
+      },
+      "battleSubset": {
+        "passed": 10,
+        "path": "reports/v3-battle/a2/Q7/suite-e2e.log",
+        "sha256": "1c4753ef9e2ccd08199306ca022ab62e93747d7cf9f328416259c6e5e8e36e61"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
-NOW:S4 lead-in4 pilot;explicit neutral pre-charge tracks.
-NEXT:Cadence and30s motion;all dependent gates must remain passing.
-DIAGNOSIS:lead-in3 raw6.261 PASS;motion15.25065 FAIL. First shifted keys darkened and froze the wind-up.
-PIDS:A36397,B97970;B P3 browser9435.
-UPDATED:2026-11-14T00:46:56.658937+00:00
+NOW:Q9 S4 lead-in5 under serial live-cadence and full-motion validation.
+SOURCE:0e46b2510;published A pilot,not accepted.
+DIAGNOSIS:lead-in4 raw cadence5.126s and wave1 motion15.586 failed.
+METHOD:required skill lines also seed spacing;chatter waits for an imminent callout;caster takes three steps with a lateral camera move.
+NEXT:all3 M1 captures,9-case voice matrix,V3,performance and full suite before promotion.
+PIDS:A36397,B97970;verification13164.
+JOBS:reports/v3-solo/S4/lead-in5/verification-job.json.
