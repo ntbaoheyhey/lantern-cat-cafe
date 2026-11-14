@@ -74,3 +74,7 @@ Resume 2026-11-13T11:08:22.437344+00:00: 289.88 GiB before; 289.88 GiB after. Re
 Resume 2026-11-13T11:26:29.424999+00:00: 289.74 GiB before; 289.74 GiB after. Removed rebuildable outputs: apps/web/node_modules/.vite-temp, apps/web/node_modules/.vite, packages/game-rules/node_modules/.vite-temp, packages/game-rules/node_modules/.vite. Active economy runtimes, current evidence, compressed audio sources and protected trees retained.
 
 - 2026-11-13T19:29:23.276059+00:00: resume cleanup removed ['apps/web/node_modules/.vite']; free 282.10 -> 282.10 GiB. Current captures and checkpoints retained.
+
+- 2026-11-14T00:03:39.659617+00:00: 269 GiB free. Solo resume removed inactive A build/browser output folders only. B current P2 suite/capture outputs retained while running. No reference sources deleted.
+
+2026-11-14 resume:269GiB free;removed inactive dist/dist-v2;kept active probe audio and review evidence.

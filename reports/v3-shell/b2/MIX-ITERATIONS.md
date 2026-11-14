@@ -359,3 +359,29 @@ See the change and interpretation recorded in DECISIONS.md.
 | [forge](mix/37-dialogue-balanced-forge.json) | 60.20 | 3.771 | 1.198 | 3.522 | 1.993 | 1.000 | -17.360 | -1.940 |
 | [gacha](mix/37-dialogue-balanced-gacha.json) | 60.20 | 4.252 | 1.508 | 5.830 | 0.000 | 1.000 | -18.110 | -6.080 |
 | [home](mix/37-dialogue-balanced-home.json) | 60.20 | 4.103 | 1.457 | 5.947 | 1.993 | 1.000 | -17.390 | -2.230 |
+
+## 38-element-kits
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/38-element-kits-bag.json) | 60.20 | 4.186 | 1.488 | 5.797 | 1.993 | 1.000 | -17.360 | -1.820 |
+| [battle](mix/38-element-kits-battle.json) | 180.20 | 3.269 | 0.224 | 0.566 | 5.327 | 0.975 | -14.950 | -3.120 |
+| [boss](mix/38-element-kits-boss.json) | 120.20 | 3.128 | 0.199 | 0.707 | 7.487 | 1.000 | -15.080 | -2.940 |
+| [forge](mix/38-element-kits-forge.json) | 60.20 | 3.771 | 1.260 | 3.372 | 1.993 | 1.000 | -17.390 | -1.870 |
+| [gacha](mix/38-element-kits-gacha.json) | 60.20 | 4.169 | 1.454 | 5.880 | 0.997 | 1.000 | -18.110 | -6.280 |
+| [home](mix/38-element-kits-home.json) | 60.20 | 4.170 | 1.426 | 5.947 | 1.993 | 1.000 | -17.380 | -2.140 |
+
+## 41-clarity
+
+See the change and interpretation recorded in DECISIONS.md.
+
+| Scene | Seconds | Onsets/s | Bands/onset | Ticks/s | Contours/min | Bed fraction | LUFS | dBTP |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| [bag](mix/41-clarity-bag.json) | 60.20 | 4.120 | 1.488 | 5.631 | 1.993 | 1.000 | -17.390 | -1.970 |
+| [battle](mix/41-clarity-battle.json) | 180.20 | 3.202 | 0.236 | 0.566 | 4.994 | 0.972 | -14.980 | -3.090 |
+| [boss](mix/41-clarity-boss.json) | 120.20 | 3.295 | 0.235 | 0.857 | 5.491 | 1.000 | -14.760 | -2.450 |
+| [forge](mix/41-clarity-forge.json) | 60.20 | 3.671 | 1.231 | 3.488 | 1.993 | 1.000 | -17.430 | -1.740 |
+| [gacha](mix/41-clarity-gacha.json) | 60.20 | 4.120 | 1.589 | 5.980 | 0.000 | 1.000 | -17.570 | -5.480 |
+| [home](mix/41-clarity-home.json) | 60.20 | 4.336 | 1.475 | 5.931 | 1.993 | 1.000 | -17.360 | -1.950 |

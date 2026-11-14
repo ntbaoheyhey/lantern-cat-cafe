@@ -9,12 +9,12 @@ PASS R.windows: measured 10; required >= 10 measured windows with all metrics, o
 PASS R.candidates: measured 755; required >= 120 candidate files with licence URLs
 PASS R.levers: measured 10; required >= 8 new economy levers with file:line
 PASS R.report: measured 8910; required nonempty reports/v3-shell/b2/RESEARCH-B2.md
-PASS S1.events: measured 2552; required >= 160 complete events; 0 TBD
+PASS S1.events: measured 2556; required >= 160 complete events; 0 TBD
 PASS S1.screens: measured 49; required >= 18 screens
 PASS S1.existingCues: measured 0; required 0 existing cues absent; >= 1 inspected
 PASS S1.callsites: measured 0; required 0 unresolved playCue sites; >= 1 inspected
-PASS S1.report: measured 630471; required nonempty reports/v3-shell/b2/SOUND-MAP.md
-PASS S1.typedMap: measured 12914; required nonempty apps/web/src/audio/sound-map.ts
+PASS S1.report: measured 630935; required nonempty reports/v3-shell/b2/SOUND-MAP.md
+PASS S1.typedMap: measured 13019; required nonempty apps/web/src/audio/sound-map.ts
 PASS S2.clips: measured 595; required >= 350 usable hashed source clips
 PASS S2.catRecordings: measured 22; required >= 15 distinct original recordings
 PASS S2.catAuthors: measured 18; required >= 6 cat-recording authors
@@ -36,7 +36,7 @@ PASS S4.cats: measured 12; required >= 12 cats, >= 9 lines each
 PASS S4.consonants: measured 12/12; required each rendered line >= 0.5 consonants/syllable
 PASS S4.distinct: measured 12/12; required nearest MFCC >= source p25; F0 >= 3 semitones OR different source
 PASS S4.loudness: measured 12/12; required -16 LUFS +/- 1
-PASS S4.cadence: measured 7.563; required median voice interval 6-9s
+FAIL S4.cadence: measured 2.974; required median voice interval 6-9s
 PASS S4.lines: measured 5873; required nonempty reports/v3-shell/b2/VOICE-LINES.md
 PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
 PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
@@ -67,62 +67,62 @@ PASS U4.fps: measured 60; required median >= 60 fps in panel transitions
 PASS U4.reducedMotion: measured 16; required passing test + SHA-256-verified log
 PASS S5.algorithm: measured 6/6; required same current measurement algorithm for references and all six non-diagnostic renders
 PASS S5.battle.render: measured 180.20099773242632; required >= 180s measured Opus render
-PASS S5.battle.onsetsPerSecond: measured 3.179782616136378; required reference +/- 30% (reference 2.6333333333333333)
-PASS S5.battle.layers: measured 0.20593368237347295; required >= reference median - 0.5
-PASS S5.battle.tickTransientsPerSecond: measured 0.6714724198123939; required reference +/- 40% (reference 0.6499999999999999)
-PASS S5.battle.music: measured 0.9751342969485518; required music bed >= 95%
+PASS S5.battle.onsetsPerSecond: measured 3.2019800515020767; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.battle.layers: measured 0.23570190641247835; required >= reference median - 0.5
+PASS S5.battle.tickTransientsPerSecond: measured 0.5660346018253237; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.music: measured 0.9718668660353326; required music bed >= 95%
 PASS S5.battle.voiceContoursPerMinute: measured 4.994422957282269; required reference +/- 35% (reference 5)
 PASS S5.battle.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.battle.lufs: measured -14.82; required -16 to -13 LUFS
-PASS S5.battle.peak: measured -2.79; required <= -1 dBTP
-PASS S5.boss.render: measured 120.2; required >= 120s measured Opus render
-PASS S5.boss.onsetsPerSecond: measured 3.1613976705490847; required reference +/- 30% (reference 2.6333333333333333)
-PASS S5.boss.layers: measured 0.22631578947368422; required >= reference median - 0.5
-PASS S5.boss.tickTransientsPerSecond: measured 0.7321131447587355; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.battle.lufs: measured -14.98; required -16 to -13 LUFS
+PASS S5.battle.peak: measured -3.09; required <= -1 dBTP
+PASS S5.boss.render: measured 120.19700680272109; required >= 120s measured Opus render
+PASS S5.boss.onsetsPerSecond: measured 3.2945911926904583; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.boss.layers: measured 0.23484848484848486; required >= reference median - 0.5
+PASS S5.boss.tickTransientsPerSecond: measured 0.8569264970886797; required reference +/- 40% (reference 0.6499999999999999)
 PASS S5.boss.music: measured 1; required music bed >= 95%
-PASS S5.boss.voiceContoursPerMinute: measured 4.9916805324459235; required reference +/- 35% (reference 5)
+PASS S5.boss.voiceContoursPerMinute: measured 5.490985321150764; required reference +/- 35% (reference 5)
 PASS S5.boss.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.boss.lufs: measured -14.93; required -16 to -13 LUFS
-PASS S5.boss.peak: measured -2.76; required <= -1 dBTP
-PASS S5.home.render: measured 60.20199546485261; required >= 60s measured Opus render
-PASS S5.home.onsetsPerSecond: measured 4.102854034866745; required reference +/- 30% (reference 3.6666666666666665)
-PASS S5.home.layers: measured 1.45748987854251; required >= reference median - 0.5
-PASS S5.home.tickTransientsPerSecond: measured 5.9466467387947155; required reference +/- 40% (reference 8.9)
+PASS S5.boss.lufs: measured -14.76; required -16 to -13 LUFS
+PASS S5.boss.peak: measured -2.45; required <= -1 dBTP
+PASS S5.home.render: measured 60.19700680272109; required >= 60s measured Opus render
+PASS S5.home.onsetsPerSecond: measured 4.335763750768452; required reference +/- 30% (reference 3.6666666666666665)
+PASS S5.home.layers: measured 1.475095785440613; required >= reference median - 0.5
+PASS S5.home.tickTransientsPerSecond: measured 5.93052742921202; required reference +/- 40% (reference 8.9)
 PASS S5.home.music: measured 1; required music bed >= 95%
-PASS S5.home.voiceContoursPerMinute: measured 1.9932894096518599; required reference +/- 35% (reference 2)
+PASS S5.home.voiceContoursPerMinute: measured 1.9934545980544605; required reference +/- 35% (reference 2)
 PASS S5.home.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.home.lufs: measured -17.39; required -20 to -16 LUFS
-PASS S5.home.peak: measured -2.23; required <= -1 dBTP
-PASS S5.bag.render: measured 60.202993197278914; required >= 60s measured Opus render
-PASS S5.bag.onsetsPerSecond: measured 4.219059327626262; required reference +/- 30% (reference 3.7)
-PASS S5.bag.layers: measured 1.437007874015748; required >= reference median - 0.5
-PASS S5.bag.tickTransientsPerSecond: measured 5.996379595563309; required reference +/- 40% (reference 8.466666666666667)
+PASS S5.home.lufs: measured -17.36; required -20 to -16 LUFS
+PASS S5.home.peak: measured -1.95; required <= -1 dBTP
+PASS S5.bag.render: measured 60.19800453514739; required >= 60s measured Opus render
+PASS S5.bag.onsetsPerSecond: measured 4.119737886912879; required reference +/- 30% (reference 3.7)
+PASS S5.bag.layers: measured 1.4879032258064515; required >= reference median - 0.5
+PASS S5.bag.tickTransientsPerSecond: measured 5.631415901868814; required reference +/- 40% (reference 8.466666666666667)
 PASS S5.bag.music: measured 1; required music bed >= 95%
-PASS S5.bag.voiceContoursPerMinute: measured 1.9932563752565018; required reference +/- 35% (reference 2)
+PASS S5.bag.voiceContoursPerMinute: measured 1.993421558183651; required reference +/- 35% (reference 2)
 PASS S5.bag.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.bag.lufs: measured -17.37; required -20 to -16 LUFS
-PASS S5.bag.peak: measured -1.96; required <= -1 dBTP
-PASS S5.gacha.render: measured 60.20199546485261; required >= 60s measured Opus render
-PASS S5.gacha.onsetsPerSecond: measured 4.252350740590634; required reference +/- 30% (reference 3.966666666666667)
-PASS S5.gacha.layers: measured 1.5078125; required >= reference median - 0.5
-PASS S5.gacha.tickTransientsPerSecond: measured 5.83037152323169; required reference +/- 40% (reference 8.233333333333333)
+PASS S5.bag.lufs: measured -17.39; required -20 to -16 LUFS
+PASS S5.bag.peak: measured -1.97; required <= -1 dBTP
+PASS S5.gacha.render: measured 60.19800453514739; required >= 60s measured Opus render
+PASS S5.gacha.onsetsPerSecond: measured 4.119737886912879; required reference +/- 30% (reference 3.966666666666667)
+PASS S5.gacha.layers: measured 1.5887096774193548; required >= reference median - 0.5
+PASS S5.gacha.tickTransientsPerSecond: measured 5.980264674550953; required reference +/- 40% (reference 8.233333333333333)
 PASS S5.gacha.music: measured 1; required music bed >= 95%
 PASS S5.gacha.voiceContoursPerMinute: measured 0; required reference +/- 35% (reference 0)
 PASS S5.gacha.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.gacha.lufs: measured -18.11; required -20 to -16 LUFS
-PASS S5.gacha.peak: measured -6.08; required <= -1 dBTP
-PASS S5.forge.render: measured 60.19800453514739; required >= 60s measured Opus render
-PASS S5.forge.onsetsPerSecond: measured 3.77088911423074; required reference +/- 30% (reference 4.4)
-PASS S5.forge.layers: measured 1.198237885462555; required >= reference median - 0.5
-PASS S5.forge.tickTransientsPerSecond: measured 3.5217114194577834; required reference +/- 40% (reference 3.433333333333333)
+PASS S5.gacha.lufs: measured -17.57; required -20 to -16 LUFS
+PASS S5.gacha.peak: measured -5.48; required <= -1 dBTP
+PASS S5.forge.render: measured 60.202993197278914; required >= 60s measured Opus render
+PASS S5.forge.onsetsPerSecond: measured 3.6709138244307242; required reference +/- 30% (reference 4.4)
+PASS S5.forge.layers: measured 1.2307692307692308; required >= reference median - 0.5
+PASS S5.forge.tickTransientsPerSecond: measured 3.488198656698878; required reference +/- 40% (reference 3.433333333333333)
 PASS S5.forge.music: measured 1; required music bed >= 95%
-PASS S5.forge.voiceContoursPerMinute: measured 1.993421558183651; required reference +/- 35% (reference 2)
+PASS S5.forge.voiceContoursPerMinute: measured 1.9932563752565018; required reference +/- 35% (reference 2)
 PASS S5.forge.silence: measured 0; required <= reference + 3 percentage points
-PASS S5.forge.lufs: measured -17.36; required -20 to -16 LUFS
-PASS S5.forge.peak: measured -1.94; required <= -1 dBTP
+PASS S5.forge.lufs: measured -17.43; required -20 to -16 LUFS
+PASS S5.forge.peak: measured -1.74; required <= -1 dBTP
 PASS S5.duck: measured {"db":-8,"attackMs":120,"releaseMs":400}; required -8 dB, 120ms attack, 400ms release
-PASS S5.chart: measured 86892; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
-PASS S5.reel: measured 90.054; required >= 90s sound reel
+PASS S5.chart: measured 87087; required nonempty reports/v3-shell/b2/shots/audio-vs-ref.png
+PASS S5.reel: measured 90.05; required >= 90s sound reel
 PASS S6.coverage: measured 0.9912718204488778; required >= 95% interactive elements emit mapped cue
 PASS S6.errors: measured 0; required 0 console audio errors
 PASS S6.gaps: measured 3.54167; required no music silence > 400ms during screen changes

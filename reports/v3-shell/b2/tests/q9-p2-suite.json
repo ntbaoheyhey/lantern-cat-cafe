@@ -1,0 +1,35 @@
+{
+  "sourceCommit": "32fd23a86c4198b50c7014d2fbe54743f5606901",
+  "sources": [],
+  "results": [
+    {
+      "id": "types",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T23:59:48.270Z",
+      "ended": "2026-11-14T00:00:27.262Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q9-p2-types.log",
+        "sha256": "60cc9ef95b586f1a2767c793acb169b42f77928716312ff6a8248a1d0292dcd0"
+      }
+    },
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T23:59:48.272Z",
+      "ended": "2026-11-14T00:03:03.024Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q9-p2-unit.log",
+        "sha256": "d6508bcbbabaf1501a07c2452612da884eea16ea02fa9499fd5c2a9e690cba4a"
+      }
+    }
+  ]
+}

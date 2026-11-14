@@ -1,0 +1,24 @@
+[
+  {
+    "name": "suite41",
+    "pid": 98193,
+    "command": [
+      "node",
+      "scripts/v3b2/run-solo-unit-suite.mjs",
+      "q9-p2-clarity"
+    ],
+    "log": "reports/v3-shell/b2/polish/P2/suite41.log",
+    "started": "2026-11-14T00:18:10.011067+00:00"
+  },
+  {
+    "name": "browser41",
+    "pid": 98194,
+    "command": [
+      "python3",
+      "scripts/v3b2/run-solo-browser-suite.py",
+      "q9-p2-clarity"
+    ],
+    "log": "reports/v3-shell/b2/polish/P2/browser41.log",
+    "started": "2026-11-14T00:18:10.012930+00:00"
+  }
+]
