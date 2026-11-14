@@ -17,6 +17,7 @@ export class AudioEngine implements AudioBridge {
  private mixTrim?:GainNode;
  private buses=new Map<Bus,GainNode>(); private duck?:GainNode; private speechSpace?:BiquadFilterNode;
  private tones=new Map<Bus,BiquadFilterNode>();
+ private voiceBody?:BiquadFilterNode;
  private buffers=new Map<string,Promise<AudioBuffer>>(); private manifest?:Promise<AudioManifest>;
  private active=new Set<Playing>(); private last=new Map<string,number>();
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
@@ -51,7 +52,11 @@ export class AudioEngine implements AudioBridge {
     const output=name==='music'?this.speechSpace:this.buses.get('master')!;
     if(name==='voice'||name==='sfx'||name==='music'){
      const tone=this.ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=0;
-     this.tones.set(name,tone);this.buses.get(name)!.connect(tone).connect(output);
+     this.tones.set(name,tone);
+     if(name==='voice'){
+      this.voiceBody=this.ctx.createBiquadFilter();this.voiceBody.type='lowshelf';this.voiceBody.frequency.value=500;this.voiceBody.gain.value=0;
+      this.buses.get(name)!.connect(this.voiceBody).connect(tone).connect(output);
+     }else this.buses.get(name)!.connect(tone).connect(output);
     }else this.buses.get(name)!.connect(output);
    }
    this.setSceneTone();
@@ -97,8 +102,11 @@ export class AudioEngine implements AudioBridge {
   const scene=this.bedIds.music;
   // Keep speech consonants clear against sustained upper strings, with softer
   // effect accents. The brighter battle arrangement has its own output trim.
-  const amounts:Partial<Record<Bus,number>>=scene==='music.battle'?{voice:-3,sfx:-12,music:9}:scene==='music.boss'?{sfx:-12,music:6}:scene==='music.forge'?{music:-9}:{};
+  const amounts:Partial<Record<Bus,number>>=scene==='music.battle'?{voice:-3,sfx:-12,music:9}:scene==='music.boss'?{sfx:-12,music:6}:scene==='music.forge'?{music:-9}:scene==='music.gacha'?{music:3}:{};
   for(const [bus,tone] of this.tones){const gain=tone.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(amounts[bus]??0,now+.15);}
+  // A lighter low-mid voice body makes the spoken attacks clearer over the
+  // boss strings; compensate presence at the source without shifting pitch.
+  if(this.voiceBody){const gain=this.voiceBody.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(scene==='music.boss'?-6:0,now+.15);}
   if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?2.8:scene==='music.boss'?4.5:6),now+.15);}
  }
  private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
@@ -155,7 +163,7 @@ export class AudioEngine implements AudioBridge {
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
    // Balance repeated movement beneath the strike and the spoken line.
-   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?0:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
+   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?3:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);

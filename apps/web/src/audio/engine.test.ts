@@ -77,11 +77,14 @@ describe('layered playback admission and variants',()=>{
   Context.latest.sources.at(-1)!.onended!();expect(shelf.gain.value).toBe(0);
   expect(e.settings.music).toBe(.55);expect(e.diagnostics.voice).toBe(0);
   e.music('boss');await flush();Context.latest.currentTime+=8;
-  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(-8);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(0);
+  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(-8);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(3);
+  const body=Context.latest.filters.find(f=>f.type==='lowshelf'&&f.frequency.value===500)!;
+  expect(body.gain.value).toBe(-6);
   expect(shelf.type).toBe('peaking');expect(shelf.frequency.value).toBe(1700);
   Context.latest.sources.at(-1)!.onended!();e.music('home');await flush();Context.latest.currentTime+=8;
   e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-9);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(5);
   expect(shelf.type).toBe('lowshelf');expect(shelf.frequency.value).toBe(1200);
+  expect(body.gain.value).toBe(0);
  });
  it('spaces ordinary cat-speak across units, including generic skill barks, by seven seconds',async()=>{
   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.skill');await flush();

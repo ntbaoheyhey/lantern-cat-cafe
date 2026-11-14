@@ -6,6 +6,7 @@ export const CUE_ALIASES: Readonly<Record<string,string>> = {
  'ui.forge-success':'ui.forge.success',
  'ui.forge-fail':'ui.forge.fail',
  'music.map':'music.home',
+ 'music.gacha':'music.home',
 };
 export const voiceProfiles=Object.fromEntries(Object.entries(authoredVoiceProfiles).map(([cat,p])=>[cat,{...p,pitch:2**(p.baseSemitones/12),timbre:String(p.source)}]));
 export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; processedVoice?:boolean; }

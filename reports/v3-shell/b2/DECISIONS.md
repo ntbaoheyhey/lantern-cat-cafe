@@ -197,3 +197,17 @@ Q8 C1 real browser PASS: 12 HTTP responses, 3/4 numeric (0 Deeds, 2.02 YARN burn
 The first resumed wallet failure was an8px padding mismatch, not bubble overlap: the async metadata import split readiness from geometry sampling across a native-dialog reflow. We added ancestor ResizeObserver updates and before-paint geometry commits, then sampled all boxes in one animation frame. Ninety steps now pass at1280,1440 and390 widths;180 traced wallet frames have exact padding. The final TypeScript union annotation emits identical JavaScript (q8/type-repair.json); the full unit result and fresh typecheck are kept separately rather than rewriting the failed type log.
 
 - 2026-11-13T23:50:04.048077+00:00: Q8 acceptance preserves the original failing typecheck and all browser results. The observer union-only commit emits identical JavaScript (q8/type-repair.json); corrected full workspace typecheck passes. No suite was falsely attributed to the later type-only revision.
+
+## Q9 P2 mix regression — 2026-11-14T00:05:44.101816+00:00
+
+The 38-element-kits full boss capture measures 7.487 voice-like contours/min (required 3.25–6.75); battle is 5.327/min. Playback and all 435 browser cases pass, but P2 remains open. No voice files or timing changed; compare effect timbres and speech masking before accepting a mix change. The detector is a spectral proxy, not a count of understood lines.
+
+P2 attribution correction: all 15 detected contours in trial38 fall inside actual voice-source windows (25 voice starts, as in trial37). These are not demonstrated false detections from effects. The material changes opened different speech windows, so the next balance probe must preserve intelligibility and all callouts while meeting the fixed band. See polish/P2/contour-attribution.json.
+
+The diagnostic stem capture also records unchanged actual output at 6.489 contours/min versus trial38 at 7.487. Variant selection and alignment make this proxy sensitive across runs; the earlier failure remains recorded, and a new balance must provide margin rather than cherry-picking this passing repeat. Unprompted mixed ASR for trial38: battle8/13, boss7/12.
+
+P2 method change after six simultaneous-stem balance probes: ±1dB voice gain, a 2dB voice shelf, extra music opening and effect ducking all retain the same 14 contours in the diagnostic reconstruction. Rather than tuning only loudness, test low-mid voice EQ for clearer consonants and verify ASR. No gate threshold changes.
+
+P2 low-mid EQ at500Hz/-6dB passes the spectral proxy (5.491/min) but reduces diagnostic mixed recognition from7/12 to5/12; rejected without shipping. Test compensating presence gain before selecting a voice change. Invitation treble probes+1.5/+3/+4.5dB all remove the stray musical contour and preserve the fixed numeric bands; choose+3dB on the music bus only and require a fresh UI capture.
+
+P2 compensated low-mid EQ:500Hz/-6dB with+3dB source presence improves same-window diagnostic recognition7/12 to9/12, while contours6.489/min pass. Diagnostic ticks0.923/s slightly exceed0.910; a fresh production capture must pass all bands. Invitations+3dB music shelf passed all three diagnostic balances. No timing or speech content changes.

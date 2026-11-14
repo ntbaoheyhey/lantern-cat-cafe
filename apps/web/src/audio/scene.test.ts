@@ -7,7 +7,8 @@ describe('music scene routing',()=>{
   expect(soundScene('map',false,false)).toBe('map');
  });
  it('returns to menu music on results, settings and hub without a home remount',()=>{
-  for(const screen of ['result','save','inventory','gacha','hub'])expect(soundScene(screen,false,true)).toBe('home');
+  for(const screen of ['result','save','inventory','hub'])expect(soundScene(screen,false,true)).toBe('home');
+  expect(soundScene('gacha',false,true)).toBe('gacha');
  });
  it('routes room tone to the visible screen and battle, independent of music reuse',()=>{
   expect(ambienceScene('inventory',false,false)).toBe('bag');
