@@ -2397,6 +2397,25 @@
       "prompt": "Refine the three existing Orbit, Bloom and Flare ornament motifs with an original gold medallion rim, radial enamel and eight rim inlays. Show the same output in preview and owned ornament display. No reference media.",
       "date": "2026-11-13T21:42:34.248719+00:00",
       "referenceInputs": []
+    },
+    {
+      "asset": "tools/v3feel-pilot/recipe.ts",
+      "tool": "Original Canvas2D geometry plus approved painted motifs; native production CutoutMesh renderer",
+      "prompt": "Create an original lantern procession for Soot: planted caster, rising arch, interlocking gold/violet ribbons, directional contact fan, separated lantern residue. Use only existing original Soot sheets; no reference pixels.",
+      "date": "2026-11-14",
+      "source": [
+        "assets/cardrpg-look/vfx-layered/soot-1.webp",
+        "assets/cardrpg-look/vfx-layered/soot-4.webp"
+      ],
+      "scope": "isolated QR study, not battle routing"
+    },
+    {
+      "asset": "tools/v3feel-pilot/sound.ts",
+      "tool": "Deterministic own WebAudio synthesis and existing licensed voice atlas",
+      "prompt": "Quiet weapon whoosh, lantern contact, cast riser and glass-like tail mapped to one presentation clock. Reuse exactly one existing ultimate charge line, not the full voice atlas.",
+      "date": "2026-11-14",
+      "source": "apps/web/public/audio/callout-soot.mp3; manifest.cues[voice.soot.ult.charge][0]",
+      "licence": "Own synthesis; reused voice provenance unchanged in original manifest"
     }
   ]
 }
