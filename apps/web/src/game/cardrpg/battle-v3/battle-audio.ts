@@ -48,7 +48,8 @@ export class BattleAudio {
   if(this.elapsed>=this.nextBark&&!speechSoon){
    const party=view.actors.filter(a=>a.side==='party'&&a.hp>0),actor=party[this.barks%Math.max(1,party.length)],owner=actor&&(view.models?.[actor.id]??actor.cardRpg?.cardId);
    if(owner)this.send({...context,cue:`voice.${owner}.${this.barks%2?'attack':'select'}`,role:'bark',actorId:actor!.id},{volume:.65,priority:40});
-   this.barks++;this.nextBark+=7500;
+   // Leave room inside the 7–8s cadence for a nearby authored speech slot.
+   this.barks++;this.nextBark+=7250;
   }
   if(!frame)return;
   for(const [i,key] of this.track.entries()){

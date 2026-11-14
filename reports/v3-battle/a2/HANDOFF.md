@@ -1,8 +1,7 @@
-NOW: Q9 S4 lead-in6 passes all three motion fixtures and stage-one cadence; voice matrix running.
-SOURCE: 003505e95; candidate, not yet accepted.
-METRICS: Motion 15.873845 / 17.725569 / 16.314629; cadence 6.161s, 36 starts, zero inferred interruptions.
-METHOD: Ultimate-only spacing; retained bark reservation and stepped approach.
-NEXT: Nine-case voice matrix, performance, V3, current full mix and suites before promotion.
-PIDS: A36397, B97970, validation17319, matrix17774.
-JOBS: reports/v3-solo/S4/lead-in6/validation-job.json and validation-progress.json.
-UPDATED: 2026-11-14T01:16:12.141566+00:00
+NOW: Q9 S4 clock-horizon repair fixed two of three live bark-spacing misses; wave1x2 still8.0245s.
+CANDIDATE: Correct real-time look-ahead plus7.25s nominal bark period, within original7–8s target.
+METRICS: Original unchanged visual capture15.873845/17.725569/16.314629 retained with source-diff proof.
+NEXT: Deterministic9case schedule, then current live matrix,cadence,perf,mix,suites.
+PIDS: A36397,B97970;deterministic19842.
+JOBS: reports/v3-solo/S4/bark-cadence8/review-job.json.
+UPDATED: 2026-11-14T01:25:34.066102+00:00

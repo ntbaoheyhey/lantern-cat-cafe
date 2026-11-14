@@ -10,6 +10,6 @@
 10. Q7:13 caster chuyển động;IoU lớn nhất0,8203;High khoảng60FPS.
 11. Q8:90/90 bước hướng dẫn ở ba kích thước;không có fallback.
 12. Fuji có3/4 số liệu thật;Fused vẫn Offline do chưa có indexer xác minh.
-13. Bản thử6 đạt chuyển động15,87/17,73/16,31;nhịp thoại6,16giây;đang kiểm tra9 trận.
+13. Chuyển động15,87/17,73/16,31 đạt;đang sửa nhịp bark ×2/×3,kiểm tra lại thoại và mix.
 14. Đồng bộ16/11 và18/11;đóng băng19/11 lúc12:00 UTC.
 15. Chưa deploy hoặc merge main;người dùng triển khai20/11.
