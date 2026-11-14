@@ -5,7 +5,14 @@ import {tmpdir} from 'node:os';
 import {join,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
 import {T,CARDS} from './thresholds.mjs';
-import {checkGates,qualifiesPartial,formatGate} from './check-gates.mjs';
+import {checkGates,qualifiesPartial,formatGate,integratedEvidencePath} from './check-gates.mjs';
+
+test('integrated checkout rebases signed historical B reports without reading another worktree',()=>{
+ assert.equal(integratedEvidencePath('/tmp/integration','/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/e1-model-unit.log'),'/tmp/integration/reports/v3-shell/b2/tests/e1-model-unit.log');
+ assert.throws(()=>integratedEvidencePath('/tmp/integration','/Users/bao/taskbar-hero-chain/apps/web/file'),/outside/);
+ assert.throws(()=>integratedEvidencePath('/tmp/integration','/Users/bao/taskbar-hero-chain/reports/../../../elsewhere'),/outside/);
+ assert.throws(()=>integratedEvidencePath('/tmp/integration','../escape'),/outside/);
+});
 
 // Independent literal transcription of the numerical gates in the user's Revision 2.
 // Do not regenerate this fixture from thresholds.mjs or tune it to observed results.

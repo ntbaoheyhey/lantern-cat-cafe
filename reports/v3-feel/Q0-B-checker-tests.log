@@ -1,0 +1,24 @@
+✔ integrated checkout rebases signed historical B reports without reading another worktree (0.703209ms)
+✔ every threshold equals the user prompt, including strict numeric endpoints (0.407041ms)
+✔ threshold table is frozen (0.06075ms)
+✔ all required gate IDs and thresholds are listed with measurements (3.386ms)
+✔ absent evidence fails every production gate, including maximum and every checks (1.296958ms)
+✔ malformed JSON cannot pass a gate or crash the entire checker (3.795333ms)
+✔ empty arrays cannot pass universal checks (3.512083ms)
+✔ a missing trace cannot pass the CPU gate despite a small reported percentage (1.823333ms)
+✔ strict CPU limit rejects exactly 8 percent and accepts 7.99 with a verified trace (2.556875ms)
+✔ hash mismatches invalidate evidence logs (2.321542ms)
+✔ audio measurements must use the current analyser on both sides and cannot be isolated diagnostic stems (3.922875ms)
+✔ full-demand burn gate rejects a deflationary 1.61, accepts the exact 1.60 limit (2.348625ms)
+✔ sensitivity needs both positive and negative perturbations for each assumption (2.333584ms)
+✔ future-dated evidence cannot pre-complete sync or freeze (3.010958ms)
+✔ claimed PARTIAL cannot bypass missing evidence or minimum gates (0.163625ms)
+✔ disallowed non-commercial audio is rejected even when its file hash matches (3.000166ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.711458

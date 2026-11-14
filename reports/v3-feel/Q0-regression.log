@@ -1,0 +1,12 @@
+{"id":"typecheck","pid":65209,"command":["pnpm","-r","typecheck"],"started":"2026-11-14T04:10:32.781Z"}
+typecheck: PASS (0)
+{"id":"unit","pid":65530,"command":["pnpm","test"],"started":"2026-11-14T04:10:50.746Z"}
+unit: PASS (0)
+{"id":"parity","pid":66726,"command":["pnpm","--filter","@taskbar-hero/web","exec","vitest","run","src/game/cardrpg/battle-v3/controls.test.ts"],"started":"2026-11-14T04:12:56.130Z"}
+parity: PASS (0)
+{"id":"browser","pid":66764,"command":["python3","scripts/v3feel/run-browser-suite.py","q0"],"started":"2026-11-14T04:12:57.018Z"}
+browser: FAIL (1)
+{"id":"aLane","pid":68481,"command":["node","scripts/v3a2/check-gates.mjs"],"started":"2026-11-14T04:18:09.028Z"}
+aLane: FAIL (1)
+{"id":"bLane","pid":68629,"command":["node","scripts/v3b2/check-gates.mjs"],"started":"2026-11-14T04:18:09.907Z"}
+bLane: FAIL (1)

@@ -1,0 +1,168 @@
+PASTE-CODEX-V3-FEEL-2026-11-14  (ONE Codex session: make the battle LOOK and SOUND good, skill visuals first, from the user's demo feedback, until the 19 Nov freeze)
+=====================================================================================================================================
+
+WHY THIS PROMPT EXISTS (read once)
+- On 14 Nov the user played the demo (branch codex/v3-demo-2026-11-14, head 83891115c = A 53fbf0da1 + B 6a61d6acf) and was discouraged by the battle. This prompt REPLACES PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt for the rest of the build. It does not re-plan the game: economy, shell, wallet, tutorial, art style and every passing Q0-Q8 gate stay. It re-points the remaining days at what the user actually sees and hears in battle.
+- The user's feedback, verbatim meaning (Vietnamese original summarised in English; every line is a requirement):
+  F1 Unit sizes look very uneven next to each other. It looks weird.
+  F2 The battle camera must be STATIC. No zoom in / zoom out on entering battle, none on skills. An ultimate only FOCUSES on its caster.
+  F3 Ultimate timing must be the SAME for every unit. Walking a unit up to the enemy and then casting does not look good.
+  F4 A monster faces the wrong way.
+  F5 Units still look like PNGs pasted on top of the scene even with animation; skill effects are far too simple; animation moves are too simple.
+  F6 Cut the kit to NORMAL ATTACK + ULTIMATE only.
+  F7 Battle sound is very noisy. Secondary sounds should be weapon sounds when a unit attacks; every sound must line up with what is on screen. Too noisy overall.
+  F8 Ultimate names are too plain.
+  F9 UI is not really beautiful or logical; many places you cannot tell where to click; text spills out and is misaligned; many icons with unclear purpose.
+  F10 Frame fill is poor: everything is small compared to the frame.
+  F11 "Codex MUST re-watch the video." If units move at all, the movement must be truly beautiful and clearly readable. Attack and ultimate timing of every unit must be equal.
+  F12 Priority: skill visuals / effects FIRST.
+- Planner check of the real demo (contact sheet of reports/v3-solo/S4/lead-in6/wave3/battle.webm, 14 Nov): confirmed. Cats ~0.20 of viewport height while ordinary enemies ~0.30 and the four cats differ visibly; the field framing changes between frames (camera push/zoom); the yarn ram faces right, away from the cats; most effects are radial glow blobs / rings / haze (pink ring, green fog, white flash) rather than shaped strikes; floating numbers stack into clutter; the bottom ~22% of the screen is a dark HUD band and the units sit in the upper-middle; the field is brown/sepia overall. Existing gates passed while all of this was true: gates measured the wrong things. This prompt adds gates that measure what the user sees, plus mandatory video review.
+
+USER DECISIONS (final; these override older prompts and older gates)
+- Kit = basic attack + ultimate for every cat and every enemy (boss: basic + ultimate + its existing phase change only). Active skills are removed from battle (rules engine and UI), not just hidden. This is a deliberate RULES change: combat must stay deterministic; record a NEW parity baseline once (log old/new hashes and the reason "user decision F6" in DECISIONS-FEEL.md); after that the new baseline must hold after every item. Balance: re-tune ultimate charge/damage so the 3 fixtures still end in a win with similar length (+/- 20% of current battle duration); re-run the B economy checker E3-E5 afterwards, they must still PASS.
+- Camera static: no zoom, no push-in, no dolly, no camera pan in battle, ever. Allowed: screen shake <= 4 px for <= 120 ms on ultimate impact only (off in reduced-motion).
+- Ultimate presentation = in-field focus on the caster: field dims, caster spotlit with outline glow, ultimate name banner next to the caster, then the effect plays on the field. The 13 full-screen painted ultimate plates are turned OFF in battle (keep the files; they may be reused in a gallery/menu later).
+- Equal timing: every basic attack has the same duration and impact frame; every ultimate has the same duration and impact frame (numbers in Q2).
+- No walk-up-then-cast. Units act from their slot. A short lunge is allowed only for melee basics, <= 5% of viewport width, out and back inside the basic attack duration, and only if the video review says it reads clean; otherwise in-place strike with a projectile / slash wave that travels.
+- OMG 3Q stays a MEASUREMENT reference only. Our art stays original. Never copy, trace, paint over or feed any reference frame to a generator.
+- No deploys, no main merges, no contract changes (SEASON_LENGTH 13 weeks, BASE_ROUTINE_CAP 12 immutable). FREE audio only (CC0/OFL/Pixabay/Kenney/Sonniss/own synthesis). Desktop first (1280x720, 1440x900); phone 390 must not break.
+- Deadlines: review checkpoint 16 Nov 12:00 UTC, final demo rebuild 18 Nov 12:00 UTC, FREEZE 19 Nov 12:00 UTC, user deploy 20 Nov, submission 21 Nov.
+- Priority over completeness: a higher item is never left for a lower one.
+
+BRANCH AND WORKTREE (single integrated line from now on)
+- Work ONLY in /Users/bao/taskbar-hero-cardrpg-a6 on a new branch codex/v3-feel-2026-11-14 created from origin/codex/v3-demo-2026-11-14 (it already contains A + B). Push `git push -u origin codex/v3-feel-2026-11-14`. No PR yet; at FREEZE open ONE draft PR from this branch to main (do not merge).
+- The lane branches codex/v3-battle-2026-11-13 and codex/v3-shell-2026-11-13 and the B worktree /Users/bao/taskbar-hero-chain are FROZEN: do not commit there. The 16/18 Nov lane merges (old SY1/SY2) are cancelled because the integration already exists; log this in DECISIONS-FEEL.md. Lane checkers (scripts/v3a2/check-gates.mjs, scripts/v3b2/check-gates.mjs) still run on this branch as regression checks.
+- The old SOLO Q9 work is DROPPED or DEMOTED: S4 bark cadence 7-8 s is cancelled (F7 wants fewer voices, not evenly spaced chatter); B polish P3-P8 and E6 move to Q9 here, after everything else.
+- The demo fixture from the demo session may still run (Vite 5994, API 5997, Anvil 8546, supervisor PID in reports/v3-demo/HANDOFF-DEMO.md). Leave it alone unless you need the port; if so `kill <supervisor pid>` once and log it. Your own ports: 5990-5993.
+
+HOW TO USE THIS PROMPT
+- Paste this whole file into a NEW Codex session. If the session dies, is cut, or says "context too long", open a new session and paste THIS SAME FILE again; it resumes from disk. Never ask the user to "continue"; never wait for a reply.
+- You are Codex, working ALONE. Do NOT start subagents, helper agents, parallel `codex exec` or any other model-calling process. Local scripts that make no model requests are fine (Playwright, ffmpeg, sharp, Blender headless, audio analysis).
+- Language: code, docs, reports in English. STATUS-VI.md in Vietnamese (max 30 lines). In-game text English, short.
+
+ONE PROMPT FOREVER + ANTI-CONTEXT-LOSS RULES (every session, every item)
+- THIS FILE NEVER CHANGES PER SESSION. All progress lives on disk (reports/v3-feel/ + git), never in the conversation.
+- Disk beats memory. If memory differs from HANDOFF-FEEL.md, QUEUE-FEEL.md, the checker or git, the disk is right. Never mark something done from memory; re-run the checker.
+- Re-anchor at the START OF EVERY ITEM and after any compaction, restart or shell reset: (1) `date -u`, check the time triggers in 0.3; (2) read HANDOFF-FEEL.md and the QUEUE-FEEL.md row; (3) re-open THIS FILE and re-read USER DECISIONS, section 2 (hard limits), section 3 (video review protocol) and the full text of the current item; (4) `pwd; git branch --show-current; git status --short | wc -l`.
+- Write state as you go: update HANDOFF-FEEL.md (NOW / NEXT 1-3 / LAST GOOD COMMIT / OPEN / PIDS / BACKGROUND JOBS) at least every 45 minutes, before every command > 10 min, before every commit.
+- Item log in QUEUE-FEEL.md: "STARTED <UTC>" when an item starts; checker PASS/FAIL lines, commit ids, video-review file and "ENDED <UTC>" when it ends. STARTED without ENDED = previous session died inside it: check git status, keep good work, revert broken edits, re-run its checks, continue.
+- Background jobs: log file under reports/v3-feel/, PID + command + log path in HANDOFF-FEEL.md; on resume `ps -p` each PID, restart dead ones from their checkpoint.
+- Every number you rely on goes into a committed JSON the moment you have it.
+- Memory anchor lines (keep at the top of HANDOFF-FEEL.md): ONE SESSION, ONE BRANCH codex/v3-feel-2026-11-14 | SKILL VISUALS FIRST, PRIORITY Q0>Q1>...>Q9 | STATIC CAMERA, EQUAL TIMING, BASIC + ULTIMATE ONLY | WATCH THE VIDEO BEFORE CLAIMING DONE | CHECKER PASS + VIDEO REVIEW = DONE, NEVER LOWER A THRESHOLD | NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE | ORIGINAL ART ONLY | DO NOT STOP BEFORE 19 NOV 12:00 UTC.
+
+REFERENCE (read the named part when an item points to it)
+- Reference videos (measurement + private side-by-side only): `ls /Users/bao/Downloads | grep -i -E "omg|ytsave"` (two 1080p OMG3Q videos); decoded frames /Users/bao/tools/omg-ref-2026-11-12/ (burst, compare, sheets, v1, v2); notes /Users/bao/art/codex-prompts/omg3q-video-notes.md and BATTLE-VISUALS-AUDIO-PROCESS-2026-11-12.md.
+- Approved original VFX layers: /Users/bao/art/vfx-2026-11-12/ (89 folders, per cat). Use them; extend with new original layers (provenance in assets/provenance.json).
+- Battle presentation code: apps/web/src/game/cardrpg/battle-v3/ (presentation.ts, sequence.ts, motion.ts, plate-camera.ts, cinematic-player.ts, field-vfx.ts, effect-glow.ts, post-fx.ts, impact-*.ts, motion-trails.ts, numbers.ts, number-*.ts, battle-audio.ts, audio-timeline.ts, voice-windows.ts, callouts.json, voice-timing.json); rig/cut-out runtime apps/web/src/game/rig; formation/stage apps/web/src/game/stage; rules packages/game-rules/src/cardrpg (catalog.ts, depth/events-v4.ts).
+- Older specs for context only: /Users/bao/art/codex-prompts/PASTE-CODEX-V3-A2-BATTLE-DEEP-2026-11-13.txt and PASTE-CODEX-V3-SOLO-AB-2026-11-13.txt; state of the last runs: reports/v3-solo/, reports/v3-battle/a2/, reports/v3-shell/b2/, reports/v3-demo/.
+- Demo builder: tools/cardrpg-a6/build.mjs, smoke flow tools/v3-demo/smoke.mjs, live fixture tools/v3-demo/start-live.mjs.
+
+0. RESUME PROTOCOL (first, every time)
+---------------------------------------
+0.1 State folder reports/v3-feel/ with QUEUE-FEEL.md (items of section 4, state, evidence), HANDOFF-FEEL.md (max 40 lines), STATUS-VI.md (Vietnamese, max 30 lines, the one file the user reads), DECISIONS-FEEL.md, REVIEW/ (one folder per item with the video review, section 3). If missing: create from section 4, every item "todo". If present: read HANDOFF + QUEUE + reports/v3-feel/INBOX.md, `git status`, continue at the first item not "done".
+0.2 STOP: if /Users/bao/taskbar-hero-cardrpg-a6/STOP-V3FEEL exists, write HANDOFF and stop. Otherwise do NOT stop before 19 Nov 2026 12:00 UTC unless every item is done; then write "WAITING FOR FREEZE <UTC>" and end. A push, a finished item or a passing test run is NEVER a reason to stop.
+0.3 TIME TRIGGERS (check `date -u` at the start of every item; they preempt everything): at/after 16 Nov 12:00 UTC run R1 (4.R1) once; at/after 18 Nov 12:00 UTC run R2 (4.R2) once; at/after 19 Nov 12:00 UTC run FREEZE (4.R3), then only crash/flow fixes.
+0.4 Context diet: filter output (`| tail -n 40`, `grep -E "error|fail|FAIL"`); never print images in full size, base64 or big JSON; contact sheets <= 1280 px wide, max 4 images per look. Commit after every item or every 90 minutes ("V3FEEL <item>: <what>"), push with 3 retries.
+0.5 Self-repair loop for a failed gate: find -> diagnose (2 lines in HANDOFF) -> fix -> re-run only the failing check. Max 4 attempts per problem, then change METHOD (log why). A method change may change HOW, never lower WHAT a gate measures. Hard cap: if one item runs past its timebox, mark it "open" with best numbers + next method, move on, come back in Q9. Do NOT run more than 4 rejected pilots of the same idea in a row (last session lost hours to 8 cadence pilots).
+0.6 Checker: scripts/v3feel/check-feel.mjs holds EVERY threshold of this prompt verbatim, with a unit test per gate (one fake PASS, one fake FAIL). Thresholds are never edited without a user line in reports/v3-feel/INBOX.md.
+0.7 Full regression at the end of each item: typecheck, unit tests, combat parity (new baseline after Q1), browser suite (the 435-case suite; any case that tested removed actives/zoom/plates is UPDATED to the new decision, never deleted silently: list each changed case in DECISIONS-FEEL.md), scripts/v3a2/check-gates.mjs and scripts/v3b2/check-gates.mjs (gates that measured removed behaviour, e.g. plate coverage or active-skill counts, are marked "SUPERSEDED by user decision F2/F6" in DECISIONS-FEEL.md, not silently failed or deleted).
+0.8 CPU: pause background jobs (`kill -STOP`) during FPS/audio-CPU measurements, `kill -CONT` after. Never pkill/killall; kill only PIDs you started. Another runner (zaic) runs on this Mac.
+
+1. DISK CHECK (first step of every session)
+- `df -h /System/Volumes/Data | tail -1`. Delete without asking, inside this worktree only: apps/web/dist*, playwright-report/, test-results/, *.trace.zip, .vite caches, temporary frame folders after encoding, decoded reference frames (re-extractable). Never delete other worktrees, /Users/bao/art/**, /Users/bao/tools/**, Desktop review folder, Downloads videos. If free < 15 GB: low-disk mode.
+
+2. HARD LIMITS (never change)
+- Original art only; provenance for every new asset (tool + prompt + date). Reference frames/audio: decode only to measure and build private review sheets under reports/v3-feel/ref/ (gitignored, deleted after the item); never ship them.
+- No secrets, no deploys, no main merges, no contract deploys. Rules engine deterministic.
+- Desktop first; phone must not break.
+
+3. VIDEO REVIEW PROTOCOL (MANDATORY; the user asked for it explicitly: "Codex must re-watch the video")
+---------------------------------------------------------------------------------------------------
+Every item that touches battle visuals or sound ends with this, and an item cannot be "done" without it:
+3.1 Record the 3 fixtures (wave1, wave3, boss) at x1, 1280x720, 30 fps, WITH audio, 30 s each, into reports/v3-feel/REVIEW/<item>/{wave1,wave3,boss}.webm (<= 8 MB each; delete older recordings of the same item).
+3.2 Watch them frame by frame: extract every action window at 10 fps (from the presentation log, 0.3 s before to 0.5 s after each impact) into contact sheets (max 1280 px wide); look at every sheet (not a sample). Also extract the same beat types from the reference video at the same scale into side-by-side sheets (private, gitignored).
+3.3 Write REVIEW/<item>/REVIEW.md: for each fixture, a table of every action (time, actor, basic/ult, what you SEE in the frames: anticipation, contact, effect shape, recoil, sound heard at impact y/n) and a checklist with yes/no + frame reference for: camera moved/zoomed? any unit facing away? units same scale? effect is a shaped strike (arc, projectile, beam, slash, burst with directional streaks) or just a glow blob/ring? does it look like a pasted PNG (no contact shadow, no light match, no secondary motion)? text overflow? number clutter? any sound not matching an action? Then a 10-line honest critique vs the reference.
+3.4 Any "yes" to a defect is a FAIL for the item, whatever the numeric gates say. Fix and re-record. A review without frame references scores 0.
+3.5 Audio: render a 60 s battle mix WAV from the same run, report integrated LUFS, true peak, number of simultaneous voices per 100 ms (max), and listen-check list: each sound start mapped to an on-screen event within +/- 1 frame (33 ms).
+
+4. PRIORITY QUEUE (in order; time triggers R1-R3 interrupt it)
+------------------------------------------------------------------
+Rough calendar (UTC): Q0-Q2 by 14 Nov 18:00; Q3 (skill visuals) by 15 Nov 18:00; Q4-Q5 by 16 Nov 12:00 (R1 review); Q6 by 17 Nov 06:00; Q7-Q8 by 18 Nov 12:00 (R2 demo); Q9 until freeze.
+
+Q0 SAVE + BASELINE (timebox 60 min)
+  - Create branch codex/v3-feel-2026-11-14 from origin/codex/v3-demo-2026-11-14; push; tag local v3feel-start.
+  - Write scripts/v3feel/check-feel.mjs + tests with every gate below (initially most FAIL; that is expected).
+  - Record the BEFORE video review (section 3) of the current demo build: 3 fixtures + sheets + REVIEW.md. This is the baseline the user complained about; quote F1-F12 against frames.
+  - Gate Q0: branch pushed; checker runs and its unit tests pass; REVIEW/Q0/REVIEW.md lists at least one frame-referenced defect for each of F1-F7 and F10.
+
+Q1 KIT = BASIC + ULTIMATE, EQUAL TIMING, STATIC CAMERA (F2, F3, F6, F11; timebox 6 h)
+  - Rules: remove active skills from every battle kit (cats + enemies; boss keeps its phase change). UI: remove active-skill buttons/icons/cooldown rings from the battle HUD and from team/hero screens where they described battle actives (keep a "Basic" and an "Ultimate" entry per hero). Tutorial steps that pointed at actives are rewritten. New parity baseline once (USER DECISIONS).
+  - Timing (presentation, identical for every unit at x1; x2/x3 scale them uniformly):
+      basic attack: total 0.80 s; anticipation 0.00-0.25 s; impact frame at 0.35 s; recovery to 0.80 s.
+      ultimate: total 2.20 s; focus (dim + spotlight + name banner) 0.00-0.60 s; cast 0.60-1.10 s; impact frame at 1.10 s; aftermath to 2.20 s.
+      Actions are sequenced on a fixed beat: next action starts no earlier than the previous action's end; no overlaps of two ultimates.
+  - Camera: delete/disable every zoom, push-in, dolly and pan (plate-camera.ts, sequence keys, post-fx scale). Ultimate = in-field focus only (dim others to 45% brightness, caster outline + rim light, banner). Turn full-screen ultimate plates OFF in battle.
+  - Movement: remove walk-up approaches and lead-in travel; melee basics may lunge <= 5% viewport width and return within 0.80 s; ranged/caster basics stay in place and send a travelling projectile/slash wave.
+  - Gates Q1 (check-feel): camera transform (scale + translation of the battle stage root) constant for 100% of frames in the 3 fixtures except ultimate-impact shake <= 4 px / <= 120 ms; basic durations: max-min across all units <= 1 frame (33 ms) and impact offset identical +/- 1 frame; ultimate durations same rule; 0 active-skill events in the presentation log; 0 actor displacement > 5% width; ultimate plates shown in battle = 0; parity PASS on new baseline; 3 fixtures still won with battle length within +/- 20% of Q0; video review PASS (section 3).
+
+Q2 SCALE, FACING, FRAME FILL (F1, F4, F10; timebox 6 h)
+  - One scale system: every cat renders at the same body height (character art normalised by measured opaque bounding box, not by image size); every ordinary enemy at the same height; elites <= 1.15x; boss 1.5-1.7x. Measure on the rendered frame, not on config.
+  - Facing: every cat faces right toward enemies, every enemy faces left toward cats, including during attack, hit, idle and death; add a facing field per sprite and a test that renders each unit and checks the face/weapon side (manual-verified table in REVIEW).
+  - Frame fill: the battle stage uses the full viewport; HUD bottom band <= 14% of viewport height (portraits overlay with transparency instead of a solid band); formation spreads across >= 80% of the width; units larger: cat body height >= 0.26 of viewport height at 1280x720 (today ~0.20), enemies match cats; units never overlap HUD or each other's faces.
+  - Floating numbers: one number per hit, stacked max 3 per target, fade within 0.7 s; no number covers a face.
+  - Gates Q2: cat opaque heights max/min <= 1.05; ordinary enemy max/min <= 1.05; cat vs ordinary-enemy height ratio 0.95-1.10; boss 1.5-1.7x; facing correct 100% of sampled frames (all units, all states); stage area >= 86% of viewport; unit bounding boxes span >= 80% of width; cat height >= 0.26 vh; face occlusion 0; phone 390 still playable (screens fit, no horizontal scroll); video review PASS.
+
+Q3 SKILL VISUALS AND EFFECTS (F5, F12: TOP PRIORITY QUALITY ITEM; timebox 18 h; the user's main complaint)
+  - Study first (60 min, write REVIEW/Q3/STUDY.md): from the reference videos pick 8 basic attacks and 8 ultimates, extract at 10 fps, and describe for each: anticipation pose, number of effect layers, shapes (arcs, streaks, shards, beams, ground decals, rising particles), colour/brightness curve over time, hit-stop, target reaction, how long, how the sound lines up. Measure: layers per action, peak effect area (% of viewport), effect duration, directional streak count. Write the numbers to REVIEW/Q3/REF-EFFECTS.json (private measurement, no frames committed).
+  - Basic attacks: one shaped strike per weapon family (sword slash arc, claw/scratch, staff bolt, thrown item, shield bash, needle thrust, yarn whip, teacup splash): >= 3 layers each (wind-up glint, travelling shape, impact burst with directional sparks + ground decal), hit-stop 60-90 ms on impact, target flinch/knockback + white-flash tint 1-2 frames.
+  - Ultimates (13): each a distinct, element-coloured, SHAPED composition built from /Users/bao/art/vfx-2026-11-12/ layers plus new original flipbooks: >= 5 layers (focus aura on the caster, cast shape, travelling/area shape, impact burst, lingering ground/air residue), peak effect area 25-60% of viewport, clear direction from caster to targets, additive glow on effects only (units stay readable), unique silhouette per ultimate (no two share the same main shape). No effect may be only a radial blob, ring or fog.
+  - "Not pasted PNG": every unit gets a soft contact shadow, a scene-matched colour grade (multiply/overlay toward field light), rim light from the effect colour during actions, and secondary motion from the rig/cut-out runtime: idle breathing with per-unit phase offset, squash-stretch on anticipation/impact, weapon/tail/ear follow-through. Hit reactions: recoil + squash + flash; death: fade with dissolve particles, not a pop.
+  - Gates Q3 (check-feel, measured on recordings): every basic has >= 3 visible effect layers and every ultimate >= 5 (from the presentation log + mask analysis); 0 effects classified "radial-only" (a radial-symmetry test on the effect mask: symmetry score < 0.8 for every action's peak frame); ultimate peak area 25-60%; 13/13 ultimates pairwise silhouette IoU <= 0.6 at peak; hit-stop present on 100% of impacts; contact shadows on 100% of units; idle motion amplitude >= 1.5% of unit height on 100% of units; mean effect saturation and peak luminance >= 80% of the reference median (REF-EFFECTS.json); FPS >= 50 on High with 10 units; parity PASS; video review PASS with a per-ultimate verdict table (13 rows, each "reads as a strong, distinct ultimate: yes" with frame refs). Commit 13 per-ultimate film strips + 8 basic film strips under REVIEW/Q3/.
+
+Q4 ULTIMATE NAMES (F8; timebox 2 h)
+  - Rewrite all 13 ultimate names (and the boss ultimate): evocative, 2-3 words, fitting the cat's theme and element, no generic words like "Strike/Attack/Blast/Power" alone; examples of the bar: "Lantern Requiem", "Thousand Petal Storm", "Midnight Needle Rain". Write 3 candidates each in reports/v3-feel/ULT-NAMES.md with a one-line reason, pick one, apply to rules display names, banner and voice callouts (re-synthesise the callout lines with the B voice pipeline; keep loudness/true-peak gates). The user can override any name in INBOX.md.
+  - Gates Q4: 14/14 names changed and <= 3 words; banner text fits its box at all 3 widths; callout audio regenerated and plays at the cast; video review lists every banner.
+
+Q5 QUIET, SYNCED BATTLE SOUND (F7; timebox 8 h)
+  - Remove optional battle chatter/barks and battle UI ticks. Voices in battle: only the ultimate callout (one line, at focus start) and a short hurt/KO vocal at most once per unit per 10 s. Cancel the old 7-8 s bark cadence target.
+  - Basic attacks: per weapon family a weapon SFX set (swing/whoosh at anticipation, impact at the impact frame, 4+ variants each, pitch +/- 3%), mixed as the main secondary sound. Ultimates: one cast riser + one impact + one tail per ultimate, element-matched.
+  - Mix: battle integrated loudness -20 LUFS +/- 1 (quieter than today), true peak <= -1 dBTP, music ducks 4-6 dB under ultimates only, max 4 simultaneous sound voices at any 100 ms window (today it is a wall of layers), no sound without an on-screen cause.
+  - Gates Q5: every SFX start within +/- 33 ms of its visual event (from the presentation log vs audio timeline) for 100% of events in 3 fixtures; 0 battle barks besides ultimate callouts and capped hurt/KO; max simultaneous voices <= 4; LUFS and true peak as above; menu/home/forge audio gates from B still PASS; new 60 s BATTLE-SOUND.mp3 to reports/v3-feel/ and the Desktop review folder; video review PASS (section 3.5 table complete).
+
+Q6 UI CLARITY (F9; timebox 10 h)
+  - Every icon-only button gets a visible short label or a label that appears on hover/focus within 300 ms and on first visit; remove icons whose purpose cannot be stated in 2 words; one clear primary action per screen (largest, warm colour, bottom-right on desktop).
+  - Text: no clipping or overflow anywhere (headers, buttons, tiles, banners, numbers); align labels to a grid; long numbers rounded with exact value on hover.
+  - Known defects to fix first (from the 14 Nov screenshots): Fuji/wallet panel "Retry" overlaps the title text; empty decorative speech bubbles; unlabelled 0-value tiles in the wallet header; battle-prep has a large empty bar at the bottom; plus every defect listed in REVIEW/Q0.
+  - Gates Q6: automated overflow test on all 54 screens x 3 widths (1280, 1440, 390): 0 elements whose text scrollWidth/scrollHeight exceeds its box or that overlap another text box; 0 icon-only buttons without accessible name AND visible/hover label; <= 2 secondary icon buttons without labels per screen; a "where do I click" review per screen in REVIEW/Q6/REVIEW.md (screenshot + the one primary action named); B U3 gates still PASS; phone still PASS.
+
+Q7 FRAME FILL OUTSIDE BATTLE (F10; timebox 6 h)
+  - Home, team, battle prep, forge, bag, gacha, season, wallet: main content fills the frame (no small centred panel in a large empty frame); key art and portraits scaled up; empty bands removed.
+  - Gates Q7: on each listed screen, content bounding area >= 85% of viewport and no empty band taller than 10% of height (measured from screenshots); 0 overflow (Q6 test); before/after sheets.
+
+Q8 DEMO REVIEW BUILD (timebox 3 h; do it once Q1-Q5 pass, and again at R2)
+  - Rebuild the static demo (tools/cardrpg-a6/build.mjs -> docs/cardrpg-v3-demo/) and restart the live fixture on port 5994 if it is not running (tools/v3-demo/start-live.mjs). Put the REFERENCE line at the top of index.html and CHAY-DEMO-VI.md: "REFERENCE: demo built <UTC> from codex/v3-feel-2026-11-14 @ <commit>; live http://localhost:5994 ; static docs/cardrpg-v3-demo/index.html".
+  - Record a 90 s review video (1280x720, 30 fps, real mix: >= 55 s battle incl. >= 3 ultimates and the boss) to reports/v3-feel/demo-feel.webm and /Users/bao/Desktop/TaskbarHero-REVIEW/v3-feel/ together with BATTLE-SOUND.mp3 and a before/after sheet (Q0 vs now, same beats).
+  - STATUS-VI.md: what changed for each of F1-F12 (one line each, with numbers), and "Mở demo: http://localhost:5994 hoặc docs/cardrpg-v3-demo/index.html; xem video ở Desktop/TaskbarHero-REVIEW/v3-feel/. Ghi nhận xét vào reports/v3-feel/INBOX.md".
+  - Gate Q8: smoke flow (tools/v3-demo/smoke.mjs adapted) passes live and static at 1280 and 1440 with 0 console errors; files on the Desktop.
+
+Q9 OPEN ITEMS, THEN OLD POLISH (until freeze)
+  In order: (1) any item above left "open", with a new method; (2) user notes in reports/v3-feel/INBOX.md (check it at the start of every item; a user note outranks Q3-Q9 work, never Q1-Q2 regressions); (3) richer animation pass: per-unit unique idle and attack poses (2+ key poses per unit through the rig), each verified with section 3; (4) old B polish P3-P8 (chapter ambience, adaptive music, voice subtitles + reduced motion, audio memory < 60 MB) only where they do not add battle noise; (5) E6 only if E3 still passes.
+
+4.R1 REVIEW CHECKPOINT 16 NOV 12:00 UTC (time trigger, timebox 2 h)
+  - Run Q8 with whatever is done; STATUS-VI lists PASS/open per item with numbers. Then continue the queue (do not wait for the user).
+4.R2 FINAL DEMO 18 NOV 12:00 UTC (time trigger)
+  - Full regression (0.7), Q8 again, update reports/v3-shell/USER-DEPLOY-VI.md for this branch (deploy steps unchanged except the branch name), NEEDS-USER.md with the 20 Nov deploy steps.
+4.R3 FREEZE 19 NOV 12:00 UTC (time trigger)
+  - Only crash/flow fixes. Final REPORT-FEEL.md (English) and STATUS-VI.md (Vietnamese, max 30 lines: done, open with numbers, what the user does on 20 Nov). Open ONE draft PR codex/v3-feel-2026-11-14 -> main (do not merge), description = REPORT-FEEL summary. Checker prints every gate with final state.
+
+5. SELF-SCORE AND HONESTY
+- Per item, score 1-10 for "would the user, watching the video, still feel F1-F12?" A score >= 8 needs checker PASS lines AND a section-3 review with frame references; a claim without evidence scores 0.
+- Numeric gates are necessary, never sufficient: the last session passed every gate while the user still disliked the battle. When a gate passes but the video still shows the defect, the video wins: log it, fix it.
+- Never rewrite history of what was measured; corrections go in DECISIONS-FEEL.md.
+
+6. USER-ONLY ITEMS (NEEDS-USER.md; never wait on them)
+- Review the demo/video after R1 and R2; notes into reports/v3-feel/INBOX.md.
+- Optional: override ultimate names in INBOX.md.
+- 20 Nov deploy with reports/v3-shell/USER-DEPLOY-VI.md.
+
+END OF PROMPT. Start with section 0, then section 1, then Q0.

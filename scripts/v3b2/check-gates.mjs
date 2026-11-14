@@ -6,6 +6,15 @@ import {createHash} from 'node:crypto';
 import {T, CARDS} from './thresholds.mjs';
 
 const DEFAULT_ROOT = resolve(fileURLToPath(new URL('../..', import.meta.url)));
+/** Integration preserves the signed bytes of B's reports. Resolve its historical
+ * absolute report names against this checkout; never read the frozen worktree. */
+export function integratedEvidencePath(root,p){
+  const historical='/Users/bao/taskbar-hero-chain/reports/';
+  const local=p.startsWith(historical)?'reports/'+p.slice(historical.length):p;
+  const result=resolve(root,local);
+  if(relative(root,result).startsWith('..'))throw Error('Evidence outside repository');
+  return result;
+}
 const B = 'reports/v3-shell/b2/';
 const finite = n => typeof n === 'number' && Number.isFinite(n);
 const all = (xs, fn) => Array.isArray(xs) && xs.length > 0 && xs.every(fn);
@@ -22,7 +31,7 @@ export function checkGates({root = DEFAULT_ROOT, now = new Date()} = {}) {
   // reports are cited hundreds of times; hash each file and Git blob once.
   // New calls get fresh caches, so edits between checks are still observed.
   const rows = [], cache = new Map(), digests = new Map(), committedFiles = new Map();
-  const path = p => { const a = resolve(root,p); if (relative(root,a).startsWith('..')) throw Error('Evidence outside repository'); return a; };
+  const path = p => integratedEvidencePath(root,p);
   const file = p => typeof p === 'string' && existsSync(path(p)) && statSync(path(p)).isFile() && statSync(path(p)).size > 0;
   const text = p => file(p) ? readFileSync(path(p),'utf8') : '';
   const json = p => { if (!cache.has(p)) { try { cache.set(p,JSON.parse(text(p))); } catch { cache.set(p,undefined); } } return cache.get(p); };

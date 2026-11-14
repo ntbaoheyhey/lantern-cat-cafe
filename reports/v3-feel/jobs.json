@@ -1,0 +1,30 @@
+{
+  "vite": {
+    "pid": 62552,
+    "command": "pnpm exec vite --config ../../scripts/v3feel/vite.config.mts --host 127.0.0.1 --port 5990 --strictPort",
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web",
+    "log": "reports/v3-feel/vite.log",
+    "started": "2026-11-14T04:04:15.531122+00:00"
+  },
+  "capture": {
+    "pid": 62771,
+    "command": "node scripts/v3feel/capture.mjs --item Q0",
+    "log": "reports/v3-feel/Q0-capture.log",
+    "started": "2026-11-14T04:05:16.368441+00:00",
+    "finished": true
+  },
+  "regression": {
+    "pid": 65206,
+    "command": "node scripts/v3feel/regress.mjs Q0",
+    "log": "reports/v3-feel/Q0-regression.log",
+    "started": "2026-11-14T04:10:32.741430+00:00",
+    "finished": true
+  },
+  "parity": {
+    "pid": 65207,
+    "command": "node scripts/v3feel/parity.mjs old",
+    "log": "reports/v3-feel/Q0-parity.log",
+    "started": "2026-11-14T04:10:32.742916+00:00",
+    "finished": true
+  }
+}
