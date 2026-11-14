@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 export function runtimeSignature(root){
  const paths=['apps/web/src/audio/engine.ts','apps/web/src/audio/cues.ts','apps/web/src/audio/callouts.ts','apps/web/src/audio/voice-callouts.json','apps/web/public/audio/manifest.json','apps/web/src/game/cardrpg/depth/model.ts'];
+ for(const name of ['battle-audio.ts','voice-windows.ts','audio-timeline.ts','voice-timing.json','sequence.ts','final-hit.ts'])paths.push('apps/web/src/game/cardrpg/battle-v3/'+name);
  const manifest=JSON.parse(readFileSync(resolve(root,'apps/web/public/audio/manifest.json')));
  for(const pack of Object.values(manifest.packs))for(const format of ['webm','mp3']){
   if(!pack[format]?.startsWith('/audio/'))throw Error('Unexpected audio asset path');

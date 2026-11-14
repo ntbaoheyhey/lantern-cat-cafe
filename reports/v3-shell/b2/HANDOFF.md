@@ -1,7 +1,7 @@
-NOW: S4 lead-in6 cadence 6.161s; all three A motion fixtures pass. Nine-case voice matrix underway.
-NEXT: Current full S5 mix and A suites; accept P3 only after the shared timing checks pass.
-OPEN: P3 dedicated 7/7 and 435/435 browser/types/unit pass; current mix pending.
-CHECKER: Candidate snapshot wrapper retains the original B2 gates; known accepted trial 54/54, known failed trial 52/54.
-PIDS: A36397, B97970; A validation17319, matrix17774.
-JOBS: A reports/v3-solo/S4/lead-in6/validation-progress.json.
-UPDATED: 2026-11-14T01:16:32.341897+00:00
+NOW: S4 lead-in6 has two bark-spacing misses at x2/x3; required ultimate and skill lines have no interruptions in completed cases.
+NEXT: Final matrix case then A clock-horizon repair; repeat matrix, stage-one cadence and current S5.
+OPEN: P3 dedicated7/7 and435/435 browser/types/unit pass; timing/mix acceptance pending.
+DIAGNOSIS: A bark look-ahead multiplied speed during real-time speech and lead-ins; now uses the same playback clock.
+SIGNATURES: Future runtime receipts include battle-audio, voice-windows, audio-timeline, voice-timing, sequence and final-hit files in addition to model/audio/assets.
+PIDS: A36397,B97970;A validation17319,matrix17774 (last case).
+UPDATED: 2026-11-14T01:21:37.795321+00:00
