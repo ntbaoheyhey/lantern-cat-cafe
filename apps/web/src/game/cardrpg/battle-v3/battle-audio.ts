@@ -4,12 +4,15 @@ import {bodyStatuses,type BodyStatus} from './status';
 import {audioTimeline,cueTier,type TimelineCue,type CueRole} from './audio-timeline';
 import type {SequencePlan} from './sequence';
 import {advanceBattleClock} from './final-hit';
+// Opening skills begin shortly after the field appears. Leave their seven-second
+// mixer cooldown intact before requesting optional party chatter.
+const FIRST_BARK_MS=8000;
 export interface FiredCue {cue:AudioCue;at:number;planId:number|string|null;skillId:string;tier:string;actorId:string;role:CueRole;targetId?:string;voicePhase?:string}
 /** One battle-owned scheduler. B retains all decoding, mixing and voice synthesis. */
 export class BattleAudio {
  readonly events:FiredCue[]=[];
  private battle:unknown;private lastPlan:unknown;private fired=new Set<number>();private track:TimelineCue[]=[];
- private statuses=new Map<string,Set<BodyStatus>>();private lastWall:number|undefined;private elapsed=0;private nextBark=7500;private barks=0;
+ private statuses=new Map<string,Set<BodyStatus>>();private lastWall:number|undefined;private elapsed=0;private nextBark=FIRST_BARK_MS;private barks=0;
  private capture=false;private impacts:number[]=[];private pending:{event:FiredCue;options:CueOptions}[]=[];
  constructor(private play:(id:AudioCue,options?:CueOptions)=>void=playCue){}
  /** Deterministic evidence swaps the audio bridge for a recorder, never a second AudioContext. */
@@ -26,7 +29,7 @@ export class BattleAudio {
  render(view:SceneView){
   if(view.battleKey!==this.battle){
    this.battle=view.battleKey;this.lastPlan=null;this.statuses.clear();this.fired.clear();this.track=[];this.events.length=0;
-   this.elapsed=0;this.nextBark=7500;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
+   this.elapsed=0;this.nextBark=FIRST_BARK_MS;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
   }
   const now=view.fixedTime===undefined?performance.now():view.fixedTime*1000,delta=this.lastWall===undefined?0:Math.max(0,Math.min(250,now-this.lastWall));this.lastWall=now;
   if(view.galleryPreview||(!this.capture&&(view.paused||view.fixedTime!==undefined)))return;

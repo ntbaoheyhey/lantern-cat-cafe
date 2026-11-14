@@ -34,21 +34,21 @@ it('caps a late multi-target impact at six cues in a hundred milliseconds',()=>{
 it('holds a due bark when an authored callout is about to start and resumes it afterwards',()=>{
  const plan=configureSequence(pilotFixture('mochi-4').plan),played:string[]=[],audio=new BattleAudio(id=>played.push(id));audio.setCapture(true);
  const view={battleKey:plan,actors:[{id:'mochi',side:'party',hp:10}],models:{mochi:'mochi'},paused:true,playbackSpeed:1} as unknown as SceneView;
- for(let i=0;i<30;i++)audio.render({...view,fixedTime:10+i*.25});
+ for(let i=0;i<32;i++)audio.render({...view,fixedTime:10+i*.25});
  const charge=audioTimeline(plan,plan.sequence).find(key=>key.voicePhase==='charge')!;
- audio.render({...view,fixedTime:17.5,frame:sampleActionPlan(plan,Math.max(0,charge.t-50),false)});
+ audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,Math.max(0,charge.t-50),false)});
  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(0);
- audio.render({...view,fixedTime:17.75,frame:sampleActionPlan(plan,charge.t,false)});
+ audio.render({...view,fixedTime:18.25,frame:sampleActionPlan(plan,charge.t,false)});
  expect(played).toContain(charge.cue);expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(0);
- audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,charge.t+100,false)});
+ audio.render({...view,fixedTime:18.5,frame:sampleActionPlan(plan,charge.t+100,false)});
  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
 });
 it.each([1,2,3])('fits a bark before a real-time lead-in without over-reserving at ×%s',speed=>{
  const plan=reserveUltimateLeadIn(configureSequence(pilotFixture('mochi-4').plan),4000);
  const audio=new BattleAudio(()=>{});audio.setCapture(true);
  const view={battleKey:plan,actors:[{id:'mochi',side:'party',hp:10}],models:{mochi:'mochi'},paused:true,reducedMotion:false,playbackSpeed:speed} as unknown as SceneView;
- for(let i=0;i<30;i++)audio.render({...view,fixedTime:10+i*.25});
+ for(let i=0;i<32;i++)audio.render({...view,fixedTime:10+i*.25});
  const charge=audioTimeline(plan,plan.sequence).find(key=>key.voicePhase==='charge')!;
- audio.render({...view,fixedTime:17.5,frame:sampleActionPlan(plan,charge.t-2100,false)});
+ audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,charge.t-2100,false)});
  expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
 });
