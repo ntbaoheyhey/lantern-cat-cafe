@@ -13,7 +13,7 @@ Time triggers preempt Q0-Q9. A = /Users/bao/taskbar-hero-cardrpg-a6; B = /Users/
 | Q6 | done | B | U3 9/9 PASS;54/54 screens;435/435 browser; types/unit PASS;24 phone samples | STARTED 2026-11-13T21:17:35.227574+00:00; sourceB9b25782ff,Af6dc3cadd; ENDED 2026-11-13T22:45:54.020159+00:00 |
 | Q7 | done | A | 259 A +8 Q7 +9 Q3 PASS;IoU max.8203;saturation.815–.866;luminance1.003;High60FPS;browser435/435 | STARTED 2026-11-13T22:46:49.566670+00:00; source9b4323716/media16cb6cdfc/measurementb066e4caa; ENDED 2026-11-13T23:21:53.009864+00:00 |
 | Q8 | done | B (+ A attributes) | T1 90/90,0 fallback;C1 3/4;7 gates PASS;browser435/435,unit/types/parity PASS | STARTED 2026-11-13T23:10:58.474439+00:00;A14a4f33bb,B496df289b;ENDED 2026-11-13T23:50:37.928363+00:00 |
-| Q9 | active | A/B by ownership | A P1 then B P1-P8,E6 | STARTED 2026-11-13T23:51:32.209273+00:00;A P1+aggregate14 PASS ENDED 2026-11-13T23:58:15.262596+00:00;B P1 six variants PASS;B P2 active |
+| Q9 | active | A/B by ownership | A P1 then B P1-P8,E6 | STARTED 2026-11-13T23:51:32.209273+00:00;A P1+aggregate14 PASS ENDED 2026-11-13T23:58:15.262596+00:00;B P1 six variants PASS;B P2 PASS ENDED 2026-11-14T00:30:00.219584+00:00;S4 cadence reopened |
 | S1 | scheduled | A then B | 2026-11-16 12:00 UTC; SYNC-16 |  |
 | S2 | scheduled | A then B | 2026-11-18 12:00 UTC; SYNC-18 + D1 |  |
 | S3 | scheduled | A/B | 2026-11-19 12:00 UTC; FREEZE final reports/checkers |  |
