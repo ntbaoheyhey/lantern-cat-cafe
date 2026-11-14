@@ -42,4 +42,4 @@ Verification: workspace typecheck PASS; complete `pnpm test` PASS (2 pre-existin
 - Live wallet/economy uses B's disposable local Anvil/API fixture; no public chain or funded real wallet is required. Chain state resets when the fixture restarts.
 - Static gameplay, forge and wallet panel work offline; chain balances/actions and guest sign-in require the live fixture. Save/import codes preserve offline progress; the offline account itself resets on reload.
 - Q9 S4 bark cadence remains paused and unaccepted. This task does not tune balance, gates, or presentation cadence.
-- Full smoke matrix is still in progress; update the final evidence once all four variants pass.
+- Full smoke matrix completed: live and file:// at 1280x720 and 1440x900 all PASS, zero console errors. Both final static runs recorded zero attempted/outbound requests. See `TEST-EVIDENCE.md`.

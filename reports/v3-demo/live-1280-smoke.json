@@ -1,0 +1,236 @@
+{
+  "id": "live-1280",
+  "started": "2026-11-14T03:11:06.247Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "source": "Fresh account; real UI clicks; no save injection, combat mutation, or skipped result.",
+  "errors": [],
+  "externalRequests": [],
+  "shots": [
+    {
+      "name": "01-landing",
+      "file": "live-1280-01-landing.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "02-home",
+      "file": "live-1280-02-home.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "03-prepare",
+      "file": "live-1280-03-prepare.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "04-ultimate",
+      "file": "live-1280-04-ultimate.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "05-victory",
+      "file": "live-1280-05-victory.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "06-forge",
+      "file": "live-1280-06-forge.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "07-team",
+      "file": "live-1280-07-team.png",
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "08-wallet",
+      "file": "live-1280-08-wallet.png",
+      "overflow": false,
+      "broken": []
+    }
+  ],
+  "visits": [
+    "landing",
+    "home and unlocked audio",
+    "practice victory",
+    "free welcome recruit",
+    "full campaign wave at 3x",
+    "ultimate cinematic displayed",
+    "campaign victory and rewards",
+    "forge enhancement completed",
+    "bag materials",
+    "team",
+    "local guest wallet"
+  ],
+  "audioAfterFirstClick": true,
+  "battle": {
+    "result": "party",
+    "round": 16,
+    "seed": 791576452,
+    "ultimates": [
+      {
+        "round": 3,
+        "skill": "mochi-4"
+      },
+      {
+        "round": 3,
+        "skill": "panko-4"
+      },
+      {
+        "round": 4,
+        "skill": "soot-4"
+      },
+      {
+        "round": 4,
+        "skill": "clover-4"
+      },
+      {
+        "round": 7,
+        "skill": "mochi-4"
+      },
+      {
+        "round": 7,
+        "skill": "panko-4"
+      },
+      {
+        "round": 8,
+        "skill": "soot-4"
+      },
+      {
+        "round": 8,
+        "skill": "clover-4"
+      },
+      {
+        "round": 11,
+        "skill": "mochi-4"
+      },
+      {
+        "round": 11,
+        "skill": "panko-4"
+      },
+      {
+        "round": 12,
+        "skill": "soot-4"
+      },
+      {
+        "round": 12,
+        "skill": "clover-4"
+      },
+      {
+        "round": 15,
+        "skill": "mochi-4"
+      },
+      {
+        "round": 15,
+        "skill": "panko-4"
+      },
+      {
+        "round": 16,
+        "skill": "soot-4"
+      }
+    ],
+    "rewards": [
+      "route points +35",
+      "Rare Moonwick Shawl +1"
+    ],
+    "audioReady": true,
+    "voice": [
+      "voice.mochi.ult.charge",
+      "voice.mochi.ult.release",
+      "voice.panko.ult.charge",
+      "voice.panko.ult.release",
+      "voice.soot.ult.charge",
+      "voice.soot.ult.release",
+      "voice.clover.ult.charge",
+      "voice.clover.ult.release",
+      "voice.mochi.ult.charge",
+      "voice.mochi.ult.release",
+      "voice.panko.ult.charge",
+      "voice.panko.ult.release",
+      "voice.soot.ult.charge",
+      "voice.soot.ult.release",
+      "voice.clover.ult.charge",
+      "voice.clover.ult.release",
+      "voice.mochi.ult.charge",
+      "voice.mochi.ult.release",
+      "voice.panko.ult.charge",
+      "voice.panko.ult.release",
+      "voice.soot.ult.charge",
+      "voice.soot.ult.release",
+      "voice.clover.ult.charge",
+      "voice.clover.ult.release",
+      "voice.mochi.ult.charge",
+      "voice.mochi.ult.release",
+      "voice.panko.ult.charge",
+      "voice.panko.ult.release",
+      "voice.soot.ult.charge",
+      "voice.soot.ult.release"
+    ],
+    "packs": [
+      "b2-ui",
+      "menu-home",
+      "b2-ui-baked",
+      "landing",
+      "scene-room",
+      "scene-night",
+      "score-battle",
+      "b2-motion",
+      "b2-hits",
+      "callout-mochi",
+      "rpg",
+      "b2-magic",
+      "callout-soot",
+      "voice",
+      "callout-clover",
+      "callout-panko",
+      "callout-teacup-healer",
+      "cat-mochi",
+      "cat-soot",
+      "cat-clover",
+      "cat-panko",
+      "callout-sock-skipper"
+    ],
+    "elapsedMs": 145640
+  },
+  "afterReward": {
+    "currencies": {
+      "fish": 630,
+      "threads": 46,
+      "stamps": 610,
+      "essence": 0
+    },
+    "runComplete": true
+  },
+  "forge": {
+    "before": {
+      "currencies": {
+        "fish": 630,
+        "threads": 46,
+        "stamps": 610,
+        "essence": 0
+      },
+      "gear": 0
+    },
+    "after": {
+      "currencies": {
+        "fish": 630,
+        "threads": 46,
+        "stamps": 580,
+        "essence": 0
+      },
+      "gear": 1
+    }
+  },
+  "offline": null,
+  "pass": true,
+  "finished": "2026-11-14T03:13:52.986Z"
+}
