@@ -1,13 +1,13 @@
 # Demo handoff
 
-READY: all runtime and artifact gates passed at 2026-11-14T03:22:36Z; artifact commit/push is the remaining delivery step.
+COMPLETE: all demo gates passed. Artifact commit `5e421e1a0ec158b819b627a05a93b36b5c396c0b` was pushed to origin at 2026-11-14T03:25:17Z. The server is left running for review. This final handoff record does not change the verified artifact.
 
 ## Version and scope
 
 - Worktree: `/Users/bao/taskbar-hero-cardrpg-a6`
 - Branch: `codex/v3-demo-2026-11-14`
 - Build/source commit: `a81b75f456a2c4dbce3cfdfa17644874cf8c117f` (the REFERENCE commit).
-- Artifact commit: pending final commit below; no further game-source changes are needed.
+- Artifact commit: `5e421e1a0ec158b819b627a05a93b36b5c396c0b` — `V3DEMO: playable demo from A+B` (pushed).
 - A evidence head: `66f68bfe31a5e3d51952a2a7f55cba98453f46c6` (runtime `53fbf0da1`).
 - B evidence head: `106c8a3540db45fe8f1557cbd3389241029b9bee` (runtime `6a61d6acf`).
 - A/B branches contain only their evidence-save commits after the supplied runtime heads. Their non-report files are unchanged.
