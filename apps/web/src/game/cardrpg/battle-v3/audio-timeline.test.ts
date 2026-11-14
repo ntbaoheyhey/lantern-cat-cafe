@@ -30,3 +30,15 @@ it('caps a late multi-target impact at six cues in a hundred milliseconds',()=>{
  const hits=audio.events.filter(e=>e.role==='impact');expect(hits.length).toBeGreaterThanOrEqual(12);
  for(const hit of hits)expect(hits.filter(e=>e.at>=hit.at&&e.at<hit.at+.1-1e-8).length).toBeLessThanOrEqual(6);
 });
+it('holds a due bark when an authored callout is about to start and resumes it afterwards',()=>{
+ const plan=configureSequence(pilotFixture('mochi-4').plan),played:string[]=[],audio=new BattleAudio(id=>played.push(id));audio.setCapture(true);
+ const view={battleKey:plan,actors:[{id:'mochi',side:'party',hp:10}],models:{mochi:'mochi'},paused:true,playbackSpeed:1} as unknown as SceneView;
+ for(let i=0;i<30;i++)audio.render({...view,fixedTime:10+i*.25});
+ const charge=audioTimeline(plan,plan.sequence).find(key=>key.voicePhase==='charge')!;
+ audio.render({...view,fixedTime:17.5,frame:sampleActionPlan(plan,Math.max(0,charge.t-50),false)});
+ expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(0);
+ audio.render({...view,fixedTime:17.75,frame:sampleActionPlan(plan,charge.t,false)});
+ expect(played).toContain(charge.cue);expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(0);
+ audio.render({...view,fixedTime:18,frame:sampleActionPlan(plan,charge.t+100,false)});
+ expect(audio.events.filter(e=>e.role==='bark')).toHaveLength(1);
+});

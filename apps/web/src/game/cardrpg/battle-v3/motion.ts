@@ -31,7 +31,17 @@ export function actionPose(input:MotionInput):RootPose {
  const dy=ultimate?(height*.59-home.y):melee?(target.y-home.y):0;
  let travel=0,arc=0;
  if(t<launch){const lean=smooth(t/120);p.phase='anticipation';p.x=-direction*14*scale*lean;p.sx=1+.065*lean;p.sy=1-.065*lean;p.angle=direction*.16*lean;return p;}
- if(t<arrival){const u=clamp((t-launch)/Math.max(1,arrival-launch));travel=ultimate&&leadIn>0?smooth(u):out(u);arc=Math.sin(u*Math.PI);p.phase='travel';p.sx=1+.10*arc;p.sy=1-.07*arc;}
+ if(t<arrival){
+  const u=clamp((t-launch)/Math.max(1,arrival-launch));
+  if(ultimate&&leadIn>0){
+   // Two planted steps and a final hop give a long spoken wind-up distinct
+   // poses. The approach is monotonic and ends at the original hero spot.
+   travel=.34*smooth(u/.30)+.30*smooth((u-.30)/.32)+.36*smooth((u-.62)/.38);
+   const step=u<.30?u/.30:u<.62?(u-.30)/.32:(u-.62)/.38;
+   arc=Math.sin(step*Math.PI);p.angle=-direction*.16*arc;
+  }else{travel=out(u);arc=Math.sin(u*Math.PI);}
+  p.phase='travel';p.sx=1+.10*arc;p.sy=1-.07*arc;
+ }
  else if(t<holdEnd){travel=1;p.phase='strike';p.sx=1.07;p.sy=.93;}
  else if(t<returnEnd){const u=clamp((t-holdEnd)/Math.max(1,returnEnd-holdEnd));travel=1-smooth(u);arc=Math.sin(u*Math.PI);p.phase='return';p.sx=1+.03*arc;p.sy=1-.03*arc;}
  else {if(t>=returnEnd+67)return p;const settle=Math.sin(clamp((t-returnEnd)/67)*Math.PI);p.phase='land';p.sx=1+.06*settle;p.sy=1-.06*settle;return p;}
@@ -95,9 +105,10 @@ export function actionCamera(input:MotionInput,tier:'basic'|'active'|'ultimate')
    // Follow the caster's measured approach once, then hand the frame to the
    // plate. Breathing room is a visible wind-up, never a frozen recovery.
    const enter=smooth(t/Math.max(1,leadIn)),leave=1-smooth((t-leadIn)/150);
-   const zoom=1+.22*enter*leave,travel=smooth(t/(leadIn+150));
+   const zoom=1+.24*enter*leave,travel=smooth(t/(leadIn+150));
    const x=home.x+(width*(direction>0?.48:.52)-home.x)*travel;
-   return {zoom,x:(x/width-.5)*(1-1/zoom),y:(.5-(home.y-home.core*.4)/height)*(1-1/zoom),tilt:0};
+   const orbit=Math.sin(Math.PI*travel)*leave;
+   return {zoom,x:(x/width-.5)*(1-1/zoom)+direction*.07*orbit,y:(.5-(home.y-home.core*.4)/height)*(1-1/zoom),tilt:direction*.008*orbit};
   }
   if(t<=impact)return rest;
   const age=t-impact,enter=smooth(age/133),recover=1-smooth((age-233)/Math.max(1,plan.duration-impact-233));

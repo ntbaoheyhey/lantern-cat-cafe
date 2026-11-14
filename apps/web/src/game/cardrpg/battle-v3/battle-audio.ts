@@ -37,13 +37,16 @@ export class BattleAudio {
    if(previous){for(const status of current)if(!previous.has(status))this.send({...context,cue:`status.${status}.on`,role:'status',targetId:unit.id});for(const status of previous)if(!current.has(status))this.send({...context,cue:`status.${status}.off`,role:'status',targetId:unit.id});}
    this.statuses.set(unit.id,current);
   }
-  if(this.elapsed>=this.nextBark){
+  if(frame&&frame.plan!==this.lastPlan){this.lastPlan=frame.plan;this.fired.clear();this.track=audioTimeline(frame.plan,(frame.plan as SequencePlan).sequence);}
+  // A bark must fit before the next authored line. Keep its periodic due time
+  // while the line owns the voice slot, then try again on the following frame.
+  const speechSoon=frame&&this.track.some(key=>key.role==='voice'&&key.t>=frame.elapsed-80&&key.t-frame.elapsed<1800*(view.playbackSpeed??1));
+  if(this.elapsed>=this.nextBark&&!speechSoon){
    const party=view.actors.filter(a=>a.side==='party'&&a.hp>0),actor=party[this.barks%Math.max(1,party.length)],owner=actor&&(view.models?.[actor.id]??actor.cardRpg?.cardId);
    if(owner)this.send({...context,cue:`voice.${owner}.${this.barks%2?'attack':'select'}`,role:'bark',actorId:actor!.id},{volume:.65,priority:40});
    this.barks++;this.nextBark+=7500;
   }
   if(!frame)return;
-  if(frame.plan!==this.lastPlan){this.lastPlan=frame.plan;this.fired.clear();this.track=audioTimeline(frame.plan,(frame.plan as SequencePlan).sequence);}
   for(const [i,key] of this.track.entries()){
    if(this.fired.has(i)||key.t>frame.elapsed)continue;this.fired.add(i);
    this.send({...context,cue:key.cue,role:key.role,targetId:key.targetId,voicePhase:key.voicePhase},{speed:view.playbackSpeed??1,element:key.element,...(key.role==='voice'?{priority:context.tier==='ultimate'?100:90}:{}),...(key.role==='movement'?{volume:.7}:{})});
