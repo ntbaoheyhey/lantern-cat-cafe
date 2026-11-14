@@ -23,7 +23,13 @@ const result=await build({configFile:false,root:web,envDir:false,publicDir:false
   const key=relative(root,file),packed=key.startsWith('assets/cardrpg2/models/')?resolve(root,'assets/cardrpg-look/fallback-models',basename(file)):file;
   assets.set(key,{key,mime,bytes:readFileSync(existsSync(packed)?packed:file)});
   return `export default window.__cardAssets[${JSON.stringify(key)}];`;
- }}],
+ }},...(v3Demo?[{name:'v3-demo-offline-chain',enforce:'pre',transform(code,id){
+  if(id!==resolve(web,'src/game/cardrpg/chain/runtime.ts'))return null;
+  const marker='export async function loadChainConfig(): Promise<ChainConfig> {';
+  if(!code.includes(marker))throw Error('Offline chain hook changed');
+  // B has no offline branch here; its landing counters otherwise try the public RPC.
+  return code.replace(marker,marker+'\n  throw new Error("Saved demo: chain services are offline.");');
+ }}]:[])],
  define:{'process.env.NODE_ENV':'"production"','import.meta.env.VITE_UI_V3':'"1"',...(v3Demo?{'import.meta.env.VITE_REVIEW_DEMO':'"1"','import.meta.env.VITE_ECONOMY_V3':'"1"','import.meta.env.VITE_CHAIN_MODE':'"offline"'}:{})},
  resolve:{dedupe:['react','react-dom','@taskbar-hero/game-rules']},
  build:{write:false,minify:true,lib:{entry:resolve(root,'tools/cardrpg-a6/offline.tsx'),name:'LanternA6',formats:['es']}}

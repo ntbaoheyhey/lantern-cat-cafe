@@ -30,6 +30,7 @@ Demo packaging only:
 - Add B's entrance, audio engine/controls, shell pages and wallet panel around the existing offline game entry.
 - Embed shipped public audio, cinematics, art, rigs, fonts and icons. A single file would exceed 60 MB, so the existing payload is split into script packs under `assets/`; no new bundler.
 - Resolve public resource URLs to restored Blob URLs for file://. Static chain mode is explicitly offline.
+- B's chain-config loader treats unknown modes as public Fuji. The static-only build transform makes that loader report offline before creating an RPC client; the real counter UI displays Offline. The initial full static smoke reached every screen with zero console errors and zero outbound requests, but caught three blocked RPC attempts; this packaging fix removes those attempts.
 - The demo Vite config redirects localhost to B's loopback fixture origin, fixing guest SIWE/CORS. It removes external font links because fonts are bundled locally.
 - A's turn-order HUD asks for twelve enemy `portrait.webp` paths omitted by B's public rig directories. A demo-only alias map serves the existing A face/art files in both live and static packaging. No new art or combat changes.
 
