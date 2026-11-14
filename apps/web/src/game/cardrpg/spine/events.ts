@@ -22,3 +22,14 @@ export function retimedClipTime(progress:number,duration:number,hitTime:number,i
  const p=Math.max(0,Math.min(1,progress)),pivot=Math.max(.01,Math.min(.99,impactFraction));
  return p<=pivot?p/pivot*hitTime:hitTime+(p-pivot)/(1-pivot)*(duration-hitTime);
 }
+
+/** Hold the resting pose during ultimate focus and the contact pose for two
+ * 30 Hz frames, inside the action's unchanged envelope. Seeking is identical
+ * to playback; neither frame rate nor wall-clock hit-stop can stretch a turn. */
+export function fixedActionClipTime(elapsed:number,duration:number,hitTime:number,impact:number,total:number,focus=0){
+ const t=Math.max(0,Math.min(total,elapsed)),hold=200/3;
+ if(t<=focus)return 0;
+ if(t<impact)return (t-focus)/Math.max(1,impact-focus)*hitTime;
+ if(t<impact+hold)return hitTime;
+ return hitTime+(t-impact-hold)/Math.max(1,total-impact-hold)*(duration-hitTime);
+}

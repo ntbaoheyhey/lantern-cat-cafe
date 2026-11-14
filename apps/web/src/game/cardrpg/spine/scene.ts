@@ -2,7 +2,7 @@ import {CasterFocus,focusBannerBox} from '../battle-v3/focus';
 import {BattlePostFx} from '../battle-v3/post-fx';
 import {BattleAudio} from '../battle-v3/battle-audio';
 import {CinematicPlayer} from '../battle-v3/cinematic-player';
-import {sequenceAt,sequenceWorldTime} from '../battle-v3/sequence';
+import {sequenceAt,sequenceWorldTime,type SequencePlan} from '../battle-v3/sequence';
 import * as T from 'three';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { SceneView, Anchor } from '../../squad/turn3d/scene';
@@ -20,7 +20,7 @@ import {crowdPose} from '../battle-v3/crowd';
 import {impactFeedback} from '../battle-v3/presentation';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
-import { retimedClipTime, type SpineCue } from './events';
+import { fixedActionClipTime,retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { stageLayoutC2 } from '../stage/layout-c2';
 import {unitCore,ELEMENT_COLORS} from '../stage/core';
@@ -130,7 +130,7 @@ export class SpineScene {
    this.firstHit=true;
    if(frame.plan.events.some(e=>e.type==='damage')){
     this.hitAt=this.renderTime;
-    if(!view.reducedMotion&&view.fixedTime===undefined)this.hitstopUntil=performance.now()+(sequenceAt(frame.plan,frame.elapsed)?.seq.tier==='ultimate'?100:PAINT.hitstopMs);
+    if(!(frame.plan as SequencePlan).fixedTiming&&!view.reducedMotion&&view.fixedTime===undefined)this.hitstopUntil=performance.now()+(sequenceAt(frame.plan,frame.elapsed)?.seq.tier==='ultimate'?100:PAINT.hitstopMs);
    }
    for(const id of frame.plan.targetIds){const target=this.actors.get(id);if(target&&frame.plan.events.some(e=>e.targetIds.includes(id)&&e.type==='damage'))target.hurtAt=this.renderTime;}
   }
@@ -208,7 +208,9 @@ export class SpineScene {
     const authored=sequence?.seq.casterAnim.filter(k=>k.t<=frame.elapsed&&k.name).at(-1)?.name;
     if(authored&&!chargeEvent(frame.plan))name=authored;
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
-    at=retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
+    at=(frame.plan as SequencePlan).fixedTiming
+     ?fixedActionClipTime(frame.elapsed,duration,hit,frame.plan.beats[2]!.start,frame.plan.duration,frame.plan.ultimate?600:0)
+     :retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
    }else if(unit.hp<=0){if(entry.koAt<0)entry.koAt=time;name='ko';key=entry.koAt;at=time-entry.koAt;}
    else if(time-entry.hurtAt<actor.duration('hurt')){name='hurt';key=entry.hurtAt;at=time-entry.hurtAt;}
    else if(crowd.kind!=='idle'){name=crowd.kind==='cheer'?'victory':'hurt';key=plan;at=crowd.age/650*actor.duration(name);}

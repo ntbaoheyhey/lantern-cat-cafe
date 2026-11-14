@@ -15,7 +15,7 @@ const out=resolve(root,'reports/v3-feel/REVIEW',item);mkdirSync(out,{recursive:t
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal','--autoplay-policy=no-user-gesture-required','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
 try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===selected)){
- const raw=resolve(out,fixture.id,'raw');mkdirSync(raw,{recursive:true});
+ const raw=resolve(out,fixture.id,'raw');rmSync(raw,{recursive:true,force:true});mkdirSync(raw,{recursive:true});
  const {page,errors}=await openFixture(browser,fixture,{fixedClock:false,setupPage:p=>installOutputCapture(p,resolve(raw,'audio.webm'))});
  await page.evaluate(async()=>{const a=window.__thAudio;await a.unlock();await a.preload('battle');a.music(window.__depthReview.battle.actors.some(x=>x.catalogId==='yarn-giant')?'boss':'battle');});
  // Let the real score reach its steady state before marking capture zero.
@@ -35,12 +35,18 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
   const c=window.__feelCapture={start,frames:[],plans:[],lastPlan:null,lastSample:-1,voiceWindows:[],finishedAt:null};
   const render=s.render.bind(s);
   s.render=(view,dt)=>{
-   render(view,dt);const t=Date.now()/1000-start;
-   if(m.plan&&c.lastPlan!==m.plan){c.lastPlan=m.plan;c.plans.push({id:m.plan.id,at:t,actorId:m.plan.actorId,skillId:m.plan.presentationId??m.plan.skillId,ultimate:m.plan.ultimate,tier:m.plan.sequence?.tier??(m.plan.ultimate?'ultimate':'basic'),duration:m.plan.duration,impact:m.plan.beats[2].start,events:structuredClone(m.plan.events),beats:structuredClone(m.plan.beats)});}
+   render(view,dt);const t=Date.now()/1000-start,plan=view.frame?.plan;
+   // A round-status presentation can share a rules action ID with the prior
+   // strike. Identify the rendered plan by its own ordinal, not that rules ID.
+   if(plan&&c.lastPlan!==plan){c.lastPlan=plan;c.plans.push({key:c.plans.length,id:plan.id,at:t,clockStart:t-view.frame.elapsed/1000,actorId:plan.actorId,skillId:plan.presentationId??plan.skillId,ultimate:plan.ultimate,tier:plan.sequence?.tier??(plan.ultimate?'ultimate':'basic'),duration:plan.duration,impact:plan.beats[2].start,events:structuredClone(plan.events),beats:structuredClone(plan.beats)});}
    if(m.battle?.result&&!c.finishedAt)c.finishedAt=t;
-   if(t-c.lastSample<1/30)return;c.lastSample=t;
-   const audit=s.audit(),rect=s.renderer.domElement.getBoundingClientRect();
-   c.frames.push({t,units:audit.units,motion:audit.motion,sequence:audit.sequence,numbers:s.numbers?.drawn??[],focus:audit.focus,renderCamera:audit.camera,rootPoses:[...s.actors].map(([id,e])=>({id,x:e.actor.root.position.x,y:e.actor.root.position.y,scaleX:e.actor.root.scale.x,scaleY:e.actor.root.scale.y,angle:e.actor.root.rotation.z})),camera:{zoom:s.camera.zoom,position:s.camera.position.toArray(),root:s.stage.root.matrix.toArray()},field:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},action:m.plan?{id:m.plan.id,elapsed:m.animationAt}:null});
+   // Keep every rendered frame. A >=33 ms throttle aliases 60 Hz into 20 Hz,
+   // which cannot establish one-frame contact timing or 100% camera coverage.
+   c.lastSample=t;
+   // The renderer reuses its motion/sequence arrays. Snapshot now, otherwise
+   // every historical sample silently becomes the final rendered frame.
+   const audit=structuredClone(s.audit()),rect=s.renderer.domElement.getBoundingClientRect();
+   c.frames.push({t,units:audit.units,motion:audit.motion,sequence:audit.sequence,numbers:structuredClone(s.numbers?.drawn??[]),focus:audit.focus,renderCamera:audit.camera,rootPoses:[...s.actors].map(([id,e])=>({id,x:e.actor.root.position.x,y:e.actor.root.position.y,scaleX:e.actor.root.scale.x,scaleY:e.actor.root.scale.y,angle:e.actor.root.rotation.z})),camera:{zoom:s.camera.zoom,position:s.camera.position.toArray(),root:s.stage.root.matrix.toArray()},field:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},action:view.frame?{key:c.plans.length-1,id:view.frame.plan.id,elapsed:view.frame.elapsed}:null});
    const d=a.diagnostics;c.voiceWindows.push({t,sfx:d.sfx,voice:d.voice,active:d.active});
   };
   s.last=0;s.raf=requestAnimationFrame(s.loop);m.nextStepAt=0;m.paused=false;m.notify(false);return start;
@@ -48,6 +54,7 @@ try {for(const fixture of config.fixtures.filter(f=>selected==='all'||f.id===sel
  for(let elapsed=0;elapsed<seconds;elapsed+=15){await page.waitForTimeout(Math.min(15,seconds-elapsed)*1000);console.log(`${item} ${fixture.id}: ${Math.min(elapsed+15,seconds)}/${seconds}s`);}
  await cdp.send('Page.stopScreencast');
  const capture=await page.evaluate(async()=>{
+  if(!window.__feelCapture)throw Error('Page reloaded during capture. Do not edit browser source during a recording.');
   window.__depthReview.paused=true;await window.__outputCapture.stop();
   const c=window.__feelCapture,m=window.__depthReview,a=window.__thAudio,r=window.__v3a2;
   const expected=structuredClone(r.initial),actual=structuredClone(m.battle);r.R.playBattle(expected,'auto');r.R.playBattle(actual,'auto');

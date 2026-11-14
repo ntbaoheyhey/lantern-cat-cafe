@@ -1,5 +1,5 @@
 import { describe,it,expect } from 'vitest';
-import {animationCues,SpineEventCursor,retimedClipTime} from './events';
+import {animationCues,SpineEventCursor,retimedClipTime,fixedActionClipTime} from './events';
 import {lookSpineEnabled,lookV3DEnabled} from './config';
 describe('Spine contract clock',()=>{
  it('defaults on for demo/look, explicitly off remains legacy, 3D stays parked',()=>{expect(lookSpineEnabled('?demo=1',false)).toBe(true);expect(lookSpineEnabled('',true)).toBe(true);expect(lookSpineEnabled('?demo=1&lookSpine=0',true)).toBe(false);expect(lookSpineEnabled('',false)).toBe(false);expect(lookV3DEnabled('?demo=1')).toBe(false);});
@@ -18,4 +18,15 @@ describe('Spine contract clock',()=>{
  });
  it('crosses every event once even after a large x3 frame and can restart a replay',()=>{const cursor=new SpineEventCursor(),cues=animationCues('skill',1,[{name:'cast',time:.1},{name:'hit',time:.4}]),seen:string[]=[];cursor.advance(cues,0,c=>seen.push(c.name));cursor.advance(cues,.8,c=>seen.push(c.name));cursor.advance(cues,1,c=>seen.push(c.name));expect(seen).toEqual(['cast','hit']);cursor.reset();cursor.advance(cues,1,c=>seen.push(c.name));expect(seen).toEqual(['cast','hit','cast','hit']);});
  it('retimes contact exactly to the unchanged gameplay impact and holds endpoints',()=>{expect(retimedClipTime(.63,1,.48,.63)).toBeCloseTo(.48);expect(retimedClipTime(0,2,1.1,.6)).toBe(0);expect(retimedClipTime(1,2,1.1,.6)).toBe(2);});
+ it.each([[800,350,0],[2200,1100,600]])('seeks the fixed %sms action without moving its contact or endpoint',(total,impact,focus)=>{
+  for(const duration of [.7,1.8,3.2]){
+   const hit=duration*.55,at=(t:number)=>fixedActionClipTime(t,duration,hit,impact,total,focus);
+   expect(at(0)).toBe(0);expect(at(focus)).toBe(0);
+   expect(at(impact)).toBe(hit);expect(at(impact+1000/30)).toBe(hit);
+   expect(at(impact+200/3)).toBeCloseTo(hit);expect(at(impact+100)).toBeGreaterThan(hit);
+   expect(at(total)).toBe(duration);
+   const times=[0,focus,(focus+impact)/2,impact,impact+50,total];
+   const forward=times.map(at);expect([...times].reverse().map(at).reverse()).toEqual(forward);
+  }
+ });
 });

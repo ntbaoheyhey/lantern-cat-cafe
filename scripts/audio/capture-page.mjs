@@ -45,6 +45,7 @@ export async function installOutputCapture(page,path,stemPaths={}){
     return Date.now()/1000;
    },
    async stop(){
+    if(!recorder)throw Error('Audio capture was not started in this page. A navigation or development reload invalidates the recording; record again.');
     await Promise.all([recorder,...stems.map(s=>s.recording)].map(r=>new Promise(resolve=>{r.onstop=resolve;r.stop();})));
     for(const s of stems){s.node.disconnect(s.output);s.silence.stop();s.silence.disconnect();}
     await pending;return Date.now()/1000;
