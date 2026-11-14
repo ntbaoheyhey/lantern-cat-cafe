@@ -231,3 +231,9 @@ P2 S4 fixture audit 2026-11-14T00:25:54.565916+00:00: The omitted cadence field 
 ## 2026-11-14T01:44:55.375254+00:00 — P3 decimal audio budget correction
 
 The P3-only checker incorrectly allowed 16 MiB. The unchanged B2 checker correctly rejected 16,380,501 bytes against 16,000,000. Fixed the dedicated check, added exact-boundary/failing regression cases, and encoded the two mono menu scores at 80 kb/s from their hash-verified lossless sources, with constrained Opus VBR. The shipment is now 15,911,147 bytes (469,354 saved); measured LUFS difference is 0.00. Speech assets, arrangements and durations are unchanged. Prior P3 budget PASS is withdrawn. Full capture46 belongs to the old audio; acceptance requires fresh output from the compressed assets.
+
+## 2026-11-14T01:56:26.484832+00:00 — authorized shared browser fix
+
+A full browser run exposed Collection and Settings at 26 words while the unlock toast was visible. B commit 1bd241f39 changes only IntroductionA6.tsx: the label "NOW OPEN" becomes "Unlocked", preserving the feature title, dismissal and timing. Cherry-picked onto A as 18e3237cf748f81475d3d63f6eaec493ba223f9f under the explicit shared-browser-blocker exception. No branch merge. The failed capture remains historical; fresh word-budget and full browser checks are required.
+
+2026-11-14T02:17:59.420787+00:00 S4 trial47 rejected: nine cases complete, all required ultimate/skill lines uninterrupted, wave3x3 optional bark requests8.066100s fail. Raw trace: first request7.5144s;later requests15.5282/23.6726/31.7127s defer through adjacent ultimate phases. Next pilot starts optional chatter at8s, after the opening skill plus the existing7s mixer cooldown; periodic spacing and reserved speech remain unchanged. No capture, gate or threshold is rewritten.
