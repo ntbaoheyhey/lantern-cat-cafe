@@ -1,0 +1,20 @@
+{
+  "pid": 94480,
+  "command": [
+    "node",
+    "scripts/audio/render-runtime.mjs"
+  ],
+  "env": {
+    "AUDIO_URL": "http://127.0.0.1:5996",
+    "AUDIO_RUNTIME_ROOT": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
+    "AUDIO_PYTHON": "/opt/homebrew/Cellar/python@3.11/3.11.17/Frameworks/Python.framework/Versions/3.11/bin/python3.11",
+    "MIX_TRIAL": "diagnostic-38-p2-boss-stems",
+    "AUDIO_SCENES": "boss",
+    "DIAGNOSTIC_STEMS": "1"
+  },
+  "log": "reports/v3-shell/b2/polish/P2/stem-capture.log",
+  "started": "2026-11-14T00:06:08.008733+00:00",
+  "exitCode": 1,
+  "recovered": true,
+  "recovery": "Capture and raw runtime complete. Post-analysis rerun with tools/.venv/bin/python (without resolving its executable symlink). Signed diagnostic JSON retains current integration hashes."
+}

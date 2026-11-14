@@ -1,0 +1,115 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-chain
+> node --test scripts/*.test.mjs scripts/v3b2/*.test.mjs tools/cardrpg-c2/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (10.340666ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.167208ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.138458ms)
+✔ output order is stable regardless of file creation order (4.126542ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.546375ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (26.440542ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.623ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (12.945208ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.332958ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (19.781125ms)
+✔ auth health fails closed when the transport is unavailable (14.249083ms)
+✔ every threshold equals the user prompt, including strict numeric endpoints (1.660583ms)
+✔ threshold table is frozen (0.224917ms)
+✔ all required gate IDs and thresholds are listed with measurements (6.357167ms)
+✔ absent evidence fails every production gate, including maximum and every checks (5.631875ms)
+✔ malformed JSON cannot pass a gate or crash the entire checker (3.575458ms)
+✔ empty arrays cannot pass universal checks (4.481375ms)
+✔ a missing trace cannot pass the CPU gate despite a small reported percentage (3.493625ms)
+✔ strict CPU limit rejects exactly 8 percent and accepts 7.99 with a verified trace (3.958125ms)
+✔ hash mismatches invalidate evidence logs (2.519208ms)
+✔ full-demand burn gate rejects a deflationary 1.61, accepts the exact 1.60 limit (2.854833ms)
+✔ sensitivity needs both positive and negative perturbations for each assumption (2.775375ms)
+✔ future-dated evidence cannot pre-complete sync or freeze (3.243542ms)
+✔ claimed PARTIAL cannot bypass missing evidence or minimum gates (0.15975ms)
+✔ disallowed non-commercial audio is rejected even when its file hash matches (3.103916ms)
+✔ calendar strata cover every start date with balanced exposure, including a year boundary (4.230625ms)
+✔ one-date plan retains the original calendar and matched-profile dates are deterministic (0.34925ms)
+✔ invalid dates and cohort ranges fail before projections can silently change identity (0.389458ms)
+✔ equal no-loss runs pass parity but retain censoring (1.446042ms)
+✔ equal summary numbers cannot conceal different combat decisions or outcomes (0.46825ms)
+✔ session failure or a different horizon cannot pass acceptance (0.552125ms)
+✔ timing and economic differences above the threshold fail independently (0.437666ms)
+✔ a simulated loss cannot match a censored real observation (0.262708ms)
+✔ normal HP excludes elite encounters and earned skips, while keeping their wins (0.184375ms)
+✔ an in-progress real trace does not count as a completed seed (0.136667ms)
+✔ cohort median includes censored sessions rather than just losing players (0.301834ms)
+✔ a decision or progression mismatch is rejected even with identical fights (0.255167ms)
+✔ missing or reordered middle encounters cannot hide behind matching aggregate counts (0.693625ms)
+✔ empty action traces or missing playback measurements cannot pass (0.255333ms)
+✔ balance requires uncensored median, no early loss, both HP statistics and the full cohort (0.354666ms)
+✔ boss timing pairs identical encounters and discloses a verified live tail at the fixed horizon (1.344333ms)
+✔ a missing, changed or overlong boss tail cannot be excused as horizon censoring (1.473542ms)
+✔ gross issuance survives salvage, duplicates, and the weekly boundary (1.181375ms)
+✔ a missing observed purchase is detected by conservation (0.234416ms)
+✔ daily counters are not tradable materials and inventory existing at entry is not new issuance (0.605084ms)
+✔ fixture union retains every context and excludes historical outcomes (10.459542ms)
+✔ resuming validates the retained paired outcomes and derived statistics (1.076375ms)
+✔ item comparisons retain regressions and saturated cells instead of treating Power as a win rate (0.806042ms)
+✔ rarity quantiles retain accounts censored at the observation horizon (0.476666ms)
+✔ partial weeks use actual exposure and gross supply is independent of the bag (1.510667ms)
+✔ the shared player repairs a fallen frontline through a legal swap without healing or rerolling (6.622042ms)
+✔ the shared player leaves a legal healthy or partly fallen formation alone (2.336834ms)
+✔ unknown Epic gear stays bound and a one-time judge drop is never recurring campaign supply (0.622834ms)
+✔ active account mixes weight created items, preserving per-profile exposure (0.246542ms)
+✔ calendar-stratified supply discloses its actual window without claiming independent daily draws (0.155208ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 230.782
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  08:27:29
+packages/chain test:    Duration  376ms (import 56%, tests 34%, transform 8%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  08:27:29
+packages/auth test:    Duration  457ms (import 73%, tests 21%, transform 5%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  49 passed (49)
+supabase/tests test:       Tests  724 passed (724)
+supabase/tests test:    Start at  08:27:29
+supabase/tests test:    Duration  10.74s (tests 82%, import 16%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  93 passed | 3 skipped (96)
+packages/game-rules test:       Tests  1388 passed | 2 expected fail | 11 skipped (1401)
+packages/game-rules test:    Start at  08:27:29
+packages/game-rules test:    Duration  38.13s (tests 94%, import 5%, transform 1%)
+packages/game-rules test:     Isolate  96 workers spawned · ~72ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~3.40s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  08:28:07
+packages/api-contract test:    Duration  120ms (transform 50%, import 41%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+apps/web test:  Test Files  284 passed (284)
+apps/web test:       Tests  2488 passed (2488)
+apps/web test:    Start at  08:28:08
+apps/web test:    Duration  78.17s (environment 52%, tests 30%, import 16%, transform 3%)
+apps/web test: Environment  jsdom was created 284 times · 70.76s total, 52% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

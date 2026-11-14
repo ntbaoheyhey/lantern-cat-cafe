@@ -1,5 +1,5 @@
-import {expect,type Page} from '@playwright/test';
 import {test} from './support/depth-fixture';
+import {expect,type Page} from '@playwright/test';
 
 async function fresh(page:Page){
  await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
@@ -55,9 +55,11 @@ test('C2 daily and tower reward sources expose deterministic Odds',async({page})
  await fresh(page);
  await page.evaluate(()=>{const m=window.__depthReview!;m.command({type:'level',cardId:m.state.account.cards[0]!.id});});
  await page.getByRole('button',{name:'Events',exact:true}).click();
+ await page.getByRole('button',{name:'Login',exact:true}).click();
  let odds=await disclose(page,'Login gift odds');
  await expect(odds.dialog.getByLabel('Deterministic reward')).toHaveText('100%');await odds.close();
  await page.keyboard.press('Escape');
+ await page.locator('.uv-sheet').waitFor({state:'hidden'});
  await page.evaluate(()=>window.__depthReview!.go('tower'));
  await page.getByRole('button',{name:/Gifts/}).click();
  odds=await disclose(page,'Floor 5 gift odds');

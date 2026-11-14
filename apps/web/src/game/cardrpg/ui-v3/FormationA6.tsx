@@ -10,6 +10,7 @@ import { ForecastV4 } from '../depth/ForecastV4';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { FormationToolA6, FormationTrioA6 } from './FormationToolA6';
 import { MODE_TEAMS_A6, savedTeamPreviewA6, suggestedTeamsA6 } from './formation-a6';
+import {FormationB2} from '../shell/FormationB2';
 
 function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | null>; ids: string[]; rows: Record<string,R.Row> }) {
   const [lines,setLines]=useState<Array<{name:string;d:string}>>([]);
@@ -30,7 +31,7 @@ function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | nul
   return <svg className="a6-bond-lines" aria-label="Active bond links" role="img">{lines.map(line=><path key={line.name} d={line.d}><title>{line.name}</title></path>)}</svg>;
 }
 
-export function FormationA6(props:{m:DepthModel;preparing?:boolean}) { return props.m.state.formationC2 ? <FormationC2 {...props}/> : <LegacyFormationA6 {...props}/>; }
+export function FormationA6(props:{m:DepthModel;preparing?:boolean}) { return props.m.state.formationC2 ? props.preparing?<FormationC2 {...props}/>:<FormationB2 m={props.m}/> : <LegacyFormationA6 {...props}/>; }
 
 function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}) {
   useSyncExternalStore(m.subscribe,m.snapshot);

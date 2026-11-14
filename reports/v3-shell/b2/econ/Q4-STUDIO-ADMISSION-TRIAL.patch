@@ -1,0 +1,43 @@
+diff --git a/tools/chain/economy-lab/studio.mjs b/tools/chain/economy-lab/studio.mjs
+index ca940177c..c6f97eff4 100644
+--- a/tools/chain/economy-lab/studio.mjs
++++ b/tools/chain/economy-lab/studio.mjs
+@@ -1,6 +1,12 @@
+ /** Apply the exact public, deterministic quote. Desire and purchase timing are
+  * modeled separately; insufficient funds never create debt or a free benefit. */
+ export function buyStudioRecipe(runtime,account,id,now,spend) {
++ const costs=runtime.ECONOMY_LAB.sinks[id];
++ if(!costs)return null;
++ // All quotes consume bound Thread. Reject a known insufficient balance before
++ // scanning the finite collection or constructing an otherwise identical quote.
++ const minimumThread=id==='polish'?Math.min(...costs.starThread):costs.starThread;
++ if(account.stars<minimumThread)return null;
+  const inventory=account.studio;
+  const item=inventory.gear.find(g=>g.quality<runtime.ECONOMY_LAB.policy.quality.at(-1).floorBp);
+  // Ineligible rows are common after a finite collection is complete. Avoid
+diff --git a/tools/chain/economy-lab/studio.test.mjs b/tools/chain/economy-lab/studio.test.mjs
+index 0186a5132..d9c64df25 100644
+--- a/tools/chain/economy-lab/studio.test.mjs
++++ b/tools/chain/economy-lab/studio.test.mjs
+@@ -30,3 +30,21 @@ test('simulation recipe prices are the production rule object, including paramet
+  try{config.sinks.decor.yarn=original+7;assert.equal(buyStudioRecipe(runtime,account(),'decor',config.startEpoch,spend).yarn,original+7);}
+  finally{config.sinks.decor.yarn=original;}
+ });
++
++test('Thread admission uses live recipe minima, including a zero-cost recipe',()=>{
++ let quotes=0;
++ const observed={...runtime,economySinkQuote:(...args)=>{quotes++;return runtime.economySinkQuote(...args);}};
++ for(const id of runtime.ECONOMY_SINK_IDS){
++  const a=account();a.stars=0;const before=structuredClone(a);
++  assert.equal(buyStudioRecipe(observed,a,id,config.startEpoch,spend),null);
++  assert.deepEqual(a,before);
++ }
++ assert.equal(quotes,0);
++ const old=config.sinks.decor.starThread;
++ try{
++  config.sinks.decor.starThread=0;
++  const a=account();a.stars=0;
++  assert.equal(buyStudioRecipe(observed,a,'decor',config.startEpoch,spend).starThread,0);
++  assert.equal(quotes,1);assert(a.studio.styles.length===1);
++ }finally{config.sinks.decor.starThread=old;}
++});

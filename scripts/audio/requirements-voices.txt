@@ -1,0 +1,9 @@
+# Python 3.11; local synthesis and recognition only. Models are downloaded separately.
+piper-tts==1.8.0
+faster-whisper==1.2.1
+numpy==2.4.6
+scipy==1.17.1
+Pillow==13.0.0
+pyworld==0.3.5
+# pyworld 0.3.5 imports pkg_resources, removed by setuptools 81.
+setuptools==80.9.0

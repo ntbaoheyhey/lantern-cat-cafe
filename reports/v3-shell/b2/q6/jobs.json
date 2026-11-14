@@ -1,0 +1,148 @@
+[
+  {
+    "name": "q6-first-capture",
+    "pid": 42309,
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-first-capture.log",
+    "started": "2026-11-13T21:29:07.075020+00:00"
+  },
+  {
+    "name": "q6-settings-bag-season",
+    "pid": 43518,
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "settings,settings-audio,bag-item-detail,bag-manage,bag-consumables,season-track-countdown-edition,season-guide,invitations-rates,economy-odds,chapter-map",
+      "CAPTURE_LABEL": "round2"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-settings-bag-season.log",
+    "started": "2026-11-13T21:34:54.934760+00:00"
+  },
+  {
+    "name": "q6-round3-shell",
+    "pid": 44560,
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "settings,settings-audio,invitations-rates,economy-odds,chapter-map",
+      "CAPTURE_LABEL": "round3"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-round3-shell.log",
+    "started": "2026-11-13T21:38:44.242941+00:00"
+  },
+  {
+    "name": "q6-chain-round1",
+    "pid": 44573,
+    "command": [
+      "node",
+      "scripts/ui/q6-chain-capture.mjs"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-chain-round1.log",
+    "started": "2026-11-13T21:38:44.321186+00:00"
+  },
+  {
+    "name": "q6-final-acceptance",
+    "pid": 45749,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance.log",
+    "started": "2026-11-13T21:43:06.880521+00:00"
+  },
+  {
+    "name": "q6-final-acceptance-resume1",
+    "pid": 46271,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-resume1.log",
+    "started": "2026-11-13T21:46:14.924242+00:00"
+  },
+  {
+    "name": "q6-final2",
+    "pid": 48019,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-final2.log",
+    "started": "2026-11-13T21:51:57.945058+00:00"
+  },
+  {
+    "name": "q6-final3",
+    "pid": 50616,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "environment": {
+      "Q6_RUN": "final3"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-final3.log",
+    "started": "2026-11-13T22:01:20.154111+00:00"
+  },
+  {
+    "name": "q6-final3-phone-first",
+    "pid": 50698,
+    "command": [
+      "node",
+      "scripts/ui/q6-capture.mjs"
+    ],
+    "environment": {
+      "SCREENS": "settings-audio,hero-bonds,bag-consumables,battle-prep,victory",
+      "CAPTURE_WIDTH": "390",
+      "CAPTURE_LABEL": "final3-phone",
+      "CAPTURE_RESUME": "1"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-final3-phone-first.log",
+    "started": "2026-11-13T22:01:39.624438+00:00"
+  },
+  {
+    "name": "q6-final4",
+    "pid": 53783,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "environment": {
+      "Q6_RUN": "final4"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-final4.log",
+    "started": "2026-11-13T22:12:03.444564+00:00"
+  },
+  {
+    "name": "q6-final5",
+    "pid": 56123,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "environment": {
+      "Q6_RUN": "final5"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-final5.log",
+    "started": "2026-11-13T22:21:36.992813+00:00"
+  },
+  {
+    "name": "q6-final6",
+    "pid": 57582,
+    "command": [
+      "python3",
+      "scripts/ui/q6-accept.py"
+    ],
+    "environment": {
+      "Q6_RUN": "final6"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q6-acceptance-final6.log",
+    "started": "2026-11-13T22:27:25.685759+00:00"
+  }
+]

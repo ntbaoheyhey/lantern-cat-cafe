@@ -50,3 +50,14 @@ reports/turn3d-polish/video/page@*.webm
 /reports/v3-battle/a2/P1/composed-field/
 /reports/v3-battle/a2/P1/roomy-field/
 /reports/v3-battle/a2/P1/summon-before/
+
+# B lane additions retained for the demo merge
+# Local Supabase CLI link/cache metadata.
+/supabase/.temp/
+__pycache__/
+# Local, reproducible voice production tools and model caches.
+/tools/audio-models/
+# Reproducible B2 browser capture and audio build intermediates.
+/tmp/b2-*/
+# Solo: a running job appends stdout; committed snapshots and JSON retain evidence.
+/reports/v3-shell/b2/tests/e3-native-sensitivity.log

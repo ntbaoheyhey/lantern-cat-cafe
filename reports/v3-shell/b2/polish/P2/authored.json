@@ -1,0 +1,199 @@
+{
+  "at": "2026-11-13T23:57:22.880Z",
+  "sourceCommit": "243d6f4aec281895ef9c3f1a2e54879b22a149a0",
+  "inputs": [
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "da9d40e9846b904e74c52d17caa54628ac4463c5e3b36a80acdb606c1a9b7437"
+    },
+    {
+      "path": "apps/web/public/audio/LICENSES.json",
+      "sha256": "1f4b05dcbbbd9678ff3a2f08c717cfcef135811c0e0e99ea3cb71044831c97d6"
+    }
+  ],
+  "beforeDistinctArrangements": {
+    "charge": 1,
+    "release": 1,
+    "impact": 1,
+    "tail": 1
+  },
+  "afterDistinctArrangements": {
+    "charge": 6,
+    "release": 6,
+    "impact": 6,
+    "tail": 6
+  },
+  "palettes": {
+    "version": 1,
+    "method": "Original layered arrangements of shipped CC0 recordings; no new encoded samples, no reference audio.",
+    "palettes": {
+      "fire": "Crackling metal attack, resonant wood body and a rushing cloth flame.",
+      "ice": "Sharp glass onset, brittle glass body, ringing crystal decay.",
+      "nature": "Paper-leaf rustle, wooden trunk contact and soft cloth decay.",
+      "arcane": "Digital rising charge, phase-jump body and diffuse harmonic tail.",
+      "holy": "Bright glass attack, bell/plate resonance and small chime accents.",
+      "shadow": "Low soft impact, deep punch body and damped cloth decay."
+    },
+    "aliases": {
+      "ember": "fire",
+      "hearth": "fire",
+      "garden": "nature",
+      "tide": "ice",
+      "lightning": "arcane",
+      "moon": "holy"
+    }
+  },
+  "encodedBytes": 15958952,
+  "encodedFilesChanged": 0,
+  "manifest": {
+    "path": "apps/web/public/audio/manifest.json",
+    "sha256": "8a46d0438fcdd2c3fc2c7495557813872f9f44f8be097090110dc4c4e03b6611"
+  },
+  "phases": [
+    {
+      "element": "fire",
+      "phase": "charge",
+      "signature": "d02a1dbcdf17e4755cfa222136089c0f78473a5b9485ea39f242f7cac86d289e",
+      "layers": 3
+    },
+    {
+      "element": "fire",
+      "phase": "release",
+      "signature": "33659b0b9c2c071bf4db0949c8d42fc925197e571ba7659d00f7782d930ecfb8",
+      "layers": 3
+    },
+    {
+      "element": "fire",
+      "phase": "impact",
+      "signature": "36ed06c8ec735dd755427254e902d79c9c7165b6e53a369417df73825ccf679d",
+      "layers": 4
+    },
+    {
+      "element": "fire",
+      "phase": "tail",
+      "signature": "bd82d5d9018cfcdd28e143187ad72e470889534eba889a970f3304815e45e6e2",
+      "layers": 3
+    },
+    {
+      "element": "ice",
+      "phase": "charge",
+      "signature": "9bd59a1b715ce6ce36c9bb5f6a708407e3330b42f66c1ee43af21c30163a8d24",
+      "layers": 3
+    },
+    {
+      "element": "ice",
+      "phase": "release",
+      "signature": "7cc8aa9b0558674994b02a794cc6c02d1217308d4d8f9d05dbc9af68bc2865cb",
+      "layers": 3
+    },
+    {
+      "element": "ice",
+      "phase": "impact",
+      "signature": "3335b542516b5cc135c2795c296c1bafcb9e169baba4f3f27b896b82b12dddf0",
+      "layers": 4
+    },
+    {
+      "element": "ice",
+      "phase": "tail",
+      "signature": "8cd6fa15b86cb008ff813a8f8d26de9f15d0e6b8f187e3eef4a1d125dcfbe56e",
+      "layers": 3
+    },
+    {
+      "element": "nature",
+      "phase": "charge",
+      "signature": "bc687230015cb43147f6ad1256f30f4a3eb0cdd85284832806378b2b85b8c373",
+      "layers": 3
+    },
+    {
+      "element": "nature",
+      "phase": "release",
+      "signature": "42bad6d32f1e47b9b24cdb74a6cba56807ede927bcadf521a137236fb8566c86",
+      "layers": 3
+    },
+    {
+      "element": "nature",
+      "phase": "impact",
+      "signature": "5fd171d63e612d703de03e0f2bb23cd2c40eff6fabe4bdcd93d713c8ed885568",
+      "layers": 4
+    },
+    {
+      "element": "nature",
+      "phase": "tail",
+      "signature": "69388288fb14362718e15aba5eaeeaacb46ed5abee4512d6630779f0a11b90b0",
+      "layers": 3
+    },
+    {
+      "element": "arcane",
+      "phase": "charge",
+      "signature": "d364fdca17c885732c7c8554878fbfa1f536f569c81d24ab1a8529f58f84af6f",
+      "layers": 3
+    },
+    {
+      "element": "arcane",
+      "phase": "release",
+      "signature": "11b364062cbb672a8730e8e48e42172410f74c19480d7f6a08c47ba89f42b15a",
+      "layers": 3
+    },
+    {
+      "element": "arcane",
+      "phase": "impact",
+      "signature": "1c4c23af1c044e5133ed6128147c6cc5d905e6acf9db16792b192286702d75fa",
+      "layers": 4
+    },
+    {
+      "element": "arcane",
+      "phase": "tail",
+      "signature": "90bf358e88bda9bb28fe04bebb7d880fdeaa2a6d398554fae94e0e5ac300dd9d",
+      "layers": 3
+    },
+    {
+      "element": "holy",
+      "phase": "charge",
+      "signature": "61a32d92a6d15572a94f7362c108a883cf307ef0a20f49d349c29b6782201f86",
+      "layers": 3
+    },
+    {
+      "element": "holy",
+      "phase": "release",
+      "signature": "87bd93fe48dc9285e3ccf63f35a86ce67f60c942046ca7800ebb5ef2d84b90fc",
+      "layers": 3
+    },
+    {
+      "element": "holy",
+      "phase": "impact",
+      "signature": "68f17f6fa8b3b9939e40d52f3fdddb05501b6129d2a181608a63e99dba369fb3",
+      "layers": 4
+    },
+    {
+      "element": "holy",
+      "phase": "tail",
+      "signature": "de7ad91e29c96a1f3245086c7c9a24f79ec2828a5e3790848db44ef3d99babe0",
+      "layers": 3
+    },
+    {
+      "element": "shadow",
+      "phase": "charge",
+      "signature": "524844a81bcc52710c00fde966efccfb2d3aa176a19dc31969dafa940e829188",
+      "layers": 3
+    },
+    {
+      "element": "shadow",
+      "phase": "release",
+      "signature": "68f2ea9d5496d0de6cfcc7b18f1b9899ff4f376a20a2196462ae73562875ff68",
+      "layers": 3
+    },
+    {
+      "element": "shadow",
+      "phase": "impact",
+      "signature": "b0fdbfb3c6b3280db2ba152503cf2bba68144aa75944194323ae3779bb87a42c",
+      "layers": 4
+    },
+    {
+      "element": "shadow",
+      "phase": "tail",
+      "signature": "1f81600165889f43e44d0386d3f8e43d3eb6893c5f5fc5b991422f0ee1b8af79",
+      "layers": 3
+    }
+  ],
+  "errors": []
+}

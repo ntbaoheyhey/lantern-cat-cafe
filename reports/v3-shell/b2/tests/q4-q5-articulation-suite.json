@@ -1,0 +1,35 @@
+{
+  "sourceCommit": "f6db229c62b5b722a96c4476329f04f8461bf6b5",
+  "sources": [],
+  "results": [
+    {
+      "id": "types",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T18:15:49.238Z",
+      "ended": "2026-11-13T18:16:27.449Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q4-q5-articulation-types.log",
+        "sha256": "cafa8310aee60b7ea4fe143147599c09d40529fc20590787a68d4d538c08e096"
+      }
+    },
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T18:15:49.242Z",
+      "ended": "2026-11-13T18:19:09.274Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q4-q5-articulation-unit.log",
+        "sha256": "a19e767a1c6479b65afea41617d6fe86f0a583a6c02427ec2637e21ab9c44a7c"
+      }
+    }
+  ]
+}

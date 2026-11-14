@@ -1,0 +1,46 @@
+landing 38 words 4 plain buttons
+sign-in 13 words 3 plain buttons
+cafe-hub 4 words 1 plain buttons
+team-formation 12 words 4 plain buttons
+team-presets 17 words 6 plain buttons
+cats-list 33 words 13 plain buttons
+hero-level-star 33 words 13 plain buttons
+hero-awakening 32 words 2 plain buttons
+hero-skills 32 words 11 plain buttons
+hero-bonds 28 words 11 plain buttons
+hero-gear 28 words 11 plain buttons
+bag-gear 26 words 7 plain buttons
+bag-item-detail 79 words 1 plain buttons
+forge-enhance 39 words 8 plain buttons
+forge-fusion 16 words 2 plain buttons
+bag-materials 19 words 5 plain buttons
+bag-manage 4 words 0 plain buttons
+bag-consumables 81 words 9 plain buttons
+invitations 16 words 11 plain buttons
+invitations-rates 1 words 0 plain buttons
+invitations-reveal 43 words 10 plain buttons
+invitations-ten-results 54 words 10 plain buttons
+season-track-countdown-edition 28 words 2 plain buttons
+season-guide 28 words 2 plain buttons
+economy-flow 46 words 6 plain buttons
+economy-allocation 16 words 5 plain buttons
+economy-fees 48 words 6 plain buttons
+economy-odds 42 words 8 plain buttons
+field-guide 22 words 4 plain buttons
+settings 21 words 5 plain buttons
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 6000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Mix', exact: true })[22m
+
+    at /Users/bao/taskbar-hero-chain/scripts/ui/audit-b2.mjs:65:54 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Mix', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

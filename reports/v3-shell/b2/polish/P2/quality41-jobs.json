@@ -1,0 +1,25 @@
+[
+  {
+    "name": "recognition41-battle",
+    "pid": 3207,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/audio/recognize-mixed-callouts.py",
+      "41-clarity",
+      "--scenes",
+      "battle"
+    ],
+    "log": "reports/v3-shell/b2/polish/P2/recognition41-battle.log",
+    "started": "2026-11-14T00:25:04.041006+00:00"
+  },
+  {
+    "name": "cadence41",
+    "pid": 3208,
+    "command": [
+      "node",
+      "scripts/audio/measure-current-cadence.mjs"
+    ],
+    "log": "reports/v3-shell/b2/polish/P2/cadence41.log",
+    "started": "2026-11-14T00:25:04.042527+00:00"
+  }
+]

@@ -1,5 +1,5 @@
 import {keccak256,toBytes,type Address,type Hex} from 'viem';
-import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {ECONOMY_V3 as E,withdrawalQuote,qualityBucket,weeklyStarThreadGrant,craftSpoolRebate} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
 import {GEAR_BY_ID} from '../../../packages/game-rules/src/cardrpg/depth/equipment.ts';
 import {gearQualityBp} from '../../../packages/game-rules/src/cardrpg/depth/fusion-v3.ts';
 import {equipmentTokenId} from '../../../packages/game-rules/src/cardrpg/trade.ts';
@@ -8,6 +8,7 @@ import type {CampaignState} from './chain-campaign.ts';
 import {campaignHash} from './chain-campaign.ts';
 import {ChainRequestError} from './chain-http.ts';
 import {tiedRankAmounts} from '../../../packages/chain/src/rank.ts';
+import {economySinkQuote,ECONOMY_SINK_IDS,type EconomySinkId} from '../../../packages/game-rules/src/cardrpg/economy-sinks-v3.ts';
 const UNIT=10n**18n,DAY=86400000;
 export const ECONOMY_DEAD='0x000000000000000000000000000000000000dEaD' as Address;
 export const economyIntentHash=(id:string)=>keccak256(toBytes(`lantern:economy:v3:${id}`));
@@ -41,8 +42,9 @@ export function economyRequest(input:unknown):{id:string;command:EconomyCommand}
   case 'state':case 'quest':case 'deed':keys=['action'];break;
   case 'withdraw':if(typeof c.amount!=='string'||! /^[1-9][0-9]{0,21}$/.test(c.amount)||!Number.isInteger(c.deed))return fail('invalid_request');keys=['action','amount','deed'];break;
   case 'import':case 'seal':if(!label(c.instance)||c.deed!==undefined&&!Number.isInteger(c.deed))return fail('invalid_request');keys=c.action==='import'?['action','instance']:['action','instance','deed'];break;
-  case 'fusion':if(!Array.isArray(c.instances)||c.instances.length>3||!c.instances.every(label)||!Array.isArray(c.tokens)||c.tokens.length>3||!c.tokens.every(n=>Number.isSafeInteger(n)&&n>0)||!Number.isInteger(c.sealedStars)||Number(c.sealedStars)<0||Number(c.sealedStars)>2)return fail('invalid_request');keys=['action','instances','tokens','sealedStars'];break;
+  case 'fusion':if(!Array.isArray(c.instances)||c.instances.length>3||!c.instances.every(label)||!Array.isArray(c.tokens)||c.tokens.length>3||!c.tokens.every(n=>Number.isSafeInteger(n)&&n>0)||!Number.isInteger(c.sealedStars)||Number(c.sealedStars)<0||Number(c.sealedStars)>E.fusion.legendary.starThread)return fail('invalid_request');keys=['action','instances','tokens','sealedStars'];break;
   case 'spend':if(c.sku!=='lantern-skin')return fail('invalid_request');keys=['action','sku'];break;
+  case 'sink':if(!ECONOMY_SINK_IDS.includes(c.sink as EconomySinkId)||(c.sink==='polish'?!label(c.instance):c.instance!==undefined))return fail('invalid_request');keys=['action','sink','instance'];break;
   case 'finalize':case 'voucher':if(typeof c.intent!=='string'||!uuid.test(c.intent)||c.burnTx!==undefined&&(typeof c.burnTx!=='string'||!/^0x[0-9a-fA-F]{64}$/.test(c.burnTx)))return fail('invalid_request');keys=c.action==='voucher'?['action','intent']:['action','intent','burnTx'];break;
   default:return fail('invalid_request');
  }
@@ -56,7 +58,7 @@ function accrue(s:EconomyState,snap:EconomySnapshot,player:string){
  const g=snap.campaign?.state.game;
  if(g)s.level=Math.max(s.level,Math.min(...g.team.map(id=>g.account.cards.find(c=>c.cardId===id)!.level)));
  for(const w of snap.wins){const week=Math.floor((Date.parse(w.at)-4*DAY)/(7*DAY)),key=`boss:${week}`;
-  if(!s.credits.includes(key)){s.credits.push(key);s.spool=(BigInt(s.spool)+BigInt(Math.round(E.rewards.weeklySpool*100))*UNIT/100n).toString();s.stars+=E.rewards.weeklyStarThread;s.bossSeals++;}
+  if(!s.credits.includes(key)){s.credits.push(key);s.spool=(BigInt(s.spool)+BigInt(Math.round(E.rewards.weeklySpool*100))*UNIT/100n).toString();s.stars+=weeklyStarThreadGrant(s.stars);s.bossSeals++;}
   const milestone=`chapter:${w.chapter}`;if(!s.credits.includes(milestone)){s.credits.push(milestone);s.spool=(BigInt(s.spool)+BigInt(E.rewards.chapterSpool)*UNIT).toString();}
  }
  for(const season of new Set((snap.ranks??[]).map(x=>x.season))){
@@ -97,7 +99,7 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
      if(clock-Date.parse(snap.createdAt)<(demo?0:E.spool.minAgeDays)*DAY)fail('Account age must reach seven days.');
      if(s.lastWithdraw&&clock-s.lastWithdraw<E.spool.cooldownDays*DAY)fail('One withdrawal every seven days.');
      const quote=withdrawalQuote(BigInt(c.amount));if(quote.gross>BigInt(s.spool))fail('Not enough Spool.');
-     if(quote.net>BigInt(E.spool.weeklyNetCap)*UNIT)fail('Net weekly cap is 12 YARN.');
+     if(quote.net>BigInt(E.spool.weeklyNetCap)*UNIT)fail(`Net weekly cap is ${E.spool.weeklyNetCap} YARN.`);
      await chain.capacity(wallet,quote.net);
      const i={...newIntent('withdraw',0n,0,0),gross:quote.gross.toString(),net:quote.net.toString(),retained:quote.retained.toString(),ready:true};
      s.spool=(BigInt(s.spool)-quote.gross).toString();s.lastWithdraw=clock;s.intents.push(i);break;
@@ -122,24 +124,41 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
      s.bossSeals-=E.seal.bossSeals;s.sealsToday++;s.intents.push(newIntent('seal',BigInt(reference)*UNIT*BigInt(E.seal.feeBp)/10000n,token,rarity));break;
     }
     case 'fusion':{
-     if(c.instances.length+c.tokens.length!==3||new Set(c.instances).size!==c.instances.length)fail('Choose three distinct Epic inputs.');
+     if(c.instances.length+c.tokens.length!==E.fusion.legendary.count||new Set(c.instances).size!==c.instances.length)fail(`Choose ${E.fusion.legendary.count} distinct Epic inputs.`);
      const items=c.instances.map(x=>s.gear.find(g=>g.id===x)),sealed=c.tokens.map(decodeEconomyGear);
      if(items.some(x=>!x)||sealed.some(x=>!x))fail('Input unavailable.');
      const all=[...items,...sealed] as EconomyGear[],t=GEAR_BY_ID[all[0]!.template]!;
      if(all.some(x=>GEAR_BY_ID[x.template]!.rarity!=='epic'||GEAR_BY_ID[x.template]!.setId!==t.setId))fail('Use three Epics from the same set.');
-     const boundStars=2-c.sealedStars;if(s.stars<boundStars)fail('Two Star Thread required.');
+     if(!Number.isSafeInteger(c.sealedStars)||c.sealedStars<0||c.sealedStars>E.fusion.legendary.starThread)fail('Invalid sealed Thread count.');
+     const boundStars=E.fusion.legendary.starThread-c.sealedStars;if(s.stars<boundStars)fail(`${E.fusion.legendary.starThread} Star Thread required.`);
      const totals=new Map<number,number>();for(const token of c.tokens)totals.set(token,(totals.get(token)??0)+1);if(c.sealedStars)totals.set(10001,c.sealedStars);
      for(const [token,amount] of totals)if(!await chain.owns(wallet,token,amount))fail('Sealed input balance changed.');
      const quality=E.quality[Math.max(0,Math.max(...all.map(x=>qualityBucket(x.quality).offset/1000))-1)]!;
      const target=GEAR_BY_ID[`${t.setId}-${t.slot}-legendary`]!,i=newIntent('fusion',BigInt(E.fusion.legendary.yarn)*UNIT,equipmentTokenId(target)!+quality.offset,3);
      i.burnIds=[...totals.keys()];i.burnAmounts=[...totals.values()];s.stars-=boundStars;s.gear=s.gear.filter(x=>!c.instances.includes(x.id));s.intents.push(i);break;
     }
-    case 'spend':if(s.styles.includes(c.sku))fail('Already owned.');if(BigInt(s.spool)<5n*UNIT)fail('Five Spool required.');s.spool=(BigInt(s.spool)-5n*UNIT).toString();s.styles.push(c.sku);break;
+    case 'spend':if(s.styles.includes(c.sku))fail('Already owned.');if(BigInt(s.spool)<BigInt(E.spool.skinCost)*UNIT)fail(`${E.spool.skinCost} Spool required.`);s.spool=(BigInt(s.spool)-BigInt(E.spool.skinCost)*UNIT).toString();s.styles.push(c.sku);break;
+    case 'sink':{
+     let recipe;try{recipe=economySinkQuote(c.sink,s,c.instance,clock);}catch(error){fail(error instanceof Error?error.message:'Recipe unavailable.');}
+     if(s.intents.some(i=>i.kind==='sink'&&!i.ready&&i.recipe?.key===recipe.key))fail('Recover the reserved recipe first.');
+     if(s.stars<recipe.starThread)fail(`${recipe.starThread} Star Thread required.`);
+     s.stars-=recipe.starThread;
+     if(recipe.item)s.gear=s.gear.filter(g=>g.id!==recipe.item!.id);
+     const i=newIntent('sink',BigInt(recipe.yarn)*UNIT,0,0);i.recipe=recipe;s.intents.push(i);break;
+    }
     case 'finalize':{
      const i=s.intents.find(x=>x.id===c.intent);if(!i||i.kind==='withdraw')fail('Intent unavailable.');
      if(!i.ready){
       if(await chain.paid(wallet,economyIntentHash(i.id))!==BigInt(i.cost))fail('Exact YARN burn payment required.');
       if(i.burnIds.length){if(!c.burnTx)fail('Sealed input burn receipt required.');await chain.burn(wallet,i,c.burnTx as Hex);burn=c.burnTx.toLowerCase();i.burnTx=burn;}
+      if(i.kind==='sink'){
+       const recipe=i.recipe;if(!recipe)fail('Recipe unavailable.');
+       if(recipe.item){if(recipe.quality===undefined)fail('Quality unavailable.');s.gear.push({...recipe.item,quality:recipe.quality});}
+       if(recipe.style&&!s.styles.includes(recipe.style))s.styles.push(recipe.style);
+       const week=Math.floor((clock-4*DAY)/(7*DAY)),claimed=s.craftRebate?.week===week?BigInt(s.craftRebate.spool):0n;
+       const rebate=craftSpoolRebate(BigInt(i.cost),claimed);
+       if(rebate>0n){s.spool=(BigInt(s.spool)+rebate).toString();s.craftRebate={week,spool:(claimed+rebate).toString()};}
+      }
       i.ready=true;
      }break;
     }
@@ -151,7 +170,7 @@ export function createEconomy({enabled=false,demo=false,store,chain,now=()=>Date
   const mint=async(token:number,rarity:number,nonce:bigint)=>{const fields={player:wallet,relicId:BigInt(token),rarity,nonce,expiry},used=await chain.nftUsed(nonce);return {...fields,relicId:String(token),nonce:String(nonce),expiry:String(expiry),signature:used?'0x':await chain.mint(fields),used};};
   if(c.action==='deed'&&saved.state.deed)result.voucher=await mint(saved.state.deed,3,BigInt(economyIntentHash(`deed:${player}`)));
   const i=saved.state.intents.find(x=>x.id===intentId);if(i){result.intent=i;result.hash=economyIntentHash(i.id);
-   if(i.ready&&i.kind!=='withdraw')result.voucher=await mint(i.token,i.rarity,BigInt(result.hash));
+   if(i.ready&&(i.kind==='seal'||i.kind==='fusion'))result.voucher=await mint(i.token,i.rarity,BigInt(result.hash));
    if(i.kind==='withdraw'){
     const nonce=BigInt(result.hash),used=await chain.rewardUsed(nonce),fields={player:wallet,amount:BigInt(i.net!),season:await chain.season(),nonce,expiry};
     if(!used)await chain.capacity(wallet,fields.amount);

@@ -1,0 +1,32 @@
+/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/utils/rpc/http.js:110
+                throw new request_js_1.HttpRequestError({
+                      ^
+
+HttpRequestError: HTTP request failed.
+
+URL: https://api.avax-test.network/ext/bc/C/rpc
+Request body: {"method":"eth_blockNumber"}
+
+Details: undefined: Expected 3 to be one of: Null, Undefined, Object.
+Version: viem@2.57.10
+    at Object.request (/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/utils/rpc/http.js:110:23)
+    at async fn (/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/clients/transports/http.js:62:25)
+    at async request (/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/clients/transports/http.js:67:45)
+    at async delay.count.count (/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/utils/buildRequest.js:34:24)
+    at async attemptRetry (/Users/bao/taskbar-hero-chain/node_modules/.pnpm/viem@2.57.10_bufferutil@4.1.0_typescript@5.9.3_utf-8-validate@5.0.10_zod@4.6.7/node_modules/viem/_cjs/utils/promise/withRetry.js:29:30) {
+  details: 'undefined: Expected 3 to be one of: Null, Undefined, Object.',
+  docsPath: undefined,
+  metaMessages: [
+    'URL: https://api.avax-test.network/ext/bc/C/rpc',
+    'Request body: {"method":"eth_blockNumber"}'
+  ],
+  shortMessage: 'HTTP request failed.',
+  version: '2.57.10',
+  body: { method: 'eth_blockNumber', params: undefined },
+  headers: undefined,
+  status: undefined,
+  url: 'https://api.avax-test.network/ext/bc/C/rpc',
+  [cause]: [TypeError: undefined: Expected 3 to be one of: Null, Undefined, Object.]
+}
+
+Node.js v24.22.2

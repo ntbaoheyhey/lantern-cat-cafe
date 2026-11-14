@@ -1,0 +1,12 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+
+
+ Test Files  4 passed (4)
+      Tests  23 passed (23)
+   Start at  06:33:29
+   Duration  1.02s (environment 66%, import 17%, tests 12%, transform 3%, worker 1%)
+
+    Isolate  4 workers spawned · ~326ms startup each (spawn + environment, per file)
+             at least ~326ms faster with isolate: false — reuses workers across files instead of one per file
+

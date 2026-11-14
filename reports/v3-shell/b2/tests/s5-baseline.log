@@ -1,0 +1,18 @@
+{"trial":"01-baseline","name":"battle","seconds":29.851020408163265,"onsets":5.594448622410611,"layers":1.5748502994011977,"ticks":5.761947084159432,"voices":2.009981540985848,"bed":1,"lufs":-20.4,"peak":-5.97,"errors":[]}
+{"trial":"01-baseline","name":"boss","seconds":30.073015873015873,"onsets":5.619655864034625,"layers":1.5917159763313609,"ticks":5.58640346247229,"voices":1.9951440937401035,"bed":1,"lufs":-20.52,"peak":-6.43,"errors":[]}
+{"trial":"01-baseline","name":"home","seconds":30.2,"onsets":5.562913907284768,"layers":1.6488095238095237,"ticks":6.026490066225166,"voices":0,"bed":1,"lufs":-23.07,"peak":-11.39,"errors":[]}
+{"trial":"01-baseline","name":"bag","seconds":30.2,"onsets":5.264900662251656,"layers":1.8238993710691824,"ticks":4.768211920529802,"voices":0,"bed":1,"lufs":-23.26,"peak":-11.28,"errors":[]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 15000ms exceeded.
+Call log:
+[2m  - waiting for locator('.a6-gacha') to be visible[22m
+
+    at /Users/bao/taskbar-hero-chain/scripts/audio/render-runtime.mjs:54:58 {
+  log: [ "  - waiting for locator('.a6-gacha') to be visible" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

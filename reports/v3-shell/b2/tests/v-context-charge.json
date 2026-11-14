@@ -1,0 +1,250 @@
+[
+  {
+    "unit": "clover",
+    "take": 0,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 850.0,
+        "lowpass": 4200.0,
+        "highSlope": 3.0,
+        "lowSlope": 2.0,
+        "resonanceHz": 1283.8202555119037,
+        "resonanceDb": -3.467543790341474
+      },
+      "ttsText": "Bloom again!",
+      "cutSpeechMs": 325
+    },
+    "expected": "Bloom!",
+    "recognized": "plo",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "clover",
+    "take": 1,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 850.0,
+        "lowpass": 4200.0,
+        "highSlope": 3.0,
+        "lowSlope": 2.0,
+        "resonanceHz": 1283.8202555119037,
+        "resonanceDb": -3.467543790341474
+      },
+      "ttsText": "Bloom again!",
+      "cutSpeechMs": 265
+    },
+    "expected": "Bloom!",
+    "recognized": "Hello?",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "marigold",
+    "take": 0,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 600.0,
+        "lowpass": 2300.0,
+        "highSlope": 1.5,
+        "lowSlope": 1.5,
+        "resonanceHz": 2549.5675453085178,
+        "resonanceDb": 9.750515334245302
+      },
+      "ttsText": "Rise and bloom!",
+      "cutSpeechMs": 345
+    },
+    "expected": "Rise!",
+    "recognized": "Right?",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "marigold",
+    "take": 1,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 600.0,
+        "lowpass": 2300.0,
+        "highSlope": 1.5,
+        "lowSlope": 1.5,
+        "resonanceHz": 2549.5675453085178,
+        "resonanceDb": 9.750515334245302
+      },
+      "ttsText": "Rise and bloom!",
+      "cutSpeechMs": 405
+    },
+    "expected": "Rise!",
+    "recognized": "Right.",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "spool-ram",
+    "take": 0,
+    "settings": {
+      "pitchWeight": 0.65,
+      "filterWeight": 0.25,
+      "grainGain": 0.32,
+      "tailSeconds": 0.2,
+      "ttsText": "Full charge!",
+      "cutSpeechMs": 245
+    },
+    "expected": "Full!",
+    "recognized": "full",
+    "wordAccuracy": 1.0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "spool-ram",
+    "take": 1,
+    "settings": {
+      "pitchWeight": 0.65,
+      "filterWeight": 0.25,
+      "grainGain": 0.32,
+      "tailSeconds": 0.2,
+      "ttsText": "Full charge!",
+      "cutSpeechMs": 225
+    },
+    "expected": "Full!",
+    "recognized": "See you next week. Bye.",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "button-guard",
+    "take": 0,
+    "settings": {
+      "pitchWeight": 0.65,
+      "filterWeight": 0.25,
+      "grainGain": 0.32,
+      "tailSeconds": 0.2,
+      "ttsText": "Hold the line!",
+      "cutSpeechMs": 245
+    },
+    "expected": "Hold!",
+    "recognized": "Hold.",
+    "wordAccuracy": 1.0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "button-guard",
+    "take": 1,
+    "settings": {
+      "pitchWeight": 0.65,
+      "filterWeight": 0.25,
+      "grainGain": 0.32,
+      "tailSeconds": 0.2,
+      "ttsText": "Hold the line!",
+      "cutSpeechMs": 245
+    },
+    "expected": "Hold!",
+    "recognized": "Hope!",
+    "wordAccuracy": 0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "biscuit",
+    "take": 0,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 850.0,
+        "lowpass": 1700.0,
+        "highSlope": 2.0,
+        "lowSlope": 3.0,
+        "resonanceHz": 667.270990219774,
+        "resonanceDb": -1.5025016241921383
+      },
+      "ttsText": "Move as one!",
+      "cutSpeechMs": 205
+    },
+    "expected": "Move!",
+    "recognized": "Move.",
+    "wordAccuracy": 1.0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  },
+  {
+    "unit": "biscuit",
+    "take": 1,
+    "settings": {
+      "pitchWeight": 0.35,
+      "filterWeight": 0,
+      "grainGain": 0.18,
+      "tailSeconds": 0.2,
+      "eq": {
+        "highpass": 850.0,
+        "lowpass": 1700.0,
+        "highSlope": 2.0,
+        "lowSlope": 3.0,
+        "resonanceHz": 667.270990219774,
+        "resonanceDb": -1.5025016241921383
+      },
+      "ttsText": "Move as one!",
+      "cutSpeechMs": 285
+    },
+    "expected": "Move!",
+    "recognized": "Move!",
+    "wordAccuracy": 1.0,
+    "model": "faster-whisper small.en int8 CPU",
+    "prompt": null,
+    "beamSize": 5,
+    "temperature": 0,
+    "language": "en"
+  }
+]

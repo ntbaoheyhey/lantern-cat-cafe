@@ -1,0 +1,9 @@
+PASS U3.screens: measured 54; required >= 24 rebuilt screens
+PASS U3.coverage: measured 53/53; required every U1 screen rebuilt
+PASS U3.images: measured 54/54; required 1280x720 AND 1440x900 before/after images per screen
+PASS U3.words: measured 54/54; required <= 25 visible words every screen
+FAIL U3.buttons: measured 53/54; required <= 2 plain text buttons every screen
+PASS U3.fonts: measured 0; required 0 system fonts
+PASS U3.glyphs: measured 0; required 0 Unicode glyph icons
+FAIL U3.scores: measured 32/54; required average >= 8; every criterion >= 7
+PASS U3.flows: measured 108; required passing test + SHA-256-verified log

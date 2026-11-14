@@ -1,0 +1,1752 @@
+{
+  "rows": [
+    {
+      "unitId": "mochi",
+      "kind": "skill",
+      "skillId": "mochi-1",
+      "skillName": "Door knock",
+      "slot": 1,
+      "cueId": "voice.mochi.skill.mochi-1",
+      "text": "Knock knock!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mochi",
+      "kind": "skill",
+      "skillId": "mochi-2",
+      "skillName": "Warm welcome",
+      "slot": 2,
+      "cueId": "voice.mochi.skill.mochi-2",
+      "text": "Warm welcome!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mochi",
+      "kind": "skill",
+      "skillId": "mochi-3",
+      "skillName": "Apron crossing",
+      "slot": 3,
+      "cueId": "voice.mochi.skill.mochi-3",
+      "text": "Stay behind me!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mochi",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "mochi-4",
+      "skillName": "Last light shelter",
+      "cueId": "voice.mochi.ult.charge",
+      "text": "Shields!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mochi",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "mochi-4",
+      "skillName": "Last light shelter",
+      "cueId": "voice.mochi.ult.release",
+      "text": "Shields up!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "soot",
+      "kind": "skill",
+      "skillId": "soot-1",
+      "skillName": "Cocoa spark",
+      "slot": 1,
+      "cueId": "voice.soot.skill.soot-1",
+      "text": "Cocoa spark!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "soot",
+      "kind": "skill",
+      "skillId": "soot-2",
+      "skillName": "Black cup",
+      "slot": 2,
+      "cueId": "voice.soot.skill.soot-2",
+      "text": "Found you!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "soot",
+      "kind": "skill",
+      "skillId": "soot-3",
+      "skillName": "Lantern wick",
+      "slot": 3,
+      "cueId": "voice.soot.skill.soot-3",
+      "text": "Light the wick!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "soot",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "soot-4",
+      "skillName": "Midnight service",
+      "cueId": "voice.soot.ult.charge",
+      "text": "Lights!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "soot",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "soot-4",
+      "skillName": "Midnight service",
+      "cueId": "voice.soot.ult.release",
+      "text": "Lights out!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "clover",
+      "kind": "skill",
+      "skillId": "clover-1",
+      "skillName": "Leaf tap",
+      "slot": 1,
+      "cueId": "voice.clover.skill.clover-1",
+      "text": "Leaf tap!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "clover",
+      "kind": "skill",
+      "skillId": "clover-2",
+      "skillName": "Patient steep",
+      "slot": 2,
+      "cueId": "voice.clover.skill.clover-2",
+      "text": "Let it steep!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "clover",
+      "kind": "skill",
+      "skillId": "clover-3",
+      "skillName": "Clearleaf rinse",
+      "slot": 3,
+      "cueId": "voice.clover.skill.clover-3",
+      "text": "Fresh and clear!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "clover",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "clover-4",
+      "skillName": "Greenhouse morning",
+      "cueId": "voice.clover.ult.charge",
+      "text": "Bloom!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "clover",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "clover-4",
+      "skillName": "Greenhouse morning",
+      "cueId": "voice.clover.ult.release",
+      "text": "Bloom again!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "panko",
+      "kind": "skill",
+      "skillId": "panko-1",
+      "skillName": "Pan reply",
+      "slot": 1,
+      "cueId": "voice.panko.skill.panko-1",
+      "text": "Pan ready!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "panko",
+      "kind": "skill",
+      "skillId": "panko-2",
+      "skillName": "Bread cover",
+      "slot": 2,
+      "cueId": "voice.panko.skill.panko-2",
+      "text": "Bread cover!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "panko",
+      "kind": "skill",
+      "skillId": "panko-3",
+      "skillName": "Crust return",
+      "slot": 3,
+      "cueId": "voice.panko.skill.panko-3",
+      "text": "Send it back!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "panko",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "panko-4",
+      "skillName": "Oven door",
+      "cueId": "voice.panko.ult.charge",
+      "text": "Close!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "panko",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "panko-4",
+      "skillName": "Oven door",
+      "cueId": "voice.panko.ult.release",
+      "text": "Close the door!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mallow",
+      "kind": "skill",
+      "skillId": "mallow-1",
+      "skillName": "Whisk flare",
+      "slot": 1,
+      "cueId": "voice.mallow.skill.mallow-1",
+      "text": "Whisk flare!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mallow",
+      "kind": "skill",
+      "skillId": "mallow-2",
+      "skillName": "Split ember",
+      "slot": 2,
+      "cueId": "voice.mallow.skill.mallow-2",
+      "text": "Split the flame!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mallow",
+      "kind": "skill",
+      "skillId": "mallow-3",
+      "skillName": "Burnt sugar",
+      "slot": 3,
+      "cueId": "voice.mallow.skill.mallow-3",
+      "text": "Sugar burns!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mallow",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "mallow-4",
+      "skillName": "Closing blaze",
+      "cueId": "voice.mallow.ult.charge",
+      "text": "Burn!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "mallow",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "mallow-4",
+      "skillName": "Closing blaze",
+      "cueId": "voice.mallow.ult.release",
+      "text": "Burn bright!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sorrel",
+      "kind": "skill",
+      "skillId": "sorrel-1",
+      "skillName": "Moon spoon",
+      "slot": 1,
+      "cueId": "voice.sorrel.skill.sorrel-1",
+      "text": "Moon spoon!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sorrel",
+      "kind": "skill",
+      "skillId": "sorrel-2",
+      "skillName": "Cold brew",
+      "slot": 2,
+      "cueId": "voice.sorrel.skill.sorrel-2",
+      "text": "Cool down!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sorrel",
+      "kind": "skill",
+      "skillId": "sorrel-3",
+      "skillName": "Decanted moon",
+      "slot": 3,
+      "cueId": "voice.sorrel.skill.sorrel-3",
+      "text": "Share my shield!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sorrel",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "sorrel-4",
+      "skillName": "Shared pot",
+      "cueId": "voice.sorrel.ult.charge",
+      "text": "One!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sorrel",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "sorrel-4",
+      "skillName": "Shared pot",
+      "cueId": "voice.sorrel.ult.release",
+      "text": "One more cup!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "biscuit",
+      "kind": "skill",
+      "skillId": "biscuit-1",
+      "skillName": "Rolling pin",
+      "slot": 1,
+      "cueId": "voice.biscuit.skill.biscuit-1",
+      "text": "Roll out!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "biscuit",
+      "kind": "skill",
+      "skillId": "biscuit-2",
+      "skillName": "Sideboard step",
+      "slot": 2,
+      "cueId": "voice.biscuit.skill.biscuit-2",
+      "text": "Make some room!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "biscuit",
+      "kind": "skill",
+      "skillId": "biscuit-3",
+      "skillName": "Last crumb",
+      "slot": 3,
+      "cueId": "voice.biscuit.skill.biscuit-3",
+      "text": "Last crumb!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "biscuit",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "biscuit-4",
+      "skillName": "Bakers procession",
+      "cueId": "voice.biscuit.ult.charge",
+      "text": "Move!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "biscuit",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "biscuit-4",
+      "skillName": "Bakers procession",
+      "cueId": "voice.biscuit.ult.release",
+      "text": "Move as one!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "inkcap",
+      "kind": "skill",
+      "skillId": "inkcap-1",
+      "skillName": "Ink thread",
+      "slot": 1,
+      "cueId": "voice.inkcap.skill.inkcap-1",
+      "text": "Ink thread!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "inkcap",
+      "kind": "skill",
+      "skillId": "inkcap-2",
+      "skillName": "Quiet spores",
+      "slot": 2,
+      "cueId": "voice.inkcap.skill.inkcap-2",
+      "text": "Quiet now!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "inkcap",
+      "kind": "skill",
+      "skillId": "inkcap-3",
+      "skillName": "Paper decoy",
+      "slot": 3,
+      "cueId": "voice.inkcap.skill.inkcap-3",
+      "text": "Only paper!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "inkcap",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "inkcap-4",
+      "skillName": "Dreaming canopy",
+      "cueId": "voice.inkcap.ult.charge",
+      "text": "Sweet!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "inkcap",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "inkcap-4",
+      "skillName": "Dreaming canopy",
+      "cueId": "voice.inkcap.ult.release",
+      "text": "Sweet dreams!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "cinnamon",
+      "kind": "skill",
+      "skillId": "cinnamon-1",
+      "skillName": "Spice pinch",
+      "slot": 1,
+      "cueId": "voice.cinnamon.skill.cinnamon-1",
+      "text": "Spice pinch!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "cinnamon",
+      "kind": "skill",
+      "skillId": "cinnamon-2",
+      "skillName": "Comfort cup",
+      "slot": 2,
+      "cueId": "voice.cinnamon.skill.cinnamon-2",
+      "text": "Take a sip!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "cinnamon",
+      "kind": "skill",
+      "skillId": "cinnamon-3",
+      "skillName": "Clean apron",
+      "slot": 3,
+      "cueId": "voice.cinnamon.skill.cinnamon-3",
+      "text": "Fresh start!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "cinnamon",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "cinnamon-4",
+      "skillName": "Second serving",
+      "cueId": "voice.cinnamon.ult.charge",
+      "text": "Back!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "cinnamon",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "cinnamon-4",
+      "skillName": "Second serving",
+      "cueId": "voice.cinnamon.ult.release",
+      "text": "Back for seconds!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "brioche",
+      "kind": "skill",
+      "skillId": "brioche-1",
+      "skillName": "Bell patrol",
+      "slot": 1,
+      "cueId": "voice.brioche.skill.brioche-1",
+      "text": "Bell patrol!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "brioche",
+      "kind": "skill",
+      "skillId": "brioche-2",
+      "skillName": "Borrowed blanket",
+      "slot": 2,
+      "cueId": "voice.brioche.skill.brioche-2",
+      "text": "Borrow my blanket!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "brioche",
+      "kind": "skill",
+      "skillId": "brioche-3",
+      "skillName": "Starched collar",
+      "slot": 3,
+      "cueId": "voice.brioche.skill.brioche-3",
+      "text": "Collar straight!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "brioche",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "brioche-4",
+      "skillName": "Constellation apron",
+      "cueId": "voice.brioche.ult.charge",
+      "text": "Stars!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "brioche",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "brioche-4",
+      "skillName": "Constellation apron",
+      "cueId": "voice.brioche.ult.release",
+      "text": "Stars protect us!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "velvet",
+      "kind": "skill",
+      "skillId": "velvet-1",
+      "skillName": "Silk nick",
+      "slot": 1,
+      "cueId": "voice.velvet.skill.velvet-1",
+      "text": "Silk touch!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "velvet",
+      "kind": "skill",
+      "skillId": "velvet-2",
+      "skillName": "Candle bounce",
+      "slot": 2,
+      "cueId": "voice.velvet.skill.velvet-2",
+      "text": "Catch the candle!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "velvet",
+      "kind": "skill",
+      "skillId": "velvet-3",
+      "skillName": "Stolen flame",
+      "slot": 3,
+      "cueId": "voice.velvet.skill.velvet-3",
+      "text": "Borrowed flame!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "velvet",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "velvet-4",
+      "skillName": "Velvet curtain",
+      "cueId": "voice.velvet.ult.charge",
+      "text": "Curtain!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "velvet",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "velvet-4",
+      "skillName": "Velvet curtain",
+      "cueId": "voice.velvet.ult.release",
+      "text": "Curtain falls!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "marigold",
+      "kind": "skill",
+      "skillId": "marigold-1",
+      "skillName": "Seed stitch",
+      "slot": 1,
+      "cueId": "voice.marigold.skill.marigold-1",
+      "text": "Seed stitch!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "marigold",
+      "kind": "skill",
+      "skillId": "marigold-2",
+      "skillName": "Garden bell",
+      "slot": 2,
+      "cueId": "voice.marigold.skill.marigold-2",
+      "text": "Ring the garden!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "marigold",
+      "kind": "skill",
+      "skillId": "marigold-3",
+      "skillName": "Spring pruning",
+      "slot": 3,
+      "cueId": "voice.marigold.skill.marigold-3",
+      "text": "Time to prune!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "marigold",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "marigold-4",
+      "skillName": "First tea blossom",
+      "cueId": "voice.marigold.ult.charge",
+      "text": "Rise!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "marigold",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "marigold-4",
+      "skillName": "First tea blossom",
+      "cueId": "voice.marigold.ult.release",
+      "text": "Rise and bloom!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "button-guard",
+      "kind": "skill",
+      "skillId": "enemy:button-guard:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.button-guard.skill.enemy:button-guard:basic",
+      "text": "Button cut!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "button-guard",
+      "kind": "skill",
+      "skillId": "enemy:button-guard",
+      "skillName": "shield",
+      "slot": 2,
+      "cueId": "voice.button-guard.skill.enemy:button-guard",
+      "text": "Brace up!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "button-guard",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:button-guard",
+      "skillName": "shield",
+      "cueId": "voice.button-guard.ult.charge",
+      "text": "Hold!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "button-guard",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:button-guard",
+      "skillName": "shield",
+      "cueId": "voice.button-guard.ult.release",
+      "text": "Hold the line!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sock-skipper",
+      "kind": "skill",
+      "skillId": "enemy:sock-skipper:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper:basic",
+      "text": "Quick step!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sock-skipper",
+      "kind": "skill",
+      "skillId": "enemy:sock-skipper",
+      "skillName": "steal",
+      "slot": 2,
+      "cueId": "voice.sock-skipper.skill.enemy:sock-skipper",
+      "text": "Yours is mine!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sock-skipper",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:sock-skipper",
+      "skillName": "steal",
+      "cueId": "voice.sock-skipper.ult.charge",
+      "text": "Catch!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "sock-skipper",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:sock-skipper",
+      "skillName": "steal",
+      "cueId": "voice.sock-skipper.ult.release",
+      "text": "Catch me!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "spool-ram",
+      "kind": "skill",
+      "skillId": "enemy:spool-ram:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram:basic",
+      "text": "Make way!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "spool-ram",
+      "kind": "skill",
+      "skillId": "enemy:spool-ram",
+      "skillName": "charge",
+      "slot": 2,
+      "cueId": "voice.spool-ram.skill.enemy:spool-ram",
+      "text": "Ram ahead!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "spool-ram",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:spool-ram",
+      "skillName": "charge",
+      "cueId": "voice.spool-ram.ult.charge",
+      "text": "Full!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "spool-ram",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:spool-ram",
+      "skillName": "charge",
+      "cueId": "voice.spool-ram.ult.release",
+      "text": "Full charge!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "needle-moth",
+      "kind": "skill",
+      "skillId": "enemy:needle-moth:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth:basic",
+      "text": "Needle shot!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "needle-moth",
+      "kind": "skill",
+      "skillId": "enemy:needle-moth",
+      "skillName": "dot",
+      "slot": 2,
+      "cueId": "voice.needle-moth.skill.enemy:needle-moth",
+      "text": "Needle rain!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "needle-moth",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:needle-moth",
+      "skillName": "dot",
+      "cueId": "voice.needle-moth.ult.charge",
+      "text": "Sharp!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "needle-moth",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:needle-moth",
+      "skillName": "dot",
+      "cueId": "voice.needle-moth.ult.release",
+      "text": "Sharp wings!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "teacup-healer",
+      "kind": "skill",
+      "skillId": "enemy:teacup-healer:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer:basic",
+      "text": "Cup tap!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "teacup-healer",
+      "kind": "skill",
+      "skillId": "enemy:teacup-healer",
+      "skillName": "heal",
+      "slot": 2,
+      "cueId": "voice.teacup-healer.skill.enemy:teacup-healer",
+      "text": "Refill!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "teacup-healer",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:teacup-healer",
+      "skillName": "heal",
+      "cueId": "voice.teacup-healer.ult.charge",
+      "text": "Full!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "teacup-healer",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:teacup-healer",
+      "skillName": "heal",
+      "cueId": "voice.teacup-healer.ult.release",
+      "text": "Full cups!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "kettle-knight",
+      "kind": "skill",
+      "skillId": "enemy:kettle-knight:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
+      "text": "Iron strike!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "kettle-knight",
+      "kind": "skill",
+      "skillId": "enemy:kettle-knight",
+      "skillName": "reflect",
+      "slot": 2,
+      "cueId": "voice.kettle-knight.skill.enemy:kettle-knight",
+      "text": "Steam shield!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "kettle-knight",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:kettle-knight",
+      "skillName": "reflect",
+      "cueId": "voice.kettle-knight.ult.charge",
+      "text": "Boil!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "kettle-knight",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:kettle-knight",
+      "skillName": "reflect",
+      "cueId": "voice.kettle-knight.ult.release",
+      "text": "Boil over!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "yarn-giant",
+      "kind": "skill",
+      "skillId": "enemy:yarn-giant:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant:basic",
+      "text": "Thread strike!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "yarn-giant",
+      "kind": "skill",
+      "skillId": "enemy:yarn-giant",
+      "skillName": "bind",
+      "slot": 2,
+      "cueId": "voice.yarn-giant.skill.enemy:yarn-giant",
+      "text": "Loom fall!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "yarn-giant",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:yarn-giant",
+      "skillName": "bind",
+      "cueId": "voice.yarn-giant.ult.charge",
+      "text": "Tangle!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "yarn-giant",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:yarn-giant",
+      "skillName": "bind",
+      "cueId": "voice.yarn-giant.ult.release",
+      "text": "Tangle them!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "binding-thread",
+      "kind": "skill",
+      "skillId": "enemy:binding-thread:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread:basic",
+      "text": "Tie tight!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "binding-thread",
+      "kind": "skill",
+      "skillId": "enemy:binding-thread",
+      "skillName": "snare",
+      "slot": 2,
+      "cueId": "voice.binding-thread.skill.enemy:binding-thread",
+      "text": "Knot them!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "binding-thread",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:binding-thread",
+      "skillName": "snare",
+      "cueId": "voice.binding-thread.ult.charge",
+      "text": "Bound!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "binding-thread",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:binding-thread",
+      "skillName": "snare",
+      "cueId": "voice.binding-thread.ult.release",
+      "text": "Bound fast!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "practice-cushion",
+      "kind": "skill",
+      "skillId": "enemy:practice-cushion:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion:basic",
+      "text": "Soft bump!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "practice-cushion",
+      "kind": "skill",
+      "skillId": "enemy:practice-cushion",
+      "skillName": "lesson",
+      "slot": 2,
+      "cueId": "voice.practice-cushion.skill.enemy:practice-cushion",
+      "text": "Try again!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "practice-cushion",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:practice-cushion",
+      "skillName": "lesson",
+      "cueId": "voice.practice-cushion.ult.charge",
+      "text": "Good!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "practice-cushion",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:practice-cushion",
+      "skillName": "lesson",
+      "cueId": "voice.practice-cushion.ult.release",
+      "text": "Good practice!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pollen-scout",
+      "kind": "skill",
+      "skillId": "enemy:pollen-scout:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout:basic",
+      "text": "Seed shot!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pollen-scout",
+      "kind": "skill",
+      "skillId": "enemy:pollen-scout",
+      "skillName": "summon",
+      "slot": 2,
+      "cueId": "voice.pollen-scout.skill.enemy:pollen-scout",
+      "text": "Rise, little roots!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pollen-scout",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:pollen-scout",
+      "skillName": "summon",
+      "cueId": "voice.pollen-scout.ult.charge",
+      "text": "Pollen!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pollen-scout",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:pollen-scout",
+      "skillName": "summon",
+      "cueId": "voice.pollen-scout.ult.release",
+      "text": "Pollen storm!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "rain-spool",
+      "kind": "skill",
+      "skillId": "enemy:rain-spool:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool:basic",
+      "text": "Rain strike!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "rain-spool",
+      "kind": "skill",
+      "skillId": "enemy:rain-spool",
+      "skillName": "storm",
+      "slot": 2,
+      "cueId": "voice.rain-spool.skill.enemy:rain-spool",
+      "text": "Cloud burst!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "rain-spool",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:rain-spool",
+      "skillName": "storm",
+      "cueId": "voice.rain-spool.ult.charge",
+      "text": "Storm!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "rain-spool",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:rain-spool",
+      "skillName": "storm",
+      "cueId": "voice.rain-spool.ult.release",
+      "text": "Storm breaks!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "crumb-sentinel",
+      "kind": "skill",
+      "skillId": "enemy:crumb-sentinel:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic",
+      "text": "Crust strike!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "crumb-sentinel",
+      "kind": "skill",
+      "skillId": "enemy:crumb-sentinel",
+      "skillName": "bomb",
+      "slot": 2,
+      "cueId": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+      "text": "Sugar burst!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "crumb-sentinel",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:crumb-sentinel",
+      "skillName": "bomb",
+      "cueId": "voice.crumb-sentinel.ult.charge",
+      "text": "All!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "crumb-sentinel",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:crumb-sentinel",
+      "skillName": "bomb",
+      "cueId": "voice.crumb-sentinel.ult.release",
+      "text": "All to crumbs!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pantry-crown",
+      "kind": "skill",
+      "skillId": "enemy:pantry-crown:basic",
+      "skillName": "Basic",
+      "slot": 1,
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown:basic",
+      "text": "Empty plates!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pantry-crown",
+      "kind": "skill",
+      "skillId": "enemy:pantry-crown",
+      "skillName": "banquet",
+      "slot": 2,
+      "cueId": "voice.pantry-crown.skill.enemy:pantry-crown",
+      "text": "Take their feast!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pantry-crown",
+      "kind": "ultimate",
+      "phase": "charge",
+      "skillId": "enemy:pantry-crown",
+      "skillName": "banquet",
+      "cueId": "voice.pantry-crown.ult.charge",
+      "text": "Mine!",
+      "syncPointMs": 0
+    },
+    {
+      "unitId": "pantry-crown",
+      "kind": "ultimate",
+      "phase": "release",
+      "skillId": "enemy:pantry-crown",
+      "skillName": "banquet",
+      "cueId": "voice.pantry-crown.ult.release",
+      "text": "Mine to claim!",
+      "syncPointMs": 0
+    }
+  ],
+  "roster": [
+    {
+      "unitId": "mochi",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.mochi.skill.mochi-1",
+        "voice.mochi.skill.mochi-2",
+        "voice.mochi.skill.mochi-3",
+        "voice.mochi.ult.charge",
+        "voice.mochi.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "soot",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.soot.skill.soot-1",
+        "voice.soot.skill.soot-2",
+        "voice.soot.skill.soot-3",
+        "voice.soot.ult.charge",
+        "voice.soot.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "clover",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.clover.skill.clover-1",
+        "voice.clover.skill.clover-2",
+        "voice.clover.skill.clover-3",
+        "voice.clover.ult.charge",
+        "voice.clover.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "panko",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.panko.skill.panko-1",
+        "voice.panko.skill.panko-2",
+        "voice.panko.skill.panko-3",
+        "voice.panko.ult.charge",
+        "voice.panko.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "mallow",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.mallow.skill.mallow-1",
+        "voice.mallow.skill.mallow-2",
+        "voice.mallow.skill.mallow-3",
+        "voice.mallow.ult.charge",
+        "voice.mallow.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "sorrel",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.sorrel.skill.sorrel-1",
+        "voice.sorrel.skill.sorrel-2",
+        "voice.sorrel.skill.sorrel-3",
+        "voice.sorrel.ult.charge",
+        "voice.sorrel.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "biscuit",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.biscuit.skill.biscuit-1",
+        "voice.biscuit.skill.biscuit-2",
+        "voice.biscuit.skill.biscuit-3",
+        "voice.biscuit.ult.charge",
+        "voice.biscuit.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "inkcap",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.inkcap.skill.inkcap-1",
+        "voice.inkcap.skill.inkcap-2",
+        "voice.inkcap.skill.inkcap-3",
+        "voice.inkcap.ult.charge",
+        "voice.inkcap.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "cinnamon",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.cinnamon.skill.cinnamon-1",
+        "voice.cinnamon.skill.cinnamon-2",
+        "voice.cinnamon.skill.cinnamon-3",
+        "voice.cinnamon.ult.charge",
+        "voice.cinnamon.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "brioche",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.brioche.skill.brioche-1",
+        "voice.brioche.skill.brioche-2",
+        "voice.brioche.skill.brioche-3",
+        "voice.brioche.ult.charge",
+        "voice.brioche.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "velvet",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.velvet.skill.velvet-1",
+        "voice.velvet.skill.velvet-2",
+        "voice.velvet.skill.velvet-3",
+        "voice.velvet.ult.charge",
+        "voice.velvet.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "marigold",
+      "tier": "playable",
+      "requiredCueIds": [
+        "voice.marigold.skill.marigold-1",
+        "voice.marigold.skill.marigold-2",
+        "voice.marigold.skill.marigold-3",
+        "voice.marigold.ult.charge",
+        "voice.marigold.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "button-guard",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.button-guard.skill.enemy:button-guard:basic",
+        "voice.button-guard.skill.enemy:button-guard",
+        "voice.button-guard.ult.charge",
+        "voice.button-guard.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "sock-skipper",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.sock-skipper.skill.enemy:sock-skipper:basic",
+        "voice.sock-skipper.skill.enemy:sock-skipper",
+        "voice.sock-skipper.ult.charge",
+        "voice.sock-skipper.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "spool-ram",
+      "tier": "elite",
+      "requiredCueIds": [
+        "voice.spool-ram.skill.enemy:spool-ram:basic",
+        "voice.spool-ram.skill.enemy:spool-ram",
+        "voice.spool-ram.ult.charge",
+        "voice.spool-ram.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "needle-moth",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.needle-moth.skill.enemy:needle-moth:basic",
+        "voice.needle-moth.skill.enemy:needle-moth",
+        "voice.needle-moth.ult.charge",
+        "voice.needle-moth.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "teacup-healer",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.teacup-healer.skill.enemy:teacup-healer:basic",
+        "voice.teacup-healer.skill.enemy:teacup-healer",
+        "voice.teacup-healer.ult.charge",
+        "voice.teacup-healer.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "kettle-knight",
+      "tier": "elite",
+      "requiredCueIds": [
+        "voice.kettle-knight.skill.enemy:kettle-knight:basic",
+        "voice.kettle-knight.skill.enemy:kettle-knight",
+        "voice.kettle-knight.ult.charge",
+        "voice.kettle-knight.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "yarn-giant",
+      "tier": "boss",
+      "requiredCueIds": [
+        "voice.yarn-giant.skill.enemy:yarn-giant:basic",
+        "voice.yarn-giant.skill.enemy:yarn-giant",
+        "voice.yarn-giant.ult.charge",
+        "voice.yarn-giant.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "binding-thread",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.binding-thread.skill.enemy:binding-thread:basic",
+        "voice.binding-thread.skill.enemy:binding-thread",
+        "voice.binding-thread.ult.charge",
+        "voice.binding-thread.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "practice-cushion",
+      "tier": "regular",
+      "requiredCueIds": [
+        "voice.practice-cushion.skill.enemy:practice-cushion:basic",
+        "voice.practice-cushion.skill.enemy:practice-cushion",
+        "voice.practice-cushion.ult.charge",
+        "voice.practice-cushion.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "pollen-scout",
+      "tier": "elite",
+      "requiredCueIds": [
+        "voice.pollen-scout.skill.enemy:pollen-scout:basic",
+        "voice.pollen-scout.skill.enemy:pollen-scout",
+        "voice.pollen-scout.ult.charge",
+        "voice.pollen-scout.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "rain-spool",
+      "tier": "boss",
+      "requiredCueIds": [
+        "voice.rain-spool.skill.enemy:rain-spool:basic",
+        "voice.rain-spool.skill.enemy:rain-spool",
+        "voice.rain-spool.ult.charge",
+        "voice.rain-spool.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "crumb-sentinel",
+      "tier": "elite",
+      "requiredCueIds": [
+        "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic",
+        "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+        "voice.crumb-sentinel.ult.charge",
+        "voice.crumb-sentinel.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    },
+    {
+      "unitId": "pantry-crown",
+      "tier": "boss",
+      "requiredCueIds": [
+        "voice.pantry-crown.skill.enemy:pantry-crown:basic",
+        "voice.pantry-crown.skill.enemy:pantry-crown",
+        "voice.pantry-crown.ult.charge",
+        "voice.pantry-crown.ult.release"
+      ],
+      "sources": [
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+          "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+          "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+        },
+        {
+          "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+          "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+      "sha256": "4bda42b1434d09d69afa0bbe2a81bfb9ad4737b808f0cbf30cb62950f45b899c"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/depth/skills-v5/kits.ts",
+      "sha256": "95872a3303ddeceb536f3bad261b7ffc35d648e1f00f7554e24c1def6007c12b"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts",
+      "sha256": "2c63646dfa28183fdd9a05027dc03145f2af2a57daee8865730ec5a366cc3aad"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-13T14:04:44.613432+00:00",
+  "passed": 435,
+  "failedAfterRepair": 0,
+  "groups": [
+    {
+      "group": "stage",
+      "passed": 323,
+      "path": "reports/v3-shell/b2/tests/q2-b-stage.log",
+      "sha256": "d7b375a25cb9938d043fba78dec4ccc645cecef52ebe0d329f1b40c5731f7f75"
+    },
+    {
+      "group": "classic",
+      "passed": 46,
+      "path": "reports/v3-shell/b2/tests/q2-b-classic.log",
+      "sha256": "2065b91c204ebe499428915194936527c63ab9b7e66f3a87941239267be3e4c7"
+    },
+    {
+      "group": "classic-csp",
+      "passed": 6,
+      "path": "reports/v3-shell/b2/tests/q2-b-csp-repair.log",
+      "sha256": "c659c262f589280635f7019687ab8859b257ca822dcd50e3cd67233b84fca403"
+    },
+    {
+      "group": "server",
+      "passed": 52,
+      "path": "reports/v3-shell/b2/tests/q2-b-server.log",
+      "sha256": "036c843d1a2366b9fd50bb9e5f00cbf18426f44be94474664d30fbfa034c1be1"
+    },
+    {
+      "group": "fallback",
+      "passed": 8,
+      "path": "reports/v3-shell/b2/tests/q2-b-fallback.log",
+      "sha256": "2aa53dacfa1c2f2999c8be7f0b18d0f50996f3703764a26cbdcc5866aec00fe5"
+    }
+  ],
+  "repair": "Six classic-project V2 CSP tests needed both classic and V2 preview servers. Original46PASS/6connection errors retained; only the six failed cases reran."
+}

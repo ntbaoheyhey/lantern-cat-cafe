@@ -1,0 +1,325 @@
+{
+  "screen": "forge-enhance",
+  "sourceHash": "d3352832d280fbeeff5d59cdb553542459c39bd8f5c58accc7288c6ecad78c25",
+  "diagnostic": false,
+  "complete": true,
+  "elements": [
+    {
+      "index": 0,
+      "key": "BUTTON||Close dialog|0",
+      "label": "Close dialog",
+      "tag": "BUTTON",
+      "type": "",
+      "value": "",
+      "mode": "click",
+      "requested": [
+        {
+          "id": "ui.click",
+          "at": 1794561979171
+        },
+        {
+          "id": "ui.close",
+          "at": 1794561979171
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794561979170,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0296504372268482,
+              "gainDb": 0.7228423380378484
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1.0296504372268482,
+              "gainDb": 0.7228423380378484
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.release",
+          "result": "played",
+          "at": 1794561979171,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9817588542505037,
+              "gainDb": 1.2223163422771952
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9817588542505037,
+              "gainDb": 1.2223163422771952
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.click",
+          "result": "played",
+          "at": 1794561979171,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0101039583262892,
+              "gainDb": -1.3824299355863914
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1.0101039583262892,
+              "gainDb": -1.3824299355863914
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.close",
+          "result": "played",
+          "at": 1794561979179,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:minimize_001:interface-sounds/minimize_001.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0227121443315477,
+              "gainDb": -7.732264119738785
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9875072101510567,
+              "gainDb": -18.982787762699374
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "mappedCue": "ui.click",
+      "audioErrors": []
+    },
+    {
+      "index": 1,
+      "key": "BUTTON||Confirm enhance +1|0",
+      "label": "Confirm enhance +1",
+      "tag": "BUTTON",
+      "type": "",
+      "value": "",
+      "mode": "click",
+      "requested": [
+        {
+          "id": "ui.click",
+          "at": 1794561982387
+        },
+        {
+          "id": "ui.click",
+          "at": 1794561982387
+        },
+        {
+          "id": "ui.forge.hammer",
+          "at": 1794561982388
+        },
+        {
+          "id": "ui.forge.success",
+          "at": 1794561982404
+        },
+        {
+          "id": "voice.mochi.forge",
+          "at": 1794561982404
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794561982386,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9871473722107305,
+              "gainDb": 1.1485437783916268
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9871473722107305,
+              "gainDb": 1.1485437783916268
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.release",
+          "result": "played",
+          "at": 1794561982387,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.02617648337693,
+              "gainDb": -1.4971335967180477
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1.02617648337693,
+              "gainDb": -1.4971335967180477
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.click",
+          "result": "played",
+          "at": 1794561982387,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9958937192505055,
+              "gainDb": -0.44674898061747204
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.9958937192505055,
+              "gainDb": -0.44674898061747204
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.click",
+          "result": "cooldown",
+          "at": 1794561982399
+        },
+        {
+          "id": "ui.forge.hammer",
+          "result": "played",
+          "at": 1794561982400,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+              "offsetMs": 0,
+              "pitch": 0.9765335825216017,
+              "gainDb": -8.474373601385986
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 0.980508280751138,
+              "gainDb": -18.826441497511667
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.forge.success",
+          "result": "played",
+          "at": 1794561982405,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.0013251302224315,
+              "gainDb": -6.3545143552335706
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1.0017956136380166,
+              "gainDb": -19.640434269935785
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "voice.mochi.forge",
+          "result": "played",
+          "at": 1794561982416,
+          "layers": [
+            {
+              "role": "voice",
+              "variantId": "mochi-6.flac",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 0
+            }
+          ],
+          "sfx": 0,
+          "voice": 1,
+          "duckDb": -8
+        }
+      ],
+      "mappedCue": "ui.click",
+      "audioErrors": []
+    }
+  ],
+  "audioErrors": [],
+  "errors": [],
+  "method": "Fresh app/browser fixture before each visible, enabled control activation. Click, native select or keyboard edit; no dispatched fake click handlers and no test playback. Chain state is isolated by local Anvil snapshots; no public transactions.",
+  "inventory": [
+    {
+      "index": 0,
+      "key": "BUTTON||Close dialog|0",
+      "label": "Close dialog",
+      "tag": "BUTTON",
+      "type": "",
+      "value": ""
+    },
+    {
+      "index": 1,
+      "key": "BUTTON||Confirm enhance +1|0",
+      "label": "Confirm enhance +1",
+      "tag": "BUTTON",
+      "type": "",
+      "value": ""
+    }
+  ]
+}

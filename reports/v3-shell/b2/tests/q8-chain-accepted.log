@@ -1,0 +1,28 @@
+wallet PASS 3
+cafe PASS 3
+PASS 6 steps at 1280x720
+wallet wallet/0: padding
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: wallet/0: padding
+    at file:///Users/bao/taskbar-hero-chain/scripts/ui/q8-tutorial.mjs:49:21 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+file:///Users/bao/taskbar-hero-chain/scripts/ui/q8-chain-tutorial.mjs:13
+  if(code)throw Error(`Wallet walkthrough failed at ${width}`);
+                ^
+
+Error: Wallet walkthrough failed at 1440
+    at file:///Users/bao/taskbar-hero-chain/scripts/ui/q8-chain-tutorial.mjs:13:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.22.2

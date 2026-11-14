@@ -1,0 +1,124 @@
+{
+  "trace": {
+    "path": "reports/v3-shell/b2/tests/u4-perf-final-trace.json.gz",
+    "sha256": "acdf3ac8894bac5c747650e99e7102b54c798bc1218f4a3d84fad52ac8693a22"
+  },
+  "screenChanges": 10,
+  "layoutShifts": [
+    0.0002348126040564643,
+    0.000010659747653537326,
+    0.01994395637512207,
+    0.000002595664312442144,
+    0.0000034102549155553184,
+    0.0000020549337690075234,
+    0.0000021004433640175395,
+    0.0000015388488666050964,
+    0.000002223355695605278,
+    0.00022200054592556422,
+    0.0002348126040564643,
+    0.000010659747653537326,
+    0.01994395637512207,
+    0.0000026024878025054932,
+    0.0000034187925565573908,
+    0.0000021390756592154503,
+    0.0000021863635629415513,
+    0.0000015423995339208181,
+    0.0000022283848375082016,
+    0.00022200054592556422,
+    0.03040052056312561,
+    0.0008308176464504665
+  ],
+  "transitionMedianFps": 60,
+  "transitionWindows": [
+    {
+      "name": "home",
+      "frames": 60
+    },
+    {
+      "name": "daily-gift",
+      "frames": 59
+    },
+    {
+      "name": "team",
+      "frames": 60
+    },
+    {
+      "name": "hero",
+      "frames": 60
+    },
+    {
+      "name": "bag",
+      "frames": 60
+    },
+    {
+      "name": "forge",
+      "frames": 54
+    },
+    {
+      "name": "invitations",
+      "frames": 60
+    },
+    {
+      "name": "market",
+      "frames": 60
+    },
+    {
+      "name": "season",
+      "frames": 58
+    },
+    {
+      "name": "wallet",
+      "frames": 60
+    }
+  ],
+  "method": "Real UI tour through 10 states. Output audio is captured from actual AudioNode destinations, muxed to timestamped CDP frames. Transition performance is measured on a separate identical tour without video encoding: count actual rAF frames in one-second windows starting at each screen change; raw timestamps and Chrome trace retained. Both runs include all layout-shift entries, even shifts after user input. No FPS rounding or extrapolation.",
+  "errors": [],
+  "tour": {
+    "path": "reports/v3-shell/b2/UI-TOUR.webm",
+    "sha256": "f79133a380d2e3560905542a1bdec5b8d220012c8d7a1fefa95404b196335c5d",
+    "durationSeconds": 62,
+    "hasAudio": true
+  },
+  "captureTrace": {
+    "path": "reports/v3-shell/b2/tests/u4-capture-final-trace.json.gz",
+    "sha256": "2324bde8bc35fd24a295e5be81268d75ecc8ed34b2af7a80ec5b53206d166401"
+  },
+  "reducedMotion": {
+    "exitCode": 0,
+    "passed": 16,
+    "log": {
+      "path": "reports/v3-shell/b2/tests/u4-reduced-motion.log",
+      "sha256": "d1c967563c1b108395044b8d33bf5016e995c97d4e8762317b6fac9ee9c394ab"
+    }
+  },
+  "unitTests": {
+    "exitCode": 0,
+    "passed": 16,
+    "log": {
+      "path": "reports/v3-shell/b2/tests/u4-motion-unit-targeted.log",
+      "sha256": "e233c7c548731d79093ea65bc8eba4b3431fb8c15664e61378e4a1a2d702024e"
+    }
+  },
+  "sources": [
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.ts",
+      "sha256": "3c4011c21cf2fb9922bb4f2e0c91e1c0584d19f7d046c493cd981671f261c430"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/motion-b2.css",
+      "sha256": "916ef48d9ce7e3e6d3542ecc65baa06fd35721109c28c734db5a71cc32b307cd"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RewardFly.tsx",
+      "sha256": "7378edcc8969ec9c8347fcbb4036c83cda2564ab71da1d40205f1a6363cdd6ff"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "sha256": "5fc3b022437f0239dd803202afad8c6cfdab3e935e3268f7634256e706bd8f1d"
+    },
+    {
+      "path": "scripts/ui/motion-tour-b2.mjs",
+      "sha256": "18f34106167ff73e89e48a76b2e80a69af8f54a378ca07424fb482a173e33f22"
+    }
+  ]
+}

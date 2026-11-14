@@ -1,0 +1,227 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "steps": [
+    {
+      "topic": "wallet",
+      "index": 0,
+      "text": "This is your Fuji wallet. Test tokens have no value.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 310,
+        "y": 78,
+        "width": 660,
+        "height": 48
+      },
+      "spotlight": {
+        "x": 302,
+        "y": 70,
+        "width": 676,
+        "height": 64
+      },
+      "bubble": {
+        "x": 470,
+        "y": 148,
+        "width": 340,
+        "height": 181.703125
+      },
+      "skip": {
+        "x": 573,
+        "y": 268.703125,
+        "width": 59.546875,
+        "height": 47
+      },
+      "selector": "[data-tutorial-id=\"wallet-title\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/wallet-0.png",
+        "sha256": "483b3d115d5510789cc84e2bee80ac97087df8443bda6a977d625c3c706797b0"
+      }
+    },
+    {
+      "topic": "wallet",
+      "index": 1,
+      "text": "Check balances before signing. Test AVAX pays network gas.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 310,
+        "y": 223,
+        "width": 660,
+        "height": 105
+      },
+      "spotlight": {
+        "x": 302,
+        "y": 215,
+        "width": 676,
+        "height": 121
+      },
+      "bubble": {
+        "x": 470,
+        "y": 350,
+        "width": 340,
+        "height": 181.703125
+      },
+      "skip": {
+        "x": 573,
+        "y": 470.703125,
+        "width": 59.546875,
+        "height": 47
+      },
+      "selector": "[data-tutorial-id=\"wallet-balances\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/wallet-1.png",
+        "sha256": "ff5fb1121c94900803909450573e4069847fdb0a4bdbbb339454fb2b3728910b"
+      }
+    },
+    {
+      "topic": "wallet",
+      "index": 2,
+      "text": "Market opens your onchain items and Café.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 310,
+        "y": 352,
+        "width": 324,
+        "height": 122
+      },
+      "spotlight": {
+        "x": 302,
+        "y": 344,
+        "width": 340,
+        "height": 138
+      },
+      "bubble": {
+        "x": 302,
+        "y": 496,
+        "width": 340,
+        "height": 158.90625
+      },
+      "skip": {
+        "x": 401.75,
+        "y": 593.90625,
+        "width": 59.546875,
+        "height": 47
+      },
+      "selector": "[data-tutorial-id=\"wallet-actions\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/wallet-2.png",
+        "sha256": "49f3a4a2dfd9e957fb801957e00c48b01bac013b7e4036f425c4679e2c565764"
+      }
+    },
+    {
+      "topic": "cafe",
+      "index": 0,
+      "text": "Earn bound Spool. Spend it at equal YARN value.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 146,
+        "y": 196,
+        "width": 79.34375,
+        "height": 52
+      },
+      "spotlight": {
+        "x": 138,
+        "y": 188,
+        "width": 95.34375,
+        "height": 68
+      },
+      "bubble": {
+        "x": 15.671875,
+        "y": 270,
+        "width": 340,
+        "height": 166.59375
+      },
+      "skip": {
+        "x": 102.671875,
+        "y": 379.59375,
+        "width": 75.546875,
+        "height": 43
+      },
+      "selector": "[data-tutorial-id=\"cafe-spool\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/cafe-0.png",
+        "sha256": "489be7be9b92fc95100b4bae9ee9adcbe6534f99f9bfaae97e0a9ad88775dcd7"
+      }
+    },
+    {
+      "topic": "cafe",
+      "index": 1,
+      "text": "A Deed unlocks withdrawals. Playing and earning stay free.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 146,
+        "y": 274.5,
+        "width": 190,
+        "height": 247
+      },
+      "spotlight": {
+        "x": 138,
+        "y": 266.5,
+        "width": 206,
+        "height": 263
+      },
+      "bubble": {
+        "x": 71,
+        "y": 85.90625,
+        "width": 340,
+        "height": 166.59375
+      },
+      "skip": {
+        "x": 158,
+        "y": 195.5,
+        "width": 75.546875,
+        "height": 43
+      },
+      "selector": "[data-tutorial-id=\"cafe-deed\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/cafe-1.png",
+        "sha256": "67ef4498ae7383e77103d014feec55216aa7f5d28eab1c923aa863abfa3ad3d2"
+      }
+    },
+    {
+      "topic": "cafe",
+      "index": 2,
+      "text": "Review net YARN and the retained fee before signing.",
+      "owned": true,
+      "fallback": false,
+      "target": {
+        "x": 744,
+        "y": 273,
+        "width": 123.328125,
+        "height": 114
+      },
+      "spotlight": {
+        "x": 736,
+        "y": 265,
+        "width": 139.328125,
+        "height": 130
+      },
+      "bubble": {
+        "x": 635.65625,
+        "y": 409,
+        "width": 340,
+        "height": 166.59375
+      },
+      "skip": {
+        "x": 719.40625,
+        "y": 518.59375,
+        "width": 75.546875,
+        "height": 43
+      },
+      "selector": "[data-tutorial-id=\"cafe-withdraw\"]",
+      "screenshot": {
+        "path": "reports/v3-shell/b2/q8/wallet-atomic-1280/cafe-2.png",
+        "sha256": "a94e7dcc8eacc3a5ba522e269ad50ebf0f14a769de0bc060808879308f8a806e"
+      }
+    }
+  ],
+  "errors": [],
+  "fallbacks": [],
+  "passed": 6
+}

@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-14T01:44:18.167777+00:00",
+  "method": "Encode mono menu scores from their lossless licensed sources at 80 kb/s.\n\nConstrained Opus VBR avoids the large bitrate overshoot on harmonic music.\nThe arrangements, channels, timing and level remain unchanged. Speech is untouched.\n",
+  "rows": [
+    {
+      "path": "apps/web/public/audio/menu-forge.webm",
+      "source": {
+        "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+        "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+      },
+      "staged": "tmp/p3-music-budget/menu-forge.webm",
+      "beforeSha256": "c71b420dd342dfd80af6ae79d2c24b41ed2eba9807069519e80f2dc1ff526cee",
+      "afterSha256": "f744c95ab887bb3b2d3351464d270c57cc8cb0586c30c8c987b2ec2363d18861",
+      "beforeBytes": 688592,
+      "afterBytes": 417111,
+      "beforeLevel": {
+        "input_i": -18.03,
+        "input_tp": -3.79,
+        "input_lra": 0.6
+      },
+      "afterLevel": {
+        "input_i": -18.03,
+        "input_tp": -3.65,
+        "input_lra": 0.6
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "/Users/bao/taskbar-hero-chain/assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "80k",
+        "-vbr",
+        "constrained",
+        "/Users/bao/taskbar-hero-chain/tmp/p3-music-budget/menu-forge.webm"
+      ]
+    },
+    {
+      "path": "apps/web/public/audio/menu-forge.mp3",
+      "source": {
+        "path": "assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+        "sha256": "1e3de2ee26945482cca1805d8b689b2b7e9756ad2eb33addde5bd1066964efe9"
+      },
+      "staged": "tmp/p3-music-budget/menu-forge.mp3",
+      "beforeSha256": "c84920fb39ccd04e9bb067b5b77b61daa05f921c5dfe9d261a87b7cfc56bd53f",
+      "afterSha256": "aa3ada8e00c30c5f6ba6fcc6f8cc9ea6a5a5483ad6540dbe74aa87c52c88e091",
+      "beforeBytes": 480906,
+      "afterBytes": 400762,
+      "beforeLevel": {
+        "input_i": -18.48,
+        "input_tp": -4.39,
+        "input_lra": 0.7
+      },
+      "afterLevel": {
+        "input_i": -18.48,
+        "input_tp": -4.26,
+        "input_lra": 0.7
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "/Users/bao/taskbar-hero-chain/assets/audio-sources/b2/music/forge-33-metal-wood.flac",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "80k",
+        "/Users/bao/taskbar-hero-chain/tmp/p3-music-budget/menu-forge.mp3"
+      ]
+    },
+    {
+      "path": "apps/web/public/audio/menu-home.webm",
+      "source": {
+        "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+        "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+      },
+      "staged": "tmp/p3-music-budget/menu-home.webm",
+      "beforeSha256": "04ad52c04476e14889181f441ef664d5fdba5ce3e46b356a6b9eab22cda3ab0a",
+      "afterSha256": "80c8070c8595ed77c1362ac67bb6b84c44bf0786754b4b73d1dfcfeb5c6f5eff",
+      "beforeBytes": 362978,
+      "afterBytes": 303658,
+      "beforeLevel": {
+        "input_i": -18.04,
+        "input_tp": -3.78,
+        "input_lra": 0.7
+      },
+      "afterLevel": {
+        "input_i": -18.04,
+        "input_tp": -3.58,
+        "input_lra": 0.7
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "/Users/bao/taskbar-hero-chain/assets/audio-sources/b2/music/menu-home-shaker.flac",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "80k",
+        "-vbr",
+        "constrained",
+        "/Users/bao/taskbar-hero-chain/tmp/p3-music-budget/menu-home.webm"
+      ]
+    },
+    {
+      "path": "apps/web/public/audio/menu-home.mp3",
+      "source": {
+        "path": "assets/audio-sources/b2/music/menu-home-shaker.flac",
+        "sha256": "b08d1f22004fe3eb5503724f1ff4b4b8b316077b99dc6c63b9a4a79a1b8d8d95"
+      },
+      "staged": "tmp/p3-music-budget/menu-home.mp3",
+      "beforeSha256": "c2cfb9c9ed4118cf8004dce55942d45476c674f50f6defd64831ac6cc4d647ea",
+      "afterSha256": "4e7b4e77ec2206d2a5b14e2008daf838467fa8573230e178a038577ac6c6b26d",
+      "beforeBytes": 350502,
+      "afterBytes": 292093,
+      "beforeLevel": {
+        "input_i": -18.49,
+        "input_tp": -4.35,
+        "input_lra": 0.7
+      },
+      "afterLevel": {
+        "input_i": -18.49,
+        "input_tp": -4.34,
+        "input_lra": 0.7
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "/Users/bao/taskbar-hero-chain/assets/audio-sources/b2/music/menu-home-shaker.flac",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "80k",
+        "/Users/bao/taskbar-hero-chain/tmp/p3-music-budget/menu-home.mp3"
+      ]
+    }
+  ],
+  "published": true,
+  "publishedAt": "2026-11-14T01:44:54.040178+00:00"
+}

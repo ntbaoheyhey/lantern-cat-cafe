@@ -1,0 +1,25 @@
+{
+  "pid": 8527,
+  "command": [
+    "pnpm",
+    "--filter",
+    "@taskbar-hero/web",
+    "exec",
+    "playwright",
+    "test",
+    "--config",
+    "../../scripts/v3b2/q1-playwright.config.mts",
+    "--grep-invert",
+    "guidance remains readable with fallback fonts"
+  ],
+  "env": {
+    "V3SOLO_E2E_GROUP": "stage",
+    "E2E_PORT_CLASSIC": "6190",
+    "E2E_PORT_V2": "5997",
+    "E2E_PORT_SERVER": "6191",
+    "E2E_PORT_API": "6192"
+  },
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q2-b-stage.log",
+  "utc": "2026-11-13T13:47:27.912452+00:00",
+  "ports": "Only5997 is started;6190-6192 are unused config slots required by shared config."
+}

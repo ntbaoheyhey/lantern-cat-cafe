@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-11-14T02:19:27.252Z",
+  "aHead": "53fbf0da105a51415c5f783ec304daf790986d97",
+  "bHead": "1bd241f39fbfecd6e8f26d45bde6c67d682b8223",
+  "out": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
+  "base": [
+    "apps/web",
+    "packages",
+    "tools",
+    "scripts",
+    "tsconfig.base.json",
+    "pnpm-workspace.yaml",
+    "package.json"
+  ],
+  "overlay": [
+    "apps/web/src/game/cardrpg/battle-v3",
+    "apps/web/src/game/cardrpg/spine",
+    "apps/web/src/game/cardrpg/stage",
+    "apps/web/src/game/cardrpg/vfx-layered",
+    "apps/web/src/game/rig",
+    "apps/web/src/game/cardrpg/depth/model.ts",
+    "apps/web/src/game/cardrpg/depth/Battle.tsx",
+    "apps/web/src/game/cardrpg/depth/CompanionCard.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/BattleHudV3.tsx",
+    "apps/web/src/game/cardrpg/ui-v3/ResultA6.tsx",
+    "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
+    "apps/web/public/art",
+    "apps/web/public/cinematics",
+    "apps/web/public/units",
+    "skills",
+    "tools/cinematic-compositor",
+    "scripts/art"
+  ],
+  "signatures": [
+    {
+      "path": "apps/web/src/game/cardrpg/depth/model.ts",
+      "sha256": "f8fbc6a427e30cde02c895e46d1c75a05c0221a33107f83ed624dc6f8111dbc5"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/voice-windows.ts",
+      "sha256": "28860d2ffa001a9a0c60c9e92e74f18da98b5e44c9282699d214d0afc7d39452"
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "sha256": "7249bf719e212df12d9e1b07bc7afab9bfd155c1e7bb93314a65426830606d57"
+    },
+    {
+      "path": "apps/web/src/audio/voice-callouts.json",
+      "sha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a"
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "b56b03c70fa2152606fe5e87aa7742fa4c42d4cdb352402cef3f206e1fcd6cce"
+    }
+  ],
+  "method": "Committed B runtime with A-owned battle paths overlaid in an untracked checkout under B. No branch merge or source edit."
+}

@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-13T18:13:29.775713+00:00",
+  "probe": {
+    "path": "reports/v3-shell/b2/q5/menu-phrase-probes.json",
+    "sha256": "52d096c0c8e1bb205d1dc8ce71deb232e7fbdfbc22b6ff6fb5bf2051ec777240"
+  },
+  "before": {
+    "path": "reports/v3-shell/b2/q5/menu-before-phrases.json.gz",
+    "sha256": "6e626a750b3e2ada81ab340b44e1a69126838869130504c819ad7f675cd50da7"
+  },
+  "after": {
+    "path": "reports/v3-shell/b2/MENU-VOICE-LINES.json",
+    "sha256": "4d61c0bf61951d89bac9e2ebf02ccce4ec0f15b1eba64c58e8462b2c51351622"
+  },
+  "changes": [
+    {
+      "before": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
+        "sha256": "dc34b39a41b1becb46aee69523c0baca82ce8df8e666c31d4892ac6f1437c423"
+      },
+      "after": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-1.flac",
+        "sha256": "620afee69a9f8111bb0bd9692aa53be613bfe2252cac7e9393cf1cc04f8f9e8a"
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-menu-phrases/mallow-1-0.flac",
+        "sha256": "620afee69a9f8111bb0bd9692aa53be613bfe2252cac7e9393cf1cc04f8f9e8a"
+      },
+      "text": "Welcome home!"
+    },
+    {
+      "before": {
+        "path": "assets/audio-sources/b2/menu-voices/mochi-4.flac",
+        "sha256": "4bb7df45ebe0f03e012b2699ca7645da99602de94a4ac0d380da5da94bacde3c"
+      },
+      "after": {
+        "path": "assets/audio-sources/b2/menu-voices/mochi-4.flac",
+        "sha256": "3f375287cb7acd5903f5f8b07df527d77f2a87b88b2aff8d277fa749af90968d"
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-menu-phrases/mochi-4-1.flac",
+        "sha256": "3f375287cb7acd5903f5f8b07df527d77f2a87b88b2aff8d277fa749af90968d"
+      },
+      "text": "Ready for tonight!"
+    }
+  ],
+  "encoded": [
+    {
+      "path": "apps/web/public/audio/menu-voices.webm",
+      "sha256": "1a3664311adffb9b15683c665b109c115188a5afd0055ed8174157bbabd122c0",
+      "integratedLufs": -16.46,
+      "truePeakDbTP": -2.83,
+      "spriteGainDb": 0
+    },
+    {
+      "path": "apps/web/public/audio/menu-voices.mp3",
+      "sha256": "8959a07bc5818d0e7545a745cc57e9ceb590c8a0e9ecd68e55593fcf3d2a1138",
+      "integratedLufs": -16.89,
+      "truePeakDbTP": -3.26,
+      "spriteGainDb": 0
+    }
+  ],
+  "note": "Final mixed-render acceptance remains required."
+}

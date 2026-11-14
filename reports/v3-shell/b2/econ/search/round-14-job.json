@@ -1,0 +1,24 @@
+{
+  "pid": 543,
+  "command": [
+    "node",
+    "tools/chain/economy-lab/search.mjs",
+    "--round",
+    "14",
+    "--configs",
+    "40",
+    "--seeds",
+    "40",
+    "--workers",
+    "2",
+    "--bank",
+    "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+    "--config",
+    "reports/v3-shell/b2/econ/search/round-12-best.json",
+    "--levers",
+    "reports/v3-shell/b2/econ/search/round-14-levers.json"
+  ],
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/e3-round-14-solo.log",
+  "utc": "2026-11-13T13:18:12.036195+00:00",
+  "purpose": "Fix Star bank at one; tune weekly earning bounds and affordable sinks from round12."
+}

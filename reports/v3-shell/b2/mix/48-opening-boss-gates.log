@@ -1,0 +1,10 @@
+PASS S5.boss.render: measured 120.2; required >= 120s measured Opus render
+PASS S5.boss.onsetsPerSecond: measured 3.3527454242928454; required reference +/- 30% (reference 2.6333333333333333)
+PASS S5.boss.layers: measured 0.26054590570719605; required >= reference median - 0.5
+PASS S5.boss.tickTransientsPerSecond: measured 0.7321131447587355; required reference +/- 40% (reference 0.6499999999999999)
+PASS S5.boss.music: measured 1; required music bed >= 95%
+PASS S5.boss.voiceContoursPerMinute: measured 5.990016638935108; required reference +/- 35% (reference 5)
+PASS S5.boss.silence: measured 0; required <= reference + 3 percentage points
+PASS S5.boss.lufs: measured -14.74; required -16 to -13 LUFS
+PASS S5.boss.peak: measured -2.41; required <= -1 dBTP
+TOTAL 9 PASS / 0 FAIL / 9 gates

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lantern original UI kit</title>
+<style>
+@font-face{font-family:Baloo;src:url('../../apps/web/public/fonts/baloo-2-latin-800-normal.woff2')}body{margin:0;padding:28px;background:#1b1528;color:#ffe6b5;font-family:Baloo,serif}h1{margin:0}p{color:#d0c2d9}main{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}article{padding:12px;background:#32283e;border:1px solid #715370;border-radius:12px;overflow:hidden}article img{display:block;max-width:100%;height:150px;object-fit:contain;margin:auto}small{display:block;color:#ccbad6}.frame{width:100%;height:180px;box-sizing:border-box;border:32px solid transparent;border-image:url('../../apps/web/public/art/v3-shell/b2/panel-gold.webp') 256 / 32px stretch;background:#241c30}.button{width:100%;height:50px;border:18px solid transparent;box-sizing:border-box;border-image:var(--image) 65 fill / 18px stretch;color:#fff7d8;text-align:center;line-height:14px}a{color:#a9e8dd}
+</style>
+<h1>Lantern Cat Café · original UI kit</h1><p id="status">Loading saved export manifest…</p><main id="kit"></main>
+<script type="module">
+const data=await fetch('../../reports/v3-shell/b2/UI-ART.json').then(r=>r.json());
+document.querySelector('#status').textContent=`${data.files.length} exports · ${(data.totalBytes/1e6).toFixed(2)} MB / 8 MB · ${data.missing.length} sources pending`;
+for(const item of data.files){
+ const article=document.createElement('article'),image=document.createElement('img'),label=document.createElement('strong'),meta=document.createElement('small');
+ image.src='../../'+item.path;image.alt=item.id;label.textContent=item.id;meta.textContent=`${item.width} × ${item.height} · 2× export · ${(item.bytes/1024).toFixed(1)} KB`;
+ article.append(image,label,meta);
+ if(item.id==='panel-gold'){const demo=document.createElement('div');demo.className='frame';article.append(demo);}
+ if(item.family==='button'){const demo=document.createElement('div');demo.className='button';demo.style.setProperty('--image',`url(../../${item.path})`);demo.textContent='Preview';if(item.id.includes('secondary'))demo.style.color='#43243b';if(item.id.includes('disabled'))demo.style.color='#c8c6cc';article.append(demo);}
+ if(item.family==='rarity-frame'){const demo=document.createElement('div');demo.style.cssText=`width:96px;height:96px;box-sizing:border-box;margin:8px auto;border:14px solid transparent;border-image:url(../../${item.path}) 48 / 20px stretch;background:#241c32`;article.append(demo);}
+ document.querySelector('#kit').append(article);
+}
+</script></html>

@@ -1,0 +1,32 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-chain/apps/web
+> vitest run src/audio
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+
+ ❯ src/audio/sound-map.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/audio/sound-map.test.ts [ src/audio/sound-map.test.ts ]
+TypeError: The URL must be of scheme file
+ ❯ src/audio/sound-map.test.ts:9:29
+      7|
+      8| describe('production sound plan coverage',()=>{
+      9|   const manifest=JSON.parse(readFileSync(new URL('../../public/audio/m…
+       |                             ^
+     10|   it('retains all shipped cues and fixes the screen forge aliases',()=…
+     11|     for(const cue of [...Object.keys(manifest.cues),...Object.values(E…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  3 passed (3)
+   Start at  08:26:53
+   Duration  513ms (environment 97%, transform 2%, import 1%, worker 1%)
+
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run src/audio`
+Exit status 1

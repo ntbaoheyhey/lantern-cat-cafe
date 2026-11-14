@@ -1,0 +1,212 @@
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:92459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:92486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:92487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-chain/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:92503) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 13 tests using 2 workers
+
+(node:92507) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/13] [classic] › e2e/odds-c2.spec.ts:23:1 › C2 encounter Odds reflect the exhausted allowance and preserve the parent sheet
+(node:92508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/13] [classic] › e2e/formation-c2.spec.ts:5:1 › C2 recovers a fallen frontline through the two visible placement taps
+[3/13] [classic] › e2e/formation-c2.spec.ts:27:3 › C2 four slots, tap swap and battle bounds at 1280×720
+[4/13] [classic] › e2e/odds-c2.spec.ts:36:1 › C2 nested tailoring and salvage Odds keep the workshop open on Escape
+[5/13] [classic] › e2e/formation-c2.spec.ts:27:3 › C2 four slots, tap swap and battle bounds at 1440×900
+[6/13] [classic] › e2e/formation-c2.spec.ts:27:3 › C2 four slots, tap swap and battle bounds at 1024×600
+[7/13] [classic] › e2e/text-diet-c2.spec.ts:14:1 › C2 explanations keep keyboard access and return focus
+[8/13] [classic] › e2e/text-diet-c2.spec.ts:29:1 › C2 battle controls have separate pointer targets at every supported viewport
+  1) [classic] › e2e/odds-c2.spec.ts:36:1 › C2 nested tailoring and salvage Odds keep the workshop open on Escape 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog', { name: 'Gear workshop', exact: true }).getByLabel('Template', { exact: true })
+
+
+      38 |  await page.getByRole('button',{name:'Gear workshop',exact:true}).click();
+      39 |  const workshop=page.getByRole('dialog',{name:'Gear workshop',exact:true});
+    > 40 |  await workshop.getByLabel('Template',{exact:true}).selectOption('hearthloom-weapon-legendary');
+         |                                                     ^
+      41 |  let odds=await disclose(page,'Tailoring odds');
+      42 |  await expect(odds.dialog.getByLabel('seals').locator('..').locator('dd')).toHaveText('10');
+      43 |  await expect(odds.dialog.getByLabel('materials').locator('..').locator('dd')).toHaveText('200');
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/odds-c2.spec.ts:40:53
+
+    Error Context: ../../work/v3solo-e2e-local/odds-c2-C2-nested-tailorin-443d1-the-workshop-open-on-Escape-classic/error-context.md
+
+
+(node:93494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/13] [classic] › e2e/odds-c2.spec.ts:54:1 › C2 daily and tower reward sources expose deterministic Odds
+  2) [classic] › e2e/text-diet-c2.spec.ts:29:1 › C2 battle controls have separate pointer targets at every supported viewport 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/bao/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --user-data-dir=/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/playwright_chromiumdev_profile-sbRQRW --remote-debugging-pipe --no-startup-window
+    <launched> pid=92514
+    [pid=92514][err] [1113/200539.829204:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200539.866332:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200541.240488:ERROR:sandbox/mac/system_services.cc:31] SetApplicationIsDaemon: Error Domain=NSOSStatusErrorDomain Code=-50 "paramErr: error in user parameter list" (-50)
+    [pid=92514][err] [1113/200541.621160:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200541.749852:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200543.458684:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=92514][err] [1113/200543.984527:INFO:CONSOLE:0] "[.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://localhost:5996/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1 (0)
+    [pid=92514][err] [1113/200544.368805:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=92514][err] [1113/200544.395677:INFO:CONSOLE:0] "[.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://localhost:5996/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1 (0)
+    [pid=92514][err] [1113/200544.434966:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=92514][err] [1113/200544.697010:INFO:CONSOLE:0] "[.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://localhost:5996/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1 (0)
+    [pid=92514][err] [1113/200544.758750:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+    [pid=92514][err] [1113/200544.893067:INFO:CONSOLE:0] "[.WebGL-0x13c004e0800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)", source: http://localhost:5996/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1 (0)
+    [pid=92514][err] [1113/200545.129123:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200545.185026:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200548.181200:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200548.241466:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200551.363939:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200551.415852:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200552.597496:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597521:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597526:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597533:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597536:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597538:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597541:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597544:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597547:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597549:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597554:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597556:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597558:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597561:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.597563:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+    [pid=92514][err] [1113/200552.599543:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514][err] [1113/200552.654723:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=92514] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'More battle options' })
+        - locator resolved to <button aria-expanded="false" aria-label="More battle options">⋯</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <img alt="" width="24" height="24" draggable="false" class="game-icon " aria-hidden="true" src="/art/v3-shell/b2/icon-settings.webp"/> from <div class="th-audio">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <img alt="" width="24" height="24" draggable="false" class="game-icon " aria-hidden="true" src="/art/v3-shell/b2/icon-settings.webp"/> from <div class="th-audio">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        52 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <img alt="" width="24" height="24" draggable="false" class="game-icon " aria-hidden="true" src="/art/v3-shell/b2/icon-settings.webp"/> from <div class="th-audio">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      53 |   expect(await page.evaluate(()=>window.__depthReview!.state.settings.speed)).not.toBe(speed);
+      54 |   await expect(auto).not.toBeChecked();
+    > 55 |   await page.getByRole('button',{name:'More battle options'}).click();
+         |                                                               ^
+      56 |   await expect(page.getByRole('button',{name:'Read battle log'})).toBeVisible();
+      57 |   await page.getByRole('button',{name:'More battle options'}).click();
+      58 |   await page.getByRole('button',{name:'Skip to result'}).click();
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/text-diet-c2.spec.ts:55:63
+
+    Error Context: ../../work/v3solo-e2e-local/text-diet-c2-C2-battle-con-dad89-at-every-supported-viewport-classic/error-context.md
+
+
+(node:93554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/13] [classic] › e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-1: real contact, protected faces and calm flash
+[11/13] [classic] › e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted mochi-4: real contact, protected faces and calm flash
+[12/13] [classic] › e2e/vfx-layered-c2.spec.ts:7:2 › C2 painted enemy:yarn-giant: real contact, protected faces and calm flash
+  3) [classic] › e2e/odds-c2.spec.ts:54:1 › C2 daily and tower reward sources expose deterministic Odds 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Login gift odds', exact: true })
+
+
+      12 | async function disclose(page:Page,name:string){
+      13 |  const trigger=page.getByRole('button',{name,exact:true});
+    > 14 |  await trigger.click();const dialog=page.getByRole('dialog',{name,exact:true});
+         |                ^
+      15 |  await expect(dialog).toBeVisible();await expect(dialog.getByRole('heading',{name:'Odds',exact:true})).toBeVisible();
+      16 |  await page.keyboard.press('Shift+Tab');
+      17 |  expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);
+        at disclose (/Users/bao/taskbar-hero-chain/apps/web/e2e/odds-c2.spec.ts:14:16)
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/odds-c2.spec.ts:58:17
+
+    Error Context: ../../work/v3solo-e2e-local/odds-c2-C2-daily-and-tower-0b38b-s-expose-deterministic-Odds-classic/error-context.md
+
+
+(node:93756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/13] [classic] › e2e/odds-c2.spec.ts:68:1 › C2 equipment invitations show their live hard guarantee and selector price
+  4) [classic] › e2e/odds-c2.spec.ts:68:1 › C2 equipment invitations show their live hard guarantee and selector price 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Invitation odds', exact: true })
+
+
+      12 | async function disclose(page:Page,name:string){
+      13 |  const trigger=page.getByRole('button',{name,exact:true});
+    > 14 |  await trigger.click();const dialog=page.getByRole('dialog',{name,exact:true});
+         |                ^
+      15 |  await expect(dialog).toBeVisible();await expect(dialog.getByRole('heading',{name:'Odds',exact:true})).toBeVisible();
+      16 |  await page.keyboard.press('Shift+Tab');
+      17 |  expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);
+        at disclose (/Users/bao/taskbar-hero-chain/apps/web/e2e/odds-c2.spec.ts:14:16)
+        at /Users/bao/taskbar-hero-chain/apps/web/e2e/odds-c2.spec.ts:71:17
+
+    Error Context: ../../work/v3solo-e2e-local/odds-c2-C2-equipment-invit-7e6e1-uarantee-and-selector-price-classic/error-context.md
+
+
+  4 failed
+    [classic] › e2e/odds-c2.spec.ts:36:1 › C2 nested tailoring and salvage Odds keep the workshop open on Escape 
+    [classic] › e2e/odds-c2.spec.ts:54:1 › C2 daily and tower reward sources expose deterministic Odds 
+    [classic] › e2e/odds-c2.spec.ts:68:1 › C2 equipment invitations show their live hard guarantee and selector price 
+    [classic] › e2e/text-diet-c2.spec.ts:29:1 › C2 battle controls have separate pointer targets at every supported viewport 
+  9 passed (2.5m)
+undefined
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config ../../scripts/v3b2/q1-playwright.config.mts --last-failed

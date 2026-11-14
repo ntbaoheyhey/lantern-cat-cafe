@@ -1,0 +1,776 @@
+[
+  {
+    "name": "q5-formant-probes",
+    "pid": 56763,
+    "command": [
+      "nohup",
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-formant-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-formant-probes.log",
+    "started": "2026-11-13T17:25:49Z",
+    "note": "Recovered original PID after job-ledger directory race; no restart.",
+    "completed": "2026-11-13T17:32:55.509979+00:00"
+  },
+  {
+    "name": "q5-onset-probes",
+    "pid": 59376,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-onset-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-onset-probes.log",
+    "started": "2026-11-13T17:32:55.509979+00:00",
+    "completed": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-wording-probes",
+    "pid": 61270,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-wording-probes.log",
+    "started": "2026-11-13T17:37:56.543236+00:00",
+    "completed": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-wording-complete",
+    "pid": 62888,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-wording-complete.log",
+    "started": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-menu-probes",
+    "pid": 62889,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-probes.log",
+    "started": "2026-11-13T17:43:05.426596+00:00"
+  },
+  {
+    "name": "q5-clover-round2",
+    "pid": 63895,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json",
+      "--label",
+      "wording-clover-round2",
+      "--cues",
+      "voice.clover.ult.charge"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-clover-round2.log",
+    "started": "2026-11-13T17:45:11.487091+00:00"
+  },
+  {
+    "name": "q5-menu-delivery",
+    "pid": 64036,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py",
+      "--delivery"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-delivery.log",
+    "started": "2026-11-13T17:45:35.904599+00:00",
+    "ended": "2026-11-13T17:46:38.476461+00:00",
+    "reason": "Stopped to isolate probe outputs by method before resuming."
+  },
+  {
+    "name": "q5-menu-delivery-resume",
+    "pid": 64440,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-probes.py",
+      "--delivery"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-delivery-resume.log",
+    "started": "2026-11-13T17:46:38.476461+00:00"
+  },
+  {
+    "name": "q5-callout-publication",
+    "pid": 64908,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-select-callouts.py",
+      "--publish"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-callout-publication.log",
+    "started": "2026-11-13T17:48:34.012030+00:00"
+  },
+  {
+    "name": "q5-integration-vite",
+    "pid": 67841,
+    "command": [
+      "node",
+      "/Users/bao/taskbar-hero-chain/apps/web/node_modules/vite/bin/vite.js",
+      "--config",
+      "vite.solo.config.mts",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "5996",
+      "--strictPort"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-integration-vite.log",
+    "started": "2026-11-13T17:56:40.937022+00:00"
+  },
+  {
+    "name": "q5-full-current",
+    "pid": 68133,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-current.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-full-current.log",
+    "started": "2026-11-13T17:57:26.015948+00:00",
+    "note": "Wait for existing suite67408, pause only owned sims, capture six full scenes, finally resume sims."
+  },
+  {
+    "name": "q5-isolate-buses",
+    "pid": 97905,
+    "command": [
+      "python3",
+      "scripts/audio/q5-isolate-buses.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-isolate-buses.log",
+    "started": "2026-11-13T18:07:52.541177+00:00"
+  },
+  {
+    "name": "q5-tone-pilot",
+    "pid": 98622,
+    "command": [
+      "python3",
+      "work/q5-tone-pilot.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-tone-pilot.log",
+    "started": "2026-11-13T18:10:49.198890+00:00"
+  },
+  {
+    "name": "q5-menu-phrases",
+    "pid": 6594,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-phrases.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-phrases.log",
+    "started": "2026-11-13T18:12:35.702992+00:00"
+  },
+  {
+    "name": "q5-full24",
+    "pid": 8966,
+    "command": [
+      "python3",
+      "work/q5-render-24.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-full-24.log",
+    "started": "2026-11-13T18:19:28.572177+00:00"
+  },
+  {
+    "name": "q5-balanced25-pilot",
+    "pid": 26019,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-balanced-pilot.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-balanced25-pilot.log",
+    "started": "2026-11-13T18:34:02.877052+00:00"
+  },
+  {
+    "name": "q5-processing-probes",
+    "pid": 26473,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-processing-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-processing-probes.log",
+    "started": "2026-11-13T18:36:01.113312+00:00"
+  },
+  {
+    "name": "q5-capture26",
+    "pid": 27653,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-26.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture26.log",
+    "started": "2026-11-13T18:39:36.501669+00:00"
+  },
+  {
+    "name": "q5-stems26",
+    "pid": 27980,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-stems26.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stems26.log",
+    "started": "2026-11-13T18:41:22.447249+00:00",
+    "note": "Wait for capture27653, then pause owned simulations and record five simultaneous real buses. Diagnostic only."
+  },
+  {
+    "name": "q5-stems-clocked",
+    "pid": 29133,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-stems-clocked.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stems-clocked.log",
+    "started": "2026-11-13T18:48:24.692807+00:00"
+  },
+  {
+    "name": "q5-menu-stems",
+    "pid": 29276,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-menu-stems.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-stems.log",
+    "started": "2026-11-13T18:49:04.018297+00:00"
+  },
+  {
+    "name": "q5-menu-codec-probes",
+    "pid": 45716,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-probes.log",
+    "started": "2026-11-13T18:56:48.579161+00:00"
+  },
+  {
+    "name": "q5-menu-codec-repaired",
+    "pid": 64956,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-probes-repaired.log",
+    "started": "2026-11-13T19:01:29.032484+00:00"
+  },
+  {
+    "name": "q5-capture27",
+    "pid": 76592,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-27.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture27.log",
+    "started": "2026-11-13T19:03:53.068651+00:00"
+  },
+  {
+    "name": "q5-scene27-clarity",
+    "pid": 77020,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture27-clarity.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene27-clarity.log",
+    "started": "2026-11-13T19:05:32.371954+00:00",
+    "note": "Wait for capture27, then isolated clarity guard; no reference inputs."
+  },
+  {
+    "name": "q5-menu-codec-mallow2-28",
+    "pid": 77437,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture27-menu.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-codec-mallow2-28.log",
+    "started": "2026-11-13T19:07:43.521534+00:00",
+    "note": "Second actual home utterance had no contour in27; preserve words and source identity, test codec-resistant delivery."
+  },
+  {
+    "name": "q5-articulation-room",
+    "pid": 78049,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "articulation"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-articulation-room.log",
+    "started": "2026-11-13T19:09:53.068714+00:00"
+  },
+  {
+    "name": "q5-tea-greeting",
+    "pid": 78050,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py",
+      "--basename",
+      "mallow-2.flac",
+      "--label",
+      "menu-tea-28",
+      "--text",
+      "Tea is ready!"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-tea-greeting.log",
+    "started": "2026-11-13T19:09:53.071505+00:00"
+  },
+  {
+    "name": "q5-gentle-clarity",
+    "pid": 78370,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-scene-clarity.py",
+      "--shelf",
+      "-6",
+      "--label",
+      "scene28-gentle",
+      "--cues",
+      "voice.mochi.ult.release,voice.soot.ult.charge,voice.mallow.ult.charge,voice.cinnamon.ult.charge,voice.velvet.ult.release"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-gentle-clarity.log",
+    "started": "2026-11-13T19:10:55.820565+00:00"
+  },
+  {
+    "name": "q5-band-battle",
+    "pid": 78578,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "band"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-band-battle.log",
+    "started": "2026-11-13T19:11:22.062956+00:00"
+  },
+  {
+    "name": "q5-score-battle28",
+    "pid": 79359,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "battle",
+      "score"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-score-battle28.log",
+    "started": "2026-11-13T19:15:31.043636+00:00"
+  },
+  {
+    "name": "q5-score-boss28",
+    "pid": 86940,
+    "command": [
+      "node",
+      "scripts/audio/q5-room-probes.mjs",
+      "boss",
+      "score"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-score-boss28.log",
+    "started": "2026-11-13T19:16:39.338320+00:00"
+  },
+  {
+    "name": "q5-light-clarity28",
+    "pid": 86941,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-scene-clarity.py",
+      "--shelf",
+      "-3",
+      "--label",
+      "scene28-light"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-light-clarity28.log",
+    "started": "2026-11-13T19:16:39.340722+00:00"
+  },
+  {
+    "name": "q5-scene28-wording",
+    "pid": 88276,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-wording-probes.py",
+      "--authoring",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/callouts.json",
+      "--label",
+      "scene28-wording",
+      "--cues",
+      "voice.biscuit.ult.release,voice.cinnamon.ult.charge,voice.cinnamon.skill.cinnamon-2,voice.kettle-knight.skill.enemy:kettle-knight:basic,voice.practice-cushion.skill.enemy:practice-cushion:basic,voice.rain-spool.skill.enemy:rain-spool,voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+      "--clarity",
+      "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/q5/scene28-light-clarity.json",
+      "--shelf",
+      "-3"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-wording.log",
+    "started": "2026-11-13T19:21:58.624837+00:00"
+  },
+  {
+    "name": "q5-scene28-publication",
+    "pid": 88794,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-select-callouts.py",
+      "--reports",
+      "scene28-wording",
+      "--label",
+      "scene28-selection",
+      "--publish"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-scene28-publication.log",
+    "started": "2026-11-13T19:23:40.467191+00:00"
+  },
+  {
+    "name": "q5-bark-fallback-budget",
+    "pid": 99570,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget.log",
+    "started": "2026-11-13T19:31:12.684020+00:00"
+  },
+  {
+    "name": "q5-bark-fallback-budget-r2",
+    "pid": 99714,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget-r2.log",
+    "started": "2026-11-13T19:31:42.006778+00:00",
+    "note": "First attempt stopped before publication because ffmpeg wrote progress after the loudnorm JSON. Parse one JSON object and preserve the failed log."
+  },
+  {
+    "name": "q5-bark-fallback-budget-r3",
+    "pid": 4580,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/repack-bark-fallback.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-bark-fallback-budget-r3.log",
+    "started": "2026-11-13T19:32:46.890208+00:00",
+    "note": "All12 identities pass40kbps. Five sprite levels miss by0.05\u20130.19dB. Add0.3dB constant gain and remeasure, no threshold change."
+  },
+  {
+    "name": "q5-capture28-current",
+    "pid": 8825,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-28.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture28-current.log",
+    "started": "2026-11-13T19:34:41.813640+00:00",
+    "note": "Six full real-output scenes then9 fixtures/speeds, committed A95ea0d843+B76b441a35. Pauses owned simulations and resumes in finally."
+  },
+  {
+    "name": "q5-capture28-mixed-speech",
+    "pid": 9082,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-after-capture28-speech.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture28-mixed-speech.log",
+    "started": "2026-11-13T19:35:56.873124+00:00",
+    "note": "Wait for8825 to finish and resume simulations; then diagnostic ASR of actual mixed callouts, two local CPU threads."
+  },
+  {
+    "name": "q5-capture29-current",
+    "pid": 18614,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-29.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture29-current.log",
+    "started": "2026-11-13T19:46:33.257529+00:00",
+    "note": "Wait for capture28 and its mixed-speech check; rebuild committed overlay, pause owned simulations, capture six scenes; resume in finally."
+  },
+  {
+    "name": "q5-menu-welcome30",
+    "pid": 50653,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-menu-codec-probes.py",
+      "--basename",
+      "mallow-1.flac",
+      "--label",
+      "menu-welcome30",
+      "--text",
+      "Come on in!"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-menu-welcome30.log",
+    "started": "2026-11-13T20:11:50.231691+00:00",
+    "note": "First greeting remains masked at production gain. Try a more natural invitation with longer spoken inflection; encoded recognition and unchanged contour measure first."
+  },
+  {
+    "name": "q5-capture29-mixed-speech",
+    "pid": 54052,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/recognize-mixed-callouts.py",
+      "29-balanced-under-speech"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture29-mixed-speech.log",
+    "started": "2026-11-13T20:12:44.596054+00:00",
+    "note": "Read-only mixed diagnostic before updating integration; two local CPU threads."
+  },
+  {
+    "name": "q5-capture30-current",
+    "pid": 64990,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-30.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture30-current.log",
+    "started": "2026-11-13T20:16:06.220658+00:00",
+    "note": "Home first; only if voice band passes capture remaining five scenes and9 fixture/speed matrix. Committed source07f86a63b. Pause owned sims and resume in finally."
+  },
+  {
+    "name": "q5-capture31-current",
+    "pid": 74435,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-31.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture31-current.log",
+    "started": "2026-11-13T20:26:44.307337+00:00",
+    "note": "Home full capture first and every numeric band checked; then remaining scenes and9 voice cases. Owned simulations pause/resume in finally."
+  },
+  {
+    "name": "q5-boss31-stems",
+    "pid": 78000,
+    "command": [
+      "node",
+      "scripts/audio/render-runtime.mjs"
+    ],
+    "env": {
+      "MIX_TRIAL": "diagnostic-31-boss-stems",
+      "AUDIO_SCENES": "boss",
+      "AUDIO_SECONDS": "90",
+      "DIAGNOSTIC_STEMS": "1"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-boss31-stems.log",
+    "started": "2026-11-13T20:30:51.400804+00:00",
+    "note": "Diagnostic clocked buses, current immutable integration. Does not alter output or acceptance captures. No FPS/CPU metrics; economy remains paused by74435."
+  },
+  {
+    "name": "q5-dialogue31-probes",
+    "pid": 81092,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue31-probes.log",
+    "started": "2026-11-13T20:34:40.510340+00:00",
+    "note": "Diagnostic only. No production source mutation or acceptance replacement."
+  },
+  {
+    "name": "q5-capture31-mixed-speech",
+    "pid": 81093,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/recognize-mixed-callouts.py",
+      "31-menu-percussion"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture31-mixed-speech.log",
+    "started": "2026-11-13T20:34:40.510340+00:00",
+    "note": "Diagnostic only. No production source mutation or acceptance replacement."
+  },
+  {
+    "name": "q5-dialogue31-recognition",
+    "pid": 95185,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue31-recognition.log",
+    "started": "2026-11-13T20:35:32.947722+00:00"
+  },
+  {
+    "name": "q5-stem31-alignment",
+    "pid": 1653,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-stem-alignment.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-stem31-alignment.log",
+    "started": "2026-11-13T20:36:35.887504+00:00"
+  },
+  {
+    "name": "q5-dialogue32-probes",
+    "pid": 1902,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json",
+      "32"
+    ],
+    "env": {},
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue32-probes.log",
+    "started": "2026-11-13T20:37:34.388799+00:00",
+    "note": "Diagnostic only; prior four masking probes inconclusive. No runtime source changes."
+  },
+  {
+    "name": "q5-forge31-stems",
+    "pid": 1903,
+    "command": [
+      "node",
+      "scripts/audio/render-runtime.mjs"
+    ],
+    "env": {
+      "AUDIO_RUNTIME_ROOT": "/Users/bao/taskbar-hero-chain/work/v3solo-integration",
+      "AUDIO_URL": "http://127.0.0.1:5996",
+      "AUDIO_PYTHON": "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "MIX_TRIAL": "diagnostic-31-forge-stems",
+      "AUDIO_SCENES": "forge",
+      "DIAGNOSTIC_STEMS": "1"
+    },
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge31-stems.log",
+    "started": "2026-11-13T20:37:34.388799+00:00",
+    "note": "Diagnostic only; prior four masking probes inconclusive. No runtime source changes."
+  },
+  {
+    "name": "q5-dialogue32-recognition",
+    "pid": 2127,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py",
+      "32"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue32-recognition.log",
+    "started": "2026-11-13T20:38:48.137557+00:00"
+  },
+  {
+    "name": "q5-forge-body-probes",
+    "pid": 2130,
+    "command": [
+      "python3",
+      "work/q5-forge-body-probes.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-body-probes.log",
+    "started": "2026-11-13T20:38:48.218571+00:00"
+  },
+  {
+    "name": "q5-forge-original32-probes",
+    "pid": 2621,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original32-probes.log",
+    "started": "2026-11-13T20:40:27.718337+00:00",
+    "note": "New original workshop composition after four failed midrange EQ variants. Source/codec diagnostics only."
+  },
+  {
+    "name": "q5-dialogue33-probes",
+    "pid": 2823,
+    "command": [
+      "node",
+      "scripts/audio/q5-dialogue-probes.mjs",
+      "reports/v3-shell/b2/mix/diagnostic-31-boss-stems-boss.json",
+      "33"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue33-probes.log",
+    "started": "2026-11-13T20:41:34.249783+00:00"
+  },
+  {
+    "name": "q5-forge-original33-probes",
+    "pid": 2824,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original33-probes.log",
+    "started": "2026-11-13T20:41:34.249783+00:00"
+  },
+  {
+    "name": "q5-dialogue33-recognition",
+    "pid": 3005,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-recognize-dialogue-probes.py",
+      "33"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue33-recognition.log",
+    "started": "2026-11-13T20:42:31.871746+00:00"
+  },
+  {
+    "name": "q5-forge-original33-publication",
+    "pid": 3006,
+    "command": [
+      "/Users/bao/taskbar-hero-chain/tools/.venv/bin/python",
+      "scripts/audio/q5-forge-score.py",
+      "--publish",
+      "--variant",
+      "metal-wood"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-forge-original33-publication.log",
+    "started": "2026-11-13T20:42:31.871746+00:00"
+  },
+  {
+    "name": "q5-capture33-forge",
+    "pid": 4447,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-33.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture33-forge.log",
+    "started": "2026-11-13T20:47:57.579423+00:00",
+    "note": "Actual forge five enhancements and fusion, committed score33; pause owned simulations and resume in finally."
+  },
+  {
+    "name": "q5-dialogue34",
+    "pid": 4881,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-dialogue34.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-dialogue34.log",
+    "started": "2026-11-13T20:48:41.726933+00:00",
+    "note": "Fourth stem-balance method: soften high consonant shelf under forward dialogue; no change to timing, source take, meter or thresholds."
+  },
+  {
+    "name": "q5-capture35-boss",
+    "pid": 10619,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-35.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture35-boss.log",
+    "started": "2026-11-13T20:51:40.433098+00:00",
+    "note": "Full120s current boss; then mixed ASR. Pause owned simulations only while recording; resume in finally."
+  },
+  {
+    "name": "q5-capture36-boss",
+    "pid": 16889,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-36.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture36-boss.log",
+    "started": "2026-11-13T20:55:16.760318+00:00",
+    "note": "Second full120s dialogue balance after boss35 failed density. Pause owned simulations during capture; mixed ASR afterwards."
+  },
+  {
+    "name": "q5-capture37-boss",
+    "pid": 25245,
+    "command": [
+      "python3",
+      "/Users/bao/taskbar-hero-chain/work/q5-render-37.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-capture37-boss.log",
+    "started": "2026-11-13T20:58:24.332117+00:00",
+    "note": "Third runtime balance candidate, full120s, all authored voice triggers intact. Pause owned simulations during capture and resume in finally."
+  },
+  {
+    "name": "q5-finish37",
+    "pid": 25627,
+    "command": [
+      "python3",
+      "work/q5-finish-37.py"
+    ],
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q5-finish37.log",
+    "started": "2026-11-13T20:59:13.685495+00:00",
+    "note": "Wait for boss37; abort on failed bands. Then remaining full scenes, matrix, mixedASR, full unit/types/browser suites, reel and V/S5 checker. No source edits."
+  }
+]

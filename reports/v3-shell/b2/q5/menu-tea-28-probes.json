@@ -1,0 +1,260 @@
+{
+  "date": "2026-11-13T19:09:56.497887+00:00",
+  "sourceProduction": {
+    "path": "reports/v3-shell/b2/MENU-VOICE-LINES.json",
+    "sha256": "7f858de44cf849b71cdfc36d0b452f688d230ad2a6080b236110ae0ffe118b02"
+  },
+  "method": "The first greeting lost its contour in real encoded playback. Preserve vowel formants while giving the welcome a longer falling inflection. Test recognition, loudness and the exact shipping64kbps Opus codec; fresh browser evidence remains required.",
+  "rows": [
+    {
+      "source": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-2.flac",
+        "sha256": "744924ebcddfaca2ef9de37b5bfdd192c7488b3ab00f4adacbb18796ffd46454"
+      },
+      "cueId": "voice.guide.idle",
+      "unitId": "mallow",
+      "originalText": "Come and have tea!",
+      "attempts": [
+        {
+          "path": "work/v3b2/callouts/q5-menu-codec/menu-tea-28/mallow-2-0.flac",
+          "sha256": "b5db61b973eb0b5a5d7813d26274a8acd65b954f026b2075d34f18b8e699c24e",
+          "text": "Tea is ready!",
+          "attempt": 1,
+          "production": {
+            "profile": {
+              "source": 333916,
+              "baseSemitones": 7.03,
+              "range": 5,
+              "speed": 0.14,
+              "brightness": 4727,
+              "breathiness": 0.09,
+              "formantShift": 1.24,
+              "signature": "trill",
+              "personality": "Impatient fire whisk",
+              "lines": {
+                "select": [
+                  "Heat it up!"
+                ],
+                "attack": [
+                  "Sizzle!",
+                  "Sugar rush!",
+                  "Hot stuff!"
+                ],
+                "skill": [
+                  "Kettle's boiling!"
+                ],
+                "ult": [
+                  "Burn bright!"
+                ],
+                "hit": [
+                  "Still hot!"
+                ],
+                "death": [
+                  "Flame low."
+                ],
+                "victory": [
+                  "Perfectly toasted!"
+                ]
+              },
+              "rolloff": 2.42,
+              "colorHz": 1578,
+              "colorDb": 13.79,
+              "vowelMix": 0.33
+            },
+            "settings": {
+              "pitchWeight": 0.1,
+              "filterWeight": 0,
+              "grainGain": 0.08,
+              "tailSeconds": 0.2,
+              "eq": {
+                "highpass": 45.0,
+                "lowpass": 2300.0,
+                "highSlope": 2.0,
+                "lowSlope": 2.0,
+                "resonanceHz": 2060.3040510092724,
+                "resonanceDb": 15.19707286235568
+              },
+              "preserveFormants": true,
+              "spokenCore": 0.45,
+              "paceMultiplier": 1.15,
+              "phraseAccent": 4
+            },
+            "semitones": 0.528,
+            "grains": [
+              {
+                "syllable": "tea",
+                "vowel": "e",
+                "class": "plosive",
+                "consonantSource": "freesound:691910:consonants/691910-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.3,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 0.8125
+              },
+              {
+                "syllable": "is",
+                "vowel": "i",
+                "class": "plosive",
+                "consonantSource": "freesound:721074:consonants/721074-01.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.42,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 1.625
+              },
+              {
+                "syllable": "rea",
+                "vowel": "e",
+                "class": "liquid",
+                "consonantSource": "freesound:843435:consonants/843435-07.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.3,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 2.4375
+              },
+              {
+                "syllable": "dy",
+                "vowel": "i",
+                "class": "plosive",
+                "consonantSource": "freesound:764351:consonants/764351-02.flac",
+                "vowelSource": "freesound:333916:cats/333916.flac",
+                "sourceStartSeconds": 0.42,
+                "durationSeconds": 0.13720000000000002,
+                "contourSemitones": 3.25
+              }
+            ],
+            "speechModel": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ljspeech/high",
+            "firstWordMs": 40
+          },
+          "sources": [
+            {
+              "path": "assets/audio-sources/b2/cats/333916.flac",
+              "sha256": "1ea3d31958873d7cad2d2630d7c9b0f698caaf5d2c37d3517923a489c3d61498"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/691910-01.flac",
+              "sha256": "7a3ceb0f0ffb4e5c3bf214e66c44995062b2836f78da35a24a522be8c16aa38b"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/721074-01.flac",
+              "sha256": "35742f6bdcdf5c7130aec7cb162d7aca9bd3b3ec4ec5dae0fbb1d3dc6ee45990"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/843435-07.flac",
+              "sha256": "8158b1623023e26a84e5bed91872f2269e68ec61c3ac8c3d70853377ab6625df"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-02.flac",
+              "sha256": "8e7f954eee28842ed5c6dae6d95e3e9d60696b3cc07bcce966eef338cd69b015"
+            },
+            {
+              "path": "assets/audio-sources/b2/consonants/764351-14.flac",
+              "sha256": "ccadc032913b65ce827816bf70295547cfa3a2787cefe96917b475fdb93764f1"
+            }
+          ],
+          "integratedLufs": -16.03,
+          "truePeakDbTP": -4.35,
+          "expected": "Tea is ready!",
+          "recognized": "Tea is ready.",
+          "wordAccuracy": 1.0,
+          "model": "faster-whisper small.en int8 CPU",
+          "prompt": null,
+          "beamSize": 5,
+          "temperature": 0,
+          "language": "en",
+          "isolatedMetrics": {
+            "onsetsPerSecond": 4.829524713440899,
+            "layersPerOnset": 1.0,
+            "musicBedFraction": 0.8583333333333333,
+            "voiceContoursPerMinute": 48.295247134408996,
+            "tickTransientsPerSecond": 4.829524713440899,
+            "silenceFraction": 0.14166666666666666,
+            "onsetCount": 6,
+            "onsetBandCounts": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              2
+            ],
+            "onsetTimes": [
+              0.063,
+              0.333,
+              0.422,
+              0.692,
+              0.742,
+              0.971
+            ],
+            "voiceContourEvents": [
+              {
+                "start": 0.12,
+                "duration": 0.259,
+                "semitones": 12.728
+              }
+            ],
+            "tickCount": 6,
+            "bandEnergyFractions": [
+              0.0035195557325583557,
+              0.7906032395489379,
+              0.14769394642743783,
+              0.05818325829106527
+            ],
+            "integratedLufs": -16.03,
+            "loudnessRange": 0.0,
+            "truePeakDbTP": -4.35,
+            "durationSeconds": 1.242358276643991
+          },
+          "encoded": {
+            "path": "work/v3b2/callouts/q5-menu-codec/menu-tea-28/mallow-2-0.opus",
+            "sha256": "174f3b944fefa58d2eaa79acd6e4f3853e521fee1846c5fb8b29c8208af6727b",
+            "metrics": {
+              "onsetsPerSecond": 4.829524713440899,
+              "layersPerOnset": 0.6666666666666666,
+              "musicBedFraction": 0.8583333333333333,
+              "voiceContoursPerMinute": 48.295247134408996,
+              "tickTransientsPerSecond": 4.829524713440899,
+              "silenceFraction": 0.14166666666666666,
+              "onsetCount": 6,
+              "onsetBandCounts": [
+                1,
+                0,
+                1,
+                1,
+                1,
+                0
+              ],
+              "onsetTimes": [
+                0.063,
+                0.273,
+                0.422,
+                0.692,
+                0.742,
+                0.981
+              ],
+              "voiceContourEvents": [
+                {
+                  "start": 0.12,
+                  "duration": 0.259,
+                  "semitones": 12.728
+                }
+              ],
+              "tickCount": 6,
+              "bandEnergyFractions": [
+                0.0033999878737726915,
+                0.7909867820326401,
+                0.14698935152580658,
+                0.05862387856778097
+              ],
+              "integratedLufs": -16.0,
+              "loudnessRange": 0.0,
+              "truePeakDbTP": -4.12,
+              "durationSeconds": 1.242358276643991
+            }
+          },
+          "meetsDiagnosticCriteria": true
+        }
+      ],
+      "complete": true
+    }
+  ]
+}

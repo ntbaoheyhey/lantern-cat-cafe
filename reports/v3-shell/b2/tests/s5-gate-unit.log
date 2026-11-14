@@ -1,0 +1,23 @@
+✔ every threshold equals the user prompt, including strict numeric endpoints (0.93125ms)
+✔ threshold table is frozen (0.193958ms)
+✔ all required gate IDs and thresholds are listed with measurements (3.796375ms)
+✔ absent evidence fails every production gate, including maximum and every checks (3.068334ms)
+✔ malformed JSON cannot pass a gate or crash the entire checker (3.837833ms)
+✔ empty arrays cannot pass universal checks (5.70125ms)
+✔ a missing trace cannot pass the CPU gate despite a small reported percentage (2.743583ms)
+✔ strict CPU limit rejects exactly 8 percent and accepts 7.99 with a verified trace (4.723916ms)
+✔ hash mismatches invalidate evidence logs (4.243292ms)
+✔ audio measurements must use the current analyser on both sides and cannot be isolated diagnostic stems (5.569875ms)
+✔ full-demand burn gate rejects a deflationary 1.61, accepts the exact 1.60 limit (2.704041ms)
+✔ sensitivity needs both positive and negative perturbations for each assumption (4.442291ms)
+✔ future-dated evidence cannot pre-complete sync or freeze (3.08875ms)
+✔ claimed PARTIAL cannot bypass missing evidence or minimum gates (0.161334ms)
+✔ disallowed non-commercial audio is rejected even when its file hash matches (4.393958ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.964042

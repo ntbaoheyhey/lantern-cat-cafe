@@ -1,0 +1,19 @@
+{
+  "pid": 37303,
+  "command": [
+    "node",
+    "tools/chain/economy-lab/native-sensitivity.mjs",
+    "--label",
+    "NATIVE-SENSITIVITY",
+    "--config",
+    "reports/v3-shell/b2/econ/search/round-06-best.json",
+    "--bank",
+    "reports/v3-shell/b2/econ/PROGRESSION-200.json",
+    "--workers",
+    "4"
+  ],
+  "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/tests/q3-native-sensitivity-resume.log",
+  "utc": "2026-11-13T15:45:44.375091+00:00",
+  "resumedCases": 33,
+  "reason": "Recorded PID72306 exited; restore original frozen model and verify completed native-bank checksums before continuing."
+}

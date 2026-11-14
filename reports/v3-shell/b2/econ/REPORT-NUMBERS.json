@@ -1,0 +1,5717 @@
+{
+  "generatedAt": "2026-11-13T22:40:12.559Z",
+  "citations": [
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/burnClaimsMin",
+      "value": 1,
+      "rendered": "1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/fullDemandBurnClaimsMax",
+      "value": 1.6,
+      "rendered": "1.6",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/starRatioMin",
+      "value": 0.9,
+      "rendered": "0.9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/starRatioMax",
+      "value": 1.1,
+      "rendered": "1.1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/hourlyRatioMax",
+      "value": 3,
+      "rendered": "3",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/casualLegendaryMin",
+      "value": 10,
+      "rendered": "10",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/casualLegendaryMax",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/heavyLegendaryMin",
+      "value": 5,
+      "rendered": "5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/heavyLegendaryMax",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/botHourlyRatioMax",
+      "value": 0.5,
+      "rendered": "0.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/topPercentWithdrawnShareMax",
+      "value": 0.08,
+      "rendered": "0.08",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustBurnMin",
+      "value": 0.95,
+      "rendered": "0.95",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustStarMin",
+      "value": 0.8,
+      "rendered": "0.8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustStarMax",
+      "value": 1.2,
+      "rendered": "1.2",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/sensitivityDelta",
+      "value": 0.2,
+      "rendered": "0.2",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustBurnMin",
+      "value": 0.95,
+      "rendered": "0.95",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustStarMin",
+      "value": 0.8,
+      "rendered": "0.8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/thresholds/robustStarMax",
+      "value": 1.2,
+      "rendered": "1.2",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/counts/loggedSearches",
+      "value": 24,
+      "rendered": "24",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/counts/unique",
+      "value": 1273,
+      "rendered": "1273",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/scenarios",
+      "value": 18,
+      "rendered": "18",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/seeds",
+      "value": 200,
+      "rendered": "200",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/sensitivityComplete",
+      "value": 85,
+      "rendered": "85",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/sensitivityTotal",
+      "value": 85,
+      "rendered": "85",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/rewards/weeklySpool",
+      "value": 1.05,
+      "rendered": "1.05",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/rewards/chapterSpool",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/rewards/starThreadBankCap",
+      "value": 1,
+      "rendered": "1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/rewards/seasonRankMax",
+      "value": 2,
+      "rendered": "2",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/spool/weeklyNetCap",
+      "value": 6,
+      "rendered": "6",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/spool/feeBp",
+      "value": 1500,
+      "rendered": "1500",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/craft/rebateBp",
+      "value": 9500,
+      "rendered": "9500",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/craft/weeklySpoolCap",
+      "value": 5,
+      "rendered": "5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/fusion/legendary/count",
+      "value": 3,
+      "rendered": "3",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/fusion/legendary/starThread",
+      "value": 1,
+      "rendered": "1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/policy/fusion/legendary/yarn",
+      "value": 18,
+      "rendered": "18",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/burnClaims",
+      "value": 1.1325601375315177,
+      "rendered": "1.133",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/burnClaims",
+      "value": 1.0943823781406476,
+      "rendered": "1.094",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/burnClaims",
+      "value": 1.172504087740404,
+      "rendered": "1.173",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/burnClaims",
+      "value": 1.0103623686994974,
+      "rendered": "1.01",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/burnClaims",
+      "value": 0.9754428858088019,
+      "rendered": "0.975",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/burnClaims",
+      "value": 1.048927930153124,
+      "rendered": "1.049",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/burnClaims",
+      "value": 1.1613688368689794,
+      "rendered": "1.161",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/burnClaims",
+      "value": 1.1260120785653476,
+      "rendered": "1.126",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/burnClaims",
+      "value": 1.2069160512108499,
+      "rendered": "1.207",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/burnClaims",
+      "value": 1.0644022249316372,
+      "rendered": "1.064",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/burnClaims",
+      "value": 1.0182842363528388,
+      "rendered": "1.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/burnClaims",
+      "value": 1.1048835828258285,
+      "rendered": "1.105",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/burnClaims",
+      "value": 1.2053998966147703,
+      "rendered": "1.205",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/burnClaims",
+      "value": 1.1745115588118684,
+      "rendered": "1.175",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/burnClaims",
+      "value": 1.2472995224524777,
+      "rendered": "1.247",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/burnClaims",
+      "value": 1.1397927694029728,
+      "rendered": "1.14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/burnClaims",
+      "value": 1.0949171029861755,
+      "rendered": "1.095",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/burnClaims",
+      "value": 1.1773746136022014,
+      "rendered": "1.177",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/burnClaims",
+      "value": 1.2465782987777148,
+      "rendered": "1.247",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/burnClaims",
+      "value": 1.212370958136718,
+      "rendered": "1.212",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/burnClaims",
+      "value": 1.2848372237361272,
+      "rendered": "1.285",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/burnClaims",
+      "value": 1.128631218089991,
+      "rendered": "1.129",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/burnClaims",
+      "value": 1.102561942866799,
+      "rendered": "1.103",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/burnClaims",
+      "value": 1.1522885543663037,
+      "rendered": "1.152",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/burnClaims",
+      "value": 1.2901498402589255,
+      "rendered": "1.29",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/burnClaims",
+      "value": 1.256668043096088,
+      "rendered": "1.257",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/burnClaims",
+      "value": 1.3288370246122503,
+      "rendered": "1.329",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/burnClaims",
+      "value": 1.1781062228843804,
+      "rendered": "1.178",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/burnClaims",
+      "value": 1.1533041113298264,
+      "rendered": "1.153",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/burnClaims",
+      "value": 1.2038940593019052,
+      "rendered": "1.204",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/burnClaims",
+      "value": 1.3503539334869752,
+      "rendered": "1.35",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/burnClaims",
+      "value": 1.3075272485469915,
+      "rendered": "1.308",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/burnClaims",
+      "value": 1.3824158915118883,
+      "rendered": "1.382",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/burnClaims",
+      "value": 1.2436829916424905,
+      "rendered": "1.244",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/burnClaims",
+      "value": 1.2161264803621232,
+      "rendered": "1.216",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/burnClaims",
+      "value": 1.2715928162355605,
+      "rendered": "1.272",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/burnClaims",
+      "value": 1.2039590142948045,
+      "rendered": "1.204",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/burnClaims",
+      "value": 1.1759376694067545,
+      "rendered": "1.176",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/burnClaims",
+      "value": 1.2432024603475653,
+      "rendered": "1.243",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/burnClaims",
+      "value": 1.0316493374918565,
+      "rendered": "1.032",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/burnClaims",
+      "value": 0.9987222205431739,
+      "rendered": "0.999",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/burnClaims",
+      "value": 1.0651166762719075,
+      "rendered": "1.065",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/burnClaims",
+      "value": 1.223445758929629,
+      "rendered": "1.223",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/burnClaims",
+      "value": 1.1900536277460243,
+      "rendered": "1.19",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/burnClaims",
+      "value": 1.2564022856378143,
+      "rendered": "1.256",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/burnClaims",
+      "value": 1.0698497390434032,
+      "rendered": "1.07",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/burnClaims",
+      "value": 1.0358798368629356,
+      "rendered": "1.036",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/burnClaims",
+      "value": 1.112055135455802,
+      "rendered": "1.112",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/burnClaims",
+      "value": 1.2461802565223086,
+      "rendered": "1.246",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/burnClaims",
+      "value": 1.2054473368885124,
+      "rendered": "1.205",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/burnClaims",
+      "value": 1.277912636690171,
+      "rendered": "1.278",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/burnClaims",
+      "value": 1.1389375819699898,
+      "rendered": "1.139",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/burnClaims",
+      "value": 1.094777357705893,
+      "rendered": "1.095",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/burnClaims",
+      "value": 1.1723600920209125,
+      "rendered": "1.172",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/burnClaims",
+      "value": 1.3008172572213916,
+      "rendered": "1.301",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/burnClaims",
+      "value": 1.2670151410030417,
+      "rendered": "1.267",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/burnClaims",
+      "value": 1.3380524872249746,
+      "rendered": "1.338",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/burnClaims",
+      "value": 1.149429123758826,
+      "rendered": "1.149",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/burnClaims",
+      "value": 1.1285305721952992,
+      "rendered": "1.129",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/burnClaims",
+      "value": 1.1697896874769609,
+      "rendered": "1.17",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/burnClaims",
+      "value": 1.3294608244511092,
+      "rendered": "1.329",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/burnClaims",
+      "value": 1.2963473298090296,
+      "rendered": "1.296",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/burnClaims",
+      "value": 1.3669437431207996,
+      "rendered": "1.367",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/burnClaims",
+      "value": 1.1870897161102654,
+      "rendered": "1.187",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/burnClaims",
+      "value": 1.1652534581276168,
+      "rendered": "1.165",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/burnClaims",
+      "value": 1.2112673976999992,
+      "rendered": "1.211",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/burnClaims",
+      "value": 1.376047288368555,
+      "rendered": "1.376",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/burnClaims",
+      "value": 1.3382921743623004,
+      "rendered": "1.338",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/burnClaims",
+      "value": 1.407053411033056,
+      "rendered": "1.407",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/burnClaims",
+      "value": 1.2454047019238157,
+      "rendered": "1.245",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/burnClaims",
+      "value": 1.2207700575618694,
+      "rendered": "1.221",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/burnClaims",
+      "value": 1.2684234901085774,
+      "rendered": "1.268",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/burnClaims",
+      "value": 1.2812227304585786,
+      "rendered": "1.281",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/burnClaims",
+      "value": 1.2473082736759298,
+      "rendered": "1.247",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/burnClaims",
+      "value": 1.3139424865769669,
+      "rendered": "1.314",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/burnClaims",
+      "value": 1.0549157727629246,
+      "rendered": "1.055",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/burnClaims",
+      "value": 1.0253763656113544,
+      "rendered": "1.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/burnClaims",
+      "value": 1.0843833917762493,
+      "rendered": "1.084",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/burnClaims",
+      "value": 1.2806830310555442,
+      "rendered": "1.281",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/burnClaims",
+      "value": 1.2450087495982114,
+      "rendered": "1.245",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/burnClaims",
+      "value": 1.30809221163586,
+      "rendered": "1.308",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/burnClaims",
+      "value": 1.0867399855359023,
+      "rendered": "1.087",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/burnClaims",
+      "value": 1.050737973446752,
+      "rendered": "1.051",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/burnClaims",
+      "value": 1.1239892454987666,
+      "rendered": "1.124",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/burnClaims",
+      "value": 1.287074898536118,
+      "rendered": "1.287",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/burnClaims",
+      "value": 1.2574709341979569,
+      "rendered": "1.257",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/burnClaims",
+      "value": 1.3179256041527383,
+      "rendered": "1.318",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/burnClaims",
+      "value": 1.143580856763172,
+      "rendered": "1.144",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/burnClaims",
+      "value": 1.1082452200530803,
+      "rendered": "1.108",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/burnClaims",
+      "value": 1.1763937848997768,
+      "rendered": "1.176",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/burnClaims",
+      "value": 1.3568026644714961,
+      "rendered": "1.357",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/burnClaims",
+      "value": 1.3251927223224198,
+      "rendered": "1.325",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/burnClaims",
+      "value": 1.3862585442958404,
+      "rendered": "1.386",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/burnClaims",
+      "value": 1.1732660425875088,
+      "rendered": "1.173",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/burnClaims",
+      "value": 1.1555981096433632,
+      "rendered": "1.156",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/burnClaims",
+      "value": 1.1935791082273486,
+      "rendered": "1.194",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/burnClaims",
+      "value": 1.3757784716503432,
+      "rendered": "1.376",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/burnClaims",
+      "value": 1.3449380704495775,
+      "rendered": "1.345",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/burnClaims",
+      "value": 1.405787419554513,
+      "rendered": "1.406",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/burnClaims",
+      "value": 1.2012437192051801,
+      "rendered": "1.201",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/burnClaims",
+      "value": 1.1794551050216155,
+      "rendered": "1.179",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/burnClaims",
+      "value": 1.2211075248370409,
+      "rendered": "1.221",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/burnClaims",
+      "value": 1.4031497173815286,
+      "rendered": "1.403",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/burnClaims",
+      "value": 1.3715427195589736,
+      "rendered": "1.372",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/burnClaims",
+      "value": 1.432391898538702,
+      "rendered": "1.432",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/burnClaims",
+      "value": 1.2522683077846992,
+      "rendered": "1.252",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/burnClaims",
+      "value": 1.2301475257014953,
+      "rendered": "1.23",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/burnClaims",
+      "value": 1.2723448461133455,
+      "rendered": "1.272",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/starRatio",
+      "value": 16.304199198730153,
+      "rendered": "16.304",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/starRatio",
+      "value": 15.574424020236203,
+      "rendered": "15.574",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/starRatio",
+      "value": 17.466042732819705,
+      "rendered": "17.466",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/starRatio",
+      "value": 1.0764384041195667,
+      "rendered": "1.076",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/starRatio",
+      "value": 1.0702466085642766,
+      "rendered": "1.07",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/starRatio",
+      "value": 1.0817434869338118,
+      "rendered": "1.082",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/starRatio",
+      "value": 18.925152524389166,
+      "rendered": "18.925",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/starRatio",
+      "value": 17.96982553767484,
+      "rendered": "17.97",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/starRatio",
+      "value": 20.189429175475688,
+      "rendered": "20.189",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/starRatio",
+      "value": 1.0839902457653414,
+      "rendered": "1.084",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/starRatio",
+      "value": 1.0792681259924821,
+      "rendered": "1.079",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/starRatio",
+      "value": 1.0902520901509012,
+      "rendered": "1.09",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/starRatio",
+      "value": 23.299286330108245,
+      "rendered": "23.299",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/starRatio",
+      "value": 21.854957983193277,
+      "rendered": "21.855",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/starRatio",
+      "value": 25.346068539223705,
+      "rendered": "25.346",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/starRatio",
+      "value": 1.099748973244465,
+      "rendered": "1.1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/starRatio",
+      "value": 1.0927897588249538,
+      "rendered": "1.093",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/starRatio",
+      "value": 1.1081048660909012,
+      "rendered": "1.108",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/starRatio",
+      "value": 16.43913269023118,
+      "rendered": "16.439",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/starRatio",
+      "value": 15.487877073906485,
+      "rendered": "15.488",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/starRatio",
+      "value": 17.455047341288587,
+      "rendered": "17.455",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/starRatio",
+      "value": 1.059422447227628,
+      "rendered": "1.059",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/starRatio",
+      "value": 1.0557955363393203,
+      "rendered": "1.056",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/starRatio",
+      "value": 1.0630992989499697,
+      "rendered": "1.063",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/starRatio",
+      "value": 18.833304111267783,
+      "rendered": "18.833",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/starRatio",
+      "value": 17.756231648499195,
+      "rendered": "17.756",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/starRatio",
+      "value": 20.493201150606126,
+      "rendered": "20.493",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/starRatio",
+      "value": 1.065106973153521,
+      "rendered": "1.065",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/starRatio",
+      "value": 1.060901145600021,
+      "rendered": "1.061",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/starRatio",
+      "value": 1.0701799945020087,
+      "rendered": "1.07",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/starRatio",
+      "value": 23.04334798135318,
+      "rendered": "23.043",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/starRatio",
+      "value": 21.57026814956332,
+      "rendered": "21.57",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/starRatio",
+      "value": 24.84045655182733,
+      "rendered": "24.84",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/starRatio",
+      "value": 1.0747935634764119,
+      "rendered": "1.075",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/starRatio",
+      "value": 1.070013750049369,
+      "rendered": "1.07",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/starRatio",
+      "value": 1.07977907881834,
+      "rendered": "1.08",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/starRatio",
+      "value": 14.774884185757355,
+      "rendered": "14.775",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/starRatio",
+      "value": 14.108462748931677,
+      "rendered": "14.108",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/starRatio",
+      "value": 15.846565161290323,
+      "rendered": "15.847",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/starRatio",
+      "value": 1.0559178726861451,
+      "rendered": "1.056",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/starRatio",
+      "value": 1.0525748613625074,
+      "rendered": "1.053",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/starRatio",
+      "value": 1.0591284613571568,
+      "rendered": "1.059",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/starRatio",
+      "value": 17.22599486295345,
+      "rendered": "17.226",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/starRatio",
+      "value": 16.083333333333332,
+      "rendered": "16.083",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/starRatio",
+      "value": 18.317091690916648,
+      "rendered": "18.317",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/starRatio",
+      "value": 1.062753869436973,
+      "rendered": "1.063",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/starRatio",
+      "value": 1.0594856335155367,
+      "rendered": "1.059",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/starRatio",
+      "value": 1.0669923230007068,
+      "rendered": "1.067",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/starRatio",
+      "value": 21.38730859932221,
+      "rendered": "21.387",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/starRatio",
+      "value": 20.227764326069412,
+      "rendered": "20.228",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/starRatio",
+      "value": 23.14142538975501,
+      "rendered": "23.141",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/starRatio",
+      "value": 1.0764677236212474,
+      "rendered": "1.076",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/starRatio",
+      "value": 1.0726287836488801,
+      "rendered": "1.073",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/starRatio",
+      "value": 1.0811839023468568,
+      "rendered": "1.081",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/starRatio",
+      "value": 15.415204281345567,
+      "rendered": "15.415",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/starRatio",
+      "value": 14.536030530647531,
+      "rendered": "14.536",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/starRatio",
+      "value": 16.19931512576933,
+      "rendered": "16.199",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/starRatio",
+      "value": 1.0499152200802513,
+      "rendered": "1.05",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/starRatio",
+      "value": 1.0472400783533118,
+      "rendered": "1.047",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/starRatio",
+      "value": 1.0526603913964148,
+      "rendered": "1.053",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/starRatio",
+      "value": 17.77315604854001,
+      "rendered": "17.773",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/starRatio",
+      "value": 16.78448788275054,
+      "rendered": "16.784",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/starRatio",
+      "value": 18.821959645806828,
+      "rendered": "18.822",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/starRatio",
+      "value": 1.0546064662433654,
+      "rendered": "1.055",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/starRatio",
+      "value": 1.0523313832761847,
+      "rendered": "1.052",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/starRatio",
+      "value": 1.0579146268860955,
+      "rendered": "1.058",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/starRatio",
+      "value": 21.793287198123664,
+      "rendered": "21.793",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/starRatio",
+      "value": 20.56831074625946,
+      "rendered": "20.568",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/starRatio",
+      "value": 23.4466543044657,
+      "rendered": "23.447",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/starRatio",
+      "value": 1.0638695420546074,
+      "rendered": "1.064",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/starRatio",
+      "value": 1.0607359697122622,
+      "rendered": "1.061",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/starRatio",
+      "value": 1.067124138688488,
+      "rendered": "1.067",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/starRatio",
+      "value": 13.997659441114779,
+      "rendered": "13.998",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/starRatio",
+      "value": 13.45229057591623,
+      "rendered": "13.452",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/starRatio",
+      "value": 14.715414673438518,
+      "rendered": "14.715",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/starRatio",
+      "value": 1.0422263573532278,
+      "rendered": "1.042",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/starRatio",
+      "value": 1.0395934888968958,
+      "rendered": "1.04",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/starRatio",
+      "value": 1.0444741790871848,
+      "rendered": "1.044",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/starRatio",
+      "value": 16.242141198188236,
+      "rendered": "16.242",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/starRatio",
+      "value": 15.288501882005532,
+      "rendered": "15.289",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/starRatio",
+      "value": 17.15699768601678,
+      "rendered": "17.157",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/starRatio",
+      "value": 1.0479270473492495,
+      "rendered": "1.048",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/starRatio",
+      "value": 1.045450436999634,
+      "rendered": "1.045",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/starRatio",
+      "value": 1.0504847810604538,
+      "rendered": "1.05",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/starRatio",
+      "value": 20.076028215738035,
+      "rendered": "20.076",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/starRatio",
+      "value": 18.781942613793277,
+      "rendered": "18.782",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/starRatio",
+      "value": 21.613844664371772,
+      "rendered": "21.614",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/starRatio",
+      "value": 1.0590767217076118,
+      "rendered": "1.059",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/starRatio",
+      "value": 1.056485648717263,
+      "rendered": "1.056",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/starRatio",
+      "value": 1.063250430638926,
+      "rendered": "1.063",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/starRatio",
+      "value": 14.609088129044059,
+      "rendered": "14.609",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/starRatio",
+      "value": 13.841319627295052,
+      "rendered": "13.841",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/starRatio",
+      "value": 15.497323600973237,
+      "rendered": "15.497",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/starRatio",
+      "value": 1.0427615039007185,
+      "rendered": "1.043",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/starRatio",
+      "value": 1.0410671617821692,
+      "rendered": "1.041",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/starRatio",
+      "value": 1.0447324714572086,
+      "rendered": "1.045",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/starRatio",
+      "value": 16.8102957164601,
+      "rendered": "16.81",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/starRatio",
+      "value": 15.829800458695129,
+      "rendered": "15.83",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/starRatio",
+      "value": 18.17422113058142,
+      "rendered": "18.174",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/starRatio",
+      "value": 1.0472280776509089,
+      "rendered": "1.047",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/starRatio",
+      "value": 1.0452987008542254,
+      "rendered": "1.045",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/starRatio",
+      "value": 1.0490733311022402,
+      "rendered": "1.049",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/starRatio",
+      "value": 21.015350877192983,
+      "rendered": "21.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/starRatio",
+      "value": 19.57396507093391,
+      "rendered": "19.574",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/starRatio",
+      "value": 22.337310641560876,
+      "rendered": "22.337",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/starRatio",
+      "value": 1.0554069937014883,
+      "rendered": "1.055",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/starRatio",
+      "value": 1.0533175206113443,
+      "rendered": "1.053",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/starRatio",
+      "value": 1.0584239678927543,
+      "rendered": "1.058",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1462628221483162,
+      "rendered": "1.146",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0068953210255451,
+      "rendered": "1.007",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.2753148095205946,
+      "rendered": "1.275",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3915384387361758,
+      "rendered": "1.392",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.2426930097044935,
+      "rendered": "1.243",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.561525785757192,
+      "rendered": "1.562",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1720602475757547,
+      "rendered": "1.172",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0176925178061642,
+      "rendered": "1.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3045085205028055,
+      "rendered": "1.305",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3754756662647112,
+      "rendered": "1.375",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.1877789036987016,
+      "rendered": "1.188",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.5614176765098482,
+      "rendered": "1.561",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1448347389676798,
+      "rendered": "1.145",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.001322582249161,
+      "rendered": "1.001",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3218918220916018,
+      "rendered": "1.322",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.4016552491665946,
+      "rendered": "1.402",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.2005936034165383,
+      "rendered": "1.201",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.611825758259133,
+      "rendered": "1.612",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1582794447269706,
+      "rendered": "1.158",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0173845222055666,
+      "rendered": "1.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.291678976614476,
+      "rendered": "1.292",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.2076345361735508,
+      "rendered": "1.208",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0814739125925772,
+      "rendered": "1.081",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3513686458596528,
+      "rendered": "1.351",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1646721660490043,
+      "rendered": "1.165",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0213215708023409,
+      "rendered": "1.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.303846754787027,
+      "rendered": "1.304",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1878394482573071,
+      "rendered": "1.188",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0470407787410136,
+      "rendered": "1.047",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3922940506884083,
+      "rendered": "1.392",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1420512191206744,
+      "rendered": "1.142",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0058708225076132,
+      "rendered": "1.006",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3237104018227412,
+      "rendered": "1.324",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.216389864492407,
+      "rendered": "1.216",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0446594587915154,
+      "rendered": "1.045",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.4046261200408707,
+      "rendered": "1.405",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1566381478258758,
+      "rendered": "1.157",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0131380559552499,
+      "rendered": "1.013",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.291252212903591,
+      "rendered": "1.291",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3821927071522224,
+      "rendered": "1.382",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.2575423803008257,
+      "rendered": "1.258",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.5664302950539004,
+      "rendered": "1.566",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1487235500680106,
+      "rendered": "1.149",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.024669481914141,
+      "rendered": "1.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.2840970910690188,
+      "rendered": "1.284",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.384797410087634,
+      "rendered": "1.385",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.208223724065375,
+      "rendered": "1.208",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.6209924028914053,
+      "rendered": "1.621",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1265798633189716,
+      "rendered": "1.127",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9967859529222025,
+      "rendered": "0.997",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.300290673695919,
+      "rendered": "1.3",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3893360591413515,
+      "rendered": "1.389",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.202406835915111,
+      "rendered": "1.202",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.5810609803580127,
+      "rendered": "1.581",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1517272115898285,
+      "rendered": "1.152",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0313058758686673,
+      "rendered": "1.031",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3020485245075477,
+      "rendered": "1.302",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.2028266821851297,
+      "rendered": "1.203",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.073496556885037,
+      "rendered": "1.073",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.368531730957025,
+      "rendered": "1.369",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1540093374750284,
+      "rendered": "1.154",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0323756278822076,
+      "rendered": "1.032",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.292611899265283,
+      "rendered": "1.293",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.2014278820542796,
+      "rendered": "1.201",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0572269686000548,
+      "rendered": "1.057",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.4045846867565215,
+      "rendered": "1.405",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1514274417179966,
+      "rendered": "1.151",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9996068198012392,
+      "rendered": "1",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.312171273999908,
+      "rendered": "1.312",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.20999403219809,
+      "rendered": "1.21",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.0584432794027554,
+      "rendered": "1.058",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.376348880212156,
+      "rendered": "1.376",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1407585019645818,
+      "rendered": "1.141",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9887024198233079,
+      "rendered": "0.989",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3413517913489934,
+      "rendered": "1.341",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3744815209247088,
+      "rendered": "1.374",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.1476846914548204,
+      "rendered": "1.148",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.6240961314747446,
+      "rendered": "1.624",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1435407140733607,
+      "rendered": "1.144",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9638503994541077,
+      "rendered": "0.964",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.4131825118838195,
+      "rendered": "1.413",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3639616131714891,
+      "rendered": "1.364",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.1758135316407732,
+      "rendered": "1.176",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.6939712911574172,
+      "rendered": "1.694",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.120948212614886,
+      "rendered": "1.121",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9424552229334182,
+      "rendered": "0.942",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3709711283726775,
+      "rendered": "1.371",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.3819469863140905,
+      "rendered": "1.382",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.1405042267595862,
+      "rendered": "1.141",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.7059236864353815,
+      "rendered": "1.706",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.123179711654707,
+      "rendered": "1.123",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9773993575934722,
+      "rendered": "0.977",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3923699982889854,
+      "rendered": "1.392",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1965572087562244,
+      "rendered": "1.197",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.02724592687969,
+      "rendered": "1.027",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.4422460313722594,
+      "rendered": "1.442",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1340773083046607,
+      "rendered": "1.134",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9606344407111388,
+      "rendered": "0.961",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3899679901304463,
+      "rendered": "1.39",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.19187440573605,
+      "rendered": "1.192",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 1.008600123441479,
+      "rendered": "1.009",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.4510635352286578,
+      "rendered": "1.451",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1370750902868085,
+      "rendered": "1.137",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9368677880505994,
+      "rendered": "0.937",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.3840219530979818,
+      "rendered": "1.384",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/heavyCasualHourlyRatio",
+      "value": 1.1888631034780983,
+      "rendered": "1.189",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/heavyCasualHourlyRatio",
+      "value": 0.9862997789681214,
+      "rendered": "0.986",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/heavyCasualHourlyRatio",
+      "value": 1.487118494166973,
+      "rendered": "1.487",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/casualLegendaryDay",
+      "value": 13.5,
+      "rendered": "13.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/casualLegendaryDay",
+      "value": 13.5,
+      "rendered": "13.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/casualLegendaryDay",
+      "value": 12.950000000000001,
+      "rendered": "12.95",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/casualLegendaryDay",
+      "value": 12.450000000000001,
+      "rendered": "12.45",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/casualLegendaryDay",
+      "value": 12.950000000000001,
+      "rendered": "12.95",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/casualLegendaryDay",
+      "value": 12.450000000000001,
+      "rendered": "12.45",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/casualLegendaryDay",
+      "value": 15,
+      "rendered": "15",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/casualLegendaryDay",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/casualLegendaryDay",
+      "value": 13,
+      "rendered": "13",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/casualLegendaryDay",
+      "value": 12,
+      "rendered": "12",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/casualLegendaryDay",
+      "value": 14,
+      "rendered": "14",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/heavyLegendaryDay",
+      "value": 11.549999999999997,
+      "rendered": "11.55",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/heavyLegendaryDay",
+      "value": 11.5,
+      "rendered": "11.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/heavyLegendaryDay",
+      "value": 8.5,
+      "rendered": "8.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/heavyLegendaryDay",
+      "value": 11.5,
+      "rendered": "11.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/heavyLegendaryDay",
+      "value": 8.5,
+      "rendered": "8.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/heavyLegendaryDay",
+      "value": 11.549999999999997,
+      "rendered": "11.55",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/heavyLegendaryDay",
+      "value": 11.5,
+      "rendered": "11.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/heavyLegendaryDay",
+      "value": 8.5,
+      "rendered": "8.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/heavyLegendaryDay",
+      "value": 11.5,
+      "rendered": "11.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/heavyLegendaryDay",
+      "value": 8.5,
+      "rendered": "8.5",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/heavyLegendaryDay",
+      "value": 11,
+      "rendered": "11",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/heavyLegendaryDay",
+      "value": 8,
+      "rendered": "8",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/heavyLegendaryDay",
+      "value": 9,
+      "rendered": "9",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9334019628443948,
+      "rendered": "0.933",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8091612059955013,
+      "rendered": "0.809",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0437028556165697,
+      "rendered": "1.044",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4839366481353802,
+      "rendered": "0.484",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42865956965647717,
+      "rendered": "0.429",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.548245984036024,
+      "rendered": "0.548",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9329609385388342,
+      "rendered": "0.933",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8289292460795044,
+      "rendered": "0.829",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.021766446541302,
+      "rendered": "1.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4872696216391059,
+      "rendered": "0.487",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.433069261353189,
+      "rendered": "0.433",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.541366124718994,
+      "rendered": "0.541",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9260764304747564,
+      "rendered": "0.926",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8377100061634173,
+      "rendered": "0.838",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0442396331784696,
+      "rendered": "1.044",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/botRegularHourlyRatio",
+      "value": 0.48289086037510126,
+      "rendered": "0.483",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.43434690364512035,
+      "rendered": "0.434",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5369539332572653,
+      "rendered": "0.537",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9508283576971246,
+      "rendered": "0.951",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8205898839739657,
+      "rendered": "0.821",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.072058634389195,
+      "rendered": "1.072",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/botRegularHourlyRatio",
+      "value": 0.47193260321338093,
+      "rendered": "0.472",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4122441961068426,
+      "rendered": "0.412",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5424727727463015,
+      "rendered": "0.542",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9364874208688526,
+      "rendered": "0.936",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8533370277430046,
+      "rendered": "0.853",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0421716700406487,
+      "rendered": "1.042",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4736138316719939,
+      "rendered": "0.474",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42251208198282825,
+      "rendered": "0.423",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5161265477525067,
+      "rendered": "0.516",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9347843004233515,
+      "rendered": "0.935",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8477708703141076,
+      "rendered": "0.848",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0434825804742551,
+      "rendered": "1.043",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4675743033194387,
+      "rendered": "0.468",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42742327966226956,
+      "rendered": "0.427",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5240295795002515,
+      "rendered": "0.524",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9314287431210209,
+      "rendered": "0.931",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8405137083551819,
+      "rendered": "0.841",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0254386374116946,
+      "rendered": "1.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4828214596066219,
+      "rendered": "0.483",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.43001464613052137,
+      "rendered": "0.43",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5380402422834314,
+      "rendered": "0.538",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9293075014871693,
+      "rendered": "0.929",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8557908378717648,
+      "rendered": "0.856",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.014815331373842,
+      "rendered": "1.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/botRegularHourlyRatio",
+      "value": 0.48408710831598134,
+      "rendered": "0.484",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4449783383318994,
+      "rendered": "0.445",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.525230564049142,
+      "rendered": "0.525",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9306186015319897,
+      "rendered": "0.931",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8618491415689775,
+      "rendered": "0.862",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0373857140616358,
+      "rendered": "1.037",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4848512294389107,
+      "rendered": "0.485",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4424371879626857,
+      "rendered": "0.442",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5318427221910899,
+      "rendered": "0.532",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/botRegularHourlyRatio",
+      "value": 0.945056114599107,
+      "rendered": "0.945",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8502776942622096,
+      "rendered": "0.85",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.035420826371585,
+      "rendered": "1.035",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4742910414688702,
+      "rendered": "0.474",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4203147161332072,
+      "rendered": "0.42",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5324505932455899,
+      "rendered": "0.532",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9401352306648179,
+      "rendered": "0.94",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8690771778167468,
+      "rendered": "0.869",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0327409506083456,
+      "rendered": "1.033",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4704853572112847,
+      "rendered": "0.47",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42635154142050713,
+      "rendered": "0.426",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5112169051658547,
+      "rendered": "0.511",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9420590785243149,
+      "rendered": "0.942",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8771821990920545,
+      "rendered": "0.877",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0375180239055177,
+      "rendered": "1.038",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4643729154335323,
+      "rendered": "0.464",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42824165067838443,
+      "rendered": "0.428",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.517437154782944,
+      "rendered": "0.517",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9316623239989347,
+      "rendered": "0.932",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8453066777890381,
+      "rendered": "0.845",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0500002356762834,
+      "rendered": "1.05",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/botRegularHourlyRatio",
+      "value": 0.48142895534687397,
+      "rendered": "0.481",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4295936856106331,
+      "rendered": "0.43",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5498447516106397,
+      "rendered": "0.55",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9267655558217711,
+      "rendered": "0.927",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8453155799618028,
+      "rendered": "0.845",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0377955746262952,
+      "rendered": "1.038",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/botRegularHourlyRatio",
+      "value": 0.48409294559389693,
+      "rendered": "0.484",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.43552603200175294,
+      "rendered": "0.436",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5363331160555417,
+      "rendered": "0.536",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9324020592887254,
+      "rendered": "0.932",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8549153088822287,
+      "rendered": "0.855",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0231420657693842,
+      "rendered": "1.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/botRegularHourlyRatio",
+      "value": 0.48049195700992303,
+      "rendered": "0.48",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4370746237542682,
+      "rendered": "0.437",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5291127521556728,
+      "rendered": "0.529",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9420576254153572,
+      "rendered": "0.942",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.852106896768382,
+      "rendered": "0.852",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0602808808379105,
+      "rendered": "1.06",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4695113291347407,
+      "rendered": "0.47",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4203801730831367,
+      "rendered": "0.42",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5304231961810368,
+      "rendered": "0.53",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/botRegularHourlyRatio",
+      "value": 0.9485707968399908,
+      "rendered": "0.949",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8574733143191272,
+      "rendered": "0.857",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.040761974358522,
+      "rendered": "1.041",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/botRegularHourlyRatio",
+      "value": 0.46716039944419324,
+      "rendered": "0.467",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.4264174198922976,
+      "rendered": "0.426",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5205511860066541,
+      "rendered": "0.521",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/botRegularHourlyRatio",
+      "value": 0.944534726724144,
+      "rendered": "0.945",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.8670185883505448,
+      "rendered": "0.867",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/botRegularHourlyRatio",
+      "value": 1.0421472571988137,
+      "rendered": "1.042",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/botRegularHourlyRatio",
+      "value": 0.4653661886932702,
+      "rendered": "0.465",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/botRegularHourlyRatio",
+      "value": 0.42440892616444054,
+      "rendered": "0.424",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/botRegularHourlyRatio",
+      "value": 0.5145431423988676,
+      "rendered": "0.515",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.022045327133651635,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.020893483769166932,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/0/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.023242725040366577,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.028981542837345615,
+      "rendered": "0.029",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.02716769056511573,
+      "rendered": "0.027",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/0/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.030301824469493765,
+      "rendered": "0.03",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.020481584348823134,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.019642424092377264,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/1/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.0215575506153576,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.02862931582547692,
+      "rendered": "0.029",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.027255835322588313,
+      "rendered": "0.027",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/1/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.030449525492330237,
+      "rendered": "0.03",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01841335342226988,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.01770907899169355,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/2/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.019307351202087795,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.028431960053398285,
+      "rendered": "0.028",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.026896913894551715,
+      "rendered": "0.027",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/2/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.029788050833456606,
+      "rendered": "0.03",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.022396779181322587,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.021308784511841424,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/3/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.02363922350834143,
+      "rendered": "0.024",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.026260099253590956,
+      "rendered": "0.026",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.02474964300056609,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/3/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.027661915307301246,
+      "rendered": "0.028",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.020663595963495186,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.019782119104751302,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/4/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.021720443037682294,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.026274536158228674,
+      "rendered": "0.026",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.02494029740593964,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/4/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.027867359442819737,
+      "rendered": "0.028",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01854998216722687,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.017866550953512406,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/5/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.019386581885069667,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.026302313245916864,
+      "rendered": "0.026",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.02502683736462143,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/5/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.027810521825286948,
+      "rendered": "0.028",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.018687322620719597,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.01781675137014339,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/6/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.01956099066747314,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.023481804979911147,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.022475694917222438,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/6/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.024565511804542514,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.017842285367896574,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.017101053909362066,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/7/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.018687106448829705,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.023925704895168803,
+      "rendered": "0.024",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.02280949289093221,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/7/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.025035756633418033,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.016635312791816785,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.016012502684921874,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/8/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.017345868773963588,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.024691801599345406,
+      "rendered": "0.025",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.023634256734528614,
+      "rendered": "0.024",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/8/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.025601742770260633,
+      "rendered": "0.026",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.018897401412434178,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.018174448948012574,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/9/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.020066400549272424,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.02190940482485599,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.020891624378232033,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/9/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.02296661453453992,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01803897787903313,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.01731507943998739,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/10/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.018735789023806453,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.022215169683444273,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.021237217095216587,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/10/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.023169336552886135,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.016731169370816368,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.016248661626653678,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/11/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.017476842838896653,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.022961696433781723,
+      "rendered": "0.023",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.022111155853356178,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/11/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.024044268893579045,
+      "rendered": "0.024",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.015869260357548057,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.015268448392992198,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/12/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.016587218329411867,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01916530545373124,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.018579624263329427,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/12/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.020003379866663226,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.015506656890274341,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.014959651744947336,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/13/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.016006621399773224,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01990803318646609,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.019143617462986966,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/13/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.020647507373072985,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.014957336553847938,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.014442380550585396,
+      "rendered": "0.014",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/14/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.015478072345007584,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.021081557585541727,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.020411131825577616,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/14/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.021985017179859925,
+      "rendered": "0.022",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.016093107634118857,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.015460829516437043,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/15/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.016737528875191632,
+      "rendered": "0.017",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.018223869521561978,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.01760931155462894,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/15/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.018959491803159468,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.015673872420196244,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.015098986650251547,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/16/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.016273297338319413,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.01890607162175116,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.018265599162579766,
+      "rendered": "0.018",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/16/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.01960211060308001,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.015056422378560433,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.014641575447428366,
+      "rendered": "0.015",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/BASELINE.json",
+      "pointer": "/scenarios/17/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.015554665637061713,
+      "rendered": "0.016",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/median/topOnePercentWithdrawnShare",
+      "value": 0.020069428921930983,
+      "rendered": "0.02",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p10/topOnePercentWithdrawnShare",
+      "value": 0.019316660468120556,
+      "rendered": "0.019",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/scenarios/17/quantiles/p90/topOnePercentWithdrawnShare",
+      "value": 0.020682791824976253,
+      "rendered": "0.021",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/0/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/1/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/2/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/3/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/4/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/5/score",
+      "value": 0,
+      "rendered": "0",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/6/score",
+      "value": 0.00019139034693502506,
+      "rendered": "0.0002",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/7/score",
+      "value": 0.0016917588309838122,
+      "rendered": "0.0017",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/8/score",
+      "value": 0.001876668571965729,
+      "rendered": "0.0019",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/9/score",
+      "value": 0.002342302463397777,
+      "rendered": "0.0023",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/10/score",
+      "value": 0.0033319498185647844,
+      "rendered": "0.0033",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/11/score",
+      "value": 0.003815817567982055,
+      "rendered": "0.0038",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/12/score",
+      "value": 0.004097288989615391,
+      "rendered": "0.0041",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/13/score",
+      "value": 0.0043357430069588,
+      "rendered": "0.0043",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/14/score",
+      "value": 0.005830943946664539,
+      "rendered": "0.0058",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/15/score",
+      "value": 0.006034403520285527,
+      "rendered": "0.006",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/16/score",
+      "value": 0.006573009653300222,
+      "rendered": "0.0066",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/17/score",
+      "value": 0.006701837330466513,
+      "rendered": "0.0067",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/18/score",
+      "value": 0.007252172126276995,
+      "rendered": "0.0073",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/SEARCH.json",
+      "pointer": "/pareto/19/score",
+      "value": 0.007745261551370428,
+      "rendered": "0.0077",
+      "decimals": 4
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/initial/marketYarnPerParticipant",
+      "value": 40,
+      "rendered": "40",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/initial/testerYarn",
+      "value": 20,
+      "rendered": "20",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/FINAL.json",
+      "pointer": "/policy/initial/testerRecipients",
+      "value": 100,
+      "rendered": "100",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/confirmedReceipts",
+      "value": 16,
+      "rendered": "16",
+      "decimals": 3
+    },
+    {
+      "source": "reports/v3-shell/b2/econ/REPORT-METRICS.json",
+      "pointer": "/desktopScreenshots",
+      "value": 18,
+      "rendered": "18",
+      "decimals": 3
+    }
+  ]
+}

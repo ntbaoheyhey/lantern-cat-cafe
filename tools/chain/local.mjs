@@ -194,7 +194,11 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
     };
     const jwtSecret=randomBytes(32).toString('hex');
     const authDeps={store:authStore,config:{jwtSecret,domain:new URL(localOrigin).host}};
+    // Opt-in local browser-test isolation. Preserve real SQL, quotas and signed
+    // transactions while rolling back BOTH ledgers between disposable accounts.
+    let fixtureId=null,apiRequests=0;
     const server=httpServer(async(incoming,outgoing)=>{
+      let counted=false;
       try{
         const origin=incoming.headers.origin;
         if(!['127.0.0.1','::ffff:127.0.0.1'].includes(incoming.socket.remoteAddress)||incoming.headers.host!==new URL(localApi).host||(origin&&origin!==localOrigin)){outgoing.writeHead(403).end();return;}
@@ -203,6 +207,21 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
         if(incoming.method==='OPTIONS'){outgoing.writeHead(204).end();return;}
         if(incoming.url==='/health'){outgoing.end('local-chain');return;}
         if(incoming.method!=='POST'){outgoing.writeHead(405).end();return;}
+        if(process.env.CHAIN_LOCAL_FIXTURE_ISOLATION==='1'&&['/__fixture/begin','/__fixture/rollback'].includes(incoming.url)){
+          incoming.resume();
+          for(let n=0;apiRequests&&n<200;n++)await new Promise(r=>setTimeout(r,50));
+          if(apiRequests)throw new Error('Local fixture requests did not settle');
+          if(incoming.url.endsWith('/begin')){
+            if(fixtureId!==null)throw new Error('Local fixture already open');
+            await db.query('begin');fixtureId=await client.request({method:'evm_snapshot',params:[]});
+          }else{
+            if(fixtureId===null)throw new Error('No local fixture to restore');
+            await db.query('rollback');const restored=await client.request({method:'evm_revert',params:[fixtureId]});fixtureId=null;
+            if(!restored)throw new Error('Local chain snapshot expired');
+          }
+          outgoing.setHeader('content-type','application/json');outgoing.end(JSON.stringify({ok:true,open:fixtureId!==null}));return;
+        }
+        apiRequests++;counted=true;
         const name=incoming.url.replace('/functions/v1/','');let input,result;
         if(['guest-drip','chain-items','chain-judge','chain-cosmetics','chain-campaign','chain-campaign-reward','chain-economy-v3'].includes(name)){
           const abort=new AbortController(),cancel=()=>abort.abort();incoming.once('aborted',cancel);
@@ -236,7 +255,7 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
         const failure=modules.chainFailure(error,'local_request_failed');
         outgoing.setHeader('content-type','application/json');
         outgoing.writeHead(error?.name==='AuthError'?401:failure.status).end(stringify(failure.body));
-      }
+      }finally{if(counted)apiRequests--;}
     });
     await new Promise((r,j)=>{server.once('error',j);server.listen(ports.api,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
     mkdirSync(resolve(root,'apps/web/public'),{recursive:true});

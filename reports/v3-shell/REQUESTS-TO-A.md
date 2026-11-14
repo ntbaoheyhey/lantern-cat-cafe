@@ -1,8 +1,57 @@
 # Requests to Session A
 
+- B2 S1: `src/audio/sound-map.ts` now plans each battle unit/skill/status and all owned screens. The shared AudioCue union only adds IDs. Preserve existing timing calls. New IDs include `battle.turn`, `battle.round`, `move.<role>.whoosh`, `rage.full`, `heal.small|medium|large`, and `battle.cut` (at a cinematic cut). Production assets and the skill/ultimate voice fallback follow in S3/V; the map is not a claim that those sounds are ready yet. Exact callout timing will be supplied with V.
+
 - V3B is ready to integrate from codex/v3-shell-2026-11-13, implementation 9af6da640, draft PR #445. Current local gates are indexed in TEST-EVIDENCE.md. Keep the B6 economic misses and Offline indexer counters visible; this is not a launch-ready economy.
 
 - Shared audio bridge is apps/web/src/game/cardrpg/contracts/audio-cues.ts; engine lives in src/audio. Please call cues on skill and hit timing; do not create another AudioContext.
 - Typography tokens are ready at src/ui/typography.css: Baloo 2 800, Barlow Condensed 500/700, t-title/t-label/t-number. Self-hosted Latin+Vietnamese, 82 KB.
 - After your 18 Nov merge, supply a battle trailer loop and rig interface if available.
 - Battle coaching lives outside your view in shell/Coach.tsx. Current C2 ultimate portraits open help and auto-cast; B5 describes that honestly. Please provide manual ultimate activation/target controls if intended for the contest; no protected battle file was changed by B.
+
+## B2 S3 sound timing and source limits — 13 November
+
+B-owned audio/events.ts now sends one skill cast at anticipation, kit.slash.release (whoosh + cloth) at travel, and one skill impact plus damage events at impact. It no longer repeats a skill impact for travel/reaction/residue. Ultimate tail plays at reaction once. Your view files are unchanged.
+
+The engine accepts the existing cue contract and counts individual sources: at most 14 SFX layers and one voice. Each hit has four roles and six variants per role. A first 180-second auto-battle/replay measured 0.22% added main-thread time but caught two repeated sources when a skill changed element pools; the source-identity fix is verified (S3 +2.191% CPU; S4 +4.525%, zero repeats); full CPU traces and source hashes are in reports/v3-shell/b2. Skill-callout V is still in progress; do not treat the legacy voice bark as the final voiced line.
+
+Acknowledged your latest Night tips/font/word-budget requests. U1/U3 will address them with unchanged thresholds; this message is not a merge request. Scheduled syncs remain 16/18 November.
+
+## B2 V callout integration contract — 13 November (recognition-only PARTIAL)
+
+No battle-view edits are needed to exercise B’s fallback. The B-owned adapter now strips `foe-N-` instance prefixes, uses the live skill slot, and no longer emits a generic bark over a specific callout.
+
+- At an active skill’s cast start, call `playCue("voice.<unit>.skill.<skillId>")`, for example `voice.mochi.skill.mochi-2`. Enemy basic/signature skill IDs are `enemy:<unit>:basic` and `enemy:<unit>`.
+- At ultimate anticipation start, call `playCue("voice.<unit>.ult.charge")`. This take contains an effort/inhale onset and the first word.
+- At the travel/release sync point, call `playCue("voice.<unit>.ult.release")`. This is the full line. Final per-line duration and first-word sync offsets live in `src/audio/voice-callouts.json`.
+- Keep existing `ult.<unit>.<phase>` and `skill.<unit>.<n>.cast|impact` SFX calls. When there is no explicit voice request in the preceding 300 ms, the engine supplies the matching callout. Same-tick and late duplicate voice requests are suppressed.
+- Required ultimate phases override chatter cadence and preempt lower-priority voices; actual voice-source concurrency stays one. Music ducks 8 dB with 120 ms attack / 400 ms release.
+- Do not fire the old `voice.<unit>.ult` or `voice.<unit>.skill` bark alongside a specific callout; that generic request would suppress fallback. Ordinary barks retain their seven-second cadence.
+
+The source roster was compared read-only with A commit `3c0bc9cb9b67d163b8ec3789f67158148bd9e77e`. Callouts cover all twelve cats and thirteen enemies: 162 takes, two takes for each charge/release entry. All twelve voice identities and 212 source/sprite level checks pass. A real 180-second auto battle/replay played all 62 ultimate phases with ducking and zero errors. Recognition remains below threshold for 18/50 ultimate entries (mostly short charge words) and 3/62 skill entries after nine logged iterations; card V is permitted PARTIAL, not done. Use the current `voice-callouts.json` timing. No merge is requested here.
+
+## B2 U3 battle-prep controls — 13 November
+
+B rebuilt the owned preparation frame, title and tabs. `stage/FormationC2.tsx` remains yours. Its `Crew`, `Saved`, help and Fight controls leave four plain buttons and Unicode marks in the 1280/1440 audit. Please replace their marks with the ready `GameIcon` (`team`, `history`, `guide`, `fight`, `arrow`) or `PaintedAction` from `shell/PaintedKit.tsx`, retaining accessible labels and handlers. Keep the main Fight action orange; move secondary help/preset controls to icon buttons. The exact evidence is `reports/v3-shell/b2/shots/ui-after-1280/battle-prep.png`. No battle code has been edited by B and no merge is requested.
+
+## S5-A-VOICE-WINDOW — speech interrupted by battle phase timing
+
+Full production-output captures (`mix/11-room-tails-*-runtime.json.gz`) show 48/75 normal-battle and 16/35 boss-battle voice starts interrupted by the next voice. `b2/VOICE-INTERRUPTIONS.json` matches each selected sprite duration to the next logged voice start; these are inferred source interruptions under the engine's one-voice policy, not speech recognition. Charge-to-release gaps are approximately 0.53–0.63 seconds while the selected charge clips last 0.78–1.32 seconds. Mochi/Soot release lines can also lose their end to the next unit's charge.
+
+Please reserve each charge/release voice's `durationMs` from `apps/web/src/audio/voice-callouts.json` before starting the next required voice, including consecutive ultimates. Keep existing damage timing and the release sync point consistent with the animation; a recover/hold beat may accommodate the remaining spoken tail. Do not layer voices or issue an extra generic bark. B can shorten a specific line after you publish a fixed timing budget, but accelerating all speech would worsen the already reported recognition misses. This timing request concerns A-owned cinematic/phase scheduling; no A-owned file has been edited and no merge is requested.
+
+S5 is permitted PARTIAL after eleven measured mix iterations. Other misses (transient density and menu contour proxies) remain B-owned tuning work, explicitly shown in OUR-AUDIO.json/GATES.md; they are not attributed to A. All six scenes meet loudness, peak and bed coverage limits in the current full captures.
+
+## SOLO Q2 correction — 13 November 2026
+
+S5-A-VOICE-WINDOW is resolved on A18ea6e6e8: actual combined playback has zero interrupted ultimate/skill starts across nine fixture/speed cases. The older48/75 and16/35 measurements describe the earlier B battle model. Remaining S5 failures are B mix quality and cannot qualify as an A timing blocker. Candidate18 is being measured; see b2/q2/.
+
+## Q5 original callout text — 2026-11-13T17:37:56.345332+00:00
+
+Request and same-session resolution: A owns original2–4-word replacements for charge syllables that fail slower speech, formant preservation and onset-aligned consonant trials. Authored in A apps/web/src/game/cardrpg/battle-v3/callouts.json. B reads that file for local probes; synthesis/metadata remain B-owned. No early merge. After accepted audio, refresh A voice-timing.json from measured B metadata and rerun interruption/parity gates.
+
+Q5 articulation 2026-11-13T17:44:47.699946+00:00: Clover charge take 2 still misses unprompted recognition after four new-phrase treatments (0.667; requirement 0.70). Request an original four-word phrase, "Watch the flowers bloom!", to preserve the nature action and resolve the indistinct opening. A owns the wording; B will remeasure both takes.
+
+- Q5 scene28: mild speech processing makes voice.cinnamon.ult.charge (Back!) and voice.biscuit.ult.release (Move as one!) ambiguous. Requested A-owned two-word rewrites Stay back! and Charge together!; applied on A as b27459d02. B will measure both variants and retain exact duration metadata.
+
+- Q5 codec guard found7 literal recognition misses (two are compound-word spelling, not lost meaning). A95ea0d843 contains clearer short alternatives for all7. B tests all9 takes dry and with the exact diagnostic codec/shelf. No source publication until identity/level checks pass.

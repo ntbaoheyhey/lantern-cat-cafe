@@ -1,5 +1,5 @@
-import {expect} from '@playwright/test';
 import {test} from './support/depth-fixture';
+import {expect} from '@playwright/test';
 import {runBudget} from '../../../tools/cardrpg-c2/word-budget.mjs';
 
 test('C2 player screens and route decisions stay within 25 visible words',async({page})=>{
@@ -40,7 +40,6 @@ test('C2 battle controls have separate pointer targets at every supported viewpo
    m.fight();m.paused=true;m.autoContinue=false;m.notify(false);
   });
   await page.waitForFunction(()=>window.__depthReview!.sceneReady);
-  await page.getByRole('button',{name:'More battle options'}).click();
   const auto=page.getByRole('checkbox',{name:'Auto-next'});
   const box=await auto.boundingBox(),parent=await auto.locator('..').boundingBox();
   expect(box).not.toBeNull();expect(parent).not.toBeNull();
@@ -48,12 +47,11 @@ test('C2 battle controls have separate pointer targets at every supported viewpo
   expect(box!.x+box!.width).toBeLessThanOrEqual(parent!.x+parent!.width);
   expect(box!.y+box!.height).toBeLessThanOrEqual(parent!.y+parent!.height);
   await auto.check();await expect(auto).toBeChecked();
-  await auto.focus();await page.keyboard.press('Space');expect(await page.evaluate(()=>window.__depthReview!.autoContinue)).toBe(false);
-  await page.getByRole('button',{name:'More battle options'}).click();
+  await auto.focus();await page.keyboard.press('Space');await expect(auto).not.toBeChecked();
   const speed=await page.evaluate(()=>window.__depthReview!.state.settings.speed);
   await page.getByRole('button',{name:'Change playback speed'}).click();
   expect(await page.evaluate(()=>window.__depthReview!.state.settings.speed)).not.toBe(speed);
-  expect(await page.evaluate(()=>window.__depthReview!.autoContinue)).toBe(false);
+  await expect(auto).not.toBeChecked();
   await page.getByRole('button',{name:'More battle options'}).click();
   await expect(page.getByRole('button',{name:'Read battle log'})).toBeVisible();
   await page.getByRole('button',{name:'More battle options'}).click();

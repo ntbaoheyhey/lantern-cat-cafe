@@ -1,0 +1,63 @@
+{
+  "render": {
+    "path": "reports/v3-shell/b2/renders/s6-continuity-output.opus",
+    "sha256": "270185249e8922800c769e71efd05064f82d32ca7721c4787b27288ac7332094"
+  },
+  "musicStem": {
+    "path": "reports/v3-shell/b2/renders/s6-continuity-music.opus",
+    "sha256": "5026ae2f2ddd5ba1d46b4d40003a210a63229b4fa8e26fcc1852744217eb6cad"
+  },
+  "steps": [
+    {
+      "name": "home",
+      "atSeconds": 0.002000093460083008
+    },
+    {
+      "name": "team",
+      "atSeconds": 1.4090001583099365
+    },
+    {
+      "name": "hero",
+      "atSeconds": 2.828000068664551
+    },
+    {
+      "name": "bag",
+      "atSeconds": 4.236999988555908
+    },
+    {
+      "name": "invitations",
+      "atSeconds": 5.644000053405762
+    },
+    {
+      "name": "map",
+      "atSeconds": 7.052999973297119
+    },
+    {
+      "name": "settings",
+      "atSeconds": 8.460999965667725
+    },
+    {
+      "name": "season",
+      "atSeconds": 9.871000051498413
+    },
+    {
+      "name": "economy",
+      "atSeconds": 11.374000072479248
+    },
+    {
+      "name": "battle",
+      "atSeconds": 12.817000150680542
+    },
+    {
+      "name": "home-return",
+      "atSeconds": 16.731000185012817
+    }
+  ],
+  "maxMusicGapMs": 3.54167,
+  "gapsMs": [
+    3.54167,
+    2.08333
+  ],
+  "errors": [],
+  "method": "Production-default music node after ducking, before master, tapped without replacing output; identical real screen operations also recorded at master output. Longest sub -50 dBFS interval from ffmpeg; no normalization, trims or fabricated playback."
+}

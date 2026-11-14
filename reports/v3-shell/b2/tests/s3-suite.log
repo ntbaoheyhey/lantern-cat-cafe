@@ -1,0 +1,198 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-chain
+> node --test scripts/*.test.mjs scripts/v3b2/*.test.mjs tools/cardrpg-c2/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.536042ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.659792ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.132875ms)
+✔ output order is stable regardless of file creation order (2.985667ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (5.681ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (23.647ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.85525ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.137375ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (12.585375ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (11.508083ms)
+✔ auth health fails closed when the transport is unavailable (12.650958ms)
+✔ every threshold equals the user prompt, including strict numeric endpoints (1.9165ms)
+✔ threshold table is frozen (0.236625ms)
+✔ all required gate IDs and thresholds are listed with measurements (3.482833ms)
+✔ absent evidence fails every production gate, including maximum and every checks (1.342667ms)
+✔ malformed JSON cannot pass a gate or crash the entire checker (3.315166ms)
+✔ empty arrays cannot pass universal checks (3.643541ms)
+✔ a missing trace cannot pass the CPU gate despite a small reported percentage (1.555833ms)
+✔ strict CPU limit rejects exactly 8 percent and accepts 7.99 with a verified trace (2.638166ms)
+✔ hash mismatches invalidate evidence logs (2.390542ms)
+✔ full-demand burn gate rejects a deflationary 1.61, accepts the exact 1.60 limit (2.363542ms)
+✔ sensitivity needs both positive and negative perturbations for each assumption (2.231959ms)
+✔ future-dated evidence cannot pre-complete sync or freeze (3.587209ms)
+✔ claimed PARTIAL cannot bypass missing evidence or minimum gates (0.158958ms)
+✔ disallowed non-commercial audio is rejected even when its file hash matches (3.211583ms)
+✔ calendar strata cover every start date with balanced exposure, including a year boundary (1.849ms)
+✔ one-date plan retains the original calendar and matched-profile dates are deterministic (0.157209ms)
+✔ invalid dates and cohort ranges fail before projections can silently change identity (0.175542ms)
+✔ equal no-loss runs pass parity but retain censoring (1.369833ms)
+✔ equal summary numbers cannot conceal different combat decisions or outcomes (0.194417ms)
+✔ session failure or a different horizon cannot pass acceptance (0.199625ms)
+✔ timing and economic differences above the threshold fail independently (0.1475ms)
+✔ a simulated loss cannot match a censored real observation (0.094542ms)
+✔ normal HP excludes elite encounters and earned skips, while keeping their wins (0.0765ms)
+✔ an in-progress real trace does not count as a completed seed (1.096875ms)
+✔ cohort median includes censored sessions rather than just losing players (0.297667ms)
+✔ a decision or progression mismatch is rejected even with identical fights (0.275666ms)
+✔ missing or reordered middle encounters cannot hide behind matching aggregate counts (0.759542ms)
+✔ empty action traces or missing playback measurements cannot pass (0.247125ms)
+✔ balance requires uncensored median, no early loss, both HP statistics and the full cohort (0.344167ms)
+✔ boss timing pairs identical encounters and discloses a verified live tail at the fixed horizon (1.034709ms)
+✔ a missing, changed or overlong boss tail cannot be excused as horizon censoring (0.785375ms)
+✔ gross issuance survives salvage, duplicates, and the weekly boundary (1.039541ms)
+✔ a missing observed purchase is detected by conservation (0.217083ms)
+✔ daily counters are not tradable materials and inventory existing at entry is not new issuance (1.305625ms)
+✔ fixture union retains every context and excludes historical outcomes (6.747375ms)
+✔ resuming validates the retained paired outcomes and derived statistics (0.2575ms)
+✔ item comparisons retain regressions and saturated cells instead of treating Power as a win rate (0.599167ms)
+✔ rarity quantiles retain accounts censored at the observation horizon (0.468959ms)
+✔ partial weeks use actual exposure and gross supply is independent of the bag (0.930042ms)
+✔ the shared player repairs a fallen frontline through a legal swap without healing or rerolling (6.316167ms)
+✔ the shared player leaves a legal healthy or partly fallen formation alone (2.141958ms)
+✔ unknown Epic gear stays bound and a one-time judge drop is never recurring campaign supply (0.599666ms)
+✔ active account mixes weight created items, preserving per-profile exposure (0.234708ms)
+✔ calendar-stratified supply discloses its actual window without claiming independent daily draws (0.157625ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222.017542
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  08:57:08
+packages/chain test:    Duration  355ms (import 61%, tests 30%, transform 7%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  08:57:08
+packages/auth test:    Duration  424ms (import 73%, tests 23%, transform 4%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  49 passed (49)
+supabase/tests test:       Tests  724 passed (724)
+supabase/tests test:    Start at  08:57:08
+supabase/tests test:    Duration  10.58s (tests 82%, import 16%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  93 passed | 3 skipped (96)
+packages/game-rules test:       Tests  1388 passed | 2 expected fail | 11 skipped (1401)
+packages/game-rules test:    Start at  08:57:08
+packages/game-rules test:    Duration  38.21s (tests 94%, import 5%, transform 1%)
+packages/game-rules test:     Isolate  96 workers spawned · ~73ms startup each (spawn + environment, per file)
+packages/game-rules test:              at least ~3.45s faster with isolate: false — reuses workers across files instead of one per file
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  08:57:47
+packages/api-contract test:    Duration  119ms (transform 49%, import 41%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-chain/apps/web
+apps/web test:  ❯ src/audio/engine.test.ts (8 tests | 1 failed) 9ms
+apps/web test:    ❯ layered playback admission and variants (8)
+apps/web test:      × avoids a repeated source when an element changes to a shorter overlapping pool 3ms
+apps/web test:  ❯ src/audio/sound-map.test.ts (3 tests | 1 failed) 20ms
+apps/web test:    ❯ production sound plan coverage (3)
+apps/web test:      × retains all shipped cues and fixes the screen forge aliases 6ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/audio/engine.test.ts > layered playback admission and variants > avoids a repeated source when an element changes to a shorter overlapping pool
+apps/web test: AssertionError: expected 'a' to be 'b' // Object.is equality
+apps/web test: Expected: "b"
+apps/web test: Received: "a"
+apps/web test:  ❯ src/audio/engine.test.ts:38:45
+apps/web test:      36|   const p=new VariantPools(()=>0),a=[{id:'a'},{id:'b'},{id:'c'}],b=[{i…
+apps/web test:      37|   expect(p.next('skill/body',a,s=>s.id).id).toBe('a');
+apps/web test:      38|   expect(p.next('skill/body',b,s=>s.id).id).toBe('b');
+apps/web test:        |                                             ^
+apps/web test:      39|   expect(p.next('skill/body',a,s=>s.id).id).not.toBe('b');
+apps/web test:      40|   for(let i=0,last='';i<30;i++){const value=p.next('dynamic',i%2?a:b,s…
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+apps/web test:  FAIL  src/audio/sound-map.test.ts > production sound plan coverage > retains all shipped cues and fixes the screen forge aliases
+apps/web test: AssertionError: ui.forge-success: expected [ { pack: 'b2-ui', …(4) }, …(5) ] to be [ { pack: 'jingles', …(3) } ] // Object.is equality
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test:   [
+apps/web test:     {
+apps/web test: -     "bus": "sfx",
+apps/web test: -     "duration": 0.7457596371882086,
+apps/web test: -     "pack": "jingles",
+apps/web test: -     "start": 5.2121768707483,
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 7.0846875,
+apps/web test: +     "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+apps/web test: +   },
+apps/web test: +   {
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 7.2846875,
+apps/web test: +     "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+apps/web test: +   },
+apps/web test: +   {
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 7.4846875,
+apps/web test: +     "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+apps/web test: +   },
+apps/web test: +   {
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 7.6846875,
+apps/web test: +     "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+apps/web test: +   },
+apps/web test: +   {
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 2.5499583333333335,
+apps/web test: +     "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+apps/web test: +   },
+apps/web test: +   {
+apps/web test: +     "bus": "ui",
+apps/web test: +     "duration": 0.12,
+apps/web test: +     "pack": "b2-ui",
+apps/web test: +     "start": 2.7499583333333333,
+apps/web test: +     "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+apps/web test:     },
+apps/web test:   ]
+apps/web test:  ❯ src/audio/sound-map.test.ts:15:48
+apps/web test:      13|     for(const [alias,id] of Object.entries(CUE_ALIASES)){
+apps/web test:      14|       expect(mappedCue(alias),alias).toBeDefined();
+apps/web test:      15|       expect(resolveCue(alias,manifest),alias).toBe(manifest.cues[id]);
+apps/web test:        |                                                ^
+apps/web test:      16|       expect(manifest.cues[id]?.length,id).toBeGreaterThan(0);
+apps/web test:      17|     }
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+apps/web test:  Test Files  2 failed | 283 passed (285)
+apps/web test:       Tests  2 failed | 2495 passed (2497)
+apps/web test:    Start at  08:57:47
+apps/web test:    Duration  90.01s (environment 54%, tests 28%, import 15%, transform 2%)
+apps/web test: Environment  jsdom was created 285 times · 85.44s total, 54% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-chain/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

@@ -1,0 +1,116 @@
+{
+  "sourceCommit": "9b68bc17699013c6411a455f6d2eccc61e96ba91",
+  "sources": [
+    {
+      "path": "apps/web/src/chain-proof/fujiProof.ts",
+      "sha256": "c2f13d5c9e1e49a765a6de6805f72d371493fa9930fbdeae9b297928d3cd8b88"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/chain/ChainRoot.tsx",
+      "sha256": "8c426021086e665549ddbb6524f0f27e3ee6b3c0da166448f7101df67e158292"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/chain/EconomyV3Panel.tsx",
+      "sha256": "65fca788ad3db0635b1fe7e49ff4ec4bc7686d7d0509134003c0fc8459fee3cc"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/chain/runtime.ts",
+      "sha256": "ec66fdcebf8757f3041df59449d71c6bc1e21c4894c29bea103f4663d16fb501"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/BagB2.tsx",
+      "sha256": "9cbe0a918e59ff6f64f6296e30ff900be81ac695999aa6ea1c6e5bac5331dc25"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/Coach.test.tsx",
+      "sha256": "85d4dcd4ac09104eb55070e35e967a115b3781aa757e7470dde933300498aa9c"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/Coach.tsx",
+      "sha256": "09dd383f74fb5af78624b3f6abc442567d536d0a2d4642a9d2e2611dd525dbff"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/FormationB2.tsx",
+      "sha256": "03341c3b5ebe72416d30ed4d70fcee45eb620430af5fd9f564665b0c38370d69"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/LiveCounters.test.tsx",
+      "sha256": "2852e21dd2a6b701d813d5a63cf398e256ff9228ac18e9f2cf54929bb3221060"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/LiveCounters.tsx",
+      "sha256": "58dfe4c7690c73a1aa2ad55607d472bfa72a86d195ce4e2dfa8490a98eafb441"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/SeasonTrackB2.tsx",
+      "sha256": "c5a6ecdcb96712783dfbeb5e9fe1d967d4db016bda92dd077c6a8ca9b878e664"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/ShellPages.tsx",
+      "sha256": "9bcde383f8141e60808afc58baf3a65d4148d6965ecfc311569f580070ced67f"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/coach.css",
+      "sha256": "e9f603276d0bac50bf85203b625ae0f5c4d045c4083937ee6ec47521fbb3cbe6"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/lessons.ts",
+      "sha256": "58539a6e010fad5f82b09a7141660469c3b68713fae5c013bb52bd40592a5b4d"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/shell.css",
+      "sha256": "9866a78fc86cbd1464592eebd6f1274430f3c5c557fea74a52a7c12cd00ed0de"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitActionsA6.tsx",
+      "sha256": "73ddd8894fcaa2f0d36b71d0675da6d781802b7a1ba4eecfc6a9c02f8e94f3ee"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/RecruitV3.tsx",
+      "sha256": "16fd37eab60518525d6c20948a624eead2c48b7421d9e0809724abb9ba446305"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/TextDietC2.tsx",
+      "sha256": "a4bc205446f9cbda71462290c8ae45a84e263f432ca61662c555130a955f8786"
+    },
+    {
+      "path": "packages/chain/src/index.test.ts",
+      "sha256": "4409a77938fab10ba70fd5e5a66644b67549c7d953a256881e5234b824540713"
+    },
+    {
+      "path": "packages/chain/src/index.ts",
+      "sha256": "57e7ec8a8d585f220969869bd7226cf7121df41e64e7bb92c62cad3c57cd6558"
+    }
+  ],
+  "results": [
+    {
+      "id": "types",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T23:35:55.845Z",
+      "ended": "2026-11-13T23:36:20.686Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q8-frozen-types.log",
+        "sha256": "cafa8310aee60b7ea4fe143147599c09d40529fc20590787a68d4d538c08e096"
+      }
+    },
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 0,
+      "started": "2026-11-13T23:35:55.847Z",
+      "ended": "2026-11-13T23:37:54.886Z",
+      "log": {
+        "path": "reports/v3-shell/b2/tests/q8-frozen-unit.log",
+        "sha256": "3dfdd819a218822fafa4f2ec7fe8c4cd0f3fcec068e3a7ac7e7fbcfdb31b4d49"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4411 @@
+{
+  "label": "Q4-CONFIRM24-200",
+  "seeds": 200,
+  "firstSeed": 53113,
+  "selected": [
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9400,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "3bf2a9a4696c63ba0cf29e0ee43c2de470739274b21f69ceaf60ce71bedc0955",
+      "score": 0,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "3da442e27c22bfb1d9a796e5f1c9b815553fc67943fe4be9939e2840b8ecc69d",
+      "score": 0,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.05,
+            "chapterSpool": 0,
+            "seasonRankMax": 2,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1250,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "99e3bda69647c42c650a36a41cca09741232ab10f86035daaf4f23e3e1e7c418",
+      "score": 0,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.15,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 17
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "b256345af3a9b22a2adf1f8022e5c90d3addca90d4c35aa839a44204f85ae460",
+      "score": 0,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 2,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "ea5f065365e3a05123ad8ec30621f0d96a40fd9c90f7ef1467bb5639f180ffdb",
+      "score": 0,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 2,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 19
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "2fc1281a7220327ee209802d5d6a5e778707803836dc48b56c80c423e5950948",
+      "score": 0.0016917588309838122,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 4
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "ff74191d6b334eb5490e50f8d45d0796f9306154c6509391665f9ac6d01e63b1",
+      "score": 0.001876668571965729,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.1,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 17
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "4505216b73b3f0ecdb920ba9b98a3de8f6294f189ed6446de3a1912d6fb9c640",
+      "score": 0.002342302463397777,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.15,
+            "chapterSpool": 0,
+            "seasonRankMax": 1,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 18
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1400,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "7026376c5ed0413b5ef8d994952b61ee6c1d657f34008030a35589a0adcb5684",
+      "score": 0.0033319498185647844,
+      "round": 24
+    },
+    {
+      "config": {
+        "policy": {
+          "version": 3,
+          "rewards": {
+            "weeklySpool": 1.05,
+            "chapterSpool": 0,
+            "seasonRankMax": 2,
+            "weeklyStarThread": 1,
+            "starThreadBankCap": 1
+          },
+          "season": {
+            "days": 28,
+            "epoch": 1794528000000,
+            "editionSupply": 600
+          },
+          "deed": {
+            "firstId": 30001,
+            "lastId": 33000,
+            "supply": 3000,
+            "level": 15,
+            "demoLevel": 5
+          },
+          "spool": {
+            "feeBp": 1500,
+            "minAgeDays": 7,
+            "cooldownDays": 7,
+            "weeklyNetCap": 6,
+            "skinCost": 11
+          },
+          "cat": {
+            "odds": {
+              "common": 5500,
+              "rare": 3300,
+              "epic": 1100,
+              "legendary": 100
+            },
+            "soft": 50,
+            "hard": 70,
+            "stepBp": 600,
+            "featuredBp": 5000
+          },
+          "gear": {
+            "odds": {
+              "common": 5000,
+              "rare": 3500,
+              "epic": 1420,
+              "legendary": 80
+            },
+            "soft": 40,
+            "hard": 60,
+            "stepBp": 600
+          },
+          "shards": {
+            "common": 5,
+            "rare": 10,
+            "epic": 20,
+            "legendary": 40
+          },
+          "starShards": [
+            10,
+            20,
+            40,
+            80
+          ],
+          "selector": 120,
+          "enhancement": {
+            "max": 10,
+            "successBp": [
+              10000,
+              10000,
+              10000,
+              10000,
+              10000,
+              8000,
+              7000,
+              6000,
+              5000,
+              4000
+            ],
+            "blessingBp": 1000,
+            "fishBase": 30,
+            "growth": 1.35
+          },
+          "fusion": {
+            "rare": {
+              "count": 4,
+              "input": "common",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "epic": {
+              "count": 3,
+              "input": "rare",
+              "starThread": 0,
+              "yarn": 0
+            },
+            "legendary": {
+              "count": 3,
+              "input": "epic",
+              "starThread": 1,
+              "yarn": 19
+            },
+            "successBp": 10000
+          },
+          "seal": {
+            "level": 15,
+            "demoLevel": 5,
+            "perDay": 3,
+            "deedExtra": 1,
+            "bossSeals": 1,
+            "feeBp": 1300,
+            "relistMinutes": 10,
+            "reference": {
+              "epic": 100,
+              "legendary": 300,
+              "mythic": 900,
+              "starThread": 20
+            }
+          },
+          "quality": [
+            {
+              "name": "Worn",
+              "floorBp": 0,
+              "offset": 0
+            },
+            {
+              "name": "Fine",
+              "floorBp": 4000,
+              "offset": 1000
+            },
+            {
+              "name": "Perfect",
+              "floorBp": 8500,
+              "offset": 2000
+            }
+          ],
+          "drops": {
+            "full": 6,
+            "halfUntil": 18,
+            "halfBp": 5000,
+            "battle": {
+              "chanceBp": 3000,
+              "odds": {
+                "common": 6500,
+                "rare": 3000,
+                "epic": 500,
+                "legendary": 0
+              }
+            },
+            "elite": {
+              "chanceBp": 6000,
+              "odds": {
+                "common": 0,
+                "rare": 7200,
+                "epic": 2790,
+                "legendary": 10
+              }
+            },
+            "boss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 3000,
+                "epic": 6970,
+                "legendary": 30
+              }
+            },
+            "firstBoss": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9700,
+                "legendary": 300
+              }
+            },
+            "tower": {
+              "chanceBp": 10000,
+              "odds": {
+                "common": 0,
+                "rare": 0,
+                "epic": 9150,
+                "legendary": 850
+              }
+            }
+          },
+          "allocation": {
+            "players": 35,
+            "team": 15,
+            "treasury": 12,
+            "investors": 12,
+            "ecosystem": 10,
+            "earlyTesters": 6,
+            "liquidity": 5,
+            "advisors": 3,
+            "partners": 2
+          },
+          "market": {
+            "feeBp": 500,
+            "burnBp": 200,
+            "treasuryBp": 300
+          },
+          "tailoring": {
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 45,
+              "materials": 160,
+              "seals": 7
+            }
+          },
+          "craft": {
+            "rebateBp": 9500,
+            "weeklySpoolCap": 5
+          }
+        },
+        "c2": {
+          "equipment": {
+            "commonPower": 0.008,
+            "maximumPower": 0.02,
+            "minimumMain": 1,
+            "affixScale": 0.25,
+            "defenseWeight": 3,
+            "hpWeight": 0.6
+          },
+          "sets": {
+            "hearthloomShareBp": 500,
+            "bellsteelSheltersPerBattle": 0,
+            "bellsteelRipostesPerBattle": 1
+          },
+          "uniques": {
+            "rainbellCleanseStacks": 1,
+            "softcollarShield": 8
+          },
+          "dropsPerDay": 6,
+          "drops": {
+            "battle": {
+              "common": 6500,
+              "rare": 3000,
+              "epic": 500,
+              "legendary": 0
+            },
+            "elite": {
+              "common": 0,
+              "rare": 7200,
+              "epic": 2795,
+              "legendary": 5
+            },
+            "boss": {
+              "common": 0,
+              "rare": 2985,
+              "epic": 7000,
+              "legendary": 15
+            }
+          },
+          "equipmentInvitation": {
+            "stamps": 300
+          },
+          "tailoring": {
+            "common": {
+              "fish": 180,
+              "threads": 30
+            },
+            "rare": {
+              "fish": 180,
+              "threads": 30
+            },
+            "epic": {
+              "fish": 20,
+              "threads": 240,
+              "essence": 9
+            },
+            "legendary": {
+              "fish": 100,
+              "threads": 300,
+              "essence": 60
+            }
+          },
+          "legendary": {
+            "seals": 10,
+            "materials": 200,
+            "selectorMarks": 72
+          }
+        },
+        "sinks": {
+          "successBp": 10000,
+          "polish": {
+            "yarn": [
+              3,
+              3
+            ],
+            "starThread": [
+              1,
+              1
+            ]
+          },
+          "decor": {
+            "yarn": 2,
+            "starThread": 1,
+            "patterns": [
+              "moon",
+              "dawn",
+              "rain",
+              "ember"
+            ]
+          },
+          "display": {
+            "yarn": 2,
+            "starThread": 1,
+            "maxLevel": 3,
+            "baseSlots": 1,
+            "slotsPerLevel": 2
+          }
+        },
+        "preferences": {
+          "loadoutItems": 16
+        },
+        "population": 500,
+        "tokenWeeks": 52,
+        "cohortDays": 42,
+        "startEpoch": 1794528000000,
+        "initial": {
+          "testerYarn": 20,
+          "testerRecipients": 100,
+          "marketYarnPerParticipant": 40
+        },
+        "profiles": [
+          {
+            "id": "casual",
+            "hours": 0.5,
+            "hoursSigma": 0.35,
+            "sessionMinutes": 18,
+            "activeDays": 0.7,
+            "churnFirst": 0.055,
+            "churnLater": 0.012,
+            "deed": 0.55,
+            "withdraw": 0.7,
+            "sink": 0.5,
+            "market": 0.2,
+            "sell": 0.5,
+            "buy": 0.25,
+            "upgrades": 1
+          },
+          {
+            "id": "regular",
+            "hours": 1,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 30,
+            "activeDays": 0.85,
+            "churnFirst": 0.035,
+            "churnLater": 0.008,
+            "deed": 0.75,
+            "withdraw": 0.8,
+            "sink": 0.7,
+            "market": 0.45,
+            "sell": 0.6,
+            "buy": 0.45,
+            "upgrades": 2
+          },
+          {
+            "id": "heavy",
+            "hours": 3,
+            "hoursSigma": 0.3,
+            "sessionMinutes": 50,
+            "activeDays": 0.95,
+            "churnFirst": 0.02,
+            "churnLater": 0.005,
+            "deed": 0.85,
+            "withdraw": 0.9,
+            "sink": 0.85,
+            "market": 0.65,
+            "sell": 0.7,
+            "buy": 0.6,
+            "upgrades": 3
+          },
+          {
+            "id": "whale-free",
+            "hours": 6,
+            "hoursSigma": 0.25,
+            "sessionMinutes": 75,
+            "activeDays": 0.98,
+            "churnFirst": 0.015,
+            "churnLater": 0.004,
+            "deed": 0.9,
+            "withdraw": 0.95,
+            "sink": 0.95,
+            "market": 0.8,
+            "sell": 0.8,
+            "buy": 0.75,
+            "upgrades": 3
+          },
+          {
+            "id": "bot",
+            "hours": 12,
+            "hoursSigma": 0.15,
+            "sessionMinutes": 180,
+            "activeDays": 0.99,
+            "churnFirst": 0.01,
+            "churnLater": 0.003,
+            "deed": 0.85,
+            "withdraw": 1,
+            "sink": 0.05,
+            "market": 0.9,
+            "sell": 1,
+            "buy": 0.05,
+            "upgrades": 3
+          }
+        ],
+        "mixes": {
+          "casual-heavy": [
+            0.7,
+            0.2,
+            0.08,
+            0.02
+          ],
+          "balanced": [
+            0.4,
+            0.35,
+            0.2,
+            0.05
+          ],
+          "heavy-heavy": [
+            0.15,
+            0.3,
+            0.4,
+            0.15
+          ]
+        },
+        "timing": {
+          "decisionSeconds": 2,
+          "battleActionSeconds": 2.8,
+          "minimumEncounterSeconds": 12
+        }
+      },
+      "configHash": "71acbcf6a7d7359c6f467f033565ea2923ad7c743a69c9a0d008849bc1cbbefe",
+      "score": 0.003815817567982055,
+      "round": 24
+    }
+  ],
+  "sources": [
+    {
+      "round": 24,
+      "path": "reports/v3-shell/b2/econ/search/round-24.json",
+      "sha256": "ffcfa0e120de30a4ff8902a37052f3ecdf6becbb70b0ace94dabeec87e2ea699"
+    }
+  ],
+  "compared": 80,
+  "bankHash": "2b6182d99a05b9e314933b87d1f55e8e8864f9edb1c8501d7c8c8760fd6dbddd",
+  "manifestHash": "59ee4bdbf5388ea9b02aa53be4ea38a6f9fbdb9c0aa764badc0864572e1ab54b",
+  "modelSnapshot": {
+    "path": "reports/v3-shell/b2/econ/snapshots/confirm-Q4-CONFIRM24-200.json.gz",
+    "sha256": "8948f9c3926a179a65988b72fdb48e34d5f63f9b74137c5368a0a665c7c2a75f"
+  }
+}

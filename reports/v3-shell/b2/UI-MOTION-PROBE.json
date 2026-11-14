@@ -1,0 +1,71 @@
+{
+  "trace": {
+    "path": "reports/v3-shell/b2/tests/u4-trace.json.gz",
+    "sha256": "91cd979e401af73a6210828c66daee2beb3f8c0f142da720b020c66fbbde4ece"
+  },
+  "screenChanges": 10,
+  "layoutShifts": [
+    0.0002348126040564643,
+    0.06872017839219835,
+    0.06872017839219835,
+    0.06872017839219835,
+    0.06872017839219835,
+    0.06872017839219835,
+    0.06872017839219835,
+    0.000010659747653537326,
+    0.01994395637512207,
+    0.0000025956860433022182,
+    0.0000034102474132345785,
+    0.000002054927042788929,
+    0.0000021004500902361338,
+    0.0000015388553341229756,
+    0.0000022233417257666584,
+    0.00022200054592556422,
+    0.029980665445327757
+  ],
+  "transitionMedianFps": 58,
+  "transitionWindows": [
+    {
+      "name": "home",
+      "frames": 58
+    },
+    {
+      "name": "daily-gift",
+      "frames": 58
+    },
+    {
+      "name": "team",
+      "frames": 60
+    },
+    {
+      "name": "hero",
+      "frames": 60
+    },
+    {
+      "name": "bag",
+      "frames": 50
+    },
+    {
+      "name": "forge",
+      "frames": 45
+    },
+    {
+      "name": "invitations",
+      "frames": 60
+    },
+    {
+      "name": "market",
+      "frames": 60
+    },
+    {
+      "name": "season",
+      "frames": 54
+    },
+    {
+      "name": "wallet",
+      "frames": 40
+    }
+  ],
+  "method": "Real UI operations; browser audio output and timestamped CDP screencast. FPS counts rAF frames in each one-second screen-change window, backed by Chrome trace. All layout-shift entries, including recent input, are retained.",
+  "errors": []
+}

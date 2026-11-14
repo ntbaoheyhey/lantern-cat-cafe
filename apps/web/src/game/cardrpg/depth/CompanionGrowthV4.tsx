@@ -1,3 +1,4 @@
+import {playCue} from '../contracts/audio-cues';
 import {GameIcon} from '../../../ui/GameIcon';
 import {HelpC2} from '../ui-v3/TextDietC2';
 import { useId } from 'react';
@@ -16,12 +17,13 @@ export function CompanionGrowthV4({ m, catId, kind }: {
   const command = { type: kind, cardId: card.id } as const;
   const preview = R.metaCommand(m.state, command);
   const action = kind === 'level' ? 'Level up' : 'Add a star';
+  const train=()=>{const before=kind==='level'?card.level:card.stars;m.command(command);const after=m.state.account.cards.find(c=>c.id===card.id);if(after&&(kind==='level'?after.level:after.stars)>before)playCue(kind==='level'?'ui.level-up':'ui.star-up');};
   const locked = !!m.state.run && !m.state.run.complete;
   if(m.state.formationC2){
     const next=preview.ok?preview.state.account.cards.find(c=>c.id===card.id)!:card;
     const cost:Cost=kind==='level'?{fish:C.level.fishBase*card.level,threads:C.level.threads}:{fish:C.level.ascendFish*card.stars};
     const before=R.depthStats(m.state,catId),after=preview.ok?R.depthStats(preview.state,catId):before;
-    return <div className="dp-v4-growth c2-growth" data-growth={kind}><button className={kind==='level'?'cr-primary':undefined} disabled={!preview.ok} aria-label={action} aria-describedby={descriptionId} onClick={()=>m.command(command)}>{kind==='level'?'Level up':'Star'}</button><div id={descriptionId}><b>{kind==='level'?`${card.level}to ${preview.ok?next.level:card.level+1}`:`${card.stars}to ${preview.ok?next.stars:card.stars+1}`}</b><CostView cost={cost}/>{kind==='ascend'&&<small aria-label="Matching shards"><GameIcon name="season" size={18}/> {card.shards}/{C.level.shardsBase*card.stars}</small>}<small aria-label="Stat gains"><GameIcon name="heart" size={18}/> +{after.hp-before.hp} · <GameIcon name="fight" size={18}/> +{after.attack-before.attack} · <GameIcon name="shield" size={18}/> +{after.defense-before.defense}</small></div><HelpC2 label={action}><p>{preview.ok?'Costs are shown before you spend. The stat gains apply to this cat.':locked?'Finish this route before training.':preview.error}</p><p>Patrol gives fish and threads. Extra recruits give matching shards.</p></HelpC2></div>;
+    return <div className="dp-v4-growth c2-growth" data-growth={kind}><button className={kind==='level'?'cr-primary':undefined} disabled={!preview.ok} aria-label={action} aria-describedby={descriptionId} onClick={train}><GameIcon name={kind==='level'?'upgrade':'season'} size={24}/>{kind==='level'?'Level up':'Star'}</button><div id={descriptionId}><b>{kind==='level'?<>{card.level}<GameIcon name="arrow" size={16}/>{preview.ok?next.level:card.level+1}</>:<>{card.stars}<GameIcon name="arrow" size={16}/>{preview.ok?next.stars:card.stars+1}</>}</b><CostView cost={cost}/>{kind==='ascend'&&<small aria-label="Matching shards"><GameIcon name="season" size={18}/> {card.shards}/{C.level.shardsBase*card.stars}</small>}<small aria-label="Stat gains"><GameIcon name="heart" size={18}/> +{after.hp-before.hp} · <GameIcon name="fight" size={18}/> +{after.attack-before.attack} · <GameIcon name="shield" size={18}/> +{after.defense-before.defense}</small></div><HelpC2 label={action}><p>{preview.ok?'Costs are shown before you spend. The stat gains apply to this cat.':locked?'Finish this route before training.':preview.error}</p><p>Patrol gives fish and threads. Extra recruits give matching shards.</p></HelpC2></div>;
   }
   if (!preview.ok && R.gameplayA6(m.state) && !locked && !m.state.account.pendingRun) {
     const capped = kind === 'level' ? card.level >= CARD_BY_ID[catId]!.levelCap : card.stars >= C.level.maxStars;
@@ -60,7 +62,7 @@ export function CompanionGrowthV4({ m, catId, kind }: {
   const skills = R.availableSkills(preview.state, catId).filter(s => !known.has(s.id));
   return <div className="dp-v4-growth" data-growth={kind}>
     <button className={kind === 'level' ? 'cr-primary' : undefined} aria-describedby={descriptionId}
-      onClick={() => m.command(command)}>{action}</button>
+      onClick={train}>{action}</button>
     <div id={descriptionId}>
       {kind === 'ascend' && R.gameplayA6(m.state) && <small>{card.shards} matching shards owned</small>}
       <b>{R.CAT_BY_ID[catId]!.name} to {kind === 'level' ? `level ${next.level}` : `${next.stars} stars`}</b>

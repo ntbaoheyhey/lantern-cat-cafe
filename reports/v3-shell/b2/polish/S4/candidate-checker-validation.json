@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-14T01:13:53.280669+00:00",
+  "passFixture": "41-clarity",
+  "passedGates": 54,
+  "failFixture": "38-element-kits",
+  "rejectedExit": 1,
+  "failureLines": [
+    "FAIL S5.boss.voiceContoursPerMinute: measured 7.487458648250549; required reference +/- 35% (reference 5)",
+    "FAIL S5.gacha.voiceContoursPerMinute: measured 0.9966281876282509; required reference +/- 35% (reference 0)",
+    "TOTAL 52 PASS / 2 FAIL / 54 gates"
+  ],
+  "acceptedPackUnchanged": "5156e0f4dfa44cce551ef025dfb156f479cd46801371140d6320b0fc23a9f813",
+  "method": "Unmodified B2 checker against temporary candidate snapshots; absolute receipt paths re-rooted in copies only."
+}

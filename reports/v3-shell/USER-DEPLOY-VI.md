@@ -196,7 +196,8 @@ Mở `https://taskbarhero-eight.vercel.app/?demo=1&squad=1&cardrpg2=1&a6=1` bằ
 3. Seal một Epic: 1 Boss Seal + 10 YARN đốt. Chờ receipt; kiểm tra quality trong Bag.
 4. Fusion: 3 Epic cùng set + 2 Star Thread + 20 YARN đốt. Dùng Epic đã seal cùng hai Epic bound; phải có link chuyển input tới dead address và link mint output.
 5. Chờ 10 phút, list Legendary; ví thứ hai mua bằng test YARN. Kiểm tra receipt trên Snowtrace và fee 5% = 2% đốt + 3% treasury.
-6. Quay lại home: badge Deed, Spool, mute/mixer, tutorial/Guide và đường vào Season đều hoạt động. Counter lỗi phải ghi Offline. Không dùng nhiều ví mới liên tục vì quota 3 ví/IP/ngày và 50/ngày.
+6. Café → Studio: kiểm tra Polish (nâng chất lượng bảo đảm), Decor (cảnh café vĩnh viễn), Showcase (thêm ô trưng bày). Mỗi màn hình phải hiện Star Thread, YARN và Success 100% trước Review burn; Confirm & unlock phải có receipt. Phí YARN dùng cơ chế burn sẵn có; không mint NFT mới cho trang trí. Không trả phí lần nữa khi dùng Recover.
+7. Quay lại home: badge Deed, Spool, mute/mixer, tutorial/Guide và đường vào Season đều hoạt động. Counter lỗi phải ghi Offline. Không dùng nhiều ví mới liên tục vì quota 3 ví/IP/ngày và 50/ngày.
 
 Đối chiếu metadata và audio:
 

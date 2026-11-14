@@ -1,0 +1,72 @@
+{
+  "tour": {
+    "path": "reports/v3-shell/b2/UI-TOUR.webm",
+    "sha256": "f79133a380d2e3560905542a1bdec5b8d220012c8d7a1fefa95404b196335c5d",
+    "durationSeconds": 62,
+    "hasAudio": true
+  },
+  "trace": {
+    "path": "reports/v3-shell/b2/tests/u4-capture-final-trace.json.gz",
+    "sha256": "2324bde8bc35fd24a295e5be81268d75ecc8ed34b2af7a80ec5b53206d166401"
+  },
+  "screenChanges": 10,
+  "layoutShifts": [
+    0.0002348126040564643,
+    0.000010659747653537326,
+    0.01994395637512207,
+    0.0000026024878025054932,
+    0.0000034187925565573908,
+    0.0000021390756592154503,
+    0.0000021863635629415513,
+    0.0000015423995339208181,
+    0.0000022283848375082016,
+    0.00022200054592556422,
+    0.03040052056312561,
+    0.0008308176464504665
+  ],
+  "transitionMedianFps": 59.5,
+  "transitionWindows": [
+    {
+      "name": "home",
+      "frames": 60
+    },
+    {
+      "name": "daily-gift",
+      "frames": 59
+    },
+    {
+      "name": "team",
+      "frames": 60
+    },
+    {
+      "name": "hero",
+      "frames": 60
+    },
+    {
+      "name": "bag",
+      "frames": 60
+    },
+    {
+      "name": "forge",
+      "frames": 54
+    },
+    {
+      "name": "invitations",
+      "frames": 53
+    },
+    {
+      "name": "market",
+      "frames": 60
+    },
+    {
+      "name": "season",
+      "frames": 54
+    },
+    {
+      "name": "wallet",
+      "frames": 50
+    }
+  ],
+  "method": "Real UI operations; browser audio output and timestamped CDP screencast. FPS counts rAF frames in each one-second screen-change window, backed by Chrome trace. All layout-shift entries, including recent input, are retained.",
+  "errors": []
+}

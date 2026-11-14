@@ -1,0 +1,64 @@
+{
+  "trace": {
+    "path": "reports/v3-shell/b2/tests/u4-perf-final-trace.json.gz",
+    "sha256": "acdf3ac8894bac5c747650e99e7102b54c798bc1218f4a3d84fad52ac8693a22"
+  },
+  "screenChanges": 10,
+  "layoutShifts": [
+    0.0002348126040564643,
+    0.000010659747653537326,
+    0.01994395637512207,
+    0.000002595664312442144,
+    0.0000034102549155553184,
+    0.0000020549337690075234,
+    0.0000021004433640175395,
+    0.0000015388488666050964,
+    0.000002223355695605278,
+    0.00022200054592556422
+  ],
+  "transitionMedianFps": 60,
+  "transitionWindows": [
+    {
+      "name": "home",
+      "frames": 60
+    },
+    {
+      "name": "daily-gift",
+      "frames": 59
+    },
+    {
+      "name": "team",
+      "frames": 60
+    },
+    {
+      "name": "hero",
+      "frames": 60
+    },
+    {
+      "name": "bag",
+      "frames": 60
+    },
+    {
+      "name": "forge",
+      "frames": 54
+    },
+    {
+      "name": "invitations",
+      "frames": 60
+    },
+    {
+      "name": "market",
+      "frames": 60
+    },
+    {
+      "name": "season",
+      "frames": 58
+    },
+    {
+      "name": "wallet",
+      "frames": 60
+    }
+  ],
+  "method": "Real UI operations; browser audio output and timestamped CDP screencast. FPS counts rAF frames in each one-second screen-change window, backed by Chrome trace. All layout-shift entries, including recent input, are retained.",
+  "errors": []
+}

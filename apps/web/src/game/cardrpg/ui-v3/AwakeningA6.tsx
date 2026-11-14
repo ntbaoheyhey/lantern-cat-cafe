@@ -3,6 +3,7 @@ import {useId} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
 import {CostView} from '../shared';
+import {artPropsA6} from './art-a6';
 
 /** Preview the public transaction on its copy; purchase from the current account. */
 export function AwakeningA6({m,catId}:{m:DepthModel;catId:string}) {
@@ -21,6 +22,14 @@ export function AwakeningA6({m,catId}:{m:DepthModel;catId:string}) {
  if(missingMaterials>0)needs.push(`${missingMaterials} more mastery material${missingMaterials===1?'':'s'}`);
  const reason=!preview.ok&&(!showQuote||!needs.length||card!.level<10||card!.stars<2)
   ?locked?'Finish this route before training your companions.':preview.error:null;
+ if(m.state.formationC2)return <section className="b2-awakening" aria-label="Awakening">
+  <img className="b2-awakening-hero" {...artPropsA6(catId)} alt={R.CAT_BY_ID[catId]!.name}/><div className="b2-constellation" aria-label={`Awakening ${rank} of 3`}>{[1,2,3].map(n=><span key={n} data-active={rank>=n}><img src="/art/v3-shell/b2/constellation-node.webp" alt="" width={88} height={88}/><b>{n}</b></span>)}</div>
+  <p><GameIcon name="heart" size={24}/> +3% <GameIcon name="fight" size={24}/> +3%</p>
+  <div id={descriptionId}>{showQuote&&<><CostView cost={quote.currencies}/><span><GameIcon name="materials" size={28}/> {quote.materials}</span></>}
+   {!preview.ok&&<p>{locked?'Finish this route.':rank>=3?'Complete':card&&card.level>=10&&card.stars>=2?'More supplies needed.':'Requires level 10 and two stars.'}</p>}
+  </div>
+  <button className="cr-primary" disabled={!preview.ok} aria-describedby={descriptionId} onClick={()=>m.apply(R.awakenCat(m.state,catId),'Awakening raised HP and attack by 3%.')}><GameIcon name="season" size={28}/>Awaken</button>
+ </section>;
  return <details className="a6-awakening">
   <summary><span className="a6-awakening-open">Awakening · {rank}/3</span><span className="a6-awakening-back">Level &amp; stars</span></summary>
   <div className="a6-awakening-receipt">

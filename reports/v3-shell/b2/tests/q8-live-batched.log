@@ -1,0 +1,19 @@
+{"stats":{"reasons":{"fused":"Fusion totals need a verified indexer.","transactions":"Transaction log RPC unavailable; no partial count shown."},"links":{"deeds":"https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D","burned":"https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b","fused":"https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D","transactions":"https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"},"deeds":"0","burned":"2.02","transactionScope":"Fuji tx"},"requests":10,"numeric":2}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(counters.filter(r=>r.value!==null).length>=3)
+
+    at file:///Users/bao/taskbar-hero-chain/scripts/ui/q8-live-fuji.mjs:33:2 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

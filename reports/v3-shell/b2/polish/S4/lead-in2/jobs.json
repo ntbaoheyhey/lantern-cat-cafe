@@ -1,0 +1,50 @@
+[
+  {
+    "name": "cadence",
+    "pid": 6289,
+    "command": [
+      "node",
+      "scripts/audio/measure-current-cadence.mjs"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-chain",
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/polish/S4/lead-in2/cadence.log"
+  },
+  {
+    "name": "motion",
+    "pid": 6290,
+    "command": [
+      "node",
+      "scripts/v3a2/battle-capture.mjs",
+      "--fixture",
+      "wave1",
+      "--seconds",
+      "30",
+      "--complete-actions",
+      "--out",
+      "reports/v3-solo/S4/lead-in2"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/polish/S4/lead-in2/motion.log"
+  },
+  {
+    "name": "p3-scenes",
+    "pid": 6291,
+    "command": [
+      "node",
+      "scripts/audio/review-scene-layers.mjs"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-chain",
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/polish/P3/p3-scenes.log"
+  },
+  {
+    "name": "p3-suite",
+    "pid": 6292,
+    "command": [
+      "node",
+      "scripts/v3b2/run-solo-unit-suite.mjs",
+      "q9-p3"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-chain",
+    "log": "/Users/bao/taskbar-hero-chain/reports/v3-shell/b2/polish/P3/p3-suite.log"
+  }
+]

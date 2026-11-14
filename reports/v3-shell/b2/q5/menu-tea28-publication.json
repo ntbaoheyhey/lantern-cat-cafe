@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-13T19:10:57.861275+00:00",
+  "probe": {
+    "path": "reports/v3-shell/b2/q5/menu-tea-28-probes.json",
+    "sha256": "f396652f83c3059a38bd2a4ca02fd1512731e4311c6f8c7aaf01715ad3408d34"
+  },
+  "before": {
+    "path": "reports/v3-shell/b2/q5/menu-before-tea28.json.gz",
+    "sha256": "8279bd3a84da0e1a75385b57498deeee67d17a462b6ea38910e173bf412844cf"
+  },
+  "after": {
+    "path": "reports/v3-shell/b2/MENU-VOICE-LINES.json",
+    "sha256": "48a01cd34f4ffab71de69bb9f4064d06737ecd3fc12d9bdb5c610cb1e23547d5"
+  },
+  "changes": [
+    {
+      "before": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-2.flac",
+        "sha256": "744924ebcddfaca2ef9de37b5bfdd192c7488b3ab00f4adacbb18796ffd46454"
+      },
+      "after": {
+        "path": "assets/audio-sources/b2/menu-voices/mallow-2.flac",
+        "sha256": "b5db61b973eb0b5a5d7813d26274a8acd65b954f026b2075d34f18b8e699c24e"
+      },
+      "candidate": {
+        "path": "work/v3b2/callouts/q5-menu-codec/menu-tea-28/mallow-2-0.flac",
+        "sha256": "b5db61b973eb0b5a5d7813d26274a8acd65b954f026b2075d34f18b8e699c24e"
+      },
+      "text": "Tea is ready!"
+    }
+  ],
+  "encoded": [
+    {
+      "path": "apps/web/public/audio/menu-voices.webm",
+      "sha256": "cdc16d6ca81c2bfa214f0a1ed34f8dd3b475dafe13d78861e0efdc364b8828d9",
+      "integratedLufs": -16.6,
+      "truePeakDbTP": -2.99,
+      "spriteGainDb": 0
+    },
+    {
+      "path": "apps/web/public/audio/menu-voices.mp3",
+      "sha256": "0966107561cb2076c338b52702c262c8fd3a4f7857e5459f5cc86d3b88e25660",
+      "integratedLufs": -16.51,
+      "truePeakDbTP": -2.75,
+      "spriteGainDb": 0.5199999999999996
+    }
+  ],
+  "note": "Final mixed-render acceptance remains required."
+}

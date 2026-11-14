@@ -10,11 +10,17 @@
 body,button,input,select,textarea {font-family:var(--font-body)}
 .cr-app,.cr-app button,.cr-app input,.cr-app select,.cr-app textarea,.chain-panel,.chain-overlay,.chain-room,.chain-success {font-family:var(--font-body)!important}
 h1,h2,h3,.t-title,.uv-patrol,.uv-dock button {font-family:var(--font-display)!important;font-weight:800}
-.t-title {background:linear-gradient(#ffedab 25%,#f69a30 90%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-stroke:3px #442634;paint-order:stroke fill;filter:drop-shadow(0 2px 0 #1b1023);line-height:1.18}
+.t-title {background:linear-gradient(#ffedab 25%,#f69a30 90%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-stroke:0;filter:drop-shadow(1px 0 0 #442634) drop-shadow(-1px 0 0 #442634) drop-shadow(0 2px 0 #1b1023);line-height:1.18}
 .t-label {font-family:var(--font-display);color:#fff5df;-webkit-text-stroke:2px #342038;paint-order:stroke fill;text-shadow:0 2px #1b1023}
 .t-number {font-family:var(--font-num);font-variant-numeric:tabular-nums;color:#ffdf93;-webkit-text-stroke:2px #38253b;paint-order:stroke fill}
 .t-ribbon {padding:.3em 1em;background:linear-gradient(#70416a,#3e264e);border-block:2px solid #d6a86b;border-radius:5px;box-shadow:0 4px 0 #1b1023}
 .th-audio {position:fixed;top:12px;right:12px;z-index:6000;display:flex;gap:4px;color:#ffe1a1}
+/* The legacy battle toolbar occupies the top 82px, including its More button. */
+body:has(.uv-battle-hud) .th-audio {top:88px}
 .th-audio button,.th-audio summary {display:grid;place-items:center;border:1px solid #bd8e52;background:#261a35;color:inherit;border-radius:12px;min-width:38px;min-height:38px;cursor:pointer}
 .th-audio details[open] {padding:8px;background:#261a35;border:1px solid #bd8e52;border-radius:12px}.th-audio label{display:flex;justify-content:space-between;gap:12px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+/* Original painted shell kit: keep all font selection centralized. */
+.b2-button,.b2-action,.b2-ribbon,.cr-app .b2-button,.cr-app .b2-action{font-family:var(--font-display)!important}
+.b2-guide>p{font-family:var(--font-body)}
