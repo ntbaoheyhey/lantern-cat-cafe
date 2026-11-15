@@ -24,6 +24,7 @@ import { fixedActionClipTime,retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { stageLayoutC2 } from '../stage/layout-c2';
 import {unitCore,unitFace,spriteFacing,ELEMENT_COLORS} from '../stage/core';
+import {opaqueWorldBounds} from '../stage/opaque-pose-bounds';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
@@ -251,6 +252,19 @@ export class SpineScene {
    const cos=Math.cos(-angle),sin=Math.sin(-angle);
    actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
    actor.root.updateMatrixWorld(true);
+   const opaque=opaqueWorldBounds(actor.root);
+   if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2){
+    const target=core.world.height*position.scale;
+    const factor=Math.max(target*.985,Math.min(target*1.015,opaque.height))/opaque.height;
+    // Constrain size around the planted foot; preserve the authored pose shape.
+    const pivotX=position.x+footX+dx*pixelsToWorld,pivotY=position.y+footY-dy*pixelsToWorld;
+    actor.root.scale.x*=factor;actor.root.scale.y*=factor;
+    actor.root.position.x=pivotX+(actor.root.position.x-pivotX)*factor;
+    actor.root.position.y=pivotY+(actor.root.position.y-pivotY)*factor;
+    opaque.x=pivotX+(opaque.x-pivotX)*factor;opaque.y=pivotY+(opaque.y-pivotY)*factor;opaque.width*=factor;opaque.height*=factor;
+    actor.root.updateMatrixWorld(true);
+   }
+   actor.opaqueWorld=opaque;
    entry.shadow.position.x+=dx*pixelsToWorld;entry.shadow.position.y-=Math.max(0,dy)*pixelsToWorld;entry.shadow.material.opacity=unit.hp<=0?Math.max(0,1-deathAge/.6):1;
    entry.ring.position.copy(entry.shadow.position);
    if(reaction.flash)actor.root.traverse(node=>{if(node instanceof T.Mesh)(node.material as T.MeshBasicMaterial).color.lerp(new T.Color(2,2,2),.72);});
@@ -296,6 +310,8 @@ export class SpineScene {
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
  private bounds(entry:DisplayActor,b=entry.actor.bounds):Rect{
+  const opaque=b===entry.actor.bounds?entry.actor.opaqueWorld:undefined;
+  if(opaque){const top=this.screen(this.scratch.set(opaque.x,opaque.y+opaque.height,0)),bottom=this.screen(this.scratch.set(opaque.x+opaque.width,opaque.y,0));return{x:top.x,y:top.y,width:bottom.x-top.x,height:bottom.y-top.y};}
   const root=entry.actor.root;let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
   // Opposite corners alone collapse a rotated rectangle at a quarter turn.
   // Every corner must participate in framing, face protection and label lanes.

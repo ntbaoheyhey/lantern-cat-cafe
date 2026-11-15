@@ -8,6 +8,7 @@ import { fallbackScale } from '../../squad/turn3d/look-scale';
 import { SPINE_CONFIG, SPINE_UNIT_BY_ID, type SpineUnit, type SpineAnimation, type SpineSocket, type AcceptedSkeleton, type AcceptedSequence } from './config';
 import { animationCues, SpineEventCursor, type SpineCue } from './events';
 import {opaqueBounds} from '../stage/core';
+import {opaqueWorldBounds,type OpaqueWorldBounds} from '../stage/opaque-pose-bounds';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
@@ -66,6 +67,7 @@ export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
  readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'='puppet';
+ opaqueWorld:OpaqueWorldBounds|undefined;
  private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
  mesh?:CutoutMesh;puppet?:T.Group;sequence?:SequenceAsset;plane?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  private animation='';private key:unknown;private at=0;private order=0;
@@ -96,7 +98,7 @@ export class SpineActor {
  }
  dispose(){this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
 }
-function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));return actor;}
+function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet'):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
  const designer=unit.designer,sequence=unit.sequence;
