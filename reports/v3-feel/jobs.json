@@ -357,5 +357,65 @@
     "finished": true,
     "ended": "2026-11-15T11:44:28.266Z",
     "status": "Typecheck/unit/parity/browser PASS (435/435); A 250 PASS/97 FAIL; B 14 FAIL, all retained for Q9 classification"
+  },
+  "q3aCheckpointTypes": {
+    "pid": 12643,
+    "command": [
+      "pnpm",
+      "-r",
+      "typecheck"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q3A-checkpoint-typecheck.log",
+    "started": "2026-11-15T13:39:53.227590+00:00",
+    "finished": true,
+    "ended": "2026-11-15T13:41:05.550602+00:00",
+    "status": "PASS"
+  },
+  "q3aCheckpointTools": {
+    "pid": 12644,
+    "command": [
+      "node",
+      "--test",
+      "scripts/v3feel/craft-policy.test.mjs",
+      "scripts/v3feel/check-feel.test.mjs",
+      "scripts/v3feel/frame-marker.test.mjs",
+      "scripts/v3feel/render-timing.test.mjs",
+      "scripts/v3feel/media-timing.test.mjs"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q3A-checkpoint-tools.log",
+    "started": "2026-11-15T13:39:53.229495+00:00",
+    "finished": true,
+    "ended": "2026-11-15T13:41:05.560105+00:00",
+    "status": "PASS"
+  },
+  "q3aCheckpointParity": {
+    "pid": 12823,
+    "command": [
+      "node",
+      "scripts/v3feel/parity.mjs",
+      "check"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q3A-checkpoint-parity-check.log",
+    "started": "2026-11-15T13:40:19.502705+00:00",
+    "finished": true,
+    "ended": "2026-11-15T13:41:05.566481+00:00",
+    "status": "PASS"
+  },
+  "q3aCheckpointParityInvocation": {
+    "pid": 12645,
+    "command": [
+      "node",
+      "scripts/v3feel/parity.mjs",
+      "current"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q3A-checkpoint-parity.log",
+    "started": "2026-11-15T13:39:53.230949+00:00",
+    "finished": true,
+    "status": "Invocation failed: unsupported current argument; no parity baseline changed.",
+    "ended": "2026-11-15T13:40:19.501335+00:00"
   }
 }

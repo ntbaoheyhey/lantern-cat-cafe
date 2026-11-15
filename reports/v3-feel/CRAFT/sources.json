@@ -156,6 +156,62 @@
       "title": "OMG3Q reference two",
       "url": "/Users/bao/Downloads/YTSave.to_YouTube_Media_ua_e236yxNM_OMG-3Q-Lu\u031bu-Kim-Trie\u0323\u0302u-Va\u0302n-ra-tra\u0323\u0302n-One-hit-one-kill-qua\u0301-nga\u0302\u0300u_001_1080p.mp4",
       "readScope": "Private measurement source; no pixels or audio will ship."
+    },
+    {
+      "id": "Q3-X02",
+      "url_or_path": "tools/v3craft-lab/q3/erosion-threshold.json",
+      "type": "experiment",
+      "topic": "Q3 Q3.A D1",
+      "takeaway": "Paint-support percentiles reduce worst GPU support-loss step from 14.59% to 5.72%; filtering and soft edges prevent an exact area schedule."
+    },
+    {
+      "id": "Q3-X03",
+      "url_or_path": "tools/v3craft-lab/q3/motion-study.json",
+      "type": "experiment",
+      "topic": "Q3 Q3.A D1",
+      "takeaway": "Released band fragments move 19.51\u201336.34 px but look like thin contour wires; reject their shape and use filled original-paint chips."
+    },
+    {
+      "id": "Q3-X04",
+      "url_or_path": "tools/v3craft-lab/q3/chip-motion-study.json",
+      "type": "experiment",
+      "topic": "Q3 Q3.A D1",
+      "takeaway": "Filled paint chips avoid wire contours; seven measured centroids travel 20.68\u201334.71px; the eighth is gone at the late probe and is explicitly unmeasured."
+    },
+    {
+      "id": "Q3-T17",
+      "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+      "type": "breakdown",
+      "topic": "Q3 Q3.A D2",
+      "takeaway": "An effect must communicate its gameplay cause clearly and belong to its character; restraint is part of the design."
+    },
+    {
+      "id": "Q3-T18",
+      "url_or_path": "https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-25-rendering-vector-art-gpu",
+      "type": "formal",
+      "topic": "Q3 Q3.A D2",
+      "takeaway": "Curve boundaries and interpolated procedural coordinates can be represented separately on GPU geometry; our strip is tessellated, not the chapter algorithm."
+    },
+    {
+      "id": "Q3-T19",
+      "url_or_path": "https://threejs.org/docs/pages/BufferGeometry.html",
+      "type": "doc",
+      "topic": "Q3 Q3.A D2",
+      "takeaway": "Indexed geometry stores positions and UV attributes explicitly and can reuse strip vertices."
+    },
+    {
+      "id": "Q3-T20",
+      "url_or_path": "https://threejs.org/docs/pages/Curve.html",
+      "type": "doc",
+      "topic": "Q3 Q3.A D2",
+      "takeaway": "Arc-length-spaced curve sampling differs from uniform parameter values and can stabilize distance-based texture flow."
+    },
+    {
+      "id": "Q3-X05",
+      "url_or_path": "tools/v3craft-lab/q3/arc-study.json",
+      "type": "experiment",
+      "topic": "Q3 Q3.A D2",
+      "takeaway": "Equal parameter increments vary in distance by 1.553x; arc-length spacing reduces the ratio to 1.00210 on the same original path."
     }
   ],
   "unavailable": [
@@ -166,6 +222,120 @@
     {
       "url": "https://nexus.leagueoflegends.com/wp-content/uploads/2017/10/VFX_Styleguide_final_public_hidpjqwx7lqyx0pjj3ss.pdf",
       "reason": "Redirects to game homepage; not counted as read"
+    }
+  ],
+  "toolkitSources": [
+    {
+      "id": "Q3-T01",
+      "url": "https://threejs.org/docs/pages/ShaderMaterial.html",
+      "type": "doc",
+      "readScope": "WebGL uniforms, attributes and transparent material settings support seekable shader effects.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T02",
+      "url": "https://threejs.org/manual/pages/color-management.html",
+      "type": "doc",
+      "readScope": "Paint is sRGB; noise is data; custom shaders must convert output once.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T03",
+      "url": "https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-23-high-speed-screen-particles",
+      "type": "formal",
+      "readScope": "Transparent overdraw is a pixel cost; off-screen downsampling can create silhouette halos.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T04",
+      "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-6-fire-vulcan-demo",
+      "type": "breakdown",
+      "readScope": "Animated sprites carry authored motion; alpha blending restores colour control lost by broad additive layers.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T05",
+      "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/particle-expressions?application_version=4.27",
+      "type": "doc",
+      "readScope": "Relative age, velocity and SubUV blending decouple particle appearance from emitter timing.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T06",
+      "url": "https://docs.unity3d.com/Packages/com.unity.shadergraph@14.0/manual/Simple-Noise-Node.html",
+      "type": "doc",
+      "readScope": "Value noise maps UV to bounded scalar values; deterministic hash modes avoid platform-varying noise.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T07",
+      "url": "https://docs.unity3d.com/Packages/com.unity.shadergraph@14.0/manual/Flipbook-Node.html",
+      "type": "doc",
+      "readScope": "Tile index and grid dimensions select atlas UVs; top-left image order requires explicit Y handling.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T08",
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/PartSysRendererModule.html",
+      "type": "doc",
+      "readScope": "Velocity-aligned particle stretch is separate from camera stretch and base sprite size.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T09",
+      "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/coordinates-material-expressions-in-unreal-engine",
+      "type": "doc",
+      "readScope": "Texture panning uses explicit time and UV speeds; a scalar offset permits deterministic seeking.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T10",
+      "url": "https://www.w3.org/TR/compositing-1/",
+      "type": "formal",
+      "readScope": "Source-over reduces backdrop by source alpha; premultiplication must be consistent.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T11",
+      "url": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+      "type": "paper",
+      "readScope": "Key poses, nonuniform spacing and approximately preserved volume give weight; overlap separates attachments.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T12",
+      "url": "https://docs.godotengine.org/en/stable/tutorials/animation/2d_skeletons.html",
+      "type": "doc",
+      "readScope": "Weighted internal vertices and explicit triangles determine how a painted polygon bends; rest pose matters.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T13",
+      "url": "https://threejs.org/manual/pages/shadows.html",
+      "type": "doc",
+      "readScope": "A ground-attached transparent plane can anchor flat art cheaply, without repeated shadow-map passes.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T14",
+      "url": "apps/web/src/game/rig/cutout.ts",
+      "type": "local",
+      "readScope": "The native renderer has weighted vertices, editable clips and independent pose state.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T15",
+      "url": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+      "type": "local",
+      "readScope": "Larger units expose washout and weak wind-up; scale correction is not animation acceptance.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
+    },
+    {
+      "id": "Q3-T16",
+      "url": "reports/v3-feel/CRAFT/REFERENCE-BREAKDOWN.md",
+      "type": "local",
+      "readScope": "Study directional impulse and ordered fallout; reject reference walk-ups, cinematics and whiteouts.",
+      "readAt": "2026-11-15T11:51:10.841297+00:00"
     }
   ]
 }

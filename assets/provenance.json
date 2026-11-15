@@ -2416,6 +2416,49 @@
       "date": "2026-11-14",
       "source": "apps/web/public/audio/callout-soot.mp3; manifest.cues[voice.soot.ult.charge][0]",
       "licence": "Own synthesis; reused voice provenance unchanged in original manifest"
+    },
+    {
+      "asset": "tools/v3craft-drills/assets/soot-core.png",
+      "tool": "Python shutil.copyfile; exact copy",
+      "prompt": "Approved original Soot lantern layer copied for isolated shader erosion practice. No reference video or reference pixels used.",
+      "date": "2026-11-15",
+      "source": "/Users/bao/art/vfx-2026-11-12/soot-4/layers/core-shape.png",
+      "sha256": "83c45905aeabab5654430eba53d953b2e287c90dc7e79961804e0fa53213a8d9"
+    },
+    {
+      "asset": "tools/v3craft-drills/d1.ts",
+      "tool": "Original Three.js shader recipe and seeded value-noise data",
+      "prompt": "Dissolve the approved original Soot lantern using painted-support percentile thresholds. Release eight small filled triangular chips sampled from opaque original paint; local pivots, noise-CDF births, damped upward/outward travel, warm-to-violet decay. Rejected contour-band recipe retained in history. Seed15112026; no reference image inputs.",
+      "date": "2026-11-15T13:39:18.440943+00:00",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png"
+      ],
+      "referenceInputs": [],
+      "priorRejectedRecipe": {
+        "date": "2026-11-15T12:10:23.427359+00:00",
+        "prompt": "Dissolve the approved original Soot lantern painting using a painted-support percentile threshold. Release narrow fragments of our same paint with finite upward/rightward drift and warm-to-violet colour decay. Seed 15112026; no reference image inputs. Isolated D1 drill only."
+      },
+      "recipe": "tools/v3craft-drills/paint-chips.json"
+    },
+    {
+      "asset": "tools/v3craft-drills/paint-chips.json",
+      "tool": "Original paint-sampling recipe",
+      "date": "2026-11-15T13:39:18.440943+00:00",
+      "prompt": "Choose eight opaque interior paint anchors from our approved lantern; triangular source crops, no traced/reference pixels.",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png"
+      ],
+      "referenceInputs": []
+    },
+    {
+      "asset": "tools/v3craft-drills/d2.ts",
+      "tool": "Original Three.js indexed ribbon meshes and procedural ShaderMaterial data texture",
+      "date": "2026-11-15T13:39:18.440943+00:00",
+      "prompt": "Create an open violet blade, thin offset ribbon and tapered amber lance from real hand to target chest. Arc-distance UVs, periodic harmonic grain seeded15112027, narrow warm lip, accelerated release and directional tail erosion. R0/r1/r2 recipes retained. Isolated drill only.",
+      "source": [
+        "Original analytic geometry and seeded data texture; no image inputs"
+      ],
+      "referenceInputs": []
     }
   ]
 }

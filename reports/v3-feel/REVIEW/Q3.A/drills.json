@@ -1,0 +1,107 @@
+{
+  "at": "2026-11-15T13:39:18.440943+00:00",
+  "scope": "Isolated technique rows only; Q3.A incomplete; no production approval",
+  "drills": [
+    {
+      "id": "D1",
+      "state": "PASS",
+      "rows": [
+        "B16",
+        "U21"
+      ],
+      "productionC07": "OPEN",
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D1.jpg",
+      "sheetSha256": "673240cc1e971e2db0c8adfafd855d024dcb9e16b66a63811e5516a58d7ba873"
+    },
+    {
+      "id": "D2",
+      "state": "PASS",
+      "rows": [
+        "B06",
+        "B07",
+        "B17",
+        "U08",
+        "U12"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D2.jpg",
+      "gpuPeak": {
+        "ms": 666.6666666666666,
+        "visible": 40616
+      },
+      "maskMetrics": {
+        "method": "Existing QR definition:alpha>=.08;centroid rotations90/180/270;full1280x720 union before actor occlusion",
+        "areaPixels": 40616,
+        "areaFraction": 0.044071180555555554,
+        "rotationalIou": [
+          0.24560300544353292,
+          0.07729032942549467,
+          0.24560300544353292
+        ],
+        "symmetryMax": 0.24560300544353292,
+        "layers": {
+          "union": 40616,
+          "open-blade": 28909,
+          "offset-ribbon": 3930,
+          "tapered-lance": 8949
+        }
+      },
+      "flow": [
+        {
+          "method": "static-UV",
+          "commonSupportPixels": 28878,
+          "meanRgbDifference255": 0,
+          "fractionChangedOver4": 0
+        },
+        {
+          "method": "panned-UV",
+          "commonSupportPixels": 28226,
+          "meanRgbDifference255": 16.868135761354843,
+          "fractionChangedOver4": 0.866966626514561
+        }
+      ],
+      "sourceSha256": "f33bd5c38531ffd36bab671ff54382169f99f673051ba5ecc25874cde98cd13d",
+      "viewingVideo": {
+        "fps": 30,
+        "frames": 60,
+        "seconds": 2,
+        "bytes": 593465,
+        "rawFrames": 60,
+        "rawSeconds": 1.98199,
+        "caveat": "Viewing derivative; raw VFR retained, no independent timing PASS"
+      },
+      "sheetSha256": "6108bdbfd96c5f8c410e9ef984d545d42792ed85d4ff6683b8b994f0b1d06a7c"
+    },
+    {
+      "id": "D3",
+      "state": "OPEN"
+    },
+    {
+      "id": "D4",
+      "state": "OPEN"
+    },
+    {
+      "id": "D5",
+      "state": "OPEN"
+    },
+    {
+      "id": "D6",
+      "state": "OPEN"
+    },
+    {
+      "id": "D7",
+      "state": "OPEN"
+    },
+    {
+      "id": "D8",
+      "state": "OPEN"
+    }
+  ]
+}

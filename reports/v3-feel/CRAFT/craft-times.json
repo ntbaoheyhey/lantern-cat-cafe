@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "expectedAssets": [
+    {
+      "item": "Q3.A",
+      "id": "D1",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D2",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D3",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D4",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D5",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D6",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D7",
+      "kind": "drill"
+    },
+    {
+      "item": "Q3.A",
+      "id": "D8",
+      "kind": "drill"
+    }
+  ],
+  "steps": [
+    {
+      "item": "Q3.A",
+      "asset": "toolkit-study",
+      "category": "learn",
+      "start": "2026-11-15T11:48:44.454528+00:00",
+      "work": "Primary-source reading, local renderer inspection and original-art method experiments; no production.",
+      "end": "2026-11-15T11:55:24.441301+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "drill-sandbox",
+      "category": "measure",
+      "start": "2026-11-15T11:55:24.441301+00:00",
+      "work": "Minimal Three.js scene and reuse direct canvas recording for isolated two-second drills; production recorder unchanged.",
+      "end": "2026-11-15T11:57:08.496464+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "author",
+      "revision": 0,
+      "start": "2026-11-15T11:57:08.496464+00:00",
+      "work": "Author initial original-lantern erosion shader, threshold spacing, contour edge and entry envelope.",
+      "end": "2026-11-15T11:59:28.123504+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "review",
+      "revision": 0,
+      "start": "2026-11-15T12:02:39Z",
+      "end": "2026-11-15T12:04:12.543188+00:00",
+      "work": "Resume audit; re-read learning and D1 baseline, inspect all 20 baseline samples and reference U06/U08 overview sheets; confirm the saved two-method GPU experiment completed. Not authoring.",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "author",
+      "revision": 1,
+      "start": "2026-11-15T12:05:11.805588+00:00",
+      "work": "Implement percentile-spaced reveal and erosion on original paint; author shape threshold, edge colour and lifetime spacing from the rejected baseline and GPU experiment.",
+      "end": "2026-11-15T12:06:29.619959+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 1,
+      "start": "2026-11-15T12:06:29.619959+00:00",
+      "work": "Capture two-second r1 film, extract full and enlarged time sheets, make fixed-scale private comparison, and inspect duration/error receipts.",
+      "end": "2026-11-15T12:07:53.134046+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "review",
+      "revision": 1,
+      "start": "2026-11-15T12:07:53.134046+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Inspect every r1 10-fps sample, matched-scale reference and adjacent entry/exit frames; select r2 correction from visible defects.",
+      "end": "2026-11-15T12:09:32.146432+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 2,
+      "start": "2026-11-15T12:10:23.427359+00:00",
+      "work": "Run the rigid/released fragment comparison on GPU pixels and fixed-time images, then capture the r2 two-second film and sheets.",
+      "end": "2026-11-15T12:12:45.332894+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "review",
+      "revision": 2,
+      "start": "2026-11-15T12:12:45.332894+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Reject contour-band fragments after all 20 r2 samples and paired motion comparison; inspect the matched reference and select filled original-paint chips.",
+      "end": "2026-11-15T12:14:38.107779+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "author",
+      "revision": 2,
+      "start": "2026-11-15T12:14:38.107779+00:00",
+      "work": "Redo r2 authoring: choose filled interior paint chips across canopy and lamps, build tapered triangular fragment geometry with local pivots, couple birth to the measured paint CDF, and shape drift/turn/colour curves. Includes live authoring previews and source-patch/UV corrections, without a formal acceptance claim.",
+      "end": "2026-11-15T12:17:59.063435+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 2,
+      "start": "2026-11-15T12:17:59.063435+00:00",
+      "work": "Preserve rejected band trial locally; capture refined r2 and all phase/adjacent-frame sheets, compare rigid versus filled-chip pixels using actual birth times.",
+      "end": "2026-11-15T12:19:24.890820+00:00",
+      "note": "Earlier state transition preceded receipt/sheet completion. Measurement includes reading the completed capture and probe outputs; formal image review starts now."
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "review",
+      "revision": 2,
+      "start": "2026-11-15T12:19:24.890820+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Review refined r2 all 20 action cells, adjacent entry/exit frames, motion comparison and fixed-scale private reference; record direct D1 row verdicts and remaining production limitations.",
+      "end": "2026-11-15T12:21:05.721649+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "learn",
+      "start": "2026-11-15T12:21:05.721649+00:00",
+      "work": "Study open-arc mesh silhouette, UV flow, leading edge and directional timing; compare two methods in the original-art sandbox before authoring D2.",
+      "end": "2026-11-15T12:25:12.484619+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "author",
+      "revision": 0,
+      "start": "2026-11-15T12:29:09.623186+00:00",
+      "work": "Author original open blade/ribbon/lance meshes, seeded flowing grain, restrained violet/amber palette, directional lifetime and actual enemy scale anchor; includes live shape and shader authoring previews.",
+      "end": "2026-11-15T12:30:24.820730+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "review",
+      "revision": 0,
+      "start": "2026-11-15T12:31:19.916794+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Review all 20 baseline phase cells and B06 at matched body scale; identify the leading-edge, silhouette and timing defects before revision. Continue reviewing static-tail timing and shader lifetime against every phase cell; the prior transition was premature and no r1 edits occurred.",
+      "end": "2026-11-15T12:33:01.241343+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "author",
+      "revision": 1,
+      "start": "2026-11-15T12:33:01.241343+00:00",
+      "work": "Re-author blade thickness/value hierarchy, offset ribbon and lance using arc-length coordinates; use a continuous head sweep and distance-cleared tail from r0 film/code review, with live authoring previews.",
+      "end": "2026-11-15T12:34:11.419344+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 1,
+      "start": "2026-11-15T12:34:11.419344+00:00",
+      "work": "Capture r1 and rebuild full phase, adjacent-frame and corrected body-scale private comparisons; inspect direction and original path UV metrics without modifying the production recorder.",
+      "end": "2026-11-15T12:36:49.048595+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "review",
+      "revision": 1,
+      "start": "2026-11-15T12:36:49.048595+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Review all r1 phase cells, corrected matched-scale B06, and actual transparent GPU layer masks; identify the second revision from visible contour, texture and follow-through defects.",
+      "end": "2026-11-15T12:38:21.714030+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "author",
+      "revision": 2,
+      "start": "2026-11-15T12:38:21.714030+00:00",
+      "work": "Author accelerated blade/lance release, shared arrival, directionally broken trailing edge and a longer thin eroding ribbon; refine with live shape previews, keeping real actor sockets and source-over colours.",
+      "end": "2026-11-15T12:39:41.290253+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 2,
+      "start": "2026-11-15T13:33:33.296940+00:00",
+      "work": "Resume after interruption: verify saved r2 capture, prepare full/adjacent sheets and matched private comparison, export transparent masks and frozen-geometry UV-flow experiment. Sheet preparation continued after a Python syntax error; no final-film review claimed from stale sheets.",
+      "end": "2026-11-15T13:37:38.616103+00:00"
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "review",
+      "revision": 2,
+      "start": "2026-11-15T13:37:38.616103+00:00",
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "work": "Review final viewing-copy20 phase cells,60-frame raw boundaries, transparent layers/flow and corrected private matched scale; record direct-row verdicts with raw-cadence qualification.",
+      "end": "2026-11-15T13:39:18.440943+00:00"
+    }
+  ],
+  "rejectedSteps": [
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "review",
+      "revision": 0,
+      "reviewPath": "reports/v3-feel/CRAFT/DRILLS.md",
+      "start": "2026-11-15T11:59:28.123504+00:00",
+      "work": "Inspect all 20 D1 baseline samples and reference beat; identify threshold/reveal/terminal-contour defects.",
+      "end": "2026-11-15T12:00:26.497Z",
+      "valid": false,
+      "note": "Preserved rejected interval, below the one-minute floor. Does not count toward craft-time acceptance; work must be redone.",
+      "durationSeconds": 58.373496
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 0,
+      "start": "2026-11-15T12:04:12.543188+00:00",
+      "work": "Construct private matched-scale baseline/reference sheet with explicit crops and scale; document experiment result before revision.",
+      "end": "2026-11-15T12:05:11.805588+00:00",
+      "durationSeconds": 59.2624,
+      "note": "Preserved rejected interval, below the one-minute floor. Does not count toward craft-time acceptance; work must be redone."
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D1",
+      "kind": "drill",
+      "category": "author",
+      "revision": 2,
+      "start": "2026-11-15T12:09:32.146432+00:00",
+      "work": "Author finite released paint-band fragments, staggered birth, warm-to-dark colour decay and upward damped travel; retain rigid translation as the comparison method.",
+      "end": "2026-11-15T12:10:23.427359+00:00",
+      "durationSeconds": 51.280927,
+      "note": "Preserved rejected interval, below the one-minute floor. Does not count toward craft-time acceptance; work must be redone."
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "author",
+      "revision": 0,
+      "start": "2026-11-15T12:25:12.484619+00:00",
+      "work": "Author original open-arc blade, offset ribbon and lance geometry, periodic flow texture, palette and one-shot envelopes; add the actual enemy as a scale/endpoint reference in the isolated sandbox.",
+      "end": "2026-11-15T12:25:12.484619+00:00",
+      "valid": false,
+      "note": "Interrupted by the handoff request before any D2 implementation; zero authoring credit. Resume audit and inactive handoff time excluded."
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 0,
+      "start": "2026-11-15T12:30:24.820730+00:00",
+      "work": "Record the unchanged two-second canvas capture, extract all 20 phase cells and construct a private matched-scale B06 comparison using the established ffmpeg/Pillow method.",
+      "end": "2026-11-15T12:31:19.916794+00:00",
+      "valid": false,
+      "durationSeconds": 55.096064,
+      "note": "Preserved below-minute measurement interval; no craft credit. Full capture/comparison preparation must be redone in a valid later block."
+    },
+    {
+      "item": "Q3.A",
+      "asset": "D2",
+      "kind": "drill",
+      "category": "measure",
+      "revision": 2,
+      "start": "2026-11-15T12:39:41.290253+00:00",
+      "work": "Capture the final r2 candidate, full/adjacent frames, fixed-body-scale private comparison, isolated shape masks and frozen-geometry UV-flow comparison using existing methods.",
+      "end": "2026-11-15T12:39:44.939Z",
+      "valid": false,
+      "note": "Capture completed before interruption; 3.65-second interval has no craft-time credit. Inactive time until13:33UTC excluded."
+    }
+  ],
+  "transitionCorrections": [
+    {
+      "at": "2026-11-15T12:33:01.146576+00:00",
+      "discardedUnstartedAuthorTransition": {
+        "item": "Q3.A",
+        "asset": "D2",
+        "kind": "drill",
+        "category": "author",
+        "revision": 1,
+        "start": "2026-11-15T12:32:17.105351+00:00",
+        "work": "Re-author the blade thickness/value hierarchy, offset trailing ribbon and lance using arc-length coordinates; shape a directional clear-out from observed r0 defects and live previews."
+      },
+      "reason": "No r1 authoring or production edits occurred after transition; review continued instead."
+    }
+  ]
+}

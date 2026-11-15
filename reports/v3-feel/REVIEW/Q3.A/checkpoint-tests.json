@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-15T13:41:05.567083+00:00",
+  "scope": "Mid-item checkpoint: isolated tools only; full Q3.A completion remains pending",
+  "results": [
+    {
+      "id": "q3aCheckpointTypes",
+      "state": "PASS",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "log": "reports/v3-feel/Q3A-checkpoint-typecheck.log",
+      "sha256": "6ffca190b307ff581b69713def3a988ee793633e6d20abbd822c485a3d6f1fbd"
+    },
+    {
+      "id": "q3aCheckpointTools",
+      "state": "PASS",
+      "command": [
+        "node",
+        "--test",
+        "scripts/v3feel/craft-policy.test.mjs",
+        "scripts/v3feel/check-feel.test.mjs",
+        "scripts/v3feel/frame-marker.test.mjs",
+        "scripts/v3feel/render-timing.test.mjs",
+        "scripts/v3feel/media-timing.test.mjs"
+      ],
+      "log": "reports/v3-feel/Q3A-checkpoint-tools.log",
+      "sha256": "c1f6f2c448b487c71d56dd41799bb5b2468fdb7e7ee8991ffb95992302689eb9"
+    },
+    {
+      "id": "q3aCheckpointParity",
+      "state": "PASS",
+      "command": [
+        "node",
+        "scripts/v3feel/parity.mjs",
+        "check"
+      ],
+      "log": "reports/v3-feel/Q3A-checkpoint-parity-check.log",
+      "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
+    }
+  ]
+}

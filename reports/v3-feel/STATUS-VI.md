@@ -8,7 +8,9 @@ Chiều cao mèo tối thiểu 191/239 px; tỉ lệ lớn/nhỏ tối đa 1,037
 Không thấy số/đơn vị che mặt hoặc HUD; 6 lần dựng lại chiêu lệch <=2,182 px, vẫn cách vùng mặt 8 px.
 Kiểm tra kiểu, 2.634 kiểm thử web, parity và 435/435 kiểm thử trình duyệt PASS.
 Q2 vẫn mở tổng thể: Q1 chưa đạt; A còn 97 lỗi, B còn 14 lỗi cũ/mốc tương lai, giữ nguyên để xử lý Q9.
-Q3 tiếp theo: học shader/flipbook và làm D1–D8, mỗi bài ít nhất hai vòng sửa.
+Q3: D1 hiện/tan và D2 đường chém/UV đã qua hai vòng sửa; D3–D8 chưa làm.
+D2 có 3 hình riêng, đối xứng 0,246 < 0,8; mới đạt bài luyện, chưa sửa hiệu ứng chiến đấu.
+Tỉ lệ sáng tác hiện 9,70% < 60% (thời gian gián đoạn không tính sáng tác); Q3.A vẫn mở.
 Hiệu ứng hiện còn vòng/sương vàng-hồng, mất chi tiết cơ thể; tư thế còn yếu, chưa được công nhận đạt.
 Roster thực có 12 mèo/25 đơn vị; yêu cầu 13 mèo còn là chênh lệch, không tự thêm nhân vật.
 Không hạ ngưỡng, không triển khai, không merge main; làm một mình.

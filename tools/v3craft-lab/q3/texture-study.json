@@ -1,0 +1,117 @@
+{
+  "at": "2026-11-15T11:52:03.308549+00:00",
+  "sources": [
+    {
+      "path": "/Users/bao/art/vfx-2026-11-12/soot-4/layers/core-shape.png",
+      "sha256": "83c45905aeabab5654430eba53d953b2e287c90dc7e79961804e0fa53213a8d9"
+    },
+    {
+      "path": "apps/web/public/units/soot/runtime.webp",
+      "sha256": "d92e22a6bd2c491063bed6be9bdfca6771507ec752b3fcedba0ded5840b3738f"
+    }
+  ],
+  "method": "60 lifetime samples; alpha support >.08. Linear Rec.709 same-pixel gradients on original alpha>.8; signed gradient retention is distinct from RMS texture contrast. Static CPU study, not browser/film acceptance.",
+  "erosion": [
+    {
+      "method": "uniform-fade",
+      "areaFractionsAtFrames": {
+        "0": 1.0,
+        "15": 0.990087,
+        "30": 0.975784,
+        "45": 0.946101,
+        "59": 0.0
+      },
+      "maxFrameAreaLoss": 0.835874,
+      "contourChangeAtMid": 0.024216
+    },
+    {
+      "method": "noise-erosion",
+      "areaFractionsAtFrames": {
+        "0": 1.0,
+        "15": 0.996217,
+        "30": 0.72918,
+        "45": 0.084106,
+        "59": 0.0
+      },
+      "maxFrameAreaLoss": 0.057765,
+      "contourChangeAtMid": 0.27082
+    }
+  ],
+  "blend": [
+    {
+      "method": "baseline",
+      "metrics": {
+        "face": {
+          "retainedOriginalGradient": 1.0,
+          "rmsGradientRatio": 1.0,
+          "nearWhiteFraction": 0.0,
+          "pixels": 13968
+        },
+        "body": {
+          "retainedOriginalGradient": 1.0,
+          "rmsGradientRatio": 1.0,
+          "nearWhiteFraction": 0.0,
+          "pixels": 74409
+        }
+      }
+    },
+    {
+      "method": "broad-additive",
+      "metrics": {
+        "face": {
+          "retainedOriginalGradient": 0.67455,
+          "rmsGradientRatio": 0.778699,
+          "nearWhiteFraction": 0.006658,
+          "pixels": 13968
+        },
+        "body": {
+          "retainedOriginalGradient": 0.88424,
+          "rmsGradientRatio": 0.927303,
+          "nearWhiteFraction": 0.001505,
+          "pixels": 74409
+        }
+      }
+    },
+    {
+      "method": "normal-alpha",
+      "metrics": {
+        "face": {
+          "retainedOriginalGradient": 0.238659,
+          "rmsGradientRatio": 0.343868,
+          "nearWhiteFraction": 0.0,
+          "pixels": 13968
+        },
+        "body": {
+          "retainedOriginalGradient": 0.567196,
+          "rmsGradientRatio": 0.689977,
+          "nearWhiteFraction": 0.0,
+          "pixels": 74409
+        }
+      }
+    },
+    {
+      "method": "split-body-local-core",
+      "metrics": {
+        "face": {
+          "retainedOriginalGradient": 0.999684,
+          "rmsGradientRatio": 0.99973,
+          "nearWhiteFraction": 0.0,
+          "pixels": 13968
+        },
+        "body": {
+          "retainedOriginalGradient": 0.998766,
+          "rmsGradientRatio": 1.00004,
+          "nearWhiteFraction": 0.0,
+          "pixels": 74409
+        }
+      }
+    }
+  ],
+  "faceRegionSourcePixels": [
+    247,
+    248,
+    391,
+    345
+  ],
+  "decisionPendingVisualReview": true
+}

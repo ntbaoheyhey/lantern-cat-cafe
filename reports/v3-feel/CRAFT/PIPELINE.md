@@ -1,6 +1,6 @@
 # Repeatable character and skill pipeline
 
-Status: three pilots reviewed and rejected; continue under QR.6 exception. Revision step times are measured; fresh-character step timings are still unverified. Source inputs: F1–F13, `PRINCIPLES.md`, `REFERENCE-BREAKDOWN.md`, `QUALITY-BAR.md`, S04/S05/S07/S08 and local sources L01–L05 in `sources.json`.
+Status: three QR pilots reviewed and rejected. QR.6 exception WITHDRAWN by V3-CRAFT. Q3.A drills precede a new Rung-2/3 pilot. Revision step times are measured; fresh-character step timings are still unverified. Source inputs: F1–F13, `PRINCIPLES.md`, `REFERENCE-BREAKDOWN.md`, `QUALITY-BAR.md`, S04/S05/S07/S08 and local sources L01–L05 in `sources.json`.
 
 ## Inputs and clock
 
@@ -17,8 +17,8 @@ These are initial planning estimates, saved numerically in `pipeline-plan.json`.
 | 1. Inspect and register | Original character, weapon and VFX layers; inspect opaque bounds, pivots, facing and joint overlaps | Existing asset loaders + sharp/Pillow; JSON body/face/socket/facing table | Reuse existing atlas; no reference pixels | 10 min |
 | 2. Block key poses | Rest → wind-up → contact → overshoot → recovery; separate arm, torso, weapon and tail | Native cut-out tracks; JSON or TypeScript pose keys, silhouette strip | No new character atlas unless a missing attachment is proven | 20 min |
 | 3. Write timing/layers | Fixed beat, source socket, targets, shape identity, colour ramp, layer envelopes | Declarative recipe + event markers | Basic >=3 layers; ultimate >=5; one clock | 10 min |
-| 4. Author effect | Crop approved painted motifs; create shaped travel and directed debris; review grayscale before glow | Canvas paths + existing PNG layers; optional original RGBA flipbook | At most two 2048² RGBA sheets/ultimate (32 MiB decoded); target <=2 MB compressed/ultimate | 30 min |
-| 5. Integrate | Socket alignment, contact shadow, scene grade, face masks, seeded fragments; no field transform | Three.js cut-out + Canvas overlay; independent layer-mask render | Pool objects; dispose sheets after battle; no per-frame image allocation | 20 min |
+| 4. Author effect | Crop approved painted motifs; create shaped travel and directed debris; review grayscale before glow | Three.js shader/mesh layers; offline-authored RGBA flipbook when needed | At most two 2048² RGBA sheets/ultimate (32 MiB decoded); target <=2 MB compressed/ultimate | 30 min |
+| 5. Integrate | Socket alignment, contact shadow, scene grade, face masks, seeded fragments; no field transform | Three.js cut-out + shader meshes; independent layer-mask render | Pool objects; dispose sheets after battle; no per-frame image allocation | 20 min |
 | 6. Sound | Weapon anticipation/contact; ultimate focus/cast/contact/tail mapped to visual causes | Existing free audio + own synthesis; WebAudio cues, source licence manifest | <=4 simultaneous voices; 60 s unmodified mix | 15 min |
 | 7. Capture/measure | Production fixture + isolated actor/effect masks at 30 fps; action sheets at 10 fps; audio timestamp map | Playwright, ffmpeg, sharp/Pillow, checker; JSON + film strips | 1280x720, 30 s fixture WebM <=8 MB; private ref sheets <=1280 px | 20 min |
 | 8. Review/revise | Every quality-bar row with actual frame evidence; view all sheets | REVIEW.md and JSON verdicts; reject defects | Max 3 pilot methods, then explicit blocker; no threshold changes | 25 min |
@@ -47,6 +47,12 @@ After acceptance, reuse its recipe format and render functions for Q1–Q3. Q1 r
 
 ## Pilot 3 review: retained and changed method
 
-The third capture loses cast progression (film f152–167) while deterministic seeks look correct. Keep source sockets, planted key poses, face protection, contact shadows, two-frame pose hold and direct audio capture. Do not copy its per-frame full-canvas layer allocation/readback/filter path into production. Use prewarmed sprites or bounded vector draws in the existing renderer, with time driven from one action clock. Keep aspect ratio in responsive views. Inspect actual media before accepting masks or scheduled cue logs.
+The third capture loses cast progression (film f152–167) while deterministic seeks look correct. Keep source sockets, planted key poses, face protection, contact shadows, two-frame pose hold and direct audio capture. Do not copy its per-frame full-canvas layer allocation/readback/filter path into production. Historical suggestion superseded: use drilled Rung-2 shader meshes or Rung-3 authored flipbooks in the existing renderer, with time driven from one action clock. Keep aspect ratio in responsive views. Inspect actual media before accepting masks or scheduled cue logs.
 
-Measured revision times are in `pilot-3-times.json` and `pipeline-plan.json`; they are not original authoring times. A revision is not a reliable 13-unit cost predictor. Keep initial time budgets as estimates until first production unit measurement. QR stays OPEN: 46/54 rows pass, six fail, two require listening.
+Measured revision times are in `pilot-3-times.json` and `pipeline-plan.json`; they are not original authoring times. A revision is not a reliable 13-unit cost predictor. Keep initial time budgets as estimates until first production unit measurement. Historical QR result: 46/54 rows passed, six failed, two were then listening-dependent. Current disposition: study done; failed-method exception withdrawn. Q3.A drills and a new Q3.B pilot are required; objective audio verification replaces listening gates.
+
+## Q3 craft revision (2026-11-15)
+
+CRAFT/TOOLKIT.md and LEARN/Q3.md govern new work. The old 30-minute ultimate effect estimate and seconds-long pilot revisions do not meet the new >=60-minute ultimate authoring floor. Production additionally requires >=30 minutes per basic family, >=20 per unit pose set, >=60% authoring and <=20% measurement/tooling. Record actual intervals in craft-times.json; pilot measurements set the remaining roster plan. D1–D8 each get two revisions, and D1–D6 must pass before production effect edits. No failed method rolls out. Current roster is 12 cats/25 units; the requested 13-cat completeness gate remains unresolved, not reduced.
+
+Layer order is now explicit: cafe, ground shadow/decal, broad alpha effect body, actors with local rim, restrained foreground shards/core, then numbers/banner/HUD. Alpha compositing alone failed the original Soot face experiment; use deliberate depth/occlusion plus bounded light. Source paint is sRGB, noise/alpha are data, and custom shader output converts once. Per-frame full-canvas allocation/readback is forbidden in the production path; offline masks are for review. Q2 opacity normalization still applies and must be rechecked after any weighted pose change.

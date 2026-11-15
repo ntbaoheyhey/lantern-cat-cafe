@@ -1,13 +1,13 @@
 # Tools assessed
 
-Recommendation: retain the working Three.js/native cut-out/Canvas renderer, use existing original painted layers, and author seekable pose and shape curves. Use Playwright + ffmpeg + sharp/Pillow for evidence. No account, paid licence, model download or MCP install is needed for this method. Sources and repository licence observations are in `sources.json` and `tool-sources.json`.
+Q3 correction: retain Three.js/native cut-out rendering, author main shapes with shader meshes and original flipbooks. The earlier Canvas main-shape recommendation failed the pilot and is withdrawn. See TOOLKIT.md. Use Playwright + ffmpeg + sharp/Pillow for evidence. No account, paid licence, model download or MCP install is needed for this method. Sources and repository licence observations are in `sources.json` and `tool-sources.json`.
 
 Sizes and setup times below are planning ranges, not downloads measured on this Mac. `tool-sources.json.repoSizeKiB` measures repository metadata, **not installed size**. Apple Silicon host confirmed with `uname -m` = arm64; only existing tools are locally execution-tested. Do not claim an untested package works just because it advertises macOS support.
 
 | Tool | Solves / output | Licence | Estimated incremental install | Apple Silicon | Setup estimate | Risk / decision |
 |---|---|---|---|---|---|---|
 | Existing CutoutMesh + Three.js | Rig poses, sockets, blended parts; native JSON | Repository code + Three.js MIT | 0, installed | Yes, current browser renderer | 0–15 min | Best fit; fix joint/pose quality before adding software. |
-| Canvas2D authored shapes + existing PNGs | Directional swipes, alpha masks, sparks, residue | Own code/assets | 0 | Yes | 0–15 min | Best fit; raw circles are insufficient; prove shape visually. |
+| Three.js ShaderMaterial + original PNGs | Erosion, panned ribbons, colour ramps and stretched sparks | Own code/assets + MIT | 0, installed | Browser tested in current scene; drills pending | Measured during Q3.A | Default Rung 2; no production before D1–D6 pass. |
 | DragonBonesJS | Skeletal playback / exported JSON | Runtime MIT; editor separate | 30–200 MB planning range | JS runtime yes; editor/arm64 unverified | 1–3 h | New format/authoring migration; reject for this deadline. |
 | Blender / Grease Pencil | Key poses, mesh/curve VFX, transparent frame render | GPL; output art remains ours | 0.5–1.5 GB planning range | Official arm64 build; not installed in PATH here | 30–90 min | Optional when geometry needs it; current 2D assets need no remodel. |
 | Effekseer | Layered particle authoring and 2D exports | MIT | 0.2–0.8 GB planning range | macOS offered; chosen binary architecture unverified | 45–120 min | Good alternative for complex particles; new runtime unnecessary if exporting sheets. |
@@ -25,6 +25,6 @@ Sizes and setup times below are planning ranges, not downloads measured on this 
 
 ## Recommendation per step
 
-Register art and sockets with existing loaders plus sharp/Pillow. Block poses in the native cut-out player. Author directional effect geometry with Canvas and the approved original PNG layers. Pack only if atlas fetch/decode measurements require it. Drive audio with the existing WebAudio engine on the same clock. Capture with Playwright; analyze with ffmpeg/NumPy; manually review every strip. Use Blender headless only if the pilot reveals a concrete geometry problem which those tools cannot solve.
+Register art and sockets with existing loaders plus sharp/Pillow. Block poses in the native cut-out player. Author directional shader meshes using the approved original PNG layers; use offline-authored flipbooks for complex shape evolution. Pack only if atlas fetch/decode measurements require it. Drive audio with the existing WebAudio engine on the same clock. Capture with Playwright; analyze with ffmpeg/NumPy; manually review every strip. Use Blender headless only if the pilot reveals a concrete geometry problem which those tools cannot solve.
 
 No new package was installed during this research. No external model was called. The user-only file records that optional heavy tools are deferred, with exact proposals required before any later install involving accounts, app configuration, admin access or models over 2 GB. See `../NEEDS-USER.md`.
