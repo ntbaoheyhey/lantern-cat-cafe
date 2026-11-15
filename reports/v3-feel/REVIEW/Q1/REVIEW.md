@@ -1,162 +1,155 @@
-# Q1 fixed-focus recording review — rejected
+# Q1 scoped review — open
 
-Source: `b9e188f3e`. All 84 action sheets were viewed across the continued session; each observation below is bound to its current video/sheet hash in `review-focus-observations.json`. Boundary-truncated actions stay incomplete. No listening PASS is claimed.
+Current recordings are from 15 Nov. Earlier rejected measurements remain in git history. All 84 action windows have notes; 48 were retained from the interrupted session and 36 completed on resume. Boundary-truncated actions are explicitly incomplete. No listening claim.
 
-The previous REVIEW.md described superseded recordings; its history remains in git. This review describes the current hashes only.
+The scheduler has exact 800/350 ms basics and 2200/1100 ms ultimates, and zero overlap apart from floating-point subtraction below 0.001 ms. Video confirmation still fails its unchanged 33 ms bound. Q1 is OPEN after its timebox; no product or recorder change was made.
 
 ## wave1
 
-|Action / actor / type|Contact|Frame reference|Observed anticipation, contact, shape, recoil|Heard at impact|
-|---|---:|---|---|---|
-|01 / mochi / basic|0.471s|action-01-mochi-1.jpg f3–f29|Mochi tilts forward with a short slot lunge. A gold orb/arc travels to moth, then large gold curls wrap recipients; body recoil is visible. Weapon and torso wind-up are too weak, target bloom appears before the damage number.|OPEN|
-|02 / soot / basic|1.362s|action-02-soot-1.jpg f30–f56|Soot stays at its slot; a purple orb traverses the field, then a bright pink/white ring wraps moth. Recoil is small. No clear separated weapon release; ring dominates the attack.|OPEN|
-|03 / clover / basic|2.246s|action-03-clover-1.jpg f56–f82|Clover remains planted. Green bolt reaches moth, then green/white leaf-like bands wrap Clover and target. Weak arm anticipation; bloom and recoil are visible; face remains readable.|OPEN|
-|04 / panko / basic|3.145s|action-04-panko-1.jpg f83–f109|Panko leans into a short lunge; a gold orb travels to moth and becomes two gold crescents. Target rocks; no readable shield-contact silhouette. Particles persist almost to the next turn.|OPEN|
-|05 / foe-0-button-guard / basic|4.012s|action-05-enemy_button-guard_basic.jpg f110–f135|Guard tips forward; curved gold projectile travels left to Panko. Gold loops wrap both reflected attacker and target; recoil visible. Little weapon preparation; persistent numbers remain from prior attack.|OPEN|
-|06 / foe-3-needle-moth / basic|4.896s|action-06-enemy_needle-moth_basic.jpg f136–f162|Moth stays at slot; thin cyan streak travels left; angular shards form at Panko and moth after reflected contact. Target crouches/recoils. Shape is more directional than gold rings, but wind-up is weak.|OPEN|
-|07 / foe-1-sock-skipper / basic|5.795s|action-07-enemy_sock-skipper_basic.jpg f163–f189|Sock tilts in place; pink-white orb curves left, followed by petal curls at Panko and reflected attacker. Panko squashes/rocks, sock returns. No leg/weapon wind-up readable at sheet scale.|OPEN|
-|08 / foe-2-teacup-healer / basic|6.679s|action-08-enemy_teacup-healer_basic.jpg f190–f215|Teacup stays planted; aqua orb travels left, then watery crescents surround Panko and teacup. Recoil is visible; splash reads mostly as a round wreath. Old damage numbers linger.|OPEN|
-|09 / round status / basic|7.130s|action-09-round-status.jpg f205–f229|Round-status interval, no attack or anticipation. Teacup residue fades, +18 healing overlaps the previous -16 number; bodies settle. This is not counted as a basic action.|OPEN|
-|10 / mochi / basic|7.878s|action-10-mochi-1.jpg f226–f251|Mochi repeats short forward lean and gold travelling orb, then broad gold curls around moth and side recipient. Contact response visible; old healing digits overlap the new action. No distinct weapon silhouette.|OPEN|
-|11 / soot / basic|8.779s|action-11-soot-1.jpg f253–f278|Soot remains planted; purple bolt and bright pink loop hit moth. Small target recoil, ring slowly fades. Weapon/torso wind-up still subtle; number -108 appears above target.|OPEN|
-|12 / clover / basic|9.679s|action-12-clover-1.jpg f280–f305|Clover stays planted; green bolt hits moth while a support band wraps Panko. Small target recoil and +19 heal appear; leaf curves are circular overall. Weak anticipation, clear slot return.|OPEN|
-|13 / panko / ultimate|11.329s|action-13-panko-4.jpg f307–f373|Focus is clean and banner fixed below Panko (f310-f322). No attack paint during that focus. Gold shield wedge grows after focus (f328 onward) and bright white core washes the torso before/through contact (f337-f342). Caster stays planted. Residue fades; silhouette-changing cast pose is weak.|OPEN|
-|14 / foe-0-button-guard / basic|12.879s|action-14-enemy_button-guard_basic.jpg f375–f401|Guard sends gold arcing orb at Panko, then two circular gold curls. Recoil and shield amount are visible. Fixed framing, modest lean, weak weapon anticipation; ring-heavy.|OPEN|
-|15 / foe-3-needle-moth / ultimate|14.512s|action-15-enemy_needle-moth.jpg f402–f468|Moth focus/outline/name stay local (f405-f417); spell begins after focus. Pale cyan/gold petal fan expands into a large white bloom over party (f432-f440). Damage recipients recoil, but effect identity reads as petals rather than needles; several small numbers stack.|OPEN|
-|16 / foe-1-sock-skipper / basic|16.062s|action-16-enemy_sock-skipper_basic.jpg f471–f497|Sock repeats leftward pink orb, white/pink curled petals and a small recoil. Source stays on slot. Preparation is subtle; no clear spinning weapon pose; curls fade before next actor.|OPEN|
-|17 / foe-2-teacup-healer / basic|16.929s|action-17-enemy_teacup-healer_basic.jpg f497–f523|Teacup rocks slightly; aqua orb travels left, then white aqua loops wrap Panko and teacup at f508-516. Recoil visible, no distinct splash or weapon anticipation; old damage number persists.|OPEN|
-|18 / round status / basic|17.395s|action-18-round-status.jpg f513–f537|Periodic status window, not an attack. Teacup loops fade; green +18 appears at f524; next local focus begins at f537. Camera fixed.|OPEN|
-|19 / mochi / ultimate|18.879s|action-19-mochi-4.jpg f533–f599|Mochi focus and nearby title stay fixed through f551. Gold cast develops after focus; broad repeated arches wrap party/enemies at f563-578 and obscure torsos in white centres. Shield numbers stack above faces; no clear weapon release.|OPEN|
-|20 / soot / ultimate|21.179s|action-20-soot-4.jpg f603–f669|Soot focus/title are stable f603-618; purple orb appears f624. White pink lobes spread across targets f632-655, washing out bodies. Many damage numbers stack/overlap near upper edge; weak torso/weapon separation.|OPEN|
-|21 / clover / ultimate|23.479s|action-21-clover-4.jpg f672–f738|Clover focus/title stable f675-690. Green cast becomes a large glowing leaf-edged oval around party f701-726; healing numbers follow. No branching direction or strong release pose; white centres erase body contours.|OPEN|
-|22 / panko / basic|25.028s|action-22-panko-1.jpg f740–f766|Panko makes small forward lean; gold orb reaches moth f748-750; repeated gold curls at f751-764. Target rocks; no shield wedge or readable shield contact. Returns by final frame.|OPEN|
-|23 / foe-0-button-guard / basic|25.911s|action-23-enemy_button-guard_basic.jpg f767–f792|Guard tips forward; arcing gold orb travels left f773-776, circular curls encase Panko and guard f777-790. Recoil small; face remains visible. Old numbers from prior attack linger.|OPEN|
-|24 / foe-3-needle-moth / basic|26.795s|action-24-enemy_needle-moth_basic.jpg f793–f819|Moth remains planted; thin cyan streak reaches Panko f800-803; angular shards flare at feet f804-817. Panko crouches, small recoil; weapon preparation barely visible. More directional than gold rings.|OPEN|
-|25 / foe-1-sock-skipper / basic|27.695s|action-25-enemy_sock-skipper_basic.jpg f820–f846|Sock stays at slot with small tilt; pink orb travels left f825-830. Petal curls wrap Panko and sock f831-844; target rocks then returns. No readable thrown object or weapon wind-up.|OPEN|
-|26 / foe-2-teacup-healer / basic|28.578s|action-26-enemy_teacup-healer_basic.jpg f847–f872|Teacup rocks slightly; aqua orb reaches Panko f853-856; white aqua loops bloom f857-871 with recoil. Ring silhouette dominates, no separated splash droplets; old numbers persist.|OPEN|
-|27 / round status / basic|29.028s|action-27-round-status.jpg f862–f886|Periodic status window. Teacup residue fades f862-877; +18 appears f873. No new strike or pose; camera remains static.|OPEN|
-|28 / mochi / basic|29.778s|action-28-mochi-1.jpg f883–f899|Mochi leans slightly; gold branching orbs travel toward moth and teacup f888-893, curls wrap recipients f893-899. Shield and damage numbers appear; recovery is outside 30s clip and cannot be reviewed.|OPEN|
+| Action / actor / tier | Frame references | What is visible |
+|---|---|---|
+| 1 / mochi / basic | action-01-mochi-1.jpg, f2–f28; contact f13 | Mochi leans and releases a gold travelling orb; target and side recipient recoil into gold curls; Mochi returns. Old shield/damage digits persist. |
+| 2 / soot / basic | action-02-soot-1.jpg, f29–f54; contact f40 | Soot stays planted, sends a purple bolt, and the moth recoils inside a pink loop. Weak weapon preparation; old digits remain. |
+| 3 / clover / basic | action-03-clover-1.jpg, f55–f81; contact f66 | Clover stays in its slot; green bolt reaches the moth, with green support bands at Clover. Small recoil and slow ring residue; old digits remain. |
+| 4 / panko / basic | action-04-panko-1.jpg, f82–f107; contact f93 | Panko makes a short lean/lunge, fires a gold shape and settles; moth bends into a golden fan. Preparation and shield silhouette are weak. |
+| 5 / foe-0-button-guard / basic | action-05-enemy_button-guard_basic.jpg, f108–f134; contact f119 | Guard leans and sends an arcing gold orb left; Panko and reflected guard recoil inside loops. Camera stays fixed; damage numbers persist into recovery. |
+| 6 / foe-3-needle-moth / basic | action-06-enemy_needle-moth_basic.jpg, f135–f160; contact f146 | Moth stays planted and sends a cyan needle streak left; Panko crouches and angular shards surround both recipients. Old numbers are still visible. |
+| 7 / foe-1-sock-skipper / basic | action-07-enemy_sock-skipper_basic.jpg, f161–f187; contact f172 | Sock tilts with a small pink glint, sends a pink projectile and settles; Panko and reflected sock recoil inside petal curls. Digits linger. |
+| 8 / foe-2-teacup-healer / basic | action-08-enemy_teacup-healer_basic.jpg, f188–f213; contact f199 | Teacup remains planted; aqua projectile reaches Panko, with watery loops on both recipients and visible recoil. Healing digits overlap prior damage at the boundary. |
+| 9 / round status / basic | action-09-round-status.jpg, f203–f227 | Round-status tick, not a basic: aqua residue settles; +18 healing overlaps -16 damage. No approach or camera change. |
+| 10 / mochi / basic | action-10-mochi-1.jpg, f223–f249; contact f234 | Mochi repeats a short lunge with a gold orb and branch to the side recipient; moth recoils, curls linger, actor returns. Teacup healing digits survive into this action. |
+| 11 / soot / basic | action-11-soot-1.jpg, f250–f276; contact f261 | Soot remains planted and sends a violet bolt; moth recoil and bright pink ring are visible. Old gold digits fade during anticipation. |
+| 12 / clover / basic | action-12-clover-1.jpg, f277–f303; contact f288 | Clover casts from its slot; green projectile reaches moth while support ribbons wrap Panko. Damage/heal numbers persist through recovery. |
+| 13 / panko / ultimate | action-13-panko-4.jpg, f304–f370; contact f337 | Panko stays at its slot with local banner, outline and dimmed field; gold shield wedge grows after focus, then shield pulse at contact. Large bloom washes bodies; calm recovery completes without camera movement. |
+| 14 / foe-0-button-guard / basic | action-14-enemy_button-guard_basic.jpg, f373–f398; contact f384 | Guard tips forward and arcs a gold bolt into Panko; reflected guard rocks within a ring. Shield/damage digits remain; no long approach. |
+| 15 / foe-3-needle-moth / ultimate | action-15-enemy_needle-moth.jpg, f400–f466; contact f433 | Moth stays planted during local focus; needle-like cyan shapes build into broad white-yellow leaf fans. Party recoils at contact, then fades back. The wash obscures faces and creates stacked numbers. |
+| 16 / foe-1-sock-skipper / basic | action-16-enemy_sock-skipper_basic.jpg, f468–f494; contact f479 | Sock repeats small tilt and pink glint; pink arc hits Panko with reflected petal curls on sock. Both settle in their slots; shield and damage digits linger. |
+| 17 / foe-2-teacup-healer / basic | action-17-enemy_teacup-healer_basic.jpg, f495–f520; contact f506 | Teacup sends aqua bolt while planted; both recipients rock inside watery crescents. Shield and reflected damage persist into the round boundary. |
+| 18 / round status / basic | action-18-round-status.jpg, f510–f534 | Round-status only: aqua residue clears and +18 heal joins old digits; following Mochi focus begins after the status interval. |
+| 19 / mochi / ultimate | action-19-mochi-4.jpg, f530–f596; contact f564 | Mochi focuses in place with anchored banner and outline; gold curls build, then become a yellow field-wide wash. Bodies rock but are obscured; numbers stack; effect clears before Soot. |
+| 20 / soot / ultimate | action-20-soot-4.jpg, f599–f665; contact f633 | Soot focuses in place; pink orb builds after focus, then expands into bright field-wide curls/fog. Recoil shows through the wash; number columns accumulate; recovery clears before Clover. |
+| 21 / clover / ultimate | action-21-clover-4.jpg, f668–f734; contact f702 | Clover holds local focus, then green leaves build into bright rings around allies; healing pulse washes their bodies. No approach or camera shift; +55/+9 linger as the effect clears. |
+| 22 / panko / basic | action-22-panko-1.jpg, f737–f763; contact f748 | Panko leans slightly and fires a gold bolt into moth; gold fan and target recoil appear, then settle. Old star status markers remain; -57 stays through recovery. |
+| 23 / foe-0-button-guard / basic | action-23-enemy_button-guard_basic.jpg, f764–f789; contact f775 | Guard leans, curves a gold bolt left and rocks from reflected contact; Panko squashes inside a ring. Shield/damage digits remain. |
+| 24 / foe-3-needle-moth / basic | action-24-enemy_needle-moth_basic.jpg, f790–f816; contact f801 | Moth stays planted, sends a cyan needle; Panko recoils while shard fans wrap both recipients. Residue fades and units settle; digits persist. |
+| 25 / foe-1-sock-skipper / basic | action-25-enemy_sock-skipper_basic.jpg, f817–f843; contact f828 | Sock tilts in place, sends a pink arc toward Panko; both recipients recoil within pink curls. Recovery clears the shape but shield and damage digits persist. |
+| 26 / foe-2-teacup-healer / basic | action-26-enemy_teacup-healer_basic.jpg, f844–f869; contact f855 | Teacup casts an aqua bolt from its slot; Panko and the reflected caster rock inside water rings. The following heal joins old digits. |
+| 27 / round status / basic | action-27-round-status.jpg, f859–f883 | Round status only: aqua residue clears and +18 healing joins old damage. Camera stays fixed. |
+| 28 / mochi / basic | action-28-mochi-1.jpg, f879–f899; contact f890 | Mochi leans and sends a gold orb with a split branch; recipients recoil amid gold curls. Contact is visible; recovery is truncated by the 30-second boundary. |
 
-|Defect check|Verdict / evidence|
-|---|---|
-|Camera moved/zoomed?|No in reviewed sheets; complete transform sample audit found 0 camera violations.|
-|Facing away?|No obvious reversed unit in these sheets; complete all-state facing table still OPEN.|
-|Same scale?|No: Clover/Soot and front cats visibly differ throughout A01–A04; ordinary enemies vary.|
-|Only radial glow/ring?|Yes: repeated curved contact bands and bright ultimate wreaths; e.g. A01/A02.|
-|Pasted PNG appearance?|Yes: weak separate weapon/torso anticipation in A01–A04. Contact shadows are visible.|
-|Text overflow?|No obvious banner overflow at this width; other-width audit OPEN.|
-|Number clutter?|Yes: old numbers persist into subsequent actions; multiple ultimate digits overlap.|
-|Unmatched sound?|OPEN listening. Recorded cue mapping and waveform inspection are still incomplete.|
+| Defect | Owner | Observed |
+|---|---|---|
+| Camera movement / approach / plates | Q1 | No; all action windows and full transform audit. |
+| Timing confirmation | Q1 | Unresolved: see craft-receipt.json; unchanged 33 ms gate fails. |
+| Uneven small units / frame fill | Q2 | Yes; first basic f3 onward, large bottom band. |
+| Facing away | Q2 | No reversed travel observed in this fixture; full pose-facing audit belongs to Q2. |
+| Number clutter / persistence | Q2 | Yes; basic recovery frames and ultimate aftermath. |
+| Blob/ring/fog main shape / body washout | Q3 | Yes; Mochi/Soot/Clover ultimate peak frames in table. |
+| Pasted look / weak silhouette change | Q3 | Yes; small torso tilts dominate basic preparation. |
+| Text overflow / labels | Q4/Q6 | No banner spill observed; short names remain plain and icons tiny. |
+| Sound without visible cause | Q5 | Cue/mix gate not yet evaluated; max voices 9, -15.1 LUFS. No listening claim. |
 
 ## wave3
 
-|Action / actor / type|Contact|Frame reference|Observed anticipation, contact, shape, recoil|Heard at impact|
-|---|---:|---|---|---|
-|01 / mochi / basic|0.455s|action-01-mochi-1.jpg f3–f29|Short Mochi lean; gold beams branch to three enemies f9-14, then repeated curled rings f14-27. Targets rock; numbers remain around floor and top. Weak weapon anticipation; ram faces away.|OPEN|
-|02 / soot / basic|1.329s|action-02-soot-1.jpg f30–f55|Planted Soot sends purple orb to far moth f36-40; large pink white ring f40-54 obscures moth torso. Small target recoil, no clear weapon release.|OPEN|
-|03 / clover / basic|2.212s|action-03-clover-1.jpg f56–f81|Clover planted; green orb crosses field f62-66, pointed leaf curls around Clover and moth f66-80. Target leans, weak casting pose; bodies differ in scale.|OPEN|
-|04 / panko / basic|3.114s|action-04-panko-1.jpg f83–f108|Panko leans slightly; gold orb crosses to moth f89-93; curved bands bloom f93-106. No shield-contact wedge; target rocks. Camera unchanged.|OPEN|
-|05 / foe-0-kettle-knight / basic|3.996s|action-05-enemy_kettle-knight_basic.jpg f109–f135|Knight slightly dips; white orange projectile travels to Panko f115-120. Fire and white loops envelop both f120-133; Panko squashes. No clear sword/weapon strike silhouette.|OPEN|
-|06 / foe-3-crumb-sentinel / basic|4.896s|action-06-enemy_crumb-sentinel_basic.jpg f136–f162|Sentinel tilts strongly but fires a small gold orb f142-147. Curled yellow slash wraps Panko and sentinel f147-160; recoil visible; body contacts still read as rings.|OPEN|
-|07 / foe-1-spool-ram / basic|5.763s|action-07-enemy_spool-ram_basic.jpg f163–f188|Ram head and horns face right throughout. Purple orb travels left f169-173; pink circles bloom around ram and Panko f173-187. Small lean, recoil visible, wrong-facing action reads disconnected.|OPEN|
-|08 / foe-4-needle-moth / basic|6.647s|action-08-enemy_needle-moth_basic.jpg f189–f214|Moth planted; thin cyan shards cross left f195-199 toward Mochi. Angular star/slash response f200-212, Mochi rocks. Shape has direction but little weapon wind-up.|OPEN|
-|09 / foe-2-pollen-scout / basic|7.548s|action-09-enemy_pollen-scout_basic.jpg f215–f241|Scout has almost no readable wind-up f215-225. Green line appears near contact f227; yellow green leaf curls enclose Panko/scout f227-239. Target rocks; weak action origin.|OPEN|
-|10 / foe-5-teacup-healer / basic|8.430s|action-10-enemy_teacup-healer_basic.jpg f242–f268|Teacup small tilt; aqua orb travels to Mochi f248-253. White aqua curls enclose Mochi/teacup f253-267; Mochi rocks. No splash identity; prior numbers persist.|OPEN|
-|11 / round status / basic|8.864s|action-11-round-status.jpg f257–f281|Status window, not an attack. Aqua residue fades f257-270; green +18 appears near floor f267. Static framing, no new anticipation/contact.|OPEN|
-|12 / mochi / basic|9.630s|action-12-mochi-1.jpg f278–f304|Mochi leans slightly; gold projectiles branch toward enemy group f284-289. Repeated ring curls f289-302 and overlapping shield/damage numbers f292-299; weak weapon release.|OPEN|
-|13 / soot / basic|10.529s|action-13-soot-1.jpg f305–f331|Soot remains planted. Purple orb curves to far moth f311-316; white pink ring f316-329 replaces readable blade shape. Small moth recoil.|OPEN|
-|14 / clover / basic|11.396s|action-14-clover-1.jpg f332–f357|Clover sends green orb to moth f338-342; green curls wrap Panko and moth f342-355. +19 overlaps old damage near top f346. Weak casting silhouette.|OPEN|
-|15 / panko / ultimate|13.063s|action-15-panko-4.jpg f359–f425|Panko focus/title stable f362-377; after focus a gold angular shield/wedge grows f383-400. Better main shape than ring ultimates, but white centre erases torso; little weapon/torso separation. Party shield number appears f398.|OPEN|
-|16 / foe-0-kettle-knight / basic|14.613s|action-16-enemy_kettle-knight_basic.jpg f427–f453|Knight leans then sends orange white orb to Panko f433-438. White orange loops flare f438-451, with Panko squash/recoil. Weapon still not legible.|OPEN|
-|17 / foe-3-crumb-sentinel / basic|15.479s|action-17-enemy_crumb-sentinel_basic.jpg f454–f479|Sentinel tilts at release; gold orb arcs left f460-464; gold curved slash wraps both bodies f464-477. Panko recoil visible; old numbers remain above Mochi.|OPEN|
-|18 / foe-1-spool-ram / basic|16.362s|action-18-enemy_spool-ram_basic.jpg f480–f506|Ram again faces right despite attacking left f480-506. Pink orb then circular pink white petals around Panko/ram f491-504. Recoil readable but weapon identity absent.|OPEN|
-|19 / foe-4-needle-moth / basic|17.245s|action-19-enemy_needle-moth_basic.jpg f507–f532|Moth stays planted; thin blue needle line travels to Panko f513-517. Blue angular star/curl impacts f517-530; both recoil. Small readable direction but weak wind-up.|OPEN|
-|20 / foe-2-pollen-scout / basic|18.129s|action-20-enemy_pollen-scout_basic.jpg f533–f559|Scout remains at slot; green dart crosses to Panko f539-544, yellow green leaf curls f544-557. Small target squash; no distinct wing/weapon anticipation.|OPEN|
-|21 / foe-5-teacup-healer / basic|19.013s|action-21-enemy_teacup-healer_basic.jpg f560–f585|Teacup launches aqua orb f566-570; aqua white ring surrounds Panko and teacup f570-583. Both rock; stacked -32 and later +18 crowd lower-right. No splash silhouette.|OPEN|
-|22 / round status / basic|19.463s|action-22-round-status.jpg f575–f599|Status window, aqua residual curls fade f575-587. Green +18 appears over old -32 at bottom f585-590. Next Mochi focus begins f599; no attack.|OPEN|
-|23 / mochi / ultimate|20.980s|action-23-mochi-4.jpg f596–f662|Mochi spotlight/name visible through f614, gold cast after focus. Gold arches expand around both groups f626-653; high white bloom washes bodies, shield labels stack. No distinct directional weapon shape.|OPEN|
-|24 / soot / ultimate|23.280s|action-24-soot-4.jpg f665–f731|Soot spotlight/title stable f668-683; purple cast becomes huge white petal-lobed rings f695-722. Most torso contours washed out and many small damage numbers pile in columns; little anticipation/release pose.|OPEN|
-|25 / clover / ultimate|25.563s|action-25-clover-4.jpg f734–f800|Clover local focus stable f737-752; green cast at f755-761 becomes white green leaf-edged oval f764-794. Torsos washed out, repeated healing numbers collide near top f768-788; no distinct branch/travel silhouette.|OPEN|
-|26 / panko / ultimate|27.879s|action-26-panko-4.jpg f803–f869|Panko focus/title stable f806-821. Gold wedge/fan grows f827-854 then fades; shield shape more distinct than other ultimates but white core hides body and release pose barely changes. Camera remains fixed.|OPEN|
-|27 / foe-0-kettle-knight / basic|29.429s|action-27-enemy_kettle-knight_basic.jpg f872–f898|Knight slight wind-up; white orange orb travels left f878-883, hot curls flare f883-896 with Panko recoil. Not a readable blade strike; body size mismatch persists.|OPEN|
-|28 / foe-3-crumb-sentinel / basic|30.312s|action-28-enemy_crumb-sentinel_basic.jpg f899–f899|Only onset f899 is inside the 30s film. No visible strike/contact/recovery can be judged; boundary explicitly OPEN.|OPEN|
+| Action / actor / tier | Frame references | What is visible |
+|---|---|---|
+| 1 / mochi / basic | action-01-mochi-1.jpg, f3–f29; contact f13 | Mochi leans forward slightly, sends a branching gold orb to moth and side recipients; targets rock inside gold loops. Small bodies, uneven scale and crowded digits remain. |
+| 2 / soot / basic | action-02-soot-1.jpg, f29–f55; contact f40 | Soot stays planted, sends a purple bolt into moth; target bends within a pink loop, then settles. Old gold damage remains through anticipation. |
+| 3 / clover / basic | action-03-clover-1.jpg, f56–f81; contact f66 | Clover stays in place and casts a green projectile; moth recoils while support curls surround Clover. Green rings fade slowly; -35 remains. |
+| 4 / panko / basic | action-04-panko-1.jpg, f82–f108; contact f93 | Panko leans a short distance, sends gold bolt to moth and returns; gold fans curl around target and shield. Weak weapon silhouette; lingering digits. |
+| 5 / foe-0-kettle-knight / basic | action-05-enemy_kettle-knight_basic.jpg, f109–f134; contact f119 | Kettle knight rocks and sends a pale orange bolt left to Panko; both recipients recoil with white-orange looping bursts. No approach or camera movement. |
+| 6 / foe-3-crumb-sentinel / basic | action-06-enemy_crumb-sentinel_basic.jpg, f135–f161; contact f146 | Crumb sentinel leans and sends a gold streak toward Panko; target squashes and gold arcs curl around both recipients. Numbers spread to the left edge. |
+| 7 / foe-1-spool-ram / basic | action-07-enemy_spool-ram_basic.jpg, f162–f187; contact f173 | Ram faces away while its pink projectile travels left; it and Panko recoil inside pink loops. Facing is a Q2 defect; fixed camera and short local movement. |
+| 8 / foe-4-needle-moth / basic | action-08-enemy_needle-moth_basic.jpg, f189–f214; contact f199 | Moth sends a cyan needle fan left into Mochi while staying planted; Mochi rocks slightly, pale shards fade. The muted preparation has little weapon motion. |
+| 9 / foe-2-pollen-scout / basic | action-09-enemy_pollen-scout_basic.jpg, f215–f241; contact f226 | Pollen scout tips forward, sends a yellow-green bolt toward Panko; both recipients recoil inside leaf-like rings. Old numbers persist. |
+| 10 / foe-5-teacup-healer / basic | action-10-enemy_teacup-healer_basic.jpg, f242–f267; contact f253 | Teacup stays planted and sends aqua bolt to Mochi; pale loops surround caster and target, with small recoil and lingering damage/heal digits. |
+| 11 / round status / basic | action-11-round-status.jpg, f257–f281 | Round-status window clears aqua residue; +18 appears near the bottom edge below the enemies. Camera and slots remain fixed. |
+| 12 / mochi / basic | action-12-mochi-1.jpg, f277–f303; contact f288 | Mochi repeats short lunge and branching gold projectile, then broad gold curls on several recipients. Recoil and return are visible; numbers stack. |
+| 13 / soot / basic | action-13-soot-1.jpg, f304–f330; contact f315 | Soot remains planted, violet bolt reaches moth and expands into pink ring; target bends then settles. Earlier digits remain along the lower edge. |
+| 14 / clover / basic | action-14-clover-1.jpg, f331–f356; contact f341 | Clover casts a green bolt at moth while support curls surround Panko; small recoil, +19 heal and -39 persist through recovery. |
+| 15 / panko / ultimate | action-15-panko-4.jpg, f357–f423; contact f391 | Panko holds local focus with anchored banner and outline; gold wedge grows after focus into a white-yellow shield fan. Shield amount appears at contact, bodies are washed out, then residue clears; no approach. |
+| 16 / foe-0-kettle-knight / basic | action-16-enemy_kettle-knight_basic.jpg, f426–f452; contact f437 | Kettle knight tips and casts pale orange bolt at Panko; both rock inside orange-white curls. Old damage persists while shield digits appear. |
+| 17 / foe-3-crumb-sentinel / basic | action-17-enemy_crumb-sentinel_basic.jpg, f453–f479; contact f464 | Crumb sentinel tilts slightly and fires gold streak left; Panko squashes within a gold fan, reflected caster rocks. Small weapon prep, fixed field. |
+| 18 / foe-1-spool-ram / basic | action-18-enemy_spool-ram_basic.jpg, f480–f505; contact f491 | Ram keeps its head pointed right while pink bolt travels left to Panko. Pink circular wraps surround both, followed by recoil/settle and shield digits. |
+| 19 / foe-4-needle-moth / basic | action-19-enemy_needle-moth_basic.jpg, f506–f532; contact f517 | Moth stays planted and sends narrow cyan streak into Panko; cyan shards and reflected recoil appear at both recipients. Number -32 remains near the right edge. |
+| 20 / foe-2-pollen-scout / basic | action-20-enemy_pollen-scout_basic.jpg, f533–f559; contact f544 | Pollen scout tips, releases green-yellow bolt into Panko; yellow-green loops and recoil follow, then fade. Shield digits overlap torso; old damage at edge. |
+| 21 / foe-5-teacup-healer / basic | action-21-enemy_teacup-healer_basic.jpg, f560–f586; contact f571 | Teacup stays planted; aqua bolt reaches Panko, with watery loops and recoil on both recipients. Shield and damage numbers survive into the round tick. |
+| 22 / round status / basic | action-22-round-status.jpg, f575–f599 | Round status only: aqua residue settles; +18 healing joins -32 near the bottom edge. Next focus starts without camera motion. |
+| 23 / mochi / ultimate | action-23-mochi-4.jpg, f595–f661; contact f629 | Mochi holds local focus and banner, then gold curls build into a field-wide yellow wash. Bodies rock but become hard to read; shield digits accumulate. Effect clears before Soot. |
+| 24 / soot / ultimate | action-24-soot-4.jpg, f664–f730; contact f698 | Soot holds local focus, then a pink orb expands into broad loops and white-pink fog. Target recoil appears at contact; many old damage digits stack in columns; residue clears before Clover. |
+| 25 / clover / ultimate | action-25-clover-4.jpg, f733–f799; contact f767 | Clover holds focus, builds green leaves, then envelops allies in bright rings. Support response is visible, bodies are washed out; healing digits linger into recovery. |
+| 26 / panko / ultimate | action-26-panko-4.jpg, f802–f868; contact f836 | Panko focuses in its slot; gold shield wedge builds and pulses at contact. White core obscures its torso; tall gold residue fades before the knight acts. |
+| 27 / foe-0-kettle-knight / basic | action-27-enemy_kettle-knight_basic.jpg, f871–f897; contact f882 | Knight leans and sends a pale orange bolt left to Panko. Both recipients recoil into bright orange rings; old shield and reflected damage digits linger. |
+| 28 / foe-3-crumb-sentinel / basic | action-28-enemy_crumb-sentinel_basic.jpg, f898–f899 | Only the opening idle/anticipation frames of sentinel are in the 30-second film; contact and recovery lie outside capture. No full-action verdict. |
 
-|Defect check|Verdict / evidence|
-|---|---|
-|Camera moved/zoomed?|No in reviewed sheets; complete transform sample audit found 0 camera violations.|
-|Facing away?|Yes: spool ram, A07 and A18, faces right while projectiles travel left.|
-|Same scale?|No: Clover/Soot and front cats visibly differ throughout A01–A04; ordinary enemies vary.|
-|Only radial glow/ring?|Yes: repeated curved contact bands and bright ultimate wreaths; e.g. A01/A02.|
-|Pasted PNG appearance?|Yes: weak separate weapon/torso anticipation in A01–A04. Contact shadows are visible.|
-|Text overflow?|No obvious banner overflow at this width; other-width audit OPEN.|
-|Number clutter?|Yes: old numbers persist into subsequent actions; multiple ultimate digits overlap.|
-|Unmatched sound?|OPEN listening. Recorded cue mapping and waveform inspection are still incomplete.|
+| Defect | Owner | Observed |
+|---|---|---|
+| Camera movement / approach / plates | Q1 | No; all action windows and full transform audit. |
+| Timing confirmation | Q1 | Unresolved: see craft-receipt.json; unchanged 33 ms gate fails. |
+| Uneven small units / frame fill | Q2 | Yes; first basic f3 onward, large bottom band. |
+| Facing away | Q2 | Yes; ram A7 f173. |
+| Number clutter / persistence | Q2 | Yes; basic recovery frames and ultimate aftermath. |
+| Blob/ring/fog main shape / body washout | Q3 | Yes; Mochi/Soot/Clover ultimate peak frames in table. |
+| Pasted look / weak silhouette change | Q3 | Yes; small torso tilts dominate basic preparation. |
+| Text overflow / labels | Q4/Q6 | No banner spill observed; short names remain plain and icons tiny. |
+| Sound without visible cause | Q5 | Cue/mix gate not yet evaluated; max voices 9, -15.13 LUFS. No listening claim. |
 
 ## boss
 
-|Action / actor / type|Contact|Frame reference|Observed anticipation, contact, shape, recoil|Heard at impact|
-|---|---:|---|---|---|
-|01 / mochi / basic|0.447s|action-01-mochi-1.jpg f3–f28|Mochi leans; branched gold orbs reach boss and thread f9-14, gold curls wrap recipients f14-27. Boss visibly compresses then returns; no strong weapon stroke. Numbers linger above/beside actors.|OPEN|
-|02 / soot / basic|1.323s|action-02-soot-1.jpg f29–f55|Soot stays planted; purple orb crosses to boss f35-40, pink white ring wraps its chest f40-53. Boss rocks; weak arm/weapon release, circular impact identity.|OPEN|
-|03 / clover / basic|2.221s|action-03-clover-1.jpg f56–f82|Clover planted; green bolt reaches boss f62-66; green leaf curls wrap caster and boss f67-80. Boss squashes and settles, but anticipation barely visible.|OPEN|
-|04 / panko / basic|3.105s|action-04-panko-1.jpg f83–f108|Panko leans; small gold projectile reaches boss f89-93, curls around both bodies f93-107. Boss recoil readable; no shield bash shape.|OPEN|
-|05 / foe-0-yarn-giant / basic|4.004s|action-05-enemy_yarn-giant_basic.jpg f109–f135|Boss leans toward Panko; white pink orb and kinked line travel f115-120; paired pink loops bloom f120-133. Panko squashes and boss rocks; no fist/hammer contact shape.|OPEN|
-|06 / foe-1-binding-thread / basic|4.887s|action-06-enemy_binding-thread_basic.jpg f136–f162|Lower thread twists slightly; pink orb curves left f142-147 into Mochi. Pink petals rise around Mochi f147-160; target rocks, release pose very small.|OPEN|
-|07 / foe-2-binding-thread / basic|5.771s|action-07-enemy_binding-thread_basic.jpg f163–f188|Upper thread twists in place; purple pink arc travels to Mochi f169-173. Repeated pink petal curls f173-186 and small shield/damage values; no distinct yarn whip.|OPEN|
-|08 / round status / basic|6.220s|action-08-round-status.jpg f178–f202|Status interval, not an attack. Previous pink curls fade f178-189, lingering -1 and shield value remain. Bodies idle; camera fixed.|OPEN|
-|09 / mochi / basic|6.987s|action-09-mochi-1.jpg f199–f225|Mochi slight lean; branched gold orb travels to boss/lower thread f205-209, repeated gold curls f210-223. Boss compresses; no distinct strike silhouette. Shield numbers overlap upper bars.|OPEN|
-|10 / soot / basic|7.854s|action-10-soot-1.jpg f225–f251|Soot planted; pink orb traverses f231-236 into large white pink chest ring on boss f236-249. Boss rocks; weak weapon preparation.|OPEN|
-|11 / clover / basic|8.770s|action-11-clover-1.jpg f252–f278|Clover planted; green bolt reaches boss f258-263; curled green leaves wrap Panko and boss f263-276. Panko heal +19 appears; body pose changes are small.|OPEN|
-|12 / panko / ultimate|10.421s|action-12-panko-4.jpg f279–f345|Panko focus with fixed low title f282-297. Angular gold shield grows f309-325, brighter than body; white core obscures torso. Shield response shown; little arm/weapon cast separation.|OPEN|
-|13 / foe-0-yarn-giant / ultimate|12.721s|action-13-enemy_yarn-giant.jpg f348–f414|Boss spotlight and local title remain stable below caster f351-366. Cast pink orb f369-376 turns into tall pink braided loops f378-408. No heavy fist impact, bodies lose silhouette in glow; small damage values stack. Camera fixed.|OPEN|
-|14 / foe-1-binding-thread / basic|14.254s|action-14-enemy_binding-thread_basic.jpg f417–f443|Lower thread tiny twist; pink orb curves to Panko f423-428, pink petals loop around both f428-441. Panko rocks, no thread whip shape.|OPEN|
-|15 / foe-2-binding-thread / basic|15.154s|action-15-enemy_binding-thread_basic.jpg f444–f470|Upper thread tiny twist; pink orb travels toward Panko f450-455, petal loops around Panko/thread f455-468. Recoil visible, weak action preparation; number persists from previous strike.|OPEN|
-|16 / round status / basic|15.604s|action-16-round-status.jpg f459–f483|Status window. Pink residue fades f459-473; old -32 drifts above boss. No new strike; next Mochi focus at f483; floor/camera stable.|OPEN|
-|17 / mochi / ultimate|17.121s|action-17-mochi-4.jpg f480–f546|Focus remains beside Mochi through f483-498; gold cast glint appears f501. Repeated gold arches expand around party and enemies f510-526, with white cores and multiple shield/chip numbers. No distinct weapon release; reads as overlapping curved glow, not a strong shaped strike.|OPEN|
-|18 / soot / ultimate|19.404s|action-18-soot-4.jpg f549–f615|Soot is highlighted in place f552-567. Purple cast f570-576 grows into repeated white-pink lobes around boss and threads f579-600; face openings remain, but broad bloom dominates. Damage numbers overlap above the threads. Recovery fades through f615.|OPEN|
-|19 / clover / ultimate|21.687s|action-19-clover-4.jpg f618–f684|Clover stays planted with stable left-side banner f621-636. Green cast at f639 expands into a bright oval around party f648-669; green leaves cross the field. Support numbers appear at f660. Little separated arm/torso release; composition reads as luminous wreath.|OPEN|
-|20 / panko / basic|23.253s|action-20-panko-1.jpg f687–f713|Panko leans slightly toward boss f690-693; small gold orb travels f695-697 and becomes gold curls around both f698-709. Boss rocks at contact; no readable shield-bash shape. The old status stars and damage number remain visible.|OPEN|
-|21 / foe-0-yarn-giant / basic|24.137s|action-21-enemy_yarn-giant_basic.jpg f714–f739|Boss shifts weight forward f717-720; white-pink orb reaches Panko f721-724. Two pink curls bloom around Panko and boss f725-737, with visible boss crouch/recoil. No fist or hammer strike silhouette; old number -46 lingers into anticipation.|OPEN|
-|22 / foe-1-binding-thread / basic|25.020s|action-22-enemy_binding-thread_basic.jpg f740–f766|Lower thread stays in place; a purple-white orb bends left f746-751 and splits into curled bands around thread and Panko f752-763. Panko rocks; thread wind-up is barely visible. Boss number -32 persists throughout this attack.|OPEN|
-|23 / foe-2-binding-thread / basic|25.920s|action-23-enemy_binding-thread_basic.jpg f767–f793|Upper thread stays in place; white-pink orb travels diagonally down-left f772-778, then pink petal loops wrap thread and Panko f779-789. Target rocks slightly, and the thread settles. Weapon anticipation is weak; old boss number still persists.|OPEN|
-|24 / round status / basic|26.387s|action-24-round-status.jpg f783–f807|Round-status interval; no new attack. The preceding thread loops fade f783-794; Panko and thread settle by f797. Existing -32 and shield digits linger. No contact motion or new weapon shape belongs to this interval.|OPEN|
-|25 / mochi / basic|27.120s|action-25-mochi-1.jpg f803–f829|Mochi leans forward f806-809; gold orb passes boss toward the lower thread f811-814. Gold curls wrap Mochi, boss and thread f815-826. Boss crouches and settles; the new numbers remain into recovery. No clear weapon-release pose.|OPEN|
-|26 / soot / basic|28.004s|action-26-soot-1.jpg f830–f855|Soot stays planted; purple orb crosses to boss f836-840, then pink-white ring blooms around boss f841-853. Boss crouches/recoils and recovers by f855. Weak wind-up, radial contact, old numbers remain above recipients.|OPEN|
-|27 / clover / basic|28.903s|action-27-clover-1.jpg f857–f882|Clover stays planted; green orb travels to boss f863-867; green-white leaf curls surround Clover and boss f868-880. Boss rocks and a -31 number appears; little arm/torso silhouette change. No splash or branch-shaped strike.|OPEN|
-|28 / panko / ultimate|30.536s|action-28-panko-4.jpg f883–f899|Boundary-truncated ultimate: Panko focus and stable banner below caster are visible f886-898. Cast, contact and recovery lie outside the 30 s recording and are OPEN for this occurrence; no successful ultimate verdict inferred.|OPEN|
+| Action / actor / tier | Frame references | What is visible |
+|---|---|---|
+| 1 / mochi / basic | action-01-mochi-1.jpg, f3–f29; contact f14 | Mochi makes a short lean/lunge and branches a gold orb to giant and thread. Giant crouches at contact, gold curls remain; actor returns, shield/damage digits linger. |
+| 2 / soot / basic | action-02-soot-1.jpg, f30–f56; contact f41 | Soot stays planted, sends violet bolt to giant, and giant squashes inside a pink ring. Preparation is slight; old gold digits persist while the ring fades. |
+| 3 / clover / basic | action-03-clover-1.jpg, f57–f83; contact f68 | Clover casts green bolt in place; giant recoils inside green leaves and ring, support band wraps Clover. Old damage remains through anticipation. |
+| 4 / panko / basic | action-04-panko-1.jpg, f84–f109; contact f95 | Panko leans a short distance and fires gold bolt; giant crouches inside gold fans. Panko returns to its slot as sparks fade; -46 lingers. |
+| 5 / foe-0-yarn-giant / basic | action-05-enemy_yarn-giant_basic.jpg, f110–f136; contact f121 | Giant tips and sends pink orb toward Panko; Panko squashes, giant also recoils on reflected contact. Pink curls trail down; numbers linger. |
+| 6 / foe-1-binding-thread / basic | action-06-enemy_binding-thread_basic.jpg, f137–f163; contact f148 | Lower thread remains planted and sends pale violet arc to Mochi. Mochi recoils in pink loops while thread extends arms; shield digit stays after residue fades. |
+| 7 / foe-2-binding-thread / basic | action-07-enemy_binding-thread_basic.jpg, f164–f190; contact f175 | Upper thread casts pale arc left to Mochi without approaching. Contact flash and small recoil appear; pink loops linger and -1 plus shield digits remain. |
+| 8 / round status / basic | action-08-round-status.jpg, f179–f203 | Round-status window: pink loops fade around Mochi, with old damage/shield digits. Background and slots stay fixed. |
+| 9 / mochi / basic | action-09-mochi-1.jpg, f200–f226; contact f211 | Mochi repeats short lean and gold branch to giant and lower thread. Giant crouches and curls wrap both targets, then actor returns; numbers linger. |
+| 10 / soot / basic | action-10-soot-1.jpg, f227–f252; contact f238 | Soot stays planted and sends violet bolt; giant squashes into bright pink ring. Old gold digits survive anticipation, then -59 persists through recovery. |
+| 11 / clover / basic | action-11-clover-1.jpg, f253–f279; contact f264 | Clover stays planted, green bolt reaches giant, and support leaves circle Panko. Giant crouches; -33 and +19 outlast the effect. |
+| 12 / panko / ultimate | action-12-panko-4.jpg, f280–f346; contact f314 | Panko local focus holds its outlined body and banner. Gold wedge builds into contact shield pulse; field stays fixed, bright core obscures its body; residue clears before boss focus. |
+| 13 / foe-0-yarn-giant / ultimate | action-13-enemy_yarn-giant.jpg, f349–f415; contact f382 | Giant focuses in place with local name banner and outline. Pink knot builds then blooms into broad braided loops over boss and party. Recoil is visible, bodies wash out, numbers stack; no approach or camera shift. |
+| 14 / foe-1-binding-thread / basic | action-14-enemy_binding-thread_basic.jpg, f417–f443; contact f428 | Lower thread casts a pale violet ribbon to Panko; both recoil inside pink loops from hit and reflection. Roots stay planted; digits linger. |
+| 15 / foe-2-binding-thread / basic | action-15-enemy_binding-thread_basic.jpg, f444–f470; contact f455 | Upper thread casts pale ribbon left to Panko; pink loops and local flash surround both recipients. Slight recoil and recovery, with persistent damage digits. |
+| 16 / round status / basic | action-16-round-status.jpg, f459–f483 | Round status only: thread pink residue clears, -32 survives, then Mochi local focus begins. Camera registration remains fixed. |
+| 17 / mochi / ultimate | action-17-mochi-4.jpg, f480–f546; contact f514 | Mochi focuses in place, then gold curls expand over party and both thread targets. Contact response appears through bright wash; many shield/damage digits accumulate; residue clears before Soot. |
+| 18 / soot / ultimate | action-18-soot-4.jpg, f549–f615; contact f582 | Soot local focus precedes pink orb, expanding loops and near-white fog across giant and threads. Target recoil appears, repeated damage digits line the top; clears before Clover. |
+| 19 / clover / ultimate | action-19-clover-4.jpg, f617–f683; contact f651 | Clover local focus precedes green leaves and bright healing rings around allies. Support response stays at slots; body contrast is lost, +41/+13 persist during recovery. |
+| 20 / panko / basic | action-20-panko-1.jpg, f686–f712; contact f697 | Panko short lean sends gold bolt to giant; giant crouches inside gold fans. Actor settles back while -46 remains. |
+| 21 / foe-0-yarn-giant / basic | action-21-enemy_yarn-giant_basic.jpg, f713–f739; contact f724 | Giant tips and sends pink orb to Panko; Panko and reflected giant crouch inside pink curls. Shield/damage remain after residue fades. |
+| 22 / foe-1-binding-thread / basic | action-22-enemy_binding-thread_basic.jpg, f740–f766; contact f751 | Lower thread stays planted and casts pale ribbon left; Panko and thread rock inside pink loops. Old shield and reflected damage persist. |
+| 23 / foe-2-binding-thread / basic | action-23-enemy_binding-thread_basic.jpg, f767–f792; contact f778 | Upper thread casts pale ribbon to Panko without an approach. Local flash and pink loops show contact/recoil on both recipients; digits linger. |
+| 24 / round status / basic | action-24-round-status.jpg, f782–f806 | Round-status window clears pink curls while -32 and shield remain. No camera or formation movement. |
+| 25 / mochi / basic | action-25-mochi-1.jpg, f802–f828; contact f813 | Mochi short lean/lunge launches branching gold orb at giant and lower thread. Giant crouches and both targets receive gold curls; actor returns, numbers persist. |
+| 26 / soot / basic | action-26-soot-1.jpg, f829–f854; contact f840 | Soot stays planted, violet bolt contacts giant and turns into pink ring. Giant crouches and settles; lingering old digits give way to -58. |
+| 27 / clover / basic | action-27-clover-1.jpg, f855–f881; contact f866 | Clover casts green bolt in place, with green leaf loops around giant and Clover. Giant recoils; -31 remains after green residue clears. |
+| 28 / panko / ultimate | action-28-panko-4.jpg, f882–f897 | Panko focus appears with local outline, dimmed field and banner; cast, impact and recovery lie outside 30-second clip. No full-action verdict. |
 
-|Defect check|Verdict / evidence|
-|---|---|
-|Camera moved/zoomed?|No in reviewed sheets; complete transform sample audit found 0 camera violations.|
-|Facing away?|No obvious reversed unit in these sheets; complete all-state facing table still OPEN.|
-|Same scale?|No: Clover/Soot and front cats visibly differ throughout A01–A04; ordinary enemies vary.|
-|Only radial glow/ring?|Yes: repeated curved contact bands and bright ultimate wreaths; e.g. A01/A02.|
-|Pasted PNG appearance?|Yes: weak separate weapon/torso anticipation in A01–A04. Contact shadows are visible.|
-|Text overflow?|No obvious banner overflow at this width; other-width audit OPEN.|
-|Number clutter?|Yes: old numbers persist into subsequent actions; multiple ultimate digits overlap.|
-|Unmatched sound?|OPEN listening. Recorded cue mapping and waveform inspection are still incomplete.|
+| Defect | Owner | Observed |
+|---|---|---|
+| Camera movement / approach / plates | Q1 | No; all action windows and full transform audit. |
+| Timing confirmation | Q1 | Unresolved: see craft-receipt.json; unchanged 33 ms gate fails. |
+| Uneven small units / frame fill | Q2 | Yes; first basic f3 onward, large bottom band. |
+| Facing away | Q2 | No reversed travel observed in this fixture; full pose-facing audit belongs to Q2. |
+| Number clutter / persistence | Q2 | Yes; basic recovery frames and ultimate aftermath. |
+| Blob/ring/fog main shape / body washout | Q3 | Yes; Mochi/Soot/Clover ultimate peak frames in table. |
+| Pasted look / weak silhouette change | Q3 | Yes; small torso tilts dominate basic preparation. |
+| Text overflow / labels | Q4/Q6 | No banner spill observed; short names remain plain and icons tiny. |
+| Sound without visible cause | Q5 | Cue/mix gate not yet evaluated; max voices 10, -14.92 LUFS. No listening claim. |
 
-## Audio (unmodified 60-second output)
+## Critique against the retained reference study
 
-|Fixture|Integrated LUFS|True peak dBTP|Max transient voices|Listening|
-|---|---:|---:|---:|---|
-|wave1|-15.08|-2.98|9|OPEN|
-|wave3|-15.15|-3.18|9|OPEN|
-|boss|-14.93|-2.38|10|OPEN|
+1. Fixed stage registration is visibly maintained; this answers F2 in the reviewed windows.
+2. Local dim/outline/banner separates the caster without an approach; see every ultimate table row.
+3. Long-lasting gold and pink loops still obscure the bodies; their colour is not a distinct skill silhouette.
+4. The reference breakdown shows directed strokes; our current basic reads as an orb followed by a circle (CRAFT/REFERENCE-BREAKDOWN.md).
+5. Contact recoil is visible, but the preceding torso tilt has little silhouette change.
+6. The caster and target remain small beside unused field and bottom HUD space.
+7. Ram orientation in wave3 contradicts its leftward attack direction.
+8. Numbers survive into later actions and compete with both the face and the effect.
+9. The schedule is regular, but unverified frame timing must not be described as passed (LEARN/Q1.md).
+10. Q2 must establish readable unit geometry before Q3 drills size and shape the effects; no production quality approval follows from this review.
 
-Targets remain -20 ±1 LUFS, <= -1 dBTP, <=4 voices. No audio normalization was used to manufacture a PASS. Measured peaks pass; loudness and voice counts fail. Numbers exclude any uncounted music sources and cannot prove the total-voice gate.
-
-## Critique against the researched reference
-
-1. Our camera is now planted, as requested; reference camera movement is not copied.
-2. Our caster focus reads clearly, but the body does not prepare a forceful release.
-3. Repeated curled rings replace the distinct weapon silhouettes seen in the reference study.
-4. White cores wash out the effects before their shapes can be read.
-5. Local contact is weak because bloom starts before the displayed damage receipt.
-6. The boss weighs forward but does not deliver a fist or hammer-shaped blow.
-7. Support ultimates reuse wreath-like geometry instead of a recognizable themed gesture.
-8. Front/back body sizes are inconsistent; this amplifies the pasted-sprite impression.
-9. Numbers linger across several action beats and compete with the combat.
-10. The old dark bottom band wastes frame area; direct same-scale private comparison for this recording is still OPEN.
-
-Verdict: FAIL. Self-score 3/10. Q1 timing/camera/kit progress does not pass the wider craft bar. Further shape, scale, facing and sound repairs are required.
+Self-score: 5/10 overall. Q1 remains open, so no >=8 claim. Q2/Q3/Q5 defects remain assigned to their owners.

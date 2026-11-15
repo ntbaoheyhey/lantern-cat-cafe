@@ -2,10 +2,10 @@
 
 | Item | State | Work | Evidence / log |
 |---|---|---|---|
-| C0 | done | Adopt craft prompt and trim evidence | STARTED 2026-11-15T07:06:45Z; LEARN/C0.md; 1,599 tooling tests PASS; typecheck/parity PASS; checker 18 PASS/0 FAIL/0 OPEN; REVIEW/C0/REVIEW.md; ENDED 2026-11-15T07:18:00.942741+00:00; commit pending |
+| C0 | done | Adopt craft prompt and trim evidence | STARTED 2026-11-15T07:06:45Z; LEARN/C0.md; 1,599 tooling tests PASS; typecheck/parity PASS; checker 18 PASS/0 FAIL/0 OPEN; REVIEW/C0/REVIEW.md; ENDED 2026-11-15T07:18:00.942741+00:00; commit 752078771 |
 | Q0 | baseline | Baseline closed; audit remains in Q9 | Historical ENDED 2026-11-14T04:48:11Z; REVIEW/Q0/REVIEW.md; no retroactive pass |
 | QR | study done | Apprenticeship continues in Q3.A | Historical ENDED 2026-11-14T05:51:57Z; pilot 46 PASS/6 FAIL/2 then-listening OPEN; QR.6 exception WITHDRAWN |
-| Q1 | open | Kit, equal timing, static camera | Historical STARTED 2026-11-14T05:55:26Z; stopped by user then resumed by CRAFT; remaining schedule/video confirmation, owned review and compact receipts |
+| Q1 | open | Kit, equal timing, static camera | STARTED 2026-11-15T07:18:35.719053+00:00; 84/84 windows reviewed; schedule 800/2200 ms, zero overlap; video residual max 50.233 ms FAIL; typecheck/1599 tooling tests/parity PASS; REVIEW/Q1/REVIEW.md; ENDED 2026-11-15T09:27:05.747051+00:00; Q9: phase-boundary pixel confirmation using existing seek/capture tools, no per-action clock fit |
 | Q2 | todo | Scale, facing, frame fill, numbers | Q1 review: unequal/small cats, reversed spool ram, persistent number columns, large bottom band; all owned here |
 | Q3.A | todo | Study toolkit; D1-D8 with 2 revisions each | No production effect code before D1-D6 PASS; LEARN + CRAFT extension |
 | Q3.B | todo | Soot Lantern Requiem and staff-bolt pilot | No failed method rollout; actual craft timing and full pilot quality bar |

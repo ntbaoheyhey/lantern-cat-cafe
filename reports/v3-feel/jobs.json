@@ -1,6 +1,6 @@
 {
   "vite": {
-    "pid": 13788,
+    "pid": 44605,
     "command": [
       "pnpm",
       "exec",
@@ -15,7 +15,7 @@
     ],
     "cwd": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web",
     "log": "reports/v3-feel/vite.log",
-    "started": "2026-11-15T07:08:33.782771+00:00"
+    "started": "2026-11-15T09:24:03.452857+00:00"
   },
   "capture": {
     "pid": 62771,
@@ -211,5 +211,31 @@
     "finished": true,
     "status": "passed",
     "ended": "2026-11-15T07:15:03.538672+00:00"
+  },
+  "q1CraftCapture": {
+    "pid": 16924,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q1",
+      "--frame-marker"
+    ],
+    "log": "reports/v3-feel/Q1-craft-capture.log",
+    "started": "2026-11-15T07:21:13.516799+00:00",
+    "finished": true,
+    "status": "three fixtures complete"
+  },
+  "q1CraftSheets": {
+    "pid": 21768,
+    "command": [
+      "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/bin/python",
+      "scripts/v3feel/review-sheets.py",
+      "Q1"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q1-craft-sheets.log",
+    "started": "2026-11-15T07:32:47.864644+00:00",
+    "finished": true
   }
 }

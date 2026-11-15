@@ -1,0 +1,793 @@
+{
+  "at": "2026-11-15T07:19:07.962706+00:00",
+  "approachA": "Actual complete-fixture scheduler starts/ends from parity; serial actions and exact configured beats.",
+  "approachB": "Existing marker video identifies the rendered clock at each 30 fps frame; confirmation is independent of scheduler values.",
+  "schedule": [
+    {
+      "fixture": "wave1",
+      "actions": 165,
+      "scheduleOverlapMaxMs": 0,
+      "ultimateDurationRange": [
+        2200,
+        2200
+      ],
+      "ultimateImpactOffsets": [
+        1100
+      ],
+      "basicCount": 79,
+      "durationMs": 213233.3333333496,
+      "parity": true
+    },
+    {
+      "fixture": "wave3",
+      "actions": 422,
+      "scheduleOverlapMaxMs": 0,
+      "ultimateDurationRange": [
+        2200,
+        2200
+      ],
+      "ultimateImpactOffsets": [
+        1100
+      ],
+      "basicCount": 203,
+      "durationMs": 573699.9999999355,
+      "parity": true
+    },
+    {
+      "fixture": "boss",
+      "actions": 164,
+      "scheduleOverlapMaxMs": 0,
+      "ultimateDurationRange": [
+        2200,
+        2200
+      ],
+      "ultimateImpactOffsets": [
+        1100
+      ],
+      "basicCount": 79,
+      "durationMs": 211133.333333349,
+      "parity": true
+    }
+  ],
+  "videoContacts": [
+    {
+      "key": 0,
+      "actor": "mochi",
+      "tier": "basic",
+      "scheduledContactSeconds": 0.43009981727600094,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 69.9,
+      "frame": 15
+    },
+    {
+      "key": 1,
+      "actor": "soot",
+      "tier": "basic",
+      "scheduledContactSeconds": 1.3298996742248532,
+      "renderContactErrorMs": 0.1,
+      "videoContactErrorMs": 36.767,
+      "frame": 41
+    },
+    {
+      "key": 2,
+      "actor": "clover",
+      "tier": "basic",
+      "scheduledContactSeconds": 2.2131997402191166,
+      "renderContactErrorMs": 0.1,
+      "videoContactErrorMs": 53.467,
+      "frame": 68
+    },
+    {
+      "key": 3,
+      "actor": "panko",
+      "tier": "basic",
+      "scheduledContactSeconds": 3.096599942016601,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 36.733,
+      "frame": 94
+    },
+    {
+      "key": 4,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "scheduledContactSeconds": 3.9798998722076413,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 53.433,
+      "frame": 121
+    },
+    {
+      "key": 5,
+      "actor": "foe-3-crumb-sentinel",
+      "tier": "basic",
+      "scheduledContactSeconds": 4.879799967575073,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 53.533,
+      "frame": 148
+    },
+    {
+      "key": 6,
+      "actor": "foe-1-spool-ram",
+      "tier": "basic",
+      "scheduledContactSeconds": 5.763200033569335,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 70.133,
+      "frame": 175
+    },
+    {
+      "key": 7,
+      "actor": "foe-4-needle-moth",
+      "tier": "basic",
+      "scheduledContactSeconds": 6.663099890518187,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 36.9,
+      "frame": 201
+    },
+    {
+      "key": 8,
+      "actor": "foe-2-pollen-scout",
+      "tier": "basic",
+      "scheduledContactSeconds": 7.5463998207092295,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 53.6,
+      "frame": 228
+    },
+    {
+      "key": 9,
+      "actor": "foe-5-teacup-healer",
+      "tier": "basic",
+      "scheduledContactSeconds": 8.429699784088134,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 36.967,
+      "frame": 254
+    },
+    {
+      "key": 11,
+      "actor": "mochi",
+      "tier": "basic",
+      "scheduledContactSeconds": 9.629599934387207,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.067,
+      "frame": 290
+    },
+    {
+      "key": 12,
+      "actor": "soot",
+      "tier": "basic",
+      "scheduledContactSeconds": 10.512899761962892,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 53.767,
+      "frame": 317
+    },
+    {
+      "key": 13,
+      "actor": "clover",
+      "tier": "basic",
+      "scheduledContactSeconds": 11.396199827957153,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.134,
+      "frame": 343
+    },
+    {
+      "key": 14,
+      "actor": "panko",
+      "tier": "ultimate",
+      "scheduledContactSeconds": 13.029499893951416,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.167,
+      "frame": 392
+    },
+    {
+      "key": 15,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "scheduledContactSeconds": 14.579499710464475,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 53.834,
+      "frame": 439
+    },
+    {
+      "key": 16,
+      "actor": "foe-3-crumb-sentinel",
+      "tier": "basic",
+      "scheduledContactSeconds": 15.479399908447267,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 53.933,
+      "frame": 466
+    },
+    {
+      "key": 17,
+      "actor": "foe-1-spool-ram",
+      "tier": "basic",
+      "scheduledContactSeconds": 16.362699974441533,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.3,
+      "frame": 492
+    },
+    {
+      "key": 18,
+      "actor": "foe-4-needle-moth",
+      "tier": "basic",
+      "scheduledContactSeconds": 17.24599980201721,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 54,
+      "frame": 519
+    },
+    {
+      "key": 19,
+      "actor": "foe-2-pollen-scout",
+      "tier": "basic",
+      "scheduledContactSeconds": 18.12929976539612,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.367,
+      "frame": 545
+    },
+    {
+      "key": 20,
+      "actor": "foe-5-teacup-healer",
+      "tier": "basic",
+      "scheduledContactSeconds": 19.029299724960325,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 37.367,
+      "frame": 572
+    },
+    {
+      "key": 22,
+      "actor": "mochi",
+      "tier": "ultimate",
+      "scheduledContactSeconds": 20.979199772644044,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 54.134,
+      "frame": 631
+    },
+    {
+      "key": 23,
+      "actor": "soot",
+      "tier": "ultimate",
+      "scheduledContactSeconds": 23.27909982757569,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 54.234,
+      "frame": 700
+    },
+    {
+      "key": 24,
+      "actor": "clover",
+      "tier": "ultimate",
+      "scheduledContactSeconds": 25.578999882507325,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 54.333,
+      "frame": 769
+    },
+    {
+      "key": 25,
+      "actor": "panko",
+      "tier": "ultimate",
+      "scheduledContactSeconds": 27.87889983482361,
+      "renderContactErrorMs": 0,
+      "videoContactErrorMs": 54.433,
+      "frame": 838
+    },
+    {
+      "key": 26,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "scheduledContactSeconds": 29.42889999237061,
+      "renderContactErrorMs": 16.6,
+      "videoContactErrorMs": 71.1,
+      "frame": 885
+    }
+  ],
+  "videoErrorMaxMs": 71.1,
+  "videoAbove33Ms": 25,
+  "note": "Pixel contact still needs manual adjacent-frame review; decoding markers alone never proves art contact.",
+  "approachC": "Use existing mediaTiming to compare video action-local offsets from its first visible marker, aligning clock origins without changing capture.",
+  "mediaOffsets": [
+    {
+      "key": 0,
+      "actor": "mochi",
+      "tier": "basic",
+      "start": 0.13333333333333333,
+      "firstElapsed": 33.19999999999982,
+      "impact": 366.6666666666667,
+      "impactError": 16.666666666666686,
+      "duration": 800,
+      "durationError": 0
+    },
+    {
+      "key": 1,
+      "actor": "soot",
+      "tier": "basic",
+      "start": 1.0333333333333334,
+      "firstElapsed": 16.700000000000273,
+      "impact": 333.33333333333326,
+      "impactError": -16.666666666666742,
+      "duration": 799.9999999999998,
+      "durationError": -2.2737367544323206e-13
+    },
+    {
+      "key": 2,
+      "actor": "clover",
+      "tier": "basic",
+      "start": 1.9333333333333333,
+      "firstElapsed": 33.399999999999636,
+      "impact": 333.33333333333326,
+      "impactError": -16.666666666666742,
+      "duration": 766.6666666666669,
+      "durationError": -33.333333333333144
+    },
+    {
+      "key": 3,
+      "actor": "panko",
+      "tier": "basic",
+      "start": 2.8,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.3333333333335,
+      "impactError": -16.666666666666515,
+      "duration": 800.0000000000002,
+      "durationError": 2.2737367544323206e-13
+    },
+    {
+      "key": 4,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "start": 3.7,
+      "firstElapsed": 33.30000000000018,
+      "impact": 333.33333333333303,
+      "impactError": -16.66666666666697,
+      "duration": 799.9999999999998,
+      "durationError": -2.2737367544323206e-13
+    },
+    {
+      "key": 5,
+      "actor": "foe-3-crumb-sentinel",
+      "tier": "basic",
+      "start": 4.6,
+      "firstElapsed": 33.399999999999636,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 766.6666666666666,
+      "durationError": -33.33333333333337
+    },
+    {
+      "key": 6,
+      "actor": "foe-1-spool-ram",
+      "tier": "basic",
+      "start": 5.466666666666667,
+      "firstElapsed": 16.600000000000364,
+      "impact": 366.66666666666623,
+      "impactError": 16.66666666666623,
+      "duration": 799.9999999999998,
+      "durationError": -2.2737367544323206e-13
+    },
+    {
+      "key": 7,
+      "actor": "foe-4-needle-moth",
+      "tier": "basic",
+      "start": 6.366666666666666,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 8,
+      "actor": "foe-2-pollen-scout",
+      "tier": "basic",
+      "start": 7.266666666666667,
+      "firstElapsed": 33.29999999999927,
+      "impact": 333.33333333333303,
+      "impactError": -16.66666666666697,
+      "duration": 766.6666666666666,
+      "durationError": -33.33333333333337
+    },
+    {
+      "key": 9,
+      "actor": "foe-5-teacup-healer",
+      "tier": "basic",
+      "start": 8.133333333333333,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 11,
+      "actor": "mochi",
+      "tier": "basic",
+      "start": 9.333333333333334,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.3333333333321,
+      "impactError": -16.66666666666788,
+      "duration": 799.999999999999,
+      "durationError": -1.0231815394945443e-12
+    },
+    {
+      "key": 12,
+      "actor": "soot",
+      "tier": "basic",
+      "start": 10.233333333333333,
+      "firstElapsed": 33.29999999999927,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 766.6666666666675,
+      "durationError": -33.33333333333246
+    },
+    {
+      "key": 13,
+      "actor": "clover",
+      "tier": "basic",
+      "start": 11.1,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 14,
+      "actor": "panko",
+      "tier": "ultimate",
+      "start": 12,
+      "firstElapsed": 33.30000000000109,
+      "impact": 1066.6666666666665,
+      "impactError": -33.333333333333485,
+      "duration": 2199.999999999999,
+      "durationError": -9.094947017729282e-13
+    },
+    {
+      "key": 15,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "start": 14.3,
+      "firstElapsed": 33.29999999999927,
+      "impact": 333.3333333333321,
+      "impactError": -16.66666666666788,
+      "duration": 799.999999999999,
+      "durationError": -1.0231815394945443e-12
+    },
+    {
+      "key": 16,
+      "actor": "foe-3-crumb-sentinel",
+      "tier": "basic",
+      "start": 15.2,
+      "firstElapsed": 33.29999999999927,
+      "impact": 333.33333333333394,
+      "impactError": -16.66666666666606,
+      "duration": 766.6666666666675,
+      "durationError": -33.33333333333246
+    },
+    {
+      "key": 17,
+      "actor": "foe-1-spool-ram",
+      "tier": "basic",
+      "start": 16.066666666666666,
+      "firstElapsed": 16.599999999998545,
+      "impact": 333.3333333333321,
+      "impactError": -16.66666666666788,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 18,
+      "actor": "foe-4-needle-moth",
+      "tier": "basic",
+      "start": 16.966666666666665,
+      "firstElapsed": 33.29999999999927,
+      "impact": 333.3333333333357,
+      "impactError": -16.666666666664298,
+      "duration": 766.6666666666692,
+      "durationError": -33.333333333330756
+    },
+    {
+      "key": 19,
+      "actor": "foe-2-pollen-scout",
+      "tier": "basic",
+      "start": 17.833333333333332,
+      "firstElapsed": 16.700000000000728,
+      "impact": 333.3333333333357,
+      "impactError": -16.666666666664298,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 20,
+      "actor": "foe-5-teacup-healer",
+      "tier": "basic",
+      "start": 18.733333333333334,
+      "firstElapsed": 16.600000000002183,
+      "impact": 333.3333333333321,
+      "impactError": -16.66666666666788,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    },
+    {
+      "key": 22,
+      "actor": "mochi",
+      "tier": "ultimate",
+      "start": 19.933333333333334,
+      "firstElapsed": 16.700000000000728,
+      "impact": 1100.0000000000014,
+      "impactError": 1.3642420526593924e-12,
+      "duration": 2199.999999999999,
+      "durationError": -9.094947017729282e-13
+    },
+    {
+      "key": 23,
+      "actor": "soot",
+      "tier": "ultimate",
+      "start": 22.233333333333334,
+      "firstElapsed": 16.69999999999709,
+      "impact": 1099.999999999998,
+      "impactError": -2.0463630789890885e-12,
+      "duration": 2199.999999999999,
+      "durationError": -9.094947017729282e-13
+    },
+    {
+      "key": 24,
+      "actor": "clover",
+      "tier": "ultimate",
+      "start": 24.566666666666666,
+      "firstElapsed": 50.10000000000218,
+      "impact": 1066.6666666666665,
+      "impactError": -33.333333333333485,
+      "duration": 2166.666666666668,
+      "durationError": -33.33333333333212
+    },
+    {
+      "key": 25,
+      "actor": "panko",
+      "tier": "ultimate",
+      "start": 26.833333333333332,
+      "firstElapsed": 16.799999999999272,
+      "impact": 1100.0000000000014,
+      "impactError": 1.3642420526593924e-12,
+      "duration": 2200.0000000000027,
+      "durationError": 2.7284841053187847e-12
+    },
+    {
+      "key": 26,
+      "actor": "foe-0-kettle-knight",
+      "tier": "basic",
+      "start": 29.133333333333333,
+      "firstElapsed": 16.599999999998545,
+      "impact": 366.66666666666714,
+      "impactError": 16.66666666666714,
+      "duration": 800.0000000000007,
+      "durationError": 6.821210263296962e-13
+    }
+  ],
+  "clockCalibration": {
+    "method": "One global video-minus-RAF offset from all marker frames, independent of any impact; does not edit video or game schedule.",
+    "medianLatencyMs": 37.266794840494555,
+    "minLatencyMs": -13.399839401245117,
+    "maxLatencyMs": 287.7668539683036,
+    "contactRows": [
+      {
+        "key": 0,
+        "actor": "mochi",
+        "tier": "basic",
+        "videoFrame": 15,
+        "gameClockAtFrame": 383.1999999999998,
+        "clockErrorMs": 33.19999999999982,
+        "calibratedMediaErrorMs": 32.633387883504504
+      },
+      {
+        "key": 1,
+        "actor": "soot",
+        "tier": "basic",
+        "videoFrame": 41,
+        "gameClockAtFrame": 350.10000000000036,
+        "clockErrorMs": 0.1000000000003638,
+        "calibratedMediaErrorMs": -0.4998023986810818
+      },
+      {
+        "key": 2,
+        "actor": "clover",
+        "tier": "basic",
+        "videoFrame": 68,
+        "gameClockAtFrame": 366.6999999999998,
+        "clockErrorMs": 16.699999999999818,
+        "calibratedMediaErrorMs": 16.200131607055468
+      },
+      {
+        "key": 3,
+        "actor": "panko",
+        "tier": "basic",
+        "videoFrame": 94,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.5334035237622992
+      },
+      {
+        "key": 4,
+        "actor": "foe-0-kettle-knight",
+        "tier": "basic",
+        "videoFrame": 121,
+        "gameClockAtFrame": 366.60000000000036,
+        "clockErrorMs": 16.600000000000364,
+        "calibratedMediaErrorMs": 16.166666285197362
+      },
+      {
+        "key": 5,
+        "actor": "foe-3-crumb-sentinel",
+        "tier": "basic",
+        "videoFrame": 148,
+        "gameClockAtFrame": 366.59999999999945,
+        "clockErrorMs": 16.599999999999454,
+        "calibratedMediaErrorMs": 16.266570917766288
+      },
+      {
+        "key": 6,
+        "actor": "foe-1-spool-ram",
+        "tier": "basic",
+        "videoFrame": 175,
+        "gameClockAtFrame": 383.2000000000007,
+        "clockErrorMs": 33.20000000000073,
+        "calibratedMediaErrorMs": 32.86650492350329
+      },
+      {
+        "key": 7,
+        "actor": "foe-4-needle-moth",
+        "tier": "basic",
+        "videoFrame": 201,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.36668535868145113
+      },
+      {
+        "key": 8,
+        "actor": "foe-2-pollen-scout",
+        "tier": "basic",
+        "videoFrame": 228,
+        "gameClockAtFrame": 366.6999999999989,
+        "clockErrorMs": 16.69999999999891,
+        "calibratedMediaErrorMs": 16.333384450275545
+      },
+      {
+        "key": 9,
+        "actor": "foe-5-teacup-healer",
+        "tier": "basic",
+        "videoFrame": 254,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.2999122619620209
+      },
+      {
+        "key": 11,
+        "actor": "mochi",
+        "tier": "basic",
+        "videoFrame": 290,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.2000625610349971
+      },
+      {
+        "key": 12,
+        "actor": "soot",
+        "tier": "basic",
+        "videoFrame": 317,
+        "gameClockAtFrame": 366.59999999999854,
+        "clockErrorMs": 16.599999999998545,
+        "calibratedMediaErrorMs": 16.500109863279988
+      },
+      {
+        "key": 13,
+        "actor": "clover",
+        "tier": "basic",
+        "videoFrame": 343,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.13328946431379052
+      },
+      {
+        "key": 14,
+        "actor": "panko",
+        "tier": "ultimate",
+        "videoFrame": 392,
+        "gameClockAtFrame": 1100,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": -0.10002212524362619
+      },
+      {
+        "key": 15,
+        "actor": "foe-0-kettle-knight",
+        "tier": "basic",
+        "videoFrame": 439,
+        "gameClockAtFrame": 366.6000000000022,
+        "clockErrorMs": 16.600000000002183,
+        "calibratedMediaErrorMs": 16.56682802836329
+      },
+      {
+        "key": 16,
+        "actor": "foe-3-crumb-sentinel",
+        "tier": "basic",
+        "videoFrame": 466,
+        "gameClockAtFrame": 366.59999999999854,
+        "clockErrorMs": 16.599999999998545,
+        "calibratedMediaErrorMs": 16.666630045572006
+      },
+      {
+        "key": 17,
+        "actor": "foe-1-spool-ram",
+        "tier": "basic",
+        "videoFrame": 492,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": 0.0332307179711222
+      },
+      {
+        "key": 18,
+        "actor": "foe-4-needle-moth",
+        "tier": "basic",
+        "videoFrame": 519,
+        "gameClockAtFrame": 366.6000000000022,
+        "clockErrorMs": 16.600000000002183,
+        "calibratedMediaErrorMs": 16.733403142296766
+      },
+      {
+        "key": 19,
+        "actor": "foe-2-pollen-scout",
+        "tier": "basic",
+        "videoFrame": 545,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": 0.1001064300538701
+      },
+      {
+        "key": 20,
+        "actor": "foe-5-teacup-healer",
+        "tier": "basic",
+        "videoFrame": 572,
+        "gameClockAtFrame": 350,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": 0.10014686584725041
+      },
+      {
+        "key": 22,
+        "actor": "mochi",
+        "tier": "ultimate",
+        "videoFrame": 631,
+        "gameClockAtFrame": 1116.7000000000007,
+        "clockErrorMs": 16.700000000000728,
+        "calibratedMediaErrorMs": 16.866765848796206
+      },
+      {
+        "key": 23,
+        "actor": "soot",
+        "tier": "ultimate",
+        "videoFrame": 700,
+        "gameClockAtFrame": 1116.5999999999985,
+        "clockErrorMs": 16.599999999998545,
+        "calibratedMediaErrorMs": 16.966710917149186
+      },
+      {
+        "key": 24,
+        "actor": "clover",
+        "tier": "ultimate",
+        "videoFrame": 769,
+        "gameClockAtFrame": 1116.7000000000007,
+        "clockErrorMs": 16.700000000000728,
+        "calibratedMediaErrorMs": 17.066655985512824
+      },
+      {
+        "key": 25,
+        "actor": "panko",
+        "tier": "ultimate",
+        "videoFrame": 838,
+        "gameClockAtFrame": 1100,
+        "clockErrorMs": 0,
+        "calibratedMediaErrorMs": 17.166703669229122
+      },
+      {
+        "key": 26,
+        "actor": "foe-0-kettle-knight",
+        "tier": "basic",
+        "videoFrame": 885,
+        "gameClockAtFrame": 383.2000000000007,
+        "clockErrorMs": 33.20000000000073,
+        "calibratedMediaErrorMs": 33.833212788895395
+      }
+    ]
+  }
+}

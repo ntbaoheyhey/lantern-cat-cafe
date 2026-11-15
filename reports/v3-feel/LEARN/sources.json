@@ -54,5 +54,61 @@
     "type": "local",
     "topic": "C0",
     "takeaway": "Honest old frame observations identify true later-item defects; preserve these observations while separating ownership."
+  },
+  {
+    "id": "Q1-time",
+    "topic": "Q1",
+    "type": "formal",
+    "url_or_path": "https://www.w3.org/TR/hr-time-3/",
+    "takeaway": "Monotonic timing and time-origin translation prevent render latency from being mistaken for action scheduling."
+  },
+  {
+    "id": "Q1-raf",
+    "topic": "Q1",
+    "type": "doc",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
+    "takeaway": "RAF callbacks in one frame share a timestamp; performance.now at callback completion is a different measurement."
+  },
+  {
+    "id": "Q1-timer",
+    "topic": "Q1",
+    "type": "doc",
+    "url_or_path": "https://threejs.org/docs/pages/Timer.html",
+    "takeaway": "Update once per simulation step; repeated elapsed/delta reads should not move the clock."
+  },
+  {
+    "id": "Q1-playwright",
+    "topic": "Q1",
+    "type": "doc",
+    "url_or_path": "https://playwright.dev/docs/clock",
+    "takeaway": "Manual clock stepping can verify state transitions reproducibly; real-time video remains separate evidence."
+  },
+  {
+    "id": "Q1-timestep",
+    "topic": "Q1",
+    "type": "breakdown",
+    "url_or_path": "https://gafferongames.com/post/fix_your_timestep/",
+    "takeaway": "Separate simulation and rendering rate; timestep rounding and origin must be explicit for repeatable measurements."
+  },
+  {
+    "id": "Q1-experiment",
+    "topic": "Q1",
+    "type": "experiment",
+    "url_or_path": "tools/v3craft-lab/q1/results.json",
+    "takeaway": "751 full-fixture plans have zero scheduler overlap; compare direct timestamp subtraction, action-local offsets and marker clock alignment on real wave3 video."
+  },
+  {
+    "id": "Q1-source",
+    "topic": "Q1",
+    "type": "local",
+    "url_or_path": "apps/web/src/game/cardrpg/depth/model.ts",
+    "takeaway": "tick advances one plan and finishMoment resets at duration; the fixed-timing sequence includes its hit-stop inside its envelope."
+  },
+  {
+    "id": "Q1-reference",
+    "topic": "Q1",
+    "type": "local",
+    "url_or_path": "reports/v3-feel/CRAFT/REFERENCE-BREAKDOWN.md",
+    "takeaway": "Prior reference study has x2/x3 speed and 100 ms precision caveats; do not use it as the game clock."
   }
 ]
