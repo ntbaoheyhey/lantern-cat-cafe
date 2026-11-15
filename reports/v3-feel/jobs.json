@@ -1,10 +1,21 @@
 {
   "vite": {
-    "pid": 62552,
-    "command": "pnpm exec vite --config ../../scripts/v3feel/vite.config.mts --host 127.0.0.1 --port 5990 --strictPort",
+    "pid": 13788,
+    "command": [
+      "pnpm",
+      "exec",
+      "vite",
+      "--config",
+      "../../scripts/v3feel/vite.config.mts",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "5990",
+      "--strictPort"
+    ],
     "cwd": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web",
     "log": "reports/v3-feel/vite.log",
-    "started": "2026-11-14T04:04:15.531122+00:00"
+    "started": "2026-11-15T07:08:33.782771+00:00"
   },
   "capture": {
     "pid": 62771,
@@ -128,5 +139,77 @@
     "log": "reports/v3-feel/Q1-capture-clock-fixed.log",
     "started": "2026-11-14T06:55:24.080283+00:00",
     "finished": true
+  },
+  "q1FocusCapture": {
+    "pid": 12146,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q1"
+    ],
+    "log": "reports/v3-feel/Q1-focus-capture.log",
+    "started": "2026-11-14T07:05:08.422255+00:00",
+    "finished": true
+  },
+  "q1FocusRegression": {
+    "pid": 16045,
+    "command": [
+      "node",
+      "scripts/v3feel/regress.mjs",
+      "Q1-FOCUS"
+    ],
+    "log": "reports/v3-feel/Q1-focus-regression.log",
+    "started": "2026-11-14T07:25:33.116297+00:00",
+    "finished": true,
+    "status": "stopped-by-user",
+    "stoppedAt": "2026-11-14T07:31:29.018709+00:00",
+    "stoppedPids": [
+      17379,
+      17539,
+      17381,
+      17382,
+      18820,
+      18825,
+      17451,
+      17388,
+      16045,
+      18160,
+      18161,
+      17426,
+      18162,
+      18163,
+      18487,
+      18488,
+      18489,
+      18490
+    ],
+    "completedChecks": [
+      "typecheck",
+      "unit",
+      "parity"
+    ],
+    "incompleteChecks": [
+      "browser",
+      "aLane",
+      "bLane"
+    ]
+  },
+  "c0Clock": {
+    "pid": 13860,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "C0-CLOCK",
+      "--fixture",
+      "wave3",
+      "--frame-marker"
+    ],
+    "log": "reports/v3-feel/C0-clock-capture.log",
+    "started": "2026-11-15T07:09:01.492672+00:00",
+    "finished": true,
+    "status": "passed",
+    "ended": "2026-11-15T07:15:03.538672+00:00"
   }
 }

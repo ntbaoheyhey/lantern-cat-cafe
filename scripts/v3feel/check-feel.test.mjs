@@ -12,7 +12,7 @@ function values(g){
  if(g.op==='near')return [g.limit[0],g.limit[0]+g.limit[1]+.001];throw Error(g.op);
 }
 for(const gate of gates){
- const [good,bad]=values(gate),sample=value=>({samples:(gate.scope==='fixtures'?fixtures:['all']).map(fixture=>({fixture,value}))});
+ const [good,bad]=values(gate),sample=value=>({basis:'presentation-schedule',samples:(gate.scope==='fixtures'?fixtures:['all']).map(fixture=>({fixture,value}))});
  test(`${gate.id}: fake PASS`,()=>assert.equal(evaluateGate(gate,sample(good)).state,'PASS'));
  test(`${gate.id}: fake FAIL`,()=>assert.equal(evaluateGate(gate,sample(bad)).state,'FAIL'));
  test(`${gate.id}: absent evidence stays OPEN`,()=>assert.equal(evaluateGate(gate,undefined).state,'OPEN'));

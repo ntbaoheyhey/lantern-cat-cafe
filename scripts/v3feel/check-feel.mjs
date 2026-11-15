@@ -1,10 +1,11 @@
-/** FEEL acceptance contract. A missing measurement or artifact never passes.
- * Threshold changes require a user line in reports/v3-feel/INBOX.md.
- * REQUEST-FEEL.txt is the immutable, verbatim source of the requirements. */
+/** V3-CRAFT acceptance contract; see REQUEST-CRAFT.txt and LEARN/C0.md.
+ * Missing measurements/artifacts never pass. Owned gates retain their thresholds. */
 import {readFileSync,existsSync,writeFileSync} from 'node:fs';
 import {resolve,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {scheduleKeys,craftOwner,completedItems,selectedItems,learningReceipt,craftTimeReceipt} from './craft-policy.mjs';
 export const root=resolve(import.meta.dirname,'../..');
 export const fixtures=Object.freeze(['wave1','wave3','boss']);
 const definitions=[];
@@ -12,6 +13,12 @@ function add(item,key,op,limit,requirement,scope='all'){
  definitions.push(Object.freeze({id:`${item}.${key}`,item,key,op,limit,requirement,scope}));
 }
 function rows(item,entries,scope='all'){for(const [key,op,limit,requirement] of entries)add(item,key,op,limit,requirement,scope);}
+rows('C0',[
+ ['policyTests','eq',true,'each changed policy has a fake PASS and fake FAIL test'],
+ ['recorderTrialResolved','eq',true,'one isolated recorder trial succeeds, or draft helpers are reverted and logged'],
+ ['evidenceBudget','eq',true,'<=300 MB tracked FEEL evidence; <=12 sheets and <=3 fixture films per item; raw/WAV local only'],
+ ['adoptionRecorded','eq',true,'CRAFT PROMPT ADOPTED; L1-L5 and explicit superseded policies recorded'],
+]);
 rows('Q0',[
  ['branchPushed','eq',true,'branch pushed'],
  ['checkerTestsPass','eq',true,'checker runs and its unit tests pass'],
@@ -54,6 +61,8 @@ rows('Q1',[
  ['ultimateImpactMs','near',[1100,33],'cast 0.60-1.10 s; impact frame at 1.10 s; aftermath to 2.20 s'],
  ['ultimateDurationSpreadMs','lte',33,'ultimate durations same rule'],['ultimateImpactSpreadMs','lte',33,'ultimate durations same rule'],
  ['actionOverlapMs','eq',0,'next action starts no earlier than the previous action\'s end; no overlaps of two ultimates'],
+ ['videoTimingErrorMs','lte',33,'scheduled events appear in the video within +/-33 ms'],
+ ['videoTimingConfirmedFraction','eq',1,'every in-range scheduled event confirmed against a video frame'],
  ['activeEvents','eq',0,'0 active-skill events in the presentation log'],
  ['activeUiEntries','eq',0,'remove active-skill buttons/icons/cooldown rings from the battle HUD and from team/hero screens'],
  ['actorDisplacementWidth','lte',.05,'0 actor displacement > 5% width'],
@@ -84,7 +93,9 @@ rows('Q2',[
  ['unitHudOverlap','eq',0,'units never overlap HUD or each other\'s faces'],
  ['numbersPerHit','eq',1,'one number per hit'],['numbersPerTarget','lte',3,'stacked max 3 per target'],
  ['numberLifetimeMs','lte',700,'fade within 0.7 s'],['numberFaceOverlap','eq',0,'no number covers a face'],
- ['phonePlayable','eq',true,'phone 390 still playable (screens fit, no horizontal scroll)'],
+ ['numbersOlderThan700Ms','eq',0,'0 visible numbers older than 0.7 s'],
+ ['previousNumbersAtImpact','eq',0,'numbers from the previous action gone before next impact'],
+ ['numberEdgeColumns','eq',0,'numbers never form columns at the screen edge'],
 ], 'fixtures');
 rows('Q3',[
  ['referenceBasics','gte',8,'pick 8 basic attacks and 8 ultimates'],['referenceUltimates','gte',8,'pick 8 basic attacks and 8 ultimates'],
@@ -107,11 +118,30 @@ rows('Q3',[
  ['ultimateFilmstrips','eq',13,'Commit 13 per-ultimate film strips + 8 basic film strips'],['basicFilmstrips','eq',8,'Commit 13 per-ultimate film strips + 8 basic film strips'],
  ['sceneIntegration','eq',true,'soft contact shadow, scene-matched colour grade, rim light from the effect colour, secondary motion'],
  ['reactionAndDeath','eq',true,'Hit reactions: recoil + squash + flash; death: fade with dissolve particles, not a pop'],
+ ['rungOne','eq',0,'no Canvas2D rings/orbs/fog or static fade-in pictures as main effect shapes; code scan + log'],
+ ['bodyContrastRetention','gte',.6,'every face/body keeps >=60% pre-effect luminance contrast at each ultimate peak'],
+ ['outsideBodyFogArea','lte',.15,'full-field tint/fog area outside effect body <=15%'],
+ ['poseSilhouetteChange','gte',.08,'rest-to-wind-up body-box silhouette change >=8%'],
+ ['craftTime','eq',true,'real timed authoring >=60%; measurement <=20%; per-asset floors and two revise rounds'],
+]);
+rows('Q3.A',[
+ ['toolkitTopics','eq',8,'TOOLKIT.md covers topics a-h'],['newSources','gte',12,'>=12 new toolkit sources'],
+ ['drillsPassed','eq',8,'D1-D8 each pass their frame-referenced QUALITY-BAR rows'],
+ ['reviseRounds','gte',2,'at least two review-revise rounds per drill'],
+ ['drillSeconds','eq',2,'each drill recorded for 2 s'],['drillFps','eq',30,'30 fps drill video'],
+ ['craftTime','eq',true,'actual authoring and measurement time shares'],
+]);
+rows('Q3.B',[
+ ['pilotQualityFraction','eq',1,'Soot basic and ultimate pass every QUALITY-BAR row with frame references'],
+ ['deadCastFrames','eq',0,'visible build throughout cast; no uncurved one-frame layer pop'],
+ ['sameScaleComparison','eq',true,'same-scale private master comparison'],
+ ['craftTime','eq',true,'actual authoring floors and two revise rounds'],
 ]);
 rows('Q4',[
  ['changedNames','eq',14,'14/14 names changed and <= 3 words'],['nameWordCount','between',[2,3],'evocative, 2-3 words, fitting the cat\'s theme and element'],
- ['candidatesPerName','eq',3,'Write 3 candidates each'],['bannerOverflow','eq',0,'banner text fits its box at all 3 widths'],
- ['calloutsRegenerated','eq',14,'callout audio regenerated and plays at the cast'],['calloutAtCast','eq',true,'callout audio regenerated and plays at the cast'],
+ ['candidatesPerName','eq',3,'Write 3 candidates each'],['bannerOverflow','eq',0,'banner text fits at 1280x720 and 1440x900'],
+ ['calloutsRegenerated','eq',14,'cat/boss callouts regenerated'],['calloutAtFocus','eq',true,'callout plays at focus start'],
+ ['enemyNamesCoverage','eq',1,'all fixture enemy ultimates also renamed and callouts regenerated'],
  ['bannersReviewed','eq',14,'video review lists every banner'],['voiceLoudnessGates','eq',true,'keep loudness/true-peak gates'],
 ]);
 rows('Q5',[
@@ -125,10 +155,17 @@ rows('Q5',[
  ['duckDb','between',[4,6],'music ducks 4-6 dB under ultimates only'],['nonUltimateDucks','eq',0,'under ultimates only'],
  ['simultaneousVoices','lte',4,'max 4 simultaneous sound voices at any 100 ms window'],
  ['unmappedSounds','eq',0,'no sound without an on-screen cause'],['menuHomeForgeGates','eq',true,'menu/home/forge audio gates from B still PASS'],
+ ['onsetErrorMs','lte',33,'detected waveform onsets within +/-33 ms of logged visual events'],
+ ['onsetCoverage','eq',1,'all required event onsets verified on the rendered mix'],
+ ['unmappedOnsets','eq',0,'0 detected onsets without an on-screen event'],
+ ['spectralLabelFraction','eq',1,'each cue spectral label matches intended whoosh/impact/riser/voice type'],
+ ['audioMixSeconds','gte',60,'60 s unmodified battle mix'],
+ ['audioMetricsComplete','eq',true,'LUFS, true peak and cue-log simultaneous voices per 100 ms'],
+ ['audioMappingComplete','eq',true,'objective onset/cue/frame mapping complete; human listening is not a machine gate'],
  ['reviewMp3Seconds','gte',60,'new 60 s BATTLE-SOUND.mp3'],['desktopAudioCopy','eq',true,'to reports/v3-feel/ and the Desktop review folder'],
 ], 'fixtures');
 rows('Q6',[
- ['screenWidthCases','eq',162,'all 54 screens x 3 widths (1280, 1440, 390)'],
+ ['screenWidthCases','eq',108,'all 54 screens x 2 desktop widths (1280, 1440)'],
  ['textOverflow','eq',0,'0 elements whose text scrollWidth/scrollHeight exceeds its box or that overlap another text box'],
  ['textOverlap','eq',0,'0 elements whose text scrollWidth/scrollHeight exceeds its box or that overlap another text box'],
  ['missingButtonLabels','eq',0,'0 icon-only buttons without accessible name AND visible/hover label'],
@@ -137,7 +174,7 @@ rows('Q6',[
  ['primaryActionsPerScreen','eq',1,'one clear primary action per screen'],
  ['screensReviewed','eq',54,'a "where do I click" review per screen in REVIEW/Q6/REVIEW.md (screenshot + the one primary action named)'],
  ['knownDefectsRemaining','eq',0,'Fuji/wallet panel "Retry" overlaps the title text; empty decorative speech bubbles; unlabelled 0-value tiles; battle-prep empty bar'],
- ['bU3Gates','eq',true,'B U3 gates still PASS'],['phonePlayable','eq',true,'phone still PASS'],
+ ['bU3Gates','eq',true,'B U3 desktop gates still PASS'],
 ]);
 rows('Q7',[
  ['screensMeasured','eq',8,'Home, team, battle prep, forge, bag, gacha, season, wallet'],
@@ -149,7 +186,7 @@ rows('Q8',[
  ['desktopFiles','eq',true,'files on the Desktop'],['referenceLine','eq',true,'REFERENCE: demo built <UTC> from codex/v3-feel-2026-11-14 @ <commit>; live http://localhost:5994 ; static docs/cardrpg-v3-demo/index.html'],
  ['reviewVideoSeconds','gte',90,'Record a 90 s review video (1280x720, 30 fps, real mix: >= 55 s battle incl. >= 3 ultimates and the boss)'],
  ['battleSeconds','gte',55,'>= 55 s battle'],['ultimates','gte',3,'>= 3 ultimates and the boss'],['bossIncluded','eq',true,'and the boss'],
- ['feedbackStatusLines','eq',12,'what changed for each of F1-F12 (one line each, with numbers)'],
+ ['feedbackStatusLines','gte',14,'one line with numbers per F1-F14, plus F15 learning status'],
 ]);
 rows('Q9',[
  ['openHigherItems','eq',0,'any item above left "open", with a new method'],['inboxHandled','eq',true,'user notes in reports/v3-feel/INBOX.md'],
@@ -165,15 +202,16 @@ for(const item of ['Q0','Q1','Q2','Q3','Q4','Q5','Q9']){
   ['actionWindowFps','eq',10,'extract every action window at 10 fps'],['actionWindowBeforeMs','gte',300,'0.3 s before to 0.5 s after each impact'],['actionWindowAfterMs','gte',500,'0.3 s before to 0.5 s after each impact'],
   ['sheetWidth','lte',1280,'contact sheets (max 1280 px wide)'],['sheetsViewedFraction','eq',1,'look at every sheet (not a sample)'],
   ['actionReviewFraction','eq',1,'for each fixture, a table of every action'],['frameReferences','eq',true,'A review without frame references scores 0'],
-  ['referenceComparison','eq',true,'same beat types from the reference video at the same scale into side-by-side sheets (private, gitignored)'],
   ['critiqueLines','gte',10,'Then a 10-line honest critique vs the reference'],
-  ['audioMixSeconds','gte',60,'render a 60 s battle mix WAV from the same run'],
-  ['audioMetricsComplete','eq',true,'report integrated LUFS, true peak, number of simultaneous voices per 100 ms (max)'],
-  ['audioMappingComplete','eq',true,'listen-check list: each sound start mapped to an on-screen event within +/- 1 frame (33 ms)'],
  ]);
- if(item!=='Q0')add(item,'videoDefects','eq',0,'Any "yes" to a defect is a FAIL for the item, whatever the numeric gates say');
+ if(['Q3','Q9'].includes(item))add(item,'referenceComparison','eq',true,'effect/pose same-scale private reference comparison');
+ if(item!=='Q0')add(item,'videoDefects','eq',0,'any current-item or completed-item defect fails; future-item defects stay in the queue');
 }
-for(const item of ['Q0','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','R2'])for(const key of ['typecheck','unitTests','parityRegression','browserSuite','aLaneGates','bLaneGates'])add(item,key,'eq',true,'Full regression at the end of each item: typecheck, unit tests, combat parity, browser suite (the 435-case suite), scripts/v3a2/check-gates.mjs and scripts/v3b2/check-gates.mjs');
+for(const item of ['C0','Q0','Q1','Q2','Q3.A','Q3.B','Q3','Q4','Q5','Q6','Q7','Q8','Q9','R1','R2','R3']){
+ if(!['Q0','R3'].includes(item))add(item,'learn','eq',true,'nonempty LEARN file; >=6 sources, >=1 formal/paper, >=3 internet docs, recorded own experiment; build commit cites LEARN');
+ for(const key of ['typecheck','unitTests','parityRegression'])add(item,key,'eq',true,'per-item typecheck, touched-package unit tests, combat parity');
+ if(['Q2','Q3','Q5','R2','R3'].includes(item))for(const key of ['browserSuite','aLaneGates','bLaneGates'])add(item,key,'eq',true,'full 435-case browser/A/B regression at Q2, Q3, Q5, R2 and FREEZE');
+}
 rows('GLOBAL',[
  ['browserCases','gte',435,'browser suite (the 435-case suite; any case that tested removed actives/zoom/plates is UPDATED ... never deleted silently)'],
  ['changedCasesLogged','eq',true,'list each changed case in DECISIONS-FEEL.md'],['supersededGatesLogged','eq',true,'marked "SUPERSEDED by user decision F2/F6" in DECISIONS-FEEL.md'],
@@ -185,11 +223,10 @@ rows('GLOBAL',[
 rows('R1',[['checkpointDone','eq',true,'at/after 16 Nov 12:00 UTC run R1 once']]);
 rows('R2',[['finalDemoDone','eq',true,'at/after 18 Nov 12:00 UTC run R2 once'],['deployGuideUpdated','eq',true,'update reports/v3-shell/USER-DEPLOY-VI.md for this branch']]);
 rows('R3',[['freezeDone','eq',true,'at/after 19 Nov 12:00 UTC run FREEZE'],['draftPrCount','eq',1,'Open ONE draft PR codex/v3-feel-2026-11-14 -> main (do not merge)'],['finalReport','eq',true,'Final REPORT-FEEL.md (English) and STATUS-VI.md']]);
-// F13 adds the researched craft bar. Keep explicit per-row results: document
-// presence or a numeric mask cannot stand in for a frame/listening verdict.
+// Keep all 54 researched rows, owned by the item that can actually fix them.
 export const craftCriteria=Object.freeze(JSON.parse(readFileSync(resolve(root,'reports/v3-feel/CRAFT/quality-bar.json'),'utf8')).criteria);
-for(const item of ['QR','Q1','Q2','Q3','Q9'])for(const criterion of craftCriteria){
- add(item,`craft.${criterion.id}`,criterion.op,criterion.limit,`${criterion.check} Evidence: ${criterion.method}.`);
+for(const criterion of craftCriteria){
+ for(const item of ['QR',craftOwner(criterion.id)])add(item,`craft.${criterion.id}`,criterion.op,criterion.limit,`${criterion.check} Evidence: ${criterion.method}.`);
 }
 export const gates=Object.freeze(definitions);
 export function numeric(value,op,limit){
@@ -202,6 +239,7 @@ export function numeric(value,op,limit){
 }
 export function evaluateGate(gate,measurement){
  if(!measurement||!Array.isArray(measurement.samples)||!measurement.samples.length)return {state:'OPEN',reason:'No samples'};
+ if(gate.item==='Q1'&&scheduleKeys.has(gate.key)&&measurement.basis!=='presentation-schedule')return {state:'OPEN',reason:'Requires presentation schedule; post-draw inference is not timing truth'};
  if(gate.scope==='fixtures'&&!fixtures.every(id=>measurement.samples.some(s=>s.fixture===id)))return {state:'OPEN',reason:'Incomplete three-fixture matrix'};
  const failures=measurement.samples.filter(s=>!numeric(s.value,gate.op,gate.limit));
  return {state:failures.length?'FAIL':'PASS',reason:failures.length?JSON.stringify(failures):`${measurement.samples.length} samples`};
@@ -215,15 +253,34 @@ export function validateEvidence(measurement,base=root){
  }
  return null;
 }
-export function checkFeel(data,base=root){return gates.map(gate=>{
- const measurement=data?.measurements?.[gate.id],check=evaluateGate(gate,measurement);
+export function checkFeel(data,base=root,options={}){const selected=selectedItems(options.item,options.done);return gates.filter(g=>!selected||selected.has(g.item)).map(gate=>{
+ let measurement=data?.measurements?.[gate.id];
+ const derived=(value,paths)=>({samples:[{fixture:'all',value}],evidence:paths.filter(p=>existsSync(resolve(base,p))).map(path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(base,path))).digest('hex')}))});
+ if(gate.key==='learn'){
+  const path=resolve(base,'reports/v3-feel/LEARN/sources.json');
+  const receipt=learningReceipt(base,gate.item,existsSync(path)?JSON.parse(readFileSync(path,'utf8')):[],options.commitMessage??data?.buildCommits?.[gate.item]?.message);
+  measurement=derived(receipt.pass,receipt.paths);
+ }
+ if(gate.key==='craftTime'){
+  const path='reports/v3-feel/CRAFT/craft-times.json';
+  measurement=existsSync(resolve(base,path))?derived(craftTimeReceipt(JSON.parse(readFileSync(resolve(base,path),'utf8')),gate.item).pass,[path]):undefined;
+ }
+ const check=evaluateGate(gate,measurement);
  const error=check.state==='PASS'?validateEvidence(measurement,base):null;
  return {...gate,...check,...(error?{state:'OPEN',reason:error}:{})};
 });}
 if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1])){
  const i=process.argv.indexOf('--item'),item=i<0?null:process.argv[i+1];
  const path=resolve(root,'reports/v3-feel/measurements.json');const data=existsSync(path)?JSON.parse(readFileSync(path,'utf8')):{};
- const results=checkFeel(data).filter(g=>!item||g.item===item);
+ const queue=resolve(root,'reports/v3-feel/QUEUE-FEEL.md');
+ const done=existsSync(queue)?completedItems(readFileSync(queue,'utf8')):[];
+ const messageIndex=process.argv.indexOf('--commit-message-file');
+ const commitMessage=messageIndex>=0?readFileSync(resolve(process.argv[messageIndex+1]),'utf8'):undefined;
+ // Saved citations must correspond to actual commits, not an unchecked claim in JSON.
+ for(const [key,receipt] of Object.entries(data.buildCommits??{})){
+  try{receipt.message=execFileSync('git',['show','-s','--format=%B',receipt.commit],{cwd:root,encoding:'utf8'});}catch{receipt.message='';}
+ }
+ const results=checkFeel(data,root,{item,done,commitMessage});
  for(const row of results)console.log(`${row.state} ${row.id}: ${row.reason} | ${row.requirement}`);
  if(process.argv.includes('--write'))writeFileSync(resolve(root,'reports/v3-feel/checker.json'),JSON.stringify({at:new Date().toISOString(),source:relative(root,path),results},null,2)+'\n');
  const counts=Object.fromEntries(['PASS','FAIL','OPEN'].map(s=>[s,results.filter(r=>r.state===s).length]));console.log(JSON.stringify(counts));

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "C0-clock",
+    "url_or_path": "https://www.w3.org/TR/hr-time-3/",
+    "type": "formal",
+    "topic": "C0",
+    "takeaway": "Measure durations with monotonic time; translate clock origins explicitly instead of subtracting mixed render timestamps."
+  },
+  {
+    "id": "C0-audio-clock",
+    "url_or_path": "https://www.w3.org/TR/webaudio/",
+    "type": "formal",
+    "topic": "C0",
+    "takeaway": "Audio scheduled time is relative to AudioContext.currentTime, which need not match other clocks."
+  },
+  {
+    "id": "C0-ignore",
+    "url_or_path": "https://git-scm.com/docs/gitignore",
+    "type": "doc",
+    "topic": "C0",
+    "takeaway": "Ignore rules do not remove tracked artifacts from the index."
+  },
+  {
+    "id": "C0-rm",
+    "url_or_path": "https://git-scm.com/docs/git-rm",
+    "type": "doc",
+    "topic": "C0",
+    "takeaway": "Use explicit paths with rm --cached to preserve local evidence while removing it from future commits."
+  },
+  {
+    "id": "C0-test",
+    "url_or_path": "https://nodejs.org/api/test.html",
+    "type": "doc",
+    "topic": "C0",
+    "takeaway": "Assert both positive and negative examples; awaited tests report rejected promises as failures."
+  },
+  {
+    "id": "C0-video",
+    "url_or_path": "https://playwright.dev/docs/videos",
+    "type": "doc",
+    "topic": "C0",
+    "takeaway": "Finalize captures before examining them; confirm explicit viewport and encoded dimensions."
+  },
+  {
+    "id": "C0-experiment",
+    "url_or_path": "tools/v3craft-lab/c0/results.json",
+    "type": "experiment",
+    "topic": "C0",
+    "takeaway": "54 future craft rows add OPENs to Q1; all existing ultimate plans are exactly 2200/1100 ms but inferred overlaps reach 6.30 ms."
+  },
+  {
+    "id": "C0-local",
+    "url_or_path": "reports/v3-feel/REVIEW/Q1/REVIEW.md",
+    "type": "local",
+    "topic": "C0",
+    "takeaway": "Honest old frame observations identify true later-item defects; preserve these observations while separating ownership."
+  }
+]

@@ -23,7 +23,7 @@ Reference: B01–B08: preparation 2–3 reference samples, contact 2–3, recove
 | B09 | Attacker and recipient poses hold 60–90 ms at impact inside the fixed duration. | pixels+clock |
 | B10 | A local target/contact flash or authored smear lasts 1–2 frames, without a viewport whiteout. | pixels+clock |
 | B11 | Absolute weapon transient-to-observed-contact error <=33 ms; inspect waveform, not just cue schedule. | waveform+frames |
-| B12 | Listening confirms the heard weapon sound belongs to this action. | listen + frame reference |
+| B12 | Spectral label and waveform onset confirm the weapon sound belongs to this on-screen action. | spectral cue label + waveform + frame reference |
 | B13 | Any melee lunge stays <=5% viewport width; ranged root stays planted. | rendered body mask |
 | B14 | Actor returns to its original slot within one pixel by 800 ms. | pixels+clock |
 | B15 | No effect, number, name or neighbouring body hides a face. | face masks + manual |
@@ -54,12 +54,12 @@ Reference: U01–U08: focus 1–7 reference samples, preparation 2–5, contact 
 | U15 | Local contact highlight lasts 1–2 frames; no full-frame whiteout. | pixels+clock |
 | U16 | Caster and recipient faces remain readable through the effect. | face masks + manual |
 | U17 | Measured impact transient is within 33 ms of observed impact. | waveform+frames |
-| U18 | Callout/cast/contact/tail heard and mapped to their displayed causes. | listen + frame reference |
+| U18 | Callout/cast/contact/tail waveform onsets and spectral labels map to their displayed causes. | spectral cue label + waveform + frame reference |
 | U19 | Mean effect saturation >=80% of estimated reference median; retain estimation caveat. | isolated masks |
 | U20 | p95 linear luminance >=80% of estimated reference median; retain estimation caveat. | isolated masks |
 | U21 | Layers ease in/out over >=2 frames except the explicit 1–2 frame contact accent. | adjacent frame review |
 | U22 | No cinematic plate, scene cut, camera scale/pan or off-slot approach. | pixels+clock |
-| U23 | Name fits its box and avoids faces at 1280, 1440 and 390 widths. | DOM + frames |
+| U23 | Name fits its box and avoids faces at 1280x720 and 1440x900. | DOM + frames |
 | U24 | No next action begins before this ultimate ends; no overlapping ultimates. | pixels+clock |
 
 ## Character idle / hit / death — 12 checks

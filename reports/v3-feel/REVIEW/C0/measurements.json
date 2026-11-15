@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-15T07:15:03.538672+00:00",
+  "schemaVersion": 2,
+  "videoBytes": 6039622,
+  "compositorFrames": 1787,
+  "decodedMarkers": 1787,
+  "errors": [],
+  "parity": true,
+  "actions": 48,
+  "rawLocalPath": "reports/v3-feel/REVIEW/C0-CLOCK/wave3/capture.json.gz",
+  "freedTemporaryBytes": 708794887,
+  "untrackedFiles": 164,
+  "evidenceBudget": {
+    "trackedBytes": 88753007,
+    "sheetsPerItem": {
+      "Q0": 12,
+      "Q1-inspect": 10,
+      "Q1": 12,
+      "QR-P1": 12,
+      "QR-P2": 12,
+      "QR-P3": 12
+    },
+    "filmsPerItem": {
+      "Q0": 3,
+      "Q1": 3,
+      "QR-P1": 1,
+      "QR-P2": 1,
+      "QR-P3": 1
+    },
+    "oversizeFilms": [],
+    "rawTracked": []
+  },
+  "checks": [
+    {
+      "command": "node --test scripts/v3feel/*.test.mjs",
+      "exitCode": 0,
+      "tests": 1599,
+      "evidence": "reports/v3-feel/tests/C0-unit.log",
+      "sha256": "9dd65480cfac3a8fca5ea52b1f2c4390025345f0f091273d951d946a26003e11"
+    },
+    {
+      "command": "pnpm -r typecheck",
+      "exitCode": 0,
+      "evidence": "reports/v3-feel/tests/C0-typecheck.log",
+      "sha256": "cafa8310aee60b7ea4fe143147599c09d40529fc20590787a68d4d538c08e096"
+    },
+    {
+      "command": "node scripts/v3feel/parity.mjs check",
+      "exitCode": 0,
+      "evidence": "reports/v3-feel/parity-latest.json",
+      "sha256": "9f22eb8acc792e7a119918f068a4d78c79f9531fc5a4590a6145cffc96a4686f"
+    }
+  ],
+  "globalAudit": {
+    "browserCasesHistorical": 435,
+    "browserHistoricalPass": 434,
+    "oldBrowserFailureStillOpen": true,
+    "newAssetsThisItem": 0,
+    "referenceFilesTracked": 0,
+    "contractDiff": "",
+    "performanceOrAudioCpuClaims": false,
+    "note": "No fresh browser/A/B pass claimed. C0 changes only acceptance tooling/docs and evidence retention; no new product art."
+  },
+  "adoptionRecorded": true,
+  "adoptionAuthority": "reports/v3-feel/REQUEST-CRAFT.txt; DECISIONS-FEEL.md adoption entry at 2026-11-15T07:16Z",
+  "ended": "2026-11-15T07:18:00.942741+00:00"
+}

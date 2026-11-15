@@ -1,0 +1,49 @@
+{
+  "sourceCommit": "b9e188f3ef65260b63d376e1e47f68b1cb5ada33",
+  "results": [
+    {
+      "id": "typecheck",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "started": "2026-11-14T07:25:33.213Z",
+      "ended": "2026-11-14T07:25:48.444Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q1-FOCUS-typecheck.log",
+        "sha256": "6ffca190b307ff581b69713def3a988ee793633e6d20abbd822c485a3d6f1fbd"
+      }
+    },
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "started": "2026-11-14T07:25:48.451Z",
+      "ended": "2026-11-14T07:27:55.469Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q1-FOCUS-unit.log",
+        "sha256": "940fa2e3502898df80d419d1f559d77c4f3d67016822ebec79fca846ecb393db"
+      }
+    },
+    {
+      "id": "parity",
+      "command": [
+        "node",
+        "scripts/v3feel/parity.mjs",
+        "check"
+      ],
+      "started": "2026-11-14T07:27:55.476Z",
+      "ended": "2026-11-14T07:28:01.679Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q1-FOCUS-parity.log",
+        "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
+      }
+    }
+  ]
+}

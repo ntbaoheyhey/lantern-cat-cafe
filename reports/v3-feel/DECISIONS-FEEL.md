@@ -206,3 +206,25 @@ Capture correction: resample compositor JPEGs to 900 frames from actual timestam
 Timing evidence correction: measure-q1 previously used configured durations/impact offsets for timing gates. Those values only established the schedule, not observed rendering. The collector now checks each measured render transition/contact crossing, preserving planned values separately and leaving truncated endpoints unmeasured. Manual pixel-contact and sound rows remain OPEN. Three adversarial collector tests cover delayed rendering, a truncated action, and reused rules IDs.
 
 2026-11-14T07:04:55.140293+00:00 — Q1 frame-review repairs: hold layered/field/legacy spell emission until the 600 ms cast boundary; retime the full authored wind-up to keep 1100 ms contact. Freeze the local banner location per action with a breathing margin. A single scene RAF now advances the model before drawing, removing a stale-frame race. Targeted 14 tests and web typecheck PASS; real recording review still required. The previous rendering-clock receipt remains rejected for wave3 2241.6 ms duration and audio 59.999 s; no acceptance threshold changed.
+
+2026-11-14T07:31:29.018709+00:00 — Explicit user stop: “lưu handoff rồi dừng lại nhé”. Saved handoff and STOP-V3FEEL; terminated only the owned Q1-FOCUS regression process tree. Typecheck/unit/parity completed PASS; browser was interrupted, A/B not reached. All 84 current Q1 action sheets are now reviewed and rejected in the hash-bound review. No gate was relaxed or marked done.
+
+Recorder draft (not runtime-validated): adds independent RAF, render-start and render-end timestamps plus an optional diagnostic-only 128x8 compositor frame marker. New frame-marker/media-timing tests: 4 PASS. An inferred start from post-draw wall time can include changing rendering cost; keep the old failed measurements and use a fresh diagnostic recording to establish the actual clock/render relationship before revising any verdict. No production animation/VFX change was made in this continuation.
+
+
+2026-11-15T07:16:07.130794+00:00 — V3-CRAFT C0 policy adoption (learning: LEARN/C0.md).
+- REQUEST-CRAFT.txt replaces REQUEST-FEEL.txt; old observations and failed measurements remain historical evidence.
+- L1: failed QR pilots did not establish a production method; QR.6 exception withdrawn. Study retained, apprenticeship continues in Q3.A; no rollout before passing drills/pilot.
+- L2: schedule is timing truth, with independent video confirmation within +/-33 ms. Post-draw inferred 1.30–6.30 ms overlaps are not schedule evidence. No numeric tolerance widened.
+- L3: each defect has an owner; current and completed-item defects fail. Future defects go to their queue rows. Craft's 54 rows remain, distributed Q1 timing/camera, Q2 facing/occlusion, Q3 art/poses, Q4 labels, Q5 sound.
+- L4: raw captures and WAVs stay local; excess historical sheets untracked with explicit ignore paths; prior commits preserve originals. Only <=12 selected sheets per historical item remain in the next tree. Deleted re-extractable QR frame folders and generated builds/caches; no protected art/Downloads/demo files removed.
+- L5 / section 3.6: no claim to hear audio. B12/U18 use waveform onset and spectral cue labels matched to on-screen causes; human listening at R1/R2 belongs to NEEDS-USER.md and never blocks machine gates.
+- SUPERSEDED by user decision desktop-only: Q2/Q6 phone-playable gates, Q6 162 cases -> 108 (54 screens x 2 desktops), U23 phone label fit, Q4 three-width banner rule. Desktop thresholds unchanged.
+- SUPERSEDED by current request section 6: full browser/A/B gates run at Q2/Q3/Q5/R2/R3; other items retain typecheck, touched-package unit tests, and parity. Nothing declares old browser/A/B failures resolved.
+- Audio onset/mix/mapping gates are Q5-owned. Section-3 recordings retain sound on all three fixture films. Same-scale private master comparison is required for effect/pose work (Q3/Q9), with written critique still required for other visual items.
+- Q0 closed as baseline; unfinished boss audit and old browser/A/B classification move to Q9. QR closed as study done, apprenticeship continuing; pilot failures remain visible.
+- C0 recorder trial: schema 2 worked unchanged on wave3, 1,787/1,787 compositor markers decoded, 48 plans, parity true, zero page errors; 6,039,622-byte film. Keep draft helpers. No recorder features added.
+- C0 checker adds learning-source/commit citation, Q2 old-number/edge-column, Q3 rungOne/washout/pose/craft-time, objective Q5 audio, and Q3.A/Q3.B gates. Per-asset craft authoring floors and >=2 review-revise rounds use real intervals; seconds-long steps fail.
+- Q4 calloutAtCast replaced by calloutAtFocus per explicit focus-start requirement; fixture-enemy naming/callout coverage added. Q8 covers F1-F14 plus F15 rather than stopping at F12.
+- Research tools: original web endpoint returned 404; connected search service provided W3C/Git/Node/Playwright primary sources. No paid tools/accounts, no subagents, no deployments or main merge.
+CRAFT PROMPT ADOPTED 2026-11-15T07:16:07.130794+00:00

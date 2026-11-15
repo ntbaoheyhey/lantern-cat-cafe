@@ -1,18 +1,21 @@
-# FEEL priority queue
+# V3-CRAFT priority queue
 
 | Item | State | Work | Evidence / log |
 |---|---|---|---|
-| Q0 | open | Save + baseline | STARTED 2026-11-14T03:48:34.089519+00:00; baseline head 83891115c; branch pushed; ENDED 2026-11-14T04:48:11.765103+00:00 at 60-minute cap; typecheck/unit/parity PASS, browser/A/B FAIL; REVIEW/Q0/REVIEW.md incomplete; next method: finish frame audit + classify regression failures in Q9 |
-| QR | open | Research craft + pipeline + quality bar + one-cat pilot (F13) | STARTED 2026-11-14T04:48:11.765103+00:00; F13 research complete; ENDED 2026-11-14T05:51:57.056975+00:00 via QR.6 three-pilot exception: final pilot 46 PASS/6 FAIL/2 OPEN, QR checker {'PASS': 65, 'FAIL': 7, 'OPEN': 3}; REVIEW/QR-P3/REVIEW.md; typecheck/unit/parity PASS, browsers 434/435, A/B FAIL; next method cached/bounded renderer + aspect-correct layout, listening unresolved |
-| Q1 | started | Basic + ultimate; static camera; equal timing | STARTED 2026-11-14T05:55:26.283522+00:00; QR.6 exception; baseline dfe6dced3; rules/presentation tracing |
-| Q2 | todo | Scale, facing, frame fill | pending |
-| Q3 | todo | Skill visuals and effects | pending |
-| Q4 | todo | Ultimate names | pending |
-| Q5 | todo | Quiet synced battle sound | pending |
-| Q6 | todo | UI clarity | pending |
-| Q7 | todo | Frame fill outside battle | pending |
-| Q8 | todo | Demo review build | pending |
-| Q9 | todo | Open items then old polish | pending |
-| R1 | todo | 16 Nov 12:00 UTC checkpoint | pending |
-| R2 | todo | 18 Nov 12:00 UTC final demo | pending |
-| R3 | todo | 19 Nov 12:00 UTC freeze and one draft PR | pending |
+| C0 | done | Adopt craft prompt and trim evidence | STARTED 2026-11-15T07:06:45Z; LEARN/C0.md; 1,599 tooling tests PASS; typecheck/parity PASS; checker 18 PASS/0 FAIL/0 OPEN; REVIEW/C0/REVIEW.md; ENDED 2026-11-15T07:18:00.942741+00:00; commit pending |
+| Q0 | baseline | Baseline closed; audit remains in Q9 | Historical ENDED 2026-11-14T04:48:11Z; REVIEW/Q0/REVIEW.md; no retroactive pass |
+| QR | study done | Apprenticeship continues in Q3.A | Historical ENDED 2026-11-14T05:51:57Z; pilot 46 PASS/6 FAIL/2 then-listening OPEN; QR.6 exception WITHDRAWN |
+| Q1 | open | Kit, equal timing, static camera | Historical STARTED 2026-11-14T05:55:26Z; stopped by user then resumed by CRAFT; remaining schedule/video confirmation, owned review and compact receipts |
+| Q2 | todo | Scale, facing, frame fill, numbers | Q1 review: unequal/small cats, reversed spool ram, persistent number columns, large bottom band; all owned here |
+| Q3.A | todo | Study toolkit; D1-D8 with 2 revisions each | No production effect code before D1-D6 PASS; LEARN + CRAFT extension |
+| Q3.B | todo | Soot Lantern Requiem and staff-bolt pilot | No failed method rollout; actual craft timing and full pilot quality bar |
+| Q3 | todo | Q3.C skill/pose production, fixture roster first | Q1 review: ring/fog main shapes, washed-out bodies, weak anticipation; method Rung 2 then 3 |
+| Q4 | todo | Names, banners, focus callouts | 13 cats + boss + fixture enemy ultimates; 3 candidates each |
+| Q5 | todo | Quiet synced battle sound | Prior mix ~-15 LUFS; voices 9/9/10; objective onset/spectrum/cue verification required |
+| Q6 | todo | UI clarity | Wallet Retry overlap, empty bubbles/tiles/prep band; 108 desktop screen-width cases |
+| Q7 | todo | Fill frames outside battle | Eight screens; >=85% content area, empty bands <=10% |
+| Q8 | todo | Review/demo build | At R1 and R2; smoke both desktops/live/static; Desktop review files |
+| Q9 | todo | Open work, inbox, polish | First: Q0 boss audit + old browser/A/B classification; then open higher items with a new method |
+| R1 | todo | 16 Nov 12:00 UTC review checkpoint | Interrupt queue; Q8; continue without waiting |
+| R2 | todo | 18 Nov 12:00 UTC final demo | Full regression, Q8, deploy-guide branch update |
+| R3 | todo | 19 Nov 12:00 UTC freeze | Only crash/flow fixes; final reports; ONE draft PR, no merge |

@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "authority": "User F13; new quality criteria supplement, never weaken Q1-Q3. Changes require INBOX user line.",
+  "version": 2,
+  "authority": "User V3-CRAFT supersedes FEEL: scope section 3.4, objective audio section 3.6, desktop-only. Existing numeric thresholds retained.",
   "referenceTimingPrecisionMs": 100,
   "captureFps": 30,
   "criteria": [
@@ -132,9 +132,9 @@
       "metric": "soundHeardAndMatched",
       "op": "eq",
       "limit": true,
-      "check": "Listening confirms the heard weapon sound belongs to this action.",
+      "check": "Spectral label and waveform onset confirm the weapon sound belongs to this on-screen action.",
       "reference": "B01\u2013B08: preparation 2\u20133 reference samples, contact 2\u20133, recovery 1\u20134 where visible; 100 ms uncertainty, x2/x3 playback.",
-      "method": "listen + frame reference"
+      "method": "spectral cue label + onset + frame reference"
     },
     {
       "id": "B13",
@@ -393,9 +393,9 @@
       "metric": "soundHeardAndMatched",
       "op": "eq",
       "limit": true,
-      "check": "Callout/cast/contact/tail heard and mapped to their displayed causes.",
+      "check": "Callout/cast/contact/tail waveform onsets and spectral labels map to their displayed causes.",
       "reference": "U01\u2013U08: focus 1\u20137 reference samples, preparation 2\u20135, contact 2\u20135, recovery 1\u20134 where visible; 100 ms uncertainty, x2/x3.",
-      "method": "listen + frame reference"
+      "method": "spectral cue labels + waveform + frame reference"
     },
     {
       "id": "U19",
@@ -443,7 +443,7 @@
       "metric": "bannerOverflow",
       "op": "eq",
       "limit": 0,
-      "check": "Name fits its box and avoids faces at 1280, 1440 and 390 widths.",
+      "check": "Name fits its box and avoids faces at 1280x720 and 1440x900.",
       "reference": "U01\u2013U08: focus 1\u20137 reference samples, preparation 2\u20135, contact 2\u20135, recovery 1\u20134 where visible; 100 ms uncertainty, x2/x3.",
       "method": "DOM + frames"
     },

@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-14T07:31:29.018709+00:00",
+  "reason": "User: l\u01b0u handoff r\u1ed3i d\u1eebng l\u1ea1i nh\u00e9",
+  "branch": "codex/v3-feel-2026-11-14",
+  "head": "b9e188f3ef65260b63d376e1e47f68b1cb5ada33",
+  "stoppedPids": [
+    17379,
+    17539,
+    17381,
+    17382,
+    18820,
+    18825,
+    17451,
+    17388,
+    16045,
+    18160,
+    18161,
+    17426,
+    18162,
+    18163,
+    18487,
+    18488,
+    18489,
+    18490
+  ],
+  "forceTerminatedPids": [],
+  "completedRegression": [
+    "typecheck",
+    "unit",
+    "parity"
+  ],
+  "incompleteRegression": [
+    "browser",
+    "aLane",
+    "bLane"
+  ],
+  "collectorTests": {
+    "frame-marker.test.mjs": {
+      "passed": 2,
+      "failed": 0
+    },
+    "media-timing.test.mjs": {
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "collectorRuntimeCapture": "NOT RUN",
+  "reviewedSheets": 84,
+  "stopFile": "STOP-V3FEEL"
+}
