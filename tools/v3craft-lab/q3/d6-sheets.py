@@ -14,7 +14,7 @@ for name,vf,w,h in [('sheet','fps=10,scale=320:180',320,180),('caster','fps=10,c
   x,y=i%4*w,i//4*(h+22);s.paste(im,(x,y));d.text((x+3,y+h+3),f'D6 r{r} {i/10:.1f}s / {suffix}',fill='white')
  s.save(p/f'{name}.jpg',quality=93)
 frames=decode(raw,'null',1280,720)
-for name,indexes in [('release',range(5,15)),('settle',range(15,25))]:
+for name,indexes in [('windup',range(1,9)),('release',range(5,15)),('settle',range(15,25))]:
  s=Image.new('RGB',(1200,1010),'#171526');d=ImageDraw.Draw(s)
  for j,i in enumerate(indexes):
   if i>=len(frames):continue

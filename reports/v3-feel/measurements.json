@@ -4479,7 +4479,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "773cfe1a601d0ca0611e3e5bbf3115ce4e3b55362c68dfb6823c300f811585e7"
+          "sha256": "efc0faf07e022dc7ae78e60e1a0e3f37e6bf719691b2aa82226ed8b8df5156d3"
         }
       ]
     },
@@ -4493,7 +4493,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "773cfe1a601d0ca0611e3e5bbf3115ce4e3b55362c68dfb6823c300f811585e7"
+          "sha256": "efc0faf07e022dc7ae78e60e1a0e3f37e6bf719691b2aa82226ed8b8df5156d3"
         }
       ]
     },
@@ -4534,8 +4534,12 @@
       ],
       "evidence": [
         {
-          "path": "reports/v3-feel/REVIEW/C0/measurements.json",
-          "sha256": "7159096421f034a91005e02747d07b7b40e79f8548b5925f798a865beea00ab8"
+          "path": "assets/provenance.json",
+          "sha256": "9560fc85b97b6d2679e4bff6b626ada74fe912a04572289488460b050435cc62"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
         }
       ]
     },
@@ -4557,13 +4561,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 27
+          "value": 28
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/HANDOFF-FEEL.md",
-          "sha256": "45b4c5ff8ab5aa8ad0be7922b100702d591a0a13715db882ed96ed08fedfc7fa"
+          "sha256": "3162812eeab85590c355540886978247ee19fb5658be3d5d75efc52a9074cefb"
         }
       ]
     },
@@ -4577,7 +4581,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/STATUS-VI.md",
-          "sha256": "b1af33ff893009263b3c5d133c93ce36ed090011f411ed985898b031eef8a2f0"
+          "sha256": "f18bcb5c08e2eb700e980df65d79a99cc3880e3b1851084545ac571ff1c1e0ed"
         }
       ]
     },
@@ -6549,7 +6553,11 @@
       "evidence": [
         {
           "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
-          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
         }
       ]
     },
@@ -6563,7 +6571,11 @@
       "evidence": [
         {
           "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
-          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
         }
       ]
     },
@@ -6577,12 +6589,148 @@
       "evidence": [
         {
           "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
-          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        }
+      ]
+    },
+    "Q3.A.toolkitTopics": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 8
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        },
+        {
+          "path": "reports/v3-feel/CRAFT/TOOLKIT.md",
+          "sha256": "0e2f85dd6777bb7de7f5380f987d88a6228381ebd4324ce2f9430732ae642c0a"
+        },
+        {
+          "path": "reports/v3-feel/LEARN/sources.json",
+          "sha256": "363b9998f01db070230c0206a81a956ffc169b8df62bef0470f3333a3b228053"
+        }
+      ]
+    },
+    "Q3.A.newSources": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 40
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        },
+        {
+          "path": "reports/v3-feel/CRAFT/TOOLKIT.md",
+          "sha256": "0e2f85dd6777bb7de7f5380f987d88a6228381ebd4324ce2f9430732ae642c0a"
+        },
+        {
+          "path": "reports/v3-feel/LEARN/sources.json",
+          "sha256": "363b9998f01db070230c0206a81a956ffc169b8df62bef0470f3333a3b228053"
+        }
+      ]
+    },
+    "Q3.A.drillsPassed": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 8
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        }
+      ]
+    },
+    "Q3.A.reviseRounds": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 2
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        }
+      ]
+    },
+    "Q3.A.drillSeconds": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 2
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        },
+        {
+          "path": "tools/v3craft-drills/capture.mjs",
+          "sha256": "dbabc89208addf7688a2b065466cedd991055e116d8d8252497be51edb4c4290"
+        }
+      ]
+    },
+    "Q3.A.drillFps": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 30
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/REVIEW.md",
+          "sha256": "49ce55088fdcd33fd42d06d5270a2116b4dfff9ddf9b3191c4baba87418b8810"
+        },
+        {
+          "path": "tools/v3craft-drills/capture.mjs",
+          "sha256": "dbabc89208addf7688a2b065466cedd991055e116d8d8252497be51edb4c4290"
         }
       ]
     }
   },
-  "updatedAt": "2026-11-15T15:13:19.940910+00:00",
+  "updatedAt": "2026-11-15T16:12:56.761812+00:00",
   "buildCommits": {
     "C0": {
       "commit": "752078771e99f9c1af04fd9e343a447b48061aa0"

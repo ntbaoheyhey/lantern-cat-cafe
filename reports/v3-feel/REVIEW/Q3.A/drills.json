@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-15T15:11:59.229879+00:00",
+  "at": "2026-11-15T16:12:17.186308+00:00",
   "scope": "Isolated technique rows only; Q3.A incomplete; no production approval",
   "drills": [
     {
@@ -15,7 +15,13 @@
         2
       ],
       "sheet": "reports/v3-feel/REVIEW/Q3.A/D1.jpg",
-      "sheetSha256": "673240cc1e971e2db0c8adfafd855d024dcb9e16b66a63811e5516a58d7ba873"
+      "sheetSha256": "673240cc1e971e2db0c8adfafd855d024dcb9e16b66a63811e5516a58d7ba873",
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
+      }
     },
     {
       "id": "D2",
@@ -77,7 +83,13 @@
         "rawSeconds": 1.98199,
         "caveat": "Viewing derivative; raw VFR retained, no independent timing PASS"
       },
-      "sheetSha256": "6108bdbfd96c5f8c410e9ef984d545d42792ed85d4ff6683b8b994f0b1d06a7c"
+      "sheetSha256": "6108bdbfd96c5f8c410e9ef984d545d42792ed85d4ff6683b8b994f0b1d06a7c",
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
+      }
     },
     {
       "id": "D3",
@@ -151,6 +163,12 @@
         "rawSeconds": 1.964589,
         "rawBytes": 441556,
         "caveat": "Labelled CFR derivative; final empty-frame padding, raw VFR retained; no independent timing pass"
+      },
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
       }
     },
     {
@@ -265,6 +283,12 @@
         "rawSeconds": 1.981468,
         "rawBytes": 441199,
         "caveat": "Labelled CFR derivative with final empty-frame padding; raw VFR preserved. No Q1 timing pass."
+      },
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
       }
     },
     {
@@ -422,11 +446,17 @@
         "rawSeconds": 1.967659,
         "rawBytes": 428255,
         "caveat": "Labelled viewing derivative; final empty padding; raw retained, no Q1 timing PASS"
+      },
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
       }
     },
     {
       "id": "D6",
-      "state": "OPEN: r0/r1 reviewed; r2 stronger key poses pending",
+      "state": "PASS",
       "source": "tools/v3craft-drills/d6.ts",
       "learning": "reports/v3-feel/LEARN/Q3.md#d6-study-before-pose-authoring",
       "revision1": {
@@ -443,23 +473,217 @@
         "returnIou": 1,
         "sourceErrors": [],
         "movieReview": "All full/detail/raw-boundary/private matched and durable cells reviewed; preparation remains restrained; no acceptance."
+      },
+      "revision2": {
+        "film": "tools/v3craft-lab/q3/raw/D6-r2/film.webm",
+        "filmSha256": "f7f14b3c30da0bf9eb1a8ccf071b6d3452f045ca8d7d54467e562c60a4df2a0e",
+        "probe": "tools/v3craft-lab/q3/raw/D6-r2/gpu-probe.json",
+        "sourceSha256": "5e5949206191dd9cda2d5d24a4dd91ad9a34a1be1b6b6b968671686306bb0148",
+        "frames": 60,
+        "durationSeconds": 1.966629,
+        "bytes": 486755,
+        "maxGapMs": 35.00000000000003,
+        "windupAlignedIouMin": 0.615413150329222,
+        "holdMaxDifference": 0,
+        "seekMaxDifference": 0,
+        "returnIou": 1,
+        "movieReview": "All20 full/caster/target phases, raw1\u201324, matched pairs and every durable revision cell reviewed; scoped B03/B04/B08/B09/B10 accepted, score7/10."
+      },
+      "scope": "Isolated Soot anticipation/smear and sentinel contact/recoil hold only; complete basic, idle/ear deformation, scene lighting and production coverage remain OPEN",
+      "rows": [
+        "B03",
+        "B04",
+        "B08",
+        "B09",
+        "B10"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D6.jpg",
+      "sheetSha256": "aa50b5aff4745ff50ea7d09459463023deb658101043b1d8c85162c13430aa8a",
+      "sourceSha256": "5e5949206191dd9cda2d5d24a4dd91ad9a34a1be1b6b6b968671686306bb0148",
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
       }
     },
     {
       "id": "D7",
-      "state": "OPEN"
+      "state": "PASS",
+      "source": "tools/v3craft-drills/d7.ts",
+      "learning": "reports/v3-feel/LEARN/Q3.md#d7-study-before-squashstretch-and-overlap",
+      "scope": "Isolated planted Soot flexible trunk and tail/ear overlap; full attacks, idle amplitude, actual hit and all-unit coverage remain OPEN",
+      "rows": [
+        "C04",
+        "C05",
+        "C11"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D7.jpg",
+      "sheetSha256": "6a0211751e77e0d10f84d9b84f7c5b6ac8a3fd016b5a8de0f9d3341ec2da14d1",
+      "sourceSha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588",
+      "revision1": {
+        "film": "tools/v3craft-lab/q3/raw/D7-r1/film.webm",
+        "filmSha256": "bdc4b28088a00eeb7a46b14cf40cfefc8b434a5556da66cea4b59442a7bea10f",
+        "probe": "tools/v3craft-lab/q3/raw/D7-r1/gpu-probe.json",
+        "sourceSha256": "d26ebffe0ebab8f3f70293f4bb0833d31c2cbae943e866908015ac96c4edcffe",
+        "frames": 60,
+        "durationSeconds": 1.966605,
+        "bytes": 422873,
+        "maxGapMs": 35.00000000000003,
+        "sampledPoses": 32,
+        "opaqueAreaRatio": [
+          0.993997113997114,
+          1.022049062049062
+        ],
+        "footChangedMax": 0,
+        "feetVertexMoveMax": 0,
+        "triangleFlipsMax": 0,
+        "triangleAreaRatio": [
+          0.7572025053531038,
+          1.4231009798458765
+        ],
+        "faceLocalResidualMax": 1.4397073620386891e-05,
+        "holdMaxDifference": 0,
+        "seekMaxDifference": 0,
+        "returnIou": 1,
+        "sourceErrors": [],
+        "movieReview": "All20 full/caster/detail phases, raw1-24, private matched and durable cells reviewed; scoped secondary mechanism only."
+      },
+      "revision2": {
+        "film": "tools/v3craft-lab/q3/raw/D7-r2/film.webm",
+        "filmSha256": "c29b0c1032430a0799c0c0a01f91f8d22bba9b743e2919745c45b69d36802394",
+        "probe": "tools/v3craft-lab/q3/raw/D7-r2/gpu-probe.json",
+        "sourceSha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588",
+        "frames": 60,
+        "durationSeconds": 1.976935,
+        "bytes": 443025,
+        "maxGapMs": 44.0,
+        "sampledPoses": 32,
+        "opaqueAreaRatio": [
+          0.9931890331890332,
+          1.0237806637806637
+        ],
+        "footChangedMax": 0,
+        "feetVertexMoveMax": 0,
+        "triangleFlipsMax": 0,
+        "triangleAreaRatio": [
+          0.7572023628269576,
+          1.423101015477413
+        ],
+        "faceLocalResidualMax": 7.62939453125e-06,
+        "holdMaxDifference": 0,
+        "seekMaxDifference": 0,
+        "returnIou": 1,
+        "sourceErrors": [],
+        "movieReview": "All20 full/caster/detail phases, raw1-24, private matched and durable cells reviewed; scoped secondary mechanism only."
+      },
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
+      }
     },
     {
       "id": "D8",
-      "state": "OPEN"
+      "state": "PASS",
+      "source": "tools/v3craft-drills/d8.ts",
+      "learning": "reports/v3-feel/LEARN/Q3.md#d8-study-before-grounding-and-local-light",
+      "scope": "Isolated original moving Soot grounding, ambient paint and finite source-directed inner rim; all-unit coverage, recipient lighting and production performance remain OPEN",
+      "rows": [
+        "C01",
+        "C08",
+        "C09"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D8.jpg",
+      "revision0": {
+        "film": "tools/v3craft-lab/q3/raw/D8-r0/film.webm",
+        "filmSha256": "c2d75f946db9c1963478e9047c8165673e14801bb133d1dfd90099141771142e",
+        "probe": "tools/v3craft-lab/q3/raw/D8-r0/gpu-probe.json",
+        "sourceSha256": "16e075b88f3939896e9abab7305f1e3a7d1e0f98ed076662a7b6d59e404759af",
+        "poseSha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588",
+        "frames": 60,
+        "durationSeconds": 1.978967,
+        "bytes": 412643,
+        "maxGapMs": 50.00000000000004,
+        "minimumContrast": {
+          "face": 0.8854628341610284,
+          "body": 0.8823921187744497
+        },
+        "footAlphaMin": 0.5450980392156862,
+        "outsideLocalChangedPixelsMax": 0,
+        "seekMaxChangedChannels": 0,
+        "restDifference": 0,
+        "movieReview": "All20 full/caster/detail cells, raw1-24, private matched and durable cells reviewed; second revision still required."
+      },
+      "revision1": {
+        "film": "tools/v3craft-lab/q3/raw/D8-r1/film.webm",
+        "filmSha256": "c7c880cf80d2f19ed248a3c3b60845f54ccce4067d4144ea750c6ca9bbf0bc3f",
+        "probe": "tools/v3craft-lab/q3/raw/D8-r1/gpu-probe.json",
+        "sourceSha256": "51f305f9512a475acf0429cbc910b8c40aa6d660b039159b6aa7cb8fc4498e7a",
+        "poseSha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588",
+        "frames": 60,
+        "durationSeconds": 1.98075,
+        "bytes": 415381,
+        "maxGapMs": 46.0,
+        "minimumContrast": {
+          "face": 0.9971955061852342,
+          "body": 0.9850631801244958
+        },
+        "footAlphaMin": 0.6666666666666666,
+        "outsideLocalChangedPixelsMax": 0,
+        "seekMaxChangedChannels": 0,
+        "restDifference": 0,
+        "movieReview": "All20 full/caster/detail cells, raw1-24, private matched and durable cells reviewed; second revision still required."
+      },
+      "sheetSha256": "7bbc9ea16ad1f8235038b7375c043e71ba91be644d9219a187bdaeed80a4e54d",
+      "sourceSha256": "08689fe58b52eeeddfa0b3157edccecfb88cb9ae08b93b3338d56cf6780e5c88",
+      "revision2": {
+        "film": "tools/v3craft-lab/q3/raw/D8-r2/film.webm",
+        "filmSha256": "00c72f6992238e581c8e23fcc69485354788a2f3e65618a0a975fd9867d20236",
+        "probe": "tools/v3craft-lab/q3/raw/D8-r2/gpu-probe.json",
+        "sourceSha256": "08689fe58b52eeeddfa0b3157edccecfb88cb9ae08b93b3338d56cf6780e5c88",
+        "poseSha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588",
+        "frames": 60,
+        "durationSeconds": 1.975047,
+        "bytes": 423382,
+        "maxGapMs": 41.0,
+        "minimumContrast": {
+          "face": 0.9974442637000104,
+          "body": 0.9827105634205442
+        },
+        "footAlphaMin": 0.6666666666666666,
+        "outsideLocalChangedPixelsMax": 0,
+        "seekMaxChangedChannels": 0,
+        "restDifference": 0,
+        "movieReview": "All20 full/caster/detail phases, raw1\u201324, all15 authored/floor keys, five private matched pairs and all15 durable cells reviewed; C01/C08/C09 scoped PASS, score7/10."
+      },
+      "captureContract": {
+        "windowSeconds": 2,
+        "requestedFps": 30,
+        "recorder": "tools/v3craft-drills/capture.mjs",
+        "qualification": "Two-second captureStream(30) recording interval. Raw cadence is variable; container endpoints and largest gaps remain separate evidence, never Q1 timing acceptance."
+      }
     }
   ],
   "checkpointValidation": {
-    "at": "2026-11-15T15:13:19.940910+00:00",
+    "at": "2026-11-15T16:12:17.186308+00:00",
     "typecheck": true,
     "toolingTests": {
       "tests": 1599,
-      "pass": 1599,
+      "passCount": 1599,
       "fail": 0
     },
     "parity": {
@@ -470,10 +694,10 @@
       "baselineChanged": false
     },
     "logs": [
-      "reports/v3-feel/Q3A-drills-typecheck.log",
-      "reports/v3-feel/Q3A-drills-tools.log",
-      "reports/v3-feel/Q3A-drills-parity.log"
+      "reports/v3-feel/Q3A-final-typecheck.log",
+      "reports/v3-feel/Q3A-final-tools.log",
+      "reports/v3-feel/Q3A-final-parity.log"
     ],
-    "scope": "Sandbox checkpoint, not full Q3.A completion; production battle code unchanged."
+    "scope": "All eight isolated techniques reviewed; production battle code unchanged. Craft-time FAIL retained."
   }
 }

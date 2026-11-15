@@ -9,9 +9,9 @@ No production effect work has started. Only completed, reviewed revision rounds 
 | D3 stretched sparks | PASS, isolated particle move after r1/r2 | [D3 r0/r1/r2 strip](../REVIEW/Q3.A/D3.jpg) | B06 contour families and drag/stretch; B05 full action OPEN |
 | D4 flipbook | PASS, isolated one-shot after r1/r2 | [D4 r0/r1/r2 strip](../REVIEW/Q3.A/D4.jpg) | B16/U21; production composition/timing OPEN |
 | D5 blend/readability | PASS, isolated fixed-pose colour/blend after r1/r2 | [D5 r0/r1/r2 strip](../REVIEW/Q3.A/D5.jpg) | B15/U16 face and C08 contour preservation only; moving masks/scene lighting OPEN |
-| D6 anticipation/contact | r0/r1 reviewed; r2 pending | [r0/r1](../REVIEW/Q3.A/D6.jpg) | B03/B04/B08/B09/B10 OPEN |
-| D7 deformation/overlap | Not started | Pending | C02–C06/C11 |
-| D8 grounding/light | Not started | Pending | C01/C08/C09 |
+| D6 anticipation/contact | Isolated move PASS after r1/r2 | [r0/r1/r2](../REVIEW/Q3.A/D6.jpg) | B03/B04/B08/B09/B10 |
+| D7 deformation/overlap | Isolated move PASS after r1/r2 | [r0/r1/r2](../REVIEW/Q3.A/D7.jpg) | C04/C05/C11; idle/actual hit/production OPEN |
+| D8 grounding/light | Isolated move PASS after r1/r2 | [r0/r1/r2](../REVIEW/Q3.A/D8.jpg) | C01/C08/C09; all-unit coverage and production performance OPEN |
 
 ## D1 baseline r0
 
@@ -306,3 +306,114 @@ What the master does that r1 does not:
 R2 will enlarge the original raised-lantern preparation, retain more head response, and reshape the forward contact instead of merely increasing the r1 tilt. Preserve planted feet, weighted attachment continuity,350ms contact and75ms hold. Broader scene integration/idle/ear overlap remain D7/D8 work. No D6 acceptance yet.
 
 R1 raw film:60frames,1.967189s,454,084bytes; maximum frame gap35ms. No CFR derivative. Exact-time centroid-aligned wind-up IoU0.867909 at100ms to0.664264 at200ms; five hold and five seek checks have zero difference;800ms return alpha IoU1. The camera matrix is identical throughout121 draw samples. These do not close Q1 video timing.
+
+D6 r2 author preview: all ten caster/recipient keys0/100/200/250/300/350/400/500/650/800ms inspected. The lantern rises beside the cheek, the torso compresses back against planted legs, and some head response remains. Contact extends the trunk and right hand forward instead of dropping the lantern as low as r1. The robe/arm blend remains attached; the small baked handle fragment does not create a second bright lantern. The hand-path smear changes with the authored poses. Film review remains necessary.
+
+## D6 revision 2 — scoped anticipation/contact acceptance
+
+All20 full-field, caster and target phase cells reviewed, plus raw preparation1–8, release5–14 and settlement15–24, the five body-matched private pairs and every r0/r1/r2 durable cell. Preparation now compresses the trunk back while lifting the lantern beside the cheek; contact extends the trunk and hand forward, with a visible head response. The robe bends into fixed feet rather than moving as one card. Raw4–7 show four distinct preparation samples before release; raw9–10 show the attached sweep. Raw11 shows first breastplate contact and simultaneous articulated recipient recoil. The eyes remain visible. Raw11–12 retain the contact pose; the arms/tail and recipient recover through raw15–23; raw24 returns to rest. All0.8–1.9s cells remain at rest.
+
+| Row | Scoped result and frame evidence |
+|---|---|
+| B03 | PASS for this cat: raw4/5/6/7 at0.133/0.166/0.199/0.233s show preparation changed from rest, before release. |
+| B04 | PASS: rest0 versus raw6/7 separates raised hand, compressed torso and angled head; forward contact differs again at raw11/12. |
+| B08 | PASS for this target: first local contact and first recipient recoil both appear in raw11. |
+| B09 | PASS for the isolated move: exact source and target poses/matrices equal at350/360/375/400/424.9ms, with recovery after425; raw11/12 confirm the held shape. This does not infer75ms from two images alone. |
+| B10 | PASS: smear in raw9/10, breastplate flash in raw11, no viewport flash or eye washout. The nominal smear66.667ms and flash50ms sit inside the800ms beat. |
+
+What the master still does better:
+1. The purple staff caster makes a larger weapon gesture above its head; the lantern gesture is smaller but now legible at matched body scale. This original prop should not imitate the reference staff or walking action.
+2. Cloth/hair finish at different rates. Our tail and hand are delayed, but the ear tips remain baked into the head; D7 must practise independent secondary deformation.
+3. Its full action integrates stronger travelling/impact graphics. This drill deliberately proves pose/contact mechanics, not the complete three-layer basic, its sound, or a finished ultimate.
+
+Final raw movie60frames/1.966629s/486,755bytes, maximum gap35ms; no CFR conversion. Exact-time centroid-aligned anticipation IoU ranges0.810754 at100ms to0.615413 at233.333ms, five repeated seeks have zero vertex difference, and rest800ms alpha IoU is1. Source feet-joint position is identical at all ten authored keys. The source/recipient root slots and camera stay fixed. These isolated results do not close Q1 or prove all-unit production coverage.
+
+Accept B03/B04/B08/B09/B10 only after two reviewed revisions, score7/10. D7/D8, full pilot, craft-time and inherited gates remain OPEN. No production effect/pose was changed.
+
+## D7 baseline r0 — planted deformation, secondary clarity still OPEN
+
+Reviewed the20 full/caster/detail samples, raw1–8 compression,7–14 extension/hold and15–24 settlement, plus private B03 matched phases44.7/44.9/45.0/45.2/45.5s. At0.2s the cloak widens as the head descends; at0.3–0.4s the trunk extends. Feet remain fixed; no sleeve/head separation is visible. At0.5–0.7s the tail changes sides, but most of the curl moves together and the ear change is hard to read at field scale. The long0.8–1.9s rest is intentionally an endpoint sample, not a claimed idle animation. The initial raw detail crop had nonuniform resize; it was corrected to preserve aspect and all affected sheets were re-read.
+
+What the master does that r0 does not:
+1. B03 44.9→45.0s separates the large torso change from the continuing raised weapon; r0 mostly reads as vertical compression/extension.
+2. B03 45.0→45.2s retains a distinct hanging hair/cloth silhouette while the weapon continues; r0's tail curl follows one lateral profile.
+3. B03 45.2→45.5s changes the limb silhouette during settlement; r0's prop remains at its rigid setup angle. This is a secondary-motion exercise, not a complete attack acceptance.
+
+Exact-time GPU evidence: opaque area0.993824–1.021299 of rest, zero changed bottom20px foot-region pixels, no triangle flips, compression aligned IoU0.729429, zero change across five350–424.9ms held samples, exact return alpha IoU1 at800ms and five identical arbitrary seeks. Film60frames/1.966449s/428954bytes,121 draw samples, zero page errors. C04 remains OPEN pending revisions; C05/C11 look sound in this isolated sample.
+
+D7 r1 preliminary trial: first authoring interval51.011133s failed the one-minute rule and receives zero credit. The capture was inadvertently launched after the guard failed; it is preliminary evidence only. Caster/settlement sheets were inspected: the composed tail curve retains the root and the curl has a small vertical response. Numeric probe has zero foot-band change/flips, exact hold/seek/return, area0.993882–1.021299. Redo the authored secondary curves and re-record before counting a revision.
+
+## D7 revision 1
+
+The accepted-length re-authoring interval rebuilt the secondary schedule before a fresh recording; the preliminary movie and derived sheets were replaced together. Film60frames/1.966605s/422873bytes; raw maximum gap35ms;121 draw samples; zero page errors. All20 full/caster/detail phases, raw1–8,7–14,15–24, the durable r0/r1 strip and the five private B03 matched pairs were inspected. Compression is readable in raw4–7; upper extension in raw9–12; curl/ear recovery in raw14–21; final pose in raw24 and the later rest cells. The cloak, sleeve and neck still overlap without a gap or doubled face.
+
+The main tail bends before its outer curl, then the outer curl continues through the trunk's rebound; ear tips reverse on different frames. This is clearer than r0's single lateral tail profile. Fixed feet and undistorted lantern/eyes remain visible. The secondary motion is modest, suitable for this small attachment; it does not by itself make a strong complete attack.
+
+What the master still does that r1 does not:
+1. B03 44.9→45.0s changes a directional line of action, while our main mass is still vertically stacked.
+2. B03 45.0→45.2s changes the weapon silhouette independently of the torso; D7 leaves the lantern arm rigid and D6 owns the full attack pose.
+3. B03 45.2→45.5s settles into a different supported limb pose; this drill returns to setup without a weight-shift silhouette.
+
+GPU sample range: opaque area0.993997–1.022049; zero changed foot-band pixels, zero flips and unchanged local facial coordinates within float precision. Compression aligned IoU0.726587; five holds and five seeks have zero difference;800ms return IoU1. C04/C05/C11 are supported for this isolated sample; a second revision remains required. C02 idle, C06 actual hit and the complete attack remain OPEN. R2 will introduce a modest directional trunk bend while preserving this accepted secondary mechanism.
+
+## D7 revision 2
+
+All20 full/caster/detail cells, raw1–8 compression,7–14 release/hold,15–24 settlement, the private five-phase B03 match and all fifteen durable r0/r1/r2 cells were inspected. R2's compressed preparation leans rearward in raw4–7; extension shifts the upper mass forward in raw9–12. The tail curl and ear tips continue through raw14–21 after the trunk changes direction. Raw24 and0.8–1.9s rest retain the setup pose. Both feet remain at the floor. The cloak covers the neck/sleeve/tail attachments through the strongest bends; the eyes and lantern keep their original proportions.
+
+The raw movie has60frames,1.976935s and443025bytes from the unchanged two-second record interval;122 draw samples and zero page errors. Maximum raw frame gap44ms is retained honestly: this film is visible deformation evidence, not an independent sub-frame timing PASS or closure of Q1. No CFR replacement was made.
+
+GPU evidence across32 sampled poses: opaque area0.993189–1.023781 of rest; zero changed foot-band pixels and zero feet-vertex motion; no triangle flips, triangle area ratios0.757202–1.423101. The local face-coordinate residual after actual two-axis translation cancellation is at most0.00000763source units (float precision). Compression aligned IoU0.718545; five350–424.9ms samples have exactly equal geometry, all five arbitrary seeks are identical, and800ms opaque return IoU1.
+
+| Direct D7 row | Verdict | Frame evidence |
+|---|---|---|
+| C04 | PASS, isolated secondary control | r1/r2 raw14–21: long tail/curl and differently delayed ear tips reverse/settle after the trunk; not one whole-image transform |
+| C05 | PASS, planted exercise | full/caster0.0–1.9s and all raw keys: two feet retain the floor anchor; GPU bottom20px band change0 |
+| C11 | PASS, this original Soot mapping | all extrema and raw1–24: covered neck/sleeve/tail roots, unchanged eyes and rigid lantern; no inverted triangles |
+
+What the master still does beyond this drill:
+1. B03 44.9→45.0s articulates the weapon and limbs through a large directional change; D7 isolates flexible trunk/attachments, with D6 still supplying the attack pose mechanics.
+2. B03 45.0→45.2s has richer independent cloth/hair shapes; our baked cloak retains its original paint and only the tail/ears provide secondary shape changes.
+3. B03 45.2→45.5s has a distinct supported recovery pose; this drill intentionally returns to setup by800ms and proves no production idle or complete hit sequence.
+
+D7 isolated technique score7/10 after two reviewed revisions. C02 idle amplitude, C03 phase offsets, C06 actual hit/flash, all-unit coverage and production combination remain OPEN. The drill has no contact shadow or dynamic scene light; D8 owns those next. No full battle-quality PASS is inferred.
+
+D7 resumed final review 2026-11-15T15:50:02.539393+00:00: all20 full/caster/detail phases, raw1–24, all15 durable revision cells, fifteen authored extrema and the five private B03 matched pairs re-inspected. The compression changes upper-body direction while the feet stay fixed; curl/ear recovery continues after the torso, without a visible seam or face distortion. The floor remains unanchored by a shadow, explicitly reserved for D8. The interrupted review interval was rejected with zero credit. The r2 source hash matches its GPU receipt; no new capture or broader timing claim was made.
+
+## D8 baseline r0
+
+All20 full/caster/detail phases, raw1–24, five private B03 matched pairs, isolated shadow/decal and the durable baseline strip inspected. Two small dark foot contacts stay fixed through compression and extension. The weak upper-body projection does not detach, but the combined footprint is hard to read at field scale. A pale violet streak grows rightward during0.2–0.4s and retreats through0.5–0.7s; it reads as a smooth patch, with little internal direction. The right contour brightens at release, while the eyes and cloak remain legible. At0.8–1.9s only subtle ambient colour and the contact shadow remain. The first raw frames are visibly softer than late rest frames; this is recorded rather than hidden.
+
+What the master does that r0 does not:
+1. B03's low dark footprint is clearer against its ground across44.7/44.9/45.0/45.2/45.5s; our contact core is mostly hidden by the feet and the surrounding projection is faint.
+2. The adjacent sword streak has a firm directional leading shape; our ground patch is uniformly soft and broadens into a purple smear. This drill must sharpen and split its original ground streak without copying that sword shape.
+3. The reference body retains clean painted edge details during its changing pose; our extra offscreen resampling costs detail even where no light is applied. Investigate pixel-aligned target sampling before revising the lighting.
+
+R0 movie60frames/1.978967s/412643bytes,122 draw samples, zero page/console errors; raw cadence remains separate from Q1 timing. Moving-paint normalized contrast minimum face88.5463%/body88.2392%, compared with X19's>98% CPU result. Both pass the unchanged60% floor but the discrepancy merits correction. Isolated contact alpha>=0.5451 at both feet, no changed pixels outside the local actor/floor region, five exact seeks and800ms return with zero changed channels. No D8 acceptance yet; two revisions required.
+
+## D8 revision 1
+
+All20 full/caster/detail phases, raw1–24, all ten durable r0/r1 cells, isolated shadow/decal and the five private B03 pairs inspected. Foot cores are now visibly attached below both boots through preparation/extension/return; the broader penumbra changes behind them without moving the contact. The integer-aligned target preserves the sharp eyes, belt and cloth detail. The violet ground trace has three separated pointed veins at release/hold, then erodes from the rear through0.5–0.7s. The rim rises with the trace and returns to a very weak warm edge by0.8s; central facial paint stays readable.
+
+What the master still does better:
+1. B03's dark footprint is readable across all five poses without acting as an effect. Our ground shadow is now readable too, but its projected silhouette is still a flat approximation, not a reconstruction of the3D reference.
+2. The visible sword light has a clear source beside the body. R1's upper-right violet rim accompanies a ground-level streak, so its direction is only loosely tied to the visible source. R2 should derive local direction from that streak while keeping the cafe's warm ambient edge separate.
+3. Reference streaks have different arrival/settlement times. Our three floor veins still share one reveal/tail clock. R2 should offset their finite clocks so they read as a sequence instead of one split patch.
+
+Raw movie60frames/1.980750s/415381bytes,122 draw samples, zero page/console errors. Maximum raw gap46ms retained, no timing PASS. Across31 moving samples, normalized contrast minima face99.7196%/body98.5063%; both foot-core alpha>=0.6667; zero changes outside the local region. Five arbitrary seeks and800ms return have zero changed channels. Direct grounding/paint preservation look sound; two revisions and source-direction refinement are still required before D8 acceptance.
+
+## D8 revision 2
+
+All20 full/caster/detail cells, raw1–24, all15 authored keys and floor details, the five private B03 matched pairs, all15 durable revision cells, and isolated rest/contact shadow and contact decal images reviewed. The small dark contacts remain under both boots while the broader silhouette projection follows compression and extension. The three floor veins grow in sequence during200–425ms, then clear from their trailing ends; no patch remains at800ms. Violet response is strongest on the lower and right-facing contours beside the visible floor streak. The warm upper edge remains separate, and the eyes, cloth seams and lantern retain their original detail. Raw frames11–13 hold the contact pose; the grounding stays attached through the later recovery. This is stylized2D edge response, not a physically reconstructed light field.
+
+| Direct D8 row | Verdict | Frame evidence |
+|---|---|---|
+| C01 | PASS for this isolated moving actor | full/caster0.0–1.9s; raw1–24; shadow0/350ms: dark foot cores remain fixed, soft projection follows the painted silhouette |
+| C08 | PASS for this original paint/field pair | detail0.0–1.9s and all15 keys: original eyes, belt and cloak values survive the mild ambient grade; moving contrast retains face>=99.7444%/body>=98.2711% |
+| C09 | PASS for this local action | raw9–16 and floor keys250–575ms: lower/right violet contour follows the finite ground source and clears with it; zero changed pixels beyond the measured local region |
+
+What the master still does beyond this drill:
+1. B03 preserves a readable dark footprint through a much larger weapon/limb arc; our planted compression exercise proves only one pose family.
+2. The reference has richer articulated light/shape changes near the weapon. Our source-directed inner rim improves on r1 but remains a flat contour approximation.
+3. Reference arrival and recovery coordinate body, weapon, target and debris. D8 proves finite staggered floor veins and local light, not a complete skill or target reaction.
+
+Raw movie60frames/1.975047s/423382bytes,122 draw samples, zero page/console errors; maximum raw gap41ms retained without a Q1 timing claim. Across31 moving samples: both foot-core alpha>=0.6667, outside-local changes0, five seek round trips identical and800ms return difference0. Scoped C01/C08/C09 accepted after two reviewed revisions, score7/10. Ten-unit FPS, all-unit contact shadows, recipients, complete basics/ultimates and the item craft-time gate remain OPEN. Interrupted measurement receives zero active-time credit; final review is a fresh observed interval.

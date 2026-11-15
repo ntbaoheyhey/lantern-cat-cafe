@@ -2556,8 +2556,8 @@
     {
       "asset": "tools/v3craft-drills/d6.ts",
       "tool": "Original key poses and weighted Three.js meshes/GLSL; no model input",
-      "date": "2026-11-15T15:06:24.590975+00:00",
-      "prompt": "Original Soot planted lower-body weighting, independent lantern/head/torso preparation and contact, weighted arm seam, hand-path smear, narrow directional tip, local breastplate flash and native sentinel torso recoil.800ms action,350ms contact,75ms pose hold; r0 and r1 preserved as separate revision branches.",
+      "date": "2026-11-15T15:15:25.687563+00:00",
+      "prompt": "Original Soot planted lower-body weighting, independent lantern/head/torso preparation and contact, weighted arm seam, hand-path smear, narrow directional tip, local breastplate flash and native sentinel torso recoil.800ms action,350ms contact,75ms pose hold; r0 and r1 preserved as separate revision branches. R2 expands the original raised-hand preparation with a compressed planted torso, keeps visible head response and poses a forward contact, then delayed arm/tail settlement; r0/r1 branches retained.",
       "recipe": "reports/v3-feel/LEARN/Q3.md#d6-study-before-pose-authoring",
       "source": [
         "assets/cardrpg-look/spine/soot/placeholder/soot.json",
@@ -2566,7 +2566,74 @@
         "tools/v3craft-lab/q3/pose-study.json"
       ],
       "referenceInputs": [],
-      "sha256": "0bfea0322c223a67dc7d0a256a6af7e5a34b6f05289a38d827f10675234873b8"
+      "sha256": "5e5949206191dd9cda2d5d24a4dd91ad9a34a1be1b6b6b968671686306bb0148",
+      "previousRevisions": [
+        {
+          "asset": "tools/v3craft-drills/d6.ts",
+          "tool": "Original key poses and weighted Three.js meshes/GLSL; no model input",
+          "date": "2026-11-15T15:06:24.590975+00:00",
+          "prompt": "Original Soot planted lower-body weighting, independent lantern/head/torso preparation and contact, weighted arm seam, hand-path smear, narrow directional tip, local breastplate flash and native sentinel torso recoil.800ms action,350ms contact,75ms pose hold; r0 and r1 preserved as separate revision branches.",
+          "recipe": "reports/v3-feel/LEARN/Q3.md#d6-study-before-pose-authoring",
+          "source": [
+            "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+            "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+            "apps/web/public/units/crumb-sentinel/rig.json",
+            "tools/v3craft-lab/q3/pose-study.json"
+          ],
+          "referenceInputs": [],
+          "sha256": "0bfea0322c223a67dc7d0a256a6af7e5a34b6f05289a38d827f10675234873b8"
+        }
+      ]
+    },
+    {
+      "asset": "tools/v3craft-drills/d7.ts",
+      "tool": "Original native CutoutMesh geometry and authored control curves; no model input",
+      "date": "2026-11-15T15:44:54.648545+00:00",
+      "prompt": "Original Soot isolated squash/stretch and overlap drill. Flexible trunk uses longitudinal compression with reciprocal transverse width and a planted base; face/lantern offsets stay rigid. Root-pinned tail bend and a delayed curl are composed shears; upper ear tips have distinct delayed curves. R2 adds bounded rearward preparation and forward trunk shear. R0/r1 behavior retained by revision branches.800ms action with350\u2013425ms held pose; no root displacement.",
+      "recipe": "reports/v3-feel/LEARN/Q3.md#d7-study-before-squashstretch-and-overlap",
+      "source": [
+        "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+        "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+        "tools/v3craft-lab/q3/deform-study.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "8539b5045c34a96d1b8f956bdf717b34daca6e390522073842c41a7a3e71c588"
+    },
+    {
+      "asset": "tools/v3craft-drills/d8.ts",
+      "tool": "Original GLSL, Three.js half-float current-paint target and authored curves; no model input",
+      "date": "2026-11-15T16:11:34.672177+00:00",
+      "prompt": "D8 Soot grounding exercise, reviewed revision2: current original paint supplies a soft silhouette projection and two measured fixed foot contacts. Pixel-aligned half-float sampling preserves paint. Warm ambient edge and violet point-direction inner rim are separate, with a moving face-protection mask. Three original pointed ground veins have staggered reveal/erosion within800ms. Prior r0/r1 behaviors remain in revision branches. No reference frames used as assets or inputs.",
+      "recipe": "reports/v3-feel/LEARN/Q3.md#d8-study-before-grounding-and-local-light",
+      "source": [
+        "tools/v3craft-drills/d7.ts",
+        "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+        "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+        "tools/v3craft-lab/q3/ground-study.json",
+        "tools/v3craft-lab/q3/ground-resolution-study.json",
+        "tools/v3craft-lab/q3/ground-light-study.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "08689fe58b52eeeddfa0b3157edccecfb88cb9ae08b93b3338d56cf6780e5c88",
+      "previousRevisions": [
+        {
+          "asset": "tools/v3craft-drills/d8.ts",
+          "tool": "Original GLSL, Three.js half-float current-paint target and authored curves; no model input",
+          "date": "2026-11-15T16:02:03.521169+00:00",
+          "prompt": "D8 Soot grounding exercise. Current original paint supplies a projected soft shadow and two measured foot contacts, mild linear ambient response and directional protected-face inner light. Original three-vein ground residue grows toward the target then erodes inside800ms. Pixel-aligned target selected by X20. Revision0 preserved by code branch; revision1 currently reviewed next.",
+          "recipe": "reports/v3-feel/LEARN/Q3.md#d8-study-before-grounding-and-local-light",
+          "source": [
+            "tools/v3craft-drills/d7.ts",
+            "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+            "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+            "tools/v3craft-lab/q3/ground-study.json",
+            "tools/v3craft-lab/q3/ground-resolution-study.json",
+            "tools/v3craft-lab/q3/ground-light-study.json"
+          ],
+          "referenceInputs": [],
+          "sha256": "51f305f9512a475acf0429cbc910b8c40aa6d660b039159b6aa7cb8fc4498e7a"
+        }
+      ]
     }
   ]
 }

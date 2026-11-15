@@ -10,20 +10,21 @@ Detailed frame reviews, three reference comparisons per drill and rejected metho
 | D3 particles | B06 contours and stretch/drag move PASS; full-action B05 OPEN | [r0/r1/r2](D3.jpg) |
 | D4 flipbook | B16/U21 isolated one-shot PASS | [r0/r1/r2](D4.jpg) |
 | D5 colour/blend | Fixed-pose B15/U16 and C08 contour preservation PASS; scene lighting/moving masks OPEN | [r0/r1/r2](D5.jpg) |
-| D6 anticipation/contact | OPEN: r0/r1 reviewed; preparation still restrained | [r0/r1](D6.jpg) |
-| D7–D8 | OPEN, moving drills pending | None |
+| D6 anticipation/contact | Isolated B03/B04/B08/B09/B10 PASS after r1/r2 | [r0/r1/r2](D6.jpg) |
+| D7 deformation | C04/C05/C11 isolated mechanism PASS after r1/r2 | [r0/r1/r2](D7.jpg) |
+| D8 grounding/light | C01/C08/C09 isolated mechanism PASS after r1/r2 | [r0/r1/r2](D8.jpg) |
 
 D1 replaced abrupt reveal/empty tail with progressive paint thresholds and filled drifting chips. D2 replaced a weak, evenly paced arc with three distinct contours, explicit release spacing and retreating residue. D2 peak rotational symmetry is 0.24560 against the unchanged 0.8 limit. Its frozen-geometry UV experiment records zero RGB change for static UVs versus mean 16.868/255 for panned UVs. Exact-time GPU probes are not independent video timing evidence.
 
 All 20 phase cells for each D1/D2 revision were reviewed. D2's final raw capture has variable cadence; the labelled 30 fps viewing copy contains 60 frames over two seconds. Adjacent entry/exit review uses passthrough decoding of the raw 60 frames. Neither source is claimed to resolve the open Q1 timing gate.
 
-The studies now include provisional character anticipation/recoil; a complete impact burst/decal and production contrast coverage remain unproven. Each mechanism scores 7/10; no battle-quality score is raised. The complete 54-row pilot, all eight drills and craft-time gates remain required before rollout.
+The studies now cover all eight isolated techniques after two reviewed revisions each. Complete skill composition and production coverage remain unproven. Each mechanism scores 7/10; no battle-quality score is raised. The complete 54-row pilot and craft-time gates remain required before rollout.
 
-Current partial craft receipt (2026-11-15T15:11:59.735Z): 14.50% authoring, 13.77% measurement over 203.25 elapsed item minutes; authoring below60%. D6 still needs r2 and D7/D8 need both revisions. Inactive intervals receive no work credit. No threshold was lowered.
+Current partial craft receipt (2026-11-15T16:12:17.232Z): 15.17% authoring, 14.64% measurement over 263.55 elapsed item minutes; authoring below60%. D1–D8 isolated techniques accepted; Q3.A remains OPEN. Inactive intervals receive no work credit. No threshold was lowered.
 
 Checkpoint validation: repository typecheck, 1,599 existing FEEL tooling tests and all three F6 parity fixtures PASS. A mistaken unsupported parity CLI argument was recorded and rerun with `check`; no baseline changed. Full Q3.A completion validation remains pending. Q1/Q2 and historical A/B failures stay open.
 
-Evidence budget: six original-art JPG strips, each 1280 px wide; raw recordings, frames, masks and private reference images stay ignored. No reference pixels appear in committed assets or strips.
+Evidence selection: eight original-art JPG strips, each 1280 px wide; raw recordings, frames, masks and private reference images stay ignored. No reference pixels appear in committed assets or strips.
 
 D3 update 2026-11-15T13:58:54.816345+00:00: revised the impact anchor to the painted breastplate, corrected group-order occlusion, separated short splinters/needles/slow chips and removed the clustered chip release. All final cells, adjacent raw frames, isolated roles and matched-scale comparison reviewed. Role peaks occur at different times; the complete three-layer basic is not proven. Detailed data and derivative/raw qualifications are in DRILLS.md and drills.json. No newer regression pass is claimed beyond the checkpoint above.
 
@@ -34,3 +35,9 @@ D5 final review 2026-11-15T14:51:04.349727+00:00: all full/detail/raw-boundary/m
 Checkpoint 2026-11-15T15:11:59.229879+00:00: repository typecheck,1,599 FEEL tooling tests and all three F6 baseline parity fixtures PASS on current D3–D6 sandbox changes. Logs Q3A-drills-{typecheck,tools,parity}.log. D6 r1 is reviewed but not accepted; r2 still pending. No production code changed.
 
 Checker checkpoint: missing Q3.A completion measurements remain OPEN and craftTime FAIL. The first current-commit override omitted the existing C0 learning citation; rerun includes the reused C0 verification recipe. Historical GLOBAL decision-log evidence hashes remain stale and OPEN; no gate threshold or history changed.
+
+D6 final review 2026-11-15T15:18:12.700230+00:00: every phase/raw/matched/durable cell reviewed; preparation/contact mechanics accepted after two revisions. Exact75ms hold and repeated seeks stable;800ms return IoU1. Full basic/production approval remains OPEN. R2 source is newer than the checkpoint regression; captured page has zero errors, full item regression still pending.
+
+D7 final review 2026-11-15T15:50:02.539393+00:00: r2 all-phase/raw/matched review repeated after an interrupted interval; seven accepted isolated drills. Opaque area0.993189–1.023781, foot-pixel change0, triangle flips0, exact repeated seeks/hold and return IoU1. Raw44ms maximum gap is retained; no Q1 timing claim. Final source is newer than the checkpoint regression. D8 and craft-time remain OPEN.
+
+D8 final review 2026-11-15T16:12:56.761812+00:00: all phase/raw/private/durable cells reviewed; scoped C01/C08/C09 accepted. Face/body contrast minima99.7444%/98.2711%, foot alpha>=0.6667, outside-local changes0, exact seeks/return. Raw41ms gap retained without timing acceptance. Fresh Q3A-final typecheck,1,599 tooling tests and three F6 parity fixtures PASS on D6–D8 sources. Prospective FEEL evidence109.03MiB, eight selected strips. The recorded2s/30fps capture contract does not replace actual container durations or cadence in the receipts.

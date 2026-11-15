@@ -721,5 +721,148 @@
       "Q3.A"
     ],
     "takeaway": "Actual Soot pose comparison measures silhouette changes and foot stability; visual joint continuity remains a separate decision."
+  },
+  {
+    "id": "Q3-T32",
+    "url_or_path": "https://en.esotericsoftware.com/spine-meshes",
+    "type": "doc",
+    "topic": "D7 localized mesh deformation",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Topology and internal edges determine bending; limit vertices/influences and avoid per-vertex animation keys when weighted controls suffice."
+  },
+  {
+    "id": "Q3-T33",
+    "url_or_path": "https://us.esotericsoftware.com/spine-physics-constraints",
+    "type": "doc",
+    "topic": "D7 secondary motion",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Secondary motion reacts to primary movement and depends on stiffness/damping/reset/scale; compare authored delays with simulation needs for deterministic seeking."
+  },
+  {
+    "id": "Q3-X18",
+    "url_or_path": "tools/v3craft-lab/q3/deform-study.json",
+    "type": "experiment",
+    "topic": "D7 squash/stretch and secondary deformation",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Original Soot: material-aware body mapping plants feet and preserves face/prop shape; root-pinned height shear avoids rotational fold risk, with both directions numerically and visually inspected."
+  },
+  {
+    "id": "Q3-T34",
+    "url_or_path": "https://www.cns.nyu.edu/csh/csh04/Articles/Kersten-etal-97.pdf",
+    "type": "paper",
+    "topic": "D8 perceptual grounding",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Kersten/Mamassian/Knill1997: shadow displacement changes perceived object depth; keep contact fixed for a planted actor."
+  },
+  {
+    "id": "Q3-T35",
+    "url_or_path": "https://threejs.org/manual/pages/shadows.html",
+    "type": "doc",
+    "topic": "D8 economical ground shadows",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "A transparent ground plane can approximate a shadow; tie it to the actor floor anchor and avoid extra full-scene light passes."
+  },
+  {
+    "id": "Q3-T36",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "D8 painted lighting and colour",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Perform illumination/grade in linear light, mark data masks uncoloured, and convert custom shader output once; linear render targets need adequate precision."
+  },
+  {
+    "id": "Q3-T37",
+    "url_or_path": "https://threejs.org/docs/pages/ShaderMaterial.html",
+    "type": "doc",
+    "topic": "D8 local shading",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Custom uniforms and GLSL can implement bounded silhouette-aware light without turning the whole scene into a tinted overlay."
+  },
+  {
+    "id": "Q3-T38",
+    "url_or_path": "https://threejs.org/docs/pages/RenderTarget.html",
+    "type": "doc",
+    "topic": "D8 live silhouette mask",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Render targets hold offscreen pixels; capture the current composed actor silhouette, so a directional rim need not expose attachment edges."
+  },
+  {
+    "id": "Q3-T39",
+    "url_or_path": "tools/v3craft-drills/d7.ts",
+    "type": "local",
+    "topic": "D8 moving original paint",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Accepted planted motion supplies a fixed foot anchor, deforming outer silhouette and exact seeks; its reviewed film still lacks floor contact/light integration."
+  },
+  {
+    "id": "Q3-X19",
+    "url_or_path": "tools/v3craft-lab/q3/ground-study.json",
+    "type": "experiment",
+    "topic": "D8 grounding and directional colour",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Actual feet stay atx284.94/330.11,y551 screen; footprint+directional rim retains face>=99.808% and body>=98.294% normalized contrast versus46.174\u201348.465% for broad wash."
+  },
+  {
+    "id": "Q3-X20",
+    "url_or_path": "tools/v3craft-lab/q3/ground-resolution-study.json",
+    "type": "experiment",
+    "topic": "D8 native paint preservation",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "One-to-one280px target preserves>=99.904% normalized unlit contrast and RGB error<=0.0256/255;320px softens,560px changes detail. All12 crops reviewed."
+  },
+  {
+    "id": "Q3-T40",
+    "url_or_path": "https://threejs.org/docs/pages/PointLight.html",
+    "type": "doc",
+    "topic": "D8 light-source location",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "A point source emits from a location; use source-to-edge direction for a coherent stylized rim. The2D contour method is not a physical PointLight material."
+  },
+  {
+    "id": "Q3-X21",
+    "url_or_path": "tools/v3craft-lab/q3/ground-light-study.json",
+    "type": "experiment",
+    "topic": "D8 source-relative rim",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Same alpha/colour/strength compared at three poses: a ground-relative edge removes unrelated ear-top light and shifts the response toward the lower/right body, preserving face contrast; six crops reviewed."
   }
 ]

@@ -45,6 +45,16 @@ function makePose(data:any,revision:number){
   replace('hip','translate',[[0,0,0],[90,-4,-5],[205,-15,-19],[250,-15,-19],[350,19,-5],[425,19,-5],[500,23,-8],[650,-2,-1],[800,0,0]]);
   replace('head','rotate',[[0,0],[90,-2],[220,-10],[250,-10],[350,8],[425,8],[520,9.5],[670,-1.5],[800,0]]);
   replace('arm-r','rotate',[[0,0],[100,6],[230,38],[250,38],[350,-32],[425,-32],[485,-36],[660,6],[800,0]]);
+  if(revision>=2){
+   // Store energy in the trunk and raised hand; the contact sends the lantern forward.
+   // Feet remain rooted through the lower-body weights rather than compensating the root.
+   replace('hip','rotate',[[0,0],[85,4],[205,16],[250,16],[350,-10],[425,-10],[500,-12],[650,2],[800,0]]);
+   replace('hip','translate',[[0,0,0],[85,-7,-7],[205,-28,-25],[250,-28,-25],[350,30,0],[425,30,0],[500,34,-4],[650,-3,-1],[800,0,0]]);
+   replace('head','rotate',[[0,0],[100,-1],[220,-8],[250,-8],[350,7],[425,7],[520,10],[680,-2],[800,0]]);
+   replace('arm-r','rotate',[[0,0],[95,10],[230,62],[250,62],[350,-8],[425,-8],[495,-18],[680,5],[800,0]]);
+   replace('arm-l','rotate',[[0,0],[110,-6],[225,-28],[250,-28],[350,24],[425,24],[535,29],[700,-4],[800,0]]);
+   replace('tail','rotate',[[0,0],[130,3],[250,16],[350,-6],[425,-6],[565,-19],[715,3],[800,0]]);
+  }
  }
  data.clips.d6={duration:.8,tracks,visibility:[],events:[]};void revision;
 }
