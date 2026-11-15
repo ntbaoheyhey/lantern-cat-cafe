@@ -1,0 +1,36 @@
+{
+  "question": "Does action targetIds identify the offensive composition recipients?",
+  "source": "reports/v3-feel/REVIEW/Q2/wave3/capture.json.gz",
+  "action": 154,
+  "methods": [
+    {
+      "method": "all action recipients",
+      "count": 7,
+      "ids": [
+        "foe-0-kettle-knight",
+        "soot",
+        "foe-1-spool-ram",
+        "foe-2-pollen-scout",
+        "foe-3-crumb-sentinel",
+        "foe-4-needle-moth",
+        "foe-5-teacup-healer"
+      ],
+      "erroneousCasterMainHits": 1
+    },
+    {
+      "method": "caster-owned hostile damage/status recipients",
+      "count": 6,
+      "ids": [
+        "foe-0-kettle-knight",
+        "foe-1-spool-ram",
+        "foe-2-pollen-scout",
+        "foe-3-crumb-sentinel",
+        "foe-4-needle-moth",
+        "foe-5-teacup-healer"
+      ],
+      "erroneousCasterMainHits": 0
+    }
+  ],
+  "cause": "Kettle-knight retaliation damages Soot12 and Soot gains6 shield during the same plan. Those outcomes require their own responses, not Soot ultimate hit-fans on Soot.",
+  "chosen": "caster-owned hostile damage/status recipients; existing reaction and numbers retain retaliation/support outcomes"
+}

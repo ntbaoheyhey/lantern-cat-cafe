@@ -131,6 +131,8 @@ export class PaintedVfx {
   if(!view.formationC2){c.fillStyle='#000';for(const box of protectedLabels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
+ /** An opt-in scene renderer owns this action's complete effect pass. */
+ clearFrame(){this.ctx.setTransform(1,0,0,1,0,0);this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;}
  clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
  dispose(){this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.canvas.remove();}
 }

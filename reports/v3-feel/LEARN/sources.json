@@ -286,7 +286,8 @@
     "topic": "Q3",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "WebGL uniforms, attributes and transparent material settings support seekable shader effects."
   },
@@ -396,7 +397,8 @@
     "topic": "Q3",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Key poses, nonuniform spacing and approximately preserved volume give weight; overlap separates attachments."
   },
@@ -407,7 +409,8 @@
     "topic": "Q3",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Weighted internal vertices and explicit triangles determine how a painted polygon bends; rest pose matters."
   },
@@ -492,7 +495,12 @@
     "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
     "type": "breakdown",
     "topic": "Q3 Q3.A D2",
-    "takeaway": "An effect must communicate its gameplay cause clearly and belong to its character; restraint is part of the design."
+    "takeaway": "An effect must communicate its gameplay cause clearly and belong to its character; restraint is part of the design.",
+    "topics": [
+      "Q3",
+      "Q3.A",
+      "Q3.B"
+    ]
   },
   {
     "id": "Q3-T18",
@@ -506,7 +514,12 @@
     "url_or_path": "https://threejs.org/docs/pages/BufferGeometry.html",
     "type": "doc",
     "topic": "Q3 Q3.A D2",
-    "takeaway": "Indexed geometry stores positions and UV attributes explicitly and can reuse strip vertices."
+    "takeaway": "Indexed geometry stores positions and UV attributes explicitly and can reuse strip vertices.",
+    "topics": [
+      "Q3",
+      "Q3.A",
+      "Q3.B"
+    ]
   },
   {
     "id": "Q3-T20",
@@ -664,7 +677,8 @@
     "takeaway": "Local luminance changes affect contrast; plain gradient energy can miss veiling illumination. Our pair-based proxy is not the full Peli bandpass model.",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ]
   },
   {
@@ -685,7 +699,8 @@
     "topic": "D6 pose mechanics",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Bind in setup, use purposeful weights, and inspect deformation at animated extremes."
   },
@@ -696,7 +711,8 @@
     "topic": "D6 pose mechanics",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Plan mesh purpose and minimal bone influences before posing; excessive deform keys obscure control."
   },
@@ -707,7 +723,8 @@
     "topic": "D6 pose mechanics",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Stepped interpolation holds a value; separate eased keys control preparation/recovery spacing."
   },
@@ -729,7 +746,8 @@
     "topic": "D7 localized mesh deformation",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Topology and internal edges determine bending; limit vertices/influences and avoid per-vertex animation keys when weighted controls suffice."
   },
@@ -740,7 +758,8 @@
     "topic": "D7 secondary motion",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Secondary motion reacts to primary movement and depends on stiffness/damping/reset/scale; compare authored delays with simulation needs for deterministic seeking."
   },
@@ -784,7 +803,8 @@
     "topic": "D8 painted lighting and colour",
     "topics": [
       "Q3",
-      "Q3.A"
+      "Q3.A",
+      "Q3.B"
     ],
     "takeaway": "Perform illumination/grade in linear light, mark data masks uncoloured, and convert custom shader output once; linear render targets need adequate precision."
   },
@@ -864,5 +884,119 @@
       "Q3.A"
     ],
     "takeaway": "Same alpha/colour/strength compared at three poses: a ground-relative edge removes unrelated ear-top light and shifts the response toward the lower/right body, preserving face contrast; six crops reviewed."
+  },
+  {
+    "id": "Q3B-S01",
+    "url_or_path": "https://threejs.org/docs/pages/Object3D.html",
+    "type": "doc",
+    "topic": "Q3.B",
+    "topics": [
+      "Q3",
+      "Q3.B"
+    ],
+    "takeaway": "Group renderOrder sorts descendants together; keep ground, rear body and foreground in separate scene roots."
+  },
+  {
+    "id": "Q3B-S02",
+    "url_or_path": "https://www.riotgames.com/en/news/vfx-contest-league-valorant-2023",
+    "type": "breakdown",
+    "topic": "Q3.B",
+    "topics": [
+      "Q3",
+      "Q3.B"
+    ],
+    "takeaway": "Evaluate cast, travel, contact and outro as one coherent effect with deliberate shape/value/timing."
+  },
+  {
+    "id": "Q3B-L01",
+    "url_or_path": "apps/web/src/game/cardrpg/spine/scene.ts",
+    "type": "local",
+    "topic": "Q3.B",
+    "topics": [
+      "Q3",
+      "Q3.B"
+    ],
+    "takeaway": "The real scene owns camera, paint normalization, focus, actor ordering and projected labels; integrate through these rather than replacing them."
+  },
+  {
+    "id": "Q3B-L02",
+    "url_or_path": "reports/v3-feel/CRAFT/DRILLS.md",
+    "type": "local",
+    "topic": "Q3.B",
+    "topics": [
+      "Q3",
+      "Q3.B"
+    ],
+    "takeaway": "Eight accepted moves have scoped limitations; combination and battle coverage require fresh review."
+  },
+  {
+    "id": "Q3B-S03",
+    "url_or_path": "https://threejs.org/docs/pages/WebGLRenderer.html",
+    "type": "doc",
+    "topic": "Q3.B",
+    "takeaway": "Explicitly clear every reused readback target; autoClear can be disabled by the production composer."
+  },
+  {
+    "id": "Q3B-X01",
+    "url_or_path": "tools/v3craft-lab/q3b/composition-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "Cleared real wave3 target: rear retains97.661% minimum body contrast versus26.116% foreground, but single-core coverage15.15% and133ms blank opening both fail complete-skill requirements."
+  },
+  {
+    "id": "Q3B-X02",
+    "url_or_path": "tools/v3craft-lab/q3b/recipient-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "Action-wide recipients mix retaliation and support into the spell; caster-owned hostile outcomes select6 targets versus7, avoiding1 erroneous self fan."
+  },
+  {
+    "id": "Q3B-S04",
+    "url_or_path": "https://threejs.org/docs/pages/BufferAttribute.html",
+    "type": "doc",
+    "topic": "Q3.B",
+    "takeaway": "Keep setup topology and skin weights independent of reused dynamic position buffers; upload changed attributes explicitly."
+  },
+  {
+    "id": "Q3B-X03",
+    "url_or_path": "tools/v3craft-lab/q3b/pose-composition-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "Local material deformation preserves feet/face (0/2.84e-14 displacement), unlike whole affine (12.48/29.46); direct elapsed holds75ms versus130.6/137.2ms with stacked remapping."
+  },
+  {
+    "id": "Q3B-X04",
+    "url_or_path": "tools/v3craft-lab/q3b/staff-travel-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "Six real fixture/desktop paths: short tip gaps204.53\u2013296.49px at30Hz;46ms finite sweep gap0, endpoint0 and425ms clear. Full-field frames expose bystander-face risk for production protection."
+  },
+  {
+    "id": "Q3B-S05",
+    "url_or_path": "https://esotericsoftware.com/spine-bones",
+    "type": "doc",
+    "topic": "Q3.B",
+    "takeaway": "A bone world transform includes its parent hierarchy; transform calibrated rest points through the head before the actor root."
+  },
+  {
+    "id": "Q3B-X05",
+    "url_or_path": "tools/v3craft-lab/q3b/face-transport-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "21 phases x2 desktops x238 face-region samples: rest mismatch up to58.679px/153 outside; transported head+field mismatch<=0.0000153px/0 outside."
+  },
+  {
+    "id": "Q3B-X06",
+    "url_or_path": "tools/v3craft-lab/q3b/ground-crop-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "12 real poses: pixel-aligned half-float crop RGB MAE<=0.04450/255; fixed256<=2.1215. Aligned face/body contrast>=99.98%; use cropped alpha for sparse rim and projected floor only."
+  },
+  {
+    "id": "Q3B-X07",
+    "url_or_path": "tools/v3craft-lab/q3b/foot-anchor-study.json",
+    "type": "experiment",
+    "topic": "Q3.B",
+    "takeaway": "Isolate original feet: two local contact anchors give<=0.21273px error across12 desktop/pose cases versus body-centre errors up to74.07px. Whole-body-bottom method rejected because tail contaminated it."
   }
 ]

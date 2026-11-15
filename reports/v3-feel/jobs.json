@@ -1,6 +1,6 @@
 {
   "vite": {
-    "pid": 44605,
+    "pid": 67838,
     "command": [
       "pnpm",
       "exec",
@@ -15,7 +15,15 @@
     ],
     "cwd": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web",
     "log": "reports/v3-feel/vite.log",
-    "started": "2026-11-15T09:24:03.452857+00:00"
+    "started": "2026-11-15T16:34:29.213774+00:00",
+    "environment": {
+      "VITE_CRAFT_PILOT": "soot"
+    },
+    "previous": {
+      "pid": 44605,
+      "stoppedAt": "2026-11-15T16:34:29.213774+00:00",
+      "reason": "Owned5990 restarted for opt-in Q3.B pilot; demo ports untouched."
+    }
   },
   "capture": {
     "pid": 62771,
@@ -500,5 +508,185 @@
     "finished": true,
     "ended": "2026-11-15T16:12:17.186308+00:00",
     "status": "PASS: complete log verified"
+  },
+  "Q3B-composition-study": {
+    "pid": 61677,
+    "command": [
+      "node",
+      "tools/v3craft-lab/q3b/composition-study.mjs"
+    ],
+    "log": "reports/v3-feel/Q3B-composition-study.log",
+    "note": "Exact launch timestamp was not recorded; observed running time only. No craft credit derives from this job record.",
+    "observedRunningAt": "2026-11-15T16:18:47Z",
+    "finished": true,
+    "status": "Completed exit0; two result rows verified. INVALID mask/order comparison preserved; no method acceptance.",
+    "verifiedAt": "2026-11-15T16:23:02.961666+00:00"
+  },
+  "Q3B-author-preview": {
+    "command": "node tools/v3craft-lab/q3b/preview.mjs",
+    "log": "reports/v3-feel/Q3B-author-preview.log",
+    "finished": true,
+    "status": "exit0; complete output verified; authoring check only",
+    "verifiedAt": "2026-11-15T16:33:55.397092+00:00"
+  },
+  "Q3B-author-typecheck": {
+    "command": "pnpm --filter @taskbar-hero/web typecheck",
+    "log": "reports/v3-feel/Q3B-author-typecheck.log",
+    "finished": true,
+    "status": "exit0; complete output verified; authoring check only",
+    "verifiedAt": "2026-11-15T16:33:55.397092+00:00"
+  },
+  "Q3B-R0-capture": {
+    "pid": 68626,
+    "command": "node scripts/v3feel/capture.mjs --item Q3B-R0 --seconds30 --video-seconds30 --frame-marker",
+    "log": "reports/v3-feel/Q3B-R0-capture.log",
+    "started": "2026-11-15T16:37:31.741889+00:00",
+    "status": "Three draft films complete; parity true for all; 29/29/28 actions; zero capture errors. Not yet reviewed/accepted.",
+    "finished": true,
+    "verifiedAt": "2026-11-15T16:41:18.058071+00:00"
+  },
+  "Q3B-pose-composition-study": {
+    "pid": null,
+    "command": "node tools/v3craft-lab/q3b/pose-composition-study.mjs",
+    "log": "reports/v3-feel/Q3B-pose-composition-study.log",
+    "observedAt": "2026-11-15T16:41:18.058071+00:00",
+    "status": "Both methods complete; no browser errors, result and phase sheets available; review ongoing.",
+    "finished": true,
+    "verifiedAt": "2026-11-15T16:43:27.348825+00:00"
+  },
+  "Q3B-R0-sheets": {
+    "command": "tools/.venv/bin/python scripts/v3feel/review-sheets.py Q3B-R0",
+    "log": "reports/v3-feel/Q3B-R0-sheets.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T16:43:27.348825+00:00",
+    "status": "84 sheets complete (28 per fixture); process absent and terminal log verified."
+  },
+  "Q3B-R1-capture": {
+    "pid": 73224,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q3B-R1",
+      "--seconds",
+      "30",
+      "--video-seconds",
+      "30",
+      "--frame-marker"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q3B-R1-capture.log",
+    "started": "2026-11-15T16:59:45.250370+00:00",
+    "status": "Three complete films,29/29/28 actions,1804/1804/1805 compositor frames, all parity true; log completion verified and PID absent.",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:03:39.054318+00:00"
+  },
+  "Q3B-R1-sheets": {
+    "pid": 74135,
+    "command": "tools/.venv/bin/python scripts/v3feel/review-sheets.py Q3B-R1",
+    "log": "reports/v3-feel/Q3B-R1-sheets.log",
+    "started": "2026-11-15T17:03:39.054318+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:05:33.099907+00:00",
+    "status": "83 full action sheets complete;10 Soot windows identified."
+  },
+  "Q3B-staff-travel-study": {
+    "command": "node tools/v3craft-lab/q3b/staff-travel-study.mjs",
+    "log": "reports/v3-feel/Q3B-staff-travel-study.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:05:33.099907+00:00",
+    "status": "Six fixture/desktop comparisons complete, zero page errors; result and full-field comparison inspected."
+  },
+  "Q3B-B0-capture": {
+    "pid": 77099,
+    "command": "node scripts/v3feel/capture.mjs --item Q3B-B0 --seconds 30 --video-seconds 30 --frame-marker",
+    "log": "reports/v3-feel/Q3B-B0-capture.log",
+    "started": "2026-11-15T17:16:44.989786+00:00",
+    "status": "Three films complete; all parity true; review pending.",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:43.146077+00:00"
+  },
+  "Q3B-basic-author-typecheck": {
+    "command": "pnpm --filter @taskbar-hero/web typecheck",
+    "log": "reports/v3-feel/Q3B-basic-author-typecheck.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-face-author-typecheck": {
+    "command": "pnpm --filter @taskbar-hero/web typecheck",
+    "log": "reports/v3-feel/Q3B-face-author-typecheck.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-author-parity": {
+    "command": "node scripts/v3feel/parity.mjs check",
+    "log": "reports/v3-feel/Q3B-author-parity.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-face-author-preview": {
+    "command": "node tools/v3craft-lab/q3b/native-preview.mjs 1280 720 wave3 basic",
+    "log": "reports/v3-feel/Q3B-face-author-preview.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-face-boss-author-preview": {
+    "command": "node tools/v3craft-lab/q3b/native-preview.mjs 1440 900 boss basic",
+    "log": "reports/v3-feel/Q3B-face-boss-author-preview.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-face-transport-study": {
+    "command": "node tools/v3craft-lab/q3b/face-transport-study.mjs",
+    "log": "reports/v3-feel/Q3B-face-transport-study.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:19:15.683548+00:00",
+    "status": "Completed successfully; observed complete log and exit0."
+  },
+  "Q3B-B0-sheets": {
+    "pid": 77770,
+    "command": "tools/.venv/bin/python scripts/v3feel/review-sheets.py Q3B-B0",
+    "log": "reports/v3-feel/Q3B-B0-sheets.log",
+    "started": "2026-11-15T17:19:43.146077+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:23:06.794744+00:00",
+    "status": "PID absent; terminal log confirms28/27/28 sheets. Review underway."
+  },
+  "Q3B-B1-capture": {
+    "pid": 81768,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q3B-B1",
+      "--seconds",
+      "30",
+      "--video-seconds",
+      "30",
+      "--frame-marker"
+    ],
+    "log": "reports/v3-feel/Q3B-B1-capture.log",
+    "started": "2026-11-15T17:43:17.181584+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:47:16.416808+00:00",
+    "status": "PID absent; three completed films;1801/1791/1804 compositor frames,29/29/28 actions, parity true. Unreviewed B1."
+  },
+  "Q3B-B1-sheets": {
+    "pid": 82729,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3feel/review-sheets.py",
+      "Q3B-B1"
+    ],
+    "log": "reports/v3-feel/Q3B-B1-sheets.log",
+    "started": "2026-11-15T17:47:16.416808+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-15T17:48:04.450026+00:00",
+    "status": "PID absent;28/27/28 action sheets complete, review pending."
   }
 }

@@ -6,12 +6,14 @@ Chiều cao mèo tối thiểu 191/239 px; tỉ lệ lớn/nhỏ tối đa 1,037
 Đội hình phủ tối thiểu 86,18% chiều ngang; HUD 12%/10,67% chiều cao.
 154/154 lần gây sát thương/hồi máu/tạo khiên có đúng một số; tối đa 2 nhãn, <=682,61 ms.
 Không thấy số/đơn vị che mặt hoặc HUD; 6 lần dựng lại chiêu lệch <=2,182 px, vẫn cách vùng mặt 8 px.
-Kiểm tra kiểu, 2.634 kiểm thử web, parity và 435/435 kiểm thử trình duyệt PASS.
+Mốc Q2: 2.634 kiểm thử web và 435/435 trình duyệt PASS; sau sửa Soot mới kiểm lại kiểu/parity.
 Q2 vẫn mở tổng thể: Q1 chưa đạt; A còn 97 lỗi, B còn 14 lỗi cũ/mốc tương lai, giữ nguyên để xử lý Q9.
-Q3: D1–D8 đã qua hai vòng sửa ở bài tập riêng; tiếp theo ghép chiêu Soot trong trận thật.
-D2 đối xứng 0,246 < 0,8; D3 có tia/mảnh riêng và tua lại không đổi pixel; chưa sửa hiệu ứng chiến đấu.
+Q3: D1–D8 đã qua hai vòng sửa ở bài tập riêng; đang ghép chiêu Soot trong trận thật.
+Soot chạy thử riêng trong trận; chưa áp dụng rộng. D2 đối xứng 0,246; D3 tua lại không đổi pixel.
 Tỉ lệ sáng tác hiện 15.17% < 60% (không tính thời gian gián đoạn); Q3.A vẫn mở.
-Hiệu ứng hiện còn vòng/sương vàng-hồng, mất chi tiết cơ thể; tư thế còn yếu, chưa được công nhận đạt.
+Đã xem đủ 10 hành động Soot bản R1: mở chiêu sớm hơn nhưng hình chính còn giống rèm; chưa đạt.
+Đã xem 10 hành động B0: đòn bay rõ hơn, va chạm còn yếu. B1 đã quay xong, parity cả ba trận đạt.
+Đã sửa vùng mặt; học neo chân sai lệch <=0,213 px. Chưa đủ mốc sáng tác 60/30/20 phút/hai vòng sửa.
 Roster thực có 12 mèo/25 đơn vị; yêu cầu 13 mèo còn là chênh lệch, không tự thêm nhân vật.
 Không hạ ngưỡng, không triển khai, không merge main; làm một mình.
 Mốc xem lại: 16/11 19:00, demo cuối 18/11 19:00, đóng băng 19/11 19:00 (giờ Việt Nam).
