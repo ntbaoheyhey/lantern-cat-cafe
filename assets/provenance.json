@@ -2459,6 +2459,114 @@
         "Original analytic geometry and seeded data texture; no image inputs"
       ],
       "referenceInputs": []
+    },
+    {
+      "asset": "tools/v3craft-drills/d3.ts",
+      "tool": "Original Three.js typed quad geometry and ShaderMaterial",
+      "date": "2026-11-15T13:47:32.784112+00:00",
+      "prompt": "Create seed15112028 impact particles at the measured sentinel chest: velocity-aligned tapered amber needles, short wide splinters and slower tumbling filled chips. Exact linear drag with authored gravity, finite independent lifetimes, white-to-amber-to-dark colour ramps. Static camera. Isolated drill only.",
+      "source": [
+        "Original analytic geometry and recipe, no image inputs"
+      ],
+      "referenceInputs": [],
+      "revisions": [
+        {
+          "id": 1,
+          "recipe": "Painted breastplate offset+55px, foreground group11, three weighted needles, five short splinters and violet filled chips; smooth elliptical eye attenuation."
+        },
+        {
+          "id": 2,
+          "recipe": "Two-frame contact accent,45ms needle entry, separated chip emission line, varied asymmetrical chipped facets and independent spin/lifetime. Original analytic shapes; no reference image inputs."
+        }
+      ],
+      "updated": "2026-11-15T13:55:36.923039+00:00"
+    },
+    {
+      "asset": "tools/v3craft-drills/d4-source.ts",
+      "tool": "Original Three.js40x40 weighted mesh, baked offline",
+      "date": "2026-11-15T14:14:37.143600+00:00",
+      "prompt": "Three hanging lamps from approved original Soot paint sway with55/110ms delayed coherent rotations. Broad normalized Gaussian weights pin the crown; released chips inherit deformed birth positions. No reference image inputs.",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png",
+        "tools/v3craft-drills/d1.ts"
+      ],
+      "referenceInputs": [],
+      "revisions": [
+        {
+          "id": 2,
+          "recipe": "Readable-shape source-age keys and inverse-time chip birth transform; no scene or camera movement."
+        }
+      ]
+    },
+    {
+      "asset": "tools/v3craft-drills/assets/d4-r0.png",
+      "tool": "Headless Three.js/Chromium GPU offline render; PNG packing only",
+      "date": "2026-11-15T14:14:37.143600+00:00",
+      "prompt": "D4 revision0:31source frames at30Hz,1000ms duration, fixed540px crop/pivot,2px extruded padding, straight sRGB from unpremultiplied linear readback. R0 fixed source256px; R1 weighted lamp swing512px. Source recipe and individual frame support in adjacent JSON.",
+      "recipe": "tools/v3craft-drills/bake-d4.mjs",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png",
+        "tools/v3craft-drills/d1.ts",
+        "tools/v3craft-drills/d4-source.ts"
+      ],
+      "referenceInputs": [],
+      "sha256": "88ab86017a8f19b3d88860d277ba23b4aecd03cdd4f9bfd801f54d6f7d1d1ff7"
+    },
+    {
+      "asset": "tools/v3craft-drills/assets/d4-r1.png",
+      "tool": "Headless Three.js/Chromium GPU offline render; PNG packing only",
+      "date": "2026-11-15T14:14:37.143600+00:00",
+      "prompt": "D4 revision1:31source frames at30Hz,1000ms duration, fixed540px crop/pivot,2px extruded padding, straight sRGB from unpremultiplied linear readback. R0 fixed source256px; R1 weighted lamp swing512px. Source recipe and individual frame support in adjacent JSON.",
+      "recipe": "tools/v3craft-drills/bake-d4.mjs",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png",
+        "tools/v3craft-drills/d1.ts",
+        "tools/v3craft-drills/d4-source.ts"
+      ],
+      "referenceInputs": [],
+      "sha256": "c8e212043dfc80f54317cc7244284871a601dd271ea0170c9440e044e92a682f"
+    },
+    {
+      "asset": "tools/v3craft-drills/assets/d4-r2.png",
+      "tool": "Original weighted Three.js mesh baked with headless Chromium; PNG packing only",
+      "date": "2026-11-15T14:20:55.979683+00:00",
+      "prompt": "31frames at30Hz over1000ms,512px fixed crop with2px extrusion. Three independently delayed hanging lamps; smooth source-age keys(0,0),(240,430),(350,475),(1000,2000) expose the complete silhouette before breakup. Chip birth locations use inverse source age. Straight sRGB from linear unpremultiplication. No reference inputs.",
+      "recipe": "tools/v3craft-drills/bake-d4.mjs",
+      "source": [
+        "tools/v3craft-drills/assets/soot-core.png",
+        "tools/v3craft-drills/d1.ts",
+        "tools/v3craft-drills/d4-source.ts"
+      ],
+      "referenceInputs": [],
+      "sha256": "7167963c1b343a05967efda10ef757620dfb96f6fce17559be715170d568f9c0"
+    },
+    {
+      "asset": "tools/v3craft-drills/d5.ts",
+      "tool": "Original Three.js indexed arc geometry and GLSL; no model or raster reference input",
+      "date": "2026-11-15T14:40:14.177172+00:00",
+      "prompt": "Isolated colour/readability drill: open rising sweep with arc-length UV grain, independent linear-light body/core colour keys, behind-body normal colour and bounded additive core, exact actor-alpha attenuation and soft face protection. Finite one-shot, no ring/orb/fog. R0 baseline and r1 reviewed source iterations retained in the code. R2 narrows the late cross-section, adds directional striations and erodes coverage as the colour cools; no opaque dark residue.",
+      "recipe": "reports/v3-feel/LEARN/Q3.md#d5-learning-before-live-compositing",
+      "source": [
+        "tools/v3craft-drills/d2.ts",
+        "tools/v3craft-lab/q2/faces.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "966c395741c10271e3f9760790a1e45a2217657a1bb3aabf48df1aeb17e95e5b"
+    },
+    {
+      "asset": "tools/v3craft-drills/d6.ts",
+      "tool": "Original key poses and weighted Three.js meshes/GLSL; no model input",
+      "date": "2026-11-15T15:06:24.590975+00:00",
+      "prompt": "Original Soot planted lower-body weighting, independent lantern/head/torso preparation and contact, weighted arm seam, hand-path smear, narrow directional tip, local breastplate flash and native sentinel torso recoil.800ms action,350ms contact,75ms pose hold; r0 and r1 preserved as separate revision branches.",
+      "recipe": "reports/v3-feel/LEARN/Q3.md#d6-study-before-pose-authoring",
+      "source": [
+        "assets/cardrpg-look/spine/soot/placeholder/soot.json",
+        "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+        "apps/web/public/units/crumb-sentinel/rig.json",
+        "tools/v3craft-lab/q3/pose-study.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "0bfea0322c223a67dc7d0a256a6af7e5a34b6f05289a38d827f10675234873b8"
     }
   ]
 }

@@ -1,0 +1,414 @@
+{
+  "id": "D4",
+  "revision": 1,
+  "atlas": "d4-r1.png",
+  "fps": 30,
+  "count": 31,
+  "durationMs": 1000,
+  "sourceDurationMs": 2000,
+  "cell": 512,
+  "padding": 2,
+  "columns": 8,
+  "crop": {
+    "left": 530,
+    "right": 1070,
+    "bottom": 85,
+    "top": 625
+  },
+  "pivot": [
+    800,
+    355
+  ],
+  "colour": "straight-sRGB from unpremultiplied linear GPU readback",
+  "interpolation": "premultiplied-linear",
+  "loop": false,
+  "width": 4128,
+  "height": 2064,
+  "rows": 4,
+  "stride": 516,
+  "stats": [
+    {
+      "frame": 0,
+      "ageMs": 0,
+      "sourceMs": 0,
+      "support": 0,
+      "bounds": null
+    },
+    {
+      "frame": 1,
+      "ageMs": 33.333333333333336,
+      "sourceMs": 66.66666666666667,
+      "support": 2633,
+      "bounds": [
+        218,
+        124,
+        375,
+        259
+      ]
+    },
+    {
+      "frame": 2,
+      "ageMs": 66.66666666666667,
+      "sourceMs": 133.33333333333334,
+      "support": 8600,
+      "bounds": [
+        162,
+        125,
+        385,
+        360
+      ]
+    },
+    {
+      "frame": 3,
+      "ageMs": 100,
+      "sourceMs": 200,
+      "support": 15418,
+      "bounds": [
+        130,
+        125,
+        395,
+        365
+      ]
+    },
+    {
+      "frame": 4,
+      "ageMs": 133.33333333333334,
+      "sourceMs": 266.6666666666667,
+      "support": 21627,
+      "bounds": [
+        131,
+        126,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 5,
+      "ageMs": 166.66666666666666,
+      "sourceMs": 333.3333333333333,
+      "support": 27724,
+      "bounds": [
+        127,
+        126,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 6,
+      "ageMs": 200,
+      "sourceMs": 400,
+      "support": 30785,
+      "bounds": [
+        125,
+        125,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 7,
+      "ageMs": 233.33333333333334,
+      "sourceMs": 466.6666666666667,
+      "support": 30566,
+      "bounds": [
+        125,
+        124,
+        398,
+        365
+      ]
+    },
+    {
+      "frame": 8,
+      "ageMs": 266.6666666666667,
+      "sourceMs": 533.3333333333334,
+      "support": 29589,
+      "bounds": [
+        126,
+        124,
+        398,
+        365
+      ]
+    },
+    {
+      "frame": 9,
+      "ageMs": 300,
+      "sourceMs": 600,
+      "support": 28536,
+      "bounds": [
+        127,
+        124,
+        398,
+        365
+      ]
+    },
+    {
+      "frame": 10,
+      "ageMs": 333.3333333333333,
+      "sourceMs": 666.6666666666666,
+      "support": 27135,
+      "bounds": [
+        127,
+        123,
+        398,
+        365
+      ]
+    },
+    {
+      "frame": 11,
+      "ageMs": 366.66666666666663,
+      "sourceMs": 733.3333333333333,
+      "support": 25626,
+      "bounds": [
+        125,
+        123,
+        397,
+        365
+      ]
+    },
+    {
+      "frame": 12,
+      "ageMs": 400,
+      "sourceMs": 800,
+      "support": 24329,
+      "bounds": [
+        123,
+        123,
+        396,
+        366
+      ]
+    },
+    {
+      "frame": 13,
+      "ageMs": 433.33333333333337,
+      "sourceMs": 866.6666666666667,
+      "support": 22926,
+      "bounds": [
+        122,
+        123,
+        396,
+        370
+      ]
+    },
+    {
+      "frame": 14,
+      "ageMs": 466.6666666666667,
+      "sourceMs": 933.3333333333334,
+      "support": 21629,
+      "bounds": [
+        120,
+        123,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 15,
+      "ageMs": 500,
+      "sourceMs": 1000,
+      "support": 20210,
+      "bounds": [
+        119,
+        123,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 16,
+      "ageMs": 533.3333333333334,
+      "sourceMs": 1066.6666666666667,
+      "support": 19130,
+      "bounds": [
+        119,
+        124,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 17,
+      "ageMs": 566.6666666666666,
+      "sourceMs": 1133.3333333333333,
+      "support": 18018,
+      "bounds": [
+        119,
+        124,
+        396,
+        365
+      ]
+    },
+    {
+      "frame": 18,
+      "ageMs": 600,
+      "sourceMs": 1200,
+      "support": 16672,
+      "bounds": [
+        120,
+        125,
+        395,
+        370
+      ]
+    },
+    {
+      "frame": 19,
+      "ageMs": 633.3333333333333,
+      "sourceMs": 1266.6666666666665,
+      "support": 14938,
+      "bounds": [
+        121,
+        125,
+        393,
+        377
+      ]
+    },
+    {
+      "frame": 20,
+      "ageMs": 666.6666666666666,
+      "sourceMs": 1333.3333333333333,
+      "support": 13319,
+      "bounds": [
+        122,
+        125,
+        388,
+        383
+      ]
+    },
+    {
+      "frame": 21,
+      "ageMs": 700,
+      "sourceMs": 1400,
+      "support": 12048,
+      "bounds": [
+        124,
+        125,
+        388,
+        361
+      ]
+    },
+    {
+      "frame": 22,
+      "ageMs": 733.3333333333333,
+      "sourceMs": 1466.6666666666665,
+      "support": 10867,
+      "bounds": [
+        125,
+        126,
+        384,
+        361
+      ]
+    },
+    {
+      "frame": 23,
+      "ageMs": 766.6666666666667,
+      "sourceMs": 1533.3333333333335,
+      "support": 9586,
+      "bounds": [
+        155,
+        125,
+        383,
+        360
+      ]
+    },
+    {
+      "frame": 24,
+      "ageMs": 800,
+      "sourceMs": 1600,
+      "support": 8366,
+      "bounds": [
+        158,
+        125,
+        382,
+        349
+      ]
+    },
+    {
+      "frame": 25,
+      "ageMs": 833.3333333333334,
+      "sourceMs": 1666.6666666666667,
+      "support": 6795,
+      "bounds": [
+        173,
+        125,
+        379,
+        338
+      ]
+    },
+    {
+      "frame": 26,
+      "ageMs": 866.6666666666667,
+      "sourceMs": 1733.3333333333335,
+      "support": 5545,
+      "bounds": [
+        175,
+        125,
+        379,
+        345
+      ]
+    },
+    {
+      "frame": 27,
+      "ageMs": 900,
+      "sourceMs": 1800,
+      "support": 4121,
+      "bounds": [
+        193,
+        124,
+        380,
+        355
+      ]
+    },
+    {
+      "frame": 28,
+      "ageMs": 933.3333333333334,
+      "sourceMs": 1866.6666666666667,
+      "support": 2678,
+      "bounds": [
+        189,
+        124,
+        387,
+        361
+      ]
+    },
+    {
+      "frame": 29,
+      "ageMs": 966.6666666666666,
+      "sourceMs": 1933.3333333333333,
+      "support": 1057,
+      "bounds": [
+        221,
+        126,
+        394,
+        251
+      ]
+    },
+    {
+      "frame": 30,
+      "ageMs": 1000,
+      "sourceMs": 2000,
+      "support": 0,
+      "bounds": null
+    }
+  ],
+  "sourceRecipe": "broad-coherent-three-lamp-swing",
+  "sourceLamps": [
+    {
+      "x": -103.515625,
+      "y": 14.6484375,
+      "amplitude": 0.20800000000000002,
+      "delay": 0
+    },
+    {
+      "x": 13.671875,
+      "y": 0,
+      "amplitude": 0.14300000000000002,
+      "delay": 55
+    },
+    {
+      "x": 102.5390625,
+      "y": 35.15625,
+      "amplitude": 0.17550000000000002,
+      "delay": 110
+    }
+  ]
+}

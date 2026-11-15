@@ -417,5 +417,45 @@
     "finished": true,
     "status": "Invocation failed: unsupported current argument; no parity baseline changed.",
     "ended": "2026-11-15T13:40:19.501335+00:00"
+  },
+  "Q3A-drills-typecheck": {
+    "pid": 46891,
+    "command": [
+      "pnpm",
+      "-r",
+      "typecheck"
+    ],
+    "log": "reports/v3-feel/Q3A-drills-typecheck.log",
+    "started": "2026-11-15T15:09:33.987258+00:00",
+    "status": "PASS: completed log",
+    "ended": "2026-11-15T15:10:07.547671+00:00"
+  },
+  "Q3A-drills-tools": {
+    "pid": 46892,
+    "command": [
+      "node",
+      "--test",
+      "scripts/v3feel/craft-policy.test.mjs",
+      "scripts/v3feel/check-feel.test.mjs",
+      "scripts/v3feel/frame-marker.test.mjs",
+      "scripts/v3feel/render-timing.test.mjs",
+      "scripts/v3feel/media-timing.test.mjs"
+    ],
+    "log": "reports/v3-feel/Q3A-drills-tools.log",
+    "started": "2026-11-15T15:09:33.988945+00:00",
+    "status": "PASS: completed log",
+    "ended": "2026-11-15T15:10:07.552258+00:00"
+  },
+  "Q3A-drills-parity": {
+    "pid": 47143,
+    "command": [
+      "node",
+      "scripts/v3feel/parity.mjs",
+      "check"
+    ],
+    "log": "reports/v3-feel/Q3A-drills-parity.log",
+    "started": "2026-11-15T15:10:07.554125+00:00",
+    "status": "PASS: three fixtures and baseline hashes match; completed log",
+    "ended": "2026-11-15T15:11:59.229879+00:00"
   }
 }

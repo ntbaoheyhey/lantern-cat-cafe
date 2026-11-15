@@ -4563,7 +4563,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/HANDOFF-FEEL.md",
-          "sha256": "1c92d265c0d49554dab266ff92c93e53350f7b490d30b64bc23981b3c806ec63"
+          "sha256": "45b4c5ff8ab5aa8ad0be7922b100702d591a0a13715db882ed96ed08fedfc7fa"
         }
       ]
     },
@@ -4571,13 +4571,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 15
+          "value": 17
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/STATUS-VI.md",
-          "sha256": "cc9ad03546d1482aa10e41bf7291041a67e9b5e9840d76705efe24c6eedb19ae"
+          "sha256": "b1af33ff893009263b3c5d133c93ce36ed090011f411ed985898b031eef8a2f0"
         }
       ]
     },
@@ -6538,9 +6538,51 @@
           "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
         }
       ]
+    },
+    "Q3.A.typecheck": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+        }
+      ]
+    },
+    "Q3.A.unitTests": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+        }
+      ]
+    },
+    "Q3.A.parityRegression": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+          "sha256": "d7132abef0209ccc279e1181dd7bfe56c67cc26709a5bec7179f94b9377c19f9"
+        }
+      ]
     }
   },
-  "updatedAt": "2026-11-15T11:47:45.989Z",
+  "updatedAt": "2026-11-15T15:13:19.940910+00:00",
   "buildCommits": {
     "C0": {
       "commit": "752078771e99f9c1af04fd9e343a447b48061aa0"

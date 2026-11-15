@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-15T13:39:18.440943+00:00",
+  "at": "2026-11-15T15:11:59.229879+00:00",
   "scope": "Isolated technique rows only; Q3.A incomplete; no production approval",
   "drills": [
     {
@@ -81,19 +81,369 @@
     },
     {
       "id": "D3",
-      "state": "OPEN"
+      "state": "PASS",
+      "scope": "Isolated particle motion and contours only",
+      "rows": [
+        "B06"
+      ],
+      "productionB05": "OPEN",
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D3.jpg",
+      "sheetSha256": "b57d9f9dcb730fbf9ce83dfd52517d71c207a57fbed106da4a1ba2c79825e7cc",
+      "sourceSha256": "b656e02ca915b501acf51f935374263eed64ce758c6f0d8fe6cb8437d8f21dcf",
+      "gpuPeak": {
+        "ms": 500,
+        "visible": 1576
+      },
+      "rolePeaks": [
+        {
+          "role": "hot-needles",
+          "ms": 500,
+          "visible": 1104
+        },
+        {
+          "role": "impact-splinters",
+          "ms": 366.6666666666667,
+          "visible": 916
+        },
+        {
+          "role": "cooling-chips",
+          "ms": 766.6666666666666,
+          "visible": 603
+        }
+      ],
+      "seek": [
+        {
+          "intermediateMs": 0,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 1750,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 425,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 950,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 2000,
+          "changedChannels": 0
+        }
+      ],
+      "lastVisible": {
+        "ms": 1433.3333333333333,
+        "visible": 26
+      },
+      "endVisible": 0,
+      "viewingVideo": {
+        "fps": 30,
+        "frames": 60,
+        "seconds": 2,
+        "bytes": 251759,
+        "rawFrames": 60,
+        "rawSeconds": 1.964589,
+        "rawBytes": 441556,
+        "caveat": "Labelled CFR derivative; final empty-frame padding, raw VFR retained; no independent timing pass"
+      }
     },
     {
       "id": "D4",
-      "state": "OPEN"
+      "state": "PASS",
+      "scope": "Isolated finite flipbook and eased entry/exit only; production composition and Q1 timing remain OPEN",
+      "rows": [
+        "B16",
+        "U21"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D4.jpg",
+      "sheetSha256": "042ea8df75547cdec03b3c28915094b2ac1c27b94d37e1c4c4747434d7407347",
+      "gpuPeak": {
+        "ms": 466.6666666666667,
+        "support": 35198,
+        "alphaSum": 31652.494117635975,
+        "bounds": [
+          661,
+          249,
+          950,
+          503
+        ],
+        "frame": 8,
+        "next": 9,
+        "blend": 1.7763568394002505e-15,
+        "pivot": [
+          800,
+          355
+        ],
+        "visible": true
+      },
+      "seek": [
+        {
+          "intermediateMs": 0,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 1750,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 425,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 950,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 2000,
+          "changedChannels": 0
+        }
+      ],
+      "atlas": {
+        "width": 4128,
+        "height": 2064,
+        "cell": 512,
+        "frames": 31,
+        "fps": 30
+      },
+      "sourceSha256": "bb050aaa5ecf9410073e47d6aaea0ad19b20e8dc4158168633eb41e202482961",
+      "playerSha256": "a5418555865768dfaafc824758627a0719ffc087f8308a297b1651ed30911cb7",
+      "lastVisible30Hz": {
+        "ms": 1133.3333333333333,
+        "support": 405,
+        "alphaSum": 205.34509803921554,
+        "bounds": [
+          770,
+          376,
+          888,
+          408
+        ],
+        "frame": 27,
+        "next": 28,
+        "blend": 0.9999999999999964,
+        "pivot": [
+          800,
+          355
+        ],
+        "visible": true
+      },
+      "lastVisible60Hz": {
+        "ms": 1150.0000000000005,
+        "support": 354,
+        "alphaSum": 102.7333333333336,
+        "bounds": [
+          867,
+          377,
+          887,
+          405
+        ],
+        "frame": 28,
+        "next": 29,
+        "blend": 0.5000000000000142,
+        "pivot": [
+          800,
+          355
+        ],
+        "visible": true
+      },
+      "endVisible": 0,
+      "viewingVideo": {
+        "fps": 30,
+        "frames": 60,
+        "seconds": 2,
+        "bytes": 212074,
+        "rawFrames": 60,
+        "rawSeconds": 1.981468,
+        "rawBytes": 441199,
+        "caveat": "Labelled CFR derivative with final empty-frame padding; raw VFR preserved. No Q1 timing pass."
+      }
     },
     {
       "id": "D5",
-      "state": "OPEN"
+      "state": "PASS",
+      "scope": "Isolated fixed-pose face and painted-contour preservation only; moving masks and complete C08 scene lighting OPEN",
+      "rows": [
+        "B15",
+        "U16",
+        "C08"
+      ],
+      "reviewedRevisions": [
+        1,
+        2
+      ],
+      "sheet": "reports/v3-feel/REVIEW/Q3.A/D5.jpg",
+      "sheetSha256": "8ffeed9e359806b3dea4fe72931b8df18ffa5cfa9c2a4129caf9d76eaf3f7e0a",
+      "sourceSha256": "966c395741c10271e3f9760790a1e45a2217657a1bb3aabf48df1aeb17e95e5b",
+      "minimumContrast": {
+        "face": {
+          "gradient": 0.9998960170665294,
+          "localContrast": 0.9890977623717353
+        },
+        "body": {
+          "gradient": 0.9995832729175761,
+          "localContrast": 0.9943344459819349
+        }
+      },
+      "peak": {
+        "ms": 633.3333333333333,
+        "changedPixels": 10482
+      },
+      "seek": [
+        {
+          "intermediateMs": 0,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 1900,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 300,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 1250,
+          "changedChannels": 0
+        },
+        {
+          "intermediateMs": 2000,
+          "changedChannels": 0
+        }
+      ],
+      "roleSupport": [
+        {
+          "role": "rising-colour-body",
+          "ms": 300,
+          "all": 1736,
+          "bodyPixels": 361,
+          "facePixels": 0
+        },
+        {
+          "role": "rising-colour-body",
+          "ms": 500,
+          "all": 12979,
+          "bodyPixels": 5475,
+          "facePixels": 2651
+        },
+        {
+          "role": "rising-colour-body",
+          "ms": 800,
+          "all": 15746,
+          "bodyPixels": 5475,
+          "facePixels": 2651
+        },
+        {
+          "role": "rising-colour-body",
+          "ms": 1100,
+          "all": 10135,
+          "bodyPixels": 3217,
+          "facePixels": 2159
+        },
+        {
+          "role": "rising-colour-body",
+          "ms": 1400,
+          "all": 562,
+          "bodyPixels": 0,
+          "facePixels": 0
+        },
+        {
+          "role": "bounded-light-core",
+          "ms": 300,
+          "all": 263,
+          "bodyPixels": 76,
+          "facePixels": 0
+        },
+        {
+          "role": "bounded-light-core",
+          "ms": 500,
+          "all": 1156,
+          "bodyPixels": 119,
+          "facePixels": 0
+        },
+        {
+          "role": "bounded-light-core",
+          "ms": 800,
+          "all": 1570,
+          "bodyPixels": 119,
+          "facePixels": 0
+        },
+        {
+          "role": "bounded-light-core",
+          "ms": 1100,
+          "all": 1141,
+          "bodyPixels": 0,
+          "facePixels": 0
+        },
+        {
+          "role": "bounded-light-core",
+          "ms": 1400,
+          "all": 151,
+          "bodyPixels": 0,
+          "facePixels": 0
+        }
+      ],
+      "revisionComparison": [
+        {
+          "ms": 1100,
+          "r1ChangedPixels": 7975,
+          "r2ChangedPixels": 6740
+        },
+        {
+          "ms": 1300,
+          "r1ChangedPixels": 5084,
+          "r2ChangedPixels": 2240
+        },
+        {
+          "ms": 1400,
+          "r1ChangedPixels": 2450,
+          "r2ChangedPixels": 366
+        },
+        {
+          "ms": 1500,
+          "r1ChangedPixels": 661,
+          "r2ChangedPixels": 2
+        }
+      ],
+      "viewingVideo": {
+        "fps": 30,
+        "frames": 60,
+        "seconds": 2,
+        "bytes": 218290,
+        "rawFrames": 60,
+        "rawSeconds": 1.967659,
+        "rawBytes": 428255,
+        "caveat": "Labelled viewing derivative; final empty padding; raw retained, no Q1 timing PASS"
+      }
     },
     {
       "id": "D6",
-      "state": "OPEN"
+      "state": "OPEN: r0/r1 reviewed; r2 stronger key poses pending",
+      "source": "tools/v3craft-drills/d6.ts",
+      "learning": "reports/v3-feel/LEARN/Q3.md#d6-study-before-pose-authoring",
+      "revision1": {
+        "film": "tools/v3craft-lab/q3/raw/D6-r1/film.webm",
+        "filmSha256": "e736be4c34d3ec0a05d9c00d9bb2bf56b18cd0a3f5b32e1ee70fd34a66bbae2e",
+        "probe": "tools/v3craft-lab/q3/raw/D6-r1/gpu-probe.json",
+        "sourceSha256": "0bfea0322c223a67dc7d0a256a6af7e5a34b6f05289a38d827f10675234873b8",
+        "frames": 60,
+        "durationSeconds": 1.967189,
+        "bytes": 454084,
+        "maxGapMs": 34.99999999999992,
+        "holdMaxDifference": 0,
+        "seekMaxDifference": 0,
+        "returnIou": 1,
+        "sourceErrors": [],
+        "movieReview": "All full/detail/raw-boundary/private matched and durable cells reviewed; preparation remains restrained; no acceptance."
+      }
     },
     {
       "id": "D7",
@@ -103,5 +453,27 @@
       "id": "D8",
       "state": "OPEN"
     }
-  ]
+  ],
+  "checkpointValidation": {
+    "at": "2026-11-15T15:13:19.940910+00:00",
+    "typecheck": true,
+    "toolingTests": {
+      "tests": 1599,
+      "pass": 1599,
+      "fail": 0
+    },
+    "parity": {
+      "wave1": true,
+      "wave3": true,
+      "boss": true,
+      "baseline": "reports/v3-feel/parity-new.json",
+      "baselineChanged": false
+    },
+    "logs": [
+      "reports/v3-feel/Q3A-drills-typecheck.log",
+      "reports/v3-feel/Q3A-drills-tools.log",
+      "reports/v3-feel/Q3A-drills-parity.log"
+    ],
+    "scope": "Sandbox checkpoint, not full Q3.A completion; production battle code unchanged."
+  }
 }

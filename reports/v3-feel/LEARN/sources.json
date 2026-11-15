@@ -553,5 +553,173 @@
       "Q3.A"
     ],
     "takeaway": "Frozen geometry: static UV0 difference vs panned UV16.868/255 mean,86.70% changed support; measured mechanism only."
+  },
+  {
+    "id": "Q3-T22",
+    "url_or_path": "https://lampz.tugraz.at/~hadley/physikm/script/motion/terminal.en.php",
+    "type": "formal",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "Constant-gravity linear drag has an exact position and velocity solution, supporting deterministic arbitrary seeks."
+  },
+  {
+    "id": "Q3-T23",
+    "url_or_path": "https://threejs.org/docs/pages/BufferAttribute.html",
+    "type": "doc",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "Reuse typed geometry attributes and signal needsUpdate after changes."
+  },
+  {
+    "id": "Q3-X08",
+    "url_or_path": "tools/v3craft-lab/q3/drag-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "352 samples: Euler30 error25.862px; analytic subdivision error2.30e-13px; undamped77 outside samples versus analytic0."
+  },
+  {
+    "id": "Q3-X09",
+    "url_or_path": "tools/v3craft-lab/q3/impact-anchor-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "Two same-burst renders: template chest projects to lower trim; +55px vertical adjustment locates painted breastplate."
+  },
+  {
+    "id": "Q3-T24",
+    "url_or_path": "apps/web/node_modules/three/src/renderers/webgl/WebGLRenderLists.js",
+    "type": "local",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "Group order precedes mesh order in transparent sorting; isolated torso A/B renders confirm the visibility consequence."
+  },
+  {
+    "id": "Q3-X10",
+    "url_or_path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D3",
+    "takeaway": "Final D3 has distinct phase peaks1576/1104/916/603pixels and zero changed channels after five arbitrary seeks; visual scope is isolated motion."
+  },
+  {
+    "id": "Q3-T25",
+    "url_or_path": "https://threejs.org/docs/pages/Texture.html",
+    "type": "doc",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "Texture colour space, filtering, mipmaps and upload premultiplication are independent controls; tile boundaries need explicit protection."
+  },
+  {
+    "id": "Q3-X11",
+    "url_or_path": "tools/v3craft-lab/q3/flipbook-colour-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "GPU readback is linear premultiplied: corrected atlas conversion reduces mean replay error from about39 to0.27 per255."
+  },
+  {
+    "id": "Q3-X12",
+    "url_or_path": "tools/v3craft-lab/q3/flipbook-cadence-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "121 direct samples favour30Hz premultiplied interpolation on average;2px tile extrusion plus half-texel clamp eliminates diagnostic neighbour bleed."
+  },
+  {
+    "id": "Q3-X13",
+    "url_or_path": "tools/v3craft-lab/q3/lamp-motion-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "Narrow opposed weights fold599triangles; broader coherent weighted swing has0folds, fixed crown and7.74\u201310.41px independent lamp motion."
+  },
+  {
+    "id": "Q3-T26",
+    "url_or_path": "https://threejs.org/docs/pages/WebGLRenderer.html",
+    "type": "doc",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "compileAsync prepares programs;initTexture moves image decode/upload out of first visible rendering; installed source confirms hidden-mesh material traversal."
+  },
+  {
+    "id": "Q3-X14",
+    "url_or_path": "tools/v3craft-lab/q3/flipbook-preparation-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "Three cold entries stall86.8\u201392.5ms; explicit program/atlas preparation reduces reveal gaps to16.9\u201317.3ms, with80ms preparation separately recorded."
+  },
+  {
+    "id": "Q3-X15",
+    "url_or_path": "tools/v3craft-lab/q3/flipbook-readability-study.json",
+    "type": "experiment",
+    "topic": "Q3 Q3.A D4",
+    "takeaway": "Actual r1 support proxy compares equal-duration linear versus readable-shape source schedules; final-r2 GPU/film validation remains required."
+  },
+  {
+    "id": "Q3-T27",
+    "url_or_path": "https://threejs.org/docs/pages/Material.html",
+    "type": "doc",
+    "topic": "D5 transparent compositing",
+    "takeaway": "Explicit blend factors, transparent ordering and disabled depth writes separate colour bodies from emissive cores.",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ]
+  },
+  {
+    "id": "Q3-T28",
+    "url_or_path": "https://pelilab.partners.org/papers/Contrast%20in%20Complex%201990.pdf",
+    "type": "paper",
+    "topic": "D5 local contrast",
+    "takeaway": "Local luminance changes affect contrast; plain gradient energy can miss veiling illumination. Our pair-based proxy is not the full Peli bandpass model.",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ]
+  },
+  {
+    "id": "Q3-X16",
+    "url_or_path": "tools/v3craft-lab/q3/blend-study.json",
+    "type": "experiment",
+    "topic": "D5 actual WebGL compositing",
+    "takeaway": "Corrected group-order comparison: split body/core retains90.80% face and85.53% body normalized local contrast; broad front methods visibly wash paint out.",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ]
+  },
+  {
+    "id": "Q3-T29",
+    "url_or_path": "https://en.esotericsoftware.com/spine-weights",
+    "type": "doc",
+    "topic": "D6 pose mechanics",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Bind in setup, use purposeful weights, and inspect deformation at animated extremes."
+  },
+  {
+    "id": "Q3-T30",
+    "url_or_path": "https://us.esotericsoftware.com/blog/Mesh-weight-workflows",
+    "type": "breakdown",
+    "topic": "D6 pose mechanics",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Plan mesh purpose and minimal bone influences before posing; excessive deform keys obscure control."
+  },
+  {
+    "id": "Q3-T31",
+    "url_or_path": "https://en.esotericsoftware.com/spine-graph",
+    "type": "doc",
+    "topic": "D6 pose mechanics",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Stepped interpolation holds a value; separate eased keys control preparation/recovery spacing."
+  },
+  {
+    "id": "Q3-X17",
+    "url_or_path": "tools/v3craft-lab/q3/pose-study.json",
+    "type": "experiment",
+    "topic": "D6 pose methods",
+    "topics": [
+      "Q3",
+      "Q3.A"
+    ],
+    "takeaway": "Actual Soot pose comparison measures silhouette changes and foot stability; visual joint continuity remains a separate decision."
   }
 ]
