@@ -110,5 +110,110 @@
     "type": "local",
     "url_or_path": "reports/v3-feel/CRAFT/REFERENCE-BREAKDOWN.md",
     "takeaway": "Prior reference study has x2/x3 speed and 100 ms precision caveats; do not use it as the game clock."
+  },
+  {
+    "id": "Q2-paper",
+    "url_or_path": "https://www.eecs.harvard.edu/shieber/Biblio/Papers/tog-final.pdf",
+    "type": "paper",
+    "topic": "Q2",
+    "takeaway": "A finite candidate set and overlap/proximity costs make small-scene label placement explicit."
+  },
+  {
+    "id": "Q2-alpha",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Read actual rendered alpha in image coordinates rather than texture or transformed geometry bounds."
+  },
+  {
+    "id": "Q2-box",
+    "url_or_path": "https://threejs.org/docs/pages/Box3.html",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Geometry AABBs include transparent corners; useful for framing but not opaque-size equality."
+  },
+  {
+    "id": "Q2-flip",
+    "url_or_path": "https://esotericsoftware.com/forum/d/11005-issues-with-flipping-skeleton-via-scale",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Root reflection changes winding; transform all corners and derive sign from native facing."
+  },
+  {
+    "id": "Q2-bounds",
+    "url_or_path": "https://esotericsoftware.com/spine-bounding-boxes",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Feature regions can be explicitly attached to transformed character parts."
+  },
+  {
+    "id": "Q2-local",
+    "url_or_path": "apps/web/src/game/cardrpg/stage/layout-c2.ts",
+    "type": "local",
+    "topic": "Q2",
+    "takeaway": "Rear scale and coreRatio produce inconsistent sizes; lower HUD removes 126 pixels."
+  },
+  {
+    "id": "Q2-review",
+    "url_or_path": "reports/v3-feel/REVIEW/Q1/REVIEW.md",
+    "type": "local",
+    "topic": "Q2",
+    "takeaway": "Actual prior films show reversed ram, small units and persistent number columns."
+  },
+  {
+    "id": "Q2-experiment",
+    "url_or_path": "tools/v3craft-lab/q2/results.json",
+    "type": "experiment",
+    "topic": "Q2",
+    "takeaway": "Wide alpha-normalized layout spans .879-.939 with no conservative face/HUD collisions; local swept labels avoid 6-12 old face overlaps."
+  },
+  {
+    "id": "Q2-render",
+    "url_or_path": "https://threejs.org/docs/pages/WebGLRenderer.html",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Render isolated actual runtime actors on clear alpha without changing game assets."
+  },
+  {
+    "id": "Q2-sharp",
+    "url_or_path": "https://sharp.pixelplumbing.com/api-resize/",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Explicit crop coordinates and aspect-preserving resampling yield small comparable sheets."
+  },
+  {
+    "id": "Q2-actionability",
+    "url_or_path": "https://playwright.dev/docs/actionability",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Normal clicks must receive events; never force through an occluding button."
+  },
+  {
+    "id": "Q2-hit-testing",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "The topmost element at viewport coordinates reveals actual pointer occlusion."
+  },
+  {
+    "id": "Q2-barycentric",
+    "url_or_path": "https://pbr-book.org/4ed/Shapes/Triangle_Meshes",
+    "type": "formal",
+    "topic": "Q2",
+    "takeaway": "Barycentric coordinates transfer sampled texture points through a posed triangle."
+  },
+  {
+    "id": "Q2-buffer",
+    "url_or_path": "https://threejs.org/docs/pages/BufferGeometry.html",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Indexed position and UV arrays describe the same triangle corners."
+  },
+  {
+    "id": "Q2-texture",
+    "url_or_path": "https://threejs.org/docs/pages/Texture.html",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Respect image orientation and texture flipY when sampling opacity."
   }
 ]

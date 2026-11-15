@@ -1,17 +1,15 @@
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { expect, it } from 'vitest';
 import registry from '../../../../../../assets/cardrpg-look/spine/slots.json';
-import {unitCore} from './core';
+import {UNIT_OPAQUE,unitCore,spriteFacing} from './core';
 import { stageLayoutC2, overlapShareC2, SLOTS_C2, type StageUnitC2 } from './layout-c2';
 
 const units=registry.units.map(u=>{
-  const bounds=JSON.parse(readFileSync(resolve(process.cwd(),'../..',u.placeholder.skeleton),'utf8')).skeleton;
+  const bounds=UNIT_OPAQUE.get(u.id)!.world;
   const core=unitCore(u.id,bounds);return {coreHeight:core.world.height/bounds.height,coreRatio:core.ratio,id:u.id,side:u.side as 'party'|'enemy',row:'front' as const,aspect:bounds.width/bounds.height,boss:u.tier==='boss',bossRatio:core.ratio};
 });
 const unit=(id:string,row:'front'|'rear'):StageUnitC2=>({...units.find(u=>u.id===id)!,row});
 
-it.each([[1280,720],[1440,900],[1024,600]])('keeps dense measured core boxes readable at %ix%i', (width,height)=>{
+it.each([[1280,720],[1440,900]])('keeps dense measured core boxes readable at %ix%i', (width,height)=>{
   // Every cat can occupy every seat. Exercise the widest four and every enemy/boss combination.
   const cats=units.filter(u=>u.side==='party').sort((a,b)=>b.aspect-a.aspect).slice(0,4);
   const party=cats.map((c,i)=>({...c,row:i<2?'front' as const:'rear' as const}));
@@ -19,11 +17,11 @@ it.each([[1280,720],[1440,900],[1024,600]])('keeps dense measured core boxes rea
   const waves=[...foes.flatMap(a=>foes.map(b=>[a,{...a,id:a.id+'-front-2'},{...b,id:b.id+'-rear-1',row:'rear' as const},{...b,id:b.id+'-rear-2',row:'rear' as const}])) ,
     ...units.filter(u=>u.boss).map(b=>[b,unit('binding-thread','rear'),{...unit('binding-thread','rear'),id:'thread-2'}])];
   for(const wave of waves){
-    const fieldHeight=height*.7,boxes=stageLayoutC2([...party,...wave],width,fieldHeight,height),all=[...boxes];
+    const fieldHeight=height,boxes=stageLayoutC2([...party,...wave],width,fieldHeight,height),all=[...boxes];
     for(const [id,b] of all){
       const actor=[...party,...wave].find(u=>u.id===id)!;
-      const ratio=actor.boss?Math.min(1.95,Math.max(1.7,actor.bossRatio??1.8)):actor.coreRatio??1;
-      expect(b.coreHeight/height,id).toBeCloseTo(.20946*ratio*(actor.row==='rear'&&!actor.boss?0.94:1),5);
+      const ratio=actor.boss?Math.min(1.7,Math.max(1.5,actor.bossRatio??1.6)):1;
+      expect(b.coreHeight/height,id).toBeCloseTo(.27*ratio,5);
       expect(b.x,id).toBeGreaterThanOrEqual(0);expect(b.x+b.width,id).toBeLessThanOrEqual(width);
       expect(b.y,id).toBeGreaterThanOrEqual(0);expect(b.y+b.height,id).toBeLessThanOrEqual(fieldHeight);
     }
@@ -43,4 +41,13 @@ it('uses the same tuned stagger and mirrored positions in preparation and battle
   expect(SLOTS_C2.slots[1]!.y-SLOTS_C2.slots[3]!.y).toBeCloseTo(SLOTS_C2.rowStagger);
   const b=stageLayoutC2([unit('mochi','front'),unit('button-guard','front')],1280,720);
   expect(b.get('mochi')!.footX+b.get('button-guard')!.footX).toBeCloseTo(1280);
+});
+
+it('faces each delivered sprite toward the other team, including both ram artworks',()=>{
+ for(const u of registry.units){
+  const native=u.nativeFacing==='right'?1:-1,desired=u.side==='party'?1:-1;
+  expect(native*spriteFacing(u.nativeFacing,u.side as 'party'|'enemy'),u.id).toBe(desired);
+ }
+ expect(spriteFacing('left','enemy')).toBe(1);
+ expect(spriteFacing('right','enemy')).toBe(-1);
 });

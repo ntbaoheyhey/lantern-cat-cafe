@@ -1,6 +1,6 @@
 import type {SceneView} from '../../squad/turn3d/scene';
 import type {Rect} from '../../squad/turn3d/label-layout';
-import {bodyStatuses,STATUS_COLOR,type BodyStatus} from './status';
+import {bodyStatuses,STATUS_COLOR,STATUS_PATH,type BodyStatus} from './status';
 import {ShieldPulses} from './clarity';
 export class BodyFx {
  readonly canvas=document.createElement('canvas');
@@ -39,9 +39,11 @@ export class BodyFx {
    else if(this.frozen.has(unit.id)&&time-this.frozen.get(unit.id)!>.35)this.frozen.delete(unit.id);
    const shatter=!kinds.includes('freeze')&&this.frozen.has(unit.id)?(time-this.frozen.get(unit.id)!)/.35:-1;
    const shield=this.shields.sample(unit.id,unit.shield??0,kinds.includes('shield'),time,shieldTargets.has(unit.id));
+   let marker=0;
    for(const kind of kinds){
     if(kind==='shield'&&!shield.visible)continue;
-    this.draw(kind,cx,cy,r,feet,b.y,t,kind==='shield'?shield.alpha:1);
+    if(kind==='shield')this.draw(kind,cx,cy,r,feet,b.y,t,shield.alpha);
+    else {c.save();c.translate(cx-10+marker++*18,feet-19);c.scale(.7,.7);c.fillStyle='#211c2be6';c.fillRect(-3,-3,26,26);c.strokeStyle=STATUS_COLOR[kind];c.lineWidth=2;c.stroke(new Path2D(STATUS_PATH[kind]));c.restore();}
     if(kind==='shield')this.audit.bubbles.push({id:unit.id,age:shield.age,alpha:shield.alpha,interiorAlpha:shield.alpha*16/255});
    }
    if(shatter>=0&&!view.reducedMotion){c.fillStyle='#bdf4ff';c.globalAlpha=1-shatter;for(let i=0;i<12;i++){const a=i*Math.PI/6;c.save();c.translate(cx+Math.cos(a)*r*(1+shatter),cy+Math.sin(a)*r*(1+shatter));c.rotate(a);c.fillRect(-3,-8,6,16);c.restore();}c.globalAlpha=1;}

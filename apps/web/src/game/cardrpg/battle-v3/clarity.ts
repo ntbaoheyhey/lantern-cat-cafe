@@ -13,9 +13,7 @@ export class ShieldPulses {
  retain(ids:Set<string>){for(const id of this.units.keys())if(!ids.has(id))this.units.delete(id);}
  clear(){this.units.clear();}
 }
-/** Linear-light multipliers, with status strength <=24% and rear dimming <=6%. */
-export function bodyTint(kinds:readonly BodyStatus[],time:number,rear:boolean,reduced=false):[number,number,number]{
- const pulse=reduced?.12:.12+.12*(.5+.5*Math.sin(time*Math.PI*2/1.2));
- const color=kinds.includes('freeze')?[.35,.8,1]:kinds.includes('poison')?[.55,1,.25]:kinds.includes('burn')?[1,.44,.12]:[1,1,1];
- return color.map(v=>(1-(1-v)*pulse)*(rear?.94:1)) as [number,number,number];
+/** Persistent conditions use local glyphs; keep authored body paint intact. */
+export function bodyTint(_kinds:readonly BodyStatus[],_time:number,_rear:boolean,_reduced=false):[number,number,number]{
+ return [1,1,1];
 }

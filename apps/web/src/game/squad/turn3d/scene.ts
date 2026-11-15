@@ -82,7 +82,7 @@ export interface SceneView {
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
-export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean; textLane?: LabelInput['head'] }
+export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean; textLane?: LabelInput['head']; body?:LabelInput['head']; face?:LabelInput['head'] }
 interface Puppet { bossPhase:number; phaseAt:number; enteredAt:number; utensil?:CardUtensil; face?:CardFace|CardEnemyExpression; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';

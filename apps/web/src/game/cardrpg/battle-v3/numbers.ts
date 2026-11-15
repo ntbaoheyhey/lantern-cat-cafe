@@ -1,9 +1,10 @@
 import type {EffectFrame,EffectPlan} from '../../squad/turn3d/effects';
 import type {Anchor} from '../../squad/turn3d/scene';
-import {puppetNumberRows} from '../../squad/turn3d/look-puppet-numbers';
+import {visibleImpactLabel} from '../../squad/turn3d/impact-labels';
+import {NUMBER_LIFETIME_MS,placeNumber,type NumberFootprint} from './number-layout';
+import type {Rect} from '../../squad/turn3d/label-layout';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
-import {presentationTier} from './presentation';
-import {numberPieces,numberRecipients,numberOffset} from './number-pieces';
+import {numberRecipients,numberOffset} from './number-pieces';
 import {paintNumberBadge,type NumberBadge,type BadgePlan} from './number-badges';
 type Glyph={x:number;y:number;width:number;height:number};
 type Atlas={canvas:HTMLCanvasElement;glyphs:Map<string,Glyph>;digitHeight:number};
@@ -14,7 +15,7 @@ export class BattleNumbers {
  readonly drawn:{key:string;id:string;text:string;x:number;y:number;width:number;height:number;glyphHeight:number;kind:string;born:number}[]=[];
  private c:CanvasRenderingContext2D;private anchors:readonly Anchor[]=[];
  private atlases=new Map<string,Atlas>();private chars='0123456789−+!CRIT◇×';
- private plan:EffectPlan|null=null;private pending:ReturnType<typeof puppetNumberRows>=[];
+ private plan:EffectPlan|null=null;private pending:{id:string;labels:EffectPlan['events'][number][]}[]=[];
  private shown=new Set<string>();private bursts:Burst[]=[];private now=0;private last=0;private frameAt=-1;
  constructor(private host:HTMLElement){
   this.c=this.canvas.getContext('2d')!;this.canvas.dataset.puppetNumbers='true';this.canvas.setAttribute('aria-hidden','true');
@@ -53,52 +54,61 @@ export class BattleNumbers {
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
   const c=this.c;c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);this.drawn.length=0;
   this.canvas.hidden=!enabled;this.host.dataset.puppetNumbers=String(enabled);if(!enabled)return;
-  if(frame?.plan!==this.plan){this.plan=frame?.plan??null;this.pending=frame?puppetNumberRows({...frame.plan,targetIds:numberRecipients(frame.plan)},presentation):[];this.shown.clear();this.frameAt=-1;}
+  if(frame?.plan!==this.plan){this.plan=frame?.plan??null;this.bursts.length=0;this.pending=frame?numberRecipients(frame.plan).map(id=>({id,labels:frame.plan.events.filter(e=>e.targetIds.includes(id)&&visibleImpactLabel(e))})):[];this.shown.clear();this.frameAt=-1;}
   if(frame&&frame.elapsed<this.frameAt){this.shown.clear();this.bursts.length=0;}
   if(frame){
-   this.frameAt=frame.elapsed;const contact=frame.plan.beats[2]!.start,tier=presentationTier(frame.plan);
+   this.frameAt=frame.elapsed;const contact=frame.plan.beats[2]!.start;
    const scale=Math.min(1.3,Math.max(.65,this.host.ownerDocument.defaultView!.innerHeight/720));
-   this.pending.forEach((row,targetIndex)=>{
-    const a=this.anchors.find(a=>a.id===row.id);if(!a)return;let stack=0;
+   this.pending.forEach(row=>{
+    const a=this.anchors.find(a=>a.id===row.id);if(!a)return;
     row.labels.filter(e=>['damage','heal','shield','fizzle'].includes(e.type)&&!(e.type==='fizzle'&&(frame.plan as BadgePlan).numberBadges?.some(b=>b.targetId===row.id&&b.kind!=='absorb'))).forEach((label,labelIndex)=>{
-     const event=frame.plan.events.find(e=>e.targetIds.includes(row.id)&&e.type===label.type);
-     const dot=!!(event&&'dot' in event&&event.dot),pieces=numberPieces(label.amount,label.type==='damage'&&!dot?(tier==='ultimate'?3:tier==='active'?2:1):1);
+     const dot=presentation?.kinds.get(label.seq)==='dot',pieces=[label.amount];
      pieces.forEach((amount,i)=>{
-      const key=`${frame.plan.id}:${row.id}:${labelIndex}:${i}`,offset=numberOffset(frame.plan.duration-contact,presentation?.offsets.get(row.id)??targetIndex*25,i,pieces.length);
-      const stackIndex=stack++;if(this.shown.has(key)||frame.elapsed<contact+offset)return;this.shown.add(key);
+      const key=`${frame.plan.id}:${row.id}:${labelIndex}:${i}`,offset=numberOffset(frame.plan.duration-contact,0,i,pieces.length);
+      if(this.shown.has(key)||frame.elapsed<contact+offset)return;this.shown.add(key);
       const text=label.type==='fizzle'?'×':(label.type==='heal'?'+':label.type==='shield'?'◇':'−')+amount;
-      const digitHeight=(dot?30:label.critical?70:label.type==='fizzle'?30:46)*scale;
-      this.bursts.push({key,id:row.id,text,x:Math.max(80,Math.min(width-80,a.textLane?a.textLane.x+a.textLane.width/2:a.x)),
-       y:Math.max(digitHeight,Math.min(height-40,(a.textLane?.y??a.footY-100)+20-stackIndex*50*scale)),at:this.now-(frame.elapsed-contact-offset),height:digitHeight,
-       color:label.type==='heal'?'#55eb9b':label.type==='shield'?'#83ddff':label.type==='fizzle'?'#c1bfd1':label.critical?'#ff903e':'#ffc86a',critical:label.critical,kind:dot?'dot':label.type});
+      const digitHeight=(dot?28:label.critical?46:label.type==='fizzle'?28:36)*scale;
+      this.addBurst({key,id:row.id,text,x:a.body?a.body.x+a.body.width/2:a.x,
+       y:(a.body?a.body.y+a.body.height:a.footY)-18*scale,at:this.now-(frame.elapsed-contact-offset),height:digitHeight,
+       color:label.type==='heal'?'#55eb9b':label.type==='shield'?'#83ddff':label.type==='fizzle'?'#c1bfd1':label.critical?'#ff903e':'#ffc86a',critical:!!label.critical,kind:dot?'dot':label.type});
      });
     });
    });
-   const stacks=new Map<string,number>();
+
    for(const [index,badge] of ((frame.plan as BadgePlan).numberBadges??[]).entries()){
     const a=this.anchors.find(a=>a.id===badge.targetId);if(!a)continue;
-    const stack=stacks.get(badge.targetId)??0;stacks.set(badge.targetId,stack+1);
+
     const key=`${frame.plan.id}:badge:${index}`,offset=Math.min(index*35,Math.max(0,frame.plan.duration-contact-40));
     if(this.shown.has(key)||frame.elapsed<contact+offset)continue;this.shown.add(key);
-    this.bursts.push({key,id:badge.targetId,text:badge.kind==='absorb'?String(badge.amount):'',badge:badge.kind,kind:badge.kind,critical:false,height:28*scale,color:badge.kind==='absorb'?'#83ddff':badge.kind==='resist'?'#c9adf3':'#ffe0a2',x:Math.max(45,Math.min(width-45,a.x+40*scale)),y:Math.max(28*scale,Math.min(height-32,(a.textLane?.y??a.footY-100)+75*scale+stack*32*scale)),at:this.now-(frame.elapsed-contact-offset)});
+    this.addBurst({key,id:badge.targetId,text:badge.kind==='absorb'?String(badge.amount):'',badge:badge.kind,kind:badge.kind,critical:false,height:28*scale,color:badge.kind==='absorb'?'#83ddff':badge.kind==='resist'?'#c9adf3':'#ffe0a2',x:a.body?a.body.x+a.body.width/2:a.x,y:(a.body?a.body.y+a.body.height:a.footY)-18*scale,at:this.now-(frame.elapsed-contact-offset)});
    }
   }
-  this.bursts=this.bursts.filter(b=>this.now-b.at<850);
+  this.bursts=this.bursts.filter(b=>this.now-b.at<NUMBER_LIFETIME_MS);
+  const occupied:Rect[]=[],faces=this.anchors.filter(a=>a.visible&&a.face).map(a=>a.face!);
+  const scale=Math.min(1.3,Math.max(.65,this.host.ownerDocument.defaultView!.innerHeight/720));
   for(const b of this.bursts){
-   const age=this.now-b.at;if(age<0)continue;const t=age/850,pop=reduced?1:1+(b.critical?.4:.1)*(1-Math.min(1,age/160)),gh=b.height*pop,y=b.y-(reduced?0:48*t);
-   const textWidth=this.textWidth(b.text,gh,b.color),badgeSize=b.badge?gh:0,gap=b.badge&&b.text?5:0,inkWidth=textWidth+badgeSize+gap,angle=b.critical&&!reduced?.07:0;
-   // Include the crit tag and tilted corners when constraining rising stacks.
-   const halfWidth=Math.max(inkWidth/2,b.critical?this.textWidth('CRIT',20,'#ffad55')/2:0);
-   const top=b.critical?Math.max(gh/2,gh*.75+10):gh/2;
-   const marginX=halfWidth*Math.cos(angle)+top*Math.sin(angle)+4;
-   const marginTop=top*Math.cos(angle)+halfWidth*Math.sin(angle)+4;
-   const marginBottom=gh/2*Math.cos(angle)+halfWidth*Math.sin(angle)+4;
-   const x=Math.max(marginX,Math.min(width-marginX,b.x)),safeY=Math.max(marginTop,Math.min(height-marginBottom,y));
-   c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(x,safeY);if(angle)c.rotate(-angle);
+   const age=this.now-b.at;if(age<0)continue;const t=age/NUMBER_LIFETIME_MS;
+   const pop=reduced?1:1+(b.critical?.18:.1)*(1-Math.min(1,age/160)),gh=b.height*pop;
+   const maxGh=b.height*(reduced?1:b.critical?1.18:1.1),tagHeight=14*scale;
+   const textWidth=this.textWidth(b.text,gh,b.color),badgeSize=b.badge?gh:0,gap=b.badge&&b.text?5:0,inkWidth=textWidth+badgeSize+gap;
+   const maxWidth=this.textWidth(b.text,maxGh,b.color)+(b.badge?maxGh:0)+gap;
+   const footprint:NumberFootprint={halfWidth:Math.max(maxWidth/2,b.critical?this.textWidth('CRIT',tagHeight,'#ffad55')/2:0)+4,top:(b.critical?maxGh*.75+tagHeight/2:maxGh/2)+4,bottom:maxGh/2+4,rise:reduced?0:24*scale};
+   const anchor=this.anchors.find(a=>a.id===b.id),body=anchor?.body??{x:b.x-50,y:(anchor?.footY??b.y)-160,width:100,height:160};
+   const placed=placeNumber(body,footprint,width,height,faces,occupied,scale,{x:b.x,y:b.y});
+   if(!placed)continue;
+   b.x=placed.x;b.y=placed.y;occupied.push(placed.box);
+   const x=b.x,y=b.y-footprint.rise*t;
+   c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(x,y);
    if(b.badge)paintNumberBadge(c,b.badge,-(textWidth+gap)/2,0,badgeSize);
-   if(b.text)this.text(b.text,(badgeSize+gap)/2,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,20,'#ffad55');c.restore();
-   this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-inkWidth/2,y:safeY-gh/2,width:inkWidth,height:gh,glyphHeight:b.text?gh:0,kind:b.kind,born:b.at});
+   if(b.text)this.text(b.text,(badgeSize+gap)/2,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,tagHeight,'#ffad55');c.restore();
+   const top=b.critical?gh*.75+tagHeight/2:gh/2,actualWidth=Math.max(inkWidth,b.critical?this.textWidth('CRIT',tagHeight,'#ffad55'):0);
+   this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-actualWidth/2,y:y-top,width:actualWidth,height:top+gh/2,glyphHeight:b.text?gh:0,kind:b.kind,born:b.at});
   }
+ }
+ private addBurst(burst:Burst){
+  this.bursts=this.bursts.filter(b=>this.now-b.at<NUMBER_LIFETIME_MS);
+  while(this.bursts.filter(b=>b.id===burst.id).length>=3){const first=this.bursts.findIndex(b=>b.id===burst.id);this.bursts.splice(first,1);}
+  this.bursts.push(burst);
  }
  dispose(){this.canvas.remove();delete this.host.dataset.puppetNumbers;this.atlases.clear();this.bursts.length=0;}
 }

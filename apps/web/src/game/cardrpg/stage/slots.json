@@ -1,87 +1,87 @@
 {
-  "version": 4,
-  "coordinates": "stage-normalized feet; unitHeight is semantic core / whole desktop viewport height",
-  "unitHeight": 0.20946,
-  "rowStep": 0.3034,
+  "version": 5,
+  "coordinates": "stage-normalized opaque feet; unitHeight is rendered alpha>=128 height / whole desktop viewport height",
+  "unitHeight": 0.27,
+  "rowStep": 0.29,
   "slots": [
     {
       "id": "FRONT-UP",
       "row": "front",
-      "x": 0.375,
-      "y": 0.5749,
+      "x": 0.32,
+      "y": 0.54,
       "icon": "shield"
     },
     {
       "id": "FRONT-DOWN",
       "row": "front",
-      "x": 0.4,
-      "y": 0.8783,
+      "x": 0.35,
+      "y": 0.83,
       "icon": "shield"
     },
     {
       "id": "BACK-UP",
       "row": "rear",
-      "x": 0.225,
-      "y": 0.4232,
+      "x": 0.12,
+      "y": 0.4,
       "icon": "bow"
     },
     {
       "id": "BACK-DOWN",
       "row": "rear",
-      "x": 0.25,
-      "y": 0.7266,
+      "x": 0.15,
+      "y": 0.69,
       "icon": "bow"
     }
   ],
   "boss": {
-    "x": 0.65,
-    "y": 0.8332,
-    "minRatio": 1.7,
-    "maxRatio": 1.95
+    "x": 0.69,
+    "y": 0.81,
+    "minRatio": 1.5,
+    "maxRatio": 1.7
   },
   "bossHelpers": [
     {
-      "x": 0.88,
-      "y": 0.4314
+      "x": 0.93,
+      "y": 0.42
     },
     {
-      "x": 0.91,
-      "y": 0.825
+      "x": 0.93,
+      "y": 0.74
     }
   ],
-  "rearScale": 0.94,
-  "rearDim": 0.06,
-  "rowStagger": 0.1517,
+  "rearScale": 1,
+  "rearDim": 0,
+  "rowStagger": 0.14,
   "enemySix": [
     {
       "id": "ENEMY-FRONT-UP",
-      "x": 0.625,
-      "y": 0.5749
+      "x": 0.6,
+      "y": 0.54
     },
     {
       "id": "ENEMY-FRONT-DOWN",
       "x": 0.6,
-      "y": 0.8783
+      "y": 0.83
     },
     {
       "id": "ENEMY-MID-UP",
-      "x": 0.76,
-      "y": 0.4232
+      "x": 0.75,
+      "y": 0.4
     },
     {
       "id": "ENEMY-MID-DOWN",
-      "x": 0.735,
-      "y": 0.7266
+      "x": 0.75,
+      "y": 0.69
     },
     {
       "id": "ENEMY-REAR-UP",
-      "x": 0.9,
-      "y": 0.538
+      "x": 0.91,
+      "y": 0.54
     },
     {
       "id": "ENEMY-REAR-DOWN",
-      "x": 0.875,
-      "y": 0.8414
+      "x": 0.91,
+      "y": 0.83
     }
   ]
 }

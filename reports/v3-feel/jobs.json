@@ -237,5 +237,64 @@
     "log": "reports/v3-feel/Q1-craft-sheets.log",
     "started": "2026-11-15T07:32:47.864644+00:00",
     "finished": true
+  },
+  "q2Capture": {
+    "pid": 53854,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q2",
+      "--seconds",
+      "30",
+      "--video-seconds",
+      "30",
+      "--frame-marker"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-capture.log",
+    "started": "2026-11-15T09:45:37.067929+00:00",
+    "finished": true,
+    "status": "three films complete; zero page errors; all capture parity checks true",
+    "ended": "2026-11-15T09:49:36.274416+00:00"
+  },
+  "q2PosePixels": {
+    "pid": 55255,
+    "command": [
+      "node",
+      "tools/v3craft-lab/q2/pose-pixels.mjs"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-pose-pixels.log",
+    "started": "2026-11-15T09:49:36.276806+00:00",
+    "finished": true,
+    "ended": "2026-11-15T09:50:37.761253+00:00"
+  },
+  "q2Sheets": {
+    "pid": 55256,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3feel/review-sheets.py",
+      "Q2"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-sheets.log",
+    "started": "2026-11-15T09:49:36.279237+00:00",
+    "finished": true,
+    "ended": "2026-11-15T09:50:37.761083+00:00"
+  },
+  "q2Regression": {
+    "pid": 55644,
+    "command": [
+      "node",
+      "scripts/v3feel/regress.mjs",
+      "Q2"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-regression.log",
+    "started": "2026-11-15T09:50:37.831286+00:00",
+    "finished": true,
+    "status": "typecheck/unit/parity PASS; browser 431/435; A/B historical/future failures retained",
+    "ended": "2026-11-15T09:59:52Z"
   }
 }

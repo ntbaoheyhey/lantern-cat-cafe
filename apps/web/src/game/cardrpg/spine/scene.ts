@@ -23,7 +23,7 @@ import { SPINE_SKILLS, type SpineSocket } from './config';
 import { fixedActionClipTime,retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { stageLayoutC2 } from '../stage/layout-c2';
-import {unitCore,ELEMENT_COLORS} from '../stage/core';
+import {unitCore,unitFace,spriteFacing,ELEMENT_COLORS} from '../stage/core';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
@@ -177,7 +177,7 @@ export class SpineScene {
   for(const unit of view.actors){
    const entry=this.actors.get(unit.id);if(!entry)continue;
    if(unit.hp<=0&&this.homes.has(unit.id))continue;
-   const actor=entry.actor,core=unitCore(entry.asset,actor.bounds),box=layout?.get(unit.id),facing=unit.side==='enemy'?-1:1;
+   const actor=entry.actor,core=unitCore(entry.asset,actor.bounds),box=layout?.get(unit.id),facing=spriteFacing(actor.unit.nativeFacing,unit.side);
    const base=stagePosition(unit.side,entry.lane,actor.unit.tier==='boss',view.boss,this.worldWidth);
    if(box){base.scale=box.coreHeight/core.world.height;base.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*base.scale*facing;base.y=PAINT.worldHeight-box.footY-core.world.y*base.scale;}
    this.homes.set(unit.id,{...base,order:box?box.order:10+Math.round((1-base.y/PAINT.worldHeight)*30),point:{x:(base.x+(actor.bounds.x+actor.bounds.width/2)*base.scale*facing+this.worldWidth/2)/pixelsToWorld,y:(PAINT.worldHeight-base.y-core.world.y*base.scale)/pixelsToWorld,core:core.world.height*base.scale/pixelsToWorld}});
@@ -195,7 +195,7 @@ export class SpineScene {
    const deathAge=unit.hp<=0?time-entry.koAt:0;
    actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);material.opacity=unit.hp<=0?Math.max(0,1-deathAge/.6):1;}});
    actor.root.visible=unit.hp>0||deathAge<.6;
-   actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set((unit.side==='enemy'?-1:1)*position.scale,position.scale,1);actor.setOrder(home.order);
+   actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set(spriteFacing(actor.unit.nativeFacing,unit.side)*position.scale,position.scale,1);actor.setOrder(home.order);
    entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
    entry.ring.visible=unit.hp>0;entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(core.world.height*position.scale*.38,core.world.height*position.scale*.095,1);entry.ring.material.color.set(ELEMENT_COLORS[entry.asset]??PAINT.rose);
    const phase=view.bossPhases?.[unit.id]??1;
@@ -246,7 +246,7 @@ export class SpineScene {
    }
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
-   const facing=unit.side==='enemy'?-1:1,footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
+   const facing=spriteFacing(actor.unit.nativeFacing,unit.side),footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
    actor.root.scale.set(facing*position.scale*sx,position.scale*sy,1);actor.root.rotation.z=-angle;
    const cos=Math.cos(-angle),sin=Math.sin(-angle);
    actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
@@ -309,7 +309,7 @@ export class SpineScene {
   this.anchors.length=0;const labels:LabelInput[]=[],text:LabelInput[]=[],bodies:Rect[]=[];
   for(const unit of view.actors){const entry=this.actors.get(unit.id);if(!entry)continue;
    const actor=entry.actor,hp=this.screen(actor.socket('hpAnchor',this.scratch)),face=this.screen(actor.socket('head',this.scratch)),foot=this.screen(actor.socket('feet',this.scratch)),body=this.bounds(entry);
-   const anchor:Anchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
+   const anchor:Anchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,body,face:this.bounds(entry,unitFace(entry.asset,actor.bounds)),visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
    if(unit.hp>0)bodies.push(body);
    if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:view.formationC2?40:52,head:body});
    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});
@@ -334,7 +334,7 @@ export class SpineScene {
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
- sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox={x:coreBox.x+coreBox.width*.08,y:coreBox.y,width:coreBox.width*.84,height:coreBox.height*.44};return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
+ sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.bounds(entry,unitFace(entry.asset,entry.actor.bounds));return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
  dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}

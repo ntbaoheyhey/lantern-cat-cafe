@@ -19,12 +19,12 @@ export function stageLayoutC2(units: readonly StageUnitC2[], width: number, heig
     }
     const seat=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss?contract.enemySix[seatIndex]!:contract.slots[seatIndex%4]!;
     const helperSeat=unit.side==='enemy'&&hasBoss&&!unit.boss?contract.bossHelpers[unit.seat!==undefined?unit.seat%2:helper++%2]!:null;
-    const ratio=unit.boss?Math.max(contract.boss.minRatio,Math.min(contract.boss.maxRatio,unit.bossRatio??1.8)):unit.coreRatio??1;
-    const coreHeight=viewportHeight*contract.unitHeight*ratio*(unit.row==='rear'&&!unit.boss?contract.rearScale:1);
+    const ratio=unit.boss?Math.max(contract.boss.minRatio,Math.min(contract.boss.maxRatio,unit.bossRatio??1.6)):1;
+    const coreHeight=viewportHeight*contract.unitHeight*ratio;
     const h=coreHeight/(unit.coreHeight??1),w=h*unit.aspect;
     const seatX=unit.side==='party'||enemyCapacity>4?seat.x:1-seat.x;
     const requestedX=width*(unit.boss?contract.boss.x:helperSeat?.x??seatX);
-    const footX=Math.max(w/2+width*.005,Math.min(width-w/2-width*.005,requestedX));
+    const footX=Math.max(w/2+width*.015,Math.min(width-w/2-width*.015,requestedX));
     // Leave room for health/status marks above the complete silhouette.
     const footY=Math.max(h+height*.07,Math.min(height*.97,height*(unit.boss?contract.boss.y:helperSeat?.y??seat.y)));
     return [unit.id,{x:footX-w/2,y:footY-h,width:w,height:h,coreHeight,footX,footY,order:Math.round(footY*100),slot:unit.boss?'BOSS':helperSeat?`HELPER-${unit.seat??helper}`:seat.id}];

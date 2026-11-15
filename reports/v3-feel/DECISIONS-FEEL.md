@@ -230,3 +230,13 @@ Recorder draft (not runtime-validated): adds independent RAF, render-start and r
 CRAFT PROMPT ADOPTED 2026-11-15T07:16:07.130794+00:00
 
 2026-11-15T09:27:05.747051+00:00 — Q1 timebox result, LEARN/Q1.md. Resumed from disk without redoing C0. All 84 current windows have pixel notes, including explicit 30 s truncations. Fresh typecheck, 1,599 FEEL tooling tests, combat parity and all E3–E5 economy gates PASS. Schedule plans retain 800/350/250 ms basics and 2200/1100/600 ms ultimates; all actual scheduling overlaps are zero at 0.001 ms numerical precision. Raw roundoff maxima are retained. A single marker-derived clock-origin translation leaves residual maxima 33.867/33.467/50.233 ms (wave1/wave3/boss); the unchanged 33 ms video gate FAILS. No per-action calibration, threshold change, recorder change, or product change. Keep Q1 OPEN and move to Q2 under section 0.8, returning in Q9 with direct phase-boundary pixel confirmation. Overall quality remains 5/10; giant loops, washout, wrong-facing ram and number columns remain visible.
+
+
+## 2026-11-15 Q2 method, learned before build
+- LEARN/Q2.md records 10 sources, 25 actual asset alpha renders, two alternative formations and local swept-label placement at both desktop sizes. Wide slots and alpha>=128 calibration are chosen; the compact alternative fails wave1 width. No threshold changes.
+- Native paint faces right for the 12 cats and left/front-left for enemy sprites. Blanket enemy reflection must become native-facing-aware.
+- The actual roster is 12 cats, 25 total units. The prompt's 13-cat Q3/Q4 counts remain an explicit discrepancy, not silently changed; no extra character is created.
+- Q1 rerun after commit receipt registration: 70 PASS / 3 FAIL / 8 OPEN. Remaining failures concern video timing and scoped review; handoff hash becomes stale when state is updated. Q1 is still open.
+- Legacy C2 tests asserting .20946 height, rear .94, ordinary per-unit coreRatio and boss 1.7-1.95 are SUPERSEDED by user decision F1/F10 and Q2: opaque .26+ vh, common ordinary scale, boss 1.5-1.7. Replace with those required bounds, preserve seat-stability checks. No contract/rules changes.
+
+2026-11-15 Q2 regression repair: LEARN/Q2.md preview experiment rejects the inherited 900 reference height and 700 trial (label contact). Formation preparation uses its own 562.5-height coordinate board, keeping all four buttons reachable with ordinary clicks. Battle scaling remains .27 viewport height. Browser C2 scaleBand assertions from A are SUPERSEDED by user decision F1/F10: use .26 minimum and <=1.05 equal-height ratio; independent alpha renders remain acceptance evidence. Other browser assertions are retained.

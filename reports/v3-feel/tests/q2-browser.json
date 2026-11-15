@@ -1,0 +1,40 @@
+{
+  "sourceCommit": "9aed17f8deaa6500a1fa6b724be1a7e2189d859c",
+  "groups": [
+    "local",
+    "server",
+    "fallback"
+  ],
+  "rows": [
+    {
+      "group": "local",
+      "exitCode": 1,
+      "passed": 371,
+      "minimumPassed": 375,
+      "started": "2026-11-15T09:53:56.361747+00:00",
+      "ended": "2026-11-15T09:59:12.688817+00:00",
+      "log": "reports/v3-feel/tests/q2-browser-local.log",
+      "sha256": "f04e405a2d109408cfdbcd3459a02af3f45ce1c9fd7a63103f92f23c042e4393"
+    },
+    {
+      "group": "server",
+      "exitCode": 0,
+      "passed": 52,
+      "minimumPassed": 52,
+      "started": "2026-11-15T09:59:12.689825+00:00",
+      "ended": "2026-11-15T09:59:38.695454+00:00",
+      "log": "reports/v3-feel/tests/q2-browser-server.log",
+      "sha256": "7164500593c626a992547757f794e10686d4d4d867fe772baeae7b64f4c6f888"
+    },
+    {
+      "group": "fallback",
+      "exitCode": 0,
+      "passed": 8,
+      "minimumPassed": 8,
+      "started": "2026-11-15T09:59:38.696076+00:00",
+      "ended": "2026-11-15T09:59:50.245988+00:00",
+      "log": "reports/v3-feel/tests/q2-browser-fallback.log",
+      "sha256": "99f70eb71caedcb90a97e163a101a9f91522ba2daed4a8a8bc23c467260b6070"
+    }
+  ]
+}

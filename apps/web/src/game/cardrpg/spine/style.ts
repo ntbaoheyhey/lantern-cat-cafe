@@ -10,5 +10,5 @@ export const PAINT = {
   plasterTop:'#d0ae82',plasterBottom:'#af866a',frame:'#755144',trim:'#d9ae76',sill:'#735042',
   panel:'#8d614e',panelLight:'#bc9063',floorTop:'#c39970',floorBottom:'#825746',seam:'#6b483d',
   rug:'#a57365',rugEdge:'#d8ae82',lamp:'#f0c87f',light:'#f3cf8e',pot:'#b4775f',paper:'#e7cfaa',
-  paintingSaturation:.82,paintingContrast:.9,paintingBrightness:1.02},
+  paintingSaturation:1,paintingContrast:1,paintingBrightness:1},
 } as const;

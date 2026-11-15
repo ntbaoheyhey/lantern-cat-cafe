@@ -2,7 +2,7 @@ import type {SceneView} from '../../squad/turn3d/scene';
 import type {Rect} from '../../squad/turn3d/label-layout';
 
 type WeatherKind='embers'|'snow'|'fireflies'|'steam';
-const CHAPTER_WEATHER:readonly (readonly WeatherKind[])[]=[['embers','steam'],['fireflies'],['snow','steam']];
+const CHAPTER_WEATHER:readonly (readonly WeatherKind[])[]=[['embers'],['fireflies'],['snow']];
 const fract=(n:number)=>n-Math.floor(n);
 const seed=(n:number)=>fract(Math.sin(n*127.1+311.7)*43758.5453);
 
