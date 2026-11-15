@@ -296,5 +296,66 @@
     "finished": true,
     "status": "typecheck/unit/parity PASS; browser 431/435; A/B historical/future failures retained",
     "ended": "2026-11-15T09:59:52Z"
+  },
+  "q2FinalCapture": {
+    "pid": 74806,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "Q2",
+      "--seconds",
+      "30",
+      "--video-seconds",
+      "30",
+      "--frame-marker"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-final-capture.log",
+    "started": "2026-11-15T11:11:12.091728+00:00",
+    "finished": true,
+    "status": "Three films complete; capture parity true; push 47b161aa2 verified against origin",
+    "ended": "2026-11-15T11:14:35Z"
+  },
+  "q2FinalSheets": {
+    "pid": 78288,
+    "command": [
+      "tools/.venv/bin/python",
+      "scripts/v3feel/review-sheets.py",
+      "Q2"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-final-sheets.log",
+    "started": "2026-11-15T11:17:38.389945+00:00",
+    "finished": true,
+    "ended": "2026-11-15T11:17:58.259065+00:00"
+  },
+  "q2FinalRegression": {
+    "pid": 78441,
+    "command": [
+      "node",
+      "scripts/v3feel/regress.mjs",
+      "Q2-FINAL"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-final-regression.log",
+    "started": "2026-11-15T11:17:58.264392+00:00",
+    "finished": true,
+    "ended": "2026-11-15T11:25:49.661Z",
+    "status": "Typecheck/parity PASS; unit asset-selection regression; browser 434/435, one external font ECONNRESET; historical A/B failures retained"
+  },
+  "q2RecheckRegression": {
+    "pid": 86423,
+    "command": [
+      "node",
+      "scripts/v3feel/regress.mjs",
+      "Q2-RECHECK"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/Q2-recheck-regression.log",
+    "started": "2026-11-15T11:36:38.150971+00:00",
+    "finished": true,
+    "ended": "2026-11-15T11:44:28.266Z",
+    "status": "Typecheck/unit/parity/browser PASS (435/435); A 250 PASS/97 FAIL; B 14 FAIL, all retained for Q9 classification"
   }
 }

@@ -67,6 +67,7 @@ it.each(['manifest','image'])('recovers a PNG sequence after a temporary %s fail
 });
 
 it('uses the active accepted format by default, keeping explicit previews and runtime-free playback',async()=>{
+ const canvas=vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue(null);
  const unit=SPINE_UNIT_BY_ID.get('cinnamon')!,sequenceUnit=SPINE_UNIT_BY_ID.get('inkcap')!;
  const mutable=unit as unknown as {designer:AcceptedSkeleton|null;sequence:AcceptedSequence|null;activeSource?:'designer'|'sequence'};
  const original={designer:mutable.designer,sequence:mutable.sequence,activeSource:mutable.activeSource};
@@ -74,12 +75,12 @@ it('uses the active accepted format by default, keeping explicit previews and ru
  const manifest={id:unit.id,height:512,width:256,fps:20,sockets:Object.fromEntries(unit.requiredBones.map(name=>[name,[0,256]])),animations:Object.fromEntries(unit.animations.map(name=>[name,{frames:Array(40).fill('inkcap.png')}]))};
  fetchAsset.mockImplementation(async(url:string)=>new Response(url===spineAssetUrl(sequenceUnit.placeholder.skeleton)?JSON.stringify(manifest):url===spineAssetUrl(unit.placeholder.atlas)?atlasText.replaceAll('mochi.png','cinnamon.png'):JSON.stringify(fixture)));
  async function expectSource(expected:string,preference?:'designer'|'sequence'|'placeholder'){
-  const actor=await loadSpineActor(unit.id,preference);try{expect(actor.source).toBe(expected);expect(actor.bounds.height).toBeCloseTo(512,6);}finally{actor.dispose();}
+  const actor=await loadSpineActor(unit.id,preference);try{expect(actor.source).toBe(expected);expect(actor.bounds.height).toBeCloseTo(512,6);expect(actor.opaqueWorld).toBeUndefined();}finally{actor.dispose();}
  }
  try{
   await expectSource('sequence');await expectSource('designer','designer');await expectSource('placeholder','placeholder');
   mutable.activeSource='designer';await expectSource('designer');await expectSource('sequence','sequence');
   delete mutable.activeSource;await expectSource('designer');
   mutable.activeSource='designer';vi.stubGlobal('location',{search:'?spineRuntime=0'});await expectSource('sequence');
- }finally{Object.assign(mutable,original);}
+ }finally{Object.assign(mutable,original);canvas.mockRestore();}
 });

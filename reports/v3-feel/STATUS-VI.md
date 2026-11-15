@@ -1,14 +1,15 @@
 Đã chuyển sang prompt V3-CRAFT (học nghề trước, làm sau)
-C0: xong; bằng chứng trong git khoảng 90 MB, dưới giới hạn 300 MB.
-Q1: còn mở; đã xem đủ 84 cửa sổ hành động trong 3 video mới.
-Lịch: đánh thường 800 ms, chiêu cuối 2.200 ms; không chồng lượt.
-Camera: 0 vi phạm; rung tối đa 3,12 px, không có tấm chiêu toàn màn hình.
-Đối chiếu video: sai lệch tối đa 50,233 ms, chưa đạt ngưỡng 33 ms.
-Kiểm tra kiểu, 1.599 kiểm thử công cụ, parity và E3–E5: PASS.
-Q2: đã học 10 nguồn và thử 3 bố cục; bản thử dùng chiều cao 27% màn hình, HUD trong suốt.
-Ram đã quay đúng; số hết trong 640 ms, 0 giao vùng mặt trong log. Q2 vẫn mở.
-Đã sửa lỗi nút đội hình đè nhau: 4 kiểm thử click PASS.
-Tỉ lệ chiều cao khi chuyển động còn lỗi; thử nghiệm mới đạt 1,037/giới hạn 1,05, chưa tích hợp.
-Q3 chưa bắt đầu: hiệu ứng còn vòng/sương, làm mất chi tiết cơ thể; chưa được công nhận đạt.
+Q1 còn mở: lịch 800/2.200 ms đúng, không chồng lượt; sai lệch video tối đa 50,233 ms > 33 ms.
+Camera đứng yên; chỉ rung chiêu cuối trong giới hạn, không có tấm chiêu toàn màn hình.
+Q2 đã xem 83/83 cửa sổ hành động, 100 trạng thái quay mặt; ram quay đúng.
+Chiều cao mèo tối thiểu 191/239 px; tỉ lệ lớn/nhỏ tối đa 1,037 < 1,05.
+Đội hình phủ tối thiểu 86,18% chiều ngang; HUD 12%/10,67% chiều cao.
+154/154 lần gây sát thương/hồi máu/tạo khiên có đúng một số; tối đa 2 nhãn, <=682,61 ms.
+Không thấy số/đơn vị che mặt hoặc HUD; 6 lần dựng lại chiêu lệch <=2,182 px, vẫn cách vùng mặt 8 px.
+Kiểm tra kiểu, 2.634 kiểm thử web, parity và 435/435 kiểm thử trình duyệt PASS.
+Q2 vẫn mở tổng thể: Q1 chưa đạt; A còn 97 lỗi, B còn 14 lỗi cũ/mốc tương lai, giữ nguyên để xử lý Q9.
+Q3 tiếp theo: học shader/flipbook và làm D1–D8, mỗi bài ít nhất hai vòng sửa.
+Hiệu ứng hiện còn vòng/sương vàng-hồng, mất chi tiết cơ thể; tư thế còn yếu, chưa được công nhận đạt.
+Roster thực có 12 mèo/25 đơn vị; yêu cầu 13 mèo còn là chênh lệch, không tự thêm nhân vật.
 Không hạ ngưỡng, không triển khai, không merge main; làm một mình.
 Mốc xem lại: 16/11 19:00, demo cuối 18/11 19:00, đóng băng 19/11 19:00 (giờ Việt Nam).

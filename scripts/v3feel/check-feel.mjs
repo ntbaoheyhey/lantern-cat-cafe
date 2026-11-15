@@ -12,7 +12,7 @@ const definitions=[];
 function add(item,key,op,limit,requirement,scope='all'){
  definitions.push(Object.freeze({id:`${item}.${key}`,item,key,op,limit,requirement,scope}));
 }
-function rows(item,entries,scope='all'){for(const [key,op,limit,requirement] of entries)add(item,key,op,limit,requirement,scope);}
+function rows(item,entries,scope='all'){for(const [key,op,limit,requirement,applicable=scope] of entries)add(item,key,op,limit,requirement,applicable);}
 rows('C0',[
  ['policyTests','eq',true,'each changed policy has a fake PASS and fake FAIL test'],
  ['recorderTrialResolved','eq',true,'one isolated recorder trial succeeds, or draft helpers are reverted and logged'],
@@ -81,8 +81,8 @@ rows('Q2',[
  ['catHeightRatio','lte',1.05,'cat opaque heights max/min <= 1.05'],
  ['enemyHeightRatio','lte',1.05,'ordinary enemy max/min <= 1.05'],
  ['catEnemyHeightRatio','between',[.95,1.10],'cat vs ordinary-enemy height ratio 0.95-1.10'],
- ['bossHeightRatio','between',[1.5,1.7],'boss 1.5-1.7x'],
- ['eliteHeightRatio','lte',1.15,'elites <= 1.15x'],
+ ['bossHeightRatio','between',[1.5,1.7],'boss 1.5-1.7x',Object.freeze(['boss'])],
+ ['eliteHeightRatio','lte',1.15,'elites <= 1.15x',Object.freeze(['wave3'])],
  ['facingFraction','eq',1,'facing correct 100% of sampled frames (all units, all states)'],
  ['facingTableComplete','eq',true,'test that renders each unit and checks the face/weapon side (manual-verified table in REVIEW)'],
  ['stageAreaFraction','gte',.86,'stage area >= 86% of viewport'],
@@ -240,7 +240,8 @@ export function numeric(value,op,limit){
 export function evaluateGate(gate,measurement){
  if(!measurement||!Array.isArray(measurement.samples)||!measurement.samples.length)return {state:'OPEN',reason:'No samples'};
  if(gate.item==='Q1'&&scheduleKeys.has(gate.key)&&measurement.basis!=='presentation-schedule')return {state:'OPEN',reason:'Requires presentation schedule; post-draw inference is not timing truth'};
- if(gate.scope==='fixtures'&&!fixtures.every(id=>measurement.samples.some(s=>s.fixture===id)))return {state:'OPEN',reason:'Incomplete three-fixture matrix'};
+ const required=Array.isArray(gate.scope)?gate.scope:gate.scope==='fixtures'?fixtures:[];
+ if(!required.every(id=>measurement.samples.some(s=>s.fixture===id)))return {state:'OPEN',reason:'Incomplete required fixture matrix: '+required.join(', ')};
  const failures=measurement.samples.filter(s=>!numeric(s.value,gate.op,gate.limit));
  return {state:failures.length?'FAIL':'PASS',reason:failures.length?JSON.stringify(failures):`${measurement.samples.length} samples`};
 }

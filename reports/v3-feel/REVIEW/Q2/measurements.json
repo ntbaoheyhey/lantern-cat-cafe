@@ -1,0 +1,1371 @@
+{
+  "at": "2026-11-15T11:47:00.038Z",
+  "sourceCommit": "47b161aa2321c80e98fbbcf289f7ee9bf2e1f1d1",
+  "method": "Whole-film posed opacity bounds and local number rectangles; independent rendered-alpha samples at both desktops; all-state manual facing; pixel resolution of conservative collision candidates. See LEARN/Q2.md.",
+  "regression": {
+    "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+    "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8",
+    "sourceCommit": "47b161aa2321c80e98fbbcf289f7ee9bf2e1f1d1",
+    "workingTreeQualification": "Tests include the then-uncommitted optional null-canvas repair; films are from the stated source commit.",
+    "results": [
+      {
+        "id": "typecheck",
+        "state": "PASS",
+        "ended": "2026-11-15T11:37:00.095Z"
+      },
+      {
+        "id": "unit",
+        "state": "PASS",
+        "ended": "2026-11-15T11:39:04.205Z"
+      },
+      {
+        "id": "parity",
+        "state": "PASS",
+        "ended": "2026-11-15T11:39:10.863Z"
+      },
+      {
+        "id": "browser",
+        "state": "PASS",
+        "ended": "2026-11-15T11:44:26.269Z"
+      },
+      {
+        "id": "aLane",
+        "state": "FAIL",
+        "ended": "2026-11-15T11:44:27.065Z"
+      },
+      {
+        "id": "bLane",
+        "state": "FAIL",
+        "ended": "2026-11-15T11:44:28.266Z"
+      }
+    ]
+  },
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "frames": 1800,
+      "metrics": {
+        "catHeightRatio": 1.0304568527918796,
+        "enemyHeightRatio": 1.0304568527918796,
+        "catEnemyHeightRatioMin": 0.9704433497536936,
+        "catEnemyHeightRatioMax": 1.0304568527918792,
+        "catHeightFraction": 0.26594999999999974,
+        "formationWidthFraction": 0.8618546692042715,
+        "stageAreaFraction": 1,
+        "numbersPerTarget": 2,
+        "numberLifetimeUpperMs": 682.6003074645996,
+        "numberVisibleSpanMs": 633.8999271392822,
+        "numbersOlderThan700Ms": 0,
+        "numberFaceOverlap": 0,
+        "previousNumbersAtImpact": 0,
+        "numberEdgePlacements": 0,
+        "clippedBoxSamples": 0,
+        "numericEventsExpected": 54,
+        "numericBurstsShown": 54,
+        "unitHudOverlap": 0
+      },
+      "worst": {
+        "catHeightRatio": {
+          "ordinal": 357,
+          "time": 5.961199998855591
+        },
+        "enemyHeightRatio": {
+          "ordinal": 424,
+          "time": 7.077800035476685
+        },
+        "catEnemyHeightRatioMin": {
+          "ordinal": 92,
+          "time": 1.5439999103546143
+        },
+        "catEnemyHeightRatioMax": {
+          "ordinal": 219,
+          "time": 3.6611998081207275
+        },
+        "catHeightFraction": {
+          "ordinal": 1641,
+          "time": 27.36009979248047
+        },
+        "formationWidthFraction": {
+          "ordinal": 1148,
+          "time": 19.144699811935425
+        },
+        "stageAreaFraction": {
+          "ordinal": 0,
+          "time": 0.014099836349487305
+        }
+      },
+      "sources": {
+        "needle-moth": "template",
+        "panko": "template",
+        "sock-skipper": "template",
+        "button-guard": "template",
+        "teacup-healer": "template",
+        "soot": "placeholder",
+        "mochi": "placeholder",
+        "clover": "placeholder"
+      },
+      "numberMismatch": {
+        "missing": [],
+        "extra": []
+      },
+      "video": {
+        "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+        "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+      },
+      "videoBytes": 5875624,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q2/wave1-mix.wav",
+        "integratedLufs": -14.94,
+        "truePeakDbTP": -3.53,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "actions": 28,
+      "conservativeFaceCandidates": 0,
+      "conservativeClipCandidates": 0
+    },
+    {
+      "fixture": "wave3",
+      "frames": 1799,
+      "metrics": {
+        "catHeightRatio": 1.0304568527918794,
+        "enemyHeightRatio": 1.0304568527918794,
+        "catEnemyHeightRatioMin": 0.9704433497536935,
+        "catEnemyHeightRatioMax": 1.0304568527918796,
+        "catHeightFraction": 0.26594999999999974,
+        "formationWidthFraction": 0.8661795278455143,
+        "stageAreaFraction": 1,
+        "numbersPerTarget": 2,
+        "numberLifetimeUpperMs": 651.0000228881836,
+        "numberVisibleSpanMs": 633.3000659942627,
+        "numbersOlderThan700Ms": 0,
+        "numberFaceOverlap": 0,
+        "previousNumbersAtImpact": 0,
+        "numberEdgePlacements": 0,
+        "clippedBoxSamples": 0,
+        "numericEventsExpected": 55,
+        "numericBurstsShown": 55,
+        "unitHudOverlap": 0
+      },
+      "worst": {
+        "catHeightRatio": {
+          "ordinal": 85,
+          "time": 1.4254999160766602
+        },
+        "enemyHeightRatio": {
+          "ordinal": 0,
+          "time": 0.014999866485595703
+        },
+        "catEnemyHeightRatioMin": {
+          "ordinal": 630,
+          "time": 10.524700164794922
+        },
+        "catEnemyHeightRatioMax": {
+          "ordinal": 1413,
+          "time": 23.575599908828735
+        },
+        "catHeightFraction": {
+          "ordinal": 1084,
+          "time": 18.091300010681152
+        },
+        "formationWidthFraction": {
+          "ordinal": 807,
+          "time": 13.475499868392944
+        },
+        "stageAreaFraction": {
+          "ordinal": 0,
+          "time": 0.014999866485595703
+        }
+      },
+      "sources": {
+        "spool-ram": "template",
+        "needle-moth": "template",
+        "kettle-knight": "template",
+        "pollen-scout": "template",
+        "panko": "template",
+        "crumb-sentinel": "template",
+        "soot": "placeholder",
+        "teacup-healer": "template",
+        "mochi": "placeholder",
+        "clover": "placeholder"
+      },
+      "numberMismatch": {
+        "missing": [],
+        "extra": []
+      },
+      "video": {
+        "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+        "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+      },
+      "videoBytes": 6098078,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q2/wave3-mix.wav",
+        "integratedLufs": -15.03,
+        "truePeakDbTP": -2.73,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "actions": 27,
+      "conservativeFaceCandidates": 0,
+      "conservativeClipCandidates": 0
+    },
+    {
+      "fixture": "boss",
+      "frames": 1799,
+      "metrics": {
+        "catHeightRatio": 1.0304568527918796,
+        "enemyHeightRatio": 1.0304568527918792,
+        "catEnemyHeightRatioMin": 0.9704433497536935,
+        "catEnemyHeightRatioMax": 1.0304568527918794,
+        "catHeightFraction": 0.26594999999999974,
+        "bossHeightRatioMin": 1.5527093596059105,
+        "bossHeightRatioMax": 1.6487309644670072,
+        "formationWidthFraction": 0.8790644106164092,
+        "stageAreaFraction": 1,
+        "numbersPerTarget": 2,
+        "numberLifetimeUpperMs": 650.0000991821289,
+        "numberVisibleSpanMs": 633.4002017974854,
+        "numbersOlderThan700Ms": 0,
+        "numberFaceOverlap": 0,
+        "previousNumbersAtImpact": 0,
+        "numberEdgePlacements": 0,
+        "clippedBoxSamples": 12,
+        "numericEventsExpected": 45,
+        "numericBurstsShown": 45,
+        "unitHudOverlap": 0
+      },
+      "worst": {
+        "catHeightRatio": {
+          "ordinal": 1020,
+          "time": 17.01960015296936
+        },
+        "enemyHeightRatio": {
+          "ordinal": 286,
+          "time": 4.785400152206421
+        },
+        "catEnemyHeightRatioMin": {
+          "ordinal": 462,
+          "time": 7.7200000286102295
+        },
+        "catEnemyHeightRatioMax": {
+          "ordinal": 1020,
+          "time": 17.01960015296936
+        },
+        "catHeightFraction": {
+          "ordinal": 349,
+          "time": 5.8348000049591064
+        },
+        "bossHeightRatioMin": {
+          "ordinal": 184,
+          "time": 3.085200309753418
+        },
+        "bossHeightRatioMax": {
+          "ordinal": 1545,
+          "time": 25.767300128936768
+        },
+        "formationWidthFraction": {
+          "ordinal": 1045,
+          "time": 17.436400175094604
+        },
+        "stageAreaFraction": {
+          "ordinal": 0,
+          "time": 0.020100116729736328
+        }
+      },
+      "sources": {
+        "panko": "template",
+        "binding-thread": "template",
+        "yarn-giant": "template",
+        "mochi": "placeholder",
+        "soot": "placeholder",
+        "clover": "placeholder"
+      },
+      "numberMismatch": {
+        "missing": [],
+        "extra": []
+      },
+      "video": {
+        "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+        "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+      },
+      "videoBytes": 5739294,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/Q2/boss-mix.wav",
+        "integratedLufs": -14.79,
+        "truePeakDbTP": -2.84,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "actions": 28,
+      "conservativeFaceCandidates": 29,
+      "conservativeClipCandidates": 12
+    }
+  ],
+  "desktops": [
+    {
+      "fixture": "wave1",
+      "width": 1280,
+      "height": 720,
+      "catHeightRatio": 1.036649214659686,
+      "enemyHeightRatio": 1.0421052631578946,
+      "catEnemyHeightRatioMin": 0.9646464646464646,
+      "catEnemyHeightRatioMax": 1.0421052631578946,
+      "bossHeightRatioMin": null,
+      "bossHeightRatioMax": null,
+      "catHeightFraction": 0.2652777777777778,
+      "catMinPixels": 191,
+      "hud": {
+        "x": 0,
+        "y": 633.609375,
+        "width": 1280,
+        "height": 86.390625
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "hudHeightFraction": 0.11998697916666666,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    },
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "catHeightRatio": 1.036649214659686,
+      "enemyHeightRatio": 1.036649214659686,
+      "catEnemyHeightRatioMin": 0.9695431472081218,
+      "catEnemyHeightRatioMax": 1.036649214659686,
+      "bossHeightRatioMin": null,
+      "bossHeightRatioMax": null,
+      "catHeightFraction": 0.2652777777777778,
+      "catMinPixels": 191,
+      "hud": {
+        "x": 0,
+        "y": 633.609375,
+        "width": 1280,
+        "height": 86.390625
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "hudHeightFraction": 0.11998697916666666,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "catHeightRatio": 1.036649214659686,
+      "enemyHeightRatio": 1.0208333333333333,
+      "catEnemyHeightRatioMin": 0.9744897959183674,
+      "catEnemyHeightRatioMax": 1.03125,
+      "bossHeightRatioMin": 1.5454545454545454,
+      "bossHeightRatioMax": 1.6458333333333333,
+      "catHeightFraction": 0.2652777777777778,
+      "catMinPixels": 191,
+      "hud": {
+        "x": 0,
+        "y": 633.609375,
+        "width": 1280,
+        "height": 86.390625
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "hudHeightFraction": 0.11998697916666666,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    },
+    {
+      "fixture": "wave1",
+      "width": 1440,
+      "height": 900,
+      "catHeightRatio": 1.0334728033472804,
+      "enemyHeightRatio": 1.0378151260504203,
+      "catEnemyHeightRatioMin": 0.9676113360323887,
+      "catEnemyHeightRatioMax": 1.0378151260504203,
+      "bossHeightRatioMin": null,
+      "bossHeightRatioMax": null,
+      "catHeightFraction": 0.26555555555555554,
+      "catMinPixels": 239,
+      "hud": {
+        "x": 0,
+        "y": 804,
+        "width": 1440,
+        "height": 96
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hudHeightFraction": 0.10666666666666667,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "catHeightRatio": 1.0334728033472804,
+      "enemyHeightRatio": 1.0378151260504203,
+      "catEnemyHeightRatioMin": 0.9676113360323887,
+      "catEnemyHeightRatioMax": 1.0378151260504203,
+      "bossHeightRatioMin": null,
+      "bossHeightRatioMax": null,
+      "catHeightFraction": 0.26555555555555554,
+      "catMinPixels": 239,
+      "hud": {
+        "x": 0,
+        "y": 804,
+        "width": 1440,
+        "height": 96
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hudHeightFraction": 0.10666666666666667,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "catHeightRatio": 1.0334728033472804,
+      "enemyHeightRatio": 1.0251046025104602,
+      "catEnemyHeightRatioMin": 0.9676113360323887,
+      "catEnemyHeightRatioMax": 1.0334728033472804,
+      "bossHeightRatioMin": 1.5506072874493928,
+      "bossHeightRatioMax": 1.6527196652719665,
+      "catHeightFraction": 0.26555555555555554,
+      "catMinPixels": 239,
+      "hud": {
+        "x": 0,
+        "y": 804,
+        "width": 1440,
+        "height": 96
+      },
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hudHeightFraction": 0.10666666666666667,
+      "unitHudOverlap": 0,
+      "clippedPixelSamples": 0,
+      "samples": 11,
+      "errors": [],
+      "sourceMatchesFacing": true
+    }
+  ],
+  "facing": [
+    {
+      "id": "mochi",
+      "source": "placeholder",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and shield point right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "soot",
+      "source": "placeholder",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and lantern extend right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "clover",
+      "source": "placeholder",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Tea hand and muzzle right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "panko",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and shield hand right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "mallow",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and spoon right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "sorrel",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and staff right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "biscuit",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and round shield right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "inkcap",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and lantern right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "cinnamon",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and cup right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "brioche",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and open palm right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "velvet",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and flag right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "marigold",
+      "source": "template",
+      "side": "party",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and pot right",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "button-guard",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Front-left helmet eye plane; shield on left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "sock-skipper",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "One visible eye/face plane to left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "spool-ram",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and horns project left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "needle-moth",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Front-left eye plane between wings",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "teacup-healer",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Cup face/eye plane front-left; spoon left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "kettle-knight",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Spout and visor plane left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "yarn-giant",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Front-left eyes, brow and near fist",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "binding-thread",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Eye under top cap faces left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "practice-cushion",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Near-front eyes; leftward body bias",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "pollen-scout",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Eye/muzzle under leaf hood left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "rain-spool",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Muzzle and horns left",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "crumb-sentinel",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Front-left visor plane and forward left fist",
+      "manualPass": true,
+      "reflectionPass": true
+    },
+    {
+      "id": "pantry-crown",
+      "source": "template",
+      "side": "enemy",
+      "states": [
+        "idle",
+        "attack",
+        "hurt",
+        "ko"
+      ],
+      "manualCue": "Front-left narrow visor and near fist",
+      "manualPass": true,
+      "reflectionPass": true
+    }
+  ],
+  "collisionReplay": [
+    {
+      "fixture": "boss",
+      "rows": [
+        {
+          "type": "face",
+          "ordinal": 240,
+          "time": 4.01960015296936,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 241,
+          "time": 4.035300016403198,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.7053025658242404e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 242,
+          "time": 4.0527002811431885,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 243,
+          "time": 4.068700313568115,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 244,
+          "time": 4.0863001346588135,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 245,
+          "time": 4.102800130844116,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 0
+        },
+        {
+          "type": "face",
+          "ordinal": 246,
+          "time": 4.122700214385986,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.7053025658242404e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 247,
+          "time": 4.135700225830078,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 248,
+          "time": 4.152900218963623,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 249,
+          "time": 4.168400287628174,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.7053025658242404e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 250,
+          "time": 4.1854002475738525,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 251,
+          "time": 4.201800107955933,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 5.684341886080802e-14
+        },
+        {
+          "type": "face",
+          "ordinal": 762,
+          "time": 12.720900297164917,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.08274274708117
+        },
+        {
+          "type": "face",
+          "ordinal": 763,
+          "time": 12.736000061035156,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.181338191657005
+        },
+        {
+          "type": "face",
+          "ordinal": 764,
+          "time": 12.752300024032593,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 0.14203267996407476
+        },
+        {
+          "type": "face",
+          "ordinal": 765,
+          "time": 12.771700382232666,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1374388362735317
+        },
+        {
+          "type": "face",
+          "ordinal": 766,
+          "time": 12.786100149154663,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 0.21444085912230548
+        },
+        {
+          "type": "face",
+          "ordinal": 767,
+          "time": 12.804200172424316,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 0.09899405933720118
+        },
+        {
+          "type": "face",
+          "ordinal": 768,
+          "time": 12.821200370788574,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 5.684341886080802e-14
+        },
+        {
+          "type": "face",
+          "ordinal": 769,
+          "time": 12.835999965667725,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.8421709430404007e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 856,
+          "time": 14.289600133895874,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 857,
+          "time": 14.304700374603271,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 858,
+          "time": 14.319400310516357,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 910,
+          "time": 15.18530011177063,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 911,
+          "time": 15.202100276947021,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 912,
+          "time": 15.218500137329102,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1445,
+          "time": 24.10580015182495,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1446,
+          "time": 24.120400190353394,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1447,
+          "time": 24.135700225830078,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1448,
+          "time": 24.152000188827515,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1449,
+          "time": 24.168400287628174,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1450,
+          "time": 24.184499979019165,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.7053025658242404e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1451,
+          "time": 24.201900243759155,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.7053025658242404e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1452,
+          "time": 24.218900203704834,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "face",
+          "ordinal": 1453,
+          "time": 24.234700202941895,
+          "unit": "foe-0-yarn-giant",
+          "face": "foe-1-binding-thread",
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 1.1368683772161603e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 1500,
+          "time": 25.01860022544861,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 1501,
+          "time": 25.03470015525818,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 5.684341886080802e-14
+        },
+        {
+          "type": "clip",
+          "ordinal": 1502,
+          "time": 25.051300048828125,
+          "unit": "foe-1-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 4.547473508864641e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 1553,
+          "time": 25.90149998664856,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 1554,
+          "time": 25.91770029067993,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        },
+        {
+          "type": "clip",
+          "ordinal": 1555,
+          "time": 25.935500144958496,
+          "unit": "foe-2-binding-thread",
+          "face": null,
+          "alphaPixelsOutsideViewport": 0,
+          "alphaPixelsOnFace": 0,
+          "alphaPixelsWithin8pxOfFace": 0,
+          "replayedHullMaxDeltaPx": 2.2737367544323206e-13
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "review": {
+    "sheets": 83,
+    "reviewed": 83,
+    "critiqueLines": 10,
+    "frameReferences": true,
+    "scopeVerdict": "No observed Q2-owned visual defect; Q1 remains OPEN. typecheck: PASS; unit: PASS; parity: PASS; browser: PASS; aLane: FAIL; bLane: FAIL",
+    "truncated": [
+      "wave1 A28 recovery",
+      "wave3 A27 late recovery",
+      "boss A28 cast/impact/recovery"
+    ]
+  },
+  "selected": [
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/wave1-A01.jpg",
+      "sha256": "673b19de5f1aae846fd51360dc6e9056cb90fca9d7a6f17f381525bd8b8f6273"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/wave1-A19.jpg",
+      "sha256": "bfeab242a5fd9a9db16697626b7a2d6ed369e519248371ca1ba72aec494471f7"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/wave3-A07.jpg",
+      "sha256": "164c6c5878a858e976457a9290a3e38e053aa0e37bc2f131b31566e1e630598c"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/wave3-A10.jpg",
+      "sha256": "024b5f3bdb24e927ba46e929fcf03c8b8849517fea82d31f643adf8b3cc4c5ac"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/wave3-A23.jpg",
+      "sha256": "1e97245674af4aa8aea989caada58f462de26fd2c3c3cf4bc9d64b65e7351421"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/boss-A13.jpg",
+      "sha256": "6d451be3fc7f2fc7b842b5724e93643dc9c276fba60be309b220b8462f1081ba"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/boss-A18.jpg",
+      "sha256": "83b588845a9700fa19962d977e10061919572d4341073cca920c05288dc7b0c5"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/facing-1.jpg",
+      "sha256": "4450198c16678d410a40ead50b07a4c1b00196ffeb0c4fb6d05ef9aa66d42b2e"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/facing-2.jpg",
+      "sha256": "77f4b8263c26c7293404b0e9d3c31d99060e1c6f89792f0a647dc72c6f93aec8"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/facing-3.jpg",
+      "sha256": "8dec7b82726d241c8320b874e93207e29dbd055acb0bab0d32c89b66c84d93c2"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/facing-4.jpg",
+      "sha256": "b65b243e2eede52f58b5120e742cd4ef377851c570587744cd29d4c254f6bc4b"
+    },
+    {
+      "path": "reports/v3-feel/REVIEW/Q2/selected/facing-5.jpg",
+      "sha256": "541d54490dcd05263d397cad6ec152c6ab635d723265bb480d49053a19890295"
+    }
+  ]
+}

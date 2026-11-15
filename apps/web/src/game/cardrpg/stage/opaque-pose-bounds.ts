@@ -8,11 +8,14 @@ export interface OpaqueWorldBounds {x:number;y:number;width:number;height:number
 const textures=new WeakMap<T.Texture,Pixels>();
 const geometryHulls=new WeakMap<T.BufferGeometry,{texture:T.Texture;samples:Sample[]}>();
 
-function pixels(texture:T.Texture):Pixels {
+function pixels(texture:T.Texture):Pixels|undefined {
  const cached=textures.get(texture);if(cached)return cached;
  const source=texture.image as HTMLImageElement,canvas=document.createElement('canvas');
  canvas.width=source.width;canvas.height=source.height;
- const context=canvas.getContext('2d',{willReadFrequently:true})!;context.drawImage(source,0,0);
+ const context=canvas.getContext('2d',{willReadFrequently:true});
+ // Pixel measurement is optional; an unavailable backend must not reject valid art.
+ if(!context)return undefined;
+ context.drawImage(source,0,0);
  const data={width:canvas.width,height:canvas.height,rgba:context.getImageData(0,0,canvas.width,canvas.height).data};
  textures.set(texture,data);return data;
 }
@@ -37,7 +40,8 @@ function samples(mesh:T.Mesh):Sample[] {
  const texture=material.map as T.Texture|null,uv=geometry.attributes.uv,index=geometry.index;
  if(!texture||!texture.image||!uv||!index)return [];
  const cached=geometryHulls.get(geometry);if(cached?.texture===texture)return cached.samples;
- const {width,height,rgba}=pixels(texture),result:Sample[]=[];
+ const data=pixels(texture);if(!data)return [];
+ const {width,height,rgba}=data,result:Sample[]=[];
  for(let t=0;t<index.count;t+=3){
   const ids:Triangle=[index.getX(t),index.getX(t+1),index.getX(t+2)];
   const [a,b,c]=ids.map(i=>[uv.getX(i)*width,(texture.flipY?1-uv.getY(i):uv.getY(i))*height] as Point) as [Point,Point,Point];

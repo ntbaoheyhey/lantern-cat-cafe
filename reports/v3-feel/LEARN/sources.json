@@ -215,5 +215,68 @@
     "type": "doc",
     "topic": "Q2",
     "takeaway": "Respect image orientation and texture flipY when sampling opacity."
+  },
+  {
+    "id": "Q2-canvas-context",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "A missing canvas context is an explicit null capability result."
+  },
+  {
+    "id": "Q2-jsdom-canvas",
+    "url_or_path": "https://github.com/jsdom/jsdom#canvas-support",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "jsdom pixel operations require an optional canvas backend."
+  },
+  {
+    "id": "Q2-pixel-capability",
+    "url_or_path": "tools/v3craft-lab/q2/pixel-capability.json",
+    "type": "experiment",
+    "topic": "Q2",
+    "takeaway": "All 25 real actors preserve hulls with pixels and skip unavailable measurement without swallowing corrupt-image errors."
+  },
+  {
+    "id": "Q2-monotonic-clock",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/Performance/now",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Performance timestamps use navigation origin and cannot be directly subtracted from epoch time."
+  },
+  {
+    "id": "Q2-measurement-conventions",
+    "url_or_path": "tools/v3craft-lab/q2/measurement-conventions.json",
+    "type": "experiment",
+    "topic": "Q2",
+    "takeaway": "Nominal height and reused number keys hide or invent failures; posed pixels and birth identity preserve the actual observations."
+  },
+  {
+    "id": "Q2-fixture-condition",
+    "url_or_path": "https://json-schema.org/understanding-json-schema/reference/conditionals",
+    "type": "doc",
+    "topic": "Q2",
+    "takeaway": "Conditional validation requires an explicit applicable condition; do not accept unrelated data."
+  },
+  {
+    "id": "Q2-fixture-scope",
+    "url_or_path": "tools/v3craft-lab/q2/fixture-scope.json",
+    "type": "experiment",
+    "topic": "Q2",
+    "takeaway": "Explicit boss-fixture requirements classify all four positive, bad, missing and wrong-fixture cases correctly."
+  },
+  {
+    "id": "Q2-regression-contract",
+    "url_or_path": "scripts/v3feel/regress.mjs",
+    "type": "local",
+    "topic": "Q2",
+    "takeaway": "Completed check exit codes are durable evidence; absent results stay pending."
+  },
+  {
+    "id": "Q2-receipt-reporting",
+    "url_or_path": "reports/v3-feel/LEARN/Q2.md",
+    "type": "experiment",
+    "topic": "Q2",
+    "takeaway": "Across 18 completed checks, receipt-derived states report 18/18 accurately versus zero for a stale pending sentence."
   }
 ]

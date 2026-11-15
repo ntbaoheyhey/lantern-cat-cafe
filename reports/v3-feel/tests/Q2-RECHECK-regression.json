@@ -1,0 +1,92 @@
+{
+  "sourceCommit": "47b161aa2321c80e98fbbcf289f7ee9bf2e1f1d1",
+  "results": [
+    {
+      "id": "typecheck",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "started": "2026-11-15T11:36:38.197Z",
+      "ended": "2026-11-15T11:37:00.095Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-typecheck.log",
+        "sha256": "cafa8310aee60b7ea4fe143147599c09d40529fc20590787a68d4d538c08e096"
+      }
+    },
+    {
+      "id": "unit",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "started": "2026-11-15T11:37:00.102Z",
+      "ended": "2026-11-15T11:39:04.205Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-unit.log",
+        "sha256": "7ba389fae54dd87f5761ec4649454a14b56accf1cbbbf80d53a3c9b7f8568051"
+      }
+    },
+    {
+      "id": "parity",
+      "command": [
+        "node",
+        "scripts/v3feel/parity.mjs",
+        "check"
+      ],
+      "started": "2026-11-15T11:39:04.211Z",
+      "ended": "2026-11-15T11:39:10.863Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-parity.log",
+        "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
+      }
+    },
+    {
+      "id": "browser",
+      "command": [
+        "python3",
+        "scripts/v3feel/run-browser-suite.py",
+        "q2-recheck"
+      ],
+      "started": "2026-11-15T11:39:10.869Z",
+      "ended": "2026-11-15T11:44:26.269Z",
+      "exitCode": 0,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-browser.log",
+        "sha256": "65081873f2b164b34c652f04dbc0b211a92eb6265cf828b8cb30732969a3853a"
+      }
+    },
+    {
+      "id": "aLane",
+      "command": [
+        "node",
+        "scripts/v3a2/check-gates.mjs"
+      ],
+      "started": "2026-11-15T11:44:26.275Z",
+      "ended": "2026-11-15T11:44:27.065Z",
+      "exitCode": 1,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-aLane.log",
+        "sha256": "bdbf7d83563b8e7a0d699c0a45b1b8335cf0ad8ed917a63998e820ff7a40c94b"
+      }
+    },
+    {
+      "id": "bLane",
+      "command": [
+        "node",
+        "scripts/v3b2/check-gates.mjs"
+      ],
+      "started": "2026-11-15T11:44:27.070Z",
+      "ended": "2026-11-15T11:44:28.266Z",
+      "exitCode": 1,
+      "log": {
+        "path": "reports/v3-feel/tests/Q2-RECHECK-bLane.log",
+        "sha256": "ac8b7a47bc2ad928d64611228c75d263f5940457f93a5c371c74eae5b96c2c15"
+      }
+    }
+  ]
+}

@@ -3680,11 +3680,11 @@
       "samples": [
         {
           "fixture": "wave1",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "wave3",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "boss",
@@ -4479,7 +4479,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "1bd377fc50582534c4660dd821a43d65e6506e185cc707bddb7292794c504d41"
+          "sha256": "773cfe1a601d0ca0611e3e5bbf3115ce4e3b55362c68dfb6823c300f811585e7"
         }
       ]
     },
@@ -4493,7 +4493,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "1bd377fc50582534c4660dd821a43d65e6506e185cc707bddb7292794c504d41"
+          "sha256": "773cfe1a601d0ca0611e3e5bbf3115ce4e3b55362c68dfb6823c300f811585e7"
         }
       ]
     },
@@ -4557,13 +4557,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 26
+          "value": 27
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/HANDOFF-FEEL.md",
-          "sha256": "74593e800bfad214dfcc509165d644305d031d8983f618642d3fec5068a0ec3f"
+          "sha256": "1c92d265c0d49554dab266ff92c93e53350f7b490d30b64bc23981b3c806ec63"
         }
       ]
     },
@@ -4571,13 +4571,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 11
+          "value": 15
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/STATUS-VI.md",
-          "sha256": "f6ecf64621f7f3b4e4551861f0012c75c5424bce5cf2cb5949d7f566461c7d34"
+          "sha256": "cc9ad03546d1482aa10e41bf7291041a67e9b5e9840d76705efe24c6eedb19ae"
         }
       ]
     },
@@ -4769,15 +4769,15 @@
       "samples": [
         {
           "fixture": "wave1",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "wave3",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "boss",
-          "value": 0.0
+          "value": 0
         }
       ],
       "evidence": [
@@ -4973,11 +4973,11 @@
       "samples": [
         {
           "fixture": "wave1",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "wave3",
-          "value": 0.0
+          "value": 0
         },
         {
           "fixture": "boss",
@@ -5338,12 +5338,1219 @@
           "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
         }
       ]
+    },
+    "Q2.catHeightRatio": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1.0304568527918796
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0304568527918794
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0304568527918796
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.036649214659686,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.036649214659686,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 1.036649214659686,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0334728033472804,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0334728033472804,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0334728033472804,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.enemyHeightRatio": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1.0304568527918796
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0304568527918794
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0304568527918792
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0421052631578946,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.036649214659686,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0208333333333333,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0378151260504203,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0378151260504203,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0251046025104602,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.catHeightFraction": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0.26594999999999974
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.26594999999999974
+        },
+        {
+          "fixture": "boss",
+          "value": 0.26594999999999974
+        },
+        {
+          "fixture": "wave1",
+          "value": 0.2652777777777778,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.2652777777777778,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0.2652777777777778,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave1",
+          "value": 0.26555555555555554,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.26555555555555554,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0.26555555555555554,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.formationWidthFraction": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0.8618546692042715
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.8661795278455143
+        },
+        {
+          "fixture": "boss",
+          "value": 0.8790644106164092
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.stageAreaFraction": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1
+        },
+        {
+          "fixture": "wave3",
+          "value": 1
+        },
+        {
+          "fixture": "boss",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numbersPerTarget": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 2
+        },
+        {
+          "fixture": "wave3",
+          "value": 2
+        },
+        {
+          "fixture": "boss",
+          "value": 2
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numberFaceOverlap": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numbersOlderThan700Ms": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.previousNumbersAtImpact": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.unitHudOverlap": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        },
+        {
+          "fixture": "wave1",
+          "value": 0,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave1",
+          "value": 0,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.catEnemyHeightRatio": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0.9704433497536936
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0304568527918792
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.9704433497536935
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0304568527918796
+        },
+        {
+          "fixture": "boss",
+          "value": 0.9704433497536935
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0304568527918794
+        },
+        {
+          "fixture": "wave1",
+          "value": 0.9646464646464646
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0421052631578946
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.9695431472081218
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.036649214659686
+        },
+        {
+          "fixture": "boss",
+          "value": 0.9744897959183674
+        },
+        {
+          "fixture": "boss",
+          "value": 1.03125
+        },
+        {
+          "fixture": "wave1",
+          "value": 0.9676113360323887
+        },
+        {
+          "fixture": "wave1",
+          "value": 1.0378151260504203
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.9676113360323887
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0378151260504203
+        },
+        {
+          "fixture": "boss",
+          "value": 0.9676113360323887
+        },
+        {
+          "fixture": "boss",
+          "value": 1.0334728033472804
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.faceOcclusion": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numberEdgeColumns": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numbersPerHit": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1
+        },
+        {
+          "fixture": "wave3",
+          "value": 1
+        },
+        {
+          "fixture": "boss",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.numberLifetimeMs": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 682.6003074645996
+        },
+        {
+          "fixture": "wave3",
+          "value": 651.0000228881836
+        },
+        {
+          "fixture": "boss",
+          "value": 650.0000991821289
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.facingFraction": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1
+        },
+        {
+          "fixture": "wave3",
+          "value": 1
+        },
+        {
+          "fixture": "boss",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.facingTableComplete": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": true
+        },
+        {
+          "fixture": "wave3",
+          "value": true
+        },
+        {
+          "fixture": "boss",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.videoSeconds": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 30.008
+        },
+        {
+          "fixture": "wave3",
+          "value": 30.008
+        },
+        {
+          "fixture": "boss",
+          "value": 30.008
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoFps": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 30
+        },
+        {
+          "fixture": "wave3",
+          "value": 30
+        },
+        {
+          "fixture": "boss",
+          "value": 30
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoWidth": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 1280
+        },
+        {
+          "fixture": "wave3",
+          "value": 1280
+        },
+        {
+          "fixture": "boss",
+          "value": 1280
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoHeight": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 720
+        },
+        {
+          "fixture": "wave3",
+          "value": 720
+        },
+        {
+          "fixture": "boss",
+          "value": 720
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoBytes": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 5875624
+        },
+        {
+          "fixture": "wave3",
+          "value": 6098078
+        },
+        {
+          "fixture": "boss",
+          "value": 5739294
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoHasAudio": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": true
+        },
+        {
+          "fixture": "wave3",
+          "value": true
+        },
+        {
+          "fixture": "boss",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave1.webm",
+          "sha256": "65c5c916ee01af8524905b56b3f90ee7283fb566c3c29c19b987f224f084681b"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/wave3.webm",
+          "sha256": "998b0005bd408ad9d619f32891c5e4899514199be10400b8a729c3f9e001b112"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/boss.webm",
+          "sha256": "4318325ed29821827d9d4f1cf0dab55e1bbf3ad1136a3c465bee9caa51026262"
+        }
+      ]
+    },
+    "Q2.videoDefects": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0
+        },
+        {
+          "fixture": "wave3",
+          "value": 0
+        },
+        {
+          "fixture": "boss",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.eliteHeightRatio": {
+      "samples": [
+        {
+          "fixture": "wave3",
+          "value": 1.0304568527918794
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.031413612565445
+        },
+        {
+          "fixture": "wave3",
+          "value": 1.0334728033472802
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.bossHeightRatio": {
+      "samples": [
+        {
+          "fixture": "boss",
+          "value": 1.5527093596059105
+        },
+        {
+          "fixture": "boss",
+          "value": 1.6487309644670072
+        },
+        {
+          "fixture": "boss",
+          "value": 1.5454545454545454
+        },
+        {
+          "fixture": "boss",
+          "value": 1.6458333333333333
+        },
+        {
+          "fixture": "boss",
+          "value": 1.5506072874493928
+        },
+        {
+          "fixture": "boss",
+          "value": 1.6527196652719665
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.hudHeightFraction": {
+      "samples": [
+        {
+          "fixture": "wave1",
+          "value": 0.11998697916666666,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.11998697916666666,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0.11998697916666666,
+          "viewport": "1280x720",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave1",
+          "value": 0.10666666666666667,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "wave3",
+          "value": 0.10666666666666667,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        },
+        {
+          "fixture": "boss",
+          "value": 0.10666666666666667,
+          "viewport": "1440x900",
+          "basis": "independent-pixels/DOM"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        }
+      ]
+    },
+    "Q2.reviewFixtures": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 3
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.actionWindowFps": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 10
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.actionWindowBeforeMs": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 300
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.actionWindowAfterMs": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 500
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.sheetWidth": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 1280
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.sheetsViewedFraction": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.actionReviewFraction": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.frameReferences": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.critiqueLines": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 10
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.craft.C10": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 1
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.craft.C12": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": 0
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/measurements.json",
+          "sha256": "b1f07388afb22556580724d2f0c366e5dfafb31db520ed88fbefd83ce7c0e538"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/Q2/REVIEW.md",
+          "sha256": "e990d2e00eba3cf4ed3827d667af4dfe72be25d65a2270aa7affef23eadf15e9"
+        }
+      ]
+    },
+    "Q2.typecheck": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
+    },
+    "Q2.unitTests": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
+    },
+    "Q2.parityRegression": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
+    },
+    "Q2.browserSuite": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
+    },
+    "Q2.aLaneGates": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
+    },
+    "Q2.bLaneGates": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/tests/Q2-RECHECK-regression.json",
+          "sha256": "d98d5665261064e6de6d74a51a47b0cf2a03b2725bc0ee90f5b583265ea854e8"
+        }
+      ]
     }
   },
-  "updatedAt": "2026-11-15T09:26:20.799047+00:00",
+  "updatedAt": "2026-11-15T11:47:45.989Z",
   "buildCommits": {
     "C0": {
       "commit": "752078771e99f9c1af04fd9e343a447b48061aa0"
+    },
+    "Q1": {
+      "commit": "9aed17f8d"
+    },
+    "Q2": {
+      "commit": "47b161aa2321c80e98fbbcf289f7ee9bf2e1f1d1",
+      "message": "V3CRAFT Q2: stabilize painted size through animation\n\nLearning: reports/v3-feel/LEARN/Q2.md\n\nCache opaque contours per mesh triangle, report their posed bounds, and preserve each pose shape with a foot-pivoted uniform size correction. Move outer enemy slots inward to retain recoil clearance. Six desktop rendered-pixel cases pass sampled size and clipping checks; typecheck and focused unit tests pass. Q2 remains open pending fresh footage and full regression.\n\n"
     }
   }
 }

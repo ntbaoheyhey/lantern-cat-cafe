@@ -12,11 +12,13 @@ function values(g){
  if(g.op==='near')return [g.limit[0],g.limit[0]+g.limit[1]+.001];throw Error(g.op);
 }
 for(const gate of gates){
- const [good,bad]=values(gate),sample=value=>({basis:'presentation-schedule',samples:(gate.scope==='fixtures'?fixtures:['all']).map(fixture=>({fixture,value}))});
+ const [good,bad]=values(gate),required=Array.isArray(gate.scope)?gate.scope:gate.scope==='fixtures'?fixtures:['all'];
+ const sample=value=>({basis:'presentation-schedule',samples:required.map(fixture=>({fixture,value}))});
  test(`${gate.id}: fake PASS`,()=>assert.equal(evaluateGate(gate,sample(good)).state,'PASS'));
  test(`${gate.id}: fake FAIL`,()=>assert.equal(evaluateGate(gate,sample(bad)).state,'FAIL'));
  test(`${gate.id}: absent evidence stays OPEN`,()=>assert.equal(evaluateGate(gate,undefined).state,'OPEN'));
  if(gate.scope==='fixtures')test(`${gate.id}: cannot hide a missing fixture`,()=>assert.equal(evaluateGate(gate,{samples:[{fixture:'wave1',value:good}]}).state,'OPEN'));
+ if(Array.isArray(gate.scope))test(`${gate.id}: wrong fixture stays OPEN`,()=>assert.equal(evaluateGate(gate,{samples:[{fixture:'wave1',value:good}]}).state,'OPEN'));
 }
 test('IDs are unique',()=>assert.equal(new Set(gates.map(g=>g.id)).size,gates.length));
 test('unsigned, missing, changed and escaping evidence is rejected',()=>{
