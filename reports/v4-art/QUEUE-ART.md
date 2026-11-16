@@ -13,6 +13,6 @@
 | A7 | Enemies and boss | queued |
 | A8 | Designer intake interrupt | queued |
 | A9 | Ultimate clarity | queued |
-| A10 | SHIP art requests interrupt | STARTED 2026-11-16T05:05:50.327110+00:00; open: landing key art, thumbnail,3class icons; requested04:44UTC, due17Nov12UTC |
+| A10 | SHIP art requests interrupt | done ENDED 2026-11-16T05:16:10.284266+00:00; REVIEW/A10/REVIEW.md;8/10;5assets+PNG alternatives |
 | A11 | Open items and polish | queued |
 | A12 | Demo Day backlog after freeze | queued |

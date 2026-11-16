@@ -23,3 +23,6 @@ A1 pushed 46e21a6c3589cb965c10c5a8790b24d2724c9216. A1b STARTED 2026-11-16T04:51
 
 A1b 2026-11-16T05:04:40.770136+00:00:7drills+3same-scale comparisons inspected; chosen200ms melee/150ms ranged/leaves heal; LEARN source minimum met. Full-video catalogue OPEN; film gates NOT YET. A10 art request interrupts; return to A1b coverage next.
 A10 keyart1 accepted 2026-11-16T05:09:21.864293+00:00: landing-keyart.webp1600x900/329438bytes; own4cats input, provenance saved; thumbnail/icons pending.
+A10 checkpoint pushed 56a2e6b03897a021043a82bf140bf0b578e4f526. Thumbnail1 accepted pending small-size check;1280x720JPEG376043bytes; source1672x941.
+A10 DONE 2026-11-16T05:16:10.284266+00:00; keyart+thumbnail+3icons delivered, REVIEW/A10/REVIEW.md+asset-checks.json;6sources/1paper/3docs/own2layouts;G-REG2641/314/typecheck/3parityPASS;8/10; commit pending.
+A10 time05:04:40–2026-11-16T05:16:10.284266+00:00: generation+prompt+layout authoring predominated; approximate65%authoring/15%research/20%measurement+reports (estimated, not telemetry).

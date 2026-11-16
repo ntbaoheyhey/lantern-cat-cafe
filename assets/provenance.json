@@ -3198,7 +3198,7 @@
       "referenceInput": "own art only: apps/web/public/units/{mochi,soot,clover,panko}/runtime.webp via approved-cats.jpg",
       "prompt": "Use case: ads-marketing. Asset: Taskbar Hero landing key art, wide 16:9 landscape illustration, 1536x864 or larger. Create an original polished cozy fantasy game painting. Input image is a character identity reference sheet containing OUR OWN approved four cats, left to right Mochi, Soot, Clover, Panko. Preserve every cat identity, fur, face, costume and props; do not reproduce the labels or flat sheet layout.\nScene: a small warmly lit wooden lantern cafe porch at blue-hour dusk, soft painted woodland beyond, rich quiet indigo shadows and honey light. The four companions gather at the cafe threshold, ready for a small adventure. Mochi is the main foreground hero, fluffy cream cat with turquoise eyes, teal apron overalls, oval wooden shield with little gold lantern. Soot is a slim gray cat with amber eyes, purple witch hat and cape, teal waist fabrics and hand-held amber lantern. Clover is a cream cat with green eyes, sage dress and leaf cape clasp, holding a delicate silver tea kettle. Panko is a round cream baker cat, cream cap and apron, wooden rolling pin and bread-shaped wooden shield.\nComposition: all four full bodies and props in the RIGHT 58% of the frame, a carefully spaced triangular ensemble at three depths with each face fully separated; Mochi leads, Soot behind to the right, Clover behind to the left, Panko at front right. Keep the whole group inside the right boundary with at least5%image margin; no cropped ears, tails, feet or props. Their bodies fill about65%image height. LEFT 36% is calm dark painted negative space for live HTML title/copy, with only subtle porch/woodland shapes and no focal lanterns. Landscape composition, cohesive perspective and warm grounding shadows, no pasted-cutout look. Match the softly textured hand-painted storybook finish and delicate warm outlines of our cats. Lanterns illuminate faces gently, no washed out highlights. No additional characters, no enemies, no weapon changes, no logos, no text, no UI, no watermark, no border. This is promotional illustration, not a mock gameplay screenshot.\n",
       "sha256": "29c6ffb9761476104d666e07528a6eca842ec4b5d7d3fdcf109bc2fc3b96e884",
-      "status": "accepted A10 promotional illustration; see reports/v4-art/REVIEW/A10/REVIEW.md"
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
     },
     {
       "id": "v4art-promo-landing-keyart",
@@ -3211,7 +3211,150 @@
       "referenceInput": "own art only: apps/web/public/units/{mochi,soot,clover,panko}/runtime.webp via approved-cats.jpg",
       "prompt": "Use case: ads-marketing. Asset: Taskbar Hero landing key art, wide 16:9 landscape illustration, 1536x864 or larger. Create an original polished cozy fantasy game painting. Input image is a character identity reference sheet containing OUR OWN approved four cats, left to right Mochi, Soot, Clover, Panko. Preserve every cat identity, fur, face, costume and props; do not reproduce the labels or flat sheet layout.\nScene: a small warmly lit wooden lantern cafe porch at blue-hour dusk, soft painted woodland beyond, rich quiet indigo shadows and honey light. The four companions gather at the cafe threshold, ready for a small adventure. Mochi is the main foreground hero, fluffy cream cat with turquoise eyes, teal apron overalls, oval wooden shield with little gold lantern. Soot is a slim gray cat with amber eyes, purple witch hat and cape, teal waist fabrics and hand-held amber lantern. Clover is a cream cat with green eyes, sage dress and leaf cape clasp, holding a delicate silver tea kettle. Panko is a round cream baker cat, cream cap and apron, wooden rolling pin and bread-shaped wooden shield.\nComposition: all four full bodies and props in the RIGHT 58% of the frame, a carefully spaced triangular ensemble at three depths with each face fully separated; Mochi leads, Soot behind to the right, Clover behind to the left, Panko at front right. Keep the whole group inside the right boundary with at least5%image margin; no cropped ears, tails, feet or props. Their bodies fill about65%image height. LEFT 36% is calm dark painted negative space for live HTML title/copy, with only subtle porch/woodland shapes and no focal lanterns. Landscape composition, cohesive perspective and warm grounding shadows, no pasted-cutout look. Match the softly textured hand-painted storybook finish and delicate warm outlines of our cats. Lanterns illuminate faces gently, no washed out highlights. No additional characters, no enemies, no weapon changes, no logos, no text, no UI, no watermark, no border. This is promotional illustration, not a mock gameplay screenshot.\n",
       "sha256": "81d1f8fff1e216096bb8a6ab2e2ed1ecbc0bc00a7c85678ceba1c63457218bf5",
-      "status": "accepted A10 promotional illustration; see reports/v4-art/REVIEW/A10/REVIEW.md"
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-promo-thumbnail-1",
+      "path": "tools/v3craft-lab/poses/raw/promo/thumbnail-1.png",
+      "tool": "OpenAI built-in image_gen",
+      "date": "2026-11-16T05:10:56.264772+00:00",
+      "inputs": [
+        "reports/v4-art/REVIEW/A10/thumbnail-reference.jpg"
+      ],
+      "referenceInput": "own art only: apps/web/public/units/{mochi,soot,yarn-giant}/runtime.webp via thumbnail-reference.jpg",
+      "prompt": "Use case: ads-marketing. Asset: original illustrated video thumbnail for Taskbar Hero, wide16:9 landscape, ideally2048x1152. Input is an identity reference sheet of OUR OWN Mochi, Soot and Yarn Giant. Preserve their exact identities and props; do not reproduce labels/background/sheet layout.\nScene: dramatic but cozy storybook showdown on a lantern cafe stone courtyard at dusk. LEFT: Mochi the fluffy cream cat with teal eyes and teal apron-overalls braces forward with the oval wooden shield and dangling gold lantern; Soot the gray amber-eyed cat in purple witch hat/cape stands just behind with the gold lantern raised, releasing one small tapered purple-and-amber flame toward the giant. RIGHT: the massive plum-pink Yarn Giant, twisted wool coils, stitched cape, small crooked gold crown, two amber eyes and big soft fists, leans toward them. No teeth, no realistic monster flesh. Keep the original cute proportions, costumes and palettes. A gold contact spark just before the giant's fist meets Mochi's shield carries the focal point; no impact covering faces. Three clearly separated readable faces, full ears and crown, shield and lanterns readable at320px thumbnail width. Let Yarn Giant tower over the cats. Curved yarn trails on right and purple tapered flame on left support the confrontation without filling the scene. Camera at cat eye level, dynamic diagonal staging, warm amber versus deep lavender night. Hand-painted tactile storybook finish, coherent floor shadows, refined natural posing, richly textured wool and soft fur. Keep all important faces/props within5%frame margins; small quiet upper-left sky pocket for a title overlay. No words, no title, no UI, no rings, no lens flare, no fog wash, no watermark, no frame. Do not add other characters or change the shield into a sword. Promotional artwork, not a gameplay screenshot.\n",
+      "sha256": "e2c0f294a26128cd6a07270de972420e3d66f051db1900f8e44676079068e286",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-promo-video-thumbnail",
+      "path": "apps/web/public/units/promo/v4/video-thumbnail.jpg",
+      "tool": "Pillow fit1280x720 JPEG93 export",
+      "date": "2026-11-16T05:10:56.264772+00:00",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/promo/thumbnail-1.png"
+      ],
+      "referenceInput": "own art only: apps/web/public/units/{mochi,soot,yarn-giant}/runtime.webp via thumbnail-reference.jpg",
+      "prompt": "Use case: ads-marketing. Asset: original illustrated video thumbnail for Taskbar Hero, wide16:9 landscape, ideally2048x1152. Input is an identity reference sheet of OUR OWN Mochi, Soot and Yarn Giant. Preserve their exact identities and props; do not reproduce labels/background/sheet layout.\nScene: dramatic but cozy storybook showdown on a lantern cafe stone courtyard at dusk. LEFT: Mochi the fluffy cream cat with teal eyes and teal apron-overalls braces forward with the oval wooden shield and dangling gold lantern; Soot the gray amber-eyed cat in purple witch hat/cape stands just behind with the gold lantern raised, releasing one small tapered purple-and-amber flame toward the giant. RIGHT: the massive plum-pink Yarn Giant, twisted wool coils, stitched cape, small crooked gold crown, two amber eyes and big soft fists, leans toward them. No teeth, no realistic monster flesh. Keep the original cute proportions, costumes and palettes. A gold contact spark just before the giant's fist meets Mochi's shield carries the focal point; no impact covering faces. Three clearly separated readable faces, full ears and crown, shield and lanterns readable at320px thumbnail width. Let Yarn Giant tower over the cats. Curved yarn trails on right and purple tapered flame on left support the confrontation without filling the scene. Camera at cat eye level, dynamic diagonal staging, warm amber versus deep lavender night. Hand-painted tactile storybook finish, coherent floor shadows, refined natural posing, richly textured wool and soft fur. Keep all important faces/props within5%frame margins; small quiet upper-left sky pocket for a title overlay. No words, no title, no UI, no rings, no lens flare, no fog wash, no watermark, no frame. Do not add other characters or change the shield into a sword. Promotional artwork, not a gameplay screenshot.\n",
+      "sha256": "0cfc221b5e88121fc1dc2663af33cbe2c35af490e9d7ecc5c64ca27d25ea61a9",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-melee-1-png",
+      "path": "tools/v3craft-lab/poses/raw/promo/class-melee-1.png",
+      "tool": "OpenAI built-in image_gen",
+      "date": "2026-11-16T05:12:48.556142+00:00",
+      "inputs": [
+        "reports/v4-art/REVIEW/A10/approved-cats.jpg"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nMELEE class: a sturdy oval wooden shield with warm brass rim and a diagonal wooden rolling pin crossing behind it, echoing Mochi/Panko. Shield is the large readable shape, rolling pin visible at top-left and bottom-right. Honey/cream/tan palette with a small teal strap. Emphasize close physical contact and protection. No sword, no magical beam.\n",
+      "sha256": "c4d0449f06e39739b9178abedbbdf98e57e304eada6dbb75e105861946552738",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-melee-png",
+      "path": "apps/web/public/units/promo/v4/class-melee.png",
+      "tool": "Pillow RGBA resize256; PNG export",
+      "date": "2026-11-16T05:12:48.556142+00:00",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/promo/class-melee-1.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nMELEE class: a sturdy oval wooden shield with warm brass rim and a diagonal wooden rolling pin crossing behind it, echoing Mochi/Panko. Shield is the large readable shape, rolling pin visible at top-left and bottom-right. Honey/cream/tan palette with a small teal strap. Emphasize close physical contact and protection. No sword, no magical beam.\n",
+      "sha256": "7b82cbf85cdf04b3bc6c1c788ad9310b9f5caa43c79cb4ae21657de1d4b3937b",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-melee-webp",
+      "path": "apps/web/public/units/promo/v4/class-melee.webp",
+      "tool": "Pillow lossless WebP export",
+      "date": "2026-11-16T05:12:48.556142+00:00",
+      "inputs": [
+        "apps/web/public/units/promo/v4/class-melee.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nMELEE class: a sturdy oval wooden shield with warm brass rim and a diagonal wooden rolling pin crossing behind it, echoing Mochi/Panko. Shield is the large readable shape, rolling pin visible at top-left and bottom-right. Honey/cream/tan palette with a small teal strap. Emphasize close physical contact and protection. No sword, no magical beam.\n",
+      "sha256": "2e7f506493afbdf490009d466f1d7040a7142a4a95996118cdb6e132e051ea5b",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-ranged-1-png",
+      "path": "tools/v3craft-lab/poses/raw/promo/class-ranged-1.png",
+      "tool": "OpenAI built-in image_gen",
+      "date": "2026-11-16T05:13:37.848706+00:00",
+      "inputs": [
+        "reports/v4-art/REVIEW/A10/approved-cats.jpg"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nRANGED class: a small brass hanging lantern with an arched handle, warm amber flame inside and one tapered lavender-violet flame tail sweeping horizontally toward the right from its side. Lantern is the large readable shape, single compact pointed tail makes direction clear. Amber/brass and muted purple palette echoing Soot. No circles, no ring, no explosion.\n",
+      "sha256": "59e1b2eed4450b4266379856bf94de6d49c764f74cfabf746d1741b6f4f6eaaf",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-ranged-png",
+      "path": "apps/web/public/units/promo/v4/class-ranged.png",
+      "tool": "Pillow RGBA resize256; PNG export",
+      "date": "2026-11-16T05:13:37.848706+00:00",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/promo/class-ranged-1.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nRANGED class: a small brass hanging lantern with an arched handle, warm amber flame inside and one tapered lavender-violet flame tail sweeping horizontally toward the right from its side. Lantern is the large readable shape, single compact pointed tail makes direction clear. Amber/brass and muted purple palette echoing Soot. No circles, no ring, no explosion.\n",
+      "sha256": "9a639aabcdb4352ba89e781fea74d3614dfa721fa63b792dc64fad605ca8f08c",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-ranged-webp",
+      "path": "apps/web/public/units/promo/v4/class-ranged.webp",
+      "tool": "Pillow lossless WebP export",
+      "date": "2026-11-16T05:13:37.848706+00:00",
+      "inputs": [
+        "apps/web/public/units/promo/v4/class-ranged.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nRANGED class: a small brass hanging lantern with an arched handle, warm amber flame inside and one tapered lavender-violet flame tail sweeping horizontally toward the right from its side. Lantern is the large readable shape, single compact pointed tail makes direction clear. Amber/brass and muted purple palette echoing Soot. No circles, no ring, no explosion.\n",
+      "sha256": "e39601a024530d281291598bb0b48c7926500f4a2de8e0d05ac98789a0229498",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-healer-1-png",
+      "path": "tools/v3craft-lab/poses/raw/promo/class-healer-1.png",
+      "tool": "OpenAI built-in image_gen",
+      "date": "2026-11-16T05:14:42.013519+00:00",
+      "inputs": [
+        "reports/v4-art/REVIEW/A10/approved-cats.jpg"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nHEALER class: a warm cream porcelain teacup tilted slightly upward with a small sage-green leaf sprig rising from the tea, echoing Clover. Cup and two broad rounded leaves create the whole recognizable silhouette. Mint/sage/cream palette and small warm brass accent. Gentle restorative shape, no cross, no blade, no starburst, no damage shapes.\n",
+      "sha256": "9edf0850120292920c0b56f4599a7cc458b7cd1fdc3c4de9c4fb6686acbf1b25",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-healer-png",
+      "path": "apps/web/public/units/promo/v4/class-healer.png",
+      "tool": "Pillow RGBA resize256; PNG export",
+      "date": "2026-11-16T05:14:42.013519+00:00",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/promo/class-healer-1.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nHEALER class: a warm cream porcelain teacup tilted slightly upward with a small sage-green leaf sprig rising from the tea, echoing Clover. Cup and two broad rounded leaves create the whole recognizable silhouette. Mint/sage/cream palette and small warm brass accent. Gentle restorative shape, no cross, no blade, no starburst, no damage shapes.\n",
+      "sha256": "1f39981c81536aed731b3a0be60c9acdcecb8879eed80aad49dba1acc055571d",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-class-healer-webp",
+      "path": "apps/web/public/units/promo/v4/class-healer.webp",
+      "tool": "Pillow lossless WebP export",
+      "date": "2026-11-16T05:14:42.013519+00:00",
+      "inputs": [
+        "apps/web/public/units/promo/v4/class-healer.png"
+      ],
+      "referenceInput": "own art only: Mochi/Soot/Clover/Panko runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: stylized-concept. Asset: one class icon for our cozy fantasy cat RPG Taskbar Hero. Single centered standalone illustrated game icon on a genuinely transparent background (alpha), square1024x1024. Match the softly painted tactile storybook style of OUR approved cats in the provided own-art reference, using their original props as visual vocabulary. A strong easily recognized silhouette at32x32, few large colour areas, softly worn materials, warm dark sepia outline thick enough to survive downsampling, a restrained cream highlight edge. The object occupies70%of the square, fully inside the canvas with15%empty margin each side. Three-quarter view, balanced compact silhouette. No characters, faces, hands, floor, cast shadow outside the object, background, badge, medallion, border, letters, logo, watermark, sparkles, or tiny ornamental clutter.\nHEALER class: a warm cream porcelain teacup tilted slightly upward with a small sage-green leaf sprig rising from the tea, echoing Clover. Cup and two broad rounded leaves create the whole recognizable silhouette. Mint/sage/cream palette and small warm brass accent. Gentle restorative shape, no cross, no blade, no starburst, no damage shapes.\n",
+      "sha256": "f1c1acee7e120a3f352ceba9223acc3fdfac285933f695148e06fbc41cc57384",
+      "status": "accepted A10; integration guidance and review reports/v4-art/REVIEW/A10/REVIEW.md"
     }
   ]
 }
