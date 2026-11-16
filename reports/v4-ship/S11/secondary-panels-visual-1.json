@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-16T17:53:08.014757+00:00",
+  "buildPath": "reports/v4-ship/S8/production-build-9.json",
+  "buildSourceCommit": "2337820baab5c7c2cb4d34c459a8fb5c3f11ab83",
+  "screenshot": {
+    "path": "reports/v4-ship/S11/secondary-panels-4-economy.png",
+    "sha256": "70c127c4987eb1f63473dfc41dd6fa5125a4e929316f2a6f3c1298546af613be",
+    "width": 1024,
+    "height": 576
+  },
+  "method": "Agent inspection of the actual production 1024x576 capture; DOM/AX contrast and geometry remain separate evidence.",
+  "observations": [
+    "Economy heading, five navigation labels and all three information cards are readable and separated.",
+    "Painted scene, mascot, frame and icons remain visible around the opaque information surfaces.",
+    "No apparent text clipping or overlapping controls in the captured viewport; Live ratio remains reachable below the counters."
+  ],
+  "pass": true,
+  "limits": [
+    "Only this Economy viewport was visually opened. Other states and scroll positions have DOM/AX evidence, not new visual inspection.",
+    "No human listening, screen-reader or whole-product UI acceptance is established."
+  ],
+  "s11ScreenshotCount": 5,
+  "imageOpenCount": 8
+}
