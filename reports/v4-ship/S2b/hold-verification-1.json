@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-16T10:36:12.149870+00:00",
+  "sourceCommit": "f5182cee273c0f966ef18db0e6522ff1d91d4a29",
+  "scope": "Verification of existing S2b hold; no new candidate, experiment, source edit or baseline",
+  "unchangedRulesSince": "2a7ca6c40768ea677e5c9804bc78bec782b77485",
+  "changedRuleFiles": [],
+  "production": {
+    "attackAndPowerMultiplier": 1.15,
+    "spoolRetentionBp": 2500,
+    "policyChanged": false,
+    "thresholdsChanged": false,
+    "timingChanged": false,
+    "newClassCandidate": null,
+    "newParityBaseline": false
+  },
+  "officialE3": {
+    "production115": "16/18; low-bot burnClaims 0.9968275226243786 < 1 and high-bot starRatio 1.1015423773191984 > 1.10",
+    "rejected120": "16/18; low-bot burnClaims 0.9938142594651725 < 1 and high-bot starRatio 1.1012631045710095 > 1.10"
+  },
+  "verificationPass": true,
+  "classGatePass": false,
+  "regression": "Existing S5/regression-3 evidence bound below; runtime unchanged since that check. Seven ART-owned web failures and official class parity remain open.",
+  "next": "End blind scalar-attack search. Keep 1.15 and 25%; do not select a third candidate, launch sensitivity/E4/E5, or create a baseline without a concrete class-only acquisition/eligibility hypothesis supported on independent native cohorts. Carry the unresolved boundary to S11 while independent S5/S6 work continues.",
+  "evidence": [
+    {
+      "path": "reports/v4-ship/S2b/boundary-decision.json",
+      "sha256": "abfc2ce45e1e58f141416927843048e0a294e6c62003f518c5b52032dc7e6716"
+    },
+    {
+      "path": "reports/v4-ship/S2b/boundary-check.json",
+      "sha256": "59d89f72456e657b2af625e4c1514b412efab07e617568068afeefce4e4a45c2"
+    },
+    {
+      "path": "reports/v4-ship/S2b/boundary-channels.json",
+      "sha256": "d52ab0019574d10ae40b1ec99ae96f98c6f28cfaaaeeb3abd43d8941faba608b"
+    },
+    {
+      "path": "reports/v4-ship/S2b/offense115-production-holdout.json",
+      "sha256": "a76ce4fc1f30d3520b82ed13c15f103a5e8b62a6ae24015d6c9f059ed8d7a6ea"
+    },
+    {
+      "path": "reports/v4-ship/S5/regression-3/check.json",
+      "sha256": "d102a4dff88e95f4a4e473f2d406186821f6944a04469e1214b49e8a4e68dcc7"
+    }
+  ]
+}

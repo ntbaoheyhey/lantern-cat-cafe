@@ -4,9 +4,9 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW S5final-check-1 complete:1801.137swall/1801.08sdecoded/18restarts;G-AUDIOfail,carryS11/audio-open.json. Capture32484/validator59794/final65514collected. History30159running.
-NEXT 1: S5closure checkpoint ready; verifyS2bhold and start S4-final-1 stable20journeys immediately; V4_RECOVERY=1/V4_STABLE=1/V4_AUDIO_TRACE=1/V4_FAIL_FAST=1.
-NEXT 2: S2b timeboxed to S11; require measured class-only eligibility/acquisition hypothesis before candidate;valid18/18->sensitivity/E4/E5->ONEbaseline->notifyART. No baseline yet.
+NOW S5closure f5182cee2 pushed;S2bhold verified unchanged;S4regression32931 running. S5final-check-1 complete:1801.137swall/1801.08sdecoded/18restarts;G-AUDIOfail,carryS11/audio-open.json. Capture32484/validator59794/final65514collected. History30159running.
+NEXT 1: collectS4regression32931;commitstable/RPCreceiptharness;start S4-final-1 stable20journeys immediately; V4_RECOVERY=1/V4_STABLE=1/V4_AUDIO_TRACE=1/V4_FAIL_FAST=1.
+NEXT 2: S2b hold-verification-1 PASS;G-CLASS remainsFAIL/timeboxed toS11; require measured class-only eligibility/acquisition hypothesis before candidate;valid18/18->sensitivity/E4/E5->ONEbaseline->notifyART. No baseline yet.
 NEXT 3: stable20journeys (10perdesktop)+S4proof; S6README/architecture/integration/licenses/cleanclone; S7ART17Nov12:00; S8productionrehearsal/runbook; S9researchdocs; S10review+film18Nov12:00; S11fix/freeze19Nov12:00.
 CHECKPOINT:previous224a5c98c;S5closure now includes durationverifier/regression3/endurance/finalfailures;runtimefixed. S4stable/RPCreceipt harnesspreparation separate.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
@@ -31,4 +31,4 @@ SERVICES Vite5994 PID33548/backend5997 PID33468/Anvil8546 PID33478;audioVite5995
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent. User10:07UTC directed recovermissingS6-S11definitions;verified REQUEST lines158-163+hash. No publictx/deploy/ARTedit/imagegeneration.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
-UPDATED 2026-11-16T10:34:22.861965+00:00.
+UPDATED 2026-11-16T10:36:12.149870+00:00.
