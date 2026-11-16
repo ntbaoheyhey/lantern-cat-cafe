@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: launch detached validate-resolution.py pma-r2 preview; nativePanko60 and associated-upload/default-mips installed. Record PID/log immediately; focused/typecheck+12browser cases, four new runtime sheets, then fullregression/3F6/lane+3films and900p.
+NEXT1: poll PMA-runtimeR2PID35257/tail5 jobs/a10-pma-runtime-r2.log and validation-pma-r2.json;46focused tests/typecheck+12browser cases. Then four fresh runtime sheets before full regression/3F6/lane/films+900p.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:11a0365af verified. Original-PNGcontrol12cases/4sheets proves eye/muzzle circles are alpha-filter halos, not missing glasses; prior interpretation corrected. Select nativePanko60 plus associated-mips; mixedprojection7,966,311B/reserve16384/headroom33689 only.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). Panko controlR2 34355 finishedPASS;2ownedjobs.
+LAST PUSH:ae96b7d85 verified; runtime nativePanko60 plus selected straight pages upload-associated/default-mips installed.46focused tests/5files+typecheckPASS; browser preview running; production7,966,311B remains projection only.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); runtimeR2PID35257 jobs/a10-pma-runtime-r2.log/job-pma-runtime-r2.json.3ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
