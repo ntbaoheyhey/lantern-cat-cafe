@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-16T09:47:52.036525+00:00",
+  "beforeSha256": "e0d3962f1e4c8fb55313b225f89d3d82873fefef8f639589bed4a7bf06f409ad",
+  "afterSha256": "7c58e404783573fc8822681959dc062624a415f505b3ae242f6b3baa7b22c94d",
+  "beforeFailure": "learnGate(S5) threw ERR_INVALID_ARG_TYPE because S5-validation-7 had url but no url_or_path; formal/web-doc also differed from catalog enums.",
+  "changes": [
+    {
+      "id": "S5-validation-1",
+      "before": {
+        "type": "formal",
+        "url": "https://www.w3.org/TR/webaudio/#dom-audiobuffersourcenode-start"
+      },
+      "after": {
+        "type": "formal-document",
+        "url_or_path": "https://www.w3.org/TR/webaudio/#dom-audiobuffersourcenode-start"
+      }
+    },
+    {
+      "id": "S5-validation-2",
+      "before": {
+        "type": "web-doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start"
+      },
+      "after": {
+        "type": "internet-doc",
+        "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start"
+      }
+    },
+    {
+      "id": "S5-validation-3",
+      "before": {
+        "type": "web-doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp"
+      },
+      "after": {
+        "type": "internet-doc",
+        "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp"
+      }
+    },
+    {
+      "id": "S5-validation-4",
+      "before": {
+        "type": "web-doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData"
+      },
+      "after": {
+        "type": "internet-doc",
+        "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData"
+      }
+    },
+    {
+      "id": "S5-validation-5",
+      "before": {
+        "type": "web-doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime"
+      },
+      "after": {
+        "type": "internet-doc",
+        "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime"
+      }
+    },
+    {
+      "id": "S5-validation-6",
+      "before": {
+        "type": "web-doc",
+        "url": "https://ffmpeg.org/ffmpeg-filters.html#loudnorm"
+      },
+      "after": {
+        "type": "internet-doc",
+        "url_or_path": "https://ffmpeg.org/ffmpeg-filters.html#loudnorm"
+      }
+    },
+    {
+      "id": "S5-validation-7",
+      "before": {
+        "type": "own-experiment",
+        "url": "reports/v4-ship/S5/engine-probe-before.json"
+      },
+      "after": {
+        "type": "own-experiment",
+        "url_or_path": "reports/v4-ship/S5/engine-probe-before.json"
+      }
+    }
+  ],
+  "thresholdsChanged": false
+}

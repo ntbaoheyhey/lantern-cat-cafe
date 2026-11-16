@@ -1,6 +1,9 @@
 /** Native keyboard slider operations, actual Web Audio gains, and reload persistence. */
 import {createRequire} from 'node:module';import {writeFileSync,readFileSync,mkdirSync,existsSync} from 'node:fs';import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';import {openAudioScreen} from './ui-fixtures.mjs';
+import {fileURLToPath} from 'node:url';import {gzipSync} from 'node:zlib';
+import {runtimeSignature,assertUnchanged} from './runtime-signature.mjs';
+const root=fileURLToPath(new URL('../../',import.meta.url)),signature=runtimeSignature(root);
 const require=createRequire(new URL('../../apps/web/package.json',import.meta.url)),{chromium}=require('@playwright/test');
 const B=process.env.AUDIO_EVIDENCE_DIR??'reports/v3-shell/b2',log=`${B}/tests/s6-settings-browser.log`,lines=[];
 if(process.env.AUDIO_EVIDENCE_DIR&&existsSync(`${B}/UI-AUDIO-SETTINGS.json`))throw Error('Preserve prior evidence; choose a new AUDIO_EVIDENCE_DIR');
@@ -43,6 +46,8 @@ try{
  await p.getByRole('button',{name:'Unmute sound',exact:true}).click();await p.waitForTimeout(200);
  assert(await p.evaluate(()=>!window.__thAudio.muted&&Math.abs(window.__thAudio.buses.get('master').gain.value-.25)<.01));pass('unmute restores saved master level');
  writeFileSync(log,lines.join('\n')+'\n');
- const result={passed:true,tests:checks,log,sha256:createHash('sha256').update(readFileSync(log)).digest('hex'),method:'Actual native sliders with Home/ArrowRight; quiet 440 Hz diagnostic input checks zero and 25% output RMS on every real bus. Other settings unchanged; localStorage and mute checked before and after reload. Probe is isolated from the crawler and production renders.'};
+ assertUnchanged(root,signature);
+ const compressed=gzipSync(readFileSync(log));writeFileSync(log+'.gz',compressed);
+ const result={passed:true,tests:checks,signature,log,sha256:createHash('sha256').update(readFileSync(log)).digest('hex'),bundledLog:{path:log+'.gz',sha256:createHash('sha256').update(compressed).digest('hex')},method:'Actual native sliders with Home/ArrowRight; quiet 440 Hz diagnostic input checks zero and 25% output RMS on every real bus. Other settings unchanged; localStorage and mute checked before and after reload. Probe is isolated from the crawler and production renders.'};
  writeFileSync(`${B}/UI-AUDIO-SETTINGS.json`,JSON.stringify(result,null,2)+'\n');console.log(`${checks} settings checks pass`);
 }catch(error){lines.push('FAIL '+error.message);writeFileSync(log,lines.join('\n')+'\n');throw error;}finally{await browser.close();}

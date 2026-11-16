@@ -2,6 +2,8 @@
 import {existsSync,writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {chromium} from '../../../scripts/v3feel/browser-fixture.mjs';
+import {runtimeSignature,assertUnchanged} from '../../../scripts/audio/runtime-signature.mjs';
+const root=resolve(import.meta.dirname,'../../..'),signature=runtimeSignature(root);
 const out=resolve('reports/v4-ship/S5',process.argv[2]??'ui-duration-1.json');
 if(existsSync(out))throw Error('Preserve previous UI measurement');
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']});
@@ -21,7 +23,8 @@ try{
   }
   e.stop();await e.ctx.close();return rows;
  });
- const report={at:new Date().toISOString(),method:'Real browser source.start durations for all thirteen semantic UI cues and four transaction cues, normal and slowest supported pitch; existing release envelope retained. Isolated diagnostic, not journey evidence.',rows,pass:rows.length===34&&rows.every(r=>r.pass)};
+ assertUnchanged(root,signature);
+ const report={at:new Date().toISOString(),signature,method:'Real browser source.start durations for all thirteen semantic UI cues and four transaction cues, normal and slowest supported pitch; existing release envelope retained. Isolated diagnostic, not journey evidence.',rows,pass:rows.length===34&&rows.every(r=>r.pass)};
  writeFileSync(out,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({rows:rows.length,pass:report.pass,maxMs:Math.max(...rows.map(r=>r.durationMs)),failures:rows.filter(r=>!r.pass)}));
  if(!report.pass)process.exitCode=1;
 }finally{await browser.close();}

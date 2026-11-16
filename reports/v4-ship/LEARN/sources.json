@@ -638,52 +638,52 @@
   },
   {
     "id": "S5-validation-1",
-    "type": "formal",
-    "url": "https://www.w3.org/TR/webaudio/#dom-audiobuffersourcenode-start",
+    "type": "formal-document",
     "accessed": "2026-11-16",
-    "takeaway": "Audio-clock scheduling and actual source starts, not cue requests."
+    "takeaway": "Audio-clock scheduling and actual source starts, not cue requests.",
+    "url_or_path": "https://www.w3.org/TR/webaudio/#dom-audiobuffersourcenode-start"
   },
   {
     "id": "S5-validation-2",
-    "type": "web-doc",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start",
+    "type": "internet-doc",
     "accessed": "2026-11-16",
-    "takeaway": "Duration is source content; output duration depends on playback rate."
+    "takeaway": "Duration is source content; output duration depends on playback rate.",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start"
   },
   {
     "id": "S5-validation-3",
-    "type": "web-doc",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp",
+    "type": "internet-doc",
     "accessed": "2026-11-16",
-    "takeaway": "Device/performance timestamp is an estimate; physical loopback remains separate."
+    "takeaway": "Device/performance timestamp is an estimate; physical loopback remains separate.",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp"
   },
   {
     "id": "S5-validation-4",
-    "type": "web-doc",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData",
+    "type": "internet-doc",
     "accessed": "2026-11-16",
-    "takeaway": "Decode before contact; reuse resolved buffers without yielding a warmed request."
+    "takeaway": "Decode before contact; reuse resolved buffers without yielding a warmed request.",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData"
   },
   {
     "id": "S5-validation-5",
-    "type": "web-doc",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime",
+    "type": "internet-doc",
     "accessed": "2026-11-16",
-    "takeaway": "Schedule duck and release gain envelopes."
+    "takeaway": "Schedule duck and release gain envelopes.",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime"
   },
   {
     "id": "S5-validation-6",
-    "type": "web-doc",
-    "url": "https://ffmpeg.org/ffmpeg-filters.html#loudnorm",
+    "type": "internet-doc",
     "accessed": "2026-11-16",
-    "takeaway": "Read original input I/LRA/TP; never normalize evidence."
+    "takeaway": "Read original input I/LRA/TP; never normalize evidence.",
+    "url_or_path": "https://ffmpeg.org/ffmpeg-filters.html#loudnorm"
   },
   {
     "id": "S5-validation-7",
     "type": "own-experiment",
-    "url": "reports/v4-ship/S5/engine-probe-before.json",
     "accessed": "2026-11-16",
-    "takeaway": "Cold52.4ms versus selective preload0.9ms; simultaneous burst20 sources. After fix0.7ms and6 sources."
+    "takeaway": "Cold52.4ms versus selective preload0.9ms; simultaneous burst20 sources. After fix0.7ms and6 sources.",
+    "url_or_path": "reports/v4-ship/S5/engine-probe-before.json"
   },
   {
     "id": "S5-duck-recovery-comparison",
