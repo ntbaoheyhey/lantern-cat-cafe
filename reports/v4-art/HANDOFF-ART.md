@@ -1,12 +1,12 @@
-# ART execution anchor — 2026-11-16T21:31:25.654475+00:00
+# ART execution anchor — 2026-11-16T21:35:59.471856+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: pollalpha-precision PID17709/tail5 jobs/a10-alpha-precision-r1.log;inspect alpha-precision-r1.json+4newcomparisons. Step4/8 maxalpha2/4of255;sourcealphaExactFAILretained;support/128hull preserved;all usergates unchanged;no production.
+NEXT1: study whole-RGBA resolution derivatives, then private2/3 and1/2 drills from original12sources; remeasure Lab/alpha geometry, save comparison before any production. Opacity trials complete/rejected; never reopen their4crops.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:c97bf2f5e verified;all exact-alpha/split failures pushed,20comparisonsclosed;bounded-opacity2drillsactive. Aux1,705,765Bunchanged;contrastreceipt9df18432a;runtime9205464cb.
-LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log;alpha-supervisor17709 log jobs/a10-alpha-precision-r1.log/receipt scene-ready-transfer/job-alpha-precision-r1.json.3ownedjobs;priorjobsdone0.
-STOP/INBOX checked21:28UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEADa95a3ebcaf; finalclasses/solebaseline absent; no merge/baseline adoption.
+LAST PUSH:8bccc4c69 verified before this checkpoint;alpha-step4/8 fail9,025,666/8,955,256B;4recovered crop reviews saved. No production candidate. Contrastreceipt9df18432a;runtime9205464cb.
+LIVE: craftVite3426/5990 log jobs/needle-craft-vite-resume.log;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. Alpha17709 finished0;all experiment supervisors done. Old68961/69950 absent.2ownedservers;1jobslot.
+STOP/INBOX checked21:35UTC: noSTOP; explicit continuation active; INBOX pause superseded. LatestSHIP18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;R1-R4sixteen +splitR1four private comparisons saved/closed. Contrast56supplements+60HUD+3layouts/priorclosed;A10JPG8/8/rawonly;never reopen.
+IMAGEOPENS:0afterrewrite;24private comparisons saved/closed incl4opacity crops recovered without reopen. Contrast56supplements+60HUD+3layouts/priorclosed;A10JPG8/8/rawonly;never reopen.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
