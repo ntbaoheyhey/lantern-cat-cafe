@@ -5,8 +5,9 @@ import argparse, json, statistics
 parser=argparse.ArgumentParser()
 parser.add_argument("--subdir",default="layout1440")
 parser.add_argument("--report",default="layout900.json")
+parser.add_argument("--root",default="reports/v4-art/REVIEW/A10/transfer")
 args=parser.parse_args()
-root = Path('reports/v4-art/REVIEW/A10/transfer')
+root = Path(args.root)
 results = []
 for fixture in ('wave1', 'wave3', 'boss'):
     folder = root / f'raw/{args.subdir}/{fixture}'

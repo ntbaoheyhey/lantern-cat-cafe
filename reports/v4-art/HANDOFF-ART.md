@@ -1,13 +1,13 @@
-# ART execution anchor — 2026-11-16T22:24:21.069081+00:00
+# ART execution anchor — 2026-11-16T22:29:39.499865+00:00
 ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: launch tools/.venv/bin/python tools/v3craft-lab/v4-transfer/validate-resolution.py pma-r2-regression regression detached; record PID/log immediately. Then explicit3F6 baseline comparison/lane audit, R2 fallback difference attribution, fresh A11 films+900p.
+NEXT1: after checkpoint push, launch tools/.venv/bin/python tools/v3craft-lab/v4-transfer/capture-delivery-r2.py detached; record PID/log. Fresh V4-A11-DELIVERY-R1:3x30s720p30FPSaudio/markers,3x900p layouts,10fps action sheets and private1024px copies; then scoped review.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:3d38c57f7 verified,0ahead/behind; runtime ae96b7d85. R2 preview completePASS:46tests/5files+typecheck+6normal/6blocked browser cases; geometryPASS. Four prior sheet observations saved; static suitable for films, no production acceptance.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). R2PID35257 completedPASS/absent;68961/69950 absent.2ownedservers.
+LAST PUSH:4481146f4 verified; runtime ae96b7d85. Fullweb2689/320PASS; typecheck/46focused+12browserPASS on same runtime; explicit3F6 baseline hashesPASS/inheritedlatest unchanged; lane131paths0violations. New verification checkpoint pending.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log(craftOFF). Regression37174 and parity38137 completedPASS; preview35257 absent.2ownedservers.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
-R2fallback: wave1 720/900 and boss900 snapshots exact; wave3 720/900 and boss720 differ, attribution OPEN. Selected runtime projection7,966,311B includes16KiBreserve, not integrated8MB pass. No full regression/film acceptance yet.
+R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; films pending.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.
