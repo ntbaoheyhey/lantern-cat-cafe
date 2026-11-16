@@ -1,4 +1,4 @@
-/** A7 original tea blossoms: vertical allied growth and a rear flowering fan. */
+/** A9 original tea blossoms: overhead flowering canopy and three soft descending pours. */
 import * as T from 'three';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 export interface TeaFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
@@ -14,7 +14,7 @@ function material(noise:T.Texture,foreground:boolean){return new T.ShaderMateria
  }`.replace(';#include',';\n#include')});}
 export class TeaBlossoms {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();readonly ready:Promise<void>;
- readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},recipients:[] as CraftPoint[],active:0,mainShape:'cream tea blossoms, mint leaves, short steam curls; allied vertical rise and rear flowering fan'};
+ readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},recipients:[] as CraftPoint[],active:0,mainShape:'cream tea blossoms, mint leaves, short steam curls; allied descending blossom pours and an overhead flowering canopy'};
  private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];private canopy:Ink;private glint:Ink;private sprigs:Ink[]=[];
  constructor(private readonly tuning:{rise?:number;canopyWidth?:number;canopyHeight?:number;textureRoot?:string}={}){
   const add=(root:T.Group,front:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,front));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
@@ -37,13 +37,22 @@ export class TeaBlossoms {
    const grow=smooth((ms-800)/300),decay=smooth((ms-1400)/700),w=(this.tuning.canopyWidth??920)*k*(.3+.7*grow),h=(this.tuning.canopyHeight??645)*k*(.2+.8*grow);
    const bottom=Math.min(f.height*.91,Math.max(f.casterFeet.y,...f.feet.map(p=>p.y))+65*k);
    const cx=Math.max(w/2+12*k,Math.min(f.width-w/2-12*k,f.feet.reduce((v,p)=>v+p.x,0)/f.feet.length));
-   this.place(this.canopy,cx,bottom-h/2,w,h,0,ms>=800?1-decay:0,ms,-.2+decay*.95);
+   const top=bottom-(this.tuning.canopyHeight??645)*k;
+   this.place(this.canopy,cx,top+h/2,w,h,0,ms>=800?1-decay:0,ms,-.2+decay*.95);
   }
   if(age>=0){
    const rise=smooth(age/350),fade=smooth((age-160)/(f.ultimate?650:420)),alpha=(.55+.45*smooth(age/70))*(1-fade);
    for(const [target,p]of f.feet.slice(0,6).entries())for(let i=0;i<3;i++){
-    const drift=f.reducedMotion?0:Math.sin(age/290+i*1.2)*3*k,dx=[-52,0,54][i]!;
-    this.place(this.sprigs[target*3+i]!,p.x+dx*k+drift,p.y-(82+(this.tuning.rise??60)*rise)*k,(66+5*i)*k,(148+12*i)*k,(i-1)*.09,alpha,ms,-.2+fade*.8);
+    const dx=[-52,0,54][i]!;
+    if(f.ultimate){
+     const pouredAge=age-i*70-(target%3)*35;if(pouredAge<0)continue;
+     const fall=smooth(pouredAge/320),spent=smooth((pouredAge-270)/580);
+     const drift=f.reducedMotion?0:Math.sin(pouredAge/240+i*1.2)*3*k;
+     this.place(this.sprigs[target*3+i]!,p.x+dx*k*(.35+.65*fall)+drift,p.y-(205-115*fall)*k,(66+5*i)*k,(148+12*i)*k,(i-1)*.09,(.45+.55*smooth(pouredAge/70))*(1-spent),ms,-.2+spent*.8);
+    }else{
+     const drift=f.reducedMotion?0:Math.sin(age/290+i*1.2)*3*k;
+     this.place(this.sprigs[target*3+i]!,p.x+dx*k+drift,p.y-(82+(this.tuning.rise??60)*rise)*k,(66+5*i)*k,(148+12*i)*k,(i-1)*.09,alpha,ms,-.2+fade*.8);
+    }
    }
   }
   for(const m of this.all){const u=m.material.uniforms;u.uFaceCount!.value=Math.min(16,f.faces.length);for(const [i,face]of f.faces.slice(0,16).entries())u.uFaces!.value[i].set((face.x+face.width/2)*px-f.worldWidth/2,f.worldHeight-(face.y+face.height/2)*px,(face.width/2+6)*px,(face.height/2+6)*px);}

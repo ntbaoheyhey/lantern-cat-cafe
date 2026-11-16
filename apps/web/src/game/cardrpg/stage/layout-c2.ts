@@ -37,7 +37,10 @@ export function stageLayoutC2(units: readonly StageUnitC2[], width: number, heig
     // Reserve a full four percent for painted bounds plus impact recoil.
     const leftExtent=unit.leftExtent===undefined?w/2:unit.leftExtent*coreHeight;
     const rightExtent=unit.rightExtent===undefined?w/2:unit.rightExtent*coreHeight;
-    const footX=Math.max(leftExtent+width*.04,Math.min(width-rightExtent-width*.04,requestedX));
+    // The drawing envelope already reserves deformation. Fixed boss flanks use
+    // part of that reserve to keep the painted formation wide without moving feet between poses.
+    const flank=hasBoss?(helperSeat ? .018 : unit.side==='party'?({soot:-.010,clover:-.020} as Record<string,number>)[unit.asset??unit.id]??0:0):0;
+    const footX=Math.max(leftExtent+width*.04,Math.min(width-rightExtent-width*.04,requestedX))+width*flank;
     // Leave room for health/status marks above the complete silhouette.
     const footY=Math.max(h+height*.07,Math.min(height*.97,height*(unit.boss?contract.boss.y:helperSeat?.y??incidental?.y??seat.y)));
     return [unit.id,{x:footX-w/2,y:footY-h,width:w,height:h,coreHeight,footX,footY,order:Math.round(footY*100),slot:unit.boss?'BOSS':helperSeat?`HELPER-${unit.seat??helper}`:seat.id}];
