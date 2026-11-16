@@ -1,5 +1,5 @@
 import {expect,it} from 'vitest';
-import {meleeContact,meleeRoot} from './class-motion';
+import {meleeContact,meleeRoot,denseMeleeRoot} from './class-motion';
 const home={x:250,y:450,core:225},target={x:1080,y:510,core:225};
 it('contacts the opaque front edge on either side and returns within the equal action clocks',()=>{
  for(const direction of [1,-1] as const){
@@ -29,4 +29,17 @@ it('keeps corridor arcs bounded, holds contact and retraces them before the same
  expect(meleeRoot(800,false,h,contact,40,60)).toMatchObject({x:0,y:0});
  const seeking=meleeRoot(620,false,h,contact,40,60);meleeRoot(100,false,h,contact,40,60);
  expect(meleeRoot(620,false,h,contact,40,60)).toEqual(seeking);
+});
+
+it('keeps the dense route continuous through the drawing swap and returns on the same clock',()=>{
+ const h={x:432,y:819,core:283.5},contact={x:822.3,y:375};
+ expect(denseMeleeRoot(99,h,contact)).toMatchObject({x:0,y:0});
+ expect(denseMeleeRoot(350,h,contact)).toMatchObject({x:390.29999999999995,y:-444,phase:'strike'});
+ expect(denseMeleeRoot(559,h,contact)).toEqual(denseMeleeRoot(350,h,contact));
+ expect(denseMeleeRoot(800,h,contact)).toMatchObject({x:0,y:0,phase:'idle'});
+ for(const t of [269.999,299.999,559.999,799.999]){
+  const a=denseMeleeRoot(t,h,contact),b=denseMeleeRoot(t+.002,h,contact);
+  expect(Math.hypot(a.x-b.x,a.y-b.y)).toBeLessThan(.05);
+ }
+ const before=denseMeleeRoot(250,h,contact);denseMeleeRoot(650,h,contact);expect(denseMeleeRoot(250,h,contact)).toEqual(before);
 });

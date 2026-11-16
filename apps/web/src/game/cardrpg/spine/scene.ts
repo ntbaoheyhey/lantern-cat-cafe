@@ -14,7 +14,7 @@ import {bodyStatuses} from '../battle-v3/status';
 import {bodyTint} from '../battle-v3/clarity';
 import {actionPose,attackMotion,bracePose,hitPose,idlePhase,idlePose,neutralPose,type MotionPoint} from '../battle-v3/motion';
 import {MotionTrails} from '../battle-v3/motion-trails';
-import {meleeContact,meleeRoot} from '../battle-v3/class-motion';
+import {meleeContact,meleeRoot,denseMeleeRoot} from '../battle-v3/class-motion';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
 import {crowdPose} from '../battle-v3/crowd';
@@ -204,7 +204,7 @@ export class SpineScene {
    const entry=this.actors.get(unit.id);
    const extents=entry?.craftPose?.layoutExtents;
    const mirrored=entry&&spriteFacing(entry.actor.unit.nativeFacing,unit.side)<0;
-   return entry&&(unit.side==='party'||unit.hp>0)?[{id:unit.id,side:unit.side,row:view.rows?.[unit.id]==='rear'?'rear' as const:'front' as const,
+   return entry&&(unit.side==='party'||unit.hp>0)?[{id:unit.id,asset:entry.asset,side:unit.side,row:view.rows?.[unit.id]==='rear'?'rear' as const:'front' as const,
     ...(extents?{leftExtent:mirrored?extents.rightExtent:extents.leftExtent,rightExtent:mirrored?extents.leftExtent:extents.rightExtent}:{}),
     boss:entry.actor.unit.tier==='boss',aspect:entry.actor.bounds.width/entry.actor.bounds.height,coreHeight:unitCore(entry.asset,entry.actor.bounds).world.height/entry.actor.bounds.height,coreRatio:unitCore(entry.asset,entry.actor.bounds).ratio,bossRatio:unitCore(entry.asset,entry.actor.bounds).ratio,seat:unit.side==='enemy'?this.c2Seats.get(unit.id):undefined}]:[];
   }),this.worldWidth,PAINT.worldHeight,PAINT.worldHeight*(width<700?width*9/16:window.innerHeight)/height,this.c2Capacity):null;
@@ -312,7 +312,7 @@ export class SpineScene {
     const reach=direction>0?Math.max((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale:-Math.min((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale;
     const targetBox=homeBox(targetId),targetHome=this.homes.get(targetId)!.point;
     const corridor=this.c2Capacity>4&&!view.boss;
-    const contact=meleeContact(home.point,{...targetHome,x:targetBox.x+targetBox.width/2},reach,targetBox.width/2,direction,(corridor?32:8)*height/720);
+    const contact=meleeContact(home.point,{...targetHome,x:targetBox.x+targetBox.width/2},reach,targetBox.width/2,direction,(corridor?40:8)*height/720);
     if(corridor)contact.y-=96*height/720;
     // A tall boss can be struck at chest height. Matching its feet would put
     // the entire cat in the lower ally's seat despite already being in reach.
@@ -324,7 +324,9 @@ export class SpineScene {
      contact.y=home.point.y+height*.1525;
      contact.x+=direction*12*height/720;
     }
-    rootPose=meleeRoot(frame.elapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor?0:(tallTarget?20:60)*height/720);
+    rootPose=corridor&&entry.asset==='panko'&&contact.y<home.point.y-height*.25
+     ?denseMeleeRoot(frame.elapsed,home.point,contact)
+     :meleeRoot(frame.elapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor?0:(tallTarget?20:60)*height/720);
    }
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
