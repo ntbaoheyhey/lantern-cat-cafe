@@ -1,0 +1,462 @@
+{
+  "at": "2026-11-16T23:04:17.323632+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-delivery-http-review.py",
+    "sha256": "f21f8beedfd29fb9a91d46414b477810c34f955120b0d8d367ead98df59b106c"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-comparison-2.json",
+      "sha256": "76844900babe41a5ec9f2b9a13035860c7f836c0fdac7353ffce9cf0874defeb"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-http-1.json",
+      "sha256": "9d615c36b7cbdd212b8804310abd2e7a4054fcb0c2d01908326e9cfce17a7348"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-http-2.json",
+      "sha256": "743735c51334c9a717d828361c1e172a3c472f64754b0366ff6e0e6ed5fbb7d1"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-http-attempt-1.json",
+      "sha256": "f22e1cd996d6918fd2c373974aa8c595dafe3078e86a6b0fd4a5801e051aa559"
+    }
+  ],
+  "preservedFirstAttempt": {
+    "cases": 96,
+    "passed": 93,
+    "failed": 3,
+    "harnessSnapshotVerified": true,
+    "clockStartupCauseResolved": false
+  },
+  "candidate": {
+    "onlyPreloadSelectionAndSamplePackStartChanged": true,
+    "mappings": 180,
+    "uniqueSprites": 144,
+    "rangedActionRoutes": 14
+  },
+  "server": {
+    "responses": 588,
+    "distinctSourceFilesVerified": 23,
+    "bodyHashesAndSizesVerified": true
+  },
+  "cases": 96,
+  "passed": 96,
+  "impactStartsVerified": 336,
+  "maximumCooldownWaitMs": 0.10000000149011612,
+  "cold": [
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "browser": "chromium",
+      "format": "webm",
+      "scope": "observed",
+      "method": "monolith",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 3751098,
+      "preloadMs": 73.5
+    },
+    {
+      "caseId": "chromium-webm-observed-palettes",
+      "browser": "chromium",
+      "format": "webm",
+      "scope": "observed",
+      "method": "palettes",
+      "rangedPayloadBytes": 560221,
+      "rangedPayloadRequests": 2,
+      "serverBodyBytes": 3356820,
+      "preloadMs": 59
+    },
+    {
+      "caseId": "chromium-webm-all-palettes",
+      "browser": "chromium",
+      "format": "webm",
+      "scope": "all",
+      "method": "palettes",
+      "rangedPayloadBytes": 964869,
+      "rangedPayloadRequests": 4,
+      "serverBodyBytes": 3761468,
+      "preloadMs": 67.30000000074506
+    },
+    {
+      "caseId": "chromium-webm-all-monolith",
+      "browser": "chromium",
+      "format": "webm",
+      "scope": "all",
+      "method": "monolith",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 3751098,
+      "preloadMs": 79.69999999925494
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-monolith",
+      "browser": "chromium",
+      "format": "fallback-mp3",
+      "scope": "observed",
+      "method": "monolith",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 5526280,
+      "preloadMs": 90.80000000074506
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-palettes",
+      "browser": "chromium",
+      "format": "fallback-mp3",
+      "scope": "observed",
+      "method": "palettes",
+      "rangedPayloadBytes": 1653696,
+      "rangedPayloadRequests": 2,
+      "serverBodyBytes": 4150786,
+      "preloadMs": 45.600000001490116
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-palettes",
+      "browser": "chromium",
+      "format": "fallback-mp3",
+      "scope": "all",
+      "method": "palettes",
+      "rangedPayloadBytes": 3033792,
+      "rangedPayloadRequests": 4,
+      "serverBodyBytes": 5530882,
+      "preloadMs": 50.900000002235174
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-monolith",
+      "browser": "chromium",
+      "format": "fallback-mp3",
+      "scope": "all",
+      "method": "monolith",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 5526280,
+      "preloadMs": 87.70000000298023
+    },
+    {
+      "caseId": "webkit-webm-observed-monolith",
+      "browser": "webkit",
+      "format": "webm",
+      "scope": "observed",
+      "method": "monolith",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 3751098,
+      "preloadMs": 1058
+    },
+    {
+      "caseId": "webkit-webm-observed-palettes",
+      "browser": "webkit",
+      "format": "webm",
+      "scope": "observed",
+      "method": "palettes",
+      "rangedPayloadBytes": 560221,
+      "rangedPayloadRequests": 2,
+      "serverBodyBytes": 3356820,
+      "preloadMs": 402
+    },
+    {
+      "caseId": "webkit-webm-all-palettes",
+      "browser": "webkit",
+      "format": "webm",
+      "scope": "all",
+      "method": "palettes",
+      "rangedPayloadBytes": 964869,
+      "rangedPayloadRequests": 4,
+      "serverBodyBytes": 3761468,
+      "preloadMs": 496
+    },
+    {
+      "caseId": "webkit-webm-all-monolith",
+      "browser": "webkit",
+      "format": "webm",
+      "scope": "all",
+      "method": "monolith",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 3751098,
+      "preloadMs": 1018
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-monolith",
+      "browser": "webkit",
+      "format": "fallback-mp3",
+      "scope": "observed",
+      "method": "monolith",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 5526280,
+      "preloadMs": 205
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-palettes",
+      "browser": "webkit",
+      "format": "fallback-mp3",
+      "scope": "observed",
+      "method": "palettes",
+      "rangedPayloadBytes": 1653696,
+      "rangedPayloadRequests": 2,
+      "serverBodyBytes": 4150786,
+      "preloadMs": 169
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-palettes",
+      "browser": "webkit",
+      "format": "fallback-mp3",
+      "scope": "all",
+      "method": "palettes",
+      "rangedPayloadBytes": 3033792,
+      "rangedPayloadRequests": 4,
+      "serverBodyBytes": 5530882,
+      "preloadMs": 214
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-monolith",
+      "browser": "webkit",
+      "format": "fallback-mp3",
+      "scope": "all",
+      "method": "monolith",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "serverBodyBytes": 5526280,
+      "preloadMs": 205
+    }
+  ],
+  "reloads": [
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 79.19999999925494
+    },
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 81.39999999850988
+    },
+    {
+      "caseId": "chromium-webm-observed-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 60.400000002235174
+    },
+    {
+      "caseId": "chromium-webm-observed-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 65.30000000074506
+    },
+    {
+      "caseId": "chromium-webm-all-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 60.399999998509884
+    },
+    {
+      "caseId": "chromium-webm-all-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 60.80000000074506
+    },
+    {
+      "caseId": "chromium-webm-all-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 72.69999999925494
+    },
+    {
+      "caseId": "chromium-webm-all-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 75.60000000149012
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 83
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 84
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 41.399999998509884
+    },
+    {
+      "caseId": "chromium-fallback-mp3-observed-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 48.70000000298023
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 40.69999999925494
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 42.600000001490116
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 84
+    },
+    {
+      "caseId": "chromium-fallback-mp3-all-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 0,
+      "rangedPayloadRequests": 0,
+      "preloadMs": 84.80000000074506
+    },
+    {
+      "caseId": "webkit-webm-observed-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 1007
+    },
+    {
+      "caseId": "webkit-webm-observed-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 1017
+    },
+    {
+      "caseId": "webkit-webm-observed-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 560221,
+      "rangedPayloadRequests": 2,
+      "preloadMs": 385
+    },
+    {
+      "caseId": "webkit-webm-observed-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 964869,
+      "rangedPayloadRequests": 4,
+      "preloadMs": 485
+    },
+    {
+      "caseId": "webkit-webm-all-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 560221,
+      "rangedPayloadRequests": 2,
+      "preloadMs": 389
+    },
+    {
+      "caseId": "webkit-webm-all-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 964869,
+      "rangedPayloadRequests": 4,
+      "preloadMs": 488
+    },
+    {
+      "caseId": "webkit-webm-all-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 1006
+    },
+    {
+      "caseId": "webkit-webm-all-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 954493,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 1004
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 197
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 194
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 1653696,
+      "rangedPayloadRequests": 2,
+      "preloadMs": 161
+    },
+    {
+      "caseId": "webkit-fallback-mp3-observed-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 3033792,
+      "rangedPayloadRequests": 4,
+      "preloadMs": 200
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-palettes",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 1653696,
+      "rangedPayloadRequests": 2,
+      "preloadMs": 158
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-palettes",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 3033792,
+      "rangedPayloadRequests": 4,
+      "preloadMs": 201
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-monolith",
+      "phase": "reload-observed",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 197
+    },
+    {
+      "caseId": "webkit-fallback-mp3-all-monolith",
+      "phase": "reload-all",
+      "rangedPayloadBytes": 3029184,
+      "rangedPayloadRequests": 1,
+      "preloadMs": 203
+    }
+  ],
+  "pass": true,
+  "runtimeChanged": false,
+  "productionWiringTested": false,
+  "fullAudioGatePass": false,
+  "shippingTransferGatePass": false,
+  "limits": [
+    "No browser replay; independently verifies candidate mutation, full matrix and stored network/source evidence.",
+    "Observed reload cache behavior is specific to these browser processes and server policy; no portable cache savings claim.",
+    "Clock guards preserve normal cooldowns and observed source starts; physical onset and startup cause remain unverified.",
+    "Explicit palette selection is research-only; actor timing, production flow, listening and ART transfer remain open."
+  ]
+}

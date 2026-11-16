@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-16T23:02:49.708508+00:00",
+  "report": {
+    "path": "reports/v4-ship/S11/ranged-delivery-http-1.json",
+    "sha256": "9d615c36b7cbdd212b8804310abd2e7a4054fcb0c2d01908326e9cfce17a7348"
+  },
+  "snapshot": {
+    "path": "reports/v4-ship/S11/ranged-delivery-http-attempt-1.harness.mjs.gz",
+    "sha256": "ff7234dc0125a6e8f82f83f00d2268d5f0b6e68feab9ddecc6d5bd17813c58a5"
+  },
+  "uncompressedHarnessSha256": "18a24444aa7974fc157a7f43e63b72ca1a9f2568d7ca61c45c4a44a5652ed0cd",
+  "failures": [
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "phase": "same-engine-repeat",
+      "allBounds": true,
+      "networkAfterReady": 0,
+      "rejectedCues": [
+        {
+          "cue": "kit.ranged-ember.impact",
+          "results": [
+            "cooldown"
+          ]
+        },
+        {
+          "cue": "kit.ranged-heavy.impact",
+          "results": [
+            "cooldown"
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "phase": "overlap",
+      "allBounds": true,
+      "networkAfterReady": 0,
+      "rejectedCues": [
+        {
+          "cue": "kit.ranged-heavy.impact",
+          "results": [
+            "cooldown"
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "chromium-webm-observed-monolith",
+      "phase": "unknown-all",
+      "allBounds": true,
+      "networkAfterReady": 0,
+      "rejectedCues": [
+        {
+          "cue": "kit.ranged-ember.impact",
+          "results": [
+            "cooldown"
+          ]
+        },
+        {
+          "cue": "kit.ranged-heavy.impact",
+          "results": [
+            "cooldown"
+          ]
+        },
+        {
+          "cue": "kit.ranged-shadow.impact",
+          "results": [
+            "cooldown"
+          ]
+        }
+      ]
+    }
+  ],
+  "diagnosis": "First Chromium observed-monolith context retains zero scheduled audio clock and repeats hit cooldown; three phases fail. All encoded inputs/boundaries and zero late network loads remain valid. Underlying clock startup cause not established. Add explicit audio-clock/cooldown readiness observation; preserve this failed run.",
+  "runtimeChanged": false
+}

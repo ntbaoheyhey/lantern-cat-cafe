@@ -15,7 +15,7 @@
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
 - Snowtrace được ghi bằng WebKit headless; cảnh báo403 của Chromium được giữ riêng. Nguồn phim/phí RPC đã đối chiếu; kiểm tra nghe/đọc thủ công còn mở. R2 vẫn sau ART18/11.
-- Đóng gói âm thanh:40/40ca,1.728sprite đạt;16/16tiến trình WebKit mới giải mã được. Lỗi giải mã lần đầu chưa rõ nguyên nhân và đã giữ lại. Gói theo nhóm560.221B so với954.493B;chưa cài/chưa đo tiết kiệm mạng thực tế.
+- HTTP âm thanh:96/96 ca và336 nguồn va chạm đạt;hai nhóm tải560.221B so với954.493B WebM. Chromium dùng cache khi reload;WebKit tải lại. Giữ3 lỗi cooldown lần đầu,chưa rõ nguyên nhân. Chưa cài gói mới;tiếp theo kiểm tra chọn gói theo đội hình thật.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
 S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Tiêu đề landing đã đạt tương phản 15,27:1 ở hai kích thước; còn bốn lỗi ảnh ART và 32 mẫu tương phản battle chưa xác nhận. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
