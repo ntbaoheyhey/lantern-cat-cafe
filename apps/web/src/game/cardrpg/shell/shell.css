@@ -95,3 +95,10 @@
 .b-page.b2-page[aria-label="economy"] .b2-action>span{background:#171529;padding:5px 8px;border-radius:7px}
 .b-page.b2-page:is([aria-label="economy"],[aria-label="odds"]) :is(.b2-flow-steps>article,.b2-rule-grid>article,.b2-allocation dl,.b2-odds table,.b-live,details){background:#171529}
 .b-page.b2-page:is([aria-label="economy"],[aria-label="odds"]) :is(p,.b2-allocation dl,details){padding:8px 12px;border-radius:8px;background:#171529}
+
+/* Native modals isolate the whole document, including the floating audio controls. */
+dialog.b-modal,dialog.b-page{position:fixed;inset:0;margin:auto;height:fit-content}
+dialog.b-modal{max-width:min(460px,calc(100vw - 40px));max-height:calc(100vh - 40px);overflow:auto}
+dialog.b-page{max-width:calc(100vw - 40px);max-height:min(88vh,calc(100vh - 40px))}
+dialog.b-modal:not([open]),dialog.b-page:not([open]){display:none}
+dialog.b-modal::backdrop,dialog.b-page::backdrop{background:#0e0a1bd9;backdrop-filter:blur(6px)}

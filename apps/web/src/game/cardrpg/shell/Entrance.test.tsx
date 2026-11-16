@@ -1,8 +1,11 @@
 import {cleanup,fireEvent,render,screen,waitFor} from '@testing-library/react';
-import {afterEach,expect,it,vi} from 'vitest';
+import {afterAll,afterEach,beforeAll,expect,it,vi} from 'vitest';
 import {Gate} from './Entrance';
 vi.mock('../../../audio/engine',()=>({audioEngine:{unlock:async()=>{},music:vi.fn()}}));
 vi.mock('./LiveCounters',()=>({LiveCounters:()=>null}));
+const dialogMethods=['showModal','close'] as const,original=dialogMethods.map(key=>Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype,key));
+beforeAll(()=>{for(const key of dialogMethods)Object.defineProperty(HTMLDialogElement.prototype,key,{configurable:true,value:function(this:HTMLDialogElement){this.open=key==='showModal';}});});
+afterAll(()=>{dialogMethods.forEach((key,i)=>{if(original[i])Object.defineProperty(HTMLDialogElement.prototype,key,original[i]!);else Reflect.deleteProperty(HTMLDialogElement.prototype,key);});});
 afterEach(()=>{cleanup();localStorage.clear();});
 it('waits for guest authentication before entering',async()=>{let finish!:()=>void;const guest=vi.fn(()=>new Promise<void>(r=>finish=r));render(<Gate guest={guest}><p>Café open</p></Gate>);fireEvent.click(screen.getByRole('button',{name:'Play free'}));await waitFor(()=>expect(guest).toHaveBeenCalledOnce());expect(screen.queryByText('Café open')).toBeNull();finish();await screen.findByText('Café open');});
 it('keeps failed authentication recoverable without claiming success',async()=>{render(<Gate guest={async()=>{throw new Error('Offline');}}><p>Café open</p></Gate>);fireEvent.click(screen.getByRole('button',{name:'Play free'}));await screen.findByRole('alert');expect(screen.queryByText('Café open')).toBeNull();expect(localStorage.getItem('lantern.entered.v3')).toBeNull();fireEvent.click(screen.getByRole('button',{name:'Play offline'}));await screen.findByText('Café open');});
@@ -15,4 +18,14 @@ it.each(['Escape','Close button'])('returns focus to the sign-in opener after %s
  const dialog=screen.getByRole('dialog',{name:'Wallet sign-in'});expect(document.activeElement).toBe(dialog);
  if(close==='Escape')fireEvent.keyDown(dialog,{key:'Escape'});else fireEvent.click(screen.getByRole('button',{name:'Close sign-in'}));
  expect(screen.queryByRole('dialog',{name:'Wallet sign-in'})).toBeNull();expect(document.activeElement).toBe(opener);
+});
+it('keeps native cancellation and Escape blocked while wallet sign-in is pending',async()=>{
+ let finish!:()=>void;const connect=vi.fn(()=>new Promise<void>(resolve=>{finish=resolve;}));
+ render(<Gate connect={connect}><p>Café open</p></Gate>);
+ fireEvent.click(screen.getByRole('button',{name:'Connect wallet'}));
+ fireEvent.click(screen.getByRole('button',{name:'Core / MetaMask'}));await waitFor(()=>expect(connect).toHaveBeenCalledOnce());
+ const dialog=screen.getByRole('dialog',{name:'Wallet sign-in'}) as HTMLDialogElement,cancel=new Event('cancel',{cancelable:true});
+ fireEvent(dialog,cancel);fireEvent.keyDown(dialog,{key:'Escape'});
+ expect(cancel.defaultPrevented).toBe(true);expect(dialog.open).toBe(true);expect(screen.queryByText('Café open')).toBeNull();
+ finish();await screen.findByText('Café open');expect(screen.queryByRole('dialog')).toBeNull();
 });

@@ -1,0 +1,3947 @@
+{
+  "at": "2026-11-16T18:08:50.184Z",
+  "buildPath": "reports/v4-ship/S8/production-build-9.json",
+  "buildSourceCommit": "2337820baab5c7c2cb4d34c459a8fb5c3f11ab83",
+  "indexSha256": "591d89292b718e39515df96a1e71e95594849645fa04b80488b9071bcb12b9a0",
+  "harnessSha256": "83efa1d1d90c72463e826acd34effaf0a8eadac5eb0c8c7203061a73bacad25f",
+  "methods": [
+    "current",
+    "raised",
+    "inert",
+    "native"
+  ],
+  "motions": [
+    "no-preference"
+  ],
+  "production": false,
+  "rows": [
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1205,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1059,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 356,
+        "y": 103.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1205,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1059,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92,
+        "y": 1.203125,
+        "width": 1096,
+        "height": 717.59375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1205,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1059,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.00079345703125,
+        "y": 68.00042724609375,
+        "width": 1095.9984741210938,
+        "height": 583.9991455078125
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1205,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1059,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92,
+        "y": 1.203125,
+        "width": 1096,
+        "height": 717.59375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1205,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1059,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 356,
+        "y": 103.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92,
+        "y": 1.203125,
+        "width": 1096,
+        "height": 717.59375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.12445068359375,
+        "y": 68.06631469726562,
+        "width": 1095.7510375976562,
+        "height": 583.8674011230469
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.04296875,
+        "y": 1.23126220703125,
+        "width": 1095.9140625,
+        "height": 717.5374755859375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 356,
+        "y": 103.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.12432861328125,
+        "y": 1.284515380859375,
+        "width": 1095.7514038085938,
+        "height": 717.4309387207031
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.1243896484375,
+        "y": 68.0662841796875,
+        "width": 1095.751220703125,
+        "height": 583.867431640625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 92.12432861328125,
+        "y": 1.284515380859375,
+        "width": 1095.7514038085938,
+        "height": 717.4309387207031
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 356,
+        "y": 103.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 94.3570556640625,
+        "y": 2.74639892578125,
+        "width": 1091.285888671875,
+        "height": 714.5072021484375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 94.35247802734375,
+        "y": 69.25350952148438,
+        "width": 1091.2949829101562,
+        "height": 581.4929504394531
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 94.35394287109375,
+        "y": 2.744354248046875,
+        "width": 1091.2920532226562,
+        "height": 714.5112609863281
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1365,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1219,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 436,
+        "y": 193.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1365,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1219,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172,
+        "y": 68.25,
+        "width": 1096,
+        "height": 763.5
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1365,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1219,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172,
+        "y": 158,
+        "width": 1096,
+        "height": 584
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "current",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1365,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1219,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172,
+        "y": 72.75,
+        "width": 1096,
+        "height": 754.5
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "true",
+          "hit": {
+            "tag": "path",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1365,
+            "y": 32
+          }
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": true,
+          "hit": {
+            "tag": "IMG",
+            "label": null,
+            "background": true
+          },
+          "blocked": false,
+          "restore": {
+            "x": 1219,
+            "y": 121
+          }
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 436,
+        "y": 193.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172,
+        "y": 68.25,
+        "width": 1096,
+        "height": 763.5
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172.0430908203125,
+        "y": 158.02294921875,
+        "width": 1095.913818359375,
+        "height": 583.9541015625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "raised",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": true
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": true
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": true
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": true
+        }
+      ],
+      "backgroundAX": [
+        {
+          "role": "button",
+          "name": "Mute sound"
+        },
+        {
+          "role": "button",
+          "name": "Connect wallet"
+        },
+        {
+          "role": "DisclosureTriangle",
+          "name": "Audio mixer"
+        }
+      ],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172.04290771484375,
+        "y": 72.779541015625,
+        "width": 1095.9141235351562,
+        "height": 754.44091796875
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 436,
+        "y": 193.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172.04315185546875,
+        "y": 68.28009033203125,
+        "width": 1095.9136352539062,
+        "height": 763.4398193359375
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172.00079345703125,
+        "y": 158.00042724609375,
+        "width": 1095.9984741210938,
+        "height": 583.9991455078125
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "inert",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172,
+        "y": 72.75,
+        "width": 1096,
+        "height": 754.5
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "Wallet sign-in",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 436,
+        "y": 193.546875,
+        "width": 568,
+        "height": 512.890625
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "economy",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 174.35302734375,
+        "y": 69.88919067382812,
+        "width": 1091.2939453125,
+        "height": 760.2216491699219
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "odds",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 172.1246337890625,
+        "y": 158.06640625,
+        "width": 1095.750732421875,
+        "height": 583.8671875
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "native",
+      "motion": "no-preference",
+      "dialog": "trailer",
+      "pointer": [
+        {
+          "state": "mute",
+          "before": "false",
+          "after": "false",
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        },
+        {
+          "state": "mixer",
+          "before": false,
+          "after": false,
+          "hit": {
+            "tag": "DIV",
+            "label": null,
+            "background": false
+          },
+          "blocked": true
+        }
+      ],
+      "focus": [
+        {
+          "tag": "BUTTON",
+          "label": "Play free",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Connect wallet",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Watch battle",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Retry Deeds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "YARN burned",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fused",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Fuji tx",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Powered by Routescan.io APIs",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Economy",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Odds",
+          "escaped": false
+        },
+        {
+          "tag": "A",
+          "label": "Contracts",
+          "escaped": false
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mute sound",
+          "escaped": false
+        },
+        {
+          "tag": "SUMMARY",
+          "label": "Audio mixer",
+          "escaped": false
+        }
+      ],
+      "backgroundAX": [],
+      "initialFocusInside": true,
+      "bounds": {
+        "x": 173.22967529296875,
+        "y": 73.59652709960938,
+        "width": 1093.5405883789062,
+        "height": 752.8069152832031
+      },
+      "nativeModal": false,
+      "returned": true,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "pass": false,
+  "limits": [
+    "Injected methods are mechanism experiments, not shipping acceptance.",
+    "AX protocol data is not human screen-reader testing. No screenshots or device/desktop control."
+  ]
+}

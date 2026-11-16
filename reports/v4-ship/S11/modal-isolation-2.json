@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-16T18:08:14.123Z",
+  "buildPath": "reports/v4-ship/S8/production-build-9.json",
+  "buildSourceCommit": "2337820baab5c7c2cb4d34c459a8fb5c3f11ab83",
+  "indexSha256": "591d89292b718e39515df96a1e71e95594849645fa04b80488b9071bcb12b9a0",
+  "harnessSha256": "da900d116c7cda4877da0ae08cd9c82676e16e41b16c87675d65bc6fe5d46afe",
+  "methods": [
+    "current",
+    "raised",
+    "inert",
+    "native"
+  ],
+  "motions": [
+    "no-preference"
+  ],
+  "production": false,
+  "rows": [],
+  "errors": [],
+  "complete": false,
+  "pass": false,
+  "limits": [
+    "Injected methods are mechanism experiments, not shipping acceptance.",
+    "AX protocol data is not human screen-reader testing. No screenshots or device/desktop control."
+  ],
+  "failure": "Background state restoration\n\ntrue !== false\n"
+}
