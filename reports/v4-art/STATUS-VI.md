@@ -1,4 +1,4 @@
-V4 ART — 2026-11-16T22:36:53.244326+00:00
+V4 ART — 2026-11-16T22:43:50.004308+00:00
 A10 truyền ảnh vẫn MỞ sau khi vượt khung 2 giờ; A11 tiếp tục kiểm chứng rồi sửa bố cục.
 Runtime ae96b7d85 dùng alpha kết hợp khi tải GPU, giữ mipmap và Panko nguyên kích thước.
 2.689 kiểm thử web trong 320 tệp đạt; typecheck, 46 kiểm thử tập trung và 12 cảnh trình duyệt đạt.
@@ -11,4 +11,5 @@ Ba hash F6 khớp baseline; 131 đường dẫn thay đổi đúng phạm vi; pa
 Dự toán 7.966.311 byte chưa phải kết quả đo production; SHIP vẫn thất bại 27,55 MB/8 MB.
 FPS trung vị 60,24 / 60,24 / 59,88; đang quay 900p, sau đó xem hành động ở 10 fps.
 Còn 42 khung clipping/đè HUD, bảng tên Panko và cụm số wave3.
+Hai thử bố trí trên sáu cảnh đã xong; chọn cách tránh HUD/khuôn mặt để kiểm chứng chuyển động, chưa cài vào runtime.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.

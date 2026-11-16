@@ -1,0 +1,4951 @@
+{
+  "started": "2026-11-16T22:40:17.520Z",
+  "pid": 42024,
+  "sourceCommit": "1fc9a0b239f600a326109aa4a6fe327d0f2165c6",
+  "sourceHashes": {
+    "apps/web/public/units/binding-thread/poses/K0.webp": "b9b15b6410e5386fd4f73e2b7f9d7db7abf6d8e8d141d022ccd500a6120425cf",
+    "apps/web/public/units/binding-thread/poses/K1.webp": "e7781abfa69746941b127ccceb0ecfcd32558c1e5d07fbb1e6eefbaaa8827f60",
+    "apps/web/public/units/binding-thread/poses/K2.webp": "16eb3a31fdff42cdc9a6fe04b253c8cb361031a1f504e789e237dfdd4e212461",
+    "apps/web/public/units/binding-thread/poses/K4.webp": "191f18ae6f8c944d49e11c6eb3e9a96fe9a6c80f903d032b884db905ad416206",
+    "apps/web/public/units/binding-thread/poses/manifest.json": "567028f67291c9295f4965e05e784ee605fe15a9b9f91c5ee1ff77810dae6378",
+    "apps/web/public/units/clover/poses/K0.webp": "aa6358c1c73320f68abde443eb0eb264d9e8042762ae5af2bd6ac664b4d166a6",
+    "apps/web/public/units/clover/poses/K1.webp": "94033bf97a8fe004b53c8e614f29e8385c9740eff2381045f9977073e73737a4",
+    "apps/web/public/units/clover/poses/K2.webp": "00e947b4425f9c818e16198a9b86072e0c13bda8a72b7be0f6d556d0083edc40",
+    "apps/web/public/units/clover/poses/K4.webp": "d0d624378a3fa1da68fd84e42c0605e957289be2b836c6259d04d8d6fecc1634",
+    "apps/web/public/units/clover/poses/K5.webp": "dc96962547660fd6a7dbeb69b3433fc5a8e12f3bc2508781c5c985cd6ee24c35",
+    "apps/web/public/units/clover/poses/manifest.json": "b2fe784c6b02d5a29d3846fb639455a79871b2d92d93975e372ff4420ed1a87b",
+    "apps/web/public/units/mochi/poses/K0.webp": "99cb026f8219d657be485ddfe646ef342da8532c4bc3ab972c231c2fd80d4b62",
+    "apps/web/public/units/mochi/poses/K1.webp": "76c8a56789f221f2a3104d5cc6b6e3643b66133a937aa7e9200c7bbaf0c6d334",
+    "apps/web/public/units/mochi/poses/K2.webp": "cfceb2168fc0fe0196f1177663b1c60653f4fd07673dfd650f14a3ffb58e10b6",
+    "apps/web/public/units/mochi/poses/K4.webp": "09c82b6e1afb0f91b2125012a8a09519fce64deaf1d77e9e84acf781f2e39661",
+    "apps/web/public/units/mochi/poses/K5.webp": "3231465bfad87c2a4276ce8657dbf82b329c4f79f25470528f779f0653ac4298",
+    "apps/web/public/units/mochi/poses/manifest.json": "d5f1e844f2e111311466dbd7191a678c7417f391cb9cffb8612f3b5026f385c6",
+    "apps/web/public/units/needle-moth/poses/K0.webp": "685d03cf27725ec0aa71e0aa99d2eb74d8e85e315c29d6a2fbdae0199dd53fa1",
+    "apps/web/public/units/needle-moth/poses/K1.webp": "c2e4446f60957c814cad2d0477f1d3a94c659d4b8840a33418e90dc7e8c61fa3",
+    "apps/web/public/units/needle-moth/poses/K2.webp": "97c9c5b45b82b722307b18239a090810d8247252c82f3d031ee0b34ba3c07a7e",
+    "apps/web/public/units/needle-moth/poses/K4.webp": "3502608498948edd4c3b5bb283d014cdfe1bb4e024a46b095f48a74a4887177e",
+    "apps/web/public/units/needle-moth/poses/manifest.json": "b3576467fbcce63a7034579c9097aadbab1d58af4bf9c05e8a2ad12e48d270b0",
+    "apps/web/public/units/panko/poses/K0.webp": "3febf3a8e5b3162a033d2bcd69a3d312e25015b18d0d0bd2e3d6801ae50d2f35",
+    "apps/web/public/units/panko/poses/K1.webp": "3592927e2d2f435d31f87a2c4a40606ba5b9e178b0fdc6d287fcafd2cf693744",
+    "apps/web/public/units/panko/poses/K2.webp": "333a1326e192fc5606e1ce665d61aa86573690b639be650b9752110ced791faa",
+    "apps/web/public/units/panko/poses/K4.webp": "9b62352e06c8f42901aa13762e4fcb3b668678da1349c75e9b95c528e613532c",
+    "apps/web/public/units/panko/poses/K5.webp": "fb29f97341a884487f6c961d6cc537fdae6dd140a4d116f1bdfc700259e46394",
+    "apps/web/public/units/panko/poses/manifest.json": "7de7d4012829e70c2ad6698418bee84a7147997198223ae65f5f795fe9ace3c2",
+    "apps/web/public/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif": "eae8fc36e4200deca5c3699e3c0a1ad909e769375a3d36241694bdf10de0cdf7",
+    "apps/web/public/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif": "1e8112b9c302c6a81f0494246f2a8e94449d60a88ae48b21e92318a21e867a1b",
+    "apps/web/public/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif": "62e8d488f5edf1bce39a83a08b63ec467411242a923f53fc8cf8253ad538428e",
+    "apps/web/public/units/sampled-delivery/panko-1a9e5df12fcb-dbd5595c.avif": "dbd5595cee4126ce24fb011e23dd9b175ed92d46385703c8d78ab39fc2fbdd34",
+    "apps/web/public/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif": "243ba3e8d5d495f6cba24d748ea05be0ec18c27fd68c8f3eb643104c0e2f9911",
+    "apps/web/public/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif": "5011b4da1ed99de9bb42dc1f18e95211ced67cec62b51aa56d25743bd3571c1b",
+    "apps/web/public/units/soot/poses/K0.webp": "ddd95aa23a2ba5fb09282022e9e79f72ceccb1d9319b0d31660ce76d83b2f156",
+    "apps/web/public/units/soot/poses/K1.webp": "c62b018b598df269e35f4fea89176ca4a28220f0eb2009f72790c15365359697",
+    "apps/web/public/units/soot/poses/K2.webp": "271d940c092ad5de3b24c60d51639535967bc455db5d9898b7ce823d6f149f55",
+    "apps/web/public/units/soot/poses/K4.webp": "de1a810f2b5ab7789ce05f4ff81be4d86483be1d092b5a9af4819541e7aaabdc",
+    "apps/web/public/units/soot/poses/K5.webp": "e72f3928fa14f13b8bed0d33e0cfc50567ee511c0365d77705f73ecefbdab414",
+    "apps/web/public/units/soot/poses/lantern-flame.webp": "aaa5df81acae2c70e3576edadb3c3c02e981a41aa63e549ef68b2ed975c5f261",
+    "apps/web/public/units/soot/poses/manifest.json": "dce7e5ffe357cb5a65fd3ecea31c04a4977088fb705cfc8d21b2402848d66554",
+    "apps/web/public/units/teacup-healer/poses/K0.webp": "85f10e8750de4aada911f5fd5e73d0df4ecf717ac8cda4c7483a31349407f6d0",
+    "apps/web/public/units/teacup-healer/poses/K1.webp": "d56aa727c6ee962ed1f91bd0675907174fc2d9d000b058274779b6024a62cb77",
+    "apps/web/public/units/teacup-healer/poses/K2.webp": "b853584b262a515ea66d5b3f38202d0c80e290bb520ce859780236f7d09f32e9",
+    "apps/web/public/units/teacup-healer/poses/K4.webp": "6296cdab0c917e030d3bfa3caeb853be8b6d3bd46832767f555e92a4c2d09131",
+    "apps/web/public/units/teacup-healer/poses/manifest.json": "0b50254a4836f99bfaf9a88b56ac0b2fb35ca2718a78bb2a86bf3a3b6149d5ba",
+    "apps/web/public/units/yarn-giant/poses/K0.webp": "0cf856d53e63dba23b05ab00c103615d8b11d724ce897e96bebfa8006c284068",
+    "apps/web/public/units/yarn-giant/poses/K1.webp": "74908de855c3b3abb495b1a01ae0f026a354cf646ef4ffa742d9526aae57586d",
+    "apps/web/public/units/yarn-giant/poses/K2.webp": "f1438d10631d0ddcd7fff98368007a35500c39555ad48b907cf3f0adfd3176c8",
+    "apps/web/public/units/yarn-giant/poses/K4.webp": "825e6f35ebe9bf8160b830743db5e48ed3793ffe404d8b88385bbe7602b9c2b8",
+    "apps/web/public/units/yarn-giant/poses/K5.webp": "86dacf402df18ac611800436048d52207edb80a57ac48d992f6024b665e0e6d4",
+    "apps/web/public/units/yarn-giant/poses/manifest.json": "0b5eb6b5bf2e5350f056caa20e28ad5322b92664de1526f495e314d38c87b829",
+    "apps/web/public/vfx/binding-thread/knotted-thread.webp": "29299c6f2bf7172f8b8ad7fa2870fd0bd2bb2f5f6a2abe3ebc76bf6a4b8e86de",
+    "apps/web/public/vfx/clover/healing-canopy.webp": "8789a708ee5a608bf8d15fbce7dced7b0219f19013e557bfa72a59205147a69d",
+    "apps/web/public/vfx/clover/healing-sprig.webp": "2826db2417efb30141e7e6148f4c47452b17c21f767cb3f8bb0416fe7110fa0a",
+    "apps/web/public/vfx/mochi/shield-crest.webp": "2edb2dcb5db75ef92561323c33eb7242b3a3ddc1f979c0b04e2540f553f81cf6",
+    "apps/web/public/vfx/mochi/shield-cut.webp": "ac4e4b063333e2dccca93b2ae694cffcc04a29b700a36e1820a03d78a7ca8d9a",
+    "apps/web/public/vfx/needle-moth/sewing-needle.webp": "a50519a93e0d419351fd04563e382f449607ef966c87c180d714f194a804896c",
+    "apps/web/public/vfx/panko/crust-cut.webp": "f1fbe8077f84468cd4d87db288dfe0ba3d26cbb47945db00e7271d61bdf78b5f",
+    "apps/web/public/vfx/panko/oven-bastion.webp": "13e9d6d2535ff2dcff08eead1d3ec249efedd0de21623a9e6b9958385ea16961",
+    "apps/web/public/vfx/sampled-delivery/binding-thread-6c635ee1c73b-281503ba.avif": "281503ba27fa8bde3731231288516bce9b144e1a4cd69597a4296be67450e11e",
+    "apps/web/public/vfx/sampled-delivery/clover-c1c0bc6fcc43-571d6481.avif": "571d6481e23be5aa439a97b29cc5050cc35ab528e1605df9d9e1eb8a5bacced7",
+    "apps/web/public/vfx/sampled-delivery/mochi-f08a34979f8a-3fd68fc2.avif": "3fd68fc29f1bbeb6cd4c3189ca0f95315657d14f5e39b8b8bb8de7537bf18cbb",
+    "apps/web/public/vfx/sampled-delivery/panko-66720d11663a-77ff32d1.avif": "77ff32d18752e9bb6733706ff6d039fdebc5d0e479d770517f846f75d2befd61",
+    "apps/web/public/vfx/sampled-delivery/soot-ca02da5fbe8c-7f74b1a7.avif": "7f74b1a7df807c12dbc2de89ba0725b86b00d64099eb3018931c9055b612043b",
+    "apps/web/public/vfx/sampled-delivery/yarn-giant-e93a46f3812c-da7e1b08.avif": "da7e1b08137c31f4ae95f2d561c33846afa5554ad9004a7e86afc0ba01d7900d",
+    "apps/web/public/vfx/teacup-healer/tea-blossom.webp": "3f196ed61e7eaef1c19758987ffcd7d554b53dbb135f7dad8a2bb5d52f02a5c2",
+    "apps/web/public/vfx/teacup-healer/tea-canopy.webp": "75beb105a50355a8d056896088c5ca4394eba7c78df5fc27b478cfea82c027a7",
+    "apps/web/public/vfx/yarn-giant/braid-wave.webp": "80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138",
+    "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx": "4855e595b54c258f3143c694802ddac16c63e36bb8139918d22f7b3df0a19527",
+    "apps/web/src/game/cardrpg/battle-v3/battle.css": "9dc9e4b0a556f5de815395c5a988d65142b3121db93cba46476adab16d7ddfff",
+    "apps/web/src/game/cardrpg/battle-v3/class-motion.ts": "86121e246995e726400e6fa79f467e18c61afdc45d9f72420a73140471dbcd07",
+    "apps/web/src/game/cardrpg/battle-v3/focus.ts": "caef78e14c8e1f3021b867ce6d3e9eb9bbeb253dbe3b616a0a3ff2c4508f9899",
+    "apps/web/src/game/cardrpg/battle-v3/hud-details.css": "826f3c4835643d7784073c49ecb1ac0e3df957fa76624259aaccfaf07f83dd0e",
+    "apps/web/src/game/cardrpg/battle-v3/sequence.ts": "906f82590d076b683d888e21a69c0815b32fca7f86433a19ee4469abcf1fd6cc",
+    "apps/web/src/game/cardrpg/spine/assets.ts": "c20ec3f1dd7048b481909217fe4c93d7b193afb96ee1a67deb86cbd4650d348b",
+    "apps/web/src/game/cardrpg/spine/atlas-delivery.ts": "b1f0287619060e86391d1e37571f63065a8e9454f29c72cfab943bb5a3e5f7e6",
+    "apps/web/src/game/cardrpg/spine/sampled-atlases.json": "dc1d56fc3d4a79b42785a87c873f676c38acf92f203dddcca4d24b93490d8c28",
+    "apps/web/src/game/cardrpg/spine/scene.ts": "5d774fae94940aba1fdc28b06bcc71b3a163bda84747b5b7db0b86352d67240f",
+    "apps/web/src/game/cardrpg/stage/core.ts": "d5887c6ffbce525c48ac8051f2b5ed0fc919ff1cd18ff1dda6909a4a7e167b32",
+    "apps/web/src/game/cardrpg/stage/layout-c2.ts": "f73fdcd97f80ccb11aebb5430012ba2812d0347179213ea724c8790031736eec",
+    "apps/web/src/game/cardrpg/vfx-craft/drawn-poses.ts": "05132c7959b5bb47af4c04f76fadb0f1431ab71bfb7ff434e28e5dfcf6f84a93",
+    "apps/web/src/game/cardrpg/vfx-craft/healing-leaves.ts": "2456bacfef7c47cd8603c2a14aac80b93dae86802c1152bb1ff50a6e28b00f70",
+    "apps/web/src/game/cardrpg/vfx-craft/lantern-requiem.ts": "5a8d2a07c3dd555299ac11e95a3e6f7d744f528681add5bcc703e835ea63a3c2",
+    "apps/web/src/game/cardrpg/vfx-craft/needle-stitches.ts": "0a4f74448a3a41f277311c4d77c3ad7f332c851c4a4efa1a91f7b9d503d8e760",
+    "apps/web/src/game/cardrpg/vfx-craft/oven-bastion.ts": "406b37e26a689908b6da70dc9b801de05d9c6ce4491a5e7f2d5e6dc7e43e14a2",
+    "apps/web/src/game/cardrpg/vfx-craft/paint-death.ts": "b8ff3ac4f6637b599e7a5b01f7c1bee208ce25dc3ca3fd6996956e30d23923f1",
+    "apps/web/src/game/cardrpg/vfx-craft/paint-light.ts": "8cb719c1daec34c1316dab2dae42c041647f205bb897834451971eef4e296f8e",
+    "apps/web/src/game/cardrpg/vfx-craft/shield-strike.ts": "c7f6c9cbb8f8103426316dd87ec6457e571e2bfbf85fb541b11b81cfbf55fad4",
+    "apps/web/src/game/cardrpg/vfx-craft/soot-poses.ts": "1b04861dc4a43531c071ae02479c21d77b9d95e29cdf85600e08d3431e0b71af",
+    "apps/web/src/game/cardrpg/vfx-craft/staff-bolt.ts": "16ca1edda5dc27de020a9d9028f3772128bb8139627c748fd36bd885e3049255",
+    "apps/web/src/game/cardrpg/vfx-craft/tea-blossoms.ts": "60b0f1c49c1c1667cbcd475643aba014615ee6bc049f1a702417ea0ac5ac2237",
+    "apps/web/src/game/cardrpg/vfx-craft/thread-snare.ts": "ed9db8041a092781d12dac07bb760400905f5123db858afb1f18824ec40682f9",
+    "apps/web/src/game/cardrpg/vfx-craft/yarn-surge.ts": "2d5e7732094e4e14dd240c2e72f731f6700c451fa70a50b07725bea04d21aba6",
+    "apps/web/src/game/cardrpg/vfx-layered/atlas.ts": "d73b854cb79a19e3bb75ce0f97da1a42f8f8311d4e0516fe9b29578438953452",
+    "apps/web/src/game/cardrpg/vfx-layered/player.ts": "26242615e535e86b53f6275565c1456d5d2f23800af90d3456ab6f5df0d014b0",
+    "apps/web/src/game/cardrpg/vfx-layered/sampled-atlases.json": "483d11b57eb9ce06166adc7914209a0263b690e8d085591c81f96c2f7d6fc755",
+    "apps/web/src/game/rig/atlas-color.ts": "e93398cfefa270e60ac8d26197b4f4676262d263f4ff1bdb738abbf1886f6f88",
+    "apps/web/src/game/rig/cutout.ts": "470849b4bb7d15add675f3c70db16fdccfb69a5a01ec2e9f0db2253ccaf39a53",
+    "apps/web/src/game/rig/drawing-layer.ts": "060026c2139ccf2ff4593aabbed7dc75619fe9b278201a5e87860531aed78a55"
+  },
+  "scriptSha256": "8005b8af025e81599b6ed83d0303d608b619ea76442936eb0111fe89cdec247e",
+  "candidateSha256": "a5056a3f1427e48c463071bb6db53f5657fee9777ba3b770b9a4a406a6cb9373",
+  "scope": "Two private DOM-only positioning experiments; unchanged live runtime, natural status values, no production installation or temporal/film acceptance.",
+  "cases": [
+    {
+      "fixture": "wave1",
+      "width": 1280,
+      "height": 720,
+      "ticks": 174,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "165.975px",
+                "styleTop": "30.5619px",
+                "rect": {
+                  "x": 133.96875,
+                  "y": -3.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.502px",
+                "styleTop": "265.88px",
+                "rect": {
+                  "x": 118.5,
+                  "y": 231.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "794.208px",
+                "styleTop": "160.864px",
+                "rect": {
+                  "x": 762.203125,
+                  "y": 126.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1116.79px",
+                "styleTop": "45.8348px",
+                "rect": {
+                  "x": 1084.78125,
+                  "y": 11.828125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.04px",
+                "styleTop": "271.951px",
+                "rect": {
+                  "x": 1054.03125,
+                  "y": 237.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "890.068px",
+                "styleTop": "420.826px",
+                "rect": {
+                  "x": 858.0625,
+                  "y": 386.8125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 758.9607518123865,
+                "y": 221.7771369608744,
+                "width": 78.36946849631249,
+                "height": 39.31319461269888,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1086.6336925793162,
+                "y": 96.94181012733712,
+                "width": 61.210388172351486,
+                "height": 44.52004086219249,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1038.4146861240565,
+                "y": 330.7822165947737,
+                "width": 121.68679677505406,
+                "height": 40.431010074082906,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 874.6437249546777,
+                "y": 466.29864675453365,
+                "width": 62.24645021887841,
+                "height": 44.62842327712383,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 114
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-720/baseline.png",
+          "sha256": "79fe2e26e47ee89110a48d4981aab98b02198b8abacccfab62bbaff803addc0a"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "165.975px",
+                "styleTop": "38.015px",
+                "rect": {
+                  "x": 133.96875,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.502px",
+                "styleTop": "265.88px",
+                "rect": {
+                  "x": 118.5,
+                  "y": 231.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "794.208px",
+                "styleTop": "160.864px",
+                "rect": {
+                  "x": 762.203125,
+                  "y": 126.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1116.79px",
+                "styleTop": "45.8348px",
+                "rect": {
+                  "x": 1084.78125,
+                  "y": 11.828125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.04px",
+                "styleTop": "271.951px",
+                "rect": {
+                  "x": 1054.03125,
+                  "y": 237.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "890.068px",
+                "styleTop": "420.826px",
+                "rect": {
+                  "x": 858.0625,
+                  "y": 386.8125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 758.9607518123865,
+                "y": 221.7771369608744,
+                "width": 78.36946849631249,
+                "height": 39.31319461269888,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1086.6336925793162,
+                "y": 96.94181012733712,
+                "width": 61.210388172351486,
+                "height": 44.52004086219249,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1038.4146861240565,
+                "y": 330.7822165947737,
+                "width": 121.68679677505406,
+                "height": 40.431010074082906,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 874.6437249546777,
+                "y": 466.29864675453365,
+                "width": 62.24645021887841,
+                "height": 44.62842327712383,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 114
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 118.5,
+                "y": 231.875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-button-guard",
+              "rect": {
+                "x": 762.203125,
+                "y": 126.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-sock-skipper",
+              "rect": {
+                "x": 1084.78125,
+                "y": 11.828125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-teacup-healer",
+              "rect": {
+                "x": 1054.03125,
+                "y": 237.9375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-needle-moth",
+              "rect": {
+                "x": 858.0625,
+                "y": 386.8125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 452.734375,
+                "y": 130.203125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 133.96875,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-720/viewport.png",
+          "sha256": "993bf523731d8267b58c330596d4c261e7056d5aa23ada2f0e7b02beb6d63cde"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "239.377px",
+                "styleTop": "82.015px",
+                "rect": {
+                  "x": 207.375,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.502px",
+                "styleTop": "265.88px",
+                "rect": {
+                  "x": 118.5,
+                  "y": 231.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "794.208px",
+                "styleTop": "160.864px",
+                "rect": {
+                  "x": 762.203125,
+                  "y": 126.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1116.79px",
+                "styleTop": "82.0067px",
+                "rect": {
+                  "x": 1084.78125,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.04px",
+                "styleTop": "271.951px",
+                "rect": {
+                  "x": 1054.03125,
+                  "y": 237.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "890.068px",
+                "styleTop": "420.826px",
+                "rect": {
+                  "x": 858.0625,
+                  "y": 386.8125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 758.9607518123865,
+                "y": 221.7771369608744,
+                "width": 78.36946849631249,
+                "height": 39.31319461269888,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1086.6336925793162,
+                "y": 96.94181012733712,
+                "width": 61.210388172351486,
+                "height": 44.52004086219249,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1038.4146861240565,
+                "y": 330.7822165947737,
+                "width": 121.68679677505406,
+                "height": 40.431010074082906,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 874.6437249546777,
+                "y": 466.29864675453365,
+                "width": 62.24645021887841,
+                "height": 44.62842327712383,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 114
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 118.5,
+                "y": 231.875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-button-guard",
+              "rect": {
+                "x": 762.203125,
+                "y": 126.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-sock-skipper",
+              "rect": {
+                "x": 1084.78125,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-teacup-healer",
+              "rect": {
+                "x": 1054.03125,
+                "y": 237.9375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-needle-moth",
+              "rect": {
+                "x": 858.0625,
+                "y": 386.8125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 452.734375,
+                "y": 130.203125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 207.37071180546212,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-720/hud.png",
+          "sha256": "8fae3a75d097ec66ac8e942cfd061553963c42ca77fc20ca84e806f1046fe4df"
+        }
+      ],
+      "textPreserved": true
+    },
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "ticks": 192,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "465.54px",
+                "styleTop": "70.6136px",
+                "rect": {
+                  "x": 433.53125,
+                  "y": 36.609375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "165.975px",
+                "styleTop": "30.5619px",
+                "rect": {
+                  "x": 133.96875,
+                  "y": -3.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.473px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 118.46875,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "914.218px",
+                "styleTop": "482.014px",
+                "rect": {
+                  "x": 882.203125,
+                  "y": 448,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "610.768px",
+                "styleTop": "484.969px",
+                "rect": {
+                  "x": 578.765625,
+                  "y": 450.96875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1131.89px",
+                "styleTop": "50.495px",
+                "rect": {
+                  "x": 1099.890625,
+                  "y": 16.484375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "918.705px",
+                "styleTop": "298.598px",
+                "rect": {
+                  "x": 886.703125,
+                  "y": 264.59375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1108.44px",
+                "styleTop": "170.563px",
+                "rect": {
+                  "x": 1076.421875,
+                  "y": 136.5625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.14px",
+                "styleTop": "412.999px",
+                "rect": {
+                  "x": 1054.125,
+                  "y": 378.984375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 392.65310863847026,
+                "y": 109.68605053436696,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 874.3880053903325,
+                "y": 518.0169651549994,
+                "width": 64.26882196955944,
+                "height": 41.86333650876861,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 557.4381418695098,
+                "y": 557.5536792622079,
+                "width": 103.83792081893125,
+                "height": 70.4498303989759,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1096.151572593838,
+                "y": 83.7877972939905,
+                "width": 64.2786178045726,
+                "height": 37.071001997153175,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 883.0143320831926,
+                "y": 342.1108402886317,
+                "width": 82.06708377391055,
+                "height": 45.718046253280875,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1093.6294095377345,
+                "y": 214.57631140612693,
+                "width": 59.756592210123245,
+                "height": 42.84328634603884,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1039.707978237699,
+                "y": 466.87693270164186,
+                "width": 119.41468591206103,
+                "height": 42.54803087439484,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "mochi",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 130
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-720/baseline.png",
+          "sha256": "0bde02280b5202c7fc415879f58d57fb14977c353a50f5a1b9529ec271aad726"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "465.54px",
+                "styleTop": "70.6136px",
+                "rect": {
+                  "x": 433.53125,
+                  "y": 36.609375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "165.975px",
+                "styleTop": "38.015px",
+                "rect": {
+                  "x": 133.96875,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.473px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 118.46875,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "914.218px",
+                "styleTop": "482.014px",
+                "rect": {
+                  "x": 882.203125,
+                  "y": 448,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "610.768px",
+                "styleTop": "484.969px",
+                "rect": {
+                  "x": 578.765625,
+                  "y": 450.96875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1131.89px",
+                "styleTop": "50.495px",
+                "rect": {
+                  "x": 1099.875,
+                  "y": 16.484375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "918.705px",
+                "styleTop": "298.598px",
+                "rect": {
+                  "x": 886.703125,
+                  "y": 264.59375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1108.44px",
+                "styleTop": "170.563px",
+                "rect": {
+                  "x": 1076.4375,
+                  "y": 136.5625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.14px",
+                "styleTop": "412.999px",
+                "rect": {
+                  "x": 1054.125,
+                  "y": 378.984375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 392.65310863847026,
+                "y": 109.68605053436696,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 874.3880053903325,
+                "y": 518.0169651549994,
+                "width": 64.26882196955944,
+                "height": 41.86333650876861,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 557.4381418695098,
+                "y": 557.5536792622079,
+                "width": 103.83792081893125,
+                "height": 70.4498303989759,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1096.151572593838,
+                "y": 83.7877972939905,
+                "width": 64.2786178045726,
+                "height": 37.071001997153175,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 883.0143320831926,
+                "y": 342.1108402886317,
+                "width": 82.06708377391055,
+                "height": 45.718046253280875,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1093.6294095377345,
+                "y": 214.57631140612693,
+                "width": 59.756592210123245,
+                "height": 42.84328634603884,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1039.707978237699,
+                "y": 466.87693270164186,
+                "width": 119.41468591206103,
+                "height": 42.54803087439484,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "mochi",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 130
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 118.46875,
+                "y": 231.796875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "rect": {
+                "x": 882.203125,
+                "y": 448,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "rect": {
+                "x": 578.765625,
+                "y": 450.96875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "rect": {
+                "x": 1099.890625,
+                "y": 16.484375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "rect": {
+                "x": 886.703125,
+                "y": 264.59375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "rect": {
+                "x": 1076.421875,
+                "y": 136.5625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "rect": {
+                "x": 1054.125,
+                "y": 378.984375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 433.53125,
+                "y": 36.609375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 133.96875,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-720/viewport.png",
+          "sha256": "ba423f03f9278722c92003dc75885269f1612366c4cd8ea50a519f8411a89498"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "465.54px",
+                "styleTop": "79.792px",
+                "rect": {
+                  "x": 433.53125,
+                  "y": 45.78125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "239.377px",
+                "styleTop": "79.8028px",
+                "rect": {
+                  "x": 207.375,
+                  "y": 45.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "150.473px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 118.46875,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "914.218px",
+                "styleTop": "482.014px",
+                "rect": {
+                  "x": 882.203125,
+                  "y": 448,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "610.768px",
+                "styleTop": "484.969px",
+                "rect": {
+                  "x": 578.765625,
+                  "y": 450.96875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1131.89px",
+                "styleTop": "79.7984px",
+                "rect": {
+                  "x": 1099.875,
+                  "y": 45.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "918.705px",
+                "styleTop": "298.598px",
+                "rect": {
+                  "x": 886.703125,
+                  "y": 264.59375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1108.44px",
+                "styleTop": "170.563px",
+                "rect": {
+                  "x": 1076.4375,
+                  "y": 136.5625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1086.14px",
+                "styleTop": "412.999px",
+                "rect": {
+                  "x": 1054.125,
+                  "y": 378.984375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 392.65310863847026,
+                "y": 109.68605053436696,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 114.59207463950335,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 89.29055443734057,
+                "y": 301.51029167014525,
+                "width": 86.20188076868453,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 874.3880053903325,
+                "y": 518.0169651549994,
+                "width": 64.26882196955944,
+                "height": 41.86333650876861,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 557.4381418695098,
+                "y": 557.5536792622079,
+                "width": 103.83792081893125,
+                "height": 70.4498303989759,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1096.151572593838,
+                "y": 83.7877972939905,
+                "width": 64.2786178045726,
+                "height": 37.071001997153175,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 883.0143320831926,
+                "y": 342.1108402886317,
+                "width": 82.06708377391055,
+                "height": 45.718046253280875,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1093.6294095377345,
+                "y": 214.57631140612693,
+                "width": 59.756592210123245,
+                "height": 42.84328634603884,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1039.707978237699,
+                "y": 466.87693270164186,
+                "width": 119.41468591206103,
+                "height": 42.54803087439484,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 130
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 118.46875,
+                "y": 231.796875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "rect": {
+                "x": 882.203125,
+                "y": 448,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "rect": {
+                "x": 578.765625,
+                "y": 450.96875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "rect": {
+                "x": 1099.890625,
+                "y": 45.787797293990494,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "rect": {
+                "x": 886.703125,
+                "y": 264.59375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "rect": {
+                "x": 1076.421875,
+                "y": 136.5625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "rect": {
+                "x": 1054.125,
+                "y": 378.984375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 433.53125,
+                "y": 45.787797293990494,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 207.37071180546212,
+                "y": 45.787797293990494,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-720/hud.png",
+          "sha256": "d3d0c3cb7cd7c2a7131b528ad465d25846ddb1c35fae9fd81b2563a1aef3742a"
+        }
+      ],
+      "textPreserved": true
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "ticks": 158,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "153.175px",
+                "styleTop": "30.5619px",
+                "rect": {
+                  "x": 121.171875,
+                  "y": -3.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "144.161px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 112.15625,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "839.375px",
+                "styleTop": "236.586px",
+                "rect": {
+                  "x": 807.375,
+                  "y": 202.578125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1155.57px",
+                "styleTop": "378.238px",
+                "rect": {
+                  "x": 1123.5625,
+                  "y": 344.234375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1155.24px",
+                "styleTop": "53.8122px",
+                "rect": {
+                  "x": 1123.234375,
+                  "y": 19.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 384,
+                "y": 5.5,
+                "width": 512,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 101.79207463950334,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 82.97807992712791,
+                "y": 301.51029167014525,
+                "width": 86.20188076868459,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 763.2304334040964,
+                "y": 306.43976345817373,
+                "width": 143.56123476537527,
+                "height": 92.21071452924019,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1127.7950892816239,
+                "y": 410.6519160814592,
+                "width": 56.552824662890316,
+                "height": 46.47388610527241,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1128.1665861220408,
+                "y": 87.29079183323626,
+                "width": 53.525006739306264,
+                "height": 45.21175841775383,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 99
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-720/baseline.png",
+          "sha256": "56d5414140799c5fc916180cb23c7e9fc0625bf22177cbc2221c65b6cbdf5c63"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "153.175px",
+                "styleTop": "38.015px",
+                "rect": {
+                  "x": 121.171875,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "144.161px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 112.15625,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "839.375px",
+                "styleTop": "236.586px",
+                "rect": {
+                  "x": 807.375,
+                  "y": 202.578125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1155.57px",
+                "styleTop": "378.238px",
+                "rect": {
+                  "x": 1123.5625,
+                  "y": 344.234375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1155.24px",
+                "styleTop": "53.8122px",
+                "rect": {
+                  "x": 1123.234375,
+                  "y": 19.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 384,
+                "y": 5.5,
+                "width": 512,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 101.79207463950334,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 82.97807992712791,
+                "y": 301.51029167014525,
+                "width": 86.20188076868459,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 763.2304334040964,
+                "y": 306.43976345817373,
+                "width": 143.56123476537527,
+                "height": 92.21071452924019,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1127.7950892816239,
+                "y": 410.6519160814592,
+                "width": 56.552824662890316,
+                "height": 46.47388610527241,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1128.1665861220408,
+                "y": 87.29079183323626,
+                "width": 53.525006739306264,
+                "height": 45.21175841775383,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 99
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 112.15625,
+                "y": 231.796875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "rect": {
+                "x": 807.375,
+                "y": 202.578125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "rect": {
+                "x": 1123.5625,
+                "y": 344.234375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "rect": {
+                "x": 1123.234375,
+                "y": 19.796875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 452.734375,
+                "y": 130.203125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 121.171875,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-720/viewport.png",
+          "sha256": "89a4dd64bafaad4e06621dca333a5b41e68b3d008d5d12cd6655d2bf8dc40da4"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "484.74px",
+                "styleTop": "164.214px",
+                "rect": {
+                  "x": 452.734375,
+                  "y": 130.203125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "226.574px",
+                "styleTop": "82.015px",
+                "rect": {
+                  "x": 194.5625,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "144.161px",
+                "styleTop": "265.803px",
+                "rect": {
+                  "x": 112.15625,
+                  "y": 231.796875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "400.043px",
+                "styleTop": "419.068px",
+                "rect": {
+                  "x": 359.53125,
+                  "y": 385.0625,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "839.375px",
+                "styleTop": "236.586px",
+                "rect": {
+                  "x": 807.375,
+                  "y": 202.578125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1155.57px",
+                "styleTop": "378.238px",
+                "rect": {
+                  "x": 1123.5625,
+                  "y": 344.234375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1155.24px",
+                "styleTop": "82.0153px",
+                "rect": {
+                  "x": 1123.234375,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 384,
+                "y": 5.5,
+                "width": 512,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 633.609375,
+                "width": 1280,
+                "height": 86.390625,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 411.8531086384703,
+                "y": 203.28605053436695,
+                "width": 108.3290399575103,
+                "height": 72.73306770580473,
+                "id": "mochi"
+              },
+              {
+                "x": 101.79207463950334,
+                "y": 74.15760121543995,
+                "width": 88.77863716595877,
+                "height": 65.86161121973585,
+                "id": "soot"
+              },
+              {
+                "x": 82.97807992712791,
+                "y": 301.51029167014525,
+                "width": 86.20188076868459,
+                "height": 66.81156280899029,
+                "id": "clover"
+              },
+              {
+                "x": 333.30715553058184,
+                "y": 468.7385475828221,
+                "width": 82.42076060352059,
+                "height": 61.383473086311824,
+                "id": "panko"
+              },
+              {
+                "x": 763.2304334040964,
+                "y": 306.43976345817373,
+                "width": 143.56123476537527,
+                "height": 92.21071452924019,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1127.7950892816239,
+                "y": 410.6519160814592,
+                "width": 56.552824662890316,
+                "height": 46.47388610527241,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1128.1665861220408,
+                "y": 87.29079183323626,
+                "width": 53.525006739306264,
+                "height": 45.21175841775383,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            },
+            "action": 99
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 112.15625,
+                "y": 231.796875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "rect": {
+                "x": 807.375,
+                "y": 202.578125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "rect": {
+                "x": 1123.5625,
+                "y": 344.234375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "rect": {
+                "x": 1123.234375,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 452.734375,
+                "y": 130.203125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 359.53125,
+                "y": 385.0625,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 194.5707118054621,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-720/hud.png",
+          "sha256": "2e6b4cb9c6061a87be17ad1d48dc06b5e3d23991cbf565cc815bdafcde1a92cc"
+        }
+      ],
+      "textPreserved": true
+    },
+    {
+      "fixture": "wave1",
+      "width": 1440,
+      "height": 900,
+      "ticks": 175,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "210.602px",
+                "styleTop": "29.5476px",
+                "rect": {
+                  "x": 178.59375,
+                  "y": -4.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.421px",
+                "styleTop": "317.878px",
+                "rect": {
+                  "x": 132.40625,
+                  "y": 283.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "892.234px",
+                "styleTop": "203.297px",
+                "rect": {
+                  "x": 860.234375,
+                  "y": 169.28125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1255.46px",
+                "styleTop": "59.5096px",
+                "rect": {
+                  "x": 1223.453125,
+                  "y": 25.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.22px",
+                "styleTop": "342.155px",
+                "rect": {
+                  "x": 1172.21875,
+                  "y": 308.140625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "991.492px",
+                "styleTop": "528.867px",
+                "rect": {
+                  "x": 959.484375,
+                  "y": 494.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.61567736362906,
+                "y": 360.0952020541885,
+                "width": 106.64556620527179,
+                "height": 89.327271603582,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 848.1759321202112,
+                "y": 277.18755929986077,
+                "width": 97.96183562039062,
+                "height": 49.141493265873635,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1217.767108078873,
+                "y": 121.1434007579392,
+                "width": 76.51298521543958,
+                "height": 55.6500510777406,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1144.693350009799,
+                "y": 413.44390884223486,
+                "width": 152.10849596881712,
+                "height": 50.53876259260363,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 973.3877078358059,
+                "y": 584.6015161680136,
+                "width": 74.96520455778818,
+                "height": 54.437016709739055,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 114
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-900/baseline.png",
+          "sha256": "1de1bafdd57abf89ace915782b0560151fe4e2dc65e9483dc41148d6031d9b05"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "210.602px",
+                "styleTop": "38.0007px",
+                "rect": {
+                  "x": 178.59375,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.421px",
+                "styleTop": "317.878px",
+                "rect": {
+                  "x": 132.40625,
+                  "y": 283.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "892.234px",
+                "styleTop": "203.297px",
+                "rect": {
+                  "x": 860.21875,
+                  "y": 169.296875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1255.46px",
+                "styleTop": "59.5096px",
+                "rect": {
+                  "x": 1223.453125,
+                  "y": 25.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.22px",
+                "styleTop": "342.155px",
+                "rect": {
+                  "x": 1172.21875,
+                  "y": 308.140625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "991.492px",
+                "styleTop": "528.867px",
+                "rect": {
+                  "x": 959.484375,
+                  "y": 494.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.61567736362906,
+                "y": 360.0952020541885,
+                "width": 106.64556620527179,
+                "height": 89.327271603582,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 848.1759321202112,
+                "y": 277.18755929986077,
+                "width": 97.96183562039062,
+                "height": 49.141493265873635,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1217.767108078873,
+                "y": 121.1434007579392,
+                "width": 76.51298521543958,
+                "height": 55.6500510777406,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1144.693350009799,
+                "y": 413.44390884223486,
+                "width": 152.10849596881712,
+                "height": 50.53876259260363,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 973.3877078358059,
+                "y": 584.6015161680136,
+                "width": 74.96520455778818,
+                "height": 54.437016709739055,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 114
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 132.40625,
+                "y": 283.875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-button-guard",
+              "rect": {
+                "x": 860.234375,
+                "y": 169.28125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-sock-skipper",
+              "rect": {
+                "x": 1223.453125,
+                "y": 25.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-teacup-healer",
+              "rect": {
+                "x": 1172.21875,
+                "y": 308.140625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-needle-moth",
+              "rect": {
+                "x": 959.484375,
+                "y": 494.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 514.890625,
+                "y": 173.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 178.59375,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-900/viewport.png",
+          "sha256": "406f82c5e56664cd4a4cd421f9ec25aedda9401c0b46186d97399f72bed0d087"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "292.623px",
+                "styleTop": "82.0007px",
+                "rect": {
+                  "x": 260.609375,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.421px",
+                "styleTop": "317.878px",
+                "rect": {
+                  "x": 132.40625,
+                  "y": 283.875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-button-guard",
+                "text": "",
+                "styleLeft": "892.234px",
+                "styleTop": "203.297px",
+                "rect": {
+                  "x": 860.21875,
+                  "y": 169.296875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-sock-skipper",
+                "text": "",
+                "styleLeft": "1255.46px",
+                "styleTop": "82.0096px",
+                "rect": {
+                  "x": 1223.453125,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.22px",
+                "styleTop": "342.155px",
+                "rect": {
+                  "x": 1172.21875,
+                  "y": 308.140625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-needle-moth",
+                "text": "2",
+                "styleLeft": "991.492px",
+                "styleTop": "528.867px",
+                "rect": {
+                  "x": 959.484375,
+                  "y": 494.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.61567736362906,
+                "y": 360.0952020541885,
+                "width": 106.64556620527179,
+                "height": 89.327271603582,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 848.1759321202112,
+                "y": 277.18755929986077,
+                "width": 97.96183562039062,
+                "height": 49.141493265873635,
+                "id": "foe-0-button-guard"
+              },
+              {
+                "x": 1217.767108078873,
+                "y": 121.1434007579392,
+                "width": 76.51298521543958,
+                "height": 55.6500510777406,
+                "id": "foe-1-sock-skipper"
+              },
+              {
+                "x": 1144.693350009799,
+                "y": 413.44390884223486,
+                "width": 152.10849596881712,
+                "height": 50.53876259260363,
+                "id": "foe-2-teacup-healer"
+              },
+              {
+                "x": 973.3877078358059,
+                "y": 584.6015161680136,
+                "width": 74.96520455778818,
+                "height": 54.437016709739055,
+                "id": "foe-3-needle-moth"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 114
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 132.40625,
+                "y": 283.875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-button-guard",
+              "rect": {
+                "x": 860.234375,
+                "y": 169.28125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-sock-skipper",
+              "rect": {
+                "x": 1223.453125,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-teacup-healer",
+              "rect": {
+                "x": 1172.21875,
+                "y": 308.140625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-needle-moth",
+              "rect": {
+                "x": 959.484375,
+                "y": 494.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 514.890625,
+                "y": 173.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 260.6142731102429,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave1-900/hud.png",
+          "sha256": "5662a19b5681b3c289c2a0082fb693913f13e8b60d917ad7389b470b299be88b"
+        }
+      ],
+      "textPreserved": true
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "ticks": 193,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "525.301px",
+                "styleTop": "90.5153px",
+                "rect": {
+                  "x": 493.296875,
+                  "y": 56.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "210.602px",
+                "styleTop": "29.5476px",
+                "rect": {
+                  "x": 178.59375,
+                  "y": -4.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.123px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 132.109375,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "1029.45px",
+                "styleTop": "604.734px",
+                "rect": {
+                  "x": 997.4375,
+                  "y": 570.71875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "680.535px",
+                "styleTop": "608.428px",
+                "rect": {
+                  "x": 648.53125,
+                  "y": 574.421875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1274.34px",
+                "styleTop": "65.3348px",
+                "rect": {
+                  "x": 1242.328125,
+                  "y": 31.328125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "1031.86px",
+                "styleTop": "375.464px",
+                "rect": {
+                  "x": 999.84375,
+                  "y": 341.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1231.51px",
+                "styleTop": "216.066px",
+                "rect": {
+                  "x": 1199.5,
+                  "y": 182.0625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.35px",
+                "styleTop": "518.465px",
+                "rect": {
+                  "x": 1172.34375,
+                  "y": 484.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 435.09877418532324,
+                "y": 137.26033728017933,
+                "width": 134.70414496281876,
+                "height": 90.57664264855853,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.81795868756485,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 979.6599990926436,
+                "y": 647.4873445425171,
+                "width": 80.33602746194947,
+                "height": 52.32917063596062,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 613.8726696916153,
+                "y": 696.9082371765277,
+                "width": 129.79740102366418,
+                "height": 88.06228799871985,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1229.6644580970255,
+                "y": 104.70088471625591,
+                "width": 80.34827225571553,
+                "height": 46.33875249644147,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 987.2429074587187,
+                "y": 427.60468845955745,
+                "width": 102.58385471738848,
+                "height": 57.14755781660108,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1214.132925082594,
+                "y": 269.931024250372,
+                "width": 71.96659637547691,
+                "height": 52.259536041349634,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1146.3099651518517,
+                "y": 583.56230397582,
+                "width": 149.2683573900763,
+                "height": 53.18503859299358,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 130
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-900/baseline.png",
+          "sha256": "4e3540c6e345e665a50c526f86c8617708675ce81e7f0dc77999291883850ae2"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "525.301px",
+                "styleTop": "90.5153px",
+                "rect": {
+                  "x": 493.296875,
+                  "y": 56.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "210.602px",
+                "styleTop": "38.0007px",
+                "rect": {
+                  "x": 178.59375,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.123px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 132.109375,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "1029.45px",
+                "styleTop": "604.734px",
+                "rect": {
+                  "x": 997.4375,
+                  "y": 570.71875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "680.535px",
+                "styleTop": "608.428px",
+                "rect": {
+                  "x": 648.53125,
+                  "y": 574.421875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1274.34px",
+                "styleTop": "65.3348px",
+                "rect": {
+                  "x": 1242.328125,
+                  "y": 31.328125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "1031.86px",
+                "styleTop": "375.464px",
+                "rect": {
+                  "x": 999.859375,
+                  "y": 341.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1231.51px",
+                "styleTop": "216.066px",
+                "rect": {
+                  "x": 1199.5,
+                  "y": 182.0625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.35px",
+                "styleTop": "518.465px",
+                "rect": {
+                  "x": 1172.34375,
+                  "y": 484.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 435.09877418532324,
+                "y": 137.26033728017933,
+                "width": 134.70414496281876,
+                "height": 90.57664264855853,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.81795868756485,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 979.6599990926436,
+                "y": 647.4873445425171,
+                "width": 80.33602746194947,
+                "height": 52.32917063596062,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 613.8726696916153,
+                "y": 696.9082371765277,
+                "width": 129.79740102366418,
+                "height": 88.06228799871985,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1229.6644580970255,
+                "y": 104.70088471625591,
+                "width": 80.34827225571553,
+                "height": 46.33875249644147,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 987.2429074587187,
+                "y": 427.60468845955745,
+                "width": 102.58385471738848,
+                "height": 57.14755781660108,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1214.132925082594,
+                "y": 269.931024250372,
+                "width": 71.96659637547691,
+                "height": 52.259536041349634,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1146.3099651518517,
+                "y": 583.56230397582,
+                "width": 149.2683573900763,
+                "height": 53.18503859299358,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 130
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 132.109375,
+                "y": 283.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "rect": {
+                "x": 997.4375,
+                "y": 570.71875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "rect": {
+                "x": 648.53125,
+                "y": 574.421875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "rect": {
+                "x": 1242.328125,
+                "y": 31.328125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "rect": {
+                "x": 999.84375,
+                "y": 341.453125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "rect": {
+                "x": 1199.5,
+                "y": 182.0625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "rect": {
+                "x": 1172.34375,
+                "y": 484.453125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 493.296875,
+                "y": 56.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 178.59375,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-900/viewport.png",
+          "sha256": "95160e2712d61398af2af0d28f1944486f69d918fa94c27b5a3c61db2488ab48"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "525.301px",
+                "styleTop": "90.5153px",
+                "rect": {
+                  "x": 493.296875,
+                  "y": 56.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "292.623px",
+                "styleTop": "82.0007px",
+                "rect": {
+                  "x": 260.609375,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "164.123px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 132.109375,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-kettle-knight",
+                "text": "",
+                "styleLeft": "1029.45px",
+                "styleTop": "604.734px",
+                "rect": {
+                  "x": 997.4375,
+                  "y": 570.71875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-spool-ram",
+                "text": "",
+                "styleLeft": "680.535px",
+                "styleTop": "608.428px",
+                "rect": {
+                  "x": 648.53125,
+                  "y": 574.421875,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-pollen-scout",
+                "text": "",
+                "styleLeft": "1274.34px",
+                "styleTop": "82.0067px",
+                "rect": {
+                  "x": 1242.328125,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-3-crumb-sentinel",
+                "text": "",
+                "styleLeft": "1031.86px",
+                "styleTop": "375.464px",
+                "rect": {
+                  "x": 999.859375,
+                  "y": 341.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-4-needle-moth",
+                "text": "2",
+                "styleLeft": "1231.51px",
+                "styleTop": "216.066px",
+                "rect": {
+                  "x": 1199.5,
+                  "y": 182.0625,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-5-teacup-healer",
+                "text": "1",
+                "styleLeft": "1204.35px",
+                "styleTop": "518.465px",
+                "rect": {
+                  "x": 1172.34375,
+                  "y": 484.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 435.09877418532324,
+                "y": 137.26033728017933,
+                "width": 134.70414496281876,
+                "height": 90.57664264855853,
+                "id": "mochi"
+              },
+              {
+                "x": 147.30568128451077,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 90.81795868756485,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 979.6599990926436,
+                "y": 647.4873445425171,
+                "width": 80.33602746194947,
+                "height": 52.32917063596062,
+                "id": "foe-0-kettle-knight"
+              },
+              {
+                "x": 613.8726696916153,
+                "y": 696.9082371765277,
+                "width": 129.79740102366418,
+                "height": 88.06228799871985,
+                "id": "foe-1-spool-ram"
+              },
+              {
+                "x": 1229.6644580970255,
+                "y": 104.70088471625591,
+                "width": 80.34827225571553,
+                "height": 46.33875249644147,
+                "id": "foe-2-pollen-scout"
+              },
+              {
+                "x": 987.2429074587187,
+                "y": 427.60468845955745,
+                "width": 102.58385471738848,
+                "height": 57.14755781660108,
+                "id": "foe-3-crumb-sentinel"
+              },
+              {
+                "x": 1214.132925082594,
+                "y": 269.931024250372,
+                "width": 71.96659637547691,
+                "height": 52.259536041349634,
+                "id": "foe-4-needle-moth"
+              },
+              {
+                "x": 1146.3099651518517,
+                "y": 583.56230397582,
+                "width": 149.2683573900763,
+                "height": 53.18503859299358,
+                "id": "foe-5-teacup-healer"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 130
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 132.109375,
+                "y": 283.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "rect": {
+                "x": 997.4375,
+                "y": 570.71875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "rect": {
+                "x": 648.53125,
+                "y": 574.421875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "rect": {
+                "x": 1242.328125,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "rect": {
+                "x": 999.84375,
+                "y": 341.453125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "rect": {
+                "x": 1199.5,
+                "y": 182.0625,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "rect": {
+                "x": 1172.34375,
+                "y": 484.453125,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 493.296875,
+                "y": 56.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 260.6142731102429,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/wave3-900/hud.png",
+          "sha256": "81f580ee7bc8fe6956feb9b8c7fe6d61eccb6392edbb164cd5e20f52e60338be"
+        }
+      ],
+      "textPreserved": true
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "ticks": 159,
+      "baselineTargetFound": true,
+      "errors": [],
+      "variants": [
+        {
+          "name": "baseline",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "196.202px",
+                "styleTop": "29.5476px",
+                "rect": {
+                  "x": 164.1875,
+                  "y": -4.453125,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "157.582px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 125.578125,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "942.294px",
+                "styleTop": "297.948px",
+                "rect": {
+                  "x": 910.28125,
+                  "y": 263.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1290.75px",
+                "styleTop": "474.851px",
+                "rect": {
+                  "x": 1258.734375,
+                  "y": 440.84375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1289.93px",
+                "styleTop": "69.4814px",
+                "rect": {
+                  "x": 1257.921875,
+                  "y": 35.46875,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 460,
+                "y": 5.5,
+                "width": 520,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 132.90568128451076,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 84.27699172159716,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 847.1130341098487,
+                "y": 383.015842421485,
+                "width": 179.45154345671926,
+                "height": 115.26339316155025,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1256.7338495979768,
+                "y": 513.8604077082349,
+                "width": 68.26959105318701,
+                "height": 57.129178876616606,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1256.083225007279,
+                "y": 109.07962789031312,
+                "width": 66.90625842413306,
+                "height": 56.51469802219226,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [
+              "soot"
+            ],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 99
+          },
+          "placement": null,
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-900/baseline.png",
+          "sha256": "2a441e52cf7a6c746a860bdd5da4b7c24fb4f6037b3871440bf2d1013051e68c"
+        },
+        {
+          "name": "viewport",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "196.202px",
+                "styleTop": "38.0007px",
+                "rect": {
+                  "x": 164.1875,
+                  "y": 4,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "157.582px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 125.578125,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "942.294px",
+                "styleTop": "297.948px",
+                "rect": {
+                  "x": 910.28125,
+                  "y": 263.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1290.75px",
+                "styleTop": "474.851px",
+                "rect": {
+                  "x": 1258.75,
+                  "y": 440.84375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1289.93px",
+                "styleTop": "69.4814px",
+                "rect": {
+                  "x": 1257.921875,
+                  "y": 35.46875,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 460,
+                "y": 5.5,
+                "width": 520,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 132.90568128451076,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 84.27699172159716,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 847.1130341098487,
+                "y": 383.015842421485,
+                "width": 179.45154345671926,
+                "height": 115.26339316155025,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1256.7338495979768,
+                "y": 513.8604077082349,
+                "width": 68.26959105318701,
+                "height": 57.129178876616606,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1256.083225007279,
+                "y": 109.07962789031312,
+                "width": 66.90625842413306,
+                "height": 56.51469802219226,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [],
+            "hud": [
+              {
+                "id": "soot",
+                "obstacle": "b3-top"
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "obstacle": "b3-top"
+              }
+            ],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 99
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 125.578125,
+                "y": 283.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "rect": {
+                "x": 910.28125,
+                "y": 263.9375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "rect": {
+                "x": 1258.734375,
+                "y": 440.84375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "rect": {
+                "x": 1257.921875,
+                "y": 35.46875,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 514.890625,
+                "y": 173.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 164.1875,
+                "y": 4,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-900/viewport.png",
+          "sha256": "a583add53d42f5c8405163fd5c22bbc54f531f3cb1044229e03feb97ecca264d"
+        },
+        {
+          "name": "hud",
+          "geometry": {
+            "width": 1440,
+            "height": 900,
+            "labels": [
+              {
+                "id": "mochi",
+                "text": "2",
+                "styleLeft": "546.901px",
+                "styleTop": "207.515px",
+                "rect": {
+                  "x": 514.890625,
+                  "y": 173.5,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "soot",
+                "text": "2",
+                "styleLeft": "278.229px",
+                "styleTop": "82.0007px",
+                "rect": {
+                  "x": 246.21875,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "clover",
+                "text": "2",
+                "styleLeft": "157.582px",
+                "styleTop": "317.871px",
+                "rect": {
+                  "x": 125.578125,
+                  "y": 283.859375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "panko",
+                "text": "212",
+                "styleLeft": "440.476px",
+                "styleTop": "507.532px",
+                "rect": {
+                  "x": 399.96875,
+                  "y": 473.53125,
+                  "width": 83,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-0-yarn-giant",
+                "text": "1",
+                "styleLeft": "942.294px",
+                "styleTop": "297.948px",
+                "rect": {
+                  "x": 910.28125,
+                  "y": 263.9375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-1-binding-thread",
+                "text": "",
+                "styleLeft": "1290.75px",
+                "styleTop": "474.851px",
+                "rect": {
+                  "x": 1258.75,
+                  "y": 440.84375,
+                  "width": 64,
+                  "height": 34
+                }
+              },
+              {
+                "id": "foe-2-binding-thread",
+                "text": "",
+                "styleLeft": "1289.93px",
+                "styleTop": "82.0126px",
+                "rect": {
+                  "x": 1257.921875,
+                  "y": 48,
+                  "width": 64,
+                  "height": 34
+                }
+              }
+            ],
+            "obstacles": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 44,
+                "kind": "b3-top"
+              },
+              {
+                "x": 460,
+                "y": 5.5,
+                "width": 520,
+                "height": 32,
+                "kind": "b3-boss"
+              },
+              {
+                "x": 0,
+                "y": 804,
+                "width": 1440,
+                "height": 96,
+                "kind": "b3-bottom"
+              }
+            ],
+            "faces": [
+              {
+                "x": 456.6987741853234,
+                "y": 254.26033728017921,
+                "width": 134.70414496281865,
+                "height": 90.57664264855856,
+                "id": "mochi"
+              },
+              {
+                "x": 132.90568128451076,
+                "y": 80.09413511276271,
+                "width": 109.30859182573212,
+                "height": 86.95853178490124,
+                "id": "soot"
+              },
+              {
+                "x": 84.27699172159716,
+                "y": 360.7488822781403,
+                "width": 106.36888081643319,
+                "height": 89.0955174692379,
+                "id": "clover"
+              },
+              {
+                "x": 358.3504242822971,
+                "y": 566.1814697986731,
+                "width": 101.73839587118664,
+                "height": 81.8895663393555,
+                "id": "panko"
+              },
+              {
+                "x": 847.1130341098487,
+                "y": 383.015842421485,
+                "width": 179.45154345671926,
+                "height": 115.26339316155025,
+                "id": "foe-0-yarn-giant"
+              },
+              {
+                "x": 1256.7338495979768,
+                "y": 513.8604077082349,
+                "width": 68.26959105318701,
+                "height": 57.129178876616606,
+                "id": "foe-1-binding-thread"
+              },
+              {
+                "x": 1256.083225007279,
+                "y": 109.07962789031312,
+                "width": 66.90625842413306,
+                "height": 56.51469802219226,
+                "id": "foe-2-binding-thread"
+              }
+            ],
+            "clipped": [],
+            "hud": [],
+            "faceHits": [],
+            "pairs": [],
+            "canvas": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "action": 99
+          },
+          "placement": [
+            {
+              "id": "clover",
+              "rect": {
+                "x": 125.578125,
+                "y": 283.859375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "rect": {
+                "x": 910.28125,
+                "y": 263.9375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "rect": {
+                "x": 1258.734375,
+                "y": 440.84375,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "rect": {
+                "x": 1257.921875,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "mochi",
+              "rect": {
+                "x": 514.890625,
+                "y": 173.5,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "panko",
+              "rect": {
+                "x": 399.96875,
+                "y": 473.53125,
+                "width": 83,
+                "height": 34
+              },
+              "feasible": true
+            },
+            {
+              "id": "soot",
+              "rect": {
+                "x": 246.21427311024289,
+                "y": 48,
+                "width": 64,
+                "height": 34
+              },
+              "feasible": true
+            }
+          ],
+          "path": "reports/v4-art/REVIEW/A11/placement-r1/raw/boss-900/hud.png",
+          "sha256": "9086b8f7fef3369dbc7d4a47b85fd6f836ed3dcc2550a6bf2085b221f677e26e"
+        }
+      ],
+      "textPreserved": true
+    }
+  ],
+  "complete": true,
+  "finished": "2026-11-16T22:40:47.970Z",
+  "runtimeUnchanged": true
+}
