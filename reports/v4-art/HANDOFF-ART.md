@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16 10:36 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: poll Binding regression/probe logs; fix measured runtime failures, then node scripts/v3feel/capture.mjs --item V4-A7-BINDING --seconds 30 --video-seconds 30 detached.
+NEXT1: review eight Binding raw/review-pages sheets (4 per look); blind9/9 saved before key; then both-enemy role/face/occlusion/perf receipt+push; TeacupK1 measurements next.
 NEXT2: measure Binding K4-A2, inspect normalized225px keys/2xheads, author two ranged class drills; then A7 integration/enemy keys.
 NEXT3: continue A7 enemies/boss, A8 deliveries interrupt, A9 ensemble, A10 SHIP art, A11 open gates; no final summary.
-LAST PUSH:424f4088e verified; Binding lab selected/pushed. Published212654Bposes+45194Btexture+shared scene WIP; full regression/probe running.
-LIVE: 87842 reports/v4-art/jobs/a7-binding-regression.log; 87843 reports/v4-art/jobs/a7-binding-probe.log; Vite67838 port5990.
+LAST PUSH:c19ded569 verified; Binding production WIP committed. 2648tests/315files,typecheck,3F6PASS. Capture/film/blind9/perf pending.
+LIVE: capture88959/review89690 exited0; three30sfilms paritytrue/errors0; Binding blind9 prepared, unread key. TeacupK1 saved raw+provenance; no generation pending; Vite67838.
 No STOP/inbox pause/designer delivery at10:03UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private clip catalogue deferredA11. A3/A4 checkpoints; pairwiseFX/activation OPEN.
 A5 checkpoint: blind12/12,overlap13.4228%,isolated60.0602fps,face0%; exactheal/legacydamage role OPEN finalSHIP.
@@ -21,7 +21,7 @@ A7 Binding RANGED perSHIP;K1IoU.438837,dE1.708804,head.975801;K2IoU.389201,dE2.8
 A7 K4-A1 FAILhead.925078,IoU.356183,dE3.369575,feet0;allacceptedfalse until visual/drill. No enemy production edits.
 A7 head landmarksK0[216,324],K1[407,617],K2[410,625],K4[438,630],uncertainty4px. Never redefine to pass.
 A7 K4-A2 saved/provenance;IoU.358964,dE5.433691,head.951665[438,632],feet1,no crop. Artselected;runtime/drill/film OPEN.
-IMAGEOPENS reset: final R4 reviewed, total6 this step; never reopen prior sheets. Two selected JPG saved A7/binding-thread.
+IMAGEOPENS reset after Bindingblind9/9. Previous Binding lab/blind and Teacup source seen; no duplicate opens. Eight new full-action review pages ready.
 EXCLUDE inheritedlogs/paritylatest,.DS_Store,recorderlinks,duplicatepreviews,raw/private/nonSYNCmovies. <=8selectedJPG/item;V4reports<=150MB.
 Checkpoints eachstep<=20min;commands<=40lines/3KB;diffs<=80lines;HANDOFF<=40lines;detachedjobs<=3 PythonPopen/nohup method.
 Time-split uncertainty explicit;do not claim>=50%authoring retroactively. Craft gatedDEV+VITE_CRAFT_PILOT=soot untilA9/A11.

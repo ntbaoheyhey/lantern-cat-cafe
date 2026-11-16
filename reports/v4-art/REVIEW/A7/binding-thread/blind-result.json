@@ -1,0 +1,174 @@
+{
+  "count": 9,
+  "correct": 9,
+  "pass": true,
+  "labelledAt": "2026-11-16T10:57:04.680051+00:00",
+  "comparedAt": "2026-11-16T10:57:04.746234+00:00",
+  "labelsArtifact": "reports/v4-art/REVIEW/A7/binding-thread/blind-labels.json",
+  "labelsSha256": "0e10af5f176bf8dc441db273d11036976e92fb66f6c9768d092117640345c00a",
+  "sampling": "3 each of windup/strike/received-hit, held interiors >34ms from swaps; both Binding enemies; shuffled before labels; existing encoded frame ordinals.",
+  "frames": [
+    {
+      "fixture": "boss",
+      "unit": "foe-2-binding-thread",
+      "frame": 770,
+      "renderOrdinal": 1528,
+      "expected": "windup",
+      "crop": [
+        979,
+        36,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "01",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-2-binding-thread",
+      "frame": 583,
+      "renderOrdinal": 1155,
+      "expected": "hit",
+      "crop": [
+        959,
+        34,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "02",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-1-binding-thread",
+      "frame": 212,
+      "renderOrdinal": 416,
+      "expected": "hit",
+      "crop": [
+        959,
+        358,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "03",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-1-binding-thread",
+      "frame": 752,
+      "renderOrdinal": 1492,
+      "expected": "hit",
+      "crop": [
+        959,
+        358,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "04",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-2-binding-thread",
+      "frame": 447,
+      "renderOrdinal": 885,
+      "expected": "windup",
+      "crop": [
+        979,
+        36,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "05",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-2-binding-thread",
+      "frame": 175,
+      "renderOrdinal": 342,
+      "expected": "strike",
+      "crop": [
+        901,
+        35,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "06",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-1-binding-thread",
+      "frame": 143,
+      "renderOrdinal": 280,
+      "expected": "windup",
+      "crop": [
+        979,
+        360,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "07",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-2-binding-thread",
+      "frame": 178,
+      "renderOrdinal": 349,
+      "expected": "strike",
+      "crop": [
+        901,
+        35,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "08",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "unit": "foe-1-binding-thread",
+      "frame": 152,
+      "renderOrdinal": 297,
+      "expected": "strike",
+      "crop": [
+        901,
+        359,
+        300,
+        280
+      ],
+      "video": "reports/v4-art/REVIEW/A7/binding-thread/boss.webm",
+      "videoSha256": "14251ebe1a6913cd8763f1017b3cef33bf7911358b6325b2d24ab25ac800e31f",
+      "id": "09",
+      "label": "strike",
+      "correct": true
+    }
+  ]
+}

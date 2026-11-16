@@ -3952,6 +3952,19 @@
       "output": "tools/v3craft-lab/v4-binding-thread/raw/knotted-thread.png",
       "sha256": "8e88f6a293100040b8ae821528fce24da55bb218fcac259f15d2acb2ec4547f7",
       "status": "candidate; drill review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k1-a1",
+      "date": "2026-11-16T10:55:25.001551+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept, identity-preserve. Asset: one drawn K1 anticipation pose for our original Teacup Healer game enemy, on true transparent alpha. Input image1 is our own runtime character and the sole identity/style reference. Preserve its mauve porcelain teacup torso, aged gold floral inlay and fine golden cracks, matching saucer waist, single cup handle on its right, lid with small finial, dark face gap with two warm gold eyes, slender articulated brass arms/legs, and its one long ornate teaspoon. Same painterly outline, lighting, material, and restrained palette. No new costume, character, props, or effects. Change the pose substantially: a clearly readable preparation to heal allies to the LEFT. Keep the feet on one level baseline and the full-body apparent height similar to the reference. Bend the brass knees slightly and shift the upright cup body toward the RIGHT, behind its planted feet. Draw the spoon arm back across the upper chest toward the RIGHT shoulder, with the spoon bowl raised beside and slightly above the lid. Fold the other open palm inward near the cup rim as though gathering warmth. Preserve the spoon's full long handle. This is a compact withdrawn wind-up, not the idle pose and not a forward strike. Keep the lid nearly level, the eye gap directed three-quarter LEFT, and the lid/face at the same physical scale as the reference; no enlarged or shrunken head, no top-down camera. Let the body offset, knee bend, and strongly reposed arms create the silhouette change. Maintain convincing articulated joint connections. Full character with every foot, spoon tip, handle and finial visible, generous transparent padding on all sides, one isolated figure on a square canvas. No ground shadow, scenery, text, glow, checkerboard, or opaque backdrop.",
+      "referenceInput": "own art: apps/web/public/units/teacup-healer/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/teacup-healer/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K1-A1.png",
+      "sha256": "3075f3b3f13646c0b6a7b15c76889227c106e95c527469453349fda49367f438",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }
