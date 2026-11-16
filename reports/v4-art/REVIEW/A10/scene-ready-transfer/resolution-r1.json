@@ -1,0 +1,3355 @@
+{
+  "started": "2026-11-16T21:38:17.637842+00:00",
+  "scope": "Private whole-RGBA resolution experiment; changed resolution/alpha explicitly non-lossless",
+  "sourceCommit": "4a308b24d02afb9336ab924772b8c1bf07e78589",
+  "scriptSha256AtRun": "a2fe76588959c248ab46f0048bfdcedcf2e3ae58c7e75eeea50c88052679fded",
+  "boundDrillR3Sha256": "cfb63ab8bc73a1e65fd708f7e3243db595fd8a6543d18805837581afe6d5d9f6",
+  "encoder": {
+    "libavif": "1.3.0",
+    "codecs": "dav1d [dec]:1.5.1-0-g42b2b24, aom [enc]:v3.12.1"
+  },
+  "settings": {
+    "format": "AVIF",
+    "quality": 60,
+    "subsampling": "4:4:4",
+    "speed": 6,
+    "codec": "aom",
+    "max_threads": 2,
+    "advanced": {
+      "a:lossless": "1",
+      "a:cq-level": "0"
+    }
+  },
+  "resampling": "Pillow11.3 RGBA LANCZOS uses premultiplied RGBa internally; BILINEAR reconstructed diagnostic",
+  "baseline": {
+    "imageBytes": 22861499,
+    "nonImageBytes": 4684752,
+    "unchangedAuxiliaryImageBytes": 1705765,
+    "imageAllowance": 3315248,
+    "totalGate": 8000000
+  },
+  "newMappingByteReserve": 16384,
+  "assets": [
+    {
+      "owner": "mochi",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/mochi/psd-placeholder-r3/mochi.png",
+      "sourceSha256": "fa125d28384cf039e191b981ac5b70a6ec094e2cae1a3326b9769621efb37518",
+      "sourceBytes": 858453,
+      "size": [
+        1024,
+        1024
+      ],
+      "observedOriginalTransferBytes": 858722,
+      "observedResponseOverhead": 269,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-mochi-rgba-two-thirds.avif",
+          "sha256": "aa99f3d4a64b78b2831f3a3b275e0452efe4a53ba0b42c81441e8e76277a9d6d",
+          "bytes": 177090,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.6669921875
+          ],
+          "seconds": 0.29791587499999994,
+          "decodedSize": [
+            683,
+            683
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 144,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 2.095627784729004,
+          "alphaMassRelativeDelta": 0.0005366300998144307,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1010,
+                775
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1013,
+                779
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                3,
+                4
+              ],
+              "sourceDerivativeMaskIoU": 0.8617193141629789,
+              "changedClassPixels": 59745
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                1009,
+                775
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                1009,
+                776
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                -1,
+                0,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9626296973909357,
+              "changedClassPixels": 11990
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                4,
+                1009,
+                774
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                1009,
+                774
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.994322458907249,
+              "changedClassPixels": 1697
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                5,
+                4,
+                1008,
+                774
+              ],
+              "reconstructedBBox": [
+                5,
+                5,
+                1007,
+                773
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9606074576835216,
+              "changedClassPixels": 11364
+            }
+          ],
+          "maskedMeanLabDelta": 0.2746029811499656,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.527367353439331,
+            "p95": 8.962158203125,
+            "max": 57.48556137084961
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-mochi-rgba-half.avif",
+          "sha256": "a6793b16f78d2137814539bcbfb27e01d89bea2e91186d686e5d17025cd7b386",
+          "bytes": 125670,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.2414343750000001,
+          "decodedSize": [
+            512,
+            512
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 152,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 3.2910566329956055,
+          "alphaMassRelativeDelta": 0.0014289819523672857,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1010,
+                775
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1015,
+                781
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                5,
+                6
+              ],
+              "sourceDerivativeMaskIoU": 0.8066679473592192,
+              "changedClassPixels": 89569
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                1009,
+                775
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                1010,
+                776
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9406947172856991,
+              "changedClassPixels": 19472
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                4,
+                1009,
+                774
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                1008,
+                774
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9888535510116904,
+              "changedClassPixels": 3340
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                5,
+                4,
+                1008,
+                774
+              ],
+              "reconstructedBBox": [
+                5,
+                5,
+                1007,
+                773
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9355686273150475,
+              "changedClassPixels": 18588
+            }
+          ],
+          "maskedMeanLabDelta": 0.22464205578999524,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 4.04824161529541,
+            "p95": 10.542444229125977,
+            "max": 68.4896240234375
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "soot",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+      "sourceSha256": "5cc365e1a56369e43ed74bdb8f8563aa53a063afe18639935e09670abfa9924b",
+      "sourceBytes": 947715,
+      "size": [
+        1024,
+        1024
+      ],
+      "observedOriginalTransferBytes": 947984,
+      "observedResponseOverhead": 269,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-soot-rgba-two-thirds.avif",
+          "sha256": "c134d21b7f15813e69560fe4a3c6f7426a94b66456c10ed423758fb058d16ab4",
+          "bytes": 78271,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.6669921875
+          ],
+          "seconds": 0.2745558750000001,
+          "decodedSize": [
+            683,
+            683
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 122,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.7809343338012695,
+          "alphaMassRelativeDelta": 0.00041055931799281276,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1020,
+                966
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1024,
+                969
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                4,
+                3
+              ],
+              "sourceDerivativeMaskIoU": 0.9452422388446904,
+              "changedClassPixels": 20263
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                1020,
+                965
+              ],
+              "reconstructedBBox": [
+                4,
+                3,
+                1020,
+                965
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9874669322732301,
+              "changedClassPixels": 4316
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                5,
+                4,
+                1019,
+                964
+              ],
+              "reconstructedBBox": [
+                5,
+                4,
+                1019,
+                964
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9975493052878222,
+              "changedClassPixels": 820
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                6,
+                4,
+                1019,
+                963
+              ],
+              "reconstructedBBox": [
+                6,
+                5,
+                1018,
+                962
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9883658231202991,
+              "changedClassPixels": 3819
+            }
+          ],
+          "maskedMeanLabDelta": 0.33822653612487835,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.1406123638153076,
+            "p95": 7.602088451385498,
+            "max": 34.67263412475586
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-soot-rgba-half.avif",
+          "sha256": "ee0c53867189004c9559afbd88511b4442426489f58638b4638b6f8028961b54",
+          "bytes": 54902,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.225577417,
+          "decodedSize": [
+            512,
+            512
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 138,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 1.202108383178711,
+          "alphaMassRelativeDelta": 0.0007470485948857539,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1020,
+                966
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1024,
+                971
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                4,
+                5
+              ],
+              "sourceDerivativeMaskIoU": 0.9203551206092282,
+              "changedClassPixels": 30340
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                1020,
+                965
+              ],
+              "reconstructedBBox": [
+                4,
+                3,
+                1021,
+                966
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                1,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9798983244280749,
+              "changedClassPixels": 6975
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                5,
+                4,
+                1019,
+                964
+              ],
+              "reconstructedBBox": [
+                5,
+                4,
+                1019,
+                963
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9956885355053878,
+              "changedClassPixels": 1444
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                6,
+                4,
+                1019,
+                963
+              ],
+              "reconstructedBBox": [
+                7,
+                5,
+                1018,
+                960
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -3
+              ],
+              "sourceDerivativeMaskIoU": 0.9795248772284708,
+              "changedClassPixels": 6721
+            }
+          ],
+          "maskedMeanLabDelta": 0.26365029935876416,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.6203274726867676,
+            "p95": 9.278267860412598,
+            "max": 40.50738525390625
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ],
+      "crop": [
+        0,
+        480,
+        320,
+        800
+      ],
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-soot-comparison.png",
+        "sha256": "c12a22149683919113dfc4f93ba4727720f5496421ebcee91ad9cb4b05ffdefe",
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T21:39:46.263771+00:00",
+        "note": "Eye, eyebrow, whiskers and hood stitches remain identifiable. Fur strands visibly soften, especially half-size enlarged to source scale. Two-thirds retains more face detail. No obvious dark/light outline halo in this crop.",
+        "scope": "Same source-pixel crops with bilinear reconstructed candidates on dark/light backgrounds; runtime/film quality remains unaccepted."
+      }
+    },
+    {
+      "owner": "clover",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/clover/psd-placeholder-r1/clover.png",
+      "sourceSha256": "eddc48d3c87832f72c1a3751d454ae2a26261af66fe1552beab1a687acbc8381",
+      "sourceBytes": 971445,
+      "size": [
+        1024,
+        1024
+      ],
+      "observedOriginalTransferBytes": 971714,
+      "observedResponseOverhead": 269,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-clover-rgba-two-thirds.avif",
+          "sha256": "dbad6949fdc1ed5874b93f1bd647784a03e0bf46a85055d85363f47410cf3e6a",
+          "bytes": 199420,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.6669921875
+          ],
+          "seconds": 0.306002833,
+          "decodedSize": [
+            683,
+            683
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 146,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 2.40322208404541,
+          "alphaMassRelativeDelta": 0.00044385322591749307,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1003,
+                837
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1004,
+                842
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                1,
+                5
+              ],
+              "sourceDerivativeMaskIoU": 0.8581562878584612,
+              "changedClassPixels": 69782
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                995,
+                837
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                995,
+                838
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9630244725383591,
+              "changedClassPixels": 14071
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                4,
+                994,
+                837
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                994,
+                837
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9942689257574423,
+              "changedClassPixels": 2017
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                5,
+                5,
+                994,
+                837
+              ],
+              "reconstructedBBox": [
+                5,
+                5,
+                993,
+                836
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9619690813188364,
+              "changedClassPixels": 12935
+            }
+          ],
+          "maskedMeanLabDelta": 0.1970011601176615,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.2638118267059326,
+            "p95": 9.48262882232666,
+            "max": 42.050880432128906
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-clover-rgba-half.avif",
+          "sha256": "a49b0dab04a41fa16874918fdc1ba9703a5942b971831c527b1b40edb7023088",
+          "bytes": 146344,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.252048166,
+          "decodedSize": [
+            512,
+            512
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 173,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 3.799586296081543,
+          "alphaMassRelativeDelta": 0.0014223128488858026,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                4,
+                4,
+                1003,
+                837
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1005,
+                843
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -4,
+                -4,
+                2,
+                6
+              ],
+              "sourceDerivativeMaskIoU": 0.8011606591668098,
+              "changedClassPixels": 105325
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                4,
+                4,
+                995,
+                837
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                996,
+                839
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                -1,
+                1,
+                2
+              ],
+              "sourceDerivativeMaskIoU": 0.9405045020982398,
+              "changedClassPixels": 23166
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                4,
+                994,
+                837
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                994,
+                837
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9889196283299224,
+              "changedClassPixels": 3909
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                5,
+                5,
+                994,
+                837
+              ],
+              "reconstructedBBox": [
+                6,
+                6,
+                993,
+                835
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9382914230105459,
+              "changedClassPixels": 20989
+            }
+          ],
+          "maskedMeanLabDelta": 0.32856566169669643,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.775569438934326,
+            "p95": 11.357946395874023,
+            "max": 52.36219787597656
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "panko",
+      "kind": "actor",
+      "source": "apps/web/public/units/panko/rig-depth.png",
+      "sourceSha256": "1a9e5df12fcb667343b823d09e43e8dedb65ead0a61b8fb890a22fb4b9f27e94",
+      "sourceBytes": 1569890,
+      "size": [
+        2048,
+        1024
+      ],
+      "observedOriginalTransferBytes": 1570161,
+      "observedResponseOverhead": 271,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-panko-rgba-two-thirds.avif",
+          "sha256": "a4ccf3965d542e218dc6e73351ba38dba0eda82cdc3a384d5e5f5afd8b0fb394",
+          "bytes": 135815,
+          "nativeToSourceRatios": [
+            0.66650390625,
+            0.6669921875
+          ],
+          "seconds": 0.4213069169999999,
+          "decodedSize": [
+            1365,
+            683
+          ],
+          "sourceSize": [
+            2048,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 180,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.752204418182373,
+          "alphaMassRelativeDelta": 0.0002703249755957329,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1951,
+                839
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                4,
+                4
+              ],
+              "sourceDerivativeMaskIoU": 0.9371767963804564,
+              "changedClassPixels": 37296
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                2,
+                3,
+                1948,
+                836
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                0,
+                1,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9848731116139008,
+              "changedClassPixels": 8404
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9986997369964478,
+              "changedClassPixels": 705
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                3,
+                4,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                4,
+                5,
+                1946,
+                834
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9846209236773229,
+              "changedClassPixels": 8244
+            }
+          ],
+          "maskedMeanLabDelta": 0.3457982538720507,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.7902748584747314,
+            "p95": 6.194811820983887,
+            "max": 40.973567962646484
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-panko-rgba-half.avif",
+          "sha256": "072ad269cd0d3c7b402007df6f38b9a03dabf15fc1498eea7b0c957151b6760a",
+          "bytes": 90877,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.326483584,
+          "decodedSize": [
+            1024,
+            512
+          ],
+          "sourceSize": [
+            2048,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 221,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 1.1092529296875,
+          "alphaMassRelativeDelta": 0.0006274751938595132,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1953,
+                841
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                6,
+                6
+              ],
+              "sourceDerivativeMaskIoU": 0.9071001320719996,
+              "changedClassPixels": 57046
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                1,
+                2,
+                1949,
+                837
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -2,
+                -1,
+                2,
+                2
+              ],
+              "sourceDerivativeMaskIoU": 0.9763064125599744,
+              "changedClassPixels": 13279
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                3,
+                3,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                3,
+                4,
+                1947,
+                835
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9977527137042063,
+              "changedClassPixels": 1219
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                3,
+                4,
+                1947,
+                835
+              ],
+              "reconstructedBBox": [
+                4,
+                5,
+                1946,
+                833
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9756647651169472,
+              "changedClassPixels": 13045
+            }
+          ],
+          "maskedMeanLabDelta": 0.2693855933428191,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.1358389854431152,
+            "p95": 7.246140956878662,
+            "max": 47.707645416259766
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ],
+      "crop": [
+        160,
+        160,
+        480,
+        480
+      ],
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-panko-comparison.png",
+        "sha256": "4ea61b5d604946511213e623b31697495764bad17aa0af7c384e2270abaea410",
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T21:39:46.263771+00:00",
+        "note": "Knot, buttons, pocket outline and stitch pattern remain identifiable. Fine cloth weave softens at two-thirds and further at half. No obvious new silhouette discontinuity in the crop.",
+        "scope": "Same source-pixel crops with bilinear reconstructed candidates on dark/light backgrounds; runtime/film quality remains unaccepted."
+      }
+    },
+    {
+      "owner": "binding-thread",
+      "kind": "actor",
+      "source": "apps/web/public/units/binding-thread/rig-depth.png",
+      "sourceSha256": "46347f4d0d833c43a34b0075c76c385c2590f3edeaee3be6b3f9bff23135ffab",
+      "sourceBytes": 1156321,
+      "size": [
+        2048,
+        1024
+      ],
+      "observedOriginalTransferBytes": 1156592,
+      "observedResponseOverhead": 271,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-binding-thread-rgba-two-thirds.avif",
+          "sha256": "be4da8f842a2c7c3f8415e162275e4b1d3ef04b0cf88b40e1790bbb61bb03e6b",
+          "bytes": 126633,
+          "nativeToSourceRatios": [
+            0.66650390625,
+            0.6669921875
+          ],
+          "seconds": 0.3343276249999998,
+          "decodedSize": [
+            1365,
+            683
+          ],
+          "sourceSize": [
+            2048,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 187,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.7010493278503418,
+          "alphaMassRelativeDelta": 0.00045902399645616,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1916,
+                769
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1919,
+                772
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                3,
+                3
+              ],
+              "sourceDerivativeMaskIoU": 0.9115121539533468,
+              "changedClassPixels": 36068
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1915,
+                769
+              ],
+              "reconstructedBBox": [
+                3,
+                2,
+                1916,
+                769
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9803940842204257,
+              "changedClassPixels": 7380
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                3,
+                1915,
+                768
+              ],
+              "reconstructedBBox": [
+                4,
+                3,
+                1915,
+                768
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9965430012236678,
+              "changedClassPixels": 1260
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                4,
+                3,
+                1914,
+                767
+              ],
+              "reconstructedBBox": [
+                5,
+                4,
+                1914,
+                767
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9778395904722806,
+              "changedClassPixels": 7935
+            }
+          ],
+          "maskedMeanLabDelta": 0.217977478991398,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.3165454864501953,
+            "p95": 7.131111145019531,
+            "max": 42.712284088134766
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-binding-thread-rgba-half.avif",
+          "sha256": "00b87d2917a6c398f1a79d408d5e3f7359f9079286b91a64a4471944f3b1e50c",
+          "bytes": 83054,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.2533758330000002,
+          "decodedSize": [
+            1024,
+            512
+          ],
+          "sourceSize": [
+            2048,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 204,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 1.0411524772644043,
+          "alphaMassRelativeDelta": 0.0009318482302829381,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1916,
+                769
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1921,
+                774
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                5,
+                5
+              ],
+              "sourceDerivativeMaskIoU": 0.8741529890076796,
+              "changedClassPixels": 53488
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1915,
+                769
+              ],
+              "reconstructedBBox": [
+                2,
+                1,
+                1916,
+                769
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                -2,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9695801706221904,
+              "changedClassPixels": 11578
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                4,
+                3,
+                1915,
+                768
+              ],
+              "reconstructedBBox": [
+                4,
+                3,
+                1915,
+                768
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9944934614994559,
+              "changedClassPixels": 2009
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                4,
+                3,
+                1914,
+                767
+              ],
+              "reconstructedBBox": [
+                5,
+                5,
+                1913,
+                767
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                2,
+                -1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.965308846774689,
+              "changedClassPixels": 12422
+            }
+          ],
+          "maskedMeanLabDelta": 0.16371042112684314,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.9188287258148193,
+            "p95": 8.691359519958496,
+            "max": 47.42210388183594
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "yarn-giant",
+      "kind": "actor",
+      "source": "apps/web/public/units/yarn-giant/rig-depth.png",
+      "sourceSha256": "c7d59339e83a51ec9845b5cacfe7e7266a8ba5f8cf2da646986f7e2927d9ebd2",
+      "sourceBytes": 2823272,
+      "size": [
+        2048,
+        2048
+      ],
+      "observedOriginalTransferBytes": 2823543,
+      "observedResponseOverhead": 271,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-yarn-giant-rgba-two-thirds.avif",
+          "sha256": "4d4a3e9c9d3ce67d43d217e75c734e3874ea2918d51943d179542680e3b9c877",
+          "bytes": 203713,
+          "nativeToSourceRatios": [
+            0.66650390625,
+            0.66650390625
+          ],
+          "seconds": 0.7049883750000006,
+          "decodedSize": [
+            1365,
+            1365
+          ],
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 182,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.503350019454956,
+          "alphaMassRelativeDelta": 0.00023578755975835344,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1962,
+                1268
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                5,
+                4
+              ],
+              "sourceDerivativeMaskIoU": 0.9538899844057511,
+              "changedClassPixels": 47842
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                2,
+                2,
+                1958,
+                1264
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                -1,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9896225296879426,
+              "changedClassPixels": 10331
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                1957,
+                1263
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9980478252159657,
+              "changedClassPixels": 1910
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                4,
+                4,
+                1956,
+                1263
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9882152049150287,
+              "changedClassPixels": 11415
+            }
+          ],
+          "maskedMeanLabDelta": 0.24568329310393264,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.9633729457855225,
+            "p95": 6.415684700012207,
+            "max": 39.555992126464844
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/actor-yarn-giant-rgba-half.avif",
+          "sha256": "d5c187ada4ec01621c933ee92c532f2f6f11654d952dfa7169672edfc5ad0a3a",
+          "bytes": 129707,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.5546408339999997,
+          "decodedSize": [
+            1024,
+            1024
+          ],
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 193,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.7298846244812012,
+          "alphaMassRelativeDelta": 0.00044477969666786794,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                0,
+                0,
+                1963,
+                1269
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -3,
+                -3,
+                6,
+                5
+              ],
+              "sourceDerivativeMaskIoU": 0.9322376495387974,
+              "changedClassPixels": 71942
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                1,
+                2,
+                1959,
+                1265
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -2,
+                -1,
+                2,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9839524606127188,
+              "changedClassPixels": 16068
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                3,
+                3,
+                1957,
+                1263
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9969590705399616,
+              "changedClassPixels": 2977
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                3,
+                3,
+                1957,
+                1264
+              ],
+              "reconstructedBBox": [
+                4,
+                5,
+                1955,
+                1262
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                2,
+                -2,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9819866138488746,
+              "changedClassPixels": 17448
+            }
+          ],
+          "maskedMeanLabDelta": 0.15482423736014606,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.4371306896209717,
+            "p95": 7.755598545074463,
+            "max": 44.39902114868164
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "mochi",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/mochi-0.webp",
+      "sourceSha256": "f08a34979f8ac410d046ae4c4639f1b3cac8285133a732539cee9375a42588c0",
+      "sourceBytes": 727194,
+      "size": [
+        1024,
+        2560
+      ],
+      "observedOriginalTransferBytes": 727464,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-mochi-rgba-two-thirds.avif",
+          "sha256": "185d70342e109bf00b5a2b462937ff4e6e0918edf83a8f6a4bfc8a6f0f262e01",
+          "bytes": 171353,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.666796875
+          ],
+          "seconds": 1.0975938330000004,
+          "decodedSize": [
+            683,
+            1707
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 75,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.3860496520996094,
+          "alphaMassRelativeDelta": 0.0007377434676537794,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                30,
+                28,
+                1000,
+                2518
+              ],
+              "reconstructedBBox": [
+                30,
+                28,
+                1000,
+                2518
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9267391829173914,
+              "changedClassPixels": 32470
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                53,
+                60,
+                981,
+                2456
+              ],
+              "reconstructedBBox": [
+                53,
+                60,
+                981,
+                2456
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9776216092104831,
+              "changedClassPixels": 5458
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                61,
+                977,
+                2455
+              ],
+              "reconstructedBBox": [
+                60,
+                61,
+                977,
+                2455
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9943936896857227,
+              "changedClassPixels": 1177
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                69,
+                61,
+                974,
+                2454
+              ],
+              "reconstructedBBox": [
+                69,
+                62,
+                974,
+                2454
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9708326120823957,
+              "changedClassPixels": 5392
+            }
+          ],
+          "maskedMeanLabDelta": 0.5499889901661986,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.660149574279785,
+            "p95": 5.878891468048096,
+            "max": 19.008127212524414
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-mochi-rgba-half.avif",
+          "sha256": "3fd68fc29f1bbeb6cd4c3189ca0f95315657d14f5e39b8b8bb8de7537bf18cbb",
+          "bytes": 118838,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.6664015000000001,
+          "decodedSize": [
+            512,
+            1280
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 88,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.6782604217529297,
+          "alphaMassRelativeDelta": 0.002146338117270658,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                30,
+                28,
+                1000,
+                2518
+              ],
+              "reconstructedBBox": [
+                30,
+                34,
+                998,
+                2518
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                6,
+                -2,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.8957490169063406,
+              "changedClassPixels": 47216
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                53,
+                60,
+                981,
+                2456
+              ],
+              "reconstructedBBox": [
+                53,
+                59,
+                981,
+                2456
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.959732678449213,
+              "changedClassPixels": 10002
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                61,
+                977,
+                2455
+              ],
+              "reconstructedBBox": [
+                60,
+                61,
+                977,
+                2455
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9898131378672713,
+              "changedClassPixels": 2143
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                69,
+                61,
+                974,
+                2454
+              ],
+              "reconstructedBBox": [
+                69,
+                62,
+                974,
+                2453
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9481746731504671,
+              "changedClassPixels": 9581
+            }
+          ],
+          "maskedMeanLabDelta": 0.47957762348129424,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.0026235580444336,
+            "p95": 6.903496742248535,
+            "max": 24.423171997070312
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "soot",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/soot-0.webp",
+      "sourceSha256": "ca02da5fbe8c03f03a01586d2779fbf97ef3a8ab45dcf5cc50bc9f3ba6f6e17b",
+      "sourceBytes": 661136,
+      "size": [
+        1024,
+        2560
+      ],
+      "observedOriginalTransferBytes": 661406,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-soot-rgba-two-thirds.avif",
+          "sha256": "6254fa1e0b53d5e46b7e4a5a7bab40b9dbfab2a48cb7de515648afbf55311b75",
+          "bytes": 195977,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.666796875
+          ],
+          "seconds": 0.42505883399999966,
+          "decodedSize": [
+            683,
+            1707
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 69,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.4091156005859375,
+          "alphaMassRelativeDelta": 0.0012216866417884744,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                34,
+                26,
+                992,
+                2518
+              ],
+              "reconstructedBBox": [
+                34,
+                25,
+                993,
+                2518
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9090737146804382,
+              "changedClassPixels": 44228
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                57,
+                55,
+                966,
+                2470
+              ],
+              "reconstructedBBox": [
+                57,
+                54,
+                966,
+                2470
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9691937099930953,
+              "changedClassPixels": 5934
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                55,
+                965,
+                2470
+              ],
+              "reconstructedBBox": [
+                60,
+                55,
+                965,
+                2469
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9900921204955787,
+              "changedClassPixels": 1609
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                65,
+                56,
+                964,
+                2468
+              ],
+              "reconstructedBBox": [
+                66,
+                57,
+                963,
+                2466
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9618771777643824,
+              "changedClassPixels": 5186
+            }
+          ],
+          "maskedMeanLabDelta": 0.44068056672397293,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.6726293563842773,
+            "p95": 6.257984638214111,
+            "max": 20.208892822265625
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-soot-rgba-half.avif",
+          "sha256": "7f74b1a7df807c12dbc2de89ba0725b86b00d64099eb3018931c9055b612043b",
+          "bytes": 130447,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.2918260419999994,
+          "decodedSize": [
+            512,
+            1280
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 90,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.7136516571044922,
+          "alphaMassRelativeDelta": 0.003332982884759565,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                34,
+                26,
+                992,
+                2518
+              ],
+              "reconstructedBBox": [
+                34,
+                26,
+                992,
+                2518
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.8749250307981586,
+              "changedClassPixels": 61729
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                57,
+                55,
+                966,
+                2470
+              ],
+              "reconstructedBBox": [
+                57,
+                54,
+                966,
+                2470
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9446207898587043,
+              "changedClassPixels": 10939
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                55,
+                965,
+                2470
+              ],
+              "reconstructedBBox": [
+                60,
+                56,
+                965,
+                2469
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9823931120036355,
+              "changedClassPixels": 2867
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                65,
+                56,
+                964,
+                2468
+              ],
+              "reconstructedBBox": [
+                66,
+                57,
+                963,
+                2465
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                -1,
+                -3
+              ],
+              "sourceDerivativeMaskIoU": 0.9333544043278843,
+              "changedClassPixels": 9067
+            }
+          ],
+          "maskedMeanLabDelta": 0.3538022114860914,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.0438618659973145,
+            "p95": 7.281854629516602,
+            "max": 21.385841369628906
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ],
+      "crop": [
+        320,
+        0,
+        640,
+        320
+      ],
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-soot-comparison.png",
+        "sha256": "ee6647d43e027a674fdc0f4cc36f0c691413a22e8fbc5d4f88e1f8540fe32d30",
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T21:39:46.263771+00:00",
+        "note": "Flame and separate crescents remain readable; fine brush texture and tips soften at half. Shapes remain distinct on both backgrounds.",
+        "scope": "Same source-pixel crops with bilinear reconstructed candidates on dark/light backgrounds; runtime/film quality remains unaccepted."
+      }
+    },
+    {
+      "owner": "clover",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/clover-0.webp",
+      "sourceSha256": "c1c0bc6fcc435c2ba2035812b468ae67d446c12a2689a4709d3e865e8134e199",
+      "sourceBytes": 704048,
+      "size": [
+        1024,
+        2560
+      ],
+      "observedOriginalTransferBytes": 704318,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-clover-rgba-two-thirds.avif",
+          "sha256": "3ba14adb5b6225b7886176e696657c352cc0f0526715a8318797b82db597fab3",
+          "bytes": 205919,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.666796875
+          ],
+          "seconds": 0.4284216660000002,
+          "decodedSize": [
+            683,
+            1707
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 77,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.3865318298339844,
+          "alphaMassRelativeDelta": 0.0010007271402006884,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                42,
+                41,
+                989,
+                2505
+              ],
+              "reconstructedBBox": [
+                42,
+                40,
+                990,
+                2505
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9196784152471897,
+              "changedClassPixels": 36606
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                62,
+                70,
+                958,
+                2475
+              ],
+              "reconstructedBBox": [
+                62,
+                69,
+                958,
+                2475
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9702770753925191,
+              "changedClassPixels": 5560
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                68,
+                70,
+                957,
+                2474
+              ],
+              "reconstructedBBox": [
+                69,
+                70,
+                957,
+                2474
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.990711897887859,
+              "changedClassPixels": 1467
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                71,
+                71,
+                955,
+                2473
+              ],
+              "reconstructedBBox": [
+                71,
+                71,
+                955,
+                2473
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9612259358087226,
+              "changedClassPixels": 5144
+            }
+          ],
+          "maskedMeanLabDelta": 0.45578938755806486,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.566472053527832,
+            "p95": 5.753567218780518,
+            "max": 19.12257194519043
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-clover-rgba-half.avif",
+          "sha256": "571d6481e23be5aa439a97b29cc5050cc35ab528e1605df9d9e1eb8a5bacced7",
+          "bytes": 138081,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.3006101250000004,
+          "decodedSize": [
+            512,
+            1280
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 89,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.6724922180175781,
+          "alphaMassRelativeDelta": 0.002895315442028543,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                42,
+                41,
+                989,
+                2505
+              ],
+              "reconstructedBBox": [
+                42,
+                40,
+                988,
+                2504
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.8926507666247175,
+              "changedClassPixels": 49304
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                62,
+                70,
+                958,
+                2475
+              ],
+              "reconstructedBBox": [
+                62,
+                69,
+                958,
+                2475
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.947666704971637,
+              "changedClassPixels": 10019
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                68,
+                70,
+                957,
+                2474
+              ],
+              "reconstructedBBox": [
+                69,
+                70,
+                957,
+                2474
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9831808625490085,
+              "changedClassPixels": 2664
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                71,
+                71,
+                955,
+                2473
+              ],
+              "reconstructedBBox": [
+                71,
+                72,
+                955,
+                2472
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9315053009923819,
+              "changedClassPixels": 9090
+            }
+          ],
+          "maskedMeanLabDelta": 0.3484473651814085,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.94875168800354,
+            "p95": 6.772653102874756,
+            "max": 20.894092559814453
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "panko",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/panko-0.webp",
+      "sourceSha256": "66720d11663a387c76e5b0295fc8fec49608342a8ca57d2fd9c03b38044cd76f",
+      "sourceBytes": 861732,
+      "size": [
+        1024,
+        2560
+      ],
+      "observedOriginalTransferBytes": 862002,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-panko-rgba-two-thirds.avif",
+          "sha256": "892a6979dd81cd8c7b67ef60a79943f4829eb1b2d339ab8a0e3c3533c69bcb46",
+          "bytes": 181106,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.666796875
+          ],
+          "seconds": 1.1076116660000004,
+          "decodedSize": [
+            683,
+            1707
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 70,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.3693534851074219,
+          "alphaMassRelativeDelta": 0.0006211713761947219,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                41,
+                36,
+                988,
+                2516
+              ],
+              "reconstructedBBox": [
+                40,
+                36,
+                988,
+                2517
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                0,
+                0,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9329032079464195,
+              "changedClassPixels": 38780
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                57,
+                75,
+                964,
+                2455
+              ],
+              "reconstructedBBox": [
+                57,
+                75,
+                964,
+                2455
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9758957043706622,
+              "changedClassPixels": 5140
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                76,
+                963,
+                2454
+              ],
+              "reconstructedBBox": [
+                60,
+                76,
+                962,
+                2454
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9923685044955958,
+              "changedClassPixels": 1420
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                63,
+                77,
+                961,
+                2454
+              ],
+              "reconstructedBBox": [
+                63,
+                81,
+                961,
+                2453
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                4,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9698868475483635,
+              "changedClassPixels": 4950
+            }
+          ],
+          "maskedMeanLabDelta": 0.587639347589407,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.7783379554748535,
+            "p95": 6.238624095916748,
+            "max": 17.629037857055664
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-panko-rgba-half.avif",
+          "sha256": "77ff32d18752e9bb6733706ff6d039fdebc5d0e479d770517f846f75d2befd61",
+          "bytes": 123690,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.6794666669999998,
+          "decodedSize": [
+            512,
+            1280
+          ],
+          "sourceSize": [
+            1024,
+            2560
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 93,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.6443492889404296,
+          "alphaMassRelativeDelta": 0.002020360429460009,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                41,
+                36,
+                988,
+                2516
+              ],
+              "reconstructedBBox": [
+                40,
+                36,
+                988,
+                2514
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                0,
+                0,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9076710077322551,
+              "changedClassPixels": 53817
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                57,
+                75,
+                964,
+                2455
+              ],
+              "reconstructedBBox": [
+                57,
+                75,
+                964,
+                2456
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "sourceDerivativeMaskIoU": 0.9558758661250896,
+              "changedClassPixels": 9603
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                60,
+                76,
+                963,
+                2454
+              ],
+              "reconstructedBBox": [
+                60,
+                77,
+                962,
+                2454
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9868090856444244,
+              "changedClassPixels": 2460
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                63,
+                77,
+                961,
+                2454
+              ],
+              "reconstructedBBox": [
+                63,
+                82,
+                960,
+                2453
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                5,
+                -1,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9472291501916175,
+              "changedClassPixels": 8675
+            }
+          ],
+          "maskedMeanLabDelta": 0.5363145548891189,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.1514077186584473,
+            "p95": 7.3445024490356445,
+            "max": 22.909420013427734
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ],
+      "crop": [
+        160,
+        1600,
+        480,
+        1920
+      ],
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-panko-comparison.png",
+        "sha256": "9f91ea07759a889d8641bb4c3f4e5e183856d26218ae404475282d03c899d598",
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T21:39:46.263771+00:00",
+        "note": "Oven arch, handle, brick segments and scrolls remain identifiable; half-size softens brick edges and surface texture. No obvious new opacity outline in this crop.",
+        "scope": "Same source-pixel crops with bilinear reconstructed candidates on dark/light backgrounds; runtime/film quality remains unaccepted."
+      }
+    },
+    {
+      "owner": "binding-thread",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
+      "sourceSha256": "6c635ee1c73b5057679ede7b32567a30bf9e52281b145ab36796d960d75ab161",
+      "sourceBytes": 275640,
+      "size": [
+        1024,
+        1024
+      ],
+      "observedOriginalTransferBytes": 275910,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-binding-thread-rgba-two-thirds.avif",
+          "sha256": "8a2bff7eae8ea7705b9c12ecf5f336cd6809d975933a1459a178ba7f79f0bf65",
+          "bytes": 86239,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.6669921875
+          ],
+          "seconds": 0.17947050000000075,
+          "decodedSize": [
+            683,
+            683
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 71,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.44393348693847656,
+          "alphaMassRelativeDelta": 0.0014094611907832116,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                42,
+                34,
+                989,
+                988
+              ],
+              "reconstructedBBox": [
+                42,
+                34,
+                990,
+                988
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9036044452652277,
+              "changedClassPixels": 17747
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                62,
+                71,
+                963,
+                951
+              ],
+              "reconstructedBBox": [
+                62,
+                71,
+                963,
+                950
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9644332046435922,
+              "changedClassPixels": 2644
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                67,
+                73,
+                960,
+                947
+              ],
+              "reconstructedBBox": [
+                72,
+                74,
+                960,
+                945
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                5,
+                1,
+                0,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.988487860647538,
+              "changedClassPixels": 725
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                74,
+                75,
+                958,
+                935
+              ],
+              "reconstructedBBox": [
+                75,
+                75,
+                958,
+                935
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.958221225710015,
+              "changedClassPixels": 2236
+            }
+          ],
+          "maskedMeanLabDelta": 0.5088986814292685,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.925553560256958,
+            "p95": 6.53523063659668,
+            "max": 16.547574996948242
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-binding-thread-rgba-half.avif",
+          "sha256": "281503ba27fa8bde3731231288516bce9b144e1a4cd69597a4296be67450e11e",
+          "bytes": 57776,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.1509457919999999,
+          "decodedSize": [
+            512,
+            512
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 89,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.7684841156005859,
+          "alphaMassRelativeDelta": 0.0037951970809701214,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                42,
+                34,
+                989,
+                988
+              ],
+              "reconstructedBBox": [
+                42,
+                34,
+                990,
+                988
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.8674207927910655,
+              "changedClassPixels": 24894
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                62,
+                71,
+                963,
+                951
+              ],
+              "reconstructedBBox": [
+                62,
+                71,
+                963,
+                950
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9387279300047152,
+              "changedClassPixels": 4678
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                67,
+                73,
+                960,
+                947
+              ],
+              "reconstructedBBox": [
+                72,
+                74,
+                960,
+                944
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                5,
+                1,
+                0,
+                -3
+              ],
+              "sourceDerivativeMaskIoU": 0.9804976888494903,
+              "changedClassPixels": 1232
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                74,
+                75,
+                958,
+                935
+              ],
+              "reconstructedBBox": [
+                75,
+                76,
+                958,
+                933
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                1,
+                0,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9257861400198053,
+              "changedClassPixels": 3972
+            }
+          ],
+          "maskedMeanLabDelta": 0.3167150198385444,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.296950340270996,
+            "p95": 7.632669925689697,
+            "max": 19.834291458129883
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    },
+    {
+      "owner": "yarn-giant",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
+      "sourceSha256": "e93a46f3812c93d597a2c1894a5e2b2fdea52c189685301e99d164ce0f6a7897",
+      "sourceBytes": 311494,
+      "size": [
+        1024,
+        1024
+      ],
+      "observedOriginalTransferBytes": 311764,
+      "observedResponseOverhead": 270,
+      "candidates": [
+        {
+          "method": "rgba-two-thirds",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-yarn-giant-rgba-two-thirds.avif",
+          "sha256": "4519edabf6d1514863429c2ce7f6eecc27c662645413055094c5044db68f76b8",
+          "bytes": 98479,
+          "nativeToSourceRatios": [
+            0.6669921875,
+            0.6669921875
+          ],
+          "seconds": 0.198282583000001,
+          "decodedSize": [
+            683,
+            683
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 69,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.5356454849243164,
+          "alphaMassRelativeDelta": 0.0014533642366066067,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                38,
+                30,
+                991,
+                968
+              ],
+              "reconstructedBBox": [
+                37,
+                30,
+                991,
+                954
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                -1,
+                0,
+                0,
+                -14
+              ],
+              "sourceDerivativeMaskIoU": 0.905212962662601,
+              "changedClassPixels": 20454
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                42,
+                56,
+                987,
+                943
+              ],
+              "reconstructedBBox": [
+                42,
+                56,
+                987,
+                943
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9697831901212087,
+              "changedClassPixels": 3186
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                47,
+                57,
+                985,
+                942
+              ],
+              "reconstructedBBox": [
+                47,
+                57,
+                982,
+                941
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -3,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9906066271709504,
+              "changedClassPixels": 834
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                66,
+                57,
+                979,
+                939
+              ],
+              "reconstructedBBox": [
+                66,
+                58,
+                977,
+                938
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -2,
+                -1
+              ],
+              "sourceDerivativeMaskIoU": 0.9633540289019676,
+              "changedClassPixels": 2721
+            }
+          ],
+          "maskedMeanLabDelta": 0.4689095614774283,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 2.880808115005493,
+            "p95": 6.1976637840271,
+            "max": 16.942951202392578
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        },
+        {
+          "method": "rgba-half",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/resolution-r1/vfx-yarn-giant-rgba-half.avif",
+          "sha256": "da7e1b08137c31f4ae95f2d561c33846afa5554ad9004a7e86afc0ba01d7900d",
+          "bytes": 67077,
+          "nativeToSourceRatios": [
+            0.5,
+            0.5
+          ],
+          "seconds": 0.17461054199999992,
+          "decodedSize": [
+            512,
+            512
+          ],
+          "sourceSize": [
+            1024,
+            1024
+          ],
+          "sourceAlphaExact": false,
+          "reducedAlphaExact": true,
+          "alphaMaxDeltaAfterDiagnosticReconstruction": 89,
+          "alphaMeanAbsoluteDeltaAfterDiagnosticReconstruction": 0.9502010345458984,
+          "alphaMassRelativeDelta": 0.003697732791139893,
+          "thresholdGeometryDiagnostics": [
+            {
+              "alphaThreshold": 1,
+              "sourceBBox": [
+                38,
+                30,
+                991,
+                968
+              ],
+              "reconstructedBBox": [
+                38,
+                30,
+                990,
+                948
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -1,
+                -20
+              ],
+              "sourceDerivativeMaskIoU": 0.855787333383538,
+              "changedClassPixels": 32555
+            },
+            {
+              "alphaThreshold": 32,
+              "sourceBBox": [
+                42,
+                56,
+                987,
+                943
+              ],
+              "reconstructedBBox": [
+                43,
+                55,
+                986,
+                943
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                1,
+                -1,
+                -1,
+                0
+              ],
+              "sourceDerivativeMaskIoU": 0.9462830580042966,
+              "changedClassPixels": 5801
+            },
+            {
+              "alphaThreshold": 128,
+              "sourceBBox": [
+                47,
+                57,
+                985,
+                942
+              ],
+              "reconstructedBBox": [
+                47,
+                57,
+                981,
+                940
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                0,
+                -4,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9833498112529211,
+              "changedClassPixels": 1482
+            },
+            {
+              "alphaThreshold": 224,
+              "sourceBBox": [
+                66,
+                57,
+                979,
+                939
+              ],
+              "reconstructedBBox": [
+                66,
+                58,
+                974,
+                937
+              ],
+              "bboxEdgeDeltaSourcePixels": [
+                0,
+                1,
+                -5,
+                -2
+              ],
+              "sourceDerivativeMaskIoU": 0.9355299123433019,
+              "changedClassPixels": 4788
+            }
+          ],
+          "maskedMeanLabDelta": 0.36444922720789774,
+          "maskedMeanLabPass": true,
+          "perPixelDeltaE76": {
+            "mean": 3.298022985458374,
+            "p95": 7.093216419219971,
+            "max": 16.912702560424805
+          },
+          "diagnosticLimitations": "Global atlas masks and bilinear reconstruction do not certify posed head/feet, UV edges, socket/area, browser rendering or films. Source-derivative IoU is not pose IoU.",
+          "runtimeAndFilmAcceptance": false
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "projections": [
+    {
+      "method": "rgba-two-thirds",
+      "ownedBytesWithObservedOverhead": 1863255,
+      "totalBytesIncludingMappingReserve": 8270156,
+      "withinBudgetProjection": false,
+      "maskedMeanLabPass": true,
+      "exactSourceAlpha": false,
+      "measuredProductionPass": false
+    },
+    {
+      "method": "rgba-half",
+      "ownedBytesWithObservedOverhead": 1269703,
+      "totalBytesIncludingMappingReserve": 7676604,
+      "withinBudgetProjection": true,
+      "maskedMeanLabPass": true,
+      "exactSourceAlpha": false,
+      "measuredProductionPass": false
+    }
+  ],
+  "finished": "2026-11-16T21:38:28.601127+00:00",
+  "hybridProjection": {
+    "actorMethod": "rgba-two-thirds",
+    "vfxMethod": "rgba-half",
+    "ownedBytesWithObservedOverhead": 1560091,
+    "totalBytesIncludingMappingReserve": 7966992,
+    "headroomIncludingReserve": 33008,
+    "withinBudgetProjection": true,
+    "measuredProductionPass": false
+  },
+  "decision": {
+    "at": "2026-11-16T21:39:46.263771+00:00",
+    "productionAccepted": false,
+    "selectedForRuntimeTrial": "actors two-thirds / VFX half",
+    "reason": "Uniform two-thirds fails8MB. Uniform half projects7,676,604B; hybrid improves actor detail and projects7,966,992B with16KiB mapping reserve, only33,008B headroom. Needs browser decode/fallback, posed geometry, complete validation and SHIP production scene-ready measurement. All native-alpha failures remain; no threshold lowered."
+  }
+}
