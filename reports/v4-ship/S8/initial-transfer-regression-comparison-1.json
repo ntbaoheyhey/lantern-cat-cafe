@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-16T18:24:16.605543+00:00",
+  "logs": [
+    {
+      "path": "reports/v4-ship/S11/modal-regression-1/log.jsonl.gz",
+      "sha256": "674dbbd36e384a9a68145ede2006dfc32d2ea796d0bde02f11fc9215d5b63e44",
+      "failures": [
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+        "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+      ],
+      "counts": [
+        "2 failed | 318 passed (320)",
+        "7 failed | 2680 passed (2687)"
+      ]
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-regression-1/log.jsonl.gz",
+      "sha256": "73a6479520f1674c0ab547baa2d8ef4ccba7e45a60e6cee85fbf777e1d969516",
+      "failures": [
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+        "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+        "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+      ],
+      "counts": [
+        "2 failed | 318 passed (320)",
+        "7 failed | 2680 passed (2687)"
+      ]
+    }
+  ],
+  "sameSevenArtFailures": true,
+  "webPassed": 2680,
+  "gRegPass": false,
+  "officialClassParityPass": false
+}

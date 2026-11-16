@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-16T18:24:58.082467+00:00",
+  "sourceCommit": "e9af6a933e6189177da15c64c316f426a9510201",
+  "evidence": [
+    {
+      "path": "reports/v4-ship/LEARN/S8-initial-transfer.md",
+      "sha256": "f23cacf57cbc369e95b125f7b91f32d71a96cf37d6eba9a94564c03c05e9f9c5"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-1.json",
+      "sha256": "c3d88db2d11b9d528f187a293aedca75cb4656a56c6dceb95570b8caabeb25cc"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-1.harness.mjs.gz",
+      "sha256": "2f7ff265bcd367efb8e5470bc4c5ffc48faa1962cf624211be84660d7ce658c6"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-2.json",
+      "sha256": "64ed7752a8bc1cfee98677deec19ad91615304596bb714f936b46a33c31e5379"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-2.harness.mjs.gz",
+      "sha256": "2637119e6fb83913a0392cd17413ab38f12d06c852045b60303cda69d8b01d48"
+    },
+    {
+      "path": "reports/v4-ship/S8/battle-ready-check-1.json",
+      "sha256": "f19af3aa8d5945fd7ecc2401993487c0ea3f78848975168549fa1bf1a2852082"
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-12.json",
+      "sha256": "8cc1548e8909a3940a79533376bfe6e59e3a0b4a2f01e3cc9084149b674d6c34"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S8-scene-ready-1/run-1280-01.json",
+      "sha256": "bebc6c19649afa436732cd9d11dea1873d600864f6f5c82842ffcadfdcfe7cf6"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-regression-1/check.json",
+      "sha256": "70c29dd2fa672a9a0140857eb176a41974c2f7a8c564c1e5869ab2d5c9921fce"
+    },
+    {
+      "path": "reports/v4-ship/S8/initial-transfer-regression-comparison-1.json",
+      "sha256": "6bb170e8d2f1be4774b757485a1367086423ac8f704a9b821504c32aaf755ada"
+    }
+  ],
+  "frozenDiagnosticHarnessesMatch": true,
+  "productionJourneyHarnessMatches": true,
+  "coldEntries": 4,
+  "boundaries": [
+    {
+      "width": 1280,
+      "dwellMs": 0,
+      "containerBytes": 17709065,
+      "sceneReadyBytes": 27546251,
+      "rolledBack": true
+    },
+    {
+      "width": 1280,
+      "dwellMs": 5000,
+      "containerBytes": 17709065,
+      "sceneReadyBytes": 27546251,
+      "rolledBack": true
+    },
+    {
+      "width": 1440,
+      "dwellMs": 0,
+      "containerBytes": 17709064,
+      "sceneReadyBytes": 27546250,
+      "rolledBack": true
+    },
+    {
+      "width": 1440,
+      "dwellMs": 5000,
+      "containerBytes": 17709065,
+      "sceneReadyBytes": 27546251,
+      "rolledBack": true
+    }
+  ],
+  "productionJourney": {
+    "steps": 7,
+    "receipts": 18,
+    "firstBattleMs": 2828,
+    "firstReceiptMs": 95256,
+    "initialBytes": 27546252,
+    "bossMedianFps": 60,
+    "errors": 0,
+    "runtimeStable": true,
+    "cleanupErrors": 0,
+    "pass": false
+  },
+  "loadOwnership": {
+    "imageBytes": 22861499,
+    "allScriptBytes": 1422344,
+    "audioBytes": 2845647,
+    "bytesEvenIfAllAudioRemoved": 24700604,
+    "imageAllowanceAtUnchangedNonImageBytes": 3315248
+  },
+  "decision": "Use visible canvas with no loading/error overlay for future first-battle transfer boundaries. Keep the early container timestamp for comparison. Preserve all audio scheduling and ART-owned files; image/VFX transfer reduction is necessary. Capture remains opt-in with default zero.",
+  "gRehearsalPass": false,
+  "gRegPass": false,
+  "officialClassParityPass": false,
+  "limitations": [
+    "One complete production journey is not ten passing journeys.",
+    "No asset reduction or audio-onset improvement is claimed.",
+    "Seven unchanged ART web failures remain.",
+    "ASR, Resource Timing and rAF do not establish human listening, complete network bytes or hardware scanout respectively."
+  ]
+}

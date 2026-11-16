@@ -6,11 +6,14 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {observeRehearsal} from '../../tools/v4ship-lab/rehearsal/metrics.mjs';
+import {waitForBattleReady} from '../../tools/v4ship-lab/rehearsal/battle-ready.mjs';
 import {proofContrast} from '../../tools/v4ship-lab/proof/proof-contrast.mjs';
 import {verifyJourneyReceipts} from '../../tools/v4ship-lab/proof/receipt-check.mjs';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json'));
 const {chromium}=require('@playwright/test'),sharp=require('sharp');
 const item=process.env.V4_ITEM??'S8-production-journeys-1',count=Number(process.env.V4_RUNS??10),widths=(process.env.V4_WIDTHS??'1280').split(',').map(Number);
+const captureLimit=Number(process.env.V4_CAPTURE_LIMIT??0);
+if(!Number.isInteger(captureLimit)||captureLimit<0||captureLimit>4)throw Error('Capture limit must be explicitly budgeted from 0 to 4');
 if(!/^[\w-]+$/.test(item)||!Number.isInteger(count)||count<1||widths.some(w=>![1280,1440].includes(w)))throw Error('Invalid settings');
 const buildEvidence=JSON.parse(readFileSync(resolve(root,process.env.V4_BUILD_REPORT??'reports/v4-ship/S8/production-build-1.json')));
 if(!buildEvidence.buildComplete||!buildEvidence.ready||buildEvidence.port!==5998)throw Error('Production build not ready');
@@ -20,7 +23,7 @@ const out=resolve(root,'reports/v4-ship/RUNS',item);
 if(existsSync(out))throw Error('Preserve previous journeys; choose a new V4_ITEM');
 await mkdir(resolve(out,'raw'),{recursive:true});
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-const harness=['scripts/v4ship/rehearsal-run.mjs','tools/v4ship-lab/rehearsal/metrics.mjs','tools/v4ship-lab/proof/receipt-check.mjs','tools/v4ship-lab/proof/proof-contrast.mjs'].map(path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(root,path))).digest('hex')}));
+const harness=['scripts/v4ship/rehearsal-run.mjs','tools/v4ship-lab/rehearsal/metrics.mjs','tools/v4ship-lab/rehearsal/battle-ready.mjs','tools/v4ship-lab/proof/receipt-check.mjs','tools/v4ship-lab/proof/proof-contrast.mjs'].map(path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(root,path))).digest('hex')}));
 const runtimePaths=['apps/web/src','apps/web/public','packages/game-rules/src','supabase/functions'];
 const changedRuntime=()=>[...new Set([
  ...execFileSync('git',['diff','--name-only',sourceCommit,'--',...runtimePaths],{cwd:root,encoding:'utf8'}).trim().split('\n'),
@@ -51,12 +54,12 @@ try{for(const width of widths)for(let n=1;n<=count;n++){
   const bodyWords=[...document.querySelectorAll('.ship-trial-card p')].filter(visible).map(e=>e.textContent?.trim().split(/\s+/).length??0).reduce((a,b)=>a+b,0);
   return {horizontalOverflow:document.documentElement.scrollWidth>innerWidth,unlabeled,clipped,bodyWords};
  }),proofContrast:await proofContrast(page)});};
- const capture=async name=>{if(n===1&&screenshots<4){await sharp(await page.screenshot()).resize({width:1024}).png().toFile(resolve(out,'raw',`${width}-${name}.png`));screenshots++;}};
+ const capture=async name=>{if(n===1&&screenshots<captureLimit){await sharp(await page.screenshot()).resize({width:1024}).png().toFile(resolve(out,'raw',`${width}-${name}.png`));screenshots++;}};
  const step=async(number,name,work)=>{const row={number,name,startedMs:at()};report.steps.push(row);try{await work(row);await ui(name);row.status='pass';}catch(e){row.status='fail';row.reason=safe(e.message);throw e;}finally{row.endedMs=at();console.log(JSON.stringify({id:report.id,step:number,status:row.status,atMs:at()}));}};
  try{
   await step(1,'landing',async()=>{await page.goto('http://127.0.0.1:5998/?demo=1&squad=1&cardrpg2=1&a6=1');await button('Play free').waitFor({timeout:60000});await capture('landing');});
   await step(2,'guest',async()=>{await click('Play free');await button('Start trial').waitFor({timeout:60000});});
-  await step(3,'battle-reward',async()=>{await click('Start trial');await page.locator('.dp-battle').waitFor({timeout:30000});report.firstBattleMs=at();await measurement.firstBattle();report.firstBattleClicks=report.clicks.length;await button('Mint trial reward').waitFor({timeout:200000});report.firstRewardMs=at();await capture('reward');});
+  await step(3,'battle-reward',async()=>{await click('Start trial');await page.locator('.dp-battle').waitFor({timeout:30000});report.battleContainerVisibleMs=at();await waitForBattleReady(page);report.firstBattleMs=at();await measurement.firstBattle();report.firstBattleClicks=report.clicks.length;await button('Mint trial reward').waitFor({timeout:200000});report.firstRewardMs=at();await capture('reward');});
   await step(4,'first-receipt',async()=>{await click('Mint trial reward');await button('Fund workshop').waitFor({timeout:60000});report.firstReceiptMs=at();const toast=page.locator('[data-receipt-hash]');await toast.waitFor();const data=await toast.evaluate(e=>({...e.dataset}));if(!data.receiptMs||!data.receiptFee||!data.receiptPayer)throw Error('Receipt metadata missing');});
   await step(5,'cafe-economy',async()=>{
    for(const [name,next] of [['Fund workshop','Seal Epic'],['Seal Epic','Forge Legendary'],['Forge Legendary','List for 5 YARN'],['List for 5 YARN','Buy with demo wallet'],['Buy with demo wallet','Withdraw Spool'],['Withdraw Spool','Face the boss']]){
