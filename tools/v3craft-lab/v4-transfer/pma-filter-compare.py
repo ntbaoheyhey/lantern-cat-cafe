@@ -9,9 +9,10 @@ from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'reports/v4-art/REVIEW/A10/scene-ready-transfer'
-panko_native = '--panko-native' in sys.argv
+panko_control = '--panko-control' in sys.argv
+panko_native = panko_control or '--panko-native' in sys.argv
 panko_detail = panko_native or '--panko-detail' in sys.argv
-label = 'panko-native-r1' if panko_native else 'panko-filter-r1' if panko_detail else 'pma-filter-r1'
+label = 'panko-control-r1' if panko_control else 'panko-native-r1' if panko_native else 'panko-filter-r1' if panko_detail else 'pma-filter-r1'
 RAW = OUT / ('raw/'+label+'-comparisons')
 REPORT = OUT / (label+'-comparison.json')
 assert not REPORT.exists()
@@ -21,6 +22,8 @@ assert baseline['complete'] and baseline['pass'] and drill['complete'] and drill
 labels = ['baseline', *drill['methods']]
 indexed = [{(r['fixture'], r['height']): r for r in baseline['results']}]
 indexed += [{(r['fixture'], r['height']): r for r in drill['results'] if r['method'] == method} for method in drill['methods']]
+if panko_control:
+    labels=labels[1:];indexed=indexed[1:]
 for cases in indexed:
     for case in cases.values():
         assert hashlib.sha256((ROOT / case['snapshot']).read_bytes()).hexdigest() == case['snapshotSha256']

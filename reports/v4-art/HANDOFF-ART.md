@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: isolate Panko contour cause using EXACT original image with associated GPU upload versus original unassociated baseline and existing nativeAVIF60. Both fresh native candidates lose circular contours too; prior eyeglass interpretation is unproven, not a confirmed painted-detail loss.
+NEXT1: poll Panko controlPID33962/tail5 jobs/a10-panko-control-r1.log; compare --panko-control and inspect four fresh sheets. Fresh original-default vs identical original-associated vs nativeAVIF60; same manual-render sequence isolates alpha filtering from paint/encoding.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
 LAST PUSH:5b0923623 verified. NativePanko8cases/staticgeometryPASS,4private sheets reviewed; no selection. Exact-alpha/full-dimension candidates also remove baseline circular contours; isolate upload association before judging artwork.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). NativePanko32457 finishedPASS8cases;2ownedjobs.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); Panko controlPID33962 jobs/a10-panko-control-r1.log/job-panko-control-r1.json.3ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.

@@ -6,14 +6,16 @@ import {execFileSync} from 'node:child_process';
 import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixture.mjs';
 
 const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A10/scene-ready-transfer');
-const pankoNative=process.argv.includes('--panko-native'),pankoDetail=pankoNative||process.argv.includes('--panko-detail');
-const label=pankoNative?'panko-native-r1':pankoDetail?'panko-filter-r1':'pma-filter-r1';
+const pankoControl=process.argv.includes('--panko-control'),pankoNative=pankoControl||process.argv.includes('--panko-native'),pankoDetail=pankoNative||process.argv.includes('--panko-detail');
+const label=pankoControl?'panko-control-r1':pankoNative?'panko-native-r1':pankoDetail?'panko-filter-r1':'pma-filter-r1';
 const report=resolve(out,label+'.json'),raw=resolve(out,'raw/'+label);
 if(existsSync(report))throw Error('Refusing to overwrite a prior experiment');
 mkdirSync(raw,{recursive:true});
 const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 const trialAsset=pankoDetail?JSON.parse(readFileSync(resolve(out,pankoNative?'drill-r3.json':'pma-aware-r1.json'),'utf8')).assets.find(a=>a.owner==='panko'&&a.kind==='actor'):null;
-const trials=trialAsset?trialAsset.candidates.map(t=>({...t,decodedSize:t.decodedSize??trialAsset.size})):[];
+let trials=trialAsset?trialAsset.candidates.map(t=>({...t,decodedSize:t.decodedSize??trialAsset.size})):[];
+if(pankoControl){const original={path:trialAsset.source,bytes:trialAsset.sourceBytes,sha256:trialAsset.sourceSha256,decodedSize:trialAsset.size};
+ trials=[{...original,method:'source-default'},{...original,method:'source-associated'},trials.find(t=>t.method==='avif60-444')];}
 for(const trial of trials)if(hash(resolve(root,trial.path))!==trial.sha256)throw Error('Trial image hash mismatch');
 const fixtures=pankoDetail?config.fixtures.filter(f=>['wave3','boss'].includes(f.id)):config.fixtures;
 const receipt={started:new Date().toISOString(),scope:'Two private GPU upload/filter drills on the same selected straight-alpha AVIFs. No runtime configuration is installed.',
@@ -35,18 +37,19 @@ try{
     for(const [id,actor]of s.actors)actor.actor.root.traverse(n=>{
      for(const material of Array.isArray(n.material)?n.material:[n.material]){
       let texture=material?.map;
-      if(!texture?.image?.src?.includes('/units/sampled-delivery/')&&texture?.userData?.atlasAlphaEncoding!=='premultiplied-upload-private-drill')continue;
+      if(!texture?.image?.src?.includes('/units/sampled-delivery/')&&texture?.userData?.atlasAlphaEncoding!=='premultiplied-upload-private-drill'&&!(replacement&&actor.asset==='panko'))continue;
       // Three texture dimensions are immutable after first upload. Each trial
       // gets its own texture; replacing image on existing GPU storage is invalid.
       if(replacementImage&&actor.asset==='panko'){
        texture=new T.Texture(replacementImage);texture.colorSpace=T.NoColorSpace;material.map=texture;
       }
-      texture.premultiplyAlpha=true;
-      texture.userData.atlasAlphaEncoding='premultiplied-upload-private-drill';
+      const associate=!(method==='source-default'&&actor.asset==='panko');
+      texture.premultiplyAlpha=associate;
+      texture.userData.atlasAlphaEncoding=associate?'premultiplied-upload-private-drill':'source-default-private-drill';
       texture.generateMipmaps=method!=='associated-linear';
       texture.minFilter=method==='associated-linear'?T.LinearFilter:T.LinearMipmapLinearFilter;
       texture.magFilter=T.LinearFilter;texture.needsUpdate=true;
-      usePaintedAtlasColor(material,true);material.needsUpdate=true;
+      usePaintedAtlasColor(material,associate);material.needsUpdate=true;
       changed.push({id,asset:actor.asset,url:texture.image.src,premultiplyAlpha:texture.premultiplyAlpha,generateMipmaps:texture.generateMipmaps,minFilter:texture.minFilter,shaderKey:material.customProgramCacheKey()});
      }
     });
@@ -62,6 +65,7 @@ try{
  }
 }finally{await browser.close();}
 receipt.complete=true;receipt.finished=new Date().toISOString();
-receipt.pass=receipt.results.length===2*fixtures.length*receipt.methods.length&&receipt.results.every(r=>r.state.ready&&!r.state.craft&&r.errors.length===0&&r.state.changed.length>0&&r.state.changed.every(t=>t.premultiplyAlpha&&t.shaderKey==='painted-srgb-v2-pma'));
+receipt.pass=receipt.results.length===2*fixtures.length*receipt.methods.length&&receipt.results.every(r=>r.state.ready&&!r.state.craft&&r.errors.length===0&&r.state.changed.length>0&&r.state.changed.every(t=>{
+ const associate=!(r.method==='source-default'&&t.asset==='panko');return t.premultiplyAlpha===associate&&t.shaderKey==='painted-srgb-v2-'+(associate?'pma':'straight');}));
 writeFileSync(report,JSON.stringify(receipt,null,2)+'\n');
 if(!receipt.pass)process.exitCode=1;
