@@ -1,0 +1,17 @@
+# S11 first-gesture audio loading
+
+Read16November2026 before selecting any runtime change. Preserve the33ms onset gate, source admission, encoded assets, mixer and native activation semantics.
+
+1. [W3C Web Audio1.1](https://www.w3.org/TR/webaudio/), formal working draft: decoding, context activation, device output latency and buffer playback are separate operations; buffer resampling is permitted by the playback algorithm.
+2. [MDN OfflineAudioContext](https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext): offline preparation does not render to the output device. It cannot establish device activation latency.
+3. [MDN decodeAudioData](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData): decoding is asynchronous and resamples to the decoder context's sample rate.
+4. [MDN output timestamps](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp): map context time to performance time; a later timestamp can estimate presentation retrospectively, but cannot prove physical onset.
+5. [Chrome autoplay policy](https://developer.chrome.com/blog/autoplay/): a page-created AudioContext can remain suspended until user interaction. A probe must preserve this condition.
+6. [MDN AudioBuffer](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer): decoded PCM buffers hold short assets for subsequent source-node playback; preparation is distinct from starting a source.
+7. [Production causal journey3](../S11/audio-journey-3.json): first click incurred60.2ms request-to-source-call and90.378ms estimated output onset. The remaining nine control sounds and all18receipt chimes played; receipt onset maximum32.473ms. These are timestamp estimates, not microphone/loopback or listening evidence.
+
+Own comparison: `S11/audio-startup-probe-4.json` uses four fresh contexts for each of current loading, encoded-byte caching, offline decoding and a prepared real context. Preparation runs in a served module with no prior user activation; only a native pointer gesture unlocks output. All16contexts start one click source, with zero sources before the gesture. Current request-to-call median22.2ms; encoded18.6ms; offline-decoded0.5ms; prepared-context0.5ms. Estimated onset medians53.909,48.759,42.426 and39.487ms respectively. Every method meets33ms in0/4contexts. The prepared real contexts are suspended before the native gesture. Full numbers and activation states: `S11/audio-startup-decision-1.json`.
+
+Exploratory attempts1,2and3 are invalid for activation acceptance: preparation used page.evaluate and the prepared context was already running before native input. Retain these reports and their apparently better result; do not treat4/4as acceptance. Attempt3 also inherited activation because locator evaluation began before asynchronous preparation finished. Attempt4 waits for a console readiness event before any locator evaluation and measures no prior activation in all16contexts; it supersedes the first three.
+
+Decision: no runtime patch selected from these measurements. Loading is a measurable contributor, but none of the methods clears the unchanged onset requirement across the prespecified contexts. Timebox this first-gesture issue and continue fresh full-scene/endurance verification of the committed terminal/receipt changes. Do not claim the full audio gate, physical onset or human intelligibility passes.

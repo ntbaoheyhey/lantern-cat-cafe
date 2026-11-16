@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-16T15:48:51.181953+00:00",
+  "observed": "Previous session identifiers unknown and named process IDs absent on resume; no completed history reports exist. Cause and termination time unknown.",
+  "history": [
+    {
+      "session": 30159,
+      "pid": 68299,
+      "report": "reports/v4-ship/S1/secrets-history.json",
+      "reportExists": false
+    },
+    {
+      "session": 53019,
+      "pid": 61500,
+      "report": "reports/v4-ship/S11/history-incremental-1.json",
+      "reportExists": false
+    }
+  ],
+  "production6SupervisorPresent": false,
+  "production6LastJourneyRollback": true,
+  "acceptanceConclusion": false,
+  "next": "Replace whole-run-only history output with frozen, checkpointed exact commit batches; preserve scope1 and prior records."
+}
