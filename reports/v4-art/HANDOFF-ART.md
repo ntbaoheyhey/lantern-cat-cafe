@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T18:06UTC
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Correct live face coverage to front-only alpha (rear layer intersects behind actors); preserve r1/r2. All16ultimate peaks20-45%,focusAfter600=0; then existing-recorder films.
+NEXT1: Launch A9 capture-review.py (existing recorders only),3x30s+wave1/boss45s and900p. Regression2664/318,typecheck,3F6,77hashes PASS; front-faceR3 PASS.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:e8241f014 verified; A9 regression saved,77sourcehashes match dcf4dd515; Yarn receipt797a3cefe closed.
-LIVE: craftVite3426/5990; A9liveR2 completed32own observations/0browsererrors; r1 probe failures retained. Front-only face coverage correction next; no film running.
+LAST PUSH:3e6aa5060 verified; all8 live ultimates saved, r1 probe failures retained; front-faceR3 max0.356607% scopedfaces, no runtime correction needed.
+LIVE: craftVite3426/5990; live probes complete. Capture next; no other ART probe/imagegen running.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
