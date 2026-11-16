@@ -13,6 +13,6 @@
 | A7 | Enemies and boss | Scoped receipts complete for Binding/Teacup/Needle/Yarn; Yarn9/9 blind,15windows,3films/900p. Shared boss span/focus/ensemble/activation remain OPEN; retain failures. |
 | A8 | Designer intake interrupt | queued |
 | A9 | Ultimate clarity | Scoped checkpoint:28/28 pairs>=3axes;27R2 own sheets/23strictcomplete,5400markers,3x900p bboxPASS; focus600ms fixed. Shared limits and UI followups remain A11; REVIEW/A9/REVIEW.md. |
-| A10 | SHIP art requests interrupt | ACTIVE: verified32 contrast-unknown observations first; then new18:25 scene-ready transfer request27.55MB/8MB, imagebudget3.315MB. Original5assets/derivatives delivered; portrait integration pending. |
-| A11 | Open items and polish | queued |
+| A10 | SHIP art requests interrupt | ACTIVE: contrast scoped receipt complete,85labelsPASS;42placement defectframes retained forA11/fullreadability not accepted. NEXT scene-ready transfer27.55MB/8MB,imagebudget3.315MB. Prior delivery/portrait integration pending. |
+| A11 | Open items and polish | queued: A10 37viewport-clipping+5HUD-overlap frames; banner/number polish, reduced-motion/continuous-shake proof, activation/finalclasses/time split. |
 | A12 | Demo Day backlog after freeze | queued |

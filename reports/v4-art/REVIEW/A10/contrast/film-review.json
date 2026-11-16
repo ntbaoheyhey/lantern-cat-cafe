@@ -1321,203 +1321,328 @@
       "encodedFrame": 720,
       "actor": "soot",
       "reason": "Status group reaches crop boundary during movement; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot upper status row is clipped at the actual viewport top; lower counter2/1 portions remain. Panko +1 and the other visible counters remain readable through fading healing foliage.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0720.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 741,
       "actor": "panko",
       "reason": "Status group reaches crop boundary during movement; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko shield, three buff counters2/1/2 and +1 overflow are complete and readable above the moving character. The projected crop missed the label. Soot status row is complete again, although it overlaps the global toolbar.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0741.png"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 756,
       "actor": "panko",
       "reason": "Status group reaches crop boundary during movement; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko status row including +1 remains complete across the supplement x640 split; this is the split seam, not a viewport edge. Needle Moth counter1 glyphs remain readable during the hit.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0756.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 87,
       "actor": "panko",
       "reason": "Moving label reaches/leaves the projected crop; wider native context needed.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko shield status is complete above his health bar during the strike approach; the projected crop missed the moving label. No counter glyph is cut at this target. Top-right enemy role/health separately overlaps toolbar.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0087.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 90,
       "actor": "panko",
       "reason": "Moving label reaches/leaves the projected crop; wider native context needed.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko shield status is complete above his health bar in the right native half during the leap. It moved outside the projected crop, not outside the viewport.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0090.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 102,
       "actor": "panko",
       "reason": "Moving label reaches/leaves the projected crop; wider native context needed.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko shield and buff1 are complete and readable above the health bar during the return. Nearby damage52 is separate and does not obscure these glyphs.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0102.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 105,
       "actor": "panko",
       "reason": "Moving label reaches/leaves the projected crop; wider native context needed.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Panko shield and buff1 remain complete and readable on his return toward the left formation. The projected crop missed the moving label.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0105.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 285,
       "actor": "mochi",
       "reason": "Status group approaches/crosses crop boundary during motion; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Mochi upper status row reaches the actual viewport top during the leap; the upper icon/glyph portions are clipped while the lower debuff1 portion is visible across the x640 split. Health bars remain visible. This is actual top-edge clipping, not only the split seam.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0285.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 297,
       "actor": "mochi",
       "reason": "Status group approaches/crosses crop boundary during motion; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Mochi shield/debuff1 row remains partly outside the actual viewport top during the return; only lower glyph/icon portions are visible across the x640 split. The large18 near Mochi is separate from that clipping.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0297.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 348,
       "actor": "foe-4-needle-moth",
       "reason": "Status group approaches/crosses crop boundary during motion; wider context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Needle Moth debuff2 is complete and readable above its health bar near the upper-right enemy. The moving label escaped the projected crop; the separate39 damage near Teacup does not hide this target.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0348.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 630,
       "actor": "foe-4-needle-moth",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Needle Moth red role icon and debuff2 remain complete and readable in the upper-right formation during the large shield effects. The nearby42 belongs lower in the scene and does not obscure the target counter.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0630.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 636,
       "actor": "soot",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot shield/buff2 row clips against the real viewport top during the lift; upper icon/glyph portions disappear while lower fragments remain. Large shield130 labels are crowded elsewhere but do not explain the top-edge cut.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0636.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 639,
       "actor": "soot",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row rises beyond the actual top edge; only tiny lower shield/buff2 fragments remain above the visible health bar. Large130 overlaps a separate lower ally label but does not cause this viewport clipping.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0639.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 642,
       "actor": "soot",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row remains beyond the actual viewport top at the lift apex; lower fragments are visible while the icon/glyph tops are missing. Full-frame context confirms actual clipping.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0642.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 645,
       "actor": "soot",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot upper shield/buff2 row remains clipped by the actual top boundary during descent. Other visible ally counters remain readable beneath the fading shield labels.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0645.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 648,
       "actor": "soot",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot buff2 becomes more legible as the actor descends, but the upper shield/buff icon edges are still clipped at the real viewport top. The full row is not yet fully inside the frame.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0648.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 705,
       "actor": "foe-0-kettle-knight",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Kettle Knight and Teacup status counter1 glyphs remain distinguishable on their dark plaques during purple/orange effects. Large58/60 damage text crowds adjacent health/status space, but the target counter glyphs are complete; retain broader number crowding for A11.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0705.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 705,
       "actor": "foe-5-teacup-healer",
       "reason": "Crop boundary or adjacent large damage text requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Kettle Knight and Teacup status counter1 glyphs remain distinguishable on their dark plaques during purple/orange effects. Large58/60 damage text crowds adjacent health/status space, but the target counter glyphs are complete; retain broader number crowding for A11.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0705.png"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 771,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot shield/buff2/buff1 row clips against the actual viewport top during healing; only lower glyph portions remain. Panko +1 and the other visible counters remain readable through leaves.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0771.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 774,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row moves farther beyond the real top boundary; lower2/1 fragments remain above the visible health bar. Panko +1 is complete and readable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0774.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 777,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row is almost wholly beyond the actual viewport top at the lift apex; only bottom fragments remain. Panko +1 and enemy counter1 glyphs remain visible.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0777.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 780,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row remains clipped at the actual viewport top during healing descent; lower2/1 portions are visible, but upper icons/glyphs are absent. Panko +1 remains complete.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0780.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 783,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot upper icons remain cut at the real top edge as healing fades, although lower2/1 portions become more visible. Other displayed counters and Panko +1 remain readable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0783.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 840,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row clips against the actual top boundary during the bread-shield scene. Panko +1 and visible ally/enemy counters remain readable over the opaque effect.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0840.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 843,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row rises farther beyond the real viewport top during the bread-shield lift; lower2/1 fragments remain. Panko +1 is complete, and the effect does not account for the top cut.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0843.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 846,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row is almost entirely above the actual viewport top during the bread-shield lift; only bottom fragments remain above the visible health bar. Panko +1 remains fully readable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0846.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 849,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row remains partly outside the actual viewport top; upper icons/glyphs are missing while lower2/1 fragments remain. The shield effect and lower counters are otherwise distinguishable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0849.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 852,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row descends toward the frame but its upper edges are still clipped by the real top boundary. Panko +1 and the other visible counters remain complete as the shield fades.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0852.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave3",
       "encodedFrame": 855,
       "actor": "soot",
       "reason": "Upper status group reaches top crop boundary; full native-pixel viewport context required.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-global-toolbar-overlap",
+      "resolutionNote": "Soot shield/buff2/buff1 row is complete and readable again, with its top edge now inside the viewport. Its status/health group still overlaps the global turn-order toolbar; retain that placement defect for A11. Panko +1 remains complete.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave3-f0855.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -1735,5 +1860,22 @@
       "evidence": "reports/v4-art/REVIEW/A10/contrast/runtime-contrast-overflow-r1.json",
       "resolution": "Six naturally reached overflow+1 observations at720p/900p pass4.5:1; minimum13.071724524133867:1. No synthetic statuses. This establishes contrast, not viewport placement."
     }
-  ]
+  ],
+  "coverageSummary": {
+    "at": "2026-11-16T20:42:22.874511+00:00",
+    "hudPagesReviewed": 60,
+    "supplementsReviewed": 56,
+    "followupsClassified": 57,
+    "unclassified": 0,
+    "verdictCounts": {
+      "readable-in-full-frame": 14,
+      "actual-hud-overlap": 4,
+      "actual-viewport-clipping": 37,
+      "actual-global-toolbar-overlap": 1
+    },
+    "openDefectFrames": 42,
+    "filmReadabilityAccepted": false,
+    "meaning": "Resolved coverageFollowups means uncertainty classified; defectOpen remains a real unresolved failure. Existing JPEG compression remains in lossless PNG supplements.",
+    "followupItem": "A11"
+  }
 }
