@@ -3,6 +3,8 @@ import { keccak256, toBytes, type Address, type Hex } from 'viem';
 import { battleCats, createDepthAccount } from '../../../packages/game-rules/src/cardrpg/depth/state.ts';
 import { createBattle } from '../../../packages/game-rules/src/cardrpg/depth/battle.ts';
 import { playBattle } from '../../../packages/game-rules/src/cardrpg/depth/policies.ts';
+import {setGameplayA6} from '../../../packages/game-rules/src/cardrpg/depth/gameplay-a6.ts';
+import {setFormationC2} from '../../../packages/game-rules/src/cardrpg/depth/formation-c2.ts';
 import { type VoucherSigner } from './relic.ts';
 
 export interface JudgeEntitlement { id: string; relic_id: number; rarity_index: number; source: string }
@@ -21,12 +23,26 @@ export function judgeBoss() {
     log: battle.log.map(row => ({actor:row.actorId,target:row.targetId,kind:row.kind,amount:row.amount})),
   };
 }
+/** Public scripted trial, not a campaign save or future loot projection.
+ * Uses catalog stats and current four-cat rules; LEARN/S3.md measures its replay.
+ */
+export function judgeTrial(finale=false) {
+  const state=setFormationC2(setGameplayA6(createDepthAccount(43113,0),true));
+  const battle=playBattle(createBattle({seed:43113,chapter:1,cats:battleCats(state),
+    enemies:[finale?'yarn-giant':'button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true}), 'auto');
+  return {won:battle.result==='party',rounds:battle.round,
+    replay:{setup:battle.initial,choices:battle.choices},
+    log:battle.log.map(row=>({actor:row.actorId,target:row.targetId,kind:row.kind,amount:row.amount})),
+  };
+}
 export function createJudge({store,signer,nonceUsed,now = () => Date.now()}: {
   store: JudgeStore; signer: VoucherSigner; nonceUsed(nonce: bigint): Promise<boolean>; now?: () => number;
 }) {
   return async (player: string, wallet: Address, ip: string, action: unknown) => {
-    if (action !== 'pass' && action !== 'boss') throw new ChainRequestError('invalid_action');
-    const battle = action === 'boss' ? judgeBoss() : undefined;
+    if (typeof action!=='string'||!['pass','boss','intro','finale'].includes(action)) throw new ChainRequestError('invalid_action');
+    // Both guided challenges use the real catalog boss. A Guard/pass alone is
+    // deliberately ineligible for the existing boss-gated café quest.
+    const battle = action === 'boss' ? judgeBoss() : action==='intro'||action==='finale'?judgeTrial(true):undefined;
     if (battle && !battle.won) throw new Error('boss_not_won');
     const entitlements = await store.reserve(player,wallet.toLowerCase(),ip,!!battle?.won);
     const expiry = BigInt(Math.floor(now()/1000) + 600);

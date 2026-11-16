@@ -16,3 +16,9 @@ export function chainFlags(env: Record<string, unknown> = import.meta.env): Chai
     campaignRewards:env.VITE_CHAIN_CAMPAIGN_REWARDS==='1',
   };
 }
+
+/** Deploy-time opt-in; requires the existing guest, economy and chain services. */
+export function shipJourneyEnabled(env: Record<string, unknown> = import.meta.env) {
+  const flags=chainFlags(env);
+  return env.VITE_SHIP_JOURNEY==='1'&&flags.guestWallet&&flags.chainLoop&&flags.economyV3;
+}

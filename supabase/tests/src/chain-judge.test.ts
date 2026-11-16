@@ -3,7 +3,9 @@ import type { PGlite } from '@electric-sql/pglite';
 import { getAddress, recoverTypedDataAddress, type Address } from 'viem';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { as, migratedDb } from './game-db';
-import { createJudge, judgeBoss, type JudgeEntitlement } from '../../functions/_shared/chain-judge';
+import { createJudge, judgeBoss, judgeTrial, type JudgeEntitlement } from '../../functions/_shared/chain-judge';
+import {replayBattle} from '../../../packages/game-rules/src/cardrpg/depth/battle';
+import {ENEMY_BY_ID} from '../../../packages/game-rules/src/cardrpg/depth/catalog';
 import { voucherSigner, voucherDomain, VOUCHER_TYPES } from '../../functions/_shared/relic';
 let db: PGlite;
 beforeAll(async()=>{db=await migratedDb();});afterAll(async()=>{await db?.close();});
@@ -14,6 +16,26 @@ const reserve=async(p:string,w:string,h:string,b:boolean)=>(await db.query<{r:Ju
 it('executes the scripted starter boss through real battle rules',()=>{
   const first=judgeBoss();expect(first.won).toBe(true);expect(first.rounds).toBeGreaterThan(0);
   expect(first.log.some(e=>e.kind==='defeat')).toBe(true);expect(judgeBoss()).toEqual(first);
+});
+it.each([false,true])('replays the four-cat trial exactly, finale=%s',finale=>{
+  const trial=judgeTrial(finale),battle=replayBattle(trial.replay.setup,trial.replay.choices);
+  expect(trial.won).toBe(true);expect(battle.result).toBe('party');
+  expect(trial.replay.setup.cats.map(c=>c.id).sort()).toEqual(['clover','mochi','panko','soot']);
+  // The engine snapshots catalog stats so future balance changes cannot alter a recording.
+  expect(trial.replay.setup.enemyStats).toEqual(Object.fromEntries(
+    Object.values(ENEMY_BY_ID).map(({id,hp,attack,defense})=>[id,{hp,attack,defense}]),
+  ));
+  expect(trial.replay.setup.enemies).toEqual([finale?'yarn-giant':'button-guard']);
+  expect(battle.log.map(row=>({actor:row.actorId,target:row.targetId,kind:row.kind,amount:row.amount}))).toEqual(trial.log);
+  expect(trial.log.filter(e=>e.actor==='clover'&&['damage','dot','reflect','detonate'].includes(e.kind))).toEqual([]);
+});
+it('new trial actions reuse capped pass/boss entitlements without accepting client battle input',async()=>{
+  const calls:boolean[]=[],judge=createJudge({store:{reserve:async(_p,_w,_ip,boss)=>{calls.push(boss);return [];}},signer:{verifyingContract:wallet(900),sign:async()=> '0x'},nonceUsed:async()=>false});
+  expect((await judge('player',wallet(5),ip(5),'intro')).battle?.won).toBe(true);
+  expect((await judge('player',wallet(5),ip(5),'finale')).battle?.won).toBe(true);
+  expect(calls).toEqual([true,true]);
+  await expect(judge('player',wallet(5),ip(5),{toString:()=> 'intro'})).rejects.toThrow('invalid_action');
+  expect(calls).toEqual([true,true]);
 });
 it('issues exactly two pass entitlements plus one idempotent boss drop',async()=>{
   const p=await player(1),w=wallet(1).toLowerCase();

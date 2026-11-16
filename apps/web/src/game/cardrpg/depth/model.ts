@@ -445,6 +445,19 @@ export class DepthModel {
     this.replayIndex = 0;
     this.sceneStarted = true; this.watching = true; this.paused = false; this.plan = null; this.go('map');
   }
+  /** Replays an already authorized trial without importing or settling its save. */
+  replayEncounter(setup: R.BattleSetup, choices: R.Choice[], returnTo: Screen = 'hub') {
+    if(this.watching)return false;
+    // Reject invalid recordings before touching the current encounter or UI.
+    const recording={setup:structuredClone(setup),choices:structuredClone(choices)};
+    const resolved=R.replayBattle(recording.setup,recording.choices);
+    if(!resolved.result)throw Error('Incomplete trial recording.');
+    this.replayReturn=returnTo;this.replayChoices=recording.choices;
+    this.replay=R.createBattle(recording.setup);this.replayIndex=0;
+    this.sceneStarted=true;this.watching=true;this.paused=false;this.plan=null;
+    this.roundPlan=null;this.beforeImpact=null;this.afterImpact=null;this.playbackFrameAt=undefined;
+    this.go('map');return true;
+  }
   replayStep() {
     if (!this.replay || !this.canAct) return;
     if (R.currentActor(this.replay)?.side === 'enemy') this.act();

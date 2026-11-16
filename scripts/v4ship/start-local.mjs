@@ -12,7 +12,7 @@ const {startLocal}=await import('../../tools/chain/local.mjs');
 const local=await startLocal({web:false,campaignRewards:true});
 const vite=spawn('pnpm',['exec','vite','--config','../../tools/v3-demo/vite.config.mts','--host','127.0.0.1','--port','5994','--strictPort'],{
   cwd:resolve(root,'apps/web'),stdio:['ignore','inherit','inherit'],env:{...process.env,
-    VITE_CHAIN_DEMO:'1',VITE_V3_START_BLOCK:'0',VITE_CHAIN_MODE:'local',
+    VITE_CHAIN_DEMO:'1',VITE_SHIP_JOURNEY:'1',VITE_V3_START_BLOCK:'0',VITE_CHAIN_MODE:'local',
     VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',
     VITE_CHAIN_CAMPAIGN_REWARDS:'1',VITE_SUPABASE_URL:'http://127.0.0.1:5997',
     VITE_FUJI_RPC_URL:'http://127.0.0.1:8546',VITE_ALLOW_MOCK_AUTH:'0',VITE_UI_V3:'1',

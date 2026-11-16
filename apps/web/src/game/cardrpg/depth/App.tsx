@@ -1,6 +1,7 @@
 import {GameIcon} from '../../../ui/GameIcon';
 import {Coach} from '../shell/Coach';
-import {chainFlags} from '../chain/flags';
+import {chainFlags,shipJourneyEnabled} from '../chain/flags';
+const DemoJourney=lazy(()=>import('../shell/DemoJourney'));
 const ChainRoom=lazy(()=>import('../chain/ChainRoom').then(m=>({default:m.ChainRoom})));
 import {gameplayA6} from '../gate';
 import {OpeningA6} from '../ui-v3/OpeningA6';
@@ -93,8 +94,8 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} a6={activeGameplayA6(m.state)} />}{m.screen === 'relics' && (chainFlags().chainLoop ? <ChainRoom/> : <Relics m={m} />)}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
   if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-a6={a6} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>
-    <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}><ShellV3 m={m}>{pageView}</ShellV3></Suspense>
-    <Coach m={m}/><DiscoveryCelebrationV4 m={m}/>
+    <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}>{shipJourneyEnabled()?<DemoJourney m={m}/>:<ShellV3 m={m}>{pageView}</ShellV3>}</Suspense>
+    {!shipJourneyEnabled()&&<><Coach m={m}/><DiscoveryCelebrationV4 m={m}/></>}
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={a6?<OpeningA6 message="Preparing the battle…"/>:<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
     {m.showBattle && <Suspense fallback={null}><BattleHudV3 m={m}/></Suspense>}
   </div></CompanionPreviewProvider>;

@@ -70,7 +70,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
       finish(true);return hash;
     }catch(error){finish(false);throw error;}
   };
-  async function write(request: {address: Address; abi: Abi; functionName: string; args?: readonly unknown[]; value?: bigint}) {
+  async function write(request: {address: Address; abi: Abi; functionName: string; args?: readonly unknown[]; value?: bigint}, onSubmitted?: (hash:Hash)=>void) {
    let submitted=false;const scope=sounds.scope();
    try{
     await guard();
@@ -79,7 +79,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     await guard();
     scope.wallet();
     const hash=await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji });
-    submitted=true;return await receipt(hash,scope);
+    submitted=true;onSubmitted?.(hash);return await receipt(hash,scope);
    }catch(error){if(!submitted)scope.failure();throw error;}
   }
   const listings = async (version:'v1'|'v2'='v1'):Promise<ChainListing[]> => {

@@ -6,7 +6,7 @@
 | S1 | AVALANCHE, CONTEST, REPO SAFETY | STARTED 2026-11-16T04:48:36.267987+00:00; research/docs/G-REG pass; current candidate triage and history scan pending |
 | S2 | FUNNEL BASELINE | STARTED 2026-11-16T04:56:58.392605+00:00; ENDED 2026-11-16T05:59:31.551235+00:00;20profiles collected; G-FUNNEL FAIL0/20complete; S2/summary.json; S2/EVIDENCE.md; follow-upS3 |
 | S2b | CLASSES RULES AND UI | STARTED 2026-11-16T05:26:02.513574+00:00; production classes implemented; runtime/UI/regression/E3-E5 underway; no new F6 baseline |
-| S3 | DEMO PATH POLISH | pending |
+| S3 | DEMO PATH POLISH | STARTED 2026-11-16T06:28:46.304591+00:00; authority/scheduler/financing prototype while S2b economy and S1 history run |
 | S4 | ON-CHAIN PROOF | pending |
 | S5 | SOUND | pending |
 | S6 | REPO AND DOCS | pending |

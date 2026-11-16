@@ -4,28 +4,26 @@ SCREENING = TECH 25 + AVALANCHE 25 | LEARN BEFORE BUILD: PAPERS + WEB DOCS + OWN
 I OWN ALL AUDIO: QUIET BED, SYNCED WEAPON SFX, UI SOUNDS, CONFIRM CHIME | NEVER GENERATE IMAGES; ASK ART
 NO NEW ECONOMY MECHANICS, NO CONTRACT CHANGES, NO DEPLOYS, NO MAIN MERGE | MERGE ART AT 17/18/19 NOV, ART WINS IN ART FILES
 NO SECRETS ANYWHERE | NEVER LOWER A THRESHOLD | FILES ARE MY MEMORY | NO PERMISSION NEEDED: NEVER REPORT PAUSED
-
-NOW S2b classes implemented; owned tests and UI contrast corrected; validation ongoing. Updated 2026-11-16T06:27:31.214938+00:00.
-NEXT 1: collect history PID70360 when complete; contextual triage; no clean-history claim.
-NEXT 2: finish native CLASS-FINAL-200, then classes/economy.mjs and fresh native/token sensitivity; E3-E5 open.
-NEXT 3: S3 authority/financing prototype while economy/history run; record sole F6 baseline only after validation.
-LAST GOOD COMMIT 546399ba72d641f1479d9ec85472870bfe9563b3; HEAD/upstream verified.
-LAST ART SHA MERGED 88fa5bdfd820609f054d174fce24248f35aa9575; a14f8a76 assets unmerged per schedule.
-TESTS final: rules1409PASS; server733PASS; typecheck/buildPASS; web2633PASS/7ARTfail; all jobs collected.5004/70360 resumed.
-PIDS fixture68690/Vite68776(session94177,S0/fixture.log); history70351/70360(session39672),70361 defunct.
-BACKGROUND finalholdout10103/session38423/S2b/production-holdout.log; native5004(session5412,S2b/economy-native.log), CLASS-FINAL-200,1000accounts/42days/frozen worker.
-Stale1545 absent; ownedheavy jobs temporarily suspended only during timeout/web checks, now resumed.
-S1 working93884files/34392candidates reviewed0unresolved; incremental159files/4reviewednonsecrets/0unresolved at06:26UTC; history3763commits still running.
-S2 baseline20profiles: battle medians3.2805/3.6285s,3clicks;0receipt,steps4-7fail20/20; retain429errors.
-S2b holdout1001-1100:300/300wins,0healerDamage,firstloss19.65391min,boss95.0167s/p90108.9s (modeled).
-Class implementation: wounded-front then HPratio/stableID,basic35,YarnGiantHP1292;offense/clocks otherwise unchanged.
-Latest suppression fix removes double credit; focusedclass8/8PASS; full rules1409PASS.
-Two final owned web expectations corrected; ART compatibility request written for seven spine test failures; G-REG open.
-Class UI bothsizes: badgecontrast11.13:1,0overflow/errors; Guide opacity1; two updated screenshots inspected.
-F6 original preserved; final parity probe3/3PASS 271.133/618.433/92.167s; no class baseline exists.
-Native old job stopped at125/1000 before latest rules fixes; old evidence not valid for final classes.
-S3 research: freshguest0gear; Judgequest4same-setEpics;31YARNcost vs20grant leaves11shortfall; financing unresolved.
-RETENTION conflict: REV2 says25%; inherited frozen policy15%; documented, unchanged.
-No local-save mint bridge, hidden grant, deployment or production write.
-STOP absent; INBOX empty;117GiB free; images opened0 since this rewrite.
-REQUEST-SHIP.txt bytes46223 sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2
+NOW S3 journey checkpoint and S2b class-only balance diagnosis; resumed 2026-11-16T06:58:16.256640+00:00.
+NEXT 1: history70360 still computing; collect metadata-only report then contextual triage when complete.
+NEXT 2: evaluate isolated party attack1.15 against first-loss/boss gates before any production adjustment; progression-study completed.
+NEXT 3: extend20-run journey harness with disposable quota isolation/recovery/UI checks; S4 proof research afterward.
+LAST PUSHED db35585a25fe991faa8820ba6014544573133759 verified HEAD=upstream; S3 checkpoint being committed; no final gate claim.
+LAST ART MERGE 88fa5bdfd820609f054d174fce24248f35aa9575; A10assets/A3 unmerged until schedule.
+PIDS isolatedbalance19067 running; fixture17041/Vite17060 alive; history70351/70360 alive,70361defunct; stale13333/13395/68690/68776/5004/15778/15902/17195 absent.
+S1 history report absent after2h09m; no clean-history claim. Incremental scan completed06:57:38UTC,4reviewedfalsepositives,0unresolved.
+S3 pilots1280/1440 complete alljourney clicks202.215/203.476s; battle2.546/2.456s2clicks; receipt97.056/96.842s;0errors/HTTPfail/popups.
+S3 pilots are NOT20run G-FUNNEL; comprehensiveUI/historyreceipt proof remains open.
+S3 tests web2644PASS/7ARTfail;server742PASS;focusedweb28PASS;JudgeHTTPDeno56PASS;typecheck/buildPASS; S3/checks.json.
+S3 productionflag VITE_SHIP_JOURNEY=1; catalogboss intro/finale; cappedexistingentitlements; replaypreservescampaign.
+S3 finance16Anvilreceipts; two20YARNgifts+disclosed12transfer+5sale; nofixturegrants. Fusion:2boundEpicsledgerconsumed+1sealedEpicdeadaddress.
+S2b CLASS-FINAL-2001000accounts completed2159s;casual16/heavy11days; CLASS-TOKENS18/18FAIL T-dheavy11vs5-9; preserve evidence.
+S2b nativeSensitivity15902 deliberately stopped invalidcandidate; E4/E5fresh stillopen.
+S2b progressionstudy6variants done: control15.5/11;party1.15=16/9;1.30=15/9;1.50=13/8 casual/heavy12seeds; notgatepass.
+Productionholdout300/300wins,0healerDamage;firstloss19.65391min,boss95.0167s/p90108.9s; modeledschedulerbudget.
+Productionclasses woundedfront/HPratio/stableID,basic35,YarnHP1292. No selected offenseadjustment yet.
+F6 original preserved; parityprobe3/3PASS271.133/618.433/92.167s; newbaseline nonexistent.
+G-REG7ARTtestfailures; requestacknowledged, noARTfileedits. G-CLASS/G-FUNNEL/G-PROOF open.
+Conflict REV2Spool25%vsfrozen15% recorded; policy unchanged; no false25%claim.
+STOP absent; INBOX nofeedback;109GiBfree;0images openedthisrewrite.
+REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.

@@ -6,6 +6,20 @@ import { exportSave } from '@taskbar-hero/game-rules/src/cardrpg/depth/save';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_EFFECT_RECIPES } from '../../squad/turn3d/card-effect-data';
 afterEach(() => { vi.unstubAllGlobals(); });
+it('plays a server recording without replacing or settling the local campaign save',()=>{
+  const model=new DepthModel(true,true,true,true,true),before=exportSave(model.state);
+  const state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(43113,0),true));
+  const setup:R.BattleSetup={seed:43113,chapter:1,cats:R.battleCats(state),enemies:['button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true};
+  const recorded=R.playBattle(R.createBattle(setup),'auto');
+  expect(()=>model.replayEncounter(setup,[])).toThrow('Incomplete trial recording');
+  expect(model.replay).toBeNull();expect(exportSave(model.state)).toBe(before);
+  expect(model.replayEncounter(setup,recorded.choices)).toBe(true);model.sceneReady=true;
+  expect(model.replayEncounter(setup,recorded.choices)).toBe(false);
+  for(let i=0;i<2000&&model.showBattle;i++){model.replayStep();model.tick(100000);}
+  expect(model.replay).toEqual(recorded);expect(exportSave(model.state)).toBe(before);
+  model.finish();expect(model.screen).toBe('hub');expect(model.replay).toBeNull();
+  expect(exportSave(model.state)).toBe(before);
+});
 it('presents the resolved A6 rage signature when rage fills after the round intent', () => {
   const model=new DepthModel(true);
   model.state=R.setGameplayA6(model.state,true);

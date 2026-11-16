@@ -68,7 +68,7 @@ function validateBody(endpoint: ChainEndpoint, body: unknown): Record<string, un
     if(typeof value.id!=='string'||!uuid.test(value.id)||!Number.isSafeInteger(value.revision)||Number(value.revision)<0||!value.command||typeof value.command!=='object'||Array.isArray(value.command))throw new ChainRequestError('invalid_request');
     fields=['action','id','revision','command'];
   }
-  else if (endpoint === 'chain-judge' && (value.action === 'pass' || value.action === 'boss')) fields = ['action'];
+  else if (endpoint === 'chain-judge' && typeof value.action === 'string' && ['pass','boss','intro','finale'].includes(value.action)) fields = ['action'];
   else if (endpoint === 'chain-items' && (value.action === 'inventory' || value.action === 'reward')) fields = ['action'];
   else if (endpoint === 'chain-cosmetics' && value.action === 'state') fields = ['action'];
   else if (endpoint === 'chain-cosmetics' && (value.action === 'reserve' || value.action === 'equip')) {

@@ -12,3 +12,7 @@
 2026-11-16T05:57:43.458048+00:00 S2b select front35/boss45% after30-seed comparison plus independent100-seed holdout: first-loss19.65391min, boss95.0167s/p90108.9s,300/300fixturewins,0healerDamage. No production or F6 baseline changed yet. LEARN/S2b.md.
 
 2026-11-16T06:24:15.013927+00:00 S2b/S3 specification conflict: REV2 explicitly says Spool retention25% and also freezes economy numbers with classes as the sole rule exception. Inherited published ECONOMY_V3.spool.feeBp=1500 since84e49b60d; historical E3 evidence uses15%. Do not describe current behavior as25%, change this price silently, or label G-CLASS/E3 fully passed. Continue the class regression against the unchanged frozen policy; list the discrepancy in NEEDS-USER-VI and compare25% using an isolated experiment before any resolution.
+
+2026-11-16T06:39:19.123048+00:00 S3 experiment: Guard+pass cannot satisfy unchanged boss entitlement. Intro will replay the catalog boss86.267s and reuse existing boss authorization; later rematch is idempotent. Disclosed second-demo-wallet12YARN transfer selected after16real local receipts; no reward/economy changes. LEARN/S3.md; runtime-policy rerun pending.
+
+2026-11-16T06:49:42.336529+00:00 CLASS-FINAL-200 fails fresh T-d: heavy firstLegendary11days vs5-9gate; casual16within10-16. Token scenarios retain failure. Stopped owned native-sensitivity15902 after identity verification because this candidate is already invalid; preserve first sensitivity manifest/snapshot, rerun only after a justified class-only correction. Economy rates and thresholds unchanged.

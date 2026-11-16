@@ -2,6 +2,8 @@
  * The unmodified control must reproduce the three committed browser fixture hashes/times.
  */
 import assert from 'node:assert/strict';
+import {existsSync} from 'node:fs';
+const checkStop=()=>{if(existsSync('/Users/bao/taskbar-hero-chain/STOP-V4SHIP'))throw Error('STOP-V4SHIP requested');};
 import {createRequire} from 'node:module';
 import {readFile,writeFile,mkdtemp,mkdir,rm} from 'node:fs/promises';
 import {resolve} from 'node:path';
@@ -20,6 +22,8 @@ const only=process.env.V4_CLASS_VARIANT;
 const production=process.env.V4_CLASS_PRODUCTION==='1';
 const balance=process.env.V4_CLASS_BALANCE??'none';
 const sessionMethod=process.env.V4_CLASS_SESSION_METHOD??'a6-legacy';
+const partyAttack=Number(process.env.V4_CLASS_ATTACK??1);
+assert(Number.isFinite(partyAttack)&&partyAttack>=1&&partyAttack<=1.5);
 const enemyPressure=Number(process.env.V4_CLASS_ENEMY_PRESSURE??1);
 assert(Number.isFinite(enemyPressure)&&enemyPressure>=1&&enemyPressure<=1.1);
 assert(['a6-legacy','c2-current'].includes(sessionMethod));
@@ -32,7 +36,13 @@ const quantile=(xs,q)=>{const s=[...xs].sort((a,b)=>a-b);if(!s.length)return nul
 function replaceOnce(source,from,to,file){assert.equal(source.split(from).length,2,`Expected one transform anchor in ${file}`);return source.replace(from,to);}
 function selector(policy){return `function selectHealerPatientS2b(actors:Actor[]) { const living=actors.filter(a=>a.hp>0); const wounded=living.filter(a=>a.hp<a.maxHp); const pool=wounded.length?wounded:living; return [...pool].sort((a,c)=>${policy==='missing'?'(c.maxHp-c.hp)-(a.maxHp-a.hp)':policy==='front'?"Number(c.row==='front')-Number(a.row==='front') || a.hp/a.maxHp-c.hp/c.maxHp":'a.hp/a.maxHp-c.hp/c.maxHp'} || a.id.localeCompare(c.id))[0]!; }\n`;}
 function variantPlugin(v){return {name:'v4ship-isolated-healer-study',enforce:'pre',transform(source,id){
- if(production||v.id==='control')return null;
+ if(production||v.id==='control'){
+  if(!id.endsWith('/depth/gameplay-a6.ts'))return null;
+  let code=source;
+  if(partyAttack!==1)code=replaceOnce(code,"if (actor.side !== 'enemy') continue;",`if(actor.side==='party'){if(actor.combatClass!=='healer')actor.attack=Math.round(actor.attack*${partyAttack});continue;}`,id);
+  if(enemyPressure!==1)code=replaceOnce(code,"actor.attack * (b.chapter === 1 ? .65 : .85)",`actor.attack * (b.chapter === 1 ? .65 : .85) * ${enemyPressure}`,id);
+  return code===source?null:{code,map:null};
+ }
  const file=id.split('?')[0].replace(root+'/','');let code=source;
  if(file==='packages/game-rules/src/cardrpg/depth/catalog.ts')code+=`\n// Isolated research variant ${v.id}.\nfor(const cat of CATS.filter(c=>c.role==='healer'))for(const skill of cat.skills){
  if(skill.id.endsWith('-1'))Object.assign(skill,{type:'support',target:'ally',breakPower:0,effects:[{kind:'heal',power:${v.heal}}]});
@@ -57,6 +67,7 @@ function variantPlugin(v){return {name:'v4ship-isolated-healer-study',enforce:'p
  return code===source?null:{code,map:null};
 }};}
 async function fixture(bundle,fixture,seed){
+ checkStop();
  const {R,Model}=bundle;
  const m=new Model.DepthModel(true,true,true,true,true);
  m.state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(seed),true));m.state.tutorial=4;
@@ -74,9 +85,10 @@ async function fixture(bundle,fixture,seed){
  const party=b.actors.filter(a=>a.side==='party'),healers=new Set(b.actors.filter(a=>a.role==='healer').map(a=>a.id));
  return {fixture:fixture.id,seed,result:b.result,durationSeconds:elapsed/1000,actions,rounds:b.round,winHp:party.reduce((s,a)=>s+a.hp,0)/party.reduce((s,a)=>s+a.maxHp,0),healing:b.log.filter(e=>healers.has(e.actorId)&&e.kind==='heal').reduce((s,e)=>s+e.amount,0),healerDamage:b.log.filter(e=>healers.has(e.actorId)&&['damage','dot','detonate','reflect','reaction-damage'].includes(e.kind)).reduce((s,e)=>s+e.amount,0),hash:hash(b)};
 }
-const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),production,balance,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
+const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),production,balance,partyAttack,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
 await mkdir(resolve(out,'..'),{recursive:true});
 for(const variant of variants){
+ checkStop();
  const temp=await mkdtemp('/tmp/v4ship-class-study-');const began=performance.now();
  try{
   const entry=resolve(temp,'entry.ts');const paths={R:'packages/game-rules/src/cardrpg/depth/index.ts',C:'packages/game-rules/src/cardrpg/index.ts',onboarding:'packages/game-rules/src/cardrpg/depth/onboarding.ts',presentation:'apps/web/src/game/cardrpg/depth/card-action-plan.ts',pacing:'apps/web/src/game/cardrpg/depth/pacing-a6.ts',Model:'apps/web/src/game/cardrpg/depth/model.ts'};
@@ -98,6 +110,7 @@ for(const variant of variants){
    helper=replaceOnce(helper,'m.state=freshAccount(R,seed,0);','m.state=freshAccount(R,seed,0);m.state.economyV3=true;', 'c2 session');
    await writeFile(resolve(temp,'session-current.mjs'),helper);const {simulate}=await import(pathToFileURL(resolve(temp,'session-current.mjs')).href);
    for(let seed=firstSeed;seed<firstSeed+sessions;seed++){
+    checkStop();
     const result=simulate(seed);assert.equal(result.summary.activeSeconds,1800);assert.equal(result.final.team.length,4);
     const losses=result.encounters.filter(e=>!e.tutorial&&e.result==='enemy');
     progression.push({seed,lossExamples:losses.map(e=>({at:e.endedAt,chapter:e.chapter,node:e.node,boss:e.boss,enemies:e.initial.enemies,playbackSeconds:e.playbackSeconds,rounds:e.rounds})),losses30:losses.length,battles:result.encounters.length,summary:result.summary});

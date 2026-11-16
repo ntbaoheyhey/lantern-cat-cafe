@@ -16,6 +16,13 @@ it('plays wallet, pending and confirmed in order for a successful receipt',async
  const w=wallet();runtime=chainRuntime(config,w as unknown as WalletClient,address);await expect(runtime.write(request)).resolves.toBe(hash);
  expect(vi.mocked(playCue).mock.calls.map(c=>c[0])).toEqual(['tx.wallet','tx.pending','tx.confirmed']);
 });
+it('records the submitted hash before receipt waiting can time out',async()=>{
+ const submitted=vi.fn();rpc.waitForTransactionReceipt.mockRejectedValue(new Error('receipt timeout'));
+ runtime=chainRuntime(config,wallet() as unknown as WalletClient,address);
+ await expect(runtime.write(request,submitted)).rejects.toThrow('receipt timeout');
+ expect(submitted).toHaveBeenCalledExactlyOnceWith(hash);
+ expect(submitted.mock.invocationCallOrder[0]).toBeLessThan(rpc.waitForTransactionReceipt.mock.invocationCallOrder[0]!);
+});
 it('plays one failed cue for a rejected wallet and never starts a pending loop',async()=>{
  const w=wallet();w.writeContract.mockRejectedValue(new Error('User rejected'));runtime=chainRuntime(config,w as unknown as WalletClient,address);
  await expect(runtime.write(request)).rejects.toThrow('User rejected');expect(vi.mocked(playCue).mock.calls.map(c=>c[0])).toEqual(['tx.wallet','tx.failed']);expect(rpc.waitForTransactionReceipt).not.toHaveBeenCalled();
