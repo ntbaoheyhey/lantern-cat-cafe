@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T21:28:08.030391+00:00
+# ART execution anchor — 2026-11-16T21:31:25.654475+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: change fromexact-alpha encoding after coverage alternativesFAIL(best8,591,943B);study bounded alphaquantization preserving source support/bbox classes,then2private drills. Record alphaExactFAIL explicitly;all userpose/framing/Lab gates unchanged;no production.
+NEXT1: pollalpha-precision PID17709/tail5 jobs/a10-alpha-precision-r1.log;inspect alpha-precision-r1.json+4newcomparisons. Step4/8 maxalpha2/4of255;sourcealphaExactFAILretained;support/128hull preserved;all usergates unchanged;no production.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:19f6a1a6e verified;splitR1results/reviews pushed;coveragejobactive. Auxhashcorrection87f2a37ef;all1,705,765Bcounted;runtime unchanged9205464cb.
-LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. Coverage17103done0;split15113/requestaudit12818/R1-R4done0. No worker job active.
+LAST PUSH:c97bf2f5e verified;all exact-alpha/split failures pushed,20comparisonsclosed;bounded-opacity2drillsactive. Aux1,705,765Bunchanged;contrastreceipt9df18432a;runtime9205464cb.
+LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log;alpha-supervisor17709 log jobs/a10-alpha-precision-r1.log/receipt scene-ready-transfer/job-alpha-precision-r1.json.3ownedjobs;priorjobsdone0.
 STOP/INBOX checked21:28UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEADa95a3ebcaf; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
