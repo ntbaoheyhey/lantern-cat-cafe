@@ -4,8 +4,8 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW ACTIVE:Rangedcodec preparation validated/preserved;package1 ready inwork only. Next launch/travel prototype throughactualengine at1x/2x/3x inclterminalspeech;no runtime/assetinstall yet. OverallG-AUDIO/G-REGfalse.
-NEXT 1:Usework/v4ship-audio/ranged-codec-package-1 manifest/encodes/licences,notoldbakepatch. Designboundedone-sourcelaunch/travel frompublishedsamples andproductionflighttiming. Testactualstarts1x/2x/3x+death beforeinstall.
+NOW ACTIVE:Resumed;preservingranged-playback-probe1FAIL:48cases,clear-slotfixturestillauto-voicesultcharge. Correctedclear-probeharnessprepared,notrun. Package1work-only;runtimeunchanged;G-AUDIO/G-REGfalse.
+NEXT 1:Runranged-playback-clear-probe.mjs1against5995;checkcharge/tailadmission,naturalcompletionandterminalisolation,notonlyweaponPass. Preservefailedprobe1. Thenremainingclasses/output-visualtimingbeforeinstall.
 NEXT 2:Implementvalidatedrangedcues/preloads onlyafteractualadmission;preservehealers/voicerules/clocks. Fullregression+productioncaptures;unobservedclasses andphysical/human gatesremainopen. ThenhistoryreviewandARTschedule.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
 CHECKPOINT:27dddeecb pushedsceneproof. Rangedpackage1:72sprites,bothformats/twobrowsers/48+44.1kHz allzero-lag. MP3corr>=.99997377/RMS<=.002842dB;WebMcorr>=.99791461/RMS<=.083267dB. No runtimeinstall.
@@ -33,7 +33,7 @@ STOP absent;USER RESUME. Healerproduction13 journeys3/4:32Clovercontactsoneheals
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T20:17:24.201391+00:00. Codecdiagnosis:FFmpegMP3WebKit+576samples;noXingfails;nativeLAMEtagfixeslag,but192kpreset0.97gain requiredinversecompensation/effective1. Allrejectedencodes/reportsretained;freshfullregsame7ARTfails.
+UPDATED 2026-11-16T20:33:02.558056+00:00. Codecdiagnosis:FFmpegMP3WebKit+576samples;noXingfails;nativeLAMEtagfixeslag,but192kpreset0.97gain requiredinversecompensation/effective1. Allrejectedencodes/reportsretained;freshfullregsame7ARTfails.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit3=169.833s/9,314,863B/-17.86LUFS/-2.22dBTP/5.2LRA;1927sourceframes/53EN-VIcues/13wholevoices+actualSnowtrace5s;film-verify-3.json. Preparationonly;oldattemptsretained.
