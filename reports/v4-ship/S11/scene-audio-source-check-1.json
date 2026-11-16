@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-16T19:59:21.229668+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-cold-contact.md",
+  "source": {
+    "path": "apps/web/src/game/cardrpg/shell/DemoJourney.tsx",
+    "sha256": "74b52f2493c8786792b2a078b97567a808e05f4d6bdca853a6fbe60baffb5ba1"
+  },
+  "test": {
+    "path": "apps/web/src/game/cardrpg/shell/DemoJourney.audio.test.tsx",
+    "sha256": "4d3b6ffb13a4600985efbf2befa146c5ec0bf491a36146474d712bbf0bf23be9"
+  },
+  "componentComparison": {
+    "path": "reports/v4-ship/S11/scene-audio-component-5.json",
+    "sha256": "7652b5f820ce76e0bc75fd6b8d7117ad70c7d1d0b0e5bfa994a2b8b75479a398"
+  },
+  "productionBaseline": {
+    "path": "reports/v4-ship/S11/scene-baseline-1.json",
+    "sha256": "beaa7748c96202f43caada8df2cb5145dc952f3d4743ae603577d93e58b729b3"
+  },
+  "completedBeforeRuntimeEdit": {
+    "path": "reports/v4-ship/S11/healer-validation-2.json",
+    "sha256": "0b0cb5917d8af72d080096478b3deca42a50441465d108fcdf96581998256fd7"
+  },
+  "componentTests": 4,
+  "componentTestsPass": true,
+  "regression": [
+    {
+      "check": {
+        "path": "reports/v4-ship/S11/healer-endurance-regression-1/check.json",
+        "sha256": "032d1c2bb3893eaf4b14ce5f8f538df68aa1d6e0f8483e9d3f293c5831e5fe60"
+      },
+      "log": {
+        "path": "reports/v4-ship/S11/healer-endurance-regression-1/log.jsonl.gz",
+        "sha256": "6a46a9662c8ad5f7682fcc5705b98ff909feda2f83f50bfab1f71b1c0dc47959"
+      },
+      "failures": [
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+        "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+      ],
+      "counts": [
+        "Test Files  2 failed | 318 passed (320)",
+        "Tests  7 failed | 2682 passed (2689)"
+      ]
+    },
+    {
+      "check": {
+        "path": "reports/v4-ship/S11/scene-audio-regression-1/check.json",
+        "sha256": "ba6816a830fc8aeb428d2a5e656113505e8df941c50940259e591d763e81cf06"
+      },
+      "log": {
+        "path": "reports/v4-ship/S11/scene-audio-regression-1/log.jsonl.gz",
+        "sha256": "c9a746a0a56725e91f14454dceedef2f9221d7b6966980734fe003cf743b51ef"
+      },
+      "failures": [
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+        "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+      ],
+      "counts": [
+        "Test Files  2 failed | 319 passed (321)",
+        "Tests  7 failed | 2686 passed (2693)"
+      ]
+    }
+  ],
+  "sameSevenArtFailures": true,
+  "fixImplemented": true,
+  "productionValidationPending": true,
+  "encodedAudioOrMixerChanged": false,
+  "authoredClockChanged": false,
+  "gRegPass": false,
+  "officialClassParityPass": false,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false
+}

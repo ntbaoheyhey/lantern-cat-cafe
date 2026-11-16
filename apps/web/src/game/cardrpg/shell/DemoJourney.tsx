@@ -1,7 +1,7 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {useWalletClient} from 'wagmi';
 import type {Address,Hash} from 'viem';
-import {CAT_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
+import {CAT_BY_ID,ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {useSession} from '../../../wallet/WalletProvider';
 import type {DepthModel} from '../depth/model';
 import {chainRuntime,loadChainConfig,txLink,type ChainConfig} from '../chain/runtime';
@@ -14,6 +14,8 @@ import {friendlyError} from '../chain/errors';
 import {CombatClassBadge} from '../ui-v3/CombatClassBadge';
 import {artPropsA6} from '../ui-v3/art-a6';
 import {PaintedButton} from './PaintedKit';
+import {audioEngine} from '../../../audio/engine';
+import {soundScene,ambienceScene} from '../../../audio/scene';
 import './demo-journey.css';
 
 type Phase='intro'|'intro-battle'|'reward'|'cafe'|'finale-battle'|'proof';
@@ -23,6 +25,12 @@ export default function DemoJourney({m}:{m:DepthModel}) {
   return session?<Journey key={session.wallet.toLowerCase()} m={m} token={session.token} address={session.wallet as Address}/>:<p role="status">Sign in to start the trial.</p>;
 }
 function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) {
+  // LEARN/S11-cold-contact.md: this journey replaces ShellV3, including its audio effects.
+  const boss=m.battle?.initial.enemies.some(id=>ENEMY_BY_ID[id]?.tier==='boss')??false;
+  const music=soundScene(m.screen,m.showBattle,boss);
+  const ambience=ambienceScene(m.screen,m.showBattle,boss,m.battle?.initial.chapter??m.state.run?.chapter??1);
+  useEffect(()=>{audioEngine.music(music);},[music]);
+  useEffect(()=>{audioEngine.ambience(ambience);},[ambience]);
   const key=`lantern.ship.journey:${address.toLowerCase()}`;
   const [phase,setPhase]=useState<Phase>(()=>{
     try{const saved=localStorage.getItem(key);return ['reward','cafe','proof'].includes(saved??'')?saved as Phase:'intro';}catch{return 'intro';}
