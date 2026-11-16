@@ -50,5 +50,5 @@ describe('economy v3',()=>{
   expect(made.state.account.currencies).toEqual({fish:0,threads:0,essence:0,stamps:0});
   expect(made.state.materials).toBe(0);expect(made.state.seals).toBe(0);
  });
- it('publishes exact withdraw, quality and bound-currency rules',()=>{expect(withdrawalQuote(16n*10n**18n)).toEqual({gross:16n*10n**18n,net:136n*10n**17n,retained:24n*10n**17n,burned:0n});expect(qualityBucket(3999).name).toBe('Worn');expect(qualityBucket(4000).offset).toBe(1000);expect(qualityBucket(8500).offset).toBe(2000);for(const k of ['cat','shards','fish','thread','bell','boss-seal','key'])expect(tradability(k)).toBe('bound');expect(tradability('gear','epic')).toBe('sealable');});
+ it('publishes exact withdraw, quality and bound-currency rules',()=>{expect(withdrawalQuote(16n*10n**18n)).toEqual({gross:16n*10n**18n,net:12n*10n**18n,retained:4n*10n**18n,burned:0n});expect(qualityBucket(3999).name).toBe('Worn');expect(qualityBucket(4000).offset).toBe(1000);expect(qualityBucket(8500).offset).toBe(2000);for(const k of ['cat','shards','fish','thread','bell','boss-seal','key'])expect(tradability(k)).toBe('bound');expect(tradability('gear','epic')).toBe('sealable');});
 });

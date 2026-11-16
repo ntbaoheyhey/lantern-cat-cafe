@@ -4,19 +4,21 @@ import {existsSync} from 'node:fs';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
+import {proofContrast} from '../../tools/v4ship-lab/proof/proof-contrast.mjs';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json'));
 const {chromium}=require('@playwright/test'),sharp=require('sharp');
 const item=process.env.V4_ITEM??'S4',count=Number(process.env.V4_RUNS??10),widths=(process.env.V4_WIDTHS??'1280,1440').split(',').map(Number);
 if(!/^[\w-]+$/.test(item)||!Number.isInteger(count)||count<1||widths.some(w=>![1280,1440].includes(w)))throw Error('Invalid settings');
 const out=resolve(root,'reports/v4-ship/RUNS',item);await mkdir(resolve(out,'raw'),{recursive:true});
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+const sourceChanges=execFileSync('git',['diff','--name-only','HEAD','--','apps/web/src','packages/game-rules/src','supabase/functions'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
 const safe=value=>String(value).replace(/0x[\da-f]{64,}/gi,'[hex]').replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g,'[token]').slice(0,240);
 const fixture=async action=>{const r=await fetch(`http://127.0.0.1:5997/__fixture/${action}`,{method:'POST'});if(!r.ok)throw Error(`Disposable fixture ${action} failed:${r.status}`);};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});let failed=false;
 try{for(const width of widths)for(let n=1;n<=count;n++){
  if(existsSync(resolve(root,'STOP-V4SHIP')))throw Error('STOP-V4SHIP');
  await fixture('begin');const context=await browser.newContext({viewport:{width,height:width===1280?720:900}}),page=await context.newPage();
- const report={id:`${width}-${String(n).padStart(2,'0')}`,at:new Date().toISOString(),sourceCommit,viewport:{width,height:width===1280?720:900},mode:'development + isolated Anvil/SQL',cleanProfile:true,realClicks:true,backendIsolated:true,steps:[],clicks:[],errors:[],networkFailures:[],httpFailures:[],popups:[],receipts:[],ui:[]};
+ const report={id:`${width}-${String(n).padStart(2,'0')}`,at:new Date().toISOString(),sourceCommit,sourceChanges,viewport:{width,height:width===1280?720:900},mode:'development + isolated Anvil/SQL',cleanProfile:true,realClicks:true,backendIsolated:true,steps:[],clicks:[],errors:[],networkFailures:[],httpFailures:[],popups:[],receipts:[],ui:[]};
  const started=performance.now(),at=()=>Math.round(performance.now()-started);let closing=false;
  page.on('pageerror',e=>report.errors.push(safe(e.message)));page.on('console',e=>{if(e.type()==='error')report.errors.push(safe(e.text()));});
  page.on('requestfailed',r=>{if(!closing)report.networkFailures.push({path:new URL(r.url()).pathname,error:safe(r.failure()?.errorText)});});
@@ -31,7 +33,7 @@ try{for(const width of widths)for(let n=1;n<=count;n++){
   const clipped=[...document.querySelectorAll('button,h1,h2,h3,p,label,small,strong')].filter(visible).filter(e=>e.clientWidth&&e.scrollWidth>e.clientWidth+2&&['hidden','clip'].includes(getComputedStyle(e).overflowX)).map(e=>e.textContent?.slice(0,70));
   const bodyWords=[...document.querySelectorAll('.ship-trial-card p')].filter(visible).map(e=>e.textContent?.trim().split(/\s+/).length??0).reduce((a,b)=>a+b,0);
   return {horizontalOverflow:document.documentElement.scrollWidth>innerWidth,unlabeled,clipped,bodyWords};
- })});};
+ }),proofContrast:await proofContrast(page)});};
  const capture=async name=>{if(n===1)await sharp(await page.screenshot()).resize({width:1024}).png().toFile(resolve(out,'raw',`${width}-${name}.png`));};
  const step=async(number,name,work)=>{const row={number,name,startedMs:at()};report.steps.push(row);try{await work(row);await ui(name);row.status='pass';}catch(e){row.status='fail';row.reason=safe(e.message);throw e;}finally{row.endedMs=at();console.log(JSON.stringify({id:report.id,step:number,status:row.status,atMs:at()}));}};
  try{
@@ -48,7 +50,12 @@ try{for(const width of widths)for(let n=1;n<=count;n++){
   });
   await step(6,'boss',async()=>{await click('Face the boss');const start=at();await page.getByRole('heading',{name:'My café on Avalanche',exact:true}).waitFor({timeout:180000});report.bossMs=at()-start;});
   await step(7,'wallet-proof',async()=>{await page.locator('[data-wallet-proof-complete="true"]').waitFor({timeout:60000});report.historyKinds=await page.locator('[data-history-kind]').evaluateAll(rows=>[...new Set(rows.map(r=>r.dataset.historyKind))]);report.proofLinks=await page.locator('[data-history-kind] a[href*="snowtrace.io/tx/"]').count();if(report.historyKinds.length<5)throw Error('Fewer than five wallet action types');await capture('proof');});
+  if(process.env.V4_CONTRAST_COMPARE==='1'){
+   const before=await proofContrast(page);
+   await page.addStyleTag({content:'.ship-wallet-proof a{color:#ffe59d}.ship-receipt-toast>small{color:#59452f}'});
+   report.contrastComparison={before,after:await proofContrast(page),method:'Browser-only candidate colors; no production CSS change.'};
+  }
  }catch(e){report.failure=safe(e.message);report.visibleFailure=await page.locator('body').innerText().then(text=>safe(text.slice(-1600)));await capture('failure');}
- finally{closing=true;report.elapsedMs=at();report.complete=report.steps.length===7&&report.steps.every(s=>s.status==='pass');report.pass=report.complete&&!report.errors.length&&!report.httpFailures.length&&!report.networkFailures.length&&!report.popups.length;failed||=!report.pass;await context.close();await fixture('rollback');await writeFile(resolve(out,`run-${report.id}.json`),JSON.stringify(report,null,2)+'\n');}
+ finally{closing=true;report.elapsedMs=at();report.complete=report.steps.length===7&&report.steps.every(s=>s.status==='pass');report.proofContrastPass=report.ui.some(row=>row.proofContrast.length>0)&&report.ui.every(row=>row.proofContrast.every(check=>check.pass));report.pass=report.complete&&!report.errors.length&&!report.httpFailures.length&&!report.networkFailures.length&&!report.popups.length;failed||=!report.pass;await context.close();await fixture('rollback');await writeFile(resolve(out,`run-${report.id}.json`),JSON.stringify(report,null,2)+'\n');}
 }}finally{await browser.close();}
 if(failed)process.exitCode=1;

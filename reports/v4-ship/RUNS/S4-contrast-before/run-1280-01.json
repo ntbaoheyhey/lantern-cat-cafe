@@ -1,0 +1,4041 @@
+{
+  "id": "1280-01",
+  "at": "2026-11-16T07:54:02.407Z",
+  "sourceCommit": "f738c8975d162bbd045b9d4782f14aab5845a5bf",
+  "sourceChanges": [
+    "packages/game-rules/src/cardrpg/economy-v3.test.ts"
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "development + isolated Anvil/SQL",
+  "cleanProfile": true,
+  "realClicks": true,
+  "backendIsolated": true,
+  "steps": [
+    {
+      "number": 1,
+      "name": "landing",
+      "startedMs": 18,
+      "status": "pass",
+      "endedMs": 1595
+    },
+    {
+      "number": 2,
+      "name": "guest",
+      "startedMs": 1595,
+      "status": "pass",
+      "endedMs": 2573
+    },
+    {
+      "number": 3,
+      "name": "battle-reward",
+      "startedMs": 2573,
+      "status": "pass",
+      "endedMs": 95086
+    },
+    {
+      "number": 4,
+      "name": "first-receipt",
+      "startedMs": 95086,
+      "status": "pass",
+      "endedMs": 96399
+    },
+    {
+      "number": 5,
+      "name": "cafe-economy",
+      "startedMs": 96399,
+      "status": "pass",
+      "endedMs": 111736
+    },
+    {
+      "number": 6,
+      "name": "boss",
+      "startedMs": 111736,
+      "status": "pass",
+      "endedMs": 203645
+    },
+    {
+      "number": 7,
+      "name": "wallet-proof",
+      "startedMs": 203645,
+      "status": "pass",
+      "endedMs": 203779
+    }
+  ],
+  "clicks": [
+    {
+      "name": "Play free",
+      "atMs": 1779
+    },
+    {
+      "name": "Start trial",
+      "atMs": 2592
+    },
+    {
+      "name": "Mint trial reward",
+      "atMs": 95102
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 96418
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 99716
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 101517
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 105194
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 107006
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 109821
+    },
+    {
+      "name": "Face the boss",
+      "atMs": 111755
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "httpFailures": [],
+  "popups": [],
+  "receipts": [
+    {
+      "hash": "0xdb25f76d434bdf9426e6b8730a8760ac262095ffd2e083ecc959af42c1e59ea0",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021869085294",
+      "confirmationMs": 11,
+      "confirmedAt": 1794815737566,
+      "block": "26",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xedcc3c0ab346f864d41fae29f52324bb7d453ebeed19994708486bab9ce53970",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "mint",
+      "feeAvax": "0.00009356229768596",
+      "confirmationMs": 761.5,
+      "confirmedAt": 1794815738333,
+      "block": "27",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x68c92089af0688a13b3ef3d055c6bc10cddc84f700d9a7876f83bca6631104b7",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "claimTester",
+      "feeAvax": "0.000173882823754704",
+      "confirmationMs": 756.8999999910593,
+      "confirmedAt": 1794815739612,
+      "block": "28",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x92e774cd0a8ec094401ed98c71a4748b241764c27ea04435afec6ab1c3320ffc",
+      "wallet": "0xe3c12762f6D29aD9b755E97B25A947095C1f8130",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021583772007",
+      "confirmationMs": 507,
+      "confirmedAt": 1794815740145,
+      "block": "29",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x57ccc5dc393e0edc25a869493e15c691c6c33be63f227bd0710e24baf8ffa27e",
+      "wallet": "0xe3c12762f6D29aD9b755E97B25A947095C1f8130",
+      "payer": "0xe3c12762f6d29ad9b755e97b25a947095c1f8130",
+      "action": "claimTester",
+      "feeAvax": "0.000155108973246075",
+      "confirmationMs": 757.2999999970198,
+      "confirmedAt": 1794815740915,
+      "block": "30",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x4d44338c12de33f93af19428429c67a82a641c9aa7a7b18ca1be3b5b93dfc522",
+      "wallet": "0xe3c12762f6D29aD9b755E97B25A947095C1f8130",
+      "payer": "0xe3c12762f6d29ad9b755e97b25a947095c1f8130",
+      "action": "transfer",
+      "feeAvax": "0.000035905466576672",
+      "confirmationMs": 756,
+      "confirmedAt": 1794815741674,
+      "block": "31",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xfc00ed46d9d5e019b5a8fa148ad7de08482b90f8cb7a27481574e2d496ed025e",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "seal",
+      "feeAvax": "0.000083705310538268",
+      "confirmationMs": 758,
+      "confirmedAt": 1794815742910,
+      "block": "32",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x2799433abff7e67c2e4b15474dc9a03efd294e67b8639877232c0888ac5a506e",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "mint",
+      "feeAvax": "0.00013269844202294",
+      "confirmationMs": 756.7999999970198,
+      "confirmedAt": 1794815743679,
+      "block": "33",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xc9a2d108e1e50da2788d5fdd1267be8626d3b248ecf7e3d0474b3609d91f3043",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "seal",
+      "feeAvax": "0.00006599135641076",
+      "confirmationMs": 755,
+      "confirmedAt": 1794815744706,
+      "block": "34",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xc5e8a76ba7bb973e86bf54f6ccf8a3a73883a273af9d98f9a719cc91c0bf6e62",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "safeBatchTransferFrom",
+      "feeAvax": "0.00005674947572343",
+      "confirmationMs": 774.7000000029802,
+      "confirmedAt": 1794815745485,
+      "block": "35",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x391e98f3053335ac93d1a92d23ccf1dc99c82c1d8e42b80c0eeee0322e11216b",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "mint",
+      "feeAvax": "0.000131985536266649",
+      "confirmationMs": 758.7999999970198,
+      "confirmedAt": 1794815746261,
+      "block": "36",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xf19e37856e834dfa0d0ea068b150fe4b150f0b3672035fafce36232117219cc5",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "setApprovalForAll",
+      "feeAvax": "0.000047145906059399",
+      "confirmationMs": 759,
+      "confirmedAt": 1794815748387,
+      "block": "37",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x48e0edde3e8869bc2dab9ddb6610101d48d59d2c94e88d502f1b3533ce6e95ff",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "list",
+      "feeAvax": "0.000237427340012298",
+      "confirmationMs": 756,
+      "confirmedAt": 1794815749148,
+      "block": "38",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x07717c8c529d3d43ddc733c402786ad295ae20fc99f8b362ff829230f9968792",
+      "wallet": "0xe3c12762f6D29aD9b755E97B25A947095C1f8130",
+      "payer": "0xe3c12762f6d29ad9b755e97b25a947095c1f8130",
+      "action": "approve",
+      "feeAvax": "0.000047299506895251",
+      "confirmationMs": 757.6000000089407,
+      "confirmedAt": 1794815750202,
+      "block": "39",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xff4c806784ee72e35e02ad674e136f19a79c1201abb43f7c0889c7ace7a7284c",
+      "wallet": "0xe3c12762f6D29aD9b755E97B25A947095C1f8130",
+      "payer": "0xe3c12762f6d29ad9b755e97b25a947095c1f8130",
+      "action": "buy",
+      "feeAvax": "0.00018821813546672",
+      "confirmationMs": 759.8999999910593,
+      "confirmedAt": 1794815750968,
+      "block": "40",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x650b5a6d72e867bbf46fa56c996cf0dc6bdc792b20ac580cf5de9166de0070f1",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "withdraw",
+      "feeAvax": "0.000044693666424252",
+      "confirmationMs": 757.3999999910593,
+      "confirmedAt": 1794815751731,
+      "block": "41",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x204e7496b00c87f0b112d93063cebe7c46529695fd8c5e0d30ebbb267d48dab6",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "mint",
+      "feeAvax": "0.000131212217624945",
+      "confirmationMs": 757.5,
+      "confirmedAt": 1794815753016,
+      "block": "42",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x57bcc9d653407b1bd02936c0f8095e7b09194ca6adfd52e25a83be3e683d9ab2",
+      "wallet": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "payer": "0x7209b66f453d22f32ae31685982a9a621869a251",
+      "action": "claim",
+      "feeAvax": "0.00012059144179705",
+      "confirmationMs": 761.4000000059605,
+      "confirmedAt": 1794815753809,
+      "block": "43",
+      "gasSource": "cafe",
+      "local": true
+    }
+  ],
+  "ui": [
+    {
+      "name": "landing",
+      "atMs": 1591,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 0,
+      "proofContrast": []
+    },
+    {
+      "name": "guest",
+      "atMs": 2571,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 8,
+      "proofContrast": []
+    },
+    {
+      "name": "battle-reward",
+      "atMs": 95084,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 11,
+      "proofContrast": []
+    },
+    {
+      "name": "first-receipt",
+      "atMs": 96397,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 17,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00009356229768596 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 99706,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "YARN transferred",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000035905466576672 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 101502,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 20,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00013269844202294 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 104305,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000131985536266649 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 106979,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic listed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000237427340012298 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 109797,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 16,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Sale proceeds claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000044693666424252 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 111615,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144179705 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "cafe-economy",
+      "atMs": 111734,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144179705 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "boss",
+      "atMs": 203641,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144179705 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x7209…a251",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #1 × 1",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(234, 192, 129)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 6.909,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "wallet-proof",
+      "atMs": 203775,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144179705 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(188, 179, 196)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 1.914,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x7209…a251",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #1 × 1",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(84, 59, 33)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 1.132,
+          "minimum": 4.5,
+          "pass": false
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(234, 192, 129)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 6.909,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "firstBattleMs": 3393,
+  "firstBattleClicks": 2,
+  "firstRewardMs": 94977,
+  "firstReceiptMs": 96386,
+  "reloadRecovery": true,
+  "bossMs": 91886,
+  "historyKinds": [
+    "Claim",
+    "Mint",
+    "Withdrawal",
+    "Purchase",
+    "Listing",
+    "Approval",
+    "Burn",
+    "Transfer",
+    "Funding"
+  ],
+  "proofLinks": 15,
+  "contrastComparison": {
+    "before": [
+      {
+        "scope": "receipt",
+        "tag": "button",
+        "text": "×",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "strong",
+        "text": "Spool claimed",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dt",
+        "text": "Confirmed locally",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dd",
+        "text": "0.76 s",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dt",
+        "text": "Fee",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dd",
+        "text": "0.00012059144179705 AVAX",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "small",
+        "text": "Paid by the café · sponsored gas",
+        "foreground": "rgb(188, 179, 196)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 1.914,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "receipt",
+        "tag": "a",
+        "text": "Snowtrace receipt",
+        "foreground": "rgb(97, 64, 24)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 8.816,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "h1",
+        "text": "My café on Avalanche",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "p",
+        "text": "Your owned items and game transactions, verified for this wallet.",
+        "foreground": "rgb(247, 238, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 10.187,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Wallet 0x7209…a251",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "strong",
+        "text": "11.75 YARN",
+        "foreground": "rgb(247, 238, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 10.187,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "h2",
+        "text": "Owned items",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Paw Charm × 1",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Café Deed #1 × 1",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "h2",
+        "text": "Transactions · 15",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Claim · Block 43",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 42",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Withdrawal · Block 41",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Purchase · Block 40",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Listing · Block 38",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Approval · Block 37",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 36",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 35",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 34",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 33",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 32",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Transfer · Block 31",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Claim · Block 28",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 27",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Funding · Block 26",
+        "foreground": "rgb(84, 59, 33)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 1.132,
+        "minimum": 4.5,
+        "pass": false
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Powered by Routescan.io APIs",
+        "foreground": "rgb(234, 192, 129)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 6.909,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ],
+    "after": [
+      {
+        "scope": "receipt",
+        "tag": "button",
+        "text": "×",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "strong",
+        "text": "Spool claimed",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dt",
+        "text": "Confirmed locally",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dd",
+        "text": "0.76 s",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dt",
+        "text": "Fee",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "dd",
+        "text": "0.00012059144179705 AVAX",
+        "foreground": "rgb(48, 37, 31)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 14.097,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "small",
+        "text": "Paid by the café · sponsored gas",
+        "foreground": "rgb(89, 69, 47)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 8.579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "receipt",
+        "tag": "a",
+        "text": "Snowtrace receipt",
+        "foreground": "rgb(97, 64, 24)",
+        "backgrounds": [
+          [
+            255,
+            248,
+            235
+          ]
+        ],
+        "ratio": 8.816,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "h1",
+        "text": "My café on Avalanche",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "p",
+        "text": "Your owned items and game transactions, verified for this wallet.",
+        "foreground": "rgb(247, 238, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 10.187,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Wallet 0x7209…a251",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "strong",
+        "text": "11.75 YARN",
+        "foreground": "rgb(247, 238, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 10.187,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "h2",
+        "text": "Owned items",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Paw Charm × 1",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Café Deed #1 × 1",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "h2",
+        "text": "Transactions · 15",
+        "foreground": "rgb(245, 235, 220)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.953,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Claim · Block 43",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 42",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Withdrawal · Block 41",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Purchase · Block 40",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Listing · Block 38",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Approval · Block 37",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 36",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 35",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 34",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 33",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Burn · Block 32",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Transfer · Block 31",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Claim · Block 28",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Mint · Block 27",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Funding · Block 26",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "scope": "wallet",
+        "tag": "a",
+        "text": "Powered by Routescan.io APIs",
+        "foreground": "rgb(255, 229, 157)",
+        "backgrounds": [
+          [
+            71,
+            52,
+            39
+          ],
+          [
+            25,
+            26,
+            32
+          ]
+        ],
+        "ratio": 9.476,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ],
+    "method": "Browser-only candidate colors; no production CSS change."
+  },
+  "elapsedMs": 203789,
+  "complete": true,
+  "proofContrastPass": false,
+  "pass": true
+}

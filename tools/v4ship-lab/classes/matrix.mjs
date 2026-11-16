@@ -24,6 +24,8 @@ const balance=process.env.V4_CLASS_BALANCE??'none';
 const sessionMethod=process.env.V4_CLASS_SESSION_METHOD??'a6-legacy';
 const partyAttack=Number(process.env.V4_CLASS_ATTACK??1);
 assert(Number.isFinite(partyAttack)&&partyAttack>=1&&partyAttack<=1.5);
+const sharedClassAttack=process.env.V4_CLASS_SHARED_ATTACK===undefined?null:Number(process.env.V4_CLASS_SHARED_ATTACK);
+assert(sharedClassAttack===null||(production&&partyAttack===1&&Number.isFinite(sharedClassAttack)&&sharedClassAttack>=1&&sharedClassAttack<=1.5));
 const enemyPressure=Number(process.env.V4_CLASS_ENEMY_PRESSURE??1);
 assert(Number.isFinite(enemyPressure)&&enemyPressure>=1&&enemyPressure<=1.1);
 assert(['a6-legacy','c2-current'].includes(sessionMethod));
@@ -39,6 +41,7 @@ function variantPlugin(v){return {name:'v4ship-isolated-healer-study',enforce:'p
  if(production||v.id==='control'){
   if(!id.endsWith('/depth/gameplay-a6.ts'))return null;
   let code=source;
+  if(sharedClassAttack!==null)code=replaceOnce(code,'Math.round(attack * 1.15)',`Math.round(attack * ${sharedClassAttack})`,id);
   if(partyAttack!==1)code=replaceOnce(code,"if (actor.side !== 'enemy') continue;",`if(actor.side==='party'){if(actor.combatClass!=='healer')actor.attack=Math.round(actor.attack*${partyAttack});continue;}`,id);
   if(enemyPressure!==1)code=replaceOnce(code,"actor.attack * (b.chapter === 1 ? .65 : .85)",`actor.attack * (b.chapter === 1 ? .65 : .85) * ${enemyPressure}`,id);
   return code===source?null:{code,map:null};
@@ -85,7 +88,7 @@ async function fixture(bundle,fixture,seed){
  const party=b.actors.filter(a=>a.side==='party'),healers=new Set(b.actors.filter(a=>a.role==='healer').map(a=>a.id));
  return {fixture:fixture.id,seed,result:b.result,durationSeconds:elapsed/1000,actions,rounds:b.round,winHp:party.reduce((s,a)=>s+a.hp,0)/party.reduce((s,a)=>s+a.maxHp,0),healing:b.log.filter(e=>healers.has(e.actorId)&&e.kind==='heal').reduce((s,e)=>s+e.amount,0),healerDamage:b.log.filter(e=>healers.has(e.actorId)&&['damage','dot','detonate','reflect','reaction-damage'].includes(e.kind)).reduce((s,e)=>s+e.amount,0),hash:hash(b)};
 }
-const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),production,balance,partyAttack,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
+const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),production,balance,partyAttack,sharedClassAttack,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
 await mkdir(resolve(out,'..'),{recursive:true});
 for(const variant of variants){
  checkStop();

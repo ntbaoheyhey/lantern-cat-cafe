@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-16T08:16:15.206346+00:00",
+  "runs": [
+    {
+      "path": "reports/v4-ship/RUNS/S4-contrast-after/run-1280-01.json",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "complete": true,
+      "pathPass": true,
+      "stepsPassed": 7,
+      "firstBattleMs": 2929,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95301,
+      "totalMs": 202623,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15,
+      "reloadRecovery": true,
+      "contrastPass": true,
+      "contrastChecks": 128,
+      "minimumProofTextRatio": 8.579
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-contrast-after/run-1440-01.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "complete": true,
+      "pathPass": true,
+      "stepsPassed": 7,
+      "firstBattleMs": 3258,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95662,
+      "totalMs": 203029,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15,
+      "reloadRecovery": true,
+      "contrastPass": true,
+      "contrastChecks": 128,
+      "minimumProofTextRatio": 8.579
+    }
+  ],
+  "before": "RUNS/S4-contrast-before/run-1280-01.json",
+  "walletContrastBefore": 1.132,
+  "walletContrastAfter": 9.476,
+  "sponsorshipContrastBefore": 1.914,
+  "sponsorshipContrastAfter": 8.579,
+  "counterRecovery": "S4/counter-recovery.json",
+  "subsequentCssGeometryCheck": "S4/proof-layout.json",
+  "preservedCssFailure": "S4/proof-layout-attempt1.json",
+  "limits": [
+    "One run per desktop size; not the ten-per-size funnel gate.",
+    "Source changes recorded by each runner; no claim that an earlier base commit alone was tested.",
+    "After these real journeys, spacing/dismiss/hover CSS received a separate synthetic DOM geometry check. Final 20 journeys still required.",
+    "Proof contrast audit covers receipt and wallet text, not every game screen.",
+    "Local journey receipts do not establish sponsored Fuji latency."
+  ],
+  "gFunnelPassed": false,
+  "gUiPassed": false
+}

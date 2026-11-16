@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-16T08:16:15.206346+00:00",
+  "experimentalAttackMultiplier": 1.2,
+  "productionAttackMultiplier": 1.15,
+  "requiredRetentionBp": 2500,
+  "adopted": false,
+  "nativeAccounts": 1000,
+  "nativeSeconds": 1887.44087825,
+  "tokenScenarios": 18,
+  "tokenPassedScenarios": 16,
+  "failures": [
+    {
+      "scenario": "casual-heavy-d0.5-b0.1",
+      "distances": {
+        "T-a": 0.006185740534827455
+      },
+      "burnClaims": 0.9938142594651725,
+      "starRatio": 1.0771280460541024
+    },
+    {
+      "scenario": "casual-heavy-d0.5-b0.35",
+      "distances": {
+        "T-b": 0.0011482768827358375
+      },
+      "burnClaims": 1.1362439725989617,
+      "starRatio": 1.1012631045710095
+    }
+  ],
+  "balance": {
+    "firstLossMedianMinutes": 16.796033333333334,
+    "fixtures": [
+      {
+        "fixture": "wave1",
+        "wins": 100,
+        "count": 100,
+        "medianSeconds": 224.03333333335274,
+        "p90Seconds": 232.65333333335525,
+        "medianWinHp": 1,
+        "healerDamage": 0
+      },
+      {
+        "fixture": "wave3",
+        "wins": 100,
+        "count": 100,
+        "medianSeconds": 536.3666666665587,
+        "p90Seconds": 551.9399999999101,
+        "medianWinHp": 1,
+        "healerDamage": 0
+      },
+      {
+        "fixture": "boss",
+        "wins": 100,
+        "count": 100,
+        "medianSeconds": 86.23333333333224,
+        "p90Seconds": 87.86666666666534,
+        "medianWinHp": 1,
+        "healerDamage": 0
+      }
+    ]
+  },
+  "decision": "Reject adoption: balance passes, but the fixed-policy token gate still fails. Do not run final sensitivity/E4/E5 on an invalid candidate, change rates/thresholds, or create the sole parity baseline.",
+  "next": "Diagnose the fixed-25-percent boundary failures before selecting another class-only experiment."
+}
