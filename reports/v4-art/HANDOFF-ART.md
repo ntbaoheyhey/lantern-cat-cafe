@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T18:49UTC
+# ART execution anchor — 2026-11-16T18:52:36.191519+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Poll R2pipeline73945 and child74804 via REVIEW/A9/r2/pipeline-jobs.json + capture-jobs.json; main capture exited0, supplements/900p continue. Review new R2 sheets once only after source/marker checks.
+NEXT1: ps -p73945,74804,3426; inspect REVIEW/A9/r2/pipeline-jobs.json and jobs/a9-r2-capture.log. Fivefilms/5400markers PASS; 3x900p captures running. Await pipeline film-review/layout-review then inspect each new sheet once.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:60763fd90 verified; Needle150ms cadence selected and committed. R1pair failure+all5films preserved ef845ee67; new source regression/pipeline ongoing.
-LIVE: craftVite3426/5990; R2pipeline73945/jobs/a9-finish-r2.log with capture74804/jobs/a9-r2-capture.log. Validation73386 endedPASS18:44:15; Needlelive and16frontface observations PASS; lanePASS/77hashes. Old68961/69950 absent.
+LAST PUSH:8b70282b1 verified. Runtime60763fd90; R1failure ef845ee67 retained. R2summary and27own-ultimate action ledger written; images not yet reviewed.
+LIVE: craftVite3426/5990; R2pipeline73945/jobs/a9-finish-r2.log with capture74804/jobs/a9-r2-capture.log. Regression2664/318+typecheck+3F6PASS; lane77hashesPASS; liveFX16/16 areaPASS, freshface16/16 max.356607%.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 NEXTMETHOD formation: fresh5movies5400encoded frames have0bbox framing failures;900p pending. Prior Yarn79.35/77.95% failures remain retained, no replacement claim yet.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:2afterrewrite: new Needle90/150ms drills inspected once; selected4/8A9JPG. All R1elevenreviewedfilm sheets and previous boards closed;16R1unviewed superseded.
+IMAGEOPENS:0since this rewrite; A9selected4/8JPG. New R2film/900p sheets unreviewed. R1eleven reviewed sheets and all prior boards/drills closed;16R1unviewed superseded.
 SHAREDFOCUS: YarnA12 has5encodedframes after600ms; shakepeak2.938327px/100msobservedspan, strictduration/reducedmotion film stillOPEN. No fullA7/productionacceptance.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
