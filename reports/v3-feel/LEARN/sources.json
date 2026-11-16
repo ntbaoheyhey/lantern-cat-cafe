@@ -998,5 +998,75 @@
     "type": "experiment",
     "topic": "Q3.B",
     "takeaway": "Isolate original feet: two local contact anchors give<=0.21273px error across12 desktop/pose cases versus body-centre errors up to74.07px. Whole-body-bottom method rejected because tail contaminated it."
+  },
+  {
+    "id": "Q3B-X08",
+    "url_or_path": "tools/v3craft-lab/q3b/release-study.json",
+    "type": "experiment",
+    "topic": "Q3.B ultimate release",
+    "takeaway": "At identical30.0315% peak, finite release reduces1400ms peak-mask IoU from.832709 to.184279; long-held curtain rejected."
+  },
+  {
+    "id": "Q3B-S06",
+    "url_or_path": "https://threejs.org/docs/pages/Material.html",
+    "type": "doc",
+    "topic": "Q3.B death material integration",
+    "takeaway": "onBeforeCompile customizes native WebGL material shaders; customProgramCacheKey controls stable variant reuse."
+  },
+  {
+    "id": "Q3B-X09",
+    "url_or_path": "tools/v3craft-lab/q3b/death-study.json",
+    "type": "experiment",
+    "topic": "Q3.B death dissolve",
+    "takeaway": "Chained native material preserves original/seek/return exactly; erosion at300ms retains7907/12400 opaque pixels versus38/59 with fade; both clear600ms. Replaced-hook trial fails RGB max73 and is retained."
+  },
+  {
+    "id": "Q3B-X10",
+    "url_or_path": "tools/v3craft-lab/q3b/staff-ground-study.json",
+    "type": "experiment",
+    "topic": "Q3.B basic floor contact",
+    "takeaway": "Actual actor masks compare baseline versus24px floor offset at450ms; choose exposed local marks before stronger contrast, no whole-field wash."
+  },
+  {
+    "id": "P0-clock",
+    "url_or_path": "https://www.w3.org/TR/hr-time-3/",
+    "type": "formal",
+    "topic": "P0",
+    "takeaway": "Measure durations with monotonic time; translate clock origins explicitly instead of subtracting mixed render timestamps."
+  },
+  {
+    "id": "P0-ignore",
+    "url_or_path": "https://git-scm.com/docs/gitignore",
+    "type": "doc",
+    "topic": "P0",
+    "takeaway": "Ignore rules do not remove tracked artifacts from the index."
+  },
+  {
+    "id": "P0-rm",
+    "url_or_path": "https://git-scm.com/docs/git-rm",
+    "type": "doc",
+    "topic": "P0",
+    "takeaway": "Use explicit paths with rm --cached to preserve local evidence while removing it from future commits."
+  },
+  {
+    "id": "P0-test",
+    "url_or_path": "https://nodejs.org/api/test.html",
+    "type": "doc",
+    "topic": "P0",
+    "takeaway": "Assert both positive and negative examples; awaited tests report rejected promises as failures."
+  },
+  {
+    "id": "P0-experiment",
+    "url_or_path": "tools/v3craft-lab/p0/results.json",
+    "type": "experiment",
+    "topic": "P0",
+    "takeaway": "IoU alone passes translated or bent idle paintings; require anchors, identity and drawn-pose video evidence."
+  },
+  {
+    "id": "P0-local",
+    "url_or_path": "reports/v3-feel/REVIEW/Q3B-B1/REVIEW.md",
+    "type": "local",
+    "topic": "P0",
+    "takeaway": "Keep failed main-shape and weak pose observations while retaining good draft code."
   }
 ]

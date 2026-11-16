@@ -1,11 +1,12 @@
 /** V3-CRAFT acceptance contract; see REQUEST-CRAFT.txt and LEARN/C0.md.
  * Missing measurements/artifacts never pass. Owned gates retain their thresholds. */
-import {readFileSync,existsSync,writeFileSync} from 'node:fs';
+import {readFileSync,existsSync,writeFileSync,readdirSync} from 'node:fs';
 import {resolve,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {scheduleKeys,craftOwner,completedItems,selectedItems,learningReceipt,craftTimeReceipt} from './craft-policy.mjs';
+import {poseReceipt,poseLearningReceipt} from './pose-policy.mjs';
 export const root=resolve(import.meta.dirname,'../..');
 export const fixtures=Object.freeze(['wave1','wave3','boss']);
 const definitions=[];
@@ -13,6 +14,17 @@ function add(item,key,op,limit,requirement,scope='all'){
  definitions.push(Object.freeze({id:`${item}.${key}`,item,key,op,limit,requirement,scope}));
 }
 function rows(item,entries,scope='all'){for(const [key,op,limit,requirement,applicable=scope] of entries)add(item,key,op,limit,requirement,applicable);}
+rows('P0',[
+ ['policyTests','eq',true,'new pose gates have positive, negative and missing-evidence tests'],
+ ['evidenceBudget','eq',true,'tracked FEEL <=300 MB; per-item sheet/film limits preserved'],
+ ['adoptionRecorded','eq',true,'POSE PROMPT ADOPTED; F16/L6/L7 and inherited failures recorded'],
+ ['designerBrief','eq',true,'K0-K6 contract and timing brief copied to Desktop'],
+ ['branchPushed','eq',true,'P0 checkpoint pushed to codex/v3-feel-2026-11-14'],
+]);
+add('P','learn','eq',true,'P1-poses: >=12 sources, >=2 papers/formal docs, >=3 internet docs, own experiment, cited build commit');
+export const poseUnits=Object.freeze(readdirSync(resolve(root,'apps/web/public/units'),{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(resolve(root,'apps/web/public/units',d.name,'runtime.webp'))).map(d=>d.name).sort());
+for(const unit of poseUnits)add('P',unit,'eq',true,'4B.6: drawn silhouettes, reach, identity, anchors, blind read, all attack/hit windows, two revisions and Q1/Q2 regressions');
+for(const item of ['P2','P3','P4'])add(item,'craftTime','eq',true,'authoring >=60%, measurement <=20%, pose >=25min, basic >=30min, ultimate >=60min; actual intervals and revisions');
 rows('C0',[
  ['policyTests','eq',true,'each changed policy has a fake PASS and fake FAIL test'],
  ['recorderTrialResolved','eq',true,'one isolated recorder trial succeeds, or draft helpers are reverted and logged'],
@@ -207,7 +219,7 @@ for(const item of ['Q0','Q1','Q2','Q3','Q4','Q5','Q9']){
  if(['Q3','Q9'].includes(item))add(item,'referenceComparison','eq',true,'effect/pose same-scale private reference comparison');
  if(item!=='Q0')add(item,'videoDefects','eq',0,'any current-item or completed-item defect fails; future-item defects stay in the queue');
 }
-for(const item of ['C0','Q0','Q1','Q2','Q3.A','Q3.B','Q3','Q4','Q5','Q6','Q7','Q8','Q9','R1','R2','R3']){
+for(const item of ['P0','P1','P2','P3','P4','C0','Q0','Q1','Q2','Q3.A','Q3.B','Q3','Q4','Q5','Q6','Q7','Q8','Q9','R1','R2','R3']){
  if(!['Q0','R3'].includes(item))add(item,'learn','eq',true,'nonempty LEARN file; >=6 sources, >=1 formal/paper, >=3 internet docs, recorded own experiment; build commit cites LEARN');
  for(const key of ['typecheck','unitTests','parityRegression'])add(item,key,'eq',true,'per-item typecheck, touched-package unit tests, combat parity');
  if(['Q2','Q3','Q5','R2','R3'].includes(item))for(const key of ['browserSuite','aLaneGates','bLaneGates'])add(item,key,'eq',true,'full 435-case browser/A/B regression at Q2, Q3, Q5, R2 and FREEZE');
@@ -259,8 +271,19 @@ export function checkFeel(data,base=root,options={}){const selected=selectedItem
  const derived=(value,paths)=>({samples:[{fixture:'all',value}],evidence:paths.filter(p=>existsSync(resolve(base,p))).map(path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(base,path))).digest('hex')}))});
  if(gate.key==='learn'){
   const path=resolve(base,'reports/v3-feel/LEARN/sources.json');
-  const receipt=learningReceipt(base,gate.item,existsSync(path)?JSON.parse(readFileSync(path,'utf8')):[],options.commitMessage??data?.buildCommits?.[gate.item]?.message);
+  const sources=existsSync(path)?JSON.parse(readFileSync(path,'utf8')):[];
+  const message=options.commitMessage??data?.buildCommits?.[gate.item]?.message;
+  const receipt=gate.item==='P'?poseLearningReceipt(base,sources,message):learningReceipt(base,gate.item==='P1'?'P1-poses':gate.item,sources,message);
   measurement=derived(receipt.pass,receipt.paths);
+ }
+ if(gate.item==='P'&&gate.key!=='learn'){
+  const receipt=data?.poses?.[gate.key];
+  // Missing measurements remain OPEN. Structured receipt and signed artifacts both matter.
+  if(receipt)measurement={...measurement,samples:[{fixture:'all',value:poseReceipt(receipt,gate.key).pass}],evidence:[
+   ...(measurement?.evidence??[]),...(receipt.poses??[]).map(p=>({path:p.artifact,sha256:p.sha256})),
+   {path:receipt.blindRead?.labelsArtifact,sha256:receipt.blindRead?.labelsSha256},
+  ]};
+  else measurement=undefined;
  }
  if(gate.key==='craftTime'){
   const path='reports/v3-feel/CRAFT/craft-times.json';

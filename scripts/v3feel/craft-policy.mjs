@@ -85,7 +85,9 @@ export function craftTimeReceipt(log, item='Q3') {
   const expectedAssets=(log.expectedAssets??[]).filter(a=>a.item===item||a.item?.startsWith(item+'.'));
   if(!expectedAssets.length)errors.push('no expected asset roster for this item');
   for(const expected of expectedAssets) {
-    const asset=assets.get(expected.id),minimum={ultimate:60,basic:30,pose:20,drill:0}[expected.kind];
+    // Historical CRAFT receipts retain their original 20-minute pose floor.
+    // V3-POSE production raises it to 25 minutes (REQUEST-POSE 4.5).
+    const asset=assets.get(expected.id),minimum={ultimate:60,basic:30,pose:item.startsWith('P')?25:20,drill:0}[expected.kind];
     if(!asset||asset.kind!==expected.kind||minimum===undefined||asset.ms<minimum*60000)errors.push('authoring floor not met: '+expected.id);
     if(['ultimate','basic','drill'].includes(expected.kind)&&(!asset||asset.revisions.size<2))errors.push('fewer than two revise rounds: '+expected.id);
     if(['ultimate','basic','drill'].includes(expected.kind)&&(!asset||[...asset.revisions].filter(r=>reviews.get(expected.id)?.has(r)).length<2))errors.push('missing review evidence for two revise rounds: '+expected.id);

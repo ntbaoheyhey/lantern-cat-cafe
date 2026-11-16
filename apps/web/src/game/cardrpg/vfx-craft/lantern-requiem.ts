@@ -47,22 +47,27 @@ function ribbon(points:readonly CraftPoint[],width:number,segments=96){
  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(positions,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(indices);return g;
 }
 
-function moveRibbon(geometry:T.BufferGeometry,points:readonly CraftPoint[],width:number){
+function moveRibbon(geometry:T.BufferGeometry,points:readonly CraftPoint[],width:number,skew=0,blade=false,profileBlend=1){
  const curve=new T.CubicBezierCurve(...points.map(p=>new T.Vector2(p.x,p.y)) as [T.Vector2,T.Vector2,T.Vector2,T.Vector2]);curve.arcLengthDivisions=512;
  const attribute=geometry.attributes.position!,a=attribute.array as Float32Array,segments=attribute.count/2-1;
  for(let i=0;i<=segments;i++){
-  const u=i/segments,p=curve.getPointAt(u),t=curve.getTangentAt(u),half=width*.5*Math.pow(Math.sin(Math.PI*u),.68)*(.7+.3*u);
-  for(let side=0;side<2;side++){const sign=side?1:-1,j=(i*2+side)*3;a[j]=p.x-t.y*half*sign;a[j+1]=p.y+t.x*half*sign;}
+  const u=i/segments,p=curve.getPointAt(u),t=curve.getTangentAt(u);
+  // The blade's shoulder sits close to its nose. A symmetric belly made
+  // the light look like suspended cloth even with a directional texture.
+  const round=Math.pow(Math.sin(Math.PI*u),.68)*(.7+.3*u),knife=u<.72?.08+.92*Math.pow(u/.72,1.9):Math.pow((1-u)/.28,.74);
+  const profile=blade?round+(knife-round)*profileBlend:round;
+  const half=width*.5*profile;
+  for(let side=0;side<2;side++){const sign=(side?1:-1)+skew*Math.sin(Math.PI*u),j=(i*2+side)*3;a[j]=p.x-t.y*half*sign;a[j+1]=p.y+t.x*half*sign;}
  }
  attribute.needsUpdate=true;
 }
 
 function ribbonMaterial(noise:T.Texture,kind:'strand'|'body'|'ground'|'impact'){
- const palette=kind==='ground'?['#39213f','#8856b4','#e5b66c']:kind==='impact'?['#7b356e','#e7a5d0','#fff0b2']:['#291442','#8540c5','#f2c87e'];
+ const palette=kind==='ground'?['#23151d','#582a43','#f9b45b']:kind==='impact'?['#7b356e','#e7a5d0','#fff0b2']:['#291442','#8540c5','#f2c87e'];
  return new T.ShaderMaterial({transparent:true,depthTest:false,depthWrite:false,side:T.DoubleSide,toneMapped:false,
-  uniforms:{uNoise:{value:noise},uTime:{value:0},uHead:{value:0},uTail:{value:-.12},uAlpha:{value:0},uErode:{value:0},
+  uniforms:{uNoise:{value:noise},uTime:{value:0},uHead:{value:0},uTail:{value:-.12},uAlpha:{value:0},uErode:{value:0},uHeat:{value:0},uBlade:{value:kind==='body'?1:0},uGround:{value:kind==='ground'?1:0},
    uDark:{value:new T.Color(palette[0])},uBody:{value:new T.Color(palette[1])},uCore:{value:new T.Color(palette[2])},...faceUniforms()},
-  vertexShader:vertex,fragmentShader:`uniform sampler2D uNoise;uniform float uTime,uHead,uTail,uAlpha,uErode;
+  vertexShader:vertex,fragmentShader:`uniform sampler2D uNoise;uniform float uTime,uHead,uTail,uAlpha,uErode,uHeat,uBlade,uGround;
 uniform vec3 uDark,uBody,uCore;varying vec2 vUv;${faceDeclarations}
 void main(){
  float grain=texture2D(uNoise,vec2(vUv.x*.65-uTime*.32,vUv.y*3.6+uTime*.09)).r;
@@ -70,12 +75,21 @@ void main(){
  float tail=smoothstep(uTail-.045+(grain-.5)*.08,uTail+.08+(grain-.5)*.08,vUv.x);
  float tip=1.-smoothstep(uHead-.14,uHead+.01,vUv.x);
  float across=abs(vUv.y-mix(.66,.52,tip))/max(.02,.49*tip);
- float edge=1.-smoothstep(.82,1.,across);
+ float edge=1.-smoothstep(.82+.04*grain,1.,across);
+ // A thin tapered split in the last third makes the falling body fork;
+ // it is a geometric negative space, not another glowing stripe.
+ float split=exp(-pow((vUv.y-(.32+.10*vUv.x))/.028,2.))*smoothstep(.62,.86,vUv.x);
+ edge*=1.-split*uBlade*.94;
+ edge*=mix(1.,smoothstep(.20,.42,grain+.22*vUv.x),uGround);
  float alpha=edge*head*tail*smoothstep(uErode-.1,uErode+.1,grain)*uAlpha;
  alpha*=faceProtection();if(alpha<.001)discard;
- float lip=exp(-pow((vUv.y-.79)/.038,2.));
+ float lip=exp(-pow((vUv.y-.79)/.038,2.))*(1.-uBlade*.65);
  float vein=smoothstep(.58,.76,grain)*exp(-pow((vUv.y-.48)/.23,2.));
- vec3 colour=mix(uDark,uBody,.58+.42*grain);colour=mix(colour,uCore,clamp(lip*.84+vein*.14,0.,.88));
+ float spine=exp(-pow((vUv.y-(.57+.045*sin(vUv.x*8.-uTime*3.)))/.12,2.));
+ float flank=smoothstep(.20,.42,vUv.y)*(1.-smoothstep(.58,.76,vUv.y));
+ vec3 colour=mix(uDark,uBody,.28+.36*grain+.36*flank);
+ colour=mix(colour,uCore,clamp(lip*.84+vein*.23+spine*uBlade*(.18+.68*uHeat)+spine*uGround*.48,0.,.94));
+ colour=mix(colour,vec3(1.,.94,.72),uHeat*spine*.75);
  gl_FragColor=vec4(colour,alpha);
  #include <colorspace_fragment>
 }`});
@@ -125,11 +139,12 @@ export class LanternRequiem {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();
  readonly layers:Layer[]=[];readonly ready:Promise<void>;
  private noise=flowingNoise();private paint?:T.Texture;private shapeKey='';
- private painted:ShaderMesh[]=[];private ribbons:ShaderMesh[]=[];private groundVeins:ShaderMesh[]=[];private fans:ShaderMesh[]=[];
+ private painted:ShaderMesh[]=[];private ribbons:ShaderMesh[]=[];private groundVeins:ShaderMesh[]=[];
+ private fans:{mesh:ShaderMesh;target:CraftPoint;index:number}[]=[];
  private curtains:{mesh:ShaderMesh;lamp:number;foot:CraftPoint;width:number}[]=[];
  private fragments:Fragment[]=[];private fragmentMesh?:ShaderMesh;private disposed=false;
  private sourcePaths:{mesh:ShaderMesh;points:CraftPoint[];width:number}[]=[];
- readonly audit={elapsed:0,activeRoles:[] as Role[],source:{x:0,y:0},target:{x:0,y:0},mainShape:'open lantern arch with descending light pennants',revision:1};
+ readonly audit={elapsed:0,activeRoles:[] as Role[],source:{x:0,y:0},target:{x:0,y:0},mainShape:'three unequal falling lantern blades beneath an open crown',revision:2};
  constructor(){
   this.rear.name='Soot rear canopy';this.front.name='Soot local contact';this.ground.name='Soot finite ground veins';
   this.ready=new T.TextureLoader().loadAsync(paintUrl).then(paint=>{
@@ -145,46 +160,46 @@ export class LanternRequiem {
   (kind==='ground'?this.ground:kind==='impact'?this.front:this.rear).add(mesh);this.layers.push({role,mesh,foreground:kind==='impact'});return mesh;
  }
  private shape(f:RequiemFrame){
-  const w=f.width,h=f.height,k=w/1280,s=f.layoutSource,targets=f.targets.length?f.targets:[{x:w*.75,y:h*.52}];
+  const w=f.width,h=f.height,k=h/720,s=f.layoutSource,targets=f.targets.length?f.targets:[{x:w*.75,y:h*.52}];
   const t={x:targets.reduce((n,p)=>n+p.x,0)/targets.length,y:targets.reduce((n,p)=>n+p.y,0)/targets.length};
   const key=[w,h,s.x,s.y,...targets.flatMap(p=>[p.x,p.y]),...f.feet.flatMap(p=>[p.x,p.y])].map(n=>Math.round(n)).join('/');
   if(key===this.shapeKey)return;this.shapeKey=key;
   for(const layer of [...this.layers])if(!this.painted.includes(layer.mesh)){layer.mesh.removeFromParent();layer.mesh.geometry.dispose();layer.mesh.material.dispose();this.layers.splice(this.layers.indexOf(layer),1);}
   this.ribbons=[];this.groundVeins=[];this.fans=[];this.sourcePaths=[];this.curtains=[];
   const p=(x:number,y:number)=>({x,y});
-  // An open arch and two hanging pennants. The rejected lower return path
-  // closed the composition into a loop and weakened the lantern silhouette.
-  this.ribbons.push(this.addRibbon([s,p(s.x+w*.13,s.y-h*.23),p(w*.59,h*.05),p(w*.80,h*.22)],126*k,'body','canopy-ribbon'));
-  this.ribbons.push(this.addRibbon([p(w*.48,h*.18),p(w*.53,h*.38),p(w*.59,h*.47),p(t.x-w*.065,t.y+h*.22)],137*k,'body','canopy-ribbon'));
-  this.ribbons.push(this.addRibbon([p(w*.68,h*.17),p(w*.87,h*.07),p(w*.94,h*.37),p(t.x+w*.13,t.y+h*.18)],118*k,'body','canopy-ribbon'));
-  this.ribbons.push(this.addRibbon([s,p(s.x+w*.15,s.y-h*.12),p(t.x-w*.17,t.y-h*.19),t],19*k,'strand','cast-strand'));
+  // One long leading arch; two unequal slivers echo its direction. The
+  // previous three equally weighted hanging forms read as static drapery.
+  this.ribbons.push(this.addRibbon([s,p(s.x+w*.16,s.y-h*.14),p(w*.56,h*.12),p(w*.88,h*.29)],170*k,'body','canopy-ribbon'));
+  this.ribbons.push(this.addRibbon([p(w*.38,h*.20),p(w*.47,h*.16),p(w*.55,h*.22),p(w*.63,h*.43)],54*k,'body','canopy-ribbon'));
+  this.ribbons.push(this.addRibbon([p(w*.72,h*.18),p(w*.89,h*.08),p(w*.96,h*.31),p(w*.91,h*.49)],86*k,'body','canopy-ribbon'));
+  this.ribbons.push(this.addRibbon([s,p(s.x+w*.15,s.y-h*.12),p(t.x-w*.17,t.y-h*.19),t],28*k,'strand','cast-strand'));
   // The first strand must be visible outside the raised hand. Keeping this
   // narrow layer behind the caster made the first part of the cast disappear.
   this.front.add(this.ribbons[3]!);this.layers.find(l=>l.mesh===this.ribbons[3])!.foreground=true;
   for(const [index,points,width]of [
-   [0,[s,p(s.x+w*.13,s.y-h*.23),p(w*.59,h*.05),p(w*.80,h*.22)],126*k],
-   [3,[s,p(s.x+w*.15,s.y-h*.12),p(t.x-w*.17,t.y-h*.19),t],19*k],
+   [0,[s,p(s.x+w*.16,s.y-h*.14),p(w*.56,h*.12),p(w*.88,h*.29)],170*k],
+   [3,[s,p(s.x+w*.15,s.y-h*.12),p(t.x-w*.17,t.y-h*.19),t],28*k],
   ] as [number,CraftPoint[],number][])this.sourcePaths.push({mesh:this.ribbons[index]!,points:points.map(p=>({...p})),width});
   const floor=Math.min(h*.84,Math.max(...f.feet.map(p=>p.y),h*.71));
-  for(const [lamp,x,width,offset]of [[1,.56,160,0],[2,.73,188,13],[3,.89,148,-23]]){
+  for(const [lamp,x,width,offset]of [[1,.58,170,-38],[2,.79,350,12],[3,.96,130,-68]]){
    const foot=p(w*x!,floor+offset!*k),start=p(w*(x!-.08),h*.39);
    const mesh=this.addRibbon([start,p(start.x-w*.10,start.y+h*.12),p(foot.x-w*.06,foot.y-h*.16),foot],width!*k,'body','released-light');
    this.curtains.push({mesh,lamp:lamp!,foot,width:width!*k});
   }
   for(const [i,foot] of f.feet.entries())for(let vein=0;vein<3;vein++){
-   const length=(vein===1?130:85)*k,dy=[-18,8,29][vein]!*k;
-   this.groundVeins.push(this.addRibbon([p(foot.x-28*k,foot.y),p(foot.x,foot.y+dy*.5),p(foot.x+length*.5,foot.y+dy),p(foot.x+length,foot.y+dy*.5)],(vein===1?17:11)*k,'ground','ground-veins'));
+   const length=[95,155,65][vein]!*k,dy=[-22,8,28][vein]!*k;
+   this.groundVeins.push(this.addRibbon([p(foot.x-24*k,foot.y),p(foot.x,foot.y+dy*.5),p(foot.x+length*.5,foot.y+dy),p(foot.x+length,foot.y+dy*.5)],[6,11,7][vein]!*k,'ground','ground-veins'));
    void i;
   }
-  for(const [i,target]of targets.entries())for(const [angle,length,width]of [[.72,83,12],[1.18,119,25],[1.76,69,9]]){
-   const adjusted=angle!+(i%3-1)*.12,dx=Math.cos(adjusted)*length!*k,dy=Math.sin(adjusted)*length!*k;
-   this.fans.push(this.addRibbon([p(target.x-9*k,target.y-18*k),p(target.x+dx*.25,target.y+dy*.25),p(target.x+dx*.7,target.y+dy*.65),p(target.x+dx,target.y+dy)],width!*k,'impact','impact-fan'));
+  for(const target of targets)for(let index=0;index<3;index++){
+   const mesh=this.addRibbon([target,target,target,p(target.x+1,target.y+1)],1,'impact','impact-fan');
+   this.fans.push({mesh,target,index});
   }
   this.fragments=[];
-  for(const [i,target]of targets.entries())for(let n=0;n<12;n++){
-   const angle=-1.2+n/11*2.3,speed=(100+(n*61+i*19)%190)*k;
-   this.fragments.push({birth:1175+n*9,life:480+n%4*83,ox:target.x+(n%3-1)*9*k,oy:target.y+(n/11-.5)*45*k,
-    vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-40*k,drag:2.7,gravity:270*k,width:(n%3+3)*k,length:(n%4+7)*k,spin:(n%2?1:-1)*.5});
+  for(const [i,target]of targets.entries())for(let n=0;n<9;n++){
+   const angle=-1.65+n/8*2.4,speed=(240+(n*61+i*19)%290)*k;
+   this.fragments.push({birth:1133.333+n*11,life:480+n%4*83,ox:target.x+(n%3-1)*13*k,oy:target.y+(n/8-.5)*45*k,
+    vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-65*k,drag:2.9,gravity:380*k,width:(6+n%3*3)*k,length:(14+n%4*6)*k,spin:(n%2?1:-1)*.65});
   }
   const positions=new Float32Array(this.fragments.length*12),uv=new Float32Array(this.fragments.length*8),ages=new Float32Array(this.fragments.length*4),indices:number[]=[];
   for(let i=0;i<this.fragments.length;i++){uv.set([0,0,1,0,0,1,1,1],i*8);const a=i*4;indices.push(a,a+1,a+2,a+1,a+3,a+2);}
@@ -192,31 +207,39 @@ export class LanternRequiem {
   const m=new T.ShaderMaterial({transparent:true,depthTest:false,depthWrite:false,side:T.DoubleSide,toneMapped:false,uniforms:{...faceUniforms()},
    vertexShader:vertex.replace('void main()', 'attribute float aAge;varying float vAge;void main()').replace('vUv=uv;','vAge=aAge;vUv=uv;'),
    fragmentShader:`varying vec2 vUv;varying float vAge;${faceDeclarations}
-void main(){float shape=1.-smoothstep(.65,1.,abs(vUv.y-.5)*2.+abs(vUv.x-.5)*.3);float a=shape*smoothstep(0.,.13,vAge)*(1.-smoothstep(.35,1.,vAge))*faceProtection();if(a<.001)discard;
-vec3 colour=mix(vec3(1.,.76,.30),vec3(.31,.075,.44),smoothstep(.05,.9,vAge));gl_FragColor=vec4(colour,a);
+void main(){float width=.12+.88*(1.-abs(vUv.x-.42)*1.72);float shape=1.-smoothstep(max(.03,width*.66),max(.06,width),abs(vUv.y-.5)*2.);float a=shape*smoothstep(0.,.13,vAge)*(1.-smoothstep(.35,1.,vAge))*faceProtection();if(a<.001)discard;
+vec3 colour=mix(vec3(1.,.91,.55),vec3(.95,.28,.025),smoothstep(.05,.36,vAge));
+colour=mix(colour,vec3(.24,.02,.035),smoothstep(.45,1.,vAge));gl_FragColor=vec4(colour,a);
 #include <colorspace_fragment>
 }`});
   this.fragmentMesh=new T.Mesh(g,m);this.fragmentMesh.frustumCulled=false;this.front.add(this.fragmentMesh);this.layers.push({role:'cooling-fragments',mesh:this.fragmentMesh,foreground:true});
   this.audit.source={...s};this.audit.target=t;
  }
  render(f:RequiemFrame){
-  this.shape(f);const ms=f.elapsed,w=f.width,h=f.height,k=w/1280,px=f.worldWidth/w;
+  this.shape(f);const ms=f.elapsed,w=f.width,h=f.height,k=h/720,px=f.worldWidth/w;
+  const held=ms>=1100&&ms<1175,artTime=held?1100:ms,descent=smooth((artTime-900)/200);
   const dx=f.source.x-f.layoutSource.x,dy=f.source.y-f.layoutSource.y;
   for(const path of this.sourcePaths){
-   moveRibbon(path.mesh.geometry,path.points.map((p,i)=>i<2?{x:p.x+dx,y:p.y+dy}:p),path.width);
+   const leading=path.mesh===this.ribbons[0];
+   const points=path.points.map((p,i)=>i<2?{x:p.x+dx,y:p.y+dy}:leading?
+    {x:p.x+(i===2?w*.09:-w*.035)*descent,y:p.y+(i===2?h*.075:h*.43)*descent}:p);
+   moveRibbon(path.mesh.geometry,points,path.width*(leading?1+.40*descent:1),leading?-.4*descent:0,leading,descent);
   }
   for(const root of [this.rear,this.front,this.ground]){root.visible=ms>=0&&ms<2200;root.position.set(-f.worldWidth/2,f.worldHeight,0);root.scale.set(px,-px,1);}
   this.rear.renderOrder=f.rearOrder;this.ground.renderOrder=f.rearOrder-1;this.front.renderOrder=f.frontOrder;
-  const cast=clamp((ms-600)/500),held=ms>=1100&&ms<1175,artTime=held?1100:ms,settle=clamp((ms-1175)/850);
-  const stretch=.72+.28*smooth(cast),extentX=w*.76/512,extentY=h*1.04/512;
+  const cast=clamp((ms-600)/500),settle=clamp((ms-1175)/850);
+  const stretch=.70+.30*smooth(cast),extentX=w*.64/512,extentY=h*.82/512;
+  const release=clamp((artTime-1175)/370),pull=1-(1-release)*(1-release);
   for(const [i,mesh]of this.painted.entries()){
    const u=mesh.material.uniforms,delay=i?20+i*16:0,unfurl=clamp((ms-600-delay)/(500-delay));
-   u.uAlpha!.value=envelope(ms,600+delay,85,1900,150);
-   u.uReveal!.value=.40+.66*Math.pow(unfurl,.72);u.uErode!.value=-.1+1.2*smooth((artTime-1220-i*55)/(560-i*20));
-   u.uExtent!.value.set(extentX*stretch,extentY*(.80+.20*smooth(cast)));
+   u.uAlpha!.value=envelope(ms,600+delay,66.667,1680,150);
+   u.uReveal!.value=.40+.66*Math.pow(unfurl,.72);u.uErode!.value=-.1+1.25*smooth((artTime-1175-i*12)/340);
+   const partWidth=[.82,1,1.08,.78][i]!*(i===0?1-.24*descent:1),partHeight=[.82,.90,1.07,.78][i]!*(i===0?1-.22*descent:1);
+   u.uExtent!.value.set(extentX*stretch*partWidth,extentY*(.80+.20*smooth(cast))*partHeight);
    const contact=ms<1100?0:held?1:1-smooth((ms-1175)/230);
-   const drop=i?smooth((artTime-(950+(i%2)*25))/(150-(i%2)*25))*(i===2?55:35):0;
-   u.uShift!.value.set(w*.66-w*.76*stretch*.5,h*(i?.20:.34)-h*1.04*(.80+.20*smooth(cast))*.5+(i?(-42*(1-smooth(unfurl))+drop+contact*(i===2?8:4))*k:contact*10*k));
+   const drop=i?smooth((artTime-(950+(i%2)*25))/(150-(i%2)*25))*(i===2?37:22):0;
+   u.uShift!.value.set(w*.64-w*.64*stretch*.5*partWidth+[0,-90,-50,5][i]!*k*smooth(cast)+(i===0?18:9)*k*pull,
+    h*(i?.13:.29)-h*.82*(.80+.20*smooth(cast))*.5*partHeight+(i?(-42*(1-smooth(unfurl))+drop+contact*(i===2?8:4))*k:contact*10*k)-pull*(i?10:26)*k);
    u.uAngle!.value=f.reducedMotion?0:(i?Math.sin(unfurl*Math.PI)*(i===1?-.28:i===3?.22:-.13)+Math.sin(settle*Math.PI*2)*.065*(1-settle):-Math.sin(cast*Math.PI)*.05);
    u.uBend!.value=f.reducedMotion?0:i===0?-35*Math.sin(cast*Math.PI)-16*Math.sin(settle*Math.PI):0;
    u.uHeat!.value=ms<1100?0:held?1:(1-smooth((ms-1175)/330));
@@ -225,10 +248,11 @@ vec3 colour=mix(vec3(1.,.76,.30),vec3(.31,.075,.44),smoothstep(.05,.9,vAge));gl_
   for(const [i,mesh]of this.ribbons.entries()){
    const u=mesh.material.uniforms,opening=i===3;
    u.uTime!.value=(held?1100:ms)/1000;
-   u.uHead!.value=opening?Math.min(1.04,.19+.85*(1-Math.pow(1-cast,2))):(.09+.95*Math.pow(clamp((ms-600-i*20)/(500-i*20)),.78));
-   u.uTail!.value=-.12+1.3*smooth((ms-1280-i*70)/(650-i*30));
-   u.uAlpha!.value=opening?envelope(ms,0,100,1420,300)*.96:envelope(ms,600+i*20,75,2150,110)*.9;
-   u.uErode!.value=-.1+1.2*smooth((ms-1480-i*30)/650);
+   u.uHead!.value=opening?Math.min(1.04,.19+.85*(1-Math.pow(1-cast,2))):(.16+.88*Math.pow(clamp((ms-600-i*20)/(500-i*20)),.65));
+   u.uTail!.value=-.12+1.35*pull;
+   u.uAlpha!.value=opening?envelope(ms,0,100,1400,250)*.96:envelope(ms,600+i*20,66.667,1740,160)*.94;
+   u.uErode!.value=-.1+1.2*smooth((artTime-1300-i*20)/400);
+   u.uHeat!.value=ms<1100?(opening?.28+.30*smooth(cast):0):1-smooth((ms-1133.333)/83.333);
    mesh.visible=u.uAlpha!.value>.001;mesh.renderOrder=i;
   }
   const centres=[[0,0],[151,330],[262,355],[361,315]];
@@ -239,23 +263,35 @@ vec3 colour=mix(vec3(1.,.76,.30),vec3(.31,.075,.44),smoothstep(.05,.9,vAge));gl_
    const start={x:(Math.cos(angle)*dx+Math.sin(angle)*dy+pivot.x)*extent.x+shift.x,
     y:(-Math.sin(angle)*dx+Math.cos(angle)*dy+pivot.y)*extent.y+shift.y};
    const foot=curtain.foot,span=foot.y-start.y;
-   // Narrow relative to travel, with monotone descent. The first author
-   // preview folded broad, short strips into curls around the target feet.
-   const width=Math.min(curtain.width,Math.max(30,span*.58));
-   moveRibbon(curtain.mesh.geometry,[start,{x:start.x+(foot.x-start.x)*.15,y:start.y+span*.30},
-    {x:foot.x-(foot.x-start.x)*.13,y:start.y+span*.76},foot],width*(.6+.4*smooth((artTime-840)/260)));
+   // An unequal blade shoulder bends away from the stream, then peels
+   // forward after contact. Vertical travel remains monotone at every key.
+   const width=Math.min(curtain.width,Math.max(30,span*(i===1?1.20:.76))),bend=[-.021,.023,-.010][i]!*w;
+   const end={x:foot.x+pull*(i===1?74:38)*k,y:foot.y-pull*(i===1?20:42)*k};
+   moveRibbon(curtain.mesh.geometry,[start,{x:start.x+(end.x-start.x)*.15+bend*(1-.5*pull),y:start.y+span*.28},
+    {x:end.x-(end.x-start.x)*.10+bend*.28,y:start.y+span*.79},end],
+    width*(.40+.60*smooth((artTime-800)/300))*(1-.34*pull),i===1?.58:-.45,true);
    const u=curtain.mesh.material.uniforms;
    u.uTime!.value=artTime/1000;u.uHead!.value=.05+1.03*smooth((artTime-810-i*35)/(290-i*35));
-   u.uTail!.value=-.12+1.3*smooth((artTime-1260-i*90)/(650-i*35));
-   u.uAlpha!.value=envelope(ms,790+i*35,100,2160,180)*.94;
-   u.uErode!.value=-.1+1.2*smooth((artTime-1480-i*50)/650);
+   u.uTail!.value=-.12+1.35*pull;
+   u.uAlpha!.value=envelope(ms,790+i*35,100,1740,180)*.97;
+   u.uErode!.value=-.1+1.2*smooth((artTime-1320-i*15)/380);
+   u.uHeat!.value=ms<1100?.25*smooth((ms-900)/200):1-smooth((ms-1133.333)/110);
    curtain.mesh.visible=u.uAlpha!.value>.001;curtain.mesh.renderOrder=20+i;
   }
   for(const [i,mesh]of this.groundVeins.entries()){
-   const u=mesh.material.uniforms,delay=i%3*33.333;u.uTime!.value=ms/1000;u.uHead!.value=1.05*smooth((ms-1100-delay)/200);
-   u.uTail!.value=-.1;u.uAlpha!.value=envelope(ms,1100+delay,66.667,2133,350)*.75;u.uErode!.value=smooth((ms-1500-delay)/600);mesh.visible=u.uAlpha!.value>.001;
+   const u=mesh.material.uniforms,delay=i%3*16.667;u.uTime!.value=ms/1000;u.uHead!.value=1.05*smooth((ms-1100-delay)/110);
+   u.uTail!.value=-.1;u.uAlpha!.value=envelope(ms,1100+delay,66.667,2050,350)*.94;u.uErode!.value=smooth((ms-1450-delay)/550);u.uHeat!.value=.5*(1-smooth((ms-1175)/250));mesh.visible=u.uAlpha!.value>.001;
   }
-  for(const mesh of this.fans){const u=mesh.material.uniforms;u.uTime!.value=1.1;u.uHead!.value=1.05;u.uTail!.value=-.1;u.uErode!.value=-.1;u.uAlpha!.value=ms>=1100&&ms<1166.667?1-.45*smooth((ms-1100)/66.667):0;mesh.visible=u.uAlpha!.value>0;}
+  for(const {mesh,target,index}of this.fans){
+   const age=Math.max(0,ms-1100),q=smooth(age/160),angle=[-.28,.64,1.48][index]!,length=[168,128,92][index]!*k;
+   const dx=Math.cos(angle),dy=Math.sin(angle),offset=length*.36*q;
+   const origin={x:target.x+dx*offset,y:target.y+dy*offset},end={x:target.x+dx*length*(.64+.36*q),y:target.y+dy*length*(.64+.36*q)};
+   moveRibbon(mesh.geometry,[origin,{x:origin.x+dx*length*.24-dy*18*k*q,y:origin.y+dy*length*.24+dx*18*k*q},
+    {x:end.x-dx*length*.15,y:end.y-dy*length*.15},end],[36,29,17][index]!*k*(1-.72*q),.35);
+   const u=mesh.material.uniforms;u.uTime!.value=ms/1000;u.uHead!.value=1.05;u.uTail!.value=-.1;u.uErode!.value=-.1+1.2*smooth((age-50)/150);
+   u.uAlpha!.value=ms>=1100&&ms<1320?(1-smooth((age-33.333)/166.667))*.94:0;
+   u.uHeat!.value=1-smooth((age-16.667)/33.333);mesh.visible=u.uAlpha!.value>.001;
+  }
   if(this.fragmentMesh){
    const g=this.fragmentMesh.geometry,p=g.attributes.position!.array as Float32Array,a=g.attributes.aAge!.array as Float32Array;
    let live=0;

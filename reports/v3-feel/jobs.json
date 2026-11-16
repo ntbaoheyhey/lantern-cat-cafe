@@ -201,7 +201,8 @@
       "browser",
       "aLane",
       "bLane"
-    ]
+    ],
+    "pidReuseNote": "2026-11-16: PID now belongs to system_installd; not our process, untouched."
   },
   "c0Clock": {
     "pid": 13860,
@@ -436,7 +437,9 @@
     "log": "reports/v3-feel/Q3A-drills-typecheck.log",
     "started": "2026-11-15T15:09:33.987258+00:00",
     "status": "PASS: completed log",
-    "ended": "2026-11-15T15:10:07.547671+00:00"
+    "ended": "2026-11-15T15:10:07.547671+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
   },
   "Q3A-drills-tools": {
     "pid": 46892,
@@ -452,7 +455,9 @@
     "log": "reports/v3-feel/Q3A-drills-tools.log",
     "started": "2026-11-15T15:09:33.988945+00:00",
     "status": "PASS: completed log",
-    "ended": "2026-11-15T15:10:07.552258+00:00"
+    "ended": "2026-11-15T15:10:07.552258+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
   },
   "Q3A-drills-parity": {
     "pid": 47143,
@@ -464,7 +469,9 @@
     "log": "reports/v3-feel/Q3A-drills-parity.log",
     "started": "2026-11-15T15:10:07.554125+00:00",
     "status": "PASS: three fixtures and baseline hashes match; completed log",
-    "ended": "2026-11-15T15:11:59.229879+00:00"
+    "ended": "2026-11-15T15:11:59.229879+00:00",
+    "finished": true,
+    "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
   },
   "Q3A-final-typecheck": {
     "pid": 60160,
@@ -688,5 +695,82 @@
     "finished": true,
     "verifiedAt": "2026-11-15T17:48:04.450026+00:00",
     "status": "PID absent;28/27/28 action sheets complete, review pending."
+  },
+  "Q3B-R2-preview-typecheck": {
+    "pid": 87557,
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "typecheck"
+    ],
+    "log": "reports/v3-feel/Q3B-R2-preview-typecheck.log",
+    "started": "2026-11-15T18:12:47.397326+00:00",
+    "status": "PASS: foreground repeat session91472 exit0 verified",
+    "finished": true,
+    "verifiedAt": "2026-11-15T18:17:57.647167+00:00"
+  },
+  "Q3B-ground-R2-parity": {
+    "pid": 87558,
+    "command": [
+      "node",
+      "scripts/v3feel/parity.mjs",
+      "check"
+    ],
+    "log": "reports/v3-feel/Q3B-ground-R2-parity.log",
+    "started": "2026-11-15T18:12:47.397326+00:00",
+    "status": "PASS: all three fixture hashes parity=true",
+    "finished": true,
+    "verifiedAt": "2026-11-15T18:17:57.647167+00:00"
+  },
+  "Q3B-death-study": {
+    "command": "node tools/v3craft-lab/q3b/death-study.mjs",
+    "log": "reports/v3-feel/Q3B-death-study.log",
+    "finished": true,
+    "status": "Exit0 verified; source return mismatch max73, requires hook chaining before acceptance",
+    "verifiedAt": "2026-11-15T18:17:57.647167+00:00"
+  },
+  "Q3B-death-study-corrected": {
+    "pid": null,
+    "command": "node tools/v3craft-lab/q3b/death-study.mjs",
+    "log": "reports/v3-feel/Q3B-death-study-corrected.log",
+    "started": "2026-11-15T18:18:07.972698+00:00",
+    "finished": true,
+    "status": "Completed exit0 and results inspected",
+    "verifiedAt": "2026-11-15T18:24:58.439962+00:00"
+  },
+  "Q3B-R2-boss-preview": {
+    "pid": 88831,
+    "command": "node tools/v3craft-lab/q3b/native-preview.mjs 1440 900 boss",
+    "log": "reports/v3-feel/Q3B-R2-boss-preview.log",
+    "started": "2026-11-15T18:18:07.972698+00:00",
+    "finished": true,
+    "status": "Completed exit0 and results inspected",
+    "verifiedAt": "2026-11-15T18:24:58.439962+00:00"
+  },
+  "Q3B-death-integration": {
+    "pid": null,
+    "command": "node tools/v3craft-lab/q3b/death-integration-check.mjs",
+    "log": "reports/v3-feel/Q3B-death-integration-check.log",
+    "finished": true,
+    "verifiedAt": "2026-11-15T18:24:58.439962+00:00"
+  },
+  "Q3B-staff-ground-study": {
+    "pid": 90115,
+    "command": "node tools/v3craft-lab/q3b/staff-ground-study.mjs",
+    "log": "reports/v3-feel/Q3B-staff-ground-study.log",
+    "finished": true,
+    "verifiedAt": "2026-11-16T01:06:03.593519+00:00",
+    "status": "Completed; two result rows, zero page errors. Log verified at P0 resume."
+  },
+  "Q3B-R2-capture": {
+    "pid": 91597,
+    "command": "node scripts/v3feel/capture.mjs --item Q3B-R2 --seconds 30 --video-seconds 30 --frame-marker",
+    "log": "reports/v3-feel/Q3B-R2-capture.log",
+    "started": "2026-11-15T18:33:50.722647+00:00",
+    "finished": true,
+    "status": "Completed: all3 films;1805/1804/1804 compositor frames;29/29/28 actions;parity true. PID absent and terminal summaries verified.",
+    "auditedAt": "2026-11-15T18:38:02.847164+00:00",
+    "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
   }
 }

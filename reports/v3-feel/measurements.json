@@ -4535,7 +4535,7 @@
       "evidence": [
         {
           "path": "assets/provenance.json",
-          "sha256": "9560fc85b97b6d2679e4bff6b626ada74fe912a04572289488460b050435cc62"
+          "sha256": "1825112c3e57eec2b13798fcbcd7e4a914f930c6e72d3b62bb26de66d0cbfc68"
         },
         {
           "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
@@ -4561,13 +4561,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 28
+          "value": 27
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/HANDOFF-FEEL.md",
-          "sha256": "3162812eeab85590c355540886978247ee19fb5658be3d5d75efc52a9074cefb"
+          "sha256": "2fc3d2616d68b7fa856f3b148f502bc1e540e329950a082000e4ad45300b6cf1"
         }
       ]
     },
@@ -4575,13 +4575,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 17
+          "value": 20
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/STATUS-VI.md",
-          "sha256": "f18bcb5c08e2eb700e980df65d79a99cc3880e3b1851084545ac571ff1c1e0ed"
+          "sha256": "51a3be096b1a35cea177913df9c9159a0d5dbeb693d5bf348bd132feee7a02b3"
         }
       ]
     },
@@ -6728,9 +6728,111 @@
           "sha256": "dbabc89208addf7688a2b065466cedd991055e116d8d8252497be51edb4c4290"
         }
       ]
+    },
+    "P0.policyTests": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P0/results.json",
+          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+        }
+      ]
+    },
+    "P0.evidenceBudget": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P0/results.json",
+          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+        }
+      ]
+    },
+    "P0.adoptionRecorded": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/DECISIONS-FEEL.md",
+          "sha256": "8e26ab96abcaadb2d72b831754087d6077fc38efef9fa0c014094fa2f92068b8"
+        }
+      ]
+    },
+    "P0.designerBrief": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/DESIGNER-POSE-BRIEF-VI.md",
+          "sha256": "91545caf8748fbb82363356b09e3e8a5c62bde5075407c98bd265ce1dc3d8409"
+        },
+        {
+          "path": "reports/v3-feel/REVIEW/P0/results.json",
+          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+        }
+      ]
+    },
+    "P0.typecheck": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/P0-typecheck.log",
+          "sha256": "cafa8310aee60b7ea4fe143147599c09d40529fc20590787a68d4d538c08e096"
+        }
+      ]
+    },
+    "P0.unitTests": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/P0-unit.log",
+          "sha256": "7216fb32dcf9d4b272e5f62f1d5bc63977f2cec534848a805126d642e95efd72"
+        }
+      ]
+    },
+    "P0.parityRegression": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/P0-parity.log",
+          "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
+        }
+      ]
     }
   },
-  "updatedAt": "2026-11-15T16:12:56.761812+00:00",
+  "updatedAt": "2026-11-16T01:09:28.200753+00:00",
   "buildCommits": {
     "C0": {
       "commit": "752078771e99f9c1af04fd9e343a447b48061aa0"

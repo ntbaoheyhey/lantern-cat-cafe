@@ -4,3 +4,5 @@
 - Optional ultimate-name overrides can go in INBOX.md.
 - Any future Rung-4 tool proposal will include exact commands, size and reason here; work continues on the best available method.
 - On 20 November, deploy using reports/v3-shell/USER-DEPLOY-VI.md after its R2 update.
+
+- send DESIGNER-POSE-BRIEF-VI.md to the designer (optional)

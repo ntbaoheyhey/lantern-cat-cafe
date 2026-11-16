@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-16T01:05:33.726Z",
+  "source": "tools/v3craft-lab/q3b/pose-composition-study.json",
+  "rows": [
+    {
+      "method": "whole-affine",
+      "ms": 225,
+      "iou": 0.5217619297325642,
+      "footDriftPx": 12.481639510415246,
+      "silhouetteOnly": true,
+      "silhouetteAndAnchor": false
+    },
+    {
+      "method": "whole-affine",
+      "ms": 350,
+      "iou": 0.5867170576577407,
+      "footDriftPx": 8.14035080895308,
+      "silhouetteOnly": true,
+      "silhouetteAndAnchor": false
+    },
+    {
+      "method": "material-local",
+      "ms": 225,
+      "iou": 0.5424929809706315,
+      "footDriftPx": 0,
+      "silhouetteOnly": true,
+      "silhouetteAndAnchor": true
+    },
+    {
+      "method": "material-local",
+      "ms": 350,
+      "iou": 0.573341226831823,
+      "footDriftPx": 0,
+      "silhouetteOnly": true,
+      "silhouetteAndAnchor": true
+    }
+  ],
+  "silhouetteOnlyPasses": 4,
+  "withAnchorPasses": 2,
+  "trackedBytes": 137168475,
+  "ignoreOnlySavedBytes": 0,
+  "conclusion": "A moved idle painting can pass IoU while sliding feet. Require all pose checks and visual identity review; ignore-only rules cannot trim already tracked evidence."
+}

@@ -33,8 +33,10 @@ import { chargeEvent } from '../depth/card-action-plan';
 import {LanternRequiem} from '../vfx-craft/lantern-requiem';
 import {SootPoses} from '../vfx-craft/soot-poses';
 import {StaffBolt} from '../vfx-craft/staff-bolt';
+import {PaintLight} from '../vfx-craft/paint-light';
+import {PaintDeath} from '../vfx-craft/paint-death';
 
-interface DisplayActor {actor:SpineActor;craftPose?:SootPoses;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
+interface DisplayActor {actor:SpineActor;craftPose?:SootPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
 export class SpineScene {
  private audio=new BattleAudio();
@@ -118,11 +120,13 @@ export class SpineScene {
    void loadSpineActor(asset).then(actor=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=this.craft&&asset==='soot'?new SootPoses(actor):undefined;
+    const craftLight=craftPose?new PaintLight(actor):undefined;if(craftLight)this.scene.add(craftLight.ground,craftLight.rim);
+    const craftDeath=craftPose?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
     const shadow=new T.Mesh(this.geometry,new T.MeshBasicMaterial({map:this.shadowTexture,transparent:true,depthTest:false,depthWrite:false,toneMapped:false}));shadow.renderOrder=-10;
     const ring=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.honey,transparent:true,opacity:.6,depthTest:false,depthWrite:false,toneMapped:false}));ring.renderOrder=-5;
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
     lane=this.lanes.get(unit.id)?.lane??lane;
-    const entry={actor,craftPose,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
+    const entry={actor,craftPose,craftLight,craftDeath,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
     actor.onCue=cue=>this.onCue(unit.id,cue);this.scene.add(actor.root,shadow,ring,hit);
     this.invalidate();
    }).catch(error=>{
@@ -208,7 +212,7 @@ export class SpineScene {
    if(unit.hp>0)entry.koAt=-1;
    else if(entry.koAt<0)entry.koAt=time;
    const deathAge=unit.hp<=0?time-entry.koAt:0;
-   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);material.opacity=unit.hp<=0?Math.max(0,1-deathAge/.6):1;}});
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);material.opacity=unit.hp<=0&&!entry.craftDeath?Math.max(0,1-deathAge/.6):1;}});
    actor.root.visible=unit.hp>0||deathAge<.6;
    actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set(spriteFacing(actor.unit.nativeFacing,unit.side)*position.scale,position.scale,1);actor.setOrder(home.order);
    entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
@@ -246,6 +250,8 @@ export class SpineScene {
    if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime+phaseOffset;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    entry.craftPose?.deform(name,at,view.reducedMotion);
+   entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
+   if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();
    const caster=plan?view.actors.find(a=>a.id===plan.actorId):undefined;
    const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==unit.side))??plan?.targetIds.find(id=>id!==unit.id);
@@ -263,7 +269,7 @@ export class SpineScene {
    }
    // The pilot gesture already moves the trunk around planted feet. Applying
    // the old complete-card lean on top would undo that contact and deform the face.
-   if(entry.craftPose&&unit.hp>0&&!iced&&['attack','ult','idle','hurt'].includes(name))rootPose=neutralPose();
+   if(entry.craftPose&&!iced&&['attack','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
    const facing=spriteFacing(actor.unit.nativeFacing,unit.side),footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
@@ -337,6 +343,26 @@ export class SpineScene {
    else art.hide();
    this.effects.clearFrame();
   }else{this.craft?.hide();this.craftBasic?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
+  // D8 / X06 / X07: sample the final original pose after all transforms and
+  // actor tint; retain the actor, then place only local floor and inner-edge light.
+  const groundOrder=Math.min(...[...this.actors.values()].map(e=>e.actor.root.renderOrder))-1;
+  for(const [id,entry]of this.actors){
+   if(!entry.craftLight)continue;
+   const sample=this.sampled.get(id),acting=plan?.actorId===id,ms=acting?(frame?.elapsed??0):(view.model?sample?.at??0:0)*1000;
+   const ultimate=acting?!!plan?.ultimate:sample?.name==='ult',end=ultimate?2200:800;
+   const rise=ultimate?Math.max(0,Math.min(1,(ms-400)/700)):Math.max(0,Math.min(1,(ms-80)/270));
+   const fall=1-Math.max(0,Math.min(1,(ms-(ultimate?1175:425))/(end-(ultimate?1175:425))));
+   const light=(acting||view.model)&&['attack','ult'].includes(sample?.name??'')?.8*rise*fall:0;
+   const death=sample?.name==='ko',opacity=death?Math.max(0,1-(sample?.at??0)/.6):entry.shadow.material.opacity;
+   const capture=()=>entry.craftLight!.render(this.renderer,this.camera,{width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,
+    box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.socket(id,'mainHand')??this.homes.get(id)!.point,
+    lightColour:'#bc72ed',light,brightness:acting?1:focusLight,opacity,groundOrder});
+   if(entry.craftDeath){
+    entry.craftDeath.withSourcePaint(capture);const source=entry.craftLight.source;entry.craftDeath.setSource(source.texture,source.crop);
+    if(death)entry.craftLight.rim.visible=false;
+   }else capture();
+   entry.shadow.visible=false;entry.ring.visible=false;
+  }
   this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
   this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,plan?.ultimate&&this.actors.has(plan.actorId)?this.focusBanner.place(plan,this.bounds(this.actors.get(plan.actorId)!),width,height,this.cinematicRects):undefined);
@@ -399,6 +425,6 @@ export class SpineScene {
  pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
- private releaseActor(entry:DisplayActor){entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
+ private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
  dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

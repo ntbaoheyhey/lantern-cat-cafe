@@ -1,28 +1,27 @@
-ONE SESSION, ONE BRANCH codex/v3-feel-2026-11-14
+ONE BRANCH codex/v3-feel-2026-11-14
+POSES FIRST: EVERY UNIT NEEDS DRAWN WIND-UP, STRIKE, HIT AND CAST POSES
 LEARN BEFORE BUILD, FOR EVERYTHING: PAPERS + WEB DOCS + OWN EXPERIMENTS, NOTES IN LEARN/
 APPRENTICE FIRST: STUDY, DRILL, COMPARE, THEN PRODUCE
-CRAFT TIME >= 60% OF EFFECT/POSE ITEMS, MEASURING <= 20%
+CRAFT TIME >= 60%, MEASURING <= 20%
 SHADER/FLIPBOOK EFFECTS, NEVER CODE-DRAWN RINGS OR FOG
 STATIC CAMERA, EQUAL TIMING, BASIC + ULTIMATE ONLY
 AN ITEM FAILS ONLY ON ITS OWN DEFECTS
 WATCH THE VIDEO BEFORE CLAIMING DONE
 NEVER LOWER A THRESHOLD
-NO SUBAGENTS, NO DEPLOY, NO MAIN MERGE
-ORIGINAL ART ONLY
+NO DEPLOY, NO MAIN MERGE
+ORIGINAL ART ONLY, OWN ART AS THE ONLY GENERATOR INPUT
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW: Q3.B checkpoint after typecheck/F6 parity PASS. R0/R1/B0 reviewed FAIL; B1 films/sheets complete, unreviewed.
-NEXT 1: Implement D8 sparse rim/projected grounding with X07 fixed painted feet; review every B1 Soot window/private comparison.
-NEXT 2: Review pilot in real battle at Q2 scale; preserve static camera/800ms basic/2200ms ultimate and F6 parity.
-NEXT 3: Keep Q1/Q2 and craft-time failures explicit; no failed-method rollout.
-LAST GOOD COMMIT: 4e92343da33bd6a46d1b4f73aa77fa9cca36781b (pushed; HEAD/origin verified).
-CRAFT: Q3.A15.17% author FAIL; Q3.B41.61% before X07 close, all60/30/20 floors unmet; no inactivity credited.
-OPEN: Q1 video residual max50.233ms; Q0 boss audit/historical A/B classification to Q9.
-OPEN: Q2 A250 PASS/97 FAIL; B14 FAIL retained. Actual12 cats vs requested13 unresolved.
-EVIDENCE: D8 face/body contrast99.7444%/98.2711%; fixed feet; exact seek/return; raw max41ms gap, no Q1 timing claim.
-TESTS: Q3B checkpoint web typecheck and three F6 parity fixtures PASS; prior Q2 browser435/435 not fresh after pilot.
-BUDGET:130.78MiB prospective FEEL;10 selected B0 Soot sheets/three films<=8MiB, other revisions/private/raw ignored.
-PIDS: Owned Vite67838 on5990 with VITE_CRAFT_PILOT=soot; prior44605/44606 stopped. Demo untouched.
-BACKGROUND JOBS: no active capture;81768/82729 absent with completed logs. Owned Vite67838.
-TRIGGERS: R1 2026-11-16T12:00Z; R2 2026-11-18T12:00Z; FREEZE 2026-11-19T12:00Z.
-SOURCE: reports/v3-feel/REQUEST-CRAFT.txt.
-UPDATED: 2026-11-15T17:48:04.450026+00:00
+NOW: P0 adopting V3-POSE, saving unfinished CRAFT work; LEARN/P0.md complete.
+NEXT 1: Commit/push P0 checkpoint, register commit receipt, then immediately start P1.
+NEXT 2: P1 study and Method A/B Soot strike experiment; then P2 pilot, no rollout before pass.
+NEXT 3: Time triggers R1 Nov16 12:00Z, R2 Nov18 12:00Z, FREEZE Nov19 12:00Z.
+LAST GOOD COMMIT: 7955547fb1614e4d5484c1205aee1a4860d734d2 (HEAD/origin verified).
+OPEN: Q1 video residual50.233ms; schedule exact/zero overlap; <=30min Q9, no recorder development.
+OPEN: Q2-owned visuals done; inherited A250 PASS/97 FAIL and B14 FAIL go Q9.
+OPEN: Q3.A drills done, historic craft-time15.17% FAIL unchanged; Q3.B continues in P2.
+PIDS: Owned Vite67838 on5990, VITE_CRAFT_PILOT=soot; demo untouched.
+BACKGROUND JOBS: None; all old PIDs audited. R2 capture and staff-ground study completed.
+TESTS: Fresh P0 typecheck,2634 web tests,1784 checker tests and three-fixture parity PASS.
+BUDGET: tracked137168475 bytes; local771MB before trim;96GiB free.
+SOURCE: reports/v3-feel/REQUEST-POSE.txt.
+UPDATED: 2026-11-16T01:06:03.593519+00:00

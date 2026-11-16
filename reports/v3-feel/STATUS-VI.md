@@ -1,4 +1,4 @@
-Đã chuyển sang prompt V3-CRAFT (học nghề trước, làm sau)
+Đã chuyển sang prompt V3-POSE: mỗi nhân vật có tư thế đánh vẽ riêng (gồng, chém, trúng đòn, tung chiêu)
 Q1 còn mở: lịch 800/2.200 ms đúng, không chồng lượt; sai lệch video tối đa 50,233 ms > 33 ms.
 Camera đứng yên; chỉ rung chiêu cuối trong giới hạn, không có tấm chiêu toàn màn hình.
 Q2 đã xem 83/83 cửa sổ hành động, 100 trạng thái quay mặt; ram quay đúng.
@@ -12,8 +12,9 @@ Q3: D1–D8 đã qua hai vòng sửa ở bài tập riêng; đang ghép chiêu S
 Soot chạy thử riêng trong trận; chưa áp dụng rộng. D2 đối xứng 0,246; D3 tua lại không đổi pixel.
 Tỉ lệ sáng tác hiện 15.17% < 60% (không tính thời gian gián đoạn); Q3.A vẫn mở.
 Đã xem đủ 10 hành động Soot bản R1: mở chiêu sớm hơn nhưng hình chính còn giống rèm; chưa đạt.
-Đã xem 10 hành động B0: đòn bay rõ hơn, va chạm còn yếu. B1 đã quay xong, parity cả ba trận đạt.
-Đã sửa vùng mặt; học neo chân sai lệch <=0,213 px. Chưa đủ mốc sáng tác 60/30/20 phút/hai vòng sửa.
+Đã xem đủ 10 hành động B1: đòn bay rõ hơn, va chạm còn yếu (6/10); R2 chiêu cuối chưa đạt.
+Neo chân sai lệch <=0,213 px; X09 giữ đúng màu/tua lại (sai lệch 0), đang làm tan biến và mảnh vỡ.
+Chưa đủ mốc sáng tác 60/30/25 phút cho V3-POSE/hai vòng sửa; không tính thời gian gián đoạn.
 Roster thực có 12 mèo/25 đơn vị; yêu cầu 13 mèo còn là chênh lệch, không tự thêm nhân vật.
 Không hạ ngưỡng, không triển khai, không merge main; làm một mình.
 Mốc xem lại: 16/11 19:00, demo cuối 18/11 19:00, đóng băng 19/11 19:00 (giờ Việt Nam).

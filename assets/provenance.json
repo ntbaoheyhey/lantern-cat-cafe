@@ -2655,8 +2655,8 @@
     {
       "asset": "apps/web/src/game/cardrpg/vfx-craft/lantern-requiem.ts",
       "tool": "Original local TypeScript/GLSL/Three.js authoring; no model input",
-      "date": "2026-11-15T17:15:35.010231+00:00",
-      "prompt": "R1 draft: earlier hand-connected foreground strand; colour-ramped original canopy and independently released lamps; three monotone tapered rear light bodies; finite contact needles, grounded veins, drag fragments. No reference pixels or model input.",
+      "date": "2026-11-15T18:33:08.955965+00:00",
+      "prompt": "R1 draft: earlier hand-connected foreground strand; colour-ramped original canopy and independently released lamps; three monotone tapered rear light bodies; finite contact needles, grounded veins, drag fragments. No reference pixels or model input. R2 author draft: unequal descending shoulders and splits, smaller varied original crown/lamp pieces, source-connected strand, finite release and detached gold/orange shards. Latest boss1440 preview inspected; no acceptance. Final R2 author continuation: leading arc descends continuously over900\u20131100ms; original crown contracts; unequal secondary knife shoulders with continuous profile blending, finite X08 release; no recorded acceptance.",
       "recipe": "reports/v3-feel/LEARN/Q3.B.md",
       "source": [
         "tools/v3craft-drills/d1.ts",
@@ -2666,8 +2666,8 @@
         "apps/web/src/game/cardrpg/vfx-craft/soot-core.png"
       ],
       "referenceInputs": [],
-      "sha256": "8f30ee21942fbb37b8beb59d688b78ba9b21ff981e62468f578e33a47b99a8f4",
-      "status": "opt-in draft; not accepted for rollout",
+      "sha256": "a6843344e89e0b61cbfb679e110bf4267ff018a0c63050c6b8ba82bb3acba69e",
+      "status": "opt-in author draft; no rollout or filmed acceptance",
       "previousRevisions": [
         {
           "asset": "apps/web/src/game/cardrpg/vfx-craft/lantern-requiem.ts",
@@ -2686,13 +2686,21 @@
           "sha256": "d7e26802a41cfbc041466fcd7b92b3baef9d66d2e296aefaec3cc6190102ed4a",
           "status": "draft authoring; not approved for rollout"
         }
+      ],
+      "history": [
+        {
+          "date": "2026-11-15T17:15:35.010231+00:00",
+          "prompt": "R1 draft: earlier hand-connected foreground strand; colour-ramped original canopy and independently released lamps; three monotone tapered rear light bodies; finite contact needles, grounded veins, drag fragments. No reference pixels or model input.",
+          "sha256": "8f30ee21942fbb37b8beb59d688b78ba9b21ff981e62468f578e33a47b99a8f4",
+          "status": "opt-in draft; not accepted for rollout"
+        }
       ]
     },
     {
       "asset": "apps/web/src/game/cardrpg/vfx-craft/soot-poses.ts",
       "tool": "Original local TypeScript/GLSL/Three.js authoring; no model input",
-      "date": "2026-11-15T17:15:35.010231+00:00",
-      "prompt": "Original Soot pilot pose set from accepted D6/D7: cloned source rig, planted body/arm weights, separate basic/ultimate key poses,75ms holds inside800/2200ms, local deformation and rigid face/prop/socket transport, idle/hurt clips. Death and full grounding integration pending. X05 transported head-local face region is shared by effect protection, labels and audit; underlying painted pixels unchanged.",
+      "date": "2026-11-15T18:29:47.287424+00:00",
+      "prompt": "Original Soot pilot pose set from accepted D6/D7: cloned source rig, planted body/arm weights, separate basic/ultimate key poses,75ms holds inside800/2200ms, local deformation and rigid face/prop/socket transport, idle/hurt clips. Death and full grounding integration pending. X05 transported head-local face region is shared by effect protection, labels and audit; underlying painted pixels unchanged. X09: authored600ms planted collapse with independent hip/head/lantern/tail release; no complete-card fall. Original source paint unchanged. Native/seek/return0 at both desktops; filmed pose acceptance pending.",
       "recipe": "reports/v3-feel/LEARN/Q3.B.md",
       "source": [
         "tools/v3craft-drills/d6.ts",
@@ -2700,14 +2708,22 @@
         "tools/v3craft-lab/q3b/pose-composition-study.json"
       ],
       "referenceInputs": [],
-      "sha256": "e00d8ba2241fd5565efd7b1e01d020227a3ee98c525dc765eb7b880003d2c99d",
-      "status": "opt-in draft; not accepted for rollout"
+      "sha256": "1b04861dc4a43531c071ae02479c21d77b9d95e29cdf85600e08d3431e0b71af",
+      "status": "opt-in author draft; no rollout or filmed acceptance",
+      "history": [
+        {
+          "date": "2026-11-15T17:15:35.010231+00:00",
+          "prompt": "Original Soot pilot pose set from accepted D6/D7: cloned source rig, planted body/arm weights, separate basic/ultimate key poses,75ms holds inside800/2200ms, local deformation and rigid face/prop/socket transport, idle/hurt clips. Death and full grounding integration pending. X05 transported head-local face region is shared by effect protection, labels and audit; underlying painted pixels unchanged.",
+          "sha256": "e00d8ba2241fd5565efd7b1e01d020227a3ee98c525dc765eb7b880003d2c99d",
+          "status": "opt-in draft; not accepted for rollout"
+        }
+      ]
     },
     {
       "asset": "apps/web/src/game/cardrpg/vfx-craft/staff-bolt.ts",
       "tool": "Original local TypeScript/GLSL/Three.js authoring; no model input",
-      "date": "2026-11-15T17:43:17.181584+00:00",
-      "prompt": "Draft staff/lantern family from accepted D2/D3/D5 and X04: three hand glints, finite46ms tapered lance, delayed thin thread, directional warm contact fan, finite ground shards and analytic drag sparks; exact800ms envelope/350ms contact, face protection. No reference pixels or model input. Initial author previews only. B1: clearer launch, asymmetrically peeling contact petals, detached gold chips with drag and finite ground strokes after B0 full/private review. Two desktop author previews; no filmed acceptance yet.",
+      "date": "2026-11-15T18:29:47.287424+00:00",
+      "prompt": "Draft staff/lantern family from accepted D2/D3/D5 and X04: three hand glints, finite46ms tapered lance, delayed thin thread, directional warm contact fan, finite ground shards and analytic drag sparks; exact800ms envelope/350ms contact, face protection. No reference pixels or model input. Initial author previews only. B1: clearer launch, asymmetrically peeling contact petals, detached gold chips with drag and finite ground strokes after B0 full/private review. Two desktop author previews; no filmed acceptance yet. B2 author draft: two-frame compact pointed contact, unequal peeling cuts, analytic gold shards, dark floor body with hot seam. X10 rejects blanket floor offset; foot-line anchoring retained. Local shapes use height-relative scale following Q2 body calibration.",
       "recipe": "reports/v3-feel/LEARN/Q3.B.md",
       "source": [
         "tools/v3craft-lab/q3b/staff-travel-study.json",
@@ -2716,16 +2732,61 @@
         "tools/v3craft-drills/d5.ts"
       ],
       "referenceInputs": [],
-      "sha256": "1f9d16c9e006842033e4de409806e5ac98fd444fff52601c37b1166f16eb1c09",
-      "status": "opt-in draft; not accepted for rollout",
+      "sha256": "4365c78864efa59242e42fdc4375e6d03e0de0e62da69002eaec2d78cabcd9ca",
+      "status": "opt-in author draft; no rollout or filmed acceptance",
       "history": [
         {
           "date": "2026-11-15T17:15:35.010231+00:00",
           "prompt": "Draft staff/lantern family from accepted D2/D3/D5 and X04: three hand glints, finite46ms tapered lance, delayed thin thread, directional warm contact fan, finite ground shards and analytic drag sparks; exact800ms envelope/350ms contact, face protection. No reference pixels or model input. Initial author previews only.",
           "sha256": "ca5fff3e803a0d742c9f484d88cc474072e4be0443b0052f2eca5a4b99e2e586",
           "status": "opt-in draft; not accepted for rollout"
+        },
+        {
+          "date": "2026-11-15T17:43:17.181584+00:00",
+          "prompt": "Draft staff/lantern family from accepted D2/D3/D5 and X04: three hand glints, finite46ms tapered lance, delayed thin thread, directional warm contact fan, finite ground shards and analytic drag sparks; exact800ms envelope/350ms contact, face protection. No reference pixels or model input. Initial author previews only. B1: clearer launch, asymmetrically peeling contact petals, detached gold chips with drag and finite ground strokes after B0 full/private review. Two desktop author previews; no filmed acceptance yet.",
+          "sha256": "1f9d16c9e006842033e4de409806e5ac98fd444fff52601c37b1166f16eb1c09",
+          "status": "opt-in draft; not accepted for rollout"
         }
       ]
+    },
+    {
+      "asset": "apps/web/src/game/cardrpg/vfx-craft/paint-light.ts",
+      "tool": "Original TypeScript/GLSL/Three.js authoring; no model input",
+      "date": "2026-11-15T18:29:47.287424+00:00",
+      "prompt": "Opt-in Soot current-paint alpha projection, two original foot contacts and sparse face-protected directional inner rim. Integer pixel-aligned half-float crop, grow-only target capacity, original actor retained, explicit GPU clear/restore, unchanged Q2 sizing. D8/X06/X07 only; no reference pixels. Death integration captures un-eroded current pose through a guarded source pass and fades projected shadow separately. Exposes its existing linear half-float source to local fragments; no runtime CPU readback.",
+      "recipe": "reports/v3-feel/LEARN/Q3.B.md",
+      "source": [
+        "tools/v3craft-drills/d8.ts",
+        "tools/v3craft-lab/q3b/ground-crop-study.json",
+        "tools/v3craft-lab/q3b/foot-anchor-study.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "1e772c616f467c786049493e10a552de46a13ec47e0ca21db0a74acfa0ccefac",
+      "status": "opt-in author draft; no rollout or filmed acceptance",
+      "history": [
+        {
+          "date": "2026-11-15T17:53:50.557766+00:00",
+          "prompt": "Opt-in Soot current-paint alpha projection, two original foot contacts and sparse face-protected directional inner rim. Integer pixel-aligned half-float crop, grow-only target capacity, original actor retained, explicit GPU clear/restore, unchanged Q2 sizing. D8/X06/X07 only; no reference pixels.",
+          "sha256": "fce0e6ad9974dbcf7155b27bc12ce6d2fd547d651fafa81dfb0af379d1f1d75d",
+          "status": "opt-in author draft; quantitative production checks and filmed revisions pending"
+        }
+      ]
+    },
+    {
+      "asset": "apps/web/src/game/cardrpg/vfx-craft/paint-death.ts",
+      "tool": "Original TypeScript/GLSL/Three.js authoring; no model input",
+      "date": "2026-11-15T18:29:47.287424+00:00",
+      "prompt": "Original local600ms alpha erosion on native atlas material, chained colour hook/cache key; sparse finite angular fragments sample un-eroded current-pose paint through the existing pixel-aligned half-float target. Analytic local rank/drag/spin, exact arbitrary seeking, particles off in reduced motion; no runtime CPU pixel reads or first-death snapshots. Source paint unchanged.",
+      "recipe": "reports/v3-feel/LEARN/Q3.B.md",
+      "source": [
+        "tools/v3craft-drills/d1.ts",
+        "tools/v3craft-drills/d3.ts",
+        "tools/v3craft-lab/q3b/death-study.json",
+        "tools/v3craft-lab/q3b/death-integration-check.json"
+      ],
+      "referenceInputs": [],
+      "sha256": "b8ff3ac4f6637b599e7a5b01f7c1bee208ce25dc3ca3fd6996956e30d23923f1",
+      "status": "opt-in author draft; local native/seek/clear checks pass, full filmed pose acceptance pending"
     }
   ]
 }

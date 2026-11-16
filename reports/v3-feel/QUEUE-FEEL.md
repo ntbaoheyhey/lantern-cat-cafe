@@ -1,21 +1,21 @@
-# V3-CRAFT priority queue
+# V3-POSE priority queue
 
 | Item | State | Work | Evidence / log |
 |---|---|---|---|
-| C0 | done | Adopt craft prompt and trim evidence | STARTED 2026-11-15T07:06:45Z; LEARN/C0.md; 1,599 tooling tests PASS; typecheck/parity PASS; checker 18 PASS/0 FAIL/0 OPEN; REVIEW/C0/REVIEW.md; ENDED 2026-11-15T07:18:00.942741+00:00; commit 752078771 |
-| Q0 | baseline | Baseline closed; audit remains in Q9 | Historical ENDED 2026-11-14T04:48:11Z; REVIEW/Q0/REVIEW.md; no retroactive pass |
-| QR | study done | Apprenticeship continues in Q3.A | Historical ENDED 2026-11-14T05:51:57Z; pilot 46 PASS/6 FAIL/2 then-listening OPEN; QR.6 exception WITHDRAWN |
-| Q1 | open | Kit, equal timing, static camera | STARTED 2026-11-15T07:18:35.719053+00:00; 84/84 windows reviewed; schedule 800/2200 ms, zero overlap; video residual max 50.233 ms FAIL; typecheck/1599 tooling tests/parity PASS; REVIEW/Q1/REVIEW.md; ENDED 2026-11-15T09:27:05.747051+00:00; commit 9aed17f8d; Q9: phase-boundary pixel confirmation using existing seek/capture tools, no per-action clock fit |
-| Q2 | open | Owned visual checks complete; inherited gates remain open | STARTED 2026-11-15T09:28:42.613263+00:00; 83/83 windows; 100 facing states; cat pixel max/min 1.03665; min .2653 vh; 154/154 numbers, max 2, <=682.61 ms; browser 435/435; Q1 and A/B remain open; REVIEW/Q2/REVIEW.md; 61 PASS/2 FAIL/0 OPEN; visual work ENDED 2026-11-15T11:47:45.774448+00:00; commit a9f90358d |
-| Q3.A | open | Eight isolated drills reviewed; craft-time remains FAIL | STARTED 2026-11-15T11:48:44.454528+00:00; D1–D8 each r1/r2 reviewed; C01/C08/C09 added by D8; typecheck/1599 tools/parity PASS; author share15.17%<60%; techniques checkpoint 2026-11-15T16:12:56.761812+00:00; item not declared done; continue composition within Q3 |
-| Q3.B | started | Soot Lantern Requiem and staff-bolt pilot | STARTED 2026-11-15T16:14:08.639910+00:00; X01–X07 learned; R0/R1 ultimate and B0 basic all10 windows reviewed FAIL; B1 basic filmed next; author share41.61%/80.24 valid min before X07 close, all60/30/20 floors unmet; no rollout |
-| Q3 | todo | Q3.C skill/pose production, fixture roster first | Q1 review: ring/fog main shapes, washed-out bodies, weak anticipation; method Rung 2 then 3 |
-| Q4 | todo | Names, banners, focus callouts | 13 cats + boss + fixture enemy ultimates; 3 candidates each |
-| Q5 | todo | Quiet synced battle sound | Prior mix ~-15 LUFS; voices 9/9/10; objective onset/spectrum/cue verification required |
-| Q6 | todo | UI clarity | Wallet Retry overlap, empty bubbles/tiles/prep band; 108 desktop screen-width cases |
-| Q7 | todo | Fill frames outside battle | Eight screens; >=85% content area, empty bands <=10% |
-| Q8 | todo | Review/demo build | At R1 and R2; smoke both desktops/live/static; Desktop review files |
-| Q9 | todo | Open work, inbox, polish | First: Q0 boss audit + old browser/A/B classification; then open higher items with a new method |
-| R1 | todo | 16 Nov 12:00 UTC review checkpoint | Interrupt queue; Q8; continue without waiting |
-| R2 | todo | 18 Nov 12:00 UTC final demo | Full regression, Q8, deploy-guide branch update |
-| R3 | todo | 19 Nov 12:00 UTC freeze | Only crash/flow fixes; final reports; ONE draft PR, no merge |
+| P0 | started | Save CRAFT work, adopt pose contract/checker | STARTED 2026-11-16T01:08:01.561395+00:00; LEARN/P0.md; typecheck/parity PASS; 1774 checker tests PASS; unit tests running |
+| P1 | todo | Learn pose craft; Soot Method A/B and swap experiment | >=12 sources, >=2 formal; 6 master basics; no production before study |
+| P2 | todo | Soot drawn poses and re-anchored effects | Continue Q3.B: basic6/10, pilot5/10; curtains FAIL; >=2 revisions |
+| P3 | todo | Fixture roster poses and effects | Mochi,Clover,Panko,boss,Binding Thread,wave enemies; pilot must pass first |
+| P4 | todo | Remaining roster poses | Actual25 units/12 cats; unreached units Method C OPEN at18Nov04Z |
+| Q3.C | todo | Effect rules applied inside P2-P4 | >=3/5 layers; no rings/fog main shapes; craft floors retained |
+| Q4 | todo | Names, banners and callouts | 3 candidates/name,2–3 words; all cats/enemy ultimates |
+| Q5 | todo | Quiet synced battle sound | Onsets±33ms;0 orphan;<=4 voices;-20±1LUFS;<=-1dBTP |
+| Q6 | todo | UI clarity | Retry overlap, empty bubbles/tiles/prep bar;108 desktop cases |
+| Q7 | todo | Frame fill outside battle | Eight screens;>=85% content; no band>10%;0 overflow |
+| Q8 | todo | Live/static battle and pose demos | AtR1/R2; Desktop film/audio/sheet;4 smoke cases |
+| Q9 | todo | Open items then polish | Q1<=30min;Q0 boss audit; inherited A250PASS/97FAIL,B14FAIL; inbox; Method C; remaining UI |
+| R1 | todo | 16 Nov12:00UTC checkpoint | Interrupt queue, Q8, then continue |
+| R2 | todo | 18 Nov12:00UTC final demo | Full regression,Q8,user deploy guide |
+| R3 | todo | 19 Nov12:00UTC freeze | Final report, one draft PR, no merge |
+
+Inherited state: Q1 OPEN video50.233ms (schedule exact/zero overlap); Q2 owned checks done (cat ratio1.03665,min.2653vh,facing100/100,numbers154/154). Q3.A drills done, craft-time15.17% FAIL retained. Historical details remain in DECISIONS/REVIEW and git.

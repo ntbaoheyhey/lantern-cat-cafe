@@ -90,6 +90,15 @@ function prepareData(source:CutoutData){
  hurt('arm-r','rotate',[[0,-12],[75,-12],[200,-20],[365,4],[480,0]]);
  hurt('arm-l','rotate',[[0,11],[75,11],[180,18],[350,-3],[480,0]]);
  hurt('tail','rotate',[[0,5],[75,5],[230,17],[390,-3],[480,0]]);
+ // Release weight into the planted lower body before the paint breaks away.
+ // Head, lantern and tail settle at different times; the root never tips as a card.
+ const ko=clip('ko',600);
+ ko('hip','rotate',[[0,0],[75,-4],[180,-13],[310,-16],[460,-18],[600,-18]]);
+ ko('hip','translate',[[0,0,0],[75,-6,-12],[180,-17,-43],[310,-22,-68],[460,-25,-78],[600,-25,-78]]);
+ ko('head','rotate',[[0,0],[90,2],[210,10],[355,15],[510,17],[600,17]]);
+ ko('arm-r','rotate',[[0,0],[80,5],[180,-9],[310,-28],[470,-36],[600,-36]]);
+ ko('arm-l','rotate',[[0,0],[100,-4],[230,12],[370,23],[520,26],[600,26]]);
+ ko('tail','rotate',[[0,0],[110,3],[240,14],[390,23],[530,26],[600,26]]);
  return data;
 }
 
@@ -127,7 +136,7 @@ export class SootPoses {
    const bone=mesh.skeleton.findBone(name);if(!bone)throw Error(`Missing Soot socket ${name}`);
    actor.boneRefs.set(socket as SpineSocket,bone);
   }
-  for(const name of ['attack','ult','idle','hurt'] as const){
+  for(const name of ['attack','ult','idle','hurt','ko'] as const){
    const c=data.clips[name]!;actor.clips.set(name,{duration:c.duration,cues:animationCues(name as SpineAnimation,c.duration,c.events)});
   }
   mesh.pose(0,'');this.tailY=mesh.skeleton.findBone('tail')!.worldY;
@@ -159,6 +168,13 @@ export class SootPoses {
   }else if(name==='hurt'){
    body=sample([[0,-.07],[75,-.07],[150,-.09],[330,.015],[480,0]],ms);
    tail=sample([[0,.25],[75,.25],[220,.8],[380,-.1],[480,0]],ms);tip=tail*.65;left=-tail*.4;right=-tail*.6;
+  }else if(name==='ko'){
+   body=sample([[0,0],[100,-.035],[240,-.11],[390,-.13],[600,-.13]],ms);
+   lean=sample([[0,0],[150,-3],[350,-7],[600,-7]],ms);
+   tail=sample([[0,0],[120,.1],[280,.8],[440,1.1],[600,1.1]],ms);
+   tip=sample([[0,0],[190,0],[350,.8],[520,1.2],[600,1.2]],ms);
+   left=sample([[0,0],[120,-.2],[300,-.7],[500,-.85],[600,-.85]],ms);
+   right=sample([[0,0],[190,0],[350,-.45],[540,-.8],[600,-.8]],ms);
   }
   if(reduced){tail*=.3;tip*=.3;left*=.3;right*=.3;}
   const field=(x:number,y:number):[number,number]=>{
