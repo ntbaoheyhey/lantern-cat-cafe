@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-16T23:36:12.631201+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/history-text-prefix-digests-review.py",
+    "sha256": "21f6c9ac4718fe9b29fe1b4c4a396ee3a923c2c1f478ade10b16e7f1a0995139"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-2-digests-1.json.gz",
+      "sha256": "7c499597cbac81c51f84df8d209787d60ab69e8648c030c9ff31e645fdcdcd9d"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-review-2.json.gz",
+      "sha256": "899ece5b832d35936b4ee78a6b87e1da56c52324c936b28d66b7dd32f86768c9"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix2-regression-1/check.json",
+      "sha256": "113cb4f7d9a7774fbf1c645f095cc3cb6a1f0a7ccbbd340c6c2a3d0215a29aee"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix2-regression-1/log.jsonl.gz",
+      "sha256": "80b788517b25317792b0e85b67d52bee685eae79318162094beb5353884ec24f"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix2-regression-1/parity-probe.json",
+      "sha256": "617d95aae9ee4fce94850f3f21cbfb816637e23c9639b8f5d83ada6896a3b326"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+      "sha256": "a3aaf0970a018a93eb4564fb0a875f237f222c98b1b475478a45ed3be27cbe6e"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/parity-probe.json",
+      "sha256": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59"
+    }
+  ],
+  "exactFindingLocations": 1350,
+  "resolvedDigests": 427,
+  "unresolved": 923,
+  "distinctLineLocations": 913,
+  "duplicateLineEntriesPreserved": 437,
+  "reportObjects": 43,
+  "immutableSourceReferences": 139,
+  "producerDerivations": 1,
+  "originalFindingSetUnchanged": true,
+  "earlier61DerivationsPreserved": true,
+  "sourceDerivationsPass": true,
+  "sameSevenArtFailures": true,
+  "webSummary": [
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+    "Test Files  2 failed | 320 passed (322)",
+    "Tests  7 failed | 2697 passed (2704)"
+  ],
+  "parityRowsUnchanged": true,
+  "pass": true,
+  "gRegPass": false,
+  "fullPrefixFindingsPass": false,
+  "fullHistoryPass": false,
+  "limits": "Independent git-show derivation only for resolved complete JSON digest values. All other exact locations remain unresolved. No captured values or their source digests are emitted; no source-content or full-history clearance."
+}
