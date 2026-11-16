@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16 11:49 UTC
+# ART execution anchor — 2026-11-16 12:07 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: Poll final job 10732 / reports/v4-art/jobs/a7-teacup-final.log; fullweb/typecheck->parity->3x30s marked audio films. Build Teacup film review/blind tooling from established Binding scripts; do not open blind key before labels.
-NEXT2: Teacup poses selected/labexported1152canvas,304736B. Integrate original ally-only effects; validate regression/parity/film/blind/performance. Final SHIP healer-only semantics still pending.
+NEXT1: Adapt tools/v3craft-lab/v4-binding-thread/{review-films.py,blind-read.py} for Teacup; input reports/v3-feel/REVIEW/V4-A7-TEACUP. Save nine blind labels before key access; verify decoded frame markers and review complete own/hit windows.
+NEXT2: Teacup final regression/capture passed; film/blind/900p/performance receipt pending. Final SHIP healer-only semantics still pending.
 NEXT3: A7 Teacup/NeedleMoth/YarnGiant; A8 deliveries interrupt; A9 ensemble; A10 SHIP art; A11 open gates; A12 afterfreeze. No final summary.
-LAST PUSH:c368fb24f verified; integrating Teacup production now; exact source hashes in REVIEW/A7/teacup-healer/source-hashes.json.
-LIVE: Final regression/parity/capture 10732 log reports/v4-art/jobs/a7-teacup-final.log (child logs a7-teacup-web-final/typecheck-final/parity/capture.log). Vite67838 port5990. No generation pending.
-No STOP/inbox pause at11:36UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json. A10 assets alreadydelivered a14f8a76b; REQUESTS-TO-SHIP haspaths; verifycurrentrequest before anyregen.
+LAST PUSH:bc85b0c82 verified; initial resume checkpoint follows for final runners/parity and corrected anchor. Eleven production hashes match at12:06UTC.
+LIVE: No ART job/generation pending. PID10732 completed WEB/TYPECHECK/PARITY/CAPTURE exits0; 2649tests/315files. Vite67838 port5990. Requested PIDs68961/69950 gone; A6 final/post exits0.
+No STOP/inbox pause at12:06UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json. A10 assets alreadydelivered a14f8a76b; REQUESTS-TO-SHIP haspaths; verifycurrentrequest before anyregen.
 A0/A1/A2 complete; A1b exhaustive private catalogue deferredA11. A3/A4/A5 scoped checkpoints; A5 exactheal pending finalSHIP. Activation/ensemble OPEN.
 A6 verified22sourcehashes/3films/labels; blindattempt1=10/12FAIL preserved,attempt2=11/12PASS; tencompleteownwindows incl36sboss supplement. Do not repeat blind or film review.
 A6 FINAL2648tests/315files/typecheck/3F6PASS;return<.000038px;face0%;FX26.26–29.18%;60.240485fps;630122B. Time-split unproven.
@@ -19,13 +19,14 @@ All7originalfilm pages reviewed once:6ownbasic/6receivedhits,plantedreadable/sta
 Tail60 complete3584frames/47actions/paritytrue/audio-14.91LUFS;A29(33.93s)/A30(36.21s)/A45(56.88s)complete;A46(59.16s)TRUNCATED. Tail8pages reviewed:ultimate1/2/3,fullfieldsA29/A30/A45,basic1,hit1. Observations REVIEW.md. All remaining tail and5flight sheets reviewed; observations REVIEW.md. A46 staysincomplete.
 TeacupK1-A1 FAILhead.907895 fromfixed[346,545];IoU.459745,dE4.689834,feet0,nocrop. K0[222,326]/4pxunchanged. Preview+headcrop seen once. A2head.986583 PASS,butdE6.199313 FAIL;IoU.463666,feet0. A3 selectedIoU.459779,dE4.180821,head.984307,feet1; normalizedreview seen. No thresholds relaxed.
 TeacupK4-A2 FAILhead1.060726/dE6.727747 preserved. K4-A3 fixed[452,650],head1.017873,IoU.528766,feet1,nocrop;rawdE7.444980FAIL->70%Lab2.261635/alphaunchanged. All3poses artselected; runtime unaccepted.
-IMAGEOPENS:0 after persisting two FX outputs, four R1 frames and two selected R3 frames; never reopen. <=1024px,4/look,8/HANDOFF; 4 selected tracked JPGs for Teacup so far.
+IMAGEOPENS:0 this resume; prior source/fullfield/spoon/reference reviews persisted; never reopen. <=1024px,4/look,8/HANDOFF; 6 selected tracked JPGs for Teacup so far, 2 slots remain.
 EXCLUDE logs,paritylatest,.DS_Store,recorderlinks,duplicatepreviews,raw/private/nonSYNCmovies. Checkpoint eachstep<=20min;detachedjobs<=3.
 Binding scopedreceipt11complete,3+flightframes,K2change33.2767%,60.240485fps,3.184MBupperbound;focus600hold+200fade/exactfilmclock OPEN A9/A11. Time-split unproven; Craft gatedDEV+VITE_CRAFT_PILOT=soot untilA9/A11;noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR.
 ReadRULES/item/commit/newart/hour;commands<=40lines/3KB,diffs<=80lines;sync17/18Nov11:30;finalprep19Nov09:30,push10:00;authorizedthrough29Nov12UTC.
 Teacup R1 drills: compact area15.416%FAIL; broad23.994%PASS; faces73.314%/71.514%FAIL; socket<1.2e-13px. R1 source+metrics preserved; R2 adds face protection to rear canopy.
 Teacup R1 four frames reviewed once:60rise preserves lowbody/face gap;120rise approaches face; broad1100fan reaches behind hostile. R3 tests920x610fan with60rise and rear face protection; no source image edits.
-Teacup FX R3selected60rise/920x610fan;area21.6935%,faces0.1173%,socket<1.2e-13px. All failures preserved; production/film unaccepted.
+Teacup R3 superseded by R4; R3 labarea21.6935%,faces0.1173%,socket<1.2e-13px. All failures preserved; film unaccepted.
 Private Teacup225px healer reference comparison reviewed once; observations LEARN/A7. No reference input to generation. No final SHIP baseline; healer-only basics remain open.
 Teacup liveR1: wave1area20.1603%,wave3area19.4086%FAIL; faces<=2.1952%,unitocclusion<=12.7265%. K1 visual source auditFAIL(auto socket hit handle); fixed spoon[603,490], rerun required. Old basic damage persists.
 Teacup R4 final645fan passes lab22.9095%/face0.0601%; liveR2 areas21.2972%/20.4389%, faces<=2.7916%, healIDs exact,nohealK4/shake; source manual[603,490] verified. Publishedpose gates3/3,K2change32.7334%,allassets3.785MB.
+Teacup capture wave1/wave3/boss:1783/1787/1779 compositor frames,29/29/28 actions,allparitytrue,-14.97/-14.95/-14.79LUFS. Frame markers requested; decoding not yet verified. No film review/blind performed.
