@@ -12,7 +12,7 @@ OUT = ROOT / 'reports/v4-art/REVIEW/A10/scene-ready-transfer'
 panko_control = '--panko-control' in sys.argv
 panko_native = panko_control or '--panko-native' in sys.argv
 panko_detail = panko_native or '--panko-detail' in sys.argv
-label = 'panko-control-r1' if panko_control else 'panko-native-r1' if panko_native else 'panko-filter-r1' if panko_detail else 'pma-filter-r1'
+label = 'panko-control-r2' if panko_control else 'panko-native-r1' if panko_native else 'panko-filter-r1' if panko_detail else 'pma-filter-r1'
 RAW = OUT / ('raw/'+label+'-comparisons')
 REPORT = OUT / (label+'-comparison.json')
 assert not REPORT.exists()

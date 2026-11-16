@@ -7,7 +7,7 @@ import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixtu
 
 const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A10/scene-ready-transfer');
 const pankoControl=process.argv.includes('--panko-control'),pankoNative=pankoControl||process.argv.includes('--panko-native'),pankoDetail=pankoNative||process.argv.includes('--panko-detail');
-const label=pankoControl?'panko-control-r1':pankoNative?'panko-native-r1':pankoDetail?'panko-filter-r1':'pma-filter-r1';
+const label=pankoControl?'panko-control-r2':pankoNative?'panko-native-r1':pankoDetail?'panko-filter-r1':'pma-filter-r1';
 const report=resolve(out,label+'.json'),raw=resolve(out,'raw/'+label);
 if(existsSync(report))throw Error('Refusing to overwrite a prior experiment');
 mkdirSync(raw,{recursive:true});
@@ -36,6 +36,7 @@ try{
      if(replacementImage.naturalWidth!==replacement.decodedSize[0]||replacementImage.naturalHeight!==replacement.decodedSize[1])throw Error('Replacement dimension mismatch');}
     for(const [id,actor]of s.actors)actor.actor.root.traverse(n=>{
      for(const material of Array.isArray(n.material)?n.material:[n.material]){
+      if(!material?.map?.image)continue;
       let texture=material?.map;
       if(!texture?.image?.src?.includes('/units/sampled-delivery/')&&texture?.userData?.atlasAlphaEncoding!=='premultiplied-upload-private-drill'&&!(replacement&&actor.asset==='panko'))continue;
       // Three texture dimensions are immutable after first upload. Each trial
