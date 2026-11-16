@@ -1,0 +1,23 @@
+{
+  "scopeSha256": "84b8c769ff45da01ee6576a83d0b1bc149a093e0538f1c984399624049661c54",
+  "inventorySha256": "96c9cbb1cb2be407a582c7ba79cfc5c37058d73707910b1a1e1d68bba60a268d",
+  "harnessSha256": "ec149f2ab71cd90fc08f754e9e38e33962241e305510fed634503b630c12c78f",
+  "scanner": "8.30.1",
+  "command": [
+    "gitleaks",
+    "stdin",
+    "--no-banner",
+    "--no-color",
+    "--redact=100",
+    "--log-level=fatal",
+    "--report-format=json",
+    "--report-path=-",
+    "--ignore-gitleaks-allow"
+  ],
+  "order": "compressedBytes, then Git oid",
+  "contentOnly": true,
+  "fullHistoryPass": false,
+  "parentSha256": "2e13aa6fb07e15bf8d975c340b176769b4acb7bf51f8708404312ca29583ee71",
+  "stdinWorkerSha256": "dd27d13f9648c073c2f0f60b281860d981ed790c5e26c4efcd3367097fa8740a",
+  "transport": "One uninterrupted communicate call in a worker; main-thread stop watchdog."
+}
