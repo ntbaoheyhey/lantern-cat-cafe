@@ -17,22 +17,36 @@ type Point={x:number;y:number};
 export class LayeredVfx {
  readonly images=new Map<string,PackedPaint>();
  readonly stats={draws:0,active:0,failed:[] as string[]};
- readonly ready:Promise<void>;
+ ready:Promise<void>=Promise.resolve();
  enabled=true;onlyLayers:Set<string>|null=null;
  private disposed=false;
- constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){
-  this.ready=Promise.all(packedManifest.pages.map(async page=>{
-   const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page.file);
-   const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page.file))?.[1];
+ private pages=new Map<string,Promise<void>>();
+ private decoding=new Set<HTMLImageElement>();
+ constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){}
+ /** Metadata imports are cheap; request pixels only for this encounter's owners. */
+ prepare(owners:Iterable<string>):Promise<void>{
+  if(this.disposed)return Promise.resolve();
+  const selected=new Set(owners),pages=new Set<string>();
+  for(const [id,entry] of Object.entries(packedManifest.entries))if(selected.has(PAINT_TIMELINES.get(id)?.owner??''))pages.add(entry.page);
+  return this.ready=Promise.all([...pages].map(page=>this.loadPage(page))).then(()=>{});
+ }
+ private loadPage(page:string):Promise<void>{
+  const cached=this.pages.get(page);if(cached)return cached;
+  const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page);
+  const pending=(async()=>{
+   const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page))?.[1];
+   let image:HTMLImageElement|undefined;
    try{
-    if(!url)throw Error('Missing painted atlas '+page.file);
-    const image=new Image();image.src=url;await image.decode();if(this.disposed)return;
+    if(!url)throw Error('Missing painted atlas '+page);
+    image=new Image();this.decoding.add(image);image.src=url;await image.decode();if(this.disposed)return;
     for(const [id,entry] of entries){const sourceUrl=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
      if(!sourceUrl||!PAINT_TIMELINES.has(id))throw Error('Unknown packed painting '+id);
      this.images.set(id,{image,...entry,sourceUrl});
     }
-   }catch{this.stats.failed.push(...entries.map(([id])=>id));}
-  })).then(()=>{});
+   }catch{if(!this.disposed)this.stats.failed.push(...entries.map(([id])=>id));}
+   finally{if(image)this.decoding.delete(image);}
+  })();
+  this.pages.set(page,pending);return pending;
  }
  handles(plan:EffectPlan){const id=plan.presentationId??plan.skillId;return this.enabled&&this.images.has(id)&&PAINT_TIMELINES.has(id);}
  /** Decode and upload the atlas before its first combat impact. */
@@ -79,5 +93,5 @@ export class LayeredVfx {
    }
   }
  }
- dispose(){this.disposed=true;for(const image of new Set([...this.images.values()].map(p=>p.image)))image.src='';this.images.clear();}
+ dispose(){this.disposed=true;for(const image of new Set([...this.decoding,...[...this.images.values()].map(p=>p.image)]))image.src='';this.decoding.clear();this.images.clear();this.pages.clear();}
 }

@@ -9,9 +9,11 @@ import { SPINE_CONFIG, SPINE_UNIT_BY_ID, type SpineUnit, type SpineAnimation, ty
 import { animationCues, SpineEventCursor, type SpineCue } from './events';
 import {opaqueBounds} from '../stage/core';
 import {opaqueWorldBounds,type OpaqueWorldBounds} from '../stage/opaque-pose-bounds';
+import losslessAtlases from './lossless-atlases.json';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
-export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
+const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
+export const spineAssetUrl=(path:string)=>{const url=deliveryUrls.get(path)??urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
 async function response(path:string){const r=await fetch(spineAssetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
 const image=async(path:string)=>{const img=new Image();img.src=spineAssetUrl(path);await img.decode();return img;};
 export interface ClipData {duration:number;cues:SpineCue[]}
@@ -29,7 +31,7 @@ export function loadNativeRig(id:string):Promise<SkeletonAsset>{
   const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
   const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
   const textures:T.Texture[]=[];
-  try{for(const page of data.pages){const img=new Image();img.src=`/units/${id}/${page.name}`;await img.decode();const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+  try{for(const page of data.pages){const img=new Image(),path=`/units/${id}/${page.name}`;img.src=deliveryUrls.get(path)??path;await img.decode();const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(e){textures.forEach(t=>t.dispose());throw e;}

@@ -61,6 +61,7 @@ export class SpineScene {
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
  private stage=new PaintedStage(()=>this.invalidate());private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
  private disposed=false;private pending=new Map<string,symbol>();private failed=new Set<string>();private lanes=new Map<string,{side:string;lane:number}>();private raf=0;private last=0;private time=0;private dirty=true;
+ private effectsKey:string|undefined;private effectsRequest:symbol|undefined;private effectsLoaded=false;
  private width=1;private height=1;private worldWidth=1;private scratch=new T.Vector3();
  private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;private currentView?:SceneView;private renderTime=0;
  private c2Seats=new Map<string,number>();private c2Capacity=4;
@@ -116,6 +117,19 @@ export class SpineScene {
    this.battleKey=view.battleKey;this.plan=null;this.sampled.clear();this.effects.clear();this.ultimate=false;this.ultStartedAt=-100;this.ultEndedAt=-100;this.phaseNoticeAt=-100;
    for(const [id,entry] of this.actors){entry.entered=this.time+entry.lane*PAINT.entranceStagger;entry.entranceDone=false;entry.hurtAt=-100;entry.koAt=-1;entry.phaseAt=-100;entry.phase=view.bossPhases?.[id]??1;}
   }
+  const owners=[...new Set(view.actors.map(unit=>view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi'))].sort();
+  // The persistent field also samples these atlases when primary layers are off.
+  const layered=!!view.formationC2,key=JSON.stringify([layered,owners]);
+  if(key!==this.effectsKey){
+   const request=Symbol(key);this.effectsRequest=request;this.effectsKey=key;this.effectsLoaded=owners.length===0;
+   if(owners.length)void this.effects.prepare(owners,layered).then(()=>{
+    if(this.disposed||this.effectsRequest!==request)return;
+    this.effectsLoaded=true;this.refreshLoading();this.invalidate();
+   }).catch(error=>{
+    if(this.disposed||this.effectsRequest!==request)return;
+    this.onFailure(`Could not prepare battle effects: ${String(error)}`);this.refreshLoading();
+   });
+  }
   const ids=new Set(view.actors.map(a=>a.id));
   for(const [id,entry] of this.actors)if(!ids.has(id)){this.releaseActor(entry);this.actors.delete(id);this.homes.delete(id);}
   // Removed requests no longer reserve a slot or hold the current roster's
@@ -158,7 +172,7 @@ export class SpineScene {
  }
  private refreshLoading(){
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
-  this.ready=this.pending.size===0&&this.failed.size===0&&(!this.craft||this.craftLoaded);
+  this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded&&(!this.craft||this.craftLoaded);
  }
  private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&['soot','mochi','clover','panko','binding-thread','teacup-healer'].includes(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){

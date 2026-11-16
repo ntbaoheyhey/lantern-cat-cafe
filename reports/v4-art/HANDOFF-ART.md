@@ -1,13 +1,14 @@
-# ART execution anchor — 2026-11-16 12:20 UTC
+# ART execution anchor — 2026-11-16 12:38 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: A10 interrupt: new SHIP12:18 production transfer request26.4MB>8MB. Inspect vfx-layered/player.ts eager25pages12.8MB; scope preload/readiness to encounter effects, then reduce accepted asset bytes losslessly. Timebox2h to14:21UTC.
+NEXT1: A10 transfer WIP: owner-selected VFX + roster-token readiness and6exactlossless atlas derivatives implemented. Run fullweb/typecheck/3F6; measure actual requests and review existing-recorder normal-renderer films. Timebox14:21UTC.
 NEXT2: Needle K1/K2/K4 fixed-landmark gates; two own FX drills, private same-scale comparison, production integration, regression/parity/marked films/blind/receipt. Existing LEARN/A7 six-source study applies.
 NEXT3: Yarn Giant K1/K2/K4/K5 + FX; A8 deliveries interrupt; A9 ensemble; verified A10 requests; A11 open gates; A12 afterfreeze. Never stop with summary.
-LAST PUSH:41c6e1e73 verified; Teacup final receipt pushed. Production remainsbc85b0c82; eleven source hashes verified against all captures.
-LIVE: Vite67838 port5990. No ART job or generation pending. Finaljob10732 all exits0; tailjob12963 wave1/wave3/900 exits0; review15035 exit0. Logs reports/v4-art/jobs/a7-teacup-{final,tail90,tail-review}.log.
+LAST PUSH:e26669a34 verified; Teacup final receipt pushed. Production remainsbc85b0c82; eleven source hashes verified against all captures.
+LIVE: Vite67838 port5990; lossless19094 completeexit0. No generation. Targeted15+sourcehash6PASS. Browser Canvas2D comparisonFAIL(partialalphaRGB), all6NoColorSpaceWebGL exactPASS; retain failure and verify alpha/coverage.
 Requested PIDs68961/69950 gone, A6 final/post exits0. Detached nohup needs Python Popen(start_new_session=True); bare shell jobs12730/12858 exited without work.
 No STOP/inbox pause at12:21UTC. SHIPdb35585 remains nonfinal at lastcheck; no merge; baseline reports/v3-feel/parity-new.json. SHIP newtransferrequestread12:21UTC; finalclass announcementstillpending. No designer delivery at12:12UTC.
 A10 already delivered a14f8a76b: apps/web/public/units/promo/v4; REQUESTS-TO-SHIP records paths. Verify new request before regeneration.
+A10 experiment: sixPNG8,327,096B→exactWebP4,641,562B; allRGBAequal. Original sources unchanged. Runtime mappings source-hash guarded. TotalSHIP8MBgateOPEN; active6atlas+6VFXalone8,182,806B beforeheaders.
 A0/A1/A2 complete; A1b exhaustive private catalogue deferredA11. A3-A6 scoped; final ensemble/activation OPEN.
 A6 verified22sourcehashes/3films/labels; attempt1 10/12FAIL retained,attempt2 11/12PASS;10completeownwindows incl36sboss supplement. Never repeat review.
 A6 2648tests/315files/typecheck/3F6PASS;FX26.26–29.18%,face0%,60.240485fps,630122B. Time split unproven.

@@ -22,7 +22,7 @@ export class PaintedVfx {
  private field:FieldVfx;
  private glow=new EffectGlow();
  readonly layered:LayeredVfx;useLayered=false;
- readonly overrides=new DesignerVfx();readonly ready:Promise<void>;
+ readonly overrides=new DesignerVfx();readonly ready:Promise<void>;private disposed=false;
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
@@ -30,7 +30,12 @@ export class PaintedVfx {
  constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
   this.field=new FieldVfx(socket,id=>this.layered.images.get(id));
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
-  this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.layered=new LayeredVfx(socket);this.ready=Promise.all([this.overrides.prepare(),this.layered.ready]).then(()=>{this.layered.warm(this.ctx);});
+  this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.layered=new LayeredVfx(socket);this.ready=this.overrides.prepare();
+ }
+ async prepare(owners:Iterable<string>,layered=true){
+  if(this.disposed)return;
+  await Promise.all([this.ready,layered?this.layered.prepare(owners):Promise.resolve()]);
+  if(!this.disposed&&layered)this.layered.warm(this.ctx);
  }
  private spawn(recipe:PaintedRecipe,layer:PaintedLayer,source:string,target:string,time:number,index:number,total:number,speed:number,impact=false){
   let particle:Particle|undefined;for(let i=0;i<this.pool.length;i++){const candidate=this.pool[this.cursor];this.cursor=(this.cursor+1)%this.pool.length;if(!candidate!.active){particle=candidate;break;}}
@@ -134,5 +139,5 @@ export class PaintedVfx {
  /** An opt-in scene renderer owns this action's complete effect pass. */
  clearFrame(){this.ctx.setTransform(1,0,0,1,0,0);this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;}
  clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
- dispose(){this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.canvas.remove();}
+ dispose(){this.disposed=true;this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.canvas.remove();}
 }
