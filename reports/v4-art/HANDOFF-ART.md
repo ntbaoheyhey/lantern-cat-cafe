@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T21:39:46.263771+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: implement separate sampled-delivery maps (actors2/3,VFX1/2) in owned public paths; preserve exact-lossless maps. Scale VFX source rectangles by decoded/native ratios; verify decode/fallback+runtime geometry before full gates.
+NEXT1: baseline6static720/900 cases complete0; implement sampled maps actors2/3,VFX1/2 under owned public paths, decode fallback and VFX source ratios. Then candidate browser comparison and all gates.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:57bfce920 verified;resolution2drills complete0/fournewcropsclosed. Hybrid7,966,992B projection incl16KiBreserve;33,008Bheadroom;not productionPASS. Contrast9df18432a/runtime9205464cb.
-LIVE: craftVite3426/5990 jobs/needle-craft-vite-resume.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log. Resolution18629 finished0;all experiment supervisors done.2ownedservers;1jobslot.
+LAST PUSH:f492b1647 verified;hybrid7,966,992B trial selection+4cropsclosed. No runtime changes yet;baseline browser comparison active.
+LIVE: craftVite3426/5990 jobs/needle-craft-vite-resume.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log. Baseline19257 finished0;all supervisors done;2ownedservers/1jobslot.
 STOP/INBOX checked21:35UTC: noSTOP; explicit continuation active; INBOX pause superseded. LatestSHIP18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
