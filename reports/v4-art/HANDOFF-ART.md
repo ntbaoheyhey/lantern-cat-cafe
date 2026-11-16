@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T18:06UTC
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: A9 tea pour selected and promoted after2drills/privatecompare; author focus450hold/150fade(end600) and fixed boss flanks, then checkpoint+full validation before new films.
-NEXT2: Two original-texture drills + private same-scale staging comparison, pairwise8hero matrix; full web/typecheck/3F6/lane then fresh3audiofilms/900p and every scoped action.
+NEXT1: Author/run source-bound all8ultimate live probe; verify new boss staging/focus/FX at720+900. Then fresh films with existing recorder; Binding/Teacup need extended coverage.
+NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:797a3cefe verified; Yarn scoped receipt saved. A9 lab candidate and two-motion drill now authoring.
-LIVE: craftVite3426/5990 only. A9drill62084 finishedPASS;61626 alias/decodeFAIL log retained. No capture running.
+LAST PUSH:dcf4dd515 verified18:21UTC; A9 runtime validated: fullweb/typecheck/3F6 PASS,77sourcehashes match. Saving validation checkpoint now; Yarn receipt797a3cefe remains closed.
+LIVE: craftVite3426/5990; A9validation64197 finished18:21UTC allsteps0, log reports/v4-art/jobs/a9-validation-r1.log; no probe/capture running.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
