@@ -1,12 +1,12 @@
 # ART execution anchor — 2026-11-16T21:59:10.047469+00:00
 ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: inspect once raw/pma-aware-r2/{mochi,soot,clover,panko}-comparison.png; record decision before runtime edit. R2 halfQ75=7,839,409B/halfQ80=7,900,518B projected; both unreviewed. Four PMA-aware variants exhausted; no fifth same-method trial.
+NEXT1: install six selected straight-halfQ80 actor derivatives and decoded-delivery alpha metadata; ensure fallback retains sourcePMA. Then run focused tests and six normal+six blocked-sampled browser cases, followed by four fresh runtime comparisons.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:a616fc3a2 verified; localfc09a818f push failed once from overlapping own pushes; ordinary sequential retry with this checkpoint. R2exit0; runtimeb920586d4 visually rejected;2682/320+typecheck+3F6 apply only to rejected source.
+LAST PUSH:201f93b55 verified (sequential retry succeeded). R2exit0; privateQ80 selected for runtime evaluation only;7,900,518B projected incl16KiB reserve/99,482B headroom. Runtimeb920586d4 remains visually rejected.
 LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). R2supervisor23656 finished0 jobs/a10-pma-aware-r2.log; old68961/69950 absent.2ownedjobs.
-STOP/INBOX: noSTOP at21:58UTC16Nov; latest continuation active; prior INBOX pause superseded. Recheck scoped intake after WIP checkpoint; no finalclasses/solebaseline announcement observed and no merge/adoption.
+STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;36private comparisons closed incl4PMA-awareR1 crops. A10JPG8/8/rawonly;never reopen. Current sampled runtime still unaccepted; originals/exact maps retained.
+IMAGEOPENS:4afterrewrite;40private comparisons closed incl4PMA-awareR2 crops;never reopen. A10JPG8/8/rawonly. Q80 fur smoothing observed; assembled face/seams/Panko glasses unproven; runtime not accepted.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
