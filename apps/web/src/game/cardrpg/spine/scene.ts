@@ -245,9 +245,9 @@ export class SpineScene {
    this.homes.set(unit.id,{...base,order:box?box.order:10+Math.round((1-base.y/PAINT.worldHeight)*30),point:{x:(base.x+(actor.bounds.x+actor.bounds.width/2)*base.scale*facing+this.worldWidth/2)/pixelsToWorld,y:(PAINT.worldHeight-base.y-core.world.y*base.scale)/pixelsToWorld,core:core.world.height*base.scale/pixelsToWorld}});
   }
   // Resting opaque rectangles are independent of last frame and actor iteration order.
-  const homeBox=(id:string)=>{
+  const homeBox=(id:string,key:'K0'|'K4'='K0')=>{
    const entry=this.actors.get(id)!,home=this.homes.get(id)!,draw=entry.craftPose?.drawing,side=view.actors.find(u=>u.id===id)!.side;
-   if(draw){const m=draw.set.manifest,b=m.poses.K0!.opaqueBounds!,scale=home.point.core/m.opaqueHeight,facing=spriteFacing(entry.actor.unit.nativeFacing,side);
+   if(draw){const m=draw.set.manifest,b=m.poses[key]!.opaqueBounds!,scale=home.point.core/m.opaqueHeight,facing=spriteFacing(entry.actor.unit.nativeFacing,side);
     const a=(b[0]-m.baseline[0])*scale*facing,c=(b[2]-m.baseline[0])*scale*facing;
     return{x:home.point.x+Math.min(a,c),y:home.point.y-(m.baseline[1]-b[1])*scale,width:Math.abs(c-a),height:(b[3]-b[1])*scale};}
    const w=entry.actor.bounds.width/entry.actor.bounds.height*home.point.core;
@@ -271,7 +271,9 @@ export class SpineScene {
    const deathAge=unit.hp<=0?time-entry.koAt:0;
    actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;material.color.setRGB(...tint);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);if(healed.includes(unit.id))material.color.multiplyScalar(healBright);material.opacity=unit.hp<=0&&!entry.craftDeath?Math.max(0,1-deathAge/.6):1;}});
    actor.root.visible=unit.hp>0||deathAge<.6;
-   actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set(spriteFacing(actor.unit.nativeFacing,unit.side)*position.scale,position.scale,1);actor.setOrder(home.order);
+   actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set(spriteFacing(actor.unit.nativeFacing,unit.side)*position.scale,position.scale,1);
+   // Small formation actors stay readable in front of the broad Yarn cutout.
+   actor.setOrder(entry.asset==='yarn-giant'&&entry.craftPose?Math.min(...[...this.homes.values()].map(h=>h.order))-1:home.order);
    entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
    entry.ring.visible=unit.hp>0;entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(core.world.height*position.scale*.38,core.world.height*position.scale*.095,1);entry.ring.material.color.set(ELEMENT_COLORS[entry.asset]??PAINT.rose);
    const phase=view.bossPhases?.[unit.id]??1;
@@ -308,7 +310,10 @@ export class SpineScene {
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    const drawingDamage=unit.hp>0&&frame?.plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id));
    const damageAge=drawingDamage&&frame?(frame.elapsed-frame.plan.beats[2]!.start)/1000:undefined;
-   entry.craftPose?.deform(name,at,view.reducedMotion,damageAge);
+   // Keep Yarn's authored contact visible through the fixed90ms impact hold.
+   // Retaliation still flashes/recoils at impact; its guard drawing follows the hold.
+   const drawingHitAge=entry.asset==='yarn-giant'&&unit.id===plan?.actorId&&damageAge!==undefined&&['attack','ult'].includes(name)?damageAge-.09:damageAge;
+   entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge);
    entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
    if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();
@@ -336,7 +341,15 @@ export class SpineScene {
     const m=entry.craftPose.drawing.set.manifest,b=m.poses[plan.ultimate?'K5':'K2']!.opaqueBounds!,direction=unit.side==='enemy'?-1:1;
     const face=spriteFacing(actor.unit.nativeFacing,unit.side),scale=home.point.core/m.opaqueHeight;
     const reach=direction>0?Math.max((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale:-Math.min((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale;
-    const targetBox=homeBox(targetId),targetHome=this.homes.get(targetId)!.point;
+    let targetBox=homeBox(targetId);
+    const targetHome=this.homes.get(targetId)!.point;
+    if(entry.asset==='yarn-giant'){
+     // The broad strike reaches every recipient front edge, including blocked hits.
+     // Use K4 only where an actual damaging event selects the recipient's hit drawing.
+     const ids=[...new Set(plan.events.filter(e=>e.type==='damage'&&e.actorId===unit.id).flatMap(e=>e.targetIds))];
+     const boxes=ids.filter(id=>this.actors.has(id)&&view.actors.some(a=>a.id===id&&a.side!==unit.side)).map(id=>homeBox(id,plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(id))?'K4':'K0'));
+     targetBox=boxes.sort((a,b)=>direction>0?b.x-a.x:(a.x+a.width)-(b.x+b.width))[0]??targetBox;
+    }
     const corridor=this.c2Capacity>4&&!view.boss;
     const contact=meleeContact(home.point,{...targetHome,x:targetBox.x+targetBox.width/2},reach,targetBox.width/2,direction,(corridor?40:8)*height/720);
     if(corridor)contact.y-=96*height/720;
