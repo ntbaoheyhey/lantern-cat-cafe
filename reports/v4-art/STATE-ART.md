@@ -1,4 +1,4 @@
-REQUEST-ART.txt bytes=45694 sha256=06bca8af1bbc749bf3675081ad6b8799b2875b3f4e2aa2962741c225e4e03269
+REQUEST-ART.txt REV2 bytes=47581 sha256=be708a387bcb491515c4f5deda954058d069b91a26334b45331d37a4925bfd88
 # V4 ART state
 A0 STARTED 2026-11-16T04:43:42.528836+00:00; salvage retained; DONE a86387fe4d250803a676c9c094f6b5ebf90b09f6; pushed.
 Hero cats: Mochi (melee), Soot (ranged), Clover (healer), Panko (melee).
@@ -19,3 +19,7 @@ A1 DONE 2026-11-16T04:50:36.787961+00:00, commit pending; G-LEARN9sources/3paper
 A1 recipe: face/foot-guarded smear270–330ms; contact90ms; K4=180ms; preserve accepted Soot colour; new poses no-match then Lab mean/quantiles.
 A1 evidence LEARN/A1.md, REVIEW/A1/8sheets, tools/v3craft-lab/v4-hybrid/results.json; score8/10; films not yet.
 A1 time:04:46:25–04:49:49UTC, approx60%drill authoring/20%study/20%measurement+state (estimated from step timestamps, not activity telemetry).
+A1 pushed 46e21a6c3589cb965c10c5a8790b24d2724c9216. A1b STARTED 2026-11-16T04:51:59.893783+00:00.
+
+A1b 2026-11-16T05:04:40.770136+00:00:7drills+3same-scale comparisons inspected; chosen200ms melee/150ms ranged/leaves heal; LEARN source minimum met. Full-video catalogue OPEN; film gates NOT YET. A10 art request interrupts; return to A1b coverage next.
+A10 keyart1 accepted 2026-11-16T05:09:21.864293+00:00: landing-keyart.webp1600x900/329438bytes; own4cats input, provenance saved; thumbnail/icons pending.

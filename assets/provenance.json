@@ -3186,6 +3186,32 @@
       "recipe": "Crop to alpha>0 bounding box; preserve RGBA; max1536x768;WebPquality95/method6;no repaint",
       "status": "trial moving texture; gates open",
       "sha256": "aaa5df81acae2c70e3576edadb3c3c02e981a41aa63e549ef68b2ed975c5f261"
+    },
+    {
+      "id": "v4art-promo-keyart-1",
+      "path": "tools/v3craft-lab/poses/raw/promo/keyart-1.png",
+      "tool": "OpenAI built-in image_gen",
+      "date": "2026-11-16T05:08:29.951608+00:00",
+      "inputs": [
+        "reports/v4-art/REVIEW/A10/approved-cats.jpg"
+      ],
+      "referenceInput": "own art only: apps/web/public/units/{mochi,soot,clover,panko}/runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: ads-marketing. Asset: Taskbar Hero landing key art, wide 16:9 landscape illustration, 1536x864 or larger. Create an original polished cozy fantasy game painting. Input image is a character identity reference sheet containing OUR OWN approved four cats, left to right Mochi, Soot, Clover, Panko. Preserve every cat identity, fur, face, costume and props; do not reproduce the labels or flat sheet layout.\nScene: a small warmly lit wooden lantern cafe porch at blue-hour dusk, soft painted woodland beyond, rich quiet indigo shadows and honey light. The four companions gather at the cafe threshold, ready for a small adventure. Mochi is the main foreground hero, fluffy cream cat with turquoise eyes, teal apron overalls, oval wooden shield with little gold lantern. Soot is a slim gray cat with amber eyes, purple witch hat and cape, teal waist fabrics and hand-held amber lantern. Clover is a cream cat with green eyes, sage dress and leaf cape clasp, holding a delicate silver tea kettle. Panko is a round cream baker cat, cream cap and apron, wooden rolling pin and bread-shaped wooden shield.\nComposition: all four full bodies and props in the RIGHT 58% of the frame, a carefully spaced triangular ensemble at three depths with each face fully separated; Mochi leads, Soot behind to the right, Clover behind to the left, Panko at front right. Keep the whole group inside the right boundary with at least5%image margin; no cropped ears, tails, feet or props. Their bodies fill about65%image height. LEFT 36% is calm dark painted negative space for live HTML title/copy, with only subtle porch/woodland shapes and no focal lanterns. Landscape composition, cohesive perspective and warm grounding shadows, no pasted-cutout look. Match the softly textured hand-painted storybook finish and delicate warm outlines of our cats. Lanterns illuminate faces gently, no washed out highlights. No additional characters, no enemies, no weapon changes, no logos, no text, no UI, no watermark, no border. This is promotional illustration, not a mock gameplay screenshot.\n",
+      "sha256": "29c6ffb9761476104d666e07528a6eca842ec4b5d7d3fdcf109bc2fc3b96e884",
+      "status": "accepted A10 promotional illustration; see reports/v4-art/REVIEW/A10/REVIEW.md"
+    },
+    {
+      "id": "v4art-promo-landing-keyart",
+      "path": "apps/web/public/units/promo/v4/landing-keyart.webp",
+      "tool": "Pillow fit1600x900 and WebP92 export",
+      "date": "2026-11-16T05:08:29.951608+00:00",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/promo/keyart-1.png"
+      ],
+      "referenceInput": "own art only: apps/web/public/units/{mochi,soot,clover,panko}/runtime.webp via approved-cats.jpg",
+      "prompt": "Use case: ads-marketing. Asset: Taskbar Hero landing key art, wide 16:9 landscape illustration, 1536x864 or larger. Create an original polished cozy fantasy game painting. Input image is a character identity reference sheet containing OUR OWN approved four cats, left to right Mochi, Soot, Clover, Panko. Preserve every cat identity, fur, face, costume and props; do not reproduce the labels or flat sheet layout.\nScene: a small warmly lit wooden lantern cafe porch at blue-hour dusk, soft painted woodland beyond, rich quiet indigo shadows and honey light. The four companions gather at the cafe threshold, ready for a small adventure. Mochi is the main foreground hero, fluffy cream cat with turquoise eyes, teal apron overalls, oval wooden shield with little gold lantern. Soot is a slim gray cat with amber eyes, purple witch hat and cape, teal waist fabrics and hand-held amber lantern. Clover is a cream cat with green eyes, sage dress and leaf cape clasp, holding a delicate silver tea kettle. Panko is a round cream baker cat, cream cap and apron, wooden rolling pin and bread-shaped wooden shield.\nComposition: all four full bodies and props in the RIGHT 58% of the frame, a carefully spaced triangular ensemble at three depths with each face fully separated; Mochi leads, Soot behind to the right, Clover behind to the left, Panko at front right. Keep the whole group inside the right boundary with at least5%image margin; no cropped ears, tails, feet or props. Their bodies fill about65%image height. LEFT 36% is calm dark painted negative space for live HTML title/copy, with only subtle porch/woodland shapes and no focal lanterns. Landscape composition, cohesive perspective and warm grounding shadows, no pasted-cutout look. Match the softly textured hand-painted storybook finish and delicate warm outlines of our cats. Lanterns illuminate faces gently, no washed out highlights. No additional characters, no enemies, no weapon changes, no logos, no text, no UI, no watermark, no border. This is promotional illustration, not a mock gameplay screenshot.\n",
+      "sha256": "81d1f8fff1e216096bb8a6ab2e2ed1ecbc0bc00a7c85678ceba1c63457218bf5",
+      "status": "accepted A10 promotional illustration; see reports/v4-art/REVIEW/A10/REVIEW.md"
     }
   ]
 }

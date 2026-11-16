@@ -26,4 +26,4 @@ Film 3 fixtures x1 1280x720 30fps 30s; layout also1440x900; inspect all scoped a
 Authoring >=50% time, measurement/logging <=25%; evidence <=8 JPG sheets<=1280px/item, git reports<=150MB.
 No deploys/main merges/contracts/secrets. Never touch SHIP ports5994-5998/8546; own5990-5993; kill only owned PID.
 Re-read rules/handoff/state/current order at item starts, compactions, commits, new art, at least hourly.
-Rewrite HANDOFF after steps/assets; checkpoint commit+push <=60min; retry push3 times; no ART PR.
+Rewrite HANDOFF after steps/assets; checkpoint commit+push <=60min; retry push3 times; no ART PR. REV2 all images<=1024px,<=4/look,<=8/HANDOFF; never reopen; compaction->disk->NEXT1.

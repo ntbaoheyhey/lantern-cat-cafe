@@ -4,13 +4,12 @@ DESIGNER IDLE ONLY | DRAWN K1 K2 K4 K5 | FRAME FILL FIRST
 LEARN: PAPERS + DOCS + OWN EXPERIMENTS | STUDY, DRILL, COMPARE, PRODUCE
 ORIGINAL ART ONLY | SAVE + PROVENANCE NOW | SMALL SHEETS | AUDIO IS SHIP'S
 STATIC CAMERA | BASIC + ULTIMATE | NO MAIN MERGE/DEPLOY | FILES ARE MEMORY
-NOW: A1 study complete; commit+push recipe/art drill; no runtime change.
-NEXT1: A1b classify reference dash/projectile/heal windows and drill own units.
-NEXT2: A10 requested landing keyart, thumbnail,3class icons before17Nov12UTC.
-NEXT3: A2 frame-fill layout; then A3 apply hybrid recipe to Soot.
-LAST GOOD COMMIT: a86387fe4d250803a676c9c094f6b5ebf90b09f6, pushed A0.
-OPEN: V4 film gates; inherited SHIP reports/v3-demo/vite.log unstaged untouched.
-PIDS: owned Vite67838 alive5990.
-BACKGROUND JOBS: none.
-FILES: A1 LEARN/REVIEW,8JPGs,drill.py/results.json; reference sheet private ignored.
-UPDATED: 2026-11-16T04:50:36.787961+00:00
+NOW: A10 keyart1 accepted 2026-11-16T05:09:21.864293+00:00; generate thumbnail then three class icons.
+NEXT1: Inspect own boss/2cat reference, generate thumbnail; save raw/export/provenance immediately, review <=1024px.
+NEXT2: Generate melee/ranged/healer icons separately; save/provenance each; inspect32/64px and deliver paths to SHIP.
+NEXT3: Complete A1b catalogue, then A2 framing before new poses.
+LAST GOOD COMMIT:46e21a6c3589cb965c10c5a8790b24d2724c9216 pushed; checkpoint next.
+OPEN: A1b exhaustive survey; Binding Thread class request; all V4 film gates.
+PIDS: owned Vite67838 alive5990. BACKGROUND JOBS:none; web/typecheck/parity all exited0.
+FILES: A10 keyart raw at tools/v3craft-lab/poses/raw/promo/keyart-1.png; web at apps/web/public/units/promo/v4/landing-keyart.webp; provenance.
+IMAGE OPENS:0 since rewrite; keyart1/approved-cats/composition-drill/ranged-matched already inspected; do not reopen.

@@ -1,0 +1,3 @@
+# A10 review
+Landing keyart1 accepted: four distinct cat faces/costumes/props, full ears/feet, Panko pulled inside the right edge, calm left copy space, warm grounded porch painting. Mochi leads, Clover and Soot elevated behind, Panko right. Dark blue left contrasts with the cream cats. It is promotional illustration, never a gameplay screenshot. Source1672x941, export1600x900 WebP329438bytes. Image inspected once as1024px preview; do not reopen it.
+Composition drill and approved-cat reference also inspected once. Thumbnail and class icons pending. No runtime changes; fresh web/typecheck/parity checks at same code state under REVIEW/A1b.
