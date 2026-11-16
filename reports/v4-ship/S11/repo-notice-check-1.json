@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-16T14:03:57.759Z",
+  "buildEvidence": "reports/v4-ship/S8/production-build-5.json",
+  "sourceCommit": "fadba43881cbb0c68e6f60d526ebe4b23eff8faa",
+  "indexIdentity": true,
+  "noticeSha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+  "rows": [
+    {
+      "surface": "installed",
+      "name": "spine-core",
+      "version": "4.2.120",
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+      "pass": true
+    },
+    {
+      "surface": "installed",
+      "name": "spine-threejs",
+      "version": "4.2.120",
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+      "pass": true
+    },
+    {
+      "surface": "source",
+      "path": "apps/web/public/licenses/spine-runtimes-4.2.120.txt",
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+      "pass": true
+    },
+    {
+      "surface": "production",
+      "path": "work/v4ship-prep/S8-production-5/dist/licenses/spine-runtimes-4.2.120.txt",
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+      "pass": true
+    },
+    {
+      "surface": "http",
+      "path": "/licenses/spine-runtimes-4.2.120.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "bytes": 1468,
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e",
+      "pass": true
+    }
+  ],
+  "packagedNoticePass": true,
+  "entitlementVerified": false,
+  "overallRepoGatePass": false,
+  "scope": "Exact installed4.2.120notice is retained in the built distribution and served without HTML fallback. This does not establish editor entitlement, historical ownership or all repository gates."
+}

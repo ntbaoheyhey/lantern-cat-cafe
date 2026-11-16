@@ -75,7 +75,8 @@ export class AudioEngine implements AudioBridge {
  private buffer(pack:string,m:AudioManifest):Promise<AudioBuffer>{
   if(!this.buffers.has(pack))this.buffers.set(pack,(async()=>{
    const urls=m.packs[pack];if(!urls)throw new Error(`Unknown audio pack: ${pack}`);
-   for(const format of ['webm','mp3'] as const){try{const response=await fetch(this.assetUrl(urls[format]));if(!response.ok)continue;const buffer=await this.ctx!.decodeAudioData(await response.arrayBuffer());this.decoded.set(pack,buffer);return buffer;}catch{/* Safari may need MP3. */}}
+   const formats=urls.preferredFormat==='mp3'?['mp3','webm'] as const:['webm','mp3'] as const;
+   for(const format of formats){try{const response=await fetch(this.assetUrl(urls[format]));if(!response.ok)continue;const buffer=await this.ctx!.decodeAudioData(await response.arrayBuffer());this.decoded.set(pack,buffer);return buffer;}catch{/* Retry the alternate encoded format. */}}
    throw new Error(`Audio pack ${pack} unavailable`);
   })().catch(e=>{this.buffers.delete(pack);throw e;}));return this.buffers.get(pack)!;
  }
@@ -84,7 +85,7 @@ export class AudioEngine implements AudioBridge {
   try{
    const m=await this.loadManifest(),musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;
    const menuPacks=screen==='home'?['voice.guide.idle','voice.mochi.gear','voice.mochi.forge'].flatMap(id=>(m.cues[id]??[]).map(s=>s.pack)):[];
-   const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic']:menuPacks),'b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])];
+   const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic']:menuPacks),'b2-ui','b2-ui-baked','v4-receipt',...(musicPack?[musicPack]:[])];
    await Promise.all([...new Set(ids)].filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));
   }catch{/* playback can retry */}
  }
@@ -271,8 +272,12 @@ export class AudioEngine implements AudioBridge {
   else{
    const movement=id.startsWith('move.');
    const attack=Math.min(movement ? .035 : .003,duration*.3),release=Math.min(movement ? .04 : .015,duration*.3);
-   gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
-   gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
+   // LEARN/S11-receipts.md: rendered receipt layers retain their individual
+   // attack/release envelopes. Applying another envelope changes the chime.
+   if(!s.enveloped){
+    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
+    gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
+   }
    source.start(now,s.start,sourceDuration);
   }
   if(p.ducking)this.duckMusic();

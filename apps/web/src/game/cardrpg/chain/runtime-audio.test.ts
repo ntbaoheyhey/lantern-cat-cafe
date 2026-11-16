@@ -9,12 +9,25 @@ const address='0x0000000000000000000000000000000000000001',hash=`0x${'a'.repeat(
 const config:ChainConfig={chainId:43113,rpcUrl:'http://127.0.0.1:8546',RelicNFT:address,RelicMarket:address};
 const request={address,abi:[],functionName:'test'} as const;
 let runtime:ReturnType<typeof chainRuntime>;
-const wallet=()=>({account:{address},getChainId:vi.fn(async()=>43113),getAddresses:vi.fn(async()=>[address]),writeContract:vi.fn(async()=>hash),sendTransaction:vi.fn(async()=>hash)});
+const wallet=(type:'local'|'json-rpc'='json-rpc')=>({account:{address,type},getChainId:vi.fn(async()=>43113),getAddresses:vi.fn(async()=>[address]),writeContract:vi.fn(async()=>hash),sendTransaction:vi.fn(async()=>hash)});
 beforeEach(()=>{vi.clearAllMocks();rpc.getChainId.mockResolvedValue(43113);rpc.simulateContract.mockResolvedValue({request});rpc.waitForTransactionReceipt.mockResolvedValue({status:'success',transactionHash:hash,from:address,gasUsed:21000n,effectiveGasPrice:1n,blockNumber:1n});rpc.getGasPrice.mockResolvedValue(1n);rpc.estimateGas.mockResolvedValue(21000n);});
 afterEach(()=>runtime?.silenceSounds());
 it('plays wallet, pending and confirmed in order for a successful receipt',async()=>{
  const w=wallet();runtime=chainRuntime(config,w as unknown as WalletClient,address);await expect(runtime.write(request)).resolves.toBe(hash);
  expect(vi.mocked(playCue).mock.calls.map(c=>c[0])).toEqual(['tx.wallet','tx.pending','tx.confirmed']);
+});
+it.each(['write','sweep'] as const)('keeps receipt feedback without a nonexistent guest-wallet prompt for %s',async mode=>{
+ const w=wallet('local');runtime=chainRuntime(config,w as unknown as WalletClient,address);
+ const operation=mode==='write'?runtime.write(request):(await runtime.moveAdapter([])).sweep(address,100000n);
+ await expect(operation).resolves.toBe(hash);
+ expect(vi.mocked(playCue).mock.calls.map(c=>c[0])).toEqual(['tx.pending','tx.confirmed']);
+});
+it.each(['write','sweep'] as const)('keeps one failure cue for failed local %s signing',async mode=>{
+ const w=wallet('local');w.writeContract.mockRejectedValue(new Error('Local signing failed'));w.sendTransaction.mockRejectedValue(new Error('Local signing failed'));
+ runtime=chainRuntime(config,w as unknown as WalletClient,address);
+ const operation=mode==='write'?runtime.write(request):(await runtime.moveAdapter([])).sweep(address,100000n);
+ await expect(operation).rejects.toThrow('Local signing failed');
+ expect(vi.mocked(playCue).mock.calls.map(c=>c[0])).toEqual(['tx.failed']);
 });
 it('records the submitted hash before receipt waiting can time out',async()=>{
  const submitted=vi.fn();rpc.waitForTransactionReceipt.mockRejectedValue(new Error('receipt timeout'));

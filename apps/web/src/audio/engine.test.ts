@@ -2,6 +2,8 @@ import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {AudioEngine} from './engine';
 import {VariantPools} from './variants';
 import type {AudioManifest,CueDesign,Sample} from './cues';
+import {readFileSync} from 'node:fs';
+import {resolve} from 'node:path';
 class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number,_time?:number){this.value=v;}cancelScheduledValues(){}}
 class Node {connect(n:Node){return n;}disconnect(){}}
 class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;loopStart=0;loopEnd=0;onended?:()=>void;start=vi.fn();stop(){this.onended?.();}}
@@ -20,8 +22,41 @@ const design:CueDesign={bus:'sfx',layers:['transient','body','tail','sweetener']
 const fixture:AudioManifest={version:4,packs:{test:{webm:'/test.webm',mp3:'/test.mp3'}},cues:{'voice.meow':samples('voice')},designs:{'hit.blunt':design,'hit.magic':design,'ui.click':{...design,bus:'ui',layers:design.layers.slice(0,2).map(l=>({...l,variants:samples('ui')}))}}};
 const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
-afterEach(()=>vi.unstubAllGlobals());
+afterEach(()=>{vi.unstubAllGlobals();vi.restoreAllMocks();});
 describe('layered playback admission and variants',()=>{
+ it.each([false,true])('uses a pack-selected MP3 first and retains WebM fallback (MP3 unavailable: %s)',async unavailable=>{
+  const m={...fixture,packs:{test:{webm:'/test.webm',mp3:'/test.mp3',preferredFormat:'mp3' as const}}};
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:!(unavailable&&url.endsWith('.mp3')),arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);const e=new AudioEngine();await e.unlock();e.play('hit.blunt');await vi.waitFor(()=>expect(e.hits.at(-1)?.result).toBe('played'));
+  expect(fetcher.mock.calls.map(c=>c[0])).toEqual(unavailable?['/audio/manifest.json','/test.mp3','/test.webm']:['/audio/manifest.json','/test.mp3']);
+  expect(e.hits.at(-1)?.result).toBe('played');
+ });
+ it('plays two distinct shipped receipt composites within20ms while retaining the six-source ceiling',async()=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine(()=>.5);await e.unlock();await e.preload('home');
+  e.play('tx.confirmed');Context.latest.currentTime+=.02;e.play('tx.confirmed');
+  expect(Context.latest.sources).toHaveLength(2);
+  for(let i=0;i<5;i++)e.play('tx.confirmed');
+  expect(Context.latest.sources).toHaveLength(6);expect(e.hits.at(-1)?.result).toBe('rate-limit');
+  expect(e.hits.filter(h=>h.result==='played').every(h=>h.layers?.length===2)).toBe(true);
+ });
+ it('preloads the receipt composite before the first confirmation without playing it',async()=>{
+  const m={...fixture,packs:{...fixture.packs,'v4-receipt':{webm:'/receipt.webm',mp3:'/receipt.mp3'}}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();await e.preload('home');
+  expect(e.diagnostics.packs).toContain('v4-receipt');expect(Context.latest.sources).toHaveLength(0);
+ });
+ it('preserves a pre-rendered envelope while two distinct receipts share one short window',async()=>{
+  const layers=design.layers.slice(0,2),baked=samples().map(sample=>({sample:{...sample,duration:.132,enveloped:true},layers:layers.map(l=>({role:l.role,variantId:'existing',offsetMs:l.offsetMs}))}));
+  const m={...fixture,designs:{...fixture.designs,'tx.confirmed':{...design,layers,baked,cooldownMs:0,pitchRange:[1,1],gainRange:[0,0]}}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();const ramp=vi.spyOn(Param.prototype,'linearRampToValueAtTime');
+  e.play('tx.confirmed');await flush();Context.latest.currentTime+=.02;e.play('tx.confirmed');await flush();
+  expect(Context.latest.sources).toHaveLength(2);expect(ramp).not.toHaveBeenCalled();ramp.mockRestore();
+  for(let i=0;i<5;i++){e.play('tx.confirmed');await flush();}
+  expect(Context.latest.sources).toHaveLength(6);expect(e.hits.at(-1)?.result).toBe('rate-limit');
+ });
  it('warms the shared menu speech pack at home without loading it for battle',async()=>{
   const m={...fixture,packs:{...fixture.packs,'menu-voices':{webm:'/menu.webm',mp3:'/menu.mp3'}},cues:{...fixture.cues,'voice.guide.idle':samples('voice').map(s=>({...s,pack:'menu-voices'}))}};
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));

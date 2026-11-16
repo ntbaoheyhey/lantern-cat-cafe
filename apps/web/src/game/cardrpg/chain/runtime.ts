@@ -94,7 +94,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     const simulation = await client.simulateContract({ ...request, account: address });
     // A wallet can change accounts/networks while the RPC simulation is running.
     await guard();
-    scope.wallet();
+    if(wallet.account?.type!=='local')scope.wallet();
     const submittedMonotonicAt=performance.now();
     const hash=await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji });
     submitted=true;onSubmitted?.(hash);const confirmed=await receipt(hash,{submittedMonotonicAt,action:request.functionName},scope);if(confirmed!==hash)onSubmitted?.(confirmed);return confirmed;
@@ -140,7 +140,7 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
           const reserve = gas * gasPrice;
           if (balance <= reserve) return undefined;
           await guard();
-          scope.wallet();
+          if(wallet.account?.type!=='local')scope.wallet();
           const submittedMonotonicAt=performance.now();
           const hash=await wallet.sendTransaction({account: wallet.account ?? address, chain: avalancheFuji, to, value: balance - reserve, gas, gasPrice, type: 'legacy'});
           submitted=true;return await receipt(hash,{submittedMonotonicAt,action:'Move AVAX'},scope);

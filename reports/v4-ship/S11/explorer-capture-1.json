@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-16T14:16:56.343Z",
+  "url": "https://testnet.snowtrace.io/tx/0xa23579b4b9f46e5153c6e05a6825044f3f6fef052be5eb88371d36e197087388",
+  "method": "Native Chromium video recording of the live public Snowtrace transaction. Fresh profile; read-only navigation, no wallet connection, no page replacement, no screenshots.",
+  "expected": {
+    "status": "Success",
+    "chainId": 43113,
+    "block": 60934441,
+    "time": "2026-11-12 07:09 UTC",
+    "from": "0x4628EA0f3F9F6B146fFFA9AaA0f636B24DBD1134",
+    "to": "0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11",
+    "feeAvax": "0.00000000002741392",
+    "receivedYarn": "20"
+  },
+  "errors": [],
+  "publicExplorerFootagePass": false,
+  "status": 403,
+  "failure": "locator.waitFor: Timeout 25000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Success', { exact: true }).first() to be visible\u001b[22m\n",
+  "video": {
+    "path": "work/v4ship-prep/S11-explorer-1/page@73b75ac4a77769e9b6373d96871e0047.webm",
+    "bytes": 571809,
+    "sha256": "a9935e7ea61849aa944b6d7ed24d286e932d3a2112cda05900c8b85a00c0f4c5"
+  },
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 1280,
+        "height": 720,
+        "nb_read_frames": "635"
+      }
+    ],
+    "format": {
+      "duration": "25.400000",
+      "size": "571809"
+    }
+  },
+  "humanReviewPass": false,
+  "submissionGatePass": false
+}

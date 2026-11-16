@@ -236,6 +236,11 @@
     "score-dawn": {
       "webm": "/audio/score-dawn.webm",
       "mp3": "/audio/score-dawn.mp3"
+    },
+    "v4-receipt": {
+      "webm": "/audio/v4-receipt.webm",
+      "mp3": "/audio/v4-receipt.mp3",
+      "preferredFormat": "mp3"
     }
   },
   "cues": {
@@ -27060,8 +27065,802 @@
         -1.5,
         1.5
       ],
-      "cooldownMs": 30,
-      "priority": 0
+      "cooldownMs": 0,
+      "priority": 0,
+      "baked": [
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 0,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 0.212,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 0.424,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 0.636,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 0.848,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 1.06,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/0-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 1.272,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 1.484,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 1.696,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 1.908,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 2.12,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 2.332,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/1-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 2.544,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 2.756,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 2.968,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 3.18,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 3.392,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 3.604,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/2-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 3.816,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 4.028,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 4.24,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 4.452,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 4.664,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 4.876,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/3-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 5.088,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 5.3,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 5.512,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 5.724,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 5.936,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 6.148,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/4-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 6.36,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-0",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 6.572,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-1",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 6.784,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-2",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 6.996,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-3",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 7.208,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-4",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        },
+        {
+          "sample": {
+            "pack": "v4-receipt",
+            "start": 7.42,
+            "duration": 0.132,
+            "bus": "sfx",
+            "variantId": "tx.confirmed/5-5",
+            "enveloped": true
+          },
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+              "offsetMs": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12
+            }
+          ]
+        }
+      ]
     },
     "deed.mint": {
       "bus": "sfx",
