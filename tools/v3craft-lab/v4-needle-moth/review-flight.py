@@ -10,15 +10,19 @@ import subprocess
 p = argparse.ArgumentParser()
 p.add_argument('--capture-root', default='reports/v3-feel/REVIEW/V4-A7-NEEDLE')
 p.add_argument('--out', default='reports/v4-art/REVIEW/A7/needle-moth')
+p.add_argument('--fixtures', nargs='+', default=['wave1', 'wave3', 'boss'])
+p.add_argument('--keys', nargs='+', type=int)
 a = p.parse_args()
 capture, root = Path(a.capture_root), Path(a.out)
 out = root / 'raw/projectile-review'
 out.mkdir(parents=True, exist_ok=True)
 receipts = []
-for fixture in ['wave1', 'wave3', 'boss']:
+for fixture in a.fixtures:
     d = json.loads(gzip.decompress((capture / fixture / 'capture.json.gz').read_bytes()))
     for plan in d['plans']:
         if 'needle-moth' not in plan['actorId']:
+            continue
+        if a.keys and plan['key'] not in a.keys:
             continue
         if plan['clockStart'] + plan['duration'] / 1000 >= d['videoSeconds']:
             continue
