@@ -1340,7 +1340,9 @@
         30,
         31
       ],
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T23:33:15.181980+00:00",
+      "observation": "Yarn f386 shows the complete target status row and two counter1 glyphs to the left of the glowing eyes, clear of HUD. The label sits on the outer left braid contour; retain that local silhouette contact as composition polish. Soot f519/519/526 retains complete shield/counter2 rows below the toolbar during the gold effect; two source defects map to the same new encoded frame."
     },
     {
       "fixture": "boss",
@@ -1356,7 +1358,9 @@
         34,
         35
       ],
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T23:33:15.181980+00:00",
+      "observation": "Soot f529/532 keeps the shield/counter2 row readable beside the face. Binding f586 has its full visible status row and counter1 below the audio/global toolbar, to the left of the body. Soot f655 retains shield and counters2/1 during green light. No target-label viewport clipping or HUD intersection is visible in these sampled crops."
     },
     {
       "fixture": "boss",
@@ -1372,7 +1376,9 @@
         38,
         39
       ],
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T23:33:15.181980+00:00",
+      "observation": "All four Soot green-effect states f658/661/664/667 keep the full shield/status row and counters2/1 next to the face, separated from the toolbar. The bright ring passes below the face; icon backing and bars remain visible."
     },
     {
       "fixture": "boss",
@@ -1386,12 +1392,24 @@
         40,
         41
       ],
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T23:33:15.181980+00:00",
+      "observation": "Binding f773 shows the red status icon plus counter1 and complete bars to the left of the body, below the global controls. The f779 state shows one red status icon and bars during its action; this is a different sampled status state, so it does not by itself prove text-preservation across the transition. Both target rows are fully visible. Empty lower slots contain no evidence."
     }
   ],
   "complete": true,
   "mappingPass": true,
-  "reviewComplete": false,
-  "reviewedCount": 8,
-  "finished": "2026-11-16T23:31:08.760539+00:00"
+  "reviewComplete": true,
+  "reviewedCount": 12,
+  "finished": "2026-11-16T23:31:08.760539+00:00",
+  "reviewCompletedAt": "2026-11-16T23:33:15.181980+00:00",
+  "finding": "All 42 semantic target-label crops, drawn from 41 distinct new encoded frames, are fully visible without observed target-label/HUD intersection. Soot/Mochi/Binding glyphs and bars are readable at native crop scale. Yarn counters and bars are readable beside its eyes, with outer-left braid contact retained as composition polish.",
+  "limitations": [
+    "42 semantic mappings use 41 distinct encoded frames; maximum action-elapsed difference is 16.700000ms. This sampling tolerance is not an acceptance threshold.",
+    "Native crops cover selected labels at discrete instants, not continuous temporal stability or every label throughout the film.",
+    "Original failure reproduction remains38/42 at720p and35/42 at900p; other original failures are retained. These new pixels are not exact reproductions of old frames.",
+    "Yarn target label touches its outer-left braid silhouette; readable eyes/counters do not settle all composition concerns.",
+    "The later Binding sample has fewer visible status icons; sampled pixel review alone does not prove transition text preservation. The separate304-state DOM check preserves the compared state text."
+  ],
+  "uniqueEncodedFrames": 41
 }
