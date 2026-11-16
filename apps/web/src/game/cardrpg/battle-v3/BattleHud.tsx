@@ -15,6 +15,7 @@ import './hud-details.css';
 import {GameIcon} from '../../../ui/GameIcon';
 import {displayedBossPhase} from '../depth/battle-presentation';
 import {battleWave,IntentMark} from './hud-details';
+import {createWorldLabelLayout} from './world-label-dom';
 
 function Meter({hp,max,name,shield=0,reduced=false}:{hp:number;max:number;name:string;shield?:number;reduced?:boolean}){
  const value=Math.max(0,Math.min(100,hp/max*100)),[trail,setTrail]=useState(value);
@@ -46,20 +47,18 @@ export default function BattleHud({m}:{m:DepthModel}){
  const totalState=useRef<{plan:unknown;until:number;amount:number}>({plan:null,until:0,amount:0});
  useEffect(()=>{
   document.body.classList.add('battle-v3-active');
+  const labelLayout=createWorldLabelLayout(world.current);
   let raf=0;
   const paint=()=>{
    const scene=window.__depthScene as SpineScene|undefined,canvas=document.querySelector('.dp-canvas')?.getBoundingClientRect();
-   if(canvas&&scene?.anchors)for(const anchor of scene.anchors){
-    const node=world.current.get(anchor.id);if(!node)continue;node.hidden=!anchor.visible;
-    node.style.left=`${canvas.left+anchor.labelX}px`;node.style.top=`${canvas.top+anchor.labelY}px`;
-   }
+   if(canvas&&scene?.anchors)labelLayout.paint(scene.anchors,canvas,!!m.battle?.initial.formationC2);
    document.body.classList.toggle('b3-cinema-occludes',!!scene?.cinema&&(scene.cinema.audit.plate||scene.cinema.audit.cutin));
    if(skipButton.current)skipButton.current.hidden=!scene?.cinema?.audit.plate;
    const plan=m.plan,state=totalState.current,now=performance.now();
    if(plan&&(plan.ultimate||/-[23]$/.test(plan.presentationId??plan.skillId)||/^enemy:[^:]+$/.test(plan.presentationId??plan.skillId))&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
    if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}
    raf=requestAnimationFrame(paint);
-  };paint();return()=>{cancelAnimationFrame(raf);document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
+  };paint();return()=>{cancelAnimationFrame(raf);labelLayout.dispose();document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
  },[m]);
  useEffect(()=>{if(help)dialog.current?.showModal();},[help]);
  const closeHelp=()=>{dialog.current?.close();setHelp(false);m.paused=paused.current;m.notify(false);helpButton.current?.focus();};

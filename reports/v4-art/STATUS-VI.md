@@ -15,4 +15,5 @@ Hai thử bố trí trên sáu cảnh đã xong; chọn cách tránh HUD/khuôn 
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
 A11: đã xem84/84sheet hành động và3/3sheet900p; lưu biên nhận theo100hash runtime không đổi.
 Ba cửa sổ cuối bị cắt vẫn giữ nguyên hạn chế; chữ sátHUD/banner chạm chân dung/cụm số dày còn mở.
-Tiếp theo: kiểm chứng vị trí nhãn qua các thời điểm kề nhau và42khung lỗi cũ; chưa cài sửa vào runtime.
+Đã cài vị trí nhãn theo đầu nhân vật vào nhánhART sau304mẫu và6ảnh so sánh;7test mới/typecheck đạt.
+Đang chuẩn bị fullweb/3F6/kiểm traDOM và bộ phim mới; chưa nghiệm thu toàn bộ.

@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T23:14:30.437220+00:00
-ACTIVE: user continuation;A10scene-ready transfer OPEN after2h timebox;A11 delivery review COMPLETE(scoped), now private placement temporal/all42defect validation. Continue through29Nov12UTC unless current pause/STOP/end.
+# ART execution anchor — 2026-11-16T23:19:04.343671+00:00
+ACTIVE: A11 actor-relative labels installed for validation on ART branch;7focusedtests/typecheckPASS. Fullregression/3F6/runtimeDOM/newfilms OPEN. A10integratedtransfer remainsOPEN;continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: implement typed actor-relative label layout and cached DOM extents in battle-v3/BattleHud.tsx; preserve text/IDs/face/HUD reservations. Private2drills+304states+6comparisons complete; then focused/fullweb/typecheck/3F6/lane and freshfilms.
+NEXT1: run detached placement-runtime-r1 validation(fullweb/explicit3F6/runtime-vs-private304DOM/lane) against102sourcehashes; then existing3x30s720audio+900p capture pipeline. Do not alter runtime while checks/capture run.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:f6b774759 verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
-LIVE: normalVite20416/5990 craftOFF. Temporal51815 completed;log jobs/a11-placement-temporal-r4.log. No replay/capture jobs active. Runtime placement not installed yet.
+LAST PUSH:8095c02a4 verified; actor-relative runtime checkpoint pending. Prior delivery ae96b7d85 receipt remains source-bound; newBattleHud/world-label-{layout,dom} implementation requires fresh gates.
+LIVE: normalVite20416/5990 craftOFF. No replay/capture jobs active; runtime placement installed but unaccepted pending validation/films.
 STOP/INBOX checked22:58UTC16Nov:noSTOP;latest user continuation active. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11placement: prior6states pass statically, but304semantic replay states REJECT stateless candidate for82.26px jump. 0measured intersections/textloss; baseline38/42reproduced720 and35/42at900. Remaining originals remain failures. temporal-r3-assessment.json.
@@ -28,7 +28,7 @@ A10contrast scoped receipt source9205464cb/80hashes;85labelsPASS,2700markers/279
 Bindingportraitc5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Contrastrequest13:40 b3-world/speed/stars/auto32unknownobs; newest18:25 transferrequest bound toscene-ready production12/sourcee9af6a933.
 OPEN reducedmotion/strictshake/activation/ensemble/portraitbanner/finalclasses/timesplit,A10totaltransfer; R2Panko boss bannerbackplate touchesportrait f290/f891/tailf892 though text readable; wave3Soot numbercluster f703 retained.
 Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
-Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;trackedV4working121669360B/150MB atresume; inherited dirt retained.
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;trackedV4working125324568B/150MB before runtime checkpoint; inherited dirt retained.
 Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,diff<=80. ImagingPython tools/.venv/bin/python.
 Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. Max4attempts/problem then change method, never gates.
