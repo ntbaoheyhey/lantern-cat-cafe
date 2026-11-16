@@ -10,10 +10,17 @@ for fixture in args.fixtures:
         own='needle-moth' in plan['actorId'];victims={i for e in plan['events'] if e['type']=='damage' and e.get('amount',0)>0 for i in e['targetIds'] if 'needle-moth' in i}
         units=({plan['actorId']} if own else set())|victims
         for unit in sorted(units):
-            start=plan.get('clockStart',plan['at']);impact=start+plan['impact']/1000
-            times=[start+i*.1 for i in range(23 if plan['ultimate'] else 10)] if unit==plan['actorId'] else [impact-.3+i*.1 for i in range(9)]
+            marked=[(shot,data['frames'][shot['renderFrame']]) for shot in data['resampled'] if (data['frames'][shot['renderFrame']].get('action')or{}).get('key')==plan['key']]
+            if not marked:continue
+            contact=min(marked,key=lambda sf:abs(sf[1]['action']['elapsed']-plan['impact']))
+            impact_frame=contact[0]['frame'];impact=impact_frame/30
+            first,last=marked[0][0]['frame'],marked[-1][0]['frame']
+            if unit==plan['actorId']:
+                indices=sorted(set(list(range(first,last+4,3))+[impact_frame,last+1]))
+            else:indices=list(range(impact_frame-9,impact_frame+16,3))
+            times=[n/30 for n in indices]
             if max(times)<args.after:continue
-            actions.append({'key':plan['key'],'actor':plan['actorId'],'unit':unit,'own':unit==plan['actorId'],'hit':unit in victims,'ultimate':plan['ultimate'],'impact':impact,'times':times,'complete':min(times)>=0 and max(times)<duration})
+            actions.append({'key':plan['key'],'actor':plan['actorId'],'unit':unit,'own':unit==plan['actorId'],'hit':unit in victims,'ultimate':plan['ultimate'],'impact':impact,'markedImpactElapsed':contact[1]['action']['elapsed'],'impactSamplingErrorMs':abs(contact[1]['action']['elapsed']-plan['impact']),'inferredClockStart':plan.get('clockStart',plan['at']),'times':times,'complete':min(times)>=0 and max(times)<duration,'sampling':'encoded frame markers; no inferred wall-clock start used'})
     frames=sorted({round(t*30) for a in actions for t in a['times']+[a['impact']-.1,a['impact'],a['impact']+.2] if 0<=t<duration})
     if not frames:
         results.append({'fixture':fixture,'actions':[],'parity':data['parity'],'errors':data['errors'],'videoSha256':data['videoSha256']});continue

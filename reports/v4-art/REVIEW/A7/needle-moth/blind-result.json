@@ -1,0 +1,174 @@
+{
+  "count": 9,
+  "correct": 9,
+  "pass": true,
+  "labelledAt": "2026-11-16T15:45:55.586569+00:00",
+  "comparedAt": "2026-11-16T15:45:55.638899+00:00",
+  "labelsArtifact": "reports/v4-art/REVIEW/A7/needle-moth/blind-labels.json",
+  "labelsSha256": "153d5cd5df232f50cb6cd383ab53d4148c7c88dc642da8a9edda1554037258dd",
+  "sampling": "3 each of windup/strike/received-hit, held interiors >34ms from swaps; affected Needle units; shuffled before labels; existing encoded frame ordinals.",
+  "frames": [
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 201,
+      "renderOrdinal": 386,
+      "expected": "strike",
+      "crop": [
+        912,
+        147,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "01",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 205,
+      "renderOrdinal": 394,
+      "expected": "strike",
+      "crop": [
+        912,
+        147,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "02",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 514,
+      "renderOrdinal": 1001,
+      "expected": "windup",
+      "crop": [
+        916,
+        148,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "03",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 512,
+      "renderOrdinal": 997,
+      "expected": "windup",
+      "crop": [
+        916,
+        148,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "04",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 521,
+      "renderOrdinal": 1014,
+      "expected": "hit",
+      "crop": [
+        951,
+        147,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "05",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-3-needle-moth",
+      "frame": 801,
+      "renderOrdinal": 1550,
+      "expected": "windup",
+      "crop": [
+        742,
+        403,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave1.webm",
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "id": "06",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 203,
+      "renderOrdinal": 390,
+      "expected": "strike",
+      "crop": [
+        912,
+        147,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "07",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-4-needle-moth",
+      "frame": 291,
+      "renderOrdinal": 561,
+      "expected": "hit",
+      "crop": [
+        951,
+        147,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3.webm",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "id": "08",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-3-needle-moth",
+      "frame": 439,
+      "renderOrdinal": 840,
+      "expected": "hit",
+      "crop": [
+        779,
+        402,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave1.webm",
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "id": "09",
+      "label": "hit",
+      "correct": true
+    }
+  ]
+}
