@@ -35,6 +35,10 @@ for fixture in ['wave1','wave3','boss']:
     if plan['ultimate']:expected='windup' if ms<300 else 'cast' if ms<1800 else 'idle'
     else:expected='idle' if ms<50 or ms>=560 else 'windup' if ms<270 else 'strike'
   if expected=='idle':continue
+  # A6: select interiors of held states; the recorded draw can lag the clock
+  # by one permitted30fps frame at a hard swap. Keep failed r1 evidence.
+  boundaries=[plan['impact'],plan['impact']+180] if damage else ([300,1800] if plan['ultimate'] else [50,270,330,560])
+  if min(abs(ms-b) for b in boundaries)<=34:continue
   b=u['box'];cx=b['x']+b['width']/2;cy=b['y']+b['height']/2
   pool[expected].append({'fixture':fixture,'frame':shot['frame'],'renderOrdinal':n,'expected':expected,'crop':[max(0,min(960,round(cx-160))),max(0,min(464,round(cy-128))),320,256],'video':str(folder/(fixture+'.webm')),'videoSha256':data['videoSha256']})
 rows=[]
@@ -55,5 +59,5 @@ for page in range(3):
  for i,r in enumerate(rows[page*4:page*4+4]):
   x=i%2*320;y=i//2*280;sheet.paste(Image.open(raw/(r['id']+'.jpg')),(x,y+24));draw.text((x+8,y+6),r['id'],fill='white')
  sheet.save(raw/f'sheet-{page+1:02}.jpg',quality=90)
-keyfile.write_text(json.dumps({'created':now(),'item':a.item,'sampling':'Random within available pose strata, 3eachofwindup,strike,hit,cast; remaining random from unused pool. Markers decoded by existing frame-marker.mjs; no image scaling.','rows':rows},indent=2)+'\n')
+keyfile.write_text(json.dumps({'created':now(),'item':a.item,'sampling':'Random within held-pose interiors, >34ms from hard-swap boundaries; 3eachofwindup,strike,hit,cast; remaining random from unused pool. Markers decoded by existing frame-marker.mjs; no image scaling.','rows':rows},indent=2)+'\n')
 print('Prepared12 randomized field crops in3 sheets. Do not open private-key.json before saving labels.')

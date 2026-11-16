@@ -4,7 +4,7 @@ Request REV3 SHA25615e1bc738d2bc686f23d631acd1e2b0d92f4117ab665f2021fa6844fdb8e1
 NEXT1: ps -p 68961; tail -n5 reports/v4-art/jobs/a6-final.log; collect final GREG/720audio/900boss films, inspect every Panko strip, run blind/face/perf receipt.
 NEXT2: BindingThread K1/K2 saved with provenance; continue K4 then normalized225px/2xhead sheet and own class drill; no enemy production changes.
 NEXT3: A6 acceptance review/checkpoint with honest open gates, then A7 enemy/boss authoring and A9 ensemble.
-LAST PUSH:41f73c847; verified09:43UTC. Source hashes22 in REVIEW/A6/source-tree.json.
+LAST PUSH:cef9ccd92; verified09:47UTC. Source hashes22 in REVIEW/A6/source-tree.json.
 LIVE: Vite67838 port5990; final regression+720/900 films PID68961 log reports/v4-art/jobs/a6-final.log, launched09:43UTC.
 No STOP/inbox pause/designer delivery at09:28UTC; recheck checkpoint. SHIPdb35585 nonfinal, NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private-video catalogue remainsA11; A3/A4 art checkpoints with pairwiseFX/activation open.
@@ -22,11 +22,12 @@ A7 prep LEARN/A7.md +8sources and BindingThread3prompts. BindingThread RANGED pe
 A7 Binding K1-A1 persisted raw+provenance; norm metrics IoU.438837,dE1.708804,head.975801,feet0,no crop. accepted=false pending2xhead/pose review.
 A7 head landmarks K0[216,324],K1raw[407,617],uncertainty4px; source cap-to-first face wrap. Never silently redefine.
 A7 K1 firstdisplay: samebrass/rose-thread/goldeneyes, both fists gatheredright; do not reopen raw. K2 saved/provenance; left extended rope hand readable, original brass/thread palette retained; no enemy production changes.
-IMAGEOPENS3: Binding own runtime,K1 firstdisplay,K2 768preview. Never reopen them. A6 films unviewed.
+IMAGEOPENS0 reset09:50UTC after7opens documented: Binding runtime/K1/K2/K4 +wave1three sheets. No reopen; next three randomized blind sheets.
 Never reopen prior A3–A5 sheets or Panko selected/drill/private/effect sheets (already inspected). New encoded A6 film sheets still pending.
 EXCLUDE inheritedv3logs/paritylatest,.DS_Store,recorderlinks,duplicatepreviewJPGs,raw/private/videosoutsideSYNC. <=8selectedJPG/item; reports<=150MB.
 Time-split process uncertainty remains explicit; do not claim>=50%authoring retroactively. Gates on film require film.
 No deploy/mainmerge/contracts/secrets; ownports5990–5993; never SHIPports or audiofiles.
 FINAL-r4REG:2648tests/315files,typecheck,3F6 PASS; 720audio films recording.
 LIVE POST: PID69950 reports/v4-art/jobs/a6-post.log waits for main68961, then final6case live/face, then isolatedPERFboss.
-LIVE GENERATION: cell g41:65 BindingThreadK4 started09:47UTC; auto-save/provenance+768preview. Max3jobs active.
+Binding K4-A1 saved/provenance; first768preview inspected (image7). Head ratio.925078 FAIL at[438,630],IoU.356183,dE3.369575,feet0. Needs8%head enlargement; no acceptance.
+Blind prepared12crops in tools/v3craft-lab/v4-panko/raw/blind/sheet-01..03.jpg; label before private-key access.
