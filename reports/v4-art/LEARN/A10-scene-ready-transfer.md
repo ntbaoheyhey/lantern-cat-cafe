@@ -1,0 +1,20 @@
+# A10 scene-ready image delivery
+
+Question: can unchanged-size delivery derivatives fit the 3,315,248-byte image allowance while preserving alpha, rig geometry, timing and the visible quality of the accepted artwork? SHIP's production12/source e9af6a933 measures 27,546,250–252 bytes only after a visible canvas and no loading/error overlay. The earlier container boundary is not readiness. Previous exact WebGL derivatives and owner selection remain valid scoped improvements, but their 6.78/7.31/8.19 MB fixture subsets do not establish the production gate.
+
+Study consulted 16 November 2026:
+
+- [Wang et al., 2004, Image Quality Assessment: From Error Visibility to Structural Similarity](https://ece.uwaterloo.ca/~z70wang/publications/ssim.pdf) [paper]: spatial structure adds information that simple pixel error misses. Use SSIM as a diagnostic alongside human inspection; it does not certify faces or costume details.
+- [Google WebP compression study](https://developers.google.com/speed/webp/docs/webp_study) [research]: compare rate and distortion on the same source rather than assuming a format or quality setting is universally adequate. Its photographic benchmark is not our painted-alpha atlas benchmark.
+- [cwebp reference](https://developers.google.com/speed/webp/docs/cwebp) [web documentation]: near-lossless preprocessing changes pixels; lossy RGB quality and alpha quality are independent. Alpha quality100 requests lossless alpha. Measure the decoded alpha rather than trusting the option alone.
+- [WebP lossless specification](https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification) [web documentation]: reversible ARGB coding can retain exact transparent RGB. The previous exact derivatives remain the reference, not a claim about the new lossy candidates.
+- [HTMLImageElement.decode](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decode) [web documentation]: wait for completed decoding before using a candidate; a response or image element alone is insufficient readiness.
+- [Three.js Texture](https://threejs.org/docs/pages/Texture.html) [web documentation]: retain texture dimensions, UVs, filters and existing color-space interpretation. Delivery encoding must not silently change rendering configuration.
+
+Own experiment: bind SHIP's observed image responses to the six actor source atlases and packed-page manifest; separate unchanged auxiliary images and non-image responses. Compute a clearly labelled projection using the actual boss roster, without calling it a production measurement. Original files stay intact.
+
+Two private drills before production: near-lossless60/exact versus lossy RGB85/sharp-YUV/alpha100, both method6 at original dimensions, on the six actor atlases and six boss-owned packed pages. Record bytes, source/candidate hashes, exact decoded alpha, masked mean Lab difference (existing limit6), per-pixel color error and diagnostic SSIM. Lossy candidates cannot inherit the earlier byte-identical RGBA claim. Keep both attempts, then inspect same-scale comparisons before selecting any delivery path. No thresholds are lowered.
+
+Production remains unchanged until the drills and comparison are reviewed. Subsequent proof requires decoded browser textures, real scene readiness, roster/fallback behavior, regression/typecheck/parity, existing-recorder films and layout reviews. Final SHIP total-transfer acceptance requires integrated production journeys. Audio and original SHIP-owned shell/background assets are outside this change.
+
+Drill R1 measured12 original sources: near60 projects14,087,171B total and changes alpha on all6 actor atlases; reject. RGB85 preserves every alpha sample and passes masked mean-Lab6, but projects9,329,393B total (4,644,641B images), still failing the8MB budget. Four native same-scale detail comparisons were inspected once: forms and key details remain legible, with minor texture smoothing. Both methods stay private; no production selection. Next bounded experiments RGB60 andRGB40 retain full dimensions and alpha100.
