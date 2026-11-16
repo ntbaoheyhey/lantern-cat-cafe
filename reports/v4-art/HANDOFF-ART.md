@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T19:20:56.798676+00:00
+# ART execution anchor — 2026-11-16T19:23:06.931670+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: A10contrast: run detached tools/v3craft-lab/v4-contrast/{runtime.mjs,validate-capture.py}; measure real rest/hover/focus labels, then review three30s720 films and900p layouts. Dark plaques promoted to battle.css; full validation pending.
+NEXT1: A10contrast: run runtime.mjs r2 and measure.py r2 --runtime. R1 six rest/focus views pass; hover speed3.4032/Auto3.8159 FAIL retained. Owned hover CSS now preserves existing painted backing; full regression/films still pending.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:173d58395 verified (contrast study+2drills). A9receipt557813950 pushed;77runtime hashes matched60763fd90. Current contrast CSS checkpoint pending.
-LIVE: craftVite3426/5990 only. A10drill85495 failed empty CSS;retry86180 completed0. Logs a10-contrast-drill-r1.log/r2.log retained; reports A10/contrast/drills.json. No active review worker.
+LAST PUSH:07b0bd162 verified (small-label plaques); study173d58395 and A9receipt557813950 pushed. Hover correction checkpoint pending.
+LIVE: craftVite3426/5990 only; real-state probe87476 finished11views/0errors. Log a10-contrast-runtime-r1.log; r1 measured hover failures retained in A10/contrast/runtime-contrast-r1.json.
 STOP/INBOX checked19:08UTC unchanged; noSTOPfile; designer mochi/soot/clover empty. SHIPHEAD55e72e843; final class announcement absent; db35585a remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.

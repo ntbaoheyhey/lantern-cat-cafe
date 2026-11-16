@@ -3,7 +3,8 @@ from pathlib import Path
 from PIL import Image, ImageChops, ImageDraw
 import json, math, re, sys
 lab = Path(__file__).resolve().parent
-folder = lab / 'raw' / ('drill-' + (sys.argv[1] if len(sys.argv) > 1 else 'r2'))
+runtime = '--runtime' in sys.argv
+folder = lab / 'raw' / (('runtime-' if runtime else 'drill-') + (sys.argv[1] if len(sys.argv) > 1 else 'r2'))
 data = json.loads((folder / 'drill.json').read_text())
 def luminance(rgb):
     linear = [c / 255 / 12.92 if c / 255 <= .04045 else ((c / 255 + .055) / 1.055) ** 2.4 for c in rgb]
@@ -43,10 +44,15 @@ for variant in data['variants']:
             'pass': bool(worst and worst[0] >= 4.5 and not unsupported)}
     variant['pass'] = all(row['measurement']['pass'] for row in variant['metadata'])
 data['method'] = 'Chromium screenshot backing with text fill transparent; black/white text-fill difference isolates glyph pixels. WCAG authored foreground, supported brightness transforms, no AA edge-colour substitution. Original screenshots and masks retained locally.'
-data['retainedHarnessFailure'] = 'r1 used an empty addStyleTag content string, rejected by Playwright before screenshots. Fixed to a nonempty CSS comment; r1 log retained.'
+if not runtime:
+    data['retainedHarnessFailure'] = 'r1 used an empty addStyleTag content string, rejected by Playwright before screenshots. Fixed to a nonempty CSS comment; r1 log retained.'
 out = Path('reports/v4-art/REVIEW/A10/contrast')
 out.mkdir(parents=True, exist_ok=True)
-(out / 'drills.json').write_text(json.dumps(data, indent=2) + '\n')
+(out / ('runtime-contrast-' + sys.argv[1] + '.json' if runtime else 'drills.json')).write_text(json.dumps(data, indent=2) + '\n')
+if runtime:
+    for v in data['variants']:
+        print(v['variant'], 'pass=', v['pass'], 'labels=', len(v['metadata']), 'min=', min(r['measurement']['ratio'] or 0 for r in v['metadata']))
+    raise SystemExit(0 if data.get('finished') and not data['errors'] and all(v['pass'] for v in data['variants']) else 1)
 panel = Image.new('RGB', (1024, 510), '#211c2a')
 draw = ImageDraw.Draw(panel)
 for i, variant in enumerate(data['variants']):

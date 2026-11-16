@@ -3,7 +3,7 @@ import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixtu
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-const out='tools/v3craft-lab/v4-contrast/raw/runtime-r1';
+const out='tools/v3craft-lab/v4-contrast/raw/runtime-'+(process.argv[2]??'r1');
 await mkdir(out,{recursive:true});
 const paths=JSON.parse(await readFile('tools/v3craft-lab/v4-clarity/source-paths.json','utf8'));
 for(const p of ['battle.css','hud-details.css','BattleHud.tsx'])paths.push('apps/web/src/game/cardrpg/battle-v3/'+p);
