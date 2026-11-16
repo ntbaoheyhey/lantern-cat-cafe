@@ -1,7 +1,7 @@
 # Bản thử dành cho giám khảo
 - Nhánh tích hợp: codex/v4-ship-2026-11-16; chưa triển khai lên mạng.
-- Bản healer mới đã chạy liên tục30phút,18lần khởi động lại trận,không lỗi; thời lượng mã hóa đã đối chiếu.
-- Bản ghi healer boss:−16,99LUFS; khoảng động8,9LU;đỉnh−1,65dBTP,đều trong giới hạn.
+- Bản ranged hiện tại đã chạy liên tục30phút,18lần khởi động lại trận,8.012nguồn âm bắt đầu,không lỗi; thời lượng mã hóa đã đối chiếu.
+- Bản ghi ranged boss:−17,00LUFS; khoảng động8,9LU;đỉnh−1,74dBTP,đều trong giới hạn.
 - Giới hạn sáu nguồn âm/100 ms, giảm nhạc 8 dB và phục hồi âm lượng đã đạt.
 - Toàn bộ âm vẫn có mẫu ước tính vượt33ms; nhận dạng và đo vật lý còn mở. Không kết luận G-AUDIO đã đạt.
 - Bản healer mới nhận dạng lời thoại 7/12, cần10/12; đây chưa phải so sánh có kiểm soát với bản8/12 trước. Kiểm tra nghe còn mở.
@@ -22,4 +22,4 @@ S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phả
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
 Âm thanh S11:đã cài144 sprite va chạm và launch/travel cho ranged;168/168 ca thử tốc độ cố định đạt pha/nguồn âm,47 kiểm tra tập trung đạt gồm390 đổi tốc độ. Bộ phát thật168/168ca và production hai kích thước đã đối chiếu;ước tính trễ33,67ms còn vượt33ms,nghe thực tế chưa xác nhận.
-Kiểm chứng mới: lời7/12 và trễ33,38ms chưa đạt; boss đã đủ30phút/18lần khởi động lại/0lỗi,đang xử lý kết quả. Lịch sử PNG:27.892đối tượng/3.107đoạn chữ khác nhau/0phát hiện;6tệp JPEG mang đuôi PNG và nội dung nhị phân khác chưa quét.
+Kiểm chứng mới đã liên kết cùng runtime:5cảnh,boss30phút,34UI,15settings,168scheduler và2hành trình production. G-AUDIO chưa đạt: lời7/12,trễ33,38ms,bag4,6/forge0,8LRA; nghe thực tế chưa xác nhận. PNG:3.107đoạn chữ/0phát hiện;6JPEG mang đuôi PNG chưa quét.
