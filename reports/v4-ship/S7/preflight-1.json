@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-16T11:13:43.175566+00:00",
+  "scope": "Read-only worktree/index preflight; Git tree objects only. No merge commit or runtime change.",
+  "scheduledMergeUtc": "2026-11-17T12:00:00Z",
+  "merged": false,
+  "shipCommit": "e4803c14a9605520dd339b1f89b746683e125464",
+  "artCommit": "22bca4f0b106937831d24d3985b7f56be8751325",
+  "mergeBase": "88fa5bdfd820609f054d174fce24248f35aa9575",
+  "gitVersion": "git version 2.56.0",
+  "comparison": {
+    "directTipComparison": {
+      "files": 1064,
+      "shipSidePathsIncluded": 443,
+      "limitation": "Comparing tips mixes incoming ART work with SHIP-only changes; not an incoming patch."
+    },
+    "mergeBaseIncomingComparison": {
+      "files": 621,
+      "owners": {
+        "ART": 621
+      },
+      "shipSideOverlap": []
+    }
+  },
+  "threeWayPrediction": {
+    "exitCode": 0,
+    "seconds": 0.295,
+    "tree": "0866a6a4507c3dac933310f4d6512ebb852f8254",
+    "conflicts": [],
+    "filesChangedFromShip": 621,
+    "shipSideFilesPreserved": 445,
+    "shipSideFilesTotal": 445
+  },
+  "incomingOutsideArtLane": [],
+  "indexWorktreeAndHeadUnchanged": true,
+  "next": "At the scheduled time re-fetch, read ART SYNC, select a green ART commit, then merge and run every required regression/journey/audio gate.",
+  "gatePass": false,
+  "limitations": [
+    "A conflict-free tree does not prove runtime compatibility.",
+    "Candidate is a fetched snapshot, not a selected green release.",
+    "Existing ART test failures and missing class baseline remain open."
+  ]
+}

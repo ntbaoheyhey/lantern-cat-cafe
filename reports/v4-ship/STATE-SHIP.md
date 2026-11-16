@@ -53,4 +53,4 @@ S1 history30159/PID68299 remains active; do not duplicate. Source scan and curre
 NEXT S2b hold verification, then stable20journeys/S4, then S6 docs+cleanclone. S6-S11 definitions recovered from verified REQUEST on user instruction.
 
 S6 preparation 2026-11-16T10:48:07.237676+00:00: learning8/1formal/5web/1comparison;docs53local links valid/all5contracts;audio118/118 hashes. Clean clone pending. S4-final-1 runtime stable and active.
-RESUME S6 2026-11-16T11:10:05.663045+00:00: remoteclone1 exit124/900.004s preserved; recovery checker syntaxvalid; published-local clone2 pending push. S4 9/20pass,31284active;history30159active;runtimeunchanged. G-REPO/class/audio remain open.
+RESUME S6 2026-11-16T11:22:36.646962+00:00: cleanclone2complete e4803c14a;allcommands0except7knownARTwebfails;initial/finaltrackedclean. G-REPOopen/S11repo-open. S4 12/20pass. S7read-onlyprep621ART/0conflicts;S8LEARN11sources,productionrehearsalnext. VercelSHIPexclusion2/2;pendingjobsunverified.

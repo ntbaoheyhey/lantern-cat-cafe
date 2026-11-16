@@ -298,7 +298,7 @@
     "url_or_path": "reports/v4-ship/S2/entry-probe.json",
     "type": "own-experiment",
     "topic": "S2 onboarding and measurement",
-    "takeaway": "Compared two routes: root redirected to caf\u00e9 in2376ms; index.html loaded legacy in2108ms, both without pageerrors."
+    "takeaway": "Compared two routes: root redirected to café in2376ms; index.html loaded legacy in2108ms, both without pageerrors."
   },
   {
     "id": "S2-LOCAL",
@@ -445,7 +445,7 @@
     "url_or_path": "reports/v4-ship/S3/finance-probe.json",
     "type": "experiment",
     "topic": "S3 financing and server eligibility",
-    "takeaway": "Two capped gifts plus disclosed12YARN transfer fund seal/fusion and5YARN sale; Guard pass alone does not unlock the existing boss-gated caf\u00e9 quest."
+    "takeaway": "Two capped gifts plus disclosed12YARN transfer fund seal/fusion and5YARN sale; Guard pass alone does not unlock the existing boss-gated café quest."
   },
   {
     "id": "S4-ERC1155",
@@ -761,5 +761,138 @@
     "accessed": "2026-11-16",
     "url_or_path": "reports/v4-ship/S6/learning-comparison.json",
     "takeaway": "README covers 2/5 registry contracts. Historical licence rows total1477; current encoded audio coverage is118/118 by exact path/hash."
+  },
+  {
+    "id": "S7-SSDF",
+    "type": "formal-document",
+    "url_or_path": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    "takeaway": "PW.8.2 requires documenting test results and triaging discovered issues; a mechanically clean merge still needs runtime and regression evidence.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S7-MERGETREE",
+    "type": "internet-doc",
+    "url_or_path": "https://git-scm.com/docs/git-merge-tree",
+    "takeaway": "Modern write-tree performs three-way merging without changing index, working tree or commits. Exit0 is conflict-free, exit1 has conflicts; inspect structured conflict paths and status.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S7-MERGE",
+    "type": "internet-doc",
+    "url_or_path": "https://git-scm.com/docs/git-merge",
+    "takeaway": "At the authorized merge time, no-ff with no-commit permits review before committing. A dirty worktree complicates recovery; checkpoint first.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S7-DIFF",
+    "type": "internet-doc",
+    "url_or_path": "https://git-scm.com/docs/git-diff",
+    "takeaway": "Use NUL-separated name-only output for path inventories and compare incoming changes from merge-base rather than treating tip differences as an incoming patch.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S7-CONFLICTS",
+    "type": "internet-doc",
+    "url_or_path": "https://docs.github.com/en/pull-requests/reference/merge-conflicts",
+    "takeaway": "Conflicts require choosing final content; file ownership guides resolution but cannot establish behavioral compatibility.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S7-COMPARISON",
+    "type": "own-experiment",
+    "url_or_path": "reports/v4-ship/S7/preflight-1.json",
+    "takeaway": "Direct tip diff reports1064 paths including443 SHIP-side paths; merge-base incoming diff reports621/621 ART paths. Merge-tree exit0 preserves445/445 SHIP-side paths without changing HEAD/index/worktree.",
+    "accessed": "2026-11-16"
+  },
+  {
+    "id": "S6-VERCEL-GIT",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vercel.com/docs/project-configuration/git-configuration",
+    "takeaway": "Unspecified Git branches default to deployment enabled. Use explicit false for the SHIP branch in both root configurations; a pending check is not proof of a completed deployment."
+  },
+  {
+    "id": "S6-DEPLOYMENT-COMPARISON",
+    "type": "own-experiment",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S6/deployment-guard-1.json",
+    "takeaway": "Both configs omitted SHIP before the fix (2/2 inherit enabled); both explicitly disable it afterwards (2/2 false). Existing app ignoreCommand separately skips non-main builds."
+  },
+  {
+    "id": "S8-RESOURCE-TIMING",
+    "type": "formal-document",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://www.w3.org/TR/resource-timing/",
+    "takeaway": "Resource transferSize can be zero for caches or restricted cross-origin resources. Capture a fresh browser profile plus network-level encoded lengths and retain missing-measurement limits."
+  },
+  {
+    "id": "S8-VITE-PREVIEW",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vite.dev/guide/static-deploy.html",
+    "takeaway": "Use vite build then vite preview to test the emitted production bundle locally; preview is not a production hosting server."
+  },
+  {
+    "id": "S8-VITE-ENV",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vite.dev/guide/env-and-mode.html",
+    "takeaway": "VITE variables are embedded in client output at build time. Keep secrets out, distinguish production NODE_ENV from mode, and prevent inherited local environment drift."
+  },
+  {
+    "id": "S8-VERCEL-LIMITS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vercel.com/docs/limits",
+    "takeaway": "Current Hobby cap is100 deployments/day; Pro is6000. Budget the user deployment under the work order cap; the account plan and remaining quota are not verified."
+  },
+  {
+    "id": "S8-SUPABASE-MIGRATIONS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://supabase.com/docs/guides/deployment/database-migrations",
+    "takeaway": "Review migration history and apply pending files in order with one operator. Installed CLI2.122.0 supports linked flags; do not copy newer remote syntax without verification."
+  },
+  {
+    "id": "S8-SUPABASE-FUNCTIONS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://supabase.com/docs/guides/functions/deploy",
+    "takeaway": "Deploy the required functions after their schema; preserve explicit gateway/auth configuration and avoid pruning unrelated functions."
+  },
+  {
+    "id": "S8-VERCEL-BUILD",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vercel.com/docs/cli/build",
+    "takeaway": "Production local build uses prod environment values; local building is separate from uploading a deployment."
+  },
+  {
+    "id": "S8-VERCEL-PREBUILT",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vercel.com/docs/cli/deploy",
+    "takeaway": "Deploy prebuilt uploads the previously built output; later metadata cannot change embedded environment values."
+  },
+  {
+    "id": "S8-VERCEL-ROLLBACK",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vercel.com/docs/cli/rollback",
+    "takeaway": "Rollback changes the production assignment. Hobby can roll back only to the preceding production deployment; save its URL before publishing."
+  },
+  {
+    "id": "S8-FLAG-COMPARISON",
+    "type": "own-experiment",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S8/flag-comparison-1.json",
+    "takeaway": "Executing the real flag functions: compact demo5/9 features versus explicit flags9/9; empty configuration0/9 and journey disabled. Four features require separate opt-ins and backend prerequisites."
+  },
+  {
+    "id": "S8-DRIP-RESERVE",
+    "type": "repository-source",
+    "accessed": "2026-11-16",
+    "url_or_path": "supabase/migrations/20261112010000_guest_drip.sql",
+    "takeaway": "The sponsor must retain1AVAX after pending reservations, the0.05AVAX drip and21000*gasPrice. A balance of exactly1AVAX cannot fund another guest."
   }
 ]
