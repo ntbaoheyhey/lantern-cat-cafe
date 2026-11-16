@@ -5,13 +5,16 @@ import {paintedTargets} from '../spine/vfx-registry';
 import {chargeEvent} from '../depth/card-action-plan';
 import {stageLayoutC2} from '../stage/layout-c2';
 import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline';
-import type {PackedPaint} from './atlas';
+import {paintSourceRect,type PackedPaint} from './atlas';
+import {loadAtlasImage} from '../spine/atlas-delivery';
+import sampledAtlases from './sampled-atlases.json';
 import type {SequencePlan} from '../battle-v3/sequence';
 import packedManifest from '../../../../../../assets/cardrpg-look/vfx-packed/manifest.json';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const textures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const packedTextures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-packed/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+const sampledPages=new Map(sampledAtlases.map(page=>[page.request,page]));
 export const PAINT_TIMELINES=new Map(Object.values(manifests).map(t=>[t.id,validatePaint(t)]));
 type Point={x:number;y:number};
 export class LayeredVfx {
@@ -35,16 +38,17 @@ export class LayeredVfx {
   const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page);
   const pending=(async()=>{
    const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page))?.[1];
-   let image:HTMLImageElement|undefined;
    try{
     if(!url)throw Error('Missing painted atlas '+page);
-    image=new Image();this.decoding.add(image);image.src=url;await image.decode();if(this.disposed)return;
+    const sampled=sampledPages.get(page),image=await loadAtlasImage(url,sampled,{
+     track:(image,pending)=>{if(pending)this.decoding.add(image);else this.decoding.delete(image);},aborted:()=>this.disposed
+    });if(this.disposed)return;
+    const sourceScaleX=sampled?image.naturalWidth/sampled.sourceWidth:1,sourceScaleY=sampled?image.naturalHeight/sampled.sourceHeight:1;
     for(const [id,entry] of entries){const sourceUrl=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
      if(!sourceUrl||!PAINT_TIMELINES.has(id))throw Error('Unknown packed painting '+id);
-     this.images.set(id,{image,...entry,sourceUrl});
+     this.images.set(id,{image,...entry,sourceUrl,sourceScaleX,sourceScaleY});
     }
    }catch{if(!this.disposed)this.stats.failed.push(...entries.map(([id])=>id));}
-   finally{if(image)this.decoding.delete(image);}
   })();
   this.pages.set(page,pending);return pending;
  }
@@ -89,7 +93,7 @@ export class LayeredVfx {
     const extent=unit*layer.size*(passiveTarget?.75:charging?.7:1),rotation=view.reducedMotion?0:key.rotate;
     c.save();c.globalCompositeOperation=layer.blend==='add'?'lighter':layer.blend==='screen'?'screen':'source-over';c.globalAlpha=key.alpha;
     c.translate(p.x+key.x*unit*facing,p.y+key.y*unit);c.rotate(rotation*facing);c.scale(key.sx*facing,key.sy);
-    c.drawImage(image.image,image.x+region[0],image.y+region[1],region[2],region[3],-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
+    c.drawImage(image.image,...paintSourceRect(image,region),-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
    }
   }
  }

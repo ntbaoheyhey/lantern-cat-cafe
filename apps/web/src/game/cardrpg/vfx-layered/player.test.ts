@@ -1,10 +1,13 @@
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import type {EffectPlan} from '../../squad/turn3d/effects';
 import {LayeredVfx,PAINT_TIMELINES} from './player';
+import sampledPages from './sampled-atlases.json';
 
 let images:TestImage[];
 class TestImage {
  src='';resolve!:()=>void;reject!:(error:Error)=>void;
+ get naturalWidth(){return sampledPages.find(p=>p.url===this.src)?.width??1024;}
+ get naturalHeight(){return sampledPages.find(p=>p.url===this.src)?.height??2560;}
  private decoded=new Promise<void>((yes,no)=>{this.resolve=yes;this.reject=no;});
  constructor(){images.push(this);}
  decode(){return this.decoded;}
@@ -41,4 +44,14 @@ it('does not publish an image that decodes after disposal',async()=>{
  expect(images[0]!.src).toBe('');images[0]!.resolve();await ready;
  expect(fx.images.size).toBe(0);expect(fx.stats.failed).toEqual([]);
  await fx.prepare(['mochi']);expect(images).toHaveLength(1);
+});
+
+it('restores authored source coordinates if a sampled page fails to decode',async()=>{
+ const fx=new LayeredVfx(()=>undefined),ready=fx.prepare(['mochi']);
+ expect(images[0]!.src).toContain('.avif');images[0]!.reject(new Error('unsupported AVIF'));
+ await vi.waitFor(()=>expect(images).toHaveLength(2));
+ expect(images[1]!.src).toContain('mochi-0.webp');images[1]!.resolve();await ready;
+ expect(fx.images.size).toBeGreaterThan(0);
+ for(const paint of fx.images.values()){expect(paint.sourceScaleX).toBe(1);expect(paint.sourceScaleY).toBe(1);}
+ expect(fx.stats.failed).toEqual([]);fx.dispose();
 });

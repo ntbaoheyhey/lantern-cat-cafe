@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T21:44:41.100714+00:00",
+  "scope": "Focused unit tests before full regression/browser/film validation",
+  "tests": 34,
+  "files": 5,
+  "pass": true,
+  "command": "pnpm --filter @taskbar-hero/web exec vitest run src/game/cardrpg/spine/atlas-delivery.test.ts src/game/cardrpg/spine/sampled-atlases.test.ts src/game/cardrpg/spine/assets.test.ts src/game/cardrpg/vfx-layered/atlas.test.ts src/game/cardrpg/vfx-layered/player.test.ts --reporter=dot",
+  "sourceHashes": {
+    "apps/web/src/game/cardrpg/spine/assets.ts": "85a07239b42f4edf6cebc37e79516600bd906ca91878fa3813fc688e9017f430",
+    "apps/web/src/game/cardrpg/spine/atlas-delivery.ts": "4e24c38c45957039f4d42f22ed86e5f7226f79b5404663b45389922c59810b73",
+    "apps/web/src/game/cardrpg/spine/atlas-delivery.test.ts": "7315b82b1f5e8945d0b2905702ceaa047dde7a19f7af5d70c953eaa269925f62",
+    "apps/web/src/game/cardrpg/spine/sampled-atlases.json": "fe2fe2d44d337b5d04b77103f2f5cca2da01cb80b8400ee2bc8f28f478f20829",
+    "apps/web/src/game/cardrpg/spine/sampled-atlases.test.ts": "fd30443f6eeea49475401a9763f89401bc4a0e284e1a97c6dbadb9820c61b307",
+    "apps/web/src/game/cardrpg/vfx-layered/atlas.ts": "d73b854cb79a19e3bb75ce0f97da1a42f8f8311d4e0516fe9b29578438953452",
+    "apps/web/src/game/cardrpg/vfx-layered/atlas.test.ts": "7c07f27091eb237ef1647bdd9d8721a5a22f00232494c415163686b941327ffe",
+    "apps/web/src/game/cardrpg/vfx-layered/player.ts": "9ae6b2bb3897f72d4994f04f870d4041b28b5d00fff8772e9313428595739e7b",
+    "apps/web/src/game/cardrpg/vfx-layered/player.test.ts": "e61fa71bfc80bf9d1d04d65931335cfee68aaa5c201f2a4a10b4153a0bcc4ccf",
+    "apps/web/src/game/cardrpg/vfx-layered/sampled-atlases.json": "483d11b57eb9ce06166adc7914209a0263b690e8d085591c81f96c2f7d6fc755",
+    "apps/web/public/units/sampled-delivery/mochi-fa125d28384c-aa99f3d4.avif": "aa99f3d4a64b78b2831f3a3b275e0452efe4a53ba0b42c81441e8e76277a9d6d",
+    "apps/web/public/units/sampled-delivery/soot-5cc365e1a563-c134d21b.avif": "c134d21b7f15813e69560fe4a3c6f7426a94b66456c10ed423758fb058d16ab4",
+    "apps/web/public/units/sampled-delivery/clover-eddc48d3c878-dbad6949.avif": "dbad6949fdc1ed5874b93f1bd647784a03e0bf46a85055d85363f47410cf3e6a",
+    "apps/web/public/units/sampled-delivery/panko-1a9e5df12fcb-a4ccf396.avif": "a4ccf3965d542e218dc6e73351ba38dba0eda82cdc3a384d5e5f5afd8b0fb394",
+    "apps/web/public/units/sampled-delivery/binding-thread-46347f4d0d83-be4da8f8.avif": "be4da8f842a2c7c3f8415e162275e4b1d3ef04b0cf88b40e1790bbb61bb03e6b",
+    "apps/web/public/units/sampled-delivery/yarn-giant-c7d59339e83a-4d4a3e9c.avif": "4d4a3e9c9d3ce67d43d217e75c734e3874ea2918d51943d179542680e3b9c877",
+    "apps/web/public/vfx/sampled-delivery/mochi-f08a34979f8a-3fd68fc2.avif": "3fd68fc29f1bbeb6cd4c3189ca0f95315657d14f5e39b8b8bb8de7537bf18cbb",
+    "apps/web/public/vfx/sampled-delivery/soot-ca02da5fbe8c-7f74b1a7.avif": "7f74b1a7df807c12dbc2de89ba0725b86b00d64099eb3018931c9055b612043b",
+    "apps/web/public/vfx/sampled-delivery/clover-c1c0bc6fcc43-571d6481.avif": "571d6481e23be5aa439a97b29cc5050cc35ab528e1605df9d9e1eb8a5bacced7",
+    "apps/web/public/vfx/sampled-delivery/panko-66720d11663a-77ff32d1.avif": "77ff32d18752e9bb6733706ff6d039fdebc5d0e479d770517f846f75d2befd61",
+    "apps/web/public/vfx/sampled-delivery/binding-thread-6c635ee1c73b-281503ba.avif": "281503ba27fa8bde3731231288516bce9b144e1a4cd69597a4296be67450e11e",
+    "apps/web/public/vfx/sampled-delivery/yarn-giant-e93a46f3812c-da7e1b08.avif": "da7e1b08137c31f4ae95f2d561c33846afa5554ad9004a7e86afc0ba01d7900d"
+  },
+  "fullAcceptance": false
+}

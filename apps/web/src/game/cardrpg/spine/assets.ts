@@ -10,14 +10,17 @@ import { animationCues, SpineEventCursor, type SpineCue } from './events';
 import {opaqueBounds} from '../stage/core';
 import {opaqueWorldBounds,type OpaqueWorldBounds} from '../stage/opaque-pose-bounds';
 import losslessAtlases from './lossless-atlases.json';
+import sampledAtlases from './sampled-atlases.json';
+import {loadAtlasImage} from './atlas-delivery';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
+const sampledPages=new Map(sampledAtlases.map(page=>[page.request,page]));
 export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
 async function response(path:string){const r=await fetch(spineAssetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
-// Exact derivatives are validated for NoColorSpace textures. Canvas consumers
-// retain their original URLs because browser alpha-edge rounding can differ.
-const image=async(path:string)=>{const img=new Image();img.src=deliveryUrls.get(path)??spineAssetUrl(path);await img.decode();return img;};
+// Sampled pages retain normalized UVs and NoColorSpace interpretation. Exact
+// derivatives remain separate fallbacks; generic Canvas URLs remain original.
+const image=(path:string)=>loadAtlasImage(deliveryUrls.get(path)??spineAssetUrl(path),sampledPages.get(path));
 export interface ClipData {duration:number;cues:SpineCue[]}
 type SkeletonAsset={data:CutoutData;create:()=>CutoutMesh;clips:Map<string,ClipData>;bounds:{x:number;y:number;width:number;height:number}};
 interface SequenceManifest {id:string;height:number;width:number;scale?:number;fps?:number;sockets:Record<string,[number,number]>;animations:Record<string,{fps?:number;frames:string[];events?:{name:string;time:number}[]}>}
@@ -26,14 +29,14 @@ const skeletonCache=new Map<string,Promise<SkeletonAsset>>(),sequenceCache=new M
 const templateStyles=import.meta.glob('../../../../../../art/units/*/style.json',{eager:true,import:'default'});
 const templateIds=new Set(Object.keys(templateStyles).map(p=>p.split('/').at(-2)!));
 const designerIds=new Set(['mochi','soot','clover']);
-/** Native JSON and original atlas pixels; no third-party animation runtime. */
+/** Native JSON with normalized UVs; no third-party animation runtime. */
 export function loadNativeRig(id:string):Promise<SkeletonAsset>{
  const key='native:'+id,cached=skeletonCache.get(key);if(cached)return cached;
  const pending=(async()=>{
   const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
   const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
   const textures:T.Texture[]=[];
-  try{for(const page of data.pages){const img=new Image(),path=`/units/${id}/${page.name}`;img.src=deliveryUrls.get(path)??path;await img.decode();const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+  try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,img=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path));const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(e){textures.forEach(t=>t.dispose());throw e;}

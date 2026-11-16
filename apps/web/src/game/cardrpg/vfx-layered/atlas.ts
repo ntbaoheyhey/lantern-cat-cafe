@@ -2,6 +2,13 @@ export interface PackedPaint {
  image:HTMLImageElement;
  x:number;y:number;width:number;height:number;
  sourceUrl:string;
+ sourceScaleX?:number;sourceScaleY?:number;
+}
+
+/** Packed offsets stay in authored pixels; only the sampled source rectangle scales. */
+export function paintSourceRect(paint:PackedPaint,region:readonly[number,number,number,number]):[number,number,number,number]{
+ const sx=paint.sourceScaleX??1,sy=paint.sourceScaleY??1;
+ return [(paint.x+region[0])*sx,(paint.y+region[1])*sy,region[2]*sx,region[3]*sy];
 }
 
 /** Equal-sized source sheets pack without resampling or extra transparent area. */
