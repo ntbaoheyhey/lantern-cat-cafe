@@ -1,0 +1,1156 @@
+{
+  "at": "2026-11-16T14:21:09.885Z",
+  "sourceCommit": "ae954bc54ac5157ef106d106da122d970c563c8a",
+  "buildEvidence": "reports/v4-ship/S8/production-build-6.json",
+  "scope": "Fresh1280x720production journey; real local API/Anvil transactions. No neutral unlock click, no injected playback, no screenshots. Causal telemetry does not prove physical onset or human listening.",
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/audio/journey-probe.mjs",
+      "sha256": "6dd09d80ac6f9d790e2864b5a3006b00cbfb4fe3413e76facbe35caad9ac4682"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/journey-observer.mjs",
+      "sha256": "435f2c029e8c2945e44760e139829bbe56e9b07962be95de4a732f0e688bde72"
+    }
+  ],
+  "actions": [
+    "Play free",
+    "Start trial",
+    "Mint trial reward",
+    "Fund workshop",
+    "Seal Epic",
+    "Forge Legendary",
+    "List for 5 YARN",
+    "Buy with demo wallet",
+    "Withdraw Spool",
+    "Face the boss"
+  ],
+  "receipts": [
+    {
+      "hash": "0xcf2022668bc107c9816c1534745c36b65aa16978b92958f86623e4a0396a3c0d",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021869085483",
+      "confirmationMs": 11,
+      "confirmedAt": 1794838964072,
+      "block": "26",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb74b4805e683dd36302ace53ce5145aea5db46a1e1799c402ef8ca973cebaaf9",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "mint",
+      "feeAvax": "0.000093574733037952",
+      "confirmationMs": 15.200000002980232,
+      "confirmedAt": 1794838964098,
+      "block": "27",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x27a5af4458d57ba107bf3abaec7766a43916be01bf5377c44fd18d94abc6573b",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "claimTester",
+      "feeAvax": "0.000173882825440074",
+      "confirmationMs": 14.400000005960464,
+      "confirmedAt": 1794838964251,
+      "block": "28",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xf6e49c55ab0e45c711d6485418f2b1d53deb4292c32752bc4b2dfe06904b9a06",
+      "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021583772196",
+      "confirmationMs": 506,
+      "confirmedAt": 1794838964786,
+      "block": "29",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x1ae513bbd1df460bd4823b4e126c82a67c21691a976bea5b5cd89e5dedd8fd19",
+      "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+      "payer": "0x0099ca36dd16c0e826620654b943d7d432ab8886",
+      "action": "claimTester",
+      "feeAvax": "0.000155108974457475",
+      "confirmationMs": 17.599999994039536,
+      "confirmedAt": 1794838964826,
+      "block": "30",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x85b46e85de8e95d49456c556b0754f5639abb39e790583819935f835b08923f6",
+      "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+      "payer": "0x0099ca36dd16c0e826620654b943d7d432ab8886",
+      "action": "transfer",
+      "feeAvax": "0.000035905466822764",
+      "confirmationMs": 14.199999988079071,
+      "confirmedAt": 1794838964850,
+      "block": "31",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x1085008e20d2491581db6fdadc488472d187f781b79a4affb15c7ad43d4c9490",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "seal",
+      "feeAvax": "0.0000837053110313",
+      "confirmationMs": 763.5999999940395,
+      "confirmedAt": 1794838965805,
+      "block": "32",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x248e47ca8ffd20edb30fb9da5bc9c3d1b582f1c50d42d09417913995edf8a38c",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "mint",
+      "feeAvax": "0.000132686246594793",
+      "confirmationMs": 24.900000005960464,
+      "confirmedAt": 1794838965857,
+      "block": "33",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xf93aca7492c5d135c94c316364eb69cdbc599c2b910b0099d4efe06939a42271",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "seal",
+      "feeAvax": "0.000066003528325056",
+      "confirmationMs": 20,
+      "confirmedAt": 1794838966386,
+      "block": "34",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x994f4b1a48ed7736678c749ce9b26eb1db3b5dd9f67e9bd239aa8bb61ebb6d7f",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "safeBatchTransferFrom",
+      "feeAvax": "0.000056761626295887",
+      "confirmationMs": 24.200000002980232,
+      "confirmedAt": 1794838966434,
+      "block": "35",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xc29df396082f98f2accf34920b5c02420f5de658fb33acba83459bffb1884d7d",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "mint",
+      "feeAvax": "0.000131997668462905",
+      "confirmationMs": 14,
+      "confirmedAt": 1794838966491,
+      "block": "36",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x1b6fa97758fd56185ef6e946dbb80c1528c1055c715ba6ae668e88b457517a69",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "setApprovalForAll",
+      "feeAvax": "0.000047145906292884",
+      "confirmationMs": 13.099999994039536,
+      "confirmedAt": 1794838966782,
+      "block": "37",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x687b108fd24a6eb0397349199d86dbe09fa18313dc4d064b663d36e7eca9b2b7",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "list",
+      "feeAvax": "0.000237427340954082",
+      "confirmationMs": 766.5,
+      "confirmedAt": 1794838967561,
+      "block": "38",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x13b5d05730fba93061cb5b65089c6f4b836d1a24cd6e9b525820b2e6493afe92",
+      "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+      "payer": "0x0099ca36dd16c0e826620654b943d7d432ab8886",
+      "action": "approve",
+      "feeAvax": "0.00004729950703611",
+      "confirmationMs": 10.400000005960464,
+      "confirmedAt": 1794838968078,
+      "block": "39",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x4b023a0977ac3c4d55de0d214e4836feb82718f4b46110b2f7556f056f059ed6",
+      "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+      "payer": "0x0099ca36dd16c0e826620654b943d7d432ab8886",
+      "action": "buy",
+      "feeAvax": "0.00018821813584074",
+      "confirmationMs": 12.299999997019768,
+      "confirmedAt": 1794838968098,
+      "block": "40",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x18a865ef53a0ebfe2fb2c2d2688f67d604fd8494cf09bd4ec7dc23e49127020a",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "withdraw",
+      "feeAvax": "0.000044693666513136",
+      "confirmationMs": 31.30000001192093,
+      "confirmedAt": 1794838968139,
+      "block": "41",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x1cf9fcc38a63eab493a42700511b929363ea34c9d7b7f9d152f07a86749b7c78",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "mint",
+      "feeAvax": "0.000131200158401415",
+      "confirmationMs": 21.299999997019768,
+      "confirmedAt": 1794838968349,
+      "block": "42",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb6ed1f364920f3270a9bfd25d6cb8728044494d47f1c205189ad3db8920dffbf",
+      "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "payer": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+      "action": "claim",
+      "feeAvax": "0.00012059144203719",
+      "confirmationMs": 768.5,
+      "confirmedAt": 1794838969145,
+      "block": "43",
+      "gasSource": "cafe",
+      "local": true
+    }
+  ],
+  "errors": [],
+  "blocked": [],
+  "failedRequests": [],
+  "journeyPass": true,
+  "receiptVerification": {
+    "scope": "Disposable Anvil receipt values and wallet history; no public latency claim",
+    "rows": [
+      {
+        "hash": "0xcf2022668bc107c9816c1534745c36b65aa16978b92958f86623e4a0396a3c0d",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb74b4805e683dd36302ace53ce5145aea5db46a1e1799c402ef8ca973cebaaf9",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x27a5af4458d57ba107bf3abaec7766a43916be01bf5377c44fd18d94abc6573b",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xf6e49c55ab0e45c711d6485418f2b1d53deb4292c32752bc4b2dfe06904b9a06",
+        "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x1ae513bbd1df460bd4823b4e126c82a67c21691a976bea5b5cd89e5dedd8fd19",
+        "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x85b46e85de8e95d49456c556b0754f5639abb39e790583819935f835b08923f6",
+        "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+        "action": "transfer",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x1085008e20d2491581db6fdadc488472d187f781b79a4affb15c7ad43d4c9490",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x248e47ca8ffd20edb30fb9da5bc9c3d1b582f1c50d42d09417913995edf8a38c",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xf93aca7492c5d135c94c316364eb69cdbc599c2b910b0099d4efe06939a42271",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x994f4b1a48ed7736678c749ce9b26eb1db3b5dd9f67e9bd239aa8bb61ebb6d7f",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "safeBatchTransferFrom",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xc29df396082f98f2accf34920b5c02420f5de658fb33acba83459bffb1884d7d",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x1b6fa97758fd56185ef6e946dbb80c1528c1055c715ba6ae668e88b457517a69",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "setApprovalForAll",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x687b108fd24a6eb0397349199d86dbe09fa18313dc4d064b663d36e7eca9b2b7",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "list",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x13b5d05730fba93061cb5b65089c6f4b836d1a24cd6e9b525820b2e6493afe92",
+        "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+        "action": "approve",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x4b023a0977ac3c4d55de0d214e4836feb82718f4b46110b2f7556f056f059ed6",
+        "wallet": "0x0099CA36dD16c0E826620654b943D7D432aB8886",
+        "action": "buy",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x18a865ef53a0ebfe2fb2c2d2688f67d604fd8494cf09bd4ec7dc23e49127020a",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "withdraw",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x1cf9fcc38a63eab493a42700511b929363ea34c9d7b7f9d152f07a86749b7c78",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb6ed1f364920f3270a9bfd25d6cb8728044494d47f1c205189ad3db8920dffbf",
+        "wallet": "0xda7f2a9bed7ff1584fa9b1146c0b220f0f4a2ba7",
+        "action": "claim",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      }
+    ],
+    "receiptCount": 18,
+    "actionTypes": 12,
+    "walletReceiptCount": 13,
+    "historyCount": 15,
+    "missingWalletReceipts": [],
+    "explorerLinks": true,
+    "pass": true
+  },
+  "events": {
+    "path": "reports/v4-ship/S11/audio-journey-3.events.json.gz",
+    "sha256": "a521de34906ebd4c12d7f574cab28e650e444284ea3774a47650eb3c930f96ea"
+  },
+  "audio": {
+    "controls": [
+      {
+        "label": "Play free",
+        "sequence": 1,
+        "requests": [
+          {
+            "request": 2,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              2
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 90.37833333333333,
+            "durationMs": 91.19817546035058,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Start trial",
+        "sequence": 3,
+        "requests": [
+          {
+            "request": 5,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              6
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.48033334227398,
+            "durationMs": 52.378380905002686,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Mint trial reward",
+        "sequence": 5,
+        "requests": [
+          {
+            "request": 202,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              179
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.177333330342663,
+            "durationMs": 83.52915715227027,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Fund workshop",
+        "sequence": 7,
+        "requests": [
+          {
+            "request": 210,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              186
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.67433334524685,
+            "durationMs": 58.247785728354984,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Seal Epic",
+        "sequence": 9,
+        "requests": [
+          {
+            "request": 220,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              195
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.97633334225975,
+            "durationMs": 90.58878161246753,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Forge Legendary",
+        "sequence": 11,
+        "requests": [
+          {
+            "request": 226,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              201
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.6793333303649,
+            "durationMs": 55.938077675875775,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "List for 5 YARN",
+        "sequence": 13,
+        "requests": [
+          {
+            "request": 234,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              209
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.57733332141652,
+            "durationMs": 89.90758190446968,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Buy with demo wallet",
+        "sequence": 15,
+        "requests": [
+          {
+            "request": 240,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              215
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.472333327372326,
+            "durationMs": 52.2823804835042,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Withdraw Spool",
+        "sequence": 17,
+        "requests": [
+          {
+            "request": 248,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              222
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.87833333334129,
+            "durationMs": 84.9253882301042,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Face the boss",
+        "sequence": 19,
+        "requests": [
+          {
+            "request": 254,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              228
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.478333327380824,
+            "durationMs": 58.31846632217719,
+            "played": true
+          }
+        ],
+        "pass": true
+      }
+    ],
+    "receipts": [
+      {
+        "hash": "0xcf2022668bc107c9816c1534745c36b65aa16978b92958f86623e4a0396a3c0d",
+        "action": "Guest funding",
+        "requests": [
+          {
+            "request": 204,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              181
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.4753333273693,
+            "durationMs": 128.21382428289496,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xb74b4805e683dd36302ace53ce5145aea5db46a1e1799c402ef8ca973cebaaf9",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 206,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              182
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.27433333930094,
+            "durationMs": 136.0313139664413,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x27a5af4458d57ba107bf3abaec7766a43916be01bf5377c44fd18d94abc6573b",
+        "action": "claimTester",
+        "requests": [
+          {
+            "request": 212,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              188
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.87433333332592,
+            "durationMs": 133.79407110103614,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xf6e49c55ab0e45c711d6485418f2b1d53deb4292c32752bc4b2dfe06904b9a06",
+        "action": "Guest funding",
+        "requests": [
+          {
+            "request": 214,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              190
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.47333332739072,
+            "durationMs": 129.25636726629364,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x1ae513bbd1df460bd4823b4e126c82a67c21691a976bea5b5cd89e5dedd8fd19",
+        "action": "claimTester",
+        "requests": [
+          {
+            "request": 216,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              192
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.175333330364083,
+            "durationMs": 130.58573507882443,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x85b46e85de8e95d49456c556b0754f5639abb39e790583819935f835b08923f6",
+        "action": "transfer",
+        "requests": [
+          {
+            "request": 218,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              193
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.274333339286386,
+            "durationMs": 132.22650896715038,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x1085008e20d2491581db6fdadc488472d187f781b79a4affb15c7ad43d4c9490",
+        "action": "seal",
+        "requests": [
+          {
+            "request": 222,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              197
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.575333336309996,
+            "durationMs": 133.7313995817908,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x248e47ca8ffd20edb30fb9da5bc9c3d1b582f1c50d42d09417913995edf8a38c",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 224,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              199
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.073333336331416,
+            "durationMs": 129.05522190568774,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xf93aca7492c5d135c94c316364eb69cdbc599c2b910b0099d4efe06939a42271",
+        "action": "seal",
+        "requests": [
+          {
+            "request": 228,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              203
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.867333333328133,
+            "durationMs": 134.75954303545734,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x994f4b1a48ed7736678c749ce9b26eb1db3b5dd9f67e9bd239aa8bb61ebb6d7f",
+        "action": "safeBatchTransferFrom",
+        "requests": [
+          {
+            "request": 230,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              205
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.07133333630918,
+            "durationMs": 133.88532724663094,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xc29df396082f98f2accf34920b5c02420f5de658fb33acba83459bffb1884d7d",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 232,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              207
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.576333321398124,
+            "durationMs": 132.7429696967215,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x1b6fa97758fd56185ef6e946dbb80c1528c1055c715ba6ae668e88b457517a69",
+        "action": "setApprovalForAll",
+        "requests": [
+          {
+            "request": 236,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              211
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.679333345251507,
+            "durationMs": 134.77935766762528,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x687b108fd24a6eb0397349199d86dbe09fa18313dc4d064b663d36e7eca9b2b7",
+        "action": "list",
+        "requests": [
+          {
+            "request": 238,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              213
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.877333333322895,
+            "durationMs": 132.69754492533536,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x13b5d05730fba93061cb5b65089c6f4b836d1a24cd6e9b525820b2e6493afe92",
+        "action": "approve",
+        "requests": [
+          {
+            "request": 242,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              217
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.67233334526827,
+            "durationMs": 129.0686552453053,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x4b023a0977ac3c4d55de0d214e4836feb82718f4b46110b2f7556f056f059ed6",
+        "action": "buy",
+        "requests": [
+          {
+            "request": 244,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              218
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.47333332739072,
+            "durationMs": 131.89402702543873,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x18a865ef53a0ebfe2fb2c2d2688f67d604fd8494cf09bd4ec7dc23e49127020a",
+        "action": "withdraw",
+        "requests": [
+          {
+            "request": 246,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              220
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.88033333333442,
+            "durationMs": 128.7592563543427,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x1cf9fcc38a63eab493a42700511b929363ea34c9d7b7f9d152f07a86749b7c78",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 250,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              224
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.27533333929023,
+            "durationMs": 133.49162256764657,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xb6ed1f364920f3270a9bfd25d6cb8728044494d47f1c205189ad3db8920dffbf",
+        "action": "claim",
+        "requests": [
+          {
+            "request": 252,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              226
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.67333333037095,
+            "durationMs": 128.73834322853384,
+            "played": true
+          }
+        ],
+        "pass": true
+      }
+    ],
+    "maxStartsPer100ms": 5,
+    "sourceBudgetPass": true,
+    "primaryControlsPass": true,
+    "everyReceiptChimePass": true,
+    "unattributedTransientStarts": 0,
+    "physicalOnsetVerified": false,
+    "overallAudioGatePass": false
+  },
+  "rollback": true
+}

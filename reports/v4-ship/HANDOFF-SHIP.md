@@ -4,11 +4,11 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW S11 receiptfix implemented:36pair single-source composite,localwallet prompt semantics,distinctreceipt eligibility;44focusedpass. Noticeproduction5PASS5/5;history/explorer work continues.
-NEXT 1: Stop ownedproduction5supervisor56354 afterjourney2rollbacktrue;start rehearsal/start.mjs6. Run audio/journey-probe.mjs3 with production-build-6.json;all18chimes+6startbudget required.
-NEXT 2: Finalaudio fullscenecoverage and1800s endurance after productioncoveragepasses;historyscans;nativeSnowtrace recording. No threshold/mixer reductions;filmLRA4.8/humanreview remain open.
+NOW USER PAUSE:handoff saved;do not resume implementation/tests until explicit user resume. Receiptremedy production6 journey3 completed18/18chimes;audio gate still open.
+NEXT 1:On explicitresume collect history30159+53019 iffinished. Inspect coldPlayfree estimated90.378ms and run freshfullscene/1800sendurance on unchanged audio runtime;receiptcoverage prerequisite nowpasses.
+NEXT 2:Historyredactedtriage/incrementalcoverage;nativeSnowtrace recording. No threshold/mixer reductions;physicalonset/humanreview/frozenASR8of12/filmLRA4.8 remain open.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
-CHECKPOINT:thiscommit receiptfix/production5notice/causaljourney2/encodingcomparison;previouspushedfadba4388. LEARN/S11-receipts.md/S11-repo.md. Exactstagedscan beforecommit.
+CHECKPOINT:thiscommit production6+journey3+UI34duration evidence andpausehandoff;previouspushedae954bc54. Productunchanged;G-REG audio-receipt-regression-1 evidence applies. Exactstagedscan beforecommit.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 finalcoverage451.666s:-17.64LUFS/8.7LRA/-1.06dBTP;all5sceneestimatedonsets<=18.07ms;sourcebudget/duck/recovery/errorspass. FrozenASR8/12fail;human/physicalunverified.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
@@ -24,16 +24,16 @@ S2b1.15holdout300wins/0healerDamage;firstloss17.50245min;boss87.0667s/p9093.57. 
 S4-final-1:20/20PASS;1280/1440battlemed2.957/2.9325s(2clicks),receiptmed95.2325/95.190s,max95.848s;360verifiedreceipts;0errors/popups;S4/final-journeys-1.json.
 G-UI audit3:2journeys/36receipts/26samples/max21bodywords;0clip/unnamed/overflow/errors;historyTab30/30,keyboard6/6.4ARTportraitfails/36contrastunknown remain;S11/ui-audit-3-diagnosis.json.
 G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zeroerrors/originaltimestamps. 55logs/5contracts/30RPCverifiedreceipts/block61162789;no sponsoredFuji latencyproof.
-S1 fullhistory30159/PID68299active,oldscope3790. Frozenadditionalhistory53019/PID61500active:1703commits acrosscapturedrefs minuspreS0base(overlapsoldbranches);scope1 total3846. No rawfindings.
-REPORT BUDGET:99MB;S8screenshots6/8;S10screenshots8/8;S11screenshots2/8;imageopens5total. Original160capturesarchived/hashverified.
-LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;fetched22bca4f0b106937831d24d3985b7f56be8751325. S7preflight621ARTpaths/0conflicts/445SHIPpreserved;noearlymerge.
-SERVICES production5preview5998/API5997/Anvil8546 supervisor56354/session74541,previewlauncher56455;audio5995PID30528. Journey15053complete/rollbacktrue;history30159+53019active.
+S1 fullhistory30159/PID68299stillactive,oldscope3790. Frozenadditionalhistory53019/PID61500stillactive:1703commits acrosscapturedrefs minuspreS0base(overlapsoldbranches);scope1 total3846. No rawfindings.
+REPORT BUDGET:98,482,694bytes beforehandoffupdate;S8screenshots6/8;S10screenshots8/8;S11screenshots2/8;imageopens5total. Original160capturesarchived/hashverified.
+LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;observedtipf5c37828f3d96e292f1c38ba1415463c55a1b9c6 notpreflighted. Prior22bca4f0bpreflight621ARTpaths/0conflicts/445SHIPpreserved;noearlymerge.
+SERVICES production6preview5998/API5997/Anvil8546 supervisor63547/session9768,previewlauncher63746;audio5995PID30528. Journey37780collectedexit0/rollbacktrue;history30159+53019running. Services/scans leftintact.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
-STOP absent;explicitresume. S10film152.833333s/9315673B;47EN/VIcues. LRA4.8FAIL. LiveSnowtraceIABreadpassbutnovideo;nativecapture1HTTP403/timeout,noacceptedfootage.
+STOP absent;USER REQUESTED PAUSE. S11journey3:18verifiedreceipts/18causalchimes,max5starts/100ms;receiptmaxonset32.473ms/maxduration136.032ms;10controlsplayed;firstclickestimated90.378ms. G-AUDIO false.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T14:18:23.195848+00:00.
+UPDATED 2026-11-16T14:25:51.163849+00:00. User:savehandoffandstop;no newcaptures/endurance/implementation started this continuation.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10film2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Film1FAIL(fontblocked)retained. ffmpeg-full15838exit0;useexplicitpath.
