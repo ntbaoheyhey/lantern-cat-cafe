@@ -4305,7 +4305,7 @@
       ],
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K2-A1.png",
       "sha256": "d6e176836b93ea1a2ab0c97f305550ca9072c7ce3cf23e7c5c80c241bd524213",
-      "status": "source numerical gates pass incl reach+.286420 and changedbbox33.8927%; grouped art review/runtime/blind/film pending"
+      "status": "selected normalized drawing; source gates and225px review pass; runtime/film gates pending"
     },
     {
       "id": "v4-needle-moth-k4-a1",
@@ -4358,7 +4358,52 @@
       ],
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K4-A3.png",
       "sha256": "afdbc0351fa7410431fac63cbb3c1542b04e959dff5befae538ea8c95e203b8b",
-      "status": "candidate; quantitative/visual review pending"
+      "status": "selected normalized drawing; source gates and225px review pass; runtime/film gates pending"
+    },
+    {
+      "id": "v4-needle-moth-published-hybrid",
+      "date": "2026-11-16T14:18:08.850885+00:00",
+      "tool": "Pillow WebP export and original painted runtime module",
+      "referenceInput": "own art only; private comparison pixels excluded",
+      "inputs": [
+        "apps/web/public/units/needle-moth/runtime.webp",
+        "tools/v3craft-lab/v4-needle-moth/selection.json",
+        "tools/v3craft-lab/v4-needle-moth/fx-selection.json"
+      ],
+      "recipe": "K1-A6 Lab30; K2-A1/K4-A3 fixed normalization1152; K5 aliasesK2; original sewing needle uses150ms flight and27-needle staggered fan. r1 area failure retained; r2 lab passes.",
+      "outputs": [
+        {
+          "path": "apps/web/public/units/needle-moth/poses/K0.webp",
+          "bytes": 57116,
+          "sha256": "685d03cf27725ec0aa71e0aa99d2eb74d8e85e315c29d6a2fbdae0199dd53fa1"
+        },
+        {
+          "path": "apps/web/public/units/needle-moth/poses/K1.webp",
+          "bytes": 47142,
+          "sha256": "c2e4446f60957c814cad2d0477f1d3a94c659d4b8840a33418e90dc7e8c61fa3"
+        },
+        {
+          "path": "apps/web/public/units/needle-moth/poses/K2.webp",
+          "bytes": 57054,
+          "sha256": "97c9c5b45b82b722307b18239a090810d8247252c82f3d031ee0b34ba3c07a7e"
+        },
+        {
+          "path": "apps/web/public/units/needle-moth/poses/K4.webp",
+          "bytes": 54432,
+          "sha256": "3502608498948edd4c3b5bb283d014cdfe1bb4e024a46b095f48a74a4887177e"
+        },
+        {
+          "path": "apps/web/public/units/needle-moth/poses/manifest.json",
+          "bytes": 5537,
+          "sha256": "b3576467fbcce63a7034579c9097aadbab1d58af4bf9c05e8a2ad12e48d270b0"
+        },
+        {
+          "path": "apps/web/public/vfx/needle-moth/sewing-needle.webp",
+          "bytes": 60240,
+          "sha256": "a50519a93e0d419351fd04563e382f449607ef966c87c180d714f194a804896c"
+        }
+      ],
+      "status": "published to DEV craft pilot; production regression/film/blind pending"
     }
   ]
 }

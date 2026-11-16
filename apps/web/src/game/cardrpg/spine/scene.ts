@@ -39,6 +39,7 @@ import {HealingLeaves} from '../vfx-craft/healing-leaves';
 import {OvenBastion} from '../vfx-craft/oven-bastion';
 import {ThreadSnare} from '../vfx-craft/thread-snare';
 import {TeaBlossoms} from '../vfx-craft/tea-blossoms';
+import {NeedleStitches} from '../vfx-craft/needle-stitches';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
@@ -76,6 +77,7 @@ export class SpineScene {
  private craftOven:OvenBastion|undefined;
  private craftThread:ThreadSnare|undefined;
  private craftTea:TeaBlossoms|undefined;
+ private craftNeedle:NeedleStitches|undefined;
  private craftLoaded=false;
  private focusBanner=new FocusBannerAnchor();
  private homes=new Map<string,{x:number;y:number;scale:number;order:number;point:MotionPoint}>();
@@ -100,7 +102,8 @@ export class SpineScene {
    const oven=this.craftOven=new OvenBastion();this.scene.add(oven.ground,oven.rear,oven.front);
    const thread=this.craftThread=new ThreadSnare();this.scene.add(thread.ground,thread.rear,thread.front);
    const tea=this.craftTea=new TeaBlossoms();this.scene.add(tea.ground,tea.rear,tea.front);
-   void Promise.all([craft.ready,shield.ready,heal.ready,oven.ready,thread.ready,tea.ready]).then(()=>{if(!this.disposed){this.craftLoaded=true;this.refreshLoading();this.invalidate();}}).catch(error=>{craft.dispose();this.craft=undefined;if(!this.disposed){this.onFailure(`Could not prepare Soot pilot: ${String(error)}`);this.refreshLoading();}});
+   const needle=this.craftNeedle=new NeedleStitches();this.scene.add(needle.ground,needle.rear,needle.front);
+   void Promise.all([craft.ready,shield.ready,heal.ready,oven.ready,thread.ready,tea.ready,needle.ready]).then(()=>{if(!this.disposed){this.craftLoaded=true;this.refreshLoading();this.invalidate();}}).catch(error=>{craft.dispose();this.craft=undefined;if(!this.disposed){this.onFailure(`Could not prepare Soot pilot: ${String(error)}`);this.refreshLoading();}});
   }
   this.weather=new BattleWeather(host);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
@@ -150,7 +153,7 @@ export class SpineScene {
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset).then(async actor=>{
     // Accepted designer skeletons/sequences take precedence over generated keys.
-    const drawings=this.craft&&['soot','mochi','clover','panko','binding-thread','teacup-healer'].includes(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
+    const drawings=this.craft&&['soot','mochi','clover','panko','binding-thread','teacup-healer','needle-moth'].includes(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
      ?await loadDrawnPoseSet(asset).catch(error=>{actor.dispose();throw error;}):undefined;
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
@@ -174,7 +177,7 @@ export class SpineScene {
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
   this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded&&(!this.craft||this.craftLoaded);
  }
- private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&['soot','mochi','clover','panko','binding-thread','teacup-healer'].includes(this.actors.get(plan.actorId)?.asset??'');}
+ private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&['soot','mochi','clover','panko','binding-thread','teacup-healer','needle-moth'].includes(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
   if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
@@ -409,9 +412,9 @@ export class SpineScene {
   this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,true):null;
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
   if(this.craftHandles(plan)&&frame&&plan){
-   const casterAsset=this.actors.get(plan.actorId)?.asset,shield=casterAsset==='mochi',oven=casterAsset==='panko',thread=casterAsset==='binding-thread';
-   const art=healingCast?(casterAsset==='teacup-healer'?this.craftTea!:this.craftHeal!):shield?this.craftShield!:oven?this.craftOven!:thread?this.craftThread!:(plan.ultimate?this.craft!:this.craftBasic!);
-   for(const other of [this.craft,this.craftBasic,this.craftShield,this.craftHeal,this.craftOven,this.craftThread,this.craftTea])if(other!==art)other?.hide();
+   const casterAsset=this.actors.get(plan.actorId)?.asset,shield=casterAsset==='mochi',oven=casterAsset==='panko',thread=casterAsset==='binding-thread',needle=casterAsset==='needle-moth';
+   const art=healingCast?(casterAsset==='teacup-healer'?this.craftTea!:this.craftHeal!):shield?this.craftShield!:oven?this.craftOven!:thread?this.craftThread!:needle?this.craftNeedle!:(plan.ultimate?this.craft!:this.craftBasic!);
+   for(const other of [this.craft,this.craftBasic,this.craftShield,this.craftHeal,this.craftOven,this.craftThread,this.craftTea,this.craftNeedle])if(other!==art)other?.hide();
    const source=this.socket(plan.actorId,this.actors.get(plan.actorId)?.craftPose?'vfxOrigin':'mainHand'),home=this.homes.get(plan.actorId);
    const entry=this.actors.get(plan.actorId);
    const drawnSocket=(key:'K1'|'K2'|'K5')=>{const p=entry?.craftPose?.socketFor(key,'vfxOrigin');return p?this.screen(entry!.actor.root.localToWorld(this.scratch.set(p.x,p.y,1))):undefined;};
@@ -437,7 +440,7 @@ export class SpineScene {
     rearOrder:Math.min(...orders)-.5,frontOrder:Math.max(...orders)+1,reducedMotion:view.reducedMotion});
    else art.hide();
    this.effects.clearFrame();
-  }else{this.craft?.hide();this.craftBasic?.hide();this.craftShield?.hide();this.craftHeal?.hide();this.craftOven?.hide();this.craftThread?.hide();this.craftTea?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
+  }else{this.craft?.hide();this.craftBasic?.hide();this.craftShield?.hide();this.craftHeal?.hide();this.craftOven?.hide();this.craftThread?.hide();this.craftTea?.hide();this.craftNeedle?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
   // D8 / X06 / X07: sample the final original pose after all transforms and
   // actor tint; retain the actor, then place only local floor and inner-edge light.
   const groundOrder=Math.min(...[...this.actors.values()].map(e=>e.actor.root.renderOrder))-1;
@@ -521,5 +524,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.craftShield?.dispose();this.craftHeal?.dispose();this.craftOven?.dispose();this.craftThread?.dispose();this.craftTea?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.craftShield?.dispose();this.craftHeal?.dispose();this.craftOven?.dispose();this.craftThread?.dispose();this.craftTea?.dispose();this.craftNeedle?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }
