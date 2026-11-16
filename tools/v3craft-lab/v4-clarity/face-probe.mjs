@@ -3,13 +3,14 @@ import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixtu
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-const out='reports/v4-art/REVIEW/A9',validation=JSON.parse(await readFile(`${out}/validation.json`,'utf8'));
+const out=process.env.ART_A9_REVIEW??'reports/v4-art/REVIEW/A9',validation=JSON.parse(await readFile(`${out}/validation.json`,'utf8'));
 if(!validation.pass)throw Error('Regression required');
 for(const [p,h]of Object.entries(validation.runtimeSourceHashes))if(createHash('sha256').update(await readFile(p)).digest('hex')!==h)throw Error(`Source changed: ${p}`);
 const report={sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),validatedSourceCommit:validation.sourceCommit,method:'Front FX alpha>=128 intersected with face rectangles at1100ms; rear/ground draw below every actor. Live readback, not encoded-pixel proof.',rows:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{for(const [width,height]of [[1280,720],[1440,900]])for(const fixture of config.fixtures.filter(f=>f.id!=='wave3')){
- const selected=fixture.id==='wave1'?['mochi','soot','clover','panko','needle-moth','teacup-healer']:['binding-thread','yarn-giant'];
+ let selected=fixture.id==='wave1'?['mochi','soot','clover','panko','needle-moth','teacup-healer']:['binding-thread','yarn-giant'];
+ if(process.env.ART_A9_ASSETS)selected=selected.filter(a=>process.env.ART_A9_ASSETS.split(',').includes(a));if(!selected.length)continue;
  const {page,errors}=await openFixture(browser,fixture,{width,height});
  const rows=await page.evaluate(async(selected)=>{
   const s=window.__depthScene,m=window.__depthReview,T=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/three/build/three.module.js'),rows=[];

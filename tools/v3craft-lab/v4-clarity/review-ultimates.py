@@ -4,12 +4,15 @@ from PIL import Image, ImageDraw
 import gzip
 import hashlib
 import json
+import os
 import math
 import statistics
 import subprocess
 
 root = Path.cwd()
-out = root / 'reports/v4-art/REVIEW/A9'
+out = root / os.environ.get('ART_A9_REVIEW', 'reports/v4-art/REVIEW/A9')
+attempt = os.environ.get('ART_A9_ATTEMPT', 'r1')
+suffix = '' if attempt == 'r1' else '-' + attempt.upper()
 assets = ['mochi', 'soot', 'clover', 'panko', 'binding-thread', 'needle-moth', 'teacup-healer', 'yarn-giant']
 expected = json.loads((out / 'source-hashes.json').read_text())
 reports = []
@@ -21,7 +24,7 @@ def balanced(parts):
     middle = len(parts) // 2
     return '(' + balanced(parts[:middle]) + '+' + balanced(parts[middle:]) + ')'
 
-for item, fixtures, after in [('V4-A9-CLARITY', ['wave1', 'wave3', 'boss'], 0), ('V4-A9-TAIL45', ['wave1', 'boss'], 30)]:
+for item, fixtures, after in [('V4-A9-CLARITY' + suffix, ['wave1', 'wave3', 'boss'], 0), ('V4-A9-TAIL45' + suffix, ['wave1', 'boss'], 30)]:
     capture = root / 'reports/v3-feel/REVIEW' / item
     for fixture in fixtures:
         data = json.loads(gzip.decompress((capture / fixture / 'capture.json.gz').read_bytes()))
@@ -45,6 +48,8 @@ for item, fixtures, after in [('V4-A9-CLARITY', ['wave1', 'wave3', 'boss'], 0), 
             moving = [v for v in shakes if v['pixels'] > 1e-8]
             actions.append({'key': plan['key'], 'actor': plan['actorId'], 'asset': asset, 'own': True, 'ultimate': True, 'duration': plan['duration'], 'impact': plan['impact'], 'events': plan['events'], 'indices': indices, 'impactFrame': contact[0]['frame'], 'markedImpactElapsed': contact[1]['action']['elapsed'], 'impactSamplingErrorMs': abs(contact[1]['action']['elapsed'] - plan['impact']), 'firstElapsed': marked[0][1]['action']['elapsed'], 'lastElapsed': marked[-1][1]['action']['elapsed'], 'complete': min(indices) >= 0 and max(indices) < duration * 30 and marked[0][1]['action']['elapsed'] <= 34 and marked[-1][1]['action']['elapsed'] >= plan['duration'] - 67, 'focusAfter600': late_focus, 'maxShakePx': max(v['pixels'] for v in shakes), 'shakeObservedSpanMs': moving[-1]['elapsed'] - moving[0]['elapsed'] if moving else 0, 'shakeSamplingCaveat': 'Observed first-to-last nonzero samples do not by themselves bound unsampled duration.', 'visualReview': 'PENDING'})
             actions[-1]['focusFrame'] = focus[0]['frame']
+            actions[-1]['containedInFilm'] = min(indices) >= 0 and max(indices) < duration * 30
+            actions[-1]['firstSampleWithinOneFrame'] = marked[0][1]['action']['elapsed'] <= 34
         needed = sorted({n for a in actions for n in a['indices'] if 0 <= n < duration * 30})
         directory = out / 'raw/ultimate-strips' / item / fixture
         directory.mkdir(parents=True, exist_ok=True)
@@ -54,7 +59,7 @@ for item, fixtures, after in [('V4-A9-CLARITY', ['wave1', 'wave3', 'boss'], 0), 
         for action in actions:
             sheet = Image.new('RGB', (1024, 620 + math.ceil(len(action['indices']) / 4) * 164), '#211e26')
             draw = ImageDraw.Draw(sheet)
-            draw.text((8, 7), f"{item} {fixture} A{action['key']} {action['asset']} OWN ULT | {'COMPLETE' if action['complete'] else 'TRUNCATED'}", fill='white')
+            draw.text((8, 7), f"{item} {fixture} A{action['key']} {action['asset']} OWN ULT | {'COMPLETE' if action['complete'] else 'LATE FIRST SAMPLE' if action['containedInFilm'] else 'FILM EDGE'}", fill='white')
             with Image.open(directory / f"{needed.index(action['focusFrame']) + 1:04d}.jpg") as im:
                 sheet.paste(im.resize((1024, 576), Image.Resampling.LANCZOS), (0, 28))
             draw.text((8, 606), f"Encoded focus frame {action['focusFrame']} at {action['focusFrame']/30:.3f}s; names judged here, timing in the strip below", fill='white')

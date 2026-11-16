@@ -3,10 +3,11 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 import hashlib
 import json
+import os
 import statistics
 import subprocess
 
-root = Path('reports/v4-art/REVIEW/A9')
+root = Path(os.environ.get('ART_A9_REVIEW', 'reports/v4-art/REVIEW/A9'))
 limits = {'catMedian': ('min', .30), 'catDeviation': ('max', .08),
           'left': ('min', .03), 'right': ('min', .03),
           'span': ('min', .80), 'gap': ('max', .20), 'boss': ('min', .45)}

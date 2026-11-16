@@ -5,10 +5,12 @@ import json
 import hashlib
 import subprocess
 import sys
+import os
 attempt=sys.argv[1] if len(sys.argv)>1 else "r2"
 
 root = Path(__file__).resolve().parents[3]
-out = root / 'reports/v4-art/REVIEW/A9'
+out = root / os.environ.get('ART_A9_REVIEW', 'reports/v4-art/REVIEW/A9')
+out.mkdir(parents=True, exist_ok=True)
 jobs = root / 'reports/v4-art/jobs'
 report = {'started': datetime.now(timezone.utc).isoformat(),
           'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),

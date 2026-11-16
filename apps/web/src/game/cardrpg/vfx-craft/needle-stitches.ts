@@ -56,7 +56,9 @@ export class NeedleStitches {
    const cy=Math.max(length/2+85*k,Math.min(f.height-length/2-75*k,target.y-45*k));
    for(const [i,m]of this.fan.entries()){
     const rank=i%3,column=Math.floor(i/3),columns=Math.ceil(this.fan.length/3),u=(column+.5)/columns;
-    const open=smooth((age-rank*45-column*8)/70),tilt=(u-.5)*.7+(rank-1)*.16;
+    // Three readable ornamental accents after the unchanged1100ms hit.
+    //150ms separates the needle ranks from Binding's single crossed-net reveal.
+    const open=smooth((age-rank*150-column*8)/70),tilt=(u-.5)*.7+(rank-1)*.16;
     const p={x:cx+(u-.5)*spread+(rank-1)*20*k,y:cy+(rank-1)*65*k-(1-open)*55*k};
     this.place(m,p,length,-Math.PI/2+tilt,alpha*open*.9,-.2+decay);
     m.scale.y*=this.tuning.thickness??1;

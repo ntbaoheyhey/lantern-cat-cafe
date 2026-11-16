@@ -3,7 +3,7 @@ import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixtu
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-const out='reports/v4-art/REVIEW/A9',attempt=process.argv[2]??'r1';
+const out=process.env.ART_A9_REVIEW??'reports/v4-art/REVIEW/A9',attempt=process.argv[2]??'r1';
 const validation=JSON.parse(await readFile(`${out}/validation.json`,'utf8'));
 if(!validation.pass)throw Error('Full regression must pass before A9 observation');
 for(const [path,hash]of Object.entries(validation.runtimeSourceHashes))if(createHash('sha256').update(await readFile(path)).digest('hex')!==hash)throw Error(`Unvalidated source: ${path}`);
@@ -18,7 +18,8 @@ await mkdir(`${out}/raw/live-${attempt}`,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const [width,height]of [[1280,720],[1440,900]])for(const fixture of config.fixtures){
-  const selected=fixture.id==='wave1'?['mochi','soot','clover','panko','teacup-healer','needle-moth']:fixture.id==='wave3'?[]:['binding-thread','yarn-giant'];
+  let selected=fixture.id==='wave1'?['mochi','soot','clover','panko','teacup-healer','needle-moth']:fixture.id==='wave3'?[]:['binding-thread','yarn-giant'];
+  if(process.env.ART_A9_ASSETS)selected=selected.filter(a=>process.env.ART_A9_ASSETS.split(',').includes(a));
   if(!selected.length)continue;
   const found=report.fixtures.filter(f=>f.fixture===fixture.id&&f.viewport.height===height).map(f=>`${f.asset}:${f.plan.ultimate}`);
   if(found.length===selected.length*2)continue;
