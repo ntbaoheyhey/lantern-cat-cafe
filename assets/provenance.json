@@ -3864,6 +3864,28 @@
       "referenceInput": "none; original effect",
       "output": "tools/v3craft-lab/fx/raw/oven-bastion/1.png",
       "sha256": "eb2559543001f0c2dc4dee4e41c5ba64a0b68c2c7d8e36265b978791eb5c93dd"
+    },
+    {
+      "id": "v4-panko-production-oven-bastion",
+      "date": "2026-11-16T08:56:30.377603+00:00",
+      "tool": "Original built-in image_gen output; bounded alpha crop/WebP export",
+      "prompt": "Original hand-painted 2D game VFX cutout, true transparent background. A protective OVEN-DOOR BASTION for a cozy bakery guardian. Three large upright arched wooden oven shutters forming a broad fan: one tall central arch and two slightly shorter outward-angled side arches, with narrow transparent gaps between them. The panels have warm toasted-brown carved wood interiors, thick sculpted bread-crust rims, ivory flour-colored bevels, subtle honey highlights, a few irregular crumb fragments around their lower corners. Strong substantial opaque shapes with readable grain and broad faceted shading, soft painterly surface, thin warm outlines. Side arches bend outward to suggest a shelter opening, a low irregular crumb plinth below; keep top corners rounded and the silhouette asymmetrical enough to feel drawn. Wide overall silhouette, roughly 1.5 times as wide as tall, no perspective floor or cast shadow. Preserve true transparency around and between panels. No character, text, emblem, logo, rings, circles, fire, fog, glowing orb, lens flare or scenery. This is a single original reusable painted asset, all edges fully contained with clear transparent margins, square canvas.\n",
+      "referenceInput": "none; own generated effect",
+      "input": "tools/v3craft-lab/fx/raw/oven-bastion/1.png",
+      "output": "apps/web/public/vfx/panko/oven-bastion.webp",
+      "sha256": "13e9d6d2535ff2dcff08eead1d3ec249efedd0de21623a9e6b9958385ea16961",
+      "review": "reports/v4-art/LEARN/A6.md; production gates pending"
+    },
+    {
+      "id": "v4-panko-production-crust-cut",
+      "date": "2026-11-16T08:56:30.377603+00:00",
+      "tool": "Original built-in image_gen output; bounded alpha crop/WebP export",
+      "prompt": "Original 2D game VFX texture, true transparent background. A single directional IMPACT CUT for a cozy bakery knight striking with a wooden rolling pin. Hand-painted broken bread-crust brushwork: one elongated tapered ivory flour streak sweeping from LEFT to RIGHT, three jagged toasted-gold crust wedges fanning out at the right contact end, a few small separated copper-brown crumbs. Strong asymmetrical silhouette, slightly rising diagonal, clear narrow origin at left, broad fractured contact edge at right. Rich cream, honey-ochre and toasted brown, subtle warm painterly shading, crisp readable edges, no uniform glowing border. One coherent slash, not a ring or a cloud. Whole effect visible with generous transparent margins, square canvas. No characters, weapons, scenery, floor, text, logo, circular shapes, fire or lens flare. Original asset only, no reference image.\n",
+      "referenceInput": "none; own generated effect",
+      "input": "tools/v3craft-lab/fx/raw/crust-cut/1.png",
+      "output": "apps/web/public/vfx/panko/crust-cut.webp",
+      "sha256": "f1fbe8077f84468cd4d87db288dfe0ba3d26cbb47945db00e7271d61bdf78b5f",
+      "review": "reports/v4-art/LEARN/A6.md; production gates pending"
     }
   ]
 }
