@@ -21,7 +21,7 @@ Axes below are proposed independently visible differences: S=shape, M=motion, C=
 | --- | --- | --- | --- |
 | Mochi / Soot | S M C R |4|PENDING|
 | Mochi / Clover | S C R |3|PENDING|
-| Mochi / Panko | S M T |3|PENDING|
+| Mochi / Panko | S M T |3|PASS R2: wave1A18/A12; facets versus hinges, later versus earlier onset|
 | Mochi / Binding | S M C R |4|PENDING|
 | Mochi / Needle | S M C R |4|PENDING|
 | Mochi / Teacup | S M C R |4|PENDING|
@@ -35,13 +35,13 @@ Axes below are proposed independently visible differences: S=shape, M=motion, C=
 | Clover / Panko | S M C R |4|PENDING|
 | Clover / Binding | S M C R |4|PENDING|
 | Clover / Needle | S M C R |4|PENDING|
-| Clover / Teacup | S M T |3|PENDING|
+| Clover / Teacup | S M T |3|PASS R2: wave1A20 / tail-wave1A34; opposite canopy direction and staggered pours|
 | Clover / Yarn | S M C R |4|PENDING|
 | Panko / Binding | S M C R |4|PENDING|
 | Panko / Needle | S M C R |4|PENDING|
 | Panko / Teacup | S M C R |4|PENDING|
 | Panko / Yarn | S M C R |4|PENDING|
-| Binding / Needle | S M; T not independently readable |2|FAIL R1; revise Needle rank cadence|
+| Binding / Needle | S M T |3|PASS R2: Needle A14/A32 and Binding A29/A30; R1 failure retained below|
 | Binding / Teacup | S M C R |4|PENDING|
 | Binding / Yarn | S M T |3|PENDING|
 | Needle / Teacup | S M C R |4|PENDING|
@@ -55,3 +55,5 @@ R1 film decision:11 of27 own-ultimate sheets inspected once. Binding and Needle 
 R2 production selection:150ms rank cadence chosen from90/150ms225px drills. Film confirmation is pending; R1 Binding/Needle remains a recorded failure.
 
 R2 timing distinction to verify on film: the slowest Binding strand finishes its reveal around1231ms (1100+11×6+65), whereas the last selected Needle rank/column finishes around1534ms (1100+2×150+8×8+70). This is a roughly303ms separation in completion of the main reveal, plus three rank accents; it does not add hit events. Production source uses only the selected150ms constant; candidate tuning stays in the craft lab.
+
+R2 film decision 2026-11-16T18:54:55.501085+00:00: four new own-ultimate sheets inspected once. Binding has an established crossed net at1233ms; Needle keeps adding ranks through1450ms and reaches the full canopy around1550ms. Shape, motion and timing independently read differently. No colour shade, title or extra hit event is counted. Remaining27pairs involving other units still require their R2 reviews.
