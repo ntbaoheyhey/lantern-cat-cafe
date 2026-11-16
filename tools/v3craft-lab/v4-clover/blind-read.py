@@ -5,7 +5,7 @@ Working crops and key remain ignored, final labelled receipt is compact JSON.
 from pathlib import Path
 from PIL import Image, ImageDraw
 import argparse, collections, datetime, gzip, hashlib, json, random, secrets, subprocess
-p=argparse.ArgumentParser();p.add_argument('mode',choices=['prepare','compare']);p.add_argument('--item',default='V4-A4');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('mode',choices=['prepare','compare']);p.add_argument('--item',default='V4-A5');a=p.parse_args()
 raw=Path('tools/v3craft-lab/v4-clover/raw/blind');raw.mkdir(parents=True,exist_ok=True)
 receipt=Path('reports/v4-art/REVIEW/A5/blind-labels.json');keyfile=raw/'private-key.json'
 now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -23,7 +23,8 @@ for fixture in ['wave1','wave3','boss']:
  for shot in data['resampled']:
   n=shot.get('renderFrame')
   if isinstance(n,int):n-=1 # capture marker encodes ordinal+1
-  if not isinstance(n,int) or not 0<=n<len(data['frames']):continue
+  else:n=min(range(len(data['frames'])),key=lambda i:abs(data['frames'][i]['t']-shot.get('sourceTime',shot['t'])))
+  if not 0<=n<len(data['frames']):continue
   f=data['frames'][n];u=next((u for u in f['units'] if u['id']=='clover'),None)
   if not u:continue
   expected='idle';action=f.get('action');plan=next((p for p in data['plans'] if action and p['key']==action['key']),None)

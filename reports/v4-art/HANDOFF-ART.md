@@ -1,30 +1,26 @@
-# ART execution anchor — 2026-11-16T08:07:14.489579+00:00
-Request disk now REV3 50240bytes SHA25615e1bc738d2bc686f23d631acd1e2b0d92f4117ab665f2021fa6844fdb8e15c8; copied on resume.
+# ART execution anchor — 2026-11-16 08:45 UTC
+Request REV3 50240B SHA25615e1bc738d2bc686f23d631acd1e2b0d92f4117ab665f2021fa6844fdb8e15c8.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14.
-NEXT1: Check v13 fullaction PID48653 logjobs/a5-v13-framing.log; cap.1525vh/+12x720 corrects world/pixel sign error. If all<=15%, final regression+film.
-NEXT2: If v10 passes, final A5 regression/typecheck/parity and3audio720films+900boss; if fails, fix measured overlap.
-NEXT3: Finish A5 battle pose/socket/foot/face metrics, blindread/perf/reviews; then A6 Panko.
-LAST PUSH:e25238e35; next WIP checkpoint now. A5 v13 framing pending; v10 regression passed but not current acceptance.
-STOP/INBOX/designer:none. SHIP still nonfinaldb35585;no merge;baseline reports/v3-feel/parity-new.json.
-A4 pushedaccepted; A5 layout changes invalidate inherited framing until fresh evidence.
-A5 selected K1A2/K2A2soft/K4A1colour/K5A2colour;raw failures retained. IoU.52966/.39179/.47289/.51035.
-A5 head.99183/1.02868/1.01402/1.01786;dE4.91860/2.91898/2.72715/2.50349;foot1/0/1/1px;K2reach+.64742body.
-A5 export896canvas baseline[444.00363636363636,728],height409;fiveposes340578B;FX383462B;total724040B.
-A5 effect actualalliedheals,3rising60pxsprigs/recipient,broad1040x560rearcanopy;sagefocus;healershakeoff.
-A5 v9FAILED: Mochi/Panko23.4082%900wave1,releaseMochiocclusion16.7099%900boss; preserve dynamic-occlusion evidence.
-A5 v10current: ordinaryMochix.37;lowerfront.30/.91;MochiordinarynonbosscontactY<=home+.15vh.
-A5 v10liveprobe6cases: Clovermaxocclusion11.6779%,socket/feet/camera0;ult30.56–34.31%;noerrors. Mochifullactionpending.
-A5 occluderdiagnostic:v10wave1Mochipairmax6.74%,wave312.10%,boss10.65%;singleinstantonly,notgate.
-A5 prior13targetedtests/2files+typecheckPASS; fullfinalregression/parity/film/perfNOTYET. LegacyCloverbasicstilldamages;GROLEopenuntilSHIP.
-Gating:craftDEV+VITE_CRAFT_PILOT=soot; productionenableA9/A11. A1bexhaustivecatalogueA11;A3/A4pairwiseFXA9.
-IMAGEOPENS0. NeverreopenpriorA2/A10/A3/A4sheets,Cloverraw/colourchoice/selectedkeys/sprigcanopy/4drills/privatecompare.
-Current REVIEW/A5/raw/live screenshots uninspected; resize<=1024beforeopen. <=4/look <=8/HANDOFF.
+NEXT1: Read REVIEW/A5/face-coverage.json and raw/perf/boss metrics; consolidate pose/socket/feet/heal timing receipt; verify source-tree hashes; write final A5 reviews + <=8 selected JPGs; commit+push.
+NEXT2: Inspect uninspected Panko crust-cut/oven-bastion previews <=1024px, create two effect drills, compare, publish/integrate A6 and run gates.
+NEXT3: A7 enemies/boss, A9 ensemble; A1b exhaustive private-video catalogue at A11.
+LAST PUSH:fe0737f24; resume WIP checkpoint in progress.
+STOP/INBOX/designer:last checked none; recheck after checkpoint. SHIP db35585 nonfinal; no merge; baseline reports/v3-feel/parity-new.json.
+LIVE: owned Vite PID67838 port5990. Job53640 completed FACE_EXIT0/PERF_EXIT0; no other capture/generation job known live.
+A5 v13 full-action occlusion6cases/1800samples PASS worst13.423%; final numeric framing/wrong-facing PASS.
+A5 fullweb/typecheck/3fixtureparity EXIT0; final 3x30s audio720films and silent900boss completed.
+A5 10 own actions(7basic/3ult)+1receivedhit inspected; all complete/posechanging. Blind12/12.
+A5 selectedK1A2/K2A2soft/K4A1colour/K5A2colour; IoU.52966/.39179/.47289/.51035; dE4.91860/2.91898/2.72715/2.50349.
+A5 head.99183–1.02868;feet0–1px;K2reach+.64742body;896canvas baseline[444.00363636363636,728],height409.
+A5 fiveposes340578B+FX383462B=724040B. Three ally-local sprigs, broad rear canopy, sage focus; heal shakeoff.
+A5 face/perf results now ready; final consolidated receipt/reviews/selectedJPG/commit unfinished.
+A5 v9/v10/v11/v12 occlusionFAIL retained. v13Mochi ordinaryx.37,lowerfront.30/.91,lowerstagger.21;nonbosslowercontactY<=home+.1525vh,X+=direction*12*h/720.
+A4 prior accepted; changed ordinary contact requires current joint evidence before carrying role claim.
+Legacy Clover basic still damages; G-ROLE open until final SHIP. Craft remains DEV+VITE_CRAFT_PILOT=soot; enable A9/A11.
+A6 selectedK1A1/K2A1/K4A2/K5A1; IoU.47911/.59251/.68671/.59696;dE4.50129/5.13861/4.71852/5.53641;head.95898–1.02445;feet0–1.
+A6 K2reach+.36565body;K4A1fail retained. Selected200ms drill; crampedv1failretained.
+A6 labexport5WebPs349262B baseline[417.0171821305842,727],height407; no productionpublish/runtimeintegration.
+A6 originalFXcrust-cut122750B,oven-bastion158110B;totalprepared630122B;previewsUNINSPECTED,drillsPENDING.
+IMAGEOPENS0. Never reopen prior sheets,Clover film/blind sheets,Panko pose/selected/drill/privatecompare sheets. Panko effect previews uninspected.
 EXCLUDE inheritedv3logs/paritylatest,.DS_Store,recorderlinks,duplicateA3JPG,raw/private/videosoutsideSYNC.
-
-
-A6K1A1 saved/provenance/ARTaccepted:IoU.47911,Lab4.50129,head1.02445,foot0,unclipped. K2promptready; rawinputownruntime. Imageopens0afterrewrite.
-PROCESSES: Vite67838port5990; framing48653jobs/a5-v13-framing.log; nootheractivejobs.
-A5v10FAILED wave1/90015.4565%Mochiat300ms;occludersPanko6.91/ButtonGuard5.25/Clover3.29%. v10films archivedraw/v10-films.
-A5v10REG2647/315,typecheck0,3F6hashPASS; v11needsfinalrerun.
-A6K2A1ARTacceptedIoU.59251,Lab5.13861,head.97240,reach+.36565,foot1. K4A1headfails; nextheadcorrection. NoA6runtime.
-A6artselected K1A1/K2A1/K4A2/K5A1. K4A1head1.09269/Lab6.484FAILretained; K4A2head1.00557/Lab4.71852;K5head.95898/Lab5.53641. Images0afterrewrite.
+Time split/gate gaps must remain honest; >=50%authoring,<=25%measurement/logging requested; actual retrospective uncertainty preserved.
