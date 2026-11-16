@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-16T11:22:36.646962+00:00",
+  "at": "2026-11-16T11:45:47.498941+00:00",
   "gate": "G-REPO",
   "pass": false,
   "source": "reports/v4-ship/S6/check.json",
@@ -8,8 +8,19 @@
     "Official class parity baseline absent",
     "Reachable-history scan and triage pending",
     "Spine editor licence entitlement unverified",
-    "Earlier automatic Vercel jobs have unverified remote status",
-    "Reports budget exceeds150MB including ignored captures"
+    "Earlier automatic Vercel jobs have unverified remote status"
   ],
-  "next": "Collect existing history30159 without restarting. Re-test ART-owned failures at the scheduled integration. Keep release licensing and the official class baseline unverified until evidence exists."
+  "next": "Collect existing history30159 without restarting. Re-test ART-owned failures at the scheduled integration. Keep release licensing and the official class baseline unverified until evidence exists.",
+  "reportBudgetFollowup": {
+    "at": "2026-11-16T11:45:10.928642+00:00",
+    "pass": true,
+    "bytes": 78009402,
+    "limit": 150000000,
+    "archive": "reports/v4-ship/S6/evidence-archive-1.json",
+    "preservedFiles": 160,
+    "sha256Verified": 160
+  },
+  "closedFollowups": [
+    "Reports below150MB;160 historical ignored captures preserved with verified hashes and archive index"
+  ]
 }

@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-16T11:50:25.796919+00:00",
+  "item": "S9",
+  "implementationComplete": true,
+  "learning": {
+    "pass": true,
+    "sources": 14,
+    "formal": 2,
+    "web": 10,
+    "experiments": 1
+  },
+  "docs": "reports/v4-ship/S9/docs-check-1.json",
+  "model": "reports/v4-ship/S9/model-1.json",
+  "regression": "reports/v4-ship/S9/regression-1/check.json",
+  "regressionResult": {
+    "server": 742,
+    "rules": 1409,
+    "webPassed": 2663,
+    "webFailed": 7,
+    "failureOwnership": "ART spine/cat-presentation.test.ts and spine/outcome-labels.test.ts",
+    "otherCommandsPassed": true,
+    "officialClassParityGate": false
+  },
+  "open": [
+    "Hosted configuration attestation awaits S12",
+    "E3 remains16/18; E4/E5 and one justified class baseline absent",
+    "No observed paying-user conversion; financial scenarios are assumptions",
+    "Qualified Vietnam launch review pending"
+  ],
+  "gatePass": false
+}

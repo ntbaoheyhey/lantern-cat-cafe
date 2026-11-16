@@ -56,3 +56,7 @@ S6 preparation 2026-11-16T10:48:07.237676+00:00: learning8/1formal/5web/1compari
 RESUME S6 2026-11-16T11:22:36.646962+00:00: cleanclone2complete e4803c14a;allcommands0except7knownARTwebfails;initial/finaltrackedclean. G-REPOopen/S11repo-open. S4 12/20pass. S7read-onlyprep621ART/0conflicts;S8LEARN11sources,productionrehearsalnext. VercelSHIPexclusion2/2;pendingjobsunverified.
 RESUME 2026-11-16T11:28:38.711600+00:00:S4 14/20complete/pass,session31284active;history30159active. S8productionbuild1PASS1.892s,preview5998HTTP200/session91975. No productionjourneys yet;fixture reserved forS4. G-REG unchanged sinceS4/regression-final-1.
 S8 PREP 2026-11-16T11:35:25.555658+00:00:productionrunner and10shell-block/25function runbook validated;metrics2/2PASS. G-REG server/rules/typecheck/probe/build0;web7ARTfails. S4 16/20complete/pass;fixture not yet released.
+
+RESUME 2026-11-16T11:50:25.796919+00:00:S4final20/20PASS;360RPCverifiedreceipts;1280/1440battlemedian2.957/2.9325s,receipt95.2325/95.190s,max95.848s. Runtime/harness stable. S8previewHTTP200;next10productionjourneys.
+S9implementationcomplete:14sources/2formal/10web/1comparison,32local links;source economy hash exact/deployedunverified;G-REGserver742/rules1409/web2663pass7ARTfails;typecheck/probe/build0. S9/check-1.json.
+S6reportbudgetclosed:<80MB;160ignoredcaptures archived intact/160hashesverified. S1history30159alive;no new scan. No STOP/INBOX/ART instruction changes.

@@ -6,10 +6,10 @@
 - Còn một lời thoại kết thúc boss trễ 40,67 ms so với giới hạn 33 ms.
 - Nhận dạng lời thoại đạt 8/12, cần 10/12. Chưa coi âm thanh là đạt toàn bộ.
 - 34 trường hợp âm UI/giao dịch không quá 300 ms; 15 kiểm tra âm lượng/tắt tiếng/tải lại đạt.
-- Sắp chạy đủ 20 hành trình mới: 10 lượt ở mỗi kích thước desktop. Các lượt thử trước chưa thay thế được mốc này.
+- Đủ 20/20 hành trình đạt: trung vị battle khoảng 3 giây/2 lần bấm; receipt khoảng 95 giây; 360 receipt đã đối chiếu, không lỗi/popup.
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có 2.663 trường hợp đạt và bảy lỗi thuộc phần ART; server, rules, typecheck, bản dựng và phép đối chiếu ba trận đạt.
 - Quét toàn bộ lịch sử git vẫn chạy; chưa kết luận lịch sử sạch.
-- Tiếp theo là kiểm tra hành trình, cập nhật tài liệu và kiểm tra từ bản clone sạch.
-- Việc cần bạn làm nằm trong NEEDS-USER-VI.md; công việc tiếp tục theo hàng đợi.
+- Tiếp theo: 10 lượt production preview; tài liệu kinh tế/doanh thu đã có, mọi con số doanh thu đều là giả định.
+- Bản clone sạch còn bảy lỗi ART; báo cáo dưới 80 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.

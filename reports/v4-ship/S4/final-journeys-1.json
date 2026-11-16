@@ -1,0 +1,593 @@
+{
+  "at": "2026-11-16T11:49:22.770Z",
+  "trial": "S4-final-1",
+  "sourceCommit": "a81bf93ef23d3c38f8f75524b696cc7af368c062",
+  "scope": "Twenty fresh-profile development journeys against isolated Anvil/SQL. Does not prove production preview or public sponsored transaction latency.",
+  "gates": {
+    "funnel": true,
+    "stableRuntime": true,
+    "harnessVerified": true,
+    "receiptValuesAndHistory": true,
+    "proofTextContrast": true,
+    "measuredGeometryAndLabels": true,
+    "reloadRecovery": true
+  },
+  "localJourneyPass": true,
+  "funnel": {
+    "pass": true,
+    "sizes": [
+      {
+        "width": 1280,
+        "runs": 10,
+        "complete": 10,
+        "battleMedianMs": 2957,
+        "battleMedianClicks": 2,
+        "receiptMedianMs": 95232.5,
+        "receiptMaxMs": 95703,
+        "errors": 0,
+        "popups": 0,
+        "pass": true
+      },
+      {
+        "width": 1440,
+        "runs": 10,
+        "complete": 10,
+        "battleMedianMs": 2932.5,
+        "battleMedianClicks": 2,
+        "receiptMedianMs": 95190,
+        "receiptMaxMs": 95848,
+        "errors": 0,
+        "popups": 0,
+        "pass": true
+      }
+    ]
+  },
+  "learning": {
+    "pass": true,
+    "sources": 12,
+    "formal": 1,
+    "web": 8,
+    "experiments": 2,
+    "note": "LEARN/S4.md"
+  },
+  "runtimeChanged": [],
+  "receiptCount": 360,
+  "runMeasurements": [
+    {
+      "id": "1280-01",
+      "firstBattleMs": 3352,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95703,
+      "bossMs": 91747,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-02",
+      "firstBattleMs": 2516,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95231,
+      "bossMs": 91693,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-03",
+      "firstBattleMs": 2964,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95234,
+      "bossMs": 91862,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-04",
+      "firstBattleMs": 2958,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95212,
+      "bossMs": 91577,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-05",
+      "firstBattleMs": 2528,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95391,
+      "bossMs": 91784,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-06",
+      "firstBattleMs": 3023,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95430,
+      "bossMs": 91798,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-07",
+      "firstBattleMs": 3003,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95280,
+      "bossMs": 91733,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-08",
+      "firstBattleMs": 2939,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95115,
+      "bossMs": 91745,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-09",
+      "firstBattleMs": 2882,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95144,
+      "bossMs": 91723,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1280-10",
+      "firstBattleMs": 2956,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 94766,
+      "bossMs": 91823,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-01",
+      "firstBattleMs": 3247,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95590,
+      "bossMs": 91857,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-02",
+      "firstBattleMs": 3010,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95299,
+      "bossMs": 91980,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-03",
+      "firstBattleMs": 2972,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95332,
+      "bossMs": 91806,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-04",
+      "firstBattleMs": 2917,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95198,
+      "bossMs": 91741,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-05",
+      "firstBattleMs": 2942,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95145,
+      "bossMs": 91880,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-06",
+      "firstBattleMs": 2923,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95177,
+      "bossMs": 91907,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-07",
+      "firstBattleMs": 2410,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95182,
+      "bossMs": 91707,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-08",
+      "firstBattleMs": 2891,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95110,
+      "bossMs": 91741,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-09",
+      "firstBattleMs": 2906,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95146,
+      "bossMs": 91748,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    },
+    {
+      "id": "1440-10",
+      "firstBattleMs": 3586,
+      "firstBattleClicks": 2,
+      "firstReceiptMs": 95848,
+      "bossMs": 91808,
+      "complete": true,
+      "pass": true,
+      "receiptCount": 18,
+      "historyKinds": [
+        "Claim",
+        "Mint",
+        "Withdrawal",
+        "Purchase",
+        "Listing",
+        "Approval",
+        "Burn",
+        "Transfer",
+        "Funding"
+      ],
+      "proofLinks": 15
+    }
+  ],
+  "publicCounterRecovery": {
+    "pass": true,
+    "path": "reports/v4-ship/S4/counter-recovery.json",
+    "sha256": "c6a54455de05e221b0fadb842881fa1a595788c779f59798356f39305b6c1611"
+  },
+  "publicSponsoredLatencyVerified": false,
+  "overallProofGatePass": false,
+  "fullUiGatePass": false,
+  "productionRehearsalPass": false,
+  "limitations": [
+    "Contrast measurements cover wallet/receipt text; this is not an all-screen AA audit.",
+    "Local transaction timing cannot establish Fuji latency.",
+    "The journey explicitly uses development parameters and cannot satisfy production rehearsal."
+  ],
+  "evidence": [
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-01.json",
+      "sha256": "e73d7e903359514b5a3529688dd3702abfc02e4b9d6a1ea593fdb5cea4fc300c"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-02.json",
+      "sha256": "d3dc1ebfb618992693b056dfadf1ff5f1dd33d15cd10a497545b524d49563497"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-03.json",
+      "sha256": "2ab7acb641328101a68b16dc977570d570d9023fdd92c43ce3fdc001ec580888"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-04.json",
+      "sha256": "2d9d7f0fa89ccc62ede121e4c355b900c21d355ab54a15a124b378982546f684"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-05.json",
+      "sha256": "f98f040453e5c7dd039cb8c4505095983c4548833ed442d4c0e373ce52c64acc"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-06.json",
+      "sha256": "bc92f7d73a5e369c1fb26e79974b1727821b4844fefba443af604b16b9003b95"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-07.json",
+      "sha256": "06fb50d464116743bf4c7c8fbcc3517fdc269b119ddc3bd71efb68e272a51e00"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-08.json",
+      "sha256": "82c902ffc767567650e1aa20aae59e05bc06cf4962251b06120df1b467f12314"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-09.json",
+      "sha256": "4730a3aeb0bb9681cb7420fef6d091964373eea6397c0e37ff2d230dbfdf74d1"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-10.json",
+      "sha256": "4a9e81ce400313376533d1da4b3b42620a750b43630931be5dc81b0396629d0f"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-01.json",
+      "sha256": "626a3366575f0b91d8fb3e63ee281bf9648cd9ca48d2a8987c4eab0d45720f3d"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-02.json",
+      "sha256": "a1d00f0b82dcb69988100dba2857c6d1a7e64880ab72b721127409b47bc332ae"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-03.json",
+      "sha256": "61a8c5cf17e7b7797080445feb68a44630445b610579e40ca5910180642821b0"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-04.json",
+      "sha256": "d13729e56ac7f3b2be7ed0bb44ac407909361f5c53c350edfb4452229d682536"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-05.json",
+      "sha256": "3dd0e617ee6e87f8edbe3b649bd52d24c4187410ff72f8b2f555440159d17384"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-06.json",
+      "sha256": "6016afe8c3d8560a94657c09fa081d33fb24ae361b33754d8ce362b21b62e5fb"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-07.json",
+      "sha256": "524a3d861e527d7331a5085d3665bdb87443df4c27155f7027d4e791422bca71"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-08.json",
+      "sha256": "8e198a5f8475a227680fca60b238f7578f3fb1f19fd31c12dba4445cdcb49036"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-09.json",
+      "sha256": "89770884f80c2a4e425f865da1acb79eb65ebceeee1d99dfc27ecf699c570e02"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-10.json",
+      "sha256": "b91d037b100c5bf29159fa33ba54c7d4430841502adb984e3282b4f14554b1cd"
+    }
+  ]
+}

@@ -894,5 +894,103 @@
     "accessed": "2026-11-16",
     "url_or_path": "supabase/migrations/20261112010000_guest_drip.sql",
     "takeaway": "The sponsor must retain1AVAX after pending reservations, the0.05AVAX drip and21000*gasPrice. A balance of exactly1AVAX cannot fund another guest."
+  },
+  {
+    "id": "S9-UNITY",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://activation.unity3d.com/vn/resources/mobile-growth-monetization-report-2024",
+    "takeaway": "Unity2024 reports1.83% lifetime IAP conversion and28.81% repurchase among payers; neither is monthly pass conversion."
+  },
+  {
+    "id": "S9-BENCHMARKS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://www.gameanalytics.com/benchmarks-hub",
+    "takeaway": "October2026 global mobile IAP ARPPU P25/P50/P75:4.73/10.93/25.43USD; about1800 revenue-reporting games with>=10kMAU. Selected mature-game sample, not our forecast."
+  },
+  {
+    "id": "S9-AXIE",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://whitepaper.axieinfinity.com/axie-infinity-history/future-streams",
+    "takeaway": "Historical official whitepaper lists4.25% marketplace fee and breeding fees; treasury revenue is not evidence of our cash revenue."
+  },
+  {
+    "id": "S9-AXIE-ROLLBACK",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://blog.axieinfinity.com/p/marketplacefee",
+    "takeaway": "The2022 proposal for5.25% has a16March2022 rollback note; search snippets alone would misstate it."
+  },
+  {
+    "id": "S9-PIXELS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://blog.thirdweb.com/case-studies/pixels-builds-an-onchain-ecosystem-for-its-web3-game/",
+    "takeaway": "Integrator primary case study13April2023 describes time-limited VIP NFTs; historical mechanism, current pricing/conversion unverified."
+  },
+  {
+    "id": "S9-OTG",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://support.console.gameoffthegrid.com/hc/en-us/articles/28909795772445-Off-The-Grid-Steam-FAQ",
+    "takeaway": "Publisher describes subscription and cosmetics with free battle-pass rewards. Does not publish a usable conversion or ARPPU benchmark."
+  },
+  {
+    "id": "S9-DFK",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://docs.defikingdoms.com/how-defi-kingdoms-works/defi-kingdoms-blockchain",
+    "takeaway": "DFK uses JEWEL gas with25%validator/50%burn/25%quest distribution. Custom gas economics need not route each game fee to AVAX or publisher revenue."
+  },
+  {
+    "id": "S9-ACP77",
+    "type": "formal-document",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://build.avax.network/docs/acps/77-reinventing-subnets",
+    "takeaway": "Activated ACP-77 defines independent L1 validation and continuous P-Chain fees;512nAVAX/s minimum is conditional, not a total hosted-chain cost."
+  },
+  {
+    "id": "S9-L1-FEES",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://build.avax.network/blog/l1-validator-fee",
+    "takeaway": "At the documented minimum below10000validators, one30-day validator slot costs1.327104AVAX; fees can rise and hosting is separate."
+  },
+  {
+    "id": "S9-LEGAL147",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-147-2024-nd-cp-khong-mua-ban-vat-pham-ao-giua-nhung-nguoi-choi-tro-choi-dien-tu-voi-nhau-119241113161443995.htm",
+    "takeaway": "Government explains restrictions on cash-out and player-to-player trading of virtual items; treat marketplace/token launch in Vietnam as requiring qualified legal review."
+  },
+  {
+    "id": "S9-LEGAL-STATUS",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://vbpl.moj.gov.vn/bothongtin/Pages/vbpq-lichsu.aspx?ItemID=171689&Keyword=",
+    "takeaway": "Official history marks147/2024 partially amended/repealed by116/2026 from8April2026; preserve current-law qualification."
+  },
+  {
+    "id": "S9-LEGAL116",
+    "type": "formal-document",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://congbaocdn.chinhphu.vn/180507251028987904/2026/4/20/469315-1776647256_v1_1776647889_signed.pdf",
+    "takeaway": "Inspected ChapterVI Articles17-26. Its amendments/repeals do not list Article57; repeal of Form57 is different. This is source comparison, not a launch legal opinion."
+  },
+  {
+    "id": "S9-MODEL",
+    "type": "own-experiment",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S9/model-1.json",
+    "takeaway": "At10000MAU and250unique payers, pass-led gross2200USD vs cosmetics-led2300USD under explicit assumptions. Configsource/simulation hashes match; two200-seed ledgers conserve within1e-6; E3stays16/18."
+  },
+  {
+    "id": "S9-SIM",
+    "type": "repository-source",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S2b/econ/CLASS-POWER-RETENTION25.json",
+    "takeaway": "Canonical config860d9a7a...matches currentECONOMY_LAB;18scenarios/200seeds at25%retention; two failed boundaries are retained."
   }
 ]
