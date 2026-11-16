@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16 10:36 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: run tools/.venv/bin/python tools/v3craft-lab/v4-binding-thread/export.py --publish; copy selected texture/effect to public/vfx and vfx-craft; wire shared spine/scene.ts, then detached regression+3fixture film.
+NEXT1: poll Binding regression/probe logs; fix measured runtime failures, then node scripts/v3feel/capture.mjs --item V4-A7-BINDING --seconds 30 --video-seconds 30 detached.
 NEXT2: measure Binding K4-A2, inspect normalized225px keys/2xheads, author two ranged class drills; then A7 integration/enemy keys.
 NEXT3: continue A7 enemies/boss, A8 deliveries interrupt, A9 ensemble, A10 SHIP art, A11 open gates; no final summary.
-LAST PUSH:713c3a232 verified; A6 source22/22+film3/3+blind11/12 receipt complete; Binding lab drill in progress.
-LIVE: Vite67838 only; Binding drillR4 complete errors0; chosen150ms,net27.5858%,face1.8139%,socket.12045px; production/film pending.
+LAST PUSH:424f4088e verified; Binding lab selected/pushed. Published212654Bposes+45194Btexture+shared scene WIP; full regression/probe running.
+LIVE: 87842 reports/v4-art/jobs/a7-binding-regression.log; 87843 reports/v4-art/jobs/a7-binding-probe.log; Vite67838 port5990.
 No STOP/inbox pause/designer delivery at10:03UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private clip catalogue deferredA11. A3/A4 checkpoints; pairwiseFX/activation OPEN.
 A5 checkpoint: blind12/12,overlap13.4228%,isolated60.0602fps,face0%; exactheal/legacydamage role OPEN finalSHIP.
