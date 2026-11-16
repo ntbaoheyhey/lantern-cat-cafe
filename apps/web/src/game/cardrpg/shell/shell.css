@@ -79,3 +79,19 @@
   max-width:100%;
   padding:36px 20px 24px;
 }
+
+/* Opaque information surfaces keep landing dialogs readable over the painted scene. */
+.b-modal[aria-label="Wallet sign-in"]>h2.t-title{
+  background:#171529;background-clip:border-box;-webkit-background-clip:border-box;
+  color:#ffedab;filter:none;text-shadow:none;line-height:1.3;padding:16px 12px;border-radius:10px;
+}
+.b-modal[aria-label="Wallet sign-in"]>p{background:#171529;padding:8px 12px;border-radius:8px}
+.b-modal[aria-label="Wallet sign-in"]>button.b-primary{
+  border-image:none;background:linear-gradient(#ffc86f,#e78a3c);color:#43231e;border:2px solid #ffe7a9;
+}
+.b-page.b2-page:is([aria-label="economy"],[aria-label="odds"],[aria-label="trailer"])>.b2-ribbon{
+  background:#171529;border:1px solid #68516c;border-radius:12px;text-shadow:none;
+}
+.b-page.b2-page[aria-label="economy"] .b2-action>span{background:#171529;padding:5px 8px;border-radius:7px}
+.b-page.b2-page:is([aria-label="economy"],[aria-label="odds"]) :is(.b2-flow-steps>article,.b2-rule-grid>article,.b2-allocation dl,.b2-odds table,.b-live,details){background:#171529}
+.b-page.b2-page:is([aria-label="economy"],[aria-label="odds"]) :is(p,.b2-allocation dl,details){padding:8px 12px;border-radius:8px;background:#171529}

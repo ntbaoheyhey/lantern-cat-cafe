@@ -1,5 +1,7 @@
 /** Browser-side observation; uncertainty remains explicit. LEARN/S11-ui.md. */
-export function observeDocument(){
+export function observeDocument({scopeSelector}={}){
+  const scope=scopeSelector?document.querySelector(scopeSelector):document.body;
+  if(!scope)throw new Error(`Missing observation scope: ${scopeSelector}`);
   const visible=e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true})&&!e.closest('[aria-hidden="true"],[inert]');
   const box=r=>({x:r.x,y:r.y,width:r.width,height:r.height});
   const parse=s=>{if(!/^rgba?\(/.test(s))return null;const v=s.match(/[\d.]+/g)?.map(Number);return v?.length>=3?[...v.slice(0,3),v[3]??1]:null;};
@@ -23,6 +25,13 @@ export function observeDocument(){
     }else{const c=parse(s.backgroundColor);if(!c)return {reason:'unparsed-color'};colors=[c];}
     layers.push(colors);
     if(colors.every(c=>c[3]===1)){
+     const clip=s.backgroundClip.split(',').map(v=>v.trim());
+     if(clip.some(v=>v!==clip[0])||!['border-box','padding-box','content-box'].includes(clip[0]))return {reason:'unsupported-background-clip'};
+     const b=n.getBoundingClientRect(),rootPaint=getComputedStyle(document.documentElement);
+     const canvas=n===document.documentElement||n===document.body&&rootPaint.backgroundImage==='none'&&parse(rootPaint.backgroundColor)?.[3]===0;
+     const edge=(side)=>clip[0]==='border-box'?0:parseFloat(s[`border${side}Width`])+(clip[0]==='content-box'?parseFloat(s[`padding${side}`]):0);
+     const bounds=canvas?{left:0,top:0,right:innerWidth,bottom:innerHeight}:{left:b.left+edge('Left'),top:b.top+edge('Top'),right:b.right-edge('Right'),bottom:b.bottom-edge('Bottom')};
+     if(rects.some(r=>r.left<bounds.left-.1||r.right>bounds.right+.1||r.top<bounds.top-.1||r.bottom>bounds.bottom+.1))return {reason:'text-outside-background'};
      const media=[...n.querySelectorAll('img,canvas,video')].filter(visible);
      if(media.some(m=>{const b=m.getBoundingClientRect();return rects.some(r=>r.left<b.right&&r.right>b.left&&r.top<b.bottom&&r.bottom>b.top);}))return {reason:'overlapping-media'};
      let surfaces=colors.map(c=>c.slice(0,3));
@@ -35,7 +44,7 @@ export function observeDocument(){
    }
    return {reason:'no-opaque-background'};
   }
-  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),texts=[],scrollHidden=[];let node;
+  const walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT),texts=[],scrollHidden=[];let node;
   while(node=walker.nextNode()){
    const e=node.parentElement,text=node.textContent?.trim();
    if(!e||!text||!visible(e)||e.closest('script,style,svg'))continue;
@@ -82,6 +91,6 @@ export function observeDocument(){
     ratio:ratio===null?null:+ratio.toFixed(3),minimum,inactive,contrast:inactive?'inactive-exempt':ratio===null?'unknown':ratio>=minimum?'pass':'fail',unknownReason:back.reason??null,effect:back.effect??null,clipping,prose});
   }
   const words=xs=>xs.join(' ').trim().split(/\s+/).filter(Boolean).length;
-  const brokenImages=[...document.images].filter(e=>visible(e)&&e.complete&&e.naturalWidth===0).map(e=>({alt:e.alt,src:new URL(e.src).pathname}));
+  const brokenImages=[...scope.querySelectorAll('img')].filter(e=>visible(e)&&e.complete&&e.naturalWidth===0).map(e=>({alt:e.alt,src:new URL(e.src).pathname}));
   return {texts,scrollHidden,allVisibleWords:words(texts.map(t=>t.text)),proseWords:words(texts.filter(t=>t.prose).map(t=>t.text)),horizontalOverflow:document.documentElement.scrollWidth>innerWidth,brokenImages};
 }

@@ -10,7 +10,7 @@
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có 2.677 trường hợp đạt và bảy lỗi thuộc phần ART; server, rules, typecheck, bản dựng và phép đối chiếu ba trận đạt.
-- Lịch sử Git: 700/3.854 commit; gzip: 947/1.332 tệp. Đã sửa lỗi truyền dữ liệu và quét tiếp; 1.314 cảnh báo đã đối chiếu, chưa kết luận toàn bộ lịch sử sạch.
+- Lịch sử Git: 700/3.854 commit; gzip: 1.018/1.332 tệp. Đã sửa lỗi truyền dữ liệu và quét tiếp; 1.314 cảnh báo đã đối chiếu, chưa kết luận toàn bộ lịch sử sạch.
 - Production đã đi đủ bảy bước, 18 biên nhận và 60 FPS; tải 26,4 MB trước trận vượt mức 8 MB, đang chờ ART sửa phần tài nguyên.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 2: 164,83 giây/9,34 MB; âm lượng −17,87 LUFS, đỉnh −2,22 dBTP, LRA 5,2 đạt ngưỡng. 52 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
@@ -18,3 +18,4 @@
 - Hồi quy hiện còn đúng bảy lỗi ART; server, rules, typecheck, parity probe và build đạt. Báo cáo khoảng 112 MB; chưa đạt toàn bộ G-REPO.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
 S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Tiêu đề landing đã đạt tương phản 15,27:1 ở hai kích thước; còn bốn lỗi ảnh ART và 32 mẫu tương phản battle chưa xác nhận. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.
+S11 hộp thoại phụ: phương án CSS đạt47/47 mẫu, tương phản tối thiểu5,407:1; hồi quy giữ nguyên bảy lỗi ART. Đang dựng bản production mới để xác minh.
