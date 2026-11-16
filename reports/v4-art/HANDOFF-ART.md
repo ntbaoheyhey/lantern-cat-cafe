@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T20:39:58.175582+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: poll ps8500+tail5 R2log;review drill-r2.json and4newcomparisons once. R1near60alphaFAIL/budget14.09MB;RGB85alphaPASS/budget9.33MBFAIL. Two more methods RGB60/RGB40 active;no production selection.
+NEXT1: change delivery method after4WebP budget failures (near60/RGB85/60/40);investigate installed AVIF lossless-alpha mode before2private drills. R2RGB40 projects8,496,751B>8MB;nativefur/cloth softened. No production edit/selection.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:9df18432a verified; contrast receipt complete,56/56supplements+57followups classified,42realdefectframes retained forA11;fullfilmreadabilityNOTaccepted. Source9205464cb/80hashes,85labelsPASS.
-LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log;drillR2supervisor8500 log jobs/a10-scene-ready-drill-r2.log/receipt scene-ready-transfer/job-drill-r2.json.3ownedjobs;R17896finished exit0.
+LAST PUSH:c84eb49cc verified;contrastreceipt9df18432a complete. Scene-ready R1failures pushed;R2results/4comparison notes saved pending checkpoint. Current runtime unchanged9205464cb contrast source.
+LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. Drill7896/R28500completed exit0;results scene-ready-transfer/drill-r1.json+drill-r2.json. Old68961/69950absent.
 STOP/INBOX checked20:36UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEAD88be1e708 lastobserved; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;4scene-ready R1detail comparisons saved/closed. Contrast56/56supplements+60HUD+3layouts/priorclosed;A10JPG8/8/rawonly;never reopen reviewed images.
+IMAGEOPENS:0afterrewrite;8scene-ready R1/R2detail comparisons saved/closed. Contrast56supplements+60HUD+3layouts/priorclosed;A10JPG8/8/rawonly;never reopen reviewed images.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
