@@ -1,0 +1,4908 @@
+{
+  "at": "2026-11-16T19:15:53.482Z",
+  "sourceCommit": "1e9d46b6c8119e1ff04b8760ae46433e6edaea56",
+  "buildEvidence": "reports/v4-ship/S8/production-build-13.json",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scope": "Fresh production journey with observed combat contacts; real local API/Anvil transactions. No neutral unlock click, no injected playback, no screenshots. Causal telemetry does not prove physical onset or human listening.",
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/audio/impact-journey.mjs",
+      "sha256": "4df958d0155933113bc8d2bd39fa3de656ae90275c50ec450e8b2855472da955"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/journey-observer.mjs",
+      "sha256": "435f2c029e8c2945e44760e139829bbe56e9b07962be95de4a732f0e688bde72"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/impact-observer.mjs",
+      "sha256": "75c4b3fe33035c2c9af3df9722bbbb673f0f7c37ea8f1eaddbddf78552e95c76"
+    }
+  ],
+  "actions": [
+    "Play free",
+    "Start trial",
+    "Mint trial reward",
+    "Fund workshop",
+    "Seal Epic",
+    "Forge Legendary",
+    "List for 5 YARN",
+    "Buy with demo wallet",
+    "Withdraw Spool",
+    "Face the boss"
+  ],
+  "receipts": [
+    {
+      "hash": "0x69226a609da0f017b99e77aca6f859b8da01e536aa47359f18a82b8b80bc89ae",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021869085483",
+      "confirmationMs": 509,
+      "confirmedAt": 1794856647686,
+      "block": "26",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x22cbf655156e9cba1a6159e4c9f367e32f2c7387e39aea76a60d966c733536c0",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "mint",
+      "feeAvax": "0.000093562298408296",
+      "confirmationMs": 765.5,
+      "confirmedAt": 1794856648462,
+      "block": "27",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x12011c45daadc5185da7274676ee3dbae83e3470e883ae6b5b5c97b90254a1b9",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "claimTester",
+      "feeAvax": "0.000173882824934463",
+      "confirmationMs": 763.1999999992549,
+      "confirmedAt": 1794856649716,
+      "block": "28",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xabccfc9d10feab4aace9c05ee38bcc0a4c117bdc8123b57114e416e06613ea0c",
+      "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021583772133",
+      "confirmationMs": 507,
+      "confirmedAt": 1794856650250,
+      "block": "29",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x169bb7984643824b18d49c3a85e5ebb0fc2bbc7462cfee19c7f874a158fbf83f",
+      "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+      "payer": "0x4e6bf5af1402e0aff915e1f2907f7120d0056ac0",
+      "action": "claimTester",
+      "feeAvax": "0.000155121265947648",
+      "confirmationMs": 761.5,
+      "confirmedAt": 1794856651029,
+      "block": "30",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x48470a584373f466d154fe6f3b6cfa714b3c35577ecae69902c039e5d7f97e39",
+      "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+      "payer": "0x4e6bf5af1402e0aff915e1f2907f7120d0056ac0",
+      "action": "transfer",
+      "feeAvax": "0.000035905466822764",
+      "confirmationMs": 761.5999999996275,
+      "confirmedAt": 1794856651797,
+      "block": "31",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x4f2af333df660ef4eb4d2db32798ddcdf61c2cc50212b0fdf453f680bc1950af",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "seal",
+      "feeAvax": "0.0000837053110313",
+      "confirmationMs": 762.5,
+      "confirmedAt": 1794856653025,
+      "block": "32",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x18a9fa78db49912059e6747c83067abf920017aa870dd5ad27549ea4ad0529ae",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "mint",
+      "feeAvax": "0.000132698442675765",
+      "confirmationMs": 762.1999999992549,
+      "confirmedAt": 1794856653802,
+      "block": "33",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x170fbfdc6504b03d44cf8f3506e6eb3c19b5d193fdb20a9b583e3ec12d79570d",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "seal",
+      "feeAvax": "0.0000660035284552",
+      "confirmationMs": 761.4000000003725,
+      "confirmedAt": 1794856654826,
+      "block": "34",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x97b7537bb70193d30f619b677defc2222e317f9c39c74aa4e174539ebdf85811",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "safeBatchTransferFrom",
+      "feeAvax": "0.000056761626351946",
+      "confirmationMs": 762.2000000011176,
+      "confirmedAt": 1794856655596,
+      "block": "35",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x51f8395dd000870f9e0774fc27463a6e78bf98d694b231d710ca00b71387d2cb",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "mint",
+      "feeAvax": "0.000131985536919414",
+      "confirmationMs": 762.5,
+      "confirmedAt": 1794856656379,
+      "block": "36",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xac1ea9b0bffaccb05906d8bc0db42388ab6f2b7202d0678796237c3cff2a2f36",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "setApprovalForAll",
+      "feeAvax": "0.000047145906292884",
+      "confirmationMs": 761.8000000007451,
+      "confirmedAt": 1794856657639,
+      "block": "37",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x04638912251ee2dfa7e6c140349cbc74dcdb688f2351b6d2964a412bc2687065",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "list",
+      "feeAvax": "0.000237427340954082",
+      "confirmationMs": 762,
+      "confirmedAt": 1794856658409,
+      "block": "38",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x3bf316f5139bc217ace2a02031ce9abddb1a151cca3b3c07444be3d77261427f",
+      "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+      "payer": "0x4e6bf5af1402e0aff915e1f2907f7120d0056ac0",
+      "action": "approve",
+      "feeAvax": "0.00004729950703611",
+      "confirmationMs": 761.8000000007451,
+      "confirmedAt": 1794856659447,
+      "block": "39",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb4bd14562adc96c91c88e5c81122e111ddc60eeca26fca313119271c3d942424",
+      "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+      "payer": "0x4e6bf5af1402e0aff915e1f2907f7120d0056ac0",
+      "action": "buy",
+      "feeAvax": "0.00018821813584074",
+      "confirmationMs": 762.3000000007451,
+      "confirmedAt": 1794856660220,
+      "block": "40",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x608c0d85d2bae3d6631e968de72e51c4a45289b9f5f098340b79ab154404b385",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "withdraw",
+      "feeAvax": "0.000044693666513136",
+      "confirmationMs": 759.9000000003725,
+      "confirmedAt": 1794856660988,
+      "block": "41",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x5b72a4ae0c2af4fd74a8503547b6414e25938fca4f3644df0e50573df8645ab3",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "mint",
+      "feeAvax": "0.000131212217886075",
+      "confirmationMs": 761.5999999996275,
+      "confirmedAt": 1794856662242,
+      "block": "42",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xc631d7429a35491f83a69dce0d97510abdb927f8712829d864b604a31a63aa04",
+      "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "payer": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+      "action": "claim",
+      "feeAvax": "0.000120579389923386",
+      "confirmationMs": 762.0999999996275,
+      "confirmedAt": 1794856663024,
+      "block": "43",
+      "gasSource": "cafe",
+      "local": true
+    }
+  ],
+  "errors": [],
+  "blocked": [],
+  "failedRequests": [],
+  "journeyPass": true,
+  "receiptVerification": {
+    "scope": "Disposable Anvil receipt values and wallet history; no public latency claim",
+    "rows": [
+      {
+        "hash": "0x69226a609da0f017b99e77aca6f859b8da01e536aa47359f18a82b8b80bc89ae",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x22cbf655156e9cba1a6159e4c9f367e32f2c7387e39aea76a60d966c733536c0",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x12011c45daadc5185da7274676ee3dbae83e3470e883ae6b5b5c97b90254a1b9",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xabccfc9d10feab4aace9c05ee38bcc0a4c117bdc8123b57114e416e06613ea0c",
+        "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x169bb7984643824b18d49c3a85e5ebb0fc2bbc7462cfee19c7f874a158fbf83f",
+        "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x48470a584373f466d154fe6f3b6cfa714b3c35577ecae69902c039e5d7f97e39",
+        "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+        "action": "transfer",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x4f2af333df660ef4eb4d2db32798ddcdf61c2cc50212b0fdf453f680bc1950af",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x18a9fa78db49912059e6747c83067abf920017aa870dd5ad27549ea4ad0529ae",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x170fbfdc6504b03d44cf8f3506e6eb3c19b5d193fdb20a9b583e3ec12d79570d",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x97b7537bb70193d30f619b677defc2222e317f9c39c74aa4e174539ebdf85811",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "safeBatchTransferFrom",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x51f8395dd000870f9e0774fc27463a6e78bf98d694b231d710ca00b71387d2cb",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xac1ea9b0bffaccb05906d8bc0db42388ab6f2b7202d0678796237c3cff2a2f36",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "setApprovalForAll",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x04638912251ee2dfa7e6c140349cbc74dcdb688f2351b6d2964a412bc2687065",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "list",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x3bf316f5139bc217ace2a02031ce9abddb1a151cca3b3c07444be3d77261427f",
+        "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+        "action": "approve",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb4bd14562adc96c91c88e5c81122e111ddc60eeca26fca313119271c3d942424",
+        "wallet": "0x4e6bF5Af1402e0aFF915e1F2907f7120D0056AC0",
+        "action": "buy",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x608c0d85d2bae3d6631e968de72e51c4a45289b9f5f098340b79ab154404b385",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "withdraw",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x5b72a4ae0c2af4fd74a8503547b6414e25938fca4f3644df0e50573df8645ab3",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xc631d7429a35491f83a69dce0d97510abdb927f8712829d864b604a31a63aa04",
+        "wallet": "0x6c5b6cc306e8108980dea2a447debb9ef88af0e9",
+        "action": "claim",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      }
+    ],
+    "receiptCount": 18,
+    "actionTypes": 12,
+    "walletReceiptCount": 13,
+    "historyCount": 15,
+    "missingWalletReceipts": [],
+    "explorerLinks": true,
+    "pass": true
+  },
+  "events": {
+    "path": "reports/v4-ship/S11/impact-journey-3.events.json.gz",
+    "sha256": "0e3ec8a088e49655d4f531be614b1ab1b10df7cd9c9eb4081c3ba6c9a0f3bd75"
+  },
+  "audio": {
+    "controls": [
+      {
+        "label": "Play free",
+        "sequence": 1,
+        "requests": [
+          {
+            "request": 2,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              2
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 90.26033333370583,
+            "durationMs": 56.29554161116702,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Start trial",
+        "sequence": 3,
+        "requests": [
+          {
+            "request": 5,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              6
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.33433333333346,
+            "durationMs": 91.20913957763533,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Mint trial reward",
+        "sequence": 5,
+        "requests": [
+          {
+            "request": 192,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              171
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.65733333407843,
+            "durationMs": 51.926417538908254,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Fund workshop",
+        "sequence": 7,
+        "requests": [
+          {
+            "request": 200,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              178
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.76633333369682,
+            "durationMs": 83.34353113198745,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Seal Epic",
+        "sequence": 9,
+        "requests": [
+          {
+            "request": 210,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              187
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 33.17633333407866,
+            "durationMs": 56.633508916903,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Forge Legendary",
+        "sequence": 11,
+        "requests": [
+          {
+            "request": 216,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              193
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.672333332215203,
+            "durationMs": 90.80203726048808,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "List for 5 YARN",
+        "sequence": 13,
+        "requests": [
+          {
+            "request": 224,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              201
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.977333332950366,
+            "durationMs": 55.6654273637065,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Buy with demo wallet",
+        "sequence": 15,
+        "requests": [
+          {
+            "request": 230,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              207
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.260333333702874,
+            "durationMs": 88.59603263856286,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Withdraw Spool",
+        "sequence": 17,
+        "requests": [
+          {
+            "request": 238,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              215
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.75633333371661,
+            "durationMs": 53.29742833598061,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "label": "Face the boss",
+        "sequence": 19,
+        "requests": [
+          {
+            "request": 244,
+            "id": "ui.click",
+            "starts": 1,
+            "groups": [
+              221
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.57133333258389,
+            "durationMs": 82.1147393117343,
+            "played": true
+          }
+        ],
+        "pass": true
+      }
+    ],
+    "receipts": [
+      {
+        "hash": "0x69226a609da0f017b99e77aca6f859b8da01e536aa47359f18a82b8b80bc89ae",
+        "action": "Guest funding",
+        "requests": [
+          {
+            "request": 194,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              173
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.073333332591574,
+            "durationMs": 131.34939163069248,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x22cbf655156e9cba1a6159e4c9f367e32f2c7387e39aea76a60d966c733536c0",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 196,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              174
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 31.27333333370916,
+            "durationMs": 132.0915188679237,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x12011c45daadc5185da7274676ee3dbae83e3470e883ae6b5b5c97b90254a1b9",
+        "action": "claimTester",
+        "requests": [
+          {
+            "request": 202,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              180
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.167333332210546,
+            "durationMs": 133.93894018413732,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xabccfc9d10feab4aace9c05ee38bcc0a4c117bdc8123b57114e416e06613ea0c",
+        "action": "Guest funding",
+        "requests": [
+          {
+            "request": 204,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              182
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.97833333296876,
+            "durationMs": 132.0418385513875,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x169bb7984643824b18d49c3a85e5ebb0fc2bbc7462cfee19c7f874a158fbf83f",
+        "action": "claimTester",
+        "requests": [
+          {
+            "request": 206,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              183
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.675333332226728,
+            "durationMs": 128.36883913277575,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x48470a584373f466d154fe6f3b6cfa714b3c35577ecae69902c039e5d7f97e39",
+        "action": "transfer",
+        "requests": [
+          {
+            "request": 208,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              185
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.076333332588547,
+            "durationMs": 135.3052542312838,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x4f2af333df660ef4eb4d2db32798ddcdf61c2cc50212b0fdf453f680bc1950af",
+        "action": "seal",
+        "requests": [
+          {
+            "request": 212,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              189
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 33.16233333222044,
+            "durationMs": 130.3156509237624,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x18a9fa78db49912059e6747c83067abf920017aa870dd5ad27549ea4ad0529ae",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 214,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              191
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.67433333407098,
+            "durationMs": 131.27047511584067,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x170fbfdc6504b03d44cf8f3506e6eb3c19b5d193fdb20a9b583e3ec12d79570d",
+        "action": "seal",
+        "requests": [
+          {
+            "request": 218,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              195
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.56633333445643,
+            "durationMs": 134.32399048774357,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x97b7537bb70193d30f619b677defc2222e317f9c39c74aa4e174539ebdf85811",
+        "action": "safeBatchTransferFrom",
+        "requests": [
+          {
+            "request": 220,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              197
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 33.063333334444906,
+            "durationMs": 128.79611411980818,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x51f8395dd000870f9e0774fc27463a6e78bf98d694b231d710ca00b71387d2cb",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 222,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              199
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.169333334080875,
+            "durationMs": 134.96642356051325,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xac1ea9b0bffaccb05906d8bc0db42388ab6f2b7202d0678796237c3cff2a2f36",
+        "action": "setApprovalForAll",
+        "requests": [
+          {
+            "request": 226,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              203
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 33.17033333408472,
+            "durationMs": 128.231508161889,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x04638912251ee2dfa7e6c140349cbc74dcdb688f2351b6d2964a412bc2687065",
+        "action": "list",
+        "requests": [
+          {
+            "request": 228,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              205
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 30.775333333716844,
+            "durationMs": 129.05400356639518,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x3bf316f5139bc217ace2a02031ce9abddb1a151cca3b3c07444be3d77261427f",
+        "action": "approve",
+        "requests": [
+          {
+            "request": 232,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              209
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.37033333332511,
+            "durationMs": 129.38884230422332,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xb4bd14562adc96c91c88e5c81122e111ddc60eeca26fca313119271c3d942424",
+        "action": "buy",
+        "requests": [
+          {
+            "request": 234,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              211
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 28.271333333686925,
+            "durationMs": 129.55738400609107,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x608c0d85d2bae3d6631e968de72e51c4a45289b9f5f098340b79ab154404b385",
+        "action": "withdraw",
+        "requests": [
+          {
+            "request": 236,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              213
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.86133333334874,
+            "durationMs": 128.75331256311995,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0x5b72a4ae0c2af4fd74a8503547b6414e25938fca4f3644df0e50573df8645ab3",
+        "action": "mint",
+        "requests": [
+          {
+            "request": 240,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              217
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 32.467333332970156,
+            "durationMs": 130.49341432052586,
+            "played": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "hash": "0xc631d7429a35491f83a69dce0d97510abdb927f8712829d864b604a31a63aa04",
+        "action": "claim",
+        "requests": [
+          {
+            "request": 242,
+            "id": "tx.confirmed",
+            "starts": 1,
+            "groups": [
+              219
+            ],
+            "results": [
+              "played"
+            ],
+            "estimatedOnsetMs": 29.478333334831404,
+            "durationMs": 133.7925029909428,
+            "played": true
+          }
+        ],
+        "pass": true
+      }
+    ],
+    "maxStartsPer100ms": 4,
+    "sourceBudgetPass": true,
+    "primaryControlsPass": true,
+    "everyReceiptChimePass": true,
+    "unattributedTransientStarts": 0,
+    "physicalOnsetVerified": false,
+    "overallAudioGatePass": false
+  },
+  "impact": {
+    "scenes": 2,
+    "expectedContacts": 124,
+    "observedContacts": 124,
+    "causallyPlayedContacts": 124,
+    "failedContacts": 0,
+    "unattributedImpactEvents": 0,
+    "owners": [
+      "binding-thread",
+      "clover",
+      "mochi",
+      "panko",
+      "soot",
+      "yarn-giant"
+    ],
+    "rows": [
+      {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3296,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 71.90000000037253,
+        "estimatedAudioAfterSubmissionMs": 102.55633333258811,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 1,
+        "scene": 0,
+        "planId": 10,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 4178.5999999996275,
+        "requestIds": [
+          9
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.577333334450486,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 2,
+        "scene": 0,
+        "planId": 14,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 5078.800000000745,
+        "requestIds": [
+          10
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.655333332216287,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 3,
+        "scene": 0,
+        "planId": 19,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 5980,
+        "requestIds": [
+          12
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.765333333705712,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 4,
+        "scene": 0,
+        "planId": 23,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 6861.300000000745,
+        "requestIds": [
+          14
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 30.56133333258822,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 5,
+        "scene": 0,
+        "planId": 27,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 7745.9000000003725,
+        "requestIds": [
+          16
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.271333333706025,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 6,
+        "scene": 0,
+        "planId": 31,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 8630,
+        "requestIds": [
+          18
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 32.46433333296227,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 8,
+        "scene": 0,
+        "planId": 48,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 10562,
+        "requestIds": [
+          22
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.156333334076407,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 9,
+        "scene": 0,
+        "planId": 52,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 12112.599999999627,
+        "requestIds": [
+          25
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 32.54933333445115,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 10,
+        "scene": 0,
+        "planId": 55,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 13028.5,
+        "requestIds": [
+          26
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 28.65733333407843,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 11,
+        "scene": 0,
+        "planId": 60,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 13911,
+        "requestIds": [
+          28
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.45633333295882,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 12,
+        "scene": 0,
+        "planId": 65,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 14812.699999999255,
+        "requestIds": [
+          30
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.07033333444997,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 13,
+        "scene": 0,
+        "planId": 70,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 15710.300000000745,
+        "requestIds": [
+          32
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 29.473333332960465,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 14,
+        "scene": 0,
+        "planId": 75,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 16578.599999999627,
+        "requestIds": [
+          34
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.54233333445154,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 16,
+        "scene": 0,
+        "planId": 87,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 17779.699999999255,
+        "requestIds": [
+          36
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2000000011175871,
+        "estimatedAudioAfterSubmissionMs": 29.360333333333983,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 17,
+        "scene": 0,
+        "planId": 101,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 19430.099999999627,
+        "requestIds": [
+          40
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.36033333333762,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 18,
+        "scene": 0,
+        "planId": 114,
+        "owner": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 21729.900000000373,
+        "requestIds": [
+          44
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.223333333702612,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 19,
+        "scene": 0,
+        "planId": 119,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 24029.300000000745,
+        "requestIds": [
+          48
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 30.465333332958835,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 20,
+        "scene": 0,
+        "planId": 129,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 26327.699999999255,
+        "requestIds": [
+          53
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 30.66233333407945,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 21,
+        "scene": 0,
+        "planId": 134,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 27861.199999999255,
+        "requestIds": [
+          56
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 33.24933333370791,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 22,
+        "scene": 0,
+        "planId": 144,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 28745.300000000745,
+        "requestIds": [
+          58
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 29.16633333221398,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 24,
+        "scene": 0,
+        "planId": 161,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 30695.800000000745,
+        "requestIds": [
+          62
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 30.665333332213777,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 25,
+        "scene": 0,
+        "planId": 166,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 32244.900000000373,
+        "requestIds": [
+          65
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 33.457333332957205,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 26,
+        "scene": 0,
+        "planId": 169,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 33128.300000000745,
+        "requestIds": [
+          66
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 30.164333332213573,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 27,
+        "scene": 0,
+        "planId": 175,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 34010,
+        "requestIds": [
+          68
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 28.366333333331568,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 28,
+        "scene": 0,
+        "planId": 180,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 34895,
+        "requestIds": [
+          70
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.19999999925494194,
+        "estimatedAudioAfterSubmissionMs": 28.67033333407744,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 29,
+        "scene": 0,
+        "planId": 187,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 36528.59999999963,
+        "requestIds": [
+          74
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.447333332958806,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 30,
+        "scene": 0,
+        "planId": 195,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 38845.300000000745,
+        "requestIds": [
+          79
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 30.35633333332953,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 32,
+        "scene": 0,
+        "planId": 201,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 40678.800000000745,
+        "requestIds": [
+          82
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 31.559333332581446,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 33,
+        "scene": 0,
+        "planId": 214,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 42327.199999999255,
+        "requestIds": [
+          86
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.16033333408268,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 34,
+        "scene": 0,
+        "planId": 217,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 43860.59999999963,
+        "requestIds": [
+          88
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 28.473333332956827,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 35,
+        "scene": 0,
+        "planId": 223,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 45511.59999999963,
+        "requestIds": [
+          92
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.75233333370852,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 36,
+        "scene": 0,
+        "planId": 233,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 47794.699999999255,
+        "requestIds": [
+          97
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.362333333330753,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 37,
+        "scene": 0,
+        "planId": 238,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 49361.09999999963,
+        "requestIds": [
+          100
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.956333332957,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 38,
+        "scene": 0,
+        "planId": 251,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 50227.699999999255,
+        "requestIds": [
+          102
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 29.262333333703282,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 40,
+        "scene": 0,
+        "planId": 268,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 52178.09999999963,
+        "requestIds": [
+          106
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.866333333331568,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 41,
+        "scene": 0,
+        "planId": 272,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 53709.300000000745,
+        "requestIds": [
+          109
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 30.367333333328133,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 42,
+        "scene": 0,
+        "planId": 285,
+        "owner": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 55361.300000000745,
+        "requestIds": [
+          112
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 31.76133333184407,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 43,
+        "scene": 0,
+        "planId": 290,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 57626.59999999963,
+        "requestIds": [
+          116
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 33.069333334453404,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 44,
+        "scene": 0,
+        "planId": 297,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 59176.09999999963,
+        "requestIds": [
+          119
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.271333333708753,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 45,
+        "scene": 0,
+        "planId": 304,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 60811.40000000037,
+        "requestIds": [
+          123
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.24433333370689,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 46,
+        "scene": 0,
+        "planId": 311,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 63111.40000000037,
+        "requestIds": [
+          128
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.861333333334187,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 48,
+        "scene": 0,
+        "planId": 317,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 64961.300000000745,
+        "requestIds": [
+          131
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.65433333220426,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 49,
+        "scene": 0,
+        "planId": 333,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 66612.19999999925,
+        "requestIds": [
+          135
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 28.762333333710558,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 50,
+        "scene": 0,
+        "planId": 336,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 68144.69999999925,
+        "requestIds": [
+          137
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 1.200000001117587,
+        "estimatedAudioAfterSubmissionMs": 32.268333333704504,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 51,
+        "scene": 0,
+        "planId": 341,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 69044.40000000037,
+        "requestIds": [
+          139
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 28.468333332959446,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 52,
+        "scene": 0,
+        "planId": 359,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 70678.69999999925,
+        "requestIds": [
+          143
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.6000000014901161,
+        "estimatedAudioAfterSubmissionMs": 31.553333334450144,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 53,
+        "scene": 0,
+        "planId": 364,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 72227.69999999925,
+        "requestIds": [
+          146
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.260333333702874,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 54,
+        "scene": 0,
+        "planId": 369,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 73094.40000000037,
+        "requestIds": [
+          148
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 31.86133333334874,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 55,
+        "scene": 0,
+        "planId": 374,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 73992.5,
+        "requestIds": [
+          150
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.7633333337144,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 56,
+        "scene": 0,
+        "planId": 385,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 74909.69999999925,
+        "requestIds": [
+          152
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.963333334831987,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 58,
+        "scene": 0,
+        "planId": 402,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 76877.59999999963,
+        "requestIds": [
+          156
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 29.96133333297621,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 59,
+        "scene": 0,
+        "planId": 406,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 78427.09999999963,
+        "requestIds": [
+          159
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 32.46333333295479,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 60,
+        "scene": 0,
+        "planId": 409,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 79293.69999999925,
+        "requestIds": [
+          160
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.767333333715214,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 61,
+        "scene": 0,
+        "planId": 414,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 80925.19999999925,
+        "requestIds": [
+          164
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.362333333323477,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 62,
+        "scene": 0,
+        "planId": 419,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 82476.59999999963,
+        "requestIds": [
+          167
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.97033333296713,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 63,
+        "scene": 0,
+        "planId": 426,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 84125.5,
+        "requestIds": [
+          171
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.067333332583075,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 64,
+        "scene": 0,
+        "planId": 432,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 85660.30000000075,
+        "requestIds": [
+          174
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.17133333219681,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 65,
+        "scene": 0,
+        "planId": 439,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 87309.30000000075,
+        "requestIds": [
+          178
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 30.27833333183662,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 66,
+        "scene": 0,
+        "planId": 450,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 88860,
+        "requestIds": [
+          181
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.47033333296713,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 68,
+        "scene": 0,
+        "planId": 456,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 90043.19999999925,
+        "requestIds": [
+          183
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.371333333314396,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 69,
+        "scene": 0,
+        "planId": 476,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 91693.80000000075,
+        "requestIds": [
+          187
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 29.76833333184186,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 71,
+        "scene": 1,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 110457.5,
+        "requestIds": [
+          246
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 28.6493333340768,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 72,
+        "scene": 1,
+        "planId": 10,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 111241.5,
+        "requestIds": [
+          248
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 28.576333332573995,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 73,
+        "scene": 1,
+        "planId": 14,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 112107.19999999925,
+        "requestIds": [
+          249
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 32.274333333713,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 74,
+        "scene": 1,
+        "planId": 19,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 113007.40000000037,
+        "requestIds": [
+          251
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.6999999992549419,
+        "estimatedAudioAfterSubmissionMs": 33.371333333314396,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 75,
+        "scene": 1,
+        "planId": 23,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 113907.90000000037,
+        "requestIds": [
+          253
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 28.785333333697054,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 76,
+        "scene": 1,
+        "planId": 27,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 114773.80000000075,
+        "requestIds": [
+          255
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 32.264333331841044,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 77,
+        "scene": 1,
+        "planId": 31,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 115674.80000000075,
+        "requestIds": [
+          257
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 32.66833333222894,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 79,
+        "scene": 1,
+        "planId": 48,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 117608.69999999925,
+        "requestIds": [
+          261
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 29.376333333333605,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 80,
+        "scene": 1,
+        "planId": 52,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 119157.80000000075,
+        "requestIds": [
+          264
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 32.264333331841044,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 81,
+        "scene": 1,
+        "planId": 55,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 120055.59999999963,
+        "requestIds": [
+          265
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 30.37333333333663,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 82,
+        "scene": 1,
+        "planId": 60,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 120958,
+        "requestIds": [
+          267
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 29.37133333332895,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 83,
+        "scene": 1,
+        "planId": 65,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 121858,
+        "requestIds": [
+          269
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.669333334066323,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 84,
+        "scene": 1,
+        "planId": 70,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 122774.5,
+        "requestIds": [
+          271
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.57133333256934,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 85,
+        "scene": 1,
+        "planId": 75,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 123656.90000000037,
+        "requestIds": [
+          273
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.16833333222894,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 87,
+        "scene": 1,
+        "planId": 87,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 124841.90000000037,
+        "requestIds": [
+          275
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 33.459333332953975,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 88,
+        "scene": 1,
+        "planId": 101,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 126491.30000000075,
+        "requestIds": [
+          279
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 32.066333332593786,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 89,
+        "scene": 1,
+        "planId": 114,
+        "owner": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 128774.90000000037,
+        "requestIds": [
+          283
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.168333332214388,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 90,
+        "scene": 1,
+        "planId": 119,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 131073.90000000037,
+        "requestIds": [
+          287
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 30.768333333689952,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 91,
+        "scene": 1,
+        "planId": 129,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 133357.80000000075,
+        "requestIds": [
+          292
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 29.476333332975628,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 92,
+        "scene": 1,
+        "planId": 134,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 134888.90000000037,
+        "requestIds": [
+          295
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 29.0763333326031,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 93,
+        "scene": 1,
+        "planId": 144,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 135774.30000000075,
+        "requestIds": [
+          297
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 28.969333332963288,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 95,
+        "scene": 1,
+        "planId": 161,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 137707.59999999963,
+        "requestIds": [
+          301
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 31.66333333408693,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 96,
+        "scene": 1,
+        "planId": 166,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 139256.19999999925,
+        "requestIds": [
+          304
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2000000011175871,
+        "estimatedAudioAfterSubmissionMs": 29.77133333371603,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 97,
+        "scene": 1,
+        "planId": 169,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 140140.40000000037,
+        "requestIds": [
+          305
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.969333332963288,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 98,
+        "scene": 1,
+        "planId": 175,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 141039,
+        "requestIds": [
+          307
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 33.66733333407319,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 99,
+        "scene": 1,
+        "planId": 180,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 141940.40000000037,
+        "requestIds": [
+          309
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 28.228999999264488,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 100,
+        "scene": 1,
+        "planId": 187,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 143590.5,
+        "requestIds": [
+          313
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 31.47133333297097,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 101,
+        "scene": 1,
+        "planId": 195,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 145872.30000000075,
+        "requestIds": [
+          318
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 32.27433333182125,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 103,
+        "scene": 1,
+        "planId": 201,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 147738.69999999925,
+        "requestIds": [
+          321
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.569333334453404,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 104,
+        "scene": 1,
+        "planId": 214,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 149374,
+        "requestIds": [
+          325
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.273333333723713,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 105,
+        "scene": 1,
+        "planId": 217,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 150923.30000000075,
+        "requestIds": [
+          327
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.968333332944894,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 106,
+        "scene": 1,
+        "planId": 223,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 152573.5,
+        "requestIds": [
+          331
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.671333334059455,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 107,
+        "scene": 1,
+        "planId": 233,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 154856.90000000037,
+        "requestIds": [
+          336
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 28.974333332967944,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 108,
+        "scene": 1,
+        "planId": 238,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 156406.40000000037,
+        "requestIds": [
+          339
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.2999999988824129,
+        "estimatedAudioAfterSubmissionMs": 31.47333333294955,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 109,
+        "scene": 1,
+        "planId": 251,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 157306.59999999963,
+        "requestIds": [
+          341
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.66533333409461,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 111,
+        "scene": 1,
+        "planId": 268,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 159273.5,
+        "requestIds": [
+          345
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 28.37533333330066,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 112,
+        "scene": 1,
+        "planId": 272,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 160806.5,
+        "requestIds": [
+          348
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 31.37333333332208,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 113,
+        "scene": 1,
+        "planId": 285,
+        "owner": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 162439.40000000037,
+        "requestIds": [
+          351
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.45833333299379,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 114,
+        "scene": 1,
+        "planId": 290,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 164756.30000000075,
+        "requestIds": [
+          355
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.599999999627471,
+        "estimatedAudioAfterSubmissionMs": 33.560333332570735,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 115,
+        "scene": 1,
+        "planId": 297,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 166290.30000000075,
+        "requestIds": [
+          358
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 30.266333331848728,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 116,
+        "scene": 1,
+        "planId": 304,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 167939.5,
+        "requestIds": [
+          362
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 28.95833333299379,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 117,
+        "scene": 1,
+        "planId": 311,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 170222.90000000037,
+        "requestIds": [
+          367
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.599999999627471,
+        "estimatedAudioAfterSubmissionMs": 33.66533333220286,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 119,
+        "scene": 1,
+        "planId": 317,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 172106.5,
+        "requestIds": [
+          370
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 32.670333334070165,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 120,
+        "scene": 1,
+        "planId": 333,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 173740.19999999925,
+        "requestIds": [
+          374
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.963333334831987,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 121,
+        "scene": 1,
+        "planId": 336,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 175289.69999999925,
+        "requestIds": [
+          376
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 33.36833333328832,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 122,
+        "scene": 1,
+        "planId": 341,
+        "owner": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 176173.19999999925,
+        "requestIds": [
+          378
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 29.953333334822673,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 123,
+        "scene": 1,
+        "planId": 359,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 177838.30000000075,
+        "requestIds": [
+          382
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 28.877333333337447,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 124,
+        "scene": 1,
+        "planId": 364,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 179389.59999999963,
+        "requestIds": [
+          385
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 29.55233333443175,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 125,
+        "scene": 1,
+        "planId": 369,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 180272,
+        "requestIds": [
+          387
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 32.46333333296934,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 126,
+        "scene": 1,
+        "planId": 374,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 181156.19999999925,
+        "requestIds": [
+          389
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 33.569333334453404,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 127,
+        "scene": 1,
+        "planId": 385,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 182039.80000000075,
+        "requestIds": [
+          391
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 29.97333333294955,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 129,
+        "scene": 1,
+        "planId": 402,
+        "owner": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 183973.19999999925,
+        "requestIds": [
+          395
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.56533333446714,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 130,
+        "scene": 1,
+        "planId": 406,
+        "owner": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 185504.30000000075,
+        "requestIds": [
+          398
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 32.15633333221194,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 131,
+        "scene": 1,
+        "planId": 409,
+        "owner": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 186388.80000000075,
+        "requestIds": [
+          399
+        ],
+        "cues": [
+          "heal.medium"
+        ],
+        "sourceStarts": 1,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 32.965333332977025,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 132,
+        "scene": 1,
+        "planId": 414,
+        "owner": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 188039,
+        "requestIds": [
+          403
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.770333333697636,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 133,
+        "scene": 1,
+        "planId": 419,
+        "owner": "yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 189589.09999999963,
+        "requestIds": [
+          406
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 32.658333334111376,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 134,
+        "scene": 1,
+        "planId": 426,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 191255.80000000075,
+        "requestIds": [
+          410
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 29.969333332963288,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 135,
+        "scene": 1,
+        "planId": 432,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 192789.5,
+        "requestIds": [
+          413
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.30000000074505806,
+        "estimatedAudioAfterSubmissionMs": 32.16733333407319,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 136,
+        "scene": 1,
+        "planId": 439,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 194439.09999999963,
+        "requestIds": [
+          417
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 30.571333334461087,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 137,
+        "scene": 1,
+        "planId": 450,
+        "owner": "binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 195989.19999999925,
+        "requestIds": [
+          420
+        ],
+        "cues": [
+          "kit.heavy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 32.47033333481522,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 139,
+        "scene": 1,
+        "planId": 456,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 197187.30000000075,
+        "requestIds": [
+          422
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.3999999985098839,
+        "estimatedAudioAfterSubmissionMs": 29.06933333259076,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      {
+        "plan": 140,
+        "scene": 1,
+        "planId": 476,
+        "owner": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "impactMs": 1100,
+        "renderedAt": 198837.59999999963,
+        "requestIds": [
+          426
+        ],
+        "cues": [
+          "kit.ember.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 32.06733333444572,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      }
+    ],
+    "errors": [],
+    "observedImpactCoveragePass": true,
+    "allEstimatedWithin33ms": false,
+    "physicalAudiovisualOnsetVerified": false,
+    "completeWeaponCoveragePass": false,
+    "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+  },
+  "rollback": true
+}

@@ -1,0 +1,2775 @@
+{
+  "at": "2026-11-16T19:30:36.001Z",
+  "sourceCommit": "1e9d46b6c8119e1ff04b8760ae46433e6edaea56",
+  "buildEvidence": "reports/v4-ship/S8/production-build-13.json",
+  "scope": "Two real first-trial battles at both shipping sizes. Observe actual Canvas2D drawImage calls for flight-anchored layers and contact layers, alongside existing causal audio. This records submitted paint, not visible pixels or physical onset. No screenshots, generated images, ART edits or playback changes.",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-visual-probe.mjs",
+    "sha256": "d9f50cb430af1d499099b976afe41dbd707b0181153a7efc98d1e9165a996ad4"
+  },
+  "rows": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contactCoverage": true,
+      "contacts": 62,
+      "scenes": [
+        {
+          "sequence": 0,
+          "craftBasic": false,
+          "craft": false
+        }
+      ],
+      "plans": [
+        {
+          "owner": "soot",
+          "planId": 10,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 300.00000000000045,
+          "lastFlightMs": 349.9000000000001,
+          "flightDisplacementPx": 552.3470678743162,
+          "firstContactPaintMs": 366.7000000000003,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 1.8562000000011176,
+              "requests": [
+                8
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 2.2054000000003726,
+              "requests": [
+                9
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 27,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.2999999999993,
+          "lastFlightMs": 333.2999999999993,
+          "flightDisplacementPx": 628.571097474358,
+          "firstContactPaintMs": 366.59999999999945,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 5.4185,
+              "requests": [
+                15
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 5.7522000000011175,
+              "requests": [
+                16
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 31,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.2999999999993,
+          "lastFlightMs": 333.2999999999993,
+          "flightDisplacementPx": 607.7521132045742,
+          "firstContactPaintMs": 366.60000000000036,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 6.32110000000149,
+              "requests": [
+                17
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 6.6525,
+              "requests": [
+                18
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 52,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 6,
+          "firstFlightMs": 300.10000000000036,
+          "lastFlightMs": 333.39999999999964,
+          "flightDisplacementPx": 357.9754130288721,
+          "firstContactPaintMs": 366.7000000000007,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 9.8205,
+              "requests": [
+                24
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 10.151700000001117,
+              "requests": [
+                25
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 70,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000011,
+          "lastFlightMs": 333.3000000000011,
+          "flightDisplacementPx": 628.5541568438597,
+          "firstContactPaintMs": 366.60000000000036,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 13.367800000000745,
+              "requests": [
+                31
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 13.701200000001117,
+              "requests": [
+                32
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 75,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.2000000000007,
+          "lastFlightMs": 349.90000000000146,
+          "flightDisplacementPx": 805.8107342252904,
+          "firstContactPaintMs": 366.6000000000022,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 14.27,
+              "requests": [
+                33
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 14.616400000000372,
+              "requests": [
+                34
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 101,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 60,
+          "firstFlightMs": 933.3000000000029,
+          "lastFlightMs": 1083.4000000000015,
+          "flightDisplacementPx": 833.5422022756578,
+          "firstContactPaintMs": 1100.1000000000022,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 16.371800000000746,
+              "requests": [
+                37
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 16.952200000001117,
+              "requests": [
+                38
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 17.452800000000746,
+              "requests": [
+                40
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 17.671700000001117,
+              "requests": [
+                41
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 134,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.2999999999993,
+          "lastFlightMs": 333.2999999999993,
+          "flightDisplacementPx": 580.9339982093649,
+          "firstContactPaintMs": 366.6000000000022,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 25.5715,
+              "requests": [
+                55
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 25.9005,
+              "requests": [
+                56
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 144,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.2999999999993,
+          "lastFlightMs": 333.2999999999993,
+          "flightDisplacementPx": 601.4409978170906,
+          "firstContactPaintMs": 366.6000000000022,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 26.47120000000112,
+              "requests": [
+                57
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 26.799900000000374,
+              "requests": [
+                58
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 166,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 6,
+          "firstFlightMs": 300,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 357.9580858520858,
+          "firstContactPaintMs": 366.6000000000022,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 29.969800000000745,
+              "requests": [
+                64
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 30.30060000000149,
+              "requests": [
+                65
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 187,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.5999999999985,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 685.1193780385566,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 33.57370000000112,
+              "requests": [
+                71
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 34.16720000000112,
+              "requests": [
+                72
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 34.6675,
+              "requests": [
+                74
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 34.85070000000112,
+              "requests": [
+                75
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 195,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.5999999999985,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 724.824815059938,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 35.87360000000149,
+              "requests": [
+                76
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 36.45010000000149,
+              "requests": [
+                77
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 36.96730000000075,
+              "requests": [
+                79
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 37.16730000000074,
+              "requests": [
+                80
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 214,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 60,
+          "firstFlightMs": 933.3000000000029,
+          "lastFlightMs": 1083.300000000003,
+          "flightDisplacementPx": 832.9282824081531,
+          "firstContactPaintMs": 1116.7000000000044,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 39.37770000000112,
+              "requests": [
+                83
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 39.95020000000112,
+              "requests": [
+                84
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 40.4495,
+              "requests": [
+                86
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 40.65270000000112,
+              "requests": [
+                87
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 238,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.40000000000146,
+          "lastFlightMs": 333.29999999999563,
+          "flightDisplacementPx": 627.1207564689977,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 47.12080000000074,
+              "requests": [
+                99
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 47.45,
+              "requests": [
+                100
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 251,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.1999999999971,
+          "lastFlightMs": 349.8999999999942,
+          "flightDisplacementPx": 805.8908205614117,
+          "firstContactPaintMs": 366.59999999999854,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 48.003800000000744,
+              "requests": [
+                101
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 48.35110000000149,
+              "requests": [
+                102
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 272,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 6,
+          "firstFlightMs": 299.8999999999942,
+          "lastFlightMs": 333.29999999999563,
+          "flightDisplacementPx": 484.9468871442339,
+          "firstContactPaintMs": 366.59999999999854,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 51.524200000001116,
+              "requests": [
+                108
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 51.84790000000037,
+              "requests": [
+                109
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 304,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.6000000000058,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 685.3225720121653,
+          "firstContactPaintMs": 1116.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 57.95160000000149,
+              "requests": [
+                120
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 58.516,
+              "requests": [
+                121
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 59.032900000000375,
+              "requests": [
+                123
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 59.232400000000375,
+              "requests": [
+                124
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 311,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 10,
+          "firstFlightMs": 1016.5999999999985,
+          "lastFlightMs": 1083.300000000003,
+          "flightDisplacementPx": 581.6382483856682,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 60.24370000000112,
+              "requests": [
+                125
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 60.833,
+              "requests": [
+                126
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 61.317200000001115,
+              "requests": [
+                128
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 61.53360000000149,
+              "requests": [
+                129
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 333,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 100,
+          "firstFlightMs": 933.3000000000029,
+          "lastFlightMs": 1083.300000000003,
+          "flightDisplacementPx": 833.0721749472184,
+          "firstContactPaintMs": 1100.1000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 63.72570000000112,
+              "requests": [
+                132
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 64.30070000000111,
+              "requests": [
+                133
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 64.80140000000037,
+              "requests": [
+                135
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 65.00120000000112,
+              "requests": [
+                136
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 364,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 580.868894479852,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 70.12170000000111,
+              "requests": [
+                145
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 70.45040000000037,
+              "requests": [
+                146
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 369,
+          "actorId": "foe-7-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 601.4026091193462,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 71.01480000000075,
+              "requests": [
+                147
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 71.35,
+              "requests": [
+                148
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 374,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 349.8999999999942,
+          "flightDisplacementPx": 801.1393708182017,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 71.922,
+              "requests": [
+                149
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 72.26630000000074,
+              "requests": [
+                150
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 385,
+          "actorId": "foe-8-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 601.4026407771944,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 72.81610000000148,
+              "requests": [
+                151
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 73.14980000000074,
+              "requests": [
+                152
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 406,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 6,
+          "firstFlightMs": 299.8999999999942,
+          "lastFlightMs": 333.1999999999971,
+          "flightDisplacementPx": 357.9131945225105,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 76.3216000000015,
+              "requests": [
+                158
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 76.64810000000149,
+              "requests": [
+                159
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 426,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.6000000000058,
+          "lastFlightMs": 1099.9000000000087,
+          "flightDisplacementPx": 685.3166274236108,
+          "firstContactPaintMs": 1116.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 81.31290000000037,
+              "requests": [
+                168
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 81.88240000000037,
+              "requests": [
+                169
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 82.39980000000074,
+              "requests": [
+                171
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 82.5995,
+              "requests": [
+                172
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 432,
+          "actorId": "foe-7-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 587.2395463569962,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 83.601,
+              "requests": [
+                173
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 83.933,
+              "requests": [
+                174
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 439,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 10,
+          "firstFlightMs": 1016.6999999999971,
+          "lastFlightMs": 1083.300000000003,
+          "flightDisplacementPx": 567.5074166678522,
+          "firstContactPaintMs": 1116.699999999997,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 84.50180000000074,
+              "requests": [
+                175
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 85.08230000000074,
+              "requests": [
+                176
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 85.58260000000149,
+              "requests": [
+                178
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 85.7856000000015,
+              "requests": [
+                179
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 450,
+          "actorId": "foe-8-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3999999999942,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 586.0236461620726,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 86.795,
+              "requests": [
+                180
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 87.11730000000074,
+              "requests": [
+                181
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 476,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 100,
+          "firstFlightMs": 933.3000000000029,
+          "lastFlightMs": 1083.4000000000087,
+          "flightDisplacementPx": 833.5852460669412,
+          "firstContactPaintMs": 1116.699999999997,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 88.87480000000075,
+              "requests": [
+                184
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 89.44920000000111,
+              "requests": [
+                185
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 89.94810000000149,
+              "requests": [
+                187
+              ]
+            },
+            {
+              "cue": "voice.yarn-giant.death",
+              "role": "voice",
+              "at": 89.94810000000149,
+              "requests": [
+                188
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 90.14770000000112,
+              "requests": [
+                189
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        }
+      ],
+      "draws": 5877,
+      "pass": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contactCoverage": true,
+      "contacts": 62,
+      "scenes": [
+        {
+          "sequence": 0,
+          "craftBasic": false,
+          "craft": false
+        }
+      ],
+      "plans": [
+        {
+          "owner": "soot",
+          "planId": 10,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 300,
+          "lastFlightMs": 349.99999999999955,
+          "flightDisplacementPx": 628.3491167455687,
+          "firstContactPaintMs": 366.7000000000003,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 1.8043999999985099,
+              "requests": [
+                8
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 2.1545,
+              "requests": [
+                9
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 27,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000002,
+          "lastFlightMs": 333.3000000000002,
+          "flightDisplacementPx": 720.4387710832189,
+          "firstContactPaintMs": 366.60000000000036,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 5.37289999999851,
+              "requests": [
+                15
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 5.704799999998882,
+              "requests": [
+                16
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 31,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000011,
+          "lastFlightMs": 333.39999999999964,
+          "flightDisplacementPx": 693.2494885330692,
+          "firstContactPaintMs": 366.7000000000007,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 6.273,
+              "requests": [
+                17
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 6.603599999999627,
+              "requests": [
+                18
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 52,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 6,
+          "firstFlightMs": 300,
+          "lastFlightMs": 333.3000000000011,
+          "flightDisplacementPx": 404.1098678134122,
+          "firstContactPaintMs": 366.60000000000036,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 9.769799999998883,
+              "requests": [
+                24
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 10.104199999999254,
+              "requests": [
+                25
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 70,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.39999999999964,
+          "lastFlightMs": 333.39999999999964,
+          "flightDisplacementPx": 720.1131671472846,
+          "firstContactPaintMs": 366.6999999999989,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 13.372799999998882,
+              "requests": [
+                31
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 13.704099999999627,
+              "requests": [
+                32
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 75,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.39999999999964,
+          "lastFlightMs": 333.39999999999964,
+          "flightDisplacementPx": 691.7129128052809,
+          "firstContactPaintMs": 350.0000000000018,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 14.253599999999627,
+              "requests": [
+                33
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 14.586799999998883,
+              "requests": [
+                34
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 101,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 60,
+          "firstFlightMs": 933.4000000000015,
+          "lastFlightMs": 1083.2999999999993,
+          "flightDisplacementPx": 933.2209783141066,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 16.32709999999963,
+              "requests": [
+                37
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 16.90289999999851,
+              "requests": [
+                38
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 17.40459999999963,
+              "requests": [
+                40
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 17.621299999998882,
+              "requests": [
+                41
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 134,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.2999999999993,
+          "lastFlightMs": 349.8999999999978,
+          "flightDisplacementPx": 874.2628689014916,
+          "firstContactPaintMs": 366.59999999999854,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 25.521199999999254,
+              "requests": [
+                55
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 25.869799999998882,
+              "requests": [
+                56
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 144,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.2000000000007,
+          "lastFlightMs": 333.2000000000007,
+          "flightDisplacementPx": 690.0894068929498,
+          "firstContactPaintMs": 366.59999999999854,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 26.42689999999851,
+              "requests": [
+                57
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 26.752899999998508,
+              "requests": [
+                58
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 166,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 299.90000000000146,
+          "lastFlightMs": 349.90000000000146,
+          "flightDisplacementPx": 628.3598804335041,
+          "firstContactPaintMs": 366.59999999999854,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 29.923299999998882,
+              "requests": [
+                64
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 30.2695,
+              "requests": [
+                65
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 187,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.6999999999971,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 780.6700087221684,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 33.49579999999888,
+              "requests": [
+                71
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 34.06839999999851,
+              "requests": [
+                72
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 34.58529999999888,
+              "requests": [
+                74
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 34.76939999999851,
+              "requests": [
+                75
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 195,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 10,
+          "firstFlightMs": 1016.7000000000044,
+          "lastFlightMs": 1083.4000000000015,
+          "flightDisplacementPx": 670.3591934859451,
+          "firstContactPaintMs": 1116.7000000000044,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 35.775099999999625,
+              "requests": [
+                76
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 36.352299999998884,
+              "requests": [
+                77
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 36.85309999999963,
+              "requests": [
+                79
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 37.05139999999851,
+              "requests": [
+                80
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 214,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 66,
+          "firstFlightMs": 933.3000000000029,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 1037.8790905475144,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 39.258199999999256,
+              "requests": [
+                83
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 39.852299999998884,
+              "requests": [
+                84
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 40.35209999999963,
+              "requests": [
+                86
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 40.552099999999626,
+              "requests": [
+                87
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 238,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.29999999999563,
+          "lastFlightMs": 333.3999999999942,
+          "flightDisplacementPx": 721.6733679741919,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 47.022299999998886,
+              "requests": [
+                99
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 47.35279999999888,
+              "requests": [
+                100
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 251,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.29999999999563,
+          "lastFlightMs": 349.8999999999942,
+          "flightDisplacementPx": 915.5751380067898,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 47.9185,
+              "requests": [
+                101
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 48.26879999999888,
+              "requests": [
+                102
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 272,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 299.90000000000146,
+          "lastFlightMs": 349.90000000000146,
+          "flightDisplacementPx": 826.9519510450599,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 51.422,
+              "requests": [
+                108
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 51.76859999999963,
+              "requests": [
+                109
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 304,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.5999999999985,
+          "lastFlightMs": 1099.9000000000015,
+          "flightDisplacementPx": 781.9233708959354,
+          "firstContactPaintMs": 1116.5999999999985,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 57.828199999999256,
+              "requests": [
+                120
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 58.41819999999925,
+              "requests": [
+                121
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 58.919,
+              "requests": [
+                123
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 59.11979999999888,
+              "requests": [
+                124
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 311,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 10,
+          "firstFlightMs": 1016.7000000000044,
+          "lastFlightMs": 1083.4000000000015,
+          "flightDisplacementPx": 670.3399973927017,
+          "firstContactPaintMs": 1100.1000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 60.12679999999888,
+              "requests": [
+                125
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 60.701,
+              "requests": [
+                126
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 61.201199999999254,
+              "requests": [
+                128
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 61.40209999999963,
+              "requests": [
+                129
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 333,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 110,
+          "firstFlightMs": 933.1999999999971,
+          "lastFlightMs": 1099.8999999999942,
+          "flightDisplacementPx": 1038.5232184189165,
+          "firstContactPaintMs": 1116.5,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 63.605299999998884,
+              "requests": [
+                132
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 64.2025,
+              "requests": [
+                133
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 64.7023999999985,
+              "requests": [
+                135
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 64.88629999999888,
+              "requests": [
+                136
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 364,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3000000000029,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 661.8584584456718,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 70.02509999999963,
+              "requests": [
+                145
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 70.3525,
+              "requests": [
+                146
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 369,
+          "actorId": "foe-7-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3999999999942,
+          "lastFlightMs": 333.3000000000029,
+          "flightDisplacementPx": 688.4571834280698,
+          "firstContactPaintMs": 366.6999999999971,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 70.925,
+              "requests": [
+                147
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 71.25239999999852,
+              "requests": [
+                148
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 374,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3999999999942,
+          "lastFlightMs": 333.3999999999942,
+          "flightDisplacementPx": 689.6258761506213,
+          "firstContactPaintMs": 366.59999999999127,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 71.81869999999925,
+              "requests": [
+                149
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 72.15239999999851,
+              "requests": [
+                150
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 385,
+          "actorId": "foe-8-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3999999999942,
+          "lastFlightMs": 333.3999999999942,
+          "flightDisplacementPx": 689.7880586542076,
+          "firstContactPaintMs": 366.59999999999127,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 72.70519999999925,
+              "requests": [
+                151
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 73.03479999999888,
+              "requests": [
+                152
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 406,
+          "actorId": "soot",
+          "presentationId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 300,
+          "lastFlightMs": 349.8999999999942,
+          "flightDisplacementPx": 627.1193449840775,
+          "firstContactPaintMs": 366.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.hexer.whoosh",
+              "role": "movement",
+              "at": 76.20639999999851,
+              "requests": [
+                158
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 76.55139999999851,
+              "requests": [
+                159
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 426,
+          "actorId": "foe-1-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.5999999999913,
+          "lastFlightMs": 1099.8999999999942,
+          "flightDisplacementPx": 781.9239785074038,
+          "firstContactPaintMs": 1116.5999999999913,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 81.20659999999963,
+              "requests": [
+                168
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 81.80139999999851,
+              "requests": [
+                169
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 82.30139999999851,
+              "requests": [
+                171
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 82.48569999999926,
+              "requests": [
+                172
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 432,
+          "actorId": "foe-7-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 8,
+          "firstFlightMs": 283.3999999999942,
+          "lastFlightMs": 333.3999999999942,
+          "flightDisplacementPx": 671.9911428975672,
+          "firstContactPaintMs": 366.79999999998836,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 83.50529999999888,
+              "requests": [
+                173
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 83.83559999999963,
+              "requests": [
+                174
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 439,
+          "actorId": "foe-2-binding-thread",
+          "presentationId": "enemy:binding-thread",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 12,
+          "firstFlightMs": 1016.5,
+          "lastFlightMs": 1099.9000000000087,
+          "flightDisplacementPx": 816.3623206871524,
+          "firstContactPaintMs": 1116.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.binding-thread.ult.charge",
+              "role": "voice",
+              "at": 84.40619999999926,
+              "requests": [
+                175
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.charge",
+              "role": "charge",
+              "at": 85.00069999999926,
+              "requests": [
+                176
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 85.50209999999963,
+              "requests": [
+                178
+              ]
+            },
+            {
+              "cue": "ult.binding-thread.tail",
+              "role": "tail",
+              "at": 85.70189999999852,
+              "requests": [
+                179
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "binding-thread",
+          "planId": 450,
+          "actorId": "foe-8-binding-thread",
+          "presentationId": "enemy:binding-thread:basic",
+          "ultimate": false,
+          "impactMs": 350,
+          "flightDraws": 10,
+          "firstFlightMs": 283.1999999999971,
+          "lastFlightMs": 349.8999999999942,
+          "flightDisplacementPx": 898.2186456067922,
+          "firstContactPaintMs": 366.59999999999127,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "move.thread.whoosh",
+              "role": "movement",
+              "at": 86.70389999999851,
+              "requests": [
+                180
+              ]
+            },
+            {
+              "cue": "kit.heavy.impact",
+              "role": "impact",
+              "at": 87.05169999999926,
+              "requests": [
+                181
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        },
+        {
+          "owner": "soot",
+          "planId": 476,
+          "actorId": "soot",
+          "presentationId": "soot-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "flightDraws": 110,
+          "firstFlightMs": 933.1999999999971,
+          "lastFlightMs": 1099.8999999999942,
+          "flightDisplacementPx": 1038.5232262335599,
+          "firstContactPaintMs": 1116.6000000000058,
+          "drawnLayers": [
+            "trail-smear",
+            "core-shape",
+            "ground-decal",
+            "impact-burst",
+            "screen-flash",
+            "sparks",
+            "residue"
+          ],
+          "audio": [
+            {
+              "cue": "voice.soot.ult.charge",
+              "role": "voice",
+              "at": 88.80679999999889,
+              "requests": [
+                184
+              ]
+            },
+            {
+              "cue": "ult.soot.charge",
+              "role": "charge",
+              "at": 89.40039999999851,
+              "requests": [
+                185
+              ]
+            },
+            {
+              "cue": "kit.ember.impact",
+              "role": "impact",
+              "at": 89.90159999999963,
+              "requests": [
+                187
+              ]
+            },
+            {
+              "cue": "voice.yarn-giant.death",
+              "role": "voice",
+              "at": 89.90159999999963,
+              "requests": [
+                188
+              ]
+            },
+            {
+              "cue": "ult.soot.tail",
+              "role": "tail",
+              "at": 90.10189999999851,
+              "requests": [
+                189
+              ]
+            }
+          ],
+          "allDrawsVisible": true
+        }
+      ],
+      "draws": 6005,
+      "pass": true
+    }
+  ],
+  "complete": true,
+  "events": {
+    "path": "reports/v4-ship/S11/ranged-visual-probe-1.events.json.gz",
+    "sha256": "fa348a8c91f3bbe481951ea4643b473743e878b16a2fe45f33b0a31126f47b92"
+  }
+}

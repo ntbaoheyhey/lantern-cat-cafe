@@ -1,0 +1,4461 @@
+{
+  "at": "2026-11-16T19:25:46.606Z",
+  "sourceCommit": "1e9d46b6c8119e1ff04b8760ae46433e6edaea56",
+  "buildEvidence": "reports/v4-ship/S8/production-build-13.json",
+  "scope": "Four paired fresh production entries at both required sizes, alternating method order. Existing real gesture/unlock and first eight rendered contacts. Candidate warms the existing battle packs at roster observation inside this browser only. No product/source/audio edits, normalization, screenshots or extra input. Diagnostic timing estimates are not physical onset acceptance.",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/cold-contact-probe.mjs",
+    "sha256": "1d323e27ae0e1d16888d0db25511a90785f1bd4e11a922c08636e789c7efdd3a"
+  },
+  "rows": [
+    {
+      "pair": 0,
+      "method": "current",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3448.199999999255,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 71.40000000037253,
+          "estimatedAudioAfterSubmissionMs": 100.86033333333307,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4346.5999999996275,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.164333334078037,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5228.4000000003725,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.3999999985098839,
+          "estimatedAudioAfterSubmissionMs": 32.6583333322169,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6113.299999998882,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 33.06333333445127,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7029.699999999255,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 28.67033333407926,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7912.199999999255,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2000000011175871,
+          "estimatedAudioAfterSubmissionMs": 31.563333334450363,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8812.699999999255,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 32.35433333333458,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10747,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 28.664333332215392,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 681.2999999988824
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 684.0999999996275
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 746.0999999996275
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 747
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 2046
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3448.5,
+        "decoded": [
+          "v4-receipt",
+          "b2-ui-baked",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-binding-thread",
+          "callout-mochi",
+          "callout-yarn-giant",
+          "callout-soot",
+          "voice",
+          "callout-clover",
+          "callout-panko",
+          "cat-panko",
+          "cat-soot",
+          "cat-mochi",
+          "cat-clover",
+          "b2-motion"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3448.199999999255,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 71.40000000037253,
+        "estimatedAudioAfterSubmissionMs": 100.86033333333307,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 726,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 762.2999999988824
+        },
+        {
+          "pack": "b2-motion",
+          "at": 3118,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 3140.2999999988824
+        },
+        {
+          "pack": "b2-hits",
+          "at": 3448.5,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 3519.2999999988824
+        },
+        {
+          "pack": "b2-motion",
+          "at": 3448.7999999988824,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3465.5
+        },
+        {
+          "pack": "b2-ui",
+          "at": 3448.7999999988824,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3465.5
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3497622,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 681.5,
+          "responseEnd": 706.5999999996275,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 725.9000000003725,
+          "responseEnd": 731.6999999992549,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 726,
+          "responseEnd": 732.5999999996275,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 726,
+          "responseEnd": 732.7999999988824,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 726,
+          "responseEnd": 733.1999999992549,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 726.0999999996275,
+          "responseEnd": 732.6999999992549,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 726.1999999992549,
+          "responseEnd": 732.9000000003725,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 2047.7999999988824,
+          "responseEnd": 2082.5999999996275,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 2047.7999999988824,
+          "responseEnd": 2084.199999999255,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 2047.7999999988824,
+          "responseEnd": 2084.4000000003725,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 2047.9000000003725,
+          "responseEnd": 2084.5,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 2047.9000000003725,
+          "responseEnd": 2084.5,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 2047.9000000003725,
+          "responseEnd": 2085.7999999988824,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 2047.9000000003725,
+          "responseEnd": 2093.5999999996275,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 2047.9000000003725,
+          "responseEnd": 2093.199999999255,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 2048,
+          "responseEnd": 2094,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 2048,
+          "responseEnd": 2094.2999999988824,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 2048.0999999996275,
+          "responseEnd": 2094.5,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 3119.0999999996275,
+          "responseEnd": 3124.199999999255,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 3448.699999999255,
+          "responseEnd": 3473.0999999996275,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 0,
+      "method": "roster-warm",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3128.7999999988824,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.7000000011175871,
+          "estimatedAudioAfterSubmissionMs": 30.349333333333107,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4027.4000000003725,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.3999999985098839,
+          "estimatedAudioAfterSubmissionMs": 33.06133333258822,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4927,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 29.56633333258833,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5826.0999999996275,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 31.750333333705385,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6710.299999998882,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 32.868333333333794,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7610.299999998882,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 28.831333333332623,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8493.699999999255,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.750333333706294,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10443.5,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 32.968333332959446,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 478.7999999988824
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 481.59999999962747
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 540
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 540.6999999992549
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1775.199999999255
+        },
+        {
+          "name": "preload",
+          "args": [
+            "battle"
+          ],
+          "at": 1775.199999999255
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3129.2999999988824,
+        "decoded": [
+          "v4-receipt",
+          "b2-ui-baked",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-soot",
+          "callout-mochi",
+          "callout-binding-thread",
+          "callout-panko",
+          "callout-yarn-giant",
+          "voice",
+          "callout-clover",
+          "b2-magic",
+          "cat-soot",
+          "cat-panko",
+          "cat-mochi",
+          "cat-clover",
+          "b2-motion",
+          "score-battle",
+          "b2-hits"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3128.7999999988824,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.7000000011175871,
+        "estimatedAudioAfterSubmissionMs": 30.349333333333107,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 524.2999999988824,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 550.6999999992549
+        },
+        {
+          "pack": "b2-hits",
+          "at": 1779,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1900.9000000003725
+        },
+        {
+          "pack": "b2-motion",
+          "at": 1779.0999999996275,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1876.5999999996275
+        },
+        {
+          "pack": "b2-ui",
+          "at": 1779.0999999996275,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 1779.0999999996275
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3868928,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 479,
+          "responseEnd": 495.90000000037253,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 524.2999999988824,
+          "responseEnd": 527.9000000003725,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 524.2999999988824,
+          "responseEnd": 528.5999999996275,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 524.4000000003725,
+          "responseEnd": 528.1999999992549,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 524.4000000003725,
+          "responseEnd": 528.5,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 524.4000000003725,
+          "responseEnd": 528.9000000003725,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 524.5,
+          "responseEnd": 529.2999999988824,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1775.9000000003725,
+          "responseEnd": 1800.7999999988824,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1776,
+          "responseEnd": 1806,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1776.0999999996275,
+          "responseEnd": 1806.4000000003725,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1776.0999999996275,
+          "responseEnd": 1806.5999999996275,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1776.0999999996275,
+          "responseEnd": 1806.0999999996275,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1776.0999999996275,
+          "responseEnd": 1810,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1776.199999999255,
+          "responseEnd": 1811.199999999255,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1776.199999999255,
+          "responseEnd": 1811.699999999255,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1778.9000000003725,
+          "responseEnd": 1811.9000000003725,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1778.9000000003725,
+          "responseEnd": 1812.5,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1778.9000000003725,
+          "responseEnd": 1812,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 1779.0999999996275,
+          "responseEnd": 1821.699999999255,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 1779.0999999996275,
+          "responseEnd": 1816.2999999988824,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-magic.webm",
+          "startTime": 1779.0999999996275,
+          "responseEnd": 1816.199999999255,
+          "transferSize": 99216,
+          "encodedBodySize": 98916
+        },
+        {
+          "path": "/audio/score-battle.webm",
+          "startTime": 1779.0999999996275,
+          "responseEnd": 1819.5,
+          "transferSize": 272690,
+          "encodedBodySize": 272390
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 1,
+      "method": "roster-warm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3295.4000000003725,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 29.158333332215534,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4176.199999999255,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 33.65933333407884,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5058.300000000745,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 31.457333332961753,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5942.800000000745,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.3999999985098839,
+          "estimatedAudioAfterSubmissionMs": 32.363333333332776,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6825.4000000003725,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.784333333705035,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7726.0999999996275,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.36433333333298,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8625.599999999627,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 32.261333333706716,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10559.300000000745,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 29.18533333221785,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 579.3000000007451
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 582.9000000003725
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 655.8000000007451
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 656.5999999996275
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1899.5999999996275
+        },
+        {
+          "name": "preload",
+          "args": [
+            "battle"
+          ],
+          "at": 1899.699999999255
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3295.699999999255,
+        "decoded": [
+          "b2-ui-baked",
+          "v4-receipt",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-mochi",
+          "voice",
+          "callout-soot",
+          "callout-binding-thread",
+          "callout-clover",
+          "callout-yarn-giant",
+          "callout-panko",
+          "b2-magic",
+          "b2-motion",
+          "cat-mochi",
+          "cat-clover",
+          "cat-soot",
+          "cat-panko",
+          "score-battle",
+          "b2-hits"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3295.4000000003725,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 29.158333332215534,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 631,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 663.1999999992549
+        },
+        {
+          "pack": "b2-hits",
+          "at": 1900.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 2028
+        },
+        {
+          "pack": "b2-motion",
+          "at": 1900.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1988.199999999255
+        },
+        {
+          "pack": "b2-ui",
+          "at": 1900.800000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 1901
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3868928,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 579.4000000003725,
+          "responseEnd": 600.9000000003725,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 630.9000000003725,
+          "responseEnd": 637.5,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 631,
+          "responseEnd": 638,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 631,
+          "responseEnd": 638.5,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 631,
+          "responseEnd": 638.8000000007451,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 631,
+          "responseEnd": 639.0999999996275,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 631.1999999992549,
+          "responseEnd": 639.9000000003725,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1900.4000000003725,
+          "responseEnd": 1914.300000000745,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1900.5,
+          "responseEnd": 1934.4000000003725,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1900.5,
+          "responseEnd": 1934.699999999255,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1934.9000000003725,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1935.199999999255,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1935.199999999255,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1937.0999999996275,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1938.9000000003725,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1900.5999999996275,
+          "responseEnd": 1939.0999999996275,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1900.699999999255,
+          "responseEnd": 1939.4000000003725,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1900.800000000745,
+          "responseEnd": 1937.5999999996275,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 1900.800000000745,
+          "responseEnd": 1947.9000000003725,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 1900.800000000745,
+          "responseEnd": 1944.0999999996275,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-magic.webm",
+          "startTime": 1900.800000000745,
+          "responseEnd": 1942.5,
+          "transferSize": 99216,
+          "encodedBodySize": 98916
+        },
+        {
+          "path": "/audio/score-battle.webm",
+          "startTime": 1900.9000000003725,
+          "responseEnd": 1951.0999999996275,
+          "transferSize": 272690,
+          "encodedBodySize": 272390
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 1,
+      "method": "current",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3226.89999999851,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 80.20000000111759,
+          "estimatedAudioAfterSubmissionMs": 112.56233333445107,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4093.5999999996275,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.96433333296136,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4991.89999999851,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 32.96033333482319,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5876.39999999851,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 28.41300000037245,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6759.199999999255,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.98233333296048,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7641.89999999851,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 33.56033333444975,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8526.299999998882,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.179333334077455,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10493.699999999255,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 29.771333333706934,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 527.3999999985099
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 530.7999999988824
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 593.8999999985099
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 595.8999999985099
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1800.5999999996275
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3227.2999999988824,
+        "decoded": [
+          "v4-receipt",
+          "b2-ui-baked",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-mochi",
+          "callout-soot",
+          "callout-binding-thread",
+          "callout-panko",
+          "callout-yarn-giant",
+          "voice",
+          "callout-clover",
+          "cat-soot",
+          "cat-panko",
+          "cat-mochi",
+          "cat-clover",
+          "b2-motion"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3226.89999999851,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 80.20000000111759,
+        "estimatedAudioAfterSubmissionMs": 112.56233333445107,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 576.5,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 610
+        },
+        {
+          "pack": "b2-motion",
+          "at": 2877.2999999988824,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 2901.699999999255
+        },
+        {
+          "pack": "b2-hits",
+          "at": 3227.2999999988824,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 3306.89999999851
+        },
+        {
+          "pack": "b2-motion",
+          "at": 3227.5999999996275,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3243.89999999851
+        },
+        {
+          "pack": "b2-ui",
+          "at": 3227.5999999996275,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3243.89999999851
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3497622,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 527.8999999985099,
+          "responseEnd": 549.6999999992549,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 576.5,
+          "responseEnd": 584,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 576.5,
+          "responseEnd": 584.0999999996275,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 576.5,
+          "responseEnd": 584.1999999992549,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 576.5999999996275,
+          "responseEnd": 583.7999999988824,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 576.5999999996275,
+          "responseEnd": 584.5,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 576.6999999992549,
+          "responseEnd": 584.8999999985099,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1801.3999999985099,
+          "responseEnd": 1814.8999999985099,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1801.5,
+          "responseEnd": 1821,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1801.5999999996275,
+          "responseEnd": 1822.3999999985099,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1801.5999999996275,
+          "responseEnd": 1823,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1801.5999999996275,
+          "responseEnd": 1824.5999999996275,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1801.5999999996275,
+          "responseEnd": 1827.5999999996275,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1801.699999999255,
+          "responseEnd": 1836.699999999255,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1801.699999999255,
+          "responseEnd": 1842,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1801.7999999988824,
+          "responseEnd": 1842.699999999255,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1801.7999999988824,
+          "responseEnd": 1843.5999999996275,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1801.7999999988824,
+          "responseEnd": 1841.3999999985099,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 2878.2999999988824,
+          "responseEnd": 2883.0999999996275,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 3227.5999999996275,
+          "responseEnd": 3251.0999999996275,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 2,
+      "method": "current",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3195.60000000149,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 72.89999999850988,
+          "estimatedAudioAfterSubmissionMs": 105.35433333333367,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4078.800000000745,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 32.7563333337057,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4977.300000000745,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.243333333706687,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5862.700000001118,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.154333332215174,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6743.4000000003725,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.467333332960152,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7628.200000001118,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 29.965333332959744,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8512.10000000149,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 31.468333332961265,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10444.5,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.638333334080016,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 513
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 515.7000000011176
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 580.4000000003725
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 581.1000000014901
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1815.1000000014901
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3196,
+        "decoded": [
+          "v4-receipt",
+          "b2-ui-baked",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-clover",
+          "callout-soot",
+          "callout-mochi",
+          "callout-panko",
+          "callout-yarn-giant",
+          "callout-binding-thread",
+          "voice",
+          "cat-soot",
+          "cat-clover",
+          "cat-panko",
+          "cat-mochi",
+          "b2-motion"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3195.60000000149,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 72.89999999850988,
+        "estimatedAudioAfterSubmissionMs": 105.35433333333367,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 559.4000000003725,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 594.1000000014901
+        },
+        {
+          "pack": "b2-motion",
+          "at": 2864.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 2890.60000000149
+        },
+        {
+          "pack": "b2-hits",
+          "at": 3196,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 3268.4000000003725
+        },
+        {
+          "pack": "b2-motion",
+          "at": 3196.300000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3212.2000000011176
+        },
+        {
+          "pack": "b2-ui",
+          "at": 3196.300000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3212.2000000011176
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3497622,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 513.1000000014901,
+          "responseEnd": 532.5,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 559.3000000007451,
+          "responseEnd": 564.3000000007451,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 559.4000000003725,
+          "responseEnd": 564.5,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 559.4000000003725,
+          "responseEnd": 564.7000000011176,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 559.5,
+          "responseEnd": 564.9000000003725,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 559.5,
+          "responseEnd": 565.7000000011176,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 559.6000000014901,
+          "responseEnd": 565.4000000003725,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1815.800000000745,
+          "responseEnd": 1847.300000000745,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1815.800000000745,
+          "responseEnd": 1847.300000000745,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1815.800000000745,
+          "responseEnd": 1847.6000000014901,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1815.9000000003725,
+          "responseEnd": 1847.4000000003725,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1815.9000000003725,
+          "responseEnd": 1847.6000000014901,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1815.9000000003725,
+          "responseEnd": 1849,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1815.9000000003725,
+          "responseEnd": 1854,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1816,
+          "responseEnd": 1853.7000000011176,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1816,
+          "responseEnd": 1854.5,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1816,
+          "responseEnd": 1855.300000000745,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1816.1000000014901,
+          "responseEnd": 1854.800000000745,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 2865.9000000003725,
+          "responseEnd": 2871.800000000745,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 3196.2000000011176,
+          "responseEnd": 3220.10000000149,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 2,
+      "method": "roster-warm",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3145.300000000745,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 30.977333332960825,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4043.800000000745,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 28.339999998882377,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4943.0999999996275,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.2000000011175871,
+          "estimatedAudioAfterSubmissionMs": 30.473333332961374,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5843.9000000003725,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.87533333333249,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6726.9000000003725,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 33.27533333370593,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7609.199999999255,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 30.980333334822717,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8510.400000000373,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 31.075333332588343,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10477.400000000373,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 32.17433333221561,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 510.90000000037253
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 513.5999999996275
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 576
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 576.6999999992549
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1815.199999999255
+        },
+        {
+          "name": "preload",
+          "args": [
+            "battle"
+          ],
+          "at": 1815.4000000003725
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3145.699999999255,
+        "decoded": [
+          "v4-receipt",
+          "b2-ui-baked",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-soot",
+          "callout-mochi",
+          "voice",
+          "callout-binding-thread",
+          "callout-yarn-giant",
+          "callout-clover",
+          "callout-panko",
+          "cat-soot",
+          "cat-clover",
+          "cat-mochi",
+          "b2-magic",
+          "b2-motion",
+          "cat-panko",
+          "score-battle",
+          "b2-hits"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3145.300000000745,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.5,
+        "estimatedAudioAfterSubmissionMs": 30.977333332960825,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 559,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 592.5999999996275
+        },
+        {
+          "pack": "b2-hits",
+          "at": 1816.699999999255,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1945.9000000003725
+        },
+        {
+          "pack": "b2-motion",
+          "at": 1816.699999999255,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1916.0999999996275
+        },
+        {
+          "pack": "b2-ui",
+          "at": 1816.9000000003725,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 1816.9000000003725
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3868928,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 511,
+          "responseEnd": 531.9000000003725,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 558.9000000003725,
+          "responseEnd": 565.9000000003725,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 559,
+          "responseEnd": 566.3000000007451,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 559,
+          "responseEnd": 566.4000000003725,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 559,
+          "responseEnd": 566.5999999996275,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 559,
+          "responseEnd": 567,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 559.0999999996275,
+          "responseEnd": 567.5,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1816.4000000003725,
+          "responseEnd": 1843.9000000003725,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1816.5,
+          "responseEnd": 1844.199999999255,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1816.5,
+          "responseEnd": 1844.5,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1816.5,
+          "responseEnd": 1847.800000000745,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1816.5,
+          "responseEnd": 1848.300000000745,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1816.5999999996275,
+          "responseEnd": 1849.199999999255,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1816.5999999996275,
+          "responseEnd": 1851.0999999996275,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1816.5999999996275,
+          "responseEnd": 1851.300000000745,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1816.699999999255,
+          "responseEnd": 1851.300000000745,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1816.699999999255,
+          "responseEnd": 1854.800000000745,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 1816.699999999255,
+          "responseEnd": 1878.300000000745,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1816.699999999255,
+          "responseEnd": 1873.300000000745,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 1816.800000000745,
+          "responseEnd": 1873,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-magic.webm",
+          "startTime": 1816.9000000003725,
+          "responseEnd": 1871.699999999255,
+          "transferSize": 99216,
+          "encodedBodySize": 98916
+        },
+        {
+          "path": "/audio/score-battle.webm",
+          "startTime": 1816.9000000003725,
+          "responseEnd": 1878.5,
+          "transferSize": 272690,
+          "encodedBodySize": 272390
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 3,
+      "method": "roster-warm",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3214.0999999996275,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.874333333333198,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4095.300000000745,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 29.6663333322158,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4981.9000000003725,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 28.4420000003729,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5898.800000000745,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 28.868333333333794,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6778.699999999255,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 28.97633333482372,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7662.699999999255,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 30.27533333370593,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8543.900000000373,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 29.06933333258894,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10513,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 33.36733333333359,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 533.8000000007451
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 536.4000000003725
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 610.9000000003725
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 611.6999999992549
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1847.5999999996275
+        },
+        {
+          "name": "preload",
+          "args": [
+            "battle"
+          ],
+          "at": 1847.800000000745
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3214.4000000003725,
+        "decoded": [
+          "b2-ui-baked",
+          "v4-receipt",
+          "menu-voices",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-yarn-giant",
+          "callout-mochi",
+          "callout-soot",
+          "callout-panko",
+          "callout-clover",
+          "callout-binding-thread",
+          "voice",
+          "cat-soot",
+          "b2-magic",
+          "cat-clover",
+          "cat-panko",
+          "cat-mochi",
+          "b2-motion",
+          "b2-hits",
+          "score-battle"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3214.0999999996275,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 0.40000000037252903,
+        "estimatedAudioAfterSubmissionMs": 30.874333333333198,
+        "within33msEstimate": true,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 587.0999999996275,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 620.1999999992549
+        },
+        {
+          "pack": "b2-hits",
+          "at": 1848.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1980
+        },
+        {
+          "pack": "b2-motion",
+          "at": 1848.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 1935.800000000745
+        },
+        {
+          "pack": "b2-ui",
+          "at": 1848.800000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 1848.800000000745
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3868928,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 533.9000000003725,
+          "responseEnd": 561,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 587.0999999996275,
+          "responseEnd": 592.1999999992549,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 587.0999999996275,
+          "responseEnd": 592.4000000003725,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 587.1999999992549,
+          "responseEnd": 592,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 587.3000000007451,
+          "responseEnd": 592.6999999992549,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 587.3000000007451,
+          "responseEnd": 593,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 587.4000000003725,
+          "responseEnd": 593.3000000007451,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1848.4000000003725,
+          "responseEnd": 1884.199999999255,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1848.5,
+          "responseEnd": 1884.9000000003725,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1848.5,
+          "responseEnd": 1885.5999999996275,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1848.5,
+          "responseEnd": 1886.699999999255,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1848.5999999996275,
+          "responseEnd": 1889.4000000003725,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1848.5999999996275,
+          "responseEnd": 1889.699999999255,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1848.699999999255,
+          "responseEnd": 1892.4000000003725,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1848.699999999255,
+          "responseEnd": 1892.699999999255,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1848.699999999255,
+          "responseEnd": 1892.800000000745,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1848.699999999255,
+          "responseEnd": 1894.0999999996275,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1848.699999999255,
+          "responseEnd": 1893.5,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-magic.webm",
+          "startTime": 1848.800000000745,
+          "responseEnd": 1915.800000000745,
+          "transferSize": 99216,
+          "encodedBodySize": 98916
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 1848.800000000745,
+          "responseEnd": 1916.0999999996275,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 1848.800000000745,
+          "responseEnd": 1917.5,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        },
+        {
+          "path": "/audio/score-battle.webm",
+          "startTime": 1848.800000000745,
+          "responseEnd": 1932.199999999255,
+          "transferSize": 272690,
+          "encodedBodySize": 272390
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pair": 3,
+      "method": "current",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "blocked": [],
+      "rollback": true,
+      "contacts": [
+        {
+          "plan": 0,
+          "scene": 0,
+          "planId": 6,
+          "owner": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 3145.2000000011176,
+          "requestIds": [
+            7
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 73.5,
+          "estimatedAudioAfterSubmissionMs": 103.6663333322158,
+          "within33msEstimate": false,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 1,
+          "scene": 0,
+          "planId": 10,
+          "owner": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4027.10000000149,
+          "requestIds": [
+            9
+          ],
+          "cues": [
+            "kit.ember.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 32.47133333296051,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 2,
+          "scene": 0,
+          "planId": 14,
+          "owner": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 4926.9000000003725,
+          "requestIds": [
+            10
+          ],
+          "cues": [
+            "heal.medium"
+          ],
+          "sourceStarts": 1,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 28.753333333705996,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 3,
+          "scene": 0,
+          "planId": 19,
+          "owner": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 5810.300000000745,
+          "requestIds": [
+            12
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 30.573333332587936,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 4,
+          "scene": 0,
+          "planId": 23,
+          "owner": "yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 6693.60000000149,
+          "requestIds": [
+            14
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.2999999988824129,
+          "estimatedAudioAfterSubmissionMs": 32.578333332588045,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 5,
+          "scene": 0,
+          "planId": 27,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 7593.5,
+          "requestIds": [
+            16
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.5,
+          "estimatedAudioAfterSubmissionMs": 28.763333333705305,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 6,
+          "scene": 0,
+          "planId": 31,
+          "owner": "binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "impactMs": 350,
+          "renderedAt": 8509.900000000373,
+          "requestIds": [
+            18
+          ],
+          "cues": [
+            "kit.heavy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.30000000074505806,
+          "estimatedAudioAfterSubmissionMs": 29.67033333407744,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        },
+        {
+          "plan": 8,
+          "scene": 0,
+          "planId": 48,
+          "owner": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "impactMs": 1100,
+          "renderedAt": 10444.200000001118,
+          "requestIds": [
+            22
+          ],
+          "cues": [
+            "kit.holy.impact"
+          ],
+          "sourceStarts": 4,
+          "sourceCallAfterSubmissionMs": 0.40000000037252903,
+          "estimatedAudioAfterSubmissionMs": 31.35933333333378,
+          "within33msEstimate": true,
+          "checks": {
+            "observedBeforeImpact": true,
+            "fixedTiming": true,
+            "contactReached": true,
+            "renderedContact": true,
+            "oneImpactRequest": true,
+            "uniqueRequest": true,
+            "sourceActuallyStarted": true
+          },
+          "pass": true
+        }
+      ],
+      "calls": [
+        {
+          "name": "preload",
+          "args": [
+            "home"
+          ],
+          "at": 494.6000000014901
+        },
+        {
+          "name": "music",
+          "args": [
+            "landing"
+          ],
+          "at": 497.1000000014901
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 573.2000000011176
+        },
+        {
+          "name": "music",
+          "args": [
+            "home"
+          ],
+          "at": 573.9000000003725
+        },
+        {
+          "name": "preloadVoices",
+          "args": [
+            [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "yarn-giant",
+              "binding-thread",
+              "binding-thread"
+            ]
+          ],
+          "at": 1792
+        }
+      ],
+      "firstRequest": {
+        "id": "kit.holy.impact",
+        "options": {
+          "speed": 1,
+          "element": "holy"
+        },
+        "at": 3145.5,
+        "decoded": [
+          "b2-ui-baked",
+          "menu-voices",
+          "v4-receipt",
+          "b2-ui",
+          "menu-home",
+          "landing",
+          "callout-mochi",
+          "callout-soot",
+          "callout-clover",
+          "callout-yarn-giant",
+          "voice",
+          "callout-panko",
+          "callout-binding-thread",
+          "cat-soot",
+          "cat-panko",
+          "cat-clover",
+          "cat-mochi",
+          "b2-motion"
+        ],
+        "inflight": []
+      },
+      "firstContact": {
+        "plan": 0,
+        "scene": 0,
+        "planId": 6,
+        "owner": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "impactMs": 350,
+        "renderedAt": 3145.2000000011176,
+        "requestIds": [
+          7
+        ],
+        "cues": [
+          "kit.holy.impact"
+        ],
+        "sourceStarts": 4,
+        "sourceCallAfterSubmissionMs": 73.5,
+        "estimatedAudioAfterSubmissionMs": 103.6663333322158,
+        "within33msEstimate": false,
+        "checks": {
+          "observedBeforeImpact": true,
+          "fixedTiming": true,
+          "contactReached": true,
+          "renderedContact": true,
+          "oneImpactRequest": true,
+          "uniqueRequest": true,
+          "sourceActuallyStarted": true
+        },
+        "pass": true
+      },
+      "firstImpactPacks": [
+        "b2-hits",
+        "b2-motion",
+        "b2-ui"
+      ],
+      "firstImpactLoads": [
+        {
+          "pack": "b2-ui",
+          "at": 543.5,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 609.4000000003725
+        },
+        {
+          "pack": "b2-motion",
+          "at": 2811.800000000745,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 2845.10000000149
+        },
+        {
+          "pack": "b2-hits",
+          "at": 3145.60000000149,
+          "decoded": false,
+          "inflight": false,
+          "readyAt": 3218.4000000003725
+        },
+        {
+          "pack": "b2-motion",
+          "at": 3145.800000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3160.9000000003725
+        },
+        {
+          "pack": "b2-ui",
+          "at": 3145.800000000745,
+          "decoded": true,
+          "inflight": true,
+          "readyAt": 3160.9000000003725
+        }
+      ],
+      "finalBeds": {
+        "music": "music.home",
+        "ambience": ""
+      },
+      "audioTransferBytes": 3497622,
+      "resources": [
+        {
+          "path": "/audio/manifest.json",
+          "startTime": 494.80000000074506,
+          "responseEnd": 530.5,
+          "transferSize": 38667,
+          "encodedBodySize": 38367
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "startTime": 543.4000000003725,
+          "responseEnd": 562.1000000014901,
+          "transferSize": 98501,
+          "encodedBodySize": 98201
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "startTime": 543.5,
+          "responseEnd": 562.3000000007451,
+          "transferSize": 69846,
+          "encodedBodySize": 69546
+        },
+        {
+          "path": "/audio/menu-home.webm",
+          "startTime": 543.5,
+          "responseEnd": 571,
+          "transferSize": 303958,
+          "encodedBodySize": 303658
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "startTime": 543.5,
+          "responseEnd": 570.8000000007451,
+          "transferSize": 246803,
+          "encodedBodySize": 246503
+        },
+        {
+          "path": "/audio/v4-receipt.mp3",
+          "startTime": 543.5,
+          "responseEnd": 568.3000000007451,
+          "transferSize": 184664,
+          "encodedBodySize": 184364
+        },
+        {
+          "path": "/audio/landing.webm",
+          "startTime": 543.9000000003725,
+          "responseEnd": 571.2000000011176,
+          "transferSize": 448452,
+          "encodedBodySize": 448152
+        },
+        {
+          "path": "/audio/callout-mochi.webm",
+          "startTime": 1792.800000000745,
+          "responseEnd": 1811.300000000745,
+          "transferSize": 94862,
+          "encodedBodySize": 94562
+        },
+        {
+          "path": "/audio/callout-soot.webm",
+          "startTime": 1792.800000000745,
+          "responseEnd": 1819.9000000003725,
+          "transferSize": 83485,
+          "encodedBodySize": 83185
+        },
+        {
+          "path": "/audio/callout-clover.webm",
+          "startTime": 1792.9000000003725,
+          "responseEnd": 1820.1000000014901,
+          "transferSize": 104904,
+          "encodedBodySize": 104604
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "startTime": 1792.9000000003725,
+          "responseEnd": 1824.7000000011176,
+          "transferSize": 67157,
+          "encodedBodySize": 66857
+        },
+        {
+          "path": "/audio/callout-panko.webm",
+          "startTime": 1792.9000000003725,
+          "responseEnd": 1825,
+          "transferSize": 87891,
+          "encodedBodySize": 87591
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "startTime": 1793,
+          "responseEnd": 1830,
+          "transferSize": 68718,
+          "encodedBodySize": 68418
+        },
+        {
+          "path": "/audio/cat-mochi.webm",
+          "startTime": 1793,
+          "responseEnd": 1831.2000000011176,
+          "transferSize": 254980,
+          "encodedBodySize": 254680
+        },
+        {
+          "path": "/audio/cat-soot.webm",
+          "startTime": 1793.1000000014901,
+          "responseEnd": 1830.4000000003725,
+          "transferSize": 205627,
+          "encodedBodySize": 205327
+        },
+        {
+          "path": "/audio/cat-clover.webm",
+          "startTime": 1794.9000000003725,
+          "responseEnd": 1831.6000000014901,
+          "transferSize": 236281,
+          "encodedBodySize": 235981
+        },
+        {
+          "path": "/audio/cat-panko.webm",
+          "startTime": 1795,
+          "responseEnd": 1832.300000000745,
+          "transferSize": 222630,
+          "encodedBodySize": 222330
+        },
+        {
+          "path": "/audio/voice.webm",
+          "startTime": 1795,
+          "responseEnd": 1832.7000000011176,
+          "transferSize": 28698,
+          "encodedBodySize": 28398
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "startTime": 2812.800000000745,
+          "responseEnd": 2818.4000000003725,
+          "transferSize": 166208,
+          "encodedBodySize": 165908
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "startTime": 3145.800000000745,
+          "responseEnd": 3170.4000000003725,
+          "transferSize": 491290,
+          "encodedBodySize": 490990
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "complete": true,
+  "events": {
+    "path": "reports/v4-ship/S11/cold-contact-probe-1.events.json.gz",
+    "sha256": "9fce6119aa6e9f4dd2d00461199fa5dbe474820989b548943502b73fe8c09444"
+  }
+}

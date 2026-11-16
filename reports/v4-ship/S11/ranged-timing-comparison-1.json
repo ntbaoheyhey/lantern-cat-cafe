@@ -1,0 +1,1250 @@
+{
+  "at": "2026-11-16T19:37:16.549990+00:00",
+  "scope": "Compare proposed action-clock trigger times to first actual flight draw in two production battles. This measures schedule alignment, not a playback candidate or physical onset.",
+  "source": {
+    "path": "reports/v4-ship/S11/ranged-visual-probe-1.json",
+    "sha256": "1fe17dcffc02fd2a999ca01b1fa275ae1810b1e92472022465018f4978f559db"
+  },
+  "summary": {
+    "currentMovementOrCharge": {
+      "rows": 58,
+      "within33ms": 0,
+      "medianMs": 299.8999999999942,
+      "maxMs": 416.70000000000437
+    },
+    "genericRelease": {
+      "rows": 58,
+      "within33ms": 8,
+      "medianMs": 33.39999999999418,
+      "maxMs": 76.70000000000437
+    },
+    "retimedFlight": {
+      "rows": 58,
+      "within33ms": 58,
+      "medianMs": 10.61935483870684,
+      "maxMs": 16.699190283401208
+    }
+  },
+  "rows": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 10,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300.00000000000045,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300.00000000000045,
+        "genericRelease": 50.000000000000455,
+        "retimedFlight": 16.5991902834013
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 27,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2999999999993,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2999999999993,
+        "genericRelease": 33.29999999999927,
+        "retimedFlight": 1.7986595174255626
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 31,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2999999999993,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2999999999993,
+        "genericRelease": 33.29999999999927,
+        "retimedFlight": 1.7986595174255626
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 52,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300.10000000000036,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300.10000000000036,
+        "genericRelease": 50.100000000000364,
+        "retimedFlight": 16.699190283401208
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 70,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000011,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000011,
+        "genericRelease": 33.30000000000109,
+        "retimedFlight": 1.7986595174273816
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 75,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2000000000007,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2000000000007,
+        "genericRelease": 33.20000000000073,
+        "retimedFlight": 1.6986595174270178
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 101,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.3000000000029,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.3000000000029,
+        "genericRelease": 6.69999999999709,
+        "retimedFlight": 10.719354838712661
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 134,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2999999999993,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2999999999993,
+        "genericRelease": 33.29999999999927,
+        "retimedFlight": 1.7986595174255626
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 144,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2999999999993,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2999999999993,
+        "genericRelease": 33.29999999999927,
+        "retimedFlight": 1.7986595174255626
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 166,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300,
+        "genericRelease": 50,
+        "retimedFlight": 16.599190283400844
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 187,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5999999999985,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.59999999999854,
+        "genericRelease": 76.59999999999854,
+        "retimedFlight": 14.45522788203607
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 195,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5999999999985,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.59999999999854,
+        "genericRelease": 76.59999999999854,
+        "retimedFlight": 14.45522788203607
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 214,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.3000000000029,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.3000000000029,
+        "genericRelease": 6.69999999999709,
+        "retimedFlight": 10.719354838712661
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 238,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.40000000000146,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.40000000000146,
+        "genericRelease": 33.400000000001455,
+        "retimedFlight": 1.8986595174277454
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 251,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.1999999999971,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.1999999999971,
+        "genericRelease": 33.19999999999709,
+        "retimedFlight": 1.6986595174233798
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 272,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 299.8999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 299.8999999999942,
+        "genericRelease": 49.89999999999418,
+        "retimedFlight": 16.499190283395023
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 304,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.6000000000058,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.6000000000058,
+        "genericRelease": 76.60000000000582,
+        "retimedFlight": 14.455227882043346
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 311,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5999999999985,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.59999999999854,
+        "genericRelease": 76.59999999999854,
+        "retimedFlight": 14.45522788203607
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 333,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.3000000000029,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.3000000000029,
+        "genericRelease": 6.69999999999709,
+        "retimedFlight": 10.719354838712661
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 364,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 369,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 374,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 385,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 406,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 299.8999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 299.8999999999942,
+        "genericRelease": 49.89999999999418,
+        "retimedFlight": 16.499190283395023
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 426,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.6000000000058,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.6000000000058,
+        "genericRelease": 76.60000000000582,
+        "retimedFlight": 14.455227882043346
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 432,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 439,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.6999999999971,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.6999999999971,
+        "genericRelease": 76.69999999999709,
+        "retimedFlight": 14.555227882034615
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "binding-thread",
+      "planId": 450,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3999999999942,
+        "genericRelease": 33.39999999999418,
+        "retimedFlight": 1.8986595174204695
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "owner": "soot",
+      "planId": 476,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.3000000000029,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.3000000000029,
+        "genericRelease": 6.69999999999709,
+        "retimedFlight": 10.719354838712661
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 10,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300,
+        "genericRelease": 50,
+        "retimedFlight": 16.599190283400844
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 27,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000002,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000002,
+        "genericRelease": 33.30000000000018,
+        "retimedFlight": 1.7986595174264721
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 31,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000011,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000011,
+        "genericRelease": 33.30000000000109,
+        "retimedFlight": 1.7986595174273816
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 52,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300,
+        "genericRelease": 50,
+        "retimedFlight": 16.599190283400844
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 70,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.39999999999964,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.39999999999964,
+        "genericRelease": 33.399999999999636,
+        "retimedFlight": 1.8986595174259264
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 75,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.39999999999964,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.39999999999964,
+        "genericRelease": 33.399999999999636,
+        "retimedFlight": 1.8986595174259264
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 101,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.4000000000015,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.40000000000146,
+        "genericRelease": 6.599999999998545,
+        "retimedFlight": 10.819354838711206
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 134,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2999999999993,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2999999999993,
+        "genericRelease": 33.29999999999927,
+        "retimedFlight": 1.7986595174255626
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 144,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.2000000000007,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.2000000000007,
+        "genericRelease": 33.20000000000073,
+        "retimedFlight": 1.6986595174270178
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 166,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 299.90000000000146,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 299.90000000000146,
+        "genericRelease": 49.900000000001455,
+        "retimedFlight": 16.4991902834023
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 187,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.6999999999971,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.6999999999971,
+        "genericRelease": 76.69999999999709,
+        "retimedFlight": 14.555227882034615
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 195,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.7000000000044,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.70000000000437,
+        "genericRelease": 76.70000000000437,
+        "retimedFlight": 14.55522788204189
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 214,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.3000000000029,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.3000000000029,
+        "genericRelease": 6.69999999999709,
+        "retimedFlight": 10.719354838712661
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 238,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.29999999999563,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.29999999999563,
+        "genericRelease": 33.299999999995634,
+        "retimedFlight": 1.7986595174219246
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 251,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.29999999999563,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.29999999999563,
+        "genericRelease": 33.299999999995634,
+        "retimedFlight": 1.7986595174219246
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 272,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 299.90000000000146,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 299.90000000000146,
+        "genericRelease": 49.900000000001455,
+        "retimedFlight": 16.4991902834023
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 304,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5999999999985,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.59999999999854,
+        "genericRelease": 76.59999999999854,
+        "retimedFlight": 14.45522788203607
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 311,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.7000000000044,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.70000000000437,
+        "genericRelease": 76.70000000000437,
+        "retimedFlight": 14.55522788204189
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 333,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.1999999999971,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.1999999999971,
+        "genericRelease": 6.80000000000291,
+        "retimedFlight": 10.61935483870684
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 364,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3000000000029,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3000000000029,
+        "genericRelease": 33.30000000000291,
+        "retimedFlight": 1.7986595174292006
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 369,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3999999999942,
+        "genericRelease": 33.39999999999418,
+        "retimedFlight": 1.8986595174204695
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 374,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3999999999942,
+        "genericRelease": 33.39999999999418,
+        "retimedFlight": 1.8986595174204695
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 385,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3999999999942,
+        "genericRelease": 33.39999999999418,
+        "retimedFlight": 1.8986595174204695
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 406,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 300,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 283.40080971659916
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 300,
+        "genericRelease": 50,
+        "retimedFlight": 16.599190283400844
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 426,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5999999999913,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.59999999999127,
+        "genericRelease": 76.59999999999127,
+        "retimedFlight": 14.455227882028794
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 432,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.3999999999942,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.3999999999942,
+        "genericRelease": 33.39999999999418,
+        "retimedFlight": 1.8986595174204695
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 439,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 1016.5,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 1002.1447721179625
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 416.5,
+        "genericRelease": 76.5,
+        "retimedFlight": 14.355227882037525
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "binding-thread",
+      "planId": 450,
+      "ultimate": false,
+      "firstSubmittedFlightMs": 283.1999999999971,
+      "unchangedImpactMs": 350,
+      "scheduleMs": {
+        "currentMovementOrCharge": 0,
+        "genericRelease": 250,
+        "retimedFlight": 281.5013404825737
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 283.1999999999971,
+        "genericRelease": 33.19999999999709,
+        "retimedFlight": 1.6986595174233798
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "owner": "soot",
+      "planId": 476,
+      "ultimate": true,
+      "firstSubmittedFlightMs": 933.1999999999971,
+      "unchangedImpactMs": 1100,
+      "scheduleMs": {
+        "currentMovementOrCharge": 600,
+        "genericRelease": 940,
+        "retimedFlight": 922.5806451612902
+      },
+      "absoluteDifferenceMs": {
+        "currentMovementOrCharge": 333.1999999999971,
+        "genericRelease": 6.80000000000291,
+        "retimedFlight": 10.61935483870684
+      }
+    }
+  ],
+  "contactAndDurationChanged": false,
+  "audioImplementationExists": false
+}
