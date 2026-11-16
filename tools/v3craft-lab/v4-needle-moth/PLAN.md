@@ -11,3 +11,7 @@ K1-A4 retained as failed: fixed head494..605; head ratio1.054583 and dE6.452161 
 K1-A5 retained as failed: fixed head501..600; head ratio.940574,dE6.800043,IoU.377493,feet0. K1-A6 requests only4%head enlargement from this result; minimal Lab translation may follow on the normalized copy, preserving all raw attempts.
 
 Lab effect scaffold authored in needle-stitches.ts; no production routing yet. Drill1 uses150ms straight flight,850px fan spread/18needles; drill2 uses250ms flight and a940px spread. Three45ms-separated falling fans replace Binding cross-woven net; original gold needle/rose zigzag paint pending. Area/face/socket gates must be measured after export.
+
+K1-A6 main-head489..596 passes1.014501; rawdE7.591432FAIL retained. Authorized30%Lab mean translation yieldsdE5.369302 withalpha unchanged. First225px comparison selected the corrected art: narrow upright wing wind-up, clear gold needle, same face/material identity. Runtime/blind/film still pending.
+K2-A1 fixedhead488..580: ratio.961771,dE3.817424,IoU.321196,feet0,reach+.286420bodywidth,changedbbox33.8927%,no clipping. Numerical source gates pass; grouped225px review and published metrics remain pending.
+K4-A1 rejected: head faces screen-right and fixedhead475..558 givesratio.813569. IoU.400377,dE1.134306,feet0. K4-A2 corrects head orientation and size while preserving the guard body; failure retained.

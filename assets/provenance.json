@@ -4269,6 +4269,56 @@
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A5.png",
       "sha256": "ce48e466ff7a96be87b17db0e3c57ef765f2b760432156923e1891511def6dfe",
       "status": "rejected: head ratio.940574 and dE6.800043 exceed unchanged limits; raw/metrics retained"
+    },
+    {
+      "id": "v4-needle-moth-k1-a6",
+      "date": "2026-11-16T13:44:45.763441+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit our original Needle Moth wind-up sprite in the attached image. Preserve the complete character and true transparency. Make exactly one tiny change: enlarge the main mauve wedge-shaped HEAD AND EYES by FOUR PERCENT in height and width, anchored at the pointed cloth chin just above the rose scarf. This must be a very small enlargement, not a redesign. The current head is about99 pixels tall excluding the antennae and scarf; target103 to105 pixels tall on this same1254-square canvas. Move the upper cap upward only a few pixels and retain the chin attachment. Reattach the existing thin gold leaf antennae naturally. Preserve the pointed wedge, small gold eyes, muted colors and original woven texture. Keep wings, wing tips, body, scarf, needle, hands, feet, pose, framing and all other features unchanged. Do not scale the whole sprite. No background, shadow, glow, blur, text, cropping or added features.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K1-A5.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K1-A5.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A6.png",
+      "sha256": "602711930b0ee130d46009584160642d9fa1dc85d9d3540b7b601f1947980902",
+      "status": "raw palette dE7.591432FAIL; head1.014501,IoU.378964,feet1PASS; normalized Lab derivative pending visual selection"
+    },
+    {
+      "id": "v4-needle-moth-k1-a6-lab30",
+      "date": "2026-11-16T13:54:50.824205+00:00",
+      "tool": "authorized masked Lab translation of normalized own art",
+      "input": "tools/v3craft-lab/poses/raw/needle-moth/K1-A6.png",
+      "output": "tools/v3craft-lab/v4-needle-moth/raw/K1-A6-colour-30.png",
+      "sha256": "e6bf13ad4f5140f19a6edbe8822d9860a2dd341e0d3ffb91774a14966aaa9268",
+      "method": "colour.py K1-A6 0.30; preserve alpha exactly; no geometry edit",
+      "meanLabDeltaE76": 5.36930152151337,
+      "status": "selected normalized K1 artwork after first225px comparison; head1.014501,dE5.369302,IoU.378964,feet1; runtime/blind/film pending"
+    },
+    {
+      "id": "v4-needle-moth-k2-a1",
+      "date": "2026-11-16T13:55:21.745074+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Create one new held K2 release pose of OUR original Needle Moth, using only the supplied approved runtime sprite as the character, palette and textile-style reference. Preserve dusty mauve segmented cloth body, compact pointed wedge head with gold eyes, two fine gold leaf antennae, rose scarf and round brass brooch, stitched rose wing panels, long gold sewing needle, and thin mauve legs with little gold ankle bands. Face screen-left. Both feet remain firmly planted at the same level and similar spacing. Extend the leading arm and long needle decisively toward screen-left in a clear release/thrust gesture; the needle tip must project far beyond the left side of the body, with an open gap below the extended forearm. The other arm trails near the chest. Sweep the wings back toward screen-right so the silhouette differs strongly from idle and the narrow upright wind-up; retain one high upper wing tip to preserve overall height. Keep the small original head proportions: main wedge excluding antennae should be approximately one ninth of total opaque character height, about105px for a975px-tall character. Full body centered on a1254-square transparent canvas with generous padding: needle tip aroundx80, highest wing tip aroundy180, planted feet aroundy1155, nothing clipped. Keep the muted original colors, fabric grain and stitched construction. No background, ground, shadow, text, effect streaks, glow, blur, extra limbs or new costume. This is one completely redrawn release key, not an idle sprite rotated or stretched.",
+      "referenceInput": "own art: apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K2-A1.png",
+      "sha256": "d6e176836b93ea1a2ab0c97f305550ca9072c7ce3cf23e7c5c80c241bd524213",
+      "status": "source numerical gates pass incl reach+.286420 and changedbbox33.8927%; grouped art review/runtime/blind/film pending"
+    },
+    {
+      "id": "v4-needle-moth-k4-a1",
+      "date": "2026-11-16T13:56:39.526915+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Create one new held K4 recoil/guard pose of OUR original Needle Moth, using only the supplied approved runtime sprite as the identity, palette and textile-style reference. Keep the dusty mauve segmented body, small wedge-shaped head with gold eyes, fine gold leaf antennae, rose scarf/brooch, rose stitched wing panels, long gold sewing needle and thin planted legs. Face screen-left while bending the torso and head back toward screen-right in a readable flinch. Fold the forearms protectively across the chest with the needle angled diagonally across the lower body; keep both feet planted. Fold one wing inward around the body, and splay the other high wing diagonally back so this is clearly distinct from idle and release without changing full character height. Preserve original anatomy and restrained expression. Main wedge head excluding antennae should be about105px for a975px-tall opaque character, matching the approved small-head proportion. Use a1254-square canvas, highest wing tip aroundy180 and feet aroundy1155, generous transparent margins and no cropping. Preserve the original subdued dusty mauve/rose/gold cloth palette and delicate stitched rendering. No background, shadow, text, extra objects, hit flashes, glow, blur or duplicate limbs. One original redrawn recoil key.",
+      "referenceInput": "own art: apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K4-A1.png",
+      "sha256": "2e2a9822fc4c180e6f22275dd8068951884c029abc7d7ee1ab9bb53578b913ee",
+      "status": "rejected: main head faces screen-right and head ratio.813569; raw/metrics retained"
     }
   ]
 }
