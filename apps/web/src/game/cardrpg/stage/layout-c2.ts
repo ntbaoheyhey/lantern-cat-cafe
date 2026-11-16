@@ -32,7 +32,8 @@ export function stageLayoutC2(units: readonly StageUnitC2[], width: number, heig
     const coreHeight=viewportHeight*contract.unitHeight*ratio*crowdedScale*(incidental?.scale??1);
     const h=coreHeight/(unit.coreHeight??1),w=h*unit.aspect;
     const seatX=unit.side==='party'||enemyCapacity>4?seat.x:1-seat.x;
-    const requestedX=width*(unit.boss?contract.boss.x:helperSeat?.x??incidental?.x??seatX);
+    // A7: the two boss helpers need 2.2% more span at900p; the existing4% edge clamp remains binding.
+    const requestedX=width*(unit.boss?contract.boss.x:helperSeat?helperSeat.x+.022:incidental?.x??seatX);
     // Reserve a full four percent for painted bounds plus impact recoil.
     const leftExtent=unit.leftExtent===undefined?w/2:unit.leftExtent*coreHeight;
     const rightExtent=unit.rightExtent===undefined?w/2:unit.rightExtent*coreHeight;

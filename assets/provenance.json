@@ -4549,6 +4549,19 @@
       "status": "selected source K5 after authorized maskedLab30%; export/runtime/film pending",
       "metrics": "tools/v3craft-lab/v4-yarn-giant/K5-A3-colour-30-metrics.json",
       "derivation": "tools/v3craft-lab/v4-yarn-giant/K5-A3-colour-30.json"
+    },
+    {
+      "id": "v4-yarn-giant-braid-wave-a1",
+      "date": "2026-11-16T17:20:43.797619+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept.\nAsset type: one original transparent painted 2D game VFX texture, a broad heavy braided-yarn shock wave for our Yarn Giant ultimate.\nInput image is our own Yarn Giant, used ONLY for yarn material, muted rose/mauve colors, ragged cloth stitches and worn gold thread highlights. Do not include the character, face, crown, hands or any body parts in the effect.\nPaint a single broad horizontal wall of interwoven heavy yarn braids surging outward from a low central impact. Three thick densely woven braids curl and overlap into a powerful low fan, their tips curling to the sides; angular ragged stitched cloth strips and a few fine gold fibers accent the forward edges. Give the fan a strong irregular silhouette with visible internal transparent gaps, but a substantial dense core. The lower edge forms a sweeping shallow crescent, never a circle or ring. Thick tactile strands, painted highlights on mauve ridges, deep plum creases, sparse warm gold stitching. It must read as forceful physical yarn weight, not smoke, flames, flowers, a glowing energy wash or a generic magic disc.\nComposition: wide landscape effect about twice as wide as tall, centered with ample transparent margins on all sides. The effect itself covers roughly two thirds of its tight rectangular bounds, with transparent gaps between curled braids. Flattened game-plane three-quarter view, clean silhouette at small scale. No scene, ground, character, symbols, labels, text, logo, spark shower, blur, light bloom, cast shadow or opaque background. Genuine alpha transparency.",
+      "referenceInput": "own art: apps/web/public/units/yarn-giant/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/yarn-giant/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/braid-wave-A1.png",
+      "sha256": "ba87d164ba5cbc9ba53f2b6aa7b628dbeeb11a86aa862fbbd4c82d0e4bc4bea5",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }

@@ -1,34 +1,37 @@
-# ART execution anchor — 2026-11-16T17:04UTC
-ACTIVE: user “tiếp tục”16Nov15:44UTC supersedes pause; continue through29Nov12UTC.
+# ART execution anchor — 2026-11-16T17:30UTC
+ACTIVE: user “tiếp tục” supersedes pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Generate original braid-wave-A1 texture from ownruntime material only, exactprompt saved; save raw/provenance immediately. Then lock allpose sockets, labexport, two bossdrills/privatecompare, runtime/films. K1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30 source selected; oldfailures retained.
-NEXT2: Carry boss formation-width failure into Yarn/shared layout:720span79.3441%,90077.9451%(100samples,worst9.7667s); effect pixels do not count toward unit span.
-NEXT3: Yarn receipt then A9, verified A10contrast (b3-world/speed/stars/auto), A11; postfreezeA12. Check designer delivery and final SHIP classes at item boundaries.
-LAST PUSH:c9c1642c9 verified K4 source selection;K1-A2/K2-A3Lab20/K4-A2 selected. A7 conservative8h ceiling18:58UTC (earliestprep09:40 minus78minpause; unrelatedwork notsubtracted).
-LIVE: craftVite3426/5990/jobs/needle-craft-vite-resume.log; allYarnposegenssaved; braid-wave-A1abouttostart; no capturejobs. Old68961/69950absent.
-STOP-V4ART absent; INBOX latest15:44resume. SHIP requests unchanged13:40contrast at16:41read; db35585a nonfinal; no finalclasses/solebaseline announcement or merge.
-Needle scoped receipt REVIEW/A7/needle-moth/{acceptance-receipt,performance,layout900,projectile-frames}.json; REVIEW.md/ART-REVIEW.md. FullA7OPEN forYarn/sharedgates.
-Needle production: K1-A6Lab30,K2-A1,K4-A3,K5aliasK2;215,744Bposes+60,240Boriginalneedle. DEV&&VITE_CRAFT_PILOT==='soot' retained.
-Needle source: fixedhead254..298/44px on1152canvas,K0alphaheight408. K1head1.014501,dE5.369302,IoU.378964,feet1;K2head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%;K4head.977105,dE3.566826,IoU.402302,feet0.
-Needle published225px3/3PASS,K2changed33.8568%,alphaexact. Rawfailedcolour/headcandidates retained. Blind1=9/9;labels beforeprivatekey;neverreopen.
-Needle r1area9.4%FAILretained;r2=150ms/count27/length560/spread900/thickness1.8;lab150/250ms25.61/25.98%,faces<=1.95%;private225pxcompare reviewed.
-Needle livearea24.4476–24.4803%,face<=1.6655%,launchsocket<=.159185px,unitocclusion<=2.34932%;paintedtip duringflight<1.7e-13px;camera live<=2.938327px.
-Needle3x30s720p30fpsaudiofilms local reports/v3-feel/REVIEW/V4-A7-NEEDLE;neveroverwrite.25scoped/24complete/5own/1ult;31correctedmarker sheets reviewed. A27recoverytruncated;A28outsidefilm.
-Originalflight1/4/4/3/3:wave1A5FAIL133.4msgapretained. V4-A7-NEEDLE-FLIGHT-R2/wave1 same-source retry5visibleframes144..148; otherR2windowsnotrereviewed.3600markersverified.
-Needle feet<=9.21955px,return0;originalbossmedian60.240485FPS,mean59.618734.6MBboundallpose/VFX+Bindingportrait4,163,747B;notSHIPtotaltransfer.
-Needle regression2664/318,typecheck0,3fixture6hashes,lanePASS unchangedsource.3x900pcomplete;wave1/wave3bboxPASSbothsizes;bossunitspanFAILbothsizes.
-Needle encodedultcamera<=.221655px/50.1msobservedspan;notcontinuous120msupperbound.5post600focusframes;reducedmotionfilm/strictdurationOPEN.
-IMAGEOPENS:0afterrewrite; allYarn K0/K1/K2/K4 reviews andK5-A1/A2/A3head-lock reviewed; neverreopen. Headlocks inmetrics;K4-A1chinunknown. Needleallreviewed/JPG8/8;Yarn0selectedJPG.
-Raw/prompt/provenance tools/v3craft-lab/{poses/raw/needle-moth,v4-needle-moth/raw};private ref/A7/needle-moth;neverstage raw/ref/movies.
-A6complete:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315,typecheck/3F6.
-Bindingcomplete scoped:K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9,11own,3+flightframes,60.240485FPS. A46truncated;exactfilmclocklimited(no markers).
-Teacupcomplete scoped:K1-A3/K2-A2/K4-A3,blind9/9,13own/4ult,8100markers,24pages+900p,8/8JPG;2649/315/typecheck/3F6. Olddamage/reflect classesOPEN.
-A10transfer receipt d3578d48a/source48599c03a:readiness+6exactWebGLderivatives save3,685,534B;CanvaspartialalphaRGBmismatch retained,genericoriginals unchanged. Assetsubsets6,784,740/7,313,410/8,186,048B;SHIPtotal8MBOPEN(prior26,411,893B).
-Bindingportrait c5ccdfae1 approvedruntimecopy97,490B;decodeFAILbefore/PASS720+900after;SHIPintegratedrerunpending.
-OPEN focuspost600/activation/ensemble/portraitbanner/finalclasses/timesplit,bossformation,A10totaltransfer. No false fullA7/productionacceptance.
-Own units/VFX,battle-v3/spine/stage/vfx-craft/vfx-layered exceptaudio,rig,craftlab,v3feel,provenance/ARTreports. No rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents.
-Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies. Explicitstage;V3append-only;trackedV4reports~98MB ceiling150MB.
-Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/nohup/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
+NEXT1: tools/.venv/bin/python tools/v3craft-lab/v4-yarn-giant/measure-published.py --publish; refresh Yarn hashes/budget, adapt Needle validation/live probes, run full regression detached.
+NEXT2: Validate new Yarn basic+damagingult close/return, boss/helper span720/900, crown/edges/FX/face/performance; then 3x30s720p30fpsaudio films V4-A7-YARN and scoped reviews/receipt.
+NEXT3: Yarn receipt then A9, verified A10contrast, A11; postfreezeA12. Check designer delivery and final SHIP classes at item boundaries; never repeat completed reviews.
+LAST PUSH:275fc6fa2 verified; current checkpoint contains unvalidated Yarn publication/runtime and completed lab R2 evidence.
+LIVE: craftVite3426/5990/reports/v4-art/jobs/needle-craft-vite-resume.log alive17:30; drill40981/41819 finished errors[]; export session75835 confirmed5files495306B; noimagegen.
+OldPIDs68961/69950 absent. STOP/INBOX/SHIP last checked16:41; db35585a nonfinal; no finalclasses/solebaseline announcement or merge.
+Yarn selected K1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30; attempt counts2/3/2/3. Raw failures retained; no further generation needed.
+Yarn225px exports4/4pointPASS: IoU .559029/.485133/.620093/.589457; dE4.918301/5.102250/3.568152/5.132297; head.975619/.975557/1.030978/1.042028; feet0.
+YarnK2 source reach+49.5556%; exported changedbbox52.243864%; K0head[240,374]134px,alphaheight409; normalized1152,pad256. These are lab gates, not film acceptance.
+Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138; tipUV[.99609375,.6085365853658536].
+YarnR1area21.55/28.28%passed but rear layering and ultimate approachFAILED; R2 actororder10 rear9/front11/shared drawingAt/meleeRoot fixes retained.
+YarnR2 compact20.5643%, selectedbroad1180x472=27.4164%; faces<=4.4643%;tiperror0;contactgap8;basicapproach104.9234px/ult232.4637px;return0.
+YarnR2 both sheets/private225pxcomparison reviewed once; comparison staging only, no timing equivalence/reference pixels in generation; fx-selection permits production trial only.
+Yarn runtime NEW UNVALIDATED: yarn-surge.ts originalbasicflash/rearultfan, scene pose loading/readiness/dispose/basic+ultmelee, layout boss helpers requestedX+.022vw retaining4%clamp.
+Public Yarn poses and braid-wave published. Last shared budget4163747B predates publication; recalculate. No regression/capture started for Yarn.
+IMAGEOPENS:0afterrewrite; all Yarnpose/head/FX/socket/R1/R2/privatecompare sheets already reviewed; neverreopen. YarnselectedJPG2/8 poses225+drill-broad; Needle8/8.
+Needle scopedreceipt ae1d5a76f/sourceb92cd2dc327575449d5a2872844c170bbdf0191c; blind9/9; 2664tests/318files,typecheck/3fixture6hash/lanePASS.
+Needle films V4-A7-NEEDLE and V4-A7-NEEDLE-FLIGHT-R2 neveroverwrite; originalA5flightFAILretained, same-source retry5visibleframes.25scoped24complete;A27truncatedA28outsidefilm.
+Needle livearea24.4476–24.4803%,face<=1.6655%,socket<=.159185px,occlusion<=2.34932%;feet<=9.21955px,return0;bossmedian60.240485FPS.
+Prior bossunitspanFAIL72079.3441%/90077.9451%; wave1/wave3bboxPASSbothsizes. New Yarnlayout UNMEASURED. Effect pixels do not count toward unit span.
+Needle encodedshake<=.221655px/50.1msobservedspan; strict120msupperbound/reducedmotionfilm/focuspost600OPEN.
+A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315,typecheck/3F6.
+Bindingclosedscoped:K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9;11own;3+flightframes;60.240485FPS;A46truncated/exactfilmclocklimited.
+Teacupclosedscoped:K1-A3/K2-A2/K4-A3;blind9/9;13own/4ult;8100markers;24pages+900p;8/8JPG;2649/315/typecheck/3F6;old damage/reflect classesOPEN.
+A10transfer d3578d48a/source48599c03a saves3685534B six exactWebGLderivatives;CanvaspartialalphaRGBmismatch retained;SHIPtotal8MBOPENprior26411893B.
+Bindingportrait c5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Requests last13:40contrastunknown b3-world/speed/stars/auto32obs, not measured failure.
+OPEN focuspost600/activation/ensemble/portraitbanner/finalclasses/timesplit,bossformation,A10totaltransfer. No fullA7/productionacceptance.
+A7conservative8h ceiling16Nov18:58UTC(prep09:40 minusexplicit14:26–15:44pause); preserve open gates/bestnumbers/nextmethod then advance/A11A12return. Max4failedattempts then change method.
+Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies; explicitstage;V3append-only;trackedV4reports~98MB/150MB not recalculated.
+Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,diff<=80. ImagingPython tools/.venv/bin/python.
-Onebuiltin imagegenatatime;immediatelysave raw+exactprompt+provenance;noCLI/Fal. Reviews<=1024wide,<=4/look,<=8/HANDOFF;neverreopen.
-Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC;queueauthorizedthrough29Nov12UTC. Stop fornewexplicitpause/STOP/end.
+Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. DesignerK0 wins before18Nov12UTC.
+Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC;authorizedthrough29Nov12UTC. No summary finals while active.
