@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-16T20:39:43.485165+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6678,
+      "sha256": "ef108367eb87bed6ee6c263c343d93d9ba85c80a23f071f52c5a509e3a2b9e8f"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-ranged-audio.md",
+      "bytes": 11552,
+      "sha256": "febada286715c8eea8923714b64e21e2a08546355437db034f85a9febdc49f54"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-class-inventory-1.json",
+      "bytes": 50893,
+      "sha256": "d876b50ecb79f97e28d1392658450ff0c7270c658c98872779236f87c31b9e5c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-clear-probe-1.events.json.gz",
+      "bytes": 23781,
+      "sha256": "c4579be7aaa2931c30228f336ebeb81907c961cf3a4d87a4a4000380ea4db3af"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-clear-probe-1.json",
+      "bytes": 24221,
+      "sha256": "e2bcdc1e36de6f66e4598674d75a1dfd05c8ac8ef4d6057954aa2ddb25826689"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-regression-1/check.json",
+      "bytes": 1439,
+      "sha256": "19d7da4386718c94df688b34d7f2e35e68d388818010b9f83e0e3bf8b68dd840"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-regression-1/log.jsonl.gz",
+      "bytes": 16117,
+      "sha256": "a436e2387a07cd5292eddeb325aa578241e4581be082bb70c7a9d7b73d570b88"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "e919fb619f64cc653f740c96ae0b829474b5400953671cdab44d47118cf269fd"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-regression-comparison-1.json",
+      "bytes": 2081,
+      "sha256": "1c8701bba38dc834dabcd31c2a70e4d378ed2d73a7e14867f97eab33f239ac17"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-review-1.json",
+      "bytes": 182616,
+      "sha256": "1ca66d691bbc63bbee31dd3a2f49b1b5e14f0e5263caa538c796ade7d39c5eda"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-class-inventory.mjs",
+      "bytes": 5224,
+      "sha256": "98d5c8975efa5bc99d7407cf4cac4817764fd8f38566ea1abf7b8ab208456ba5"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-playback-review.mjs",
+      "bytes": 4728,
+      "sha256": "c69c5463368c0bba22a6c31b012728cb895290ef94dbc229843b7ed0af855df0"
+    }
+  ],
+  "expandedGzip": 2,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}
