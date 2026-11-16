@@ -8,7 +8,7 @@ NOW ACTIVE:S11 freshcoverage+1801.117s endurancecomplete;history exactbatchscan 
 NEXT 1:Continue history-batches-1/session99980 supervisor8488;650/3854commits,176findings. Triage4covers625commits/176findings0unresolved;laterbatchesneedreview. Supplement1covers3newcommits0findings.
 NEXT 2:S10 preparation-film LRA4.8fails;compare audio treatments on immutable film, preservefailedversion. IAB liveSnowtrace readPASS/fullfee=RPC;tool hasno video capture,footagegateopen. NeverusenativeUI.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
-CHECKPOINT:thiscommit freshcoverage/endurance+IAB/RPCproof+exacthistorytriage andregression;previouspushed1785543b8. LEARN/S5,S11-audio/startup/history/repo;12findingcomparison reproduces12/12.
+CHECKPOINT:local cb9bc846c evidencecommit;all32blobhashesverifiedbeforepush;exactscan1code-literalfalsepositive manuallyreviewed. Nextcommit recordsreview;previouspushed1785543b8. LEARN/S5,S11-audio/startup/history/repo.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 freshcoverage451.676s:-17.63LUFS/8.7LRA/-1.90dBTP;4/5estimatedonsetsFAIL,max33.369ms. Bothfrozen/freshASR8/12;8takesdiffer,notcontrolledimprovement. Originalcoverage1retained.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
