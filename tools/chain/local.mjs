@@ -104,7 +104,7 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
     const stamp=(await client.getBlock()).timestamp,epoch=stamp-(stamp-345600n)%604800n;
     const SeasonRewards=await deploy('SeasonRewards',[YarnToken,deployer.address,signer.address,viem.parseEther('32'),epoch]);
     const RelicForge=await deploy('RelicForge',[RelicNFT,YarnToken]);
-    const config={RelicForge,chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,YarnToken,RelicMarketV2,SeasonRewards,treasury:devAccount(4).address,startBlock:'0'};
+    const config={fixtureId:`${Date.now()}-${process.pid}`,RelicForge,chainId:43113,rpcUrl:localRpc,RelicNFT,RelicMarket,YarnToken,RelicMarketV2,SeasonRewards,treasury:devAccount(4).address,startBlock:'0'};
     const modules=await loadModules(); handles.push(()=>modules.close());
     const db=await modules.buildMigratedDb();handles.push(()=>db.close());
     // Seed four real escrow listings using only public Anvil fixture accounts.

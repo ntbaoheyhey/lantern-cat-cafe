@@ -29,12 +29,13 @@ export function createDrip({key, rpcUrl, store}: {key: Hex; rpcUrl: string; stor
     // Save the exact signed transaction before broadcasting. All retries resend
     // the same nonce/bytes/hash; a timeout can never allocate another payment.
     if (!await store.signed(row.wallet, raw, hash)) throw new Error('reservation_changed');
+    const submittedAt=performance.now();
     try { await rpc.sendRawTransaction({serializedTransaction: raw}); }
     catch { /* already known, mined, or temporarily unavailable: reconcile below */ }
     try {
       const receipt = await rpc.waitForTransactionReceipt({hash, timeout: 15_000});
       await store.result(row.wallet, hash, receipt.status === 'success');
-      return {status: receipt.status === 'success' ? 'confirmed' : 'failed', txHash: hash};
+      return {status: receipt.status === 'success' ? 'confirmed' : 'failed', txHash: hash,confirmationMs:Math.round(performance.now()-submittedAt)};
     } catch { return {status: 'pending', txHash: hash}; }
   };
 }

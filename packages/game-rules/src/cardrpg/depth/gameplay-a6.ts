@@ -19,6 +19,10 @@ export function setGameplayA6(state: DepthAccount, enabled: boolean): DepthAccou
   else {delete next.gameplayA6;if(!next.run?.gameplayA6&&next.settings.speed===3)next.settings.speed=2;}
   return next;
 }
+/** Shared with roster Power so the displayed build matches the combat actor. */
+export function classAttackA6(attack:number,combatClass:Actor['combatClass']):number {
+  return combatClass === 'healer' ? attack : Math.round(attack * 1.15);
+}
 export const RAGE_COST_A6 = 100;
 export const RAGE_GAIN_A6: Record<string, number> = {
   mochi: 2, panko: 2, brioche: 2, mallow: 2, soot: 2, cinnamon: 2,
@@ -64,7 +68,11 @@ export function prepareBattleA6(b: Battle): void {
   if (!b.initial.gameplayA6 || b.initial.tutorial) return;
   for (const actor of b.actors) {
     actor.charge = actor.side === 'party' ? 35 : 15;
-    if (actor.side !== 'enemy') continue;
+    if (actor.side === 'party') {
+      // Class balance: replace the offense removed from heal-only kits.
+      actor.attack = classAttackA6(actor.attack, actor.combatClass);
+      continue;
+    }
     const boss = ENEMY_BY_ID[actor.catalogId]?.tier === 'boss';
     const hpScale = boss ? .82 : 1.95;
     actor.maxHp = Math.round(actor.maxHp * hpScale); actor.hp = actor.maxHp;

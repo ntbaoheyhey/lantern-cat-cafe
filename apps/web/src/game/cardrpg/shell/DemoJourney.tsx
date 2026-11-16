@@ -7,8 +7,9 @@ import type {DepthModel} from '../depth/model';
 import {chainRuntime,loadChainConfig,txLink,type ChainConfig} from '../chain/runtime';
 import {existingGuestAddress,guestClient} from '../chain/guest';
 import {journeyClient} from '../chain/journey-client';
+import {WalletProof} from '../chain/WalletProof';
+import {ReceiptToast} from '../chain/ReceiptToast';
 import {DemoWorkshop} from './DemoWorkshop';
-import {openChainRoom} from '../chain/ChainRoom';
 import {friendlyError} from '../chain/errors';
 import {CombatClassBadge} from '../ui-v3/CombatClassBadge';
 import {artPropsA6} from '../ui-v3/art-a6';
@@ -60,7 +61,7 @@ function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) 
     advance(finale?'finale-battle':'intro-battle');
   };
   const battleActive=phase.endsWith('-battle');
-  return <main className="ship-journey" aria-label="Café trial" aria-hidden={battleActive} inert={battleActive} data-journey-phase={phase}>
+  return <><ReceiptToast/><main className="ship-journey" aria-label="Café trial" aria-hidden={battleActive} inert={battleActive} data-journey-phase={phase}>
     <header><strong>Lantern Cat Café</strong><span>Fuji testnet · Demo rewards · No real value</span><button onClick={()=>window.dispatchEvent(new Event('chain:wallet'))}>Wallet</button></header>
     <nav aria-label="Trial progress">{['Battle','Reward','Café','Boss','Proof'].map((label,i)=><span key={label} aria-current={i===(phase==='intro'?0:phase==='reward'?1:phase==='cafe'?2:phase==='proof'?4:3)?'step':undefined}>{label}</span>)}</nav>
     {(phase==='intro'||phase==='reward')&&<section className="ship-trial-card">
@@ -73,9 +74,9 @@ function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) 
       })}>{phase==='intro'?'Start trial':'Mint trial reward'}</PaintedButton>
     </section>}
     {phase==='cafe'&&config&&runtime&&<DemoWorkshop address={address} token={token} config={config} runtime={runtime} onBoss={()=>battle(true)}/>}
-    {phase==='proof'&&<section className="ship-trial-card"><h1>My café on Avalanche</h1><p>Your trial rematch is complete. Explore your wallet’s assets and transactions.</p><PaintedButton icon="history" onClick={()=>openChainRoom('History')}>Open wallet history</PaintedButton><button onClick={()=>advance('cafe')}>Back to café</button></section>}
+    {phase==='proof'&&config&&runtime&&<><WalletProof config={config} runtime={runtime} address={address}/><button onClick={()=>advance('cafe')}>Back to café</button></>}
     {hash&&<a className="ship-receipt" href={txLink(hash)} target="_blank" rel="noreferrer">Reward transaction · Snowtrace</a>}
     {busy&&<p role="status">{config?'Preparing…':'Connecting…'}</p>}
     {error&&<div role="alert"><p>{error}</p>{!config&&<button disabled={busy} onClick={()=>void run(connect)}>Retry connection</button>}</div>}
-  </main>;
+  </main></>;
 }

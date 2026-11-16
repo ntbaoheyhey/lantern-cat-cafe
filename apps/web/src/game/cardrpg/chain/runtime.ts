@@ -2,9 +2,11 @@ import { createPublicClient, http, isAddress, isAddressEqual, type Abi, type Add
 import { avalancheFuji } from 'viem/chains';
 import { getAddresses, relicNftAbi, relicMarketAbi, relicMarketV2Abi } from '@taskbar-hero/chain';
 import { requireFuji } from './guest';
+import {receiptProof,publishReceiptProof,savedReceiptProofs,type ProofContext} from './receipt-proof';
 import {TransactionSounds} from '../../../audio/transactions';
 
 export interface ChainConfig {
+  fixtureId?:string;
   chainId: 43113; rpcUrl: string; RelicNFT: Address; RelicMarket: Address;
   RelicForge?: Address; YarnToken?: Address; RelicMarketV2?: Address; SeasonRewards?: Address; startBlock?: string;
 }
@@ -61,25 +63,41 @@ export async function requireWallet(wallet: Pick<WalletClient, 'getChainId' | 'g
 export function chainRuntime(config: ChainConfig, wallet: WalletClient, address: Address) {
   const client = publicChain(config);
   const sounds=new TransactionSounds();
+  let sponsoredGas=false;
+  const previousFunding=savedReceiptProofs(config,address).find(r=>r.action==='Guest funding'&&r.gasSource==='cafe');
+  let fundingChecked=false;
+  const checkFunding=async()=>{
+    if(fundingChecked)return;fundingChecked=true;
+    if(!previousFunding)return;
+    try{const [tx,r]=await Promise.all([client.getTransaction({hash:previousFunding.hash}),client.getTransactionReceipt({hash:previousFunding.hash})]);
+      sponsoredGas=r.status==='success'&&tx.to?.toLowerCase()===address.toLowerCase()&&tx.value===50_000_000_000_000_000n&&tx.from.toLowerCase()!==address.toLowerCase();
+    }catch{/* Missing provenance leaves the actual wallet payer visible. */}
+  };
   const guard = async () => { requireFuji(await client.getChainId()); await requireWallet(wallet, address); };
-  const receipt = async (hash: Hash,scope=sounds.scope()) => {
+  const receipt = async (hash: Hash,context:ProofContext={},scope=sounds.scope()) => {
     const finish=scope.begin();
     try{
-      const r = await client.waitForTransactionReceipt({ hash, timeout: 60_000 });
+      let replacedByAnotherCall=false;
+      const r = await client.waitForTransactionReceipt({ hash, timeout: 60_000,onReplaced:replacement=>{if(replacement.reason!=='repriced')replacedByAnotherCall=true;} });
+      if(replacedByAnotherCall)throw Error('Transaction replaced by another action.');
       if (r.status !== 'success') throw new Error('Transaction failed.');
-      finish(true);return hash;
+      const confirmationMs=context.submittedMonotonicAt===undefined?context.confirmationMs:performance.now()-context.submittedMonotonicAt;
+      publishReceiptProof(config,receiptProof(config,address,r,{...context,confirmationMs,gasSource:context.gasSource??(sponsoredGas?'cafe':'wallet')}));
+      finish(true);return r.transactionHash;
     }catch(error){finish(false);throw error;}
   };
   async function write(request: {address: Address; abi: Abi; functionName: string; args?: readonly unknown[]; value?: bigint}, onSubmitted?: (hash:Hash)=>void) {
    let submitted=false;const scope=sounds.scope();
    try{
     await guard();
+    await checkFunding();
     const simulation = await client.simulateContract({ ...request, account: address });
     // A wallet can change accounts/networks while the RPC simulation is running.
     await guard();
     scope.wallet();
+    const submittedMonotonicAt=performance.now();
     const hash=await wallet.writeContract({ ...simulation.request, account: wallet.account ?? address, chain: avalancheFuji });
-    submitted=true;onSubmitted?.(hash);return await receipt(hash,scope);
+    submitted=true;onSubmitted?.(hash);const confirmed=await receipt(hash,{submittedMonotonicAt,action:request.functionName},scope);if(confirmed!==hash)onSubmitted?.(confirmed);return confirmed;
    }catch(error){if(!submitted)scope.failure();throw error;}
   }
   const listings = async (version:'v1'|'v2'='v1'):Promise<ChainListing[]> => {
@@ -97,7 +115,12 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
     return rows;
   };
   const holdings = (ids:bigint[]) => readHoldings(client,config.RelicNFT,address,ids);
-  return { client, guard, receipt, write, listings, holdings, silenceSounds:()=>sounds.silence(),
+  return { client, guard, receipt, write, listings, holdings,
+    async funding(hash:Hash,confirmationMs?:number) {
+      const tx=await client.getTransaction({hash});
+      if(tx.to?.toLowerCase()!==address.toLowerCase()||tx.value!==50_000_000_000_000_000n||tx.from.toLowerCase()===address.toLowerCase())throw Error('Café funding transaction mismatch.');
+      await receipt(hash,{action:'Guest funding',confirmationMs,gasSource:'cafe'});sponsoredGas=true;return hash;
+    }, silenceSounds:()=>sounds.silence(),
     async moveAdapter(ids: bigint[]) {
       return {
         address, chainId: async () => { await guard(); return 43113; },
@@ -118,8 +141,9 @@ export function chainRuntime(config: ChainConfig, wallet: WalletClient, address:
           if (balance <= reserve) return undefined;
           await guard();
           scope.wallet();
+          const submittedMonotonicAt=performance.now();
           const hash=await wallet.sendTransaction({account: wallet.account ?? address, chain: avalancheFuji, to, value: balance - reserve, gas, gasPrice, type: 'legacy'});
-          submitted=true;return await receipt(hash,scope);
+          submitted=true;return await receipt(hash,{submittedMonotonicAt,action:'Move AVAX'},scope);
          }catch(error){if(!submitted)scope.failure();throw error;}
         },
       };

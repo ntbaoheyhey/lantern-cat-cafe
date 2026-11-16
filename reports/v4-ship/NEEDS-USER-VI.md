@@ -11,4 +11,3 @@
 
 - Kiểm tra hiện tại chưa tìm thấy khóa thật trong các cảnh báo đã rà soát; quét toàn bộ lịch sử vẫn chạy. Chưa có kết luận lịch sử sạch. Giữ repo riêng tư và ưu tiên mời tuantqse90 làm cộng tác viên cho đến khi có báo cáo lịch sử; nếu phát hiện khóa từng lộ, thu hồi/đổi khóa trên dịch vụ trước, không dán giá trị vào chat.
 
-- Có mâu thuẫn trong lệnh REV2: yêu cầu giữ lại25%Spool nhưng cũng khóa thông số kinh tế; bản v3 đã chốt trong git dùng15%từ commit84e49b60d. Cần chọn khôi phục25%và kiểm tra lại mô phỏng, hoặc xác nhận giữ15%. Chưa tự sửa tỷ lệ và chưa đánh dấu phần này đạt.

@@ -1,16 +1,16 @@
 import {cleanup,render,screen,within} from '@testing-library/react';
 import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {ECONOMY_V3 as E,v3Season} from '@taskbar-hero/game-rules/src/cardrpg/economy-v3';
-import {readCounters} from './LiveCounters';
+import {readCounters,clearCounterCache} from './LiveCounters';
 import {PublishedOdds} from './ShellPages';
 
 const fixture=vi.hoisted(()=>({
- config:{RelicNFT:'0x1111111111111111111111111111111111111111',YarnToken:'0x2222222222222222222222222222222222222222',SeasonRewards:'0x3333333333333333333333333333333333333333'},
+ config:{chainId:43113,rpcUrl:'http://127.0.0.1:8546',RelicNFT:'0x1111111111111111111111111111111111111111',YarnToken:'0x2222222222222222222222222222222222222222',SeasonRewards:'0x3333333333333333333333333333333333333333'},
  client:{getChainId:vi.fn(),getBlockNumber:vi.fn(),readContract:vi.fn(),getLogs:vi.fn(),multicall:vi.fn()},
 }));
 vi.mock('../chain/runtime',()=>({loadChainConfig:async()=>fixture.config,publicChain:()=>fixture.client}));
 beforeEach(()=>{
- vi.resetAllMocks();vi.stubEnv('VITE_V3_START_BLOCK','');vi.stubEnv('VITE_CHAIN_STATS_URL','');
+ localStorage.clear();clearCounterCache();vi.resetAllMocks();vi.stubEnv('VITE_V3_START_BLOCK','');vi.stubEnv('VITE_CHAIN_STATS_URL','');
  fixture.client.multicall.mockImplementation(async({contracts})=>contracts.map(()=>false));fixture.client.getLogs.mockResolvedValue([]);fixture.client.getChainId.mockResolvedValue(43113);fixture.client.getBlockNumber.mockResolvedValue(100n);
  fixture.client.readContract.mockImplementation(async({functionName})=>({totalSupply:(1_000_000_000n-20n)*10n**18n,currentSeason:0n,emittedInSeason:40n*10n**18n,burnedInSeason:20n*10n**18n})[functionName as 'currentSeason']);
 });
@@ -36,7 +36,7 @@ describe('verified live economy counters',()=>{
   const fetcher=vi.fn().mockImplementation(async()=>({ok:true,json:async()=>stats}));vi.stubGlobal('fetch',fetcher);
   expect(await readCounters({force:true})).toMatchObject({deeds:4,fused:2,transactions:8,editionMinted:3});
   stats.edition.minted=601;expect((await readCounters({force:true})).editionMinted).toBeUndefined();
-  stats.indexedAt-=120001;expect((await readCounters({force:true})).fused).toBeUndefined();
+  stats.indexedAt-=120001;expect(await readCounters({force:true})).toMatchObject({fused:2,stale:{fused:true}});
  });
  it('renders the published banner odds and pity from the same rules used for draws',()=>{
   render(<PublishedOdds/>);
@@ -80,3 +80,8 @@ describe('verified live economy counters',()=>{
   localStorage.setItem('fake-counters',JSON.stringify({deeds:100,burned:999}));fixture.client.getChainId.mockRejectedValue(new Error('offline'));
   await expect(readCounters({force:true})).rejects.toThrow('offline');localStorage.removeItem('fake-counters');
  });
+
+it('retains last verified counters with their original age on RPC failure',async()=>{
+ const first=await readCounters({force:true});fixture.client.getChainId.mockRejectedValueOnce(new Error('offline'));
+ const retained=await readCounters({force:true});expect(retained.burned).toBe(first.burned);expect(retained.asOf?.burned).toBe(first.asOf?.burned);expect(retained.stale?.burned).toBe(true);
+});

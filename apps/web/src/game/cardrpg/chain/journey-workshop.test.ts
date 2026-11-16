@@ -26,7 +26,7 @@ it('accepts renewed voucher expiry/signature but rejects changed ownership, asse
 });
 it('resumes a submitted gift after a receipt timeout without spending twice',async()=>{
  const input=encodeFunctionData({abi:erc20Abi,functionName:'transfer',args:[seller,parseEther('12')]});
- const second={guard:vi.fn(),receipt:vi.fn(),client:{getTransaction:vi.fn().mockResolvedValue({from:buyer,to:seller,input,value:0n})},
+ const second={guard:vi.fn(),funding:vi.fn(async()=>hash),receipt:vi.fn(),client:{getTransaction:vi.fn().mockResolvedValue({from:buyer,to:seller,input,value:0n})},
   write:vi.fn(async(_request:unknown,submitted?:(h:typeof hash)=>void)=>{submitted?.(hash);throw Error('receipt timeout');}),silenceSounds:vi.fn()};
  mocks.buyerRuntime=second as unknown as ReturnType<typeof chainRuntime>;
  mocks.post.mockImplementation(async(endpoint:string,token:string)=>{

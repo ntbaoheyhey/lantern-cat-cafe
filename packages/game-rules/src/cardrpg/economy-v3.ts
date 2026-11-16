@@ -4,7 +4,7 @@ export const ECONOMY_V3={
  rewards:{"weeklySpool":1.05,"chapterSpool":0,"seasonRankMax":2,"weeklyStarThread":1,"starThreadBankCap":1},
  season:{"days":28,"epoch":1794528000000,"editionSupply":600},
  deed:{"firstId":30001,"lastId":33000,"supply":3000,"level":15,"demoLevel":5},
- spool:{"feeBp":1500,"minAgeDays":7,"cooldownDays":7,"weeklyNetCap":6,"skinCost":11},
+ spool:{"feeBp":2500,"minAgeDays":7,"cooldownDays":7,"weeklyNetCap":6,"skinCost":11},
  cat:{"odds":{"common":5500,"rare":3300,"epic":1100,"legendary":100},"soft":50,"hard":70,"stepBp":600,"featuredBp":5000},
  gear:{"odds":{"common":5000,"rare":3500,"epic":1420,"legendary":80},"soft":40,"hard":60,"stepBp":600},
  shards:{"common":5,"rare":10,"epic":20,"legendary":40},

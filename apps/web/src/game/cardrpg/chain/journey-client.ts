@@ -16,9 +16,9 @@ export function journeyClient(config:ChainConfig,runtime:ReturnType<typeof chain
       const current=await trial('intro'),voucher=current.vouchers[0];
       if(!current.battle.won||!voucher||voucher.player.toLowerCase()!==address.toLowerCase())throw Error('Trial reward unavailable.');
       if(voucher.used)return undefined;
-      const gas=await chainPost<{status:string;txHash?:Hex}>('guest-drip',token);
+      const gas=await chainPost<{status:string;txHash?:Hex;confirmationMs?:number}>('guest-drip',token);
       if(!gas.txHash||!['pending','confirmed'].includes(gas.status))throw Error('Test gas unavailable. Retry.');
-      await runtime.receipt(gas.txHash);
+      await runtime.funding(gas.txHash,gas.confirmationMs);
       return runtime.write({address:config.RelicNFT,abi:relicNftAbi,functionName:'mint',args:[{
         player:address,relicId:BigInt(voucher.relicId),rarity:voucher.rarity,nonce:BigInt(voucher.nonce),expiry:BigInt(voucher.expiry),
       },voucher.signature]});

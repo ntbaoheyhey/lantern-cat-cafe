@@ -446,5 +446,145 @@
     "type": "experiment",
     "topic": "S3 financing and server eligibility",
     "takeaway": "Two capped gifts plus disclosed12YARN transfer fund seal/fusion and5YARN sale; Guard pass alone does not unlock the existing boss-gated caf\u00e9 quest."
+  },
+  {
+    "id": "S4-ERC1155",
+    "url_or_path": "https://eips.ethereum.org/EIPS/eip-1155",
+    "type": "formal-document",
+    "topic": "event identity",
+    "takeaway": "Transfers/mints/zero-address burns emit single or batch events; dead-address transfers are not ERC1155 supply burns."
+  },
+  {
+    "id": "S4-RECEIPT",
+    "url_or_path": "https://viem.sh/docs/actions/public/waitForTransactionReceipt",
+    "type": "internet-doc",
+    "topic": "receipt confirmation",
+    "takeaway": "Wait returns receipt and supports replacement detection; receipt status and actual hash must be checked."
+  },
+  {
+    "id": "S4-LOGS",
+    "url_or_path": "https://viem.sh/docs/actions/public/getLogs",
+    "type": "internet-doc",
+    "topic": "history filtering",
+    "takeaway": "Filter indexed event arguments and block bounds; a global contract feed is not wallet history."
+  },
+  {
+    "id": "S4-RPC",
+    "url_or_path": "https://build.avax.network/docs/rpcs/c-chain",
+    "type": "internet-doc",
+    "topic": "Fuji receipts",
+    "takeaway": "Fuji chain43113; execution receipt gasUsed/effectiveGasPrice establish fee, not header gas estimates."
+  },
+  {
+    "id": "S4-JSONRPC",
+    "url_or_path": "https://ethereum.org/developers/docs/apis/json-rpc/",
+    "type": "internet-doc",
+    "topic": "RPC data",
+    "takeaway": "Receipt sender,status and gas metadata are execution evidence; null receipts are pending."
+  },
+  {
+    "id": "S4-DATAAPI",
+    "url_or_path": "https://build.avax.network/docs/api-reference/data-api/evm-transactions/listTransactionsV2",
+    "type": "internet-doc",
+    "topic": "indexed wallet history",
+    "takeaway": "Wallet-scoped transfers,100itempage maximum,nextPageToken,exclusiveendBlock; inspect actualreceipt forcompleteeventclassification."
+  },
+  {
+    "id": "S4-PAGINATION",
+    "url_or_path": "https://build.avax.network/docs/api-reference/data-api/usage",
+    "type": "internet-doc",
+    "topic": "rate limits",
+    "takeaway": "Paginate to exhaustion; respectRetry-After and exponentialbackoff. Keys increaseaccountlimits; verifyunauthenticatedaccess."
+  },
+  {
+    "id": "S4-OWNLOG",
+    "url_or_path": "reports/v4-ship/S4/log-probe.json",
+    "type": "own-experiment",
+    "topic": "real receipt/log comparison",
+    "takeaway": "Global38transactions versuswallet14;threeindexedqueriesalso14. Fuji10000blockwindowfails,100passes. Localreceiptfee0.00009356229813742AVAX."
+  },
+  {
+    "id": "S4-LOCAL",
+    "url_or_path": "apps/web/src/game/cardrpg/chain/history.ts",
+    "type": "local-code",
+    "topic": "existing gap",
+    "takeaway": "Global120000blockscan capped20transactions and8displayrows; notcompletewallethistory."
+  },
+  {
+    "id": "S4-EXPLORER-LIMITS",
+    "url_or_path": "https://docs.routescan.io/plans-and-limits/rate-limits",
+    "type": "internet-doc",
+    "topic": "indexed chain history",
+    "takeaway": "Keyless Data/Etherscan API allows 2 requests/s and 10000/day. Separate indexed service, no RPC proxy cycling."
+  },
+  {
+    "id": "S4-EXPLORER-LOGS",
+    "url_or_path": "https://docs.routescan.io/api/etherscan/logs",
+    "type": "internet-doc",
+    "topic": "indexed chain history",
+    "takeaway": "Address/range log queries paginate with page and offset; an empty page establishes exhaustion."
+  },
+  {
+    "id": "S4-EXPLORER-PROBE",
+    "url_or_path": "reports/v4-ship/S4/explorer-probe.json",
+    "type": "own-experiment",
+    "topic": "RPC versus indexed log history",
+    "takeaway": "Five serial keyless calls returned all first pages: 5+28+10+8+4=55 logs, HTTP200. Need empty-page and RPC receipt validation before accepting snapshot."
+  },
+  {
+    "id": "S5-ITU",
+    "url_or_path": "https://www.itu.int/rec/T-REC-H.872-202410-I/en",
+    "type": "formal-document",
+    "topic": "game loudness",
+    "takeaway": "Desktop guidance uses -23 LUFS +/-2 over a 30-minute window; -18 exception is portable built-in speakers."
+  },
+  {
+    "id": "S5-SONY",
+    "url_or_path": "https://github.com/Sony-ASWG/Loudness/blob/main/ASWG-R001%20v1.2.pdf",
+    "type": "formal-document",
+    "topic": "game loudness",
+    "takeaway": "ASWG-R001 v1.2 home -24 LKFS +/-2, portable -18 +/-2; true peak <=-1dBTP; minimum30-minute representative output measurement."
+  },
+  {
+    "id": "S5-EBU",
+    "url_or_path": "https://tech.ebu.ch/publications/r128",
+    "type": "internet-doc",
+    "topic": "metering",
+    "takeaway": "Use integrated loudness, LRA and true peak together; programme target -23LUFS."
+  },
+  {
+    "id": "S5-WEBAUDIO",
+    "url_or_path": "https://www.w3.org/TR/webaudio-1.0/",
+    "type": "internet-doc",
+    "topic": "scheduling",
+    "takeaway": "AudioBufferSource and AudioParam events use AudioContext.currentTime; preload before the visual event and automate ramps on that clock."
+  },
+  {
+    "id": "S5-GDC-MIX",
+    "url_or_path": "https://www.gdcvault.com/play/1024021/The-Mix-Understanding-Your-Tools",
+    "type": "internet-doc",
+    "topic": "mixing workflow",
+    "takeaway": "Mixing is a continuous balance of content and technology. Public abstract verified; do not imply the talk was watched."
+  },
+  {
+    "id": "S5-CONCURRENCY",
+    "url_or_path": "https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Engine/FSoundConcurrencySettings",
+    "type": "internet-doc",
+    "topic": "voice limits",
+    "takeaway": "Concurrency settings include volume ducking, recovery and attack/release behavior."
+  },
+  {
+    "id": "S5-ENGINE",
+    "url_or_path": "apps/web/src/audio/engine.ts",
+    "type": "local-code",
+    "topic": "inherited mixer",
+    "takeaway": "Current music EQ boosts high shelf, uses positive mix trim and -8dB duck; measure changes rather than normalizing captured output."
+  },
+  {
+    "id": "S5-MIX-PROBE",
+    "url_or_path": "reports/v4-ship/S5/mix-probe.json",
+    "type": "own-experiment",
+    "topic": "real boss output A/B/C",
+    "takeaway": "Three actual60-second captures compare music/trim/duck shapes; -6dBbed gives6.1LU LRA versus2.6current."
   }
 ]

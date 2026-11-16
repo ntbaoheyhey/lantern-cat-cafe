@@ -37,6 +37,8 @@ import '../cardrpg.css';
 import './depth.css';
 import './meta.css';
 import '../look-tokens.css';
+// Guided entry bypasses ShellV3, but shares its viewport/battle shell styles.
+import '../ui-v3/ui-v3.css';
 import './look-meta.css';
 const ShellV3 = lazy(() => import('../ui-v3/ShellV3'));
 const BattleHudV3 = lazy(() => import('../ui-v3/BattleHudV3'));

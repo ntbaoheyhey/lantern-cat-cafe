@@ -91,9 +91,9 @@ export function workshopClient({config,runtime,address,token,auth,storage=localS
           const b=await buyer();
           try{
             await chainPost('chain-judge',b.token,{action:'pass'});
-            const gas=await chainPost<{status:string;txHash?:Hash}>('guest-drip',b.token);
+            const gas=await chainPost<{status:string;txHash?:Hash;confirmationMs?:number}>('guest-drip',b.token);
             if(!gas.txHash||!['pending','confirmed'].includes(gas.status))throw Error('Demo buyer gas unavailable.');
-            await b.runtime.receipt(gas.txHash);await claimTester('buyer:tester',b.runtime,b.address,b.token);
+            await b.runtime.funding(gas.txHash,gas.confirmationMs);await claimTester('buyer:tester',b.runtime,b.address,b.token);
             await send('buyer:workshop-gift',b.runtime,b.address,{address:config.YarnToken!,abi:erc20Abi,functionName:'transfer',args:[address,parseEther('12')]});
             await command('quest',{action:'quest'});
           }finally{b.runtime.silenceSounds();}break;

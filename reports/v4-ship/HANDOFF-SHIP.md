@@ -4,26 +4,20 @@ SCREENING = TECH 25 + AVALANCHE 25 | LEARN BEFORE BUILD: PAPERS + WEB DOCS + OWN
 I OWN ALL AUDIO: QUIET BED, SYNCED WEAPON SFX, UI SOUNDS, CONFIRM CHIME | NEVER GENERATE IMAGES; ASK ART
 NO NEW ECONOMY MECHANICS, NO CONTRACT CHANGES, NO DEPLOYS, NO MAIN MERGE | MERGE ART AT 17/18/19 NOV, ART WINS IN ART FILES
 NO SECRETS ANYWHERE | NEVER LOWER A THRESHOLD | FILES ARE MY MEMORY | NO PERMISSION NEEDED: NEVER REPORT PAUSED
-NOW S3 journey checkpoint and S2b class-only balance diagnosis; resumed 2026-11-16T06:58:16.256640+00:00.
-NEXT 1: history70360 still computing; collect metadata-only report then contextual triage when complete.
-NEXT 2: evaluate isolated party attack1.15 against first-loss/boss gates before any production adjustment; progression-study completed.
-NEXT 3: extend20-run journey harness with disposable quota isolation/recovery/UI checks; S4 proof research afterward.
-LAST PUSHED db35585a25fe991faa8820ba6014544573133759 verified HEAD=upstream; S3 checkpoint being committed; no final gate claim.
-LAST ART MERGE 88fa5bdfd820609f054d174fce24248f35aa9575; A10assets/A3 unmerged until schedule.
-PIDS isolatedbalance19067 running; fixture17041/Vite17060 alive; history70351/70360 alive,70361defunct; stale13333/13395/68690/68776/5004/15778/15902/17195 absent.
-S1 history report absent after2h09m; no clean-history claim. Incremental scan completed06:57:38UTC,4reviewedfalsepositives,0unresolved.
-S3 pilots1280/1440 complete alljourney clicks202.215/203.476s; battle2.546/2.456s2clicks; receipt97.056/96.842s;0errors/HTTPfail/popups.
-S3 pilots are NOT20run G-FUNNEL; comprehensiveUI/historyreceipt proof remains open.
-S3 tests web2644PASS/7ARTfail;server742PASS;focusedweb28PASS;JudgeHTTPDeno56PASS;typecheck/buildPASS; S3/checks.json.
-S3 productionflag VITE_SHIP_JOURNEY=1; catalogboss intro/finale; cappedexistingentitlements; replaypreservescampaign.
-S3 finance16Anvilreceipts; two20YARNgifts+disclosed12transfer+5sale; nofixturegrants. Fusion:2boundEpicsledgerconsumed+1sealedEpicdeadaddress.
-S2b CLASS-FINAL-2001000accounts completed2159s;casual16/heavy11days; CLASS-TOKENS18/18FAIL T-dheavy11vs5-9; preserve evidence.
-S2b nativeSensitivity15902 deliberately stopped invalidcandidate; E4/E5fresh stillopen.
-S2b progressionstudy6variants done: control15.5/11;party1.15=16/9;1.30=15/9;1.50=13/8 casual/heavy12seeds; notgatepass.
-Productionholdout300/300wins,0healerDamage;firstloss19.65391min,boss95.0167s/p90108.9s; modeledschedulerbudget.
-Productionclasses woundedfront/HPratio/stableID,basic35,YarnHP1292. No selected offenseadjustment yet.
-F6 original preserved; parityprobe3/3PASS271.133/618.433/92.167s; newbaseline nonexistent.
-G-REG7ARTtestfailures; requestacknowledged, noARTfileedits. G-CLASS/G-FUNNEL/G-PROOF open.
-Conflict REV2Spool25%vsfrozen15% recorded; policy unchanged; no false25%claim.
-STOP absent; INBOX nofeedback;109GiBfree;0images openedthisrewrite.
+NOW S4 pilot failure diagnosis; S2b native economy and S1 history active. Updated 2026-11-16T07:25:18.630691+00:00.
+NEXT 1: collect pilot29576/session96319;1280passes7/7;1440active. Do not edit browser source until pilot/audio captures finish.
+NEXT 2: collect native20147 CLASS-OFFENSE115-POWER-200; compare token retention15/25, select current required25, run fresh sensitivity/E4/E5.
+NEXT 3: collect explorer31152/session54184 after07:34:46RPCbackoff; implement cached indexed history and4counters; audio30708/session46851 baseline+2bedvariants.
+LAST PUSHED bb7332eb63147b097a37fd26752306faad78fae3; S4/classPower changes uncommitted.
+LAST ART MERGE 88fa5bdfd820609f054d174fce24248f35aa9575; no early merge.
+PIDS fixture24900/Vite24975 ports5994/5997/8546; native20147; Fuji24065stopped; explorer31152; audio30708; audioViteport5995/session24240; history70351/70360(70361defunct).
+BACKGROUND native log S2b/economy-offense115-power-native.log 700/1000; Fuji S4/fuji-scan.log resumable100block pages/2s after ratelimit10minbackoff; history S1 report not ready.
+S4 failed pilot: intro battle visible6.588s but reward timeout200s, finalphaseintro,0errors; skiptransitionprobe passes reward. Natural trace running.
+S3 earlier pilots complete202/203s, firstbattle2.5s/2clicks,receipt97s; not20runpass.
+G-REG: seven ART healer-compatibility failures remain; final class baseline not written.
+S2b balance100seedholdout300/300wins,0healerDamage,firstloss17.50245min,boss87.0667s/p9093.57s.
+S2b originalCLASS-FINAL-200 failed heavy11days; preserve. Current corrected attack+Power candidate under fresh1000account test.
+25% explicit REV2 correction: pairedoldbank15/25 experiment complete;25%adds2scenariofailures,T-dall18stillfail. Freshcorrectedbankpending; productionstill15untilpilotdone.
+ART requested defensive Mochi4 support movement; clarified support stays allied; damaging attacks close to hostile targets, clocks unchanged.
+STOP absent, INBOX empty; no deploy/publictransaction/ARTfileedit/imagegeneration.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.

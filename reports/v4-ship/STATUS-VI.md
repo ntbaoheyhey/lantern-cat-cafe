@@ -1,12 +1,14 @@
-# V4 SHIP
-- Đã thêm ba lớp: cận chiến, đánh xa, hồi phục cho toàn bộ mèo và địch.
-- Nhân vật hồi phục không gây sát thương; tên lớp có trên thẻ, đội hình và chi tiết.
-- Kiểm tra luật:1409đạt; máy chủ:733đạt; typecheck và build đạt.
-- Web:2633đạt,7lỗi thuộc bài kiểm tra trình diễn của ART; đã ghi yêu cầu phối hợp.
-- Hai cỡ desktop có nhãn lớp rõ, tương phản11,13:1, không tràn nhãn.
-- Mô phỏng: thua lần đầu trung vị19,65phút; boss95,02giây, p90108,9giây. Đây không phải thời gian người chơi thật.
-- Đang chạy lại kinh tế sau đổi lớp; chưa chốt baseline mới.
-- Luồng hiện tại vẫn chưa hoàn thành bước giao dịch đầu tiên và các bước sau.
-- Phát hiện mâu thuẫn: lệnh yêu cầu giữ25%Spool, bản kinh tế đã chốt dùng15%; chưa tự sửa.
-- Quét phần thay đổi không có cảnh báo chưa xử lý; lịch sử git vẫn đang quét.
-- Chưa deploy, chưa merge main. Việc cần người dùng ở NEEDS-USER-VI.md.
+# Bản thử dành cho giám khảo
+- Nhánh tích hợp: codex/v4-ship-2026-11-16; chưa triển khai lên mạng.
+- Bản chạy cục bộ 1280×720 vừa hoàn thành đủ7bước trong201,6giây.
+- Vào trận sau2,9giây,2lần bấm; biên nhận đầu sau95,5giây.
+- Có18biên nhận kèm thời gian, phí AVAX và bên trả; trang ví có9loại hoạt động.
+- Tải lại sau ghép đồ vẫn tiếp tục đúng; không lỗi mạng, console hay cửa sổ ví trong lượt này.
+- Đang kiểm tra1440×900; chưa đủ20lượt để công nhận tiêu chí phễu.
+- Lớp cận chiến/tầm xa/hồi máu đã có; nhân vật hồi máu không gây sát thương.
+- Mô phỏng kinh tế1000tài khoản vẫn đang chạy; chưa chốt mốc parity mới.
+- Dùng đúng yêu cầu hiện tại: Spool giữ lại25%; đang kiểm tra ảnh hưởng trước khi chốt.
+- Lịch sử Fuji đã tìm được nguồn dữ liệu công khai; đang đối chiếu biên nhận thật.
+- Âm thanh hiện tại còn dày; thử giảm nhạc đã tăng khoảng động từ2,6lên6,1LU.
+- Chưa đạt đầy đủ tiêu chí âm thanh, kho mã và bản triển khai.
+- Việc cần bạn làm được ghi trong NEEDS-USER-VI.md; hiện không cần trả lời để tiếp tục.

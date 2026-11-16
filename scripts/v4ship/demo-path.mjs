@@ -1,3 +1,4 @@
+if(process.env.V4_JOURNEY==='1'){await import('./journey-run.mjs');process.exit(process.exitCode??0);}
 /** Seven-step real-click measurement. Never writes saves, battle state or auth storage. */
 import {createRequire} from 'node:module';
 import {mkdir, writeFile} from 'node:fs/promises';
