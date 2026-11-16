@@ -34,7 +34,7 @@ export class TeaBlossoms {
   // travels towards a hostile target; the large shapes begin on heal recipients.
   this.place(this.glint,f.source.x+(0.5-0.42732919254658386)*24*k,f.source.y-25.8984375*k,24*k,52*k,0,gather*.95,ms);
   if(f.ultimate&&f.feet.length){
-   const grow=smooth((ms-800)/300),decay=smooth((ms-1400)/700),w=(this.tuning.canopyWidth??920)*k*(.3+.7*grow),h=(this.tuning.canopyHeight??610)*k*(.2+.8*grow);
+   const grow=smooth((ms-800)/300),decay=smooth((ms-1400)/700),w=(this.tuning.canopyWidth??920)*k*(.3+.7*grow),h=(this.tuning.canopyHeight??645)*k*(.2+.8*grow);
    const bottom=Math.min(f.height*.91,Math.max(f.casterFeet.y,...f.feet.map(p=>p.y))+65*k);
    const cx=Math.max(w/2+12*k,Math.min(f.width-w/2-12*k,f.feet.reduce((v,p)=>v+p.x,0)/f.feet.length));
    this.place(this.canopy,cx,bottom-h/2,w,h,0,ms>=800?1-decay:0,ms,-.2+decay*.95);

@@ -4078,6 +4078,52 @@
       "output": "tools/v3craft-lab/v4-teacup-healer/raw/tea-canopy.png",
       "sha256": "bbed9b353427f13883fea67d0142ac8277e5409caeb8ea3528a98c9b0b73ffc1",
       "status": "original candidate; lab drills pending"
+    },
+    {
+      "id": "v4-teacup-healer-published-hybrid",
+      "date": "2026-11-16T12:00:38.954094+00:00",
+      "tool": "deterministic own-art normalization/export and approved A1 masked Lab translation",
+      "referenceInput": "own runtime and original built-in generated candidates only",
+      "inputs": [
+        "apps/web/public/units/teacup-healer/runtime.webp",
+        "tools/v3craft-lab/poses/raw/teacup-healer/K1-A3.png",
+        "tools/v3craft-lab/poses/raw/teacup-healer/K2-A2.png",
+        "tools/v3craft-lab/poses/raw/teacup-healer/K4-A3.png",
+        "tools/v3craft-lab/v4-teacup-healer/raw/tea-blossom.png",
+        "tools/v3craft-lab/v4-teacup-healer/raw/tea-canopy.png"
+      ],
+      "recipe": "Common1152 canvas; K0 padded256; opaque height409 and foot baseline retained; K2/K4 use70% masked Lab translation; original alpha retained by colour step. FX export removes isolated <64px dust with2px edge padding. K5 aliases K2.",
+      "outputs": [
+        {
+          "path": "apps/web/public/units/teacup-healer/poses/K0.webp",
+          "sha256": "85f10e8750de4aada911f5fd5e73d0df4ecf717ac8cda4c7483a31349407f6d0"
+        },
+        {
+          "path": "apps/web/public/units/teacup-healer/poses/K1.webp",
+          "sha256": "d56aa727c6ee962ed1f91bd0675907174fc2d9d000b058274779b6024a62cb77"
+        },
+        {
+          "path": "apps/web/public/units/teacup-healer/poses/K2.webp",
+          "sha256": "b853584b262a515ea66d5b3f38202d0c80e290bb520ce859780236f7d09f32e9"
+        },
+        {
+          "path": "apps/web/public/units/teacup-healer/poses/K4.webp",
+          "sha256": "6296cdab0c917e030d3bfa3caeb853be8b6d3bd46832767f555e92a4c2d09131"
+        },
+        {
+          "path": "apps/web/public/units/teacup-healer/poses/manifest.json",
+          "sha256": "0b50254a4836f99bfaf9a88b56ac0b2fb35ca2718a78bb2a86bf3a3b6149d5ba"
+        },
+        {
+          "path": "apps/web/public/vfx/teacup-healer/tea-blossom.webp",
+          "sha256": "3f196ed61e7eaef1c19758987ffcd7d554b53dbb135f7dad8a2bb5d52f02a5c2"
+        },
+        {
+          "path": "apps/web/public/vfx/teacup-healer/tea-canopy.webp",
+          "sha256": "75beb105a50355a8d056896088c5ca4394eba7c78df5fc27b478cfea82c027a7"
+        }
+      ],
+      "status": "published under existing DEV craft gate; art/lab/live selected; full regression and films pending"
     }
   ]
 }

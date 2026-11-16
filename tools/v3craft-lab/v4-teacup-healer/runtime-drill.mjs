@@ -39,7 +39,7 @@ try{
   await actor(enemyManifest,'K0',enemyHome,enemyScale,'/units/panko/poses/K0.webp');
   const socket=key=>{const p=manifest.poses[key].sockets.vfxOrigin;return{x:home.x+(p[0]-manifest.baseline[0])*scale,y:home.y+(p[1]-manifest.baseline[1])*scale};};
   const face=(m,key,pos,s)=>{const f=m.poses[key].face;return{x:pos.x+(f[0]-m.baseline[0])*s,y:pos.y+(f[1]-m.baseline[1])*s,width:f[2]*s,height:f[3]*s};};
-  const variants={compact:{rise:60,canopyWidth:880,canopyHeight:440},broad:{rise:120,canopyWidth:1100,canopyHeight:550},selected:{rise:60,canopyWidth:920,canopyHeight:610}};
+  const variants={compact:{rise:60,canopyWidth:880,canopyHeight:440},broad:{rise:120,canopyWidth:1100,canopyHeight:550},selected:{rise:60,canopyWidth:920,canopyHeight:645}};
   const effects={};for(const [name,tuning]of Object.entries(variants)){
    const e=new TeaBlossoms({...tuning,textureRoot:`/@fs${root}/${lab}/exported`});await e.ready;scene.add(e.ground,e.rear,e.front);effects[name]=e;
   }

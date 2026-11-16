@@ -56,6 +56,10 @@ for key in ['K0', 'K1', 'K2', 'K4']:
     near = np.abs(xs - edge) <= 20
     # Emission attaches inside the visible spoon bowl, never an inferred body center.
     spoon = [float(edge + (-13 if key in ['K1', 'K4'] else 13)), float(np.median(ys[near]))]
+    if key == 'K1':
+        # Fixed from first dedicated spoon coordinate crop; the automatic edge
+        # selected the cup handle and failed the visual socket audit.
+        spoon = [603.0, 490.0]
     head = [cx, face[1] + face[3] * .5]
     chest = [baseline[0], b[1] + (b[3] - b[1]) * .53]
     im.save(out / (key + '.webp'), quality=96, method=6, exact=True)

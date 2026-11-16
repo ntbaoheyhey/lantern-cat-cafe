@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16 11:49 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: tools/.venv/bin/python tools/v3craft-lab/v4-teacup-healer/export.py --publish; export-fx.py --publish; copy tested TeaBlossoms to vfx-craft, register in scene.ts, add actual-heal routing check.
+NEXT1: Poll final job 10732 / reports/v4-art/jobs/a7-teacup-final.log; fullweb/typecheck->parity->3x30s marked audio films. Build Teacup film review/blind tooling from established Binding scripts; do not open blind key before labels.
 NEXT2: Teacup poses selected/labexported1152canvas,304736B. Integrate original ally-only effects; validate regression/parity/film/blind/performance. Final SHIP healer-only semantics still pending.
 NEXT3: A7 Teacup/NeedleMoth/YarnGiant; A8 deliveries interrupt; A9 ensemble; A10 SHIP art; A11 open gates; A12 afterfreeze. No final summary.
-LAST PUSH:4a050c507 verified; this checkpoint preserves original Teacup FX, both failed rounds, selected R3 and private-comparison observations.
-LIVE: No generation/shell job pending; Teacup drills6805/7101/7244 exited, R3 errors0. Vite67838 port5990.
+LAST PUSH:c368fb24f verified; integrating Teacup production now; exact source hashes in REVIEW/A7/teacup-healer/source-hashes.json.
+LIVE: Final regression/parity/capture 10732 log reports/v4-art/jobs/a7-teacup-final.log (child logs a7-teacup-web-final/typecheck-final/parity/capture.log). Vite67838 port5990. No generation pending.
 No STOP/inbox pause at11:36UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json. A10 assets alreadydelivered a14f8a76b; REQUESTS-TO-SHIP haspaths; verifycurrentrequest before anyregen.
 A0/A1/A2 complete; A1b exhaustive private catalogue deferredA11. A3/A4/A5 scoped checkpoints; A5 exactheal pending finalSHIP. Activation/ensemble OPEN.
 A6 verified22sourcehashes/3films/labels; blindattempt1=10/12FAIL preserved,attempt2=11/12PASS; tencompleteownwindows incl36sboss supplement. Do not repeat blind or film review.
@@ -27,3 +27,5 @@ Teacup R1 drills: compact area15.416%FAIL; broad23.994%PASS; faces73.314%/71.514
 Teacup R1 four frames reviewed once:60rise preserves lowbody/face gap;120rise approaches face; broad1100fan reaches behind hostile. R3 tests920x610fan with60rise and rear face protection; no source image edits.
 Teacup FX R3selected60rise/920x610fan;area21.6935%,faces0.1173%,socket<1.2e-13px. All failures preserved; production/film unaccepted.
 Private Teacup225px healer reference comparison reviewed once; observations LEARN/A7. No reference input to generation. No final SHIP baseline; healer-only basics remain open.
+Teacup liveR1: wave1area20.1603%,wave3area19.4086%FAIL; faces<=2.1952%,unitocclusion<=12.7265%. K1 visual source auditFAIL(auto socket hit handle); fixed spoon[603,490], rerun required. Old basic damage persists.
+Teacup R4 final645fan passes lab22.9095%/face0.0601%; liveR2 areas21.2972%/20.4389%, faces<=2.7916%, healIDs exact,nohealK4/shake; source manual[603,490] verified. Publishedpose gates3/3,K2change32.7334%,allassets3.785MB.
