@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
-ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
+ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: fix private Panko harness by creating a fresh Texture per replacement (dimension changes corrupted prior trial). Reuse nativeR3 AVIF60/444 vs45/420 with exact sourcealpha; projected7,966,311/7,909,799B. No new encoding variants; review before install.
+NEXT1: poll nativePankoPID32457/tail5 jobs/a10-panko-native-r1.log; run pma-filter-compare.py --panko-native and inspect four fresh sheets once. Reuses exact-alpha nativeAVIF60/444 vs45/420; fresh texture per variant.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
-NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
+NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
 LAST PUSH:ebe5cafe0 verified. Panko8cases executed but private screenshots are INVALID for selection: reused GPU storage across image dimension changes. Failure retained. Associated-mips remains selected; current production candidate unaccepted.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). Panko30693 finished; experiment failed visual validity.2ownedjobs.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); nativePankoPID32457 jobs/a10-panko-native-r1.log/job-panko-native-r1.json.3ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.

@@ -6,12 +6,14 @@ import {execFileSync} from 'node:child_process';
 import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixture.mjs';
 
 const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A10/scene-ready-transfer');
-const pankoDetail=process.argv.includes('--panko-detail'),label=pankoDetail?'panko-filter-r1':'pma-filter-r1';
+const pankoNative=process.argv.includes('--panko-native'),pankoDetail=pankoNative||process.argv.includes('--panko-detail');
+const label=pankoNative?'panko-native-r1':pankoDetail?'panko-filter-r1':'pma-filter-r1';
 const report=resolve(out,label+'.json'),raw=resolve(out,'raw/'+label);
 if(existsSync(report))throw Error('Refusing to overwrite a prior experiment');
 mkdirSync(raw,{recursive:true});
 const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
-const trials=pankoDetail?JSON.parse(readFileSync(resolve(out,'pma-aware-r1.json'),'utf8')).assets.find(a=>a.owner==='panko').candidates:[];
+const trialAsset=pankoDetail?JSON.parse(readFileSync(resolve(out,pankoNative?'drill-r3.json':'pma-aware-r1.json'),'utf8')).assets.find(a=>a.owner==='panko'&&a.kind==='actor'):null;
+const trials=trialAsset?trialAsset.candidates.map(t=>({...t,decodedSize:t.decodedSize??trialAsset.size})):[];
 for(const trial of trials)if(hash(resolve(root,trial.path))!==trial.sha256)throw Error('Trial image hash mismatch');
 const fixtures=pankoDetail?config.fixtures.filter(f=>['wave3','boss'].includes(f.id)):config.fixtures;
 const receipt={started:new Date().toISOString(),scope:'Two private GPU upload/filter drills on the same selected straight-alpha AVIFs. No runtime configuration is installed.',
@@ -32,9 +34,13 @@ try{
      if(replacementImage.naturalWidth!==replacement.decodedSize[0]||replacementImage.naturalHeight!==replacement.decodedSize[1])throw Error('Replacement dimension mismatch');}
     for(const [id,actor]of s.actors)actor.actor.root.traverse(n=>{
      for(const material of Array.isArray(n.material)?n.material:[n.material]){
-      const texture=material?.map;
+      let texture=material?.map;
       if(!texture?.image?.src?.includes('/units/sampled-delivery/')&&texture?.userData?.atlasAlphaEncoding!=='premultiplied-upload-private-drill')continue;
-      if(replacementImage&&actor.asset==='panko')texture.image=replacementImage;
+      // Three texture dimensions are immutable after first upload. Each trial
+      // gets its own texture; replacing image on existing GPU storage is invalid.
+      if(replacementImage&&actor.asset==='panko'){
+       texture=new T.Texture(replacementImage);texture.colorSpace=T.NoColorSpace;material.map=texture;
+      }
       texture.premultiplyAlpha=true;
       texture.userData.atlasAlphaEncoding='premultiplied-upload-private-drill';
       texture.generateMipmaps=method!=='associated-linear';
