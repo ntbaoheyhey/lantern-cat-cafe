@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T21:35:59.471856+00:00
+# ART execution anchor — 2026-11-16T21:38:17.386716+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: study whole-RGBA resolution derivatives, then private2/3 and1/2 drills from original12sources; remeasure Lab/alpha geometry, save comparison before any production. Opacity trials complete/rejected; never reopen their4crops.
+NEXT1: poll resolution-r1 PID18629/tail5 jobs/a10-resolution-r1.log; inspect resolution-r1.json then4newprivate crops. Two2/3+1/2RGBA drills; no production before comparison/geometry/browser checks.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:8bccc4c69 verified before this checkpoint;alpha-step4/8 fail9,025,666/8,955,256B;4recovered crop reviews saved. No production candidate. Contrastreceipt9df18432a;runtime9205464cb.
-LIVE: craftVite3426/5990 log jobs/needle-craft-vite-resume.log;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. Alpha17709 finished0;all experiment supervisors done. Old68961/69950 absent.2ownedservers;1jobslot.
+LAST PUSH:4a308b24d verified;opacity failures+4recovered reviews saved. Whole-RGBA2/3+1/2 private drills launched;no production candidate. Contrastreceipt9df18432a;runtime9205464cb.
+LIVE: craftVite3426/5990 jobs/needle-craft-vite-resume.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log;resolution-supervisor18629 jobs/a10-resolution-r1.log/receipt scene-ready-transfer/job-resolution-r1.json.3ownedjobs.
 STOP/INBOX checked21:35UTC: noSTOP; explicit continuation active; INBOX pause superseded. LatestSHIP18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
