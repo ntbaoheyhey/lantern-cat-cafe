@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-16T13:23:13.097624+00:00",
+  "method": "Count complete composed body copy with disclaimer, longest receipt action, payer copy and3word pending status. Transaction data/controls/headings retained separately, as defined before the edit. Production-browser validation remains pending.",
+  "beforeRuntimeCommit": "155d10f1e28ccbc61b5b1a7b405cdc4bccc5b72d",
+  "rows": [
+    {
+      "step": "fund",
+      "beforeBody": "Two demo wallets receive 20 test YARN each. The buyer gifts 12 YARN to fund your workshop.",
+      "afterBody": "Each demo wallet claims 20 YARN. Buyer gifts 12.",
+      "beforeWords": 17,
+      "afterWords": 9,
+      "afterConservativeScreenWords": 23
+    },
+    {
+      "step": "seal",
+      "beforeBody": "Seal one earned Epic on Avalanche. Burn 13 YARN and one Boss Seal.",
+      "afterBody": "Burn 13 YARN and one Boss Seal to seal your Epic.",
+      "beforeWords": 13,
+      "afterWords": 11,
+      "afterConservativeScreenWords": 25
+    },
+    {
+      "step": "fusion",
+      "beforeBody": "Combine three Epics and one Star Thread. Burn 18 YARN; the sealed Epic goes to the dead address. Success 100%.",
+      "afterBody": "3 Epics + Star Thread. Burn 18 YARN; sealed Epic destroyed.",
+      "beforeWords": 20,
+      "afterWords": 11,
+      "afterConservativeScreenWords": 25
+    },
+    {
+      "step": "list",
+      "beforeBody": "List your Legendary for 5 test YARN. Sale fee: 2% burned, 3% treasury.",
+      "afterBody": "Price: 5 YARN. Fees: 2% burned, 3% treasury.",
+      "beforeWords": 13,
+      "afterWords": 8,
+      "afterConservativeScreenWords": 22
+    },
+    {
+      "step": "buy",
+      "beforeBody": "Your second demo wallet buys the Legendary. You receive 4.75 YARN after the fee.",
+      "afterBody": "Demo buyer pays 5 YARN. You receive 4.75 after fees.",
+      "beforeWords": 14,
+      "afterWords": 10,
+      "afterConservativeScreenWords": 24
+    },
+    {
+      "step": "withdraw",
+      "beforeBody": "Mint your free Caf\u00e9 Deed, then receive 6 YARN from Spool. 25% stays in the pool.",
+      "afterBody": "Free Caf\u00e9 Deed. Receive 6 YARN; 25% stays in Spool.",
+      "beforeWords": 16,
+      "afterWords": 10,
+      "afterConservativeScreenWords": 24
+    },
+    {
+      "step": "done",
+      "beforeBody": "Your Legendary has a new owner. Return to the battlefield for a boss rematch.",
+      "afterBody": "Your Legendary sold. Face the boss again.",
+      "beforeWords": 14,
+      "afterWords": 7,
+      "afterConservativeScreenWords": 21
+    }
+  ],
+  "maxComposedWords": 25,
+  "screenLimit": 25,
+  "pass": true,
+  "preserved": "20YARN per demo wallet;12YARN gift;13YARN/BossSeal sealing;3Epics/StarThread/18YARN/100percent forging and sealedEpic destruction;5YARN sale;2percentburn/3percenttreasury;4.75net;freeDeed/6YARN/25percentSpool;fullpayer/time/fee/explorer metadata"
+}

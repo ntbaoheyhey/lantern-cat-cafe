@@ -10,7 +10,7 @@ export function ReceiptToast(){
   <button aria-label="Dismiss receipt" onClick={()=>setProof(undefined)}>×</button>
   <strong>{actions[proof.action]??proof.action}</strong>
   <dl><div><dt>Confirmed{proof.local?' locally':''}</dt><dd>{proof.confirmationMs===null?'Timing unavailable':`${(proof.confirmationMs/1000).toFixed(2)} s`}</dd></div><div><dt>Fee</dt><dd>{proof.feeAvax} AVAX</dd></div></dl>
-  <small title={`Transaction payer: ${proof.payer}`}>{proof.gasSource==='cafe'?'Paid by the café · sponsored gas':'Paid by your wallet'}</small>
+  <small title={`Transaction payer: ${proof.payer}`}>{proof.gasSource==='cafe'?'Café paid gas':'Wallet paid gas'}</small>
   <a href={txLink(proof.hash)} target="_blank" rel="noreferrer">Snowtrace receipt</a>
  </aside>;
 }

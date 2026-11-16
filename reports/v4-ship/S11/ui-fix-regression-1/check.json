@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-16T13:26:25.945Z",
+  "rows": [
+    {
+      "name": "server",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/supabase-tests",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 16.589
+    },
+    {
+      "name": "rules",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 27.818
+    },
+    {
+      "name": "web",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "exitCode": 1,
+      "seconds": 105.863
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 16.371
+    },
+    {
+      "name": "parity-probe",
+      "command": [
+        "node",
+        "tools/v4ship-lab/parity-probe.mjs",
+        "reports/v4-ship/S11/ui-fix-regression-1/parity-probe.json"
+      ],
+      "exitCode": 0,
+      "seconds": 7.686
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 18.42
+    }
+  ],
+  "commandsPassed": false,
+  "complete": true,
+  "officialClassParityGate": false,
+  "log": {
+    "path": "reports/v4-ship/S11/ui-fix-regression-1/log.jsonl.gz",
+    "sha256": "5a61560bede0791ee695b72436b2e368396351e5ee93eb51550f5dce67b90a5f"
+  }
+}

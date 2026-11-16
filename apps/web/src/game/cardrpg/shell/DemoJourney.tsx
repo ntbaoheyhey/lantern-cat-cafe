@@ -62,7 +62,7 @@ function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) 
   };
   const battleActive=phase.endsWith('-battle');
   return <><ReceiptToast/><main className="ship-journey" aria-label="Café trial" aria-hidden={battleActive} inert={battleActive} data-journey-phase={phase}>
-    <header><strong>Lantern Cat Café</strong><span>Fuji testnet · Demo rewards · No real value</span><button onClick={()=>window.dispatchEvent(new Event('chain:wallet'))}>Wallet</button></header>
+    <header><strong>Lantern Cat Café</strong><span>Fuji testnet: no real value</span><button onClick={()=>window.dispatchEvent(new Event('chain:wallet'))}>Wallet</button></header>
     <nav aria-label="Trial progress">{['Battle','Reward','Café','Boss','Proof'].map((label,i)=><span key={label} aria-current={i===(phase==='intro'?0:phase==='reward'?1:phase==='cafe'?2:phase==='proof'?4:3)?'step':undefined}>{label}</span>)}</nav>
     {(phase==='intro'||phase==='reward')&&<section className="ship-trial-card">
       <h1>{phase==='intro'?'Guard the café':'Your first relic'}</h1>

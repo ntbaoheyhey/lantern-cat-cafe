@@ -17,3 +17,6 @@
 .ship-wallet-proof>a,.ship-wallet-proof>strong,.ship-wallet-proof>small{display:block}.ship-wallet-proof>strong{margin:4px 0 12px}.ship-wallet-proof>small{margin-top:8px;font-size:12px}
 .ship-receipt-toast>button:hover:not(:disabled),.ship-journey>header button:hover:not(:disabled),.ship-trial-card>button:not(.b2-button):hover:not(:disabled){background:#eadbc1;color:#30251f;filter:none}
 .ship-receipt-toast>button:focus-visible{outline:2px solid #614018;outline-offset:2px}
+/* Keep text contrast independent of the painted button's texture and state. */
+.ship-journey .b2-button,.ship-journey .b2-button:enabled:hover,.ship-journey .b2-button:enabled:active{filter:none}
+.ship-journey .b2-button>span{background:#43231e;color:#fff9df;border-radius:6px;padding:4px 8px;text-shadow:none}

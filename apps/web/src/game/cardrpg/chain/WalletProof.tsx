@@ -25,7 +25,7 @@ export function WalletProof({config,runtime,address}:{config:ChainConfig;runtime
   return()=>{active=false;};
  },[config,runtime,address,revision]);
  return <section className="ship-wallet-proof ship-trial-card" data-wallet-proof-complete={ready}>
-  <h1>My café on Avalanche</h1><p>Your owned items and game transactions, verified for this wallet.</p>
+  <h1>My café on Avalanche</h1><p>Your owned items and transactions, verified for this wallet.</p>
   <a href={`https://testnet.snowtrace.io/address/${address}`} target="_blank" rel="noreferrer" title={address}>Wallet {address.slice(0,6)}…{address.slice(-4)}</a>
   {!ready&&!error&&<p role="status">Reading Avalanche…</p>}{error&&<p role="alert">{error}</p>}
   {ready&&<><strong>{yarn} YARN</strong><div className="ship-proof-columns"><section aria-label="On-chain items"><h2>Owned items</h2><ul>{items.map(item=><li key={String(item.id)}><a href={`https://testnet.snowtrace.io/token/${config.RelicNFT}?a=${item.id}`} target="_blank" rel="noreferrer">{tradeRuleV3(Number(item.id))?.name??`Relic ${item.id}`} × {String(item.amount)}</a></li>)}</ul>{!items.length&&<p>No on-chain items.</p>}</section><section aria-label="Wallet transactions"><h2>Transactions · {history.length}</h2><ol>{history.map(row=><li key={row.hash} data-history-kind={row.kind}><a href={txLink(row.hash)} target="_blank" rel="noreferrer" title={row.hash}>{row.kind} · Block {String(row.block)}</a></li>)}</ol></section></div></>}

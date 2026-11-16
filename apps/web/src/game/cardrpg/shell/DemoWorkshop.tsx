@@ -8,13 +8,13 @@ import {friendlyError} from '../chain/errors';
 import {PaintedButton,PaintedIcon,type KitIcon} from './PaintedKit';
 
 const content:Record<WorkshopStep,{title:string;body:string;button:string;icon:KitIcon}>={
- fund:{title:'Prepare your workshop',body:'Two demo wallets receive 20 test YARN each. The buyer gifts 12 YARN to fund your workshop.',button:'Fund workshop',icon:'yarn'},
- seal:{title:'Seal an Epic',body:'Seal one earned Epic on Avalanche. Burn 13 YARN and one Boss Seal.',button:'Seal Epic',icon:'seal'},
- fusion:{title:'Forge a Legendary',body:'Combine three Epics and one Star Thread. Burn 18 YARN; the sealed Epic goes to the dead address. Success 100%.',button:'Forge Legendary',icon:'fuse'},
- list:{title:'Open your market stall',body:'List your Legendary for 5 test YARN. Sale fee: 2% burned, 3% treasury.',button:'List for 5 YARN',icon:'list'},
- buy:{title:'Meet your first customer',body:'Your second demo wallet buys the Legendary. You receive 4.75 YARN after the fee.',button:'Buy with demo wallet',icon:'buy'},
- withdraw:{title:'Claim your Spool',body:`Mint your free Café Deed, then receive 6 YARN from Spool. ${E.spool.feeBp/100}% stays in the pool.`,button:'Withdraw Spool',icon:'withdraw'},
- done:{title:'Your café is ready',body:'Your Legendary has a new owner. Return to the battlefield for a boss rematch.',button:'Face the boss',icon:'quest'},
+ fund:{title:'Prepare your workshop',body:'Each demo wallet claims 20 YARN. Buyer gifts 12.',button:'Fund workshop',icon:'yarn'},
+ seal:{title:'Seal an Epic',body:'Burn 13 YARN and one Boss Seal to seal your Epic.',button:'Seal Epic',icon:'seal'},
+ fusion:{title:'Guaranteed Legendary',body:'3 Epics + Star Thread. Burn 18 YARN; sealed Epic destroyed.',button:'Forge Legendary',icon:'fuse'},
+ list:{title:'Open your market stall',body:'Price: 5 YARN. Fees: 2% burned, 3% treasury.',button:'List for 5 YARN',icon:'list'},
+ buy:{title:'Meet your first customer',body:'Demo buyer pays 5 YARN. You receive 4.75 after fees.',button:'Buy with demo wallet',icon:'buy'},
+ withdraw:{title:'Claim your Spool',body:`Free Café Deed. Receive 6 YARN; ${E.spool.feeBp/100}% stays in Spool.`,button:'Withdraw Spool',icon:'withdraw'},
+ done:{title:'Your café is ready',body:'Your Legendary sold. Face the boss again.',button:'Face the boss',icon:'quest'},
 };
 export function DemoWorkshop({config,runtime,address,token,onBoss}:{config:ChainConfig;runtime:ReturnType<typeof chainRuntime>;address:Address;token:string;onBoss:()=>Promise<void>}) {
  const {api}=useAuthContext();
