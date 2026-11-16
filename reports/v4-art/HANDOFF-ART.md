@@ -1,12 +1,12 @@
-# ART execution anchor — 2026-11-16T14:27UTC
-PAUSED by explicit user chat: “lưu handoff và dừng nhé”. Save/checkpoint only; do not resume queue until user requests continuation.
+# ART execution anchor — 2026-11-16T15:44UTC
+ACTIVE: user chat “tiếp tục” explicitly resumed ART16Nov15:44UTC; prior pause is superseded.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1 ON RESUME: restart owned craft Vite5990 with VITE_CRAFT_PILOT=soot from apps/web: pnpm exec vite --config ../../scripts/v3feel/vite.config.mts --host 127.0.0.1 --port 5990 --strictPort (detached; recordPID/log).
-NEXT2: preserve interrupted raw/wave3-900, rerun ONLY existing1440x900 capture/review; do NOT rerun capture-review.py (would overwrite3completedfilms). Then blind-read.py prepare; label9crops before private key/compare.
+NEXT1: Preserve interrupted900p folder; run detached900p-only captures wave3/wave1/boss sequentially. Prepare Needle blind9crop sheet from existing films; label BEFORE private key. Do not rerun completed720p captures.
+NEXT2: View blind sheet once, save labels then compare; run review-flight.py and inspect all32unseen action sheets plus flight/900p sheets; persist judgments and receipt.
 NEXT3: review all existing Needle action sheets and new projectile sheets; complete900p layout evidence (wave1/boss also), receipt/STATUS/STATE/commitpush; then Yarn, A9, verified A10contrast request, A11/A12.
-LAST PUSH:842c436f4 verified pause checkpoint (regression/capture metadata and helpers); production b92cd2dc3 unchanged. This subsequent anchor commit only records that completed push.
-LIVE:none after user pause. Owned Vite40003/40016 and capture-review64446, capture66139, browser66141 group/ffmpeg66160 stopped; validation63153/probe63154 already exited.
-STOP-V4ART absent; user pause persisted in INBOX. Requested68961/69950 absent; A6final/post logs exit0. No generation running. Never kill SHIP processes.
+LAST PUSH:b659c745b verified pause anchor; production b92cd2dc3 unchanged,10sourcehashes match. No genuine unstaged source WIP; duplicate drill/job JSON and old untracked previews remain excluded.
+LIVE: craft VitePID3426/5990/jobs/needle-craft-vite-resume.log. All prior capture/validation processes stopped or finished. No generation running.
+STOP-V4ART absent; user resumed after INBOXpause. SHIP request tail unchanged through13:40contrast; no finalclass announcement read; no merge.
 Needle production b92cd2dc3: K1-A6 Lab30, K2-A1, K4-A3; K5aliasK2. Four poses215,744B plus originalsewingneedle60,240B. DEV&&VITE_CRAFT_PILOT==='soot' unchanged.
 Needle source K1 head1.014501,dE5.369302,IoU.378964,feet1; K2 head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%; K4 head.977105,dE3.566826,IoU.402302,feet0. Failures retained.
 Needle exported225px pose3/3PASS; K2changed33.8568%; alpha exact vs normalized. Source hashes10 under REVIEW/A7/needle-moth; conservative allposes/VFX+newBindingportrait4,163,747B<6MB.
@@ -32,4 +32,4 @@ Own publicunits/VFX,cardrpg battle-v3/spine/stage/vfx-craft/vfx-layered exceptau
 Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies. Explicit staging only; V3history append-only; trackedV4reports~97MB ceiling150MB.
 Jobs>2min detached Popen(start_new_session=True),stdinDEVNULL/nohup/log;max3. Ports5990–5993 only. Commitpush eachstep<=20min,includingfailures, only while authorized work is active.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese. Output<=40lines/3KB;diff<=80. Imaging Python tools/.venv/bin/python.
-Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Current explicit user pause takes precedence over automatic queue continuation.
+Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC;authorizedqueueuntil29Nov12UTC. Stop for new explicitpause/STOP/end.
