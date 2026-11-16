@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-16T04:48:36.267987+00:00",
+  "base": "88fa5bdfd820609f054d174fce24248f35aa9575",
+  "install": {
+    "pass": true
+  },
+  "typecheck": {
+    "pass": true
+  },
+  "rootTests": {
+    "pass": true,
+    "passed": 77
+  },
+  "workspaceTests": {
+    "pass": true,
+    "passed": 4846,
+    "expectedFail": 2,
+    "skipped": 11,
+    "web": 2640,
+    "server": 733
+  },
+  "forge": {
+    "pass": true,
+    "passed": 128
+  },
+  "build": {
+    "pass": true
+  },
+  "parity": {
+    "pass": true,
+    "fixtures": 3,
+    "file": "reports/v4-ship/S0/parity.json"
+  },
+  "learn": {
+    "pass": true,
+    "sources": 8,
+    "formal": 1,
+    "webDocs": 4,
+    "experiment": "tools/v4ship-lab/adoption/result.json"
+  }
+}

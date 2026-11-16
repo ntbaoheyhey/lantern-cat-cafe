@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-16T04:44:56.409553+00:00",
+  "question": "Which branch preserves both completed lanes without rebuilding history?",
+  "methods": [
+    {
+      "candidate": "codex/v3-shell-2026-11-13",
+      "sha": "106c8a3540db45fe8f1557cbd3389241029b9bee",
+      "missingArtCommits": 190,
+      "missingShellCommits": 0
+    },
+    {
+      "candidate": "origin/codex/v3-feel-2026-11-14",
+      "sha": "88fa5bdfd820609f054d174fce24248f35aa9575",
+      "missingArtCommits": 0,
+      "missingShellCommits": 0
+    }
+  ],
+  "choice": "origin/codex/v3-feel-2026-11-14"
+}

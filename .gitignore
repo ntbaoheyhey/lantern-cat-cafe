@@ -261,3 +261,11 @@ __pycache__/
 # P2 working films/sheets stay local; choose one bounded final set at acceptance.
 /reports/v3-feel/REVIEW/P2-R*/*
 !/reports/v3-feel/REVIEW/P2-R*/REVIEW.md
+
+# V4 SHIP local runtime and raw evidence.
+/STOP-V4SHIP
+/reports/v4-ship/**/*.log
+!/reports/v4-ship/PROGRESS-SHIP.log
+/reports/v4-ship/**/raw/
+/reports/v4-ship/**/*.wav
+/tools/v4ship-lab/**/private/

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "S0-GIT-WORKTREE",
+    "url_or_path": "https://git-scm.com/docs/git-worktree",
+    "type": "formal-document",
+    "topic": "S0 branch isolation",
+    "takeaway": "Linked worktrees have private HEAD/index; branch references are shared."
+  },
+  {
+    "id": "S0-GIT-MERGE",
+    "url_or_path": "https://git-scm.com/docs/git-merge",
+    "type": "internet-doc",
+    "topic": "S0 integration",
+    "takeaway": "Commit or stash work before a merge to preserve recovery."
+  },
+  {
+    "id": "S0-PNPM",
+    "url_or_path": "https://pnpm.io/cli/install",
+    "type": "internet-doc",
+    "topic": "S0 reproducibility",
+    "takeaway": "Frozen install leaves the lockfile unchanged and rejects mismatch."
+  },
+  {
+    "id": "S0-PLAYWRIGHT",
+    "url_or_path": "https://playwright.dev/docs/test-configuration",
+    "type": "internet-doc",
+    "topic": "S0 repeatable verification",
+    "takeaway": "Explicit projects and shared configuration define browser test conditions."
+  },
+  {
+    "id": "S0-DIRECTION",
+    "url_or_path": "/Users/bao/art/codex-prompts/DIRECTION-V4-2026-11-16.md",
+    "type": "local",
+    "topic": "S0 scope",
+    "takeaway": "Seven-step demo path, three classes, no image generation in SHIP."
+  },
+  {
+    "id": "S0-ANCESTRY",
+    "url_or_path": "tools/v4ship-lab/adoption/result.json",
+    "type": "own-experiment",
+    "topic": "S0 baseline selection",
+    "takeaway": "Compared both lane bases by missing-commit counts; selected combined ART base."
+  },
+  {
+    "id": "S0-PARITY",
+    "url_or_path": "scripts/v3feel/parity.mjs",
+    "type": "local",
+    "topic": "S0 deterministic verification",
+    "takeaway": "Compare complete rules state hashes and presentation results for three fixtures; original tool writes ART reports and hardcodes ART port."
+  },
+  {
+    "id": "S0-VITEST-FS",
+    "url_or_path": "https://vitest.dev/config/fsmodulecache",
+    "type": "internet-doc",
+    "topic": "S0 test runner recovery",
+    "takeaway": "Vitest5 shares a filesystem module cache across workspace projects by default."
+  }
+]
